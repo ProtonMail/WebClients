@@ -5,7 +5,7 @@ import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { SignupType } from '../../../signup/interfaces';
 import { AccountFormDataContextProvider, useAccountFormDataContext } from './AccountFormDataContext';
 import { defaultAsyncValidationState } from './asyncValidator/createAsyncValidator';
-import { validateEmailAvailability } from './asyncValidator/validateEmail';
+import { validateEmailAvailability, validateUsernameAvailability } from './asyncValidator/validateEmail';
 
 jest.mock('@proton/components/hooks/useSilentApi');
 jest.mock('./asyncValidator/validateEmail');
@@ -15,6 +15,8 @@ jest.mock('../../../signup/PasswordStrengthIndicatorSpotlight', () => ({
 
 const DEFAULT_EMAIL = 'prefilled-user@example.test';
 const OTHER_EMAIL = 'other-user@example.test';
+const USERNAME = 'fast-typist';
+const USERNAME_DOMAIN = 'proton.me';
 const ASYNC_VALIDATOR_DEBOUNCE_MS = 300;
 
 const EmailInput = () => {
@@ -27,6 +29,27 @@ const EmailInput = () => {
         />
     );
 };
+
+const UsernameInput = () => {
+    const { state, onValue } = useAccountFormDataContext();
+    return (
+        <input
+            data-testid="username"
+            value={state.username}
+            onChange={(event) => onValue.onUsernameValue(event.target.value, USERNAME_DOMAIN)}
+        />
+    );
+};
+
+const getUsernameProvider = (domainsLoaded: boolean) => (
+    <AccountFormDataContextProvider
+        availableSignupTypes={new Set([SignupType.Proton])}
+        domains={[USERNAME_DOMAIN]}
+        domainsLoaded={domainsLoaded}
+    >
+        <UsernameInput />
+    </AccountFormDataContextProvider>
+);
 
 const getProvider = (domainsLoaded: boolean) => (
     <AccountFormDataContextProvider
@@ -83,5 +106,25 @@ describe('AccountFormDataContextProvider', () => {
 
         expect(mockValidateEmail).toHaveBeenCalledTimes(1);
         expect(mockValidateEmail.mock.calls[0][0]).toBe(OTHER_EMAIL);
+    });
+
+    it('defers the username availability check until the signup domains have loaded', async () => {
+        jest.useFakeTimers();
+        jest.mocked(useSilentApi).mockReturnValue(jest.fn());
+        const mockValidateUsername = jest.mocked(validateUsernameAvailability);
+        mockValidateUsername.mockClear();
+        mockValidateUsername.mockResolvedValue(defaultAsyncValidationState);
+        const { rerender } = render(getUsernameProvider(false));
+
+        // The user types the username before the domains arrive
+        fireEvent.change(screen.getByTestId('username'), { target: { value: USERNAME } });
+        await flushAsyncValidator();
+        expect(mockValidateUsername).not.toHaveBeenCalled();
+
+        rerender(getUsernameProvider(true));
+        await flushAsyncValidator();
+
+        expect(mockValidateUsername).toHaveBeenCalledTimes(1);
+        expect(mockValidateUsername.mock.calls[0][0]).toBe(`${USERNAME}@${USERNAME_DOMAIN}`);
     });
 });

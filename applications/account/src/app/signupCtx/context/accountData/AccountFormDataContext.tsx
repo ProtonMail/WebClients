@@ -501,18 +501,23 @@ export const AccountFormDataContextProvider = ({
         el.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }, []);
 
+    // The availability checks are anti-abuse checkpoints, so they must come after the domains request
+    const waitForDomainsLoaded = async (abortController: AbortController) => {
+        if (!domainsLoadedRef.current) {
+            throw new Error('Unexpected domains ref state');
+        }
+        await domainsLoadedRef.current.deferredPromise.promise;
+        if (abortController.signal.aborted) {
+            throw new Error('Aborted');
+        }
+    };
+
     const handleEmailError = useCallback((email: string) => {
         const emailError = getEmailError({ email });
         const value = email;
         usernameAsyncValidator.trigger({
             validate: async (value, abortController) => {
-                if (!domainsLoadedRef.current) {
-                    throw new Error('Unexpected domains ref state');
-                }
-                await domainsLoadedRef.current.deferredPromise.promise;
-                if (abortController.signal.aborted) {
-                    throw new Error('Aborted');
-                }
+                await waitForDomainsLoaded(abortController);
                 const result = await validateEmailAvailability(value, silentApi, abortController);
                 return result;
             },
@@ -532,6 +537,7 @@ export const AccountFormDataContextProvider = ({
             const value = joinUsernameDomain(username, domain);
             usernameAsyncValidator.trigger({
                 validate: async (value, abortController) => {
+                    await waitForDomainsLoaded(abortController);
                     const result = await validateUsernameAvailability(value, silentApi, abortController);
                     return result;
                 },
