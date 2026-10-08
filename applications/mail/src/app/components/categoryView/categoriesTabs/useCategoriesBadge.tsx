@@ -5,10 +5,8 @@ import { selectDisabledCategoriesIDs } from '@proton/mail/store/labels/selector'
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import { useMailSelector } from '../../../store/hooks';
-
 import { TabState } from './tabsInterface';
 
 interface Props {
@@ -22,8 +20,6 @@ export const useCategoriesBadge = ({ category, tabState }: Props) => {
 
     const disabledCategoriesIDs = useMailSelector(selectDisabledCategoriesIDs);
     const count = useMailSelector((state) => selectCategoryUnreadCount(state, category.id).count);
-
-    const isUnseenBadgeEnabled = useFlag('MailRecordLastUnseenIncomingMessageEventID');
 
     const countersSettingsEnabled = mailSettings?.MailCategoryViewCountersEnabled ?? false;
     const isTabActive = tabState === TabState.ACTIVE;
@@ -41,9 +37,9 @@ export const useCategoriesBadge = ({ category, tabState }: Props) => {
         : (categoryFolder?.LastUnseenMessageEventID ?? null) !== null;
 
     // Counter shows when counters are enabled, and there are unread messages. Or if the unseen badge flag is disabled.
-    const shouldShowCounter = isUnseenBadgeEnabled ? countersSettingsEnabled : true;
+    const shouldShowCounter = countersSettingsEnabled;
     // Unseen badge shows only when counters are off, the tab is inactive, and there's an unseen event. Or if the unseen badge flag is disabled.
-    const shouldShowNewBadge = isUnseenBadgeEnabled ? !!(!countersSettingsEnabled && !isTabActive && hasUnseen) : false;
+    const shouldShowNewBadge = !!(!countersSettingsEnabled && !isTabActive && hasUnseen);
 
     return {
         shouldShowCounter,
