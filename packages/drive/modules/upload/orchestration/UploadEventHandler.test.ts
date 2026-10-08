@@ -196,6 +196,31 @@ describe('UploadEventHandler', () => {
                 nodeUid: 'node456',
             });
         });
+
+        it('should mark file as finished even when a subscriber fails', async () => {
+            const error = new Error('Item not found');
+            handler.subscribeToEvents('failing', jest.fn().mockRejectedValue(error));
+            const event = {
+                type: 'file:complete' as const,
+                uploadId: 'task123',
+                nodeUid: 'node456',
+                parentUid: 'parent123',
+                isUpdatedNode: false,
+                isForPhotos: false,
+            };
+
+            await handler.handleEvent(event);
+
+            expect(mockUpdateQueueItems).toHaveBeenCalledWith('task123', {
+                status: UploadStatus.Finished,
+                nodeUid: 'node456',
+            });
+            expect(mockRemoveControllers).toHaveBeenCalledWith(['task123']);
+            expect(uploadLogError).toHaveBeenCalledWith('Upload event subscriber failed', error, {
+                uploadId: 'task123',
+                eventType: 'file:complete',
+            });
+        });
     });
 
     describe('handleEvent - file:empty', () => {
