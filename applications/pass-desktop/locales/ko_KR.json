@@ -879,11 +879,6 @@
         "${ PASS_APP_NAME } 제거"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } 데스크탑 어플리케이션"
-      ]
-    },
     "Button": {
       "More info": [
         "상세 정보"
@@ -2239,6 +2234,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "항목을 다른 금고로 이동시 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
