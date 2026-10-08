@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { DriveImportGenericErrorStep } from '@proton/activation/src/components/Modals/OAuth/Drive/DriveImportGenericErrorStep';
 import { DriveImportInProgressStep } from '@proton/activation/src/components/Modals/OAuth/Drive/DriveImportInProgressStep';
+import { DriveImportPausedStep } from '@proton/activation/src/components/Modals/OAuth/Drive/DriveImportPausedStep';
 import { DriveImportSuccessStep } from '@proton/activation/src/components/Modals/OAuth/Drive/DriveImportSuccessStep';
 import { useProductSelectionSubmit } from '@proton/activation/src/components/Modals/ProductSelectionModal/useProductSelectionSubmit';
 import { EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '@proton/activation/src/interface';
@@ -13,6 +14,7 @@ import NewFeatureTag from '@proton/components/components/newFeatureTag/NewFeatur
 import { FeatureCode, useFeature } from '@proton/features';
 import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
 import { IcCross } from '@proton/icons/icons/IcCross';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import googleDriveLogo from '@proton/styles/assets/img/import/providers/google-drive.svg';
 import clsx from '@proton/utils/clsx';
 
@@ -28,8 +30,10 @@ interface EasySwitchSidebarSectionProps {
 
 export const EasySwitchSidebarSection = ({ collapsed }: EasySwitchSidebarSectionProps) => {
     const { handleSubmit } = useProductSelectionSubmit();
-    const { isLoaded, isImporting, hasCompletedImport, outcome, clearOutcome } = useDriveImportStatus();
+    const { isLoaded, isImporting, isPaused, hasCompletedImport, outcome, clearOutcome } = useDriveImportStatus();
     const [showInProgressModal, setShowInProgressModal] = useState(false);
+    const [showPausedModal, setShowPausedModal] = useState(false);
+    const hasOngoingImport = isImporting || isPaused;
 
     const { userType, showNewBadge } = useEasySwitchSidebarUserType(hasCompletedImport);
 
@@ -44,11 +48,11 @@ export const EasySwitchSidebarSection = ({ collapsed }: EasySwitchSidebarSection
 
     // Ongoing import --> always shown (ignores dismiss and rollout)
     // Otherwise --> shown to eligible users who did not dismiss it
-    const showEntry = isLoaded && (isImporting || (!!userType && !isDismissed));
+    const showEntry = isLoaded && (hasOngoingImport || (!!userType && !isDismissed));
 
     const isSpotlightEligible =
         showEntry &&
-        !isImporting &&
+        !hasOngoingImport &&
         userType === EasySwitchUserType.LowUsageUser &&
         !!spotlightFeature &&
         !spotlightFeature.Value;
@@ -73,13 +77,27 @@ export const EasySwitchSidebarSection = ({ collapsed }: EasySwitchSidebarSection
         [entryButton, isSpotlightEligible]
     );
 
-    const label = isImporting ? c('Action').t`Importing from Google` : c('Action').t`Import from Google`;
+    const getLabel = () => {
+        if (isPaused) {
+            return c('Action').t`Import paused`;
+        }
+        return isImporting ? c('Action').t`Importing from Google` : c('Action').t`Import from Google`;
+    };
+    const label = getLabel();
 
     const startGoogleImport = (options?: { hasReadInstructions?: boolean }) =>
         handleSubmit(ImportProvider.GOOGLE, [ImportType.DRIVE], EASY_SWITCH_SOURCES.DRIVE_WEB_SIDEBAR, options);
 
     const handleClick = () => {
+        if (isPaused) {
+            setShowPausedModal(true);
+            return;
+        }
         if (isImporting) {
+            // Import resumed while the paused modal was open --> modal unmounted without onClose, outcome left behind
+            if (outcome === 'paused') {
+                clearOutcome();
+            }
             setShowInProgressModal(true);
             return;
         }
@@ -99,11 +117,20 @@ export const EasySwitchSidebarSection = ({ collapsed }: EasySwitchSidebarSection
         void countActionWithTelemetry(Actions.EasySwitchGoogleSpotlightDismissed);
     };
 
-    const icon = isImporting ? (
-        <IcArrowsRotate alt="" className={clsx(navigationIconClassName, 'easy-switch-sidebar-icon--spinning')} />
-    ) : (
-        <img src={googleDriveLogo} alt="" className={clsx(navigationIconClassName, 'w-4')} />
-    );
+    const getIcon = () => {
+        if (isPaused) {
+            return <IcExclamationCircleFilled alt="" className={clsx(navigationIconClassName, 'color-danger')} />;
+        }
+        if (isImporting) {
+            return (
+                <IcArrowsRotate
+                    alt=""
+                    className={clsx(navigationIconClassName, 'easy-switch-sidebar-icon--spinning')}
+                />
+            );
+        }
+        return <img src={googleDriveLogo} alt="" className={clsx(navigationIconClassName, 'w-4')} />;
+    };
 
     return (
         <>
@@ -119,7 +146,7 @@ export const EasySwitchSidebarSection = ({ collapsed }: EasySwitchSidebarSection
                             <span className={clsx('text-sm color-weak text-semibold', collapsed && 'sr-only')}>
                                 {c('Title').t`Easy switch`}
                             </span>
-                            {!collapsed && !isImporting && (
+                            {!collapsed && !hasOngoingImport && (
                                 <Button
                                     icon
                                     shape="ghost"
@@ -144,9 +171,9 @@ export const EasySwitchSidebarSection = ({ collapsed }: EasySwitchSidebarSection
                             <SidebarListItemContent
                                 className={clsx('flex flex-nowrap', collapsed && 'justify-center')}
                                 collapsed={collapsed}
-                                left={icon}
+                                left={getIcon()}
                                 right={
-                                    !collapsed && !isImporting && showNewBadge ? (
+                                    !collapsed && !hasOngoingImport && showNewBadge ? (
                                         <NewFeatureTag featureKey="drive-easy-switch-sidebar" />
                                     ) : undefined
                                 }
@@ -171,6 +198,14 @@ export const EasySwitchSidebarSection = ({ collapsed }: EasySwitchSidebarSection
                 <DriveImportSuccessStep
                     onClose={() => {
                         setShowInProgressModal(false);
+                        clearOutcome();
+                    }}
+                />
+            )}
+            {isPaused && (outcome === 'paused' || (showPausedModal && !outcome)) && (
+                <DriveImportPausedStep
+                    onClose={() => {
+                        setShowPausedModal(false);
                         clearOutcome();
                     }}
                 />
