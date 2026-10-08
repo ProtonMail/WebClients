@@ -69,10 +69,18 @@ const generateZoomOAuthUrl = (params: URLSearchParams, config: ApiEnvironmentCon
     return `https://zoom.us/oauth/authorize?${params.toString()}`;
 };
 
-export const getOAuthRedirectURL = (provider: ImportProvider | OAUTH_PROVIDER) => {
+/**
+ * `redirectPath` overrides the default callback path. It must be allowlisted on the provider's OAuth client, and the
+ * same value has to be sent again at the token exchange since the provider binds the code to it.
+ */
+export const getOAuthRedirectURL = (provider: ImportProvider | OAUTH_PROVIDER, redirectPath?: string) => {
     const { protocol, host } = window.location;
 
     const path = (() => {
+        if (redirectPath) {
+            return redirectPath;
+        }
+
         switch (provider) {
             case ImportProvider.GOOGLE:
             case OAUTH_PROVIDER.GOOGLE:
