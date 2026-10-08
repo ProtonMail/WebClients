@@ -1,21 +1,19 @@
 import { generateKey } from '@protontech/crypto/subtle/aesGcm.ts';
-import { c } from 'ttag';
 
 import { binaryStringToUint8Array, uint8ArrayToBinaryString } from '@proton/shared/lib/helpers/encoding';
 import noop from '@proton/utils/noop';
 
 import { NativeMessageErrorType, PassEncryptionTag } from '../../../../types';
-import { SilentError } from '../../../../utils/errors/errors';
 import { asyncLock } from '../../../../utils/fp/promises';
 import { logger } from '../../../../utils/logger';
 import { getEpoch } from '../../../../utils/time/epoch';
 import { decryptData, encryptData, importSymmetricKey } from '../../../crypto/utils/crypto-helpers';
-import { NativeMessageError } from '../../../native-messaging/errors';
+import { NativeMessageError, getNativeMessageErrorKind } from '../../../native-messaging/errors';
 import type { NativeMessagingService } from '../../../native-messaging/native-messaging.extension';
 import type { AuthService } from '../../service';
 import type { LockAdapterDesktop } from '../types';
 import { LockMode } from '../types';
-import { sendSetupLockSecretMessage } from './logic.extension';
+import { sendSetupLockSecretMessage, sendUnlockMessage } from './logic.extension';
 
 const encryptVerifier = async (lockSecret: Uint8Array<ArrayBuffer>) => {
     const key = await importSymmetricKey(lockSecret);
@@ -29,6 +27,13 @@ const checkVerifier = async (lockSecret: string, desktopLockVerifier: string) =>
     return true;
 };
 
+/** Unlock failures are thrown as typed `NativeMessageError`s carrying their
+ * `NativeMessageErrorType`. The type travels as data through the request layer and
+ * the message broker to the popup, which reconstructs the error and localizes it at
+ * the display edge (`useDesktopUnlock`). The request middleware stays quiet for
+ * `DESKTOP` (no `withNotification`) so the UI hook owns the single notification — it
+ * is the only context that knows whether errors should be silenced (e.g. the inline
+ * dropdown has no notification UI). */
 export const desktopLockAdapterFactory = (
     auth: AuthService,
     nativeMessaging: NativeMessagingService
@@ -48,13 +53,15 @@ export const desktopLockAdapterFactory = (
 
             /** Create lock secret and send it to desktop app */
             const lockSecret = generateKey();
-            await sendSetupLockSecretMessage(nativeMessaging, authStore, lockSecret.toBase64());
+            const userIdentifier = await sendSetupLockSecretMessage(nativeMessaging, authStore, lockSecret.toBase64());
 
             /** Setup succeed on desktop side, creating locally */
             await onBeforeCreate?.();
 
-            /** Store verifier in session */
+            /** Store verifier + the identifier the secret was keyed under, so unlock reuses
+             * the exact same keychain key (see resolveUnlockUserIdentifier) */
             authStore.setDesktopLockVerifier(await encryptVerifier(lockSecret));
+            authStore.setDesktopLockUserIdentifier(userIdentifier);
             authStore.setLockTTL(ttl);
             authStore.setLockLastExtendTime(getEpoch());
             authStore.setLocked(false);
@@ -70,6 +77,7 @@ export const desktopLockAdapterFactory = (
             logger.info(`[DesktopLock] deleting session lock`);
 
             authStore.setDesktopLockVerifier(undefined);
+            authStore.setDesktopLockUserIdentifier(undefined);
             authStore.setLockLastExtendTime(undefined);
             authStore.setLockTTL(undefined);
             authStore.setLockMode(LockMode.NONE);
@@ -89,35 +97,57 @@ export const desktopLockAdapterFactory = (
             return { mode: adapter.type, locked: true };
         },
 
-        unlock: asyncLock(async (secret: string) => {
+        unlock: asyncLock(async () => {
             logger.info(`[DesktopLock] unlocking session`);
 
             /** Get verifier in session or fail — configuration error, not an auth failure */
             const verifier = authStore.getDesktopLockVerifier();
             if (!verifier) throw new NativeMessageError(NativeMessageErrorType.DESKTOP_LOCK_NOT_CONFIGURED);
 
+            /** Fetch the unlock secret from the desktop app here, in the service worker —
+             * this triggers the OS biometric prompt. Doing it here rather than in the popup
+             * means the flow survives the popup being torn down while the prompt is in the
+             * foreground (which happens on Firefox/Windows — see IDTEAM-5762). The transport
+             * (`sendNativeMessageRequest`) owns the request deadline — it rejects with TIMEOUT
+             * and disconnects on expiry — so no extra timer is needed here. */
+            let authError: NativeMessageError | undefined;
+
+            const secret = await sendUnlockMessage(nativeMessaging, authStore).catch((err: NativeMessageError) => {
+                /** Infrastructure errors (timeout / account mismatch): the biometric check
+                 * never ran, so surface them without counting a failed attempt. */
+                if (getNativeMessageErrorKind(err) !== 'auth') {
+                    logger.warn('[DesktopLock] unlock failed (infra)', err.type);
+                    throw err;
+                }
+                authError = err;
+                return '';
+            });
+
             const unlockRetryCount = authStore.getUnlockRetryCount() + 1;
 
-            /** Empty secret means the native messaging fetch failed and was already
-             * notified to the user — SilentError counts the attempt without a duplicate notification */
+            /** Empty secret means the biometric authentication failed */
             if (!secret) {
+                logger.warn('[DesktopLock] unlock failed (no secret)', authError?.type);
                 if (unlockRetryCount >= 3) {
                     await auth.logout({ soft: false, broadcast: true });
-                    throw new Error(c('Warning').t`Too many attempts`);
+                    throw new NativeMessageError(NativeMessageErrorType.TOO_MANY_ATTEMPTS);
                 }
 
                 await auth.syncLock({ unlockRetryCount }).catch(noop);
                 await auth.lock(adapter.type, { broadcast: true, soft: true });
-                throw new SilentError();
+                /** Carry the captured auth error, falling back to a meaningful default
+                 * for the rare case where the desktop returned an empty secret without error. */
+                throw authError ?? new NativeMessageError(NativeMessageErrorType.BIOMETRICS_FAILED);
             }
 
             /** Check verifier with the given secret or fail */
             const verified = await checkVerifier(secret, verifier).catch(() => false);
 
             if (!verified) {
+                logger.warn('[DesktopLock] unlock failed (secret mismatch)');
                 if (unlockRetryCount >= 3) {
                     await auth.logout({ soft: false, broadcast: true });
-                    throw new Error(c('Warning').t`Too many attempts`);
+                    throw new NativeMessageError(NativeMessageErrorType.TOO_MANY_ATTEMPTS);
                 }
 
                 await auth.syncLock({ unlockRetryCount }).catch(noop);

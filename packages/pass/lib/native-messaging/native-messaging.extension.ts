@@ -38,12 +38,13 @@ export const createNativeMessagingService = (): NativeMessagingService => {
 
     const onDisconnect = (disconnectedPort: Runtime.Port) => {
         port = null;
+        const reason = disconnectedPort.error?.message ?? browser.runtime.lastError?.message ?? '(no reason)';
         const error = new NativeMessageError(
             getForNativeMessageErrorFromConnectionError(disconnectedPort.error, browser.runtime.lastError)
         );
         pendingRequests.forEach((req) => req.reject(error));
         pendingRequests.clear();
-        info('Disconnected', error.name);
+        info('Disconnected', error.name, reason);
     };
 
     const onMessage = async (rawResponse: unknown) => {

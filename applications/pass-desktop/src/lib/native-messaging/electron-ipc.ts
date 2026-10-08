@@ -25,7 +25,8 @@ export const setupElectronIpcHandlers = (getWindow: () => MaybeNull<BrowserWindo
         request: NativeMessagePayload<NativeMessageRequest>,
         sendResponse: (response: NativeMessagePayload<NativeMessageResponse>) => void
     ) => {
-        if (!isMainWindowEntry(getWindow()?.webContents.getURL() ?? '')) {
+        const currentURL = getWindow()?.webContents.getURL() ?? '';
+        if (!isMainWindowEntry(currentURL)) {
             info('App not on main URL, responding not logged in');
             sendResponse({
                 type: request.type,

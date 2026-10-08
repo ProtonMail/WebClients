@@ -33,7 +33,7 @@ export declare namespace msix_updater {
 }
 
 export declare namespace napi_native_messaging {
-    export function install(binaryPath: string): Promise<void>;
+    export function install(chromiumBinaryPath: string, firefoxBinaryPath: string): Promise<void>;
 }
 
 export declare namespace ssh_agent_napi {

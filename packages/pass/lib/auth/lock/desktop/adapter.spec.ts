@@ -1,9 +1,8 @@
 import createStore from '@proton/shared/lib/helpers/store';
 
 import { NativeMessageErrorType } from '../../../../types';
-import { SilentError } from '../../../../utils/errors/errors';
 import * as epoch from '../../../../utils/time/epoch';
-import { getMessageForNativeMessageError } from '../../../native-messaging/errors';
+import { NativeMessageError, getMessageForNativeMessageError } from '../../../native-messaging/errors';
 import { createAuthStore } from '../../store';
 import { LockMode } from '../types';
 import { desktopLockAdapterFactory } from './adapter';
@@ -43,6 +42,7 @@ describe('DesktopLock adapter', () => {
 
         setupLockSecretMessage.mockImplementation(async (_nm: any, _store: any, secret: string) => {
             capturedSecret = secret;
+            return 'uid-1-user-1';
         });
     });
 
@@ -72,6 +72,13 @@ describe('DesktopLock adapter', () => {
             expect(authStore.getLockMode()).toBe(LockMode.DESKTOP);
             expect(authStore.getLocked()).toBe(false);
         });
+
+        test('should persist the identifier returned by the setup message', async () => {
+            const { adapter, authStore } = setupAdapter();
+            await adapter.create('', 600);
+
+            expect(authStore.getDesktopLockUserIdentifier()).toBe('uid-1-user-1');
+        });
     });
 
     describe('delete', () => {
@@ -82,30 +89,33 @@ describe('DesktopLock adapter', () => {
 
             await adapter.delete('');
             expect(authStore.getDesktopLockVerifier()).toBeUndefined();
+            expect(authStore.getDesktopLockUserIdentifier()).toBeUndefined();
             expect(authStore.getLockMode()).toBe(LockMode.NONE);
             expect(authStore.getLocked()).toBe(false);
         });
     });
 
     describe('unlock', () => {
-        test('should throw if no verifier is stored', async () => {
+        test('should throw without fetching the secret if no verifier is stored', async () => {
             const { adapter } = setupAdapter();
             const configErr = getMessageForNativeMessageError(NativeMessageErrorType.DESKTOP_LOCK_NOT_CONFIGURED);
             await expect(adapter.unlock('')).rejects.toThrow(configErr);
             expect(unlockMessage).not.toHaveBeenCalled();
         });
 
-        test('should succeed and unlock when desktop returns the correct secret', async () => {
+        test('should fetch the secret from the desktop app and unlock when it matches', async () => {
             const { adapter, authStore } = setupAdapter();
             await adapter.create('', 600);
             expect(capturedSecret).not.toBe('');
+            unlockMessage.mockResolvedValue(capturedSecret);
 
-            const result = await adapter.unlock(capturedSecret);
+            const result = await adapter.unlock('');
+            expect(unlockMessage).toHaveBeenCalledTimes(1);
             expect(result).toEqual(capturedSecret);
             expect(authStore.getLocked()).toBe(false);
         });
 
-        test('should throw if desktop returns a different secret than the one stored', async () => {
+        test('should throw if the desktop app returns a different secret than the one stored', async () => {
             const { adapter } = setupAdapter();
             await adapter.create('', 600);
             unlockMessage.mockResolvedValue('wrong-secret');
@@ -115,25 +125,45 @@ describe('DesktopLock adapter', () => {
         test('on success: writes single combined syncLock with reset retry count + epoch', async () => {
             const { adapter, auth } = setupAdapter();
             await adapter.create('', 600);
+            unlockMessage.mockResolvedValue(capturedSecret);
 
             auth.syncLock.mockClear();
             getEpoch.mockReturnValue(1700001234);
 
-            await adapter.unlock(capturedSecret);
+            await adapter.unlock('');
             expect(auth.syncLock).toHaveBeenCalledTimes(1);
             expect(auth.syncLock).toHaveBeenCalledWith({ unlockRetryCount: 0, lockLastExtendTime: 1700001234 });
         });
 
-        test('on empty secret with retryCount < 3: syncs retry count, locks, throws SilentError', async () => {
+        test('on empty secret with retryCount < 3: syncs retry count, locks, throws BIOMETRICS_FAILED', async () => {
             const { adapter, auth, authStore } = setupAdapter();
             await adapter.create('', 600);
             authStore.setUnlockRetryCount(1);
+            unlockMessage.mockResolvedValue('');
             auth.syncLock.mockClear();
 
-            await expect(adapter.unlock('')).rejects.toThrow(SilentError);
+            const error = await adapter.unlock('').catch((err) => err);
+            expect(error).toBeInstanceOf(NativeMessageError);
+            expect(error.type).toBe(NativeMessageErrorType.BIOMETRICS_FAILED);
 
             expect(auth.syncLock).toHaveBeenCalledWith({ unlockRetryCount: 2 });
             expect(auth.lock).toHaveBeenCalledWith(LockMode.DESKTOP, { broadcast: true, soft: true });
+            expect(auth.logout).not.toHaveBeenCalled();
+        });
+
+        test('on an infrastructure error (timeout): rethrows the type without counting a failed attempt', async () => {
+            const { adapter, auth } = setupAdapter();
+            await adapter.create('', 600);
+            unlockMessage.mockRejectedValue(new NativeMessageError(NativeMessageErrorType.TIMEOUT));
+            auth.syncLock.mockClear();
+
+            const error = await adapter.unlock('').catch((err) => err);
+            expect(error).toBeInstanceOf(NativeMessageError);
+            expect(error.type).toBe(NativeMessageErrorType.TIMEOUT);
+
+            /** Infra errors mean the biometric check never ran: no retry increment, no lock, no logout. */
+            expect(auth.syncLock).not.toHaveBeenCalled();
+            expect(auth.lock).not.toHaveBeenCalled();
             expect(auth.logout).not.toHaveBeenCalled();
         });
 
@@ -141,10 +171,11 @@ describe('DesktopLock adapter', () => {
             const { adapter, auth, authStore } = setupAdapter();
             await adapter.create('', 600);
             authStore.setUnlockRetryCount(0);
+            unlockMessage.mockResolvedValue('not-the-right-secret');
             auth.syncLock.mockClear();
 
             const secretErr = getMessageForNativeMessageError(NativeMessageErrorType.SECRET_MISMATCH);
-            await expect(adapter.unlock('not-the-right-secret')).rejects.toThrow(secretErr);
+            await expect(adapter.unlock('')).rejects.toThrow(secretErr);
 
             expect(auth.syncLock).toHaveBeenCalledWith({ unlockRetryCount: 1 });
             expect(auth.lock).toHaveBeenCalledWith(LockMode.DESKTOP, { broadcast: true, soft: true });
@@ -155,7 +186,8 @@ describe('DesktopLock adapter', () => {
             const { adapter, auth, authStore } = setupAdapter();
             await adapter.create('', 600);
             authStore.setUnlockRetryCount(2);
-            await expect(adapter.unlock('wrong')).rejects.toThrow('Too many attempts');
+            unlockMessage.mockResolvedValue('wrong');
+            await expect(adapter.unlock('')).rejects.toThrow('Too many attempts');
             expect(auth.logout).toHaveBeenCalledWith({ soft: false, broadcast: true });
         });
     });

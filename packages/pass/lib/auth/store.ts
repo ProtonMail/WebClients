@@ -26,6 +26,7 @@ const PASS_OFFLINE_CONFIG_KEY = 'pass:offline_config';
 const PASS_OFFLINE_KD_KEY = 'pass:offline_kd';
 const PASS_OFFLINE_VERIFIER_KEY = 'pass:offline_verifier';
 const PASS_DESKTOP_LOCK_VERIFIER_KEY = 'pass:desktop_lock_verifier';
+const PASS_DESKTOP_LOCK_USER_IDENTIFIER_KEY = 'pass:desktop_lock_user_identifier';
 const PASS_PERSISTENT_SESSION_KEY = 'pass:persistent';
 const PASS_REFRESH_TIME_KEY = 'pass:refresh_time';
 const PASS_REFRESH_TOKEN_KEY = 'pass:refresh_token';
@@ -85,6 +86,7 @@ export const createAuthStore = (store: Store) => {
             RefreshToken: authStore.getRefreshToken() ?? '',
             sessionLockToken: authStore.getLockToken(),
             desktopLockVerifier: authStore.getDesktopLockVerifier(),
+            desktopLockUserIdentifier: authStore.getDesktopLockUserIdentifier(),
             twoPasswordMode: authStore.getTwoPasswordMode(),
             UID: authStore.getUID() ?? '',
             unlockRetryCount: authStore.getUnlockRetryCount(),
@@ -124,6 +126,9 @@ export const createAuthStore = (store: Store) => {
             if (session.AccessToken) authStore.setAccessToken(session.AccessToken);
             if (session.cookies) authStore.setCookieAuth(session.cookies);
             if (session.desktopLockVerifier) authStore.setDesktopLockVerifier(session.desktopLockVerifier);
+            if (session.desktopLockUserIdentifier) {
+                authStore.setDesktopLockUserIdentifier(session.desktopLockUserIdentifier);
+            }
             if (session.encryptedOfflineKD) authStore.setEncryptedOfflineKD(session.encryptedOfflineKD);
             if (session.extraPassword) authStore.setExtraPassword(true);
             if (session.keyPassword) authStore.setPassword(session.keyPassword);
@@ -202,6 +207,9 @@ export const createAuthStore = (store: Store) => {
 
         setDesktopLockVerifier: (v: Maybe<string>) => store.set(PASS_DESKTOP_LOCK_VERIFIER_KEY, v),
         getDesktopLockVerifier: (): Maybe<string> => store.get(PASS_DESKTOP_LOCK_VERIFIER_KEY),
+
+        setDesktopLockUserIdentifier: (v: Maybe<string>) => store.set(PASS_DESKTOP_LOCK_USER_IDENTIFIER_KEY, v),
+        getDesktopLockUserIdentifier: (): Maybe<string> => store.get(PASS_DESKTOP_LOCK_USER_IDENTIFIER_KEY),
 
         setLastUsedAt: (lastUsedAt: number): void => store.set(PASS_LAST_USED_AT, lastUsedAt),
         getLastUsedAt: (): number => store.get(PASS_LAST_USED_AT) ?? 0,

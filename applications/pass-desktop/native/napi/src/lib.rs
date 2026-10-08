@@ -70,8 +70,8 @@ pub mod napi_native_messaging {
     use shared::nm_install;
 
     #[napi]
-    pub async fn install(binary_path: String) -> napi::Result<()> {
-        napi_res!(nm_install::nm_install(&binary_path))
+    pub async fn install(chromium_binary_path: String, firefox_binary_path: String) -> napi::Result<()> {
+        napi_res!(nm_install::nm_install(&chromium_binary_path, &firefox_binary_path))
     }
 }
 
