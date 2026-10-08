@@ -74,7 +74,6 @@ export const selectActiveImportersErrors = createSelector(
     }
 );
 
-// TODO: ApiImporterState.PAUSED is not yet implemented by BE for Drive.
 // TODO: Check if we need to implement something for ApiImporterState.CANCELED
 const DRIVE_IMPORT_RUNNING_STATES = [ApiImporterState.QUEUED, ApiImporterState.RUNNING, ApiImporterState.DELAYED];
 
@@ -88,18 +87,28 @@ const selectIsDriveImportRunning = createSelector(selectActiveImporters, (active
     )
 );
 
+// Drive is only paused by the backend when the user runs out of storage, no ErrorCode is sent.
+const selectIsDriveImportPaused = createSelector(selectActiveImporters, (activeImporters): boolean =>
+    activeImporters.some(
+        ({ product, importState }) => product === ImportType.DRIVE && importState === ApiImporterState.PAUSED
+    )
+);
+
 export interface DriveImportStatus {
     /** False until loadImporters resolved once, so callers can tell "not known yet" apart from "nothing imported". */
     isLoaded: boolean;
     isImporting: boolean;
+    /** Stopped by the backend because the user ran out of storage --> resumable from settings. */
+    isPaused: boolean;
     hasCompletedImport: boolean;
 }
 
 export const selectDriveImportStatus = createSelector(
-    [selectHasDriveImporter, selectIsDriveImportRunning, selectImportersLoading],
-    (hasDriveImporter, isImporting, loading): DriveImportStatus => ({
+    [selectHasDriveImporter, selectIsDriveImportRunning, selectIsDriveImportPaused, selectImportersLoading],
+    (hasDriveImporter, isImporting, isPaused, loading): DriveImportStatus => ({
         isLoaded: loading === 'success' || loading === 'failed',
         isImporting,
-        hasCompletedImport: hasDriveImporter && !isImporting,
+        isPaused,
+        hasCompletedImport: hasDriveImporter && !isImporting && !isPaused,
     })
 );

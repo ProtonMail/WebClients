@@ -7,6 +7,7 @@ import {
     selectOauthImportStateStep,
 } from '../../../../logic/draft/oauthDraft/oauthDraft.selector';
 import { easySwitchRender } from '../../../../tests/render';
+import { createImporterTask } from '../StepLoading/useStepLoadingImporting.helpers';
 import { DriveImportProcessModal } from './DriveImportProcessModal';
 
 // Only stub the state read by this component and the helper that would hit the API - dispatch
@@ -39,6 +40,10 @@ const setState = (
 };
 
 describe('DriveImportProcessModal', () => {
+    beforeEach(() => {
+        jest.clearAllMocks();
+    });
+
     it('shows a disabled in-progress state while the import is being set up', () => {
         setState('prepare-import');
 
@@ -59,12 +64,29 @@ describe('DriveImportProcessModal', () => {
         expect(screen.getByTestId('modal:close')).toBeEnabled();
     });
 
-    it('shows the storage warning step for a too-short-storage error', () => {
+    it('starts the import anyway when storage will not be enough', () => {
         setState('prepare-import', { error: { code: IMPORT_ERROR.TOO_SHORT, message: 'x' } });
 
         easySwitchRender(<DriveImportProcessModal />);
 
+        screen.getByText('Preparing your import');
+        expect(createImporterTask).toHaveBeenCalled();
+    });
+
+    it('shows the storage warning step once the import has started', () => {
+        setState('success', { error: { code: IMPORT_ERROR.TOO_SHORT, message: 'x' } });
+
+        easySwitchRender(<DriveImportProcessModal />);
+
         screen.getByText(/storage won't be enough for this import/);
+    });
+
+    it('does not start the import on a blocking drive error', () => {
+        setState('prepare-import', { error: { code: IMPORT_ERROR.NOT_EXISTS, message: 'x' } });
+
+        easySwitchRender(<DriveImportProcessModal />);
+
+        expect(createImporterTask).not.toHaveBeenCalled();
     });
 
     it('shows the empty-drive step when there is nothing to import', () => {
