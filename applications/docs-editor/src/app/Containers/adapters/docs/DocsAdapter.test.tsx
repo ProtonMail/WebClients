@@ -5,6 +5,7 @@ import type { EditorRequiresClientMethods } from '@proton/docs-shared'
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact'
 import { isDevOrBlack } from '@proton/shared/lib/env'
 import { TelemetryDocsEditorEvents } from '@proton/shared/lib/api/telemetry'
+import { DocsEditorTelemetryEvents } from '../../Docs/contract/DocsEditorTelemetry'
 import type { SafeDocsUserState } from '../../Docs/public'
 import { useDocsDependencies, type DocsDependencies } from '../../Docs/DocsDependenciesProvider'
 import { ApplicationProvider } from '../../ApplicationProvider'
@@ -312,11 +313,31 @@ describe('DocsAdapter runtime services', () => {
     host.clientInvoker.reportWordCount = jest.fn().mockRejectedValue(error)
     host.dependencies.openLink('https://example.test')
     host.dependencies.reportToolbarInteraction()
-    host.dependencies.reportTelemetry(TelemetryDocsEditorEvents.table_of_contents_available)
+    host.dependencies.reportTelemetry(DocsEditorTelemetryEvents.table_of_contents_available)
     host.dependencies.reportWordCount({})
     await waitFor(() => expect(reportErrorToSentry).toHaveBeenCalledTimes(4))
     expect(reportErrorToSentry).toHaveBeenCalledWith(error, undefined, undefined)
     host.dependencies.reportError(error, { source: 'test' })
     expect(reportErrorToSentry).toHaveBeenLastCalledWith(error, undefined, { source: 'test' })
+  })
+
+  it('maps each Docs telemetry event to the unchanged host event', () => {
+    const host = setup()
+    host.clientInvoker.editorReportingTelemetry = jest.fn(async () => {})
+    host.dependencies.reportTelemetry(DocsEditorTelemetryEvents.table_of_contents_available)
+    host.dependencies.reportTelemetry(DocsEditorTelemetryEvents.table_of_contents_opened)
+    host.dependencies.reportTelemetry(DocsEditorTelemetryEvents.table_of_contents_heading_clicked)
+    expect(host.clientInvoker.editorReportingTelemetry).toHaveBeenNthCalledWith(
+      1,
+      TelemetryDocsEditorEvents.table_of_contents_available,
+    )
+    expect(host.clientInvoker.editorReportingTelemetry).toHaveBeenNthCalledWith(
+      2,
+      TelemetryDocsEditorEvents.table_of_contents_opened,
+    )
+    expect(host.clientInvoker.editorReportingTelemetry).toHaveBeenNthCalledWith(
+      3,
+      TelemetryDocsEditorEvents.table_of_contents_heading_clicked,
+    )
   })
 })
