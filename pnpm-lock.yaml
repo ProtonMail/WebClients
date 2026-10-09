@@ -1729,9 +1729,6 @@ importers:
       '@proton/polyfill':
         specifier: workspace:^
         version: link:../../packages/polyfill
-      '@proton/sanitize':
-        specifier: workspace:^
-        version: link:../../packages/sanitize
       '@proton/shared':
         specifier: workspace:^
         version: link:../../packages/shared
@@ -1789,6 +1786,9 @@ importers:
       docx-preview-cjs:
         specifier: 0.3.7
         version: 0.3.7
+      dompurify:
+        specifier: ^3.4.16
+        version: 3.4.16
       fflate:
         specifier: ^0.8.3
         version: 0.8.3

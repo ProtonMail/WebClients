@@ -1,5 +1,25 @@
-import { content as sanitizeContent } from '@proton/sanitize/purify'
+import createDOMPurify, { type Config } from 'dompurify'
 import { isAllowedImageSrc } from '../../Conversion/ImageSrcUtils'
+
+// This HTML is inspected only; it must never be attached to the document or used as the pasted content.
+const clipboardHtmlConfig: Config & { RETURN_DOM_FRAGMENT: true } = {
+  ALLOWED_URI_REGEXP: /^(?:(?:(?:f|ht)tps?|mailto|tel|callto|cid|blob|xmpp|data):|[^a-z]|[a-z+.\-]+(?:[^a-z+.\-:]|$))/i,
+  ADD_TAGS: ['proton-src', 'base'],
+  ADD_ATTR: ['target', 'proton-src'],
+  FORBID_TAGS: ['style', 'input', 'form', 'textarea'],
+  FORBID_ATTR: ['srcset', 'for'],
+  USE_PROFILES: { html: true },
+  ALLOW_UNKNOWN_PROTOCOLS: true,
+  WHOLE_DOCUMENT: false,
+  RETURN_DOM: true,
+  RETURN_DOM_FRAGMENT: true,
+}
+
+export function sanitizeClipboardHtml(html: string): DocumentFragment {
+  // A fresh instance keeps the inspection independent of other DOMPurify hooks
+  // and configuration in the host application.
+  return createDOMPurify(window).sanitize(html, clipboardHtmlConfig)
+}
 
 export function hasBlockedImageInClipboard(clipboardData: DataTransfer | null, namespace: string): boolean {
   if (!clipboardData) {
@@ -17,7 +37,7 @@ export function hasBlockedImageInClipboard(clipboardData: DataTransfer | null, n
   }
 
   // Inspect a sanitized, detached fragment without inserting clipboard markup into the document.
-  const fragment = sanitizeContent(clipboardData.getData('text/html')) as DocumentFragment
+  const fragment = sanitizeClipboardHtml(clipboardData.getData('text/html'))
   return Array.from(fragment.querySelectorAll('img[src]')).some((image) => {
     const src = image.getAttribute('src') || ''
     return src.length > 0 && !isAllowedImageSrc(src)
