@@ -16,7 +16,7 @@ import { isCaptionAgent } from '../../utils/getAgentDisplayInfo';
 const TRANSCRIPTION_TOPIC = 'lk.transcription';
 const FINAL_LINGER_MS = 4000;
 const STALE_SEGMENT_MS = 15000;
-// Enough history to scroll back through a few exchanges without the band growing unbounded.
+// How many lines are kept on screen to scroll back through; older ones expire.
 const MAX_VISIBLE = 6;
 // Gap between two same-speaker segments below which we treat the split as a breath and merge them.
 export const MERGE_GAP_MS = 1500;
