@@ -29,9 +29,13 @@ interface UseDictationOptions {
      * dictation region with this value rather than append to it.
      */
     onTranscriptUpdate: (transcript: string) => void;
+    /** Language code to transcribe in, or "auto" to let the model detect it. */
+    language?: string;
 }
 
-export const useDictation = ({ onTranscriptUpdate }: UseDictationOptions) => {
+export const useDictation = ({ onTranscriptUpdate, language }: UseDictationOptions) => {
+    const languageRef = useRef(language);
+    languageRef.current = language;
     const [isDictating, setIsDictating] = useState(false);
     const [isConnected, setIsConnected] = useState(false);
     const [dictationError, setDictationError] = useState(false);
@@ -161,6 +165,11 @@ export const useDictation = ({ onTranscriptUpdate }: UseDictationOptions) => {
                 }
 
                 const sessionUpdate: Record<string, unknown> = { type: 'session.update' };
+                // Without an explicit language the model may guess and emit unrelated scripts.
+                const transcriptionLanguage = languageRef.current;
+                if (transcriptionLanguage && transcriptionLanguage !== 'auto') {
+                    sessionUpdate.session = { input_audio_transcription: { language: transcriptionLanguage } };
+                }
                 if (encryption) {
                     const requestKey = await encryption.encryptRequestKey(DEFAULT_LUMO_PUB_KEY);
                     if (!dictationActiveRef.current || wsRef.current !== ws) {

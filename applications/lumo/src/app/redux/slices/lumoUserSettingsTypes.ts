@@ -68,4 +68,6 @@ export interface LumoUserSettings {
     preferredModelTier?: 'lumo-lite' | 'lumo-max' | 'apertus-15' | 'lumo-preview';
     preferredResponseMode?: 'fast' | 'thinking';
     apertusOnboardingAcceptedAt?: number;
+    /** Dictation language: a supported language code or "auto". Undefined until the user has chosen. */
+    dictationLanguage?: string;
 }
