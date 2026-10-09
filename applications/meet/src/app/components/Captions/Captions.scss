@@ -7,6 +7,9 @@
 	padding-inline: 1rem;
 	overflow-y: auto;
 	overscroll-behavior: contain;
+
+	// Starts out following the newest line; see `handleScroll` for when anchoring is turned back on.
+	overflow-anchor: none;
 	background-color: var(--background-norm);
 	font-size: 0.875rem;
 	font-weight: var(--font-weight-medium);

@@ -119,6 +119,9 @@ const CaptionsFeed = () => {
         const el = scrollRef.current;
         if (el) {
             followNewestRef.current = el.scrollHeight - el.scrollTop - el.clientHeight <= FOLLOW_THRESHOLD_PX;
+            // Anchoring keeps a reader's place as old lines drop off the top, but while following it
+            // would shift the view up instead (with no size change for the observer to undo).
+            el.style.overflowAnchor = followNewestRef.current ? 'none' : 'auto';
         }
     };
 
