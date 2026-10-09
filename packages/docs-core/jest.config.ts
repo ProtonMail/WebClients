@@ -6,7 +6,6 @@ const jestConfig: Config = {
   ...(JEST_CACHE_DIRECTORY ? { cacheDirectory: JEST_CACHE_DIRECTORY } : {}),
   collectCoverage: process.env.COLLECT_COVERAGE === 'true',
   setupFilesAfterEnv: ['./jest.setup.js'],
-  moduleDirectories: ['<rootDir>/node_modules', 'node_modules'],
   collectCoverageFrom: ['lib/**/*.{js,jsx,ts,tsx}', '!lib/app/locales.ts'],
   testEnvironment: '@proton/jest-env',
   resolver: './jest.resolver.js',
