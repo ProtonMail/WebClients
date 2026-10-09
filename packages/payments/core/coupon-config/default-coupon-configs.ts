@@ -1,3 +1,4 @@
+import { blackFriday2026Metadata } from './configs/black-friday-2026';
 import { cancellationFlowMetadata } from './configs/cancellation-flow';
 import { monthlyNudgeMetadata } from './configs/monthly-nudge';
 import { porkbunMetadata } from './configs/porkbun';
@@ -11,6 +12,7 @@ import type { CouponConfigMetadata } from './interface';
 export const defaultCouponConfigMetadata: CouponConfigMetadata[] = [
     monthlyNudgeMetadata,
     vpn15mMetadata,
+    blackFriday2026Metadata,
     cancellationFlowMetadata,
     tryMailPlus0724Metadata,
     tryMailPlus0926Metadata,

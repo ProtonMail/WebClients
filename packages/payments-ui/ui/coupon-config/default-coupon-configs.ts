@@ -1,3 +1,4 @@
+import { blackFriday2026Config } from './blackFriday2026';
 import { cancellationFlow } from './cancellation-flow';
 import type { CouponConfig } from './interface';
 import { monthlyNudgeConfig } from './monthlyNudge';
@@ -11,6 +12,7 @@ import { vpn15mConfig } from './vpn15m';
 export const defaultCouponConfigs: CouponConfig[] = [
     monthlyNudgeConfig,
     vpn15mConfig,
+    blackFriday2026Config,
     cancellationFlow,
     tryMailPlus0724Config,
     tryMailPlus0926Config,
