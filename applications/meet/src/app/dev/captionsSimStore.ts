@@ -19,6 +19,7 @@ export type CaptionsSimEvent = { type: 'segment'; segment: CaptionsSimSegment } 
 export const CAPTIONS_SIM_ID_PREFIX = '__captions_sim__';
 
 let status: CaptionsSimStatus = 'off';
+let microphoneUnavailable = false;
 const statusListeners = new Set<() => void>();
 const eventListeners = new Set<(event: CaptionsSimEvent) => void>();
 
@@ -32,6 +33,16 @@ export const setCaptionsSimStatus = (next: CaptionsSimStatus) => {
     statusListeners.forEach((listener) => listener());
 };
 
+export const getCaptionsSimMicrophoneUnavailable = () => microphoneUnavailable;
+
+export const setCaptionsSimMicrophoneUnavailable = (next: boolean) => {
+    if (microphoneUnavailable === next) {
+        return;
+    }
+    microphoneUnavailable = next;
+    statusListeners.forEach((listener) => listener());
+};
+
 const subscribeCaptionsSimStatus = (listener: () => void) => {
     statusListeners.add(listener);
     return () => {
@@ -41,6 +52,13 @@ const subscribeCaptionsSimStatus = (listener: () => void) => {
 
 export const useCaptionsSimStatus = () =>
     useSyncExternalStore(subscribeCaptionsSimStatus, getCaptionsSimStatus, getCaptionsSimStatus);
+
+export const useCaptionsSimMicrophoneUnavailable = () =>
+    useSyncExternalStore(
+        subscribeCaptionsSimStatus,
+        getCaptionsSimMicrophoneUnavailable,
+        getCaptionsSimMicrophoneUnavailable
+    );
 
 export const emitCaptionsSimEvent = (event: CaptionsSimEvent) => {
     eventListeners.forEach((listener) => listener(event));

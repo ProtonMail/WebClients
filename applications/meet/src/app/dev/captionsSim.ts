@@ -6,6 +6,7 @@ import {
     CAPTIONS_SIM_ID_PREFIX,
     emitCaptionsSimEvent,
     getCaptionsSimStatus,
+    setCaptionsSimMicrophoneUnavailable,
     setCaptionsSimStatus,
 } from './captionsSimStore';
 
@@ -27,6 +28,8 @@ export interface CaptionsSim {
     loseConnection(): void;
     /** Restores the connection dropped by `loseConnection`. */
     reconnect(): void;
+    /** Pretends the local microphone is missing or blocked, until called with `true` or stopped. */
+    setMicrophoneAvailable(available: boolean): void;
     /** Streams `text` into the captions as the agent would, resolving once it is fully spoken. */
     say(text: string, options?: CaptionsSayOptions): Promise<void>;
     sayShort(options?: CaptionsSayOptions): Promise<void>;
@@ -163,6 +166,7 @@ export const createCaptionsSim = (dispatch: Dispatch<UnknownAction>): CaptionsSi
             generation += 1;
             clearLoading();
             emitCaptionsSimEvent({ type: 'clear' });
+            setCaptionsSimMicrophoneUnavailable(false);
             setCaptionsSimStatus('off');
         },
 
@@ -184,6 +188,10 @@ export const createCaptionsSim = (dispatch: Dispatch<UnknownAction>): CaptionsSi
             if (getCaptionsSimStatus() === 'disconnected') {
                 setCaptionsSimStatus('ready');
             }
+        },
+
+        setMicrophoneAvailable(available) {
+            setCaptionsSimMicrophoneUnavailable(!available);
         },
 
         say,
