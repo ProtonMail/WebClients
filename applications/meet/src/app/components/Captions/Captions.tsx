@@ -3,10 +3,14 @@ import { useEffect, useRef } from 'react';
 import { c } from 'ttag';
 
 import { useMeetSelector } from '@proton/meet/store/hooks';
+import {
+    selectMicrophonePermission,
+    selectMicrophones,
+} from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { selectParticipantDecryptedNameMap } from '@proton/meet/store/slices/participants/participantsSlice';
 import clsx from '@proton/utils/clsx';
 
-import { useCaptionsSimStatus } from '../../dev/captionsSimStore';
+import { useCaptionsSimMicrophoneUnavailable, useCaptionsSimStatus } from '../../dev/captionsSimStore';
 import { useCaptionsAgentLifecycle } from '../../hooks/captions/useCaptionsAgentLifecycle';
 import { useCaptionsAgentWaitTimeout } from '../../hooks/captions/useCaptionsAgentWaitTimeout';
 import { useCaptionsPreference } from '../../hooks/captions/useCaptionsPreference';
@@ -67,7 +71,9 @@ const CaptionsError = ({ title, detail }: { title: string; detail: string }) => 
     </div>
 );
 
-const CaptionsStatusMessage = ({ status }: { status: Exclude<CaptionsStatus, 'active'> }) => {
+type CaptionsMessage = Exclude<CaptionsStatus, 'active'> | 'microphoneUnavailable';
+
+const CaptionsStatusMessage = ({ status }: { status: CaptionsMessage }) => {
     switch (status) {
         case 'loading':
             return (
@@ -97,12 +103,33 @@ const CaptionsStatusMessage = ({ status }: { status: Exclude<CaptionsStatus, 'ac
                     detail={c('Error').t`Connection lost — captions will resume when reconnected`}
                 />
             );
+        case 'microphoneUnavailable':
+            return (
+                <CaptionsError
+                    title={c('Error').t`Microphone not detected`}
+                    detail={c('Error').t`Check your audio settings and try again`}
+                />
+            );
     }
+};
+
+const useMicrophoneUnavailable = () => {
+    const microphones = useMeetSelector(selectMicrophones);
+    const permission = useMeetSelector(selectMicrophonePermission);
+    const simulated = useCaptionsSimMicrophoneUnavailable();
+    // Only an outright refusal counts: browsers without the Permissions API never get past 'prompt'.
+    return simulated || microphones.length === 0 || permission === 'denied';
 };
 
 const CaptionsFeed = () => {
     const { segments, status } = useTranscriptions();
     const nameMap = useMeetSelector(selectParticipantDecryptedNameMap);
+    const microphoneUnavailable = useMicrophoneUnavailable();
+    let message: CaptionsMessage | undefined = status === 'active' ? undefined : status;
+    // Everyone else is still captioned, so a missing microphone only stands in for the idle messages.
+    if (microphoneUnavailable && (status === 'loading' || status === 'ready')) {
+        message = 'microphoneUnavailable';
+    }
 
     const scrollRef = useRef<HTMLDivElement>(null);
     const contentRef = useRef<HTMLDivElement>(null);
@@ -149,8 +176,8 @@ const CaptionsFeed = () => {
             onScroll={handleScroll}
         >
             <div ref={contentRef} className="captions__content flex flex-column flex-nowrap">
-                {status !== 'active' ? (
-                    <CaptionsStatusMessage status={status} />
+                {message ? (
+                    <CaptionsStatusMessage status={message} />
                 ) : (
                     segments.map((seg, index) => {
                         // Consecutive lines from one speaker read as a single block under one name.

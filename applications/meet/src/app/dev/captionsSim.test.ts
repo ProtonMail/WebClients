@@ -1,6 +1,10 @@
 import { createCaptionsSim } from './captionsSim';
 import type { CaptionsSimEvent, CaptionsSimSegment } from './captionsSimStore';
-import { getCaptionsSimStatus, subscribeCaptionsSimEvents } from './captionsSimStore';
+import {
+    getCaptionsSimMicrophoneUnavailable,
+    getCaptionsSimStatus,
+    subscribeCaptionsSimEvents,
+} from './captionsSimStore';
 
 describe('createCaptionsSim', () => {
     const dispatch = vi.fn();
@@ -99,5 +103,20 @@ describe('createCaptionsSim', () => {
         expect(getCaptionsSimStatus()).toBe('ready');
 
         sim.stop();
+    });
+
+    it('keeps the microphone unavailable until it is restored or captions are stopped', () => {
+        const sim = createCaptionsSim(dispatch);
+
+        sim.start(0);
+        sim.setMicrophoneAvailable(false);
+        expect(getCaptionsSimMicrophoneUnavailable()).toBe(true);
+
+        sim.setMicrophoneAvailable(true);
+        expect(getCaptionsSimMicrophoneUnavailable()).toBe(false);
+
+        sim.setMicrophoneAvailable(false);
+        sim.stop();
+        expect(getCaptionsSimMicrophoneUnavailable()).toBe(false);
     });
 });
