@@ -14,13 +14,17 @@ import type OfferSubscription from './offerSubscription';
  * `..._calendar_web`. Note the plan names are underscore-separated (`mail_plus`, not `mailplus`), so a
  * ref does not have a fixed segment count. Anything parsing these should match on the known plan names
  * rather than splitting on position.
+ *
+ * Pass only ever reaches an offer as an entry point into the account app (`/pass/...`), and reports as
+ * its own `pass` app so that traffic can be told apart.
  */
-export type OfferProduct = 'mail' | 'calendar' | 'drive';
+export type OfferProduct = 'mail' | 'calendar' | 'drive' | 'pass';
 
 const APP_REF_NAMES: Partial<Record<APP_NAMES, OfferProduct>> = {
     [APPS.PROTONMAIL]: 'mail',
     [APPS.PROTONCALENDAR]: 'calendar',
     [APPS.PROTONDRIVE]: 'drive',
+    [APPS.PROTONPASS]: 'pass',
 };
 
 /** The `<app>` segment */
