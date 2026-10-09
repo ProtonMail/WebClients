@@ -1,6 +1,7 @@
 import { ADDON_NAMES, ADDON_PREFIXES, FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
 import { SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
+import { APPS } from '@proton/shared/lib/constants';
 
 import { showAddonCustomizer } from './showAddonCustomizer';
 
@@ -178,6 +179,62 @@ describe('showAddonCustomizer', () => {
                     })
                 ).toBe(true);
             });
+        });
+    });
+
+    describe('app context', () => {
+        it.each([
+            [ADDON_PREFIXES.LUMO, APPS.PROTONMAIL],
+            [ADDON_PREFIXES.LUMO, APPS.PROTONCALENDAR],
+            [ADDON_PREFIXES.MEET, APPS.PROTONMAIL],
+            [ADDON_PREFIXES.MEET, APPS.PROTONCALENDAR],
+        ])('should hide %s when opened from %s', (addonType, app) => {
+            expect(
+                showAddonCustomizer(addonType, {
+                    subscription: FREE_SUBSCRIPTION,
+                    couponConfig: undefined,
+                    planIDs: { [PLANS.MAIL]: 1 },
+                    app,
+                })
+            ).toBe(false);
+        });
+
+        it('should show the addon in Mail when it is already selected', () => {
+            expect(
+                showAddonCustomizer(ADDON_PREFIXES.LUMO, {
+                    subscription: FREE_SUBSCRIPTION,
+                    couponConfig: undefined,
+                    planIDs: { [PLANS.MAIL]: 1, [ADDON_NAMES.LUMO_MAIL]: 1 },
+                    app: APPS.PROTONMAIL,
+                })
+            ).toBe(true);
+        });
+
+        it('should show the addon when opened from another app', () => {
+            expect(
+                showAddonCustomizer(ADDON_PREFIXES.MEET, {
+                    subscription: FREE_SUBSCRIPTION,
+                    couponConfig: undefined,
+                    planIDs: { [PLANS.MAIL]: 1 },
+                    app: APPS.PROTONDRIVE,
+                })
+            ).toBe(true);
+        });
+
+        it.each([
+            [ADDON_PREFIXES.LUMO, APPS.PROTONMAIL],
+            [ADDON_PREFIXES.LUMO, APPS.PROTONCALENDAR],
+            [ADDON_PREFIXES.MEET, APPS.PROTONMAIL],
+            [ADDON_PREFIXES.MEET, APPS.PROTONCALENDAR],
+        ])('should show %s on a business plan when opened from %s', (addonType, app) => {
+            expect(
+                showAddonCustomizer(addonType, {
+                    subscription: FREE_SUBSCRIPTION,
+                    couponConfig: undefined,
+                    planIDs: { [PLANS.MAIL_BUSINESS]: 1 },
+                    app,
+                })
+            ).toBe(true);
         });
     });
 });
