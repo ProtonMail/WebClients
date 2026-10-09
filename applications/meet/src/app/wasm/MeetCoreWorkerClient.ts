@@ -474,7 +474,7 @@ export class MeetCoreWorkerClient implements MeetCoreClient {
                 return;
             case 'meet-core:event:livekit-admin-change':
                 await emitMeetCoreLivekitAdminChangeEvent(
-                    message.roomId,
+                    message.meetingLinkName,
                     message.participantUid,
                     message.participantType
                 );

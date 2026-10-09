@@ -9,7 +9,7 @@ import { decryptSessionKey } from '@proton/meet/utils/cryptoUtils';
 export type GetSessionKey = (meetingLinkName: string, password?: string) => Promise<SessionKey | null>;
 export type GetSessionKeyBase64 = (meetingLinkName: string, password?: string) => Promise<string | null>;
 
-export const useSessionKey = ({ urlPassword }: { urlPassword: string }) => {
+export const useSessionKey = ({ urlMeetingPassword }: { urlMeetingPassword: string }) => {
     const dispatch = useMeetDispatch();
 
     const meetingSessionKeyBase64Ref = useRef<string | null>(null);
@@ -21,7 +21,7 @@ export const useSessionKey = ({ urlPassword }: { urlPassword: string }) => {
                 return sessionKeyRef.current;
             }
 
-            const meetingPassword = password ?? urlPassword;
+            const meetingPassword = password ?? urlMeetingPassword;
 
             const { meetingInfo } = await dispatch(meetingInfoThunk({ meetingLinkName, meetingPassword }));
 
@@ -33,7 +33,7 @@ export const useSessionKey = ({ urlPassword }: { urlPassword: string }) => {
             sessionKeyRef.current = sessionKey ?? null;
             return sessionKeyRef.current;
         },
-        [dispatch, urlPassword]
+        [dispatch, urlMeetingPassword]
     );
 
     const getSessionKeyBase64 = useCallback<GetSessionKeyBase64>(

@@ -12,7 +12,7 @@ import { IcMeetSettings } from '@proton/icons/icons/IcMeetSettings';
 import { IcMeetTranscription } from '@proton/icons/icons/IcMeetTranscription';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
-import { selectMeetingLink } from '@proton/meet/store/slices/meetingInfo';
+import { selectMeetingLink } from '@proton/meet/store/slices/currentMeeting';
 import {
     MeetingSideBars,
     selectMeetingReadyPopupOpen,

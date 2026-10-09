@@ -47,7 +47,7 @@ import './PrejoinContainer.scss';
 
 interface PrejoinContainerProps {
     handleJoin: (displayName: string) => void;
-    roomId: string;
+    meetingLinkName: string;
     instantMeeting: boolean;
     participantsCount: number | null;
     displayName: string;
@@ -60,7 +60,7 @@ interface PrejoinContainerProps {
 
 export const PrejoinContainer = ({
     handleJoin,
-    roomId,
+    meetingLinkName,
     instantMeeting = false,
     participantsCount,
     displayName,
@@ -224,7 +224,7 @@ export const PrejoinContainer = ({
                         />
                     ) : (
                         <PreJoinDetails
-                            roomId={roomId}
+                            meetingLinkName={meetingLinkName}
                             displayName={displayName}
                             keepDisplayName={hasStoredDisplayName}
                             onDisplayNameChange={(name) => {

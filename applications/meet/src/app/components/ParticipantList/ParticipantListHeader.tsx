@@ -4,7 +4,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { useIsWaitingRoomJoinEnabled } from '@proton/meet/hooks/useWaitingRoomFlags';
 import { useMeetSelector } from '@proton/meet/store/hooks';
-import { selectMaxParticipants } from '@proton/meet/store/slices/meetingInfo';
+import { selectMaxParticipants } from '@proton/meet/store/slices/currentMeeting';
 import { selectIsWaitingRoomHost } from '@proton/meet/store/slices/waitingRoomSlice';
 
 import { SideBarSearch } from '../SideBarSearch/SideBarSearch';

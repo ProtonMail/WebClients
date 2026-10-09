@@ -156,9 +156,9 @@ export const useParticipantNameMap = (meetingLinkName: string, decryptionKeyRef?
         }
     };
 
-    const updateAdminParticipant = async (roomId: string, participantUid: string, participantType: Number) => {
+    const updateAdminParticipant = async (meetingLinkName: string, participantUid: string, participantType: Number) => {
         if (participantUid === localParticipant?.identity) {
-            await getParticipants(roomId);
+            await getParticipants(meetingLinkName);
             return;
         }
 

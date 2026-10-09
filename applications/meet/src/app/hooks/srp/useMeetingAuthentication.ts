@@ -12,9 +12,9 @@ export const useMeetingAuthentication = () => {
     const { reportMeetError } = useMeetErrorReporting();
 
     const initHandshake = useCallback(
-        async (token: string) => {
+        async (meetingLinkName: string) => {
             try {
-                return await requestHandshakeInfo(api, token);
+                return await requestHandshakeInfo(api, meetingLinkName);
             } catch (error) {
                 if (!isExpectedApiFailure(error)) {
                     reportMeetError('Error initializing handshake', {
@@ -28,10 +28,16 @@ export const useMeetingAuthentication = () => {
     );
 
     const getAccessDetails = useCallback(
-        async ({ token, encryptedDisplayName }: { token: string; encryptedDisplayName: string }) => {
+        async ({
+            meetingLinkName,
+            encryptedDisplayName,
+        }: {
+            meetingLinkName: string;
+            encryptedDisplayName: string;
+        }) => {
             try {
                 const { AccessToken, WebsocketUrl } = await requestAccessToken(api, {
-                    meetingLinkName: token,
+                    meetingLinkName,
                     encryptedDisplayName,
                 });
 

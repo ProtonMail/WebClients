@@ -11,7 +11,7 @@ import {
     setPrejoinParticipantCount,
     setReconnectionFailed,
 } from '@proton/meet/store/slices/connectionSlice';
-import { addKeyRotationLog } from '@proton/meet/store/slices/meetingInfo';
+import { addKeyRotationLog } from '@proton/meet/store/slices/currentMeeting';
 import { resetParticipantMaps } from '@proton/meet/store/slices/participants/participantsSlice';
 import { encryptDisplayNameWithKey } from '@proton/meet/utils/cryptoUtils';
 import { sanitizeMessage } from '@proton/sanitize/purify';
@@ -34,7 +34,7 @@ export interface MeetingAccessDetails {
 }
 
 interface ConnectWithMlsParams {
-    meetingToken: string;
+    meetingLinkName: string;
     meetingPassword: string;
     displayName: string;
     timeoutMs: number;
@@ -75,7 +75,7 @@ interface UseMeetingConnectionParams {
     allowHealthCheck: () => void;
     disallowHealthCheck: () => void;
     initializeDevices: InitializeDevices;
-    getParticipants: (token: string) => Promise<void>;
+    getParticipants: (meetingLinkName: string) => Promise<void>;
     getQueryParticipantsCount: (meetingLinkName: string) => Promise<number | undefined>;
     reportMeetError: (msg: string, options?: unknown) => void;
     triggerFullReconnectionRef: MutableRefObject<(reason: RejoinReasonInfo) => void>;
@@ -123,7 +123,7 @@ export const useMeetingConnection = ({
     // Shared connect sequence used by both the initial join (useJoinFlow) and reconnection.
     const connectWithMls = useStableCallback(
         async ({
-            meetingToken,
+            meetingLinkName,
             meetingPassword: password,
             displayName: displayNameArg,
             timeoutMs,
@@ -140,7 +140,7 @@ export const useMeetingConnection = ({
                     ? await encryptDisplayNameWithKey(decryptionKeyRef.current, sanitizedDisplayName)
                     : '';
 
-                return getAccessDetails({ token: meetingToken, encryptedDisplayName });
+                return getAccessDetails({ meetingLinkName, encryptedDisplayName });
             };
 
             const t0 = performance.now();
@@ -153,7 +153,7 @@ export const useMeetingConnection = ({
             let participantCountPromise: Promise<number | undefined>;
             if (queryParticipantsCount) {
                 // Fire-and-forget: populates the prejoin loader count without blocking the join
-                participantCountPromise = getQueryParticipantsCount(meetingToken);
+                participantCountPromise = getQueryParticipantsCount(meetingLinkName);
                 void participantCountPromise.then((count) => dispatch(setPrejoinParticipantCount(count ?? 0)));
             } else {
                 participantCountPromise = Promise.resolve(undefined);
@@ -161,7 +161,7 @@ export const useMeetingConnection = ({
 
             const t1 = performance.now();
             const { key: groupKey, epoch } =
-                (await handleMlsSetup(meetingToken, accessToken, password, isWaitingRoom)) || {};
+                (await handleMlsSetup(meetingLinkName, accessToken, password, isWaitingRoom)) || {};
             const mlsSetupMs = Math.round(performance.now() - t1);
 
             reportMLSRelatedError(groupKey, epoch);
@@ -222,7 +222,7 @@ export const useMeetingConnection = ({
             if (resetParticipantsBeforeFetch) {
                 dispatch(resetParticipantMaps());
             }
-            await getParticipants(meetingToken);
+            await getParticipants(meetingLinkName);
 
             return {
                 connectionInfo,
@@ -249,7 +249,7 @@ export const useMeetingConnection = ({
         dispatch(setMlsRetrying(false));
         disallowHealthCheck();
 
-        const meetingToken = meetingLinkNameRef.current;
+        const meetingLinkName = meetingLinkNameRef.current;
 
         try {
             // Snapshot before room.disconnect() — the Disconnected handler clears this ref synchronously
@@ -280,7 +280,7 @@ export const useMeetingConnection = ({
             cleanupMlsState();
 
             await connectWithMls({
-                meetingToken,
+                meetingLinkName,
                 meetingPassword,
                 displayName,
                 timeoutMs: 20 * SECOND,
@@ -289,7 +289,7 @@ export const useMeetingConnection = ({
                 resetParticipantsBeforeFetch: true,
             });
 
-            meetingLinkNameRef.current = meetingToken;
+            meetingLinkNameRef.current = meetingLinkName;
             dispatch(setJoinedRoom(true));
             dispatch(setIsReconnecting(false));
             isReconnectingRef.current = false;

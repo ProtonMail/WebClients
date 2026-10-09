@@ -144,7 +144,7 @@ export const setupWasmDependencies = ({
 };
 
 interface SetupLiveKitAdminChangeEventParameters {
-    onLiveKitAdminChanged: (roomId: string, participantUid: string, participantType: number) => Promise<void>;
+    onLiveKitAdminChanged: (meetingLinkName: string, participantUid: string, participantType: number) => Promise<void>;
 }
 
 export const setupLiveKitAdminChangeEvent = ({ onLiveKitAdminChanged }: SetupLiveKitAdminChangeEventParameters) => {

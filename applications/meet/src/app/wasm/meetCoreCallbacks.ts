@@ -1,6 +1,6 @@
 type NewGroupKeyCallback = () => Promise<void> | void;
 type LivekitAdminChangeCallback = (
-    roomId: string,
+    meetingLinkName: string,
     participantUid: string,
     participantType: number
 ) => Promise<void> | void;
@@ -58,14 +58,14 @@ export const emitMeetCoreNewGroupKeyEvent = async () => {
 };
 
 export const emitMeetCoreLivekitAdminChangeEvent = async (
-    roomId: string,
+    meetingLinkName: string,
     participantUid: string,
     participantType: number
 ) => {
     if (!callbackRegistry.onLivekitAdminChange) {
         return;
     }
-    await callbackRegistry.onLivekitAdminChange(roomId, participantUid, participantType);
+    await callbackRegistry.onLivekitAdminChange(meetingLinkName, participantUid, participantType);
 };
 
 export const emitMeetCoreDisconnectionEvent = async () => {

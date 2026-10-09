@@ -22,16 +22,16 @@ import { usePreJoinWaitingRoom } from './usePreJoinWaitingRoom';
 interface UseWaitingRoomParams {
     meetingLinkName: string;
     getSessionKeyBase64: GetSessionKeyBase64;
-    prepareGuestSession: (meetingToken: string) => Promise<boolean>;
-    refreshGuestSession: (meetingToken: string) => Promise<boolean>;
-    joinAfterAdmission: (meetingToken: string) => Promise<void>;
+    prepareGuestSession: (meetingLinkName: string) => Promise<boolean>;
+    refreshGuestSession: (meetingLinkName: string) => Promise<boolean>;
+    joinAfterAdmission: (meetingLinkName: string) => Promise<void>;
     cleanupJoin: () => void;
 }
 
 type UseWaitingRoomResult = {
     providerProps: WaitingRoomContextValues;
     beginJoin: (
-        meetingToken: string,
+        meetingLinkName: string,
         meetingDetails: { canManageWaitingRoom: boolean; waitingRoom: boolean }
     ) => Promise<{ handled: boolean; isWaitingRoomHostJoin: boolean }>;
 };
@@ -53,7 +53,7 @@ export const useWaitingRoom = ({
     const isWaitingRoomHost = useMeetSelector(selectIsWaitingRoomHost);
     const admissionStatus = useMeetSelector(selectAdmissionStatus);
 
-    const waitingRoomMeetLinkRef = useRef<string | null>(null);
+    const waitingRoomMeetingLinkNameRef = useRef<string | null>(null);
     const guestSessionPreparedRef = useRef(false);
     const admissionRequestCountRef = useRef(0);
 
@@ -75,27 +75,27 @@ export const useWaitingRoom = ({
             return;
         }
 
-        const meetLink = waitingRoomMeetLinkRef.current;
-        if (!meetLink) {
+        const waitingRoomMeetingLinkName = waitingRoomMeetingLinkNameRef.current;
+        if (!waitingRoomMeetingLinkName) {
             return;
         }
 
         resetAdmission();
-        void joinAfterAdmission(meetLink);
+        void joinAfterAdmission(waitingRoomMeetingLinkName);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [admissionStatus]);
 
     const handleGuestWaitingRoomLeave = useCallback(async () => {
         dispatch(setJoiningInProgress(false));
-        await leave(waitingRoomMeetLinkRef.current ?? undefined);
+        await leave(waitingRoomMeetingLinkNameRef.current ?? undefined);
         cleanupJoin();
     }, [dispatch, leave, cleanupJoin]);
 
     const requestAdmission = useCallback(
-        async (meetingToken: string) => {
+        async (meetingLinkName: string) => {
             const prepared = guestSessionPreparedRef.current
-                ? await refreshGuestSession(meetingToken)
-                : await prepareGuestSession(meetingToken);
+                ? await refreshGuestSession(meetingLinkName)
+                : await prepareGuestSession(meetingLinkName);
 
             if (!prepared) {
                 return;
@@ -103,7 +103,7 @@ export const useWaitingRoom = ({
 
             guestSessionPreparedRef.current = true;
 
-            const sessionKey = await getSessionKeyBase64(meetingToken);
+            const sessionKey = await getSessionKeyBase64(meetingLinkName);
             if (!sessionKey) {
                 notifyError(c('Error').t`Failed to join meeting. Please try again.`);
                 reportMeetError('Missing session key for waiting room admission', {});
@@ -111,7 +111,7 @@ export const useWaitingRoom = ({
             }
 
             admissionRequestCountRef.current += 1;
-            await startWaitingRoomAdmission(meetingToken, sessionKey);
+            await startWaitingRoomAdmission(meetingLinkName, sessionKey);
         },
         [
             prepareGuestSession,
@@ -145,7 +145,7 @@ export const useWaitingRoom = ({
      * `handled: true` (the caller must not join yet). Otherwise returns `handled: false` with the host flag.
      */
     const beginJoin = async (
-        meetingToken: string,
+        meetingLinkName: string,
         { canManageWaitingRoom, waitingRoom }: { canManageWaitingRoom: boolean; waitingRoom: boolean }
     ) => {
         if (!isWaitingRoomJoinEnabled) {
@@ -154,8 +154,8 @@ export const useWaitingRoom = ({
 
         if (waitingRoom && !canManageWaitingRoom) {
             // The join itself runs later, in the `admitted` status effect.
-            waitingRoomMeetLinkRef.current = meetingToken;
-            await requestAdmission(meetingToken);
+            waitingRoomMeetingLinkNameRef.current = meetingLinkName;
+            await requestAdmission(meetingLinkName);
             return { handled: true, isWaitingRoomHostJoin: false };
         }
 

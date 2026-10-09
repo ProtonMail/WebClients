@@ -18,9 +18,9 @@ import {
     selectInstantMeeting,
     selectKeyRotationLogs,
     selectMeetingLink,
+    selectMeetingName,
     selectMlsGroupState,
-    selectRoomName,
-} from '@proton/meet/store/slices/meetingInfo';
+} from '@proton/meet/store/slices/currentMeeting';
 import { selectTotalParticipantCount } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import { TelemetryMeetDashboardEvents, sendMeetDashboardEvent } from '@proton/meet/telemetry/meetTelemetry';
@@ -57,7 +57,7 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
     const meetingLink = useMeetSelector(selectMeetingLink);
     const instantMeeting = useMeetSelector(selectInstantMeeting);
 
-    const roomName = useMeetSelector(selectRoomName);
+    const meetingName = useMeetSelector(selectMeetingName);
 
     const participantCount = useMeetSelector(selectTotalParticipantCount);
     const mlsMemberCount = mlsGroupState?.memberCount ?? 0;
@@ -147,7 +147,7 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
                                 <TableCell type="header" scope="row" className="align-top color-weak w-1/3 pl-0">{c(
                                     'Title'
                                 ).t`Title`}</TableCell>
-                                <TableCell className="text-ellipsis">{roomName}</TableCell>
+                                <TableCell className="text-ellipsis">{meetingName}</TableCell>
                             </TableRow>
                             {formattedStartDate && (
                                 <TableRow>
