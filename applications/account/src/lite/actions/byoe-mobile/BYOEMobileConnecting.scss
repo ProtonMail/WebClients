@@ -1,0 +1,210 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
+// One shared looping timeline, the keyframe percentages are relative to it
+$loop: 1.6s;
+
+.byoe-mobile-connecting {
+	min-block-size: 100vh; // Fallback
+	min-block-size: 100dvh;
+
+	// The design keeps room for the actions at the bottom, which sit below the illustration's center
+	padding-block-end: rem(144);
+
+	// Fades from the brand color at the top into the regular background
+	background: linear-gradient(
+		180deg,
+		color-mix(in srgb, var(--primary) 18%, transparent) 0%,
+		color-mix(in srgb, var(--primary) 12%, transparent) 24%,
+		color-mix(in srgb, var(--primary) 6%, transparent) 33%,
+		transparent 46%
+	);
+
+	&-email {
+		min-block-size: 1lh;
+		opacity: 0;
+		transition: opacity 0.3s ease-out;
+
+		&[data-visible='true'] {
+			opacity: 1;
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			transition: none;
+		}
+	}
+
+	&-illustration {
+		padding: rem(23);
+	}
+
+	&-gmail,
+	&-mail {
+		position: relative;
+		flex: none;
+		background: white;
+	}
+
+	&-gmail {
+		inline-size: rem(77);
+		block-size: rem(77);
+		border-radius: rem(24);
+		box-shadow: 0 rem(6) rem(15) color-mix(in srgb, var(--primary) 10%, transparent);
+		animation: byoe-mobile-connecting-gmail $loop ease-out infinite;
+	}
+
+	&-mail {
+		display: flex;
+		align-items: flex-start;
+		justify-content: center;
+		inline-size: rem(96);
+		block-size: rem(96);
+		padding-block-start: rem(22);
+		border-radius: rem(32);
+		box-shadow: 0 rem(6) rem(23) color-mix(in srgb, var(--primary) 10%, transparent);
+		animation: byoe-mobile-connecting-mail $loop ease-out infinite;
+
+		img {
+			inline-size: rem(60);
+		}
+	}
+
+	&-dots {
+		display: flex;
+		gap: rem(5);
+		padding-inline: rem(8);
+		opacity: 0.65;
+	}
+
+	&-dot {
+		inline-size: rem(5);
+		block-size: rem(5);
+		border-radius: 50%;
+		background: var(--primary);
+		opacity: 0.25;
+		animation: byoe-mobile-connecting-dot $loop ease-out infinite;
+
+		// Each dot lights up right after the previous one
+		&:nth-child(2) {
+			animation-delay: 0.18s;
+		}
+
+		&:nth-child(3) {
+			animation-delay: 0.36s;
+		}
+	}
+
+	// The glow around the Proton Mail card. Its filter lives on the wrapper so the mask on the ring doesn't clip it.
+	&-shine {
+		position: absolute;
+		inset: 0;
+		opacity: 0;
+		filter: drop-shadow(0 0 2px rgb(194 178 255 / 0.35));
+		animation: byoe-mobile-connecting-shine $loop ease-out infinite;
+	}
+
+	// Tint and light sweep, both clipped to the ring around the card. The ring sits just outside the card
+	// and a mask can't paint outside its element, hence the oversized layer.
+	&-ring {
+		position: absolute;
+		inset: rem(-4);
+		background: rgb(194 178 255 / 0.12);
+		mask-image: url(~@proton/styles/assets/img/byoe/connecting-ring-mask.svg);
+		mask-position: center;
+		mask-repeat: no-repeat;
+		mask-size: rem(99);
+	}
+
+	&-sweep {
+		position: absolute;
+		inset: 0;
+		margin: auto;
+		inline-size: rem(150);
+		block-size: rem(150);
+		border-radius: 50%;
+
+		// Wedge with a hard leading edge on the left that fades out clockwise
+		background: conic-gradient(from 0deg, transparent 110deg, rgb(194 178 255 / 0.6) 270deg, transparent 270deg);
+		rotate: -180deg;
+		animation: byoe-mobile-connecting-sweep $loop ease-in-out infinite;
+	}
+
+	// Show the resting state, no motion
+	@media (prefers-reduced-motion: reduce) {
+		&-illustration,
+		&-illustration * {
+			animation: none;
+		}
+	}
+}
+
+@keyframes byoe-mobile-connecting-gmail {
+	0%,
+	26.25%,
+	100% {
+		scale: 1;
+	}
+
+	7.5% {
+		scale: 0.96;
+	}
+}
+
+@keyframes byoe-mobile-connecting-mail {
+	0%,
+	38.75%,
+	71.875%,
+	100% {
+		scale: 1;
+	}
+
+	50% {
+		scale: 1.05;
+		animation-timing-function: ease-in-out;
+	}
+}
+
+@keyframes byoe-mobile-connecting-dot {
+	0%,
+	1.25%,
+	32.5%,
+	100% {
+		opacity: 0.25;
+		scale: 1;
+	}
+
+	12.5% {
+		opacity: 1;
+		scale: 1.35;
+		animation-timing-function: ease-in-out;
+	}
+}
+
+@keyframes byoe-mobile-connecting-shine {
+	0%,
+	38.75%,
+	90.625%,
+	100% {
+		opacity: 0;
+	}
+
+	45% {
+		opacity: 0.8;
+	}
+
+	78.125% {
+		opacity: 0.8;
+		animation-timing-function: ease-in-out;
+	}
+}
+
+@keyframes byoe-mobile-connecting-sweep {
+	0%,
+	38.75% {
+		rotate: -180deg;
+	}
+
+	90.625%,
+	100% {
+		rotate: 180deg;
+	}
+}
