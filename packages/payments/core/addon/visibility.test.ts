@@ -1,8 +1,16 @@
+import { APPS } from '@proton/shared/lib/constants';
+
 import { buildSubscription } from '../../testing/buildSubscription';
 import { ADDON_NAMES, ADDON_PREFIXES, FREE_SUBSCRIPTION, PLANS } from '../constants';
 import { SubscriptionPlatform } from '../subscription/constants';
 import type { AddonCustomizerContext } from './interfaces';
-import { domainVpnBusinessGate, notExternallyManagedLumo, passesCouponGate, planSupportsAddon } from './visibility';
+import {
+    domainVpnBusinessGate,
+    notExternallyManagedLumo,
+    notInMailOrCalendarContext,
+    passesCouponGate,
+    planSupportsAddon,
+} from './visibility';
 
 const ctx = (overrides: Partial<AddonCustomizerContext> = {}): AddonCustomizerContext => ({
     subscription: FREE_SUBSCRIPTION,
@@ -53,6 +61,44 @@ describe('passesCouponGate', () => {
                 ctx({ planIDs: { [PLANS.MAIL]: 1, [ADDON_NAMES.MEET_MAIL]: 1 }, bannerHiddenByCoupon: true })
             )
         ).toBe(true);
+    });
+});
+
+describe('notInMailOrCalendarContext', () => {
+    it.each([APPS.PROTONMAIL, APPS.PROTONCALENDAR])('fails in %s when the addon is not selected', (app) => {
+        expect(notInMailOrCalendarContext(ADDON_PREFIXES.LUMO)(ctx({ planIDs: { [PLANS.MAIL]: 1 }, app }))).toBe(false);
+        expect(notInMailOrCalendarContext(ADDON_PREFIXES.MEET)(ctx({ planIDs: { [PLANS.MAIL]: 1 }, app }))).toBe(false);
+    });
+
+    it('passes in Mail when the addon is already selected', () => {
+        expect(
+            notInMailOrCalendarContext(ADDON_PREFIXES.LUMO)(
+                ctx({ planIDs: { [PLANS.MAIL]: 1, [ADDON_NAMES.LUMO_MAIL]: 1 }, app: APPS.PROTONMAIL })
+            )
+        ).toBe(true);
+        expect(
+            notInMailOrCalendarContext(ADDON_PREFIXES.MEET)(
+                ctx({ planIDs: { [PLANS.MAIL]: 1, [ADDON_NAMES.MEET_MAIL]: 1 }, app: APPS.PROTONMAIL })
+            )
+        ).toBe(true);
+    });
+
+    it.each([PLANS.MAIL_PRO, PLANS.MAIL_BUSINESS, PLANS.BUNDLE_PRO_2024])(
+        'passes in Mail and Calendar when the selected plan is the business plan %s',
+        (plan) => {
+            for (const app of [APPS.PROTONMAIL, APPS.PROTONCALENDAR]) {
+                expect(notInMailOrCalendarContext(ADDON_PREFIXES.LUMO)(ctx({ planIDs: { [plan]: 1 }, app }))).toBe(
+                    true
+                );
+                expect(notInMailOrCalendarContext(ADDON_PREFIXES.MEET)(ctx({ planIDs: { [plan]: 1 }, app }))).toBe(
+                    true
+                );
+            }
+        }
+    );
+
+    it.each([APPS.PROTONDRIVE, APPS.PROTONACCOUNT, undefined])('passes in %s', (app) => {
+        expect(notInMailOrCalendarContext(ADDON_PREFIXES.LUMO)(ctx({ planIDs: { [PLANS.MAIL]: 1 }, app }))).toBe(true);
     });
 });
 
