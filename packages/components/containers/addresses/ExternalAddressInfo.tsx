@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { ADDRESS_TYPE, BRAND_NAME } from '@proton/shared/lib/constants';
+import { ADDRESS_STATUS, ADDRESS_TYPE, BRAND_NAME } from '@proton/shared/lib/constants';
 import { getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 import type { Address } from '@proton/shared/lib/interfaces';
 
@@ -11,7 +11,12 @@ interface Props {
 }
 
 const ExternalAddressInfo = ({ address }: Props) => {
-    if (address.Type !== ADDRESS_TYPE.TYPE_EXTERNAL || getIsBYOEAddress(address)) {
+    // A disabled address can't be used to sign in either
+    if (
+        address.Type !== ADDRESS_TYPE.TYPE_EXTERNAL ||
+        getIsBYOEAddress(address) ||
+        address.Status !== ADDRESS_STATUS.STATUS_ENABLED
+    ) {
         return;
     }
 

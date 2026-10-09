@@ -3,7 +3,7 @@ import { getAuthVersionWithFallback } from '@protontech/crypto/srp';
 import { PASSWORD_WRONG_ERROR, auth, getInfo } from '../api/auth';
 import type { Api } from '../interfaces';
 import { srpAuth } from '../srp';
-import type { AuthResponse, AuthVersion, ChallengePayload, InfoResponse } from './interface';
+import type { AuthResponse, AuthVersion, ChallengePayload, ClaimedAddressID, InfoResponse } from './interface';
 
 /**
  * Provides authentication with fallback behavior in case the user's auth version is unknown.
@@ -14,18 +14,34 @@ interface Arguments {
     initialAuthInfo?: InfoResponse;
     payload?: ChallengePayload;
     persistent: boolean;
+    /**
+     * Signs in to the account a claimed address belonged to instead, with `credentials.username` the email it was
+     * returned for; every auth info request and the sign-in carry it.
+     */
+    claimedAddressID?: ClaimedAddressID;
 }
 
-const loginWithFallback = async ({ api, credentials, initialAuthInfo, payload, persistent }: Arguments) => {
+const loginWithFallback = async ({
+    api,
+    credentials,
+    initialAuthInfo,
+    payload,
+    persistent,
+    claimedAddressID,
+}: Arguments) => {
     let state: { authInfo?: InfoResponse; lastAuthVersion?: AuthVersion } = {
         authInfo: initialAuthInfo,
         lastAuthVersion: undefined,
     };
     const { username } = credentials;
-    const data = { Username: username, Payload: payload };
+    const data = {
+        Username: username,
+        Payload: payload,
+        ...(claimedAddressID ? { ClaimedAddressID: claimedAddressID } : undefined),
+    };
 
     do {
-        const { authInfo = await api<InfoResponse>(getInfo({ username })), lastAuthVersion } = state;
+        const { authInfo = await api<InfoResponse>(getInfo({ username, claimedAddressID })), lastAuthVersion } = state;
 
         const { version, done } = getAuthVersionWithFallback(authInfo, username, lastAuthVersion);
 

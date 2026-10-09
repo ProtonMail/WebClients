@@ -49,6 +49,29 @@ describe('login with fallback', () => {
         expect(authCalls).toEqual(1);
     });
 
+    it('should send a claimed address ID with the auth info request and the sign-in', async () => {
+        const calls = [];
+
+        const mockApi = async (args) => {
+            calls.push(args);
+            if (args.url.includes('info')) {
+                return getInfoResult(4);
+            }
+            return getResponse({ ServerProof, foo: 'bar' });
+        };
+
+        await loginWithFallback({
+            api: mockApi,
+            credentials: { username: 'test', password: '123' },
+            claimedAddressID: 'claimed-id',
+        });
+
+        expect(calls.map(({ url, data }) => [url, data.Username, data.ClaimedAddressID])).toEqual([
+            ['core/v4/auth/info', 'test', 'claimed-id'],
+            ['core/v4/auth', 'test', 'claimed-id'],
+        ]);
+    });
+
     it('should login when the fallback version is unknown', async () => {
         const apiCalls = [];
 

@@ -11,6 +11,8 @@ export const auth = (
         | {
               Username: string;
               Payload?: ChallengePayload;
+              /** Signs in to the account a claimed address belonged to; Username is the email it was returned for. */
+              ClaimedAddressID?: string;
           }
         | {
               SSOResponseToken: string;
@@ -140,11 +142,14 @@ export const getLocalSessions = (params?: { Email: string }) => ({
 
 export const getInfo = ({
     username,
+    claimedAddressID,
     intent = 'Proton',
     isTesting,
     reauthScope,
 }: {
     username?: string;
+    /** For the account a claimed address belonged to, with the email it was returned for as the username. */
+    claimedAddressID?: string;
     intent?: 'Proton' | 'Auto' | 'SSO';
     isTesting?: boolean;
     reauthScope?: 'password' | 'locked';
@@ -153,6 +158,7 @@ export const getInfo = ({
     url: 'core/v4/auth/info',
     data: {
         ...(username ? { Username: username } : undefined),
+        ...(claimedAddressID ? { ClaimedAddressID: claimedAddressID } : undefined),
         Intent: intent,
         ...(isTesting ? { IsTesting: isTesting } : undefined),
         ...(reauthScope ? { ReauthScope: reauthScope } : undefined),

@@ -1,10 +1,20 @@
 import { createActor, toPromise } from 'xstate';
 
+import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
+import { ClaimedAddressNoMatchError, loginWithClaimedAddress, loginWithPassword } from '../../../auth/passwordLogin';
 import type { SignInActorServices } from '../../../state-machine/signInActors';
 import { createCredentialsActors } from './credentialsActors';
-import { SwitchToSRPError, SwitchToSSOError } from './credentialsErrors';
+import { InvalidLoginError, SwitchToSRPError, SwitchToSSOError } from './credentialsErrors';
+
+jest.mock('../../../auth/passwordLogin', () => ({
+    ...jest.requireActual('../../../auth/passwordLogin'),
+    loginWithPassword: jest.fn(),
+    loginWithClaimedAddress: jest.fn(),
+}));
+const mockLoginWithPassword = jest.mocked(loginWithPassword);
+const mockLoginWithClaimedAddress = jest.mocked(loginWithClaimedAddress);
 
 /** A promise the test settles by hand, to control when the preparation finishes. */
 const deferred = () => {
@@ -105,5 +115,96 @@ describe('createCredentialsActors', () => {
         }).start();
         await expect(toPromise(actor)).rejects.toThrow('Missing SSO token');
         expect(services.api).not.toHaveBeenCalled();
+    });
+
+    describe('proving ownership of a claimed address', () => {
+        const run = () => {
+            const actors = createCredentialsActors(
+                makeServices(() => Promise.resolve()) as unknown as SignInActorServices
+            );
+            const input = {
+                claimedAddresses: ['a1x9k2'],
+                email: 'eric@domain.com',
+                password: 'secret',
+                persistent: false,
+                payload: {},
+            };
+            return toPromise(createActor(actors.authenticateWithClaimedAddress, { input }).start());
+        };
+
+        it('signs in with the typed email, marking the account as reached through the matching candidate', async () => {
+            mockLoginWithClaimedAddress.mockResolvedValueOnce({
+                id: 'a1x9k2',
+                result: {} as AuthResponse,
+                authVersion: 4,
+            });
+
+            await expect(run()).resolves.toEqual(
+                expect.objectContaining({ username: 'eric@domain.com', claimedAddress: { id: 'a1x9k2' } })
+            );
+            expect(mockLoginWithClaimedAddress).toHaveBeenCalledWith(
+                expect.objectContaining({ email: 'eric@domain.com', claimedAddressIDs: ['a1x9k2'] })
+            );
+        });
+
+        it('fails with a wrong password when no candidate matches', async () => {
+            mockLoginWithClaimedAddress.mockRejectedValueOnce(
+                new ClaimedAddressNoMatchError({
+                    data: { Code: API_CUSTOM_ERROR_CODES.INVALID_LOGIN, Error: 'Incorrect login credentials' },
+                })
+            );
+
+            await expect(run()).rejects.toThrow(InvalidLoginError);
+        });
+
+        it('fails with why the candidates could not be tried when none could', async () => {
+            const unusable = { data: { Code: 2011, Error: 'Invalid input' } };
+            mockLoginWithClaimedAddress.mockRejectedValueOnce(new ClaimedAddressNoMatchError(unusable));
+
+            await expect(run()).rejects.toBe(unusable);
+        });
+    });
+
+    describe('the password sign-in', () => {
+        const invalidLogin = {
+            data: { Code: API_CUSTOM_ERROR_CODES.INVALID_LOGIN, Error: 'Incorrect login credentials' },
+        };
+        const run = () => {
+            const actors = createCredentialsActors(
+                makeServices(() => Promise.resolve()) as unknown as SignInActorServices
+            );
+            const input = { username: 'eric@domain.com', password: 'secret', persistent: false, payload: {} };
+            return toPromise(createActor(actors.authenticateWithPassword, { input }).start());
+        };
+
+        it('keeps the typed email when it signs in to the account a claimed address belonged to', async () => {
+            mockLoginWithPassword.mockResolvedValueOnce({
+                result: {} as AuthResponse,
+                authVersion: 4,
+                claimedAddressID: 'b7q4m0',
+            });
+
+            await expect(run()).resolves.toEqual(
+                expect.objectContaining({ username: 'eric@domain.com', claimedAddress: { id: 'b7q4m0' } })
+            );
+        });
+
+        it('signs in to the account of the typed username otherwise', async () => {
+            mockLoginWithPassword.mockResolvedValueOnce({
+                result: {} as AuthResponse,
+                authVersion: 4,
+                claimedAddressID: undefined,
+            });
+
+            const result = await run();
+            expect(result.username).toBe('eric@domain.com');
+            expect(result.claimedAddress).toBeUndefined();
+        });
+
+        it('fails with a wrong password as its own error', async () => {
+            mockLoginWithPassword.mockRejectedValueOnce(invalidLogin);
+
+            await expect(run()).rejects.toThrow(InvalidLoginError);
+        });
     });
 });
