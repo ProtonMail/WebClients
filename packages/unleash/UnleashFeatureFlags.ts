@@ -124,7 +124,6 @@ export enum CommonFeatureFlag {
     InboxDesktopManualUpdateBannerDisabled = 'InboxDesktopManualUpdateBannerDisabled',
     InboxDesktopMultiAccountSupport = 'InboxDesktopMultiAccountSupport',
     InboxDesktopThemeSelection = 'InboxDesktopThemeSelection',
-    InboxDesktopWinLinNewAppSwitcher = 'InboxDesktopWinLinNewAppSwitcher',
     InboxWebPostSubscriptionFlow = 'InboxWebPostSubscriptionFlow',
     KeyTransparencyLogOnly = 'KeyTransparencyLogOnly',
     KeyTransparencyShowUI = 'KeyTransparencyShowUI',
