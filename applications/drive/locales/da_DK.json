@@ -1389,6 +1389,9 @@
       ],
       "Detach": [
         "Fjern tilknytning"
+      ],
+      "Import paused": [
+        "Import sat på pause"
       ]
     },
     "Action: Docs": {
@@ -4561,6 +4564,9 @@
       ],
       "Not enough browser storage": [
         "Ikke nok lagerplads i browseren"
+      ],
+      "You reached the maximum number of connected addresses": [
+        "Du har nået det maksimale antal forbundne adresser"
       ]
     },
     "error": {
@@ -8098,6 +8104,12 @@
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Midlertidigt utilgængelig på grund af høj efterspørgsel. Prøv igen senere."
+      ],
+      "If you've already upgraded, you can resume your import in ${ easySwitchSettingsLink }. You can also cancel it there.": [
+        "Hvis du allerede har opgraderet, kan du genoptage din import i ${ easySwitchSettingsLink }. Der kan du også annullere den."
+      ],
+      "Your import is blocked. Upgrade now to bring the rest of your files over.": [
+        "Din import er blokeret. Opgrader nu for at føre resten af dine filer over."
       ]
     },
     "info": {
@@ -14933,6 +14945,9 @@
       ],
       "Bring your Google Drive files to ${ DRIVE_APP_NAME }": [
         "Flyt dine filer fra Google Drive til ${ DRIVE_APP_NAME }"
+      ],
+      "More storage needed to finish your import": [
+        "Der kræves mere lagerplads for at afslutte din import"
       ]
     },
     "Today icon tooltip in mini calendar": {
