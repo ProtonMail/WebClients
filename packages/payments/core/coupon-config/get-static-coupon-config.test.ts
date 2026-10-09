@@ -1,4 +1,5 @@
 import { COUPON_CODES } from '../constants';
+import { blackFriday2026Metadata } from './configs/black-friday-2026';
 import { monthlyNudgeMetadata } from './configs/monthly-nudge';
 import { porkbunMetadata } from './configs/porkbun';
 import { tryDuo2026Metadata } from './configs/try-duo-2026';
@@ -22,6 +23,12 @@ describe('getStaticCouponConfig', () => {
 
     it('normalizes coupon code before matching', () => {
         expect(getStaticCouponConfig('  annualoffer25  ')).toBe(monthlyNudgeMetadata);
+    });
+
+    it('matches blackFriday2026 config coupons', () => {
+        expect(getStaticCouponConfig(COUPON_CODES.BLACK_FRIDAY_2026_BUNDLE)).toBe(blackFriday2026Metadata);
+        expect(getStaticCouponConfig(COUPON_CODES.BLACK_FRIDAY_2026_BUNDLE_CS)).toBe(blackFriday2026Metadata);
+        expect(getStaticCouponConfig('bf26bundlepromo')).toBe(blackFriday2026Metadata);
     });
 
     it('matches porkbun config by coupon code', () => {

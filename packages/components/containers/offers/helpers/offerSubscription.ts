@@ -1,6 +1,7 @@
 import { CYCLE } from '@proton/payments/core/constants';
 import {
     getIsVariableCycleOffer,
+    hasBlackFriday2026Coupon,
     hasBundle,
     hasDeprecatedVPN,
     hasDrive,
@@ -187,6 +188,14 @@ class OfferSubscription {
         }
 
         return this.subscription.IsTrial;
+    }
+
+    usedBlackFriday2026() {
+        if (this.upcomingSubscription) {
+            return hasBlackFriday2026Coupon(this.upcomingSubscription) || hasBlackFriday2026Coupon(this.subscription);
+        }
+
+        return hasBlackFriday2026Coupon(this.subscription);
     }
 }
 
