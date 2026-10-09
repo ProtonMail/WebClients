@@ -33,6 +33,17 @@ export const SettingToggle = ({
     tooltip,
     className,
 }: Props) => {
+    const getLabelColor = () => {
+        if (!changeLabelColor) {
+            return 'color-norm';
+        }
+        // Toggles are also disabled while loading, which should not read as unavailable
+        if (disabled && !loading) {
+            return 'color-disabled';
+        }
+        return checked ? 'color-norm' : 'color-weak';
+    };
+
     return (
         <div
             className={clsx(
@@ -46,7 +57,7 @@ export const SettingToggle = ({
                     description={description}
                     size="medium"
                     id={id}
-                    labelColor={checked || !changeLabelColor ? 'color-norm' : 'color-hint'}
+                    labelColor={getLabelColor()}
                     descriptionColor="color-hint"
                 />
             </div>
