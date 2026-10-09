@@ -137,10 +137,9 @@ const UserDropdown = ({
         }
     }, [isOpen]);
 
-    const inboxDesktopMultiAccountSupport = useFlag('InboxDesktopMultiAccountSupport');
     const showSwitchAccountButton =
         isElectronApp && authentication.mode === 'sso'
-            ? inboxDesktopMultiAccountSupport && hasInboxDesktopFeature('MultiAccount')
+            ? hasInboxDesktopFeature('MultiAccount')
             : authentication.mode === 'sso';
 
     const value: UserDropdownValue = {
