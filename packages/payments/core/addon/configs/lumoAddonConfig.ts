@@ -5,7 +5,12 @@ import { LUMO_APP_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants
 import { ADDON_PREFIXES, MAX_LUMO_ADDON, MAX_MEMBER_LUMO_ADDON, PLANS, TRIAL_MAX_LUMO_SEATS } from '../../constants';
 import { getIsB2BAudienceFromPlanIDs } from '../../plan/helpers';
 import type { AddonConfig } from '../interfaces';
-import { notExternallyManagedLumo, passesCouponGate, planSupportsAddon } from '../visibility';
+import {
+    notExternallyManagedLumo,
+    notInMailOrCalendarContext,
+    passesCouponGate,
+    planSupportsAddon,
+} from '../visibility';
 
 export const LUMO_ADDON_CONFIG: AddonConfig = {
     addonType: ADDON_PREFIXES.LUMO,
@@ -35,6 +40,7 @@ export const LUMO_ADDON_CONFIG: AddonConfig = {
             planSupportsAddon(ADDON_PREFIXES.LUMO),
             notExternallyManagedLumo,
             passesCouponGate(ADDON_PREFIXES.LUMO),
+            notInMailOrCalendarContext(ADDON_PREFIXES.LUMO),
         ],
     },
     transferStrategy: 'lumo',
