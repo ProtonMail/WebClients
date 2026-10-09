@@ -1,15 +1,14 @@
-import { useCallback, useEffect, useLayoutEffect, useMemo, useRef } from 'react'
+import { useEffect, useLayoutEffect, useRef } from 'react'
 import { SafeLexicalComposer } from './Utils/SafeLexicalComposer'
 import { BuildInitialEditorConfig } from './InitialEditorConfig'
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import { ProtonContentEditable } from './ContentEditable/ProtonContentEditable'
 import { DefaultFont } from './Constants/Fonts'
-import type { DocumentRole, EditorRequiresClientMethods } from '@proton/docs-shared'
+import type { DocumentRole } from '@proton/docs-shared'
 import { EditorSystemMode } from '@proton/docs-shared'
-import type { TelemetryDocsEditorEvents } from '@proton/shared/lib/api/telemetry'
 import Toolbar from './Toolbar/Toolbar'
-import { EditorUserMode } from '../../Lib/EditorUserMode'
+import { EditorUserMode } from './contract/EditorUserMode'
 import type { EditorState } from 'lexical'
 import { $unwrapAllCommentThreadMarks } from './Utils/removeCommentThreadMarks'
 import { $rejectAllSuggestions } from './Plugins/Suggestions/rejectAllSuggestions'
@@ -25,28 +24,20 @@ interface PreviewModeEditorProps {
   clonedEditorState: EditorState
   role: DocumentRole
   onUserModeChange: (mode: EditorUserMode) => void
-  clientInvoker: EditorRequiresClientMethods
   initialScrollTop: number | null
   tableOfContentsVisible: boolean
+  hidden: boolean
 }
 
 export function PreviewModeEditor({
   clonedEditorState,
   role,
   onUserModeChange,
-  clientInvoker,
   initialScrollTop,
   tableOfContentsVisible,
+  hidden,
 }: PreviewModeEditorProps) {
-  const getDocumentUrl = useMemo(() => clientInvoker.getDocumentUrl.bind(clientInvoker), [clientInvoker])
-  const replaceDocumentUrl = useMemo(() => clientInvoker.replaceDocumentUrl.bind(clientInvoker), [clientInvoker])
-  const reportTelemetry = useCallback(
-    (event: TelemetryDocsEditorEvents) => {
-      void clientInvoker.editorReportingTelemetry(event)
-    },
-    [clientInvoker],
-  )
-  const { openLink } = useDocsDependencies()
+  const { openLink, getDocumentUrl, replaceDocumentUrl, reportTelemetry } = useDocsDependencies()
 
   return (
     <SafeLexicalComposer
@@ -74,6 +65,7 @@ export function PreviewModeEditor({
         <DocsLayout.LeftPanel>
           {tableOfContentsVisible && (
             <TableOfContents
+              editorHidden={hidden}
               getDocumentUrl={getDocumentUrl}
               replaceDocumentUrl={replaceDocumentUrl}
               reportTelemetry={reportTelemetry}

@@ -1,44 +1,31 @@
 import '../app/style'
 import './standalone-doc.css'
-import NotificationsChildren from '@proton/components/containers/notifications/Children'
-import NotificationsProvider from '@proton/components/containers/notifications/Provider'
-import { DocAwarenessEvent, EditorSystemMode } from '@proton/docs-shared'
+import { DocumentRole, EditorSystemMode } from '@proton/docs-shared'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type { LexicalEditor } from 'lexical'
 import { createRoot } from 'react-dom/client'
-import { ApplicationProvider } from '../app/Containers/ApplicationProvider'
 import {
   DocsDependenciesProvider,
+  EditorUserMode,
   StandaloneDocsEditor,
   type DocsDependencies,
   type EditorProps,
 } from '../app/Containers/Docs/public'
 import DocsLayout from '../app/Containers/DocsLayout'
-import { EditorStateProvider, useEditorState } from '../app/Containers/EditorStateProvider'
-import { Application } from '../app/Lib/Application'
-import { EditorUserMode } from '../app/Lib/EditorUserMode'
 import { ThemeStyles } from '../app/Theme'
 import { EditorThemeProvider, useEditorTheme } from '../app/Theme/EditorThemeProvider'
-import { useStore } from 'zustand'
 import { createStandaloneDocClient } from './client'
 import { createStandaloneDocSession } from './session'
 
 document.title = 'Standalone Docs'
 
-function createLocalApplication() {
-  const application = new Application()
-  application.setRole('Editor')
-  application.syncedState.setProperty('userName', 'Standalone developer')
-  application.syncedState.setProperty('suggestionsEnabled', false)
-  return application
-}
-
-function StandaloneDoc({ application }: { application: Application }) {
+function StandaloneDoc() {
   const { theme, setTheme } = useEditorTheme()
-  const { userMode, setUserMode, editorHidden, setEditorHidden, editingLocked, setEditingLocked } =
-    useStore(useEditorState())
+  const [userMode, setUserMode] = useState(EditorUserMode.Edit)
+  const [ready, setReady] = useState(false)
   const [message, setMessage] = useState('Loading fixture…')
   const [failed, setFailed] = useState(false)
+  const [role] = useState(() => new DocumentRole('Editor'))
   const editorRef = useRef<LexicalEditor | null>(null)
   const setEditorRef = useCallback((editor: LexicalEditor | null) => {
     editorRef.current = editor
@@ -58,47 +45,48 @@ function StandaloneDoc({ application }: { application: Application }) {
   const [session] = useState(() =>
     createStandaloneDocSession(
       () => {
-        application.syncedState.setProperty('receivedEverythingFromRTS', true)
-        setEditorHidden(false)
-        setEditingLocked(false)
+        setReady(true)
         setMessage('In memory · Reload to reset')
       },
       (error) => reportError(error, true),
-      (states) => application.eventBus.publish({ type: DocAwarenessEvent.AwarenessStateChange, payload: { states } }),
     ),
   )
-  useEffect(() => {
-    const dispose = () => session.destroy()
-    window.addEventListener('pagehide', dispose)
-    return () => {
-      window.removeEventListener('pagehide', dispose)
-      dispose()
-    }
-  }, [session])
-  const clientInvoker = useMemo(
-    () => createStandaloneDocClient(reportUnavailable, reportError),
-    [reportUnavailable, reportError],
+  useEffect(() => session.attachPageLifecycle(), [session])
+  const comments = useMemo(
+    () => createStandaloneDocClient(reportUnavailable, session.subscribeToAwarenessStates),
+    [reportUnavailable, session],
   )
   const dependencies = useMemo<DocsDependencies>(
     () => ({
-      logger: application.logger,
+      userName: 'Standalone developer',
+      suggestionsEnabled: false,
+      isAlpha: true,
+      canEdit: role.canEdit(),
+      canComment: role.canComment(),
+      languageCode: 'en',
+      getDisplayNameForEmail: (email) => email ?? 'Anonymous',
+      comments,
+      logger: session.logger,
       reportError: (error) => reportError(error),
-      isDevOrBlack: () => true,
       openLink: (url) => {
-        clientInvoker.openLink(url).catch(reportError)
+        window.open(url, '_blank', 'noopener,noreferrer')
       },
-      showGenericAlertModal: clientInvoker.showGenericAlertModal,
-      createSuggestionThread: clientInvoker.createSuggestionThread,
-      getAllThreads: clientInvoker.getAllThreads,
-      reopenSuggestion: clientInvoker.reopenSuggestion,
-      rejectSuggestion: clientInvoker.rejectSuggestion,
-      getDocumentUrl: clientInvoker.getDocumentUrl,
-      replaceDocumentUrl: clientInvoker.replaceDocumentUrl,
-      reportTelemetry: (event) => {
-        clientInvoker.editorReportingTelemetry(event).catch(reportError)
-      },
+      showGenericAlertModal: (message) => window.alert(message),
+      createWarningNotification: setMessage,
+      createInfoNotification: setMessage,
+      showAlert: (title, message) => window.alert(`${title}\n\n${message}`),
+      reportToolbarInteraction: () => {},
+      reportWordCount: () => {},
+      subscribeToCollaboratorCursorNavigation: () => () => {},
+      createSuggestionThread: comments.createSuggestionThread,
+      getAllThreads: comments.getAllThreads,
+      reopenSuggestion: comments.reopenSuggestion,
+      rejectSuggestion: comments.rejectSuggestion,
+      getDocumentUrl: async () => window.location.href,
+      replaceDocumentUrl: async (url) => window.history.replaceState(null, '', url),
+      reportTelemetry: () => {},
     }),
-    [application.logger, clientInvoker, reportError],
+    [comments, role, session, reportError],
   )
   const onEditorReadyToReceiveUpdates = useCallback(() => session.editorLoaded(), [session])
   const changeMode = useCallback(
@@ -136,14 +124,13 @@ function StandaloneDoc({ application }: { application: Application }) {
         <DocsDependenciesProvider dependencies={dependencies}>
           <DocsLayout.Container isSuggestionMode={false}>
             <StandaloneDocsEditor
-              clientInvoker={clientInvoker}
               docMap={session.docMap}
               docState={session.docState}
               documentId={session.documentId}
-              editingLocked={editingLocked || failed || userMode === EditorUserMode.Preview}
-              role={application.getRole()}
+              editingLocked={!ready || failed || userMode === EditorUserMode.Preview}
+              role={role}
               onEditorError={onEditorError}
-              hidden={editorHidden}
+              hidden={!ready}
               editorInitializationConfig={session.initialization}
               systemMode={EditorSystemMode.Edit}
               userMode={userMode}
@@ -164,21 +151,12 @@ function StandaloneDoc({ application }: { application: Application }) {
 }
 
 function StandaloneDocRoot() {
-  const [application] = useState(createLocalApplication)
   const initialTheme = new URLSearchParams(window.location.search).get('theme') === 'dark' ? 'dark' : 'light'
 
   return (
     <EditorThemeProvider initialTheme={initialTheme}>
       <ThemeStyles />
-      {/* These existing providers are temporary until Docs' runtime dependencies are injected. */}
-      <ApplicationProvider application={application}>
-        <EditorStateProvider systemMode={EditorSystemMode.Edit}>
-          <NotificationsProvider>
-            <StandaloneDoc application={application} />
-            <NotificationsChildren />
-          </NotificationsProvider>
-        </EditorStateProvider>
-      </ApplicationProvider>
+      <StandaloneDoc />
     </EditorThemeProvider>
   )
 }

@@ -14,9 +14,8 @@ import { $getSelection, $isRangeSelection, COMMAND_PRIORITY_EDITOR, SELECTION_CH
 import debounce from 'lodash/debounce'
 import { useEffect, useRef, useState } from 'react'
 import { c } from 'ttag'
-import { useStore } from 'zustand'
-import { useEditorState } from '../../../EditorStateProvider'
-import { EditorUserMode } from '../../../../Lib/EditorUserMode'
+import { useDocsUserMode } from '../../DocsPresentationProvider'
+import { EditorUserMode } from '../../contract/EditorUserMode'
 import { getNodeLatestSafe } from '../../Utils/getNodeLatestSafe'
 import { DELETE_TABLE_COMMAND } from './Commands'
 import { isCellHeaderColumn } from './TableUtils/isCellHeaderColumn'
@@ -35,7 +34,7 @@ export function TableMenu() {
   const isEditable = useLexicalEditable()
   const menuRef = useRef<HTMLDivElement>(null)
 
-  const userMode = useStore(useEditorState(), (state) => state.userMode)
+  const userMode = useDocsUserMode()
   const isSuggestionMode = userMode === EditorUserMode.Suggest
 
   const [tableNode, setTableNode] = useState<TableNode | null>(null)

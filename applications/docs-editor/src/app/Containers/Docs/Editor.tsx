@@ -1,11 +1,10 @@
-import { useNotifications } from '@proton/app-context/useNotifications'
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import { ListPlugin } from '@lexical/react/LexicalListPlugin'
 import { HorizontalRulePlugin } from '@lexical/react/LexicalHorizontalRulePlugin'
 import { BuildInitialEditorConfig, ShouldBootstrap } from './InitialEditorConfig'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type { Provider } from '@lexical/yjs'
-import type { EditorRequiresClientMethods, YDocMap, DocStateInterface, DocumentRole } from '@proton/docs-shared'
+import type { YDocMap, DocStateInterface, DocumentRole } from '@proton/docs-shared'
 import type { EditorInitializationConfig } from './contract/EditorInitialization'
 import { v4 as uuidv4 } from 'uuid'
 import { DocProvider } from '@proton/docs-shared'
@@ -43,28 +42,23 @@ import { MarkNodesProvider } from './Plugins/MarkNodesContext'
 import { clsx } from 'clsx'
 import { ProtonLinkPlugin } from './Plugins/Link/LinkPlugin'
 import { FormattingPlugin } from './Plugins/FormattingPlugin'
-import { EditorUserMode } from '../../Lib/EditorUserMode'
+import { EditorUserMode } from './contract/EditorUserMode'
 import { EditorSystemMode } from '@proton/docs-shared/lib/EditorSystemMode'
 import { BlockTypePlugin } from './Plugins/BlockTypePlugin'
 import { YjsReadonlyPlugin } from './Plugins/YjsReadonly/YjsReadonlyPlugin'
-import { useSyncedState } from '../../Hooks/useSyncedState'
 import { FixBrokenListItemPlugin } from './Plugins/FixBrokenListItemPlugin'
 import { CustomCollaborationContextProvider } from './Plugins/Collaboration/CustomCollaborationContext'
 import { FixBrokenTabNode } from './Plugins/FixBrokenTabNode'
 import { getAccentColorForUsername } from '@proton/atoms/UserAvatar/getAccentColorForUsername'
 import { PageBreakPlugin } from './Plugins/PageBreak/PageBreakPlugin'
-import { useApplication } from '../ApplicationProvider'
 import { SCROLL_TO_USER_CURSOR_COMMAND } from './Plugins/Collaboration/ScrollToUserCursorPlugin'
-import { useGenericAlertModal } from '@proton/docs-shared/components/GenericAlert'
 import { TableOfContents } from '../../Components/TableOfContents/TableOfContents'
 import DocsLayout from '../DocsLayout'
-import { useIsAlpha } from '../../Hooks/useIsAlpha'
 import { useDocsDependencies } from './DocsDependenciesProvider'
 
 const TypingBotEnabled = false
 
 export type EditorProps = {
-  clientInvoker: EditorRequiresClientMethods
   docMap: YDocMap
   docState: DocStateInterface
   documentId: string
@@ -87,7 +81,6 @@ export type EditorProps = {
 }
 
 export function Editor({
-  clientInvoker,
   docMap,
   docState,
   documentId,
@@ -108,18 +101,21 @@ export function Editor({
   lexicalError,
   tableOfContentsVisible,
 }: EditorProps) {
-  const { application } = useApplication()
-  const isAlpha = useIsAlpha()
   const editorRef = useRef<LexicalEditor | null>(null)
 
   const [collabCursorsContainer, setCollabCursorsContainer] = useState<HTMLDivElement | null>(null)
 
-  const { userName } = useSyncedState()
-
   const {
+    userName,
+    isAlpha,
     logger,
     openLink,
     showGenericAlertModal,
+    createWarningNotification,
+    showAlert,
+    reportToolbarInteraction,
+    reportWordCount,
+    subscribeToCollaboratorCursorNavigation,
     createSuggestionThread,
     getAllThreads,
     reopenSuggestion,
@@ -176,39 +172,17 @@ export function Editor({
   }, [letterForAnonymousUser, userName])
 
   useEffect(() => {
-    return application.syncedState.subscribeToEvent('ScrollToUserCursorData', (data) => {
+    return subscribeToCollaboratorCursorNavigation((state) => {
       const editor = editorRef.current
       if (!editor) {
         logger.error('Editor not found when trying to scroll to user cursor')
         return
       }
       editor.dispatchCommand(SCROLL_TO_USER_CURSOR_COMMAND, {
-        state: data.state,
+        state,
       })
     })
-  }, [logger, application.syncedState])
-
-  const { createNotification } = useNotifications()
-  const createWarningNotification = useCallback(
-    (message: string) => {
-      createNotification({
-        text: message,
-        type: 'warning',
-      })
-    },
-    [createNotification],
-  )
-
-  const [alertModal, showAlertModal] = useGenericAlertModal()
-  const showAlert = useCallback(
-    (title: string, message: string) => {
-      showAlertModal({
-        title,
-        translatedMessage: message,
-      })
-    },
-    [showAlertModal],
-  )
+  }, [logger, subscribeToCollaboratorCursorNavigation])
 
   return (
     <CustomCollaborationContextProvider
@@ -230,7 +204,7 @@ export function Editor({
       <SafeLexicalComposer initialConfig={BuildInitialEditorConfig({ onError: onEditorError })}>
         {(systemMode === EditorSystemMode.Edit || systemMode === EditorSystemMode.PublicView) && (
           <Toolbar
-            clientInvoker={clientInvoker}
+            onInteraction={reportToolbarInteraction}
             hasEditAccess={role.canEdit()}
             isEditorHidden={hidden}
             onUserModeChange={onUserModeChange}
@@ -242,6 +216,7 @@ export function Editor({
           <DocsLayout.LeftPanel>
             {tableOfContentsVisible && (
               <TableOfContents
+                editorHidden={hidden}
                 getDocumentUrl={getDocumentUrl}
                 replaceDocumentUrl={replaceDocumentUrl}
                 reportTelemetry={reportTelemetry}
@@ -324,7 +299,7 @@ export function Editor({
         <EditorRefPlugin editorRef={setEditorRef} />
         <WordCountPlugin
           onWordCountChange={(wordCountInfo) =>
-            systemMode !== EditorSystemMode.Revision && clientInvoker.reportWordCount(wordCountInfo)
+            systemMode !== EditorSystemMode.Revision && reportWordCount(wordCountInfo)
           }
         />
         {showTreeView && <TreeViewPlugin />}
@@ -332,7 +307,6 @@ export function Editor({
           {systemMode !== EditorSystemMode.Revision && userMode !== EditorUserMode.Preview && (
             <CommentPlugin
               key={userMode} // force rerender of comments when user mode changes
-              controller={clientInvoker}
               documentId={documentId}
               isSuggestionMode={isSuggestionMode}
               userAddress={userAddress}
@@ -350,7 +324,6 @@ export function Editor({
               showAlert={showAlert}
             />
           )}
-          {alertModal}
         </MarkNodesProvider>
       </SafeLexicalComposer>
     </CustomCollaborationContextProvider>
