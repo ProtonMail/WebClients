@@ -404,7 +404,7 @@ describe('useSetupGmailBYOEAddress', () => {
 
             it('should show the claimable modal on 2011 when the address is claimable', async () => {
                 const { showClaimable, showLegacy } = await setup(async () => ({ CanBeClaimed: true }));
-                expect(showClaimable).toHaveBeenCalledWith(mockToken.Account);
+                expect(showClaimable).toHaveBeenCalledWith(mockToken.Account, true, undefined);
                 expect(showLegacy).not.toHaveBeenCalled();
             });
 
@@ -546,6 +546,90 @@ describe('useSetupGmailBYOEAddress', () => {
 
             expect(mockApi).toHaveBeenCalled();
             expect(mockCreateNotification).toHaveBeenCalledWith(expect.objectContaining({ type: 'error' }));
+            expect(mockShowSuccessModal).not.toHaveBeenCalled();
+        });
+    });
+
+    describe('handleClaimAddress', () => {
+        const setup = () => {
+            const mockShowSuccessModal = jest.fn();
+            const mockOnComplete = jest.fn();
+            const { result } = renderHook(() =>
+                useSetupGmailBYOEAddress({
+                    showSuccessModal: mockShowSuccessModal,
+                    source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
+                    onComplete: mockOnComplete,
+                    showAddressLinkedToAnotherAccountModal: jest.fn(),
+                    showClaimableAddressModal: jest.fn(),
+                })
+            );
+            return { result, mockShowSuccessModal, mockOnComplete };
+        };
+
+        beforeEach(() => {
+            jest.clearAllMocks();
+            mockUseBYOEFeatureStatus.mockReturnValue([true, false] as const);
+            mockUseAddresses.mockReturnValue([[], false]);
+            mockFindUserAddress.mockReturnValue(undefined);
+            mockDispatch.mockResolvedValue({ Email: 'test@gmail.com', ID: 'addr-id' });
+            mockApi.mockResolvedValue({});
+            mockUseFlag.mockImplementation((flag) => flag === 'CanClaimExternalAddress');
+        });
+
+        it('should start the import with ClaimAddress and show success modal', async () => {
+            const { result, mockShowSuccessModal } = setup();
+
+            let claimed: boolean | undefined;
+            await act(async () => {
+                claimed = await result.current.handleClaimAddress({
+                    account: 'test@gmail.com',
+                    importEmails: true,
+                    importPeriod: undefined,
+                });
+            });
+
+            expect(claimed).toBe(true);
+            expect(mockStartImportTask).toHaveBeenCalledWith(
+                expect.objectContaining({ Account: 'test@gmail.com', AutomaticImport: true, ClaimAddress: true })
+            );
+            expect(mockShowSuccessModal).toHaveBeenCalledWith('test@gmail.com', true);
+        });
+
+        it('should do nothing when the claim flag is disabled', async () => {
+            mockUseFlag.mockReturnValue(false);
+            const { result, mockShowSuccessModal } = setup();
+
+            let claimed: boolean | undefined;
+            await act(async () => {
+                claimed = await result.current.handleClaimAddress({
+                    account: 'test@gmail.com',
+                    importEmails: true,
+                    importPeriod: undefined,
+                });
+            });
+
+            expect(claimed).toBe(false);
+            expect(mockApi).not.toHaveBeenCalled();
+            expect(mockShowSuccessModal).not.toHaveBeenCalled();
+        });
+
+        it('should handle the error and not create the address when the claim API fails', async () => {
+            mockApi.mockRejectedValue(new Error('Claim failed'));
+            const { result, mockShowSuccessModal, mockOnComplete } = setup();
+
+            let claimed: boolean | undefined;
+            await act(async () => {
+                claimed = await result.current.handleClaimAddress({
+                    account: 'test@gmail.com',
+                    importEmails: false,
+                    importPeriod: undefined,
+                });
+            });
+
+            expect(claimed).toBe(false);
+            expect(mockErrorHandler).toHaveBeenCalled();
+            expect(mockOnComplete).toHaveBeenCalled();
+            expect(mockDispatch).not.toHaveBeenCalled();
             expect(mockShowSuccessModal).not.toHaveBeenCalled();
         });
     });
