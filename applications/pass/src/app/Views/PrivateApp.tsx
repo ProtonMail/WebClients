@@ -102,7 +102,7 @@ export const PrivateApp: FC = () => {
         const localID = authStore?.getLocalID();
         const userID = authStore?.getUserID();
 
-        auth.requestFork(
+        void auth.requestFork(
             {
                 app: APPS.PROTONPASS,
                 host: config.SSO_URL,

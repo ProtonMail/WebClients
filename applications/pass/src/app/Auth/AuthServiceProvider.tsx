@@ -16,7 +16,7 @@ import { type AuthRouteState, isUnauthorizedPath, reloadHref } from '@proton/pas
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
-import { getConsumeForkParameters, getStateKey } from '@proton/pass/lib/auth/fork';
+import { getConsumeForkParameters, getForkSecretKey, getStateKey } from '@proton/pass/lib/auth/fork';
 import { AppStatusFromLockMode, LockMode, type UnlockDTO } from '@proton/pass/lib/auth/lock/types';
 import type { AuthService } from '@proton/pass/lib/auth/service';
 import { authStore } from '@proton/pass/lib/auth/store';
@@ -78,9 +78,12 @@ export const AuthServiceProvider: FC<PropsWithChildren<{ connectivity: Connectiv
                 try {
                     const params = getConsumeForkParameters();
                     const stateKey = getStateKey(params.state);
+                    const forkSecretKey = getForkSecretKey(params.state);
                     const localState = sessionStorage.getItem(stateKey);
+                    const forkSecret = sessionStorage.getItem(forkSecretKey);
 
                     sessionStorage.removeItem(stateKey);
+                    sessionStorage.removeItem(forkSecretKey);
 
                     if (!localState) {
                         logger.error('[AuthServiceProvider] Invalid fork path - no local state');
@@ -90,6 +93,7 @@ export const AuthServiceProvider: FC<PropsWithChildren<{ connectivity: Connectiv
 
                     return await authService.consumeFork({
                         mode: 'web',
+                        forkSecret,
                         key: params.key,
                         localState,
                         state: params.state,

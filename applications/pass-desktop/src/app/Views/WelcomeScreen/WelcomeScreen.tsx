@@ -31,12 +31,12 @@ export const WelcomeScreen: FC = () => {
 
     const onRegister = () => {
         dismissFirstLaunch();
-        authService.requestFork({ host, app: APPS.PROTONPASS, forkType: ForkType.SIGNUP });
+        void authService.requestFork({ host, app: APPS.PROTONPASS, forkType: ForkType.SIGNUP });
     };
 
     const onFork = () => {
         dismissFirstLaunch();
-        authService.requestFork({ host, app: APPS.PROTONPASS, forkType: ForkType.SWITCH });
+        void authService.requestFork({ host, app: APPS.PROTONPASS, forkType: ForkType.SWITCH });
     };
 
     const steps = useMemo<CarouselItem[]>(
