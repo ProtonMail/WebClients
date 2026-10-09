@@ -10,6 +10,7 @@ import {
 } from '@proton/account';
 import { readAccountSessions } from '@proton/account/accountSessions/storage';
 import * as bootstrap from '@proton/account/bootstrap';
+import { bootstrapEvent } from '@proton/account/bootstrap/action';
 import { getDecryptedPersistedState } from '@proton/account/persist/helper';
 import { FeatureCode, fetchFeatures } from '@proton/features';
 import createApi from '@proton/shared/lib/api/createApi';
@@ -396,6 +397,8 @@ export const bootstrapApp = async ({ config }: { config: ProtonConfig }) => {
         });
         eventManager.start();
         lumoEventManager.start();
+
+        dispatch(bootstrapEvent({ type: 'complete' }));
 
         return {
             user: gateUser,
