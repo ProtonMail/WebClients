@@ -10,6 +10,7 @@ import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { ModalOwnProps } from '@proton/components/index';
 import { ModalTwo, ModalTwoContent, SettingsLink, Toggle } from '@proton/components/index';
+import { isDesktopEnvironment } from '@proton/lumo-api-client/core/desktop-tools';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useLumoUserSettings } from '../../../hooks';
@@ -40,6 +41,7 @@ import { CreateFreeAccountLink } from '../../Guest/CreateFreeAccountLink/CreateF
 import { SignInButton } from '../../Guest/SignInLink';
 import { type IconName, LumoIcon } from '../../LumoIcon/LumoIcon';
 import AboutPanel from './AboutPanel';
+import DesktopSettingsPanel from './DesktopSettingsPanel';
 import DeleteAllButton from './DeleteAllButton';
 import { FontSizeSettingRow } from './FontSizeSettingRow';
 import MemoryPanel from './MemoryPanel';
@@ -85,6 +87,23 @@ const BASE_SETTINGS_ITEMS: SettingsItem[] = [
     },
     { id: 'about', icon: 'Info', getText: () => c('collider_2025: Settings Item').t`About`, guest: true },
 ];
+
+const DESKTOP_APP_SETTINGS_ITEM: SettingsItem = {
+    id: 'desktop',
+    icon: 'Blocks',
+    getText: () => c('collider_2025: Settings Item').t`Desktop app`,
+    guest: false,
+};
+
+function buildSettingsItems(memoryEnabled: boolean, desktopAppSettingsEnabled: boolean): SettingsItem[] {
+    const items = memoryEnabled ? BASE_SETTINGS_ITEMS : BASE_SETTINGS_ITEMS.filter((item) => item.id !== 'memory');
+    if (!desktopAppSettingsEnabled) {
+        return items;
+    }
+    const generalIndex = items.findIndex((item) => item.id === 'general');
+    const insertAt = generalIndex >= 0 ? generalIndex + 1 : items.length;
+    return [...items.slice(0, insertAt), DESKTOP_APP_SETTINGS_ITEM, ...items.slice(insertAt)];
+}
 
 const LumoSettingsSidebar = ({
     activePanel,
@@ -492,16 +511,22 @@ interface SettingsModalProps extends ModalOwnProps {
 }
 
 const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModalProps) => {
-    const { memory: isMemoryFeatureEnabled } = useLumoFlags();
-    const [activePanel, setActivePanel] = useState(
-        initialPanel === 'memory' && !isMemoryFeatureEnabled ? 'account' : initialPanel
-    );
+    const { memory: isMemoryFeatureEnabled, externalTools: isExternalToolsEnabled } = useLumoFlags();
+    const showDesktopAppSettings = isExternalToolsEnabled && isDesktopEnvironment();
+    const [activePanel, setActivePanel] = useState(() => {
+        if (initialPanel === 'memory' && !isMemoryFeatureEnabled) {
+            return 'account';
+        }
+        if (initialPanel === 'desktop' && !showDesktopAppSettings) {
+            return 'account';
+        }
+        return initialPanel;
+    });
     const isGuest = useIsGuest();
     const closeModal = modalProps.onClose;
     const SettingsItems = useMemo(
-        () =>
-            isMemoryFeatureEnabled ? BASE_SETTINGS_ITEMS : BASE_SETTINGS_ITEMS.filter((item) => item.id !== 'memory'),
-        [isMemoryFeatureEnabled]
+        () => buildSettingsItems(isMemoryFeatureEnabled, showDesktopAppSettings),
+        [isMemoryFeatureEnabled, showDesktopAppSettings]
     );
 
     useNativeComposerVisibilityApi({ hideComposer: true });
@@ -589,6 +614,9 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
                                 )}
                                 {activePanel === 'general' && !isGuest && (
                                     <GeneralSettingsPanelAuth onClose={closeModal} />
+                                )}
+                                {activePanel === 'desktop' && showDesktopAppSettings && (
+                                    <DesktopSettingsPanel onClose={closeModal} />
                                 )}
                                 {activePanel === 'appearance' && <AppearanceSettingsPanel />}
                                 {activePanel === 'about' && <AboutPanel />}
