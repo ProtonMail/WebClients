@@ -12,7 +12,7 @@ import type { Message } from '../../../../../../types';
 import { type IconName, LumoIcon } from '../../../../../LumoIcon/LumoIcon';
 import { LazyProgressiveMarkdownRenderer } from '../../../../../LumoMarkdown/LazyMarkdownComponents';
 import { ThinkingProgressDots } from './ThinkingProgressDots';
-import { getThinkingPathHeader } from './thinkingPathLabels';
+import { type ThinkingStep, getThinkingPathHeader } from './thinkingPathLabels';
 import { useThinkingHeaderAnimation } from './useThinkingHeaderAnimation';
 
 import './ThinkingPath.scss';
@@ -155,9 +155,7 @@ function getToolCallLabel(toolCall: ToolCallData | ToolCallAnnouncement): [strin
     }
 }
 
-export type ThinkingStep =
-    | { type: 'reasoning'; content: string; isActive: boolean; durationMs?: number }
-    | { type: 'tool_call'; toolCall: ToolCallData | ToolCallAnnouncement; result?: string; isActive: boolean };
+export type { ThinkingStep };
 
 interface ThinkingPathProps {
     steps: ThinkingStep[];
@@ -199,7 +197,7 @@ function buildThinkingTraceLines(steps: ThinkingStep[]): string[] {
     const lines: string[] = [];
 
     for (const step of steps) {
-        if (step.type === 'reasoning') {
+        if (step.type === 'reasoning' || step.type === 'preamble') {
             lines.push(...reasoningContentToLines(step.content));
             continue;
         }
@@ -438,6 +436,39 @@ const ReasoningContent = ({
                     <LazyProgressiveMarkdownRenderer
                         content={content}
                         isStreaming={isActive}
+                        handleLinkClick={handleLinkClick}
+                        message={message}
+                    />
+                </div>
+            </div>
+        </div>
+    );
+};
+
+const PreambleContent = ({
+    content,
+    message,
+    handleLinkClick,
+}: {
+    content: string;
+    message: Message;
+    handleLinkClick?: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void;
+}) => {
+    if (!content.trim()) {
+        return null;
+    }
+
+    return (
+        <div className="thinking-step">
+            <ThinkingStepTrack>
+                <LumoIcon name="MessageSquare" width={16} height={16} className="thinking-step-icon-badge shrink-0" />
+            </ThinkingStepTrack>
+
+            <div className="thinking-step-content thinking-step-content--reasoning min-w-0 text-rg lh130">
+                <div className="thinking-step-body min-w-0">
+                    <LazyProgressiveMarkdownRenderer
+                        content={content}
+                        isStreaming={false}
                         handleLinkClick={handleLinkClick}
                         message={message}
                     />
@@ -987,6 +1018,17 @@ export const ThinkingPath = ({ steps, message, isThinking, showThinkingTrace, ha
                                     key={`reasoning-${idx}-${step.isActive}`}
                                     content={step.content}
                                     isActive={step.isActive}
+                                    message={message}
+                                    handleLinkClick={handleLinkClick}
+                                />
+                            );
+                        }
+
+                        if (step.type === 'preamble') {
+                            return (
+                                <PreambleContent
+                                    key={`preamble-${idx}`}
+                                    content={step.content}
                                     message={message}
                                     handleLinkClick={handleLinkClick}
                                 />
