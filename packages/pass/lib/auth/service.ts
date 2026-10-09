@@ -32,6 +32,8 @@ import {
     type RequestForkOptions,
     type RequestForkResult,
     consumeFork,
+    generateForkSecret,
+    getForkChallenge,
     isReauthForkState,
     pullFork,
     requestFork,
@@ -135,8 +137,9 @@ export interface AuthServiceConfig {
     onForkInvalid?: (data: { reauth: boolean }) => void;
     /** Handle the result of a fork request call. Can be used to redirect the
      * user automatically when requesting a fork from account. Optional `data`
-     * object should be persisted for the `result.state` key. */
-    onForkRequest?: (result: RequestForkResult, data?: RequestForkData) => void;
+     * object should be persisted for the `result.state` key. `forkSecret` must
+     * be persisted too and passed back when consuming the fork. */
+    onForkRequest?: (result: RequestForkResult & { forkSecret: string }, data?: RequestForkData) => void;
     /** Optional hook when session resuming starts. Returning `false` from this
      * function will halt the session resume sequence. */
     onResumeStart?: (data: {
@@ -389,9 +392,10 @@ export const createAuthService = (config: AuthServiceConfig) => {
             }
         },
 
-        requestFork: (options: RequestForkOptions, data?: RequestForkData): RequestForkResult => {
-            const result = requestFork(options);
-            config.onForkRequest?.(result, data);
+        requestFork: async (options: RequestForkOptions, data?: RequestForkData): Promise<RequestForkResult> => {
+            const forkSecret = generateForkSecret();
+            const result = requestFork({ ...options, forkChallenge: await getForkChallenge(forkSecret) });
+            config.onForkRequest?.({ ...result, forkSecret }, data);
 
             return result;
         },
