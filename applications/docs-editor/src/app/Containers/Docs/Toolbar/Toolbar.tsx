@@ -70,11 +70,10 @@ import './Toolbar.scss'
 import ToolbarTooltip from './ToolbarTooltip'
 import { CLEAR_FORMATTING_COMMAND, SET_SELECTION_STYLE_PROPERTY_COMMAND } from '../Plugins/FormattingPlugin'
 import { INSERT_FILE_COMMAND } from '../Commands/Events'
-import { EditorUserMode } from '../../../Lib/EditorUserMode'
+import { EditorUserMode } from '../contract/EditorUserMode'
 import type { BlockType } from '../Plugins/BlockTypePlugin'
 import { blockTypeToBlockName, SET_BLOCK_TYPE_COMMAND } from '../Plugins/BlockTypePlugin'
-import { EditorEvent, TooltipKey, useTooltipOnce, EditorSystemMode } from '@proton/docs-shared'
-import type { EditorRequiresClientMethods } from '@proton/docs-shared'
+import { TooltipKey, useTooltipOnce, EditorSystemMode } from '@proton/docs-shared'
 import { InteractionDropdownButton } from './InteractionDropdownButton'
 import { stepFontSize } from './stepFontSize'
 import { isMobile } from './isMobile'
@@ -82,8 +81,6 @@ import type { ToolbarItems } from './ToolbarItems'
 import { OverflowMenuItem } from './OverflowMenuItem'
 import { ToolbarItem } from './ToolbarItem'
 import { BlockTypeMenu } from './BlockTypeMenu'
-import { useSyncedState } from '../../../Hooks/useSyncedState'
-import { useIsAlpha } from '../../../Hooks/useIsAlpha'
 
 function SubscriptIcon() {
   return (
@@ -109,7 +106,7 @@ export default function DocumentEditorToolbar({
   onUserModeChange,
   hasEditAccess,
   isPreviewModeToolbar = false,
-  clientInvoker,
+  onInteraction,
   isEditorHidden,
 }: {
   userMode: EditorUserMode
@@ -117,15 +114,12 @@ export default function DocumentEditorToolbar({
   onUserModeChange: (mode: EditorUserMode) => void
   hasEditAccess: boolean
   isPreviewModeToolbar?: boolean
-  clientInvoker?: EditorRequiresClientMethods
+  onInteraction?: () => void
   isEditorHidden?: boolean
 }) {
-  const { reportError } = useDocsDependencies()
-  const isAlpha = useIsAlpha()
+  const { reportError, isAlpha, suggestionsEnabled } = useDocsDependencies()
   const [editor] = useLexicalComposerContext()
   const [activeEditor, setActiveEditor] = useState(editor)
-
-  const { suggestionsEnabled } = useSyncedState()
 
   const canShowSuggestionsButton = suggestionsEnabled
 
@@ -406,7 +400,7 @@ export default function DocumentEditorToolbar({
       },
       COMMAND_PRIORITY_CRITICAL,
     )
-  }, [$updateToolbar, clientInvoker, editor])
+  }, [$updateToolbar, editor])
 
   const setFontSizeForSelection = useCallback(
     (newFontSize: string) => {
@@ -628,8 +622,8 @@ export default function DocumentEditorToolbar({
   )
 
   const onToolbarAnywhereClicked = useCallback(() => {
-    void clientInvoker?.editorReportingEvent(EditorEvent.ToolbarClicked, undefined)
-  }, [clientInvoker])
+    onInteraction?.()
+  }, [onInteraction])
 
   const isEditMode = userMode === EditorUserMode.Edit
   const isPreviewMode = userMode === EditorUserMode.Preview

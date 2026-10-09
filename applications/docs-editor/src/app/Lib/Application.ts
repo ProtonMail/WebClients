@@ -12,6 +12,7 @@ export class Application {
   private role: DocumentRole = new DocumentRole('Viewer')
   public readonly logger: LoggerInterface
   public languageCode: Intl.LocalesArgument = 'en'
+  private readonly localeSubscribers = new Set<(languageCode: Intl.LocalesArgument) => void>()
   public appVersion: string = ''
 
   /**
@@ -38,6 +39,15 @@ export class Application {
 
     this.logger.info('Setting editor language code', languageCode)
     this.languageCode = languageCode
+    this.localeSubscribers.forEach((callback) => callback(languageCode))
+  }
+
+  public subscribeToLocale(callback: (languageCode: Intl.LocalesArgument) => void): () => void {
+    this.localeSubscribers.add(callback)
+    callback(this.languageCode)
+    return () => {
+      this.localeSubscribers.delete(callback)
+    }
   }
 
   public setAppVersion(version: string): void {

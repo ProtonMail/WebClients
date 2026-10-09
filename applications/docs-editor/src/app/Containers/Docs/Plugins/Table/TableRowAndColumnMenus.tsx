@@ -26,14 +26,13 @@ import {
   INSERT_TABLE_ROW_COMMAND,
 } from './Commands'
 import { useCombinedRefs } from '@proton/hooks'
-import { useStore } from 'zustand'
-import { useEditorState } from '../../../EditorStateProvider'
-import { EditorUserMode } from '../../../../Lib/EditorUserMode'
+import { useDocsUserMode } from '../../DocsPresentationProvider'
+import { EditorUserMode } from '../../contract/EditorUserMode'
 
 export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) {
   const [editor] = useLexicalComposerContext()
 
-  const userMode = useStore(useEditorState(), (state) => state.userMode)
+  const userMode = useDocsUserMode()
   const isSuggestionMode = userMode === EditorUserMode.Suggest
 
   const tableRowNodeKey = useRef<NodeKey | null>(null)

@@ -47,7 +47,7 @@ import { $patchStyleAsSuggestion } from './patchStyleAsSuggestion'
 import { generateSuggestionSummary } from './generateSuggestionSummary'
 import { INSERT_IMAGE_NODE_COMMAND, SET_IMAGE_SIZE_COMMAND } from '../Image/ImagePlugin'
 import { $handleImageDragAndDropAsSuggestion, $handleImageSizeChangeAsSuggestion } from './imageHandling'
-import { EditorUserMode } from '../../../../Lib/EditorUserMode'
+import { EditorUserMode } from '../../contract/EditorUserMode'
 import { $handleIndentOutdentAsSuggestion } from './handleIndentOutdent'
 import { c } from 'ttag'
 import {

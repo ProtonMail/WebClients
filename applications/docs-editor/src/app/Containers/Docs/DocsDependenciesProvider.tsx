@@ -1,24 +1,34 @@
-import type { CommentThreadInterface } from '@proton/docs-shared'
-import type { SuggestionSummaryType } from './contract/SuggestionType'
 import type { TelemetryDocsEditorEvents } from '@proton/shared/lib/api/telemetry'
 import type { PropsWithChildren } from 'react'
 import { createContext, useContext } from 'react'
 import type { DocsLogger } from './contract/DocsLogger'
+import type { SafeDocsUserState } from './contract/Awareness'
+import type { WordCountInfoCollection } from './Utils/WordCount/WordCountTypes'
+import type { DocsComments } from './contract/DocsComments'
 
 export type DocsDependencies = {
+  userName: string
+  suggestionsEnabled: boolean
+  isAlpha: boolean
+  canEdit: boolean
+  canComment: boolean
+  languageCode: Intl.LocalesArgument
+  getDisplayNameForEmail: (email: string | undefined) => string
+  comments: DocsComments
   reportError: (error: unknown, extra?: Record<string, unknown>) => void
   logger: DocsLogger
-  isDevOrBlack: () => boolean
   openLink: (url: string) => void
   showGenericAlertModal: (message: string) => void
-  createSuggestionThread(
-    suggestionID: string,
-    commentContent: string,
-    suggestionType: SuggestionSummaryType,
-  ): Promise<CommentThreadInterface | undefined>
-  getAllThreads: () => Promise<CommentThreadInterface[]>
-  reopenSuggestion: (threadId: string) => Promise<boolean>
-  rejectSuggestion: (threadId: string, summary?: string | undefined) => Promise<boolean>
+  createWarningNotification: (message: string) => void
+  createInfoNotification: (message: string) => void
+  showAlert: (title: string, message: string) => void
+  reportToolbarInteraction: () => void
+  reportWordCount: (wordCount: WordCountInfoCollection) => void
+  subscribeToCollaboratorCursorNavigation: (callback: (state: SafeDocsUserState) => void) => () => void
+  createSuggestionThread: DocsComments['createSuggestionThread']
+  getAllThreads: DocsComments['getAllThreads']
+  reopenSuggestion: DocsComments['reopenSuggestion']
+  rejectSuggestion: DocsComments['rejectSuggestion']
   getDocumentUrl: () => Promise<string>
   replaceDocumentUrl: (url: string) => Promise<void>
   reportTelemetry: (event: TelemetryDocsEditorEvents) => void
