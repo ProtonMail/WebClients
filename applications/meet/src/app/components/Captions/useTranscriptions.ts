@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 
-import { useRoomContext } from '@livekit/components-react';
+import { useConnectionState, useRoomContext } from '@livekit/components-react';
+import { ConnectionState } from 'livekit-client';
 import type { Room, TextStreamReader } from 'livekit-client';
 
 import { useMeetErrorReporting } from '@proton/meet';
@@ -35,8 +36,9 @@ export interface CaptionSegment {
     receivedAt: number;
 }
 
-// 'failing' means captions are arriving but none can be decoded.
-export type CaptionsStatus = 'loading' | 'ready' | 'active' | 'failing';
+// 'failing' means captions are arriving but none can be decoded. 'disconnected' means they can't
+// arrive until we, or the agent, are back in the room.
+export type CaptionsStatus = 'loading' | 'ready' | 'active' | 'failing' | 'disconnected';
 
 export interface Transcriptions {
     segments: CaptionSegment[];
@@ -64,7 +66,11 @@ export const useTranscriptions = (): Transcriptions => {
     const meetCoreClient = useMeetCoreClient();
     const { reportMeetError } = useMeetErrorReporting();
     const agentPresent = useMeetSelector(selectCaptionsAgentPresent);
+    const connectionState = useConnectionState(room);
     const simStatus = useCaptionsSimStatus();
+    // An agent that has yet to join is still loading; one that has left took the captions with it.
+    const agentEverPresent = useRef(false);
+    agentEverPresent.current = agentEverPresent.current || agentPresent;
     const [segments, setSegments] = useState<Map<string, CaptionSegment>>(() => new Map());
     // Ids of the raw segments composing the currently-visible lines; these are kept alive so the
     // last lines stay on screen instead of being expired by the cleanup interval below.
@@ -293,8 +299,17 @@ export const useTranscriptions = (): Transcriptions => {
     // segment that is already on screen in the render it fires between.
     visibleIdsRef.current = visibleIds;
 
+    // A signal-only reconnect leaves the data channel, and so the captions, flowing.
+    const disconnected =
+        connectionState === ConnectionState.Reconnecting ||
+        (agentEverPresent.current && !agentPresent) ||
+        simStatus === 'disconnected';
+
     let status: CaptionsStatus = 'loading';
-    if (hasSegments) {
+    // Lines already on screen would otherwise sit there looking current.
+    if (disconnected) {
+        status = 'disconnected';
+    } else if (hasSegments) {
         status = 'active';
     } else if (failing || simStatus === 'failing') {
         status = 'failing';

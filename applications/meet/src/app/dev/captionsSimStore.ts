@@ -5,7 +5,7 @@ import { useSyncExternalStore } from 'react';
  * unless the tool is used, which never happens in production builds.
  */
 
-export type CaptionsSimStatus = 'off' | 'loading' | 'ready' | 'failing';
+export type CaptionsSimStatus = 'off' | 'loading' | 'ready' | 'failing' | 'disconnected';
 
 export interface CaptionsSimSegment {
     id: string;
