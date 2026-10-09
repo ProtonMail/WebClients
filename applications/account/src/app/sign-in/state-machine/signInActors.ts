@@ -44,6 +44,7 @@ export const createSignInActors = (services: SignInActorServices) => {
                     username: input.username,
                     persistent: input.persistent,
                     loginPassword: input.password,
+                    claimedAddress: input.claimedAddress,
                 },
                 account: {},
                 keyTransparency: {

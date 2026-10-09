@@ -2,19 +2,16 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
-import useLoading from '@proton/hooks/useLoading';
-import noop from '@proton/utils/noop';
 
 interface Props {
     domain: string;
     username: string;
-    onSubmit: (username: string, domain: string) => Promise<void>;
+    onSubmit: (username: string, domain: string) => void;
+    loading?: boolean;
     onEdit?: () => void;
 }
 
-const ClaimInternalAddressForm = ({ username = '', domain, onSubmit, onEdit }: Props) => {
-    const [loading, withLoading] = useLoading();
-
+const ClaimInternalAddressForm = ({ username = '', domain, onSubmit, loading = false, onEdit }: Props) => {
     // translator: Create your own (email address)
     const createYourOwn = c('Action').t`Create your own`;
     return (
@@ -33,7 +30,7 @@ const ClaimInternalAddressForm = ({ username = '', domain, onSubmit, onEdit }: P
                     if (loading) {
                         return;
                     }
-                    withLoading(onSubmit(username, domain)).catch(noop);
+                    onSubmit(username, domain);
                 }}
                 fullWidth
                 loading={loading}

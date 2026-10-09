@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import useLoading from '@proton/hooks/useLoading';
 import {
     requiredValidator,
     usernameCharacterValidator,
@@ -14,16 +13,15 @@ import {
     usernameNoEmailValidator,
     usernameStartCharacterValidator,
 } from '@proton/shared/lib/helpers/formValidators';
-import noop from '@proton/utils/noop';
 
 interface Props {
-    onSubmit: (username: string, domain: string) => Promise<void>;
+    onSubmit: (username: string, domain: string) => void;
+    loading?: boolean;
     availableDomains?: string[];
     defaultUsername?: string;
 }
 
-const GenerateAddressForm = ({ defaultUsername = '', onSubmit, availableDomains }: Props) => {
-    const [loading, withLoading] = useLoading();
+const GenerateAddressForm = ({ defaultUsername = '', onSubmit, loading = false, availableDomains }: Props) => {
     const [username, setUsername] = useState(defaultUsername);
 
     const { validator, onFormSubmit } = useFormErrors();
@@ -39,7 +37,7 @@ const GenerateAddressForm = ({ defaultUsername = '', onSubmit, availableDomains 
                 if (loading || !onFormSubmit()) {
                     return;
                 }
-                withLoading(onSubmit(trimmedUsername, domain)).catch(noop);
+                onSubmit(trimmedUsername, domain);
             }}
             method="post"
         >

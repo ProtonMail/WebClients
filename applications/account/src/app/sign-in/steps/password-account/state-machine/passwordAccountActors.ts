@@ -5,7 +5,13 @@ import type { OrganizationData } from '@proton/shared/lib/keys/unprivatization/h
 
 import type { AuthSession } from '../../../../content/authSession';
 import { getSignInPasswordPolicies } from '../../../auth/accountData';
-import { setupAccountKeys, unlockAccountKeys } from '../../../auth/accountKeys';
+import { setupAccountKeys, unlockAccountKeys, unlockKeyPassword } from '../../../auth/accountKeys';
+import {
+    type ClaimedAddressSetup,
+    type UnlockedKeys,
+    createClaimedAddressAndFinalize,
+    loadClaimedAddressSetup,
+} from '../../../auth/claimedAddress';
 import { finalizeSignIn } from '../../../auth/finalizeSignIn';
 import { verifyTwoFactor } from '../../../auth/secondFactor';
 import { type AccountFlowInput, NO_PASSWORD_POLICIES } from '../../../state-machine/accountFlow';
@@ -53,6 +59,40 @@ export const createPasswordAccountActors = (services: SignInActorServices) => {
                     isOnePasswordMode: input.isOnePasswordMode,
                 })
         ),
+        /** How the claimed-address recovery finishes: an address the data already lives under, or a new one. */
+        loadClaimedAddressSetup: fromPromise<ClaimedAddressSetup, AccountFlowInput>(({ input }) => {
+            const { user } = getUserAndSalts(input.auth);
+            return loadClaimedAddressSetup({ api, user, claimedEmail: input.auth.credentials.username });
+        }),
+        /** The key password, for the new address's key; the session is created once that address exists. */
+        unlockKeyPassword: fromPromise<
+            UnlockedKeys,
+            AccountFlowInput & { password: string; isOnePasswordMode: boolean }
+        >(async ({ input }) => {
+            const { user, salts } = getUserAndSalts(input.auth);
+            const keyPassword = await unlockKeyPassword({ user, salts, clearKeyPassword: input.password });
+            return { keyPassword, clearKeyPassword: input.password, isOnePasswordMode: input.isOnePasswordMode };
+        }),
+        /** Creates the new address and its key, then the session; returns both. */
+        createClaimedAddress: fromPromise<
+            { session: AuthSession; address: string },
+            AccountFlowInput & {
+                unlocked: UnlockedKeys | undefined;
+                username: string;
+                domain: string;
+                checkAvailability: boolean;
+            }
+        >(async ({ input }) => {
+            const session = await createClaimedAddressAndFinalize(contextOf(input.auth), {
+                user: getUserAndSalts(input.auth).user,
+                loginPassword: input.auth.credentials.loginPassword,
+                unlocked: input.unlocked,
+                username: input.username,
+                domain: input.domain,
+                checkAvailability: input.checkAvailability,
+            });
+            return { session, address: `${input.username}@${input.domain}` };
+        }),
     };
 };
 
