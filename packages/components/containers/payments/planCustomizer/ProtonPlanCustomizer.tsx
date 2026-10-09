@@ -13,6 +13,7 @@ import { setQuantity } from '@proton/payments/core/planIDs';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { Audience } from '@proton/shared/lib/interfaces';
 import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -174,6 +175,8 @@ export interface Props extends ComponentPropsWithoutRef<'div'> {
     separator?: boolean;
     telemetryContext: PaymentTelemetryContext;
     header?: ReactNode;
+    /** App the checkout was opened from; Lumo/Meet addons are hidden for Mail and Calendar. */
+    app?: ProductParam;
 }
 
 export const ProtonPlanCustomizer = ({
@@ -195,6 +198,7 @@ export const ProtonPlanCustomizer = ({
     separator = false,
     telemetryContext,
     header,
+    app,
     ...rest
 }: Props) => {
     const scribeToLumo = useFlag(MailFeatureFlag.ScribeToLumo);
@@ -214,6 +218,7 @@ export const ProtonPlanCustomizer = ({
         scribeToLumo,
         couponConfig,
         isSignup: mode === 'signup',
+        app,
     });
 
     if (addonCustomizerItems.length === 0) {
