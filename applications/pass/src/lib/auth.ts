@@ -27,7 +27,7 @@ import { DEFAULT_LOCK_TTL } from '@proton/pass/constants';
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import { api } from '@proton/pass/lib/api/api';
 import { getIsSessionInvalid } from '@proton/pass/lib/api/utils';
-import { extractOfflineComponents, getStateKey } from '@proton/pass/lib/auth/fork';
+import { extractOfflineComponents, getForkSecretKey, getStateKey } from '@proton/pass/lib/auth/fork';
 import { biometricsLockAdapterFactory, generateBiometricsKey } from '@proton/pass/lib/auth/lock/biometrics/adapter';
 import { passwordLockAdapterFactory } from '@proton/pass/lib/auth/lock/password/adapter';
 import { sessionLockAdapterFactory } from '@proton/pass/lib/auth/lock/session/adapter';
@@ -232,7 +232,7 @@ export const createAuthService = ({
                  * we are likely dealing with an app-switch request from another app.
                  * In this case, redirect to account through a fork request. On
                  * auto-fork tolerate `offline-bypass` for smoother UX. */
-                auth.requestFork({
+                void auth.requestFork({
                     app: APPS.PROTONPASS,
                     host: config.SSO_URL,
                     localID: pathLocalID,
@@ -453,7 +453,7 @@ export const createAuthService = ({
             if (reauth) void auth.init({ forceLock: true, forcePersist: true });
         },
 
-        onForkRequest: async ({ url, state }, data) => {
+        onForkRequest: async ({ url, state, forkSecret }, data) => {
             const revokedUIDs = getPendingRevocations();
 
             /** When requesting a fork, attempt to revoke any pending sessions that were
@@ -475,6 +475,7 @@ export const createAuthService = ({
 
             const sessionState = JSON.stringify(data ?? redirect.data);
             sessionStorage.setItem(getStateKey(state), sessionState);
+            sessionStorage.setItem(getForkSecretKey(state), forkSecret);
 
             /** Clear SSH keys before navigating to SSO */
             void sshAgent?.clear();
