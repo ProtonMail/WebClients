@@ -9,6 +9,7 @@ import {
     emitMeetCoreMlsSyncStateEvent,
     emitMeetCoreNewGroupKeyEvent,
 } from './meetCoreCallbacks';
+import { MeetCoreRestartedError } from './meetCoreStallRecovery';
 import type {
     MeetCoreCookieAckMessage,
     MeetCoreCookieBridgeRequestMessage,
@@ -61,15 +62,15 @@ export class MeetCoreWorkerClient implements MeetCoreClient {
     private worker: Worker | null;
     private disposed = false;
     private unavailableReason: Error | MeetCoreErrorEnum | null = null;
+    private initParams: MeetCoreInitParams | null = null;
+    private restartPromise: Promise<boolean> | null = null;
 
     public constructor() {
-        this.worker = new Worker(new URL('./meet-core.worker.ts', import.meta.url), { type: 'module' });
-        this.worker.addEventListener('message', this.handleWorkerMessage);
-        this.worker.addEventListener('error', this.handleWorkerError);
-        this.worker.addEventListener('messageerror', this.handleWorkerMessageError);
+        this.worker = this.createWorker();
     }
 
     public async init(params: MeetCoreInitParams): Promise<void> {
+        this.initParams = params;
         const id = this.nextRequestId++;
         const worker = this.getWorker();
         const request: MeetCoreWorkerRequestMessage = {
@@ -364,6 +365,47 @@ export class MeetCoreWorkerClient implements MeetCoreClient {
         this.terminateWorker();
     }
 
+    /**
+     * Terminates the worker, along with any call stuck inside it, and initializes a fresh one. Pending
+     * calls reject with `MeetCoreRestartedError`; calls made while restarting wait for the new worker.
+     */
+    public restart(): Promise<boolean> {
+        if (this.restartPromise) {
+            return this.restartPromise;
+        }
+
+        const params = this.initParams;
+        if (this.disposed || !params) {
+            return Promise.resolve(false);
+        }
+
+        this.terminateWorker();
+        this.rejectAllPending(new MeetCoreRestartedError());
+        this.unavailableReason = null;
+        this.worker = this.createWorker();
+
+        this.restartPromise = this.init(params)
+            .then(() => true)
+            .catch((error: Error | MeetCoreErrorEnum) => {
+                this.failWorker(error);
+                this.terminateWorker();
+                return false;
+            })
+            .finally(() => {
+                this.restartPromise = null;
+            });
+
+        return this.restartPromise;
+    }
+
+    private createWorker(): Worker {
+        const worker = new Worker(new URL('./meet-core.worker.ts', import.meta.url), { type: 'module' });
+        worker.addEventListener('message', this.handleWorkerMessage);
+        worker.addEventListener('error', this.handleWorkerError);
+        worker.addEventListener('messageerror', this.handleWorkerMessageError);
+        return worker;
+    }
+
     private terminateWorker() {
         if (!this.worker) {
             return;
@@ -387,6 +429,10 @@ export class MeetCoreWorkerClient implements MeetCoreClient {
         method: Method,
         params: MeetCoreRpcMethodMap[Method]['params']
     ): Promise<MeetCoreRpcMethodMap[Method]['result']> {
+        if (this.restartPromise) {
+            return this.restartPromise.then(() => this.request(method, params));
+        }
+
         const id = this.nextRequestId++;
         let worker: Worker;
         try {

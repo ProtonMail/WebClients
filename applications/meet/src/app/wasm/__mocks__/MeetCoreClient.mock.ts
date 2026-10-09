@@ -55,6 +55,7 @@ const createDefaultMocks = () =>
         updateParticipantTrackSettings: vi.fn().mockResolvedValue(undefined),
         endMeeting: vi.fn().mockResolvedValue(undefined),
         dispose: vi.fn(),
+        restart: vi.fn().mockResolvedValue(true),
         composeChatMessage: vi.fn().mockResolvedValue(undefined),
         composeChatReaction: vi.fn().mockResolvedValue(undefined),
         composeChatUnreact: vi.fn().mockResolvedValue(undefined),

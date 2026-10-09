@@ -10,20 +10,24 @@ import { useMeetDispatch, useMeetStore } from '@proton/meet/store/hooks';
 import { setIsReconnecting, setJoinedRoom } from '@proton/meet/store/slices/connectionSlice';
 import { setMeetingEndedReason, setUpsellModalType } from '@proton/meet/store/slices/meetAppStateSlice';
 import { UpsellModalTypes } from '@proton/meet/types/types';
+import { SECOND } from '@proton/shared/lib/constants';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
-import { ROOM_DELETED_TOPIC, useRoomEventHandlers } from './useRoomEventHandlers';
+import { LIVEKIT_RECONNECT_STALL_TIMEOUT_MS, ROOM_DELETED_TOPIC, useRoomEventHandlers } from './useRoomEventHandlers';
 
 vi.mock('@livekit/components-react', () => ({ useRoomContext: vi.fn() }));
 vi.mock('react-router-dom', () => ({ useHistory: vi.fn() }));
 vi.mock('@proton/meet/store/hooks', () => ({ useMeetDispatch: vi.fn(), useMeetStore: vi.fn() }));
 vi.mock('../../contexts/MeetCoreClientContext', () => ({ useMeetCoreClient: vi.fn() }));
+vi.mock('@proton/unleash/useFlag', () => ({ useFlag: vi.fn() }));
 
 const useRoomContextMock = useRoomContext as unknown as Mock;
 const useHistoryMock = useHistory as unknown as Mock;
 const useMeetDispatchMock = useMeetDispatch as unknown as Mock;
 const useMeetStoreMock = useMeetStore as unknown as Mock;
 const useMeetCoreClientMock = useMeetCoreClient as unknown as Mock;
+const useFlagMock = useFlag as unknown as Mock;
 
 const mockRoom = { on: vi.fn(), off: vi.fn() };
 const mockHistory = { push: vi.fn() };
@@ -65,6 +69,7 @@ describe('useRoomEventHandlers', () => {
         useMeetDispatchMock.mockReturnValue(mockDispatch);
         useMeetStoreMock.mockReturnValue(mockStore);
         useMeetCoreClientMock.mockReturnValue(mockMeetCoreClient);
+        useFlagMock.mockReturnValue(false);
     });
 
     it('does not register listeners while not joined', () => {
@@ -214,6 +219,115 @@ describe('useRoomEventHandlers', () => {
             act(() => handler(ConnectionState.Connected));
 
             expect(result.current.showReconnectedMessage).toBe(false);
+        });
+
+        describe('reconnect stall watchdog', () => {
+            const advanceTimers = (ms: number) => {
+                act(() => {
+                    vi.advanceTimersByTime(ms);
+                });
+            };
+
+            beforeEach(() => {
+                useFlagMock.mockImplementation((name: string) => name === 'MeetHandleStalledLiveKitReconnect');
+            });
+
+            it('does nothing when MeetHandleStalledLiveKitReconnect is disabled', () => {
+                useFlagMock.mockReturnValue(false);
+                const params = createParams();
+                renderHook(() => useRoomEventHandlers(params));
+
+                act(() => getHandler(RoomEvent.ConnectionStateChanged)(ConnectionState.Reconnecting));
+                advanceTimers(LIVEKIT_RECONNECT_STALL_TIMEOUT_MS);
+
+                expect(params.triggerFullReconnectionRef.current).not.toHaveBeenCalled();
+                expect(params.reportMeetError).not.toHaveBeenCalled();
+            });
+
+            it('triggers a full reconnection when LiveKit stays reconnecting past the timeout', () => {
+                const params = createParams();
+                renderHook(() => useRoomEventHandlers(params));
+                const handler = getHandler(RoomEvent.ConnectionStateChanged);
+
+                act(() => handler(ConnectionState.SignalReconnecting));
+                advanceTimers(LIVEKIT_RECONNECT_STALL_TIMEOUT_MS - 1);
+                expect(params.triggerFullReconnectionRef.current).not.toHaveBeenCalled();
+
+                advanceTimers(1);
+                expect(params.triggerFullReconnectionRef.current).toHaveBeenCalledWith(
+                    RejoinReasonInfo.LivekitConnectionTimeout
+                );
+                expect(params.reportMeetError).toHaveBeenCalledWith(
+                    'LiveKit reconnection stalled, triggering full reconnection',
+                    expect.anything()
+                );
+            });
+
+            it('keeps the timeout running across Reconnecting and SignalReconnecting flips', () => {
+                const params = createParams();
+                renderHook(() => useRoomEventHandlers(params));
+                const handler = getHandler(RoomEvent.ConnectionStateChanged);
+
+                act(() => handler(ConnectionState.SignalReconnecting));
+                advanceTimers(LIVEKIT_RECONNECT_STALL_TIMEOUT_MS / 2);
+                act(() => handler(ConnectionState.Reconnecting));
+                act(() => handler(ConnectionState.SignalReconnecting));
+                advanceTimers(LIVEKIT_RECONNECT_STALL_TIMEOUT_MS / 2);
+
+                expect(params.triggerFullReconnectionRef.current).toHaveBeenCalledTimes(1);
+            });
+
+            it('still triggers when LiveKit drops again right after reconnecting', () => {
+                const params = createParams();
+                renderHook(() => useRoomEventHandlers(params));
+                const handler = getHandler(RoomEvent.ConnectionStateChanged);
+
+                act(() => handler(ConnectionState.Reconnecting));
+                act(() => handler(ConnectionState.Connected));
+                act(() => handler(ConnectionState.SignalReconnecting));
+                advanceTimers(4 * SECOND);
+                advanceTimers(LIVEKIT_RECONNECT_STALL_TIMEOUT_MS);
+
+                expect(params.triggerFullReconnectionRef.current).toHaveBeenCalledWith(
+                    RejoinReasonInfo.LivekitConnectionTimeout
+                );
+            });
+
+            it.each([ConnectionState.Connected, ConnectionState.Disconnected])(
+                'cancels when LiveKit reaches %s',
+                (state) => {
+                    const params = createParams();
+                    renderHook(() => useRoomEventHandlers(params));
+                    const handler = getHandler(RoomEvent.ConnectionStateChanged);
+
+                    act(() => handler(ConnectionState.Reconnecting));
+                    act(() => handler(state));
+                    advanceTimers(LIVEKIT_RECONNECT_STALL_TIMEOUT_MS);
+
+                    expect(params.triggerFullReconnectionRef.current).not.toHaveBeenCalled();
+                }
+            );
+
+            it('does not trigger while a full reconnection is already running', () => {
+                const params = createParams({ isReconnectingRef: { current: true } });
+                renderHook(() => useRoomEventHandlers(params));
+
+                act(() => getHandler(RoomEvent.ConnectionStateChanged)(ConnectionState.Reconnecting));
+                advanceTimers(LIVEKIT_RECONNECT_STALL_TIMEOUT_MS);
+
+                expect(params.triggerFullReconnectionRef.current).not.toHaveBeenCalled();
+            });
+
+            it('cancels when the listeners are torn down', () => {
+                const params = createParams();
+                const { unmount } = renderHook(() => useRoomEventHandlers(params));
+
+                act(() => getHandler(RoomEvent.ConnectionStateChanged)(ConnectionState.Reconnecting));
+                unmount();
+                advanceTimers(LIVEKIT_RECONNECT_STALL_TIMEOUT_MS);
+
+                expect(params.triggerFullReconnectionRef.current).not.toHaveBeenCalled();
+            });
         });
     });
 });

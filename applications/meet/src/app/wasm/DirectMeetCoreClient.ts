@@ -288,6 +288,11 @@ export class DirectMeetCoreClient implements MeetCoreClient {
 
     private disposed = false;
 
+    // The app runs on the main thread, so a call stuck inside it can't be torn down
+    public restart(): Promise<boolean> {
+        return Promise.resolve(false);
+    }
+
     public dispose(): void {
         if (this.disposed) {
             return;

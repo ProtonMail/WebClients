@@ -14,6 +14,7 @@ import {
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
+import { MEET_CORE_STALL_TIMEOUT_MS } from '../../wasm/meetCoreStallRecovery';
 import { useMeetingAuthentication } from '../srp/useMeetingAuthentication';
 import { useMeetingConnection } from './useMeetingConnection';
 
@@ -42,6 +43,7 @@ const mockRoom = {
 const mockMeetCoreClient = {
     leaveMeeting: vi.fn().mockResolvedValue(undefined),
     logUserRejoin: vi.fn().mockResolvedValue(undefined),
+    restart: vi.fn().mockResolvedValue(true),
 };
 
 const createParams = (overrides: Record<string, any> = {}): any => ({
@@ -247,6 +249,66 @@ describe('useMeetingConnection', () => {
             expect(params.accessTokenRef.current).toBeNull();
             expect(result.current.websocketUrlRef.current).toBeNull();
             expect(result.current.isReconnectingRef.current).toBe(false);
+        });
+
+        describe('when leaving the MLS group hangs', () => {
+            beforeEach(() => {
+                vi.useFakeTimers();
+                useFlagMock.mockImplementation((name: string) => name === 'MeetHandleStalledLiveKitReconnect');
+            });
+            afterEach(() => vi.useRealTimers());
+
+            it('does not restart meet-core when MeetHandleStalledLiveKitReconnect is disabled', async () => {
+                useFlagMock.mockReturnValue(false);
+                mockMeetCoreClient.leaveMeeting.mockReturnValueOnce(new Promise(() => {}));
+                const params = createParams({ mlsSetupDone: { current: true } });
+                const { result } = renderHook(() => useMeetingConnection(params));
+
+                await act(async () => {
+                    void result.current.performFullReconnection(RejoinReasonInfo.LivekitConnectionTimeout);
+                    await vi.advanceTimersByTimeAsync(MEET_CORE_STALL_TIMEOUT_MS);
+                });
+
+                expect(mockMeetCoreClient.restart).not.toHaveBeenCalled();
+                expect(params.handleMlsSetup).not.toHaveBeenCalled();
+            });
+
+            it('restarts meet-core and still rejoins after a LiveKit stall', async () => {
+                mockMeetCoreClient.leaveMeeting.mockReturnValueOnce(new Promise(() => {}));
+                const params = createParams({ mlsSetupDone: { current: true } });
+                const { result } = renderHook(() => useMeetingConnection(params));
+
+                await act(async () => {
+                    const reconnection = result.current.performFullReconnection(
+                        RejoinReasonInfo.LivekitConnectionTimeout
+                    );
+                    await vi.advanceTimersByTimeAsync(MEET_CORE_STALL_TIMEOUT_MS);
+                    await reconnection;
+                });
+
+                expect(mockMeetCoreClient.restart).toHaveBeenCalledTimes(1);
+                expect(params.reportMeetError).toHaveBeenCalledWith(
+                    'Meet core leaveMeeting timed out',
+                    expect.anything()
+                );
+                expect(params.handleMlsSetup).toHaveBeenCalled();
+                expect(mockDispatch).toHaveBeenCalledWith(setJoinedRoom(true));
+                expect(result.current.isReconnectingRef.current).toBe(false);
+            });
+
+            it('does not restart meet-core for other reconnection reasons', async () => {
+                mockMeetCoreClient.leaveMeeting.mockReturnValueOnce(new Promise(() => {}));
+                const params = createParams({ mlsSetupDone: { current: true } });
+                const { result } = renderHook(() => useMeetingConnection(params));
+
+                await act(async () => {
+                    void result.current.performFullReconnection(RejoinReasonInfo.Other);
+                    await vi.advanceTimersByTimeAsync(MEET_CORE_STALL_TIMEOUT_MS);
+                });
+
+                expect(mockMeetCoreClient.restart).not.toHaveBeenCalled();
+                expect(params.handleMlsSetup).not.toHaveBeenCalled();
+            });
         });
     });
 });
