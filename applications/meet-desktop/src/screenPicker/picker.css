@@ -1,0 +1,352 @@
+/* Values mirror applications/meet/src/app/styles/meet.theme.css and the Meet button styles in app.scss. */
+:root {
+    --background-norm: #16161f;
+    --background-card: #232331;
+    --background-weak: #2e2f42;
+    --border-norm: #393b51;
+    --border-card: #2e2f42;
+    --text-norm: #ffffff;
+    --text-weak: #bfbfd0;
+    --text-hint: #81819a;
+    --text-invert: #1a1a28;
+    --text-disabled: #646481;
+    --interaction-norm: #968aef;
+    --interaction-norm-major-1: #aea4f3;
+    --interaction-norm-minor-1: #7169b8;
+    --interaction-weak-minor-1: #323244;
+    --interaction-weak-minor-3: #1a1a28;
+    --focus-outline: #5e64cc;
+
+    color-scheme: dark;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+/* No native blur outside macOS, so the meeting is hidden behind a near-opaque backdrop instead. */
+body {
+    background: rgb(22 22 31 / 0.94);
+    color: var(--text-norm);
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    user-select: none;
+}
+
+.has-blurred-backdrop body {
+    background: rgb(10 10 18 / 0.55);
+}
+
+button {
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+button:focus-visible,
+input:focus-visible {
+    outline: 2px solid var(--focus-outline);
+    outline-offset: 2px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.picker-close {
+    position: fixed;
+    inset-block-start: 24px;
+    inset-inline-end: 24px;
+    display: flex;
+    padding: 8px;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--text-weak);
+    z-index: 1;
+}
+
+.picker-close:hover {
+    background: rgb(255 255 255 / 0.08);
+    color: var(--text-norm);
+}
+
+.picker {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 56px 24px 32px;
+}
+
+/* Same soft glow as Meet's .meet-glow-effect, sitting behind the title. */
+.picker::before {
+    content: "";
+    position: absolute;
+    inset-block-start: calc(50% - 15rem);
+    inset-inline-start: 50%;
+    width: 9rem;
+    height: 9rem;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: var(--interaction-norm-minor-1);
+    opacity: 0.45;
+    filter: blur(3.5rem);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.picker-title {
+    flex-shrink: 0;
+    margin: 0 0 20px;
+    font-size: 26px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.picker-tabs {
+    flex-shrink: 0;
+    display: flex;
+    gap: 2px;
+    padding: 5px;
+    border-radius: 999px;
+    background: rgb(46 47 66 / 0.85);
+}
+
+.picker-tab {
+    padding: 6px 14px;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--text-weak);
+    font-size: 13.5px;
+    transition:
+        background-color 0.15s ease,
+        color 0.15s ease;
+}
+
+.picker-tab:hover {
+    color: var(--text-norm);
+}
+
+.picker-tab.is-active {
+    background: var(--interaction-weak-minor-3);
+    color: var(--text-norm);
+}
+
+.picker-description {
+    flex-shrink: 0;
+    max-width: 30rem;
+    margin: 20px 0 18px;
+    color: var(--text-weak);
+    font-size: 15px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.picker-content {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    width: 100%;
+    max-width: calc(3 * 224px + 2 * 10px + 6px);
+    overflow-y: auto;
+    /* Room for the selected card's outline so it isn't clipped by the scroll container. */
+    padding: 3px;
+}
+
+.picker-grid {
+    display: grid;
+    /* auto-fit collapses unused columns so two displays stay centred. */
+    grid-template-columns: repeat(auto-fit, 224px);
+    justify-content: center;
+    gap: 10px;
+}
+
+.picker-empty {
+    margin: 0;
+    padding: 32px 0;
+    color: var(--text-hint);
+    text-align: center;
+}
+
+.picker-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 18px 16px 14px;
+    border: 1px solid var(--border-card);
+    border-radius: 18px;
+    background: rgb(35 35 49 / 0.92);
+    text-align: start;
+    transition:
+        background-color 0.15s ease,
+        border-color 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.picker-card:hover {
+    background: rgb(46 47 66 / 0.92);
+}
+
+.picker-card.is-selected {
+    border-color: var(--interaction-norm-major-1);
+    background: rgb(50 47 74 / 0.95);
+    box-shadow: 0 0 0 1px var(--interaction-norm-major-1);
+}
+
+.picker-card:focus-visible {
+    outline-offset: 2px;
+}
+
+/* The selection ring already shows where focus is. */
+.picker-card.is-selected:focus-visible {
+    outline: none;
+}
+
+.picker-card-preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    margin-block-end: 16px;
+}
+
+.picker-card-thumbnail {
+    max-width: 66%;
+    max-height: 100%;
+    border-radius: 6px;
+    object-fit: contain;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 0.25);
+}
+
+.picker-card-caption {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    min-width: 0;
+}
+
+.picker-card-icon {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    margin-block-start: 1px;
+}
+
+.picker-card-subtitle {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Window titles carry what the mockup splits into app name and title, so allow two lines. */
+.picker-card-name {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    font-size: 14px;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+}
+
+.picker-card-subtitle {
+    margin-block-start: 4px;
+    color: var(--text-weak);
+    font-size: 12px;
+}
+
+.picker-advanced {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-block-start: 16px;
+}
+
+.picker-advanced-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 0;
+    border: 0;
+    background: transparent;
+    color: var(--text-weak);
+    font-size: 15px;
+}
+
+.picker-advanced-toggle:hover {
+    color: var(--text-norm);
+}
+
+.picker-audio {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-inline-start: 2px;
+    color: var(--text-weak);
+    cursor: pointer;
+}
+
+.picker-audio input {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    accent-color: var(--interaction-norm);
+}
+
+.picker-actions {
+    flex-shrink: 0;
+    display: flex;
+    gap: 12px;
+    margin-block-start: 28px;
+}
+
+/* Meet "tertiary" button, darker to sit on the overlay. */
+.picker-button {
+    min-width: 152px;
+    padding: 12px 24px;
+    border: 1px solid var(--border-norm);
+    border-radius: 999px;
+    background: var(--interaction-weak-minor-3);
+    color: var(--text-norm);
+    font-size: 15px;
+    font-weight: 600;
+    transition:
+        background-color 0.15s ease,
+        border-color 0.15s ease;
+}
+
+.picker-button:hover {
+    background: var(--background-card);
+}
+
+/* Meet "primary" button. */
+.picker-button--primary {
+    border-color: var(--interaction-norm);
+    background: var(--interaction-norm);
+    color: var(--text-invert);
+}
+
+.picker-button--primary:hover {
+    border-color: var(--interaction-norm-major-1);
+    background: var(--interaction-norm-major-1);
+}
+
+.picker-button--primary:disabled {
+    border-color: var(--border-norm);
+    background: var(--interaction-weak-minor-1);
+    color: var(--text-disabled);
+    cursor: default;
+}
