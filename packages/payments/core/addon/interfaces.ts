@@ -1,3 +1,4 @@
+import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { FeatureFlag } from '@proton/unleash/Flags';
 
 import type { ADDON_NAMES, ADDON_PREFIXES, PLANS } from '../constants';
@@ -18,6 +19,8 @@ export interface AddonCustomizerContext {
     featureFlagEnabled: boolean;
     /** True when rendered in a signup flow (some addons hide at signup). */
     isSignup: boolean;
+    /** App the checkout was opened from (some addons hide in Mail/Calendar contexts). */
+    app?: ProductParam;
 }
 
 /** One condition in an addon's visibility checklist. The customizer shows only when all pass. */
