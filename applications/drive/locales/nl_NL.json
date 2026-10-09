@@ -1371,6 +1371,9 @@
       ],
       "Detach": [
         "Losmaken"
+      ],
+      "Import paused": [
+        "Importeren onderbroken"
       ]
     },
     "Action: Docs": {
@@ -7914,6 +7917,12 @@
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Tijdelijk niet leverbaar wegens grote vraag. Probeer het later opnieuw."
+      ],
+      "If you've already upgraded, you can resume your import in ${ easySwitchSettingsLink }. You can also cancel it there.": [
+        "Als u al een upgrade heeft uitgevoerd, kunt u uw import hervatten in ${ easySwitchSettingsLink }. U kunt het daar ook opzeggen."
+      ],
+      "Your import is blocked. Upgrade now to bring the rest of your files over.": [
+        "Uw import is geblokkeerd. Upgrade nu om de rest van uw bestanden over te zetten."
       ]
     },
     "info": {
@@ -14590,6 +14599,9 @@
       ],
       "Bring your Google Drive files to ${ DRIVE_APP_NAME }": [
         "Breng uw Google Drive-bestanden naar ${ DRIVE_APP_NAME }"
+      ],
+      "More storage needed to finish your import": [
+        "Er is meer opslagruimte nodig om uw import te voltooien"
       ]
     },
     "Today icon tooltip in mini calendar": {
