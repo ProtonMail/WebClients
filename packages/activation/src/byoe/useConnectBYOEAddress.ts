@@ -173,12 +173,15 @@ export const useConnectBYOEAddress = ({ source }: { source: EASY_SWITCH_SOURCES 
         importEmails,
         importPeriod,
         expectedEmailAddress,
+        onAccountResolved,
     }: {
         code: string;
         redirectUri: string;
         importEmails: boolean;
         importPeriod?: TIME_PERIOD;
         expectedEmailAddress?: string;
+        /** Called with the connected email as soon as the code is exchanged, before the address is set up. */
+        onAccountResolved?: (account: string) => void;
     }): Promise<ConnectBYOEAddressResult> => {
         const response = await easySwitchDispatch(
             createTokenItem({
@@ -197,6 +200,8 @@ export const useConnectBYOEAddress = ({ source }: { source: EASY_SWITCH_SOURCES 
             const isWrongAccount = response.payload?.Error === WRONG_ACCOUNT_ERROR;
             return fail({ type: isWrongAccount ? 'wrong-account' : 'token-failed' });
         }
+
+        onAccountResolved?.(response.payload.Account);
 
         return connectBYOEAddress({ token: response.payload, importEmails, importPeriod });
     };
