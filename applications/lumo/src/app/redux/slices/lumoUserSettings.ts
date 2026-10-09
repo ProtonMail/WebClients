@@ -32,6 +32,7 @@ export const createInitialLumoUserSettings = (): LumoUserSettings => {
     let theme: LumoUserSettings['theme'] = 'auto';
     let animatedBackgroundEnabled: boolean | undefined;
     let animatedBackgroundBlobMode: LumoUserSettings['animatedBackgroundBlobMode'];
+    let dictationLanguage: string | undefined;
 
     try {
         const localSettings = getLumoSettings() || getDefaultSettings();
@@ -45,6 +46,7 @@ export const createInitialLumoUserSettings = (): LumoUserSettings => {
         ) {
             animatedBackgroundBlobMode = localSettings.animatedBackgroundBlobMode;
         }
+        dictationLanguage = localSettings.dictationLanguage;
     } catch {
         // Fall back to defaults above
     }
@@ -53,6 +55,7 @@ export const createInitialLumoUserSettings = (): LumoUserSettings => {
         theme,
         ...(animatedBackgroundEnabled !== undefined && { animatedBackgroundEnabled }),
         ...(animatedBackgroundBlobMode !== undefined && { animatedBackgroundBlobMode }),
+        ...(dictationLanguage !== undefined && { dictationLanguage }),
         personalization: {
             nickname: '',
             jobRole: '',
