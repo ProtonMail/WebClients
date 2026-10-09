@@ -1,3 +1,5 @@
+import { useLayoutEffect, useRef } from 'react';
+
 import { c } from 'ttag';
 
 import { useMeetSelector } from '@proton/meet/store/hooks';
@@ -16,6 +18,9 @@ import { useTranscriptions } from './useTranscriptions';
 
 import './Captions.scss';
 
+// Sub-pixel scroll positions mean "at the bottom" is never an exact match.
+const FOLLOW_THRESHOLD_PX = 8;
+
 interface CaptionLineProps {
     segment: CaptionSegment;
     speakerName?: string;
@@ -26,16 +31,19 @@ const CaptionLine = ({ segment, speakerName, isNewest }: CaptionLineProps) => {
     const { participantColors } = useParticipantDisplayColors(segment.speakerIdentity);
 
     return (
-        <div
-            className={clsx(
-                'captions__line inline-flex flex-nowrap gap-2 text-center',
-                isNewest ? 'captions__line--newest' : 'captions__line--old'
-            )}
-        >
+        <div className="captions__line flex flex-column flex-nowrap">
             {speakerName && (
-                <span className={clsx('text-semibold', participantColors.profileTextColor)}>{speakerName}:</span>
+                <span
+                    className={clsx(
+                        'captions__speaker text-semibold text-ellipsis',
+                        participantColors.profileTextColor
+                    )}
+                    title={speakerName}
+                >
+                    {speakerName}:
+                </span>
             )}
-            <span className="captions__text color-norm text-break">
+            <span className={clsx('captions__text text-break', isNewest ? 'color-norm' : 'color-weak')}>
                 {segment.text}
                 {/* Keyed on the text so each update restarts the animation that hides the cursor. */}
                 <span key={segment.text} className="captions__cursor" aria-hidden="true" />
@@ -64,24 +72,55 @@ const CaptionsFeed = () => {
     const { segments, status } = useTranscriptions();
     const nameMap = useMeetSelector(selectParticipantDecryptedNameMap);
 
+    const scrollRef = useRef<HTMLDivElement>(null);
+    // Follows the newest line until the user scrolls up to read back, and resumes once they return.
+    const followNewestRef = useRef(true);
+
     const statusMessage = getStatusMessage(status);
 
+    useLayoutEffect(() => {
+        const el = scrollRef.current;
+        if (el && followNewestRef.current) {
+            el.scrollTop = el.scrollHeight;
+        }
+    }, [segments, status]);
+
+    const handleScroll = () => {
+        const el = scrollRef.current;
+        if (el) {
+            followNewestRef.current = el.scrollHeight - el.scrollTop - el.clientHeight <= FOLLOW_THRESHOLD_PX;
+        }
+    };
+
     return (
-        <div className="captions overflow-hidden flex flex-column flex-nowrap items-center gap-1" aria-live="polite">
-            {statusMessage ? (
-                <div className="captions__line captions__line--newest inline-flex flex-nowrap gap-2 text-center">
-                    <span className={statusMessage.color}>{statusMessage.text}</span>
-                </div>
-            ) : (
-                segments.map((seg, index) => (
-                    <CaptionLine
-                        key={seg.id}
-                        segment={seg}
-                        speakerName={nameMap[seg.speakerIdentity]}
-                        isNewest={index === segments.length - 1}
-                    />
-                ))
-            )}
+        <div
+            ref={scrollRef}
+            className="captions scrollbar-always-visible flex flex-column flex-nowrap"
+            aria-live="polite"
+            onScroll={handleScroll}
+        >
+            <div className="captions__content flex flex-column flex-nowrap">
+                {statusMessage ? (
+                    <span className={clsx('captions__status text-center', statusMessage.color)}>
+                        {statusMessage.text}
+                    </span>
+                ) : (
+                    segments.map((seg, index) => {
+                        // A run-on split by the merge cap continues under the name already shown.
+                        const continuesSpeaker =
+                            Boolean(seg.speakerIdentity) &&
+                            segments[index - 1]?.speakerIdentity === seg.speakerIdentity;
+                        return (
+                            <CaptionLine
+                                key={seg.id}
+                                segment={seg}
+                                speakerName={continuesSpeaker ? undefined : nameMap[seg.speakerIdentity]}
+                                isNewest={index === segments.length - 1}
+                            />
+                        );
+                    })
+                )}
+            </div>
         </div>
     );
 };
