@@ -23,7 +23,7 @@ export const usePublicDocsToken = (session?: ResumedSessionResult) => {
     const linkIdParam = params.get('linkId') || undefined;
     const urlPassword = hash.substring(1);
 
-    const { isLoading, isPasswordNeeded, submitPassword, error, customPassword } = usePublicAuth(
+    const { isLoading, isPasswordNeeded, submitPassword, error, customPassword, vendorType } = usePublicAuth(
         token,
         urlPassword,
         'docs',
@@ -69,6 +69,7 @@ export const usePublicDocsToken = (session?: ResumedSessionResult) => {
         isWaitingForPasswordFromDriveWindow,
         isPasswordNeeded,
         submitPassword,
+        vendorType,
         getPublicAuthHeaders: () => {
             const sessionInfo = getSessionInfo();
 
