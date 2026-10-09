@@ -1057,6 +1057,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Ваш бясплатны пробны перыяд праграмы для камп'ютара завершыцца ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Don't show this offer again": [
+        "Больш не паказваць гэту прапанову"
       ]
     },
     "action": {
@@ -10323,6 +10326,15 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Ваша падпіска мае бягучую скідку. Пераход на гэту новую акцыю азначае, што ранейшая скідка больш не будзе ўжывацца."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "Выбраны тарыфны план не прапануе дастатковую колькасць даменаў для вашага ўліковага запісу."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "Выбраны тарыфны план не прапануе дастатковую колькасць удзельнікаў для вашага ўліковага запісу."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "Выбраны тарыфны план не прапануе дастатковую колькасць сховішча для вашага ўліковага запісу."
       ]
     },
     "Payments.Error": {
@@ -13986,6 +13998,11 @@
       ],
       "Passcode:": [
         "Код доступу:"
+      ]
+    },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "Праграма для камп'ютара ${ appName }"
       ]
     }
   }
