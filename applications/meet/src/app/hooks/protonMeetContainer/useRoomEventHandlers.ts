@@ -19,6 +19,7 @@ import { selectIsLocalParticipantHost } from '@proton/meet/store/slices/particip
 import { resetUiState } from '@proton/meet/store/slices/uiStateSlice';
 import { UpsellModalTypes } from '@proton/meet/types/types';
 import { SECOND } from '@proton/shared/lib/constants';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import { isValidMessageString } from '../../utils/isValidMessageString';
@@ -27,6 +28,13 @@ import { useStableCallback } from '../useStableCallback';
 // Topic livekit-ops publishes the deletion reason on, right before deleting the room
 export const ROOM_DELETED_TOPIC = 'room_deleted';
 const MAX_MEETING_ENDED_REASON_LENGTH = 256;
+
+// LiveKit's reconnect loop can stall without ever giving up (e.g. a signal attempt blocked on a hung
+// validate request), leaving the meeting frozen. Past this timeout we stop waiting and rejoin ourselves.
+export const LIVEKIT_RECONNECT_STALL_TIMEOUT_MS = 60 * SECOND;
+
+const isLiveKitReconnecting = (state: ConnectionState | null) =>
+    state === ConnectionState.Reconnecting || state === ConnectionState.SignalReconnecting;
 
 interface UseRoomEventHandlersParams {
     joinedRoom: boolean;
@@ -71,17 +79,55 @@ export const useRoomEventHandlers = ({
     const store = useMeetStore();
     const history = useHistory();
     const meetCoreClient = useMeetCoreClient();
+    const isHandleStalledLiveKitReconnectEnabled = useFlag('MeetHandleStalledLiveKitReconnect');
 
     const [liveKitConnectionState, setLiveKitConnectionState] = useState<ConnectionState | null>(null);
     const [showReconnectedMessage, setShowReconnectedMessage] = useState(false);
 
     const liveKitConnectionStateRef = useRef<ConnectionState | null>(null);
     const meetingEndedReasonRef = useRef<string | null>(null);
+    const reconnectStallTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+    const clearReconnectStallTimeout = () => {
+        if (reconnectStallTimeoutRef.current) {
+            clearTimeout(reconnectStallTimeoutRef.current);
+            reconnectStallTimeoutRef.current = null;
+        }
+    };
+
+    const handleReconnectStalled = useStableCallback(() => {
+        reconnectStallTimeoutRef.current = null;
+
+        // The timer is cleared whenever LiveKit leaves the reconnecting states, so don't re-check
+        // liveKitConnectionStateRef here: the reconnected-message timer may have nulled it mid-reconnect.
+        if (isReconnectingRef.current) {
+            return;
+        }
+
+        reportMeetError('LiveKit reconnection stalled, triggering full reconnection', {
+            level: 'warning',
+            context: { timeoutMs: LIVEKIT_RECONNECT_STALL_TIMEOUT_MS },
+        });
+        triggerFullReconnectionRef.current(RejoinReasonInfo.LivekitConnectionTimeout);
+    });
 
     const handleConnectionStateChanged = useStableCallback((state: ConnectionState) => {
         const previousState = liveKitConnectionStateRef.current;
         liveKitConnectionStateRef.current = state;
         setLiveKitConnectionState(state);
+
+        // LiveKit flips between Reconnecting and SignalReconnecting within one recovery, so only
+        // leaving both states ends the timeout.
+        if (isLiveKitReconnecting(state)) {
+            if (isHandleStalledLiveKitReconnectEnabled && !reconnectStallTimeoutRef.current) {
+                reconnectStallTimeoutRef.current = setTimeout(
+                    handleReconnectStalled,
+                    LIVEKIT_RECONNECT_STALL_TIMEOUT_MS
+                );
+            }
+        } else {
+            clearReconnectStallTimeout();
+        }
 
         if (
             state === ConnectionState.Connected &&
@@ -201,6 +247,7 @@ export const useRoomEventHandlers = ({
         room.on(RoomEvent.Disconnected, handleDisconnected);
 
         return () => {
+            clearReconnectStallTimeout();
             room.off(RoomEvent.ConnectionStateChanged, handleConnectionStateChanged);
             room.off(RoomEvent.DataReceived, handleDataReceived);
             room.off(RoomEvent.Disconnected, handleDisconnected);
