@@ -145,6 +145,19 @@ export const getHas2025OfferCoupon = (coupon: string | undefined | null): boolea
     return blackFriday2025Discounts.has(coupon?.toUpperCase());
 };
 
+const blackFriday2026Discounts: Set<string> = new Set([
+    COUPON_CODES.BLACK_FRIDAY_2026_BUNDLE,
+    COUPON_CODES.BLACK_FRIDAY_2026_BUNDLE_CS,
+]);
+
+export function hasBlackFriday2026Coupon(subscription: MaybeFreeSubscription): boolean {
+    const coupon = subscription?.CouponCode;
+    if (!coupon) {
+        return false;
+    }
+    return blackFriday2026Discounts.has(coupon.toUpperCase());
+}
+
 export const hasMigrationDiscount = (subscription: MaybeFreeSubscription) => {
     return subscription?.CouponCode?.startsWith('MIGRATION');
 };
