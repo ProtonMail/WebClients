@@ -1,6 +1,8 @@
+import { APPS } from '@proton/shared/lib/constants';
+
 import { ADDON_PREFIXES, PLANS } from '../constants';
 import { hasAddonFromPlanIDs } from '../plan/addons';
-import { getAddonNameByPlan, getPlanNameFromIDs } from '../plan/helpers';
+import { getAddonNameByPlan, getIsB2BAudienceFromPlanIDs, getPlanNameFromIDs } from '../plan/helpers';
 import { hasNoExternallyManagedLumoSubscription } from '../subscription/helpers/external-management';
 import { getPlanIDs } from '../subscription/helpers/plan-ids';
 import type { AddonVisibilityRule } from './interfaces';
@@ -18,6 +20,16 @@ export const passesCouponGate =
     (addonType: ADDON_PREFIXES): AddonVisibilityRule =>
     ({ planIDs, bannerHiddenByCoupon }) =>
         !bannerHiddenByCoupon || hasAddonFromPlanIDs(addonType, planIDs);
+
+/** Hidden when checkout is opened from Mail or Calendar (web app or their account dashboard), unless the
+ *  selected plan is a business plan or the addon is already selected. */
+export const notInMailOrCalendarContext =
+    (addonType: ADDON_PREFIXES): AddonVisibilityRule =>
+    ({ planIDs, app, subscription }) =>
+        (app !== APPS.PROTONMAIL && app !== APPS.PROTONCALENDAR) ||
+        getIsB2BAudienceFromPlanIDs(planIDs) ||
+        hasAddonFromPlanIDs(addonType, planIDs) ||
+        hasAddonFromPlanIDs(addonType, getPlanIDs(subscription));
 
 /** Lumo-only: not an externally-managed subscription. */
 export const notExternallyManagedLumo: AddonVisibilityRule = ({ subscription }) =>

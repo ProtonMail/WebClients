@@ -21,6 +21,7 @@ import { Renew } from '@proton/payments/core/subscription/constants';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import { isFreeSubscription } from '@proton/payments/core/type-guards';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
 
 import { showAddonCustomizer } from '../subscription/modal-components/helpers/showAddonCustomizer';
 import type { NumberCustomiserProps } from './NumberCustomiser';
@@ -312,6 +313,7 @@ export function computeAddonCustomizerItems({
     scribeToLumo = false,
     couponConfig,
     isSignup,
+    app,
 }: {
     normalizedSelectedPlan: SelectedPlan;
     plansMap: PlansMap;
@@ -325,12 +327,14 @@ export function computeAddonCustomizerItems({
     allowedAddonTypes?: ADDON_PREFIXES[];
     couponConfig?: CouponConfigMetadata;
     isSignup: boolean;
+    app?: ProductParam;
 }): AddonCustomizerItem[] {
     const visibilityContext = {
         subscription: latestSubscription ?? FREE_SUBSCRIPTION,
         couponConfig,
         planIDs: normalizedSelectedPlan.planIDs,
         isSignup,
+        app,
     };
 
     const resolvedAddonFlags: AddonFlags = { ...addonFlags };
