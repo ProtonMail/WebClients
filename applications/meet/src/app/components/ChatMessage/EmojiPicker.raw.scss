@@ -5,6 +5,9 @@
 // emoji-mart applies this to both the host and the picker body.
 :host {
 	--border-radius: 2rem;
+
+	block-size: min(435px, var(--emoji-picker-max-height, 435px));
+	min-block-size: 0;
 }
 
 #root {
