@@ -1,6 +1,7 @@
 import useAuthentication from '@proton/components/hooks/useAuthentication'
 import type { DocumentAction, DocumentType, RedirectAction } from '@proton/docs-shared'
 import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
+import { tmpConvertNewDocTypeToOld } from '@proton/docs-shared/lib/Doc/convert-doc-type'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper'
@@ -92,7 +93,9 @@ export function DocsUrlContextProvider({ children }: { children: React.ReactNode
       throw new Error('Attempting to navigate to private action without user portion')
     }
 
-    const newUrl = new URL(context === 'private' ? location.href : location.origin)
+    const newUrl = new URL(
+      context === 'private' ? location.href : `${location.origin}/${tmpConvertNewDocTypeToOld(action.type)}`,
+    )
 
     newUrl.searchParams.set('mode', action.mode)
     newUrl.searchParams.set('type', action.type)

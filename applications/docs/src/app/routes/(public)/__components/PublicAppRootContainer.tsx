@@ -26,6 +26,7 @@ import { useFlagsStatus } from '@proton/unleash/proxy'
 import { getDrive, useDrive } from '@proton/drive'
 import config from '~/config'
 import { loggerForSDK, sharedLogger } from '~/drive-sdk/logger'
+import { useIsPathCorrectForVendorType } from '../__utils/useIsPathCorrectForVendorType'
 
 export function PublicAppRootContainer({
   session,
@@ -68,11 +69,9 @@ export function PublicAppRootContainer({
 
   const RenderApplicationWhenReady = replaceDriveCompat ? RenderWithoutDriveCompat : RenderWithDriveCompat
   const content = (
-    <DocsUrlContextProvider>
-      <RenderApplicationWhenReady
-        providerType={useAuthenticatedProvider ? 'public-authenticated' : 'public-unauthenticated'}
-      />
-    </DocsUrlContextProvider>
+    <RenderApplicationWhenReady
+      providerType={useAuthenticatedProvider ? 'public-authenticated' : 'public-unauthenticated'}
+    />
   )
 
   return (
@@ -138,7 +137,7 @@ function RenderApplication({
   providerType,
   publicDriveCompat,
   user,
-  state: { isReady, isError, error, isPasswordNeeded, isWaitingForPasswordFromDriveWindow },
+  state: { isReady, isError, error, isPasswordNeeded, isWaitingForPasswordFromDriveWindow, vendorType },
   submitPassword,
   isPublicDocsEnabled,
 }: {
@@ -150,14 +149,15 @@ function RenderApplication({
   isPublicDocsEnabled: boolean
 }) {
   const hasRenderedContentRef = useRef(false)
+  const isPathCorrect = useIsPathCorrectForVendorType(vendorType, hasRenderedContentRef.current)
 
   useEffect(() => {
-    const shouldRenderContent = isReady && !isError && isPublicDocsEnabled && !isPasswordNeeded
+    const shouldRenderContent = isReady && !isError && isPublicDocsEnabled && !isPasswordNeeded && isPathCorrect
     if (hasRenderedContentRef.current && !shouldRenderContent) {
       throw new Error('Invalid state transition: PublicApplicationContent is being unmounted after being mounted')
     }
     hasRenderedContentRef.current = shouldRenderContent
-  }, [isReady, isError, isPublicDocsEnabled, isPasswordNeeded])
+  }, [isReady, isError, isPublicDocsEnabled, isPasswordNeeded, isPathCorrect])
 
   useEffect(() => {
     if (error) {
@@ -197,11 +197,15 @@ function RenderApplication({
     return <PasswordPage submitPassword={submitPassword} />
   }
 
-  if (!isReady) {
+  if (!isReady || !isPathCorrect) {
     return <DocumentLoader />
   }
 
-  return <PublicApplicationContent publicDriveCompat={publicDriveCompat} user={user} providerType={providerType} />
+  return (
+    <DocsUrlContextProvider>
+      <PublicApplicationContent publicDriveCompat={publicDriveCompat} user={user} providerType={providerType} />
+    </DocsUrlContextProvider>
+  )
 }
 
 function DocumentLoader() {

@@ -36,6 +36,7 @@ export default function usePublicAuth(
     const [isPasswordNeeded, setIsPasswordNeeded] = useState(false);
     const [savedCustomedPassword, setSavedCustomPassword] = useState<string>('');
     const [isLegacy, setIsLegacy] = useState<boolean>(false);
+    const [handshakeVendorType, setHandshakeVendorType] = useState<HandshakeInfoVendorType>();
 
     /**
      * handleInitialLoadError processes error from initializing handshake
@@ -80,6 +81,7 @@ export default function usePublicAuth(
         initHandshake(token, session)
             .then(({ handshakeInfo, isLegacySharedUrl, hasCustomPassword }) => {
                 const vendorType = handshakeInfo.VendorType;
+                setHandshakeVendorType(vendorType);
                 if (vendorType !== HandshakeInfoVendorType.ProtonDrive && client === 'drive') {
                     openDocumentWindow({
                         type: vendorType === HandshakeInfoVendorType.ProtonDoc ? 'document' : 'spreadsheet',
@@ -152,5 +154,6 @@ export default function usePublicAuth(
         isLegacy,
         isPasswordNeeded,
         submitPassword,
+        vendorType: handshakeVendorType,
     };
 }

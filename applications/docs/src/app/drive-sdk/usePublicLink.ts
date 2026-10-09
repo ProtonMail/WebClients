@@ -11,6 +11,7 @@ import { getPublicLinkUrl } from '@proton/docs-shared/lib/URL/getPublicLinkUrl'
 import { getPublicLinkUrlParams } from '@proton/docs-shared/lib/URL/getPublicLinkUrlParams'
 import { getUrlPassword } from '@proton/docs-shared/lib/URL/getUrlPassword'
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors'
+import type { HandshakeInfoVendorType } from '@proton/shared/lib/interfaces/drive/sharing'
 import type { ProviderType } from '../provider-type'
 
 type Status = 'loading' | 'waitingForPasswordFromDriveWindow' | 'passwordNeeded' | 'ready' | 'error'
@@ -21,6 +22,8 @@ export type PublicLinkState = {
   error?: Error
   isPasswordNeeded: boolean
   isWaitingForPasswordFromDriveWindow: boolean
+  /** The type of the shared item, known from the handshake before any password is entered */
+  vendorType: HandshakeInfoVendorType | undefined
 }
 
 /**
@@ -32,6 +35,7 @@ export function usePublicLink(providerType: ProviderType) {
 
   const [status, setStatus] = useState<Status>('loading')
   const [error, setError] = useState<Error>()
+  const [vendorType, setVendorType] = useState<HandshakeInfoVendorType>()
   const didStart = useRef(false)
 
   const handleError = useCallback((error: Error) => {
@@ -81,7 +85,8 @@ export function usePublicLink(providerType: ProviderType) {
 
     getDrive()
       .experimental.getURLAccessInfo(getPublicLinkParams().url)
-      .then(async ({ isCustomPasswordProtected, directAccess }) => {
+      .then(async ({ isCustomPasswordProtected, directAccess, vendorType: handshakeVendorType }) => {
+        setVendorType(handshakeVendorType)
         if (isCustomPasswordProtected) {
           askForPassword()
           return
@@ -112,6 +117,7 @@ export function usePublicLink(providerType: ProviderType) {
       error: error || linkIdError,
       isPasswordNeeded: status === 'passwordNeeded' || status === 'waitingForPasswordFromDriveWindow',
       isWaitingForPasswordFromDriveWindow: status === 'waitingForPasswordFromDriveWindow',
+      vendorType,
     },
     submitPublicLinkPassword,
   }
