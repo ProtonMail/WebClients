@@ -9,6 +9,7 @@ import { selectCaptionsAgentPresent } from '@proton/meet/store/slices/participan
 import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
+import { isCaptionsSimSegmentId, subscribeCaptionsSimEvents, useCaptionsSimStatus } from '../../dev/captionsSimStore';
 import { useStableCallback } from '../../hooks/useStableCallback';
 import { isCaptionAgent } from '../../utils/getAgentDisplayInfo';
 
@@ -47,11 +48,22 @@ const roomsWithConsumer = new WeakSet<Room>();
 
 const emptyDiagnostics = () => ({ streamsReceived: 0, streamReadFailures: 0, decryptFailures: 0 });
 
+const upsertSegment = (
+    prev: Map<string, CaptionSegment>,
+    update: Pick<CaptionSegment, 'id' | 'text' | 'speakerIdentity' | 'isFinal'>
+) => {
+    const next = new Map(prev);
+    const now = Date.now();
+    next.set(update.id, { ...update, firstSeenAt: prev.get(update.id)?.firstSeenAt ?? now, receivedAt: now });
+    return next;
+};
+
 export const useTranscriptions = (): Transcriptions => {
     const room = useRoomContext();
     const meetCoreClient = useMeetCoreClient();
     const { reportMeetError } = useMeetErrorReporting();
     const agentPresent = useMeetSelector(selectCaptionsAgentPresent);
+    const simStatus = useCaptionsSimStatus();
     const [segments, setSegments] = useState<Map<string, CaptionSegment>>(() => new Map());
     // Ids of the raw segments composing the currently-visible lines; these are kept alive so the
     // last lines stay on screen instead of being expired by the cleanup interval below.
@@ -168,19 +180,7 @@ export const useTranscriptions = (): Transcriptions => {
                 return;
             }
 
-            setSegments((prev) => {
-                const next = new Map(prev);
-                const now = Date.now();
-                next.set(id, {
-                    id,
-                    text: decrypted.message,
-                    speakerIdentity,
-                    isFinal,
-                    firstSeenAt: prev.get(id)?.firstSeenAt ?? now,
-                    receivedAt: now,
-                });
-                return next;
-            });
+            setSegments((prev) => upsertSegment(prev, { id, text: decrypted.message, speakerIdentity, isFinal }));
         };
 
         try {
@@ -204,6 +204,20 @@ export const useTranscriptions = (): Transcriptions => {
             room.unregisterTextStreamHandler(TRANSCRIPTION_TOPIC);
         };
     }, [room, meetCoreClient, reportError]);
+
+    useEffect(() => {
+        if (process.env.NODE_ENV === 'production') {
+            return;
+        }
+
+        return subscribeCaptionsSimEvents((event) => {
+            if (event.type === 'segment') {
+                setSegments((prev) => upsertSegment(prev, event.segment));
+                return;
+            }
+            setSegments((prev) => new Map([...prev].filter(([id]) => !isCaptionsSimSegmentId(id))));
+        });
+    }, []);
 
     // Only a listening consumer with an agent to listen to can blame the agent for the silence.
     useEffect(() => {
@@ -281,9 +295,9 @@ export const useTranscriptions = (): Transcriptions => {
     let status: CaptionsStatus = 'loading';
     if (hasSegments) {
         status = 'active';
-    } else if (failing) {
+    } else if (failing || simStatus === 'failing') {
         status = 'failing';
-    } else if (listening && agentPresent) {
+    } else if ((listening && agentPresent) || simStatus === 'ready') {
         status = 'ready';
     }
 
