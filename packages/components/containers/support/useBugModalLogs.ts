@@ -22,9 +22,7 @@ export const useBugModalLogs = (app: APP_NAMES) => {
     const isAppCollectingLogs = Boolean(APPS_FOR_LOG_COLLECTION[app]);
     const collectLogs = isCollectingLogsFlagOn && isAppCollectingLogs;
 
-    const isDesktopLogCollectionDisabled = useFlag('InboxDesktopBugReportLogAttachmentDisabled');
-    const collectLogsInboxDesktop = !isDesktopLogCollectionDisabled && isInboxDesktopBugReportLogsSupported();
-
+    const collectLogsInboxDesktop = isInboxDesktopBugReportLogsSupported();
     const [includeLogs, setIncludeLogs] = useState(collectLogs || collectLogsInboxDesktop);
 
     const getLogAttachments = async (existingAttachments: { [key: string]: Blob }) => {
