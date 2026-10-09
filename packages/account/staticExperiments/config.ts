@@ -4,12 +4,12 @@ import type { StaticExperimentConfig } from './types';
 
 export const staticExperimentsConfig = {
     /**
-     * Which challenge frame the login form loads.
-     * When enabled, users assigned `v5` use the new frame;
-     * everyone else uses v4.
+     * Retired: ChallengeV5 is now the default login challenge.
+     * Kept disabled only so the resolver clears the stale `ChallengeV5` entry from the shared `Features` cookie.
+     * Remove after 2026-12-08.
      */
     ChallengeV5: {
-        enabled: true,
+        enabled: false,
         owner: 'anti-abuse',
         schedule: [
             {

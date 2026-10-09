@@ -5,10 +5,6 @@ import { act, render } from '@testing-library/react';
 
 import { useLoginChallenge } from './useLoginChallenge';
 
-jest.mock('@proton/account/staticExperiments/useStaticExperiment', () => ({
-    useStaticExperiment: () => 'v5',
-}));
-
 /** A form that owns its field's state, like the credentials forms, so typing doesn't re-render the challenge. */
 const UsernameForm = ({ usernameRef }: { usernameRef: Ref<HTMLInputElement> }) => {
     const [value, setValue] = useState('');
