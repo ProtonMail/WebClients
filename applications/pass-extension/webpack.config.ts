@@ -246,7 +246,7 @@ const config: Configuration = {
                   { 'webextension-polyfill': '@proton/pass/lib/globals/webextension-polyfill.stub.ts' }
                 : {}),
             /* friends don't let friends publish code with `eval` : but that didn't stop `ttag`  */
-            ttag$: path.resolve(__dirname, '../../node_modules/ttag/dist/ttag.min.js'),
+            ttag$: path.resolve(__dirname, 'node_modules/ttag/dist/ttag.min.js'),
 
             /** Patch openpgp argon2id.min.mjs to avoid WASM base64 inlining
              * which gets flagged as code-obfuscation on chrome store review */

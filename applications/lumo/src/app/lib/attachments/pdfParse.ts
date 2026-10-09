@@ -11,7 +11,7 @@ import * as PDFJS from 'pdfjs-dist/legacy/build/pdf.mjs';
 import type { TextContent, TextItem } from 'pdfjs-dist/types/src/display/api';
 
 const workerSrc = new URL(
-    '../../../../../../node_modules/pdfjs-dist/legacy/build/pdf.worker.mjs',
+    '../../../../node_modules/pdfjs-dist/legacy/build/pdf.worker.mjs',
     import.meta.url
 ).toString();
 PDFJS.GlobalWorkerOptions.workerSrc = workerSrc;
@@ -99,25 +99,25 @@ async function pdfParse(dataBuffer: any, options?: Partial<PDFOptions>): Promise
 
     try {
         const doc = await PDFJS.getDocument(dataBuffer).promise;
-    ret.numpages = doc.numPages;
+        ret.numpages = doc.numPages;
 
-    const metaData = await doc.getMetadata().catch(console.warn);
+        const metaData = await doc.getMetadata().catch(console.warn);
 
-    ret.info = metaData ? metaData.info : null;
-    ret.metadata = metaData ? metaData.metadata : null;
+        ret.info = metaData ? metaData.info : null;
+        ret.metadata = metaData ? metaData.metadata : null;
 
-    let counter = options_.max <= 0 ? doc.numPages : options_.max;
-    counter = counter > doc.numPages ? doc.numPages : counter;
+        let counter = options_.max <= 0 ? doc.numPages : options_.max;
+        counter = counter > doc.numPages ? doc.numPages : counter;
 
-    ret.text = '';
+        ret.text = '';
 
-    for (let i = 1; i <= counter; i++) {
-        const pageText = await doc
-            .getPage(i)
-            .then((pageData: any) => options_.pagerender(pageData))
-            .catch(console.error);
-        ret.text = `${ret.text}\n\n${pageText}`;
-    }
+        for (let i = 1; i <= counter; i++) {
+            const pageText = await doc
+                .getPage(i)
+                .then((pageData: any) => options_.pagerender(pageData))
+                .catch(console.error);
+            ret.text = `${ret.text}\n\n${pageText}`;
+        }
 
         ret.numrender = counter;
         void doc.destroy();
