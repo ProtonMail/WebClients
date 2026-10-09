@@ -167,24 +167,22 @@ describe('useTranscriptions', () => {
         expect(result.current.status).toBe('active');
     });
 
-    it('shows the connection as lost while the room reconnects, but not for a signal-only reconnect', () => {
-        const { result, rerender } = renderHook(() => useTranscriptions());
+    it.each([ConnectionState.SignalReconnecting, ConnectionState.Reconnecting])(
+        'shows the connection as lost while the room is in %s',
+        (connectionState) => {
+            const { result, rerender } = renderHook(() => useTranscriptions());
 
-        vi.mocked(useConnectionState).mockReturnValue(ConnectionState.SignalReconnecting);
-        rerender();
+            vi.mocked(useConnectionState).mockReturnValue(connectionState);
+            rerender();
 
-        expect(result.current.status).toBe('ready');
+            expect(result.current.status).toBe('disconnected');
 
-        vi.mocked(useConnectionState).mockReturnValue(ConnectionState.Reconnecting);
-        rerender();
+            vi.mocked(useConnectionState).mockReturnValue(ConnectionState.Connected);
+            rerender();
 
-        expect(result.current.status).toBe('disconnected');
-
-        vi.mocked(useConnectionState).mockReturnValue(ConnectionState.Connected);
-        rerender();
-
-        expect(result.current.status).toBe('ready');
-    });
+            expect(result.current.status).toBe('ready');
+        }
+    );
 
     it('reports a decryption failure without exposing the payload', async () => {
         decryptMessage.mockRejectedValue(new Error('no matching epoch'));

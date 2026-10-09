@@ -299,8 +299,9 @@ export const useTranscriptions = (): Transcriptions => {
     // segment that is already on screen in the render it fires between.
     visibleIdsRef.current = visibleIds;
 
-    // A signal-only reconnect leaves the data channel, and so the captions, flowing.
+    // LiveKit also resumes through SignalReconnecting when the peer connection itself failed.
     const disconnected =
+        connectionState === ConnectionState.SignalReconnecting ||
         connectionState === ConnectionState.Reconnecting ||
         (agentEverPresent.current && !agentPresent) ||
         simStatus === 'disconnected';
