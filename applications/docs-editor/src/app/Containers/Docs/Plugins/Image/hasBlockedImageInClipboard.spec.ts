@@ -1,30 +1,28 @@
-import * as purify from '@proton/sanitize/purify'
-import { hasBlockedImageInClipboard } from './hasBlockedImageInClipboard'
+import { hasBlockedImageInClipboard, sanitizeClipboardHtml } from './hasBlockedImageInClipboard'
 
 const clipboard = (html: string, lexical = '') =>
   ({ getData: (type: string) => (type === 'text/html' ? html : lexical) }) as DataTransfer
 
 describe('hasBlockedImageInClipboard', () => {
   it('sanitizes hostile markup while retaining remote image detection', () => {
-    const sanitize = jest.spyOn(purify, 'content')
-    try {
-      const html = `<script>alert('script')</script>
+    const html = `<script>alert('script')</script>
         <iframe src="https://example.com/frame"></iframe>
         <img src="https://example.com/image.png" onerror="alert('image')">
         <img src="data:image/png;base64,abc" onload="alert('loaded')">
-        <a href="javascript:alert('link')">link</a>`
-      expect(hasBlockedImageInClipboard(clipboard(html), 'Docs')).toBe(true)
-      expect(sanitize).toHaveBeenCalledWith(html)
-      const fragment = sanitize.mock.results[0].value as DocumentFragment
-      expect(fragment.isConnected).toBe(false)
-      expect(fragment.querySelector('script, iframe, [onerror], [onload], [href^="javascript:"]')).toBeNull()
-      expect(Array.from(fragment.querySelectorAll('img')).map((image) => image.getAttribute('src'))).toEqual([
-        'https://example.com/image.png',
-        'data:image/png;base64,abc',
-      ])
-    } finally {
-      sanitize.mockRestore()
-    }
+        <img src="https://example.com/fallback.png" srcset="https://example.com/alternate.png 2x">
+        <a href="javascript:alert('link')">link</a>
+        <style>body { background: red }</style><form><input value="unsafe"></form>`
+    const fragment = sanitizeClipboardHtml(html)
+
+    expect(fragment.isConnected).toBe(false)
+    expect(fragment.querySelector('script, iframe, style, form, input, [onerror], [onload], [srcset]')).toBeNull()
+    expect(fragment.querySelector('a')?.hasAttribute('href')).toBe(false)
+    expect(Array.from(fragment.querySelectorAll('img')).map((image) => image.getAttribute('src'))).toEqual([
+      'https://example.com/image.png',
+      'data:image/png;base64,abc',
+      'https://example.com/fallback.png',
+    ])
+    expect(hasBlockedImageInClipboard(clipboard(html), 'Docs')).toBe(true)
   })
 
   it.each(['https://example.com/image.png', 'http://example.com/image.png', '/image.png', 'file:///image.png'])(
