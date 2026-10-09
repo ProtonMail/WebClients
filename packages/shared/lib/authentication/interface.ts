@@ -76,16 +76,29 @@ export interface ChallengePayload {
     [key: string]: string;
 }
 
+/**
+ * Short, encrypted IDs of the disabled addresses that were claimed when their domain got registered
+ * by an organization. They are deliberately encrypted differently from the address IDs the account
+ * itself sees, so that they can't be correlated back to the user's own addresses.
+ *
+ * Each ID is sent back as `ClaimedAddressID` to `POST /auth/info` and `POST /auth`, with the email it
+ * was returned for as `Username`, to authenticate against the account the claimed address belonged to.
+ * An SRP challenge can only be consumed once, so a caller has to retry per candidate ID.
+ */
+export type ClaimedAddressID = string;
+
 export interface InfoResponse {
     Modulus: string;
     ServerEphemeral: string;
     Version: AuthVersion;
     Salt: string;
     SRPSession: string;
+    ClaimedAddresses?: ClaimedAddressID[];
 }
 
 export interface SSOInfoResponse {
     SSOChallengeToken: string;
+    ClaimedAddresses?: ClaimedAddressID[];
 }
 
 export interface InfoAuthedResponse extends InfoResponse {
