@@ -9,7 +9,7 @@ import {
     setCaptionsSimStatus,
 } from './captionsSimStore';
 
-export interface CaptionsSayOptions {
+interface CaptionsSayOptions {
     /** Display name of the speaker. Calls with the same name are attributed to the same participant. */
     speaker?: string;
     /** Average speaking pace; the actual pace fluctuates randomly around it. */
