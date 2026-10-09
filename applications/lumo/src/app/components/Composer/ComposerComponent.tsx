@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { AgentPickerModal } from '../../features/agents/AgentPickerModal';
@@ -15,6 +16,7 @@ import { useChatLimitGate } from '../../hooks/useChatLimitGate';
 import useComposerInput from '../../hooks/useComposerInput';
 import { useConversationAgent } from '../../hooks/useConversationAgent';
 import type { DriveSDKMethods } from '../../hooks/useDriveSDK';
+import { useDictationLanguage } from '../../hooks/useDictationLanguage';
 import { useDriveSDK } from '../../hooks/useDriveSDK';
 import type { HandleSendMessage } from '../../hooks/useLumoActions';
 import { useDragArea } from '../../providers/DragAreaProvider';
@@ -26,6 +28,7 @@ import { selectProvisionalAttachments, selectSpaceById } from '../../redux/selec
 import { upsertAttachment } from '../../redux/slices/core/attachments';
 import type { Attachment, Message } from '../../types';
 import { ComposerMode } from '../../types';
+import type { DictationLanguage } from '../../util/dictationLanguages';
 import { base64ToFile } from '../../util/imageHelpers';
 import { notifyMobileAppLoaded } from '../../util/mobileAppNotification';
 import { createAttachmentFromPastedContent, getPasteConversionMessage } from '../../util/pastedContentHelper';
@@ -38,6 +41,7 @@ import { ComposerExpirationBanner } from './ComposerExpirationBanner';
 import { ComposerLimitBanner } from './ComposerLimitBanner';
 import { ComposerModelLimitUpsell } from './ComposerModelLimitUpsell';
 import { ComposerToolbar } from './ComposerToolbar';
+import { DictationLanguageModal } from './DictationLanguageModal';
 import { useExcelSheetSelection } from './ExcelSheetSelectionModal';
 import { useAllRelevantAttachments } from './hooks/useAllRelevantAttachments';
 import { useComposerWithImageGeneration } from './hooks/useComposerWithImageGeneration';
@@ -325,6 +329,11 @@ const ComposerComponentInner = ({
         [setValue, textareaRef]
     );
     const {
+        language: dictationLanguage,
+        hasChosenLanguage: hasChosenDictationLanguage,
+        setLanguage: setDictationLanguage,
+    } = useDictationLanguage();
+    const {
         isDictating,
         isConnected: isDictationConnected,
         dictationError,
@@ -332,12 +341,33 @@ const ComposerComponentInner = ({
         getAudioLevel,
     } = useDictation({
         onTranscriptUpdate: handleTranscriptUpdate,
+        language: dictationLanguage,
     });
 
+    const [dictationLanguageModalProps, setDictationLanguageModalOpen, renderDictationLanguageModal] =
+        useModalState();
+
     const handleStartDictation = useCallback(() => {
+        // First use: ask for a language before starting; the choice is applied when confirmed.
+        if (!isDictating && !hasChosenDictationLanguage) {
+            setDictationLanguageModalOpen(true);
+            return;
+        }
         valueBeforeDictationRef.current = textareaRef.current?.value ?? '';
         toggleDictation();
-    }, [textareaRef, toggleDictation]);
+    }, [hasChosenDictationLanguage, isDictating, setDictationLanguageModalOpen, textareaRef, toggleDictation]);
+
+    const handleConfirmDictationLanguage = useCallback(
+        (selected: DictationLanguage) => {
+            setDictationLanguage(selected);
+            // useDictation reads the language when the session opens; defer until the setting has propagated.
+            setTimeout(() => {
+                valueBeforeDictationRef.current = textareaRef.current?.value ?? '';
+                toggleDictation();
+            }, 0);
+        },
+        [setDictationLanguage, textareaRef, toggleDictation]
+    );
 
     const handleAcceptDictation = useCallback(() => {
         toggleDictation();
@@ -567,6 +597,13 @@ const ComposerComponentInner = ({
                 onExport={handleDrawingExport}
                 mode="blank"
             />
+            {renderDictationLanguageModal && (
+                <DictationLanguageModal
+                    {...dictationLanguageModalProps}
+                    initialLanguage={dictationLanguage}
+                    onConfirm={handleConfirmDictationLanguage}
+                />
+            )}
             {canUseAgents && <AgentPickerModal conversationId={messageChain?.[0]?.conversationId} />}
             {excelSheetSelectionModal}
         </>

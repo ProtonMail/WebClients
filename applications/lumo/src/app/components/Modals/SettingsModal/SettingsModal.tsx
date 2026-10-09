@@ -14,6 +14,7 @@ import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useLumoUserSettings } from '../../../hooks';
 import { useDriveFolderIndexing } from '../../../hooks/useDriveFolderIndexing';
+import { useDictationLanguage } from '../../../hooks/useDictationLanguage';
 import { useLumoAnimatedBackground } from '../../../hooks/useLumoAnimatedBackground';
 import { useLumoAuthAction } from '../../../hooks/useLumoAuthAction';
 import { useLumoFlags } from '../../../hooks/useLumoFlags';
@@ -32,6 +33,7 @@ import { LumoSettingsUpsellSection } from '../../../upsells/composed/LumoSetting
 import { sendArtifactCreationDefaultChangedEvent } from '../../../util/telemetry';
 import { getInitials } from '../../../util/username';
 import LumoThemeButton from '../../Buttons/LumoThemeButton';
+import { DictationLanguageSelect } from '../../Composer/DictationLanguageSelect';
 import { useNativeComposerVisibilityApi } from '../../Composer/hooks/useNativeComposerVisibilityApi';
 import { IndexingStatusBanner } from '../../Files/DriveBrowser/IndexingStatusBanner';
 import { CreateFreeAccountLink } from '../../Guest/CreateFreeAccountLink/CreateFreeAccountLink';
@@ -185,6 +187,7 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
     const [user] = useUser();
     const userId = user?.ID;
     const { lumoUserSettings, updateSettings } = useLumoUserSettings();
+    const { language: dictationLanguage, setLanguage: setDictationLanguage } = useDictationLanguage();
     const showProjectConversationsInHistory = lumoUserSettings.showProjectConversationsInHistory ?? false;
     const automaticWebSearch = lumoUserSettings.automaticWebSearch ?? false;
     const automaticArtifactCreation = lumoUserSettings.automaticArtifactCreation ?? true;
@@ -351,6 +354,21 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
                     }
                 />
             )}
+
+            <SettingsSectionItem
+                icon="Mic"
+                text={c('collider_2025: Title').t`Dictation language`}
+                subtext={c('collider_2025: Description').t`Language used when transcribing your voice`}
+                button={
+                    <div className="min-w-custom" style={{ '--min-w-custom': '10rem' }}>
+                        <DictationLanguageSelect
+                            id="dictation-language-select"
+                            value={dictationLanguage}
+                            onChange={setDictationLanguage}
+                        />
+                    </div>
+                }
+            />
 
             {/* Search Index Management */}
             <SettingsSectionItem
