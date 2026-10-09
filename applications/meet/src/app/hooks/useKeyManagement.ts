@@ -2,7 +2,7 @@ import { type MutableRefObject, useRef, useState } from 'react';
 
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
-import { addKeyRotationLog } from '@proton/meet/store/slices/meetingInfo';
+import { addKeyRotationLog } from '@proton/meet/store/slices/currentMeeting';
 import type { KeyRotationLog, MLSGroupState } from '@proton/meet/types/types';
 import { useFlag } from '@proton/unleash/useFlag';
 

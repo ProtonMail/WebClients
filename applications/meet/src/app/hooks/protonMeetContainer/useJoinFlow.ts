@@ -43,8 +43,8 @@ import { useSessionKey } from './useSessionKey';
 import { useWaitingRoom } from './waitingRoom/useWaitingRoom';
 
 interface UseJoinFlowParams {
-    token: string;
-    urlPassword: string;
+    urlMeetingLinkName: string;
+    urlMeetingPassword: string;
     isInstantJoin: boolean;
     setDisplayName: (name: string) => void;
     connectWithMls: UseMeetingConnectionResult['connectWithMls'];
@@ -67,7 +67,7 @@ interface UseJoinFlowParams {
 }
 
 export interface UseJoinFlowResult {
-    joinMeeting: (displayName: string, meetingToken?: string) => Promise<void>;
+    joinMeeting: (displayName: string, meetingLinkName?: string) => Promise<void>;
     joinInstantMeeting: (displayName: string) => Promise<void>;
     waitingRoomProviderProps: ReturnType<typeof useWaitingRoom>['providerProps'];
 }
@@ -90,7 +90,7 @@ const getNetworkHints = () => {
 const gatherAndLogJoinStats = async ({
     connectResult,
     room,
-    roomId,
+    meetingLinkName,
     isInstantJoin,
     websocketUrl,
     totalJoinMs,
@@ -99,7 +99,7 @@ const gatherAndLogJoinStats = async ({
 }: {
     connectResult?: ConnectWithMlsResult;
     room: Room;
-    roomId: string;
+    meetingLinkName: string;
     isInstantJoin: boolean;
     websocketUrl: string | undefined;
     totalJoinMs: number | null;
@@ -107,7 +107,8 @@ const gatherAndLogJoinStats = async ({
     reportMeetError: ReportMeetError;
 }) => {
     const joinStats = {
-        roomId,
+        roomId: meetingLinkName,
+        meetingLinkName,
         isReconnect: false,
         isInstantJoin,
         tokenFetchMs: connectResult?.tokenFetchMs ?? null,
@@ -145,8 +146,8 @@ const gatherAndLogJoinStats = async ({
 };
 
 export const useJoinFlow = ({
-    token,
-    urlPassword,
+    urlMeetingLinkName,
+    urlMeetingPassword,
     isInstantJoin,
     setDisplayName,
     connectWithMls,
@@ -189,7 +190,7 @@ export const useJoinFlow = ({
     const joinTimerRef = useRef<JoinTimer>(createJoinTimer());
     const waitingRoomAccessDetailsRef = useRef<MeetingAccessDetails | null>(null);
 
-    const { getSessionKey, getSessionKeyBase64 } = useSessionKey({ urlPassword });
+    const { getSessionKey, getSessionKeyBase64 } = useSessionKey({ urlMeetingPassword });
 
     const updateAccessToken = (accessToken: string) => {
         accessTokenRef.current = accessToken;
@@ -208,7 +209,7 @@ export const useJoinFlow = ({
 
     const handleJoin = async (
         displayName: string,
-        meetingToken: string = token,
+        meetingLinkName: string = urlMeetingLinkName,
         meetingPassword: string,
         isWaitingRoom = false,
         accessDetails?: MeetingAccessDetails
@@ -218,12 +219,12 @@ export const useJoinFlow = ({
         let connectResult: ConnectWithMlsResult | undefined;
 
         try {
-            const sessionKey = await getSessionKey(meetingToken, meetingPassword);
+            const sessionKey = await getSessionKey(meetingLinkName, meetingPassword);
             const decryptionKey = sessionKey ? await deriveEncryptionKeyFromSessionKey(sessionKey) : null;
             decryptionKeyRef.current = decryptionKey;
 
             connectResult = await connectWithMls({
-                meetingToken,
+                meetingLinkName,
                 meetingPassword,
                 displayName,
                 timeoutMs: 20 * SECOND,
@@ -232,7 +233,7 @@ export const useJoinFlow = ({
                 accessDetails,
             });
 
-            meetingLinkRef.current = getMeetingLink(meetingToken, meetingPassword);
+            meetingLinkRef.current = getMeetingLink(meetingLinkName, meetingPassword);
 
             trackJoinSucceeded({
                 room,
@@ -257,7 +258,7 @@ export const useJoinFlow = ({
                 if (!telemetryKillSwitchEnabled || totalJoinMs > SLOW_JOIN_THRESHOLD_MS) {
                     void gatherAndLogJoinStats({
                         room,
-                        roomId: meetingToken,
+                        meetingLinkName,
                         connectResult,
                         isInstantJoin,
                         websocketUrl: getUrlWithoutProtocol(connectResult.websocketUrl),
@@ -300,7 +301,7 @@ export const useJoinFlow = ({
             if (meetJoinTelemetryEnabled) {
                 void gatherAndLogJoinStats({
                     room,
-                    roomId: meetingToken,
+                    meetingLinkName,
                     connectResult,
                     isInstantJoin,
                     websocketUrl: websocketUrlRef.current ? getUrlWithoutProtocol(websocketUrlRef.current) : undefined,
@@ -368,21 +369,21 @@ export const useJoinFlow = ({
         }
 
         try {
-            const { id, passwordBase } = await createInstantMeeting({
+            const { meetingLinkName, passwordBase } = await createInstantMeeting({
                 params: {},
                 isGuest: isGuest,
                 isPaidUser,
                 waitingRoom: waitingRoomSetting,
             });
-            meetingLinkNameRef.current = id; // id is the meeting link name
+            meetingLinkNameRef.current = meetingLinkName;
 
-            const handshakeInfo = await joinTimerRef.current.measure('srpMs', initHandshake(id));
+            const handshakeInfo = await joinTimerRef.current.measure('srpMs', initHandshake(meetingLinkName));
 
             const { meetingInfo } = await joinTimerRef.current.measure(
                 'meetingInfoMs',
                 dispatch(
                     meetingInfoThunk({
-                        meetingLinkName: id,
+                        meetingLinkName,
                         meetingPassword: passwordBase,
                         handshakeInfo,
                     })
@@ -391,18 +392,18 @@ export const useJoinFlow = ({
 
             const waitingRoom = !!meetingInfo.WaitingRoom;
 
-            dispatch(setCurrentMeeting({ meetingLinkName: id, meetingPassword: passwordBase }));
+            dispatch(setCurrentMeeting({ meetingLinkName, meetingPassword: passwordBase }));
             dispatch(hydrateMeetingPolicies(meetingInfo));
             dispatch(setMeetingReadyPopupOpen(true));
 
-            await handleJoin(displayName, id, passwordBase, waitingRoom);
+            await handleJoin(displayName, meetingLinkName, passwordBase, waitingRoom);
 
             // ExpirationTime only exists once the meeting started
-            await dispatch(refreshMeetingInfoThunk({ meetingLinkName: id, meetingPassword: passwordBase }));
+            await dispatch(refreshMeetingInfoThunk({ meetingLinkName, meetingPassword: passwordBase }));
 
             dispatch(setIsGuestAdmin(isGuest));
 
-            history.push(getMeetingLink(id, passwordBase));
+            history.push(getMeetingLink(meetingLinkName, passwordBase));
         } catch (error: any) {
             const errorKind = classifyMeetingError(error);
 
@@ -431,10 +432,10 @@ export const useJoinFlow = ({
         cleanupMlsState();
     }, [disallowHealthCheck, cleanupMlsState]);
 
-    const getGuestWaitingRoomAccessToken = async (meetingToken: string) => {
+    const getGuestWaitingRoomAccessToken = async (meetingLinkName: string) => {
         setDisplayName(displayName);
         const sanitizedParticipantName = sanitizeMessage(displayName);
-        const sessionKey = await getSessionKey(meetingToken);
+        const sessionKey = await getSessionKey(meetingLinkName);
         if (!sessionKey) {
             throw new Error('Failed to decrypt session key for waiting room');
         }
@@ -442,7 +443,7 @@ export const useJoinFlow = ({
         decryptionKeyRef.current = decryptionKey;
         const encryptedDisplayName = await encryptDisplayNameWithKey(decryptionKey, sanitizedParticipantName);
         const { accessToken, websocketUrl } = await getAccessDetails({
-            token: meetingToken,
+            meetingLinkName,
             encryptedDisplayName,
         });
         accessTokenRef.current = accessToken;
@@ -452,13 +453,13 @@ export const useJoinFlow = ({
 
     const getSessionId = () => (authentication.hasSession() ? authentication.getUID() : undefined);
 
-    const prepareGuestSession = useStableCallback(async (meetingToken: string) => {
+    const prepareGuestSession = useStableCallback(async (meetingLinkName: string) => {
         try {
-            const accessToken = await getGuestWaitingRoomAccessToken(meetingToken);
+            const accessToken = await getGuestWaitingRoomAccessToken(meetingLinkName);
             await meetCoreClient.prepareMlsSessionForWaitingRoom(
                 accessToken,
-                meetingToken,
-                urlPassword,
+                meetingLinkName,
+                urlMeetingPassword,
                 getSessionId()
             );
             return true;
@@ -471,13 +472,13 @@ export const useJoinFlow = ({
         }
     });
 
-    const refreshGuestSession = useStableCallback(async (meetingToken: string) => {
+    const refreshGuestSession = useStableCallback(async (meetingLinkName: string) => {
         try {
-            const accessToken = await getGuestWaitingRoomAccessToken(meetingToken);
+            const accessToken = await getGuestWaitingRoomAccessToken(meetingLinkName);
             await meetCoreClient.refreshWaitingRoomGuestSessionForJoinRequest(
                 accessToken,
-                meetingToken,
-                urlPassword,
+                meetingLinkName,
+                urlMeetingPassword,
                 getSessionId()
             );
             return true;
@@ -490,19 +491,19 @@ export const useJoinFlow = ({
         }
     });
 
-    const joinAfterAdmission = useStableCallback(async (meetingToken: string) => {
+    const joinAfterAdmission = useStableCallback(async (meetingLinkName: string) => {
         dispatch(setJoiningInProgress(true));
         await handleJoin(
             displayName,
-            meetingToken,
-            urlPassword,
+            meetingLinkName,
+            urlMeetingPassword,
             true,
             waitingRoomAccessDetailsRef.current ?? undefined
         );
     });
 
     const { beginJoin: beginWaitingRoomJoin, providerProps: waitingRoomProviderProps } = useWaitingRoom({
-        meetingLinkName: token,
+        meetingLinkName: urlMeetingLinkName,
         getSessionKeyBase64,
         prepareGuestSession,
         refreshGuestSession,
@@ -510,9 +511,9 @@ export const useJoinFlow = ({
         cleanupJoin: cleanupWaitingRoomJoin,
     });
 
-    const joinMeeting = async (displayName: string, meetingToken: string = token) => {
+    const joinMeeting = async (displayName: string, meetingLinkName: string = urlMeetingLinkName) => {
         isExpiringRef.current = false;
-        meetingLinkNameRef.current = meetingToken; // meetingToken is the meeting link name
+        meetingLinkNameRef.current = meetingLinkName;
         handleWebRtcUnsupported();
 
         if (joinBlockedRef.current) {
@@ -533,7 +534,7 @@ export const useJoinFlow = ({
         }
 
         try {
-            const handshakeInfo = await joinTimerRef.current.measure('srpMs', initHandshake(meetingToken));
+            const handshakeInfo = await joinTimerRef.current.measure('srpMs', initHandshake(meetingLinkName));
 
             let meetingInfo;
 
@@ -543,8 +544,8 @@ export const useJoinFlow = ({
                     'meetingInfoMs',
                     dispatch(
                         meetingInfoThunk({
-                            meetingLinkName: meetingToken,
-                            meetingPassword: urlPassword,
+                            meetingLinkName,
+                            meetingPassword: urlMeetingPassword,
                             handshakeInfo,
                             cache: CacheType.None,
                         })
@@ -569,7 +570,7 @@ export const useJoinFlow = ({
 
             dispatch(hydrateMeetingPolicies(meetingInfo));
 
-            const waitingRoom = await beginWaitingRoomJoin(meetingToken, {
+            const waitingRoom = await beginWaitingRoomJoin(meetingLinkName, {
                 canManageWaitingRoom: !!meetingInfo.ManageWaitingRoom,
                 waitingRoom: !!meetingInfo.WaitingRoom,
             });
@@ -580,10 +581,10 @@ export const useJoinFlow = ({
                 return;
             }
 
-            await handleJoin(displayName, meetingToken, urlPassword, waitingRoom.isWaitingRoomHostJoin);
+            await handleJoin(displayName, meetingLinkName, urlMeetingPassword, waitingRoom.isWaitingRoomHostJoin);
 
             // ExpirationTime only exists once the meeting started
-            await dispatch(refreshMeetingInfoThunk({ meetingLinkName: meetingToken, meetingPassword: urlPassword }));
+            await dispatch(refreshMeetingInfoThunk({ meetingLinkName, meetingPassword: urlMeetingPassword }));
         } catch (error: any) {
             const errorKind = classifyMeetingError(error);
 

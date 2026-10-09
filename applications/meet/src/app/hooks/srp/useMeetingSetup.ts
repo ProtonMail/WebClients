@@ -10,17 +10,17 @@ import {
     setCurrentMeeting,
 } from '@proton/meet/store/slices/currentMeeting';
 
-import { getPublicToken, getUrlPassword } from './usePublicToken';
+import { getUrlMeetingLinkName, getUrlMeetingPassword } from './getUrlMeetingParams';
 
 export const useMeetingSetup = () => {
     const dispatch = useMeetDispatch();
-    const token = getPublicToken();
+    const urlMeetingLinkName = getUrlMeetingLinkName();
     const { createNotification } = useNotifications();
     const lastHashError = useRef<string | null>(null);
 
-    let urlPassword = '';
+    let urlMeetingPassword = '';
     try {
-        urlPassword = getUrlPassword();
+        urlMeetingPassword = getUrlMeetingPassword();
     } catch (error) {
         // We avoid showing the error notification multiple times for the same password
         if (lastHashError.current !== window.location.hash) {
@@ -36,14 +36,17 @@ export const useMeetingSetup = () => {
     const storedMeetingPassword = useMeetSelector(selectMeetingPassword);
 
     useEffect(() => {
-        if (!token || (storedMeetingLinkName === token && storedMeetingPassword === urlPassword)) {
+        if (
+            !urlMeetingLinkName ||
+            (storedMeetingLinkName === urlMeetingLinkName && storedMeetingPassword === urlMeetingPassword)
+        ) {
             return;
         }
-        dispatch(setCurrentMeeting({ meetingLinkName: token, meetingPassword: urlPassword }));
-    }, [dispatch, token, urlPassword, storedMeetingLinkName, storedMeetingPassword]);
+        dispatch(setCurrentMeeting({ meetingLinkName: urlMeetingLinkName, meetingPassword: urlMeetingPassword }));
+    }, [dispatch, urlMeetingLinkName, urlMeetingPassword, storedMeetingLinkName, storedMeetingPassword]);
 
     return {
-        token,
-        urlPassword,
+        urlMeetingLinkName,
+        urlMeetingPassword,
     };
 };

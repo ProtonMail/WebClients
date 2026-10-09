@@ -7,7 +7,7 @@ import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { markChatMessagesAsSeen } from '@proton/meet/store/slices/chatAndReactionsSlice';
-import { selectRoomName } from '@proton/meet/store/slices/meetingInfo';
+import { selectMeetingName } from '@proton/meet/store/slices/currentMeeting';
 import { selectLocalParticipantIdentity } from '@proton/meet/store/slices/participants/participantsSlice';
 import {
     MeetingSideBars,
@@ -49,7 +49,7 @@ export const Chat = () => {
     // Root message id of the thread pinned at the top, if any; drives the opaque header (see below).
     const [stuckThreadId, setStuckThreadId] = useState<string | null>(null);
 
-    const roomName = useMeetSelector(selectRoomName);
+    const meetingName = useMeetSelector(selectMeetingName);
 
     const isChatThreadsEnabled = useFlag('MeetChatThreads');
     const isMentionsEnabled = useFlag('MeetChatMentions');
@@ -353,7 +353,7 @@ export const Chat = () => {
                     {isSearchOn || !isChatThreadsEnabled
                         ? filteredMeetingRoomUpdates.map((item) => (
                               <li key={`${item.identity}-${item.timestamp}`}>
-                                  <ChatItem item={item} roomName={roomName} />
+                                  <ChatItem item={item} meetingName={meetingName} />
                               </li>
                           ))
                         : threadView.map(({ root, replies, isRootMissing }) => (
@@ -362,12 +362,12 @@ export const Chat = () => {
                                       <ChatThread
                                           rootMessage={root as MeetChatMessage}
                                           replies={replies}
-                                          roomName={roomName}
+                                          meetingName={meetingName}
                                           isRootMissing={isRootMissing}
                                           isStuck={stuckThreadId === (root as MeetChatMessage).id}
                                       />
                                   ) : (
-                                      <ChatItem item={root} roomName={roomName} />
+                                      <ChatItem item={root} meetingName={meetingName} />
                                   )}
                               </li>
                           ))}

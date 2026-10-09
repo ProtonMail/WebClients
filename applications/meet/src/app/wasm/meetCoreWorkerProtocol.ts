@@ -29,7 +29,7 @@ export type MeetCoreWorkerEventMessage =
     | { type: 'meet-core:event:new-group-key' }
     | {
           type: 'meet-core:event:livekit-admin-change';
-          roomId: string;
+          meetingLinkName: string;
           participantUid: string;
           participantType: number;
       }

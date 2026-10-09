@@ -39,7 +39,7 @@ vi.mock('../../hooks/bridges/useChatMessage', () => ({
 
 const timestamp = 1718534400;
 
-const roomName = 'Mock Room Name';
+const meetingName = 'Mock Meeting Name';
 
 const mockEncryptedDisplayName = 'encrypted-john-doe';
 const mockParticipantName = 'John Doe';
@@ -117,13 +117,13 @@ describe('ChatItem', () => {
     it('should render a participant event record', () => {
         render(
             <Wrapper>
-                <ChatItem item={mockParticipantEventRecord} displayDate={false} roomName={roomName} />
+                <ChatItem item={mockParticipantEventRecord} displayDate={false} meetingName={meetingName} />
             </Wrapper>
         );
 
         expect(screen.getByText(mockParticipantName)).toBeInTheDocument();
         expect(screen.getByText('Joined')).toBeInTheDocument();
-        expect(screen.getByText(roomName)).toBeInTheDocument();
+        expect(screen.getByText(meetingName)).toBeInTheDocument();
         expect(screen.queryByText(date)).not.toBeInTheDocument();
     });
 

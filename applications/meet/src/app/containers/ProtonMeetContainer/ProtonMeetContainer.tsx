@@ -118,20 +118,20 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
     const [isWebRtcUnsupportedModalOpen, setIsWebRtcUnsupportedModalOpen] = useState(false);
     const [isConnectionFailedModalOpen, setIsConnectionFailedModalOpen] = useState(false);
 
-    const { token, urlPassword } = useMeetingSetup();
+    const { urlMeetingLinkName, urlMeetingPassword } = useMeetingSetup();
 
-    const instantMeetingRef = useRef(!token);
+    const instantMeetingRef = useRef(!urlMeetingLinkName);
 
     const joinTelemetryDimensions = useJoinTelemetryDimensions({
-        meetingLinkName: token,
+        meetingLinkName: urlMeetingLinkName,
         isInstant: instantMeetingRef.current,
     });
 
-    const { openedInDesktopApp } = useDesktopAppRedirect({ token, isInstantJoin });
+    const { openedInDesktopApp } = useDesktopAppRedirect({ meetingLinkName: urlMeetingLinkName, isInstantJoin });
 
     const { isReadyToDecrypt } = useMeetingInfoHydration({
-        meetingLinkName: token,
-        meetingPassword: urlPassword,
+        meetingLinkName: urlMeetingLinkName,
+        meetingPassword: urlMeetingPassword,
         instantMeeting: instantMeetingRef.current,
     });
 
@@ -238,7 +238,7 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
         isPipActive,
     });
 
-    const assignHost = useAssignHost(accessTokenRef.current as string, token);
+    const assignHost = useAssignHost(accessTokenRef.current as string, urlMeetingLinkName);
 
     const { isReconnectingRef, websocketUrlRef, performFullReconnection, connectWithMls } = useMeetingConnection({
         meetingLinkNameRef,
@@ -280,8 +280,8 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
         });
 
     const { joinMeeting, joinInstantMeeting, waitingRoomProviderProps } = useJoinFlow({
-        token,
-        urlPassword,
+        urlMeetingLinkName,
+        urlMeetingPassword,
         isInstantJoin,
         setDisplayName,
         connectWithMls,
@@ -393,7 +393,10 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
 
     const handleMeetingLockToggle = useStableCallback(async () => {
         const result = await dispatch(
-            toggleMeetingLockThunk({ meetingLinkName: token, accessToken: accessTokenRef.current as string })
+            toggleMeetingLockThunk({
+                meetingLinkName: urlMeetingLinkName,
+                accessToken: accessTokenRef.current as string,
+            })
         );
         if (toggleMeetingLockThunk.fulfilled.match(result)) {
             sendMeetActionsEvent(TelemetryMeetActionsEvents.meeting_lock_toggled, {
@@ -543,7 +546,7 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
                 ) : (
                     <PrejoinContainer
                         handleJoin={instantMeetingRef.current ? joinInstantMeeting : joinMeeting}
-                        roomId={token}
+                        meetingLinkName={urlMeetingLinkName}
                         instantMeeting={instantMeetingRef.current}
                         participantsCount={prejoinParticipantCount}
                         displayName={displayName}

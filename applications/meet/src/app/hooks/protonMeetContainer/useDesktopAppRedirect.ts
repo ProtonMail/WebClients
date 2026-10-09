@@ -7,13 +7,24 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import { getDesktopAppPreference, tryOpenInDesktopApp } from '../../utils/desktopAppDetector';
 
-export const useDesktopAppRedirect = ({ token, isInstantJoin }: { token: string; isInstantJoin: boolean }) => {
+export const useDesktopAppRedirect = ({
+    meetingLinkName,
+    isInstantJoin,
+}: {
+    meetingLinkName: string;
+    isInstantJoin: boolean;
+}) => {
     const meetOpenLinksInDesktopApp = useFlag('MeetOpenLinksInDesktopApp');
 
     const shareLink = useMeetSelector(selectMeetingLink);
 
     const [openedInDesktopApp] = useState(
-        () => meetOpenLinksInDesktopApp && getDesktopAppPreference() && !!token && !isInstantJoin && !isElectronApp
+        () =>
+            meetOpenLinksInDesktopApp &&
+            getDesktopAppPreference() &&
+            !!meetingLinkName &&
+            !isInstantJoin &&
+            !isElectronApp
     );
 
     useEffect(() => {

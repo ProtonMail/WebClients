@@ -3,7 +3,7 @@ import { isUrlPasswordValid } from '@proton/meet/utils/isUrlPasswordValid';
 import { MEETING_LINK_ID_LENGTH } from '@proton/shared/lib/meet/parseMeetingLink';
 import { DEFAULT_CHARSET } from '@proton/utils/getRandomString';
 
-export const getUrlPassword = () => {
+export const getUrlMeetingPassword = () => {
     const hash = window.location.hash;
 
     if (!hash) {
@@ -19,20 +19,23 @@ export const getUrlPassword = () => {
     return password;
 };
 
-export const getPublicToken = () => {
+export const getUrlMeetingLinkName = () => {
     const pathname = window.location.pathname;
 
     const potentialId = pathname.split('/').at(-1);
 
-    const token = potentialId?.includes(URL_ID_PREFIX) ? (potentialId?.replace(URL_ID_PREFIX, '') as string) : '';
+    const meetingLinkName = potentialId?.includes(URL_ID_PREFIX) ? potentialId.replace(URL_ID_PREFIX, '') : '';
 
-    if (!token) {
+    if (!meetingLinkName) {
         return '';
     }
 
-    if (token.length !== MEETING_LINK_ID_LENGTH || token.split('').some((char) => !DEFAULT_CHARSET.includes(char))) {
+    if (
+        meetingLinkName.length !== MEETING_LINK_ID_LENGTH ||
+        meetingLinkName.split('').some((char) => !DEFAULT_CHARSET.includes(char))
+    ) {
         throw new Error('Invalid meeting id');
     }
 
-    return token;
+    return meetingLinkName;
 };

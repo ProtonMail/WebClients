@@ -21,7 +21,11 @@ interface WorkerCallbackGlobals extends DedicatedWorkerGlobalScope {
         new_group_key_for: () => Promise<void>;
     };
     livekitAdminChangeEvent?: {
-        on_livekit_admin_changed: (roomId: string, participantUid: string, participantType: number) => Promise<void>;
+        on_livekit_admin_changed: (
+            meetingLinkName: string,
+            participantUid: string,
+            participantType: number
+        ) => Promise<void>;
     };
     disconnectionEvent?: {
         disconnection_handler: () => Promise<void>;
@@ -111,10 +115,10 @@ const installWorkerCallbackNamespaces = () => {
     };
 
     workerGlobal.livekitAdminChangeEvent = {
-        on_livekit_admin_changed: async (roomId: string, participantUid: string, participantType: number) => {
+        on_livekit_admin_changed: async (meetingLinkName: string, participantUid: string, participantType: number) => {
             const message: MeetCoreWorkerEventMessage = {
                 type: 'meet-core:event:livekit-admin-change',
-                roomId,
+                meetingLinkName,
                 participantUid,
                 participantType,
             };

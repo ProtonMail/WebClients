@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 
 import { useMeetSelector } from '@proton/meet/store/hooks';
-import { selectTimeLeftMs } from '@proton/meet/store/slices/meetingInfo';
+import { selectTimeLeftMs } from '@proton/meet/store/slices/currentMeeting';
 import { MINUTE, SECOND } from '@proton/shared/lib/constants';
 
 import { announcementMessages } from '../messages';
