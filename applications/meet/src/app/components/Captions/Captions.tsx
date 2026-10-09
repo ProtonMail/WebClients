@@ -52,19 +52,39 @@ const CaptionLine = ({ segment, speakerName, isNewest }: CaptionLineProps) => {
     );
 };
 
-const getStatusMessage = (status: CaptionsStatus) => {
+const LoadingDots = () => (
+    <span className="captions__loading-dots inline-flex flex-nowrap items-center" aria-hidden="true">
+        <span />
+        <span />
+        <span />
+    </span>
+);
+
+const CaptionsStatusMessage = ({ status }: { status: Exclude<CaptionsStatus, 'active'> }) => {
     switch (status) {
         case 'loading':
-            return { text: c('Info').t`Loading…`, color: 'color-disabled' };
+            return (
+                <div className="captions__status flex flex-nowrap items-center justify-center color-hint">
+                    <LoadingDots />
+                    <span>{c('Info').t`Loading captions…`}</span>
+                </div>
+            );
         case 'ready':
-            return { text: c('Info').t`Captions are on`, color: 'color-disabled' };
+            return (
+                <div className="captions__status flex flex-column flex-nowrap items-center text-center">
+                    <span className="color-weak">{c('Info').t`Captions on`}</span>
+                    <span className="captions__status-detail color-hint">{c('Info').t`Waiting for speech…`}</span>
+                </div>
+            );
         case 'failing':
-            return {
-                text: c('Error').t`Live captions aren't working. Try turning them off and on again.`,
-                color: 'color-danger',
-            };
-        case 'active':
-            return null;
+            return (
+                <div className="captions__status flex flex-column flex-nowrap items-center text-center">
+                    <span className="text-semibold color-danger">{c('Error').t`Unable to generate captions`}</span>
+                    <span className="captions__status-detail color-hint">
+                        {c('Error').t`Try turning live captions off and on again.`}
+                    </span>
+                </div>
+            );
     }
 };
 
@@ -75,8 +95,6 @@ const CaptionsFeed = () => {
     const scrollRef = useRef<HTMLDivElement>(null);
     // Follows the newest line until the user scrolls up to read back, and resumes once they return.
     const followNewestRef = useRef(true);
-
-    const statusMessage = getStatusMessage(status);
 
     useLayoutEffect(() => {
         const el = scrollRef.current;
@@ -100,10 +118,8 @@ const CaptionsFeed = () => {
             onScroll={handleScroll}
         >
             <div className="captions__content flex flex-column flex-nowrap">
-                {statusMessage ? (
-                    <span className={clsx('captions__status text-center', statusMessage.color)}>
-                        {statusMessage.text}
-                    </span>
+                {status !== 'active' ? (
+                    <CaptionsStatusMessage status={status} />
                 ) : (
                     segments.map((seg, index) => {
                         // A run-on split by the merge cap continues under the name already shown.
