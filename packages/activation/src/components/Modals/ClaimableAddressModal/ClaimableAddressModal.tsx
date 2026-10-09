@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
@@ -8,6 +7,7 @@ import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
+import useLoading from '@proton/hooks/useLoading';
 import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -17,22 +17,22 @@ import claimStepNext from '@proton/styles/assets/img/byoe/claim-step-next.svg';
 
 interface Props extends ModalStateProps {
     emailAddress: string;
+    /** Resolves to true when the claim went through, false to keep the modal open for a retry */
+    onClaim: () => Promise<boolean>;
 }
 
-export const ClaimableAddressModal = ({ emailAddress, ...rest }: Props) => {
-    const { createNotification } = useNotifications();
+export const ClaimableAddressModal = ({ emailAddress, onClaim, ...rest }: Props) => {
+    const [loading, withLoading] = useLoading();
 
-    const handleConnectClick = () => {
-        // TODO DAWG-38: replace this placeholder with the actual claim call (and translate any user-facing text)
-        createNotification({
-            text: `Coming in a future update`,
-        });
-
-        rest.onClose();
+    const handleConnectClick = async () => {
+        const claimed = await withLoading(onClaim());
+        if (claimed) {
+            rest.onClose();
+        }
     };
 
     return (
-        <Modal {...rest}>
+        <Modal {...rest} disableCloseOnEscape={loading}>
             <ModalContent>
                 <div className="flex flex-column items-center text-center gap-5">
                     <img src={claimExternalAddress} height={176} width={440} alt="" />
@@ -78,6 +78,7 @@ export const ClaimableAddressModal = ({ emailAddress, ...rest }: Props) => {
                             size="large"
                             color="norm"
                             onClick={handleConnectClick}
+                            loading={loading}
                             data-testid="ClaimableAddressModal:connectButton"
                         >{c('Action').t`Got it, connect my Gmail`}</Button>
                         <ButtonLike

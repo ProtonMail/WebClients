@@ -116,6 +116,7 @@ export const startEasySwitchSignupImportTask = ({
     AutomaticImport,
     QuotaThresholdRatio,
     StartTime,
+    ClaimAddress,
 }: {
     Source: string;
     Account: string;
@@ -123,6 +124,7 @@ export const startEasySwitchSignupImportTask = ({
     AutomaticImport: boolean;
     QuotaThresholdRatio?: number;
     StartTime?: number;
+    ClaimAddress?: boolean;
 }) => ({
     url: 'importer/v1/mail/importers/start/all',
     method: 'POST',
@@ -133,6 +135,7 @@ export const startEasySwitchSignupImportTask = ({
         AutomaticImport: AutomaticImport ? 1 : 0,
         QuotaThresholdRatio: QuotaThresholdRatio ?? null,
         StartTime,
+        ClaimAddress: ClaimAddress ? 1 : 0,
     },
 });
 

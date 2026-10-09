@@ -31,7 +31,7 @@ import useBYOEFeatureStatus from './useBYOEFeatureStatus';
 interface Props {
     showSuccessModal: (connectedAddress: string, importEmails: boolean) => void;
     showAddressLinkedToAnotherAccountModal: () => void;
-    showClaimableAddressModal: (email: string) => void;
+    showClaimableAddressModal: (email: string, importEmails: boolean, importPeriod: TIME_PERIOD | undefined) => void;
     onComplete: () => void;
     source: EASY_SWITCH_SOURCES;
 }
@@ -72,6 +72,43 @@ const useSetupGmailBYOEAddress = ({
             handleError(e);
             onError();
             onComplete();
+        }
+    };
+
+    const finalizeBYOEAddress = async (account: string, importEmails: boolean) => {
+        const existingAddress = findUserAddress(account, addresses);
+
+        let address;
+        if (existingAddress) {
+            try {
+                address = await dispatch(convertBYOEAddress({ addressID: existingAddress.ID }));
+                await dispatch(updateBYOEAddressConnection({ address: existingAddress, type: 'reconnect' }));
+            } catch (e) {
+                handleError(e);
+                createNotification({
+                    type: 'error',
+                    text: c('Error').t`Something went wrong while converting the address`,
+                });
+                onComplete();
+                return;
+            }
+        } else {
+            address = await handleCreateAddress({
+                connectedAddress: account,
+                onError: () => {
+                    createNotification({
+                        type: 'error',
+                        text: c('Error').t`Something went wrong while creating the address`,
+                    });
+                },
+            });
+        }
+
+        if (address) {
+            onComplete();
+            void easySwitchDispatch(loadSyncList());
+            void easySwitchDispatch(loadImporters());
+            showSuccessModal(address.Email, importEmails);
         }
     };
 
@@ -134,7 +171,7 @@ const useSetupGmailBYOEAddress = ({
                     }
 
                     if (isClaimable) {
-                        showClaimableAddressModal(token.Account);
+                        showClaimableAddressModal(token.Account, importEmails, importPeriod);
                     } else {
                         showAddressLinkedToAnotherAccountModal();
                     }
@@ -147,42 +184,51 @@ const useSetupGmailBYOEAddress = ({
                 return;
             }
 
-            let address;
-            if (existingAddress) {
-                try {
-                    address = await dispatch(convertBYOEAddress({ addressID: existingAddress.ID }));
-                    await dispatch(updateBYOEAddressConnection({ address: existingAddress, type: 'reconnect' }));
-                } catch (e) {
-                    handleError(e);
-                    createNotification({
-                        type: 'error',
-                        text: c('Error').t`Something went wrong while converting the address`,
-                    });
-                    onComplete();
-                    return;
-                }
-            } else {
-                address = await handleCreateAddress({
-                    connectedAddress: token.Account,
-                    onError: () => {
-                        createNotification({
-                            type: 'error',
-                            text: c('Error').t`Something went wrong while creating the address`,
-                        });
-                    },
-                });
-            }
-
-            if (address) {
-                onComplete();
-                void easySwitchDispatch(loadSyncList());
-                void easySwitchDispatch(loadImporters());
-                showSuccessModal(address.Email, importEmails);
-            }
+            await finalizeBYOEAddress(token.Account, importEmails);
         }
     };
 
-    return { handleBYOEWithImportCallback, allSyncs };
+    const handleClaimAddress = async ({
+        account,
+        importEmails,
+        importPeriod,
+    }: {
+        account: string;
+        importEmails: boolean;
+        importPeriod: TIME_PERIOD | undefined;
+    }): Promise<boolean> => {
+        if (!canClaimExternalAddress) {
+            return false;
+        }
+
+        try {
+            await api(
+                startEasySwitchSignupImportTask({
+                    Provider: OAUTH_PROVIDER.GOOGLE,
+                    Source: source,
+                    Account: account,
+                    AutomaticImport: importEmails,
+                    QuotaThresholdRatio: BYOE_QUOTA_THRESHOLD_RATIO,
+                    StartTime: importEmails && importPeriod ? getStartTimeFromTimePeriod(importPeriod) : undefined,
+                    ClaimAddress: true,
+                })
+            );
+        } catch (e) {
+            handleError(e);
+            onComplete();
+            return false;
+        }
+
+        // The claim itself succeeded, so the modal can close even if finalizing fails (it reports its own errors)
+        try {
+            await finalizeBYOEAddress(account, importEmails);
+        } catch (e) {
+            handleError(e);
+        }
+        return true;
+    };
+
+    return { handleBYOEWithImportCallback, handleClaimAddress, allSyncs };
 };
 
 export default useSetupGmailBYOEAddress;
