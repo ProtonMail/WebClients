@@ -2,7 +2,12 @@
 
 import * as Icons from '../icons'
 import * as Ariakit from '@ariakit/react'
-import { getInitialDataValidationValues, useDataValidationDialogState } from '@rowsncolumns/spreadsheet-state'
+import {
+  getInitialDataValidationValues,
+  useDataValidationDialogState,
+  useDraftDataValidationRuleState,
+  useEditingDataValidationIdState,
+} from '@rowsncolumns/spreadsheet-state'
 import { uuid } from '@rowsncolumns/utils'
 import { useForm, type SubmitHandler } from 'react-hook-form'
 import { SidebarDialog, SidebarDialogHeader } from './SidebarDialog'
@@ -21,7 +26,7 @@ import {
   shouldShowToValue,
 } from '@rowsncolumns/spreadsheet'
 import { produce } from 'immer'
-import { Fragment, useMemo, useRef, useState } from 'react'
+import { Fragment, useEffect, useMemo, useRef } from 'react'
 import { Icon } from '../ui'
 import { createStringifier } from '../../stringifier'
 import { c } from 'ttag'
@@ -257,11 +262,15 @@ function DataValidationRuleEditor({ rule, sheetId, onDone, onSave, onNewRule }: 
               <div className="flex flex-col gap-2">
                 <Ariakit.SelectProvider
                   value={formValue?.condition?.type ?? CONDITION_NONE}
-                  setValue={(value: ConditionType) => {
-                    form.setValue('condition.type', value)
+                  setValue={(value: ConditionType | typeof CONDITION_NONE) => {
                     form.setValue(
-                      'condition.values',
-                      getInitialDataValidationValues(value, formValue.condition?.values ?? []),
+                      'condition',
+                      value === CONDITION_NONE
+                        ? {}
+                        : {
+                            type: value,
+                            values: getInitialDataValidationValues(value, formValue.condition?.values ?? []),
+                          },
                     )
                   }}
                 >
@@ -355,8 +364,6 @@ function DataValidationRuleEditor({ rule, sheetId, onDone, onSave, onNewRule }: 
   )
 }
 
-type DataValidationState = { type: 'list' } | { type: 'editRule'; rule: DataValidationRuleRecord }
-
 function DataValidation() {
   const dataValidations = useUI((ui) => ui.legacy.dataValidations)
   const sheetId = useUI((ui) => ui.legacy.activeSheetId)
@@ -364,8 +371,32 @@ function DataValidation() {
   const onUpdateRule = useUI((ui) => ui.legacy.onUpdateDataValidationRule)
   const onDeleteRule = useUI((ui) => ui.legacy.onDeleteDataValidationRule)
 
-  const [state, setState] = useState<DataValidationState>({ type: 'list' })
+  const [editingId, setEditingId] = useEditingDataValidationIdState()
+  const [draftRule, setDraftRule] = useDraftDataValidationRuleState()
+  const activeRule = draftRule?.id === editingId ? draftRule : dataValidations.find((rule) => rule.id === editingId)
   const api = useSpreadsheetApi()
+
+  const unmountCleanupRef = useRef({ editingId, draftId: draftRule?.id })
+  useEffect(() => {
+    unmountCleanupRef.current = { editingId, draftId: draftRule?.id }
+  }, [editingId, draftRule])
+  useEffect(
+    () => () => {
+      const { editingId, draftId } = unmountCleanupRef.current
+      if (draftId !== undefined) {
+        setDraftRule(undefined)
+      }
+      if (editingId !== undefined) {
+        setEditingId(undefined)
+      }
+    },
+    [setDraftRule, setEditingId],
+  )
+
+  const onDone = () => {
+    setDraftRule(undefined)
+    setEditingId(undefined)
+  }
 
   const onNewRule = () => {
     const id = uuid() // TODO: idCreationStrategy("data-validation")?
@@ -380,29 +411,41 @@ function DataValidation() {
         sheetId,
       })),
     }
-    onCreateRule(rule)
-    setState({ type: 'editRule', rule })
+    setDraftRule(rule)
+    setEditingId(id)
   }
 
   return (
     <Fragment>
-      {state.type === 'list' ? (
+      {!activeRule ? (
         <DataValidationList
           rules={dataValidations}
           sheetId={sheetId}
           onDeleteRule={onDeleteRule}
-          onSelectRule={(rule) => setState({ type: 'editRule', rule })}
+          onSelectRule={(rule) => setEditingId(rule.id)}
           onNewRule={onNewRule}
         />
       ) : null}
 
-      {state.type === 'editRule' ? (
+      {activeRule ? (
         <DataValidationRuleEditor
-          key={state.rule.id}
-          rule={state.rule}
+          key={activeRule.id}
+          rule={activeRule}
           sheetId={sheetId}
-          onDone={() => setState({ type: 'list' })}
-          onSave={(updatedRule) => onUpdateRule(updatedRule, state.rule)}
+          onDone={onDone}
+          onSave={(updatedRule) => {
+            const isNoneRule = !updatedRule.condition?.type
+            if (updatedRule.id === draftRule?.id) {
+              if (!isNoneRule) {
+                onCreateRule(updatedRule)
+              }
+              setDraftRule(undefined)
+            } else if (isNoneRule) {
+              onDeleteRule(activeRule)
+            } else {
+              onUpdateRule(updatedRule, activeRule)
+            }
+          }}
           onNewRule={onNewRule}
         />
       ) : null}
