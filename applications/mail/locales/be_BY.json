@@ -1790,6 +1790,9 @@
       ],
       "Learn how this works": [
         "Паказаць як гэта працуе"
+      ],
+      "Don't show this offer again": [
+        "Больш не паказваць гэту прапанову"
       ]
     },
     "action": {
@@ -2354,6 +2357,9 @@
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "Праграма для камп'ютара ${ MAIL_APP_NAME }"
+      ],
+      "${ appName } Desktop application": [
+        "Праграма для камп'ютара ${ appName }"
       ]
     },
     "Bug category": {
@@ -6761,6 +6767,9 @@
       ],
       "Username": [
         "Імя карыстальніка"
+      ],
+      "Good to know before you connect": [
+        "Варта ведаць перад падключэннем"
       ]
     },
     "Hint": {
@@ -10381,6 +10390,18 @@
       ],
       "Today": [
         "Сёння"
+      ],
+      "Here's what happens when you continue:": [
+        "Вось што адбудзецца, калі вы працягнеце:"
+      ],
+      "Next time you sign in to your other account": [
+        "Наступны раз уваход будзе выкананы ў ваш іншы ўліковы запіс"
+      ],
+      "You'll choose a new username": [
+        "Вы выберыце новае імя карыстальніка"
+      ],
+      "You'll use it to sign in from then on. That's the only change.": [
+        "З гэтага часу вы будзеце выкарыстоўваць яго для ўваходу. Гэта адзінае змяненне."
       ]
     },
     "info": {
@@ -14500,6 +14521,15 @@
       ],
       "Your account is too old for Born Private.": [
         "У вас занадта стары ўліковы запіс для Born Private."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "Выбраны тарыфны план не прапануе дастатковую колькасць даменаў для вашага ўліковага запісу."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "Выбраны тарыфны план не прапануе дастатковую колькасць удзельнікаў для вашага ўліковага запісу."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "Выбраны тарыфны план не прапануе дастатковую колькасць сховішча для вашага ўліковага запісу."
       ]
     },
     "Payments.Error": {

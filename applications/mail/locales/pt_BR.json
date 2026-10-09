@@ -2302,6 +2302,9 @@
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "Aplicativo para computador do ${ MAIL_APP_NAME }"
+      ],
+      "${ appName } Desktop application": [
+        "Aplicativo para computador do ${ appName }"
       ]
     },
     "Bug category": {
@@ -9920,6 +9923,27 @@
       ],
       "You have an open invoice ${ payInvoiceLink }": [
         "Você tem uma fatura em aberta ${ payInvoiceLink }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Os descontos são baseados no preço mensal padrão. Sua assinatura será renovada pela taxa anual padrão quando o ciclo de faturamento terminar."
+      ],
+      "Document lookup failed": [
+        "Erro na busca do documento"
+      ],
+      "Label ${ emails } as ${ names }": [
+        "Marcar ${ emails } como ${ names }"
+      ],
+      "Mark the whole of ${ place } as unread": [
+        "Marcar todo o conteúdo de ${ place } como não lido"
+      ],
+      "Not supported by this browser": [
+        "Não suportado por esse navegador"
+      ],
+      "Please update ${ MAIL_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "Atualize o ${ MAIL_APP_NAME } para continuar usando o aplicativo. ${ downloadUpdate }"
+      ],
+      "Rewrote and readdressed the draft": [
+        "Rascunho reescrito e revisado"
       ]
     },
     "info": {
@@ -13871,6 +13895,15 @@
       ],
       "Trial plans don’t support Scribe seats.": [
         "Os planos de avaliação não suportam licenças de Scribe."
+      ],
+      "Born Private requires a donation.": [
+        "Born Private requer uma doação."
+      ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "Você já possui o ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "You already own Born Private.": [
+        "Você já tem o Born Private."
       ]
     },
     "Payments.Error": {
@@ -13894,6 +13927,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "O seu cartão foi recusado. Tente um cartão diferente ou entre em contato com o seu banco para autorizar o pagamento."
+      ],
+      "Please enter the account holder name": [
+        "Insira o nome do titular da conta"
       ]
     },
     "Payments.error": {

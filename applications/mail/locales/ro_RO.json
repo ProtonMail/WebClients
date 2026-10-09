@@ -5789,6 +5789,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Căutarea a găsit prea multe rezultate. Vă rugăm să limitați căutarea și să reîncercați."
+      ],
+      "You reached the maximum number of connected addresses": [
+        "Ați atins numărul maxim de adrese conectate."
       ]
     },
     "error": {
@@ -10293,6 +10296,12 @@
       ],
       "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
         "Contul Gmail vi se conectează la această adresă ${ MAIL_APP_NAME }."
+      ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "După actualizare, este posibil ca Mac-ul să solicite o parolă. Introduceți parola pe care o folosiți pentru a debloca Mac-ul, apoi faceți clic pe „Permitere întotdeauna” pentru a păstra conexiunea. ${ learnMore }"
+      ],
+      "Please update ${ MAIL_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "Actualizați ${ MAIL_APP_NAME } pentru a o utiliza în continuare. ${ downloadUpdate }"
       ]
     },
     "info": {
