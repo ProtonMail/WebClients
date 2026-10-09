@@ -129,6 +129,10 @@ const CaptionsFeed = () => {
         <div
             ref={scrollRef}
             className="captions scrollbar-always-visible flex flex-column flex-nowrap"
+            // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex -- Safari doesn't make scroll containers keyboard-focusable on its own
+            tabIndex={0}
+            role="log"
+            aria-label={c('Label').t`Live captions`}
             aria-live="polite"
             onScroll={handleScroll}
         >
