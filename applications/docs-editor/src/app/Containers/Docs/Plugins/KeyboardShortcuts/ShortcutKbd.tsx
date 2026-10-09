@@ -1,5 +1,5 @@
 import { Kbd } from '@proton/atoms/Kbd/Kbd'
-import { isMac } from '@proton/shared/lib/helpers/browser'
+import { isMac } from '../../Utils/isMac'
 import type { ComponentProps } from 'react'
 
 const MacCommandKey = '\u{2318}'

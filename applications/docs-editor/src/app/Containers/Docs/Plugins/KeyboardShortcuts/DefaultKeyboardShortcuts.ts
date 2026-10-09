@@ -1,4 +1,4 @@
-import { isMac } from '@proton/shared/lib/helpers/browser'
+import { isMac } from '../../Utils/isMac'
 import type { KeyboardShortcutMatcher } from './Types'
 
 export const DefaultKeyboardShortcuts = Object.freeze([
