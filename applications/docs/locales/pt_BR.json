@@ -7945,6 +7945,15 @@
       ],
       "Trial plans don’t support Scribe seats.": [
         "Os planos de avaliação não suportam licenças de Scribe."
+      ],
+      "Born Private requires a donation.": [
+        "Born Private requer uma doação."
+      ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "Você já possui o ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "You already own Born Private.": [
+        "Você já tem o Born Private."
       ]
     },
     "PGP key encryption warning": {
@@ -10267,6 +10276,11 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Seu período de teste terminará em ${ textDate }. Você não será cobrado se cancelar antes de ${ textDate }. ${ action }"
+      ]
+    },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "Aplicativo para computador do ${ appName }"
       ]
     }
   }

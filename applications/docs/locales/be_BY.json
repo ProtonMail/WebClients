@@ -8307,6 +8307,15 @@
       ],
       "Your account is too old for Born Private.": [
         "У вас занадта стары ўліковы запіс для Born Private."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "Выбраны тарыфны план не прапануе дастатковую колькасць даменаў для вашага ўліковага запісу."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "Выбраны тарыфны план не прапануе дастатковую колькасць удзельнікаў для вашага ўліковага запісу."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "Выбраны тарыфны план не прапануе дастатковую колькасць сховішча для вашага ўліковага запісу."
       ]
     },
     "PGP key encryption warning": {
@@ -10737,6 +10746,11 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Ваш пробны перыяд завершыцца ${ textDate }. З вас не будзе спаганяцца плата, калі вы адмовіцеся да ${ textDate }. ${ action }"
+      ]
+    },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "Праграма для камп'ютара ${ appName }"
       ]
     }
   }
