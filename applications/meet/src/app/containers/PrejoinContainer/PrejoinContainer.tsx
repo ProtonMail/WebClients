@@ -183,77 +183,86 @@ export const PrejoinContainer = ({
     };
 
     return (
-        <div className="h-full overflow-y-auto relative flex flex-column flex-nowrap">
-            <OpenDesktopAppBanner />
-            {joiningInProgress && <div className="w-full h-full absolute top-0 left-0 z-up" />}
-            <div className="w-full prejoin-padding-x shrink-0">
-                <PageHeader showAppSwitcher={false} isInstantJoin={isInstantJoin} />
+        <div className="prejoin-page h-full relative">
+            <div className="prejoin-background" aria-hidden="true">
+                <div className="prejoin-glow prejoin-glow--norm" />
+                <div className="prejoin-glow prejoin-glow--ground" />
+                <div className="prejoin-glow prejoin-glow--deep" />
+                <div className="prejoin-glow prejoin-glow--bot" />
+                <div className="prejoin-glow prejoin-glow--main" />
             </div>
-            <main
-                id="main-content"
-                className="prejoin-container flex flex-column md:flex-row md:items-center md:justify-center w-full"
-            >
-                <div
-                    className={clsx(
-                        'prejoin-container-content w-full md:w-custom xl:w-custom flex flex-column flex-nowrap lg:flex-row gap-2 *:min-size-auto md:items-center md:px-4',
-                        isInstantJoin && 'justify-center'
-                    )}
-                    style={{ '--md-w-custom': '71rem', '--xl-w-custom': '76rem' }}
-                >
-                    {!isInstantJoin && (
-                        <DeviceSettings
-                            isCameraEnabled={initialCameraState}
-                            isMicrophoneEnabled={initialAudioState}
-                            selectedCameraId={currentSelectedCamera}
-                            selectedMicrophoneId={currentSelectedMicrophone}
-                            selectedAudioOutputDeviceId={currentSelectedAudioOutputDevice}
-                            onCameraChange={handleCameraChange}
-                            onMicrophoneChange={handleMicrophoneChange}
-                            onAudioOutputDeviceChange={handleAudioOutputDeviceChange}
-                            displayName={displayName}
-                            colorIndex={participantColorIndex.current}
-                            isLoading={joiningInProgress || showWaitingRoomAdmission}
-                        />
-                    )}
-
-                    {joiningInProgress ? (
-                        <JoiningRoomLoader
-                            participantCount={participantsCount}
-                            header={joiningLoaderHeader}
-                            subtitle={joiningLoaderSubtitle}
-                        />
-                    ) : (
-                        <PreJoinDetails
-                            meetingLinkName={meetingLinkName}
-                            displayName={displayName}
-                            keepDisplayName={hasStoredDisplayName}
-                            onDisplayNameChange={(name) => {
-                                hasTypedDisplayNameRef.current = true;
-                                setDisplayName(name);
-                            }}
-                            onJoinMeeting={handleJoinMeeting}
-                            instantMeeting={instantMeeting}
-                        />
-                    )}
+            <div className="h-full overflow-y-auto relative flex flex-column flex-nowrap">
+                <OpenDesktopAppBanner />
+                {joiningInProgress && <div className="w-full h-full absolute top-0 left-0 z-up" />}
+                <div className="w-full prejoin-padding-x shrink-0">
+                    <PageHeader showAppSwitcher={false} isInstantJoin={isInstantJoin} />
                 </div>
-            </main>
-            <div className="prejoin-footer text-sm color-hint text-center py-3 px-4 shrink-0">
-                {(() => {
-                    const termsLink = (
-                        <Href className="color-hint" key="terms" href={getTermsURL(APPS.PROTONMEET)}>
-                            {c('Link').t`terms and conditions`}
-                        </Href>
-                    );
-                    const privacyLink = (
-                        <Href className="color-hint" key="privacy" href={getPrivacyPolicyURL(APPS.PROTONMEET)}>
-                            {c('Link').t`privacy policy`}
-                        </Href>
-                    );
-                    return c('Info').jt`By joining, you agree to our ${termsLink} and ${privacyLink}.`;
-                })()}
-            </div>
+                <main
+                    id="main-content"
+                    className="prejoin-container flex flex-column md:flex-row md:items-center md:justify-center w-full"
+                >
+                    <div
+                        className={clsx(
+                            'prejoin-container-content w-full md:w-custom xl:w-custom flex flex-column flex-nowrap lg:flex-row gap-2 *:min-size-auto md:items-center md:px-4',
+                            isInstantJoin && 'justify-center'
+                        )}
+                        style={{ '--md-w-custom': '71rem', '--xl-w-custom': '76rem' }}
+                    >
+                        {!isInstantJoin && (
+                            <DeviceSettings
+                                isCameraEnabled={initialCameraState}
+                                isMicrophoneEnabled={initialAudioState}
+                                selectedCameraId={currentSelectedCamera}
+                                selectedMicrophoneId={currentSelectedMicrophone}
+                                selectedAudioOutputDeviceId={currentSelectedAudioOutputDevice}
+                                onCameraChange={handleCameraChange}
+                                onMicrophoneChange={handleMicrophoneChange}
+                                onAudioOutputDeviceChange={handleAudioOutputDeviceChange}
+                                displayName={displayName}
+                                colorIndex={participantColorIndex.current}
+                                isLoading={joiningInProgress || showWaitingRoomAdmission}
+                            />
+                        )}
 
-            <WaitingRoomRejectedModal />
+                        {joiningInProgress ? (
+                            <JoiningRoomLoader
+                                participantCount={participantsCount}
+                                header={joiningLoaderHeader}
+                                subtitle={joiningLoaderSubtitle}
+                            />
+                        ) : (
+                            <PreJoinDetails
+                                meetingLinkName={meetingLinkName}
+                                displayName={displayName}
+                                keepDisplayName={hasStoredDisplayName}
+                                onDisplayNameChange={(name) => {
+                                    hasTypedDisplayNameRef.current = true;
+                                    setDisplayName(name);
+                                }}
+                                onJoinMeeting={handleJoinMeeting}
+                                instantMeeting={instantMeeting}
+                            />
+                        )}
+                    </div>
+                </main>
+                <div className="prejoin-footer text-sm color-hint text-center py-3 px-4 shrink-0">
+                    {(() => {
+                        const termsLink = (
+                            <Href className="color-hint" key="terms" href={getTermsURL(APPS.PROTONMEET)}>
+                                {c('Link').t`terms and conditions`}
+                            </Href>
+                        );
+                        const privacyLink = (
+                            <Href className="color-hint" key="privacy" href={getPrivacyPolicyURL(APPS.PROTONMEET)}>
+                                {c('Link').t`privacy policy`}
+                            </Href>
+                        );
+                        return c('Info').jt`By joining, you agree to our ${termsLink} and ${privacyLink}.`;
+                    })()}
+                </div>
+
+                <WaitingRoomRejectedModal />
+            </div>
         </div>
     );
 };
