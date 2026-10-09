@@ -1,5 +1,8 @@
+import { APPS } from '@proton/shared/lib/constants';
+
 import type { Api } from '../../types';
 import { createMemoryStore } from '../../utils/store';
+import { getForkChallenge } from './fork';
 import type { Lock } from './lock/types';
 import { LockMode } from './lock/types';
 import type { AuthService } from './service';
@@ -16,6 +19,7 @@ describe('Core AuthService', () => {
     let getMemorySession: jest.Mock;
     let onResumeStart: jest.Mock;
     let onLockUpdate: jest.Mock;
+    let onForkRequest: jest.Mock;
 
     beforeEach(() => {
         jest.clearAllMocks();
@@ -30,6 +34,7 @@ describe('Core AuthService', () => {
         getMemorySession = jest.fn().mockResolvedValue({});
         onResumeStart = jest.fn().mockResolvedValue(true);
         onLockUpdate = jest.fn().mockResolvedValue(undefined);
+        onForkRequest = jest.fn();
 
         auth = createAuthService({
             api,
@@ -40,6 +45,7 @@ describe('Core AuthService', () => {
             onSessionPersist,
             onResumeStart,
             onLockUpdate,
+            onForkRequest,
             onSessionFailure: jest.fn(),
         });
     });
@@ -308,6 +314,19 @@ describe('Core AuthService', () => {
         test('`lock` with `LockMode.NONE` should be a no-op', async () => {
             await auth.lock(LockMode.NONE, { soft: true });
             expect(api.setResumeLock).not.toHaveBeenCalled();
+        });
+    });
+
+    describe('AuthService::requestFork', () => {
+        test('should hand the fork secret matching the authorize URL challenge to `onForkRequest`', async () => {
+            const data = { type: 'reauth' as const, reauth: {} as any };
+            const result = await auth.requestFork({ app: APPS.PROTONPASS }, data);
+            const [{ forkSecret, ...forkResult }, forkData] = onForkRequest.mock.calls[0];
+
+            expect(forkResult).toEqual(result);
+            expect(forkData).toBe(data);
+            expect(forkSecret).toMatch(/^[a-f0-9]{64}$/);
+            expect(new URL(result.url).searchParams.get('forkChallenge')).toEqual(await getForkChallenge(forkSecret));
         });
     });
 });
