@@ -53,6 +53,7 @@ describe('getOfferProduct', () => {
         ['/mail/dashboard', 'mail'],
         ['/calendar/dashboard', 'calendar'],
         ['/drive/dashboard', 'drive'],
+        ['/pass/dashboard', 'pass'],
     ] as const)('resolves the account app under %s to %s', (pathname, expected) => {
         expect(getOfferProduct(APPS.PROTONACCOUNT, pathname)).toBe(expected);
     });
