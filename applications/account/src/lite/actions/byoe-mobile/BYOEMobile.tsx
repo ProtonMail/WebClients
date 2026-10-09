@@ -21,6 +21,7 @@ import MobileSection from '../../components/MobileSection';
 import MobileSectionLabel from '../../components/MobileSectionLabel';
 import MobileSectionRow from '../../components/MobileSectionRow';
 import { SupportedActions } from '../../helper';
+import { BYOEMobileConnecting } from './BYOEMobileConnecting';
 
 import '../MobileSettings.scss';
 
@@ -32,6 +33,8 @@ interface Props {
 
 // Google sends the user back here after consent. This exact URL must be allowlisted on the Google OAuth client.
 const REDIRECT_PATH = `/lite?action=${SupportedActions.BYOEMobile}`;
+
+type BYOEMobileStatus = 'idle' | 'starting-oauth' | 'connecting';
 
 const BYOEMobileContent = ({ redirect }: Omit<Props, 'layout'>) => {
     const hasHandledCallbackRef = useRef(false);
@@ -46,16 +49,18 @@ const BYOEMobileContent = ({ redirect }: Omit<Props, 'layout'>) => {
         redirectPath: REDIRECT_PATH,
     });
 
-    // Already loading when coming back from the provider, so the button never looks idle while we wait for gating
-    const [loading, setLoading] = useState(callback.type === 'code');
+    // A single status so the screen can only be in one state at a time.
+    const [status, setStatus] = useState<BYOEMobileStatus>(callback.type === 'code' ? 'connecting' : 'idle');
+    const [connectingEmail, setConnectingEmail] = useState<string | undefined>();
 
     const handleCallbackCode = async ({ code, state }: Extract<OAuthCallbackResult, { type: 'code' }>) => {
-        setLoading(true);
+        setStatus('connecting');
         try {
             const result = await connectBYOEAddressWithCode({
                 code,
                 redirectUri,
                 importEmails: state.importEmails,
+                onAccountResolved: setConnectingEmail,
             });
 
             if (result.status === 'success') {
@@ -68,7 +73,7 @@ const BYOEMobileContent = ({ redirect }: Omit<Props, 'layout'>) => {
                 createNotification({ text: c('Info').t`This address is already linked to another account` });
             }
         } finally {
-            setLoading(false);
+            setStatus('idle');
         }
     };
 
@@ -100,11 +105,17 @@ const BYOEMobileContent = ({ redirect }: Omit<Props, 'layout'>) => {
         } else if (outcome === 'free-limit' || outcome === 'paid-limit') {
             createNotification(getGenericLimitReached());
         } else if (outcome === 'ok') {
-            // The page navigates away, the loading state is intentionally never reset
-            setLoading(true);
+            // The page navigates away, the status is intentionally never reset
+            setStatus('starting-oauth');
             startOAuthFlow({ importEmails: state, redirect });
         }
     };
+
+    if (status === 'connecting') {
+        return <BYOEMobileConnecting email={connectingEmail} />;
+    }
+
+    const isStartingOAuth = status === 'starting-oauth';
 
     return (
         <div className="mobile-settings">
@@ -131,7 +142,7 @@ const BYOEMobileContent = ({ redirect }: Omit<Props, 'layout'>) => {
                     >
                         {c('Label').t`Import messages`}
                     </MobileSectionLabel>
-                    <Toggle id="import-toggle" checked={state} onChange={toggle} disabled={loading} />
+                    <Toggle id="import-toggle" checked={state} onChange={toggle} disabled={isStartingOAuth} />
                 </MobileSectionRow>
                 <MobileSectionRow>
                     <Button
@@ -141,8 +152,8 @@ const BYOEMobileContent = ({ redirect }: Omit<Props, 'layout'>) => {
                         shape="solid"
                         className="rounded-full"
                         onClick={handleConnect}
-                        loading={loading}
-                        disabled={isLoadingGating || loading}
+                        loading={isStartingOAuth}
+                        disabled={isLoadingGating || isStartingOAuth}
                     >{c('Action').t`Connect and import`}</Button>
                 </MobileSectionRow>
             </MobileSection>
