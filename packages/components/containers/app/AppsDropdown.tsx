@@ -13,7 +13,7 @@ import { TelemetryAppSwitcher, TelemetryMeasurementGroups } from '@proton/shared
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
-import { isElectronMail, isElectronOnInboxApps, isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
+import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { isPassUser } from '@proton/shared/lib/helpers/usedClientsFlags';
 import type { OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
@@ -119,7 +119,6 @@ const AuthenticatedAppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProp
         const [organization] = useOrganization();
         const { APP_NAME } = useConfig();
         const api = useApi();
-        const isInboxCustomAppSwitcher = useFlag('InboxDesktopWinLinNewAppSwitcher');
         const [userSettings] = useUserSettings();
 
         const handleAppClick = (toApp: APP_NAMES) => {
@@ -147,8 +146,8 @@ const AuthenticatedAppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProp
             } catch {}
         };
 
-        // The app swicher on Mail, Calendar and account desktop application is different
-        if (isElectronOnInboxApps(APP_NAME) && (isElectronOnMac || (isInboxCustomAppSwitcher && isElectronMail))) {
+        // The desktop Mail app (Mail, Calendar, Account) has its own app switcher
+        if (isElectronMail) {
             return <InboxDesktopAppSwitcher appToLinkTo={props.app} />;
         }
 
