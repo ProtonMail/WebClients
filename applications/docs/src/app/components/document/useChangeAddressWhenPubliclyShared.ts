@@ -8,6 +8,7 @@ import type { ShareResult } from '@proton/drive'
 import { generateNodeUid, getDrive } from '@proton/drive'
 import { isPrivateNodeMeta } from '@proton/drive-store/lib/NodeMeta'
 import { addSentryBreadcrumb } from '@proton/shared/lib/helpers/sentry'
+import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper'
 import { useEffect, useRef } from 'react'
 import { useApplication } from '~/utils/application-context'
 
@@ -115,7 +116,7 @@ function getPublicURL(publicLinkUrl: string) {
   const token = getToken(pathname)
 
   // Output should be /doc?mode=open-url&token=FOO&linkId=BAR#QAZ
-  const result = new URL(currentLocation.origin)
+  const result = new URL(stripLocalBasenameFromPathname(currentLocation.pathname), currentLocation.origin)
   result.search = new URLSearchParams({ mode: 'open-url', linkId, token }).toString()
   result.hash = hash
   return result
@@ -133,7 +134,7 @@ function getToken(pathname: string) {
 function getPrivateURL(volumeId: string, linkId: string) {
   const currentLocation = new URL(window.location.href)
   // Output should be /doc?mode=open&volumeId=ZXC&linkId=BAR
-  const result = new URL(currentLocation.origin)
+  const result = new URL(stripLocalBasenameFromPathname(currentLocation.pathname), currentLocation.origin)
   result.search = new URLSearchParams({ mode: 'open', volumeId, linkId }).toString()
   return result
 }
