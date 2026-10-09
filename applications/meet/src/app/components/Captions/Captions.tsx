@@ -60,6 +60,13 @@ const LoadingDots = () => (
     </span>
 );
 
+const CaptionsError = ({ title, detail }: { title: string; detail: string }) => (
+    <div className="captions__status flex flex-column flex-nowrap items-center text-center">
+        <span className="text-semibold color-danger">{title}</span>
+        <span className="captions__status-detail color-hint">{detail}</span>
+    </div>
+);
+
 const CaptionsStatusMessage = ({ status }: { status: Exclude<CaptionsStatus, 'active'> }) => {
     switch (status) {
         case 'loading':
@@ -78,12 +85,17 @@ const CaptionsStatusMessage = ({ status }: { status: Exclude<CaptionsStatus, 'ac
             );
         case 'failing':
             return (
-                <div className="captions__status flex flex-column flex-nowrap items-center text-center">
-                    <span className="text-semibold color-danger">{c('Error').t`Unable to generate captions`}</span>
-                    <span className="captions__status-detail color-hint">
-                        {c('Error').t`Try turning live captions off and on again.`}
-                    </span>
-                </div>
+                <CaptionsError
+                    title={c('Error').t`Unable to generate captions`}
+                    detail={c('Error').t`Try turning live captions off and on again.`}
+                />
+            );
+        case 'disconnected':
+            return (
+                <CaptionsError
+                    title={c('Error').t`Unable to generate captions`}
+                    detail={c('Error').t`Connection lost — captions will resume when reconnected`}
+                />
             );
     }
 };

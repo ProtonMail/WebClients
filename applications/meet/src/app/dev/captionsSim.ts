@@ -23,6 +23,10 @@ export interface CaptionsSim {
     stop(): void;
     /** Shows the "captions aren't working" state. */
     fail(): void;
+    /** Drops the connection to the captions agent, keeping the lines already on screen. */
+    loseConnection(): void;
+    /** Restores the connection dropped by `loseConnection`. */
+    reconnect(): void;
     /** Streams `text` into the captions as the agent would, resolving once it is fully spoken. */
     say(text: string, options?: CaptionsSayOptions): Promise<void>;
     sayShort(options?: CaptionsSayOptions): Promise<void>;
@@ -167,6 +171,19 @@ export const createCaptionsSim = (dispatch: Dispatch<UnknownAction>): CaptionsSi
             clearLoading();
             emitCaptionsSimEvent({ type: 'clear' });
             setCaptionsSimStatus('failing');
+        },
+
+        loseConnection() {
+            // Nothing spoken while disconnected reaches us, so captions still being spoken stop here.
+            generation += 1;
+            clearLoading();
+            setCaptionsSimStatus('disconnected');
+        },
+
+        reconnect() {
+            if (getCaptionsSimStatus() === 'disconnected') {
+                setCaptionsSimStatus('ready');
+            }
         },
 
         say,

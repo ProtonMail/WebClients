@@ -79,4 +79,25 @@ describe('createCaptionsSim', () => {
         expect(events[events.length - 1]).toEqual({ type: 'clear' });
         expect(getCaptionsSimStatus()).toBe('off');
     });
+
+    it('keeps the lines on screen but stops streaming while disconnected', async () => {
+        const sim = createCaptionsSim(dispatch);
+
+        const done = sim.sayLong();
+        await vi.advanceTimersByTimeAsync(2000);
+        sim.loseConnection();
+        const emittedBeforeDrop = segments().length;
+
+        await vi.runAllTimersAsync();
+        await done;
+
+        expect(getCaptionsSimStatus()).toBe('disconnected');
+        expect(segments().length).toBe(emittedBeforeDrop);
+        expect(events.some((event) => event.type === 'clear')).toBe(false);
+
+        sim.reconnect();
+        expect(getCaptionsSimStatus()).toBe('ready');
+
+        sim.stop();
+    });
 });

@@ -1,5 +1,6 @@
-import { useRoomContext } from '@livekit/components-react';
+import { useConnectionState, useRoomContext } from '@livekit/components-react';
 import { act, renderHook } from '@testing-library/react';
+import { ConnectionState } from 'livekit-client';
 
 import type { MeetState } from '@proton/meet/store/rootReducer';
 
@@ -17,6 +18,7 @@ vi.mock('@proton/meet', () => ({
 
 vi.mock('@livekit/components-react', () => ({
     useRoomContext: vi.fn(),
+    useConnectionState: vi.fn(),
 }));
 
 vi.mock('../../contexts/MeetCoreClientContext', () => ({
@@ -91,6 +93,7 @@ describe('useTranscriptions', () => {
         vi.mocked(useMeetCoreClient).mockReturnValue({ decryptMessage } as never);
         state.agentIdentities = [AGENT_IDENTITY];
         decryptMessage.mockResolvedValue({ message: 'hello there' });
+        vi.mocked(useConnectionState).mockReturnValue(ConnectionState.Connected);
         mockRoom();
     });
 
@@ -143,6 +146,41 @@ describe('useTranscriptions', () => {
         expect(reportMeetError).not.toHaveBeenCalled();
 
         state.agentIdentities = [AGENT_IDENTITY];
+        rerender();
+
+        expect(result.current.status).toBe('ready');
+    });
+
+    it('shows the connection as lost while the agent is gone, over the lines already on screen', async () => {
+        const { result, rerender } = renderHook(() => useTranscriptions());
+
+        await emit(btoa('ciphertext'));
+
+        state.agentIdentities = [];
+        rerender();
+
+        expect(result.current.status).toBe('disconnected');
+
+        state.agentIdentities = [AGENT_IDENTITY];
+        rerender();
+
+        expect(result.current.status).toBe('active');
+    });
+
+    it('shows the connection as lost while the room reconnects, but not for a signal-only reconnect', () => {
+        const { result, rerender } = renderHook(() => useTranscriptions());
+
+        vi.mocked(useConnectionState).mockReturnValue(ConnectionState.SignalReconnecting);
+        rerender();
+
+        expect(result.current.status).toBe('ready');
+
+        vi.mocked(useConnectionState).mockReturnValue(ConnectionState.Reconnecting);
+        rerender();
+
+        expect(result.current.status).toBe('disconnected');
+
+        vi.mocked(useConnectionState).mockReturnValue(ConnectionState.Connected);
         rerender();
 
         expect(result.current.status).toBe('ready');
