@@ -411,7 +411,7 @@
         "Descarregueu-ho per MacOS"
       ],
       "Download for Windows": [
-        "Descarregueu-lo per Windows"
+        "Descarrega per a Windows"
       ],
       "Download info": [
         "Descarregar la informació"
@@ -1271,7 +1271,7 @@
         "Deseu la foto a la galeria"
       ],
       "Download for macOS": [
-        "Descarregueu per macOS"
+        "Descarrega per a macOS"
       ],
       "Rebuild index": [
         "Reconstruïu l'índex"
@@ -1389,6 +1389,9 @@
       ],
       "Detach": [
         "Separa"
+      ],
+      "Import paused": [
+        "S'ha pausat la importació"
       ]
     },
     "Action: Docs": {
@@ -4561,6 +4564,9 @@
       ],
       "Not enough browser storage": [
         "L'emmagatzematge del navegador no és suficient"
+      ],
+      "You reached the maximum number of connected addresses": [
+        "Heu arribat al nombre màxim d'adreces connectades"
       ]
     },
     "error": {
@@ -8120,6 +8126,12 @@
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Temporalment no disponible a causa de l'alta demanda. Torneu-ho a provar més tard."
+      ],
+      "If you've already upgraded, you can resume your import in ${ easySwitchSettingsLink }. You can also cancel it there.": [
+        "Si ja heu millorat el pla, podeu reprendre la importació a ${ easySwitchSettingsLink }. També la podreu cancel·lar allà mateix."
+      ],
+      "Your import is blocked. Upgrade now to bring the rest of your files over.": [
+        "La importació està bloquejada. Milloreu el pla ara per transferir la resta dels vostres fitxers."
       ]
     },
     "info": {
@@ -14919,6 +14931,9 @@
       ],
       "Bring your Google Drive files to ${ DRIVE_APP_NAME }": [
         "Porteu els vostres fitxers de Google Drive a ${ DRIVE_APP_NAME }"
+      ],
+      "More storage needed to finish your import": [
+        "Us cal més emmagatzematge per acabar la importació"
       ]
     },
     "Today icon tooltip in mini calendar": {
