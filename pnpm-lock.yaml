@@ -1822,6 +1822,9 @@ importers:
       ttag:
         specifier: ^1.8.12
         version: 1.8.12
+      ua-parser-js:
+        specifier: ^1.0.41
+        version: 1.0.41
       uuid:
         specifier: ^14.0.2
         version: 14.0.2
@@ -1868,6 +1871,9 @@ importers:
       '@types/tinycolor2':
         specifier: ^1.4.6
         version: 1.4.6
+      '@types/ua-parser-js':
+        specifier: ^0.7.39
+        version: 0.7.39
       '@typescript/native':
         specifier: npm:typescript@^7.0.2
         version: typescript@7.0.2
