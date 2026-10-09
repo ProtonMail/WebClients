@@ -3,10 +3,7 @@ import { useEffect, useRef } from 'react';
 import { c } from 'ttag';
 
 import { useMeetSelector } from '@proton/meet/store/hooks';
-import {
-    selectMicrophonePermission,
-    selectMicrophones,
-} from '@proton/meet/store/slices/deviceManagementSlice/selectors';
+import { selectMicrophoneUnavailable } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { selectParticipantDecryptedNameMap } from '@proton/meet/store/slices/participants/participantsSlice';
 import clsx from '@proton/utils/clsx';
 
@@ -114,11 +111,9 @@ const CaptionsStatusMessage = ({ status }: { status: CaptionsMessage }) => {
 };
 
 const useMicrophoneUnavailable = () => {
-    const microphones = useMeetSelector(selectMicrophones);
-    const permission = useMeetSelector(selectMicrophonePermission);
+    const unavailable = useMeetSelector(selectMicrophoneUnavailable);
     const simulated = useCaptionsSimMicrophoneUnavailable();
-    // Only an outright refusal counts: browsers without the Permissions API never get past 'prompt'.
-    return simulated || microphones.length === 0 || permission === 'denied';
+    return unavailable || simulated;
 };
 
 const CaptionsFeed = () => {
