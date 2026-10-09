@@ -398,7 +398,13 @@ describe('useConnectBYOEAddress', () => {
             });
         });
 
-        const connectWithCode = async (args: { expectedEmailAddress?: string; importPeriod?: TIME_PERIOD } = {}) => {
+        const connectWithCode = async (
+            args: {
+                expectedEmailAddress?: string;
+                importPeriod?: TIME_PERIOD;
+                onAccountResolved?: (account: string) => void;
+            } = {}
+        ) => {
             const { result } = renderHook(() =>
                 useConnectBYOEAddress({ source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS })
             );
@@ -436,6 +442,27 @@ describe('useConnectBYOEAddress', () => {
                 expect.objectContaining({ Account: mockToken.Account, AutomaticImport: true })
             );
             expect(outcome).toEqual({ status: 'success', address: createdAddress, importEmails: true });
+        });
+
+        it('should report the account of the token once the code is exchanged', async () => {
+            const onAccountResolved = jest.fn();
+
+            await connectWithCode({ onAccountResolved });
+
+            expect(onAccountResolved).toHaveBeenCalledWith(mockToken.Account);
+        });
+
+        it('should not report an account when the token cannot be created', async () => {
+            mockEasySwitchDispatch.mockResolvedValue({
+                type: 'token/create/rejected',
+                meta: { requestStatus: 'rejected' },
+                payload: { Code: 2000, Error: 'Invalid code' },
+            });
+            const onAccountResolved = jest.fn();
+
+            await connectWithCode({ onAccountResolved });
+
+            expect(onAccountResolved).not.toHaveBeenCalled();
         });
 
         it('should return token-failed and not connect anything when the token cannot be created', async () => {
