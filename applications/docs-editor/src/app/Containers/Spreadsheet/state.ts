@@ -228,6 +228,8 @@ type YjsStateDependencies = {
   localState: LocalState
   spreadsheetState: SpreadsheetState
   docState: SheetsDocumentAdapter
+  isReadonly: boolean
+  isConversionFlow: boolean
   // Fires (via the y-spreadsheet onAfterBroadcastPatch hook) inside the broadcast
   // transaction once local patches are applied to the doc; used to detect drift.
   onAfterBroadcastPatch?: (patches: unknown, doc: YDoc) => void
@@ -241,11 +243,13 @@ function useYjsState({
   localState,
   spreadsheetState,
   docState,
+  isReadonly,
+  isConversionFlow,
   onAfterBroadcastPatch,
   storeAction,
   shouldUseCustomYjsInitialization,
 }: YjsStateDependencies) {
-  const { receivedEverythingFromRTS, userName } = useSheetsDependencies()
+  const { receivedEverythingFromRTS, userName, canEdit } = useSheetsDependencies()
   const provider = useMemo(() => {
     const provider = new SheetsDocProvider(docState.awareness)
     // useYSpreadsheet checks for either a "synced" event from the provider
@@ -273,6 +277,8 @@ function useYjsState({
 
     userId: userName,
     title: userName,
+    // Match the history write guard, including writes needed during conversion.
+    canWrite: canEdit && (!isReadonly || isConversionFlow),
 
     skipInitialSync: true,
     supportLegacySharedStringsArray: true,
