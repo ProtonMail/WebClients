@@ -90,6 +90,15 @@ export enum FeatureCode {
     OfferGoUnlimited2022 = 'OfferGoUnlimited2022',
     OfferMailTrial2023 = 'OfferMailTrial2023',
 
+    // Black Friday 2026: one flag per offer
+    OfferBlackFriday2026FreeToUnlimited = 'OfferBlackFriday2026FreeToUnlimited',
+    OfferBlackFriday2026PlusToUnlimited = 'OfferBlackFriday2026PlusToUnlimited',
+    OfferBlackFriday2026UnlimitedToDuo = 'OfferBlackFriday2026UnlimitedToDuo',
+    OfferBlackFriday2026DuoToFamily = 'OfferBlackFriday2026DuoToFamily',
+    OfferBlackFriday2026FreeToMailPlus = 'OfferBlackFriday2026FreeToMailPlus',
+    OfferBlackFriday2026FreeToDrivePlus = 'OfferBlackFriday2026FreeToDrivePlus',
+    OfferBlackFriday2026FreeToPassPlus = 'OfferBlackFriday2026FreeToPassPlus',
+
     // Unlimited to Duo discounted pre-renewal offer
     OfferUnlimitedToDuoDiscounted = 'OfferUnlimitedToDuoDiscounted',
 
