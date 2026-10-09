@@ -4,8 +4,9 @@ import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import type { ToolCallAnnouncement, ToolCallData } from '../../../../../../lib/toolCall/types';
 
-type ThinkingStep =
+export type ThinkingStep =
     | { type: 'reasoning'; content: string; isActive: boolean; durationMs?: number }
+    | { type: 'preamble'; content: string }
     | { type: 'tool_call'; toolCall: ToolCallData | ToolCallAnnouncement; result?: string; isActive: boolean };
 
 type ThinkingPhase =
@@ -60,6 +61,22 @@ function toolCallToPhase(toolCall: ToolCallData | ToolCallAnnouncement): Thinkin
     }
 }
 
+/** Preambles announce the tool call they precede, so they contribute no phase of their own. */
+function stepToPhase(step: ThinkingStep): ThinkingPhase | null {
+    switch (step.type) {
+        case 'reasoning':
+            return 'reasoning';
+        case 'preamble':
+            return null;
+        case 'tool_call':
+            return toolCallToPhase(step.toolCall);
+        default: {
+            const exhaustive: never = step;
+            return exhaustive;
+        }
+    }
+}
+
 function getPhases(steps: ThinkingStep[]): ThinkingPhase[] {
     const phases: ThinkingPhase[] = [];
 
@@ -69,9 +86,8 @@ function getPhases(steps: ThinkingStep[]): ThinkingPhase[] {
 
     const seen = new Set<ThinkingPhase>();
     for (const step of steps) {
-        if (step.type !== 'tool_call') continue;
-
-        const phase = toolCallToPhase(step.toolCall);
+        const phase = stepToPhase(step);
+        if (phase === null || phase === 'reasoning') continue;
         if (seen.has(phase)) continue;
 
         seen.add(phase);
