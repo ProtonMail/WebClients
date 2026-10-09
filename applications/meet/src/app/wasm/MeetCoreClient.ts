@@ -117,6 +117,7 @@ export interface MeetCoreClient {
     ): Promise<ParticipantTrackSettingsInfoData>;
     endMeeting(): Promise<void>;
     dispose(): void;
+    restart(): Promise<boolean>;
     composeChatMessage(...args: Parameters<App['composeChatMessage']>): Promise<ChatComposeResultData>;
     composeChatReaction(...args: Parameters<App['composeChatReaction']>): Promise<ChatComposeResultData>;
     composeChatUnreact(...args: Parameters<App['composeChatUnreact']>): Promise<ChatComposeResultData>;
@@ -143,4 +144,3 @@ export interface MeetCoreClient {
     rejectWaitingRoomJoinRequest(meetLinkName: string, requestId: string, participantUid: string): Promise<void>;
     updateWaitingRoomSetting(meetLinkName: string, enable: boolean, sessionKeyBase64: string): Promise<void>;
 }
-

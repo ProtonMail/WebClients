@@ -1,7 +1,7 @@
 import { type MutableRefObject, useEffect, useRef } from 'react';
 
 import { useRoomContext } from '@livekit/components-react';
-import type { RejoinReasonInfo } from '@proton-meet/proton-meet-core';
+import { RejoinReasonInfo } from '@proton-meet/proton-meet-core';
 
 import { useMeetDispatch } from '@proton/meet/store/hooks';
 import {
@@ -22,6 +22,7 @@ import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import type { InitializeDevices } from '../../types';
 import type { ProtonMeetKeyProvider } from '../../utils/ProtonMeetKeyProvider';
 import type { KeyRotationScheduler } from '../../utils/SeamlessKeyRotationScheduler';
+import { leaveMeetingOrRestart } from '../../wasm/meetCoreStallRecovery';
 import { useMeetingAuthentication } from '../srp/useMeetingAuthentication';
 import type { UseKeyManagementResult } from '../useKeyManagement';
 import type { UseLiveKitConnectionResult } from '../useLiveKitConnection';
@@ -111,6 +112,7 @@ export const useMeetingConnection = ({
 }: UseMeetingConnectionParams): UseMeetingConnectionResult => {
     const isMeetSeamlessKeyRotationEnabled = useFlag('MeetSeamlessKeyRotationEnabled');
     const isMeetClientMetricsLogEnabled = useFlag('MeetClientMetricsLog');
+    const isHandleStalledLiveKitReconnectEnabled = useFlag('MeetHandleStalledLiveKitReconnect');
 
     const dispatch = useMeetDispatch();
     const { getAccessDetails } = useMeetingAuthentication();
@@ -270,7 +272,16 @@ export const useMeetingConnection = ({
             // handler) so it is properly awaited before joinMeetingWithAccessToken is called below.
             if (wasMlsActive) {
                 try {
-                    await meetCoreClient.leaveMeeting();
+                    // A stalled LiveKit reconnect means the network was unstable, which is when a meet-core
+                    // request can hang while holding the state lock the leave needs.
+                    if (
+                        isHandleStalledLiveKitReconnectEnabled &&
+                        reason === RejoinReasonInfo.LivekitConnectionTimeout
+                    ) {
+                        await leaveMeetingOrRestart(meetCoreClient, reportMeetError);
+                    } else {
+                        await meetCoreClient.leaveMeeting();
+                    }
                 } catch {
                     // best effort
                 }
