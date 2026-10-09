@@ -389,6 +389,7 @@ enum MeetFeatureFlag {
     MeetParticipantCountMismatch = 'MeetParticipantCountMismatch',
     MeetTranscription = 'MeetTranscription',
     MeetExtendedTelemetry = 'MeetExtendedTelemetry',
+    MeetHandleStalledLiveKitReconnect = 'MeetHandleStalledLiveKitReconnect',
 }
 
 enum PaymentsFeatureFlag {
