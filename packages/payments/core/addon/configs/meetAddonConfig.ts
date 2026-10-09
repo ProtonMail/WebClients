@@ -5,7 +5,7 @@ import { MEET_APP_NAME, MEET_SHORT_APP_NAME } from '@proton/shared/lib/constants
 import { ADDON_PREFIXES, MAX_MEET_ADDON, MAX_MEMBER_MEET_ADDON, TRIAL_MAX_MEET_SEATS } from '../../constants';
 import { getIsB2BAudienceFromPlanIDs } from '../../plan/helpers';
 import type { AddonConfig } from '../interfaces';
-import { passesCouponGate, planSupportsAddon } from '../visibility';
+import { notInMailOrCalendarContext, passesCouponGate, planSupportsAddon } from '../visibility';
 
 export const MEET_ADDON_CONFIG: AddonConfig = {
     addonType: ADDON_PREFIXES.MEET,
@@ -25,7 +25,11 @@ export const MEET_ADDON_CONFIG: AddonConfig = {
     featureLimit: { kind: 'synthetic', key: 'MaxMeet', grants: { MaxMeet: 1 } },
     visibility: {
         couponHideFlag: 'hideMeetAddonBanner',
-        rules: [planSupportsAddon(ADDON_PREFIXES.MEET), passesCouponGate(ADDON_PREFIXES.MEET)],
+        rules: [
+            planSupportsAddon(ADDON_PREFIXES.MEET),
+            passesCouponGate(ADDON_PREFIXES.MEET),
+            notInMailOrCalendarContext(ADDON_PREFIXES.MEET),
+        ],
     },
     transferStrategy: 'meet',
     tooltipLabel: (price) => c('meet_2025: Addon').t`${price} per seat`,

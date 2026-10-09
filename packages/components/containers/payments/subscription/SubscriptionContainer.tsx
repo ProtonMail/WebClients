@@ -1256,6 +1256,7 @@ const SubscriptionContainerInner = ({
                                                 allowedAddonTypes={allowedAddonTypes}
                                                 className="subscription-container-plan-customizer"
                                                 telemetryContext={telemetryContext}
+                                                app={app}
                                             />
                                         )}
                                         {displayPassAsFakeAddon && (
