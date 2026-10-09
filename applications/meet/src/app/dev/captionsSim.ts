@@ -44,6 +44,7 @@ const LONG_SAMPLE =
 const DEFAULT_SPEAKER = 'Simulated Speaker';
 const DEFAULT_WORDS_PER_MINUTE = 160;
 
+// nosemgrep: rules_lgpl_javascript_crypto_rule-node-insecure-random-generator -- dev-only speech timing jitter, not security-sensitive
 const randomBetween = (min: number, max: number) => min + Math.random() * (max - min);
 const randomInt = (min: number, max: number) => Math.floor(randomBetween(min, max + 1));
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -110,6 +111,7 @@ export const createCaptionsSim = (dispatch: Dispatch<UnknownAction>): CaptionsSi
             while (spoken < words.length) {
                 const step = Math.min(randomInt(1, 3), words.length - spoken);
                 // Interim results arrive in uneven bursts, with the occasional longer hesitation.
+                // nosemgrep: rules_lgpl_javascript_crypto_rule-node-insecure-random-generator -- dev-only speech timing jitter, not security-sensitive
                 const hesitation = Math.random() < 0.1 ? randomBetween(400, 1000) : 0;
                 await sleep(step * msPerWord * randomBetween(0.5, 1.6) + hesitation);
                 if (cancelled()) {
@@ -134,6 +136,7 @@ export const createCaptionsSim = (dispatch: Dispatch<UnknownAction>): CaptionsSi
 
             if (index < segments.length - 1) {
                 // Mostly a breath, which the UI merges into the same line; sometimes a real pause.
+                // nosemgrep: rules_lgpl_javascript_crypto_rule-node-insecure-random-generator -- dev-only speech timing jitter, not security-sensitive
                 await sleep(Math.random() < 0.7 ? randomBetween(100, 900) : randomBetween(1700, 3000));
                 if (cancelled()) {
                     return;
