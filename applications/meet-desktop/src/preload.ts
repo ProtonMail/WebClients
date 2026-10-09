@@ -9,6 +9,8 @@ contextBridge.exposeInMainWorld("ipcMeetMessageBroker", {
     send: (type, payload) => {
         ipcRenderer.send("meetClientUpdate", { type, payload });
     },
+    getScreenCaptureAccess: () => ipcRenderer.invoke("meetScreenCaptureAccess:get"),
+    requestScreenCaptureAccess: () => ipcRenderer.invoke("meetScreenCaptureAccess:request"),
 } satisfies IPCMeetMessageBroker);
 
 disableMouseNavigation();

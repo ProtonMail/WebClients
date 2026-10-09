@@ -205,11 +205,16 @@ export type PayloadOfHostUpdateType<T extends IPCInboxHostUpdateMessageType> = E
 export type IPCMeetClientUpdateMessage = { type: 'openExternal'; payload: string };
 type IPCMeetClientUpdateMessageType = IPCMeetClientUpdateMessage['type'];
 
+// "not-requested" means macOS has not shown its prompt yet; once it has, only System Settings can grant it.
+export type MeetScreenCaptureAccess = 'granted' | 'not-requested' | 'denied';
+
 export type IPCMeetMessageBroker = {
     send?: <T extends IPCMeetClientUpdateMessageType>(
         type: T,
         payload: Extract<IPCMeetClientUpdateMessage, { type: T }>['payload']
     ) => void;
+    getScreenCaptureAccess?: () => Promise<MeetScreenCaptureAccess>;
+    requestScreenCaptureAccess?: () => Promise<MeetScreenCaptureAccess>;
 };
 
 export interface InboxDesktopFreeTrialDates {
