@@ -8,4 +8,4 @@ Pages of the admin Console (`proton-console`) that Account and VPN settings also
 - Keep the Console shell (`MainContainer`, sidebar, store, bootstrap) in `applications/console`, so Account and VPN settings never pull in the Console runtime.
 - Leave the page's underlying components in `@proton/components` unless the migration plan says otherwise.
 
-Console plans live in `applications/console/plans/`.
+Console plans live in `applications/console/.plans/`.
