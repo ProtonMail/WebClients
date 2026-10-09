@@ -15,6 +15,7 @@ import {
     selectCameraPermission,
     selectCameras,
     selectMicrophonePermission,
+    selectMicrophoneUnavailable,
     selectMicrophones,
 } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { selectIsSpotlightLayout } from '@proton/meet/store/slices/layoutSlice';
@@ -76,6 +77,7 @@ export const ParticipantControls = () => {
     const cameraPermission = useMeetSelector(selectCameraPermission);
     const microphonePermission = useMeetSelector(selectMicrophonePermission);
     const microphones = useMeetSelector(selectMicrophones);
+    const microphoneHasWarning = useMeetSelector(selectMicrophoneUnavailable);
     const cameras = useMeetSelector(selectCameras);
 
     const hasCameraPermission = cameraPermission === 'granted';
@@ -105,8 +107,6 @@ export const ParticipantControls = () => {
 
         prevDevicePermissionsRef.current = { camera: cameraPermission, microphone: microphonePermission };
     }, [cameraPermission, dispatch, microphonePermission, popupState.Camera, popupState.Microphone]);
-
-    const microphoneHasWarning = !hasMicrophonePermission || microphones.length === 0;
 
     const microphoneLabel = getMicrophoneButtonAriaLabel({
         hasPermission: hasMicrophonePermission,
