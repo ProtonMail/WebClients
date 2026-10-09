@@ -18,6 +18,7 @@ pnpm --filter proton-docs-editor run standalone-doc --port 8092
 ```
 
 Comments, suggestions, and host file operations are unavailable. Attempts are shown in the status header.
-The harness temporarily supplies the existing application, editor-state, and notification providers while the editor's
-runtime dependencies are moved behind its local contracts. It does not create a parent bridge or network transport.
+The harness supplies local Docs dependencies directly, including comments and awareness subscriptions.
+It does not require application, editor-state, or notification providers, or create a parent bridge or network transport.
+The in-memory document is preserved when the page enters the browser's back/forward cache and disposed on exit or unmount.
 Do not enable `STANDALONE_DOC` and `STANDALONE_SHEET` together.

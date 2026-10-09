@@ -34,8 +34,8 @@ import { TablePlugin } from './TablePlugin'
 import { mergedCellsHTML, TablesWithUnalignedRowsAndColumns } from './__mocks__/TestTables'
 import { $createHeadingNode, $isHeadingNode } from '@lexical/rich-text'
 import DocumentEditorTheme from '../../theme/Theme'
-import { EditorStateProvider } from '../../../EditorStateProvider'
-import { EditorSystemMode } from '@proton/docs-shared'
+import { DocsPresentationProvider } from '../../DocsPresentationProvider'
+import { EditorUserMode } from '../../contract/EditorUserMode'
 
 describe('TablePlugin', () => {
   let container: HTMLElement
@@ -55,7 +55,7 @@ describe('TablePlugin', () => {
         return null
       }
       return (
-        <EditorStateProvider systemMode={EditorSystemMode.Edit}>
+        <DocsPresentationProvider userMode={EditorUserMode.Edit}>
           <LexicalComposer
             initialConfig={{
               namespace: 'test',
@@ -72,7 +72,7 @@ describe('TablePlugin', () => {
             <TestPlugin />
             <TablePlugin />
           </LexicalComposer>
-        </EditorStateProvider>
+        </DocsPresentationProvider>
       )
     }
 
