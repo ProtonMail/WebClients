@@ -18,7 +18,7 @@ import React from 'react'
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import { ProtonContentEditable } from '../../ContentEditable/ProtonContentEditable'
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
-import * as ReactTestUtils from '../../../../Utils/react-test-utils'
+import * as ReactTestUtils from '../TestUtils/react-test-utils'
 import { assertCondition } from '../Suggestions/TestUtils'
 import type { TableCellNode, TableNode, TableRowNode } from '@lexical/table'
 import {
