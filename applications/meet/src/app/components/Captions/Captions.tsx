@@ -4,6 +4,7 @@ import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectParticipantDecryptedNameMap } from '@proton/meet/store/slices/participants/participantsSlice';
 import clsx from '@proton/utils/clsx';
 
+import { useCaptionsSimStatus } from '../../dev/captionsSimStore';
 import { useCaptionsAgentLifecycle } from '../../hooks/captions/useCaptionsAgentLifecycle';
 import { useCaptionsAgentWaitTimeout } from '../../hooks/captions/useCaptionsAgentWaitTimeout';
 import { useCaptionsPreference } from '../../hooks/captions/useCaptionsPreference';
@@ -97,8 +98,9 @@ const CaptionsAgentLifecycle = () => {
 
 const CaptionsDisplay = () => {
     const { wantsCaptions } = useCaptionsPreference();
+    const simulated = useCaptionsSimStatus() !== 'off';
 
-    if (!wantsCaptions) {
+    if (!wantsCaptions && !simulated) {
         return null;
     }
 
@@ -107,9 +109,11 @@ const CaptionsDisplay = () => {
 
 export const Captions = () => {
     const featureEnabled = useLiveCaptionsFeatureEnabled();
+    // Simulated captions skip the agent entirely, so they don't need the feature to be enabled.
+    const simulated = useCaptionsSimStatus() !== 'off';
 
     if (!featureEnabled) {
-        return null;
+        return simulated ? <CaptionsFeed /> : null;
     }
 
     return (

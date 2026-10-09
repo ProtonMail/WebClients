@@ -10,7 +10,11 @@ import { mergeParticipantDecryptedNameMap } from '@proton/meet/store/slices/part
 import { addParticipantRecording, removeParticipantRecording } from '@proton/meet/store/slices/recordingStatusSlice';
 import { ParticipantEvent } from '@proton/meet/types/types';
 
+import type { CaptionsSim } from './captionsSim';
+import { createCaptionsSim } from './captionsSim';
+
 interface MeetEventSim {
+    captions: CaptionsSim;
     participantJoined(name?: string): void;
     participantLeft(name?: string): void;
     raiseHand(name?: string): void;
@@ -42,7 +46,11 @@ export const initMeetEventSim = (
     dispatch: Dispatch<UnknownAction>,
     sendMessage: (content: string) => Promise<boolean>
 ): (() => void) => {
+    const captions = createCaptionsSim(dispatch);
+
     const sim: MeetEventSim = {
+        captions,
+
         participantJoined(name = 'Simulated User') {
             const identity = nextIdentity();
             dispatch(mergeParticipantDecryptedNameMap({ [identity]: name }));
@@ -100,6 +108,7 @@ export const initMeetEventSim = (
     window.meetEventSim = sim;
 
     return () => {
+        captions.stop();
         delete window.meetEventSim;
     };
 };
