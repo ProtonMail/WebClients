@@ -1,10 +1,10 @@
-import type { TelemetryDocsEditorEvents } from '@proton/shared/lib/api/telemetry'
 import type { PropsWithChildren } from 'react'
 import { createContext, useContext } from 'react'
 import type { DocsLogger } from './contract/DocsLogger'
 import type { SafeDocsUserState } from './contract/Awareness'
 import type { WordCountInfoCollection } from './Utils/WordCount/WordCountTypes'
 import type { DocsComments } from './contract/DocsComments'
+import type { DocsEditorTelemetryEvent } from './contract/DocsEditorTelemetry'
 
 export type DocsDependencies = {
   userName: string
@@ -31,7 +31,7 @@ export type DocsDependencies = {
   rejectSuggestion: DocsComments['rejectSuggestion']
   getDocumentUrl: () => Promise<string>
   replaceDocumentUrl: (url: string) => Promise<void>
-  reportTelemetry: (event: TelemetryDocsEditorEvents) => void
+  reportTelemetry: (event: DocsEditorTelemetryEvent) => void
 }
 
 const DocsDependenciesContext = createContext<DocsDependencies | undefined>(undefined)
