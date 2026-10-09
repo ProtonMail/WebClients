@@ -1781,6 +1781,9 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Don't show this offer again": [
+        "Больш не паказваць гэту прапанову"
       ]
     },
     "action": {
@@ -6584,6 +6587,9 @@
       ],
       "Username": [
         "Імя карыстальніка"
+      ],
+      "Good to know before you connect": [
+        "Варта ведаць перад падключэннем"
       ]
     },
     "Hint": {
@@ -10171,6 +10177,18 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Вам засталося некалькі націскаў, каб навесці парадак у сваёй паштовай скрыні"
+      ],
+      "Here's what happens when you continue:": [
+        "Вось што адбудзецца, калі вы працягнеце:"
+      ],
+      "Next time you sign in to your other account": [
+        "Наступны раз уваход будзе выкананы ў ваш іншы ўліковы запіс"
+      ],
+      "You'll choose a new username": [
+        "Вы выберыце новае імя карыстальніка"
+      ],
+      "You'll use it to sign in from then on. That's the only change.": [
+        "З гэтага часу вы будзеце выкарыстоўваць яго для ўваходу. Гэта адзінае змяненне."
       ]
     },
     "info": {
@@ -14248,6 +14266,15 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Ваша падпіска мае бягучую скідку. Пераход на гэту новую акцыю азначае, што ранейшая скідка больш не будзе ўжывацца."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "Выбраны тарыфны план не прапануе дастатковую колькасць даменаў для вашага ўліковага запісу."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "Выбраны тарыфны план не прапануе дастатковую колькасць удзельнікаў для вашага ўліковага запісу."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "Выбраны тарыфны план не прапануе дастатковую колькасць сховішча для вашага ўліковага запісу."
       ]
     },
     "Payments.Error": {
@@ -18787,6 +18814,11 @@
       ],
       "Passcode:": [
         "Код доступу:"
+      ]
+    },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "Праграма для камп'ютара ${ appName }"
       ]
     }
   }
