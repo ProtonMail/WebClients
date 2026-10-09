@@ -1057,6 +1057,9 @@
       ],
       "Special Offer": [
         "Спецыяльная прапанова"
+      ],
+      "Don't show this offer again": [
+        "Больш не паказваць гэту прапанову"
       ]
     },
     "action": {
@@ -1553,6 +1556,9 @@
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "Праграма для камп'ютара ${ MAIL_APP_NAME }"
+      ],
+      "${ appName } Desktop application": [
+        "Праграма для камп'ютара ${ appName }"
       ]
     },
     "Bug category": {
@@ -10564,6 +10570,15 @@
       ],
       "Your account is too old for Born Private.": [
         "У вас занадта стары ўліковы запіс для Born Private."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "Выбраны тарыфны план не прапануе дастатковую колькасць даменаў для вашага ўліковага запісу."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "Выбраны тарыфны план не прапануе дастатковую колькасць удзельнікаў для вашага ўліковага запісу."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "Выбраны тарыфны план не прапануе дастатковую колькасць сховішча для вашага ўліковага запісу."
       ]
     },
     "Payments.Error": {
