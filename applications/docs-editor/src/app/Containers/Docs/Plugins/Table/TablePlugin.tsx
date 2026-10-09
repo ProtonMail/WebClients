@@ -39,7 +39,7 @@ import {
   INSERT_TABLE_ROW_COMMAND,
 } from './Commands'
 import { TableMenu } from './TableMenu'
-import Portal from '../../../../Components/Portal'
+import Portal from './Portal'
 import { TableAddButtons } from './TableAddButtons'
 import debounce from 'lodash/debounce'
 import { TableRowAndColumnMenus } from './TableRowAndColumnMenus'
