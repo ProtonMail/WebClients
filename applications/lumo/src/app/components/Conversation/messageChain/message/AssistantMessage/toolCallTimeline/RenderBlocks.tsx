@@ -90,6 +90,37 @@ function isImageAttachmentTextBlock(block: ContentBlock): boolean {
 }
 
 /**
+ * Preamble = prose the model emitted before a tool round ("Let me search for
+ * that"). It belongs in the thinking path next to the call it introduces, not in
+ * the answer. Image markdown is exempt: it renders an actual image.
+ */
+function isPreambleBlock(blocks: ContentBlock[], idx: number): boolean {
+    const block = blocks[idx];
+    return (
+        block.type === 'text' &&
+        !isImageAttachmentTextBlock(block) &&
+        blocks.some((later, laterIdx) => laterIdx > idx && later.type === 'tool_call')
+    );
+}
+
+/** Preamble steps for the round this tool call opens: everything back to the previous tool block. */
+function precedingPreambleSteps(blocks: ContentBlock[], block: ToolCallBlock): ThinkingStep[] {
+    const steps: ThinkingStep[] = [];
+
+    for (let i = blocks.indexOf(block) - 1; i >= 0; i--) {
+        const previous = blocks[i];
+        if (previous.type === 'tool_call' || previous.type === 'tool_result') {
+            break;
+        }
+        if (previous.type === 'text' && previous.content.trim() && !isImageAttachmentTextBlock(previous)) {
+            steps.unshift({ type: 'preamble', content: previous.content });
+        }
+    }
+
+    return steps;
+}
+
+/**
  * Prose has started only when the model is streaming its answer at the tail of
  * the block list. Preamble text or image markdown that appears before tool
  * calls must not end the thinking phase early.
@@ -189,7 +220,9 @@ function buildInterleavedItems(
     messageCreatedAt?: string
 ): InterleavedItem[] {
     const toolCallBlocks = blocks.filter(isToolCallBlock);
-    const textBlocks = blocks.filter((block) => block.type === 'text' && block.content.trim().length > 0);
+    const textBlocks = blocks.filter(
+        (block, idx) => block.type === 'text' && block.content.trim().length > 0 && !isPreambleBlock(blocks, idx)
+    );
     const result: InterleavedItem[] = [];
     const allSteps: ThinkingStep[] = [];
 
@@ -228,6 +261,7 @@ function buildInterleavedItems(
                 const block = toolCallBlocks[event.toolCallIndex];
                 if (block) {
                     const step = toToolCallStep(block, blocks, isGenerating, isLastMessage);
+                    allSteps.push(...precedingPreambleSteps(blocks, block));
                     if (step) allSteps.push(step);
                 }
             }
@@ -236,6 +270,7 @@ function buildInterleavedItems(
         toolCallBlocks.forEach((block, toolCallIdx) => {
             if (processedToolCallIndices.has(toolCallIdx)) return;
             const step = toToolCallStep(block, blocks, isGenerating, isLastMessage);
+            allSteps.push(...precedingPreambleSteps(blocks, block));
             if (step) allSteps.push(step);
         });
     } else {
@@ -250,6 +285,7 @@ function buildInterleavedItems(
         for (const block of blocks) {
             if (block.type === 'tool_call') {
                 const step = toToolCallStep(block, blocks, isGenerating, isLastMessage);
+                allSteps.push(...precedingPreambleSteps(blocks, block));
                 if (step) allSteps.push(step);
             }
         }
@@ -261,7 +297,7 @@ function buildInterleavedItems(
         );
         if (inProgressBlock) {
             const step = toToolCallStep(inProgressBlock, blocks, isGenerating, isLastMessage);
-            if (step) allSteps.push(step);
+            if (step) allSteps.push(...precedingPreambleSteps(blocks, inProgressBlock), step);
         }
     }
 
