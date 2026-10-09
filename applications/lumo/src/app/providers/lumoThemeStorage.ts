@@ -7,6 +7,7 @@ export interface LumoLocalSettings {
     mode: ThemeModeSetting;
     animatedBackgroundEnabled?: boolean;
     animatedBackgroundBlobMode?: 'ambient' | 'lavaLamp';
+    dictationLanguage?: string;
 }
 
 const LUMO_SETTINGS_KEY = 'lumo-settings';
@@ -44,6 +45,9 @@ export const getLumoSettings = (): LumoLocalSettings | null => {
                     parsed.animatedBackgroundBlobMode === 'lavaLamp'
                 ) {
                     settings.animatedBackgroundBlobMode = parsed.animatedBackgroundBlobMode;
+                }
+                if (typeof parsed.dictationLanguage === 'string') {
+                    settings.dictationLanguage = parsed.dictationLanguage;
                 }
                 return settings;
             }
