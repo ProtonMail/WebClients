@@ -4,7 +4,7 @@ import { CustomKeyboardShortcuts } from './CustomKeyboardShortcuts'
 import { DefaultKeyboardShortcuts } from './DefaultKeyboardShortcuts'
 import type { KeyboardShortcutID } from './Types'
 import { ModifierKbd, ShortcutKbd } from './ShortcutKbd'
-import { isMac } from '@proton/shared/lib/helpers/browser'
+import { isMac } from '../../Utils/isMac'
 import { ShortcutLabelContainer } from './ShortcutLabelContainer'
 import { ShortcutLabelText } from './ShortcutLabelText'
 
