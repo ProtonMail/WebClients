@@ -3,6 +3,7 @@ import type { ADDON_PREFIXES } from '@proton/payments/core/constants';
 import type { CouponConfigMetadata } from '@proton/payments/core/coupon-config/interface';
 import type { FreeSubscription, PlanIDs } from '@proton/payments/core/interface';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getStandaloneUnleashClient } from '@proton/unleash/standaloneClient';
 
 /**
@@ -17,11 +18,13 @@ export function showAddonCustomizer(
         couponConfig,
         planIDs,
         isSignup = false,
+        app,
     }: {
         subscription: Subscription | FreeSubscription;
         couponConfig: CouponConfigMetadata | undefined;
         planIDs: PlanIDs;
         isSignup?: boolean;
+        app?: ProductParam;
     }
 ): boolean {
     const visibility = getAddonConfigByType(addonType)?.visibility;
@@ -32,7 +35,7 @@ export function showAddonCustomizer(
 
     const bannerHiddenByCoupon = couponHideFlag ? !!couponConfig?.[couponHideFlag] : false;
     const featureFlagEnabled = featureFlag ? (getStandaloneUnleashClient()?.isEnabled(featureFlag) ?? false) : false;
-    const ctx = { subscription, planIDs, bannerHiddenByCoupon, featureFlagEnabled, isSignup };
+    const ctx = { subscription, planIDs, bannerHiddenByCoupon, featureFlagEnabled, isSignup, app };
 
     return rules.every((rule) => rule(ctx));
 }
