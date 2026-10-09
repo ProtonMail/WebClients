@@ -1389,6 +1389,9 @@
       ],
       "Detach": [
         "Trennen"
+      ],
+      "Import paused": [
+        "Importvorgang unterbrochen"
       ]
     },
     "Action: Docs": {
@@ -4561,6 +4564,9 @@
       ],
       "Not enough browser storage": [
         "Nicht genügend Speicherplatz im Browser"
+      ],
+      "You reached the maximum number of connected addresses": [
+        "Die maximale Anzahl an verbundenen Adressen wurde erreicht"
       ]
     },
     "error": {
@@ -8105,6 +8111,12 @@
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Vorübergehend wegen hoher Nachfrage nicht verfügbar. Bitte versuche es später nochmals."
+      ],
+      "If you've already upgraded, you can resume your import in ${ easySwitchSettingsLink }. You can also cancel it there.": [
+        "Falls du den Umstieg bereits durchgeführt hast, kannst du den Import unter ${ easySwitchSettingsLink } fortsetzen. Dort kann er auch abgebrochen werden."
+      ],
+      "Your import is blocked. Upgrade now to bring the rest of your files over.": [
+        "Das Importieren ist gesperrt. Steige jetzt um, um die restlichen Dateien übertragen zu können."
       ]
     },
     "info": {
@@ -14994,6 +15006,9 @@
       ],
       "Bring your Google Drive files to ${ DRIVE_APP_NAME }": [
         "Übertragen deine Google Drive-Dateien zu ${ DRIVE_APP_NAME }"
+      ],
+      "More storage needed to finish your import": [
+        "Um den Import abzuschließen, wird mehr Speicherplatz benötigt"
       ]
     },
     "Today icon tooltip in mini calendar": {

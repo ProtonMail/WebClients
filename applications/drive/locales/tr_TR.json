@@ -1389,6 +1389,9 @@
       ],
       "Detach": [
         "Ayır"
+      ],
+      "Import paused": [
+        "İçe aktarma işlemi duraklatıldı"
       ]
     },
     "Action: Docs": {
@@ -4561,6 +4564,9 @@
       ],
       "Not enough browser storage": [
         "Tarayıcı depolama alanı yetersiz"
+      ],
+      "You reached the maximum number of connected addresses": [
+        "Olabilecek en fazla bağlantılı adres sayısına ulaştınız."
       ]
     },
     "error": {
@@ -8120,6 +8126,12 @@
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Yoğun istek nedeniyle geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden deneyin."
+      ],
+      "If you've already upgraded, you can resume your import in ${ easySwitchSettingsLink }. You can also cancel it there.": [
+        "Zaten yükselttiyseniz, ${ easySwitchSettingsLink } ile içe aktarım işleminizi sürdürebilirsiniz. Ayrıca oradan iptal de edebilirsiniz."
+      ],
+      "Your import is blocked. Upgrade now to bring the rest of your files over.": [
+        "İçe aktarım işleminiz engellendi. Dosyalarınızın geri kalanını aktarmak için tarifenizi yükseltin."
       ]
     },
     "info": {
@@ -14955,6 +14967,9 @@
       ],
       "Bring your Google Drive files to ${ DRIVE_APP_NAME }": [
         "Google Drive dosyalarınızı ${ DRIVE_APP_NAME } üzerine taşıyın"
+      ],
+      "More storage needed to finish your import": [
+        "İçe aktarım işleminizi tamamlamak için daha fazla depolama alanı gerekli"
       ]
     },
     "Today icon tooltip in mini calendar": {
