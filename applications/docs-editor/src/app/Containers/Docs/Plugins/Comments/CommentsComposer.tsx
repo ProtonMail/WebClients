@@ -6,7 +6,7 @@ import { useCallback, useRef, useState } from 'react'
 import type { CommentEditorHandle } from './CommentEditor'
 import { CommentEditor } from './CommentEditor'
 import { clsx } from 'clsx'
-import { isMac } from '@proton/shared/lib/helpers/browser'
+import { isMac } from '../../Utils/isMac'
 
 export function CommentsComposer({
   autoFocus,

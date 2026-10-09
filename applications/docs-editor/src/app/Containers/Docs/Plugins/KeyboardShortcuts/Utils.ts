@@ -1,4 +1,4 @@
-import { isMac } from '@proton/shared/lib/helpers/browser'
+import { isMac } from '../../Utils/isMac'
 import { CustomKeyboardShortcuts } from './CustomKeyboardShortcuts'
 import type { KeyboardShortcutID, KeyboardShortcutMatcher } from './Types'
 
