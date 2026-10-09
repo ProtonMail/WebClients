@@ -730,9 +730,9 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
               clonedEditorState={clonedEditorState}
               role={application.getRole()}
               onUserModeChange={onUserModeChange}
-              clientInvoker={bridge.getClientInvoker()}
               initialScrollTop={scrollPositionBeforePreview.current}
               tableOfContentsVisible={tableOfContentsVisibleState}
+              hidden={editorHidden}
             />
           </DocsAdapter>
         )}
@@ -740,7 +740,6 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
         <div style={{ display: isPreviewMode ? 'none' : 'contents' }}>
           <DocsAdapter clientInvoker={bridge.getClientInvoker()}>
             <StandaloneDocsEditor
-              clientInvoker={bridge.getClientInvoker()}
               docMap={docMap}
               docState={docState}
               documentId={editorConfig.current.documentId}

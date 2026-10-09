@@ -8,10 +8,9 @@ import ToolbarTooltip from '../../Toolbar/ToolbarTooltip'
 import { ShortcutLabel } from '../KeyboardShortcuts/ShortcutLabel'
 import { TOGGLE_SUGGESTION_MODE_COMMAND } from '../Suggestions/Commands'
 import clsx from 'clsx'
-import { useEditorState } from '../../../EditorStateProvider'
-import { useStore } from 'zustand'
-import { EditorUserMode } from '../../../../Lib/EditorUserMode'
-import { useSyncedState } from '../../../../Hooks/useSyncedState'
+import { useDocsUserMode } from '../../DocsPresentationProvider'
+import { EditorUserMode } from '../../contract/EditorUserMode'
+import { useDocsDependencies } from '../../DocsDependenciesProvider'
 
 export function FloatingQuickActions({
   anchorKey,
@@ -22,8 +21,8 @@ export function FloatingQuickActions({
   editor: LexicalEditor
   onAddComment: () => void
 }): JSX.Element {
-  const { suggestionsEnabled } = useSyncedState()
-  const userMode = useStore(useEditorState(), (state) => state.userMode)
+  const { suggestionsEnabled } = useDocsDependencies()
+  const userMode = useDocsUserMode()
   const isSuggestionMode = userMode === EditorUserMode.Suggest
 
   const boxRef = useRef<HTMLDivElement>(null)

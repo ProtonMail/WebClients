@@ -13,8 +13,6 @@ import { c } from 'ttag'
 import { DOCS_EDITOR_MAX_WIDTH, useLeftPanelContext } from '../../Containers/DocsLayout'
 import clsx from '@proton/utils/clsx'
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical'
-import { useStore } from 'zustand'
-import { useEditorState } from '../../Containers/EditorStateProvider'
 import { IcLink } from '@proton/icons/icons/IcLink'
 import { TelemetryDocsEditorEvents } from '@proton/shared/lib/api/telemetry'
 import { TocHeader } from './TocHeader'
@@ -127,6 +125,7 @@ function ContentItem({ nodeKey, text, tag, scrollToNode }: ContentItemProps) {
 interface TableOfContentsRendererProps {
   tableOfContents: TableOfContentsEntry[]
   reportTelemetry: (event: TelemetryDocsEditorEvents) => void
+  editorHidden: boolean
 }
 
 interface ObservedHeader {
@@ -188,11 +187,11 @@ function ActiveHeadingListener({ tableOfContents }: Pick<TableOfContentsRenderer
 
 interface HeadingParamListenerProps {
   scrollToNode: (key: NodeKey) => void
+  editorHidden: boolean
 }
 
-function HeadingParamListener({ scrollToNode }: HeadingParamListenerProps) {
+function HeadingParamListener({ scrollToNode, editorHidden }: HeadingParamListenerProps) {
   const { documentUrl, replaceDocumentUrl, setDocumentUrl } = useTableOfContentsContext()
-  const { editorHidden } = useStore(useEditorState())
 
   React.useEffect(() => {
     if (!documentUrl || editorHidden) {
@@ -212,7 +211,7 @@ function HeadingParamListener({ scrollToNode }: HeadingParamListenerProps) {
   return null
 }
 
-function TableOfContentsRenderer({ tableOfContents, reportTelemetry }: TableOfContentsRendererProps) {
+function TableOfContentsRenderer({ tableOfContents, reportTelemetry, editorHidden }: TableOfContentsRendererProps) {
   const [editor] = useLexicalComposerContext()
   const { visibility, setVisibility } = useLeftPanelContext()
   const isExpanded = visibility === 'expanded'
@@ -251,7 +250,7 @@ function TableOfContentsRenderer({ tableOfContents, reportTelemetry }: TableOfCo
 
   return (
     <>
-      <HeadingParamListener scrollToNode={navigateToHeading} />
+      <HeadingParamListener scrollToNode={navigateToHeading} editorHidden={editorHidden} />
       <ActiveHeadingListener tableOfContents={tableOfContents} />
 
       <div
@@ -305,9 +304,15 @@ interface TableOfContentsProps {
   getDocumentUrl: () => Promise<string>
   replaceDocumentUrl: (url: string) => Promise<void>
   reportTelemetry: (event: TelemetryDocsEditorEvents) => void
+  editorHidden: boolean
 }
 
-export function TableOfContents({ getDocumentUrl, replaceDocumentUrl, reportTelemetry }: TableOfContentsProps) {
+export function TableOfContents({
+  getDocumentUrl,
+  replaceDocumentUrl,
+  reportTelemetry,
+  editorHidden,
+}: TableOfContentsProps) {
   const [activeHeadingKey, setActiveHeadingKey] = React.useState<NodeKey | null>(null)
   const [documentUrl, setDocumentUrl] = React.useState<string | null>(null)
 
@@ -335,7 +340,13 @@ export function TableOfContents({ getDocumentUrl, replaceDocumentUrl, reportTele
           if (!visibleTableOfContents.length) {
             return <div />
           }
-          return <TableOfContentsRenderer tableOfContents={visibleTableOfContents} reportTelemetry={reportTelemetry} />
+          return (
+            <TableOfContentsRenderer
+              tableOfContents={visibleTableOfContents}
+              reportTelemetry={reportTelemetry}
+              editorHidden={editorHidden}
+            />
+          )
         }}
       </TableOfContentsPlugin>
     </TableOfContentsContext.Provider>
