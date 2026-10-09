@@ -1396,6 +1396,9 @@
       ],
       "Detach": [
         "Detașare"
+      ],
+      "Import paused": [
+        "Importare suspendată"
       ]
     },
     "Action: Docs": {
@@ -4600,6 +4603,9 @@
       ],
       "Not enough browser storage": [
         "Spațiu de stocare insuficient în navigatorul web"
+      ],
+      "You reached the maximum number of connected addresses": [
+        "Ați atins numărul maxim de adrese conectate."
       ]
     },
     "error": {
@@ -8244,6 +8250,12 @@
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Temporar indisponibil din cauza solicitărilor mari. Reîncercați mai târziu."
+      ],
+      "If you've already upgraded, you can resume your import in ${ easySwitchSettingsLink }. You can also cancel it there.": [
+        "Dacă ați făcut deja actualizarea, puteți relua importarea în ${ easySwitchSettingsLink }. Tot acolo puteți și anula."
+      ],
+      "Your import is blocked. Upgrade now to bring the rest of your files over.": [
+        "Importarea este blocată. Treceți la un plan superior acum pentru a transfera și restul fișierelor."
       ]
     },
     "info": {
@@ -15221,6 +15233,9 @@
       ],
       "Bring your Google Drive files to ${ DRIVE_APP_NAME }": [
         "Aduceți-vă fișierele din Google Drive la ${ DRIVE_APP_NAME }"
+      ],
+      "More storage needed to finish your import": [
+        "Este nevoie de mai mult spațiu de stocare pentru a finaliza importarea."
       ]
     },
     "Today icon tooltip in mini calendar": {

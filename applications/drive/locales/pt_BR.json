@@ -1383,6 +1383,9 @@
       ],
       "Switch to ${ planName }": [
         "Alterar para ${ planName }"
+      ],
+      "Import paused": [
+        "Iportação pausada"
       ]
     },
     "Action: Docs": {
@@ -1793,6 +1796,9 @@
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "Aplicativo para computador do ${ MAIL_APP_NAME }"
+      ],
+      "${ appName } Desktop application": [
+        "Aplicativo para computador do ${ appName }"
       ]
     },
     "Bug category": {
@@ -11521,6 +11527,15 @@
       ],
       "Trial plans don’t support Scribe seats.": [
         "Os planos de avaliação não suportam licenças de Scribe."
+      ],
+      "Born Private requires a donation.": [
+        "Born Private requer uma doação."
+      ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "Você já possui o ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "You already own Born Private.": [
+        "Você já tem o Born Private."
       ]
     },
     "Payments.Error": {
@@ -11544,6 +11559,9 @@
       ],
       "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
         "Falha ao inicializar o ${ IDEAL_WERO_BRAND_NAME }. Tente novamente mais tarde."
+      ],
+      "Please enter the account holder name": [
+        "Insira o nome do titular da conta"
       ]
     },
     "Payments.error": {
