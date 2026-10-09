@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -93,15 +93,27 @@ const CaptionsFeed = () => {
     const nameMap = useMeetSelector(selectParticipantDecryptedNameMap);
 
     const scrollRef = useRef<HTMLDivElement>(null);
+    const contentRef = useRef<HTMLDivElement>(null);
     // Follows the newest line until the user scrolls up to read back, and resumes once they return.
     const followNewestRef = useRef(true);
 
-    useLayoutEffect(() => {
-        const el = scrollRef.current;
-        if (el && followNewestRef.current) {
-            el.scrollTop = el.scrollHeight;
+    // Watching sizes rather than segments also catches the band shrinking (rotation, on-screen
+    // keyboard) and a speaker name resolving after its line rendered, during a pause in speech.
+    useEffect(() => {
+        const scroller = scrollRef.current;
+        const content = contentRef.current;
+        if (!scroller || !content) {
+            return;
         }
-    }, [segments, status]);
+        const observer = new ResizeObserver(() => {
+            if (followNewestRef.current) {
+                scroller.scrollTop = scroller.scrollHeight;
+            }
+        });
+        observer.observe(scroller);
+        observer.observe(content);
+        return () => observer.disconnect();
+    }, []);
 
     const handleScroll = () => {
         const el = scrollRef.current;
@@ -117,12 +129,12 @@ const CaptionsFeed = () => {
             aria-live="polite"
             onScroll={handleScroll}
         >
-            <div className="captions__content flex flex-column flex-nowrap">
+            <div ref={contentRef} className="captions__content flex flex-column flex-nowrap">
                 {status !== 'active' ? (
                     <CaptionsStatusMessage status={status} />
                 ) : (
                     segments.map((seg, index) => {
-                        // A run-on split by the merge cap continues under the name already shown.
+                        // Consecutive lines from one speaker read as a single block under one name.
                         const continuesSpeaker =
                             Boolean(seg.speakerIdentity) &&
                             segments[index - 1]?.speakerIdentity === seg.speakerIdentity;
