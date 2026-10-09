@@ -14,6 +14,7 @@
         "packages/shared/lib/interfaces/drive/file.ts": ["types"],
         "packages/shared/lib/interfaces/drive/volume.ts": ["types"],
         "packages/shared/lib/api/drive/link.ts": ["exports"],
+        "packages/shared/lib/helpers/image.ts": ["exports"],
         "packages/shared/lib/calendar/sharing/shareUrl/shareUrl.ts": ["exports"],
         "packages/shared/lib/mnemonic/helpers.ts": ["types"],
         "applications/admin/src/app/constants/appConstants.ts": ["enumMembers"],
