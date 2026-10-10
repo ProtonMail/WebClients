@@ -5,12 +5,14 @@ import { convertAddressesListener } from '@proton/account/organizationKey/conver
 import { organizationKeysManagementListener } from '@proton/account/organizationKey/listener';
 import { resetOrganizationKeyListener } from '@proton/account/organizationKey/resetOrganizationKeyListener';
 import { startListeningToPlanNameChange } from '@proton/account/subscription/startListeningToPlanNameChange';
+import { startCoreEventLoopV6Listening } from '@proton/redux-shared-store/eventLoop/coreEventLoopV6';
 import { startSharedListening } from '@proton/redux-shared-store/sharedListeners';
 
 import type { AppStartListening } from './store';
 
 export const start = ({ startListening, mode }: { startListening: AppStartListening; mode: 'public' | 'default' }) => {
     if (mode === 'default') {
+        startCoreEventLoopV6Listening(startListening);
         startSharedListening(startListening);
         organizationKeysManagementListener(startListening);
         resetOrganizationKeyListener(startListening);
