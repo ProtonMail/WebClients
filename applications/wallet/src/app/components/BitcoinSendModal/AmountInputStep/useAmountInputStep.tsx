@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import type { WasmApiExchangeRate, WasmApiWalletAccount, WasmTxBuilder } from '@proton/andromeda';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
+import { omit } from '@proton/shared/lib/helpers/object';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
 import { COMPUTE_BITCOIN_UNIT, MIN_FEE_RATE, PriorityTargetBlock } from '@proton/wallet/constants/bitcoin';
 import { useExchangeRate, useUserWalletSettings } from '@proton/wallet/store/hooks';
@@ -180,6 +181,11 @@ export const useAmountInputStep = ({
         setRecipientAmounts((prev) => constrainAmounts({ ...prev, [recipientUid]: value }, accountBalance));
     };
 
+    const handleRemoveRecipient = (recipientUid: string, index: number) => {
+        updateTxBuilder((txBuilder) => txBuilder.removeRecipient(index));
+        setRecipientAmounts((prev) => omit(prev, [recipientUid]));
+    };
+
     const handleExchangeRateChange = (newExchangeRate: WasmApiExchangeRate) => {
         setRecipientAmounts((prev) => {
             return Object.entries(prev).reduce(
@@ -194,8 +200,9 @@ export const useAmountInputStep = ({
     };
 
     const handleReviewTransaction = async () => {
-        // Clean recipient with empty amounts
-        const updatedTxBuilder = Object.entries(recipientAmounts).reduce((txB, [, recipientAmount], index) => {
+        // Clean recipient with empty amounts. Iterate in reverse so a removal can't shift pending indices
+        const updatedTxBuilder = recipients.reduceRight((txB, recipient, index) => {
+            const recipientAmount = recipientAmounts[recipient[0]];
             return recipientAmount
                 ? txB.updateRecipient(
                       index,
@@ -236,6 +243,7 @@ export const useAmountInputStep = ({
 
         handleSendFromSingleAmount,
         handleUpdateRecipientAmount,
+        handleRemoveRecipient,
         handleExchangeRateChange,
         handleReviewTransaction,
     };
