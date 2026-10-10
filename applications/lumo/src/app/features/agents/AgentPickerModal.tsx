@@ -4,14 +4,7 @@ import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import {
-    Icon,
-    InputFieldTwo,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoHeader,
-    useModalStateObject,
-} from '@proton/components';
+import { InputFieldTwo, ModalTwo, ModalTwoContent, ModalTwoHeader, useModalStateObject } from '@proton/components';
 import { BRAND_NAME, LUMO_SHORT_APP_NAME, LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
 
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
@@ -25,7 +18,7 @@ import BasicUpgradeButton from '../../upsells/primitives/BasicUpgradeButton';
 import { sendUpgradeButtonClickedEvent } from '../../util/telemetry';
 import { AgentModal } from './AgentModal';
 import { CustomAgentLimitModal } from './CustomAgentLimitModal';
-import { DEFAULT_AGENT_ICON } from './constants';
+import { getAgentIconComponent } from './agentIcons';
 import { getAgentByline, isAgentEditable } from './registry';
 
 interface AgentPickerModalProps {
@@ -171,6 +164,7 @@ export const AgentPickerModal = ({ conversationId }: AgentPickerModalProps) => {
                                     const isActive = agent.id === activeAgentId;
                                     const byline = getAgentByline(agent);
                                     const bylineFull = agent.description?.trim() || byline;
+                                    const AgentIcon = getAgentIconComponent(agent.icon);
                                     return (
                                         <div
                                             key={agent.id}
@@ -187,11 +181,7 @@ export const AgentPickerModal = ({ conversationId }: AgentPickerModalProps) => {
                                                 className="flex flex-nowrap items-center gap-2 min-w-0 overflow-hidden text-left h-full w-full interactive-pseudo-inset rounded-lg pl-2 pr-2"
                                                 onClick={() => handlePick(agent.id)}
                                             >
-                                                <Icon
-                                                    name={(agent.icon as any) || DEFAULT_AGENT_ICON}
-                                                    size={4.5}
-                                                    className="shrink-0"
-                                                />
+                                                <AgentIcon size={4.5} className="shrink-0" />
                                                 <span className="flex flex-column flex-1 min-w-0 overflow-hidden">
                                                     <span className="flex items-center gap-1 min-w-0 overflow-hidden">
                                                         <span className="text-semibold text-ellipsis min-w-0 shrink block">
