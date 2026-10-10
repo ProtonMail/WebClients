@@ -40,11 +40,11 @@ im.$breakpoints: $breakpoints;
 		}
 
 		&-disabled {
-			color: var(--text-disabled);
+			color: var(--text-hint);
 
 			&:active,
 			&:focus {
-				color: var(--text-disabled);
+				color: var(--text-hint);
 			}
 		}
 	}
