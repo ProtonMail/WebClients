@@ -21,7 +21,7 @@ im.$breakpoints: $breakpoints;
 		&-disabled {
 			&:hover {
 				background-color: transparent;
-				color: var(--interaction-weak);
+				color: var(--text-norm);
 			}
 
 			&:active,
