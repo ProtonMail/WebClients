@@ -24,7 +24,7 @@ import { startup } from './startup';
 import { certificateVerifyProc } from './tls';
 import type { PassElectronContext } from './types';
 import logger from './utils/logger';
-import { isMac, isProdEnv, isWindows } from './utils/platform';
+import { isE2E, isMac, isProdEnv, isWindows } from './utils/platform';
 
 const ctx: PassElectronContext = { session: null, window: null, quitting: false };
 
@@ -217,7 +217,7 @@ ctx.session = createSession();
 
 authInterceptors(app, ctx);
 
-testDeepLinkSupport();
+if (!isE2E()) testDeepLinkSupport();
 
 // Match title bar with the saved (or default) theme
 nativeTheme.themeSource = getTheme();
@@ -253,7 +253,7 @@ await createWindow(ctx.session);
 const coldLaunchDeepLink = pickDeepLinkFromArgv(process.argv);
 if (coldLaunchDeepLink) handleDeepLink(coldLaunchDeepLink, ctx);
 
-startUpdater(ctx.session);
+if (!isE2E()) startUpdater(ctx.session);
 
 // Quit when all windows are closed, except on macOS. There, it's common
 // for applications and their menu bar to stay active until the user quits

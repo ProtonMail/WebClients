@@ -6,3 +6,4 @@ export const isMAS = () => 'mas' in process && process.mas === true;
 export const isWindows = () => process.platform === 'win32';
 export const isLinux = () => process.platform === 'linux';
 export const isProdEnv = () => app.isPackaged;
+export const isE2E = () => E2E_TESTS;

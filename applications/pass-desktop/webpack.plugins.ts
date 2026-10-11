@@ -14,6 +14,7 @@ export default [
         ),
         BUILD_TARGET: JSON.stringify(platform()),
         DESKTOP_BUILD: true,
+        E2E_TESTS: process.env.E2E_TESTS === 'true',
         ENV: JSON.stringify(process.env.NODE_ENV ?? 'development'),
         EXTENSION_BUILD: false,
         OFFLINE_SUPPORTED: true,
