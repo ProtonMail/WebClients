@@ -1,3 +1,5 @@
+import noop from '@proton/utils/noop';
+
 import { setupIpcHandlers as autotype } from './lib/autotype';
 import biometrics from './lib/biometrics';
 import { setupIpcHandlers as client } from './lib/client';
@@ -13,6 +15,7 @@ import { setupIpcHandlers as theming } from './lib/theming';
 import { setupIpcHandlers as update } from './lib/updater/ipc';
 import { setupIpcHandlers as window } from './lib/window';
 import type { PassElectronContext } from './types';
+import { isE2E } from './utils/platform';
 import { handleSquirrelEvents } from './utils/squirrel';
 
 export const startup = async (app: Electron.App, ctx: PassElectronContext) => {
@@ -37,7 +40,7 @@ export const startup = async (app: Electron.App, ctx: PassElectronContext) => {
         () => ctx.session
     );
 
-    const shutdownNativeMessaging = await nativeMessaging(app, () => ctx.window);
+    const shutdownNativeMessaging = isE2E() ? noop : await nativeMessaging(app, () => ctx.window);
 
     // Return cleanup function
     return async () => {

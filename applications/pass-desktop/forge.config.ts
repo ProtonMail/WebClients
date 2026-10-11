@@ -60,6 +60,7 @@ const buildAppxManifest = (): Maybe<string> => {
 };
 
 const config: ForgeConfig = {
+    outDir: process.env.OUTPUT_PATH,
     packagerConfig: {
         asar: true,
         icon: 'assets/logo',
@@ -223,7 +224,8 @@ const config: ForgeConfig = {
             // Disables the NODE_OPTIONS environment variable
             [FuseV1Options.EnableNodeOptionsEnvironmentVariable]: false,
             // Disables the --inspect and --inspect-brk family of CLI options
-            [FuseV1Options.EnableNodeCliInspectArguments]: false,
+            // Kept for e2e builds: Playwright drives Electron through them
+            [FuseV1Options.EnableNodeCliInspectArguments]: process.env.E2E_TESTS === 'true',
             // Enables validation of the app.asar archive on macOS
             [FuseV1Options.EnableEmbeddedAsarIntegrityValidation]: true,
             // Enforces that Electron will only load your app from "app.asar" instead of its normal search paths
