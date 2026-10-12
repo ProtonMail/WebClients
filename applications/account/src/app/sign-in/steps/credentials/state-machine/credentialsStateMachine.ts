@@ -12,7 +12,7 @@
 import { type SnapshotFrom, and, assertEvent, assign, emit, enqueueActions, sendParent, setup, stateIn } from 'xstate';
 
 import type { ChallengeResult } from '@proton/challenge/interface';
-import type { SSOInfoResponse } from '@proton/shared/lib/authentication/interface';
+import type { ClaimedAddressID, SSOInfoResponse } from '@proton/shared/lib/authentication/interface';
 import { ExternalSSOError } from '@proton/shared/lib/authentication/ssoExternalLogin';
 
 import { AuthType, type AuthTypeData } from '../../../auth/interface';
@@ -70,11 +70,16 @@ interface CredentialsMachineContext {
     /** Exchanged once when the SSO form opens, then cleared. */
     externalSSO: { token: string; persistent: boolean } | undefined;
     /**
-     * The SSO info last loaded for the username: its challenge token opens the provider's window, and in the
-     * claimed-address recovery, its `ClaimedAddresses` are the candidates the old password is tried against.
+     * The SSO info last loaded for the username, until a provider's window uses up its challenge token. Then the
+     * claimed-address choice loads it again, for the next window.
      */
     ssoInfo: SSOInfoResponse | undefined;
     ssoProviderResult: SSOProviderResult | undefined;
+    /**
+     * The candidates the claimed-address recovery tries the old password against: those of the SSO info the
+     * recovery was entered with, kept until a new attempt starts.
+     */
+    claimedAddresses: ClaimedAddressID[];
     /** Shown inline in the credentials form (wrong username or password, or the API refused the SSO sign-in). */
     errorMessage: string | undefined;
 }
@@ -155,6 +160,7 @@ const credentialsSetup = setup({
             errorMessage: undefined,
             ssoInfo: undefined,
             ssoProviderResult: undefined,
+            claimedAddresses: [],
         })),
         /** After `errorOf(InvalidLoginError)` or `errorOf(SSOSignInRejectedError)`: the API's message, or a fallback. */
         setErrorMessage: assign((_, params: { error: unknown }) => ({
@@ -178,7 +184,13 @@ const credentialsSetup = setup({
             externalSSO: undefined,
         })),
         /** The attempt starts over from the form: drop the last submission's SSO state. */
-        resetAttempt: assign({ ssoInfo: undefined, ssoProviderResult: undefined }),
+        resetAttempt: assign({ ssoInfo: undefined, ssoProviderResult: undefined, claimedAddresses: [] }),
+        /** A provider's window used up the challenge token: the next one needs the SSO info loaded again. */
+        discardSSOInfo: assign({ ssoInfo: undefined, ssoProviderResult: undefined }),
+        /** Keep the candidates of the SSO info the claimed-address recovery is entered with. */
+        storeClaimedAddresses: assign(({ context }) => ({
+            claimedAddresses: context.ssoInfo?.ClaimedAddresses ?? [],
+        })),
         reportAuthenticated: sendParent((_, params: { primaryAuth: PrimaryAuthResult }): CredentialsParentEvent => ({
             type: 'credentials.authenticated',
             payload: { primaryAuth: params.primaryAuth },
@@ -194,6 +206,8 @@ const credentialsSetup = setup({
         canNavigateBack: ({ context }) => context.canNavigateBack,
         isInitialForm: ({ context }, params: { form: CredentialsForm }) => context.initialForm === params.form,
         hasExternalSSOToken: ({ context }) => !!context.externalSSO,
+        /** SSO info whose challenge token no window has used yet. */
+        hasSSOInfo: ({ context }) => !!context.ssoInfo,
         isAccountType: (_, params: { accountType: AccountType; type: AccountType['type'] }) =>
             params.accountType.type === params.type,
         /** This app sends SSO accounts to the account app. */
@@ -378,6 +392,7 @@ export const credentialsStateMachine = credentialsSetup.createMachine({
         externalSSO: input.externalSSO,
         ssoInfo: undefined,
         ssoProviderResult: undefined,
+        claimedAddresses: [],
         errorMessage: undefined,
     }),
     entry: enqueueActions(({ enqueue, check }) => {
@@ -598,7 +613,7 @@ export const credentialsStateMachine = credentialsSetup.createMachine({
                 claimedAddress: {
                     initial: 'choice',
                     // Its error is its own; the forms' doesn't carry over in either direction
-                    entry: 'clearErrorMessage',
+                    entry: ['clearErrorMessage', 'storeClaimedAddresses'],
                     exit: 'clearErrorMessage',
                     on: {
                         'decision.back': { target: 'signIn.previous' },
@@ -608,10 +623,14 @@ export const credentialsStateMachine = credentialsSetup.createMachine({
                         choice: {
                             on: {
                                 'claimed.recoveryChosen': { target: 'verify' },
-                                'claimed.ssoRequested': { target: 'loadingSSOInfo' },
+                                'claimed.ssoRequested': [
+                                    // The SSO info the recovery was entered with, until a window uses its token
+                                    { guard: 'hasSSOInfo', target: 'ssoProvider' },
+                                    { target: 'loadingSSOInfo' },
+                                ],
                             },
                         },
-                        /** Each window uses up its challenge token, so every opening fetches a fresh one. */
+                        /** A fresh challenge token, after a window used up the last one. */
                         loadingSSOInfo: {
                             tags: [CredentialsStateMachineTags.submitting],
                             invoke: {
@@ -632,7 +651,7 @@ export const credentialsStateMachine = credentialsSetup.createMachine({
                             },
                         },
                         // Back returns to the form while the window is open; the choice shows again when it's done
-                        ssoProvider: { ...ssoProvider, onDone: { target: 'choice' } },
+                        ssoProvider: { ...ssoProvider, onDone: { target: 'choice', actions: 'discardSSOInfo' } },
 
                         /** Proving ownership with the password of the account the address belonged to. */
                         verify: {
@@ -645,12 +664,14 @@ export const credentialsStateMachine = credentialsSetup.createMachine({
                                 },
                                 verifying: {
                                     tags: [CredentialsStateMachineTags.submitting],
+                                    // Back waits for the request, which may have signed in already
+                                    on: { 'decision.back': {} },
                                     invoke: {
                                         src: 'authenticateWithClaimedAddress',
                                         input: ({ context, event }) => {
                                             assertEvent(event, 'claimed.submitted');
                                             return {
-                                                claimedAddresses: context.ssoInfo?.ClaimedAddresses ?? [],
+                                                claimedAddresses: context.claimedAddresses,
                                                 email: context.username,
                                                 password: event.payload.password,
                                                 payload: event.payload.payload,
