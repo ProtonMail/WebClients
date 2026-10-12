@@ -49,9 +49,12 @@ describe('tracker', () => {
     });
 
     describe('before init', () => {
-        it('throws outside of production', () => {
-            expect(() => tracker.emit(noInputEvent)).toThrow(NOT_INITIALIZED_MESSAGE);
-            expect(() => tracker.startTimer(funnelTimer)).toThrow(NOT_INITIALIZED_MESSAGE);
+        it('warns once and does not throw outside of production', () => {
+            const warn = jest.spyOn(console, 'warn').mockImplementation(() => {});
+            expect(() => tracker.emit(noInputEvent)).not.toThrow();
+            expect(() => tracker.startTimer(funnelTimer)).not.toThrow();
+            expect(warn).toHaveBeenCalledTimes(1);
+            expect(warn).toHaveBeenCalledWith(NOT_INITIALIZED_MESSAGE);
         });
 
         it('does nothing in production', () => {

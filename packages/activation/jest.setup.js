@@ -2,6 +2,7 @@ import '@testing-library/jest-dom';
 
 import '@proton/components/testing/mockFlagSvg';
 import '@proton/components/testing/mockMatchMedia';
+import { mockTracker } from '@proton/telemetry-tracker/testing';
 import '@proton/unleash/testing/mockUnleash';
 
 import ResizeObserver from './src/tests/mock/ResizeObserver';
@@ -25,3 +26,12 @@ HTMLCanvasElement.prototype.getContext = jest.fn();
 
 // JSDOM does not implement the Web Animations API used by the illustrations
 Element.prototype.animate = jest.fn(() => ({ cancel: jest.fn() }));
+
+// The tracker throws outside of production when it was not initialised: record the reports instead of sending them
+let restoreTracker;
+beforeEach(() => {
+    restoreTracker = mockTracker().restore;
+});
+afterEach(() => {
+    restoreTracker();
+});
