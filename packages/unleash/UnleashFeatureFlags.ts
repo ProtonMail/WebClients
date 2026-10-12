@@ -334,6 +334,8 @@ enum MeetFeatureFlag {
     MeetCpuOptimizations = 'MeetCpuOptimizations',
     MeetCustomVirtualBackground = 'MeetCustomVirtualBackground',
     MeetDebugMode = 'MeetDebugMode',
+    MeetDeepFilterNet = 'MeetDeepFilterNet',
+    MeetDeepFilterNetMobile = 'MeetDeepFilterNetMobile',
     MeetDtlnPerfMonitor = 'MeetDtlnPerfMonitor',
     MeetDynacast = 'MeetDynacast',
     MeetE2eeDebugStats = 'MeetE2eeDebugStats',
