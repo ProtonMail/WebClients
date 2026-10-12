@@ -1,12 +1,15 @@
-import type { PayloadAction } from '@reduxjs/toolkit';
+import type { PayloadAction, ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { lockMeetingCall, unlockMeetingCall } from '@proton/shared/lib/api/meet';
+import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 
 import type { MeetState } from '../rootReducer';
 import type { MeetExtraThunkArguments } from '../store';
 import type { ServerMeetingInfo } from './meetingInfoModel';
+import { selectUserId } from './userSlice';
 
 export interface MeetSettingsState {
     disableVideos: boolean;
@@ -15,6 +18,7 @@ export interface MeetSettingsState {
     meetingLocked: boolean;
     pipEnabled: boolean;
     waitingRoomSetting: boolean;
+    joinLeaveSoundsEnabled: boolean;
 }
 
 export const initialState: MeetSettingsState = {
@@ -24,7 +28,19 @@ export const initialState: MeetSettingsState = {
     meetingLocked: false,
     pipEnabled: true,
     waitingRoomSetting: false,
+    joinLeaveSoundsEnabled: true,
 };
+
+const getJoinLeaveSoundsStorageKey = (userId?: string) =>
+    userId ? `user.${userId}.joinLeaveSounds` : 'guest.joinLeaveSounds';
+
+const getPersistedJoinLeaveSoundsEnabled = (userId?: string) =>
+    getItem(getJoinLeaveSoundsStorageKey(userId)) !== 'false';
+
+export const getPersistedSettingsState = (userId?: string): MeetSettingsState => ({
+    ...initialState,
+    joinLeaveSoundsEnabled: getPersistedJoinLeaveSoundsEnabled(userId),
+});
 
 export const toggleMeetingLockThunk = createAsyncThunk<
     boolean,
@@ -91,6 +107,9 @@ const slice = createSlice({
         resetWaitingRoomSetting: (state) => {
             state.waitingRoomSetting = initialState.waitingRoomSetting;
         },
+        setJoinLeaveSoundsEnabled: (state, action: PayloadAction<boolean>) => {
+            state.joinLeaveSoundsEnabled = action.payload;
+        },
     },
     extraReducers: (builder) => {
         builder.addCase(toggleMeetingLockThunk.fulfilled, (state, action) => {
@@ -115,5 +134,22 @@ export const selectParticipantsWithDisabledVideos = (state: MeetState) =>
     state.meetSettings.participantsWithDisabledVideos;
 export const selectSelfView = (state: MeetState) => state.meetSettings.selfView;
 export const selectWaitingRoomSetting = (state: MeetState) => state.meetSettings.waitingRoomSetting;
+export const selectJoinLeaveSoundsEnabled = (state: MeetState) => state.meetSettings.joinLeaveSoundsEnabled;
+
+export const loadPersistedJoinLeaveSoundsSetting =
+    (): ThunkAction<void, MeetState, ProtonThunkArguments, UnknownAction> => (dispatch, getState) => {
+        const userId = selectUserId(getState());
+
+        dispatch(slice.actions.setJoinLeaveSoundsEnabled(getPersistedJoinLeaveSoundsEnabled(userId)));
+    };
+
+export const setJoinLeaveSoundsEnabledAndPersist =
+    (enabled: boolean): ThunkAction<void, MeetState, ProtonThunkArguments, UnknownAction> =>
+    (dispatch, getState) => {
+        const userId = selectUserId(getState());
+
+        dispatch(slice.actions.setJoinLeaveSoundsEnabled(enabled));
+        setItem(getJoinLeaveSoundsStorageKey(userId), enabled.toString());
+    };
 
 export const settingsReducer = { meetSettings: slice.reducer };

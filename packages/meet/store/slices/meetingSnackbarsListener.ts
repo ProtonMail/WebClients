@@ -38,7 +38,10 @@ export const meetingSnackbarsListener = (startListening: MeetAppStartListening) 
             const isFresh = (timestamp: number) => now - timestamp < SNACKBAR_TIMEOUT;
 
             if (addEvent.match(action)) {
-                if (selectTotalParticipantCount(state) > PARTICIPANT_COUNT_THRESHOLD) {
+                if (
+                    extra.unleashClient.isEnabled('MeetJoinLeaveSoundsNotifications') ||
+                    selectTotalParticipantCount(state) > PARTICIPANT_COUNT_THRESHOLD
+                ) {
                     return;
                 }
 

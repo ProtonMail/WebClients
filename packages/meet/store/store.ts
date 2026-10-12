@@ -10,6 +10,7 @@ import noop from '@proton/utils/noop';
 import { start } from './listeners';
 import { type MeetState, rootReducer } from './rootReducer';
 import { getPersistedBackgroundState } from './slices/backgroundSlice';
+import { getPersistedSettingsState } from './slices/settings';
 
 export interface MeetExtraThunkArguments extends ProtonThunkArguments {
     meetEventManager: EventManager<MeetEventResponse>;
@@ -29,7 +30,11 @@ export const setupStore = ({
 
     const store = configureStore({
         reducer: rootReducer,
-        preloadedState: { background: getPersistedBackgroundState(), ...preloadedState },
+        preloadedState: {
+            background: getPersistedBackgroundState(),
+            meetSettings: getPersistedSettingsState(preloadedState?.user?.value?.ID),
+            ...preloadedState,
+        },
         middleware: (getDefaultMiddleware) =>
             getDefaultMiddleware({
                 serializableCheck: false,

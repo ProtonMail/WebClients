@@ -32,6 +32,7 @@ import { useCaptionsPreference } from '../../hooks/captions/useCaptionsPreferenc
 import { useLiveCaptionsFeatureEnabled } from '../../hooks/captions/useLiveCaptionsFeatureEnabled';
 import { BackgroundBlurToggle } from './BackgroundBlurToggle';
 import { CaptionLanguageSelect } from './CaptionLanguageSelect';
+import { JoinLeaveSoundsToggle } from './JoinLeaveSoundsToggle';
 import { LiveCaptionsHostAvailabilityToggle } from './LiveCaptionsHostAvailabilityToggle';
 import { LiveCaptionsToggle } from './LiveCaptionsToggle';
 import { NoiseCancellingToggle } from './NoiseCancellingToggle';
@@ -58,6 +59,7 @@ export const Settings = () => {
 
     const isVirtualBackgroundEnabled = useFlag('MeetVirtualBackground');
     const canPickCaptionLanguage = useFlag('MeetSaveCaptionLanguagePreference');
+    const isJoinLeaveSoundsEnabled = useFlag('MeetJoinLeaveSoundsNotifications');
 
     const [loadingLock, withLoadingLock] = useLoading();
     const [loadingBackgroundBlur, withLoadingBackgroundBlur] = useLoading();
@@ -148,6 +150,7 @@ export const Settings = () => {
                             noiseFilter={noiseFilter}
                             toggleNoiseFilter={toggleNoiseFilter}
                         />
+                        {isJoinLeaveSoundsEnabled && <JoinLeaveSoundsToggle />}
                     </SideBarSection>
 
                     <SideBarSection title={c('Title').t`Background`}>

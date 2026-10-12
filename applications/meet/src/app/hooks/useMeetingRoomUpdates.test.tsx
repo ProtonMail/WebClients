@@ -85,7 +85,35 @@ function createTestWrapper(store: ReturnType<typeof createMockStore>) {
     return TestWrapper;
 }
 
+const enabledFlags = vi.hoisted(() => ({ current: [] as string[] }));
+
+vi.mock('@proton/unleash/useFlag', () => ({
+    useFlag: (flag: string) => enabledFlags.current.includes(flag),
+}));
+
 describe('useMeetingRoomUpdates', () => {
+    beforeEach(() => {
+        enabledFlags.current = [];
+    });
+
+    it('should leave join and leave events out of the chat when join and leave sounds are enabled', () => {
+        enabledFlags.current = ['MeetJoinLeaveSoundsNotifications'];
+        const store = createMockStore({
+            events: [
+                ...mockParticipantEvents,
+                { timestamp: 1718534401, identity: 'test', eventType: ParticipantEvent.Leave },
+            ],
+        });
+
+        const { result } = renderHook(() => useMeetingRoomUpdates(), {
+            wrapper: createTestWrapper(store),
+        });
+
+        expect(result.current).toEqual(
+            mockChatMessages.map((item) => ({ ...item, type: 'message' as const, name: 'test' }))
+        );
+    });
+
     it('should return the combined data of participant events and chat messages', () => {
         const store = createMockStore();
 
