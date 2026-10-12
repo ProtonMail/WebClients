@@ -13,6 +13,8 @@ import {
 import { useLumoFlags } from '../../../hooks/useLumoFlags';
 import { useQueryParam } from '../../../hooks/useQueryParam';
 import { getMessageBlocks } from '../../../messageHelpers';
+import { useOptionalArtifactPanelHostActions } from '../../../providers/ArtifactPanelHostProvider';
+import { useOptionalRightPanel } from '../../../providers/RightPanelProvider';
 import { useLumoDispatch } from '../../../redux/hooks';
 import { syncArtifactAssetRequest } from '../../../redux/slices/artifactAssetSync';
 import type { Message } from '../../../types';
@@ -86,6 +88,8 @@ export const ArtifactProvider = ({
     isGenerating = false,
 }: ArtifactProviderProps) => {
     const dispatch = useLumoDispatch();
+    const rightPanel = useOptionalRightPanel();
+    const artifactPanelHostActions = useOptionalArtifactPanelHostActions();
     const { artifactsView: isArtifactsViewFlagEnabled } = useLumoFlags();
     const openArtifactQueryParam = useQueryParam('artifact', true, 'search', Boolean(conversationId));
     const registry = useArtifactRegistry(linearChain);
@@ -352,8 +356,9 @@ export const ArtifactProvider = ({
             setSelectedVersionIndex(index);
             setPanelUserClosed(false);
             markSeen(id, index);
+            rightPanel?.close();
         },
-        [registry, markSeen]
+        [registry, markSeen, rightPanel]
     );
 
     useEffect(() => {
@@ -421,7 +426,11 @@ export const ArtifactProvider = ({
             } else {
                 const prevCount = prevVersionCountsRef.current[selectedId] ?? entry.versions.length;
                 const wasViewingLatest = selectedVersionIndexRef.current === prevCount - 1;
-                if (entry.versions.length > prevCount && wasViewingLatest) {
+                if (
+                    entry.versions.length > prevCount &&
+                    wasViewingLatest &&
+                    !artifactPanelHostActions?.isManualArtifactEditActive()
+                ) {
                     const latestIndex = entry.versions.length - 1;
                     setSelectedVersionIndex(latestIndex);
                     markSeen(selectedId, latestIndex);
@@ -436,7 +445,7 @@ export const ArtifactProvider = ({
         prevVersionCountsRef.current = counts;
         // Only re-run when the registry itself changes — selectedId/selectedVersionIndex
         // are read from refs/closure to avoid re-running this sync on every navigation.
-    }, [registry]);
+    }, [artifactPanelHostActions, registry]);
 
     // As soon as a complete artifact resolves mid-generation, show it immediately rather than
     // waiting for the `openArtifact` effect above to run on the next commit.

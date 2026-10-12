@@ -12,6 +12,7 @@ import lumoCatIcon from '@proton/styles/assets/img/lumo/lumo-cat-icon.svg';
 
 import { useArtifactPanelSpotlight } from '../../../hooks/useArtifactPanelSpotlight';
 import { useLumoFlags } from '../../../hooks/useLumoFlags';
+import { useArtifactPanelHostActions } from '../../../providers/ArtifactPanelHostProvider';
 import { useConversationActions } from '../../../providers/ConversationActionsProvider';
 import { useIsGuest } from '../../../providers/IsGuestProvider';
 import { createThrottledProgressCallback, yieldToMainThreadPaint } from '../../../util/export/exportUiHelpers';
@@ -211,7 +212,7 @@ const PanelHeader = ({
                         <img src={lumoCatIcon} alt={LUMO_SHORT_APP_NAME} className="artifact-fullscreen-avatar" />
                     </div>
                 )}
-                {isMobileView && onBack && (
+                {onBack && (
                     <Button
                         icon
                         shape="ghost"
@@ -219,8 +220,16 @@ const PanelHeader = ({
                         size="small"
                         onClick={onBack}
                         className="artifact-btn shrink-0"
-                        title={c('collider_2025:Action').t`Back to chat`}
-                        aria-label={c('collider_2025:Action').t`Back to chat`}
+                        title={
+                            isMobileView
+                                ? c('collider_2025:Action').t`Back to chat`
+                                : c('collider_2025:Action').t`Back to all files`
+                        }
+                        aria-label={
+                            isMobileView
+                                ? c('collider_2025:Action').t`Back to chat`
+                                : c('collider_2025:Action').t`Back to all files`
+                        }
                     >
                         <LumoIcon name="ChevronLeft" size={16} />
                     </Button>
@@ -473,9 +482,11 @@ function buildSwitcherEntries(
 interface ArtifactPanelProps {
     isGenerating?: boolean;
     layout?: ArtifactPanelLayout;
+    /** Desktop docked: return to the All files drawer (mutually exclusive with the panel). */
+    onBackToFiles?: () => void;
 }
 
-const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPanelProps) => {
+const ArtifactPanel = ({ isGenerating = false, layout = 'docked', onBackToFiles }: ArtifactPanelProps) => {
     const isMobileView = layout === 'mobile';
     const isFullscreen = layout === 'fullscreen';
     useNativeComposerVisibilityApi({ hideComposer: isMobileView || isFullscreen });
@@ -495,6 +506,7 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
         isArtifactRevisionLoading,
     } = useArtifactContext();
     const { createNotification } = useNotifications();
+    const { setManualArtifactEditActive } = useArtifactPanelHostActions();
     const [copySuccess, setCopySuccess] = useState(false);
     const [exportingDownloadKind, setExportingDownloadKind] = useState<'pdf' | 'pptx' | null>(null);
     const exportOverlayRef = useRef<ArtifactExportOverlayHandle>(null);
@@ -536,6 +548,13 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
         setWebpageViewMode('preview');
     }, [selectedArtifact?.id, selectedVersionIndex]);
 
+    useEffect(() => {
+        setManualArtifactEditActive(manualEditActive);
+        return () => {
+            setManualArtifactEditActive(false);
+        };
+    }, [manualEditActive, setManualArtifactEditActive]);
+
     // Discard any in-progress manual edit when switching artifacts/versions, so a stale draft
     // never leaks onto a different artifact.
     useEffect(() => {
@@ -572,15 +591,12 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
         return null;
     }
 
+    const panelBackAction = isMobileView ? closePanel : onBackToFiles;
+
     if (!selectedArtifact && isLoadingPanelOpen) {
         return (
             <div className="flex flex-column h-full min-h-0 min-w-0 overflow-hidden w-full bg-norm">
-                <PanelHeader
-                    isStreaming
-                    onClose={closePanel}
-                    layout={layout}
-                    onBack={isMobileView ? closePanel : undefined}
-                />
+                <PanelHeader isStreaming onClose={closePanel} layout={layout} onBack={panelBackAction} />
                 <ArtifactPanelLoading />
             </div>
         );
@@ -876,7 +892,7 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
                         exportHeaderStatusLabel={exportHeaderStatusLabel}
                         onClose={closePanel}
                         layout={layout}
-                        onBack={isMobileView ? closePanel : undefined}
+                        onBack={panelBackAction}
                         onEnterFullscreen={layout === 'docked' ? enterFullscreen : undefined}
                         onExitFullscreen={isFullscreen ? exitFullscreen : undefined}
                         versionIndex={selectedVersionIndex}
@@ -926,6 +942,7 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
                     >
                         <Suspense fallback={<ArtifactPanelLoading />}>
                             <ArtifactRichTextEditor
+                                key={`manual-edit-${artifact.id}-${selectedVersionIndex}`}
                                 ref={richEditorRef}
                                 initialMarkdown={draftContent}
                                 onChange={setDraftContent}
