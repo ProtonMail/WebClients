@@ -8,6 +8,7 @@ import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectKrispDebug } from '@proton/meet/store/slices/devToolsSlice';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import { createDeepFilterNetModel } from './models/deepfilternet';
 import { createDtlnModel } from './models/dtln';
 import { createKrispModel } from './models/krisp';
 import { nativeModel } from './models/native';
@@ -18,16 +19,30 @@ export const useNoiseCancellationModel = (): NoiseCancellationModel => {
     const room = useRoomContext();
     const isKrispDebugEnabled = useMeetSelector(selectKrispDebug);
     const isDtlnPerfMonitorEnabled = useFlag('MeetDtlnPerfMonitor');
+    const isDeepFilterNetEnabled = useFlag('MeetDeepFilterNet');
+    const isDeepFilterNetMobileEnabled = useFlag('MeetDeepFilterNetMobile');
     const { reportMeetError } = useMeetErrorReporting();
 
     const getNoiseCancellationModel = useCallback(() => {
         const candidates = [
             createKrispModel(room, { debugLogs: isKrispDebugEnabled, reportError: reportMeetError }),
+            createDeepFilterNetModel({
+                isEnabled: isDeepFilterNetEnabled,
+                isMobileEnabled: isDeepFilterNetMobileEnabled,
+                reportError: reportMeetError,
+            }),
             createDtlnModel({ isDtlnPerfMonitorEnabled, reportError: reportMeetError }),
             nativeModel,
         ];
         return candidates.find((model) => model.isSupported()) ?? nativeModel;
-    }, [room, isKrispDebugEnabled, isDtlnPerfMonitorEnabled, reportMeetError]);
+    }, [
+        room,
+        isKrispDebugEnabled,
+        isDeepFilterNetEnabled,
+        isDeepFilterNetMobileEnabled,
+        isDtlnPerfMonitorEnabled,
+        reportMeetError,
+    ]);
 
     const [noiseCancellationModel, setNoiseCancellationModel] = useState<NoiseCancellationModel>(() =>
         getNoiseCancellationModel()

@@ -17,10 +17,6 @@ export const isDTLNFilterSupported = (): boolean => {
 /** DTLN model is trained on 16 kHz audio — use this sample rate for the AudioContext. */
 export const DTLN_AUDIO_CONTEXT_SAMPLE_RATE = 16000;
 
-/** One DTLN frame is 512 samples at 16 kHz; denoising must finish within this to keep up in real time. */
-const DTLN_FRAME_SAMPLES = 512;
-const DTLN_FRAME_BUDGET_MS = (DTLN_FRAME_SAMPLES / DTLN_AUDIO_CONTEXT_SAMPLE_RATE) * 1000; // 32 ms
-
 // Reporting is throttled to DTLN_SENTRY_THROTTLE_MS, so sampling every few seconds spent that cost on Windows that
 // could never be reported. A value of 15_000 still gives ~20 windows per report.
 const DTLN_FIELD_SAMPLE_GAP_MS = 15_000;
@@ -49,13 +45,15 @@ let dtlnWindowsSinceReport = 0;
 let dtlnOverBudgetWindowsSinceReport = 0;
 
 const reportDtlnOverBudgetToSentry = (
-    summary: NoiseSuppressionAudioWorkletBenchmarkCompleteMessage['summary'],
+    { frameSamples, summary }: NoiseSuppressionAudioWorkletBenchmarkCompleteMessage,
     reportError: ReportMeetError
 ) => {
+    const frameBudgetMs = (frameSamples / DTLN_AUDIO_CONTEXT_SAMPLE_RATE) * 1000;
+
     // Counted before the over-budget test so healthy windows land in the denominator too.
     dtlnWindowsSinceReport += 1;
 
-    if (summary.meanMs <= DTLN_FRAME_BUDGET_MS) {
+    if (summary.meanMs <= frameBudgetMs) {
         return;
     }
     dtlnOverBudgetWindowsSinceReport += 1;
@@ -70,7 +68,7 @@ const reportDtlnOverBudgetToSentry = (
         p95Ms: Number(summary.p95Ms.toFixed(2)),
         maxMs: Number(summary.maxMs.toFixed(2)),
         minMs: Number(summary.minMs.toFixed(2)),
-        frameBudgetMs: DTLN_FRAME_BUDGET_MS,
+        frameBudgetMs,
         framesSampled: summary.count,
         overBudgetWindowFraction: Number((dtlnOverBudgetWindowsSinceReport / dtlnWindowsSinceReport).toFixed(3)),
         windowsSinceLastReport: dtlnWindowsSinceReport,
@@ -139,7 +137,7 @@ export const DTLNFilter = ({
         void (async () => {
             while (perfMonitorActive && workletHandle === handle) {
                 try {
-                    const { summary } = await withTimeout(
+                    const benchmark = await withTimeout(
                         runNoiseSuppressionAudioWorkletBenchmark(handle, {
                             warmupIterations: 0,
                             benchmarkIterations: DTLN_FIELD_SAMPLE_ITERATIONS,
@@ -151,7 +149,7 @@ export const DTLNFilter = ({
                         break;
                     }
 
-                    reportDtlnOverBudgetToSentry(summary, reportError);
+                    reportDtlnOverBudgetToSentry(benchmark, reportError);
                 } catch {
                     // eslint-disable-next-line no-console
                     console.log('[DTLN] perf sample skipped — no audio reaching the worklet, or the round timed out');
