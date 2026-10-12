@@ -13,6 +13,7 @@ import {
     selectPermissionPromptStatus,
     setPermissionPromptStatus,
 } from '@proton/meet/store/slices/uiStateSlice';
+import { getSelectableDevices } from '@proton/meet/utils/deviceUtils';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
@@ -41,9 +42,7 @@ export const PermissionRequest = () => {
 
             const devices = await navigator.mediaDevices.enumerateDevices();
 
-            const firstDevice = devices.find(
-                (device) => device.kind === (deviceType === 'video' ? 'videoinput' : 'audioinput')
-            );
+            const [firstDevice] = getSelectableDevices(devices, deviceType === 'video' ? 'videoinput' : 'audioinput');
 
             if (firstDevice) {
                 if (deviceType === 'audio') {

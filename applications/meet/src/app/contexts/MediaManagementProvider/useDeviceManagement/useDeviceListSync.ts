@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 import { useMeetStore } from '@proton/meet/store/hooks';
 import { setDeviceList } from '@proton/meet/store/slices/deviceManagementSlice';
 import type { DeviceKind } from '@proton/meet/store/slices/deviceManagementSlice/types';
-import { getDevicesHash, toSerializableDevice } from '@proton/meet/utils/deviceUtils';
+import { getDevicesHash, getSelectableDevices, toSerializableDevice } from '@proton/meet/utils/deviceUtils';
 
 const KINDS: DeviceKind[] = ['audioinput', 'audiooutput', 'videoinput'];
 
@@ -41,7 +41,7 @@ export const useDeviceListSync = () => {
             }
 
             for (const kind of KINDS) {
-                const list = devices.filter((d) => d.kind === kind && d.deviceId !== '');
+                const list = getSelectableDevices(devices, kind);
                 const devicesHash = getDevicesHash(list);
 
                 if (devicesHash === lastDevicesHash.get(kind)) {

@@ -1,4 +1,4 @@
-import { DEFAULT_DEVICE_ID } from '../constants';
+import { COMMUNICATIONS_DEVICE_ID, DEFAULT_DEVICE_ID } from '../constants';
 
 export interface SerializableDeviceInfo {
     deviceId: string;
@@ -14,17 +14,18 @@ export const toSerializableDevice = (device: MediaDeviceInfo): SerializableDevic
     label: device.label,
 });
 
-/**
- * Remove devices that are not useful for meet.
- */
-export const filterDevices = (devices: SerializableDeviceInfo[]): SerializableDeviceInfo[] => {
-    return devices.filter(
+export const getSelectableDevices = (devices: MediaDeviceInfo[], kind: MediaDeviceKind): MediaDeviceInfo[] =>
+    devices.filter(
         (d) =>
+            d.kind === kind &&
+            d.deviceId !== '' &&
+            d.deviceId !== COMMUNICATIONS_DEVICE_ID &&
             !d.label?.toLocaleLowerCase()?.includes('zoom') &&
-            d.deviceId !== DEFAULT_DEVICE_ID &&
             !d.label?.toLocaleLowerCase()?.startsWith('monitor of')
     );
-};
+
+export const filterDevices = (devices: SerializableDeviceInfo[]): SerializableDeviceInfo[] =>
+    devices.filter((d) => d.deviceId !== DEFAULT_DEVICE_ID);
 
 export const isDefaultDevice = (deviceId: string | null): boolean => {
     return deviceId === DEFAULT_DEVICE_ID;
