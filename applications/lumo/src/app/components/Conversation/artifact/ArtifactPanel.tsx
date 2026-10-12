@@ -8,6 +8,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { isMac } from '@proton/shared/lib/helpers/browser';
 import lumoCatIcon from '@proton/styles/assets/img/lumo/lumo-cat-icon.svg';
 
 import { useArtifactPanelSpotlight } from '../../../hooks/useArtifactPanelSpotlight';
@@ -31,38 +32,39 @@ import type {
     ArtifactVersionSelectSource,
 } from '../../../util/telemetry';
 import { useNativeComposerVisibilityApi } from '../../Composer/hooks/useNativeComposerVisibilityApi';
-import DropdownMenu from '../../DropdownMenu';
 import { LumoIcon } from '../../LumoIcon/LumoIcon';
+import type { IconName } from '../../LumoIcon/LumoIcon';
 import { ArtifactContent } from './ArtifactContent';
 import type { WebpageViewMode } from './ArtifactContent';
 import { useArtifactContext } from './ArtifactContext';
-import { ArtifactDownloadDropdown } from './ArtifactDownloadDropdown';
 import type { ArtifactExportOverlayHandle } from './ArtifactExportOverlay';
 import { ArtifactExportOverlay } from './ArtifactExportOverlay';
 import { ArtifactInlineEdit } from './ArtifactInlineEdit';
+import { ArtifactOlderVersionBanner } from './ArtifactOlderVersionBanner';
 import { ArtifactPanelLoading } from './ArtifactPanelLoading';
 import { ArtifactPanelRevisionOverlay } from './ArtifactPanelRevisionOverlay';
 import { ArtifactPanelSpotlight } from './ArtifactPanelSpotlight';
 import { ArtifactPreviewErrorBoundary } from './ArtifactPreviewErrorBoundary';
 import type { ArtifactRichTextEditorHandle } from './ArtifactRichTextEditor';
-import { ArtifactSaveToDriveDropdown } from './ArtifactSaveToDriveDropdown';
-import { ArtifactOlderVersionBanner, ArtifactVersionHistoryDropdown } from './ArtifactVersionHistoryDropdown';
+import { ArtifactTitleMenu } from './ArtifactTitleMenu';
+import type { ArtifactMenuFormatOption } from './ArtifactTitleMenu';
 import { ArtifactViewModeToggle } from './ArtifactViewModeToggle';
 import SaveArtifactToDriveModal from './SaveArtifactToDriveModal';
 import { buildArtifactFileForSave } from './artifactFileBytes';
-import { markdownToPlainText } from './artifactMarkdownPlainText';
-import { artifactSupportsPdfExport, buildArtifactFileName, exportArtifactPdf } from './artifactPdfExport';
+import { artifactSupportsPdfExport, exportArtifactPdf } from './artifactPdfExport';
 import type { ArtifactPdfExportResult } from './artifactPdfExport';
 import { artifactSupportsPptxExport, downloadArtifactPptx } from './artifactPptxExport';
-import type { ArtifactRegistry, ArtifactVersion } from './artifactRegistry';
+import type { ArtifactVersion } from './artifactRegistry';
 import type { ArtifactSaveFormat } from './artifactSaveFormats';
 import {
     artifactSupportsSaveToDrive,
+    getArtifactFormatMenuLabel,
     getArtifactSaveFormats,
+    getArtifactSourceMenuLabel,
     isArtifactSaveFormatSupported,
 } from './artifactSaveFormats';
 import { buildArtifactSourceDownloadFile } from './artifactSourceDownload';
-import { ARTIFACT_TYPE_CONFIG } from './artifactTypeConfig';
+import { getArtifactSourceDownloadExtension } from './artifactSourceDownloadExtension';
 import { normalizeDocumentCardFences } from './artifactVizCards';
 import type { ArtifactType } from './parseArtifacts';
 
@@ -87,38 +89,22 @@ type ManualEditMode = 'rich' | 'source';
 // Shared panel header
 // ---------------------------------------------------------------------------
 
-interface ArtifactSwitcherEntry {
-    id: string;
-    title: string;
-    type: ArtifactType;
-    hasUnseenRevision: boolean;
-}
-
 interface PanelHeaderProps {
     type?: ArtifactType;
     language?: string;
     title?: string;
     isStreaming: boolean;
-    onCopy?: () => void;
-    copySuccess?: boolean;
-    onDownload?: () => void;
-    onDownloadTxt?: () => void;
-    onDownloadDocx?: () => void;
-    onDownloadPdf?: () => void;
-    onDownloadPptx?: () => void;
-    canDownloadTxt?: boolean;
-    canDownloadDocx?: boolean;
-    canDownloadPdf?: boolean;
-    canDownloadPptx?: boolean;
     exportingDownload?: boolean;
     exportHeaderStatusLabel?: string;
     onClose: () => void;
     versionIndex?: number;
     versions?: ArtifactVersion[];
-    onOpenVersionHistory?: () => void;
+    onOpenMenu?: () => void;
     onSelectVersion?: (index: number) => void;
-    switcherEntries?: ArtifactSwitcherEntry[];
-    onSelectArtifact?: (id: string) => void;
+    onCopy?: () => void;
+    copyShortcutLabel?: string;
+    downloadOptions?: ArtifactMenuFormatOption[];
+    saveToDriveOptions?: ArtifactMenuFormatOption[];
     webpageViewMode?: WebpageViewMode;
     onWebpageViewModeChange?: (mode: WebpageViewMode) => void;
     // Manual (direct, non-AI) editing of the artifact's content — document artifacts only,
@@ -131,8 +117,6 @@ interface PanelHeaderProps {
     onStartManualEdit?: () => void;
     onSaveManualEdit?: () => void;
     onCancelManualEdit?: () => void;
-    artifactSaveFormats?: ArtifactSaveFormat[];
-    onSaveToDrive?: (format: ArtifactSaveFormat) => void;
     layout: ArtifactPanelLayout;
     onBack?: () => void;
     onEnterFullscreen?: () => void;
@@ -157,31 +141,47 @@ const getArtifactHeaderTypeLabel = (type?: ArtifactType, language?: string): str
     return language ?? 'code';
 };
 
+const getCopyShortcutLabel = (): string => {
+    return isMac() ? '⌘C' : 'Ctrl+C';
+};
+
+const SAVE_FORMAT_ICONS: Record<ArtifactSaveFormat, IconName> = {
+    md: 'FileText',
+    txt: 'FileText',
+    pdf: 'File',
+    docx: 'FileType',
+    pptx: 'Presentation',
+};
+
+/** True when ⌘C/Ctrl+C should copy the whole artifact: nothing is selected and no field has focus. */
+const isWholeArtifactCopyShortcut = (event: KeyboardEvent): boolean => {
+    if (!(event.metaKey || event.ctrlKey) || event.shiftKey || event.altKey || event.key.toLowerCase() !== 'c') {
+        return false;
+    }
+    const target = event.target as HTMLElement;
+    if (target.closest('input, textarea, [contenteditable="true"]')) {
+        return false;
+    }
+    const selection = window.getSelection();
+    return !selection || selection.isCollapsed;
+};
+
 const PanelHeader = ({
     type,
     language,
     title,
     isStreaming,
-    onCopy,
-    copySuccess,
-    onDownload,
-    onDownloadTxt,
-    onDownloadDocx,
-    onDownloadPdf,
-    onDownloadPptx,
-    canDownloadTxt,
-    canDownloadDocx,
-    canDownloadPdf,
-    canDownloadPptx,
     exportingDownload,
     exportHeaderStatusLabel,
     onClose,
     versionIndex,
     versions,
-    onOpenVersionHistory,
+    onOpenMenu,
     onSelectVersion,
-    switcherEntries,
-    onSelectArtifact,
+    onCopy,
+    copyShortcutLabel,
+    downloadOptions,
+    saveToDriveOptions,
     webpageViewMode,
     onWebpageViewModeChange,
     canManuallyEdit,
@@ -192,8 +192,6 @@ const PanelHeader = ({
     onStartManualEdit,
     onSaveManualEdit,
     onCancelManualEdit,
-    artifactSaveFormats,
-    onSaveToDrive,
     layout,
     onBack,
     onEnterFullscreen,
@@ -203,10 +201,60 @@ const PanelHeader = ({
     const isFullscreen = layout === 'fullscreen';
     const typeLabel = getArtifactHeaderTypeLabel(type, language);
     const showWebpageViewToggle = !manualEditActive && type === 'webpage' && webpageViewMode && onWebpageViewModeChange;
+    // The menu holds every action on the artifact, so it is a plain title while those can't run.
+    const showTitleMenu =
+        title &&
+        !isStreaming &&
+        !manualEditActive &&
+        versions &&
+        versions.length > 0 &&
+        versionIndex !== undefined &&
+        onOpenMenu &&
+        onSelectVersion &&
+        onCopy;
+
+    const renderTitle = () => {
+        if (!title) {
+            return (
+                <span className="flex-1 min-w-0 ml-1">
+                    <span
+                        className="rectangle-skeleton keep-motion rounded inline-block"
+                        style={{ width: '8rem', height: '0.875rem' }}
+                    />
+                </span>
+            );
+        }
+        if (showTitleMenu) {
+            return (
+                <div className="flex flex-row flex-nowrap min-w-0 flex-1">
+                    <ArtifactTitleMenu
+                        title={title}
+                        typeLabel={typeLabel}
+                        versions={versions}
+                        selectedIndex={versionIndex}
+                        onOpen={onOpenMenu}
+                        onSelectVersion={onSelectVersion}
+                        onCopy={onCopy}
+                        copyShortcutLabel={copyShortcutLabel ?? getCopyShortcutLabel()}
+                        downloadOptions={downloadOptions ?? []}
+                        saveToDriveOptions={saveToDriveOptions ?? []}
+                        onEdit={canManuallyEdit ? onStartManualEdit : undefined}
+                        actionsDisabled={exportingDownload}
+                    />
+                </div>
+            );
+        }
+        return (
+            <span className="text-semibold text-ellipsis overflow-hidden whitespace-nowrap min-w-0 flex-1 color-norm ml-1">
+                {title}
+                {typeLabel && <span className="color-hint font-normal">{` · ${typeLabel}`}</span>}
+            </span>
+        );
+    };
 
     return (
         <div className="shrink-0 flex flex-row flex-nowrap items-center gap-3 py-2 px-3 border-bottom border-weak bg-norm w-full min-w-0 overflow-hidden">
-            <div className="flex flex-row items-center gap-2 min-w-0 flex-1 overflow-hidden">
+            <div className="flex flex-row flex-nowrap items-center gap-2 min-w-0 flex-1 overflow-hidden">
                 {isFullscreen && (
                     <div className="artifact-fullscreen-brand shrink-0">
                         <img src={lumoCatIcon} alt={LUMO_SHORT_APP_NAME} className="artifact-fullscreen-avatar" />
@@ -234,143 +282,25 @@ const PanelHeader = ({
                         <LumoIcon name="ChevronLeft" size={16} />
                     </Button>
                 )}
-                {showWebpageViewToggle && (
-                    <ArtifactViewModeToggle mode={webpageViewMode} onChange={onWebpageViewModeChange} />
-                )}
-                <span className="text-semibold text-ellipsis overflow-hidden whitespace-nowrap min-w-0 flex-1 color-norm ml-1">
-                    {title ?? (
-                        <span
-                            className="rectangle-skeleton keep-motion rounded inline-block"
-                            style={{ width: '8rem', height: '0.875rem' }}
-                        />
-                    )}
-                    {title && typeLabel && <span className="color-hint font-normal">{` · ${typeLabel}`}</span>}
-                </span>
+                {renderTitle()}
             </div>
             <div className="flex flex-row items-center gap-1 shrink-0">
-                {!isStreaming &&
-                    !manualEditActive &&
-                    versions &&
-                    versions.length > 1 &&
-                    versionIndex !== undefined &&
-                    onOpenVersionHistory &&
-                    onSelectVersion && (
-                        <ArtifactVersionHistoryDropdown
-                            versions={versions}
-                            selectedIndex={versionIndex}
-                            onOpen={onOpenVersionHistory}
-                            onSelectVersion={onSelectVersion}
-                        />
-                    )}
-                {!isStreaming &&
-                    !manualEditActive &&
-                    switcherEntries &&
-                    switcherEntries.length > 1 &&
-                    onSelectArtifact && (
-                        <DropdownMenu
-                            onToggle={() => {}}
-                            visibleOnHover={false}
-                            options={switcherEntries.map((entry) => ({
-                                label: entry.title,
-                                value: entry.id,
-                                icon: (
-                                    <span className="relative flex">
-                                        {(() => {
-                                            const EntryIcon = ARTIFACT_TYPE_CONFIG[entry.type].icon;
-                                            return <EntryIcon size={4} />;
-                                        })()}
-                                        {entry.hasUnseenRevision && (
-                                            <span className="artifact-unseen-dot absolute rounded-full bg-danger" />
-                                        )}
-                                    </span>
-                                ),
-                                onClick: () => {
-                                    onSelectArtifact(entry.id);
-                                },
-                            }))}
-                        />
-                    )}
-                {!isStreaming && !manualEditActive && (
-                    <>
-                        <Button
-                            icon
-                            shape="ghost"
-                            color="weak"
-                            size="small"
-                            onClick={onCopy}
-                            disabled={exportingDownload}
-                            className="artifact-btn"
-                            title={c('collider_2025:Action').t`Copy content`}
-                        >
-                            {copySuccess ? (
-                                <span className="color-success">{c('collider_2025:Info').t`Copied`}</span>
-                            ) : (
-                                <LumoIcon name="Copy" size={16} />
-                            )}
-                        </Button>
-                        {exportingDownload ? (
-                            <Button
-                                icon
-                                shape="ghost"
-                                color="weak"
-                                size="small"
-                                disabled
-                                className="artifact-btn"
-                                title={exportHeaderStatusLabel}
-                                aria-label={exportHeaderStatusLabel}
-                            >
-                                <div className="artifact-export-spinner is-small" aria-hidden="true" />
-                            </Button>
-                        ) : (canDownloadTxt && onDownloadTxt) ||
-                          (canDownloadDocx && onDownloadDocx) ||
-                          (canDownloadPdf && onDownloadPdf) ||
-                          (canDownloadPptx && onDownloadPptx) ? (
-                            <ArtifactDownloadDropdown
-                                artifactType={type ?? 'document'}
-                                onDownloadSource={() => {
-                                    onDownload?.();
-                                }}
-                                onDownloadTxt={canDownloadTxt && onDownloadTxt ? onDownloadTxt : undefined}
-                                onDownloadDocx={canDownloadDocx && onDownloadDocx ? onDownloadDocx : undefined}
-                                onDownloadPdf={canDownloadPdf && onDownloadPdf ? onDownloadPdf : undefined}
-                                onDownloadPptx={canDownloadPptx && onDownloadPptx ? onDownloadPptx : undefined}
-                            />
-                        ) : (
-                            <Button
-                                icon
-                                shape="ghost"
-                                color="weak"
-                                size="small"
-                                onClick={onDownload}
-                                className="artifact-btn"
-                                title={c('collider_2025:Action').t`Download`}
-                            >
-                                <LumoIcon name="Download" size={16} />
-                            </Button>
-                        )}
-                        {artifactSaveFormats &&
-                            artifactSaveFormats.length > 0 &&
-                            onSaveToDrive &&
-                            !exportingDownload && (
-                                <ArtifactSaveToDriveDropdown
-                                    formats={artifactSaveFormats}
-                                    onSaveToDrive={onSaveToDrive}
-                                />
-                            )}
-                        {canManuallyEdit && onStartManualEdit && (
-                            <Button
-                                icon
-                                shape="ghost"
-                                color="weak"
-                                size="small"
-                                onClick={onStartManualEdit}
-                                className="artifact-btn"
-                                title={c('collider_2025:Action').t`Edit`}
-                            >
-                                <LumoIcon name="Pencil" size={16} />
-                            </Button>
-                        )}
-                    </>
+                {exportingDownload && (
+                    <Button
+                        icon
+                        shape="ghost"
+                        color="weak"
+                        size="small"
+                        disabled
+                        className="artifact-btn"
+                        title={exportHeaderStatusLabel}
+                        aria-label={exportHeaderStatusLabel}
+                    >
+                        <div className="artifact-export-spinner is-small" aria-hidden="true" />
+                    </Button>
+                )}
+                {showWebpageViewToggle && (
+                    <ArtifactViewModeToggle mode={webpageViewMode} onChange={onWebpageViewModeChange} />
                 )}
                 {!isStreaming && manualEditActive && (
                     <>
@@ -461,24 +391,6 @@ const PanelHeader = ({
 // Panel root
 // ---------------------------------------------------------------------------
 
-function buildSwitcherEntries(
-    registry: ArtifactRegistry,
-    hasUnseenRevision: (id: string) => boolean
-): ArtifactSwitcherEntry[] {
-    return Object.values(registry)
-        .sort((a, b) => {
-            const aLatest = a.versions[a.versions.length - 1]?.createdAt ?? '';
-            const bLatest = b.versions[b.versions.length - 1]?.createdAt ?? '';
-            return bLatest.localeCompare(aLatest);
-        })
-        .map((entry) => ({
-            id: entry.id,
-            title: entry.title,
-            type: entry.type,
-            hasUnseenRevision: hasUnseenRevision(entry.id),
-        }));
-}
-
 interface ArtifactPanelProps {
     isGenerating?: boolean;
     layout?: ArtifactPanelLayout;
@@ -495,9 +407,7 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked', onBackToFiles 
         selectedArtifact,
         selectedId,
         selectedVersionIndex,
-        openArtifact,
         goToVersion,
-        hasUnseenRevision,
         closePanel,
         enterFullscreen,
         exitFullscreen,
@@ -507,7 +417,6 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked', onBackToFiles 
     } = useArtifactContext();
     const { createNotification } = useNotifications();
     const { setManualArtifactEditActive } = useArtifactPanelHostActions();
-    const [copySuccess, setCopySuccess] = useState(false);
     const [exportingDownloadKind, setExportingDownloadKind] = useState<'pdf' | 'pptx' | null>(null);
     const exportOverlayRef = useRef<ArtifactExportOverlayHandle>(null);
     const throttledExportProgress = useMemo(() => {
@@ -547,6 +456,25 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked', onBackToFiles 
     useEffect(() => {
         setWebpageViewMode('preview');
     }, [selectedArtifact?.id, selectedVersionIndex]);
+
+    // ⌘C/Ctrl+C copies the whole artifact; the handler is rebuilt each render, so read it via a ref.
+    const panelRootRef = useRef<HTMLDivElement>(null);
+    const panelKeyDownRef = useRef<(event: KeyboardEvent) => void>(() => {});
+    // The root that takes the listener only renders once an artifact is selected.
+    const hasPanelRoot = Boolean(selectedArtifact);
+    useEffect(() => {
+        const root = panelRootRef.current;
+        if (!root) {
+            return;
+        }
+        const handleKeyDown = (event: KeyboardEvent) => {
+            panelKeyDownRef.current(event);
+        };
+        root.addEventListener('keydown', handleKeyDown);
+        return () => {
+            root.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [hasPanelRoot]);
 
     useEffect(() => {
         setManualArtifactEditActive(manualEditActive);
@@ -608,7 +536,6 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked', onBackToFiles 
     // Everything that changes an artifact (Lumo, inline edits, manual edits) works on the latest
     // version, so an older version is shown read-only with a banner saying so.
     const isViewingOlderVersion = versionCount !== undefined && selectedVersionIndex < versionCount - 1;
-    const switcherEntries = buildSwitcherEntries(registry, hasUnseenRevision);
     // Only latest-version document artifacts can be manually edited — editing an older version
     // would raise branch-fork semantics (overwrite vs. fork the conversation) that aren't solved yet.
     const canManuallyEdit =
@@ -627,7 +554,6 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked', onBackToFiles 
     const manualEditDirty = !isUnchangedDraft(draftContent) && draftContent.trim().length > 0;
     const artifactSaveFormats =
         artifactSupportsSaveToDrive(artifact.type) && !isGuest ? getArtifactSaveFormats(artifact.type) : [];
-    const canDownloadTxt = artifact.type === 'document' && !isGenerating && !manualEditActive;
     const canDownloadDocx = isArtifactSaveFormatSupported(artifact.type, 'docx') && !isGenerating && !manualEditActive;
     const canDownloadPdf = artifactSupportsPdfExport(artifact.type) && !isGenerating && !manualEditActive;
     const canDownloadPptx = artifactSupportsPptxExport(artifact.type) && !isGenerating && !manualEditActive;
@@ -696,10 +622,9 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked', onBackToFiles 
                 layout,
                 viewedOlderVersion: isViewingOlderVersion,
             });
-            setCopySuccess(true);
-            setTimeout(() => {
-                setCopySuccess(false);
-            }, 1500);
+            createNotification({
+                text: c('collider_2025:Notification').t`Copied to clipboard`,
+            });
         });
     };
 
@@ -751,13 +676,6 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked', onBackToFiles 
                 text: c('collider_2025: Error').t`Could not download this artifact.`,
             });
         }
-    };
-
-    const handleDownloadTxt = () => {
-        const plainText = markdownToPlainText(artifact.content);
-        const filename = buildArtifactFileName(artifact, 'txt');
-        downloadBlob(new Blob([plainText], { type: 'text/plain;charset=utf-8' }), filename);
-        reportDownload('txt', 'success');
     };
 
     // No progress overlay: conversion takes well under a second for typical documents, and the
@@ -860,8 +778,81 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked', onBackToFiles 
         setWebpageViewMode(mode);
     };
 
+    const sourceExtension = getArtifactSourceDownloadExtension(artifact);
+    // Source (what Creations syncs) first, then the exports this type supports.
+    const downloadOptions: ArtifactMenuFormatOption[] = [
+        {
+            key: 'source',
+            label: getArtifactSourceMenuLabel(artifact.type),
+            extension: `.${sourceExtension}`,
+            icon: artifact.type === 'document' ? 'FileText' : 'FileCode',
+            onSelect: () => {
+                void handleDownload();
+            },
+        },
+    ];
+    if (canDownloadPdf) {
+        downloadOptions.push({
+            key: 'pdf',
+            label: getArtifactFormatMenuLabel('pdf'),
+            extension: '.pdf',
+            icon: SAVE_FORMAT_ICONS.pdf,
+            onSelect: () => {
+                void handleDownloadPdf();
+            },
+        });
+    }
+    if (canDownloadDocx) {
+        downloadOptions.push({
+            key: 'docx',
+            label: getArtifactFormatMenuLabel('docx'),
+            extension: '.docx',
+            icon: SAVE_FORMAT_ICONS.docx,
+            onSelect: () => {
+                void handleDownloadDocx();
+            },
+        });
+    }
+    if (canDownloadPptx) {
+        downloadOptions.push({
+            key: 'pptx',
+            label: getArtifactFormatMenuLabel('pptx'),
+            extension: '.pptx',
+            icon: SAVE_FORMAT_ICONS.pptx,
+            onSelect: () => {
+                void handleDownloadPptx();
+            },
+        });
+    }
+    const saveToDriveOptions: ArtifactMenuFormatOption[] = artifactSaveFormats.map((format) => {
+        return {
+            key: format,
+            label: getArtifactFormatMenuLabel(format),
+            extension: `.${format}`,
+            icon: SAVE_FORMAT_ICONS[format],
+            onSelect: () => {
+                handleSaveToDrive(format);
+            },
+        };
+    });
+
+    panelKeyDownRef.current = (event: KeyboardEvent) => {
+        if (manualEditActive || isSelectedVersionProvisional || exportingDownload) {
+            return;
+        }
+        if (isWholeArtifactCopyShortcut(event)) {
+            event.preventDefault();
+            handleCopy();
+        }
+    };
+
     return (
-        <div className="flex flex-column h-full min-h-0 min-w-0 overflow-hidden w-full bg-norm">
+        // Focusable so ⌘C/Ctrl+C reaches the panel after clicking its content.
+        <div
+            className="flex flex-column h-full min-h-0 min-w-0 overflow-hidden w-full bg-norm outline-none"
+            ref={panelRootRef}
+            tabIndex={-1}
+        >
             <ArtifactPanelSpotlight
                 anchorRef={headerRef}
                 show={shouldShowSpotlight}
@@ -877,17 +868,6 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked', onBackToFiles 
                         language={artifact.language}
                         title={artifact.title}
                         isStreaming={isSelectedVersionProvisional}
-                        onCopy={handleCopy}
-                        copySuccess={copySuccess}
-                        onDownload={handleDownload}
-                        onDownloadTxt={handleDownloadTxt}
-                        onDownloadDocx={handleDownloadDocx}
-                        onDownloadPdf={handleDownloadPdf}
-                        onDownloadPptx={handleDownloadPptx}
-                        canDownloadTxt={canDownloadTxt}
-                        canDownloadDocx={canDownloadDocx}
-                        canDownloadPdf={canDownloadPdf}
-                        canDownloadPptx={canDownloadPptx}
                         exportingDownload={exportingDownload}
                         exportHeaderStatusLabel={exportHeaderStatusLabel}
                         onClose={closePanel}
@@ -897,14 +877,13 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked', onBackToFiles 
                         onExitFullscreen={isFullscreen ? exitFullscreen : undefined}
                         versionIndex={selectedVersionIndex}
                         versions={versions}
-                        onOpenVersionHistory={handleOpenVersionHistory}
+                        onOpenMenu={handleOpenVersionHistory}
                         onSelectVersion={(index) => {
                             handleSelectVersion(index, 'history');
                         }}
-                        switcherEntries={switcherEntries}
-                        onSelectArtifact={(id) => {
-                            openArtifact(id, undefined, 'switcher');
-                        }}
+                        onCopy={handleCopy}
+                        downloadOptions={downloadOptions}
+                        saveToDriveOptions={saveToDriveOptions}
                         webpageViewMode={webpageViewMode}
                         onWebpageViewModeChange={handleWebpageViewModeChange}
                         canManuallyEdit={canManuallyEdit}
@@ -915,8 +894,6 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked', onBackToFiles 
                         onStartManualEdit={handleStartManualEdit}
                         onSaveManualEdit={handleSaveManualEdit}
                         onCancelManualEdit={handleCancelManualEdit}
-                        artifactSaveFormats={artifactSaveFormats}
-                        onSaveToDrive={handleSaveToDrive}
                     />
                 </div>
             </ArtifactPanelSpotlight>

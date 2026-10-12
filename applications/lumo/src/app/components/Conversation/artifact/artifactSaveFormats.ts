@@ -44,34 +44,34 @@ export function getArtifactSaveFormatLabel(format: ArtifactSaveFormat): string {
     }
 }
 
-export function getArtifactSourceDownloadLabel(type: ArtifactType): string {
-    if (type === 'document') {
-        return c('collider_2025:Action').t`Download source (Markdown)`;
-    }
-
-    if (type === 'presentation') {
-        return c('collider_2025:Action').t`Download web presentation (HTML)`;
-    }
-
-    return c('collider_2025:Action').t`Download source file`;
-}
-
-export function getArtifactDownloadLabel(format: ArtifactSaveFormat, type?: ArtifactType): string {
+/** Format name in the title menu's Download / Save to Drive submenus; the extension sits beside it. */
+export function getArtifactFormatMenuLabel(format: ArtifactSaveFormat): string {
     switch (format) {
         case 'docx':
-            return c('collider_2025:Action').t`Download Word (.docx)`;
+            return c('collider_2025:Action').t`Word document`;
+        case 'md':
+            return c('collider_2025:Action').t`Markdown`;
         case 'txt':
-            return c('collider_2025:Action').t`Download plain text`;
+            return c('collider_2025:Action').t`Plain text`;
         case 'pdf':
-            // Documents open the print dialog to "Save as PDF" (see getArtifactPdfExportMode); the
-            // ellipsis signals that a dialog follows.
-            if (type === 'document') {
-                return c('collider_2025:Action').t`Save as PDF…`;
-            }
-            return c('collider_2025:Action').t`Download PDF`;
+            return c('collider_2025:Action').t`PDF`;
         case 'pptx':
-            return c('collider_2025:Action').t`Download PPTX`;
+            return c('collider_2025:Action').t`PowerPoint`;
         default:
-            return getArtifactSaveFormatLabel(format);
+            return format;
+    }
+}
+
+/** Name of the "source" download (the canonical bytes, see artifactSourceDownload) for each type. */
+export function getArtifactSourceMenuLabel(type: ArtifactType): string {
+    switch (type) {
+        case 'document':
+            return c('collider_2025:Action').t`Markdown`;
+        case 'presentation':
+            return c('collider_2025:Action').t`Web presentation`;
+        case 'webpage':
+            return c('collider_2025:Action').t`Webpage`;
+        default:
+            return c('collider_2025:Action').t`Source file`;
     }
 }

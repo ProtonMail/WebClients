@@ -1,4 +1,4 @@
-import { format, isToday, isYesterday } from 'date-fns';
+import { differenceInMinutes, format, isToday, isYesterday } from 'date-fns';
 import { c } from 'ttag';
 
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
@@ -26,6 +26,31 @@ export const formatArtifactVersionTime = (createdAt: string): string => {
     return c('collider_2025:Time').t`${day} at ${time}`;
 };
 
+/**
+ * Compact age for the title menu's version rows ("Now", "12 min", then a clock time or date).
+ * Computed when the menu renders; the full time stays available via `formatArtifactVersionTime`.
+ */
+export const formatArtifactVersionAge = (createdAt: string, now: Date = new Date()): string => {
+    const date = new Date(createdAt);
+    if (Number.isNaN(date.getTime())) {
+        return '';
+    }
+    const minutes = differenceInMinutes(now, date);
+    if (minutes < 1) {
+        return c('collider_2025:Time').t`Now`;
+    }
+    if (minutes < 60) {
+        return c('collider_2025:Time').t`${minutes} min`;
+    }
+    if (isToday(date)) {
+        return format(date, 'p', { locale: dateLocale });
+    }
+    if (isYesterday(date)) {
+        return c('collider_2025:Time').t`Yesterday`;
+    }
+    return format(date, 'PP', { locale: dateLocale });
+};
+
 export const getArtifactVersionAuthor = (version: ArtifactVersion): string => {
     if (version.source === 'manual-edit') {
         return c('collider_2025:Info').t`You`;
@@ -48,4 +73,14 @@ export const getArtifactVersionDescription = (version: ArtifactVersion, versionI
         return c('collider_2025:Info').t`Created`;
     }
     return c('collider_2025:Info').t`Revised`;
+};
+
+/** Right-hand meta of a version row: who made it and how long ago, e.g. "You · Now". */
+export const getArtifactVersionMeta = (version: ArtifactVersion, now?: Date): string => {
+    const author = getArtifactVersionAuthor(version);
+    const age = formatArtifactVersionAge(version.createdAt, now);
+    if (!age) {
+        return author;
+    }
+    return `${author} · ${age}`;
 };
