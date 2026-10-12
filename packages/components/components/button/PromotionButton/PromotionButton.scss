@@ -133,12 +133,20 @@
 			&,
 			&:hover,
 			&:focus {
-				background: linear-gradient(to right, #fa5c37 0%, #392289 55.288%, #170a31 100%);
-				color: white;
+				background: linear-gradient(121.44deg, #fffad7 1.71%, #ffc283 57.71%, #ff8383 97.19%);
+				color: #08031f;
 				border: 0;
 				border-radius: var(--border-radius-md);
 				text-transform: uppercase;
-				font-weight: bold;
+				font-weight: var(--font-weight-semibold);
+			}
+
+			&.button-medium {
+				--padding-inline: #{rem(16)};
+
+				> span {
+					gap: rem(6);
+				}
 			}
 		}
 	}
