@@ -53,7 +53,13 @@ import {
 import type { PasswordAccountActors } from './passwordAccountActors';
 
 export type PasswordAccountScreen =
-    'twoFactor' | 'lostTwoFactor' | 'unlock' | 'newPassword' | 'claimedAddressCreate' | 'claimedAddressDone';
+    | 'twoFactor'
+    | 'lostTwoFactor'
+    | 'unlock'
+    | 'newPassword'
+    | 'claimedAddressCreate'
+    | 'claimedAddressDone'
+    | 'claimedAddressManaged';
 
 export type PasswordAccountEvent =
     | { type: 'twoFactor.submitted'; payload: { credentials: TwoFactorCredentials } }
@@ -263,6 +269,7 @@ export const passwordAccountStateMachine = setup({
         /** Recovered through a claimed address, whose account needs somewhere for its data to live. */
         isClaimedAddressRecovery: ({ context }) => !!context.auth.credentials.claimedAddress,
         isMigratedClaimedAddress: (_, params: { setup: ClaimedAddressSetup }) => params.setup.type === 'migrated',
+        isManagedClaimedAddress: (_, params: { setup: ClaimedAddressSetup }) => params.setup.type === 'managed',
         /** Unlocking for the new address's key, rather than to sign in. */
         isCreatingClaimedAddress: ({ context }) =>
             context.claimedAddressSetup?.type === 'create' && !context.createdAddress,
@@ -622,6 +629,17 @@ export const passwordAccountStateMachine = setup({
                                 },
                             },
                             {
+                                guard: {
+                                    type: 'isManagedClaimedAddress',
+                                    params: ({ event }) => ({ setup: event.output }),
+                                },
+                                target: 'managed',
+                                actions: {
+                                    type: 'setClaimedAddressSetup',
+                                    params: ({ event }) => ({ setup: event.output }),
+                                },
+                            },
+                            {
                                 target: 'routeUnlock',
                                 actions: {
                                     type: 'setClaimedAddressSetup',
@@ -640,6 +658,18 @@ export const passwordAccountStateMachine = setup({
                         'claimedAddress.continued': { target: '#passwordAccount.routeTemporaryPassword' },
                         // The claim is already cleared, so leaving would lose the only notice of where the data went
                         'decision.back': {},
+                    },
+                },
+
+                /**
+                 * An organization member can't create an address: tell its administrator can give it one, then sign
+                 * in as usual, without one, as the member could with its username. The claim stays until then.
+                 */
+                managed: {
+                    entry: showScreen('claimedAddressManaged'),
+                    on: {
+                        'claimedAddress.continued': { target: '#passwordAccount.routeTemporaryPassword' },
+                        'decision.back': { target: '#passwordAccount.cancelled' },
                     },
                 },
 
