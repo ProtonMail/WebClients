@@ -1,6 +1,15 @@
 import type { SecureLink } from '../../types/data/items.dto';
-import { itemDelete, itemsDeleteEvent, secureLinkCreate, secureLinkRemove, secureLinksGet } from '../actions/creators/item';
+import {
+    itemBulkDeleteProgress,
+    itemBulkMoveProgress,
+    itemDelete,
+    itemsDeleteEvent,
+    secureLinkCreate,
+    secureLinkRemove,
+    secureLinksGet,
+} from '../actions/creators/item';
 import { shareDeleted } from '../actions/creators/share';
+import { vaultMoveAllItemsProgress } from '../actions/creators/vault';
 import type { SecureLinkState } from './secure-links';
 import { removeSecureLinksForItems, removeSecureLinksForShare, secureLinksReducer } from './secure-links';
 
@@ -129,5 +138,50 @@ describe('secure-links reducer', () => {
 
         expect(result.share1).toBeUndefined();
         expect(result.share2).toEqual(state.share2);
+    });
+
+    describe('on bulk move progress', () => {
+        const batch = [{ itemId: 'item1' }, { itemId: 'item2' }] as any[];
+        const progressPayload = (shareId: string, targetShareId: string) => ({
+            shareId,
+            batch,
+            movedItems: batch,
+            targetShareId,
+        });
+
+        test.each([
+            ['`vaultMoveAllItemsProgress`', vaultMoveAllItemsProgress],
+            ['`itemBulkMoveProgress`', itemBulkMoveProgress],
+        ])('%s to another vault removes links for the moved items', (_label, actionCreator) => {
+            const result = secureLinksReducer(state, actionCreator('requestId', 1, progressPayload('share1', 'share2')));
+
+            expect(result.share1.item1).toBeUndefined();
+            expect(result.share1.item2).toBeUndefined();
+            expect(result.share1.item3).toBeDefined();
+        });
+
+        test.each([
+            ['`vaultMoveAllItemsProgress`', vaultMoveAllItemsProgress],
+            ['`itemBulkMoveProgress`', itemBulkMoveProgress],
+        ])('%s within the same vault keeps links', (_label, actionCreator) => {
+            expect(secureLinksReducer(state, actionCreator('requestId', 1, progressPayload('share1', 'share1')))).toBe(state);
+        });
+
+        test('`itemBulkDeleteProgress` removes links for the deleted items', () => {
+            const result = secureLinksReducer(
+                state,
+                itemBulkDeleteProgress('requestId', 1, {
+                    shareId: 'share1',
+                    batch: [
+                        { ItemID: 'item1', Revision: 1 },
+                        { ItemID: 'item2', Revision: 2 },
+                    ],
+                })
+            );
+
+            expect(result.share1.item1).toBeUndefined();
+            expect(result.share1.item2).toBeUndefined();
+            expect(result.share1.item3).toBeDefined();
+        });
     });
 });
