@@ -11,6 +11,7 @@ import { ANONYMOUS_SENDER_ADDRESS_ID } from '@proton/wallet/constants/wallet';
 
 import { Select } from '../../atoms';
 import { useBitcoinBlockchainContext } from '../../contexts';
+import { getBitcoinViaEmailAddresses } from '../../utils/email';
 
 interface Props {
     value?: string;
@@ -19,7 +20,8 @@ interface Props {
 }
 
 export const EmailSelect = ({ value, onChange, extraOptions }: Props) => {
-    const [addresses = [], loadingAddresses] = useAddresses();
+    const [allAddresses, loadingAddresses] = useAddresses();
+    const addresses = getBitcoinViaEmailAddresses(allAddresses);
 
     const allAddressesOptions = useMemo(() => [...(extraOptions ?? []), ...addresses], [addresses, extraOptions]);
     const addressesById = useMemo(() => keyBy(allAddressesOptions, (a) => a.ID), [allAddressesOptions]);

@@ -574,6 +574,7 @@ export enum ADDRESS_TYPE {
     TYPE_PREMIUM = 4,
     TYPE_EXTERNAL = 5,
     TYPE_GROUP = 6,
+    TYPE_HANDLE = 7,
 }
 
 export enum ADDRESS_RECEIVE {
