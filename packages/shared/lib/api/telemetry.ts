@@ -13,6 +13,7 @@ export enum TelemetryMeasurementGroups {
     accountUnauthLost2FA = 'account.web.unauth_lost_2fa',
     accountDashboard = 'account.web.dashboard',
     accountUpgradePage = 'account.web.upgrade_page',
+    easySwitch = 'any.web.easy_switch',
     referralDiscover = 'any.web.referral_discover',
     alwaysOnUpsell = 'any.web.always_on_upsell',
     calendarIcsSurgery = 'calendar.web.ics_surgery',

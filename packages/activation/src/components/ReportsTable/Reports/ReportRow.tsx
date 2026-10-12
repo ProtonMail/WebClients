@@ -35,7 +35,14 @@ const ReportRow = ({ reportSummaryId }: Props) => {
                 </div>
             </TableCell>
             <TableCell className="easy-switch-table-actions">
-                <ReportRowActions key="button" reportSummaryID={reportSummaryId} rollbackState={rollbackState} />
+                <ReportRowActions
+                    key="button"
+                    reportSummaryID={reportSummaryId}
+                    rollbackState={rollbackState}
+                    product={product}
+                    provider={provider}
+                    account={account}
+                />
             </TableCell>
         </TableRow>
     );

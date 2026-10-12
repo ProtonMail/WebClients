@@ -6,10 +6,12 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Prompt, useEventManager, useModalState } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { tracker } from '@proton/telemetry-tracker/tracker';
 
 import { createToken, getTokensByFeature, resumeImport, updateImport } from '../../../api';
 import { ApiImporterError, ApiImporterState } from '../../../api/api.interface';
 import { getImportProviderFromApiProvider } from '../../../helpers/getImportProviderFromApiProvider';
+import { useGetIsBYOE } from '../../../hooks/useGetIsBYOE';
 import useOAuthPopup from '../../../hooks/useOAuthPopup';
 import { getEasySwitchFeaturesFromProducts, getProviderNumber } from '../../../hooks/useOAuthPopup.helpers';
 import type { ImportToken, OAuthProps } from '../../../interface';
@@ -18,6 +20,8 @@ import { reconnectImapImport } from '../../../logic/draft/imapDraft/imapDraft.ac
 import { cancelImporter } from '../../../logic/importers/importers.actions';
 import type { ActiveImporter, Importer } from '../../../logic/importers/importers.interface';
 import { useEasySwitchDispatch } from '../../../logic/store';
+import { telemetryProduct, telemetryProvider } from '../../../telemetry/dimensions';
+import { easySwitchImportReportAction } from '../../../telemetry/events';
 import { getScopeFromProvider } from '../../Modals/OAuth/OAuthModal.helpers';
 
 interface Props {
@@ -36,6 +40,7 @@ const ImporterRowActions = ({ activeImporter, importer }: Props) => {
     });
 
     const api = useApi();
+    const getIsBYOE = useGetIsBYOE();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const [loadingPrimaryAction, withLoadingPrimaryAction] = useLoading();
@@ -109,23 +114,42 @@ const ImporterRowActions = ({ activeImporter, importer }: Props) => {
         createNotification({ text: c('Success').t`Resuming import` });
     };
 
+    const trackEvent = async (action: 'cancel_import' | 'resume_import') => {
+        const isBYOE = await getIsBYOE(account);
+        tracker.emit(easySwitchImportReportAction, {
+            dimensions: {
+                importAction: action,
+                isBYOE,
+                provider: telemetryProvider[provider],
+                product: telemetryProduct[product],
+            },
+        });
+    };
+
+    const handleCancel = () => {
+        const activeImporterID = activeImporter.localID;
+        void withLoadingPrimaryAction(dispatch(cancelImporter({ activeImporterID })));
+        void trackEvent('cancel_import');
+        showCancelModal(false);
+    };
+
     const isAuthError = errorCode === ApiImporterError.ERROR_CODE_IMAP_CONNECTION;
+
+    const handleResumeOrReconnect = async () => {
+        if (isAuthError) {
+            const isOAuth = !sasl || sasl === AuthenticationMethod.OAUTH;
+            void withLoadingSecondaryAction(isOAuth ? handleReconnectOAuth(ID) : handleReconnect(ID));
+        } else {
+            void withLoadingSecondaryAction(handleResume(ID));
+        }
+        void trackEvent('resume_import');
+    };
 
     return (
         <div className="inline-flex gap-1">
             {importState === ApiImporterState.PAUSED && (
                 <Button
-                    onClick={() => {
-                        if (isAuthError) {
-                            return withLoadingSecondaryAction(
-                                !sasl || sasl === AuthenticationMethod.OAUTH
-                                    ? handleReconnectOAuth(ID)
-                                    : handleReconnect(ID)
-                            );
-                        }
-
-                        return withLoadingSecondaryAction(handleResume(ID));
-                    }}
+                    onClick={handleResumeOrReconnect}
                     loading={loadingConfig || loadingSecondaryAction}
                     data-testid="ReportsTable:reconnectImporter"
                 >
@@ -146,15 +170,7 @@ const ImporterRowActions = ({ activeImporter, importer }: Props) => {
                     {...cancelModalProps}
                     title={c('Confirm modal title').t`Import is incomplete!`}
                     buttons={[
-                        <Button
-                            color="danger"
-                            onClick={() => {
-                                void withLoadingPrimaryAction(
-                                    dispatch(cancelImporter({ activeImporterID: activeImporter.localID }))
-                                );
-                                showCancelModal(false);
-                            }}
-                        >{c('Action').t`Cancel`}</Button>,
+                        <Button color="danger" onClick={handleCancel}>{c('Action').t`Cancel`}</Button>,
                         <Button
                             color="weak"
                             onClick={() => {
