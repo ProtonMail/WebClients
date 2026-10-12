@@ -1,9 +1,10 @@
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
+import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import type { Address, Api, User } from '@proton/shared/lib/interfaces';
+import { type Address, type Api, type User, UserType } from '@proton/shared/lib/interfaces';
 import { handleCreateAddressAndKey } from '@proton/shared/lib/keys/setupAddress';
 
-import { UnavailableUsernameError, createClaimedAddressAndFinalize } from './claimedAddress';
+import { UnavailableUsernameError, createClaimedAddressAndFinalize, loadClaimedAddressSetup } from './claimedAddress';
 import type { LoginFlowContext } from './loginFlowContext';
 
 jest.mock('@proton/shared/lib/api/addresses', () => ({ getAllAddresses: jest.fn() }));
@@ -15,6 +16,47 @@ jest.mock('./accountKeys', () => ({ upgradeKeysAndFinalize: jest.fn() }));
 jest.mock('./finalizeSignIn', () => ({ finalizeSignIn: jest.fn() }));
 
 const apiError = (code: number) => ({ status: 422, data: { Code: code, Error: `error ${code}` } });
+
+describe('loadClaimedAddressSetup', () => {
+    const load = (user: Partial<User>) => {
+        const api = jest.fn(() => Promise.resolve({ Domains: ['proton.me'] })) as unknown as Api;
+        return { api, setup: loadClaimedAddressSetup({ api, user: user as User, claimedEmail: 'me@example.com' }) };
+    };
+
+    beforeEach(() => jest.clearAllMocks());
+
+    it('tells where the data lives when the account still has an enabled address', async () => {
+        jest.mocked(getAllAddresses).mockResolvedValue([
+            { Email: 'me@example.com', Status: ADDRESS_STATUS.STATUS_DISABLED },
+            { Email: 'me@proton.me', Status: ADDRESS_STATUS.STATUS_ENABLED },
+        ] as Address[]);
+
+        await expect(load({ Type: UserType.MANAGED }).setup).resolves.toEqual({
+            type: 'migrated',
+            address: 'me@proton.me',
+        });
+    });
+
+    it("doesn't offer an organization member to create an address, which its organization manages", async () => {
+        jest.mocked(getAllAddresses).mockResolvedValue([
+            { Email: 'me@example.com', Status: ADDRESS_STATUS.STATUS_DISABLED },
+        ] as Address[]);
+
+        const { api, setup } = load({ Type: UserType.MANAGED, Name: 'me' });
+
+        await expect(setup).resolves.toEqual({ type: 'managed' });
+        // Nor looks for where one could be created
+        expect(api).not.toHaveBeenCalled();
+    });
+
+    it('offers an account of its own to create an address', async () => {
+        jest.mocked(getAllAddresses).mockResolvedValue([
+            { Email: 'me@example.com', Status: ADDRESS_STATUS.STATUS_DISABLED },
+        ] as Address[]);
+
+        await expect(load({ Type: UserType.EXTERNAL, Name: '' }).setup).resolves.toMatchObject({ type: 'create' });
+    });
+});
 
 describe('createClaimedAddressAndFinalize', () => {
     const create = (api: Api) =>
