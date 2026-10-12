@@ -1,4 +1,4 @@
-import { mountExportDocument } from './htmlDocumentCapture';
+import { fitCanvasToFrame, mountExportDocument } from './htmlDocumentCapture';
 
 describe('mountExportDocument', () => {
     afterEach(() => {
@@ -26,5 +26,43 @@ describe('mountExportDocument', () => {
 
         expect(mounted.ownerDocument.querySelector('script')).toBeNull();
         expect(mounted.root.textContent).toContain('Safe');
+    });
+});
+
+describe('fitCanvasToFrame', () => {
+    const createCanvas = (width: number, height: number): HTMLCanvasElement => {
+        const canvas = document.createElement('canvas');
+        canvas.width = width;
+        canvas.height = height;
+        return canvas;
+    };
+
+    it('returns a canvas that already has the frame aspect unchanged', () => {
+        const canvas = createCanvas(1920, 1080);
+
+        expect(fitCanvasToFrame(canvas, 1920, 1080)).toBe(canvas);
+    });
+
+    afterEach(() => {
+        jest.restoreAllMocks();
+    });
+
+    it('letterboxes a slide taller than 16:9 into the exact frame instead of stretching it', () => {
+        // jsdom has no canvas backend, so stand in a 2D context that records the draw.
+        const context = { fillStyle: '', fillRect: jest.fn(), drawImage: jest.fn() };
+        jest.spyOn(HTMLCanvasElement.prototype, 'getContext').mockReturnValue(
+            context as unknown as CanvasRenderingContext2D
+        );
+        const tallSlide = createCanvas(1920, 1600);
+
+        const framed = fitCanvasToFrame(tallSlide, 1920, 1080);
+
+        expect(framed).not.toBe(tallSlide);
+        expect(framed.width).toBe(1920);
+        expect(framed.height).toBe(1080);
+        // Scaled to the frame height and centred horizontally, not stretched to the full width.
+        expect(context.drawImage).toHaveBeenCalledWith(tallSlide, 312, 0, 1296, 1080);
+        // The source canvas is released once drawn.
+        expect(tallSlide.width).toBe(0);
     });
 });

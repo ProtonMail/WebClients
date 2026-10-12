@@ -1,4 +1,4 @@
-import { renderChartsInSlideContent, slideContentHasChartPlaceholder } from './presentationCharts';
+import { renderChartsInSlideContent, slideContentNeedsChartPass } from './presentationCharts';
 
 // `vega-embed` ships ESM-only and isn't wired into this repo's Jest transform allowlist (unlike
 // `vega` itself, which already resolves cleanly for secureVegaLoader.test.ts) — mocking it here
@@ -26,13 +26,17 @@ function mockEmbedResolvedWith(svg: string) {
     });
 }
 
-describe('slideContentHasChartPlaceholder', () => {
+describe('slideContentNeedsChartPass', () => {
     it('is false for plain slide markup', () => {
-        expect(slideContentHasChartPlaceholder('<section><h2>Title</h2><p>Text</p></section>')).toBe(false);
+        expect(slideContentNeedsChartPass('<section><h2>Title</h2><p>Text</p></section>')).toBe(false);
     });
 
     it('is true once a chart placeholder is present', () => {
-        expect(slideContentHasChartPlaceholder(`<section>${chartPlaceholder('{"mark":"bar"}')}</section>`)).toBe(true);
+        expect(slideContentNeedsChartPass(`<section>${chartPlaceholder('{"mark":"bar"}')}</section>`)).toBe(true);
+    });
+
+    it('is true for a chat-style fence that needs rewriting', () => {
+        expect(slideContentNeedsChartPass('<section><p>```vega-lite {}```</p></section>')).toBe(true);
     });
 });
 
@@ -103,5 +107,80 @@ describe('renderChartsInSlideContent', () => {
 
         expect(result).toContain('Chart unavailable');
         expect(mockEmbed).toHaveBeenCalledTimes(1);
+    });
+});
+
+// D12: chat-style fences written into slide HTML are rewritten instead of shown as raw text.
+describe('renderChartsInSlideContent — chat fence cleanup', () => {
+    const spec = JSON.stringify({
+        mark: 'bar',
+        encoding: { x: { field: 'a', type: 'nominal' }, y: { field: 'b', type: 'quantitative' } },
+        data: { values: [{ a: 'x', b: 1 }] },
+    });
+
+    beforeEach(() => {
+        mockEmbed.mockReset();
+        mockEmbedResolvedWith('<svg>fence chart</svg>');
+    });
+
+    it('renders a vega-lite fence written as loose paragraph text', async () => {
+        const content = `<section><h2>Kept</h2><p>\`\`\`vega-lite ${spec} \`\`\`</p></section>`;
+
+        const result = await renderChartsInSlideContent(content);
+
+        expect(result).toContain('<h2>Kept</h2>');
+        expect(result).toContain('<div class="lumo-chart"><svg>fence chart</svg></div>');
+        expect(result).not.toContain('```');
+        expect(result).not.toContain('<p>');
+    });
+
+    it('replaces the whole <pre> around a fenced <code> block', async () => {
+        const content = `<section><pre><code>\`\`\`vega-lite\n${spec}\n\`\`\`</code></pre></section>`;
+
+        const result = await renderChartsInSlideContent(content);
+
+        expect(result).toBe('<section><div class="lumo-chart"><svg>fence chart</svg></div></section>');
+    });
+
+    it('renders <code class="language-vega-lite"> without backticks', async () => {
+        const content = `<section><pre><code class="language-vega-lite">${spec}</code></pre></section>`;
+
+        const result = await renderChartsInSlideContent(content);
+
+        expect(result).toBe('<section><div class="lumo-chart"><svg>fence chart</svg></div></section>');
+    });
+
+    it('splits a fence out of a text node that also holds other text', async () => {
+        const content = `<section>Before \`\`\`vega-lite\n${spec}\n\`\`\` after</section>`;
+
+        const result = await renderChartsInSlideContent(content);
+
+        expect(result).toBe('<section>Before <div class="lumo-chart"><svg>fence chart</svg></div> after</section>');
+    });
+
+    it('turns a card-row fence into a plain list and a card fence into a quote', async () => {
+        const cardRow = JSON.stringify([
+            { type: 'metric', title: 'Accounts', value: '100M+', delta: 'Consumer scale', direction: 'up' },
+            { type: 'metric', title: 'Revenue', value: '>$100M', direction: 'flat' },
+        ]);
+        const card = JSON.stringify({ type: 'finding', title: 'The tension', body: 'Scale without depth.' });
+        const content = `<section><pre><code>\`\`\`card-row\n${cardRow}\n\`\`\`</code></pre><p>\`\`\`card ${card}\`\`\`</p></section>`;
+
+        const result = await renderChartsInSlideContent(content);
+
+        expect(result).toBe(
+            '<section><ul><li><strong>Accounts</strong>: 100M+ (Consumer scale)</li><li><strong>Revenue</strong>: &gt;$100M</li></ul>' +
+                '<blockquote><strong>The tension</strong>: Scale without depth.</blockquote></section>'
+        );
+        expect(mockEmbed).not.toHaveBeenCalled();
+    });
+
+    it('leaves other fenced code on a slide untouched', async () => {
+        const content = '<section><pre><code>```python\nprint("hi")\n```</code></pre></section>';
+
+        const result = await renderChartsInSlideContent(content);
+
+        expect(result).toBe(content);
+        expect(mockEmbed).not.toHaveBeenCalled();
     });
 });

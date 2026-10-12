@@ -108,3 +108,26 @@ export function splitMarkdownWithCompleteCodeFences(content: string): MarkdownCo
 export function blockContainsCompleteCodeFence(content: string): boolean {
     return findCompleteMarkdownCodeFence(content) !== null;
 }
+
+/**
+ * Rewrite every complete fenced code block: `replace` returns the new text for a fence, or null to
+ * keep it as written. Everything outside the replaced fences is kept byte-for-byte.
+ */
+export function replaceCompleteMarkdownCodeFences(
+    content: string,
+    replace: (fence: MarkdownCodeFence) => string | null
+): string {
+    let result = '';
+    let position = 0;
+
+    for (
+        let fence = findCompleteMarkdownCodeFence(content, position);
+        fence;
+        fence = findCompleteMarkdownCodeFence(content, position)
+    ) {
+        result += content.slice(position, fence.start) + (replace(fence) ?? content.slice(fence.start, fence.end));
+        position = fence.end;
+    }
+
+    return result + content.slice(position);
+}

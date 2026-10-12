@@ -2,6 +2,7 @@ import { shouldRenderAsVegaChart } from './detectVegaSpec';
 import {
     blockContainsCompleteCodeFence,
     parseMarkdownCodeFence,
+    replaceCompleteMarkdownCodeFences,
     splitMarkdownWithCompleteCodeFences,
 } from './parseMarkdownCodeFence';
 
@@ -73,5 +74,17 @@ describe('parseMarkdownCodeFence', () => {
         const content = '\n\n```json\n{}\n```\n\n';
 
         expect(parseMarkdownCodeFence(content)).toEqual({ language: 'json', code: '{}' });
+    });
+});
+
+describe('replaceCompleteMarkdownCodeFences', () => {
+    it('rewrites the fences the callback handles and keeps everything else byte-for-byte', () => {
+        const markdown = 'a\n\n```x\none\n```\n\nb\n\n~~~y\ntwo\n~~~\n\n```x\nunclosed';
+
+        const result = replaceCompleteMarkdownCodeFences(markdown, (fence) => {
+            return fence.language === 'x' ? `[${fence.code}]` : null;
+        });
+
+        expect(result).toBe('a\n\n[one]\n\nb\n\n~~~y\ntwo\n~~~\n\n```x\nunclosed');
     });
 });
