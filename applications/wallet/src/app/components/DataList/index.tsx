@@ -1,7 +1,5 @@
 import { type CSSProperties, type ReactNode, useMemo } from 'react';
 
-import { Icon } from '@proton/components';
-import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
 import { useResponsiveContainerContext } from '../../contexts/ResponsiveContainerContext';
@@ -11,7 +9,7 @@ import './Datalist.scss';
 interface DataListItemProps {
     label?: ReactNode;
     bottomNode: ReactNode;
-    leftIcon?: IconName | ReactNode;
+    leftIcon?: ReactNode;
     align?: 'start' | 'end';
     className?: string;
 }
@@ -22,7 +20,7 @@ export const DataListItem = ({ leftIcon, label, bottomNode, className, align = '
     return (
         <div className="datagrid-cell h-full">
             <div className="flex flex-row items-center flex-nowrap w-full">
-                {leftIcon && typeof leftIcon === 'string' ? <Icon name={leftIcon as IconName} /> : leftIcon}
+                {leftIcon}
                 <div className="grow px-1">
                     <div className={clsx('flex flex-column w-full', `items-${align}`)}>
                         {label ? (
