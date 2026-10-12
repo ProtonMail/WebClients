@@ -14,6 +14,8 @@ type ArtifactVersionSource = 'prompt' | 'inline-edit' | 'manual-edit';
 export interface ArtifactVersion {
     messageId: MessageId;
     content: string;
+    /** The artifact's title as of this version (titles can change between revisions). */
+    title?: string;
     language?: string;
     createdAt: string;
     source: ArtifactVersionSource;
@@ -123,6 +125,7 @@ export function buildArtifactRegistry(linearChain: Message[]): ArtifactRegistry 
             const version: ArtifactVersion = {
                 messageId: message.id,
                 content: artifact.content,
+                title: artifact.title,
                 language: artifact.language,
                 createdAt: message.createdAt,
                 ...getVersionOrigin(message, messagesById),
@@ -223,6 +226,7 @@ export function mergeProvisionalArtifactRegistry(
             const version: ArtifactVersion = {
                 messageId: message.id,
                 content: artifact.content,
+                title: artifact.title,
                 language: artifact.language,
                 createdAt: message.createdAt,
                 ...getVersionOrigin(message, messagesById),
