@@ -217,7 +217,7 @@ const PublicAppInteractive = ({
                                 handleLoginResult(loginLocationState);
                             } catch (error) {}
                         }}
-                        onLogin={({ username, token, flow }) => {
+                        onLogin={({ username, token, flow, persistent }) => {
                             const state: SignInLocationState = {
                                 authTypeData: {
                                     type: AuthType.ExternalSSO,
@@ -225,6 +225,7 @@ const PublicAppInteractive = ({
                                 externalSSO: {
                                     token,
                                     flow,
+                                    persistent,
                                 },
                                 username,
                             };

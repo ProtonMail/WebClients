@@ -4,7 +4,6 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import type { Paths } from '../../content/helper';
 import type { SignInLayout } from '../components/SignInLayout';
-import type { RememberMode } from '../rememberMode';
 
 /** Page-level values the step components need; the flow itself lives in the machine. */
 export interface SignInProps {
@@ -15,7 +14,8 @@ export interface SignInProps {
     toAppName: string | undefined;
     showContinueTo: boolean | undefined;
     paths: Paths;
-    remember: RememberMode;
+    /** Whether the credentials forms show the "Keep me signed in" checkbox; it's on by default either way. */
+    showRememberCheckbox: boolean;
     testflight: 'vpn' | undefined;
     isPorkbun: boolean;
     /** Shows an API error to the user; opens the abuse modal for disabled accounts. */
