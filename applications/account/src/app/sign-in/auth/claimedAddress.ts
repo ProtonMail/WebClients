@@ -8,7 +8,7 @@ import { getUser } from '@proton/shared/lib/authentication/getUser';
 import type { ClaimedAddressID } from '@proton/shared/lib/authentication/interface';
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import type { Address, Api, User } from '@proton/shared/lib/interfaces';
+import { type Address, type Api, type User, UserType } from '@proton/shared/lib/interfaces';
 import {
     type ClaimableAddress,
     getClaimableAddress,
@@ -46,10 +46,13 @@ interface ClaimedAddressGeneration {
 
 /**
  * How the recovery finishes. An account that still has an enabled address only learns where its data now lives;
- * otherwise it needs a new address before it can be signed in to.
+ * otherwise it needs a new address before it can be signed in to. An organization member (`managed`) can't create one:
+ * its organization manages its addresses, so it only learns that, and is signed in without one.
  */
 export type ClaimedAddressSetup =
-    { type: 'migrated'; address: string } | { type: 'create'; generation: ClaimedAddressGeneration };
+    | { type: 'migrated'; address: string }
+    | { type: 'managed' }
+    | { type: 'create'; generation: ClaimedAddressGeneration };
 
 /**
  * Decides how the recovery finishes. Any enabled address counts, external ones too, as it does for the API: it keeps
@@ -68,6 +71,11 @@ export const loadClaimedAddressSetup = async ({
     const enabledAddress = addresses.find((address) => address.Status === ADDRESS_STATUS.STATUS_ENABLED);
     if (enabledAddress) {
         return { type: 'migrated', address: enabledAddress.Email };
+    }
+
+    // The API refuses an organization member's username and address setup: its administrator gives it addresses
+    if (user.Type === UserType.MANAGED) {
+        return { type: 'managed' };
     }
 
     const domains = await api<{ Domains: string[] }>(queryAvailableDomains()).then(({ Domains }) => Domains);
