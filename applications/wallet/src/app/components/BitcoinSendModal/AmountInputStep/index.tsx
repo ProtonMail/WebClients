@@ -41,6 +41,7 @@ export const AmountInputStep = ({ txBuilderHelpers, btcAddressMap, onBack, accou
         handleReviewTransaction,
         handleExchangeRateChange,
         handleUpdateRecipientAmount,
+        handleRemoveRecipient,
     } = useAmountInputStep({
         account,
         apiAccount,
@@ -124,11 +125,7 @@ export const AmountInputStep = ({ txBuilderHelpers, btcAddressMap, onBack, accou
                                         className="mr-1 shrink-0 rounded-full"
                                         size="small"
                                         icon
-                                        onClick={() =>
-                                            txBuilderHelpers.updateTxBuilder((txBuilder) =>
-                                                txBuilder.removeRecipient(index)
-                                            )
-                                        }
+                                        onClick={() => handleRemoveRecipient(recipientUid, index)}
                                     >
                                         <Tooltip title={c('Wallet send').t`Remove email`}>
                                             <IcCrossCircleFilled
