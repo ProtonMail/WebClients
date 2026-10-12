@@ -1506,6 +1506,9 @@
       ],
       "Managed Service Provider": [
         "Provedor de serviço gerenciado"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Organizações com o complemento Provedor de Serviços Gerenciados podem criar e gerenciar organizações subsidiárias."
       ]
     },
     "Alert": {
@@ -7901,6 +7904,9 @@
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Temporariamente indisponível devido à alta demanda. Tente novamente mais tarde."
+      ],
+      "No payment is required.": [
+        "Nenhum pagamento é necessário."
       ]
     },
     "info": {
@@ -8982,6 +8988,9 @@
       ],
       "What’s this?": [
         "O que é isso?"
+      ],
+      "Pay it": [
+        "Pague"
       ]
     },
     "List title": {
@@ -11192,6 +11201,9 @@
       ],
       "you can cancel within 30 days and get a pro-rata refund.": [
         "você pode cancelar em até 30 dias e receber um reembolso proporcional."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Cancele a qualquer momento antes disso. ** Você poderá usar ${ planTitle } até que a avaliação termine, gratuitamente."
       ]
     },
     "Option": {
@@ -11536,6 +11548,21 @@
       ],
       "You already own Born Private.": [
         "Você já tem o Born Private."
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Apenas um ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } pode ser comprado."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "O plano selecionado não oferece domínios suficientes para sua conta."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "O plano selecionado não oferece armazenamento suficiente para sua conta."
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "Os planos de avaliação não suportam ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "Sua moeda foi alterada para euros (€) porque ${ IDEAL_WERO_BRAND_NAME } suporta apenas pagamentos em euros."
       ]
     },
     "Payments.Error": {
@@ -14706,6 +14733,9 @@
       ],
       "Your import is finished!": [
         "Sua importação terminou!"
+      ],
+      "Black Friday": [
+        "Black Friday"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15323,6 +15353,9 @@
       ],
       "Upgrade to a supported plan to use admin roles.": [
         "Faça upgrade para um plano suportado para usar funções de administrador."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Você não pode mudar seus próprios papéis. Peça a outro administrador para alterá-los."
       ]
     },
     "Role": {
