@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useBlackFriday2026 } from '@proton/components/containers/offers/operations/blackFriday2026configs';
 import { IcBriefcase } from '@proton/icons/icons/IcBriefcase';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { getAppSpace, getSpace } from '@proton/shared/lib/user/storage';
@@ -11,13 +12,23 @@ export function SuggestBusinessButton() {
     const [user] = useUser();
     const space = getAppSpace(getSpace(user), APPS.PROTONDRIVE);
     const usedSpaceRatio = space.usedSpace / space.maxSpace;
+    const blackFriday2026 = useBlackFriday2026();
+    const isBlackFridayLoading = blackFriday2026.some((op) => op.isLoading);
+    const hasBlackFridayOffer = blackFriday2026.some((op) => op.isValid);
 
     const [modal, showModal] = useSuggestBusinessModal();
 
     // Business will get a spotlight for 1 week each month for free users with less than 50% storage used
+    // Should not show during the Black Friday sale
     const now = new Date();
     const dayOfMonth = now.getDate();
-    const shouldSuggestBusiness = !user.isPaid && usedSpaceRatio < 0.5 && dayOfMonth >= 15 && dayOfMonth <= 22;
+    const shouldSuggestBusiness =
+        !isBlackFridayLoading &&
+        !hasBlackFridayOffer &&
+        !user.isPaid &&
+        usedSpaceRatio < 0.5 &&
+        dayOfMonth >= 15 &&
+        dayOfMonth <= 22;
 
     if (shouldSuggestBusiness) {
         return (
