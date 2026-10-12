@@ -25,6 +25,7 @@ interface BlackFriday2026Offer {
     couponCode: COUPON_CODES;
     getRef?: (product: OfferProduct, currentPlan: string) => string;
     features?: (product: OfferProduct) => { name: string }[];
+    /** Tagline shown under the "Black Friday" headline in the modal header */
     title: () => string;
     modalImage: string;
 }
@@ -41,12 +42,6 @@ const getRefApp = (product: OfferProduct) => {
     }
 
     return 'mail';
-};
-
-// TODO: placeholder copy carried over from the Q3 sale, BF 2026 content is TBA in the campaign spec
-// translator: offer headline, shown over the artwork and wrapped after the comma
-const getFullPowerTitle = () => {
-    return c('bfcampaign2026: Title').t`One plan, full power`;
 };
 
 // Each ordering needs its own context. The app names stay interpolated so they cannot be translated,
@@ -76,6 +71,16 @@ const getUnlimitedFeatures = (product: OfferProduct) => {
     ];
 };
 
+// translator: offer tagline, shown under the "Black Friday" headline in the offer header
+const getFreeToPlusTagline = () => {
+    return c('bfcampaign2026: Title').t`Last chance to save big`;
+};
+
+// translator: offer tagline, shown under the "Black Friday" headline in the offer header
+const getFreeToUnlimitedTagline = () => {
+    return c('bfcampaign2026: Title').t`Biggest sale of the year`;
+};
+
 const freeToUnlimited: BlackFriday2026Offer = {
     ID: `${BLACK_FRIDAY_2026_PREFIX}-free-to-unlimited`,
     featureCode: FeatureCode.OfferBlackFriday2026FreeToUnlimited,
@@ -84,8 +89,13 @@ const freeToUnlimited: BlackFriday2026Offer = {
     dealName: PLAN_NAMES[PLANS.BUNDLE],
     couponCode: COUPON_CODES.BLACK_FRIDAY_2026_BUNDLE,
     features: getUnlimitedFeatures,
-    title: getFullPowerTitle,
+    title: getFreeToUnlimitedTagline,
     modalImage: kv,
+};
+
+// translator: offer tagline, shown under the "Black Friday" headline in the offer header
+const getPlusToUnlimitedTagline = () => {
+    return c('bfcampaign2026: Title').t`Save big with a yearly plan`;
 };
 
 // Runs alongside both free-user waves; its audience is paid single-product users, so it never overlaps
@@ -99,14 +109,13 @@ const plusToUnlimited: BlackFriday2026Offer = {
     dealName: PLAN_NAMES[PLANS.BUNDLE],
     couponCode: COUPON_CODES.BLACK_FRIDAY_2026_BUNDLE,
     features: getUnlimitedFeatures,
-    title: getFullPowerTitle,
+    title: getPlusToUnlimitedTagline,
     modalImage: kv,
 };
 
-// TODO: placeholder copy carried over from the Q3 sale, BF 2026 content is TBA in the campaign spec
-// translator: offer headline, shown over the artwork and wrapped after the comma
-const getMorePowerTitle = () => {
-    return c('bfcampaign2026: Title').t`One plan, more power`;
+// translator: offer tagline, shown under the "Black Friday" headline in the offer header
+const getUnlimitedToDuoTagline = () => {
+    return c('bfcampaign2026: Title').t`Protection for two in a single plan`;
 };
 
 const getDuoFeatures = (product: OfferProduct) => {
@@ -130,14 +139,13 @@ const unlimitedToDuo: BlackFriday2026Offer = {
     dealName: PLAN_NAMES[PLANS.DUO],
     couponCode: COUPON_CODES.BLACK_FRIDAY_2026_BUNDLE,
     features: getDuoFeatures,
-    title: getMorePowerTitle,
+    title: getUnlimitedToDuoTagline,
     modalImage: kv,
 };
 
-// TODO: placeholder copy carried over from the Q3 sale, BF 2026 content is TBA in the campaign spec
-// translator: offer headline, shown over the artwork and wrapped after the comma
-const getMaxSavingsTitle = () => {
-    return c('bfcampaign2026: Title').t`One plan, max savings`;
+// translator: offer tagline, shown under the "Black Friday" headline in the offer header
+const getDuoToFamilyTagline = () => {
+    return c('bfcampaign2026: Title').t`Protect your entire tribe`;
 };
 
 // Family copy lists four apps and Calendar is not one of them, so a Calendar user keeps the default order.
@@ -172,14 +180,8 @@ const duoToFamily: BlackFriday2026Offer = {
     dealName: PLAN_NAMES[PLANS.FAMILY],
     couponCode: COUPON_CODES.BLACK_FRIDAY_2026_BUNDLE,
     features: getFamilyFeatures,
-    title: getMaxSavingsTitle,
+    title: getDuoToFamilyTagline,
     modalImage: kv,
-};
-
-// TODO: placeholder copy, BF 2026 content is TBA in the campaign spec
-// translator: offer headline for a single-product plan, shown over the artwork
-const getPlusTitle = () => {
-    return c('bfcampaign2026: Title').t`Black Friday sale`;
 };
 
 // Wave 2. The deal depends on which product the user is in, so each product is its own offer, scoped
@@ -193,7 +195,7 @@ const freeToMailPlus: BlackFriday2026Offer = {
     features: () => {
         return [{ name: getPremium(MAIL_SHORT_APP_NAME, CALENDAR_SHORT_APP_NAME) }];
     },
-    title: getPlusTitle,
+    title: getFreeToPlusTagline,
     modalImage: kv,
 };
 
@@ -207,7 +209,7 @@ const freeToDrivePlus: BlackFriday2026Offer = {
     features: () => {
         return [{ name: getPremium(DRIVE_SHORT_APP_NAME) }];
     },
-    title: getPlusTitle,
+    title: getFreeToPlusTagline,
     modalImage: kv,
 };
 
@@ -225,7 +227,7 @@ const freeToPassPlus: BlackFriday2026Offer = {
             { name: getSecureVaultSharingText() },
         ];
     },
-    title: getPlusTitle,
+    title: getFreeToPlusTagline,
     modalImage: kv,
 };
 
