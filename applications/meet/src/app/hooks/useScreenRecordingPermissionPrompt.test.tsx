@@ -7,16 +7,19 @@ import { selectPermissionsModals } from '@proton/meet/store/slices/deviceManagem
 import { PermissionsModalType } from '@proton/meet/store/slices/deviceManagementSlice/types';
 import { selectIsGuest, selectUserId } from '@proton/meet/store/slices/userSlice';
 import { getItem } from '@proton/shared/lib/helpers/storage';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { useScreenRecordingPermissionPrompt } from './useScreenRecordingPermissionPrompt';
 
 vi.mock('@proton/meet/store/hooks', () => ({ useMeetDispatch: vi.fn(), useMeetSelector: vi.fn() }));
 vi.mock('@proton/shared/lib/helpers/desktop', () => ({ isElectronMeet: true }));
 vi.mock('@proton/shared/lib/helpers/storage', () => ({ getItem: vi.fn(), setItem: vi.fn() }));
+vi.mock('@proton/unleash/useFlag', () => ({ useFlag: vi.fn() }));
 
 const useMeetDispatchMock = useMeetDispatch as unknown as Mock;
 const useMeetSelectorMock = useMeetSelector as unknown as Mock;
 const getItemMock = getItem as unknown as Mock;
+const useFlagMock = useFlag as unknown as Mock;
 
 describe('useScreenRecordingPermissionPrompt', () => {
     const dispatch = vi.fn();
@@ -40,6 +43,7 @@ describe('useScreenRecordingPermissionPrompt', () => {
             }
         });
         getItemMock.mockImplementation((key: string) => storage[key]);
+        useFlagMock.mockReturnValue(true);
     });
 
     afterEach(() => {
@@ -97,6 +101,14 @@ describe('useScreenRecordingPermissionPrompt', () => {
                 showPermissionsModal({ modal: PermissionsModalType.SCREEN_RECORDING_PERMISSION_MODAL })
             )
         );
+    });
+
+    it('does nothing when the screen picker flag is off', () => {
+        const getScreenCaptureAccess = mockAccess('not-requested');
+        useFlagMock.mockReturnValue(false);
+        renderHook(() => useScreenRecordingPermissionPrompt());
+
+        expect(getScreenCaptureAccess).not.toHaveBeenCalled();
     });
 
     it('does nothing on desktop builds without screen capture access', () => {
