@@ -3,6 +3,7 @@ import { FeatureCode, useFeatures } from '@proton/features';
 import { isDangerouslyAllowedSubscriptionEstimation } from '@proton/payments/core/subscription/helpers';
 
 import type { OfferConfig, OfferId, Operation } from '../interface';
+import { blackFriday2026Configs, useBlackFriday2026 } from '../operations/blackFriday2026configs';
 import { goUnlimited2022Config } from '../operations/goUnlimited2022/configuration';
 import { useGoUnlimited2022 } from '../operations/goUnlimited2022/useOffer';
 import { mailTrial2023Config } from '../operations/mailTrial2023/configuration';
@@ -17,6 +18,7 @@ const configs: Record<OfferId, OfferConfig> = {
     'mail-trial-2023': mailTrial2023Config,
     'go-unlimited-2022': goUnlimited2022Config,
     'unlimited-to-duo-discounted': unlimitedToDuoDiscountedConfig,
+    ...blackFriday2026Configs,
 };
 
 const OFFERS_FEATURE_FLAGS = Object.values(configs).map(({ featureCode }) => featureCode);
@@ -26,13 +28,22 @@ const useOfferConfig = () => {
     useFeatures([FeatureCode.Offers, ...OFFERS_FEATURE_FLAGS]);
     const [subscription, loadingSubscription] = useSubscription();
 
+    const blackFriday2026Operations = useBlackFriday2026();
+
+    // Other offers
     const passFamilyPlan2024Yearly = usePassFamilyPlan2024Yearly();
     const mailTrial2023 = useMailTrial2023();
     const goUnlimited2022 = useGoUnlimited2022();
     const unlimitedToDuoDiscounted = useUnlimitedToDuoDiscounted();
 
-    // Offer order matters
-    const allOffers: Operation[] = [unlimitedToDuoDiscounted, passFamilyPlan2024Yearly, mailTrial2023, goUnlimited2022];
+    // Offer order matters: the BF 2026 campaign takes priority over permanent offers
+    const allOffers: Operation[] = [
+        ...blackFriday2026Operations,
+        unlimitedToDuoDiscounted,
+        passFamilyPlan2024Yearly,
+        mailTrial2023,
+        goUnlimited2022,
+    ];
 
     const validOffers: Operation[] = allOffers.filter((offer) => !offer.isLoading && offer.isValid);
     const isLoading = allOffers.some((offer) => offer.isLoading) || loadingSubscription;
