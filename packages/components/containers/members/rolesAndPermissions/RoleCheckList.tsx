@@ -7,6 +7,7 @@ import { PREDEFINED_ROLE_NAME } from '@proton/shared/lib/interfaces/Organization
 import clsx from '@proton/utils/clsx';
 
 import Checkbox from '../../../components/input/Checkbox';
+import Info from '../../../components/link/Info';
 
 const ROLE_KNOWLEDGE_BASE_LINKS: Record<string, string> = {
     [PREDEFINED_ROLE_NAME.OWNER]: '/admin-roles#organizational-admin',
@@ -44,6 +45,7 @@ export interface RoleRow {
     isChecked: boolean;
     isDisabled: boolean;
     badge: string | null;
+    tooltip: string | null;
 }
 
 interface Props {
@@ -55,7 +57,7 @@ interface Props {
 const RoleCheckList = ({ rows, onToggle, isGroupContext = false }: Props) => {
     return (
         <div className="flex flex-column gap-3">
-            {rows.map(({ id, name, description, isChecked, isDisabled, badge }) => {
+            {rows.map(({ id, name, description, isChecked, isDisabled, badge, tooltip }) => {
                 const resolvedDescription = description || getFallbackDescription(name, isGroupContext);
                 return (
                     <div key={id} className="flex flex-nowrap items-start gap-2 py-2">
@@ -71,6 +73,7 @@ const RoleCheckList = ({ rows, onToggle, isGroupContext = false }: Props) => {
                                 {getTranslatedRoleName(name)}
                                 {badge && <span className="ml-1">{badge}</span>}
                             </label>
+                            {tooltip && <Info buttonClass="align-text-bottom ml-1" title={tooltip} />}
                             <div className={clsx('text-sm', !isDisabled && 'color-weak')}>
                                 {resolvedDescription}
                                 {ROLE_KNOWLEDGE_BASE_LINKS[name] && (
