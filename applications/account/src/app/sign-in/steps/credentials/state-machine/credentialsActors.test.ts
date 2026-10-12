@@ -6,7 +6,7 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { ClaimedAddressNoMatchError, loginWithClaimedAddress, loginWithPassword } from '../../../auth/passwordLogin';
 import type { SignInActorServices } from '../../../state-machine/signInActors';
 import { createCredentialsActors } from './credentialsActors';
-import { InvalidLoginError, SwitchToSRPError, SwitchToSSOError } from './credentialsErrors';
+import { InvalidLoginError, SSOSignInRejectedError, SwitchToSRPError, SwitchToSSOError } from './credentialsErrors';
 
 jest.mock('../../../auth/passwordLogin', () => ({
     ...jest.requireActual('../../../auth/passwordLogin'),
@@ -99,6 +99,31 @@ describe('createCredentialsActors', () => {
         preparation.resolve();
         await toPromise(actor);
         expect(services.api).toHaveBeenCalledTimes(1);
+    });
+
+    it("throws the API's refusal of the token exchange as SSOSignInRejectedError, other errors as they are", async () => {
+        const services = makeServices(() => Promise.resolve());
+        const actors = createCredentialsActors(services as unknown as SignInActorServices);
+        const run = () =>
+            toPromise(
+                createActor(actors.authenticateWithSSOToken, {
+                    input: { uid: 'uid', token: 'token', username: '', persistent: false },
+                }).start()
+            );
+
+        const message = 'There is an error in the configuration of single sign-on';
+        services.api.mockRejectedValueOnce({ status: 422, data: { Code: 2011, Error: message } });
+        const rejected = run();
+        await expect(rejected).rejects.toThrow(SSOSignInRejectedError);
+        await expect(rejected).rejects.toThrow(message);
+
+        // Another code (the sign-in handles a disabled account itself), or another status
+        const disabled = { status: 422, data: { Code: API_CUSTOM_ERROR_CODES.AUTH_ACCOUNT_DISABLED, Error: 'x' } };
+        services.api.mockRejectedValueOnce(disabled);
+        await expect(run()).rejects.toBe(disabled);
+        const serverError = { status: 500, data: { Code: 2011, Error: 'x' } };
+        services.api.mockRejectedValueOnce(serverError);
+        await expect(run()).rejects.toBe(serverError);
     });
 
     it('fails the provider window without the challenge token, rather than open it empty', async () => {
