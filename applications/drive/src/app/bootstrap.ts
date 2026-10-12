@@ -16,6 +16,7 @@ import { setMetricsEnabled } from '@proton/shared/lib/helpers/metrics';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import type { UserSettingsResponse } from '@proton/shared/lib/interfaces/drive/userSettings';
 import { appMode } from '@proton/shared/lib/webpack.constants';
+import { initTracker } from '@proton/telemetry-tracker/tracker';
 import noop from '@proton/utils/noop';
 
 import locales from './locales';
@@ -33,6 +34,7 @@ export const bootstrapApp = async ({ config }: { config: ProtonConfig }) => {
     const silentApi = getSilentApi(api);
     const authentication = bootstrap.createAuthentication();
     bootstrap.init({ config, authentication, locales });
+    initTracker({ api: silentApi });
     setupGuestCrossStorage({ appMode, appName });
     initSafariFontFixClassnames();
     const streamsPolyfillPromise = loadStreamsPolyfill();

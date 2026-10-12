@@ -147,6 +147,7 @@ export class Tracker {
 }
 
 let instance: Tracker | undefined;
+let hasWarnedNotInitialized = false;
 export const NOT_INITIALIZED_MESSAGE = 'Telemetry tracker used before initTracker()';
 
 const getInstance = () => {
@@ -154,8 +155,11 @@ const getInstance = () => {
         return instance;
     }
 
-    if (process.env.NODE_ENV !== 'production') {
-        throw new Error(NOT_INITIALIZED_MESSAGE);
+    // Telemetry must never break a user flow: warn (once) and drop the call.
+    if (process.env.NODE_ENV !== 'production' && !hasWarnedNotInitialized) {
+        hasWarnedNotInitialized = true;
+        // eslint-disable-next-line no-console
+        console.warn(NOT_INITIALIZED_MESSAGE);
     }
 
     return undefined;
@@ -169,9 +173,10 @@ export const initTracker = (deps: TrackerDeps) => {
 /** @internal used by the testing entry */
 export const setTrackerInstance = (next: Tracker | undefined) => {
     instance = next;
+    hasWarnedNotInitialized = false;
 };
 
-/** Reachable from anywhere (React or not). Throws before init outside of production. */
+/** Reachable from anywhere (React or not). No-op (with a dev warning) before init. */
 export const tracker = {
     emit<E extends EventDefinition>(event: E, ...args: EmitArgs<E>) {
         getInstance()?.emit(event, ...args);
