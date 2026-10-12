@@ -332,6 +332,7 @@ enum MeetFeatureFlag {
     MeetDebugMode = 'MeetDebugMode',
     MeetDeepFilterNet = 'MeetDeepFilterNet',
     MeetDeepFilterNetMobile = 'MeetDeepFilterNetMobile',
+    MeetDesktopScreenPickerEnabled = 'MeetDesktopScreenPickerEnabled',
     MeetDtlnPerfMonitor = 'MeetDtlnPerfMonitor',
     MeetDynacast = 'MeetDynacast',
     MeetE2eeDebugStats = 'MeetE2eeDebugStats',
