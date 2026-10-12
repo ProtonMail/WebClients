@@ -11,6 +11,7 @@ import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import ProtonLogo from '../../../../components/logo/ProtonLogo';
 import { getSimplePriceString } from '../../../../components/price/helper';
+import { getDiscountWithCoupon } from '../../helpers/dealPrices';
 import { getOfferProduct } from '../../helpers/getOfferProduct';
 import type { OfferLayoutProps } from '../../interface';
 import OfferDisableButton from '../shared/OfferDisableButton';
@@ -42,49 +43,55 @@ export function BlackFriday2026Layout({ offer, currency, onSelectDeal, onCloseMo
         onSelectDeal(offer, deal, currency);
     };
 
-    const offerTitle = offer.title?.();
+    const tagline = offer.title?.();
+    const discount = getDiscountWithCoupon(deal);
 
     const planNameWithoutBrand = deal.dealName.replace(`${BRAND_NAME} `, '');
 
-    const protonLogoWithDeal = (
-        <span className="bf2026PlanLockup flex flex-row items-center gap-3">
-            <ProtonLogo color="invert" scale={0.75} />
-            <span className="text-bold bf2026PlanName">{planNameWithoutBrand}</span>
-        </span>
-    );
-
     return (
         <div>
-            <div className="bf2026HeaderSection">
+            <div className="bf2026Header">
                 <img
                     src={offer.images?.modalImage}
                     alt=""
                     aria-hidden={true}
-                    className="bf2026KVImage"
-                    width={496}
-                    height={339}
+                    className="bf2026HeaderImage"
+                    width={480}
+                    height={310}
                 />
-                <div className="bf2026HeaderOverlay" />
                 <div className="bf2026HeaderContent">
-                    <div>
-                        <h1 className="bf2026Title font-arizona">{offerTitle}</h1>
-                    </div>
-                    <div className="flex flex-column">
-                        {protonLogoWithDeal}
-                        <span className="bf2026ForMonths">
-                            {
-                                // translator: full sentence is e.g. "for 12 months"
-                                c('bfcampaign2026: Title').t`for 12 months`
-                            }
-                        </span>
-                    </div>
+                    {discount > 0 && (
+                        <p className="bf2026Discount m-0" dir="ltr">
+                            -{discount}%
+                        </p>
+                    )}
+                    <h1 className="bf2026Title">
+                        {
+                            // translator: campaign headline in the offer header, displayed in capitals
+                            c('bfcampaign2026: Title').t`Black Friday`
+                        }
+                    </h1>
+                    {tagline && <p className="bf2026Tagline m-0">{tagline}</p>}
                 </div>
             </div>
 
             <div className="bf2026Content">
+                <div className="flex flex-column mb-4">
+                    <span className="bf2026PlanLockup flex flex-row flex-nowrap items-center gap-3">
+                        <ProtonLogo color="invert" scale={0.75} />
+                        <span className="bf2026PlanName text-bold">{planNameWithoutBrand}</span>
+                    </span>
+                    <span className="bf2026ForMonths">
+                        {
+                            // translator: full sentence is e.g. "for 12 months"
+                            c('bfcampaign2026: Title').t`for 12 months`
+                        }
+                    </span>
+                </div>
+
                 <div className="mb-4">
-                    <div className="flex items-end gap-1 mb-1">
-                        <span className="bf2026Price text-bold">{promoPricePerMonth}</span>
+                    <div className="flex items-baseline gap-2 mb-1">
+                        <span className="bf2026Price">{promoPricePerMonth}</span>
                         <span className="text-lg">
                             {
                                 // translator: price per month e.g. "$3.33 / month"; price not part of this string
@@ -113,8 +120,8 @@ export function BlackFriday2026Layout({ offer, currency, onSelectDeal, onCloseMo
                     ))}
                 </ul>
 
-                <div className="flex flex-column items-center gap-2 mb-4">
-                    <span className="text-sm text-weak">{c('bfcampaign2026: Info')
+                <div className="flex flex-column items-center text-center gap-2 mb-4">
+                    <span className="text-sm">{c('bfcampaign2026: Info')
                         .t`Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.`}</span>
 
                     <OfferDisableButton offer={offer} onCloseModal={onCloseModal} />
