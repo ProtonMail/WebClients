@@ -8,6 +8,7 @@ import {
     filterDevices,
     getDefaultDevice,
     getDevicesHash,
+    getSelectableDevices,
     isDefaultDevice,
     toSerializableDevice,
 } from '../../../utils/deviceUtils';
@@ -47,9 +48,7 @@ export const selectSortedFilteredSpeakers = createSelector([selectFilteredSpeake
 // Prevent us to use stale devices when plugging/unplugging them, array is not memoized
 export const selectRealtimeDevices = async (store: MeetStore, kind: 'audioinput' | 'audiooutput' | 'videoinput') => {
     try {
-        return (await navigator.mediaDevices.enumerateDevices())
-            .filter((d) => d.kind === kind && d.deviceId !== '')
-            .map(toSerializableDevice);
+        return getSelectableDevices(await navigator.mediaDevices.enumerateDevices(), kind).map(toSerializableDevice);
     } catch (error) {
         // eslint-disable-next-line no-console
         console.error('[selectRealtimeDevices] error getting realtime devices, falling back to redux store', error);
