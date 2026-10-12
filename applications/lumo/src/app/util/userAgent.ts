@@ -187,7 +187,10 @@ export const getNativeAppInfo = (): {
 
     let platform: 'ios' | 'android' | 'unknown';
 
-    if (userAgent.includes('iOS/') || userAgent.includes('iPadOS')) {
+    // Matches both UA generations: `(iOS/18.0; iPhone)` up to 2.1.0 and `(iOS 18.0; Apple
+    // iPhone17,1)` from the shared-builder UA onwards. 'iPadOS' does not contain the substring
+    // 'iOS', hence its own check; Android device segments never contain either.
+    if (userAgent.includes('iOS') || userAgent.includes('iPadOS')) {
         platform = 'ios';
     } else if (userAgent.includes('Android')) {
         platform = 'android';
