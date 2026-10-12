@@ -40,7 +40,6 @@ import { RECORDING_MAX_AGE_MS, purgeOldRecordings } from '../../hooks/useMeeting
 import { useScreenRecordingPermissionPrompt } from '../../hooks/useScreenRecordingPermissionPrompt';
 import type { JoinTelemetryDimensions } from '../../telemetry/useJoinTelemetryDimensions';
 import { useSendOnce } from '../../telemetry/useSendOnce';
-import { clearDesktopAppPreference } from '../../utils/desktopAppDetector';
 import { getDisplayNameStorageKey } from '../../utils/storage';
 
 import './PrejoinContainer.scss';
@@ -111,12 +110,6 @@ export const PrejoinContainer = ({
     useEffect(() => {
         dispatch(setLocalParticipantColorIndex(participantColorIndex.current));
     }, [dispatch]);
-
-    useEffect(() => {
-        // Remove deprecated desktop app banner storage keys
-        localStorage.removeItem('open_desktop_app_banner_dismissed_until');
-        clearDesktopAppPreference();
-    }, []);
 
     useScreenRecordingPermissionPrompt();
 
