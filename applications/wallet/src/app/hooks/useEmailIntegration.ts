@@ -13,6 +13,7 @@ import type { IWasmApiWalletData } from '@proton/wallet/types';
 
 import { useBitcoinBlockchainContext } from '../contexts';
 import { getAccountWithChainDataFromManyWallets } from '../utils';
+import { getBitcoinViaEmailAddresses } from '../utils/email';
 
 export const useEmailIntegration = (
     wallet: IWasmApiWalletData,
@@ -33,7 +34,9 @@ export const useEmailIntegration = (
             WalletAccounts.flatMap(({ Addresses }) => Addresses.flatMap(({ ID }) => ID))
         );
 
-        return addresses?.map((addr) => [addr, !alreadyUsedAddresses.includes(addr.ID)] as const) ?? [];
+        return getBitcoinViaEmailAddresses(addresses).map(
+            (addr) => [addr, !alreadyUsedAddresses.includes(addr.ID)] as const
+        );
     }, [wallet, otherWallets, addresses]);
 
     const onAddEmailAddress = (emailAddressId: string) => {
