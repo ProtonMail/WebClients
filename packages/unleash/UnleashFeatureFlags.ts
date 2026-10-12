@@ -389,6 +389,7 @@ enum MeetFeatureFlag {
     MeetTranscription = 'MeetTranscription',
     MeetExtendedTelemetry = 'MeetExtendedTelemetry',
     MeetHandleStalledLiveKitReconnect = 'MeetHandleStalledLiveKitReconnect',
+    MeetJoinLeaveSoundsNotifications = 'MeetJoinLeaveSoundsNotifications',
 }
 
 enum PaymentsFeatureFlag {

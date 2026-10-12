@@ -98,6 +98,7 @@ const createMockStore = (
                 meetingLocked: false,
                 pipEnabled: true,
                 waitingRoomSetting: false,
+                joinLeaveSoundsEnabled: true,
                 ...settingsState,
             },
             uiState: {
@@ -283,6 +284,42 @@ describe('Settings', () => {
             );
 
             expect(screen.getByRole('checkbox', { name: 'Picture-in-picture while sharing' })).toBeDisabled();
+        });
+    });
+
+    describe('join and leave sounds', () => {
+        beforeEach(() => {
+            localStorage.clear();
+        });
+
+        it('should be hidden when the feature is off', () => {
+            render(
+                <Wrapper>
+                    <Settings />
+                </Wrapper>
+            );
+
+            expect(screen.queryByRole('checkbox', { name: 'Join and leave sounds' })).not.toBeInTheDocument();
+        });
+
+        it('should allow for toggling it and remember the choice', async () => {
+            enabledFlags.current = [...enabledFlags.current, 'MeetJoinLeaveSoundsNotifications'];
+
+            render(
+                <Wrapper>
+                    <Settings />
+                </Wrapper>
+            );
+
+            const user = userEvent.setup();
+
+            const soundsCheckbox = screen.getByRole('checkbox', { name: 'Join and leave sounds' });
+            expect(soundsCheckbox).toBeChecked();
+
+            await user.click(soundsCheckbox);
+
+            expect(soundsCheckbox).not.toBeChecked();
+            expect(localStorage.getItem('guest.joinLeaveSounds')).toBe('false');
         });
     });
 

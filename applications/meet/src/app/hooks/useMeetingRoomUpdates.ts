@@ -4,16 +4,18 @@ import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectChatMessages, selectEvents } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { selectParticipantDecryptedNameMap } from '@proton/meet/store/slices/participants/participantsSlice';
 import type { MeetChatMessage, ParticipantEventRecord } from '@proton/meet/types/types';
+import { useFlag } from '@proton/unleash/useFlag';
 
 export const useMeetingRoomUpdates = (): (MeetChatMessage | ParticipantEventRecord)[] => {
     const participantEvents = useMeetSelector(selectEvents);
     const chatMessages = useMeetSelector(selectChatMessages);
     const participantDecryptedNameMap = useMeetSelector(selectParticipantDecryptedNameMap);
+    const hideParticipantEvents = useFlag('MeetJoinLeaveSoundsNotifications');
 
     return useMemo(
         () =>
             [
-                ...participantEvents.map((event) => ({
+                ...(hideParticipantEvents ? [] : participantEvents).map((event) => ({
                     ...event,
                     type: 'event' as const,
                     name: participantDecryptedNameMap?.[event.identity],
@@ -24,6 +26,6 @@ export const useMeetingRoomUpdates = (): (MeetChatMessage | ParticipantEventReco
                     name: participantDecryptedNameMap?.[message.identity],
                 })),
             ].sort((a, b) => a.timestamp - b.timestamp),
-        [participantEvents, chatMessages, participantDecryptedNameMap]
+        [participantEvents, chatMessages, participantDecryptedNameMap, hideParticipantEvents]
     );
 };
