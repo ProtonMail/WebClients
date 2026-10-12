@@ -9,6 +9,7 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import TopBanner from '@proton/components/containers/topBanners/TopBanner';
+import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useLocalState from '@proton/components/hooks/useLocalState';
 import { IcBell } from '@proton/icons/icons/IcBell';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -42,11 +43,12 @@ export const SignInChangeTopBanner = () => {
                 data-testid="sign-in-change-banner"
             >
                 <IcBell className="shrink-0 mr-1" />
-                {
-                    // translator: full sentence "We're changing the Proton sign-in page. Your password and devices stay the same. Learn more"
+                {getBoldFormattedText(
                     c('Info')
-                        .jt`We're changing the ${BRAND_NAME} sign-in page. Your password and devices stay the same. ${learnMore}`
-                }
+                        .t`**We're changing the ${BRAND_NAME} sign-in page.** Your account and password stay the same.`,
+                    'text-semibold'
+                )}{' '}
+                {learnMore}
             </TopBanner>
             {renderModal && (
                 <ModalTwo size="small" {...modalProps}>
@@ -62,7 +64,7 @@ export const SignInChangeTopBanner = () => {
                             {c('Info')
                                 .t`Soon, you'll enter your email address (or username) and password in 2 separate steps instead of on 1 page.`}
                         </p>
-                        <p className="m-0 text-semibold">{c('Info').t`Your password and devices stay the same.`}</p>
+                        <p className="m-0 text-semibold">{c('Info').t`Your account and password stay the same.`}</p>
                     </ModalTwoContent>
                     <ModalTwoFooter>
                         <Button color="norm" fullWidth onClick={modalProps.onClose}>
