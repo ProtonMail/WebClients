@@ -139,6 +139,14 @@ describe('artifact event payloads', () => {
             artifactType: 'presentation',
             layout: 'docked',
             result: 'error',
+            contentLengthBucket: '1k-10k',
+        });
+        sendArtifactDownloadedEvent({
+            format: 'pdf',
+            artifactType: 'document',
+            layout: 'fullscreen',
+            result: 'print_dialog',
+            contentLengthBucket: '10k+',
         });
         sendArtifactSaveToDriveCompletedEvent({ format: 'md', artifactType: 'document', result: 'success' });
         sendArtifactInlineActionSentEvent({ kind: 'explain', artifactType: 'code', layout: 'mobile' });

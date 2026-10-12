@@ -1,4 +1,4 @@
-import { type HtmlSlideCaptureOptions, captureSlideDocumentsToCanvases } from '../export/htmlDocumentCapture';
+import { type HtmlSlideCaptureOptions, captureSlideDocumentsToImages } from '../export/htmlDocumentCapture';
 
 export type HtmlSlidesToPptxOptions = HtmlSlideCaptureOptions;
 
@@ -22,7 +22,7 @@ type PptxGenConstructor = new () => PptxGenInstance;
 
 /**
  * Render multiple standalone slide HTML documents to one PPTX file.
- * Each slide is captured as a full-bleed PNG image on a 16:9 layout.
+ * Each slide is captured as a full-bleed 16:9 PNG, so the 100% × 100% placement never distorts it.
  */
 export async function htmlSlidesToPptxBytes(
     slideDocuments: string[],
@@ -32,17 +32,17 @@ export async function htmlSlidesToPptxBytes(
         throw new Error('HTML slide PPTX export requires a browser environment.');
     }
 
-    const canvases = await captureSlideDocumentsToCanvases(slideDocuments, options);
+    const slideImages = await captureSlideDocumentsToImages(slideDocuments, options);
 
     const pptxgenModule = await import('pptxgenjs');
     const PptxGenJS = pptxgenModule.default as unknown as PptxGenConstructor;
     const pptx = new PptxGenJS();
     pptx.layout = 'LAYOUT_16x9';
 
-    for (const canvas of canvases) {
+    for (const slideImage of slideImages) {
         const slide = pptx.addSlide();
         slide.addImage({
-            data: canvas.toDataURL('image/png'),
+            data: slideImage,
             x: 0,
             y: 0,
             w: '100%',

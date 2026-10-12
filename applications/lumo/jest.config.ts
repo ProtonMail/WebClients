@@ -11,7 +11,7 @@ const jestConfig: Config = {
     collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}', '!src/app/locales.ts'],
     resolver: './jest.resolver.js',
     transformIgnorePatterns: [
-        'node_modules/(?!(@proton/shared|@proton/components|@protontech/mutex-browser|@protontech/interval-tree|@protontech/telemetry|@protontech/crypto|@protontech/drive-sdk|openpgp|@openpgp/web-stream-tools|@protontech/bip39|emoji-mart|msw|@mswjs|until-async|p-limit|yocto-queue|sw-test-env|node-fetch|data-uri-to-buffer|fetch-blob|formdata-polyfill|uuid|xlsx|@preact/signals-core|@scure/base|unist-util-visit|unist-util-visit-parents|unist-util-is|vega|vega-.*|d3-.*|internmap|delaunator|robust-predicates)/)',
+        'node_modules/(?!(@proton/shared|@proton/components|@protontech/mutex-browser|@protontech/interval-tree|@protontech/telemetry|@protontech/crypto|@protontech/drive-sdk|openpgp|@openpgp/web-stream-tools|@protontech/bip39|emoji-mart|msw|@mswjs|until-async|p-limit|yocto-queue|sw-test-env|node-fetch|data-uri-to-buffer|fetch-blob|formdata-polyfill|uuid|xlsx|@preact/signals-core|@scure/base|unist-util-visit|unist-util-visit-parents|unist-util-is|vega|vega-.*|d3-.*|internmap|delaunator|robust-predicates|remark-.*|micromark.*|mdast-util-.*|unified|bail|trough|vfile.*|devlop|decode-named-character-reference|character-entities.*|ccount|escape-string-regexp|markdown-table|zwitch|longest-streak|is-plain-obj|unist-util-.*)/)',
     ],
     preset: '@proton/jest-swc-preset',
     moduleNameMapper: {
