@@ -62,34 +62,6 @@
 	block-size: 6px;
 }
 
-.artifact-chip {
-	transition: opacity 150ms ease;
-	user-select: none;
-
-	&--superseded {
-		opacity: 0.75;
-	}
-}
-
-.artifact-chip-icon {
-	inline-size: 2rem;
-	block-size: 2rem;
-	color: var(--text-norm);
-	transition: color 150ms ease;
-
-	&--active {
-		color: var(--primary);
-	}
-
-	&--superseded {
-		color: var(--text-hint);
-	}
-}
-
-.artifact-chip--loading {
-	cursor: default;
-}
-
 .artifact-panel-loading-icon {
 	animation: artifact-loading-icon-pulse 1.6s ease-in-out infinite;
 }

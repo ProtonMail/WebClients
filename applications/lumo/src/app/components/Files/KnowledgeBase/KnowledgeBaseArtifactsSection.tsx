@@ -6,9 +6,9 @@ import { Button } from '@proton/atoms/Button/Button';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { downloadBlob } from '../../../util/pdf/downloadBlob';
+import { ArtifactChipShell } from '../../Conversation/artifact/ArtifactChipShell';
 import { getArtifactDrawerTypeLabel } from '../../Conversation/artifact/artifactDrawerTypeLabel';
 import { buildArtifactSourceDownloadFile } from '../../Conversation/artifact/artifactSourceDownload';
-import { ARTIFACT_TYPE_CONFIG } from '../../Conversation/artifact/artifactTypeConfig';
 import type { ConversationArtifactDrawerEntry } from '../../Conversation/artifact/conversationArtifactDrawerList';
 
 interface KnowledgeBaseArtifactsSectionProps {
@@ -22,7 +22,7 @@ export const KnowledgeBaseArtifactsSection = ({ artifacts, onOpenArtifact }: Kno
     }
 
     return (
-        <div className="mb-6 w-full">
+        <div className="mb-6 w-full min-w-0 max-w-full">
             <h3 className="text-sm text-bold mb-1">
                 {c('collider_2025: Info').t`Artifacts`}{' '}
                 <span className="color-weak text-normal">{artifacts.length}</span>
@@ -32,7 +32,6 @@ export const KnowledgeBaseArtifactsSection = ({ artifacts, onOpenArtifact }: Kno
             </p>
 
             {artifacts.map((artifact) => {
-                const TypeIcon = ARTIFACT_TYPE_CONFIG[artifact.type].icon;
                 const typeLabel = getArtifactDrawerTypeLabel(artifact.type, artifact.language);
 
                 const handleDownload = (event: MouseEvent) => {
@@ -49,38 +48,32 @@ export const KnowledgeBaseArtifactsSection = ({ artifacts, onOpenArtifact }: Kno
                 };
 
                 return (
-                    <button
+                    <ArtifactChipShell
                         key={artifact.id}
-                        type="button"
-                        className="knowledge-base-artifact-row flex flex-row items-center gap-3 border border-weak rounded-lg p-3 mb-2 w-full text-left bg-norm cursor-pointer hover:bg-weak"
+                        type={artifact.type}
+                        className="mt-2 mb-4"
+                        title={artifact.title}
+                        subtitle={
+                            <span className="text-xs color-weak block w-full min-w-0 text-ellipsis overflow-hidden whitespace-nowrap">
+                                {typeLabel}
+                            </span>
+                        }
                         onClick={() => {
                             onOpenArtifact(artifact.id);
                         }}
-                    >
-                        <span
-                            className="knowledge-base-artifact-row-icon shrink-0 flex items-center justify-center rounded-lg bg-weak w-custom h-custom"
-                            style={{ '--w-custom': '2.25rem', '--h-custom': '2.25rem' } as React.CSSProperties}
-                            aria-hidden
-                        >
-                            <TypeIcon className="color-weak" size={4} />
-                        </span>
-                        <span className="flex flex-1 flex-column min-w-0 gap-0.5 text-left">
-                            <span className="text-sm text-semibold color-norm text-ellipsis overflow-hidden whitespace-nowrap">
-                                {artifact.title}
-                            </span>
-                            <span className="text-xs color-weak">{typeLabel}</span>
-                        </span>
-                        <Button
-                            color="weak"
-                            shape="outline"
-                            size="small"
-                            className="shrink-0"
-                            onClick={handleDownload}
-                            title={c('collider_2025:Action').t`Download`}
-                        >
-                            {c('collider_2025:Action').t`Download`}
-                        </Button>
-                    </button>
+                        actions={
+                            <Button
+                                color="weak"
+                                shape="outline"
+                                size="small"
+                                className="shrink-0"
+                                onClick={handleDownload}
+                                title={c('collider_2025:Action').t`Download`}
+                            >
+                                {c('collider_2025:Action').t`Download`}
+                            </Button>
+                        }
+                    />
                 );
             })}
         </div>

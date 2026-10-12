@@ -39,12 +39,16 @@ im.$media-expressions: $media-expressions;
 .files-panel {
 	&.modal-files-panel {
 		block-size: 100%;
-		overflow: visible;
+		overflow: hidden;
+		min-inline-size: 0;
+		max-inline-size: 100%;
 		padding: 0 !important;
 
 		.files-panel-content {
 			block-size: 100%;
 			max-block-size: none;
+			min-inline-size: 0;
+			max-inline-size: 100%;
 			border-radius: 0;
 			box-shadow: none;
 		}
@@ -72,4 +76,3 @@ im.$media-expressions: $media-expressions;
 	background-color: rgb(194 193 192 / 0.2);
 	transition: all 0.2s;
 }
-

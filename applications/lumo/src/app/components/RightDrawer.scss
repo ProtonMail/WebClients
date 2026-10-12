@@ -8,6 +8,8 @@ im.$media-expressions: $media-expressions;
 .right-drawer {
 	inline-size: rem(400);
 	min-inline-size: rem(380);
+	max-inline-size: 100%;
+	flex-shrink: 0;
 	background-color: var(--background-norm);
 
 	// border-inline-start: 1px solid var(--border-weak);
@@ -59,6 +61,12 @@ im.$media-expressions: $media-expressions;
 		border-inline-start: none;
 		animation: rightDrawerFullscreenIn 0.2s ease-out;
 	}
+}
+
+.right-drawer-content {
+	min-inline-size: 0;
+	max-inline-size: 100%;
+	overflow-x: hidden;
 }
 
 // Backdrop for mobile overlay
