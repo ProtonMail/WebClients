@@ -1,19 +1,29 @@
-import { Suspense, lazy, memo } from 'react';
+import { Suspense, lazy, memo, useMemo } from 'react';
 
 import { c } from 'ttag';
 
 import { useLumoTheme } from '../../../providers';
+import { ArtifactMarkdownPre } from './ArtifactMarkdownPre';
+import { normalizeDocumentCardFences } from './artifactVizCards';
 import type { ParsedArtifact } from './parseArtifacts';
 
 // Lazy-load the syntax highlighter to keep the initial bundle small
 const LumoMarkdownCodeBlockHighlighter = lazy(() => import('../../LumoMarkdown/LumoMarkdownCodeBlockHighlighter'));
 
-// Lazy-load react-markdown for document rendering
+// Lazy-load react-markdown for document rendering. remark-gfm (tables, strikethrough, task lists) is
+// the same plugin set export uses (artifactMarkdownHtml.ts), so the preview shows what PDF/Drive get.
+// `pre` renders ```vega-lite fences as charts (D12).
+const MARKDOWN_COMPONENTS = { pre: ArtifactMarkdownPre };
+
 const MarkdownRenderer = lazy(() =>
-    import('react-markdown').then((mod) => ({
+    Promise.all([import('react-markdown'), import('remark-gfm')]).then(([markdownModule, gfmModule]) => ({
         default: (props: { children: string }) => {
-            const Markdown = mod.default;
-            return <Markdown>{props.children}</Markdown>;
+            const Markdown = markdownModule.default;
+            return (
+                <Markdown remarkPlugins={[gfmModule.default]} components={MARKDOWN_COMPONENTS}>
+                    {props.children}
+                </Markdown>
+            );
         },
     }))
 );
@@ -24,6 +34,12 @@ export interface ArtifactRendererProps {
 }
 
 const ArtifactMarkdownBody = memo(function ArtifactMarkdownBody({ content }: { content: string }) {
+    // Chat-only card fences leak into documents as raw JSON; show them as a table / quote instead.
+    // Read time only: the stored artifact keeps what the model emitted (D12).
+    const displayContent = useMemo(() => {
+        return normalizeDocumentCardFences(content);
+    }, [content]);
+
     return (
         <Suspense
             fallback={
@@ -31,7 +47,7 @@ const ArtifactMarkdownBody = memo(function ArtifactMarkdownBody({ content }: { c
             }
         >
             <div className="artifact-markdown prose">
-                <MarkdownRenderer>{content}</MarkdownRenderer>
+                <MarkdownRenderer>{displayContent}</MarkdownRenderer>
             </div>
         </Suspense>
     );

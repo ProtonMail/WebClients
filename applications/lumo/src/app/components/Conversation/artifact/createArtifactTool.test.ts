@@ -13,6 +13,20 @@ describe('createArtifactToolExecutor', () => {
         expect(tools[0]!.function.parameters!.required).toEqual(['id', 'type', 'title', 'content']);
     });
 
+    // D12: the same Vega-Lite version as the chat [Visualization] rules, one embed syntax per
+    // artifact type, and no chat-only card blocks inside artifacts.
+    it('scopes chart embedding per artifact type and keeps cards out of artifacts', async () => {
+        const tools = await createArtifactToolExecutor.getClientTools!();
+        const description = tools[0]!.function.description ?? '';
+
+        expect(description).toContain('vega-lite/v6.json');
+        expect(description).not.toMatch(/Vega-Lite v5/);
+        expect(description).toContain('application/lumo-vega-lite+json');
+        expect(description).toContain('never use a ```vega-lite fence in a slide');
+        expect(description).toContain('In a `document`, put a chart in a ```vega-lite fenced block');
+        expect(description).toContain('Never put ```card-row or ```card blocks in any artifact');
+    });
+
     it('only claims its own tool name', () => {
         expect(createArtifactToolExecutor.canExecute(CREATE_ARTIFACT_TOOL_NAME)).toBe(true);
         expect(createArtifactToolExecutor.canExecute('web_search')).toBe(false);

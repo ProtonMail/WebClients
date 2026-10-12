@@ -34,7 +34,7 @@ export function isCardRowLanguage(language: string): boolean {
     return language.toLowerCase() === 'card-row';
 }
 
-function isCardLanguage(language: string): boolean {
+export function isCardLanguage(language: string): boolean {
     return language.toLowerCase() === 'card' || isCardRowLanguage(language);
 }
 
@@ -67,8 +67,7 @@ export function looksLikeCardSpecPartial(code: string): boolean {
     }
 
     return (
-        CARD_TYPE_PATTERN.test(trimmed) ||
-        (/"type"\s*:\s*"summary"/.test(trimmed) && /"body"\s*:\s*"/.test(trimmed))
+        CARD_TYPE_PATTERN.test(trimmed) || (/"type"\s*:\s*"summary"/.test(trimmed) && /"body"\s*:\s*"/.test(trimmed))
     );
 }
 

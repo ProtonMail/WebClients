@@ -2,9 +2,9 @@ import { c } from 'ttag';
 
 import type { ArtifactType } from './parseArtifacts';
 
-export type ArtifactSaveFormat = 'md' | 'txt' | 'pdf' | 'pptx';
+export type ArtifactSaveFormat = 'docx' | 'md' | 'txt' | 'pdf' | 'pptx';
 
-const DOCUMENT_SAVE_FORMATS: ArtifactSaveFormat[] = ['md', 'txt', 'pdf'];
+const DOCUMENT_SAVE_FORMATS: ArtifactSaveFormat[] = ['docx', 'pdf', 'md', 'txt'];
 const PRESENTATION_SAVE_FORMATS: ArtifactSaveFormat[] = ['pdf', 'pptx'];
 
 export function getArtifactSaveFormats(type: ArtifactType): ArtifactSaveFormat[] {
@@ -29,6 +29,8 @@ export function isArtifactSaveFormatSupported(type: ArtifactType, format: Artifa
 
 export function getArtifactSaveFormatLabel(format: ArtifactSaveFormat): string {
     switch (format) {
+        case 'docx':
+            return c('collider_2025:Action').t`Word (.docx)`;
         case 'md':
             return c('collider_2025:Action').t`Source (Markdown)`;
         case 'txt':
@@ -48,17 +50,24 @@ export function getArtifactSourceDownloadLabel(type: ArtifactType): string {
     }
 
     if (type === 'presentation') {
-        return c('collider_2025:Action').t`Download source (HTML)`;
+        return c('collider_2025:Action').t`Download web presentation (HTML)`;
     }
 
     return c('collider_2025:Action').t`Download source file`;
 }
 
-export function getArtifactDownloadLabel(format: ArtifactSaveFormat): string {
+export function getArtifactDownloadLabel(format: ArtifactSaveFormat, type?: ArtifactType): string {
     switch (format) {
+        case 'docx':
+            return c('collider_2025:Action').t`Download Word (.docx)`;
         case 'txt':
             return c('collider_2025:Action').t`Download plain text`;
         case 'pdf':
+            // Documents open the print dialog to "Save as PDF" (see getArtifactPdfExportMode); the
+            // ellipsis signals that a dialog follows.
+            if (type === 'document') {
+                return c('collider_2025:Action').t`Save as PDF…`;
+            }
             return c('collider_2025:Action').t`Download PDF`;
         case 'pptx':
             return c('collider_2025:Action').t`Download PPTX`;

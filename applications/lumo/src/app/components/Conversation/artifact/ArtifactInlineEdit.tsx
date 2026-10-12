@@ -160,11 +160,14 @@ export const ArtifactInlineEdit = ({
     };
 
     const horizontalPadding = 16;
+    const contentWidth = containerRect.width - horizontalPadding * 2;
     const style: React.CSSProperties = {
         position: 'fixed',
         top: selection.anchorBottom + 8,
         left: containerRect.left + horizontalPadding,
-        width: Math.max(containerRect.width - horizontalPadding * 2, 200),
+        ...(inlineEditMode === 'selection'
+            ? { width: 'max-content', maxWidth: contentWidth }
+            : { width: Math.max(contentWidth, 200) }),
     };
 
     return (

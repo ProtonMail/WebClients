@@ -1,5 +1,6 @@
 import type { ClientToolExecutor } from '@proton/lumo-api-client';
 
+import { ARTIFACT_CHART_RULES } from '../../../llm/visualizationPrompt';
 import type { ContentBlock } from '../../../types';
 import { type ArtifactType, type ParsedArtifact, hashArtifactIdentity, isArtifactType } from './parseArtifacts';
 
@@ -37,10 +38,13 @@ export const createArtifactToolExecutor: ClientToolExecutor = {
                     '`<html>`/`<head>`/`<body>`, and no `<script>`/`<style>` tags of your own — the app ' +
                     'supplies the slide library, theme, and initialization, so a full document or your own ' +
                     'script/style tags would be redundant or conflict with it. The one exception: to include ' +
-                    'a chart on a presentation slide, embed a single Vega-Lite v5 spec as ' +
+                    'a chart on a presentation slide, embed a single spec as ' +
                     '`<script type="application/lumo-vega-lite+json">{...}</script>` inside that slide\'s ' +
                     '`<section>` (this script never runs — the app renders it to a static image — so it is ' +
-                    'not "your own script"); the spec\'s `data` must use inline `values`, never `url`. To ' +
+                    'not "your own script"); never use a ```vega-lite fence in a slide, it shows as raw ' +
+                    'text. In a `document`, put a chart in a ```vega-lite fenced block instead. ' +
+                    ARTIFACT_CHART_RULES +
+                    ' Never put ```card-row or ```card blocks in any artifact: they only render in chat. To ' +
                     'revise something you already created earlier in this conversation, call this again ' +
                     'with the exact same ' +
                     '`id` and the full updated content (never a diff or partial update); use a new `id` ' +

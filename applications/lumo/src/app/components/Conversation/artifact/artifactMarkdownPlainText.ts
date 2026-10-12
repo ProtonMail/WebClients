@@ -93,5 +93,5 @@ export function htmlToPlainText(html: string): string {
 
 /** Convert artifact markdown to plain text with headings, lists, and paragraphs formatted for reading. */
 export function markdownToPlainText(markdown: string): string {
-    return htmlToPlainText(markdownToHtmlBody(markdown));
+    return htmlToPlainText(markdownToHtmlBody(markdown, { charts: 'summary' }));
 }
