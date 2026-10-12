@@ -1,6 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useBlackFriday2026 } from '@proton/components/containers/offers/operations/blackFriday2026configs';
 import { getAppSpace, getSpace } from '@proton/shared/lib/user/storage';
 
 import { useSuggestBusinessModal } from '../../../../modals/SuggestBusinessModal/useSuggestBusinessModal';
@@ -16,6 +17,9 @@ const mockedGetAppSpace = jest.mocked(getAppSpace);
 jest.mock('../../../../modals/SuggestBusinessModal/useSuggestBusinessModal');
 const mockedUseSuggestBusinessModal = jest.mocked(useSuggestBusinessModal);
 
+jest.mock('@proton/components/containers/offers/operations/blackFriday2026configs');
+const mockedUseBlackFriday2026 = jest.mocked(useBlackFriday2026);
+
 describe('SuggestBusinessButton', () => {
     const mockShowModal = jest.fn();
     const mockModal = <div data-testid="suggest-business-modal">Modal</div>;
@@ -25,6 +29,9 @@ describe('SuggestBusinessButton', () => {
         mockedUseSuggestBusinessModal.mockReturnValue([mockModal, mockShowModal]);
         mockedGetSpace.mockReturnValue({ usedSpace: 100, maxSpace: 1000 } as ReturnType<typeof getSpace>);
         mockedGetAppSpace.mockReturnValue({ usedSpace: 100, maxSpace: 1000 });
+        mockedUseBlackFriday2026.mockReturnValue([{ isLoading: false, isValid: false }] as ReturnType<
+            typeof useBlackFriday2026
+        >);
     });
 
     const mockUser = (isPaid: boolean) => {
@@ -70,6 +77,32 @@ describe('SuggestBusinessButton', () => {
             mockUser(true);
             mockDate(15);
             mockedGetAppSpace.mockReturnValue({ usedSpace: 40, maxSpace: 100 });
+
+            const { container } = render(<SuggestBusinessButton />);
+            expect(container).toBeEmptyDOMElement();
+        });
+    });
+
+    describe('when the Black Friday sale is running', () => {
+        beforeEach(() => {
+            mockUser(false);
+            mockDate(15);
+            mockedGetAppSpace.mockReturnValue({ usedSpace: 40, maxSpace: 100 });
+        });
+
+        it('should not render the button when a Black Friday offer is valid', () => {
+            mockedUseBlackFriday2026.mockReturnValue([{ isLoading: false, isValid: true }] as ReturnType<
+                typeof useBlackFriday2026
+            >);
+
+            const { container } = render(<SuggestBusinessButton />);
+            expect(container).toBeEmptyDOMElement();
+        });
+
+        it('should not render the button while the Black Friday offers are still loading', () => {
+            mockedUseBlackFriday2026.mockReturnValue([{ isLoading: true, isValid: false }] as ReturnType<
+                typeof useBlackFriday2026
+            >);
 
             const { container } = render(<SuggestBusinessButton />);
             expect(container).toBeEmptyDOMElement();
