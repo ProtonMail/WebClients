@@ -177,6 +177,33 @@ describe('SubUserEditModal', () => {
         expect(screen.getByLabelText('User Admin')).toBeEnabled();
     });
 
+    it('explains why a role assigned by a group is disabled', () => {
+        const groupRole: RoleAssignment = {
+            ...getRoleAssignment(mockUserAdminRole),
+            Source: ROLE_SOURCE.GROUP,
+            SourceGroupName: 'Engineering',
+        };
+        renderModal(getMember({ UserOrganizationRoles: [groupRole] }));
+
+        fireEvent.click(screen.getByRole('tab', { name: 'Roles and permissions' }));
+
+        expect(screen.getByLabelText(/User Admin/)).toBeDisabled();
+        expect(
+            screen.getByRole('button', {
+                name: 'More info: Assigned by a group. Remove the user from the group to change this role',
+            })
+        ).toBeInTheDocument();
+    });
+
+    it('does not explain a role assigned directly', () => {
+        renderModal(getMember({ UserOrganizationRoles: [getRoleAssignment(mockUserAdminRole)] }));
+
+        fireEvent.click(screen.getByRole('tab', { name: 'Roles and permissions' }));
+
+        expect(screen.getByLabelText('User Admin')).toBeEnabled();
+        expect(screen.queryByRole('button', { name: /Assigned by a group/ })).not.toBeInTheDocument();
+    });
+
     it('disables role selection when the member roles failed to load', () => {
         renderModal(getMember({ roleState: 'rejected' }));
 
