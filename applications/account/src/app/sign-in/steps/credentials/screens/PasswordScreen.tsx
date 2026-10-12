@@ -16,24 +16,20 @@ import { getSignInText } from '../continueTo';
 import { CredentialsUsernameField } from '../fields/CredentialsUsernameField';
 import { LoginErrorBlock } from '../fields/LoginErrorBlock';
 import { PasswordField } from '../fields/PasswordField';
-import { RememberCheckbox } from '../fields/RememberCheckbox';
 import { SignUpPrompt } from '../fields/SignUpPrompt';
+import { StaySignedInCheckbox, useStaySignedIn } from '../fields/StaySignedInCheckbox';
 import { SubmitButton, getSignInButtonText } from '../fields/SubmitButton';
 import { TroubleSigningInDropdown } from '../fields/TroubleSigningInDropdown';
 import { getHelpLinks } from '../helpLinks';
-import { selectErrorMessage, selectSubmitting, selectUsername } from '../state-machine/credentialsStateMachine';
-import { useRememberPreference } from '../useRememberPreference';
+import {
+    selectErrorMessage,
+    selectPersistent,
+    selectSubmitting,
+    selectUsername,
+} from '../state-machine/credentialsStateMachine';
 
 export const PasswordScreen: SignInScreen = ({ onBack }: SignInScreenProps) => {
-    const {
-        layout,
-        paths,
-        compactForm,
-        isPorkbun,
-        remember: rememberMode,
-        showContinueTo,
-        toAppName,
-    } = useSignInProps();
+    const { layout, paths, compactForm, isPorkbun, showContinueTo, toAppName, showRememberCheckbox } = useSignInProps();
     const actorRef = CredentialsContext.useActorRef();
     const errorMessage = CredentialsContext.useSelector(selectErrorMessage);
     const { getPayload } = useLoginChallengeContext();
@@ -44,15 +40,17 @@ export const PasswordScreen: SignInScreen = ({ onBack }: SignInScreenProps) => {
     const initialUsername = CredentialsContext.useSelector(selectUsername);
     const [username, setUsername] = useState(initialUsername);
     const [password, setPassword] = useState('');
-    const remember = useRememberPreference(rememberMode);
     const signInText = getSignInText({ showContinueTo, toAppName });
     const { validator, onFormSubmit } = useFormErrors();
+
+    const initialPersistentValue = CredentialsContext.useSelector(selectPersistent);
+    const staySignedIn = useStaySignedIn(initialPersistentValue);
 
     const handleSubmit = async () => {
         const payload = await getPayload();
         actorRef.send({
             type: 'credentials.submitted',
-            payload: { username, password, persistent: remember.persistent, payload },
+            payload: { username, password, persistent: staySignedIn.persistent, payload },
         });
     };
 
@@ -89,7 +87,7 @@ export const PasswordScreen: SignInScreen = ({ onBack }: SignInScreenProps) => {
                         }}
                     />
                     <LoginErrorBlock message={errorMessage} />
-                    <RememberCheckbox remember={remember} disabled={submitting} />
+                    {showRememberCheckbox && <StaySignedInCheckbox staySignedIn={staySignedIn} disabled={submitting} />}
                     <SubmitButton submitting={submitting} compactForm={compactForm}>
                         {getSignInButtonText(submitting, signInText)}
                     </SubmitButton>
