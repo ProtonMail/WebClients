@@ -1389,6 +1389,9 @@
       ],
       "Detach": [
         "Απόσπαση"
+      ],
+      "Import paused": [
+        "Η εισαγωγή διακόπηκε"
       ]
     },
     "Action: Docs": {
@@ -4561,6 +4564,9 @@
       ],
       "Not enough browser storage": [
         "Ανεπαρκής αποθηκευτικός χώρος προγράμματος περιήγησης"
+      ],
+      "You reached the maximum number of connected addresses": [
+        "Φτάσατε τον μέγιστο αριθμό συνδεδεμένων διευθύνσεων"
       ]
     },
     "error": {
@@ -8120,6 +8126,12 @@
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Προσωρινά μη διαθέσιμο λόγω υψηλής ζήτησης. Παρακαλούμε δοκιμάστε ξανά αργότερα."
+      ],
+      "If you've already upgraded, you can resume your import in ${ easySwitchSettingsLink }. You can also cancel it there.": [
+        "Αν έχετε ήδη κάνει αναβάθμιση, μπορείτε να συνεχίσετε τη διαδικασία εισαγωγής στην ενότητα ${ easySwitchSettingsLink }. Μπορείτε επίσης να την ακυρώσετε από εκεί."
+      ],
+      "Your import is blocked. Upgrade now to bring the rest of your files over.": [
+        "Η εισαγωγή σας έχει αποκλειστεί. Κάντε αναβάθμιση τώρα για να μεταφέρετε τα υπόλοιπα αρχεία σας."
       ]
     },
     "info": {
@@ -14859,6 +14871,9 @@
       ],
       "Bring your Google Drive files to ${ DRIVE_APP_NAME }": [
         "Μεταφέρετε τα αρχεία σας από το Google Drive στο ${ DRIVE_APP_NAME }"
+      ],
+      "More storage needed to finish your import": [
+        "Απαιτείται περισσότερος αποθηκευτικός χώρος για την ολοκλήρωση της εισαγωγής σας"
       ]
     },
     "Today icon tooltip in mini calendar": {

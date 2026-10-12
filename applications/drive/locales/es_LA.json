@@ -1386,6 +1386,12 @@
       ],
       "Switch to ${ planName }": [
         "Cambiar a ${ planName }"
+      ],
+      "Detach": [
+        "Desadjuntar"
+      ],
+      "Import paused": [
+        "Importación pausada"
       ]
     },
     "Action: Docs": {
@@ -1503,6 +1509,12 @@
       "${ quantity } custom domain": [
         "${ quantity } dominio personalizado",
         "${ quantity } dominios personalizados"
+      ],
+      "Managed Service Provider": [
+        "Proveedor de Servicios Gestionados"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Las organizaciones con el complemento de Proveedor de Servicios Gestionados pueden crear y administrar organizaciones subsidiarias."
       ]
     },
     "Alert": {
@@ -1793,6 +1805,9 @@
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "Aplicación de escritorio de ${ MAIL_APP_NAME }"
+      ],
+      "${ appName } Desktop application": [
+        "Aplicación de escritorio de ${ appName }"
       ]
     },
     "Bug category": {
@@ -4546,6 +4561,12 @@
       ],
       "Incorrect second password. Please try again.": [
         "La segunda contraseña no es correcta. Inténtelo de nuevo."
+      ],
+      "Not enough browser storage": [
+        "No hay suficiente almacenamiento en el navegador"
+      ],
+      "You reached the maximum number of connected addresses": [
+        "Alcanzó el número máximo de direcciones conectadas"
       ]
     },
     "error": {
@@ -8093,6 +8114,12 @@
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Temporalmente no disponible por alta demanda. Intente más tarde."
+      ],
+      "If you've already upgraded, you can resume your import in ${ easySwitchSettingsLink }. You can also cancel it there.": [
+        "Si ya ha actualizado, puede reanudar la importación en ${ easySwitchSettingsLink }. También puede cancelarla ahí."
+      ],
+      "Your import is blocked. Upgrade now to bring the rest of your files over.": [
+        "La importación está bloqueada. Actualice ahora para traer el resto de sus archivos."
       ]
     },
     "info": {
@@ -14988,6 +15015,12 @@
       ],
       "Bring your Google Drive files to ${ DRIVE_APP_NAME }": [
         "Traiga sus archivos de Google Drive a ${ DRIVE_APP_NAME }"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "More storage needed to finish your import": [
+        "Se necesita más almacenamiento para finalizar la importación"
       ]
     },
     "Today icon tooltip in mini calendar": {
