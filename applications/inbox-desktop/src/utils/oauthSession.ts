@@ -1,6 +1,6 @@
 import { ipcLogger } from "./log";
 
-const OAUTH_PROCESS_TIMEOUT_MS = 10 * 1000; // 10 seconds
+const OAUTH_SESSION_TIMEOUT_MS = 10 * 1000; // 10 seconds
 
 type OAuthSession = {
     authorizationUrl: string;
@@ -9,21 +9,16 @@ type OAuthSession = {
 
 const sessions = new Map<string, OAuthSession>();
 
-const syncOAuthProcessGlobal = () => {
-    global.oauthProcess = sessions.size > 0;
-};
-
 export const startOAuthSession = (sessionId: string, authorizationUrl: string) => {
     // Clear any pre-existing session with the same ID before starting a new one
     clearOAuthSession(sessionId);
 
     const timeoutHandle = setTimeout(() => {
-        ipcLogger.warn(`oauthProcess session ${sessionId} timed out, clearing state`);
+        ipcLogger.warn(`oauthSession ${sessionId} timed out, clearing state`);
         clearOAuthSession(sessionId);
-    }, OAUTH_PROCESS_TIMEOUT_MS);
+    }, OAUTH_SESSION_TIMEOUT_MS);
 
     sessions.set(sessionId, { authorizationUrl, timeoutHandle });
-    syncOAuthProcessGlobal();
 };
 
 export const clearOAuthSession = (sessionId: string) => {
@@ -32,7 +27,6 @@ export const clearOAuthSession = (sessionId: string) => {
         clearTimeout(session.timeoutHandle);
         sessions.delete(sessionId);
     }
-    syncOAuthProcessGlobal();
 };
 
 const oauthWindowIds = new Set<number>();
@@ -41,7 +35,7 @@ export const registerOAuthWindow = (id: number) => oauthWindowIds.add(id);
 export const unregisterOAuthWindow = (id: number) => oauthWindowIds.delete(id);
 export const isOAuthWindow = (id: number) => oauthWindowIds.has(id);
 
-export const isDynamicOAuthURL = (url: string): boolean => {
+export const matchesActiveOAuthSession = (url: string): boolean => {
     if (sessions.size === 0) return false;
     try {
         const incoming = new URL(url);
