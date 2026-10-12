@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -14,6 +16,9 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import claimExternalAddress from '@proton/styles/assets/img/byoe/claim-external-address.svg';
 import claimStepDone from '@proton/styles/assets/img/byoe/claim-step-done.svg';
 import claimStepNext from '@proton/styles/assets/img/byoe/claim-step-next.svg';
+import { tracker } from '@proton/telemetry-tracker/tracker';
+
+import { BYOEClaimableAddressModalAction, BYOEClaimableAddressModalShown } from '../../../telemetry/events';
 
 interface Props extends ModalStateProps {
     emailAddress: string;
@@ -24,15 +29,25 @@ interface Props extends ModalStateProps {
 export const ClaimableAddressModal = ({ emailAddress, onClaim, ...rest }: Props) => {
     const [loading, withLoading] = useLoading();
 
+    useEffect(() => {
+        tracker.emit(BYOEClaimableAddressModalShown);
+    }, []);
+
     const handleConnectClick = async () => {
+        tracker.emit(BYOEClaimableAddressModalAction, { dimensions: { claimableAddressAction: 'claim' } });
         const claimed = await withLoading(onClaim());
         if (claimed) {
             rest.onClose();
         }
     };
 
+    const handleClose = () => {
+        tracker.emit(BYOEClaimableAddressModalAction, { dimensions: { claimableAddressAction: 'close' } });
+        rest.onClose();
+    };
+
     return (
-        <Modal {...rest} disableCloseOnEscape={loading}>
+        <Modal {...rest} disableCloseOnEscape={loading} onClose={handleClose}>
             <ModalContent>
                 <div className="flex flex-column items-center text-center gap-5">
                     <img src={claimExternalAddress} height={176} width={440} alt="" />
@@ -88,6 +103,11 @@ export const ClaimableAddressModal = ({ emailAddress, onClaim, ...rest }: Props)
                             color="norm"
                             target="_blank"
                             rel="noopener noreferrer"
+                            onClick={() =>
+                                tracker.emit(BYOEClaimableAddressModalAction, {
+                                    dimensions: { claimableAddressAction: 'learn_more' },
+                                })
+                            }
                             href={getKnowledgeBaseUrl('/troubleshooting-easy-switch#gmail-connection-setup')}
                         >
                             {c('Action').t`Learn how this works`}

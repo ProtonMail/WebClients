@@ -37,6 +37,7 @@ import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafa
 import { isProduction } from '@proton/shared/lib/helpers/sentry';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import { telemetry } from '@proton/shared/lib/telemetry';
+import { initTracker } from '@proton/telemetry-tracker/tracker';
 import noop from '@proton/utils/noop';
 
 import locales from '../locales';
@@ -56,6 +57,8 @@ export const bootstrapApp = async ({ config }: { config: ProtonConfig }) => {
     initElectronClassnames();
     initSafariFontFixClassnames();
     startLogoutListener();
+
+    initTracker({ api: silentApi });
 
     const appName = config.APP_NAME;
 

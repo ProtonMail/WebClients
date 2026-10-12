@@ -11,9 +11,11 @@ import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
 import type { Address } from '@proton/shared/lib/interfaces';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
+import { tracker } from '@proton/telemetry-tracker/tracker';
 
 import { useEasySwitchDispatch } from '../../../logic/store';
 import { loadSyncList } from '../../../logic/sync/sync.actions';
+import { BYOEAddressAction } from '../../../telemetry/events';
 import { updateBYOEAddressConnection } from '../../../thunks/updateBYOEAddressConnection';
 
 interface Props extends ModalProps {
@@ -40,6 +42,13 @@ const DisconnectBYOEModal = ({ address, ...rest }: Props) => {
         await dispatch(updateBYOEAddressConnection({ address, type: 'disconnect', skipDisable }));
         // also update the syncs list
         void easySwitchDispatch(loadSyncList());
+
+        tracker.emit(BYOEAddressAction, {
+            dimensions: {
+                addressAction: 'disconnect',
+                provider: 'google',
+            },
+        });
 
         onClose?.();
     };
