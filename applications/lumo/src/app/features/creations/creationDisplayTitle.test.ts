@@ -22,5 +22,10 @@ describe('getCreationDisplayTitle', () => {
 
     it('hides placeholder gallery filename while loading', () => {
         expect(getCreationDisplayTitle('creation-abc.md', undefined, true)).toBe('');
+        expect(getCreationDisplayTitle('creation-abc', undefined, true)).toBe('');
+    });
+
+    it('strips extension from decrypted filename', () => {
+        expect(getCreationDisplayTitle('Calculator.ts', undefined, false)).toBe('Calculator');
     });
 });

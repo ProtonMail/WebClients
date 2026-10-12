@@ -65,8 +65,8 @@ export function useGeneratedGalleryCreations() {
                             id: localId,
                             spaceId: localSpaceId,
                             uploadedAt: createdAt.toISOString(),
-                            mimeType: 'text/markdown',
-                            filename: `creation-${localId}.md`,
+                            mimeType: 'application/octet-stream',
+                            filename: `creation-${localId}`,
                             role: 'assistant',
                         })
                     );

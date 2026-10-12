@@ -53,7 +53,6 @@ import { markdownToPlainText } from './artifactMarkdownPlainText';
 import { artifactSupportsPdfExport, buildArtifactFileName, exportArtifactPdf } from './artifactPdfExport';
 import type { ArtifactPdfExportResult } from './artifactPdfExport';
 import { artifactSupportsPptxExport, downloadArtifactPptx } from './artifactPptxExport';
-import { buildStandalonePresentationHtml } from './artifactPresentationStandalone';
 import type { ArtifactRegistry, ArtifactVersion } from './artifactRegistry';
 import type { ArtifactSaveFormat } from './artifactSaveFormats';
 import {
@@ -61,6 +60,7 @@ import {
     getArtifactSaveFormats,
     isArtifactSaveFormatSupported,
 } from './artifactSaveFormats';
+import { buildArtifactSourceDownloadFile } from './artifactSourceDownload';
 import { ARTIFACT_TYPE_CONFIG } from './artifactTypeConfig';
 import { normalizeDocumentCardFences } from './artifactVizCards';
 import type { ArtifactType } from './parseArtifacts';
@@ -139,15 +139,6 @@ interface PanelHeaderProps {
 }
 
 export type ArtifactPanelLayout = 'docked' | 'mobile' | 'fullscreen';
-
-const SOURCE_DOWNLOAD_MIME_TYPES: Record<string, string> = {
-    md: 'text/markdown;charset=utf-8',
-    html: 'text/html;charset=utf-8',
-};
-
-const getSourceDownloadMimeType = (extension: string): string => {
-    return SOURCE_DOWNLOAD_MIME_TYPES[extension] ?? 'text/plain;charset=utf-8';
-};
 
 const getPdfDownloadTelemetryResult = (result: ArtifactPdfExportResult): ArtifactDownloadResult => {
     if (result === 'unavailable' || result === 'failed') {
@@ -733,14 +724,9 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
     };
 
     const handleDownload = async () => {
-        const ext = ARTIFACT_TYPE_CONFIG[artifact.type].downloadExt(artifact);
-        const filename = buildArtifactFileName(artifact, ext);
         try {
-            // A presentation's raw content is bare <section> fragments that don't open as a deck, so
-            // it is downloaded as a self-contained reveal.js page instead.
-            const content =
-                artifact.type === 'presentation' ? await buildStandalonePresentationHtml(artifact) : artifact.content;
-            downloadBlob(new Blob([content], { type: getSourceDownloadMimeType(ext) }), filename);
+            const { data, fileName, mimeType } = await buildArtifactSourceDownloadFile(artifact);
+            downloadBlob(new Blob([data], { type: mimeType }), fileName);
             reportDownload('source', 'success');
         } catch {
             reportDownload('source', 'error');
