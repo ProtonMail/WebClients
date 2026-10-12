@@ -22,6 +22,17 @@ im.$media-expressions: $media-expressions;
 	@include im.media('<=small') {
 		min-block-size: 15rem;
 	}
+
+	// Shadow rising from the bottom edge, so the cropped moon fades out instead of being cut off
+	&::after {
+		content: '';
+		position: absolute;
+		inset-inline: 0;
+		inset-block-end: 0;
+		block-size: 50%;
+		background: linear-gradient(to top, rgb(8 10 23) 0%, rgb(8 10 23) 25%, rgb(8 10 23 / 0) 100%);
+		pointer-events: none;
+	}
 }
 
 .bf2026HeaderImage {
@@ -30,10 +41,16 @@ im.$media-expressions: $media-expressions;
 	inline-size: 100%;
 	block-size: 100%;
 	object-fit: cover;
+
+	// Zoom in on the moon so it spans most of the header width with its top edge just below the close
+	// button. The origin sits above centre, so scaling pushes the moon down and crops its lower half.
+	transform: scale(1.75);
+	transform-origin: 50% 22%;
 }
 
 .bf2026HeaderContent {
 	position: relative;
+	z-index: 1;
 	flex: 1;
 	display: flex;
 	flex-direction: column;
