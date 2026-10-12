@@ -8,6 +8,14 @@ import ImportsTable from './ImportsTable';
 
 const server = setupServer();
 
+jest.mock('../../hooks/useGetIsBYOE', () => ({
+    useGetIsBYOE: () => jest.fn().mockResolvedValue(false),
+}));
+
+jest.mock('@proton/telemetry-tracker/tracker', () => ({
+    tracker: { emit: jest.fn() },
+}));
+
 jest.mock('@proton/mail/store/importerConfig/hooks', () => ({
     useApiEnvironmentConfig: () => [
         {

@@ -8,6 +8,7 @@ import type { WithLoading } from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { Address } from '@proton/shared/lib/interfaces';
 import { getIsBYOEAccount } from '@proton/shared/lib/keys';
+import { tracker } from '@proton/telemetry-tracker/tracker';
 
 import { getTokensByFeature } from '../api';
 import { getBYOEAddressLimit } from '../helpers/byoeAddresses';
@@ -21,6 +22,7 @@ import {
 import { useEasySwitchDispatch, useEasySwitchSelector } from '../logic/store';
 import { SyncTokenStrategy, createSyncItem, deleteSyncItem, resumeSyncItem } from '../logic/sync/sync.actions';
 import { selectSyncByEmail } from '../logic/sync/sync.selectors';
+import { BYOEAddressAction } from '../telemetry/events';
 import { updateBYOEAddressConnection } from '../thunks/updateBYOEAddressConnection';
 import useBYOEAddressesCounts from './useBYOEAddressesCounts';
 import useOAuthPopup from './useOAuthPopup';
@@ -191,6 +193,13 @@ const useReconnectSync = (address: Address) => {
                     handleError(e);
                     return;
                 }
+
+                tracker.emit(BYOEAddressAction, {
+                    dimensions: {
+                        addressAction: 'reconnect',
+                        provider: 'google',
+                    },
+                });
 
                 createNotification({ text: c('Notification').t`Address reconnected.` });
             });
