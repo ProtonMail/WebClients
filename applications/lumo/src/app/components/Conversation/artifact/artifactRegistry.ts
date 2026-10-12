@@ -1,4 +1,4 @@
-import { getMessageBlocks } from '../../../messageHelpers';
+import { getMessageBlocks, hasArtifactAction } from '../../../messageHelpers';
 import { type Message, type MessageId, isManualArtifactEditMessage } from '../../../types';
 import { Role } from '../../../types-api';
 import {
@@ -8,11 +8,17 @@ import {
 } from './createArtifactTool';
 import type { ArtifactType, ParsedArtifact } from './parseArtifacts';
 
-interface ArtifactVersion {
+/** What produced a version: a chat prompt, a select-and-ask edit, or the user editing it by hand. */
+type ArtifactVersionSource = 'prompt' | 'inline-edit' | 'manual-edit';
+
+export interface ArtifactVersion {
     messageId: MessageId;
     content: string;
     language?: string;
     createdAt: string;
+    source: ArtifactVersionSource;
+    /** The user's request behind a model version (chat message or inline instruction), on one line. */
+    promptExcerpt?: string;
     /** True while the source message is still generating — promoted to finalized on message finish. */
     provisional?: boolean;
 }
@@ -54,6 +60,47 @@ function getParsedArtifacts(message: Message): ParsedArtifact[] {
     return getToolCallArtifacts(message);
 }
 
+// Long enough to recognise a request in the version history; the UI truncates it further.
+const MAX_PROMPT_EXCERPT_LENGTH = 160;
+
+const toPromptExcerpt = (text: string | undefined): string | undefined => {
+    const singleLine = (text ?? '').replace(/\s+/g, ' ').trim();
+    if (!singleLine) {
+        return undefined;
+    }
+    return singleLine.slice(0, MAX_PROMPT_EXCERPT_LENGTH);
+};
+
+const indexMessagesById = (linearChain: Message[]): Map<MessageId, Message> => {
+    return new Map(
+        linearChain.map((message) => {
+            return [message.id, message];
+        })
+    );
+};
+
+/** Where a version came from and what the user asked for, read from the message that produced it. */
+function getVersionOrigin(
+    message: Message,
+    messagesById: Map<MessageId, Message>
+): Pick<ArtifactVersion, 'source' | 'promptExcerpt'> {
+    if (isManualArtifactEditMessage(message)) {
+        return { source: 'manual-edit' };
+    }
+
+    const parent = message.parentId ? messagesById.get(message.parentId) : undefined;
+    if (!parent || parent.role !== Role.User) {
+        return { source: 'prompt' };
+    }
+
+    if (hasArtifactAction(parent)) {
+        // The parent's content is the generated instruction prompt; the user's own words are here.
+        return { source: 'inline-edit', promptExcerpt: toPromptExcerpt(parent.artifactAction.userInstruction) };
+    }
+
+    return { source: 'prompt', promptExcerpt: toPromptExcerpt(parent.content) };
+}
+
 /**
  * Walks a conversation's linear message chain and builds a registry of artifacts by id,
  * accumulating one version per finalized assistant message that reuses that id, plus one
@@ -61,6 +108,7 @@ function getParsedArtifacts(message: Message): ParsedArtifact[] {
  */
 export function buildArtifactRegistry(linearChain: Message[]): ArtifactRegistry {
     const registry: ArtifactRegistry = {};
+    const messagesById = indexMessagesById(linearChain);
 
     for (const message of linearChain) {
         // Note: no `!message.content` shortcut here — a message can carry an artifact via a
@@ -77,6 +125,7 @@ export function buildArtifactRegistry(linearChain: Message[]): ArtifactRegistry 
                 content: artifact.content,
                 language: artifact.language,
                 createdAt: message.createdAt,
+                ...getVersionOrigin(message, messagesById),
             };
 
             if (entry) {
@@ -163,6 +212,7 @@ export function mergeProvisionalArtifactRegistry(
     linearChain: Message[]
 ): ArtifactRegistry {
     const merged = cloneRegistry(finalizedRegistry);
+    const messagesById = indexMessagesById(linearChain);
 
     for (const message of linearChain) {
         if (message.role !== Role.Assistant || message.status !== undefined) {
@@ -175,6 +225,7 @@ export function mergeProvisionalArtifactRegistry(
                 content: artifact.content,
                 language: artifact.language,
                 createdAt: message.createdAt,
+                ...getVersionOrigin(message, messagesById),
                 provisional: true,
             };
 

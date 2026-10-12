@@ -8,6 +8,7 @@ export interface SidebarVisibility {
     showMobileHeader: boolean;
     showSearch: boolean;
     showGallery: boolean;
+    showCreations: boolean;
     showUserDropdown: boolean;
     showCollapseToggle: boolean;
 }
@@ -15,7 +16,7 @@ export interface SidebarVisibility {
 export const useSidebarVisibility = (): SidebarVisibility => {
     const { isSmallScreen } = useSidebar();
     const isGuest = useIsGuest();
-    const { imageTools } = useLumoFlags();
+    const { imageTools, artifactsView } = useLumoFlags();
 
     return {
         isSmallScreen,
@@ -24,6 +25,7 @@ export const useSidebarVisibility = (): SidebarVisibility => {
         // Search is hidden only for guests
         showSearch: !isGuest,
         showGallery: imageTools,
+        showCreations: artifactsView,
         showUserDropdown: !isGuest,
         // Collapse toggle is desktop-only regardless of auth state
         showCollapseToggle: !isSmallScreen,

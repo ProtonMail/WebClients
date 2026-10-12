@@ -11,9 +11,9 @@ const registry: ArtifactRegistry = {
         type: 'document',
         title: 'Latest title',
         versions: [
-            { messageId: messageIdA, content: 'v1 content', createdAt: '2026-01-01' },
-            { messageId: messageIdB, content: 'v2 content', createdAt: '2026-01-02' },
-            { messageId: messageIdC, content: 'v3 content here', createdAt: '2026-01-03' },
+            { messageId: messageIdA, content: 'v1 content', createdAt: '2026-01-01', source: 'prompt' },
+            { messageId: messageIdB, content: 'v2 content', createdAt: '2026-01-02', source: 'prompt' },
+            { messageId: messageIdC, content: 'v3 content here', createdAt: '2026-01-03', source: 'prompt' },
         ],
     },
 };

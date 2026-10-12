@@ -36,6 +36,11 @@ import MainContainer from './MainContainer';
 import './Conversation.scss';
 
 const GalleryView = lazy(() => import('../../features/gallery/GalleryView').then((m) => ({ default: m.GalleryView })));
+const CreationsView = lazy(() =>
+    import('../../features/creations/CreationsView').then((m) => {
+        return { default: m.CreationsView };
+    })
+);
 
 const ConversationPageComponentInner = () => {
     // ** Hooks **
@@ -43,6 +48,7 @@ const ConversationPageComponentInner = () => {
     const navigate = useNavigate();
     const dispatch = useLumoDispatch();
     const isGalleryRoute = !!useRouteMatch({ path: '/images', exact: true });
+    const isCreationsRoute = !!useRouteMatch({ path: '/creations', exact: true });
     const { conversationId: curConversationId } = useParams<RouteParams>();
     const { setConversationId } = useConversation();
     const isGuest = useIsGuest();
@@ -227,7 +233,12 @@ const ConversationPageComponentInner = () => {
                         />
                     </Suspense>
                 )}
-                {!curConversationId && !isGalleryRoute && (
+                {!curConversationId && isCreationsRoute && (
+                    <Suspense fallback={<ConversationSkeleton />}>
+                        <CreationsView />
+                    </Suspense>
+                )}
+                {!curConversationId && !isGalleryRoute && !isCreationsRoute && (
                     <MainContainer
                         isProcessingAttachment={isProcessingAttachment}
                         initialQuery={initialQuery || undefined}

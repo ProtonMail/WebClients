@@ -20,9 +20,15 @@ import {
     bucketArtifactContentLength,
     sendArtifactContentCopiedEvent,
     sendArtifactDownloadedEvent,
+    sendArtifactVersionHistoryOpenedEvent,
+    sendArtifactVersionSelectedEvent,
     sendArtifactWebpageViewToggledEvent,
 } from '../../../util/telemetry';
-import type { ArtifactDownloadFormat, ArtifactDownloadResult } from '../../../util/telemetry';
+import type {
+    ArtifactDownloadFormat,
+    ArtifactDownloadResult,
+    ArtifactVersionSelectSource,
+} from '../../../util/telemetry';
 import { useNativeComposerVisibilityApi } from '../../Composer/hooks/useNativeComposerVisibilityApi';
 import DropdownMenu from '../../DropdownMenu';
 import { LumoIcon } from '../../LumoIcon/LumoIcon';
@@ -39,6 +45,7 @@ import { ArtifactPanelSpotlight } from './ArtifactPanelSpotlight';
 import { ArtifactPreviewErrorBoundary } from './ArtifactPreviewErrorBoundary';
 import type { ArtifactRichTextEditorHandle } from './ArtifactRichTextEditor';
 import { ArtifactSaveToDriveDropdown } from './ArtifactSaveToDriveDropdown';
+import { ArtifactOlderVersionBanner, ArtifactVersionHistoryDropdown } from './ArtifactVersionHistoryDropdown';
 import { ArtifactViewModeToggle } from './ArtifactViewModeToggle';
 import SaveArtifactToDriveModal from './SaveArtifactToDriveModal';
 import { buildArtifactFileForSave } from './artifactFileBytes';
@@ -47,7 +54,7 @@ import { artifactSupportsPdfExport, buildArtifactFileName, exportArtifactPdf } f
 import type { ArtifactPdfExportResult } from './artifactPdfExport';
 import { artifactSupportsPptxExport, downloadArtifactPptx } from './artifactPptxExport';
 import { buildStandalonePresentationHtml } from './artifactPresentationStandalone';
-import type { ArtifactRegistry } from './artifactRegistry';
+import type { ArtifactRegistry, ArtifactVersion } from './artifactRegistry';
 import type { ArtifactSaveFormat } from './artifactSaveFormats';
 import {
     artifactSupportsSaveToDrive,
@@ -106,9 +113,9 @@ interface PanelHeaderProps {
     exportHeaderStatusLabel?: string;
     onClose: () => void;
     versionIndex?: number;
-    versionCount?: number;
-    onPrevVersion?: () => void;
-    onNextVersion?: () => void;
+    versions?: ArtifactVersion[];
+    onOpenVersionHistory?: () => void;
+    onSelectVersion?: (index: number) => void;
     switcherEntries?: ArtifactSwitcherEntry[];
     onSelectArtifact?: (id: string) => void;
     webpageViewMode?: WebpageViewMode;
@@ -132,10 +139,6 @@ interface PanelHeaderProps {
 }
 
 export type ArtifactPanelLayout = 'docked' | 'mobile' | 'fullscreen';
-
-const getVersionLabel = (versionNumber: number, totalVersions: number) => {
-    return c('collider_2025:Info').t`v${versionNumber} of ${totalVersions}`;
-};
 
 const SOURCE_DOWNLOAD_MIME_TYPES: Record<string, string> = {
     md: 'text/markdown;charset=utf-8',
@@ -182,9 +185,9 @@ const PanelHeader = ({
     exportHeaderStatusLabel,
     onClose,
     versionIndex,
-    versionCount,
-    onPrevVersion,
-    onNextVersion,
+    versions,
+    onOpenVersionHistory,
+    onSelectVersion,
     switcherEntries,
     onSelectArtifact,
     webpageViewMode,
@@ -247,38 +250,17 @@ const PanelHeader = ({
             <div className="flex flex-row items-center gap-1 shrink-0">
                 {!isStreaming &&
                     !manualEditActive &&
-                    versionCount !== undefined &&
-                    versionCount > 1 &&
-                    versionIndex !== undefined && (
-                        <div className="flex flex-row items-center gap-1 shrink-0">
-                            <Button
-                                icon
-                                shape="ghost"
-                                color="weak"
-                                size="small"
-                                onClick={onPrevVersion}
-                                disabled={versionIndex === 0}
-                                className="artifact-btn"
-                                title={c('collider_2025:Action').t`Previous version`}
-                            >
-                                <LumoIcon name="ChevronLeft" size={16} />
-                            </Button>
-                            <span className="shrink-0 text-nowrap">
-                                {getVersionLabel(versionIndex + 1, versionCount)}
-                            </span>
-                            <Button
-                                icon
-                                shape="ghost"
-                                color="weak"
-                                size="small"
-                                onClick={onNextVersion}
-                                disabled={versionIndex === versionCount - 1}
-                                className="artifact-btn"
-                                title={c('collider_2025:Action').t`Next version`}
-                            >
-                                <LumoIcon name="ChevronRight" size={16} />
-                            </Button>
-                        </div>
+                    versions &&
+                    versions.length > 1 &&
+                    versionIndex !== undefined &&
+                    onOpenVersionHistory &&
+                    onSelectVersion && (
+                        <ArtifactVersionHistoryDropdown
+                            versions={versions}
+                            selectedIndex={versionIndex}
+                            onOpen={onOpenVersionHistory}
+                            onSelectVersion={onSelectVersion}
+                        />
                     )}
                 {!isStreaming &&
                     !manualEditActive &&
@@ -614,7 +596,11 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
     }
 
     const artifact = selectedArtifact!;
-    const versionCount = selectedId ? registry[selectedId]?.versions.length : undefined;
+    const versions = selectedId ? registry[selectedId]?.versions : undefined;
+    const versionCount = versions?.length;
+    // Everything that changes an artifact (Lumo, inline edits, manual edits) works on the latest
+    // version, so an older version is shown read-only with a banner saying so.
+    const isViewingOlderVersion = versionCount !== undefined && selectedVersionIndex < versionCount - 1;
     const switcherEntries = buildSwitcherEntries(registry, hasUnseenRevision);
     // Only latest-version document artifacts can be manually edited — editing an older version
     // would raise branch-fork semantics (overwrite vs. fork the conversation) that aren't solved yet.
@@ -701,6 +687,7 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
             sendArtifactContentCopiedEvent({
                 artifactType: artifact.type,
                 layout,
+                viewedOlderVersion: isViewingOlderVersion,
             });
             setCopySuccess(true);
             setTimeout(() => {
@@ -723,7 +710,26 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
             layout,
             result,
             contentLengthBucket,
+            viewedOlderVersion: isViewingOlderVersion,
         });
+    };
+
+    const handleOpenVersionHistory = () => {
+        sendArtifactVersionHistoryOpenedEvent({
+            artifactType: artifact.type,
+            layout,
+            versionCount: versionCount ?? 1,
+        });
+    };
+
+    const handleSelectVersion = (index: number, source: ArtifactVersionSelectSource) => {
+        sendArtifactVersionSelectedEvent({
+            artifactType: artifact.type,
+            layout,
+            source,
+            versionsBehindLatest: (versionCount ?? 1) - 1 - index,
+        });
+        goToVersion(index);
     };
 
     const handleDownload = async () => {
@@ -888,12 +894,10 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
                         onEnterFullscreen={layout === 'docked' ? enterFullscreen : undefined}
                         onExitFullscreen={isFullscreen ? exitFullscreen : undefined}
                         versionIndex={selectedVersionIndex}
-                        versionCount={versionCount}
-                        onPrevVersion={() => {
-                            goToVersion(selectedVersionIndex - 1);
-                        }}
-                        onNextVersion={() => {
-                            goToVersion(selectedVersionIndex + 1);
+                        versions={versions}
+                        onOpenVersionHistory={handleOpenVersionHistory}
+                        onSelectVersion={(index) => {
+                            handleSelectVersion(index, 'history');
                         }}
                         switcherEntries={switcherEntries}
                         onSelectArtifact={(id) => {
@@ -914,6 +918,16 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
                     />
                 </div>
             </ArtifactPanelSpotlight>
+            {isViewingOlderVersion && !manualEditActive && versions && (
+                <ArtifactOlderVersionBanner
+                    version={versions[selectedVersionIndex]}
+                    versionNumber={selectedVersionIndex + 1}
+                    versionCount={versions.length}
+                    onViewLatest={() => {
+                        handleSelectVersion(versions.length - 1, 'banner');
+                    }}
+                />
+            )}
             <div
                 ref={contentRef}
                 className="artifact-content-area relative flex flex-column flex-1 min-h-0 min-w-0 overflow-hidden w-full"
@@ -953,7 +967,9 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
                             resetKey={`${artifact.id}-${selectedVersionIndex}-${webpageViewMode}`}
                         />
                         {isArtifactRevisionLoading && <ArtifactPanelRevisionOverlay artifactType={artifact.type} />}
-                        {isArtifactsViewFlagEnabled && (
+                        {/* Hidden on older versions: the selection would come from this version while the
+                            model revises the latest, where that text may no longer exist. */}
+                        {isArtifactsViewFlagEnabled && !isViewingOlderVersion && (
                             <ArtifactInlineEdit
                                 containerRef={contentRef}
                                 artifactId={artifact.id}

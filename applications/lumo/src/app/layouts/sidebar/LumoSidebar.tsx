@@ -20,6 +20,7 @@ import { LumoSidebarUpsell } from '../../upsells';
 import LumoLogoHeader from '../header/LumoLogo';
 import { ChatsSidebarButton } from './components/ChatsSidebarButton';
 import { ChatsSidebarSection } from './components/ChatsSidebarSection';
+import { CreationsSidebarButton } from './components/CreationsSidebarButton';
 import { GallerySidebarButton } from './components/GallerySidebarButton';
 import { NewChatSidebarButton } from './components/NewChatSidebarButton';
 import { SearchSection } from './components/SearchSection';
@@ -38,11 +39,14 @@ const ProjectsSidebarSection = lazy(() =>
 const LumoSidebarContent = () => {
     const { isSmallScreen, toggle, closeOnItemClick } = useSidebar();
     const history = useHistory();
-    const { showMobileHeader, showSearch, showGallery } = useSidebarVisibility();
+    const { showMobileHeader, showSearch, showGallery, showCreations } = useSidebarVisibility();
     const isGuest = useIsGuest();
     const settingsModal = useModalStateObject();
-    const { modalProps: searchModalProps, openModal: openSearchModal, render: searchModalRender } =
-        useModalStateObject();
+    const {
+        modalProps: searchModalProps,
+        openModal: openSearchModal,
+        render: searchModalRender,
+    } = useModalStateObject();
     const { registerOpenFunction } = useSearchModal();
 
     const { apiKeyManagement } = useLumoFlags();
@@ -78,6 +82,7 @@ const LumoSidebarContent = () => {
                     <div className="sidebar-section flex flex-column gap-1">
                         {showSearch && <SearchSection onSearchClick={() => openSearchModal(true)} />}
                         {showGallery && <GallerySidebarButton onItemClick={closeOnItemClick} />}
+                        {showCreations && <CreationsSidebarButton onItemClick={closeOnItemClick} />}
                         {apiKeyManagement && (
                             <SidebarItem
                                 icon="CodeXml"
