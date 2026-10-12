@@ -5,7 +5,7 @@ import { ConnectionState } from 'livekit-client';
 import type { MeetState } from '@proton/meet/store/rootReducer';
 
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
-import { MERGE_GAP_MS, READY_TIMEOUT_MS, useTranscriptions } from './useTranscriptions';
+import { LINE_FULL_LENGTH, MERGE_GAP_MS, READY_TIMEOUT_MS, useTranscriptions } from './useTranscriptions';
 
 const reportMeetError = vi.fn();
 const decryptMessage = vi.fn();
@@ -260,10 +260,13 @@ describe('useTranscriptions', () => {
     });
 
     it('keeps a growing segment on the line it joined, even once that line passes the length cap', async () => {
+        const first = 'a'.repeat(LINE_FULL_LENGTH - 10);
+        const spokenSoFar = 'b'.repeat(5);
+        const spokenLater = 'b'.repeat(LINE_FULL_LENGTH);
         decryptMessage
-            .mockResolvedValueOnce({ message: 'a'.repeat(100) })
-            .mockResolvedValueOnce({ message: 'b'.repeat(50) })
-            .mockResolvedValueOnce({ message: 'b'.repeat(100) });
+            .mockResolvedValueOnce({ message: first })
+            .mockResolvedValueOnce({ message: spokenSoFar })
+            .mockResolvedValueOnce({ message: spokenLater });
 
         const { result } = renderHook(() => useTranscriptions());
 
@@ -271,20 +274,19 @@ describe('useTranscriptions', () => {
         await emit(btoa('second'), { id: 'segment-2', isFinal: false });
         await emit(btoa('second-again'), { id: 'segment-2', isFinal: false });
 
-        expect(result.current.segments.map((segment) => segment.text)).toEqual([
-            `${'a'.repeat(100)} ${'b'.repeat(100)}`,
-        ]);
+        expect(result.current.segments.map((segment) => segment.text)).toEqual([`${first} ${spokenLater}`]);
     });
 
     it('starts a new line once the line has reached the length cap', async () => {
-        decryptMessage.mockResolvedValueOnce({ message: 'a'.repeat(180) }).mockResolvedValueOnce({ message: 'next' });
+        const full = 'a'.repeat(LINE_FULL_LENGTH);
+        decryptMessage.mockResolvedValueOnce({ message: full }).mockResolvedValueOnce({ message: 'next' });
 
         const { result } = renderHook(() => useTranscriptions());
 
         await emit(btoa('first'), { id: 'segment-1' });
         await emit(btoa('second'), { id: 'segment-2' });
 
-        expect(result.current.segments.map((segment) => segment.text)).toEqual(['a'.repeat(180), 'next']);
+        expect(result.current.segments.map((segment) => segment.text)).toEqual([full, 'next']);
     });
 
     it('starts a new line when the speaker pauses for longer than the merge gap', async () => {

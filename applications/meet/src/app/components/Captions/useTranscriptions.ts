@@ -21,9 +21,7 @@ const STALE_SEGMENT_MS = 15000;
 const MAX_VISIBLE = 6;
 // Gap between two same-speaker segments below which we treat the split as a breath and merge them.
 export const MERGE_GAP_MS = 1500;
-// A line stops taking in new segments at this length, so an uninterrupted run-on still breaks into
-// readable blocks.
-const MAX_MERGED_LENGTH = 180;
+export const LINE_FULL_LENGTH = 180;
 // How long to wait for a first usable line before calling the agent stuck.
 export const READY_TIMEOUT_MS = 20000;
 
@@ -273,17 +271,19 @@ export const useTranscriptions = (): Transcriptions => {
         const merged: { line: CaptionSegment; memberIds: string[] }[] = [];
         for (const seg of sorted) {
             const last = merged[merged.length - 1];
-            const combinedText = last ? `${last.line.text} ${seg.text}`.trim() : '';
             // An unattributed segment could be anyone, so it never counts as the same speaker.
             const sameSpeaker = Boolean(seg.speakerIdentity) && last?.line.speakerIdentity === seg.speakerIdentity;
             // Gap between the previous line's last update and this segment's first, so a segment
             // that keeps updating can't grow its own gap and split a line that already merged.
             const withinBreath = last && seg.firstSeenAt - last.line.receivedAt <= MERGE_GAP_MS;
-            // Measured without this segment, so one still being spoken can't outgrow the line it
-            // joined and jump to a new one mid-sentence.
-            const lineHasRoom = last && last.line.text.length < MAX_MERGED_LENGTH;
-            if (last && sameSpeaker && withinBreath && lineHasRoom) {
-                last.line = { ...last.line, text: combinedText, isFinal: seg.isFinal, receivedAt: seg.receivedAt };
+            const lineFull = last && last.line.text.length >= LINE_FULL_LENGTH;
+            if (last && sameSpeaker && withinBreath && !lineFull) {
+                last.line = {
+                    ...last.line,
+                    text: `${last.line.text} ${seg.text}`.trim(),
+                    isFinal: seg.isFinal,
+                    receivedAt: seg.receivedAt,
+                };
                 last.memberIds.push(seg.id);
             } else {
                 merged.push({ line: seg, memberIds: [seg.id] });
