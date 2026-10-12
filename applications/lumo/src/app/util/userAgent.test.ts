@@ -17,6 +17,12 @@ const iosUA = (version: string) => `ProtonLumo/${version} (iOS/26.0; iPhone 17)`
 
 const ipadUA = (version: string) => `ProtonLumo/${version} (iPadOS/26.0; iPad Pro)`;
 
+// From iOS 2.1.1 the WebView UA is built by the shared core builder: space after the platform
+// and a hardware identifier instead of a marketing name.
+const iosUANew = (version: string) => `ProtonLumo/${version} (iOS 26.0; Apple iPhone17,1)`;
+
+const ipadUANew = (version: string) => `ProtonLumo/${version} (iPadOS 26.0; Apple iPad14,3)`;
+
 describe('canShowWebComposer', () => {
     it('is true when the native composer flag is off, even on a recent native app', () => {
         setUserAgent(androidUA('2.1.0'));
@@ -39,6 +45,16 @@ describe('canShowWebComposer', () => {
 
     it('is true on iPhone below the minimum version', () => {
         setUserAgent(iosUA('1.3.9'));
+        expect(canShowWebComposer(true)).toBe(true);
+    });
+
+    it('is false on iPhone with the new (>= 2.1.1) UA at or above the minimum version', () => {
+        setUserAgent(iosUANew('2.1.1'));
+        expect(canShowWebComposer(true)).toBe(false);
+    });
+
+    it('is true on iPadOS with the new (>= 2.1.1) UA, whatever the version', () => {
+        setUserAgent(ipadUANew('2.1.1'));
         expect(canShowWebComposer(true)).toBe(true);
     });
 
@@ -110,6 +126,17 @@ describe('getNativeAppInfo', () => {
         setUserAgent(iosUA('2.1.0'));
         expect(getNativeAppInfo()).toEqual({ version: '2.1.0', platform: 'ios' });
     });
+
+    // Regression: the >= 2.1.1 iOS UA has no `iOS/` slash, which made the platform 'unknown'.
+    it('reports the ios platform for an iPhone UA with the new (>= 2.1.1) format', () => {
+        setUserAgent(iosUANew('2.1.1'));
+        expect(getNativeAppInfo()).toEqual({ version: '2.1.1', platform: 'ios' });
+    });
+
+    it('reports the ios platform for an iPadOS UA with the new (>= 2.1.1) format', () => {
+        setUserAgent(ipadUANew('2.1.1'));
+        expect(getNativeAppInfo()).toEqual({ version: '2.1.1', platform: 'ios' });
+    });
 });
 
 describe('canUseNativeAuth', () => {
@@ -136,6 +163,16 @@ describe('canUseNativeAuth', () => {
     it('is false on iPhone below the minimum version', () => {
         setUserAgent(iosUA('2.1.0'));
         expect(canUseNativeAuth()).toBe(false);
+    });
+
+    it('is true on iPhone with the new (>= 2.1.1) UA at the minimum version', () => {
+        setUserAgent(iosUANew('2.1.1'));
+        expect(canUseNativeAuth()).toBe(true);
+    });
+
+    it('is true on iPad with the new (>= 2.1.1) UA above the minimum version', () => {
+        setUserAgent(ipadUANew('2.2.0'));
+        expect(canUseNativeAuth()).toBe(true);
     });
 
     it('is true on Android at the minimum version', () => {
@@ -173,6 +210,13 @@ describe('isNativeAuthFlagEnabled', () => {
 
     it('reads the iOS flag on iPadOS too', () => {
         setUserAgent(ipadUA('2.1.0'));
+
+        expect(isNativeAuthFlagEnabled({ android: false, ios: true })).toBe(true);
+        expect(isNativeAuthFlagEnabled({ android: true, ios: false })).toBe(false);
+    });
+
+    it('reads the iOS flag on the new (>= 2.1.1) iPhone UA', () => {
+        setUserAgent(iosUANew('2.1.1'));
 
         expect(isNativeAuthFlagEnabled({ android: false, ios: true })).toBe(true);
         expect(isNativeAuthFlagEnabled({ android: true, ios: false })).toBe(false);
