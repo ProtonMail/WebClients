@@ -21,6 +21,7 @@ import {
 import { selectWaitingRoomSetting } from '@proton/meet/store/slices/settings';
 import { selectIsWaitingRoomAdmissionActive } from '@proton/meet/store/slices/waitingRoomSlice';
 import { TelemetryMeetDashboardEvents, sendMeetDashboardEvent } from '@proton/meet/telemetry/meetTelemetry';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import clsx from '@proton/utils/clsx';
 
 import { SettingToggle } from '../../atoms/SettingToggle/SettingToggle';
@@ -70,6 +71,9 @@ export const PreJoinDetails = ({
     const getActionLabel = () => {
         if (instantMeeting) {
             return c('Action').t`Start meeting`;
+        }
+        if (isElectronApp) {
+            return c('Action').t`Join meeting`;
         }
         return isHost ? c('Action').t`Start meeting in browser` : c('Action').t`Join in browser`;
     };
