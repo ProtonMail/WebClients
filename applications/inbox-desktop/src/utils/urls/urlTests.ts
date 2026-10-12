@@ -1,4 +1,3 @@
-import { GOOGLE_OAUTH_PATH } from "@proton/shared/lib/api/activation";
 import { getAppURL } from "../../store/urlStore";
 import { mainLogger } from "../log";
 
@@ -92,45 +91,6 @@ export const isAccount = (urlString: string) => {
     }
 };
 
-// Should be removed eventually - INDA-661
-export const isGoogleOAuthAuthorizationURL = (urlString: string) => {
-    try {
-        const url = new URL(urlString);
-
-        const isAuthPath = url.pathname.startsWith(GOOGLE_OAUTH_PATH);
-
-        return isHostAllowed(urlString) && isAuthPath;
-    } catch (error) {
-        return false;
-    }
-};
-
-// Should be removed eventually - INDA-661
-export const isZoomAuthURL = (urlString: string) => {
-    try {
-        const url = new URL(urlString);
-
-        if (!url.hostname.includes("zoom") || !url.pathname.startsWith("/oauth/")) return false;
-
-        return true;
-    } catch (error) {
-        return false;
-    }
-};
-
-// Should be removed eventually - INDA-661
-export const isMicrosoftAuthURL = (urlString: string) => {
-    try {
-        const url = new URL(urlString);
-
-        if (!url.hostname.includes("login.microsoftonline.com")) return false;
-
-        return true;
-    } catch (error) {
-        return false;
-    }
-};
-
 export const isAccountAuthorize = (urlString: string) => {
     try {
         const url = new URL(urlString);
@@ -173,56 +133,12 @@ export const isAccountLogin = (urlString: string) => {
     }
 };
 
-export const isCloseTicketURL = (urlString: string) => {
-    try {
-        const url = new URL(urlString);
-
-        if (getAppURL().account !== url.origin) {
-            return false;
-        }
-
-        return /^\/close-ticket\/?$/i.test(url.pathname);
-    } catch (error) {
-        return false;
-    }
-};
-
 export const isUpgradeURL = (host: string) => {
     try {
         const hostURL = new URL(host);
         return hostURL.pathname.includes("/upgrade") && hostURL.searchParams.size > 0;
     } catch (error) {
         mainLogger.error("isUpgradeURL", error);
-        return false;
-    }
-};
-
-export const isBookingURL = (urlString: string) => {
-    try {
-        const url = new URL(urlString);
-
-        if (getAppURL().calendar !== url.origin) {
-            return false;
-        }
-
-        // Match booking url patterns
-        // /bookings, /bookings/, /bookings/*, /u/{digit}/bookings
-        return /^\/bookings(?:\/.*)?$/i.test(url.pathname) || /^\/u\/\d+\/bookings\/?$/i.test(url.pathname);
-    } catch (error) {
-        return false;
-    }
-};
-
-export const isBornPrivateURL = (urlString: string) => {
-    try {
-        const url = new URL(urlString);
-        if (getAppURL().account !== url.origin) {
-            return false;
-        }
-
-        // Match born private url patterns
-        return /^\/born-private/i.test(url.pathname);
-    } catch (error) {
         return false;
     }
 };
