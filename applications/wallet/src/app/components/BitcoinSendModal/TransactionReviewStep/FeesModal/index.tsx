@@ -4,10 +4,12 @@ import { c } from 'ttag';
 
 import type { WasmApiExchangeRate, WasmNetwork } from '@proton/andromeda';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Icon } from '@proton/components';
 import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
+import type { IconComponent } from '@proton/icons/component';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
+import { IcChevronUp } from '@proton/icons/icons/IcChevronUp';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
-import type { IconName } from '@proton/icons/types';
+import { IcMinus } from '@proton/icons/icons/IcMinus';
 import { COMPUTE_BITCOIN_UNIT, MIN_FEE_RATE, PriorityTargetBlock } from '@proton/wallet/constants/bitcoin';
 import { useUserWalletSettings } from '@proton/wallet/store/hooks';
 
@@ -42,10 +44,10 @@ export const FeesModal = ({
 
     const getFeeOption = useCallback(
         async (
-            icon: IconName,
+            icon: IconComponent,
             text: string,
             blockTarget: PriorityTargetBlock
-        ): Promise<[IconName, string, number, number]> => {
+        ): Promise<[IconComponent, string, number, number]> => {
             const feeRate = getFeesByBlockTarget(blockTarget) ?? MIN_FEE_RATE;
             const draftPsbt = await txBuilder.setFeeRate(BigInt(feeRate)).createDraftPsbt(network);
 
@@ -54,23 +56,23 @@ export const FeesModal = ({
         [getFeesByBlockTarget, network, txBuilder]
     );
 
-    const [feeOptions, setFeeOptions] = useState<[IconName, string, number, number][]>([]);
+    const [feeOptions, setFeeOptions] = useState<[IconComponent, string, number, number][]>([]);
 
     useEffect(() => {
         const run = async () => {
             const options = await Promise.allSettled([
                 getFeeOption(
-                    'chevron-up',
+                    IcChevronUp,
                     c('Wallet send').t`High priority`,
                     PriorityTargetBlock.HighPriorityTargetBlock
                 ),
                 getFeeOption(
-                    'minus',
+                    IcMinus,
                     c('Wallet send').t`Median priority`,
                     PriorityTargetBlock.MedianPriorityTargetBlock
                 ),
                 getFeeOption(
-                    'chevron-down',
+                    IcChevronDown,
                     c('Wallet send').t`Low priority`,
                     PriorityTargetBlock.LowPriorityTargetBlock
                 ),
@@ -116,7 +118,7 @@ export const FeesModal = ({
             }
         >
             <div className="flex flex-column">
-                {feeOptions.map(([iconName, text, feeRate, feesAtFeeRate], index) => (
+                {feeOptions.map(([FeeOptionIcon, text, feeRate, feesAtFeeRate], index) => (
                     <button
                         key={`${feeRate}_${index}`}
                         onClick={() => {
@@ -125,7 +127,7 @@ export const FeesModal = ({
                         className="button fees-selection-button unstyled flex flex-row py-4 px-6 items-center"
                     >
                         <div className="flex items-center justify-center bg-norm rounded-full p-4">
-                            <Icon name={iconName} />
+                            <FeeOptionIcon />
                         </div>
                         <div className="mx-4">{text}</div>
                         <div className="flex flex-column items-end ml-auto">
