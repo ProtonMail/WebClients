@@ -31,16 +31,16 @@ import clsx from '@proton/utils/clsx';
 
 import { DeviceSettings } from '../../components/DeviceSettings/DeviceSettings';
 import { JoiningRoomLoader } from '../../components/JoiningRoomLoader';
-import { OpenDesktopAppBanner } from '../../components/OpenDesktopAppBanner/OpenDesktopAppBanner';
 import { PageHeader } from '../../components/PageHeader/PageHeader';
 import { PreJoinDetails } from '../../components/PreJoinDetails/PreJoinDetails';
 import { WaitingRoomRejectedModal } from '../../components/PreJoinDetails/WaitingRoomAdmission/WaitingRoomRejectedModal';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useIsRecordingSupported } from '../../hooks/useMeetingRecorder/hooks/useIsRecordingSupported';
 import { RECORDING_MAX_AGE_MS, purgeOldRecordings } from '../../hooks/useMeetingRecorder/recordingStorage/purge';
-import type { JoinTelemetryDimensions } from '../../telemetry/useJoinTelemetryDimensions';
 import { useScreenRecordingPermissionPrompt } from '../../hooks/useScreenRecordingPermissionPrompt';
+import type { JoinTelemetryDimensions } from '../../telemetry/useJoinTelemetryDimensions';
 import { useSendOnce } from '../../telemetry/useSendOnce';
+import { clearDesktopAppPreference } from '../../utils/desktopAppDetector';
 import { getDisplayNameStorageKey } from '../../utils/storage';
 
 import './PrejoinContainer.scss';
@@ -111,6 +111,12 @@ export const PrejoinContainer = ({
     useEffect(() => {
         dispatch(setLocalParticipantColorIndex(participantColorIndex.current));
     }, [dispatch]);
+
+    useEffect(() => {
+        // Remove deprecated desktop app banner storage keys
+        localStorage.removeItem('open_desktop_app_banner_dismissed_until');
+        clearDesktopAppPreference();
+    }, []);
 
     useScreenRecordingPermissionPrompt();
 
@@ -192,7 +198,6 @@ export const PrejoinContainer = ({
                 <div className="prejoin-glow prejoin-glow--main" />
             </div>
             <div className="h-full overflow-y-auto relative flex flex-column flex-nowrap">
-                <OpenDesktopAppBanner />
                 {joiningInProgress && <div className="w-full h-full absolute top-0 left-0 z-up" />}
                 <div className="w-full prejoin-padding-x shrink-0">
                     <PageHeader showAppSwitcher={false} isInstantJoin={isInstantJoin} />

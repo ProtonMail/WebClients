@@ -1,10 +1,9 @@
+import { isDesktop, isIpad } from '@proton/shared/lib/helpers/browser';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
+
 const OPEN_DESKTOP_APP_STORAGE_KEY = 'open_desktop_app_storage_key';
 
-export const saveDesktopAppPreference = (preference: boolean): void => {
-    try {
-        localStorage.setItem(OPEN_DESKTOP_APP_STORAGE_KEY, String(preference));
-    } catch {}
-};
+export const canOpenInDesktopApp = (): boolean => !isElectronApp && isDesktop() && !isIpad();
 
 export const clearDesktopAppPreference = (): void => {
     try {
