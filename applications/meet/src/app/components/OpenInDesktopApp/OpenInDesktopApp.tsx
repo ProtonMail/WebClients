@@ -51,31 +51,29 @@ export const OpenInDesktopAppCard = () => {
     };
 
     return (
-        <div className="w-full" aria-live="polite">
-            <div className="open-in-desktop-app-card w-full flex flex-column flex-nowrap gap-3 p-4">
-                <p className="open-in-desktop-app-card-title m-0 text-semibold text-center">
-                    {c('Info').t`App didn't open?`}
-                </p>
-                <div className="flex flex-nowrap gap-2 py-2">
-                    <Button
-                        ref={tryAgainRef}
-                        className="open-in-desktop-app-card-button tertiary rounded-full flex-1 text-semibold"
-                        onClick={handleTryAgain}
-                    >
-                        {c('Action').t`Try again`}
-                    </Button>
-                    <Button
-                        className="open-in-desktop-app-card-button tertiary rounded-full flex-1 text-semibold"
-                        onClick={handleDownload}
-                    >
-                        {c('Action').t`Download app`}
-                        <span className="sr-only">{c('Accessibility').t`(opens in new tab)`}</span>
-                    </Button>
-                </div>
-                <p className="open-in-desktop-app-card-hint m-0 text-sm color-hint text-center">
-                    {c('Info').t`Already in the app? You can close this tab.`}
-                </p>
+        <div className="open-in-desktop-app-card w-full flex flex-column flex-nowrap gap-3 p-4">
+            <p className="open-in-desktop-app-card-title m-0 text-semibold text-center">
+                {c('Info').t`App didn't open?`}
+            </p>
+            <div className="flex flex-nowrap gap-2 py-2">
+                <Button
+                    ref={tryAgainRef}
+                    className="open-in-desktop-app-card-button tertiary rounded-full flex-1 text-semibold"
+                    onClick={handleTryAgain}
+                >
+                    {c('Action').t`Try again`}
+                </Button>
+                <Button
+                    className="open-in-desktop-app-card-button tertiary rounded-full flex-1 text-semibold"
+                    onClick={handleDownload}
+                >
+                    {c('Action').t`Download app`}
+                    <span className="sr-only">{c('Accessibility').t`(opens in new tab)`}</span>
+                </Button>
             </div>
+            <p className="open-in-desktop-app-card-hint m-0 text-sm color-hint text-center">
+                {c('Info').t`Already in the app? You can close this tab.`}
+            </p>
         </div>
     );
 };
