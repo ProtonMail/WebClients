@@ -259,6 +259,34 @@ describe('useTranscriptions', () => {
         expect(result.current.segments.map((segment) => segment.text)).toEqual(['hello there friend']);
     });
 
+    it('keeps a growing segment on the line it joined, even once that line passes the length cap', async () => {
+        decryptMessage
+            .mockResolvedValueOnce({ message: 'a'.repeat(100) })
+            .mockResolvedValueOnce({ message: 'b'.repeat(50) })
+            .mockResolvedValueOnce({ message: 'b'.repeat(100) });
+
+        const { result } = renderHook(() => useTranscriptions());
+
+        await emit(btoa('first'), { id: 'segment-1' });
+        await emit(btoa('second'), { id: 'segment-2', isFinal: false });
+        await emit(btoa('second-again'), { id: 'segment-2', isFinal: false });
+
+        expect(result.current.segments.map((segment) => segment.text)).toEqual([
+            `${'a'.repeat(100)} ${'b'.repeat(100)}`,
+        ]);
+    });
+
+    it('starts a new line once the line has reached the length cap', async () => {
+        decryptMessage.mockResolvedValueOnce({ message: 'a'.repeat(180) }).mockResolvedValueOnce({ message: 'next' });
+
+        const { result } = renderHook(() => useTranscriptions());
+
+        await emit(btoa('first'), { id: 'segment-1' });
+        await emit(btoa('second'), { id: 'segment-2' });
+
+        expect(result.current.segments.map((segment) => segment.text)).toEqual(['a'.repeat(180), 'next']);
+    });
+
     it('starts a new line when the speaker pauses for longer than the merge gap', async () => {
         decryptMessage.mockResolvedValueOnce({ message: 'hello' }).mockResolvedValueOnce({ message: 'there' });
 
