@@ -1,0 +1,24 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
+.creations-page-header {
+	margin-block-end: rem(20);
+}
+
+.creations-section + .creations-section {
+	margin-block-start: rem(28);
+}
+
+.creations-section-title {
+	margin-block: 0 rem(8);
+}
+
+.creations-row:hover .creations-row-main,
+.creations-row:focus-within .creations-row-main {
+	background: var(--interaction-default-hover);
+}
+
+.creations-row-title-placeholder {
+	block-size: rem(14);
+	inline-size: 40%;
+	max-inline-size: rem(200);
+}

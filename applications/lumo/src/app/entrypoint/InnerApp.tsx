@@ -24,7 +24,7 @@ const AllChatsView = lazy(() => import('../features/allChats/AllChatsView').then
 
 export function InnerApp() {
     const { url } = useRouteMatch(); // either "/guest" or "/u/:sessionId"
-    const { apiKeyManagement, imageTools, aiPaperTrailRoute } = useLumoFlags();
+    const { apiKeyManagement, imageTools, artifactsView, aiPaperTrailRoute } = useLumoFlags();
 
     return (
         <PandocProvider>
@@ -47,6 +47,7 @@ export function InnerApp() {
                                     <Route exact path="/projects" component={ProjectsView} />
                                     <Route path="/projects/:projectId" component={ProjectDetailView} />
                                     {imageTools && <Route exact path="/images" component={ConversationPage} />}
+                                    {artifactsView && <Route exact path="/creations" component={ConversationPage} />}
                                     {apiKeyManagement && <Route exact path="/docs/api" component={ApiDocsPage} />}
                                     <Route exact path="/chats" component={AllChatsView} />
 

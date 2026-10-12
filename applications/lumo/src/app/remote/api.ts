@@ -47,8 +47,7 @@ import type {
 import { objectToPascalCaseKeys, oldestDateReducer } from './util';
 
 export type RemoteStatus = 'ok' | 'deleted';
-type ResourceName =
-    'masterkeys' | 'spaces' | 'conversations' | 'messages' | 'assets' | 'personalization' | 'settings';
+type ResourceName = 'masterkeys' | 'spaces' | 'conversations' | 'messages' | 'assets' | 'personalization' | 'settings';
 
 // prettier-ignore
 type PostableResource =
@@ -75,7 +74,7 @@ export enum AssetType {
     // Generic = 0,
     GeneratedImage = 1,
     // GeneratedVideo = 2,
-    // GeneratedDoc = 3,
+    GeneratedDoc = 3,
 }
 
 type ListGeneratedAssetsParams = {

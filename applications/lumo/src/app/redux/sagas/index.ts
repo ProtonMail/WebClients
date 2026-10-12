@@ -26,6 +26,7 @@ import {
     getSpaceDek,
 } from '../../types';
 import { mapEmpty, mapIds, mapLength } from '../../util/collections';
+import { syncArtifactAssetRequest } from '../slices/artifactAssetSync';
 import { reloadReduxRequest, stopRootSaga, unloadReduxRequest } from '../slices/core';
 import {
     addAttachment,
@@ -99,6 +100,7 @@ import {
 } from '../slices/core/spaces';
 import { setReduxLoadedFromIdb } from '../slices/meta/initialization';
 import type { LumoState } from '../store';
+import { syncArtifactAsset } from './artifactAssets';
 import {
     deserializeAttachmentSaga,
     indexAttachment,
@@ -175,9 +177,7 @@ export { setRetryPushEveryMs } from './sagaErrors';
  * Wraps a saga so that calls with the same action.payload.id
  * are queued and run one-by-one.
  */
-function noRaceSameId<A extends { payload: { id: string } }>(
-    worker: (action: A) => SagaIterator
-): Saga<[action: A]> {
+function noRaceSameId<A extends { payload: { id: string } }>(worker: (action: A) => SagaIterator): Saga<[action: A]> {
     const queues: Record<string, A[]> = {};
     const processing: Record<string, boolean> = {};
 
@@ -209,9 +209,7 @@ function noRaceSameId<A extends { payload: { id: string } }>(
  * Wraps a saga so that calls with the same action.payload.id
  * are ignored if one is already running.
  */
-function dedupSameId<A extends { payload: { id: string } }>(
-    worker: (action: A) => SagaIterator
-): Saga<[action: A]> {
+function dedupSameId<A extends { payload: { id: string } }>(worker: (action: A) => SagaIterator): Saga<[action: A]> {
     const processing: Record<string, boolean> = {};
 
     return function* (action: A): SagaIterator {
@@ -529,6 +527,7 @@ export function* rootSaga(opts?: { crashIfErrors: boolean }) {
         function*() { yield takeEvery(pullMessageFailure, logPullMessageFailure)},
         function*() { yield takeEvery(locallyRefreshMessageFromRemoteRequest, refreshMessageFromRemote)},
 
+        function*() { yield takeEvery(syncArtifactAssetRequest, syncArtifactAsset)},
         function*() { yield takeEvery(pushAttachmentRequest, noRaceSameId(pushAttachment))},
         function*() { yield takeEvery(pushAttachmentSuccess, logPushAttachmentSuccess)},
         function*() { yield takeEvery(pushAttachmentFailure, logPushAttachmentFailure)},

@@ -57,6 +57,7 @@ exports[`artifact event payloads matches the agreed payloads 1`] = `
       "eventType": "artifact-revised",
       "revisionSource": "inline-edit",
       "versionNumber": 2,
+      "viewedOlderVersion": false,
     },
   ],
   [
@@ -68,6 +69,7 @@ exports[`artifact event payloads matches the agreed payloads 1`] = `
       "eventType": "artifact-revised",
       "revisionSource": "manual-edit",
       "versionNumber": 3,
+      "viewedOlderVersion": true,
     },
   ],
   [
@@ -101,6 +103,7 @@ exports[`artifact event payloads matches the agreed payloads 1`] = `
       "artifactType": "code",
       "eventType": "content-copied",
       "layout": "fullscreen",
+      "viewedOlderVersion": true,
     },
   ],
   [
@@ -112,6 +115,7 @@ exports[`artifact event payloads matches the agreed payloads 1`] = `
       "format": "pptx",
       "layout": "docked",
       "result": "error",
+      "viewedOlderVersion": false,
     },
   ],
   [
@@ -123,6 +127,7 @@ exports[`artifact event payloads matches the agreed payloads 1`] = `
       "format": "pdf",
       "layout": "fullscreen",
       "result": "print_dialog",
+      "viewedOlderVersion": true,
     },
   ],
   [
@@ -149,6 +154,35 @@ exports[`artifact event payloads matches the agreed payloads 1`] = `
       "eventType": "webpage-view-toggled",
       "layout": "docked",
       "mode": "code",
+    },
+  ],
+  [
+    "lumo-artifact-event",
+    {
+      "artifactType": "document",
+      "eventType": "version-history-opened",
+      "layout": "docked",
+      "versionCount": 4,
+    },
+  ],
+  [
+    "lumo-artifact-event",
+    {
+      "artifactType": "document",
+      "eventType": "version-selected",
+      "layout": "docked",
+      "source": "history",
+      "versionsBehindLatest": 2,
+    },
+  ],
+  [
+    "lumo-artifact-event",
+    {
+      "artifactType": "document",
+      "eventType": "version-selected",
+      "layout": "fullscreen",
+      "source": "banner",
+      "versionsBehindLatest": 0,
     },
   ],
 ]

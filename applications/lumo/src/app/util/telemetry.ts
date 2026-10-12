@@ -421,6 +421,12 @@ export interface ArtifactRevisedEventPayload {
     revisionSource: ArtifactRevisionSource;
     // 1-based: the first revision is version 2.
     versionNumber: number;
+    /**
+     * The panel was showing an older version of this artifact when the revision arrived — the user
+     * likely asked for a change while looking at that version, but the model revised the latest.
+     * How often this happens decides whether "continue from this version" is worth building.
+     */
+    viewedOlderVersion: boolean;
 }
 
 export const sendArtifactRevisedEvent = ({
@@ -430,6 +436,7 @@ export const sendArtifactRevisedEvent = ({
     contentLengthBucket,
     revisionSource,
     versionNumber,
+    viewedOlderVersion,
 }: ArtifactRevisedEventPayload) => {
     sendLumoArtifactEvent('artifact-revised', {
         artifactType,
@@ -438,6 +445,7 @@ export const sendArtifactRevisedEvent = ({
         contentLengthBucket,
         revisionSource,
         versionNumber,
+        viewedOlderVersion,
     });
 };
 
@@ -491,13 +499,17 @@ export const sendArtifactPanelClosedEvent = (payload: ArtifactPanelClosedEventPa
 export const sendArtifactContentCopiedEvent = ({
     artifactType,
     layout,
+    viewedOlderVersion,
 }: {
     artifactType: ArtifactType;
     layout: ArtifactPanelLayout;
+    /** Copying an older version is the manual workaround for "continue from this version". */
+    viewedOlderVersion: boolean;
 }) => {
     sendLumoArtifactEvent('content-copied', {
         artifactType,
         layout,
+        viewedOlderVersion,
     });
 };
 
@@ -511,12 +523,14 @@ export const sendArtifactDownloadedEvent = ({
     layout,
     result,
     contentLengthBucket,
+    viewedOlderVersion,
 }: {
     format: ArtifactDownloadFormat;
     artifactType: ArtifactType;
     layout: ArtifactPanelLayout;
     result: ArtifactDownloadResult;
     contentLengthBucket: ArtifactContentLengthBucket;
+    viewedOlderVersion: boolean;
 }) => {
     sendLumoArtifactEvent('downloaded', {
         format,
@@ -524,6 +538,49 @@ export const sendArtifactDownloadedEvent = ({
         layout,
         result,
         contentLengthBucket,
+        viewedOlderVersion,
+    });
+};
+
+/** The version history list was opened. `versionCount` is how many versions the artifact had. */
+export const sendArtifactVersionHistoryOpenedEvent = ({
+    artifactType,
+    layout,
+    versionCount,
+}: {
+    artifactType: ArtifactType;
+    layout: ArtifactPanelLayout;
+    versionCount: number;
+}) => {
+    sendLumoArtifactEvent('version-history-opened', {
+        artifactType,
+        layout,
+        versionCount,
+    });
+};
+
+export type ArtifactVersionSelectSource = 'history' | 'banner';
+
+/**
+ * A version was picked from the history list, or "View latest" was clicked on the older-version
+ * banner. `versionsBehindLatest` is 0 for the latest version.
+ */
+export const sendArtifactVersionSelectedEvent = ({
+    artifactType,
+    layout,
+    source,
+    versionsBehindLatest,
+}: {
+    artifactType: ArtifactType;
+    layout: ArtifactPanelLayout;
+    source: ArtifactVersionSelectSource;
+    versionsBehindLatest: number;
+}) => {
+    sendLumoArtifactEvent('version-selected', {
+        artifactType,
+        layout,
+        source,
+        versionsBehindLatest,
     });
 };
 

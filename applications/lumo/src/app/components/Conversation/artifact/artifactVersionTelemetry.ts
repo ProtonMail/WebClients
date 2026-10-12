@@ -103,10 +103,17 @@ export type ArtifactVersionTelemetryEvent =
  * Pure core of artifact creation/revision telemetry: which finalized versions on the active chain
  * came from a live message (and so haven't been reported yet), and which live messages are done.
  */
+/** The artifact version the panel is showing, if open; used to flag revisions requested from an older version. */
+export interface ViewedArtifactVersion {
+    artifactId: string;
+    versionIndex: number;
+}
+
 export function collectArtifactVersionTelemetry(
     registry: ArtifactRegistry,
     linearChain: Message[],
-    liveMessages: ReadonlyMap<MessageId, LiveArtifactMessage>
+    liveMessages: ReadonlyMap<MessageId, LiveArtifactMessage>,
+    viewedVersion: ViewedArtifactVersion | null = null
 ): { events: ArtifactVersionTelemetryEvent[]; consumedMessageIds: MessageId[] } {
     if (liveMessages.size === 0) {
         return { events: [], consumedMessageIds: [] };
@@ -154,6 +161,10 @@ export function collectArtifactVersionTelemetry(
                     ...common,
                     revisionSource: resolveArtifactRevisionSource(linearChain, version.messageId) ?? 'prompt',
                     versionNumber: versionIndex + 1,
+                    // The panel doesn't follow a new version while an older one is shown, so at
+                    // this point it still shows what the user was looking at when they asked.
+                    viewedOlderVersion:
+                        viewedVersion?.artifactId === entry.id && viewedVersion.versionIndex < versionIndex - 1,
                 },
             });
         });
