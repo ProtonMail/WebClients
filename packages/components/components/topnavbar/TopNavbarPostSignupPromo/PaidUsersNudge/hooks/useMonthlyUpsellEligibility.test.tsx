@@ -27,7 +27,7 @@ const mockUseFlag = useFlag as jest.Mock;
 
 const today = new Date();
 const defaultSubscription = {
-    PeriodStart: subDays(today.getTime(), 25).getTime() / 1000,
+    PeriodStart: subDays(today.getTime(), 15).getTime() / 1000,
     Cycle: CYCLE.MONTHLY,
     Plans: [{ Name: PLANS.MAIL }],
 };
@@ -165,7 +165,7 @@ describe('Mail Paid user nudge', () => {
             mockUseFlag.mockReturnValue(false);
             mockUseSubscription.mockReturnValue([
                 {
-                    PeriodStart: subDays(today.getTime(), 25).getTime() / 1000,
+                    PeriodStart: subDays(today.getTime(), 15).getTime() / 1000,
                     Cycle: CYCLE.YEARLY,
                     Plans: [{ Name: PLANS.MAIL }],
                 } as unknown as Subscription,
@@ -187,7 +187,7 @@ describe('Mail Paid user nudge', () => {
             mockUseFlag.mockReturnValue(false);
             mockUseSubscription.mockReturnValue([
                 {
-                    PeriodStart: subDays(today.getTime(), 25).getTime() / 1000,
+                    PeriodStart: subDays(today.getTime(), 15).getTime() / 1000,
                     Cycle: CYCLE.MONTHLY,
                     Plans: [{ Name: PLANS.MAIL }],
                     UpcomingSubscription: { Cycle: CYCLE.YEARLY },
@@ -210,7 +210,7 @@ describe('Mail Paid user nudge', () => {
             mockUseFlag.mockReturnValue(false);
             mockUseSubscription.mockReturnValue([
                 {
-                    PeriodStart: subDays(today.getTime(), 19).getTime() / 1000,
+                    PeriodStart: subDays(today.getTime(), 9).getTime() / 1000,
                     Cycle: CYCLE.MONTHLY,
                     Plans: [{ Name: PLANS.MAIL }],
                     UpcomingSubscription: { Cycle: CYCLE.MONTHLY },
@@ -233,7 +233,7 @@ describe('Mail Paid user nudge', () => {
             mockUseFlag.mockReturnValue(false);
             mockUseSubscription.mockReturnValue([
                 {
-                    PeriodStart: subDays(today.getTime(), 25).getTime() / 1000,
+                    PeriodStart: subDays(today.getTime(), 15).getTime() / 1000,
                     Cycle: CYCLE.MONTHLY,
                     Plans: [{ Name: PLANS.MAIL }],
                     UpcomingSubscription: { Cycle: CYCLE.MONTHLY },
@@ -257,7 +257,7 @@ describe('Mail Paid user nudge', () => {
             mockUseFlag.mockReturnValue(false);
             mockUseSubscription.mockReturnValue([
                 {
-                    PeriodStart: subDays(today.getTime(), 25).getTime() / 1000,
+                    PeriodStart: subDays(today.getTime(), 15).getTime() / 1000,
                     Cycle: CYCLE.MONTHLY,
                     Plans: [{ Name: PLANS.DRIVE }],
                     UpcomingSubscription: { Cycle: CYCLE.MONTHLY },
@@ -280,7 +280,7 @@ describe('Mail Paid user nudge', () => {
             mockUseFlag.mockReturnValue(false);
             mockUseSubscription.mockReturnValue([
                 {
-                    PeriodStart: subDays(today.getTime(), 25).getTime() / 1000,
+                    PeriodStart: subDays(today.getTime(), 15).getTime() / 1000,
                     Cycle: CYCLE.MONTHLY,
                     Plans: [{ Name: PLANS.MAIL }],
                     UpcomingSubscription: { Cycle: CYCLE.MONTHLY },
@@ -303,7 +303,7 @@ describe('Mail Paid user nudge', () => {
             mockUseFlag.mockReturnValue(false);
             mockUseSubscription.mockReturnValue([
                 {
-                    PeriodStart: subDays(today.getTime(), 25).getTime() / 1000,
+                    PeriodStart: subDays(today.getTime(), 15).getTime() / 1000,
                     Cycle: CYCLE.MONTHLY,
                     Plans: [{ Name: PLANS.MAIL }],
                     UpcomingSubscription: { Cycle: CYCLE.MONTHLY },
@@ -326,7 +326,7 @@ describe('Mail Paid user nudge', () => {
             mockUseFlag.mockReturnValue(false);
             mockUseSubscription.mockReturnValue([
                 {
-                    PeriodStart: subDays(today.getTime(), 25).getTime() / 1000,
+                    PeriodStart: subDays(today.getTime(), 15).getTime() / 1000,
                     Cycle: CYCLE.MONTHLY,
                     Plans: [{ Name: PLANS.MAIL }],
                     Coupon: { Name: 'MIGRATION' },
