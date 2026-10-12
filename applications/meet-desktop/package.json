@@ -1,11 +1,11 @@
 {
     "name": "proton-meet-desktop",
-    "version": "1.0.12",
+    "version": "1.0.13",
     "description": "Proton's official desktop application for Proton Meet",
     "license": "GPL-3.0",
     "author": {
         "name": "Proton",
-        "email": "contact@protonmail.com",
+        "email": "contact@proton.me",
         "url": "https://proton.me"
     },
     "type": "commonjs",
@@ -29,9 +29,9 @@
     "config": {
         "appBundleId": "ch.protonmeet.desktop",
         "appUserModelId": "com.squirrel.proton_meet.ProtonMeet",
-        "copyright": "Copyright (c) 2026, Proton AG <contact@protonmail.com>",
+        "copyright": "Copyright (c) 2026, Proton AG <contact@proton.me>",
         "githubRepo": "meet-desktop",
-        "githubUser": "ProtonMail",
+        "githubUser": "ProtonMeet",
         "updateInterval": 3600000
     },
     "dependencies": {
