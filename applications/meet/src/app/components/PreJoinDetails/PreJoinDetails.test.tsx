@@ -117,6 +117,24 @@ describe('PreJoinDetails', () => {
 
             expect(screen.getByRole('button', { name: 'Join in browser' })).toBeInTheDocument();
         });
+
+        it.each([
+            { role: 'host', isHost: true },
+            { role: 'participant', isHost: false },
+        ])('keeps "Join meeting" for the $role inside the desktop app', ({ isHost }) => {
+            mocks.isElectronApp = true;
+            mocks.isHost = isHost;
+            renderPreJoinDetails();
+
+            expect(screen.getByRole('button', { name: 'Join meeting' })).toBeInTheDocument();
+        });
+
+        it('keeps "Start meeting" for an instant meeting inside the desktop app', () => {
+            mocks.isElectronApp = true;
+            renderPreJoinDetails({ instantMeeting: true });
+
+            expect(screen.getByRole('button', { name: 'Start meeting' })).toBeInTheDocument();
+        });
     });
 
     describe('open in desktop app', () => {
