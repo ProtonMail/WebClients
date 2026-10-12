@@ -54,7 +54,7 @@ export interface MeetActionsDimensions {
     [Actions.waiting_room_toggled]: { state: ToggleState };
     [Actions.waiting_room_retry_clicked]: { reason: 'expired' | 'rejected' };
     [Actions.desktop_app_banner_shown]: NoDimensions;
-    [Actions.desktop_app_banner_clicked]: { action: 'open_app' | 'download' | 'dismiss' };
+    [Actions.desktop_app_banner_clicked]: { action: 'open_app' | 'retry' | 'download' };
     [Actions.join_clicked]: { micState: ToggleState; cameraState: ToggleState; backgroundEffect: BackgroundEffectType };
     [Actions.mic_toggled]: { state: ToggleState; trigger: MediaToggleTrigger };
     [Actions.camera_toggled]: { state: ToggleState; trigger: MediaToggleTrigger };

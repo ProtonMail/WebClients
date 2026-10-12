@@ -36,12 +36,6 @@ im.$media-expressions: $media-expressions;
 
 .prejoin-page {
 	isolation: isolate;
-
-	// Opaque equivalent of the banner's translucent gradient over `--background-norm`, so the glows
-	// don't shine through it.
-	.open-desktop-app-banner {
-		background: linear-gradient(270deg, #211f35 0%, #1c1a2e 100%);
-	}
 }
 
 // Glow positions come from the 1440×900 design frame: centers scale with each axis, sizes scale to cover
