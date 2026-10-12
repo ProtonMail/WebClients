@@ -28,7 +28,7 @@ import { ClaimableAddressType } from '@proton/shared/lib/keys/setupAddress';
 import type { OrganizationData } from '@proton/shared/lib/keys/unprivatization/helper';
 
 import type { AuthSession } from '../../../../content/authSession';
-import type { ClaimedAddressSetup, UnlockedKeys } from '../../../auth/claimedAddress';
+import { type ClaimedAddressSetup, UnavailableUsernameError, type UnlockedKeys } from '../../../auth/claimedAddress';
 import {
     ACCOUNT_FLOW_FAILED,
     type AccountFlowInput,
@@ -723,11 +723,21 @@ export const passwordAccountStateMachine = setup({
                                         },
                                     ],
                                 },
-                                // A taken username or a failed request: stay on the form and show it
-                                onError: {
-                                    target: 'idle',
-                                    actions: { type: 'reportError', params: ({ event }) => ({ error: event.error }) },
-                                },
+                                onError: [
+                                    {
+                                        // Nothing was created: stay on the form, to pick another
+                                        guard: errorOf(UnavailableUsernameError),
+                                        target: 'idle',
+                                        actions: {
+                                            type: 'reportError',
+                                            params: ({ event }) => ({ error: event.error }),
+                                        },
+                                    },
+                                    // It may have failed partway, after saving the username or creating the address,
+                                    // which trying again from here would fail on. Signing in again starts from what
+                                    // exists: the address, or the username it then creates the address with.
+                                    failAccountFlow,
+                                ],
                             },
                         },
                     },

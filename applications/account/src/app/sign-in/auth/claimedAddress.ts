@@ -1,9 +1,13 @@
+import { c } from 'ttag';
+
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
+import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { queryCheckUsernameAvailability } from '@proton/shared/lib/api/user';
 import { getUser } from '@proton/shared/lib/authentication/getUser';
 import type { ClaimedAddressID } from '@proton/shared/lib/authentication/interface';
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { Address, Api, User } from '@proton/shared/lib/interfaces';
 import {
     type ClaimableAddress,
@@ -76,8 +80,30 @@ export const loadClaimedAddressSetup = async ({
 };
 
 /**
+ * The availability check rejected the username for the new address, as signup reads it: nothing was created yet, so
+ * another username can be tried. Shows the API's message, which it keeps as the cause.
+ */
+export class UnavailableUsernameError extends Error {
+    name = 'UnavailableUsernameError';
+
+    readonly trace = false;
+
+    constructor(cause: unknown) {
+        super(getApiErrorMessage(cause) || c('Error').t`Unknown error`, { cause });
+    }
+}
+
+const unavailableUsernameCodes: number[] = [
+    API_CUSTOM_ERROR_CODES.ALREADY_USED,
+    API_CUSTOM_ERROR_CODES.USERNAME_ALREADY_USED,
+    API_CUSTOM_ERROR_CODES.NOT_ALLOWED,
+];
+
+/**
  * Creates the new address and its keys, then signs in. An account with keys protects the new address key with the
- * unlocked key password; one without keys gets them now, protected by the login password.
+ * unlocked key password; one without keys gets them now, protected by the login password. A username the
+ * availability check rejects fails with an `UnavailableUsernameError`; any other failure may come after something was
+ * created.
  */
 export const createClaimedAddressAndFinalize = async (
     context: LoginFlowContext,
@@ -102,7 +128,14 @@ export const createClaimedAddressAndFinalize = async (
     const { api, preAuthKTVerifier, productParam } = context;
 
     if (checkAvailability) {
-        await api(queryCheckUsernameAvailability(`${username}@${domain}`, true));
+        try {
+            await api(queryCheckUsernameAvailability(`${username}@${domain}`, true));
+        } catch (error) {
+            if (unavailableUsernameCodes.includes(getApiError(error).code)) {
+                throw new UnavailableUsernameError(error);
+            }
+            throw error;
+        }
     }
 
     const addresses: Address[] = await getAllAddresses(api);
