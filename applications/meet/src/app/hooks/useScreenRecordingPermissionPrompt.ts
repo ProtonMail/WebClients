@@ -7,6 +7,7 @@ import { PermissionsModalType } from '@proton/meet/store/slices/deviceManagement
 import { selectIsGuest, selectUserId } from '@proton/meet/store/slices/userSlice';
 import { isElectronMeet } from '@proton/shared/lib/helpers/desktop';
 import { getItem } from '@proton/shared/lib/helpers/storage';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { getScreenRecordingPromptDismissedKey } from '../utils/storage';
 
@@ -17,12 +18,14 @@ export const useScreenRecordingPermissionPrompt = () => {
     const isGuest = useMeetSelector(selectIsGuest);
     const userId = useMeetSelector(selectUserId);
     const hasPrompted = useRef(false);
+    const isScreenPickerEnabled = useFlag('MeetDesktopScreenPickerEnabled');
 
     useEffect(() => {
         const getAccess = window.ipcMeetMessageBroker?.getScreenCaptureAccess;
         if (
             hasPrompted.current ||
             !isElectronMeet ||
+            !isScreenPickerEnabled ||
             !getAccess ||
             permissionsModal !== PermissionsModalType.NONE ||
             getItem(getScreenRecordingPromptDismissedKey(isGuest, userId))
@@ -38,5 +41,5 @@ export const useScreenRecordingPermissionPrompt = () => {
                 }
             })
             .catch(() => {});
-    }, [dispatch, permissionsModal, isGuest, userId]);
+    }, [dispatch, permissionsModal, isGuest, userId, isScreenPickerEnabled]);
 };

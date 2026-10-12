@@ -5,6 +5,8 @@ import { ALLOWED_PERMISSIONS } from "../constants";
 import { mainLogger } from "./log";
 import { isWindows } from "./helpers";
 import { ensureScreenCapturePermission, isWaylandSession, pickScreenSource } from "./screenPicker";
+import { FeatureFlag } from "./flags/flags";
+import { getFeatureFlagManager } from "./flags/manager";
 
 export const appSession = () => {
     return session.fromPartition("persist:app", { cache: false });
@@ -31,6 +33,12 @@ export const setRequestPermission = () => {
             callback(false);
         }
     });
+
+    // useSystemPicker is fixed at registration, so the flag (read from cache) applies from the next launch.
+    if (!getFeatureFlagManager().isEnabled(FeatureFlag.MEET_DESKTOP_SCREEN_PICKER_ENABLED)) {
+        setSystemPickerDisplayMediaHandler();
+        return;
+    }
 
     appSession().setDisplayMediaRequestHandler(async (request, callback) => {
         // Electron throws when declining with no streams (the request is still declined), and throws
@@ -89,6 +97,48 @@ export const setRequestPermission = () => {
             respond({});
         }
     });
+};
+
+// Native system picker; the handler only runs where it's unavailable (e.g. macOS < 15) and auto-selects the primary screen.
+const setSystemPickerDisplayMediaHandler = () => {
+    appSession().setDisplayMediaRequestHandler(
+        async (request, callback) => {
+            try {
+                const frame = request.frame;
+                if (!frame) {
+                    return callback({});
+                }
+
+                const { host, protocol } = new URL(frame.url);
+                if (!isHostAllowed(host) || protocol !== "https:") {
+                    return callback({});
+                }
+
+                const sources = await desktopCapturer.getSources({
+                    types: ["screen", "window"],
+                    thumbnailSize: { width: 150, height: 150 },
+                });
+
+                if (sources.length === 0) {
+                    return callback({});
+                }
+
+                const primaryScreen =
+                    sources.find((source) => source.id.startsWith("screen:0:")) ||
+                    sources.find((source) => source.id.startsWith("screen")) ||
+                    sources[0];
+
+                // See the "loopback" note above.
+                callback({
+                    video: primaryScreen,
+                    ...(request.audioRequested && isWindows ? { audio: "loopback" as const } : {}),
+                });
+            } catch (error) {
+                callback({});
+            }
+        },
+        { useSystemPicker: true },
+    );
 };
 
 export const extendAppVersionHeader = () => {
