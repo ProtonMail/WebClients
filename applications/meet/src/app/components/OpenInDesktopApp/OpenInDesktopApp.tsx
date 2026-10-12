@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useId, useRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -35,6 +35,7 @@ export const OpenInDesktopAppLink = ({ onOpen }: { onOpen: () => void }) => {
 export const OpenInDesktopAppCard = () => {
     const meetingLink = useMeetSelector(selectMeetingLink);
     const tryAgainRef = useRef<HTMLButtonElement>(null);
+    const titleId = useId();
 
     useEffect(() => {
         tryAgainRef.current?.focus();
@@ -52,12 +53,13 @@ export const OpenInDesktopAppCard = () => {
 
     return (
         <div className="open-in-desktop-app-card w-full flex flex-column flex-nowrap gap-3 p-4">
-            <p className="open-in-desktop-app-card-title m-0 text-semibold text-center">
+            <p id={titleId} className="open-in-desktop-app-card-title m-0 text-semibold text-center">
                 {c('Info').t`App didn't open?`}
             </p>
             <div className="flex flex-nowrap gap-2 py-2">
                 <Button
                     ref={tryAgainRef}
+                    aria-describedby={titleId}
                     className="open-in-desktop-app-card-button tertiary rounded-full flex-1 text-semibold"
                     onClick={handleTryAgain}
                 >

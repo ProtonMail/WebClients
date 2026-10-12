@@ -56,7 +56,9 @@ describe('OpenInDesktopAppCard', () => {
         render(<OpenInDesktopAppCard />);
 
         expect(screen.getByText("App didn't open?")).toBeInTheDocument();
-        expect(screen.getByRole('button', { name: 'Try again' })).toHaveFocus();
+        const button = screen.getByRole('button', { name: 'Try again' });
+        expect(button).toHaveFocus();
+        expect(button).toHaveAccessibleDescription("App didn't open?");
         expect(screen.getByText('Already in the app? You can close this tab.')).toBeInTheDocument();
     });
 
