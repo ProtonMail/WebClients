@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import type { GeneratedArtifactAssetMeta } from '../../types';
 
-const PLACEHOLDER_FILENAME = /^creation-[0-9a-f-]+\.md$/i;
+const PLACEHOLDER_FILENAME = /^creation-[0-9a-f-]+(?:\.md)?$/i;
 
 export function getCreationDisplayTitle(
     filename: string | undefined,
@@ -14,7 +14,7 @@ export function getCreationDisplayTitle(
     }
 
     if (filename && !PLACEHOLDER_FILENAME.test(filename)) {
-        return filename.replace(/\.md$/i, '').trim() || filename;
+        return filename.replace(/\.[^./\\]+$/i, '').trim() || filename;
     }
 
     if (isLoading) {
