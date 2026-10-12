@@ -9,7 +9,7 @@
  * the auth session is started early, and again on reopen. It emits `notice.ssoRequired` for the credentials route's
  * frame when the account should continue with its SSO provider.
  */
-import { type SnapshotFrom, and, assertEvent, assign, emit, enqueueActions, sendParent, setup } from 'xstate';
+import { type SnapshotFrom, and, assertEvent, assign, emit, enqueueActions, sendParent, setup, stateIn } from 'xstate';
 
 import type { ChallengeResult } from '@proton/challenge/interface';
 import type { SSOInfoResponse } from '@proton/shared/lib/authentication/interface';
@@ -32,7 +32,7 @@ import type {
     SSOProviderResult,
     UsernameFormValues,
 } from './credentialsActors';
-import { InvalidLoginError, SwitchToSRPError, SwitchToSSOError } from './credentialsErrors';
+import { InvalidLoginError, SSOSignInRejectedError, SwitchToSRPError, SwitchToSSOError } from './credentialsErrors';
 
 export interface CredentialsMachineInput {
     username: string;
@@ -75,7 +75,7 @@ interface CredentialsMachineContext {
      */
     ssoInfo: SSOInfoResponse | undefined;
     ssoProviderResult: SSOProviderResult | undefined;
-    /** Shown inline in the credentials form (wrong username or password). */
+    /** Shown inline in the credentials form (wrong username or password, or the API refused the SSO sign-in). */
     errorMessage: string | undefined;
 }
 
@@ -156,9 +156,12 @@ const credentialsSetup = setup({
             ssoInfo: undefined,
             ssoProviderResult: undefined,
         })),
-        /** After `errorOf(InvalidLoginError)`: the error has the API's message, or a fallback. */
+        /** After `errorOf(InvalidLoginError)` or `errorOf(SSOSignInRejectedError)`: the API's message, or a fallback. */
         setErrorMessage: assign((_, params: { error: unknown }) => ({
-            errorMessage: params.error instanceof InvalidLoginError ? params.error.message : undefined,
+            errorMessage:
+                params.error instanceof InvalidLoginError || params.error instanceof SSOSignInRejectedError
+                    ? params.error.message
+                    : undefined,
         })),
         clearErrorMessage: assign({ errorMessage: undefined }),
         setSSOInfo: assign((_, params: { ssoInfo: SSOInfoResponse | undefined }) => ({ ssoInfo: params.ssoInfo })),
@@ -301,7 +304,16 @@ const ssoProvider = credentialsSetup.createStateConfig({
                     target: 'submitted',
                     actions: { type: 'reportAuthenticated', params: ({ event }) => ({ primaryAuth: event.output }) },
                 },
-                onError: { target: 'closed', actions: reportActorError },
+                onError: [
+                    {
+                        // E.g. the organization's SSO is misconfigured: shown on the SSO form, the only one with room
+                        // for it; the others report it
+                        guard: and([errorOf(SSOSignInRejectedError), stateIn('#credentials.form.signIn.externalSSO')]),
+                        target: 'closed',
+                        actions: { type: 'setErrorMessage', params: ({ event }) => ({ error: event.error }) },
+                    },
+                    { target: 'closed', actions: reportActorError },
+                ],
             },
         },
         /** Authenticated: the screen stays up, loading, while the sign-in prepares the next step. */
@@ -556,10 +568,11 @@ export const credentialsStateMachine = credentialsSetup.createMachine({
                                         },
                                         'credentials.passwordSignInRequested': {
                                             target: '#credentials.form.signIn.srp',
-                                            // A new attempt: the last one's claimed address and SSO state don't
-                                            // carry over
+                                            // A new attempt: the last one's claimed address, SSO state and error
+                                            // don't carry over
                                             actions: [
                                                 'resetAttempt',
+                                                'clearErrorMessage',
                                                 assign(({ event }) => ({ username: event.payload.username })),
                                             ],
                                         },
@@ -715,7 +728,7 @@ export const selectSubmitting = (snapshot: CredentialsSnapshot) =>
 export const selectAwaitingProvider = (snapshot: CredentialsSnapshot) =>
     snapshot.hasTag(CredentialsStateMachineTags.awaitingProvider);
 
-/** Shown inline in the form: a wrong username or password. */
+/** Shown inline in the form: a wrong username or password, or why the API refused the SSO sign-in. */
 export const selectErrorMessage = (snapshot: CredentialsSnapshot) => snapshot.context.errorMessage;
 
 /** The username the forms start with, carried over between them. */

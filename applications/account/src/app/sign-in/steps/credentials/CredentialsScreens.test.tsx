@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { fromPromise } from 'xstate';
 
 import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
+import type { SSOInfoResponse } from '@proton/shared/lib/authentication/interface';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -14,8 +15,8 @@ import { RememberMode } from '../../rememberMode';
 import { SignInStateMachine } from '../../state-machine/SignInStateMachine';
 import { SignInContext } from '../../wizard/SignInContext';
 import { SignInProvider } from '../../wizard/SignInProvider';
-import type { CredentialsFormValues, PrimaryAuthResult } from './state-machine/credentialsActors';
-import { InvalidLoginError } from './state-machine/credentialsErrors';
+import type { CredentialsFormValues, PrimaryAuthResult, SSOProviderResult } from './state-machine/credentialsActors';
+import { InvalidLoginError, SSOSignInRejectedError } from './state-machine/credentialsErrors';
 import { credentialsStateMachine } from './state-machine/credentialsStateMachine';
 
 jest.mock('./useLoginChallenge', () => ({
@@ -39,11 +40,14 @@ const renderForm = ({
     compactForm = false,
     testflight,
     authenticateWithPassword = jest.fn((_values: CredentialsFormValues) => new Promise<PrimaryAuthResult>(() => {})),
+    authenticateWithSSOToken,
 }: {
     authTypeData?: AuthTypeData;
     compactForm?: boolean;
     testflight?: 'vpn';
     authenticateWithPassword?: jest.Mock;
+    /** Also signs in with the identity provider right away, without its window. */
+    authenticateWithSSOToken?: jest.Mock;
 } = {}) => {
     const machine = SignInStateMachine.provide({
         actors: {
@@ -52,6 +56,15 @@ const renderForm = ({
                 actors: {
                     startAuthSession: fromPromise(() => Promise.resolve()),
                     authenticateWithPassword: fromPromise(({ input }) => authenticateWithPassword(input)),
+                    ...(authenticateWithSSOToken && {
+                        fetchSSOInfo: fromPromise(() =>
+                            Promise.resolve({ SSOChallengeToken: 'challenge' } as SSOInfoResponse)
+                        ),
+                        authorizeWithSSOProvider: fromPromise(() =>
+                            Promise.resolve<SSOProviderResult>({ uid: 'uid', token: 'token' })
+                        ),
+                        authenticateWithSSOToken: fromPromise(({ input }) => authenticateWithSSOToken(input)),
+                    }),
                 },
             }),
         },
@@ -188,6 +201,24 @@ describe('the credentials screens', () => {
         renderForm({ authTypeData: { type: AuthType.ExternalSSO } });
         await userEvent.setup().click(screen.getByRole('button', { name: 'Sign in' }));
         expect(screen.getByText('This field is required')).toBeInTheDocument();
+    });
+
+    it("shows the API's refusal of the SSO sign-in inline and clears it when the user edits the email", async () => {
+        const message = 'There is an error in the configuration of single sign-on';
+        renderForm({
+            authTypeData: { type: AuthType.ExternalSSO },
+            authenticateWithSSOToken: jest.fn(() =>
+                Promise.reject(new SSOSignInRejectedError({ status: 422, data: { Code: 2011, Error: message } }))
+            ),
+        });
+        const user = userEvent.setup();
+
+        await user.type(screen.getByLabelText('Email'), 'member@company.com');
+        await user.click(screen.getByRole('button', { name: 'Sign in' }));
+
+        expect(await screen.findByTestId('login:error-block')).toHaveTextContent(message);
+        await user.type(screen.getByLabelText('Email'), 'x');
+        await waitFor(() => expect(screen.queryByTestId('login:error-block')).not.toBeInTheDocument());
     });
 
     it('asks only for the email with SSO, and switches to the password form on request', async () => {
