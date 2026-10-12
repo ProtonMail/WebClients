@@ -8,7 +8,7 @@ import { ArtifactShellSourceFallback } from './ArtifactShellSourceFallback';
 import { buildArtifactDocument } from './WebpageRenderer';
 import type { ArtifactRendererProps } from './artifactRenderers';
 import type { ParsedArtifact } from './parseArtifacts';
-import { renderChartsInSlideContent, slideContentHasChartPlaceholder } from './presentationCharts';
+import { renderChartsInSlideContent, slideContentNeedsChartPass } from './presentationCharts';
 import { useArtifactShellIframe } from './useArtifactShellIframe';
 
 const SLIDES_PLACEHOLDER = '<!--SLIDES-->';
@@ -70,7 +70,7 @@ const PresentationIframeContent = memo(function PresentationIframeContent({
     const [processedContent, setProcessedContent] = useState<string | null>(null);
 
     useEffect(() => {
-        if (!slideContentHasChartPlaceholder(artifact.content)) {
+        if (!slideContentNeedsChartPass(artifact.content)) {
             setProcessedContent(artifact.content);
             return;
         }

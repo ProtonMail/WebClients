@@ -54,7 +54,8 @@ describe('artifactSupportsPptxExport', () => {
 
 describe('PRESENTATION_PPTX_EXPORT_OPTIONS', () => {
     it('uses the same slide viewport width as PDF export', () => {
-        expect(PRESENTATION_PPTX_EXPORT_OPTIONS).toEqual({ viewportWidth: 960, scale: 1 });
+        expect(PRESENTATION_PPTX_EXPORT_OPTIONS).toEqual({ viewportWidth: 960, scale: 2 });
+        expect(PRESENTATION_PDF_EXPORT_OPTIONS.viewportWidth).toBe(PRESENTATION_PPTX_EXPORT_OPTIONS.viewportWidth);
     });
 });
 
@@ -67,7 +68,19 @@ describe('buildArtifactFileName', () => {
             content: 'hello',
         };
 
-        expect(buildArtifactFileName(artifact, 'pdf')).toBe('q1-plan-draft.pdf');
+        expect(buildArtifactFileName(artifact, 'pdf')).toBe('Q1 Plan - Draft.pdf');
+    });
+
+    it.each([
+        ['Q3 Board Update', 'Q3 Board Update.pdf'],
+        ['  Trailing dots...  ', 'Trailing dots.pdf'],
+        ['/Report: final?', 'Report - final.pdf'],
+        ['Plan - v2', 'Plan - v2.pdf'],
+        ['Tab\tand\nnewline', 'Tab and newline.pdf'],
+        ['Résumé 日本語', 'Résumé 日本語.pdf'],
+        ['???', 'artifact.pdf'],
+    ])('keeps "%s" readable as "%s"', (title, expected) => {
+        expect(buildArtifactFileName({ id: 'a1', type: 'document', title, content: 'x' }, 'pdf')).toBe(expected);
     });
 });
 
@@ -82,6 +95,35 @@ describe('wrapArtifactHtmlDocument', () => {
 });
 
 describe('buildArtifactHtmlDocument', () => {
+    // D12: document exports pre-render ```vega-lite fences (emitted as placeholders) to inert SVG.
+    it('renders chart placeholders in a document export to SVG before sanitizing', async () => {
+        const { markdownToHtmlBody } = await import('./artifactMarkdownHtml');
+        const { default: embed } = await import('vega-embed');
+        jest.mocked(embed).mockResolvedValueOnce({
+            view: {
+                run: jest.fn(),
+                resize: jest.fn(),
+                toSVG: jest.fn().mockResolvedValue('<svg xmlns="http://www.w3.org/2000/svg"><rect/></svg>'),
+                finalize: jest.fn(),
+            },
+        } as never);
+        const spec = '{"mark":"bar","data":{"values":[{"a":1}]},"encoding":{"x":{"field":"a","type":"nominal"}}}';
+        jest.mocked(markdownToHtmlBody).mockReturnValueOnce(
+            `<h1>Report</h1><div><script type="application/lumo-vega-lite+json">${spec}</script></div>`
+        );
+
+        const html = await buildArtifactHtmlDocument({
+            id: 'doc-chart',
+            type: 'document',
+            title: 'Report',
+            content: 'x',
+        });
+
+        expect(jest.mocked(markdownToHtmlBody)).toHaveBeenLastCalledWith('x', { charts: 'placeholder' });
+        expect(html).toContain('<div class="lumo-chart"><svg');
+        expect(html).not.toContain('application/lumo-vega-lite+json');
+    });
+
     it('strips malicious markup from document export bodies', async () => {
         const { markdownToHtmlBody } = await import('./artifactMarkdownHtml');
         jest.mocked(markdownToHtmlBody).mockReturnValueOnce('<h1>Summary</h1><img src=x onerror="alert(1)">');

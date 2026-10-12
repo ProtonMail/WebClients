@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { Suspense, lazy, useEffect, useMemo, useRef, useState } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 
 import { c } from 'ttag';
@@ -15,11 +15,14 @@ import { useLumoFlags } from '../../../hooks/useLumoFlags';
 import { useConversationActions } from '../../../providers/ConversationActionsProvider';
 import { useIsGuest } from '../../../providers/IsGuestProvider';
 import { createThrottledProgressCallback, yieldToMainThreadPaint } from '../../../util/export/exportUiHelpers';
+import { downloadBlob } from '../../../util/pdf/downloadBlob';
 import {
+    bucketArtifactContentLength,
     sendArtifactContentCopiedEvent,
     sendArtifactDownloadedEvent,
     sendArtifactWebpageViewToggledEvent,
 } from '../../../util/telemetry';
+import type { ArtifactDownloadFormat, ArtifactDownloadResult } from '../../../util/telemetry';
 import { useNativeComposerVisibilityApi } from '../../Composer/hooks/useNativeComposerVisibilityApi';
 import DropdownMenu from '../../DropdownMenu';
 import { LumoIcon } from '../../LumoIcon/LumoIcon';
@@ -33,19 +36,44 @@ import { ArtifactInlineEdit } from './ArtifactInlineEdit';
 import { ArtifactPanelLoading } from './ArtifactPanelLoading';
 import { ArtifactPanelRevisionOverlay } from './ArtifactPanelRevisionOverlay';
 import { ArtifactPanelSpotlight } from './ArtifactPanelSpotlight';
+import { ArtifactPreviewErrorBoundary } from './ArtifactPreviewErrorBoundary';
+import type { ArtifactRichTextEditorHandle } from './ArtifactRichTextEditor';
 import { ArtifactSaveToDriveDropdown } from './ArtifactSaveToDriveDropdown';
 import { ArtifactViewModeToggle } from './ArtifactViewModeToggle';
 import SaveArtifactToDriveModal from './SaveArtifactToDriveModal';
+import { buildArtifactFileForSave } from './artifactFileBytes';
 import { markdownToPlainText } from './artifactMarkdownPlainText';
-import { artifactSupportsPdfExport, buildArtifactFileName, downloadArtifactPdf } from './artifactPdfExport';
+import { artifactSupportsPdfExport, buildArtifactFileName, exportArtifactPdf } from './artifactPdfExport';
+import type { ArtifactPdfExportResult } from './artifactPdfExport';
 import { artifactSupportsPptxExport, downloadArtifactPptx } from './artifactPptxExport';
+import { buildStandalonePresentationHtml } from './artifactPresentationStandalone';
 import type { ArtifactRegistry } from './artifactRegistry';
 import type { ArtifactSaveFormat } from './artifactSaveFormats';
-import { artifactSupportsSaveToDrive, getArtifactSaveFormats } from './artifactSaveFormats';
+import {
+    artifactSupportsSaveToDrive,
+    getArtifactSaveFormats,
+    isArtifactSaveFormatSupported,
+} from './artifactSaveFormats';
 import { ARTIFACT_TYPE_CONFIG } from './artifactTypeConfig';
+import { normalizeDocumentCardFences } from './artifactVizCards';
 import type { ArtifactType } from './parseArtifacts';
 
 import './ArtifactPanel.scss';
+
+// Loaded only when the user starts a manual edit: tiptap/ProseMirror stay out of the read-only panel.
+const ArtifactRichTextEditor = lazy(() => {
+    return import(/* webpackChunkName: "artifact-rich-editor" */ './ArtifactRichTextEditor');
+});
+
+const loadNormalizeMarkdownForEditor = async () => {
+    const module = await import(
+        /* webpackChunkName: "artifact-rich-editor" */ '../../../util/markdown/markdownEditorDoc'
+    );
+    return module.normalizeMarkdownForEditor;
+};
+
+/** Rich text (WYSIWYG) by default; markdown source as an escape hatch and a fallback. */
+type ManualEditMode = 'rich' | 'source';
 
 // ---------------------------------------------------------------------------
 // Shared panel header
@@ -67,9 +95,11 @@ interface PanelHeaderProps {
     copySuccess?: boolean;
     onDownload?: () => void;
     onDownloadTxt?: () => void;
+    onDownloadDocx?: () => void;
     onDownloadPdf?: () => void;
     onDownloadPptx?: () => void;
     canDownloadTxt?: boolean;
+    canDownloadDocx?: boolean;
     canDownloadPdf?: boolean;
     canDownloadPptx?: boolean;
     exportingDownload?: boolean;
@@ -88,6 +118,8 @@ interface PanelHeaderProps {
     canManuallyEdit?: boolean;
     manualEditActive?: boolean;
     manualEditDirty?: boolean;
+    manualEditMode?: ManualEditMode;
+    onToggleManualEditMode?: () => void;
     onStartManualEdit?: () => void;
     onSaveManualEdit?: () => void;
     onCancelManualEdit?: () => void;
@@ -103,6 +135,23 @@ export type ArtifactPanelLayout = 'docked' | 'mobile' | 'fullscreen';
 
 const getVersionLabel = (versionNumber: number, totalVersions: number) => {
     return c('collider_2025:Info').t`v${versionNumber} of ${totalVersions}`;
+};
+
+const SOURCE_DOWNLOAD_MIME_TYPES: Record<string, string> = {
+    md: 'text/markdown;charset=utf-8',
+    html: 'text/html;charset=utf-8',
+};
+
+const getSourceDownloadMimeType = (extension: string): string => {
+    return SOURCE_DOWNLOAD_MIME_TYPES[extension] ?? 'text/plain;charset=utf-8';
+};
+
+const getPdfDownloadTelemetryResult = (result: ArtifactPdfExportResult): ArtifactDownloadResult => {
+    if (result === 'unavailable' || result === 'failed') {
+        return 'error';
+    }
+
+    return result;
 };
 
 const getArtifactHeaderTypeLabel = (type?: ArtifactType, language?: string): string | undefined => {
@@ -122,9 +171,11 @@ const PanelHeader = ({
     copySuccess,
     onDownload,
     onDownloadTxt,
+    onDownloadDocx,
     onDownloadPdf,
     onDownloadPptx,
     canDownloadTxt,
+    canDownloadDocx,
     canDownloadPdf,
     canDownloadPptx,
     exportingDownload,
@@ -141,6 +192,8 @@ const PanelHeader = ({
     canManuallyEdit,
     manualEditActive,
     manualEditDirty,
+    manualEditMode,
+    onToggleManualEditMode,
     onStartManualEdit,
     onSaveManualEdit,
     onCancelManualEdit,
@@ -287,6 +340,7 @@ const PanelHeader = ({
                                 <div className="artifact-export-spinner is-small" aria-hidden="true" />
                             </Button>
                         ) : (canDownloadTxt && onDownloadTxt) ||
+                          (canDownloadDocx && onDownloadDocx) ||
                           (canDownloadPdf && onDownloadPdf) ||
                           (canDownloadPptx && onDownloadPptx) ? (
                             <ArtifactDownloadDropdown
@@ -295,6 +349,7 @@ const PanelHeader = ({
                                     onDownload?.();
                                 }}
                                 onDownloadTxt={canDownloadTxt && onDownloadTxt ? onDownloadTxt : undefined}
+                                onDownloadDocx={canDownloadDocx && onDownloadDocx ? onDownloadDocx : undefined}
                                 onDownloadPdf={canDownloadPdf && onDownloadPdf ? onDownloadPdf : undefined}
                                 onDownloadPptx={canDownloadPptx && onDownloadPptx ? onDownloadPptx : undefined}
                             />
@@ -337,6 +392,28 @@ const PanelHeader = ({
                 )}
                 {!isStreaming && manualEditActive && (
                     <>
+                        {onToggleManualEditMode && (
+                            <Button
+                                icon
+                                shape="ghost"
+                                color="weak"
+                                size="small"
+                                onClick={onToggleManualEditMode}
+                                className="artifact-btn"
+                                title={
+                                    manualEditMode === 'source'
+                                        ? c('collider_2025:Action').t`Edit as rich text`
+                                        : c('collider_2025:Action').t`Edit as Markdown`
+                                }
+                                aria-label={
+                                    manualEditMode === 'source'
+                                        ? c('collider_2025:Action').t`Edit as rich text`
+                                        : c('collider_2025:Action').t`Edit as Markdown`
+                                }
+                            >
+                                <LumoIcon name={manualEditMode === 'source' ? 'Type' : 'FileCode'} size={16} />
+                            </Button>
+                        )}
                         <Button size="small" shape="ghost" color="weak" onClick={onCancelManualEdit}>
                             {c('collider_2025:Action').t`Cancel`}
                         </Button>
@@ -456,6 +533,11 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
     const [webpageViewMode, setWebpageViewMode] = useState<WebpageViewMode>('preview');
     const [manualEditActive, setManualEditActive] = useState(false);
     const [draftContent, setDraftContent] = useState('');
+    const [manualEditMode, setManualEditMode] = useState<ManualEditMode>('rich');
+    // What the rich editor would save for an untouched document. Its serializer writes markdown in
+    // its own style, so a draft equal to this is "no change" even though it differs from the original.
+    const [normalizedOriginalContent, setNormalizedOriginalContent] = useState<string | null>(null);
+    const richEditorRef = useRef<ArtifactRichTextEditorHandle>(null);
     const contentRef = useRef<HTMLDivElement>(null);
     const { handleSaveManualArtifactEdit } = useConversationActions();
     const isGuest = useIsGuest();
@@ -485,8 +567,33 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
     // never leaks onto a different artifact.
     useEffect(() => {
         setManualEditActive(false);
-        setDraftContent(selectedArtifact?.content ?? '');
+        setManualEditMode('rich');
+        setDraftContent(normalizeDocumentCardFences(selectedArtifact?.content ?? ''));
     }, [selectedArtifact?.id, selectedVersionIndex]);
+
+    const selectedContent = selectedArtifact?.content;
+    useEffect(() => {
+        setNormalizedOriginalContent(null);
+        if (!manualEditActive || selectedContent === undefined) {
+            return;
+        }
+        let cancelled = false;
+        void loadNormalizeMarkdownForEditor()
+            .then((normalize) => {
+                return normalize(normalizeDocumentCardFences(selectedContent));
+            })
+            .then((normalized) => {
+                if (!cancelled) {
+                    setNormalizedOriginalContent(normalized);
+                }
+            })
+            .catch(() => {
+                // Without the baseline, only an exact match with the original counts as unchanged.
+            });
+        return () => {
+            cancelled = true;
+        };
+    }, [manualEditActive, selectedContent]);
 
     if (!selectedArtifact && !isLoadingPanelOpen) {
         return null;
@@ -518,10 +625,17 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
         !isSelectedVersionProvisional &&
         versionCount !== undefined &&
         selectedVersionIndex === versionCount - 1;
-    const manualEditDirty = draftContent !== artifact.content && draftContent.trim().length > 0;
+    // The editor starts from what the preview shows: leaked chat card fences already turned into a
+    // table / quote (D12). Saving persists that form; opening and saving unchanged still is a no-op.
+    const editableContent = normalizeDocumentCardFences(artifact.content);
+    const isUnchangedDraft = (content: string) => {
+        return content === artifact.content || content === editableContent || content === normalizedOriginalContent;
+    };
+    const manualEditDirty = !isUnchangedDraft(draftContent) && draftContent.trim().length > 0;
     const artifactSaveFormats =
         artifactSupportsSaveToDrive(artifact.type) && !isGuest ? getArtifactSaveFormats(artifact.type) : [];
     const canDownloadTxt = artifact.type === 'document' && !isGenerating && !manualEditActive;
+    const canDownloadDocx = isArtifactSaveFormatSupported(artifact.type, 'docx') && !isGenerating && !manualEditActive;
     const canDownloadPdf = artifactSupportsPdfExport(artifact.type) && !isGenerating && !manualEditActive;
     const canDownloadPptx = artifactSupportsPptxExport(artifact.type) && !isGenerating && !manualEditActive;
     const exportingDownload = exportingDownloadKind !== null;
@@ -531,27 +645,55 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
         ? c('collider_2025: Info').t`Preparing ${formatLabel}…`
         : undefined;
 
+    const getLatestDraft = () => {
+        if (manualEditMode === 'rich' && richEditorRef.current) {
+            return richEditorRef.current.getMarkdown();
+        }
+        return draftContent;
+    };
+
     const handleStartManualEdit = () => {
-        setDraftContent(artifact.content);
+        setDraftContent(editableContent);
+        setManualEditMode('rich');
         setManualEditActive(true);
     };
 
     const handleCancelManualEdit = () => {
-        setDraftContent(artifact.content);
+        setDraftContent(editableContent);
         setManualEditActive(false);
     };
 
     const handleSaveManualEdit = () => {
-        if (!manualEditDirty) {
+        // Read the editor directly: its change callback is debounced and may lag the last keystroke.
+        const newContent = getLatestDraft();
+        if (isUnchangedDraft(newContent) || newContent.trim().length === 0) {
             return;
         }
         handleSaveManualArtifactEdit({
             artifactId: artifact.id,
             artifactType: artifact.type,
             artifactTitle: artifact.title,
-            newContent: draftContent,
+            newContent,
         });
         setManualEditActive(false);
+    };
+
+    const handleToggleManualEditMode = () => {
+        // Carry the draft across: the source editor shows what rich text would save, and the rich
+        // editor remounts from the (possibly hand-edited) markdown.
+        setDraftContent(getLatestDraft());
+        setManualEditMode((mode) => {
+            return mode === 'rich' ? 'source' : 'rich';
+        });
+    };
+
+    const handleRichEditorUnavailable = () => {
+        setManualEditMode('source');
+        createNotification({
+            type: 'warning',
+            text: c('collider_2025: Info')
+                .t`Couldn't open the rich text editor, so you're editing the Markdown source.`,
+        });
     };
 
     const handleCopy = () => {
@@ -572,97 +714,102 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
         setSaveToDriveModal(true);
     };
 
-    const handleDownload = () => {
-        const ext = ARTIFACT_TYPE_CONFIG[artifact.type].downloadExt(artifact);
-        const filename = buildArtifactFileName(artifact, ext);
-        const blob = new Blob([artifact.content], { type: 'text/plain' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = filename;
-        a.click();
-        URL.revokeObjectURL(url);
+    const contentLengthBucket = bucketArtifactContentLength(artifact.content.length);
+
+    const reportDownload = (format: ArtifactDownloadFormat, result: ArtifactDownloadResult) => {
         sendArtifactDownloadedEvent({
-            format: 'source',
+            format,
             artifactType: artifact.type,
             layout,
-            result: 'success',
+            result,
+            contentLengthBucket,
         });
+    };
+
+    const handleDownload = async () => {
+        const ext = ARTIFACT_TYPE_CONFIG[artifact.type].downloadExt(artifact);
+        const filename = buildArtifactFileName(artifact, ext);
+        try {
+            // A presentation's raw content is bare <section> fragments that don't open as a deck, so
+            // it is downloaded as a self-contained reveal.js page instead.
+            const content =
+                artifact.type === 'presentation' ? await buildStandalonePresentationHtml(artifact) : artifact.content;
+            downloadBlob(new Blob([content], { type: getSourceDownloadMimeType(ext) }), filename);
+            reportDownload('source', 'success');
+        } catch {
+            reportDownload('source', 'error');
+            createNotification({
+                type: 'error',
+                text: c('collider_2025: Error').t`Could not download this artifact.`,
+            });
+        }
     };
 
     const handleDownloadTxt = () => {
         const plainText = markdownToPlainText(artifact.content);
         const filename = buildArtifactFileName(artifact, 'txt');
-        const blob = new Blob([plainText], { type: 'text/plain;charset=utf-8' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = filename;
-        a.click();
-        URL.revokeObjectURL(url);
-        sendArtifactDownloadedEvent({
-            format: 'txt',
-            artifactType: artifact.type,
-            layout,
-            result: 'success',
-        });
+        downloadBlob(new Blob([plainText], { type: 'text/plain;charset=utf-8' }), filename);
+        reportDownload('txt', 'success');
+    };
+
+    // No progress overlay: conversion takes well under a second for typical documents, and the
+    // overlay would only flash. The error toast covers the chunk failing to load.
+    const handleDownloadDocx = async () => {
+        try {
+            const file = await buildArtifactFileForSave(artifact, 'docx');
+            downloadBlob(new Blob([file.data], { type: file.mimeType }), file.fileName);
+            reportDownload('docx', 'success');
+        } catch {
+            reportDownload('docx', 'error');
+            createNotification({
+                type: 'error',
+                text: c('collider_2025: Error').t`Could not export this artifact as a Word document.`,
+            });
+        }
     };
 
     const handleDownloadPdf = async () => {
         setExportingDownloadKind('pdf');
         await yieldToMainThreadPaint();
+
+        let result: ArtifactPdfExportResult = 'failed';
         try {
-            const result = await downloadArtifactPdf(artifact, {
+            result = await exportArtifactPdf(artifact, {
                 onProgress: throttledExportProgress,
             });
-            if (result === 'success') {
-                sendArtifactDownloadedEvent({
-                    format: 'pdf',
-                    artifactType: artifact.type,
-                    layout,
-                    result: 'success',
-                });
-                createNotification({
-                    type: 'success',
-                    text: c('collider_2025: Info').t`PDF downloaded.`,
-                });
-            } else if (result === 'print_fallback') {
-                sendArtifactDownloadedEvent({
-                    format: 'pdf',
-                    artifactType: artifact.type,
-                    layout,
-                    result: 'print_fallback',
-                });
-                createNotification({
-                    type: 'warning',
-                    text: c('collider_2025: Info')
-                        .t`PDF export failed — opened the print view instead. Choose “Save as PDF” in the print dialog.`,
-                });
-            } else {
-                sendArtifactDownloadedEvent({
-                    format: 'pdf',
-                    artifactType: artifact.type,
-                    layout,
-                    result: 'error',
-                });
-                createNotification({
-                    type: 'error',
-                    text: c('collider_2025: Error').t`Could not export this artifact as PDF.`,
-                });
-            }
         } catch {
-            sendArtifactDownloadedEvent({
-                format: 'pdf',
-                artifactType: artifact.type,
-                layout,
-                result: 'error',
+            result = 'failed';
+        } finally {
+            setExportingDownloadKind(null);
+        }
+
+        reportDownload('pdf', getPdfDownloadTelemetryResult(result));
+
+        if (result === 'success') {
+            createNotification({
+                type: 'success',
+                text: c('collider_2025: Info').t`PDF downloaded.`,
             });
+        } else if (result === 'print_dialog') {
+            // No toast: the print dialog is the feedback, and in Chrome it blocks until closed, so a
+            // toast would only appear after the user has already saved or cancelled.
+        } else if (result === 'print_fallback') {
+            createNotification({
+                type: 'warning',
+                text: c('collider_2025: Info')
+                    .t`PDF export failed — opened the print view instead. Choose “Save as PDF” in the print dialog.`,
+            });
+        } else if (result === 'image_fallback') {
+            createNotification({
+                type: 'warning',
+                text: c('collider_2025: Info')
+                    .t`Couldn't open the print dialog, so the PDF was downloaded with each page as an image.`,
+            });
+        } else {
             createNotification({
                 type: 'error',
                 text: c('collider_2025: Error').t`Could not export this artifact as PDF.`,
             });
-        } finally {
-            setExportingDownloadKind(null);
         }
     };
 
@@ -674,35 +821,20 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
                 onProgress: throttledExportProgress,
             });
             if (result === 'success') {
-                sendArtifactDownloadedEvent({
-                    format: 'pptx',
-                    artifactType: artifact.type,
-                    layout,
-                    result: 'success',
-                });
+                reportDownload('pptx', 'success');
                 createNotification({
                     type: 'success',
                     text: c('collider_2025: Info').t`PPTX downloaded.`,
                 });
             } else {
-                sendArtifactDownloadedEvent({
-                    format: 'pptx',
-                    artifactType: artifact.type,
-                    layout,
-                    result: 'error',
-                });
+                reportDownload('pptx', 'error');
                 createNotification({
                     type: 'error',
                     text: c('collider_2025: Error').t`Could not export this artifact as PPTX.`,
                 });
             }
         } catch {
-            sendArtifactDownloadedEvent({
-                format: 'pptx',
-                artifactType: artifact.type,
-                layout,
-                result: 'error',
-            });
+            reportDownload('pptx', 'error');
             createNotification({
                 type: 'error',
                 text: c('collider_2025: Error').t`Could not export this artifact as PPTX.`,
@@ -741,9 +873,11 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
                         copySuccess={copySuccess}
                         onDownload={handleDownload}
                         onDownloadTxt={handleDownloadTxt}
+                        onDownloadDocx={handleDownloadDocx}
                         onDownloadPdf={handleDownloadPdf}
                         onDownloadPptx={handleDownloadPptx}
                         canDownloadTxt={canDownloadTxt}
+                        canDownloadDocx={canDownloadDocx}
                         canDownloadPdf={canDownloadPdf}
                         canDownloadPptx={canDownloadPptx}
                         exportingDownload={exportingDownload}
@@ -770,6 +904,8 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
                         canManuallyEdit={canManuallyEdit}
                         manualEditActive={manualEditActive}
                         manualEditDirty={manualEditDirty}
+                        manualEditMode={manualEditMode}
+                        onToggleManualEditMode={handleToggleManualEditMode}
                         onStartManualEdit={handleStartManualEdit}
                         onSaveManualEdit={handleSaveManualEdit}
                         onCancelManualEdit={handleCancelManualEdit}
@@ -782,7 +918,22 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
                 ref={contentRef}
                 className="artifact-content-area relative flex flex-column flex-1 min-h-0 min-w-0 overflow-hidden w-full"
             >
-                {manualEditActive ? (
+                {manualEditActive && manualEditMode === 'rich' ? (
+                    <ArtifactPreviewErrorBoundary
+                        content={draftContent}
+                        resetKey={`${artifact.id}-${selectedVersionIndex}`}
+                        onError={handleRichEditorUnavailable}
+                    >
+                        <Suspense fallback={<ArtifactPanelLoading />}>
+                            <ArtifactRichTextEditor
+                                ref={richEditorRef}
+                                initialMarkdown={draftContent}
+                                onChange={setDraftContent}
+                                onUnavailable={handleRichEditorUnavailable}
+                            />
+                        </Suspense>
+                    </ArtifactPreviewErrorBoundary>
+                ) : manualEditActive ? (
                     <TextareaAutosize
                         value={draftContent}
                         onChange={(e) => {

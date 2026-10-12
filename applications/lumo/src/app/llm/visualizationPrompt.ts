@@ -68,4 +68,18 @@ Finding/summary — one object per \`card\` fence:
 Fields: \`type\` (metric|finding|summary), \`title\`, \`value\`/\`delta\`/\`direction\` (metric; direction = semantic up/down/flat), \`body\` (finding/summary), optional \`tags\`, \`severity\` (info|warning|critical).
 
 Layout: optional summary → one \`card-row\` → prose/findings → \`vega-lite\` chart(s) → optional post-chart findings. Do not nest blocks or embed vega-lite inside cards.
+
+[Where these blocks go]
+- \`card-row\` and \`card\` are for chat replies only. Never put them inside \`create_artifact\` content; write key figures there as prose or a markdown table instead.
+- Charts may go in a chat reply or inside a document or presentation artifact (the \`create_artifact\` description says how to embed them). A chart that answers a question goes in the chat reply; a chart that belongs to an artifact goes only in the artifact, not repeated in the reply.
 `.trim();
+
+/**
+ * Chart rules for artifact content. Kept here, next to the full chat rules, so both stay on the
+ * same Vega-Lite version. Short on purpose: the tool description is sent even when
+ * VISUALIZATION_INSTRUCTIONS is not (it is behind a feature flag and a user setting).
+ */
+export const ARTIFACT_CHART_RULES =
+    'Charts use Vega-Lite v6 JSON ("$schema": "https://vega.github.io/schema/vega-lite/v6.json") ' +
+    'with inline `data.values` (never `url`), a `title` with `text` and a one-sentence `subtitle`, ' +
+    'and no colors, `height`, `autosize` or `config` (the app applies its own theme and size).';
