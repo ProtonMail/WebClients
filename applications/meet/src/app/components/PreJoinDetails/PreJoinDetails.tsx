@@ -21,9 +21,12 @@ import {
 import { selectWaitingRoomSetting } from '@proton/meet/store/slices/settings';
 import { selectIsWaitingRoomAdmissionActive } from '@proton/meet/store/slices/waitingRoomSlice';
 import { TelemetryMeetDashboardEvents, sendMeetDashboardEvent } from '@proton/meet/telemetry/meetTelemetry';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import clsx from '@proton/utils/clsx';
 
 import { SettingToggle } from '../../atoms/SettingToggle/SettingToggle';
+import { canOpenInDesktopApp } from '../../utils/desktopAppDetector';
+import { OpenInDesktopAppCard, OpenInDesktopAppLink } from '../OpenInDesktopApp/OpenInDesktopApp';
 import { PreJoinDetailsHeader } from './PreJoinDetailsHeader';
 import { WaitingRoomAdmission } from './WaitingRoomAdmission/WaitingRoomAdmission';
 import { WaitingRoomDropdown } from './WaitingRoomDropdown';
@@ -61,9 +64,21 @@ export const PreJoinDetails = ({
 
     const [keepDisplayNameOnDevice, setKeepDisplayNameOnDevice] = useState(keepDisplayName);
 
-    const actionLabel = instantMeeting ? c('Action').t`Start meeting` : c('Action').t`Join meeting`;
+    const [desktopAppLaunchRequested, setDesktopAppLaunchRequested] = useState(false);
 
     const showHostScreen = instantMeeting || isHost;
+
+    const getActionLabel = () => {
+        if (instantMeeting) {
+            return c('Action').t`Start meeting`;
+        }
+        if (isElectronApp) {
+            return c('Action').t`Join meeting`;
+        }
+        return isHost ? c('Action').t`Start meeting in browser` : c('Action').t`Join in browser`;
+    };
+
+    const showOpenInDesktopApp = !instantMeeting && canOpenInDesktopApp();
 
     const NameInput = (
         <InputFieldStacked isGroupElement classname={clsx(!showHostScreen && viewportWidth['<=small'] && 'rounded-xl')}>
@@ -108,14 +123,25 @@ export const PreJoinDetails = ({
                     onClick={() => onJoinMeeting(displayName, keepDisplayNameOnDevice)}
                     disabled={displayName.trim() === ''}
                 >
-                    {actionLabel}
+                    {getActionLabel()}
                 </Button>,
+                ...(showOpenInDesktopApp && !desktopAppLaunchRequested
+                    ? [
+                          <OpenInDesktopAppLink
+                              key="open-in-desktop-app-link"
+                              onOpen={() => setDesktopAppLaunchRequested(true)}
+                          />,
+                      ]
+                    : []),
                 ...(!showHostScreen && waitingRoomEnabled
                     ? [
                           <span key="meeting-with-waiting-room-message" className="color-hint text-sm text-no-bold">{c(
                               'Info'
                           ).t`This meeting has a waiting room`}</span>,
                       ]
+                    : []),
+                ...(showOpenInDesktopApp && desktopAppLaunchRequested
+                    ? [<OpenInDesktopAppCard key="open-in-desktop-app-card" />]
                     : []),
             ]}
             loading={isMeetingLoading}
