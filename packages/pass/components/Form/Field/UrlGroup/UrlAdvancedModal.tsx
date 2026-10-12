@@ -51,6 +51,7 @@ const ModeCheckbox: FC<ModeCheckboxProps> = ({ fieldName, currentMode, mode, onS
     return (
         <InputField
             as={Radio}
+            className="inline-flex flex-nowrap"
             name={fieldName}
             checked={currentMode === mode}
             onChange={handleChange}
