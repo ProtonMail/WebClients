@@ -49,10 +49,17 @@ const createJoinEvent = (identity: string): ParticipantEventRecord => ({
     type: 'event',
 });
 
-const setupSnackbarStore = ({ isMentionsEnabled = true }: { isMentionsEnabled?: boolean } = {}) => {
+const setupSnackbarStore = ({
+    isMentionsEnabled = true,
+    isJoinLeaveSoundsEnabled = false,
+}: { isMentionsEnabled?: boolean; isJoinLeaveSoundsEnabled?: boolean } = {}) => {
     const listenerMiddleware = createListenerMiddleware({
         extra: {
-            unleashClient: { isEnabled: (flag: string) => flag === 'MeetChatMentions' && isMentionsEnabled },
+            unleashClient: {
+                isEnabled: (flag: string) =>
+                    (flag === 'MeetChatMentions' && isMentionsEnabled) ||
+                    (flag === 'MeetJoinLeaveSoundsNotifications' && isJoinLeaveSoundsEnabled),
+            },
         } as unknown as ProtonThunkArguments,
     });
 
@@ -306,8 +313,11 @@ describe('meetingSnackbars', () => {
     });
 
     describe('participant events', () => {
-        const setupStoreWithParticipants = (identities: string[]) => {
-            const context = setupSnackbarStore();
+        const setupStoreWithParticipants = (
+            identities: string[],
+            options?: Parameters<typeof setupSnackbarStore>[0]
+        ) => {
+            const context = setupSnackbarStore(options);
 
             context.store.dispatch(setSortedParticipantIdentities(identities));
             context.store.dispatch(
@@ -324,6 +334,17 @@ describe('meetingSnackbars', () => {
             store.dispatch(addEvent([event]));
 
             expect(getSnackbars()).toEqual([{ key: `event-remote-${event.timestamp}`, type: 'event', event }]);
+        });
+
+        it('stays quiet when joins and leaves are signalled by sounds', () => {
+            const { store, getKeys } = setupStoreWithParticipants([LOCAL_IDENTITY, 'remote'], {
+                isJoinLeaveSoundsEnabled: true,
+            });
+
+            store.dispatch(addEvent([createJoinEvent('remote')]));
+            store.dispatch(addEvent([{ ...createJoinEvent('remote'), eventType: ParticipantEvent.Leave }]));
+
+            expect(getKeys()).toEqual([]);
         });
 
         it('stays quiet in a meeting large enough for joins and leaves to be noise', () => {
