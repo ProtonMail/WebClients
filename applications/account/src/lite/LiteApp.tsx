@@ -18,6 +18,8 @@ import Icons from '@proton/icons/Icons';
 import metrics from '@proton/metrics';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import createApi from '@proton/shared/lib/api/createApi';
+// eslint-disable-next-line no-restricted-imports -- bootstrap code runs outside React, hooks are not available
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getValidatedProtonProtocolRedirect } from '@proton/shared/lib/authentication/fork/getValidatedProtonProtocol';
 import { APPS } from '@proton/shared/lib/constants';
@@ -25,6 +27,7 @@ import { getAppVersionHeader } from '@proton/shared/lib/fetch/headers';
 import createCache from '@proton/shared/lib/helpers/cache';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import * as sentry from '@proton/shared/lib/helpers/sentry';
+import { initTracker } from '@proton/telemetry-tracker/tracker';
 import noop from '@proton/utils/noop';
 
 import defaultConfig from '../app/config';
@@ -70,6 +73,7 @@ const bootstrapApp = ({ appVersion, app }: { appVersion: string | null; app: Pro
     });
     const authentication = bootstrap.createAuthentication({ mode: 'standalone' });
     bootstrap.init({ config, authentication, locales });
+    initTracker({ api: getSilentApi(api) });
     initSafariFontFixClassnames();
 
     const cache = createCache<string, any>();

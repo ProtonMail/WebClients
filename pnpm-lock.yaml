@@ -685,6 +685,9 @@ importers:
       '@proton/styles':
         specifier: workspace:^
         version: link:../../packages/styles
+      '@proton/telemetry-tracker':
+        specifier: workspace:^
+        version: link:../../packages/telemetry-tracker
       '@proton/unleash':
         specifier: workspace:^
         version: link:../../packages/unleash
@@ -2009,6 +2012,9 @@ importers:
       '@proton/styles':
         specifier: workspace:^
         version: link:../../packages/styles
+      '@proton/telemetry-tracker':
+        specifier: workspace:^
+        version: link:../../packages/telemetry-tracker
       '@proton/unleash':
         specifier: workspace:^
         version: link:../../packages/unleash
@@ -2732,6 +2738,9 @@ importers:
       '@proton/styles':
         specifier: workspace:^
         version: link:../../packages/styles
+      '@proton/telemetry-tracker':
+        specifier: workspace:^
+        version: link:../../packages/telemetry-tracker
       '@proton/unleash':
         specifier: workspace:^
         version: link:../../packages/unleash
@@ -4479,6 +4488,9 @@ importers:
       '@proton/styles':
         specifier: workspace:^
         version: link:../styles
+      '@proton/telemetry-tracker':
+        specifier: workspace:^
+        version: link:../telemetry-tracker
       '@proton/unleash':
         specifier: workspace:^
         version: link:../unleash
