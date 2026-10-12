@@ -13,11 +13,16 @@ import type {
     WasmQuote,
 } from '@proton/andromeda';
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { DropdownSizeUnit, Icon, useModalState, useSubscriptionModal } from '@proton/components';
+import { DropdownSizeUnit, useModalState, useSubscriptionModal } from '@proton/components';
 import CountrySelect from '@proton/components/components/country/CountrySelect';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import useLoading from '@proton/hooks/useLoading';
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
+import { IcBoltFilled } from '@proton/icons/icons/IcBoltFilled';
+import { IcBrandApple } from '@proton/icons/icons/IcBrandApple';
+import { IcCreditCard } from '@proton/icons/icons/IcCreditCard';
+import { IcPassCreditCard } from '@proton/icons/icons/IcPassCreditCard';
+import { IcPassJson } from '@proton/icons/icons/IcPassJson';
 import { PLANS } from '@proton/payments/core/constants';
 import aztecoLogo from '@proton/styles/assets/img/brand/azteco.svg';
 import banxaLogo from '@proton/styles/assets/img/brand/banxa.svg';
@@ -73,32 +78,32 @@ const getContentForProvider = (provider: WasmGatewayProvider) => {
     }
 };
 
-const getContentForPaymentMethod = (paymentMethod: WasmPaymentMethod): { text: string; icon: IconName } | null => {
+const getContentForPaymentMethod = (paymentMethod: WasmPaymentMethod): { text: string; icon: IconComponent } | null => {
     switch (paymentMethod) {
         case 'ApplePay':
             return {
                 text: 'ApplePay',
-                icon: 'brand-apple',
+                icon: IcBrandApple,
             };
         case 'BankTransfer':
             return {
                 text: c('bitcoin buy').t`Bank transfer`,
-                icon: 'pass-credit-card',
+                icon: IcPassCreditCard,
             };
         case 'Card':
             return {
                 text: c('bitcoin buy').t`Credit card`,
-                icon: 'credit-card',
+                icon: IcCreditCard,
             };
         case 'GooglePay':
             return {
                 text: 'GooglePay',
-                icon: 'pass-json',
+                icon: IcPassJson,
             };
         case 'InstantPayment':
             return {
                 text: c('bitcoin buy').t`Instant payment`,
-                icon: 'bolt-filled',
+                icon: IcBoltFilled,
             };
         default:
             return null;
@@ -364,10 +369,12 @@ export const AmountStep = ({ onConfirm, country: inputCountry, preselectedQuote,
                                         return undefined;
                                     }
 
+                                    const PaymentMethodIcon = content.icon;
+
                                     return (
                                         <Skeleton loading={loadingQuotes}>
                                             <div className="p-3 rounded-full bg-norm flex items-center justify-center mr-2">
-                                                <Icon size={4} name={content.icon} className="color-weak" />
+                                                <PaymentMethodIcon size={4} className="color-weak" />
                                             </div>
                                         </Skeleton>
                                     );
