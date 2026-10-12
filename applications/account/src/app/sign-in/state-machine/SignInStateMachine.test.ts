@@ -131,7 +131,9 @@ interface Overrides {
     fetchAccountType?: () => Promise<AccountType>;
     fetchSSOInfo?: () => Promise<SSOInfoResponse>;
     authenticateWithPassword?: (values: CredentialsFormValues) => Promise<PrimaryAuthResult>;
-    authorizeWithSSOProvider?: (args: { input: { token: string | undefined } }) => Promise<SSOProviderResult>;
+    authorizeWithSSOProvider?: (args: {
+        input: { token: string | undefined; persistent: boolean };
+    }) => Promise<SSOProviderResult>;
     authenticateWithSSOToken?: (input: unknown) => Promise<PrimaryAuthResult>;
     created?: CreatedAuth;
     /** What the SSO flow's preparation returns, unless `prepareSSO` is overridden. */
@@ -1174,11 +1176,22 @@ describe('SignInStateMachine', () => {
             expect(credentialsFlow(actor).getSnapshot().context.username).toBe('typed@example.com');
         });
 
+        it.each([
+            [{ token: 'redirect-token', persistent: false }, false],
+            [{ token: 'redirect-token' }, true],
+        ])('exchanges the token with the "Keep me signed in" the opener saved: %o', async (externalSSO, persistent) => {
+            const { actor, spies } = startWith({ type: AuthType.ExternalSSO }, {}, { externalSSO });
+            await waitUntilSettled(actor);
+            expect(spies.authenticateWithSSOToken).toHaveBeenCalledWith(
+                expect.objectContaining({ token: 'redirect-token', persistent })
+            );
+        });
+
         it('exchanges the token from the identity provider redirect once, on its own', async () => {
             const { actor, spies } = startWith(
                 { type: AuthType.ExternalSSO },
                 { authenticateWithSSOToken: () => Promise.reject(new Error('used')) },
-                { externalSSO: { token: 'redirect-token', persistent: true } }
+                { externalSSO: { token: 'redirect-token' } }
             );
             await waitUntilSettled(actor);
             expect(spies.authenticateWithSSOToken).toHaveBeenCalledWith(
