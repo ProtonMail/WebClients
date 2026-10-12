@@ -2344,6 +2344,34 @@ describe('SignInStateMachine', () => {
                 expect(spies.completeSignIn).not.toHaveBeenCalled();
             });
 
+            it('tells an organization member its administrator gives it addresses, then signs in without one', async () => {
+                const { actor, spies } = startActor({
+                    created: claimed(),
+                    loadClaimedAddressSetup: () => Promise.resolve({ type: 'managed' }),
+                });
+                await submitCredentials(actor);
+                expect(passwordAccount(actor).getSnapshot().context.screen).toBe('claimedAddressManaged');
+
+                passwordAccount(actor).send({ type: 'claimedAddress.continued' });
+                await waitUntilSettled(actor);
+                expect(isSignedIn(actor)).toBe(true);
+                expect(spies.unlockKeys).toHaveBeenCalledTimes(1);
+                expect(spies.unlockKeyPassword).not.toHaveBeenCalled();
+                expect(spies.createClaimedAddress).not.toHaveBeenCalled();
+            });
+
+            it('goes back to the credentials form from the organization member notice, with nothing signed in', async () => {
+                const { actor, spies } = startActor({
+                    created: claimed(),
+                    loadClaimedAddressSetup: () => Promise.resolve({ type: 'managed' }),
+                });
+                await submitCredentials(actor);
+                passwordAccount(actor).send({ type: 'decision.back' });
+                await waitUntilSettled(actor);
+                expect(actor.getSnapshot().context.step).toBe('credentials');
+                expect(spies.completeSignIn).not.toHaveBeenCalled();
+            });
+
             it('only tells where the data lives when the account still has an enabled address, then signs in', async () => {
                 const { actor, spies } = startActor({
                     created: claimed(),
