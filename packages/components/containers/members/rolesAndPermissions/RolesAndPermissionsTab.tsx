@@ -38,8 +38,10 @@ const buildRows = (
         const groupName = groupByRoleId.get(OrganizationRoleID) ?? null;
 
         let badge = null;
+        let tooltip = null;
         if (isGroupLocked) {
             badge = groupName ? c('user_modal').t`(via ${groupName})` : c('user_modal').t`(via group)`;
+            tooltip = c('tooltip').t`Assigned by a group. Remove the user from the group to change this role`;
         }
 
         return {
@@ -49,6 +51,7 @@ const buildRows = (
             isChecked: isGroupLocked || isSelected,
             isDisabled: disableAll || isGroupLocked || isOwnerLocked,
             badge,
+            tooltip,
         };
     });
 };
