@@ -27,6 +27,7 @@ import type {
 } from '../steps/credentials/state-machine/credentialsActors';
 import {
     InvalidLoginError,
+    SSOSignInRejectedError,
     SwitchToSRPError,
     SwitchToSSOError,
 } from '../steps/credentials/state-machine/credentialsErrors';
@@ -1060,6 +1061,59 @@ describe('SignInStateMachine', () => {
                     .getSnapshot()
                     .matches({ form: { signIn: { srp: 'idle' } } })
             ).toBe(true);
+            expect(errors()).toEqual([error]);
+        });
+
+        it("shows the API's refusal of the SSO sign-in on the form, without reporting it", async () => {
+            const error = new SSOSignInRejectedError({ status: 422, data: { Code: 2011, Error: 'SSO misconfigured' } });
+            const { actor, errors } = startWith(
+                { type: AuthType.ExternalSSO },
+                { authenticateWithSSOToken: () => Promise.reject(error) }
+            );
+            await submitUsername(actor);
+            const credentials = credentialsFlow(actor);
+            expect(credentials.getSnapshot().matches({ form: { signIn: { externalSSO: 'idle' } } })).toBe(true);
+            expect(credentials.getSnapshot().context.errorMessage).toBe('SSO misconfigured');
+            expect(errors()).toEqual([]);
+
+            // Editing the email clears it
+            credentials.send({ type: 'credentials.edited' });
+            expect(credentials.getSnapshot().context.errorMessage).toBeUndefined();
+        });
+
+        it("doesn't carry the API's refusal of the SSO sign-in over to the password form", async () => {
+            const error = new SSOSignInRejectedError({ status: 422, data: { Code: 2011, Error: 'SSO misconfigured' } });
+            const { actor } = startWith(
+                { type: AuthType.ExternalSSO },
+                { authenticateWithSSOToken: () => Promise.reject(error) }
+            );
+            await submitUsername(actor);
+            const credentials = credentialsFlow(actor);
+            expect(credentials.getSnapshot().context.errorMessage).toBe('SSO misconfigured');
+
+            credentials.send({
+                type: 'credentials.passwordSignInRequested',
+                payload: { username: 'typed@example.com' },
+            });
+            expect(credentials.getSnapshot().matches({ form: { signIn: { srp: 'idle' } } })).toBe(true);
+            expect(credentials.getSnapshot().context.errorMessage).toBeUndefined();
+        });
+
+        it("reports the API's refusal of the SSO sign-in from the auto form, which has no room for it", async () => {
+            const error = new SSOSignInRejectedError({ status: 422, data: { Code: 2011, Error: 'SSO misconfigured' } });
+            const { actor, errors } = startWith(
+                { type: AuthType.Auto },
+                {
+                    fetchAccountType: () =>
+                        Promise.resolve<AccountType>({
+                            type: 'sso',
+                            ssoInfo: { SSOChallengeToken: 'challenge' } as SSOInfoResponse,
+                        }),
+                    authenticateWithSSOToken: () => Promise.reject(error),
+                }
+            );
+            await submitUsername(actor);
+            expect(credentialsFlow(actor).getSnapshot().context.errorMessage).toBeUndefined();
             expect(errors()).toEqual([error]);
         });
 

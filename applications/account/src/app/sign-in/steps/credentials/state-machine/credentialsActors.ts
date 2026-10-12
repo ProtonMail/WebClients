@@ -20,7 +20,7 @@ import type { ClaimedAddressRecovery } from '../../../auth/claimedAddress';
 import { AuthType } from '../../../auth/interface';
 import { ClaimedAddressNoMatchError, loginWithClaimedAddress, loginWithPassword } from '../../../auth/passwordLogin';
 import type { SignInActorServices } from '../../../state-machine/signInActors';
-import { rethrowCredentialsError } from './credentialsErrors';
+import { rethrowCredentialsError, rethrowSSOTokenError } from './credentialsErrors';
 
 /** What the username step (auto) and the SSO form submit: the server decides how the account signs in. */
 export interface UsernameFormValues {
@@ -140,7 +140,9 @@ export const createCredentialsActors = (services: SignInActorServices) => {
                 }
                 await services.preparePage();
                 const config = auth({ SSOResponseToken: token }, persistent);
-                const authResponse = await api<AuthResponse>(uid ? withUIDHeaders(uid, config) : config);
+                const authResponse = await api<AuthResponse>(uid ? withUIDHeaders(uid, config) : config).catch(
+                    rethrowSSOTokenError
+                );
                 return {
                     authType: AuthType.ExternalSSO,
                     authVersion: 4,
