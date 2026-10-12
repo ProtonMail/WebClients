@@ -34,6 +34,7 @@ import { isProduction } from '@proton/shared/lib/helpers/sentry';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import { startMailForegroundTelemetry } from '@proton/shared/lib/telemetry/mailForegroundTelemetry';
 import { appMode } from '@proton/shared/lib/webpack.constants';
+import { initTracker } from '@proton/telemetry-tracker/tracker';
 import { CommonFeatureFlag } from '@proton/unleash/Flags';
 import noop from '@proton/utils/noop';
 
@@ -58,6 +59,7 @@ export const bootstrapApp = async ({ config }: { config: ProtonConfig }) => {
     const silentApi = getSilentApi(api);
     const authentication = bootstrap.createAuthentication();
     bootstrap.init({ config, authentication, locales });
+    initTracker({ api: silentApi });
     setupGuestCrossStorage({ appMode, appName });
     initSafariFontFixClassnames();
     startLogoutListener();

@@ -13,6 +13,7 @@ export enum TelemetryMeasurementGroups {
     accountUnauthLost2FA = 'account.web.unauth_lost_2fa',
     accountDashboard = 'account.web.dashboard',
     accountUpgradePage = 'account.web.upgrade_page',
+    easySwitch = 'any.web.easy_switch',
     referralDiscover = 'any.web.referral_discover',
     alwaysOnUpsell = 'any.web.always_on_upsell',
     calendarIcsSurgery = 'calendar.web.ics_surgery',
@@ -113,6 +114,15 @@ export enum TelemetryMailTrial2024UpsellModal {
     noThanks = 'no_thanks',
     closeModal = 'close_modal',
     upsell = 'upsell',
+}
+
+export enum TelemetryEasySwitchEvents {
+    importReportAction = 'import_report_action',
+    byoeAddressAction = 'byoe_address_action',
+    byoeClaimableAddressModalShown = 'byoe_claimable_address_modal_shown',
+    byoeClaimableAddressModalAction = 'byoe_claimable_address_modal_action',
+    byoeAddressLinkedModalShown = 'byoe_address_linked_modal_shown',
+    byoeAddressLinkedModalAction = 'byoe_address_linked_modal_action',
 }
 
 export enum TelemetryMailPagingControlsEvents {
@@ -767,7 +777,8 @@ export type TelemetryEvents =
     | TelemetryMeetFunnelTelemetry
     | TelemetryMeetActionsEvents
     | TelemetryMeetDashboardEvents
-    | TelemetryMeetPerformanceEvents;
+    | TelemetryMeetPerformanceEvents
+    | TelemetryEasySwitchEvents;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;

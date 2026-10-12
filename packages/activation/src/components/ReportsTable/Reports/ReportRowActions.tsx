@@ -4,18 +4,28 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Prompt, useModalState } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
+import { tracker } from '@proton/telemetry-tracker/tracker';
 
+import type { ApiImportProvider } from '../../../api/api.interface';
 import { ApiReportRollbackState } from '../../../api/api.interface';
+import { useGetIsBYOE } from '../../../hooks/useGetIsBYOE';
+import type { ImportType } from '../../../interface';
 import { deleteReportSummary, rollbackReportSummary } from '../../../logic/reports/reports.actions';
 import type { ReportSummaryID } from '../../../logic/reports/reports.interface';
 import { useEasySwitchDispatch } from '../../../logic/store';
+import { telemetryProduct, telemetryProvider } from '../../../telemetry/dimensions';
+import { easySwitchImportReportAction } from '../../../telemetry/events';
 
 interface Props {
     reportSummaryID: ReportSummaryID;
+    product: ImportType;
+    provider: ApiImportProvider;
+    account: string;
     rollbackState: ApiReportRollbackState | undefined;
 }
 
-const ReportRowActions = ({ reportSummaryID, rollbackState }: Props) => {
+const ReportRowActions = ({ reportSummaryID, rollbackState, product, provider, account }: Props) => {
+    const getIsBYOE = useGetIsBYOE();
     const dispatch = useEasySwitchDispatch();
     const [deleteModalProps, showDeleteModal, renderDeleteModal] = useModalState();
     const [rollbackModalProps, showRollbackModal, renderRollbackModal] = useModalState();
@@ -26,6 +36,30 @@ const ReportRowActions = ({ reportSummaryID, rollbackState }: Props) => {
     if (loadingUndoRecord || rollbackState === ApiReportRollbackState.ROLLING_BACK) {
         return null;
     }
+
+    const trackEvent = async (action: 'undo_import' | 'delete_report') => {
+        const isBYOE = await getIsBYOE(account);
+        tracker.emit(easySwitchImportReportAction, {
+            dimensions: {
+                importAction: action,
+                isBYOE,
+                provider: telemetryProvider[provider],
+                product: telemetryProduct[product],
+            },
+        });
+    };
+
+    const handleUndo = () => {
+        void withLoadingUndoRecord(dispatch(rollbackReportSummary({ reportSummaryID })));
+        void trackEvent('undo_import');
+        showRollbackModal(false);
+    };
+
+    const handleDelete = () => {
+        void withLoadingDeleteRecord(dispatch(deleteReportSummary({ reportSummaryID })));
+        void trackEvent('delete_report');
+        showDeleteModal(false);
+    };
 
     return (
         <div className="inline-flex gap-1">
@@ -48,13 +82,7 @@ const ReportRowActions = ({ reportSummaryID, rollbackState }: Props) => {
                     {...deleteModalProps}
                     title={c('Confirm modal title').t`Remove from the list?`}
                     buttons={[
-                        <Button
-                            color="danger"
-                            onClick={() => {
-                                void withLoadingDeleteRecord(dispatch(deleteReportSummary({ reportSummaryID })));
-                                showDeleteModal(false);
-                            }}
-                        >{c('Action').t`Remove`}</Button>,
+                        <Button color="danger" onClick={handleDelete}>{c('Action').t`Remove`}</Button>,
                         <Button color="weak" onClick={() => showDeleteModal(false)}>{c('Action').t`Keep`}</Button>,
                     ]}
                     data-testid="ReportsTable:deleteModal"
@@ -68,13 +96,7 @@ const ReportRowActions = ({ reportSummaryID, rollbackState }: Props) => {
                     {...rollbackModalProps}
                     title={c('Confirm modal title').t`Undo this import?`}
                     buttons={[
-                        <Button
-                            color="danger"
-                            onClick={() => {
-                                void withLoadingUndoRecord(dispatch(rollbackReportSummary({ reportSummaryID })));
-                                showRollbackModal(false);
-                            }}
-                        >{c('Action').t`Yes, undo`}</Button>,
+                        <Button color="danger" onClick={handleUndo}>{c('Action').t`Yes, undo`}</Button>,
                         <Button color="weak" onClick={() => showRollbackModal(false)}>{c('Action').t`Cancel`}</Button>,
                     ]}
                 >
