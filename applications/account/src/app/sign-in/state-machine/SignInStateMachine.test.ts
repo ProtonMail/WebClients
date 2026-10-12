@@ -9,7 +9,7 @@ import { getRequiresPasswordSetup } from '@proton/shared/lib/keys';
 import type { OrganizationData } from '@proton/shared/lib/keys/unprivatization/helper';
 
 import type { AuthSession } from '../../content/authSession';
-import type { ClaimedAddressSetup } from '../auth/claimedAddress';
+import { type ClaimedAddressSetup, UnavailableUsernameError } from '../auth/claimedAddress';
 import {
     AuthType,
     type AuthTypeData,
@@ -34,6 +34,7 @@ import {
 import {
     credentialsStateMachine,
     selectCredentialsForm,
+    selectSubmitting,
 } from '../steps/credentials/state-machine/credentialsStateMachine';
 import { lost2FAStateMachine } from '../steps/password-account/screens/lost-two-factor/state-machine/lost2FAStateMachine';
 import {
@@ -128,7 +129,7 @@ interface Overrides {
     fetchAccountType?: () => Promise<AccountType>;
     fetchSSOInfo?: () => Promise<SSOInfoResponse>;
     authenticateWithPassword?: (values: CredentialsFormValues) => Promise<PrimaryAuthResult>;
-    authorizeWithSSOProvider?: () => Promise<SSOProviderResult>;
+    authorizeWithSSOProvider?: (args: { input: { token: string | undefined } }) => Promise<SSOProviderResult>;
     authenticateWithSSOToken?: (input: unknown) => Promise<PrimaryAuthResult>;
     created?: CreatedAuth;
     /** What the SSO flow's preparation returns, unless `prepareSSO` is overridden. */
@@ -527,6 +528,20 @@ describe('SignInStateMachine', () => {
                 ).toBe(true);
             });
 
+            it('waits for the password check before going back, as it may have signed in already', async () => {
+                const { actor } = await startRecovery({ authenticateWithClaimedAddress: () => new Promise(() => {}) });
+
+                credentialsFlow(actor).send({
+                    type: 'claimed.submitted',
+                    payload: { password: 'old-password', payload: {} },
+                });
+                expect(credentialsFlow(actor).getSnapshot().can({ type: 'decision.back' })).toBe(false);
+                credentialsFlow(actor).send({ type: 'decision.back' });
+
+                expect(claimedScreen(actor)).toBe('claimedVerify');
+                expect(selectSubmitting(credentialsFlow(actor).getSnapshot())).toBe(true);
+            });
+
             it('moves on to proving ownership when the user recovers instead of using the identity provider', async () => {
                 const { actor } = startWith({ type: AuthType.Auto }, { fetchAccountType: claimedSSOAccount });
                 await submitUsername(actor);
@@ -609,35 +624,61 @@ describe('SignInStateMachine', () => {
                 // The choice stays up, loading, while the window is open
                 expect(claimedScreen(actor)).toBe('claimedChoice');
             });
-            it('fetches a fresh challenge token each time the choice opens the identity provider', async () => {
-                let fetched = 0;
-                let opened = 0;
-                const { actor } = startWith(
+            /** The first window opens with the token the choice was reached with; the user closes it, and reopens. */
+            const openTwice = async (overrides: Overrides = {}) => {
+                const tokens: (string | undefined)[] = [];
+                const fetchSSOInfo = jest.fn(() =>
+                    Promise.resolve({ SSOChallengeToken: 'fresh', ClaimedAddresses: [] } as unknown as SSOInfoResponse)
+                );
+                const started = startWith(
                     { type: AuthType.Auto },
                     {
                         fetchAccountType: claimedSSOAccount,
-                        fetchSSOInfo: () =>
-                            Promise.resolve({ SSOChallengeToken: `fresh-${++fetched}` } as SSOInfoResponse),
-                        // The user closes the first window; the second stays open
-                        authorizeWithSSOProvider: () =>
-                            opened++ === 0 ? Promise.reject(new ExternalSSOError('closed')) : new Promise(() => {}),
+                        fetchSSOInfo,
+                        // The user closes each window
+                        authorizeWithSSOProvider: ({ input }) => {
+                            tokens.push(input.token);
+                            return Promise.reject(new ExternalSSOError('closed'));
+                        },
+                        ...overrides,
                     }
                 );
-                await submitUsername(actor);
+                await submitUsername(started.actor);
+                for (const opened of [1, 2]) {
+                    credentialsFlow(started.actor).send({ type: 'claimed.ssoRequested' });
+                    await waitUntil(
+                        () =>
+                            tokens.length === opened &&
+                            credentialsFlow(started.actor)
+                                .getSnapshot()
+                                .matches({ form: { claimedAddress: 'choice' } })
+                    );
+                }
+                return { ...started, tokens, fetchSSOInfo };
+            };
 
-                credentialsFlow(actor).send({ type: 'claimed.ssoRequested' });
-                await waitUntil(
-                    () =>
-                        credentialsFlow(actor)
-                            .getSnapshot()
-                            .matches({ form: { claimedAddress: 'choice' } }) && opened === 1
-                );
-                credentialsFlow(actor).send({ type: 'claimed.ssoRequested' });
-                await waitUntil(() => opened === 2);
+            it('opens the first window with the token it has, and fetches a fresh one for the next', async () => {
+                const { actor, tokens, fetchSSOInfo } = await openTwice();
 
-                // Opening the window consumes the token, so each opening has its own
-                expect(credentialsFlow(actor).getSnapshot().context.ssoInfo?.SSOChallengeToken).toBe('fresh-2');
+                // Opening the window uses up the token, so only the second opening needs a new one
+                expect(tokens).toEqual(['challenge', 'fresh']);
+                expect(fetchSSOInfo).toHaveBeenCalledTimes(1);
                 expect(claimedScreen(actor)).toBe('claimedChoice');
+            });
+
+            it('recovers with the candidates it was entered with, whatever SSO info loads after', async () => {
+                const { actor, spies } = await openTwice();
+
+                credentialsFlow(actor).send({ type: 'claimed.recoveryChosen' });
+                credentialsFlow(actor).send({
+                    type: 'claimed.submitted',
+                    payload: { password: 'old-password', payload: {} },
+                });
+                await waitUntil(() => spies.authenticateWithClaimedAddress.mock.calls.length === 1);
+
+                expect(spies.authenticateWithClaimedAddress).toHaveBeenCalledWith(
+                    expect.objectContaining({ claimedAddresses: ['a1x9k2', 'b7q4m0'] })
+                );
             });
 
             it('cancels the identity provider back to the choice, and goes back to the form while it is open', async () => {
@@ -2263,8 +2304,8 @@ describe('SignInStateMachine', () => {
                 );
             });
 
-            it('shows a failed creation and stays on the form, without signing in', async () => {
-                const error = new Error('Username already used');
+            it('shows a taken username and stays on the form, without signing in', async () => {
+                const error = new UnavailableUsernameError(apiError(API_CUSTOM_ERROR_CODES.USERNAME_ALREADY_USED));
                 const { actor, spies, errors } = startActor({
                     created: claimed(),
                     createClaimedAddress: () => Promise.reject(error),
@@ -2277,6 +2318,19 @@ describe('SignInStateMachine', () => {
                         .getSnapshot()
                         .matches({ claimedAddress: { create: 'idle' } })
                 ).toBe(true);
+                expect(spies.completeSignIn).not.toHaveBeenCalled();
+            });
+
+            it('signs in again after any other failed creation, which may have created the address', async () => {
+                const error = new Error('Network error');
+                const { actor, spies, errors } = startActor({
+                    created: claimed(),
+                    createClaimedAddress: () => Promise.reject(error),
+                });
+                await submitCredentials(actor);
+                await submitAddress(actor);
+                expect(errors()).toEqual([error]);
+                expect(actor.getSnapshot().context.step).toBe('credentials');
                 expect(spies.completeSignIn).not.toHaveBeenCalled();
             });
 
