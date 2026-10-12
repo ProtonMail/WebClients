@@ -531,9 +531,9 @@ export const KnowledgeBasePanel = ({
                 >
                     {/* Header */}
                     <div className="shrink-0 mb-4">
-                        <div className="flex flex-row items-center justify-space-between">
-                            <div className="flex flex-row flex-nowrap items-center gap-1">
-                                <p className="m-0 text-lg text-bold">
+                        <div className="flex flex-row items-center justify-space-between gap-2 min-w-0">
+                            <div className="flex flex-row flex-nowrap items-center gap-1 min-w-0 flex-1">
+                                <p className="m-0 text-lg text-bold text-ellipsis overflow-hidden whitespace-nowrap min-w-0">
                                     {c('collider_2025: Info').t`All files in this chat`}
                                 </p>
                             </div>
@@ -543,7 +543,7 @@ export const KnowledgeBasePanel = ({
                                     size="small"
                                     shape="outline"
                                     onClick={() => setShowDriveBrowser(true)}
-                                    className="shrink-0 flex flex-row flex-nowrap items-center gap-2"
+                                    className="shrink-0 flex flex-row flex-nowrap items-center gap-2 max-w-full"
                                     title={c('collider_2025: KBActionTitle').t`Add from ${DRIVE_SHORT_APP_NAME}`}
                                 >
                                     <IcBrandProtonDrive size={4} />
@@ -577,7 +577,7 @@ export const KnowledgeBasePanel = ({
                     )}
 
                     {/* File list */}
-                    <div className="flex-1 min-h-0 overflow-y-auto">
+                    <div className="flex-1 min-h-0 min-w-0 overflow-y-auto overflow-x-hidden">
                         {filterMessage ? (
                             <FilteredFilesContent
                                 allFiles={allFiles}
