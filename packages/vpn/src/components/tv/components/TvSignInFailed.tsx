@@ -6,8 +6,10 @@ import type { FetchErrors } from '../types';
 
 const mapErrorWithTexts: Record<FetchErrors, Record<'title' | 'hint', () => string>> = {
     'business-user': {
-        title: () => c('Title').t`Couldn't sign in`,
-        hint: () => c('Info').t`Click 'Trouble signing in?' on your TV to follow the alternative steps.`,
+        title: () => c('Title').t`QR sign-in isn't available for business accounts`,
+        hint: () =>
+            c('Info')
+                .t`For security, business accounts sign in with a code instead. On your TV, select 'Trouble signing in?' and follow the steps.`,
     },
     'code-expired': {
         title: () => c('Title').t`Code expired`,
