@@ -405,10 +405,10 @@
         "Descarregueu-ho per Mac"
       ],
       "Download for macOS": [
-        "Descarregueu per macOS"
+        "Descarrega per a macOS"
       ],
       "Download for Windows": [
-        "Descarregueu-lo per Windows"
+        "Descarrega per a Windows"
       ],
       "Download info": [
         "Descarregar la informació"
@@ -601,6 +601,9 @@
       ],
       "Import now": [
         "Importar-ho ara"
+      ],
+      "Import paused": [
+        "S'ha pausat la importació"
       ],
       "Importing from Google": [
         "S'està important des de Google"
@@ -1531,6 +1534,88 @@
     "BF2024: Tooltip": {
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "L'espai d'emmagatzematge està compartit entre tots els serveis de ${ BRAND_NAME }."
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Obtingueu l’oferta"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/mes"
+      ],
+      "2 individual accounts": [
+        "2 comptes individuals"
+      ],
+      "2 TB of secure storage": [
+        "2 TB d'emmagatzematge segur"
+      ],
+      "3 TB of secure storage": [
+        "3 TB d'emmagatzematge segur"
+      ],
+      "500 GB of secure storage": [
+        "500 GB d'emmagatzematge segur"
+      ],
+      "6 individual accounts": [
+        "6 comptes individuals"
+      ],
+      "Advanced protection against cyber threats": [
+        "Protecció avançada contra amenaces cibernètiques"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Els descomptes es basen en el preu mensual estàndard. La vostra subscripció es renovarà a la tarifa anual estàndard quan finalitzi el cicle de facturació."
+      ]
+    },
+    "bfcampaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } Prèmium"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } Prèmium"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } Prèmium"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } Prèmium"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } Prèmium"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "La gran oferta de l'any"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "durant 12 mesos"
+      ],
+      "Last chance to save big": [
+        "Última oportunitat per estalviar molt"
+      ],
+      "Protect your entire tribe": [
+        "Protegiu tota la vostra tribu"
+      ],
+      "Protection for two in a single plan": [
+        "Protecció per a dos en un sol pla"
+      ],
+      "Save big with a yearly plan": [
+        "Estalvieu molt amb un pla anual"
       ]
     },
     "Billing cycle option": {
@@ -4132,6 +4217,9 @@
       "You must set a name": [
         "Heu d'establir un nom"
       ],
+      "You reached the maximum number of connected addresses": [
+        "Heu arribat al nombre màxim d'adreces connectades"
+      ],
       "Your import will not be processed.": [
         "La vostra importació no es processarà."
       ],
@@ -5855,6 +5943,9 @@
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
         "Si us elimineu, perdreu l'accés a \"${ fileName }\" i no podreu tornar a obrir el fitxer tret que el propietari us el torni a compartir."
       ],
+      "If you've already upgraded, you can resume your import in ${ easySwitchSettingsLink }. You can also cancel it there.": [
+        "Si ja heu millorat el pla, podeu reprendre la importació a ${ easySwitchSettingsLink }. També la podreu cancel·lar allà mateix."
+      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importa ${ calendarCount } calendari de ${ totalCalendarsCount }",
         "Importa ${ calendarCount } calendaris de ${ totalCalendarsCount }"
@@ -7180,6 +7271,9 @@
       ],
       "Your Google Drive may be empty or contain only files that are not supported.": [
         "És possible que el vostre Google Drive estigui buit o que només contingui fitxers no compatibles."
+      ],
+      "Your import is blocked. Upgrade now to bring the rest of your files over.": [
+        "La importació està bloquejada. Milloreu el pla ara per transferir la resta dels vostres fitxers."
       ],
       "Your information was found on ${ displayedDate }": [
         "La vostra informació es va trobar el ${ displayedDate }"
@@ -11068,79 +11162,6 @@
         "Yahoo"
       ]
     },
-    "q3campaign2026: Action": {
-      "Get the deal": [
-        "Obtingueu l’oferta"
-      ],
-      "Special Offer": [
-        "Oferta especial"
-      ]
-    },
-    "q3campaign2026: Info": {
-      "/month": [
-        "/mes"
-      ],
-      "2 individual accounts": [
-        "2 comptes individuals"
-      ],
-      "2 TB of secure storage": [
-        "2 TB d'emmagatzematge segur"
-      ],
-      "3 TB of secure storage": [
-        "3 TB d'emmagatzematge segur"
-      ],
-      "500 GB of secure storage": [
-        "500 GB d'emmagatzematge segur"
-      ],
-      "6 individual accounts": [
-        "6 comptes individuals"
-      ],
-      "Advanced protection against cyber threats": [
-        "Protecció avançada contra amenaces cibernètiques"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Els descomptes es basen en el preu mensual estàndard. La vostra subscripció es renovarà a la tarifa anual estàndard quan finalitzi el cicle de facturació."
-      ]
-    },
-    "q3campaign2026: Info, Calendar first": {
-      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } prèmium"
-      ]
-    },
-    "q3campaign2026: Info, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } prèmium"
-      ]
-    },
-    "q3campaign2026: Info, Family, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } prèmium"
-      ]
-    },
-    "q3campaign2026: Info, Family, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } prèmium"
-      ]
-    },
-    "q3campaign2026: Info, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } prèmium"
-      ]
-    },
-    "q3campaign2026: Title": {
-      "for 12 months": [
-        "durant 12 mesos"
-      ],
-      "One plan, full power": [
-        "Un pla, màxima potència"
-      ],
-      "One plan, max savings": [
-        "Un pla, màxim estalvi"
-      ],
-      "One plan, more power": [
-        "Un pla, més potència"
-      ]
-    },
     "Referral": {
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } per referència"
@@ -12590,6 +12611,9 @@
       "Birthday": [
         "Aniversari"
       ],
+      "Black Friday": [
+        "Black Friday"
+      ],
       "Bring your Google Drive files to ${ DRIVE_APP_NAME }": [
         "Porteu els vostres fitxers de Google Drive a ${ DRIVE_APP_NAME }"
       ],
@@ -13039,6 +13063,9 @@
       "Modified": [
         "Modificació"
       ],
+      "More storage needed to finish your import": [
+        "Us cal més emmagatzematge per acabar la importació"
+      ],
       "My files": [
         "Els meus fitxers"
       ],
@@ -13258,9 +13285,6 @@
       ],
       "Select users to migrate": [
         "Seleccioneu els usuaris que voleu migrar"
-      ],
-      "September Sale": [
-        "Oferta de setembre"
       ],
       "Set recovery methods": [
         "Configuració dels mètodes de recuperació"
