@@ -9,6 +9,7 @@ import type { SignInScreen, SignInScreenProps } from '../../../routes/signInRout
 import { useSignInProps } from '../../../wizard/SignInProvider';
 import { SSOContext } from '../SSOContext';
 import {
+    selectBackupPasswordDisabled,
     selectFirstLoginAfterConversion,
     selectHasSSOCapability,
     selectJoinOrganization,
@@ -22,31 +23,52 @@ export const BackupPasswordScreen: SignInScreen = ({ onBack }: SignInScreenProps
     // Stays on screen while the password is checked, when the machine ignores it
     const offersAdminHelp = SSOContext.useSelector(selectHasSSOCapability(SSOLoginCapabilites.ASK_ADMIN));
     const isFirstLoginAfterConversion = SSOContext.useSelector(selectFirstLoginAfterConversion);
+    const backupPasswordDisabled = SSOContext.useSelector(selectBackupPasswordDisabled);
     // After converting to the organization's account, the first sign-in names the account it joins
     const joinedUsername = SSOContext.useSelector((snapshot) => selectJoinOrganization(snapshot).username);
+
+    // A converted member finishes the conversion with their current password, which is never called a backup
+    // password; only when the organization allows backup passwords are they told it becomes one
+    if (isFirstLoginAfterConversion) {
+        return (
+            <>
+                <layout.Header title={c('sso').t`Enter your password`} subTitle={joinedUsername} onBack={onBack} />
+                <layout.Body>
+                    <Text>
+                        {c('sso').t`To make sure it's really you trying to sign-in, please enter your password.`}
+                    </Text>
+                    <SSOBackupPasswordForm
+                        submitting={submitting}
+                        passwordLabel={c('Label').t`Password`}
+                        hint={
+                            backupPasswordDisabled ? undefined : (
+                                <p className="m-0 text-sm color-weak text-break">
+                                    {getBoldFormattedText(
+                                        c('sso')
+                                            .t`Your old password will become your **backup password**. You will be able to use it to authorize single sign-on (SSO) on new devices in the future.`
+                                    )}
+                                </p>
+                            )
+                        }
+                        onAskAdminHelp={
+                            offersAdminHelp ? () => actorRef.send({ type: 'sso.adminHelp.requested' }) : undefined
+                        }
+                        onSubmit={(password) =>
+                            actorRef.send({ type: 'sso.backupPassword.submitted', payload: { password } })
+                        }
+                    />
+                </layout.Body>
+            </>
+        );
+    }
+
     return (
         <>
-            <layout.Header
-                title={c('sso').t`Enter your backup password`}
-                subTitle={isFirstLoginAfterConversion ? joinedUsername : undefined}
-                onBack={onBack}
-            />
+            <layout.Header title={c('sso').t`Enter your backup password`} onBack={onBack} />
             <layout.Body>
-                {isFirstLoginAfterConversion ? (
-                    <>
-                        <Text margin="small">
-                            {getBoldFormattedText(
-                                c('sso')
-                                    .t`Because your organization moved you to single sign-on (SSO), **your old password is saved as your backup password**. You can use it to authorize SSO on a new device.`
-                            )}
-                        </Text>
-                        <Text>{c('sso').t`Enter it to sign in. It is the same as your old password.`}</Text>
-                    </>
-                ) : (
-                    <Text>
-                        {c('sso').t`To make sure it's really you trying to sign-in, please enter your backup password.`}
-                    </Text>
-                )}
+                <Text>
+                    {c('sso').t`To make sure it's really you trying to sign-in, please enter your backup password.`}
+                </Text>
                 <SSOBackupPasswordForm
                     submitting={submitting}
                     onAskAdminHelp={
