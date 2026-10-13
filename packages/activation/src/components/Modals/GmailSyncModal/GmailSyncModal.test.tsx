@@ -1,6 +1,7 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react';
 
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { mockTracker } from '@proton/telemetry-tracker/testing';
 
 import { GmailSyncModal } from '../../../../index';
 import { EASY_SWITCH_SOURCES, TIME_PERIOD } from '../../../interface';
@@ -56,6 +57,65 @@ describe('GmailSyncModal', () => {
         );
 
         screen.getByText(`Bring your Gmail into ${MAIL_APP_NAME}`);
+    });
+
+    it('should send creation_started when the BYOE modal is shown, with the source and whether it converts a forwarding', () => {
+        const { reports } = mockTracker();
+
+        easySwitchRender(
+            <GmailSyncModal
+                open
+                source={EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS}
+                onBYOECallback={() => {}}
+                hasAccessToBYOE
+                expectedEmailAddress="me@gmail.com"
+            />
+        );
+
+        expect(reports).toHaveLength(1);
+        expect(reports[0]).toMatchObject({
+            measurementGroup: 'any.web.byoe_creation_funnel',
+            event: 'creation_started',
+            dimensions: { source: 'account-web-settings', provider: 'google', isConversion: 'true' },
+        });
+    });
+
+    it('should not send creation_started for the forwarding modal', () => {
+        const { reports } = mockTracker();
+
+        easySwitchRender(
+            <GmailSyncModal
+                open
+                source={EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS}
+                onBYOECallback={() => {}}
+                hasAccessToBYOE={false}
+            />
+        );
+
+        expect(reports).toHaveLength(0);
+    });
+
+    it('should send google_sign_in_clicked with the import choices when pressing connect', async () => {
+        const { reports } = mockTracker();
+
+        easySwitchRender(
+            <GmailSyncModal
+                open
+                source={EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS}
+                onBYOECallback={() => {}}
+                hasAccessToBYOE
+            />
+        );
+        fireEvent.click(screen.getByText('Connect your email'));
+
+        await waitFor(() => expect(reports.map((report) => report.event)).toContain('google_sign_in_clicked'));
+        const click = reports.find((report) => report.event === 'google_sign_in_clicked');
+        expect(click?.dimensions).toEqual({
+            provider: 'google',
+            hasImportEmails: 'true',
+            importPeriodSelected: 'big_bang',
+        });
+        expect(click?.values).toHaveProperty('durationMs');
     });
 
     it('should show the forwarding modal', () => {

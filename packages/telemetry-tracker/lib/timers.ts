@@ -15,9 +15,10 @@ export const defineTimer = <const K extends string>(key: K): TimerHandle<K> => (
 export class Timers {
     private startedAt = new Map<string, number>();
 
-    start(timer: TimerHandle, { restart = false }: { restart?: boolean } = {}) {
+    /** `elapsedMs` starts the timer as if it had begun that long ago (to resume a timer after a page reload) */
+    start(timer: TimerHandle, { restart = false, elapsedMs = 0 }: { restart?: boolean; elapsedMs?: number } = {}) {
         if (restart || !this.startedAt.has(timer.key)) {
-            this.startedAt.set(timer.key, performance.now());
+            this.startedAt.set(timer.key, performance.now() - Math.max(0, elapsedMs));
         }
     }
 
