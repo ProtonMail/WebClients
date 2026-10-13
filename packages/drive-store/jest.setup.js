@@ -9,19 +9,6 @@ import '@proton/unleash/testing/mockUnleash';
 global.TextEncoder = TextEncoder;
 global.TextDecoder = TextDecoder;
 
-global.OffscreenCanvas = jest.fn().mockImplementation((width, height) => ({
-    width,
-    height,
-    oncontextlost: jest.fn(),
-    oncontextrestored: jest.fn(),
-    getContext: jest.fn(() => undefined),
-    convertToBlob: jest.fn(),
-    transferToImageBitmap: jest.fn(),
-    addEventListener: jest.fn(),
-    removeEventListener: jest.fn(),
-    dispatchEvent: jest.fn(),
-}));
-
 // JSDom does not include a full implementation of webcrypto
 global.crypto.subtle = require('crypto').webcrypto.subtle;
 
@@ -36,22 +23,6 @@ jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
     __esModule: true,
     loadCryptoWorker: jest.fn(),
 }));
-
-// Mock canvas (for e.g. canvasUtils tests)
-HTMLCanvasElement.prototype.getContext = jest.fn();
-HTMLCanvasElement.prototype.toBlob = jest.fn((callback) => {
-    callback(new Blob(['abc']));
-});
-
-jest.mock('@proton/raw-images', () => ({
-    __esModule: true,
-}));
-
-jest.mock('./store/_downloads/fileSaver/download.ts', () => {
-    return {
-        initDownloadSW: jest.fn().mockResolvedValue(true),
-    };
-});
 
 jest.mock('./utils/metrics/userSuccessMetrics.ts', () => {
     return {

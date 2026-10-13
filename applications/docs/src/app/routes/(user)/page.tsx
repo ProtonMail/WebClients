@@ -18,7 +18,7 @@ import { useContext, useState } from 'react'
 import { Router } from 'react-router-dom'
 import { CompatRouter } from 'react-router-dom-v5-compat'
 
-import { UnleashFlagProviderWithToolbar } from '@proton/unleash/UnleashFlagProviderWithToolbar';
+import { UnleashFlagProviderWithToolbar } from '@proton/unleash/UnleashFlagProviderWithToolbar'
 
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import metrics from '@proton/metrics'
@@ -28,7 +28,6 @@ import type { UserModel } from '@proton/shared/lib/interfaces'
 import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces'
 
 import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
-import { UserSettingsProvider } from '@proton/drive-store/store'
 import type { APP_NAMES } from '@proton/shared/lib/constants'
 import { ThemeTypes } from '@proton/shared/lib/themes/constants'
 import { PROTON_DEFAULT_THEME_SETTINGS } from '@proton/shared/lib/themes/themes'
@@ -71,7 +70,7 @@ function BootstrappedContainer() {
         }
 
         return (
-          <OuterContainer store={store} showDrawerSidebar={showDrawerSidebar} initialUser={initialUser}>
+          <OuterContainer store={store} showDrawerSidebar={showDrawerSidebar}>
             {/* Normally, this will render AppContainer. Routing is handled by AppRoutes. */}
             <MainContainer />
           </OuterContainer>
@@ -148,11 +147,10 @@ const HIDDEN_NOTIFICATIONS = [
 type OuterContainerProps = {
   store: DocsStore
   showDrawerSidebar?: boolean
-  initialUser: UserModel
   children: ReactNode
 }
 
-function OuterContainer({ store, showDrawerSidebar, initialUser, children }: OuterContainerProps) {
+function OuterContainer({ store, showDrawerSidebar, children }: OuterContainerProps) {
   return (
     <ProtonStoreProvider store={store}>
       <CustomNotificationsHijack ignoredNotifications={HIDDEN_NOTIFICATIONS}>
@@ -160,9 +158,7 @@ function OuterContainer({ store, showDrawerSidebar, initialUser, children }: Out
           <UnleashFlagProviderWithToolbar unleashClient={extraThunkArguments.unleashClient}>
             <Router history={extraThunkArguments.history}>
               <CompatRouter>
-                <RouterDependentContainer showDrawerSidebar={showDrawerSidebar} initialUser={initialUser}>
-                  {children}
-                </RouterDependentContainer>
+                <RouterDependentContainer showDrawerSidebar={showDrawerSidebar}>{children}</RouterDependentContainer>
               </CompatRouter>
             </Router>
           </UnleashFlagProviderWithToolbar>
@@ -174,11 +170,9 @@ function OuterContainer({ store, showDrawerSidebar, initialUser, children }: Out
 
 function RouterDependentContainer({
   showDrawerSidebar,
-  initialUser,
   children,
 }: {
   showDrawerSidebar?: boolean
-  initialUser: UserModel
   children: ReactNode
 }) {
   useSheetsFavicon()
@@ -189,25 +183,8 @@ function RouterDependentContainer({
         {/* TODO: fix typo globally */}
         <DrawerProvider defaultShowDrawerSidebar={showDrawerSidebar}>
           <ErrorBoundary big component={<StandardErrorPage big />}>
-            {/* TODO: remove this once the temporary "Trash" homepage view implementation is cleaned up */}
-            <UserSettingsProvider
-              initialUser={initialUser}
-              initialDriveUserSettings={{
-                Defaults: {
-                  RevisionRetentionDays: 0,
-                  PhotoTags: [],
-                },
-                UserSettings: {
-                  Sort: null,
-                  Layout: null,
-                  RevisionRetentionDays: null,
-                  PhotoTags: null,
-                },
-              }}
-            >
-              <DocsThemeInjector />
-              <StandardPrivateApp noThemeInjector>{children}</StandardPrivateApp>
-            </UserSettingsProvider>
+            <DocsThemeInjector />
+            <StandardPrivateApp noThemeInjector>{children}</StandardPrivateApp>
           </ErrorBoundary>
         </DrawerProvider>
       </ApiProvider>

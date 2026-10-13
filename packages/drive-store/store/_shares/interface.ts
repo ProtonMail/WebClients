@@ -1,6 +1,6 @@
 import type { SessionKey } from '@protontech/crypto';
 
-import type { SHARE_EXTERNAL_INVITATION_STATE, SHARE_MEMBER_STATE } from '@proton/shared/lib/drive/constants';
+import type { SHARE_MEMBER_STATE } from '@proton/shared/lib/drive/constants';
 import type { SHARE_MEMBER_PERMISSIONS, SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import type { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import type { ThumbnailURLInfo } from '@proton/shared/lib/interfaces/drive/sharing';
@@ -93,11 +93,6 @@ export interface ShareInvitation {
     state: SHARE_MEMBER_STATE;
 }
 
-export interface ShareInvitationEmailDetails {
-    message?: string;
-    itemName?: string;
-}
-
 interface ShareInvitationShare {
     shareId: string;
     volumeId: string;
@@ -119,16 +114,6 @@ export interface ShareInvitationDetails {
     share: ShareInvitationShare;
     link: ShareInvitationLink;
     decryptedLinkName?: string;
-}
-
-export interface ShareExternalInvitation {
-    externalInvitationId: string;
-    inviterEmail: string;
-    inviteeEmail: string;
-    createTime: number;
-    permissions: SHARE_MEMBER_PERMISSIONS;
-    state: SHARE_EXTERNAL_INVITATION_STATE;
-    externalInvitationSignature: string;
 }
 
 export interface SharedUrlInfo {

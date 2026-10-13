@@ -5929,9 +5929,6 @@ importers:
       '@proton/payments':
         specifier: workspace:^
         version: link:../payments
-      '@proton/raw-images':
-        specifier: workspace:^
-        version: link:../raw-images
       '@proton/redux-shared-store':
         specifier: workspace:^
         version: link:../redux-shared-store
@@ -5962,9 +5959,6 @@ importers:
       date-fns:
         specifier: ^2.30.0
         version: 2.30.0
-      heic-to:
-        specifier: ^1.5.2
-        version: 1.5.2
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -5974,9 +5968,6 @@ importers:
       react-router-dom:
         specifier: ^5.3.4
         version: 5.3.4(react@18.3.1)
-      react-router-dom-v5-compat:
-        specifier: ^6.30.6
-        version: 6.30.6(react-dom@18.3.1(react@18.3.1))(react-router-dom@5.3.4(react@18.3.1))(react@18.3.1)
       ttag:
         specifier: ^1.8.12
         version: 1.8.12
@@ -6026,9 +6017,6 @@ importers:
       jest-junit:
         specifier: ^16.0.0
         version: 16.0.0
-      jest-when:
-        specifier: 3.7.0
-        version: 3.7.0(jest@30.5.2(@types/node@26.0.0)(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.2)(@types/node@26.0.0)(@typescript/typescript6@6.0.2)))
       prettier:
         specifier: ^3.9.9
         version: 3.9.9

@@ -126,7 +126,7 @@ export function useLinkInner(
         | 'getHashKey'
         | 'setHashKey'
     >,
-    linksState: Pick<ReturnType<typeof useLinksState>, 'getLink' | 'setLinks' | 'setCachedThumbnail'>,
+    linksState: Pick<ReturnType<typeof useLinksState>, 'getLink' | 'setLinks'>,
     getVerificationKey: ReturnType<typeof useDriveCrypto>['getVerificationKey'],
     getSharePrivateKey: ReturnType<typeof useShare>['getSharePrivateKey'],
     getShare: ReturnType<typeof useShare>['getShare'],

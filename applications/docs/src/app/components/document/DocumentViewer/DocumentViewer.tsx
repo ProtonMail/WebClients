@@ -41,7 +41,6 @@ import { useGenericAlertModal } from '@proton/docs-shared/components/GenericAler
 import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
 import { generateNodeUid, getDrive, type DriveEvent, type NodeEntity } from '@proton/drive'
 import { isPrivateNodeMeta, isPublicNodeMeta } from '@proton/drive-store'
-import { UserSettingsProvider } from '@proton/drive-store/store'
 import { useDocumentWindowAction } from '@proton/docs-shared/lib/Hooks/useOpenDocument'
 import { tmpConvertNewDocTypeToOld } from '@proton/docs-shared/lib/Doc/convert-doc-type'
 import { IcLockFilled } from '@proton/icons/icons/IcLockFilled'
@@ -73,7 +72,6 @@ import type { ProviderType } from '../../../provider-type'
 import TracerAlert from '../../../tracer/TracerAlert'
 import { EditorFrame } from '../EditorFrame'
 import { WordCountOverlay } from '../WordCount'
-import { useDocsContext } from '../context'
 import { useWelcomeSplashModal } from '../public/WelcomeSplashModal'
 import { useChangeAddressWhenPubliclyShared } from '../useChangeAddressWhenPubliclyShared'
 import { DebugMenu } from './DebugMenu'
@@ -767,8 +765,6 @@ export function DocumentViewer({
   const isPrivateModeUserWithInsufficientPermissions =
     isPrivateNodeMeta(nodeMeta) && error && error.code === DocsApiErrorCode.InsufficientPermissions
 
-  const { publicContext, privateContext } = useDocsContext()
-
   const shouldAttemptAutoAcceptInvite =
     !didAttemptToAutoAcceptInvite &&
     (isSignedInUserInPublicReadonlyMode || isPrivateModeUserWithInsufficientPermissions)
@@ -808,23 +804,7 @@ export function DocumentViewer({
 
     return (
       <>
-        <UserSettingsProvider
-          initialUser={publicContext?.user ?? privateContext?.user ?? ({} as any)}
-          initialDriveUserSettings={{
-            Defaults: {
-              RevisionRetentionDays: 0,
-              PhotoTags: [],
-            },
-            UserSettings: {
-              Sort: null,
-              Layout: null,
-              RevisionRetentionDays: null,
-              PhotoTags: null,
-            },
-          }}
-        >
-          <InviteAutoAccepter nodeMeta={nodeMeta} onResult={onInviteAutoAcceptResult} />
-        </UserSettingsProvider>
+        <InviteAutoAccepter nodeMeta={nodeMeta} onResult={onInviteAutoAcceptResult} />
         <Loader documentType={documentType} />
       </>
     )

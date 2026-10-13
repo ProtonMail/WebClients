@@ -52,14 +52,6 @@ function useDriveCrypto() {
         [getAddresses, getAddressKeys]
     );
 
-    const getPrivateAddressKeys = useCallback(
-        async (addressId: string) => {
-            const result = await getOwnAddressKeysAsync(addressId, getAddresses, getAddressKeys);
-            return result?.privateKeys || [];
-        },
-        [getAddresses, getAddressKeys]
-    );
-
     const getVerificationKeysCallbackList = useCallback(
         async (email?: string): Promise<VerificationKeysCallback[]> => {
             // If UID is empty, it means user is not logged in.
@@ -178,7 +170,6 @@ function useDriveCrypto() {
     return {
         getPrimaryAddressKey,
         getOwnAddressAndPrimaryKeys,
-        getPrivateAddressKeys,
         getVerificationKey,
         decryptSharePassphrase,
     };

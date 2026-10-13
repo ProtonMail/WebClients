@@ -111,7 +111,6 @@ const MoveToFolderModal = ({ shareId, selectedItems, onClose, ...modalProps }: P
                 {isTreeLoaded ? (
                     <ModalContent
                         isLoading={loading}
-                        isTreeLoaded={isTreeLoaded}
                         title={title}
                         rootItems={rootItems}
                         selectedLinkId={selectedFolder}

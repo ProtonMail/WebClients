@@ -203,15 +203,4 @@ describe('useLinksListing', () => {
             { Page: 1, Sort: 'ModifyTime', Desc: 0 }, // Done by loadChildren, continues with the same sorting.
         ]);
     });
-
-    it("can count link's children", async () => {
-        const PAGE_LENGTH = 5;
-        const links = LINKS.slice(0, PAGE_LENGTH);
-        mockRequest.mockReturnValueOnce({ Links: linksToApiLinks(links) });
-        await act(async () => {
-            await hook.current.fetchChildrenNextPage(abortSignal, 'shareId', 'parentLinkId');
-        });
-        expect(mockRequest).toHaveBeenCalledTimes(1);
-        expect(hook.current.getCachedChildrenCount('shareId', 'parentLinkId')).toBe(PAGE_LENGTH);
-    });
 });
