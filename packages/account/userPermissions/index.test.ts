@@ -3,6 +3,7 @@ import { getTestStore } from '@proton/redux-shared-store/test';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { USER_ROLES } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces';
+import { type OrganizationRole, PREDEFINED_ROLE_NAME } from '@proton/shared/lib/interfaces/OrganizationRole';
 import { PERMISSIONS } from '@proton/shared/lib/interfaces/UserPermission';
 
 import { getModelState } from '../tests';
@@ -11,6 +12,7 @@ import { userReducer, userThunk } from '../user';
 import {
     getOrgPermissions,
     hasLegacyAdminAccess,
+    isOrganizationOwnerThunk,
     selectUserPermissions,
     userPermissionsReducer,
     userPermissionsThunk,
@@ -272,5 +274,41 @@ describe('refreshing the user after accepting a group invitation', () => {
         // The cache is still marked stale, which is what makes the hook re-enqueue the thunk.
         expect(state.meta.fetchedEphemeral).toBeUndefined();
         expect(state.meta.fetchedAt).toBe(0);
+    });
+});
+
+describe('isOrganizationOwnerThunk', () => {
+    const ownerRole = { Name: PREDEFINED_ROLE_NAME.OWNER } as OrganizationRole;
+    const userAdminRole = { Name: PREDEFINED_ROLE_NAME.USER_ADMIN } as OrganizationRole;
+    const admin = { isAdmin: true, isSelf: true, Role: USER_ROLES.ADMIN_ROLE } as UserModel;
+
+    const setup = ({ isAdminRoleMVPEnabled, roles }: { isAdminRoleMVPEnabled: boolean; roles: OrganizationRole[] }) => {
+        const extraThunkArguments = {
+            api: async () => ({ Roles: roles, Permissions: [] }),
+            unleashClient: { isEnabled: () => isAdminRoleMVPEnabled },
+        } as unknown as ProtonThunkArguments;
+        return getTestStore({
+            reducer: { ...userReducer, ...userPermissionsReducer },
+            preloadedState: { user: getModelState(admin) },
+            extraThunkArguments,
+        });
+    };
+
+    it('is true for the Owner role when AdminRoleMVP is on', async () => {
+        const { store } = setup({ isAdminRoleMVPEnabled: true, roles: [ownerRole] });
+
+        expect(await store.dispatch(isOrganizationOwnerThunk())).toBe(true);
+    });
+
+    it('is false for a User Admin when AdminRoleMVP is on', async () => {
+        const { store } = setup({ isAdminRoleMVPEnabled: true, roles: [userAdminRole] });
+
+        expect(await store.dispatch(isOrganizationOwnerThunk())).toBe(false);
+    });
+
+    it('falls back to the legacy admin role when AdminRoleMVP is off', async () => {
+        const { store } = setup({ isAdminRoleMVPEnabled: false, roles: [] });
+
+        expect(await store.dispatch(isOrganizationOwnerThunk())).toBe(true);
     });
 });

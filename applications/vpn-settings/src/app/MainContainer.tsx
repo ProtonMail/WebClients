@@ -26,7 +26,7 @@ import MembersAuthDevicesTopBanner from '@proton/account/sso/MembersAuthDevicesT
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { EMPTY_ORG_PERMISSIONS } from '@proton/account/userPermissions';
-import { useUserPermissions } from '@proton/account/userPermissions/hooks';
+import { useIsOrganizationOwner, useUserPermissions } from '@proton/account/userPermissions/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { ThirdPartySection } from '@proton/calendar-video-conferencing/thirdParty/ThirdPartySection';
 import TopNavbarUpsell from '@proton/components/components/topnavbar/TopNavbarUpsell';
@@ -122,6 +122,7 @@ const MainContainer: FunctionComponent = () => {
     const [subscription, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
     const [{ permissions }] = useUserPermissions();
+    const [isOrganizationOwner] = useIsOrganizationOwner();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const { viewportWidth } = useActiveBreakpoint();
     const location = useLocation();
@@ -152,6 +153,7 @@ const MainContainer: FunctionComponent = () => {
         organization,
         isB2BDrive: false,
         isGroupOwner,
+        isOrganizationOwner,
         permissions: permissions ?? EMPTY_ORG_PERMISSIONS,
         memberships: [],
     };

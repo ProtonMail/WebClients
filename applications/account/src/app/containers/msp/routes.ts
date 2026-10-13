@@ -7,9 +7,14 @@ import { SessionAccessTypeFlag } from '@proton/shared/lib/authentication/session
 import { APPS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 
-import type { GeneralRouterParams } from '../../content/router-params';
+import type { OrganizationRouterParams } from '../../content/router-params';
 
-export const getMspAppRoutes = ({ app, entitlements, user }: GeneralRouterParams): SidebarConfig => {
+export const getMspAppRoutes = ({
+    app,
+    entitlements,
+    user,
+    isOrganizationOwner,
+}: OrganizationRouterParams): SidebarConfig => {
     // MSP is exclusively available for Pass for now
     const isAllowedApp = app === APPS.PROTONPASS || app === APPS.PROTONACCOUNT;
     // MSP is exclusively available for passbiz2024 customers that have subsidiaries and members subsidiaries entitlements,
@@ -18,9 +23,7 @@ export const getMspAppRoutes = ({ app, entitlements, user }: GeneralRouterParams
     // The user can view companies page if they are an owner or have the IT manager permission
     // @todo: implement this when new MSP permissions are implemented
     const canViewCompanies = true;
-    // The user can view monthly costs if they are the owner of the organization
-    // @todo: implement this when new MSP permissions are implemented
-    const canViewMonthlyCosts = user.isAdmin;
+    const canViewMonthlyCosts = isOrganizationOwner;
     return {
         available: isAllowedApp && isEligible && !hasBit(user.accessTypeMask, SessionAccessTypeFlag.OrgAccess),
         header: c('Settings section title').t`Managed Companies`,
