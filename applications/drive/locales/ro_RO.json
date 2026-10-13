@@ -607,6 +607,9 @@
       "Import now": [
         "Importare acum"
       ],
+      "Import paused": [
+        "Importare suspendată"
+      ],
       "Importing from Google": [
         "Se importă din Google"
       ],
@@ -4166,6 +4169,9 @@
       "You must set a name": [
         "Trebuie specificat un nume"
       ],
+      "You reached the maximum number of connected addresses": [
+        "Ați atins numărul maxim de adrese conectate."
+      ],
       "Your import will not be processed.": [
         "Importarea nu va fi procesată."
       ],
@@ -5941,6 +5947,9 @@
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
         "Dacă vă eliminați accesul, veți pierde accesul la „${ fileName }” și nu veți putea să-l deschideți din nou decât dacă proprietarul vi-l partajează."
       ],
+      "If you've already upgraded, you can resume your import in ${ easySwitchSettingsLink }. You can also cancel it there.": [
+        "Dacă ați făcut deja actualizarea, puteți relua importarea în ${ easySwitchSettingsLink }. Tot acolo puteți și anula."
+      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importare ${ calendarCount } din ${ totalCalendarsCount } calendar",
         "Importare ${ calendarCount } din ${ totalCalendarsCount } calendare",
@@ -7284,6 +7293,9 @@
       ],
       "Your Google Drive may be empty or contain only files that are not supported.": [
         "Google Drive s-ar putea să fie gol sau să conțină fișiere nesuportate."
+      ],
+      "Your import is blocked. Upgrade now to bring the rest of your files over.": [
+        "Importarea este blocată. Treceți la un plan superior acum pentru a transfera și restul fișierelor."
       ],
       "Your information was found on ${ displayedDate }": [
         "Informațiile v-au fost găsite la ${ displayedDate }"
@@ -11189,79 +11201,6 @@
         "Yahoo"
       ]
     },
-    "q3campaign2026: Action": {
-      "Get the deal": [
-        "Luați oferta"
-      ],
-      "Special Offer": [
-        "Ofertă specială"
-      ]
-    },
-    "q3campaign2026: Info": {
-      "/month": [
-        "/lună"
-      ],
-      "2 individual accounts": [
-        "Două conturi individuale"
-      ],
-      "2 TB of secure storage": [
-        "2 TiB de stocare securizată"
-      ],
-      "3 TB of secure storage": [
-        "3 TiB de stocare securizată"
-      ],
-      "500 GB of secure storage": [
-        "500 GiB de stocare securizată"
-      ],
-      "6 individual accounts": [
-        "Șase conturi individuale"
-      ],
-      "Advanced protection against cyber threats": [
-        "Protecție avansată împotriva amenințărilor cibernetice"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Reducerile se bazează pe prețurile lunare standard. Abonamentul se va reînnoi la tariful anual standard la sfârșitul ciclului de facturare."
-      ]
-    },
-    "q3campaign2026: Info, Calendar first": {
-      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } și ${ VPN_SHORT_APP_NAME } premium"
-      ]
-    },
-    "q3campaign2026: Info, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME } premium"
-      ]
-    },
-    "q3campaign2026: Info, Family, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } premium"
-      ]
-    },
-    "q3campaign2026: Info, Family, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } premium"
-      ]
-    },
-    "q3campaign2026: Info, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME } premium"
-      ]
-    },
-    "q3campaign2026: Title": {
-      "for 12 months": [
-        "pentru 12 luni"
-      ],
-      "One plan, full power": [
-        "Un singur plan, putere completă"
-      ],
-      "One plan, max savings": [
-        "Un singur plan, reduceri maxime"
-      ],
-      "One plan, more power": [
-        "Un singur plan, mai multă putere"
-      ]
-    },
     "Referral": {
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } per recomandare"
@@ -12754,6 +12693,9 @@
       "Birthday": [
         "Data nașterii"
       ],
+      "Black Friday": [
+        "Black Friday"
+      ],
       "Bring your Google Drive files to ${ DRIVE_APP_NAME }": [
         "Aduceți-vă fișierele din Google Drive la ${ DRIVE_APP_NAME }"
       ],
@@ -13208,6 +13150,9 @@
       "Modified": [
         "Modificat"
       ],
+      "More storage needed to finish your import": [
+        "Este nevoie de mai mult spațiu de stocare pentru a finaliza importarea."
+      ],
       "My files": [
         "Fișierele mele"
       ],
@@ -13428,9 +13373,6 @@
       ],
       "Select users to migrate": [
         "Selectați utilizatorii pentru migrare"
-      ],
-      "September Sale": [
-        "Reduceri de septembrie"
       ],
       "Set recovery methods": [
         "Setați metodele de recuperare"

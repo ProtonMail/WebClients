@@ -526,6 +526,9 @@
       "Import now": [
         "Nu importeren"
       ],
+      "Import paused": [
+        "Importeren onderbroken"
+      ],
       "Increase": [
         "Verhogen"
       ],
@@ -1316,6 +1319,31 @@
     "BF2024: Tooltip": {
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Opslagruimte wordt gedeeld binnen alle ${ BRAND_NAME }-diensten."
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Grootste uitverkoop van het jaar"
+      ],
+      "Black Friday": [
+        "Black friday"
+      ],
+      "Last chance to save big": [
+        "Laatste kans om flink te besparen"
+      ],
+      "Protect your entire tribe": [
+        "Bescherm uw hele stam"
+      ],
+      "Protection for two in a single plan": [
+        "Bescherming voor twee in één abonnement"
+      ],
+      "Save big with a yearly plan": [
+        "Bespaar flink met een jaarabonnement"
       ]
     },
     "Billing cycle option": {
@@ -5381,6 +5409,9 @@
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
         "Als u uzelf verwijdert, verliest u de toegang tot \"${ fileName }\" en kunt u deze niet meer openen, tenzij de eigenaar deze met u deelt."
       ],
+      "If you've already upgraded, you can resume your import in ${ easySwitchSettingsLink }. You can also cancel it there.": [
+        "Als u al een upgrade heeft uitgevoerd, kunt u uw import hervatten in ${ easySwitchSettingsLink }. U kunt het daar ook opzeggen."
+      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importeer ${ calendarCount } van ${ totalCalendarsCount } agenda",
         "Importeer ${ calendarCount } van ${ totalCalendarsCount } agenda's"
@@ -6301,6 +6332,9 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Uw gratis proefversie werd succesvol omgezet naar een maandelijks abonnement. Uw verlengingsdatum is ${ nextBillingDate }."
+      ],
+      "Your import is blocked. Upgrade now to bring the rest of your files over.": [
+        "Uw import is geblokkeerd. Upgrade nu om de rest van uw bestanden over te zetten."
       ],
       "Your information was found on ${ displayedDate }": [
         "Uw informatie is gevonden op ${ displayedDate }"
@@ -9651,79 +9685,6 @@
         "Yahoo"
       ]
     },
-    "q3campaign2026: Action": {
-      "Get the deal": [
-        "Pak deze deal"
-      ],
-      "Special Offer": [
-        "Speciale aanbieding"
-      ]
-    },
-    "q3campaign2026: Info": {
-      "/month": [
-        "/maand"
-      ],
-      "2 individual accounts": [
-        "2 individuele accounts"
-      ],
-      "2 TB of secure storage": [
-        "2 TB veilige opslag"
-      ],
-      "3 TB of secure storage": [
-        "3 TB veilige opslag"
-      ],
-      "500 GB of secure storage": [
-        "500 GB veilige opslag"
-      ],
-      "6 individual accounts": [
-        "6 individuele accounts"
-      ],
-      "Advanced protection against cyber threats": [
-        "Geavanceerde bescherming tegen cyberdreigingen"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Kortingen zijn gebaseerd op de standaard maandelijkse prijzen. Uw abonnement wordt verlengd tegen het standaard jaartarief wanneer de factureringscyclus afloopt."
-      ]
-    },
-    "q3campaign2026: Info, Calendar first": {
-      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, en ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, en ${ CALENDAR_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Family, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Family, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, en ${ CALENDAR_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Title": {
-      "for 12 months": [
-        "voor 12 maanden"
-      ],
-      "One plan, full power": [
-        "Eén abonnement, volledige kracht"
-      ],
-      "One plan, max savings": [
-        "Eén abonnement, maximale besparing"
-      ],
-      "One plan, more power": [
-        "Eén abonnement, meer kracht"
-      ]
-    },
     "Referral": {
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } per doorverwijzing"
@@ -11495,6 +11456,9 @@
       "Modified": [
         "Gewijzigd"
       ],
+      "More storage needed to finish your import": [
+        "Er is meer opslagruimte nodig om uw import te voltooien"
+      ],
       "My files": [
         "Mijn bestanden"
       ],
@@ -11653,9 +11617,6 @@
       ],
       "Select users to migrate": [
         "Selecteer gebruikers om te migreren"
-      ],
-      "September Sale": [
-        "September-uitverkoop"
       ],
       "Set recovery methods": [
         "Herstelmethoden instellen"
