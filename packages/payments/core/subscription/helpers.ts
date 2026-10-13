@@ -146,8 +146,8 @@ export const getHas2025OfferCoupon = (coupon: string | undefined | null): boolea
 };
 
 const blackFriday2026Discounts: Set<string> = new Set([
+    COUPON_CODES.BLACK_FRIDAY_2026_NEW,
     COUPON_CODES.BLACK_FRIDAY_2026_BUNDLE,
-    COUPON_CODES.BLACK_FRIDAY_2026_BUNDLE_CS,
 ]);
 
 export function hasBlackFriday2026Coupon(subscription: MaybeFreeSubscription): boolean {

@@ -462,9 +462,8 @@ export enum COUPON_CODES {
     JUNE26BUNDLESALE = 'JUNE26BUNDLESALE',
 
     // BF 2026
-    // TODO: placeholder names, the real coupon codes are TBC in the campaign spec
-    BLACK_FRIDAY_2026_BUNDLE = 'BF26BUNDLEPROMO',
-    BLACK_FRIDAY_2026_BUNDLE_CS = 'BF26BUNDLEPROMOCS',
+    BLACK_FRIDAY_2026_NEW = 'BF2026NEW',
+    BLACK_FRIDAY_2026_BUNDLE = 'BF2026BUNDLE',
 
     // World cup retention offer
     VPNSAVEOFFER = 'VPNSAVEOFFER',
