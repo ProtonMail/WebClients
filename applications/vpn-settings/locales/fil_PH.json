@@ -188,6 +188,9 @@
       "Claim ${ BRAND_NAME } address": [
         "I-claim ang ${ BRAND_NAME } address"
       ],
+      "Claim it": [
+        "I-claim ito"
+      ],
       "Claim offer": [
         "I-claim ang offer"
       ],
@@ -305,6 +308,9 @@
       "Create users": [
         "Gumawa ng mga user"
       ],
+      "Create your own": [
+        "Gumawa ng sarili mo"
+      ],
       "Current plan": [
         "Kasalukuyang plano"
       ],
@@ -394,9 +400,6 @@
       ],
       "Dismiss": [
         "I-dismiss"
-      ],
-      "Domain name": [
-        "Pangalan ng domain"
       ],
       "Don't show again": [
         "Huwag ipakita muli"
@@ -760,6 +763,9 @@
       ],
       "No, thanks": [
         "Hindi, salamat"
+      ],
+      "Not now": [
+        "Huwag muna"
       ],
       "OK": [
         "OK"
@@ -6713,9 +6719,6 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Ang ${ protonSubdomain } ay hino-host ng ${ BRAND_NAME }, na nagbibigay-daan upang mabilis na i-set up ang subdomain. ${ learnMoreLink }"
       ],
-      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
-        "Kailangan ng custom na domain para gumawa ng mga pangkat. Kung wala kang naka-set up na custom na domain, gawin muna ito sa ${ linkToDomainPage }."
-      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Isang pangalan upang matulungan kang tukuyin kung saan mo ito ginagamit para madali mo itong mabawi o ma-extend sa huli."
       ],
@@ -8395,6 +8398,9 @@
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Na-leak ang na-expose na impormasyon mula sa serbisyong third-party. Nananatiling ligtas at naka-encrypt ang impormasyon ng iyong ${ BRAND_NAME } Account. ${ learnMoreLink }"
+      ],
+      "The following address is available:": [
+        "Ang sumusunod na address ay available:"
       ],
       "The following address is invalid.": [
         "Ang sumusunod na address ay hindi valid.",
@@ -16994,6 +17000,9 @@
       ],
       "Create user accounts": [
         "Gumawa ng mga user account"
+      ],
+      "Create your ${ BRAND_NAME } address": [
+        "Mag-generate ng ${ BRAND_NAME } address"
       ],
       "Created": [
         "Ginawa"

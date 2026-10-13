@@ -80,6 +80,9 @@
       "Choose a file or drag it here": [
         "فایلی را انتخاب کنید یا آن را به اینجا بکشید"
       ],
+      "Claim it": [
+        "دریافتش کنید"
+      ],
       "Claim this address": [
         "دریافت این نشانی"
       ],
@@ -121,6 +124,9 @@
       ],
       "Create folder": [
         "ایجاد پوشه"
+      ],
+      "Create your own": [
+        "برای خودتان را بسازید"
       ],
       "Current plan": [
         "طرح فعلی"
@@ -181,9 +187,6 @@
       ],
       "Dismiss": [
         "رد کردن"
-      ],
-      "Domain name": [
-        "نام دامنه"
       ],
       "Don't show again": [
         "دیگر نشان نده"
@@ -340,6 +343,9 @@
       ],
       "No, thanks": [
         "نه, ممنون"
+      ],
+      "Not now": [
+        "الان نه"
       ],
       "OK": [
         "تایید"
@@ -565,6 +571,9 @@
       ],
       "Switch or add account": [
         "تغییر یا افزودن حساب"
+      ],
+      "Switch to ${ planName }": [
+        "به ${ planName } برو"
       ],
       "Take a tour": [
         "نمایش آموزش"
@@ -3203,6 +3212,9 @@
         "+${ organization.BonusVPN } اتصال برای ${ VPN_APP_NAME } (به شما اجازه می‌دهد تا دستگاه‌های بیشتری را به VPN متصل کنید)",
         "+${ organization.BonusVPN } اتصال برای ${ VPN_APP_NAME } (به شما اجازه می‌دهد دستگاه‌های بیشتری را به VPN متصل کنید)"
       ],
+      "1 device per user": [
+        "۱ دستگاه برای هر کاربر"
+      ],
       "30-day money-back guarantee": [
         "ضمانت ۳۰ روزهٔ بازگشت پول"
       ],
@@ -5556,6 +5568,9 @@
       ]
     },
     "Payments": {
+      "By switching, you agree to our ${ termsLink }.": [
+        "با تغییر، شما با ${ termsLink } ما موافقت می‌کنید."
+      ],
       "Card number": [
         "شماره كارت"
       ],
