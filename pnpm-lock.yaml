@@ -257,6 +257,8 @@ overrides:
   toml@^3.0.0: 4.2.0
   undici@6.21.1: 6.28.0
   undici@^8.0.0: 8.11.2
+  webpack-dev-middleware@^6.1.2: 8.3.0
+  webpack-dev-middleware@^8.0.3: 8.3.0
   webpack-dev-server@^4.0.0: 5.2.6
   websocket-driver@>=0.5.1: 0.7.5
   websocket-driver@^0.7.4: 0.7.5
@@ -9335,7 +9337,7 @@ importers:
         version: 1.2.3
       prosemirror-model:
         specifier: ^1.25.2
-        version: 1.25.3
+        version: 1.25.12
       prosemirror-state:
         specifier: ^1.4.3
         version: 1.4.4
@@ -14185,19 +14187,19 @@ packages:
     resolution: {integrity: sha1-qgaLVUs/ig6g3i6qeuYJH64GZyM=, tarball: https://nexus.protontech.ch/repository/foundation-npm/@proton/proton-foundation-search/-/proton-foundation-search-2.0.0-rc1.tgz}
 
   '@protontech/authenticator-rust-core@0.28.8':
-    resolution: {integrity: sha512-1pjTHiWq+ok5BOJdnckBC9kEyvIb7H5t7/XoqYVov0RhX1+b0PPatiMlXem3pZDLE3n8TKRP567vGnnKHStAjw==}
+    resolution: {integrity: sha512-1pjTHiWq+ok5BOJdnckBC9kEyvIb7H5t7/XoqYVov0RhX1+b0PPatiMlXem3pZDLE3n8TKRP567vGnnKHStAjw==, tarball: https://nexus.protontech.ch/repository/web-npm-private-and-public/@protontech/authenticator-rust-core/-/authenticator-rust-core-0.28.8.tgz}
 
   '@protontech/autofill@0.0.38040317':
-    resolution: {integrity: sha512-h1gJ2weekyRpiGAFXqu1AT67+4/TmDUK5asjhI9/3BabRmOPIr6SN+YX+I47R9GXt/Uzk6mPneuyUvjowzA4IA==}
+    resolution: {integrity: sha512-h1gJ2weekyRpiGAFXqu1AT67+4/TmDUK5asjhI9/3BabRmOPIr6SN+YX+I47R9GXt/Uzk6mPneuyUvjowzA4IA==, tarball: https://nexus.protontech.ch/repository/web-npm-private-and-public/@protontech/autofill/-/autofill-0.0.38040317.tgz}
 
   '@protontech/bip39@1.1.0':
-    resolution: {integrity: sha512-hm2m+L2AESN+/F0erIBqt3/qce8eHE0VbLj4uUjKx8PUFqZ1lB6boHwd5ZK4g+3EKq1lr/n596YTJXX6f6ITEg==}
+    resolution: {integrity: sha512-hm2m+L2AESN+/F0erIBqt3/qce8eHE0VbLj4uUjKx8PUFqZ1lB6boHwd5ZK4g+3EKq1lr/n596YTJXX6f6ITEg==, tarball: https://nexus.protontech.ch/repository/web-npm-private-and-public/@protontech/bip39/-/bip39-1.1.0.tgz}
 
   '@protontech/crypto@2.1.3':
-    resolution: {integrity: sha512-Sbf/7yqwIE40L7AzZvRPfCWvDaHJ3GzELF3BhvhoVpGPImUxkbjRsJscGq/+Amglh3zAWaN1z2mCPoC1uUl2ZA==}
+    resolution: {integrity: sha512-Sbf/7yqwIE40L7AzZvRPfCWvDaHJ3GzELF3BhvhoVpGPImUxkbjRsJscGq/+Amglh3zAWaN1z2mCPoC1uUl2ZA==, tarball: https://nexus.protontech.ch/repository/web-npm-private-and-public/@protontech/crypto/-/crypto-2.1.3.tgz}
 
   '@protontech/drive-sdk@0.22.2':
-    resolution: {integrity: sha512-J5qM6SkQ2TsymagFJR3Al+f3TjFzwxb+eUUK6ZDMlzv52MOCDjNNaOIHF3+44uXI/Lka0g1kaSaTF2tFISL6tw==}
+    resolution: {integrity: sha512-J5qM6SkQ2TsymagFJR3Al+f3TjFzwxb+eUUK6ZDMlzv52MOCDjNNaOIHF3+44uXI/Lka0g1kaSaTF2tFISL6tw==, tarball: https://nexus.protontech.ch/repository/web-npm-private-and-public/@protontech/drive-sdk/-/drive-sdk-0.22.2.tgz}
     peerDependencies:
       '@protontech/crypto': ^2.1.3
 
@@ -14209,23 +14211,23 @@ packages:
       typescript: ^7.0.2
 
   '@protontech/fathom@0.0.38040317':
-    resolution: {integrity: sha512-DgdNQB5xA7wjoMeax3h1YDUE7QVb+rr83hqJ+BqqJ7PsUfX0YGza2K6Grjf+EY8c14FBj84tYGJXIB2XLXb5mg==}
+    resolution: {integrity: sha512-DgdNQB5xA7wjoMeax3h1YDUE7QVb+rr83hqJ+BqqJ7PsUfX0YGza2K6Grjf+EY8c14FBj84tYGJXIB2XLXb5mg==, tarball: https://nexus.protontech.ch/repository/web-npm-private-and-public/@protontech/fathom/-/fathom-0.0.38040317.tgz}
 
   '@protontech/interval-tree@1.0.0':
-    resolution: {integrity: sha512-XwC15KtHFwExKYfCn4d0i2sjV4XTSMlsmSAPZluczR9GHzwi7oCMBHOzhHg3EbhCYjqLJBAxGHFsepfKyfP9ng==}
+    resolution: {integrity: sha512-XwC15KtHFwExKYfCn4d0i2sjV4XTSMlsmSAPZluczR9GHzwi7oCMBHOzhHg3EbhCYjqLJBAxGHFsepfKyfP9ng==, tarball: https://nexus.protontech.ch/repository/web-npm-private-and-public/@protontech/interval-tree/-/interval-tree-1.0.0.tgz}
 
   '@protontech/mimemessage@1.1.4':
-    resolution: {integrity: sha512-GboE1mfTF4TIyJ+qAP/MbiLWpf/UmEbLYON4PopTJH4G0Vkn7Wl86gRhDg5ZxXEJAgN2sTSvUnSeLbsStOa/sA==}
+    resolution: {integrity: sha512-GboE1mfTF4TIyJ+qAP/MbiLWpf/UmEbLYON4PopTJH4G0Vkn7Wl86gRhDg5ZxXEJAgN2sTSvUnSeLbsStOa/sA==, tarball: https://nexus.protontech.ch/repository/web-npm-private-and-public/@protontech/mimemessage/-/mimemessage-1.1.4.tgz}
     engines: {node: '>=0.10.32'}
 
   '@protontech/ml-inference@0.0.38040317':
-    resolution: {integrity: sha512-Ub/3eetqSgClyOTxCUrnEm7nEkxk7uaXfVvWxFbLOuIgKqHezb4dmZGgGZNYRKV9/0af985n6VyDBH66nctQMw==}
+    resolution: {integrity: sha512-Ub/3eetqSgClyOTxCUrnEm7nEkxk7uaXfVvWxFbLOuIgKqHezb4dmZGgGZNYRKV9/0af985n6VyDBH66nctQMw==, tarball: https://nexus.protontech.ch/repository/web-npm-private-and-public/@protontech/ml-inference/-/ml-inference-0.0.38040317.tgz}
 
   '@protontech/mutex-browser@1.0.5':
-    resolution: {integrity: sha512-xtyH1+Y/1gNcwNmZRrEHDvKR3/iDnsVHmN8ir3SnlkZYo0vgvL2cl0huOD/cr/lryYERKwx9far7nXKbgYdW5Q==}
+    resolution: {integrity: sha512-xtyH1+Y/1gNcwNmZRrEHDvKR3/iDnsVHmN8ir3SnlkZYo0vgvL2cl0huOD/cr/lryYERKwx9far7nXKbgYdW5Q==, tarball: https://nexus.protontech.ch/repository/web-npm-private-and-public/@protontech/mutex-browser/-/mutex-browser-1.0.5.tgz}
 
   '@protontech/openpgp@6.3.1':
-    resolution: {integrity: sha512-+NUfnF0rbw553xwT09YROb3TBmitumSSgOEx3eQh8LOx7CAKQzo2CLfsbBQz7KFc3+d9iMIMOKLrLzerYCtLIw==}
+    resolution: {integrity: sha512-+NUfnF0rbw553xwT09YROb3TBmitumSSgOEx3eQh8LOx7CAKQzo2CLfsbBQz7KFc3+d9iMIMOKLrLzerYCtLIw==, tarball: https://nexus.protontech.ch/repository/web-npm-private-and-public/@protontech/openpgp/-/openpgp-6.3.1.tgz}
     engines: {node: '>= 18.0.0', typescript: '>= 5.0.0'}
     peerDependencies:
       '@openpgp/web-stream-tools': ~0.3.0
@@ -14234,16 +14236,16 @@ packages:
         optional: true
 
   '@protontech/pass-rust-core@1.6.0':
-    resolution: {integrity: sha512-Z32e2CFJan6lARrg6aevghLlxMbZZtZOHj+M8QlBWEfTOt5/0W6iwbnJI91e2zG6iZfFYIkbUYeWDQPQhLfNOQ==}
+    resolution: {integrity: sha512-Z32e2CFJan6lARrg6aevghLlxMbZZtZOHj+M8QlBWEfTOt5/0W6iwbnJI91e2zG6iZfFYIkbUYeWDQPQhLfNOQ==, tarball: https://nexus.protontech.ch/repository/web-npm-private-and-public/@protontech/pass-rust-core/-/pass-rust-core-1.6.0.tgz}
 
   '@protontech/telemetry@2.2.0':
-    resolution: {integrity: sha512-qmlb2KuT7lmp/i/hJ/wJhYN9PhOHTZjQNXx6Qus4tP8DEJmGIOXshh/iKcJ/S52GNs3hO4O48EoLTFEDkvbcaQ==}
+    resolution: {integrity: sha512-qmlb2KuT7lmp/i/hJ/wJhYN9PhOHTZjQNXx6Qus4tP8DEJmGIOXshh/iKcJ/S52GNs3hO4O48EoLTFEDkvbcaQ==, tarball: https://nexus.protontech.ch/repository/web-npm-private-and-public/@protontech/telemetry/-/telemetry-2.2.0.tgz}
 
   '@protontech/tidy-url@1.18.5':
-    resolution: {integrity: sha512-sNHj3vbRlPhL94V9uAH2wTPrz+5YrWolrPGpW3IZVmflrA6pnyLqhcRQ0xktp2nRwnAQExO5mIZ0KR+7OBC+dQ==}
+    resolution: {integrity: sha512-sNHj3vbRlPhL94V9uAH2wTPrz+5YrWolrPGpW3IZVmflrA6pnyLqhcRQ0xktp2nRwnAQExO5mIZ0KR+7OBC+dQ==, tarball: https://nexus.protontech.ch/repository/web-npm-private-and-public/@protontech/tidy-url/-/tidy-url-1.18.5.tgz}
 
   '@protontech/timezone-support@2.1.0':
-    resolution: {integrity: sha512-ljTYJree6wyP2MJYgrQhZviqYMFy4H8RmEQMhesC5aCqJN1zkbnXiclf8YO6xCbp/WLlOTYoiILvrKpvGLqmjQ==}
+    resolution: {integrity: sha512-ljTYJree6wyP2MJYgrQhZviqYMFy4H8RmEQMhesC5aCqJN1zkbnXiclf8YO6xCbp/WLlOTYoiILvrKpvGLqmjQ==, tarball: https://nexus.protontech.ch/repository/web-npm-private-and-public/@protontech/timezone-support/-/timezone-support-2.1.0.tgz}
     engines: {node: '>=6'}
     hasBin: true
 
@@ -24780,6 +24782,10 @@ packages:
     resolution: {integrity: sha512-Hrgsx+orqoygnmhFbKaHE6c296J+HTAQXoxEF6gNupROmmGJRoyzfG3ccAveqCBrwr/2yxQ5BVd/GTl5agOwSg==}
     engines: {node: '>= 0.6'}
 
+  range-parser@1.3.0:
+    resolution: {integrity: sha512-hek2mFQpPuI4E1BBKrSto+BU3e3x4xuarsbiwr3+lf7p44juvFMV0XFWQAP3xUyqXA4RrXLIoaSUGbSt056ZMw==}
+    engines: {node: '>= 0.6'}
+
   raw-body@2.5.3:
     resolution: {integrity: sha512-s4VSOf6yN0rvbRZGxs8Om5CWj6seneMwK3oDb4lWDH0UPhWcxwOWw5+qk24bxq87szX1ydrwylIOp2uG1ojUpA==}
     engines: {node: '>= 0.8'}
@@ -27606,15 +27612,6 @@ packages:
       webpack-dev-server:
         optional: true
 
-  webpack-dev-middleware@6.1.3:
-    resolution: {integrity: sha512-A4ChP0Qj8oGociTs6UdlRUGANIGrCDL3y+pmQMc+dSsraXHCatFpmMey4mYELA+juqwUqwQsUgJJISXl1KWmiw==}
-    engines: {node: '>= 14.15.0'}
-    peerDependencies:
-      webpack: ^5.0.0
-    peerDependenciesMeta:
-      webpack:
-        optional: true
-
   webpack-dev-middleware@7.4.6:
     resolution: {integrity: sha512-yBWCMvIfUmuhAE8vdqUKzH0vg9kuWN0KeG4vBnqRplUFHRU7lMQjkiJWxVQzvo2BTewqhPhDlMB41rAt2jVA9A==}
     engines: {node: '>= 18.12.0'}
@@ -27624,8 +27621,8 @@ packages:
       webpack:
         optional: true
 
-  webpack-dev-middleware@8.1.1:
-    resolution: {integrity: sha512-JrxAE/HwNmEnTkzkUGHFItHpGalzuEIUDifXhjAkIEHZzHK/ZJFVoTQF5ubZQlgeRireqLdr2lZttrrmOH61IA==}
+  webpack-dev-middleware@8.3.0:
+    resolution: {integrity: sha512-jFNNMB29ugmkEUFW9cpWNqcWFQNwuMTMVoRpKVAiz/5nh3gA4x9x6DRPhNHGc/SLre7pEP9yrAPDAmCvdCblKg==}
     engines: {node: '>= 20.9.0'}
     peerDependencies:
       webpack: ^5.101.0
@@ -35376,7 +35373,7 @@ snapshots:
       terser-webpack-plugin: 5.6.1(@swc/core@1.16.2)(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.28)(webpack@5.111.1)
       ts-dedent: 2.2.0
       webpack: 5.111.1(@swc/core@1.16.2)(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.28)(sharp@0.35.4(@types/node@26.0.0))(svgo@4.1.0)(webpack-cli@7.2.3)
-      webpack-dev-middleware: 6.1.3(webpack@5.111.1)
+      webpack-dev-middleware: 8.3.0(webpack@5.111.1)
       webpack-hot-middleware: 2.26.1
       webpack-virtual-modules: 0.6.2
     optionalDependencies:
@@ -47505,6 +47502,8 @@ snapshots:
 
   range-parser@1.2.1: {}
 
+  range-parser@1.3.0: {}
+
   raw-body@2.5.3:
     dependencies:
       bytes: 3.1.2
@@ -51296,16 +51295,6 @@ snapshots:
       webpack-dev-server: 6.0.0(supports-color@11.0.0)(webpack-cli@7.2.3)(webpack@5.111.1)
     optional: true
 
-  webpack-dev-middleware@6.1.3(webpack@5.111.1):
-    dependencies:
-      colorette: 2.0.20
-      memfs: 3.5.3
-      mime-types: 2.1.35
-      range-parser: 1.2.1
-      schema-utils: 4.5.0
-    optionalDependencies:
-      webpack: 5.111.1(@swc/core@1.16.2)(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.28)(sharp@0.35.4(@types/node@26.0.0))(svgo@4.1.0)(webpack-cli@7.2.3)
-
   webpack-dev-middleware@7.4.6(webpack@5.111.1):
     dependencies:
       colorette: 2.0.20
@@ -51317,11 +51306,12 @@ snapshots:
     optionalDependencies:
       webpack: 5.111.1(@swc/core@1.16.2)(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.28)(sharp@0.35.4(@types/node@24.19.0))(svgo@4.1.0)(webpack-cli@7.2.3)
 
-  webpack-dev-middleware@8.1.1(webpack@5.111.1):
+  webpack-dev-middleware@8.3.0(webpack@5.111.1):
     dependencies:
+      ansi-html-community: 0.0.8
       memfs: 4.75.0
       mime-types: 3.0.2
-      range-parser: 1.2.1
+      range-parser: 1.3.0
       schema-utils: 4.5.0
     optionalDependencies:
       webpack: 5.111.1(@swc/core@1.16.13(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.28)(sharp@0.35.5(@types/node@26.0.0))(svgo@4.1.0)(webpack-cli@7.2.3)
@@ -51430,7 +51420,7 @@ snapshots:
       selfsigned: 5.5.0
       serve-index: 1.9.2(supports-color@11.0.0)
       tinyglobby: 0.2.17
-      webpack-dev-middleware: 8.1.1(webpack@5.111.1)
+      webpack-dev-middleware: 8.3.0(webpack@5.111.1)
       ws: 8.21.3
     optionalDependencies:
       webpack: 5.111.1(@swc/core@1.16.13(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.28)(sharp@0.35.5(@types/node@26.0.0))(svgo@4.1.0)(webpack-cli@7.2.3)
