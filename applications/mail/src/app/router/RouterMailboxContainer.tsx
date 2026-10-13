@@ -27,6 +27,7 @@ import { getInboxRedirectUrl } from '../helpers/mailboxUrl';
 import useMailDrawer from '../hooks/drawer/useMailDrawer';
 import { useElements } from '../hooks/mailbox/useElements';
 import { useRetryElementsOnReconnect } from '../hooks/mailbox/useRetryElementsOnReconnect';
+import { MAILBOX_BOUNDS_CLASS } from '../lumo/floating/useMailboxBounds';
 import { selectElementID, selectIsSearching, selectLabelID } from '../store/elements/elementsSelectors';
 import { useMailDispatch, useMailSelector } from '../store/hooks';
 import { layoutActions } from '../store/layout/layoutSlice';
@@ -125,7 +126,7 @@ export const RouterMailboxContainer = () => {
                         isColumnModeActive && 'column-layout-view',
                         breakpoints.viewportWidth['<=small'] && 'border-none',
                     ])}
-                    innerClassName={breakpoints.viewportWidth['<=small'] ? 'border-none' : ''}
+                    innerClassName={clsx(MAILBOX_BOUNDS_CLASS, breakpoints.viewportWidth['<=small'] && 'border-none')}
                     hasToolbar
                     hasRowMode={hasRowMode}
                     ref={mainAreaRef}
