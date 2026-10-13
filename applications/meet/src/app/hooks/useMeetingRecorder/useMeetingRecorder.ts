@@ -88,6 +88,7 @@ export const useMeetingRecorder = () => {
     );
 
     const sessionRef = useRef<RecordingSession | null>(null);
+    const lastSessionRef = useRef<RecordingSession | null>(null);
 
     // Keep the recording identity that changes on a full reconnection.
     const localRecordingIdentityRef = useRef(room.localParticipant.identity);
@@ -103,6 +104,7 @@ export const useMeetingRecorder = () => {
             return;
         }
         sessionRef.current = null;
+        lastSessionRef.current = session;
         await session.cleanup();
         markRecordingStopped();
     };
@@ -196,7 +198,8 @@ export const useMeetingRecorder = () => {
     });
 
     const finishRecording = useStableCallback(async ({ hasRecordedData = true }: FinishRecordingOptions = {}) => {
-        if (!sessionRef.current?.isActive()) {
+        const session = sessionRef.current;
+        if (!session?.isActive()) {
             return;
         }
 
@@ -215,6 +218,7 @@ export const useMeetingRecorder = () => {
                     },
                 });
 
+                session.setOutcome('empty');
                 if (hasRecordedData) {
                     dispatch(recordingFailed());
                 } else {
@@ -227,8 +231,10 @@ export const useMeetingRecorder = () => {
                 return;
             }
 
+            session.setOutcome('ready');
             dispatch(recordingReady(recording));
         } catch (error) {
+            session.setOutcome('failed', error);
             reportMeetError('MeetingRecording Error: Failed to finish recording', {
                 context: {
                     error: error instanceof Error ? error.message : String(error),
@@ -344,9 +350,14 @@ export const useMeetingRecorder = () => {
         };
     }, [handleUnmount]);
 
+    const getRecordingDiagnostics = useStableCallback(
+        () => (sessionRef.current ?? lastSessionRef.current)?.getDiagnostics() ?? null
+    );
+
     return {
         startRecording,
         stopRecording,
         finishRecording,
+        getRecordingDiagnostics,
     };
 };
