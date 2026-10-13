@@ -14,6 +14,7 @@ export enum TelemetryMeasurementGroups {
     accountDashboard = 'account.web.dashboard',
     accountUpgradePage = 'account.web.upgrade_page',
     easySwitch = 'any.web.easy_switch',
+    easySwitchCreationFunnel = 'any.web.easy_switch_creation_funnel',
     referralDiscover = 'any.web.referral_discover',
     alwaysOnUpsell = 'any.web.always_on_upsell',
     calendarIcsSurgery = 'calendar.web.ics_surgery',
