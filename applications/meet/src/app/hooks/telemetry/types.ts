@@ -113,7 +113,17 @@ export interface JoinStats extends Record<string, unknown> {
     networkDownlink?: number;
 }
 
-export interface RecordingStats extends Record<string, unknown> {
+export interface RecordingStopTelemetry {
+    recordingBackend: 'webcodecs' | 'mediarecorder';
+    recordingBytesBeforeStop: number;
+    recordingBytesFlushedAtStop: number;
+    recordingStallCount: number;
+    recordingStallTotalMs: number;
+    recordingStallLongestMs: number;
+    recordingLongestStallCause: string | null;
+}
+
+export interface RecordingStats extends RecordingStopTelemetry, Record<string, unknown> {
     roomId: string;
     meetingLinkName: string;
     identity: string;

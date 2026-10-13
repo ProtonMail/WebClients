@@ -26,6 +26,7 @@ export class VideoMixerClient {
     private reportMeetError: ReportMeetError;
     private encoderOnChunk: ((data: Uint8Array<ArrayBuffer>) => void) | null = null;
     private encoderDoneResolve: (() => void) | null = null;
+    private audioCodec: string | null = null;
 
     constructor({
         initialScene,
@@ -56,6 +57,8 @@ export class VideoMixerClient {
             } else if (message?.type === 'encoderDone') {
                 this.encoderDoneResolve?.();
                 this.encoderDoneResolve = null;
+            } else if (message?.type === 'encoderStarted') {
+                this.audioCodec = message.audioCodec;
             }
         };
 
@@ -125,6 +128,10 @@ export class VideoMixerClient {
 
     public getVideoTracks(): MediaStreamTrack[] {
         return this.canvasStream.getVideoTracks();
+    }
+
+    public getAudioCodec(): string | null {
+        return this.audioCodec;
     }
 
     public startEncoder(onChunk: (data: Uint8Array<ArrayBuffer>) => void): void {
