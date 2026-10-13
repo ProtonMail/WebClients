@@ -14,6 +14,7 @@ export enum TelemetryMeasurementGroups {
     accountDashboard = 'account.web.dashboard',
     accountUpgradePage = 'account.web.upgrade_page',
     easySwitch = 'any.web.easy_switch',
+    easySwitchCreationFunnel = 'any.web.easy_switch_creation_funnel',
     referralDiscover = 'any.web.referral_discover',
     alwaysOnUpsell = 'any.web.always_on_upsell',
     calendarIcsSurgery = 'calendar.web.ics_surgery',
@@ -123,6 +124,15 @@ export enum TelemetryEasySwitchEvents {
     byoeClaimableAddressModalAction = 'byoe_claimable_address_modal_action',
     byoeAddressLinkedModalShown = 'byoe_address_linked_modal_shown',
     byoeAddressLinkedModalAction = 'byoe_address_linked_modal_action',
+}
+
+export enum TelemetryEasySwitchCreationFunnelEvents {
+    creationStarted = 'creation_started',
+    productsSubmitted = 'products_submitted',
+    instructionsViewed = 'instructions_viewed',
+    prepareImportViewed = 'prepare_import_viewed',
+    importerCreated = 'importer_created',
+    creationError = 'creation_error',
 }
 
 export enum TelemetryMailPagingControlsEvents {
@@ -778,7 +788,8 @@ export type TelemetryEvents =
     | TelemetryMeetActionsEvents
     | TelemetryMeetDashboardEvents
     | TelemetryMeetPerformanceEvents
-    | TelemetryEasySwitchEvents;
+    | TelemetryEasySwitchEvents
+    | TelemetryEasySwitchCreationFunnelEvents;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;
