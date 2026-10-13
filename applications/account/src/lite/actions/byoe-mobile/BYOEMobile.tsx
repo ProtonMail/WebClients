@@ -10,6 +10,13 @@ import { getBYOEDisabledNotification, getGenericLimitReached } from '@proton/act
 import { EASY_SWITCH_FEATURES, EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
 import EasySwitchStoreInitializer from '@proton/activation/src/logic/EasySwitchStoreInitializer';
 import EasySwitchStoreProvider from '@proton/activation/src/logic/StoreProvider';
+import {
+    getBYOECreationStartedAt,
+    resumeBYOECreation,
+    trackBYOECreationError,
+    trackBYOECreationStarted,
+    trackBYOEGoogleSignInClicked,
+} from '@proton/activation/src/telemetry/byoeCreationFunnel';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import Toggle from '@proton/components/components/toggle/Toggle';
@@ -77,6 +84,17 @@ const BYOEMobileContent = ({ redirect }: Omit<Props, 'layout'>) => {
         }
     };
 
+    useEffect(() => {
+        if (callback.type === 'none') {
+            trackBYOECreationStarted({ source: EASY_SWITCH_SOURCES.ACCOUNT_LITE_BYOE, isConversion: false });
+        } else {
+            // Coming back from Google is the same creation, which started before the redirect: restore its timer
+            resumeBYOECreation(
+                callback.type === 'code' ? callback.state.creationStartedAt : callback.state?.creationStartedAt
+            );
+        }
+    }, []);
+
     // Google sent the user back: handle the callback once, as soon as the data it depends on is loaded
     useEffect(() => {
         // The address setup reads the user's addresses and feature status, so they must be loaded first
@@ -86,6 +104,7 @@ const BYOEMobileContent = ({ redirect }: Omit<Props, 'layout'>) => {
 
         hasHandledCallbackRef.current = true;
         if (callback.type === 'error') {
+            trackBYOECreationError('authentication');
             createNotification({
                 type: 'error',
                 // translators: This string is shown when something went wrong during easy switch Gmail oAuth
@@ -105,9 +124,11 @@ const BYOEMobileContent = ({ redirect }: Omit<Props, 'layout'>) => {
         } else if (outcome === 'free-limit' || outcome === 'paid-limit') {
             createNotification(getGenericLimitReached());
         } else if (outcome === 'ok') {
+            // The page navigates away right after: send the report now. There is no period selector on mobile
+            trackBYOEGoogleSignInClicked({ hasImportEmails: state, importPeriod: undefined });
             // The page navigates away, the status is intentionally never reset
             setStatus('starting-oauth');
-            startOAuthFlow({ importEmails: state, redirect });
+            startOAuthFlow({ importEmails: state, redirect, creationStartedAt: getBYOECreationStartedAt() });
         }
     };
 

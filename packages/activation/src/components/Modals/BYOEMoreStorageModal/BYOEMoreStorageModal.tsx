@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import { useEffect } from 'react';
 
 import { differenceInDays, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
@@ -22,6 +23,8 @@ import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell.ts';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import { getAppSpace, getSpace } from '@proton/shared/lib/user/storage.ts';
 import clsx from '@proton/utils/clsx';
+
+import { trackBYOEUpsellModalViewed } from '../../../telemetry/byoeCreationFunnel';
 
 const BYTES_450MB = 450 * 1024 * 1024;
 const BYTES_500MB = 500 * 1024 * 1024;
@@ -81,6 +84,10 @@ export const BYOEMoreStorageModal = ({ onClose, onComplete, ...rest }: Props) =>
     const [user] = useUser();
     const { APP_NAME } = useConfig();
     const appSpace = getAppSpace(getSpace(user), APPS.PROTONMAIL);
+
+    useEffect(() => {
+        trackBYOEUpsellModalViewed();
+    }, []);
 
     const upsellRef =
         getUpsellRefFromApp({

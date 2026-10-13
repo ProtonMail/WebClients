@@ -234,6 +234,18 @@ describe('tracker', () => {
             expect(reports.map((r) => r.values)).toEqual([{ durationMs: 100 }, {}]);
         });
 
+        it('resumes a timer that began earlier, and exposes the elapsed time', () => {
+            const now = jest.spyOn(performance, 'now');
+            const { reports } = mockTracker();
+            now.mockReturnValueOnce(5000);
+            tracker.startTimer(funnelTimer, { elapsedMs: 3000 });
+            now.mockReturnValueOnce(5500);
+            expect(tracker.getElapsed(funnelTimer)).toBe(3500);
+            now.mockReturnValueOnce(6000);
+            tracker.emit(funnelEvent, input, { durationFrom: funnelTimer });
+            expect(reports.map((r) => r.values)).toEqual([{ durationMs: 4000 }]);
+        });
+
         it('only accepts durationFrom on events with a duration value', () => {
             const { restore } = mockTracker();
             const simple = {

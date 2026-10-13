@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
@@ -8,6 +9,7 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { findUserAddress, getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
+import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { checkExternalAddressClaimable, startEasySwitchSignupImportTask } from '../api';
@@ -24,6 +26,11 @@ import { loadImporters } from '../logic/importers/importers.actions';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '../logic/store';
 import { loadSyncList } from '../logic/sync/sync.actions';
 import { getAllSync } from '../logic/sync/sync.selectors';
+import {
+    trackBYOEAuthenticated,
+    trackBYOECreationError,
+    trackBYOEImporterCreated,
+} from '../telemetry/byoeCreationFunnel';
 import { convertBYOEAddress, createBYOEAddress } from '../thunks/byoeAddresses';
 import { updateBYOEAddressConnection } from '../thunks/updateBYOEAddressConnection';
 import useBYOEFeatureStatus from './useBYOEFeatureStatus';
@@ -45,6 +52,7 @@ const useSetupGmailBYOEAddress = ({
 }: Props) => {
     const api = useApi();
     const [addresses] = useAddresses();
+    const [user] = useUser();
     const [hasAccessToBYOE] = useBYOEFeatureStatus();
     const canClaimExternalAddress = useFlag('CanClaimExternalAddress');
 
@@ -70,12 +78,23 @@ const useSetupGmailBYOEAddress = ({
             return address;
         } catch (e) {
             handleError(e);
+            trackBYOECreationError('address_creation');
             onError();
             onComplete();
         }
     };
 
-    const finalizeBYOEAddress = async (account: string, importEmails: boolean) => {
+    const finalizeBYOEAddress = async ({
+        account,
+        importEmails,
+        importPeriod,
+        isClaimedAddress,
+    }: {
+        account: string;
+        importEmails: boolean;
+        importPeriod: TIME_PERIOD | undefined;
+        isClaimedAddress: boolean;
+    }) => {
         const existingAddress = findUserAddress(account, addresses);
 
         let address;
@@ -85,6 +104,7 @@ const useSetupGmailBYOEAddress = ({
                 await dispatch(updateBYOEAddressConnection({ address: existingAddress, type: 'reconnect' }));
             } catch (e) {
                 handleError(e);
+                trackBYOECreationError('address_creation');
                 createNotification({
                     type: 'error',
                     text: c('Error').t`Something went wrong while converting the address`,
@@ -105,6 +125,12 @@ const useSetupGmailBYOEAddress = ({
         }
 
         if (address) {
+            trackBYOEImporterCreated({
+                hasImportEmails: importEmails,
+                importPeriod,
+                isUpsellShown: !hasPaidMail(user) && importEmails,
+                isClaimedAddress,
+            });
             onComplete();
             void easySwitchDispatch(loadSyncList());
             void easySwitchDispatch(loadImporters());
@@ -125,14 +151,19 @@ const useSetupGmailBYOEAddress = ({
     }) => {
         // If setting up the token failed or user has no access to BYOE, close the modal
         if (!hasAccessToBYOE || hasError) {
+            if (hasAccessToBYOE) {
+                trackBYOECreationError('authentication');
+            }
             onComplete();
             return;
         }
 
         if (!hasError && token) {
+            trackBYOEAuthenticated();
             const existingAddress = findUserAddress(token.Account, addresses);
 
             if (existingAddress && getIsBYOEAddress(existingAddress)) {
+                trackBYOECreationError('address_already_connected');
                 createNotification({
                     type: 'error',
                     text: c('Error').t`Address is already added to your account`,
@@ -173,6 +204,7 @@ const useSetupGmailBYOEAddress = ({
                     if (isClaimable) {
                         showClaimableAddressModal(token.Account, importEmails, importPeriod);
                     } else {
+                        trackBYOECreationError('address_linked_to_another_account');
                         showAddressLinkedToAnotherAccountModal();
                     }
                     onComplete();
@@ -180,11 +212,17 @@ const useSetupGmailBYOEAddress = ({
                 }
 
                 handleError(e);
+                trackBYOECreationError('address_creation');
                 onComplete();
                 return;
             }
 
-            await finalizeBYOEAddress(token.Account, importEmails);
+            await finalizeBYOEAddress({
+                account: token.Account,
+                importEmails,
+                importPeriod,
+                isClaimedAddress: false,
+            });
         }
     };
 
@@ -215,13 +253,14 @@ const useSetupGmailBYOEAddress = ({
             );
         } catch (e) {
             handleError(e);
+            trackBYOECreationError('address_creation');
             onComplete();
             return false;
         }
 
         // The claim itself succeeded, so the modal can close even if finalizing fails (it reports its own errors)
         try {
-            await finalizeBYOEAddress(account, importEmails);
+            await finalizeBYOEAddress({ account, importEmails, importPeriod, isClaimedAddress: true });
         } catch (e) {
             handleError(e);
         }

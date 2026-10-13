@@ -86,8 +86,13 @@ export class Tracker {
         });
     }
 
-    startTimer(timer: TimerHandle, options?: { restart?: boolean }) {
+    startTimer(timer: TimerHandle, options?: { restart?: boolean; elapsedMs?: number }) {
         this.catchErrors(() => this.timers.start(timer, options));
+    }
+
+    /** Elapsed milliseconds of a running timer, `undefined` if it is not running */
+    getElapsed(timer: TimerHandle) {
+        return this.timers.elapsed(timer);
     }
 
     cancelTimer(timer: TimerHandle) {
@@ -181,8 +186,11 @@ export const tracker = {
     emit<E extends EventDefinition>(event: E, ...args: EmitArgs<E>) {
         getInstance()?.emit(event, ...args);
     },
-    startTimer(timer: TimerHandle, options?: { restart?: boolean }) {
+    startTimer(timer: TimerHandle, options?: { restart?: boolean; elapsedMs?: number }) {
         getInstance()?.startTimer(timer, options);
+    },
+    getElapsed(timer: TimerHandle) {
+        return getInstance()?.getElapsed(timer);
     },
     cancelTimer(timer: TimerHandle) {
         getInstance()?.cancelTimer(timer);
