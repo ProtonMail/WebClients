@@ -86,7 +86,11 @@ type SegmentMessage = {
 
 type DestroyMessage = { type: 'destroy' };
 
-type InboundMessage = InitMessage | SegmentMessage | DestroyMessage;
+type ConnectMessage = { type: 'connect'; port: MessagePort };
+
+type InboundMessage = InitMessage | DestroyMessage | ConnectMessage;
+
+type ReplyTarget = Pick<MessagePort, 'postMessage'>;
 
 let segmenter: vision.ImageSegmenter | null = null;
 // OffscreenCanvas is required for GPU delegate inside a Worker — MediaPipe
@@ -140,38 +144,6 @@ const smoothstep = (edge0: number, edge1: number, x: number): number => {
     }
     const t = Math.min(1, Math.max(0, (x - edge0) / (edge1 - edge0)));
     return t * t * (3 - 2 * t);
-};
-
-// Per-pixel EMA with motion-aware asymmetric hysteresis (see constants.ts).
-// Mutates `current` in place and mirrors it into `previousMask`.
-const applyTemporalSmoothing = (current: Float32Array): Float32Array => {
-    const prev = previousMask;
-    // First frame after a reset: adopt current as-is and seed the history.
-    if (!prev || prev.length !== current.length) {
-        previousMask = new Float32Array(current);
-        return current;
-    }
-
-    for (let i = 0; i < current.length; i++) {
-        const previousValue = prev[i];
-        const delta = current[i] - previousValue;
-        const motion = smoothstep(
-            workerConstants.maskTemporalMotionLow,
-            workerConstants.maskTemporalMotionHigh,
-            Math.abs(delta)
-        );
-        const rate =
-            delta >= 0
-                ? workerConstants.maskTemporalAppearRate +
-                  (workerConstants.maskTemporalAppearRateFast - workerConstants.maskTemporalAppearRate) * motion
-                : workerConstants.maskTemporalDisappearRate +
-                  (workerConstants.maskTemporalDisappearRateFast - workerConstants.maskTemporalDisappearRate) * motion;
-        const smoothed = previousValue + rate * delta;
-        current[i] = smoothed;
-        prev[i] = smoothed;
-    }
-
-    return current;
 };
 
 const initSegmenter = async (msg: InitMessage, attemptDelegate: 'GPU' | 'CPU') => {
@@ -230,7 +202,9 @@ const handleInit = async (msg: InitMessage) => {
 // 0=background and 1=person (some variants emit a single person mask), so the
 // person mask is read directly.
 type PersonConfidence = {
-    mask: Float32Array;
+    // Boosted, temporally smoothed person confidence quantized to 0-255. The main
+    // thread shapes it into an 8-bit texture, so float precision would be dropped there.
+    mask: Uint8ClampedArray;
     // The masks never made it back from the GPU, so every class read as 0.0.
     isSourceEmpty: boolean;
 };
@@ -245,6 +219,61 @@ const hasEmptyBackgroundClass = (masks: vision.MPMask[]): boolean => {
     return background.length > 0 && background.every((confidence) => confidence === 0);
 };
 
+// Stops at the first non-zero texel, which for a real mask is almost immediately.
+const isAllZero = (values: Float32Array): boolean => {
+    for (let i = 0; i < values.length; i++) {
+        if (values[i] !== 0) {
+            return false;
+        }
+    }
+    return values.length > 0;
+};
+
+// Boost, per-pixel EMA with motion-aware asymmetric hysteresis (see constants.ts), and
+// quantization, in one pass. The history stays in float so the smoothing is unchanged.
+const smoothPersonConfidence = (source: Float32Array, invert: boolean, boost: number): Uint8ClampedArray => {
+    const {
+        maskTemporalAppearRate: appearRate,
+        maskTemporalDisappearRate: disappearRate,
+        maskTemporalAppearRateFast: appearRateFast,
+        maskTemporalDisappearRateFast: disappearRateFast,
+        maskTemporalMotionLow: motionLow,
+        maskTemporalMotionHigh: motionHigh,
+    } = workerConstants;
+
+    // Always write into our own buffer. getAsFloat32Array() can hand back a view over
+    // MediaPipe's WASM heap (the simple model's CPU readback does), and that buffer is
+    // not detachable, so transferring it to the main thread throws and every mask fails.
+    const out = new Uint8ClampedArray(source.length);
+
+    // First frame after a reset: adopt the current mask as-is and seed the history.
+    const hasHistory = !!previousMask && previousMask.length === source.length;
+    const history = hasHistory ? previousMask! : new Float32Array(source.length);
+    previousMask = history;
+
+    for (let pixel = 0; pixel < source.length; pixel++) {
+        const confidence = source[pixel];
+        const person = Math.min(1, (invert ? 1 - confidence : confidence) * boost);
+
+        let smoothed = person;
+        if (hasHistory) {
+            const previousValue = history[pixel];
+            const delta = person - previousValue;
+            const motion = smoothstep(motionLow, motionHigh, Math.abs(delta));
+            const rate =
+                delta >= 0
+                    ? appearRate + (appearRateFast - appearRate) * motion
+                    : disappearRate + (disappearRateFast - disappearRate) * motion;
+            smoothed = previousValue + rate * delta;
+        }
+
+        history[pixel] = smoothed;
+        out[pixel] = smoothed * 255;
+    }
+
+    return out;
+};
+
 const extractPersonConfidence = (masks: vision.MPMask[]): PersonConfidence => {
     const isSimpleModel = masks.length <= 2;
     // Simple model: read the person mask directly. Multiclass: read background
@@ -256,27 +285,16 @@ const extractPersonConfidence = (masks: vision.MPMask[]): PersonConfidence => {
     }
     const source = masks[sourceIndex].getAsFloat32Array();
 
-    // Always write into our own buffer. getAsFloat32Array() can hand back a view over
-    // MediaPipe's WASM heap (the simple model's CPU readback does), and that buffer is
-    // not detachable, so transferring it to the main thread throws and every mask fails.
-    const out = new Float32Array(source.length);
-
-    const boost = invert ? workerConstants.multiclassPersonConfidenceBoost : workerConstants.personConfidenceBoost;
-    let isSourceAllZero = source.length > 0;
-    for (let pixel = 0; pixel < source.length; pixel++) {
-        const confidence = source[pixel];
-        if (confidence !== 0) {
-            isSourceAllZero = false;
-        }
-        const person = invert ? 1 - confidence : confidence;
-        out[pixel] = Math.min(1, person * boost);
-    }
-
     // Multiclass already reads the background class. The simple model doesn't, so its
     // all-zero result is ambiguous and needs a second (costlier) readback to settle.
-    const isSourceEmpty = isSourceAllZero && (invert || hasEmptyBackgroundClass(masks));
+    // Checked before smoothing so an empty readback never reaches the history.
+    if (isAllZero(source) && (invert || hasEmptyBackgroundClass(masks))) {
+        return { mask: new Uint8ClampedArray(0), isSourceEmpty: true };
+    }
 
-    return { mask: out, isSourceEmpty };
+    const boost = invert ? workerConstants.multiclassPersonConfidenceBoost : workerConstants.personConfidenceBoost;
+
+    return { mask: smoothPersonConfidence(source, invert, boost), isSourceEmpty: false };
 };
 
 // MediaPipe's VIDEO running mode feeds packets into a graph that requires
@@ -288,11 +306,11 @@ const extractPersonConfidence = (masks: vision.MPMask[]): PersonConfidence => {
 // which every subsequent segmentForVideo call fails and the mask freezes. Clamp
 // to a strictly increasing integer-millisecond timestamp here, at the actual
 // segmentForVideo call site, so the graph can never be wedged by a bad value.
-const handleSegment = (msg: SegmentMessage) => {
+const handleSegment = (msg: SegmentMessage, reply: ReplyTarget) => {
     const { id } = msg;
     if (!segmenter) {
         msg.bitmap.close();
-        self.postMessage({ type: 'mask-failed', id });
+        reply.postMessage({ type: 'mask-failed', id });
         return;
     }
 
@@ -304,7 +322,7 @@ const handleSegment = (msg: SegmentMessage) => {
             try {
                 const masks = result.confidenceMasks ?? [];
                 if (masks.length === 0) {
-                    self.postMessage({ type: 'mask-failed', id });
+                    reply.postMessage({ type: 'mask-failed', id });
                     return;
                 }
 
@@ -313,22 +331,20 @@ const handleSegment = (msg: SegmentMessage) => {
                 const { mask, isSourceEmpty } = extractPersonConfidence(masks);
 
                 if (isSourceEmpty) {
-                    self.postMessage({ type: 'mask-failed', id });
+                    reply.postMessage({ type: 'mask-failed', id });
                     return;
                 }
 
-                // EMA here; the morphological close runs on the GPU main thread.
-                const combined = applyTemporalSmoothing(mask);
-
-                self.postMessage(
+                // The mask is already smoothed; the morphological close runs on the GPU.
+                reply.postMessage(
                     {
                         type: 'mask',
                         id,
                         width,
                         height,
-                        buffer: combined.buffer,
+                        buffer: mask.buffer,
                     },
-                    [combined.buffer]
+                    [mask.buffer]
                 );
             } finally {
                 result.close();
@@ -337,7 +353,7 @@ const handleSegment = (msg: SegmentMessage) => {
         });
     } catch {
         msg.bitmap.close();
-        self.postMessage({ type: 'mask-failed', id });
+        reply.postMessage({ type: 'mask-failed', id });
     }
 };
 
@@ -345,8 +361,13 @@ self.onmessage = (event: MessageEvent<InboundMessage>) => {
     const msg = event.data;
     if (msg.type === 'init') {
         void handleInit(msg);
-    } else if (msg.type === 'segment') {
-        handleSegment(msg);
+    } else if (msg.type === 'connect') {
+        const { port } = msg;
+        port.onmessage = (portEvent: MessageEvent<SegmentMessage>) => {
+            if (portEvent.data?.type === 'segment') {
+                handleSegment(portEvent.data, port);
+            }
+        };
     } else if (msg.type === 'destroy') {
         segmenter?.close();
         segmenter = null;

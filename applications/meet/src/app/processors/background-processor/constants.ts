@@ -1,20 +1,21 @@
-// Texture unit for the mask LiveKit composites with.
+// Texture unit the mask shaper binds its output texture on.
 export const TEXTURE_UNIT_OUTPUT = 7;
 
 // Mild gain on the simple model's person mask (clamped to 1.0) so marginal
-// pixels clear LiveKit's 0.5 cut. Overridable via MeetBlurPersonConfidenceBoost.
+// pixels clear the compositor's 0.5 cut. Overridable via MeetBlurPersonConfidenceBoost.
 export const PERSON_CONFIDENCE_BOOST = 1.1;
 
 // Stronger gain for the multiclass model, whose softmax leaves interior person
 // regions below 1.0. Overridable via MeetBlurMulticlassPersonConfidenceBoost.
 export const MULTICLASS_PERSON_CONFIDENCE_BOOST = 1.25;
 
-// Longest edge (px) of the frame sent to the segmenter; sets silhouette
-// crispness. Low-end cap.
-export const SEGMENTATION_INPUT_MAX_EDGE = 512;
+// Longest edge (px) of the frame sent to the segmenter. Low-end cap. Low-end devices
+// run the simple model, whose input tensor is 256x256, so a larger cap adds no detail
+// and only scales the resize, readback, transfer, and mask passes (see the mobile cap).
+export const SEGMENTATION_INPUT_MAX_EDGE = 256;
 
 // Higher cap for capable devices; keeps thin features (fingers, hair).
-export const SEGMENTATION_INPUT_MAX_EDGE_HIGH_END = 768;
+export const SEGMENTATION_INPUT_MAX_EDGE_HIGH_END = 640;
 
 // Mobile cap. Both models take a fixed 256x256 input tensor and MediaPipe upsamples
 // the masks back to whatever it was handed, so a larger cap adds no detail — it only
@@ -47,8 +48,8 @@ export const MASK_CLOSING_RADIUS = 2;
 // Smaller structuring element for low-end devices.
 export const MASK_CLOSING_RADIUS_LOW_END = 1;
 
-// Mobile structuring element. The radius counts mask texels, and the mobile mask is a
-// third of the edge, so each texel covers ~3x more of the frame.
+// Mobile structuring element. The radius counts mask texels, and the mobile mask edge is
+// 256 px against 640 on high-end, so each texel spans ~2.5x more of the frame.
 export const MASK_CLOSING_RADIUS_MOBILE = 1;
 
 // Compile-time loop bound for the shader morphology; must be >= the max radius.
@@ -91,7 +92,7 @@ export const buildFragmentShaderSource = (maxRadius: number): string => `#versio
 
     // Spatial mask passes, selected per draw by u_mode; u_blurStep is the pass
     // direction (one axis non-zero) for the morphology passes. COPY passes the
-    // mask through (the final pass also inverts for LiveKit); DILATE/ERODE are
+    // mask through (the final pass also inverts for the compositor); DILATE/ERODE are
     // separable grayscale morphology (max/min over +/- u_radius texels)
     // composing a close.
     uniform sampler2D u_mask;
