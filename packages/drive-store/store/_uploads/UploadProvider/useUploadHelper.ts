@@ -1,26 +1,18 @@
-import { sha1 } from '@noble/hashes/sha1';
-
 import { queryCheckAvailableHashes } from '@proton/shared/lib/api/drive/link';
-import { queryPhotosDuplicates } from '@proton/shared/lib/api/drive/photos';
 import type { HashCheckResult } from '@proton/shared/lib/interfaces/drive/link';
-import { LinkState } from '@proton/shared/lib/interfaces/drive/link';
-import type { DuplicatePhotosHash } from '@proton/shared/lib/interfaces/drive/photos';
 import { generateLookupHash } from '@proton/shared/lib/keys/driveKeys';
 import range from '@proton/utils/range';
 
-import { untilStreamEnd } from '../../../utils/stream';
 import useDebouncedRequest from '../../_api/useDebouncedRequest';
 import { adjustName, splitLinkName } from '../../_links/link';
 import useLink from '../../_links/useLink';
-import useLinksListing from '../../_links/useLinksListing/useLinksListing';
 import { isClientUidAvailable } from './uploadClientUid';
 
 const HASH_CHECK_AMOUNT = 10;
 
 export default function useUploadHelper() {
     const debouncedRequest = useDebouncedRequest();
-    const { getLinkHashKey, getLink } = useLink();
-    const { loadChildren, getCachedChildren } = useLinksListing();
+    const { getLinkHashKey } = useLink();
 
     const findAvailableName = async (
         abortSignal: AbortSignal,
@@ -103,123 +95,7 @@ export default function useUploadHelper() {
         return findAdjustedName();
     };
 
-    /**
-     * Checks if there is a Photos file with the same Hash and ContentHash
-     */
-    const findDuplicateContentHash = async (
-        abortSignal: AbortSignal,
-        {
-            file,
-            volumeId,
-            shareId,
-            parentLinkId,
-        }: { file: File; volumeId: string; shareId: string; parentLinkId: string }
-    ): Promise<{
-        filename: string;
-        hash: string;
-        draftLinkId?: string;
-        duplicateLinkId?: string;
-        clientUid?: string;
-        isDuplicatePhotos?: boolean;
-    }> => {
-        const parentHashKey = await getLinkHashKey(abortSignal, shareId, parentLinkId);
-        if (!parentHashKey) {
-            throw Error('Missing hash key on folder link');
-        }
-        const parentLink = await getLink(abortSignal, shareId, parentLinkId);
-        const hash = await generateLookupHash(file.name, parentHashKey);
-
-        if (parentLink.mimeType === 'Album') {
-            return {
-                filename: file.name,
-                hash,
-            };
-        }
-
-        const { DuplicateHashes } = await debouncedRequest<{ DuplicateHashes: DuplicatePhotosHash[] }>(
-            queryPhotosDuplicates(volumeId, {
-                nameHashes: [hash],
-            }),
-            abortSignal
-        );
-
-        // If no name duplicates hash we don't check ContentHash duplicity
-        if (!DuplicateHashes.length) {
-            return {
-                filename: file.name,
-                hash,
-            };
-        }
-
-        const fileStream = file.stream();
-        const sha1Instance = sha1.create();
-        await untilStreamEnd<Uint8Array<ArrayBuffer>>(fileStream, async (chunk) => {
-            if (chunk?.buffer) {
-                sha1Instance.update(new Uint8Array(chunk.buffer));
-            }
-        });
-
-        const sha1Hash = sha1Instance.digest() as Uint8Array<ArrayBuffer>;
-
-        const contentHash = await generateLookupHash(sha1Hash.toHex(), parentHashKey);
-
-        const duplicatePhotoHashActive = DuplicateHashes.find(
-            (duplicatePhotosHash) =>
-                duplicatePhotosHash.ContentHash === contentHash && duplicatePhotosHash.LinkState === LinkState.ACTIVE
-        );
-        if (duplicatePhotoHashActive) {
-            return {
-                filename: file.name,
-                hash,
-                isDuplicatePhotos: true,
-                duplicateLinkId: duplicatePhotoHashActive.LinkID,
-            };
-        }
-
-        const duplicatePhotoHashDraft = DuplicateHashes.find(
-            (duplicatePhotosHash) => duplicatePhotosHash.LinkState === LinkState.DRAFT
-        );
-        if (duplicatePhotoHashDraft) {
-            return {
-                filename: file.name,
-                hash,
-                draftLinkId: duplicatePhotoHashDraft.LinkID,
-                clientUid: isClientUidAvailable(duplicatePhotoHashDraft.ClientUID)
-                    ? duplicatePhotoHashDraft.ClientUID
-                    : undefined,
-            };
-        }
-
-        return {
-            filename: file.name,
-            hash,
-        };
-    };
-
-    const getLinkByName = async (abortSignal: AbortSignal, shareId: string, parentLinkID: string, name: string) => {
-        await loadChildren(abortSignal, shareId, parentLinkID);
-        const { links } = getCachedChildren(abortSignal, shareId, parentLinkID);
-        return links?.find((link) => link.name === name);
-    };
-
-    const findHash = async (
-        abortSignal: AbortSignal,
-        { shareId, parentLinkId, filename }: { shareId: string; parentLinkId: string; filename: string }
-    ) => {
-        const parentHashKey = await getLinkHashKey(abortSignal, shareId, parentLinkId);
-        if (!parentHashKey) {
-            throw Error('Missing hash key on folder link');
-        }
-
-        const hash = await generateLookupHash(filename, parentHashKey);
-
-        return hash;
-    };
-
     return {
         findAvailableName,
-        findDuplicateContentHash,
-        findHash,
-        getLinkByName,
     };
 }

@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { type SortConfig, useMultiSortedList } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
-import { logError } from '../../../utils/errorHandling';
 import type { LinkShareUrl } from '../../_links/interface';
 
 export enum SortField {
@@ -41,39 +40,26 @@ interface LinkSortFields {
 }
 
 /**
- * useSortingWithDefault sorts provided list based on `defaultSortParams`
- * which can be changed by returned `setSorting` callback.
+ * useSortingWithDefault sorts provided list based on `defaultSortParams`.
  */
 export function useSortingWithDefault<T extends SortField, Item extends LinkSortFields>(
     list: Item[],
     defaultSortParams: SortParams<T>
 ) {
-    const [sortParams, setSortParams] = useState(defaultSortParams);
-    return useControlledSorting(list, sortParams, async (newSortParams) => setSortParams(newSortParams));
+    const [sortParams] = useState(defaultSortParams);
+    return useControlledSorting(list, sortParams);
 }
 
 /**
- * useControlledSorting sorts provided list based on `sortParams`
- * which can be changed by returned `setSorting` callback. Whenever
- * the sort changes, `changeSort` callback is called.
+ * useControlledSorting sorts provided list based on `sortParams`.
  */
 function useControlledSorting<T extends SortField, Item extends LinkSortFields>(
     list: Item[],
-    sortParams: SortParams<T>,
-    changeSort: (sortParams: SortParams<T>) => Promise<void>
+    sortParams: SortParams<T>
 ) {
-    const { sortedList, setConfigs } = useMultiSortedList(list, sortParamsToSortConfig(sortParams));
+    const { sortedList } = useMultiSortedList(list, sortParamsToSortConfig(sortParams));
 
-    const setSorting = async (sortParams: SortParams<T>) => {
-        setConfigs(sortParamsToSortConfig(sortParams));
-        changeSort(sortParams).catch(logError);
-    };
-
-    return {
-        sortedList,
-        sortParams,
-        setSorting,
-    };
+    return { sortedList };
 }
 
 function sortParamsToSortConfig({ sortField, sortOrder: direction }: SortParams) {

@@ -6,12 +6,6 @@ export enum LinkType {
     ALBUM = 3,
 }
 
-export enum LinkState {
-    DRAFT = 0,
-    ACTIVE = 1,
-    TRASHED = 2,
-}
-
 export type LinkSharedUrlInfo = {
     CreateTime: number;
     ExpireTime: number | null;

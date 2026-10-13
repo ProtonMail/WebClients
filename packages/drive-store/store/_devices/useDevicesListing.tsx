@@ -17,7 +17,7 @@ export function useDevicesListingProvider() {
     const { getLink } = useLink();
     const volumesState = useVolumesState();
     const [state, setState] = useState<Map<string, Device>>(new Map());
-    const [isLoading, withLoading] = useLoading();
+    const [, withLoading] = useLoading();
     const { createNotification } = useNotifications();
 
     const loadDevices = (abortSignal: AbortSignal) =>
@@ -80,41 +80,15 @@ export function useDevicesListingProvider() {
         });
     };
 
-    const removeDevice = (deviceId: string) => {
-        const newState = new Map(state);
-        newState.delete(deviceId);
-        setState(newState);
-    };
-
-    const renameDevice = (deviceId: string, name: string) => {
-        const newState = new Map(state);
-        const device = newState.get(deviceId);
-        if (!device) {
-            return;
-        }
-        newState.set(deviceId, {
-            ...device,
-            name,
-        });
-        setState(newState);
-    };
-
     return {
-        isLoading,
         loadDevices,
         cachedDevices: getState(),
         getDeviceByShareId,
-        renameDevice,
-        removeDevice,
     };
 }
 
 const LinksListingContext = createContext<{
-    isLoading: boolean;
-    cachedDevices: ReturnType<typeof useDevicesListingProvider>['cachedDevices'];
     getDeviceByShareId: ReturnType<typeof useDevicesListingProvider>['getDeviceByShareId'];
-    removeCachedDevice: ReturnType<typeof useDevicesListingProvider>['removeDevice'];
-    renameCachedDevice: ReturnType<typeof useDevicesListingProvider>['renameDevice'];
 } | null>(null);
 
 export function DevicesListingProvider({ children }: { children: React.ReactNode }) {
@@ -132,11 +106,7 @@ export function DevicesListingProvider({ children }: { children: React.ReactNode
     return (
         <LinksListingContext.Provider
             value={{
-                isLoading: value.isLoading,
-                cachedDevices: value.cachedDevices,
                 getDeviceByShareId: value.getDeviceByShareId,
-                removeCachedDevice: value.removeDevice,
-                renameCachedDevice: value.renameDevice,
             }}
         >
             {children}

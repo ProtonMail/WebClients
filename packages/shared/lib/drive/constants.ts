@@ -76,7 +76,6 @@ export enum RESPONSE_CODE {
     NOT_ALLOWED = 2011,
     // INVALID_REQUIREMENT = 2000,
     INVALID_LINK_TYPE = 2001,
-    ALREADY_EXISTS = 2500,
     NOT_FOUND = 2501,
     INVALID_ID = 2061,
 }
@@ -225,8 +224,6 @@ export enum SHARE_EXTERNAL_INVITATION_STATE {
     PENDING = 1,
     USER_REGISTERED = 2,
 }
-
-export const DS_STORE = '.DS_Store';
 
 // Accepted files for photos. This value must be used in input `accept` attribute
 export const PHOTOS_ACCEPTED_INPUT = 'image/*,video/*';

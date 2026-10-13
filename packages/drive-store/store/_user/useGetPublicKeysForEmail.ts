@@ -90,14 +90,7 @@ export const useGetPublicKeysForEmail = () => {
             });
     };
 
-    const getPrimaryPublicKeyForEmail = async (
-        email: string,
-        abortSignal?: AbortSignal,
-        skipMissingAdressesCache?: boolean
-    ) => getPublicKeysForEmail(email, abortSignal, skipMissingAdressesCache).then((PublicKeys) => PublicKeys?.[0]);
-
     return {
-        getPrimaryPublicKeyForEmail,
         getPublicKeysForEmail,
     };
 };

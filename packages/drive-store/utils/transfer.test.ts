@@ -4,17 +4,13 @@ import { TransferState } from '../components/TransferManager/transfer';
 import {
     calculateProgress,
     getProgressBarStatus,
-    isTransferActive,
     isTransferCancelError,
     isTransferCanceled,
     isTransferDone,
     isTransferError,
     isTransferFailed,
     isTransferFinalizing,
-    isTransferFinished,
-    isTransferInitializing,
     isTransferPaused,
-    isTransferProgress,
     isTransferRetry,
     isTransferSkipped,
 } from './transfer';
@@ -31,53 +27,6 @@ describe('trasfer utils', () => {
         TransferState.Pending,
         TransferState.Progress,
     ];
-
-    describe('isTransferFinished', () => {
-        [TransferState.Error, TransferState.Canceled, TransferState.Done].forEach((state) => {
-            it(`should return true for transfer state ${state}`, () => {
-                expect(isTransferFinished({ state })).toBeTruthy();
-            });
-        });
-
-        allStatesList
-            .filter(
-                (state) =>
-                    ![TransferState.Error, TransferState.Canceled, TransferState.Skipped, TransferState.Done].includes(
-                        state
-                    )
-            )
-            .forEach((state) => {
-                it(`should return flase for transfer state ${state}`, () => {
-                    expect(isTransferFinished({ state })).toBeFalsy();
-                });
-            });
-    });
-
-    describe('isTransferActive', () => {
-        [TransferState.Pending, TransferState.Progress, TransferState.Initializing, TransferState.Finalizing].forEach(
-            (state) => {
-                it(`should return true for transfer state ${state}`, () => {
-                    expect(isTransferActive({ state })).toBeTruthy();
-                });
-            }
-        );
-
-        allStatesList
-            .filter(
-                (state) =>
-                    ![
-                        TransferState.Pending,
-                        TransferState.Progress,
-                        TransferState.Initializing,
-                        TransferState.Finalizing,
-                    ].includes(state)
-            )
-            .forEach((state) => {
-                it(`should return flase for transfer state ${state}`, () => {
-                    expect(isTransferActive({ state })).toBeFalsy();
-                });
-            });
-    });
 
     describe('isTransferFailed', () => {
         [TransferState.Canceled, TransferState.Error].forEach((state) => {
@@ -147,34 +96,6 @@ describe('trasfer utils', () => {
             .forEach((state) => {
                 it(`should return false for transfer state ${state}`, () => {
                     expect(isTransferSkipped({ state })).toBe(false);
-                });
-            });
-    });
-
-    describe('isTransferProgress', () => {
-        it(`should return true for transfer state ${TransferState.Progress}`, () => {
-            expect(isTransferProgress({ state: TransferState.Progress })).toBeTruthy();
-        });
-
-        allStatesList
-            .filter((state) => state !== TransferState.Progress)
-            .forEach((state) => {
-                it(`should return flase for transfer state ${state}`, () => {
-                    expect(isTransferProgress({ state })).toBeFalsy();
-                });
-            });
-    });
-
-    describe('isTransferInitializing', () => {
-        it(`should return true for transfer state ${TransferState.Initializing}`, () => {
-            expect(isTransferInitializing({ state: TransferState.Initializing })).toBeTruthy();
-        });
-
-        allStatesList
-            .filter((state) => state !== TransferState.Initializing)
-            .forEach((state) => {
-                it(`should return flase for transfer state ${state}`, () => {
-                    expect(isTransferInitializing({ state })).toBeFalsy();
                 });
             });
     });

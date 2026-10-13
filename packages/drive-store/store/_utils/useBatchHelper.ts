@@ -104,40 +104,7 @@ export const useBatchHelper = () => {
         [debouncedRequest, preventLeave]
     );
 
-    /**
-     * Executes an array of promise-returning functions in batches of a specified size
-     * to control concurrency and prevent overwhelming resources.
-     *
-     * @param items - Array of items to process
-     * @param processFn - Function that takes an item and returns a promise with the processed result
-     * @param batchSize - Number of promises to process concurrently (default is 10)
-     * @param abortSignal - Optional AbortSignal to cancel the operation
-     * @returns Promise that resolves with an array of all processed results
-     */
-    async function batchPromiseHelper<T, R>(
-        items: T[],
-        processFn: (item: T, index: number) => Promise<R>,
-        batchSize: number = 10,
-        abortSignal?: AbortSignal
-    ): Promise<R[]> {
-        const results: R[] = [];
-
-        for (let i = 0; i < items.length; i += batchSize) {
-            if (abortSignal?.aborted) {
-                throw new DOMException('The operation was aborted', 'AbortError');
-            }
-
-            const batch = items.slice(i, i + batchSize);
-            const batchResults = await Promise.all(batch.map((item, batchIndex) => processFn(item, i + batchIndex)));
-
-            results.push(...batchResults);
-        }
-
-        return results;
-    }
-
     return {
         batchAPIHelper,
-        batchPromiseHelper,
     };
 };

@@ -35,7 +35,6 @@ export default function usePublicAuth(
 
     const [isPasswordNeeded, setIsPasswordNeeded] = useState(false);
     const [savedCustomedPassword, setSavedCustomPassword] = useState<string>('');
-    const [isLegacy, setIsLegacy] = useState<boolean>(false);
     const [handshakeVendorType, setHandshakeVendorType] = useState<HandshakeInfoVendorType>();
 
     /**
@@ -79,7 +78,7 @@ export default function usePublicAuth(
         }
         setIsLoading(true);
         initHandshake(token, session)
-            .then(({ handshakeInfo, isLegacySharedUrl, hasCustomPassword }) => {
+            .then(({ handshakeInfo, hasCustomPassword }) => {
                 const vendorType = handshakeInfo.VendorType;
                 setHandshakeVendorType(vendorType);
                 if (vendorType !== HandshakeInfoVendorType.ProtonDrive && client === 'drive') {
@@ -91,9 +90,6 @@ export default function usePublicAuth(
                         window,
                     });
                     return;
-                }
-                if (isLegacySharedUrl) {
-                    setIsLegacy(true);
                 }
                 if (hasCustomPassword) {
                     setIsPasswordNeeded(true);
@@ -151,7 +147,6 @@ export default function usePublicAuth(
         isLoading,
         customPassword: savedCustomedPassword,
         error,
-        isLegacy,
         isPasswordNeeded,
         submitPassword,
         vendorType: handshakeVendorType,

@@ -19,12 +19,11 @@ export interface LinkDownload {
     revisionId?: string;
     signatureEmail?: string;
     signatureIssues?: SignatureIssues;
-    buffer?: Uint8Array<ArrayBuffer>[];
     isAnonymous?: boolean;
     parentLinkId?: string;
 }
 
-export type DownloadControls = {
+type DownloadControls = {
     start: () => Promise<void>;
     pause: () => void;
     resume: () => void;
@@ -117,8 +116,7 @@ type GetBlocksCallback = (
     shareId: string,
     linkId: string,
     pagination: Pagination,
-    revisionId?: string,
-    options?: { virusScan?: boolean }
+    revisionId?: string
 ) => Promise<{ blocks: DriveFileBlock[]; thumbnailHashes: string[]; manifestSignature: string; xAttr: string }>;
 type GetKeysCallback = (abortSignal: AbortSignal, link: LinkDownload) => Promise<DecryptFileKeys>;
 type ScanFilesHashCallback = (abortSignal: AbortSignal, hashes: string[]) => Promise<SharedFileScan | undefined>;
