@@ -14,12 +14,14 @@ jest.mock('@proton/shared/lib/helpers/window', () => {
   const tab = { handle: { location: { assign: jest.fn() } } }
   return { getCurrentTab: () => tab, getNewWindow: () => tab }
 })
-jest.mock('@proton/drive-store/utils/telemetry', () => ({
-  ...jest.requireActual('@proton/drive-store/utils/telemetry'),
+jest.mock('./telemetry', () => ({
+  ...jest.requireActual('./telemetry'),
   countActionWithTelemetry: jest.fn(),
   traceTelemetry: () => ({ start: jest.fn() }),
 }))
-jest.mock('@proton/drive-store/utils/url/password', () => ({ saveUrlPasswordForRedirection: jest.fn() }))
+jest.mock('@proton/docs-shared/lib/URL/saveUrlPasswordForRedirection', () => ({
+  saveUrlPasswordForRedirection: jest.fn(),
+}))
 
 const params = { action: undefined, token: 'TOKEN', email: 'user@proton.me', linkId: 'LINK', urlPassword: 'pw' }
 

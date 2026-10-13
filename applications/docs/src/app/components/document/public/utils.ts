@@ -4,14 +4,11 @@ import { replaceUrl } from '@proton/shared/lib/helpers/browser'
 import { getUrlWithReturnUrl } from '@proton/shared/lib/helpers/url'
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper'
 import { PLANS } from '@proton/payments/core/constants'
-import { Actions, countActionWithTelemetry, traceTelemetry } from '@proton/drive-store/utils/telemetry'
+import { Actions, countActionWithTelemetry, traceTelemetry } from './telemetry'
 import { getCurrentTab, getNewWindow } from '@proton/shared/lib/helpers/window'
 import { DOCS_SIGNIN, DOCS_SIGNUP } from '@proton/shared/lib/docs/urls'
-import {
-  RedirectionReason,
-  drivePublicRedirectionReasonKey,
-} from '@proton/drive-store/hooks/util/useRedirectToPublicPage'
-import { saveUrlPasswordForRedirection } from '@proton/drive-store/utils/url/password'
+import { RedirectionReason, drivePublicRedirectionReasonKey } from '@proton/docs-shared/lib/URL/publicRedirectionReason'
+import { saveUrlPasswordForRedirection } from '@proton/docs-shared/lib/URL/saveUrlPasswordForRedirection'
 import type { DocumentType, RedirectAction } from '@proton/docs-shared'
 import { useDocumentWindowAction } from '@proton/docs-shared/lib/Hooks/useOpenDocument'
 import type { PublicContextValue } from '../context'

@@ -36,11 +36,17 @@ import type {
   NodeMeta,
   PublicNodeMeta,
 } from '@proton/docs-shared'
-import { CommentsEvent, EditorEvent, EditorSystemMode, LiveCommentsEvent } from '@proton/docs-shared'
+import {
+  CommentsEvent,
+  EditorEvent,
+  EditorSystemMode,
+  LiveCommentsEvent,
+  isPrivateNodeMeta,
+  isPublicNodeMeta,
+} from '@proton/docs-shared'
 import { useGenericAlertModal } from '@proton/docs-shared/components/GenericAlert'
 import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
 import { generateNodeUid, getDrive, type DriveEvent, type NodeEntity } from '@proton/drive'
-import { isPrivateNodeMeta, isPublicNodeMeta } from '@proton/drive-store'
 import { useDocumentWindowAction } from '@proton/docs-shared/lib/Hooks/useOpenDocument'
 import { tmpConvertNewDocTypeToOld } from '@proton/docs-shared/lib/Doc/convert-doc-type'
 import { IcLockFilled } from '@proton/icons/icons/IcLockFilled'

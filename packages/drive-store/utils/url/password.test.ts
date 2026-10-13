@@ -1,11 +1,6 @@
 import localStorageWithExpiry from '@proton/shared/lib/api/helpers/localStorageWithExpiry';
 
-import {
-    PUBLIC_SHARE_REDIRECT_PASSWORD_STORAGE_KEY,
-    deleteStoredUrlPassword,
-    getUrlPassword,
-    saveUrlPasswordForRedirection,
-} from './password';
+import { PUBLIC_SHARE_REDIRECT_PASSWORD_STORAGE_KEY, deleteStoredUrlPassword, getUrlPassword } from './password';
 
 describe('URL Password Functions', () => {
     afterEach(() => {
@@ -20,14 +15,6 @@ describe('URL Password Functions', () => {
             deleteStoredUrlPassword();
             window.location.hash = '';
             expect(getUrlPassword()).toBe('');
-        });
-    });
-
-    describe('saveUrlPasswordForRedirection', () => {
-        it('should save password for redirection', () => {
-            const password = 'testPassword123';
-            saveUrlPasswordForRedirection(password);
-            expect(getUrlPassword()).toBe('testPassword123');
         });
     });
 

@@ -6,6 +6,5 @@ export { useDefaultShare } from './_shares';
 export type { DecryptedLink } from './_links/interface';
 export { ShareType, ShareState } from './_shares/interface';
 export type { Share, ShareWithKey, LockedVolumeForRestore, SharedUrlInfo } from './_shares/interface';
-export type { ExtendedInvitationDetails } from './_invitations/interface';
 export { useLinkPath, useTrashView, useTreeForModals } from './_views';
 export type { TreeItem } from './_views';

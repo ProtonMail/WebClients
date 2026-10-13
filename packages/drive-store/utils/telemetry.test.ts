@@ -7,11 +7,9 @@ import {
     ExperimentGroup,
     Features,
     countActionWithTelemetry,
-    getTimeBasedHash,
     measureExperimentalPerformance,
     measureFeaturePerformance,
 } from './telemetry';
-import { releaseCryptoProxy, setupCryptoProxyForTesting } from './tests/crypto';
 
 jest.mock('@proton/shared/lib/api/telemetry');
 jest.mock('@proton/app-context/useApi');
@@ -158,81 +156,5 @@ describe('countActionWithTelemetry', () => {
             },
             delay: false,
         });
-    });
-});
-
-describe('getTimeBasedHash', () => {
-    let originalDateNow: () => number;
-    const now = 1625097600000;
-
-    beforeAll(async () => {
-        await setupCryptoProxyForTesting();
-        originalDateNow = Date.now;
-    });
-
-    afterAll(async () => {
-        await releaseCryptoProxy();
-        Date.now = originalDateNow;
-    });
-
-    beforeEach(() => {
-        Date.now = jest.fn(() => now); // 2021-07-01T00:00:00.000Z
-    });
-
-    it('should return the same hash for inputs within the same interval', async () => {
-        const hash1 = await getTimeBasedHash();
-        Date.now = jest.fn(() => now + 5 * 60 * 1000); // 5 minutes later
-        const hash2 = await getTimeBasedHash();
-
-        expect(hash1).toBe(hash2);
-    });
-
-    it('should return different hashes for inputs in different intervals', async () => {
-        const hash1 = await getTimeBasedHash();
-        Date.now = jest.fn(() => now + 15 * 60 * 1000); // 15 minutes later
-        const hash2 = await getTimeBasedHash();
-
-        expect(hash1).not.toBe(hash2);
-    });
-
-    it('should use the default interval of 10 minutes when not specified', async () => {
-        const hash1 = await getTimeBasedHash();
-        Date.now = jest.fn(() => now + 9 * 60 * 1000); // 9 minutes later
-        const hash2 = await getTimeBasedHash();
-        Date.now = jest.fn(() => now + 11 * 60 * 1000); // 11 minutes later
-        const hash3 = await getTimeBasedHash();
-
-        expect(hash1).toBe(hash2);
-        expect(hash1).not.toBe(hash3);
-    });
-
-    it('should use a custom interval when specified', async () => {
-        const customInterval = 5 * 60 * 1000; // 5 minutes
-
-        const hash1 = await getTimeBasedHash(customInterval);
-        Date.now = jest.fn(() => now + 4 * 60 * 1000); // 4 minutes later
-        const hash2 = await getTimeBasedHash(customInterval);
-        Date.now = jest.fn(() => now + 6 * 60 * 1000); // 6 minutes later
-        const hash3 = await getTimeBasedHash(customInterval);
-
-        expect(hash1).toBe(hash2);
-        expect(hash1).not.toBe(hash3);
-    });
-
-    it('should handle edge cases around interval boundaries', async () => {
-        const hash1 = await getTimeBasedHash();
-        Date.now = jest.fn(() => now + 10 * 60 * 1000 - 1); // 1ms before next interval
-        const hash2 = await getTimeBasedHash();
-        Date.now = jest.fn(() => now + 10 * 60 * 1000); // Exactly at next interval
-        const hash3 = await getTimeBasedHash();
-
-        expect(hash1).toBe(hash2);
-        expect(hash1).not.toBe(hash3);
-    });
-
-    it('should produce a hex string of correct length', async () => {
-        const hash = await getTimeBasedHash();
-
-        expect(hash).toMatch(/^[0-9a-f]{64}$/); // 32 bytes = 64 hex characters
     });
 });
