@@ -19,7 +19,7 @@ import useLumoAgent from './useLumoAgent';
 type Script = (ctx: {
     executor: ClientToolExecutor;
     chunk: (message: GenerationResponseMessage) => void;
-}) => Promise<void | { turns?: Turn[] }>;
+}) => Promise<void | { producedTurns?: unknown[] }>;
 let script: Script = async () => {};
 const sentTurns: Turn[][] = [];
 
@@ -33,11 +33,18 @@ jest.mock('@proton/lumo-api-client', () => ({
     LumoApiClient: class {
         async callAssistant(_api: unknown, turns: Turn[], options: any) {
             sentTurns.push(turns);
-            const outcome =
-                (await script({ executor: options.clientToolExecutor, chunk: options.chunkCallback })) || {};
+            let streamed = '';
+            const chunk = (message: GenerationResponseMessage) => {
+                if (message.type === 'token_data' && message.target === 'message') {
+                    streamed += message.content;
+                }
+                options.chunkCallback(message);
+            };
+            const outcome = (await script({ executor: options.clientToolExecutor, chunk })) || {};
             return {
                 status: 'succeeded',
-                turns: outcome.turns ?? turns,
+                // A chain that called no tool produces its streamed prose and nothing else.
+                producedTurns: outcome.producedTurns ?? (streamed ? [{ role: 'assistant', content: streamed }] : []),
             };
         }
     },
@@ -45,14 +52,6 @@ jest.mock('@proton/lumo-api-client', () => ({
 
 const message = (content: string): GenerationResponseMessage =>
     ({ type: 'token_data', target: 'message', count: 0, content }) as GenerationResponseMessage;
-
-// What the transport hands back after a tool round: it drops the blank assistant turn that padded the
-// previous round, appends the round's turns, then pads again for the generation that follows.
-const afterToolRound = (turns: Turn[], ...appended: unknown[]): Turn[] => {
-    const last = turns[turns.length - 1];
-    const stripped = last?.role === 'assistant' && !last.content ? turns.slice(0, -1) : turns;
-    return [...stripped, ...appended, { role: 'assistant', content: '' }] as Turn[];
-};
 
 const handlerCalls: { name: string; params: Record<string, any> }[] = [];
 const readCalls: string[] = [];
@@ -666,7 +665,6 @@ describe('useLumoAgent', () => {
     });
 
     describe('the history a second message replays', () => {
-        const chainWith = (...turns: unknown[]): Turn[] => afterToolRound(sentTurns[0], ...turns);
         const secondMessage = async (result: { current: ReturnType<typeof useLumoAgent> }, text: string) => {
             script = async ({ chunk }) => chunk(message('Sure.'));
             await act(async () => {
@@ -680,11 +678,12 @@ describe('useLumoAgent', () => {
                 chunk(message('I will move them.'));
                 chunk(message(' Done.'));
                 return {
-                    turns: chainWith(
+                    producedTurns: [
                         { role: 'assistant', content: 'I will move them.' },
                         { role: 'tool_call', content: call },
-                        { role: 'tool_result', content: 'Applied move_items successfully. 2 moved to Archive.' }
-                    ),
+                        { role: 'tool_result', content: 'Applied move_items successfully. 2 moved to Archive.' },
+                        { role: 'assistant', content: 'Done.' },
+                    ],
                 };
             };
 
@@ -711,11 +710,12 @@ describe('useLumoAgent', () => {
                 chunk(message('Let me look.'));
                 chunk(message(' Two items.'));
                 return {
-                    turns: chainWith(
+                    producedTurns: [
                         { role: 'assistant', content: 'Let me look.' },
                         { role: 'tool_call', content: call },
-                        { role: 'tool_result', content: '2 items: Gas bill, Festival ticket' }
-                    ),
+                        { role: 'tool_result', content: '2 items: Gas bill, Festival ticket' },
+                        { role: 'assistant', content: 'Two items.' },
+                    ],
                 };
             };
 
@@ -741,10 +741,11 @@ describe('useLumoAgent', () => {
             script = async ({ chunk }) => {
                 chunk(message('Found one.'));
                 return {
-                    turns: chainWith(
+                    producedTurns: [
                         { role: 'tool_call', content: call },
-                        { role: 'tool_result', content: 'THE SEARCH GUIDE' }
-                    ),
+                        { role: 'tool_result', content: 'THE SEARCH GUIDE' },
+                        { role: 'assistant', content: 'Found one.' },
+                    ],
                 };
             };
 
@@ -782,7 +783,10 @@ describe('useLumoAgent', () => {
             script = async ({ executor }) => {
                 await executor.execute([{ id: '1', name: 'view_items', arguments: '{}' }]);
                 return {
-                    turns: chainWith({ role: 'tool_call', content: call }, { role: 'tool_result', content: '2 items' }),
+                    producedTurns: [
+                        { role: 'tool_call', content: call },
+                        { role: 'tool_result', content: '2 items' },
+                    ],
                 };
             };
 
@@ -807,11 +811,11 @@ describe('useLumoAgent', () => {
             script = async ({ chunk }) => {
                 chunk(message('I will move them.'));
                 return {
-                    turns: chainWith(
+                    producedTurns: [
                         { role: 'assistant', content: 'I will move them.' },
                         { role: 'tool_call', content: call },
-                        { role: 'tool_result', content: applied }
-                    ),
+                        { role: 'tool_result', content: applied },
+                    ],
                 };
             };
 
@@ -829,6 +833,90 @@ describe('useLumoAgent', () => {
                 { role: 'tool_result', content: applied },
                 { role: 'user', content: 'undo that' },
             ]);
+        });
+
+        describe('when a web search splits the prose on screen', () => {
+            const withWebSearch: LumoAgentConfig = { ...config, serverTools: ['web_search' as ServerToolName] };
+            const webSearch = (callId: string) =>
+                ({ type: 'server_tool_call', call_id: callId, name: 'web_search' }) as GenerationResponseMessage;
+            const viewCall = '{"id":"1","name":"view_items","arguments":{}}';
+
+            it('banks the round as the one turn the model wrote, not the fragment after the chip', async () => {
+                const narration = 'Sarah Chen emailed at 3pm about the Q3 invoice.';
+                script = async ({ executor, chunk }) => {
+                    chunk(message('Sarah Chen emailed at 3pm'));
+                    chunk(webSearch('w1'));
+                    chunk(message(' about the Q3 invoice.'));
+                    await executor.execute([{ id: '1', name: 'view_items', arguments: '{}' }]);
+                    return {
+                        producedTurns: [
+                            { role: 'assistant', content: narration },
+                            { role: 'tool_call', content: viewCall },
+                            { role: 'tool_result', content: '2 items' },
+                        ],
+                    };
+                };
+
+                const { result } = renderHook(() => useLumoAgent(withWebSearch));
+                await act(async () => {
+                    await result.current.send('who emailed me?');
+                });
+                const transcript = result.current.getDebugTranscript();
+                await secondMessage(result, 'reply to her');
+
+                expect(sentTurns[1]).toEqual([
+                    expect.objectContaining({ role: 'system' }),
+                    { role: 'user', content: 'who emailed me?' },
+                    { role: 'assistant', content: narration },
+                    { role: 'tool_call', content: viewCall },
+                    { role: 'tool_result', content: expect.any(String) },
+                    { role: 'user', content: 'reply to her' },
+                ]);
+                expect(transcript).toMatch(
+                    /===== USER =====\nwho emailed me\?\n\n===== ASSISTANT =====\nSarah Chen emailed at 3pm about the Q3 invoice\.\n\n===== TOOL_CALL =====\n.+\n\n===== TOOL_RESULT =====\n2 items$/
+                );
+            });
+
+            it('banks the whole closing answer, not only its second half', async () => {
+                const answer = 'Sarah Chen emailed at 3pm about the Q3 invoice from Acme, due Friday.';
+                script = async ({ executor, chunk }) => {
+                    chunk(message('Let me check'));
+                    chunk(webSearch('w1'));
+                    chunk(message(' your inbox.'));
+                    await executor.execute([{ id: '1', name: 'view_items', arguments: '{}' }]);
+                    chunk(message('Sarah Chen emailed at 3pm'));
+                    chunk(webSearch('w2'));
+                    chunk(message(' about the Q3 invoice from Acme, due Friday.'));
+                    return {
+                        producedTurns: [
+                            { role: 'assistant', content: 'Let me check your inbox.' },
+                            { role: 'tool_call', content: viewCall },
+                            { role: 'tool_result', content: 'Sarah Chen, 3pm, Q3 invoice from Acme' },
+                            { role: 'assistant', content: answer },
+                        ],
+                    };
+                };
+
+                const { result } = renderHook(() => useLumoAgent(withWebSearch));
+                await act(async () => {
+                    await result.current.send('who emailed me?');
+                });
+                const transcript = result.current.getDebugTranscript();
+                await secondMessage(result, 'reply to her');
+
+                expect(sentTurns[1]).toEqual([
+                    expect.objectContaining({ role: 'system' }),
+                    { role: 'user', content: 'who emailed me?' },
+                    { role: 'assistant', content: 'Let me check your inbox.' },
+                    { role: 'tool_call', content: viewCall },
+                    { role: 'tool_result', content: 'Sarah Chen, 3pm, Q3 invoice from Acme' },
+                    { role: 'assistant', content: answer },
+                    { role: 'user', content: 'reply to her' },
+                ]);
+                expect(transcript).toMatch(
+                    /===== TOOL_RESULT =====\nSarah Chen, 3pm, Q3 invoice from Acme\n\n===== ASSISTANT =====\nSarah Chen emailed at 3pm about the Q3 invoice from Acme, due Friday\.$/
+                );
+            });
         });
     });
 
@@ -879,15 +967,13 @@ describe('useLumoAgent', () => {
             chunk(message('Let me look.'));
             await executor.execute([{ id: '1', name: 'view_items', arguments: '{}' }]);
             chunk(message('Two items.'));
-            // The transport banks the round's narration and its tool exchange in the chain it returns,
-            // and breaks before banking the closing prose.
             return {
-                turns: afterToolRound(
-                    sentTurns[0],
+                producedTurns: [
                     { role: 'assistant', content: 'Let me look.' },
                     { role: 'tool_call', content: '{"id":"1","name":"view_items","arguments":{}}' },
-                    { role: 'tool_result', content: '2 items' }
-                ),
+                    { role: 'tool_result', content: '2 items' },
+                    { role: 'assistant', content: 'Two items.' },
+                ],
             };
         };
 
@@ -906,12 +992,11 @@ describe('useLumoAgent', () => {
             chunk(message('Let me look.'));
             await executor.execute([{ id: '1', name: 'view_items', arguments: '{}' }]);
             return {
-                turns: afterToolRound(
-                    sentTurns[0],
+                producedTurns: [
                     { role: 'assistant', content: 'Let me look.' },
                     { role: 'tool_call', content: '{"id":"1","name":"view_items","arguments":{}}' },
-                    { role: 'tool_result', content: '2 items' }
-                ),
+                    { role: 'tool_result', content: '2 items' },
+                ],
             };
         };
 
