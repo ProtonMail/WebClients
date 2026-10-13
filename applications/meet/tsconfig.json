@@ -1,6 +1,13 @@
 {
     "extends": "../../tsconfig.base.json",
     "compilerOptions": {
-        "types": ["@proton/types", "global-types-monorepo", "webpack-env", "vitest/globals", "wicg-file-system-access"]
+        "types": [
+            "@proton/types",
+            "global-types-monorepo",
+            "webpack-env",
+            "vitest/globals",
+            "wicg-file-system-access",
+            "dom-mediacapture-transform"
+        ]
     }
 }
