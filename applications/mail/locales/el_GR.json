@@ -1568,8 +1568,7 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Κλειδί Εμπιστοσύνης",
-        "Κλειδιά Εμπιστοσύνης"
+        "Εμπιστοσύνη στο κλειδί"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -5579,6 +5578,9 @@
       "You must set a name": [
         "Πρέπει να ορίσετε ένα όνομα"
       ],
+      "You reached the maximum number of connected addresses": [
+        "Φτάσατε τον μέγιστο αριθμό συνδεδεμένων διευθύνσεων"
+      ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Έχετε συμπληρώσει τον μέγιστο αριθμό χαρακτήρων. Παρακαλούμε συντομεύστε το μήνυμά σας."
       ],
@@ -7287,6 +7289,9 @@
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Οι διαφημιζόμενοι παρακολουθούν την περιήγησή σας για να εμφανίζουν στοχευμένες διαφημίσεις. Το ${ VPN_APP_NAME } αποκλείει ιχνηλάτες και διαφημίσεις, κάνοντας τη σύνδεσή σας ταχύτερη και βελτιώνοντας την εμπειρία σας στο διαδίκτυο."
       ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "Μετά την ενημέρωση, ενδέχεται το Mac σας να ζητήσει κωδικό πρόσβασης. Πληκτρολογήστε τον κωδικό πρόσβασης που χρησιμοποιείτε για να ξεκλειδώσετε το Mac σας και, στη συνέχεια, κάντε κλικ στην επιλογή Να επιτρέπεται πάντα για να παραμείνετε συνδεδεμένοι. ${ learnMore }"
+      ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Βοηθός με τεχνητή νοημοσύνη που σας βοηθά να δημιουργείτε καλύτερα μηνύματα ηλεκτρονικού ταχυδρομείου, γρήγορα και αβίαστα."
       ],
@@ -8120,7 +8125,8 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας"
+        "Εισαγωγή εικόνας",
+        "Εισαγωγή εικόνων"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -8587,6 +8593,9 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Δοκιμάστε ξανά χρησιμοποιώντας διαφορετικό τρόπο πληρωμής ή επικοινωνήστε με την τράπεζά σας."
+      ],
+      "Please update ${ MAIL_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "Παρακαλούμε ενημερώστε το ${ MAIL_APP_NAME } για να συνεχίσετε να χρησιμοποιείτε την εφαρμογή. ${ downloadUpdate }"
       ],
       "Please use another browser or download the file.": [
         "Χρησιμοποιήστε άλλο πρόγραμμα περιήγησης ή κατεβάστε το αρχείο."
@@ -14415,79 +14424,6 @@
         "Yahoo"
       ]
     },
-    "q3campaign2026: Action": {
-      "Get the deal": [
-        "Αποκτήστε την προσφορά"
-      ],
-      "Special Offer": [
-        "Ειδική Προσφορά"
-      ]
-    },
-    "q3campaign2026: Info": {
-      "/month": [
-        "/μήνα"
-      ],
-      "2 individual accounts": [
-        "2 ατομικοί λογαριασμοί"
-      ],
-      "2 TB of secure storage": [
-        "2 TB ασφαλούς αποθήκευσης"
-      ],
-      "3 TB of secure storage": [
-        "3 TB ασφαλούς αποθήκευσης"
-      ],
-      "500 GB of secure storage": [
-        "500 GB ασφαλούς αποθήκευσης"
-      ],
-      "6 individual accounts": [
-        "6 ατομικοί λογαριασμοί"
-      ],
-      "Advanced protection against cyber threats": [
-        "Προηγμένη προστασία από τις απειλές στον κυβερνοχώρο"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση. Η συνδρομή σας θα ανανεωθεί με την τυπική ετήσια χρέωση όταν λήξει ο κύκλος χρέωσης."
-      ]
-    },
-    "q3campaign2026: Info, Calendar first": {
-      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } και ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Family, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Family, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Title": {
-      "for 12 months": [
-        "για 12 μήνες"
-      ],
-      "One plan, full power": [
-        "Ένα πλάνο, πλήρη δύναμη"
-      ],
-      "One plan, max savings": [
-        "Ένα πρόγραμμα, μέγιστη εξοικονόμηση"
-      ],
-      "One plan, more power": [
-        "Ένα πλάνο, περισσότερη δύναμη"
-      ]
-    },
     "Received email icon": {
       "End-to-end encrypted and signed message": [
         "Διατερματικά κρυπτογραφημένο και υπογεγραμμένο μήνυμα"
@@ -17285,9 +17221,6 @@
       ],
       "Sending original message": [
         "Αποστολή αρχικού μηνύματος"
-      ],
-      "September Sale": [
-        "Εκπτώσεις Σεπτεμβρίου"
       ],
       "Set recovery methods": [
         "Ορισμός μεθόδων ανάκτησης"
