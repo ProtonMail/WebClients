@@ -1,0 +1,131 @@
+import type { ReactNode } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
+
+import useDrawer from '@proton/components/hooks/drawer/useDrawer';
+import useApiStatus from '@proton/components/hooks/useApiStatus';
+import useOnline from '@proton/components/hooks/useOnline';
+import { isAppInView } from '@proton/shared/lib/drawer/helpers';
+import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
+
+import { selectComposersCount } from '../../store/composers/composerSelectors';
+import { useMailSelector } from '../../store/hooks';
+import { useLumoMailTelemetry } from '../telemetry/useLumoMailTelemetry';
+import { CARD_MIN_WIDTH } from './cardResize';
+import type { PanelSide } from './panelSide';
+import {
+    INITIAL_PANEL_SIDE_STATE,
+    composersClosed,
+    composersOpened,
+    getShownSide,
+    switchSides as switchPanelSides,
+} from './panelSide';
+import { useLumoHotkey } from './useLumoHotkey';
+
+interface LumoFloatingPanelValue {
+    isDetached: boolean;
+    isPanelOpen: boolean;
+    isCurrentSurfaceOpen: boolean;
+    shownSide: PanelSide;
+    cardWidth: number;
+    setCardWidth: (width: number) => void;
+    detach: () => void;
+    dock: () => void;
+    toggleLumo: () => void;
+    closePanel: () => void;
+    switchSides: () => void;
+}
+
+const LumoFloatingPanelContext = createContext<LumoFloatingPanelValue | null>(null);
+
+export const useLumoFloatingPanel = (): LumoFloatingPanelValue => {
+    const value = useContext(LumoFloatingPanelContext);
+    if (!value) {
+        throw new Error('useLumoFloatingPanel must be used within LumoFloatingPanelProvider');
+    }
+    return value;
+};
+
+interface Props {
+    children: ReactNode;
+}
+
+/** Held above the routes and the drawer, so the floating state survives a mailbox remount and a dock. */
+export const LumoFloatingPanelProvider = ({ children }: Props) => {
+    const [isDetached, setIsDetached] = useState(false);
+    const [isPanelOpen, setIsPanelOpen] = useState(false);
+    const [sideState, setSideState] = useState(INITIAL_PANEL_SIDE_STATE);
+    const [cardWidth, setCardWidth] = useState(CARD_MIN_WIDTH);
+    const hasComposers = useMailSelector(selectComposersCount) > 0;
+    const { appInView, toggleDrawerApp } = useDrawer();
+    const { assistantOpened } = useLumoMailTelemetry();
+    const { offline } = useApiStatus();
+    const isOnline = useOnline();
+    // Mirrors useToggleDrawerApp, which silently refuses to open the drawer otherwise
+    const canOpenDrawer = !offline && isOnline;
+
+    useEffect(() => {
+        setSideState(hasComposers ? composersOpened : composersClosed);
+    }, [hasComposers]);
+
+    const toggleDrawer = toggleDrawerApp({ app: DRAWER_NATIVE_APPS.LUMO });
+    const isCurrentSurfaceOpen = isDetached ? isPanelOpen : isAppInView(DRAWER_NATIVE_APPS.LUMO, appInView);
+
+    const closePanel = () => {
+        setIsPanelOpen(false);
+    };
+
+    const detach = () => {
+        toggleDrawer();
+        setIsDetached(true);
+        setIsPanelOpen(true);
+    };
+
+    const dock = () => {
+        if (!canOpenDrawer) {
+            return;
+        }
+        setIsPanelOpen(false);
+        setIsDetached(false);
+        toggleDrawer();
+    };
+
+    const openLumo = () => {
+        if (!isDetached && !canOpenDrawer) {
+            return;
+        }
+        assistantOpened();
+        if (isDetached) {
+            setIsPanelOpen(true);
+            return;
+        }
+        toggleDrawer();
+    };
+
+    const closeLumo = isDetached ? closePanel : toggleDrawer;
+
+    const switchSides = () => {
+        setSideState(switchPanelSides);
+    };
+
+    useLumoHotkey({ isCurrentSurfaceOpen, openLumo });
+
+    return (
+        <LumoFloatingPanelContext.Provider
+            value={{
+                isDetached,
+                isPanelOpen,
+                isCurrentSurfaceOpen,
+                shownSide: getShownSide(sideState),
+                cardWidth,
+                setCardWidth,
+                detach,
+                dock,
+                toggleLumo: isCurrentSurfaceOpen ? closeLumo : openLumo,
+                closePanel,
+                switchSides,
+            }}
+        >
+            {children}
+        </LumoFloatingPanelContext.Provider>
+    );
+};
