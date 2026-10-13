@@ -10,9 +10,9 @@ import type { DrawingMode } from '../../features/drawingcanvas/types';
 import { ImagePreviewOverlay } from '../../features/imageActions/ImagePreviewOverlay';
 import { useLazyAttachment } from '../../hooks/useLazyAttachment';
 import { useLumoNavigate } from '../../hooks/useLumoNavigate';
-import { downloadImage } from '../../remote/lumoImageDownload';
 import { attachmentDataCache } from '../../services/attachmentDataCache';
 import type { AttachmentId } from '../../types';
+import { triggerFileDownload } from '../../util/triggerFileDownload';
 
 interface GalleryImageCardProps {
     attachmentId: AttachmentId;
@@ -49,7 +49,11 @@ export const GalleryImageCard = ({ attachmentId, createdAt, onExport, imageSrcOv
         async (e?: React.MouseEvent) => {
             e?.stopPropagation();
             if (!imageDataUrl) return;
-            await downloadImage(imageDataUrl, attachment?.filename || `generated-image-${attachmentId}.png`);
+            await triggerFileDownload(
+                imageDataUrl,
+                attachment?.filename || `generated-image-${attachmentId}.png`,
+                'image'
+            );
         },
         [imageDataUrl, attachment, attachmentId]
     );

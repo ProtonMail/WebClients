@@ -15,19 +15,19 @@ import { useLumoFlags } from '../../../hooks/useLumoFlags';
 import { useConversationActions } from '../../../providers/ConversationActionsProvider';
 import { useIsGuest } from '../../../providers/IsGuestProvider';
 import { createThrottledProgressCallback, yieldToMainThreadPaint } from '../../../util/export/exportUiHelpers';
-import { downloadBlob } from '../../../util/pdf/downloadBlob';
+import type { ArtifactDownloadFormat, ArtifactDownloadResult } from '../../../util/telemetry';
 import {
     bucketArtifactContentLength,
     sendArtifactContentCopiedEvent,
     sendArtifactDownloadedEvent,
     sendArtifactWebpageViewToggledEvent,
 } from '../../../util/telemetry';
-import type { ArtifactDownloadFormat, ArtifactDownloadResult } from '../../../util/telemetry';
+import { triggerFileDownload } from '../../../util/triggerFileDownload';
 import { useNativeComposerVisibilityApi } from '../../Composer/hooks/useNativeComposerVisibilityApi';
 import DropdownMenu from '../../DropdownMenu';
 import { LumoIcon } from '../../LumoIcon/LumoIcon';
-import { ArtifactContent } from './ArtifactContent';
 import type { WebpageViewMode } from './ArtifactContent';
+import { ArtifactContent } from './ArtifactContent';
 import { useArtifactContext } from './ArtifactContext';
 import { ArtifactDownloadDropdown } from './ArtifactDownloadDropdown';
 import type { ArtifactExportOverlayHandle } from './ArtifactExportOverlay';
@@ -43,8 +43,8 @@ import { ArtifactViewModeToggle } from './ArtifactViewModeToggle';
 import SaveArtifactToDriveModal from './SaveArtifactToDriveModal';
 import { buildArtifactFileForSave } from './artifactFileBytes';
 import { markdownToPlainText } from './artifactMarkdownPlainText';
-import { artifactSupportsPdfExport, buildArtifactFileName, exportArtifactPdf } from './artifactPdfExport';
 import type { ArtifactPdfExportResult } from './artifactPdfExport';
+import { artifactSupportsPdfExport, buildArtifactFileName, exportArtifactPdf } from './artifactPdfExport';
 import { artifactSupportsPptxExport, downloadArtifactPptx } from './artifactPptxExport';
 import { buildStandalonePresentationHtml } from './artifactPresentationStandalone';
 import type { ArtifactRegistry } from './artifactRegistry';
@@ -734,7 +734,7 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
             // it is downloaded as a self-contained reveal.js page instead.
             const content =
                 artifact.type === 'presentation' ? await buildStandalonePresentationHtml(artifact) : artifact.content;
-            downloadBlob(new Blob([content], { type: getSourceDownloadMimeType(ext) }), filename);
+            await triggerFileDownload(new Blob([content], { type: getSourceDownloadMimeType(ext) }), filename);
             reportDownload('source', 'success');
         } catch {
             reportDownload('source', 'error');
@@ -745,11 +745,19 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
         }
     };
 
-    const handleDownloadTxt = () => {
+    const handleDownloadTxt = async () => {
         const plainText = markdownToPlainText(artifact.content);
         const filename = buildArtifactFileName(artifact, 'txt');
-        downloadBlob(new Blob([plainText], { type: 'text/plain;charset=utf-8' }), filename);
-        reportDownload('txt', 'success');
+        try {
+            await triggerFileDownload(new Blob([plainText], { type: 'text/plain;charset=utf-8' }), filename);
+            reportDownload('txt', 'success');
+        } catch {
+            reportDownload('txt', 'error');
+            createNotification({
+                type: 'error',
+                text: c('collider_2025: Error').t`Could not download this artifact.`,
+            });
+        }
     };
 
     // No progress overlay: conversion takes well under a second for typical documents, and the
@@ -757,7 +765,7 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
     const handleDownloadDocx = async () => {
         try {
             const file = await buildArtifactFileForSave(artifact, 'docx');
-            downloadBlob(new Blob([file.data], { type: file.mimeType }), file.fileName);
+            await triggerFileDownload(new Blob([file.data], { type: file.mimeType }), file.fileName);
             reportDownload('docx', 'success');
         } catch {
             reportDownload('docx', 'error');
