@@ -13,9 +13,7 @@ import type { MspSubsidiary } from '@proton/shared/lib/interfaces/Msp';
 import { removeById } from '@proton/utils/removeById';
 import { upsertById } from '@proton/utils/upsertById';
 
-import { isOwnerRole } from '../organizationRoles/helpers';
-import { userThunk } from '../user';
-import { type UserPermissionsState, userPermissionsThunk } from '../userPermissions';
+import { type UserPermissionsState, isOrganizationOwnerThunk } from '../userPermissions';
 
 const name = 'mspSubsidiaries' as const;
 
@@ -32,9 +30,7 @@ const modelThunk = createAsyncModelThunk<Model, MspSubsidiariesState, ProtonThun
     miss: async ({ extraArgument, dispatch }) => {
         // The subsidiaries routes are MSP-owner only, IT Managers (non-owner members of the MSP
         // org) get an empty list here and are shown their managed organizations instead.
-        const isAdminRoleMVPEnabled = extraArgument.unleashClient?.isEnabled('AdminRoleMVP') ?? false;
-        const [user, userPermissions] = await Promise.all([dispatch(userThunk()), dispatch(userPermissionsThunk())]);
-        const isOwner = isAdminRoleMVPEnabled ? userPermissions.Roles.some(isOwnerRole) : user.isAdmin;
+        const isOwner = await dispatch(isOrganizationOwnerThunk());
         if (!isOwner) {
             return [];
         }

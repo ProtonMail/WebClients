@@ -25,7 +25,7 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserInvitations } from '@proton/account/userInvitations/hooks';
 import { EMPTY_ORG_PERMISSIONS } from '@proton/account/userPermissions';
-import { useUserPermissions } from '@proton/account/userPermissions/hooks';
+import { useIsOrganizationOwner, useUserPermissions } from '@proton/account/userPermissions/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import FeatureTour from '@proton/components/components/featureTour/FeatureTour';
 import AppLink from '@proton/components/components/link/AppLink';
@@ -202,6 +202,7 @@ const MainContainer = () => {
     const [subscription, loadingSubscription] = useSubscription();
     const [entitlements, loadingEntitlements] = useEntitlementChecksForOrgAndUser();
     const [{ permissions }] = useUserPermissions();
+    const [isOrganizationOwner] = useIsOrganizationOwner();
     const location = useLocation();
 
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
@@ -297,6 +298,7 @@ const MainContainer = () => {
         organization,
         isB2BDrive,
         isGroupOwner,
+        isOrganizationOwner,
         permissions: permissions ?? EMPTY_ORG_PERMISSIONS,
         memberships,
     };

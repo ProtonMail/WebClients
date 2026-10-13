@@ -1,3 +1,4 @@
+import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
@@ -9,7 +10,7 @@ import { USER_ROLES } from '@proton/shared/lib/constants';
 import { type OrgPermissions, PERMISSIONS, type User, type UserPermission } from '@proton/shared/lib/interfaces';
 
 import { serverEvent } from '../eventLoop';
-import { isOwnerRole } from '../organizationRoles/helpers';
+import { getIsOrganizationOwner, isOwnerRole } from '../organizationRoles/helpers';
 import { type UserState, userFulfilled, userThunk } from '../user';
 
 const name = 'userPermissions';
@@ -138,4 +139,17 @@ const slice = createSlice({
 
 export const userPermissionsReducer = { [name]: slice.reducer };
 export const userPermissionsThunk = modelThunk.thunk;
+
+export const isOrganizationOwnerThunk = (): ThunkAction<
+    Promise<boolean>,
+    UserPermissionsState,
+    ProtonThunkArguments,
+    UnknownAction
+> => {
+    return async (dispatch, _getState, extra) => {
+        const isAdminRoleMVPEnabled = extra.unleashClient?.isEnabled('AdminRoleMVP') ?? false;
+        const [user, userPermissions] = await Promise.all([dispatch(userThunk()), dispatch(userPermissionsThunk())]);
+        return getIsOrganizationOwner({ isAdminRoleMVPEnabled, isAdmin: user.isAdmin, roles: userPermissions.Roles });
+    };
+};
 export const userPermissionsFulfilled = modelThunk.fulfilled;
