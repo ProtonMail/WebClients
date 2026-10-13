@@ -188,6 +188,9 @@
       "Claim ${ BRAND_NAME } address": [
         "รับสิทธิ์ที่อยู่ ${ BRAND_NAME }"
       ],
+      "Claim it": [
+        "รับสิทธิ์ใช้งาน"
+      ],
       "Claim offer": [
         "รับสิทธิ์ตามข้อเสนอ"
       ],
@@ -305,6 +308,9 @@
       "Create users": [
         "สร้างผู้ใช้"
       ],
+      "Create your own": [
+        "สร้างในแบบของคุณเอง"
+      ],
       "Current plan": [
         "แพกเก็จปัจจุบัน"
       ],
@@ -394,9 +400,6 @@
       ],
       "Dismiss": [
         "ปิดไป"
-      ],
-      "Domain name": [
-        "ชื่อโดเมน"
       ],
       "Don't show again": [
         "ไม่ต้องแสดงให้เห็นอีก"
@@ -760,6 +763,9 @@
       ],
       "No, thanks": [
         "ไม่ทำการต่อ ขอบคุณ"
+      ],
+      "Not now": [
+        "ไม่ใช่ตอนนี้"
       ],
       "OK": [
         "ตกลง"
@@ -6622,9 +6628,6 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ protonSubdomain } โฮสต์โดย ${ BRAND_NAME } ซึ่งช่วยให้คุณตั้งค่าโดเมนย่อยได้อย่างรวดเร็ว ${ learnMoreLink }"
       ],
-      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
-        "จำเป็นต้องมีโดเมนที่กำหนดเองเพื่อสร้างกลุ่ม หากยังไม่ได้ตั้งค่าโดเมนที่กำหนดเอง ให้ดำเนินการก่อนภายใต้ ${ linkToDomainPage }"
-      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "ชื่อเพื่อช่วยระบุตำแหน่งที่ใช้งาน เพื่อให้สามารถยกเลิกหรือขยายเวลาได้ในภายหลัง"
       ],
@@ -8283,6 +8286,9 @@
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "ข้อมูลที่เปิดเผยรั่วไหลมาจากบริการของบุคคลที่สาม ข้อมูลบัญชี ${ BRAND_NAME } ของคุณยังคงปลอดภัยและได้รับการเข้ารหัส ${ learnMoreLink }"
+      ],
+      "The following address is available:": [
+        "ที่อยู่ต่อไปนี้สามารถใช้งานได้:"
       ],
       "The following address is invalid.": [
         "ที่อยู่นี้ไม่ถูกต้อง"
@@ -16734,6 +16740,9 @@
       ],
       "Create user accounts": [
         "สร้างบัญชีผู้ใช้"
+      ],
+      "Create your ${ BRAND_NAME } address": [
+        "สร้างที่อยู่ ${ BRAND_NAME } ของคุณ"
       ],
       "Created": [
         "ถูกสร้างแล้ว"

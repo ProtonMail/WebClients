@@ -433,6 +433,9 @@
       "Claim ${ BRAND_NAME } address": [
         "Få ${ BRAND_NAME }-adresse"
       ],
+      "Claim it": [
+        "Gør krav på den"
+      ],
       "Claim offer": [
         "Indløs tilbud"
       ],
@@ -517,6 +520,9 @@
       "Continue with Free": [
         "Fortsæt med Free"
       ],
+      "Continue with single sign-on": [
+        "Fortsæt med single sign-on"
+      ],
       "Continue with this password": [
         "Fortsæt med denne adgangskode"
       ],
@@ -552,6 +558,9 @@
       ],
       "Create users": [
         "Opret brugere"
+      ],
+      "Create your own": [
+        "Opret din egen"
       ],
       "Current plan": [
         "Nuværende abonnement"
@@ -645,9 +654,6 @@
       ],
       "Dismiss": [
         "Afvis"
-      ],
-      "Domain name": [
-        "Domænenavn"
       ],
       "Don't show again": [
         "Vis ikke igen"
@@ -1033,6 +1039,9 @@
       "No, thanks": [
         "Nej tak"
       ],
+      "Not now": [
+        "Ikke nu"
+      ],
       "OK": [
         "Ok"
       ],
@@ -1101,6 +1110,9 @@
       ],
       "Recover data": [
         "Gendan data"
+      ],
+      "Recover previous account": [
+        "Gendan forrige konto"
       ],
       "Refer a friend": [
         "Henvis en ven"
@@ -1425,6 +1437,9 @@
       ],
       "Take a tour": [
         "Tag en tour"
+      ],
+      "Take the survey": [
+        "Deltag i undersøgelsen"
       ],
       "Template with invite links": [
         "Skabelon med invitationslinks"
@@ -2120,6 +2135,88 @@
         "Lagerplads er delt mellem alle ${ BRAND_NAME }-tjenester."
       ]
     },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Indløs tilbuddet"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/måned"
+      ],
+      "2 individual accounts": [
+        "2 individuelle konti"
+      ],
+      "2 TB of secure storage": [
+        "2 TB sikker lagerplads"
+      ],
+      "3 TB of secure storage": [
+        "3 TB sikker lagerplads"
+      ],
+      "500 GB of secure storage": [
+        "500 GB sikker lagerplads"
+      ],
+      "6 individual accounts": [
+        "6 individuelle konti"
+      ],
+      "Advanced protection against cyber threats": [
+        "Avanceret beskyttelse mod cybertrusler"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatter beregnes ud fra den normale månedspris. Dit abonnement fornyes til den årlige standardpris når faktureringsperioden udløber."
+      ]
+    },
+    "bfcampaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, og ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, og ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, og ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Årets største tilbud"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "i 12 måneder"
+      ],
+      "Last chance to save big": [
+        "Sidste chance for at spare stort"
+      ],
+      "Protect your entire tribe": [
+        "Beskyt hele din flok"
+      ],
+      "Protection for two in a single plan": [
+        "Beskyttelse til to i et enkelt abonnement"
+      ],
+      "Save big with a yearly plan": [
+        "Spar stort med et årligt abonnement"
+      ]
+    },
     "Billing cycle": {
       "Free renewal": [
         "Gratis fornyelse"
@@ -2488,6 +2585,50 @@
       "Total for ${ cycle } month": [
         "I alt for ${ cycle } måned",
         "I alt for ${ cycle } måneder"
+      ]
+    },
+    "claimed address": {
+      "Sign in with your organization?": [
+        "Log ind igennem din organisation?"
+      ],
+      "The address ${ boldClaimedEmail } has been claimed and can no longer be used for this account. Your data is safe and hasn't been shared with anyone. To migrate it to a new account, create a new ${ BRAND_NAME } email address.": [
+        "Adressen ${ boldClaimedEmail } er blevet indløst, og kan ikke længere bruges til denne konto. Din data er sikker, og er ikke blev delt med nogen. Opret en ny ${ BRAND_NAME } e-mailadresse for at migrere den til en ny konto."
+      ],
+      "The address ${ boldClaimedEmail } has been claimed and can no longer be used for this account. Your data was migrated to the address below and remains private.": [
+        "Adressen ${ boldClaimedEmail } er blevet indløst, og kan ikke længere bruges til denne konto. Dine data blev migreret til adressen nedenfor og forbliver private."
+      ],
+      "The address ${ boldClaimedEmail } has been claimed by another organization and can no longer be used for this account. Your data is safe and remains private.": [
+        "Adressen ${ boldClaimedEmail } er allerede blevet indløst af en anden konto, og kan ikke længere bruges til din konto. Din data er sikker og forbliver privat."
+      ],
+      "Verify it's you": [
+        "Bekræft, at det er dig"
+      ],
+      "You're all set": [
+        "Så er du klar"
+      ],
+      "Your address": [
+        "Din adresse"
+      ],
+      "Your address has been claimed": [
+        "Din adresse er blevet indløst"
+      ],
+      "Your address has changed": [
+        "Din adresse blev ændret"
+      ],
+      "Your administrator can give you a new address.": [
+        "Din administrator kan give dig en ny adresse."
+      ],
+      "Your data was migrated to the address below and remains private.": [
+        "Dine data blev migreret til adressen vist nedenfor og forbliver private."
+      ],
+      "Your new address": [
+        "Din nye adresse"
+      ],
+      "Your password remains the same.": [
+        "Din adgangskode forbliver uændret."
+      ],
+      "Your previous username, ${ boldClaimedEmail }, can no longer be used to sign in to this account.": [
+        "Dit forrige brugernavn, ${ boldClaimedEmail }, kan ikke længere bruges til at logge ind på denne konto."
       ]
     },
     "Collapsible tooltip": {
@@ -5684,6 +5825,9 @@
       "You must set a name": [
         "Du skal angive et navn"
       ],
+      "You reached the maximum number of connected addresses": [
+        "Du har nået det maksimale antal forbundne adresser"
+      ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Din konto eller organisation har en forfalden faktura. Betal venligst alle udestående fakturaer."
       ],
@@ -7167,7 +7311,7 @@
     },
     "Import provider": {
       "More import options": [
-        "Flere importindstillinger"
+        "Flere importmuligheder"
       ]
     },
     "Import status": {
@@ -7489,6 +7633,9 @@
       "**This will disable 2-factor authentication.**": [
         "**Dette deaktiverer 2-faktor-godkendelse.**"
       ],
+      "**We're changing the ${ BRAND_NAME } sign-in page.** Your account and password stay the same.": [
+        "**Vi ændrer ${ BRAND_NAME }s log-ind side.** Din konto og din adgangskode forbliver uændret."
+      ],
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Du får ${ referrerRewardAmount }** i kredit for hver ven, der tegner et abonnement."
       ],
@@ -7526,9 +7673,6 @@
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Et ${ protonSubdomain } hostes af ${ BRAND_NAME }, hvor du hurtigt kan oprette et underdomæne. ${ learnMoreLink }"
-      ],
-      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
-        "Et brugerdefineret domæne er påkrævet for at oprette grupper. Hvis du ikke har et brugerdefineret domæne konfigureret, skal du gøre det først under ${ linkToDomainPage }."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Et navn, så du kan fastslå, hvor du bruger den, så du nemt kan tilbagekalde den eller forlænge den senere."
@@ -8254,6 +8398,9 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Indtast e-mailadresse eller brugernavn for din ${ BRAND_NAME }-konto."
       ],
+      "Enter your old password for ${ boldEmail }.": [
+        "Indtast din gamle adgangskode til ${ boldEmail }."
+      ],
       "Enter your own password (as organization admin).": [
         "Indtast din egen adgangskode (som organisationsadministrator)."
       ],
@@ -8448,6 +8595,9 @@
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "Hvis du har mistet adgangen til din godkender-app kan du bruge 1 af de 16 gendannelseskoder, som du fik da du satte to-faktor-godkendelses op. ${ learnMoreLink }"
+      ],
+      "If you previously had a personal ${ BRAND_NAME } account with this address, you can recover your data separately.": [
+        "Hvis du tidligere havde en personlig ${ BRAND_NAME }-konto med denne adresse, kan du gendanne dine data separat."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Hvis du fortsætter med nedgraderingen, vil du miste adgang til betalte funktioner i ${ MAIL_APP_NAME } og ${ VPN_APP_NAME }."
@@ -9378,6 +9528,9 @@
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "De eksponerede oplysninger blev lækket fra en tredjepartstjeneste. Din ${ BRAND_NAME }-kontooplysninger er stadig sikre og krypterede. ${ learnMoreLink }"
       ],
+      "The following address is available:": [
+        "Den følgende adresse er tilgængelig:"
+      ],
       "The following address is invalid.": [
         "Den følgende adresse er ugyldig.",
         "De følgende adresser er ugyldige."
@@ -9432,6 +9585,9 @@
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Denne konto er blevet suspenderet på grund af en potentiel overtrædelse af politik."
+      ],
+      "This address now signs in through your organization's identity provider.": [
+        "Denne adresse logger nu ind igennem din organisations identitetsudbyder."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Denne browser understøtter ikke forhåndsvisning af PDF-dokumenter. Download filen."
@@ -9910,8 +10066,8 @@
       "We'll send a new verification code to ${ strong }": [
         "Vi vil sende en ny verifikationskode til ${ strong }"
       ],
-      "We're changing the ${ BRAND_NAME } sign-in page. Your password and devices stay the same. ${ learnMore }": [
-        "Vi ændrer ${ BRAND_NAME }s log-ind side. Din adgangskode og dine enheder forbliver uændrede. ${ learnMore }"
+      "We're building a new way for you to manage your organization, and we're looking for specific users to join a video call and try an early version. Curious if you'd be a good match? Answer a few quick questions to see if you can participate.": [
+        "Vi er i gang med at bygge en ny måde at administrere din organisation, og vi leder efter specifikke brugere til at deltage i et videoopkald og prøve en tidlig version. Er du nysgerrig på om du er et match? Besvar nogle korte spørgsmål for at se om du kan deltage."
       ],
       "Web sessions detected:": [
         "Websessioner fundet:"
@@ -10218,6 +10374,9 @@
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Dine ${ VPN_APP_NAME } og ${ MAIL_APP_NAME } konti er forbundet. Hvis du vil slette dem begge, skal du logge ind på ${ loginLink } og slette din konto der."
       ],
+      "Your account and password stay the same.": [
+        "Din konto og din adgangskode forbliver uændret."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Din konto har mindst én forfalden faktura. Din adgang vil snart blive begrænset. ${ payInvoiceLink }"
       ],
@@ -10274,9 +10433,6 @@
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Din organisations e-mails er beskyttet med end-to-end-kryptering ved brug af organisationsnøglen. Dette fingeraftryk kan bruges til at kontrollere, at alle administratorer på din konto har den samme nøgle."
-      ],
-      "Your password and devices stay the same.": [
-        "Din adgangskode og dine enheder forbliver uændrede."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Dine betalinger er beskyttet af TLS-kryptering og schweizisk lovgivning om beskyttelse af privatlivets fred."
@@ -15025,79 +15181,6 @@
         "Yahoo"
       ]
     },
-    "q3campaign2026: Action": {
-      "Get the deal": [
-        "Få tilbuddet"
-      ],
-      "Special Offer": [
-        "Særtilbud"
-      ]
-    },
-    "q3campaign2026: Info": {
-      "/month": [
-        "/måned"
-      ],
-      "2 individual accounts": [
-        "2 individuelle konti"
-      ],
-      "2 TB of secure storage": [
-        "2 TB sikker lagerplads"
-      ],
-      "3 TB of secure storage": [
-        "3 TB sikker lagerplads"
-      ],
-      "500 GB of secure storage": [
-        "500 GB sikker lagerplads"
-      ],
-      "6 individual accounts": [
-        "6 individuelle konti"
-      ],
-      "Advanced protection against cyber threats": [
-        "Avanceret beskyttelse mod cybertrusler"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Rabatter beregnes ud fra den normale månedspris. Dit abonnement fornyes til den årlige standardpris, når faktureringsperioden udløber."
-      ]
-    },
-    "q3campaign2026: Info, Calendar first": {
-      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, og ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, og ${ CALENDAR_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Family, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Family, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, og ${ CALENDAR_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Title": {
-      "for 12 months": [
-        "i 12 måneder"
-      ],
-      "One plan, full power": [
-        "Ét abonnement, fuld power"
-      ],
-      "One plan, max savings": [
-        "Et abonnement, maksimal besparelse"
-      ],
-      "One plan, more power": [
-        "Ét abonnement, mere power"
-      ]
-    },
     "Recovery Email": {
       "Cancel": [
         "Annuller"
@@ -18491,6 +18574,9 @@
       "Billing cycle": [
         "Faktureringscyklus"
       ],
+      "Black Friday": [
+        "Black Friday"
+      ],
       "Block trackers and malware": [
         "Blokér trackere og malware"
       ],
@@ -18653,6 +18739,9 @@
       ],
       "Create user accounts": [
         "Opret brugerkonti"
+      ],
+      "Create your ${ BRAND_NAME } address": [
+        "Opret din ${ BRAND_NAME }-adresse"
       ],
       "Created": [
         "Oprettet"
@@ -18985,6 +19074,9 @@
       ],
       "Help center": [
         "Hjælp-center"
+      ],
+      "Help shape ${ BRAND_NAME }'s admin experience": [
+        "Hjælp med at udforme oplevelsen for administratorer på ${ BRAND_NAME }"
       ],
       "Helping activists in Hong Kong": [
         "Hjælper aktivister i Hongkong"
@@ -19346,9 +19438,6 @@
       ],
       "Send new invite?": [
         "Send ny invitation?"
-      ],
-      "September Sale": [
-        "Septemberudsalg"
       ],
       "Service": [
         "Tjeneste"
@@ -20001,6 +20090,9 @@
       ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Sikre logins på alle dine enheder. Inkluderer ubegrænsede aliasser, deling, integreret 2FA og meget mere."
+      ],
+      "Assigned by a group. Remove the user from the group to change this role": [
+        "Tildelt af en gruppe. Fjern brugeren fra gruppen for at ændre denne rolle"
       ],
       "Disables end-to-end email encryption for this group": [
         "Deaktiverer end-to-end e-mailkryptering for denne gruppe"

@@ -421,6 +421,9 @@
       "Claim ${ BRAND_NAME } address": [
         "Reivindicar endereço da ${ BRAND_NAME }"
       ],
+      "Claim it": [
+        "Revindicar"
+      ],
       "Claim offer": [
         "Resgatar oferta"
       ],
@@ -541,6 +544,9 @@
       "Create users": [
         "Criar usuários"
       ],
+      "Create your own": [
+        "Crie seu próprio"
+      ],
       "Current plan": [
         "Plano atual"
       ],
@@ -633,9 +639,6 @@
       ],
       "Dismiss": [
         "Descartar"
-      ],
-      "Domain name": [
-        "Nome do domínio"
       ],
       "Don't show again": [
         "Não mostrar novamente"
@@ -928,6 +931,9 @@
       "Learn about recovery options": [
         "Saiba mais sobre as opções de recuperação"
       ],
+      "Learn how this works": [
+        "Saiba como isso funciona"
+      ],
       "Learn more": [
         "Saiba mais"
       ],
@@ -1014,6 +1020,9 @@
       ],
       "No, thanks": [
         "Não, obrigado"
+      ],
+      "Not now": [
+        "Agora não"
       ],
       "OK": [
         "OK"
@@ -1408,6 +1417,9 @@
       "Take a tour": [
         "Faça um tour"
       ],
+      "Take the survey": [
+        "Responder à pesquisa"
+      ],
       "Template with invite links": [
         "Modelo com links de convite"
       ],
@@ -1709,6 +1721,9 @@
       ],
       "Managed Service Provider": [
         "Provedor de serviço gerenciado"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Organizações com o complemento Provedor de Serviços Gerenciados podem criar e gerenciar organizações subsidiárias."
       ],
       "Servers": [
         "Servidores"
@@ -2088,6 +2103,9 @@
       ]
     },
     "Billing cycle": {
+      "Free renewal": [
+        "Renovação gratuita"
+      ],
       "Renews automatically at ${ price }, for ${ cycle } month": [
         "Renovação automática por ${ price }, durante ${ cycle } mês",
         "Renovação automática por ${ price }, durante ${ cycle } meses"
@@ -2210,6 +2228,11 @@
       ],
       "Working with sensitive data?": [
         "Trabalhando com dados confidenciais?"
+      ]
+    },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "Aplicativo para computador do ${ appName }"
       ]
     },
     "Bug category": {
@@ -2423,6 +2446,20 @@
       "Total for ${ cycle } month": [
         "Total por ${ cycle } mês",
         "Total por ${ cycle } meses"
+      ]
+    },
+    "claimed address": {
+      "Sign in with your organization?": [
+        "Iniciar sessão com sua organização?"
+      ],
+      "You're all set": [
+        "Tudo pronto"
+      ],
+      "Your address": [
+        "Seu endereço"
+      ],
+      "Your new address": [
+        "Seu novo endereço"
       ]
     },
     "Collapsible tooltip": {
@@ -4828,6 +4865,9 @@
       "Calendar limit reached": [
         "Limite de calendários atingido"
       ],
+      "Cannot add photo to album without a valid name": [
+        "Não é possível adicionar foto ao álbum sem um nome válido"
+      ],
       "Cannot download a folder": [
         "Não é possível baixar uma pasta"
       ],
@@ -4983,6 +5023,9 @@
       "Failed to verify invitation": [
         "Erro ao verificar o convite"
       ],
+      "File download failed due to empty response": [
+        "O download do arquivo falhou devido à resposta vazia"
+      ],
       "File has no revision": [
         "O arquivo não possui revisão"
       ],
@@ -5110,6 +5153,9 @@
       "Moving item to a non-folder is not allowed": [
         "Não é permitido mover o item para um local que não seja uma pasta"
       ],
+      "Moving root item is not allowed": [
+        "Item de raiz em movimento não é permitido"
+      ],
       "Name already exists": [
         "Nome já existe"
       ],
@@ -5197,6 +5243,9 @@
       ],
       "Permissions request failed.": [
         "Falha na solicitação de permissões."
+      ],
+      "Photo is already in the target album": [
+        "A foto já está no álbum alvo"
       ],
       "Photo not found": [
         "Foto não encontrada"
@@ -5291,6 +5340,9 @@
       ],
       "Process aborted": [
         "Processo abortado"
+      ],
+      "Renaming root item is not allowed": [
+        "Não é permitido renomear o item, raiz"
       ],
       "Request aborted": [
         "Solicitação abortada"
@@ -5438,6 +5490,9 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo exige um mínimo de ${ minimumLength } caracteres."
+      ],
+      "This file has missing crypto material": [
+        "Este arquivo tem material de criptografia ausente"
       ],
       "This file has no version available to download": [
         "O arquivo não possui uma versão para download"
@@ -6474,6 +6529,9 @@
       "Monitor gateway connections with VPN Professional": [
         "Monitore as conexões do gateway com o VPN Professional"
       ],
+      "Real-time connection insights": [
+        "Informações sobre conexões em tempo real"
+      ],
       "User - ${ userPrice }": [
         "Usuário - ${ userPrice }"
       ]
@@ -6579,6 +6637,9 @@
       ],
       "Event": [
         "Evento"
+      ],
+      "Good to know before you connect": [
+        "É bom saber antes de se conectar"
       ],
       "IP address": [
         "Endereço IP"
@@ -7257,6 +7318,9 @@
       "${ storage } storage": [
         "${ storage } de armazenamento"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "${ timeRemaining } deixado em sua avaliação. ${ addPaymentMethodLink } para evitar perder acesso. ${ learnMoreLink }"
+      ],
       "${ total } user found": [
         "${ total } usuário encontrado",
         "${ total } usuários encontrados"
@@ -7306,6 +7370,9 @@
       ],
       "(formerly Twitter)": [
         "(antigo Twitter)"
+      ],
+      "**${ emailAddress }** is also used to sign in to a separate ${ BRAND_NAME } account, outside of ${ MAIL_APP_NAME }.": [
+        "**${ emailAddress }** também é usado para entrar em uma conta separada ${ BRAND_NAME }, fora de ${ MAIL_APP_NAME }."
       ],
       "**Enable automatic backups** for peace of mind": [
         "**Ative backups automáticos** para sua tranquilidade"
@@ -7365,9 +7432,6 @@
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Um ${ protonSubdomain } é hospedado pela ${ BRAND_NAME }, que permite que você configure rapidamente um subdomínio. ${ learnMoreLink }"
-      ],
-      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
-        "Um domínio personalizado é obrigatório para criar grupos. Se você não tem um domínio personalizado configurado, pode configurar em ${ linkToDomainPage }."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Um nome para ajudá-lo a identificar onde você o utiliza, para poder revogá-lo ou estendê-lo facilmente mais tarde."
@@ -8521,6 +8585,9 @@
       "Loading...": [
         "Carregando..."
       ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Os registros nos ajudam a entender o que aconteceu antes de o problema ocorrer. Eles incluem ações do aplicativo e mensagens de erro, mas não o conteúdo das mensagens."
+      ],
       "Low Priority": [
         "Baixa prioridade"
       ],
@@ -8635,6 +8702,9 @@
       "No payment is required at this time.": [
         "Neste momento, não é necessário pagamento."
       ],
+      "No payment is required.": [
+        "Nenhum pagamento é necessário."
+      ],
       "No results found": [
         "Nenhum resultado encontrado"
       ],
@@ -8643,6 +8713,9 @@
       ],
       "No users to display": [
         "Nenhum usuário para exibir"
+      ],
+      "Nothing changes in your other ${ BRAND_NAME } account.": [
+        "Nada muda na sua outra ${ BRAND_NAME } conta."
       ],
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados na organização"
@@ -8960,6 +9033,9 @@
       "SCIM token active": [
         "Token SCIM ativo"
       ],
+      "Secure and end-to-end encrypted": [
+        "Seguro e de ponta a ponta criptografado"
+      ],
       "Secure your ${ BRAND_NAME } Account": [
         "Proteja sua conta da ${ BRAND_NAME }."
       ],
@@ -9172,6 +9248,9 @@
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "As informações expostas vazaram de um serviço de terceiros. As informações da sua conta ${ BRAND_NAME } permanecem seguras e criptografadas. ${ learnMoreLink }"
       ],
+      "The following address is available:": [
+        "O seguinte endereço está disponível:"
+      ],
       "The following address is invalid.": [
         "O seguinte endereço não é válido.",
         "Os seguintes endereços não são válidos."
@@ -9271,6 +9350,9 @@
       ],
       "This service is not available to users signing in with single sign-on.": [
         "Este serviço não está disponível para usuários que iniciam sessão com o início de sessão único."
+      ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Este usuário não pode ser migrado porque o endereço de e-mail deles não está disponível em ${ BRAND_NAME }."
       ],
       "This user can not be migrated due to platform incompatibilities.": [
         "Este usuário não pode ser migrado devido a incompatibilidades de plataforma."
@@ -9656,6 +9738,9 @@
       "We use 3-D Secure to protect your payments": [
         "Usamos 3-D Secure para proteger seus pagamentos"
       ],
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Vamos redirecioná-lo para ${ IDEAL_WERO_BRAND_NAME } em uma nova guia do navegador para concluir esta transação. Se você usar qualquer bloqueador de pop-up, por favor, desative-os para continuar."
+      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Vamos redirecioná-lo para o PayPal em uma nova guia do navegador para concluir esta transação. Desative qualquer bloqueador de pop-ups que estiver usando."
       ],
@@ -9929,6 +10014,9 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Você não poderá recuperar dados bloqueados usando os arquivos de recuperação baixados. Isso também desativará a recuperação baseada em dispositivo."
       ],
+      "You'll choose a new username": [
+        "Você vai escolher um novo nome de usuário"
+      ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Você receberá a recompensa em créditos 1 mês após seu amigo(a) assinar um plano anual e 2 meses após ele (ela) assinar um plano mensal."
       ],
@@ -9941,6 +10029,9 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Você então será cobrado a cada ${ renewCycle } mês em ${ renewAmountStr }. Você pode cancelar a qualquer momento.",
         "Você então será cobrado a cada ${ renewCycle } meses em ${ renewAmountStr }.Você pode cancelar a qualquer momento."
+      ],
+      "You'll use it to sign in from then on. That's the only change.": [
+        "Você vai usá-lo para entrar a partir de então. Essa é a única mudança."
       ],
       "You're now signed in on your TV.": [
         "Você já iniciou sessão na sua TV."
@@ -9999,6 +10090,9 @@
       ],
       "Your free trial includes 1 dedicated server.": [
         "Sua avaliação gratuita inclui 1 servidor dedicado."
+      ],
+      "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
+        "Seu Gmail se conecta a esse ${ MAIL_APP_NAME }"
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Suas informações estão seguras conosco. Só entraremos em contato quando for necessário para fornecer nossos serviços."
@@ -11523,6 +11617,9 @@
       ],
       "Pay invoice": [
         "Pagar fatura"
+      ],
+      "Pay it": [
+        "Pague"
       ],
       "Privacy policy": [
         "Política de privacidade"
@@ -13470,6 +13567,12 @@
       "**Add a payment method** to keep using all of the features after your trial ends.": [
         "**Adicione uma forma de pagamento** para continuar usando todos os recursos após o término do período de teste."
       ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Cancele a qualquer momento antes disso. ** Você poderá usar ${ planTitle } até que a avaliação termine, gratuitamente."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Se você continuar após o seu teste, ** você pode cancelar dentro de 30 dias e obter um reembolso pro-rata."
+      ],
       "Add a payment method": [
         "Adicionar método de pagamento"
       ],
@@ -13496,6 +13599,9 @@
       ],
       "Once your full subscription starts...": [
         "Quando sua assinatura completa começar..."
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "para continuar usando todos os recursos após o término da sua avaliação."
       ],
       "you can cancel within 30 days and get a pro-rata refund.": [
         "você pode cancelar em até 30 dias e receber um reembolso proporcional."
@@ -13668,6 +13774,9 @@
       ]
     },
     "organization key reset": {
+      "Because your organization key has changed, you lost some of your admin rights: You can no longer create non-private users and access their accounts.": [
+        "Como a chave da sua organização mudou, você perdeu alguns de seus direitos de administrador: você não pode mais criar usuários não privados e acessar suas contas."
+      ],
       "Converting users to private": [
         "Convertendo usuários para privados"
       ],
@@ -13707,6 +13816,9 @@
       ],
       "This process is automated:": [
         "O processo é automatizado:"
+      ],
+      "To reset the organization key, the users will be converted to private, and will receive an email invitation to become non-private again.": [
+        "Para redefinir a chave da organização, os usuários serão convertidos em privado e receberão um convite por e-mail para se tornarem não privados novamente."
       ],
       "To restore your privileges, use a data recovery method.": [
         "Para restaurar seus privilégios, use um método de recuperação de dados."
@@ -14004,6 +14116,9 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (sem impostos)"
       ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } não pode ser combinado com ${ PLAN_NAMES[PLANS.PASS] }."
+      ],
       "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
         "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } está disponível apenas nos planos empresariais."
       ],
@@ -14018,6 +14133,12 @@
       ],
       "Billing Country": [
         "País de Faturamento"
+      ],
+      "Born Private requires a donation.": [
+        "Born Private requer uma doação."
+      ],
+      "Buying credits requires a separate purchase.": [
+        "Comprar créditos requer uma compra separada."
       ],
       "By switching, you agree to our ${ termsLink }.": [
         "Ao trocar, você concorda com nossos ${ termsLink }."
@@ -14061,6 +14182,9 @@
       "More plans are available in other currencies": [
         "Mais planos estão disponíveis em outras moedas"
       ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Apenas um ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } pode ser comprado."
+      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Pagar com ${ IDEAL_WERO_BRAND_NAME }"
       ],
@@ -14069,6 +14193,9 @@
       ],
       "Please close extra wallet accounts before changing your plan.": [
         "Escolha as contas de wallet adicionais antes de trocar seu plano."
+      ],
+      "Please close extra wallets before changing your plan.": [
+        "Por favor, feche carteiras extras antes de mudar seu plano."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reative sua assinatura primeiro para diminuir o número de complementos."
@@ -14081,6 +14208,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Renova por ${ renewPriceStr }, cancele a qualquer momento."
+      ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Os assentos do escriba não podem exceder o número de membros."
       ],
       "Sorry, this offer is not available with your current plan.": [
         "Desculpe, mas essa oferta não está disponível com seu plano atual."
@@ -14097,6 +14227,18 @@
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "O desconto é válido para ${ renewalsWithCoupon } renovação.",
         "O desconto é válido para ${ renewalsWithCoupon } renovações."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "O plano selecionado não oferece endereços suficientes para sua conta."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "O plano selecionado não oferece domínios suficientes para sua conta."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "O plano selecionado não oferece membros suficientes para sua conta."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "O plano selecionado não oferece armazenamento suficiente para sua conta."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "O preço com desconto especial é válido por ${ couponRedemptions } mês. Depois, ele será renovado automaticamente por ${ renewPriceStr } por 1 mês. Você pode cancelar a qualquer momento.",
@@ -14142,11 +14284,17 @@
       "Timeout exceeded": [
         "Tempo limite excedido"
       ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "Os planos de avaliação não suportam ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Trial plans don’t support dedicated IPs.": [
         "Os planos de avaliação não suportam IPs dedicados."
       ],
       "Trial plans don’t support Scribe seats.": [
         "Os planos de avaliação não suportam licenças de Scribe."
+      ],
+      "Trial plans don’t support this many members.": [
+        "Os planos de teste não apoiam muitos membros."
       ],
       "VAT number": [
         "Número de IVA"
@@ -14160,6 +14308,12 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Você já assina este plano. Você pode mudar sua assinatura na ${ subscriptionPlatform }."
       ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "Você já possui o ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "You already own Born Private.": [
+        "Você já tem o Born Private."
+      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Você será cobrado em ${ amountToCharge } no método de pagamento selecionado."
       ],
@@ -14168,6 +14322,12 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Em breve você será redirecionado para verificar seu pagamento."
+      ],
+      "Your account is too old for Born Private.": [
+        "Sua conta é muito antiga para Born Private."
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "Sua moeda foi alterada para euros (€) porque ${ IDEAL_WERO_BRAND_NAME } suporta apenas pagamentos em euros."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Sua moeda foi alterada para euros (€) porque transferências bancárias SEPA apenas suportam pagamentos em euros."
@@ -14191,6 +14351,9 @@
       ],
       "Invalid security code": [
         "Código de segurança inválido"
+      ],
+      "Please enter the account holder name": [
+        "Insira o nome do titular da conta"
       ],
       "Something went wrong. Please try again later.": [
         "Ocorreu um erro. Tente novamente mais tarde."
@@ -14218,6 +14381,11 @@
       ],
       "Credits will be added to your balance": [
         "Créditos serão adicionados ao seu saldo."
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Alterar seu endereço de cobrança pode afetar impostos sobre futuras faturas."
       ]
     },
     "Payments.Lifetime Subscription": {
@@ -14622,79 +14790,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q3campaign2026: Action": {
-      "Get the deal": [
-        "Aproveitar a oferta"
-      ],
-      "Special Offer": [
-        "Oferta especial"
-      ]
-    },
-    "q3campaign2026: Info": {
-      "/month": [
-        "/mês"
-      ],
-      "2 individual accounts": [
-        "2 contas individuais"
-      ],
-      "2 TB of secure storage": [
-        "2 TB de armazenamento seguro"
-      ],
-      "3 TB of secure storage": [
-        "3 TB de armazenamento seguro"
-      ],
-      "500 GB of secure storage": [
-        "500 GB de armazenamento seguro"
-      ],
-      "6 individual accounts": [
-        "6 contas individuais"
-      ],
-      "Advanced protection against cyber threats": [
-        "Proteção avançada contra ameaças cibernéticas"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Os descontos são baseados no preço mensal padrão. Sua assinatura será renovada pela taxa anual padrão quando o ciclo de faturamento terminar."
-      ]
-    },
-    "q3campaign2026: Info, Calendar first": {
-      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Family, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Family, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium para ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Title": {
-      "for 12 months": [
-        "por 12 meses"
-      ],
-      "One plan, full power": [
-        "Um plano, poder total"
-      ],
-      "One plan, max savings": [
-        "Um plano, economia máxima"
-      ],
-      "One plan, more power": [
-        "Um plano, mais poder"
       ]
     },
     "Recovery Email": {
@@ -16503,6 +16598,9 @@
       "Enter your backup password": [
         "Digite sua senha de backup"
       ],
+      "For your security, you have been signed out of all your other active devices.": [
+        "Para sua segurança, você foi desconectado de todos os seus outros dispositivos ativos."
+      ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Para sua segurança, você foi desconectado de todos os seus outros dispositivos ativos. Antes de acessar sua conta, você precisará digitar uma nova senha de backup."
       ],
@@ -16592,6 +16690,9 @@
       ],
       "Sign-in requested on another device. Was it you?": [
         "Solicitação de início de sessão em outro dispositivo. Foi você?"
+      ],
+      "Signing in": [
+        "Iniciando sessão"
       ],
       "Single sign-on may not function correctly without an organization identity. Set an identity to ensure reliable authentication.": [
         "O login único pode não funcionar corretamente sem uma identidade de organização. Defina uma identidade para garantir uma autenticação confiável."
@@ -17844,6 +17945,9 @@
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
       ],
+      "${ planTitle } breakdown": [
+        "Detalhamento do ${ planTitle }"
+      ],
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "${ PROTON_SENTINEL_NAME } para organizações"
       ],
@@ -18049,6 +18153,9 @@
       "Billing cycle": [
         "Ciclo de faturamento"
       ],
+      "Black Friday": [
+        "Black Friday"
+      ],
       "Block trackers and malware": [
         "Bloqueie rastreadores e malware"
       ],
@@ -18211,6 +18318,9 @@
       ],
       "Create user accounts": [
         "Criar contas de usuários"
+      ],
+      "Create your ${ BRAND_NAME } address": [
+        "Criar seu endereço da ${ BRAND_NAME }"
       ],
       "Created": [
         "Criado"
@@ -18534,6 +18644,9 @@
       ],
       "Groups": [
         "Grupos"
+      ],
+      "Heads up: This Gmail is linked to another ${ BRAND_NAME } account": [
+        "Atenção: este Gmail está vinculado a outra ${ BRAND_NAME } conta"
       ],
       "Help and feedback": [
         "Ajuda e comentários"
@@ -18901,9 +19014,6 @@
       ],
       "Send new invite?": [
         "Enviar um novo convite?"
-      ],
-      "September Sale": [
-        "Oferta de setembro"
       ],
       "Service": [
         "Serviço"
@@ -19952,6 +20062,9 @@
       ],
       "Writing assistant": [
         "Assistente de escrita"
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Você não pode mudar seus próprios papéis. Peça a outro administrador para alterá-los."
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Você poderá atribuir funções assim que o usuário aceitar o convite."

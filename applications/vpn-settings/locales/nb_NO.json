@@ -433,6 +433,9 @@
       "Claim ${ BRAND_NAME } address": [
         "Gjør krav på ${ BRAND_NAME }-adresse"
       ],
+      "Claim it": [
+        "Gjør krav på det"
+      ],
       "Claim offer": [
         "Gjør krav på tilbudet"
       ],
@@ -553,6 +556,9 @@
       "Create users": [
         "Opprett brukere"
       ],
+      "Create your own": [
+        "Lag din egen"
+      ],
       "Current plan": [
         "Gjeldende plan"
       ],
@@ -645,9 +651,6 @@
       ],
       "Dismiss": [
         "Avvis"
-      ],
-      "Domain name": [
-        "Domenenavn"
       ],
       "Don't show again": [
         "Ikke vis igjen"
@@ -1026,6 +1029,9 @@
       ],
       "No, thanks": [
         "Nei, takk"
+      ],
+      "Not now": [
+        "Ikke nå"
       ],
       "OK": [
         "OK"
@@ -7421,9 +7427,6 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Et ${ protonSubdomain } er vertet av ${ BRAND_NAME }, som lar deg raskt sette opp et underdomene. ${ learnMoreLink }."
       ],
-      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
-        "Et egendefinert domene er nødvendig for å opprette grupper. Hvis du ikke har satt opp et egendefinert domene, gjør du det først under ${ linkToDomainPage }."
-      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Et navn for å hjelpe med å identifisere hvor du bruker den slik at du lett kan oppheve den eller utvide den senere."
       ],
@@ -8544,7 +8547,7 @@
         "Lær mer"
       ],
       "Learn more about Gateways": [
-        "Lær mer om gateway-tjenere"
+        "Lær mer om gateway-servere"
       ],
       "Learn more about groups": [
         "Lær mer om grupper"
@@ -8577,7 +8580,7 @@
         "Laster eduGAIN-data..."
       ],
       "Loading gateways monitoring current status.": [
-        "Laster gateway-tjenere som overvåker gjeldende status."
+        "Laster gateway-servere som overvåker gjeldende status."
       ],
       "Loading preview": [
         "Laster forhåndsvisning"
@@ -8694,10 +8697,10 @@
         "Ingen land aktivert"
       ],
       "No gateways": [
-        "Ingen gateway-tjenere"
+        "Ingen gateway-servere"
       ],
       "No Gateways yet": [
-        "Ingen gateway-tjenere enda"
+        "Ingen gateway-servere enda"
       ],
       "No logs yet.": [
         "Ingen logger enda."
@@ -9254,6 +9257,9 @@
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Den eksponerte informasjonen ble lekket fra en tredjepartstjeneste. ${ BRAND_NAME }-kontoinformasjonen din forblir sikker og kryptert. ${ learnMoreLink }."
       ],
+      "The following address is available:": [
+        "Den følgende adressen er tilgjengelig:"
+      ],
       "The following address is invalid.": [
         "Den følgende adressen er ugyldig.",
         "De følgende adressene er ugyldige."
@@ -9550,7 +9556,7 @@
         "To-passord-modus gjør bruk av separate passord for innlogging og datadekryptering. Dette gir en mindre sikkerhetsfordel i noen situasjoner, men vi anbefaler en-passord-modus for fleste brukere. For å bytte til to-passord-modus, først angi et innloggingpassord og deretter angi et andre passord."
       ],
       "Unable to check gateways monitoring current status.": [
-        "Kan ikke sjekke gateway-tjenerne som overvåker gjeldende status."
+        "Kan ikke sjekke gateway-serverne som overvåker gjeldende status."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Ikke i stand til å verifisere gjenopprettingsfilsignatur. Kontakt kundestøtte."
@@ -12844,7 +12850,7 @@
         "200 GB med skylagring som lar deg lagre, synkronisere og dele filer lett. Sikret med ende-til-ende-kryptering."
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
-        "Avansert nettverkssikkerhet og tilgangsadministrasjon med dedikerte sikre gateway-tjenere"
+        "Avansert nettverkssikkerhet og tilgangsadministrasjon med dedikerte sikre gateway-servere"
       ],
       "Advanced protection for teams that goes beyond industry standards.": [
         "Avansert beskyttelse for team som går utover industristandarder."
@@ -13047,7 +13053,7 @@
         "Forsvarer mot trusler til VPN-personvern ved å overføre internettrafikk gjennom flere servere."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
-        "Forsvarer mot trusler til VPN-personvern ved å overføre internettrafikk gjennom flere tjenere."
+        "Forsvarer mot trusler til VPN-personvern ved å overføre internettrafikk gjennom flere servere."
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Del kalenderne dine med familie, venner eller kolleger på en enkel måte."
@@ -14764,79 +14770,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q3campaign2026: Action": {
-      "Get the deal": [
-        "Benytt deg av tilbudet"
-      ],
-      "Special Offer": [
-        "Spesialtilbud"
-      ]
-    },
-    "q3campaign2026: Info": {
-      "/month": [
-        "/måned"
-      ],
-      "2 individual accounts": [
-        "2 individuelle kontoer"
-      ],
-      "2 TB of secure storage": [
-        "2 TB med sikker lagring"
-      ],
-      "3 TB of secure storage": [
-        "3 TB med sikker lagring"
-      ],
-      "500 GB of secure storage": [
-        "500 GB med sikker lagring"
-      ],
-      "6 individual accounts": [
-        "6 individuelle kontoer"
-      ],
-      "Advanced protection against cyber threats": [
-        "Avansert beskyttelse mot cybertrusler"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Rabatter er basert på standard månedspris. Abonnementet fornyes til standard årspris når faktureringssyklusen utløper."
-      ]
-    },
-    "q3campaign2026: Info, Calendar first": {
-      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Family, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Family, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Title": {
-      "for 12 months": [
-        "for 12 måneder"
-      ],
-      "One plan, full power": [
-        "Én plan, mer kraft"
-      ],
-      "One plan, max savings": [
-        "Én plan, maksimal besparelse"
-      ],
-      "One plan, more power": [
-        "Én plan, mer kraft"
       ]
     },
     "Recovery Email": {
@@ -18383,6 +18316,9 @@
       "Create user accounts": [
         "Opprett brukerkontoer"
       ],
+      "Create your ${ BRAND_NAME } address": [
+        "Opprett din ${ BRAND_NAME }-adresse"
+      ],
       "Created": [
         "Opprettet"
       ],
@@ -18662,7 +18598,7 @@
         "Gateway-overvåking aktivert"
       ],
       "Gateways": [
-        "Gateway-tjenere"
+        "Gateway-servere"
       ],
       "Generate missing keys": [
         "Genererer manglende nøkler"
@@ -19075,9 +19011,6 @@
       ],
       "Send new invite?": [
         "Sende ny invitasjon?"
-      ],
-      "September Sale": [
-        "Septembersalg"
       ],
       "Service": [
         "Tjeneste"
