@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
 
 import { useChatMessage } from '../hooks/bridges/useChatMessage';
+import { useStableCallback } from '../hooks/useStableCallback';
 import { initMeetEventSim } from './meetEventSim';
 
 /**
@@ -14,7 +15,9 @@ import { initMeetEventSim } from './meetEventSim';
 export const useMeetEventSim = () => {
     const dispatch = useMeetDispatch();
 
-    const { sendMessage } = useChatMessage();
+    const { sendMessage: latestSendMessage } = useChatMessage();
+    // Stable, so a re-render can't tear down the tool and cancel a running simulation.
+    const sendMessage = useStableCallback(latestSendMessage);
 
     useEffect(() => {
         if (process.env.NODE_ENV === 'production') {
