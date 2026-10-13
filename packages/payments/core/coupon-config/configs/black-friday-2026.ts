@@ -2,7 +2,7 @@ import { COUPON_CODES, CYCLE } from '../../constants';
 import type { CouponConfigMetadata } from '../interface';
 
 export const blackFriday2026Metadata: CouponConfigMetadata = {
-    coupons: [COUPON_CODES.BLACK_FRIDAY_2026_BUNDLE, COUPON_CODES.BLACK_FRIDAY_2026_BUNDLE_CS],
+    coupons: [COUPON_CODES.BLACK_FRIDAY_2026_NEW, COUPON_CODES.BLACK_FRIDAY_2026_BUNDLE],
     hidden: true,
     cyclePriceComparePosition: 'before',
     availableCycles: [CYCLE.YEARLY],

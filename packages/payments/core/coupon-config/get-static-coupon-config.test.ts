@@ -26,9 +26,9 @@ describe('getStaticCouponConfig', () => {
     });
 
     it('matches blackFriday2026 config coupons', () => {
+        expect(getStaticCouponConfig(COUPON_CODES.BLACK_FRIDAY_2026_NEW)).toBe(blackFriday2026Metadata);
         expect(getStaticCouponConfig(COUPON_CODES.BLACK_FRIDAY_2026_BUNDLE)).toBe(blackFriday2026Metadata);
-        expect(getStaticCouponConfig(COUPON_CODES.BLACK_FRIDAY_2026_BUNDLE_CS)).toBe(blackFriday2026Metadata);
-        expect(getStaticCouponConfig('bf26bundlepromo')).toBe(blackFriday2026Metadata);
+        expect(getStaticCouponConfig('bf2026bundle')).toBe(blackFriday2026Metadata);
     });
 
     it('matches porkbun config by coupon code', () => {
