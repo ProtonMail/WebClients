@@ -1,15 +1,14 @@
-import { c } from 'ttag'
+import { useSheetsMessages } from '../../../SheetsDependenciesProvider'
+
 import { useMemo, useRef, useState } from 'react'
 import { ssfFormat } from '@rowsncolumns/utils'
-import { createStringifier } from '../../../stringifier'
+
 import { useUI } from '../../../ui-store'
 import { clsx } from 'clsx'
 import * as Ariakit from '@ariakit/react'
 import { Button, FormGroup, FormLabel } from '../../Sidebar/shared'
 import { DateAndTimeFormatEditor, type DateAndTimeFormatEditorRef } from './DateAndTimeFormatEditor'
 import { hasToken, inferDateFormatType, stripUnsupportedDirectives } from './customDateAndTimeFormat'
-
-const { s } = createStringifier(strings)
 
 const PATTERN_PRESETS: string[] = [
   'm/d',
@@ -39,6 +38,8 @@ const PATTERN_PRESETS: string[] = [
 const SAMPLE_DATE = new Date(1930, 7, 5, 13, 25, 59)
 
 function CustomDateAndTimeFormatDialogContent() {
+  const messages = useSheetsMessages()
+
   const store = useUI((ui) => ui.view.customDateAndTimeFormatDialog.store)
   const sheetId = useUI((ui) => ui.legacy.activeSheetId)
   const selections = useUI((ui) => ui.legacy.selections)
@@ -91,17 +92,20 @@ function CustomDateAndTimeFormatDialogContent() {
   return (
     <div className="flex flex-col">
       <div className="mb-6">
-        <Ariakit.DialogHeading className="text-lg font-bold">{s('Custom date and time formats')}</Ariakit.DialogHeading>
+        <Ariakit.DialogHeading className="text-lg font-bold">
+          {messages.customDateAndTimeFormatDialog['Custom date and time formats']}
+        </Ariakit.DialogHeading>
       </div>
 
       <div className="mb-6 shrink-0">
         <FormGroup>
-          <FormLabel>{s('Format')}</FormLabel>
+          <FormLabel>{messages.customDateAndTimeFormatDialog.Format}</FormLabel>
           <DateAndTimeFormatEditor ref={formatEditorRef} initialPattern={initialPattern} onPatternChange={setPattern} />
         </FormGroup>
 
         <div className="mt-3 text-sm">
-          <span className="text-[#707070]">{s('Sample')}:</span> <span>{formattedExample}</span>
+          <span className="text-[#707070]">{messages.customDateAndTimeFormatDialog.Sample}:</span>{' '}
+          <span>{formattedExample}</span>
         </div>
       </div>
 
@@ -130,7 +134,7 @@ function CustomDateAndTimeFormatDialogContent() {
           type="button"
           className="inline-flex h-[36px] items-center gap-1.5 rounded-lg border border-[#DEDBD9] px-4 text-[13px]"
         >
-          {s('Cancel')}
+          {messages.customDateAndTimeFormatDialog.Cancel}
         </Button>
         <Button
           type="button"
@@ -138,7 +142,7 @@ function CustomDateAndTimeFormatDialogContent() {
           className="inline-flex h-[36px] items-center gap-1.5 rounded-lg bg-[#6D4AFF] px-4 text-[13px] text-[white] aria-disabled:opacity-50"
           onClick={apply}
         >
-          {s('Apply')}
+          {messages.customDateAndTimeFormatDialog.Apply}
         </Button>
       </div>
     </div>
@@ -167,13 +171,12 @@ export function CustomDateAndTimeFormatDialog() {
   )
 }
 
-function strings() {
-  return {
-    'Custom date and time formats': c('sheets_2025:Spreadsheet custom date and time formats dialog')
-      .t`Custom date and time formats`,
-    Format: c('sheets_2025:Spreadsheet custom date and time formats dialog').t`Format`,
-    Cancel: c('sheets_2025:Spreadsheet custom date and time formats dialog').t`Cancel`,
-    Apply: c('sheets_2025:Spreadsheet custom date and time formats dialog').t`Apply`,
-    Sample: c('sheets_2025:Spreadsheet custom date and time formats dialog').t`Sample`,
-  }
+export const customDateAndTimeFormatDialogMessages = {
+  customDateAndTimeFormatDialog: {
+    'Custom date and time formats': `Custom date and time formats`,
+    Format: `Format`,
+    Cancel: `Cancel`,
+    Apply: `Apply`,
+    Sample: `Sample`,
+  },
 }

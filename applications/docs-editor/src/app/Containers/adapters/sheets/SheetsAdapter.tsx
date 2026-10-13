@@ -21,6 +21,7 @@ import {
   type SpreadsheetImportDestination,
   type SpreadsheetImportRequest,
 } from '../../Spreadsheet/public'
+import { useSheetsLocalization } from './useSheetsLocalization'
 import { useResolvedAppPlatform } from './utils/use-resolved-app-platform'
 import { createSheetsFileMenuActions } from './utils/create-sheets-file-menu-actions'
 import { toCollaboratorCursorNavigationDestination } from './utils/collaborator-cursor-navigation-adapter'
@@ -45,6 +46,7 @@ function toStoredSheetsPatchesType(type: SheetsPatchCategory | undefined): Store
  * Docs host glue that collects SheetsDependencies and provides them to the sheets editor.
  */
 export function SheetsAdapter({ children, clientInvoker }: SheetsAdapterProps) {
+  const { messages, localization } = useSheetsLocalization()
   const { createNotification } = useNotifications()
   const { application } = useApplication()
   const { theme } = useEditorTheme()
@@ -136,6 +138,7 @@ export function SheetsAdapter({ children, clientInvoker }: SheetsAdapterProps) {
       appPlatform,
       theme,
       featureFlags,
+      localization,
     }),
     [
       appPlatform,
@@ -146,14 +149,15 @@ export function SheetsAdapter({ children, clientInvoker }: SheetsAdapterProps) {
       logger,
       theme,
       featureFlags,
+      localization,
       receivedEverythingFromRTS,
       userName,
     ],
   )
 
   const dependencies = useMemo<SheetsDependencies>(
-    () => ({ ...shellToEditorActions, ...editorToShellActions, ...session }),
-    [shellToEditorActions, editorToShellActions, session],
+    () => ({ ...shellToEditorActions, ...editorToShellActions, ...session, messages }),
+    [shellToEditorActions, editorToShellActions, session, messages],
   )
 
   return <SheetsDependenciesProvider dependencies={dependencies}>{children}</SheetsDependenciesProvider>

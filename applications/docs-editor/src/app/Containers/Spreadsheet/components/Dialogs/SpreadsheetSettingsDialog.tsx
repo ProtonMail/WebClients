@@ -1,16 +1,14 @@
+import { useSheetsMessages } from '../../SheetsDependenciesProvider'
 import * as Icons from '../icons'
 import * as Ariakit from '@ariakit/react'
 import { clsx } from 'clsx'
 import { type ComponentProps, useMemo } from 'react'
-import { c } from 'ttag'
+
 import { createComponent } from '../utils'
 import { SelectFallbackLabel, SelectPopover } from '../Sidebar/shared'
 import { Icon } from '../ui'
-import { getLocaleRegionLabel, LOCALE_BROWSER_LIST, LOCALE_SUPPORTED_LIST } from '../../locale'
+import { getLocaleRegionLabel, LOCALE_BROWSER_LIST, LOCALE_SUPPORTED_LIST } from '../../messages/locale'
 import { useUI } from '../../ui-store'
-import { createStringifier } from '../../stringifier'
-
-const { s } = createStringifier(strings)
 
 const REST_LOCALES = LOCALE_SUPPORTED_LIST.filter((locale) => !LOCALE_BROWSER_LIST.includes(locale))
 
@@ -74,6 +72,8 @@ const SelectItem = createComponent(function SelectItem(props: Ariakit.SelectItem
 })
 
 export function SpreadsheetSettingsDialog() {
+  const messages = useSheetsMessages()
+
   const store = useUI((ui) => ui.view.spreadsheetSettingsDialog.store)
 
   const localeAuto = useUI((ui) => ui.locale.auto)
@@ -105,13 +105,13 @@ export function SpreadsheetSettingsDialog() {
         <div className="flex flex-col gap-3">
           <div>
             <Ariakit.DialogHeading className="text-lg font-bold">
-              {s('Settings for this spreadsheet')}
+              {messages.spreadsheetSettingsDialog['Settings for this spreadsheet']}
             </Ariakit.DialogHeading>
           </div>
 
           <div>
             <FormGroup>
-              <FormLabel htmlFor="locale">{s('Locale')}</FormLabel>
+              <FormLabel htmlFor="locale">{messages.spreadsheetSettingsDialog.Locale}</FormLabel>
               <Ariakit.SelectProvider
                 value={value}
                 setValue={(value) => setLocale(value === 'auto' ? undefined : value)}
@@ -120,7 +120,7 @@ export function SpreadsheetSettingsDialog() {
                 <SelectPopover>
                   <SelectGroup>
                     <SelectItem value="auto">
-                      {s('Auto')} ({getLocaleRegionLabel(localeAuto, accountLocale)})
+                      {messages.spreadsheetSettingsDialog.Auto} ({getLocaleRegionLabel(localeAuto, accountLocale)})
                     </SelectItem>
                     {LOCALE_BROWSER_LIST.length > 0
                       ? LOCALE_BROWSER_LIST.map((locale) => (
@@ -141,7 +141,11 @@ export function SpreadsheetSettingsDialog() {
                 </SelectPopover>
               </Ariakit.SelectProvider>
               <FormDescription>
-                {s('This affects formatting details such as functions, dates and currency')}
+                {
+                  messages.spreadsheetSettingsDialog[
+                    'This affects formatting details such as functions, dates and currency'
+                  ]
+                }
               </FormDescription>
             </FormGroup>
           </div>
@@ -151,17 +155,13 @@ export function SpreadsheetSettingsDialog() {
   )
 }
 
-function strings() {
-  return {
-    'Settings for this spreadsheet': c('sheets_2025:Spreadsheet editor spreadsheet settings dialog')
-      .t`Settings for this spreadsheet`,
-    'This affects formatting details such as functions, dates and currency': c(
-      'sheets_2025:Spreadsheet editor spreadsheet settings dialog',
-    ).t`This affects formatting details such as functions, dates and currency`,
-    Locale: c('sheets_2025:Spreadsheet editor spreadsheet settings dialog').t`Locale`,
-    // translator: This is the "automatic" option in the locale selection input, and is followed by the locale that will be applied if selected, e.g. "Auto (American English)"
-    Auto: c('sheets_2025:Spreadsheet editor spreadsheet settings dialog').t`Auto`,
-    Cancel: c('sheets_2025:Spreadsheet editor spreadsheet settings dialog').t`Cancel`,
-    'Save and reload': c('sheets_2025:Spreadsheet editor spreadsheet settings dialog').t`Save and reload`,
-  }
+export const spreadsheetSettingsDialogMessages = {
+  spreadsheetSettingsDialog: {
+    'Settings for this spreadsheet': `Settings for this spreadsheet`,
+    'This affects formatting details such as functions, dates and currency': `This affects formatting details such as functions, dates and currency`,
+    Locale: `Locale`,
+    Auto: `Auto`,
+    Cancel: `Cancel`,
+    'Save and reload': `Save and reload`,
+  },
 }

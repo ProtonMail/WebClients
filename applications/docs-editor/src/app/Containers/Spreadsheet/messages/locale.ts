@@ -1,7 +1,4 @@
-import { localeCode, subscribeToLocaleChange } from '@proton/shared/lib/i18n'
-import { getIntlLocale } from '@proton/shared/lib/i18n/helper'
-import { useEffect, useMemo, useState } from 'react'
-import { CURRENCY_PATTERN, getCurrencySymbol } from './constants'
+import { CURRENCY_PATTERN, getCurrencySymbol } from '../constants'
 import { ssfFormat } from '@rowsncolumns/utils'
 
 const CURRENCY_FALLBACK = 'USD'
@@ -152,21 +149,15 @@ export function getCurrencyList(locale: string) {
   return list.sort((a, b) => a.name.localeCompare(b.name, locale))
 }
 
-export function useAccountLocale() {
-  const [locale, setLocale] = useState<string>(getIntlLocale(localeCode).toLowerCase())
-  useEffect(() => subscribeToLocaleChange(({ localeCode }) => setLocale(getIntlLocale(localeCode).toLowerCase())), [])
-  return locale
-}
-
-export function useLocaleAuto() {
-  const accountLocale = useAccountLocale()
-  const localeAuto = useMemo(() => {
-    if (isSupportedLocale(accountLocale)) {
-      return accountLocale
-    }
-
-    return getNavigatorLanguages().find((locale) => isSupportedLocale(locale)) ?? LOCALE_FALLBACK
-  }, [accountLocale])
-
-  return localeAuto
+/**
+ * Resolve the workbook's Auto number/date-format locale for the production host.
+ * Prefer the account UI locale when supported, then the first supported browser
+ * language, then LOCALE_FALLBACK. This does not select UI translations.
+ */
+export function resolveDefaultWorkbookLocale(uiLocale: string, browserLanguages: readonly string[]) {
+  const accountLocale = uiLocale.toLowerCase().replace(/_/g, '-')
+  if (isSupportedLocale(accountLocale)) {
+    return accountLocale
+  }
+  return browserLanguages.map((locale) => locale.toLowerCase()).find(isSupportedLocale) ?? LOCALE_FALLBACK
 }

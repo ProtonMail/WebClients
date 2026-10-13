@@ -1,5 +1,6 @@
 import type { PropsWithChildren } from 'react'
 import { createContext, useContext } from 'react'
+import type { SheetsMessages } from './messages/SheetsMessages'
 import type { SheetsActionType } from './contract/SheetsAction'
 import type { SheetsLogger } from './contract/SheetsLogger'
 import type { SheetsPatchCategory } from './contract/SheetsPatch'
@@ -84,17 +85,29 @@ export type SheetsSession = {
   appPlatform: 'web' | 'nativeMobileWeb' | null
   theme: 'light' | 'dark'
   featureFlags: SheetsFeatureFlags
+  localization: { uiLocale: string; defaultWorkbookLocale: string }
 }
 
-export type SheetsDependencies = SheetsShellToEditorActions & SheetsEditorToShellActions & SheetsSession
+export type SheetsDependencies = SheetsShellToEditorActions &
+  SheetsEditorToShellActions &
+  SheetsSession & {
+    messages?: SheetsMessages
+    defaultMessages?: SheetsMessages
+  }
 
 const SheetsDependenciesContext = createContext<SheetsDependencies | undefined>(undefined)
+const SheetsMessagesContext = createContext<SheetsMessages | undefined>(undefined)
 
 export function SheetsDependenciesProvider({
   children,
   dependencies,
 }: PropsWithChildren<{ dependencies: SheetsDependencies }>) {
-  return <SheetsDependenciesContext.Provider value={dependencies}>{children}</SheetsDependenciesContext.Provider>
+  const inheritedMessages = useContext(SheetsMessagesContext)
+  return (
+    <SheetsMessagesContext.Provider value={dependencies.messages ?? inheritedMessages ?? dependencies.defaultMessages}>
+      <SheetsDependenciesContext.Provider value={dependencies}>{children}</SheetsDependenciesContext.Provider>
+    </SheetsMessagesContext.Provider>
+  )
 }
 
 export function useSheetsDependencies(): SheetsDependencies {
@@ -103,4 +116,12 @@ export function useSheetsDependencies(): SheetsDependencies {
     throw new Error('SheetsDependenciesProvider is missing')
   }
   return dependencies
+}
+
+export function useSheetsMessages(): SheetsMessages {
+  const messages = useContext(SheetsMessagesContext)
+  if (!messages) {
+    throw new Error('Sheets requires messages from a host provider or the standalone English entry.')
+  }
+  return messages
 }

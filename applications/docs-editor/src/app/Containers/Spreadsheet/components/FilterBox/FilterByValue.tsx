@@ -1,15 +1,12 @@
+import { BLANK_LABEL, DEFAULT_ARRAY } from '@rowsncolumns/spreadsheet'
+import { useSheetsMessages } from '../../SheetsDependenciesProvider'
 import * as Icons from '../icons'
 import { useMemo, useRef, useState } from 'react'
 import * as Ariakit from '@ariakit/react'
 import { Button, FormGroup, FormLabel, Input } from '../Sidebar/shared'
 import * as UI from '../ui'
 import { useVirtualizer } from '@tanstack/react-virtual'
-import { DEFAULT_ARRAY } from '@rowsncolumns/spreadsheet'
 import { escapeCharacters } from '@rowsncolumns/utils'
-import { c } from 'ttag'
-import { createStringifier } from '../../stringifier'
-
-const { s } = createStringifier(strings)
 
 type FilterByValueProps = {
   values?: string[]
@@ -18,6 +15,8 @@ type FilterByValueProps = {
 }
 
 export function FilterByValue({ visibleValues, values = DEFAULT_ARRAY, onChangeVisibleValues }: FilterByValueProps) {
+  const messages = useSheetsMessages()
+
   const [query, setQuery] = useState('')
   const parentRef = useRef<HTMLDivElement | null>(null)
 
@@ -52,11 +51,11 @@ export function FilterByValue({ visibleValues, values = DEFAULT_ARRAY, onChangeV
 
   return (
     <FormGroup>
-      <FormLabel>{s('Filter by value')}</FormLabel>
+      <FormLabel>{messages.filterByValue['Filter by value']}</FormLabel>
 
       <div className="flex items-center gap-2 text-xs text-[--link-norm] *:py-1">
-        <Button onClick={() => onChangeVisibleValues(undefined)}>{s('Select all')}</Button>
-        <Button onClick={() => onChangeVisibleValues([])}>{s('Clear')}</Button>
+        <Button onClick={() => onChangeVisibleValues(undefined)}>{messages.filterByValue['Select all']}</Button>
+        <Button onClick={() => onChangeVisibleValues([])}>{messages.filterByValue.Clear}</Button>
       </div>
 
       <div className="relative isolate flex flex-col">
@@ -105,7 +104,9 @@ export function FilterByValue({ visibleValues, values = DEFAULT_ARRAY, onChangeV
                   <span className="mt-0 shrink-0 opacity-0 group-aria-checked:opacity-100">
                     <UI.Icon data={Icons.checkmark} />
                   </span>
-                  <span className="line-clamp-3">{value}</span>
+                  <span className="line-clamp-3">
+                    {value === BLANK_LABEL ? messages.contextMenu['(Blanks)'] : value}
+                  </span>
                 </Ariakit.Checkbox>
               </Ariakit.CheckboxProvider>
             )
@@ -116,10 +117,10 @@ export function FilterByValue({ visibleValues, values = DEFAULT_ARRAY, onChangeV
   )
 }
 
-function strings() {
-  return {
-    'Filter by value': c('sheets_2025:Spreadsheet filter menu').t`Filter by value`,
-    'Select all': c('sheets_2025:Spreadsheet filter menu').t`Select all`,
-    Clear: c('sheets_2025:Spreadsheet filter menu').t`Clear`,
-  }
+export const filterByValueMessages = {
+  filterByValue: {
+    'Filter by value': `Filter by value`,
+    'Select all': `Select all`,
+    Clear: `Clear`,
+  },
 }

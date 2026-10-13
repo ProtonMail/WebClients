@@ -1,9 +1,8 @@
-import { c } from 'ttag'
-import { ssfFormat } from '@rowsncolumns/utils'
-import { createStringifier } from '../../../stringifier'
-import type { ExpandType } from '../../utils'
+import type { SheetsMessages } from '../../../messages/SheetsMessages'
 
-export const { s } = createStringifier(strings)
+import { ssfFormat } from '@rowsncolumns/utils'
+
+import type { ExpandType } from '../../utils'
 
 type TokenVariant = {
   code: string
@@ -22,120 +21,134 @@ type TokenCategoryDef = {
   tokenDefs: TokenDef[]
 }
 
-export const TOKENS_BY_CATEGORY = [
+// Invariant codes and message keys; parsing must not import the English fallback.
+const TOKENS_BY_CATEGORY = [
   {
     type: 'date',
-    label: s('Date'),
+    label: 'Date',
     tokenDefs: [
       {
         type: 'day',
-        label: s('Day'),
+        label: 'Day',
         variants: [
-          { code: 'd', label: s('Day without leading zero') },
-          { code: 'dd', label: s('Day with leading zero') },
-          { code: 'ddd', label: s('Day as abbreviation') },
-          { code: 'dddd', label: s('Day as full name') },
+          { code: 'd', label: 'Day without leading zero' },
+          { code: 'dd', label: 'Day with leading zero' },
+          { code: 'ddd', label: 'Day as abbreviation' },
+          { code: 'dddd', label: 'Day as full name' },
         ],
       },
       {
         type: 'month',
-        label: s('Month'),
+        label: 'Month',
         variants: [
-          { code: 'm', label: s('Month without leading zero') },
-          { code: 'mm', label: s('Month with leading zero') },
-          { code: 'mmm', label: s('Month as abbreviation') },
-          { code: 'mmmm', label: s('Month as full name') },
-          { code: 'mmmmm', label: s('First letter of the month') },
+          { code: 'm', label: 'Month without leading zero' },
+          { code: 'mm', label: 'Month with leading zero' },
+          { code: 'mmm', label: 'Month as abbreviation' },
+          { code: 'mmmm', label: 'Month as full name' },
+          { code: 'mmmmm', label: 'First letter of the month' },
         ],
       },
       {
         type: 'year',
-        label: s('Year'),
+        label: 'Year',
         variants: [
-          { code: 'yy', label: s('Two digit year') },
-          { code: 'yyyy', label: s('Full numeric year') },
+          { code: 'yy', label: 'Two digit year' },
+          { code: 'yyyy', label: 'Full numeric year' },
         ],
       },
     ],
   },
   {
     type: 'time',
-    label: s('Time'),
+    label: 'Time',
     tokenDefs: [
       {
         type: 'hour',
-        label: s('Hour'),
+        label: 'Hour',
         variants: [
-          { code: 'h', label: s('Hour without leading zero') },
-          { code: 'hh', label: s('Hour with leading zero') },
+          { code: 'h', label: 'Hour without leading zero' },
+          { code: 'hh', label: 'Hour with leading zero' },
         ],
       },
       {
         type: 'minute',
-        label: s('Minute'),
+        label: 'Minute',
         variants: [
-          { code: 'm', label: s('Minute without leading zero') },
-          { code: 'mm', label: s('Minute with leading zero') },
+          { code: 'm', label: 'Minute without leading zero' },
+          { code: 'mm', label: 'Minute with leading zero' },
         ],
       },
       {
         type: 'second',
-        label: s('Second'),
+        label: 'Second',
         variants: [
-          { code: 's', label: s('Second without leading zero') },
-          { code: 'ss', label: s('Second with leading zero') },
+          { code: 's', label: 'Second without leading zero' },
+          { code: 'ss', label: 'Second with leading zero' },
         ],
       },
       {
         type: 'millisecond',
-        label: s('Millisecond'),
+        label: 'Millisecond',
         variants: [
-          { code: '.0', label: s('Precision to 1/10 of a second') },
-          { code: '.00', label: s('Precision to 1/100 of a second') },
-          { code: '.000', label: s('Precision to 1/1000 of a second') },
+          { code: '.0', label: 'Precision to 1/10 of a second' },
+          { code: '.00', label: 'Precision to 1/100 of a second' },
+          { code: '.000', label: 'Precision to 1/1000 of a second' },
         ],
       },
       {
         type: 'ampm',
-        label: s('AM/PM'),
+        label: 'AM/PM',
         // TODO: re-add the shortened AM/PM variants once @rowsncolumns/utils renders them correctly.
         // Currently `a/p` isn't recognized (renders literally + stays 24-hour) and `A/P` renders the
         // full "PM" instead of "P", so only `AM/PM` produces correct output.
-        variants: [{ code: 'AM/PM', label: s('Full') }],
+        variants: [{ code: 'AM/PM', label: 'Full' }],
       },
     ],
   },
   {
     type: 'duration',
-    label: s('Duration'),
+    label: 'Duration',
     tokenDefs: [
       {
         type: 'elapsed-hour',
-        label: s('Elapsed hours'),
+        label: 'Elapsed hours',
         variants: [
-          { code: '[h]', label: s('Elapsed hours without leading zero') },
-          { code: '[hh]', label: s('Elapsed hours with leading zero') },
+          { code: '[h]', label: 'Elapsed hours without leading zero' },
+          { code: '[hh]', label: 'Elapsed hours with leading zero' },
         ],
       },
       {
         type: 'elapsed-minute',
-        label: s('Elapsed minutes'),
+        label: 'Elapsed minutes',
         variants: [
-          { code: '[m]', label: s('Elapsed minutes without leading zero') },
-          { code: '[mm]', label: s('Elapsed minutes with leading zero') },
+          { code: '[m]', label: 'Elapsed minutes without leading zero' },
+          { code: '[mm]', label: 'Elapsed minutes with leading zero' },
         ],
       },
       {
         type: 'elapsed-second',
-        label: s('Elapsed seconds'),
+        label: 'Elapsed seconds',
         variants: [
-          { code: '[s]', label: s('Elapsed seconds without leading zero') },
-          { code: '[ss]', label: s('Elapsed seconds with leading zero') },
+          { code: '[s]', label: 'Elapsed seconds without leading zero' },
+          { code: '[ss]', label: 'Elapsed seconds with leading zero' },
         ],
       },
     ],
   },
 ] as const satisfies TokenCategoryDef[]
+
+export function getTokensByCategory(messages: SheetsMessages) {
+  const labels = messages.customDateAndTimeFormat
+  return TOKENS_BY_CATEGORY.map((category) => ({
+    ...category,
+    label: labels[category.label],
+    tokenDefs: category.tokenDefs.map((def) => ({
+      ...def,
+      label: labels[def.label],
+      variants: def.variants.map((variant) => ({ ...variant, label: labels[variant.label] })),
+    })),
+  }))
+}
 
 export type TokenPointer = ExpandType<
   (typeof TOKENS_BY_CATEGORY)[number]['tokenDefs'][number] extends infer Def
@@ -166,7 +179,9 @@ function buildMenuColumns(tokenCategories: TokenCategoryDef[]) {
   return columns
 }
 
-export const MENU_COLUMNS = buildMenuColumns(TOKENS_BY_CATEGORY)
+export function getMenuColumns(messages: SheetsMessages) {
+  return buildMenuColumns(getTokensByCategory(messages))
+}
 
 // Maps each SSF code to the token type(s) that use it. Only `m`/`mm` are ambiguous (month vs minute).
 const CODE_TO_TYPES = new Map<string, string[]>()
@@ -393,90 +408,49 @@ export function getTokenExample(tokenPointer: TokenPointer, localeResolved: stri
   }
 }
 
-function strings() {
-  return {
-    Delete: c('sheets_2025:Spreadsheet custom date and time formats editor').t`Delete`,
-
-    // Categories
-    Date: c('sheets_2025:Spreadsheet custom date and time formats editor').t`Date`,
-    Time: c('sheets_2025:Spreadsheet custom date and time formats editor').t`Time`,
-    Duration: c('sheets_2025:Spreadsheet custom date and time formats editor').t`Duration`,
-
-    // Token types
-    Day: c('sheets_2025:Spreadsheet custom date and time formats editor').t`Day`,
-    Month: c('sheets_2025:Spreadsheet custom date and time formats editor').t`Month`,
-    Year: c('sheets_2025:Spreadsheet custom date and time formats editor').t`Year`,
-    Hour: c('sheets_2025:Spreadsheet custom date and time formats editor').t`Hour`,
-    Minute: c('sheets_2025:Spreadsheet custom date and time formats editor').t`Minute`,
-    Second: c('sheets_2025:Spreadsheet custom date and time formats editor').t`Second`,
-    Millisecond: c('sheets_2025:Spreadsheet custom date and time formats editor').t`Millisecond`,
-    'AM/PM': c('sheets_2025:Spreadsheet custom date and time formats editor').t`AM/PM`,
-    'Elapsed hours': c('sheets_2025:Spreadsheet custom date and time formats editor').t`Elapsed hours`,
-    'Elapsed minutes': c('sheets_2025:Spreadsheet custom date and time formats editor').t`Elapsed minutes`,
-    'Elapsed seconds': c('sheets_2025:Spreadsheet custom date and time formats editor').t`Elapsed seconds`,
-
-    // Day variants
-    'Day without leading zero': c('sheets_2025:Spreadsheet custom date and time formats editor')
-      .t`Day without leading zero`,
-    'Day with leading zero': c('sheets_2025:Spreadsheet custom date and time formats editor').t`Day with leading zero`,
-    'Day as abbreviation': c('sheets_2025:Spreadsheet custom date and time formats editor').t`Day as abbreviation`,
-    'Day as full name': c('sheets_2025:Spreadsheet custom date and time formats editor').t`Day as full name`,
-
-    // Month variants
-    'Month without leading zero': c('sheets_2025:Spreadsheet custom date and time formats editor')
-      .t`Month without leading zero`,
-    'Month with leading zero': c('sheets_2025:Spreadsheet custom date and time formats editor')
-      .t`Month with leading zero`,
-    'Month as abbreviation': c('sheets_2025:Spreadsheet custom date and time formats editor').t`Month as abbreviation`,
-    'Month as full name': c('sheets_2025:Spreadsheet custom date and time formats editor').t`Month as full name`,
-    'First letter of the month': c('sheets_2025:Spreadsheet custom date and time formats editor')
-      .t`First letter of the month`,
-
-    // Year variants
-    'Two digit year': c('sheets_2025:Spreadsheet custom date and time formats editor').t`Two digit year`,
-    'Full numeric year': c('sheets_2025:Spreadsheet custom date and time formats editor').t`Full numeric year`,
-
-    // Hour variants
-    'Hour without leading zero': c('sheets_2025:Spreadsheet custom date and time formats editor')
-      .t`Hour without leading zero`,
-    'Hour with leading zero': c('sheets_2025:Spreadsheet custom date and time formats editor')
-      .t`Hour with leading zero`,
-
-    // Minute variants
-    'Minute without leading zero': c('sheets_2025:Spreadsheet custom date and time formats editor')
-      .t`Minute without leading zero`,
-    'Minute with leading zero': c('sheets_2025:Spreadsheet custom date and time formats editor')
-      .t`Minute with leading zero`,
-
-    // Second variants
-    'Second without leading zero': c('sheets_2025:Spreadsheet custom date and time formats editor')
-      .t`Second without leading zero`,
-    'Second with leading zero': c('sheets_2025:Spreadsheet custom date and time formats editor')
-      .t`Second with leading zero`,
-
-    // Millisecond variants
-    'Precision to 1/10 of a second': c('sheets_2025:Spreadsheet custom date and time formats editor')
-      .t`Precision to 1/10 of a second`,
-    'Precision to 1/100 of a second': c('sheets_2025:Spreadsheet custom date and time formats editor')
-      .t`Precision to 1/100 of a second`,
-    'Precision to 1/1000 of a second': c('sheets_2025:Spreadsheet custom date and time formats editor')
-      .t`Precision to 1/1000 of a second`,
-
-    // AM/PM variants
-    Full: c('sheets_2025:Spreadsheet custom date and time formats editor').t`Full`,
-
-    // Elapsed variants
-    'Elapsed hours without leading zero': c('sheets_2025:Spreadsheet custom date and time formats editor')
-      .t`Elapsed hours without leading zero`,
-    'Elapsed hours with leading zero': c('sheets_2025:Spreadsheet custom date and time formats editor')
-      .t`Elapsed hours with leading zero`,
-    'Elapsed minutes without leading zero': c('sheets_2025:Spreadsheet custom date and time formats editor')
-      .t`Elapsed minutes without leading zero`,
-    'Elapsed minutes with leading zero': c('sheets_2025:Spreadsheet custom date and time formats editor')
-      .t`Elapsed minutes with leading zero`,
-    'Elapsed seconds without leading zero': c('sheets_2025:Spreadsheet custom date and time formats editor')
-      .t`Elapsed seconds without leading zero`,
-    'Elapsed seconds with leading zero': c('sheets_2025:Spreadsheet custom date and time formats editor')
-      .t`Elapsed seconds with leading zero`,
-  }
+export const customDateAndTimeFormatMessages = {
+  customDateAndTimeFormat: {
+    Delete: `Delete`,
+    Date: `Date`,
+    Time: `Time`,
+    Duration: `Duration`,
+    Day: `Day`,
+    Month: `Month`,
+    Year: `Year`,
+    Hour: `Hour`,
+    Minute: `Minute`,
+    Second: `Second`,
+    Millisecond: `Millisecond`,
+    'AM/PM': `AM/PM`,
+    'Elapsed hours': `Elapsed hours`,
+    'Elapsed minutes': `Elapsed minutes`,
+    'Elapsed seconds': `Elapsed seconds`,
+    'Day without leading zero': `Day without leading zero`,
+    'Day with leading zero': `Day with leading zero`,
+    'Day as abbreviation': `Day as abbreviation`,
+    'Day as full name': `Day as full name`,
+    'Month without leading zero': `Month without leading zero`,
+    'Month with leading zero': `Month with leading zero`,
+    'Month as abbreviation': `Month as abbreviation`,
+    'Month as full name': `Month as full name`,
+    'First letter of the month': `First letter of the month`,
+    'Two digit year': `Two digit year`,
+    'Full numeric year': `Full numeric year`,
+    'Hour without leading zero': `Hour without leading zero`,
+    'Hour with leading zero': `Hour with leading zero`,
+    'Minute without leading zero': `Minute without leading zero`,
+    'Minute with leading zero': `Minute with leading zero`,
+    'Second without leading zero': `Second without leading zero`,
+    'Second with leading zero': `Second with leading zero`,
+    'Precision to 1/10 of a second': `Precision to 1/10 of a second`,
+    'Precision to 1/100 of a second': `Precision to 1/100 of a second`,
+    'Precision to 1/1000 of a second': `Precision to 1/1000 of a second`,
+    Full: `Full`,
+    'Elapsed hours without leading zero': `Elapsed hours without leading zero`,
+    'Elapsed hours with leading zero': `Elapsed hours with leading zero`,
+    'Elapsed minutes without leading zero': `Elapsed minutes without leading zero`,
+    'Elapsed minutes with leading zero': `Elapsed minutes with leading zero`,
+    'Elapsed seconds without leading zero': `Elapsed seconds without leading zero`,
+    'Elapsed seconds with leading zero': `Elapsed seconds with leading zero`,
+  },
 }

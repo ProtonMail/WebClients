@@ -1,9 +1,12 @@
+import { useSheetsMessages } from '../../SheetsDependenciesProvider'
 import { useUI } from '../../ui-store'
 import * as Ariakit from '@ariakit/react'
-import { c } from 'ttag'
+
 import { Button } from '../shared/Button'
 
 export function DeleteSheetDialog() {
+  const messages = useSheetsMessages()
+
   const sheetId = useUI((ui) => ui.view.deleteSheetConfirmation.sheetId)
   const deleteSheet = useUI.$.sheets.delete
   const getSheetName = useUI.$.legacy.getSheetName
@@ -35,26 +38,34 @@ export function DeleteSheetDialog() {
       >
         <div className="mb-4">
           <Ariakit.DialogHeading className="text-xl font-bold">
-            {c('sheets_2025:Spreadsheet delete sheet dialog').t`Delete sheet`}
+            {messages.deleteSheet['Delete sheet']}
           </Ariakit.DialogHeading>
         </div>
 
-        <div className="mb-6">
-          {c('sheets_2025:Spreadsheet delete sheet dialog').t`Are you sure you want to delete ${sheetName}?`}
-        </div>
+        <div className="mb-6">{messages.deleteSheet['Are you sure you want to delete ${sheetName}?'](sheetName)}</div>
 
         <div className="flex items-center justify-end gap-2 text-sm">
           <Ariakit.DialogDismiss render={<Button type="button" className="!px-[.9375rem] !py-[.4375rem]" />}>
-            {c('sheets_2025:Spreadsheet delete sheet dialog').t`Cancel`}
+            {messages.deleteSheet.Cancel}
           </Ariakit.DialogDismiss>
           <Button
             type="submit"
             className="!border-transparent !bg-[--signal-danger] !px-[.9375rem] !py-[.4375rem] !text-[white] hover:!bg-[--signal-danger-major-1] active:!bg-[--signal-danger-major-2]"
           >
-            {c('sheets_2025:Spreadsheet delete sheet dialog').t`Delete`}
+            {messages.deleteSheet.Delete}
           </Button>
         </div>
       </Ariakit.Dialog>
     </Ariakit.DialogProvider>
   )
+}
+
+export const deleteSheetMessages = {
+  deleteSheet: {
+    'Delete sheet': `Delete sheet`,
+    'Are you sure you want to delete ${sheetName}?': (sheetName: string) =>
+      `Are you sure you want to delete ${sheetName}?`,
+    Cancel: `Cancel`,
+    Delete: `Delete`,
+  },
 }

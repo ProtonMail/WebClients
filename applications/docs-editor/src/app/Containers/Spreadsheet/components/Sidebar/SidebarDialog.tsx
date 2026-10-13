@@ -1,9 +1,10 @@
+import { useSheetsMessages } from '../../SheetsDependenciesProvider'
 import * as Icons from '../icons'
 import type React from 'react'
 import { forwardRef, memo, useEffect, useId, useLayoutEffect, useMemo } from 'react'
 import * as Ariakit from '@ariakit/react'
 import { clsx } from 'clsx'
-import { c } from 'ttag'
+
 import { useEvent } from '../utils'
 import {
   Button,
@@ -13,15 +14,14 @@ import {
   useSidebarDialogContext,
 } from './shared'
 import { Icon } from '../ui'
-import { createStringifier } from '../../stringifier'
-
-const { s } = createStringifier(strings)
 
 export interface SidebarDialogHeaderProps {
   title: string
 }
 
 export function SidebarDialogHeader({ title }: SidebarDialogHeaderProps) {
+  const messages = useSheetsMessages()
+
   const { sidebarDialog, titleId } = useSidebarDialogContext()
 
   return (
@@ -33,7 +33,7 @@ export function SidebarDialogHeader({ title }: SidebarDialogHeaderProps) {
       <Button
         type="button"
         className="flex size-[36px] items-center justify-center rounded-lg"
-        aria-label={s('Close')}
+        aria-label={messages.sidebarDialog.Close}
         onClick={() => sidebarDialog.setOpen(false)}
       >
         <Icon data={Icons.crossBig} />
@@ -83,8 +83,8 @@ export const SidebarDialog = memo(
   }),
 )
 
-function strings() {
-  return {
-    Close: c('sheets_2025:Spreadsheet sidebar dialog').t`Close`,
-  }
+export const sidebarDialogMessages = {
+  sidebarDialog: {
+    Close: `Close`,
+  },
 }

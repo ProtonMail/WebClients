@@ -1,6 +1,6 @@
+import { useSheetsMessages } from '../../SheetsDependenciesProvider'
 import { useState, type ComponentPropsWithRef } from 'react'
-import { c } from 'ttag'
-import { createStringifier } from '../../stringifier'
+
 import * as Atoms from '../atoms'
 import * as Icons from '../icons'
 import { FontSelect } from './FontSelect'
@@ -29,9 +29,9 @@ import { BorderSelectorContent } from '../shared/BorderSelector'
 
 export interface ToolbarProps extends ComponentPropsWithRef<'div'> {}
 
-const { s } = createStringifier(strings)
-
 export const Toolbar = createComponent(function Toolbar({ ...props }: ToolbarProps) {
+  const messages = useSheetsMessages()
+
   const isViewOnlyMode = useUI((ui) => ui.info.isViewOnlyMode)
 
   if (isViewOnlyMode) {
@@ -39,7 +39,7 @@ export const Toolbar = createComponent(function Toolbar({ ...props }: ToolbarPro
       <T.Container
         {...props}
         mainToolbarSlot={<ViewOnlyModeToolbarGroups />}
-        renderOverflowDisclosure={<T.Item icon={Icons.threeDotsVertical}>{s('More')}</T.Item>}
+        renderOverflowDisclosure={<T.Item icon={Icons.threeDotsVertical}>{messages.toolbar.More}</T.Item>}
         trailingSlot={<EditingDisabledButton />}
       />
     )
@@ -52,7 +52,7 @@ export const Toolbar = createComponent(function Toolbar({ ...props }: ToolbarPro
       overflowToolbarSlot={<ToolbarGroups />}
       // trailingSlot={<InsertChart />} // TODO: temporarily disabled
       formulaBarSlot={<FormulaBar />}
-      renderOverflowDisclosure={<T.Item icon={Icons.threeDotsVertical}>{s('More')}</T.Item>}
+      renderOverflowDisclosure={<T.Item icon={Icons.threeDotsVertical}>{messages.toolbar.More}</T.Item>}
     />
   )
 })
@@ -67,6 +67,8 @@ function ViewOnlyModeToolbarGroups() {
 }
 
 function ToolbarGroups() {
+  const messages = useSheetsMessages()
+
   return (
     <>
       <T.Group groupId="main">
@@ -82,12 +84,14 @@ function ToolbarGroups() {
         <FormatAsPercent />
         <DecreaseDecimalPlaces />
         <IncreaseDecimalPlaces />
-        <NumberFormatsMenu renderMenuButton={<T.Item icon={Icons.numbers}>{s('More formats')}</T.Item>} />
+        <NumberFormatsMenu
+          renderMenuButton={<T.Item icon={Icons.numbers}>{messages.toolbar['More formats']}</T.Item>}
+        />
       </T.Group>
       <T.Group groupId="font">
         <FontSelect
           renderSelect={
-            <T.Item variant="label" dropdownIndicator className="w-[8rem]" accessibilityLabel={s('Font')} />
+            <T.Item variant="label" dropdownIndicator className="w-[8rem]" accessibilityLabel={messages.toolbar.Font} />
           }
         />
         <FontSizeControls />
@@ -125,6 +129,8 @@ function ToolbarGroups() {
 // TODO: should there be a withFocusGridExceptKeyboard? maybe not if going back to the toolbar is easy with the keyboard, and we remember the last element that was focused
 
 function Undo() {
+  const messages = useSheetsMessages()
+
   return (
     <T.Item
       icon={Icons.arrowUpAndLeft}
@@ -137,12 +143,14 @@ function Undo() {
         </Atoms.KbdShortcut>
       }
     >
-      {s('Undo')}
+      {messages.toolbar.Undo}
     </T.Item>
   )
 }
 
 function Redo() {
+  const messages = useSheetsMessages()
+
   return (
     <T.Item
       icon={Icons.arrowUpAndLeft}
@@ -157,29 +165,35 @@ function Redo() {
         </Atoms.KbdShortcut>
       }
     >
-      {s('Redo')}
+      {messages.toolbar.Redo}
     </T.Item>
   )
 }
 
 function Find() {
+  const messages = useSheetsMessages()
+
   return (
     <T.Item icon={Icons.magnifier} onClick={useUI.$.search.open}>
-      {s('Find')}
+      {messages.toolbar.Find}
     </T.Item>
   )
 }
 
 // TODO: broken
 function ClearFormatting() {
+  const messages = useSheetsMessages()
+
   return (
     <T.Item icon={Icons.eraser} onClick={useUI.$.format.clear} disabled={useUI((ui) => ui.info.isReadonly)}>
-      {s('Clear formatting')}
+      {messages.toolbar['Clear formatting']}
     </T.Item>
   )
 }
 
 function PaintFormat() {
+  const messages = useSheetsMessages()
+
   return (
     <T.Item
       icon={Icons.paintRoller}
@@ -187,12 +201,14 @@ function PaintFormat() {
       onClick={useUI.$.format.paintFormat.save}
       disabled={useUI((ui) => ui.info.isReadonly)}
     >
-      {s('Paint format')}
+      {messages.toolbar['Paint format']}
     </T.Item>
   )
 }
 
 function FormatAsCurrency() {
+  const messages = useSheetsMessages()
+
   const currencySymbol = useUI((ui) => ui.locale.currency.symbol)
 
   return (
@@ -210,48 +226,56 @@ function FormatAsCurrency() {
         <span className="flex min-w-5 justify-center">{currencySymbol}</span>
       </Ariakit.TooltipAnchor>
 
-      <UI.Tooltip>{s('Format as currency')}</UI.Tooltip>
+      <UI.Tooltip>{messages.toolbar['Format as currency']}</UI.Tooltip>
     </Ariakit.TooltipProvider>
   )
 }
 
 function FormatAsPercent() {
+  const messages = useSheetsMessages()
+
   return (
     <T.Item
       icon={Icons.percentageLight}
       onClick={useUI.$.format.pattern.percent.set}
       disabled={useUI((ui) => ui.info.isReadonly)}
     >
-      {s('Format as percent')}
+      {messages.toolbar['Format as percent']}
     </T.Item>
   )
 }
 
 function DecreaseDecimalPlaces() {
+  const messages = useSheetsMessages()
+
   return (
     <T.Item
       icon={Icons.decreaseDecimalPlaces}
       onClick={useUI.$.format.decreaseDecimalPlaces}
       disabled={useUI((ui) => ui.info.isReadonly)}
     >
-      {s('Decrease decimal places')}
+      {messages.toolbar['Decrease decimal places']}
     </T.Item>
   )
 }
 
 function IncreaseDecimalPlaces() {
+  const messages = useSheetsMessages()
+
   return (
     <T.Item
       icon={Icons.increaseDecimalPlaces}
       onClick={useUI.$.format.increaseDecimalPlaces}
       disabled={useUI((ui) => ui.info.isReadonly)}
     >
-      {s('Increase decimal places')}
+      {messages.toolbar['Increase decimal places']}
     </T.Item>
   )
 }
 
 function Bold() {
+  const messages = useSheetsMessages()
+
   return (
     <T.Item
       icon={Icons.textBold}
@@ -259,12 +283,14 @@ function Bold() {
       onClick={useUI.$.format.text.bold.toggle}
       disabled={useUI((ui) => ui.info.isReadonly)}
     >
-      {s('Bold')}
+      {messages.toolbar.Bold}
     </T.Item>
   )
 }
 
 function Italic() {
+  const messages = useSheetsMessages()
+
   return (
     <T.Item
       icon={Icons.textItalic}
@@ -272,12 +298,14 @@ function Italic() {
       onClick={useUI.$.format.text.italic.toggle}
       disabled={useUI((ui) => ui.info.isReadonly)}
     >
-      {s('Italic')}
+      {messages.toolbar.Italic}
     </T.Item>
   )
 }
 
 function Underline() {
+  const messages = useSheetsMessages()
+
   return (
     <T.Item
       icon={Icons.textUnderline}
@@ -285,12 +313,14 @@ function Underline() {
       onClick={useUI.$.format.text.underline.toggle}
       disabled={useUI((ui) => ui.info.isReadonly)}
     >
-      {s('Underline')}
+      {messages.toolbar.Underline}
     </T.Item>
   )
 }
 
 function Strikethrough() {
+  const messages = useSheetsMessages()
+
   return (
     <T.Item
       icon={Icons.textStrikethrough}
@@ -298,12 +328,14 @@ function Strikethrough() {
       onClick={useUI.$.format.text.strikethrough.toggle}
       disabled={useUI((ui) => ui.info.isReadonly)}
     >
-      {s('Strikethrough')}
+      {messages.toolbar.Strikethrough}
     </T.Item>
   )
 }
 
 function TextColor() {
+  const messages = useSheetsMessages()
+
   const popover = Ariakit.usePopoverStore()
   const mounted = Ariakit.useStoreState(popover, 'mounted')
   const color = useUI((ui) => ui.format.text.color.value)
@@ -320,7 +352,7 @@ function TextColor() {
           onClick={() => onChange(lastUsedColor)}
           disabled={useUI((ui) => ui.info.isReadonly)}
         >
-          {s('Apply text color')}
+          {messages.toolbar['Apply text color']}
         </T.Item>
         <Ariakit.PopoverDisclosure
           render={
@@ -329,7 +361,7 @@ function TextColor() {
               icon={Icons.chevronDownFilled}
               disabled={useUI((ui) => ui.info.isReadonly)}
             >
-              {s('Choose text color')}
+              {messages.toolbar['Choose text color']}
             </T.Item>
           }
         />
@@ -344,6 +376,8 @@ function TextColor() {
 }
 
 function FillColor() {
+  const messages = useSheetsMessages()
+
   const popover = Ariakit.usePopoverStore()
   const mounted = Ariakit.useStoreState(popover, 'mounted')
   const color = useUI((ui) => ui.format.backgroundColor.value)
@@ -360,7 +394,7 @@ function FillColor() {
           onClick={() => onChange(lastUsedColor)}
           disabled={useUI((ui) => ui.info.isReadonly)}
         >
-          {s('Apply fill color')}
+          {messages.toolbar['Apply fill color']}
         </T.Item>
         <Ariakit.PopoverDisclosure
           render={
@@ -369,7 +403,7 @@ function FillColor() {
               icon={Icons.chevronDownFilled}
               disabled={useUI((ui) => ui.info.isReadonly)}
             >
-              {s('Choose fill color')}
+              {messages.toolbar['Choose fill color']}
             </T.Item>
           }
         />
@@ -384,6 +418,8 @@ function FillColor() {
 }
 
 function BorderSelector() {
+  const messages = useSheetsMessages()
+
   const popover = Ariakit.usePopoverStore()
   const mounted = Ariakit.useStoreState(popover, 'mounted')
   const theme = useUI((ui) => ui.legacy.theme)
@@ -400,7 +436,7 @@ function BorderSelector() {
           onClick={() => onChange(lastUsedBorder.location, lastUsedBorder.color, lastUsedBorder.style)}
           disabled={useUI((ui) => ui.info.isReadonly)}
         >
-          {s('Apply border')}
+          {messages.toolbar['Apply border']}
         </T.Item>
         <Ariakit.PopoverDisclosure
           render={
@@ -409,7 +445,7 @@ function BorderSelector() {
               icon={Icons.chevronDownFilled}
               disabled={useUI((ui) => ui.info.isReadonly)}
             >
-              {s('Choose border')}
+              {messages.toolbar['Choose border']}
             </T.Item>
           }
         />
@@ -436,6 +472,8 @@ function BorderSelector() {
 }
 
 function MergeCells() {
+  const messages = useSheetsMessages()
+
   const isUnmerge = useUI((ui) => ui.format.merge.menu.defaultAction === 'unmerge')
   const mergeAll = useUI.$.format.merge.all
   const unmerge = useUI.$.format.merge.unmerge
@@ -447,13 +485,13 @@ function MergeCells() {
         pressed={isUnmerge}
         onClick={useUI.$.withFocusGrid(isUnmerge ? unmerge : mergeAll)}
       >
-        {isUnmerge ? s('Unmerge cells') : s('Merge cells')}
+        {isUnmerge ? messages.toolbar['Unmerge cells'] : messages.toolbar['Merge cells']}
       </T.Item>
       <Ariakit.MenuProvider>
         <Ariakit.MenuButton
           render={
             <T.Item icon={Icons.chevronDownFilled} className="w-[1rem] !px-0">
-              {s('Select merge type')}
+              {messages.toolbar['Select merge type']}
             </T.Item>
           }
         />
@@ -466,6 +504,8 @@ function MergeCells() {
 }
 
 function TextHorizontalAlign() {
+  const messages = useSheetsMessages()
+
   const popover = Ariakit.usePopoverStore()
   const mounted = Ariakit.useStoreState(popover, 'mounted')
 
@@ -487,7 +527,7 @@ function TextHorizontalAlign() {
       <Ariakit.PopoverDisclosure
         render={
           <T.Item icon={icon} dropdownIndicator disabled={useUI((ui) => ui.info.isReadonly)}>
-            {s('Horizontal align')}
+            {messages.toolbar['Horizontal align']}
           </T.Item>
         }
       />
@@ -505,6 +545,8 @@ function TextHorizontalAlign() {
 }
 
 function TextVerticalAlign() {
+  const messages = useSheetsMessages()
+
   const popover = Ariakit.usePopoverStore()
   const mounted = Ariakit.useStoreState(popover, 'mounted')
 
@@ -526,7 +568,7 @@ function TextVerticalAlign() {
       <Ariakit.PopoverDisclosure
         render={
           <T.Item icon={icon} dropdownIndicator disabled={useUI((ui) => ui.info.isReadonly)}>
-            {s('Vertical align')}
+            {messages.toolbar['Vertical align']}
           </T.Item>
         }
       />
@@ -544,6 +586,8 @@ function TextVerticalAlign() {
 }
 
 function TextWrap() {
+  const messages = useSheetsMessages()
+
   const popover = Ariakit.usePopoverStore()
   const mounted = Ariakit.useStoreState(popover, 'mounted')
 
@@ -565,7 +609,7 @@ function TextWrap() {
       <Ariakit.PopoverDisclosure
         render={
           <T.Item icon={icon} dropdownIndicator disabled={useUI((ui) => ui.info.isReadonly)}>
-            {s('Text wrapping')}
+            {messages.toolbar['Text wrapping']}
           </T.Item>
         }
       />
@@ -583,19 +627,23 @@ function TextWrap() {
 }
 
 function InsertLink() {
+  const messages = useSheetsMessages()
+
   return (
     <T.Item icon={Icons.link} onClick={useUI.$.insert.link} disabled={useUI((ui) => ui.info.isReadonly)}>
-      {s('Insert link')}
+      {messages.toolbar['Insert link']}
     </T.Item>
   )
 }
 
 function InsertFunction() {
+  const messages = useSheetsMessages()
+
   return (
     <InsertFormulaMenu
       renderMenuButton={
         <T.Item icon={Icons.sigma} disabled={useUI((ui) => ui.info.isReadonly)}>
-          {s('Insert function')}
+          {messages.toolbar['Insert function']}
         </T.Item>
       }
     />
@@ -603,6 +651,8 @@ function InsertFunction() {
 }
 
 function CreateFilter() {
+  const messages = useSheetsMessages()
+
   return (
     <T.Item
       // TODO: need a different icon for "remove filter"
@@ -610,21 +660,25 @@ function CreateFilter() {
       onClick={useUI.$.data.toggleFilter}
       disabled={useUI((ui) => ui.info.isReadonly)}
     >
-      {useUI((ui) => ui.data.hasFilter) ? s('Remove filter') : s('Create a filter')}
+      {useUI((ui) => ui.data.hasFilter) ? messages.toolbar['Remove filter'] : messages.toolbar['Create a filter']}
     </T.Item>
   )
 }
 
 function InsertNote() {
+  const messages = useSheetsMessages()
+
   return (
     // TODO: icon needs to be note-with-text but we don't have it yet
     <T.Item icon={Icons.note} onClick={useUI.$.insert.note} disabled={useUI((ui) => ui.info.isReadonly)}>
-      {s('Insert note')}
+      {messages.toolbar['Insert note']}
     </T.Item>
   )
 }
 
 function InsertChart() {
+  const messages = useSheetsMessages()
+
   const insertChart = useUI.$.insert.chart
   const onRequestEditChart = useUI((ui) => ui.legacy.chartsState.onRequestEditChart)
 
@@ -637,46 +691,49 @@ function InsertChart() {
       }}
       disabled={useUI((ui) => ui.info.isReadonly)}
     >
-      {s('Insert chart')}
+      {messages.toolbar['Insert chart']}
     </T.Item>
   )
 }
 
-function strings() {
-  return {
-    Undo: c('sheets_2025:Spreadsheet editor toolbar').t`Undo`,
-    Redo: c('sheets_2025:Spreadsheet editor toolbar').t`Redo`,
-    Find: c('sheets_2025:Spreadsheet editor toolbar').t`Find`,
-    'Clear formatting': c('sheets_2025:Spreadsheet editor toolbar').t`Clear formatting`,
-    'Paint format': c('sheets_2025:Spreadsheet editor toolbar').t`Paint format`,
-    Bold: c('sheets_2025:Spreadsheet editor toolbar').t`Bold`,
-    Italic: c('sheets_2025:Spreadsheet editor toolbar').t`Italic`,
-    Underline: c('sheets_2025:Spreadsheet editor toolbar').t`Underline`,
-    Strikethrough: c('sheets_2025:Spreadsheet editor toolbar').t`Strikethrough`,
-    'Format as currency': c('sheets_2025:Spreadsheet editor toolbar').t`Format as currency`,
-    'Format as percent': c('sheets_2025:Spreadsheet editor toolbar').t`Format as percent`,
-    'Decrease decimal places': c('sheets_2025:Spreadsheet editor toolbar').t`Decrease decimal places`,
-    'Increase decimal places': c('sheets_2025:Spreadsheet editor toolbar').t`Increase decimal places`,
-    'More formats': c('sheets_2025:Spreadsheet editor toolbar').t`More formats`,
-    Font: c('sheets_2025:Spreadsheet editor toolbar').t`Font`,
-    'Apply text color': c('sheets_2025:Spreadsheet editor toolbar').t`Apply text color`,
-    'Choose text color': c('sheets_2025:Spreadsheet editor toolbar').t`Choose text color`,
-    'Apply fill color': c('sheets_2025:Spreadsheet editor toolbar').t`Apply fill color`,
-    'Choose fill color': c('sheets_2025:Spreadsheet editor toolbar').t`Choose fill color`,
-    'Apply border': c('sheets_2025:Spreadsheet editor toolbar').t`Apply border`,
-    'Choose border': c('sheets_2025:Spreadsheet editor toolbar').t`Choose border`,
-    'Merge cells': c('sheets_2025:Spreadsheet editor toolbar').t`Merge cells`,
-    'Unmerge cells': c('sheets_2025:Spreadsheet editor toolbar').t`Unmerge cells`,
-    'Select merge type': c('sheets_2025:Spreadsheet editor toolbar').t`Select merge type`,
-    'Horizontal align': c('sheets_2025:Spreadsheet editor toolbar').t`Horizontal align`,
-    'Vertical align': c('sheets_2025:Spreadsheet editor toolbar').t`Vertical align`,
-    'Text wrapping': c('sheets_2025:Spreadsheet editor toolbar').t`Text wrapping`,
-    'Insert link': c('sheets_2025:Spreadsheet editor toolbar').t`Insert link`,
-    'Insert function': c('sheets_2025:Spreadsheet editor toolbar').t`Insert function`,
-    'Create a filter': c('sheets_2025:Spreadsheet editor toolbar').t`Create a filter`,
-    'Remove filter': c('sheets_2025:Spreadsheet editor toolbar').t`Remove filter`,
-    'Insert note': c('sheets_2025:Spreadsheet editor toolbar').t`Insert note`,
-    'Insert chart': c('sheets_2025:Spreadsheet editor toolbar').t`Insert chart`,
-    More: c('sheets_2025:Spreadsheet editor toolbar').t`More`,
-  }
+export const toolbarMessages = {
+  toolbar: {
+    Undo: `Undo`,
+    Redo: `Redo`,
+    Find: `Find`,
+    'Clear formatting': `Clear formatting`,
+    'Paint format': `Paint format`,
+    Bold: `Bold`,
+    Italic: `Italic`,
+    Underline: `Underline`,
+    Strikethrough: `Strikethrough`,
+    'Format as currency': `Format as currency`,
+    'Format as percent': `Format as percent`,
+    'Decrease decimal places': `Decrease decimal places`,
+    'Increase decimal places': `Increase decimal places`,
+    'More formats': `More formats`,
+    Font: `Font`,
+    'Text color': `Text color`,
+    'Fill color': `Fill color`,
+    Border: `Border`,
+    'Merge cells': `Merge cells`,
+    'Unmerge cells': `Unmerge cells`,
+    'Select merge type': `Select merge type`,
+    'Horizontal align': `Horizontal align`,
+    'Vertical align': `Vertical align`,
+    'Text wrapping': `Text wrapping`,
+    'Insert link': `Insert link`,
+    'Insert function': `Insert function`,
+    'Create a filter': `Create a filter`,
+    'Remove filter': `Remove filter`,
+    'Insert note': `Insert note`,
+    'Insert chart': `Insert chart`,
+    'Apply text color': `Apply text color`,
+    'Choose text color': `Choose text color`,
+    'Apply fill color': `Apply fill color`,
+    'Choose fill color': `Choose fill color`,
+    'Apply border': `Apply border`,
+    'Choose border': `Choose border`,
+    More: `More`,
+  },
 }

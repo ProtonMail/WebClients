@@ -1,3 +1,4 @@
+import { useSheetsMessages } from '../../SheetsDependenciesProvider'
 import * as Icons from '../icons'
 import {
   useEditingNamedRange,
@@ -19,13 +20,11 @@ import { SidebarDialog, SidebarDialogHeader } from './SidebarDialog'
 import { Button, FormGroup, FormLabel, FormRadio, Input } from './shared'
 import { Icon } from '../ui'
 import { Fragment, useMemo, useRef, useState } from 'react'
-import { c } from 'ttag'
+
 import { useForm, type SubmitHandler } from 'react-hook-form'
-import { createStringifier } from '../../stringifier'
+
 import { useUI } from '../../ui-store'
 import { useEvent } from '../utils'
-
-const { s } = createStringifier(strings)
 
 interface NamedRangeListItemProps {
   namedRange: NamedRange
@@ -35,6 +34,8 @@ interface NamedRangeListItemProps {
 }
 
 function NamedRangeListItem({ namedRange, sheetId, onDeleteNamedRange, onSelect }: NamedRangeListItemProps) {
+  const messages = useSheetsMessages()
+
   const { rangeToAddress } = useFormulaRangeHelpers({ sheetId })
 
   return (
@@ -48,7 +49,7 @@ function NamedRangeListItem({ namedRange, sheetId, onDeleteNamedRange, onSelect 
         <Button
           type="button"
           className="flex size-[36px] shrink-0 items-center justify-center rounded-lg"
-          aria-label={s('Delete named range')}
+          aria-label={messages.namedRangeEditorDialog['Delete named range']}
           onClick={(event) => {
             event.stopPropagation()
             onDeleteNamedRange(namedRange.namedRangeId)
@@ -76,6 +77,8 @@ function NamedRangesList({
   onSelectNamedRange,
   onNewNamedRange,
 }: NamedRangesListProps) {
+  const messages = useSheetsMessages()
+
   return (
     <div className="min-h-0 grow overflow-y-auto">
       <div className="flex flex-col empty:hidden">
@@ -97,7 +100,9 @@ function NamedRangesList({
           onClick={onNewNamedRange}
         >
           <Icon data={Icons.plus} />
-          {namedRanges.length > 0 ? s('Add another named range') : s('Add named range')}
+          {namedRanges.length > 0
+            ? messages.namedRangeEditorDialog['Add another named range']
+            : messages.namedRangeEditorDialog['Add named range']}
         </Button>
       </div>
     </div>
@@ -130,6 +135,8 @@ function NamedRangeEditor({
   onNewNamedRange,
   idCreationStrategy,
 }: NamedRangeEditorProps) {
+  const messages = useSheetsMessages()
+
   const mode = namedRange.namedRangeId === 'new' ? 'CREATE' : 'UPDATE'
   const form = useForm({ defaultValues: namedRange })
   const { range, value } = form.watch()
@@ -163,19 +170,19 @@ function NamedRangeEditor({
         <div className="py-4">
           <div className="flex flex-col gap-4">
             <FormGroup>
-              <FormLabel htmlFor="name">{s('Name')}</FormLabel>
+              <FormLabel htmlFor="name">{messages.namedRangeEditorDialog.Name}</FormLabel>
               <Input
                 id="name"
                 required
                 pattern="[^\s]+"
-                title={s('Name should not contain spaces')}
+                title={messages.namedRangeEditorDialog['Name should not contain spaces']}
                 autoFocus
                 {...form.register('name')}
               />
             </FormGroup>
 
             <FormGroup>
-              <FormLabel>{s('Type')}</FormLabel>
+              <FormLabel>{messages.namedRangeEditorDialog.Type}</FormLabel>
 
               <Ariakit.RadioProvider
                 value={namedRangeType}
@@ -196,15 +203,17 @@ function NamedRangeEditor({
                 }}
               >
                 <Ariakit.RadioGroup className="flex items-center gap-4">
-                  <FormRadio value={NamedRangeTypes.Range}>{s('Range')}</FormRadio>
-                  <FormRadio value={NamedRangeTypes.TextOrFormula}>{s('Text or formula')}</FormRadio>
+                  <FormRadio value={NamedRangeTypes.Range}>{messages.namedRangeEditorDialog.Range}</FormRadio>
+                  <FormRadio value={NamedRangeTypes.TextOrFormula}>
+                    {messages.namedRangeEditorDialog['Text or formula']}
+                  </FormRadio>
                 </Ariakit.RadioGroup>
               </Ariakit.RadioProvider>
             </FormGroup>
 
             {namedRangeType === NamedRangeTypes.Range ? (
               <FormGroup>
-                <FormLabel>{s('Apply to range')}</FormLabel>
+                <FormLabel>{messages.namedRangeEditorDialog['Apply to range']}</FormLabel>
                 <FormulaInput
                   onChange={(value) => {
                     const range = formulaToRange(value)
@@ -214,7 +223,7 @@ function NamedRangeEditor({
                   }}
                   value={range ? rangeToAddress(range) : '='}
                   required
-                  placeholder={s('Enter a formula')}
+                  placeholder={messages.namedRangeEditorDialog['Enter a formula']}
                   autoFocus
                   className="mb-0 w-full"
                 />
@@ -223,7 +232,7 @@ function NamedRangeEditor({
 
             {namedRangeType === NamedRangeTypes.TextOrFormula ? (
               <FormGroup>
-                <FormLabel>{s('Enter text or formula')}</FormLabel>
+                <FormLabel>{messages.namedRangeEditorDialog['Enter text or formula']}</FormLabel>
                 <FormulaInput
                   onChange={(value) => form.setValue('value', value)}
                   value={String(value ?? '')}
@@ -241,7 +250,7 @@ function NamedRangeEditor({
                 className="inline-flex h-[36px] items-center gap-1.5 rounded-lg border border-[#DEDBD9] px-4 text-[13px]"
               >
                 <Icon data={Icons.plus} />
-                {s('Add another named range')}
+                {messages.namedRangeEditorDialog['Add another named range']}
               </Button>
             </div>
           </div>
@@ -254,13 +263,13 @@ function NamedRangeEditor({
           className="inline-flex h-[36px] items-center gap-1.5 rounded-lg border border-[#DEDBD9] px-4 text-[13px]"
           onClick={onDone}
         >
-          {s('Cancel')}
+          {messages.namedRangeEditorDialog.Cancel}
         </Button>
         <Button
           type="submit"
           className="inline-flex h-[36px] items-center gap-1.5 rounded-lg bg-[#6D4AFF] px-4 text-[13px] text-[white]"
         >
-          {s('Save')}
+          {messages.namedRangeEditorDialog.Save}
         </Button>
       </div>
     </form>
@@ -330,33 +339,34 @@ function NamedRanges() {
 }
 
 export function NamedRangeEditorDialog() {
+  const messages = useSheetsMessages()
+
   const [open, setOpen] = useEditNamedRangeDialogState()
   return (
     <SidebarDialog open={open} setOpen={setOpen}>
       <div className="flex h-full min-h-0 flex-col">
-        <SidebarDialogHeader title={s('Named Ranges')} />
+        <SidebarDialogHeader title={messages.namedRangeEditorDialog['Named Ranges']} />
         <NamedRanges />
       </div>
     </SidebarDialog>
   )
 }
 
-function strings() {
-  return {
-    'Delete named range': c('sheets_2025:Spreadsheet sidebar named ranges dialog').t`Delete named range`,
-    'Named Ranges': c('sheets_2025:Spreadsheet sidebar named ranges dialog').t`Named Ranges`,
-    Name: c('sheets_2025:Spreadsheet sidebar named ranges dialog').t`Name`,
-    'Name should not contain spaces': c('sheets_2025:Spreadsheet sidebar named ranges dialog')
-      .t`Name should not contain spaces`,
-    Type: c('sheets_2025:Spreadsheet sidebar named ranges dialog').t`Type`,
-    Range: c('sheets_2025:Spreadsheet sidebar named ranges dialog').t`Range`,
-    'Text or formula': c('sheets_2025:Spreadsheet sidebar named ranges dialog').t`Text or formula`,
-    'Apply to range': c('sheets_2025:Spreadsheet sidebar named ranges dialog').t`Apply to range`,
-    'Enter a formula': c('sheets_2025:Spreadsheet sidebar named ranges dialog').t`Enter a formula`,
-    'Enter text or formula': c('sheets_2025:Spreadsheet sidebar named ranges dialog').t`Enter text or formula`,
-    'Add another named range': c('sheets_2025:Spreadsheet sidebar named ranges dialog').t`Add another named range`,
-    'Add named range': c('sheets_2025:Spreadsheet sidebar named ranges dialog').t`Add named range`,
-    Cancel: c('sheets_2025:Spreadsheet sidebar named ranges dialog').t`Cancel`,
-    Save: c('sheets_2025:Spreadsheet sidebar named ranges dialog').t`Save`,
-  }
+export const namedRangeEditorDialogMessages = {
+  namedRangeEditorDialog: {
+    'Delete named range': `Delete named range`,
+    'Named Ranges': `Named Ranges`,
+    Name: `Name`,
+    'Name should not contain spaces': `Name should not contain spaces`,
+    Type: `Type`,
+    Range: `Range`,
+    'Text or formula': `Text or formula`,
+    'Apply to range': `Apply to range`,
+    'Enter a formula': `Enter a formula`,
+    'Enter text or formula': `Enter text or formula`,
+    'Add another named range': `Add another named range`,
+    'Add named range': `Add named range`,
+    Cancel: `Cancel`,
+    Save: `Save`,
+  },
 }
