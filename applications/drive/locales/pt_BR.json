@@ -4498,6 +4498,27 @@
       ],
       "Could not grant access to the organization key": [
         "Não foi possível obter o acesso a chave da organização"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Não é possível adicionar foto ao álbum sem um nome válido"
+      ],
+      "File download failed due to empty response": [
+        "O download do arquivo falhou devido à resposta vazia"
+      ],
+      "Moving root item is not allowed": [
+        "Item de raiz em movimento não é permitido"
+      ],
+      "Not enough browser storage": [
+        "Não há armazenamento suficiente do navegador"
+      ],
+      "Photo is already in the target album": [
+        "A foto já está no álbum alvo"
+      ],
+      "Renaming root item is not allowed": [
+        "Não é permitido renomear o item, raiz"
+      ],
+      "This file has missing crypto material": [
+        "Este arquivo tem material de criptografia ausente"
       ]
     },
     "error": {
@@ -7750,7 +7771,7 @@
         "Nova indexação em andamento"
       ],
       "Search encountered an internal error. Rebuild the index to recover.": [
-        "A pesquisa encontrou um erro interno. Recompile o índice para recuperar."
+        "A pesquisa encontrou um erro interno. Reconstrua o índice para recuperar."
       ],
       "The search engine encountered an internal error. Rebuild the index to recover.": [
         "O mecanismo de pesquisa encontrou um erro interno. Recompile o índice para recuperar."
@@ -7766,8 +7787,8 @@
         "Não foi possível verificar se ${ nameAuthor } enviou ${ nodeName }. Os seguintes dados podem ter sido adulterados: ordem dos dados do arquivo. Abra somente se você confiar no conteúdo."
       ],
       "We were not able to add this photo to your album": [
-        "Não foi possível adicionar esta foto ao seu álbum",
-        "Não foi possível adicionar algumas fotos ao seu álbum"
+        "Não conseguimos adicionar esta foto ao seu álbum",
+        "Não conseguimos adicionar algumas fotos ao seu álbum"
       ],
       "You are currently signed in as ${ username } for ${ organizationName }.": [
         "Você está atualmente com sessão iniciada como ${ username } para ${ organizationName }."
@@ -7907,6 +7928,30 @@
       ],
       "No payment is required.": [
         "Nenhum pagamento é necessário."
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "${ timeRemaining } deixado em sua avaliação. ${ addPaymentMethodLink } para evitar perder acesso. ${ learnMoreLink }"
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Os registros nos ajudam a entender o que aconteceu antes de o problema ocorrer. Eles incluem ações do aplicativo e mensagens de erro, mas não o conteúdo das mensagens."
+      ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Este usuário não pode ser migrado porque o endereço de e-mail deles não está disponível em ${ BRAND_NAME }."
+      ],
+      "To enable search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally, and we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
+        "Para habilitar a pesquisa, precisamos indexar seus arquivos localmente. Você ainda pode usar o ${ DRIVE_APP_NAME } normalmente, e avisaremos quando a indexação for concluída. Se você sair desta página, a indexação será pausada e retomada quando você retornar."
+      ],
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Vamos redirecioná-lo para ${ IDEAL_WERO_BRAND_NAME } em uma nova guia do navegador para concluir esta transação. Se você usar qualquer bloqueador de pop-up, por favor, desative-os para continuar."
+      ],
+      "We'll copy them from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Vamos copiá-los do Google Drive para ${ DRIVE_APP_NAME }."
+      ],
+      "We'll email you when your import is complete.": [
+        "Enviaremos um e-mail quando sua importação estiver concluída."
+      ],
+      "Your Google Drive may be empty or contain only files that are not supported.": [
+        "Seu Google Drive pode estar vazio ou conter apenas arquivos que não são suportados."
       ]
     },
     "info": {
@@ -11204,6 +11249,12 @@
       ],
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Cancele a qualquer momento antes disso. ** Você poderá usar ${ planTitle } até que a avaliação termine, gratuitamente."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Se você continuar após o seu teste, ** você pode cancelar dentro de 30 dias e obter um reembolso pro-rata."
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "para continuar usando todos os recursos após o término da sua avaliação."
       ]
     },
     "Option": {
@@ -11563,6 +11614,30 @@
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "Sua moeda foi alterada para euros (€) porque ${ IDEAL_WERO_BRAND_NAME } suporta apenas pagamentos em euros."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } não pode ser combinado com ${ PLAN_NAMES[PLANS.PASS] }."
+      ],
+      "Buying credits requires a separate purchase.": [
+        "Comprar créditos requer uma compra separada."
+      ],
+      "Please close extra wallets before changing your plan.": [
+        "Por favor, feche carteiras extras antes de mudar seu plano."
+      ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Os assentos do escriba não podem exceder o número de membros."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "O plano selecionado não oferece endereços suficientes para sua conta."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "O plano selecionado não oferece membros suficientes para sua conta."
+      ],
+      "Trial plans don’t support this many members.": [
+        "Os planos de teste não apoiam muitos membros."
+      ],
+      "Your account is too old for Born Private.": [
+        "Sua conta é muito antiga para Born Private."
       ]
     },
     "Payments.Error": {
@@ -13274,6 +13349,9 @@
       ],
       "Your videos will appear here": [
         "Seus vídeos aparecerão aqui."
+      ],
+      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
+        "Importe seus arquivos e pastas do Google Drive e mantenha-os privados no ${ DRIVE_APP_NAME }."
       ]
     },
     "Success": {
@@ -15559,6 +15637,11 @@
     "tryduo2026: Title": {
       "for 12 months": [
         "por 12 meses"
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Alterar seu endereço de cobrança pode afetar impostos sobre futuras faturas."
       ]
     }
   }
