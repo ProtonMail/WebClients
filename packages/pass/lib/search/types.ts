@@ -19,4 +19,4 @@ export type SelectItemsOptions = {
     visible?: boolean;
 };
 
-export type SelectAutosaveCandidatesOptions = { domain: string; userIdentifier?: string; shareIds?: string[] };
+export type SelectAutosaveCandidatesOptions = { url: string; userIdentifier?: string; shareIds?: string[] };

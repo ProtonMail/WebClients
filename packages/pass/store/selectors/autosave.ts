@@ -10,7 +10,7 @@ export const selectAutosaveCandidate = (options: SelectAutosaveCandidatesOptions
     createUncachedSelector(
         [selectAllItems, () => options, selectFeatureFlag(PassFeature.PassAutofillUrlRegex)],
         (items, { userIdentifier, shareIds }, regexEnabled) => {
-            const candidates = searchItemsByDomain(options.domain, items, { shareIds, sortOn: 'lastUseTime', regexEnabled });
+            const candidates = searchItemsByDomain(options.url, items, { shareIds, sortOn: 'lastUseTime', regexEnabled });
             if (!userIdentifier) return candidates;
             return candidates.filter(hasUserIdentifier(userIdentifier));
         }

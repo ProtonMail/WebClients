@@ -3,13 +3,23 @@ import type { Runtime } from 'webextension-polyfill';
 import browser from '@proton/pass/lib/globals/browser';
 import type { ParsedUrl } from '@proton/pass/lib/urls/types';
 import { parseUrl } from '@proton/pass/lib/urls/utils/parser';
-import type { FrameId, RequiredNonNull, TabId } from '@proton/pass/types';
+import type { FrameId, Maybe, RequiredNonNull, TabId } from '@proton/pass/types';
 
 export type ParsedSenderUrl = RequiredNonNull<ParsedUrl, 'domain' | 'protocol'>;
 export type ParsedSender = { tabId: TabId; url: ParsedSenderUrl; frameId: FrameId; href: string };
 
 export const isSupportedSenderUrl = (parsedUrl: ParsedUrl): parsedUrl is ParsedSenderUrl =>
     parsedUrl.domain !== null && parsedUrl.protocol !== null;
+
+/** Keeps the path of the sender URL only when it shares the verified origin,
+ * so a spoofed URL can at most point to another page of the same origin */
+const resolveVerifiedURL = (origin: string, url: Maybe<string>): string => {
+    try {
+        return url && new URL(url).origin === origin ? url : origin;
+    } catch {
+        return origin;
+    }
+};
 
 /** Resolves a verified URL for the message sender. On non-Chromium
  * browsers: if available, uses the MessageSender origin property for
@@ -25,7 +35,7 @@ export const parseSender = async (sender: Runtime.MessageSender): Promise<Parsed
             /** Origin of the page or frame that opened the connection. If the sender originated
              * from a frame, this may differ from the `url` property. [non-chromium only]
              * SEE: https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/runtime/MessageSender#origin */
-            if ('origin' in sender) return sender.origin as string;
+            if ('origin' in sender) return resolveVerifiedURL(sender.origin as string, sender.url);
             if (frameId === 0) return sender.url;
             const frame = await browser.webNavigation.getFrame({ frameId, tabId });
             return frame?.url;

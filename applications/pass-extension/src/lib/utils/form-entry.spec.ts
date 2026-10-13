@@ -16,6 +16,7 @@ const getMockFormSubmission = (status: FormEntryStatus, type: FormType, data?: F
     formId: uniqueId(),
     port: null,
     protocol: 'https',
+    url: 'https://proton.me',
     status,
     submit: false,
     submittedAt: -1,

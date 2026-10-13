@@ -30,7 +30,11 @@ export type FormSubmission = {
 export type FormSubmitPayload = FormSubmission & { reason: string };
 
 export type FormCredentials = { userIdentifier: string; password: string };
-export type FormEntryBase = FormSubmission & RequiredNonNull<URLComponents, 'domain' | 'protocol'>;
+export type FormEntryBase = FormSubmission &
+    RequiredNonNull<URLComponents, 'domain' | 'protocol'> & {
+        /** full URL of the page the form was filled on */
+        url: string;
+    };
 
 export type FormEntry<T extends FormEntryStatus = FormEntryStatus> = FormEntryBase & {
     status: T;
