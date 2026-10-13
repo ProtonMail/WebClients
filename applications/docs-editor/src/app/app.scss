@@ -60,6 +60,13 @@ body {
 	}
 }
 
+// PDF export prints this iframe, so the parent app's @page rule does not apply.
+// Remove page margins to suppress browser-added titles, dates, and URLs.
+@page {
+	size: auto;
+	margin: 0;
+}
+
 .dropdown-content {
 	background-image: none;
 }
