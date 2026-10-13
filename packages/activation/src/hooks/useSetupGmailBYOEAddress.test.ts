@@ -3,6 +3,7 @@ import { getUnixTime } from 'date-fns';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { findUserAddress, getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
+import { mockTracker } from '@proton/telemetry-tracker/testing';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { startEasySwitchSignupImportTask } from '../api';
@@ -32,6 +33,11 @@ const mockApi = jest.fn();
 jest.mock('@proton/app-context/useApi', () => ({
     __esModule: true,
     useApi: () => mockApi,
+}));
+
+jest.mock('@proton/account/user/hooks', () => ({
+    __esModule: true,
+    useUser: () => [{ Subscribed: 0 }],
 }));
 
 jest.mock('@proton/account/addresses/hooks');
@@ -631,6 +637,162 @@ describe('useSetupGmailBYOEAddress', () => {
             expect(mockOnComplete).toHaveBeenCalled();
             expect(mockDispatch).not.toHaveBeenCalled();
             expect(mockShowSuccessModal).not.toHaveBeenCalled();
+        });
+    });
+
+    describe('creation funnel telemetry', () => {
+        const setup = () => {
+            const { result } = renderHook(() =>
+                useSetupGmailBYOEAddress({
+                    showSuccessModal: jest.fn(),
+                    source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
+                    onComplete: jest.fn(),
+                    showAddressLinkedToAnotherAccountModal: jest.fn(),
+                    showClaimableAddressModal: jest.fn(),
+                })
+            );
+            return result;
+        };
+
+        const callback = (
+            result: ReturnType<typeof setup>,
+            params: Partial<Parameters<ReturnType<typeof setup>['current']['handleBYOEWithImportCallback']>[0]> = {}
+        ) =>
+            act(async () => {
+                await result.current.handleBYOEWithImportCallback({
+                    hasError: false,
+                    importEmails: true,
+                    importPeriod: TIME_PERIOD.LAST_3_MONTHS,
+                    token: mockToken,
+                    ...params,
+                });
+            });
+
+        beforeEach(() => {
+            jest.clearAllMocks();
+            mockUseBYOEFeatureStatus.mockReturnValue([true, false] as const);
+            mockUseAddresses.mockReturnValue([[], false]);
+            mockFindUserAddress.mockReturnValue(undefined);
+            mockGetIsBYOEAddress.mockReturnValue(false);
+            mockDispatch.mockResolvedValue({ Email: 'test@gmail.com', ID: 'addr-id' });
+            mockApi.mockResolvedValue({});
+            mockUseFlag.mockReturnValue(false);
+        });
+
+        it('sends authenticated then importer_created when the address is created', async () => {
+            const { reports } = mockTracker();
+            const result = setup();
+
+            await callback(result);
+
+            expect(reports.map((report) => report.event)).toEqual(['authenticated', 'importer_created']);
+            expect(reports[1]).toMatchObject({
+                measurementGroup: 'any.web.byoe_creation_funnel',
+                dimensions: {
+                    provider: 'google',
+                    hasImportEmails: 'true',
+                    importPeriodSelected: 'last_3_months',
+                    isUpsellShown: 'true',
+                    isClaimedAddress: 'false',
+                },
+            });
+        });
+
+        it('does not upsell, and has no period, when the user does not import emails', async () => {
+            const { reports } = mockTracker();
+            const result = setup();
+
+            await callback(result, { importEmails: false });
+
+            expect(reports[1].dimensions).toMatchObject({
+                hasImportEmails: 'false',
+                importPeriodSelected: 'n/a',
+                isUpsellShown: 'false',
+            });
+        });
+
+        it('sends creation_error when the Google sign-in failed', async () => {
+            const { reports } = mockTracker();
+            const result = setup();
+
+            await callback(result, { hasError: true, token: undefined });
+
+            expect(reports).toHaveLength(1);
+            expect(reports[0]).toMatchObject({
+                event: 'creation_error',
+                dimensions: { provider: 'google', errorStep: 'authentication' },
+            });
+        });
+
+        it('sends creation_error when the address is already connected', async () => {
+            const { reports } = mockTracker();
+            mockFindUserAddress.mockReturnValue({ Email: 'test@gmail.com' } as any);
+            mockGetIsBYOEAddress.mockReturnValue(true);
+            const result = setup();
+
+            await callback(result);
+
+            expect(reports.map((report) => report.event)).toEqual(['authenticated', 'creation_error']);
+            expect(reports[1].dimensions).toMatchObject({ errorStep: 'address_already_connected' });
+        });
+
+        it('sends creation_error when the address is linked to another account and cannot be claimed', async () => {
+            const { reports } = mockTracker();
+            mockApi.mockRejectedValue({
+                data: { Code: BYOE_ADDRESS_ERROR.ADDRESS_ALREADY_EXISTS, Error: 'Address already exists' },
+            });
+            const result = setup();
+
+            await callback(result);
+
+            expect(reports.map((report) => report.event)).toEqual(['authenticated', 'creation_error']);
+            expect(reports[1].dimensions).toMatchObject({ errorStep: 'address_linked_to_another_account' });
+        });
+
+        it('does not send an error when the address is claimable: the user goes on with the claim modal', async () => {
+            const { reports } = mockTracker();
+            mockUseFlag.mockImplementation((flag) => flag === 'CanClaimExternalAddress');
+            mockApi
+                .mockRejectedValueOnce({
+                    data: { Code: BYOE_ADDRESS_ERROR.ADDRESS_ALREADY_EXISTS, Error: 'Address already exists' },
+                })
+                .mockResolvedValueOnce({ CanBeClaimed: true });
+            const result = setup();
+
+            await callback(result);
+
+            expect(reports.map((report) => report.event)).toEqual(['authenticated']);
+        });
+
+        it('sends importer_created flagged as claimed when the address was claimed', async () => {
+            const { reports } = mockTracker();
+            mockUseFlag.mockImplementation((flag) => flag === 'CanClaimExternalAddress');
+            const result = setup();
+
+            await act(async () => {
+                await result.current.handleClaimAddress({
+                    account: 'test@gmail.com',
+                    importEmails: true,
+                    importPeriod: TIME_PERIOD.BIG_BANG,
+                });
+            });
+
+            expect(reports).toHaveLength(1);
+            expect(reports[0]).toMatchObject({
+                event: 'importer_created',
+                dimensions: { isClaimedAddress: 'true', importPeriodSelected: 'big_bang' },
+            });
+        });
+
+        it('sends creation_error when creating the address fails', async () => {
+            const { reports } = mockTracker();
+            mockDispatch.mockRejectedValue(new Error('nope'));
+            const result = setup();
+
+            await callback(result);
+
+            expect(reports.map((report) => report.event)).toEqual(['authenticated', 'creation_error']);
+            expect(reports[1].dimensions).toMatchObject({ errorStep: 'address_creation' });
         });
     });
 });
