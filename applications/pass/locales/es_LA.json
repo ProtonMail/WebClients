@@ -834,6 +834,9 @@
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "Aplicación de escritorio de ${ MAIL_APP_NAME }"
+      ],
+      "${ appName } Desktop application": [
+        "Aplicación de escritorio de ${ appName }"
       ]
     },
     "Button": {
@@ -2892,6 +2895,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Su organización requiere que asegure su acceso a ${ PASS_APP_NAME }"
+      ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission.": [
+        "Para configurar el desbloqueo biométrico, ${ PASS_APP_NAME } necesita un permiso de navegador nuevo."
       ]
     },
     "Keyboard key": {
