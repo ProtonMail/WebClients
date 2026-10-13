@@ -1,14 +1,14 @@
 import { Fragment, type ReactNode, type Ref } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
-import type { IconProps } from '@proton/components/components/icon/Icon';
 import Toggle from '@proton/components/components/toggle/Toggle';
+import type { IconComponentProps } from '@proton/icons/component';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { ConditionalTooltip } from '../../../atoms/ConditionalTooltip/ConditionalTooltip';
 
-type MoreMenuIcon = (props: Pick<IconProps, 'size' | 'className'>) => JSX.Element;
+type MoreMenuIcon = (props: Pick<IconComponentProps, 'size' | 'className'>) => JSX.Element;
 
 const itemClassName =
     'more-menu-item flex flex-nowrap items-center gap-3 w-full min-h-custom py-2 px-3 rounded-lg text-lg color-norm';

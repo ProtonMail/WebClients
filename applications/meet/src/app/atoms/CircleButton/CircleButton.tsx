@@ -3,7 +3,7 @@ import type { CSSProperties, ReactNode, RefObject } from 'react';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import type { PopperPlacement } from '@proton/atoms/Popper/interface';
-import type { IconProps } from '@proton/components/components/icon/Icon';
+import type { IconComponentProps } from '@proton/icons/component';
 import type { IconSize } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
@@ -15,7 +15,7 @@ type CircleButtonVariant = 'default' | 'active' | 'danger' | 'transparent' | 'hi
 type IndicatorStatus = 'warning' | 'default' | 'success' | 'danger';
 
 interface CircleButtonProps {
-    IconComponent: (props: Pick<IconProps, 'viewBox' | 'size'>) => JSX.Element;
+    IconComponent: (props: Pick<IconComponentProps, 'viewBox' | 'size'>) => JSX.Element;
     onClick?: () => void;
     className?: string;
     indicatorContent?: string | ReactNode;

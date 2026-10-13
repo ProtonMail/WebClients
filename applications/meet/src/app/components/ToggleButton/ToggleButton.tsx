@@ -7,8 +7,8 @@ import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import type { PopperPosition } from '@proton/atoms/Popper/interface';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import type { IconProps } from '@proton/components/components/icon/Icon';
 import { useActiveBreakpoint } from '@proton/components/index';
+import type { IconComponentProps } from '@proton/icons/component';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { IcChevronUp } from '@proton/icons/icons/IcChevronUp';
 import type { PopUpControls } from '@proton/meet/store/slices/uiStateSlice';
@@ -17,8 +17,8 @@ import clsx from '@proton/utils/clsx';
 import './ToggleButton.scss';
 
 interface ToggleButtonProps {
-    OnIconComponent: (props: Pick<IconProps, 'size'>) => JSX.Element;
-    OffIconComponent: (props: Pick<IconProps, 'size'>) => JSX.Element;
+    OnIconComponent: (props: Pick<IconComponentProps, 'size'>) => JSX.Element;
+    OffIconComponent: (props: Pick<IconComponentProps, 'size'>) => JSX.Element;
     isOn: boolean;
     onClick: () => void;
     isOpen: boolean;
