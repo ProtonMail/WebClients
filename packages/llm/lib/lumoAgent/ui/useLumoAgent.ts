@@ -78,26 +78,6 @@ const projectChainForHistory = (chainWork: Turn[]): Turn[] => {
 };
 
 /**
- * The transport pads a tool round with a blank assistant turn and drops that padding again before the
- * next one. Measuring both ends without the padding keeps them aligned, and keeps a blank turn from
- * reading as narration.
- */
-const withoutBlankAssistantTurns = (turns: Turn[]): Turn[] =>
-    turns.filter((turn) => turn.role !== ASSISTANT || !!turn.content?.trim());
-
-/**
- * Prose the projection does not already carry, merged into a trailing assistant turn rather than added
- * beside it: the history an exchange replays is one answer turn.
- */
-const appendProse = (turns: Turn[], prose: string): Turn[] => {
-    const last = turns[turns.length - 1];
-    if (last?.role === ASSISTANT && last.content) {
-        return [...turns.slice(0, -1), { role: ASSISTANT, content: `${last.content}\n\n${prose}` }];
-    }
-    return [...turns, { role: ASSISTANT, content: prose }];
-};
-
-/**
  * Lazily instantiate the Lumo client on first send so `@proton/lumo-api-client` stays out of the
  * shared `@proton/components` bundle until the assistant is actually used (bundle hygiene, plan §6).
  */
@@ -156,8 +136,6 @@ const useLumoAgent = (config: LumoAgentConfig) => {
     const projectedChainRef = useRef<Turn[]>([]);
     const replyIdRef = useRef<number | null>(null);
     const replyTextRef = useRef('');
-    // Every bubble of prose the current chain has written. `replyTextRef` only ever holds the live bubble.
-    const chainReplyRef = useRef('');
     // Read through a ref so no reporting call site has to depend on `config`. The cleanup effect below
     // would otherwise abort the chain and abandon its card on every render a caller changed config on.
     const telemetryRef = useRef(config.telemetry);
@@ -191,12 +169,10 @@ const useLumoAgent = (config: LumoAgentConfig) => {
                 const id = nextId();
                 replyIdRef.current = id;
                 replyTextRef.current = delta;
-                chainReplyRef.current = chainReplyRef.current ? `${chainReplyRef.current}\n\n${delta}` : delta;
                 pushItem({ id, kind: 'reply', text: delta });
                 return;
             }
             replyTextRef.current += delta;
-            chainReplyRef.current += delta;
             const id = replyIdRef.current;
             const text = replyTextRef.current;
             setItems((prev) => prev.map((item) => (item.id === id ? { ...item, text } : item)));
@@ -339,35 +315,17 @@ const useLumoAgent = (config: LumoAgentConfig) => {
     }, [config, sessionKey, nextId, pushItem, finalizeReply, advanceLastConfirm]);
 
     /**
-     * Bank a finished chain's own turns — each round's narration, then its tool calls (id, name,
-     * decrypted arguments) and results — in the order the model produced them. The transport breaks its
-     * loop before banking the closing prose, so what this chain produced minus the narration already in
-     * `chainWork` supplies it: nothing when the last round called a tool rather than speaking. The live
-     * bubble is the fallback for a chain whose prose a chip or an error split mid-round, where the
-     * subtraction no longer lines up. The same walk projects the chain
-     * into the exchange history is waiting to bank (see {@link projectChainForHistory}).
+     * Bank what the chain produced, as the transport reports it rather than as the bubbles on screen
+     * split it: verbatim for the transcript, projected for history (see {@link projectChainForHistory}).
      */
-    const recordChainWork = useCallback((chainWork: Turn[]) => {
-        const produced = chainReplyRef.current.trimStart();
-        const narrated = chainWork
-            .filter((turn) => turn.role === ASSISTANT)
-            .map((turn) => turn.content)
-            .join('\n\n');
-        const closing = produced.startsWith(narrated)
-            ? produced.slice(narrated.length).trimStart()
-            : replyTextRef.current;
-        transcriptRef.current.push(...chainWork);
-        projectedChainRef.current.push(...projectChainForHistory(chainWork));
-        if (closing) {
-            transcriptRef.current.push({ role: ASSISTANT, content: closing });
-            projectedChainRef.current = appendProse(projectedChainRef.current, closing);
-        }
+    const recordChainWork = useCallback((producedTurns: Turn[]) => {
+        transcriptRef.current.push(...producedTurns);
+        projectedChainRef.current.push(...projectChainForHistory(producedTurns));
     }, []);
 
     const runChain = useCallback(
         async (turns: Turn[], userText: string) => {
             setIsBusy(true);
-            chainReplyRef.current = '';
 
             const controller = new AbortController();
             controllerRef.current = controller;
@@ -445,7 +403,7 @@ const useLumoAgent = (config: LumoAgentConfig) => {
                 const clientTools: ChatCompletionsFunctionTool[] = (await executor.getClientTools?.()) ?? [];
                 // The executor is shared across chains, so bind this one's signal to its batches: an
                 // abandoned chain must not confirm and run the tail of its batch on the turn that replaced it.
-                const { turns: chainTurns } = await client.callAssistant(api, turns, {
+                const { producedTurns } = await client.callAssistant(api, turns, {
                     clientToolExecutor: {
                         ...executor,
                         execute: (calls) => {
@@ -465,8 +423,7 @@ const useLumoAgent = (config: LumoAgentConfig) => {
                     reportChainEnd(abortEndRef.current);
                     return;
                 }
-                const sentCount = withoutBlankAssistantTurns(turns).length;
-                recordChainWork(withoutBlankAssistantTurns(chainTurns).slice(sentCount));
+                recordChainWork(producedTurns);
                 commitHistory(userText);
                 reportChainEnd(streamFailed ? LumoChainEnd.FAILED : LumoChainEnd.SUCCEEDED);
             } catch (error: any) {
@@ -557,7 +514,6 @@ const useLumoAgent = (config: LumoAgentConfig) => {
         projectedChainRef.current = [];
         replyIdRef.current = null;
         replyTextRef.current = '';
-        chainReplyRef.current = '';
         setItems([]);
         setSessionKey((key) => key + 1);
     }, [abandonChain]);
