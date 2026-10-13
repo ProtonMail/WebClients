@@ -1,5 +1,5 @@
-import { Icon } from '@proton/components';
 import useUid from '@proton/components/hooks/useUid';
+import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 import clsx from '@proton/utils/clsx';
 
 import './UpgradeIcon.scss';
@@ -13,8 +13,7 @@ export const UpgradeIcon = ({ customSize }: UpgradeIconProps) => {
 
     return (
         <span className="upgrade-icon inline-flex">
-            <Icon
-                name="upgrade"
+            <IcUpgrade
                 size={5}
                 className={clsx('apps-dropdown-button-icon shrink-0 no-print', !!customSize && 'w-custom h-custom')}
                 style={{ fill: `url(#${uid})`, ...(!!customSize && { width: customSize, height: customSize }) }}
