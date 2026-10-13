@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { type ReactNode, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -12,6 +12,10 @@ interface Props {
     onSubmit: (keyPassword: string) => void;
     submitting: boolean;
     onAskAdminHelp?: () => void;
+    /** The field's label, "Backup password" by default. */
+    passwordLabel?: string;
+    /** Shown between the field and the submit button. */
+    hint?: ReactNode;
 }
 
 const getBackupPasswordData = () => {
@@ -23,7 +27,7 @@ const getBackupPasswordData = () => {
     };
 };
 
-const SSOBackupPasswordForm = ({ onSubmit, submitting, onAskAdminHelp }: Props) => {
+const SSOBackupPasswordForm = ({ onSubmit, submitting, onAskAdminHelp, passwordLabel, hint }: Props) => {
     const [keyPassword, setKeyPassword] = useState('');
 
     const { validator, onFormSubmit } = useFormErrors();
@@ -46,13 +50,14 @@ const SSOBackupPasswordForm = ({ onSubmit, submitting, onAskAdminHelp }: Props) 
                 as={PasswordInputTwo}
                 id={data.passwordId}
                 bigger
-                label={data.passwordLabel}
+                label={passwordLabel ?? data.passwordLabel}
                 error={validator([requiredValidator(keyPassword)])}
                 disableChange={submitting}
                 autoFocus
                 value={keyPassword}
                 onValue={setKeyPassword}
             />
+            {hint}
             <div className="mt-6">
                 <Button size="large" color="norm" type="submit" fullWidth loading={submitting}>
                     {data.cta}

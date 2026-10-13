@@ -1,3 +1,6 @@
+import { BackupPasswordError, ConversionPasswordError } from '@proton/shared/lib/authentication/error';
+import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
+import { handleUnlockKey } from '@proton/shared/lib/authentication/unlockKey';
 import type { Address, User } from '@proton/shared/lib/interfaces';
 import {
     AuthDeviceInactiveError,
@@ -28,7 +31,7 @@ jest.mock('@proton/shared/lib/helpers/promise', () => ({
 }));
 jest.mock('@proton/shared/lib/authentication/unlockKey', () => ({
     ...jest.requireActual('@proton/shared/lib/authentication/unlockKey'),
-    handleUnlockKey: () => Promise.resolve({ keyPassword: 'key password' }),
+    handleUnlockKey: jest.fn(() => Promise.resolve({ keyPassword: 'key password' })),
 }));
 jest.mock('@proton/shared/lib/keys/device', () => ({
     ...jest.requireActual('@proton/shared/lib/keys/device'),
@@ -53,9 +56,9 @@ const ssoData = {
     organizationData,
 } as unknown as SSOUnlockData;
 
-const unlock = (user: User) => {
+const unlock = (user: User, authResponse: Partial<AuthResponse> = {}) => {
     const api = jest.fn(() => Promise.resolve({}));
-    const context = { api, authResponse: {} } as unknown as LoginFlowContext;
+    const context = { api, authResponse } as unknown as LoginFlowContext;
     const result = unlockSSO(context, { user, salts: [], addresses: undefined, ssoData, clearKeyPassword: 'backup' });
     return { api, result };
 };
@@ -90,6 +93,20 @@ describe('unlockSSO', () => {
         expect(finalizeSignIn).not.toHaveBeenCalled();
         // The device is still activated, so a reload goes straight to the new backup password
         expect(api).toHaveBeenCalledWith(expect.objectContaining({ url: 'auth/v4/devices/device' }));
+    });
+
+    it('rejects a wrong backup password', async () => {
+        jest.mocked(handleUnlockKey).mockRejectedValueOnce(new Error('wrong password'));
+        const { api, result } = unlock({ Flags: {} } as unknown as User);
+        await expect(result).rejects.toBeInstanceOf(BackupPasswordError);
+        expect(api).not.toHaveBeenCalled();
+    });
+
+    it('does not call the password a backup password on the first sign-in after a conversion', async () => {
+        jest.mocked(handleUnlockKey).mockRejectedValueOnce(new Error('wrong password'));
+        const { result } = unlock({ Flags: {} } as unknown as User, { FirstLoginAfterConversion: true });
+        await expect(result).rejects.toBeInstanceOf(ConversionPasswordError);
+        await expect(result).rejects.toThrow('Incorrect password. Please try again.');
     });
 });
 

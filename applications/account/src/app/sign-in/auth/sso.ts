@@ -7,7 +7,7 @@ import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { activateAuthDeviceConfig } from '@proton/shared/lib/api/authDevice';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
-import { BackupPasswordError } from '@proton/shared/lib/authentication/error';
+import { BackupPasswordError, ConversionPasswordError } from '@proton/shared/lib/authentication/error';
 import { getUser } from '@proton/shared/lib/authentication/getUser';
 import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import { handleUnlockKey } from '@proton/shared/lib/authentication/unlockKey';
@@ -180,7 +180,10 @@ export const unlockSSO = async (
 
     const unlockResult = await handleUnlockKey(user, salts, clearKeyPassword).catch(() => undefined);
     if (!unlockResult) {
-        throw new BackupPasswordError();
+        // A converted member enters the password they had before, which isn't called a backup password
+        throw getFirstLoginAfterConversion(context.authResponse)
+            ? new ConversionPasswordError()
+            : new BackupPasswordError();
     }
 
     const keyPassword = unlockResult.keyPassword;
