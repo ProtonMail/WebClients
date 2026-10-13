@@ -2,8 +2,6 @@ import type { LinkNode } from '@lexical/link'
 import { $isAutoLinkNode } from '@lexical/link'
 import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
 import { mergeRegister } from '@lexical/utils'
-import { Button } from '@proton/atoms/Button/Button'
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip'
 import { Icon } from '../../Components/Icon'
 import * as Icons from '../../Components/icons'
 import { clsx } from 'clsx'
@@ -17,6 +15,7 @@ import { getDOMRangeRect } from '../../Utils/getDOMRangeRect'
 import { sanitizeUrl } from '../../Utils/sanitizeUrl'
 import { KEYBOARD_SHORTCUT_COMMAND } from '../KeyboardShortcuts/Command'
 import { LINK_CHANGE_COMMAND } from './LinkPlugin'
+import { LinkIconButton } from './LinkIconButton'
 
 type Props = {
   linkNode: LinkNode
@@ -137,52 +136,40 @@ export function LinkInfoViewer({ editor, linkNode, setIsEditingLink, openLink }:
           <Icon data={Icons.arrowWithinSquare} className="ml-1 flex-shrink-0" />
           <div className="max-w-[35ch] overflow-hidden text-ellipsis">{linkUrl}</div>
         </a>
-        <Tooltip title={c('Action').t`Copy link`}>
-          <Button
-            icon
-            size="small"
-            shape="ghost"
-            onClick={() => {
-              navigator.clipboard.writeText(linkUrl).catch(reportError)
-            }}
-            data-testid="hyperlink-copy-link-button"
-          >
-            <Icon data={Icons.link} />
-          </Button>
-        </Tooltip>
+        <LinkIconButton
+          label={c('Action').t`Copy link`}
+          onClick={() => {
+            navigator.clipboard.writeText(linkUrl).catch(reportError)
+          }}
+          data-testid="hyperlink-copy-link-button"
+        >
+          <Icon data={Icons.link} />
+        </LinkIconButton>
         {!isAutoLink && isEditorEditable && (
           <>
-            <Tooltip title={c('Action').t`Edit link`}>
-              <Button
-                icon
-                size="small"
-                shape="ghost"
-                onClick={() => {
-                  setIsEditingLink(true)
-                }}
-                data-testid="hyperlink-edit-button"
-              >
-                <Icon data={Icons.pencil} />
-              </Button>
-            </Tooltip>
-            <Tooltip title={c('Action').t`Remove link`}>
-              <Button
-                icon
-                size="small"
-                shape="ghost"
-                onClick={() => {
-                  editor.dispatchCommand(LINK_CHANGE_COMMAND, {
-                    linkNode: null,
-                    linkTextNode: null,
-                    url: null,
-                    text: null,
-                  })
-                }}
-                data-testid="hyperlink-delete-button"
-              >
-                <Icon data={Icons.trash} />
-              </Button>
-            </Tooltip>
+            <LinkIconButton
+              label={c('Action').t`Edit link`}
+              onClick={() => {
+                setIsEditingLink(true)
+              }}
+              data-testid="hyperlink-edit-button"
+            >
+              <Icon data={Icons.pencil} />
+            </LinkIconButton>
+            <LinkIconButton
+              label={c('Action').t`Remove link`}
+              onClick={() => {
+                editor.dispatchCommand(LINK_CHANGE_COMMAND, {
+                  linkNode: null,
+                  linkTextNode: null,
+                  url: null,
+                  text: null,
+                })
+              }}
+              data-testid="hyperlink-delete-button"
+            >
+              <Icon data={Icons.trash} />
+            </LinkIconButton>
           </>
         )}
       </div>
