@@ -1,6 +1,6 @@
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import type { IconProps } from '@proton/components/components/icon/Icon';
+import type { IconComponentProps } from '@proton/icons/component';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import clsx from '@proton/utils/clsx';
 
@@ -14,9 +14,9 @@ interface OptionButtonProps {
     label: string;
     description?: string;
     onClick: () => void;
-    Icon?: (props: Pick<IconProps, 'size' | 'style'>) => JSX.Element;
-    LabelIcon?: (props: Pick<IconProps, 'size' | 'style'>) => JSX.Element;
-    iconSize?: IconProps['size'];
+    Icon?: (props: Pick<IconComponentProps, 'size' | 'style'>) => JSX.Element;
+    LabelIcon?: (props: Pick<IconComponentProps, 'size' | 'style'>) => JSX.Element;
+    iconSize?: IconComponentProps['size'];
     loading?: boolean;
     role?: string;
     ariaSelected?: boolean;
@@ -35,8 +35,8 @@ const CheckComponent = ({
     loading,
 }: {
     showIcon: boolean;
-    Icon?: (props: Pick<IconProps, 'size' | 'style'>) => JSX.Element;
-    iconSize?: IconProps['size'];
+    Icon?: (props: Pick<IconComponentProps, 'size' | 'style'>) => JSX.Element;
+    iconSize?: IconComponentProps['size'];
     iconOnTheRight?: boolean;
     loading?: boolean;
 }) => {

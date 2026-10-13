@@ -6,6 +6,7 @@ import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcImage } from '@proton/icons/icons/IcImage';
 import { IcMeetCamera } from '@proton/icons/icons/IcMeetCamera';
 import { IcMeetCameraOff } from '@proton/icons/icons/IcMeetCameraOff';
+import { IcMeetMicrophone } from '@proton/icons/icons/IcMeetMicrophone';
 import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
 import { IcMeetRotateCamera } from '@proton/icons/icons/IcMeetRotateCamera';
 import { DEFAULT_DEVICE_ID } from '@proton/meet/constants';
@@ -367,7 +368,7 @@ export const DeviceSettings = ({
                     >
                         <DeviceSelect
                             label={microphoneLabel}
-                            icon="meet-microphone"
+                            icon={IcMeetMicrophone}
                             title={c('Label').t`Audio`}
                             disabled={microphoneHasWarning}
                             isOpen={isAudioSettingsOpen}
@@ -400,7 +401,7 @@ export const DeviceSettings = ({
                         />
                         <DeviceSelect
                             label={cameraLabel}
-                            icon="meet-camera"
+                            icon={IcMeetCamera}
                             title={c('Label').t`Video`}
                             disabled={cameraHasWarning}
                             isOpen={isVideoSettingsOpen}
