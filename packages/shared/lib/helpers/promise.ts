@@ -64,7 +64,9 @@ export async function promiseWithTimeout<T>({
         }, timeoutMs);
 
         // Clean up the timeout if the original promise resolves/rejects
-        void promise.finally(() => clearTimeout(timeoutId));
+        // `finally` would re-throw the rejection on a promise nobody handles
+        const clearTimeoutId = () => clearTimeout(timeoutId);
+        void promise.then(clearTimeoutId, clearTimeoutId);
     });
 
     // Race between the original promise and the timeout
