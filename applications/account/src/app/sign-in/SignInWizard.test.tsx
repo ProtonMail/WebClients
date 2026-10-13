@@ -4,6 +4,7 @@ import { fromCallback, fromPromise } from 'xstate';
 import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import { TelemetryUnauthLost2FAEvents } from '@proton/shared/lib/api/telemetry';
 import { SecondPasswordError, TOTPError } from '@proton/shared/lib/authentication/error';
+import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import type { KeySalt, User } from '@proton/shared/lib/interfaces';
 
 import type { AuthSession } from '../content/authSession';
@@ -134,7 +135,14 @@ const renderSignInOnSSO = ({
     showSSONotice = false,
     data = ssoData,
     ssoActors = {},
-}: { withRedirectToken?: boolean; showSSONotice?: boolean; data?: SSODataTypes; ssoActors?: SSOActors } = {}) => {
+    authResponse = {},
+}: {
+    withRedirectToken?: boolean;
+    showSSONotice?: boolean;
+    data?: SSODataTypes;
+    ssoActors?: SSOActors;
+    authResponse?: Partial<AuthResponse>;
+} = {}) => {
     const machine = SignInStateMachine.provide({
         actors: {
             credentialsFlow: credentialsStateMachine.provide({
@@ -146,7 +154,7 @@ const renderSignInOnSSO = ({
             prepareSignIn: fromPromise(() => Promise.resolve()),
             createAuthState: fromPromise(() =>
                 Promise.resolve<CreatedAuth>({
-                    auth,
+                    auth: { ...auth, credentials: { ...auth.credentials, authResponse } } as SignInAuthState,
                     authTypes: { twoFactor: { enabled: false, totp: false, fido2: false }, unlock: false },
                 })
             ),
@@ -279,6 +287,44 @@ describe('SignInWizard', () => {
         renderSignInOnSSO();
         expect(await screen.findByText('Enter your backup password')).toBeInTheDocument();
         expect(screen.getByLabelText('Backup password')).toBeInTheDocument();
+    });
+
+    describe('first sign-in after a conversion to SSO', () => {
+        const conversionData = {
+            ...ssoData,
+            address: { Email: 'member@example.com' },
+            intent: {
+                step: SSOLoginCapabilites.FIRST_LOGIN_AFTER_CONVERSION,
+                capabilities: new Set([
+                    SSOLoginCapabilites.FIRST_LOGIN_AFTER_CONVERSION,
+                    SSOLoginCapabilites.ENTER_BACKUP_PASSWORD,
+                    SSOLoginCapabilites.ASK_ADMIN,
+                ]),
+            },
+        } as SSODataTypes;
+
+        const continueToPassword = async () => {
+            fireEvent.click(await screen.findByRole('button', { name: 'Continue' }));
+            expect(await screen.findByRole('heading', { name: 'Enter your password' })).toBeInTheDocument();
+            expect(screen.getByText('member@example.com')).toBeInTheDocument();
+            expect(screen.getByLabelText('Password')).toBeInTheDocument();
+            expect(screen.getByRole('button', { name: 'Ask administrator for help' })).toBeInTheDocument();
+        };
+
+        it('asks for the current password, and tells it becomes the backup password', async () => {
+            renderSignInOnSSO({ data: conversionData, authResponse: { FirstLoginAfterConversion: true } });
+            await continueToPassword();
+            expect(screen.getByText(/Your old password will become your/)).toBeInTheDocument();
+        });
+
+        it('never mentions a backup password when the organization disabled it', async () => {
+            renderSignInOnSSO({
+                data: conversionData,
+                authResponse: { FirstLoginAfterConversion: true, SSOBackupPasswordDisabled: true },
+            });
+            await continueToPassword();
+            expect(screen.queryByText(/backup password/i)).not.toBeInTheDocument();
+        });
     });
 
     it('shows a wrong two-factor code under the code field, without a notification', async () => {

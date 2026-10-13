@@ -65,3 +65,11 @@ export class BackupPasswordError extends PasswordError {
         Object.setPrototypeOf(this, BackupPasswordError.prototype);
     }
 }
+
+/** A wrong current password, on a member's first SSO sign-in after the organization converted them to SSO. */
+export class ConversionPasswordError extends PasswordError {
+    constructor() {
+        super(c('Error').t`Incorrect password. Please try again.`);
+        Object.setPrototypeOf(this, ConversionPasswordError.prototype);
+    }
+}
