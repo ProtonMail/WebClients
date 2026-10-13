@@ -1,8 +1,8 @@
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
-import { parseUrl } from '@proton/pass/lib/urls/utils/parser';
 import { itemCreate, itemEdit } from '@proton/pass/store/actions';
 import type { FormEntry } from '@proton/pass/types';
 import { AutosaveMode, FormEntryStatus } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { AutofillMode } from '@proton/pass/types/protobuf';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
@@ -47,6 +47,7 @@ describe('AutosaveService [worker]', () => {
             domain: 'domain.com',
             port: null,
             protocol: 'https:',
+            url: 'https://domain.com',
             formId: uniqueId(),
             status: FormEntryStatus.COMMITTED,
             submit: false,
@@ -56,15 +57,13 @@ describe('AutosaveService [worker]', () => {
             frameId: 0,
         };
 
-        const url = parseUrl('https://domain.com');
-
         test('should prompt for new item if no match', () => {
-            const result = autosave.resolve(submission, url);
+            const result = autosave.resolve(submission);
             expect(result).toEqual({ shouldPrompt: true, data: { type: AutosaveMode.NEW } });
         });
 
         test('should not prompt if form credentials are invalid', () => {
-            const result = autosave.resolve({ ...submission, data: { userIdentifier: '', password: '' } }, url);
+            const result = autosave.resolve({ ...submission, data: { userIdentifier: '', password: '' } });
             expect(result).toEqual({ shouldPrompt: false });
         });
 
@@ -82,7 +81,7 @@ describe('AutosaveService [worker]', () => {
             state.items.byShareId[mockShareId][revision.itemId] = revision;
             store.getState.mockReturnValueOnce(state);
 
-            expect(autosave.resolve(submission, url)).toEqual({
+            expect(autosave.resolve(submission)).toEqual({
                 shouldPrompt: true,
                 data: {
                     type: AutosaveMode.UPDATE,
@@ -113,7 +112,7 @@ describe('AutosaveService [worker]', () => {
             state.items.byShareId[mockShareId][revision.itemId] = revision;
             store.getState.mockReturnValueOnce(state);
 
-            expect(autosave.resolve(submission, url)).toEqual({
+            expect(autosave.resolve(submission)).toEqual({
                 shouldPrompt: true,
                 data: {
                     type: AutosaveMode.UPDATE,
@@ -143,7 +142,7 @@ describe('AutosaveService [worker]', () => {
             state.items.byShareId[mockShareId][revision.itemId] = revision;
             store.getState.mockReturnValueOnce(state);
 
-            expect(autosave.resolve(submission, url)).toEqual({ shouldPrompt: false });
+            expect(autosave.resolve(submission)).toEqual({ shouldPrompt: false });
         });
 
         test('should not prompt for item update if matching username and no password change', () => {
@@ -159,7 +158,7 @@ describe('AutosaveService [worker]', () => {
             state.items.byShareId[mockShareId][revision.itemId] = revision;
             store.getState.mockReturnValueOnce(state);
 
-            expect(autosave.resolve(submission, url)).toEqual({ shouldPrompt: false });
+            expect(autosave.resolve(submission)).toEqual({ shouldPrompt: false });
         });
 
         test.each([
@@ -178,7 +177,173 @@ describe('AutosaveService [worker]', () => {
             state.items.byShareId[mockShareId][revision.itemId] = revision;
             store.getState.mockReturnValueOnce(state);
 
-            expect(autosave.resolve(submission, url)).toEqual({ shouldPrompt: false });
+            expect(autosave.resolve(submission)).toEqual({ shouldPrompt: false });
+        });
+
+        test('should not prompt if identical credentials exist on a subdomain of the current page', () => {
+            const item = itemBuilder('login');
+            item.get('metadata').set('name', 'Domain.com');
+            item.get('content')
+                .set('itemEmail', submission.data.userIdentifier)
+                .set('password', submission.data.password) /* same password */
+                .set('autofillUrls', [{ url: 'https://accounts.domain.com', mode: AutofillMode.Default }]);
+
+            const revision = getMockItemRevision({ data: item.data });
+            const state = getMockState();
+            state.items.byShareId[mockShareId][revision.itemId] = revision;
+            store.getState.mockReturnValueOnce(state);
+
+            expect(autosave.resolve(submission)).toEqual({ shouldPrompt: false });
+        });
+
+        test('should not prompt if identical credentials exist on a sibling subdomain of the current page', () => {
+            const item = itemBuilder('login');
+            item.get('metadata').set('name', 'Domain.com');
+            item.get('content')
+                .set('itemEmail', submission.data.userIdentifier)
+                .set('password', submission.data.password) /* same password */
+                .set('autofillUrls', [{ url: 'https://auth.domain.com', mode: AutofillMode.Default }]);
+
+            const revision = getMockItemRevision({ data: item.data });
+            const state = getMockState();
+            state.items.byShareId[mockShareId][revision.itemId] = revision;
+            store.getState.mockReturnValueOnce(state);
+
+            expect(autosave.resolve({ ...submission, url: 'https://sub.domain.com' })).toEqual({
+                shouldPrompt: false,
+            });
+        });
+
+        /* Candidate selection scores the full page URL, so every rule autofill
+         * honours also suppresses autosave (IDTEAM-6487) */
+        test.each([
+            {
+                label: 'Pattern',
+                mode: AutofillMode.Pattern,
+                rule: 'https://*.domain.com',
+                page: 'https://sub.domain.com/login',
+            },
+            {
+                label: 'Exact',
+                mode: AutofillMode.Exact,
+                rule: 'https://sub.domain.com',
+                page: 'https://sub.domain.com',
+            },
+            {
+                label: 'ExactPath',
+                mode: AutofillMode.ExactPath,
+                rule: 'https://domain.com/login',
+                page: 'https://domain.com/login',
+            },
+            {
+                label: 'StartWith',
+                mode: AutofillMode.StartWith,
+                rule: 'https://domain.com/app',
+                page: 'https://domain.com/app/login',
+            },
+        ])('should not prompt if identical credentials exist under a $label rule', ({ mode, rule, page }) => {
+            const item = itemBuilder('login');
+            item.get('metadata').set('name', 'Domain.com');
+            item.get('content')
+                .set('itemEmail', submission.data.userIdentifier)
+                .set('password', submission.data.password) /* same password */
+                .set('autofillUrls', [{ url: rule, mode }]);
+
+            const revision = getMockItemRevision({ data: item.data });
+            const state = getMockState();
+            state.items.byShareId[mockShareId][revision.itemId] = revision;
+            store.getState.mockReturnValueOnce(state);
+
+            expect(autosave.resolve({ ...submission, url: page })).toEqual({ shouldPrompt: false });
+        });
+
+        test('should prompt for new item if the form page is outside a StartWith rule', () => {
+            const item = itemBuilder('login');
+            item.get('metadata').set('name', 'Domain.com');
+            item.get('content')
+                .set('itemEmail', submission.data.userIdentifier)
+                .set('password', submission.data.password) /* same password */
+                .set('autofillUrls', [{ url: 'https://domain.com/app', mode: AutofillMode.StartWith }]);
+
+            const revision = getMockItemRevision({ data: item.data });
+            const state = getMockState();
+            state.items.byShareId[mockShareId][revision.itemId] = revision;
+            store.getState.mockReturnValueOnce(state);
+
+            expect(autosave.resolve({ ...submission, url: 'https://domain.com/other/login' })).toEqual({
+                shouldPrompt: true,
+                data: { type: AutosaveMode.NEW },
+            });
+        });
+
+        test('should not prompt if identical credentials exist under a RegularExpression rule', () => {
+            const item = itemBuilder('login');
+            item.get('metadata').set('name', 'Domain.com');
+            item.get('content')
+                .set('itemEmail', submission.data.userIdentifier)
+                .set('password', submission.data.password) /* same password */
+                .set('autofillUrls', [
+                    { url: '^https://sub\\.domain\\.com/login$', mode: AutofillMode.RegularExpression },
+                ]);
+
+            const revision = getMockItemRevision({ data: item.data });
+            const state = getMockState();
+            state.items.byShareId[mockShareId][revision.itemId] = revision;
+            state.user.features = { [PassFeature.PassAutofillUrlRegex]: true };
+            store.getState.mockReturnValueOnce(state);
+
+            expect(autosave.resolve({ ...submission, url: 'https://sub.domain.com/login' })).toEqual({
+                shouldPrompt: false,
+            });
+        });
+
+        test('should prompt for update if identical username but different password on a subdomain', () => {
+            const item = itemBuilder('login');
+            item.get('metadata').set('name', 'Domain.com');
+            item.get('content')
+                .set('itemEmail', submission.data.userIdentifier)
+                .set('password', 'something-else') /* different password */
+                .set('autofillUrls', [{ url: 'https://accounts.domain.com', mode: AutofillMode.Default }]);
+
+            const revision = getMockItemRevision({ data: item.data });
+            const state = getMockState();
+            state.items.byShareId[mockShareId][revision.itemId] = revision;
+            store.getState.mockReturnValueOnce(state);
+
+            expect(autosave.resolve(submission)).toEqual({
+                shouldPrompt: true,
+                data: {
+                    type: AutosaveMode.UPDATE,
+                    candidates: [
+                        {
+                            itemId: revision.itemId,
+                            shareId: mockShareId,
+                            name: 'Domain.com',
+                            url: 'https://accounts.domain.com',
+                            userIdentifier: 'test@proton.me',
+                        },
+                    ],
+                },
+            });
+        });
+
+        test('should not prompt if identical credentials exist in a legacy `urls` item homed on a subdomain', () => {
+            /* Pre-5512 regression: item autosaved on a subdomain page before the
+             * matching update, used afterwards on the apex page — data unchanged,
+             * only suppression semantics tightened around it (IDTEAM-6487) */
+            const item = itemBuilder('login');
+            item.get('metadata').set('name', 'Domain.com');
+            item.get('content')
+                .set('itemEmail', submission.data.userIdentifier)
+                .set('password', submission.data.password) /* same password */
+                .set('autofillUrls', [{ url: 'https://sub.domain.com', mode: AutofillMode.Default }]);
+
+            const revision = getMockItemRevision({ data: item.data });
+            const state = getMockState();
+            state.items.byShareId[mockShareId][revision.itemId] = revision;
+            store.getState.mockReturnValueOnce(state);
+
+            expect(autosave.resolve(submission)).toEqual({ shouldPrompt: false });
         });
     });
 
@@ -307,7 +472,7 @@ describe('AutosaveService [worker]', () => {
             expect(response.error).toBe('Item does not exist');
         });
 
-        test('should handle item update for subdomain', async () => {
+        test('should keep autofill rules untouched on item update', async () => {
             setMockMessageSender('https://sub.domain.com');
             const item = itemBuilder('login');
             const passkey = getMockPasskey();
@@ -344,10 +509,7 @@ describe('AutosaveService [worker]', () => {
             expectMessageSuccess(response);
             expect(actions).toEqual(itemEdit);
             expect(updated.metadata.name).toEqual('Domain.com#Update');
-            expect(updated.content.autofillUrls).toEqual([
-                { url: 'https://domain.com/', mode: AutofillMode.Default },
-                { url: 'https://sub.domain.com/', mode: AutofillMode.Default },
-            ]);
+            expect(updated.content.autofillUrls).toEqual([{ url: 'https://domain.com/', mode: AutofillMode.Default }]);
             expect(deobfuscate(updated.content.itemEmail)).toEqual('test@proton.me');
             expect(deobfuscate(updated.content.password)).toEqual('new-password');
             expect(updated.content.passkeys).toEqual([passkey]);
