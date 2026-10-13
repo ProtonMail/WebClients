@@ -2,7 +2,12 @@ import { describe, expect, it } from 'vitest';
 
 import type { SerializableDeviceInfo } from '../../../utils/deviceUtils';
 import type { MeetState } from '../../rootReducer';
-import { selectSelectedAudioOutputId, selectSelectedCameraId, selectSelectedMicrophoneId } from './selectors';
+import {
+    selectMicrophoneUnavailable,
+    selectSelectedAudioOutputId,
+    selectSelectedCameraId,
+    selectSelectedMicrophoneId,
+} from './selectors';
 
 const device = (deviceId: string, label = deviceId, kind: MediaDeviceKind = 'audiooutput'): SerializableDeviceInfo => ({
     deviceId,
@@ -22,10 +27,12 @@ const createMockState = (
         activeCameraId?: string;
         activeMicrophoneId?: string;
         activeAudioOutputId?: string;
+        microphonePermission?: PermissionState;
     } = {}
 ): MeetState =>
     ({
         deviceManagement: {
+            permissions: { camera: 'granted', microphone: overrides.microphonePermission ?? 'granted' },
             cameras: overrides.cameras ?? [],
             microphones: overrides.microphones ?? [],
             speakers: overrides.speakers ?? [],
@@ -42,6 +49,24 @@ const createMockState = (
 // is in use right now. The preference only wins while nothing is in use, because a preferred device
 // can be plugged in and waiting for the user to act on the notification while another one plays.
 describe('deviceManagementSlice selectors', () => {
+    describe('selectMicrophoneUnavailable', () => {
+        const microphone = device('builtin-mic', 'Built-in Microphone', 'audioinput');
+
+        it('is available with permission and a microphone', () => {
+            expect(selectMicrophoneUnavailable(createMockState({ microphones: [microphone] }))).toBe(false);
+        });
+
+        it('is unavailable without a microphone', () => {
+            expect(selectMicrophoneUnavailable(createMockState())).toBe(true);
+        });
+
+        it.each<PermissionState>(['prompt', 'denied'])('is unavailable while permission is %s', (permission) => {
+            const state = createMockState({ microphones: [microphone], microphonePermission: permission });
+
+            expect(selectMicrophoneUnavailable(state)).toBe(true);
+        });
+    });
+
     describe('selectSelectedAudioOutputId', () => {
         it('returns the active device when it is available', () => {
             const state = createMockState({

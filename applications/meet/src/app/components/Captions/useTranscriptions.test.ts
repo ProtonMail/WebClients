@@ -1,5 +1,6 @@
-import { useRoomContext } from '@livekit/components-react';
+import { useConnectionState, useRoomContext } from '@livekit/components-react';
 import { act, renderHook } from '@testing-library/react';
+import { ConnectionState } from 'livekit-client';
 
 import type { MeetState } from '@proton/meet/store/rootReducer';
 
@@ -17,6 +18,7 @@ vi.mock('@proton/meet', () => ({
 
 vi.mock('@livekit/components-react', () => ({
     useRoomContext: vi.fn(),
+    useConnectionState: vi.fn(),
 }));
 
 vi.mock('../../contexts/MeetCoreClientContext', () => ({
@@ -91,6 +93,7 @@ describe('useTranscriptions', () => {
         vi.mocked(useMeetCoreClient).mockReturnValue({ decryptMessage } as never);
         state.agentIdentities = [AGENT_IDENTITY];
         decryptMessage.mockResolvedValue({ message: 'hello there' });
+        vi.mocked(useConnectionState).mockReturnValue(ConnectionState.Connected);
         mockRoom();
     });
 
@@ -147,6 +150,39 @@ describe('useTranscriptions', () => {
 
         expect(result.current.status).toBe('ready');
     });
+
+    it('shows the connection as lost while the agent is gone, over the lines already on screen', async () => {
+        const { result, rerender } = renderHook(() => useTranscriptions());
+
+        await emit(btoa('ciphertext'));
+
+        state.agentIdentities = [];
+        rerender();
+
+        expect(result.current.status).toBe('disconnected');
+
+        state.agentIdentities = [AGENT_IDENTITY];
+        rerender();
+
+        expect(result.current.status).toBe('active');
+    });
+
+    it.each([ConnectionState.SignalReconnecting, ConnectionState.Reconnecting])(
+        'shows the connection as lost while the room is in %s',
+        (connectionState) => {
+            const { result, rerender } = renderHook(() => useTranscriptions());
+
+            vi.mocked(useConnectionState).mockReturnValue(connectionState);
+            rerender();
+
+            expect(result.current.status).toBe('disconnected');
+
+            vi.mocked(useConnectionState).mockReturnValue(ConnectionState.Connected);
+            rerender();
+
+            expect(result.current.status).toBe('ready');
+        }
+    );
 
     it('reports a decryption failure without exposing the payload', async () => {
         decryptMessage.mockRejectedValue(new Error('no matching epoch'));
@@ -221,6 +257,18 @@ describe('useTranscriptions', () => {
         await emit(btoa('second-again'), { id: 'segment-2', isFinal: false });
 
         expect(result.current.segments.map((segment) => segment.text)).toEqual(['hello there friend']);
+    });
+
+    it('keeps merging same-speaker segments into one line however long it gets', async () => {
+        const long = 'a'.repeat(500);
+        decryptMessage.mockResolvedValueOnce({ message: long }).mockResolvedValueOnce({ message: 'next' });
+
+        const { result } = renderHook(() => useTranscriptions());
+
+        await emit(btoa('first'), { id: 'segment-1' });
+        await emit(btoa('second'), { id: 'segment-2' });
+
+        expect(result.current.segments.map((segment) => segment.text)).toEqual([`${long} next`]);
     });
 
     it('starts a new line when the speaker pauses for longer than the merge gap', async () => {

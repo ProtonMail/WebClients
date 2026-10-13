@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 
-import { useRoomContext } from '@livekit/components-react';
+import { useConnectionState, useRoomContext } from '@livekit/components-react';
+import { ConnectionState } from 'livekit-client';
 import type { Room, TextStreamReader } from 'livekit-client';
 
 import { useMeetErrorReporting } from '@proton/meet';
@@ -9,17 +10,17 @@ import { selectCaptionsAgentPresent } from '@proton/meet/store/slices/participan
 import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
+import { isCaptionsSimSegmentId, subscribeCaptionsSimEvents, useCaptionsSimStatus } from '../../dev/captionsSimStore';
 import { useStableCallback } from '../../hooks/useStableCallback';
 import { isCaptionAgent } from '../../utils/getAgentDisplayInfo';
 
 const TRANSCRIPTION_TOPIC = 'lk.transcription';
 const FINAL_LINGER_MS = 4000;
 const STALE_SEGMENT_MS = 15000;
-const MAX_VISIBLE = 2;
+// How many lines are kept on screen to scroll back through; older ones expire.
+const MAX_VISIBLE = 6;
 // Gap between two same-speaker segments below which we treat the split as a breath and merge them.
 export const MERGE_GAP_MS = 1500;
-// Hard cap on a merged line so an uninterrupted run-on cannot swamp the four-line caption area.
-const MAX_MERGED_LENGTH = 180;
 // How long to wait for a first usable line before calling the agent stuck.
 export const READY_TIMEOUT_MS = 20000;
 
@@ -33,8 +34,9 @@ export interface CaptionSegment {
     receivedAt: number;
 }
 
-// 'failing' means captions are arriving but none can be decoded.
-export type CaptionsStatus = 'loading' | 'ready' | 'active' | 'failing';
+// 'failing' means captions are arriving but none can be decoded. 'disconnected' means they can't
+// arrive until we, or the agent, are back in the room.
+export type CaptionsStatus = 'loading' | 'ready' | 'active' | 'failing' | 'disconnected';
 
 export interface Transcriptions {
     segments: CaptionSegment[];
@@ -47,11 +49,26 @@ const roomsWithConsumer = new WeakSet<Room>();
 
 const emptyDiagnostics = () => ({ streamsReceived: 0, streamReadFailures: 0, decryptFailures: 0 });
 
+const upsertSegment = (
+    prev: Map<string, CaptionSegment>,
+    update: Pick<CaptionSegment, 'id' | 'text' | 'speakerIdentity' | 'isFinal'>
+) => {
+    const next = new Map(prev);
+    const now = Date.now();
+    next.set(update.id, { ...update, firstSeenAt: prev.get(update.id)?.firstSeenAt ?? now, receivedAt: now });
+    return next;
+};
+
 export const useTranscriptions = (): Transcriptions => {
     const room = useRoomContext();
     const meetCoreClient = useMeetCoreClient();
     const { reportMeetError } = useMeetErrorReporting();
     const agentPresent = useMeetSelector(selectCaptionsAgentPresent);
+    const connectionState = useConnectionState(room);
+    const simStatus = useCaptionsSimStatus();
+    // An agent that has yet to join is still loading; one that has left took the captions with it.
+    const agentEverPresent = useRef(false);
+    agentEverPresent.current = agentEverPresent.current || agentPresent;
     const [segments, setSegments] = useState<Map<string, CaptionSegment>>(() => new Map());
     // Ids of the raw segments composing the currently-visible lines; these are kept alive so the
     // last lines stay on screen instead of being expired by the cleanup interval below.
@@ -168,19 +185,7 @@ export const useTranscriptions = (): Transcriptions => {
                 return;
             }
 
-            setSegments((prev) => {
-                const next = new Map(prev);
-                const now = Date.now();
-                next.set(id, {
-                    id,
-                    text: decrypted.message,
-                    speakerIdentity,
-                    isFinal,
-                    firstSeenAt: prev.get(id)?.firstSeenAt ?? now,
-                    receivedAt: now,
-                });
-                return next;
-            });
+            setSegments((prev) => upsertSegment(prev, { id, text: decrypted.message, speakerIdentity, isFinal }));
         };
 
         try {
@@ -204,6 +209,20 @@ export const useTranscriptions = (): Transcriptions => {
             room.unregisterTextStreamHandler(TRANSCRIPTION_TOPIC);
         };
     }, [room, meetCoreClient, reportError]);
+
+    useEffect(() => {
+        if (process.env.NODE_ENV === 'production') {
+            return;
+        }
+
+        return subscribeCaptionsSimEvents((event) => {
+            if (event.type === 'segment') {
+                setSegments((prev) => upsertSegment(prev, event.segment));
+                return;
+            }
+            setSegments((prev) => new Map([...prev].filter(([id]) => !isCaptionsSimSegmentId(id))));
+        });
+    }, []);
 
     // Only a listening consumer with an agent to listen to can blame the agent for the silence.
     useEffect(() => {
@@ -251,15 +270,18 @@ export const useTranscriptions = (): Transcriptions => {
         const merged: { line: CaptionSegment; memberIds: string[] }[] = [];
         for (const seg of sorted) {
             const last = merged[merged.length - 1];
-            const combinedText = last ? `${last.line.text} ${seg.text}`.trim() : '';
             // An unattributed segment could be anyone, so it never counts as the same speaker.
             const sameSpeaker = Boolean(seg.speakerIdentity) && last?.line.speakerIdentity === seg.speakerIdentity;
             // Gap between the previous line's last update and this segment's first, so a segment
             // that keeps updating can't grow its own gap and split a line that already merged.
             const withinBreath = last && seg.firstSeenAt - last.line.receivedAt <= MERGE_GAP_MS;
-            const fitsLine = combinedText.length <= MAX_MERGED_LENGTH;
-            if (last && sameSpeaker && withinBreath && fitsLine) {
-                last.line = { ...last.line, text: combinedText, isFinal: seg.isFinal, receivedAt: seg.receivedAt };
+            if (last && sameSpeaker && withinBreath) {
+                last.line = {
+                    ...last.line,
+                    text: `${last.line.text} ${seg.text}`.trim(),
+                    isFinal: seg.isFinal,
+                    receivedAt: seg.receivedAt,
+                };
                 last.memberIds.push(seg.id);
             } else {
                 merged.push({ line: seg, memberIds: [seg.id] });
@@ -278,12 +300,22 @@ export const useTranscriptions = (): Transcriptions => {
     // segment that is already on screen in the render it fires between.
     visibleIdsRef.current = visibleIds;
 
+    // LiveKit also resumes through SignalReconnecting when the peer connection itself failed.
+    const disconnected =
+        connectionState === ConnectionState.SignalReconnecting ||
+        connectionState === ConnectionState.Reconnecting ||
+        (agentEverPresent.current && !agentPresent) ||
+        simStatus === 'disconnected';
+
     let status: CaptionsStatus = 'loading';
-    if (hasSegments) {
+    // Lines already on screen would otherwise sit there looking current.
+    if (disconnected) {
+        status = 'disconnected';
+    } else if (hasSegments) {
         status = 'active';
-    } else if (failing) {
+    } else if (failing || simStatus === 'failing') {
         status = 'failing';
-    } else if (listening && agentPresent) {
+    } else if ((listening && agentPresent) || simStatus === 'ready') {
         status = 'ready';
     }
 

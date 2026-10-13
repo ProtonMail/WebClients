@@ -23,6 +23,9 @@ export const selectCameras = (state: MeetState) => state.deviceManagement.camera
 export const selectMicrophones = (state: MeetState) => state.deviceManagement.microphones;
 export const selectSpeakers = (state: MeetState) => state.deviceManagement.speakers;
 
+export const selectMicrophoneUnavailable = (state: MeetState) =>
+    selectMicrophonePermission(state) !== 'granted' || selectMicrophones(state).length === 0;
+
 const sortDevices = (devices: SerializableDeviceInfo[]) =>
     [...devices].sort((a, b) => {
         return a.label.localeCompare(b.label);
