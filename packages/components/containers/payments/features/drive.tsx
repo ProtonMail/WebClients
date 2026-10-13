@@ -66,7 +66,6 @@ export const getStorageFeature = (
         boldStorageSize?: boolean;
         family?: boolean;
         duo?: boolean;
-        visionary?: boolean;
         subtext?: boolean;
     }
 ): PlanCardFeatureDefinition => {
@@ -315,10 +314,9 @@ export const getStorage = (plansMap: PlansMap, freePlan: FreePlanDefault): PlanC
             [PLANS.LUMO_BUSINESS]: getStorageFeature(-1, { subtext: true, freePlan }),
             [PLANS.MEET_BUSINESS]: getStorageFeature(-1, { subtext: true, freePlan }),
             [PLANS.MEET]: getStorageFeature(-1, { subtext: true, freePlan }),
-            [PLANS.VISIONARY]: getStorageFeature(plansMap[PLANS.VISIONARY]?.MaxSpace ?? 3298534883328, {
-                subtext: true,
-                freePlan,
-            }),
+            [PLANS.VISIONARY]: plansMap[PLANS.VISIONARY]
+                ? getStorageFeature(plansMap[PLANS.VISIONARY].MaxSpace, { subtext: true, freePlan })
+                : null,
             [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getStorageFeature(
                 plansMap[PLANS.VPN_PASS_BUNDLE_BUSINESS]?.MaxSpace ?? -1,
                 { subtext: true, freePlan }
