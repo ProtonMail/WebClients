@@ -367,7 +367,7 @@ export function computeAddonCustomizerItems({
             }
             // Some cycles don't support some addons. For example, if user buys vpn2024 6m then 1lumo-vpn2024 doesn't
             // support 6m. So we hide the lumo addon in this case.
-            const addonSupportsSelectedCycle = !!plansMap[addonName]?.Pricing[cycle];
+            const addonSupportsSelectedCycle = plansMap[addonName]?.Pricing[cycle] !== undefined;
             const canDisplayAddon = isAllowedAddon(addonName) && plansMap[addonName];
 
             return !!(addonSupportsSelectedCycle && canDisplayAddon);
