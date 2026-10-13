@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from '@testing-library/react'
+import { act, render, screen, fireEvent } from '@testing-library/react'
 import { LexicalComposer } from '@lexical/react/LexicalComposer'
 import { createEditor } from 'lexical'
 import ImageComponent from './ImageComponent'
@@ -6,6 +6,9 @@ import ImageComponent from './ImageComponent'
 const mockOpenLink = jest.fn()
 jest.mock('../../DocsDependenciesProvider', () => ({
   useDocsDependencies: () => ({ openLink: mockOpenLink }),
+}))
+jest.mock('../../Utils/getEditorWidthWithoutPadding', () => ({
+  getElementDimensionsWithoutPadding: () => ({ width: 100, height: 100 }),
 }))
 
 function renderImage(src: string) {
@@ -57,4 +60,33 @@ describe('blocked image recovery', () => {
       expect(container.querySelector('img')).toBeNull()
     },
   )
+})
+
+describe('embedded image loading', () => {
+  it('shows loading feedback and fits the loaded image to the editor width', async () => {
+    const preloadedImages: HTMLImageElement[] = []
+    const imageConstructor = jest.spyOn(window, 'Image').mockImplementation(() => {
+      const image = document.createElement('img')
+      preloadedImages.push(image)
+      return image
+    })
+    const naturalWidth = jest.spyOn(HTMLImageElement.prototype, 'naturalWidth', 'get').mockReturnValue(200)
+
+    try {
+      renderImage('data:image/png;base64,aGVsbG8=')
+      expect(screen.getByText('Loading')).toBeInTheDocument()
+      expect(preloadedImages).toHaveLength(1)
+
+      act(() => {
+        preloadedImages[0].dispatchEvent(new Event('load'))
+      })
+
+      const image = await screen.findByRole('img', { name: 'Remote image' })
+      expect(image).toHaveStyle({ width: '100px' })
+      expect(screen.queryByText('Loading')).not.toBeInTheDocument()
+    } finally {
+      imageConstructor.mockRestore()
+      naturalWidth.mockRestore()
+    }
+  })
 })
