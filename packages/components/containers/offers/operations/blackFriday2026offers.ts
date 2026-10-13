@@ -3,15 +3,14 @@ import { c } from 'ttag';
 import { FeatureCode } from '@proton/features/interface';
 import { COUPON_CODES, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import {
-    CALENDAR_SHORT_APP_NAME,
+    DARK_WEB_MONITORING_NAME,
     DRIVE_SHORT_APP_NAME,
     MAIL_SHORT_APP_NAME,
     PASS_SHORT_APP_NAME,
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
-import { getPremium } from '@proton/shared/lib/helpers/premium';
 
-import { getSecureVaultSharingText, getUnlimitedHideMyEmailAliasesText } from '../../payments/features/pass';
+import { getUnlimitedHideMyEmailAliasesText } from '../../payments/features/pass';
 import kv from '../components/blackFriday2026/black-friday-2026-kv.webp';
 import type { OfferProduct } from '../helpers/getOfferProduct';
 
@@ -30,6 +29,163 @@ interface BlackFriday2026Offer {
     modalImage: string;
 }
 
+/*
+ * Strings
+ */
+
+// Each ordering needs its own context. The app names stay interpolated so they cannot be translated,
+// but that makes every ordering collapse to the same `Premium ${0}, ${1}, ...` msgid, which
+// i18n:validate rejects as a duplicate within one context. The context also tells the translator which
+// app leads the list, which the positional placeholders alone do not.
+const getPremiumApps = (product: OfferProduct) => {
+    if (product === 'drive') {
+        return c('bfcampaign2026: Info, Drive first')
+            .t`Premium ${DRIVE_SHORT_APP_NAME}, ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, and ${VPN_SHORT_APP_NAME}`;
+    }
+
+    if (product === 'pass') {
+        return c('bfcampaign2026: Info, Pass first')
+            .t`Premium ${PASS_SHORT_APP_NAME}, ${MAIL_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, and ${VPN_SHORT_APP_NAME}`;
+    }
+
+    return c('bfcampaign2026: Info, Mail first')
+        .t`Premium ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, and ${VPN_SHORT_APP_NAME}`;
+};
+
+// Family copy lists four apps and Calendar is not one of them, so a Calendar user keeps the default order.
+const getFamilyPremiumApps = (product: OfferProduct) => {
+    if (product === 'drive') {
+        return c('bfcampaign2026: Info, Family, Drive first')
+            .t`Premium ${DRIVE_SHORT_APP_NAME}, ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}`;
+    }
+
+    return c('bfcampaign2026: Info, Family, Mail first')
+        .t`Premium ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}`;
+};
+
+const get500GBStorageText = () => {
+    return c('bfcampaign2026: Info').t`500 GB of secure storage`;
+};
+
+const get2TBStorageText = () => {
+    return c('bfcampaign2026: Info').t`2 TB of secure storage`;
+};
+
+const get3TBStorageText = () => {
+    return c('bfcampaign2026: Info').t`3 TB of secure storage`;
+};
+
+const get2AccountsText = () => {
+    return c('bfcampaign2026: Info').t`2 individual accounts`;
+};
+
+const get6AccountsText = () => {
+    return c('bfcampaign2026: Info').t`6 individual accounts`;
+};
+
+const getCyberThreatsText = () => {
+    return c('bfcampaign2026: Info').t`Stronger protection against cyber threats`;
+};
+
+const get15GBStorageText = () => {
+    return c('bfcampaign2026: Info').t`15 GB storage`;
+};
+
+const getUnlimitedFoldersText = () => {
+    return c('bfcampaign2026: Info').t`Unlimited folders, labels, and filters`;
+};
+
+const getOwnDomainText = () => {
+    return c('bfcampaign2026: Info').t`Use your own email domain`;
+};
+
+// translator: free Drive storage is 5 GB, so 200 GB is 40 times what the user has now
+const get200GBStorageText = () => {
+    return c('bfcampaign2026: Info').t`200 GB storage: 40x your current plan`;
+};
+
+const getDocumentEditorText = () => {
+    return c('bfcampaign2026: Info').t`Online document editor`;
+};
+
+const getFileVersionsText = () => {
+    return c('bfcampaign2026: Info').t`Recover previous file versions`;
+};
+
+const get2FAAuthenticatorText = () => {
+    return c('bfcampaign2026: Info').t`Built-in 2FA authenticator`;
+};
+
+/*
+ * Taglines, shown under the "Black Friday" headline in the modal header
+ */
+
+// translator: offer tagline, shown under the "Black Friday" headline in the offer header
+const getBiggestSaleTagline = () => {
+    return c('bfcampaign2026: Title').t`Biggest sale of the year`;
+};
+
+// translator: offer tagline, shown under the "Black Friday" headline in the offer header
+const getYearlyPlanTagline = () => {
+    return c('bfcampaign2026: Title').t`Save big with a yearly plan`;
+};
+
+// translator: offer tagline, shown under the "Black Friday" headline in the offer header
+const getProtectionForTwoTagline = () => {
+    return c('bfcampaign2026: Title').t`Protection for two in a single plan`;
+};
+
+// translator: offer tagline, shown under the "Black Friday" headline in the offer header
+const getEntireTribeTagline = () => {
+    return c('bfcampaign2026: Title').t`Protect your entire tribe`;
+};
+
+// translator: offer tagline, shown under the "Black Friday" headline in the offer header
+const getLastChanceTagline = () => {
+    return c('bfcampaign2026: Title').t`Last chance to save big`;
+};
+
+/*
+ * Features
+ */
+
+const getFreeToUnlimitedFeatures = (product: OfferProduct) => {
+    return [{ name: getPremiumApps(product) }, { name: get500GBStorageText() }, { name: getCyberThreatsText() }];
+};
+
+const getPlusToUnlimitedFeatures = (product: OfferProduct) => {
+    return [{ name: getPremiumApps(product) }, { name: get500GBStorageText() }, { name: getCyberThreatsText() }];
+};
+
+const getUnlimitedToDuoFeatures = (product: OfferProduct) => {
+    return [{ name: getPremiumApps(product) }, { name: get2AccountsText() }, { name: get2TBStorageText() }];
+};
+
+const getDuoToFamilyFeatures = (product: OfferProduct) => {
+    return [{ name: getFamilyPremiumApps(product) }, { name: get6AccountsText() }, { name: get3TBStorageText() }];
+};
+
+const getFreeToMailPlusFeatures = () => {
+    return [{ name: get15GBStorageText() }, { name: getUnlimitedFoldersText() }, { name: getOwnDomainText() }];
+};
+
+const getFreeToDrivePlusFeatures = () => {
+    return [{ name: get200GBStorageText() }, { name: getDocumentEditorText() }, { name: getFileVersionsText() }];
+};
+
+const getFreeToPassPlusFeatures = () => {
+    return [
+        { name: getUnlimitedHideMyEmailAliasesText() },
+        { name: get2FAAuthenticatorText() },
+        // Product name, not translated
+        { name: DARK_WEB_MONITORING_NAME },
+    ];
+};
+
+/*
+ * Configurations
+ */
+
 /**
  * Refs are `offer_bf_26_<app>_<currentPlan>_<offerPlan>_web`. The campaign tracks Inbox, Drive and the
  * account app entered from Pass separately. Calendar is part of Inbox, so it reports as `mail`. Feature
@@ -44,43 +200,6 @@ const getRefApp = (product: OfferProduct) => {
     return 'mail';
 };
 
-// Each ordering needs its own context. The app names stay interpolated so they cannot be translated,
-// but that makes every ordering collapse to the same `Premium ${0}, ${1}, ...` msgid, which
-// i18n:validate rejects as a duplicate within one context. The context also tells the translator which
-// app leads the list, which the positional placeholders alone do not.
-const getPremiumApps = (product: OfferProduct) => {
-    if (product === 'drive') {
-        return c('bfcampaign2026: Info, Drive first')
-            .t`Premium ${DRIVE_SHORT_APP_NAME}, ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}, and ${CALENDAR_SHORT_APP_NAME}`;
-    }
-
-    if (product === 'calendar') {
-        return c('bfcampaign2026: Info, Calendar first')
-            .t`Premium ${CALENDAR_SHORT_APP_NAME}, ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, and ${VPN_SHORT_APP_NAME}`;
-    }
-
-    return c('bfcampaign2026: Info, Mail first')
-        .t`Premium ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}, and ${CALENDAR_SHORT_APP_NAME}`;
-};
-
-const getUnlimitedFeatures = (product: OfferProduct) => {
-    return [
-        { name: getPremiumApps(product) },
-        { name: c('bfcampaign2026: Info').t`500 GB of secure storage` },
-        { name: c('bfcampaign2026: Info').t`Advanced protection against cyber threats` },
-    ];
-};
-
-// translator: offer tagline, shown under the "Black Friday" headline in the offer header
-const getFreeToPlusTagline = () => {
-    return c('bfcampaign2026: Title').t`Last chance to save big`;
-};
-
-// translator: offer tagline, shown under the "Black Friday" headline in the offer header
-const getFreeToUnlimitedTagline = () => {
-    return c('bfcampaign2026: Title').t`Biggest sale of the year`;
-};
-
 const freeToUnlimited: BlackFriday2026Offer = {
     ID: `${BLACK_FRIDAY_2026_PREFIX}-free-to-unlimited`,
     featureCode: FeatureCode.OfferBlackFriday2026FreeToUnlimited,
@@ -88,14 +207,9 @@ const freeToUnlimited: BlackFriday2026Offer = {
     getRef: (product, currentPlan) => `offer_bf_26_${getRefApp(product)}_${currentPlan}_unlimited_web`,
     dealName: PLAN_NAMES[PLANS.BUNDLE],
     couponCode: COUPON_CODES.BLACK_FRIDAY_2026_BUNDLE,
-    features: getUnlimitedFeatures,
-    title: getFreeToUnlimitedTagline,
+    features: getFreeToUnlimitedFeatures,
+    title: getBiggestSaleTagline,
     modalImage: kv,
-};
-
-// translator: offer tagline, shown under the "Black Friday" headline in the offer header
-const getPlusToUnlimitedTagline = () => {
-    return c('bfcampaign2026: Title').t`Save big with a yearly plan`;
 };
 
 // Runs alongside both free-user waves; its audience is paid single-product users, so it never overlaps
@@ -108,22 +222,9 @@ const plusToUnlimited: BlackFriday2026Offer = {
     getRef: (product) => `offer_bf_26_${getRefApp(product)}_plus_unlimited_web`,
     dealName: PLAN_NAMES[PLANS.BUNDLE],
     couponCode: COUPON_CODES.BLACK_FRIDAY_2026_BUNDLE,
-    features: getUnlimitedFeatures,
-    title: getPlusToUnlimitedTagline,
+    features: getPlusToUnlimitedFeatures,
+    title: getYearlyPlanTagline,
     modalImage: kv,
-};
-
-// translator: offer tagline, shown under the "Black Friday" headline in the offer header
-const getUnlimitedToDuoTagline = () => {
-    return c('bfcampaign2026: Title').t`Protection for two in a single plan`;
-};
-
-const getDuoFeatures = (product: OfferProduct) => {
-    return [
-        { name: getPremiumApps(product) },
-        { name: c('bfcampaign2026: Info').t`2 individual accounts` },
-        { name: c('bfcampaign2026: Info').t`2 TB of secure storage` },
-    ];
 };
 
 // Runs alongside both free-user waves for Unlimited users. It shares its audience with the permanent
@@ -138,33 +239,9 @@ const unlimitedToDuo: BlackFriday2026Offer = {
     getRef: (product) => `offer_bf_26_${getRefApp(product)}_unlimited_duo_web`,
     dealName: PLAN_NAMES[PLANS.DUO],
     couponCode: COUPON_CODES.BLACK_FRIDAY_2026_BUNDLE,
-    features: getDuoFeatures,
-    title: getUnlimitedToDuoTagline,
+    features: getUnlimitedToDuoFeatures,
+    title: getProtectionForTwoTagline,
     modalImage: kv,
-};
-
-// translator: offer tagline, shown under the "Black Friday" headline in the offer header
-const getDuoToFamilyTagline = () => {
-    return c('bfcampaign2026: Title').t`Protect your entire tribe`;
-};
-
-// Family copy lists four apps and Calendar is not one of them, so a Calendar user keeps the default order.
-const getFamilyPremiumApps = (product: OfferProduct) => {
-    if (product === 'drive') {
-        return c('bfcampaign2026: Info, Family, Drive first')
-            .t`Premium ${DRIVE_SHORT_APP_NAME}, ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}`;
-    }
-
-    return c('bfcampaign2026: Info, Family, Mail first')
-        .t`Premium ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}`;
-};
-
-const getFamilyFeatures = (product: OfferProduct) => {
-    return [
-        { name: getFamilyPremiumApps(product) },
-        { name: c('bfcampaign2026: Info').t`6 individual accounts` },
-        { name: c('bfcampaign2026: Info').t`3 TB of secure storage` },
-    ];
 };
 
 // Runs alongside both free-user waves for Duo users.
@@ -179,8 +256,8 @@ const duoToFamily: BlackFriday2026Offer = {
     getRef: (product) => `offer_bf_26_${getRefApp(product)}_duo_family_web`,
     dealName: PLAN_NAMES[PLANS.FAMILY],
     couponCode: COUPON_CODES.BLACK_FRIDAY_2026_BUNDLE,
-    features: getFamilyFeatures,
-    title: getDuoToFamilyTagline,
+    features: getDuoToFamilyFeatures,
+    title: getEntireTribeTagline,
     modalImage: kv,
 };
 
@@ -192,10 +269,8 @@ const freeToMailPlus: BlackFriday2026Offer = {
     ref: 'offer_bf_26_mail_free_plus_web',
     dealName: PLAN_NAMES[PLANS.MAIL],
     couponCode: COUPON_CODES.BLACK_FRIDAY_2026_BUNDLE,
-    features: () => {
-        return [{ name: getPremium(MAIL_SHORT_APP_NAME, CALENDAR_SHORT_APP_NAME) }];
-    },
-    title: getFreeToPlusTagline,
+    features: getFreeToMailPlusFeatures,
+    title: getLastChanceTagline,
     modalImage: kv,
 };
 
@@ -206,10 +281,8 @@ const freeToDrivePlus: BlackFriday2026Offer = {
     ref: 'offer_bf_26_drive_free_plus_web',
     dealName: PLAN_NAMES[PLANS.DRIVE],
     couponCode: COUPON_CODES.BLACK_FRIDAY_2026_BUNDLE,
-    features: () => {
-        return [{ name: getPremium(DRIVE_SHORT_APP_NAME) }];
-    },
-    title: getFreeToPlusTagline,
+    features: getFreeToDrivePlusFeatures,
+    title: getLastChanceTagline,
     modalImage: kv,
 };
 
@@ -220,14 +293,8 @@ const freeToPassPlus: BlackFriday2026Offer = {
     ref: 'offer_bf_26_pass_free_plus_web',
     dealName: PLAN_NAMES[PLANS.PASS],
     couponCode: COUPON_CODES.BLACK_FRIDAY_2026_BUNDLE,
-    features: () => {
-        return [
-            { name: getPremium(PASS_SHORT_APP_NAME) },
-            { name: getUnlimitedHideMyEmailAliasesText() },
-            { name: getSecureVaultSharingText() },
-        ];
-    },
-    title: getFreeToPlusTagline,
+    features: getFreeToPassPlusFeatures,
+    title: getLastChanceTagline,
     modalImage: kv,
 };
 
