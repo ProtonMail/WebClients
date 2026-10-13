@@ -52,11 +52,7 @@
         },
         "applications/admin": {
             "entry": ["src/app/index.{ts,tsx}", "webpack.config.{js,ts}"],
-            "project": ["src/**/*.{ts,tsx,js,jsx}"],
-            "ignore": [
-                "src/app/api/lumo.ts",
-                "src/app/containers/Lookup/UserLookupResults/UserInformationSection/LumoStorageSection.tsx"
-            ]
+            "project": ["src/**/*.{ts,tsx,js,jsx}"]
         },
         "applications/authenticator": {
             "entry": ["src/app/main.tsx", "webpack.config.{js,ts}", "webpack.options.{js,ts}"],
