@@ -5,7 +5,7 @@ import { ConnectionState } from 'livekit-client';
 import type { MeetState } from '@proton/meet/store/rootReducer';
 
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
-import { LINE_FULL_LENGTH, MERGE_GAP_MS, READY_TIMEOUT_MS, useTranscriptions } from './useTranscriptions';
+import { MERGE_GAP_MS, READY_TIMEOUT_MS, useTranscriptions } from './useTranscriptions';
 
 const reportMeetError = vi.fn();
 const decryptMessage = vi.fn();
@@ -259,34 +259,16 @@ describe('useTranscriptions', () => {
         expect(result.current.segments.map((segment) => segment.text)).toEqual(['hello there friend']);
     });
 
-    it('keeps a growing segment on the line it joined, even once that line passes the length cap', async () => {
-        const first = 'a'.repeat(LINE_FULL_LENGTH - 10);
-        const spokenSoFar = 'b'.repeat(5);
-        const spokenLater = 'b'.repeat(LINE_FULL_LENGTH);
-        decryptMessage
-            .mockResolvedValueOnce({ message: first })
-            .mockResolvedValueOnce({ message: spokenSoFar })
-            .mockResolvedValueOnce({ message: spokenLater });
-
-        const { result } = renderHook(() => useTranscriptions());
-
-        await emit(btoa('first'), { id: 'segment-1' });
-        await emit(btoa('second'), { id: 'segment-2', isFinal: false });
-        await emit(btoa('second-again'), { id: 'segment-2', isFinal: false });
-
-        expect(result.current.segments.map((segment) => segment.text)).toEqual([`${first} ${spokenLater}`]);
-    });
-
-    it('starts a new line once the line has reached the length cap', async () => {
-        const full = 'a'.repeat(LINE_FULL_LENGTH);
-        decryptMessage.mockResolvedValueOnce({ message: full }).mockResolvedValueOnce({ message: 'next' });
+    it('keeps merging same-speaker segments into one line however long it gets', async () => {
+        const long = 'a'.repeat(500);
+        decryptMessage.mockResolvedValueOnce({ message: long }).mockResolvedValueOnce({ message: 'next' });
 
         const { result } = renderHook(() => useTranscriptions());
 
         await emit(btoa('first'), { id: 'segment-1' });
         await emit(btoa('second'), { id: 'segment-2' });
 
-        expect(result.current.segments.map((segment) => segment.text)).toEqual([full, 'next']);
+        expect(result.current.segments.map((segment) => segment.text)).toEqual([`${long} next`]);
     });
 
     it('starts a new line when the speaker pauses for longer than the merge gap', async () => {
