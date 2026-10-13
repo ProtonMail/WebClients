@@ -1,0 +1,32 @@
+.docs-image-loader {
+	display: inline-block;
+	font-size: 1em;
+	vertical-align: middle;
+}
+
+.docs-image-loader-track,
+.docs-image-loader-circle {
+	fill: none;
+	stroke: currentcolor;
+	stroke-linecap: round;
+	stroke-width: 2;
+}
+
+.docs-image-loader-track {
+	opacity: 0.2;
+}
+
+.docs-image-loader-circle {
+	stroke-dasharray: 26.2194px 17.4796px;
+	animation: docs-image-loader-stroke 1s linear infinite;
+}
+
+@keyframes docs-image-loader-stroke {
+	from {
+		stroke-dashoffset: 43.699px;
+	}
+
+	to {
+		stroke-dashoffset: 0;
+	}
+}
