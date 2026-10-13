@@ -1,0 +1,48 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
+// Same reading width as the image gallery, so switching tabs doesn't shift the page.
+.library-inner {
+	inline-size: 100%;
+	max-inline-size: rem(1200);
+	margin-inline: auto;
+}
+
+// Underline on the active tab, sitting on the tab bar's bottom border.
+.library-tab {
+	position: relative;
+	cursor: pointer;
+
+	&--active::after {
+		content: '';
+		position: absolute;
+		inset-inline: 0;
+		inset-block-end: -1px;
+		block-size: 2px;
+		background-color: var(--primary);
+	}
+}
+
+// Abstract text lines on a document thumbnail: the brand colour, faded.
+.library-thumbnail-line {
+	background-color: color-mix(in srgb, var(--primary) 25%, transparent);
+}
+
+// The card-wide button is invisible; hovering darkens the thumbnail border, focus outlines the card.
+.library-creation-card-action {
+	background: transparent;
+	border: none;
+	cursor: pointer;
+
+	&:disabled {
+		cursor: default;
+	}
+
+	&:focus-visible {
+		outline: 2px solid var(--focus-ring);
+		outline-offset: 4px;
+	}
+}
+
+.library-creation-card:has(.library-creation-card-action:not(:disabled):hover) .library-creation-thumbnail {
+	border-color: var(--border-norm);
+}

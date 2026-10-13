@@ -35,20 +35,18 @@ import MainContainer from './MainContainer';
 
 import './Conversation.scss';
 
-const GalleryView = lazy(() => import('../../features/gallery/GalleryView').then((m) => ({ default: m.GalleryView })));
-const CreationsView = lazy(() =>
-    import('../../features/creations/CreationsView').then((m) => {
-        return { default: m.CreationsView };
-    })
-);
+const LibraryView = lazy(() => {
+    return import('../../features/library/LibraryView').then((m) => {
+        return { default: m.LibraryView };
+    });
+});
 
 const ConversationPageComponentInner = () => {
     // ** Hooks **
     const user = useSafeUser(); // Get user from context (undefined for guests)
     const navigate = useNavigate();
     const dispatch = useLumoDispatch();
-    const isGalleryRoute = !!useRouteMatch({ path: '/images', exact: true });
-    const isCreationsRoute = !!useRouteMatch({ path: '/creations', exact: true });
+    const isLibraryRoute = !!useRouteMatch({ path: '/library', exact: true });
     const { conversationId: curConversationId } = useParams<RouteParams>();
     const { setConversationId } = useConversation();
     const isGuest = useIsGuest();
@@ -225,20 +223,15 @@ const ConversationPageComponentInner = () => {
         >
             <div className="conversation-page-component relative flex-1 min-h-0 flex flex-column *:min-size-auto flex-nowrap reset4print overflow-auto rounded-xl">
                 {/* <Header conversation={conversation} /> */}
-                {!curConversationId && isGalleryRoute && (
+                {!curConversationId && isLibraryRoute && (
                     <Suspense fallback={<ConversationSkeleton />}>
-                        <GalleryView
+                        <LibraryView
                             isProcessingAttachment={isProcessingAttachment}
                             prefillQuery={prefillQuery || undefined}
                         />
                     </Suspense>
                 )}
-                {!curConversationId && isCreationsRoute && (
-                    <Suspense fallback={<ConversationSkeleton />}>
-                        <CreationsView />
-                    </Suspense>
-                )}
-                {!curConversationId && !isGalleryRoute && !isCreationsRoute && (
+                {!curConversationId && !isLibraryRoute && (
                     <MainContainer
                         isProcessingAttachment={isProcessingAttachment}
                         initialQuery={initialQuery || undefined}

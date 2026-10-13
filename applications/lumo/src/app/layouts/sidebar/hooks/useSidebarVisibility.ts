@@ -7,8 +7,7 @@ export interface SidebarVisibility {
     isGuest: boolean;
     showMobileHeader: boolean;
     showSearch: boolean;
-    showGallery: boolean;
-    showCreations: boolean;
+    showLibrary: boolean;
     showUserDropdown: boolean;
     showCollapseToggle: boolean;
 }
@@ -24,8 +23,8 @@ export const useSidebarVisibility = (): SidebarVisibility => {
         showMobileHeader: isSmallScreen,
         // Search is hidden only for guests
         showSearch: !isGuest,
-        showGallery: imageTools,
-        showCreations: artifactsView,
+        // The Library holds generated images (imageTools) and artifacts (artifactsView).
+        showLibrary: imageTools || artifactsView,
         showUserDropdown: !isGuest,
         // Collapse toggle is desktop-only regardless of auth state
         showCollapseToggle: !isSmallScreen,
