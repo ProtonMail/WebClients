@@ -71,6 +71,12 @@ const FORCED_FEATURE_LIMITATIONS: PartialRecord<
             enforceWhen: passB2BMembersEnforcement({ min }),
         };
     })(),
+    [PLANS.PASS_BASIC]: {
+        MaxMembers: {
+            min: 1,
+            max: 30,
+        },
+    },
 };
 
 export function getForcedFeatureLimitations({
