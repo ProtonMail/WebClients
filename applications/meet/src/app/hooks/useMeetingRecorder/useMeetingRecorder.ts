@@ -38,7 +38,6 @@ import { useRecordingTelemetry } from './hooks/useRecordingTelemetry';
 import { useTrackPublishedSubscriber } from './hooks/useTrackPublishedSubscriber';
 import { isWebCodecsRecordingSupported } from './mediaEncoder/capabilities';
 import { RecordingSession } from './recordingSession/recordingSession';
-import { hasSpaceForRecording } from './recordingStorage/hasSpaceForRecording';
 
 interface FinishRecordingOptions {
     hasRecordedData?: boolean;
@@ -269,15 +268,6 @@ export const useMeetingRecorder = () => {
             // eslint-disable-next-line no-console
             console.error('[MeetingRecorder] codec detection has not resolved yet.');
             reportMeetError('MeetingRecording Error: codec detection not ready at startRecording');
-            return;
-        }
-
-        if (!(await hasSpaceForRecording())) {
-            reportMeetError('MeetingRecording Error: not enough storage space to start recording');
-            createNotification({
-                type: 'error',
-                text: c('Error').t`Not enough storage space to record. Free up space and try again.`,
-            });
             return;
         }
 
