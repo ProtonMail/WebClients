@@ -62,6 +62,7 @@ export type OrganizationSettingsRouterParams = {
     organization: OrganizationExtended | undefined;
     isB2BDrive: boolean;
     isGroupOwner: boolean | null;
+    isOrganizationOwner: boolean;
     memberships: GroupMembershipReturn[] | undefined;
     groups: Group[] | undefined;
     permissions: OrgPermissions;

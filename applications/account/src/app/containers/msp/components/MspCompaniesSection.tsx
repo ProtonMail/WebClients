@@ -7,10 +7,8 @@ import { addCompanyThunk, setCompanyStatusThunk, updateCompanyThunk } from '@pro
 import { useMspSubsidiaries } from '@proton/account/mspSubsidiaries/hooks';
 import { manageCompanyAndOpenTabThunk } from '@proton/account/mspSubsidiaries/manageCompanyAction';
 import { useMspDispatch } from '@proton/account/mspSubsidiaries/useMspDispatch';
-import { isOwnerRole } from '@proton/account/organizationRoles/helpers';
-import { useUser } from '@proton/account/user/hooks';
 import { useUserOrganizations } from '@proton/account/userOrganizations/hooks';
-import { useUserPermissions } from '@proton/account/userPermissions/hooks';
+import { useIsOrganizationOwner } from '@proton/account/userPermissions/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import type { ButtonProps } from '@proton/atoms/Button/Button';
 import { Button } from '@proton/atoms/Button/Button';
@@ -43,7 +41,6 @@ import { MEMBER_STATE } from '@proton/shared/lib/interfaces/Member';
 import type { MspSubsidiary } from '@proton/shared/lib/interfaces/Msp';
 import type { UserOrganization } from '@proton/shared/lib/interfaces/Organization';
 import emptyCompaniesImg from '@proton/styles/assets/img/illustrations/empty-companies.svg';
-import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { UNAUTHENTICATED_ROUTES } from '../../../content/helper';
@@ -116,20 +113,18 @@ const MspCompaniesSection = () => {
     const { createNotification } = useNotifications();
     const handleError = useErrorHandler();
     const dispatch = useMspDispatch();
-    const [user] = useUser();
 
     const [subsidiaries = [], subsidiariesLoading] = useMspSubsidiaries();
     const [userOrganizations = [], userOrganizationsLoading] = useUserOrganizations();
 
-    const isAdminRoleMVPEnabled = useFlag('AdminRoleMVP');
-    const [userPermissions, userPermissionsLoading] = useUserPermissions();
-    const isAdmin = isAdminRoleMVPEnabled ? (userPermissions?.Roles?.some(isOwnerRole) ?? false) : user.isAdmin;
-    const companies = isAdmin
+    const [isOrganizationOwner, isOrganizationOwnerLoading] = useIsOrganizationOwner();
+    const companies = isOrganizationOwner
         ? subsidiaries.map(toCompany)
         : userOrganizations
               .filter((org) => !org.IsPrimary && org.MemberState === MEMBER_STATE.STATUS_ENABLED)
               .map(toManagedCompany);
-    const loading = userPermissionsLoading || (isAdmin ? subsidiariesLoading : userOrganizationsLoading);
+    const loading =
+        isOrganizationOwnerLoading || (isOrganizationOwner ? subsidiariesLoading : userOrganizationsLoading);
     const { viewportWidth } = useActiveBreakpoint();
 
     // Org admins already have implicit access via the "All admins" entry, so exclude them here to
@@ -257,7 +252,7 @@ const MspCompaniesSection = () => {
                         placeholder={c('Placeholder').t`Search for a company`}
                     />
                 </div>
-                {isAdmin && (
+                {isOrganizationOwner && (
                     <Button
                         color="norm"
                         onClick={() => setModal({ mode: 'add' })}
@@ -277,7 +272,7 @@ const MspCompaniesSection = () => {
                 <div className="flex items-center justify-center">
                     <IllustrationPlaceholder url={emptyCompaniesImg}>
                         <p className="m-0 text-sm color-hint text-center">
-                            {isAdmin
+                            {isOrganizationOwner
                                 ? c('Info').t`No companies yet. Start by creating a new company.`
                                 : c('Info').t`You don't manage any companies yet.`}
                         </p>
@@ -294,7 +289,7 @@ const MspCompaniesSection = () => {
                                     .t`Used / allocated licenses`}</TableHeaderCell>
                                 <TableHeaderCell className="msp-col-narrow text-ellipsis">{c('Column header')
                                     .t`Status`}</TableHeaderCell>
-                                {isAdmin && (
+                                {isOrganizationOwner && (
                                     <TableHeaderCell className="text-ellipsis">{c('Column header')
                                         .t`Managers`}</TableHeaderCell>
                                 )}
@@ -313,7 +308,7 @@ const MspCompaniesSection = () => {
                                     },
                                     {
                                         key: 'toggle-status',
-                                        disabled: !isAdmin,
+                                        disabled: !isOrganizationOwner,
                                         text: isDisabled
                                             ? c('Action').t`Enable company`
                                             : c('Action').t`Disable company`,
@@ -349,7 +344,7 @@ const MspCompaniesSection = () => {
                                                 </span>
                                             </span>
                                         </TableCell>
-                                        {isAdmin && (
+                                        {isOrganizationOwner && (
                                             <TableCell label={c('Column header').t`Managers`}>
                                                 <ManagersCell
                                                     managers={company.managers.filter(

@@ -67,6 +67,7 @@ function buildDefaultParams({ flags: flagOverrides, ...rest }: Overrides = {}): 
         memberships: undefined,
         isB2BDrive: false,
         isGroupOwner: null,
+        isOrganizationOwner: false,
         referralInfo: { refereeRewardAmount: '0', referrerRewardAmount: '0', maxRewardAmount: '0' },
         showDashboard: true,
         showDriveDashboard: false,
