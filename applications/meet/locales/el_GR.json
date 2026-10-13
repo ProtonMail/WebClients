@@ -507,9 +507,6 @@
       "Not now": [
         "Όχι τώρα"
       ],
-      "Open app": [
-        "Άνοιγμα εφαρμογής"
-      ],
       "Open link": [
         "Άνοιγμα συνδέσμου"
       ],
@@ -2247,6 +2244,9 @@
       "Not a valid number": [
         "Μη έγκυρος αριθμός"
       ],
+      "Not enough storage space to record. Free up space and try again.": [
+        "Δεν υπάρχει αρκετός αποθηκευτικός χώρος για την ηχογράφηση. Ελευθερώστε χώρο και δοκιμάστε ξανά."
+      ],
       "Only admins can convert external invitations": [
         "Μόνο οι διαχειριστές μπορούν να μετατρέψουν εξωτερικές προσκλήσεις"
       ],
@@ -2276,6 +2276,9 @@
       ],
       "Please allow screen sharing in your system permissions, then try again": [
         "Παρακαλούμε επιτρέψτε την κοινή χρήση οθόνης στις άδειες του συστήματός σας και, δοκιμάστε ξανά."
+      ],
+      "Recording stopped because it could not be saved. We kept it up to this point.": [
+        "Η ηχογράφηση σταμάτησε επειδή δεν ήταν δυνατή η αποθήκευσή της. Τη διατηρήσαμε μέχρι αυτό το σημείο."
       ],
       "Renaming root item is not allowed": [
         "Δεν επιτρέπεται η μετονομασία ριζικού στοιχείου"
@@ -2646,6 +2649,9 @@
       "${ MEET_APP_NAME } needs microphone access so others can hear you during the call. You can turn it off at any time.": [
         "Η εφαρμογή ${ MEET_APP_NAME } χρειάζεται πρόσβαση στο μικρόφωνο, ώστε να μπορούν να σας ακούν και άλλοι χρήστες κατά τη διάρκεια της κλήσης. Μπορείτε να την απενεργοποιήσετε ανά πάσα στιγμή."
       ],
+      "${ MEET_APP_NAME } needs screen recording access so you can share your screen during the call. After you allow it, macOS will ask you to reopen the app.": [
+        "Η εφαρμογή ${ MEET_APP_NAME } χρειάζεται πρόσβαση στην ηχογράφηση οθόνης, ώστε να μπορείτε να κοινοποιείτε την οθόνη σας κατά τη διάρκεια της κλήσης. Αφού δώσετε την άδεια, το macOS θα σας ζητήσει να ανοίξετε ξανά την εφαρμογή."
+      ],
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "Το ${ MEET_APP_NAME } χρειάζεται το WebRTC για να λειτουργήσει. Παρακαλούμε ενημερώστε το πρόγραμμα περιήγησης ή τη συσκευή σας σε μια έκδοση που υποστηρίζει το WebRTC, δοκιμάστε ένα διαφορετικό πρόγραμμα περιήγησης ή απενεργοποιήστε τυχόν προεκτάσεις που ενδέχεται να το εμποδίζουν."
       ],
@@ -2864,6 +2870,9 @@
       "End the meeting for everyone?": [
         "Τερματισμός της σύσκεψης για όλους;"
       ],
+      "End to end encrypted chat": [
+        "Διατερματικά κρυπτογραφημένες συνομιλίες"
+      ],
       "End-to-end encryption is active for audio and video.": [
         "Η κρυπτογράφηση από άκρο σε άκρο είναι ενεργή για ήχο και βίντεο."
       ],
@@ -2923,9 +2932,6 @@
       ],
       "Get a secure meeting link then add it to your calendar": [
         "Λάβετε έναν ασφαλή σύνδεσμο σύσκεψης και προσθέστε τον στο ημερολόγιό σας"
-      ],
-      "Get the best experience with the ${ protonMeet } desktop app": [
-        "Απολαύστε την καλύτερη εμπειρία με την εφαρμογή για υπολογιστές ${ protonMeet }"
       ],
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "Μεταβείτε στο about:config, αναζητήστε το media.peerconnection.enabled και ορίστε το σε true."
@@ -3044,6 +3050,9 @@
       "Meeting recordings aren’t supported in Firefox.": [
         "Οι εγγραφές συναντήσεων δεν υποστηρίζονται στον Firefox."
       ],
+      "Meeting recordings aren’t supported in Safari private mode.": [
+        "Οι ηχογραφήσεις συσκέψεων δεν υποστηρίζονται στην ιδιωτική περιήγηση του Safari."
+      ],
       "Meeting time is up": [
         "Η ώρα της σύσκεψης έληξε"
       ],
@@ -3145,6 +3154,9 @@
       ],
       "Now using ${ first }.": [
         "Τώρα χρησιμοποιείται το ${ first }."
+      ],
+      "Only a partial meeting recording was available.": [
+        "Ήταν διαθέσιμη μόνο μια μερική ηχογράφηση της συνάντησης."
       ],
       "Only meetings you created appear here": [
         "Εδώ εμφανίζονται μόνο οι συσκέψεις που έχετε δημιουργήσει εσείς"
@@ -3349,6 +3361,9 @@
       ],
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "Αυτό είναι μια κρυπτογραφημένη συνομιλία από άκρη σε άκρη με προσωρινά μηνύματα, τα οποία εξαφανίζονται στο τέλος της κλήσης."
+      ],
+      "This meeting has a time limit. This call will disconnect soon.": [
+        "Αυτή η σύσκεψη έχει χρονικό περιορισμό. Η κλήση θα διακοπεί σύντομα."
       ],
       "This meeting has a waiting room": [
         "Αυτή η σύσκεψη έχει αίθουσα αναμονής"
@@ -4210,6 +4225,9 @@
       ],
       "Allow microphone": [
         "Πρόσβαση στο μικρόφωνο"
+      ],
+      "Allow screen recording": [
+        "Να επιτρέπεται η ηχογράφηση οθόνης"
       ],
       "Are you sure?": [
         "Είστε σίγουρος/η;"

@@ -480,9 +480,6 @@
       "Not now": [
         "以后再说"
       ],
-      "Open app": [
-        "打开应用"
-      ],
       "Open link": [
         "打开链接"
       ],
@@ -933,6 +930,11 @@
     "Banner": {
       "Connected via TURN relay mode due to your network restrictions. This may increase latency and affect call quality.": [
         "由于您的网络限制，已通过 TURN 中继模式连接。这可能会增加延迟并影响通话质量。"
+      ]
+    },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "${ appName } 桌面应用"
       ]
     },
     "Bug category": {
@@ -2847,9 +2849,6 @@
       ],
       "Get a secure meeting link then add it to your calendar": [
         "获取安全的会议链接，然后将其添加到您的日历"
-      ],
-      "Get the best experience with the ${ protonMeet } desktop app": [
-        "通过 ${ protonMeet } 桌面应用获得最佳体验"
       ],
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "请前往 about:config，搜索 media.peerconnection.enabled，并将其设置为 true"

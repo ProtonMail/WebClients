@@ -438,6 +438,12 @@
       "Join": [
         "Uneix-te"
       ],
+      "Join and leave sounds": [
+        "Sons d'arribada i sortida"
+      ],
+      "Join in browser": [
+        "Uniu-vos-hi al navegador"
+      ],
       "Join meeting": [
         "Uneix-te a la reunió"
       ],
@@ -507,14 +513,14 @@
       "Not now": [
         "Ara no"
       ],
-      "Open app": [
-        "Obre l'aplicació"
-      ],
       "Open link": [
         "Obre l'enllaç"
       ],
       "Open mention from ${ senderName } in chat": [
         "Obre la menció de ${ senderName } al xat"
+      ],
+      "Open this meeting in the desktop app": [
+        "Obrir aquesta reunió a l'aplicació d'escriptori"
       ],
       "Participants": [
         "Participants"
@@ -707,6 +713,9 @@
       "Start meeting": [
         "Inicia la reunió"
       ],
+      "Start meeting in browser": [
+        "Iniciar la reunió al navegador"
+      ],
       "Start new meeting": [
         "Inicia una reunió"
       ],
@@ -858,6 +867,9 @@
       ],
       "Incoming video": [
         "Vídeo entrant"
+      ],
+      "Join and leave sounds": [
+        "Sons d'entrada i sortida"
       ],
       "Leave Meeting": [
         "Surt de la reunió"
@@ -2247,6 +2259,9 @@
       "Not a valid number": [
         "Número no vàlid"
       ],
+      "Not enough storage space to record. Free up space and try again.": [
+        "No hi ha prou espai d'emmagatzematge per enregistrar. Allibereu espai i torneu-ho a provar."
+      ],
       "Only admins can convert external invitations": [
         "Només els administradors poden convertir invitacions externes"
       ],
@@ -2276,6 +2291,9 @@
       ],
       "Please allow screen sharing in your system permissions, then try again": [
         "Permeteu la compartició de pantalla als permisos del sistema i torneu-ho a provar"
+      ],
+      "Recording stopped because it could not be saved. We kept it up to this point.": [
+        "La gravació s'ha aturat perquè no es podia desar. L'hem mantinguda fins a aquest punt."
       ],
       "Renaming root item is not allowed": [
         "No es permet canviar el nom de l'element arrel"
@@ -2646,6 +2664,9 @@
       "${ MEET_APP_NAME } needs microphone access so others can hear you during the call. You can turn it off at any time.": [
         "${ MEET_APP_NAME } necessita accés al micròfon perquè els altres us puguin sentir durant la trucada. El podeu apagar en qualsevol moment."
       ],
+      "${ MEET_APP_NAME } needs screen recording access so you can share your screen during the call. After you allow it, macOS will ask you to reopen the app.": [
+        "${ MEET_APP_NAME } necessita accés a l'enregistrament de pantalla perquè pugueu compartir-la durant la trucada. Un cop ho autoritzeu, macOS us demanarà que torneu a obrir l'aplicació."
+      ],
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } necessita WebRTC per funcionar. Actualitzeu el navegador o el dispositiu a una versió que sigui compatible amb WebRTC, proveu un altre navegador o desactiveu qualsevol extensió que l'estigui bloquejant."
       ],
@@ -2723,11 +2744,17 @@
       "Allow camera access to preview your background": [
         "Permeteu l'accés a la càmera per a previsualitzar el fons"
       ],
+      "Already in the app? You can close this tab.": [
+        "Ja sou a l'aplicació? Podeu tancar aquesta pestanya."
+      ],
       "Anonymous ${ particle } ${ participantNumber }": [
         "${ particle } anònim ${ participantNumber }"
       ],
       "Anyone with the link can join immediately": [
         "Qualsevol persona amb l'enllaç s'hi pot unir immediatament"
+      ],
+      "App didn't open?": [
+        "No s'ha obert l'aplicació?"
       ],
       "Approve participants before they can join": [
         "Aprova els participants abans que puguin unir-s'hi"
@@ -2864,6 +2891,9 @@
       "End the meeting for everyone?": [
         "Voleu finalitzar la reunió per a tothom?"
       ],
+      "End to end encrypted chat": [
+        "Xat xifrat d'extrem a extrem"
+      ],
       "End-to-end encryption is active for audio and video.": [
         "El xifratge d'extrem a extrem està actiu per a l'àudio i el vídeo."
       ],
@@ -2923,9 +2953,6 @@
       ],
       "Get a secure meeting link then add it to your calendar": [
         "Obteniu un enllaç de reunió segur i afegiu-lo al calendari"
-      ],
-      "Get the best experience with the ${ protonMeet } desktop app": [
-        "Obtingueu la millor experiència amb l'aplicació d'escriptori ${ protonMeet }"
       ],
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "Aneu a about:config, cerqueu media.peerconnection.enabled i establiu el valor a \"true\"."
@@ -3044,6 +3071,9 @@
       "Meeting recordings aren’t supported in Firefox.": [
         "Les gravacions de les reunions no són compatibles amb Firefox."
       ],
+      "Meeting recordings aren’t supported in Safari private mode.": [
+        "Les gravacions de reunions no estan disponibles en el mode privat de Safari."
+      ],
       "Meeting time is up": [
         "S'ha esgotat el temps de la reunió"
       ],
@@ -3145,6 +3175,9 @@
       ],
       "Now using ${ first }.": [
         "Ara s'està utilitzant ${ first }."
+      ],
+      "Only a partial meeting recording was available.": [
+        "Només hi havia una gravació parcial de la reunió."
       ],
       "Only meetings you created appear here": [
         "Només les reunions que heu creat apareixen aquí"
@@ -3349,6 +3382,9 @@
       ],
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "Aquest és un xat xifrat d'extrem a extrem amb missatges efímers, que desapareixen al final de la trucada."
+      ],
+      "This meeting has a time limit. This call will disconnect soon.": [
+        "Aquesta reunió té un límit de temps. La trucada es desconnectarà aviat."
       ],
       "This meeting has a waiting room": [
         "Aquesta reunió té una sala d'espera"
@@ -4210,6 +4246,9 @@
       ],
       "Allow microphone": [
         "Permeteu l'accés al micròfon"
+      ],
+      "Allow screen recording": [
+        "Permet l'enregistrament de pantalla"
       ],
       "Are you sure?": [
         "N'esteu segur?"

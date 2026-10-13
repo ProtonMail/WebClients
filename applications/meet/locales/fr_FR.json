@@ -388,6 +388,9 @@
       "Join": [
         "Rejoindre"
       ],
+      "Join and leave sounds": [
+        "Sons d’entrée et de sortie"
+      ],
       "Join meeting": [
         "Se connecter à la réunion"
       ],
@@ -453,9 +456,6 @@
       ],
       "Not now": [
         "Plus tard"
-      ],
-      "Open app": [
-        "Ouvrir l’application"
       ],
       "Open link": [
         "Ouvrir le lien"
@@ -781,6 +781,9 @@
       ],
       "Incoming video": [
         "Appel vidéo entrant"
+      ],
+      "Join and leave sounds": [
+        "Sons d'arrivée et de départ"
       ],
       "Leave Meeting": [
         "Quitter la réunion"
@@ -2056,6 +2059,9 @@
       "Not a valid number": [
         "Le numéro n'est pas valide."
       ],
+      "Not enough storage space to record. Free up space and try again.": [
+        "Espace de stockage insuffisant pour enregistrer. Libérez de l'espace et réessayez."
+      ],
       "Operation aborted": [
         "Opération annulée"
       ],
@@ -2079,6 +2085,9 @@
       ],
       "Please allow screen sharing in your system permissions, then try again": [
         "Veuillez autoriser le partage d'écran dans les autorisations de votre système, puis réessayez"
+      ],
+      "Recording stopped because it could not be saved. We kept it up to this point.": [
+        "L'enregistrement s'est arrêté car il ne pouvait pas être enregistré. Nous l'avons conservé jusqu'à ce point."
       ],
       "Request aborted": [
         "Requête interrompue"
@@ -2398,6 +2407,9 @@
       "${ MEET_APP_NAME } needs microphone access so others can hear you during the call. You can turn it off at any time.": [
         "${ MEET_APP_NAME } a besoin d'accéder au microphone afin de permettre aux autres de vous entendre pendant l'appel. Vous pouvez le désactiver à tout moment."
       ],
+      "${ MEET_APP_NAME } needs screen recording access so you can share your screen during the call. After you allow it, macOS will ask you to reopen the app.": [
+        "${ MEET_APP_NAME } a besoin de l'autorisation d'enregistrement d'écran pour vous permettre de partager votre écran pendant l’appel. Une fois l’autorisation accordée, macOS vous demandera de rouvrir l’application."
+      ],
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } requiert WebRTC pour fonctionner. Veuillez mettre à jour votre navigateur ou appareil vers une version prenant en charge WebRTC, essayer un autre navigateur, ou désactiver toute extension susceptible de le bloquer."
       ],
@@ -2603,6 +2615,9 @@
       "End the meeting for everyone?": [
         "Mettre fin à la réunion pour tout le monde ?"
       ],
+      "End to end encrypted chat": [
+        "Discussion chiffrée de bout en bout"
+      ],
       "End-to-end encryption is active for audio and video.": [
         "Le chiffrement de bout en bout est actif pour l'audio et la vidéo."
       ],
@@ -2659,9 +2674,6 @@
       ],
       "Get a secure meeting link then add it to your calendar": [
         "Obtenez un lien de réunion sécurisé puis ajoutez-le à votre calendrier"
-      ],
-      "Get the best experience with the ${ protonMeet } desktop app": [
-        "Obtenez la meilleure expérience avec l'application de bureau ${ protonMeet }"
       ],
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "Accédez à about:config, recherchez media.peerconnection.enabled, et définissez-le sur true."
@@ -2774,6 +2786,9 @@
       "Meeting recordings aren’t supported in Firefox.": [
         "Les enregistrements de réunions ne sont pas pris en charge dans Firefox."
       ],
+      "Meeting recordings aren’t supported in Safari private mode.": [
+        "Les enregistrements de réunions ne sont pas pris en charge dans le mode privé de Safari."
+      ],
       "Meeting time is up": [
         "La réunion est terminée."
       ],
@@ -2869,6 +2884,9 @@
       ],
       "Now using ${ first }.": [
         "${ first } est désormais utilisé."
+      ],
+      "Only a partial meeting recording was available.": [
+        "Seulement un enregistrement partiel de la réunion était disponible."
       ],
       "Only meetings you created appear here": [
         "Seules les réunions que vous avez créées apparaissent ici"
@@ -3064,6 +3082,9 @@
       ],
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "Ceci est un chat chiffré de bout en bout avec des messages éphémères, qui disparaissent à la fin de l'appel."
+      ],
+      "This meeting has a time limit. This call will disconnect soon.": [
+        "Cette réunion a une limite de temps. Cet appel sera bientôt déconnecté."
       ],
       "This meeting is being recorded": [
         "Cette réunion est en cours d'enregistrement"
@@ -3878,6 +3899,9 @@
       ],
       "Allow microphone": [
         "Autoriser le microphone"
+      ],
+      "Allow screen recording": [
+        "Autoriser l’enregistrement de l’écran"
       ],
       "Are you sure?": [
         "Êtes-vous sûr ?"
