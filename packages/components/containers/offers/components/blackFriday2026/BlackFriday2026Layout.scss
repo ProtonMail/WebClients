@@ -22,17 +22,6 @@ im.$media-expressions: $media-expressions;
 	@include im.media('<=small') {
 		min-block-size: 15rem;
 	}
-
-	// Shadow rising from the bottom edge, so the cropped moon fades out instead of being cut off
-	&::after {
-		content: '';
-		position: absolute;
-		inset-inline: 0;
-		inset-block-end: 0;
-		block-size: 50%;
-		background: linear-gradient(to top, rgb(8 10 23) 0%, rgb(8 10 23) 25%, rgb(8 10 23 / 0) 100%);
-		pointer-events: none;
-	}
 }
 
 .bf2026HeaderImage {
@@ -48,9 +37,21 @@ im.$media-expressions: $media-expressions;
 	transform-origin: 50% 22%;
 }
 
+// Shadow rising from the bottom edge, so the cropped moon fades out instead of being cut off. Like the
+// Q3 2026 overlay it sits between the image and the content in DOM order, so neither needs a z-index
+// that could cover the modal's close button.
+.bf2026HeaderShadow {
+	position: absolute;
+	inset-inline: 0;
+	inset-block-end: 0;
+	block-size: 50%;
+
+	// Solid for the bottom 12% of the header (24% of this box), then eases out over the rest
+	background: linear-gradient(to top, rgb(8 10 23) 0%, rgb(8 10 23) 24%, rgb(8 10 23 / 0.5) 60%, rgb(8 10 23 / 0) 100%);
+}
+
 .bf2026HeaderContent {
 	position: relative;
-	z-index: 1;
 	flex: 1;
 	display: flex;
 	flex-direction: column;
@@ -188,13 +189,17 @@ html:is(
 	.offer-close-button {
 		--top-custom: 0 !important;
 
+		// 36px is larger than the icon button's natural 32px, so centre the icon instead of relying on padding
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0;
 		background: #fffc;
 		border-radius: 50%;
 		inline-size: 2.25rem;
 		block-size: 2.25rem;
 		margin-block-start: 1.5rem;
 		margin-inline-end: 1.5rem;
-		z-index: 1;
 	}
 
 	.modal-close-icon {

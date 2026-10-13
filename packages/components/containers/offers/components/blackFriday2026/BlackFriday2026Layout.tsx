@@ -59,6 +59,7 @@ export function BlackFriday2026Layout({ offer, currency, onSelectDeal, onCloseMo
                     width={480}
                     height={310}
                 />
+                <div className="bf2026HeaderShadow" />
                 <div className="bf2026HeaderContent">
                     {discount > 0 && (
                         <p className="bf2026Discount m-0" dir="ltr">
