@@ -13,11 +13,19 @@ import {
 import type { EditorRequiresClientMethods } from '@proton/docs-shared'
 import { EditorEvent } from '@proton/docs-shared'
 import { reportErrorToSentry } from '../../../Utils/errorMessage'
-import type { TelemetryDocsEditorEvents } from '@proton/shared/lib/api/telemetry'
+import { TelemetryDocsEditorEvents } from '@proton/shared/lib/api/telemetry'
+import { DocsEditorTelemetryEvents, type DocsEditorTelemetryEvent } from '../../Docs/contract/DocsEditorTelemetry'
 import { useApplication } from '../../ApplicationProvider'
 import { useSyncedState } from '../../../Hooks/useSyncedState'
 import { useContactEmails } from '../../../Hooks/useContactEmails'
 import { createDocsCommentsService } from './create-docs-comments-service'
+
+const hostTelemetryEvents: Record<DocsEditorTelemetryEvent, TelemetryDocsEditorEvents> = {
+  [DocsEditorTelemetryEvents.table_of_contents_available]: TelemetryDocsEditorEvents.table_of_contents_available,
+  [DocsEditorTelemetryEvents.table_of_contents_opened]: TelemetryDocsEditorEvents.table_of_contents_opened,
+  [DocsEditorTelemetryEvents.table_of_contents_heading_clicked]:
+    TelemetryDocsEditorEvents.table_of_contents_heading_clicked,
+}
 
 /**
  * Collects the Docs dependencies supplied by the Docs shell and provides them
@@ -76,9 +84,9 @@ export function DocsAdapter({
 
   const getDocumentUrl = useCallback(() => clientInvoker.getDocumentUrl(), [clientInvoker])
   const replaceDocumentUrl = useCallback((url: string) => clientInvoker.replaceDocumentUrl(url), [clientInvoker])
-  const reportTelemetry = useCallback(
-    (event: TelemetryDocsEditorEvents) => {
-      void clientInvoker.editorReportingTelemetry(event).catch(reportError)
+  const reportTelemetry = useCallback<DocsDependencies['reportTelemetry']>(
+    (event) => {
+      void clientInvoker.editorReportingTelemetry(hostTelemetryEvents[event]).catch(reportError)
     },
     [clientInvoker, reportError],
   )
