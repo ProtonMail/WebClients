@@ -838,6 +838,9 @@
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "Праграма для камп'ютара ${ MAIL_APP_NAME }"
+      ],
+      "${ appName } Desktop application": [
+        "Праграма для камп'ютара ${ appName }"
       ]
     },
     "Button": {
@@ -2923,6 +2926,9 @@
       ],
       "Switch to another folder or create an item in this folder": [
         "Пераключыцеся на іншую папку або стварыце элемент у гэтай папцы"
+      ],
+      "None of your saved passwords have appeared in a known data breach.": [
+        "Ніводны з вашых захаваных пароляў не быў знойдзены ў вядомай уцечцы даных."
       ]
     },
     "Keyboard key": {
@@ -4574,6 +4580,9 @@
       ],
       "URL matches the rule": [
         "URL-адрас адправядае правілу"
+      ],
+      "Enter a URL to check if it matches the current rule": [
+        "Увядзіце URL-адрас, каб праверыць, ці адпавядае ён бягучаму правілу"
       ]
     },
     "Security Center - Info": {
