@@ -17,7 +17,7 @@ import type { Recipient } from '@proton/shared/lib/interfaces';
 import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT } from '../../constants';
 import { useOnCompose, useOnMailTo } from '../../containers/ComposeProvider';
 import { ComposeTypes } from '../../hooks/composer/useCompose';
-import LumoDrawerHotkey from '../../lumo/floating/LumoDrawerHotkey';
+import { LumoFloatingPanelProvider } from '../../lumo/floating/LumoFloatingPanelProvider';
 import LumoMailProvider from '../../lumo/provider/LumoMailProvider';
 import { selectHasFocusedComposer } from '../../store/composers/composerSelectors';
 import { useMailDispatch, useMailSelector } from '../../store/hooks';
@@ -94,12 +94,11 @@ const PrivateLayout = ({ children }: Props, ref: Ref<HTMLDivElement>) => {
         </PrivateAppContainer>
     );
 
-    // Mounted above the drawer so the Lumo conversation survives drawer tab switches and open/close.
+    // Mounted above the drawer so the Lumo conversation survives drawer tab switches, open/close and detach.
     return isLumoInMailEnabled ? (
-        <LumoMailProvider>
-            <LumoDrawerHotkey />
-            {content}
-        </LumoMailProvider>
+        <LumoFloatingPanelProvider>
+            <LumoMailProvider>{content}</LumoMailProvider>
+        </LumoFloatingPanelProvider>
     ) : (
         content
     );
