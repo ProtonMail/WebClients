@@ -65,6 +65,7 @@ import type {
     RemoveEventListener,
 } from '@proton/payments/core/interface';
 import { capturePaymentMessage } from '@proton/payments/sentry/capture';
+import { promiseWithTimeout } from '@proton/shared/lib/helpers/promise';
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 import { ColorScheme } from '@proton/shared/lib/themes/constants';
 
@@ -134,6 +135,8 @@ type IframeActionOptions = {
 };
 
 const TIMEOUT_EXCEEDED_ERROR_TEXT = c('Payments').t`Timeout exceeded`;
+
+const IFRAME_LOADING_TIMEOUT = 20000;
 
 /**
  * `onLoad()` can fail two ways: with a reply from the iframe, or with an error thrown here on the
@@ -270,6 +273,8 @@ function useChargebeeHandles(
 
     const iframeLoadedRef = useRef(false);
 
+    const savedCardInitializationRef = useRef<Promise<unknown> | null>(null);
+
     // Function to notify that iframe has loaded
     const notifyIframeLoaded = () => {
         iframeLoadedRef.current = true;
@@ -281,6 +286,7 @@ function useChargebeeHandles(
 
     const notifyIframeUnloaded = () => {
         iframeLoadedRef.current = false;
+        savedCardInitializationRef.current = null;
     };
 
     const signal = chargebeeConfigurationAbortControllerRef.current.signal;
@@ -380,18 +386,31 @@ function useChargebeeHandles(
 
             return iframeAction('set-configuration', config, iframeRef, targetOrigin, signal);
         },
-        initializeSavedCreditCard: async () => {
-            const chargebeeInstanceConfig = await getConfig();
-            const config: CbIframeConfig = {
-                paymentMethodType: 'saved-card',
-                themeType,
-                ...chargebeeInstanceConfig,
-            };
+        initializeSavedCreditCard: () => {
+            const initialization = (async () => {
+                const chargebeeInstanceConfig = await getConfig();
+                const config: CbIframeConfig = {
+                    paymentMethodType: 'saved-card',
+                    themeType,
+                    ...chargebeeInstanceConfig,
+                };
 
-            return iframeAction('set-configuration', config, iframeRef, targetOrigin, signal);
+                return iframeAction('set-configuration', config, iframeRef, targetOrigin, signal);
+            })();
+            savedCardInitializationRef.current = initialization;
+
+            return initialization;
         },
         validateSavedCreditCard: async (payload: ChargebeeVerifySavedCardEventPayload) => {
             try {
+                // The iframe drops the verification message until its saved card handler is set up
+                await promiseWithTimeout({
+                    promise: waitForIframeLoaded(),
+                    timeoutMs: IFRAME_LOADING_TIMEOUT,
+                    errorMessage: TIMEOUT_EXCEEDED_ERROR_TEXT,
+                });
+                await savedCardInitializationRef.current;
+
                 return await iframeAction('chargebee-verify-saved-card', payload, iframeRef, targetOrigin, signal, {
                     timeout: 600000,
                 });
@@ -1110,7 +1129,7 @@ export const ChargebeeIframe = ({
                     extra: { type },
                 });
             }
-        }, 20000);
+        }, IFRAME_LOADING_TIMEOUT);
 
         return () => clearTimeout(loadingTimeoutRef.current);
     }, []);
