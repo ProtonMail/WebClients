@@ -21,7 +21,6 @@ export const ModalContent = ({
 }: {
     rootItems: TreeItem[];
     isLoading: boolean;
-    isTreeLoaded: boolean;
     isMoveDisabled: boolean;
     toggleExpand: (linkId: string) => void;
     onSelect: (link: DecryptedLink) => void;

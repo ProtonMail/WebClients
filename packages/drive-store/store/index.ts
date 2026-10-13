@@ -2,7 +2,6 @@ export { useActions, usePublicActions } from './_actions';
 export { useGetPublicKeysForEmail, usePublicSessionUser } from './_user';
 export { useDriveEventManager } from './_events';
 export { validateLinkNameField, formatLinkName } from './_links';
-export { UserSettingsProvider } from './_settings';
 export { useDefaultShare } from './_shares';
 export type { DecryptedLink } from './_links/interface';
 export { ShareType, ShareState } from './_shares/interface';

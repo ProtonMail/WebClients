@@ -1,4 +1,4 @@
-export const serializeFormData = (data: { [key: string]: any }): FormData => {
+const serializeFormData = (data: { [key: string]: any }): FormData => {
     const formData = new FormData();
     Object.keys(data).forEach((key) => {
         if (Array.isArray(data[key])) {

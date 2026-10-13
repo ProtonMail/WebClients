@@ -1,4 +1,4 @@
-import type { PrivateKeyReference, SessionKey } from '@protontech/crypto';
+import type { PrivateKeyReference } from '@protontech/crypto';
 import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 
 import { queryShareMeta } from '@proton/shared/lib/api/drive/share';
@@ -181,24 +181,6 @@ export default function useShare() {
     };
 
     /**
-     * getShareSessionKey returns session key used for sharing links.
-     */
-    const getShareSessionKey = async (
-        abortSignal: AbortSignal,
-        shareId: string,
-        linkPrivateKey?: PrivateKeyReference
-    ): Promise<SessionKey> => {
-        const keys = await getShareKeys(abortSignal, shareId, linkPrivateKey);
-        if (!keys.sessionKey) {
-            // This should not happen. All shares have session key, only
-            // publicly shared link will not have it, but it is bug if
-            // it is needed.
-            throw new Error('Share is missing session key');
-        }
-        return keys.sessionKey;
-    };
-
-    /**
      * getShareCreatorKeys returns your own member address' keys for the share
      * TODO: Change this function name as it doesn't fetch creator key but your own member keys for that share
      */
@@ -214,7 +196,6 @@ export default function useShare() {
         getShareWithKey,
         getShare,
         getSharePrivateKey,
-        getShareSessionKey,
         getShareCreatorKeys,
     };
 }

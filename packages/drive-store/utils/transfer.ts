@@ -2,19 +2,6 @@ import { ProgressBarStatus } from '../components/TransferManager/ProgressBar';
 import type { Transfer, TransferSummary, TransfersStats } from '../components/TransferManager/transfer';
 import { TransferState } from '../components/TransferManager/transfer';
 
-export const isTransferFinished = ({ state }: { state: TransferState }) =>
-    [TransferState.Error, TransferState.Canceled, TransferState.Skipped, TransferState.Done].includes(state);
-
-export const isTransferActive = ({ state }: { state: TransferState }) =>
-    [
-        TransferState.Pending,
-        TransferState.Initializing,
-        TransferState.Conflict,
-        TransferState.SignatureIssue,
-        TransferState.Progress,
-        TransferState.Finalizing,
-    ].includes(state);
-
 export const isTransferFailed = ({ state }: { state: TransferState }) =>
     [TransferState.Error, TransferState.Canceled].includes(state);
 
@@ -27,16 +14,8 @@ export const isTransferCanceled = ({ state }: { state: TransferState }) => state
 
 export const isTransferSkipped = ({ state }: { state: TransferState }) => state === TransferState.Skipped;
 
-export const isTransferConflict = ({ state }: { state: TransferState }) => state === TransferState.Conflict;
-
-export const isTransferProgress = ({ state }: { state: TransferState }) => state === TransferState.Progress;
-
-export const isTransferInitializing = ({ state }: { state: TransferState }) => state === TransferState.Initializing;
-
 export const isTransferPaused = ({ state }: { state: TransferState }) =>
     state === TransferState.Paused || state === TransferState.ScanIssue || state === TransferState.NetworkError;
-
-export const isTransferPending = ({ state }: { state: TransferState }) => state === TransferState.Pending;
 
 export const isTransferFinalizing = ({ state }: { state: TransferState }) => state === TransferState.Finalizing;
 
