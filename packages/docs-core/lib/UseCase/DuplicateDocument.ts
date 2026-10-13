@@ -1,5 +1,5 @@
-import type { DocumentNodeMeta, DriveCompat } from '@proton/drive-store'
-import type { NodeMeta, DocumentType } from '@proton/docs-shared'
+import type { DriveCompat } from '@proton/drive-store'
+import type { NodeMeta, DocumentType, DocumentNodeMeta } from '@proton/docs-shared'
 import { Result } from '@proton/docs-shared'
 
 import type { SeedInitialCommit } from './SeedInitialCommit'

@@ -20,9 +20,8 @@ import { DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors'
 import { emailValidator } from '@proton/shared/lib/helpers/formValidators'
 
-import { useDocsUrlPublicToken } from '@proton/drive-store'
-import { RedirectAction } from '@proton/docs-shared'
-import { Actions, countActionWithTelemetry } from '@proton/drive-store/utils/telemetry'
+import { RedirectAction, useDocsUrlPublicToken } from '@proton/docs-shared'
+import { Actions, countActionWithTelemetry } from './telemetry'
 import { redirectToSignIn, redirectToSignUp } from './utils'
 
 export type SignupFlowModalProps = ModalStateProps & {

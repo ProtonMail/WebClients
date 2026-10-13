@@ -14,4 +14,3 @@ export {
     areNodeMetasEqual,
 } from './NodeMeta';
 export { useDocInvites, type DocInvitesHook } from './_invites/useDocInvites';
-export { useDocsUrlPublicToken } from './useDocsUrlPublicToken';

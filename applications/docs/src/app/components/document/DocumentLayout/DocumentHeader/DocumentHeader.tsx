@@ -26,7 +26,7 @@ import type {
   RenameControllerInterface,
 } from '@proton/docs-core'
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper'
-import type { DocumentAction, DocumentType } from '@proton/docs-shared'
+import { isPrivateNodeMeta, type DocumentAction, type DocumentType } from '@proton/docs-shared'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { useFlag } from '@proton/unleash/useFlag'
 import clsx from '@proton/utils/clsx'
@@ -38,7 +38,6 @@ import { HeaderShareButton } from './HeaderShareButton'
 import { generateNodeUid, getDrive } from '@proton/drive'
 import { replaceAddress, reportChangeAddressError } from '../../useChangeAddressWhenPubliclyShared'
 import useAuthentication from '@proton/components/hooks/useAuthentication'
-import { isPrivateNodeMeta } from '@proton/drive-store'
 import { getShareId } from '@proton/docs-core/lib/DriveSDK/getShareId'
 
 function getWindowLocationExcludingDomain() {
