@@ -1,5 +1,5 @@
 import type { ProtonInvitationWithNode } from '@proton/drive'
-import type { ExtendedInvitationDetails } from '@proton/drive-store/store'
+import type { ExtendedInvitationDetails } from '@proton/docs-shared'
 import { create } from 'zustand'
 import { sdkInvitationToExtended } from './sdk-invitation-to-extended'
 

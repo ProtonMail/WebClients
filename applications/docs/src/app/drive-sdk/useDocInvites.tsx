@@ -1,7 +1,7 @@
 import { useNotifications } from '@proton/app-context/useNotifications'
 import { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal'
 import { getDrive, ValidationError, type ProtonDriveClient, type ProtonInvitationWithNode } from '@proton/drive'
-import type { ExtendedInvitationDetails } from '@proton/drive-store/store'
+import type { ExtendedInvitationDetails } from '@proton/docs-shared'
 import { traceErrorSDK } from '@proton/docs-core/lib/DriveSDK/traceErrorSDK'
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype'
 import { useCallback, useEffect, useState } from 'react'

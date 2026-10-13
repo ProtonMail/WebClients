@@ -48,8 +48,7 @@ import type {
   DocumentType,
   DocumentAction,
 } from '@proton/docs-shared'
-import { FileMenuActionEvent, isWordCountSupported } from '@proton/docs-shared'
-import { isPrivateNodeMeta } from '@proton/drive-store'
+import { FileMenuActionEvent, isWordCountSupported, isPrivateNodeMeta } from '@proton/docs-shared'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS, APPS_CONFIGURATION, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { isDefaultDocumentName } from '@proton/shared/lib/docs/utils/isDefaultDocumentName'

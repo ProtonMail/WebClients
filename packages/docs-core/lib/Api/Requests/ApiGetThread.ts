@@ -2,8 +2,7 @@ import type { HttpHeaders } from '../Types/HttpHeaders'
 import type { GetCommentThreadResponse } from '../Types/GetCommentThreadResponse'
 import { DocsApiPrivateRouteBuilder } from '../Routes/DocsApiPrivateRouteBuilder'
 import { DocsApiPublicRouteBuilder } from '../Routes/DocsApiPublicRouteBuilder'
-import { isPublicNodeMeta } from '@proton/drive-store'
-import type { ApiResult, NodeMeta, PublicNodeMeta } from '@proton/docs-shared'
+import { isPublicNodeMeta, type ApiResult, type NodeMeta, type PublicNodeMeta } from '@proton/docs-shared'
 import type { RouteExecutor } from '../RouteExecutor'
 
 export class ApiGetThread {

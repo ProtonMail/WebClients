@@ -14,7 +14,6 @@ import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathna
 import { CacheService } from '@proton/docs-core/lib/Services/CacheService'
 import { getDecryptedPersistedState } from '@proton/account/persist/helper'
 import type { DocsState } from '~/redux-store/rootReducer'
-import { getLocalID as _getLocalID } from '@proton/drive-store/utils/url/localid'
 import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
 
 function getLocalID(token: string | null) {

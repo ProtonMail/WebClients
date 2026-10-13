@@ -11,8 +11,13 @@ import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils'
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor'
 import Spotlight from '@proton/components/components/spotlight/Spotlight'
 import type { EditorControllerInterface, PublicDocumentState } from '@proton/docs-core'
-import { TooltipKey, useTooltipOnce, type DocumentType, RedirectAction } from '@proton/docs-shared'
-import { useDocsUrlPublicToken } from '@proton/drive-store'
+import {
+  TooltipKey,
+  useTooltipOnce,
+  useDocsUrlPublicToken,
+  type DocumentType,
+  RedirectAction,
+} from '@proton/docs-shared'
 import { useDocsBookmarks } from '@proton/drive-store/lib/_views/useDocsBookmarks'
 import {
   needPublicRedirectSpotlight,
