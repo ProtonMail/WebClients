@@ -15,56 +15,6 @@ im.$media-expressions: $media-expressions;
 	overflow: hidden;
 }
 
-// ── Tab toggle bar ─────────────────────────────────────────────────────────────
-
-.gallery-tab-bar {
-	flex-shrink: 0;
-	display: flex;
-	justify-content: center;
-}
-
-.gallery-tab-toggle {
-	display: inline-flex;
-	align-items: center;
-	gap: 4px;
-	background: var(--background-strong);
-	border-radius: 9999px;
-	padding-block: 3px;
-	padding-inline: 3px;
-}
-
-.gallery-tab-toggle__btn {
-	padding-block: 6px;
-	padding-inline: 20px;
-	border-radius: 9999px;
-	border: none;
-	background: transparent;
-	font-size: rem(14);
-	font-weight: 500;
-	color: var(--text-weak);
-	cursor: pointer;
-	transition:
-		background 0.15s,
-		color 0.15s,
-		font-weight 0.1s;
-
-	&--active {
-		background: var(--background-norm);
-		color: var(--text-norm);
-		font-weight: 600;
-		box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
-	}
-
-	&:hover:not(&--active) {
-		color: var(--text-norm);
-	}
-
-	&:focus-visible {
-		outline: 2px solid var(--focus-ring);
-		outline-offset: 2px;
-	}
-}
-
 // ── Top pane: gallery (scrollable) ────────────────────────────────────────────
 
 .gallery-created-scroll {

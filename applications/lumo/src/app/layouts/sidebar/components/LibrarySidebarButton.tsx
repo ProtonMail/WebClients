@@ -8,19 +8,19 @@ interface Props {
     onItemClick?: () => void;
 }
 
-export const CreationsSidebarButton = ({ onItemClick }: Props) => {
+export const LibrarySidebarButton = ({ onItemClick }: Props) => {
     const history = useHistory();
-    const isActive = useRouteMatch('/creations');
+    const isActive = useRouteMatch('/library');
 
     const handleClick = () => {
-        history.push('/creations');
+        history.push('/library');
         onItemClick?.();
     };
 
     return (
         <SidebarItem
-            icon="FileText"
-            label={c('collider_2025:Button').t`Creations`}
+            icon="LibraryBig"
+            label={c('collider_2025:Button').t`Library`}
             onClick={handleClick}
             className={isActive ? 'sidebar-item--active' : undefined}
         />

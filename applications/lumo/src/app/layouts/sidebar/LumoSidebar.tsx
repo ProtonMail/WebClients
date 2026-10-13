@@ -20,8 +20,7 @@ import { LumoSidebarUpsell } from '../../upsells';
 import LumoLogoHeader from '../header/LumoLogo';
 import { ChatsSidebarButton } from './components/ChatsSidebarButton';
 import { ChatsSidebarSection } from './components/ChatsSidebarSection';
-import { CreationsSidebarButton } from './components/CreationsSidebarButton';
-import { GallerySidebarButton } from './components/GallerySidebarButton';
+import { LibrarySidebarButton } from './components/LibrarySidebarButton';
 import { NewChatSidebarButton } from './components/NewChatSidebarButton';
 import { SearchSection } from './components/SearchSection';
 import { SidebarBottomUserArea } from './components/SidebarBottomUserArea';
@@ -39,7 +38,7 @@ const ProjectsSidebarSection = lazy(() =>
 const LumoSidebarContent = () => {
     const { isSmallScreen, toggle, closeOnItemClick } = useSidebar();
     const history = useHistory();
-    const { showMobileHeader, showSearch, showGallery, showCreations } = useSidebarVisibility();
+    const { showMobileHeader, showSearch, showLibrary } = useSidebarVisibility();
     const isGuest = useIsGuest();
     const settingsModal = useModalStateObject();
     const {
@@ -81,8 +80,7 @@ const LumoSidebarContent = () => {
                 <Scroll className="sidebar-main-scroll flex flex-column flex-1 min-h-0" scrollContained>
                     <div className="sidebar-section flex flex-column gap-1">
                         {showSearch && <SearchSection onSearchClick={() => openSearchModal(true)} />}
-                        {showGallery && <GallerySidebarButton onItemClick={closeOnItemClick} />}
-                        {showCreations && <CreationsSidebarButton onItemClick={closeOnItemClick} />}
+                        {showLibrary && <LibrarySidebarButton onItemClick={closeOnItemClick} />}
                         {apiKeyManagement && (
                             <SidebarItem
                                 icon="CodeXml"

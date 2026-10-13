@@ -6,8 +6,6 @@ import { c } from 'ttag';
 
 import { useModalStateObject } from '@proton/components';
 import lumoImageLight from '@proton/styles/assets/img/lumo/lumo-image-light.svg';
-import lumojiCreateDark from '@proton/styles/assets/img/lumo/lumoji-create-dark.svg';
-import lumojiCreateLight from '@proton/styles/assets/img/lumo/lumoji-create-light.svg';
 
 import { ComposerComponent } from '../../components/Composer/ComposerComponent';
 import { useFileHandling } from '../../components/Composer/hooks/useFileHandling';
@@ -17,8 +15,6 @@ import { GuestSignInState } from '../../components/Guest/GuestSignInState/GuestS
 import { LazyLottie } from '../../components/LazyLottie';
 import type { DrawingMode } from '../../features/drawingcanvas/types';
 // import { useLumoNavigate as useNavigate } from '../../hooks/useLumoNavigate';
-import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
-import { useLumoTheme } from '../../providers';
 import { useConversationActions } from '../../providers/ConversationActionsProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useSidebar } from '../../providers/SidebarProvider';
@@ -32,8 +28,6 @@ import { useGeneratedGalleryImages } from './hooks/useGeneratedGalleryImages';
 import { useNativeComposerImageGenerationStateApi } from './hooks/useNativeComposerImageGenerationStateApi';
 
 import './GalleryView.scss';
-
-type GalleryTab = 'create' | 'gallery';
 
 const getGalleryEmptyAnimation = () =>
     import(
@@ -173,58 +167,6 @@ const GalleryTabContent = ({
     );
 };
 
-interface CreateTabContentProps {
-    handleSendMessage: ReturnType<typeof useConversationActions>['handleSendMessage'];
-    isProcessingAttachment: boolean;
-    composerPrefill: string | undefined;
-    gallerySketchTrigger: boolean;
-    onShowDriveBrowser: () => void;
-    // onSuggestionClick: (suggestion: GalleryPromptSuggestion) => void;
-}
-
-const CreateTabContent = ({
-    handleSendMessage,
-    isProcessingAttachment,
-    composerPrefill,
-    gallerySketchTrigger,
-    onShowDriveBrowser,
-    // onSuggestionClick,
-}: CreateTabContentProps) => {
-    const { isDarkLumoTheme } = useLumoTheme();
-    return (
-        <div className="main-container-component rounded-xl flex flex-column flex-nowrap flex-1">
-            <div
-                className="flex *:min-size-auto flex-column flex-nowrap flex-1 mx-auto justify-center items-center w-full md:max-w-custom lg:max-w-custom pt-0 main-container-content"
-                style={{
-                    '--md-max-w-custom': '90%',
-                    '--lg-max-w-custom': '43rem',
-                }}
-            >
-                <div className="lumo-welcome-section flex flex-column items-center text-center w-full">
-                    <img src={isDarkLumoTheme ? lumojiCreateDark : lumojiCreateLight} alt="" className={'pb-4'} />
-                    <h1 className="main-text lh100 text-wrap-balance text-center mb-8 relative z-10">
-                        {c('collider_2025:Title').t`What do you want to create today?`}
-                    </h1>
-                </div>
-                <div className="composer-container md:px-4 w-full">
-                    <GalleryImageLimitUpsell />
-                    <ComposerComponent
-                        composerMode={ComposerMode.GALLERY}
-                        handleSendMessage={handleSendMessage}
-                        isProcessingAttachment={isProcessingAttachment}
-                        prefillQuery={composerPrefill}
-                        autoOpenSketch={gallerySketchTrigger}
-                        onShowDriveBrowser={onShowDriveBrowser}
-                        placeholder={c('collider_2025:Placeholder').t`Describe your image...`}
-                        className="main-container fixed bottom-0 md:static w-full z-20"
-                    />
-                </div>
-                {/* <DiscoverList onSuggestionClick={onSuggestionClick} /> */}
-            </div>
-        </div>
-    );
-};
-
 export interface GalleryViewProps {
     isProcessingAttachment: boolean;
     prefillQuery?: string;
@@ -256,8 +198,6 @@ export const GalleryView = ({ isProcessingAttachment, prefillQuery: externalPref
             galleryImages.status === 'error',
         [galleryImages.sections, galleryImages.status]
     );
-
-    const [activeTab, setActiveTab] = useState<GalleryTab>('gallery');
 
     const handleSketchEditExport = useCallback(
         async (imageData: string, _mode: DrawingMode, description: string) => {
@@ -291,8 +231,8 @@ export const GalleryView = ({ isProcessingAttachment, prefillQuery: externalPref
     // );
 
     const handleTryPrompt = useCallback((prompt: string) => {
+        // The gallery's own composer takes the prompt (the separate Create tab is gone).
         setComposerPrefill(prompt);
-        setActiveTab('create');
     }, []);
 
     const handleShowDriveBrowser = useCallback(() => {
@@ -334,91 +274,51 @@ export const GalleryView = ({ isProcessingAttachment, prefillQuery: externalPref
 
     if (isGuest) {
         return (
-            <LumoLayoutWithDrawer drawer={{ disabled: true }}>
-                <div className="gallery-view">
-                    <GuestSignInState
-                        image={lumoImageLight}
-                        imageAlt=""
-                        title={c('collider_2025:Title').t`Sign in to build your gallery`}
-                        description={c('collider_2025:Info')
-                            .t`Create images, apply styles, and sketch ideas. Sign in or create a free account to save your creations.`}
-                    />
-                </div>
-            </LumoLayoutWithDrawer>
+            <div className="gallery-view">
+                <GuestSignInState
+                    image={lumoImageLight}
+                    imageAlt=""
+                    title={c('collider_2025:Title').t`Sign in to build your gallery`}
+                    description={c('collider_2025:Info')
+                        .t`Create images, apply styles, and sketch ideas. Sign in or create a free account to save your creations.`}
+                />
+            </div>
         );
     }
 
     return (
-        <LumoLayoutWithDrawer
-            drawer={{ disabled: true }}
-            header={{
-                component: (
-                    <div className="gallery-tab-bar w-full">
-                        <div className="gallery-tab-toggle">
-                            <button
-                                className={`gallery-tab-toggle__btn${activeTab === 'create' ? ' gallery-tab-toggle__btn--active' : ''}`}
-                                onClick={() => setActiveTab('create')}
-                                type="button"
-                            >
-                                {c('collider_2025:Tab').t`Create`}
-                            </button>
-                            <button
-                                className={`gallery-tab-toggle__btn${activeTab === 'gallery' ? ' gallery-tab-toggle__btn--active' : ''}`}
-                                onClick={() => setActiveTab('gallery')}
-                                type="button"
-                            >
-                                {c('collider_2025:Tab').t`Gallery`}
-                            </button>
-                        </div>
-                    </div>
-                ),
-            }}
-        >
-            <div className="gallery-view">
-                <input
-                    ref={editImageFileRef}
-                    type="file"
-                    accept="image/*"
-                    multiple
-                    className="sr-only"
-                    onChange={handleEditImageFileChange}
+        <div className="gallery-view">
+            <input
+                ref={editImageFileRef}
+                type="file"
+                accept="image/*"
+                multiple
+                className="sr-only"
+                onChange={handleEditImageFileChange}
+            />
+            <GalleryTabContent
+                hasImages={hasImages}
+                createdScrollRef={createdScrollRef}
+                galleryImages={galleryImages}
+                handleSketchEditExport={handleSketchEditExport}
+                isSmallScreen={isSmallScreen}
+                handleSendMessage={handleSendMessage}
+                isProcessingAttachment={isProcessingAttachment}
+                composerPrefill={composerPrefill}
+                gallerySketchTrigger={gallerySketchTrigger}
+                onTryPrompt={handleTryPrompt}
+                onShowDriveBrowser={handleShowDriveBrowser}
+            />
+            {driveBrowserModal.render && (
+                <FilesManagementView
+                    messageChain={[]}
+                    filesContainerRef={filesContainerRef}
+                    onClose={driveBrowserModal.modalProps.onClose}
+                    modalProps={driveBrowserModal.modalProps}
+                    initialShowDriveBrowser
+                    forceModal
                 />
-                {activeTab === 'create' && (
-                    <CreateTabContent
-                        handleSendMessage={handleSendMessage}
-                        isProcessingAttachment={isProcessingAttachment}
-                        composerPrefill={composerPrefill}
-                        gallerySketchTrigger={gallerySketchTrigger}
-                        onShowDriveBrowser={handleShowDriveBrowser}
-                        // onSuggestionClick={handleSuggestionClick}
-                    />
-                )}
-                {activeTab === 'gallery' && (
-                    <GalleryTabContent
-                        hasImages={hasImages}
-                        createdScrollRef={createdScrollRef}
-                        galleryImages={galleryImages}
-                        handleSketchEditExport={handleSketchEditExport}
-                        isSmallScreen={isSmallScreen}
-                        handleSendMessage={handleSendMessage}
-                        isProcessingAttachment={isProcessingAttachment}
-                        composerPrefill={composerPrefill}
-                        gallerySketchTrigger={gallerySketchTrigger}
-                        onTryPrompt={handleTryPrompt}
-                        onShowDriveBrowser={handleShowDriveBrowser}
-                    />
-                )}
-                {driveBrowserModal.render && (
-                    <FilesManagementView
-                        messageChain={[]}
-                        filesContainerRef={filesContainerRef}
-                        onClose={driveBrowserModal.modalProps.onClose}
-                        modalProps={driveBrowserModal.modalProps}
-                        initialShowDriveBrowser
-                        forceModal
-                    />
-                )}
-            </div>
-        </LumoLayoutWithDrawer>
+            )}
+        </div>
     );
 };

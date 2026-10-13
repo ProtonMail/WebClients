@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import { Route, BrowserRouter as Router, Switch, useRouteMatch } from 'react-router-dom';
+import { Redirect, Route, BrowserRouter as Router, Switch, useRouteMatch } from 'react-router-dom';
 
 import ConversationSkeleton from '../components/ConversationSkeleton';
 import DebugView from '../features/dev/DebugView';
@@ -25,6 +25,7 @@ const AllChatsView = lazy(() => import('../features/allChats/AllChatsView').then
 export function InnerApp() {
     const { url } = useRouteMatch(); // either "/guest" or "/u/:sessionId"
     const { apiKeyManagement, imageTools, artifactsView, aiPaperTrailRoute } = useLumoFlags();
+    const showLibrary = imageTools || artifactsView;
 
     return (
         <PandocProvider>
@@ -46,8 +47,16 @@ export function InnerApp() {
                                 <Switch>
                                     <Route exact path="/projects" component={ProjectsView} />
                                     <Route path="/projects/:projectId" component={ProjectDetailView} />
-                                    {imageTools && <Route exact path="/images" component={ConversationPage} />}
-                                    {artifactsView && <Route exact path="/creations" component={ConversationPage} />}
+                                    {showLibrary && <Route exact path="/library" component={ConversationPage} />}
+                                    {/* The Images and Creations pages became tabs of the Library. */}
+                                    {imageTools && (
+                                        <Redirect
+                                            exact
+                                            from="/images"
+                                            to={{ pathname: '/library', search: '?tab=images' }}
+                                        />
+                                    )}
+                                    {artifactsView && <Redirect exact from="/creations" to="/library" />}
                                     {apiKeyManagement && <Route exact path="/docs/api" component={ApiDocsPage} />}
                                     <Route exact path="/chats" component={AllChatsView} />
 
