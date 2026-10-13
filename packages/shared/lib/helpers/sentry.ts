@@ -217,6 +217,7 @@ const getDefaultIgnoreErrors = (): SentryIgnoreErrors => {
         'UnhandledRejection', // Happens too often in extensions and we have lints for that, so should be safe to ignore.
         /chrome-extension/,
         /moz-extension/,
+        /window\.ethereum/, // Uncaught errors from browser-injected wallet scripts (see brave/brave-browser#58670).
         'TransferCancel', // User action to interrupt upload or download in Drive.
         'UploadConflictError', // User uploading the same file again in Drive.
         'UploadUserError', // Upload error on user's side in Drive.
