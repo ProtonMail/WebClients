@@ -1158,6 +1158,70 @@
         "L'espace de stockage est partagé entre tous les services ${ BRAND_NAME }."
       ]
     },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Profitez de l'offre"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/mois"
+      ],
+      "2 individual accounts": [
+        "2 comptes individuels"
+      ],
+      "2 TB of secure storage": [
+        "2 To d'espace de stockage sécurisé"
+      ],
+      "3 TB of secure storage": [
+        "3 To d'espace de stockage sécurisé"
+      ],
+      "500 GB of secure storage": [
+        "500 Go d'espace de stockage sécurisé"
+      ],
+      "6 individual accounts": [
+        "6 comptes individuels"
+      ],
+      "Advanced protection against cyber threats": [
+        "Protection avancée contre les cybermenaces"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Les réductions sont calculées sur la base du tarif mensuel standard. Votre abonnement sera renouvelé au tarif annuel standard à la fin du cycle de facturation."
+      ]
+    },
+    "bfcampaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, et ${ VPN_SHORT_APP_NAME } Premium"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, et ${ CALENDAR_SHORT_APP_NAME } Premium"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } Premium"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } Premium"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, et ${ CALENDAR_SHORT_APP_NAME } Premium"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "for 12 months": [
+        "pour 12 mois"
+      ]
+    },
     "Browser": {
       "${ appName } Desktop application": [
         "Application de bureau ${ appName }"
@@ -3418,6 +3482,9 @@
       ],
       "You must set a name": [
         "Vous devez définir un nom."
+      ],
+      "You reached the maximum number of connected addresses": [
+        "Vous avez atteint le nombre maximal d'adresses connectées"
       ],
       "Your import will not be processed.": [
         "Votre importation ne sera pas traitée."
@@ -8164,79 +8231,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q3campaign2026: Action": {
-      "Get the deal": [
-        "Profitez de l'offre"
-      ],
-      "Special Offer": [
-        "Offre spéciale"
-      ]
-    },
-    "q3campaign2026: Info": {
-      "/month": [
-        "/mois"
-      ],
-      "2 individual accounts": [
-        "2 comptes individuels"
-      ],
-      "2 TB of secure storage": [
-        "2 To d'espace de stockage sécurisé"
-      ],
-      "3 TB of secure storage": [
-        "3 To d'espace de stockage sécurisé"
-      ],
-      "500 GB of secure storage": [
-        "500 Go d'espace de stockage sécurisé"
-      ],
-      "6 individual accounts": [
-        "6 comptes individuels"
-      ],
-      "Advanced protection against cyber threats": [
-        "Protection avancée contre les cybermenaces"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Les réductions sont calculées sur la base du tarif mensuel standard. Votre abonnement sera renouvelé au tarif annuel standard à la fin du cycle de facturation."
-      ]
-    },
-    "q3campaign2026: Info, Calendar first": {
-      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, et ${ VPN_SHORT_APP_NAME } Premium"
-      ]
-    },
-    "q3campaign2026: Info, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, et ${ CALENDAR_SHORT_APP_NAME } Premium"
-      ]
-    },
-    "q3campaign2026: Info, Family, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } Premium"
-      ]
-    },
-    "q3campaign2026: Info, Family, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } Premium"
-      ]
-    },
-    "q3campaign2026: Info, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, et ${ CALENDAR_SHORT_APP_NAME } Premium"
-      ]
-    },
-    "q3campaign2026: Title": {
-      "for 12 months": [
-        "pour 12 mois"
-      ],
-      "One plan, full power": [
-        "Un abonnement, pleine puissance"
-      ],
-      "One plan, max savings": [
-        "Un abonnement, un maximum d'économies"
-      ],
-      "One plan, more power": [
-        "Un seul abonnement, plus de puissance"
       ]
     },
     "Recent documents table header": {
