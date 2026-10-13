@@ -41,40 +41,38 @@ export const CountryStateSelector = ({
 
     const billingAddress: BillingAddress = { CountryCode: selectedCountryCode, State: federalStateCode };
 
-    const countriesDropdown = (
-        <CountriesDropdown
-            id={billingCountryId}
-            selectedCountryCode={selectedCountryCode}
-            onChange={setSelectedCountry}
-            isOpen={isDropdownOpen}
-            onOpen={() => setIsDropdownOpen(true)}
-            onClose={() => setIsDropdownOpen(false)}
-            data-testid="tax-country-dropdown"
-        />
-    );
+    const countriesDropdownProps = {
+        id: billingCountryId,
+        selectedCountryCode,
+        onChange: setSelectedCountry,
+        isOpen: isDropdownOpen,
+        onOpen: () => setIsDropdownOpen(true),
+        onClose: () => setIsDropdownOpen(false),
+        'data-testid': 'tax-country-dropdown',
+    };
 
-    const stateDropdown = (
-        <StateSelector
-            id="billing-state"
-            onStateChange={setFederalState}
-            federalStateCode={federalStateCode}
-            selectedCountryCode={selectedCountryCode}
-            className={clsx(!fullsize && 'mt-1')}
-        />
-    );
+    const stateDropdownProps = {
+        id: 'billing-state',
+        onStateChange: setFederalState,
+        federalStateCode,
+        selectedCountryCode,
+        className: clsx(!fullsize && 'mt-1'),
+    };
 
     if (fullsize) {
         return (
             <>
                 <InputFieldTwo
+                    as={CountriesDropdown}
+                    {...countriesDropdownProps}
                     label={c('Label').t`Country`}
-                    as={() => countriesDropdown}
                     error={validator?.([billingCountryValidator(billingAddress)])}
                 />
                 {showStateCode ? (
                     <InputFieldTwo
+                        as={StateSelector}
+                        {...stateDropdownProps}
                         label={c('Label').t`State`}
-                        as={() => stateDropdown}
                         error={validator?.([billingStateValidator(billingAddress)])}
                     />
                 ) : null}
@@ -84,8 +82,8 @@ export const CountryStateSelector = ({
 
     return (
         <>
-            {countriesDropdown}
-            {showStateCode ? stateDropdown : null}
+            <CountriesDropdown {...countriesDropdownProps} />
+            {showStateCode ? <StateSelector {...stateDropdownProps} /> : null}
         </>
     );
 };
