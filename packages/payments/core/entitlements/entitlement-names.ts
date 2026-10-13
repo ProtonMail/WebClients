@@ -104,6 +104,7 @@ export enum EntitlementName {
     /** Grants access to paid (Tier 2) VPN servers. */
     PaidVpnServers = 'paid-vpn-servers',
     PassAliasManagement = 'pass-alias-management',
+    /** This entitlement check does NOT cover all Pass B2B plans.It only says that user has a plan that has entitlements on the level of at least passbiz2024. Thus passpro2024 does NOT include pass-business entitlement. */
     PassBusiness = 'pass-business',
     PassCli = 'pass-cli',
     /** Plan includes the Pass-specific features that Pass Essentials would grant */
@@ -119,8 +120,6 @@ export enum EntitlementName {
     Sentinel = 'sentinel',
     /** Determines whether SSO is supported. */
     Sso = 'sso',
-    /** Determines whether keyless SSO is supported. */
-    SsoKeyless = 'sso-keyless',
     SsoKeys = 'sso-keys',
     /** Enables location filtering for VPN (also known as shared servers). */
     VpnLocationFilter = 'vpn-location-filter',
