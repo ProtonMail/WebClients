@@ -45,6 +45,7 @@ const useStepLoadingImporting = () => {
 
     useEffect(() => {
         void createImporterTask({
+            provider,
             isLabelMapping,
             products,
             importerData,
