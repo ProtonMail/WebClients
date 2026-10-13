@@ -433,6 +433,9 @@
       "Claim ${ BRAND_NAME } address": [
         "Атрымаць адрас ${ BRAND_NAME }"
       ],
+      "Claim it": [
+        "Атрымаць яго"
+      ],
       "Claim offer": [
         "Скарыстацца прапановай"
       ],
@@ -517,6 +520,9 @@
       "Continue with Free": [
         "Працягнуць з тарыфным планам Free"
       ],
+      "Continue with single sign-on": [
+        "Працягнуць з дапамогай адзінага ўваходу"
+      ],
       "Continue with this password": [
         "Працягнуць з гэтым паролем"
       ],
@@ -552,6 +558,9 @@
       ],
       "Create users": [
         "Стварыць карыстальнікаў"
+      ],
+      "Create your own": [
+        "Стварыць свой уласны"
       ],
       "Current plan": [
         "Бягучы тарыфны план"
@@ -645,9 +654,6 @@
       ],
       "Dismiss": [
         "Адхіліць"
-      ],
-      "Domain name": [
-        "Даменнае імя"
       ],
       "Don't show again": [
         "Больш не паказваць"
@@ -1033,6 +1039,9 @@
       "No, thanks": [
         "Не, дзякуй"
       ],
+      "Not now": [
+        "Не цяпер"
+      ],
       "OK": [
         "OK"
       ],
@@ -1101,6 +1110,9 @@
       ],
       "Recover data": [
         "Аднавіць даныя"
+      ],
+      "Recover previous account": [
+        "Адправіць папярэдні ўліковы запіс"
       ],
       "Refer a friend": [
         "Запрасіць сябра"
@@ -1425,6 +1437,9 @@
       ],
       "Take a tour": [
         "Пачаць знаёмства"
+      ],
+      "Take the survey": [
+        "Прайсці апытанне"
       ],
       "Template with invite links": [
         "Шаблон са спасылкамі запрашэння"
@@ -2128,9 +2143,54 @@
         "Прастора сховішча размеркавана паміж усімі сэрвісамі ${ BRAND_NAME }"
       ]
     },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Чорная Пятніца"
+      ],
+      "Get the deal": [
+        "Скарыстацца прапановай"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/месяц"
+      ],
+      "2 individual accounts": [
+        "2 асабістых уліковых запісы"
+      ],
+      "2 TB of secure storage": [
+        "2 ТБ бяспечнага сховішча"
+      ],
+      "3 TB of secure storage": [
+        "3 ТБ бяспечнага сховішча"
+      ],
+      "6 individual accounts": [
+        "6 асабістых уліковых запісаў"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Найбуйнейшы распродаж года"
+      ],
+      "Black Friday": [
+        "Чорная Пятніца"
+      ],
+      "for 12 months": [
+        "за 12 месяцаў"
+      ],
+      "Last chance to save big": [
+        "Апошні шанс істотна сэканоміць"
+      ]
+    },
     "Billing cycle": {
       "Free renewal": [
         "Бясплатнае падаўжэнне"
+      ],
+      "Renews automatically at ${ price }, for ${ cycle } month": [
+        "Аўтаматычнае падаўжэнне па кошце ${ price } за перыяд часу ${ cycle } месяц",
+        "Аўтаматычнае падаўжэнне па кошце ${ price } за перыяд часу ${ cycle } месяцы",
+        "Аўтаматычнае падаўжэнне па кошце ${ price } за перыяд часу ${ cycle } месяцаў",
+        "Аўтаматычнае падаўжэнне па кошце ${ price } за перыяд часу ${ cycle } месяцаў"
       ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Падаўжаецца аўтаматычна ў ${ subscriptionManagerName }"
@@ -2260,6 +2320,11 @@
       ],
       "Working with sensitive data?": [
         "Працуеце з канфідэнцыяльнымі данымі?"
+      ]
+    },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "Праграма для камп'ютара ${ appName }"
       ]
     },
     "Bug category": {
@@ -2481,6 +2546,29 @@
         "Усяго за ${ cycle } месяцы",
         "Усяго за ${ cycle } месяцаў",
         "Усяго за ${ cycle } месяцаў"
+      ]
+    },
+    "claimed address": {
+      "Sign in with your organization?": [
+        "Увайсці з дапамогай вашай арганізацыі?"
+      ],
+      "Verify it's you": [
+        "Спраўдзіце, што гэта вы"
+      ],
+      "You're all set": [
+        "Усё гатова"
+      ],
+      "Your address": [
+        "Ваш адрас"
+      ],
+      "Your address has changed": [
+        "Ваш адрас змяніўся"
+      ],
+      "Your new address": [
+        "Ваш новы адрас"
+      ],
+      "Your password remains the same.": [
+        "Ваш пароль застаецца без змяненняў."
       ]
     },
     "Collapsible tooltip": {
@@ -5570,6 +5658,9 @@
       "There was an error, please try again.": [
         "Адбылася памылка. Паўтарыце спробу."
       ],
+      "This code or link is no longer valid. Please try again.": [
+        "Гэты код або спасылка больш не дзейнічаюць. Паўтарыце спробу."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Гэта поле перавышае максімальную колькасць сімвалаў (дазволена: ${ maximumLength })."
       ],
@@ -5725,6 +5816,9 @@
       ],
       "Your import will not be processed.": [
         "Ваша імпартаванне не будзе апрацавана."
+      ],
+      "Your password couldn't be reset. Please try again.": [
+        "Немагчыма скінуць ваш пароль. Паўтарыце спробу."
       ],
       "Zero keys reactivated": [
         "Нуль ключоў паўторна актывавана"
@@ -6781,6 +6875,9 @@
       "Event": [
         "Падзея"
       ],
+      "Good to know before you connect": [
+        "Варта ведаць перад падключэннем"
+      ],
       "IP address": [
         "IP-адрас"
       ],
@@ -7643,9 +7740,6 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ protonSubdomain } размешчаны на ${ BRAND_NAME }. Ён дазваляе хутка наладжваць паддамены. ${ learnMoreLink }"
       ],
-      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
-        "Для стварэння груп патрабуецца карыстальніцкі дамен. Калі ў вас адсутнічае наладжаны карыстальніцкі дамен, то спачатку стварыце яго па спасылцы ${ linkToDomainPage }."
-      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Назва, якая дапаможа вам вызначыць, дзе вы яго выкарыстоўваеце, каб вы маглі лёгка адклікаць яго або падоўжыць яго пазней."
       ],
@@ -8387,6 +8481,9 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Увядзіце ваш уліковы запіс электроннай пошты ${ BRAND_NAME } або імя карыстальніка."
       ],
+      "Enter your old password for ${ boldEmail }.": [
+        "Увядзіце свой стары пароль для ${ boldEmail }."
+      ],
       "Enter your own password (as organization admin).": [
         "Увядзіце свой пароль (адміністратара арганізацыі)."
       ],
@@ -8521,6 +8618,9 @@
       ],
       "here": [
         "тут"
+      ],
+      "Here's what happens when you continue:": [
+        "Вось што адбудзецца, калі вы працягнеце:"
       ],
       "High Priority": [
         "Высокі прыярытэт"
@@ -8923,6 +9023,9 @@
       ],
       "Next billing date": [
         "Дата наступнай аплаты:"
+      ],
+      "Next time you sign in to your other account": [
+        "Наступны раз уваход будзе выкананы ў ваш іншы ўліковы запіс"
       ],
       "No addresses exist": [
         "Няма адрасоў"
@@ -9500,6 +9603,9 @@
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Адбылася ўцечка скампраметаваных звестак са старонняга сэрвісу. Гэта не закранула звесткі вашага ўліковага запісу ${ BRAND_NAME }, бо яны зашыфраваны і знаходзяцца ў бяспецы. ${ learnMoreLink }"
       ],
+      "The following address is available:": [
+        "Наступны адрас з'яўляецца даступным:"
+      ],
       "The following address is invalid.": [
         "Наступны адрас з'яўляецца памылковым.",
         "Наступныя адрасы з'яўляюцца памылковымі.",
@@ -9871,6 +9977,9 @@
       ],
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Скарыстайцеся метадам аднаўлення, каб адключыць вашы двухфактарныя метады аўтэнтыфікацыі."
+      ],
+      "Use an existing email or create a free ${ protonDomain } address.": [
+        "Выкарыстоўвайце існуючую электронную пошту або стварыце бясплатны адрас з даменам ${ protonDomain }."
       ],
       "Use multiple email addresses with ${ MAIL_APP_NAME }. Add a new ${ BRAND_NAME } address or connect another email account to manage everything from one inbox.": [
         "Выкарыстоўвайце некалькі адрасоў электроннай пошты з ${ MAIL_APP_NAME }. Дадайце новы адрас ${ BRAND_NAME } або падключыце іншы ўліковы запіс электроннай пошты, каб кіраваць усім з адной паштовай скрыні."
@@ -10301,6 +10410,9 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "У вас не будзе магчымасці аднавіць заблакіраваныя даныя з дапамогай спампаваных файлаў аднаўлення. Гэта таксама адключыць аднаўленне з дапамогай даверанай прылады."
       ],
+      "You'll choose a new username": [
+        "Вы выберыце новае імя карыстальніка"
+      ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Вы атрымаеце ўзнагароду ў крэдытах праз 1 месяц пасля таго, як ваш сябар падпішацца на гадавы тарыфны план. Праз 2 месяцы можна разлічваць на ўзнагароду, калі ваш сябар падпішацца на месячны тарыфны план."
       ],
@@ -10315,6 +10427,9 @@
         "Пасля гэтага вам будзе выстаўляцца рахунак кожны ${ renewCycle } месяцы ў памеры ${ renewAmountStr }. Скасаваць можна ў любы час.",
         "Пасля гэтага вам будзе выстаўляцца рахунак кожны ${ renewCycle } месяцаў у памеры ${ renewAmountStr }. Скасаваць можна ў любы час.",
         "Пасля гэтага вам будзе выстаўляцца рахунак кожны ${ renewCycle } месяцаў у памеры ${ renewAmountStr }. Скасаваць можна ў любы час."
+      ],
+      "You'll use it to sign in from then on. That's the only change.": [
+        "З гэтага часу вы будзеце выкарыстоўваць яго для ўваходу. Гэта адзінае змяненне."
       ],
       "You're now signed in on your TV.": [
         "Вы ўвайшлі ў сістэму на сваім тэлевізары."
@@ -12391,6 +12506,9 @@
       "Today, ${ time }": [
         "Сёння ў ${ time }"
       ],
+      "Turn it on to track when and where users connect.": [
+        "Уключыце яго, каб адсочваць, калі і дзе падключаюцца карыстальнікі."
+      ],
       "Yesterday": [
         "Учора"
       ],
@@ -13993,6 +14111,9 @@
       "Once your full subscription starts...": [
         "Як толькі пачнецца ваша поўная падпіска..."
       ],
+      "to keep using all of the features after your trial ends.": [
+        "каб працягваць карыстацца ўсімі функцыямі пасля завяршэння пробнага перыяду."
+      ],
       "you can cancel within 30 days and get a pro-rata refund.": [
         "вы зможаце скасаваць падпіску на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
       ],
@@ -14253,6 +14374,9 @@
         "**${ n } непрыватныя карыстальнікі павінны быць часова пераўтвораны ў прыватных**, каб скінуць ключ арганізацыі і аднавіць вашы правы адміністратара.",
         "**${ n } непрыватных карыстальнікаў павінны быць часова пераўтвораны ў прыватных**, каб скінуць ключ арганізацыі і аднавіць вашы правы адміністратара.",
         "**${ n } непрыватных карыстальнікаў павінны быць часова пераўтвораны ў прыватных**, каб скінуць ключ арганізацыі і аднавіць вашы правы адміністратара."
+      ],
+      "To restore your privileges, use a data recovery method.": [
+        "Скарыстайцеся метадам аднаўлення даных, каб аднавіць правы доступу."
       ],
       "Try another way": [
         "Паспрабуйце іншы спосаб"
@@ -14658,6 +14782,15 @@
         "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэнняў.",
         "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэнняў.",
         "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэнняў."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "Выбраны тарыфны план не прапануе дастатковую колькасць даменаў для вашага ўліковага запісу."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "Выбраны тарыфны план не прапануе дастатковую колькасць удзельнікаў для вашага ўліковага запісу."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "Выбраны тарыфны план не прапануе дастатковую колькасць сховішча для вашага ўліковага запісу."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяца. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
@@ -15215,79 +15348,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q3campaign2026: Action": {
-      "Get the deal": [
-        "Скарыстацца прапановай"
-      ],
-      "Special Offer": [
-        "Спецыяльная прапанова"
-      ]
-    },
-    "q3campaign2026: Info": {
-      "/month": [
-        "/месяц"
-      ],
-      "2 individual accounts": [
-        "2 асабістых уліковых запісы"
-      ],
-      "2 TB of secure storage": [
-        "2 ТБ бяспечнага сховішча"
-      ],
-      "3 TB of secure storage": [
-        "3 ТБ бяспечнага сховішча"
-      ],
-      "500 GB of secure storage": [
-        "500 ГБ бяспечнага сховішча"
-      ],
-      "6 individual accounts": [
-        "6 асабістых уліковых запісаў"
-      ],
-      "Advanced protection against cyber threats": [
-        "Пашыраная абарона супраць кіберпагроз"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Скідкі разлічваюцца на падставе стандартнай платы за месяц. Ваша падпіска будзе аўтаматычна падаўжацца па стандартнай гадавой стаўцы пасля заканчэння перыяду аплаты."
-      ]
-    },
-    "q3campaign2026: Info, Calendar first": {
-      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "Прэміяльныя ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } і ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Прэміяльныя ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Family, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "Прэміяльныя ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Family, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "Прэміяльныя ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Прэміяльныя ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Title": {
-      "for 12 months": [
-        "за 12 месяцаў"
-      ],
-      "One plan, full power": [
-        "Адзін тарыфны план, максімум магчымасцяў"
-      ],
-      "One plan, max savings": [
-        "Адзін тарыфны план, максімальная эканомія"
-      ],
-      "One plan, more power": [
-        "Адзін тарыфны план, больш магчымасцяў"
       ]
     },
     "Recovery Email": {
@@ -18825,6 +18885,9 @@
       "Billing cycle": [
         "Перыяд аплаты"
       ],
+      "Black Friday": [
+        "Чорная Пятніца"
+      ],
       "Block trackers and malware": [
         "Блакіроўка праграм сачэння і шкодных праграм"
       ],
@@ -18989,6 +19052,9 @@
       ],
       "Create user accounts": [
         "Стварэнне ўліковага запісу карыстальніка"
+      ],
+      "Create your ${ BRAND_NAME } address": [
+        "Стварэнне свайго адрасу ${ BRAND_NAME }"
       ],
       "Created": [
         "Створана"
@@ -19689,9 +19755,6 @@
       "Send new invite?": [
         "Адправіць новае запрашэнне?"
       ],
-      "September Sale": [
-        "Вераснёўскі распродаж"
-      ],
       "Service": [
         "Сэрвіс"
       ],
@@ -19754,6 +19817,9 @@
       ],
       "Signed-in reset": [
         "Скіданне пры актыўным сеансе"
+      ],
+      "Signing in is changing": [
+        "Адбываецца змена ўваходу ў сістэму"
       ],
       "Simplify email distribution": [
         "Спрашчэнне распаўсюджвання электроннай пошты"
@@ -20752,6 +20818,9 @@
       ],
       "Writing assistant": [
         "Памочнік у напісанні"
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Вы не можаце змяніць сваю ўласную ролю. Папрасіце іншага адміністратара зрабіць гэта."
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Вы зможаце прызначаць ролі, як толькі карыстальнік прыме запрашэнне."

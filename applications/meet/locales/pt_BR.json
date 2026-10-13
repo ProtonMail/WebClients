@@ -49,6 +49,10 @@
       "${ name }: ${ message }": [
         "${ name }: ${ message }"
       ],
+      "${ suggestionCount } mention suggestion available": [
+        "${ suggestionCount } sugestão de menção disponível",
+        "${ suggestionCount } sugestões de menções disponíveis"
+      ],
       "A participant joined the meeting": [
         "Um participante entrou na reunião"
       ],
@@ -314,6 +318,9 @@
       "Deny ${ participantName }": [
         "Negar ${ participantName }"
       ],
+      "Desync audio output": [
+        "Desincronizar saída de áudio"
+      ],
       "Disable ${ participantName }'s video": [
         "Desativar vídeo de ${ participantName }"
       ],
@@ -458,6 +465,9 @@
       "Lower hand": [
         "Baixar mão"
       ],
+      "Meeting info": [
+        "Informação da reunião:"
+      ],
       "Meeting timer": [
         "Temporizador de reunião"
       ],
@@ -491,9 +501,6 @@
       "Not now": [
         "Agora não"
       ],
-      "Open app": [
-        "Abrir aplicativo"
-      ],
       "Open link": [
         "Abrir link"
       ],
@@ -512,6 +519,9 @@
       "Pause": [
         "Pausar"
       ],
+      "Picture-in-picture while sharing": [
+        "Picture-in-picture enquanto compartilhando"
+      ],
       "Playing back...": [
         "Reproduzindo..."
       ],
@@ -529,6 +539,9 @@
       ],
       "Raise hand": [
         "Levantar a mão"
+      ],
+      "Re-apply audio output": [
+        "Reaplicar a saída de áudio"
       ],
       "React with ${ emoji }": [
         "Reagir com ${ emoji }"
@@ -628,6 +641,9 @@
       "Search countries": [
         "Pesquisar países"
       ],
+      "Self view": [
+        "Minha visualização"
+      ],
       "Send an encrypted message": [
         "Enviar uma mensagem criptografada"
       ],
@@ -660,6 +676,9 @@
       ],
       "Sign out of all accounts": [
         "Encerrar sessão de todas as contas"
+      ],
+      "Simulate output device loss": [
+        "Simular perda do dispositivo de saída"
       ],
       "Simulate reconnection": [
         "Simular conexão"
@@ -858,6 +877,9 @@
       "Participant host control options": [
         "Opções de controle do anfitrião para participantes"
       ],
+      "Picture-in-picture while sharing": [
+        "Picture-in-picture enquanto compartilhando"
+      ],
       "Rotate camera": [
         "Girar câmera"
       ],
@@ -955,6 +977,11 @@
     "Banner": {
       "Connected via TURN relay mode due to your network restrictions. This may increase latency and affect call quality.": [
         "Conectado via modo de retransmissão TURN devido às restrições da sua rede. Isso pode aumentar a latência e afetar a qualidade da chamada."
+      ]
+    },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "Aplicativo para computador do ${ appName }"
       ]
     },
     "Bug category": {
@@ -1922,6 +1949,9 @@
       "Bookmark password is not available": [
         "A senha do marcador não está disponível"
       ],
+      "Cannot add photo to album without a valid name": [
+        "Não é possível adicionar foto ao álbum sem um nome válido"
+      ],
       "Cannot download a folder": [
         "Não é possível baixar uma pasta"
       ],
@@ -1963,6 +1993,9 @@
       ],
       "Couldn’t play the recording on this speaker.": [
         "Não consegui reproduzir a gravação neste alto-falante."
+      ],
+      "Couldn’t play the test sound on this speaker.": [
+        "Não foi possível reproduzir o som de teste neste alto-falante."
       ],
       "Couldn’t start the microphone test.": [
         "Não foi possível iniciar o teste do microfone."
@@ -2108,6 +2141,9 @@
       "Failed to verify invitation": [
         "Erro ao verificar o convite"
       ],
+      "File download failed due to empty response": [
+        "O download do arquivo falhou devido à resposta vazia"
+      ],
       "File has no revision": [
         "O arquivo não possui revisão"
       ],
@@ -2168,6 +2204,9 @@
       "Moving item to a non-folder is not allowed": [
         "Não é permitido mover o item para um local que não seja uma pasta"
       ],
+      "Moving root item is not allowed": [
+        "Item de raiz em movimento não é permitido"
+      ],
       "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
         "O nome deve ter no máximo ${ MAX_NODE_NAME_LENGTH } caractere",
         "O nome deve ter no máximo ${ MAX_NODE_NAME_LENGTH } caracteres"
@@ -2196,6 +2235,9 @@
       "Passwords do not match": [
         "As senhas não correspondem"
       ],
+      "Photo is already in the target album": [
+        "A foto já está no álbum alvo"
+      ],
       "Photo not found": [
         "Foto não encontrada"
       ],
@@ -2204,6 +2246,12 @@
       ],
       "Please allow screen sharing in your system permissions, then try again": [
         "Habilite o compartilhamento de tela nas permissões do sistema e tente novamente"
+      ],
+      "Recording stopped because it could not be saved. We kept it up to this point.": [
+        "A gravação foi interrompida porque não pôde ser salva. Mantivemos o que foi gravado até este ponto."
+      ],
+      "Renaming root item is not allowed": [
+        "Não é permitido renomear o item, raiz"
       ],
       "Request aborted": [
         "Solicitação abortada"
@@ -2259,6 +2307,9 @@
       "The meeting password is invalid": [
         "A senha da reunião está inválida"
       ],
+      "The mention could not be added because the message is at its character limit": [
+        "A menção não pôde ser adicionada porque a mensagem atingiu o limite de caracteres"
+      ],
       "The message field is unavailable. Please reload the page.": [
         "O campo de mensagem não está disponível. Recarregue a página."
       ],
@@ -2277,6 +2328,9 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo exige um mínimo de ${ minimumLength } caracteres."
       ],
+      "This file has missing crypto material": [
+        "Este arquivo tem material de criptografia ausente"
+      ],
       "This file has no version available to download": [
         "O arquivo não possui uma versão para download"
       ],
@@ -2285,6 +2339,9 @@
       ],
       "This file version could not be uploaded": [
         "Não foi possível fazer o envio desta versão do arquivo"
+      ],
+      "This image could not be read. Pick another one.": [
+        "Esta imagem não pôde ser lida. Escolha outra."
       ],
       "This item is no longer shared": [
         "Este item não está mais sendo compartilhado"
@@ -2806,14 +2863,14 @@
       "Get a secure meeting link then add it to your calendar": [
         "Receba um link de reunião seguro e adicione-o ao seu calendário"
       ],
-      "Get the best experience with the ${ protonMeet } desktop app": [
-        "Aproveite a melhor experiência com o aplicativo do ${ protonMeet } para computador."
-      ],
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "Vá para about:config, pesquise por media.peerconnection.enabled, e defina-o como true."
       ],
       "Host": [
         "Anfitrião"
+      ],
+      "Host has another meeting in progress": [
+        "O anfitrião está em outra reunião no momento"
       ],
       "Host has disabled live captions for this meeting.": [
         "O anfitrião desativou as legendas ao vivo para esta reunião."
@@ -2887,6 +2944,9 @@
       "Loading…": [
         "Carregando…"
       ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Os registros nos ajudam a entender o que aconteceu antes de o problema ocorrer. Eles incluem ações do aplicativo e mensagens de erro, mas não o conteúdo das mensagens."
+      ],
       "Lower participant's hand": [
         "Baixar a mão do participante"
       ],
@@ -2916,6 +2976,9 @@
       ],
       "Meeting recordings aren’t supported in Firefox.": [
         "As gravações de reunião não são suportadas no Firefox."
+      ],
+      "Meeting recordings aren’t supported in Safari private mode.": [
+        "As gravações de reunião não são suportadas no modo privado no Safari."
       ],
       "Meeting time is up": [
         "O tempo da reunião acabou"
@@ -3007,6 +3070,12 @@
       "notify everyone here": [
         "notificar todos aqui"
       ],
+      "Now using ${ first } and ${ second }.": [
+        "Agora usando ${ first } e ${ second }."
+      ],
+      "Now using ${ first }.": [
+        "Agora usando ${ first }."
+      ],
       "Only meetings you created appear here": [
         "Somente reuniões que você criou aparecem aqui"
       ],
@@ -3027,6 +3096,9 @@
       ],
       "Participant counts don’t match": [
         "Os números de participantes não coincidem"
+      ],
+      "Participants can turn live captions on. Turn on your own under Display.": [
+        "Os participantes podem ativar a legenda ao vivo. Ative essa opção na seção Exibição."
       ],
       "Participants can’t use live captions": [
         "Os participantes não podem usar legendas ao vivo"
@@ -3121,6 +3193,18 @@
       "Select a speaker": [
         "Selecione um alto-falante"
       ],
+      "Selected camera has disconnected.": [
+        "A câmera selecionada foi desconectada."
+      ],
+      "Selected devices have disconnected.": [
+        "Os dispositivos selecionados foram desconectados."
+      ],
+      "Selected microphone and speaker have disconnected.": [
+        "O microfone e o alto-falante selecionados foram desconectados."
+      ],
+      "Selected speaker and camera have disconnected.": [
+        "O alto-falante e a câmera selecionados foram desconectados."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Os servidores estão inacessíveis. Tente novamente em alguns minutos"
       ],
@@ -3175,6 +3259,9 @@
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "Este é um bate-papo com criptografia de ponta a ponta e mensagens efêmeras, que desaparecem ao final da chamada."
       ],
+      "This meeting has a time limit. This call will disconnect soon.": [
+        "Esta reunião tem um limite de tempo. Esta chamada vai desconectar-se em breve."
+      ],
       "This meeting has a waiting room": [
         "Essa reunião tem uma sala de espera"
       ],
@@ -3186,6 +3273,9 @@
       ],
       "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
         "Essa reunião alcançou o limite de tempo do plano gratuito. Faça upgrade para estender o tempo de reunião em futuras chamadas."
+      ],
+      "This meeting reached the time limit.": [
+        "Esta reunião atingiu o tempo limite."
       ],
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Esta reunião foi aberta no aplicativo do ${ MEET_APP_NAME } para computador."
@@ -4019,11 +4109,17 @@
       "Allow microphone": [
         "Permitir microfone"
       ],
+      "Allow screen recording": [
+        "Permitir gravação da tela"
+      ],
       "Are you sure?": [
         "Você tem certeza?"
       ],
       "Assign a new host": [
         "Atribuir um novo anfitrião"
+      ],
+      "Audio Output Testing": [
+        "Testando saída de áudio"
       ],
       "Available Cameras": [
         "Câmeras disponíveis"
@@ -4293,6 +4389,9 @@
       ],
       "Instant AI assistance, human expert on hand!": [
         "Assistência instantânea com IA, com um especialista à disposição!"
+      ],
+      "People currently connected to the meeting": [
+        "Pessoas atualmente conectadas à reunião no momento"
       ],
       "Recurring meeting": [
         "Reunião recorrente"

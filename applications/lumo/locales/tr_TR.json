@@ -639,6 +639,70 @@
         "Depolama alanı tüm ${ BRAND_NAME } hizmetleri arasında paylaşılır."
       ]
     },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Muhteşem Cuma"
+      ],
+      "Get the deal": [
+        "Tekliften yararlanın"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/ay"
+      ],
+      "2 individual accounts": [
+        "2 bireysel hesap"
+      ],
+      "2 TB of secure storage": [
+        "2 TB güvenli depolama alanı"
+      ],
+      "3 TB of secure storage": [
+        "3 TB güvenli depolama alanı"
+      ],
+      "500 GB of secure storage": [
+        "500 GB güvenli depolama alanı"
+      ],
+      "6 individual accounts": [
+        "6 bireysel hesap"
+      ],
+      "Advanced protection against cyber threats": [
+        "Siber tehditlere karşı gelişmiş koruma"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "İndirimler standart aylık fiyatlara göre hesaplanır. Fatura dönemi sona erdiğinde aboneliğiniz standart yıllık ücret ile yenilenir."
+      ]
+    },
+    "bfcampaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Ücretli ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Ücretli ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Ücretli ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Ücretli ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Ücretli ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "for 12 months": [
+        "12 aylık"
+      ]
+    },
     "Billing cycle option": {
       "${ n } month": [
         "${ n } ay",
@@ -1334,6 +1398,9 @@
       "${ LUMO_SHORT_APP_NAME } will review chat-based memories, remove duplicates, and merge related entries into clearer ones. Memories you wrote yourself are left unchanged.": [
         "${ LUMO_SHORT_APP_NAME } sohbet temelli anıları gözden geçirecek, kopyaları kaldıracak ve ilgili kayıtları daha net olanlarla birleştirecek. Sizin yazdığınız anılar değişmeden bırakılır."
       ],
+      "Add connectors, manage credentials, and set tool approval policies.": [
+        "Bağlayıcılar ekleyin, kimlik doğrulama bilgilerini yönetin ve araç onay ilkeleri belirleyin."
+      ],
       "Add your own memories, edit any auto-generated entry, or clear everything at any time. Generated memories you edit are promoted to your own.": [
         "Kendi belleklerinizi ekleyin. Otomatik olarak oluşturulan herhangi bir kaydı düzenleyin veya istediğiniz zaman her şeyi temizleyin. Düzenlediğiniz oluşturulmuş bellekler size ait belleklere dönüştürülür."
       ],
@@ -1351,6 +1418,9 @@
       ],
       "API keys let you access ${ LUMO_SHORT_APP_NAME } programmatically. Each key is shown only once upon creation.": [
         "API anahtarları ${ LUMO_SHORT_APP_NAME } uygulamasına programlama ile erişmenizi sağlar. Oluşturulan her yalnızca bir kez görüntülenir."
+      ],
+      "Configure app preferences, keyboard shortcuts, and updates in the desktop settings window.": [
+        "Bilgisayar ayarları penceresinde uygulama ayarlarını, klavye kısayollarını ve güncellemeleri yapılandırın."
       ],
       "Create a key to integrate ${ LUMO_SHORT_APP_NAME } with your scripts and tools.": [
         "Betikleriniz ve araçlarınız ile ${ LUMO_SHORT_APP_NAME } bütünleştirmesi için bir anahtar oluşturun."
@@ -1370,11 +1440,17 @@
       "Include project conversations in the main chat history": [
         "Proje yazışmaları ana sohbet geçmişine katılsın"
       ],
+      "Internal preview of an upcoming model": [
+        "Yakında çıkacak bir modelin iç ön izlemesi"
+      ],
       "Its model weights, training data, values, and development details are open for inspection. The ${ apertusCharterLink } provides strong ethical guardrails for privacy, responsible data use, transparency, and human agency.": [
         "Model ağırlıkları, eğitim verileri, değerleri ve gelişim ayrıntıları incelemeye açıktır. ${ apertusCharterLink } gizlilik, sorumlu veri kullanımı, şeffaflık ve insan aracılığı için güçlü etik korumalar sağlar."
       ],
       "Keep it safe — it won't be shown again": [
         "Güvende tutun — Bir daha gösterilmeyecek"
+      ],
+      "Language used when transcribing your voice": [
+        "Sesiniz yazıya dönüştürülürken kullanılacak dil"
       ],
       "Last updated on ${ formattedDate }": [
         "Son güncelleme: ${ formattedDate }"
@@ -1456,6 +1532,12 @@
       ]
     },
     "collider_2025: Error": {
+      "Could not download this artifact.": [
+        "Bu yapıt indirilemedi."
+      ],
+      "Could not export this artifact as a Word document.": [
+        "Bu yapıt Word belgesi olarak dışa aktarılamadı."
+      ],
       "Could not export this artifact as PDF.": [
         "Bu yapıt PDF olarak dışa aktarılamadı."
       ],
@@ -1563,6 +1645,9 @@
       ],
       "Your chats can't be saved right now. Anything you write will be lost if you reload the page.": [
         "Sohbetleriniz şu anda kaydedilemiyor. Sayfayı yeniden yüklediğinizde yazdığınız her şey kaybolacak."
+      ],
+      "Your existing ${ LUMO_SHORT_APP_NAME } data can't be decrypted with your current account keys. If you recover your previous keys it will become available again. You can keep using ${ LUMO_SHORT_APP_NAME } normally.": [
+        "Var olan ${ LUMO_SHORT_APP_NAME } verilerinizin şifresi geçerli hesap anahtarlarınızla çözülemez. Önceki anahtarlarınızı geri yüklerseniz verilerinize yeniden erişebilirsiniz. ${ LUMO_SHORT_APP_NAME } uygulamasını normal şekilde kullanmayı sürdürebilirsiniz."
       ],
       "Your existing ${ LUMO_SHORT_APP_NAME } data could not be decrypted with your available account keys. Recover your account keys, then retry.": [
         "Var olan ${ LUMO_SHORT_APP_NAME } verilerinizin şifresi kulanılabilecek hesap anahtarları ile çözülemedi. Hesap anahtarlarınızı kullanıma alıp yeniden deneyin."
@@ -1888,6 +1973,12 @@
       "Conversation": [
         "Yazışma"
       ],
+      "Couldn't open the print dialog, so the PDF was downloaded with each page as an image.": [
+        "Yazdırma iletişim kutusu açılamadı. Bu nedenle PDF belgesinin her sayfası ayrı bir görsel olarak indirildi."
+      ],
+      "Couldn't open the rich text editor, so you're editing the Markdown source.": [
+        "Zengin yazı düzenleyici açılamadı. Bu nedenle Markdown kaynağını düzenliyorsunuz."
+      ],
       "Create and revoke API keys for programmatic access. Keys are shown only once when created.": [
         "Programlama ile erişim için API anahtarları oluşturabilir ve geçersiz kılabilirsiniz. Anahtarlar oluşturulduklarında yalnızca bir kez görüntülenir."
       ],
@@ -2155,6 +2246,9 @@
       "Sign in or create an account to browse and add files from your ${ DRIVE_APP_NAME } (end-to-end encrypted cloud storage) to your chat knowledge.": [
         "Sohbet bilgi tabanınıza ${ DRIVE_APP_NAME } (uçtan uca şifrelenmiş bulut depolama alanı) hizmetinizdeki dosyalara göz atmak ve dosya eklemek için oturum açın veya bir hesap oluşturun."
       ],
+      "Sign in to change this later in Settings → General → Dictation language.": [
+        "Bu seçimi daha sonra Ayarlar → Genel → Yazıya dönüştürme dili bölümünden değiştirmek için oturum açın."
+      ],
       "Sign in to create and manage API keys for ${ LUMO_SHORT_APP_NAME }.": [
         "${ LUMO_SHORT_APP_NAME } API anahtarlarını oluşturmak ve yönetmek için oturum açın."
       ],
@@ -2175,6 +2269,9 @@
       ],
       "Table view": [
         "Tablo görünümü"
+      ],
+      "Telling us which language you speak helps dictation transcribe your voice accurately.": [
+        "Bize hangi dili konuştuğunuzu söylemeniz, yazıya dönüştürmenin sesinizi doğru şekilde kopyalamasına yardımcı olur."
       ],
       "The ${ LUMO_SHORT_APP_NAME } API and API keys are included with ${ LUMO_SHORT_APP_NAME }+. Ask your organization administrator to assign a ${ LUMO_SHORT_APP_NAME } seat to your account.": [
         "${ LUMO_SHORT_APP_NAME } API uygulaması ve API anahtarları ${ LUMO_SHORT_APP_NAME }+ ile birlikte gelir. Hesabınıza bir ${ LUMO_SHORT_APP_NAME } koltuğu ataması için kuruluş yöneticinizle görüşün."
@@ -2280,6 +2377,9 @@
       ],
       "You are about to visit an external website:": [
         "Bir dış siteyi ziyaret etmek üzeresiniz:"
+      ],
+      "You can change this at any time in Settings → General → Dictation language.": [
+        "Bu seçimi istediğiniz zaman Ayarlar → Genel → Yazıya dönüştürme dili bölümünden değiştirebilirsiniz."
       ],
       "You have many saved memories. Optimize merges duplicate chat-based entries and keeps the list focused.": [
         "Kaydedilmiş birçok anınız var. İyileştirmek, yinelenen sohbet temelli kayıtları birleştirir ve listeyi odaklanmış tutar."
@@ -2567,6 +2667,9 @@
       ],
       "90 days": [
         "90 gün"
+      ],
+      "Auto-detect": [
+        "Otomatik algılansın"
       ]
     },
     "collider_2025: Personality": {
@@ -2662,6 +2765,9 @@
       ],
       "Appearance": [
         "Görünüm"
+      ],
+      "Desktop app": [
+        "Bilgisayar uygulaması"
       ],
       "General": [
         "Genel"
@@ -2778,6 +2884,9 @@
       "${ LUMO_SHORT_APP_NAME } Business": [
         "${ LUMO_SHORT_APP_NAME } Business"
       ],
+      "${ LUMO_SHORT_APP_NAME } Desktop settings": [
+        "${ LUMO_SHORT_APP_NAME } bilgisayar ayarları"
+      ],
       "${ LUMO_SHORT_APP_NAME } Plus": [
         "${ LUMO_SHORT_APP_NAME } Plus"
       ],
@@ -2820,11 +2929,17 @@
       "Chat": [
         "Sohbet"
       ],
+      "Choose your dictation language": [
+        "Yazıya dönüştürme dilinizi seçin"
+      ],
       "Clear all memories?": [
         "Tüm bellekler temizlensin mi?"
       ],
       "Clear chat-based memories?": [
         "Sohbet temelli bellekler temizlensin mi?"
+      ],
+      "Connectors": [
+        "Bağlayıcılar"
       ],
       "Conversational AI": [
         "Yazışılan yapay zeka"
@@ -2834,6 +2949,9 @@
       ],
       "Delete everything": [
         "Her şeyi sil"
+      ],
+      "Dictation language": [
+        "Yazıya dönüştürme dili"
       ],
       "Document intelligence": [
         "Belge zekası"
@@ -3217,17 +3335,26 @@
       ]
     },
     "collider_2025:Action": {
+      "Add column right": [
+        "Sağa sütun ekle"
+      ],
       "Add details": [
         "Ayrıntıları ekleyin"
       ],
       "Add more information to improve the response": [
         "Yanıtı geliştirmek için daha fazla bilgi ekleyin"
       ],
+      "Add row below": [
+        "Aşağıya satır ekle"
+      ],
       "Add to favorites": [
         "Sık kullanılanlara ekle"
       ],
       "Analyze another export": [
         "Başka bir dışa aktarma dosyasını incele"
+      ],
+      "Apply": [
+        "Uygula"
       ],
       "Ask the model to be more careful and thorough": [
         "Modelden daha dikkatli ve kapsamlı olmasını isteyin."
@@ -3237,6 +3364,12 @@
       ],
       "Back to chat": [
         "Sohbete dön"
+      ],
+      "Bold": [
+        "Koyu"
+      ],
+      "Bulleted list": [
+        "Madde imli liste"
       ],
       "Cancel": [
         "İptal"
@@ -3249,6 +3382,9 @@
       ],
       "Change style": [
         "Tarzı değiştir"
+      ],
+      "Checklist": [
+        "Kontrol listesi"
       ],
       "Choose project icon": [
         "Proje simgesini seçin"
@@ -3267,6 +3403,9 @@
       ],
       "Code": [
         "Kod"
+      ],
+      "Code block": [
+        "Kod bloğu"
       ],
       "Continue": [
         "İlerle"
@@ -3301,17 +3440,29 @@
       "Delete chat": [
         "Sohbeti sil"
       ],
+      "Delete column": [
+        "Sütunu sil"
+      ],
       "Delete conversation": [
         "Yazışmayı sil"
       ],
       "Delete project": [
         "Projeyi sil"
       ],
+      "Delete row": [
+        "Satırı sil"
+      ],
+      "Delete table": [
+        "Tabloyu sil"
+      ],
       "Describe desired changes...": [
         "İstenilen değişiklikleri açıklayın..."
       ],
       "Deselect all": [
         "Tümünü bırak"
+      ],
+      "Divider": [
+        "Ayırıcı"
       ],
       "Download": [
         "İndir"
@@ -3328,20 +3479,29 @@
       "Download PPTX": [
         "PPTX indir"
       ],
-      "Download source (HTML)": [
-        "Kaynağı indir (HTML)"
-      ],
       "Download source (Markdown)": [
         "Kaynağı indir (Markdown)"
       ],
       "Download source file": [
         "Kaynak dosyasını indir"
       ],
+      "Download web presentation (HTML)": [
+        "İnternet sunumunu indir (HTML)"
+      ],
+      "Download Word (.docx)": [
+        "Word (.docx) belgesini indir"
+      ],
       "Edit": [
         "Düzenle"
       ],
       "Edit agent": [
         "Aracıyı düzenle"
+      ],
+      "Edit as Markdown": [
+        "Markdown olarak düzenle"
+      ],
+      "Edit as rich text": [
+        "Zengin yazı olarak düzenle"
       ],
       "Edit image": [
         "Görseli düzenle"
@@ -3379,14 +3539,35 @@
       "Go to project": [
         "Projeye git"
       ],
+      "Heading 1": [
+        "1. başlık"
+      ],
+      "Heading 2": [
+        "2. başlık"
+      ],
+      "Heading 3": [
+        "3. başlık"
+      ],
       "Hide knowledge panel": [
         "Bilgi panosunu gizle"
       ],
       "Improve": [
         "İyileştir"
       ],
+      "Inline code": [
+        "Satır içi kod"
+      ],
+      "Insert table": [
+        "Tablo ekle"
+      ],
+      "Italic": [
+        "Yatık"
+      ],
       "Light": [
         "Açık"
+      ],
+      "Link": [
+        "Bağlantı"
       ],
       "Make a copy": [
         "Kopyasını oluştur"
@@ -3415,6 +3596,9 @@
       "Next version": [
         "Sonraki sürüm"
       ],
+      "Numbered list": [
+        "Numaralı liste"
+      ],
       "Open": [
         "Aç"
       ],
@@ -3438,6 +3622,12 @@
       ],
       "Previous version": [
         "Önceki sürüm"
+      ],
+      "Quote": [
+        "Alıntı"
+      ],
+      "Redo": [
+        "Yinele"
       ],
       "Regenerate": [
         "Yeniden üret"
@@ -3478,6 +3668,9 @@
       "Save": [
         "Kaydet"
       ],
+      "Save as PDF…": [
+        "PDF olarak kaydet…"
+      ],
       "Save to Drive": [
         "Drive üzerine kaydet"
       ],
@@ -3511,6 +3704,9 @@
       "Start a chat": [
         "Bir sohbet başlat"
       ],
+      "Strikethrough": [
+        "Üzeri çizili"
+      ],
       "Think longer": [
         "Daha uzun düşünün"
       ],
@@ -3525,6 +3721,9 @@
       ],
       "Try this": [
         "Bunu deneyin"
+      ],
+      "Undo": [
+        "Geri al"
       ],
       "Unlink Folder": [
         "Klasörün bağlantısını kaldır"
@@ -3552,6 +3751,9 @@
       ],
       "What needs changed?": [
         "Neyin değiştirilmesi gerekiyor?"
+      ],
+      "Word (.docx)": [
+        "Word (.docx)"
       ]
     },
     "collider_2025:Agent": {
@@ -4326,6 +4528,9 @@
       "Description (optional)": [
         "Açıklama (isteğe bağlı)"
       ],
+      "Document editor": [
+        "Belge düzenleyici"
+      ],
       "Draw a sketch": [
         "Bir taslak çizin"
       ],
@@ -4337,6 +4542,9 @@
       ],
       "Folder name": [
         "Klasör adı"
+      ],
+      "Formatting": [
+        "Biçimlendirme"
       ],
       "Generating": [
         "Oluşturuluyor"
@@ -4373,6 +4581,9 @@
       ],
       "Lending & hiring": [
         "Kredi ve işe alım"
+      ],
+      "Link address": [
+        "Bağlantı adresi"
       ],
       "Low": [
         "Düşük"
@@ -4502,6 +4713,9 @@
       ],
       "Holiday planner": [
         "Tatil planlayıcı"
+      ],
+      "Paste or type a link": [
+        "Bir bağlantı yapıştırın ya da yazın"
       ],
       "Search chats": [
         "Sohbetleri ara"
@@ -9892,79 +10106,6 @@
         "Yahoo"
       ]
     },
-    "q3campaign2026: Action": {
-      "Get the deal": [
-        "Fırsatı değerlendirin"
-      ],
-      "Special Offer": [
-        "Özel teklif"
-      ]
-    },
-    "q3campaign2026: Info": {
-      "/month": [
-        "/ay"
-      ],
-      "2 individual accounts": [
-        "2 bireysel hesap"
-      ],
-      "2 TB of secure storage": [
-        "2 TB güvenli depolama alanı"
-      ],
-      "3 TB of secure storage": [
-        "3 TB güvenli depolama alanı"
-      ],
-      "500 GB of secure storage": [
-        "500 GB güvenli depolama alanı"
-      ],
-      "6 individual accounts": [
-        "6 bireysel hesap"
-      ],
-      "Advanced protection against cyber threats": [
-        "Siber tehditlere karşı gelişmiş koruma"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "İndirimler standart aylık fiyatlara göre hesaplanır. Fatura dönemi sona erdiğinde aboneliğiniz standart yıllık ücret ile yenilenir."
-      ]
-    },
-    "q3campaign2026: Info, Calendar first": {
-      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Family, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Family, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Title": {
-      "for 12 months": [
-        "12 ay için"
-      ],
-      "One plan, full power": [
-        "Tek tarife, tam güç"
-      ],
-      "One plan, max savings": [
-        "Tek tarife, en yüksek kazanç"
-      ],
-      "One plan, more power": [
-        "Tek tarife, daha fazla güç"
-      ]
-    },
     "Role": {
       "Organization Admin": [
         "Kuruluş yöneticisi"
@@ -10513,6 +10654,9 @@
       "Billing cycle": [
         "Fatura dönemi"
       ],
+      "Black Friday": [
+        "Muhteşem Cuma"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME } aboneliğinizi iptal edin"
       ],
@@ -10638,9 +10782,6 @@
       ],
       "Select a plan": [
         "Bir tarife seçin"
-      ],
-      "September Sale": [
-        "Eylül indirimi"
       ],
       "Set recovery methods": [
         "Kurtarma yöntemlerini ayarlayın"

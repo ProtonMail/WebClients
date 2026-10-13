@@ -835,6 +835,11 @@
         "Сховішча"
       ]
     },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "Праграма для камп'ютара ${ appName }"
+      ]
+    },
     "Button": {
       "More info": [
         "Падрабязней"
@@ -2246,6 +2251,9 @@
       ],
       "None": [
         "Адсутнічае"
+      ],
+      "None of your saved passwords have appeared in a known data breach.": [
+        "Ніводны з вашых захаваных пароляў не быў знойдзены ў вядомай уцечцы даных."
       ],
       "None selected": [
         "Нічога не выбрана"
@@ -4540,6 +4548,9 @@
       ]
     },
     "Result": {
+      "Enter a URL to check if it matches the current rule": [
+        "Увядзіце URL-адрас, каб праверыць, ці адпавядае ён бягучаму правілу"
+      ],
       "This URL will be blocked from autofill": [
         "Гэты URL-адрас будзе заблакіраваны для аўтазапаўнення"
       ],

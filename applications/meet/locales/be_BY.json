@@ -49,6 +49,12 @@
       "${ name }: ${ message }": [
         "${ name }: ${ message }"
       ],
+      "${ suggestionCount } mention suggestion available": [
+        "Даступна ${ suggestionCount } згадванне прапановы",
+        "Даступна ${ suggestionCount } згадванні прапановы",
+        "Даступна ${ suggestionCount } згадванняў прапановы",
+        "Даступна ${ suggestionCount } згадванняў прапановы"
+      ],
       "A participant joined the meeting": [
         "Удзельнік далучыўся да сустрэчы"
       ],
@@ -438,6 +444,12 @@
       "Join": [
         "Далучыцца"
       ],
+      "Join and leave sounds": [
+        "Гук пры далучэнні і выхадзе"
+      ],
+      "Join in browser": [
+        "Далучыцца ў браўзеры"
+      ],
       "Join meeting": [
         "Далучыцца да сустрэчы"
       ],
@@ -506,9 +518,6 @@
       ],
       "Not now": [
         "Не цяпер"
-      ],
-      "Open app": [
-        "Адкрыць праграму"
       ],
       "Open link": [
         "Адкрыць спасылку"
@@ -863,6 +872,9 @@
       "Incoming video": [
         "Уваходнае відэа"
       ],
+      "Join and leave sounds": [
+        "Гук пры далучэнні і выхадзе"
+      ],
       "Leave Meeting": [
         "Выйсці з сустрэчы"
       ],
@@ -990,6 +1002,11 @@
     "Banner": {
       "Connected via TURN relay mode due to your network restrictions. This may increase latency and affect call quality.": [
         "Падключана праз рэжым рэтрансляцыі TURN з прычыны абмежаванняў вашай сеткі. Гэта можа павялічыць затрымку і паўплываць на якасць сувязі."
+      ]
+    },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "Праграма для камп'ютара ${ appName }"
       ]
     },
     "Bug category": {
@@ -2140,6 +2157,9 @@
       "Failed to unlock meeting": [
         "Не ўдалося разблакіраваць сустрэчу"
       ],
+      "Failed to update caption language. Please try again.": [
+        "Не ўдалося абнавіць моўныя цітры. Паўтарыце спробу."
+      ],
       "Failed to update live captions availability": [
         "Не ўдалося абнавіць даступнасць дынамічных цітраў"
       ],
@@ -2197,6 +2217,9 @@
       "Message is too long to send": [
         "Занадта доўгае паведамленне для адпраўкі"
       ],
+      "Microphone access is blocked. Allow it in your browser settings.": [
+        "Доступ да мікрафона заблакіраваны. Дазвольце яго выкарыстанне ў наладах браўзера."
+      ],
       "Missing inviter email": [
         "Электронная пошта запрошанай асобы адсутнічае"
       ],
@@ -2229,6 +2252,9 @@
       ],
       "Not a valid number": [
         "Несапраўдны нумар"
+      ],
+      "Not enough storage space to record. Free up space and try again.": [
+        "Не дастаткова прасторы сховішча для запісу. Выдаліце непатрэбныя файлы і паўтарыце спробу."
       ],
       "Only admins can convert external invitations": [
         "Толькі ў адміністратараў ёсць правы для пераўтварэння знешніх запрашэнняў"
@@ -2674,6 +2700,12 @@
         "${ totalParticipantCount } удзельнікаў",
         "${ totalParticipantCount } удзельнікаў"
       ],
+      "${ waitingRoomParticipantsCount } person is waiting": [
+        "${ waitingRoomParticipantsCount } асоба чакае",
+        "${ waitingRoomParticipantsCount } асобы чакаюць",
+        "${ waitingRoomParticipantsCount } асоб чакаюць",
+        "${ waitingRoomParticipantsCount } асоб чакаюць"
+      ],
       "(You)": [
         "(Вы)"
       ],
@@ -2703,6 +2735,9 @@
       ],
       "Anyone with the link can join immediately": [
         "Любы карыстальнік з гэтай спасылкай зможа неадкладна далучыцца да сустрэчы"
+      ],
+      "App didn't open?": [
+        "Праграма не адкрылася?"
       ],
       "Approve participants before they can join": [
         "Ухваліце ўдзельнікаў, перад іх далучэннем"
@@ -2833,6 +2868,9 @@
       "End the meeting for everyone?": [
         "Завяршыць сустрэчу для ўсіх?"
       ],
+      "End to end encrypted chat": [
+        "Чат зашыфраваны скразным метадам"
+      ],
       "End-to-end encryption is active for audio and video.": [
         "Скразное шыфраванне актыўна для аўдыя і відэа."
       ],
@@ -2892,9 +2930,6 @@
       ],
       "Get a secure meeting link then add it to your calendar": [
         "Атрымайце бяспечную спасылку на сустрэчу, а потым дадайце яе ў свой каляндар"
-      ],
-      "Get the best experience with the ${ protonMeet } desktop app": [
-        "Атрымайце найлепшы досвед з праграмай для камп'ютара ${ protonMeet }"
       ],
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "Перайдзіце ў about:config, знайдзіце media.peerconnection.enabled і задайце яго значэнне true."
@@ -3004,6 +3039,9 @@
       "Meeting recordings aren’t supported in Firefox.": [
         "Запісы сустрэч не падтрымліваюцца ў Firefox."
       ],
+      "Meeting recordings aren’t supported in Safari private mode.": [
+        "Запісы сустрэч не падтрымліваюцца ў прыватным рэжыме Safari."
+      ],
       "Meeting time is up": [
         "Час сустрэчы завяршыўся"
       ],
@@ -3094,8 +3132,17 @@
       "notify everyone here": [
         "апавясціць усіх тут"
       ],
+      "Now using ${ first } and ${ second }.": [
+        "Цяпер выкарыстоўваецца ${ first } і ${ second }."
+      ],
+      "Now using ${ first }, ${ second } and ${ third }.": [
+        "Цяпер выкарыстоўваюцца ${ first }, ${ second } і ${ third }."
+      ],
       "Now using ${ first }.": [
         "Цяпер выкарыстоўваецца ${ first }."
+      ],
+      "Only a partial meeting recording was available.": [
+        "Быў даступны частковы запіс сустрэчы."
       ],
       "Only meetings you created appear here": [
         "У гэтым месцы будуць толькі сустрэчы, створаныя вамі"
@@ -3214,6 +3261,27 @@
       "Select a speaker": [
         "Выберыце дынамік"
       ],
+      "Selected camera has disconnected.": [
+        "Выбраная камера адключылася."
+      ],
+      "Selected devices have disconnected.": [
+        "Выбраныя прылады адключыліся."
+      ],
+      "Selected microphone and camera have disconnected.": [
+        "Выбраны мікрафон і камера адключыліся."
+      ],
+      "Selected microphone and speaker have disconnected.": [
+        "Выбраны мікрафон і дынамік адключыліся."
+      ],
+      "Selected microphone has disconnected.": [
+        "Выбраны мікрафон адключыўся."
+      ],
+      "Selected speaker and camera have disconnected.": [
+        "Выбраны дынамік і камера адключыліся."
+      ],
+      "Selected speaker has disconnected.": [
+        "Выбраны дынамік адключыўся."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недаступны. Паўтарыце спробу праз некалькі хвілін"
       ],
@@ -3267,6 +3335,9 @@
       ],
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "Гэты чат зашыфраваны скразным метадам з часовымі паведамленнямі, якія знікаюць у канцы званка."
+      ],
+      "This meeting has a time limit. This call will disconnect soon.": [
+        "У гэтай сустрэчы ёсць абмежаванне па часе. Гэты званок будзе неўзабаве завершаны."
       ],
       "This meeting has a waiting room": [
         "У гэтай сустрэчы ёсць пакой чакання"
@@ -3542,6 +3613,9 @@
       ],
       "Does not repeat": [
         "Не паўтараць"
+      ],
+      "Don’t show this message again": [
+        "Больш не паказваць гэта паведамленне"
       ],
       "Download .ics": [
         "Спампаваць .ics"
@@ -4114,6 +4188,9 @@
       ],
       "Allow microphone": [
         "Дазволіць мікрафон"
+      ],
+      "Allow screen recording": [
+        "Дазволіць запіс экрана"
       ],
       "Are you sure?": [
         "Вы ўпэўнены?"

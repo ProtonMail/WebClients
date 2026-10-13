@@ -615,9 +615,6 @@
       "Dismiss": [
         "Negeren"
       ],
-      "Domain name": [
-        "Domeinnaam"
-      ],
       "Don't show again": [
         "Niet meer weergeven"
       ],
@@ -2534,6 +2531,31 @@
         "Opslagruimte wordt gedeeld binnen alle ${ BRAND_NAME }-diensten."
       ]
     },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Grootste uitverkoop van het jaar"
+      ],
+      "Black Friday": [
+        "Black friday"
+      ],
+      "Last chance to save big": [
+        "Laatste kans om flink te besparen"
+      ],
+      "Protect your entire tribe": [
+        "Bescherm uw hele stam"
+      ],
+      "Protection for two in a single plan": [
+        "Bescherming voor twee in één abonnement"
+      ],
+      "Save big with a yearly plan": [
+        "Bespaar flink met een jaarabonnement"
+      ]
+    },
     "Billing cycle": {
       "Renews automatically on ${ subscriptionManagerName }": [
         "Vernieuwt automatisch op ${ subscriptionManagerName }"
@@ -3276,6 +3298,17 @@
       "Total for ${ cycle } month": [
         "Totaal voor ${ cycle } maand",
         "Totaal voor ${ cycle } maanden"
+      ]
+    },
+    "claimed address": {
+      "The address ${ boldClaimedEmail } has been claimed by another organization and can no longer be used for this account. Your data is safe and remains private.": [
+        "Het adres ${ boldClaimedEmail } is geclaimd door een andere organisatie en kan niet meer worden gebruikt voor dit account. Uw gegevens zijn veilig en blijven privé."
+      ],
+      "Your address has been claimed": [
+        "Uw adres is geclaimd"
+      ],
+      "Your administrator can give you a new address.": [
+        "Uw beheerder kan u een nieuw adres geven."
       ]
     },
     "Collapsible tooltip": {
@@ -9828,9 +9861,6 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Een ${ protonSubdomain } wordt gehost door ${ BRAND_NAME }, waardoor u snel een subdomein kunt instellen. ${ learnMoreLink }"
       ],
-      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
-        "Een aangepast domein is vereist om groepen te maken. Als u geen aangepast domein hebt ingesteld, stel dit dan eerst in via ${ linkToDomainPage }."
-      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Een naam om u te helpen identificeren waar u het gebruikt zodat u het later eenvoudig kan intrekken of verlengen."
       ],
@@ -10293,9 +10323,6 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit telefoonnummer onjuist is, klik op \"Bewerken\" om het te corrigeren."
-      ],
-      "Click 'Trouble signing in?' on your TV to follow the alternative steps.": [
-        "Klik op 'Problemen met aanmelden?' op uw TV om de alternatieve stappen te volgen."
       ],
       "Click **Request password reset** and follow the prompts.": [
         "Klik op **Wachtwoord opnieuw instellen aanvragen** en volg de instructies."
@@ -10878,6 +10905,9 @@
       ],
       "For just ${ bundlePlanPriceInline }": [
         "Voor maar ${ bundlePlanPriceInline }"
+      ],
+      "For security, business accounts sign in with a code instead. On your TV, select 'Trouble signing in?' and follow the steps.": [
+        "Om veiligheidsredenen loggen zakelijke accounts in plaats daarvan in met een code. Selecteer op uw tv 'Problemen met inloggen?' en volg de stappen."
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Voor gebruikers die overschakelen naar ${ MAIL_APP_NAME } vanuit een andere e-maildienst, selecteer het tabblad ${ boldAddresses } en voeg alle actieve e-mailadressen toe voordat u het MX-record wijzigt om te zorgen voor een soepele overgang."
@@ -12911,9 +12941,6 @@
       "We'll send a new verification code to ${ strong }": [
         "We verzenden een nieuwe verificatiecode naar ${ strong }"
       ],
-      "We're changing the ${ BRAND_NAME } sign-in page. Your password and devices stay the same. ${ learnMore }": [
-        "We wijzigen de inlogpagina van ${ BRAND_NAME }. Uw wachtwoord en apparaten blijven hetzelfde. ${ learnMore }"
-      ],
       "Web sessions detected:": [
         "Websessies gedetecteerd:"
       ],
@@ -13359,9 +13386,6 @@
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "De e-mails van uw organisatie worden beschermd met end-to-end encryptie met behulp van de organisatiesleutel. Deze vingerafdruk kan worden gebruikt om te controleren of alle beheerders in uw account dezelfde sleutel hebben."
-      ],
-      "Your password and devices stay the same.": [
-        "Uw wachtwoord en apparaten blijven hetzelfde."
       ],
       "Your payment details are encrypted and secure": [
         "Uw betalingsgegevens zijn versleuteld en veilig"
@@ -14268,9 +14292,6 @@
       ],
       "Auto-advance": [
         "Automatisch doorgaan"
-      ],
-      "Auto-delete unwanted messages": [
-        "Automatisch ongewenste berichten verwijderen"
       ],
       "Auto-detect primary time zone": [
         "Automatisch primaire tijdzone detecteren"
@@ -20261,79 +20282,6 @@
         "Yahoo"
       ]
     },
-    "q3campaign2026: Action": {
-      "Get the deal": [
-        "Pak deze deal"
-      ],
-      "Special Offer": [
-        "Speciale aanbieding"
-      ]
-    },
-    "q3campaign2026: Info": {
-      "/month": [
-        "/maand"
-      ],
-      "2 individual accounts": [
-        "2 individuele accounts"
-      ],
-      "2 TB of secure storage": [
-        "2 TB veilige opslag"
-      ],
-      "3 TB of secure storage": [
-        "3 TB veilige opslag"
-      ],
-      "500 GB of secure storage": [
-        "500 GB veilige opslag"
-      ],
-      "6 individual accounts": [
-        "6 individuele accounts"
-      ],
-      "Advanced protection against cyber threats": [
-        "Geavanceerde bescherming tegen cyberdreigingen"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Kortingen zijn gebaseerd op de standaard maandelijkse prijzen. Uw abonnement wordt verlengd tegen het standaard jaartarief wanneer de factureringscyclus afloopt."
-      ]
-    },
-    "q3campaign2026: Info, Calendar first": {
-      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, en ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, en ${ CALENDAR_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Family, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Family, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, en ${ CALENDAR_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Title": {
-      "for 12 months": [
-        "voor 12 maanden"
-      ],
-      "One plan, full power": [
-        "Eén abonnement, volledige kracht"
-      ],
-      "One plan, max savings": [
-        "Eén abonnement, maximale besparing"
-      ],
-      "One plan, more power": [
-        "Eén abonnement, meer kracht"
-      ]
-    },
     "Recovery Email": {
       "Back to ${ signIn }.": [
         "Terug naar ${ signIn }."
@@ -25747,6 +25695,9 @@
       "QR code sign-in": [
         "Aanmelden via QR-code"
       ],
+      "QR sign-in isn't available for business accounts": [
+        "QR-aanmelding is niet beschikbaar voor zakelijke accounts"
+      ],
       "Ready, set, forward": [
         "Klaar voor de start, doorsturen"
       ],
@@ -25917,9 +25868,6 @@
       ],
       "Send new invite?": [
         "Nieuwe uitnodiging versturen?"
-      ],
-      "September Sale": [
-        "September-uitverkoop"
       ],
       "Service": [
         "Dienst"

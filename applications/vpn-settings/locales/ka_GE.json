@@ -188,6 +188,9 @@
       "Claim ${ BRAND_NAME } address": [
         "${ BRAND_NAME }-ის მისამართის გამოთხოვა"
       ],
+      "Claim it": [
+        "გამოთხოვა"
+      ],
       "Claim offer": [
         "შეთავაზების მიღება"
       ],
@@ -305,6 +308,9 @@
       "Create users": [
         "მომხმარებლების შექმნა"
       ],
+      "Create your own": [
+        "შექმენით საკუთარი"
+      ],
       "Current plan": [
         "მიმდინარე ტარიფი"
       ],
@@ -394,9 +400,6 @@
       ],
       "Dismiss": [
         "მოცილება"
-      ],
-      "Domain name": [
-        "დომენის სახელი"
       ],
       "Don't show again": [
         "აღარ მაჩვენო"
@@ -763,6 +766,9 @@
       ],
       "No, thanks": [
         "არა, მადლობა"
+      ],
+      "Not now": [
+        "არა ახლა"
       ],
       "OK": [
         "დიახ"
@@ -6716,9 +6722,6 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ protonSubdomain } დაჰოსტილია ${ BRAND_NAME }-ის მიერ, რაც ქვედომენების სწრაფად მორგების საშუალება გაძლევთ. ${ learnMoreLink }"
       ],
-      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
-        "ჯგუფების შესაქმნელად საჭიროა საკუთარი დომენი. თუ არ გაქვთ დაყენებული საკუთარი დომენი, გააკეთეთ ეს ჯერ აქ: ${ linkToDomainPage }."
-      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "სახელი, რომლითაც ადვილად იცნობთ, თუ მისი გაფართოება ან გაუქმება დაგჭირდათ."
       ],
@@ -8401,6 +8404,9 @@
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "გაჟონილი ინფორმაცია მესამე პირების მიერ იქნა გავრცელებული. თქვენი ${ BRAND_NAME }-ის ანგარიშის ინფორმაცია დაცულად და დაშიფრულად რჩება. ${ learnMoreLink }"
+      ],
+      "The following address is available:": [
+        "ხელმისაწვდომია შემდეგი მისამართი:"
       ],
       "The following address is invalid.": [
         "შემდეგი მისამართი არასწორია.",
@@ -17012,6 +17018,9 @@
       ],
       "Create user accounts": [
         "შექმენით მოხმხმარებლის ანგარიშები"
+      ],
+      "Create your ${ BRAND_NAME } address": [
+        "შექმენით თქვენი ${ BRAND_NAME }-ის მისამართი"
       ],
       "Created": [
         "შექმნილია"

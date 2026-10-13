@@ -474,6 +474,9 @@
       "Display navigation bar": [
         "Паказваць панэль навігацыі"
       ],
+      "Don't show this offer again": [
+        "Больш не паказваць гэту прапанову"
+      ],
       "Done": [
         "Гатова"
       ],
@@ -1573,10 +1576,7 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу",
-        "Давяраць ключам",
-        "Давяраць ключам",
-        "Давяраць ключам"
+        "Давяраць ключу"
       ],
       "Trust public key": [
         "Давяраць адкрытаму ключу"
@@ -2175,6 +2175,45 @@
         "Прастора сховішча размеркавана паміж усімі сэрвісамі ${ BRAND_NAME }"
       ]
     },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Чорная Пятніца"
+      ],
+      "Get the deal": [
+        "Скарыстацца прапановай"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/месяц"
+      ],
+      "2 individual accounts": [
+        "2 асабістых уліковых запісы"
+      ],
+      "2 TB of secure storage": [
+        "2 ТБ бяспечнага сховішча"
+      ],
+      "3 TB of secure storage": [
+        "3 ТБ бяспечнага сховішча"
+      ],
+      "6 individual accounts": [
+        "6 асабістых уліковых запісаў"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Найбуйнейшы распродаж года"
+      ],
+      "Black Friday": [
+        "Чорная Пятніца"
+      ],
+      "for 12 months": [
+        "за 12 месяцаў"
+      ],
+      "Last chance to save big": [
+        "Апошні шанс істотна сэканоміць"
+      ]
+    },
     "Billing cycle option": {
       "${ n } month": [
         "${ n } месяц",
@@ -2214,6 +2253,11 @@
       ],
       "Yearly": [
         "Штогод"
+      ]
+    },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "Праграма для камп'ютара ${ appName }"
       ]
     },
     "Bug category": {
@@ -6555,6 +6599,9 @@
       "Drawer": [
         "Высоўнае меню"
       ],
+      "Good to know before you connect": [
+        "Варта ведаць перад падключэннем"
+      ],
       "Hardware not compatible": [
         "Несумяшчальнае абсталяванне"
       ],
@@ -8234,6 +8281,9 @@
       "here": [
         "тут"
       ],
+      "Here's what happens when you continue:": [
+        "Вось што адбудзецца, калі вы працягнеце:"
+      ],
       "Hide original message": [
         "Схаваць арыгінальнае паведамленне"
       ],
@@ -8337,7 +8387,10 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс"
+        "Уставіць відарыс",
+        "Уставіць відарысы",
+        "Уставіць відарысы",
+        "Уставіць відарысы"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -8563,6 +8616,9 @@
       ],
       "newsletter": [
         "рассылка"
+      ],
+      "Next time you sign in to your other account": [
+        "Наступны раз уваход будзе выкананы ў ваш іншы ўліковы запіс"
       ],
       "No action selected": [
         "Дзеянне не выбрана"
@@ -10037,6 +10093,9 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Вы напісалі “${ attachmentsFoundKeyword }\", але не дадалі далучэнне. Вы ўсё роўна хочаце адправіць паведамленне?"
       ],
+      "You'll choose a new username": [
+        "Вы выберыце новае імя карыстальніка"
+      ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Вы атрымаеце ўзнагароду ў крэдытах праз 1 месяц пасля таго, як ваш сябар падпішацца на гадавы тарыфны план. Праз 2 месяцы можна разлічваць на ўзнагароду, калі ваш сябар падпішацца на месячны тарыфны план."
       ],
@@ -10045,6 +10104,9 @@
         "Пасля гэтага вам будзе выстаўляцца рахунак кожны ${ renewCycle } месяцы ў памеры ${ renewAmountStr }. Скасаваць можна ў любы час.",
         "Пасля гэтага вам будзе выстаўляцца рахунак кожны ${ renewCycle } месяцаў у памеры ${ renewAmountStr }. Скасаваць можна ў любы час.",
         "Пасля гэтага вам будзе выстаўляцца рахунак кожны ${ renewCycle } месяцаў у памеры ${ renewAmountStr }. Скасаваць можна ў любы час."
+      ],
+      "You'll use it to sign in from then on. That's the only change.": [
+        "З гэтага часу вы будзеце выкарыстоўваць яго для ўваходу. Гэта адзінае змяненне."
       ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "Вы ўключылі перасылку на ${ MAX_SYNC_PAID_USER } адрас Gmail. Спачатку адключыце які-небудзь з адрасоў, каб дадаць яшчэ адзін.",
@@ -13757,6 +13819,9 @@
       "Once your full subscription starts...": [
         "Як толькі пачнецца ваша поўная падпіска..."
       ],
+      "to keep using all of the features after your trial ends.": [
+        "каб працягваць карыстацца ўсімі функцыямі пасля завяршэння пробнага перыяду."
+      ],
       "you can cancel within 30 days and get a pro-rata refund.": [
         "вы зможаце скасаваць падпіску на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
       ],
@@ -14149,6 +14214,15 @@
         "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэнняў.",
         "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэнняў.",
         "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэнняў."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "Выбраны тарыфны план не прапануе дастатковую колькасць даменаў для вашага ўліковага запісу."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "Выбраны тарыфны план не прапануе дастатковую колькасць удзельнікаў для вашага ўліковага запісу."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "Выбраны тарыфны план не прапануе дастатковую колькасць сховішча для вашага ўліковага запісу."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяца. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
@@ -14753,79 +14827,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q3campaign2026: Action": {
-      "Get the deal": [
-        "Скарыстацца прапановай"
-      ],
-      "Special Offer": [
-        "Спецыяльная прапанова"
-      ]
-    },
-    "q3campaign2026: Info": {
-      "/month": [
-        "/месяц"
-      ],
-      "2 individual accounts": [
-        "2 асабістых уліковых запісы"
-      ],
-      "2 TB of secure storage": [
-        "2 ТБ бяспечнага сховішча"
-      ],
-      "3 TB of secure storage": [
-        "3 ТБ бяспечнага сховішча"
-      ],
-      "500 GB of secure storage": [
-        "500 ГБ бяспечнага сховішча"
-      ],
-      "6 individual accounts": [
-        "6 асабістых уліковых запісаў"
-      ],
-      "Advanced protection against cyber threats": [
-        "Пашыраная абарона супраць кіберпагроз"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Скідкі разлічваюцца на падставе стандартнай платы за месяц. Ваша падпіска будзе аўтаматычна падаўжацца па стандартнай гадавой стаўцы пасля заканчэння перыяду аплаты."
-      ]
-    },
-    "q3campaign2026: Info, Calendar first": {
-      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "Прэміяльныя ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } і ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Прэміяльныя ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Family, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "Прэміяльныя ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Family, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "Прэміяльныя ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Прэміяльныя ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Title": {
-      "for 12 months": [
-        "за 12 месяцаў"
-      ],
-      "One plan, full power": [
-        "Адзін тарыфны план, максімум магчымасцяў"
-      ],
-      "One plan, max savings": [
-        "Адзін тарыфны план, максімальная эканомія"
-      ],
-      "One plan, more power": [
-        "Адзін тарыфны план, больш магчымасцяў"
       ]
     },
     "Received email icon": {
@@ -17040,6 +17041,9 @@
       "Birthday": [
         "Дзень нараджэння"
       ],
+      "Black Friday": [
+        "Чорная Пятніца"
+      ],
       "Blind Carbon Copy": [
         "Схаваная копія"
       ],
@@ -17802,9 +17806,6 @@
       "Sending original message": [
         "Адпраўка арыгінальнага паведамлення"
       ],
-      "September Sale": [
-        "Вераснёўскі распродаж"
-      ],
       "Set recovery methods": [
         "Прызначэнне спосабаў аднаўлення"
       ],
@@ -18248,6 +18249,9 @@
     "user_modal": {
       "Upgrade to a supported plan to use admin roles.": [
         "Палепшыце да сумяшчальнага тарыфнага плана, каб выкарыстоўваць ролі адміністратараў."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Вы не можаце змяніць сваю ўласную ролю. Папрасіце іншага адміністратара зрабіць гэта."
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Вы зможаце прызначаць ролі, як толькі карыстальнік прыме запрашэнне."

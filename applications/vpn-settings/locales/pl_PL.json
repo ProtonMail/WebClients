@@ -188,6 +188,9 @@
       "Claim ${ BRAND_NAME } address": [
         "Uzyskaj adres ${ BRAND_NAME }"
       ],
+      "Claim it": [
+        "Odbierz"
+      ],
       "Claim offer": [
         "Skorzystaj z oferty"
       ],
@@ -305,6 +308,9 @@
       "Create users": [
         "Utwórz użytkowników"
       ],
+      "Create your own": [
+        "Utwórz własny"
+      ],
       "Current plan": [
         "Obecny plan"
       ],
@@ -394,9 +400,6 @@
       ],
       "Dismiss": [
         "Odrzuć"
-      ],
-      "Domain name": [
-        "Nazwa domeny"
       ],
       "Don't show again": [
         "Nie pokazuj ponownie"
@@ -760,6 +763,9 @@
       ],
       "No, thanks": [
         "Nie, dziękuję"
+      ],
+      "Not now": [
+        "Nie teraz"
       ],
       "OK": [
         "OK"
@@ -6895,9 +6901,6 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Subdomena ${ protonSubdomain } jest hostowana przez ${ BRAND_NAME }, co pozwala szybko ją skonfigurować. ${ learnMoreLink }"
       ],
-      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
-        "Do tworzenia grup wymagana jest niestandardowa domena. Jeśli nie masz skonfigurowanej niestandardowej domeny, zrób to najpierw w sekcji ${ linkToDomainPage }."
-      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Nazwa ułatwiająca identyfikację miejsca, w którym jest używany, aby można było łatwo odwołać lub przedłużyć konfigurację."
       ],
@@ -8619,6 +8622,9 @@
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Twoje informacje zostały ujawnione przez usługi stron trzecich. Informacje konta ${ BRAND_NAME } pozostają bezpieczne i zaszyfrowane. ${ learnMoreLink }"
+      ],
+      "The following address is available:": [
+        "Następujący adres jest dostępny:"
       ],
       "The following address is invalid.": [
         "Następujący adres jest nieprawidłowy.",
@@ -13922,54 +13928,6 @@
         "Yahoo"
       ]
     },
-    "q3campaign2026: Action": {
-      "Get the deal": [
-        "Skorzystaj z oferty"
-      ],
-      "Special Offer": [
-        "Oferta specjalna"
-      ]
-    },
-    "q3campaign2026: Info": {
-      "/month": [
-        "/miesiąc"
-      ],
-      "2 individual accounts": [
-        "2 indywidualne konta"
-      ],
-      "2 TB of secure storage": [
-        "2 TB bezpiecznej przestrzeni dyskowej"
-      ],
-      "3 TB of secure storage": [
-        "3 TB bezpiecznej przestrzeni dyskowej"
-      ],
-      "500 GB of secure storage": [
-        "500 GB bezpiecznej przestrzeni dyskowej"
-      ],
-      "6 individual accounts": [
-        "6 indywidualnych kont"
-      ],
-      "Advanced protection against cyber threats": [
-        "Zaawansowana ochrona przed cyberzagrożeniami"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Zniżki są naliczane na podstawie standardowych cen miesięcznych. Twoja subskrypcja odnowi się po standardowej stawce rocznej po zakończeniu cyklu rozliczeniowego."
-      ]
-    },
-    "q3campaign2026: Title": {
-      "for 12 months": [
-        "na 12 miesięcy"
-      ],
-      "One plan, full power": [
-        "Jeden plan, pełna moc"
-      ],
-      "One plan, max savings": [
-        "Jeden plan, maksymalne oszczędności"
-      ],
-      "One plan, more power": [
-        "Jeden plan, większa moc"
-      ]
-    },
     "Recovery Email": {
       "Cancel": [
         "Anuluj"
@@ -17562,6 +17520,9 @@
       ],
       "Create user accounts": [
         "Utwórz konta użytkowników"
+      ],
+      "Create your ${ BRAND_NAME } address": [
+        "Utwórz adres ${ BRAND_NAME }"
       ],
       "Created": [
         "Utworzono"

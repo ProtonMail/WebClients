@@ -438,6 +438,12 @@
       "Join": [
         "Beitreten"
       ],
+      "Join and leave sounds": [
+        "Sounds für Beitritt und Austritt"
+      ],
+      "Join in browser": [
+        "Im Browser teilnehmen"
+      ],
       "Join meeting": [
         "Meeting beitreten"
       ],
@@ -507,14 +513,14 @@
       "Not now": [
         "Nicht jetzt"
       ],
-      "Open app": [
-        "App öffnen"
-      ],
       "Open link": [
         "Link öffnen"
       ],
       "Open mention from ${ senderName } in chat": [
         "Offene Erwähnung von ${ senderName } im Chat"
+      ],
+      "Open this meeting in the desktop app": [
+        "Dieses Meeting in der Desktop-App öffnen"
       ],
       "Participants": [
         "Teilnehmer"
@@ -707,6 +713,9 @@
       "Start meeting": [
         "Meeting starten"
       ],
+      "Start meeting in browser": [
+        "Meeting im Browser starten"
+      ],
       "Start new meeting": [
         "Neues Meeting starten"
       ],
@@ -858,6 +867,9 @@
       ],
       "Incoming video": [
         "Eingehender Videoanruf"
+      ],
+      "Join and leave sounds": [
+        "Sounds für Beitritt und Austritt"
       ],
       "Leave Meeting": [
         "Meeting verlassen"
@@ -2247,6 +2259,9 @@
       "Not a valid number": [
         "Keine gültige Zahl"
       ],
+      "Not enough storage space to record. Free up space and try again.": [
+        "Nicht genügend Speicherplatz für die Aufzeichnung. Gib Speicherplatz frei und versuche es erneut."
+      ],
       "Only admins can convert external invitations": [
         "Nur Administratoren können externe Einladungen umwandeln"
       ],
@@ -2276,6 +2291,9 @@
       ],
       "Please allow screen sharing in your system permissions, then try again": [
         "Bitte erlaube die Bildschirmfreigabe in deinen Systemeinstellungen und versuche es dann noch einmal."
+      ],
+      "Recording stopped because it could not be saved. We kept it up to this point.": [
+        "Die Aufzeichnung wurde beendet, da sie nicht gespeichert werden konnte. Bis zu diesem Zeitpunkt wurden sie behalten."
       ],
       "Renaming root item is not allowed": [
         "Das Umbenennen des Stammeintrags ist nicht zulässig"
@@ -2646,6 +2664,9 @@
       "${ MEET_APP_NAME } needs microphone access so others can hear you during the call. You can turn it off at any time.": [
         "${ MEET_APP_NAME } benötigt Zugriff auf das Mikrofon, damit andere dich während des Anrufs hören können. Du kannst das Mikrofon jederzeit ausschalten."
       ],
+      "${ MEET_APP_NAME } needs screen recording access so you can share your screen during the call. After you allow it, macOS will ask you to reopen the app.": [
+        "${ MEET_APP_NAME } benötigt Zugriff auf die Bildschirmaufzeichnung, damit du deinen Bildschirm während des Gesprächs teilen kannst. Nachdem du den Zugriff gewährt hast, fordert dich macOS auf, die App erneut zu öffnen."
+      ],
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } benötigt WebRTC, um zu funktionieren. Bitte aktualisiere deinen Browser oder dein Gerät auf eine Version, die WebRTC unterstützt, versuche es mit einem anderen Browser oder deaktiviere alle Erweiterungen, die es möglicherweise blockieren."
       ],
@@ -2723,11 +2744,17 @@
       "Allow camera access to preview your background": [
         "Der Kamera den Zugriff erlauben, um eine Vorschau deines Hintergrunds anzuzeigen"
       ],
+      "Already in the app? You can close this tab.": [
+        "Schon in die App gewechselt? Dann kann dieser Tab geschlossen werden."
+      ],
       "Anonymous ${ particle } ${ participantNumber }": [
         "Anonym ${ particle } ${ participantNumber }"
       ],
       "Anyone with the link can join immediately": [
         "Jeder mit dem Link, kann sofort beitreten"
+      ],
+      "App didn't open?": [
+        "App wurde nicht geöffnet?"
       ],
       "Approve participants before they can join": [
         "Teilnehmer genehmigen, bevor sie beitreten können"
@@ -2864,6 +2891,9 @@
       "End the meeting for everyone?": [
         "Meeting für alle beenden?"
       ],
+      "End to end encrypted chat": [
+        "Ende-zu-Ende-verschlüsselter Chat"
+      ],
       "End-to-end encryption is active for audio and video.": [
         "Ende-zu-Ende-Verschlüsselung ist für Audio und Video aktiv."
       ],
@@ -2923,9 +2953,6 @@
       ],
       "Get a secure meeting link then add it to your calendar": [
         "Hole dir einen geschützten Meeting-Link und füge ihn deinem Kalender hinzu"
-      ],
-      "Get the best experience with the ${ protonMeet } desktop app": [
-        "Hole dir das beste Erlebnis mit der Desktop-App ${ protonMeet }"
       ],
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "Gehe zu about:config, suche nach media.peerconnection.enabled, und setze es auf „true“."
@@ -3044,6 +3071,9 @@
       "Meeting recordings aren’t supported in Firefox.": [
         "Besprechungsaufzeichnungen sind in Firefox nicht unterstützt."
       ],
+      "Meeting recordings aren’t supported in Safari private mode.": [
+        "Im privaten Modus von Safari wird das Aufzeichnen von Meetings nicht unterstützt."
+      ],
       "Meeting time is up": [
         "Besprechungszeit ist abgelaufen"
       ],
@@ -3145,6 +3175,9 @@
       ],
       "Now using ${ first }.": [
         "Jetzt verwendet ${ first }."
+      ],
+      "Only a partial meeting recording was available.": [
+        "Für dieses Meeting liegt nur eine unvollständige Aufzeichnung vor."
       ],
       "Only meetings you created appear here": [
         "Nur Meetings, die du erstellt hast, werden hier angezeigt"
@@ -3349,6 +3382,9 @@
       ],
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "Dies ist ein Ende-zu-Ende-verschlüsselter Chat mit temporären Nachrichten, die am Ende des Anrufs verschwinden."
+      ],
+      "This meeting has a time limit. This call will disconnect soon.": [
+        "Dieses Meeting ist zeitlich begrenzt. Die Verbindung wird in Kürze getrennt."
       ],
       "This meeting has a waiting room": [
         "Dieses Meeting hat einen Warteraum"
@@ -4210,6 +4246,9 @@
       ],
       "Allow microphone": [
         "Mikrofon zulassen"
+      ],
+      "Allow screen recording": [
+        "Bildschirmaufzeichnung zulassen"
       ],
       "Are you sure?": [
         "Bist du sicher?"

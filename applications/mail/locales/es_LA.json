@@ -447,6 +447,9 @@
       "Deselect all messages": [
         "Deseleccionar todos los mensajes"
       ],
+      "Detach": [
+        "Desadjuntar"
+      ],
       "Details": [
         "Detalles"
       ],
@@ -464,6 +467,9 @@
       ],
       "Display navigation bar": [
         "Mostrar la barra de navegación"
+      ],
+      "Don't show this offer again": [
+        "No volver a mostrar esta oferta"
       ],
       "Done": [
         "Hecho"
@@ -687,6 +693,9 @@
       "Got it": [
         "Entendido"
       ],
+      "Got it, connect my Gmail": [
+        "Entendido, conectar mi Gmail"
+      ],
       "Help and feedback": [
         "Ayuda y comentarios"
       ],
@@ -816,6 +825,9 @@
       ],
       "Later this week": [
         "Más tarde esta semana"
+      ],
+      "Learn how this works": [
+        "Aprenda cómo funciona esto"
       ],
       "Learn more": [
         "Más información"
@@ -1556,8 +1568,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar clave",
-        "Confiar claves"
+        "Confiar clave"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -1904,6 +1915,12 @@
       "Domains": [
         "Dominios"
       ],
+      "Managed Service Provider": [
+        "Proveedor de Servicios Gestionados"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Las organizaciones con el complemento de Proveedor de Servicios Gestionados pueden crear y administrar organizaciones subsidiarias."
+      ],
       "Servers": [
         "Servidores"
       ],
@@ -2167,6 +2184,11 @@
         "Anual"
       ]
     },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "Aplicación de escritorio de ${ appName }"
+      ]
+    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "Problema con ${ LUMO_SHORT_APP_NAME }"
@@ -2292,6 +2314,11 @@
       ],
       "Take a tour": [
         "Explore ahora"
+      ]
+    },
+    "BYOE": {
+      "Your newest emails will be imported first. Emails you've already imported won't be copied again.": [
+        "Sus correos electrónicos más recientes se importarán primero. Los correos electrónicos que ya haya importado no se copiarán de nuevo."
       ]
     },
     "Calendar attachment tooltip": {
@@ -5551,6 +5578,9 @@
       "You must set a name": [
         "Debe establecer un nombre"
       ],
+      "You reached the maximum number of connected addresses": [
+        "Alcanzó el número máximo de direcciones conectadas"
+      ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Ha alcanzado el número máximo de caracteres, acorte el mensaje."
       ],
@@ -6426,6 +6456,9 @@
       "Drawer": [
         "Casilla"
       ],
+      "Good to know before you connect": [
+        "Es bueno saberlo antes de conectarse"
+      ],
       "Hardware not compatible": [
         "Hardware no compatible"
       ],
@@ -7149,6 +7182,9 @@
       "(No Recipient)": [
         "(Sin destinatario)"
       ],
+      "**${ emailAddress }** is also used to sign in to a separate ${ BRAND_NAME } account, outside of ${ MAIL_APP_NAME }.": [
+        "**${ emailAddress }** también se usa para iniciar sesión en una cuenta separada de ${ BRAND_NAME }, fuera de ${ MAIL_APP_NAME }."
+      ],
       "**${ total }** result found in ${ labelName }": [
         "**${ total }** resultado encontrado en ${ labelName }",
         "**${ total }** resultados encontrados en ${ labelName }"
@@ -7252,6 +7288,9 @@
       ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Los anunciantes rastrean su navegación para mostrar anuncios específicos. ${ VPN_APP_NAME } bloquea rastreadores y anuncios, lo que hace que su conexión sea más rápida y mejora su experiencia en línea."
+      ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "Después de la actualización, es posible que su Mac le pida una contraseña. Escriba la contraseña que usa para desbloquear su Mac y luego pulse en Permitir siempre para mantener la sesión iniciada. ${ learnMore }"
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Asistente con tecnología de IA para ayudarle a crear mejores correos electrónicos de manera rápida y sin esfuerzo."
@@ -7639,6 +7678,9 @@
       "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
         "¿Lo sabía? Hemos reservado una dirección de correo corta para usted. Es su nombre de usuario seguido de «@${ PM_DOMAIN }»."
       ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Los descuentos se basan en los precios mensuales estándar. Su suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
+      ],
       "Discover new features unlocked and start using them right away!": [
         "Descubra las nuevas funciones desbloqueadas y empiece a usarlas de inmediato."
       ],
@@ -7961,6 +8003,9 @@
       "here": [
         "aquí"
       ],
+      "Here's what happens when you continue:": [
+        "Esto es lo que ocurre cuando continúe:"
+      ],
       "Hey Lumo, have a look at what I get most of in my inbox, and at the folders and filters I already have, then suggest how to keep it organised: what to change about the ones I've got, and anything new worth adding. Talk me through the plan first, and don't move anything until I say yes.": [
         "Hola Lumo, eche un vistazo a lo que más recibo en mi bandeja de entrada, así como a las carpetas y filtros que ya tengo. Luego, sugiérame cómo mantenerlo organizado: qué cambiar de los que ya tengo y qué novedades merece la pena añadir. Explíqueme el plan primero y no mueva nada hasta que le dé mi aprobación."
       ],
@@ -8080,7 +8125,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen"
+        "Insertar imagen",
+        "Insertar imágenes"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -8310,6 +8356,9 @@
       "newsletter": [
         "boletín"
       ],
+      "Next time you sign in to your other account": [
+        "La próxima vez que inicie sesión en su otra cuenta"
+      ],
       "No action selected": [
         "Ninguna acción seleccionada"
       ],
@@ -8402,6 +8451,9 @@
       ],
       "Not supported by this browser": [
         "No soportado por este navegador"
+      ],
+      "Nothing changes in your other ${ BRAND_NAME } account.": [
+        "Nada cambia en su otra cuenta de ${ BRAND_NAME }."
       ],
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados en la organización"
@@ -8541,6 +8593,9 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Intente de nuevo usando un método de pago diferente o contacte con el banco."
+      ],
+      "Please update ${ MAIL_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "Actualice ${ MAIL_APP_NAME } para seguir usando la aplicación. ${ downloadUpdate }"
       ],
       "Please use another browser or download the file.": [
         "Use otro navegador o descargue el archivo."
@@ -9736,12 +9791,18 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Escribió «${ attachmentsFoundKeyword }», pero no se agregó ningún adjunto. ¿Desea enviar el mensaje de todos modos?"
       ],
+      "You'll choose a new username": [
+        "Eligirá un nombre de usuario nuevo"
+      ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Recibirá la recompensa en créditos 1 mes después de que su amistad se suscriba a un plan anual, y 2 meses después de que se suscriba a un plan mensual."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Después se le cobrará ${ renewAmountStr } cada ${ renewCycle } mes. Puede cancelar en cualquier momento.",
         "Después se le cobrarán ${ renewAmountStr } cada ${ renewCycle } meses. Puede cancelar en cualquier momento."
+      ],
+      "You'll use it to sign in from then on. That's the only change.": [
+        "La usará para iniciar sesión a partir de ahora. Ese es el único cambio."
       ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "Ha activado el reenvío en ${ MAX_SYNC_PAID_USER } dirección de Gmail. Para añadir otra, primero desactívela.",
@@ -9788,6 +9849,9 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Su prueba gratuita se convirtió en una suscripción mensual. Su fecha de renovación es ${ nextBillingDate }."
+      ],
+      "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
+        "Su Gmail se conecta a esta dirección de ${ MAIL_APP_NAME }"
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
         "El hardware no admite ejecutar el asistente de escritura. Intente ejecutarlo en los servidores."
@@ -14360,79 +14424,6 @@
         "Yahoo"
       ]
     },
-    "q3campaign2026: Action": {
-      "Get the deal": [
-        "Aproveche la oferta"
-      ],
-      "Special Offer": [
-        "Oferta especial"
-      ]
-    },
-    "q3campaign2026: Info": {
-      "/month": [
-        "mensuales"
-      ],
-      "2 individual accounts": [
-        "2 cuentas individuales"
-      ],
-      "2 TB of secure storage": [
-        "2 TB de almacenamiento seguro"
-      ],
-      "3 TB of secure storage": [
-        "3 TB de almacenamiento seguro"
-      ],
-      "500 GB of secure storage": [
-        "500 GB de almacenamiento seguro"
-      ],
-      "6 individual accounts": [
-        "6 cuentas individuales"
-      ],
-      "Advanced protection against cyber threats": [
-        "Protección avanzada contra ciberamenazas"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Los descuentos se basan en los precios mensuales estándar. Su suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
-      ]
-    },
-    "q3campaign2026: Info, Calendar first": {
-      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } todos premium"
-      ]
-    },
-    "q3campaign2026: Info, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } todos premium"
-      ]
-    },
-    "q3campaign2026: Info, Family, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } todos premium"
-      ]
-    },
-    "q3campaign2026: Info, Family, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } todos premium"
-      ]
-    },
-    "q3campaign2026: Info, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } todos premium"
-      ]
-    },
-    "q3campaign2026: Title": {
-      "for 12 months": [
-        "durante 12 meses"
-      ],
-      "One plan, full power": [
-        "Un solo plan: Máximo poder"
-      ],
-      "One plan, max savings": [
-        "Un solo plan: máximo ahorro"
-      ],
-      "One plan, more power": [
-        "Un solo plan: Más poder"
-      ]
-    },
     "Received email icon": {
       "End-to-end encrypted and signed message": [
         "Mensaje cifrado y firmado de extremo a extremo"
@@ -16483,6 +16474,9 @@
       "Birthday": [
         "Cumpleaños"
       ],
+      "Black Friday": [
+        "Black Friday"
+      ],
       "Blind Carbon Copy": [
         "Con copia oculta"
       ],
@@ -17230,9 +17224,6 @@
       ],
       "Sending original message": [
         "Enviando mensaje original"
-      ],
-      "September Sale": [
-        "Oferta de septiembre"
       ],
       "Set recovery methods": [
         "Establecer métodos de recuperación"

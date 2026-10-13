@@ -536,6 +536,12 @@
       "Domains": [
         "Dominios"
       ],
+      "Managed Service Provider": [
+        "Proveedor de Servicios Gestionados"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Las organizaciones con el complemento de Proveedor de Servicios Gestionados pueden crear y administrar organizaciones subsidiarias."
+      ],
       "Servers": [
         "Servidores"
       ],
@@ -668,6 +674,11 @@
       ],
       "Yearly": [
         "Anual"
+      ]
+    },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "Aplicación de escritorio de ${ appName }"
       ]
     },
     "Bug category": {
@@ -1320,6 +1331,12 @@
       "${ LUMO_SHORT_APP_NAME } references your saved memories to tailor responses — communication style, expertise, recurring tools, and long-running projects.": [
         "${ LUMO_SHORT_APP_NAME } consulta su memoria guardada para personalizar las respuestas, estilo de comunicación, experiencia, herramientas concurrentes y proyectos de larga duración."
       ],
+      "${ LUMO_SHORT_APP_NAME } will review chat-based memories, remove duplicates, and merge related entries into clearer ones. Memories you wrote yourself are left unchanged.": [
+        "${ LUMO_SHORT_APP_NAME } revisará los recuerdos basados ​​en chats, eliminará los duplicados y fusionará las entradas relacionadas en otras más claras. Los recuerdos que usted mismo haya escrito permanecerán sin cambios."
+      ],
+      "Add connectors, manage credentials, and set tool approval policies.": [
+        "Añada conectores, gestione credenciales y configure políticas de aprobación de herramientas."
+      ],
       "Add your own memories, edit any auto-generated entry, or clear everything at any time. Generated memories you edit are promoted to your own.": [
         "Agregue sus propios recuerdos, edite cualquier entrada autogenerada o borre todo en cualquier momento. Los recuerdos generados que editó se consideran como propios."
       ],
@@ -1329,11 +1346,17 @@
       "After you continue, Apertus will appear as the selected model in the model menu. You can use that menu to switch to another model at any time.": [
         "Después de continuar, Apertus aparecerá como el modelo seleccionado en el menú de modelos. Puede usar ese menú para cambiar a otro modelo en cualquier momento."
       ],
+      "Allow ${ LUMO_SHORT_APP_NAME } to create artifacts in the side panel when appropriate. This is the default for all chats; you can change it for a single chat from the Tools menu.": [
+        "Permita que ${ LUMO_SHORT_APP_NAME } cree artefactos en el panel lateral cuando sea apropiado. Esta es la configuración predeterminada para todos los chats; puede cambiarla para un chat específico desde el menú Herramientas."
+      ],
       "Always enable web search for new conversations": [
         "Activar siempre la búsqueda web para nuevas conversaciones"
       ],
       "API keys let you access ${ LUMO_SHORT_APP_NAME } programmatically. Each key is shown only once upon creation.": [
         "Las claves de API le permiten acceder a ${ LUMO_SHORT_APP_NAME } mediante programación. Cada clave se muestra solo una vez al momento de su creación."
+      ],
+      "Configure app preferences, keyboard shortcuts, and updates in the desktop settings window.": [
+        "Configure las preferencias de la aplicación, los atajos de teclado y las actualizaciones en la ventana de configuración del escritorio."
       ],
       "Create a key to integrate ${ LUMO_SHORT_APP_NAME } with your scripts and tools.": [
         "Cree una clave para integrar ${ LUMO_SHORT_APP_NAME } con sus scripts y herramientas."
@@ -1353,11 +1376,17 @@
       "Include project conversations in the main chat history": [
         "Incluir conversaciones del proyecto en el historial de chat principal"
       ],
+      "Internal preview of an upcoming model": [
+        "Vista previa interna de un modelo próximo"
+      ],
       "Its model weights, training data, values, and development details are open for inspection. The ${ apertusCharterLink } provides strong ethical guardrails for privacy, responsible data use, transparency, and human agency.": [
         "Los pesos del modelo, los datos de entrenamiento, los valores y los detalles de desarrollo están abiertos a inspección. La ${ apertusCharterLink } establece salvaguardas éticas sólidas en materia de privacidad, uso responsable de los datos, transparencia y autonomía humana."
       ],
       "Keep it safe — it won't be shown again": [
         "Guárdela en un lugar seguro, no volverá a mostrarse"
+      ],
+      "Language used when transcribing your voice": [
+        "Idioma usado cuando se transcribe su voz"
       ],
       "Last updated on ${ formattedDate }": [
         "Última actualización el ${ formattedDate }"
@@ -1546,6 +1575,9 @@
       ],
       "Your chats can't be saved right now. Anything you write will be lost if you reload the page.": [
         "No se pueden guardar sus chats por ahora. Cualquier cosa que escriba se perderá si actualiza la página."
+      ],
+      "Your existing ${ LUMO_SHORT_APP_NAME } data can't be decrypted with your current account keys. If you recover your previous keys it will become available again. You can keep using ${ LUMO_SHORT_APP_NAME } normally.": [
+        "Sus datos actuales de ${ LUMO_SHORT_APP_NAME } no se pueden descifrar con las claves de su cuenta actual. Si recupera sus claves anteriores, volverán a estar disponibles. Puede seguir usando ${ LUMO_SHORT_APP_NAME } con normalidad."
       ],
       "Your existing ${ LUMO_SHORT_APP_NAME } data could not be decrypted with your available account keys. Recover your account keys, then retry.": [
         "No se pudieron descifrar los datos existentes de ${ LUMO_SHORT_APP_NAME } con las claves de cuenta disponibles. Recupere las claves de su cuenta e intente de nuevo."
@@ -1946,6 +1978,9 @@
       "For each day, average tokens per API call (tokens ÷ calls, or 0 if no calls).": [
         "Por cada día, promedio de tokens por llamada a la API (tokens ÷ llamadas, o 0 si no hay llamadas)."
       ],
+      "For this chat": [
+        "Para este chat"
+      ],
       "Free accounts keep chat history for 7 days from when a chat was created.": [
         "Las cuentas gratuitas conservan el historial de chat por 7 días desde el momento en que se crea el chat."
       ],
@@ -2038,6 +2073,9 @@
       ],
       "No usage yet": [
         "Aún no se ha usado"
+      ],
+      "Or pull suggestions from your recent chats.": [
+        "O bien, obtenga sugerencias de sus chats recientes."
       ],
       "Over capacity": [
         "Capacidad superada"
@@ -2132,6 +2170,9 @@
       "Sign in or create an account to browse and add files from your ${ DRIVE_APP_NAME } (end-to-end encrypted cloud storage) to your chat knowledge.": [
         "Inicie sesión o cree una cuenta para explorar y añadir archivos desde su ${ DRIVE_APP_NAME } (almacenamiento en la nube cifrado de extremo a extremo) a su conocimiento del chat."
       ],
+      "Sign in to change this later in Settings → General → Dictation language.": [
+        "Inicie sesión para cambiar esto después en Ajustes → General → Idioma de dictado."
+      ],
       "Sign in to create and manage API keys for ${ LUMO_SHORT_APP_NAME }.": [
         "Inicie sesión para crear y gestionar claves de API para ${ LUMO_SHORT_APP_NAME }."
       ],
@@ -2152,6 +2193,9 @@
       ],
       "Table view": [
         "Vista de tabla"
+      ],
+      "Telling us which language you speak helps dictation transcribe your voice accurately.": [
+        "Díganos cuál idioma habla para ayudar al sistema de dictado a transcribir su voz con precisión."
       ],
       "The ${ LUMO_SHORT_APP_NAME } API and API keys are included with ${ LUMO_SHORT_APP_NAME }+. Ask your organization administrator to assign a ${ LUMO_SHORT_APP_NAME } seat to your account.": [
         "La API de ${ LUMO_SHORT_APP_NAME } y las claves de API se incluyen con ${ LUMO_SHORT_APP_NAME }+. Solicite al administrador de su organización que asigne una licencia de ${ LUMO_SHORT_APP_NAME } a su cuenta."
@@ -2257,6 +2301,12 @@
       ],
       "You are about to visit an external website:": [
         "Está a punto de visitar un sitio web externo:"
+      ],
+      "You can change this at any time in Settings → General → Dictation language.": [
+        "Puede cambiar esto en cualquier momento en Ajustes → General → Idioma de dictado."
+      ],
+      "You have many saved memories. Optimize merges duplicate chat-based entries and keeps the list focused.": [
+        "Tiene demasiadas memorias guardadas. La función Optimizar combina las entradas duplicadas basadas en chats y mantiene la lista enfocada."
       ],
       "You've reached your image limit for this period.": [
         "Ha alcanzado el límite de imágenes para este periodo."
@@ -2541,6 +2591,9 @@
       ],
       "90 days": [
         "90 días"
+      ],
+      "Auto-detect": [
+        "Autodetectar"
       ]
     },
     "collider_2025: Personality": {
@@ -2637,6 +2690,9 @@
       "Appearance": [
         "Apariencia"
       ],
+      "Desktop app": [
+        "Aplicación de escritorio"
+      ],
       "General": [
         "General"
       ],
@@ -2648,8 +2704,26 @@
       ]
     },
     "collider_2025: Spotlight": {
+      "Artifacts are now on by default": [
+        "Los artefactos ahora están activos por defecto"
+      ],
       "Create artifacts with ${ LUMO_SHORT_APP_NAME }": [
         "Cree artefactos con ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Longer documents, code and slides open here so you can edit and download them.": [
+        "Los documentos largos, código y diapositivas se abren aquí para que pueda editarlos y descargarlos."
+      ],
+      "Longer documents, code and slides open here so you can edit, download or save them to Drive.": [
+        "Los documentos largos, código y diapositivas se abren aquí para que pueda editarlos, descargarlos o guardarlos en Drive."
+      ],
+      "Settings": [
+        "Ajustes"
+      ],
+      "To stop this, turn off ${ createArtifact } in ${ tools } for this chat, or in ${ settings } for all chats.": [
+        "Para detener esto, desactive ${ createArtifact } en ${ tools } para este chat, o en los ${ settings } para todos los chats."
+      ],
+      "To stop this, turn off ${ createArtifact } in ${ tools } for this chat.": [
+        "Para detener esto, desactive ${ createArtifact } en ${ tools } para este chat."
       ],
       "Turn ideas into documents, code, and more. Open Tools to get started.": [
         "Convierta ideas en documentos, código y más. Abra Herramientas para comenzar."
@@ -2734,6 +2808,9 @@
       "${ LUMO_SHORT_APP_NAME } Business": [
         "${ LUMO_SHORT_APP_NAME } Business"
       ],
+      "${ LUMO_SHORT_APP_NAME } Desktop settings": [
+        "Ajustes de escritorio de ${ LUMO_SHORT_APP_NAME }"
+      ],
       "${ LUMO_SHORT_APP_NAME } Plus": [
         "${ LUMO_SHORT_APP_NAME } Plus"
       ],
@@ -2764,6 +2841,9 @@
       "Auto update memory": [
         "Actualizar memoria automáticamente"
       ],
+      "Automatic Create Artifact": [
+        "Creación automática de artefactos"
+      ],
       "Automatic web search": [
         "Búsqueda web automática"
       ],
@@ -2773,11 +2853,17 @@
       "Chat": [
         "Chat"
       ],
+      "Choose your dictation language": [
+        "Elija su idioma de dictado"
+      ],
       "Clear all memories?": [
         "¿Borrar toda la memoria?"
       ],
       "Clear chat-based memories?": [
         "¿Borrar memoria basada en chats?"
+      ],
+      "Connectors": [
+        "Conectores"
       ],
       "Conversational AI": [
         "IA conversacional"
@@ -2787,6 +2873,9 @@
       ],
       "Delete everything": [
         "Eliminar todo"
+      ],
+      "Dictation language": [
+        "Idioma de dictado"
       ],
       "Document intelligence": [
         "Inteligencia de documentos"
@@ -3280,9 +3369,6 @@
       ],
       "Download PPTX": [
         "Descargar PPTX"
-      ],
-      "Download source (HTML)": [
-        "Descargar fuente (HMTL)"
       ],
       "Download source (Markdown)": [
         "Descargar fuente (Markdown)"
@@ -9845,79 +9931,6 @@
         "Yahoo"
       ]
     },
-    "q3campaign2026: Action": {
-      "Get the deal": [
-        "Aproveche la oferta"
-      ],
-      "Special Offer": [
-        "Oferta especial"
-      ]
-    },
-    "q3campaign2026: Info": {
-      "/month": [
-        "mensuales"
-      ],
-      "2 individual accounts": [
-        "2 cuentas individuales"
-      ],
-      "2 TB of secure storage": [
-        "2 TB de almacenamiento seguro"
-      ],
-      "3 TB of secure storage": [
-        "3 TB de almacenamiento seguro"
-      ],
-      "500 GB of secure storage": [
-        "500 GB de almacenamiento seguro"
-      ],
-      "6 individual accounts": [
-        "6 cuentas individuales"
-      ],
-      "Advanced protection against cyber threats": [
-        "Protección avanzada contra ciberamenazas"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Los descuentos se basan en los precios mensuales estándar. Su suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
-      ]
-    },
-    "q3campaign2026: Info, Calendar first": {
-      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } todos premium"
-      ]
-    },
-    "q3campaign2026: Info, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } todos premium"
-      ]
-    },
-    "q3campaign2026: Info, Family, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } todos premium"
-      ]
-    },
-    "q3campaign2026: Info, Family, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } todos premium"
-      ]
-    },
-    "q3campaign2026: Info, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } todos premium"
-      ]
-    },
-    "q3campaign2026: Title": {
-      "for 12 months": [
-        "durante 12 meses"
-      ],
-      "One plan, full power": [
-        "Un solo plan: Máximo poder"
-      ],
-      "One plan, max savings": [
-        "Un solo plan: máximo ahorro"
-      ],
-      "One plan, more power": [
-        "Un solo plan: Más poder"
-      ]
-    },
     "Role": {
       "Organization Admin": [
         "Administrador de la organización"
@@ -10466,6 +10479,9 @@
       "Billing cycle": [
         "Ciclo de facturación"
       ],
+      "Black Friday": [
+        "Black Friday"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Cancelar la subscripción a ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -10591,9 +10607,6 @@
       ],
       "Select a plan": [
         "Seleccione un plan"
-      ],
-      "September Sale": [
-        "Oferta de septiembre"
       ],
       "Set recovery methods": [
         "Establecer métodos de recuperación"

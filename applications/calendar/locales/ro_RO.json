@@ -4332,6 +4332,9 @@
       "You must set a name": [
         "Trebuie specificat un nume"
       ],
+      "You reached the maximum number of connected addresses": [
+        "Ați atins numărul maxim de adrese conectate."
+      ],
       "Your import will not be processed.": [
         "Importarea nu va fi procesată."
       ],
@@ -5581,6 +5584,9 @@
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Agenții de publicitate vă urmăresc navigarea pentru a afișa anunțuri țintite. ${ VPN_APP_NAME } blochează instrumentele de urmărire și reclamele, făcându-vă conexiunea mai rapidă și îmbunătățindu-vă experiența online."
       ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "După actualizare, este posibil ca Mac-ul să solicite o parolă. Introduceți parola pe care o folosiți pentru a debloca Mac-ul, apoi faceți clic pe „Permitere întotdeauna” pentru a păstra conexiunea. ${ learnMore }"
+      ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Asistent pe bază de IA pentru a vă ajuta să scrieți mesaje mai bune, mai repede și fără efort."
       ],
@@ -6309,6 +6315,9 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Reîncercați folosind o metodă de plată diferită sau contactați-vă banca."
+      ],
+      "Please update ${ MAIL_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "Actualizați ${ MAIL_APP_NAME } pentru a o utiliza în continuare. ${ downloadUpdate }"
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Așteptați până se caută contactele care pot fi resemnate cu cheia de criptare primară."
@@ -10677,79 +10686,6 @@
         "Yahoo"
       ]
     },
-    "q3campaign2026: Action": {
-      "Get the deal": [
-        "Luați oferta"
-      ],
-      "Special Offer": [
-        "Ofertă specială"
-      ]
-    },
-    "q3campaign2026: Info": {
-      "/month": [
-        "/lună"
-      ],
-      "2 individual accounts": [
-        "Două conturi individuale"
-      ],
-      "2 TB of secure storage": [
-        "2 TiB de stocare securizată"
-      ],
-      "3 TB of secure storage": [
-        "3 TiB de stocare securizată"
-      ],
-      "500 GB of secure storage": [
-        "500 GiB de stocare securizată"
-      ],
-      "6 individual accounts": [
-        "Șase conturi individuale"
-      ],
-      "Advanced protection against cyber threats": [
-        "Protecție avansată împotriva amenințărilor cibernetice"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Reducerile se bazează pe prețurile lunare standard. Abonamentul se va reînnoi la tariful anual standard la sfârșitul ciclului de facturare."
-      ]
-    },
-    "q3campaign2026: Info, Calendar first": {
-      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } și ${ VPN_SHORT_APP_NAME } premium"
-      ]
-    },
-    "q3campaign2026: Info, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME } premium"
-      ]
-    },
-    "q3campaign2026: Info, Family, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } premium"
-      ]
-    },
-    "q3campaign2026: Info, Family, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } premium"
-      ]
-    },
-    "q3campaign2026: Info, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME } premium"
-      ]
-    },
-    "q3campaign2026: Title": {
-      "for 12 months": [
-        "pentru 12 luni"
-      ],
-      "One plan, full power": [
-        "Un singur plan, putere completă"
-      ],
-      "One plan, max savings": [
-        "Un singur plan, reduceri maxime"
-      ],
-      "One plan, more power": [
-        "Un singur plan, mai multă putere"
-      ]
-    },
     "Referral": {
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } per recomandare"
@@ -12381,6 +12317,9 @@
       "Birthday": [
         "Data nașterii"
       ],
+      "Black Friday": [
+        "Black Friday"
+      ],
       "Calendar": [
         "Calendar"
       ],
@@ -12890,9 +12829,6 @@
       ],
       "Send invitation": [
         "Trimitere invitație"
-      ],
-      "September Sale": [
-        "Reduceri de septembrie"
       ],
       "Set recovery methods": [
         "Setați metodele de recuperare"

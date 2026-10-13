@@ -602,6 +602,9 @@
       "Import now": [
         "Εισαγωγή τώρα"
       ],
+      "Import paused": [
+        "Η εισαγωγή διακόπηκε"
+      ],
       "Importing from Google": [
         "Εισαγωγή από Google"
       ],
@@ -4132,6 +4135,9 @@
       "You must set a name": [
         "Πρέπει να ορίσετε ένα όνομα"
       ],
+      "You reached the maximum number of connected addresses": [
+        "Φτάσατε τον μέγιστο αριθμό συνδεδεμένων διευθύνσεων"
+      ],
       "Your import will not be processed.": [
         "Η εισαγωγή σας δεν θα υποβληθεί σε επεξεργασία."
       ],
@@ -5855,6 +5861,9 @@
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
         "Αν αφαιρέσετε τον εαυτό σας, θα χάσετε την πρόσβαση στο \"${ fileName }\" και δε θα μπορείτε να το ανοίξετε ξανά εκτός αν ο κάτοχος το μοιραστεί μαζί σας."
       ],
+      "If you've already upgraded, you can resume your import in ${ easySwitchSettingsLink }. You can also cancel it there.": [
+        "Αν έχετε ήδη κάνει αναβάθμιση, μπορείτε να συνεχίσετε τη διαδικασία εισαγωγής στην ενότητα ${ easySwitchSettingsLink }. Μπορείτε επίσης να την ακυρώσετε από εκεί."
+      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Εισαγωγή ${ calendarCount } από ${ totalCalendarsCount } ημερολόγιο",
         "Εισαγωγή ${ calendarCount } από ${ totalCalendarsCount } ημερολόγια"
@@ -7180,6 +7189,9 @@
       ],
       "Your Google Drive may be empty or contain only files that are not supported.": [
         "Το Google Drive σας μπορεί να είναι κενό ή να περιέχει μόνο αρχεία που δεν υποστηρίζονται."
+      ],
+      "Your import is blocked. Upgrade now to bring the rest of your files over.": [
+        "Η εισαγωγή σας έχει αποκλειστεί. Κάντε αναβάθμιση τώρα για να μεταφέρετε τα υπόλοιπα αρχεία σας."
       ],
       "Your information was found on ${ displayedDate }": [
         "Οι πληροφορίες σας βρέθηκαν στις ${ displayedDate }"
@@ -11008,79 +11020,6 @@
         "Yahoo"
       ]
     },
-    "q3campaign2026: Action": {
-      "Get the deal": [
-        "Αποκτήστε την προσφορά"
-      ],
-      "Special Offer": [
-        "Ειδική Προσφορά"
-      ]
-    },
-    "q3campaign2026: Info": {
-      "/month": [
-        "/μήνα"
-      ],
-      "2 individual accounts": [
-        "2 ατομικοί λογαριασμοί"
-      ],
-      "2 TB of secure storage": [
-        "2 TB ασφαλούς αποθήκευσης"
-      ],
-      "3 TB of secure storage": [
-        "3 TB ασφαλούς αποθήκευσης"
-      ],
-      "500 GB of secure storage": [
-        "500 GB ασφαλούς αποθήκευσης"
-      ],
-      "6 individual accounts": [
-        "6 ατομικοί λογαριασμοί"
-      ],
-      "Advanced protection against cyber threats": [
-        "Προηγμένη προστασία από τις απειλές στον κυβερνοχώρο"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση. Η συνδρομή σας θα ανανεωθεί με την τυπική ετήσια χρέωση όταν λήξει ο κύκλος χρέωσης."
-      ]
-    },
-    "q3campaign2026: Info, Calendar first": {
-      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } και ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Family, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Family, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Title": {
-      "for 12 months": [
-        "για 12 μήνες"
-      ],
-      "One plan, full power": [
-        "Ένα πλάνο, πλήρη δύναμη"
-      ],
-      "One plan, max savings": [
-        "Ένα πρόγραμμα, μέγιστη εξοικονόμηση"
-      ],
-      "One plan, more power": [
-        "Ένα πλάνο, περισσότερη δύναμη"
-      ]
-    },
     "Referral": {
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } ανά παραπομπή"
@@ -12979,6 +12918,9 @@
       "Modified": [
         "Τροποποιήθηκε"
       ],
+      "More storage needed to finish your import": [
+        "Απαιτείται περισσότερος αποθηκευτικός χώρος για την ολοκλήρωση της εισαγωγής σας"
+      ],
       "My files": [
         "Τα αρχεία μου"
       ],
@@ -13198,9 +13140,6 @@
       ],
       "Select users to migrate": [
         "Επιλογή χρηστών για μετεγκατάσταση"
-      ],
-      "September Sale": [
-        "Εκπτώσεις Σεπτεμβρίου"
       ],
       "Set recovery methods": [
         "Ορισμός μεθόδων ανάκτησης"

@@ -614,6 +614,9 @@
       "Connect": [
         "Anslut"
       ],
+      "Connect and import": [
+        "Anslut och importera"
+      ],
       "Connect apps and devices": [
         "Anslut appar och enheter"
       ],
@@ -889,9 +892,6 @@
       ],
       "Dismiss": [
         "Avfärda"
-      ],
-      "Domain name": [
-        "Domännamn"
       ],
       "Don't show again": [
         "Visa inte igen"
@@ -3632,6 +3632,17 @@
       "Total for ${ cycle } month": [
         "Totalt för ${ cycle } månad",
         "Totalt för ${ cycle } månader"
+      ]
+    },
+    "claimed address": {
+      "Your address": [
+        "Din adress"
+      ],
+      "Your address has changed": [
+        "Din adress har ändrats"
+      ],
+      "Your new address": [
+        "Din nya adress"
       ]
     },
     "Collapsible tooltip": {
@@ -10252,9 +10263,6 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ BRAND_NAME } är värd för en ${ protonSubdomain }, vilket låter dig snabbt konfigurera en underdomän. ${ learnMoreLink }"
       ],
-      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
-        "En anpassad domän är obligatoriskt för att skapa grupper. Om du inte har ställt in en anpassad domän, gör det först under ${ linkToDomainPage }."
-      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Ett namn som hjälper dig att identifiera var du använder det så att du enkelt kan återkalla det eller förlänga det senare."
       ],
@@ -10742,9 +10750,6 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klicka på \"Begär ny kod\" för att få en ny verifieringskod skickad till ${ strong }. Om telefonnumret är felaktigt klickar du på \"Redigera\" för att korrigera det."
-      ],
-      "Click 'Trouble signing in?' on your TV to follow the alternative steps.": [
-        "Klicka på ”Problem att logga in?” på din TV för att följa de alternativa stegen."
       ],
       "Click **Request password reset** and follow the prompts.": [
         "Klicka på **Begär lösenordsåterställning** och följ anvisningarna."
@@ -14765,9 +14770,6 @@
       ],
       "Auto-advance": [
         "Gå automatiskt vidare"
-      ],
-      "Auto-delete unwanted messages": [
-        "Ta bort oönskade meddelanden automatiskt"
       ],
       "Auto-detect primary time zone": [
         "Upptäckt primär tidszon automatiskt"
@@ -20910,76 +20912,6 @@
         "Yahoo"
       ]
     },
-    "q3campaign2026: Action": {
-      "Get the deal": [
-        "Ta del av erbjudandet"
-      ],
-      "Special Offer": [
-        "Specialerbjudande"
-      ]
-    },
-    "q3campaign2026: Info": {
-      "/month": [
-        "/månad"
-      ],
-      "2 individual accounts": [
-        "2 individuella konton"
-      ],
-      "2 TB of secure storage": [
-        "2 TB säkert lagringsutrymme"
-      ],
-      "3 TB of secure storage": [
-        "3 TB säkert lagringsutrymme"
-      ],
-      "500 GB of secure storage": [
-        "500 GB säkert lagringsutrymme"
-      ],
-      "6 individual accounts": [
-        "6 individuella konton"
-      ],
-      "Advanced protection against cyber threats": [
-        "Avancerat skydd mot cyberhot"
-      ]
-    },
-    "q3campaign2026: Info, Calendar first": {
-      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } och ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Family, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Family, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Title": {
-      "for 12 months": [
-        "för 12 månader"
-      ],
-      "One plan, full power": [
-        "Ett paket, full kraft"
-      ],
-      "One plan, max savings": [
-        "Ett paket, maximal besparing"
-      ],
-      "One plan, more power": [
-        "Ett paket, mer kraft"
-      ]
-    },
     "Recovery Email": {
       "Back to ${ signIn }.": [
         "Tillbaka till ${ signIn }."
@@ -25407,6 +25339,9 @@
       "Billing cycle": [
         "Faktureringscykel"
       ],
+      "Black Friday": [
+        "Black Friday"
+      ],
       "Block trackers and malware": [
         "Blockera spårare och skadlig kod"
       ],
@@ -25553,6 +25488,9 @@
       ],
       "Connected emails": [
         "Ansluten e-post"
+      ],
+      "Connecting...": [
+        "Ansluter …"
       ],
       "Connection status": [
         "Anslutningsstatus"
@@ -26703,9 +26641,6 @@
       ],
       "Send new invite?": [
         "Skicka ny inbjudan?"
-      ],
-      "September Sale": [
-        "Septemberrea"
       ],
       "Service": [
         "Tjänst"

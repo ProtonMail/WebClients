@@ -191,6 +191,9 @@
       "Claim ${ BRAND_NAME } address": [
         "المطالبة بعنوان ${ BRAND_NAME }"
       ],
+      "Claim it": [
+        "المطالبة به"
+      ],
       "Claim offer": [
         "المطالبة بالعرض"
       ],
@@ -308,6 +311,9 @@
       "Create users": [
         "إنشاء مستخدمين"
       ],
+      "Create your own": [
+        "أنشئ عنوانك الخاص"
+      ],
       "Current plan": [
         "الباقة الحالية"
       ],
@@ -397,9 +403,6 @@
       ],
       "Dismiss": [
         "تجاهل"
-      ],
-      "Domain name": [
-        "اسم النطاق"
       ],
       "Don't show again": [
         "لا تظهره مرة اخرى"
@@ -772,6 +775,9 @@
       ],
       "No, thanks": [
         "لاـ شكراً"
+      ],
+      "Not now": [
+        "ليس الآن"
       ],
       "OK": [
         "موافق"
@@ -1156,6 +1162,9 @@
       ],
       "Take a tour": [
         "جولة تعريفية"
+      ],
+      "Take the survey": [
+        "ساعد في تشكيل تجربة إدارة ${ BRAND_NAME }"
       ],
       "Test": [
         "اختبار"
@@ -1860,6 +1869,26 @@
     "BF2024: Tooltip": {
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "مساحة التخزين مشتركة عبر جميع خدمات ${ BRAND_NAME }."
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "أكبر تخفيضات في العام"
+      ],
+      "Black Friday": [
+        "الجمعة السوداء"
+      ],
+      "Last chance to save big": [
+        "الفرصة الأخيرة لتحقيق توفير كبير"
+      ],
+      "Protect your entire tribe": [
+        "احمِ قبيلتك بأكملها"
+      ],
+      "Protection for two in a single plan": [
+        "حماية لشخصين في خطة واحدة"
+      ],
+      "Save big with a yearly plan": [
+        "وفّر الكثير مع الخطة السنوية"
       ]
     },
     "Billing cycle": {
@@ -7174,9 +7203,6 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "النطاق الفرعي ${ protonSubdomain } مستضاف بواسطة ${ BRAND_NAME }، مما يسمح لك بإعداد نطاق فرعي بسرعة. ${ learnMoreLink }"
       ],
-      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
-        "يتطلب إنشاء المجموعات وجود نطاق مخصّص. في حال عدم إعداد نطاق مخصّص، يجب القيام بذلك أولاً عبر ${ linkToDomainPage }."
-      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "اسم لمساعدتك على تحديد مكان استخدامه حتى تتمكن من إبطاله أو تمديده بسهولة في وقت لاحق."
       ],
@@ -8965,6 +8991,9 @@
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "تم تسريب المعلومات المكشوفة من خدمة طرف ثالث. تظل معلومات حساب ${ BRAND_NAME } الخاص بك آمنة ومشفرة. ${ learnMoreLink }"
       ],
+      "The following address is available:": [
+        "العنوان التالي متاح:"
+      ],
       "The following addresses are invalid.": [
         "العناوين التالية غير صالحة.",
         "العنوان البريديّ التالي غير صحيح.",
@@ -9444,6 +9473,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "سنرسل رمز تحقق جديدًا إلى ${strong}"
+      ],
+      "We're building a new way for you to manage your organization, and we're looking for specific users to join a video call and try an early version. Curious if you'd be a good match? Answer a few quick questions to see if you can participate.": [
+        "نعمل على تطوير طريقة جديدة لإدارة مؤسستك، ونبحث عن مستخدمين محددين للانضمام إلى مكالمة فيديو وتجربة إصدار مبكر. هل تود معرفة ما إذا كنت مناسبًا للمشاركة؟ أجب عن بعض الأسئلة السريعة لمعرفة ما إذا كان بإمكانك المشاركة."
       ],
       "Web sessions detected:": [
         "تم اكتشاف جلسات الويب:"
@@ -18215,6 +18247,9 @@
       "Create user accounts": [
         "إنشاء حسابات مستخدم"
       ],
+      "Create your ${ BRAND_NAME } address": [
+        "أنشئ عنوان ${ BRAND_NAME } الخاص بك"
+      ],
       "Created": [
         "أنشأت"
       ],
@@ -18539,6 +18574,9 @@
       ],
       "Help center": [
         "مركز المساعدة"
+      ],
+      "Help shape ${ BRAND_NAME }'s admin experience": [
+        "ساعد في تشكيل تجربة إدارة ${ BRAND_NAME }"
       ],
       "Helping activists in Hong Kong": [
         "مساعدة النشطاء في هونغ كونغ"
@@ -19491,6 +19529,9 @@
       ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: أمّن عمليات تسجيل الدخول على جميع أجهزتك. يشمل أسماءً مستعارة غير محدودة، والمشاركة، والمصادقة الثنائية المدمجة، والمزيد."
+      ],
+      "Assigned by a group. Remove the user from the group to change this role": [
+        "مُعيَّن من قِبَل مجموعة. أزِل المستخدم من المجموعة لتغيير هذا الدور."
       ],
       "Disables end-to-end email encryption for this group": [
         "يعطّل تشفير البريد الإلكتروني من طرف إلى طرف لهذه المجموعة"
