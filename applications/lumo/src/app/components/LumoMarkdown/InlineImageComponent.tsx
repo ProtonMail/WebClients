@@ -13,11 +13,11 @@ import { useLumoDispatch } from '../../redux/hooks';
 import { clearAttachmentLoading } from '../../redux/slices/attachmentLoadingState';
 import { setPendingPrefill } from '../../redux/slices/composerActions';
 import { pullAttachmentRequest } from '../../redux/slices/core/attachments';
-import { downloadImage } from '../../remote/lumoImageDownload';
 import { injectNativeImageGenerationHelper } from '../../remote/nativeComposerBridgeHelpers';
 import { attachmentDataCache } from '../../services/attachmentDataCache';
 import type { AttachmentId } from '../../types';
 import { base64ToFile } from '../../util/imageHelpers';
+import { triggerFileDownload } from '../../util/triggerFileDownload';
 import { useFileHandling } from '../Composer/hooks/useFileHandling';
 import { LumoIcon } from '../LumoIcon/LumoIcon';
 
@@ -66,7 +66,7 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
         async (e?: React.MouseEvent) => {
             e?.stopPropagation();
             if (!attachment || !imageDataUrl) return;
-            await downloadImage(imageDataUrl, attachment.filename);
+            await triggerFileDownload(imageDataUrl, attachment.filename, 'image');
         },
         [attachment, imageDataUrl]
     );

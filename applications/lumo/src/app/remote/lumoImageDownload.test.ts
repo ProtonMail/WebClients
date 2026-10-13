@@ -1,4 +1,4 @@
-import { downloadImage, isNativeImageBridgeAvailable, saveImageViaNativeBridge } from './lumoImageDownload';
+import { isNativeImageBridgeAvailable, saveImageViaNativeBridge } from './lumoImageDownload';
 
 // Locks the web→native contract for saving generated images inside the native shells.
 // Android exposes `window.Android.saveBase64Image(base64, mimeType, name)`; iOS exposes a
@@ -138,53 +138,6 @@ describe('nativeImageDownload', () => {
             stubFileReader('data:image/png;base64,QUJD');
             const blob = new Blob(['ABC'], { type: 'image/png' });
             expect(await saveImageViaNativeBridge(blob, 'x.png')).toBe(false);
-        });
-    });
-
-    describe('downloadImage', () => {
-        let clickSpy: jest.SpyInstance;
-
-        beforeEach(() => {
-            clickSpy = jest.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(() => {});
-        });
-
-        afterEach(() => {
-            clickSpy.mockRestore();
-            delete (global as any).fetch;
-        });
-
-        it('triggers a browser download (<a download> click) on the web when no bridge is present', async () => {
-            await downloadImage('blob:https://lumo/abc', 'web-image.png');
-
-            expect(clickSpy).toHaveBeenCalledTimes(1);
-            const link = clickSpy.mock.instances[0] as HTMLAnchorElement;
-            expect(link.href).toBe('blob:https://lumo/abc');
-            expect(link.download).toBe('web-image.png');
-        });
-
-        it('routes to the native bridge and skips the browser download when a bridge is present', async () => {
-            stubFileReader('data:image/png;base64,QUJD');
-            const saveBase64Image = jest.fn();
-            (window as any).Android = { saveBase64Image };
-            (global as any).fetch = jest.fn().mockResolvedValue({
-                blob: async () => new Blob(['ABC'], { type: 'image/png' }),
-            });
-
-            await downloadImage('blob:https://lumo/abc', 'native-image.png');
-
-            expect(saveBase64Image).toHaveBeenCalledWith('QUJD', 'image/png', 'native-image.png');
-            expect(clickSpy).not.toHaveBeenCalled();
-        });
-
-        it('falls back to the browser download when fetching the image for the native save fails', async () => {
-            const consoleError = jest.spyOn(console, 'error').mockImplementation(() => {});
-            (window as any).Android = { saveBase64Image: jest.fn() };
-            (global as any).fetch = jest.fn().mockRejectedValue(new Error('network'));
-
-            await downloadImage('blob:https://lumo/abc', 'fallback.png');
-
-            expect(clickSpy).toHaveBeenCalledTimes(1);
-            consoleError.mockRestore();
         });
     });
 });

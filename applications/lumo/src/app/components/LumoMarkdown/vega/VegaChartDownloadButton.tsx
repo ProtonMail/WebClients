@@ -27,7 +27,7 @@ export const VegaChartDownloadButton = ({ getView, filename }: VegaChartDownload
         setIsDownloading(true);
         try {
             const url = await view.toImageURL('png', 2);
-            triggerFileDownload(url, filename);
+            await triggerFileDownload(url, filename, 'image');
         } catch (error) {
             if (process.env.NODE_ENV !== 'production') {
                 console.warn('[VegaChartDownloadButton] Failed to export chart:', error);
