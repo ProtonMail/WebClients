@@ -438,6 +438,12 @@
       "Join": [
         "Deltag"
       ],
+      "Join and leave sounds": [
+        "Lyde ved til- og fraslutning"
+      ],
+      "Join in browser": [
+        "Tilslut via browseren"
+      ],
       "Join meeting": [
         "Deltag i mødet"
       ],
@@ -507,14 +513,14 @@
       "Not now": [
         "Ikke nu"
       ],
-      "Open app": [
-        "Åbn app"
-      ],
       "Open link": [
         "Åbn link"
       ],
       "Open mention from ${ senderName } in chat": [
         "Åbn omtale fra ${ senderName } i chatten"
+      ],
+      "Open this meeting in the desktop app": [
+        "Åbn mødet i skrivebordsappen"
       ],
       "Participants": [
         "Deltagere"
@@ -707,6 +713,9 @@
       "Start meeting": [
         "Start møde"
       ],
+      "Start meeting in browser": [
+        "Start mødet i browseren"
+      ],
       "Start new meeting": [
         "Start et nyt møde"
       ],
@@ -858,6 +867,9 @@
       ],
       "Incoming video": [
         "Indgående video"
+      ],
+      "Join and leave sounds": [
+        "Lyde ved til- og fraslutning"
       ],
       "Leave Meeting": [
         "Forlad møde"
@@ -2247,6 +2259,9 @@
       "Not a valid number": [
         "Ikke et gyldigt nummer"
       ],
+      "Not enough storage space to record. Free up space and try again.": [
+        "Der er ikke nok lagerplads til at optage. Frigør plads og prøv igen."
+      ],
       "Only admins can convert external invitations": [
         "Kun admins kan konvertere eksterne invitationer"
       ],
@@ -2276,6 +2291,9 @@
       ],
       "Please allow screen sharing in your system permissions, then try again": [
         "Tillad skærmdeling i dine systemtilladelser og prøv så igen"
+      ],
+      "Recording stopped because it could not be saved. We kept it up to this point.": [
+        "Optagelsen blev stoppet, fordi den ikke kunne gemmes. Vi har gemt den hidtidige optagelse."
       ],
       "Renaming root item is not allowed": [
         "Omdøbning af rodelementet er ikke tilladt"
@@ -2646,6 +2664,9 @@
       "${ MEET_APP_NAME } needs microphone access so others can hear you during the call. You can turn it off at any time.": [
         "${ MEET_APP_NAME } skal bruge adgang til mikrofonen så andre kan høre dig i opkaldet. Du kan slå det fra når som helst."
       ],
+      "${ MEET_APP_NAME } needs screen recording access so you can share your screen during the call. After you allow it, macOS will ask you to reopen the app.": [
+        "${ MEET_APP_NAME } skal have tilladelse til at optage skærmen, så du kan dele din skærm under opkaldet. Efter du har givet tilladelse vil macOS bede dig om at åbne appen igen."
+      ],
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } kræver WebRTC for at køre. Opdatér din browser eller enhed til en version, der understøtter WebRTC, prøv en anden browser, eller deaktivér eventuelle udvidelser, der måtte blokere det."
       ],
@@ -2723,11 +2744,17 @@
       "Allow camera access to preview your background": [
         "Tillad adgang til kameraet for at forhåndsvise din baggrund"
       ],
+      "Already in the app? You can close this tab.": [
+        "Er du allerede i appen? Du kan lukke denne fane."
+      ],
       "Anonymous ${ particle } ${ participantNumber }": [
         "Anonym ${ particle } ${ participantNumber }"
       ],
       "Anyone with the link can join immediately": [
         "Enhver med linket kan tilslutte sig øjeblikkeligt"
+      ],
+      "App didn't open?": [
+        "Åbnede appen ikke?"
       ],
       "Approve participants before they can join": [
         "Godkend deltagere før de kan deltage"
@@ -2864,6 +2891,9 @@
       "End the meeting for everyone?": [
         "Afslut mødet for alle?"
       ],
+      "End to end encrypted chat": [
+        "End-to-end-krypteret chat"
+      ],
       "End-to-end encryption is active for audio and video.": [
         "End-to-end kryptering er aktiv for lyd og video."
       ],
@@ -2923,9 +2953,6 @@
       ],
       "Get a secure meeting link then add it to your calendar": [
         "Få et sikkert mødelink, og tilføj det derefter til din kalender"
-      ],
-      "Get the best experience with the ${ protonMeet } desktop app": [
-        "Få den bedste oplevelse med desktop-appen ${ protonMeet }"
       ],
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "Gå til about:config, søg efter media.peerconnection.enabled, og sæt den til true."
@@ -3044,6 +3071,9 @@
       "Meeting recordings aren’t supported in Firefox.": [
         "Mødeoptagelser understøttes ikke i Firefox."
       ],
+      "Meeting recordings aren’t supported in Safari private mode.": [
+        "Mødeoptagelser understøttes ikke i privattilstand i Safari."
+      ],
       "Meeting time is up": [
         "Mødetiden er opbrugt"
       ],
@@ -3145,6 +3175,9 @@
       ],
       "Now using ${ first }.": [
         "Bruger nu ${ first }."
+      ],
+      "Only a partial meeting recording was available.": [
+        "Kun en del af mødeoptagelsen var tilgængelig."
       ],
       "Only meetings you created appear here": [
         "Kun møder oprettet af dig vises her"
@@ -3349,6 +3382,9 @@
       ],
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "Denne chat er end-to-end krypteret, og beskeder forsvinder når opkaldet afsluttes."
+      ],
+      "This meeting has a time limit. This call will disconnect soon.": [
+        "Dette møde er tidsbegrænset. Opkaldet afbrydes snart."
       ],
       "This meeting has a waiting room": [
         "Dette møde har et venteværelse"
@@ -4210,6 +4246,9 @@
       ],
       "Allow microphone": [
         "Tillad mikrofon"
+      ],
+      "Allow screen recording": [
+        "Tillad skærmoptagelse"
       ],
       "Are you sure?": [
         "Er du sikker?"

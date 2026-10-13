@@ -510,9 +510,6 @@
       "Not now": [
         "Nu acum"
       ],
-      "Open app": [
-        "Deschidere aplicație"
-      ],
       "Open link": [
         "Deschidere legătură web"
       ],
@@ -2253,6 +2250,9 @@
       "Not a valid number": [
         "Nu este un număr valid"
       ],
+      "Not enough storage space to record. Free up space and try again.": [
+        "Spațiu de stocare insuficient pentru înregistrare. Eliberați spațiu și reîncercați."
+      ],
       "Only admins can convert external invitations": [
         "Doar administratorii pot converti invitațiile externe."
       ],
@@ -2282,6 +2282,9 @@
       ],
       "Please allow screen sharing in your system permissions, then try again": [
         "Permiteți partajarea ecranului în permisiunile de sistem, apoi reîncercați."
+      ],
+      "Recording stopped because it could not be saved. We kept it up to this point.": [
+        "Înregistrarea s-a oprit deoarece nu a putut fi salvată. S-a păstrat până în acest punct."
       ],
       "Renaming root item is not allowed": [
         "Redenumirea articolului rădăcină nu este permisă."
@@ -2658,6 +2661,9 @@
       "${ MEET_APP_NAME } needs microphone access so others can hear you during the call. You can turn it off at any time.": [
         "${ MEET_APP_NAME } are nevoie de acces la microfon pentru ca ceilalți să vă poată auzi pe durata apelului. Puteți dezactiva opțiunea oricând."
       ],
+      "${ MEET_APP_NAME } needs screen recording access so you can share your screen during the call. After you allow it, macOS will ask you to reopen the app.": [
+        "${ MEET_APP_NAME } are nevoie de acces la înregistrarea ecranului pentru a vă permite să partajați ecranul pe durata apelului. După ce acordați permisiunea, macOS vă va solicita să redeschideți aplicația."
+      ],
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } necesită WebRTC pentru a funcționa. Actualizați navigatorul web sau dispozitivul la o versiune care acceptă WebRTC, încercați un alt navigator web sau dezactivați orice extensii care ar putea să-l blocheze."
       ],
@@ -2881,6 +2887,9 @@
       "End the meeting for everyone?": [
         "Încheiați conferința pentru toată lumea?"
       ],
+      "End to end encrypted chat": [
+        "Conversație cu criptare bilaterală"
+      ],
       "End-to-end encryption is active for audio and video.": [
         "Criptarea bilaterală este activă pentru audio și video."
       ],
@@ -2940,9 +2949,6 @@
       ],
       "Get a secure meeting link then add it to your calendar": [
         "Obțineți o legătură web securizată pentru conferință, apoi adăugați-o în calendarul personal."
-      ],
-      "Get the best experience with the ${ protonMeet } desktop app": [
-        "Obțineți cea mai bună experiență cu aplicația desktop ${ protonMeet }"
       ],
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "Accesați opțiunea „about:config”, căutați „media.peerconnection.enabled” și setați la „true”."
@@ -3061,6 +3067,9 @@
       "Meeting recordings aren’t supported in Firefox.": [
         "Înregistrările conferințelor nu sunt suportate în Firefox."
       ],
+      "Meeting recordings aren’t supported in Safari private mode.": [
+        "Înregistrările conferințelor nu sunt acceptate în modul de navigare privată din Safari."
+      ],
       "Meeting time is up": [
         "Timpul conferinței a expirat"
       ],
@@ -3162,6 +3171,9 @@
       ],
       "Now using ${ first }.": [
         "Acum se utilizează ${ first }."
+      ],
+      "Only a partial meeting recording was available.": [
+        "A fost disponibilă doar o înregistrare parțială a conferinței."
       ],
       "Only meetings you created appear here": [
         "Aici apar doar conferințele pe care le-ați creat."
@@ -3366,6 +3378,9 @@
       ],
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "Aceasta este o conversație criptată bilateral cu mesaje efemere, care dispar la sfârșitul apelului."
+      ],
+      "This meeting has a time limit. This call will disconnect soon.": [
+        "Această conferință are o limită de timp. Apelul se va întrerupe în curând."
       ],
       "This meeting has a waiting room": [
         "Această conferință are o sală de așteptare."
@@ -4229,6 +4244,9 @@
       ],
       "Allow microphone": [
         "Permitere microfon"
+      ],
+      "Allow screen recording": [
+        "Permitere înregistrare ecran"
       ],
       "Are you sure?": [
         "Confirmați?"

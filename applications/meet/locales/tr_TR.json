@@ -438,6 +438,12 @@
       "Join": [
         "Katıl"
       ],
+      "Join and leave sounds": [
+        "Katıl ve sesi şöyle bırak"
+      ],
+      "Join in browser": [
+        "Tarayıcıdan katıl"
+      ],
       "Join meeting": [
         "Görüşmeye katıl"
       ],
@@ -507,14 +513,14 @@
       "Not now": [
         "Şimdi değil"
       ],
-      "Open app": [
-        "Uygulamayı aç"
-      ],
       "Open link": [
         "Bağlantıyı aç"
       ],
       "Open mention from ${ senderName } in chat": [
         "${ senderName } kullanıcısının anmasını sohbette aç"
+      ],
+      "Open this meeting in the desktop app": [
+        "Bu görüşmeyi bilgisayar uygulamasında aç"
       ],
       "Participants": [
         "Katılımcılar"
@@ -707,6 +713,9 @@
       "Start meeting": [
         "Görüşme başlat"
       ],
+      "Start meeting in browser": [
+        "Tarayıcıdan görüşmeyi başlat"
+      ],
       "Start new meeting": [
         "Yeni görüşme başlat"
       ],
@@ -858,6 +867,9 @@
       ],
       "Incoming video": [
         "Gelen görüntü"
+      ],
+      "Join and leave sounds": [
+        "Katıl ve sesi şöyle bırak"
       ],
       "Leave Meeting": [
         "Görüşmeden ayrıl"
@@ -2247,6 +2259,9 @@
       "Not a valid number": [
         "Numara geçerli değil"
       ],
+      "Not enough storage space to record. Free up space and try again.": [
+        "Kayıt için yeterli depolama alanı yok. Yer açıp yeniden deneyin."
+      ],
       "Only admins can convert external invitations": [
         "Yalnızca yöneticiler dış davetleri dönüştürebilir"
       ],
@@ -2276,6 +2291,9 @@
       ],
       "Please allow screen sharing in your system permissions, then try again": [
         "Lütfen sistem izinlerinizden ekran paylaşımı iznini verip yeniden deneyin"
+      ],
+      "Recording stopped because it could not be saved. We kept it up to this point.": [
+        "Dosya kaydedilemediğinden görüşme kaydı durduruldu. Bu ana kadar kayıt yapıldı."
       ],
       "Renaming root item is not allowed": [
         "Kök öge yeniden adlandırılamaz"
@@ -2646,6 +2664,9 @@
       "${ MEET_APP_NAME } needs microphone access so others can hear you during the call. You can turn it off at any time.": [
         "Görüşme sırasında diğerlerinin sizi duyabilmesi için ${ MEET_APP_NAME } uygulamasının mikrofona erişmesi gerekiyor. Bunu istediğiniz zaman kapatabilirsiniz."
       ],
+      "${ MEET_APP_NAME } needs screen recording access so you can share your screen during the call. After you allow it, macOS will ask you to reopen the app.": [
+        "${ MEET_APP_NAME } çağrı sırasında ekranınızı paylaşabilmeniz için ekran kaydı yapma iznine gerek duyar. İzin verdikten sonra macOS sizden uygulamayı yeniden açmanızı isteyecek."
+      ],
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } uygulamasının çalışması için WebRTC gereklidir. Lütfen tarayıcınızı veya aygıtınızı WebRTC hizmetini destekleyen bir sürüme güncelleyin, farklı bir tarayıcı kullanmayı deneyin veya hizmeti engelleyebilecek tüm eklentileri kapatın."
       ],
@@ -2723,11 +2744,17 @@
       "Allow camera access to preview your background": [
         "Arka planınızın ön izlemesini görmek için kameraya erişme izni verin"
       ],
+      "Already in the app? You can close this tab.": [
+        "Zaten uygulamada mısınız? Bu sekmeyi kapatabilirsiniz."
+      ],
       "Anonymous ${ particle } ${ participantNumber }": [
         "${ particle } ${ participantNumber } anonim"
       ],
       "Anyone with the link can join immediately": [
         "Bağlantıyı bilen herkes hemen katılabilir"
+      ],
+      "App didn't open?": [
+        "Uygulama açılmadı mı?"
       ],
       "Approve participants before they can join": [
         "Katılımcıların katılmadan önce onaylanmaları gerekir"
@@ -2864,6 +2891,9 @@
       "End the meeting for everyone?": [
         "Görüşme herkes için sonlandırılsın mı?"
       ],
+      "End to end encrypted chat": [
+        "Uçtan uca şifrelenmiş sohbet"
+      ],
       "End-to-end encryption is active for audio and video.": [
         "Ses ve görüntü uçtan uca şifreleme ile korunuyor."
       ],
@@ -2923,9 +2953,6 @@
       ],
       "Get a secure meeting link then add it to your calendar": [
         "Bir güvenli görüşme bağlantısı oluşturun ve bunu takviminize ekleyin"
-      ],
-      "Get the best experience with the ${ protonMeet } desktop app": [
-        "${ protonMeet } bilgisayar uygulamasıyla en iyi deneyimi yaşayın"
       ],
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "about:config adresine gidin, media.peerconnection.enabled değerini bulun ve \"true\" olarak ayarlayın."
@@ -3044,6 +3071,9 @@
       "Meeting recordings aren’t supported in Firefox.": [
         "Firefox üzerinde görüşme kaydı desteklenmiyor."
       ],
+      "Meeting recordings aren’t supported in Safari private mode.": [
+        "Safari özel pencerelerinde görüşmelerin kaydedilmesi desteklenmez."
+      ],
       "Meeting time is up": [
         "Görüşmenin zamanı doldu"
       ],
@@ -3146,6 +3176,9 @@
       "Now using ${ first }.": [
         "Şu anda ${ first } kullanılıyor."
       ],
+      "Only a partial meeting recording was available.": [
+        "Görüşme kaydının yalnızca bir bölümü vardı."
+      ],
       "Only meetings you created appear here": [
         "Burada yalnızca sizin oluşturduğunuz görüşmeler görüntülenir"
       ],
@@ -3183,7 +3216,7 @@
         "İzinler verilmemiş."
       ],
       "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
-        "En iyi deneyim için lütfen ${ microphoneLinkButton }${ andString }${ cameraLinkButton } için erişim izinlerini verin."
+        "En iyi deneyim için lütfen ${ microphoneLinkButton }${ andString }${ cameraLinkButton } erişme izinlerini verin."
       ],
       "Please try again or try another browser": [
         "Lütfen yeniden deneyin ya da başka bir tarayıcı kullanın"
@@ -3349,6 +3382,9 @@
       ],
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "Bu şifrelenmiş sohbette, çağrı sonunda kaybolacak olan süreli iletiler kullanılıyor."
+      ],
+      "This meeting has a time limit. This call will disconnect soon.": [
+        "Bu görüşmenin bir zaman sınırı var. Bu çağrı yakında sonlandırılacak."
       ],
       "This meeting has a waiting room": [
         "Bu görüşmenin bekleme odası var"
@@ -4210,6 +4246,9 @@
       ],
       "Allow microphone": [
         "Mikrofona erişme izin ver"
+      ],
+      "Allow screen recording": [
+        "Ekran kaydı alınabilsin"
       ],
       "Are you sure?": [
         "Emin misiniz?"
