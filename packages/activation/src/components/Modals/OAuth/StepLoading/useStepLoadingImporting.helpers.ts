@@ -14,15 +14,20 @@ import { getPrimaryKey } from '@proton/shared/lib/keys';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { startImportTask } from '../../../../api';
-import type { CalendarImportMapping, LaunchImportPayload } from '../../../../interface';
+import type { CalendarImportMapping, ImportProvider, LaunchImportPayload } from '../../../../interface';
 import { ImportType, IsCustomCalendarMapping } from '../../../../interface';
 import { changeOAuthStep, resetOauthDraft } from '../../../../logic/draft/oauthDraft/oauthDraft.actions';
 import type { ImporterCalendar, ImporterData } from '../../../../logic/draft/oauthDraft/oauthDraft.interface';
+import {
+    trackEasySwitchCreationError,
+    trackEasySwitchImporterCreated,
+} from '../../../../telemetry/easySwitchCreationFunnel';
 import { formatPrepareStepPayload } from '../../Imap/ImapMailModal/StepPrepareImap/StepPrepareImap.helpers';
 import { startDriveImportTask } from '../Drive/driveImportTask';
 
 interface StartImporterProps {
     api: Api;
+    provider: ImportProvider | undefined;
     isLabelMapping: boolean;
     products: ImportType[];
     importerData: ImporterData;
@@ -99,6 +104,7 @@ const createCalendars = async ({
 };
 
 export const createImporterTask = async ({
+    provider,
     isLabelMapping,
     products,
     importerData,
@@ -116,6 +122,7 @@ export const createImporterTask = async ({
     increaseCalendarCount,
 }: StartImporterProps) => {
     if (!importerData || !products) {
+        trackEasySwitchCreationError({ provider, products, errorStep: 'import_payload' });
         throw new Error('Importer data and products should be defined');
     }
 
@@ -193,6 +200,7 @@ export const createImporterTask = async ({
             };
             setIsCreatingCalendar(false);
         } catch (e) {
+            trackEasySwitchCreationError({ provider, products, errorStep: 'calendar_creation' });
             //Rollback to previous state if an error occurred during calendar creation
             dispatch(changeOAuthStep('prepare-import'));
             captureMessage('Error while creating calendars', {
@@ -202,36 +210,42 @@ export const createImporterTask = async ({
         }
     }
 
-    if (products.includes(ImportType.MAIL)) {
-        const emailsFields = importerData.emails?.fields!;
-        const emailsInitialFields = importerData.emails?.initialFields!;
+    try {
+        if (products.includes(ImportType.MAIL)) {
+            const emailsFields = importerData.emails?.fields!;
+            const emailsInitialFields = importerData.emails?.initialFields!;
 
-        const isCustomPeriod = emailsInitialFields.importPeriod !== emailsFields?.importPeriod;
-        const isCustomLabel = !isDeepEqual(emailsInitialFields?.importLabel, emailsFields?.importLabel);
-        const isCustomMapping = !isDeepEqual(emailsInitialFields?.mapping, emailsFields?.mapping);
+            const isCustomPeriod = emailsInitialFields.importPeriod !== emailsFields?.importPeriod;
+            const isCustomLabel = !isDeepEqual(emailsInitialFields?.importLabel, emailsFields?.importLabel);
+            const isCustomMapping = !isDeepEqual(emailsInitialFields?.mapping, emailsFields?.mapping);
 
-        const payload = formatPrepareStepPayload({
-            isLabelMapping,
-            data: {
-                email: importerData.importedEmail,
-                importerID: importerData.importerId,
-            },
-            fields: emailsFields,
-            updatedFields: {
-                updatedPeriod: isCustomPeriod,
-                updatedLabel: isCustomLabel,
-                updatedMapping: isCustomMapping,
-            },
-        });
+            const payload = formatPrepareStepPayload({
+                isLabelMapping,
+                data: {
+                    email: importerData.importedEmail,
+                    importerID: importerData.importerId,
+                },
+                fields: emailsFields,
+                updatedFields: {
+                    updatedPeriod: isCustomPeriod,
+                    updatedLabel: isCustomLabel,
+                    updatedMapping: isCustomMapping,
+                },
+            });
 
-        importPayload.Mail = payload.Mail;
-    }
+            importPayload.Mail = payload.Mail;
+        }
 
-    if (products.includes(ImportType.CONTACTS)) {
-        importPayload.Contacts = {};
+        if (products.includes(ImportType.CONTACTS)) {
+            importPayload.Contacts = {};
+        }
+    } catch (error) {
+        trackEasySwitchCreationError({ provider, products, errorStep: 'import_payload' });
+        throw error;
     }
 
     let isErrorReported = false;
+    let isImporterCreated = false;
     try {
         setIsCreatingImportTask(true);
 
@@ -255,6 +269,14 @@ export const createImporterTask = async ({
         } else {
             await api(startImportTask(importPayload));
         }
+
+        // The import is running: it is created even if refreshing the events fails below
+        isImporterCreated = true;
+        trackEasySwitchImporterCreated({
+            provider,
+            products,
+            importPeriod: products.includes(ImportType.MAIL) ? importerData.emails?.fields?.importPeriod : undefined,
+        });
         await call();
         setIsCreatingImportTask(false);
 
@@ -262,6 +284,9 @@ export const createImporterTask = async ({
     } catch (error) {
         if (createdCalendars) {
             await call();
+        }
+        if (!isImporterCreated) {
+            trackEasySwitchCreationError({ provider, products, errorStep: 'import_start' });
         }
         // Already reported to Sentry with context --> only notify the user
         errorHandler(error, { trace: !isErrorReported });
