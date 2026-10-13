@@ -1,3 +1,10 @@
+import {
+  $createTableSelection,
+  $createTableNodeWithDimensions,
+  TableNode,
+  TableRowNode,
+  TableCellNode,
+} from '@lexical/table'
 import { createHeadlessEditor } from '@lexical/headless'
 import {
   $generateJSONFromSelectedNodes,
@@ -6,6 +13,7 @@ import {
   setLexicalClipboardDataTransfer,
 } from '@lexical/clipboard'
 import {
+  createEditor,
   $createParagraphNode,
   $createRangeSelection,
   $createTextNode,
@@ -20,9 +28,11 @@ import {
   CUT_COMMAND,
   PASTE_COMMAND,
   type LexicalEditor,
+  type ParagraphNode,
 } from 'lexical'
 import { $createCommentThreadMarkNode, CommentThreadMarkNode } from './CommentThreadMarkNode'
 import { registerCommentCutMove } from './registerCommentCutMove'
+import { registerTableSelectionObserverWithCommentCut } from '../Table/registerTableSelectionObserverWithCommentCut'
 
 function clipboard() {
   const values = new Map<string, string>()
@@ -32,18 +42,48 @@ function clipboard() {
   } as unknown as DataTransfer
 }
 function event(data: DataTransfer) {
-  return { clipboardData: data, preventDefault: jest.fn() } as unknown as ClipboardEvent
+  const clipboardEvent = new ClipboardEvent('cut')
+  Object.defineProperty(clipboardEvent, 'clipboardData', { value: data })
+  clipboardEvent.preventDefault = jest.fn()
+  return clipboardEvent
 }
+// JSDOM does not expose ClipboardEvent, which the real table cut handler checks.
+const originalClipboardEvent = globalThis.ClipboardEvent
+beforeAll(() => {
+  if (!originalClipboardEvent) {
+    Object.defineProperty(globalThis, 'ClipboardEvent', { configurable: true, value: class extends Event {} })
+  }
+})
+afterAll(() => {
+  if (!originalClipboardEvent) {
+    Reflect.deleteProperty(globalThis, 'ClipboardEvent')
+  }
+})
 const cleanups: (() => void)[] = []
 afterEach(() => cleanups.splice(0).forEach((cleanup) => cleanup()))
-function makeEditor(documentId = 'doc-1', threadIDs = new Set(['thread-1', 'thread-2'])) {
-  const editor = createHeadlessEditor({
+function makeEditor(documentId = 'doc-1', threadIDs = new Set(['thread-1', 'thread-2']), tableCount = 0) {
+  const editor = (tableCount ? createEditor : createHeadlessEditor)({
     namespace: 'editor',
-    nodes: [CommentThreadMarkNode],
+    nodes: [CommentThreadMarkNode, TableNode, TableRowNode, TableCellNode],
     onError: (error) => {
       throw error
     },
   })
+  if (tableCount) {
+    const root = document.createElement('div')
+    document.body.append(root)
+    editor.setRootElement(root)
+    cleanups.push(() => {
+      editor.setRootElement(null)
+      root.remove()
+    })
+    cleanups.push(registerTableSelectionObserverWithCommentCut(editor))
+    update(editor, () => {
+      for (let i = 0; i < tableCount; i++) {
+        $getRoot().append($createTableNodeWithDimensions(1, 1))
+      }
+    })
+  }
   cleanups.push(registerCommentCutMove(editor, documentId, () => threadIDs))
   // These fallbacks use the same clipboard and deletion routines as rich-text.
   // Headless editors have no native DOM selection for rich-text's copy handler.
@@ -133,6 +173,87 @@ function paste(editor: LexicalEditor, data: DataTransfer) {
     editor.dispatchCommand(PASTE_COMMAND, event(data))
   })
 }
+
+it.each([1, 2])('moves comments outside tables when the document contains %s tables', (tableCount) => {
+  const editor = makeEditor('doc-1', new Set(['thread-1']), tableCount)
+  prepare(editor)
+  const data = cut(editor)
+  paste(editor, data)
+  expect(marks(editor)).toEqual([{ ids: ['thread-1'], text: 'commented' }])
+})
+
+it('moves commented text from a table cell to a paragraph', () => {
+  const editor = makeEditor('doc-1', new Set(['thread-1']), 1)
+  prepare(editor)
+  update(editor, () => {
+    const source = $getRoot().getChildAtIndex(1)!
+    const cell = $nodesOfType(TableCellNode)[0]
+    cell.clear().append(source)
+  })
+  const data = cut(editor)
+  paste(editor, data)
+  expect(marks(editor)).toEqual([{ ids: ['thread-1'], text: 'commented' }])
+})
+
+it('moves comments before a table into a table cell', () => {
+  const editor = makeEditor('doc-1', new Set(['thread-1']), 1)
+  prepare(editor)
+  update(editor, () => {
+    const table = $nodesOfType(TableNode)[0]
+    table.insertBefore($getRoot().getChildAtIndex(1)!)
+  })
+  const data = cut(editor)
+  update(editor, () => {
+    $nodesOfType(TableCellNode)[0].selectStart()
+    editor.dispatchCommand(PASTE_COMMAND, event(data))
+  })
+  expect(marks(editor)).toEqual([{ ids: ['thread-1'], text: 'commented' }])
+  editor.getEditorState().read(() => {
+    expect($nodesOfType(TableCellNode)[0].getTextContent()).toBe('commented')
+  })
+})
+
+it('leaves a partial comment anchor in its table cell', () => {
+  const editor = makeEditor('doc-1', new Set(['thread-1']), 1)
+  prepare(editor, 'partial')
+  update(editor, () => {
+    $nodesOfType(TableCellNode)[0].clear().append($getRoot().getChildAtIndex(1)!)
+  })
+  const data = cut(editor)
+  expect(data.getData('text/plain')).toBe('mmen')
+  expect(data.getData('application/x-lexical-editor')).not.toContain('protonCommentMoveToken')
+  paste(editor, data)
+  expect(marks(editor)).toEqual([{ ids: ['thread-1'], text: 'coted' }])
+})
+
+it('keeps ordinary text cuts working with a table present', () => {
+  const editor = makeEditor('doc-1', new Set(['thread-1']), 1)
+  prepare(editor)
+  update(editor, () => $getRoot().getLastChildOrThrow<ParagraphNode>().select(0, 1))
+  const data = cut(editor)
+  expect(data.getData('text/plain')).toBe('destination ')
+  expect(data.getData('application/x-lexical-editor')).not.toContain('protonCommentMoveToken')
+  paste(editor, data)
+  expect(marks(editor)).toEqual([{ ids: ['thread-1'], text: 'commented' }])
+})
+
+it('leaves whole-table cuts to the table observer', () => {
+  const editor = makeEditor('doc-1', new Set(['thread-1']), 1)
+  prepare(editor)
+  update(editor, () => {
+    const cell = $nodesOfType(TableCellNode)[0]
+    cell.clear().append($getRoot().getChildAtIndex(1)!)
+    const selection = $createTableSelection()
+    selection.set($nodesOfType(TableNode)[0].getKey(), cell.getKey(), cell.getKey())
+    $setSelection(selection)
+  })
+  const data = cut(editor)
+  expect(data.getData('text/plain')).toContain('commented')
+  expect(data.getData('application/x-lexical-editor')).not.toContain('protonCommentMoveToken')
+  editor.getEditorState().read(() => {
+    expect($nodesOfType(TableNode)).toHaveLength(0)
+  })
+})
 
 it.each(['exact', 'surrounding', 'backward'] as const)(
   'moves a fully cut anchor (%s), keeping IDs off public clipboard formats',

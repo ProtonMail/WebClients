@@ -6,7 +6,6 @@ import {
   $isTableSelection,
   registerTableCellUnmergeTransform,
   registerTablePlugin,
-  registerTableSelectionObserver,
   setScrollableTablesActive,
   TableNode,
 } from '@lexical/table'
@@ -52,6 +51,7 @@ import { $handleDeleteTableRowCommand } from './TableUtils/handleDeleteTableRowC
 import { $handleDeleteTableColumnCommand } from './TableUtils/handleDeleteTableColumnCommand'
 import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
 import { $fitTableToPageWidth, $getPastedTablesWithoutExplicitWidths } from './TableUtils/fitTableToPageWidth'
+import { registerTableSelectionObserverWithCommentCut } from './registerTableSelectionObserverWithCommentCut'
 
 export function TablePlugin(): JSX.Element | null {
   const [editor] = useLexicalComposerContext()
@@ -228,7 +228,7 @@ export function TablePlugin(): JSX.Element | null {
     )
   }, [editor])
 
-  useEffect(() => registerTableSelectionObserver(editor, true), [editor])
+  useEffect(() => registerTableSelectionObserverWithCommentCut(editor), [editor])
 
   useEffect(() => registerTableCellUnmergeTransform(editor), [editor])
 

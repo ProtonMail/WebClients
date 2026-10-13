@@ -27,6 +27,7 @@ import {
 } from 'lexical'
 import { CommentThreadMarkNode } from './CommentThreadMarkNode'
 import { withCommentCutSerialization } from './CommentCutSerialization'
+import { CUT_COMMENT_COMMAND } from './Commands'
 
 type ClipboardNode = SerializedLexicalNode & { children?: ClipboardNode[]; ids?: string[] }
 type PendingMove = {
@@ -84,66 +85,68 @@ export function registerCommentCutMove(
       },
       COMMAND_PRIORITY_NORMAL,
     ),
-    editor.registerCommand(
-      CUT_COMMAND,
-      (event) => {
-        pendingMove = undefined
-        const selection = $getSelection()
-        if (
-          !editor.isEditable() ||
-          !event ||
-          !('clipboardData' in event) ||
-          !event.clipboardData ||
-          !$isRangeSelection(selection) ||
-          selection.isCollapsed()
-        ) {
-          return false
-        }
-        const marks = $nodesOfType(CommentThreadMarkNode)
-        const selected = marks.filter((node) => $isFullySelected(node, selection))
-        const ids = new Set(selected.flatMap((node) => node.getIDs()))
-        // A thread can span several marks. Preserve it only if all its anchors
-        // move; a partial cut leaves the thread attached to the remaining text.
-        for (const mark of marks) {
-          if (!selected.includes(mark)) {
-            mark.getIDs().forEach((id) => ids.delete(id))
+    ...[CUT_COMMAND, CUT_COMMENT_COMMAND].map((command) =>
+      editor.registerCommand(
+        command,
+        (event) => {
+          pendingMove = undefined
+          const selection = $getSelection()
+          if (
+            !editor.isEditable() ||
+            !event ||
+            !('clipboardData' in event) ||
+            !event.clipboardData ||
+            !$isRangeSelection(selection) ||
+            selection.isCollapsed()
+          ) {
+            return false
           }
-        }
-        if (ids.size === 0) {
-          return false
-        }
-        const data = $getClipboardDataFromSelection(selection)
-        const nodes = withCommentCutSerialization(
-          editor,
-          ids,
-          () => $generateJSONFromSelectedNodes(editor, selection).nodes,
-        ) as ClipboardNode[]
-        try {
-          // Carry only an opaque token in Lexical's existing clipboard format.
-          // It survives wherever normal rich Docs clipboard data survives, and
-          // other editors simply ignore the extra field.
-          const payload = JSON.parse(data['application/x-lexical-editor'] ?? '')
-          data['application/x-lexical-editor'] = JSON.stringify({
-            ...payload,
-            protonCommentMoveToken: crypto.randomUUID(),
-          })
-          setLexicalClipboardDataTransfer(event.clipboardData, data)
-        } catch {
-          // Fall back to the normal cut handler if rich clipboard data cannot be written.
-          return false
-        }
-        event.preventDefault()
-        pendingMove = {
-          editor,
-          documentId,
-          clipboardJSON: data['application/x-lexical-editor'] ?? '',
-          nodes: filterMarkIDs(nodes, ids),
-          ids,
-        }
-        selection.removeText()
-        return true
-      },
-      COMMAND_PRIORITY_NORMAL,
+          const marks = $nodesOfType(CommentThreadMarkNode)
+          const selected = marks.filter((node) => $isFullySelected(node, selection))
+          const ids = new Set(selected.flatMap((node) => node.getIDs()))
+          // A thread can span several marks. Preserve it only if all its anchors
+          // move; a partial cut leaves the thread attached to the remaining text.
+          for (const mark of marks) {
+            if (!selected.includes(mark)) {
+              mark.getIDs().forEach((id) => ids.delete(id))
+            }
+          }
+          if (ids.size === 0) {
+            return false
+          }
+          const data = $getClipboardDataFromSelection(selection)
+          const nodes = withCommentCutSerialization(
+            editor,
+            ids,
+            () => $generateJSONFromSelectedNodes(editor, selection).nodes,
+          ) as ClipboardNode[]
+          try {
+            // Carry only an opaque token in Lexical's existing clipboard format.
+            // It survives wherever normal rich Docs clipboard data survives, and
+            // other editors simply ignore the extra field.
+            const payload = JSON.parse(data['application/x-lexical-editor'] ?? '')
+            data['application/x-lexical-editor'] = JSON.stringify({
+              ...payload,
+              protonCommentMoveToken: crypto.randomUUID(),
+            })
+            setLexicalClipboardDataTransfer(event.clipboardData, data)
+          } catch {
+            // Fall back to the normal cut handler if rich clipboard data cannot be written.
+            return false
+          }
+          event.preventDefault()
+          pendingMove = {
+            editor,
+            documentId,
+            clipboardJSON: data['application/x-lexical-editor'] ?? '',
+            nodes: filterMarkIDs(nodes, ids),
+            ids,
+          }
+          selection.removeText()
+          return true
+        },
+        COMMAND_PRIORITY_NORMAL,
+      ),
     ),
     editor.registerCommand(
       PASTE_COMMAND,
