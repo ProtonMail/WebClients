@@ -1,22 +1,23 @@
+import { useSheetsMessages } from '../../SheetsDependenciesProvider'
 import * as Icons from '../icons'
 import * as Ariakit from '@ariakit/react'
 import { clsx } from 'clsx'
 import type { ComponentPropsWithoutRef } from 'react'
 import { forwardRef, useEffect, useRef } from 'react'
-import { c } from 'ttag'
+
 import { FONT_SIZE_DEFAULT, FONT_SIZE_MAX, FONT_SIZE_MIN, FONT_SIZE_SUGGESTIONS } from '../../constants'
-import { createStringifier } from '../../stringifier'
+
 import * as Atoms from '../atoms'
 import * as UI from '../ui'
 import * as T from './primitives'
 import { useUI } from '../../ui-store'
 
-const { s } = createStringifier(strings)
-
 export interface FontSizeControlsProps extends ComponentPropsWithoutRef<'div'> {}
 
 export const FontSizeControls = forwardRef<HTMLDivElement, FontSizeControlsProps>(
   function FontSizeControls(props, ref) {
+    const messages = useSheetsMessages()
+
     const { $ } = useUI
     const realValue = useUI((ui) => ui.format.text.fontSize.value) ?? FONT_SIZE_DEFAULT
     return (
@@ -34,7 +35,7 @@ export const FontSizeControls = forwardRef<HTMLDivElement, FontSizeControlsProps
             </Atoms.KbdShortcut>
           }
         >
-          {s('Decrease font size')}
+          {messages.fontSizeControls['Decrease font size']}
         </T.Item>
         <FontSizeCombobox realValue={realValue} />
         <T.Item
@@ -50,7 +51,7 @@ export const FontSizeControls = forwardRef<HTMLDivElement, FontSizeControlsProps
             </Atoms.KbdShortcut>
           }
         >
-          {s('Increase font size')}
+          {messages.fontSizeControls['Increase font size']}
         </T.Item>
       </div>
     )
@@ -60,6 +61,8 @@ export const FontSizeControls = forwardRef<HTMLDivElement, FontSizeControlsProps
 type FontSizeComboboxProps = { realValue: number }
 
 function FontSizeCombobox({ realValue }: FontSizeComboboxProps) {
+  const messages = useSheetsMessages()
+
   const { $ } = useUI
   const comboboxRef = useRef<HTMLInputElement>(null)
   const setFontSize = $.format.text.fontSize.set
@@ -136,7 +139,7 @@ function FontSizeCombobox({ realValue }: FontSizeComboboxProps) {
         <Ariakit.TooltipAnchor
           render={
             <Ariakit.ToolbarItem
-              aria-label={s('Font size')}
+              aria-label={messages.fontSizeControls['Font size']}
               disabled={useUI((ui) => ui.info.isReadonly)}
               render={
                 <Ariakit.Combobox
@@ -189,7 +192,7 @@ function FontSizeCombobox({ realValue }: FontSizeComboboxProps) {
             />
           }
         />
-        <UI.Tooltip>{s('Font size')}</UI.Tooltip>
+        <UI.Tooltip>{messages.fontSizeControls['Font size']}</UI.Tooltip>
       </Ariakit.TooltipProvider>
       {mounted && <FontSizeComboboxPopover />}
     </Ariakit.ComboboxProvider>
@@ -209,10 +212,10 @@ function FontSizeComboboxPopover() {
   )
 }
 
-function strings() {
-  return {
-    'Decrease font size': c('sheets_2025:Spreadsheet editor toolbar').t`Decrease font size`,
-    'Font size': c('sheets_2025:Spreadsheet editor toolbar').t`Font size`,
-    'Increase font size': c('sheets_2025:Spreadsheet editor toolbar').t`Increase font size`,
-  }
+export const fontSizeControlsMessages = {
+  fontSizeControls: {
+    'Decrease font size': `Decrease font size`,
+    'Font size': `Font size`,
+    'Increase font size': `Increase font size`,
+  },
 }

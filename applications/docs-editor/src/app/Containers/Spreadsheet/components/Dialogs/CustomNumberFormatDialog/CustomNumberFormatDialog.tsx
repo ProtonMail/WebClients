@@ -1,9 +1,10 @@
-import { c } from 'ttag'
+import { useSheetsMessages } from '../../../SheetsDependenciesProvider'
+
 import { useMemo, useState } from 'react'
 import { ssfFormat, ssfFormatColor } from '@rowsncolumns/utils'
-import { createStringifier } from '../../../stringifier'
+
 import { useUI } from '../../../ui-store'
-import clsx from 'clsx'
+import { clsx } from 'clsx'
 import * as Ariakit from '@ariakit/react'
 import { Button, FormGroup, FormLabel, Input } from '../../Sidebar/shared'
 import {
@@ -32,9 +33,9 @@ const LABEL_STRING_KEY = {
   text: 'Text',
 } as const satisfies Record<PatternPartLabel, string>
 
-const { s } = createStringifier(strings)
-
 export function CustomNumberFormatDialog() {
+  const messages = useSheetsMessages()
+
   const store = useUI((ui) => ui.view.customNumberFormatDialog.store)
   const sheetId = useUI((ui) => ui.legacy.activeSheetId)
   const selections = useUI((ui) => ui.legacy.selections)
@@ -107,14 +108,16 @@ export function CustomNumberFormatDialog() {
       >
         <div className="flex flex-col">
           <div className="mb-6">
-            <Ariakit.DialogHeading className="text-lg font-bold">{s('Custom number formats')}</Ariakit.DialogHeading>
+            <Ariakit.DialogHeading className="text-lg font-bold">
+              {messages.customNumberFormatDialog['Custom number formats']}
+            </Ariakit.DialogHeading>
           </div>
 
           <div className="mb-4 shrink-0">
             <FormGroup>
-              <FormLabel>{s('Format')}</FormLabel>
+              <FormLabel>{messages.customNumberFormatDialog.Format}</FormLabel>
               <Input
-                placeholder={s('Custom number format')}
+                placeholder={messages.customNumberFormatDialog['Custom number format']}
                 value={pattern}
                 onChange={(event) => {
                   const value = event.target.value
@@ -129,7 +132,9 @@ export function CustomNumberFormatDialog() {
             <div className="mb-4 grid grid-cols-2 gap-y-1">
               {parts.map((part) => (
                 <div key={part.label} className="text-sm">
-                  <span className="text-[#707070]">{s(LABEL_STRING_KEY[part.label])}:</span>{' '}
+                  <span className="text-[#707070]">
+                    {messages.customNumberFormatDialog[LABEL_STRING_KEY[part.label]]}:
+                  </span>{' '}
                   <span style={part.color ? { color: part.color } : undefined}>
                     {ssfFormat(pattern, SAMPLE_VALUES_BY_LABEL[part.label], locale.resolved)}
                   </span>
@@ -169,7 +174,7 @@ export function CustomNumberFormatDialog() {
             {filteredPatterns.length === 0 ? (
               <div className="flex flex-1 items-center justify-center">
                 <span className="text-center text-sm text-[#949494]">
-                  {s('Apply to create a custom number format')}
+                  {messages.customNumberFormatDialog['Apply to create a custom number format']}
                 </span>
               </div>
             ) : null}
@@ -181,7 +186,7 @@ export function CustomNumberFormatDialog() {
               type="button"
               className="inline-flex h-[36px] items-center gap-1.5 rounded-lg border border-[#DEDBD9] px-4 text-[13px]"
             >
-              {s('Cancel')}
+              {messages.customNumberFormatDialog.Cancel}
             </Button>
             <Button
               type="button"
@@ -189,7 +194,7 @@ export function CustomNumberFormatDialog() {
               className="inline-flex h-[36px] items-center gap-1.5 rounded-lg bg-[#6D4AFF] px-4 text-[13px] text-[white] aria-disabled:opacity-50"
               onClick={apply}
             >
-              {s('Apply')}
+              {messages.customNumberFormatDialog.Apply}
             </Button>
           </div>
         </div>
@@ -198,19 +203,18 @@ export function CustomNumberFormatDialog() {
   )
 }
 
-function strings() {
-  return {
-    'Custom number formats': c('sheets_2025:Spreadsheet sidebar custom number format dialog').t`Custom number formats`,
-    'Custom number format': c('sheets_2025:Spreadsheet sidebar custom number format dialog').t`Custom number format`,
-    'Apply to create a custom number format': c('sheets_2025:Spreadsheet sidebar custom number format dialog')
-      .t`Apply to create a custom number format`,
-    Format: c('sheets_2025:Spreadsheet sidebar custom number format dialog').t`Format`,
-    Cancel: c('sheets_2025:Spreadsheet sidebar custom number format dialog').t`Cancel`,
-    Apply: c('sheets_2025:Spreadsheet sidebar custom number format dialog').t`Apply`,
-    Sample: c('sheets_2025:Spreadsheet sidebar custom number format dialog').t`Sample`,
-    Positive: c('sheets_2025:Spreadsheet sidebar custom number format dialog').t`Positive`,
-    Negative: c('sheets_2025:Spreadsheet sidebar custom number format dialog').t`Negative`,
-    Zero: c('sheets_2025:Spreadsheet sidebar custom number format dialog').t`Zero`,
-    Text: c('sheets_2025:Spreadsheet sidebar custom number format dialog').t`Text`,
-  }
+export const customNumberFormatDialogMessages = {
+  customNumberFormatDialog: {
+    'Custom number formats': `Custom number formats`,
+    'Custom number format': `Custom number format`,
+    'Apply to create a custom number format': `Apply to create a custom number format`,
+    Format: `Format`,
+    Cancel: `Cancel`,
+    Apply: `Apply`,
+    Sample: `Sample`,
+    Positive: `Positive`,
+    Negative: `Negative`,
+    Zero: `Zero`,
+    Text: `Text`,
+  },
 }

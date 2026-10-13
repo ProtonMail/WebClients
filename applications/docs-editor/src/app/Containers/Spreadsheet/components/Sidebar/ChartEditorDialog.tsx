@@ -1,3 +1,4 @@
+import { useSheetsMessages } from '../../SheetsDependenciesProvider'
 /* eslint-disable no-nested-ternary */
 
 import * as Icons from '../icons'
@@ -30,14 +31,11 @@ import { type SubmitHandler, useForm } from 'react-hook-form'
 import { useUI } from '../../ui-store'
 import { Fragment, useCallback, useEffect, useMemo, useState } from 'react'
 import { uuid } from '@rowsncolumns/utils'
-import { c } from 'ttag'
-import { createStringifier } from '../../stringifier'
+
 import { Icon } from '../ui'
 import { useEvent } from '../utils'
 import debounce from 'lodash/debounce'
 import isEqual from 'lodash/isEqual'
-
-const { s } = createStringifier(strings)
 
 interface ChartEditorProps {
   chart: EmbeddedChart
@@ -45,6 +43,8 @@ interface ChartEditorProps {
 }
 
 function ChartEditor({ chart, onDone }: ChartEditorProps) {
+  const messages = useSheetsMessages()
+
   const form = useForm({ defaultValues: chart })
   const { subscribe, handleSubmit } = form
   const formValue = form.watch()
@@ -127,7 +127,7 @@ function ChartEditor({ chart, onDone }: ChartEditorProps) {
         <div className="py-4">
           <div className="flex flex-col gap-4">
             <FormGroup>
-              <FormLabel className="text-sm font-semibold">{s('Chart type')}</FormLabel>
+              <FormLabel className="text-sm font-semibold">{messages.chartEditorDialog['Chart type']}</FormLabel>
               <Ariakit.SelectProvider
                 value={selectedChartType?.name}
                 setValue={(value: string) => {
@@ -150,12 +150,16 @@ function ChartEditor({ chart, onDone }: ChartEditorProps) {
                   }
                 }}
               >
-                <Select aria-label={s('Chart type')} />
+                <Select aria-label={messages.chartEditorDialog['Chart type']}>
+                  {selectedChartType ? messages.chartTypes[selectedChartType.name] : undefined}
+                </Select>
                 <SelectPopover sameWidth className="py-2">
                   {CHART_TYPES.map(([category, types]) => {
                     return (
                       <Ariakit.SelectGroup key={category} className="px-3 py-2">
-                        <Ariakit.SelectGroupLabel className="mb-1 text-xs">{category}</Ariakit.SelectGroupLabel>
+                        <Ariakit.SelectGroupLabel className="mb-1 text-xs">
+                          {messages.chartTypes[category]}
+                        </Ariakit.SelectGroupLabel>
                         <Ariakit.SelectRow className="grid grid-cols-3 gap-2.5">
                           {types.map(({ name, icon }) => {
                             return (
@@ -170,7 +174,7 @@ function ChartEditor({ chart, onDone }: ChartEditorProps) {
                                   'data-[focus-visible]:!border-[#6D4AFF] data-[focus-visible]:ring-[3px] data-[focus-visible]:ring-[#6D4AFF33]',
                                 )}
                               >
-                                <Ariakit.VisuallyHidden>{name}</Ariakit.VisuallyHidden>
+                                <Ariakit.VisuallyHidden>{messages.chartTypes[name]}</Ariakit.VisuallyHidden>
                                 {icon}
                               </Ariakit.SelectItem>
                             )
@@ -184,25 +188,25 @@ function ChartEditor({ chart, onDone }: ChartEditorProps) {
             </FormGroup>
 
             <FormGroup>
-              <FormLabel>{s('Chart title')}</FormLabel>
+              <FormLabel>{messages.chartEditorDialog['Chart title']}</FormLabel>
               <Input
-                aria-label={s('Chart title')}
+                aria-label={messages.chartEditorDialog['Chart title']}
                 value={formValue?.spec.title ?? ''}
                 onChange={(e) => form.setValue('spec.title', e.target.value)}
               />
             </FormGroup>
 
             <FormGroup>
-              <FormLabel>{s('Chart data range')}</FormLabel>
+              <FormLabel>{messages.chartEditorDialog['Chart data range']}</FormLabel>
               <div className="flex items-center">
                 <FormulaInput
-                  aria-label={s('Chart data range')}
+                  aria-label={messages.chartEditorDialog['Chart data range']}
                   onChange={(value) => {
                     form.setValue('spec.dataRange', formulaToRange(value) as SheetRange | undefined)
                   }}
                   value={dataRangeFormula}
                   required
-                  placeholder={s('Select a range')}
+                  placeholder={messages.chartEditorDialog['Select a range']}
                   autoFocus
                   className="mb-0 w-full"
                 />
@@ -222,13 +226,13 @@ function ChartEditor({ chart, onDone }: ChartEditorProps) {
                       form.setValue('spec.series', nextSeries as ChartData[])
                     }}
                   >
-                    <FormCheckbox>{s('Aggregate')}</FormCheckbox>
+                    <FormCheckbox>{messages.chartEditorDialog.Aggregate}</FormCheckbox>
                   </Ariakit.CheckboxProvider>
                 </FormGroup>
 
                 <FormGroup className="border-y border-[black]/[.1] py-3">
                   <div className="flex items-center justify-between gap-2">
-                    <FormLabel>{s('Value')}</FormLabel>
+                    <FormLabel>{messages.chartEditorDialog.Value}</FormLabel>
                     <Button
                       type="button"
                       className="shrink-0 rounded px-2 py-1 text-xs text-[#6D4AFF]"
@@ -248,7 +252,7 @@ function ChartEditor({ chart, onDone }: ChartEditorProps) {
                         ] as ChartData[])
                       }}
                     >
-                      {s('Add')}
+                      {messages.chartEditorDialog.Add}
                     </Button>
                   </div>
 
@@ -260,7 +264,7 @@ function ChartEditor({ chart, onDone }: ChartEditorProps) {
                             <FormGroup>
                               <div className="flex items-center justify-between gap-2">
                                 <Ariakit.Role.label className="text-[0.8125rem] text-[#5C5958]">
-                                  {s('Series')} {domainIdx + 1}
+                                  {messages.chartEditorDialog.seriesLabel(domainIdx + 1)}
                                 </Ariakit.Role.label>
 
                                 <Button
@@ -278,8 +282,8 @@ function ChartEditor({ chart, onDone }: ChartEditorProps) {
                                 </Button>
                               </div>
                               <Input
-                                aria-label={`${s('Series')} ${domainIdx + 1} ${s('Name')}`}
-                                placeholder={s('Enter title')}
+                                aria-label={messages.chartEditorDialog.seriesNameLabel(domainIdx + 1)}
+                                placeholder={messages.chartEditorDialog['Enter title']}
                                 value={domain.dataLabel ?? ''}
                                 onChange={(e) => form.setValue(`spec.series.${domainIdx}.dataLabel`, e.target.value)}
                               />
@@ -288,7 +292,7 @@ function ChartEditor({ chart, onDone }: ChartEditorProps) {
                             <FormGroup>
                               <div className="flex items-center">
                                 <FormulaInput
-                                  aria-label={`${s('Series')} ${domainIdx + 1} ${s('Range')}`}
+                                  aria-label={messages.chartEditorDialog.seriesRangeLabel(domainIdx + 1)}
                                   key={`${domainIdx}-${sourceIdx}-series`}
                                   value={source}
                                   onChange={(value) => {
@@ -298,7 +302,7 @@ function ChartEditor({ chart, onDone }: ChartEditorProps) {
                                     )
                                   }}
                                   required
-                                  placeholder={s('Select a range')}
+                                  placeholder={messages.chartEditorDialog['Select a range']}
                                   autoFocus
                                   className="mb-0 w-full"
                                 />
@@ -314,13 +318,13 @@ function ChartEditor({ chart, onDone }: ChartEditorProps) {
                                     form.setValue(`spec.series.${domainIdx}.aggregateType`, aggregateType || undefined)
                                   }}
                                 >
-                                  <Select aria-label={`${s('Series')} ${domainIdx + 1} ${s('Aggregate')}`} />
+                                  <Select aria-label={messages.chartEditorDialog.seriesAggregateLabel(domainIdx + 1)} />
                                   <SelectPopover sameWidth>
                                     <Ariakit.SelectGroup className="py-2">
-                                      <SelectItem value="">None</SelectItem>
+                                      <SelectItem value="">{messages.chartEditorDialog.None}</SelectItem>
                                       {AGGREGATE_OPTIONS.map((option) => (
                                         <SelectItem key={option.value} value={option.value}>
-                                          {option.label}
+                                          {messages.chartAggregates[option.value]}
                                         </SelectItem>
                                       ))}
                                     </Ariakit.SelectGroup>
@@ -336,13 +340,13 @@ function ChartEditor({ chart, onDone }: ChartEditorProps) {
                 </FormGroup>
 
                 <FormGroup>
-                  <FormLabel>{s('Horizontal (category) axis labels')}</FormLabel>
+                  <FormLabel>{messages.chartEditorDialog['Horizontal (category) axis labels']}</FormLabel>
                   {horizontalAxisFormula.map((domain, domainIndex) => {
                     return domain.sources.map((source, sourceIdx) => {
                       return (
                         <div key={sourceIdx} className="flex items-center">
                           <FormulaInput
-                            aria-label={`${s('Horizontal (category) axis labels')} ${domainIndex + 1}`}
+                            aria-label={`${messages.chartEditorDialog['Horizontal (category) axis labels']} ${domainIndex + 1}`}
                             value={source}
                             onChange={(value) => {
                               form.setValue(
@@ -351,7 +355,7 @@ function ChartEditor({ chart, onDone }: ChartEditorProps) {
                               )
                             }}
                             required
-                            placeholder={s('Select a range')}
+                            placeholder={messages.chartEditorDialog['Select a range']}
                             autoFocus
                             className="mb-0 w-full"
                           />
@@ -362,22 +366,22 @@ function ChartEditor({ chart, onDone }: ChartEditorProps) {
                 </FormGroup>
 
                 <FormGroup>
-                  <FormLabel>{s('Vertical axis title')}</FormLabel>
+                  <FormLabel>{messages.chartEditorDialog['Vertical axis title']}</FormLabel>
                   <Input
-                    aria-label={s('Vertical axis title')}
+                    aria-label={messages.chartEditorDialog['Vertical axis title']}
                     value={formValue?.spec.verticalAxisTitle ?? ''}
                     onChange={(e) => form.setValue(`spec.verticalAxisTitle`, e.target.value)}
-                    placeholder={s('Vertical axis title')}
+                    placeholder={messages.chartEditorDialog['Vertical axis title']}
                   />
                 </FormGroup>
 
                 <FormGroup>
-                  <FormLabel>{s('Horizontal axis title')}</FormLabel>
+                  <FormLabel>{messages.chartEditorDialog['Horizontal axis title']}</FormLabel>
                   <Input
-                    aria-label={s('Horizontal axis title')}
+                    aria-label={messages.chartEditorDialog['Horizontal axis title']}
                     value={formValue?.spec.horizontalAxisTitle ?? ''}
                     onChange={(e) => form.setValue(`spec.horizontalAxisTitle`, e.target.value)}
-                    placeholder={s('Horizontal axis title')}
+                    placeholder={messages.chartEditorDialog['Horizontal axis title']}
                   />
                 </FormGroup>
 
@@ -391,7 +395,7 @@ function ChartEditor({ chart, onDone }: ChartEditorProps) {
                       )
                     }}
                   >
-                    <FormCheckbox>{s('Show data in hidden rows and columns')}</FormCheckbox>
+                    <FormCheckbox>{messages.chartEditorDialog['Show data in hidden rows and columns']}</FormCheckbox>
                   </Ariakit.CheckboxProvider>
                 </FormGroup>
               </Fragment>
@@ -438,39 +442,46 @@ function ChartEditorRoot() {
 }
 
 export function ChartEditorDialog() {
+  const messages = useSheetsMessages()
+
   const [open, setOpen] = useChartEditorDialogState()
 
   return (
     <SidebarDialog open={open} setOpen={setOpen}>
       <div className="flex h-full min-h-0 flex-col">
-        <SidebarDialogHeader title={s('Chart editor')} />
+        <SidebarDialogHeader title={messages.chartEditorDialog['Chart editor']} />
         <ChartEditorRoot />
       </div>
     </SidebarDialog>
   )
 }
 
-function strings() {
-  return {
-    'Chart editor': c('sheets_2025:Spreadsheet sidebar chart editor dialog').t`Chart editor`,
-    'Chart type': c('sheets_2025:Spreadsheet sidebar chart editor dialog').t`Chart type`,
-    'Chart title': c('sheets_2025:Spreadsheet sidebar chart editor dialog').t`Chart title`,
-    'Select a range': c('sheets_2025:Spreadsheet sidebar chart editor dialog').t`Select a range`,
-    'Chart data range': c('sheets_2025:Spreadsheet sidebar chart editor dialog').t`Chart data range`,
-    Series: c('sheets_2025:Spreadsheet sidebar chart editor dialog').t`Series`,
-    Add: c('sheets_2025:Spreadsheet sidebar chart editor dialog').t`Add`,
-    Name: c('sheets_2025:Spreadsheet sidebar chart editor dialog').t`Name`,
-    Save: c('sheets_2025:Spreadsheet sidebar chart editor dialog').t`Save`,
-    Cancel: c('sheets_2025:Spreadsheet sidebar chart editor dialog').t`Cancel`,
-    Range: c('sheets_2025:Spreadsheet sidebar chart editor dialog').t`Range`,
-    'Horizontal (category) axis labels': c('sheets_2025:Spreadsheet sidebar chart editor dialog')
-      .t`Horizontal (category) axis labels`,
-    'Vertical axis title': c('sheets_2025:Spreadsheet sidebar chart editor dialog').t`Vertical axis title`,
-    'Horizontal axis title': c('sheets_2025:Spreadsheet sidebar chart editor dialog').t`Horizontal axis title`,
-    'Show data in hidden rows and columns': c('sheets_2025:Spreadsheet sidebar chart editor dialog')
-      .t`Show data in hidden rows and columns`,
-    Aggregate: c('sheets_2025:Spreadsheet sidebar chart editor dialog').t`Aggregate`,
-    Value: c('sheets_2025:Spreadsheet sidebar chart editor dialog').t`Value`,
-    'Enter title': c('sheets_2025:Spreadsheet sidebar chart editor dialog').t`Enter title`,
-  }
+export const chartEditorDialogMessages = {
+  chartEditorDialog: {
+    seriesLabel: (seriesNumber: number) => `Series ${seriesNumber}`,
+    seriesNameLabel: (seriesNumber: number) => `Series ${seriesNumber} Name`,
+    seriesRangeLabel: (seriesNumber: number) => `Series ${seriesNumber} Range`,
+    seriesAggregateLabel: (seriesNumber: number) => `Series ${seriesNumber} Aggregate`,
+
+    'Chart editor': `Chart editor`,
+    'Chart type': `Chart type`,
+    'Chart title': `Chart title`,
+    'Select a range': `Select a range`,
+    'Chart data range': `Chart data range`,
+    Series: `Series`,
+    Add: `Add`,
+    Name: `Name`,
+    Save: `Save`,
+    Cancel: `Cancel`,
+    Range: `Range`,
+    'Horizontal (category) axis labels': `Horizontal (category) axis labels`,
+    'Vertical axis title': `Vertical axis title`,
+    'Horizontal axis title': `Horizontal axis title`,
+    'Show data in hidden rows and columns': `Show data in hidden rows and columns`,
+    Aggregate: `Aggregate`,
+    Value: `Value`,
+    'Enter title': `Enter title`,
+
+    None: 'None',
+  },
 }

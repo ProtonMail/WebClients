@@ -15,3 +15,6 @@ export type {
 } from './SheetsDependenciesProvider'
 export type { SpreadsheetRef } from './Spreadsheet'
 export { StandaloneSheetsEditor } from './StandaloneSheetsEditor'
+
+export type { SheetsMessages } from './messages/SheetsMessages'
+export { resolveDefaultWorkbookLocale } from './messages/locale'

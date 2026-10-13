@@ -9,14 +9,14 @@ import {
 import * as Ariakit from '@ariakit/react'
 import * as UI from './ui'
 import { useUI } from '../ui-store'
-import { c, msgid } from 'ttag'
-import { createStringifier } from '../stringifier'
+
+import { useSheetsMessages, useSheetsDependencies } from '../SheetsDependenciesProvider'
+
 import { useCallback, useLayoutEffect, useMemo } from 'react'
-const { s } = createStringifier(strings)
+
 import { number2Alpha } from '@rowsncolumns/utils'
 import { Direction, type GridRange, isCellWithinBounds, selectionFromActiveCell } from '@rowsncolumns/grid'
 import * as Icons from './icons'
-import { useSheetsDependencies } from '../SheetsDependenciesProvider'
 
 type ContextMenuWrapperProps = {
   isOpen?: boolean
@@ -113,6 +113,9 @@ export function ContextMenu({
   onAddQuickEdit,
   enableMagicFill,
 }: ContextMenuProps) {
+  const messages = useSheetsMessages()
+
+  const { columns: columnsString, rows: rowsString } = messages
   const store = Ariakit.useMenuContext()
   const selectedColumnCount = useUI((ui) => ui.info.selectedColumnCount)
   const insertColumnsLeft = useUI.$.insert.columnsLeft
@@ -249,47 +252,47 @@ export function ContextMenu({
   return (
     <Ariakit.MenuProvider store={store}>
       <UI.MenuItem leadingIconSlot={<UI.Icon data={Icons.squares} />} onClick={copy}>
-        {s('Copy')}
+        {messages.contextMenu.Copy}
       </UI.MenuItem>
 
       <UI.MenuItem leadingIconSlot={<UI.Icon data={Icons.clipboard} />} onClick={() => onPaste?.()} disabled={readonly}>
-        {s('Paste')}
+        {messages.contextMenu.Paste}
       </UI.MenuItem>
 
       <Ariakit.MenuProvider>
         <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.clipboard} />} disabled={readonly}>
-          {s('Paste special')}
+          {messages.contextMenu['Paste special']}
         </UI.SubMenuButton>
         <UI.SubMenu unmountOnHide>
           <UI.MenuItem onClick={() => onPaste?.('Value')} disabled={readonly}>
-            {s('Values only')}
+            {messages.contextMenu['Values only']}
           </UI.MenuItem>
           <UI.MenuItem onClick={() => onPaste?.('Formatting')} disabled={readonly}>
-            {s('Formatting only')}
+            {messages.contextMenu['Formatting only']}
           </UI.MenuItem>
           <UI.MenuItem onClick={() => onPaste?.('Formula')} disabled={readonly}>
-            {s('Formula only')}
+            {messages.contextMenu['Formula only']}
           </UI.MenuItem>
           <UI.MenuItem onClick={() => onPaste?.('Link')} disabled={readonly}>
-            {s('Link only')}
+            {messages.contextMenu['Link only']}
           </UI.MenuItem>
           <UI.MenuSeparator />
           <UI.MenuItem onClick={() => onPaste?.('Transposed')} disabled={readonly}>
-            {s('Transposed')}
+            {messages.contextMenu.Transposed}
           </UI.MenuItem>
         </UI.SubMenu>
       </Ariakit.MenuProvider>
 
       <Ariakit.MenuProvider>
         <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.crossBig} />} disabled={readonly}>
-          {s('Clear')}
+          {messages.contextMenu.Clear}
         </UI.SubMenuButton>
         <UI.SubMenu unmountOnHide>
           <UI.MenuItem leadingIconSlot={<UI.Icon data={Icons.eraser} />} onClick={clearFormat} disabled={readonly}>
-            {s('Clear formatting')}
+            {messages.contextMenu['Clear formatting']}
           </UI.MenuItem>
           <UI.MenuItem leadingIconSlot={<UI.Icon data={Icons.crossBig} />} onClick={clearContent} disabled={readonly}>
-            {s('Clear content')}
+            {messages.contextMenu['Clear content']}
           </UI.MenuItem>
         </UI.SubMenu>
       </Ariakit.MenuProvider>
@@ -303,33 +306,35 @@ export function ContextMenu({
             onClick={() => insertColumnsLeft(selectedColumnCount)}
             disabled={readonly}
           >
-            {s('Insert')} <b>{columnsString(selectedColumnHeadersIds.length)}</b> {s('left')}
+            {messages.contextMenu.Insert} <b>{columnsString(selectedColumnHeadersIds.length)}</b>{' '}
+            {messages.contextMenu.left}
           </UI.MenuItem>
           <UI.MenuItem
             leadingIconSlot={<UI.Icon data={Icons.addColumn} />}
             onClick={() => insertColumnsRight(selectedColumnCount)}
             disabled={readonly}
           >
-            {s('Insert')} <b>{columnsString(selectedColumnHeadersIds.length)}</b> {s('right')}
+            {messages.contextMenu.Insert} <b>{columnsString(selectedColumnHeadersIds.length)}</b>{' '}
+            {messages.contextMenu.right}
           </UI.MenuItem>
           <UI.MenuItem
             leadingIconSlot={<UI.Icon data={Icons.trash} />}
             onClick={() => onDeleteColumn?.(sheetId, selectedColumnHeadersIds)}
             disabled={readonly}
           >
-            {s('Delete column')} {multiColumnTitle}
+            {messages.contextMenu['Delete column']} {multiColumnTitle}
           </UI.MenuItem>
           <UI.MenuItem
             leadingIconSlot={<UI.Icon data={Icons.eyeSlash} />}
             onClick={() => onHideColumn?.(sheetId, selectedColumnHeadersIds)}
             disabled={readonly}
           >
-            {s('Hide column')} {multiColumnTitle}
+            {messages.contextMenu['Hide column']} {multiColumnTitle}
           </UI.MenuItem>
 
           <Ariakit.MenuProvider>
             <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.resize} />} disabled={readonly || !onRequestResize}>
-              {s('Resize column')} {multiColumnTitle}
+              {messages.contextMenu['Resize column']} {multiColumnTitle}
             </UI.SubMenuButton>
             <UI.SubMenu unmountOnHide>
               <UI.MenuItem
@@ -339,14 +344,14 @@ export function ContextMenu({
                 }}
                 disabled={readonly || !onRequestResize}
               >
-                {s('Auto fit to data')}
+                {messages.contextMenu['Auto fit to data']}
               </UI.MenuItem>
               <UI.MenuItem
                 leadingIconSlot={<UI.Icon data={Icons.resize} />}
                 onClick={() => onRequestResize?.(sheetId, selectedColumnHeadersIds, 'y')}
                 disabled={readonly || !onRequestResize}
               >
-                {s('Custom')}
+                {messages.contextMenu.Custom}
               </UI.MenuItem>
             </UI.SubMenu>
           </Ariakit.MenuProvider>
@@ -356,7 +361,7 @@ export function ContextMenu({
             onClick={() => onFreezeColumn?.(sheetId, activeCell.columnIndex)}
             disabled={readonly}
           >
-            {s('Freeze up to column')} {number2Alpha(activeCell.columnIndex - 1)}
+            {messages.contextMenu['Freeze up to column']} {number2Alpha(activeCell.columnIndex - 1)}
           </UI.MenuItem>
 
           {frozenColumns > 1 ? (
@@ -365,7 +370,7 @@ export function ContextMenu({
               onClick={() => onFreezeColumn?.(sheetId, 0)}
               disabled={readonly}
             >
-              {s('Unfreeze columns')}
+              {messages.contextMenu['Unfreeze columns']}
             </UI.MenuItem>
           ) : null}
 
@@ -376,7 +381,7 @@ export function ContextMenu({
             onClick={() => onSortColumn?.(sheetId, activeCell.columnIndex, 'ASCENDING')}
             disabled={readonly}
           >
-            {s('Sort sheet A to Z')}
+            {messages.contextMenu['Sort sheet A to Z']}
           </UI.MenuItem>
 
           <UI.MenuItem
@@ -384,7 +389,7 @@ export function ContextMenu({
             onClick={() => onSortColumn?.(sheetId, activeCell.columnIndex, 'DESCENDING')}
             disabled={readonly}
           >
-            {s('Sort sheet Z to A')}
+            {messages.contextMenu['Sort sheet Z to A']}
           </UI.MenuItem>
         </>
       ) : null}
@@ -396,7 +401,7 @@ export function ContextMenu({
             onClick={() => onInsertRow?.(sheetId, activeCell.rowIndex, selectedRowHeadersIds.length)}
             disabled={readonly}
           >
-            {s('Insert')} <b>{rowsString(selectedRowHeadersIds.length)}</b> {s('above')}
+            {messages.contextMenu.Insert} <b>{rowsString(selectedRowHeadersIds.length)}</b> {messages.contextMenu.above}
           </UI.MenuItem>
           <UI.MenuItem
             leadingIconSlot={<UI.Icon data={Icons.addColumn} style={{ transform: 'rotate(90deg)' }} />}
@@ -405,26 +410,26 @@ export function ContextMenu({
             }
             disabled={readonly}
           >
-            {s('Insert')} <b>{rowsString(selectedRowHeadersIds.length)}</b> {s('below')}
+            {messages.contextMenu.Insert} <b>{rowsString(selectedRowHeadersIds.length)}</b> {messages.contextMenu.below}
           </UI.MenuItem>
           <UI.MenuItem
             leadingIconSlot={<UI.Icon data={Icons.trash} />}
             onClick={() => onDeleteRow?.(sheetId, selectedRowHeadersIds)}
             disabled={readonly}
           >
-            {s('Delete row')} {multiRowTitle}
+            {messages.contextMenu['Delete row']} {multiRowTitle}
           </UI.MenuItem>
           <UI.MenuItem
             leadingIconSlot={<UI.Icon data={Icons.eyeSlash} />}
             onClick={() => onHideRow?.(sheetId, selectedRowHeadersIds)}
             disabled={readonly}
           >
-            {s('Hide row')} {multiRowTitle}
+            {messages.contextMenu['Hide row']} {multiRowTitle}
           </UI.MenuItem>
 
           <Ariakit.MenuProvider>
             <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.resize} />} disabled={readonly || !onRequestResize}>
-              {s('Resize row')} {multiRowTitle}
+              {messages.contextMenu['Resize row']} {multiRowTitle}
             </UI.SubMenuButton>
             <UI.SubMenu unmountOnHide>
               <UI.MenuItem
@@ -434,14 +439,14 @@ export function ContextMenu({
                 }}
                 disabled={readonly || !onRequestResize}
               >
-                {s('Auto fit to data')}
+                {messages.contextMenu['Auto fit to data']}
               </UI.MenuItem>
               <UI.MenuItem
                 leadingIconSlot={<UI.Icon data={Icons.resize} />}
                 onClick={() => onRequestResize?.(sheetId, selectedRowHeadersIds, 'x')}
                 disabled={readonly || !onRequestResize}
               >
-                {s('Custom')}
+                {messages.contextMenu.Custom}
               </UI.MenuItem>
             </UI.SubMenu>
           </Ariakit.MenuProvider>
@@ -451,7 +456,7 @@ export function ContextMenu({
             onClick={() => onFreezeRow?.(sheetId, activeCell.rowIndex)}
             disabled={readonly}
           >
-            {s('Freeze up to row')} {activeCell.rowIndex}
+            {messages.contextMenu['Freeze up to row']} {activeCell.rowIndex}
           </UI.MenuItem>
 
           {frozenRows > 1 ? (
@@ -460,7 +465,7 @@ export function ContextMenu({
               onClick={() => onFreezeRow?.(sheetId, 0)}
               disabled={readonly}
             >
-              {s('Unfreeze rows')}
+              {messages.contextMenu['Unfreeze rows']}
             </UI.MenuItem>
           ) : null}
         </>
@@ -474,7 +479,7 @@ export function ContextMenu({
             onClick={openConditionalFormat}
             disabled={readonly}
           >
-            {s('Conditional format')}
+            {messages.contextMenu['Conditional format']}
           </UI.MenuItem>
 
           <UI.MenuItem
@@ -482,7 +487,7 @@ export function ContextMenu({
             onClick={openDataValidation}
             disabled={readonly}
           >
-            {s('Data validation')}
+            {messages.contextMenu['Data validation']}
           </UI.MenuItem>
 
           {onRequestDefineNamedRange ? (
@@ -493,7 +498,7 @@ export function ContextMenu({
               }}
               disabled={readonly}
             >
-              {s('Define named range')}
+              {messages.contextMenu['Define named range']}
             </UI.MenuItem>
           ) : null}
         </>
@@ -503,7 +508,7 @@ export function ContextMenu({
         <>
           <Ariakit.MenuProvider>
             <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.plus} />} disabled={readonly}>
-              {s('Insert')}
+              {messages.contextMenu.Insert}
             </UI.SubMenuButton>
             <UI.SubMenu unmountOnHide>
               {activeTable ? (
@@ -516,7 +521,7 @@ export function ContextMenu({
                       }}
                       disabled={readonly}
                     >
-                      {s('Insert table row')}
+                      {messages.contextMenu['Insert table row']}
                     </UI.MenuItem>
                   ) : null}
                   <UI.MenuItem
@@ -530,7 +535,7 @@ export function ContextMenu({
                     }}
                     disabled={readonly}
                   >
-                    {s('Insert table column to the left')}
+                    {messages.contextMenu['Insert table column to the left']}
                   </UI.MenuItem>
                   <UI.MenuItem
                     leadingIconSlot={<UI.Icon data={Icons.addColumn} />}
@@ -543,7 +548,7 @@ export function ContextMenu({
                     }}
                     disabled={readonly}
                   >
-                    {s('Insert table column to the right')}
+                    {messages.contextMenu['Insert table column to the right']}
                   </UI.MenuItem>
                 </>
               ) : (
@@ -555,7 +560,8 @@ export function ContextMenu({
                     onClick={() => onInsertRow?.(sheetId, activeCell.rowIndex, selectedRowIndexes.length)}
                     disabled={readonly}
                   >
-                    {s('Insert')} <b>{rowsString(selectedRowIndexes.length)}</b> {s('above')}
+                    {messages.contextMenu.Insert} <b>{rowsString(selectedRowIndexes.length)}</b>{' '}
+                    {messages.contextMenu.above}
                   </UI.MenuItem>
 
                   <UI.MenuItem
@@ -563,7 +569,8 @@ export function ContextMenu({
                     onClick={() => onInsertColumn?.(sheetId, activeCell.columnIndex, selectedColumnIndexes.length)}
                     disabled={readonly}
                   >
-                    {s('Insert')} <b>{columnsString(selectedColumnIndexes.length)}</b> {s('left')}
+                    {messages.contextMenu.Insert} <b>{columnsString(selectedColumnIndexes.length)}</b>{' '}
+                    {messages.contextMenu.left}
                   </UI.MenuItem>
 
                   <UI.MenuItem
@@ -571,7 +578,7 @@ export function ContextMenu({
                     onClick={() => onInsertCellsShiftRight?.(sheetId, activeCell, selections)}
                     disabled={readonly}
                   >
-                    {s('Insert cells and shift cells right')}
+                    {messages.contextMenu['Insert cells and shift cells right']}
                   </UI.MenuItem>
 
                   <UI.MenuItem
@@ -579,7 +586,7 @@ export function ContextMenu({
                     onClick={() => onInsertCellsShiftDown?.(sheetId, activeCell, selections)}
                     disabled={readonly}
                   >
-                    {s('Insert cells and shift cells down')}
+                    {messages.contextMenu['Insert cells and shift cells down']}
                   </UI.MenuItem>
                 </>
               )}
@@ -588,7 +595,7 @@ export function ContextMenu({
 
           <Ariakit.MenuProvider>
             <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.trash} />} disabled={readonly}>
-              {s('Delete')}
+              {messages.contextMenu.Delete}
             </UI.SubMenuButton>
             <UI.SubMenu unmountOnHide>
               {activeTable ? (
@@ -598,7 +605,7 @@ export function ContextMenu({
                       onClick={() => onDeleteTableRow?.(activeTable, selectedRowIndexes)}
                       disabled={readonly}
                     >
-                      {s('Delete table row')}
+                      {messages.contextMenu['Delete table row']}
                     </UI.MenuItem>
                   )}
                   <UI.MenuItem
@@ -607,31 +614,31 @@ export function ContextMenu({
                     }
                     disabled={readonly}
                   >
-                    {s('Delete table column')}
+                    {messages.contextMenu['Delete table column']}
                   </UI.MenuItem>
                 </>
               ) : (
                 <>
                   <UI.MenuItem onClick={() => onDeleteRow?.(sheetId, selectedRowIndexes)} disabled={readonly}>
-                    {s('Delete row')} {generateMultiDimTitle(selectedRowIndexes, 'x')}
+                    {messages.contextMenu['Delete row']} {generateMultiDimTitle(selectedRowIndexes, 'x')}
                   </UI.MenuItem>
 
                   <UI.MenuItem onClick={() => onDeleteColumn?.(sheetId, selectedColumnIndexes)} disabled={readonly}>
-                    {s('Delete column')} {generateMultiDimTitle(selectedColumnIndexes, 'y')}
+                    {messages.contextMenu['Delete column']} {generateMultiDimTitle(selectedColumnIndexes, 'y')}
                   </UI.MenuItem>
 
                   <UI.MenuItem
                     onClick={() => onDeleteCellsShiftLeft?.(sheetId, activeCell, selections)}
                     disabled={readonly}
                   >
-                    {s('Delete cells and shift cells left')}
+                    {messages.contextMenu['Delete cells and shift cells left']}
                   </UI.MenuItem>
 
                   <UI.MenuItem
                     onClick={() => onDeleteCellsShiftUp?.(sheetId, activeCell, selections)}
                     disabled={readonly}
                   >
-                    {s('Delete cells and shift cells up')}
+                    {messages.contextMenu['Delete cells and shift cells up']}
                   </UI.MenuItem>
                 </>
               )}
@@ -642,7 +649,7 @@ export function ContextMenu({
 
           <Ariakit.MenuProvider>
             <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.filter} />} disabled={readonly}>
-              {s('Filter')}
+              {messages.contextMenu.Filter}
             </UI.SubMenuButton>
             <UI.SubMenu unmountOnHide>
               <UI.MenuItem
@@ -651,23 +658,25 @@ export function ContextMenu({
                 }}
                 disabled={readonly}
               >
-                {s('Cell value')} "
-                {getFormattedValue(sheetId, activeCell.rowIndex, activeCell.columnIndex) ?? BLANK_LABEL}"
+                {messages.contextMenu['Cell value']} "
+                {getFormattedValue(sheetId, activeCell.rowIndex, activeCell.columnIndex) ??
+                  messages.contextMenu['(Blanks)']}
+                "
               </UI.MenuItem>
             </UI.SubMenu>
           </Ariakit.MenuProvider>
 
           <Ariakit.MenuProvider>
             <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.sortAlphabetically} />} disabled={readonly}>
-              {s('Sort')}
+              {messages.contextMenu.Sort}
             </UI.SubMenuButton>
             <UI.SubMenu unmountOnHide>
               <UI.MenuItem onClick={() => onSortTableOrFilterView('ASCENDING')} disabled={readonly}>
-                {s('Sort range A → Z')}
+                {messages.contextMenu['Sort range A → Z']}
               </UI.MenuItem>
 
               <UI.MenuItem onClick={() => onSortTableOrFilterView('DESCENDING')} disabled={readonly}>
-                {s('Sort range Z → A')}
+                {messages.contextMenu['Sort range Z → A']}
               </UI.MenuItem>
             </UI.SubMenu>
           </Ariakit.MenuProvider>
@@ -675,15 +684,15 @@ export function ContextMenu({
           {activeTable ? (
             <Ariakit.MenuProvider>
               <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.table} />} disabled={readonly}>
-                {s('Table')}
+                {messages.contextMenu.Table}
               </UI.SubMenuButton>
               <UI.SubMenu unmountOnHide>
                 <UI.MenuItem onClick={() => onRemoveTable?.(activeTable)} disabled={readonly}>
-                  {s('Convert to range')}
+                  {messages.contextMenu['Convert to range']}
                 </UI.MenuItem>
 
                 <UI.MenuItem onClick={() => onRequestEditTable?.(activeTable)} disabled={readonly}>
-                  {s('Edit table')}
+                  {messages.contextMenu['Edit table']}
                 </UI.MenuItem>
               </UI.SubMenu>
             </Ariakit.MenuProvider>
@@ -734,7 +743,7 @@ export function ContextMenu({
               }}
               disabled={readonly}
             >
-              {s('Convert to table')}
+              {messages.contextMenu['Convert to table']}
             </UI.MenuItem>
           ) : null}
 
@@ -755,7 +764,7 @@ export function ContextMenu({
             onClick={openConditionalFormat}
             disabled={readonly}
           >
-            {s('Conditional format')}
+            {messages.contextMenu['Conditional format']}
           </UI.MenuItem>
 
           {onRequestDataValidation ? (
@@ -764,7 +773,7 @@ export function ContextMenu({
               onClick={openDataValidation}
               disabled={readonly}
             >
-              {s('Data validation')}
+              {messages.contextMenu['Data validation']}
             </UI.MenuItem>
           ) : null}
 
@@ -775,7 +784,7 @@ export function ContextMenu({
             }}
             disabled={readonly}
           >
-            {s('Define named range')}
+            {messages.contextMenu['Define named range']}
           </UI.MenuItem>
 
           <UI.MenuSeparator />
@@ -787,11 +796,11 @@ export function ContextMenu({
             }}
             disabled={readonly}
           >
-            {s('Insert note')}
+            {messages.contextMenu['Insert note']}
           </UI.MenuItem>
 
           <UI.MenuItem leadingIconSlot={<UI.Icon data={Icons.link} />} onClick={insertLink} disabled={readonly}>
-            {s('Insert link')}
+            {messages.contextMenu['Insert link']}
           </UI.MenuItem>
         </>
       ) : null}
@@ -801,15 +810,15 @@ export function ContextMenu({
           <UI.MenuSeparator />
           <Ariakit.MenuProvider>
             <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.threeDotsVertical} />} disabled={readonly}>
-              {s('More cell actions')}
+              {messages.contextMenu['More cell actions']}
             </UI.SubMenuButton>
 
             <UI.SubMenu unmountOnHide>
               <UI.MenuItem onClick={() => onSortRange?.(sheetId, selections, 'ASCENDING')} disabled={readonly}>
-                {s('Sort range A → Z')}
+                {messages.contextMenu['Sort range A → Z']}
               </UI.MenuItem>
               <UI.MenuItem onClick={() => onSortRange?.(sheetId, selections, 'DESCENDING')} disabled={readonly}>
-                {s('Sort range Z → A')}
+                {messages.contextMenu['Sort range Z → A']}
               </UI.MenuItem>
             </UI.SubMenu>
           </Ariakit.MenuProvider>
@@ -819,100 +828,71 @@ export function ContextMenu({
   )
 }
 
-function columnsString(numberOfColumns: number) {
-  // translator: this is used in the context of three strings put together - "Insert | N columns | left/right" (the | symbol is used to show the separation between the three strings), and it's separate because "X columns/rows" needs to be bold, the order of these three strings cannot be changed and they will be separated by spaces
-  return c('sheets_2025:Spreadsheet context menu (columns/rows)').ngettext(
-    msgid`${numberOfColumns} column`,
-    `${numberOfColumns} columns`,
-    numberOfColumns,
-  )
-}
-
-function rowsString(numberOfRows: number) {
-  // translator: this is used in the context of three strings put together - "Insert | N rows | above/below" (the | symbol is used to show the separation between the three strings), and it's separate because "X columns/rows" needs to be bold, the order of these three strings cannot be changed and they will be separated by spaces
-  return c('sheets_2025:Spreadsheet context menu (columns/rows)').ngettext(
-    msgid`${numberOfRows} row`,
-    `${numberOfRows} rows`,
-    numberOfRows,
-  )
-}
-
-function strings() {
-  return {
-    Copy: c('sheets_2025:Spreadsheet context menu').t`Copy`,
-    Paste: c('sheets_2025:Spreadsheet context menu').t`Paste`,
-    Clear: c('sheets_2025:Spreadsheet context menu').t`Clear`,
-    'Clear formatting': c('sheets_2025:Spreadsheet context menu').t`Clear formatting`,
-    'Clear content': c('sheets_2025:Spreadsheet context menu').t`Clear content`,
-
-    'Insert table row': c('sheets_2025:Spreadsheet context menu').t`Insert table row`,
-    'Insert table column to the left': c('sheets_2025:Spreadsheet context menu').t`Insert table column to the left`,
-    'Insert table column to the right': c('sheets_2025:Spreadsheet context menu').t`Insert table column to the right`,
-    'Insert link': c('sheets_2025:Spreadsheet context menu').t`Insert link`,
-    'Insert cells and shift cells right': c('sheets_2025:Spreadsheet context menu')
-      .t`Insert cells and shift cells right`,
-    'Insert cells and shift cells down': c('sheets_2025:Spreadsheet context menu').t`Insert cells and shift cells down`,
-
-    Delete: c('sheets_2025:Spreadsheet context menu').t`Delete`,
-    'Delete column': c('sheets_2025:Spreadsheet context menu').t`Delete column`,
-    'Delete row': c('sheets_2025:Spreadsheet context menu').t`Delete row`,
-    'Delete table row': c('sheets_2025:Spreadsheet context menu').t`Delete table row`,
-    'Delete table column': c('sheets_2025:Spreadsheet context menu').t`Delete table column`,
-    'Delete cells and shift cells left': c('sheets_2025:Spreadsheet context menu').t`Delete cells and shift cells left`,
-    'Delete cells and shift cells up': c('sheets_2025:Spreadsheet context menu').t`Delete cells and shift cells up`,
-
-    'Hide column': c('sheets_2025:Spreadsheet context menu').t`Hide column`,
-    'Hide row': c('sheets_2025:Spreadsheet context menu').t`Hide row`,
-    'Resize column': c('sheets_2025:Spreadsheet context menu').t`Resize column`,
-    'Resize row': c('sheets_2025:Spreadsheet context menu').t`Resize row`,
-    'Auto fit to data': c('sheets_2025:Spreadsheet context menu').t`Auto fit to data`,
-    Custom: c('sheets_2025:Spreadsheet context menu').t`Custom`,
-
-    'Freeze up to column': c('sheets_2025:Spreadsheet context menu').t`Freeze up to column`,
-    'Unfreeze columns': c('sheets_2025:Spreadsheet context menu').t`Unfreeze columns`,
-    'Freeze up to row': c('sheets_2025:Spreadsheet context menu').t`Freeze up to row`,
-    'Unfreeze rows': c('sheets_2025:Spreadsheet context menu').t`Unfreeze rows`,
-
-    'Sort sheet A to Z': c('sheets_2025:Spreadsheet context menu').t`Sort sheet A to Z`,
-    'Sort sheet Z to A': c('sheets_2025:Spreadsheet context menu').t`Sort sheet Z to A`,
-    Sort: c('sheets_2025:Spreadsheet context menu').t`Sort`,
-    'Sort range A → Z': c('sheets_2025:Spreadsheet context menu').t`Sort range A → Z`,
-    'Sort range Z → A': c('sheets_2025:Spreadsheet context menu').t`Sort range Z → A`,
-
-    Filter: c('sheets_2025:Spreadsheet context menu').t`Filter`,
-    'Cell value': c('sheets_2025:Spreadsheet context menu').t`Cell value`,
-
-    Insert: c('sheets_2025:Spreadsheet context menu (columns/rows)').t`Insert`,
-    above: c('sheets_2025:Spreadsheet context menu (columns/rows)').t`above`,
-    below: c('sheets_2025:Spreadsheet context menu (columns/rows)').t`below`,
-    left: c('sheets_2025:Spreadsheet context menu (columns/rows)').t`left`,
-    right: c('sheets_2025:Spreadsheet context menu (columns/rows)').t`right`,
-
-    Table: c('sheets_2025:Spreadsheet context menu').t`Table`,
-    'Convert to range': c('sheets_2025:Spreadsheet context menu').t`Convert to range`,
-    'Edit table': c('sheets_2025:Spreadsheet context menu').t`Edit table`,
-    'Convert to table': c('sheets_2025:Spreadsheet context menu').t`Convert to table`,
-
-    'Create a filter': c('sheets_2025:Spreadsheet context menu').t`Create a filter`,
-    'Remove filter': c('sheets_2025:Spreadsheet context menu').t`Remove filter`,
-
-    'Conditional format': c('sheets_2025:Spreadsheet context menu').t`Conditional format`,
-    'Data validation': c('sheets_2025:Spreadsheet context menu').t`Data validation`,
-
-    'Insert note': c('sheets_2025:Spreadsheet context menu').t`Insert note`,
-    'Define named range': c('sheets_2025:Spreadsheet context menu').t`Define named range`,
-    'More cell actions': c('sheets_2025:Spreadsheet context menu').t`More cell actions`,
-    'AI Quick Edit': c('sheets_2025:Spreadsheet context menu').t`AI Quick Edit`,
-    'Paste special': c('sheets_2025:Spreadsheet context menu').t`Paste special`,
-    'Values only': c('sheets_2025:Spreadsheet context menu').t`Values only`,
-    'Formatting only': c('sheets_2025:Spreadsheet context menu').t`Formatting only`,
-    'Formula only': c('sheets_2025:Spreadsheet context menu').t`Formula only`,
-    'Link only': c('sheets_2025:Spreadsheet context menu').t`Link only`,
-    Transposed: c('sheets_2025:Spreadsheet context menu').t`Transposed`,
-    Comma: c('sheets_2025:Spreadsheet context menu').t`Comma`,
-    Semicolon: c('sheets_2025:Spreadsheet context menu').t`Semicolon`,
-    Period: c('sheets_2025:Spreadsheet context menu').t`Period`,
-    Space: c('sheets_2025:Spreadsheet context menu').t`Space`,
-    Pipe: c('sheets_2025:Spreadsheet context menu').t`Pipe`,
-  }
+export const contextMenuMessages = {
+  contextMenu: {
+    '(Blanks)': '(Blanks)',
+    Copy: `Copy`,
+    Paste: `Paste`,
+    Clear: `Clear`,
+    'Clear formatting': `Clear formatting`,
+    'Clear content': `Clear content`,
+    'Insert table row': `Insert table row`,
+    'Insert table column to the left': `Insert table column to the left`,
+    'Insert table column to the right': `Insert table column to the right`,
+    'Insert link': `Insert link`,
+    'Insert cells and shift cells right': `Insert cells and shift cells right`,
+    'Insert cells and shift cells down': `Insert cells and shift cells down`,
+    Delete: `Delete`,
+    'Delete column': `Delete column`,
+    'Delete row': `Delete row`,
+    'Delete table row': `Delete table row`,
+    'Delete table column': `Delete table column`,
+    'Delete cells and shift cells left': `Delete cells and shift cells left`,
+    'Delete cells and shift cells up': `Delete cells and shift cells up`,
+    'Hide column': `Hide column`,
+    'Hide row': `Hide row`,
+    'Resize column': `Resize column`,
+    'Resize row': `Resize row`,
+    'Auto fit to data': `Auto fit to data`,
+    Custom: `Custom`,
+    'Freeze up to column': `Freeze up to column`,
+    'Unfreeze columns': `Unfreeze columns`,
+    'Freeze up to row': `Freeze up to row`,
+    'Unfreeze rows': `Unfreeze rows`,
+    'Sort sheet A to Z': `Sort sheet A to Z`,
+    'Sort sheet Z to A': `Sort sheet Z to A`,
+    Sort: `Sort`,
+    'Sort range A → Z': `Sort range A → Z`,
+    'Sort range Z → A': `Sort range Z → A`,
+    Filter: `Filter`,
+    'Cell value': `Cell value`,
+    Insert: `Insert`,
+    above: `above`,
+    below: `below`,
+    left: `left`,
+    right: `right`,
+    Table: `Table`,
+    'Convert to range': `Convert to range`,
+    'Edit table': `Edit table`,
+    'Convert to table': `Convert to table`,
+    'Create a filter': `Create a filter`,
+    'Remove filter': `Remove filter`,
+    'Conditional format': `Conditional format`,
+    'Data validation': `Data validation`,
+    'Insert note': `Insert note`,
+    'Define named range': `Define named range`,
+    'More cell actions': `More cell actions`,
+    'AI Quick Edit': `AI Quick Edit`,
+    'Paste special': `Paste special`,
+    'Values only': `Values only`,
+    'Formatting only': `Formatting only`,
+    'Formula only': `Formula only`,
+    'Link only': `Link only`,
+    Transposed: `Transposed`,
+    Comma: `Comma`,
+    Semicolon: `Semicolon`,
+    Period: `Period`,
+    Space: `Space`,
+    Pipe: `Pipe`,
+  },
 }

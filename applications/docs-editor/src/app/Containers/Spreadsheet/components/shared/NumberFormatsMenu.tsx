@@ -1,13 +1,12 @@
+import { useSheetsMessages, useSheetsDependencies } from '../../SheetsDependenciesProvider'
 import * as Ariakit from '@ariakit/react'
 import { type ReactElement, useState } from 'react'
-import { c } from 'ttag'
+
 import { CURRENCY } from '../../constants'
-import { createStringifier } from '../../stringifier'
+
 import * as UI from '../ui'
 import { useUI } from '../../ui-store'
-import { useSheetsDependencies } from '../../SheetsDependenciesProvider'
 
-const { s } = createStringifier(strings)
 const NUMBER_FORMAT_NEW_BADGE_STORAGE_KEY_PREFIX = 'sheets:number-format-new-badge-dismissed:'
 
 type NumberFormatNewBadgeItem = 'custom-currency' | 'custom-number' | 'custom-date-and-time'
@@ -42,6 +41,8 @@ type NumberFormatsMenuPopoverProps = {
 }
 
 function NumberFormatsMenuPopover({ asSubmenu = false }: NumberFormatsMenuPopoverProps) {
+  const messages = useSheetsMessages()
+
   const menu = Ariakit.useMenuContext()
   const values = Ariakit.useStoreState(menu, 'values')
   const { featureFlags } = useSheetsDependencies()
@@ -62,14 +63,14 @@ function NumberFormatsMenuPopover({ asSubmenu = false }: NumberFormatsMenuPopove
         value="GENERAL"
         onClick={useUI.$.withFocusGrid(useUI.$.format.pattern.general.set)}
       >
-        {s('General')}
+        {messages.numberFormatsMenu.General}
       </UI.MenuItemCheckbox>
       <UI.MenuItemCheckbox
         name="pattern"
         value="PLAIN_TEXT"
         onClick={useUI.$.withFocusGrid(useUI.$.format.pattern.plainText.set)}
       >
-        {s('Plain text')}
+        {messages.numberFormatsMenu['Plain text']}
       </UI.MenuItemCheckbox>
       <UI.MenuSeparator />
       <UI.MenuItemCheckbox
@@ -78,7 +79,7 @@ function NumberFormatsMenuPopover({ asSubmenu = false }: NumberFormatsMenuPopove
         onClick={useUI.$.withFocusGrid(useUI.$.format.pattern.number.set)}
         hintSlot={useUI((ui) => ui.format.pattern.number.example)}
       >
-        {s('Number')}
+        {messages.numberFormatsMenu.Number}
       </UI.MenuItemCheckbox>
       <UI.MenuItemCheckbox
         name="pattern"
@@ -86,7 +87,7 @@ function NumberFormatsMenuPopover({ asSubmenu = false }: NumberFormatsMenuPopove
         onClick={useUI.$.withFocusGrid(useUI.$.format.pattern.percent.set)}
         hintSlot={useUI((ui) => ui.format.pattern.percent.example)}
       >
-        {s('Percent')}
+        {messages.numberFormatsMenu.Percent}
       </UI.MenuItemCheckbox>
       <UI.MenuItemCheckbox
         name="pattern"
@@ -94,7 +95,7 @@ function NumberFormatsMenuPopover({ asSubmenu = false }: NumberFormatsMenuPopove
         onClick={useUI.$.withFocusGrid(useUI.$.format.pattern.scientific.set)}
         hintSlot={useUI((ui) => ui.format.pattern.scientific.example)}
       >
-        {s('Scientific')}
+        {messages.numberFormatsMenu.Scientific}
       </UI.MenuItemCheckbox>
       <UI.MenuSeparator />
       <UI.MenuItemCheckbox
@@ -103,7 +104,7 @@ function NumberFormatsMenuPopover({ asSubmenu = false }: NumberFormatsMenuPopove
         onClick={useUI.$.withFocusGrid(useUI.$.format.pattern.accounting.set)}
         hintSlot={useUI((ui) => ui.format.pattern.accounting.example)}
       >
-        {s('Accounting')}
+        {messages.numberFormatsMenu.Accounting}
       </UI.MenuItemCheckbox>
       <UI.MenuItemCheckbox
         name="pattern"
@@ -111,7 +112,7 @@ function NumberFormatsMenuPopover({ asSubmenu = false }: NumberFormatsMenuPopove
         onClick={useUI.$.withFocusGrid(useUI.$.format.pattern.financial.set)}
         hintSlot={useUI((ui) => ui.format.pattern.financial.example)}
       >
-        {s('Financial')}
+        {messages.numberFormatsMenu.Financial}
       </UI.MenuItemCheckbox>
       <UI.MenuItemCheckbox
         name="pattern"
@@ -119,7 +120,7 @@ function NumberFormatsMenuPopover({ asSubmenu = false }: NumberFormatsMenuPopove
         onClick={useUI.$.withFocusGrid(useUI.$.format.pattern.currency.default.set)}
         hintSlot={useUI((ui) => ui.format.pattern.currency.default.example)}
       >
-        {s('Currency')}
+        {messages.numberFormatsMenu.Currency}
       </UI.MenuItemCheckbox>
       <UI.MenuItemCheckbox
         name="pattern"
@@ -127,10 +128,10 @@ function NumberFormatsMenuPopover({ asSubmenu = false }: NumberFormatsMenuPopove
         onClick={useUI.$.withFocusGrid(useUI.$.format.pattern.currency.defaultRounded.set)}
         hintSlot={useUI((ui) => ui.format.pattern.currency.defaultRounded.example)}
       >
-        {s('Currency rounded')}
+        {messages.numberFormatsMenu['Currency rounded']}
       </UI.MenuItemCheckbox>
       <Ariakit.MenuProvider store={currencySubMenu} focusLoop>
-        <UI.SubMenuButton leadingIndent>{s('More currency')}</UI.SubMenuButton>
+        <UI.SubMenuButton leadingIndent>{messages.numberFormatsMenu['More currency']}</UI.SubMenuButton>
         {currencyMounted && <CurrencySubMenuPopover />}
       </Ariakit.MenuProvider>
       <UI.MenuSeparator />
@@ -140,7 +141,7 @@ function NumberFormatsMenuPopover({ asSubmenu = false }: NumberFormatsMenuPopove
         onClick={useUI.$.withFocusGrid(useUI.$.format.pattern.date.set)}
         hintSlot={useUI((ui) => ui.format.pattern.date.example)}
       >
-        {s('Date')}
+        {messages.numberFormatsMenu.Date}
       </UI.MenuItemCheckbox>
       <UI.MenuItemCheckbox
         name="pattern"
@@ -148,7 +149,7 @@ function NumberFormatsMenuPopover({ asSubmenu = false }: NumberFormatsMenuPopove
         onClick={useUI.$.withFocusGrid(useUI.$.format.pattern.longDate.set)}
         hintSlot={useUI((ui) => ui.format.pattern.longDate.example)}
       >
-        {s('Long date')}
+        {messages.numberFormatsMenu['Long date']}
       </UI.MenuItemCheckbox>
       <UI.MenuItemCheckbox
         name="pattern"
@@ -156,7 +157,7 @@ function NumberFormatsMenuPopover({ asSubmenu = false }: NumberFormatsMenuPopove
         onClick={useUI.$.withFocusGrid(useUI.$.format.pattern.time.set)}
         hintSlot={useUI((ui) => ui.format.pattern.time.example)}
       >
-        {s('Time')}
+        {messages.numberFormatsMenu.Time}
       </UI.MenuItemCheckbox>
       <UI.MenuItemCheckbox
         name="pattern"
@@ -164,7 +165,7 @@ function NumberFormatsMenuPopover({ asSubmenu = false }: NumberFormatsMenuPopove
         onClick={useUI.$.withFocusGrid(useUI.$.format.pattern.dateTime.set)}
         hintSlot={useUI((ui) => ui.format.pattern.dateTime.example)}
       >
-        {s('Date time')}
+        {messages.numberFormatsMenu['Date time']}
       </UI.MenuItemCheckbox>
       <UI.MenuItemCheckbox
         name="pattern"
@@ -172,7 +173,7 @@ function NumberFormatsMenuPopover({ asSubmenu = false }: NumberFormatsMenuPopove
         onClick={useUI.$.withFocusGrid(useUI.$.format.pattern.duration.set)}
         hintSlot={useUI((ui) => ui.format.pattern.duration.example)}
       >
-        {s('Duration')}
+        {messages.numberFormatsMenu.Duration}
       </UI.MenuItemCheckbox>
       <UI.MenuSeparator />
       <UI.MenuItem
@@ -183,7 +184,7 @@ function NumberFormatsMenuPopover({ asSubmenu = false }: NumberFormatsMenuPopove
         }}
         hintSlot={customCurrencyNewBadge.hintSlot}
       >
-        {s('Custom currency')}
+        {messages.numberFormatsMenu['Custom currency']}
       </UI.MenuItem>
       {featureFlags.SheetsCustomNumberFormatEnabled && (
         <UI.MenuItem
@@ -194,7 +195,7 @@ function NumberFormatsMenuPopover({ asSubmenu = false }: NumberFormatsMenuPopove
           }}
           hintSlot={customNumberNewBadge.hintSlot}
         >
-          {s('Custom number')}
+          {messages.numberFormatsMenu['Custom number']}
         </UI.MenuItem>
       )}
       {featureFlags.SheetsCustomDateTimeFormatEnabled && (
@@ -206,7 +207,7 @@ function NumberFormatsMenuPopover({ asSubmenu = false }: NumberFormatsMenuPopove
           }}
           hintSlot={customDateAndTimeNewBadge.hintSlot}
         >
-          {s('Custom date and time')}
+          {messages.numberFormatsMenu['Custom date and time']}
         </UI.MenuItem>
       )}
     </Menu>
@@ -214,6 +215,8 @@ function NumberFormatsMenuPopover({ asSubmenu = false }: NumberFormatsMenuPopove
 }
 
 function CurrencySubMenuPopover() {
+  const messages = useSheetsMessages()
+
   return (
     <UI.SubMenu>
       <UI.MenuItemCheckbox
@@ -221,54 +224,56 @@ function CurrencySubMenuPopover() {
         value={getCurrencyItemValue('USD')}
         onClick={useUI.$.withFocusGrid(useUI.$.format.pattern.currency.usd.set)}
       >
-        {s('$ US Dollar')}
+        {messages.numberFormatsMenu['$ US Dollar']}
       </UI.MenuItemCheckbox>
       <UI.MenuItemCheckbox
         name="pattern"
         value={getCurrencyItemValue('EUR')}
         onClick={useUI.$.withFocusGrid(useUI.$.format.pattern.currency.eur.set)}
       >
-        {s('€ Euro')}
+        {messages.numberFormatsMenu['€ Euro']}
       </UI.MenuItemCheckbox>
       <UI.MenuItemCheckbox
         name="pattern"
         value={getCurrencyItemValue('GBP')}
         onClick={useUI.$.withFocusGrid(useUI.$.format.pattern.currency.gbp.set)}
       >
-        {s('£ Pound')}
+        {messages.numberFormatsMenu['£ Pound']}
       </UI.MenuItemCheckbox>
       <UI.MenuItemCheckbox
         name="pattern"
         value={getCurrencyItemValue('JPY')}
         onClick={useUI.$.withFocusGrid(useUI.$.format.pattern.currency.jpy.set)}
       >
-        {s('¥ Yen')}
+        {messages.numberFormatsMenu['¥ Yen']}
       </UI.MenuItemCheckbox>
       <UI.MenuItemCheckbox
         name="pattern"
         value={getCurrencyItemValue('CNY')}
         onClick={useUI.$.withFocusGrid(useUI.$.format.pattern.currency.cny.set)}
       >
-        {s('CN¥ Chinese Yuan')}
+        {messages.numberFormatsMenu['CN¥ Chinese Yuan']}
       </UI.MenuItemCheckbox>
       <UI.MenuItemCheckbox
         name="pattern"
         value={getCurrencyItemValue('INR')}
         onClick={useUI.$.withFocusGrid(useUI.$.format.pattern.currency.inr.set)}
       >
-        {s('₹ Rupee')}
+        {messages.numberFormatsMenu['₹ Rupee']}
       </UI.MenuItemCheckbox>
     </UI.SubMenu>
   )
 }
 
 function NewBadge() {
+  const messages = useSheetsMessages()
+
   return (
     <span
       aria-hidden="true"
       className="flex shrink-0 items-center self-center rounded bg-[#F4F1FF] px-1 text-xs font-semibold leading-4 text-[#6D4AFF]"
     >
-      {c('Info').t`New`}
+      {messages.numberFormatsMenu.New}
     </span>
   )
 }
@@ -314,31 +319,32 @@ function getCurrencyItemValue(name: string) {
   return CURRENCY === name ? 'CURRENCY' : name
 }
 
-function strings() {
-  return {
-    General: c('sheets_2025:Spreadsheet editor number formats menu').t`General`,
-    'Plain text': c('sheets_2025:Spreadsheet editor number formats menu').t`Plain text`,
-    Number: c('sheets_2025:Spreadsheet editor number formats menu').t`Number`,
-    Percent: c('sheets_2025:Spreadsheet editor number formats menu').t`Percent`,
-    Scientific: c('sheets_2025:Spreadsheet editor number formats menu').t`Scientific`,
-    Accounting: c('sheets_2025:Spreadsheet editor number formats menu').t`Accounting`,
-    Financial: c('sheets_2025:Spreadsheet editor number formats menu').t`Financial`,
-    Currency: c('sheets_2025:Spreadsheet editor number formats menu').t`Currency`,
-    'Currency rounded': c('sheets_2025:Spreadsheet editor number formats menu').t`Currency rounded`,
-    'More currency': c('sheets_2025:Spreadsheet editor number formats menu').t`More currency`,
-    '$ US Dollar': c('sheets_2025:Spreadsheet editor number formats menu').t`$ US Dollar`,
-    '€ Euro': c('sheets_2025:Spreadsheet editor number formats menu').t`€ Euro`,
-    '£ Pound': c('sheets_2025:Spreadsheet editor number formats menu').t`£ Pound`,
-    '¥ Yen': c('sheets_2025:Spreadsheet editor number formats menu').t`¥ Yen`,
-    'CN¥ Chinese Yuan': c('sheets_2025:Spreadsheet editor number formats menu').t`CN¥ Chinese Yuan`,
-    '₹ Rupee': c('sheets_2025:Spreadsheet editor number formats menu').t`₹ Rupee`,
-    Date: c('sheets_2025:Spreadsheet editor number formats menu').t`Date`,
-    'Long date': c('sheets_2025:Spreadsheet editor number formats menu').t`Long date`,
-    Time: c('sheets_2025:Spreadsheet editor number formats menu').t`Time`,
-    'Date time': c('sheets_2025:Spreadsheet editor number formats menu').t`Date time`,
-    Duration: c('sheets_2025:Spreadsheet editor number formats menu').t`Duration`,
-    'Custom currency': c('sheets_2025:Spreadsheet editor number formats menu').t`Custom currency`,
-    'Custom number': c('sheets_2025:Spreadsheet editor number formats menu').t`Custom number`,
-    'Custom date and time': c('sheets_2025:Spreadsheet editor number formats menu').t`Custom date and time`,
-  }
+export const numberFormatsMenuMessages = {
+  numberFormatsMenu: {
+    General: `General`,
+    'Plain text': `Plain text`,
+    Number: `Number`,
+    Percent: `Percent`,
+    Scientific: `Scientific`,
+    Accounting: `Accounting`,
+    Financial: `Financial`,
+    Currency: `Currency`,
+    'Currency rounded': `Currency rounded`,
+    'More currency': `More currency`,
+    '$ US Dollar': `$ US Dollar`,
+    '€ Euro': `€ Euro`,
+    '£ Pound': `£ Pound`,
+    '¥ Yen': `¥ Yen`,
+    'CN¥ Chinese Yuan': `CN¥ Chinese Yuan`,
+    '₹ Rupee': `₹ Rupee`,
+    Date: `Date`,
+    'Long date': `Long date`,
+    Time: `Time`,
+    'Date time': `Date time`,
+    Duration: `Duration`,
+    'Custom currency': `Custom currency`,
+    'Custom number': `Custom number`,
+    'Custom date and time': `Custom date and time`,
+    New: `New`,
+  },
 }

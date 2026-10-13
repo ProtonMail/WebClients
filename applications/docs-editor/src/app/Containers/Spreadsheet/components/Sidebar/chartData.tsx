@@ -1,8 +1,9 @@
+import type { SheetsMessages } from '../../messages/SheetsMessages'
 import type { BasicChartSpec, ChartAggregateType, ChartData, ChartSpec, EmbeddedChart } from '@rowsncolumns/spreadsheet'
 import omit from 'lodash/omit'
 
 type ChartType = {
-  name: string
+  name: keyof SheetsMessages['chartTypes']
   icon: JSX.Element
   spec: Partial<ChartSpec>
 }
@@ -231,14 +232,17 @@ const sunburst: ChartType = {
 
 const HIERARCHY_CHART_TYPES: ChartType[] = [treemap, sunburst]
 
-export const CHART_TYPES: [string, ChartType[]][] = [
+export const CHART_TYPES: [keyof SheetsMessages['chartTypes'], ChartType[]][] = [
   ['Column', COLUMN_CHART_TYPES],
   ['Line', LINE_CHART_TYPES],
   ['Pie', PIE_CHART_TYPES],
   ['Hierarchy', HIERARCHY_CHART_TYPES],
 ]
 
-export const AGGREGATE_OPTIONS: { label: string; value: ChartAggregateType }[] = [
+export const AGGREGATE_OPTIONS: {
+  label: string
+  value: ChartAggregateType & keyof SheetsMessages['chartAggregates']
+}[] = [
   { label: 'Sum', value: 'SUM' },
   { label: 'Average', value: 'AVERAGE' },
   { label: 'Count', value: 'COUNT' },
@@ -316,3 +320,31 @@ export function mergeChartEditorChanges(currentChart: EmbeddedChart, formChart: 
 }
 
 export type ChartDataFormula = Omit<ChartData, 'sources'> & { sources: string[] }
+
+export const chartTypesMessages = {
+  chartTypes: {
+    'Clustered Column': 'Clustered Column',
+    'Stacked column': 'Stacked column',
+    Line: 'Line',
+    'Stacked line': 'Stacked line',
+    'Smooth line': 'Smooth line',
+    '2D Pie': '2D Pie',
+    Doughnut: 'Doughnut',
+    Treemap: 'Treemap',
+    Sunburst: 'Sunburst',
+    Column: 'Column',
+    Pie: 'Pie',
+    Hierarchy: 'Hierarchy',
+  },
+}
+
+export const chartAggregatesMessages = {
+  chartAggregates: {
+    SUM: 'Sum',
+    AVERAGE: 'Average',
+    COUNT: 'Count',
+    MEDIAN: 'Median',
+    MIN: 'Min',
+    MAX: 'Max',
+  },
+}

@@ -1,3 +1,4 @@
+import { useSheetsMessages } from '../../SheetsDependenciesProvider'
 import { type CellInterface, isAreasEqual } from '@rowsncolumns/grid'
 import {
   type NamedRange,
@@ -14,12 +15,10 @@ import { FUNCTION_DESCRIPTIONS } from '../../constants'
 import * as Ariakit from '@ariakit/react'
 import * as UI from '../ui'
 import * as Icons from '../icons'
-import { c } from 'ttag'
-import { createStringifier } from '../../stringifier'
-
-const { s } = createStringifier(strings)
 
 function RangeSelector() {
+  const messages = useSheetsMessages()
+
   const [value, setValue] = useState('')
   const inputRef = useRef<HTMLInputElement>(null)
   const isFormulaMode = useFormulaModeValue()
@@ -95,7 +94,7 @@ function RangeSelector() {
   return (
     <div className="flex w-32 items-center py-0.5">
       <input
-        aria-label={s('Range selector')}
+        aria-label={messages.formulaBar['Range selector']}
         type="text"
         value={value}
         ref={inputRef}
@@ -124,6 +123,8 @@ function RangeSelectorMenu(props: RangeSelectorMenuProps) {
 }
 
 function RangeSelectorMenuPopover() {
+  const messages = useSheetsMessages()
+
   const sheets = useUI((ui) => ui.legacy.sheets)
   const namedRanges = useUI((ui) => ui.legacy.namedRanges)
   const tables = useUI((ui) => ui.legacy.tables)
@@ -141,7 +142,7 @@ function RangeSelectorMenuPopover() {
   return (
     <UI.Menu>
       <UI.MenuGroup>
-        <UI.MenuGroupLabel>{s('Named ranges')}</UI.MenuGroupLabel>
+        <UI.MenuGroupLabel>{messages.formulaBar['Named ranges']}</UI.MenuGroupLabel>
         {namedRanges.map((namedRange) => (
           <NamedRangeItem key={namedRange.namedRangeId} namedRange={namedRange} />
         ))}
@@ -150,14 +151,14 @@ function RangeSelectorMenuPopover() {
           leadingIconSlot={<UI.Icon data={Icons.plus} />}
           disabled={useUI((ui) => ui.info.isReadonly)}
         >
-          {s('Add new')}
+          {messages.formulaBar['Add new']}
         </UI.MenuItem>
       </UI.MenuGroup>
       <UI.MenuSeparator />
       {tables.length > 0 && (
         <>
           <UI.MenuGroup>
-            <UI.MenuGroupLabel>{s('Tables')}</UI.MenuGroupLabel>
+            <UI.MenuGroupLabel>{messages.formulaBar.Tables}</UI.MenuGroupLabel>
             {tables.map((table) => (
               <UI.MenuItem
                 key={table.id}
@@ -174,7 +175,7 @@ function RangeSelectorMenuPopover() {
         </>
       )}
       <UI.MenuGroup>
-        <UI.MenuGroupLabel>{s('Sheets')}</UI.MenuGroupLabel>
+        <UI.MenuGroupLabel>{messages.formulaBar.Sheets}</UI.MenuGroupLabel>
         {sortSheetsByIndex(sheets).map(({ title, sheetId }) => (
           <UI.MenuItem
             leadingIconSlot={<UI.Icon data={Icons.file} />}
@@ -191,6 +192,8 @@ function RangeSelectorMenuPopover() {
 
 type NamedRangeItemProps = { namedRange: NamedRange }
 function NamedRangeItem({ namedRange }: NamedRangeItemProps) {
+  const messages = useSheetsMessages()
+
   const sheetId = useUI((ui) => ui.legacy.activeSheetId)
   const onSelectNamedRange = useUI.$.legacy.onSelectNamedRange
   const onRequestUpdateNamedRange = useUI.$.legacy.onRequestUpdateNamedRange
@@ -205,7 +208,7 @@ function NamedRangeItem({ namedRange }: NamedRangeItemProps) {
               onSelectNamedRange(namedRange)
             }}
           >
-            View
+            {messages.formulaBar.View}
           </UI.MenuItem>
         )}
         <UI.MenuItem
@@ -213,14 +216,14 @@ function NamedRangeItem({ namedRange }: NamedRangeItemProps) {
             onRequestUpdateNamedRange(sheetId, namedRange)
           }}
         >
-          Edit
+          {messages.formulaBar.Edit}
         </UI.MenuItem>
         <UI.MenuItem
           onClick={() => {
             onDeleteNamedRange(namedRange.namedRangeId)
           }}
         >
-          Remove
+          {messages.formulaBar.Remove}
         </UI.MenuItem>
       </UI.SubMenu>
     </Ariakit.MenuProvider>
@@ -233,13 +236,15 @@ export function FormulaBar() {
 }
 
 function FormulaBarContent() {
+  const messages = useSheetsMessages()
+
   return (
     <div className="flex gap-[.125rem] border-t border-[--border-weak] px-3">
       <RangeSelector />
       <div className="flex items-center border-x border-[--border-weak] px-1 text-sm font-normal italic">fx</div>
       <div className="flex max-h-8 flex-1 items-center overflow-auto py-1">
         <FormulaBarInput
-          aria-label={s('Formula bar')}
+          aria-label={messages.formulaBar['Formula bar']}
           className="border-none bg-[white] text-sm font-normal focus:ring-0"
           sheetId={useUI((ui) => ui.legacy.activeSheetId)}
           activeCell={useUI((ui) => ui.legacy.activeCell)}
@@ -251,13 +256,17 @@ function FormulaBarContent() {
   )
 }
 
-function strings() {
-  return {
-    'Add new': c('sheets_2025:Range selector menu').t`Add new`,
-    'Formula bar': c('sheets_2025:Formula bar').t`Formula bar`,
-    'Named ranges': c('sheets_2025:Range selector menu').t`Named ranges`,
-    'Range selector': c('sheets_2025:Range selector').t`Range selector`,
-    Tables: c('sheets_2025:Range selector menu').t`Tables`,
-    Sheets: c('sheets_2025:Range selector menu').t`Sheets`,
-  }
+export const formulaBarMessages = {
+  formulaBar: {
+    'Add new': `Add new`,
+    'Formula bar': `Formula bar`,
+    'Named ranges': `Named ranges`,
+    'Range selector': `Range selector`,
+    Tables: `Tables`,
+    Sheets: `Sheets`,
+
+    View: 'View',
+    Edit: 'Edit',
+    Remove: 'Remove',
+  },
 }

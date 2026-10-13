@@ -1,8 +1,8 @@
+import { useSheetsMessages } from '../../SheetsDependenciesProvider'
 import * as Ariakit from '@ariakit/react'
-import clsx from 'clsx'
+import { clsx } from 'clsx'
 import { FormGroup, Input } from '../Sidebar/shared'
-import { createStringifier } from '../../stringifier'
-import { c } from 'ttag'
+
 import {
   type ResizeDimensionState,
   useResizeDimensionDialogState,
@@ -12,13 +12,13 @@ import { generateMultiDimTitle, useSpreadsheetApi } from '@rowsncolumns/spreadsh
 import { useUI } from '../../ui-store'
 import { Button } from '../shared/Button'
 
-const { s } = createStringifier(strings)
-
 interface ResizeDimensionEditorProps {
   resizeDimension: ResizeDimensionState
 }
 
 function ResizeDimensionEditor({ resizeDimension }: ResizeDimensionEditorProps) {
+  const messages = useSheetsMessages()
+
   const [open, setOpen] = useResizeDimensionDialogState()
   const onResize = useUI((ui) => ui.legacy.onResize)
   const { axis, indexes, sheetId } = resizeDimension
@@ -52,14 +52,18 @@ function ResizeDimensionEditor({ resizeDimension }: ResizeDimensionEditorProps) 
       >
         <div className="mb-6">
           <Ariakit.DialogHeading className="text-xl font-bold">
-            Resize {axis === 'y' ? s('column') : s('row')} {generateMultiDimTitle(indexes, axis)}
+            {axis === 'y'
+              ? messages.resizeDimensionEditorDialog.resizeColumns(generateMultiDimTitle(indexes, axis) ?? '')
+              : messages.resizeDimensionEditorDialog.resizeRows(generateMultiDimTitle(indexes, axis) ?? '')}
           </Ariakit.DialogHeading>
         </div>
 
         <form onSubmit={onSubmit}>
           <FormGroup>
             <label htmlFor="size" className="text-sm">
-              Specify {axis === 'y' ? s('column width') : s('row height')} (px)
+              {axis === 'y'
+                ? messages.resizeDimensionEditorDialog.specifyColumnWidth
+                : messages.resizeDimensionEditorDialog.specifyRowHeight}
             </label>
             <Input
               id="size"
@@ -67,16 +71,16 @@ function ResizeDimensionEditor({ resizeDimension }: ResizeDimensionEditorProps) 
               type="number"
               min="0"
               defaultValue={defaultDimension}
-              placeholder={`${s('Default')} ${defaultDimension}`}
+              placeholder={messages.resizeDimensionEditorDialog.defaultSize(defaultDimension ?? 0)}
             />
           </FormGroup>
 
           <div className="mt-4 flex items-center justify-end gap-2 text-sm">
             <Ariakit.DialogDismiss render={<Button type="button" className="!px-[.9375rem] !py-[.4375rem]" />}>
-              {s('Cancel')}
+              {messages.resizeDimensionEditorDialog.Cancel}
             </Ariakit.DialogDismiss>
             <Button type="submit" color="norm" className="!px-[.9375rem] !py-[.4375rem]">
-              {s('OK')}
+              {messages.resizeDimensionEditorDialog.OK}
             </Button>
           </div>
         </form>
@@ -94,14 +98,14 @@ export function ResizeDimensionEditorDialog() {
   return <ResizeDimensionEditor resizeDimension={resizeDimension} />
 }
 
-function strings() {
-  return {
-    column: c('sheets_2025:Spreadsheet resize dimension dialog').t`column`,
-    row: c('sheets_2025:Spreadsheet resize dimension dialog').t`row`,
-    'column width': c('sheets_2025:Spreadsheet resize dimension dialog').t`column width`,
-    'row height': c('sheets_2025:Spreadsheet resize dimension dialog').t`row height`,
-    Default: c('sheets_2025:Spreadsheet resize dimension dialog').t`Default`,
-    OK: c('sheets_2025:Spreadsheet resize dimension dialog').t`OK`,
-    Cancel: c('sheets_2025:Spreadsheet resize dimension dialog').t`Cancel`,
-  }
+export const resizeDimensionEditorDialogMessages = {
+  resizeDimensionEditorDialog: {
+    resizeColumns: (title: string) => `Resize column ${title}`,
+    resizeRows: (title: string) => `Resize row ${title}`,
+    specifyColumnWidth: 'Specify column width (px)',
+    specifyRowHeight: 'Specify row height (px)',
+    defaultSize: (size: number) => `Default ${size}`,
+    OK: `OK`,
+    Cancel: `Cancel`,
+  },
 }

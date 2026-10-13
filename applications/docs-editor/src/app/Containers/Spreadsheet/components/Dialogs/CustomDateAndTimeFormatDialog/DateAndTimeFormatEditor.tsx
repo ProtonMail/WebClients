@@ -1,3 +1,4 @@
+import { useSheetsMessages } from '../../../SheetsDependenciesProvider'
 import { type InitialConfigType, LexicalComposer } from '@lexical/react/LexicalComposer'
 import { PlainTextPlugin } from '@lexical/react/LexicalPlainTextPlugin'
 import { ContentEditable } from '@lexical/react/LexicalContentEditable'
@@ -41,12 +42,11 @@ import { useUI } from '../../../ui-store'
 import * as Icons from '../../icons'
 import * as UI from '../../ui'
 import {
-  MENU_COLUMNS,
-  TOKENS_BY_CATEGORY,
+  getMenuColumns,
+  getTokensByCategory,
   type TokenPointer,
   getTokenExample,
   parsePattern,
-  s,
   serializeLiteral,
 } from './customDateAndTimeFormat'
 
@@ -248,6 +248,7 @@ function $readPattern(): string {
 }
 
 function TokenChip({ nodeKey, tokenPointer }: { nodeKey: NodeKey; tokenPointer: TokenPointer }) {
+  const messages = useSheetsMessages()
   const [editor] = useLexicalComposerContext()
   const [isSelected] = useLexicalNodeSelection(nodeKey)
   const locale = useUI((ui) => ui.locale)
@@ -277,7 +278,7 @@ function TokenChip({ nodeKey, tokenPointer }: { nodeKey: NodeKey; tokenPointer: 
   }
 
   const tokenDef = useMemo(() => {
-    for (const category of TOKENS_BY_CATEGORY) {
+    for (const category of getTokensByCategory(messages)) {
       for (const def of category.tokenDefs) {
         if (def.type === tokenPointer.type) {
           return def
@@ -285,7 +286,7 @@ function TokenChip({ nodeKey, tokenPointer }: { nodeKey: NodeKey; tokenPointer: 
       }
     }
     return null
-  }, [tokenPointer.type])
+  }, [tokenPointer.type, messages])
 
   const example = useMemo(() => getTokenExample(tokenPointer, locale.resolved), [tokenPointer, locale.resolved])
 
@@ -319,7 +320,7 @@ function TokenChip({ nodeKey, tokenPointer }: { nodeKey: NodeKey; tokenPointer: 
             </UI.MenuItem>
           ))}
           <UI.MenuSeparator />
-          <UI.MenuItem onClick={deleteToken}>{s('Delete')}</UI.MenuItem>
+          <UI.MenuItem onClick={deleteToken}>{messages.customDateAndTimeFormat.Delete}</UI.MenuItem>
         </UI.MenuGroup>
       </Atoms.DropdownPopover>
     </Ariakit.MenuProvider>
@@ -451,6 +452,7 @@ function InitialPatternPlugin({ pattern }: { pattern: string }) {
 }
 
 function TokenMenu() {
+  const messages = useSheetsMessages()
   const [editor] = useLexicalComposerContext()
   const compositeStore = Ariakit.useCompositeStore({ focusLoop: true, focusWrap: true })
   const popoverStore = Ariakit.usePopoverStore({
@@ -461,7 +463,7 @@ function TokenMenu() {
       }
     },
   })
-  const gridStyle = { gridTemplateColumns: `repeat(${TOKENS_BY_CATEGORY.length}, minmax(0, 1fr))` }
+  const gridStyle = { gridTemplateColumns: `repeat(${getTokensByCategory(messages).length}, minmax(0, 1fr))` }
 
   const insertToken = (tokenPointer: TokenPointer) => {
     editor.update(() => {
@@ -506,13 +508,13 @@ function TokenMenu() {
         <Ariakit.CompositeProvider store={compositeStore}>
           <Ariakit.Composite className="flex min-h-0 min-w-0 flex-col gap-1 px-2 py-1 outline-none">
             <div className="grid gap-x-6" style={gridStyle}>
-              {TOKENS_BY_CATEGORY.map(({ type, label }) => (
+              {getTokensByCategory(messages).map(({ type, label }) => (
                 <div key={type} className="px-2 py-1.5 text-xs font-bold uppercase text-[#949494]">
                   {label}
                 </div>
               ))}
             </div>
-            {MENU_COLUMNS.map((row, i) => (
+            {getMenuColumns(messages).map((row, i) => (
               <Ariakit.CompositeRow key={i} className="grid gap-x-6" style={gridStyle}>
                 {row.map((tokenDef, j) => {
                   if (!tokenDef) {

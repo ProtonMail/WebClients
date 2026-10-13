@@ -1,7 +1,7 @@
+import { useSheetsMessages } from '../../../SheetsDependenciesProvider'
 import * as Ariakit from '@ariakit/react'
 import type { ReactElement } from 'react'
-import { c } from 'ttag'
-import { createStringifier } from '../../../stringifier'
+
 import * as UI from '../../ui'
 import * as Icons from '../../icons'
 import { NumberFormatsMenu } from '../../shared/NumberFormatsMenu'
@@ -9,8 +9,6 @@ import { FONT_SIZE_DEFAULT, FONT_SIZE_SUGGESTIONS } from '../../../constants'
 import { useUI } from '../../../ui-store'
 import { getWrappingIcon } from '../../utils'
 import { MergeMenuItems } from '../../shared/MergeMenuItems'
-
-const { s } = createStringifier(strings)
 
 export interface FormatMenuProps extends Ariakit.MenuProviderProps {
   renderMenuButton: ReactElement
@@ -42,21 +40,29 @@ export function FormatMenu({ renderMenuButton, ...props }: FormatMenuProps) {
 }
 
 function ThemeSubmenu() {
+  const messages = useSheetsMessages()
+
   // TODO: we're not doing themes yet
   return
   // biome-ignore lint/correctness/noUnreachable: kept for the future
   return (
     <Ariakit.MenuProvider>
-      <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.palette} />}>{s('Theme')}</UI.SubMenuButton>
+      <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.palette} />}>
+        {messages.formatMenu.Theme}
+      </UI.SubMenuButton>
       <UI.SubMenu>
         {/* TODO: implement */}
-        <UI.MenuItem leadingIconSlot={<UI.Icon data={Icons.clock} />}>Coming soon...</UI.MenuItem>
+        <UI.MenuItem leadingIconSlot={<UI.Icon data={Icons.clock} />}>
+          {messages.formatMenu['Coming soon...']}
+        </UI.MenuItem>
       </UI.SubMenu>
     </Ariakit.MenuProvider>
   )
 }
 
 function TableFormattingSubmenu() {
+  const messages = useSheetsMessages()
+
   // TODO: implement
   return
   // biome-ignore lint/correctness/noUnreachable: kept for the future
@@ -66,51 +72,61 @@ function TableFormattingSubmenu() {
         leadingIconSlot={<UI.Icon data={Icons.layoutGrid} />}
         disabled={useUI((ui) => ui.info.isReadonly)}
       >
-        {s('Table formatting')}
+        {messages.formatMenu['Table formatting']}
       </UI.SubMenuButton>
       <UI.SubMenu>
         {/* TODO: waiting for SVG for implementation */}
-        <UI.MenuItem leadingIconSlot={<UI.Icon data={Icons.clock} />}>Coming soon...</UI.MenuItem>
+        <UI.MenuItem leadingIconSlot={<UI.Icon data={Icons.clock} />}>
+          {messages.formatMenu['Coming soon...']}
+        </UI.MenuItem>
       </UI.SubMenu>
     </Ariakit.MenuProvider>
   )
 }
 
 function CellStylesSubmenu() {
+  const messages = useSheetsMessages()
+
   // TODO: implement
   return
   // biome-ignore lint/correctness/noUnreachable: kept for the future
   return (
     <Ariakit.MenuProvider>
       <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.brush} />} disabled={useUI((ui) => ui.info.isReadonly)}>
-        {s('Cell styles')}
+        {messages.formatMenu['Cell styles']}
       </UI.SubMenuButton>
       <UI.SubMenu>
         {/* TODO: implement */}
-        <UI.MenuItem leadingIconSlot={<UI.Icon data={Icons.clock} />}>Coming soon...</UI.MenuItem>
+        <UI.MenuItem leadingIconSlot={<UI.Icon data={Icons.clock} />}>
+          {messages.formatMenu['Coming soon...']}
+        </UI.MenuItem>
       </UI.SubMenu>
     </Ariakit.MenuProvider>
   )
 }
 
 function NumberSubmenu() {
+  const messages = useSheetsMessages()
+
   return (
     <NumberFormatsMenu asSubmenu>
       <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.numbers} />} disabled={useUI((ui) => ui.info.isReadonly)}>
-        {s('Number')}
+        {messages.formatMenu.Number}
       </UI.SubMenuButton>
     </NumberFormatsMenu>
   )
 }
 
 function TextSubmenu() {
+  const messages = useSheetsMessages()
+
   return (
     <Ariakit.MenuProvider>
       <UI.SubMenuButton
         leadingIconSlot={<UI.Icon data={Icons.textBold} />}
         disabled={useUI((ui) => ui.info.isReadonly)}
       >
-        {s('Text')}
+        {messages.formatMenu.Text}
       </UI.SubMenuButton>
       <UI.SubMenu>
         <UI.MenuItemCheckbox
@@ -121,7 +137,7 @@ function TextSubmenu() {
           onClick={useUI.$.withFocusGrid(useUI.$.format.text.bold.toggle)}
           disabled={useUI((ui) => ui.info.isReadonly)}
         >
-          {s('Bold')}
+          {messages.formatMenu.Bold}
         </UI.MenuItemCheckbox>
         <UI.MenuItemCheckbox
           name="format"
@@ -131,7 +147,7 @@ function TextSubmenu() {
           onClick={useUI.$.withFocusGrid(useUI.$.format.text.italic.toggle)}
           disabled={useUI((ui) => ui.info.isReadonly)}
         >
-          {s('Italic')}
+          {messages.formatMenu.Italic}
         </UI.MenuItemCheckbox>
         <UI.MenuItemCheckbox
           name="format"
@@ -141,7 +157,7 @@ function TextSubmenu() {
           onClick={useUI.$.withFocusGrid(useUI.$.format.text.underline.toggle)}
           disabled={useUI((ui) => ui.info.isReadonly)}
         >
-          {s('Underline')}
+          {messages.formatMenu.Underline}
         </UI.MenuItemCheckbox>
         <UI.MenuItemCheckbox
           name="format"
@@ -151,7 +167,7 @@ function TextSubmenu() {
           onClick={useUI.$.withFocusGrid(useUI.$.format.text.strikethrough.toggle)}
           disabled={useUI((ui) => ui.info.isReadonly)}
         >
-          {s('Strikethrough')}
+          {messages.formatMenu.Strikethrough}
         </UI.MenuItemCheckbox>
       </UI.SubMenu>
     </Ariakit.MenuProvider>
@@ -159,6 +175,8 @@ function TextSubmenu() {
 }
 
 function AlignmentSubmenu() {
+  const messages = useSheetsMessages()
+
   const setHorizontalAlignment = useUI.$.format.alignment.horizontal.set
   const setVerticalAlignment = useUI.$.format.alignment.vertical.set
   return (
@@ -167,7 +185,7 @@ function AlignmentSubmenu() {
         leadingIconSlot={<UI.Icon data={Icons.textAlignLeft} />}
         disabled={useUI((ui) => ui.info.isReadonly)}
       >
-        {s('Alignment')}
+        {messages.formatMenu.Alignment}
       </UI.SubMenuButton>
       <UI.SubMenu>
         <UI.MenuItem
@@ -176,7 +194,7 @@ function AlignmentSubmenu() {
           onClick={useUI.$.withFocusGrid(() => setHorizontalAlignment('left'))}
           disabled={useUI((ui) => ui.info.isReadonly)}
         >
-          {s('Left')}
+          {messages.formatMenu.Left}
         </UI.MenuItem>
         <UI.MenuItem
           leadingIconSlot={<UI.Icon data={Icons.textAlignCenter} />}
@@ -184,7 +202,7 @@ function AlignmentSubmenu() {
           onClick={useUI.$.withFocusGrid(() => setHorizontalAlignment('center'))}
           disabled={useUI((ui) => ui.info.isReadonly)}
         >
-          {s('Center')}
+          {messages.formatMenu.Center}
         </UI.MenuItem>
         <UI.MenuItem
           leadingIconSlot={<UI.Icon data={Icons.textAlignRight} />}
@@ -192,7 +210,7 @@ function AlignmentSubmenu() {
           onClick={useUI.$.withFocusGrid(() => setHorizontalAlignment('right'))}
           disabled={useUI((ui) => ui.info.isReadonly)}
         >
-          {s('Right')}
+          {messages.formatMenu.Right}
         </UI.MenuItem>
         <UI.MenuSeparator />
         <UI.MenuItem
@@ -200,21 +218,21 @@ function AlignmentSubmenu() {
           onClick={useUI.$.withFocusGrid(() => setVerticalAlignment('top'))}
           disabled={useUI((ui) => ui.info.isReadonly)}
         >
-          {s('Top')}
+          {messages.formatMenu.Top}
         </UI.MenuItem>
         <UI.MenuItem
           leadingIconSlot={<UI.Icon data={Icons.alignVerticalCenter} />}
           onClick={useUI.$.withFocusGrid(() => setVerticalAlignment('middle'))}
           disabled={useUI((ui) => ui.info.isReadonly)}
         >
-          {s('Middle')}
+          {messages.formatMenu.Middle}
         </UI.MenuItem>
         <UI.MenuItem
           leadingIconSlot={<UI.Icon data={Icons.alignBottom} />}
           onClick={useUI.$.withFocusGrid(() => setVerticalAlignment('bottom'))}
           disabled={useUI((ui) => ui.info.isReadonly)}
         >
-          {s('Bottom')}
+          {messages.formatMenu.Bottom}
         </UI.MenuItem>
       </UI.SubMenu>
     </Ariakit.MenuProvider>
@@ -222,6 +240,8 @@ function AlignmentSubmenu() {
 }
 
 function WrappingSubmenu() {
+  const messages = useSheetsMessages()
+
   const setWrapping = useUI.$.format.wrapping.set
   return (
     <Ariakit.MenuProvider>
@@ -229,7 +249,7 @@ function WrappingSubmenu() {
         leadingIconSlot={<UI.Icon data={getWrappingIcon(useUI((ui) => ui.format.wrapping.value))} />}
         disabled={useUI((ui) => ui.info.isReadonly)}
       >
-        {s('Wrapping')}
+        {messages.formatMenu.Wrapping}
       </UI.SubMenuButton>
       <UI.SubMenu>
         <UI.MenuItem
@@ -237,21 +257,21 @@ function WrappingSubmenu() {
           onClick={useUI.$.withFocusGrid(() => setWrapping(undefined))}
           disabled={useUI((ui) => ui.info.isReadonly)}
         >
-          {s('Overflow')}
+          {messages.formatMenu.Overflow}
         </UI.MenuItem>
         <UI.MenuItem
           leadingIconSlot={<UI.Icon data={Icons.textWrap} />}
           onClick={useUI.$.withFocusGrid(() => setWrapping('wrap'))}
           disabled={useUI((ui) => ui.info.isReadonly)}
         >
-          {s('Wrap')}
+          {messages.formatMenu.Wrap}
         </UI.MenuItem>
         <UI.MenuItem
           leadingIconSlot={<UI.Icon data={Icons.textClip} />}
           onClick={useUI.$.withFocusGrid(() => setWrapping('clip'))}
           disabled={useUI((ui) => ui.info.isReadonly)}
         >
-          {s('Clip')}
+          {messages.formatMenu.Clip}
         </UI.MenuItem>
       </UI.SubMenu>
     </Ariakit.MenuProvider>
@@ -277,13 +297,15 @@ function WrappingSubmenu() {
 // }
 
 function FontSizeSubmenu() {
+  const messages = useSheetsMessages()
+
   const fontSize = useUI((ui) => ui.format.text.fontSize.value) ?? FONT_SIZE_DEFAULT
   const setFontSize = useUI.$.format.text.fontSize.set
   const disabled = useUI((ui) => ui.info.isReadonly)
   return (
     <Ariakit.MenuProvider>
       <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.fontSize} />} disabled={disabled}>
-        {s('Font size')}
+        {messages.formatMenu['Font size']}
       </UI.SubMenuButton>
       <UI.SubMenu>
         {FONT_SIZE_SUGGESTIONS.map((size) => (
@@ -303,13 +325,15 @@ function FontSizeSubmenu() {
 }
 
 function MergeCellsSubmenu() {
+  const messages = useSheetsMessages()
+
   return (
     <Ariakit.MenuProvider>
       <UI.SubMenuButton
         leadingIconSlot={<UI.Icon data={Icons.merge} />}
         disabled={useUI((ui) => !ui.format.merge.menu.enabled || ui.info.isReadonly)}
       >
-        {s('Merge cells')}
+        {messages.formatMenu['Merge cells']}
       </UI.SubMenuButton>
       <UI.SubMenu>
         <MergeMenuItems />
@@ -319,25 +343,29 @@ function MergeCellsSubmenu() {
 }
 
 function ConditionalFormatting() {
+  const messages = useSheetsMessages()
+
   return (
     <UI.MenuItem
       leadingIconSlot={<UI.Icon data={Icons.broom} />}
       onClick={useUI.$.format.conditional.open}
       disabled={useUI((ui) => ui.info.isReadonly)}
     >
-      {s('Conditional formatting')}
+      {messages.formatMenu['Conditional formatting']}
     </UI.MenuItem>
   )
 }
 
 function ClearSubmenu() {
+  const messages = useSheetsMessages()
+
   return (
     <Ariakit.MenuProvider>
       <UI.SubMenuButton
         leadingIconSlot={<UI.Icon data={Icons.crossBig} />}
         disabled={useUI((ui) => ui.info.isReadonly)}
       >
-        {s('Clear')}
+        {messages.formatMenu.Clear}
       </UI.SubMenuButton>
       <UI.SubMenu>
         <UI.MenuItem
@@ -345,47 +373,49 @@ function ClearSubmenu() {
           onClick={useUI.$.withFocusGrid(useUI.$.format.clear)}
           disabled={useUI((ui) => ui.info.isReadonly)}
         >
-          {s('Clear formatting')}
+          {messages.formatMenu['Clear formatting']}
         </UI.MenuItem>
         <UI.MenuItem
           leadingIconSlot={<UI.Icon data={Icons.crossBig} />}
           onClick={useUI.$.withFocusGrid(useUI.$.operation.delete)}
           disabled={useUI((ui) => ui.info.isReadonly)}
         >
-          {s('Clear content')}
+          {messages.formatMenu['Clear content']}
         </UI.MenuItem>
       </UI.SubMenu>
     </Ariakit.MenuProvider>
   )
 }
 
-function strings() {
-  return {
-    Theme: c('sheets_2025:Spreadsheet editor menubar format menu').t`Theme`,
-    'Table formatting': c('sheets_2025:Spreadsheet editor menubar format menu').t`Table formatting`,
-    'Cell styles': c('sheets_2025:Spreadsheet editor menubar format menu').t`Cell styles`,
-    Number: c('sheets_2025:Spreadsheet editor menubar format menu').t`Number`,
-    Text: c('sheets_2025:Spreadsheet editor menubar format menu').t`Text`,
-    Bold: c('sheets_2025:Spreadsheet editor menubar format menu').t`Bold`,
-    Italic: c('sheets_2025:Spreadsheet editor menubar format menu').t`Italic`,
-    Underline: c('sheets_2025:Spreadsheet editor menubar format menu').t`Underline`,
-    Strikethrough: c('sheets_2025:Spreadsheet editor menubar format menu').t`Strikethrough`,
-    Alignment: c('sheets_2025:Spreadsheet editor menubar format menu').t`Alignment`,
-    Left: c('sheets_2025:Spreadsheet editor menubar format menu (alignment)').t`Left`,
-    Center: c('sheets_2025:Spreadsheet editor menubar format menu (alignment)').t`Center`,
-    Right: c('sheets_2025:Spreadsheet editor menubar format menu (alignment)').t`Right`,
-    Top: c('sheets_2025:Spreadsheet editor menubar format menu (alignment)').t`Top`,
-    Middle: c('sheets_2025:Spreadsheet editor menubar format menu (alignment)').t`Middle`,
-    Bottom: c('sheets_2025:Spreadsheet editor menubar format menu (alignment)').t`Bottom`,
-    Wrapping: c('sheets_2025:Spreadsheet editor menubar format menu').t`Wrapping`,
-    Overflow: c('sheets_2025:Spreadsheet editor menubar format menu (wrapping)').t`Overflow`,
-    Wrap: c('sheets_2025:Spreadsheet editor menubar format menu (wrapping)').t`Wrap`,
-    Clip: c('sheets_2025:Spreadsheet editor menubar format menu (wrapping)').t`Clip`,
-    'Font size': c('sheets_2025:Spreadsheet editor menubar format menu').t`Font size`,
-    'Merge cells': c('sheets_2025:Spreadsheet editor cell merge options').t`Merge cells`,
-    'Conditional formatting': c('sheets_2025:Spreadsheet editor menubar format menu').t`Conditional formatting`,
-    Clear: c('sheets_2025:Spreadsheet editor menubar format menu').t`Clear`,
-    'Clear formatting': c('sheets_2025:Spreadsheet editor menubar format menu').t`Clear formatting`,
-    'Clear content': c('sheets_2025:Spreadsheet editor menubar format menu').t`Clear content`,
-  }
+export const formatMenuMessages = {
+  formatMenu: {
+    Theme: `Theme`,
+    'Table formatting': `Table formatting`,
+    'Cell styles': `Cell styles`,
+    Number: `Number`,
+    Text: `Text`,
+    Bold: `Bold`,
+    Italic: `Italic`,
+    Underline: `Underline`,
+    Strikethrough: `Strikethrough`,
+    Alignment: `Alignment`,
+    Left: `Left`,
+    Center: `Center`,
+    Right: `Right`,
+    Top: `Top`,
+    Middle: `Middle`,
+    Bottom: `Bottom`,
+    Wrapping: `Wrapping`,
+    Overflow: `Overflow`,
+    Wrap: `Wrap`,
+    Clip: `Clip`,
+    'Font size': `Font size`,
+    'Merge cells': `Merge cells`,
+    'Conditional formatting': `Conditional formatting`,
+    Clear: `Clear`,
+    'Clear formatting': `Clear formatting`,
+    'Clear content': `Clear content`,
+
+    'Coming soon...': 'Coming soon...',
+  },
 }
