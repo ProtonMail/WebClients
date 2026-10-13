@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -8,7 +10,12 @@ import oauthInstructionsWebm from '@proton/styles/assets/videos/easySwitch/oauth
 
 import { displayConfirmLeaveModal } from '../../../../logic/draft/imapDraft/imapDraft.actions';
 import { changeOAuthStep, resetOauthDraft } from '../../../../logic/draft/oauthDraft/oauthDraft.actions';
-import { useEasySwitchDispatch } from '../../../../logic/store';
+import {
+    selectOauthDraftProvider,
+    selectOauthImportStateProducts,
+} from '../../../../logic/draft/oauthDraft/oauthDraft.selector';
+import { useEasySwitchDispatch, useEasySwitchSelector } from '../../../../logic/store';
+import { trackEasySwitchInstructionsViewed } from '../../../../telemetry/easySwitchCreationFunnel';
 
 interface Props {
     triggerOAuth: () => void;
@@ -16,6 +23,12 @@ interface Props {
 
 const StepInstructionsGoogle = ({ triggerOAuth }: Props) => {
     const dispatch = useEasySwitchDispatch();
+    const provider = useEasySwitchSelector(selectOauthDraftProvider);
+    const products = useEasySwitchSelector(selectOauthImportStateProducts);
+
+    useEffect(() => {
+        trackEasySwitchInstructionsViewed({ provider, products });
+    }, []);
 
     const handleQuit = () => {
         dispatch(displayConfirmLeaveModal(false));
