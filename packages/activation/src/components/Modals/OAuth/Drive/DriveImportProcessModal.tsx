@@ -65,6 +65,7 @@ export const DriveImportProcessModal = () => {
         hasStartedImport.current = true;
 
         void createImporterTask({
+            provider,
             isLabelMapping: provider === ImportProvider.GOOGLE,
             products: [ImportType.DRIVE],
             importerData,

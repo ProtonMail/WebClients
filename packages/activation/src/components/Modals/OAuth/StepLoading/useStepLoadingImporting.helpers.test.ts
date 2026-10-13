@@ -4,11 +4,14 @@ import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
 import type { Address, Api } from '@proton/shared/lib/interfaces';
 import type { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import type { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
+import { mockTracker } from '@proton/telemetry-tracker/testing';
+import { tracker } from '@proton/telemetry-tracker/tracker';
 
 import type { LaunchImportPayload } from '../../../../interface';
-import { IMPORT_ERROR, ImportType } from '../../../../interface';
+import { IMPORT_ERROR, ImportProvider, ImportType, TIME_PERIOD } from '../../../../interface';
 import { changeOAuthStep, resetOauthDraft } from '../../../../logic/draft/oauthDraft/oauthDraft.actions';
 import type { ImporterData } from '../../../../logic/draft/oauthDraft/oauthDraft.interface';
+import { easySwitchCreationTimer } from '../../../../telemetry/easySwitchCreationFunnel';
 import { createImporterTask } from './useStepLoadingImporting.helpers';
 
 // We only need splitNodeUid - node UIDs are `${volumeId}~${nodeId}`.
@@ -46,6 +49,7 @@ const setup = (overrides: Overrides = {}) => {
     const increaseCalendarCount = jest.fn();
 
     const props = {
+        provider: ImportProvider.OUTLOOK,
         isLabelMapping: false,
         products: overrides.products ?? [ImportType.CONTACTS],
         importerData: overrides.importerData ?? { importerId: 'importer-1', importedEmail: 'me@gmail.com' },
@@ -173,5 +177,116 @@ describe('createImporterTask', () => {
         // The import task must not start after a calendar rollback.
         expect(getStartPayload(api)).toBeUndefined();
         expect(dispatch).not.toHaveBeenCalledWith(changeOAuthStep('success'));
+    });
+
+    describe('telemetry', () => {
+        it('sends importer_created with the products, the period and the elapsed time once the import started', async () => {
+            const { reports } = mockTracker();
+            tracker.startTimer(easySwitchCreationTimer);
+            const { props } = setup({
+                products: [ImportType.MAIL, ImportType.CONTACTS],
+                importerData: {
+                    importerId: 'importer-1',
+                    importedEmail: 'me@outlook.com',
+                    emails: {
+                        fields: {
+                            mapping: [],
+                            importLabel: { Name: 'Outlook', Color: '#fff', Type: 1 },
+                            importAddress: { ID: 'addr-1' },
+                            importPeriod: TIME_PERIOD.LAST_3_MONTHS,
+                        },
+                        initialFields: { importPeriod: TIME_PERIOD.BIG_BANG },
+                    },
+                } as unknown as ImporterData,
+            });
+
+            await createImporterTask(props);
+
+            expect(reports).toHaveLength(1);
+            expect(reports[0]).toMatchObject({
+                measurementGroup: 'any.web.easy_switch_creation_funnel',
+                event: 'importer_created',
+                dimensions: {
+                    provider: 'outlook',
+                    importsMail: 'true',
+                    importsContacts: 'true',
+                    importPeriodSelected: 'last_3_months',
+                },
+            });
+            expect(reports[0].values).toHaveProperty('durationMs');
+        });
+
+        it('sends creation_error when the import task fails to start', async () => {
+            const { reports } = mockTracker();
+            const { props } = setup({
+                products: [ImportType.CONTACTS],
+                api: jest.fn().mockRejectedValue(alreadyExistsError),
+            });
+
+            await createImporterTask(props);
+
+            expect(reports).toHaveLength(1);
+            expect(reports[0]).toMatchObject({
+                event: 'creation_error',
+                dimensions: { provider: 'outlook', importsContacts: 'true', errorStep: 'import_start' },
+            });
+        });
+
+        it('sends creation_error when the calendars cannot be created', async () => {
+            const { reports } = mockTracker();
+            const { props } = setup({
+                products: [ImportType.CALENDAR],
+                importerData: {
+                    importerId: 'importer-1',
+                    importedEmail: 'me@gmail.com',
+                    calendars: {
+                        calendars: [{ source: 'Work', description: '', id: 'c1', checked: true }],
+                        initialFields: [{ source: 'Work', description: '', id: 'c1', checked: true }],
+                    },
+                },
+                availableAddresses: [],
+            });
+
+            await createImporterTask(props);
+
+            expect(reports).toHaveLength(1);
+            expect(reports[0]).toMatchObject({
+                event: 'creation_error',
+                dimensions: { importsCalendar: 'true', errorStep: 'calendar_creation' },
+            });
+        });
+
+        it('sends creation_error when the import payload cannot be built', async () => {
+            const { reports } = mockTracker();
+            // Mail without any email fields: building the payload throws
+            const { props } = setup({ products: [ImportType.MAIL] });
+
+            await expect(createImporterTask(props)).rejects.toThrow();
+
+            expect(reports).toHaveLength(1);
+            expect(reports[0]).toMatchObject({
+                event: 'creation_error',
+                dimensions: { importsMail: 'true', errorStep: 'import_payload' },
+            });
+        });
+
+        it('sends importer_created only, when the import started but refreshing the events fails', async () => {
+            const { reports } = mockTracker();
+            const { props, call } = setup({ products: [ImportType.CONTACTS] });
+            call.mockRejectedValueOnce(new Error('event loop'));
+
+            await createImporterTask(props);
+
+            expect(reports.map((report) => report.event)).toEqual(['importer_created']);
+        });
+
+        it('does not track drive-only imports', async () => {
+            const { reports } = mockTracker();
+            const { props } = setup({ products: [ImportType.DRIVE], driveClient: makeDriveClient() });
+
+            await createImporterTask(props);
+
+            expect(reports).toHaveLength(0);
+        });
     });
 });
