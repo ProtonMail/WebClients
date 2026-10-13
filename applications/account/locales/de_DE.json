@@ -722,6 +722,9 @@
       "Continue with Outlook": [
         "Mit Outlook fortfahren"
       ],
+      "Continue with single sign-on": [
+        "Mit „Single Sign-On“ fortfahren"
+      ],
       "Continue with this password": [
         "Mit diesem Passwort fortfahren"
       ],
@@ -937,9 +940,6 @@
       ],
       "Dismiss": [
         "Verwerfen"
-      ],
-      "Domain name": [
-        "Domainname"
       ],
       "Don't show again": [
         "Nicht wieder anzeigen"
@@ -1643,6 +1643,9 @@
       "Recover data": [
         "Daten wiederherstellen"
       ],
+      "Recover previous account": [
+        "Vorheriges Konto wiederherstellen"
+      ],
       "Refer a friend": [
         "Wirb einen Freund"
       ],
@@ -2077,6 +2080,9 @@
       ],
       "Take a tour": [
         "Rundgang"
+      ],
+      "Take the survey": [
+        "Bitte an der Umfrage teilnehmen"
       ],
       "Template with invite links": [
         "Vorlage mit Einladungslinks"
@@ -2958,6 +2964,88 @@
         "Der Speicherplatz wird von allen ${ BRAND_NAME }-Services gemeinsam genutzt."
       ]
     },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Jetzt zugreifen"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/Monat"
+      ],
+      "2 individual accounts": [
+        "2 Einzelkonten"
+      ],
+      "2 TB of secure storage": [
+        "2 TB sicherer Speicherplatz"
+      ],
+      "3 TB of secure storage": [
+        "3 TB sicherer Speicherplatz"
+      ],
+      "500 GB of secure storage": [
+        "500 GB sicherer Speicherplatz"
+      ],
+      "6 individual accounts": [
+        "6 Einzelkonten"
+      ],
+      "Advanced protection against cyber threats": [
+        "Umfassender Schutz vor Cyber-Bedrohungen"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Die Rabatte beziehen sich auf die regulären monatlichen Preise. Dein Abonnement verlängert sich nach Ablauf des Abrechnungszeitraums zum regulären Jahrespreis."
+      ]
+    },
+    "bfcampaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, und ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, und ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Das größte Sonderangebot des Jahres"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "für 12 Monate"
+      ],
+      "Last chance to save big": [
+        "Letzte Chance, kräftig zu sparen"
+      ],
+      "Protect your entire tribe": [
+        "Schütze deine ganze Gemeinschaft"
+      ],
+      "Protection for two in a single plan": [
+        "Schutz für zwei Personen in einem einzigen Tarif"
+      ],
+      "Save big with a yearly plan": [
+        "Spare viel Geld mit einem Jahresabo"
+      ]
+    },
     "Billing cycle": {
       "Free renewal": [
         "Kostenlose Verlängerung"
@@ -3750,6 +3838,50 @@
       "Total for ${ cycle } month": [
         "Gesamtbetrag für ${ cycle } Monat",
         "Gesamtbetrag für ${ cycle } Monate"
+      ]
+    },
+    "claimed address": {
+      "Sign in with your organization?": [
+        "Möchtest du dich mit deiner Organisation anmelden?"
+      ],
+      "The address ${ boldClaimedEmail } has been claimed and can no longer be used for this account. Your data is safe and hasn't been shared with anyone. To migrate it to a new account, create a new ${ BRAND_NAME } email address.": [
+        "Die E-Mail-Adresse ${ boldClaimedEmail } wurde bereits beansprucht und kann daher nicht mehr für dieses Konto verwendet werden. Deine Daten sind sicher und wurden nicht an Dritte weitergegeben. Um sie auf ein neues Konto zu übertragen, erstelle bitte eine neue ${ BRAND_NAME }-E-Mail-Adresse."
+      ],
+      "The address ${ boldClaimedEmail } has been claimed and can no longer be used for this account. Your data was migrated to the address below and remains private.": [
+        "Die E-Mail-Adresse ${ boldClaimedEmail } wurde bereits beansprucht und kann daher nicht mehr für dieses Konto verwendet werden. Deine Daten wurden an die unten angegebene E-Mail-Adresse übertragen und bleiben vertraulich."
+      ],
+      "The address ${ boldClaimedEmail } has been claimed by another organization and can no longer be used for this account. Your data is safe and remains private.": [
+        "Die E-Mail-Adresse ${ boldClaimedEmail } wurde bereits von einer anderen Organisation registriert und kann daher nicht mehr für dieses Konto verwendet werden. Deine Daten sind sicher und bleiben vertraulich."
+      ],
+      "Verify it's you": [
+        "Identität bestätigen"
+      ],
+      "You're all set": [
+        "Alles ist eingerichtet"
+      ],
+      "Your address": [
+        "Deine E-Mail-Adresse"
+      ],
+      "Your address has been claimed": [
+        "Deine E-Mail-Adresse wurde registriert"
+      ],
+      "Your address has changed": [
+        "Mit „Single Sign-On“ fortfahren"
+      ],
+      "Your administrator can give you a new address.": [
+        "Dein Administrator kann dir eine neue E-Mail-Adresse zuweisen."
+      ],
+      "Your data was migrated to the address below and remains private.": [
+        "Deine Daten wurden an die unten angegebene E-Mail-Adresse übertragen und bleiben vertraulich."
+      ],
+      "Your new address": [
+        "Deine neue E-Mail-Adresse"
+      ],
+      "Your password remains the same.": [
+        "Dein Passwort bleibt unverändert."
+      ],
+      "Your previous username, ${ boldClaimedEmail }, can no longer be used to sign in to this account.": [
+        "Dein bisheriger Benutzername, ${ boldClaimedEmail }, kann nicht mehr zur Anmeldung bei diesem Konto verwendet werden."
       ]
     },
     "Collapsible tooltip": {
@@ -8048,6 +8180,9 @@
       "You need to have an active custom domain address in order to generate an SMTP submission token.": [
         "Du benötigst eine aktive benutzerdefinierte Domain, um einen SMTP-Übermittlungstoken zu generieren."
       ],
+      "You reached the maximum number of connected addresses": [
+        "Die maximale Anzahl an verbundenen Adressen wurde erreicht"
+      ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Du hast die maximale Anzahl an Zeichen erreicht. Bitte kürze deine Nachricht."
       ],
@@ -10443,6 +10578,9 @@
       "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
         "**Dies deaktiviert Ende-zu-Ende-verschlüsselte E-Mail-Weiterleitungen:** du kannst sie später wieder einrichten."
       ],
+      "**We're changing the ${ BRAND_NAME } sign-in page.** Your account and password stay the same.": [
+        "**Die Anmeldeseite von ${ BRAND_NAME } wird derzeit überarbeitet.** Dein Konto und dein Passwort bleiben unverändert."
+      ],
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Du erhältst ${ referrerRewardAmount }** Guthaben für jeden Freund, der abonniert."
       ],
@@ -10483,9 +10621,6 @@
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Eine ${ protonSubdomain } wird von ${ BRAND_NAME } gehostet, wodurch du schnell eine Subdomain einrichten kannst. ${ learnMoreLink }"
-      ],
-      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
-        "Für die Erstellung von Gruppen ist eine eigene Domain erforderlich. Wenn du noch keine eigene Domain eingerichtet hast, richte sie zuerst unter ${ linkToDomainPage } ein."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Ein Name, mit dem du erkennen kannst, wo es im Einsatz ist, damit du es später leicht widerrufen oder verlängern kannst."
@@ -10986,9 +11121,6 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klicke auf „Neuen Code anfordern“, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese Telefonnummer nicht stimmt, klicke auf „Bearbeiten“, um sie zu korrigieren."
-      ],
-      "Click 'Trouble signing in?' on your TV to follow the alternative steps.": [
-        "Klicke auf deinem Fernseher auf „Probleme beim Anmelden?“, um die alternativen Schritte zu befolgen."
       ],
       "Click **Request password reset** and follow the prompts.": [
         "Klicke auf **Passwort zurücksetzen anfordern** und folge den Anweisungen."
@@ -11512,6 +11644,9 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Gib die E-Mail-Adresse oder den Benutzernamen deines ${ BRAND_NAME }-Kontos ein."
       ],
+      "Enter your old password for ${ boldEmail }.": [
+        "Bitte dein bisheriges Passwort für ${ boldEmail } eingeben."
+      ],
       "Enter your own password (as organization admin).": [
         "Eigenes Passwort (als Organisationsadministrator) eingeben."
       ],
@@ -11616,6 +11751,9 @@
       ],
       "For just ${ bundlePlanPriceInline }": [
         "Für nur ${ bundlePlanPriceInline }"
+      ],
+      "For security, business accounts sign in with a code instead. On your TV, select 'Trouble signing in?' and follow the steps.": [
+        "Aus Sicherheitsgründen melden sich Geschäftskonten stattdessen mit einem Code an. Wähle auf Ihrem Fernseher die Option „Probleme bei der Anmeldung?“ aus und befolge die Anweisungen."
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Für Benutzer, die von einem anderen E-Mail-Anbieter zu ${ MAIL_APP_NAME } wechseln, wähle den Tab ${ boldAddresses } aus und füge alle aktiven E-Mail-Adressen hinzu, bevor du den MX-Eintrag änderst, damit ein reibungsloser Übergang gewährleistet ist."
@@ -11820,6 +11958,9 @@
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "Wenn du den Zugriff auf deine Authenticator-App verloren hast, kannst du 1 der 16 Wiederherstellungscodes verwenden, die du beim Einrichten der Zwei-Faktor-Authentifizierung erhalten hast. ${ learnMoreLink }"
+      ],
+      "If you previously had a personal ${ BRAND_NAME } account with this address, you can recover your data separately.": [
+        "Falls du zuvor ein persönliches ${ BRAND_NAME }-Konto mit dieser E-Mail-Adresse hattest, kannst du deine Daten separat wiederherstellen."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Wenn du mit dem Downgrade fortfährst, verlierst du den Zugang zu den kostenpflichtigen Funktionen von ${ MAIL_APP_NAME } und ${ VPN_APP_NAME }."
@@ -13167,6 +13308,12 @@
       "This account has been suspended due to a potential policy violation.": [
         "Dieses Konto wurde aufgrund eines möglichen Verstoßes gegen die Nutzungsbedingungen gesperrt."
       ],
+      "This address is already linked to another account": [
+        "Diese E-Mail-Adresse ist bereits mit einem anderen Konto verknüpft"
+      ],
+      "This address now signs in through your organization's identity provider.": [
+        "Für diese E-Mail-Adresse erfolgt die Anmeldung jetzt über den Identitätsanbieter deiner Organisation."
+      ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Dieser Browser unterstützt keine Vorschau von PDF-Dokumenten. Bitte lade die Datei herunter."
       ],
@@ -13770,8 +13917,8 @@
       "We'll send a new verification code to ${ strong }": [
         "Wir senden einen neuen Verifizierungscode an ${ strong }"
       ],
-      "We're changing the ${ BRAND_NAME } sign-in page. Your password and devices stay the same. ${ learnMore }": [
-        "Proton hat die Anmeldeseite von ${ BRAND_NAME } überarbeitet. Dein Passwort und deine Geräte bleiben unverändert. ${ learnMore }"
+      "We're building a new way for you to manage your organization, and we're looking for specific users to join a video call and try an early version. Curious if you'd be a good match? Answer a few quick questions to see if you can participate.": [
+        "Es wird gerade an einer neuen Methode gearbeitet, mit der du deine Organisation verwalten kannst, und deshalb werden bestimmte Nutzer gesucht, die an einem Videoanruf teilnehmen und eine frühe Version ausprobieren möchten. Bist du neugierig, ob du dafür in Frage kommst? Beantworte ein paar kurze Fragen, um herauszufinden, ob du teilnehmen kannst."
       ],
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
         "Uns ist aufgefallen, dass einige Benutzer ihre ${ BRAND_NAME }-Konten noch nicht beansprucht haben."
@@ -14195,6 +14342,9 @@
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Deine ${ VPN_APP_NAME } und ${ MAIL_APP_NAME } Konten sind miteinander verknüpft. Um beide zu löschen, melde dich bitte unter ${ loginLink } an und lösche dort dein Konto."
       ],
+      "Your account and password stay the same.": [
+        "Dein Konto und dein Passwort bleiben unverändert."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Dein Konto weist mindestens eine überfällige Rechnung auf. Dein Zugang wird in Kürze eingeschränkt. ${ payInvoiceLink }"
       ],
@@ -14206,6 +14356,9 @@
       ],
       "Your account was successfully updated with this promotion": [
         "Dein Konto wurde erfolgreich durch diese Werbeaktion aktualisiert"
+      ],
+      "Your address was connected": [
+        "Deine E-Mail-Adresse wurde verknüpft"
       ],
       "Your Always-on VPN device profile is ready to deploy.": [
         "Dein Always-on-VPN-Geräteprofil kann bereitgestellt werden."
@@ -14272,9 +14425,6 @@
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Die E-Mails deiner Organisation werden durch eine Ende-zu-Ende-Verschlüsselung mit dem Organisationsschlüssel geschützt. Dieser Fingerabdruck kann verwendet werden, um sicherzustellen, dass alle Administratoren in deinem Konto einen identischen Schlüssel verwenden."
-      ],
-      "Your password and devices stay the same.": [
-        "Das Passwort und deine Geräte bleiben unverändert."
       ],
       "Your payment details are encrypted and secure": [
         "Deine Zahlungsdaten sind verschlüsselt und geschützt"
@@ -15214,8 +15364,8 @@
       "Auto-advance": [
         "Automatisches-Fortfahren"
       ],
-      "Auto-delete unwanted messages": [
-        "Unerwünschte Nachrichten automatisch löschen"
+      "Auto-delete trash and spam": [
+        "Papierkorb und Spam automatisch löschen"
       ],
       "Auto-detect primary time zone": [
         "Primäre Zeitzone automatisch erkennen"
@@ -21552,79 +21702,6 @@
         "Yahoo"
       ]
     },
-    "q3campaign2026: Action": {
-      "Get the deal": [
-        "Deal sichern"
-      ],
-      "Special Offer": [
-        "Sonderangebot"
-      ]
-    },
-    "q3campaign2026: Info": {
-      "/month": [
-        "/Monat"
-      ],
-      "2 individual accounts": [
-        "2 individuelle Konten"
-      ],
-      "2 TB of secure storage": [
-        "2 TB sicherer Speicher"
-      ],
-      "3 TB of secure storage": [
-        "3 TB sicherer Speicher"
-      ],
-      "500 GB of secure storage": [
-        "500 GB sicherer Speicherplatz"
-      ],
-      "6 individual accounts": [
-        "6 individuelle Konten"
-      ],
-      "Advanced protection against cyber threats": [
-        "Erweiterter Schutz vor Cyber-Bedrohungen"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Die Rabatte beziehen sich auf die regulären monatlichen Preise. Dein Abonnement verlängert sich nach Ablauf des Abrechnungszeitraums zum regulären Jahrespreis."
-      ]
-    },
-    "q3campaign2026: Info, Calendar first": {
-      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } und ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Family, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Family, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Title": {
-      "for 12 months": [
-        "für 12 Monate"
-      ],
-      "One plan, full power": [
-        "Ein Abonnement, volle Leistung"
-      ],
-      "One plan, max savings": [
-        "Ein Abonnement, maximal sparen"
-      ],
-      "One plan, more power": [
-        "Ein Abonnement, mehr Leistung"
-      ]
-    },
     "Recovery Email": {
       "Back to ${ signIn }.": [
         "Zurück zur ${ signIn }."
@@ -26088,6 +26165,9 @@
       "Billing cycle": [
         "Abrechnungszeitraum"
       ],
+      "Black Friday": [
+        "Black Friday"
+      ],
       "Block trackers and malware": [
         "Tracker und Schadsoftware blockieren"
       ],
@@ -26237,6 +26317,9 @@
       ],
       "Connected emails": [
         "Verbundene E-Mail-Adressen"
+      ],
+      "Connecting...": [
+        "Verbindung wird hergestellt ..."
       ],
       "Connection status": [
         "Verbindungsstatus"
@@ -26835,6 +26918,9 @@
       "Help center": [
         "Hilfezentrum"
       ],
+      "Help shape ${ BRAND_NAME }'s admin experience": [
+        "Admin-Erfahrung von ${ BRAND_NAME } mitgestalten"
+      ],
       "Helping activists in Hong Kong": [
         "Hilfe für Aktivisten in Hongkong"
       ],
@@ -27235,6 +27321,9 @@
       "QR code sign-in": [
         "QR-Code-Anmeldung"
       ],
+      "QR sign-in isn't available for business accounts": [
+        "Das Anmelden per QR-Code kann für Geschäftskonten nicht genutzt werden"
+      ],
       "Ready, set, forward": [
         "Auf die Plätze, fertig, los"
       ],
@@ -27405,9 +27494,6 @@
       ],
       "Send new invite?": [
         "Neue Einladung versenden?"
-      ],
-      "September Sale": [
-        "September-Sonderverkauf"
       ],
       "Service": [
         "Dienst"
@@ -28371,6 +28457,9 @@
       ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Aliase, Freigabe, integrierter 2FA und mehr."
+      ],
+      "Assigned by a group. Remove the user from the group to change this role": [
+        "Von einer Gruppe zugewiesen. Entferne den Benutzer aus der Gruppe, um dessen Funktion ändern zu können."
       ],
       "Disables end-to-end email encryption for this group": [
         "Deaktiviert die Ende-zu-Ende-Verschlüsselung von E-Mails für diese Gruppe"

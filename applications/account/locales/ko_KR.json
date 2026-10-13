@@ -932,9 +932,6 @@
       "Dismiss": [
         "무시"
       ],
-      "Domain name": [
-        "도메인 이름"
-      ],
       "Don't show again": [
         "다시 표시하지 않음"
       ],
@@ -10266,9 +10263,6 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ protonSubdomain }은(는) ${ BRAND_NAME }에서 호스팅됩니다. 빠른 하위 도매인 설정을 도와드립니다. ${ learnMoreLink }"
       ],
-      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
-        "그룹을 생성하려면 사용자 지정 도메인이 필요합니다. 사용자 지정 도메인이 설정되어 있지 않다면 ${ linkToDomainPage }에서 설정하세요."
-      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "나중에 쉽게 취소하거나 확장할 수 있도록 사용 위치를 식별하는 데 도움이 되는 이름이에요."
       ],
@@ -10760,9 +10754,6 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "${ strong }(으)로 새 인증 코드를 보내려면 \"새 코드 요청\"을 클릭하세요. 이 전화번호가 잘못된 경우 \"수정\"을 클릭하여 수정하세요."
-      ],
-      "Click 'Trouble signing in?' on your TV to follow the alternative steps.": [
-        "대체 단계를 따르려면 TV에서 '로그인에 문제가 있나요?'를 클릭하세요."
       ],
       "Click **Request password reset** and follow the prompts.": [
         "**비밀번호 재설정 요청**을 클릭하고 안내를 따르세요."
@@ -14903,9 +14894,6 @@
       ],
       "Auto-advance": [
         "자동 진행"
-      ],
-      "Auto-delete unwanted messages": [
-        "원치 않는 메시지 자동 삭제"
       ],
       "Auto-detect primary time zone": [
         "기본 시간대 자동 감지"
@@ -19109,7 +19097,7 @@
         "현재 결제 금액:"
       ],
       "Your subscription renews soon": [
-        "구독이 곧 끝나게 됩니다"
+        "구독이 곧 갱신됩니다"
       ]
     },
     "Offer fearue": {
@@ -21110,79 +21098,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q3campaign2026: Action": {
-      "Get the deal": [
-        "특가로 구매"
-      ],
-      "Special Offer": [
-        "특가 할인"
-      ]
-    },
-    "q3campaign2026: Info": {
-      "/month": [
-        "/월"
-      ],
-      "2 individual accounts": [
-        "개별 계정 2개"
-      ],
-      "2 TB of secure storage": [
-        "2TB 보안 스토리지"
-      ],
-      "3 TB of secure storage": [
-        "3TB 보안 스토리지"
-      ],
-      "500 GB of secure storage": [
-        "500GB 보안 스토리지"
-      ],
-      "6 individual accounts": [
-        "개별 계정 6개"
-      ],
-      "Advanced protection against cyber threats": [
-        "사이버 위협에 대한 고급 보호"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "할인은 표준 월간 요금을 기준으로 합니다. 결제일이 종료되면 구독은 표준 연간 요금으로 갱신됩니다."
-      ]
-    },
-    "q3campaign2026: Info, Calendar first": {
-      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "프리미엄 ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, 및 ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "프리미엄 ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, 및 ${ CALENDAR_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Family, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "프리미엄 ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Family, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "프리미엄 ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "프리미엄 ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, 및 ${ CALENDAR_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Title": {
-      "for 12 months": [
-        "12개월 플랜"
-      ],
-      "One plan, full power": [
-        "하나의 플랜에서 더 많은 가능성을"
-      ],
-      "One plan, max savings": [
-        "단 하나의 요금제, 압도적인 비용 절감"
-      ],
-      "One plan, more power": [
-        "하나의 플랜에서 더 많은 가능성을"
       ]
     },
     "Recovery Email": {
@@ -26841,9 +26756,6 @@
       ],
       "Send new invite?": [
         "새로운 초대 보내기?"
-      ],
-      "September Sale": [
-        "9월 할인"
       ],
       "Service": [
         "서비스"
