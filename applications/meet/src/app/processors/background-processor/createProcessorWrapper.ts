@@ -27,7 +27,7 @@ const primeFallbackInputElement = ({ element, track }: ProcessorOptions<Track.Ki
     });
 };
 
-// Implemented by BaseBackgroundProcessor; structural so the wrapper stays usable
+// Implemented by MainThreadTransformer; structural so the wrapper stays usable
 // with any transformer.
 type OutputSizeAwareTransformer = {
     setOutputSizeListener?: (listener: ((width: number, height: number) => void) | null) => void;
