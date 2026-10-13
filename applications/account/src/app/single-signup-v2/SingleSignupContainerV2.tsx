@@ -343,6 +343,7 @@ const SingleSignupContainerV2 = ({
         generateMnemonic,
         CustomStep,
     } = signupConfiguration;
+    const visionaryPlan = model.plansMap[PLANS.VISIONARY];
 
     useEffect(() => {
         const run = async () => {
@@ -1319,10 +1320,10 @@ const SingleSignupContainerV2 = ({
                     }}
                 />
             )}
-            {renderVisionaryModal && (
+            {renderVisionaryModal && visionaryPlan && (
                 <VisionaryUpsellModal
                     {...visionaryModalProps}
-                    plan={model.plansMap[PLANS.VISIONARY]?.Title || ''}
+                    plan={visionaryPlan}
                     appName={productAppName}
                     onUpgrade={async () => {
                         visionaryModalProps.onClose();

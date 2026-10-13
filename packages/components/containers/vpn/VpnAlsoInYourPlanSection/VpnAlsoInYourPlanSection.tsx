@@ -139,7 +139,6 @@ const cards = ({ plan, space, freePlan }: CardProps): Card[] => {
                     freePlan,
                     family: plan?.Name === PLANS.FAMILY,
                     duo: plan?.Name === PLANS.DUO,
-                    visionary: plan?.Name === PLANS.VISIONARY,
                 }),
                 getDocumentEditor(),
                 getVersionHistory(),
