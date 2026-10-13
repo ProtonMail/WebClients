@@ -1,7 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useState } from 'react';
 
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
-import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import isTruthy from '@proton/utils/isTruthy';
 
 import type { DriveEvent, DriveEvents } from '../_events/interface';
@@ -70,54 +69,12 @@ export function useLinksStateProvider() {
         setState((state) => setLock(state, shareId, linkIds, false));
     }, []);
 
-    const lockTrash = useCallback(() => {
-        setState((state) =>
-            Object.keys(state).reduce((acc, shareId) => {
-                return setLock(acc, shareId, 'trash', true);
-            }, state)
-        );
-    }, []);
-
-    const setCachedThumbnail = useCallback((shareId: string, linkId: string, url: string) => {
-        setState((state) => setCachedThumbnailUrl(state, shareId, linkId, url));
-    }, []);
-
     const getLink = useCallback(
         (shareId: string, linkId: string): Link | undefined => {
             return state[shareId]?.links[linkId];
         },
         [state]
     );
-
-    // This is not ideal to be present here but it's the only way to have optimistic updates for photos favorites
-    // which is important to make it feel snappy
-    // this should eventually be removed once we have a linkstate in zustand that can be shared cross tabs
-    const updatePhotoLinkTags = useCallback((shareId: string, linkId: string, tags: PhotoTag[]): void => {
-        setState((previousState) => {
-            const newState = { ...previousState };
-            if (newState[shareId]?.links[linkId]) {
-                if (
-                    newState[shareId]?.links[linkId].decrypted &&
-                    newState[shareId]?.links[linkId].decrypted.photoProperties
-                ) {
-                    newState[shareId].links[linkId].decrypted.photoProperties.tags = tags;
-                    newState[shareId].links[linkId].decrypted.photoProperties.isFavorite = tags.includes(
-                        PhotoTag.Favorites
-                    );
-                }
-                if (
-                    newState[shareId]?.links[linkId].encrypted &&
-                    newState[shareId]?.links[linkId].encrypted.photoProperties
-                ) {
-                    newState[shareId].links[linkId].encrypted.photoProperties.tags = tags;
-                    newState[shareId].links[linkId].encrypted.photoProperties.isFavorite = tags.includes(
-                        PhotoTag.Favorites
-                    );
-                }
-            }
-            return newState;
-        });
-    }, []);
 
     const getChildren = useCallback(
         (shareId: string, parentLinkId: string, foldersOnly: boolean = false): Link[] => {
@@ -146,44 +103,6 @@ export function useLinksStateProvider() {
         [getAllShareLinks]
     );
 
-    const getSharedByLink = useCallback(
-        (shareId: string): Link[] => {
-            return getAllShareLinks(shareId).filter(
-                ({ encrypted }) =>
-                    !encrypted.trashed &&
-                    !!encrypted.sharingDetails?.shareId &&
-                    encrypted.sharingDetails.shareId !== encrypted.rootShareId
-            );
-        },
-        [getAllShareLinks]
-    );
-
-    const getSharedWithMeByLink = useCallback(
-        (shareId: string): Link[] => {
-            return getAllShareLinks(shareId).filter(
-                ({ encrypted }) =>
-                    !encrypted.trashed &&
-                    !!encrypted.sharingDetails?.shareId &&
-                    encrypted.sharingDetails.shareId === encrypted.rootShareId
-            );
-        },
-        [getAllShareLinks]
-    );
-
-    const removeLinkForMigration = useCallback((shareId: string, linkId: string) => {
-        setState((state) => deleteLinks(state, shareId, [linkId]));
-    }, []);
-
-    // TODO: Remove this when events or refactor will be in place
-    const removeLinkForSharedWithMe = useCallback((shareId: string, linkId: string) => {
-        setState((state) => deleteLinks(state, shareId, [linkId]));
-    }, []);
-
-    // TODO: Remove this when events or refactor will be in place
-    const removeLinksForPublicPage = useCallback((token: string, linkIds: string[]) => {
-        setState((state) => deleteLinks(state, token, linkIds));
-    }, []);
-
     const removeLinkForDriveCompat = useCallback((shareId: string, linkId: string) => {
         setState((state) => deleteLinks(state, shareId, [linkId]));
     }, []);
@@ -192,19 +111,9 @@ export function useLinksStateProvider() {
         setLinks,
         lockLinks,
         unlockLinks,
-        lockTrash,
-        setCachedThumbnail,
         getLink,
         getChildren,
         getTrashed,
-        getSharedByLink,
-        getSharedWithMeByLink,
-        getAllShareLinks, // This should be use only in specific case when you know the links you need (Ex: Bookmarks)
-        removeLinkForMigration,
-        removeLinkForSharedWithMe,
-        removeLinksForPublicPage,
-        // used only for Photos/Albums optimistic updates
-        updatePhotoLinkTags,
         /** Should never be used outside of `drive-store`. */
         removeLinkForDriveCompat,
     };

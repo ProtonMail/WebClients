@@ -2,13 +2,11 @@ import { CryptoProxy } from '@protontech/crypto';
 
 import { usePreventLeave } from '@proton/components';
 import {
-    queryDeleteChildrenLinks,
     queryDeleteTrashedLinks,
     queryRestoreLinks,
     queryTrashLinks,
 } from '@proton/shared/lib/api/drive/link';
 import { queryMoveLink } from '@proton/shared/lib/api/drive/share';
-import { queryVolumeEmptyTrash } from '@proton/shared/lib/api/drive/volume';
 import { API_CODES } from '@proton/shared/lib/constants';
 import { MAX_THREADS_PER_REQUEST } from '@proton/shared/lib/drive/constants';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
@@ -21,7 +19,6 @@ import { ValidationError } from '../../utils/errorHandling/ValidationError';
 import useDebouncedRequest from '../_api/useDebouncedRequest';
 import { useDriveEventManager } from '../_events/useDriveEventManager';
 import { ShareType } from '../_shares/interface';
-import useDefaultShare from '../_shares/useDefaultShare';
 import useShare from '../_shares/useShare';
 import { useBatchHelper } from '../_utils/useBatchHelper';
 import { useVolumesState } from '../_volumes';
@@ -42,7 +39,6 @@ export function useLinksActions({
     queries,
 }: {
     queries: {
-        queryDeleteChildrenLinks: typeof queryDeleteChildrenLinks;
         queryDeleteTrashedLinks: typeof queryDeleteTrashedLinks;
         queryRestoreLinks: typeof queryRestoreLinks;
         queryTrashLinks: typeof queryTrashLinks;
@@ -53,8 +49,7 @@ export function useLinksActions({
     const events = useDriveEventManager();
     const { getLink, getLinkPassphraseAndSessionKey, getLinkPrivateKey, getLinkHashKey } = useLink();
     const { getLinks } = useLinks();
-    const { lockLinks, lockTrash, unlockLinks } = useLinksState();
-    const { getDefaultShare, getDefaultPhotosShare } = useDefaultShare();
+    const { lockLinks, unlockLinks } = useLinksState();
 
     const { getShareCreatorKeys, getShare } = useShare();
     const volumeState = useVolumesState();
@@ -119,7 +114,6 @@ export function useLinksActions({
             newParentLinkId: string;
             linkId: string;
             newShareId?: string;
-            silence?: boolean;
         }
     ) => {
         const [
@@ -288,7 +282,6 @@ export function useLinksActions({
             newParentLinkId,
             linkId,
             newShareId,
-            silence,
         });
 
         await debouncedRequest({
@@ -441,48 +434,17 @@ export function useLinksActions({
         return results;
     };
 
-    const deleteChildrenLinks = async (
-        abortSignal: AbortSignal,
-        shareId: string,
-        parentLinkId: string,
-        linkIds: string[]
-    ) => {
-        return withLinkLock({
-            shareId,
-            linkIds,
-            callback: () =>
-                batchAPIHelper(abortSignal, {
-                    linkIds,
-                    query: (batchLinkIds) => queryDeleteChildrenLinks(shareId, parentLinkId, batchLinkIds),
-                }),
-        });
-    };
-
     const deleteTrashedLinks = async (abortSignal: AbortSignal, ids: { linkId: string; volumeId: string }[]) => {
         return batchHelperMultipleVolumes(abortSignal, ids, (batchLinkIds, volumeId) => {
             return queries.queryDeleteTrashedLinks(volumeId, batchLinkIds);
         });
     };
 
-    const emptyTrash = async (abortSignal: AbortSignal) => {
-        const { volumeId } = await getDefaultShare();
-        const photosShare = await getDefaultPhotosShare();
-        lockTrash();
-        await debouncedRequest(queryVolumeEmptyTrash(volumeId), abortSignal);
-        await events.pollEvents.volumes(volumeId);
-        if (photosShare && volumeId !== photosShare.volumeId) {
-            await debouncedRequest(queryVolumeEmptyTrash(photosShare.volumeId), abortSignal);
-            await events.pollEvents.volumes(photosShare.volumeId);
-        }
-    };
-
     return {
         moveLinks,
         trashLinks,
         restoreLinks,
-        deleteChildrenLinks,
         deleteTrashedLinks,
-        emptyTrash,
     };
 }
 
@@ -490,7 +452,6 @@ export default function useLinksActionsWithQuieries() {
     return useLinksActions({
         queries: {
             queryTrashLinks,
-            queryDeleteChildrenLinks,
             queryDeleteTrashedLinks,
             queryRestoreLinks,
         },

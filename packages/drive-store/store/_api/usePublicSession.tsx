@@ -17,7 +17,7 @@ import { formatUser } from '@proton/shared/lib/user/helpers';
 import { getLastActivePersistedUserSession } from '../../utils/lastActivePersistedUserSession';
 import { userSuccessMetrics } from '../../utils/metrics/userSuccessMetrics';
 import retryOnError from '../../utils/retryOnError';
-import { hasCustomPassword, hasGeneratedPasswordIncluded, isLegacySharedUrl } from '../_shares/shareUrl';
+import { hasCustomPassword, hasGeneratedPasswordIncluded } from '../_shares/shareUrl';
 import useDefaultShare from '../_shares/useDefaultShare';
 import useShare from '../_shares/useShare';
 import { getMetricsUserPlan } from '../_user/getMetricsUserPlan';
@@ -47,7 +47,6 @@ function usePublicSessionProvider() {
     const sessionInfo = useRef<SessionInfo>();
     const auth = useAuthentication();
     const [user, setUser] = useState<UserModel>();
-    const [userAddressEmail, setUserAddressEmail] = useState<string>();
     const silentApi = <T,>(config: any) => api<T>({ ...config, silence: true });
     const { getShareCreatorKeys } = useShare();
     const { getDefaultShare } = useDefaultShare();
@@ -72,10 +71,7 @@ function usePublicSessionProvider() {
         (api as any).UID = session.UID;
         // In case user is logged-in we can preload default share.
         // This will be used to get info for users actions (Rename, Delete, etc..)
-        const addressKeyInfo = await getAddressKeyInfo(new AbortController().signal);
-        if (addressKeyInfo) {
-            setUserAddressEmail(addressKeyInfo.address.Email);
-        }
+        await getAddressKeyInfo(new AbortController().signal);
         const user = formatUser(session.User);
         setUser(user);
         await userSuccessMetrics.setLocalUser(session.UID, getMetricsUserPlan({ user, isPublicContext: true }));
@@ -116,7 +112,6 @@ function usePublicSessionProvider() {
         return api<SRPHandshakeInfo>(queryInitSRPHandshake(token)).then((handshakeInfo) => {
             return {
                 handshakeInfo,
-                isLegacySharedUrl: isLegacySharedUrl({ flags: handshakeInfo.Flags }),
                 hasCustomPassword: hasCustomPassword({ flags: handshakeInfo.Flags }),
                 hasGeneratedPasswordIncluded: hasGeneratedPasswordIncluded({ flags: handshakeInfo.Flags }),
             };
@@ -215,7 +210,6 @@ function usePublicSessionProvider() {
 
     return {
         user,
-        userAddressEmail,
         hasSession,
         initHandshake,
         initSession,

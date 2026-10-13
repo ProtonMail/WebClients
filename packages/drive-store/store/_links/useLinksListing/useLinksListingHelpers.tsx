@@ -204,22 +204,6 @@ export function useLinksListingHelpers() {
     };
 
     /**
-     * A wrapper around fetchNextPageWithSortingHelper.
-     * Basically the same thing, just for cases when sorting is not available
-     * (for example, listing trash or shared links).
-     */
-    const fetchNextPageHelper = async (
-        abortSignal: AbortSignal,
-        shareId: string,
-        fetchMeta: FetchMeta,
-        fetchLinks: (page: number) => Promise<FetchResponse>
-    ): Promise<boolean> => {
-        return fetchNextPageWithSortingHelper(abortSignal, shareId, undefined, fetchMeta, (_, page: number) =>
-            fetchLinks(page)
-        );
-    };
-
-    /**
      * Invokes a callback function until all pages are loaded. The callback function must
      * return a boolean value representing a presence of the next page in listing.
      */
@@ -282,7 +266,6 @@ export function useLinksListingHelpers() {
     return {
         cacheLoadedLinks,
         fetchNextPageWithSortingHelper,
-        fetchNextPageHelper,
         loadFullListing,
         loadFullListingWithAnchor,
         getDecryptedLinksAndDecryptRest,

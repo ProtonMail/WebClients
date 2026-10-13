@@ -33,7 +33,6 @@ jest.mock('./useLinksState', () => {
     const useLinksState = () => {
         return {
             lockLinks: () => {},
-            lockTrash: () => {},
             unlockLinks: () => {},
         };
     };
@@ -73,8 +72,6 @@ const mockQueryTrashLinks = jest.fn();
 const mockQueryRestoreLinks = jest.fn();
 const mockQueryDeleteTrashedLinks = jest.fn();
 const mockGetShare = jest.fn();
-const mockGetDefaultShare = jest.fn();
-const mockGetDefaultPhotosShare = jest.fn();
 const mockGetShareCreatorKeys = jest.fn();
 
 jest.mock('./useLinks', () => {
@@ -104,20 +101,9 @@ jest.mock('../_shares/useShare', () => {
     return useShare;
 });
 
-jest.mock('../_shares/useDefaultShare', () => {
-    const useDefaultShare = () => {
-        return {
-            getDefaultShare: mockGetDefaultShare,
-            getDefaultPhotosShare: mockGetDefaultPhotosShare,
-        };
-    };
-    return useDefaultShare;
-});
-
 jest.mock('../_utils/useBatchHelper', () => {
     const useBatchHelper = () => ({
         batchAPIHelper: mockBatchHelper,
-        batchPromiseHelper: jest.fn(),
     });
     return { useBatchHelper };
 });
@@ -190,8 +176,6 @@ describe('useLinksActions', () => {
         mockQueryRestoreLinks.mockImplementation((volumeId, linkIds) => linkIds);
         mockQueryDeleteTrashedLinks.mockImplementation((volumeId, linkIds) => linkIds);
         mockGetShare.mockImplementation((_ac, shareId) => ({ shareId, type: 0 }));
-        mockGetDefaultShare.mockImplementation(() => ({ volumeId: VOLUME_ID_0 }));
-        mockGetDefaultPhotosShare.mockImplementation(() => null);
         mockGetShareCreatorKeys.mockImplementation(() => ({ privateKey: {}, address: { Email: 'test@test.com' } }));
 
         const wrapper = ({ children }: { children: React.ReactNode }) => (
@@ -205,7 +189,6 @@ describe('useLinksActions', () => {
                         queryTrashLinks: mockQueryTrashLinks,
                         queryRestoreLinks: mockQueryRestoreLinks,
                         queryDeleteTrashedLinks: mockQueryDeleteTrashedLinks,
-                        queryDeleteChildrenLinks: jest.fn(),
                     },
                 }),
             { wrapper }

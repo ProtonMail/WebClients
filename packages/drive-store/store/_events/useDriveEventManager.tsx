@@ -36,7 +36,6 @@ const DRIVE_EVENT_MANAGER_FUNCTIONS_STUB = {
         startSubscription: () => {
             throw Error('Usage of uninitialized DriveEventManager!');
         },
-        pauseSubscription: () => {},
         unsubscribe: () => {},
     },
 
@@ -145,20 +144,6 @@ export function useDriveEventManagerProvider(api: Api, generalEventManager: Even
             await subscribeToVolume(volumeId, type);
         }
         eventManagers.current.get(volumeId)!.start();
-    };
-
-    /**
-     * Pauses event polling for the volume. Returns false if there's no event manager
-     * associated with the volumeId
-     */
-    const pauseVolumeSubscription = (volumeId: string): boolean => {
-        const volumeSubscription = eventManagers.current.get(volumeId);
-        if (volumeSubscription) {
-            volumeSubscription.stop();
-            return true;
-        }
-
-        return false;
     };
 
     /**
@@ -281,7 +266,6 @@ export function useDriveEventManagerProvider(api: Api, generalEventManager: Even
 
         volumes: {
             startSubscription: startVolumeSubscription,
-            pauseSubscription: pauseVolumeSubscription,
             unsubscribe: unsubscribeFromVolume,
         },
 

@@ -78,7 +78,7 @@ interface LinkSharingDetails {
     shareId: string;
 }
 
-export interface PhotoProperties {
+interface PhotoProperties {
     albums: {
         albumLinkId: string;
         hash: string;
@@ -89,7 +89,7 @@ export interface PhotoProperties {
     isFavorite: boolean;
 }
 
-export interface AlbumProperties {
+interface AlbumProperties {
     nodeHashKey: string;
     coverLinkId: string;
     photoCount: number;

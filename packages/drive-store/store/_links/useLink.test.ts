@@ -50,7 +50,6 @@ describe('useLink', () => {
     const mockLinksState = {
         getLink: jest.fn(),
         setLinks: jest.fn(),
-        setCachedThumbnail: jest.fn(),
     };
     const mockGetVerificationKey = jest.fn();
     const mockGetSharePrivateKey = jest.fn();

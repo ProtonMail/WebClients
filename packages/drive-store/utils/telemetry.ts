@@ -47,8 +47,6 @@ export enum Actions {
     SignUpFlowAndRedirectCompleted = 'signUpFlowAndRedirectCompleted',
 
     // images
-    ConvertedHEIC = 'convertedHEIC',
-    ExtractedFromRaw = 'extractedFromRaw',
 }
 
 type PerformanceTelemetryAdditionalValues = {

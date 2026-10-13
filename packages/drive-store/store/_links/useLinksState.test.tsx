@@ -670,15 +670,5 @@ describe('useLinksState', () => {
             const links = hook.current.getTrashed('shareId');
             expect(links.map((link) => link.encrypted.linkId)).toMatchObject(['linkId7']);
         });
-
-        it('returns shared links', () => {
-            const links = hook.current.getSharedByLink('shareId');
-            expect(links.map((link) => link.encrypted.linkId)).toMatchObject(['linkId5']);
-        });
-
-        it('returns shared with me links', () => {
-            const links = hook.current.getSharedWithMeByLink('shareId');
-            expect(links.map((link) => link.encrypted.linkId)).toMatchObject(['linkId6']);
-        });
     });
 });

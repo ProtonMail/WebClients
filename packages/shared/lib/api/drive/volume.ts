@@ -1,12 +1,6 @@
 import { FOLDER_PAGE_SIZE } from '../../drive/constants';
 import type { RecoverPhotoLinks, TransferPhotoLinks } from '../../interfaces/drive/link';
-import type { CopyNodeToVolume, CreateDriveVolume, RestoreDriveVolume } from '../../interfaces/drive/volume';
-
-export const queryCopyNodeToVolume = (volumeId: string, linkId: string, data: CopyNodeToVolume) => ({
-    method: 'POST',
-    url: `drive/volumes/${volumeId}/links/${linkId}/copy`,
-    data,
-});
+import type { CreateDriveVolume, RestoreDriveVolume } from '../../interfaces/drive/volume';
 
 export const queryUserVolumes = () => ({
     method: 'GET',

@@ -1,11 +1,6 @@
 import { SharedURLFlags } from '@proton/shared/lib/interfaces/drive/sharing';
 
-import {
-    hasCustomPassword,
-    hasGeneratedPasswordIncluded,
-    isLegacySharedUrl,
-    splitGeneratedAndCustomPassword,
-} from './shareUrl';
+import { hasCustomPassword, hasGeneratedPasswordIncluded, splitGeneratedAndCustomPassword } from './shareUrl';
 
 describe('Password flags checks', () => {
     describe('Missing data check', () => {
@@ -16,14 +11,6 @@ describe('Password flags checks', () => {
         it('returns false if SharedURLInfo is abscent', () => {
             expect(hasCustomPassword()).toEqual(false);
             expect(hasGeneratedPasswordIncluded()).toEqual(false);
-        });
-    });
-
-    describe('isLegacySharedUrl', () => {
-        it("returns true is if it's CustomPassword or LegacyGeneratedPassword flag", () => {
-            expect(isLegacySharedUrl({ flags: SharedURLFlags.CustomPassword })).toEqual(true);
-            expect(isLegacySharedUrl({ flags: SharedURLFlags.Legacy })).toEqual(true);
-            expect(hasCustomPassword({ flags: SharedURLFlags.GeneratedPasswordIncluded })).toEqual(false);
         });
     });
 

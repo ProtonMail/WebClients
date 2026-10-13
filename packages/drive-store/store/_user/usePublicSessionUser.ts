@@ -4,9 +4,9 @@ import usePublicSession from '../_api/usePublicSession';
 
 export const usePublicSessionUser = () => {
     const auth = useAuthentication();
-    const { user, userAddressEmail } = usePublicSession();
+    const { user } = usePublicSession();
     const localID: number | undefined = auth.getLocalID();
     const UID: string = auth.getUID();
 
-    return { user, userAddressEmail, localID, UID };
+    return { user, localID, UID };
 };
