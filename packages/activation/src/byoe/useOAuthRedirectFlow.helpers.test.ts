@@ -42,6 +42,23 @@ describe('useOAuthRedirectFlow helpers', () => {
         });
     });
 
+    describe('creationStartedAt', () => {
+        it('should be stored and read back', () => {
+            storeOAuthRedirectState({ uid: 'abc', importEmails: true, creationStartedAt: 1234 });
+
+            expect(readOAuthRedirectState()?.creationStartedAt).toBe(1234);
+        });
+
+        it('should be dropped when it is not a number', () => {
+            sessionStorage.setItem(
+                STORAGE_KEY,
+                JSON.stringify({ uid: 'abc', importEmails: true, creationStartedAt: '1234' })
+            );
+
+            expect(readOAuthRedirectState()?.creationStartedAt).toBeUndefined();
+        });
+    });
+
     describe('readOAuthCallback', () => {
         it('should return none and keep the stored state on an ordinary page load', () => {
             storeOAuthRedirectState({ uid: 'abc', importEmails: true });
@@ -65,6 +82,7 @@ describe('useOAuthRedirectFlow helpers', () => {
 
             expect(readOAuthCallback(new URLSearchParams('error=access_denied&state=abc'))).toEqual({
                 type: 'error',
+                state: { uid: 'abc', importEmails: true, redirect: undefined, creationStartedAt: undefined },
             });
         });
 

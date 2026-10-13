@@ -4,6 +4,7 @@ import { getUnixTime } from 'date-fns';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { buildAddress } from '@proton/account/testing/buildAddress';
 import { findUserAddress, getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
+import { mockTracker } from '@proton/telemetry-tracker/testing';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { startEasySwitchSignupImportTask } from '../api/api';
@@ -512,6 +513,118 @@ describe('useConnectBYOEAddress', () => {
             const outcome = await connectWithCode();
 
             expect(outcome).toEqual({ status: 'failure', reason: { type: 'linked-to-another-account' } });
+        });
+    });
+
+    describe('creation funnel telemetry', () => {
+        beforeEach(() => {
+            jest.clearAllMocks();
+            mockUseBYOEFeatureStatus.mockReturnValue([true, false] as const);
+            mockUseAddresses.mockReturnValue([[], false]);
+            mockFindUserAddress.mockReturnValue(undefined);
+            mockGetIsBYOEAddress.mockReturnValue(false);
+            mockDispatch.mockResolvedValue(createdAddress);
+            mockApi.mockResolvedValue({});
+            mockUseFlag.mockReturnValue(false);
+            mockEasySwitchDispatch.mockResolvedValue({
+                type: 'token/create/fulfilled',
+                meta: { requestStatus: 'fulfilled' },
+                payload: mockToken,
+            });
+        });
+
+        const connectWithCode = async () => {
+            const { result } = renderHook(() =>
+                useConnectBYOEAddress({ source: EASY_SWITCH_SOURCES.ACCOUNT_LITE_BYOE })
+            );
+            await act(async () => {
+                await result.current.connectBYOEAddressWithCode({
+                    code: 'the-code',
+                    redirectUri: 'https://account.proton.me/lite?action=byoe-mobile',
+                    importEmails: true,
+                });
+            });
+        };
+
+        it('sends authenticated then importer_created, without upsell, when the address is connected', async () => {
+            const { reports } = mockTracker();
+
+            await connectWithCode();
+
+            expect(reports.map((report) => report.event)).toEqual(['authenticated', 'importer_created']);
+            expect(reports[1]).toMatchObject({
+                measurementGroup: 'any.web.byoe_creation_funnel',
+                dimensions: {
+                    provider: 'google',
+                    hasImportEmails: 'true',
+                    importPeriodSelected: 'n/a',
+                    isUpsellShown: 'false',
+                    isClaimedAddress: 'false',
+                },
+            });
+        });
+
+        it.each([
+            ['Invalid code', 'authentication'],
+            ['wrong_account', 'wrong_account'],
+        ])('sends creation_error when the token fails with "%s"', async (error, errorStep) => {
+            const { reports } = mockTracker();
+            mockEasySwitchDispatch.mockResolvedValue({
+                type: 'token/create/rejected',
+                meta: { requestStatus: 'rejected' },
+                payload: { Code: 2000, Error: error },
+            });
+
+            await connectWithCode();
+
+            expect(reports).toHaveLength(1);
+            expect(reports[0]).toMatchObject({ event: 'creation_error', dimensions: { errorStep } });
+        });
+
+        it('sends creation_error when the address is already connected', async () => {
+            const { reports } = mockTracker();
+            mockFindUserAddress.mockReturnValue(buildAddress({ Email: mockToken.Account }));
+            mockGetIsBYOEAddress.mockReturnValue(true);
+
+            await connectWithCode();
+
+            expect(reports.map((report) => report.event)).toEqual(['authenticated', 'creation_error']);
+            expect(reports[1].dimensions).toMatchObject({ errorStep: 'address_already_connected' });
+        });
+
+        it('sends creation_error when the address is linked to another account and cannot be claimed', async () => {
+            const { reports } = mockTracker();
+            mockApi.mockRejectedValue({
+                data: { Code: BYOE_ADDRESS_ERROR.ADDRESS_ALREADY_EXISTS, Error: 'Address already exists' },
+            });
+
+            await connectWithCode();
+
+            expect(reports[1].dimensions).toMatchObject({ errorStep: 'address_linked_to_another_account' });
+        });
+
+        it('does not send an error when the address can be claimed', async () => {
+            const { reports } = mockTracker();
+            mockUseFlag.mockReturnValue(true);
+            mockApi
+                .mockRejectedValueOnce({
+                    data: { Code: BYOE_ADDRESS_ERROR.ADDRESS_ALREADY_EXISTS, Error: 'Address already exists' },
+                })
+                .mockResolvedValueOnce({ CanBeClaimed: true });
+
+            await connectWithCode();
+
+            expect(reports.map((report) => report.event)).toEqual(['authenticated']);
+        });
+
+        it('sends creation_error when creating the address fails', async () => {
+            const { reports } = mockTracker();
+            mockDispatch.mockRejectedValue(new Error('nope'));
+
+            await connectWithCode();
+
+            expect(reports.map((report) => report.event)).toEqual(['authenticated', 'creation_error']);
+            expect(reports[1].dimensions).toMatchObject({ errorStep: 'address_creation' });
         });
     });
 });

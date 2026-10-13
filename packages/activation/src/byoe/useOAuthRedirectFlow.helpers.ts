@@ -8,10 +8,14 @@ export interface OAuthRedirectState {
     importEmails: boolean;
     /** Where to send the user once the flow is done. Not validated here. */
     redirect?: string;
+    /** Epoch ms at which the funnel began, so its duration survives the redirect (telemetry timers live in memory). */
+    creationStartedAt?: number;
 }
 
 export type OAuthCallbackResult =
-    { type: 'none' } | { type: 'error' } | { type: 'code'; code: string; state: OAuthRedirectState };
+    | { type: 'none' }
+    | { type: 'error'; state?: OAuthRedirectState }
+    | { type: 'code'; code: string; state: OAuthRedirectState };
 
 export const storeOAuthRedirectState = (state: OAuthRedirectState) => {
     sessionStorage.setItem(STORAGE_KEY, JSON.stringify(state));
@@ -35,6 +39,7 @@ export const readOAuthRedirectState = (): OAuthRedirectState | undefined => {
             uid: parsed.uid,
             importEmails: parsed.importEmails,
             redirect: typeof parsed.redirect === 'string' ? parsed.redirect : undefined,
+            creationStartedAt: typeof parsed.creationStartedAt === 'number' ? parsed.creationStartedAt : undefined,
         };
     } catch {
         return;
@@ -57,8 +62,13 @@ export const readOAuthCallback = (searchParams: URLSearchParams): OAuthCallbackR
     const stored = readOAuthRedirectState();
     clearOAuthRedirectState();
 
-    if (error || !code || !stored || stored.uid !== searchParams.get('state')) {
+    if (!stored || stored.uid !== searchParams.get('state')) {
         return { type: 'error' };
+    }
+
+    if (error || !code) {
+        // The stored state is ours (uid matches), e.g. the user declined: callers can still use it
+        return { type: 'error', state: stored };
     }
 
     return { type: 'code', code, state: stored };
