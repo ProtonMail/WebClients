@@ -119,7 +119,7 @@
         "Aboneliği iptal et"
       ],
       "Change my access": [
-        "Erişme iznimi değiştir"
+        "Erişimimi değiştir"
       ],
       "Change password": [
         "Parolayı değiştir"
@@ -652,7 +652,7 @@
         "Dosyayı kaldır"
       ],
       "Remove my access": [
-        "Erişme iznimi kaldır"
+        "Erişimimi kaldır"
       ],
       "Rename": [
         "Yeniden adlandır"
@@ -1162,6 +1162,70 @@
     "BF2024: Tooltip": {
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Depolama alanı tüm ${ BRAND_NAME } hizmetleri arasında paylaşılır."
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Muhteşem Cuma"
+      ],
+      "Get the deal": [
+        "Tekliften yararlanın"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/ay"
+      ],
+      "2 individual accounts": [
+        "2 bireysel hesap"
+      ],
+      "2 TB of secure storage": [
+        "2 TB güvenli depolama alanı"
+      ],
+      "3 TB of secure storage": [
+        "3 TB güvenli depolama alanı"
+      ],
+      "500 GB of secure storage": [
+        "500 GB güvenli depolama alanı"
+      ],
+      "6 individual accounts": [
+        "6 bireysel hesap"
+      ],
+      "Advanced protection against cyber threats": [
+        "Siber tehditlere karşı gelişmiş koruma"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "İndirimler standart aylık fiyatlara göre hesaplanır. Fatura dönemi sona erdiğinde aboneliğiniz standart yıllık ücret ile yenilenir."
+      ]
+    },
+    "bfcampaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Ücretli ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Ücretli ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Ücretli ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Ücretli ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Ücretli ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "for 12 months": [
+        "12 aylık"
       ]
     },
     "Browser": {
@@ -3514,6 +3578,9 @@
       ],
       "You must set a name": [
         "Bir ad belirtmelisiniz"
+      ],
+      "You reached the maximum number of connected addresses": [
+        "Olabilecek en fazla bağlantılı adres sayısına ulaştınız."
       ],
       "Your import will not be processed.": [
         "İçe aktarma işleminiz yapılmayacak."
@@ -8343,79 +8410,6 @@
         "Yahoo"
       ]
     },
-    "q3campaign2026: Action": {
-      "Get the deal": [
-        "Fırsatı değerlendirin"
-      ],
-      "Special Offer": [
-        "Özel teklif"
-      ]
-    },
-    "q3campaign2026: Info": {
-      "/month": [
-        "/ay"
-      ],
-      "2 individual accounts": [
-        "2 bireysel hesap"
-      ],
-      "2 TB of secure storage": [
-        "2 TB güvenli depolama alanı"
-      ],
-      "3 TB of secure storage": [
-        "3 TB güvenli depolama alanı"
-      ],
-      "500 GB of secure storage": [
-        "500 GB güvenli depolama alanı"
-      ],
-      "6 individual accounts": [
-        "6 bireysel hesap"
-      ],
-      "Advanced protection against cyber threats": [
-        "Siber tehditlere karşı gelişmiş koruma"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "İndirimler standart aylık fiyatlara göre hesaplanır. Fatura dönemi sona erdiğinde aboneliğiniz standart yıllık ücret ile yenilenir."
-      ]
-    },
-    "q3campaign2026: Info, Calendar first": {
-      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Family, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Family, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Title": {
-      "for 12 months": [
-        "12 ay için"
-      ],
-      "One plan, full power": [
-        "Tek tarife, tam güç"
-      ],
-      "One plan, max savings": [
-        "Tek tarife, en yüksek kazanç"
-      ],
-      "One plan, more power": [
-        "Tek tarife, daha fazla güç"
-      ]
-    },
     "Recent documents table header": {
       "Created by": [
         "Oluşturan"
@@ -9874,7 +9868,7 @@
         "Verileri kurtar"
       ],
       "Remove your access?": [
-        "Erişme izniniz kaldırılsın mı?"
+        "Erişiminiz kaldırılsın mı?"
       ],
       "Report a problem": [
         "Sorun bildirin"
@@ -9937,7 +9931,7 @@
         "Benimle paylaşılan"
       ],
       "Sign in and grant access": [
-        "Oturum açın ve erişim izni verin"
+        "Oturum açın ve erişme izni verin"
       ],
       "Sign out": [
         "Oturumu kapat"
