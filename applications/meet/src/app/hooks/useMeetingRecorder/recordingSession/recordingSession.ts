@@ -3,7 +3,7 @@ import type { TrackReference } from '@livekit/components-react';
 import type { ReportMeetError } from '@proton/meet/hooks/useMeetErrorReporting';
 import type { OpfsRecording } from '@proton/meet/store/slices/recordingsSlice';
 
-import { type AudioMixer, createAudioMixer } from '../audioMixer/audioMixer';
+import { type AudioMixer, type AudioMixerDiagnostics, createAudioMixer } from '../audioMixer/audioMixer';
 import { createChunkWatchdog } from '../chunkWatchdog/chunkWatchdog';
 import type { ChunkWatchdog } from '../chunkWatchdog/types';
 import type { RecordingCodec } from '../codec/types';
@@ -14,7 +14,13 @@ import { type RecordingStorageClient, createRecordingStorageClient } from '../re
 import type { RecorderAPI } from '../types';
 import { VideoMixerClient } from '../videoMixer/client';
 import type { RecordingTrackInfo, SceneState } from '../videoMixer/types';
-import type { RecordingSessionOptions, RecordingSessionStartOptions } from './types';
+import type {
+    RecordingDiagnostics,
+    RecordingOutcome,
+    RecordingSessionOptions,
+    RecordingSessionStartOptions,
+    RecordingStopReport,
+} from './types';
 
 // Orchestrates one recording session: storage + video mixer + audio mixer +
 // recorder backend (WebCodecs or MediaRecorder) + watchdog. The hook talks to
@@ -37,6 +43,15 @@ export class RecordingSession {
     private onWriteError: (hasWrittenData: boolean) => void;
     private storageFull = false;
     private writeError: string | null = null;
+    private startedAt: number | null = null;
+    private stopStartedAt: number | null = null;
+    private stopFinishedAt: number | null = null;
+    private cleanedUpAt: number | null = null;
+    private bytesBeforeStop = 0;
+    private file: OpfsRecording | null = null;
+    private outcome: RecordingOutcome | null = null;
+    private outcomeError: string | null = null;
+    private finalAudioDiagnostics: AudioMixerDiagnostics | null = null;
 
     constructor({
         codec,
@@ -235,6 +250,7 @@ export class RecordingSession {
         this.watchdog.start();
 
         this.active = true;
+        this.startedAt = performance.now();
 
         // eslint-disable-next-line no-console
         console.log('[MeetingRecorder] recorder started', {
@@ -248,13 +264,18 @@ export class RecordingSession {
             return null;
         }
 
+        this.stopStartedAt = performance.now();
+        this.bytesBeforeStop = this.stats?.snapshot().totalBytes ?? 0;
+
         try {
             await this.mediaRecorder.stop();
             this.watchdog?.stop();
             this.watchdog = null;
 
-            return await this.storage.finalize();
+            this.file = await this.storage.finalize();
+            return this.file;
         } finally {
+            this.stopFinishedAt = performance.now();
             const snapshot = this.stats?.snapshot();
             // eslint-disable-next-line no-console
             console.log('[MeetingRecorder] recording stopped', {
@@ -268,6 +289,7 @@ export class RecordingSession {
 
     public async cleanup(): Promise<void> {
         this.active = false;
+        this.cleanedUpAt = performance.now();
 
         this.watchdog?.stop();
         this.watchdog = null;
@@ -275,6 +297,7 @@ export class RecordingSession {
         this.videoMixer?.cleanup();
         this.videoMixer = null;
 
+        this.finalAudioDiagnostics = this.audioMixer?.getDiagnostics() ?? null;
         this.audioMixer?.cleanup();
         this.audioMixer = null;
 
@@ -284,7 +307,13 @@ export class RecordingSession {
         }
 
         this.mediaRecorder = null;
-        this.stats = null;
+    }
+
+    public setOutcome(outcome: RecordingOutcome, error?: unknown): void {
+        this.outcome = outcome;
+        if (error !== undefined) {
+            this.outcomeError = error instanceof Error ? error.message : String(error);
+        }
     }
 
     public updateScene(scene: SceneState): void {
@@ -305,5 +334,43 @@ export class RecordingSession {
 
     public getActiveCodec(): RecordingCodec | null {
         return this.mediaRecorder?.getActiveCodec() ?? null;
+    }
+
+    private getStopReport(): RecordingStopReport | null {
+        if (this.stopStartedAt === null && this.outcome === null) {
+            return null;
+        }
+
+        return {
+            outcome: this.outcome,
+            error: this.outcomeError,
+            durationMs:
+                this.startedAt !== null && this.stopStartedAt !== null ? this.stopStartedAt - this.startedAt : null,
+            stopDurationMs:
+                this.stopStartedAt !== null && this.stopFinishedAt !== null
+                    ? this.stopFinishedAt - this.stopStartedAt
+                    : null,
+            bytesBeforeStop: this.bytesBeforeStop,
+            file: this.file,
+        };
+    }
+
+    public getDiagnostics(): RecordingDiagnostics {
+        const snapshot = this.stats?.snapshot();
+
+        return {
+            isActive: this.active,
+            endedAt: this.stopStartedAt ?? this.cleanedUpAt,
+            stopReport: this.getStopReport(),
+            backend: this.isWebCodecs ? 'webcodecs' : 'mediarecorder',
+            mimeType: this.getActiveCodec()?.mimeType ?? this.codec.mimeType,
+            recorderState: this.mediaRecorder?.getRecorderState() ?? 'inactive',
+            audio: this.audioMixer?.getDiagnostics() ?? this.finalAudioDiagnostics,
+            chunkCount: snapshot?.chunkCount ?? 0,
+            totalBytes: snapshot?.totalBytes ?? 0,
+            emptyChunkCount: snapshot?.emptyChunkCount ?? 0,
+            lastChunkAt: snapshot && snapshot.firstChunkAt !== null ? snapshot.lastChunkAt : null,
+            pendingWriteCount: this.storage?.getPendingWriteCount() ?? 0,
+        };
     }
 }

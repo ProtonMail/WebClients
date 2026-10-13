@@ -21,222 +21,30 @@ import {
     selectSpeakerState,
     selectSpeakers,
 } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
-import type { SliceDeviceState } from '@proton/meet/store/slices/deviceManagementSlice/types';
 import type { SerializableDeviceInfo } from '@proton/meet/utils/deviceUtils';
 import { SECOND } from '@proton/shared/lib/constants';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
-import clsx from '@proton/utils/clsx';
 
-import { supportsAudioContextSinkId, supportsElementSinkId, supportsSetSinkId } from '../../utils/browser';
-
-const SNAPSHOT_INTERVAL_MS = SECOND / 2;
+import { SNAPSHOT_INTERVAL_MS } from './constants';
+import { DeviceSection } from './devices/DeviceSection';
+import { PlaybackSection } from './devices/PlaybackSection';
+import { shortId } from './devices/deviceLabels';
+import { EMPTY_SNAPSHOT, type Snapshot } from './devices/snapshot';
+import { RecordingSection } from './recording/RecordingSection';
 
 const MIN_COLUMN_SIZE = 'min(30rem, 100%)';
 
-const DEVICE_FILTERS = [
+const SECTION_FILTERS = [
     { value: 'all', label: 'All' },
     { value: 'microphone', label: 'Microphone' },
     { value: 'speaker', label: 'Speaker' },
     { value: 'camera', label: 'Camera' },
+    { value: 'recording', label: 'Recording' },
 ] as const;
 
-type DeviceFilter = (typeof DEVICE_FILTERS)[number]['value'];
+type SectionFilter = (typeof SECTION_FILTERS)[number]['value'];
 
-const shortId = (deviceId: string | null | undefined) => {
-    if (deviceId === undefined) {
-        return '(undefined)';
-    }
-    if (deviceId === null) {
-        return '(null)';
-    }
-    if (deviceId === '') {
-        return '(empty)';
-    }
-    if (deviceId === 'default') {
-        return 'default';
-    }
-    return deviceId.slice(0, 8);
-};
-
-const labelFor = (devices: SerializableDeviceInfo[], deviceId: string | null | undefined) =>
-    devices.find((device) => device.deviceId === deviceId)?.label ?? '(not in list)';
-
-const describe = (devices: SerializableDeviceInfo[], deviceId: string | null | undefined) =>
-    `${shortId(deviceId)} · ${labelFor(devices, deviceId)}`;
-
-interface Snapshot {
-    enumerated: SerializableDeviceInfo[];
-    enumeratedAgo: string;
-    livekitActive: Partial<Record<MediaDeviceKind, string | undefined>>;
-    livekitAudioOutputOption: string | undefined;
-    canPlaybackAudio: boolean;
-    webAudioMixEnabled: boolean;
-    microphoneTrackDeviceId: string | undefined;
-    microphoneProcessing: string;
-    microphoneTrackState: string;
-    cameraTrackDeviceId: string | undefined;
-    audioContextState: string;
-    audioContextSampleRate: string;
-    audioContextSinkId: string;
-    cameraPermissions: string;
-    microphonePermissions: string;
-}
-
-const EMPTY_SNAPSHOT: Snapshot = {
-    enumerated: [],
-    enumeratedAgo: '(pending)',
-    livekitActive: {},
-    livekitAudioOutputOption: undefined,
-    canPlaybackAudio: false,
-    webAudioMixEnabled: false,
-    microphoneTrackDeviceId: undefined,
-    microphoneProcessing: '(none)',
-    microphoneTrackState: '(no track)',
-    cameraTrackDeviceId: undefined,
-    audioContextState: '(none)',
-    audioContextSampleRate: '(none)',
-    audioContextSinkId: '(none)',
-    cameraPermissions: '(unknown)',
-    microphonePermissions: '(unknown)',
-};
-
-const Field = ({ name, value, highlight = false }: { name: string; value: string; highlight?: boolean }) => (
-    <div className="flex flex-nowrap gap-2 text-sm">
-        <span className="color-weak shrink-0 min-w-custom" style={{ '--min-w-custom': '9.5rem' }}>
-            {name}
-        </span>
-        <span className={clsx('flex-1 min-w-0 text-break', highlight && 'color-danger text-bold')}>{value}</span>
-    </div>
-);
-
-const DeviceList = ({
-    title,
-    devices,
-    activeDeviceId,
-    updatedAgo,
-}: {
-    title: string;
-    devices: SerializableDeviceInfo[];
-    activeDeviceId: string | null;
-    updatedAgo?: string;
-}) => (
-    <div className="flex flex-column gap-1 mt-2">
-        <span className="color-weak text-sm">
-            {`${title} (${devices.length})${updatedAgo ? ` · ${updatedAgo}` : ''}`}
-        </span>
-        {devices.map((device, index) => (
-            <div
-                key={`${device.deviceId}-${index}`}
-                className={clsx('text-sm text-break', device.deviceId === activeDeviceId && 'text-bold color-primary')}
-            >
-                {`[${index}] ${device.label || '(no label)'} · id=${shortId(device.deviceId)} · group=${shortId(device.groupId)}`}
-            </div>
-        ))}
-    </div>
-);
-
-interface DeviceSectionProps {
-    title: string;
-    kind: MediaDeviceKind;
-    devices: SerializableDeviceInfo[];
-    snapshot: Snapshot;
-    activeDeviceId: string | null;
-    preferredDeviceId: string | null;
-    selectedDeviceId: string | null;
-    deviceState?: SliceDeviceState;
-    trackDeviceId?: string | undefined;
-}
-
-const DeviceSection = ({
-    title,
-    kind,
-    devices,
-    snapshot,
-    activeDeviceId,
-    preferredDeviceId,
-    selectedDeviceId,
-    deviceState,
-    trackDeviceId,
-}: DeviceSectionProps) => {
-    const livekitActiveDeviceId = snapshot.livekitActive[kind];
-    const enumeratedForKind = snapshot.enumerated.filter((device) => device.kind === kind);
-
-    return (
-        <section className="flex flex-column gap-2 w-full border border-weak rounded p-3">
-            <h3 className="text-bold text-sm m-0">{title}</h3>
-
-            <Field name="active (redux)" value={describe(devices, activeDeviceId)} />
-            <Field
-                name="active (livekit)"
-                value={describe(devices, livekitActiveDeviceId)}
-                highlight={livekitActiveDeviceId !== undefined && livekitActiveDeviceId !== activeDeviceId}
-            />
-            {trackDeviceId !== undefined && (
-                <Field
-                    name="capturing (track)"
-                    value={describe(devices, trackDeviceId)}
-                    highlight={trackDeviceId !== activeDeviceId}
-                />
-            )}
-            {kind === 'audiooutput' && (
-                <Field
-                    name="livekit audioOutput"
-                    value={describe(devices, snapshot.livekitAudioOutputOption)}
-                    highlight={snapshot.livekitAudioOutputOption === undefined}
-                />
-            )}
-            {kind === 'audioinput' && (
-                <>
-                    <Field
-                        name="applied processing"
-                        value={snapshot.microphoneProcessing}
-                        highlight={snapshot.microphoneProcessing.includes('aec:false')}
-                    />
-                    <Field
-                        name="track readyState"
-                        value={snapshot.microphoneTrackState}
-                        highlight={snapshot.microphoneTrackState.includes('capture:ended')}
-                    />
-                </>
-            )}
-
-            <Field name="preferred" value={describe(devices, preferredDeviceId)} />
-            <Field
-                name="selected (picker)"
-                value={describe(devices, selectedDeviceId)}
-                highlight={selectedDeviceId !== activeDeviceId}
-            />
-
-            {deviceState && (
-                <>
-                    <Field
-                        name="systemDefault"
-                        value={
-                            deviceState.systemDefault
-                                ? `${shortId(deviceState.systemDefault.deviceId)} · ${deviceState.systemDefault.label}`
-                                : '(unresolved)'
-                        }
-                        highlight={!deviceState.systemDefault}
-                    />
-                    <Field name="systemDefaultLabel" value={deviceState.systemDefaultLabel} />
-                    <Field name="useSystemDefault" value={String(deviceState.useSystemDefault)} />
-                    <Field name="preferredAvailable" value={String(deviceState.preferredAvailable)} />
-                    <Field name="hasDefaultOption" value={String(deviceState.hasDefaultOption)} />
-                </>
-            )}
-
-            <DeviceList title="redux list (store order)" devices={devices} activeDeviceId={activeDeviceId} />
-            <DeviceList
-                title="browser enumerateDevices"
-                devices={enumeratedForKind}
-                activeDeviceId={activeDeviceId}
-                updatedAgo={snapshot.enumeratedAgo}
-            />
-        </section>
-    );
-};
-
-export const DeviceStateReport = () => {
+export const MeetingDebug = () => {
     const room = useRoomContext();
 
     const microphones = useMeetSelector(selectMicrophones);
@@ -259,11 +67,11 @@ export const DeviceStateReport = () => {
     const speakerState = useMeetSelector(selectSpeakerState);
 
     const [snapshot, setSnapshot] = useState<Snapshot>(EMPTY_SNAPSHOT);
-    const [filter, setFilter] = useState<DeviceFilter>('all');
+    const [filter, setFilter] = useState<SectionFilter>('all');
 
     const reportRef = useRef<HTMLDivElement>(null);
 
-    const shows = (section: DeviceFilter) => filter === 'all' || filter === section;
+    const shows = (section: SectionFilter) => filter === 'all' || filter === section;
 
     // LiveKit, the browser and the live tracks are not reactive, and the changes that matter most
     // (the AudioContext sink and state) emit no event at all, so polling beats listening here.
@@ -371,7 +179,7 @@ export const DeviceStateReport = () => {
             )}
 
             <div className="flex gap-2">
-                {DEVICE_FILTERS.map(({ value, label }) => (
+                {SECTION_FILTERS.map(({ value, label }) => (
                     <Button
                         key={value}
                         size="small"
@@ -388,32 +196,9 @@ export const DeviceStateReport = () => {
                 className="grid-auto-fill gap-4 items-start"
                 style={{ '--min-grid-template-column-size': MIN_COLUMN_SIZE }}
             >
-                {shows('speaker') && (
-                    <section className="flex flex-column gap-2 w-full border border-weak rounded p-3">
-                        <h3 className="text-bold text-sm m-0">Playback</h3>
-                        <Field name="webAudioMix" value={String(snapshot.webAudioMixEnabled)} />
-                        <Field
-                            name="canPlaybackAudio"
-                            value={String(snapshot.canPlaybackAudio)}
-                            highlight={!snapshot.canPlaybackAudio}
-                        />
-                        <Field
-                            name="audioContext.state"
-                            value={snapshot.audioContextState}
-                            highlight={
-                                snapshot.audioContextState === 'suspended' || snapshot.audioContextState === 'closed'
-                            }
-                        />
-                        <Field name="audioContext.sampleRate" value={snapshot.audioContextSampleRate} />
-                        <Field name="audioContext.sinkId" value={snapshot.audioContextSinkId} />
-                        <Field name="cameraPermissions" value={snapshot.cameraPermissions} />
-                        <Field name="microphonePermissions" value={snapshot.microphonePermissions} />
+                {shows('recording') && <RecordingSection />}
 
-                        <Field name="supportsSetSinkId" value={String(supportsSetSinkId())} />
-                        <Field name="setSinkId (element)" value={String(supportsElementSinkId())} />
-                        <Field name="setSinkId (context)" value={String(supportsAudioContextSinkId())} />
-                    </section>
-                )}
+                {shows('speaker') && <PlaybackSection snapshot={snapshot} />}
 
                 {shows('camera') && (
                     <DeviceSection
