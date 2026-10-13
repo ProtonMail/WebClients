@@ -58,16 +58,19 @@ describe('blackFriday2026 ref wiring', () => {
         expect(resolved.deals[0].features?.('drive')?.length).toBeGreaterThan(0);
     });
 
-    it('leads the app list with the app the user is in', () => {
-        const appListFor = (appName: Parameters<typeof withResolvedRefs>[1]) => {
-            const resolved = withResolvedRefs(freeToUnlimited, appName, '/');
+    it('leads the app list with Drive or Pass when the user is in them, and with Mail everywhere else', () => {
+        const appListFor = (appName: Parameters<typeof withResolvedRefs>[1], pathname = '/') => {
+            const resolved = withResolvedRefs(freeToUnlimited, appName, pathname);
 
-            return resolved.deals[0].features?.(getOfferProduct(appName, '/'))?.[0].name;
+            return resolved.deals[0].features?.(getOfferProduct(appName, pathname))?.[0].name;
         };
 
-        expect(appListFor(APPS.PROTONMAIL)).toBe('Premium Mail, Pass, Drive, VPN, and Calendar');
-        expect(appListFor(APPS.PROTONDRIVE)).toBe('Premium Drive, Mail, Pass, VPN, and Calendar');
-        expect(appListFor(APPS.PROTONCALENDAR)).toBe('Premium Calendar, Mail, Pass, Drive, and VPN');
+        expect(appListFor(APPS.PROTONDRIVE)).toBe('Premium Drive, Mail, Pass, and VPN');
+        expect(appListFor(APPS.PROTONACCOUNT, '/pass/dashboard')).toBe('Premium Pass, Mail, Drive, and VPN');
+        expect(appListFor(APPS.PROTONMAIL)).toBe('Premium Mail, Pass, Drive, and VPN');
+
+        // Calendar is not in the list, so it falls back to the Mail order.
+        expect(appListFor(APPS.PROTONCALENDAR)).toBe('Premium Mail, Pass, Drive, and VPN');
     });
 
     it('does not lead Family copy with Calendar, which the plan copy omits', () => {
