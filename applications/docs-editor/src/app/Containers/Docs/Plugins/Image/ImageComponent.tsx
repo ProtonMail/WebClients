@@ -1,7 +1,7 @@
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { useLexicalNodeSelection } from '@lexical/react/useLexicalNodeSelection'
 import { mergeRegister } from '@lexical/utils'
-import clsx from 'clsx'
+import { clsx } from 'clsx'
 import type { BaseSelection, LexicalCommand, LexicalEditor, NodeKey } from 'lexical'
 import {
   $getNodeByKey,
@@ -22,17 +22,35 @@ import {
 import { Suspense, useCallback, useEffect, useRef, useState } from 'react'
 import { c } from 'ttag'
 
-import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
-import { useCombinedRefs } from '@proton/hooks'
 import { useDocsDependencies } from '../../DocsDependenciesProvider'
 import { getRemoteImageUrl, isAllowedImageSrc } from '../../Conversion/ImageSrcUtils'
 import { getElementDimensionsWithoutPadding } from '../../Utils/getEditorWidthWithoutPadding'
 import { SET_IMAGE_SIZE_COMMAND } from './ImageCommands'
 import ImageResizer from './ImageResizer'
 
+import './ImageComponent.scss'
+
 const imageCache = new Set()
 
 const RIGHT_CLICK_IMAGE_COMMAND: LexicalCommand<MouseEvent> = createCommand('RIGHT_CLICK_IMAGE_COMMAND')
+
+function ImageLoadingIndicator(): JSX.Element {
+  return (
+    <>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="docs-image-loader"
+        viewBox="0 0 16 16"
+        style={{ width: '15%', height: '15%' }}
+        aria-hidden="true"
+      >
+        <circle className="docs-image-loader-track" cx="8" cy="8" r="7" />
+        <circle className="docs-image-loader-circle" cx="8" cy="8" r="7" />
+      </svg>
+      <span className="sr-only">{c('Info').t`Loading`}</span>
+    </>
+  )
+}
 
 function ensureImageLoaded(src: string) {
   if (!isAllowedImageSrc(src)) {
@@ -122,7 +140,8 @@ function LoadedLazyImage({
     setImgHeight(height)
   }, [width, height])
 
-  const combinedRef = useCombinedRefs(imageRef, (image) => {
+  const setImageRef = (image: HTMLImageElement | null) => {
+    imageRef.current = image
     const editorDimensions = getElementDimensionsWithoutPadding(editor.getRootElement())
     if (image && editorDimensions) {
       const naturalWidth = image.naturalWidth
@@ -139,7 +158,7 @@ function LoadedLazyImage({
         }
       }
     }
-  })
+  }
 
   ensureImageLoaded(src)
 
@@ -148,7 +167,7 @@ function LoadedLazyImage({
       className={className || undefined}
       src={src}
       alt={altText}
-      ref={combinedRef}
+      ref={setImageRef}
       style={{
         height: imgHeight === 'inherit' ? 'inherit' : `${imgHeight}px`,
         maxWidth: maxWidth ? `${maxWidth}px` : '100%',
@@ -393,12 +412,7 @@ export default function ImageComponent({
             height,
           }}
         >
-          <CircleLoader
-            style={{
-              width: '15%',
-              height: '15%',
-            }}
-          />
+          <ImageLoadingIndicator />
         </div>
       }
     >
