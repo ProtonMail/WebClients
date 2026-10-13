@@ -8,6 +8,15 @@ import type { AudioTapSamples } from '../mediaEncoder/types';
 // the initial call covers the gap.
 const RESYNC_DELAYS_MS = [50, 150];
 
+export interface AudioMixerDiagnostics {
+    contextState: AudioContextState;
+    sampleRate: number;
+    connectedSourceCount: number;
+    isTapActive: boolean;
+    tapBatchCount: number;
+    lastTapBatchAt: number | null;
+}
+
 // Mixes every active audio publication (mic + remote participants + screen share audio)
 // into a single MediaStream destination ready to be muxed by the MediaRecorder.
 //
@@ -25,6 +34,8 @@ export class AudioMixer {
     private resyncTimers: Set<ReturnType<typeof setTimeout>> = new Set();
     private workletNode: AudioWorkletNode | null = null;
     private workletSink: GainNode | null = null;
+    private tapBatchCount = 0;
+    private lastTapBatchAt: number | null = null;
 
     constructor() {
         this.audioSourceNodes = new Map();
@@ -152,12 +163,27 @@ export class AudioMixer {
     public async startWorkletTap(onSamples: (samples: AudioTapSamples) => void): Promise<void> {
         await this.audioContext.audioWorklet.addModule('/assets/recording/recorderTapWorklet.js');
         this.workletNode = new AudioWorkletNode(this.audioContext, 'recorder-tap');
-        this.workletNode.port.onmessage = (event: MessageEvent<AudioTapSamples>) => onSamples(event.data);
+        this.workletNode.port.onmessage = (event: MessageEvent<AudioTapSamples>) => {
+            this.tapBatchCount += 1;
+            this.lastTapBatchAt = performance.now();
+            onSamples(event.data);
+        };
         this.workletSink = this.audioContext.createGain();
         this.workletSink.gain.value = 0;
         this.audioCompressor.connect(this.workletNode);
         this.workletNode.connect(this.workletSink);
         this.workletSink.connect(this.audioContext.destination);
+    }
+
+    public getDiagnostics(): AudioMixerDiagnostics {
+        return {
+            contextState: this.audioContext.state,
+            sampleRate: this.audioContext.sampleRate,
+            connectedSourceCount: this.audioSourceNodes.size,
+            isTapActive: this.workletNode !== null,
+            tapBatchCount: this.tapBatchCount,
+            lastTapBatchAt: this.lastTapBatchAt,
+        };
     }
 
     public stopWorkletTap(): void {

@@ -5,8 +5,8 @@ import { c } from 'ttag';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import type { OpfsRecording } from '@proton/meet/store/slices/recordingsSlice';
-import { TelemetryMeetDashboardEvents, sendMeetDashboardEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { getRecordingSizeBucket } from '@proton/meet/telemetry/buckets';
+import { TelemetryMeetDashboardEvents, sendMeetDashboardEvent } from '@proton/meet/telemetry/meetTelemetry';
 
 import { isEncryptedRecordingFolder } from '../recordingStorage/getRecordingFolder';
 import { downloadOpfsRecording } from '../recordingStorage/recordingFiles';

@@ -36,10 +36,10 @@ import { cameraShortcutLabel, microphoneShortcutLabel } from '../../utils/mediaS
 import { AudioPlaybackPrompt } from '../AudioPlaybackPrompt/AudioPlaybackPrompt';
 import { AudioSettings } from '../AudioSettings/AudioSettings';
 import { ChatButton } from '../ChatButton';
-import { DeviceStateReport } from '../DebugOverlay/DeviceStateReport';
-import { useDetachedWindow } from '../DebugOverlay/useDetachedWindow';
 import { EmojiReactionButton } from '../EmojiReactionButton/EmojiReactionButton';
 import { LeaveMeetingPopup } from '../LeaveMeetingPopup/LeaveMeetingPopup';
+import { MeetingDebug } from '../MeetingDebug/MeetingDebug';
+import { useDetachedWindow } from '../MeetingDebug/useDetachedWindow';
 import { MeetingName } from '../MeetingName/MeetingName';
 import { MeetingSnackbars } from '../MeetingSnackbars/MeetingSnackbars';
 import { MicrophoneWithVolumeWithMicrophoneState } from '../MicrophoneWithVolume';
@@ -53,7 +53,7 @@ import './ParticipantControls.scss';
 
 export const ParticipantControls = () => {
     const dispatch = useMeetDispatch();
-    const { container: deviceStateContainer, open: openDeviceStateWindow } = useDetachedWindow('Device Debugger');
+    const { container: meetingDebugContainer, open: openMeetingDebugWindow } = useDetachedWindow('Meeting Debug');
     const { isMicrophoneEnabled, isCameraEnabled } = useLocalParticipant();
     const [isCameraToggleLoading, withCameraToggleLoading] = useLoading();
     const isSpotlightLayout = useMeetSelector(selectIsSpotlightLayout);
@@ -256,7 +256,7 @@ export const ParticipantControls = () => {
                     )}
                     <MoreMenu
                         variant={isSmallScreen ? 'sheet' : 'popup'}
-                        onOpenDeviceState={openDeviceStateWindow}
+                        onOpenMeetingDebug={openMeetingDebugWindow}
                         showMeetingActions={isLowerMediumWidth}
                     />
                     <LeaveMeetingPopup />
@@ -276,15 +276,15 @@ export const ParticipantControls = () => {
                     )}
                 </div>
             </div>
-            {deviceStateContainer &&
+            {meetingDebugContainer &&
                 createPortal(
                     <div
                         className="p-4 overflow-auto max-h-custom"
                         style={{ '--max-h-custom': '100vh' } as React.CSSProperties}
                     >
-                        <DeviceStateReport />
+                        <MeetingDebug />
                     </div>,
-                    deviceStateContainer
+                    meetingDebugContainer
                 )}
         </div>
     );

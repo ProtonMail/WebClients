@@ -42,11 +42,11 @@ import './MoreMenu.scss';
 
 interface Props {
     variant: 'popup' | 'sheet';
-    onOpenDeviceState: () => void;
+    onOpenMeetingDebug: () => void;
     showMeetingActions?: boolean;
 }
 
-export const MoreMenu = ({ variant, onOpenDeviceState, showMeetingActions }: Props) => {
+export const MoreMenu = ({ variant, onOpenMeetingDebug, showMeetingActions }: Props) => {
     const dispatch = useMeetDispatch();
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const { viewportWidth } = useActiveBreakpoint();
@@ -134,10 +134,10 @@ export const MoreMenu = ({ variant, onOpenDeviceState, showMeetingActions }: Pro
             onClick: openDebugOverlay,
         },
         isDebugEnabled && {
-            id: 'debug-devices',
+            id: 'meeting-debug',
             Icon: IcBug,
-            label: c('Action').t`Debug devices`,
-            onClick: onOpenDeviceState,
+            label: c('Action').t`Meeting debug`,
+            onClick: onOpenMeetingDebug,
         },
     ].filter(isTruthy);
 
