@@ -170,6 +170,24 @@ describe('computeAddonCustomizerItems', () => {
         const addonNames = items.map((item) => item.addonName);
         expect(addonNames.includes(ADDON_NAMES.DOMAIN_VPN_BUSINESS)).toBe(shouldIncludeDomainAddon);
     });
+
+    it.each([
+        { cycle: CYCLE.YEARLY, shouldIncludeMemberAddon: true },
+        { cycle: CYCLE.TWO_YEARS, shouldIncludeMemberAddon: false },
+    ])(
+        'shows zero-priced addons only for cycles they are priced for (cycle $cycle)',
+        ({ cycle, shouldIncludeMemberAddon }) => {
+            const items = computeAddonCustomizerItems({
+                ...baseArgs,
+                cycle,
+                normalizedSelectedPlan: buildNormalizedPlan({ [PLANS.PASS_BASIC]: 1 }),
+                isSignup: false,
+            });
+
+            const addonNames = items.map((item) => item.addonName);
+            expect(addonNames.includes(ADDON_NAMES.MEMBER_PASS_BASIC)).toBe(shouldIncludeMemberAddon);
+        }
+    );
 });
 
 // ─── getAddonCustomizerProperties ────────────────────────────────────────────
@@ -228,6 +246,23 @@ describe('getAddonCustomizerProperties', () => {
         });
 
         expect(sharedAddonCustomizerProps.max).toBe(2);
+    });
+
+    it('limits Pass Basic members to 1-30', () => {
+        const { sharedAddonCustomizerProps } = getAddonCustomizerProperties({
+            addonName: ADDON_NAMES.MEMBER_PASS_BASIC,
+            plansMap: PLANS_MAP,
+            loading: false,
+            latestSubscription: FREE_SUBSCRIPTION,
+            isTrialMode: false,
+            selectedPlan: buildSelectedPlan({ [PLANS.PASS_BASIC]: 1 }),
+            onChangePlanIDs: onChangeMock,
+            scribeToLumo: false,
+            addonFlags: {},
+        });
+
+        expect(sharedAddonCustomizerProps.min).toBe(1);
+        expect(sharedAddonCustomizerProps.max).toBe(30);
     });
 
     it('adds forbidden-modification decrease block when renewal is disabled and plan matches', () => {

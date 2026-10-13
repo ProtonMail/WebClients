@@ -380,6 +380,7 @@ describe('getSupportedAddons', () => {
                 PLANS.VPN_BUSINESS,
                 PLANS.PASS_PRO,
                 PLANS.PASS_BUSINESS,
+                PLANS.PASS_BASIC,
                 PLANS.LUMO_BUSINESS,
                 PLANS.VPN_PASS_BUNDLE_BUSINESS,
                 PLANS.MEET_BUSINESS,
