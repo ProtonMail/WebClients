@@ -21,7 +21,6 @@ const STALE_SEGMENT_MS = 15000;
 const MAX_VISIBLE = 6;
 // Gap between two same-speaker segments below which we treat the split as a breath and merge them.
 export const MERGE_GAP_MS = 1500;
-export const LINE_FULL_LENGTH = 180;
 // How long to wait for a first usable line before calling the agent stuck.
 export const READY_TIMEOUT_MS = 20000;
 
@@ -276,8 +275,7 @@ export const useTranscriptions = (): Transcriptions => {
             // Gap between the previous line's last update and this segment's first, so a segment
             // that keeps updating can't grow its own gap and split a line that already merged.
             const withinBreath = last && seg.firstSeenAt - last.line.receivedAt <= MERGE_GAP_MS;
-            const lineFull = last && last.line.text.length >= LINE_FULL_LENGTH;
-            if (last && sameSpeaker && withinBreath && !lineFull) {
+            if (last && sameSpeaker && withinBreath) {
                 last.line = {
                     ...last.line,
                     text: `${last.line.text} ${seg.text}`.trim(),
