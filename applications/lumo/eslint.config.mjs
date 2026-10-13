@@ -1,6 +1,7 @@
 import { defineConfig } from 'eslint/config';
 
 import defaultConfig from '@proton/eslint-config-proton/all';
+import { iconRestrictedImports } from '@proton/eslint-config-proton/icon';
 
 export default defineConfig([
     defaultConfig,
@@ -55,6 +56,7 @@ export default defineConfig([
             // TODO: Remove this rule once the compat issue is resolved
             'compat/compat': 'off',
             'no-nested-ternary': 'off',
+            '@typescript-eslint/no-restricted-imports': ['error', { paths: iconRestrictedImports }],
         },
     },
 ]);

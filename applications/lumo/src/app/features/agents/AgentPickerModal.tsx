@@ -4,17 +4,11 @@ import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import {
-    Icon,
-    InputFieldTwo,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoHeader,
-    useModalStateObject,
-} from '@proton/components';
+import { InputFieldTwo, ModalTwo, ModalTwoContent, ModalTwoHeader, useModalStateObject } from '@proton/components';
 import { BRAND_NAME, LUMO_SHORT_APP_NAME, LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
 
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
+import { ProjectIcon } from '../../components/ProjectIcon/ProjectIcon';
 import { useConversationAgent } from '../../hooks/useConversationAgent';
 import { useCustomAgentLimit } from '../../hooks/useCustomAgentLimit';
 import { useCustomAgents } from '../../hooks/useCustomAgents';
@@ -187,9 +181,9 @@ export const AgentPickerModal = ({ conversationId }: AgentPickerModalProps) => {
                                                 className="flex flex-nowrap items-center gap-2 min-w-0 overflow-hidden text-left h-full w-full interactive-pseudo-inset rounded-lg pl-2 pr-2"
                                                 onClick={() => handlePick(agent.id)}
                                             >
-                                                <Icon
-                                                    name={(agent.icon as any) || DEFAULT_AGENT_ICON}
-                                                    size={4.5}
+                                                <ProjectIcon
+                                                    iconId={agent.icon || DEFAULT_AGENT_ICON}
+                                                    size={18}
                                                     className="shrink-0"
                                                 />
                                                 <span className="flex flex-column flex-1 min-w-0 overflow-hidden">
