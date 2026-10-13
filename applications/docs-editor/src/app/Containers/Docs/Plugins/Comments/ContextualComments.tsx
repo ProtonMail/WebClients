@@ -17,7 +17,7 @@ import type { RangeSelection } from 'lexical'
 import { $getNodeByKey, type LexicalNode } from 'lexical'
 import { getRangeSelectionRect } from '../../Utils/getSelectionRect'
 import { useRightPanelContext, useViewportWidth } from '../../../DocsLayout'
-import { getContextualCommentsWidth, getDocsLayoutScrollContainer } from '../../../docsLayoutUtils'
+import { getContextualCommentsWidth, getDocsLayoutScrollContainer } from '../../Layout/docsLayoutUtils'
 
 const COMMENT_INPUT_ID = 'comment-input'
 const COMMENTS_WIDTH = 'max(20.5vw, 300px)'
