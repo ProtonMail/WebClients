@@ -4,10 +4,12 @@ import { logger } from '@proton/logger';
 import type { ReportMeetError } from '@proton/meet/hooks/useMeetErrorReporting';
 import type { OpfsRecording } from '@proton/meet/store/slices/recordingsSlice';
 
+import type { RecordingStopTelemetry } from '../../telemetry/types';
 import { type AudioMixer, type AudioMixerDiagnostics, createAudioMixer } from '../audioMixer/audioMixer';
 import { createChunkWatchdog } from '../chunkWatchdog/chunkWatchdog';
-import type { ChunkWatchdog } from '../chunkWatchdog/types';
+import type { ChunkWatchdog, RecordingStallCause, StallSummary } from '../chunkWatchdog/types';
 import type { RecordingCodec } from '../codec/types';
+import { AUDIO_STALL_MS } from '../mediaEncoder/constants';
 import { WebCodecsRecorder } from '../mediaEncoder/webCodecsRecorder';
 import { type ChunkStats, createChunkStats } from '../mediaRecorder/chunkStats';
 import { MeetMediaRecorder } from '../mediaRecorder/meetMediaRecorder';
@@ -22,6 +24,9 @@ import type {
     RecordingSessionStartOptions,
     RecordingStopReport,
 } from './types';
+
+const isOlderThan = (timestamp: number | null, thresholdMs: number) =>
+    timestamp === null || performance.now() - timestamp > thresholdMs;
 
 // Orchestrates one recording session: storage + video mixer + audio mixer +
 // recorder backend (WebCodecs or MediaRecorder) + watchdog. The hook talks to
@@ -53,6 +58,7 @@ export class RecordingSession {
     private outcome: RecordingOutcome | null = null;
     private outcomeError: string | null = null;
     private finalAudioDiagnostics: AudioMixerDiagnostics | null = null;
+    private stallSummary: StallSummary | null = null;
 
     constructor({
         codec,
@@ -232,6 +238,8 @@ export class RecordingSession {
             reportMeetError,
             getRecorderState: () => this.mediaRecorder?.getRecorderState() ?? 'inactive',
             getCodec: () => this.mediaRecorder?.getActiveCodec() ?? this.codec,
+            getStallCause: () => this.getStallCause(),
+            getReportContext: () => this.getErrorReportContext(),
             isWebCodecs: this.isWebCodecs,
         });
         this.watchdog.start();
@@ -255,6 +263,7 @@ export class RecordingSession {
 
         try {
             await this.mediaRecorder.stop();
+            this.stallSummary = this.watchdog?.getStallSummary() ?? null;
             this.watchdog?.stop();
             this.watchdog = null;
 
@@ -355,6 +364,44 @@ export class RecordingSession {
             totalBytes: snapshot?.totalBytes ?? 0,
             emptyChunkCount: snapshot?.emptyChunkCount ?? 0,
             lastChunkAt: snapshot && snapshot.firstChunkAt !== null ? snapshot.lastChunkAt : null,
+            pendingWriteCount: this.storage?.getPendingWriteCount() ?? 0,
+        };
+    }
+
+    public getStopTelemetry(): RecordingStopTelemetry {
+        const totalBytes = this.stats?.snapshot().totalBytes ?? 0;
+
+        return {
+            recordingBackend: this.isWebCodecs ? 'webcodecs' : 'mediarecorder',
+            recordingBytesBeforeStop: this.bytesBeforeStop,
+            recordingBytesFlushedAtStop: totalBytes - this.bytesBeforeStop,
+            recordingStallCount: this.stallSummary?.stallCount ?? 0,
+            recordingStallTotalMs: this.stallSummary?.stallTotalMs ?? 0,
+            recordingStallLongestMs: this.stallSummary?.stallLongestMs ?? 0,
+            recordingLongestStallCause: this.stallSummary?.longestStallCause ?? null,
+        };
+    }
+
+    private getStallCause(): RecordingStallCause {
+        const audio = this.audioMixer?.getDiagnostics();
+        if (audio && audio.contextState !== 'running') {
+            return 'audio-context';
+        }
+        if (audio?.isTapActive && isOlderThan(audio.lastTapBatchAt, AUDIO_STALL_MS)) {
+            return 'audio-tap';
+        }
+        return 'encoder-or-muxer';
+    }
+
+    private getErrorReportContext(): Record<string, string | number | null> {
+        const audio = this.audioMixer?.getDiagnostics();
+
+        return {
+            audioCodec: this.videoMixer?.getAudioCodec() ?? null,
+            audioContextState: audio?.contextState ?? null,
+            tapBatchCount: audio?.tapBatchCount ?? null,
+            msSinceLastTapBatch: audio?.lastTapBatchAt ? Math.round(performance.now() - audio.lastTapBatchAt) : null,
+            totalBytes: this.stats?.snapshot().totalBytes ?? 0,
             pendingWriteCount: this.storage?.getPendingWriteCount() ?? 0,
         };
     }

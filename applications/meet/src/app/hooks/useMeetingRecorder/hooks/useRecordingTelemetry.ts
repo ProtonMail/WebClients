@@ -7,7 +7,7 @@ import { selectLocalParticipantIdentity } from '@proton/meet/store/slices/partic
 import { selectLocalRecordingTime } from '@proton/meet/store/slices/recordingStatusSlice';
 
 import { logRecordingStats } from '../../telemetry/meetingTelemetry';
-import type { RecordingStats } from '../../telemetry/types';
+import type { RecordingStats, RecordingStopTelemetry } from '../../telemetry/types';
 import type { RecordingCodec } from '../codec/types';
 
 export const useRecordingTelemetry = (recordingCodec: RecordingCodec | null) => {
@@ -20,12 +20,13 @@ export const useRecordingTelemetry = (recordingCodec: RecordingCodec | null) => 
     // Avoid re-rendering the component when the recording duration changes.
     currentRecordingDuration.current = localRecordingTime;
     const sendTelemetryRecordingStats = useCallback(
-        (size?: number) => {
+        (size: number | undefined, stopTelemetry: RecordingStopTelemetry) => {
             if (!size) {
                 return;
             }
 
             const recordingStats: RecordingStats = {
+                ...stopTelemetry,
                 roomId: room.name,
                 meetingLinkName: room.name,
                 identity: localIdentity,

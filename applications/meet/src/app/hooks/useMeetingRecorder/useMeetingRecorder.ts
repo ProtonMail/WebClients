@@ -178,7 +178,7 @@ export const useMeetingRecorder = () => {
             const recording = await session.stop();
 
             // Sending telemetry before resetting recording duration counter.
-            sendTelemetryRecordingStats(recording?.size);
+            sendTelemetryRecordingStats(recording?.size, session.getStopTelemetry());
 
             void publishRecordingStatus(RecordingStatus.Stopped);
             markRecordingStopped();
