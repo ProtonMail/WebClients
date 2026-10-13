@@ -96,13 +96,12 @@ function bundle_extension_from_sources {
     BUILD_TARGET=$1 NODE_ENV=production pnpm run config:lock >/dev/null
     cd ../../
 
-    zip -rqXy "$OUTDIR/$BUILD_ID-FF-sources.zip" \
+    # No `-X`, which would drop UTC file times and make pnpm reinstall for users west of UTC
+    zip -rqy "$OUTDIR/$BUILD_ID-FF-sources.zip" \
         "applications/pass-extension" \
         "packages" \
         "utilities" \
-        "pnpm-lock.yaml" \
         "pnpm-workspace.yaml" \
-        ".npmrc" \
         "patches" \
         ./*.js \
         ./*.json \
@@ -124,8 +123,13 @@ function bundle_extension_from_sources {
         -x "applications/pass-extension/dist/*" \
         -x "applications/pass-extension/*.md"
 
+    # Internal registry is not publicly accessible: download its public packages from npm
+    sed 's#https://nexus.protontech.ch/repository/web-npm-private-and-public/#https://registry.npmjs.org/#g' \
+        pnpm-lock.yaml >"$OUTDIR/pnpm-lock.yaml"
+    (cd "$OUTDIR" && zip -q "$BUILD_ID-FF-sources.zip" pnpm-lock.yaml)
+
     cd "$PASSDIR"
-    zip -uqX "$OUTDIR/$BUILD_ID-FF-sources.zip" "FIREFOX_REVIEWERS.md"
+    zip -uq "$OUTDIR/$BUILD_ID-FF-sources.zip" "FIREFOX_REVIEWERS.md"
     mv "$OUTDIR/$BUILD_ID-FF-sources.zip" "$ARTEFACTSDIR/release"
     on_leave "release/$BUILD_ID-FF-sources.zip"
 
@@ -133,8 +137,10 @@ function bundle_extension_from_sources {
     mkdir -p "$OUTDIR/$BUILD_ID-FF-sources"
     cd "$OUTDIR/$BUILD_ID-FF-sources"
     unzip -q "$ARTEFACTSDIR/release/$BUILD_ID-FF-sources.zip"
-    # Only install the extension's dependencies: the sources leave out most workspaces
-    pnpm install --frozen-lockfile --filter 'proton-pass-extension...'
+    # Only install the extension's dependencies: the sources leave out most workspaces.
+    # `--trust-lockfile` skips the supply-chain check, which looks up every lockfile package,
+    # including internal ones which are not accessible.
+    pnpm install --frozen-lockfile --trust-lockfile --filter 'proton-pass-extension...'
     cd applications/pass-extension
     RELEASE=true pnpm run build:extension:ff
     cd dist
