@@ -247,23 +247,8 @@
       ]
     },
     "color": {
-      "apple": [
-        "яблычны"
-      ],
-      "azureish white": [
-        "блакітна-белы"
-      ],
       "black": [
         "чорны"
-      ],
-      "blanched almond": [
-        "белы міндаль"
-      ],
-      "blue-gray": [
-        "блакітна-шэры"
-      ],
-      "caramel": [
-        "карамель"
       ],
       "carrot": [
         "маркоўны"
@@ -271,29 +256,11 @@
       "cerise": [
         "вішнёвы"
       ],
-      "cinnabar": [
-        "кінаварны"
-      ],
       "cobalt": [
         "кобальтавы"
       ],
       "copper": [
         "медны"
-      ],
-      "cyan-blue azure": [
-        "зеленавата-блакітны лазурак"
-      ],
-      "dandelion": [
-        "дзьмухавец"
-      ],
-      "dark cerulean": [
-        "чорна-блакітны"
-      ],
-      "dark midnight blue": [
-        "цёмна-сіняя поўнач"
-      ],
-      "dim gray": [
-        "цьмяна-шэры"
       ],
       "enzian": [
         "чарнільны"
@@ -301,41 +268,11 @@
       "fern": [
         "папаратнікавы"
       ],
-      "field drab": [
-        "палявы ахоўны"
-      ],
       "forest": [
         "лясны"
       ],
-      "gainsboro": [
-        "светла-шэры"
-      ],
       "gray": [
         "шэры"
-      ],
-      "japanese laurel": [
-        "японскі лаўр"
-      ],
-      "kiwi": [
-        "ківі"
-      ],
-      "lemon yellow": [
-        "лімонна-жоўты"
-      ],
-      "light carmine pink": [
-        "светлы кармінава-ружовы"
-      ],
-      "light moss green": [
-        "мохавы светла-зялёны"
-      ],
-      "light red": [
-        "светла-чырвоны"
-      ],
-      "maize": [
-        "кукурузны"
-      ],
-      "mughal green": [
-        "магольскі зялёны"
       ],
       "ocean": [
         "акіянічны"
@@ -343,32 +280,8 @@
       "olive": [
         "аліўкавы"
       ],
-      "outer space": [
-        "касмічны прастор"
-      ],
       "pacific": [
         "ціхаакіянскі"
-      ],
-      "palatinate blue": [
-        "светла-ліловы"
-      ],
-      "pale cerulean": [
-        "бледна-блакітны"
-      ],
-      "pastel gray": [
-        "пастэльна-шэры"
-      ],
-      "persian plum": [
-        "персідская сліва"
-      ],
-      "persian red": [
-        "персідскі чырвоны"
-      ],
-      "philippine gray": [
-        "філіпінскі шэры"
-      ],
-      "philippine silver": [
-        "філіпінскі срэбны"
       ],
       "pickle": [
         "агурочны"
@@ -378,9 +291,6 @@
       ],
       "pink": [
         "ружовы"
-      ],
-      "pistachio": [
-        "фісташкавы"
       ],
       "plum": [
         "слівавы"
@@ -394,14 +304,8 @@
       "reef": [
         "рыфавы"
       ],
-      "ruddy pink": [
-        "румяна-ружовы"
-      ],
       "sahara": [
         "сахара"
-      ],
-      "satin sheen gold": [
-        "атласна-залаты"
       ],
       "slateblue": [
         "сланцава-блакітны"
@@ -411,12 +315,6 @@
       ],
       "strawberry": [
         "клубнічны"
-      ],
-      "vivid auburn": [
-        "насычана-каштанавы"
-      ],
-      "white": [
-        "белы"
       ]
     },
     "Confirm": {
@@ -445,11 +343,17 @@
       "Failed to export document.": [
         "Не ўдалося экспартаваць дакумент."
       ],
+      "Failed to import document due to unsupported file format.": [
+        "Не ўдалося імпартаваць дакумент з прычыны таго, што фармат файла не падтрымліваецца."
+      ],
       "Failed to import HTML due to unknown error.": [
         "Не ўдалося імпартаваць HTML з прычыны невядомай памылкі."
       ],
       "Failed to import Markdown due to unknown error.": [
         "Не ўдалося імпартаваць Markdown з прычыны невядомай памылкі."
+      ],
+      "Failed to import OpenDocument file due to unknown error.": [
+        "Не ўдалося імпартаваць файл OpenDocument з прычыны невядомай памылкі."
       ],
       "Failed to import Word document due to unknown error.": [
         "Не ўдалося імпартаваць дакумент Word з прычыны невядомай памылкі."
