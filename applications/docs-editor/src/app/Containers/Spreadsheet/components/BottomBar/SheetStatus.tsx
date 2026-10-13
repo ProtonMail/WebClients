@@ -1,3 +1,4 @@
+import { useSheetsMessages } from '../../SheetsDependenciesProvider'
 import * as Icons from '../icons'
 import { clsx } from 'clsx'
 import type { PropsWithChildren } from 'react'
@@ -6,8 +7,7 @@ import * as Ariakit from '@ariakit/react'
 import { Button } from '../Sidebar/shared'
 import * as UI from '../ui'
 import * as Atoms from '../atoms'
-import { c } from 'ttag'
-import { createStringifier } from '../../stringifier'
+
 import {
   getCalculatedValues,
   scheduleIdlePriorityCallback,
@@ -16,8 +16,6 @@ import {
 } from '@rowsncolumns/spreadsheet'
 import { isNil } from '@rowsncolumns/utils'
 import { useUI } from '../../ui-store'
-
-const { s } = createStringifier(strings)
 
 function SheetStatusChip(props: PropsWithChildren) {
   return (
@@ -34,6 +32,8 @@ function SheetStatusChip(props: PropsWithChildren) {
 }
 
 export function SheetStatus() {
+  const messages = useSheetsMessages()
+
   const [{ showAverage, showCount, showSum, showMin, showMax, showNumericalCount }, setSheetStatusDisplay] =
     useSheetStatusDisplay()
 
@@ -77,15 +77,23 @@ export function SheetStatus() {
         {hasSelection ? (
           <>
             {showAverage && !isNil(average) ? (
-              <SheetStatusChip>{`${s('Average')}: ${average.toFixed(2)}`}</SheetStatusChip>
+              <SheetStatusChip>{`${messages.sheetStatus.Average}: ${average.toFixed(2)}`}</SheetStatusChip>
             ) : null}
-            {showCount && !isNil(count) ? <SheetStatusChip>{`${s('Count')}: ${count}`}</SheetStatusChip> : null}
+            {showCount && !isNil(count) ? (
+              <SheetStatusChip>{`${messages.sheetStatus.Count}: ${count}`}</SheetStatusChip>
+            ) : null}
             {showNumericalCount && !isNil(numericalCount) ? (
-              <SheetStatusChip>{`${s('Numerical count')}: ${numericalCount}`}</SheetStatusChip>
+              <SheetStatusChip>{`${messages.sheetStatus['Numerical count']}: ${numericalCount}`}</SheetStatusChip>
             ) : null}
-            {showMin && !isNil(min) ? <SheetStatusChip>{`${s('Min')}: ${min.toFixed(2)}`}</SheetStatusChip> : null}
-            {showMax && !isNil(max) ? <SheetStatusChip>{`${s('Max')}: ${max.toFixed(2)}`}</SheetStatusChip> : null}
-            {showSum && !isNil(sum) ? <SheetStatusChip>{`${s('Sum')}: ${sum.toFixed(2)}`}</SheetStatusChip> : null}
+            {showMin && !isNil(min) ? (
+              <SheetStatusChip>{`${messages.sheetStatus.Min}: ${min.toFixed(2)}`}</SheetStatusChip>
+            ) : null}
+            {showMax && !isNil(max) ? (
+              <SheetStatusChip>{`${messages.sheetStatus.Max}: ${max.toFixed(2)}`}</SheetStatusChip>
+            ) : null}
+            {showSum && !isNil(sum) ? (
+              <SheetStatusChip>{`${messages.sheetStatus.Sum}: ${sum.toFixed(2)}`}</SheetStatusChip>
+            ) : null}
           </>
         ) : null}
       </div>
@@ -100,14 +108,14 @@ export function SheetStatus() {
 
         <Atoms.DropdownPopover {...Atoms.DROPDOWN_POPOVER_DEFAULTS} render={<Ariakit.Menu />}>
           <UI.MenuGroup>
-            <UI.MenuGroupLabel className="text-xs">{s('Customize Status Bar')}</UI.MenuGroupLabel>
+            <UI.MenuGroupLabel className="text-xs">{messages.sheetStatus['Customize Status Bar']}</UI.MenuGroupLabel>
             <UI.MenuItem
               hideOnClick={false}
               leadingIndent
               selectedIndicator={showAverage === true}
               onClick={() => setSheetStatusDisplay((prev) => ({ ...prev, showAverage: !prev.showAverage }))}
             >
-              {s('Average')}
+              {messages.sheetStatus.Average}
             </UI.MenuItem>
             <UI.MenuItem
               hideOnClick={false}
@@ -115,7 +123,7 @@ export function SheetStatus() {
               selectedIndicator={showCount === true}
               onClick={() => setSheetStatusDisplay((prev) => ({ ...prev, showCount: !prev.showCount }))}
             >
-              {s('Count')}
+              {messages.sheetStatus.Count}
             </UI.MenuItem>
             <UI.MenuItem
               hideOnClick={false}
@@ -125,7 +133,7 @@ export function SheetStatus() {
                 setSheetStatusDisplay((prev) => ({ ...prev, showNumericalCount: !prev.showNumericalCount }))
               }
             >
-              {s('Numerical count')}
+              {messages.sheetStatus['Numerical count']}
             </UI.MenuItem>
             <UI.MenuItem
               hideOnClick={false}
@@ -133,7 +141,7 @@ export function SheetStatus() {
               selectedIndicator={showMin === true}
               onClick={() => setSheetStatusDisplay((prev) => ({ ...prev, showMin: !prev.showMin }))}
             >
-              {s('Min')}
+              {messages.sheetStatus.Min}
             </UI.MenuItem>
             <UI.MenuItem
               hideOnClick={false}
@@ -141,7 +149,7 @@ export function SheetStatus() {
               selectedIndicator={showMax === true}
               onClick={() => setSheetStatusDisplay((prev) => ({ ...prev, showMax: !prev.showMax }))}
             >
-              {s('Max')}
+              {messages.sheetStatus.Max}
             </UI.MenuItem>
             <UI.MenuItem
               hideOnClick={false}
@@ -149,7 +157,7 @@ export function SheetStatus() {
               selectedIndicator={showSum === true}
               onClick={() => setSheetStatusDisplay((prev) => ({ ...prev, showSum: !prev.showSum }))}
             >
-              {s('Sum')}
+              {messages.sheetStatus.Sum}
             </UI.MenuItem>
           </UI.MenuGroup>
         </Atoms.DropdownPopover>
@@ -158,14 +166,14 @@ export function SheetStatus() {
   )
 }
 
-function strings() {
-  return {
-    'Customize Status Bar': c('sheets_2025:Spreadsheet sheet status bar').t`Customize Status Bar`,
-    Average: c('sheets_2025:Spreadsheet sheet status bar').t`Average`,
-    Count: c('sheets_2025:Spreadsheet sheet status bar').t`Count`,
-    'Numerical count': c('sheets_2025:Spreadsheet sheet status bar').t`Numerical count`,
-    Min: c('sheets_2025:Spreadsheet sheet status bar').t`Min`,
-    Max: c('sheets_2025:Spreadsheet sheet status bar').t`Max`,
-    Sum: c('sheets_2025:Spreadsheet sheet status bar').t`Sum`,
-  }
+export const sheetStatusMessages = {
+  sheetStatus: {
+    'Customize Status Bar': `Customize Status Bar`,
+    Average: `Average`,
+    Count: `Count`,
+    'Numerical count': `Numerical count`,
+    Min: `Min`,
+    Max: `Max`,
+    Sum: `Sum`,
+  },
 }

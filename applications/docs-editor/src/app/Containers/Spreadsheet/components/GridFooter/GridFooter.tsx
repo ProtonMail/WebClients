@@ -1,4 +1,5 @@
-import clsx from 'clsx'
+import { useSheetsMessages } from '../../SheetsDependenciesProvider'
+import { clsx } from 'clsx'
 
 interface GridFooterProps {
   sheetId: number
@@ -6,6 +7,8 @@ interface GridFooterProps {
 }
 
 export function GridFooter({ sheetId, onRequestAddRows }: GridFooterProps) {
+  const messages = useSheetsMessages()
+
   return (
     <div className="h-full w-full self-start bg-[black]/[0.03] px-24 pt-3 text-sm">
       <form
@@ -19,7 +22,7 @@ export function GridFooter({ sheetId, onRequestAddRows }: GridFooterProps) {
         }}
       >
         <button type="submit" className="h-[36px] px-2 font-semibold">
-          Add
+          {messages.gridFooter.Add}
         </button>
 
         <input
@@ -31,8 +34,12 @@ export function GridFooter({ sheetId, onRequestAddRows }: GridFooterProps) {
             'font-semibold transition focus-visible:border-[#6D4AFF] focus-visible:ring-[3px] focus-visible:ring-[#6D4AFF33]',
           )}
         />
-        <span>more rows at the bottom</span>
+        <span>{messages.gridFooter['more rows at the bottom']}</span>
       </form>
     </div>
   )
+}
+
+export const gridFooterMessages = {
+  gridFooter: { Add: 'Add', 'more rows at the bottom': 'more rows at the bottom' },
 }

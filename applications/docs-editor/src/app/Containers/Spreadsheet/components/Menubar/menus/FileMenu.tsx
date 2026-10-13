@@ -1,16 +1,12 @@
+import { useSheetsMessages, useSheetsDependencies } from '../../../SheetsDependenciesProvider'
 import * as Icons from '../../icons'
 import * as Ariakit from '@ariakit/react'
 import { useCallback, useEffect, useRef, useState, type ComponentProps, type ReactElement } from 'react'
-import { c } from 'ttag'
-import { createStringifier } from '../../../stringifier'
 import * as UI from '../../ui'
 import { CircleLoader } from '../../CircleLoader/CircleLoader'
-import { useSheetsDependencies } from '../../../SheetsDependenciesProvider'
 import type { SheetsFileExportFormat } from '../../../contract/SpreadsheetExportFormat'
 import { useUI } from '../../../ui-store'
 import { VersionNumber } from '../../VersionNumber/VersionNumber'
-
-const { s } = createStringifier(strings)
 
 type WithLoading = <T>(promise: undefined | Promise<T | void> | (() => Promise<T | void>)) => Promise<T | void>
 type MenuAction = () => Promise<void>
@@ -81,6 +77,7 @@ export interface FileMenuProps extends Ariakit.MenuProviderProps {
 }
 
 export function FileMenu({ renderMenuButton, isPublicMode, ...props }: FileMenuProps) {
+  const messages = useSheetsMessages()
   const { canEdit, canTrash, versionInfo, fileMenuActions, reportError } = useSheetsDependencies()
 
   const [showVersionNumber, setShowVersionNumber] = useState(false)
@@ -130,7 +127,7 @@ export function FileMenu({ renderMenuButton, isPublicMode, ...props }: FileMenuP
             action={fileMenuActions.createSpreadsheet}
             triggerMenuAction={triggerMenuAction}
             icon={Icons.brandProtonSheets}
-            label={s('New spreadsheet')}
+            label={messages.fileMenu['New spreadsheet']}
           />
         ) : null}
         {!isPublicMode ? (
@@ -138,7 +135,7 @@ export function FileMenu({ renderMenuButton, isPublicMode, ...props }: FileMenuP
             action={fileMenuActions.createDocument}
             triggerMenuAction={triggerMenuAction}
             icon={Icons.brandProtonDocs}
-            label={s('New document')}
+            label={messages.fileMenu['New document']}
           />
         ) : null}
         <UI.MenuItem
@@ -148,14 +145,14 @@ export function FileMenu({ renderMenuButton, isPublicMode, ...props }: FileMenuP
           }}
           disabled={!canEdit}
         >
-          {s('Import')}
+          {messages.fileMenu.Import}
         </UI.MenuItem>
         {!isPublicMode ? (
           <LoadingMenuOption
             action={fileMenuActions.makeCopy}
             triggerMenuAction={triggerMenuAction}
             icon={Icons.squares}
-            label={s('Make a copy')}
+            label={messages.fileMenu['Make a copy']}
           />
         ) : null}
         {!isPublicMode ? (
@@ -166,7 +163,7 @@ export function FileMenu({ renderMenuButton, isPublicMode, ...props }: FileMenuP
                 void triggerMenuAction(fileMenuActions.moveToFolder)
               }}
             >
-              {s('Move to folder')}
+              {messages.fileMenu['Move to folder']}
             </UI.MenuItem>
             <UI.MenuSeparator />
             <UI.MenuItem
@@ -175,14 +172,14 @@ export function FileMenu({ renderMenuButton, isPublicMode, ...props }: FileMenuP
                 void triggerMenuAction(fileMenuActions.viewVersionHistory)
               }}
             >
-              {s('See version history')}
+              {messages.fileMenu['See version history']}
             </UI.MenuItem>
             {canTrash ? (
               <LoadingMenuOption
                 action={fileMenuActions.moveToTrash}
                 triggerMenuAction={triggerMenuAction}
                 icon={Icons.trash}
-                label={s('Move to trash')}
+                label={messages.fileMenu['Move to trash']}
               />
             ) : null}
           </>
@@ -194,7 +191,7 @@ export function FileMenu({ renderMenuButton, isPublicMode, ...props }: FileMenuP
             void triggerMenuAction(fileMenuActions.print)
           }}
         >
-          {s('Print')}
+          {messages.fileMenu.Print}
         </UI.MenuItem>
         <DownloadSubmenu download={fileMenuActions.download} triggerMenuAction={triggerMenuAction} />
         <UI.MenuSeparator />
@@ -214,7 +211,7 @@ export function FileMenu({ renderMenuButton, isPublicMode, ...props }: FileMenuP
             )
           }
         >
-          <span>{s('Help')}</span>
+          <span>{messages.fileMenu.Help}</span>
         </UI.MenuItem>
         <UI.MenuItem
           leadingIconSlot={<UI.Icon data={Icons.brandProtonSheets} />}
@@ -222,7 +219,7 @@ export function FileMenu({ renderMenuButton, isPublicMode, ...props }: FileMenuP
             void triggerMenuAction(fileMenuActions.viewRecentSpreadsheets)
           }}
         >
-          {s('View recent spreadsheets')}
+          {messages.fileMenu['View recent spreadsheets']}
         </UI.MenuItem>
         <UI.MenuItem
           leadingIconSlot={<UI.Icon data={Icons.brandProtonDrive} />}
@@ -230,7 +227,7 @@ export function FileMenu({ renderMenuButton, isPublicMode, ...props }: FileMenuP
             void triggerMenuAction(fileMenuActions.openProtonDrive)
           }}
         >
-          {s('Open Proton Drive')}
+          {messages.fileMenu['Open Proton Drive']}
         </UI.MenuItem>
         {/* TODO: add download logs option */}
         {showDebugToggle ? (
@@ -240,7 +237,7 @@ export function FileMenu({ renderMenuButton, isPublicMode, ...props }: FileMenuP
               void triggerMenuAction(fileMenuActions.toggleDebugMode)
             }}
           >
-            {s('Toggle debug mode')}
+            {messages.fileMenu['Toggle debug mode']}
           </UI.MenuItem>
         ) : null}
       </UI.Menu>
@@ -285,11 +282,12 @@ function DownloadSubmenu({
 }) {
   const { featureFlags } = useSheetsDependencies()
   const triggerDownload = (format: SheetsFileExportFormat) => triggerMenuAction(() => download(format))
+  const messages = useSheetsMessages()
 
   return (
     <Ariakit.MenuProvider>
       <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.arrowDownToSquare} />}>
-        {s('Download')}
+        {messages.fileMenu.Download}
       </UI.SubMenuButton>
       <UI.SubMenu unmountOnHide>
         <UI.MenuItem
@@ -297,7 +295,7 @@ function DownloadSubmenu({
             void triggerDownload('xlsx')
           }}
         >
-          {s('Microsoft Excel (.xlsx)')}
+          {messages.fileMenu['Microsoft Excel (.xlsx)']}
         </UI.MenuItem>
         {featureFlags.SheetsODSExportEnabled && (
           <UI.MenuItem
@@ -305,7 +303,7 @@ function DownloadSubmenu({
               void triggerDownload('ods')
             }}
           >
-            {s('OpenDocument Spreadsheet (.ods) (Beta)')}
+            {messages.fileMenu['OpenDocument Spreadsheet (.ods) (Beta)']}
           </UI.MenuItem>
         )}
         <UI.MenuItem
@@ -313,14 +311,14 @@ function DownloadSubmenu({
             void triggerDownload('csv')
           }}
         >
-          {s('Comma Separated Values (.csv)')}
+          {messages.fileMenu['Comma Separated Values (.csv)']}
         </UI.MenuItem>
         <UI.MenuItem
           onClick={() => {
             void triggerDownload('tsv')
           }}
         >
-          {s('Tab Separated Values (.tsv)')}
+          {messages.fileMenu['Tab Separated Values (.tsv)']}
         </UI.MenuItem>
       </UI.SubMenu>
     </Ariakit.MenuProvider>
@@ -328,43 +326,38 @@ function DownloadSubmenu({
 }
 
 function SpreadsheetSettings() {
+  const messages = useSheetsMessages()
+
   const isReadonly = useUI((state) => state.info.isReadonly)
   const store = useUI((ui) => ui.view.spreadsheetSettingsDialog.store)
 
   return (
-    <UI.MenuItem
-      leadingIconSlot={<UI.Icon data={Icons.cogWheel} />}
-      disabled={isReadonly}
-      onClick={() => store.show()}
-    >
-      {s('Settings')}
+    <UI.MenuItem leadingIconSlot={<UI.Icon data={Icons.cogWheel} />} disabled={isReadonly} onClick={() => store.show()}>
+      {messages.fileMenu.Settings}
     </UI.MenuItem>
   )
 }
 
-function strings() {
-  return {
-    'New spreadsheet': c('sheets_2025:Spreadsheet editor menubar file menu').t`New spreadsheet`,
-    'New document': c('sheets_2025:Spreadsheet editor menubar file menu').t`New document`,
-    Import: c('sheets_2025:Spreadsheet editor menubar file menu').t`Import`,
-    'Make a copy': c('sheets_2025:Spreadsheet editor menubar file menu').t`Make a copy`,
-    'Move to folder': c('sheets_2025:Spreadsheet editor menubar file menu').t`Move to folder`,
-    'See version history': c('sheets_2025:Spreadsheet editor menubar file menu').t`See version history`,
-    'Move to trash': c('sheets_2025:Spreadsheet editor menubar file menu').t`Move to trash`,
-    Print: c('sheets_2025:Spreadsheet editor menubar file menu').t`Print`,
-    Download: c('sheets_2025:Spreadsheet editor menubar file menu').t`Download`,
-    'Microsoft Excel (.xlsx)': c('sheets_2025:Spreadsheet editor menubar file menu').t`Microsoft Excel (.xlsx)`,
-    'OpenDocument Spreadsheet (.ods) (Beta)': c('sheets_2025:Spreadsheet editor menubar file menu')
-      .t`OpenDocument Spreadsheet (.ods) (Beta)`,
-    'Comma Separated Values (.csv)': c('sheets_2025:Spreadsheet editor menubar file menu')
-      .t`Comma Separated Values (.csv)`,
-    'Tab Separated Values (.tsv)': c('sheets_2025:Spreadsheet editor menubar file menu').t`Tab Separated Values (.tsv)`,
-    Help: c('sheets_2025:Spreadsheet editor menubar file menu').t`Help`,
-    'View recent spreadsheets': c('sheets_2025:Spreadsheet editor menubar file menu').t`View recent spreadsheets`,
-    // eslint-disable-next-line no-restricted-syntax -- "Proton Drive" is stable copy, so hardcoding keeps standalone Sheets independent of @proton/shared.
-    'Open Proton Drive': c('sheets_2025:Spreadsheet editor menubar file menu').t`Open Proton Drive`,
-    'Download logs': c('sheets_2025:Spreadsheet editor menubar file menu').t`Download logs`,
-    'Toggle debug mode': c('sheets_2025:Spreadsheet editor menubar file menu').t`Toggle debug mode`,
-    Settings: c('sheets_2025:Spreadsheet editor menubar file menu').t`Settings`,
-  }
+export const fileMenuMessages = {
+  fileMenu: {
+    'New spreadsheet': `New spreadsheet`,
+    'New document': `New document`,
+    Import: `Import`,
+    'Make a copy': `Make a copy`,
+    'Move to folder': `Move to folder`,
+    'See version history': `See version history`,
+    'Move to trash': `Move to trash`,
+    Print: `Print`,
+    Download: `Download`,
+    'Microsoft Excel (.xlsx)': `Microsoft Excel (.xlsx)`,
+    'OpenDocument Spreadsheet (.ods) (Beta)': `OpenDocument Spreadsheet (.ods) (Beta)`,
+    'Comma Separated Values (.csv)': `Comma Separated Values (.csv)`,
+    'Tab Separated Values (.tsv)': `Tab Separated Values (.tsv)`,
+    Help: `Help`,
+    'View recent spreadsheets': `View recent spreadsheets`,
+    'Open Proton Drive': `Open Proton Drive`,
+    'Download logs': `Download logs`,
+    'Toggle debug mode': `Toggle debug mode`,
+    Settings: `Settings`,
+  },
 }

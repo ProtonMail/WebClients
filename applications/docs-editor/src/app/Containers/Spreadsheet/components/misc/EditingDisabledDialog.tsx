@@ -1,12 +1,11 @@
-import { c } from 'ttag'
-import { createStringifier } from '../../stringifier'
+import { useSheetsMessages, useSheetsDependencies } from '../../SheetsDependenciesProvider'
+
 import { useEffect, useRef } from 'react'
 import { useActiveBreakpoint } from '../../useActiveBreakpoint'
-import { useSheetsDependencies } from '../../SheetsDependenciesProvider'
-
-const { s } = createStringifier(strings)
 
 export function EditingDisabledDialog() {
+  const messages = useSheetsMessages()
+
   const alertShown = useRef(false)
   const { canEdit, appPlatform, showGenericInfoModal } = useSheetsDependencies()
   const { viewportWidth } = useActiveBreakpoint()
@@ -16,20 +15,18 @@ export function EditingDisabledDialog() {
     if (appPlatform === 'web' && canEdit && isSmallViewport && alertShown.current === false) {
       alertShown.current = true
       showGenericInfoModal({
-        title: s('Screen too small for editing'),
-        translatedMessage: s('Info'),
+        title: messages.editingDisabledDialog['Screen too small for editing'],
+        translatedMessage: messages.editingDisabledDialog.Info,
       })
     }
-  }, [appPlatform, canEdit, isSmallViewport, showGenericInfoModal])
+  }, [messages, appPlatform, canEdit, isSmallViewport, showGenericInfoModal])
 
   return null
 }
 
-function strings() {
-  return {
-    'Screen too small for editing': c('sheets_2025:Spreadsheet editing disabled dialog')
-      .t`Screen too small for editing`,
-    Info: c('sheets_2025:Spreadsheet editing disabled dialog')
-      .t`Your screen is too small to edit this spreadsheet. You’re in view-only mode. To make changes, please open this spreadsheet on a larger screen or expand your browser window.`,
-  }
+export const editingDisabledDialogMessages = {
+  editingDisabledDialog: {
+    'Screen too small for editing': `Screen too small for editing`,
+    Info: `Your screen is too small to edit this spreadsheet. You’re in view-only mode. To make changes, please open this spreadsheet on a larger screen or expand your browser window.`,
+  },
 }

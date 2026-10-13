@@ -1,13 +1,12 @@
+import type { SheetsMessages } from '../../../messages/SheetsMessages'
+import { useSheetsMessages } from '../../../SheetsDependenciesProvider'
 import * as Ariakit from '@ariakit/react'
 import type { ReactElement } from 'react'
-import { c, msgid } from 'ttag'
-import { createStringifier } from '../../../stringifier'
+
 import * as UI from '../../ui'
 import * as Icons from '../../icons'
 import { useUI } from '../../../ui-store'
 import { InsertFormulaMenu } from '../../shared/InsertFormulaMenu'
-
-const { s } = createStringifier(strings)
 
 export interface InsertMenuProps extends Ariakit.MenuProviderProps {
   renderMenuButton: ReactElement
@@ -39,26 +38,28 @@ export function InsertMenu({ renderMenuButton, ...props }: InsertMenuProps) {
 }
 
 function CellsSubmenu() {
+  const messages = useSheetsMessages()
+
   return (
     <Ariakit.MenuProvider>
       <UI.SubMenuButton
         leadingIconSlot={<UI.Icon data={Icons.cell} />}
         disabled={useUI((ui) => ui.selection.isMultiple || ui.info.isReadonly)}
       >
-        {s('Cells')}
+        {messages.insertMenu.Cells}
       </UI.SubMenuButton>
       <UI.SubMenu>
         <UI.MenuItem
           onClick={useUI.$.withFocusGrid(useUI.$.insert.cellsShiftRight)}
           disabled={useUI((ui) => ui.info.isReadonly)}
         >
-          {s('Insert cells and shift right')}
+          {messages.insertMenu['Insert cells and shift right']}
         </UI.MenuItem>
         <UI.MenuItem
           onClick={useUI.$.withFocusGrid(useUI.$.insert.cellsShiftDown)}
           disabled={useUI((ui) => ui.info.isReadonly)}
         >
-          {s('Insert cells and shift down')}
+          {messages.insertMenu['Insert cells and shift down']}
         </UI.MenuItem>
       </UI.SubMenu>
     </Ariakit.MenuProvider>
@@ -66,6 +67,8 @@ function CellsSubmenu() {
 }
 
 function RowsSubmenu() {
+  const messages = useSheetsMessages()
+
   const selectedRowCount = useUI((ui) => ui.info.selectedRowCount)
   const insertRowsAbove = useUI.$.insert.rowsAbove
   const insertRowsBelow = useUI.$.insert.rowsBelow
@@ -75,20 +78,20 @@ function RowsSubmenu() {
         leadingIconSlot={<UI.Icon data={Icons.rows} />}
         disabled={useUI((ui) => ui.selection.isMultiple || ui.info.isReadonly)}
       >
-        {s('Rows')}
+        {messages.insertMenu.Rows}
       </UI.SubMenuButton>
       <UI.SubMenu>
         <UI.MenuItem
           onClick={useUI.$.withFocusGrid(() => insertRowsAbove(selectedRowCount))}
           disabled={useUI((ui) => ui.info.isReadonly)}
         >
-          {s('Insert')} <b>{rowsString(selectedRowCount)}</b> {s('above')}
+          {messages.insertMenu.Insert} <b>{rowsString(messages, selectedRowCount)}</b> {messages.insertMenu.above}
         </UI.MenuItem>
         <UI.MenuItem
           onClick={useUI.$.withFocusGrid(() => insertRowsBelow(selectedRowCount))}
           disabled={useUI((ui) => ui.info.isReadonly)}
         >
-          {s('Insert')} <b>{rowsString(selectedRowCount)}</b> {s('below')}
+          {messages.insertMenu.Insert} <b>{rowsString(messages, selectedRowCount)}</b> {messages.insertMenu.below}
         </UI.MenuItem>
       </UI.SubMenu>
     </Ariakit.MenuProvider>
@@ -96,6 +99,8 @@ function RowsSubmenu() {
 }
 
 function ColumnsSubmenu() {
+  const messages = useSheetsMessages()
+
   const selectedColumnCount = useUI((ui) => ui.info.selectedColumnCount)
   const insertColumnsLeft = useUI.$.insert.columnsLeft
   const insertColumnsRight = useUI.$.insert.columnsRight
@@ -105,20 +110,20 @@ function ColumnsSubmenu() {
         leadingIconSlot={<UI.Icon data={Icons.columns} />}
         disabled={useUI((ui) => ui.selection.isMultiple || ui.info.isReadonly)}
       >
-        {s('Columns')}
+        {messages.insertMenu.Columns}
       </UI.SubMenuButton>
       <UI.SubMenu>
         <UI.MenuItem
           onClick={useUI.$.withFocusGrid(() => insertColumnsLeft(selectedColumnCount))}
           disabled={useUI((ui) => ui.info.isReadonly)}
         >
-          {s('Insert')} <b>{columnsString(selectedColumnCount)}</b> {s('left')}
+          {messages.insertMenu.Insert} <b>{columnsString(messages, selectedColumnCount)}</b> {messages.insertMenu.left}
         </UI.MenuItem>
         <UI.MenuItem
           onClick={useUI.$.withFocusGrid(() => insertColumnsRight(selectedColumnCount))}
           disabled={useUI((ui) => ui.info.isReadonly)}
         >
-          {s('Insert')} <b>{columnsString(selectedColumnCount)}</b> {s('right')}
+          {messages.insertMenu.Insert} <b>{columnsString(messages, selectedColumnCount)}</b> {messages.insertMenu.right}
         </UI.MenuItem>
       </UI.SubMenu>
     </Ariakit.MenuProvider>
@@ -126,18 +131,22 @@ function ColumnsSubmenu() {
 }
 
 function Sheet() {
+  const messages = useSheetsMessages()
+
   return (
     <UI.MenuItem
       leadingIconSlot={<UI.Icon data={Icons.table} />}
       onClick={useUI.$.withFocusGrid(useUI.$.insert.sheet)}
       disabled={useUI((ui) => ui.info.isReadonly)}
     >
-      {s('Sheet')}
+      {messages.insertMenu.Sheet}
     </UI.MenuItem>
   )
 }
 
 function Chart() {
+  const messages = useSheetsMessages()
+
   const insertChart = useUI.$.insert.chart
   const onRequestEditChart = useUI((ui) => ui.legacy.chartsState.onRequestEditChart)
 
@@ -150,7 +159,7 @@ function Chart() {
       }}
       disabled={useUI((ui) => ui.info.isReadonly)}
     >
-      {s('Chart')}
+      {messages.insertMenu.Chart}
     </UI.MenuItem>
   )
 }
@@ -171,52 +180,62 @@ function Chart() {
 // }
 
 function FunctionSubmenu() {
+  const messages = useSheetsMessages()
+
   return (
     <InsertFormulaMenu asSubmenu>
       <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.sigma} />} disabled={useUI((ui) => ui.info.isReadonly)}>
-        {s('Function')}
+        {messages.insertMenu.Function}
       </UI.SubMenuButton>
     </InsertFormulaMenu>
   )
 }
 
 function Link() {
+  const messages = useSheetsMessages()
+
   return (
     <UI.MenuItem
       leadingIconSlot={<UI.Icon data={Icons.link} />}
       onClick={useUI.$.insert.link}
       disabled={useUI((ui) => ui.info.isReadonly)}
     >
-      {s('Link')}
+      {messages.insertMenu.Link}
     </UI.MenuItem>
   )
 }
 
 function Dropdown() {
+  const messages = useSheetsMessages()
+
   return (
     <UI.MenuItem
       leadingIconSlot={<UI.Icon data={Icons.dropdown} />}
       onClick={useUI.$.insert.dropdown}
       disabled={useUI((ui) => ui.info.isReadonly)}
     >
-      {s('Dropdown')}
+      {messages.insertMenu.Dropdown}
     </UI.MenuItem>
   )
 }
 
 function Checkbox() {
+  const messages = useSheetsMessages()
+
   return (
     <UI.MenuItem
       leadingIconSlot={<UI.Icon data={Icons.checkmarkCircle} />}
       onClick={useUI.$.withFocusGrid(useUI.$.insert.checkbox)}
       disabled={useUI((ui) => ui.info.isReadonly)}
     >
-      {s('Checkbox')}
+      {messages.insertMenu.Checkbox}
     </UI.MenuItem>
   )
 }
 
 function Note() {
+  const messages = useSheetsMessages()
+
   return (
     // TODO: icon needs to be note-with-text but we don't have it yet
     <UI.MenuItem
@@ -224,55 +243,42 @@ function Note() {
       onClick={useUI.$.insert.note}
       disabled={useUI((ui) => ui.info.isReadonly)}
     >
-      {s('Note')}
+      {messages.insertMenu.Note}
     </UI.MenuItem>
   )
 }
 
-function columnsString(numberOfColumns: number) {
-  // translator: this is used in the context of three strings put together - "Insert | N columns | above/below" (the | symbol is used to show the separation between the three strings, and the / symbol is used to denote variants), and it's separate because "X columns/rows" needs to be bold, the order of these three strings cannot be changed and they will be separated by spaces
-  return c('sheets_2025:Spreadsheet editor menubar insert menu (columns/rows submenus)').ngettext(
-    msgid`${numberOfColumns} column`,
-    `${numberOfColumns} columns`,
-    numberOfColumns,
-  )
+function columnsString(messages: SheetsMessages, numberOfColumns: number) {
+  return messages.insertMenu['${numberOfColumns} column'](numberOfColumns)
 }
 
-function rowsString(numberOfRows: number) {
-  // translator: this is used in the context of three strings put together - "Insert | N rows | above/below" (the | symbol is used to show the separation between the three strings, and the / symbol is used to denote variants), and it's separate because "X columns/rows" needs to be bold, the order of these three strings cannot be changed and they will be separated by spaces
-  return c('sheets_2025:Spreadsheet editor menubar insert menu (columns/rows submenus)').ngettext(
-    msgid`${numberOfRows} row`,
-    `${numberOfRows} rows`,
-    numberOfRows,
-  )
+function rowsString(messages: SheetsMessages, numberOfRows: number) {
+  return messages.insertMenu['${numberOfRows} row'](numberOfRows)
 }
 
-function strings() {
-  return {
-    Cells: c('sheets_2025:Spreadsheet editor menubar insert menu').t`Cells`,
-    'Insert cells and shift right': c('sheets_2025:Spreadsheet editor menubar insert menu')
-      .t`Insert cells and shift right`,
-    'Insert cells and shift down': c('sheets_2025:Spreadsheet editor menubar insert menu')
-      .t`Insert cells and shift down`,
-    // translator: this is used in the context of three strings put together - "Insert | N rows/columns | above/below" (the | symbol is used to show the separation between the three strings, and the / symbol is used to denote variants), and it's separate because "X columns/rows" needs to be bold, the order of these three strings cannot be changed and they will be separated by spaces
-    Insert: c('sheets_2025:Spreadsheet editor menubar insert menu (columns/rows submenus)').t`Insert`,
-    Rows: c('sheets_2025:Spreadsheet editor menubar insert menu').t`Rows`,
-    // translator: this is used in the context of three strings put together - "Insert | N rows | above" (the | symbol is used to show the separation between the three strings, and the / symbol is used to denote variants), and it's separate because "X rows" needs to be bold, the order of these three strings cannot be changed and they will be separated by spaces
-    above: c('sheets_2025:Spreadsheet editor menubar insert menu (columns/rows submenus)').t`above`,
-    // translator: this is used in the context of three strings put together - "Insert | N rows | below" (the | symbol is used to show the separation between the three strings, and the / symbol is used to denote variants), and it's separate because "X rows" needs to be bold, the order of these three strings cannot be changed and they will be separated by spaces
-    below: c('sheets_2025:Spreadsheet editor menubar insert menu (columns/rows submenus)').t`below`,
-    Columns: c('sheets_2025:Spreadsheet editor menubar insert menu').t`Columns`,
-    // translator: this is used in the context of three strings put together - "Insert | N columns | left" (the | symbol is used to show the separation between the three strings, and the / symbol is used to denote variants), and it's separate because "X columns" needs to be bold, the order of these three strings cannot be changed and they will be separated by spaces
-    left: c('sheets_2025:Spreadsheet editor menubar insert menu (columns/rows submenus)').t`left`,
-    // translator: this is used in the context of three strings put together - "Insert | N columns | right" (the | symbol is used to show the separation between the three strings, and the / symbol is used to denote variants), and it's separate because "X columns" needs to be bold, the order of these three strings cannot be changed and they will be separated by spaces
-    right: c('sheets_2025:Spreadsheet editor menubar insert menu (columns/rows submenus)').t`right`,
-    Sheet: c('sheets_2025:Spreadsheet editor menubar insert menu').t`Sheet`,
-    Chart: c('sheets_2025:Spreadsheet editor menubar insert menu').t`Chart`,
-    Image: c('sheets_2025:Spreadsheet editor menubar insert menu').t`Image`,
-    Function: c('sheets_2025:Spreadsheet editor menubar insert menu').t`Function`,
-    Link: c('sheets_2025:Spreadsheet editor menubar insert menu').t`Link`,
-    Dropdown: c('sheets_2025:Spreadsheet editor menubar insert menu').t`Dropdown`,
-    Checkbox: c('sheets_2025:Spreadsheet editor menubar insert menu').t`Checkbox`,
-    Note: c('sheets_2025:Spreadsheet editor menubar insert menu').t`Note`,
-  }
+export const insertMenuMessages = {
+  insertMenu: {
+    Cells: `Cells`,
+    'Insert cells and shift right': `Insert cells and shift right`,
+    'Insert cells and shift down': `Insert cells and shift down`,
+    Insert: `Insert`,
+    Rows: `Rows`,
+    above: `above`,
+    below: `below`,
+    Columns: `Columns`,
+    left: `left`,
+    right: `right`,
+    Sheet: `Sheet`,
+    Chart: `Chart`,
+    Image: `Image`,
+    Function: `Function`,
+    Link: `Link`,
+    Dropdown: `Dropdown`,
+    Checkbox: `Checkbox`,
+    Note: `Note`,
+    '${numberOfColumns} column': (numberOfColumns: number) =>
+      numberOfColumns === 1 ? `${numberOfColumns} column` : `${numberOfColumns} columns`,
+    '${numberOfRows} row': (numberOfRows: number) =>
+      numberOfRows === 1 ? `${numberOfRows} row` : `${numberOfRows} rows`,
+  },
 }

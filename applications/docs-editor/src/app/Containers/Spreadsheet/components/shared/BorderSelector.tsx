@@ -1,9 +1,10 @@
+import { useSheetsMessages } from '../../SheetsDependenciesProvider'
 import * as Ariakit from '@ariakit/react'
 import { createComponent } from '../utils'
 import * as UI from '../ui'
 import * as Atoms from '../atoms'
 import { clsx } from 'clsx'
-import { BORDER_LINE_STYLES, BORDER_LOCATIONS, type BorderLocation } from '../Sidebar/borderData'
+import { getBorderLineStyles, getBorderLocations, type BorderLocation } from '../Sidebar/borderData'
 import {
   getStringifiedColor,
   type Borders,
@@ -20,7 +21,6 @@ import * as Icons from '../icons'
 import { ColorPicker } from './ColorPicker'
 
 const BORDER_LOCATION_COLUMN_COUNT = 5
-const BORDER_LOCATION_ROWS = chunk(BORDER_LOCATIONS, BORDER_LOCATION_COLUMN_COUNT)
 
 interface BorderLocationButtonProps extends Ariakit.CompositeItemProps {
   title: string
@@ -82,6 +82,7 @@ export function BorderSelectorContent({
   onColorChange,
   onStyleChange,
 }: BorderSelectorProps) {
+  const messages = useSheetsMessages()
   const [borderLocation, setBorderLocationState] = useState<BorderLocation>()
   const getDefaultBorderColor = useCallback(() => {
     return { theme: 1, tint: isDarkMode ? 1 : 0 } as Color
@@ -138,7 +139,7 @@ export function BorderSelectorContent({
     <div className="flex items-center">
       <Ariakit.CompositeProvider focusShift focusWrap focusLoop>
         <Ariakit.Composite>
-          {BORDER_LOCATION_ROWS.map((row, rowIndex) => {
+          {chunk(getBorderLocations(messages), BORDER_LOCATION_COLUMN_COUNT).map((row, rowIndex) => {
             const isFirstRow = rowIndex === 0
 
             return (
@@ -193,7 +194,7 @@ export function BorderSelectorContent({
           </Ariakit.Select>
 
           <UI.SelectPopover className="py-2">
-            {BORDER_LINE_STYLES.map(({ icon, style, title }) => {
+            {getBorderLineStyles(messages).map(({ icon, style, title }) => {
               return (
                 <UI.SelectItem
                   key={style}

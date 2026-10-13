@@ -1,3 +1,4 @@
+import { useSheetsMessages, useSheetsDependencies } from '../../SheetsDependenciesProvider'
 import * as Icons from '../icons'
 import type { MouseEvent, ComponentPropsWithoutRef, Ref } from 'react'
 import { memo, useCallback, useEffect, useRef, useState } from 'react'
@@ -13,8 +14,7 @@ import { Icon, type IconData } from '../ui'
 import * as Ariakit from '@ariakit/react'
 import * as UI from '../ui'
 import { clsx } from 'clsx'
-import { createStringifier } from '../../stringifier'
-import { c } from 'ttag'
+
 import { createComponent, useEvent } from '../utils'
 import { useUI } from '../../ui-store'
 import type { ProtonSheetsUIState } from '../../ui-state'
@@ -22,9 +22,6 @@ import { getStringifiedColor } from '@rowsncolumns/spreadsheet'
 import { ColorPicker } from '../shared/ColorPicker'
 import { SheetStatus } from './SheetStatus'
 import { isDuplicateSheetName } from '../../is-duplicate-sheet-name'
-import { useSheetsDependencies } from '../../SheetsDependenciesProvider'
-
-const { s } = createStringifier(strings)
 
 interface IconButtonProps extends Ariakit.ButtonProps {
   ref?: Ref<HTMLButtonElement>
@@ -90,6 +87,8 @@ const SheetSwitcherMenu = memo(function SheetSwitcherMenu() {
 })
 
 const SheetSwitcher = memo(function SheetSwitcher() {
+  const messages = useSheetsMessages()
+
   const activeId = useUI((ui) => ui.sheets.activeId)
 
   const menu = Ariakit.useMenuStore({
@@ -102,7 +101,9 @@ const SheetSwitcher = memo(function SheetSwitcher() {
   return (
     <div className="shrink-0 py-0.5">
       <Ariakit.MenuProvider store={menu}>
-        <Ariakit.MenuButton render={<IconButton icon={Icons.hamburger}>{s('All sheets')}</IconButton>} />
+        <Ariakit.MenuButton
+          render={<IconButton icon={Icons.hamburger}>{messages.bottomBar['All sheets']}</IconButton>}
+        />
         {mounted && <SheetSwitcherMenu />}
       </Ariakit.MenuProvider>
     </div>
@@ -115,6 +116,8 @@ interface SheetOptionsProps extends Ariakit.MenuButtonProps {
   index: number
 }
 function SheetOptions({ sheet, rename, index, ...props }: SheetOptionsProps) {
+  const messages = useSheetsMessages()
+
   const openDeleteSheetDialog = useUI.$.view.deleteSheetConfirmation.open
   const duplicateSheet = useUI.$.sheets.duplicate
   const moveInDirection = useUI.$.sheets.moveInDirection
@@ -132,17 +135,17 @@ function SheetOptions({ sheet, rename, index, ...props }: SheetOptionsProps) {
         <Icon data={Icons.chevronDown} />
       </Ariakit.MenuButton>
       <UI.Menu unmountOnHide>
-        <UI.MenuItem onClick={() => openDeleteSheetDialog(sheet.id)}>{s('Delete')}</UI.MenuItem>
-        <UI.MenuItem onClick={() => duplicateSheet(sheet.id)}>{s('Duplicate')}</UI.MenuItem>
+        <UI.MenuItem onClick={() => openDeleteSheetDialog(sheet.id)}>{messages.bottomBar.Delete}</UI.MenuItem>
+        <UI.MenuItem onClick={() => duplicateSheet(sheet.id)}>{messages.bottomBar.Duplicate}</UI.MenuItem>
         <UI.MenuItem
           onClick={() => {
             setTimeout(() => rename())
           }}
         >
-          {s('Rename')}
+          {messages.bottomBar.Rename}
         </UI.MenuItem>
         <Ariakit.MenuProvider store={colorPickerStore}>
-          <UI.SubMenuButton>{s('Change color')}</UI.SubMenuButton>
+          <UI.SubMenuButton>{messages.bottomBar['Change color']}</UI.SubMenuButton>
           <UI.SubMenu>
             <ColorPicker
               className="px-4 py-2"
@@ -154,13 +157,13 @@ function SheetOptions({ sheet, rename, index, ...props }: SheetOptionsProps) {
             />
           </UI.SubMenu>
         </Ariakit.MenuProvider>
-        <UI.MenuItem onClick={() => hideSheet(sheet.id)}>{s('Hide sheet')}</UI.MenuItem>
+        <UI.MenuItem onClick={() => hideSheet(sheet.id)}>{messages.bottomBar['Hide sheet']}</UI.MenuItem>
         <UI.MenuSeparator />
         <UI.MenuItem disabled={!canMoveLeft} onClick={() => moveInDirection(sheet.id, 'left')}>
-          {s('Move left')}
+          {messages.bottomBar['Move left']}
         </UI.MenuItem>
         <UI.MenuItem disabled={!canMoveRight} onClick={() => moveInDirection(sheet.id, 'right')}>
-          {s('Move right')}
+          {messages.bottomBar['Move right']}
         </UI.MenuItem>
       </UI.Menu>
     </Ariakit.MenuProvider>
@@ -173,6 +176,8 @@ interface SheetTabProps {
   index: number
 }
 function SheetTab({ sheet, index, isActive }: SheetTabProps) {
+  const messages = useSheetsMessages()
+
   const isReadonly = useUI((ui) => ui.info.isReadonly)
   const sheets = useUI((ui) => ui.sheets.listIncludingHidden)
   const setActiveId = useUI.$.sheets.setActiveId
@@ -204,7 +209,7 @@ function SheetTab({ sheet, index, isActive }: SheetTabProps) {
       }
       if (isDuplicateSheetName(sheet.id, trimmedTitle, sheets)) {
         if (keepEditingOnDuplicate) {
-          showNotification({ text: s('A sheet with this name already exists'), type: 'error' })
+          showNotification({ text: messages.bottomBar['A sheet with this name already exists'], type: 'error' })
           requestAnimationFrame(() => {
             inputRef.current?.focus()
             inputRef.current?.select()
@@ -218,7 +223,7 @@ function SheetTab({ sheet, index, isActive }: SheetTabProps) {
       rename(sheet.id, trimmedTitle)
       setIsRenaming(false)
     },
-    [rename, sheet.id, sheet.name, sheets, showNotification, title],
+    [messages, rename, sheet.id, sheet.name, sheets, showNotification, title],
   )
 
   const { ref, isDragging } = useSortable({ id: sheet.id, index, collisionDetector: closestCenter })
@@ -285,7 +290,7 @@ function SheetTab({ sheet, index, isActive }: SheetTabProps) {
               )}
               aria-hidden={isRenaming}
             >
-              {title || c('Info').t`No title`}
+              {title || messages.bottomBar['No title']}
             </div>
           </div>
         </div>
@@ -352,13 +357,15 @@ const SheetTabs = memo(function SheetTabs(props: SheetTabsProps) {
 })
 
 const NewSheetButton = memo(function NewSheetButton() {
+  const messages = useSheetsMessages()
+
   const isReadonly = useUI((ui) => ui.info.isReadonly)
   if (isReadonly) {
     return null
   }
   return (
     <IconButton icon={Icons.plus} onClick={useUI.$.insert.sheet} disabled={isReadonly}>
-      {s('New sheet')}
+      {messages.bottomBar['New sheet']}
     </IconButton>
   )
 })
@@ -388,17 +395,18 @@ export const BottomBar = memo(function BottomBar(props: BottomBarProps) {
   )
 })
 
-function strings() {
-  return {
-    'New sheet': c('sheets_2025:Bottom bar').t`New sheet`,
-    'All sheets': c('sheets_2025:Bottom bar').t`All sheets`,
-    Delete: c('sheets_2025:Sheet tab options').t`Delete`,
-    Duplicate: c('sheets_2025:Sheet tab options').t`Duplicate`,
-    Rename: c('sheets_2025:Sheet tab options').t`Rename`,
-    'Change color': c('sheets_2025:Sheet tab options').t`Change color`,
-    'Move left': c('sheets_2025:Sheet tab options').t`Move left`,
-    'Move right': c('sheets_2025:Sheet tab options').t`Move right`,
-    'Hide sheet': c('sheets_2025:Sheet tab options').t`Hide sheet`,
-    'A sheet with this name already exists': c('sheets_2025:Sheet tab rename').t`A sheet with this name already exists`,
-  }
+export const bottomBarMessages = {
+  bottomBar: {
+    'New sheet': `New sheet`,
+    'All sheets': `All sheets`,
+    Delete: `Delete`,
+    Duplicate: `Duplicate`,
+    Rename: `Rename`,
+    'Change color': `Change color`,
+    'Move left': `Move left`,
+    'Move right': `Move right`,
+    'Hide sheet': `Hide sheet`,
+    'A sheet with this name already exists': `A sheet with this name already exists`,
+    'No title': `No title`,
+  },
 }

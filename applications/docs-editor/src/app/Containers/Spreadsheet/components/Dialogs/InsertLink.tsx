@@ -1,12 +1,10 @@
+import { useSheetsMessages } from '../../SheetsDependenciesProvider'
 import { useUI } from '../../ui-store'
 import * as Ariakit from '@ariakit/react'
-import { createStringifier } from '../../stringifier'
-import { c } from 'ttag'
+
 import { type ComponentPropsWithoutRef, useCallback, useEffect, useId, useMemo, useState } from 'react'
 import { clsx } from 'clsx'
 import { Button } from '../shared/Button'
-
-const { s } = createStringifier(strings)
 
 function LinkIcon({ className, ...props }: ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -70,6 +68,8 @@ function InsertLinkInputField({ label, className, ...props }: InsertLinkInputFie
 }
 
 function InsertLinkPopover() {
+  const messages = useSheetsMessages()
+
   const [value, setValue] = useState('')
 
   const sheetId = useUI((state) => state.legacy.activeSheetId)
@@ -147,8 +147,8 @@ function InsertLinkPopover() {
       <InsertLinkInputField
         autoFocus
         className="text-sm"
-        label={s('Insert link')}
-        placeholder={s('Paste link')}
+        label={messages.insertLink['Insert link']}
+        placeholder={messages.insertLink['Paste link']}
         value={value}
         onChange={(e) => setValue(e.target.value)}
         onKeyDown={(e) => {
@@ -163,10 +163,10 @@ function InsertLinkPopover() {
       />
       <div className="flex items-center gap-2 text-sm">
         <Button type="button" className="!px-[.9375rem] !py-[.4375rem]" onClick={insertLink} color="norm">
-          {s('Apply')}
+          {messages.insertLink.Apply}
         </Button>
         <Button type="button" className="!px-[.9375rem] !py-[.4375rem]" onClick={useUI.$.view.insertLinkDialog.close}>
-          {s('Cancel')}
+          {messages.insertLink.Cancel}
         </Button>
       </div>
     </Ariakit.Popover>
@@ -182,11 +182,11 @@ export function InsertLinkDialog() {
   return <Ariakit.PopoverProvider store={popover}>{mounted && <InsertLinkPopover />}</Ariakit.PopoverProvider>
 }
 
-function strings() {
-  return {
-    'Insert link': c('sheets_2025:Spreadsheet insert link dialog').t`Insert link`,
-    'Paste link': c('sheets_2025:Spreadsheet insert link dialog').t`Paste link`,
-    Apply: c('sheets_2025:Spreadsheet insert link dialog').t`Apply`,
-    Cancel: c('sheets_2025:Spreadsheet insert link dialog').t`Cancel`,
-  }
+export const insertLinkMessages = {
+  insertLink: {
+    'Insert link': `Insert link`,
+    'Paste link': `Paste link`,
+    Apply: `Apply`,
+    Cancel: `Cancel`,
+  },
 }

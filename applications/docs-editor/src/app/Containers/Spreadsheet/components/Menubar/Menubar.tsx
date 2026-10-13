@@ -1,7 +1,6 @@
 import { clsx } from 'clsx'
 import * as Ariakit from '@ariakit/react'
-import { createStringifier } from '../../stringifier'
-import { c } from 'ttag'
+import { useSheetsMessages } from '../../SheetsDependenciesProvider'
 import { MenubarItem } from './MenubarItem'
 import { FileMenu } from './menus/FileMenu'
 import { InsertMenu } from './menus/InsertMenu'
@@ -11,32 +10,24 @@ import { FormatMenu } from './menus/FormatMenu'
 import { DataMenu } from './menus/DataMenu'
 import { createComponent } from '../utils'
 
-const { s } = createStringifier(strings)
-
 export interface MenubarProps extends Ariakit.MenubarProps {
   isPublicMode: boolean
 }
 
 export const Menubar = createComponent(function Menubar({ isPublicMode, ...props }: MenubarProps) {
+  const { menus } = useSheetsMessages()
   return (
     <Ariakit.Menubar {...props} className={clsx('flex gap-5 print:hidden', props.className)}>
-      <FileMenu renderMenuButton={<MenubarItem>{s('File')}</MenubarItem>} isPublicMode={isPublicMode} />
-      <EditMenu renderMenuButton={<MenubarItem>{s('Edit')}</MenubarItem>} />
-      <ViewMenu renderMenuButton={<MenubarItem>{s('View')}</MenubarItem>} />
-      <InsertMenu renderMenuButton={<MenubarItem>{s('Insert')}</MenubarItem>} />
-      <FormatMenu renderMenuButton={<MenubarItem>{s('Format')}</MenubarItem>} />
-      <DataMenu renderMenuButton={<MenubarItem>{s('Data')}</MenubarItem>} />
+      <FileMenu renderMenuButton={<MenubarItem>{menus.file}</MenubarItem>} isPublicMode={isPublicMode} />
+      <EditMenu renderMenuButton={<MenubarItem>{menus.edit}</MenubarItem>} />
+      <ViewMenu renderMenuButton={<MenubarItem>{menus.view}</MenubarItem>} />
+      <InsertMenu renderMenuButton={<MenubarItem>{menus.insert}</MenubarItem>} />
+      <FormatMenu renderMenuButton={<MenubarItem>{menus.format}</MenubarItem>} />
+      <DataMenu renderMenuButton={<MenubarItem>{menus.data}</MenubarItem>} />
     </Ariakit.Menubar>
   )
 })
 
-function strings() {
-  return {
-    File: c('sheets_2025:Spreadsheet editor menubar title').t`File`,
-    Edit: c('sheets_2025:Spreadsheet editor menubar title').t`Edit`,
-    View: c('sheets_2025:Spreadsheet editor menubar title').t`View`,
-    Insert: c('sheets_2025:Spreadsheet editor menubar title').t`Insert`,
-    Format: c('sheets_2025:Spreadsheet editor menubar title').t`Format`,
-    Data: c('sheets_2025:Spreadsheet editor menubar title').t`Data`,
-  }
+export const menusMessages = {
+  menus: { file: 'File', edit: 'Edit', view: 'View', insert: 'Insert', format: 'Format', data: 'Data' },
 }

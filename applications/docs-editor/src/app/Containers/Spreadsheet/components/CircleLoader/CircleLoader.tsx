@@ -1,6 +1,6 @@
+import { useSheetsMessages } from '../../SheetsDependenciesProvider'
 import type { ComponentPropsWithoutRef } from 'react'
 import { clsx } from 'clsx'
-import { c } from 'ttag'
 
 import './CircleLoader.css'
 
@@ -23,6 +23,8 @@ let currentCircleLoaderId = 0
 const generateCircleLoaderId = () => `sheets-circle-loader-${currentCircleLoaderId++}`
 
 export const CircleLoader = ({ size, className, srLabelHidden, ...rest }: CircleLoaderProps) => {
+  const messages = useSheetsMessages()
+
   const circleId = generateCircleLoaderId()
 
   return (
@@ -40,7 +42,13 @@ export const CircleLoader = ({ size, className, srLabelHidden, ...rest }: Circle
         <use href={`#${circleId}`} className="sheets-circle-loader__track" />
         <use href={`#${circleId}`} className="sheets-circle-loader__circle" />
       </svg>
-      {!srLabelHidden ? <span className="sr-only">{c('Info').t`Loading`}</span> : null}
+      {!srLabelHidden ? <span className="sr-only">{messages.circleLoader.Loading}</span> : null}
     </>
   )
+}
+
+export const circleLoaderMessages = {
+  circleLoader: {
+    Loading: `Loading`,
+  },
 }

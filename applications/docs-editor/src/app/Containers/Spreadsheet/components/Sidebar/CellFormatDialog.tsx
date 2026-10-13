@@ -1,3 +1,5 @@
+import type { SheetsMessages } from '../../messages/SheetsMessages'
+import { useSheetsMessages } from '../../SheetsDependenciesProvider'
 import * as Ariakit from '@ariakit/react'
 import { useFormatCellsDialogState } from '@rowsncolumns/spreadsheet-state'
 import type {
@@ -41,26 +43,20 @@ import {
 import { createComponent } from '../utils'
 import { useUI } from '../../ui-store'
 import { FONT_FAMILY_DEFAULT, FONT_LABEL_BY_VALUE, FONT_SIZE_SUGGESTIONS, FONTS } from '../../constants'
-import { BORDER_LINE_STYLES, BORDER_LOCATIONS } from './borderData'
+import { getBorderLineStyles, getBorderLocations } from './borderData'
 import {
   customFormats,
   dateFormats,
   getNumberFormatCategories,
-  horizontalAlignments,
+  getAlignmentOptions,
   timeFormats,
-  verticalAlignments,
-  wrapStrategies,
 } from './cell-format-utils'
-import { c } from 'ttag'
-import { createStringifier } from '../../stringifier'
-
-const { s } = createStringifier(strings)
 
 const FONT_FAMILY_DEFAULT_VALUE = '$default$' as const
 
-function renderDefaultFontLabel() {
+function renderDefaultFontLabel(messages: SheetsMessages) {
   const defaultFont = FONT_LABEL_BY_VALUE[FONT_FAMILY_DEFAULT]
-  return c('sheets_2025:Spreadsheet editor toolbar').t`Default (${defaultFont})`
+  return messages.cellFormatDialog['Default (${defaultFont})'](defaultFont)
 }
 
 interface CellFormatDialogProps {
@@ -111,6 +107,8 @@ function CellFormatEditor({
   currencySymbol = '$', // TODO: figure out i18n
   locale, // TODO: figure out i18n
 }: CellFormatEditorProps) {
+  const messages = useSheetsMessages()
+
   const getEffectiveValue = useUI((ui) => ui.legacy.getEffectiveValue)
   const cellFormat = useUI((ui) => ui.legacy.currentCellFormat)
   const sheetId = useUI((ui) => ui.legacy.activeSheetId)
@@ -129,13 +127,14 @@ function CellFormatEditor({
   const formattedValue = ssfFormat(pattern ?? 'General', effectiveValue) || '\u00A0'
   const formattedColor = ssfFormatColor(pattern ?? 'General', effectiveValue)
 
-  const numberCategories = useMemo(() => getNumberFormatCategories(locale), [locale])
+  const numberCategories = useMemo(() => getNumberFormatCategories(messages, locale), [messages, locale])
   const selectedNumberFormat = type ?? 'GENERAL'
   const [isCustom, setIsCustom] = useState(false)
   const isNotCustom = !isCustom
   const [customFormatValue, setCustomFormatValue] = useState<NumberFormat | null>()
 
   const selectedCategory = numberCategories.find((c) => c.value === selectedNumberFormat)
+  const { horizontalAlignments, verticalAlignments, wrapStrategies } = getAlignmentOptions(messages)
   const selectedHAlignment = horizontalAlignments.find((a) => a.value === (formValue?.horizontalAlignment ?? 'General'))
   const selectedVAlignment = verticalAlignments.find((a) => a.value === formValue?.verticalAlignment)
   const selectedWrapStrategy = wrapStrategies.find((s) => s.value === cellFormat?.wrapStrategy)
@@ -169,10 +168,10 @@ function CellFormatEditor({
       <form className="flex min-h-0 grow flex-col" onSubmit={form.handleSubmit(onSubmit)}>
         <div className="shrink-0 px-4">
           <Ariakit.TabList className="flex gap-4 border-b-[0.5px] border-[#EAE7E4]">
-            <Tab id={TABS.NUMBER}>{s('Number')}</Tab>
-            <Tab id={TABS.ALIGNMENT}>{s('Alignment')}</Tab>
-            <Tab id={TABS.FONT}>{s('Font')}</Tab>
-            <Tab id={TABS.BORDER}>{s('Border')}</Tab>
+            <Tab id={TABS.NUMBER}>{messages.cellFormatDialog.Number}</Tab>
+            <Tab id={TABS.ALIGNMENT}>{messages.cellFormatDialog.Alignment}</Tab>
+            <Tab id={TABS.FONT}>{messages.cellFormatDialog.Font}</Tab>
+            <Tab id={TABS.BORDER}>{messages.cellFormatDialog.Border}</Tab>
           </Ariakit.TabList>
         </div>
 
@@ -181,7 +180,7 @@ function CellFormatEditor({
             <Ariakit.TabPanel id={TABS.NUMBER} focusable={false}>
               <div className="flex min-w-0 flex-col gap-4">
                 <FormGroup>
-                  <FormLabel render={<p />}>{s('Preview')}</FormLabel>
+                  <FormLabel render={<p />}>{messages.cellFormatDialog.Preview}</FormLabel>
                   <div
                     style={{ color: formattedColor }}
                     className="flex h-[48px] min-w-0 items-center justify-center rounded-lg bg-[#F5F4F2] px-4 text-center text-sm"
@@ -191,7 +190,7 @@ function CellFormatEditor({
                 </FormGroup>
 
                 <FormGroup>
-                  <FormLabel>{s('Choose Category')}</FormLabel>
+                  <FormLabel>{messages.cellFormatDialog['Choose Category']}</FormLabel>
 
                   <Ariakit.SelectProvider
                     focusLoop
@@ -211,7 +210,11 @@ function CellFormatEditor({
                       }
                     }}
                   >
-                    <Select>{isCustom ? s('Custom') : (selectedCategory?.name ?? s('Choose Category'))}</Select>
+                    <Select>
+                      {isCustom
+                        ? messages.cellFormatDialog.Custom
+                        : (selectedCategory?.name ?? messages.cellFormatDialog['Choose Category'])}
+                    </Select>
                     <SelectPopover sameWidth>
                       <Ariakit.SelectGroup className="py-2">
                         {numberCategories.map(({ name, value }) => {
@@ -231,7 +234,7 @@ function CellFormatEditor({
                       if (opt === 'Decimal') {
                         return (
                           <FormGroup key={opt}>
-                            <FormLabel>{s('Decimal places')}</FormLabel>
+                            <FormLabel>{messages.cellFormatDialog['Decimal places']}</FormLabel>
                             <Input
                               type="number"
                               min={0}
@@ -254,7 +257,7 @@ function CellFormatEditor({
                       if (opt === 'ThousandSeparator') {
                         return (
                           <FormGroup key={opt}>
-                            <FormLabel>{s('Thousands separator')}</FormLabel>
+                            <FormLabel>{messages.cellFormatDialog['Thousands separator']}</FormLabel>
                             <Ariakit.CheckboxProvider
                               value={usingThousandsSeparator}
                               setValue={(checked) => {
@@ -268,7 +271,7 @@ function CellFormatEditor({
                                 })
                               }}
                             >
-                              <FormCheckbox>{s('Use 1000 Separator (,)')}</FormCheckbox>
+                              <FormCheckbox>{messages.cellFormatDialog['Use 1000 Separator (,)']}</FormCheckbox>
                             </Ariakit.CheckboxProvider>
                           </FormGroup>
                         )
@@ -277,7 +280,7 @@ function CellFormatEditor({
                       if (opt === 'CurrencySymbol') {
                         return (
                           <FormGroup key={opt}>
-                            <FormLabel>{s('Currency Symbol')}</FormLabel>
+                            <FormLabel>{messages.cellFormatDialog['Currency Symbol']}</FormLabel>
                             <Input
                               defaultValue={currencySymbol}
                               onChange={(event) => {
@@ -302,7 +305,7 @@ function CellFormatEditor({
 
                 {isCustom ? (
                   <FormGroup>
-                    <FormLabel>{s('Type')}</FormLabel>
+                    <FormLabel>{messages.cellFormatDialog.Type}</FormLabel>
                     <div className="flex min-w-0 flex-col gap-2">
                       <Input
                         value={customFormatValue?.pattern ?? ''}
@@ -416,7 +419,7 @@ function CellFormatEditor({
             <Ariakit.TabPanel id={TABS.ALIGNMENT} focusable={false}>
               <div className="flex flex-col gap-4">
                 <FormGroup>
-                  <FormLabel>{s('Horizontal Alignment')}</FormLabel>
+                  <FormLabel>{messages.cellFormatDialog['Horizontal Alignment']}</FormLabel>
                   <Ariakit.SelectProvider
                     value={formValue?.horizontalAlignment ?? 'General'}
                     setValue={(value) => form.setValue('horizontalAlignment', value as HorizontalAlign)}
@@ -427,7 +430,7 @@ function CellFormatEditor({
                           {selectedHAlignment.icon} {selectedHAlignment.name}
                         </Fragment>
                       ) : (
-                        s('General')
+                        messages.cellFormatDialog.General
                       )}
                     </Select>
                     <SelectPopover sameWidth>
@@ -446,7 +449,7 @@ function CellFormatEditor({
                 </FormGroup>
 
                 <FormGroup>
-                  <FormLabel>{s('Indent')}</FormLabel>
+                  <FormLabel>{messages.cellFormatDialog.Indent}</FormLabel>
                   <Ariakit.SelectProvider
                     value={(formValue?.indent ?? 0).toString()}
                     setValue={(value) => {
@@ -467,7 +470,7 @@ function CellFormatEditor({
                 </FormGroup>
 
                 <FormGroup>
-                  <FormLabel>{s('Vertical Alignment')}</FormLabel>
+                  <FormLabel>{messages.cellFormatDialog['Vertical Alignment']}</FormLabel>
                   <Ariakit.SelectProvider
                     value={formValue?.verticalAlignment ?? 'bottom'}
                     setValue={(value) => form.setValue('verticalAlignment', value as VerticalAlign)}
@@ -478,7 +481,7 @@ function CellFormatEditor({
                           {selectedVAlignment.icon} {selectedVAlignment.name}
                         </Fragment>
                       ) : (
-                        s('General')
+                        messages.cellFormatDialog.General
                       )}
                     </Select>
                     <SelectPopover sameWidth>
@@ -497,7 +500,7 @@ function CellFormatEditor({
                 </FormGroup>
 
                 <FormGroup>
-                  <FormLabel>{s('Text control')}</FormLabel>
+                  <FormLabel>{messages.cellFormatDialog['Text control']}</FormLabel>
                   <div className="grid grid-cols-2 items-center gap-2">
                     <Ariakit.SelectProvider
                       value={cellFormat?.wrapStrategy ?? 'overflow'}
@@ -509,7 +512,7 @@ function CellFormatEditor({
                             {selectedWrapStrategy.icon} {selectedWrapStrategy.name}
                           </Fragment>
                         ) : (
-                          s('Overflow')
+                          messages.cellFormatDialog.Overflow
                         )}
                       </Select>
                       <SelectPopover>
@@ -536,7 +539,7 @@ function CellFormatEditor({
                         )}
                       >
                         <Icon className="shrink-0" data={Icons.merge} />
-                        {s('Merge')}
+                        {messages.cellFormatDialog.Merge}
                       </Ariakit.Button>
                       <Ariakit.MenuProvider>
                         <Ariakit.MenuButton
@@ -550,16 +553,16 @@ function CellFormatEditor({
                         <Menu>
                           <Ariakit.MenuGroup className="py-2">
                             <MenuItem disabled={!canMergeAll} onClick={mergeAll}>
-                              {s('Merge all')}
+                              {messages.cellFormatDialog['Merge all']}
                             </MenuItem>
                             <MenuItem disabled={!canMergeVertically} onClick={mergeVertically}>
-                              {s('Merge vertically')}
+                              {messages.cellFormatDialog['Merge vertically']}
                             </MenuItem>
                             <MenuItem disabled={!canMergeHorizontally} onClick={mergeHorizontally}>
-                              {s('Merge horizontally')}
+                              {messages.cellFormatDialog['Merge horizontally']}
                             </MenuItem>
                             <MenuItem disabled={!canUnmerge} onClick={unmerge}>
-                              {s('Unmerge')}
+                              {messages.cellFormatDialog.Unmerge}
                             </MenuItem>
                           </Ariakit.MenuGroup>
                         </Menu>
@@ -573,7 +576,7 @@ function CellFormatEditor({
             <Ariakit.TabPanel id={TABS.FONT} focusable={false}>
               <div className="flex flex-col gap-4">
                 <FormGroup>
-                  <FormLabel>{s('Font size')}</FormLabel>
+                  <FormLabel>{messages.cellFormatDialog['Font size']}</FormLabel>
                   <Ariakit.SelectProvider
                     value={formValue?.textFormat?.fontSize?.toString()}
                     setValue={(fontSize: string) => {
@@ -594,17 +597,17 @@ function CellFormatEditor({
                 </FormGroup>
 
                 <FormGroup>
-                  <FormLabel>{s('Font')}</FormLabel>
+                  <FormLabel>{messages.cellFormatDialog.Font}</FormLabel>
                   <Ariakit.SelectProvider
                     value={fontFamily ?? FONT_FAMILY_DEFAULT_VALUE}
                     setValue={(f) => {
                       form.setValue('textFormat.fontFamily', f === FONT_FAMILY_DEFAULT_VALUE ? undefined : f)
                     }}
                   >
-                    <Select>{fontFamily ? FONT_LABEL_BY_VALUE[fontFamily] : renderDefaultFontLabel()}</Select>
+                    <Select>{fontFamily ? FONT_LABEL_BY_VALUE[fontFamily] : renderDefaultFontLabel(messages)}</Select>
                     <SelectPopover sameWidth>
                       <Ariakit.FormGroup className="border-b border-[#D1CFCD] py-2">
-                        <SelectItem value={FONT_FAMILY_DEFAULT_VALUE}>{renderDefaultFontLabel()}</SelectItem>
+                        <SelectItem value={FONT_FAMILY_DEFAULT_VALUE}>{renderDefaultFontLabel(messages)}</SelectItem>
                       </Ariakit.FormGroup>
                       <Ariakit.FormGroup className="py-2">
                         {FONTS.map(({ value, label = value }) => (
@@ -618,7 +621,7 @@ function CellFormatEditor({
                 </FormGroup>
 
                 <FormGroup>
-                  <FormLabel>{s('Effects')}</FormLabel>
+                  <FormLabel>{messages.cellFormatDialog.Effects}</FormLabel>
                   <div className="flex !flex-wrap items-center gap-3">
                     <ToggleButton
                       checked={formValue?.textFormat?.bold ?? false}
@@ -627,7 +630,7 @@ function CellFormatEditor({
                       }}
                     >
                       <Icon className="shrink-0" data={Icons.textBold} />
-                      {s('Bold')}
+                      {messages.cellFormatDialog.Bold}
                     </ToggleButton>
                     <ToggleButton
                       checked={formValue?.textFormat?.italic ?? false}
@@ -636,7 +639,7 @@ function CellFormatEditor({
                       }}
                     >
                       <Icon className="shrink-0" data={Icons.textItalic} />
-                      {s('Italic')}
+                      {messages.cellFormatDialog.Italic}
                     </ToggleButton>
                     <ToggleButton
                       checked={formValue?.textFormat?.underline ?? false}
@@ -645,7 +648,7 @@ function CellFormatEditor({
                       }}
                     >
                       <Icon className="shrink-0" data={Icons.textUnderline} />
-                      {s('Underline')}
+                      {messages.cellFormatDialog.Underline}
                     </ToggleButton>
                     <ToggleButton
                       checked={formValue?.textFormat?.strikethrough ?? false}
@@ -654,13 +657,13 @@ function CellFormatEditor({
                       }}
                     >
                       <Icon className="shrink-0" data={Icons.textStrikethrough} />
-                      {s('Strikethrough')}
+                      {messages.cellFormatDialog.Strikethrough}
                     </ToggleButton>
                   </div>
                 </FormGroup>
 
                 <FormGroup>
-                  <FormLabel>{s('Color')}</FormLabel>
+                  <FormLabel>{messages.cellFormatDialog.Color}</FormLabel>
                   <div>
                     <Ariakit.PopoverProvider>
                       <Ariakit.PopoverDisclosure className="flex size-[36px] items-center justify-center rounded-lg border border-[#EAE7E4]">
@@ -687,7 +690,7 @@ function CellFormatEditor({
                 <FormGroup>
                   <Ariakit.RadioProvider>
                     <div className="grid grid-cols-6">
-                      {BORDER_LOCATIONS.map(({ location, icon }) => {
+                      {getBorderLocations(messages).map(({ location, icon }) => {
                         return (
                           <BorderLocationButton
                             key={location}
@@ -710,10 +713,10 @@ function CellFormatEditor({
                 </FormGroup>
 
                 <FormGroup>
-                  <FormLabel>{s('Border style')}</FormLabel>
+                  <FormLabel>{messages.cellFormatDialog['Border style']}</FormLabel>
                   <Ariakit.RadioProvider>
                     <div className="grid grid-cols-3 gap-2 rounded-lg border border-[#ADABA8] p-4">
-                      {BORDER_LINE_STYLES.map(({ icon, style }) => {
+                      {getBorderLineStyles(messages).map(({ icon, style }) => {
                         return (
                           <Ariakit.Radio
                             key={style}
@@ -734,7 +737,7 @@ function CellFormatEditor({
                 </FormGroup>
 
                 <FormGroup>
-                  <FormLabel>{s('Color')}</FormLabel>
+                  <FormLabel>{messages.cellFormatDialog.Color}</FormLabel>
                   <div>
                     <Ariakit.PopoverProvider>
                       <Ariakit.PopoverDisclosure className="flex size-[36px] items-center justify-center rounded-lg">
@@ -770,13 +773,13 @@ function CellFormatEditor({
             className="inline-flex h-[36px] items-center gap-1.5 rounded-lg border border-[#DEDBD9] px-4 text-[13px]"
             onClick={onDone}
           >
-            {s('Cancel')}
+            {messages.cellFormatDialog.Cancel}
           </button>
           <button
             type="submit"
             className="inline-flex h-[36px] items-center gap-1.5 rounded-lg bg-[#6D4AFF] px-4 text-[13px] text-[white]"
           >
-            {s('Save')}
+            {messages.cellFormatDialog.Save}
           </button>
         </div>
       </form>
@@ -785,53 +788,56 @@ function CellFormatEditor({
 }
 
 export function CellFormatDialog() {
+  const messages = useSheetsMessages()
+
   const [open, setOpen] = useFormatCellsDialogState()
 
   return (
     <SidebarDialog open={open} setOpen={setOpen}>
       <div className="flex h-full min-h-0 flex-col">
-        <SidebarDialogHeader title={s('Format cells')} />
+        <SidebarDialogHeader title={messages.cellFormatDialog['Format cells']} />
         <CellFormatEditor onDone={() => setOpen(false)} />
       </div>
     </SidebarDialog>
   )
 }
 
-function strings() {
-  return {
-    Bold: c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Bold`,
-    Italic: c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Italic`,
-    Underline: c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Underline`,
-    Strikethrough: c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Strikethrough`,
-    Number: c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Number`,
-    Alignment: c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Alignment`,
-    Font: c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Font`,
-    Border: c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Border`,
-    Preview: c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Preview`,
-    'Choose Category': c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Choose Category`,
-    'Decimal places': c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Decimal places`,
-    'Thousands separator': c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Thousands separator`,
-    'Currency Symbol': c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Currency Symbol`,
-    Type: c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Type`,
-    Custom: c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Custom`,
-    'Use 1000 Separator (,)': c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Use 1000 Separator (,)`,
-    'Font size': c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Font size`,
-    Effects: c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Effects`,
-    Color: c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Color`,
-    'Horizontal Alignment': c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Horizontal Alignment`,
-    Indent: c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Indent`,
-    'Vertical Alignment': c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Vertical Alignment`,
-    'Text control': c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Text control`,
-    Overflow: c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Overflow`,
-    Merge: c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Merge`,
-    'Merge all': c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Merge all`,
-    'Merge vertically': c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Merge vertically`,
-    'Merge horizontally': c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Merge horizontally`,
-    Unmerge: c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Unmerge`,
-    'Border style': c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Border style`,
-    Save: c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Save`,
-    Cancel: c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Cancel`,
-    'Format cells': c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Format cells`,
-    General: c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`General`,
-  }
+export const cellFormatDialogMessages = {
+  cellFormatDialog: {
+    Bold: `Bold`,
+    Italic: `Italic`,
+    Underline: `Underline`,
+    Strikethrough: `Strikethrough`,
+    Number: `Number`,
+    Alignment: `Alignment`,
+    Font: `Font`,
+    Border: `Border`,
+    Preview: `Preview`,
+    'Choose Category': `Choose Category`,
+    'Decimal places': `Decimal places`,
+    'Thousands separator': `Thousands separator`,
+    'Currency Symbol': `Currency Symbol`,
+    Type: `Type`,
+    Custom: `Custom`,
+    'Use 1000 Separator (,)': `Use 1000 Separator (,)`,
+    'Font size': `Font size`,
+    Effects: `Effects`,
+    Color: `Color`,
+    'Horizontal Alignment': `Horizontal Alignment`,
+    Indent: `Indent`,
+    'Vertical Alignment': `Vertical Alignment`,
+    'Text control': `Text control`,
+    Overflow: `Overflow`,
+    Merge: `Merge`,
+    'Merge all': `Merge all`,
+    'Merge vertically': `Merge vertically`,
+    'Merge horizontally': `Merge horizontally`,
+    Unmerge: `Unmerge`,
+    'Border style': `Border style`,
+    Save: `Save`,
+    Cancel: `Cancel`,
+    'Format cells': `Format cells`,
+    General: `General`,
+    'Default (${defaultFont})': (defaultFont: string) => `Default (${defaultFont})`,
+  },
 }

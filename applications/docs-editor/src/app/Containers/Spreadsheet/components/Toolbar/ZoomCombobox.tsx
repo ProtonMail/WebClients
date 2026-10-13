@@ -1,20 +1,21 @@
+import { useSheetsMessages } from '../../SheetsDependenciesProvider'
 import * as Icons from '../icons'
 import * as Ariakit from '@ariakit/react'
 import { clsx } from 'clsx'
 import type {} from 'react'
 import { type ComponentPropsWithoutRef, forwardRef, useEffect, useRef } from 'react'
-import { c } from 'ttag'
+
 import { ZOOM_DEFAULT, ZOOM_MAX, ZOOM_MIN, ZOOM_SUGGESTIONS } from '../../constants'
-import { createStringifier } from '../../stringifier'
+
 import * as UI from '../ui'
 import { useUI } from '../../ui-store'
 import { scaleToPercentage } from '../utils'
 
-const { s } = createStringifier(strings)
-
 export interface ZoomComboboxProps extends ComponentPropsWithoutRef<'div'> {}
 
 export const ZoomCombobox = forwardRef<HTMLDivElement, ZoomComboboxProps>(function ZoomCombobox(props, ref) {
+  const messages = useSheetsMessages()
+
   const realValue = useUI((ui) => ui.zoom.value) ?? ZOOM_DEFAULT
   const comboboxRef = useRef<HTMLInputElement>(null)
   const setZoom = useUI.$.zoom.set
@@ -94,7 +95,7 @@ export const ZoomCombobox = forwardRef<HTMLDivElement, ZoomComboboxProps>(functi
           <Ariakit.TooltipAnchor
             render={
               <Ariakit.ToolbarItem
-                aria-label={s('Zoom')}
+                aria-label={messages.zoomCombobox.Zoom}
                 render={
                   <Ariakit.Combobox
                     ref={comboboxRef}
@@ -145,7 +146,7 @@ export const ZoomCombobox = forwardRef<HTMLDivElement, ZoomComboboxProps>(functi
               />
             }
           />
-          <UI.Tooltip>{s('Zoom')}</UI.Tooltip>
+          <UI.Tooltip>{messages.zoomCombobox.Zoom}</UI.Tooltip>
         </Ariakit.TooltipProvider>
 
         <div className="pointer-events-none absolute end-0 top-0 flex h-full items-center pe-3 text-[#0C0C14]">
@@ -173,8 +174,8 @@ function zoomToScale(zoom: number) {
   return zoom / 100
 }
 
-function strings() {
-  return {
-    Zoom: c('sheets_2025:Spreadsheet editor toolbar').t`Zoom`,
-  }
+export const zoomComboboxMessages = {
+  zoomCombobox: {
+    Zoom: `Zoom`,
+  },
 }

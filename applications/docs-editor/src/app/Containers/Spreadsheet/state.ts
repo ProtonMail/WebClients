@@ -31,18 +31,17 @@ import { SheetsDocProvider } from './contract/SheetsDocProvider'
 import type { SheetsDocumentAdapter } from './contract/SheetsDocumentAdapter'
 import { create } from 'zustand'
 import { useEvent } from './components/utils'
-import { c } from 'ttag'
 import { isFontLoaded, loadFont } from './fonts/font-state'
 import debounce from 'lodash/debounce'
 import type { Doc as YDoc, Transaction } from 'yjs'
-import { getCurrencyFromLocale, useAccountLocale, useLocaleAuto } from './locale'
+import { getCurrencyFromLocale } from './messages/locale'
 import { CURRENCY_SYMBOL } from './constants'
 import type { SpreadsheetLocalYjsAuditKey, SpreadsheetLocalYjsUpdateAuditResult } from './yjs-local-update-audit'
 import { detectLocalYjsUpdateDrift, recordSpreadsheetLocalStateChange } from './yjs-local-update-audit'
 import { formatSpreadsheetYjsDriftLogDetails } from './yjs-drift-log'
 import { minutesToMs, secondsToMs } from './time-utils'
 import { getAccentColorForUsername } from './getAccentColorForUsername'
-import { useSheetsDependencies } from './SheetsDependenciesProvider'
+import { useSheetsDependencies, useSheetsMessages } from './SheetsDependenciesProvider'
 import { SheetsActions, type SheetsActionType } from './contract/SheetsAction'
 import { sortSheetsByIndex } from '@rowsncolumns/utils'
 import { getBufferHash } from './spreadsheet-update-hash'
@@ -433,8 +432,9 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
     }
   }, [deps.isDriftDetectionEnabled, receivedEverythingFromRTS])
 
-  const localeAccount = useAccountLocale()
-  const localeAuto = useLocaleAuto()
+  const {
+    localization: { uiLocale: localeAccount, defaultWorkbookLocale: localeAuto },
+  } = useSheetsDependencies()
   const localeResolved = kv.locale ?? localeAuto
   const localeCurrency = getCurrencyFromLocale(localeResolved)
   const localeCurrencySymbol = CURRENCY_SYMBOL({ currency: localeCurrency, locale: localeResolved })
@@ -722,16 +722,17 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
   })
 
   const { showNotification } = useSheetsDependencies()
+  const messages = useSheetsMessages()
   const onDeleteRow = useEvent((sheetId: number, rowIndexes: number[]) => {
     if (baseState.rowCount === rowIndexes.length) {
-      showNotification({ text: c('sheets_2025:Spreadsheet editor').t`Cannot delete all rows`, type: 'error' })
+      showNotification({ text: messages.cannotDeleteAllRows, type: 'error' })
       return
     }
     baseState.onDeleteRow(sheetId, rowIndexes)
   })
   const onDeleteColumn = useEvent((sheetId: number, columnIndexes: number[]) => {
     if (baseState.columnCount === columnIndexes.length) {
-      showNotification({ text: c('sheets_2025:Spreadsheet editor').t`Cannot delete all columns`, type: 'error' })
+      showNotification({ text: messages.cannotDeleteAllColumns, type: 'error' })
       return
     }
     baseState.onDeleteColumn(sheetId, columnIndexes)
@@ -905,6 +906,8 @@ export function useVersioning(
   state: ProtonSheetsState,
   setMigrationEditingLocked: (inProgress: boolean) => void,
 ) {
+  const messages = useSheetsMessages()
+
   const { receivedEverythingFromRTS, logger, reloadClient, reportUserInterfaceError } = useSheetsDependencies()
   const version = useKeyValueState((state) => state.version)
   const { kvSet, clientID, isKVStateInitialized } = state.yjsState
@@ -1000,8 +1003,9 @@ export function useVersioning(
         logger.error('versioning: client version is still incompatible after reload')
         reportUserInterfaceError(
           new Error(
-            c('Error')
-              .t`This spreadsheet is incompatible with the current client version. Please try reloading the client. If the error persists, please contact support.`,
+            messages.state[
+              'This spreadsheet is incompatible with the current client version. Please try reloading the client. If the error persists, please contact support.'
+            ],
           ),
           { irrecoverable: false, lockEditor: true },
         )
@@ -1063,4 +1067,14 @@ export function useVersioning(
   }, [kvChangeHandler, isKVStateInitialized])
 
   return { setInitialVersion }
+}
+
+export const stateMessages = {
+  columns: (count: number) => `${count} ${count === 1 ? 'column' : 'columns'}`,
+  rows: (count: number) => `${count} ${count === 1 ? 'row' : 'rows'}`,
+  cannotDeleteAllRows: 'Cannot delete all rows',
+  cannotDeleteAllColumns: 'Cannot delete all columns',
+  state: {
+    'This spreadsheet is incompatible with the current client version. Please try reloading the client. If the error persists, please contact support.': `This spreadsheet is incompatible with the current client version. Please try reloading the client. If the error persists, please contact support.`,
+  },
 }
