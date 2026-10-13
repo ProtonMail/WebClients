@@ -1,14 +1,12 @@
-import { c } from 'ttag'
-import { createStringifier } from '../../stringifier'
+import { useSheetsMessages } from '../../SheetsDependenciesProvider'
+
 import { useLayoutEffect, useMemo, useState } from 'react'
-import { getCurrencyList } from '../../locale'
+import { getCurrencyList } from '../../messages/locale'
 import { useUI } from '../../ui-store'
-import clsx from 'clsx'
+import { clsx } from 'clsx'
 import { Button, FormGroup, FormLabel, Input, Select, SelectItem, SelectPopover } from '../Sidebar/shared'
 import * as Ariakit from '@ariakit/react'
 import { ssfFormat } from '@rowsncolumns/utils'
-
-const { s } = createStringifier(strings)
 
 function getCurrencyVariations(locale: string, symbol: string, currencyCode?: string) {
   // 1. Define the raw patterns
@@ -60,6 +58,8 @@ function getCurrencyVariations(locale: string, symbol: string, currencyCode?: st
 }
 
 export function CustomCurrencyFormatDialog() {
+  const messages = useSheetsMessages()
+
   const store = useUI((ui) => ui.view.customCurrencyFormatDialog.store)
   const sheetId = useUI((ui) => ui.legacy.activeSheetId)
   const selections = useUI((ui) => ui.legacy.selections)
@@ -120,14 +120,16 @@ export function CustomCurrencyFormatDialog() {
       >
         <div className="flex flex-col">
           <div className="mb-6">
-            <Ariakit.DialogHeading className="text-lg font-bold">{s('Custom currencies')}</Ariakit.DialogHeading>
+            <Ariakit.DialogHeading className="text-lg font-bold">
+              {messages.customCurrencyFormatDialog['Custom currencies']}
+            </Ariakit.DialogHeading>
           </div>
 
           <div className="mb-4 grid shrink-0 grid-cols-2 items-center gap-2">
             <FormGroup>
-              <FormLabel>Symbol</FormLabel>
+              <FormLabel>{messages.customCurrencyFormatDialog.Symbol}</FormLabel>
               <Input
-                placeholder={s('Currency symbol')}
+                placeholder={messages.customCurrencyFormatDialog['Currency symbol']}
                 value={currencySymbol}
                 onChange={(event) => {
                   const value = event.target.value
@@ -139,7 +141,7 @@ export function CustomCurrencyFormatDialog() {
             </FormGroup>
 
             <FormGroup>
-              <FormLabel>Format</FormLabel>
+              <FormLabel>{messages.customCurrencyFormatDialog.Format}</FormLabel>
               <Ariakit.SelectProvider store={selectStore}>
                 <Select />
                 <SelectPopover sameWidth>
@@ -183,7 +185,9 @@ export function CustomCurrencyFormatDialog() {
 
             {filteredCurrencyList.length === 0 ? (
               <div className="flex h-full grow items-center justify-center">
-                <span className="text-center text-sm text-[#949494]">{s('Apply to create a custom currency')}</span>
+                <span className="text-center text-sm text-[#949494]">
+                  {messages.customCurrencyFormatDialog['Apply to create a custom currency']}
+                </span>
               </div>
             ) : null}
           </div>
@@ -194,7 +198,7 @@ export function CustomCurrencyFormatDialog() {
               type="button"
               className="inline-flex h-[36px] items-center gap-1.5 rounded-lg border border-[#DEDBD9] px-4 text-[13px]"
             >
-              {s('Cancel')}
+              {messages.customCurrencyFormatDialog.Cancel}
             </Button>
             <Button
               type="button"
@@ -202,7 +206,7 @@ export function CustomCurrencyFormatDialog() {
               className="inline-flex h-[36px] items-center gap-1.5 rounded-lg bg-[#6D4AFF] px-4 text-[13px] text-[white] aria-disabled:opacity-50"
               onClick={apply}
             >
-              {s('Apply')}
+              {messages.customCurrencyFormatDialog.Apply}
             </Button>
           </div>
         </div>
@@ -211,13 +215,15 @@ export function CustomCurrencyFormatDialog() {
   )
 }
 
-function strings() {
-  return {
-    'Custom currencies': c('sheets_2025:Spreadsheet sidebar custom currency format dialog').t`Custom currencies`,
-    'Currency symbol': c('sheets_2025:Spreadsheet sidebar custom currency format dialog').t`Currency symbol`,
-    Cancel: c('sheets_2025:Spreadsheet sidebar custom currency format dialog').t`Cancel`,
-    Apply: c('sheets_2025:Spreadsheet sidebar custom currency format dialog').t`Apply`,
-    'Apply to create a custom currency': c('sheets_2025:Spreadsheet sidebar custom currency format dialog')
-      .t`Apply to create a custom currency`,
-  }
+export const customCurrencyFormatDialogMessages = {
+  customCurrencyFormatDialog: {
+    'Custom currencies': `Custom currencies`,
+    'Currency symbol': `Currency symbol`,
+    Cancel: `Cancel`,
+    Apply: `Apply`,
+    'Apply to create a custom currency': `Apply to create a custom currency`,
+
+    Symbol: 'Symbol',
+    Format: 'Format',
+  },
 }

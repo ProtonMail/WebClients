@@ -1,3 +1,4 @@
+import { useSheetsMessages, useSheetsDependencies } from './SheetsDependenciesProvider'
 import { functions } from '@rowsncolumns/functions'
 import { createCSVFromSheetData, createExcelFile, createODSFile } from '@rowsncolumns/toolkit'
 import type { ForwardedRef } from 'react'
@@ -15,11 +16,10 @@ import { Sidebar } from './components/Sidebar/Sidebar'
 import { useFocusSheet } from '@rowsncolumns/spreadsheet'
 import { EditingDisabledDialog } from './components/misc/EditingDisabledDialog'
 import { CircleLoader } from './components/CircleLoader/CircleLoader'
-import { c } from 'ttag'
+
 import { useActiveBreakpoint } from './useActiveBreakpoint'
 
 import type { SpreadsheetLocalYjsUpdateAuditResult } from './yjs-local-update-audit'
-import { useSheetsDependencies } from './SheetsDependenciesProvider'
 import { getSheetNameFromFilename } from './sheet-import-name'
 import type { SheetsDocumentAdapter } from './contract/SheetsDocumentAdapter'
 import type { SpreadsheetImportRequest } from './contract/SpreadsheetImportRequest'
@@ -69,6 +69,8 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   }: SpreadsheetProps,
   ref: ForwardedRef<SpreadsheetRef>,
 ) {
+  const messages = useSheetsMessages()
+
   const {
     canEdit,
     logger,
@@ -110,21 +112,15 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
       } else if (counts['local-change-not-observed-by-yjs'] > 0) {
         reportSheetsYjsDriftDetected('local-change-not-observed-by-yjs')
       }
-      reportError(
-        new Error(
-          c('Error')
-            .t`This spreadsheet detected a local syncing inconsistency. Editing has been disabled to prevent data loss. Please file a report and if you are okay with sharing the contents, download and include the debug information from below.`,
-        ),
-        {
-          driftResult: {
-            localChangedKeys: result.localChangedKeys,
-            observedYjsKeys: result.observedYjsKeys,
-          },
+      reportError(new Error(messages.spreadsheet.syncingInconsistency), {
+        driftResult: {
+          localChangedKeys: result.localChangedKeys,
+          observedYjsKeys: result.observedYjsKeys,
         },
-      )
+      })
       showYjsDriftDetectedErrorModal(driftLogDetails)
     },
-    [reportError, reportSheetsYjsDriftDetected, showYjsDriftDetectedErrorModal],
+    [messages, reportError, reportSheetsYjsDriftDetected, showYjsDriftDetectedErrorModal],
   )
 
   const storeAction = useMemo(
@@ -335,8 +331,8 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     return (
       <div className="absolute left-0 top-0 flex h-full w-full flex-col items-center justify-center gap-4">
         <CircleLoader size="large" />
-        {importType === 'excel' && <p className="text-sm">{c('Info').t`Importing Excel file...`}</p>}
-        {importType === 'ods' && <p className="text-sm">{c('Info').t`Importing ODS file...`}</p>}
+        {importType === 'excel' && <p className="text-sm">{messages.spreadsheet['Importing Excel file...']}</p>}
+        {importType === 'ods' && <p className="text-sm">{messages.spreadsheet['Importing ODS file...']}</p>}
       </div>
     )
   }
@@ -386,4 +382,12 @@ function UI({ hidden, isVersionHistoryView, isPublicMode }: UIProps) {
       </div>
     </>
   )
+}
+
+export const spreadsheetMessages = {
+  spreadsheet: {
+    syncingInconsistency: `This spreadsheet detected a local syncing inconsistency. Editing has been disabled to prevent data loss. Please file a report and if you are okay with sharing the contents, download and include the debug information from below.`,
+    'Importing Excel file...': `Importing Excel file...`,
+    'Importing ODS file...': `Importing ODS file...`,
+  },
 }

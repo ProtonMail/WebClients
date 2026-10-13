@@ -1,3 +1,4 @@
+import { useSheetsMessages } from '../../SheetsDependenciesProvider'
 import { Direction, type CellInterface, type CellPosition, type ScrollCoords } from '@rowsncolumns/grid'
 import { isNil } from '@rowsncolumns/utils'
 import { useState, type ReactElement } from 'react'
@@ -6,14 +7,11 @@ import * as Ariakit from '@ariakit/react'
 import * as Atoms from '../atoms'
 import * as UI from '../ui'
 import * as Icons from '../icons'
-import { c } from 'ttag'
-import { createStringifier } from '../../stringifier'
+
 import { createComponent } from '../utils'
 import { FilterByCondition } from './FilterByCondition'
 import { FilterByValue } from './FilterByValue'
 import { Button } from '../Sidebar/shared'
-
-const { s } = createStringifier(strings)
 
 const isTableView = (filter: FilterView | TableView): filter is TableView => {
   return 'columns' in filter
@@ -97,6 +95,8 @@ function FilterBoxContent({
   filter,
   values,
 }: FilterBoxContentProps) {
+  const messages = useSheetsMessages()
+
   const filterSpec = filter?.filterSpecs?.find((spec) => spec.columnIndex === dimensionIndex)
   const filterCriteria = filterSpec?.filterCriteria
   const [conditionType, onChangeConditionType] = useState<ConditionType | undefined>(
@@ -132,7 +132,7 @@ function FilterBoxContent({
                 onInsertTableColumn?.(filter, dimensionIndex, Direction.Left)
               }}
             >
-              {s('Insert 1 table column left')}
+              {messages.filterBox['Insert 1 table column left']}
             </FilterBoxButton>
 
             <FilterBoxButton
@@ -141,7 +141,7 @@ function FilterBoxContent({
                 onInsertTableColumn?.(filter, dimensionIndex, Direction.Right)
               }}
             >
-              {s('Insert 1 table column right')}
+              {messages.filterBox['Insert 1 table column right']}
             </FilterBoxButton>
 
             <FilterBoxButton
@@ -150,7 +150,7 @@ function FilterBoxContent({
                 onDeleteTableColumn?.(filter, dimensionIndex)
               }}
             >
-              {s('Delete table column')}
+              {messages.filterBox['Delete table column']}
             </FilterBoxButton>
             <Atoms.DropdownSeparator />
           </>
@@ -162,7 +162,7 @@ function FilterBoxContent({
             onSort?.(sheetId, filter, dimensionIndex, 'ASCENDING')
           }}
         >
-          {s('Sort A → Z')}
+          {messages.filterBox['Sort A → Z']}
         </FilterBoxButton>
 
         <FilterBoxButton
@@ -171,7 +171,7 @@ function FilterBoxContent({
             onSort?.(sheetId, filter, dimensionIndex, 'DESCENDING')
           }}
         >
-          {s('Sort Z → A')}
+          {messages.filterBox['Sort Z → A']}
         </FilterBoxButton>
 
         <div className="px-4 py-2">
@@ -199,30 +199,30 @@ function FilterBoxContent({
           className="inline-flex h-[36px] items-center gap-1.5 rounded-lg bg-[#6D4AFF] px-4 text-[13px] text-[white]"
           onClick={onApply}
         >
-          {s('Apply')}
+          {messages.filterBox.Apply}
         </Button>
         <Button
           render={<Ariakit.PopoverDismiss />}
           type="button"
           className="inline-flex h-[36px] items-center gap-1.5 rounded-lg border border-[#DEDBD9] px-4 text-[13px]"
         >
-          {s('Cancel')}
+          {messages.filterBox.Cancel}
         </Button>
       </div>
     </div>
   )
 }
 
-function strings() {
-  return {
-    Copy: c('sheets_2025:Spreadsheet filter menu').t`Copy`,
-    Paste: c('sheets_2025:Spreadsheet filter menu').t`Paste`,
-    'Insert 1 table column left': c('sheets_2025:Spreadsheet filter menu').t`Insert 1 table column left`,
-    'Insert 1 table column right': c('sheets_2025:Spreadsheet filter menu').t`Insert 1 table column right`,
-    'Delete table column': c('sheets_2025:Spreadsheet filter menu').t`Delete table column`,
-    'Sort A → Z': c('sheets_2025:Spreadsheet filter menu').t`Sort A → Z`,
-    'Sort Z → A': c('sheets_2025:Spreadsheet filter menu').t`Sort Z → A`,
-    Apply: c('sheets_2025:Spreadsheet filter menu').t`Apply`,
-    Cancel: c('sheets_2025:Spreadsheet filter menu').t`Cancel`,
-  }
+export const filterBoxMessages = {
+  filterBox: {
+    Copy: `Copy`,
+    Paste: `Paste`,
+    'Insert 1 table column left': `Insert 1 table column left`,
+    'Insert 1 table column right': `Insert 1 table column right`,
+    'Delete table column': `Delete table column`,
+    'Sort A → Z': `Sort A → Z`,
+    'Sort Z → A': `Sort Z → A`,
+    Apply: `Apply`,
+    Cancel: `Cancel`,
+  },
 }

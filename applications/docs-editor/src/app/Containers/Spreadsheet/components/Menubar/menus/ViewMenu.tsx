@@ -1,14 +1,13 @@
+import type { SheetsMessages } from '../../../messages/SheetsMessages'
+import { useSheetsMessages } from '../../../SheetsDependenciesProvider'
 import * as Ariakit from '@ariakit/react'
 import type { ReactElement } from 'react'
-import { c } from 'ttag'
-import { createStringifier } from '../../../stringifier'
+
 import * as UI from '../../ui'
 import * as Icons from '../../icons'
 import { ZOOM_DEFAULT, ZOOM_SUGGESTIONS } from '../../../constants'
 import { scaleToPercentage } from '../../utils'
 import { useUI } from '../../../ui-store'
-
-const { s } = createStringifier(strings)
 
 export interface ViewMenuProps extends Ariakit.MenuProviderProps {
   renderMenuButton: ReactElement
@@ -31,17 +30,19 @@ export function ViewMenu({ renderMenuButton, ...props }: ViewMenuProps) {
 }
 
 function HiddenSheetsSubmenu() {
+  const messages = useSheetsMessages()
+
   const hiddenSheets = useUI((ui) => ui.sheets.hidden)
   const showSheet = useUI.$.sheets.show
   return (
     <Ariakit.MenuProvider>
       <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.eyeSlash} />} disabled={hiddenSheets.length === 0}>
-        {s('Hidden sheets')} {hiddenSheets.length > 0 ? `(${hiddenSheets.length})` : ''}
+        {messages.viewMenu['Hidden sheets']} {hiddenSheets.length > 0 ? `(${hiddenSheets.length})` : ''}
       </UI.SubMenuButton>
       <UI.SubMenu unmountOnHide>
         {hiddenSheets.map((sheet) => (
           <UI.MenuItem key={sheet.sheetId} onClick={() => showSheet(sheet.sheetId)}>
-            {s('Show')} <span className="font-bold">{sheet.title}</span>
+            {messages.viewMenu.Show} <span className="font-bold">{sheet.title}</span>
           </UI.MenuItem>
         ))}
       </UI.SubMenu>
@@ -80,25 +81,27 @@ function HiddenSheetsSubmenu() {
 // }
 
 function ShowSubmenu() {
+  const messages = useSheetsMessages()
+
   const showFormulaBar = useUI((ui) => ui.view.formulaBar.enabled)
   const showGridlines = useUI((ui) => ui.view.gridLines.enabled)
   return (
     <Ariakit.MenuProvider>
-      <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.eye} />}>{s('Show')}</UI.SubMenuButton>
+      <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.eye} />}>{messages.viewMenu.Show}</UI.SubMenuButton>
       <UI.SubMenu unmountOnHide>
         <UI.MenuItem
           leadingIndent
           selectedIndicator={showFormulaBar}
           onClick={useUI.$.withFocusGrid(useUI.$.view.formulaBar.toggle)}
         >
-          {s('Formula bar')}
+          {messages.viewMenu['Formula bar']}
         </UI.MenuItem>
         <UI.MenuItem
           leadingIndent
           selectedIndicator={showGridlines}
           onClick={useUI.$.withFocusGrid(useUI.$.view.gridLines.toggle)}
         >
-          {s('Gridlines')}
+          {messages.viewMenu.Gridlines}
         </UI.MenuItem>
       </UI.SubMenu>
     </Ariakit.MenuProvider>
@@ -106,6 +109,8 @@ function ShowSubmenu() {
 }
 
 function FreezeSubmenu() {
+  const messages = useSheetsMessages()
+
   const freezeRows = useUI.$.view.freezeRows
   const freezeColumns = useUI.$.view.freezeColumns
   const activeRowIndex = useUI((ui) => ui.info.activeRowIndex)
@@ -117,46 +122,48 @@ function FreezeSubmenu() {
         leadingIconSlot={<UI.Icon data={Icons.freezeTable} />}
         disabled={useUI((ui) => ui.info.isReadonly)}
       >
-        {s('Freeze')}
+        {messages.viewMenu.Freeze}
       </UI.SubMenuButton>
       <UI.SubMenu unmountOnHide>
         <UI.MenuItem
           onClick={useUI.$.withFocusGrid(useUI.$.view.unfreezeRows)}
           disabled={useUI((ui) => ui.info.isReadonly)}
         >
-          No rows
+          {messages.viewMenu['No rows']}
         </UI.MenuItem>
         <UI.MenuItem onClick={useUI.$.withFocusGrid(() => freezeRows(1))} disabled={useUI((ui) => ui.info.isReadonly)}>
-          1 row
+          {messages.viewMenu['1 row']}
         </UI.MenuItem>
         <UI.MenuItem onClick={useUI.$.withFocusGrid(() => freezeRows(2))} disabled={useUI((ui) => ui.info.isReadonly)}>
-          2 rows
+          {messages.viewMenu['2 rows']}
         </UI.MenuItem>
         <UI.MenuItem
           onClick={useUI.$.withFocusGrid(() => freezeRows(activeRowIndex))}
           disabled={useUI((ui) => ui.info.isReadonly)}
         >
-          {s('Up to')} <b>{rowString(activeRowIndex)}</b>
+          {messages.viewMenu['Up to']} <b>{rowString(messages, activeRowIndex)}</b>
         </UI.MenuItem>
         <UI.MenuSeparator />
         <UI.MenuItem
           onClick={useUI.$.withFocusGrid(useUI.$.view.unfreezeColumns)}
           disabled={useUI((ui) => ui.info.isReadonly)}
         >
-          No columns
+          {messages.viewMenu['No columns']}
         </UI.MenuItem>
         <UI.MenuItem
           onClick={useUI.$.withFocusGrid(() => freezeColumns(1))}
           disabled={useUI((ui) => ui.info.isReadonly)}
         >
-          1 column
+          {messages.viewMenu['1 column']}
         </UI.MenuItem>
-        <UI.MenuItem onClick={useUI.$.withFocusGrid(() => freezeColumns(2))}>2 columns</UI.MenuItem>
+        <UI.MenuItem onClick={useUI.$.withFocusGrid(() => freezeColumns(2))}>
+          {messages.viewMenu['2 columns']}
+        </UI.MenuItem>
         <UI.MenuItem
           onClick={useUI.$.withFocusGrid(() => freezeColumns(activeColumnIndex))}
           disabled={useUI((ui) => ui.info.isReadonly)}
         >
-          {s('Up to')} <b>{columnString(activeColumnName)}</b>
+          {messages.viewMenu['Up to']} <b>{columnString(messages, activeColumnName)}</b>
         </UI.MenuItem>
       </UI.SubMenu>
     </Ariakit.MenuProvider>
@@ -164,11 +171,13 @@ function FreezeSubmenu() {
 }
 
 function ZoomSubmenu() {
+  const messages = useSheetsMessages()
+
   const zoomValue = useUI((ui) => ui.zoom.value) ?? ZOOM_DEFAULT
   const setZoom = useUI.$.zoom.set
   return (
     <Ariakit.MenuProvider values={{ zoom: zoomValue }}>
-      <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.zoomIn} />}>{s('Zoom')}</UI.SubMenuButton>
+      <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.zoomIn} />}>{messages.viewMenu.Zoom}</UI.SubMenuButton>
       <UI.SubMenu unmountOnHide>
         {ZOOM_SUGGESTIONS.map((scale) => (
           <UI.MenuItemRadio name="zoom" key={scale} value={scale} onClick={() => setZoom(scale)}>
@@ -180,25 +189,31 @@ function ZoomSubmenu() {
   )
 }
 
-function columnString(columnLetter: string) {
-  // translator: this is used in the context of two strings put together - (freeze) "Up to | column X" (the | symbol is used to show the separation between the two strings), and it's separate because "column X" needs to be bold, the order of these two strings cannot be changed and they will be separated by spaces
-  return c('sheets_2025:Spreadsheet editor menubar view menu (freeze submenu)').t`column ${columnLetter}`
+function columnString(messages: SheetsMessages, columnLetter: string) {
+  return messages.viewMenu['column ${columnLetter}'](columnLetter)
 }
 
-function rowString(rowNumber: number) {
-  // translator: this is used in the context of two strings put together - (freeze) "Up to | row X" (the | symbol is used to show the separation between the two strings), and it's separate because "row X" needs to be bold, the order of these two strings cannot be changed and they will be separated by spaces
-  return c('sheets_2025:Spreadsheet editor menubar view menu (freeze submenu)').t`row ${rowNumber}`
+function rowString(messages: SheetsMessages, rowNumber: number) {
+  return messages.viewMenu['row ${rowNumber}'](rowNumber)
 }
 
-function strings() {
-  return {
-    Show: c('sheets_2025:Spreadsheet editor menubar view menu').t`Show`,
-    'Formula bar': c('sheets_2025:Spreadsheet editor menubar view menu').t`Formula bar`,
-    Gridlines: c('sheets_2025:Spreadsheet editor menubar view menu').t`Gridlines`,
-    Freeze: c('sheets_2025:Spreadsheet editor menubar view menu').t`Freeze`,
-    // translator: this is used in the context of two strings put together - (freeze) "Up to | row X" or (freeze) "up to | column X" (the | symbol is used to show the separation between the two strings), and it's separate because "row X" (or "column X") needs to be bold, the order of these two strings cannot be changed and they will be separated by spaces
-    'Up to': c('sheets_2025:Spreadsheet editor menubar view menu (freeze submenu)').t`Up to`,
-    Zoom: c('sheets_2025:Spreadsheet editor menubar view menu').t`Zoom`,
-    'Hidden sheets': c('sheets_2025:Spreadsheet editor menubar view menu (hidden sheets submenu)').t`Hidden sheets`,
-  }
+export const viewMenuMessages = {
+  viewMenu: {
+    Show: `Show`,
+    'Formula bar': `Formula bar`,
+    Gridlines: `Gridlines`,
+    Freeze: `Freeze`,
+    'Up to': `Up to`,
+    Zoom: `Zoom`,
+    'Hidden sheets': `Hidden sheets`,
+    'column ${columnLetter}': (columnLetter: string) => `column ${columnLetter}`,
+    'row ${rowNumber}': (rowNumber: number) => `row ${rowNumber}`,
+
+    'No rows': 'No rows',
+    '1 row': '1 row',
+    '2 rows': '2 rows',
+    'No columns': 'No columns',
+    '1 column': '1 column',
+    '2 columns': '2 columns',
+  },
 }

@@ -1,3 +1,4 @@
+import { useSheetsMessages, useSheetsDependencies } from '../../SheetsDependenciesProvider'
 import * as Icons from '../icons'
 import * as Ariakit from '@ariakit/react'
 import type { CellInterface } from '@rowsncolumns/grid'
@@ -5,15 +6,12 @@ import type { CellTooltipProps } from '@rowsncolumns/spreadsheet'
 import { clsx } from 'clsx'
 import type { ComponentPropsWithoutRef } from 'react'
 import { type Ref, useCallback, useLayoutEffect, useRef, useState } from 'react'
-import { c } from 'ttag'
-import { useSheetsDependencies } from '../../SheetsDependenciesProvider'
-import { createStringifier } from '../../stringifier'
+
 import { useUI } from '../../ui-store'
 import * as UI from '../ui'
 import { Icon, type IconData } from '../ui'
 import { createComponent } from '../utils'
 import { copyTextToClipboard } from './copyTextToClipboard'
-const { s } = createStringifier(strings)
 
 interface ItemProps extends Ariakit.ButtonProps {
   ref?: Ref<HTMLButtonElement>
@@ -75,6 +73,8 @@ export function CellTooltip({
   onRequestPinTooltip,
   onRequestUnpinTooltip,
 }: CellTooltipProps) {
+  const messages = useSheetsMessages()
+
   const popover = Ariakit.usePopoverStore({ open: true })
   const sheetId = useUI((state) => state.legacy.activeSheetId)
   const onRemoveLink = useUI.$.legacy.onRemoveLink
@@ -91,9 +91,9 @@ export function CellTooltip({
 
   let contentTitle = title
   if (variant === 'error') {
-    contentTitle = s('Error')
+    contentTitle = messages.cellTooltip.Error
   } else if (variant === 'invalid') {
-    contentTitle = s('Invalid')
+    contentTitle = messages.cellTooltip.Invalid
   } else if (isHyperlink) {
     contentTitle = ''
   }
@@ -138,7 +138,7 @@ export function CellTooltip({
         {(note || noteEditorCell) && (
           <div className="grid grid-cols-[1rem_1fr] grid-rows-[auto_1fr] gap-x-1.5 gap-y-2.5 border-l-2 border-[#F27D00] bg-[--background-norm] p-2 pb-1 pr-1">
             <Icon data={Icons.note} className="self-center text-[#F27D00]" />
-            <div className="text-xs font-semibold text-[#F27D00]">{s('Note')}</div>
+            <div className="text-xs font-semibold text-[#F27D00]">{messages.cellTooltip.Note}</div>
             <NoteEditor
               initialValue={note}
               noteEditorCell={noteEditorCell}
@@ -221,6 +221,8 @@ function LinkInfo({
   sheetId: number
   onRemoveLink: NonNullable<CellTooltipProps['onRemoveLink']>
 }) {
+  const messages = useSheetsMessages()
+
   const link = getLink(hyperlink)
   const url = link.startsWith('http') ? link : 'https://' + link
   const isReadonly = useUI((state) => state.info.isReadonly)
@@ -228,14 +230,14 @@ function LinkInfo({
   const { openLink, reportError, showNotification } = useSheetsDependencies()
   const copyLink = useCallback(() => {
     copyTextToClipboard(url)
-    showNotification({ text: s('Copied') })
-  }, [showNotification, url])
+    showNotification({ text: messages.cellTooltip.Copied })
+  }, [messages, showNotification, url])
 
   const selections = useUI((state) => state.legacy.selections)
   const removeLink = useCallback(() => {
     onRemoveLink(sheetId, cell, selections)
-    showNotification({ text: s('Removed') })
-  }, [cell, showNotification, onRemoveLink, selections, sheetId])
+    showNotification({ text: messages.cellTooltip.Removed })
+  }, [messages, cell, showNotification, onRemoveLink, selections, sheetId])
 
   const openInsertLinkDialog = useUI.$.view.insertLinkDialog.open
   const editLink = useCallback(() => {
@@ -259,13 +261,13 @@ function LinkInfo({
         </a>
         <div className="flex items-center gap-1">
           <Button icon={Icons.squares} onClick={copyLink} disabled={isReadonly}>
-            {s('Copy link')}
+            {messages.cellTooltip['Copy link']}
           </Button>
           <Button icon={Icons.pencil} onClick={editLink} disabled={isReadonly}>
-            {s('Edit link')}
+            {messages.cellTooltip['Edit link']}
           </Button>
           <Button icon={Icons.linkSlash} onClick={useUI.$.withFocusGrid(removeLink)} disabled={isReadonly}>
-            {s('Remove link')}
+            {messages.cellTooltip['Remove link']}
           </Button>
         </div>
       </div>
@@ -273,15 +275,15 @@ function LinkInfo({
   )
 }
 
-function strings() {
-  return {
-    'Copy link': c('sheets_2025:Spreadsheet link tooltip').t`Copy link`,
-    Copied: c('sheets_2025:Spreadsheet link tooltip').t`Link copied to clipboard`,
-    'Edit link': c('sheets_2025:Spreadsheet link tooltip').t`Edit link`,
-    'Remove link': c('sheets_2025:Spreadsheet link tooltip').t`Remove link`,
-    Removed: c('sheets_2025:Spreadsheet link tooltip').t`Link removed`,
-    Note: c('sheets_2025:Spreadsheet cell tooltip').t`Note`,
-    Error: c('sheets_2025:Spreadsheet cell tooltip').t`Error`,
-    Invalid: c('sheets_2025:Spreadsheet cell tooltip').t`Invalid`,
-  }
+export const cellTooltipMessages = {
+  cellTooltip: {
+    'Copy link': `Copy link`,
+    Copied: `Link copied to clipboard`,
+    'Edit link': `Edit link`,
+    'Remove link': `Remove link`,
+    Removed: `Link removed`,
+    Note: `Note`,
+    Error: `Error`,
+    Invalid: `Invalid`,
+  },
 }

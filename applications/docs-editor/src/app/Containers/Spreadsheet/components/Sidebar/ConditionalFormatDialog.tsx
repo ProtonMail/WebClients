@@ -1,3 +1,4 @@
+import { useSheetsMessages } from '../../SheetsDependenciesProvider'
 /* eslint-disable no-nested-ternary */
 
 import {
@@ -26,11 +27,11 @@ import {
 } from '@rowsncolumns/spreadsheet'
 import { Icon } from '../ui'
 import * as Atoms from '../atoms'
-import { c } from 'ttag'
+
 import * as Ariakit from '@ariakit/react'
 import omit from 'lodash/omit'
 import { clsx } from 'clsx'
-import { createStringifier } from '../../stringifier'
+
 import { forwardRef, Fragment, useState, useMemo, useEffect } from 'react'
 import * as Icons from '../icons'
 import { SidebarDialog, SidebarDialogHeader } from './SidebarDialog'
@@ -41,8 +42,6 @@ import { useEvent } from '../utils'
 import { Button, FormGroup, FormLabel, Input, Select, SelectItem, SelectPopover } from './shared'
 import { useUI } from '../../ui-store'
 import { ColorPicker } from '../shared/ColorPicker'
-
-const { s } = createStringifier(strings)
 
 const Tab = forwardRef<HTMLButtonElement, Ariakit.TabProps>(function Tab({ className, ...props }, ref) {
   return (
@@ -106,6 +105,8 @@ interface RuleEditorProps {
 }
 
 function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewRule: onAddRule }: RuleEditorProps) {
+  const messages = useSheetsMessages()
+
   const { rangeToFormula, formulaToRange } = useFormulaRangeHelpers({ sheetId })
   const form = useForm<ConditionalFormatRule>({ defaultValues: rule })
   const { subscribe } = form
@@ -145,8 +146,8 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
       <div className="flex min-h-0 grow flex-col">
         <div className="shrink-0 px-4">
           <Ariakit.TabList className="grid grid-cols-2 border-b-[0.5px] border-[#EAE7E4]">
-            <Tab id={TABS.SINGLE_COLOR}>{s('Single color')}</Tab>
-            <Tab id={TABS.COLOR_SCALE}>{s('Color scale')}</Tab>
+            <Tab id={TABS.SINGLE_COLOR}>{messages.conditionalFormatDialog['Single color']}</Tab>
+            <Tab id={TABS.COLOR_SCALE}>{messages.conditionalFormatDialog['Color scale']}</Tab>
           </Ariakit.TabList>
         </div>
 
@@ -154,7 +155,9 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
           <div className="py-4">
             <div className="flex flex-col gap-4">
               <FormGroup>
-                <FormLabel className="text-sm font-semibold">{s('Apply to range')}</FormLabel>
+                <FormLabel className="text-sm font-semibold">
+                  {messages.conditionalFormatDialog['Apply to range']}
+                </FormLabel>
 
                 <div className="flex flex-col gap-1">
                   <div className="flex flex-col gap-1">
@@ -178,7 +181,7 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
                               }}
                               value={rangeToFormula(range)}
                               required
-                              placeholder={s('Select a range')}
+                              placeholder={messages.conditionalFormatDialog['Select a range']}
                               autoFocus={rangeIndex === formValue.ranges.length - 1}
                               className="mb-0 w-full"
                             />
@@ -188,7 +191,7 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
                             <button
                               type="button"
                               className="flex size-[36px] shrink-0 items-center justify-center"
-                              aria-label={s('Delete range')}
+                              aria-label={messages.conditionalFormatDialog['Delete range']}
                               onClick={() => {
                                 form.setValue(
                                   'ranges',
@@ -223,7 +226,7 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
                         )
                       }}
                     >
-                      {s('Add another range')}
+                      {messages.conditionalFormatDialog['Add another range']}
                     </Button>
                   </div>
                 </div>
@@ -231,7 +234,7 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
 
               <Ariakit.TabPanel tabId={TABS.SINGLE_COLOR} className="flex flex-col gap-4">
                 <FormGroup>
-                  <FormLabel>{s('Format rules')}</FormLabel>
+                  <FormLabel>{messages.conditionalFormatDialog['Format rules']}</FormLabel>
                   <div className="flex flex-col gap-2">
                     <Ariakit.SelectProvider
                       value={booleanRule?.condition?.type ?? CONDITION_NONE}
@@ -243,11 +246,11 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
                       <Select />
                       <SelectPopover sameWidth>
                         <Ariakit.SelectGroup className="py-2">
-                          <SelectItem value={CONDITION_NONE}>{s('None')}</SelectItem>
-                          {CONDITION_LABELS.map(({ condition, label }) => {
+                          <SelectItem value={CONDITION_NONE}>{messages.conditionalFormatDialog.None}</SelectItem>
+                          {CONDITION_LABELS.map(({ condition }) => {
                             return (
                               <SelectItem key={condition} value={condition}>
-                                {label}
+                                {messages.conditions[condition]}
                               </SelectItem>
                             )
                           })}
@@ -264,7 +267,7 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
                             }}
                             value={fromValue ?? '='}
                             required
-                            placeholder={s('Enter a formula')}
+                            placeholder={messages.conditionalFormatDialog['Enter a formula']}
                             autoFocus
                             functionDescriptions={FUNCTION_DESCRIPTIONS}
                             className="mb-0 w-full"
@@ -272,7 +275,7 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
                         </div>
                       ) : (
                         <Input
-                          placeholder={s('Enter value')}
+                          placeholder={messages.conditionalFormatDialog['Enter value']}
                           value={fromValue ?? ''}
                           onChange={(e) =>
                             form.setValue(`booleanRule.condition.values.${0}.userEnteredValue`, e.target.value)
@@ -283,7 +286,7 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
 
                     {showToValue ? (
                       <Input
-                        placeholder={s('Enter value')}
+                        placeholder={messages.conditionalFormatDialog['Enter value']}
                         value={toValue ?? ''}
                         onChange={(e) =>
                           form.setValue(`booleanRule.condition.values.${1}.userEnteredValue`, e.target.value)
@@ -294,7 +297,7 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
                 </FormGroup>
 
                 <FormGroup>
-                  <FormLabel>{s('Format style')}</FormLabel>
+                  <FormLabel>{messages.conditionalFormatDialog['Format style']}</FormLabel>
                   <div className="flex items-center gap-1">
                     <FormatToggleButton
                       checked={Boolean(booleanRule?.format?.textFormat?.bold)}
@@ -381,7 +384,7 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
                 </FormGroup>
 
                 <FormGroup>
-                  <FormLabel>{s('Preview')}</FormLabel>
+                  <FormLabel>{messages.conditionalFormatDialog.Preview}</FormLabel>
                   <div
                     className="flex h-[48px] items-center justify-center rounded-lg bg-[#F5F4F2] [[data-theme-mode=dark]_&]:!bg-[--background-weak]"
                     style={createRulePreviewStyle(booleanRule?.format, theme)}
@@ -393,7 +396,7 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
 
               <Ariakit.TabPanel tabId={TABS.COLOR_SCALE} className="flex flex-col gap-4">
                 <FormGroup>
-                  <FormLabel>{s('Min point')}</FormLabel>
+                  <FormLabel>{messages.conditionalFormatDialog['Min point']}</FormLabel>
                   <div className="flex min-w-0 items-center gap-3">
                     <div className="flex grow basis-0 flex-col">
                       <Ariakit.SelectProvider
@@ -409,8 +412,8 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
                         <Select />
                         <SelectPopover sameWidth>
                           <Ariakit.SelectGroup className="py-2">
-                            <SelectItem value="MIN">{s('Min value')}</SelectItem>
-                            <SelectItem value="NUMBER">{s('Number')}</SelectItem>
+                            <SelectItem value="MIN">{messages.conditionalFormatDialog['Min value']}</SelectItem>
+                            <SelectItem value="NUMBER">{messages.conditionalFormatDialog.Number}</SelectItem>
                           </Ariakit.SelectGroup>
                         </SelectPopover>
                       </Ariakit.SelectProvider>
@@ -448,7 +451,7 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
                 </FormGroup>
 
                 <FormGroup>
-                  <FormLabel>{s('Mid point')}</FormLabel>
+                  <FormLabel>{messages.conditionalFormatDialog['Mid point']}</FormLabel>
                   <div className="flex min-w-0 items-center gap-3">
                     <div className="flex grow basis-0 flex-col">
                       <Ariakit.SelectProvider
@@ -463,8 +466,8 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
                         <Select />
                         <SelectPopover sameWidth>
                           <Ariakit.SelectGroup className="py-2">
-                            <SelectItem value={CONDITION_NONE}>None</SelectItem>
-                            <SelectItem value="NUMBER">{s('Number')}</SelectItem>
+                            <SelectItem value={CONDITION_NONE}>{messages.conditionalFormatDialog.None}</SelectItem>
+                            <SelectItem value="NUMBER">{messages.conditionalFormatDialog.Number}</SelectItem>
                           </Ariakit.SelectGroup>
                         </SelectPopover>
                       </Ariakit.SelectProvider>
@@ -502,7 +505,7 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
                 </FormGroup>
 
                 <FormGroup>
-                  <FormLabel>{s('Max point')}</FormLabel>
+                  <FormLabel>{messages.conditionalFormatDialog['Max point']}</FormLabel>
                   <div className="flex min-w-0 items-center gap-3">
                     <div className="flex grow basis-0 flex-col">
                       <Ariakit.SelectProvider
@@ -517,8 +520,8 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
                         <Select />
                         <SelectPopover sameWidth>
                           <Ariakit.SelectGroup className="py-2">
-                            <SelectItem value="MAX">{s('Max value')}</SelectItem>
-                            <SelectItem value="NUMBER">{s('Number')}</SelectItem>
+                            <SelectItem value="MAX">{messages.conditionalFormatDialog['Max value']}</SelectItem>
+                            <SelectItem value="NUMBER">{messages.conditionalFormatDialog.Number}</SelectItem>
                           </Ariakit.SelectGroup>
                         </SelectPopover>
                       </Ariakit.SelectProvider>
@@ -576,14 +579,14 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
             className="inline-flex h-[36px] items-center gap-1.5 rounded-lg border border-[#DEDBD9] px-4 text-[13px]"
             onClick={onCancel}
           >
-            {s('Cancel')}
+            {messages.conditionalFormatDialog.Cancel}
           </Button>
           <Button
             type="button"
             className="inline-flex h-[36px] items-center gap-1.5 rounded-lg bg-[#6D4AFF] px-4 text-[13px] text-[white]"
             onClick={handleSubmit}
           >
-            {s('Save')}
+            {messages.conditionalFormatDialog.Save}
           </Button>
         </div>
       </div>
@@ -623,7 +626,11 @@ interface RuleProps extends Pick<ConditionalFormatEditorProps, 'sheetId' | 'onDe
 }
 
 function Rule({ rule, sheetId, onDeleteRule, theme, onSelect }: RuleProps) {
-  const title = rule.gradientRule ? s('Color scale') : s('Single color')
+  const messages = useSheetsMessages()
+
+  const title = rule.gradientRule
+    ? messages.conditionalFormatDialog['Color scale']
+    : messages.conditionalFormatDialog['Single color']
   const api = useSpreadsheetApi()
   const { rangeToFormula } = useFormulaRangeHelpers({
     sheetId,
@@ -681,7 +688,7 @@ function Rule({ rule, sheetId, onDeleteRule, theme, onSelect }: RuleProps) {
       <Button
         type="button"
         className="flex size-[36px] shrink-0 items-center justify-center rounded-lg"
-        aria-label={s('Delete rule')}
+        aria-label={messages.conditionalFormatDialog['Delete rule']}
         onClick={(event) => {
           event.stopPropagation()
           api?.unmark()
@@ -703,6 +710,8 @@ interface RulesProps extends Pick<
 }
 
 function Rules({ conditionalFormats, sheetId, onDeleteRule, theme, onNewRule, onSelectRule }: RulesProps) {
+  const messages = useSheetsMessages()
+
   return (
     <div className="min-h-0 grow overflow-y-auto p-4">
       <div className="flex flex-col gap-3 border-b-[0.5px] border-[#EAE7E4] py-2 empty:hidden">
@@ -725,7 +734,9 @@ function Rules({ conditionalFormats, sheetId, onDeleteRule, theme, onNewRule, on
           onClick={onNewRule}
         >
           <Icon data={Icons.plus} />
-          {conditionalFormats.length > 0 ? s('Add another rule') : s('Add rule')}
+          {conditionalFormats.length > 0
+            ? messages.conditionalFormatDialog['Add another rule']
+            : messages.conditionalFormatDialog['Add rule']}
         </Button>
       </div>
     </div>
@@ -801,44 +812,46 @@ function ConditionalFormat() {
 }
 
 export function ConditionalFormatDialog() {
+  const messages = useSheetsMessages()
+
   const [open, setOpen] = useConditionalFormatDialogState()
 
   return (
     <SidebarDialog open={open} setOpen={setOpen}>
       <div className="flex h-full min-h-0 flex-col">
-        <SidebarDialogHeader title={s('Conditional formatting')} />
+        <SidebarDialogHeader title={messages.conditionalFormatDialog['Conditional formatting']} />
         <ConditionalFormat />
       </div>
     </SidebarDialog>
   )
 }
 
-function strings() {
-  return {
-    Close: c('sheets_2025:Spreadsheet sidebar conditional format dialog').t`Close`,
-    'Delete range': c('sheets_2025:Spreadsheet sidebar conditional format dialog').t`Delete range`,
-    'Delete rule': c('sheets_2025:Spreadsheet sidebar conditional format dialog').t`Delete rule`,
-    'Conditional formatting': c('sheets_2025:Spreadsheet sidebar conditional format dialog').t`Conditional formatting`,
-    'Single color': c('sheets_2025:Spreadsheet sidebar conditional format dialog').t`Single color`,
-    'Color scale': c('sheets_2025:Spreadsheet sidebar conditional format dialog').t`Color scale`,
-    'Apply to range': c('sheets_2025:Spreadsheet sidebar conditional format dialog').t`Apply to range`,
-    'Select a range': c('sheets_2025:Spreadsheet sidebar conditional format dialog').t`Select a range`,
-    'Add another range': c('sheets_2025:Spreadsheet sidebar conditional format dialog').t`Add another range`,
-    'Format rules': c('sheets_2025:Spreadsheet sidebar conditional format dialog').t`Format rules`,
-    None: c('sheets_2025:Spreadsheet sidebar conditional format dialog').t`None`,
-    'Enter a formula': c('sheets_2025:Spreadsheet sidebar conditional format dialog').t`Enter a formula`,
-    'Enter value': c('sheets_2025:Spreadsheet sidebar conditional format dialog').t`Enter value`,
-    'Format style': c('sheets_2025:Spreadsheet sidebar conditional format dialog').t`Format style`,
-    Preview: c('sheets_2025:Spreadsheet sidebar conditional format dialog').t`Preview`,
-    'Add another rule': c('sheets_2025:Spreadsheet sidebar conditional format dialog').t`Add another rule`,
-    'Add rule': c('sheets_2025:Spreadsheet sidebar conditional format dialog').t`Add rule`,
-    Cancel: c('sheets_2025:Spreadsheet sidebar conditional format dialog').t`Cancel`,
-    Save: c('sheets_2025:Spreadsheet sidebar conditional format dialog').t`Save`,
-    'Min point': c('sheets_2025:Spreadsheet sidebar conditional format dialog').t`Min point`,
-    'Min value': c('sheets_2025:Spreadsheet sidebar conditional format dialog').t`Min value`,
-    Number: c('sheets_2025:Spreadsheet sidebar conditional format dialog').t`Number`,
-    'Mid point': c('sheets_2025:Spreadsheet sidebar conditional format dialog').t`Mid point`,
-    'Max point': c('sheets_2025:Spreadsheet sidebar conditional format dialog').t`Max point`,
-    'Max value': c('sheets_2025:Spreadsheet sidebar conditional format dialog').t`Max value`,
-  }
+export const conditionalFormatDialogMessages = {
+  conditionalFormatDialog: {
+    Close: `Close`,
+    'Delete range': `Delete range`,
+    'Delete rule': `Delete rule`,
+    'Conditional formatting': `Conditional formatting`,
+    'Single color': `Single color`,
+    'Color scale': `Color scale`,
+    'Apply to range': `Apply to range`,
+    'Select a range': `Select a range`,
+    'Add another range': `Add another range`,
+    'Format rules': `Format rules`,
+    None: `None`,
+    'Enter a formula': `Enter a formula`,
+    'Enter value': `Enter value`,
+    'Format style': `Format style`,
+    Preview: `Preview`,
+    'Add another rule': `Add another rule`,
+    'Add rule': `Add rule`,
+    Cancel: `Cancel`,
+    Save: `Save`,
+    'Min point': `Min point`,
+    'Min value': `Min value`,
+    Number: `Number`,
+    'Mid point': `Mid point`,
+    'Max point': `Max point`,
+    'Max value': `Max value`,
+  },
 }

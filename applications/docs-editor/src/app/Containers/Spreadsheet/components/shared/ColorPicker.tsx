@@ -1,3 +1,4 @@
+import { useSheetsMessages } from '../../SheetsDependenciesProvider'
 import { clsx } from 'clsx'
 import type { ComponentPropsWithoutRef, ForwardedRef } from 'react'
 import { forwardRef } from 'react'
@@ -12,12 +13,9 @@ import {
 import { HexColorPicker, EyeDropper } from '@rowsncolumns/ui'
 import * as Ariakit from '@ariakit/react'
 import { useUI } from '../../ui-store'
-import { createStringifier } from '../../stringifier'
-import { c } from 'ttag'
+
 import { normalizeCustomHexColor } from './normalizeCustomHexColor'
 import { Button } from './Button'
-
-const { s } = createStringifier(strings)
 
 interface ColorSwatchProps extends Ariakit.ButtonProps {
   color: string
@@ -49,6 +47,8 @@ export const ColorPicker = forwardRef(function ColorPicker(
   { className, selectedColor, onChange, ...props }: ColorPickerProps,
   ref: ForwardedRef<HTMLDivElement>,
 ) {
+  const messages = useSheetsMessages()
+
   const theme = useUI((ui) => ui.legacy.theme)
   const colorString = getStringifiedColor(selectedColor, theme)?.toLowerCase()
   const themeColors = [...colorKeys.values()].slice(0, -1).map((value) => theme.themeColors[value]?.toLowerCase())
@@ -59,11 +59,11 @@ export const ColorPicker = forwardRef(function ColorPicker(
   return (
     <div ref={ref} {...props} className={clsx('flex flex-col gap-2', className)}>
       <Button className="w-full px-4 py-2 text-xs" size="small" onClick={() => onChange(undefined)}>
-        {s('Reset')}
+        {messages.colorPicker.Reset}
       </Button>
       <div className="py-1 text-xs text-[--text-weak]">
         {/* {c('sheets_2025:Color picker').t`Theme colors (${theme.name})`} */}
-        {c('sheets_2025:Color picker').t`Theme colors`}
+        {messages.colorPicker['Theme colors']}
       </div>
       <div className="flex items-center gap-2">
         {themeColors.map((color) => (
@@ -96,7 +96,7 @@ export const ColorPicker = forwardRef(function ColorPicker(
           )
         })}
       </div>
-      <div className="py-1 text-xs text-[--text-weak]">{s('Standard colors')}</div>
+      <div className="py-1 text-xs text-[--text-weak]">{messages.colorPicker['Standard colors']}</div>
       <div className="flex items-center gap-2">
         {STANDARD_COLORS.map((color) => {
           const lowerCaseColor = color.toLowerCase()
@@ -110,7 +110,7 @@ export const ColorPicker = forwardRef(function ColorPicker(
           )
         })}
       </div>
-      <div className="py-1 text-xs text-[--text-weak]">{s('Recent colors')}</div>
+      <div className="py-1 text-xs text-[--text-weak]">{messages.colorPicker['Recent colors']}</div>
       <div className="grid grid-cols-[repeat(10,1rem)] items-center gap-2">
         {userDefinedColors.map((color) => {
           const lowerCaseColor = color.toLowerCase()
@@ -143,10 +143,11 @@ export const ColorPicker = forwardRef(function ColorPicker(
   )
 })
 
-function strings() {
-  return {
-    Reset: c('sheets_2025:Color picker').t`Reset`,
-    'Standard colors': c('sheets_2025:Color picker').t`Standard colors`,
-    'Recent colors': c('sheets_2025:Color picker').t`Recent colors`,
-  }
+export const colorPickerMessages = {
+  colorPicker: {
+    Reset: `Reset`,
+    'Standard colors': `Standard colors`,
+    'Recent colors': `Recent colors`,
+    'Theme colors': `Theme colors`,
+  },
 }

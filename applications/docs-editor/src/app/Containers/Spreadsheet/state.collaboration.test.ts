@@ -2,7 +2,7 @@ import { act, renderHook } from '@testing-library/react'
 import { Awareness, applyAwarenessUpdate, encodeAwarenessUpdate } from 'y-protocols/awareness'
 import * as Y from 'yjs'
 import type { SheetsDocumentAdapter } from './contract/SheetsDocumentAdapter'
-import { useProtonSheetsState } from './state'
+import { stateMessages as mockStateMessages, useProtonSheetsState } from './state'
 
 // Keep Proton's permission wiring and the vendored Yjs/awareness hooks real;
 // the calculation engine and canvas are unrelated to leader election.
@@ -33,9 +33,7 @@ jest.mock('@rowsncolumns/grid', () => ({ Align: { center: 'center' } }))
 jest.mock('./components/utils', () => ({
   useEvent: (callback: (...args: unknown[]) => unknown) => callback,
 }))
-jest.mock('./locale', () => ({
-  useAccountLocale: () => 'en-US',
-  useLocaleAuto: () => 'en-US',
+jest.mock('./messages/locale', () => ({
   getCurrencyFromLocale: () => 'USD',
 }))
 jest.mock('./constants', () => ({ CURRENCY_SYMBOL: () => '$' }))
@@ -47,8 +45,12 @@ const mockSession = {
   userName: 'editor@example.com',
   logger: { info: jest.fn(), error: jest.fn() },
   versionInfo: { version: '1.0' },
+  localization: { uiLocale: 'en-US', defaultWorkbookLocale: 'en-US' },
 }
-jest.mock('./SheetsDependenciesProvider', () => ({ useSheetsDependencies: () => mockSession }))
+jest.mock('./SheetsDependenciesProvider', () => ({
+  useSheetsDependencies: () => mockSession,
+  useSheetsMessages: () => mockStateMessages,
+}))
 
 type Permissions = Pick<Parameters<typeof useProtonSheetsState>[0], 'isReadonly' | 'isConversionFlow'>
 

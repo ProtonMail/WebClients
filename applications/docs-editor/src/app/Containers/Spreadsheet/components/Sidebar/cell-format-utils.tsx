@@ -1,3 +1,4 @@
+import type { SheetsMessages } from '../../messages/SheetsMessages'
 import type {
   HorizontalAlign,
   NumberFormat,
@@ -17,45 +18,49 @@ type NumberFormatCategory = {
   options?: string[]
 }
 
-export const getNumberFormatCategories = (locale?: string): NumberFormatCategory[] => [
-  { name: 'General', value: 'GENERAL', description: 'General format cells have no specific number format.' },
+export const getNumberFormatCategories = (messages: SheetsMessages, locale?: string): NumberFormatCategory[] => [
   {
-    name: 'Number',
+    name: messages.cellFormatOptions.General,
+    value: 'GENERAL',
+    description: messages.cellFormatOptions['General format cells have no specific number format.'],
+  },
+  {
+    name: messages.cellFormatOptions.Number,
     value: 'NUMBER',
-    description: 'Number is used for general display of numbers.',
+    description: messages.cellFormatOptions['Number is used for general display of numbers.'],
     pattern: '#.00',
     options: ['Decimal', 'ThousandSeparator'],
   },
   {
-    name: 'Currency',
+    name: messages.cellFormatOptions.Currency,
     value: 'CURRENCY',
-    description: 'Currency formats are used for general monetary values.',
+    description: messages.cellFormatOptions['Currency formats are used for general monetary values.'],
     pattern: `"{currencySymbol}"* #,##0.00;"{currencySymbol}"* (#,##0.00);"{currencySymbol}"* "-"??;@`,
     options: ['CurrencySymbol', 'Decimal'],
   },
   {
-    name: 'Accounting',
+    name: messages.cellFormatOptions.Accounting,
     value: 'ACCOUNTING',
     pattern: `"{currencySymbol}"* #,##0.00;"{currencySymbol}"* (#,##0.00);"{currencySymbol}"* "-"??;@`,
     options: ['CurrencySymbol', 'Decimal'],
   },
   {
-    name: 'Date',
+    name: messages.cellFormatOptions.Date,
     value: 'DATE',
-    description: 'Date formats display date and time serial numbers as date values.',
+    description: messages.cellFormatOptions['Date formats display date and time serial numbers as date values.'],
     pattern: getDefaultDateFormat(locale),
   },
   {
-    name: 'Time',
+    name: messages.cellFormatOptions.Time,
     value: 'DATE_TIME',
-    description: 'Time formats display date and time serial numbers as date values.',
+    description: messages.cellFormatOptions['Time formats display date and time serial numbers as date values.'],
     pattern: getDefaultTimeFormat(),
   },
-  { name: 'Percentage', value: 'PERCENT', pattern: '0%', options: ['Decimal'] },
-  { name: 'Fraction', value: 'FRACTION', pattern: '#/#' },
-  { name: 'Scientific', value: 'SCIENTIFIC', pattern: '0.00E+00', options: ['Decimal'] },
-  { name: 'Text', value: 'TEXT' },
-  { name: 'Custom', value: 'CUSTOM', pattern: 'General' },
+  { name: messages.cellFormatOptions.Percentage, value: 'PERCENT', pattern: '0%', options: ['Decimal'] },
+  { name: messages.cellFormatOptions.Fraction, value: 'FRACTION', pattern: '#/#' },
+  { name: messages.cellFormatOptions.Scientific, value: 'SCIENTIFIC', pattern: '0.00E+00', options: ['Decimal'] },
+  { name: messages.cellFormatOptions.Text, value: 'TEXT' },
+  { name: messages.cellFormatOptions.Custom, value: 'CUSTOM', pattern: 'General' },
 ]
 
 export const customFormats: NumberFormat[] = [
@@ -130,21 +135,92 @@ export const timeFormats: NumberFormat[] = [
   { pattern: 'd/m/yy hh:mm', type: 'DATE' },
 ]
 
-export const horizontalAlignments: { name: string; value: HorizontalAlign | 'General'; icon?: JSX.Element }[] = [
-  { name: 'General', value: 'General' },
-  { name: 'Left', value: 'left', icon: <UI.Icon className="shrink-0" data={Icons.textAlignLeft} /> },
-  { name: 'Center', value: 'center', icon: <UI.Icon className="shrink-0" data={Icons.textAlignCenter} /> },
-  { name: 'Right', value: 'right', icon: <UI.Icon className="shrink-0" data={Icons.textAlignRight} /> },
-]
+export function getAlignmentOptions(messages: SheetsMessages) {
+  const horizontalAlignments: { name: string; value: HorizontalAlign | 'General'; icon?: JSX.Element }[] = [
+    { name: messages.cellFormatOptions.General, value: 'General' },
+    {
+      name: messages.cellFormatOptions.Left,
+      value: 'left',
+      icon: <UI.Icon className="shrink-0" data={Icons.textAlignLeft} />,
+    },
+    {
+      name: messages.cellFormatOptions.Center,
+      value: 'center',
+      icon: <UI.Icon className="shrink-0" data={Icons.textAlignCenter} />,
+    },
+    {
+      name: messages.cellFormatOptions.Right,
+      value: 'right',
+      icon: <UI.Icon className="shrink-0" data={Icons.textAlignRight} />,
+    },
+  ]
 
-export const verticalAlignments: { name: string; value: VerticalAlign; icon?: JSX.Element }[] = [
-  { name: 'Top', value: 'top', icon: <UI.Icon className="shrink-0" data={Icons.alignTop} /> },
-  { name: 'Center', value: 'middle', icon: <UI.Icon className="shrink-0" data={Icons.alignVerticalCenter} /> },
-  { name: 'Bottom', value: 'bottom', icon: <UI.Icon className="shrink-0" data={Icons.alignBottom} /> },
-]
+  const verticalAlignments: { name: string; value: VerticalAlign; icon?: JSX.Element }[] = [
+    {
+      name: messages.cellFormatOptions.Top,
+      value: 'top',
+      icon: <UI.Icon className="shrink-0" data={Icons.alignTop} />,
+    },
+    {
+      name: messages.cellFormatOptions.Center,
+      value: 'middle',
+      icon: <UI.Icon className="shrink-0" data={Icons.alignVerticalCenter} />,
+    },
+    {
+      name: messages.cellFormatOptions.Bottom,
+      value: 'bottom',
+      icon: <UI.Icon className="shrink-0" data={Icons.alignBottom} />,
+    },
+  ]
 
-export const wrapStrategies: { name: string; value: WrapStrategy; icon?: JSX.Element }[] = [
-  { name: 'Overflow', value: 'overflow', icon: <UI.Icon className="shrink-0" data={Icons.textOverflow} /> },
-  { name: 'Clip', value: 'clip', icon: <UI.Icon className="shrink-0" data={Icons.textClip} /> },
-  { name: 'Wrap', value: 'wrap', icon: <UI.Icon className="shrink-0" data={Icons.textWrap} /> },
-]
+  const wrapStrategies: { name: string; value: WrapStrategy; icon?: JSX.Element }[] = [
+    {
+      name: messages.cellFormatOptions.Overflow,
+      value: 'overflow',
+      icon: <UI.Icon className="shrink-0" data={Icons.textOverflow} />,
+    },
+    {
+      name: messages.cellFormatOptions.Clip,
+      value: 'clip',
+      icon: <UI.Icon className="shrink-0" data={Icons.textClip} />,
+    },
+    {
+      name: messages.cellFormatOptions.Wrap,
+      value: 'wrap',
+      icon: <UI.Icon className="shrink-0" data={Icons.textWrap} />,
+    },
+  ]
+
+  return { horizontalAlignments, verticalAlignments, wrapStrategies }
+}
+
+export const cellFormatOptionsMessages = {
+  cellFormatOptions: {
+    General: 'General',
+    'General format cells have no specific number format.': 'General format cells have no specific number format.',
+    Number: 'Number',
+    'Number is used for general display of numbers.': 'Number is used for general display of numbers.',
+    Currency: 'Currency',
+    'Currency formats are used for general monetary values.': 'Currency formats are used for general monetary values.',
+    Accounting: 'Accounting',
+    Date: 'Date',
+    'Date formats display date and time serial numbers as date values.':
+      'Date formats display date and time serial numbers as date values.',
+    Time: 'Time',
+    'Time formats display date and time serial numbers as date values.':
+      'Time formats display date and time serial numbers as date values.',
+    Percentage: 'Percentage',
+    Fraction: 'Fraction',
+    Scientific: 'Scientific',
+    Text: 'Text',
+    Custom: 'Custom',
+    Left: 'Left',
+    Center: 'Center',
+    Right: 'Right',
+    Top: 'Top',
+    Bottom: 'Bottom',
+    Overflow: 'Overflow',
+    Clip: 'Clip',
+    Wrap: 'Wrap',
+  },
+}

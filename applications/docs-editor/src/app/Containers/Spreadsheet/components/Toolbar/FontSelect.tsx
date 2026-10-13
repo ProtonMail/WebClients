@@ -1,6 +1,8 @@
+import { useSheetsMessages } from '../../SheetsDependenciesProvider'
+import type { SheetsMessages } from '../../messages/SheetsMessages'
 import * as Ariakit from '@ariakit/react'
 import type { ReactElement } from 'react'
-import { c } from 'ttag'
+
 import type { FontValue } from '../../constants'
 import { FONTS, FONT_FAMILY_DEFAULT, FONT_LABEL_BY_VALUE } from '../../constants'
 import * as UI from '../ui'
@@ -8,9 +10,9 @@ import { useUI } from '../../ui-store'
 
 // A special value to represent the default font.
 const DEFAULT_VALUE = '$default$' as const
-function renderDefaultLabel() {
+function renderDefaultLabel(messages: SheetsMessages) {
   const defaultFont = FONT_LABEL_BY_VALUE[FONT_FAMILY_DEFAULT]
-  return c('sheets_2025:Spreadsheet editor toolbar').t`Default (${defaultFont})`
+  return messages.fontSelect['Default (${defaultFont})'](defaultFont)
 }
 
 type FontSelectValue = FontValue | typeof DEFAULT_VALUE
@@ -20,12 +22,13 @@ export interface FontSelectProps extends Ariakit.SelectProviderProps<FontSelectV
 
 // Extracted in order to use the select context.
 function InnerSelect(props: Ariakit.SelectProps) {
+  const messages = useSheetsMessages()
   const select = Ariakit.useSelectContext()
   const value = Ariakit.useStoreState(select, 'value')
   if (!value) {
     throw new Error('Unexpected missing value in FontSelect renderLabel')
   }
-  let label = value === DEFAULT_VALUE ? renderDefaultLabel() : FONT_LABEL_BY_VALUE[value as FontValue]
+  let label = value === DEFAULT_VALUE ? renderDefaultLabel(messages) : FONT_LABEL_BY_VALUE[value as FontValue]
   // @TODO: At some point we should have a normalization that converts the value to a valid font family.
   if (!label) {
     label = value as string
@@ -52,11 +55,12 @@ export function FontSelect({ renderSelect, ...props }: FontSelectProps) {
 }
 
 function SelectPopover() {
+  const messages = useSheetsMessages()
   const disabled = useUI((ui) => ui.info.isReadonly)
   return (
     <UI.SelectPopover>
       <UI.SelectGroup bottomSeparator>
-        <UI.SelectItem value={DEFAULT_VALUE}>{renderDefaultLabel()}</UI.SelectItem>
+        <UI.SelectItem value={DEFAULT_VALUE}>{renderDefaultLabel(messages)}</UI.SelectItem>
       </UI.SelectGroup>
       <UI.SelectGroup>
         {FONTS.map(({ value, label = value }) => (
@@ -67,4 +71,10 @@ function SelectPopover() {
       </UI.SelectGroup>
     </UI.SelectPopover>
   )
+}
+
+export const fontSelectMessages = {
+  fontSelect: {
+    'Default (${defaultFont})': (defaultFont: string) => `Default (${defaultFont})`,
+  },
 }

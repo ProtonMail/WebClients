@@ -32,6 +32,16 @@ body,
   position: relative;
 }
 
+.standalone-sheet-header select {
+  color: var(--text-norm);
+  background: var(--background-norm);
+  border: 1px solid var(--border-weak);
+  padding: 4px 8px;
+}
+.standalone-sheet-header label {
+  white-space: nowrap;
+}
+
 [data-theme-mode='dark'] .app-root,
 [data-theme-mode='dark'] .standalone-sheet-header {
   background: #16141c;

@@ -9,6 +9,8 @@ import {
 } from '../app/Containers/Spreadsheet/public'
 import { EditorThemeProvider, useEditorTheme } from '../app/Theme/EditorThemeProvider'
 import { createStandaloneSession } from './session'
+import { useDemoLocalization } from './messages/useDemoLocalization'
+import { defaultSheetsMessages } from '../app/Containers/Spreadsheet/messages/defaultSheetsMessages'
 
 document.title = 'Standalone Sheet'
 
@@ -16,6 +18,7 @@ const standaloneInitialization = { mode: 'existing' } as const
 
 function StandaloneSheet() {
   const { theme } = useEditorTheme()
+  const { uiLocale, messages, languageStatus, changeLanguage } = useDemoLocalization()
   const [ready, setReady] = useState(false)
   const [migrationEditingLocked, setMigrationEditingLocked] = useState(false)
   const [errorLocked, setErrorLocked] = useState(false)
@@ -58,6 +61,9 @@ function StandaloneSheet() {
       },
       appPlatform: null,
       theme,
+      localization: { uiLocale, defaultWorkbookLocale: 'en-us' },
+      messages,
+      defaultMessages: defaultSheetsMessages,
       featureFlags: {
         SheetsActionsStorageEnabled: true,
         SheetsCustomDateTimeFormatEnabled: true,
@@ -104,7 +110,7 @@ function StandaloneSheet() {
       reportSheetsYjsDriftDetected: (reason) => publishError(new Error(reason)),
       showYjsDriftDetectedErrorModal: (details) => publishError(new Error(JSON.stringify(details))),
     }),
-    [ready, publishError, reportUnavailableFileMenuAction, theme],
+    [ready, publishError, reportUnavailableFileMenuAction, theme, uiLocale, messages],
   )
   const onEditorReadyToReceiveUpdates = useCallback(() => {
     session.editorLoaded()
@@ -117,6 +123,20 @@ function StandaloneSheet() {
     <>
       <header className="standalone-sheet-header">
         <strong>Standalone Sheet</strong>
+        <label>
+          Prototype messages{' '}
+          <select
+            value={uiLocale}
+            onChange={(event) => {
+              void changeLanguage(event.target.value)
+            }}
+          >
+            <option value="en-US">Built-in English defaults</option>
+            <option value="fr-FR">Français</option>
+            <option value="de-DE">Deutsch</option>
+          </select>
+        </label>
+        <output>{languageStatus}</output>
         <output>{message}</output>
       </header>
       <main className="standalone-sheet-editor">
