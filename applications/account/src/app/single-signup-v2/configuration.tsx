@@ -258,7 +258,7 @@ export const getSummaryPlan = ({
             ...shortPlan,
             plan,
             features: [
-                getStorageFeature(plan.MaxSpace, { visionary: true, freePlan }),
+                getStorageFeature(plan.MaxSpace, { freePlan }),
                 getUsersFeature(plan.MaxMembers),
                 getAllAppsFeature(),
                 getEarlyAccessFeature(),

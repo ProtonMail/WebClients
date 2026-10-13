@@ -7,26 +7,32 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import StripedItem from '@proton/components/components/stripedList/StripedItem';
 import { StripedList } from '@proton/components/components/stripedList/StripedList';
+import { getNUsersText } from '@proton/components/containers/payments/features/highlights';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import type { Plan } from '@proton/payments/core/plan/interface';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 import svg from '../welcome-suite.svg';
 
 interface Props extends ModalProps {
-    plan: string;
+    plan: Plan;
     appName: string;
     onUpgrade: () => void;
     onContinue: () => void;
 }
 
 const VisionaryUpsellModal = ({ plan, appName, onClose, onUpgrade, onContinue, ...rest }: Props) => {
+    const planName = plan.Title;
+    const storage = humanSize({ bytes: plan.MaxSpace, fraction: 0, unitOptions: { max: 'TB' } });
+
     return (
         <ModalTwo {...rest} disableCloseOnEscape={true} size="small">
             <ModalTwoContent>
                 <div className="flex flex-column gap-4 pt-4">
                     <img src={svg} alt="" />
                     <div className="text-center text-bold h3">{c('bf2023: Info')
-                        .t`The ${plan} plan is back for a limited time only`}</div>
+                        .t`The ${planName} plan is back for a limited time only`}</div>
                     <div className="text-center color-weak">
                         {c('bf2023: Info')
                             .t`Become a super-supporter. Get access to all current and future ${BRAND_NAME} services.`}
@@ -48,11 +54,11 @@ const VisionaryUpsellModal = ({ plan, appName, onClose, onUpgrade, onContinue, .
                                 },
                                 {
                                     key: 4,
-                                    right: c('bf2023: Info').t`6 TB storage (2x more than any other plan)`,
+                                    right: c('Info').t`${storage} storage`,
                                 },
                                 {
                                     key: 5,
-                                    right: c('bf2023: Info').t`6 users`,
+                                    right: getNUsersText(plan.MaxMembers),
                                 },
                             ].map(({ key, right }) => {
                                 return (
