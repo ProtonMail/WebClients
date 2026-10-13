@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
@@ -18,6 +18,7 @@ import {
     selectOauthImportStateProducts,
 } from '../../../../../logic/draft/oauthDraft/oauthDraft.selector';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '../../../../../logic/store';
+import { trackEasySwitchPrepareImportViewed } from '../../../../../telemetry/easySwitchCreationFunnel';
 import { getMailCustomLabel, importerHasErrors } from './useStepPrepareOAuth.helpers';
 
 const useStepPrepare = () => {
@@ -53,6 +54,14 @@ const useStepPrepare = () => {
     const [driveChecked, setDriveChecked] = useState(driveSelected && !driveHasError);
 
     const isLabelMapping = provider === ImportProvider.GOOGLE;
+
+    useEffect(() => {
+        trackEasySwitchPrepareImportViewed({
+            provider,
+            products,
+            importPeriod: emailSelected ? importerData.emails?.fields?.importPeriod : undefined,
+        });
+    }, []);
 
     const emailTitle = getMailCustomLabel(importerData.emails?.fields?.importPeriod);
     const hasErrors = importerHasErrors(

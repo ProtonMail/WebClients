@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -22,6 +22,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import { BYOE_CLAIM_PROTON_ADDRESS_SOURCE, providerMap } from '../../../constants';
 import { type EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '../../../interface';
 import { useDriveSdk } from '../../../logic/driveContext';
+import { trackEasySwitchCreationStarted } from '../../../telemetry/easySwitchCreationFunnel';
 import { EasySwitchProviderName } from '../../ProviderName/EasySwitchProviderName';
 import BYOEClaimProtonAddressModal from '../BYOEClaimProtonAddressModal/BYOEClaimProtonAddressModal';
 import { ProductCheckbox } from './ProductCheckbox';
@@ -60,6 +61,10 @@ export const ProductSelectionModal = ({ onClose, provider, source, onComplete, .
     const drive = useDriveSdk();
 
     const { handleSubmit, loadingConfig } = useProductSelectionSubmit();
+
+    useEffect(() => {
+        trackEasySwitchCreationStarted({ source, provider });
+    }, []);
 
     const hasCalendar = !isBYOEAccount && writeableCalendars.length > 0;
 

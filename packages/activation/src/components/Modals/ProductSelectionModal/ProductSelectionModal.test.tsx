@@ -4,6 +4,7 @@ import { getModelState } from '@proton/account/tests';
 import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
 import { ADDRESS_FLAGS } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces';
+import { mockTracker } from '@proton/telemetry-tracker/testing';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '../../../interface';
@@ -280,5 +281,20 @@ describe('ProductSelectionModal - BYOE account', () => {
 
         fireEvent.click(claimCta);
         expect(screen.getByTestId('byoeClaimProtonAddressModal')).toBeInTheDocument();
+    });
+});
+
+describe('ProductSelectionModal - telemetry', () => {
+    it('sends creation_started with the source and the preselected provider when the modal is shown', () => {
+        const { reports } = mockTracker();
+
+        renderModal(ImportProvider.OUTLOOK);
+
+        expect(reports).toHaveLength(1);
+        expect(reports[0]).toMatchObject({
+            measurementGroup: 'any.web.easy_switch_creation_funnel',
+            event: 'creation_started',
+            dimensions: { source: 'account-web-settings', provider: 'outlook' },
+        });
     });
 });
