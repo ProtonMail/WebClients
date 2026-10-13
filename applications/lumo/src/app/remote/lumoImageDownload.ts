@@ -1,24 +1,33 @@
 /**
- * Routes in-app image downloads to the native shells (Android WebView / iOS WKWebView).
+ * Routes in-app downloads to the native shells (Android WebView / iOS WKWebView).
  *
- * The web app owns the image download button, but inside the native WebViews a normal
- * browser download of a `blob:` URL silently fails (Android `DownloadListener` / iOS
- * `WKDownloadDelegate` never fire for blob URLs). So when a native save bridge is present we
- * hand the image bytes to it instead of triggering a browser download.
+ * The web app owns the download buttons, but inside the native WebViews a normal browser download
+ * of a `blob:` URL silently fails (Android `DownloadListener` / iOS `WKDownloadDelegate` never fire
+ * for blob URLs). So when a native save bridge is present we hand the bytes to it instead of
+ * triggering a browser download.
  *
- * The bridge is FEATURE-DETECTED (not user-agent sniffed) and the calls are fire-and-forget:
+ * Two bridges exist and are independent:
+ *  - images: `saveImageViaNativeBridge`, present in every shipped shell.
+ *  - any other file type (conversation exports, artifacts, PDF/PPTX, dev dumps):
+ *    `saveFileViaNativeBridge`, Android only for now and only in newer app versions.
+ * Images MUST keep going through the image bridge: older Android apps expose `saveBase64Image`
+ * only, so routing an image to the file bridge would silently lose the save.
+ *
+ * The bridges are FEATURE-DETECTED (not user-agent sniffed) and the calls are fire-and-forget:
  * the native side ACKs by saving and shows its own success/failure UI.
  *
  * Contract (must match the native side exactly):
  *  - Android: `window.Android.saveBase64Image(base64, mimeType, suggestedName)`
+ *  - Android: `window.Android.saveBase64File(base64, mimeType, suggestedName)`
  *  - iOS:     `window.webkit.messageHandlers.saveImage.postMessage({ base64, mimeType, name })`
- * In both cases `base64` is WITHOUT the `data:...;base64,` prefix.
+ * In all cases `base64` is WITHOUT the `data:...;base64,` prefix. There is no iOS file handler yet.
  */
 
 declare global {
     interface Window {
         Android?: {
             saveBase64Image?: (base64: string, mimeType: string, name: string) => void;
+            saveBase64File?: (base64: string, mimeType: string, name: string) => void;
         };
         webkit?: {
             messageHandlers?: {
@@ -73,7 +82,36 @@ const blobToBase64 = (blob: Blob): Promise<string> => {
 };
 
 /**
- * Hands an image Blob to the native save bridge.
+ * Shared dispatch for both bridges: read the Blob as prefix-free base64, then hand it to whichever
+ * native bridge `tryBridge` recognises.
+ *
+ * @param defaultMimeType used when the Blob carries no type — the two bridges disagree on the
+ *        sensible fallback (images vs. generic octet-stream).
+ * @returns `true` when it dispatched to a native bridge, `false` when no bridge is present or the
+ *          dispatch threw (caller should fall back to the normal browser download).
+ */
+const sendViaNativeBridge = async (
+    blob: Blob,
+    suggestedName: string,
+    defaultMimeType: string,
+    tryBridge: (base64: string, mimeType: string) => boolean
+): Promise<boolean> => {
+    const mimeType = blob.type || defaultMimeType;
+    const base64 = await blobToBase64(blob);
+
+    try {
+        if (tryBridge(base64, mimeType)) {
+            return true;
+        }
+    } catch (error) {
+        console.error('Native Download: failed to dispatch to native bridge:', error);
+    }
+
+    return false;
+};
+
+/**
+ * Hands an image Blob to the native image-save bridge (Android and iOS).
  *
  * @returns `true` when it dispatched to a native bridge (so the caller can skip the browser
  *          download), `false` when no bridge is present (caller should fall back to the normal
@@ -84,10 +122,7 @@ export const saveImageViaNativeBridge = async (blob: Blob, suggestedName: string
         return false;
     }
 
-    const mimeType = blob.type || 'image/png';
-    const base64 = await blobToBase64(blob);
-
-    try {
+    return sendViaNativeBridge(blob, suggestedName, 'image/png', (base64, mimeType) => {
         if (typeof window.Android?.saveBase64Image === 'function') {
             window.Android.saveBase64Image(base64, mimeType, suggestedName);
             return true;
@@ -96,42 +131,38 @@ export const saveImageViaNativeBridge = async (blob: Blob, suggestedName: string
             window.webkit.messageHandlers.saveImage.postMessage({ base64, mimeType, name: suggestedName });
             return true;
         }
-    } catch (error) {
-        console.error('Native Image Download: failed to dispatch to native bridge:', error);
-    }
-
-    return false;
+        return false;
+    });
 };
 
 /**
- * Downloads an image, routing to the native save bridge inside the native shells and falling
- * back to a normal browser download (an `<a download>` click) everywhere else.
+ * True when the native bridge for non-image files is wired up on `window`.
  *
- * The browser fallback also runs if no native bridge is present, if the bridge call fails to
- * dispatch, or if fetching the image bytes fails — so on the web this behaves exactly as it did
- * before the native bridge existed.
- *
- * @param imageUrl object URL / `blob:` URL / data URL of the image to save
- * @param fileName suggested file name for the saved image
+ * Strict feature detection, same rationale as `isNativeImageBridgeAvailable`. Android only: we do
+ * NOT route files to the iOS `saveImage` handler, since that handler is image-specific and would
+ * mis-handle e.g. a `.md` export. Older Android shells without `saveBase64File` report false and
+ * keep their current behaviour.
  */
-export const downloadImage = async (imageUrl: string, fileName: string): Promise<void> => {
-    if (isNativeImageBridgeAvailable()) {
-        try {
-            const response = await fetch(imageUrl);
-            const blob = await response.blob();
-            if (await saveImageViaNativeBridge(blob, fileName)) {
-                return; // handled natively
-            }
-        } catch (error) {
-            console.error('Native Image Download: native save failed, falling back to browser download:', error);
-        }
+export const isNativeDownloadBridgeAvailable = (): boolean => typeof window.Android?.saveBase64File === 'function';
+
+/**
+ * Hands a non-image Blob (conversation export, artifact, PDF, PPTX, dev storage dump) to the
+ * native file-save bridge.
+ *
+ * @returns `true` when it dispatched to a native bridge (so the caller can skip the browser
+ *          download), `false` when no bridge is present (caller should fall back to the normal
+ *          browser download).
+ */
+export const saveFileViaNativeBridge = async (blob: Blob, suggestedName: string): Promise<boolean> => {
+    if (!isNativeDownloadBridgeAvailable()) {
+        return false;
     }
 
-    // Normal browser download — unchanged from the original per-component implementation.
-    const link = document.createElement('a');
-    link.href = imageUrl;
-    link.download = fileName;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    return sendViaNativeBridge(blob, suggestedName, 'application/octet-stream', (base64, mimeType) => {
+        if (typeof window.Android?.saveBase64File === 'function') {
+            window.Android.saveBase64File(base64, mimeType, suggestedName);
+            return true;
+        }
+        return false;
+    });
 };

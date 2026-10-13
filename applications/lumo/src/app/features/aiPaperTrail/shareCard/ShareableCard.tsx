@@ -13,6 +13,7 @@ import { IcBrandTwitter } from '@proton/icons/icons/IcBrandTwitter';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { LumoIcon } from '../../../components/LumoIcon/LumoIcon';
+import { triggerFileDownload } from '../../../util/triggerFileDownload';
 import type { PaperTrailCardData } from '../reportTypes';
 import { ShareCardCanvasPreview } from './ShareCardCanvasPreview';
 import type { ShareCardTheme } from './drawShareCard';
@@ -55,12 +56,7 @@ export const ShareableCard = ({ data, ...modalProps }: Props) => {
         if (!blob) {
             return;
         }
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement('a');
-        link.href = url;
-        link.download = fileNameForTheme(theme);
-        link.click();
-        URL.revokeObjectURL(url);
+        await triggerFileDownload(blob, fileNameForTheme(theme), 'image');
     };
 
     const handleShare = async () => {
