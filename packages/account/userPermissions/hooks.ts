@@ -3,11 +3,25 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import { useEntitlementChecksForOrgAndUser } from '../entitlementCatalog/hooks';
 import { useOrganization } from '../organization/hooks';
+import { getIsOrganizationOwner } from '../organizationRoles/helpers';
+import { useUser } from '../user/hooks';
 import { selectUserPermissions, userPermissionsThunk } from './index';
 
 const hooks = createHooks(userPermissionsThunk, selectUserPermissions);
 
 export const useUserPermissions = hooks.useValueWithDefault;
+
+export const useIsOrganizationOwner = (): [boolean, boolean] => {
+    const [user] = useUser();
+    const [userPermissions, loadingUserPermissions] = useUserPermissions();
+    const isAdminRoleMVPEnabled = useFlag('AdminRoleMVP');
+    const isOrganizationOwner = getIsOrganizationOwner({
+        isAdminRoleMVPEnabled,
+        isAdmin: user.isAdmin,
+        roles: userPermissions.Roles,
+    });
+    return [isOrganizationOwner, loadingUserPermissions];
+};
 
 export enum AdminRolesUIState {
     Hidden = 'hidden',
