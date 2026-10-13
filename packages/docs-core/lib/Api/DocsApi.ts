@@ -3,9 +3,9 @@ import { DocsApiPublicRouteBuilder } from './Routes/DocsApiPublicRouteBuilder'
 import { DocsApiRouteBuilder } from './Routes/DocsApiRouteBuilder'
 import { forgeImageURL } from '@proton/shared/lib/helpers/image'
 import { getErrorString } from '../Util/GetErrorString'
-import { isPublicNodeMeta } from '@proton/drive-store'
 import {
   Result,
+  isPublicNodeMeta,
   type SuggestionThreadStateAction,
   type ApiResult,
   type NodeMeta,

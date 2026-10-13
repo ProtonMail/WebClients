@@ -13,9 +13,12 @@ import { FeatureCode, fetchFeatures } from '@proton/features'
 import createApi from '@proton/shared/lib/api/createApi'
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig'
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames'
+import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper'
 import type { ProtonConfig } from '@proton/shared/lib/interfaces'
 import noop from '@proton/utils/noop'
-import { getRefreshError, sendErrorReport } from '@proton/drive-store'
+import { isProduction, traceError } from '@proton/shared/lib/helpers/sentry'
+import { c } from 'ttag'
+import { DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 
 import { locales } from '~/utils/locales'
 import { extendStore, setupStore } from '~/redux-store/store'
@@ -29,6 +32,50 @@ import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
 import { getCookie } from '@proton/shared/lib/helpers/cookies'
 import { versionCookieAtLoad } from '@proton/components/helpers/versionCookie'
 import { serverEvent } from '@proton/account/eventLoop'
+
+const REFRESH_MESSAGE = 'Please refresh the page.'
+
+class RefreshError extends Error {
+  sentryMessage: string = REFRESH_MESSAGE
+
+  constructor(message?: string) {
+    super(message || REFRESH_MESSAGE)
+    this.name = 'RefreshError'
+  }
+}
+
+const ERROR_REQUIRE_PAGE_REFRESH = c('Error').t`${DRIVE_APP_NAME} has updated. Please refresh the page.`
+
+const getRefreshError = () => new RefreshError(ERROR_REQUIRE_PAGE_REFRESH)
+
+function sendErrorReport(error: unknown) {
+  if (!error || ['AbortError', 'TransferCancel', 'OfflineError'].includes((error as Error).name)) {
+    return
+  }
+  if (getIsConnectionIssue(error)) {
+    return
+  }
+
+  let errorForReporting = error as Error
+
+  if (error instanceof Error && 'sentryMessage' in error && typeof error.sentryMessage === 'string') {
+    errorForReporting = new Error(error.sentryMessage)
+    errorForReporting.name = error.name
+    errorForReporting.stack = error.stack
+  }
+
+  const context: { tags?: Record<string, string> } = {}
+
+  if (typeof window !== 'undefined' && isProduction(window.location.host)) {
+    const cookieTag = getCookie('Tag') || 'prod'
+    if (cookieTag) {
+      context.tags = { stage: cookieTag }
+    }
+  }
+
+  console.warn(error, context)
+  traceError(errorForReporting, context)
+}
 
 async function getAppContainer() {
   try {

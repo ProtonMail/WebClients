@@ -1,13 +1,19 @@
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 import { Logger } from '@proton/shared/lib/logs'
-import { DOCS_DEBUG_KEY, DependencyContainer, InternalEventBus } from '@proton/docs-shared'
+import {
+  DOCS_DEBUG_KEY,
+  DependencyContainer,
+  InternalEventBus,
+  type InternalEventBusInterface,
+  type SyncedEditorState,
+  type CacheConfig,
+} from '@proton/docs-shared'
 import { App_TYPES } from './Types'
 import type { HttpHeaders } from '../../Api/Types/HttpHeaders'
 import { DocsApi } from '../../Api/DocsApi'
 import { SquashDocument } from '../../UseCase/SquashDocument'
 import { EncryptMessage } from '../../UseCase/EncryptMessage'
 import { DocLoader } from '../../Services/DocumentLoader/DocLoader'
-import type { InternalEventBusInterface, SyncedEditorState } from '@proton/docs-shared'
 import { DecryptMessage } from '../../UseCase/DecryptMessage'
 import type { Api } from '@proton/shared/lib/interfaces'
 import { EncryptionService } from '../../Services/Encryption/EncryptionService'
@@ -57,7 +63,6 @@ import type { APP_NAMES } from '@proton/shared/lib/constants'
 import type { SheetsDatabaseSchema } from '../../Database/SheetsDBSchema'
 import { CURRENT_SHEETS_DB_VERSION, SHEETS_DATABASE_NAME, sheetsDBMigrations } from '../../Database/SheetsDBSchema'
 import { SheetsStorageService } from '../../Services/SheetsStorage/SheetsStorageService'
-import type { CacheConfig } from '@proton/drive-store/lib/CacheConfig'
 import type { PublicKeyReference } from '@protontech/crypto'
 
 export type AppDependenciesOptions = {

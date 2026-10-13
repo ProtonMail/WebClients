@@ -1,7 +1,4 @@
-import { CryptoProxy } from '@protontech/crypto';
-
 import createApi from '@proton/shared/lib/api/createApi';
-import localStorageWithExpiry from '@proton/shared/lib/api/helpers/localStorageWithExpiry';
 import { TelemetryDriveWebFeature, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { randomHexString4 } from '@proton/shared/lib/helpers/uid';
@@ -38,15 +35,7 @@ export enum Features {
  */
 export enum Actions {
     AddToBookmark = 'addToBookmark',
-    ViewSignUpFlowModal = 'viewSignUpFlowModal',
-    DismissSignUpFlowModal = 'dismissSignUpFlowModal',
-    SubmitSignUpFlowModal = 'submitSignUpFlowModal',
-    SignUpFlowModal = 'signUpFlowModal',
-    SignInFlowModal = 'signInFlowModal',
     PublicDownload = 'publicDownload',
-    SignUpFlowAndRedirectCompleted = 'signUpFlowAndRedirectCompleted',
-
-    // images
 }
 
 type PerformanceTelemetryAdditionalValues = {
@@ -214,53 +203,4 @@ export const countActionWithTelemetry = (action: Actions, count: number = 1) => 
         },
         delay: false,
     });
-};
-
-const TEN_MINUTES = 10 * 60 * 1000;
-
-export async function getTimeBasedHash(interval: number = TEN_MINUTES) {
-    const timeBase = Math.floor(Date.now() / interval) * interval;
-
-    const encoder = new TextEncoder();
-    const data = encoder.encode(timeBase.toString());
-    const hashBuffer = await CryptoProxy.computeHash({ algorithm: 'SHA256', data });
-    const hashArray = Array.from(new Uint8Array(hashBuffer));
-    const hashHex = hashArray.map((b) => b.toString(16).padStart(2, '0')).join('');
-
-    return hashHex;
-}
-
-/**
- * Tracks user actions within a specified time window, typically used for flows involving redirections.
- *
- * This function is useful when you want to log an action only if the user starts at point A
- * and finishes at point B within a given time window. It's particularly helpful in scenarios
- * where there are redirections in the middle of a flow and passing query parameters through
- * all redirections is not feasible.
- *
- * @example
- * // Sign-Up Modal flow:
- * // 1. Sign-Up Modal appears (start A)
- * // 2. User signs up, pays, redirects
- * // 3. User goes back to shared-with-me page (end B)
- * // If this happens within the time window, the flow is logged as completed.
- *
- * @param {Actions} action - The action to be tracked.
- * @param {number} [duration=TEN_MINUTES] - The time window for tracking the action, default is 10 minutes.
- *
- * @returns {Object} An object with start and end methods to initiate and complete the tracking.
- */
-export const traceTelemetry = (action: Actions, duration: number = TEN_MINUTES) => {
-    return {
-        start: async () => {
-            localStorageWithExpiry.storeData(`telemetry-trace-${action}`, await getTimeBasedHash(duration), duration);
-        },
-        end: async () => {
-            const data = localStorageWithExpiry.getData(`telemetry-trace-${action}`);
-            if (data && data === (await getTimeBasedHash(duration))) {
-                void countActionWithTelemetry(action);
-            }
-            localStorageWithExpiry.deleteData(`telemetry-trace-${action}`);
-        },
-    };
 };

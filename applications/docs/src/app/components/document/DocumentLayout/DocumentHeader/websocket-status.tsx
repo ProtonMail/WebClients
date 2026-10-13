@@ -3,8 +3,7 @@ import { useApplication } from '~/utils/application-context'
 import { mergeRegister } from '@lexical/utils'
 import type { WebsocketConnectionEventPayloads, WebsocketConnectionEventStatusChange } from '@proton/docs-core'
 import { WebsocketConnectionEvent } from '@proton/docs-core'
-import type { NodeMeta, PublicNodeMeta } from '@proton/docs-shared'
-import { areNodeMetasEqual } from '@proton/drive-store'
+import { areNodeMetasEqual, type NodeMeta, type PublicNodeMeta } from '@proton/docs-shared'
 import type { ConnectionCloseReason } from '@proton/docs-proto'
 
 // @TODO(aman): This whole thing should probably be refactored to be some kind of state machine that directly reflects the current status instead of using events where it can potentially become disjointed from the actual state.

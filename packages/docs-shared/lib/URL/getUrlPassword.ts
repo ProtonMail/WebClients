@@ -1,7 +1,7 @@
 import localStorageWithExpiry from '@proton/shared/lib/api/helpers/localStorageWithExpiry'
 
 // Must match the key used by Drive when saving the password before signup/signin redirection
-const PUBLIC_SHARE_REDIRECT_PASSWORD_STORAGE_KEY = 'public-share-redirect-password'
+export const PUBLIC_SHARE_REDIRECT_PASSWORD_STORAGE_KEY = 'public-share-redirect-password'
 
 /**
  * When coming back from signup/signin the hash is empty,
