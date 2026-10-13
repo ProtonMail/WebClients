@@ -3818,6 +3818,15 @@
       ],
       "Your previous username, ${ boldClaimedEmail }, can no longer be used to sign in to this account.": [
         "Vechiul nume de utilizator, ${ boldClaimedEmail }, nu mai poate fi folosit pentru a vă conecta la acest cont."
+      ],
+      "The address ${ boldClaimedEmail } has been claimed by another organization and can no longer be used for this account. Your data is safe and remains private.": [
+        "Adresa ${ boldClaimedEmail } a fost revendicată de o altă organizație și nu mai poate fi utilizată pentru acest cont. Datele vă sunt în siguranță și rămân private."
+      ],
+      "Your address has been claimed": [
+        "Adresa v-a fost revendicată."
+      ],
+      "Your administrator can give you a new address.": [
+        "Administratorul vă poate oferi o adresă nouă."
       ]
     },
     "Collapsible tooltip": {
@@ -14547,6 +14556,15 @@
       ],
       "Zoom meeting": [
         "o întâlnire pe Zoom"
+      ],
+      "**We're changing the ${ BRAND_NAME } sign-in page.** Your account and password stay the same.": [
+        "**Modificăm pagina de conectare ${ BRAND_NAME }.** Contul și parola vă rămân neschimbate."
+      ],
+      "For security, business accounts sign in with a code instead. On your TV, select 'Trouble signing in?' and follow the steps.": [
+        "Din motive de securitate, conturile de afaceri se conectează folosind un cod. Pe televizor, selectați „Probleme la conectare?” și urmați pașii."
+      ],
+      "Your account and password stay the same.": [
+        "Contul și parola vă rămân neschimbate."
       ]
     },
     "info": {
@@ -28214,6 +28232,9 @@
       ],
       "Your subscriptions": [
         "Abonamente personale"
+      ],
+      "QR sign-in isn't available for business accounts": [
+        "Autentificarea prin cod QR nu este disponibilă pentru conturile de afaceri."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -28723,6 +28744,9 @@
       ],
       "Waiting for user to accept the invitation": [
         "Se așteaptă ca utilizatorul să accepte invitația"
+      ],
+      "Assigned by a group. Remove the user from the group to change this role": [
+        "Atribuit de un grup. Eliminați utilizatorul din grup pentru a modifica acest rol."
       ]
     },
     "Tooltip automatically attach public key": {
@@ -29942,6 +29966,88 @@
       ],
       "Yearly, ${ untilString }": [
         "Anual, ${ untilString }"
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Obțineți oferta"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/lună"
+      ],
+      "2 individual accounts": [
+        "Două conturi individuale"
+      ],
+      "2 TB of secure storage": [
+        "2 TiB de stocare securizată"
+      ],
+      "3 TB of secure storage": [
+        "3 TiB de stocare securizată"
+      ],
+      "500 GB of secure storage": [
+        "500 GiB de stocare securizată"
+      ],
+      "6 individual accounts": [
+        "6 conturi individuale"
+      ],
+      "Advanced protection against cyber threats": [
+        "Protecție avansată împotriva amenințărilor cibernetice"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Reducerile se bazează pe prețurile lunare standard. Abonamentul se va reînnoi la tariful anual standard la sfârșitul ciclului de facturare."
+      ]
+    },
+    "bfcampaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } și ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME } premium"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME } premium"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Cea mai mare reducere a anului"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "pentru 12 luni"
+      ],
+      "Last chance to save big": [
+        "Ultima șansă de a economisi semnificativ"
+      ],
+      "Protect your entire tribe": [
+        "Protejați-vă întreaga familie"
+      ],
+      "Protection for two in a single plan": [
+        "Protecție pentru două persoane într-un singur plan"
+      ],
+      "Save big with a yearly plan": [
+        "Economisiți semnificativ cu un abonament anual"
       ]
     }
   }
