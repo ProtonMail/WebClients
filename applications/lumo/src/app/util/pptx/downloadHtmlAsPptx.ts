@@ -1,4 +1,4 @@
-import { downloadBytes } from '../pdf/downloadBlob';
+import { triggerFileDownload } from '../triggerFileDownload';
 import { type HtmlSlidesToPptxOptions, htmlSlidesToPptxBytes } from './htmlSlidesToPptxBytes';
 
 /** Ensure a download file name ends with `.pptx`. */
@@ -13,9 +13,10 @@ export async function downloadHtmlSlidesAsPptx(
     options?: HtmlSlidesToPptxOptions
 ): Promise<void> {
     const bytes = await htmlSlidesToPptxBytes(slideDocuments, options);
-    downloadBytes(
-        bytes,
-        ensurePptxFileName(fileName),
-        'application/vnd.openxmlformats-officedocument.presentationml.presentation'
+    await triggerFileDownload(
+        new Blob([bytes], {
+            type: 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+        }),
+        ensurePptxFileName(fileName)
     );
 }
