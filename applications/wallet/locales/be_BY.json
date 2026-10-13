@@ -934,6 +934,11 @@
         "Sats"
       ]
     },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "Праграма для камп'ютара ${ appName }"
+      ]
+    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "Праблема ${ LUMO_SHORT_APP_NAME }"
@@ -4811,6 +4816,9 @@
       "Once your full subscription starts...": [
         "Як толькі пачнецца ваша поўная падпіска..."
       ],
+      "to keep using all of the features after your trial ends.": [
+        "каб працягваць карыстацца ўсімі функцыямі пасля завяршэння пробнага перыяду."
+      ],
       "you can cancel within 30 days and get a pro-rata refund.": [
         "вы зможаце скасаваць падпіску на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
       ],
@@ -5027,6 +5035,15 @@
         "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэнняў.",
         "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэнняў.",
         "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэнняў."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "Выбраны тарыфны план не прапануе дастатковую колькасць даменаў для вашага ўліковага запісу."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "Выбраны тарыфны план не прапануе дастатковую колькасць удзельнікаў для вашага ўліковага запісу."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "Выбраны тарыфны план не прапануе дастатковую колькасць сховішча для вашага ўліковага запісу."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяца. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
@@ -5915,6 +5932,9 @@
       "Billing cycle": [
         "Перыяд аплаты"
       ],
+      "Black Friday": [
+        "Чорная Пятніца"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Скасаваць падпіску ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -6028,9 +6048,6 @@
       ],
       "Select a plan": [
         "Выбар тарыфнага плана"
-      ],
-      "September Sale": [
-        "Вераснёўскі распродаж"
       ],
       "Set recovery methods": [
         "Прызначэнне спосабаў аднаўлення"
@@ -6178,6 +6195,9 @@
     "user_modal": {
       "Upgrade to a supported plan to use admin roles.": [
         "Палепшыце да сумяшчальнага тарыфнага плана, каб выкарыстоўваць ролі адміністратараў."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Вы не можаце змяніць сваю ўласную ролю. Папрасіце іншага адміністратара зрабіць гэта."
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Вы зможаце прызначаць ролі, як толькі карыстальнік прыме запрашэнне."

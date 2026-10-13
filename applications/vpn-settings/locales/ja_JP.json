@@ -188,6 +188,9 @@
       "Claim ${ BRAND_NAME } address": [
         "${ BRAND_NAME }アドレスを取得"
       ],
+      "Claim it": [
+        "請求する"
+      ],
       "Claim offer": [
         "特典を受け取る"
       ],
@@ -305,6 +308,9 @@
       "Create users": [
         "ユーザーを作成"
       ],
+      "Create your own": [
+        "新規作成"
+      ],
       "Current plan": [
         "現在のプラン"
       ],
@@ -394,9 +400,6 @@
       ],
       "Dismiss": [
         "却下"
-      ],
-      "Domain name": [
-        "ドメイン名"
       ],
       "Don't show again": [
         "次回から表示しない"
@@ -760,6 +763,9 @@
       ],
       "No, thanks": [
         "いいえ"
+      ],
+      "Not now": [
+        "後で"
       ],
       "OK": [
         "OK"
@@ -1769,6 +1775,11 @@
         "ストレージ容量はすべての ${ BRAND_NAME } サービスで共有されています。"
       ]
     },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "ブラックフライデー"
+      ]
+    },
     "Billing cycle": {
       "Renews automatically on ${ subscriptionManagerName }": [
         "${ subscriptionManagerName }に自動更新されます"
@@ -2069,6 +2080,11 @@
       ],
       "Total": [
         "合計"
+      ]
+    },
+    "claimed address": {
+      "Your administrator can give you a new address.": [
+        "システム管理者が新しいアドレスを発行できます。"
       ]
     },
     "Collapsible tooltip": {
@@ -6681,9 +6697,6 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ protonSubdomain }は${ BRAND_NAME }によってホストされており、迅速にサブドメインの設定ができます。詳しくは${ learnMoreLink }"
       ],
-      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
-        "グループを作成するにはカスタムドメインが必要です。カスタムドメインを設定していない場合は、最初に ${ linkToDomainPage } から設定を行ってください。"
-      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "名前をつけることで何に使用しているか判別しやすくなり、簡単に失効させたり期限を延長したりできます。"
       ],
@@ -8345,6 +8358,9 @@
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "公開された情報は第三者サービスから漏洩しました。あなたの ${ BRAND_NAME } アカウント情報は安全で暗号化されたままです。${ learnMoreLink }"
+      ],
+      "The following address is available:": [
+        "以下のアドレスが利用可能です："
       ],
       "The following address is invalid.": [
         "次のアドレスに間違いがあります。"
@@ -13443,59 +13459,6 @@
         "Yahoo"
       ]
     },
-    "q3campaign2026: Action": {
-      "Get the deal": [
-        "お得な割引をゲット"
-      ],
-      "Special Offer": [
-        "特別オファー"
-      ]
-    },
-    "q3campaign2026: Info": {
-      "/month": [
-        "/月"
-      ],
-      "2 individual accounts": [
-        "2つの独立アカウント"
-      ],
-      "2 TB of secure storage": [
-        "2 TBの安全なストレージ"
-      ],
-      "3 TB of secure storage": [
-        "3 TBの安全なストレージ"
-      ],
-      "500 GB of secure storage": [
-        "500 GBの安全なストレージ"
-      ],
-      "6 individual accounts": [
-        "6つの独立アカウント"
-      ],
-      "Advanced protection against cyber threats": [
-        "サイバー脅威に対する高度な保護"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "割引率は標準の月額料金を基準に算出されます。 今回の請求期間終了時に、サブスクリプションは通常の年間料金で更新されます。"
-      ]
-    },
-    "q3campaign2026: Info, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、 のすべてのプレミアム機能"
-      ]
-    },
-    "q3campaign2026: Title": {
-      "for 12 months": [
-        "12か月プラン"
-      ],
-      "One plan, full power": [
-        "1つのプランで フルパワー"
-      ],
-      "One plan, max savings": [
-        "1つのプランで 最大限お得に"
-      ],
-      "One plan, more power": [
-        "1つのプランで、より多くのパワーを"
-      ]
-    },
     "Recovery Email": {
       "Cancel": [
         "キャンセル"
@@ -16875,6 +16838,9 @@
       ],
       "Create user accounts": [
         "アカウントを作成"
+      ],
+      "Create your ${ BRAND_NAME } address": [
+        "${ BRAND_NAME } アドレスを作成"
       ],
       "Created": [
         "作成済み"

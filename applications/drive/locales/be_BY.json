@@ -612,6 +612,9 @@
       "Import now": [
         "Імпартаваць"
       ],
+      "Import paused": [
+        "Імпартаванне прыпынена"
+      ],
       "Importing from Google": [
         "Імпартаванне з Google"
       ],
@@ -1563,6 +1566,45 @@
         "Прастора сховішча размеркавана паміж усімі сэрвісамі ${ BRAND_NAME }"
       ]
     },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Чорная Пятніца"
+      ],
+      "Get the deal": [
+        "Скарыстацца прапановай"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/месяц"
+      ],
+      "2 individual accounts": [
+        "2 асабістых уліковых запісы"
+      ],
+      "2 TB of secure storage": [
+        "2 ТБ бяспечнага сховішча"
+      ],
+      "3 TB of secure storage": [
+        "3 ТБ бяспечнага сховішча"
+      ],
+      "6 individual accounts": [
+        "6 асабістых уліковых запісаў"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Найбуйнейшы распродаж года"
+      ],
+      "Black Friday": [
+        "Чорная Пятніца"
+      ],
+      "for 12 months": [
+        "за 12 месяцаў"
+      ],
+      "Last chance to save big": [
+        "Апошні шанс істотна сэканоміць"
+      ]
+    },
     "Billing cycle option": {
       "${ n } month": [
         "${ n } месяц",
@@ -1602,6 +1644,11 @@
       ],
       "Yearly": [
         "Штогод"
+      ]
+    },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "Праграма для камп'ютара ${ appName }"
       ]
     },
     "Bug category": {
@@ -3742,6 +3789,9 @@
       "Not a valid number": [
         "Несапраўдны нумар"
       ],
+      "Not enough browser storage": [
+        "Недастаткова сховішча ў браўзеры"
+      ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "У аднаго з кантактаў няма адраса электроннай пошты: ${ noEmailsContactNamesList }",
         "У некаторых кантактаў няма адрасоў электроннай пошты: ${ noEmailsContactNamesList } ",
@@ -5805,6 +5855,9 @@
       ],
       "Downloading": [
         "Спампоўванне"
+      ],
+      "Drag your files and folders here or use the \"New\" button to upload": [
+        "Перацягніце свае файлы і папкі сюды або выкарыстоўвайце кнопку \"Новая\", каб запампаваць"
       ],
       "Drop file here to upload": [
         "Перацягніце файл сюды, каб запампаваць"
@@ -10493,6 +10546,9 @@
       "Once your full subscription starts...": [
         "Як толькі пачнецца ваша поўная падпіска..."
       ],
+      "to keep using all of the features after your trial ends.": [
+        "каб працягваць карыстацца ўсімі функцыямі пасля завяршэння пробнага перыяду."
+      ],
       "you can cancel within 30 days and get a pro-rata refund.": [
         "вы зможаце скасаваць падпіску на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
       ],
@@ -10775,6 +10831,15 @@
         "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэнняў.",
         "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэнняў.",
         "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэнняў."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "Выбраны тарыфны план не прапануе дастатковую колькасць даменаў для вашага ўліковага запісу."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "Выбраны тарыфны план не прапануе дастатковую колькасць удзельнікаў для вашага ўліковага запісу."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "Выбраны тарыфны план не прапануе дастатковую колькасць сховішча для вашага ўліковага запісу."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяца. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
@@ -11322,79 +11387,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q3campaign2026: Action": {
-      "Get the deal": [
-        "Скарыстацца прапановай"
-      ],
-      "Special Offer": [
-        "Спецыяльная прапанова"
-      ]
-    },
-    "q3campaign2026: Info": {
-      "/month": [
-        "/месяц"
-      ],
-      "2 individual accounts": [
-        "2 асабістых уліковых запісы"
-      ],
-      "2 TB of secure storage": [
-        "2 ТБ бяспечнага сховішча"
-      ],
-      "3 TB of secure storage": [
-        "3 ТБ бяспечнага сховішча"
-      ],
-      "500 GB of secure storage": [
-        "500 ГБ бяспечнага сховішча"
-      ],
-      "6 individual accounts": [
-        "6 асабістых уліковых запісаў"
-      ],
-      "Advanced protection against cyber threats": [
-        "Пашыраная абарона супраць кіберпагроз"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Скідкі разлічваюцца на падставе стандартнай платы за месяц. Ваша падпіска будзе аўтаматычна падаўжацца па стандартнай гадавой стаўцы пасля заканчэння перыяду аплаты."
-      ]
-    },
-    "q3campaign2026: Info, Calendar first": {
-      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "Прэміяльныя ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } і ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Прэміяльныя ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Family, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "Прэміяльныя ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Family, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "Прэміяльныя ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Прэміяльныя ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Title": {
-      "for 12 months": [
-        "за 12 месяцаў"
-      ],
-      "One plan, full power": [
-        "Адзін тарыфны план, максімум магчымасцяў"
-      ],
-      "One plan, max savings": [
-        "Адзін тарыфны план, максімальная эканомія"
-      ],
-      "One plan, more power": [
-        "Адзін тарыфны план, больш магчымасцяў"
       ]
     },
     "Referral": {
@@ -12926,6 +12918,9 @@
       "Birthday": [
         "Дзень нараджэння"
       ],
+      "Black Friday": [
+        "Чорная Пятніца"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Скасаваць падпіску ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -13313,6 +13308,9 @@
       "Import started": [
         "Пачаты імпарт"
       ],
+      "Import started, but your storage won't be enough for this import": [
+        "Пачалося імпартаванне, але аб'ёму вашага сховішча будзе недастаткова для яго завяршэння."
+      ],
       "Import your data to ${ BRAND_NAME }": [
         "Імпартуйце свае даныя ў ${ BRAND_NAME }"
       ],
@@ -13378,6 +13376,9 @@
       ],
       "Modified": [
         "Зменена"
+      ],
+      "More storage needed to finish your import": [
+        "Патрабуецца больш сховішча, каб завяршыць ваша імпартаванне"
       ],
       "My files": [
         "Мае файлы"
@@ -13600,9 +13601,6 @@
       ],
       "Select users to migrate": [
         "Выберыце карыстальнікаў для пераносу"
-      ],
-      "September Sale": [
-        "Вераснёўскі распродаж"
       ],
       "Set recovery methods": [
         "Прызначэнне спосабаў аднаўлення"
@@ -14101,6 +14099,9 @@
     "user_modal": {
       "Upgrade to a supported plan to use admin roles.": [
         "Палепшыце да сумяшчальнага тарыфнага плана, каб выкарыстоўваць ролі адміністратараў."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Вы не можаце змяніць сваю ўласную ролю. Папрасіце іншага адміністратара зрабіць гэта."
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Вы зможаце прызначаць ролі, як толькі карыстальнік прыме запрашэнне."

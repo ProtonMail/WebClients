@@ -247,23 +247,8 @@
       ]
     },
     "color": {
-      "apple": [
-        "苹果红"
-      ],
-      "azureish white": [
-        "天蓝白"
-      ],
       "black": [
         "黑色"
-      ],
-      "blanched almond": [
-        "杏仁黄"
-      ],
-      "blue-gray": [
-        "蓝灰色"
-      ],
-      "caramel": [
-        "焦糖色"
       ],
       "carrot": [
         "胡萝卜橙"
@@ -271,29 +256,11 @@
       "cerise": [
         "水红色"
       ],
-      "cinnabar": [
-        "朱红色"
-      ],
       "cobalt": [
         "钴蓝色"
       ],
       "copper": [
         "紫铜色"
-      ],
-      "cyan-blue azure": [
-        "青蓝色"
-      ],
-      "dandelion": [
-        "蒲公英白"
-      ],
-      "dark cerulean": [
-        "藏蓝色"
-      ],
-      "dark midnight blue": [
-        "午夜蓝"
-      ],
-      "dim gray": [
-        "暗灰色"
       ],
       "enzian": [
         "龙胆蓝"
@@ -301,41 +268,11 @@
       "fern": [
         "丝袍绿"
       ],
-      "field drab": [
-        "田野褐"
-      ],
       "forest": [
         "森林绿"
       ],
-      "gainsboro": [
-        "淡灰色"
-      ],
       "gray": [
         "灰色"
-      ],
-      "japanese laurel": [
-        "日本月桂绿"
-      ],
-      "kiwi": [
-        "猕猴桃绿"
-      ],
-      "lemon yellow": [
-        "柠檬黄"
-      ],
-      "light carmine pink": [
-        "淡胭脂粉"
-      ],
-      "light moss green": [
-        "青苔绿"
-      ],
-      "light red": [
-        "浅红色"
-      ],
-      "maize": [
-        "玉米黄"
-      ],
-      "mughal green": [
-        "莫卧儿绿"
       ],
       "ocean": [
         "海蓝色"
@@ -343,32 +280,8 @@
       "olive": [
         "橄榄绿"
       ],
-      "outer space": [
-        "星空黑"
-      ],
       "pacific": [
         "太平洋蓝"
-      ],
-      "palatinate blue": [
-        "普法尔茨蓝"
-      ],
-      "pale cerulean": [
-        "淡青色"
-      ],
-      "pastel gray": [
-        "淡灰色"
-      ],
-      "persian plum": [
-        "波斯绛紫色"
-      ],
-      "persian red": [
-        "波斯红"
-      ],
-      "philippine gray": [
-        "菲律宾灰"
-      ],
-      "philippine silver": [
-        "菲律宾银"
       ],
       "pickle": [
         "橄榄黄"
@@ -378,9 +291,6 @@
       ],
       "pink": [
         "粉色"
-      ],
-      "pistachio": [
-        "开心果绿"
       ],
       "plum": [
         "绛紫色"
@@ -394,14 +304,8 @@
       "reef": [
         "珊瑚绿"
       ],
-      "ruddy pink": [
-        "红粉色"
-      ],
       "sahara": [
         "撒哈拉棕"
-      ],
-      "satin sheen gold": [
-        "缎光金"
       ],
       "slateblue": [
         "板岩蓝"
@@ -411,12 +315,6 @@
       ],
       "strawberry": [
         "草莓红"
-      ],
-      "vivid auburn": [
-        "红褐色"
-      ],
-      "white": [
-        "白色"
       ]
     },
     "Confirm": {
@@ -444,6 +342,9 @@
       ],
       "Failed to export document.": [
         "文档导出失败。"
+      ],
+      "Failed to import document due to unsupported file format.": [
+        "由于文件格式不受支持，导入文档失败。"
       ],
       "Failed to import HTML due to unknown error.": [
         "由于未知错误，无法导入 HTML。"
@@ -548,6 +449,9 @@
       ],
       "Loading": [
         "加载中"
+      ],
+      "Loading spreadsheet content...": [
+        "正在加载电子表格内容..."
       ],
       "NEW": [
         "新"
@@ -1357,6 +1261,9 @@
       "New spreadsheet": [
         "新建电子表格"
       ],
+      "Open Proton Drive": [
+        "打开 Proton Drive"
+      ],
       "OpenDocument Spreadsheet (.ods) (Beta)": [
         "OpenDocument 电子表格 (.ods) （测试版）"
       ],
@@ -1683,8 +1590,26 @@
       ]
     },
     "sheets_2025:Spreadsheet editor toolbar": {
+      "Apply border": [
+        "应用边框"
+      ],
+      "Apply fill color": [
+        "应用填充颜色"
+      ],
+      "Apply text color": [
+        "应用文本颜色"
+      ],
       "Bold": [
         "加粗"
+      ],
+      "Choose border": [
+        "选择边框"
+      ],
+      "Choose fill color": [
+        "选择填充颜色"
+      ],
+      "Choose text color": [
+        "选择文本颜色"
       ],
       "Clear formatting": [
         "清除格式"

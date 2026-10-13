@@ -359,6 +359,9 @@
       "Deselect all": [
         "Deseleccionar todo"
       ],
+      "Detach": [
+        "Desadjuntar"
+      ],
       "Details": [
         "Detalles"
       ],
@@ -598,6 +601,9 @@
       ],
       "Import now": [
         "Importar ahora"
+      ],
+      "Import paused": [
+        "Importación pausada"
       ],
       "Importing from Google": [
         "Importando desde Google"
@@ -1383,6 +1389,12 @@
       "Domains": [
         "Dominios"
       ],
+      "Managed Service Provider": [
+        "Proveedor de Servicios Gestionados"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Las organizaciones con el complemento de Proveedor de Servicios Gestionados pueden crear y administrar organizaciones subsidiarias."
+      ],
       "Servers": [
         "Servidores"
       ],
@@ -1559,6 +1571,11 @@
       ],
       "Yearly": [
         "Anual"
+      ]
+    },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "Aplicación de escritorio de ${ appName }"
       ]
     },
     "Bug category": {
@@ -3681,6 +3698,9 @@
       "Not a valid number": [
         "Número no válido"
       ],
+      "Not enough browser storage": [
+        "No hay suficiente almacenamiento en el navegador"
+      ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Uno de los contactos no tiene dirección de correo: ${ noEmailsContactNamesList }",
         "Algunos contactos no tienen dirección de correo: ${ noEmailsContactNamesList } "
@@ -4114,6 +4134,9 @@
       ],
       "You must set a name": [
         "Debe establecer un nombre"
+      ],
+      "You reached the maximum number of connected addresses": [
+        "Alcanzó el número máximo de direcciones conectadas"
       ],
       "Your import will not be processed.": [
         "No se procesará la importación."
@@ -5838,6 +5861,9 @@
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
         "Si se elimina de la lista, perderá el acceso a «${ fileName }» y no podrá volver a abrirlo a menos que el propietario lo comparta con usted de nuevo."
       ],
+      "If you've already upgraded, you can resume your import in ${ easySwitchSettingsLink }. You can also cancel it there.": [
+        "Si ya ha actualizado, puede reanudar la importación en ${ easySwitchSettingsLink }. También puede cancelarla ahí."
+      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendario",
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendarios"
@@ -7163,6 +7189,9 @@
       ],
       "Your Google Drive may be empty or contain only files that are not supported.": [
         "Su Google Drive podría estar vacío o solo contiene archivos que no están soportados."
+      ],
+      "Your import is blocked. Upgrade now to bring the rest of your files over.": [
+        "La importación está bloqueada. Actualice ahora para traer el resto de sus archivos."
       ],
       "Your information was found on ${ displayedDate }": [
         "Los datos fueron encontrados en ${ displayedDate }"
@@ -11051,79 +11080,6 @@
         "Yahoo"
       ]
     },
-    "q3campaign2026: Action": {
-      "Get the deal": [
-        "Aproveche la oferta"
-      ],
-      "Special Offer": [
-        "Oferta especial"
-      ]
-    },
-    "q3campaign2026: Info": {
-      "/month": [
-        "mensuales"
-      ],
-      "2 individual accounts": [
-        "2 cuentas individuales"
-      ],
-      "2 TB of secure storage": [
-        "2 TB de almacenamiento seguro"
-      ],
-      "3 TB of secure storage": [
-        "3 TB de almacenamiento seguro"
-      ],
-      "500 GB of secure storage": [
-        "500 GB de almacenamiento seguro"
-      ],
-      "6 individual accounts": [
-        "6 cuentas individuales"
-      ],
-      "Advanced protection against cyber threats": [
-        "Protección avanzada contra ciberamenazas"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Los descuentos se basan en los precios mensuales estándar. Su suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
-      ]
-    },
-    "q3campaign2026: Info, Calendar first": {
-      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } todos premium"
-      ]
-    },
-    "q3campaign2026: Info, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } todos premium"
-      ]
-    },
-    "q3campaign2026: Info, Family, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } todos premium"
-      ]
-    },
-    "q3campaign2026: Info, Family, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } todos premium"
-      ]
-    },
-    "q3campaign2026: Info, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } todos premium"
-      ]
-    },
-    "q3campaign2026: Title": {
-      "for 12 months": [
-        "durante 12 meses"
-      ],
-      "One plan, full power": [
-        "Un solo plan: Máximo poder"
-      ],
-      "One plan, max savings": [
-        "Un solo plan: máximo ahorro"
-      ],
-      "One plan, more power": [
-        "Un solo plan: Más poder"
-      ]
-    },
     "Referral": {
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } por referido"
@@ -12573,6 +12529,9 @@
       "Birthday": [
         "Cumpleaños"
       ],
+      "Black Friday": [
+        "Black Friday"
+      ],
       "Bring your Google Drive files to ${ DRIVE_APP_NAME }": [
         "Traiga sus archivos de Google Drive a ${ DRIVE_APP_NAME }"
       ],
@@ -13022,6 +12981,9 @@
       "Modified": [
         "Modificado"
       ],
+      "More storage needed to finish your import": [
+        "Se necesita más almacenamiento para finalizar la importación"
+      ],
       "My files": [
         "Mis archivos"
       ],
@@ -13241,9 +13203,6 @@
       ],
       "Select users to migrate": [
         "Seleccione los usuarios para migrar"
-      ],
-      "September Sale": [
-        "Oferta de septiembre"
       ],
       "Set recovery methods": [
         "Establecer métodos de recuperación"

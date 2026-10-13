@@ -882,6 +882,11 @@
         "卸载 ${ PASS_APP_NAME }"
       ]
     },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "${ appName } 桌面应用"
+      ]
+    },
     "Button": {
       "More info": [
         "更多信息"
@@ -1731,6 +1736,9 @@
       "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
         "访问令牌与 ${ passCliLink } 配合使用，可让您自动化 CI/CD 流程，或为 AI 代理授予执行任务所需的作用域权限。"
       ],
+      "Add a payment method so your subscription continues when your trial ends.": [
+        "添加支付方式，以便在试用结束后您的订阅能够继续使用。"
+      ],
       "Add your custom email address to monitor:": [
         "添加您的自定义邮箱地址进行监测："
       ],
@@ -2040,6 +2048,9 @@
       "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
         "找到“OpenSSH 身份验证代理”，右键点击选择“属性”。"
       ],
+      "Finish signing in in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "请在刚刚打开的浏览器窗口中完成登录。完成后，${ PASS_APP_NAME } 将自动继续。"
+      ],
       "Folder \"${ payload.folder.name }\" created": [
         "文件夹“${ payload.folder.name }”已创建"
       ],
@@ -2233,7 +2244,7 @@
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "将项目移至其他保险库会清除其安全链接！"
+        "将项目移动到另一个保险库会删除其安全链接。"
       ],
       "Moving items": [
         "正在移动"
@@ -2727,6 +2738,9 @@
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "要查看您导入到数据，请点击浏览器工具栏中的 ${ PASS_APP_NAME } 图标。"
       ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission.": [
+        "若要设置生物识别解锁，${ PASS_APP_NAME } 需要一项新的浏览器权限。"
+      ],
       "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
         "若要设置生物识别解锁，${ PASS_APP_NAME } 需要一个新的浏览器权限。接受后，扩展程序将重新加载。请之后重新打开此页面。"
       ],
@@ -3087,6 +3101,9 @@
       ],
       "Account Type": [
         "账户类型"
+      ],
+      "Add a payment method": [
+        "添加支付方式"
       ],
       "Add a random prefix for this domain when creating a new alias.": [
         "创建新别名时，请为该域添加一个随机前缀。"
@@ -4886,6 +4903,9 @@
       "Contacts": [
         "通讯录"
       ],
+      "Continue in your browser": [
+        "在浏览器中继续"
+      ],
       "Create a vault": [
         "创建保险库"
       ],
@@ -5035,6 +5055,9 @@
       ],
       "Item": [
         "项目"
+      ],
+      "Keep your subscription active": [
+        "保持订阅有效"
       ],
       "Last autofill": [
         "最后自动填充"
@@ -5412,6 +5435,18 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "需要 ${ BRAND_NAME } 密码"
+      ],
+      "${ count } folder was merged into its parent folder because the maximum nesting level was reached.": [
+        "有 ${ count } 个文件夹已合并到其父文件夹中，因为已达到最大嵌套层级。"
+      ],
+      "${ count } folder was not imported because its parent folder reached the maximum number of subfolders. Its items were imported to the closest folder available.": [
+        "有 ${ count } 个文件夹未导入，因为其父文件夹已达到子文件夹数量上限。其中的内容已导入到最近的可用文件夹中。"
+      ],
+      "${ count } folder was not imported because this vault reached its folder limit. Its items were imported to the closest folder available.": [
+        "有 ${ count } 个文件夹未导入，因为此保险库已达到文件夹数量上限。其中的内容已导入到最近的可用文件夹中。"
+      ],
+      "${ failed } folder could not be created. Its items were imported to the closest folder available.": [
+        "有 ${ failed } 个文件夹无法创建。其中的内容已导入到最近的可用文件夹中。"
       ],
       "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
         "${ modeLabelStong } 提供了强大的控制能力，但单个错误可能导致自动填充在欺诈或钓鱼网站上匹配并填充数据。"

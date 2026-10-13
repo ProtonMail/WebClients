@@ -433,6 +433,9 @@
       "Claim ${ BRAND_NAME } address": [
         "${ BRAND_NAME } adresini al"
       ],
+      "Claim it": [
+        "İstek yapın"
+      ],
       "Claim offer": [
         "Teklifi isteyin"
       ],
@@ -517,6 +520,9 @@
       "Continue with Free": [
         "Free kullanmayı sürdür"
       ],
+      "Continue with single sign-on": [
+        "Tek oturum açma ile ilerle"
+      ],
       "Continue with this password": [
         "Bu parolayı kullanmayı sürdür"
       ],
@@ -552,6 +558,9 @@
       ],
       "Create users": [
         "Kullanıcılar ekle"
+      ],
+      "Create your own": [
+        "Kendinizinkini oluşturun"
       ],
       "Current plan": [
         "Geçerli tarife"
@@ -645,9 +654,6 @@
       ],
       "Dismiss": [
         "Yok say"
-      ],
-      "Domain name": [
-        "Etki alanı adı"
       ],
       "Don't show again": [
         "Bir daha görüntülenmesin"
@@ -1033,6 +1039,9 @@
       "No, thanks": [
         "Hayır, teşekkürler"
       ],
+      "Not now": [
+        "Şimdi değil"
+      ],
       "OK": [
         "Tamam"
       ],
@@ -1101,6 +1110,9 @@
       ],
       "Recover data": [
         "Verileri kurtar"
+      ],
+      "Recover previous account": [
+        "Önceki hesabı geri yükle"
       ],
       "Refer a friend": [
         "Arkadaşınıza önerin"
@@ -1425,6 +1437,9 @@
       ],
       "Take a tour": [
         "Keşfedin"
+      ],
+      "Take the survey": [
+        "Ankete katılın"
       ],
       "Template with invite links": [
         "Davet bağlantıları ile kalıp"
@@ -2120,6 +2135,70 @@
         "Depolama alanı tüm ${ BRAND_NAME } hizmetleri arasında paylaşılır."
       ]
     },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Muhteşem Cuma"
+      ],
+      "Get the deal": [
+        "Tekliften yararlanın"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/ay"
+      ],
+      "2 individual accounts": [
+        "2 bireysel hesap"
+      ],
+      "2 TB of secure storage": [
+        "2 TB güvenli depolama alanı"
+      ],
+      "3 TB of secure storage": [
+        "3 TB güvenli depolama alanı"
+      ],
+      "500 GB of secure storage": [
+        "500 GB güvenli depolama alanı"
+      ],
+      "6 individual accounts": [
+        "6 bireysel hesap"
+      ],
+      "Advanced protection against cyber threats": [
+        "Siber tehditlere karşı gelişmiş koruma"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "İndirimler standart aylık fiyatlara göre hesaplanır. Fatura dönemi sona erdiğinde aboneliğiniz standart yıllık ücret ile yenilenir."
+      ]
+    },
+    "bfcampaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Ücretli ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Ücretli ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Ücretli ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Ücretli ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Ücretli ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "for 12 months": [
+        "12 aylık"
+      ]
+    },
     "Billing cycle": {
       "Free renewal": [
         "Ücretsiz yenileme"
@@ -2488,6 +2567,50 @@
       "Total for ${ cycle } month": [
         "${ cycle } ay için toplam",
         "${ cycle } ay için toplam"
+      ]
+    },
+    "claimed address": {
+      "Sign in with your organization?": [
+        "Kuruluşunuzun oturumu açılsın mı?"
+      ],
+      "The address ${ boldClaimedEmail } has been claimed and can no longer be used for this account. Your data is safe and hasn't been shared with anyone. To migrate it to a new account, create a new ${ BRAND_NAME } email address.": [
+        "${ boldClaimedEmail } adresi için istek yapıldı ve artık bu hesap için kullanılamaz. Verileriniz güvende ve kimseyle paylaşılmadı. Verilerinizin yeni bir hesaba aktarılması için yeni bir ${ BRAND_NAME } e-posta adresi oluşturun."
+      ],
+      "The address ${ boldClaimedEmail } has been claimed and can no longer be used for this account. Your data was migrated to the address below and remains private.": [
+        "${ boldClaimedEmail } adresi çin istek yapıldı ve artık bu hesap için kullanılamaz. Verileriniz aşağıdaki adrese aktarıldı ve gizlilikleri korunuyor."
+      ],
+      "The address ${ boldClaimedEmail } has been claimed by another organization and can no longer be used for this account. Your data is safe and remains private.": [
+        "${ boldClaimedEmail } adresi başka bir kuruluş tarafından istenildi ve artık bu hesap için kullanılamaz. Verileriniz güvende ve gizli kalmayı sürdürüyor."
+      ],
+      "Verify it's you": [
+        "Kimliğinizi doğrulayın"
+      ],
+      "You're all set": [
+        "Her şey tamam"
+      ],
+      "Your address": [
+        "Adresiniz"
+      ],
+      "Your address has been claimed": [
+        "Adresiniz için istekte bulunuldu"
+      ],
+      "Your address has changed": [
+        "Adresiniz değişti"
+      ],
+      "Your administrator can give you a new address.": [
+        "Yöneticiniz size yeni bir adres verebilir."
+      ],
+      "Your data was migrated to the address below and remains private.": [
+        "Verileriniz aşağıdaki adrese aktarıldı ve gizlilikleri korunuyor."
+      ],
+      "Your new address": [
+        "Yeni adresiniz"
+      ],
+      "Your password remains the same.": [
+        "Parolanız aynı kalır."
+      ],
+      "Your previous username, ${ boldClaimedEmail }, can no longer be used to sign in to this account.": [
+        "Önceki kullanıcı adınız, ${ boldClaimedEmail }, artık bu hesapta oturum açmak için kullanılamaz."
       ]
     },
     "Collapsible tooltip": {
@@ -4481,7 +4604,7 @@
         "Erişme izni verildi"
       ],
       "Access granted on ${ formattedAccessibleAt }": [
-        "${ formattedAccessibleAt } zamanında erişme izni verildi"
+        "${ formattedAccessibleAt } zamanında erişim verildi"
       ],
       "Access request canceled": [
         "Erişme izni isteği iptal edildi"
@@ -4701,7 +4824,7 @@
         "Erişim iste"
       ],
       "Request access?": [
-        "Erişme izni istensin mi?"
+        "Erişin istensin mi?"
       ],
       "Requesting access": [
         "Erişme izni isteniyor"
@@ -5683,6 +5806,9 @@
       ],
       "You must set a name": [
         "Bir ad belirtmelisiniz"
+      ],
+      "You reached the maximum number of connected addresses": [
+        "Olabilecek en fazla bağlantılı adres sayısına ulaştınız."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Hesabınızın ya da kuruluşunuzun ödenmemiş bir faturası var. Lütfen süresi geçmiş tüm faturaları ödeyin."
@@ -7486,6 +7612,9 @@
       "**This will disable 2-factor authentication.**": [
         "**Bu işlem iki adımlı doğrulamayı kapatacak.**"
       ],
+      "**We're changing the ${ BRAND_NAME } sign-in page.** Your account and password stay the same.": [
+        "**${ BRAND_NAME } oturum açma sayfasını yeniliyoruz.** Hesabınız ve parolanız aynı kalacak."
+      ],
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "Abone olan her arkadaşınız için **${ referrerRewardAmount } tutarında kredi kazanırsınız**."
       ],
@@ -7523,9 +7652,6 @@
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ BRAND_NAME } tarafından sunulan bir ${ protonSubdomain }, hızlıca bir alt etki alanı kurmanızı sağlar. ${ learnMoreLink }"
-      ],
-      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
-        "Grup oluşturmak için bir özel etki alanı gereklidir. Bir özel etki alanı kurulumunuz yoksa, önce ${ linkToDomainPage } bölümünden bunu yapın."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Daha sonra sertifikayı kolayca geçersiz kılmaya ya da uzatmaya yardımcı olacak bir ad."
@@ -8251,6 +8377,9 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "${ BRAND_NAME } hesabınızın e-posta adresini ya da kullanıcı adını yazın."
       ],
+      "Enter your old password for ${ boldEmail }.": [
+        "${ boldEmail } için eski parolanızı yazın."
+      ],
       "Enter your own password (as organization admin).": [
         "Kendi parolanızı yazın (kuruluş yöneticisi olarak)."
       ],
@@ -8445,6 +8574,9 @@
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "Kimlik doğrulama uygulamanıza erişemiyorsanız iki adımlı doğrulamayı kurarken size verilen 16 yedek kurtarma kodundan birini kullanabilirsiniz. ${ learnMoreLink }"
+      ],
+      "If you previously had a personal ${ BRAND_NAME } account with this address, you can recover your data separately.": [
+        "Daha önce bu adresle kişisel bir ${ BRAND_NAME } hesabınız varsa, verilerinizi ayrı olarak kurtarabilirsiniz."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Tarifenizi düşürdüğünüzde, ücretli ${ MAIL_APP_NAME } ve ${ VPN_APP_NAME } özelliklerini kullanamayacaksınız."
@@ -9375,6 +9507,9 @@
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Bilgiler üçüncü taraf bir hizmetten sızdırılmış. ${ BRAND_NAME } hesap bilgileriniz güvende ve şifrelenmiş olarak kalır. ${ learnMoreLink }"
       ],
+      "The following address is available:": [
+        "Şu adres kullanılabilir:"
+      ],
       "The following address is invalid.": [
         "Şu adres geçersiz.",
         "Şu adresler geçersiz."
@@ -9429,6 +9564,9 @@
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Bu hesap, ilkeye aykırı kullanım olasılığı nedeniyle askıya alınmış."
+      ],
+      "This address now signs in through your organization's identity provider.": [
+        "Bu adres artık kuruluşunuzun kimlik hizmet sağlayıcısı ile oturum açıyor."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Bu tarayıcı, PDF belgelerinin ön izlemesini desteklemiyor. Lütfen dosyayı indirin."
@@ -9907,8 +10045,8 @@
       "We'll send a new verification code to ${ strong }": [
         "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
       ],
-      "We're changing the ${ BRAND_NAME } sign-in page. Your password and devices stay the same. ${ learnMore }": [
-        "${ BRAND_NAME } oturum açma sayfasını değiştiriyoruz. Parolanız ve aygıtlarınız aynı kalır. ${ learnMore }"
+      "We're building a new way for you to manage your organization, and we're looking for specific users to join a video call and try an early version. Curious if you'd be a good match? Answer a few quick questions to see if you can participate.": [
+        "Kuruluşunuzu yönetmeniz için yeni bir yöntem geliştiriyoruz. Bir görüntülü aramaya katılabilecek ve bir erken sürümü deneyebilecek belirli kullanıcılar arıyoruz. Uygun olup olmayacağınızı merak ediyor musunuz? Katılıp katılamayacağınızı görmek için birkaç soruyu yanıtlayın."
       ],
       "Web sessions detected:": [
         "Açık internet oturumları:"
@@ -10215,6 +10353,9 @@
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "${ VPN_APP_NAME } ve ${ MAIL_APP_NAME } hesaplarınız birbirine bağlıdır. İkisini de silmek için lütfen ${ loginLink } adresinden oturum açarak hesabınızı silin."
       ],
+      "Your account and password stay the same.": [
+        "Hesabınız ve parolanız aynı kalır."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Hesabınızda süresi geçmiş en az bir fatura var. Erişiminiz yakında kısıtlanacak. ${ payInvoiceLink }"
       ],
@@ -10271,9 +10412,6 @@
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Kuruluşunuzun e-posta adresleri, kuruluş anahtarı ile uçtan uca şifreleme ile korunur. Bu parmak izi, hesabınızdaki tüm yöneticilerin aynı anahtara sahip olduğunu doğrulamak için kullanılabilir."
-      ],
-      "Your password and devices stay the same.": [
-        "Parolanız ve aygıtlarınız aynı kalır."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Ödeme bilgileriniz TLS şifrelemesi ve İsviçre gizlilik yasaları ile korunmaktadır."
@@ -15022,79 +15160,6 @@
         "Yahoo"
       ]
     },
-    "q3campaign2026: Action": {
-      "Get the deal": [
-        "Fırsatı değerlendirin"
-      ],
-      "Special Offer": [
-        "Özel teklif"
-      ]
-    },
-    "q3campaign2026: Info": {
-      "/month": [
-        "/ay"
-      ],
-      "2 individual accounts": [
-        "2 bireysel hesap"
-      ],
-      "2 TB of secure storage": [
-        "2 TB güvenli depolama alanı"
-      ],
-      "3 TB of secure storage": [
-        "3 TB güvenli depolama alanı"
-      ],
-      "500 GB of secure storage": [
-        "500 GB güvenli depolama alanı"
-      ],
-      "6 individual accounts": [
-        "6 bireysel hesap"
-      ],
-      "Advanced protection against cyber threats": [
-        "Siber tehditlere karşı gelişmiş koruma"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "İndirimler standart aylık fiyatlara göre hesaplanır. Fatura dönemi sona erdiğinde aboneliğiniz standart yıllık ücret ile yenilenir."
-      ]
-    },
-    "q3campaign2026: Info, Calendar first": {
-      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Family, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Family, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Info, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
-      ]
-    },
-    "q3campaign2026: Title": {
-      "for 12 months": [
-        "12 ay için"
-      ],
-      "One plan, full power": [
-        "Tek tarife, tam güç"
-      ],
-      "One plan, max savings": [
-        "Tek tarife, en yüksek kazanç"
-      ],
-      "One plan, more power": [
-        "Tek tarife, daha fazla güç"
-      ]
-    },
     "Recovery Email": {
       "Cancel": [
         "İptal"
@@ -15869,7 +15934,7 @@
         "Kurtarma telefon numarasını güncelle"
       ],
       "Upgrade your plan to enable Emergency Access to your account. This will allow you to designate 1 to 5 people who will be able to reset your password for you.": [
-        "Hesabınızda acil erişim özelliğini açmak için tarifenizi yükseltin. Böylece parolanızı sizin adınıza sıfırlayabilecek 1 - 5 kişi belirleyebilirsiniz."
+        "Hesabınızda acil durum erişimi özelliğini açmak için tarifenizi yükseltin. Böylece parolanızı sizin adınıza sıfırlayabilecek 1 - 5 kişi belirleyebilirsiniz."
       ],
       "Verified password": [
         "Parola doğrulanmış"
@@ -16860,7 +16925,7 @@
         "Yardım almak için yöneticiye sorun"
       ],
       "Ask your administrator for access?": [
-        "Yöneticinizden erişim izni istensin mi?"
+        "Yöneticinizden erişim istensin mi?"
       ],
       "Backup password": [
         "Yedek parola"
@@ -16904,7 +16969,7 @@
         "İzin verme"
       ],
       "Deny access": [
-        "Erişime izin verme"
+        "Erişme izni verme"
       ],
       "Devices available": [
         "Kullanılabilecek aygıtlar"
@@ -16937,13 +17002,13 @@
         "İzin ver"
       ],
       "Grant access": [
-        "Erişime izin ver"
+        "Erişme izni ver"
       ],
       "Grant access to user?": [
-        "Kullanıcıya izin verilsin mi?"
+        "Kullanıcıya erişme izni verilsin mi?"
       ],
       "Grant access to users?": [
-        "Kullanıcılara izin verilsin mi?"
+        "Kullanıcılara erişme izni verilsin mi?"
       ],
       "If you didn't make this request, cancel it now.": [
         "Böyle bir istekte bulunmadıysanız iptal edin."
@@ -18488,6 +18553,9 @@
       "Billing cycle": [
         "Fatura dönemi"
       ],
+      "Black Friday": [
+        "Muhteşem Cuma"
+      ],
       "Block trackers and malware": [
         "İzleyicileri ve zararlı yazılımları engelleyin"
       ],
@@ -18650,6 +18718,9 @@
       ],
       "Create user accounts": [
         "Kullanıcı hesapları ekle"
+      ],
+      "Create your ${ BRAND_NAME } address": [
+        "${ BRAND_NAME } adresinizi oluşturun"
       ],
       "Created": [
         "Oluşturulma"
@@ -18982,6 +19053,9 @@
       ],
       "Help center": [
         "Yardım merkezi"
+      ],
+      "Help shape ${ BRAND_NAME }'s admin experience": [
+        "${ BRAND_NAME } yönetici deneyimini şekillendirmeye yardımcı olun"
       ],
       "Helping activists in Hong Kong": [
         "Hong Kong aktivistlerine yardımlarımız"
@@ -19344,9 +19418,6 @@
       "Send new invite?": [
         "Yeni davet gönderilsin mi?"
       ],
-      "September Sale": [
-        "Eylül indirimi"
-      ],
       "Service": [
         "Hizmet"
       ],
@@ -19393,7 +19464,7 @@
         "Oturum aç"
       ],
       "Sign in and grant access": [
-        "Oturum açın ve erişim izni verin"
+        "Oturum açın ve erişme izni verin"
       ],
       "Sign in to join the Beta program": [
         "Beta programına katılmak için oturum açın"
@@ -19998,6 +20069,9 @@
       ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
+      ],
+      "Assigned by a group. Remove the user from the group to change this role": [
+        "Bir grup tarafından atanmış. Bu rolü değiştirmek için kullanıcıyı gruptan kaldırın"
       ],
       "Disables end-to-end email encryption for this group": [
         "Bu grup için uçtan uca e-posta şifrelemesini kapatır"
