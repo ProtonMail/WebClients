@@ -630,6 +630,70 @@
         "L'espace de stockage est partagé entre tous les services ${ BRAND_NAME }."
       ]
     },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Profitez de l'offre"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/mois"
+      ],
+      "2 individual accounts": [
+        "2 comptes individuels"
+      ],
+      "2 TB of secure storage": [
+        "2 To d'espace de stockage sécurisé"
+      ],
+      "3 TB of secure storage": [
+        "3 To d'espace de stockage sécurisé"
+      ],
+      "500 GB of secure storage": [
+        "500 Go d'espace de stockage sécurisé"
+      ],
+      "6 individual accounts": [
+        "6 comptes individuels"
+      ],
+      "Advanced protection against cyber threats": [
+        "Protection avancée contre les cybermenaces"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Les réductions sont calculées sur la base du tarif mensuel standard. Votre abonnement sera renouvelé au tarif annuel standard à la fin du cycle de facturation."
+      ]
+    },
+    "bfcampaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, et ${ VPN_SHORT_APP_NAME } Premium"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, et ${ CALENDAR_SHORT_APP_NAME } Premium"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } Premium"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } Premium"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, et ${ CALENDAR_SHORT_APP_NAME } Premium"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "for 12 months": [
+        "pour 12 mois"
+      ]
+    },
     "Billing cycle option": {
       "${ n } month": [
         "${ n } mois",
@@ -1289,6 +1353,9 @@
       "${ LUMO_SHORT_APP_NAME } will review chat-based memories, remove duplicates, and merge related entries into clearer ones. Memories you wrote yourself are left unchanged.": [
         "${ LUMO_SHORT_APP_NAME } examinera les mémoires issues de conversations, retirera les doublons et fusionnera les entrées correspondantes en versions plus claires. Les mémoires que vous avez saisis vous-même ne seront pas modifiés."
       ],
+      "Add connectors, manage credentials, and set tool approval policies.": [
+        "Ajoutez des connecteurs, gérez les identifiants et définissez des politiques d'autorisation pour les outils."
+      ],
       "Add your own memories, edit any auto-generated entry, or clear everything at any time. Generated memories you edit are promoted to your own.": [
         "Ajoutez vos propres souvenirs, modifiez les entrées générées automatiquement ou effacer tout à n'importe quel moment. Si vous modifiez un souvenir généré, il deviendra le vôtre."
       ],
@@ -1303,6 +1370,9 @@
       ],
       "API keys let you access ${ LUMO_SHORT_APP_NAME } programmatically. Each key is shown only once upon creation.": [
         "Les clés API vous permettent d'accéder à ${ LUMO_SHORT_APP_NAME } par programmation. Chaque clé n'est affichée qu'une seule fois lors de sa création."
+      ],
+      "Configure app preferences, keyboard shortcuts, and updates in the desktop settings window.": [
+        "Configurez les préférences d'application, les raccourcis clavier et les mises à jour dans les paramètres de l'application de bureau."
       ],
       "Create a key to integrate ${ LUMO_SHORT_APP_NAME } with your scripts and tools.": [
         "Créez une clé pour intégrer ${ LUMO_SHORT_APP_NAME } à vos scripts et outils."
@@ -1319,8 +1389,14 @@
       "Include project conversations in the main chat history": [
         "Inclure les conversations des projets dans l'historique général de discussion."
       ],
+      "Internal preview of an upcoming model": [
+        "Aperçu interne d’un modèle à venir"
+      ],
       "Keep it safe — it won't be shown again": [
         "Conservez-le en lieu sûr, il ne sera plus affiché"
+      ],
+      "Language used when transcribing your voice": [
+        "Langue utilisée lors de la transcription vocale"
       ],
       "Last updated on ${ formattedDate }": [
         "Dernière mise à jour le ${ formattedDate }"
@@ -1503,6 +1579,9 @@
       ],
       "Your chats can't be saved right now. Anything you write will be lost if you reload the page.": [
         "Pour l'instant, vos conversations ne peuvent pas être enregistrées. Tout ce que vous écrivez sera perdu si vous actualisez la page."
+      ],
+      "Your existing ${ LUMO_SHORT_APP_NAME } data can't be decrypted with your current account keys. If you recover your previous keys it will become available again. You can keep using ${ LUMO_SHORT_APP_NAME } normally.": [
+        "Vos données ${ LUMO_SHORT_APP_NAME } existantes ne peuvent pas être déchiffrées avec vos clés de compte actuelles. Vous pouvez continuer d'utiliser ${ LUMO_SHORT_APP_NAME } normalement."
       ],
       "Your existing ${ LUMO_SHORT_APP_NAME } data could not be decrypted with your available account keys. Recover your account keys, then retry.": [
         "Vos données ${ LUMO_SHORT_APP_NAME } existantes n'ont pas pu être déchiffrées avec vos clés de compte disponibles. Récupérez les clés de votre compte, puis réessayez."
@@ -2077,6 +2156,9 @@
       "Sign in or create an account to browse and add files from your ${ DRIVE_APP_NAME } (end-to-end encrypted cloud storage) to your chat knowledge.": [
         "Connectez-vous ou créez un compte pour parcourir et ajouter des fichiers depuis votre ${ DRIVE_APP_NAME } (espace de stockage cloud chiffré de bout en bout) à votre base de connaissances de chat."
       ],
+      "Sign in to change this later in Settings → General → Dictation language.": [
+        "Connectez-vous pour modifier cela ultérieurement dans Paramètres → Général → Langue de diction."
+      ],
       "Sign in to create and manage API keys for ${ LUMO_SHORT_APP_NAME }.": [
         "Connectez-vous pour créer et gérer les clés d'API pour ${ LUMO_SHORT_APP_NAME }."
       ],
@@ -2094,6 +2176,9 @@
       ],
       "Table view": [
         "Vue tableau"
+      ],
+      "Telling us which language you speak helps dictation transcribe your voice accurately.": [
+        "Nous indiquer quelle langue vous parlez nous aide à effectuer une transcription plus précise de votre voix."
       ],
       "The ${ LUMO_SHORT_APP_NAME } API and API keys are included with ${ LUMO_SHORT_APP_NAME }+. Ask your organization administrator to assign a ${ LUMO_SHORT_APP_NAME } seat to your account.": [
         "L'API ${ LUMO_SHORT_APP_NAME } et les clés d'API sont incluses avec ${ LUMO_SHORT_APP_NAME }+. Demandez à votre administrateur d'organisation de vous attribuer un accès ${ LUMO_SHORT_APP_NAME } dans votre compte."
@@ -2193,6 +2278,9 @@
       ],
       "You are about to visit an external website:": [
         "Vous êtes sur le point de consulter un site web externe :"
+      ],
+      "You can change this at any time in Settings → General → Dictation language.": [
+        "Vous pouvez modifier cela à tout moment dans Paramètres → Général → Langue de diction."
       ],
       "You have many saved memories. Optimize merges duplicate chat-based entries and keeps the list focused.": [
         "Vous avez de nombreuses mémoires sauvegardées. Optimiser fusionne les doublons issus des conversations et garde votre liste organisée."
@@ -2474,6 +2562,9 @@
       ],
       "90 days": [
         "90 jours"
+      ],
+      "Auto-detect": [
+        "Détection automatique"
       ]
     },
     "collider_2025: Personality": {
@@ -2569,6 +2660,9 @@
       ],
       "Appearance": [
         "Apparence"
+      ],
+      "Desktop app": [
+        "Application de bureau"
       ],
       "General": [
         "Général"
@@ -2685,6 +2779,9 @@
       "${ LUMO_SHORT_APP_NAME } Business": [
         "${ LUMO_SHORT_APP_NAME } Business"
       ],
+      "${ LUMO_SHORT_APP_NAME } Desktop settings": [
+        "Paramètres de l'application de bureau ${ LUMO_SHORT_APP_NAME }"
+      ],
       "${ LUMO_SHORT_APP_NAME } Plus": [
         "${ LUMO_SHORT_APP_NAME } Plus"
       ],
@@ -2727,11 +2824,17 @@
       "Chat": [
         "Chat"
       ],
+      "Choose your dictation language": [
+        "Choisissez votre langue de diction"
+      ],
       "Clear all memories?": [
         "Effacer tous les souvenirs ?"
       ],
       "Clear chat-based memories?": [
         "Effacer les souvenirs issus des chats ?"
+      ],
+      "Connectors": [
+        "Connecteurs"
       ],
       "Conversational AI": [
         "IA Conversationnelle"
@@ -2741,6 +2844,9 @@
       ],
       "Delete everything": [
         "Tout supprimer"
+      ],
+      "Dictation language": [
+        "Langue de diction"
       ],
       "Document intelligence": [
         "Intelligence documentaire"
@@ -3118,14 +3224,23 @@
       ]
     },
     "collider_2025:Action": {
+      "Add column right": [
+        "Ajouter une colonne à droite"
+      ],
       "Add details": [
         "Ajouter des informations"
       ],
       "Add more information to improve the response": [
         "Ajoutez plus d'informations pour améliorer la réponse"
       ],
+      "Add row below": [
+        "Ajouter une ligne en dessous"
+      ],
       "Analyze another export": [
         "Analyser une autre exportation"
+      ],
+      "Apply": [
+        "Appliquer"
       ],
       "Ask the model to be more careful and thorough": [
         "Demander au modèle d'être plus attentif et rigoureux"
@@ -3135,6 +3250,12 @@
       ],
       "Back to chat": [
         "Retour au chat"
+      ],
+      "Bold": [
+        "Gras"
+      ],
+      "Bulleted list": [
+        "Liste à puces"
       ],
       "Cancel": [
         "Annuler"
@@ -3163,6 +3284,9 @@
       "Code": [
         "Code"
       ],
+      "Code block": [
+        "Bloc de code"
+      ],
       "Continue": [
         "Continuer"
       ],
@@ -3190,17 +3314,29 @@
       "Delete": [
         "Supprimer"
       ],
+      "Delete column": [
+        "Supprimer la colonne"
+      ],
       "Delete conversation": [
         "Supprimer la conversation"
       ],
       "Delete project": [
         "Supprimer le projet"
       ],
+      "Delete row": [
+        "Supprimer la ligne"
+      ],
+      "Delete table": [
+        "Supprimer le tableau"
+      ],
       "Describe desired changes...": [
         "Décrivez les modifications souhaitées..."
       ],
       "Deselect all": [
         "Tout désélectionner"
+      ],
+      "Divider": [
+        "Séparateur"
       ],
       "Download": [
         "Télécharger"
@@ -3217,9 +3353,6 @@
       "Download PPTX": [
         "Télécharger PPTX"
       ],
-      "Download source (HTML)": [
-        "Télécharger la source (HTML)"
-      ],
       "Download source (Markdown)": [
         "Télécharger la source (Markdown)"
       ],
@@ -3231,6 +3364,9 @@
       ],
       "Edit agent": [
         "Modifier l'agent"
+      ],
+      "Edit as rich text": [
+        "Modifier en texte enrichi"
       ],
       "Edit image": [
         "Modifier l'image"
@@ -3271,8 +3407,20 @@
       "Improve": [
         "Améliorer"
       ],
+      "Inline code": [
+        "Code intégré"
+      ],
+      "Insert table": [
+        "Insérer un tableau"
+      ],
+      "Italic": [
+        "Italique"
+      ],
       "Light": [
         "Clair"
+      ],
+      "Link": [
+        "Lien"
       ],
       "Make a copy": [
         "Faire une copie"
@@ -3301,6 +3449,9 @@
       "Next version": [
         "Version suivante"
       ],
+      "Numbered list": [
+        "Liste numérotée"
+      ],
       "Open": [
         "Ouvrir"
       ],
@@ -3324,6 +3475,12 @@
       ],
       "Previous version": [
         "Version précédente"
+      ],
+      "Quote": [
+        "Citer"
+      ],
+      "Redo": [
+        "Rétablir"
       ],
       "Regenerate": [
         "Générer à nouveau"
@@ -3364,6 +3521,9 @@
       "Save": [
         "Enregistrer"
       ],
+      "Save as PDF…": [
+        "Enregistrer au format PDF…"
+      ],
       "Save to Drive": [
         "Enregistrer dans Drive"
       ],
@@ -3391,6 +3551,9 @@
       "Start a chat": [
         "Démarrer un chat"
       ],
+      "Strikethrough": [
+        "Barré"
+      ],
       "Think longer": [
         "Réfléchir plus longtemps"
       ],
@@ -3402,6 +3565,9 @@
       ],
       "Try this": [
         "Essayez ceci"
+      ],
+      "Undo": [
+        "Annuler"
       ],
       "Unlink Folder": [
         "Dissocier le dossier"
@@ -3426,6 +3592,9 @@
       ],
       "What needs changed?": [
         "Que faut-il modifier ?"
+      ],
+      "Word (.docx)": [
+        "Word (.docx)"
       ]
     },
     "collider_2025:Agent": {
@@ -4028,6 +4197,9 @@
       "Description (optional)": [
         "Description (facultative)"
       ],
+      "Document editor": [
+        "Éditeur de documents"
+      ],
       "Draw a sketch": [
         "Faites un croquis"
       ],
@@ -4039,6 +4211,9 @@
       ],
       "Folder name": [
         "Nom du dossier"
+      ],
+      "Formatting": [
+        "Mise en forme"
       ],
       "Generating": [
         "En cours de génération"
@@ -4075,6 +4250,9 @@
       ],
       "Lending & hiring": [
         "Prêts et embauches"
+      ],
+      "Link address": [
+        "Adresse du lien"
       ],
       "Low": [
         "Faible"
@@ -4180,6 +4358,9 @@
       ],
       "Holiday planner": [
         "Planificateur de vacances"
+      ],
+      "Paste or type a link": [
+        "Coller ou saisir un lien"
       ],
       "Search chats": [
         "Rechercher dans les chats"
@@ -9370,79 +9551,6 @@
         "Yahoo"
       ]
     },
-    "q3campaign2026: Action": {
-      "Get the deal": [
-        "Profitez de l'offre"
-      ],
-      "Special Offer": [
-        "Offre spéciale"
-      ]
-    },
-    "q3campaign2026: Info": {
-      "/month": [
-        "/mois"
-      ],
-      "2 individual accounts": [
-        "2 comptes individuels"
-      ],
-      "2 TB of secure storage": [
-        "2 To d'espace de stockage sécurisé"
-      ],
-      "3 TB of secure storage": [
-        "3 To d'espace de stockage sécurisé"
-      ],
-      "500 GB of secure storage": [
-        "500 Go d'espace de stockage sécurisé"
-      ],
-      "6 individual accounts": [
-        "6 comptes individuels"
-      ],
-      "Advanced protection against cyber threats": [
-        "Protection avancée contre les cybermenaces"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Les réductions sont calculées sur la base du tarif mensuel standard. Votre abonnement sera renouvelé au tarif annuel standard à la fin du cycle de facturation."
-      ]
-    },
-    "q3campaign2026: Info, Calendar first": {
-      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, et ${ VPN_SHORT_APP_NAME } Premium"
-      ]
-    },
-    "q3campaign2026: Info, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, et ${ CALENDAR_SHORT_APP_NAME } Premium"
-      ]
-    },
-    "q3campaign2026: Info, Family, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } Premium"
-      ]
-    },
-    "q3campaign2026: Info, Family, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } Premium"
-      ]
-    },
-    "q3campaign2026: Info, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, et ${ CALENDAR_SHORT_APP_NAME } Premium"
-      ]
-    },
-    "q3campaign2026: Title": {
-      "for 12 months": [
-        "pour 12 mois"
-      ],
-      "One plan, full power": [
-        "Un abonnement, pleine puissance"
-      ],
-      "One plan, max savings": [
-        "Un abonnement, un maximum d'économies"
-      ],
-      "One plan, more power": [
-        "Un seul abonnement, plus de puissance"
-      ]
-    },
     "Role": {
       "Organization Admin": [
         "Administrateur de l'organisation"
@@ -9988,6 +10096,9 @@
       "Billing cycle": [
         "Cycle de facturation"
       ],
+      "Black Friday": [
+        "Black Friday"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Annuler l'abonnement ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -10113,9 +10224,6 @@
       ],
       "Select a plan": [
         "Choisir un abonnement"
-      ],
-      "September Sale": [
-        "Soldes de septembre"
       ],
       "Set recovery methods": [
         "Définir les méthodes de récupération"
