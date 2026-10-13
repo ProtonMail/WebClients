@@ -179,6 +179,10 @@ export class RecordingStorageClient {
         }
     }
 
+    getPendingWriteCount(): number {
+        return this.pendingChunkWrites.size;
+    }
+
     private async drainPendingChunkWrites(): Promise<void> {
         if (this.pendingChunkWrites.size === 0) {
             return;

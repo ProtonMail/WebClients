@@ -8,12 +8,11 @@ import {
     Output,
 } from 'mediabunny';
 
-import { ENCODER_AUDIO_BITRATE, ENCODER_VIDEO_BITRATE, KEYFRAME_INTERVAL_SEC } from './constants';
+import { AUDIO_STALL_MS, ENCODER_AUDIO_BITRATE, ENCODER_VIDEO_BITRATE, KEYFRAME_INTERVAL_SEC } from './constants';
 import type { AudioTapSamples } from './types';
 
 const sleep = (ms: number) => new Promise<void>((resolve) => setTimeout(resolve, ms));
 
-const AUDIO_STALL_MS = 500; // audio silent this long → fall back to the wall clock
 const AUDIO_POLL_MS = 4; // re-check cadence while waiting for the clock to advance
 
 // Encodes the live OffscreenCanvas to a fragmented MP4 at constant frame rate:

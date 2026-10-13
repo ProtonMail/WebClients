@@ -2,7 +2,7 @@ import type { ChunkWatchdog, ChunkWatchdogOptions } from './types';
 
 const DEFAULT_INTERVAL_MS = 2_000;
 const DEFAULT_PRIMING_THRESHOLD_MS = 15_000;
-const DEFAULT_STALL_THRESHOLD_MS = 10_000;
+export const DEFAULT_STALL_THRESHOLD_MS = 10_000;
 
 // Surfaces stalled MediaRecorder encoders to the console and Sentry.
 //
