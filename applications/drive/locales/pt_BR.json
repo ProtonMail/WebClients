@@ -1386,6 +1386,9 @@
       ],
       "Import paused": [
         "Iportação pausada"
+      ],
+      "Detach": [
+        "Desassociar"
       ]
     },
     "Action: Docs": {
@@ -4519,6 +4522,39 @@
       ],
       "This file has missing crypto material": [
         "Este arquivo tem material de criptografia ausente"
+      ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Uma mensagem é necessária ao denunciar violação de direitos autorais ou dados roubados"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "O endereço já é usado por um usuário fora da sua organização. Entre em contato com o suporte ao cliente para resolver isso"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Não é possível mover o item sem um nome válido, por favor, renomeie o item primeiro"
+      ],
+      "Could not find an available name": [
+        "Não foi possível encontrar um nome disponível"
+      ],
+      "Failed to get inviter keys": [
+        "Não conseguiu obter as chaves do convidado"
+      ],
+      "Only admins can convert external invitations": [
+        "Somente os administradores podem converter convites externos"
+      ],
+      "This item has no image preview": [
+        "Este item não tem visualização de imagem"
+      ],
+      "You can only leave items that are shared with you": [
+        "Você só pode deixar itens compartilhados com você"
+      ],
+      "You can only upload a new version to a file": [
+        "Você só pode carregar uma nova versão para um arquivo"
+      ],
+      "You do not have access to this shared item": [
+        "Você não tem acesso a esse item compartilhado"
+      ],
+      "You reached the maximum number of connected addresses": [
+        "Você atingiu o número máximo de endereços conectados"
       ]
     },
     "error": {
@@ -7797,7 +7833,7 @@
         "Você não poderá compartilhar \"${ fileName }\" depois de alterar o acesso para visualizador. Somente o proprietário poderá alterar seu acesso novamente."
       ],
       "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
-        "Seu navegador ficou sem espaço ao indexar arquivos para a pesquisa. Libere espaço de armazenamento e recompile o índice."
+        "Seu navegador ficou sem espaço enquanto indexava arquivos para pesquisa. Libere o armazenamento e, em seguida, reconstrua o índice."
       ],
       "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
         "Seus arquivos estão sendo indexados novamente. Você pode continuar pesquisando — os resultados podem estar incompletos até que o processo termine. Avisaremos você quando terminar."
@@ -7952,6 +7988,18 @@
       ],
       "Your Google Drive may be empty or contain only files that are not supported.": [
         "Seu Google Drive pode estar vazio ou conter apenas arquivos que não são suportados."
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Restam ${ timeRemaining } do seu período de teste. ${ addPaymentMethodLink } para manter sua assinatura. ${ learnMoreLink }"
+      ],
+      "Connecting to Google Drive and preparing your import.": [
+        "Conectar-se ao Google Drive e preparar sua importação."
+      ],
+      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
+        "Importe seus arquivos e pastas do Google Drive e mantenha-os privados em ${ DRIVE_APP_NAME }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Para migrar esse usuário, eles precisam aceitar seu convite para participar ${ BRAND_NAME }."
       ]
     },
     "info": {
@@ -11255,6 +11303,9 @@
       ],
       "to keep using all of the features after your trial ends.": [
         "para continuar usando todos os recursos após o término da sua avaliação."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Uma vez que sua assinatura completa começa... ** Você ainda pode cancelar dentro de 30 dias e obter um reembolso proporcional."
       ]
     },
     "Option": {
@@ -11638,6 +11689,18 @@
       ],
       "Your account is too old for Born Private.": [
         "Sua conta é muito antiga para Born Private."
+      ],
+      "An organization is required for this plan.": [
+        "Uma organização é necessária para este plano."
+      ],
+      "Born Private can’t be purchased with an active subscription.": [
+        "O Born Private não pode ser adquirido com uma assinatura ativa."
+      ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "Este servidor dedicado é atribuído a um gateway e não pode ser alterado."
+      ],
+      "Trial plans don’t support custom domains.": [
+        "Os planos de avaliação não suportam domínios personalizados."
       ]
     },
     "Payments.Error": {
@@ -15642,6 +15705,70 @@
     "Payments.InfoBanner": {
       "Changing your billing address may affect taxes on future invoices.": [
         "Alterar seu endereço de cobrança pode afetar impostos sobre futuras faturas."
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Aproveitar a oferta"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/mês"
+      ],
+      "2 individual accounts": [
+        "2 contas individuais"
+      ],
+      "2 TB of secure storage": [
+        "2 TB de armazenamento seguro"
+      ],
+      "3 TB of secure storage": [
+        "3 TB de armazenamento seguro"
+      ],
+      "500 GB of secure storage": [
+        "500 GB de armazenamento seguro"
+      ],
+      "6 individual accounts": [
+        "6 contas individuais"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Os descontos são baseados em preços mensais padrão. Sua assinatura será renovada na taxa anual padrão quando o ciclo de faturamento terminar."
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium para ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium para ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "A maior promoção do ano"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "por 12 meses"
+      ],
+      "Last chance to save big": [
+        "Última chance de economizar muito"
+      ],
+      "Protect your entire tribe": [
+        "Proteja toda a sua tribo"
+      ],
+      "Protection for two in a single plan": [
+        "Proteção para duas pessoas em um único plano"
+      ],
+      "Save big with a yearly plan": [
+        "Economize bastante com um plano anual"
       ]
     }
   }
