@@ -18,7 +18,9 @@ import { getFreeCheckResult } from '@proton/payments/core/subscription/freePlans
 import {
     getAutoCoupon,
     getPlanIDs,
+    isModifyingPaidSubscriptionSelection,
     isSubscriptionCheckForbiddenWithReason,
+    isSubscriptionSelectionEqual,
 } from '@proton/payments/core/subscription/helpers';
 import type { FullPlansMap, Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
@@ -284,6 +286,16 @@ export function useSubscriptionContainerInnerCheck(props: UseSubscriptionContain
                 // ProrationMode == Exact.
                 const currentlySelectedMethod = selectedMethod ?? paymentFacadeSelectedMethodType;
 
+                // Guards need to be re-evaluated by the subscriptions/check only when:
+                // - the user is on the checkout step (not browsing plans),
+                // - the user is changing an existing paid subscription (nothing to transition from otherwise),
+                // - it is the first check or the plan/cycle selection changed
+                // it skip re-validating on unrelated rechecks, e.g. coupon or address.
+                const validateGuards =
+                    copyNewModel.step === SUBSCRIPTION_STEPS.CHECKOUT &&
+                    isModifyingPaidSubscriptionSelection(subscription, copyNewModel.planIDs, copyNewModel.cycle) &&
+                    (!model.initialCheckComplete || !isSubscriptionSelectionEqual(model, copyNewModel));
+
                 const checkPayload: CheckSubscriptionData = {
                     Codes,
                     Plans: copyNewModel.planIDs,
@@ -301,6 +313,7 @@ export function useSubscriptionContainerInnerCheck(props: UseSubscriptionContain
                             : undefined,
                     IsTrial: shouldPassIsTrial(newModel, false),
                     ValidateBillingAddress: true,
+                    ValidateGuards: validateGuards,
                 };
 
                 const newCheckResult = await paymentsApi.checkSubscription(checkPayload, {
@@ -338,9 +351,21 @@ export function useSubscriptionContainerInnerCheck(props: UseSubscriptionContain
                     delete copyNewModel.gift;
                 }
 
-                setCheckResult(newCheckResult);
+                // Guards are only re-validated when the selection changes (see validateGuards above).
+                // Passive re-checks (currency, coupon, address) answer with an empty GuardResult, so
+                // carry the previous verdict forward until the next validating check replaces it.
+                const isPassiveRecheck = !validateGuards && isSubscriptionSelectionEqual(model, copyNewModel);
+
+                const checkResultWithGuards = isPassiveRecheck
+                    ? {
+                          ...newCheckResult,
+                          GuardResult: checkResult.GuardResult,
+                      }
+                    : newCheckResult;
+
+                setCheckResult(checkResultWithGuards);
                 setModel(copyNewModel);
-                onCheck?.({ model, newModel: copyNewModel, type: 'success', result: newCheckResult });
+                onCheck?.({ model, newModel: copyNewModel, type: 'success', result: checkResultWithGuards });
             } catch (error: any) {
                 if (error?.name === 'AbortError') {
                     return;
