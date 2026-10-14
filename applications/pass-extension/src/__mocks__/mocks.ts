@@ -1,60 +1,27 @@
 import cloneDeep from 'lodash/cloneDeep';
 import type { Runtime } from 'webextension-polyfill';
 
-import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import type { SanitizedPasskey } from '@proton/pass/lib/passkeys/types';
 import { type ShareItem, rootReducer } from '@proton/pass/store/reducers';
 import type { State } from '@proton/pass/store/types';
 import type { ItemRevision, TabId } from '@proton/pass/types';
-import { ContentFormatVersion, ItemState, ShareRole, ShareType } from '@proton/pass/types';
-import { partialMerge } from '@proton/pass/utils/object/merge';
+import { ShareRole } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
+import { createTestItem } from '@proton/pass/utils/tests/fixtures/items';
+import { createTestShare } from '@proton/pass/utils/tests/fixtures/shares';
 
 export const mockShareId = uniqueId();
 export const mockItemId = uniqueId();
 
-export const mockShare: ShareItem = {
-    addressId: uniqueId(),
-    content: '',
-    createTime: 0,
-    eventId: uniqueId(),
-    newUserInvitesReady: 0,
-    owner: true,
-    shared: false,
+export const mockShare: ShareItem = createTestShare({
     shareId: mockShareId,
     shareRoleId: ShareRole.MANAGER,
-    targetId: uniqueId(),
-    targetMaxMembers: 1,
-    targetMembers: 1,
-    targetType: ShareType.Vault,
-    vaultId: uniqueId(),
+    owner: true,
     canAutofill: true,
-    permission: 0,
-    flags: 0,
-    groupId: null,
-};
+});
 
 export const getMockItemRevision = (revision: Partial<ItemRevision> = {}): ItemRevision =>
-    partialMerge<ItemRevision>(
-        {
-            aliasEmail: null,
-            folderId: null,
-            contentFormatVersion: ContentFormatVersion.Item,
-            createTime: 0,
-            data: itemBuilder('login').data,
-            itemId: uniqueId(),
-            lastUseTime: 0,
-            modifyTime: 0,
-            pinned: false,
-            revision: 1,
-            flags: 0,
-            revisionTime: 0,
-            shareId: mockShareId,
-            state: ItemState.Active,
-            shareCount: 0,
-        },
-        revision
-    );
+    createTestItem('login', { shareId: mockShareId, ...revision });
 
 export const getMockPasskey = (): SanitizedPasskey => ({
     keyId: uniqueId(),

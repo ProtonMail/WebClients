@@ -1,7 +1,7 @@
 import { PassEncryptionTag } from '../../../../types';
+import { createRandomItemKey } from '../../../../utils/tests/fixtures/crypto';
 import { encryptData } from '../../utils/crypto-helpers';
 import { PassCryptoFileError } from '../../utils/errors';
-import { createRandomItemKey } from '../../utils/testing';
 import { createFileDescriptor } from './create-file-descriptor';
 import { openFileDescriptor } from './open-file-descriptor';
 

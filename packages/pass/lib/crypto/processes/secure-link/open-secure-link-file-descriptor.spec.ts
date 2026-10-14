@@ -1,6 +1,6 @@
 import { PassEncryptionTag } from '../../../../types';
+import { createRandomItemKey } from '../../../../utils/tests/fixtures/crypto';
 import { encryptData } from '../../utils/crypto-helpers';
-import { createRandomItemKey } from '../../utils/testing';
 import { createFileDescriptor } from '../file/create-file-descriptor';
 import { createSecureLink } from './create-secure-link';
 import { openSecureLinkFileDescriptor } from './open-secure-link-file-descriptor';

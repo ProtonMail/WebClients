@@ -4,9 +4,9 @@ import * as generate from '../../../lib/cache/generate';
 import { exposePassCrypto } from '../../../lib/crypto';
 import type { PassCryptoWorker } from '../../../types/crypto/pass-crypto';
 import type { EncryptedPassCache } from '../../../types/worker/cache';
+import { sagaSetup } from '../../../utils/tests/saga';
 import { withCache } from '../../actions/enhancers/cache';
 import type { RootSagaOptions } from '../../types';
-import { sagaSetup } from '../testing';
 import { cacheWorker } from './cache.saga';
 
 jest.mock('@proton/pass/lib/cache/generate', () => ({

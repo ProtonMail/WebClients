@@ -1,6 +1,6 @@
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
-import { createTestItem } from '@proton/pass/lib/items/item.test.utils';
 import type { ItemRevision } from '@proton/pass/types';
+import { createTestItem } from '@proton/pass/utils/tests/fixtures/items';
 
 import { BASIC_AUTH_URL_RE, resolveCredentials } from './auth-required';
 

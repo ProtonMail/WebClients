@@ -17,9 +17,9 @@ import type {
     SharesGetResponse,
 } from '../../../../types';
 import { ShareType } from '../../../../types';
+import { sagaSetup } from '../../../../utils/tests/saga';
 import { sharesEventNew } from '../../../actions';
 import type { RootSagaOptions } from '../../../types';
-import { sagaSetup } from '../../testing';
 import * as channelShare from './channel.share';
 import * as SharesChannel from './channel.shares';
 import type { EventChannel } from './types';

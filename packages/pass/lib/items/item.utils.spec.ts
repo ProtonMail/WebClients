@@ -6,10 +6,10 @@ import { MAX_ITEM_NAME_LENGTH } from '../../constants';
 import type { Draft } from '../../store/reducers/drafts';
 import type { CCItemData, IndexedByShareIdAndItemId, ItemRevision, LoginItem, SelectedItem } from '../../types';
 import { AutofillMode, CardType } from '../../types/protobuf';
+import { createTestItem } from '../../utils/tests/fixtures/items';
 import { UNIX_DAY, UNIX_MONTH, UNIX_WEEK } from '../../utils/time/constants';
 import { getEpoch } from '../../utils/time/epoch';
 import { itemBuilder } from './item.builder';
-import { createTestItem } from './item.test.utils';
 import {
     cloneItemName,
     filterItemsByFolderIds,

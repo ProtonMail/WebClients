@@ -6,7 +6,7 @@ const jestConfig: Config = {
     collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}', '!src/app/locales.ts'],
     testEnvironment: '@proton/jest-env',
     transformIgnorePatterns: [
-        'node_modules/(?!(@proton/shared|@proton/components|@protontech/telemetry|@protontech/mutex-browser|@protontech/crypto|openpgp|@openpgp/web-stream-tools|@protontech/bip39|emoji-mart|@preact/signals-core|@scure/base)/|client-zip|otpauth|@protontech/pass-rust-core/ui|@protontech/autofill|@protontech/fathom|@protontech/ml-inference)',
+        'node_modules/(?!(@proton/shared|@proton/components|@protontech/telemetry|@protontech/mutex-browser|@protontech/crypto|openpgp|@openpgp/web-stream-tools|@protontech/bip39|emoji-mart|imask|@preact/signals-core|@scure/base)/|client-zip|otpauth|@protontech/pass-rust-core/ui|@protontech/autofill|@protontech/fathom|@protontech/ml-inference)',
     ],
     preset: '@proton/jest-swc-preset',
     moduleNameMapper: {

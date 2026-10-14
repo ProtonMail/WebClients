@@ -1,5 +1,11 @@
 import { ContentFormatVersion, type ShareGetResponse, ShareRole, ShareType } from '../../../../types';
-import { createRandomKey, randomContents, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../utils/testing';
+import { uniqueId } from '../../../../utils/string/unique-id';
+import {
+    createRandomKey,
+    randomContents,
+    releaseCryptoProxy,
+    setupCryptoProxyForTesting,
+} from '../../../../utils/tests/fixtures/crypto';
 import { createVault } from '../vault/create-vault';
 import { openShare } from './open-share';
 import { openShareKey } from './open-share-key';
@@ -10,11 +16,11 @@ describe('openShare crypto process', () => {
 
     const content = randomContents();
     const createTime = Math.floor(Date.now() / 1000);
-    const vaultId = `vaultId-${Math.random()}`;
-    const shareId = `shareId-${Math.random()}`;
-    const addressId = `addressId-${Math.random()}`;
-    const groupId = `groupId-${Math.random()}`;
-    const permission = Math.random();
+    const vaultId = `vaultId-${uniqueId()}`;
+    const shareId = `shareId-${uniqueId()}`;
+    const addressId = `addressId-${uniqueId()}`;
+    const groupId = `groupId-${uniqueId()}`;
+    const permission = 42;
 
     test('should decrypt VaultShare accordingly', async () => {
         const userKey = await createRandomKey();

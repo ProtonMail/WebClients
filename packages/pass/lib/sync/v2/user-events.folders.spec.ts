@@ -4,7 +4,6 @@ import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 import noop from '@proton/utils/noop';
 
 import { foldersDeletedEvent, foldersUpdated } from '../../../store/actions';
-import { sagaSetup } from '../../../store/sagas/testing';
 import type {
     FolderData,
     FolderId,
@@ -15,6 +14,7 @@ import type {
 } from '../../../types';
 import type { FolderDataResponse } from '../../../types/api';
 import { logger } from '../../../utils/logger';
+import { sagaSetup } from '../../../utils/tests/saga';
 import { exposePassCrypto } from '../../crypto';
 import * as folderParser from '../../folders/folders.parser';
 import * as folderRequests from '../../folders/folders.requests';

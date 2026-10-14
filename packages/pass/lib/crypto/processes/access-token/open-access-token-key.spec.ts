@@ -1,4 +1,8 @@
-import { createRandomKey, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../utils/testing';
+import {
+    createRandomKey,
+    releaseCryptoProxy,
+    setupCryptoProxyForTesting,
+} from '../../../../utils/tests/fixtures/crypto';
 import { createAccessTokenKey } from './create-access-token-key';
 import { openAccessTokenKey } from './open-access-token-key';
 

@@ -1,5 +1,6 @@
 import 'fake-indexeddb/auto';
 
+import { createMockBlob, createMockReadableStream } from '../../utils/tests/fixtures/file-storage';
 import {
     FileStorageIDB,
     IDBReadableStream,
@@ -9,7 +10,6 @@ import {
     removeIDBFileChunks,
     writeIDBFileChunk,
 } from './fs.idb';
-import { createMockBlob, createMockReadableStream } from './testing';
 import type { FileStorage } from './types';
 
 const writeChunks = async (filename: string, totalChunks: number) => {

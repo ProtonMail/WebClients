@@ -4,11 +4,11 @@ import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 
 import { type ApiAuth, AuthMode, type Maybe } from '../../types';
+import { TEST_SERVER_TIME, mockAPIResponse } from '../../utils/tests/fixtures/api';
 import { LockedSessionError, PassErrorCode } from './errors';
 import { createApi } from './factory';
 import * as refresh from './refresh';
 import type { RefreshSessionData } from './refresh';
-import { TEST_SERVER_TIME, mockAPIResponse } from './testing';
 
 jest.mock('./refresh', () => ({
     ...jest.requireActual('./refresh'),
