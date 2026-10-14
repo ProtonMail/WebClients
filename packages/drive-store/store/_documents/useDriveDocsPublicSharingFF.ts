@@ -5,9 +5,8 @@ import { useFlag } from '@proton/unleash/useFlag';
  */
 export const useDriveDocsPublicSharingFF = () => {
     const disabled = useFlag('DriveDocsPublicSharingDisabled');
-    const active = useFlag('DriveDocsPublicSharing');
 
-    const isDocsPublicSharingEnabled = !disabled && active;
+    const isDocsPublicSharingEnabled = !disabled;
 
     return {
         /**

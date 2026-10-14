@@ -28,9 +28,8 @@ import type {
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper'
 import { isPrivateNodeMeta, type DocumentAction, type DocumentType } from '@proton/docs-shared'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
-import { useFlag } from '@proton/unleash/useFlag'
 import clsx from '@proton/utils/clsx'
-import { useIsSheetsEditorEnabled, useDriveCompatSDK } from '~/utils/flags'
+import { useIsSheetsEnabled, useDriveCompatSDK } from '~/utils/flags'
 import { getDocsReportContextLines } from '~/utils/report-context'
 import { useSharingModal } from '@proton/drive/public/sharingModal'
 import { WorkspacePromoBanner } from '../../DocumentViewer/WorkspacePromoBanner'
@@ -58,7 +57,7 @@ export function DocumentHeader({ actionMode, documentType }: DocsHeaderProps) {
   const [editorController, setEditorController] = useState<EditorControllerInterface | null>(null)
   const [documentState, setDocumentState] = useState<DocumentState | PublicDocumentState | null>(null)
   const [showErrorHeader, setShowErrorHeader] = useState(false)
-  const isSheetsEditorEnabled = useIsSheetsEditorEnabled()
+  const isSheetsEnabled = useIsSheetsEnabled()
 
   useEffect(() => {
     return application.userState.subscribeToEvent('BlockingInterfaceErrorDidDisplay', () => {
@@ -81,7 +80,7 @@ export function DocumentHeader({ actionMode, documentType }: DocsHeaderProps) {
     })
   }, [application])
 
-  if (documentType === 'sheet' && !isSheetsEditorEnabled) {
+  if (documentType === 'sheet' && !isSheetsEnabled) {
     return <DocsHeaderNoDocument />
   }
 
@@ -165,7 +164,6 @@ function DocsHeaderForDocument({
 }: DocsHeaderForDocumentProps) {
   const { publicContext, privateContext } = useDocsContext()
   const { APP_VERSION, CLIENT_TYPE } = useConfig()
-  const isHomepageEnabled = useFlag('DocsHomepageEnabled')
   const { getLocalID } = useAuthentication()
   const replaceDriveCompat = useDriveCompatSDK()
 
@@ -241,13 +239,9 @@ function DocsHeaderForDocument({
         data-testid="docs-header"
       >
         <div className="flex flex-1 flex-nowrap items-center head-480-749:!flex-none head-max-479:!basis-auto">
-          {isHomepageEnabled ? (
-            <a className="flex-shrink-0" href={getAppHref('/', APPS.PROTONDOCS)}>
-              {icon}
-            </a>
-          ) : (
-            icon
-          )}
+          <a className="flex-shrink-0" href={getAppHref('/', APPS.PROTONDOCS)}>
+            {icon}
+          </a>
 
           <DocumentTitleDropdown
             documentType={documentType}

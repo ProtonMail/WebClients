@@ -15,8 +15,6 @@ type AppContext = 'dropdown' | 'app';
 export interface GetAvailableAppsByUserTypeArguments {
     user?: User;
     context: AppContext;
-    isDocsHomepageAvailable: boolean;
-    isSheetsAvailable: boolean;
     isAuthenticatorAvailable: boolean;
     isSpacesAvailable: boolean;
     oauth?: boolean;
@@ -113,12 +111,6 @@ export const getAvailableApps = (
 ) => {
     const removeApps: AppSet = new Set();
 
-    if (options.context === 'dropdown' && !options.isDocsHomepageAvailable) {
-        removeApps.add(APPS.PROTONDOCS);
-    }
-    if (options.context === 'dropdown' && !options.isSheetsAvailable) {
-        removeApps.add(APPS.PROTONSHEETS);
-    }
     if (options.context === 'dropdown' && !options.isAuthenticatorAvailable) {
         removeApps.add(APPS.PROTONAUTHENTICATOR);
     }

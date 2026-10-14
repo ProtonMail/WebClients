@@ -34,8 +34,6 @@ const createMockUser = (overrides: Partial<User> = {}): User => {
 };
 
 const defaultOptions = {
-    isDocsHomepageAvailable: true,
-    isSheetsAvailable: true,
     isAuthenticatorAvailable: true,
     isSpacesAvailable: true,
 };

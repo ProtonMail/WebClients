@@ -7,14 +7,8 @@ import { Suspense, lazy } from 'react'
 import { Routes, Route, useSearchParams, Navigate } from 'react-router-dom-v5-compat'
 
 import { ApplicationProvider } from '~/utils/application-context'
-import { useFlag } from '@proton/unleash/useFlag'
 import { DocsNotificationsProvider } from '../__utils/notifications-context'
-import {
-  DOCUMENT_NEW_PATH,
-  DOCUMENT_CREATION_PATHS,
-  DOCUMENT_EDITOR_PATH,
-  DocsUrlContextProvider,
-} from '~/utils/docs-url-bar'
+import { DOCUMENT_CREATION_PATHS, DOCUMENT_EDITOR_PATH, DocsUrlContextProvider } from '~/utils/docs-url-bar'
 import { useInitializeApplication } from './useInitializeApplication'
 import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
 import { HOMEPAGE_PATHS, HOMEPAGE_RECENTS_PATH } from '../__utils/homepage-paths'
@@ -65,20 +59,16 @@ const DocumentPage = lazy(() => import('../(document)/doc/page'))
 type AppRoutesProps = { driveCompat: DriveCompat }
 
 function AppRoutes({ driveCompat }: AppRoutesProps) {
-  const isHomepageEnabled = useFlag('DocsHomepageEnabled')
-
   const documentPage = (
     <Suspense>
       <DocumentPage driveCompat={driveCompat} />
     </Suspense>
   )
 
-  const homepagePage = isHomepageEnabled ? (
+  const homepagePage = (
     <Suspense>
       <HomepagePage />
     </Suspense>
-  ) : (
-    <Navigate to={DOCUMENT_NEW_PATH} replace />
   )
 
   return (
@@ -92,21 +82,17 @@ function AppRoutes({ driveCompat }: AppRoutesProps) {
         <Route key={path} path={path} element={homepagePage} />
       ))}
       {/* catch-all redirect: ?mode=open -> document, else -> homepage */}
-      <Route path="*" element={<WildcardRoute isHomepageEnabled={isHomepageEnabled} />} />
+      <Route path="*" element={<WildcardRoute />} />
     </Routes>
   )
 }
 
-type WildcardRouteProps = {
-  isHomepageEnabled: boolean
-}
-
-function WildcardRoute({ isHomepageEnabled }: WildcardRouteProps) {
+function WildcardRoute() {
   const [searchParams] = useSearchParams()
 
   const isOpenDocumentLink = searchParams.get('mode')?.includes('open')
 
-  if (isHomepageEnabled && !isOpenDocumentLink) {
+  if (!isOpenDocumentLink) {
     void OpenTracer.trace('boot_wildcard_route_navigate_to_homepage')
     return <Navigate to={HOMEPAGE_RECENTS_PATH} replace />
   }

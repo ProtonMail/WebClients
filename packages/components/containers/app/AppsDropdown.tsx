@@ -41,8 +41,6 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
         ref: ForwardedRef<HTMLButtonElement>
     ) => {
         const { APP_NAME } = useConfig();
-        const isDocsHomepageAvailable = useFlag('DriveDocsLandingPageEnabled');
-        const isSheetsAvailable = useFlag('DocsSheetsEnabled');
         const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
         const isSpacesAvailable = useFlag('SpacesAvailable');
 
@@ -50,8 +48,6 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
             context: 'dropdown',
             user,
             organization,
-            isDocsHomepageAvailable,
-            isSheetsAvailable,
             isAuthenticatorAvailable,
             isSpacesAvailable,
         });
