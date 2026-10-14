@@ -7,11 +7,13 @@ import type {
 } from '@proton/mail/store/messages/messagesTypes';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { DEFAULT_MAIL_SETTINGS } from '@proton/shared/lib/mail/mailSettings';
+import { isDraft } from '@proton/shared/lib/mail/messages';
 import { transformLinkify } from '@proton/shared/lib/mail/transformLinkify';
 import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 
 import { transformAnchors } from './transformAnchors';
 import { transformBase } from './transformBase';
+import { transformEmbeddedMarkers } from './transformEmbeddedMarkers';
 import { attachBase64, transformEscape } from './transformEscape';
 import { transformLinks } from './transformLinks';
 import { transformRawLinks } from './transformRawLinks';
@@ -60,6 +62,10 @@ export const prepareHtml = async (
     transformLinks(document, onCleanUTMTrackers, !!mailSettings.ImageProxy);
 
     transformAnchors(document);
+
+    if (!isDraft(message.data)) {
+        transformEmbeddedMarkers(document);
+    }
 
     const { showEmbeddedImages, hasEmbeddedImages, embeddedImages } =
         await handleTransformAndLoadEmbeddedImages(document);
