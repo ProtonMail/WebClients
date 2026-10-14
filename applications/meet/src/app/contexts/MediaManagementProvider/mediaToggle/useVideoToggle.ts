@@ -4,6 +4,7 @@ import { useLocalParticipant, useRoomContext } from '@livekit/components-react';
 import { ConnectionState } from 'livekit-client';
 import debounce from 'lodash/debounce';
 
+import { logger } from '@proton/logger';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch, useMeetSelector, useMeetStore } from '@proton/meet/store/hooks';
 import { setUserCameraIntent } from '@proton/meet/store/slices/deviceManagementSlice';
@@ -89,8 +90,7 @@ export const useVideoToggle = ({ switchActiveDevice, reapplyBackgroundEffect }: 
                         // Ensure processor is fully stopped before proceeding
                         await currentVideoTrack.stopProcessor();
                     } catch (error) {
-                        // eslint-disable-next-line no-console
-                        console.error('Error stopping processor:', error);
+                        logger.error('Error stopping processor:', error);
                     }
                 }
 
@@ -124,8 +124,6 @@ export const useVideoToggle = ({ switchActiveDevice, reapplyBackgroundEffect }: 
                 toggleResult = true;
             } catch (error) {
                 reportError('Failed to toggle video', error);
-                // eslint-disable-next-line no-console
-                console.error(error);
 
                 const updatedCameras = await selectRealtimeDevices(store, 'videoinput');
 
@@ -138,8 +136,7 @@ export const useVideoToggle = ({ switchActiveDevice, reapplyBackgroundEffect }: 
 
                 // Recovering from potential stale device state
                 if (!recoveringFromError && isPotentialStaleDeviceState && updatedCameras.length > 0 && fallback) {
-                    // eslint-disable-next-line no-console
-                    console.log('[toggleVideo] recovering with fallback', fallback.deviceId);
+                    logger.info('[toggleVideo] recovering with fallback', fallback.deviceId);
 
                     toggleInProgress.current = false;
 

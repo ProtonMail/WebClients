@@ -5,6 +5,7 @@ import { RemoteTrackPublication } from 'livekit-client';
 import { c } from 'ttag';
 
 import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
+import { logger } from '@proton/logger';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectIsLocalScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
@@ -51,8 +52,7 @@ export const ScreenShareView = ({ isCompact = false }: { isCompact?: boolean }) 
             publication.setEnabled(wasEnabled);
             await wait(isSafari() ? 200 : 50);
         } catch (error) {
-            // eslint-disable-next-line no-console
-            console.error('Failed to refresh screen share track', error);
+            logger.error('Failed to refresh screen share track', error);
         } finally {
             setIsRefreshingScreenShare(false);
         }

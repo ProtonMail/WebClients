@@ -3,6 +3,10 @@ import type { Track, TrackProcessor } from 'livekit-client';
 
 import type { TunableConstantsOverrides } from './tunableConstants';
 
+export interface PipelineLogger {
+    error: (message: string, ...args: unknown[]) => void;
+}
+
 // What the segmented person is composited over. Both variants run on the same
 // pipeline, so switching between them only changes compositor state.
 export type BackgroundMode =

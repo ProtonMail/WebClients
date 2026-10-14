@@ -1,5 +1,6 @@
 import type { TrackReference } from '@livekit/components-react';
 
+import { logger } from '@proton/logger';
 import type { ReportMeetError } from '@proton/meet/hooks/useMeetErrorReporting';
 import type { OpfsRecording } from '@proton/meet/store/slices/recordingsSlice';
 
@@ -85,8 +86,6 @@ export class RecordingSession {
     };
 
     private handleWriteError = (error: string, hasWrittenData: boolean): void => {
-        // eslint-disable-next-line no-console
-        console.error('[MeetingRecorder] storage write error:', error);
         this.reportMeetError('MeetingRecording Error: Failed to write the recording', {
             context: { error, recordingCodec: this.codec },
         });
@@ -105,8 +104,7 @@ export class RecordingSession {
         initialRecordedTracks,
         encryptionKey,
     }: RecordingSessionStartOptions): Promise<void> {
-        // eslint-disable-next-line no-console
-        console.log('[MeetingRecorder] starting recording', {
+        logger.info('[MeetingRecorder] starting recording', {
             codec: this.codec,
             backend: this.isWebCodecs ? 'webcodecs' : 'mediarecorder',
         });
@@ -160,8 +158,7 @@ export class RecordingSession {
                 onChunk: (chunk) => {
                     const { isFirst, chunkNumber } = stats.recordChunk(chunk.size);
                     if (isFirst) {
-                        // eslint-disable-next-line no-console
-                        console.log(
+                        logger.info(
                             `[MeetingRecorder] first non-empty chunk: ${chunk.size} bytes (empty chunks before this: ${stats.snapshot().emptyChunkCount})`
                         );
                     }
@@ -174,8 +171,6 @@ export class RecordingSession {
                                 name: error?.name,
                             },
                         });
-                        // eslint-disable-next-line no-console
-                        console.error(`[MeetingRecorder] failed to store chunk ${chunkNumber} in OPFS:`, error);
                     });
                 },
                 onEmptyChunk: () => {
@@ -184,8 +179,7 @@ export class RecordingSession {
                     const recorderState = this.mediaRecorder?.getRecorderState() ?? 'inactive';
 
                     if (emptyCount === 1 || emptyCount % 5 === 0) {
-                        // eslint-disable-next-line no-console
-                        console.warn(
+                        logger.warn(
                             `[MeetingRecorder] empty chunk #${emptyCount} (chunks with data so far: ${snapshot.chunkCount}, mimeType: ${this.codec.mimeType}, mediaRecorder.state: ${recorderState})`
                         );
                     }
@@ -204,21 +198,14 @@ export class RecordingSession {
                     const recorderState = this.mediaRecorder?.getRecorderState() ?? 'inactive';
                     const snapshot = stats.snapshot();
 
-                    // eslint-disable-next-line no-console
-                    console.error('[MeetingRecorder] MediaRecorder runtime error:', {
-                        message: error?.message ?? 'Unknown MediaRecorder error',
-                        name: error?.name,
-                        state: recorderState,
-                        recordingCodec: this.codec,
-                        chunksWithData: snapshot.chunkCount,
-                        emptyChunks: snapshot.emptyChunkCount,
-                    });
                     reportMeetError('MeetingRecording Error: MediaRecorder runtime error', {
                         context: {
                             message: error?.message ?? 'Unknown MediaRecorder error',
                             name: error?.name,
                             state: recorderState,
                             recordingCodec: this.codec,
+                            chunksWithData: snapshot.chunkCount,
+                            emptyChunks: snapshot.emptyChunkCount,
                         },
                     });
 
@@ -252,8 +239,7 @@ export class RecordingSession {
         this.active = true;
         this.startedAt = performance.now();
 
-        // eslint-disable-next-line no-console
-        console.log('[MeetingRecorder] recorder started', {
+        logger.info('[MeetingRecorder] recorder started', {
             state: this.mediaRecorder.getRecorderState(),
             recordingCodec: this.mediaRecorder.getActiveCodec(),
         });
@@ -277,8 +263,7 @@ export class RecordingSession {
         } finally {
             this.stopFinishedAt = performance.now();
             const snapshot = this.stats?.snapshot();
-            // eslint-disable-next-line no-console
-            console.log('[MeetingRecorder] recording stopped', {
+            logger.info('[MeetingRecorder] recording stopped', {
                 chunksWithData: snapshot?.chunkCount,
                 emptyChunks: snapshot?.emptyChunkCount,
                 firstChunkAt: snapshot?.firstChunkAt,

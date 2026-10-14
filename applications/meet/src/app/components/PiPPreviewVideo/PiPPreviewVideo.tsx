@@ -9,6 +9,7 @@ import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcDots } from '@proton/icons/icons/IcDots';
 import { IcMinus } from '@proton/icons/icons/IcMinus';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
+import { logger } from '@proton/logger';
 import clsx from '@proton/utils/clsx';
 
 import { PIP_PREVIEW_ITEM_HEIGHT, PIP_PREVIEW_ITEM_WIDTH } from '../../constants';
@@ -58,9 +59,7 @@ const PiPPreviewVideoInternal = ({
 
             void video.play();
         } catch (error) {
-            // Logging error
-            // eslint-disable-next-line no-console
-            console.error('Failed to set up canvas stream:', error);
+            logger.error('Failed to set up canvas stream:', error);
         }
 
         return () => {

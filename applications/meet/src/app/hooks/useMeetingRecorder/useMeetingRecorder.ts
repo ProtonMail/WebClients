@@ -191,8 +191,6 @@ export const useMeetingRecorder = () => {
                     name: error instanceof Error ? error.name : 'UnknownError',
                 },
             });
-            // eslint-disable-next-line no-console
-            console.error('Failed to stop recording:', error);
             throw error;
         }
     });
@@ -241,8 +239,6 @@ export const useMeetingRecorder = () => {
                     name: error instanceof Error ? error.name : 'UnknownError',
                 },
             });
-            // eslint-disable-next-line no-console
-            console.error('Failed to finish recording:', error);
             dispatch(recordingFailed());
         } finally {
             await cleanupSession();
@@ -271,8 +267,6 @@ export const useMeetingRecorder = () => {
 
     const startRecording = useStableCallback(async () => {
         if (!recordingCodec) {
-            // eslint-disable-next-line no-console
-            console.error('[MeetingRecorder] codec detection has not resolved yet.');
             reportMeetError('MeetingRecording Error: codec detection not ready at startRecording');
             return;
         }
@@ -284,8 +278,6 @@ export const useMeetingRecorder = () => {
                 const userKeys = await getUserKeys();
 
                 if (!userKeys.length) {
-                    // eslint-disable-next-line no-console
-                    console.error('[MeetingRecorder] Error: no userKeys available yet');
                     reportMeetError('MeetingRecording Error: no userKeys available yet');
                     return;
                 }
@@ -326,8 +318,6 @@ export const useMeetingRecorder = () => {
                     recordingCodec,
                 },
             });
-            // eslint-disable-next-line no-console
-            console.error('[MeetingRecorder] failed to start recording:', error);
 
             await cleanupSession();
             throw error;

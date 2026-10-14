@@ -5,6 +5,7 @@ import {
     runNoiseSuppressionAudioWorkletBenchmark,
 } from '@workadventure/noise-suppression/audio-worklet';
 
+import { logger } from '@proton/logger';
 import type { ReportMeetError } from '@proton/meet/hooks/useMeetErrorReporting';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 
@@ -84,9 +85,6 @@ const reportDtlnOverBudgetToSentry = (
         context,
     });
 
-    // eslint-disable-next-line no-console
-    console.warn('DTLN noise suppression not keeping up in real time', context);
-
     dtlnLastSentryReportAt = now;
     dtlnOverBudgetWindowsSinceReport = 0;
     dtlnWindowsSinceReport = 0;
@@ -131,8 +129,7 @@ export const DTLNFilter = ({
         const handle = workletHandle;
         perfMonitorActive = true;
         if (isDtlnPerfMonitorEnabled) {
-            // eslint-disable-next-line no-console
-            console.log('[DTLN] perf monitor attached — logging per-frame timings');
+            logger.info('[DTLN] perf monitor attached — logging per-frame timings');
         }
         void (async () => {
             while (perfMonitorActive && workletHandle === handle) {

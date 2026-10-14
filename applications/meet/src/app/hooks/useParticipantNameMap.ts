@@ -5,6 +5,7 @@ import type { Participant } from 'livekit-client';
 import { c } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
+import { logger } from '@proton/logger';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectJoinedRoom } from '@proton/meet/store/slices/connectionSlice';
 import {
@@ -138,8 +139,7 @@ export const useParticipantNameMap = (meetingLinkName: string, decryptionKeyRef?
                     await handleFetch(meetingLinkName);
                 }
             } catch (error) {
-                // eslint-disable-next-line no-console
-                console.error(error);
+                logger.error('Failed to fetch participants', error);
                 isFetchingRef.current = false;
             }
         },
@@ -151,8 +151,7 @@ export const useParticipantNameMap = (meetingLinkName: string, decryptionKeyRef?
             const response = await api<{ Current: number }>(queryParticipantsCount(meetingLinkName));
             return response.Current;
         } catch (error) {
-            // eslint-disable-next-line no-console
-            console.error(error);
+            logger.error('Failed to fetch the participants count', error);
         }
     };
 

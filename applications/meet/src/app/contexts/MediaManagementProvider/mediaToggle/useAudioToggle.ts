@@ -6,6 +6,7 @@ import { Track } from 'livekit-client';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
+import { logger } from '@proton/logger';
 import { DEFAULT_DEVICE_ID } from '@proton/meet/constants';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetSelector, useMeetStore } from '@proton/meet/store/hooks';
@@ -44,8 +45,7 @@ const SAFARI_DEVICE_RELEASE_DELAY_MS = 300;
 const DEBUG_PREFIX = '[AudioToggle]';
 
 const debugLog = (message: string, data?: Record<string, unknown>) => {
-    // eslint-disable-next-line no-console
-    console.log(`${DEBUG_PREFIX} ${message}`, data ?? {});
+    logger.info(`${DEBUG_PREFIX} ${message}`, data ?? {});
 };
 
 const getErrorReason = (error: unknown) => {
@@ -705,8 +705,6 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice, meetAudio
                 context: { error },
                 tags: { isEnabled, failedStep, isTrackEnded, hasTrackProcessor },
             });
-            // eslint-disable-next-line no-console
-            console.error(error);
             debugLog('toggle:error', { operationId, reason: getErrorReason(error) });
         } finally {
             toggleInProgress.current = false;
