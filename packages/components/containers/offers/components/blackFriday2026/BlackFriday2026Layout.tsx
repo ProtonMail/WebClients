@@ -62,17 +62,17 @@ export function BlackFriday2026Layout({ offer, currency, onSelectDeal, onCloseMo
                 <div className="bf2026HeaderShadow" />
                 <div className="bf2026HeaderContent">
                     {discount > 0 && (
-                        <p className="bf2026Discount m-0" dir="ltr">
+                        <p className="bf2026Discount font-sofia-sans-condensed m-0" dir="ltr">
                             -{discount}%
                         </p>
                     )}
-                    <h1 className="bf2026Title">
+                    <h1 className="bf2026Title font-sofia-sans-condensed">
                         {
                             // translator: campaign headline in the offer header, displayed in capitals
                             c('bfcampaign2026: Title').t`Black Friday`
                         }
                     </h1>
-                    {tagline && <p className="bf2026Tagline m-0">{tagline}</p>}
+                    {tagline && <p className="bf2026Tagline font-es-build m-0">{tagline}</p>}
                 </div>
             </div>
 
