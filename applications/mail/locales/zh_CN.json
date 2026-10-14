@@ -1742,6 +1742,30 @@
       ],
       "Zoom out": [
         "缩小"
+      ],
+      "Detach": [
+        "解除关联"
+      ],
+      "Don't show this offer again": [
+        "不再显示此优惠"
+      ],
+      "Google Drive": [
+        "Google Drive"
+      ],
+      "Got it, connect my Gmail": [
+        "知道了，关联我的 Gmail"
+      ],
+      "Learn how this works": [
+        "了解其工作原理"
+      ],
+      "New chat": [
+        "新建聊天"
+      ],
+      "Special Offer": [
+        "超值特惠"
+      ],
+      "Switch to ${ planName }": [
+        "切换至 ${ planName }"
       ]
     },
     "action": {
@@ -1886,6 +1910,12 @@
       ],
       "Writing assistant seats": [
         "写作助手席位"
+      ],
+      "Managed Service Provider": [
+        "托管服务提供商"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "包含托管服务提供商附加组件的组织可以创建和管理附属组织。"
       ]
     },
     "Alert": {
@@ -4283,6 +4313,9 @@
     "Desktop notification body": {
       "${ messageCount } new message": [
         "${ messageCount } 封新邮件"
+      ],
+      "From: ${ sender } - ${ subject }": [
+        "发件人：${ sender } - ${ subject }"
       ]
     },
     "Desktop notification title": {
@@ -5504,6 +5537,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "搜索结果过多，请缩小搜索范围后再试。"
+      ],
+      "Incorrect password. Please try again.": [
+        "密码错误，请重试。"
+      ],
+      "You reached the maximum number of connected addresses": [
+        "您已达到关联地址的最大数量"
       ]
     },
     "error": {
@@ -6380,6 +6419,9 @@
       ],
       "Username": [
         "用户名"
+      ],
+      "Good to know before you connect": [
+        "关联前须知"
       ]
     },
     "Hint": {
@@ -9658,6 +9700,51 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "只需几步即可拥有清爽收件箱"
+      ],
+      "**${ emailAddress }** is also used to sign in to a separate ${ BRAND_NAME } account, outside of ${ MAIL_APP_NAME }.": [
+        "**${ emailAddress }** 也用于登录 ${ MAIL_APP_NAME } 之外的独立 ${ BRAND_NAME } 账户。"
+      ],
+      "1 device per user": [
+        "1 设备/用户"
+      ],
+      "1 vault per user": [
+        "1 保险库/用户"
+      ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "更新后，您的 Mac 可能会要求输入密码。请输入您用于解锁 Mac 的密码，然后点击“始终允许”以保持登录状态。 ${ learnMore }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "折扣基于标准月度价格。结算周期结束时，您的订阅将按标准年度费率续订。"
+      ],
+      "Here's what happens when you continue:": [
+        "继续操作后将发生以下情况："
+      ],
+      "Next time you sign in to your other account": [
+        "下次您登录其他账户时"
+      ],
+      "No payment is required.": [
+        "无需付款！"
+      ],
+      "Nothing changes in your other ${ BRAND_NAME } account.": [
+        "您的其他 ${ BRAND_NAME } 账户不会发生任何变化。"
+      ],
+      "Please update ${ MAIL_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "请更新 ${ MAIL_APP_NAME } 以继续使用此应用。 ${ downloadUpdate }"
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "您有一张待支付发票 ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "您在 ${ dueDate } 有一张待支付发票 ${ payInvoiceLink }"
+      ],
+      "You'll choose a new username": [
+        "您将选择一个新的用户名"
+      ],
+      "You'll use it to sign in from then on. That's the only change.": [
+        "您之后将使用它来登录，且这是唯一的更改。"
+      ],
+      "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
+        "您的 Gmail 关联到此 ${ MAIL_APP_NAME } 地址"
       ]
     },
     "info": {
@@ -11345,6 +11432,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "您需要重新激活密钥才能查看更新的邀请"
+      ],
+      "Pay it": [
+        "支付"
       ]
     },
     "Link to calendar event": {
@@ -12814,6 +12904,9 @@
       ],
       "Your subscription renews soon": [
         "您的订阅即将续订"
+      ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "以该价格获取首月 ${ plan } 的最后机会。"
       ]
     },
     "Offer fearue": {
@@ -12860,6 +12953,9 @@
       ],
       "Unlimited aliases to protect your identity": [
         "无限别名，保护您的身份"
+      ],
+      "Short @pm.me address": [
+        "简短的 @pm.me 邮箱地址"
       ]
     },
     "Onboarding List Placeholder": {
@@ -13510,6 +13606,81 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "您当前的订阅已享有折扣优惠，转用新的促销意味着现有折扣将不再适用。"
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } 不能与 ${ PLAN_NAMES[PLANS.PASS] } 组合使用。"
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } 仅适用于商业套餐。"
+      ],
+      "An organization is required for this plan.": [
+        "此套餐需要组织！"
+      ],
+      "Born Private can’t be purchased with an active subscription.": [
+        "在订阅生效期间无法购买 Born Private。"
+      ],
+      "Born Private requires a donation.": [
+        "Born Private 需要捐赠。"
+      ],
+      "Buying credits requires a separate purchase.": [
+        "购买额度需要单独进行！"
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "切换即表示您同意我们的${ termsLink }。"
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "仅可购买一个 ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }。"
+      ],
+      "Please close extra wallet accounts before changing your plan.": [
+        "请在更改套餐前关闭多余的钱包账户。"
+      ],
+      "Please close extra wallets before changing your plan.": [
+        "请在更改套餐前关闭多余的钱包。"
+      ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Scribe 席位数量不能超过成员数量。"
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "所选套餐未为您的账户提供足够的地址。"
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "所选套餐未为您的账户提供足够的域名。"
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "所选套餐未为您的账户提供足够的成员名额。"
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "所选套餐未为您的账户提供足够的存储空间。"
+      ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "此专用服务器已分配给网关，无法更改。"
+      ],
+      "This plan doesn’t support the members on your account.": [
+        "此套餐不支持您账户中的成员。"
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "试用套餐不支持 ${ LUMO_SHORT_APP_NAME } 席位。"
+      ],
+      "Trial plans don’t support custom domains.": [
+        "试用套餐不支持自定义域名。"
+      ],
+      "Trial plans don’t support dedicated IPs.": [
+        "试用套餐不支持专用 IP。"
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "试用套餐不支持 Scribe 席位。"
+      ],
+      "Trial plans don’t support this many members.": [
+        "试用套餐不支持如此多的成员。"
+      ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "您已经拥有 ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }。"
+      ],
+      "You already own Born Private.": [
+        "您已经拥有 Born Private。"
+      ],
+      "Your account is too old for Born Private.": [
+        "您的账户注册时间过长，无法使用 Born Private。"
       ]
     },
     "Payments.Error": {
@@ -17023,6 +17194,9 @@
       ],
       "Your shorter address is now ready": [
         "您的较短地址现已准备就绪"
+      ],
+      "Black Friday": [
+        "黑色星期五"
       ]
     },
     "Title header for keys table": {
@@ -17236,6 +17410,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "用户接受邀请后，您即可为其分配角色。"
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "您无法更改自己的角色，请联系其他管理员进行更改。"
       ]
     },
     "Validation": {
@@ -17637,6 +17814,16 @@
       ],
       "Passcode:": [
         "密码："
+      ]
+    },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "${ appName } 桌面应用"
+      ]
+    },
+    "BYOE": {
+      "Your newest emails will be imported first. Emails you've already imported won't be copied again.": [
+        "您的最新邮件将优先导入，已导入的邮件不会再次复制。"
       ]
     }
   }

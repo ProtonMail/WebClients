@@ -1559,8 +1559,7 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
+        "Lita på nyckel"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -1760,6 +1759,9 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Don't show this offer again": [
+        "Visa inte detta erbjudande igen"
       ]
     },
     "action": {
@@ -5530,6 +5532,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Din sökning matchade för många resultat. Begränsa din sökning och försök igen."
+      ],
+      "Incorrect password. Please try again.": [
+        "Felaktigt lösenord. Försök igen."
       ]
     },
     "error": {
@@ -6414,6 +6419,9 @@
       ],
       "Username": [
         "Användarnamn"
+      ],
+      "Good to know before you connect": [
+        "Bra att veta innan du ansluter"
       ]
     },
     "Hint": {
@@ -7991,7 +7999,8 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild"
+        "Infoga bild",
+        "Infoga bilder"
       ],
       "Insert link": [
         "Infoga länk"
@@ -17145,6 +17154,9 @@
       ],
       "Your shorter address is now ready": [
         "Din kortare adress är redo nu"
+      ],
+      "Black Friday": [
+        "Black Friday"
       ]
     },
     "Title header for keys table": {
@@ -17801,6 +17813,53 @@
       ],
       "Passcode:": [
         "Lösenkod:"
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Ta del av erbjudandet"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/månad"
+      ],
+      "2 individual accounts": [
+        "2 individuella konton"
+      ],
+      "2 TB of secure storage": [
+        "2 TB säkert lagringsutrymme"
+      ],
+      "3 TB of secure storage": [
+        "3 TB säkert lagringsutrymme"
+      ],
+      "500 GB of secure storage": [
+        "500 GB säkert lagringsutrymme"
+      ],
+      "6 individual accounts": [
+        "6 individuella konton"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "för 12 månader"
+      ],
+      "Last chance to save big": [
+        "Sista chansen att spara stort"
+      ],
+      "Save big with a yearly plan": [
+        "Spara stort med ett årligt paket"
       ]
     }
   }

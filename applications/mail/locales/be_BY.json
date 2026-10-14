@@ -1573,10 +1573,7 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу",
-        "Давяраць ключам",
-        "Давяраць ключам",
-        "Давяраць ключам"
+        "Давяраць ключу"
       ],
       "Trust public key": [
         "Давяраць адкрытаму ключу"
@@ -5678,6 +5675,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Ваш пошук вярнуў занадта шмат вынікаў. Абмяжуйце вобласць пошуку і паўтарыце спробу."
+      ],
+      "Incorrect password. Please try again.": [
+        "Няправільны пароль. Паўтарыце спробу."
       ]
     },
     "error": {
@@ -8343,7 +8343,10 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс"
+        "Уставіць відарыс",
+        "Уставіць відарысы",
+        "Уставіць відарысы",
+        "Уставіць відарысы"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -13789,6 +13792,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Ваша поўная падпіска на тарыфны план ${ planTitle } пачнецца ${ boldEndDate }."
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "каб працягваць карыстацца ўсімі функцыямі пасля завяршэння пробнага перыяду."
       ]
     },
     "Option": {
@@ -18065,6 +18071,9 @@
       ],
       "Your shorter address is now ready": [
         "Ваш больш кароткі адрас гатовы да выкарыстання"
+      ],
+      "Black Friday": [
+        "Чорная Пятніца"
       ]
     },
     "Title header for keys table": {
@@ -18278,6 +18287,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Вы зможаце прызначаць ролі, як толькі карыстальнік прыме запрашэнне."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Вы не можаце змяніць сваю ўласную ролю. Папрасіце іншага адміністратара зрабіць гэта."
       ]
     },
     "Validation": {
@@ -18819,6 +18831,45 @@
     "Browser": {
       "${ appName } Desktop application": [
         "Праграма для камп'ютара ${ appName }"
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Чорная Пятніца"
+      ],
+      "Get the deal": [
+        "Скарыстацца прапановай"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/месяц"
+      ],
+      "2 individual accounts": [
+        "2 асабістых уліковых запісы"
+      ],
+      "2 TB of secure storage": [
+        "2 ТБ бяспечнага сховішча"
+      ],
+      "3 TB of secure storage": [
+        "3 ТБ бяспечнага сховішча"
+      ],
+      "6 individual accounts": [
+        "6 асабістых уліковых запісаў"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Найбуйнейшы распродаж года"
+      ],
+      "Black Friday": [
+        "Чорная Пятніца"
+      ],
+      "for 12 months": [
+        "за 12 месяцаў"
+      ],
+      "Last chance to save big": [
+        "Апошні шанс істотна сэканоміць"
       ]
     }
   }
