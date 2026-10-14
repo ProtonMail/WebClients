@@ -1,10 +1,11 @@
 import type { PublicKeyReference } from '@protontech/crypto';
 import { CryptoProxy } from '@protontech/crypto';
 
+import { logger } from '@proton/logger';
 import type { OpfsRecording } from '@proton/meet/store/slices/recordingsSlice';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
 
-import { forwardWorkerLog } from '../workerLogger';
+import { forwardWorkerLog } from '../../../utils/forwardWorkerLog';
 import { getRecordingFolder } from './getRecordingFolder';
 import { getOpfsRecording } from './recordingFiles';
 import {
@@ -119,13 +120,11 @@ export class RecordingStorageClient {
         };
 
         this.worker.onerror = (event) => {
-            // eslint-disable-next-line no-console
-            console.error('[MeetingRecorder/recordingWorker] uncaught error in worker:', {
+            logger.error('[MeetingRecorder/recordingWorker] uncaught error in worker:', event.error, {
                 message: event.message,
                 filename: event.filename,
                 lineno: event.lineno,
                 colno: event.colno,
-                error: event.error,
                 pendingMessages: this.pendingMessages.size,
             });
 

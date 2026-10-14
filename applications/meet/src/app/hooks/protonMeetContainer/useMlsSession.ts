@@ -4,6 +4,7 @@ import { MeetCoreErrorEnum, MlsSyncStateInfo, RejoinReasonInfo } from '@proton-m
 import { c } from 'ttag';
 
 import useAuthentication from '@proton/components/hooks/useAuthentication';
+import { logger } from '@proton/logger';
 import { useMeetErrorReporting } from '@proton/meet';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { setMlsRetrying } from '@proton/meet/store/slices/connectionSlice';
@@ -217,8 +218,7 @@ export const useMlsSession = ({
         try {
             const sessionId = authentication.hasSession() ? authentication.getUID() : null;
             if (isMeetNewJoinFunctionsEnabled) {
-                // eslint-disable-next-line no-console
-                console.log('Joining meeting with join function v2');
+                logger.info('Joining meeting with join function v2');
                 await meetCoreClient.joinMeeting2(
                     accessToken,
                     meetingLinkName,
@@ -227,8 +227,7 @@ export const useMlsSession = ({
                     isWaitingRoom
                 );
             } else {
-                // eslint-disable-next-line no-console
-                console.log('Joining meeting with join function v1');
+                logger.info('Joining meeting with join function v1');
                 await meetCoreClient.joinMeetingWithAccessTokenWithSwitchJoinType(
                     accessToken,
                     meetingLinkName,
@@ -280,8 +279,7 @@ export const useMlsSession = ({
                 case MeetCoreErrorEnum.MaxRetriesReached:
                 case MeetCoreErrorEnum.HttpClientError:
                 default:
-                    // eslint-disable-next-line no-console
-                    console.error(error);
+                    logger.error('Failed to join the MLS session', error);
                     message = c('Error').t`Failed to join meeting. Please try again later.`;
             }
             notifyError(message);

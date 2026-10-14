@@ -219,9 +219,6 @@ export const useBackgroundEffects = ({ isBackgroundEffectsSupported }: UseBackgr
                 pending = pendingBackgroundEffectRef.current;
             }
         } catch (error) {
-            // eslint-disable-next-line no-console
-            console.error('Error applying background effect', error);
-
             reportError('Failed to apply background effect', error);
         } finally {
             backgroundEffectChangeInProgress.current = false;

@@ -6,6 +6,7 @@ import {
 } from '@livekit/track-processors';
 import type { ProcessorOptions, Track, TrackProcessor } from 'livekit-client';
 
+import { logger } from '@proton/logger';
 import { withTimeout } from '@proton/meet/utils/withTimeout';
 import { isFirefox, isIos } from '@proton/shared/lib/helpers/browser';
 
@@ -165,7 +166,8 @@ class MainThreadTransformer implements VideoTrackTransformer<BackgroundOptions> 
                 prepareSegmentationSource: (frame, size) => this.drawSegmentationSource(frame, size),
                 onFirstFrame: () => this.waitForFirstPresentedFrame(),
                 onOutputResize: (width, height) => this.outputSizeListener?.(width, height),
-            }
+            },
+            logger
         );
 
         try {

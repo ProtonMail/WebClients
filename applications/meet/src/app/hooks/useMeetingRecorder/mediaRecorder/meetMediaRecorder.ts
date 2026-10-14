@@ -50,12 +50,6 @@ export class MeetMediaRecorder implements RecorderAPI {
         } catch (error) {
             if (error instanceof DOMException && error.name === 'EncodingError') {
                 const fallbackCodec = getFallbackCodec();
-                // eslint-disable-next-line no-console
-                console.error('[MeetingRecorder] EncodingError with codec, retrying with fallback', {
-                    failed: this.activeCodec,
-                    fallback: fallbackCodec,
-                    error,
-                });
                 this.reportMeetError('MeetingRecording Error: EncodingError, retrying with fallback codec', {
                     context: { failed: this.activeCodec, fallback: fallbackCodec },
                 });
