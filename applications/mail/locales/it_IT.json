@@ -1733,6 +1733,24 @@
       ],
       "More info": [
         "Altre informazioni"
+      ],
+      "Don't show this offer again": [
+        "Non mostrare più quest'offerta"
+      ],
+      "Got it, connect my Gmail": [
+        "Capito, collega il mio account Gmail"
+      ],
+      "Learn how this works": [
+        "Leggi come funziona"
+      ],
+      "New chat": [
+        "Nuova chat"
+      ],
+      "Special Offer": [
+        "Offerta speciale"
+      ],
+      "Switch to ${ planName }": [
+        "Passa al piano ${ planName }"
       ]
     },
     "action": {
@@ -1878,6 +1896,12 @@
       ],
       "Writing assistant seats": [
         "Posti dell'assistente alla scrittura"
+      ],
+      "Managed Service Provider": [
+        "Fornitore di servizi gestiti"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Le organizzazioni che dispongono dell'estensione “Managed Service Provider” possono creare e gestire organizzazioni affiliate."
       ]
     },
     "Alert": {
@@ -2244,6 +2268,9 @@
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "Applicazione desktop ${ MAIL_APP_NAME }"
+      ],
+      "${ appName } Desktop application": [
+        "${ appName } Applicazione desktop"
       ]
     },
     "Bug category": {
@@ -2376,6 +2403,9 @@
     "BYOE": {
       "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
         "I duplicati provenienti da importazioni precedenti saranno ignorati. Annulla o importa i messaggi più vecchi nelle impostazioni di ${ PRODUCT_NAMES.EASY_SWITCH }."
+      ],
+      "Your newest emails will be imported first. Emails you've already imported won't be copied again.": [
+        "Le email più recenti verranno importate per prime. Le email già importate non verranno copiate nuovamente."
       ]
     },
     "Calendar attachment tooltip": {
@@ -2725,6 +2755,19 @@
       ],
       "Total": [
         "Totale"
+      ],
+      "Amount due": [
+        "Ammontare dovuto"
+      ],
+      "Amount due after trial": [
+        "Importo dovuto dopo il periodo di prova"
+      ],
+      "Amount due now": [
+        "Importo dovuto ora"
+      ],
+      "Total for ${ cycle } month": [
+        "Totale per ${ cycle } mese",
+        "Totale per ${ cycle } mesi"
       ]
     },
     "Collapsible tooltip": {
@@ -4405,6 +4448,9 @@
       "${ messageCount } new message": [
         "${ messageCount } nuovo messaggio",
         "${ messageCount } nuovi messaggi"
+      ],
+      "From: ${ sender } - ${ subject }": [
+        "Da: ${ sender } - ${ subject }"
       ]
     },
     "Desktop notification title": {
@@ -5477,6 +5523,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La tua ricerca ha restituito troppi risultati. Limita la ricerca e riprova."
+      ],
+      "Incorrect password. Please try again.": [
+        "Password errata. Per favore riprova."
+      ],
+      "You reached the maximum number of connected addresses": [
+        "È stato raggiunto il numero massimo di indirizzi connessi"
       ]
     },
     "error": {
@@ -6381,6 +6433,9 @@
       ],
       "Username": [
         "Utente"
+      ],
+      "Good to know before you connect": [
+        "Cose da sapere prima di connettersi"
       ]
     },
     "Hint": {
@@ -9472,6 +9527,57 @@
       ],
       "Today": [
         "Oggi"
+      ],
+      "**${ emailAddress }** is also used to sign in to a separate ${ BRAND_NAME } account, outside of ${ MAIL_APP_NAME }.": [
+        "**${ emailAddress }** viene utilizzato anche per accedere a un account ${ BRAND_NAME } separato, al di fuori di ${ MAIL_APP_NAME }."
+      ],
+      "1 device per user": [
+        "1 dispositivo per utente"
+      ],
+      "1 vault per user": [
+        "1 cassaforte per utente"
+      ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "Dopo l'aggiornamento, il Mac potrebbe richiedere una password. Digita la password che utilizzi per sbloccare il Mac, quindi fai clic su “Consenti sempre” per rimanere connesso. ${ learnMore }"
+      ],
+      "Change display setting": [
+        "Modifica delle impostazioni di visualizzazione"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Gli sconti si basano sui prezzi mensili standard. Il tuo abbonamento si rinnoverà alla tariffa annuale standard al termine del ciclo di fatturazione."
+      ],
+      "Do you remember your password?": [
+        "Ti ricordi la tua password?"
+      ],
+      "Here's what happens when you continue:": [
+        "Ecco cosa succede se continui:"
+      ],
+      "Next time you sign in to your other account": [
+        "La prossima volta che accedi al tuo altro account"
+      ],
+      "No payment is required.": [
+        "Non è richiesto alcun pagamento."
+      ],
+      "Nothing changes in your other ${ BRAND_NAME } account.": [
+        "Il tuo altro account ${ BRAND_NAME } rimane invariato."
+      ],
+      "Opened a problem report": [
+        "È stata aperta una segnalazione di problema"
+      ],
+      "Please update ${ MAIL_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "Aggiorna ${ MAIL_APP_NAME } per continuare a utilizzare l'app. ${ downloadUpdate }"
+      ],
+      "Read your display settings": [
+        "Leggi le impostazioni dello schermo"
+      ],
+      "You'll choose a new username": [
+        "Dovrai scegliere un nuovo nome utente"
+      ],
+      "You'll use it to sign in from then on. That's the only change.": [
+        "Da quel momento in poi lo userai per accedere. È l'unica modifica."
+      ],
+      "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
+        "Il tuo account Gmail è collegato a questo indirizzo ${ MAIL_APP_NAME }"
       ]
     },
     "info": {
@@ -10745,6 +10851,24 @@
       ],
       "Image": [
         "Immagine"
+      ],
+      "Column": [
+        "Colonna"
+      ],
+      "Comfortable": [
+        "Confortevole"
+      ],
+      "Compact": [
+        "Compatto"
+      ],
+      "Grouped conversations": [
+        "Conversazioni raggruppate"
+      ],
+      "Row": [
+        "Riga"
+      ],
+      "Single messages": [
+        "Messaggi singoli"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13303,6 +13427,81 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Il tuo abbonamento ha attualmente uno sconto esistente. Passare a questa nuova promozione significa che lo sconto esistente non sarà più applicato."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } non può essere combinato con ${ PLAN_NAMES[PLANS.PASS] }."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } è disponibile solo nei piani aziendali."
+      ],
+      "An organization is required for this plan.": [
+        "Per questo piano è necessaria un'organizzazione."
+      ],
+      "Born Private can’t be purchased with an active subscription.": [
+        "“Born Private” non può essere acquistato se si dispone di un abbonamento attivo."
+      ],
+      "Born Private requires a donation.": [
+        "Per accedere a “Born Private” è richiesta una donazione."
+      ],
+      "Buying credits requires a separate purchase.": [
+        "L'acquisto dei crediti richiede un acquisto separato."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "Effettuando il passaggio, accetti i nostri ${ termsLink }."
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "È possibile acquistare solo un ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "Please close extra wallet accounts before changing your plan.": [
+        "Ti preghiamo di chiudere eventuali conti aggiuntivi del portafoglio prima di cambiare piano."
+      ],
+      "Please close extra wallets before changing your plan.": [
+        "Ti preghiamo di chiudere i portafogli in più prima di modificare il tuo piano."
+      ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Il numero dei seggi riservati agli scribi non può superare il numero dei membri."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "Il piano selezionato non offre un numero sufficiente di indirizzi per il tuo account."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "Il piano selezionato non offre un numero sufficiente di domini per il tuo account."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "Il piano selezionato non offre un numero sufficiente di iscritti per il tuo account."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "Il piano selezionato non offre spazio di archiviazione sufficiente per il tuo account."
+      ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "Questo server dedicato è assegnato a un gateway e non può essere modificato."
+      ],
+      "This plan doesn’t support the members on your account.": [
+        "Questo piano non include l'assistenza per gli utenti associati al tuo account."
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "I piani di prova non supportano le licenze di ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "Trial plans don’t support custom domains.": [
+        "I piani di prova non supportano i domini personalizzati."
+      ],
+      "Trial plans don’t support dedicated IPs.": [
+        "I piani di prova non supportano gli indirizzi IP dedicati."
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "I piani di prova non supportano le licenze Scribe."
+      ],
+      "Trial plans don’t support this many members.": [
+        "I piani di prova non supportano un numero così elevato di iscritti."
+      ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "Possiedi già ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "You already own Born Private.": [
+        "Hai già acquistato “Born Private”."
+      ],
+      "Your account is too old for Born Private.": [
+        "Il tuo account è troppo vecchio per Born Private."
       ]
     },
     "Payments.Error": {
@@ -16925,6 +17124,9 @@
       ],
       "Your shorter address is now ready": [
         "Il tuo indirizzo breve ora è pronto"
+      ],
+      "Black Friday": [
+        "Black Friday"
       ]
     },
     "Title header for keys table": {
@@ -17589,6 +17791,70 @@
     "tryduo2026: Title": {
       "for 12 months": [
         "per 12 mesi"
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Ottieni l'offerta"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/mese"
+      ],
+      "2 individual accounts": [
+        "2 account individuali"
+      ],
+      "2 TB of secure storage": [
+        "2 TB di spazio di archiviazione protetto"
+      ],
+      "3 TB of secure storage": [
+        "3 TB di spazio di archiviazione sicuro"
+      ],
+      "500 GB of secure storage": [
+        "500 GB di spazio di archiviazione sicuro"
+      ],
+      "6 individual accounts": [
+        "6 conti individuali"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Gli sconti si basano sui prezzi mensili standard. Il tuo abbonamento si rinnoverà alla tariffa annuale standard al termine del ciclo di fatturazione."
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "La promozione più grande dell'anno"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "per 12 mesi"
+      ],
+      "Last chance to save big": [
+        "Ultima occasione per risparmiare alla grande"
+      ],
+      "Protect your entire tribe": [
+        "Proteggi tutta la tua tribù"
+      ],
+      "Protection for two in a single plan": [
+        "Copertura per due persone in un unico piano"
+      ],
+      "Save big with a yearly plan": [
+        "Risparmia alla grande con un abbonamento annuale"
       ]
     }
   }
