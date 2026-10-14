@@ -5,21 +5,17 @@ import { c } from 'ttag';
 import { TableCell, TableRow } from '@proton/components';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
-import type { ReportSummaryID } from '../../../logic/reports/reports.interface';
-import { selectReportById, selectReportSummaryById } from '../../../logic/reports/reports.selectors';
-import { useEasySwitchSelector } from '../../../logic/store';
+import type { Report, ReportSummary } from '../../../logic/reports/reports.interface';
 import ReportsTableCell from '../ReportsTableCell';
 import ReportRowActions from './ReportRowActions';
 import ReportRowStatus from './ReportRowStatus';
 
 interface Props {
-    reportSummaryId: ReportSummaryID;
+    reportSummary: ReportSummary;
+    report: Report;
 }
 
-const ReportRow = ({ reportSummaryId }: Props) => {
-    const reportSummary = useEasySwitchSelector((state) => selectReportSummaryById(state, reportSummaryId));
-    const report = useEasySwitchSelector((state) => selectReportById(state, reportSummary.reportID));
-
+const ReportRow = ({ reportSummary, report }: Props) => {
     const { product, rollbackState, state, size } = reportSummary;
     const { account, endDate, provider } = report;
 
@@ -37,7 +33,7 @@ const ReportRow = ({ reportSummaryId }: Props) => {
             <TableCell className="easy-switch-table-actions">
                 <ReportRowActions
                     key="button"
-                    reportSummaryID={reportSummaryId}
+                    reportSummaryID={reportSummary.localID}
                     rollbackState={rollbackState}
                     product={product}
                     provider={provider}

@@ -13,6 +13,5 @@ export const useNonBYOESyncs = () => {
             const address = addresses.find((a) => a.Email === sync.account);
             return address ? !getIsBYOEAddress(address) : true;
         })
-        .sort((a, b) => b.startDate - a.startDate)
-        .map((sync) => sync.id);
+        .sort((a, b) => b.startDate - a.startDate);
 };

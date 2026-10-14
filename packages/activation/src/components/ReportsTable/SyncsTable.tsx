@@ -13,7 +13,7 @@ import { BYOEAddressRow } from './Sync/BYOEAddressRow';
 import SyncRow from './Sync/SyncRow';
 
 export const SyncsTable = () => {
-    const nonBYOESyncIds = useNonBYOESyncs();
+    const nonBYOESyncs = useNonBYOESyncs();
     const byoeAddresses = useBYOEAddresses();
     const dispatch = useEasySwitchDispatch();
 
@@ -29,7 +29,7 @@ export const SyncsTable = () => {
             <div className="mb-2 color-weak">{c('Info')
                 .t`Connect and manage your external mailboxes in ${MAIL_APP_NAME}.`}</div>
 
-            {nonBYOESyncIds.length === 0 && byoeAddresses.length === 0 ? (
+            {nonBYOESyncs.length === 0 && byoeAddresses.length === 0 ? (
                 <div className="color-weak">{c('Info').t`No connected addresses.`}</div>
             ) : (
                 <Table
@@ -41,8 +41,8 @@ export const SyncsTable = () => {
                         {byoeAddresses.map((address) => (
                             <BYOEAddressRow key={address.Email} address={address} />
                         ))}
-                        {nonBYOESyncIds.map((id) => (
-                            <SyncRow key={id} syncId={id} />
+                        {nonBYOESyncs.map((sync) => (
+                            <SyncRow key={sync.id} sync={sync} />
                         ))}
                     </TableBody>
                 </Table>
