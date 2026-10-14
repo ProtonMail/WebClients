@@ -91,7 +91,7 @@ describe('usePaymentsApi', () => {
             AmountDue: 1500,
             Cycle: 12,
             GuardResult: 'You are using more storage than this plan allows.',
-            GuardResultCode: 8010505,
+            GuardResultCode: 801005005,
         }));
 
         const { result } = renderHook(() => usePaymentsApi(), {
@@ -101,7 +101,7 @@ describe('usePaymentsApi', () => {
         const checkResult = await result.current.paymentsApi.checkSubscription(getCheckSubscriptionData());
 
         expect(checkResult.GuardResult).toEqual([
-            { Code: 8010505, Message: 'You are using more storage than this plan allows.' },
+            { Code: 801005005, Message: 'You are using more storage than this plan allows.' },
         ]);
         expect(checkResult).not.toHaveProperty('GuardResultCode');
     });
