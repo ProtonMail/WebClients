@@ -1,14 +1,26 @@
-import { type PayloadAction, createSelector, createSlice } from '@reduxjs/toolkit';
+import {
+    type PayloadAction,
+    type ThunkAction,
+    type UnknownAction,
+    createSelector,
+    createSlice,
+} from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
 import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
 import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
+import { CacheType } from '@proton/redux-utilities/interface';
+import type { CoreEventV6Response } from '@proton/shared/lib/api/events';
+import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
+import { type UpdateCollectionV6, updateCollectionV6 } from '@proton/shared/lib/eventManager/updateCollectionV6';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
+import type { Api } from '@proton/shared/lib/interfaces';
 import {
     type AuthDeviceOutput,
     AuthDeviceState,
     getAllAuthDevices,
+    getAuthDevice,
     getValidActivation,
 } from '@proton/shared/lib/keys/device';
 
@@ -62,6 +74,11 @@ const slice = createSlice({
     name,
     initialState,
     reducers: {
+        eventLoopV6: (state, action: PayloadAction<UpdateCollectionV6<AuthDeviceOutput>>) => {
+            if (state.value) {
+                state.value = updateCollectionV6(state.value, action.payload);
+            }
+        },
         removeAuthDevice: (state, { payload }: PayloadAction<AuthDeviceOutput>) => {
             if (!state.value) {
                 return;
@@ -114,3 +131,20 @@ const slice = createSlice({
 export const authDevicesReducer = { [name]: slice.reducer };
 export const authDevicesThunk = modelThunk.thunk;
 export const authDeviceActions = slice.actions;
+
+export const authDevicesEventLoopV6Thunk = ({
+    event,
+    api,
+}: {
+    event: CoreEventV6Response;
+    api: Api;
+}): ThunkAction<Promise<void>, AuthDevicesState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch) => {
+        await updateCollectionAsyncV6({
+            events: event.AuthDevices,
+            get: (deviceID) => getAuthDevice({ api, deviceID }),
+            refetch: () => dispatch(authDevicesThunk({ cache: CacheType.None })),
+            update: (result) => dispatch(authDeviceActions.eventLoopV6(result)),
+        });
+    };
+};
