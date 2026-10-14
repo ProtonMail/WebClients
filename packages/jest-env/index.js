@@ -39,7 +39,11 @@ class MyEnvironment extends JSDOMEnvironment {
 
     async setup() {} // eslint-disable-line
 
-    async teardown() {} // eslint-disable-line
+    // Closing the jsdom window clears its pending timers. Left open, one long timer keeps a
+    // --runInBand jest process alive after the last test, and each file's DOM stays in memory.
+    async teardown() {
+        await super.teardown();
+    }
 }
 
 module.exports = MyEnvironment;
