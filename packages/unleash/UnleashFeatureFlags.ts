@@ -392,7 +392,6 @@ enum PaymentsFeatureFlag {
     NewProtonBusinessBundlePlans = 'NewProtonBusinessBundlePlans',
     PaymentProcessorsRefactor = 'PaymentProcessorsRefactor',
     PaypalKrw = 'PaypalKrw',
-    RegionalCurrenciesBatch3 = 'RegionalCurrenciesBatch3',
     SepaPayments = 'SepaPayments',
     SepaPaymentsB2C = 'SepaPaymentsB2C',
     Vpn2024AddonsExperiment = 'Vpn2024AddonsExperiment',
