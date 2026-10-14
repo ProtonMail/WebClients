@@ -1,32 +1,34 @@
 import { type PropsWithChildren, createContext, useContext, useEffect, useRef, useState } from 'react';
 
-import { c } from 'ttag';
-
+import type { ConnectBYOEAddressFailure } from '@proton/activation/src/byoe/connectBYOEAddress.interface';
 import { useBYOEGating } from '@proton/activation/src/byoe/useBYOEGating';
-import { useConnectBYOEAddress } from '@proton/activation/src/byoe/useConnectBYOEAddress';
 import { useOAuthRedirectFlow } from '@proton/activation/src/byoe/useOAuthRedirectFlow';
-import type { OAuthCallbackResult } from '@proton/activation/src/byoe/useOAuthRedirectFlow.helpers';
 import { getBYOEDisabledNotification, getGenericLimitReached } from '@proton/activation/src/constants';
 import { EASY_SWITCH_FEATURES, EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
 import {
     getBYOECreationStartedAt,
     resumeBYOECreation,
-    trackBYOECreationError,
     trackBYOECreationStarted,
     trackBYOEGoogleSignInClicked,
 } from '@proton/activation/src/telemetry/byoeCreationFunnel';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
-import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 
-import { getNativeSuccessUrl } from '../redirectToNative';
 import { type BYOEMobileStatus, REDIRECT_PATH } from './interface';
+import { type ClaimableFailure, useBYOEMobileConnection } from './useBYOEMobileConnection';
 
 interface BYOEMobileContextValue {
     status: BYOEMobileStatus;
     isLoading: boolean;
     defaultImportEmails: boolean;
     connectingEmail: string | undefined;
+    /** Why the last attempt failed, until the user dismisses it. */
+    error: ConnectBYOEAddressFailure | null;
+    dismissError: () => void;
+    /** Starts the OAuth flow again with the choices of the previous attempt. */
+    retry: () => void;
+    /** Connects an address used on another account, once the user confirmed it. */
+    claimAddress: (failure: ClaimableFailure) => Promise<void>;
     startOAuthFlowIfAllowed: (importEmails: boolean) => void;
 }
 
@@ -60,7 +62,6 @@ export const BYOEMobileProvider = ({ redirect, initialSearchParams, children }: 
 
     const { isLoadingGating, checkGating } = useBYOEGating();
 
-    const { connectBYOEAddressWithCode } = useConnectBYOEAddress({ source: EASY_SWITCH_SOURCES.ACCOUNT_LITE_BYOE });
     const { callback, redirectUri, startOAuthFlow } = useOAuthRedirectFlow({
         features: [EASY_SWITCH_FEATURES.BYOE],
         redirectPath: REDIRECT_PATH,
@@ -71,7 +72,6 @@ export const BYOEMobileProvider = ({ redirect, initialSearchParams, children }: 
 
     // Read once: `initialSearchParams` is a snapshot of the first load and never changes
     const [autoParams] = useState(() => getAutoConnectParams(initialSearchParams));
-    const [connectingEmail, setConnectingEmail] = useState<string | undefined>();
     const [status, setStatus] = useState<BYOEMobileStatus>(() => {
         if (callback.type === 'code') {
             return 'connecting';
@@ -79,44 +79,15 @@ export const BYOEMobileProvider = ({ redirect, initialSearchParams, children }: 
         return autoParams.autoConnect && callback.type === 'none' ? 'auto-starting' : 'idle';
     });
 
+    const { connectingEmail, error, dismissError, getLastImportEmails, handleOAuthCallback, claimAddress } =
+        useBYOEMobileConnection({
+            redirectUri,
+            defaultImportEmails: autoParams.importEmails,
+            setStatus,
+        });
+
     const isStartingOAuth = status === 'starting-oauth';
     const isLoading = isStartingOAuth || isLoadingGating;
-
-    const handleCallbackCode = async ({ code, state }: Extract<OAuthCallbackResult, { type: 'code' }>) => {
-        setStatus('connecting');
-        // The status is reset in `finally` so a failure or a thrown error never leaves the screen stuck on the loader.
-        // The exception is a redirect to the native app: the in-app browser takes a moment to close, and resetting
-        // the status would flash the idle screen and let the user start the flow a second time.
-        let isRedirectingToNative = false;
-        try {
-            const result = await connectBYOEAddressWithCode({
-                code,
-                redirectUri,
-                importEmails: state.importEmails,
-                onAccountResolved: setConnectingEmail,
-            });
-
-            if (result.status === 'success') {
-                // The stored redirect comes back from session storage, so it is validated again
-                const nativeUrl = getNativeSuccessUrl(state.redirect, result.address.Email);
-                if (nativeUrl) {
-                    isRedirectingToNative = true;
-                    replaceUrl(nativeUrl);
-                    return;
-                }
-                createNotification({ text: c('Info').t`Your address was connected` });
-                return;
-            }
-
-            if (result.reason.type === 'already-added') {
-                createNotification({ text: c('Info').t`This address is already linked to another account` });
-            }
-        } finally {
-            if (!isRedirectingToNative) {
-                setStatus('idle');
-            }
-        }
-    };
 
     const startOAuthFlowNow = (importEmails: boolean) => {
         // The page navigates away right after, so the telemetry event must be sent before starting the flow.
@@ -164,17 +135,7 @@ export const BYOEMobileProvider = ({ redirect, initialSearchParams, children }: 
         }
 
         hasHandledCallbackRef.current = true;
-        if (callback.type === 'error') {
-            trackBYOECreationError('authentication');
-            createNotification({
-                type: 'error',
-                // translators: This string is shown when something went wrong during easy switch Gmail oAuth
-                text: c('Error').t`Permissions request failed.`,
-            });
-            return;
-        }
-
-        void handleCallbackCode(callback);
+        void handleOAuthCallback(callback);
     }, [callback, isLoadingGating]);
 
     // Starts the OAuth flow without a click on the connect button when the native app opened the page with
@@ -200,11 +161,20 @@ export const BYOEMobileProvider = ({ redirect, initialSearchParams, children }: 
         }
     };
 
+    const retry = () => {
+        dismissError();
+        startOAuthFlowIfAllowed(getLastImportEmails());
+    };
+
     return (
         <BYOEMobileContext.Provider
             value={{
                 status,
                 connectingEmail,
+                error,
+                dismissError,
+                retry,
+                claimAddress,
                 startOAuthFlowIfAllowed,
                 isLoading,
                 defaultImportEmails: autoParams.importEmails,
