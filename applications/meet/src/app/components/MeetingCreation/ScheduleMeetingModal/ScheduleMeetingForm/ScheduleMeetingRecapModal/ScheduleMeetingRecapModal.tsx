@@ -354,10 +354,7 @@ export const ScheduleMeetingRecapModal = ({
                                             key={key}
                                             className="calendar-dropdown-menu text-left flex flex-nowrap items-center gap-3 border-none shrink-0"
                                             liClassName="w-full"
-                                            onClick={() => {
-                                                onClick();
-                                                close();
-                                            }}
+                                            onClick={onClick}
                                         >
                                             <span className="flex-1 text-left text-nowrap">
                                                 {label}
