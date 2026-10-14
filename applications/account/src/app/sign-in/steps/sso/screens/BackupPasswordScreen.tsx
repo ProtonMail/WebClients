@@ -10,6 +10,7 @@ import { useSignInProps } from '../../../wizard/SignInProvider';
 import { SSOContext } from '../SSOContext';
 import {
     selectBackupPasswordDisabled,
+    selectBackupPasswordError,
     selectFirstLoginAfterConversion,
     selectHasSSOCapability,
     selectJoinOrganization,
@@ -24,6 +25,8 @@ export const BackupPasswordScreen: SignInScreen = ({ onBack }: SignInScreenProps
     const offersAdminHelp = SSOContext.useSelector(selectHasSSOCapability(SSOLoginCapabilites.ASK_ADMIN));
     const isFirstLoginAfterConversion = SSOContext.useSelector(selectFirstLoginAfterConversion);
     const backupPasswordDisabled = SSOContext.useSelector(selectBackupPasswordDisabled);
+    const error = SSOContext.useSelector(selectBackupPasswordError);
+    const onChange = () => actorRef.send({ type: 'sso.backupPassword.edited' });
     // After converting to the organization's account, the first sign-in names the account it joins
     const joinedUsername = SSOContext.useSelector((snapshot) => selectJoinOrganization(snapshot).username);
 
@@ -39,6 +42,8 @@ export const BackupPasswordScreen: SignInScreen = ({ onBack }: SignInScreenProps
                     </Text>
                     <SSOBackupPasswordForm
                         submitting={submitting}
+                        error={error}
+                        onChange={onChange}
                         passwordLabel={c('Label').t`Password`}
                         hint={
                             backupPasswordDisabled ? undefined : (
@@ -71,6 +76,8 @@ export const BackupPasswordScreen: SignInScreen = ({ onBack }: SignInScreenProps
                 </Text>
                 <SSOBackupPasswordForm
                     submitting={submitting}
+                    error={error}
+                    onChange={onChange}
                     onAskAdminHelp={
                         offersAdminHelp ? () => actorRef.send({ type: 'sso.adminHelp.requested' }) : undefined
                     }

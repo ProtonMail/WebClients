@@ -89,15 +89,21 @@ export const loadClaimedAddressSetup = async ({
 
 /**
  * The availability check rejected the username for the new address, as signup reads it: nothing was created yet, so
- * another username can be tried. Shows the API's message, which it keeps as the cause.
+ * another username can be tried. Shows the API's message, which it keeps as the cause, and says which address it was.
  */
 export class UnavailableUsernameError extends Error {
     name = 'UnavailableUsernameError';
 
     readonly trace = false;
 
-    constructor(cause: unknown) {
+    readonly username: string;
+
+    readonly domain: string;
+
+    constructor(cause: unknown, { username, domain }: { username: string; domain: string }) {
         super(getApiErrorMessage(cause) || c('Error').t`Unknown error`, { cause });
+        this.username = username;
+        this.domain = domain;
     }
 }
 
@@ -140,7 +146,7 @@ export const createClaimedAddressAndFinalize = async (
             await api(queryCheckUsernameAvailability(`${username}@${domain}`, true));
         } catch (error) {
             if (unavailableUsernameCodes.includes(getApiError(error).code)) {
-                throw new UnavailableUsernameError(error);
+                throw new UnavailableUsernameError(error, { username, domain });
             }
             throw error;
         }
