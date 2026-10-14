@@ -6,6 +6,7 @@ import { Table, TableBody } from '@proton/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import { EASY_SWITCH_TABLE_CLASS_NAME } from '../../constants';
 import { loadDashboard } from '../../logic/actions';
 import { selectActiveImporterEntriesByDate } from '../../logic/importers/importers.selectors';
 import { selectReportEntriesByDate } from '../../logic/reports/reports.selectors';
@@ -15,8 +16,6 @@ import ImporterRow from './Importers/ImporterRow';
 import OrganizationImportRow from './Organization/OrganizationImportRow';
 import ReportRow from './Reports/ReportRow';
 import ReportsTableInfos from './ReportsTableInfos';
-
-const tableClassName = 'simple-table--border-weak simple-table--border-lines-rounded easy-switch-table';
 
 const ImportsTable = () => {
     const reportEntries = useEasySwitchSelector(selectReportEntriesByDate);
@@ -38,7 +37,7 @@ const ImportsTable = () => {
             {organizationImports.length > 0 && (
                 <>
                     <h3 className="text-rg text-bold mb-2">{c('Title header').t`Organization migrations`}</h3>
-                    <Table hasActions responsive="cards" className={tableClassName}>
+                    <Table hasActions responsive="cards" className={EASY_SWITCH_TABLE_CLASS_NAME}>
                         <TableBody>
                             {organizationImports.map((io) => (
                                 <OrganizationImportRow key={io.ImporterOrganizationID} importerOrganization={io} />
@@ -61,7 +60,7 @@ const ImportsTable = () => {
             ) : (
                 <>
                     <ReportsTableInfos />
-                    <Table hasActions responsive="cards" className={tableClassName}>
+                    <Table hasActions responsive="cards" className={EASY_SWITCH_TABLE_CLASS_NAME}>
                         <TableBody>
                             {activeImporterEntries.map(({ activeImporter, importer }) => (
                                 <ImporterRow
