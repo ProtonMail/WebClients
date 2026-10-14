@@ -95,9 +95,6 @@ const ImporterRowActions = ({ activeImporter, importer }: Props) => {
 
     const handleReconnect = async (importerID: string) => {
         await dispatch(reconnectImapImport(importerID));
-        // const apiImporterResponse = await api<ApiImportResponse>(getImport(importerID));
-        // const activeImport = getDeprecatedImporterFormatByID(apiImporterResponse);
-        // await createModal(<ImportMailModal addresses={addresses} currentImport={activeImport} />);
     };
 
     const handleResume = async (ImporterID: string) => {
