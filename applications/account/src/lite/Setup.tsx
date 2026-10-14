@@ -6,6 +6,8 @@ import { unleashReady } from '@proton/account/bootstrap';
 import { serverEvent } from '@proton/account/eventLoop';
 import type { EventLoop } from '@proton/account/eventLoop';
 import { userThunk } from '@proton/account/user';
+import type { OAuthSession } from '@proton/activation/src/byoe/useOAuthRedirectFlow.helpers';
+import { readOAuthSession } from '@proton/activation/src/byoe/useOAuthRedirectFlow.helpers';
 import { useConfig } from '@proton/app-context/useConfig';
 import ApiProvider from '@proton/components/containers/api/ApiProvider';
 import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
@@ -22,7 +24,9 @@ import { getEvents, getLatestID } from '@proton/shared/lib/api/events';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { consumeFork, getConsumeForkParameters } from '@proton/shared/lib/authentication/fork';
 import { ForkSearchParameters } from '@proton/shared/lib/authentication/fork/constants.ts';
+import { getLocalIDForkSearchParameter } from '@proton/shared/lib/authentication/fork/validation';
 import type { PullForkResponse, RefreshSessionResponse } from '@proton/shared/lib/authentication/interface';
+import { resumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { getPersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { getGenericErrorPayload } from '@proton/shared/lib/broadcast';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -47,7 +51,7 @@ import { extendStore } from '../app/store/store';
 import { extraThunkArguments } from '../app/store/thunk';
 import broadcast, { MessageType } from './broadcast';
 import ExpiredLink from './components/ExpiredLink';
-import type { SupportedActions } from './helper';
+import { SupportedActions } from './helper';
 
 const initializeTelemetry = (config: ProtonConfig, UID: string) => {
     // Deliberately ignoring user settings as lite app uses JWT token for auth and the token does not have permissions to fetch user settings
@@ -190,6 +194,25 @@ const Setup = ({ api, onLogin, UID, children, loader, action }: Props) => {
             });
         };
 
+        /**
+         * Resumes the session stored before leaving for the OAuth provider. A forked session is persisted with its key
+         * password encrypted by a client key that only the API holds, so it is resumed like any persisted session.
+         * Sessions from a selector or a JWT are not persisted and have no key password: only the UID is restored.
+         */
+        const resumeOAuthSession = async ({ UID, localID }: OAuthSession) => {
+            if (localID === undefined) {
+                return UID;
+            }
+
+            const session = await resumeSession({ api, localID, options: { user: false } });
+            if (session.UID !== UID) {
+                throw new Error('Session mismatch after the OAuth redirect');
+            }
+
+            extraThunkArguments.authentication.login(session);
+            return session.UID;
+        };
+
         const handleSetupError = (error: any) => {
             broadcast({ type: MessageType.ERROR, payload: getGenericErrorPayload(error) });
 
@@ -247,13 +270,25 @@ const Setup = ({ api, onLogin, UID, children, loader, action }: Props) => {
             return;
         }
 
-        const localIdParam = Number(searchParams.get(ForkSearchParameters.LocalID));
-        if (localIdParam >= 0) {
+        // Only when the URL names a local ID: `Number(null)` is 0, which would pick up whatever session is saved there,
+        // e.g. the forked session when coming back from the OAuth provider
+        const localIdParam = getLocalIDForkSearchParameter(searchParams);
+        if (localIdParam !== undefined) {
             const persistedSession = getPersistedSession(localIdParam);
             if (persistedSession) {
                 setupApp(persistedSession.UID).catch(handleSetupError);
                 return;
             }
+        }
+
+        // Coming back from the OAuth provider: the hash and the in-memory session are gone.
+        // Resume the session saved with the OAuth state.
+        const oauthSession = action === SupportedActions.BYOEMobile ? readOAuthSession(searchParams) : undefined;
+        if (oauthSession) {
+            resumeOAuthSession(oauthSession)
+                .then((UID) => setupApp(UID))
+                .catch(handleSetupError);
+            return;
         }
 
         setError({

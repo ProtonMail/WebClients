@@ -202,6 +202,7 @@ const App = () => {
                                                                             app={app}
                                                                             searchParams={searchParams}
                                                                             initialHashParams={initialHashParams}
+                                                                            initialSearchParams={initialSearchParams}
                                                                         />
                                                                     </Route>
                                                                     <Route path={'*'}>
