@@ -171,7 +171,7 @@ describe('blackFriday2026DuoToFamily eligibility', () => {
 
     describe('already redeemed the Black Friday sale', () => {
         // Includes users who bought Duo through the BF 2026 Unlimited to Duo deal.
-        it.each([COUPON_CODES.BLACK_FRIDAY_2026_BUNDLE, COUPON_CODES.BLACK_FRIDAY_2026_BUNDLE_CS])(
+        it.each([COUPON_CODES.BLACK_FRIDAY_2026_NEW, COUPON_CODES.BLACK_FRIDAY_2026_BUNDLE])(
             'should not be eligible when the subscription carries %s',
             (couponCode) => {
                 expect(
