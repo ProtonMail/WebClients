@@ -118,6 +118,25 @@ describe('getParameters', () => {
             expect(cycle).toBe(DEFAULT_CYCLE);
         });
 
+        it.each(['lumo', 'meet'])(
+            'keeps the two-year subscription cycle when addon=%s expands the subscription',
+            (addon) => {
+                const subscription = buildSubscription({
+                    planName: PLANS.BUNDLE,
+                    currency: 'CHF',
+                    cycle: CYCLE.TWO_YEARS,
+                });
+                const { cycle } = callGetParameters(`?addon=${addon}`, { subscription });
+                expect(cycle).toBe(CYCLE.TWO_YEARS);
+            }
+        );
+
+        it('uses the `cycle` param over the subscription cycle when addon=lumo expands the subscription', () => {
+            const subscription = buildSubscription({ planName: PLANS.BUNDLE, currency: 'CHF', cycle: CYCLE.TWO_YEARS });
+            const { cycle } = callGetParameters('?addon=lumo&cycle=12', { subscription });
+            expect(cycle).toBe(CYCLE.YEARLY);
+        });
+
         it('parses minimumCycle and maximumCycle', () => {
             const { minimumCycle, maximumCycle } = callGetParameters('?plan=mail2022&minimumCycle=12&maximumCycle=24');
             expect(minimumCycle).toBe(CYCLE.YEARLY);
