@@ -250,7 +250,7 @@ const EditGroupModal = () => {
                                               selectedRoles={new Set(formValues.adminRoles)}
                                               onChange={(roles) => setFieldValue('adminRoles', Array.from(roles))}
                                               isGroupContext
-                                              disabled={adminRolesUIState !== AdminRolesUIState.Enabled}
+                                              disabled={loading || adminRolesUIState !== AdminRolesUIState.Enabled}
                                               banner={
                                                   adminRolesUIState === AdminRolesUIState.Disabled &&
                                                   !loadingAdminRolesUI
