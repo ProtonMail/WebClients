@@ -1556,8 +1556,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar clave",
-        "Confiar claves"
+        "Confiar clave"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -1760,6 +1759,18 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Detach": [
+        "Desadjuntar"
+      ],
+      "Don't show this offer again": [
+        "No volver a mostrar esta oferta"
+      ],
+      "Got it, connect my Gmail": [
+        "Entendido, conectar mi Gmail"
+      ],
+      "Learn how this works": [
+        "Aprenda cómo funciona esto"
       ]
     },
     "action": {
@@ -1915,6 +1926,12 @@
       ],
       "Writing assistant seats": [
         "Licencias del asistente de escritura"
+      ],
+      "Managed Service Provider": [
+        "Proveedor de Servicios Gestionados"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Las organizaciones con el complemento de Proveedor de Servicios Gestionados pueden crear y administrar organizaciones subsidiarias."
       ]
     },
     "Alert": {
@@ -5568,6 +5585,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La búsqueda coincidió con muchos resultados. Limite la búsqueda e inténtelo de nuevo."
+      ],
+      "Incorrect password. Please try again.": [
+        "Contraseña incorrecta. Intente de nuevo."
+      ],
+      "You reached the maximum number of connected addresses": [
+        "Alcanzó el número máximo de direcciones conectadas"
       ]
     },
     "error": {
@@ -6455,6 +6478,9 @@
       ],
       "Username": [
         "Nombre de usuario"
+      ],
+      "Good to know before you connect": [
+        "Es bueno saberlo antes de conectarse"
       ]
     },
     "Hint": {
@@ -8080,7 +8106,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen"
+        "Insertar imagen",
+        "Insertar imágenes"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -9862,6 +9889,36 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Está a solo unos clics de tener una bandeja de entrada ordenada"
+      ],
+      "**${ emailAddress }** is also used to sign in to a separate ${ BRAND_NAME } account, outside of ${ MAIL_APP_NAME }.": [
+        "**${ emailAddress }** también se usa para iniciar sesión en una cuenta separada de ${ BRAND_NAME }, fuera de ${ MAIL_APP_NAME }."
+      ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "Después de la actualización, es posible que su Mac le pida una contraseña. Escriba la contraseña que usa para desbloquear su Mac y luego pulse en Permitir siempre para mantener la sesión iniciada. ${ learnMore }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Los descuentos se basan en los precios mensuales estándar. Su suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
+      ],
+      "Here's what happens when you continue:": [
+        "Esto es lo que ocurre cuando continúe:"
+      ],
+      "Next time you sign in to your other account": [
+        "La próxima vez que inicie sesión en su otra cuenta"
+      ],
+      "Nothing changes in your other ${ BRAND_NAME } account.": [
+        "Nada cambia en su otra cuenta de ${ BRAND_NAME }."
+      ],
+      "Please update ${ MAIL_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "Actualice ${ MAIL_APP_NAME } para seguir usando la aplicación. ${ downloadUpdate }"
+      ],
+      "You'll choose a new username": [
+        "Eligirá un nombre de usuario nuevo"
+      ],
+      "You'll use it to sign in from then on. That's the only change.": [
+        "La usará para iniciar sesión a partir de ahora. Ese es el único cambio."
+      ],
+      "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
+        "Su Gmail se conecta a esta dirección de ${ MAIL_APP_NAME }"
       ]
     },
     "info": {
@@ -17463,6 +17520,9 @@
       ],
       "Your shorter address is now ready": [
         "Su dirección en formato más corto ya está lista."
+      ],
+      "Black Friday": [
+        "Black Friday"
       ]
     },
     "Title header for keys table": {
@@ -18125,6 +18185,16 @@
       ],
       "Passcode:": [
         "Código de acceso:"
+      ]
+    },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "Aplicación de escritorio de ${ appName }"
+      ]
+    },
+    "BYOE": {
+      "Your newest emails will be imported first. Emails you've already imported won't be copied again.": [
+        "Sus correos electrónicos más recientes se importarán primero. Los correos electrónicos que ya haya importado no se copiarán de nuevo."
       ]
     }
   }

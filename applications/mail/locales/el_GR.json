@@ -1568,8 +1568,7 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Κλειδί Εμπιστοσύνης",
-        "Κλειδιά Εμπιστοσύνης"
+        "Εμπιστοσύνη στο κλειδί"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -5596,6 +5595,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Η αναζήτησή σας ταίριαξε με υπερβολικό αριθμό αποτελεσμάτων. Παρακαλούμε περιορίστε την αναζήτησή σας και δοκιμάστε ξανά."
+      ],
+      "Incorrect password. Please try again.": [
+        "Λανθασμένος κωδικός. Παρακαλούμε δοκιμάστε ξανά."
+      ],
+      "You reached the maximum number of connected addresses": [
+        "Φτάσατε τον μέγιστο αριθμό συνδεδεμένων διευθύνσεων"
       ]
     },
     "error": {
@@ -8120,7 +8125,8 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας"
+        "Εισαγωγή εικόνας",
+        "Εισαγωγή εικόνων"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -9917,6 +9923,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Είστε μόνο μερικά κλικ μακριά από τα εισερχόμενα χωρίς ακαταστασία"
+      ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "Μετά την ενημέρωση, ενδέχεται το Mac σας να ζητήσει κωδικό πρόσβασης. Πληκτρολογήστε τον κωδικό πρόσβασης που χρησιμοποιείτε για να ξεκλειδώσετε το Mac σας και, στη συνέχεια, κάντε κλικ στην επιλογή Να επιτρέπεται πάντα για να παραμείνετε συνδεδεμένοι. ${ learnMore }"
+      ],
+      "Please update ${ MAIL_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "Παρακαλούμε ενημερώστε το ${ MAIL_APP_NAME } για να συνεχίσετε να χρησιμοποιείτε την εφαρμογή. ${ downloadUpdate }"
       ]
     },
     "info": {
@@ -17518,6 +17530,9 @@
       ],
       "Your shorter address is now ready": [
         "Η συντομότερη διεύθυνσή σας είναι τώρα έτοιμη"
+      ],
+      "Black Friday": [
+        "Black Friday"
       ]
     },
     "Title header for keys table": {
@@ -18180,6 +18195,70 @@
       ],
       "Passcode:": [
         "Κωδικός πρόσβασης:"
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Αποκτήστε την προσφορά"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/μήνα"
+      ],
+      "2 individual accounts": [
+        "2 ατομικοί λογαριασμοί"
+      ],
+      "2 TB of secure storage": [
+        "2 TB ασφαλούς αποθήκευσης"
+      ],
+      "3 TB of secure storage": [
+        "3 TB ασφαλούς αποθήκευσης"
+      ],
+      "500 GB of secure storage": [
+        "500 GB ασφαλούς αποθήκευσης"
+      ],
+      "6 individual accounts": [
+        "6 ατομικοί λογαριασμοί"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση. Η συνδρομή σας θα ανανεωθεί με την τυπική ετήσια χρέωση όταν λήξει ο κύκλος χρέωσης."
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Η μεγαλύτερη προσφορά της χρονιάς"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "για 12 μήνες"
+      ],
+      "Last chance to save big": [
+        "Τελευταία ευκαιρία για μεγάλες εξοικονομήσεις"
+      ],
+      "Protect your entire tribe": [
+        "Προστάτεψε ολόκληρη τη φυλή σας"
+      ],
+      "Protection for two in a single plan": [
+        "Προστασία για δύο άτομα σε ένα ενιαίο πλάνο"
+      ],
+      "Save big with a yearly plan": [
+        "Κερδίστε σημαντικά με ένα ετήσιο πλάνο"
       ]
     }
   }
