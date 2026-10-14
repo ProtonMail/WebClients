@@ -1,12 +1,12 @@
 import { PassEncryptionTag } from '../../../../types';
-import { encryptData } from '../../utils/crypto-helpers';
 import {
     createRandomKey,
     createRandomVaultKey,
     randomContents,
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
-} from '../../utils/testing';
+} from '../../../../utils/tests/fixtures/crypto';
+import { encryptData } from '../../utils/crypto-helpers';
 import { createInviteKeys } from './create-invite-keys';
 import { readVaultInviteContent } from './read-vault-invite';
 

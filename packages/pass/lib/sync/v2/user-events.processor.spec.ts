@@ -1,8 +1,8 @@
 import { runSaga } from 'redux-saga';
 
-import { sagaReturn, sagaSetup } from '../../../store/sagas/testing';
 import type { RootSagaOptions } from '../../../store/types';
 import type { SyncEventListOutput } from '../../../types';
+import { sagaReturn, sagaSetup } from '../../../utils/tests/saga';
 import { PendingFileLinkTracker } from '../../file-attachments/file-link.tracker';
 import * as alias from './user-events.alias';
 import * as folders from './user-events.folders';

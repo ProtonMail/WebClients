@@ -1,7 +1,7 @@
 import type { FolderKey, VaultShareKey } from '../../../../types';
 import { ContentFormatVersion, PassEncryptionTag } from '../../../../types';
+import { TEST_USER_KEY_ID, randomContents } from '../../../../utils/tests/fixtures/crypto';
 import { decryptData, generateKey, importSymmetricKey } from '../../utils/crypto-helpers';
-import { TEST_USER_KEY_ID, randomContents } from '../../utils/testing';
 import { createFolder } from './create-folder';
 
 describe('createFolder crypto process', () => {

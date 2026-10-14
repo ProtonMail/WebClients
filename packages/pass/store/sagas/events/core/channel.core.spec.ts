@@ -5,8 +5,8 @@ import type { Address, User } from '@proton/shared/lib/interfaces';
 import { exposePassCrypto } from '../../../../lib/crypto';
 import type { PassCryptoWorker } from '../../../../types';
 import { uniqueId } from '../../../../utils/string/unique-id';
+import { sagaSetup } from '../../../../utils/tests/saga';
 import { syncIntent } from '../../../actions';
-import { sagaSetup } from '../../testing';
 import { onUserRefreshed } from './channel.core';
 
 describe('`onUserRefreshed`', () => {

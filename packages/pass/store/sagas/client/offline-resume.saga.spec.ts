@@ -1,9 +1,9 @@
 import { runSaga } from 'redux-saga';
 
 import { exposeApi } from '../../../lib/api/api';
+import { sagaSetup } from '../../../utils/tests/saga';
 import { offlineResume } from '../../actions';
 import type { State } from '../../types';
-import { sagaSetup } from '../testing';
 import * as hydrateSaga from './hydrate.saga';
 import watcher from './offline-resume.saga';
 

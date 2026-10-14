@@ -1,4 +1,4 @@
-import type { DetectionRulesV1 } from './types';
+import type { DetectionRulesV1 } from '../../../lib/extension/rules/v1/types';
 
 export const RULES_V1_MOCK: DetectionRulesV1 = {
     version: '1',

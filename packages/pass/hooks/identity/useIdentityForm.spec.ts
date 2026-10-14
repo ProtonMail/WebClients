@@ -1,6 +1,6 @@
 import { itemBuilder } from '../../lib/items/item.builder';
 import type { IdentityFieldName } from '../../types';
-import { MOCK_FIELDS, MOCK_SECTIONS } from './identity.mocks';
+import { MOCK_FIELDS, MOCK_SECTIONS } from '../../utils/tests/fixtures/identity';
 import { addFormSectionOptionalField, buildFormSections } from './useIdentityForm';
 import * as utils from './utils';
 

@@ -1,6 +1,6 @@
 import { PassEncryptionTag } from '../../../../types';
+import { createRandomVaultKey } from '../../../../utils/tests/fixtures/crypto';
 import { decryptData, generateKey, importSymmetricKey } from '../../utils/crypto-helpers';
-import { createRandomVaultKey } from '../../utils/testing';
 import { createAccessTokenShareKeys } from './create-access-token-share-keys';
 
 describe('createAccessTokenShareKeys crypto process', () => {

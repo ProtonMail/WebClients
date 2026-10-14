@@ -1,13 +1,13 @@
 import { runSaga } from 'redux-saga';
 
 import { getShareAccessOptions, syncInvites } from '../../../store/actions';
-import { sagaSetup } from '../../../store/sagas/testing';
 import type { GroupInvite, SyncEventChangedWithTokenOutput, SyncEventShareOutput, UserInvite } from '../../../types';
 import { InviteType, ShareType } from '../../../types';
 import { uniqueId } from '../../../utils/string/unique-id';
+import { createTestItem } from '../../../utils/tests/fixtures/items';
+import { createTestShare } from '../../../utils/tests/fixtures/shares';
+import { sagaSetup } from '../../../utils/tests/saga';
 import * as inviteRequests from '../../invites/invite.requests';
-import { createTestItem } from '../../items/item.test.utils';
-import { createTestShare } from '../../shares/share.test.utils';
 import type { EventProcessor } from '../types';
 import {
     processGroupInvitesChanged,

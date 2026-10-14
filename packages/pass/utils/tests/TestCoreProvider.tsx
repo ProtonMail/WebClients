@@ -3,6 +3,7 @@ import type { FC, PropsWithChildren } from 'react';
 import { getProtonConfig } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
+import type { PassCoreProviderProps } from '../../components/Core/PassCoreContext';
 import { PassCoreProvider } from '../../components/Core/PassCoreProvider';
 import type { PassThemeOption } from '../../components/Layout/Theme/types';
 import { PASS_DEFAULT_THEME } from '../../constants';
@@ -13,7 +14,9 @@ import type { SettingsService } from '../../lib/settings/service';
 import type { SpotlightProxy } from '../../lib/spotlight/service';
 import { createObservableState } from '../pubsub/state';
 
-export const TestCoreProvider: FC<PropsWithChildren> = ({ children }) => {
+export type TestCoreOverrides = Partial<PassCoreProviderProps>;
+
+export const TestCoreProvider: FC<PropsWithChildren<{ overrides?: TestCoreOverrides }>> = ({ overrides, children }) => {
     const config = getProtonConfig();
     const theme = { ...createObservableState<PassThemeOption>(PASS_DEFAULT_THEME), sync: noop };
 
@@ -36,6 +39,7 @@ export const TestCoreProvider: FC<PropsWithChildren> = ({ children }) => {
             onB2BEvent={async () => false}
             openSettings={noop}
             writeToClipboard={async () => false}
+            {...overrides}
         >
             {children}
         </PassCoreProvider>

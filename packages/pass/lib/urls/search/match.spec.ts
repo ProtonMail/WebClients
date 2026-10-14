@@ -1,8 +1,8 @@
 import { selectVisibleItems } from '../../../store/selectors';
-import { getStateMock } from '../../../store/selectors/mock';
 import type { ItemRevision } from '../../../types';
 import { ItemState } from '../../../types';
 import { AutofillMode } from '../../../types/protobuf';
+import { getStateMock } from '../../../utils/tests/fixtures/url-matching-state';
 import type { SearchItemsByDomainOptions } from '../types';
 import { searchItemsByDomain } from './match';
 

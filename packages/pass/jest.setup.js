@@ -25,6 +25,7 @@ jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
 }));
 
 jest.mock('loglevel', () => require('./utils/logger/loglevel.mock'));
+jest.mock('webextension-polyfill', () => ({}));
 jest.mock('./lib/core/ui.proxy');
 jest.mock('./lib/core/core.proxy');
 jest.mock('./lib/crypto/utils/worker');

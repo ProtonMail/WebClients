@@ -3673,6 +3673,9 @@ importers:
       '@proton/types':
         specifier: workspace:^
         version: link:../../packages/types
+      '@testing-library/react':
+        specifier: ^15.0.7
+        version: 15.0.7(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@types/react-helmet':
         specifier: ^6.1.11
         version: 6.1.11

@@ -4,14 +4,14 @@ import { runSaga } from 'redux-saga';
 import * as folderRequests from '../../../lib/folders/folders.requests';
 import * as inviteRequests from '../../../lib/invites/invite.requests';
 import * as itemRequests from '../../../lib/items/item.requests';
-import { createTestItem } from '../../../lib/items/item.test.utils';
 import * as shareParser from '../../../lib/shares/share.parser';
-import { createTestShare } from '../../../lib/shares/share.test.utils';
 import type { FolderData, Invite, ShareGetResponse } from '../../../types';
 import { ShareType } from '../../../types';
+import { createTestItem } from '../../../utils/tests/fixtures/items';
+import { createTestShare } from '../../../utils/tests/fixtures/shares';
+import { sagaSetup } from '../../../utils/tests/saga';
 import { inviteAccept } from '../../actions';
 import type { RootSagaOptions } from '../../types';
-import { sagaSetup } from '../testing';
 import acceptInviteSaga from './invite-accept.saga';
 
 jest.mock('../../../lib/invites/invite.requests', () => ({
