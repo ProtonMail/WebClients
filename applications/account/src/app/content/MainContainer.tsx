@@ -216,8 +216,6 @@ const MainContainer = () => {
     const isAlwaysOnVpnEnabled = useFlag('B2BAlwaysOnEnabled');
     const isCryptoPostQuantumOptInEnabled =
         (useFlag('CryptoPostQuantumOptIn') && user.isPrivate) || !!userSettings.Flags.SupportPgpV6Keys;
-    const isDocsHomepageAvailable = useFlag('DriveDocsLandingPageEnabled');
-    const isSheetsAvailable = useFlag('DocsSheetsEnabled');
     const isSsoForPbsEnabled = useFlag('SsoForPbs');
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
     const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
@@ -497,8 +495,6 @@ const MainContainer = () => {
         user,
         context: 'app',
         organization,
-        isDocsHomepageAvailable,
-        isSheetsAvailable,
         isAuthenticatorAvailable,
         isSpacesAvailable,
     });

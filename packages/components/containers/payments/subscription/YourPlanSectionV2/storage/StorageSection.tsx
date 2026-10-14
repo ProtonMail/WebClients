@@ -65,10 +65,9 @@ function DonutContainer({ children }: PropsWithChildren) {
 interface StorageSplitFreePlanTooltipProps {
     userSpace: ReturnType<typeof getSpace>;
     spaceDetails: ReturnType<typeof getCompleteSpaceDetails>;
-    isSheetsEnabled: boolean;
 }
 
-function StorageSplitFreePlanTooltip({ spaceDetails, userSpace, isSheetsEnabled }: StorageSplitFreePlanTooltipProps) {
+function StorageSplitFreePlanTooltip({ spaceDetails, userSpace }: StorageSplitFreePlanTooltipProps) {
     const mailText = getStorageText(userSpace.maxBaseSpace, userSpace.usedBaseSpace);
     const driveText = getStorageText(userSpace.maxDriveSpace, userSpace.usedDriveSpace);
     return (
@@ -97,11 +96,7 @@ function StorageSplitFreePlanTooltip({ spaceDetails, userSpace, isSheetsEnabled 
             <div className="flex gap-2 items-center justify-space-between">
                 <span className="text-semibold">{getAppStorage(DRIVE_SHORT_APP_NAME)}</span>
                 <AppsLogos
-                    apps={
-                        isSheetsEnabled
-                            ? [APPS.PROTONDRIVE, APPS.PROTONDOCS, APPS.PROTONSHEETS]
-                            : [APPS.PROTONDRIVE, APPS.PROTONDOCS]
-                    }
+                    apps={[APPS.PROTONDRIVE, APPS.PROTONDOCS, APPS.PROTONSHEETS]}
                     appNames={false}
                     logoSize={5}
                 />
@@ -117,9 +112,7 @@ function StorageSplitFreePlanTooltip({ spaceDetails, userSpace, isSheetsEnabled 
                 <span className="text-semibold">{driveText}</span>
             </div>
             <div className="text-left text-sm">
-                {isSheetsEnabled
-                    ? c('Label').t`For ${DRIVE_SHORT_APP_NAME}, ${DOCS_SHORT_APP_NAME}, and ${SHEETS_SHORT_APP_NAME}.`
-                    : c('Label').t`For ${DRIVE_SHORT_APP_NAME} and ${DOCS_SHORT_APP_NAME}.`}
+                {c('Label').t`For ${DRIVE_SHORT_APP_NAME}, ${DOCS_SHORT_APP_NAME}, and ${SHEETS_SHORT_APP_NAME}.`}
             </div>
         </div>
     );
@@ -201,8 +194,7 @@ interface DashboardStorageSection {
 function getDashboardStorageSections(
     organization: Organization | undefined,
     user: UserModel,
-    subscription: Subscription | FreeSubscription,
-    isSheetsEnabled: boolean
+    subscription: Subscription | FreeSubscription
 ): DashboardStorageSection[] {
     const isFree = hasFree(subscription);
     let userSpace = getSpace(user);
@@ -223,13 +215,7 @@ function getDashboardStorageSections(
         return [
             {
                 usedSpace: spaceDetails.base.percentage,
-                tooltip: (
-                    <StorageSplitFreePlanTooltip
-                        userSpace={userSpace}
-                        spaceDetails={spaceDetails}
-                        isSheetsEnabled={isSheetsEnabled}
-                    />
-                ),
+                tooltip: <StorageSplitFreePlanTooltip userSpace={userSpace} spaceDetails={spaceDetails} />,
                 text: mailText,
                 label: getAppStorageUsed(MAIL_SHORT_APP_NAME),
                 graphColor: SpaceStateThemeColorMap[spaceDetails.base.type],
@@ -238,13 +224,7 @@ function getDashboardStorageSections(
             },
             {
                 usedSpace: spaceDetails.drive.percentage,
-                tooltip: (
-                    <StorageSplitFreePlanTooltip
-                        userSpace={userSpace}
-                        spaceDetails={spaceDetails}
-                        isSheetsEnabled={isSheetsEnabled}
-                    />
-                ),
+                tooltip: <StorageSplitFreePlanTooltip userSpace={userSpace} spaceDetails={spaceDetails} />,
                 text: driveText,
                 label: getAppStorageUsed(DRIVE_SHORT_APP_NAME),
                 graphColor: SpaceStateThemeColorMap[spaceDetails.drive.type],
@@ -319,8 +299,7 @@ export const StorageSection = ({
     subscription: Subscription | FreeSubscription;
     organization: Organization | undefined;
 }) => {
-    const isSheetsEnabled = useFlag('DocsSheetsEnabled');
-    const storageElements = getDashboardStorageSections(organization, user, subscription, isSheetsEnabled);
+    const storageElements = getDashboardStorageSections(organization, user, subscription);
     const visibleElements = storageElements.filter(
         ({ usedSpace, shouldRender }) => shouldRender(app, subscription) || usedSpace > 80
     );
