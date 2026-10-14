@@ -300,7 +300,7 @@ overrides:
   xlsx@^0.18.5: https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz
   yaml@^1.7.2: 1.10.3
 
-packageExtensionsChecksum: sha256-avue7xWtPat3DkeFa1AbW3NjeP1oM5w1zQxa0wDYr5A=
+packageExtensionsChecksum: sha256-SuHW0dCfspXG19vGH5xC0NAmPd4O+ltJVCgPjNhCbZA=
 
 patchedDependencies:
   '@mlc-ai/web-llm@0.2.32': f2db861fd9b2307065c0dd450cb8471d7a1aff76a29cd7e383fb2555e831b1eb
@@ -2349,10 +2349,10 @@ importers:
         version: link:../../packages/shared
       electron-log:
         specifier: ^5.4.4
-        version: 5.4.4
+        version: 5.4.4(electron@43.7.6(supports-color@11.0.0))
       electron-store:
         specifier: ^8.2.0
-        version: 8.2.0
+        version: 8.2.0(electron@43.7.6(supports-color@11.0.0))
       execa:
         specifier: ^8.0.1
         version: 8.0.1
@@ -3394,10 +3394,10 @@ importers:
         version: link:../../packages/shared
       electron-log:
         specifier: ^5.4.4
-        version: 5.4.4
+        version: 5.4.4(electron@43.7.6(supports-color@11.0.0))
       electron-store:
         specifier: ^8.2.0
-        version: 8.2.0
+        version: 8.2.0(electron@43.7.6(supports-color@11.0.0))
       execa:
         specifier: ^8.0.1
         version: 8.0.1
@@ -3711,10 +3711,10 @@ importers:
         version: 4.29.3
       electron-log:
         specifier: ^5.4.4
-        version: 5.4.4
+        version: 5.4.4(electron@39.8.10(supports-color@11.0.0))
       electron-store:
         specifier: ^8.2.0
-        version: 8.2.0
+        version: 8.2.0(electron@39.8.10(supports-color@11.0.0))
       history:
         specifier: ^4.10.1
         version: 4.10.1
@@ -8803,7 +8803,7 @@ importers:
         version: 3.4.16
       electron-log:
         specifier: ^5.4.4
-        version: 5.4.4
+        version: 5.4.4(electron@43.7.6(supports-color@11.0.0))
       file-saver:
         specifier: ^2.0.5
         version: 2.0.5
@@ -20941,6 +20941,11 @@ packages:
   electron-log@5.4.4:
     resolution: {integrity: sha512-istWgaXjBfURBSS8LWVW9C3jsc6+ac+tY1lXrQEOTp0lVj+a4OlO1Tmqb36GgnEUDv92DGC9VI1HNXwJinWpgA==}
     engines: {node: '>= 14'}
+    peerDependencies:
+      electron: '*'
+    peerDependenciesMeta:
+      electron:
+        optional: true
 
   electron-playwright-helpers@1.8.2:
     resolution: {integrity: sha512-sM9fDSEFDOptKDa8oiNphiXdR1KR1uFe8yHnlrnvyQE1ScnHizca/SoYvUdtn+5IuVNTkT8MesKWJ6seS4/zuA==}
@@ -20950,6 +20955,11 @@ packages:
 
   electron-store@8.2.0:
     resolution: {integrity: sha512-ukLL5Bevdil6oieAOXz3CMy+OgaItMiVBg701MNlG6W5RaC0AHN7rvlqTCmeb6O7jP0Qa1KKYTE0xV0xbhF4Hw==}
+    peerDependencies:
+      electron: '*'
+    peerDependenciesMeta:
+      electron:
+        optional: true
 
   electron-to-chromium@1.5.442:
     resolution: {integrity: sha512-najZYZ3+ZpjN1z3VOsrBiv5ej18vQgfV2lvEmxWzfmKrk4bdm3Owseyud4yGU6DfFn9pyunoAHDDyM4KmP78Ew==}
@@ -41358,7 +41368,13 @@ snapshots:
       - supports-color
     optional: true
 
-  electron-log@5.4.4: {}
+  electron-log@5.4.4(electron@39.8.10(supports-color@11.0.0)):
+    optionalDependencies:
+      electron: 39.8.10(supports-color@11.0.0)
+
+  electron-log@5.4.4(electron@43.7.6(supports-color@11.0.0)):
+    optionalDependencies:
+      electron: 43.7.6(supports-color@11.0.0)
 
   electron-playwright-helpers@1.8.2:
     dependencies:
@@ -41378,10 +41394,19 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  electron-store@8.2.0:
+  electron-store@8.2.0(electron@39.8.10(supports-color@11.0.0)):
     dependencies:
       conf: 10.2.0
       type-fest: 2.19.0
+    optionalDependencies:
+      electron: 39.8.10(supports-color@11.0.0)
+
+  electron-store@8.2.0(electron@43.7.6(supports-color@11.0.0)):
+    dependencies:
+      conf: 10.2.0
+      type-fest: 2.19.0
+    optionalDependencies:
+      electron: 43.7.6(supports-color@11.0.0)
 
   electron-to-chromium@1.5.442: {}
 
