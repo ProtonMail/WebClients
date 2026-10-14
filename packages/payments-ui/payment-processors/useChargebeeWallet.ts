@@ -21,6 +21,7 @@ import type {
     RemoveEventListener,
 } from '@proton/payments/core/interface';
 import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
+import { type PaymentsCaptureOptions, tracePaymentError } from '@proton/payments/sentry/capture';
 import type { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
@@ -57,9 +58,9 @@ export type WalletConfig = {
     /** Start over after a failure rather than leaving the button dead. */
     reinitOnFailure?: boolean;
     /**
-     * Message for when the user authorized but the token never became chargeable. Wallets that
-     * supply one route the error to `onFailure`; the rest leave the rejection unhandled, as they
-     * always have. A thunk so ttag resolves it in the active locale rather than at module load.
+     * Message for when the user authorized but the token never became chargeable. Only wallets
+     * that supply one route authorized-path failures to `onFailure`. A thunk so ttag resolves it in
+     * the active locale rather than at module load.
      */
     getNotChargeableMessage?: () => string;
 };
@@ -122,6 +123,12 @@ export const useChargebeeWallet = (
     // listeners are registered once at initialize, but the handles are rebuilt on every render
     const modalHandlesRef = useRef(modalHandles);
     modalHandlesRef.current = modalHandles;
+
+    const captureOptions: PaymentsCaptureOptions = {
+        component: 'use-chargebee-wallet',
+        featureFlag: 'PaymentProcessorsRefactor',
+        tags: { paymentMethod: cfg.type },
+    };
 
     const [fetchingToken, withFetchingToken] = useLoading();
     const [initializing, withInitializing] = useLoading();
@@ -213,14 +220,14 @@ export const useChargebeeWallet = (
                 if (Status === PAYMENT_TOKEN_STATUS.CHARGEABLE) {
                     void reportChargeable(token);
                 } else if (cfg.getNotChargeableMessage) {
-                    throw new Error(cfg.getNotChargeableMessage());
+                    tracePaymentError(new Error('Payment token not chargeable'), captureOptions);
+                    modalHandlesRef.current?.onFailure(new Error(cfg.getNotChargeableMessage()));
                 }
             } catch (error) {
-                // wallets without a message leave the rejection unhandled, as they always have
-                if (!cfg.getNotChargeableMessage) {
-                    throw error;
+                tracePaymentError(error, captureOptions);
+                if (cfg.getNotChargeableMessage) {
+                    modalHandlesRef.current?.onFailure(error);
                 }
-                modalHandlesRef.current?.onFailure(error);
             }
         });
 
