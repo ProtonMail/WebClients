@@ -72,14 +72,18 @@ const areSameSummaries = (a: CreationSummary[], b: CreationSummary[]): boolean =
 };
 
 /**
- * Pairs each listed creation with what its decrypted asset says (title, type, chat). Every asset is
- * pulled, not only the visible cards, because search and the type filters need them all, but at
+ * Pairs each listed creation with what its decrypted asset says (title, type, chat). Only the assets
+ * in `pullIds` are downloaded (all of them once search or a type filter needs titles and types), at
  * most MAX_CONCURRENT_CREATION_PULLS at a time.
  *
  * Subscribes to a per-item summary rather than whole store slices, and reuses an entry object
  * while its summary is unchanged, so one asset finishing re-renders one card, not the grid.
  */
-export function useLibraryCreationEntries(items: CreationsListItem[]): LibraryCreationEntry[] {
+export function useLibraryCreationEntries(
+    items: CreationsListItem[],
+    /** Which items to download: the cards on screen, or all of them for search and filters. */
+    pullIds: ReadonlySet<string> | 'all'
+): LibraryCreationEntry[] {
     const dispatch = useLumoDispatch();
     const summaries = useLumoSelector((state: LumoState) => {
         return items.map((item) => {
@@ -108,11 +112,14 @@ export function useLibraryCreationEntries(items: CreationsListItem[]): LibraryCr
             if (summary.status !== 'pending' || !summary.spaceId || requested.has(summary.localId)) {
                 continue;
             }
+            if (pullIds !== 'all' && !pullIds.has(summary.localId)) {
+                continue;
+            }
             requested.add(summary.localId);
             freeSlots -= 1;
             dispatch(pullAttachmentRequest({ id: summary.localId, spaceId: summary.spaceId }));
         }
-    }, [summaries, dispatch]);
+    }, [summaries, pullIds, dispatch]);
 
     return useMemo(() => {
         const cache = entryCacheRef.current;
@@ -127,6 +134,7 @@ export function useLibraryCreationEntries(items: CreationsListItem[]): LibraryCr
                 title: summary.title,
                 artifactType: summary.artifactType,
                 conversationTitle: summary.conversationTitle,
+                isPending: summary.status === 'pending' || summary.status === 'loading',
             };
             cache.set(item.localId, { summary, entry });
             return entry;

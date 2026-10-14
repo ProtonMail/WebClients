@@ -1,16 +1,26 @@
 import type { GeneratedAssetFromApi } from '../../remote/api';
 
-// The list endpoint returns pages of this size; a full page means older items may remain.
-export const CREATIONS_PAGE_SIZE = 20;
+/**
+ * Rows asked for per list request. The list returns metadata only (no blobs), so a page is light;
+ * 100 is the server's default and the size backend suggested, since larger values are untested.
+ */
+export const CREATIONS_LIST_PAGE_SIZE = 100;
 
 /**
- * Where the next "older" page starts: the oldest CreateTime in the raw page, in seconds. Taken from
- * the raw assets, not the ones kept after filtering (deleted, unknown space…), so a page that is
- * all filtered out still moves the cursor. Undefined when the cursor would not move, which ends
- * paging instead of refetching the same page forever.
+ * The list API has no cursor: it returns up to PageSize rows, newest first, with
+ * CreateTimeSince <= CreateTime <= CreateTimeUntil (both inclusive, in seconds). This walks back by
+ * time instead and returns the next CreateTimeUntil, or undefined when the list is complete.
+ *
+ * The next window ends *at* the page's oldest second, not one before it: a full page can stop in
+ * the middle of a second, and stepping past it would skip the rest of that second. The overlap
+ * comes back again, so callers drop assets they have already seen. Only when a whole page shares
+ * one second does the cursor step back one second, so the walk always ends.
  */
-export function getOlderPageCursor(assets: GeneratedAssetFromApi[], previousCursor: number): number | undefined {
-    const times = assets
+export function getNextCreationsListUntil(page: GeneratedAssetFromApi[], until: number): number | undefined {
+    if (page.length < CREATIONS_LIST_PAGE_SIZE) {
+        return undefined;
+    }
+    const times = page
         .map((asset) => {
             return Math.floor(new Date(asset.CreateTime).getTime() / 1000);
         })
@@ -21,10 +31,6 @@ export function getOlderPageCursor(assets: GeneratedAssetFromApi[], previousCurs
         return undefined;
     }
     const oldest = Math.min(...times);
-    return oldest < previousCursor ? oldest : undefined;
-}
-
-/** Whether another older page may exist after this one. */
-export function hasOlderCreationsPage(assets: GeneratedAssetFromApi[], nextCursor: number | undefined): boolean {
-    return nextCursor !== undefined && assets.length >= CREATIONS_PAGE_SIZE;
+    const next = oldest < until ? oldest : until - 1;
+    return next >= 0 ? next : undefined;
 }

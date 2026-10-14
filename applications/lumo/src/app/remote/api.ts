@@ -79,6 +79,8 @@ export enum AssetType {
 
 type ListGeneratedAssetsParams = {
     assetType?: AssetType;
+    // Max rows returned, newest first. The server defaults to 100 and has no cap.
+    pageSize?: number;
     createTimeSince?: number; // unix timestamp (seconds)
     createTimeUntil?: number; // unix timestamp (seconds)
 };
@@ -640,6 +642,9 @@ export class LumoApi {
         const queryParams: Record<string, string> = {};
         if (params?.assetType !== undefined) {
             queryParams.AssetType = String(params.assetType);
+        }
+        if (params?.pageSize !== undefined) {
+            queryParams.PageSize = String(params.pageSize);
         }
         if (params?.createTimeSince !== undefined) {
             queryParams.CreateTimeSince = String(params.createTimeSince);

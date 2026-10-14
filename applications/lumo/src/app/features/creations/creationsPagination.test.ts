@@ -1,33 +1,50 @@
 import type { GeneratedAssetFromApi } from '../../remote/api';
-import { CREATIONS_PAGE_SIZE, getOlderPageCursor, hasOlderCreationsPage } from './creationsPagination';
+import { CREATIONS_LIST_PAGE_SIZE, getNextCreationsListUntil } from './creationsPagination';
 
-const asset = (createTime: string): GeneratedAssetFromApi => {
-    return { ID: createTime, SpaceID: 'space', AssetTag: createTime, CreateTime: createTime };
+const asset = (id: string, createTime: string): GeneratedAssetFromApi => {
+    return { ID: id, SpaceID: 'space', AssetTag: id, CreateTime: createTime };
 };
 
 const seconds = (iso: string) => {
     return Math.floor(new Date(iso).getTime() / 1000);
 };
 
-describe('creations pagination', () => {
-    const cursor = seconds('2026-10-01T00:00:00Z');
+const fullPage = (times: (index: number) => string) => {
+    return Array.from({ length: CREATIONS_LIST_PAGE_SIZE }, (_, index) => {
+        return asset(`asset-${index}`, times(index));
+    });
+};
 
-    it('moves the cursor to the oldest raw asset, even if every asset is later filtered out', () => {
-        const page = [asset('2026-09-20T10:00:00Z'), asset('2026-09-10T08:00:00Z')];
-        expect(getOlderPageCursor(page, cursor)).toBe(seconds('2026-09-10T08:00:00Z'));
+describe('getNextCreationsListUntil', () => {
+    const until = seconds('2026-10-14T12:00:00Z');
+
+    it('is done after a page that is not full', () => {
+        expect(getNextCreationsListUntil([], until)).toBeUndefined();
+        expect(getNextCreationsListUntil([asset('a', '2026-10-01T00:00:00Z')], until)).toBeUndefined();
     });
 
-    it('stops when the page is empty or the cursor would not move', () => {
-        expect(getOlderPageCursor([], cursor)).toBeUndefined();
-        expect(getOlderPageCursor([asset('2026-10-01T00:00:00Z')], cursor)).toBeUndefined();
-    });
-
-    it('only expects another page after a full one that moved the cursor', () => {
-        const fullPage = Array.from({ length: CREATIONS_PAGE_SIZE }, (_, index) => {
-            return asset(`2026-09-${String(index + 1).padStart(2, '0')}T00:00:00Z`);
+    it('continues from the oldest second of a full page, inclusive, so the rest of that second is not skipped', () => {
+        const page = fullPage((index) => {
+            return new Date(seconds('2026-10-10T00:00:00Z') * 1000 - index * 60_000).toISOString();
         });
-        expect(hasOlderCreationsPage(fullPage, getOlderPageCursor(fullPage, cursor))).toBe(true);
-        expect(hasOlderCreationsPage(fullPage.slice(1), getOlderPageCursor(fullPage.slice(1), cursor))).toBe(false);
-        expect(hasOlderCreationsPage(fullPage, undefined)).toBe(false);
+        const oldest = seconds(page[page.length - 1].CreateTime);
+        expect(getNextCreationsListUntil(page, until)).toBe(oldest);
+    });
+
+    it('steps back one second when a whole full page shares the cursor second, so the walk ends', () => {
+        const sameSecond = new Date(until * 1000).toISOString();
+        const page = fullPage(() => {
+            return sameSecond;
+        });
+        expect(getNextCreationsListUntil(page, until)).toBe(until - 1);
+    });
+
+    it('always moves the cursor back', () => {
+        const page = fullPage((index) => {
+            return new Date((until - 1000 + index) * 1000).toISOString();
+        });
+        const next = getNextCreationsListUntil(page, until);
+        expect(next).toBeDefined();
+        expect(next!).toBeLessThan(until);
     });
 });
