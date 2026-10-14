@@ -72,7 +72,7 @@ import {
   useIsDarkThemeEnabled,
   useIsGatePrivateInviteAccessEnabled,
   useIsOpenTracerEnabled,
-  useIsSheetsEditorEnabled,
+  useIsSheetsEnabled,
 } from '~/utils/flags'
 import type { ProviderType } from '../../../provider-type'
 import TracerAlert from '../../../tracer/TracerAlert'
@@ -141,7 +141,7 @@ export function DocumentViewer({
   const [initializing, setInitializing] = useState(false)
   const [ready, setReady] = useState(false)
 
-  const isSheetsEditorEnabled = useIsSheetsEditorEnabled()
+  const isSheetsEnabled = useIsSheetsEnabled()
   const sdkEventsEnabled = useDocsDocumentViewerEventsSDK()
   const isDriveCompatSDKFlagOn = useDriveCompatSDK()
   const documentWindowAction = useDocumentWindowAction()
@@ -233,7 +233,7 @@ export function DocumentViewer({
   }, [application.logger, currentDocumentNode, documentState, eventSubscriber, handleEvent, sdkEventsEnabled])
 
   const [error, setError] = useState<DocumentError | null>(() => {
-    if (documentType === 'sheet' && !isSheetsEditorEnabled) {
+    if (documentType === 'sheet' && !isSheetsEnabled) {
       return { message: '', code: DocsApiErrorCode.InsufficientPermissions, userUnderstandableMessage: false }
     }
 

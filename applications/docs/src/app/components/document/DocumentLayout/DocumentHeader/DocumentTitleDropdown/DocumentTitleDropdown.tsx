@@ -71,7 +71,6 @@ import {
   useIsSheetsEnabled,
   useIsDownloadLogsAllowed,
   useMoveModalDriveSdkEnabled,
-  useRenameWithSDK,
   useTrashWithSDK,
   useIsODTEnabled,
 } from '~/utils/flags'
@@ -121,7 +120,6 @@ export function DocumentTitleDropdown({
   const appVersion = getAppVersion(APP_VERSION)
   const { createNotification } = useNotifications()
   const moveModalDriveSdkEnabled = useMoveModalDriveSdkEnabled()
-  const renameWithSDK = useRenameWithSDK()
   const trashWithSDK = useTrashWithSDK()
   const isSheetsEnabled = useIsSheetsEnabled()
   const isODTEnabled = useIsODTEnabled()
@@ -192,8 +190,8 @@ export function DocumentTitleDropdown({
       setIsRenaming(false)
 
       if (oldName !== newName) {
-        const useSDK = privateContext ? renameWithSDK : !publicContext?.compat
-        void renameController.renameDocument(newName, useSDK).then((result) => {
+        const useSDK = privateContext || !publicContext?.compat
+        void renameController.renameDocument(newName).then((result) => {
           if (result.isFailed()) {
             PostApplicationError(application.eventBus, { translatedError: result.getTranslatedError() })
             setTitle(oldName)

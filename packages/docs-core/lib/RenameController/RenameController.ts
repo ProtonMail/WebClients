@@ -11,7 +11,7 @@ import type { UnleashClient } from '@proton/unleash/UnleashClient'
 import { isDriveCompatSDKEnabled } from '../Util/isDriveCompatSDKEnabled'
 
 export interface RenameControllerInterface {
-  renameDocument(newName: string, replaceDriveCompat?: boolean): Promise<TranslatedResult<void>>
+  renameDocument(newName: string): Promise<TranslatedResult<void>>
 }
 
 export class PublicRenameController implements RenameControllerInterface {
@@ -53,7 +53,7 @@ export class PrivateRenameController implements RenameControllerInterface {
     private unleashClient: UnleashClient,
   ) {}
 
-  public async renameDocument(newName: string, replaceDriveCompat: boolean = false): Promise<TranslatedResult<void>> {
+  public async renameDocument(newName: string): Promise<TranslatedResult<void>> {
     try {
       const decryptedNode = this.documentState.getProperty('decryptedNode')
       if (!decryptedNode.parentNodeId) {
@@ -69,11 +69,7 @@ export class PrivateRenameController implements RenameControllerInterface {
         ? await findAvailableNodeName(parentMeta, newName)
         : await this.compat.findAvailableNodeName(parentMeta, newName)
 
-      if (replaceDriveCompat) {
-        await renameNode(nodeMeta, name)
-      } else {
-        await this.compat.renameDocument(nodeMeta, name)
-      }
+      await renameNode(nodeMeta, name)
 
       /**
        * In previous iterations, we would refetch the node after a rename, and set the global documentName property

@@ -123,8 +123,6 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
     const error = state.error;
     const { User, Organization, persistedSession } = session.data;
 
-    const isDocsHomepageAvailable = useFlag('DriveDocsLandingPageEnabled');
-    const isSheetsAvailable = useFlag('DocsSheetsEnabled');
     const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
     const isSpacesAvailable = useFlag('SpacesAvailable');
     const subscribed = User.Subscribed;
@@ -135,8 +133,6 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
     const apps = getExploreApps({
         user: User,
         organization: Organization,
-        isDocsHomepageAvailable,
-        isSheetsAvailable,
         oauth: persistedSession.source === SessionSource.Oauth,
         isAuthenticatorAvailable,
         isSpacesAvailable,

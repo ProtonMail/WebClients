@@ -63,11 +63,6 @@ export interface DriveCompat {
      */
     getDocumentKeys: (meta: NodeMeta) => Promise<SessionKey>;
 
-    /**
-     * Renames a document node.
-     */
-    renameDocument: (meta: NodeMeta, newName: string) => Promise<void>;
-
     trashDocument: (meta: NodeMeta, parentLinkId: string) => Promise<void>;
     restoreDocument: (meta: NodeMeta, parentLinkId: string) => Promise<void>;
     deleteDocumentPermanently: (meta: NodeMeta, parentLinkId: string) => Promise<void>;
@@ -120,7 +115,6 @@ export const useDriveCompat = (): DriveCompat => {
     const {
         createDocumentNode,
         getDocumentKeys,
-        renameDocument,
         trashDocument,
         restoreDocument,
         deleteDocumentPermanently,
@@ -183,8 +177,6 @@ export const useDriveCompat = (): DriveCompat => {
         trashDocument: withResolveShareId(trashDocument),
         restoreDocument: withResolveShareId(restoreDocument),
         deleteDocumentPermanently: withResolveShareId(deleteDocumentPermanently),
-        // DocsRenameWithDriveSDK
-        renameDocument: withResolveShareId(renameDocument),
         // DocsMoveModalDriveSDK
         openMoveToFolderModal,
 
