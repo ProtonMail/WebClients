@@ -760,14 +760,13 @@ const SubscriptionContainerInner = ({
             });
 
             const uniqueCodes = [...new Set([...(checkPayload.Codes ?? []), autoCoupon].filter(isTruthy))];
+            const { ValidateGuards, ...checkPayloadWithoutGuards } = checkPayload;
 
-            const payload: CheckSubscriptionData = {
-                ...checkPayload,
+            return {
+                ...checkPayloadWithoutGuards,
                 Cycle,
                 Codes: uniqueCodes,
             };
-
-            return payload;
         });
 
         const noCoupons = additionalPayloads.every((payload) => !payload.Codes || payload.Codes.length === 0);
@@ -860,6 +859,9 @@ const SubscriptionContainerInner = ({
         },
         telemetry: { APP_NAME, app, paymentFacade, user, context: telemetryContext },
     });
+
+    const guardErrors = checkResult.GuardResult ?? [];
+    const isGuardBlocked = guardErrors.length > 0;
 
     useEffect(() => {
         captureWrongPlanIDs(maybePlanIDs, { source: 'SubscriptionModal/PlanIDs' });
@@ -1096,7 +1098,7 @@ const SubscriptionContainerInner = ({
             loading={loading || subscribing || paymentFacade.bitcoinChargebee.bitcoinLoading}
             checkResult={checkResult}
             className="w-full"
-            disabled={isFreeUserWithFreePlanSelected}
+            disabled={isFreeUserWithFreePlanSelected || isGuardBlocked}
             paymentForbiddenReason={model.paymentForbiddenReason}
             subscription={subscription}
             hasPaymentMethod={hasPaymentMethod}
@@ -1357,6 +1359,7 @@ const SubscriptionContainerInner = ({
                                 user={user}
                                 couponConfig={couponConfig}
                                 trial={shouldPassIsTrial(model, false)}
+                                guardErrors={guardErrors}
                                 {...checkoutModifiers}
                             />
                         </div>

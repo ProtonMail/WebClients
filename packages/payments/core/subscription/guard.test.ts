@@ -14,11 +14,11 @@ describe('normalizeGuardResult', () => {
         const result = normalizeGuardResult(
             buildResponse({
                 GuardResult: 'You are using more storage than this plan allows.',
-                GuardResultCode: 8010505,
+                GuardResultCode: 801005005,
             })
         );
         expect(result?.GuardResult).toEqual([
-            { Code: 8010505, Message: 'You are using more storage than this plan allows.' },
+            { Code: 801005005, Message: 'You are using more storage than this plan allows.' },
         ]);
         expect(result).not.toHaveProperty('GuardResultCode');
     });
@@ -30,21 +30,21 @@ describe('normalizeGuardResult', () => {
 
     it('passes through a list of guard errors unchanged', () => {
         const errors = [
-            { Code: 8010505, Message: 'Storage' },
-            { Code: 8010503, Message: 'Members' },
+            { Code: 801005005, Message: 'Storage' },
+            { Code: 801005003, Message: 'Members' },
         ];
         expect(normalizeGuardResult(buildResponse({ GuardResult: errors }))?.GuardResult).toEqual(errors);
     });
 
     it('wraps a single guard error object into a list', () => {
-        const error = { Code: 8010200, Message: 'Scribe' };
+        const error = { Code: 801002000, Message: 'Scribe' };
         expect(normalizeGuardResult(buildResponse({ GuardResult: error }))?.GuardResult).toEqual([error]);
     });
 
     it('does not modify the input response', () => {
-        const response = buildResponse({ GuardResult: 'refusal', GuardResultCode: 8010505 });
+        const response = buildResponse({ GuardResult: 'refusal', GuardResultCode: 801005005 });
         const result = normalizeGuardResult(response);
-        expect(response).toEqual({ GuardResult: 'refusal', GuardResultCode: 8010505 });
+        expect(response).toEqual({ GuardResult: 'refusal', GuardResultCode: 801005005 });
         expect(result).not.toBe(response);
     });
 

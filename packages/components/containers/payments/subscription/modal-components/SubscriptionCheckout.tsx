@@ -10,6 +10,7 @@ import { useCurrencies } from '@proton/payments-ui/client-extensions/useCurrenci
 import type { PaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
 import type { MethodsHook } from '@proton/payments-ui/react-extensions/index';
 import type { TaxCountryHook } from '@proton/payments-ui/ui/billing-address/hooks/useTaxCountry';
+import { GuardBanner } from '@proton/payments-ui/ui/components/GuardBanner';
 import type { CouponConfigRendered } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';
 import { createCheckoutView } from '@proton/payments-ui/ui/headless-checkout/checkout-view';
 import type { CheckoutModifiers } from '@proton/payments/core/checkout-modifiers';
@@ -17,6 +18,7 @@ import { PLANS } from '@proton/payments/core/constants';
 import type { Currency, Cycle, FreeSubscription, PlanIDs } from '@proton/payments/core/interface';
 import { getPlanFromPlanIDs } from '@proton/payments/core/plan/helpers';
 import type { FreePlanDefault, Plan } from '@proton/payments/core/plan/interface';
+import type { GuardError } from '@proton/payments/core/subscription/guard';
 import type {
     FullPlansMap,
     Subscription,
@@ -81,6 +83,7 @@ type Props = {
     paymentFacade: PaymentFacade;
     taxCountry: TaxCountryHook;
     paymentForbiddenReason: SubscriptionCheckForbiddenReason;
+    guardErrors: GuardError[];
 };
 
 export type SubscriptionCheckoutProps = Props & CheckoutModifiers;
@@ -105,6 +108,7 @@ const SubscriptionCheckout = ({
     paymentFacade,
     taxCountry,
     paymentForbiddenReason,
+    guardErrors,
     ...checkoutModifiers
 }: SubscriptionCheckoutProps) => {
     const { APP_NAME } = useConfig();
@@ -408,6 +412,7 @@ const SubscriptionCheckout = ({
 
             {/* Submit button */}
             <div className="my-4">
+                <GuardBanner errors={guardErrors} className="mb-4" />
                 {submit}
                 {checkoutView.render('taxInclusive')}
                 {checkoutView.render('vatReverseCharge')}

@@ -77,7 +77,7 @@ describe('createPaymentSubscription', () => {
         const api = jest.fn().mockResolvedValue({
             Subscription: {},
             GuardResult: 'refusal',
-            GuardResultCode: 8010505,
+            GuardResultCode: 801005005,
         }) as unknown as Api;
 
         const response = await createPaymentSubscription(api, buildData({ [PLANS.VPN2024]: 1 }), {
@@ -90,7 +90,7 @@ describe('createPaymentSubscription', () => {
             paymentMethodValue: undefined,
         } as any);
 
-        expect(response?.GuardResult).toEqual([{ Code: 8010505, Message: 'refusal' }]);
+        expect(response?.GuardResult).toEqual([{ Code: 801005005, Message: 'refusal' }]);
         expect(response).not.toHaveProperty('GuardResultCode');
     });
 });

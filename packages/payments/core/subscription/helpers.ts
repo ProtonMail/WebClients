@@ -449,6 +449,45 @@ export function isSubscriptionUnchanged(
     return planIdsUnchanged && cycleUnchanged;
 }
 
+/**
+ * A checkout or modification selection identified by plan/addon quantities and billing cycle.
+ */
+export type SubscriptionSelection = {
+    planIDs: PlanIDs;
+    cycle: CYCLE;
+};
+
+/**
+ * Compares two subscription selections for equality.
+ *
+ * @param a - First selection to compare.
+ * @param b - Second selection to compare.
+ * @returns `true` when both selections have the same cycle and equivalent planIDs (including addon quantities).
+ */
+export function isSubscriptionSelectionEqual(a: SubscriptionSelection, b: SubscriptionSelection): boolean {
+    return a.cycle === b.cycle && isDeepEqual(a.planIDs, b.planIDs);
+}
+
+/**
+ * Whether the given selection differs from the subscriber's current paid subscription.
+ *
+ * @param subscription - The subscriber's active subscription.
+ * @param planIDs - Selected plan and addon quantities.
+ * @param cycle - Selected billing cycle.
+ * @returns `true` when the subscriber is paid and the selection does not match their current planIDs and cycle; otherwise `false` (including for free subscribers).
+ */
+export function isModifyingPaidSubscriptionSelection(
+    subscription: Subscription | FreeSubscription,
+    planIDs: PlanIDs,
+    cycle: CYCLE
+): boolean {
+    if (isFreeSubscription(subscription)) {
+        return false;
+    }
+
+    return !isSubscriptionUnchanged(subscription, planIDs, cycle);
+}
+
 export const hasLumoAddon = (subscription: MaybeFreeSubscription) => {
     const currentPlanIDs = getPlanIDs(subscription);
 
