@@ -17,14 +17,15 @@ jest.mock('@proton/account', () => ({
     getMemberAddresses: jest.fn(() => ({ type: 'getMemberAddresses' })),
 }));
 
-const mockDispatch = jest.fn(async ({ type }: { type: string }) => {
+const mockDefaultDispatch = async ({ type }: { type: string }) => {
     if (type === 'editMember') {
         return { member: undefined, diff: false };
     }
     if (type === 'assignMemberRoles') {
         return { roleAssignments: [], changed: true };
     }
-});
+};
+const mockDispatch = jest.fn(mockDefaultDispatch);
 jest.mock('@proton/redux-shared-store/sharedProvider', () => ({
     ...jest.requireActual('@proton/redux-shared-store/sharedProvider'),
     useDispatch: () => mockDispatch,
@@ -141,6 +142,7 @@ const save = async () => {
 describe('SubUserEditModal', () => {
     afterEach(() => {
         jest.clearAllMocks();
+        mockDispatch.mockImplementation(mockDefaultDispatch);
     });
 
     it.each([
@@ -165,6 +167,29 @@ describe('SubUserEditModal', () => {
         expect(assignMemberRoles).toHaveBeenCalledWith(
             expect.objectContaining({ desiredRoleIds: new Set(['owner-role', 'user-admin-role']) })
         );
+    });
+
+    it('disables role selection while the form is being submitted', async () => {
+        let finishAssignRoles = () => {};
+        mockDispatch.mockImplementation(({ type }) => {
+            if (type === 'assignMemberRoles') {
+                return new Promise((resolve) => {
+                    finishAssignRoles = () => resolve({ roleAssignments: [], changed: true });
+                });
+            }
+            return mockDefaultDispatch({ type });
+        });
+        renderModal(getMember({ UserOrganizationRoles: [getRoleAssignment(mockOwnerRole)] }));
+
+        fireEvent.click(screen.getByRole('tab', { name: 'Roles and permissions' }));
+        fireEvent.click(screen.getByLabelText('User Admin'));
+        fireEvent.click(screen.getByRole('button', { name: 'Save' }));
+
+        await waitFor(() => expect(assignMemberRoles).toHaveBeenCalled());
+        expect(screen.getByLabelText('User Admin')).toBeDisabled();
+
+        finishAssignRoles();
+        await waitFor(() => expect(onClose).toHaveBeenCalled());
     });
 
     it('disables role selection until the member roles have loaded', () => {
