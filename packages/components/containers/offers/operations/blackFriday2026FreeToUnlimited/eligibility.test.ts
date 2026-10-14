@@ -1,3 +1,5 @@
+import { getUnixTime, subHours } from 'date-fns';
+
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import { SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
 
@@ -15,6 +17,7 @@ import {
     passAppConfig,
     setPathname,
 } from '../blackFriday2026.test.helpers';
+import { BLACK_FRIDAY_2026_FREE_USER_MIN_ACCOUNT_AGE_HOURS } from '../blackFriday2026FreeUserEligibility';
 import { configuration } from './configuration';
 import { getIsEligible } from './eligibility';
 
@@ -97,6 +100,24 @@ describe('blackFriday2026FreeToUnlimited eligibility', () => {
 
         it('should not be eligible when the user cannot pay', () => {
             expect(getIsEligible({ ...baseProps, user: { ...freeUser, canPay: false } })).toBe(false);
+        });
+
+        it('should not be eligible for an account younger than the minimum age', () => {
+            const user = {
+                ...freeUser,
+                CreateTime: getUnixTime(subHours(new Date(), BLACK_FRIDAY_2026_FREE_USER_MIN_ACCOUNT_AGE_HOURS - 1)),
+            };
+
+            expect(getIsEligible({ ...baseProps, user })).toBe(false);
+        });
+
+        it('should be eligible once the account reaches the minimum age', () => {
+            const user = {
+                ...freeUser,
+                CreateTime: getUnixTime(subHours(new Date(), BLACK_FRIDAY_2026_FREE_USER_MIN_ACCOUNT_AGE_HOURS)),
+            };
+
+            expect(getIsEligible({ ...baseProps, user })).toBe(true);
         });
 
         it('should not be eligible with a scheduled subscription modification', () => {

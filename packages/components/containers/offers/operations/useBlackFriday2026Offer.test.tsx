@@ -1,6 +1,7 @@
 import { Route, Router } from 'react-router';
 
 import { renderHook } from '@testing-library/react';
+import { getUnixTime } from 'date-fns';
 import { createMemoryHistory } from 'history';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
@@ -123,7 +124,13 @@ const setupMocks = ({
     loadingSource?: LoadingSource;
 } = {}) => {
     mockUseUser.mockReturnValue([
-        { isDelinquent: false, canPay: true, isPaid, isFree: !isPaid } as UserModel,
+        {
+            isDelinquent: false,
+            canPay: true,
+            isPaid,
+            isFree: !isPaid,
+            CreateTime: getUnixTime(new Date(2024, 0, 1)),
+        } as UserModel,
         loadingSource === 'user',
     ]);
     mockUseSubscription.mockReturnValue([
