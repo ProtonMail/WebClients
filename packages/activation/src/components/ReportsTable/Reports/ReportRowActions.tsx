@@ -4,17 +4,14 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Prompt, useModalState } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
-import { tracker } from '@proton/telemetry-tracker/tracker';
 
 import type { ApiImportProvider } from '../../../api/api.interface';
 import { ApiReportRollbackState } from '../../../api/api.interface';
-import { useGetIsBYOE } from '../../../hooks/useGetIsBYOE';
+import { useTrackImportAction } from '../../../hooks/useTrackImportAction';
 import type { ImportType } from '../../../interface';
 import { deleteReportSummary, rollbackReportSummary } from '../../../logic/reports/reports.actions';
 import type { ReportSummaryID } from '../../../logic/reports/reports.interface';
 import { useEasySwitchDispatch } from '../../../logic/store';
-import { telemetryProduct, telemetryProvider } from '../../../telemetry/dimensions';
-import { easySwitchImportReportAction } from '../../../telemetry/events';
 
 interface Props {
     reportSummaryID: ReportSummaryID;
@@ -25,7 +22,7 @@ interface Props {
 }
 
 const ReportRowActions = ({ reportSummaryID, rollbackState, product, provider, account }: Props) => {
-    const getIsBYOE = useGetIsBYOE();
+    const trackEvent = useTrackImportAction({ account, provider, product });
     const dispatch = useEasySwitchDispatch();
     const [deleteModalProps, showDeleteModal, renderDeleteModal] = useModalState();
     const [rollbackModalProps, showRollbackModal, renderRollbackModal] = useModalState();
@@ -36,18 +33,6 @@ const ReportRowActions = ({ reportSummaryID, rollbackState, product, provider, a
     if (loadingUndoRecord || rollbackState === ApiReportRollbackState.ROLLING_BACK) {
         return null;
     }
-
-    const trackEvent = async (action: 'undo_import' | 'delete_report') => {
-        const isBYOE = await getIsBYOE(account);
-        tracker.emit(easySwitchImportReportAction, {
-            dimensions: {
-                importAction: action,
-                isBYOE,
-                provider: telemetryProvider[provider],
-                product: telemetryProduct[product],
-            },
-        });
-    };
 
     const handleUndo = () => {
         void withLoadingUndoRecord(dispatch(rollbackReportSummary({ reportSummaryID })));

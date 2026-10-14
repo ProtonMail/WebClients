@@ -1,12 +1,15 @@
 import { TelemetryEasySwitchEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { allowed, bool, defineEvent } from '@proton/telemetry-tracker/events';
 
+const IMPORT_ACTIONS = ['cancel_import', 'resume_import', 'undo_import', 'delete_report'] as const;
+export type ImportAction = (typeof IMPORT_ACTIONS)[number];
+
 export const easySwitchImportReportAction = defineEvent({
     target: 'telemetry',
     group: TelemetryMeasurementGroups.easySwitch,
     event: TelemetryEasySwitchEvents.importReportAction,
     dimensions: {
-        importAction: allowed(['cancel_import', 'resume_import', 'undo_import', 'delete_report']),
+        importAction: allowed(IMPORT_ACTIONS),
         isBYOE: bool(),
         provider: allowed(['google', 'outlook', 'imap']),
         product: allowed(['mail', 'calendar', 'contacts', 'drive']),
