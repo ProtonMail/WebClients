@@ -1,7 +1,7 @@
 import { addressesThunk } from '@proton/account/addresses';
 import * as bootstrap from '@proton/account/bootstrap';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
-import { serverEvent } from '@proton/account/eventLoop';
+import { coreEventLoopV6 } from '@proton/account/coreEventLoop';
 import { initEvent } from '@proton/account/init';
 import { userThunk } from '@proton/account/user';
 import { userKeysThunk } from '@proton/account/userKeys';
@@ -88,13 +88,18 @@ export const bootstrapApp = async ({ store, locales }: { store: AccountStore; lo
         // So we prefetch it here but don't care about the result to make sure they are loaded.
         Promise.all([dispatch(addressesThunk()), dispatch(userKeysThunk())]).catch(noop);
 
-        const eventManager = bootstrap.eventManager({ api: silentApi });
-        extendStore({ eventManager });
+        // VPN settings only renders core models (user, organization, subscription, ...), so it only needs the core
+        // event loop. Mail, contact and calendar models are at most loaded once and don't need to stay in sync.
+        const coreEventV6Manager = bootstrap.coreEventManagerV6({ api: silentApi });
+        const eventManager = bootstrap.compatEventManagerV6({ eventManagers: [coreEventV6Manager] });
+        extendStore({ eventManager, coreEventV6Manager });
 
-        eventManager.subscribe((event) => {
-            dispatch(serverEvent(event));
+        coreEventV6Manager.subscribe(async (event) => {
+            const promises: Promise<void>[] = [];
+            dispatch(coreEventLoopV6({ event, promises }));
+            await Promise.all(promises);
         });
-        eventManager.start();
+        coreEventV6Manager.start();
 
         dispatch(bootstrapEvent({ type: 'complete' }));
 
