@@ -69,23 +69,27 @@ export const useConnectBYOEAddress = ({ source }: { source: EASY_SWITCH_SOURCES 
 
     /** Starts the import task, mapping the "address belongs to another account" error to a failure. */
     const startImportTask = async ({
-        token,
+        account,
         importEmails,
         importPeriod,
+        claimAddress,
     }: {
-        token: ImportToken;
+        account: string;
         importEmails: boolean;
         importPeriod?: TIME_PERIOD;
+        /** Takes over an address that is used on another account. Only after the user confirmed it. */
+        claimAddress?: boolean;
     }): Promise<StartImportTaskResult> => {
         try {
             await api({
                 ...startEasySwitchSignupImportTask({
                     Provider: OAUTH_PROVIDER.GOOGLE,
                     Source: source,
-                    Account: token.Account,
+                    Account: account,
                     AutomaticImport: importEmails,
                     QuotaThresholdRatio: BYOE_QUOTA_THRESHOLD_RATIO,
                     StartTime: importEmails && importPeriod ? getStartTimeFromTimePeriod(importPeriod) : undefined,
+                    ...(claimAddress ? { ClaimAddress: true } : {}),
                 }),
                 silence: [BYOE_ADDRESS_ERROR.ADDRESS_ALREADY_EXISTS],
             });
@@ -93,9 +97,9 @@ export const useConnectBYOEAddress = ({ source }: { source: EASY_SWITCH_SOURCES 
         } catch (error) {
             const { code } = getApiError(error);
             if (code === BYOE_ADDRESS_ERROR.ADDRESS_ALREADY_EXISTS) {
-                const canBeClaimed = await canAddressBeClaimed(token.Account);
+                const canBeClaimed = await canAddressBeClaimed(account);
                 if (canBeClaimed) {
-                    return fail({ type: 'claimable-address', email: token.Account, importEmails, importPeriod });
+                    return fail({ type: 'claimable-address', email: account, importEmails, importPeriod });
                 } else {
                     return fail({ type: 'linked-to-another-account' });
                 }
@@ -140,6 +144,45 @@ export const useConnectBYOEAddress = ({ source }: { source: EASY_SWITCH_SOURCES 
         }
     };
 
+    /** Last step shared by connecting and claiming: sets up the address, then refreshes the Easy Switch data. */
+    const completeConnection = async ({
+        existingAddress,
+        account,
+        importEmails,
+        importPeriod,
+        isClaimedAddress,
+    }: {
+        existingAddress: Address | undefined;
+        account: string;
+        importEmails: boolean;
+        importPeriod?: TIME_PERIOD;
+        isClaimedAddress: boolean;
+    }): Promise<ConnectBYOEAddressResult> => {
+        const finalized = await finalizeAddress(existingAddress, account);
+        if (finalized.status === 'failure') {
+            trackBYOECreationError('address_creation');
+            return finalized;
+        }
+        // Convert or create returned no address
+        if (!finalized.address) {
+            trackBYOECreationError('address_creation');
+            return fail({ type: 'unknown' });
+        }
+
+        void easySwitchDispatch(loadSyncList());
+        void easySwitchDispatch(loadImporters());
+
+        // The mobile flow has no upsell modal
+        trackBYOEImporterCreated({
+            hasImportEmails: importEmails,
+            importPeriod,
+            isUpsellShown: false,
+            isClaimedAddress,
+        });
+
+        return { status: 'success', address: finalized.address, importEmails };
+    };
+
     const connectBYOEAddress = async ({
         token,
         importEmails,
@@ -161,36 +204,62 @@ export const useConnectBYOEAddress = ({ source }: { source: EASY_SWITCH_SOURCES 
         }
 
         // The backend also tells us here if the address belongs to another account
-        const importTask = await startImportTask({ token, importEmails, importPeriod });
+        const importTask = await startImportTask({ account: token.Account, importEmails, importPeriod });
         if (importTask.status === 'failure') {
             trackImportTaskFailure(importTask.reason);
             return importTask;
         }
 
         // Intended order, as in the old hook: a failure here leaves the import task already started
-        const finalized = await finalizeAddress(existingAddress, token.Account);
-        if (finalized.status === 'failure') {
-            trackBYOECreationError('address_creation');
-            return finalized;
-        }
-        // Convert or create returned no address
-        if (!finalized.address) {
-            trackBYOECreationError('address_creation');
-            return fail({ type: 'unknown' });
-        }
-
-        void easySwitchDispatch(loadSyncList());
-        void easySwitchDispatch(loadImporters());
-
-        // The mobile flow has no upsell modal
-        trackBYOEImporterCreated({
-            hasImportEmails: importEmails,
+        return completeConnection({
+            existingAddress,
+            account: token.Account,
+            importEmails,
             importPeriod,
-            isUpsellShown: false,
             isClaimedAddress: false,
         });
+    };
 
-        return { status: 'success', address: finalized.address, importEmails };
+    /**
+     * Connects an address that is used on another account, once the user confirmed the claim.
+     * Takes the data of the `claimable-address` failure, so the UI only has to hand it back.
+     */
+    const claimBYOEAddress = async ({
+        email,
+        importEmails,
+        importPeriod,
+    }: {
+        email: string;
+        importEmails: boolean;
+        importPeriod?: TIME_PERIOD;
+    }): Promise<ConnectBYOEAddressResult> => {
+        if (!hasAccessToBYOE) {
+            return fail({ type: 'no-access' });
+        }
+
+        if (!canClaimExternalAddress) {
+            return fail({ type: 'linked-to-another-account' });
+        }
+
+        const importTask = await startImportTask({
+            account: email,
+            importEmails,
+            importPeriod,
+            claimAddress: true,
+        });
+        if (importTask.status === 'failure') {
+            trackImportTaskFailure(importTask.reason);
+            return importTask;
+        }
+
+        // The claim succeeded, so finalizing is the only step left
+        return completeConnection({
+            existingAddress: findUserAddress(email, addresses),
+            account: email,
+            importEmails,
+            importPeriod,
+            isClaimedAddress: true,
+        });
     };
 
     const connectBYOEAddressWithCode = async ({
@@ -238,5 +307,6 @@ export const useConnectBYOEAddress = ({ source }: { source: EASY_SWITCH_SOURCES 
     return {
         connectBYOEAddress,
         connectBYOEAddressWithCode,
+        claimBYOEAddress,
     };
 };
