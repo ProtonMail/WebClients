@@ -6,7 +6,7 @@ import type { Address } from '@proton/shared/lib/interfaces/Address';
 import { ApiSyncState } from '../api/api.interface';
 import { ImportType } from '../interface';
 import type { Sync } from '../logic/sync/sync.interface';
-import { useNonBYOESyncs } from './useNonBYOESyncs';
+import { useSyncsTableRows } from './useSyncsTableRows';
 
 jest.mock('@proton/account/addresses/hooks', () => ({
     useAddresses: jest.fn(),
@@ -60,7 +60,7 @@ const nonByoeSync2: Sync = {
     startDate: new Date('2024-01-01').getTime(),
 };
 
-describe('useNonBYOESyncs', () => {
+describe('useSyncsTableRows', () => {
     const mockUseAddresses = require('@proton/account/addresses/hooks').useAddresses;
     const mockUseEasySwitchSelector = require('../logic/store').useEasySwitchSelector;
 
@@ -72,53 +72,82 @@ describe('useNonBYOESyncs', () => {
         mockUseAddresses.mockReturnValue([[byoeAddress, internalAddress]]);
         mockUseEasySwitchSelector.mockReturnValue([byoeSync, nonByoeSync]);
 
-        const { result } = renderHook(() => useNonBYOESyncs());
+        const { result } = renderHook(() => useSyncsTableRows());
 
-        expect(result.current).toEqual([nonByoeSync]);
+        expect(result.current.otherSyncs).toEqual([nonByoeSync]);
     });
 
     it('should include syncs whose account does not match any address', () => {
         mockUseAddresses.mockReturnValue([[byoeAddress]]);
         mockUseEasySwitchSelector.mockReturnValue([byoeSync, nonByoeSync]);
 
-        const { result } = renderHook(() => useNonBYOESyncs());
+        const { result } = renderHook(() => useSyncsTableRows());
 
-        expect(result.current).toEqual([nonByoeSync]);
+        expect(result.current.otherSyncs).toEqual([nonByoeSync]);
     });
 
     it('should return syncs ordered by startDate descending', () => {
         mockUseAddresses.mockReturnValue([[byoeAddress]]);
         mockUseEasySwitchSelector.mockReturnValue([nonByoeSync2, nonByoeSync]);
 
-        const { result } = renderHook(() => useNonBYOESyncs());
+        const { result } = renderHook(() => useSyncsTableRows());
 
-        expect(result.current).toEqual([nonByoeSync2, nonByoeSync]);
+        expect(result.current.otherSyncs).toEqual([nonByoeSync2, nonByoeSync]);
     });
 
     it('should return all syncs when there are no BYOE addresses', () => {
         mockUseAddresses.mockReturnValue([[internalAddress]]);
         mockUseEasySwitchSelector.mockReturnValue([byoeSync, nonByoeSync]);
 
-        const { result } = renderHook(() => useNonBYOESyncs());
+        const { result } = renderHook(() => useSyncsTableRows());
 
-        expect(result.current).toEqual([byoeSync, nonByoeSync]);
+        expect(result.current.otherSyncs).toEqual([byoeSync, nonByoeSync]);
     });
 
     it('should return an empty array when there are no syncs', () => {
         mockUseAddresses.mockReturnValue([[byoeAddress, internalAddress]]);
         mockUseEasySwitchSelector.mockReturnValue([]);
 
-        const { result } = renderHook(() => useNonBYOESyncs());
+        const { result } = renderHook(() => useSyncsTableRows());
 
-        expect(result.current).toEqual([]);
+        expect(result.current.otherSyncs).toEqual([]);
     });
 
     it('should return an empty array when all syncs are linked to BYOE addresses', () => {
         mockUseAddresses.mockReturnValue([[byoeAddress]]);
         mockUseEasySwitchSelector.mockReturnValue([byoeSync]);
 
-        const { result } = renderHook(() => useNonBYOESyncs());
+        const { result } = renderHook(() => useSyncsTableRows());
 
-        expect(result.current).toEqual([]);
+        expect(result.current.otherSyncs).toEqual([]);
+    });
+
+    it('should return BYOE addresses with their sync', () => {
+        mockUseAddresses.mockReturnValue([[byoeAddress, internalAddress]]);
+        mockUseEasySwitchSelector.mockReturnValue([byoeSync, nonByoeSync]);
+
+        const { result } = renderHook(() => useSyncsTableRows());
+
+        expect(result.current.byoeAddresses).toEqual([{ address: byoeAddress, sync: byoeSync }]);
+    });
+
+    it('should return a BYOE address without sync when it has none', () => {
+        mockUseAddresses.mockReturnValue([[byoeAddress]]);
+        mockUseEasySwitchSelector.mockReturnValue([nonByoeSync]);
+
+        const { result } = renderHook(() => useSyncsTableRows());
+
+        expect(result.current.byoeAddresses).toEqual([{ address: byoeAddress, sync: undefined }]);
+    });
+
+    it('should match a sync to a BYOE address regardless of email casing', () => {
+        const upperCaseSync = { ...byoeSync, account: 'BYOE@gmail.com' };
+        mockUseAddresses.mockReturnValue([[byoeAddress]]);
+        mockUseEasySwitchSelector.mockReturnValue([upperCaseSync]);
+
+        const { result } = renderHook(() => useSyncsTableRows());
+
+        expect(result.current.byoeAddresses).toEqual([{ address: byoeAddress, sync: upperCaseSync }]);
+        expect(result.current.otherSyncs).toEqual([]);
     });
 });
