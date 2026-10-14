@@ -17,8 +17,6 @@ export const AppSwitcher = ({ hasBorder, app }: { hasBorder?: boolean; app: APP_
     const { viewportWidth } = useActiveBreakpoint();
     const [organization] = useOrganization();
 
-    const isDocsHomepageAvailable = useFlag('DriveDocsLandingPageEnabled');
-    const isSheetsAvailable = useFlag('DocsSheetsEnabled');
     const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
     const isSpacesAvailable = useFlag('SpacesAvailable');
 
@@ -27,8 +25,6 @@ export const AppSwitcher = ({ hasBorder, app }: { hasBorder?: boolean; app: APP_
             user,
             context: 'dropdown',
             organization,
-            isDocsHomepageAvailable,
-            isSheetsAvailable,
             isAuthenticatorAvailable,
             isSpacesAvailable,
         });

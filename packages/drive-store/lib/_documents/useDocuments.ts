@@ -26,7 +26,7 @@ export const useDocuments = () => {
     const { getLink, getLinkPrivateKey, getLinkHashKey, getLinkSessionKey } = useLink();
     const { removeLinkForDriveCompat } = useLinksState();
     const { getShareCreatorKeys } = useShare();
-    const { renameLink, trashLinks, restoreLinks, deletePermanently, confirmModal } = useActions();
+    const { trashLinks, restoreLinks, deletePermanently, confirmModal } = useActions();
 
     const getDocumentSigningKeys = async (shareId: string) => {
         // getShareCreatorKeys gets the key from `share.addressId` which is always
@@ -140,10 +140,6 @@ export const useDocuments = () => {
         return contentKey;
     };
 
-    const renameDocument = async ({ shareId, linkId }: LegacyNodeMeta, newName: string): Promise<void> => {
-        await renameLink(abortSignal, shareId, linkId, newName);
-    };
-
     const trashDocument = async (
         { shareId, linkId, volumeId }: LegacyNodeMeta,
         parentLinkId: string
@@ -172,7 +168,6 @@ export const useDocuments = () => {
     return {
         createDocumentNode,
         getDocumentKeys,
-        renameDocument,
         trashDocument,
         restoreDocument,
         deleteDocumentPermanently,
