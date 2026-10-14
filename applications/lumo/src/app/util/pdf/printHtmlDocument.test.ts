@@ -24,8 +24,10 @@ describe('printHtmlDocument', () => {
         jest.restoreAllMocks();
         printSpy = undefined;
         document.title = originalTitle;
-        document.querySelectorAll('iframe[data-print-frame]').forEach((node) => {
-            node.remove();
+        // Closing the dialog runs the real cleanup, which also clears its 10 minute fallback timer.
+        // A pending timer keeps a --runInBand jest process alive after the tests finish.
+        document.querySelectorAll<HTMLIFrameElement>('iframe[data-print-frame]').forEach((node) => {
+            node.contentWindow?.dispatchEvent(new Event('afterprint'));
         });
     });
 
