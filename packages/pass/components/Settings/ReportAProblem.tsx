@@ -6,9 +6,13 @@ import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { InputField } from '@proton/components/components/v2/field/InputField';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
+import { REPORT_MAX_CHARS } from '@proton/components/containers/support/constants';
+import { getCharacterCountText } from '@proton/components/helpers/getCharacterCountText';
 import { getReportInfo } from '@proton/components/helpers/report';
 import type { BugPayload } from '@proton/shared/lib/api/reports';
+import { maxLengthValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import { useActionRequest } from '../../hooks/useRequest';
 import { reportBugIntent } from '../../store/actions';
@@ -29,6 +33,9 @@ const REPORT_PLATFORM = (() => {
 const validate = ({ description }: FormValues): FormikErrors<FormValues> => {
     const errors: FormikErrors<FormValues> = {};
     if (isEmptyString(description)) errors.description = c('Warning').t`A description of the problem is required`;
+    else if (description.length > REPORT_MAX_CHARS) {
+        errors.description = maxLengthValidator(description, REPORT_MAX_CHARS);
+    }
 
     return errors;
 };
@@ -74,8 +81,9 @@ export const ReportAProblem: FC = () => {
         >
             <FormikProvider value={form}>
                 <Form>
-                    <TextAreaTwo
-                        className="border-norm mb-4"
+                    <InputField
+                        as={TextAreaTwo}
+                        className="border-norm"
                         id="description"
                         onChange={form.handleChange}
                         placeholder={c('Placeholder').t`Please describe the problem and include any error messages`}
@@ -83,6 +91,8 @@ export const ReportAProblem: FC = () => {
                         minRows={5}
                         value={form.values.description}
                         disabled={reportBug.loading}
+                        error={form.dirty && form.errors.description}
+                        assistiveText={getCharacterCountText(form.values.description.length, REPORT_MAX_CHARS)}
                     />
 
                     <Button
