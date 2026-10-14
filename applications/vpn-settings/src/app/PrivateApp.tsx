@@ -8,6 +8,7 @@ import StandardErrorPage from '@proton/components/containers/app/StandardErrorPa
 import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
 import StandardPrivateApp from '@proton/components/containers/app/StandardPrivateApp';
 import EventManagerProvider from '@proton/components/containers/eventManager/EventManagerProvider';
+import { EventManagerV6Provider } from '@proton/components/containers/eventManager/EventManagerV6Provider';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
@@ -59,13 +60,20 @@ const PrivateApp = ({ store, locales }: Props) => {
     return (
         <UnleashFlagProviderWithToolbar unleashClient={extraThunkArguments.unleashClient}>
             <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
-                <ErrorBoundary big component={<StandardErrorPage big />}>
-                    <StandardPrivateApp>
-                        <AccountSpotlightsProvider>
-                            <state.MainContainer />
-                        </AccountSpotlightsProvider>
-                    </StandardPrivateApp>
-                </ErrorBoundary>
+                <EventManagerV6Provider
+                    coreEventV6Manager={extraThunkArguments.coreEventV6Manager}
+                    mailEventV6Manager={undefined}
+                    contactEventV6Manager={undefined}
+                    calendarEventV6Manager={undefined}
+                >
+                    <ErrorBoundary big component={<StandardErrorPage big />}>
+                        <StandardPrivateApp>
+                            <AccountSpotlightsProvider>
+                                <state.MainContainer />
+                            </AccountSpotlightsProvider>
+                        </StandardPrivateApp>
+                    </ErrorBoundary>
+                </EventManagerV6Provider>
             </EventManagerProvider>
         </UnleashFlagProviderWithToolbar>
     );
