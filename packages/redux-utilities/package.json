@@ -23,13 +23,20 @@
         "@proton/utils": "workspace:^",
         "@reduxjs/toolkit": "^2.12.0",
         "react": "^18.3.1",
-        "react-redux": "^9.3.0"
+        "react-redux": "^9.3.0",
+        "redux": "^5.0.1",
+        "redux-thunk": "^3.1.0"
     },
     "devDependencies": {
         "@jest/globals": "^30.5.2",
         "@proton/jest-swc-preset": "workspace:^",
         "@testing-library/jest-dom": "^6.9.1",
         "@testing-library/react": "^15.0.7",
+        "@types/jest": "catalog:",
+        "@types/node": "catalog:",
+        "@types/react": "catalog:",
+        "@types/react-dom": "catalog:",
+        "@types/webpack-env": "catalog:",
         "@typescript/native": "npm:typescript@^7.0.2",
         "eslint": "^10.11.0",
         "jest": "^30.5.2",

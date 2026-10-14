@@ -44,6 +44,30 @@ pnpm --filter proton-mail run start
 
 For additional details on how to interact with the monorepo, see the [pnpm docs](https://pnpm.io/) for reference.
 
+### Shared dependency versions (catalog)
+
+Every workspace declares the dependencies it imports. When many workspaces declare the same dependency and must stay on the same version, the range lives once in the `catalog:` section of [pnpm-workspace.yaml](pnpm-workspace.yaml), and each workspace references it with `"catalog:"` instead of a range:
+
+```json
+"devDependencies": {
+    "@types/node": "catalog:"
+}
+```
+
+Use `catalog:` when:
+
+- the dependency is declared by several workspaces (as a rule of thumb, three or more), and
+- they have to move together, for example the `@types` packages that `tsconfig.base.json` lists in `compilerOptions.types`, or a package where two versions in the tree would break things.
+
+Declare a plain range instead when:
+
+- only one or two workspaces use the dependency;
+- a workspace deliberately needs a different version (for example `utilities/lumo-dev-proxy` keeps `@types/node@^22`);
+- it's another workspace: use `workspace:^`;
+- you need to pin a transitive dependency, for example for a security fix: use `overrides` in `pnpm-workspace.yaml`, since the catalog only applies to workspaces that reference it.
+
+To add an entry, add the range to `catalog:` and switch every existing declaration of that dependency to `"catalog:"` in the same change. To bump it, change the range in `pnpm-workspace.yaml` only. Either way, run `pnpm install` and commit the updated `pnpm-lock.yaml` with it.
+
 ## How VPN app differs from the rest
 
 VPN is present in both proton.me and protonvpn.com. However, they are served differently. Some parts of VPN are shared, hosted within `@proton/components` or `@proton/shared`, however, the entry points to them are different.

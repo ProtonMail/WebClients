@@ -7,7 +7,7 @@ const jestConfig: Config = {
     testEnvironment: '@proton/jest-env',
     resolver: './jest.resolver.js',
     transformIgnorePatterns: [
-        'node_modules/(?!(@proton/shared|@proton/components|@protontech/telemetry|@protontech/mutex-browser|@protontech/interval-tree|@protontech/crypto|openpgp|@openpgp/web-stream-tools|@protontech/bip39|emoji-mart|msw|@mswjs|until-async|@preact/signals-core|@scure/base)/)',
+        'node_modules/(?!(\\.pnpm|@proton/shared|@proton/components|@protontech/telemetry|@protontech/mutex-browser|@protontech/interval-tree|@protontech/crypto|openpgp|@protontech/openpgp|@openpgp/web-stream-tools|@protontech/bip39|emoji-mart|msw|@mswjs|until-async|@preact/signals-core|@scure/base)/)',
     ],
     preset: '@proton/jest-swc-preset',
     moduleNameMapper: {

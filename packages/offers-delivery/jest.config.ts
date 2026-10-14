@@ -2,7 +2,7 @@ import type { Config } from 'jest';
 
 const jestConfig: Config = {
     preset: '@proton/jest-swc-preset',
-    transformIgnorePatterns: ['node_modules/(?!(@protontech/crypto)/)'],
+    transformIgnorePatterns: ['node_modules/(?!(\\.pnpm|@protontech/crypto)/)'],
     setupFilesAfterEnv: ['./jest.setup.ts'],
     testEnvironment: 'jsdom',
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],

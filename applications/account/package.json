@@ -56,9 +56,9 @@
         "@proton/wallet": "workspace:^",
         "@protontech/crypto": "*",
         "@reduxjs/toolkit": "^2.12.0",
-        "@types/react": "^18.3.31",
-        "@types/react-dom": "^18.3.7",
-        "@types/react-router-dom": "^5.3.3",
+        "@types/react": "catalog:",
+        "@types/react-dom": "catalog:",
+        "@types/react-router-dom": "catalog:",
         "@xstate/react": "^6.1.0",
         "date-fns": "^2.30.0",
         "dompurify": "^3.4.16",
@@ -81,7 +81,11 @@
         "@testing-library/jest-dom": "^6.9.1",
         "@testing-library/react": "^15.0.7",
         "@testing-library/user-event": "^14.6.7",
-        "@types/jest": "^30.0.0",
+        "@types/history": "catalog:",
+        "@types/jest": "catalog:",
+        "@types/lodash": "catalog:",
+        "@types/node": "catalog:",
+        "@types/webpack-env": "catalog:",
         "@typescript/native": "npm:typescript@^7.0.2",
         "cross-env": "^10.1.0",
         "eslint": "^10.11.0",
@@ -90,6 +94,7 @@
         "jest-junit": "^16.0.0",
         "prettier": "^3.9.9",
         "typescript": "npm:@typescript/typescript6@^6.0.2",
+        "webpack": "^5.111.1",
         "webpack-dev-server": "^6.0.0"
     }
 }

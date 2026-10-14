@@ -18,7 +18,7 @@ describe('VolumeMeter', () => {
     it('fills the track up to the level', () => {
         render(<VolumeMeter level={0.42} ariaLabel="Microphone input level" />);
 
-        expect(getMeter().firstElementChild).toHaveStyle({ '--w-custom': '42%' });
+        expect((getMeter().firstElementChild as HTMLElement).style.getPropertyValue('--w-custom')).toBe('42%');
     });
 
     it.each([

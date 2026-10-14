@@ -5,7 +5,7 @@ const jestConfig: Config = {
     moduleDirectories: ['<rootDir>/node_modules', 'node_modules'],
     testEnvironment: '@proton/jest-env',
     setupFiles: ['<rootDir>/jest.setup.js'],
-    transformIgnorePatterns: ['node_modules/(?!(@protontech/crypto)/)'],
+    transformIgnorePatterns: ['node_modules/(?!(\\.pnpm|@protontech/crypto)/)'],
     preset: '@proton/jest-swc-preset',
     collectCoverageFrom: ['src/**/*.ts'],
     reporters: ['default', ['jest-junit', { suiteNameTemplate: '{filepath}', outputName: 'test-report.xml' }]],

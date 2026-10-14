@@ -2,7 +2,7 @@ import type { Config } from 'jest';
 
 const jestConfig: Config = {
     transformIgnorePatterns: [
-        'node_modules/(?!(@proton/shared|@proton/components|@protontech/telemetry|mutex-browser|@protontech/crypto|bip39|@preact/signals-core|@scure/base)/)',
+        'node_modules/(?!(\\.pnpm|@proton/shared|@proton/components|@protontech/telemetry|mutex-browser|@protontech/crypto|bip39|@preact/signals-core|@scure/base)/)',
     ],
     preset: '@proton/jest-swc-preset',
     setupFilesAfterEnv: ['./jest.setup.ts'],

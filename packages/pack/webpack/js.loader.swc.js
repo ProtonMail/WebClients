@@ -1,5 +1,11 @@
+const path = require('path');
+
 const { excludeNodeModulesExcept, excludeFiles, createRegex } = require('./helpers/regex');
 const { BABEL_EXCLUDE_FILES, BABEL_INCLUDE_NODE_MODULES } = require('./constants');
+
+/** SWC injects core-js imports into the files it transpiles, which may belong to packages that don't
+ * declare core-js. Resolve them to the copy whose version `env.coreJs` targets. */
+const coreJsResolve = { alias: { 'core-js': path.dirname(require.resolve('core-js/package.json')) } };
 
 const getUnsupportedLoader = () => {
     return {
@@ -46,6 +52,7 @@ const getJsLoader = (options) => {
             excludeFiles([...BABEL_EXCLUDE_FILES, 'pre.ts', 'unsupported.ts'])
         ),
         use: getSwcLoader(options),
+        resolve: coreJsResolve,
     };
 };
 
@@ -54,6 +61,7 @@ const getJsLoaders = (options) => {
         {
             test: /(unsupported|pre)\.ts$/,
             use: getUnsupportedLoader(options),
+            resolve: coreJsResolve,
         },
         getJsLoader(options),
     ];

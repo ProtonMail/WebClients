@@ -12,6 +12,20 @@ packages:
 
 # Same flat node_modules layout Yarn's node-modules linker produced.
 nodeLinker: hoisted
+
+# Each workspace declares the type packages it uses. Most list node, webpack-env and jest in
+# compilerOptions.types through tsconfig.base.json, so these ranges are shared here.
+catalog:
+    '@types/chrome': ^0.3.4
+    '@types/history': ^4.7.11
+    '@types/jest': ^30.0.0
+    '@types/lodash': ^4.17.25
+    '@types/node': ^24.19.0
+    '@types/react': ^18.3.31
+    '@types/react-dom': ^18.3.7
+    '@types/react-router-dom': ^5.3.3
+    '@types/webpack-env': ^1.18.8
+
 # Yarn resolved any range that a workspace satisfies to that workspace, including the `*` peer
 # dependencies between @proton packages.
 linkWorkspacePackages: true
@@ -59,6 +73,14 @@ patchedDependencies:
     eslint-plugin-monorepo-cop@1.0.2: patches/eslint-plugin-monorepo-cop@1.0.2.patch
     jsdom@26.1.0: patches/jsdom@26.1.0.patch
     rfc2047@2.0.1: patches/rfc2047@2.0.1.patch
+
+# Missing peer declarations. Without them, these packages resolve the dependency through pnpm's
+# hidden hoisting directory, which may hold a different version than the workspace uses.
+packageExtensions:
+    eslint-plugin-no-only-tests@3:
+        # Its JSDoc types reference `eslint`.
+        peerDependencies:
+            eslint: '*'
 
 overrides:
     '@babel/runtime-corejs3@^7.24.4': '7.29.7'
