@@ -1049,6 +1049,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "La prueba gratuita de la aplicación de escritorio finaliza en ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Don't show this offer again": [
+        "No volver a mostrar esta oferta"
       ]
     },
     "action": {
@@ -1172,6 +1175,12 @@
       ],
       "Writing assistant seats": [
         "Licencias del asistente de escritura"
+      ],
+      "Managed Service Provider": [
+        "Proveedor de Servicios Gestionados"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Las organizaciones con el complemento de Proveedor de Servicios Gestionados pueden crear y administrar organizaciones subsidiarias."
       ]
     },
     "Alarm notification": {
@@ -4280,6 +4289,12 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Su conexión de Zoom ha expirado. Vuelva a conectarse para continuar."
+      ],
+      "Incorrect password. Please try again.": [
+        "Contraseña incorrecta. Intente de nuevo."
+      ],
+      "You reached the maximum number of connected addresses": [
+        "Alcanzó el número máximo de direcciones conectadas"
       ]
     },
     "error": {
@@ -6875,6 +6890,15 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Ha alcanzado el límite de franjas de reserva (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "Después de la actualización, es posible que su Mac le pida una contraseña. Escriba la contraseña que usa para desbloquear su Mac y luego pulse en Permitir siempre para mantener la sesión iniciada. ${ learnMore }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Los descuentos se basan en los precios mensuales estándar. Su suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
+      ],
+      "Please update ${ MAIL_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "Actualice ${ MAIL_APP_NAME } para seguir usando la aplicación. ${ downloadUpdate }"
       ]
     },
     "info": {
@@ -12831,6 +12855,9 @@
       ],
       "Your shorter address is now ready": [
         "Su dirección en formato más corto ya está lista."
+      ],
+      "Black Friday": [
+        "Black Friday"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13486,6 +13513,11 @@
       ],
       "Passcode:": [
         "Código de acceso:"
+      ]
+    },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "Aplicación de escritorio de ${ appName }"
       ]
     }
   }
