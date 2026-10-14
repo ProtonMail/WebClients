@@ -4227,6 +4227,9 @@
       ],
       "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
         "失敗替 ${ signatureType } 簽名驗證: ${ errorMessage }"
+      ],
+      "Incorrect password. Please try again.": [
+        "密碼不正確。請再試一次。"
       ]
     },
     "error": {

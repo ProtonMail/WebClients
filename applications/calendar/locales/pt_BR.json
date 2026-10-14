@@ -1178,6 +1178,9 @@
       ],
       "Managed Service Provider": [
         "Provedor de serviço gerenciado"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Organizações com o complemento Provedor de Serviços Gerenciados podem criar e gerenciar organizações subsidiárias."
       ]
     },
     "Alarm notification": {
@@ -4369,6 +4372,60 @@
       ],
       "Could not grant access to the organization key": [
         "Não foi possível obter o acesso a chave da organização"
+      ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Uma mensagem é necessária ao denunciar violação de direitos autorais ou dados roubados"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "O endereço já é usado por um usuário fora da sua organização. Entre em contato com o suporte ao cliente para resolver isso"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Não é possível adicionar foto ao álbum sem um nome válido"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Não é possível mover o item sem um nome válido, por favor, renomeie o item primeiro"
+      ],
+      "Could not find an available name": [
+        "Não foi possível encontrar um nome disponível"
+      ],
+      "Failed to get inviter keys": [
+        "Não conseguiu obter as chaves do convidado"
+      ],
+      "File download failed due to empty response": [
+        "O download do arquivo falhou devido à resposta vazia"
+      ],
+      "Incorrect password. Please try again.": [
+        "A senha não é válida. Tente novamente."
+      ],
+      "Moving root item is not allowed": [
+        "Item de raiz em movimento não é permitido"
+      ],
+      "Only admins can convert external invitations": [
+        "Somente os administradores podem converter convites externos"
+      ],
+      "Photo is already in the target album": [
+        "A foto já está no álbum alvo"
+      ],
+      "Renaming root item is not allowed": [
+        "Não é permitido renomear o item, raiz"
+      ],
+      "This file has missing crypto material": [
+        "Este arquivo tem material de criptografia ausente"
+      ],
+      "This item has no image preview": [
+        "Este item não tem visualização de imagem"
+      ],
+      "You can only leave items that are shared with you": [
+        "Você só pode deixar itens compartilhados com você"
+      ],
+      "You can only upload a new version to a file": [
+        "Você só pode carregar uma nova versão para um arquivo"
+      ],
+      "You do not have access to this shared item": [
+        "Você não tem acesso a esse item compartilhado"
+      ],
+      "You reached the maximum number of connected addresses": [
+        "Você atingiu o número máximo de endereços conectados"
       ]
     },
     "error": {
@@ -6993,6 +7050,30 @@
       ],
       "Please update ${ MAIL_APP_NAME } to keep using the app. ${ downloadUpdate }": [
         "Atualize o ${ MAIL_APP_NAME } para continuar usando o aplicativo. ${ downloadUpdate }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "${ timeRemaining } deixado em sua avaliação. ${ addPaymentMethodLink } para evitar perder acesso. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Restam ${ timeRemaining } do seu período de teste. ${ addPaymentMethodLink } para manter sua assinatura. ${ learnMoreLink }"
+      ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "Após a atualização, o Mac pode pedir uma senha. Digite a senha que você usa para desbloquear o Mac e clique em Sempre Permitir para ficar conectado. ${ learnMore }"
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Os registros nos ajudam a entender o que aconteceu antes de o problema ocorrer. Eles incluem ações do aplicativo e mensagens de erro, mas não o conteúdo das mensagens."
+      ],
+      "No payment is required.": [
+        "Nenhum pagamento é necessário."
+      ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Este usuário não pode ser migrado porque o endereço de e-mail deles não está disponível em ${ BRAND_NAME }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Para migrar esse usuário, eles precisam aceitar seu convite para participar ${ BRAND_NAME }."
+      ],
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Vamos redirecioná-lo para ${ IDEAL_WERO_BRAND_NAME } em uma nova guia do navegador para concluir esta transação. Se você usar qualquer bloqueador de pop-up, por favor, desative-os para continuar."
       ]
     },
     "info": {
@@ -7921,6 +8002,9 @@
       ],
       "What’s this?": [
         "O que é isso?"
+      ],
+      "Pay it": [
+        "Pague"
       ]
     },
     "Link label (optional)": {
@@ -9724,6 +9808,18 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Sua assinatura completa do ${ planTitle } começa em ${ boldEndDate }."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Cancele a qualquer momento antes disso. ** Você poderá usar ${ planTitle } até que a avaliação termine, gratuitamente."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Se você continuar após o seu teste, ** você pode cancelar dentro de 30 dias e obter um reembolso pro-rata."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Uma vez que sua assinatura completa começa... ** Você ainda pode cancelar dentro de 30 dias e obter um reembolso proporcional."
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "para continuar usando todos os recursos após o término da sua avaliação."
       ]
     },
     "Option": {
@@ -10109,6 +10205,57 @@
       ],
       "You already own Born Private.": [
         "Você já tem o Born Private."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } não pode ser combinado com ${ PLAN_NAMES[PLANS.PASS] }."
+      ],
+      "An organization is required for this plan.": [
+        "Uma organização é necessária para este plano."
+      ],
+      "Born Private can’t be purchased with an active subscription.": [
+        "O Born Private não pode ser adquirido com uma assinatura ativa."
+      ],
+      "Buying credits requires a separate purchase.": [
+        "Comprar créditos requer uma compra separada."
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Apenas um ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } pode ser comprado."
+      ],
+      "Please close extra wallets before changing your plan.": [
+        "Por favor, feche carteiras extras antes de mudar seu plano."
+      ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Os assentos do escriba não podem exceder o número de membros."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "O plano selecionado não oferece endereços suficientes para sua conta."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "O plano selecionado não oferece domínios suficientes para sua conta."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "O plano selecionado não oferece membros suficientes para sua conta."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "O plano selecionado não oferece armazenamento suficiente para sua conta."
+      ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "Este servidor dedicado é atribuído a um gateway e não pode ser alterado."
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "Os planos de avaliação não suportam ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Trial plans don’t support custom domains.": [
+        "Os planos de avaliação não suportam domínios personalizados."
+      ],
+      "Trial plans don’t support this many members.": [
+        "Os planos de teste não apoiam muitos membros."
+      ],
+      "Your account is too old for Born Private.": [
+        "Sua conta é muito antiga para Born Private."
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "Sua moeda foi alterada para euros (€) porque ${ IDEAL_WERO_BRAND_NAME } suporta apenas pagamentos em euros."
       ]
     },
     "Payments.Error": {
@@ -12977,6 +13124,9 @@
       ],
       "Your shorter address is now ready": [
         "Seu endereço mais curto já está pronto"
+      ],
+      "Black Friday": [
+        "Black Friday"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13155,6 +13305,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Você poderá atribuir funções assim que o usuário aceitar o convite."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Você não pode mudar seus próprios papéis. Peça a outro administrador para alterá-los."
       ]
     },
     "Validation": {
@@ -13629,6 +13782,114 @@
     "tryduo2026: Title": {
       "for 12 months": [
         "por 12 meses"
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Aproveitar a oferta"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/mês"
+      ],
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
+      "2 individual accounts": [
+        "2 contas individuais"
+      ],
+      "2 TB of secure storage": [
+        "2 TB de armazenamento seguro"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB de armazenamento: 40x o seu plano atual"
+      ],
+      "3 TB of secure storage": [
+        "3 TB de armazenamento seguro"
+      ],
+      "500 GB of secure storage": [
+        "500 GB de armazenamento seguro"
+      ],
+      "6 individual accounts": [
+        "6 contas individuais"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autenticador de 2FA integrado"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Os descontos são baseados em preços mensais padrão. Sua assinatura será renovada na taxa anual padrão quando o ciclo de faturamento terminar."
+      ],
+      "Online document editor": [
+        "Editor de documentos on-line"
+      ],
+      "Recover previous file versions": [
+        "Recuperar versões de arquivo anteriores"
+      ],
+      "Stronger protection against cyber threats": [
+        "Proteção mais forte contra ameaças cibernéticas"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Pastas, marcadores e filtros ilimitados"
+      ],
+      "Use your own email domain": [
+        "Use seu próprio domínio de e-mail"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium para ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium para ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium para ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium para ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium para ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "A maior promoção do ano"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "por 12 meses"
+      ],
+      "Last chance to save big": [
+        "Última chance de economizar muito"
+      ],
+      "Protect your entire tribe": [
+        "Proteja toda a sua tribo"
+      ],
+      "Protection for two in a single plan": [
+        "Proteção para duas pessoas em um único plano"
+      ],
+      "Save big with a yearly plan": [
+        "Economize bastante com um plano anual"
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Alterar seu endereço de cobrança pode afetar impostos sobre futuras faturas."
       ]
     }
   }
