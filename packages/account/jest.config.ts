@@ -6,6 +6,10 @@ const jestConfig: Config = {
     setupFilesAfterEnv: ['./jest.setup.ts'],
     testEnvironment: '@proton/jest-env',
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+    moduleNameMapper: {
+        '\\.(jpg|jpeg|png|gif|webp|svg)$': '@proton/components/__mocks__/fileMock.js',
+        '\\.(css|scss|less)$': '@proton/components/__mocks__/styleMock.js',
+    },
 };
 
 export default jestConfig;

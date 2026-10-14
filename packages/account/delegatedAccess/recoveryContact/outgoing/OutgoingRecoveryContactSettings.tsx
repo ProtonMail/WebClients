@@ -26,6 +26,10 @@ import {
     type OutgoingDelegatedAccessProviderValue,
     useOutgoingController,
 } from '../../shared/OutgoingDelegatedAccessProvider';
+import {
+    OutgoingLockedDataWarning,
+    useShouldShowLockedDataWarning,
+} from '../../shared/outgoing/OutgoingLockedDataWarning';
 import { getMetaOutgoingDelegatedAccess } from '../../shared/outgoing/helper';
 import type { MetaIncomingDelegatedAccess } from '../../shared/outgoing/interface';
 
@@ -183,6 +187,7 @@ export const OutgoingRecoveryContactSettings = ({
 }) => {
     const controller = useOutgoingController();
     const [{ isSentinelUser }] = useIsSentinelUser();
+    const showLockedDataWarning = useShouldShowLockedDataWarning();
 
     if (!controller.outgoingDelegatedAccess.isAvailable) {
         return null;
@@ -192,6 +197,11 @@ export const OutgoingRecoveryContactSettings = ({
     const canAddRecoveryContact =
         controller.outgoingDelegatedAccess.recoveryContacts.hasAccess &&
         !controller.outgoingDelegatedAccess.recoveryContacts.hasReachedLimit;
+    // Non-sentinel users need to have a recovery method
+    const addRecoveryContactDisabled = userHasNoAccountRecoveryMethodSet && !isSentinelUser;
+    const addRecoveryContact = () => {
+        controller.notify({ type: 'add', value: 'recovery-contact' });
+    };
 
     if (controller.outgoingDelegatedAccess.loading) {
         return <Loader />;
@@ -206,16 +216,23 @@ export const OutgoingRecoveryContactSettings = ({
                     <DashboardCard>{passwordResetOptionRequiredWarning}</DashboardCard>
                 )}
 
-            {canAddRecoveryContact && (
+            {canAddRecoveryContact && showLockedDataWarning && (
+                <OutgoingLockedDataWarning
+                    title={c('emergency_access').t`Recover your data before adding a new contact.`}
+                    description={c('emergency_access')
+                        .t`Your data is still locked from a password reset. A contact added now won't be able to restore it.`}
+                    addContactDisabled={addRecoveryContactDisabled}
+                    onAddContact={addRecoveryContact}
+                />
+            )}
+
+            {canAddRecoveryContact && !showLockedDataWarning && (
                 <div>
                     <Button
-                        // Non-sentinel users need to have a recovery method
-                        disabled={userHasNoAccountRecoveryMethodSet && !isSentinelUser}
+                        disabled={addRecoveryContactDisabled}
                         color="norm"
                         className="inline-flex gap-2 items-center"
-                        onClick={() => {
-                            controller.notify({ type: 'add', value: 'recovery-contact' });
-                        }}
+                        onClick={addRecoveryContact}
                     >
                         <IcPlus className="shrink-0" />
                         {c('emergency_access').t`Add recovery contact`}
