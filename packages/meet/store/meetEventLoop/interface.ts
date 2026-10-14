@@ -3,8 +3,9 @@ import type { Api } from '@proton/shared/lib/interfaces';
 import type { MeetEventResponse } from '@proton/shared/lib/interfaces/Meet';
 
 import type { MeetingsState } from '../slices/meetings';
+import type { UserSettingsState } from '../slices/userSettings';
 
-export type MeetEventLoopRequiredState = MeetingsState;
+export type MeetEventLoopRequiredState = MeetingsState & UserSettingsState;
 
 export type MeetEventLoopCallback = ({
     event,
