@@ -9,15 +9,13 @@ import { useParticipantAnnouncements } from './useParticipantAnnouncements';
 import { useReactionAnnouncements } from './useReactionAnnouncements';
 import { useRecordingAnnouncements } from './useRecordingAnnouncements';
 import { useScreenShareAnnouncements } from './useScreenShareAnnouncements';
-import { useTurnRelayAnnouncements } from './useTurnRelayAnnouncements';
 
 interface AnnouncementSourcesOptions {
     connectionState: ConnectionAnnouncementState;
-    isUsingTurnRelay: boolean;
 }
 
 // Registration point: to announce a new event, add its source hook here.
-export const useAnnouncementSources = ({ connectionState, isUsingTurnRelay }: AnnouncementSourcesOptions) => {
+export const useAnnouncementSources = ({ connectionState }: AnnouncementSourcesOptions) => {
     useParticipantAnnouncements();
     useHandRaiseAnnouncements();
     useReactionAnnouncements();
@@ -27,6 +25,5 @@ export const useAnnouncementSources = ({ connectionState, isUsingTurnRelay }: An
     useConnectionAnnouncements(connectionState);
     useScreenShareAnnouncements();
     useMeetingTimeoutAnnouncements();
-    useTurnRelayAnnouncements(isUsingTurnRelay);
     useBackgroundEffectAnnouncements();
 };

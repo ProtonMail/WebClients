@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
 import { ConnectionState } from 'livekit-client';
 import { c } from 'ttag';
@@ -44,7 +44,6 @@ import { AudioRenderer } from './AudioRenderer';
 import './MeetingBody.scss';
 
 interface MeetingBodyProps {
-    isUsingTurnRelay: boolean;
     liveKitConnectionState: ConnectionState | null;
     showReconnectedMessage: boolean;
     setShowReconnectedMessage: React.Dispatch<React.SetStateAction<boolean>>;
@@ -55,7 +54,6 @@ interface MeetingBodyProps {
 }
 
 export const MeetingBody = ({
-    isUsingTurnRelay,
     liveKitConnectionState,
     showReconnectedMessage,
     setShowReconnectedMessage,
@@ -81,8 +79,6 @@ export const MeetingBody = ({
     const meetingLink = useMeetSelector(selectMeetingLink);
 
     const { handleRotateCamera, isVideoEnabled } = useMediaManagementContext();
-
-    const [bannerIsClosed, setBannerIsClosed] = useState(!isUsingTurnRelay);
 
     const isEarlyAccess = useFlag('MeetEarlyAccess');
 
@@ -121,15 +117,6 @@ export const MeetingBody = ({
                     isElectronApp && 'pt-6'
                 )}
             >
-                {!bannerIsClosed && (
-                    <TopBanner
-                        className="bg-norm meet-radius turn-top-banner"
-                        onClose={() => setBannerIsClosed(true)}
-                        // Announced centrally by useTurnRelayAnnouncements to avoid a double read.
-                        announce={false}
-                    >{c('Banner')
-                        .t`Connected via TURN relay mode due to your network restrictions. This may increase latency and affect call quality.`}</TopBanner>
-                )}
                 {/* Visual-only: announced centrally by useConnectionAnnouncements. */}
                 {isReconnecting && (
                     <TopBanner className="bg-warning meet-radius" announce={false}>
