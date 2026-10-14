@@ -28,7 +28,24 @@
         "applications/pass-desktop/native/**",
         "applications/pass-desktop/macOS/**"
     ],
+    "customManagers": [
+        {
+            "customType": "regex",
+            "description": "ci-base versions published by schedule:ci-base",
+            "managerFilePatterns": ["/^ci/images/ci-base-version\\.yml$/"],
+            "matchStrings": [
+                "# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)\\s+CI_BASE_VERSION: (?<currentValue>\\S+)"
+            ]
+        }
+    ],
     "packageRules": [
+        {
+            "description": "Our own image, in its own MR, opened even when other Renovate MRs have used up prConcurrentLimit. Harbor gives its tags no release timestamp, so minimumReleaseAge would hold every version back.",
+            "groupName": "ci-base",
+            "matchPackageNames": ["harbor.protontech.ch/web-clients/ci-base"],
+            "minimumReleaseAge": null,
+            "prConcurrentLimit": 0
+        },
         {
             "groupName": "Playwright",
             "matchPackageNames": ["/playwright/", "!@vitest/**"]
