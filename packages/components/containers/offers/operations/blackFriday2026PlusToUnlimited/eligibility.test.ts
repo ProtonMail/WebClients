@@ -200,7 +200,7 @@ describe('blackFriday2026PlusToUnlimited eligibility', () => {
     });
 
     describe('already redeemed the Black Friday sale', () => {
-        it.each([COUPON_CODES.BLACK_FRIDAY_2026_BUNDLE, COUPON_CODES.BLACK_FRIDAY_2026_BUNDLE_CS])(
+        it.each([COUPON_CODES.BLACK_FRIDAY_2026_NEW, COUPON_CODES.BLACK_FRIDAY_2026_BUNDLE])(
             'should not be eligible when the subscription carries %s',
             (couponCode) => {
                 expect(

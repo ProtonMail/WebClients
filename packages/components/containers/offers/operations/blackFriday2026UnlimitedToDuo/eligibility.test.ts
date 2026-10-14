@@ -163,7 +163,7 @@ describe('blackFriday2026UnlimitedToDuo eligibility', () => {
 
     describe('already redeemed the Black Friday sale', () => {
         // Includes Unlimited users who bought through the wave 1 Free to Unlimited deal.
-        it.each([COUPON_CODES.BLACK_FRIDAY_2026_BUNDLE, COUPON_CODES.BLACK_FRIDAY_2026_BUNDLE_CS])(
+        it.each([COUPON_CODES.BLACK_FRIDAY_2026_NEW, COUPON_CODES.BLACK_FRIDAY_2026_BUNDLE])(
             'should not be eligible when the subscription carries %s',
             (couponCode) => {
                 expect(
