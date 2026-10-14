@@ -27,7 +27,8 @@
 	background-color: color-mix(in srgb, var(--primary) 25%, transparent);
 }
 
-// The card-wide button is invisible; hovering darkens the thumbnail border, focus outlines the card.
+// The thumbnail and title buttons that open the chat look like plain content; hovering either
+// darkens the thumbnail border.
 .library-creation-card-action {
 	background: transparent;
 	border: none;

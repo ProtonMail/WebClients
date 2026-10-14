@@ -4,7 +4,6 @@ import type { ArtifactType } from '../../components/Conversation/artifact/parseA
 import type { CreationsListItem } from '../creations/hooks/useGeneratedGalleryCreations';
 
 export type LibraryCreationFilter = 'all' | ArtifactType;
-export type LibrarySortOrder = 'newest' | 'oldest';
 
 /** A listed creation plus what is known once its encrypted asset has been decrypted. */
 export interface LibraryCreationEntry {
@@ -12,21 +11,22 @@ export interface LibraryCreationEntry {
     title: string;
     artifactType?: ArtifactType;
     conversationTitle?: string;
+    /** Not downloaded and decrypted yet (or under way), so its title and type are still unknown. */
+    isPending?: boolean;
 }
 
 interface FilterOptions {
     filter: LibraryCreationFilter;
     query: string;
-    sort: LibrarySortOrder;
 }
 
 /**
- * Applies the type chip, the search box and the sort order. Entries still decrypting have no type
- * or title yet, so they only show under "All" with an empty search.
+ * Applies the type chip and the search box. Entries still decrypting have no type or title yet,
+ * so they only show under "All" with an empty search. Results are always newest-first.
  */
 export function filterAndSortCreations(
     entries: LibraryCreationEntry[],
-    { filter, query, sort }: FilterOptions
+    { filter, query }: FilterOptions
 ): LibraryCreationEntry[] {
     const needle = query.trim().toLowerCase();
 
@@ -43,8 +43,7 @@ export function filterAndSortCreations(
     });
 
     return matching.sort((a, b) => {
-        const difference = a.item.createdAt.getTime() - b.item.createdAt.getTime();
-        return sort === 'newest' ? -difference : difference;
+        return b.item.createdAt.getTime() - a.item.createdAt.getTime();
     });
 }
 

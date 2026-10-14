@@ -6,7 +6,7 @@ import { addAttachment } from '../../../redux/slices/core/attachments';
 import { addIdMapEntry } from '../../../redux/slices/core/idmap';
 import { extraThunkArguments } from '../../../redux/thunk';
 import { AssetType, type GeneratedAssetFromApi } from '../../../remote/api';
-import { getOlderPageCursor, hasOlderCreationsPage } from '../creationsPagination';
+import { CREATIONS_LIST_PAGE_SIZE, getNextCreationsListUntil } from '../creationsPagination';
 
 export type CreationsListItem = {
     localId: string;
@@ -30,9 +30,11 @@ export function useGeneratedGalleryCreations({ enabled = true }: Options = {}) {
     const isDataHydrating = useIsChatHistoryHydrating();
     const [items, setItems] = useState<CreationsListItem[]>([]);
     const [status, setStatus] = useState<FetchStatus>('idle');
-    const [hasMore, setHasMore] = useState(false);
-    const [oldestTimestamp, setOldestTimestamp] = useState<number | undefined>();
     const hasLoadedRef = useRef(false);
+    const isMountedRef = useRef(true);
+    const seenAssetIdsRef = useRef(new Set<string>());
+    // Where the list walk continues (CreateTimeUntil); undefined once the list is complete.
+    const nextUntilRef = useRef<number | undefined>(undefined);
 
     const seedAssetsIntoRedux = useCallback(
         (assets: GeneratedAssetFromApi[]) => {
@@ -89,101 +91,87 @@ export function useGeneratedGalleryCreations({ enabled = true }: Options = {}) {
         [dispatch, store]
     );
 
-    const fetchSection = useCallback(async (createTimeSince?: number, createTimeUntil?: number) => {
-        const { lumoApi } = extraThunkArguments;
-        if (!lumoApi) {
-            return [];
-        }
-
-        return lumoApi.listGeneratedAssets({
-            assetType: AssetType.GeneratedDoc,
-            createTimeSince,
-            createTimeUntil,
-        });
-    }, []);
-
-    /** One page older than `cursor` (seconds), seeded into Redux. */
-    const fetchOlderPage = useCallback(
-        async (cursor: number) => {
-            const assets = await fetchSection(undefined, cursor);
-            const pageItems = seedAssetsIntoRedux(assets);
-            const nextCursor = getOlderPageCursor(assets, cursor);
-            return { pageItems, nextCursor, hasMore: hasOlderCreationsPage(assets, nextCursor) };
+    /**
+     * Walks the list back from `startUntil` (see getNextCreationsListUntil), adding each page as it
+     * lands. A failed page keeps everything already listed and leaves the cursor where it stopped,
+     * so `retry` resumes from there.
+     */
+    const walk = useCallback(
+        async (startUntil: number) => {
+            const { lumoApi } = extraThunkArguments;
+            if (!lumoApi) {
+                return;
+            }
+            setStatus('loading');
+            let until: number | undefined = startUntil;
+            try {
+                while (until !== undefined) {
+                    const page = await lumoApi.listGeneratedAssets({
+                        assetType: AssetType.GeneratedDoc,
+                        pageSize: CREATIONS_LIST_PAGE_SIZE,
+                        // Explicit, or the server only looks at the 365 days before `until`.
+                        createTimeSince: 0,
+                        createTimeUntil: until,
+                    });
+                    if (!isMountedRef.current) {
+                        return;
+                    }
+                    // Windows overlap by a second (bounds are inclusive), so pages can repeat assets.
+                    const seen = seenAssetIdsRef.current;
+                    const unseen = page.filter((asset) => {
+                        return !seen.has(asset.ID);
+                    });
+                    for (const asset of unseen) {
+                        seen.add(asset.ID);
+                    }
+                    const pageItems = seedAssetsIntoRedux(unseen);
+                    if (pageItems.length > 0) {
+                        setItems((previous) => {
+                            return previous.concat(pageItems);
+                        });
+                    }
+                    until = getNextCreationsListUntil(page, until);
+                    nextUntilRef.current = until;
+                }
+                setStatus('loaded');
+            } catch (error) {
+                console.error('useGeneratedGalleryCreations: list failed', error);
+                if (isMountedRef.current) {
+                    setStatus('error');
+                }
+            }
         },
-        [fetchSection, seedAssetsIntoRedux]
+        [seedAssetsIntoRedux]
     );
 
-    const load = useCallback(async () => {
-        setStatus('loading');
-        try {
-            const now = Math.floor(Date.now() / 1000);
-            const since30 = now - 30 * 24 * 60 * 60;
+    const retry = useCallback(() => {
+        const until = nextUntilRef.current;
+        if (until !== undefined) {
+            void walk(until);
+        }
+    }, [walk]);
 
-            const recentAssets = await fetchSection(since30, now);
-            let loadedItems = seedAssetsIntoRedux(recentAssets);
-            // Older than the first 30 days loads on demand, like the image gallery.
-            let cursor: number | undefined = since30;
-            let more = true;
-            // With nothing recent, keep going back until something shows or the history ends, so
-            // older creations are never hidden behind an empty state. Ends because the cursor
-            // only ever moves back.
-            while (loadedItems.length === 0 && more && cursor !== undefined) {
-                const page = await fetchOlderPage(cursor);
-                loadedItems = page.pageItems;
-                cursor = page.nextCursor;
-                more = page.hasMore;
-            }
-            setItems(loadedItems);
-            setOldestTimestamp(cursor);
-            setHasMore(more && cursor !== undefined);
-            setStatus('loaded');
-        } catch (error) {
-            console.error('useGeneratedGalleryCreations: load failed', error);
-            setStatus('error');
-        }
-    }, [fetchSection, fetchOlderPage, seedAssetsIntoRedux]);
-
-    const loadMore = useCallback(async () => {
-        if (oldestTimestamp === undefined || status === 'loading') {
-            return;
-        }
-        setStatus('loading');
-        try {
-            const { pageItems, nextCursor, hasMore: more } = await fetchOlderPage(oldestTimestamp);
-            setItems((previous) => {
-                const known = new Set(
-                    previous.map((item) => {
-                        return item.localId;
-                    })
-                );
-                return previous.concat(
-                    pageItems.filter((item) => {
-                        return !known.has(item.localId);
-                    })
-                );
-            });
-            setOldestTimestamp(nextCursor);
-            setHasMore(more);
-            setStatus('loaded');
-        } catch (error) {
-            console.error('useGeneratedGalleryCreations: load more failed', error);
-            setStatus('error');
-        }
-    }, [oldestTimestamp, status, fetchOlderPage]);
+    useEffect(() => {
+        isMountedRef.current = true;
+        return () => {
+            isMountedRef.current = false;
+        };
+    }, []);
 
     useEffect(() => {
         if (!enabled || isDataHydrating || hasLoadedRef.current) {
             return;
         }
         hasLoadedRef.current = true;
-        void load();
-    }, [enabled, isDataHydrating, load]);
+        const now = Math.floor(Date.now() / 1000);
+        nextUntilRef.current = now;
+        void walk(now);
+    }, [enabled, isDataHydrating, walk]);
 
     return {
+        /** Newest first, as the list API returns them. */
         items,
         status,
-        hasMore,
-        loadMore,
-        reload: load,
+        retry,
     };
 }

@@ -1,10 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -14,13 +13,16 @@ import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
 import { useGeneratedGalleryCreations } from '../creations/hooks/useGeneratedGalleryCreations';
 import { GalleryView } from '../gallery/GalleryView';
 import { LibraryCreationsTab } from './LibraryCreationsTab';
-import type { LibraryCreationFilter, LibrarySortOrder } from './libraryCreations';
+import type { LibraryCreationFilter } from './libraryCreations';
 import { filterAndSortCreations } from './libraryCreations';
 import { useLibraryCreationEntries } from './useLibraryCreationEntries';
 
 import './LibraryView.scss';
 
 type LibraryTab = 'creations' | 'images';
+
+// Cards shown at first and added by each "Show more": fills whole rows at 4, 3 or 2 per row.
+const CREATIONS_SHOWN_PER_STEP = 24;
 
 interface LibraryTabButtonProps {
     label: string;
@@ -49,29 +51,57 @@ const LibraryTabButton = ({ label, count, isActive, onClick }: LibraryTabButtonP
 
 interface CreationsContentProps {
     searchQuery: string;
-    sort: LibrarySortOrder;
     creations: ReturnType<typeof useGeneratedGalleryCreations>;
 }
 
-const CreationsContent = ({ searchQuery, sort, creations }: CreationsContentProps) => {
+const CreationsContent = ({ searchQuery, creations }: CreationsContentProps) => {
     const [filter, setFilter] = useState<LibraryCreationFilter>('all');
-    const entries = useLibraryCreationEntries(creations.items);
-    const visibleEntries = filterAndSortCreations(entries, { filter, query: searchQuery, sort });
+    const [shownCount, setShownCount] = useState(CREATIONS_SHOWN_PER_STEP);
+    const isSearching = searchQuery.trim().length > 0;
+    // Titles and types are inside the encrypted assets, so search and filters need every one.
+    const isNarrowing = isSearching || filter !== 'all';
+
+    useEffect(() => {
+        setShownCount(CREATIONS_SHOWN_PER_STEP);
+    }, [filter, searchQuery]);
+
+    // Items are newest first, the order the cards show in, so the first `shownCount` are on screen.
+    const pullIds = useMemo(() => {
+        if (isNarrowing) {
+            return 'all' as const;
+        }
+        return new Set(
+            creations.items.slice(0, shownCount).map((item) => {
+                return item.localId;
+            })
+        );
+    }, [isNarrowing, creations.items, shownCount]);
+    const entries = useLibraryCreationEntries(creations.items, pullIds);
+    const matches = filterAndSortCreations(entries, { filter, query: searchQuery });
+    const pendingSearchCount = isNarrowing
+        ? entries.filter((entry) => {
+              return entry.isPending;
+          }).length
+        : 0;
 
     return (
         <div className="flex-1 min-h-0 overflow-auto">
             <div className="library-inner px-6 pb-8">
                 <LibraryCreationsTab
                     entries={entries}
-                    visibleEntries={visibleEntries}
-                    status={creations.status}
-                    hasMore={creations.hasMore}
-                    onLoadMore={() => {
-                        void creations.loadMore();
+                    visibleEntries={matches.slice(0, shownCount)}
+                    hasMore={matches.length > shownCount}
+                    onShowMore={() => {
+                        setShownCount((count) => {
+                            return count + CREATIONS_SHOWN_PER_STEP;
+                        });
                     }}
+                    pendingSearchCount={pendingSearchCount}
+                    status={creations.status}
+                    onRetry={creations.retry}
                     filter={filter}
                     onFilterChange={setFilter}
-                    isSearching={searchQuery.trim().length > 0}
+                    isSearching={isSearching}
                 />
             </div>
         </div>
@@ -93,7 +123,6 @@ export const LibraryView = ({ isProcessingAttachment, prefillQuery }: Props) => 
     const { artifactsView, imageTools } = useLumoFlags();
     const creations = useGeneratedGalleryCreations({ enabled: artifactsView });
     const [searchQuery, setSearchQuery] = useState('');
-    const [sort, setSort] = useState<LibrarySortOrder>('newest');
 
     const requestedTab = new URLSearchParams(location.search).get('tab');
     const activeTab: LibraryTab = (requestedTab === 'images' && imageTools) || !artifactsView ? 'images' : 'creations';
@@ -102,9 +131,7 @@ export const LibraryView = ({ isProcessingAttachment, prefillQuery }: Props) => 
         history.replace({ search: tab === 'images' ? '?tab=images' : '' });
     };
 
-    // The count covers what has loaded so far; "+" when older creations can still load.
-    const creationsCount =
-        creations.status === 'loaded' ? `${creations.items.length}${creations.hasMore ? '+' : ''}` : undefined;
+    const creationsCount = creations.status === 'loaded' ? `${creations.items.length}` : undefined;
 
     return (
         <LumoLayoutWithDrawer drawer={{ disabled: true }}>
@@ -119,31 +146,16 @@ export const LibraryView = ({ isProcessingAttachment, prefillQuery }: Props) => 
                             </p>
                         </div>
                         {activeTab === 'creations' && (
-                            <div className="flex flex-row flex-nowrap items-center gap-2">
+                            // Input grows by default (flex-1), so the wrapper sets its width: its
+                            // own row on small screens, a fixed width beside the title above that.
+                            <div className="w-full md:w-custom" style={{ '--md-w-custom': '12rem' }}>
                                 <Input
-                                    className="w-custom"
-                                    style={{ '--w-custom': '16rem' }}
                                     value={searchQuery}
                                     onValue={setSearchQuery}
                                     placeholder={c('collider_2025:Placeholder').t`Search library`}
                                     aria-label={c('collider_2025:Label').t`Search library`}
                                     prefix={<LumoIcon name="Search" size={16} className="color-weak" />}
                                 />
-                                <Button
-                                    shape="outline"
-                                    color="weak"
-                                    className="shrink-0 flex flex-row flex-nowrap items-center gap-2"
-                                    onClick={() => {
-                                        setSort((current) => {
-                                            return current === 'newest' ? 'oldest' : 'newest';
-                                        });
-                                    }}
-                                >
-                                    <LumoIcon name="ArrowUpDown" size={16} />
-                                    {sort === 'newest'
-                                        ? c('collider_2025:Action').t`Newest first`
-                                        : c('collider_2025:Action').t`Oldest first`}
-                                </Button>
                             </div>
                         )}
                     </div>
@@ -170,7 +182,7 @@ export const LibraryView = ({ isProcessingAttachment, prefillQuery }: Props) => 
                     </div>
                 </div>
                 {activeTab === 'creations' ? (
-                    <CreationsContent searchQuery={searchQuery} sort={sort} creations={creations} />
+                    <CreationsContent searchQuery={searchQuery} creations={creations} />
                 ) : (
                     <div className="relative flex flex-column flex-1 min-h-0">
                         <GalleryView isProcessingAttachment={isProcessingAttachment} prefillQuery={prefillQuery} />

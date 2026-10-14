@@ -50,7 +50,7 @@ describe('useLibraryCreationEntries', () => {
 
     it('starts at most the concurrent limit of downloads, then one more as each finishes', () => {
         const { rerender } = renderHook(() => {
-            return useLibraryCreationEntries(items);
+            return useLibraryCreationEntries(items, 'all');
         });
         expect(pulledIds()).toEqual(['asset-0', 'asset-1', 'asset-2', 'asset-3']);
 
@@ -88,9 +88,17 @@ describe('useLibraryCreationEntries', () => {
         expect(pulledIds()).toEqual(['asset-0', 'asset-1', 'asset-2', 'asset-3', 'asset-4']);
     });
 
+    it('downloads only the creations it is asked for, and marks the rest pending', () => {
+        const { result } = renderHook(() => {
+            return useLibraryCreationEntries(items, new Set(['asset-0', 'asset-1']));
+        });
+        expect(pulledIds()).toEqual(['asset-0', 'asset-1']);
+        expect(result.current[5].isPending).toBe(true);
+    });
+
     it('keeps an entry object while nothing about it changed', () => {
         const { result, rerender } = renderHook(() => {
-            return useLibraryCreationEntries(items);
+            return useLibraryCreationEntries(items, 'all');
         });
         const before = result.current;
 

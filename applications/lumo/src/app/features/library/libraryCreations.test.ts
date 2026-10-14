@@ -35,32 +35,22 @@ const ids = (list: LibraryCreationEntry[]) => {
 };
 
 describe('filterAndSortCreations', () => {
-    it('sorts newest or oldest first', () => {
-        expect(ids(filterAndSortCreations(entries, { filter: 'all', query: '', sort: 'newest' }))).toEqual([
+    it('sorts newest first', () => {
+        expect(ids(filterAndSortCreations(entries, { filter: 'all', query: '' }))).toEqual([
             'calc',
             'memo',
             'landing',
             'pending',
-        ]);
-        expect(ids(filterAndSortCreations(entries, { filter: 'all', query: '', sort: 'oldest' }))).toEqual([
-            'pending',
-            'landing',
-            'memo',
-            'calc',
         ]);
     });
 
     it('filters by type, leaving out entries that are still decrypting', () => {
-        expect(ids(filterAndSortCreations(entries, { filter: 'code', query: '', sort: 'newest' }))).toEqual(['calc']);
+        expect(ids(filterAndSortCreations(entries, { filter: 'code', query: '' }))).toEqual(['calc']);
     });
 
     it('searches titles and chat names, ignoring case', () => {
-        expect(ids(filterAndSortCreations(entries, { filter: 'all', query: 'MEMO', sort: 'newest' }))).toEqual([
-            'memo',
-        ]);
-        expect(ids(filterAndSortCreations(entries, { filter: 'all', query: 'strategy', sort: 'newest' }))).toEqual([
-            'landing',
-        ]);
+        expect(ids(filterAndSortCreations(entries, { filter: 'all', query: 'MEMO' }))).toEqual(['memo']);
+        expect(ids(filterAndSortCreations(entries, { filter: 'all', query: 'strategy' }))).toEqual(['landing']);
     });
 });
 
