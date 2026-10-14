@@ -2,6 +2,7 @@ import { act, renderHook, waitFor } from '@testing-library/react';
 
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '@proton/payments/core/constants';
 import type { AmountAndCurrency, ChargebeeIframeHandles } from '@proton/payments/core/interface';
+import { tracePaymentError } from '@proton/payments/sentry/capture';
 import { apiMock } from '@proton/test-api/api';
 
 import {
@@ -11,6 +12,8 @@ import {
     mockTokenStatus,
 } from './__mocks__/wallet-test-helpers';
 import { type ApplePayModalHandles, useApplePay } from './useApplePay';
+
+jest.mock('@proton/payments/sentry/capture', () => ({ tracePaymentError: jest.fn() }));
 
 const amountAndCurrency: AmountAndCurrency = { Amount: 1000, Currency: 'USD' };
 
@@ -173,6 +176,7 @@ describe('useApplePay', () => {
             await initialize(result.current.initialize);
 
             await waitFor(() => expect(applePayModalHandles.onMountFailure).toHaveBeenCalled());
+            expect(tracePaymentError).not.toHaveBeenCalled();
         }
     );
 
@@ -186,6 +190,7 @@ describe('useApplePay', () => {
         await waitFor(() => expect(result.current.initializing).toBe(false));
 
         expect(applePayModalHandles.onMountFailure).not.toHaveBeenCalled();
+        expect(tracePaymentError).not.toHaveBeenCalled();
     });
 
     it('removes its listeners on reset', async () => {
