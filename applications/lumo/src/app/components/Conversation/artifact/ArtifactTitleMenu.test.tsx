@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 
+import type { ArtifactMenuFormatOption } from './ArtifactActionsDropdown';
 import { ArtifactTitleMenu } from './ArtifactTitleMenu';
-import type { ArtifactMenuFormatOption } from './ArtifactTitleMenu';
 import type { ArtifactVersion } from './artifactRegistry';
 
 jest.mock('../../../hooks/useIsLumoSmallScreen', () => {

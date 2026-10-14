@@ -1,11 +1,10 @@
-import { Suspense, lazy, useEffect, useMemo, useRef, useState } from 'react';
+import { Suspense, lazy, useEffect, useRef, useState } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { isMac } from '@proton/shared/lib/helpers/browser';
@@ -16,28 +15,19 @@ import { useLumoFlags } from '../../../hooks/useLumoFlags';
 import { useArtifactPanelHostActions } from '../../../providers/ArtifactPanelHostProvider';
 import { useConversationActions } from '../../../providers/ConversationActionsProvider';
 import { useIsGuest } from '../../../providers/IsGuestProvider';
-import { createThrottledProgressCallback, yieldToMainThreadPaint } from '../../../util/export/exportUiHelpers';
-import { downloadBlob } from '../../../util/pdf/downloadBlob';
 import {
-    bucketArtifactContentLength,
     sendArtifactContentCopiedEvent,
-    sendArtifactDownloadedEvent,
     sendArtifactVersionHistoryOpenedEvent,
     sendArtifactVersionSelectedEvent,
     sendArtifactWebpageViewToggledEvent,
 } from '../../../util/telemetry';
-import type {
-    ArtifactDownloadFormat,
-    ArtifactDownloadResult,
-    ArtifactVersionSelectSource,
-} from '../../../util/telemetry';
+import type { ArtifactVersionSelectSource } from '../../../util/telemetry';
 import { useNativeComposerVisibilityApi } from '../../Composer/hooks/useNativeComposerVisibilityApi';
 import { LumoIcon } from '../../LumoIcon/LumoIcon';
-import type { IconName } from '../../LumoIcon/LumoIcon';
+import type { ArtifactMenuFormatOption } from './ArtifactActionsDropdown';
 import { ArtifactContent } from './ArtifactContent';
 import type { WebpageViewMode } from './ArtifactContent';
 import { useArtifactContext } from './ArtifactContext';
-import type { ArtifactExportOverlayHandle } from './ArtifactExportOverlay';
 import { ArtifactExportOverlay } from './ArtifactExportOverlay';
 import { ArtifactInlineEdit } from './ArtifactInlineEdit';
 import { ArtifactOlderVersionBanner } from './ArtifactOlderVersionBanner';
@@ -47,26 +37,11 @@ import { ArtifactPanelSpotlight } from './ArtifactPanelSpotlight';
 import { ArtifactPreviewErrorBoundary } from './ArtifactPreviewErrorBoundary';
 import type { ArtifactRichTextEditorHandle } from './ArtifactRichTextEditor';
 import { ArtifactTitleMenu } from './ArtifactTitleMenu';
-import type { ArtifactMenuFormatOption } from './ArtifactTitleMenu';
 import { ArtifactViewModeToggle } from './ArtifactViewModeToggle';
-import SaveArtifactToDriveModal from './SaveArtifactToDriveModal';
-import { buildArtifactFileForSave } from './artifactFileBytes';
-import { artifactSupportsPdfExport, exportArtifactPdf } from './artifactPdfExport';
-import type { ArtifactPdfExportResult } from './artifactPdfExport';
-import { artifactSupportsPptxExport, downloadArtifactPptx } from './artifactPptxExport';
 import type { ArtifactVersion } from './artifactRegistry';
-import type { ArtifactSaveFormat } from './artifactSaveFormats';
-import {
-    artifactSupportsSaveToDrive,
-    getArtifactFormatMenuLabel,
-    getArtifactSaveFormats,
-    getArtifactSourceMenuLabel,
-    isArtifactSaveFormatSupported,
-} from './artifactSaveFormats';
-import { buildArtifactSourceDownloadFile } from './artifactSourceDownload';
-import { getArtifactSourceDownloadExtension } from './artifactSourceDownloadExtension';
 import { normalizeDocumentCardFences } from './artifactVizCards';
 import type { ArtifactType } from './parseArtifacts';
+import { useArtifactFileActions } from './useArtifactFileActions';
 
 import './ArtifactPanel.scss';
 
@@ -125,14 +100,6 @@ interface PanelHeaderProps {
 
 export type ArtifactPanelLayout = 'docked' | 'mobile' | 'fullscreen';
 
-const getPdfDownloadTelemetryResult = (result: ArtifactPdfExportResult): ArtifactDownloadResult => {
-    if (result === 'unavailable' || result === 'failed') {
-        return 'error';
-    }
-
-    return result;
-};
-
 const getArtifactHeaderTypeLabel = (type?: ArtifactType, language?: string): string | undefined => {
     if (type !== 'code') {
         return undefined;
@@ -143,14 +110,6 @@ const getArtifactHeaderTypeLabel = (type?: ArtifactType, language?: string): str
 
 const getCopyShortcutLabel = (): string => {
     return isMac() ? '⌘C' : 'Ctrl+C';
-};
-
-const SAVE_FORMAT_ICONS: Record<ArtifactSaveFormat, IconName> = {
-    md: 'FileText',
-    txt: 'FileText',
-    pdf: 'File',
-    docx: 'FileType',
-    pptx: 'Presentation',
 };
 
 /** True when ⌘C/Ctrl+C should copy the whole artifact: nothing is selected and no field has focus. */
@@ -417,13 +376,6 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked', onBackToFiles 
     } = useArtifactContext();
     const { createNotification } = useNotifications();
     const { setManualArtifactEditActive } = useArtifactPanelHostActions();
-    const [exportingDownloadKind, setExportingDownloadKind] = useState<'pdf' | 'pptx' | null>(null);
-    const exportOverlayRef = useRef<ArtifactExportOverlayHandle>(null);
-    const throttledExportProgress = useMemo(() => {
-        return createThrottledProgressCallback((current, total) => {
-            exportOverlayRef.current?.updateProgress(current, total);
-        });
-    }, []);
     const [webpageViewMode, setWebpageViewMode] = useState<WebpageViewMode>('preview');
     const [manualEditActive, setManualEditActive] = useState(false);
     const [draftContent, setDraftContent] = useState('');
@@ -436,8 +388,24 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked', onBackToFiles 
     const { handleSaveManualArtifactEdit } = useConversationActions();
     const isGuest = useIsGuest();
     const { artifactsView: isArtifactsViewFlagEnabled } = useLumoFlags();
-    const [saveToDriveModal, setSaveToDriveModal, renderSaveToDriveModal] = useModalState();
-    const [saveToDriveFormat, setSaveToDriveFormat] = useState<ArtifactSaveFormat>('md');
+    const versions = selectedId ? registry[selectedId]?.versions : undefined;
+    const versionCount = versions?.length;
+    // Everything that changes an artifact (Lumo, inline edits, manual edits) works on the latest
+    // version, so an older version is shown read-only with a banner saying so.
+    const isViewingOlderVersion = versionCount !== undefined && selectedVersionIndex < versionCount - 1;
+    const {
+        downloadOptions,
+        saveToDriveOptions,
+        exportingKind: exportingDownloadKind,
+        exportFormatLabel: formatLabel,
+        exportOverlayRef,
+        saveToDriveModal,
+    } = useArtifactFileActions({
+        artifact: selectedArtifact ?? undefined,
+        layout,
+        viewedOlderVersion: isViewingOlderVersion,
+        exportsDisabled: isGenerating || manualEditActive,
+    });
     const headerRef = useRef<HTMLDivElement>(null);
     // Docked only: the fullscreen overlay stacks above spotlights, and the mobile layout has no room.
     // Waits for generation to finish so it never covers content that is still streaming in.
@@ -531,11 +499,6 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked', onBackToFiles 
     }
 
     const artifact = selectedArtifact!;
-    const versions = selectedId ? registry[selectedId]?.versions : undefined;
-    const versionCount = versions?.length;
-    // Everything that changes an artifact (Lumo, inline edits, manual edits) works on the latest
-    // version, so an older version is shown read-only with a banner saying so.
-    const isViewingOlderVersion = versionCount !== undefined && selectedVersionIndex < versionCount - 1;
     // Only latest-version document artifacts can be manually edited — editing an older version
     // would raise branch-fork semantics (overwrite vs. fork the conversation) that aren't solved yet.
     const canManuallyEdit =
@@ -552,14 +515,7 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked', onBackToFiles 
         return content === artifact.content || content === editableContent || content === normalizedOriginalContent;
     };
     const manualEditDirty = !isUnchangedDraft(draftContent) && draftContent.trim().length > 0;
-    const artifactSaveFormats =
-        artifactSupportsSaveToDrive(artifact.type) && !isGuest ? getArtifactSaveFormats(artifact.type) : [];
-    const canDownloadDocx = isArtifactSaveFormatSupported(artifact.type, 'docx') && !isGenerating && !manualEditActive;
-    const canDownloadPdf = artifactSupportsPdfExport(artifact.type) && !isGenerating && !manualEditActive;
-    const canDownloadPptx = artifactSupportsPptxExport(artifact.type) && !isGenerating && !manualEditActive;
     const exportingDownload = exportingDownloadKind !== null;
-    const formatLabel =
-        exportingDownloadKind === 'pptx' ? c('collider_2025: Info').t`PPTX` : c('collider_2025: Info').t`PDF`;
     const exportHeaderStatusLabel = exportingDownload
         ? c('collider_2025: Info').t`Preparing ${formatLabel}…`
         : undefined;
@@ -628,24 +584,6 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked', onBackToFiles 
         });
     };
 
-    const handleSaveToDrive = (format: ArtifactSaveFormat) => {
-        setSaveToDriveFormat(format);
-        setSaveToDriveModal(true);
-    };
-
-    const contentLengthBucket = bucketArtifactContentLength(artifact.content.length);
-
-    const reportDownload = (format: ArtifactDownloadFormat, result: ArtifactDownloadResult) => {
-        sendArtifactDownloadedEvent({
-            format,
-            artifactType: artifact.type,
-            layout,
-            result,
-            contentLengthBucket,
-            viewedOlderVersion: isViewingOlderVersion,
-        });
-    };
-
     const handleOpenVersionHistory = () => {
         sendArtifactVersionHistoryOpenedEvent({
             artifactType: artifact.type,
@@ -664,112 +602,6 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked', onBackToFiles 
         goToVersion(index);
     };
 
-    const handleDownload = async () => {
-        try {
-            const { data, fileName, mimeType } = await buildArtifactSourceDownloadFile(artifact);
-            downloadBlob(new Blob([data], { type: mimeType }), fileName);
-            reportDownload('source', 'success');
-        } catch {
-            reportDownload('source', 'error');
-            createNotification({
-                type: 'error',
-                text: c('collider_2025: Error').t`Could not download this artifact.`,
-            });
-        }
-    };
-
-    // No progress overlay: conversion takes well under a second for typical documents, and the
-    // overlay would only flash. The error toast covers the chunk failing to load.
-    const handleDownloadDocx = async () => {
-        try {
-            const file = await buildArtifactFileForSave(artifact, 'docx');
-            downloadBlob(new Blob([file.data], { type: file.mimeType }), file.fileName);
-            reportDownload('docx', 'success');
-        } catch {
-            reportDownload('docx', 'error');
-            createNotification({
-                type: 'error',
-                text: c('collider_2025: Error').t`Could not export this artifact as a Word document.`,
-            });
-        }
-    };
-
-    const handleDownloadPdf = async () => {
-        setExportingDownloadKind('pdf');
-        await yieldToMainThreadPaint();
-
-        let result: ArtifactPdfExportResult = 'failed';
-        try {
-            result = await exportArtifactPdf(artifact, {
-                onProgress: throttledExportProgress,
-            });
-        } catch {
-            result = 'failed';
-        } finally {
-            setExportingDownloadKind(null);
-        }
-
-        reportDownload('pdf', getPdfDownloadTelemetryResult(result));
-
-        if (result === 'success') {
-            createNotification({
-                type: 'success',
-                text: c('collider_2025: Info').t`PDF downloaded.`,
-            });
-        } else if (result === 'print_dialog') {
-            // No toast: the print dialog is the feedback, and in Chrome it blocks until closed, so a
-            // toast would only appear after the user has already saved or cancelled.
-        } else if (result === 'print_fallback') {
-            createNotification({
-                type: 'warning',
-                text: c('collider_2025: Info')
-                    .t`PDF export failed — opened the print view instead. Choose “Save as PDF” in the print dialog.`,
-            });
-        } else if (result === 'image_fallback') {
-            createNotification({
-                type: 'warning',
-                text: c('collider_2025: Info')
-                    .t`Couldn't open the print dialog, so the PDF was downloaded with each page as an image.`,
-            });
-        } else {
-            createNotification({
-                type: 'error',
-                text: c('collider_2025: Error').t`Could not export this artifact as PDF.`,
-            });
-        }
-    };
-
-    const handleDownloadPptx = async () => {
-        setExportingDownloadKind('pptx');
-        await yieldToMainThreadPaint();
-        try {
-            const result = await downloadArtifactPptx(artifact, {
-                onProgress: throttledExportProgress,
-            });
-            if (result === 'success') {
-                reportDownload('pptx', 'success');
-                createNotification({
-                    type: 'success',
-                    text: c('collider_2025: Info').t`PPTX downloaded.`,
-                });
-            } else {
-                reportDownload('pptx', 'error');
-                createNotification({
-                    type: 'error',
-                    text: c('collider_2025: Error').t`Could not export this artifact as PPTX.`,
-                });
-            }
-        } catch {
-            reportDownload('pptx', 'error');
-            createNotification({
-                type: 'error',
-                text: c('collider_2025: Error').t`Could not export this artifact as PPTX.`,
-            });
-        } finally {
-            setExportingDownloadKind(null);
-        }
-    };
-
     const handleWebpageViewModeChange = (mode: WebpageViewMode) => {
         sendArtifactWebpageViewToggledEvent({
             mode,
@@ -777,64 +609,6 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked', onBackToFiles 
         });
         setWebpageViewMode(mode);
     };
-
-    const sourceExtension = getArtifactSourceDownloadExtension(artifact);
-    // Source (what Creations syncs) first, then the exports this type supports.
-    const downloadOptions: ArtifactMenuFormatOption[] = [
-        {
-            key: 'source',
-            label: getArtifactSourceMenuLabel(artifact.type),
-            extension: `.${sourceExtension}`,
-            icon: artifact.type === 'document' ? 'FileText' : 'FileCode',
-            onSelect: () => {
-                void handleDownload();
-            },
-        },
-    ];
-    if (canDownloadPdf) {
-        downloadOptions.push({
-            key: 'pdf',
-            label: getArtifactFormatMenuLabel('pdf'),
-            extension: '.pdf',
-            icon: SAVE_FORMAT_ICONS.pdf,
-            onSelect: () => {
-                void handleDownloadPdf();
-            },
-        });
-    }
-    if (canDownloadDocx) {
-        downloadOptions.push({
-            key: 'docx',
-            label: getArtifactFormatMenuLabel('docx'),
-            extension: '.docx',
-            icon: SAVE_FORMAT_ICONS.docx,
-            onSelect: () => {
-                void handleDownloadDocx();
-            },
-        });
-    }
-    if (canDownloadPptx) {
-        downloadOptions.push({
-            key: 'pptx',
-            label: getArtifactFormatMenuLabel('pptx'),
-            extension: '.pptx',
-            icon: SAVE_FORMAT_ICONS.pptx,
-            onSelect: () => {
-                void handleDownloadPptx();
-            },
-        });
-    }
-    const saveToDriveOptions: ArtifactMenuFormatOption[] = artifactSaveFormats.map((format) => {
-        return {
-            key: format,
-            label: getArtifactFormatMenuLabel(format),
-            extension: `.${format}`,
-            icon: SAVE_FORMAT_ICONS[format],
-            onSelect: () => {
-                handleSaveToDrive(format);
-            },
-        };
-    });
 
     panelKeyDownRef.current = (event: KeyboardEvent) => {
         if (manualEditActive || isSelectedVersionProvisional || exportingDownload) {
@@ -962,9 +736,7 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked', onBackToFiles 
                     </div>
                 )}
             </div>
-            {artifactSaveFormats.length > 0 && renderSaveToDriveModal && (
-                <SaveArtifactToDriveModal {...saveToDriveModal} artifact={artifact} format={saveToDriveFormat} />
-            )}
+            {saveToDriveModal}
         </div>
     );
 };

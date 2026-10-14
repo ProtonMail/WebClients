@@ -268,6 +268,9 @@ export type ArtifactRevisionSource = 'prompt' | 'inline-edit' | 'manual-edit';
 
 export type ArtifactDownloadFormat = 'source' | 'txt' | 'docx' | 'pdf' | 'pptx';
 
+/** Where a download started: one of the panel layouts, or a card's menu in the Library. */
+export type ArtifactDownloadLayout = ArtifactPanelLayout | 'library';
+
 /**
  * - `success`: a file was generated and downloaded.
  * - `print_dialog`: document PDF: the print dialog opened for "Save as PDF". Browsers don't report
@@ -527,7 +530,7 @@ export const sendArtifactDownloadedEvent = ({
 }: {
     format: ArtifactDownloadFormat;
     artifactType: ArtifactType;
-    layout: ArtifactPanelLayout;
+    layout: ArtifactDownloadLayout;
     result: ArtifactDownloadResult;
     contentLengthBucket: ArtifactContentLengthBucket;
     viewedOlderVersion: boolean;
