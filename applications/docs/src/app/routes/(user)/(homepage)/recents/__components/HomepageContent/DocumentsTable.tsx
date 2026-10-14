@@ -31,7 +31,6 @@ import type { ComponentPropsWithoutRef, ReactNode } from 'react'
 import { Fragment, useEffect, useRef, useState } from 'react'
 import { c } from 'ttag'
 import { useApplication } from '~/utils/application-context'
-import { useRenameWithSDK } from '~/utils/flags'
 import { useDocumentActions } from '../../__utils/document-actions'
 import { getOwnerName } from '../../__utils/get-owner-name'
 import type { RecentsSort } from '../../__utils/homepage-view'
@@ -286,7 +285,6 @@ function Row({ document, variant, addresses }: RowProps) {
   const { displayName, avatarContent } = useNameAndAvatar(document, addresses)
   const { updateRenamedDocumentInCache } = useHomepageView()
   const { createNotification } = useNotifications()
-  const renameWithSDK = useRenameWithSDK()
 
   // Force re-render every REFRESH_DATE_INTERVAL milliseconds
   const [, setState] = useState(false)
@@ -384,14 +382,12 @@ function Row({ document, variant, addresses }: RowProps) {
                       type: 'error',
                       text: c('Notification').t`Failed to rename document`,
                     })
-                    if (renameWithSDK) {
-                      traceError(error, {
-                        tags: {
-                          initiative: SentryRealtimeInitiatives.SDK_SWITCH,
-                          feature: 'DocsRenameWithDriveSDK',
-                        },
-                      })
-                    }
+                    traceError(error, {
+                      tags: {
+                        initiative: SentryRealtimeInitiatives.SDK_SWITCH,
+                        feature: 'DocsRenameWithDriveSDK',
+                      },
+                    })
                   }
                 }
 

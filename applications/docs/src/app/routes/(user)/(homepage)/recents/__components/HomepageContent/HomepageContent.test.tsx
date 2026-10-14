@@ -101,7 +101,7 @@ describe('HomepageContent', () => {
 
   test('Show no items found message when results are empty', async () => {
     renderWithProviders(<HomepageContent />, 'empty_recents')
-    await screen.findByText(/Create an end-to-end encrypted document./)
+    await screen.findByText(/Create end-to-end encrypted documents and spreadsheets./)
   })
 
   test('Show context menu when button is clicked', async () => {

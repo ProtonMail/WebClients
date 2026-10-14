@@ -84,8 +84,6 @@ const getAllowedProducts = (products: OrganizationSettingsAllowedProduct[]) => {
 
 const defaultOptions: Parameters<typeof getAvailableApps>[0] = {
     user: getProtonUser(),
-    isDocsHomepageAvailable: true,
-    isSheetsAvailable: true,
     isAuthenticatorAvailable: true,
     isSpacesAvailable: true,
     context: 'app',
@@ -107,37 +105,6 @@ describe('available apps', () => {
                 getAvailableApps({
                     ...defaultOptions,
                     context: 'dropdown',
-                }),
-                allApps
-            );
-        });
-
-        it('should filter apps for proton users with docs homepage disabled', () => {
-            assertEquals(
-                getAvailableApps({
-                    ...defaultOptions,
-                    isDocsHomepageAvailable: false,
-                }),
-                allApps
-            );
-        });
-
-        it('should filter apps for proton users with docs homepage disabled in a dropdown context', () => {
-            assertEquals(
-                getAvailableApps({
-                    ...defaultOptions,
-                    context: 'dropdown',
-                    isDocsHomepageAvailable: false,
-                }),
-                new Set(allApps).difference(new Set([APPS.PROTONDOCS]))
-            );
-        });
-
-        it('should filter apps for proton users with docs homepage disabled', () => {
-            assertEquals(
-                getAvailableApps({
-                    ...defaultOptions,
-                    isDocsHomepageAvailable: false,
                 }),
                 allApps
             );
@@ -232,18 +199,6 @@ describe('available apps', () => {
                 );
             });
 
-            it('should filter apps with only drive allowed in a dropdown context without docs', () => {
-                assertEquals(
-                    getAvailableApps({
-                        ...defaultOptions,
-                        isDocsHomepageAvailable: false,
-                        context: 'dropdown',
-                        organization: getAllowedProducts([Product.Drive]),
-                    }),
-                    [APPS.PROTONDRIVE, APPS.PROTONSHEETS]
-                );
-            });
-
             it('should filter apps with all apps allowed', () => {
                 assertEquals(
                     getAvailableApps({
@@ -306,17 +261,6 @@ describe('available apps', () => {
                     organization: getAllowedProducts([Product.Drive]),
                 }),
                 [APPS.PROTONDRIVE, APPS.PROTONDOCS, APPS.PROTONSHEETS]
-            );
-
-            assertEquals(
-                getAvailableApps({
-                    ...defaultOptions,
-                    context: 'dropdown',
-                    isDocsHomepageAvailable: false,
-                    user: getNonPrivateExternalUser(),
-                    organization: getAllowedProducts([Product.Drive]),
-                }),
-                [APPS.PROTONDRIVE, APPS.PROTONSHEETS]
             );
 
             assertEquals(

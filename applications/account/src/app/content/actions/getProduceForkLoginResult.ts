@@ -52,8 +52,6 @@ const getIsAppAvailable = (app: APP_NAMES, session: AuthSession) => {
         getAvailableApps({
             user: session.data.User,
             context: 'app',
-            isDocsHomepageAvailable: true,
-            isSheetsAvailable: true,
             isAuthenticatorAvailable: true,
             isSpacesAvailable: true,
         }).some((availableApp) => product === getProduct(availableApp))
