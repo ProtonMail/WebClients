@@ -1,6 +1,7 @@
 import {
     readOAuthCallback,
     readOAuthRedirectState,
+    readOAuthSession,
     removeOAuthCallbackParams,
     storeOAuthRedirectState,
 } from './useOAuthRedirectFlow.helpers';
@@ -134,6 +135,52 @@ describe('useOAuthRedirectFlow helpers', () => {
             removeOAuthCallbackParams(url);
 
             expect(url.searchParams.get('code')).toBe('1');
+        });
+    });
+
+    describe('readOAuthSession', () => {
+        it('should return the session when state matches, without consuming it', () => {
+            storeOAuthRedirectState({ uid: 'abc', importEmails: true, sessionUID: 'session', sessionLocalID: 3 });
+
+            expect(readOAuthSession(new URLSearchParams('code=1&state=abc'))).toEqual({ UID: 'session', localID: 3 });
+            expect(sessionStorage.getItem(STORAGE_KEY)).not.toBeNull();
+        });
+
+        it('should keep a local ID of 0', () => {
+            storeOAuthRedirectState({ uid: 'abc', importEmails: true, sessionUID: 'session', sessionLocalID: 0 });
+
+            expect(readOAuthSession(new URLSearchParams('code=1&state=abc'))).toEqual({ UID: 'session', localID: 0 });
+        });
+
+        it.each([
+            ['missing', undefined],
+            ['a string', '3'],
+            ['not an integer', 1.5],
+        ])('should return the UID without a local ID when it is %s', (_, sessionLocalID) => {
+            sessionStorage.setItem(
+                STORAGE_KEY,
+                JSON.stringify({ uid: 'abc', importEmails: true, sessionUID: 'session', sessionLocalID })
+            );
+
+            expect(readOAuthSession(new URLSearchParams('code=1&state=abc'))).toEqual({
+                UID: 'session',
+                localID: undefined,
+            });
+        });
+
+        it.each([
+            ['state mismatch', 'code=1&state=other'],
+            ['no state', 'action=byoe-mobile'],
+        ])('should return undefined on %s', (_, query) => {
+            storeOAuthRedirectState({ uid: 'abc', importEmails: true, sessionUID: 'session', sessionLocalID: 3 });
+
+            expect(readOAuthSession(new URLSearchParams(query))).toBeUndefined();
+        });
+
+        it('should return undefined when no session was stored', () => {
+            storeOAuthRedirectState({ uid: 'abc', importEmails: true });
+
+            expect(readOAuthSession(new URLSearchParams('code=1&state=abc'))).toBeUndefined();
         });
     });
 });

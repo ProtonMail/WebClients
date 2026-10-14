@@ -10,6 +10,18 @@ export interface OAuthRedirectState {
     redirect?: string;
     /** Epoch ms at which the funnel began, so its duration survives the redirect (telemetry timers live in memory). */
     creationStartedAt?: number;
+    /** Session to resume when the provider sends the user back, for apps whose one-time login link is consumed on load. */
+    sessionUID?: string;
+    /**
+     * Local ID of the persisted session, when there is one. It lets the app resume the session with its key password,
+     * which is encrypted in local storage with the client key held by the API.
+     */
+    sessionLocalID?: number;
+}
+
+export interface OAuthSession {
+    UID: string;
+    localID: number | undefined;
 }
 
 export type OAuthCallbackResult =
@@ -40,6 +52,11 @@ export const readOAuthRedirectState = (): OAuthRedirectState | undefined => {
             importEmails: parsed.importEmails,
             redirect: typeof parsed.redirect === 'string' ? parsed.redirect : undefined,
             creationStartedAt: typeof parsed.creationStartedAt === 'number' ? parsed.creationStartedAt : undefined,
+            sessionUID: typeof parsed.sessionUID === 'string' ? parsed.sessionUID : undefined,
+            sessionLocalID:
+                typeof parsed.sessionLocalID === 'number' && Number.isInteger(parsed.sessionLocalID)
+                    ? parsed.sessionLocalID
+                    : undefined,
         };
     } catch {
         return;
@@ -72,6 +89,21 @@ export const readOAuthCallback = (searchParams: URLSearchParams): OAuthCallbackR
     }
 
     return { type: 'code', code, state: stored };
+};
+
+/**
+ * Returns the session stored before leaving, when the URL carries the `state` of that authorization.
+ * Unlike `readOAuthCallback`, it does not consume the stored state.
+ */
+export const readOAuthSession = (searchParams: URLSearchParams): OAuthSession | undefined => {
+    const state = searchParams.get('state');
+    const stored = readOAuthRedirectState();
+
+    if (!state || !stored || stored.uid !== state || !stored.sessionUID) {
+        return;
+    }
+
+    return { UID: stored.sessionUID, localID: stored.sessionLocalID };
 };
 
 /** Returns a copy of the URL without the params added by the provider. Other params (e.g. `action`) are kept. */
