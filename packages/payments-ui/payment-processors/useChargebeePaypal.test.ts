@@ -2,10 +2,13 @@ import { act, renderHook, waitFor } from '@testing-library/react';
 
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '@proton/payments/core/constants';
 import type { AmountAndCurrency, ChargebeeIframeHandles } from '@proton/payments/core/interface';
+import { tracePaymentError } from '@proton/payments/sentry/capture';
 import { addApiMock, apiMock } from '@proton/test-api/api';
 
 import { getMockedEvents, getMockedWalletHandles, mockPaymentIntent } from './__mocks__/wallet-test-helpers';
 import { type ChargebeePaypalModalHandles, useChargebeePaypal } from './useChargebeePaypal';
+
+jest.mock('@proton/payments/sentry/capture', () => ({ tracePaymentError: jest.fn() }));
 
 const amountAndCurrency: AmountAndCurrency = { Amount: 1000, Currency: 'USD' };
 
@@ -111,6 +114,24 @@ describe('useChargebeePaypal', () => {
         });
 
         expect(rendered.onChargeable).not.toHaveBeenCalled();
+    });
+
+    it('reports a token status failure as a refactor-path error without rethrowing it', async () => {
+        const error = new Error('Failed to fetch');
+        addApiMock('payments/v5/tokens/token', () => {
+            throw error;
+        });
+        const rendered = await initialized(renderPaypal());
+
+        await act(async () => {
+            await rendered.fire('onPaypalAuthorized');
+        });
+
+        expect(rendered.chargebeePaypalModalHandles.onFailure).not.toHaveBeenCalled();
+        expect(tracePaymentError).toHaveBeenCalledWith(
+            error,
+            expect.objectContaining({ component: 'use-chargebee-wallet', featureFlag: 'PaymentProcessorsRefactor' })
+        );
     });
 
     // onAuthorize is what dismisses the pending-verification modal, so it must fire even when the

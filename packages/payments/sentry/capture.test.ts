@@ -179,6 +179,51 @@ describe('tracePaymentError', () => {
 
         expect(traceError).not.toHaveBeenCalled();
     });
+
+    describe('raised on a feature-flagged code path', () => {
+        const featureFlag = 'PaymentProcessorsRefactor';
+
+        it('should prefix the title with the flag while keeping the message and stack', () => {
+            const error = new DisplayablePaymentError('Card was declined');
+
+            tracePaymentError(error, { component: 'use-chargebee-wallet', featureFlag });
+
+            const [captured] = (traceError as jest.Mock).mock.calls[0];
+            expect(captured.name).toBe('[PaymentProcessorsRefactor] DisplayablePaymentError');
+            expect(captured.message).toBe('Card was declined');
+            expect(captured.stack).toBe(error.stack);
+        });
+
+        it('should not mutate the error of the caller', () => {
+            const error = new DisplayablePaymentError('Card was declined');
+
+            tracePaymentError(error, { component: 'use-chargebee-wallet', featureFlag });
+
+            expect((traceError as jest.Mock).mock.calls[0][0]).not.toBe(error);
+            expect(error.name).toBe('DisplayablePaymentError');
+        });
+
+        it('should prefix a non-error payload titled with its underlying reason', () => {
+            tracePaymentError(chargebeeFailure, { component: 'use-chargebee-wallet', featureFlag });
+
+            const [captured] = (traceError as jest.Mock).mock.calls[0];
+            expect(captured.name).toBe('[PaymentProcessorsRefactor] ChargebeeClientError');
+            expect(captured.message).toBe('Allowed values for paymentType: [RECURRING, ONETIME]');
+        });
+
+        it('should split into its own issue and tag the flag', () => {
+            tracePaymentError(chargebeeFailure, { component: 'use-chargebee-wallet', featureFlag });
+
+            expect(scope.setFingerprint).toHaveBeenCalledWith([
+                'payments',
+                'use-chargebee-wallet',
+                'PaymentProcessorsRefactor',
+                'ChargebeeClientError',
+                'Allowed values for paymentType: [RECURRING, ONETIME]',
+            ]);
+            expect(collectTags()).toMatchObject({ featureFlag });
+        });
+    });
 });
 
 describe('capturePaymentMessage', () => {
@@ -198,6 +243,26 @@ describe('capturePaymentMessage', () => {
             'ChargebeeClientError',
             'Payments: Unhandled Chargebee error',
         ]);
+    });
+
+    it('should prefix the message and split the issue when raised on a feature-flagged code path', () => {
+        capturePaymentMessage(
+            'Payments: Unhandled Chargebee error',
+            { component: 'use-chargebee-wallet', featureFlag: 'PaymentProcessorsRefactor' },
+            chargebeeFailure
+        );
+
+        expect(captureMessage).toHaveBeenCalledWith(
+            '[PaymentProcessorsRefactor] Payments: Unhandled Chargebee error – ChargebeeClientError: Allowed values for paymentType: [RECURRING, ONETIME]'
+        );
+        expect(scope.setFingerprint).toHaveBeenCalledWith([
+            'payments',
+            'use-chargebee-wallet',
+            'PaymentProcessorsRefactor',
+            'ChargebeeClientError',
+            'Payments: Unhandled Chargebee error',
+        ]);
+        expect(collectTags()).toMatchObject({ featureFlag: 'PaymentProcessorsRefactor' });
     });
 
     it('should leave a causeless message untouched', () => {
