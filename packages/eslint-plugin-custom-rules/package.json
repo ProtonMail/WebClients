@@ -12,6 +12,7 @@
     },
     "devDependencies": {
         "@proton/jest-swc-preset": "workspace:^",
+        "@types/jest": "catalog:",
         "eslint": "^10.11.0",
         "jest": "^30.5.2"
     }

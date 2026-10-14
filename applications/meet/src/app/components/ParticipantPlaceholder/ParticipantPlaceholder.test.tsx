@@ -32,7 +32,8 @@ describe('ParticipantPlaceholder', () => {
         const initialsContainer = screen.getByText('JD').closest('div');
         expect(initialsContainer).toHaveClass('text-3xl');
         expect(initialsContainer).toHaveClass('radius-normal');
-        expect(initialsContainer).toHaveStyle({ '--w-custom': '5rem', '--h-custom': '5rem' });
+        expect(initialsContainer?.style.getPropertyValue('--w-custom')).toBe('5rem');
+        expect(initialsContainer?.style.getPropertyValue('--h-custom')).toBe('5rem');
     });
 
     it('applies correct styling for small view', () => {
@@ -48,7 +49,8 @@ describe('ParticipantPlaceholder', () => {
         const initialsContainer = screen.getByText('JD').closest('div');
         expect(initialsContainer).toHaveClass('text-lg');
         expect(initialsContainer).toHaveClass('radius-small');
-        expect(initialsContainer).toHaveStyle({ '--w-custom': '2.5rem', '--h-custom': '2.5rem' });
+        expect(initialsContainer?.style.getPropertyValue('--w-custom')).toBe('2.5rem');
+        expect(initialsContainer?.style.getPropertyValue('--h-custom')).toBe('2.5rem');
     });
 
     it('renders with correct placeholder container classes', () => {

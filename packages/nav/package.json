@@ -20,6 +20,7 @@
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
         "@proton/vitest-config": "workspace:^",
+        "@types/webpack-env": "catalog:",
         "@typescript/native": "npm:typescript@^7.0.2",
         "@vitest/coverage-v8": "^5.0.2",
         "@vitest/ui": "^5.0.2",

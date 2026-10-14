@@ -9,7 +9,7 @@ const jestConfig: Config = {
     roots: ["<rootDir>", "<rootDir>/../../packages/shared/tests/desktop"],
     testMatch: ["<rootDir>/src/**/*.test.ts", "**/packages/shared/tests/desktop/urls.spec.ts"],
     transformIgnorePatterns: [
-        "node_modules/(?!(@proton/shared|@proton/components|@protontech/telemetry|@protontech/crypto|openpgp|@openpgp/web-stream-tools|otpauth|@protontech/pass-rust-core/ui|@preact/signals-core)/)",
+        "node_modules/(?!(\\.pnpm|@proton/shared|@proton/components|@protontech/telemetry|@protontech/crypto|openpgp|@protontech/openpgp|@openpgp/web-stream-tools|otpauth|@protontech/pass-rust-core/ui|@preact/signals-core)/)",
     ],
     moduleNameMapper: {
         "\\.css": "<rootDir>/src/utils/tests/fileMock.ts",
