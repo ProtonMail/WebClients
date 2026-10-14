@@ -12,4 +12,4 @@ There are two "entrypoints" (root React components):
 
 Depending on the context (e.g. URL), either the "public" or the "user" entrypoint component is rendered.
 
-See the [contributing guide](./contributing.md) for more information on the codebase, coding guidelines, a glossary of concepts, etc.
+See the [contributing guide](./contributing.md) for more information on the codebase, [`CODING_STANDARDS.md`](./CODING_STANDARDS.md) for coding guidelines, and [`GLOSSARY.md`](./GLOSSARY.md) for a glossary of concepts.
