@@ -123,14 +123,14 @@ export function isRegionalCurrency(currency: Currency): boolean {
     return !isMainCurrency(currency);
 }
 
-export const NEW_BATCH_CURRENCIES_FEATURE_FLAG: FeatureFlag | undefined = 'RegionalCurrenciesBatch3';
+export const NEW_BATCH_CURRENCIES_FEATURE_FLAG: FeatureFlag | undefined = undefined;
 
 function isNewBatchRegionalCurrency(currency: Currency | undefined): boolean {
     if (!currency) {
         return false;
     }
 
-    const newBatchRegionalCurrencies: readonly Currency[] = ['JPY', 'KRW', 'PLN', 'SGD', 'HKD'];
+    const newBatchRegionalCurrencies: readonly Currency[] = [];
     return newBatchRegionalCurrencies.includes(currency);
 }
 
