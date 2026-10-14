@@ -97,3 +97,10 @@ export const preparePlainText = async (
 
     return { plainText };
 };
+
+/**
+ * Plain text drafts are prepared without escaping because the composer edits the raw text.
+ * They must be escaped like received messages before being rendered as HTML.
+ */
+export const getPlainTextToRender = (plainText: string | undefined, isDraft: boolean) =>
+    isDraft ? transformLinkify({ content: plainText }) : plainText || '';
