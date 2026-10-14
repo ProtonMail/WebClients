@@ -74,7 +74,7 @@ describe('useNonBYOESyncs', () => {
 
         const { result } = renderHook(() => useNonBYOESyncs());
 
-        expect(result.current).toEqual([nonByoeSync.id]);
+        expect(result.current).toEqual([nonByoeSync]);
     });
 
     it('should include syncs whose account does not match any address', () => {
@@ -83,7 +83,7 @@ describe('useNonBYOESyncs', () => {
 
         const { result } = renderHook(() => useNonBYOESyncs());
 
-        expect(result.current).toEqual([nonByoeSync.id]);
+        expect(result.current).toEqual([nonByoeSync]);
     });
 
     it('should return syncs ordered by startDate descending', () => {
@@ -92,7 +92,7 @@ describe('useNonBYOESyncs', () => {
 
         const { result } = renderHook(() => useNonBYOESyncs());
 
-        expect(result.current).toEqual([nonByoeSync2.id, nonByoeSync.id]);
+        expect(result.current).toEqual([nonByoeSync2, nonByoeSync]);
     });
 
     it('should return all syncs when there are no BYOE addresses', () => {
@@ -101,7 +101,7 @@ describe('useNonBYOESyncs', () => {
 
         const { result } = renderHook(() => useNonBYOESyncs());
 
-        expect(result.current).toEqual([byoeSync.id, nonByoeSync.id]);
+        expect(result.current).toEqual([byoeSync, nonByoeSync]);
     });
 
     it('should return an empty array when there are no syncs', () => {

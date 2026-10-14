@@ -11,12 +11,6 @@ export const selectSync = (state: EasySwitchState): SyncMap => state.sync.syncs;
 export const selectCreateSyncState = createSelector(selectSyncStore, (state) => state.creatingLoading);
 export const selectSyncListLoadingState = createSelector(selectSyncStore, (state) => state.listLoading);
 
-export const selectSyncById = createSelector(
-    selectSync,
-    (_: EasySwitchState, ID: string) => ID,
-    (selectMap, ID) => selectMap[ID]
-);
-
 export const getAllSync = createSelector(selectSync, (syncs: SyncMap) => {
     return Object.values(syncs);
 });

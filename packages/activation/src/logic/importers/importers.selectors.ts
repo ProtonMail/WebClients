@@ -5,7 +5,7 @@ import orderBy from '@proton/utils/orderBy';
 import { ApiImporterError, ApiImporterState } from '../../api/api.interface';
 import { ImportType } from '../../interface';
 import type { EasySwitchState } from '../store';
-import type { ActiveImportID, ActiveImporter, ActiveImportersMap, ImportersMap } from './importers.interface';
+import type { ActiveImporter, ActiveImportersMap, Importer, ImportersMap } from './importers.interface';
 
 const selectImportersMap = (state: EasySwitchState): ImportersMap => state.importers.importers;
 const selectActiveImportersMap = (state: EasySwitchState): ActiveImportersMap => state.importers.activeImporters;
@@ -15,22 +15,15 @@ const selectActiveImporters = createSelector(selectActiveImportersMap, (activeIm
     Object.values(activeImportersMap)
 );
 
-export const selectImporterById = createSelector(
-    selectImportersMap,
-    (_: EasySwitchState, ID: string) => ID,
-    (importersMap, ID) => importersMap[ID]
-);
-
-export const selectActiveImporterById = createSelector(
-    selectActiveImportersMap,
-    (_: EasySwitchState, ID: ActiveImportID) => ID,
-    (activeImportersMap, ID) => activeImportersMap[ID]
-);
-
-export const selectActiveImporterIdsByDate = createSelector(selectActiveImporters, (activeImporters) =>
-    orderBy(activeImporters, 'startDate')
-        .map(({ localID }) => localID)
-        .reverse()
+export const selectActiveImporterEntriesByDate = createSelector(
+    [selectActiveImporters, selectImportersMap],
+    (activeImporters, importersMap): { activeImporter: ActiveImporter; importer: Importer }[] =>
+        orderBy(activeImporters, 'startDate')
+            .flatMap((activeImporter) => {
+                const importer = importersMap[activeImporter.importerID];
+                return importer ? [{ activeImporter, importer }] : [];
+            })
+            .reverse()
 );
 
 export const selectActiveImportersErrors = createSelector(
