@@ -10,6 +10,7 @@ import clsx from '@proton/utils/clsx';
 import { useCaptionsSimMicrophoneUnavailable, useCaptionsSimStatus } from '../../dev/captionsSimStore';
 import { useCaptionsAgentLifecycle } from '../../hooks/captions/useCaptionsAgentLifecycle';
 import { useCaptionsAgentWaitTimeout } from '../../hooks/captions/useCaptionsAgentWaitTimeout';
+import { useRestoreCaptionLanguage } from '../../hooks/captions/useCaptionLanguage';
 import { useCaptionsPreference } from '../../hooks/captions/useCaptionsPreference';
 import { useCleanupCaptions } from '../../hooks/captions/useCleanupCaptions';
 import { useLiveCaptionsFeatureEnabled } from '../../hooks/captions/useLiveCaptionsFeatureEnabled';
@@ -194,12 +195,13 @@ const CaptionsFeed = () => {
     );
 };
 
-// Both hooks watch participant attributes, so they live in a component that renders nothing: their
+// These hooks watch participant attributes, so they live in a component that renders nothing: their
 // updates would otherwise re-render everything below whoever hosts them.
 const CaptionsAgentLifecycle = () => {
     useCaptionsAgentLifecycle();
     useCaptionsAgentWaitTimeout();
     useCleanupCaptions();
+    useRestoreCaptionLanguage();
 
     return null;
 };

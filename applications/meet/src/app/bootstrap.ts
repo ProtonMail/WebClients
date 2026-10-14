@@ -15,6 +15,7 @@ import { logger } from '@proton/logger';
 import { ALL_CONSOLE_LEVELS } from '@proton/logger/constants';
 import { setMeetCoreErrorResolver } from '@proton/meet/hooks/useMeetErrorReporting';
 import { meetEventLoop } from '@proton/meet/store/meetEventLoop';
+import { userSettingsThunk as meetUserSettingsThunk } from '@proton/meet/store/slices/userSettings';
 import type { MeetDispatch, MeetExtraThunkArguments, MeetState, MeetStore } from '@proton/meet/store/store';
 import { setupStore } from '@proton/meet/store/store';
 import { initMeetTelemetry } from '@proton/meet/telemetry/meetTelemetry';
@@ -166,6 +167,9 @@ const getSession = async ({ authentication, api }: Pick<MeetExtraThunkArguments,
 };
 
 const loadUserData = async (dispatch: MeetDispatch) => {
+    // Not awaited: only feeds preferences, so a failure must not block the app.
+    dispatch(meetUserSettingsThunk()).catch(noop);
+
     const [user, userSettings, features] = await Promise.all([
         dispatch(userThunk()),
         dispatch(userSettingsThunk()),

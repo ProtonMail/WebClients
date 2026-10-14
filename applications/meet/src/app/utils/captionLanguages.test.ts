@@ -1,4 +1,10 @@
-import { DEFAULT_CAPTION_LANGUAGE, getCaptionLanguageForLocale, isSupportedCaptionLanguage } from './captionLanguages';
+import {
+    DEFAULT_CAPTION_LANGUAGE,
+    getCaptionLanguageForLocale,
+    getCaptionLanguageOptions,
+    getCaptionLocaleForLanguage,
+    isSupportedCaptionLanguage,
+} from './captionLanguages';
 
 describe('getCaptionLanguageForLocale', () => {
     it('drops the region when the agent only transcribes the language', () => {
@@ -21,6 +27,32 @@ describe('getCaptionLanguageForLocale', () => {
     it('falls back to auto-detect for a language the agent does not speak', () => {
         expect(getCaptionLanguageForLocale('cs_CZ')).toBe(DEFAULT_CAPTION_LANGUAGE);
         expect(getCaptionLanguageForLocale('')).toBe(DEFAULT_CAPTION_LANGUAGE);
+    });
+});
+
+describe('getCaptionLocaleForLanguage', () => {
+    it('picks a region for a language the settings only accept qualified', () => {
+        expect(getCaptionLocaleForLanguage('fr')).toBe('fr_FR');
+        expect(getCaptionLocaleForLanguage('en')).toBe('en_US');
+    });
+
+    it('keeps the region the user already picked', () => {
+        expect(getCaptionLocaleForLanguage('pt-BR')).toBe('pt_BR');
+        expect(getCaptionLocaleForLanguage('pt')).toBe('pt_PT');
+        expect(getCaptionLocaleForLanguage('zh-TW')).toBe('zh_TW');
+    });
+
+    it('stores auto-detect as no locale at all', () => {
+        expect(getCaptionLocaleForLanguage(DEFAULT_CAPTION_LANGUAGE)).toBeNull();
+        expect(getCaptionLocaleForLanguage('cs')).toBeNull();
+    });
+
+    it('round-trips every offered language', () => {
+        getCaptionLanguageOptions().forEach(({ value }) => {
+            const locale = getCaptionLocaleForLanguage(value);
+
+            expect(locale === null ? DEFAULT_CAPTION_LANGUAGE : getCaptionLanguageForLocale(locale)).toBe(value);
+        });
     });
 });
 

@@ -4,8 +4,7 @@ import type { ProtonDispatch, ProtonThunkArguments } from '@proton/redux-shared-
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
 import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
 import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
-import { CacheType } from '@proton/redux-utilities/interface';
-import { getMeetUserSettings, updateMeetUserSettingsCall } from '@proton/shared/lib/api/meet';
+import { editMeetUserSettingsLiveCaptionsLocaleCall, getMeetUserSettings } from '@proton/shared/lib/api/meet';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { UserSettings } from '@proton/shared/lib/interfaces/Meet';
 
@@ -36,18 +35,16 @@ const modelThunk = createAsyncModelThunk<Model, UserSettingsState, ProtonThunkAr
 
 const initialState = getInitialModelState<Model>();
 
-export const updateUserSettingsThunk = createAsyncThunk<
-    Partial<Model>,
-    Partial<Model>,
+export const updateLiveCaptionsLocaleThunk = createAsyncThunk<
+    Model,
+    string | null,
     { dispatch: ProtonDispatch<UserSettingsState>; extra: ProtonThunkArguments }
->(`${name}/update`, async (settings, { dispatch, extra }) => {
-    // The update replaces the settings as a whole, and nothing invalidates the cached copy, so the
-    // untouched fields have to come from a fresh read.
-    const currentSettings = await dispatch(modelThunk.thunk({ cache: CacheType.None }));
+>(`${name}/updateLiveCaptionsLocale`, async (locale, { extra }) => {
+    const { UserSettings } = await extra.api<{ UserSettings: Model }>(
+        editMeetUserSettingsLiveCaptionsLocaleCall({ LiveCaptionsLocale: locale })
+    );
 
-    await extra.api(updateMeetUserSettingsCall({ ...currentSettings, ...settings }));
-
-    return settings;
+    return UserSettings;
 });
 
 const slice = createSlice({
@@ -57,9 +54,9 @@ const slice = createSlice({
     extraReducers: (builder) => {
         handleAsyncModel(builder, modelThunk);
 
-        builder.addCase(updateUserSettingsThunk.fulfilled, (state, action) => {
+        builder.addCase(updateLiveCaptionsLocaleThunk.fulfilled, (state, action) => {
             if (state.value) {
-                state.value = { ...state.value, ...action.payload };
+                state.value = action.payload;
             }
         });
     },
