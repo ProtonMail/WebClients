@@ -13,6 +13,7 @@ import MobileSection from '../../components/MobileSection';
 import MobileSectionLabel from '../../components/MobileSectionLabel';
 import MobileSectionRow from '../../components/MobileSectionRow';
 import { BYOEMobileConnecting } from './BYOEMobileConnecting';
+import { ErrorPrompt } from './components/ErrorPrompt';
 import { BYOEMobileProvider, useBYOEMobile } from './context/BYOEMobileProvider';
 
 import '../MobileSettings.scss';
@@ -73,6 +74,7 @@ const BYOEMobileContent = () => {
                     </Button>
                 </MobileSectionRow>
             </MobileSection>
+            <ErrorPrompt />
         </div>
     );
 };
