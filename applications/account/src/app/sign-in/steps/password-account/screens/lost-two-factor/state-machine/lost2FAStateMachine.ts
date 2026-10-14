@@ -9,7 +9,7 @@ import { c } from 'ttag';
 import { type SnapshotFrom, assertEvent, assign, emit, sendParent, setup } from 'xstate';
 
 import type { VerificationDataResult } from '@proton/components/containers/api/humanVerification/interface';
-import { InvalidCodeError, TOTPError } from '@proton/shared/lib/authentication/error';
+import { InvalidCodeError, InvalidRecoveryPhraseError, TOTPError } from '@proton/shared/lib/authentication/error';
 import type { TwoFactorAuthTypes } from '@proton/shared/lib/authentication/twoFactor';
 
 import { errorOf, isErrorOf, reportActorError, unprovidedActors } from '../../../../../state-machine/machineHelpers';
@@ -55,6 +55,8 @@ interface Lost2FAMachineContext {
     sendingAttempts: number;
     /** The last code was wrong; cleared once the user edits it or a new one is sent. */
     invalidCode: boolean;
+    /** Why the last recovery phrase was rejected; cleared once the user edits it. */
+    phraseError: string | undefined;
 }
 
 /** How the flow ends, as telemetry reports it. */
@@ -86,7 +88,9 @@ type Lost2FAMachineEvent =
     | { type: 'verification.resendRequested' }
     | { type: 'verification.newCodeDialogClosed' }
     /** The recovery phrase screen. */
-    | { type: 'verification.phraseSubmitted'; payload: { phrase: string } };
+    | { type: 'verification.phraseSubmitted'; payload: { phrase: string } }
+    /** The user changed the phrase; a rejected phrase's message goes. */
+    | { type: 'verification.phraseEdited' };
 
 /** Sent to the parent (the password account flow). */
 export type Lost2FAParentEvent =
@@ -207,6 +211,11 @@ const lost2FASetup = setup({
                 c('Error').t`Incorrect recovery code. Please try again.`,
         })),
         clearBackupCodeError: assign({ backupCodeError: undefined }),
+        /** Shown in the recovery phrase form, so the user can try again. */
+        setPhraseError: assign((_, params: { error: unknown }) => ({
+            phraseError: params.error instanceof InvalidRecoveryPhraseError ? params.error.message : undefined,
+        })),
+        clearPhraseError: assign({ phraseError: undefined }),
         /** The machine's output once it reaches a final state. */
         setOutcome: assign((_, params: { outcome: Lost2FAEnd }) => ({ outcome: params.outcome })),
         reportOutcome: emit((_, params: { outcome: Lost2FAOutcome }) => ({
@@ -379,6 +388,7 @@ export const lost2FAStateMachine = lost2FASetup.createMachine({
         verificationResults: {},
         sendingAttempts: 0,
         invalidCode: false,
+        phraseError: undefined,
     }),
     output: ({ context }) => ({ outcome: context.outcome ?? 'returnToTwoFactor' }),
 
@@ -464,6 +474,8 @@ export const lost2FAStateMachine = lost2FASetup.createMachine({
 
         /** Proves ownership with the account's recovery phrase, then disables two-factor authentication. */
         verifyOwnershipWithPhrase: {
+            // A phrase rejected before leaving the screen doesn't show when coming back to it
+            entry: 'clearPhraseError',
             initial: 'editing',
             on: {
                 'decision.back': previousMethod('verifyOwnershipWithPhrase'),
@@ -472,7 +484,8 @@ export const lost2FAStateMachine = lost2FASetup.createMachine({
             states: {
                 editing: {
                     on: {
-                        'verification.phraseSubmitted': { target: 'verifying' },
+                        'verification.phraseSubmitted': { target: 'verifying', actions: 'clearPhraseError' },
+                        'verification.phraseEdited': { actions: 'clearPhraseError' },
                     },
                 },
                 /** Checks the phrase, then disables two-factor authentication; the ways out are ignored meanwhile. */
@@ -489,7 +502,14 @@ export const lost2FAStateMachine = lost2FASetup.createMachine({
                             return { username: context.username, phrase: event.payload.phrase };
                         },
                         onDone: { target: '#lost2FA.twoFactorDisabled' },
-                        onError: { target: 'editing', actions: reportActorError },
+                        onError: [
+                            {
+                                guard: errorOf(InvalidRecoveryPhraseError),
+                                target: 'editing',
+                                actions: { type: 'setPhraseError', params: ({ event }) => ({ error: event.error }) },
+                            },
+                            { target: 'editing', actions: reportActorError },
+                        ],
                     },
                 },
             },
@@ -567,6 +587,9 @@ export const selectBackupCodeError = ({ context }: { context: Lost2FAMachineCont
 
 /** The backup code screen waits for a code, rather than checking one. */
 export const selectAwaitingBackupCode = (snapshot: Lost2FASnapshot) => snapshot.matches({ requestBackupCode: 'idle' });
+
+/** Why the last recovery phrase was rejected, for its form. */
+export const selectPhraseError = ({ context }: { context: Lost2FAMachineContext }) => context.phraseError;
 
 /** The last verification code was wrong. */
 export const selectInvalidCode = ({ context }: { context: Lost2FAMachineContext }) => context.invalidCode;

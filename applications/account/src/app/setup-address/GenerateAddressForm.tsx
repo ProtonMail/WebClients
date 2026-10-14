@@ -19,9 +19,20 @@ interface Props {
     loading?: boolean;
     availableDomains?: string[];
     defaultUsername?: string;
+    /** Why the last username was rejected, shown under the field. */
+    error?: string;
+    /** The user changed the username. */
+    onChange?: () => void;
 }
 
-const GenerateAddressForm = ({ defaultUsername = '', onSubmit, loading = false, availableDomains }: Props) => {
+const GenerateAddressForm = ({
+    defaultUsername = '',
+    onSubmit,
+    loading = false,
+    availableDomains,
+    error,
+    onChange,
+}: Props) => {
     const [username, setUsername] = useState(defaultUsername);
 
     const { validator, onFormSubmit } = useFormErrors();
@@ -45,18 +56,23 @@ const GenerateAddressForm = ({ defaultUsername = '', onSubmit, loading = false, 
                 bigger
                 id="username"
                 label={c('Label').t`Username`}
-                error={validator([
-                    requiredValidator(trimmedUsername),
-                    usernameLengthValidator(trimmedUsername),
-                    usernameNoEmailValidator(trimmedUsername),
-                    usernameStartCharacterValidator(trimmedUsername),
-                    usernameEndCharacterValidator(trimmedUsername),
-                    usernameCharacterValidator(trimmedUsername),
-                ])}
+                error={
+                    validator([
+                        requiredValidator(trimmedUsername),
+                        usernameLengthValidator(trimmedUsername),
+                        usernameNoEmailValidator(trimmedUsername),
+                        usernameStartCharacterValidator(trimmedUsername),
+                        usernameEndCharacterValidator(trimmedUsername),
+                        usernameCharacterValidator(trimmedUsername),
+                    ]) || error
+                }
                 autoFocus
                 disableChange={loading}
                 value={username}
-                onValue={setUsername}
+                onValue={(value: string) => {
+                    setUsername(value);
+                    onChange?.();
+                }}
                 suffix={`@${domain}`}
             />
             <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt-6">

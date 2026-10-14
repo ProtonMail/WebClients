@@ -5,7 +5,7 @@ import { getMnemonicAuthInfo, reauthMnemonic } from '@proton/shared/lib/api/auth
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { disable2FA } from '@proton/shared/lib/api/settings';
 import { reauthByEmailVerification, reauthBySmsVerification } from '@proton/shared/lib/api/verify';
-import { InvalidCodeError } from '@proton/shared/lib/authentication/error';
+import { InvalidCodeError, InvalidRecoveryPhraseError } from '@proton/shared/lib/authentication/error';
 import type { InfoResponse } from '@proton/shared/lib/authentication/interface';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { mnemonicToBase64RandomBytes } from '@proton/shared/lib/mnemonic';
@@ -54,6 +54,7 @@ export const createVerificationActors = ({ api }: Pick<SignInActorServices, 'api
             await api(disable2FA());
         }
     ),
+    /** A wrong phrase throws an `InvalidRecoveryPhraseError`, so the user can retry. */
     verifyPhraseAndDisable2FA: fromPromise<void, { username: string; phrase: string }>(
         async ({ input: { username, phrase } }) => {
             const randomBytes = await mnemonicToBase64RandomBytes(phrase);
@@ -63,6 +64,10 @@ export const createVerificationActors = ({ api }: Pick<SignInActorServices, 'api
                 api,
                 config: reauthMnemonic({ Username: username, PersistentCookies: false }),
                 credentials: { username, password: randomBytes },
+            }).catch((error: unknown) => {
+                throw getApiError(error).code === API_CUSTOM_ERROR_CODES.INVALID_LOGIN
+                    ? new InvalidRecoveryPhraseError(error)
+                    : error;
             });
             await api(disable2FA());
         }

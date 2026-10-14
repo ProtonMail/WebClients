@@ -15,13 +15,14 @@ import { useSignInProps } from '../../../../../../wizard/SignInProvider';
 import { getDisableTwoFactorTitle } from '../../DisableTwoFactorTitle';
 import { Lost2FAContext } from '../../Lost2FAContext';
 import { Lost2FAUsername } from '../../Lost2FAUsername';
-import { selectSubmitting } from '../../state-machine/lost2FAStateMachine';
+import { selectPhraseError, selectSubmitting } from '../../state-machine/lost2FAStateMachine';
 import { useLost2FATelemetry } from '../../useLost2FATelemetry';
 
 export const VerifyOwnershipWithPhraseScreen: SignInScreen = ({ onBack }: SignInScreenProps) => {
     const { layout } = useSignInProps();
     const actorRef = Lost2FAContext.useActorRef();
     const submitting = Lost2FAContext.useSelector(selectSubmitting);
+    const phraseError = Lost2FAContext.useSelector(selectPhraseError);
 
     const { sendStepLoad } = useLost2FATelemetry();
     useEffect(() => {
@@ -50,9 +51,12 @@ export const VerifyOwnershipWithPhraseScreen: SignInScreen = ({ onBack }: SignIn
                     <MnemonicInputField
                         disableChange={submitting}
                         value={phrase}
-                        onValue={setPhrase}
+                        onValue={(value: string) => {
+                            setPhrase(value);
+                            actorRef.send({ type: 'verification.phraseEdited' });
+                        }}
                         autoFocus
-                        error={validator([requiredValidator(phrase), ...phraseValidation])}
+                        error={validator([requiredValidator(phrase), ...phraseValidation]) || phraseError}
                     />
                     <Button
                         size="large"
