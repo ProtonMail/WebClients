@@ -7,6 +7,7 @@ import { c } from 'ttag';
 
 import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
 import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
+import { logger } from '@proton/logger';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectDisplayName } from '@proton/meet/store/slices/currentMeeting';
 import {
@@ -190,8 +191,7 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
                 }
             }
         } catch (error) {
-            // eslint-disable-next-line no-console
-            console.error('Failed to refresh tracks', error);
+            logger.error('Failed to refresh tracks', error);
         } finally {
             setIsRefreshing(false);
         }

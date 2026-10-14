@@ -3,10 +3,12 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import MeetLogo from '@proton/components/components/logo/MeetLogo';
 import AppsDropdown, { UnAuthenticatedAppsDropdown } from '@proton/components/containers/app/AppsDropdown';
 import { openLinkInBrowser } from '@proton/components/containers/desktop/openExternalLink';
 import UserDropdown from '@proton/components/containers/heading/UserDropdown';
+import { IcQuestionCircle } from '@proton/icons/icons/IcQuestionCircle';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectIsGuest } from '@proton/meet/store/slices/userSlice';
 import { TelemetryMeetDashboardEvents, sendMeetDashboardEvent } from '@proton/meet/telemetry/meetTelemetry';
@@ -19,10 +21,13 @@ import logo from '@proton/styles/assets/img/meet/brand-dual-colors.svg';
 import clsx from '@proton/utils/clsx';
 
 import { CloseButton } from '../../atoms/CloseButton/CloseButton';
+import { useHelpAndFeedback } from '../../hooks/useHelpAndFeedback';
 import { MeetSignIn } from '../SignIn/SignIn';
 import { SettingsDropdown } from './SettingsDropdown';
 
 import './PageHeader.scss';
+
+const QUESTION_CIRCLE_CENTERED_VIEW_BOX = '0.5 0.5 16 16';
 
 interface PageHeaderProps {
     showAppSwitcher?: boolean;
@@ -33,6 +38,7 @@ export const PageHeader = ({ showAppSwitcher = true, isInstantJoin = false }: Pa
     const location = useLocation();
     const history = useHistory();
     const isGuest = useMeetSelector(selectIsGuest);
+    const helpAndFeedback = useHelpAndFeedback();
 
     const handleSignUpClick = () => {
         const returnUrl = getAppHref(SSO_PATHS.MEET_SIGNUP, APPS.PROTONACCOUNT);
@@ -135,6 +141,20 @@ export const PageHeader = ({ showAppSwitcher = true, isInstantJoin = false }: Pa
                                         >
                                             {c('Action').t`Create an account`}
                                         </Button>
+                                        <Tooltip title={c('Action').t`Help and feedback`}>
+                                            <Button
+                                                shape="ghost"
+                                                className="settings-button settings-button-icon p-0 flex items-center justify-center"
+                                                aria-label={c('Action').t`Help and feedback`}
+                                                onClick={helpAndFeedback.openHelpAndFeedback}
+                                            >
+                                                <IcQuestionCircle
+                                                    size={5}
+                                                    viewBox={QUESTION_CIRCLE_CENTERED_VIEW_BOX}
+                                                    color="var(--icon-color)"
+                                                />
+                                            </Button>
+                                        </Tooltip>
                                     </>
                                 ) : (
                                     <>
@@ -159,6 +179,7 @@ export const PageHeader = ({ showAppSwitcher = true, isInstantJoin = false }: Pa
                     </div>
                 )}
             </header>
+            {helpAndFeedback.modals}
         </>
     );
 };

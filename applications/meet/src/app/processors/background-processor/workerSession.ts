@@ -1,10 +1,12 @@
 import { ProcessorWrapper } from '@livekit/track-processors';
 import { type LocalTrack, TrackEvent } from 'livekit-client';
 
+import { logger } from '@proton/logger';
 import { withTimeout } from '@proton/meet/utils/withTimeout';
 import { isIos } from '@proton/shared/lib/helpers/browser';
 
 import { BACKGROUND_IMAGE_DECODE_TIMEOUT_MS } from '../../utils/customBackgrounds/constants';
+import { forwardWorkerLog } from '../../utils/forwardWorkerLog';
 import type { PipelineBackground, PipelineConfig } from './BackgroundPipeline';
 import type { PipelineWorkerEvent, PipelineWorkerRequest } from './pipelineProtocol';
 import type { SegmenterHandle } from './segmenterHost';
@@ -81,7 +83,13 @@ export class WorkerSession {
         this.startupAborted.catch(() => {
             // Only observed through waitFor()
         });
-        worker.onmessage = (event: MessageEvent<PipelineWorkerEvent>) => this.handleEvent(event.data);
+        worker.onmessage = (event: MessageEvent<PipelineWorkerEvent>) => {
+            if (forwardWorkerLog(event.data)) {
+                return;
+            }
+
+            this.handleEvent(event.data);
+        };
         worker.onerror = (event: ErrorEvent) => {
             const error = new Error(`Background pipeline worker error: ${event.message}`);
             // During start-up the caller falls back to the main thread instead of failing.
@@ -89,8 +97,7 @@ export class WorkerSession {
                 this.abortStartup(error);
                 return;
             }
-            // eslint-disable-next-line no-console
-            console.error('[bg-processor] pipeline worker error', error);
+            logger.error('[bg-processor] pipeline worker error', error);
             options.onInitializationFailed(error);
         };
     }

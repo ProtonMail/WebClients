@@ -193,8 +193,6 @@ export class PiPSessionManager {
             } catch (error) {
                 // Ignore InvalidStateError - means PiP already closed
                 if (error instanceof Error && error.name !== 'InvalidStateError') {
-                    // eslint-disable-next-line no-console
-                    console.error('Failed to exit Picture-in-Picture:', error);
                     this.reportMeetError('PiPSessionManager: Failed to exit Picture-in-Picture', error);
                 }
             }
@@ -214,8 +212,6 @@ export class PiPSessionManager {
                 // Ignore InvalidStateError - means PiP already closed
                 // This can happen when browser closes PiP via its native button
                 if (error instanceof Error && error.name !== 'InvalidStateError') {
-                    // eslint-disable-next-line no-console
-                    console.error('Failed to exit Picture-in-Picture:', error);
                     this.reportMeetError('PiPSessionManager: Failed to exit Picture-in-Picture', error);
                 }
             }

@@ -1,6 +1,7 @@
 import { type Compositor, createCompositor } from './compositor';
 import { MaskShaper } from './maskShaper';
 import type { SegmentationClient, SegmentationResult } from './segmentationClient';
+import type { PipelineLogger } from './types';
 
 // Two frames in flight keep the next mask request queued while the current frame composites.
 const PIPELINE_DEPTH = 2;
@@ -94,11 +95,12 @@ export class BackgroundPipeline {
         private readonly canvas: OffscreenCanvas | HTMLCanvasElement,
         private segmentation: SegmentationClient | null,
         private readonly config: PipelineConfig,
-        private readonly hooks: PipelineHooks
+        private readonly hooks: PipelineHooks,
+        private readonly logger: PipelineLogger
     ) {}
 
     init() {
-        this.compositor = createCompositor(this.canvas);
+        this.compositor = createCompositor(this.canvas, this.logger);
         if (!this.compositor) {
             throw new Error('WebGL2 is unavailable for the background compositor');
         }
@@ -328,8 +330,7 @@ export class BackgroundPipeline {
 
         this.consecutiveMaskFailures += 1;
         if (maskFailure && this.consecutiveMaskFailures === 1) {
-            // eslint-disable-next-line no-console
-            console.error('[bg-processor] mask pipeline threw', maskFailure);
+            this.logger.error('[bg-processor] mask pipeline threw', maskFailure);
         }
         if (this.consecutiveMaskFailures === CONSECUTIVE_MASK_FAILURE_LIMIT) {
             this.hooks.onInitializationFailed(

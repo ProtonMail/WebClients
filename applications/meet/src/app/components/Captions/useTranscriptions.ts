@@ -4,6 +4,7 @@ import { useConnectionState, useRoomContext } from '@livekit/components-react';
 import { ConnectionState } from 'livekit-client';
 import type { Room, TextStreamReader } from 'livekit-client';
 
+import { logger } from '@proton/logger';
 import { useMeetErrorReporting } from '@proton/meet';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectCaptionsAgentPresent } from '@proton/meet/store/slices/participants/agentParticipantsSlice';
@@ -99,12 +100,6 @@ export const useTranscriptions = (): Transcriptions => {
         }
 
         setFailing(true);
-        // eslint-disable-next-line no-console
-        console.error(
-            `Received ${streamsReceived} transcription(s) but displayed none ` +
-                `(${streamReadFailures} unreadable, ${decryptFailures} undecryptable). ` +
-                'The captions agent is most likely not a member of the MLS group.'
-        );
         reportError('Captions received but none could be decoded', {
             context: { streamsReceived, streamReadFailures, decryptFailures },
         });
@@ -116,8 +111,7 @@ export const useTranscriptions = (): Transcriptions => {
         }
 
         if (roomsWithConsumer.has(room)) {
-            // eslint-disable-next-line no-console
-            console.error('useTranscriptions is mounted more than once; only a single consumer is supported per room.');
+            logger.error('useTranscriptions is mounted more than once; only a single consumer is supported per room.');
             return;
         }
 
@@ -191,8 +185,7 @@ export const useTranscriptions = (): Transcriptions => {
         try {
             room.registerTextStreamHandler(TRANSCRIPTION_TOPIC, handler);
         } catch (error) {
-            // eslint-disable-next-line no-console
-            console.error('Failed to register the transcription handler', error);
+            logger.error('Failed to register the transcription handler', error);
             return;
         }
         roomsWithConsumer.add(room);

@@ -1,6 +1,6 @@
 import { CryptoProxy, type SessionKey } from '@protontech/crypto';
 
-import { createWorkerLogger } from '../../workerLogger';
+import { createWorkerLogger } from '../../../../utils/workerLogger';
 import {
     type FinalizeResponseData,
     type RecordingEncryption,

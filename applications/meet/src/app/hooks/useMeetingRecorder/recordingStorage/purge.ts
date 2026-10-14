@@ -1,3 +1,4 @@
+import { logger } from '@proton/logger';
 import { DAY } from '@proton/shared/lib/constants';
 
 import { getRecordingFolder } from './getRecordingFolder';
@@ -28,8 +29,7 @@ const purgeRecordingsInDirectory = async (directory: FileSystemDirectoryHandle, 
             await directory.removeEntry(name);
         } catch (error) {
             // File may be locked by an active recording in another tab — skip.
-            // eslint-disable-next-line no-console
-            console.error('Purge old recordings: Failed to remove recording file', error);
+            logger.error('Purge old recordings: Failed to remove recording file', error);
         }
     }
 };
@@ -39,8 +39,7 @@ export const purgeOldRecordings = async (maxAgeMs: number): Promise<void> => {
     try {
         root = await navigator.storage.getDirectory();
     } catch (error) {
-        // eslint-disable-next-line no-console
-        console.error('Purge old recordings: Failed to get storage directory', error);
+        logger.error('Purge old recordings: Failed to get storage directory', error);
         return;
     }
 
@@ -69,8 +68,7 @@ export const purgeOldRecordings = async (maxAgeMs: number): Promise<void> => {
         }
     } catch (error) {
         // Iteration failed (eviction, quota error). Best-effort: don't block boot.
-        // eslint-disable-next-line no-console
-        console.error('Purge old recordings: Failed to purge recordings', error);
+        logger.error('Purge old recordings: Failed to purge recordings', error);
     }
 };
 

@@ -1,3 +1,5 @@
+import { logger } from '@proton/logger';
+
 import type { ChunkWatchdog, ChunkWatchdogOptions } from './types';
 
 const DEFAULT_INTERVAL_MS = 2_000;
@@ -39,18 +41,6 @@ export const createChunkWatchdog = ({
             const recordingCodec = getCodec();
             const mediaRecorderState = getRecorderState();
 
-            // eslint-disable-next-line no-console
-            console.error(
-                `[MeetingRecorder] watchdog: no chunk with data in the last ${Math.round(sinceLastChunk)}ms (${phase})`,
-                {
-                    isWebCodecs,
-                    recordingCodec,
-                    mediaRecorderState,
-                    chunksWithData: snapshot.chunkCount,
-                    emptyChunks: snapshot.emptyChunkCount,
-                    firstChunkAt: snapshot.firstChunkAt,
-                }
-            );
             reportMeetError(
                 isWebCodecs
                     ? 'MeetingRecording Error WebCodecs: watchdog detected stalled MediaRecorder'
@@ -71,8 +61,7 @@ export const createChunkWatchdog = ({
 
         if (sinceLastChunk <= threshold && warned) {
             warned = false;
-            // eslint-disable-next-line no-console
-            console.log('[MeetingRecorder] watchdog: chunks resumed');
+            logger.info('[MeetingRecorder] watchdog: chunks resumed');
         }
     };
 

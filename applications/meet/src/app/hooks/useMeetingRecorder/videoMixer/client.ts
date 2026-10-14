@@ -1,7 +1,7 @@
 import type { ReportMeetError } from '@proton/meet/hooks/useMeetErrorReporting';
 
+import { forwardWorkerLog } from '../../../utils/forwardWorkerLog';
 import type { AudioTapSamples } from '../mediaEncoder/types';
-import { forwardWorkerLog } from '../workerLogger';
 import { CANVAS_HEIGHT, CANVAS_WIDTH, RECORDING_FPS } from './constants';
 import { type TrackCapture, startTrackCapture } from './trackCapture';
 import { type RecordingTrackInfo, type SceneState, VideoMixerMessageType } from './types';
@@ -60,14 +60,6 @@ export class VideoMixerClient {
         };
 
         this.worker.onerror = (event) => {
-            // eslint-disable-next-line no-console
-            console.error('[MeetingRecorder/renderWorker] uncaught error in worker:', {
-                message: event.message,
-                filename: event.filename,
-                lineno: event.lineno,
-                colno: event.colno,
-                error: event.error,
-            });
             this.reportMeetError('MeetingRecording Error: renderWorker uncaught error', {
                 context: {
                     message: event.message,

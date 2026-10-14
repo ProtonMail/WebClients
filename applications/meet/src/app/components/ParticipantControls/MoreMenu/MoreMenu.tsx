@@ -10,6 +10,7 @@ import { IcMeetLiveCaptions } from '@proton/icons/icons/IcMeetLiveCaptions';
 import { IcMeetRecord } from '@proton/icons/icons/IcMeetRecord';
 import { IcMeetSettings } from '@proton/icons/icons/IcMeetSettings';
 import { IcMeetTranscription } from '@proton/icons/icons/IcMeetTranscription';
+import { IcQuestionCircle } from '@proton/icons/icons/IcQuestionCircle';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectMeetingLink } from '@proton/meet/store/slices/currentMeeting';
@@ -29,6 +30,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import { CircleButton } from '../../../atoms/CircleButton/CircleButton';
 import { useDebugOverlayContext } from '../../../contexts/DebugOverlayContext';
 import { useLiveCaptionsFeatureEnabled } from '../../../hooks/captions/useLiveCaptionsFeatureEnabled';
+import { useHelpAndFeedback } from '../../../hooks/useHelpAndFeedback';
 import { MeetingReadyPopup } from '../../MeetingReadyPopup/MeetingReadyPopup';
 import { useLayoutOptions } from '../../ParticipantsLayout/LayoutSelector/useLayoutOptions';
 import { StopRecordingButton } from '../../RecordingControls/StopRecordingButton';
@@ -63,6 +65,7 @@ export const MoreMenu = ({ variant, onOpenMeetingDebug, showMeetingActions }: Pr
 
     const recording = useRecordingToggle();
     const liveCaptions = useLiveCaptionsToggle();
+    const helpAndFeedback = useHelpAndFeedback();
     const layoutOptions = useLayoutOptions();
     const layout = isParticipantsLayoutsEnabled && layoutOptions.options.length > 1 ? layoutOptions : undefined;
 
@@ -126,6 +129,12 @@ export const MoreMenu = ({ variant, onOpenMeetingDebug, showMeetingActions }: Pr
             Icon: IcInfoCircle,
             label: c('Action').t`Meeting info`,
             onClick: () => dispatch(toggleSideBarState(MeetingSideBars.MeetingDetails)),
+        },
+        {
+            id: 'help-and-feedback',
+            Icon: IcQuestionCircle,
+            label: c('Action').t`Help and feedback`,
+            onClick: helpAndFeedback.openHelpAndFeedback,
         },
         isDebugEnabled && {
             id: 'debug-overlay',
@@ -198,6 +207,7 @@ export const MoreMenu = ({ variant, onOpenMeetingDebug, showMeetingActions }: Pr
             </Popper>
             {recording.modals}
             {liveCaptions.modals}
+            {helpAndFeedback.modals}
         </>
     );
 };

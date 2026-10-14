@@ -1,6 +1,7 @@
 import type { Room, TrackPublication } from 'livekit-client';
 import { ConnectionState, RemoteTrackPublication, Track, VideoQuality } from 'livekit-client';
 
+import { logger } from '@proton/logger';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 export type RegisterCameraTrackFn = (
@@ -197,8 +198,7 @@ export class CameraTrackSubscriptionManager {
                 try {
                     publication.setEnabled(false);
                 } catch (error) {
-                    // eslint-disable-next-line no-console
-                    console.error('Error disabling publication', error);
+                    logger.error('Error disabling publication', error);
                 }
             });
         }
@@ -371,8 +371,7 @@ export class CameraTrackSubscriptionManager {
                             publication.setSubscribed(false);
                         }
                     } catch (error) {
-                        // eslint-disable-next-line no-console
-                        console.error('Error disabling publication', publication.trackSid, error);
+                        logger.error('Error disabling publication', publication.trackSid, error);
                     }
                 }
             });
@@ -430,8 +429,7 @@ export class CameraTrackSubscriptionManager {
                 try {
                     entry.publication.setEnabled(false);
                 } catch (error) {
-                    // eslint-disable-next-line no-console
-                    console.error('Error pausing video', entry.publication.trackSid, error);
+                    logger.error('Error pausing video', entry.publication.trackSid, error);
                 }
             }
         });
@@ -460,8 +458,7 @@ export class CameraTrackSubscriptionManager {
                 try {
                     entry.publication.setEnabled(true);
                 } catch (error) {
-                    // eslint-disable-next-line no-console
-                    console.error('Error resuming video', entry.publication.trackSid, error);
+                    logger.error('Error resuming video', entry.publication.trackSid, error);
                 }
             }
         });
@@ -492,8 +489,7 @@ export class CameraTrackSubscriptionManager {
                     entry.publication.setEnabled(false);
                     entry.publication.setSubscribed(false);
                 } catch (error) {
-                    // eslint-disable-next-line no-console
-                    console.error('Error disabling publication', entry.publication.trackSid, error);
+                    logger.error('Error disabling publication', entry.publication.trackSid, error);
                 }
             }
         });

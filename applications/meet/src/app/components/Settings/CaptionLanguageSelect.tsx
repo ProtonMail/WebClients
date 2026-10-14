@@ -7,6 +7,7 @@ import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownCaret from '@proton/components/components/dropdown/DropdownCaret';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import { logger } from '@proton/logger';
 import clsx from '@proton/utils/clsx';
 
 import { OptionButton } from '../../atoms/OptionButton/OptionButton';
@@ -41,8 +42,7 @@ export const CaptionLanguageSelect = () => {
         try {
             await setLanguage(value);
         } catch (error) {
-            // eslint-disable-next-line no-console
-            console.error('Failed to update caption language', error);
+            logger.error('Failed to update caption language', error);
             createNotification({
                 type: 'error',
                 text: c('Error').t`Failed to update caption language. Please try again.`,

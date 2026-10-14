@@ -6,6 +6,7 @@ import { ConnectionState, RoomEvent, Track } from 'livekit-client';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
+import { logger } from '@proton/logger';
 import { useMeetErrorReporting } from '@proton/meet';
 import { useMeetDispatch, useMeetSelector, useMeetStore } from '@proton/meet/store/hooks';
 import {
@@ -149,8 +150,7 @@ export const MediaManagementProvider = ({
                             SWITCH_DEVICE_TIMEOUT_MS
                         );
 
-                        // eslint-disable-next-line no-console
-                        console.log(`[switchActiveDevice] switched`, {
+                        logger.info(`[switchActiveDevice] switched`, {
                             deviceType,
                             requested: deviceId,
                             sent: targetDeviceId,
@@ -159,8 +159,7 @@ export const MediaManagementProvider = ({
                             livekitAudioOutput: room.options.audioOutput?.deviceId,
                         });
                     } else {
-                        // eslint-disable-next-line no-console
-                        console.log(`[switchActiveDevice] skipped, already active`, {
+                        logger.info(`[switchActiveDevice] skipped, already active`, {
                             deviceType,
                             requested: deviceId,
                             sent: targetDeviceId,
@@ -183,13 +182,11 @@ export const MediaManagementProvider = ({
 
                     selectedDeviceId = fallback.deviceId;
 
-                    // eslint-disable-next-line no-console
-                    console.warn(`[switchActiveDevice] videoinput fallback`, {
+                    logger.warn(`[switchActiveDevice] videoinput fallback`, error, {
                         deviceType,
                         deviceId: selectedDeviceId,
                         errorName: (error as Error)?.name,
                         errorMessage: (error as Error)?.message,
-                        error,
                     });
 
                     await withTimeout(
@@ -629,16 +626,14 @@ export const MediaManagementProvider = ({
                     shouldCleanupPreviews ? cleanupPreviews() : Promise.resolve(),
                 ]);
             } catch (error) {
-                // eslint-disable-next-line no-console
-                console.error(error);
+                logger.error('Failed to disable local tracks during cleanup', error);
             }
 
             tracks.forEach((track) => {
                 try {
                     track.stop();
                 } catch (error) {
-                    // eslint-disable-next-line no-console
-                    console.error(error);
+                    logger.error('Failed to stop local track during cleanup', error);
                 }
             });
 

@@ -316,8 +316,6 @@ export function usePictureInPicture({ isDisconnected }: { isDisconnected: boolea
                 };
             }
         } catch (error: any) {
-            // eslint-disable-next-line no-console
-            console.error(error);
             reportMeetError(`usePictureInPicture.setActionHandler: ${error.message}`, error);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps

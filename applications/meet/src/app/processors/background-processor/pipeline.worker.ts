@@ -1,4 +1,5 @@
 /// <reference lib="webworker" />
+import { createWorkerLogger } from '../../utils/workerLogger';
 import { BackgroundPipeline, type PipelineBackground } from './BackgroundPipeline';
 import type { PipelineWorkerEvent, PipelineWorkerRequest } from './pipelineProtocol';
 import { SegmentationClient } from './segmentationClient';
@@ -21,6 +22,8 @@ let ownedBitmaps: ImageBitmap[] = [];
 let latestBackground: PipelineBackground | null = null;
 
 const post = (event: PipelineWorkerEvent, transfer: Transferable[] = []) => self.postMessage(event, transfer);
+
+const logger = createWorkerLogger('pipelineWorker');
 
 const closeBitmapsExcept = (keep: ImageBitmap | null) => {
     ownedBitmaps = ownedBitmaps.filter((bitmap) => {
@@ -53,8 +56,7 @@ const runPipe = (readable: ReadableStream<VideoFrame>, writable: WritableStream<
             const isTeardown =
                 abort.signal.aborted || (error instanceof DOMException && error.name === 'InvalidStateError');
             if (!isTeardown) {
-                // eslint-disable-next-line no-console
-                console.error('[bg-processor] pipeline stream failed', error);
+                logger.error('[bg-processor] pipeline stream failed', error);
             }
         });
 };
@@ -67,7 +69,8 @@ const handleInit = (msg: Extract<PipelineWorkerRequest, { type: 'init' }>) => {
         {
             onApplied: () => post({ type: 'applied' }),
             onInitializationFailed: (error) => post({ type: 'initialization-failed', message: error.message }),
-        }
+        },
+        logger
     );
     try {
         created.init();

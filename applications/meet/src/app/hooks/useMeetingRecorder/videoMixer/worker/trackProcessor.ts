@@ -1,5 +1,5 @@
+import { createWorkerLogger } from '../../../../utils/workerLogger';
 import { createMediaStreamTrackProcessor } from '../../utils/trackProcessorSupport';
-import { createWorkerLogger } from '../../workerLogger';
 import { RECORDING_FPS } from '../constants';
 import type { TrackCaptureData } from '../types';
 
@@ -32,6 +32,7 @@ export async function startTrackCaptureInWorker(env: TrackProcessorEnv, trackDat
 
     const minFrameInterval = 1000 / RECORDING_FPS;
     let lastProcessedTime = 0;
+    let isImageBitmapFailing = false;
 
     const pump = async () => {
         try {
@@ -61,9 +62,13 @@ export async function startTrackCaptureInWorker(env: TrackProcessorEnv, trackDat
                     }
                     env.videoFrames.set(participantIdentity, bitmap);
                     lastProcessedTime = now;
+                    isImageBitmapFailing = false;
                 } catch (err) {
                     frame.close();
-                    logger.warn(`createImageBitmap failed for track ${trackId}:`, err);
+                    if (!isImageBitmapFailing) {
+                        logger.warn(`createImageBitmap failed for track ${trackId}:`, err);
+                    }
+                    isImageBitmapFailing = true;
                 }
             }
         } catch (error) {
