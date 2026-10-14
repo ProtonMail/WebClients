@@ -2,11 +2,9 @@ import { c } from 'ttag';
 
 import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
 import { GUARD_ERROR_MESSAGES, type GuardError } from '@proton/payments/core/subscription/guard';
-import clsx from '@proton/utils/clsx';
 
 interface Props {
     errors: GuardError[];
-    variant?: 'inline' | 'block';
     className?: string;
 }
 
@@ -19,10 +17,9 @@ interface Props {
  *
  * @param errors Guard errors from a single `subscription/check` response (normalized
  *   `GuardResult`). Renders nothing when empty.
- * @param variant Visual weight only: compact inline line vs. standalone block. Default: 'block'.
  * @param className Extra classes appended to the banner wrapper.
  */
-export const GuardBanner = ({ errors, variant = 'block', className }: Props) => {
+export const GuardBanner = ({ errors, className }: Props) => {
     if (!errors.length) {
         return null;
     }
@@ -31,13 +28,9 @@ export const GuardBanner = ({ errors, variant = 'block', className }: Props) => 
         .filter((message): message is () => string => message !== undefined);
 
     return (
-        <Banner
-            aria-live="polite"
-            variant={BannerVariants.DANGER}
-            className={clsx(variant === 'inline' && 'text-sm', className)}
-        >
+        <Banner aria-live="polite" variant={BannerVariants.WARNING} className={className}>
             {errorsMessages.length > 0 && (
-                <p className="mb-1">{c('Payments').t`To complete the action, fix the following:`}</p>
+                <span className="mb-1">{c('Payments').t`Plan switch is incompatible for the following reasons:`}</span>
             )}
             <ul className="m-0 pl-4">
                 {errorsMessages.length > 0 ? (

@@ -12,8 +12,10 @@ import {
     getSubscriptionPlanTitle,
     isAddonDowngrade,
     isDangerouslyAllowedSubscriptionEstimation,
+    isModifyingPaidSubscriptionSelection,
     isSubscriptionCheckForbidden,
     isSubscriptionCheckForbiddenWithReason,
+    isSubscriptionSelectionEqual,
     isSubscriptionUnchanged,
     isUpcomingSubscriptionUnpaid,
 } from './helpers';
@@ -190,6 +192,59 @@ describe('isSubscriptionUnchanged', () => {
 
         const upcomingSubscriptionUnchangedTwoYears = isSubscriptionUnchanged(subscription, planIDs, CYCLE.TWO_YEARS);
         expect(upcomingSubscriptionUnchangedTwoYears).toBe(false);
+    });
+});
+
+describe('isSubscriptionSelectionEqual', () => {
+    it('returns true when planIDs and cycle match', () => {
+        const selection = { planIDs: { [PLANS.MAIL]: 1 }, cycle: CYCLE.YEARLY };
+
+        expect(isSubscriptionSelectionEqual(selection, { ...selection })).toBe(true);
+    });
+
+    it('returns false when cycle differs', () => {
+        const planIDs = { [PLANS.MAIL]: 1 };
+
+        expect(isSubscriptionSelectionEqual({ planIDs, cycle: CYCLE.MONTHLY }, { planIDs, cycle: CYCLE.YEARLY })).toBe(
+            false
+        );
+    });
+
+    it('returns false when planIDs differ', () => {
+        expect(
+            isSubscriptionSelectionEqual(
+                { planIDs: { [PLANS.MAIL]: 1 }, cycle: CYCLE.YEARLY },
+                { planIDs: { [PLANS.DRIVE]: 1 }, cycle: CYCLE.YEARLY }
+            )
+        ).toBe(false);
+    });
+
+    it('returns false when addon quantity differs', () => {
+        expect(
+            isSubscriptionSelectionEqual(
+                { planIDs: { [PLANS.MAIL]: 1, [ADDON_NAMES.MEMBER_MAIL_PRO]: 2 }, cycle: CYCLE.YEARLY },
+                { planIDs: { [PLANS.MAIL]: 1, [ADDON_NAMES.MEMBER_MAIL_PRO]: 3 }, cycle: CYCLE.YEARLY }
+            )
+        ).toBe(false);
+    });
+});
+
+describe('isModifyingPaidSubscriptionSelection', () => {
+    it('returns false for free subscribers', () => {
+        expect(isModifyingPaidSubscriptionSelection(FREE_SUBSCRIPTION, { [PLANS.MAIL]: 1 }, CYCLE.YEARLY)).toBe(false);
+    });
+
+    it('returns false when the paid selection matches the current subscription', () => {
+        const subscription = buildSubscription({ planName: PLANS.MAIL, cycle: CYCLE.YEARLY, currency: 'EUR' });
+        const planIDs = getPlanIDs(subscription);
+
+        expect(isModifyingPaidSubscriptionSelection(subscription, planIDs, subscription.Cycle)).toBe(false);
+    });
+
+    it('returns true when a paid subscriber changes plan or cycle', () => {
+        const subscription = buildSubscription({ planName: PLANS.MAIL, cycle: CYCLE.YEARLY, currency: 'EUR' });
+
+        expect(isModifyingPaidSubscriptionSelection(subscription, { [PLANS.DRIVE]: 1 }, CYCLE.YEARLY)).toBe(true);
     });
 });
 
