@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { useLocalParticipant, useRoomContext } from '@livekit/components-react';
+import { logger } from '@protontech/logger';
 import type { LocalTrack } from 'livekit-client';
 import { Track } from 'livekit-client';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { logger } from '@proton/logger';
 import { DEFAULT_DEVICE_ID } from '@proton/meet/constants';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetSelector, useMeetStore } from '@proton/meet/store/hooks';

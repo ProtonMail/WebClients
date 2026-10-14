@@ -1,6 +1,5 @@
 import { uint8ArrayToUtf8String } from '@protontech/crypto/utils';
-
-import { logger } from '@proton/logger';
+import { logger } from '@protontech/logger';
 
 import type { SerializedUrlRule } from './builder';
 

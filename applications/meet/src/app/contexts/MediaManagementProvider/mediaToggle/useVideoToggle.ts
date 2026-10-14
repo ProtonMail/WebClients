@@ -1,10 +1,10 @@
 import { useCallback, useMemo, useRef, useState } from 'react';
 
 import { useLocalParticipant, useRoomContext } from '@livekit/components-react';
+import { logger } from '@protontech/logger';
 import { ConnectionState } from 'livekit-client';
 import debounce from 'lodash/debounce';
 
-import { logger } from '@proton/logger';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch, useMeetSelector, useMeetStore } from '@proton/meet/store/hooks';
 import { setUserCameraIntent } from '@proton/meet/store/slices/deviceManagementSlice';

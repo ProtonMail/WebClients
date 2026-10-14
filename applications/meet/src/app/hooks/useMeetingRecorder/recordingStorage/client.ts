@@ -1,7 +1,7 @@
 import type { PublicKeyReference } from '@protontech/crypto';
 import { CryptoProxy } from '@protontech/crypto';
+import { logger } from '@protontech/logger';
 
-import { logger } from '@proton/logger';
 import type { OpfsRecording } from '@proton/meet/store/slices/recordingsSlice';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
 

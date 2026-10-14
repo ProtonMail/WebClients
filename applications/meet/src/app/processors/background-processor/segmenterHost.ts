@@ -1,4 +1,5 @@
-import { logger } from '@proton/logger';
+import { logger } from '@protontech/logger';
+
 import { withTimeout } from '@proton/meet/utils/withTimeout';
 
 import { DEFAULT_ASSET_PATH, DEFAULT_MODEL_PATH } from './constants';

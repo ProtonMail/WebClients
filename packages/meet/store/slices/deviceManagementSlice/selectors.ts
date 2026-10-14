@@ -1,7 +1,7 @@
+import { logger } from '@protontech/logger';
 import { createSelector } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import { logger } from '@proton/logger';
 import { isLinux } from '@proton/shared/lib/helpers/browser';
 
 import {

@@ -1,6 +1,6 @@
 import type { TrackReference } from '@livekit/components-react';
+import { logger } from '@protontech/logger';
 
-import { logger } from '@proton/logger';
 import type { ReportMeetError } from '@proton/meet/hooks/useMeetErrorReporting';
 import type { OpfsRecording } from '@proton/meet/store/slices/recordingsSlice';
 

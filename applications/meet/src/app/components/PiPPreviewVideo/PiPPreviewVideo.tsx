@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { Feedback } from '@dnd-kit/dom';
 import { DragDropProvider, type DragEndEvent, useDraggable } from '@dnd-kit/react';
+import { logger } from '@protontech/logger';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -9,7 +10,6 @@ import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcDots } from '@proton/icons/icons/IcDots';
 import { IcMinus } from '@proton/icons/icons/IcMinus';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
-import { logger } from '@proton/logger';
 import clsx from '@proton/utils/clsx';
 
 import { PIP_PREVIEW_ITEM_HEIGHT, PIP_PREVIEW_ITEM_WIDTH } from '../../constants';

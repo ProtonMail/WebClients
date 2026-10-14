@@ -1,7 +1,7 @@
 import { ProcessorWrapper } from '@livekit/track-processors';
+import { logger } from '@protontech/logger';
 import { type LocalTrack, TrackEvent } from 'livekit-client';
 
-import { logger } from '@proton/logger';
 import { withTimeout } from '@proton/meet/utils/withTimeout';
 import { isIos } from '@proton/shared/lib/helpers/browser';
 

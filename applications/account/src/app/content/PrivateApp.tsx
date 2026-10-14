@@ -1,6 +1,8 @@
 import { type FunctionComponent, Suspense, lazy, useState } from 'react';
 import { Router } from 'react-router-dom';
 
+import { logger } from '@protontech/logger';
+
 import { PassScopeApiModal } from '@proton/account/pass/PassScopeApiModal';
 import ApiProvider from '@proton/components/containers/api/ApiProvider';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
@@ -12,7 +14,6 @@ import EventManagerProvider from '@proton/components/containers/eventManager/Eve
 import { EventManagerV6Provider } from '@proton/components/containers/eventManager/EventManagerV6Provider';
 import CalendarModelEventManagerProvider from '@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
-import { logger } from '@proton/logger';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { UnleashFlagProviderWithToolbar } from '@proton/unleash/UnleashFlagProviderWithToolbar';

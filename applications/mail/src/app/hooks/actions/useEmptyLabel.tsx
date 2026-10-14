@@ -1,9 +1,10 @@
 import { useCallback, useMemo, useState } from 'react';
 
+import { logger } from '@protontech/logger';
+
 import { useApi } from '@proton/app-context/useApi';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import useEventManager from '@proton/components/hooks/useEventManager';
-import { logger } from '@proton/logger';
 import { getHumanLabelID, isCustomLabel } from '@proton/mail/helpers/location';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { emptyLabel as emptyLabelRequest } from '@proton/shared/lib/api/messages';

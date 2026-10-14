@@ -1,6 +1,8 @@
 import { type ReactNode, createContext, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
+import { logger } from '@protontech/logger';
+
 import { useWelcomeFlags } from '@proton/account';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
@@ -13,7 +15,6 @@ import { contentIndexingProgress, hasESDB, wrappedGetOldestInfo } from '@proton/
 import type { NormalizedSearchParams } from '@proton/encrypted-search/models';
 import { useEncryptedSearch } from '@proton/encrypted-search/useEncryptedSearch';
 import { useIndexedDBSupport } from '@proton/encrypted-search/useIndexedDBSupport';
-import { logger } from '@proton/logger';
 import { useGetMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
 import { SECOND } from '@proton/shared/lib/constants';
 import { isESEnabledUserChoiceInboxDesktop } from '@proton/shared/lib/desktop/encryptedSearch';
@@ -45,7 +46,7 @@ import { useMailSelector } from '../store/hooks';
 import { extendStore } from '../store/store';
 
 // Encrypted search has no logging implementation of its own (see esLogger.ts) - mail is the one
-// that knows about @proton/logger, so this is where that link is made explicit.
+// that knows about @protontech/logger, so this is where that link is made explicit.
 setESLogger(logger);
 
 const EncryptedSearchContext = createContext<EncryptedSearchFunctionsMail>(defaultESContextMail);
