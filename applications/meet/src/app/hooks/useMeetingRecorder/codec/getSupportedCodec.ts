@@ -1,4 +1,4 @@
-import { logger } from '@proton/logger';
+import { logger } from '@protontech/logger';
 
 import { RECORDING_FPS } from '../videoMixer/constants';
 import type { CodecProbeOutcome, RecordingCodec } from './types';

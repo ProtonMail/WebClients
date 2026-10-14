@@ -1,4 +1,5 @@
-import { logger } from '@proton/logger';
+import { logger } from '@protontech/logger';
+
 import { DAY } from '@proton/shared/lib/constants';
 
 import { getRecordingFolder } from './getRecordingFolder';

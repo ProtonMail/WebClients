@@ -518,9 +518,6 @@ importers:
       '@proton/wallet':
         specifier: workspace:^
         version: link:packages/wallet
-      '@protontech/logger':
-        specifier: ^0.0.4
-        version: 0.0.4(@types/node@24.19.0)(typescript@6.0.3)
       '@trivago/prettier-plugin-sort-imports':
         specifier: ^6.0.2
         version: 6.0.2(@vue/compiler-sfc@3.5.42)(prettier@3.9.9)(supports-color@11.0.0)(svelte@5.56.4(@typescript-eslint/types@8.70.0))
@@ -747,8 +744,8 @@ importers:
         specifier: ^2.1.3
         version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       '@protontech/logger':
-        specifier: ^0.0.4
-        version: 0.0.4(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+        specifier: ^0.0.5
+        version: 0.0.5
       '@reduxjs/toolkit':
         specifier: ^2.12.0
         version: 2.12.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1))(react@18.3.1)
@@ -2953,8 +2950,8 @@ importers:
         specifier: ^2.1.3
         version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       '@protontech/logger':
-        specifier: ^0.0.4
-        version: 0.0.4(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+        specifier: ^0.0.5
+        version: 0.0.5
       '@protontech/mimemessage':
         specifier: ~v1.1.4
         version: 1.1.4(supports-color@11.0.0)
@@ -3199,9 +3196,6 @@ importers:
       '@proton/icons':
         specifier: workspace:^
         version: link:../../packages/icons
-      '@proton/logger':
-        specifier: workspace:^
-        version: link:../../packages/logger
       '@proton/meet':
         specifier: workspace:^
         version: link:../../packages/meet
@@ -3245,8 +3239,8 @@ importers:
         specifier: ^2.1.3
         version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       '@protontech/logger':
-        specifier: ^0.0.4
-        version: 0.0.4(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+        specifier: ^0.0.5
+        version: 0.0.5
       '@reduxjs/toolkit':
         specifier: ^2.12.0
         version: 2.12.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1))(react@18.3.1)
@@ -5829,8 +5823,8 @@ importers:
         specifier: ^2.1.3
         version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       '@protontech/logger':
-        specifier: ^0.0.4
-        version: 0.0.4(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+        specifier: ^0.0.5
+        version: 0.0.5
       '@protontech/pass-rust-core':
         specifier: 1.6.0
         version: 1.6.0
@@ -7160,61 +7154,6 @@ importers:
         specifier: npm:@typescript/typescript6@^6.0.2
         version: '@typescript/typescript6@6.0.2'
 
-  packages/logger:
-    dependencies:
-      '@protontech/crypto':
-        specifier: ^2.1.3
-        version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
-      comlink:
-        specifier: ^4.4.2
-        version: 4.4.2
-      core-js:
-        specifier: ^3.50.0
-        version: 3.50.0
-      idb:
-        specifier: ^8.0.3
-        version: 8.0.3
-    devDependencies:
-      '@proton/eslint-config-proton':
-        specifier: workspace:^
-        version: link:../eslint-config-proton
-      '@proton/jest-env':
-        specifier: workspace:^
-        version: link:../jest-env
-      '@proton/jest-swc-preset':
-        specifier: workspace:^
-        version: link:../jest-swc-preset
-      '@types/jest':
-        specifier: 'catalog:'
-        version: 30.0.0
-      '@types/node':
-        specifier: 'catalog:'
-        version: 24.19.0
-      '@types/webpack-env':
-        specifier: 'catalog:'
-        version: 1.18.8
-      '@typescript/native':
-        specifier: npm:typescript@^7.0.2
-        version: typescript@7.0.2
-      eslint:
-        specifier: ^10.11.0
-        version: 10.11.0(jiti@2.7.0)(supports-color@11.0.0)
-      fake-indexeddb:
-        specifier: ^6.2.5
-        version: 6.2.5
-      jest:
-        specifier: ^30.5.2
-        version: 30.5.2(@types/node@24.19.0)(supports-color@11.0.0)(ts-node@10.9.2(@types/node@24.19.0)(@typescript/typescript6@6.0.2))
-      jest-junit:
-        specifier: ^16.0.0
-        version: 16.0.0
-      prettier:
-        specifier: ^3.9.9
-        version: 3.9.9
-      typescript:
-        specifier: npm:@typescript/typescript6@^6.0.2
-        version: '@typescript/typescript6@6.0.2'
-
   packages/lumo-api-client:
     dependencies:
       '@proton/shared':
@@ -7585,8 +7524,8 @@ importers:
         specifier: ^2.1.3
         version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       '@protontech/logger':
-        specifier: ^0.0.4
-        version: 0.0.4(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+        specifier: ^0.0.5
+        version: 0.0.5
       '@reduxjs/toolkit':
         specifier: ^2.12.0
         version: 2.12.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1))(react@18.3.1)
@@ -8809,8 +8748,8 @@ importers:
         specifier: ^2.1.3
         version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       '@protontech/logger':
-        specifier: ^0.0.4
-        version: 0.0.4(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+        specifier: ^0.0.5
+        version: 0.0.5
       '@protontech/mimemessage':
         specifier: ~v1.1.4
         version: 1.1.4(supports-color@11.0.0)
@@ -15286,8 +15225,8 @@ packages:
   '@protontech/interval-tree@1.0.0':
     resolution: {integrity: sha512-XwC15KtHFwExKYfCn4d0i2sjV4XTSMlsmSAPZluczR9GHzwi7oCMBHOzhHg3EbhCYjqLJBAxGHFsepfKyfP9ng==, tarball: https://nexus.protontech.ch/repository/web-npm-private-and-public/@protontech/interval-tree/-/interval-tree-1.0.0.tgz}
 
-  '@protontech/logger@0.0.4':
-    resolution: {integrity: sha512-Xsbo30cRRsllaQJCadC4oULX3PZHgJ/o8FqbjAoeKI17yVTIECZ91x8GthkNg78irL1EltF/36z7xVIkvCVxwg==, tarball: https://nexus.protontech.ch/repository/web-npm-private-and-public/@protontech/logger/-/logger-0.0.4.tgz}
+  '@protontech/logger@0.0.5':
+    resolution: {integrity: sha512-yhOUHwjG/wJHtdGALIq2bd3tSsN/yfT3YKqST2RLW4JwexCzbNFNtpx/D9YNocdKKw3wDaeEOJruHSUkCAR7NQ==, tarball: https://nexus.protontech.ch/repository/web-npm-private-and-public/@protontech/logger/-/logger-0.0.5.tgz}
 
   '@protontech/mimemessage@1.1.4':
     resolution: {integrity: sha512-GboE1mfTF4TIyJ+qAP/MbiLWpf/UmEbLYON4PopTJH4G0Vkn7Wl86gRhDg5ZxXEJAgN2sTSvUnSeLbsStOa/sA==, tarball: https://nexus.protontech.ch/repository/web-npm-private-and-public/@protontech/mimemessage/-/mimemessage-1.1.4.tgz}
@@ -34108,11 +34047,6 @@ snapshots:
       '@types/node': 24.19.0
       typescript: '@typescript/typescript6@6.0.2'
 
-  '@openpgp/web-stream-tools@0.3.1(@types/node@24.19.0)(typescript@6.0.3)':
-    optionalDependencies:
-      '@types/node': 24.19.0
-      typescript: 6.0.3
-
   '@opentelemetry/api-logs@0.220.0':
     dependencies:
       '@opentelemetry/api': 1.9.1
@@ -34848,18 +34782,6 @@ snapshots:
       - '@types/node'
       - typescript
 
-  '@protontech/crypto@2.1.3(@types/node@24.19.0)(typescript@6.0.3)':
-    dependencies:
-      '@noble/hashes': 2.4.0
-      '@openpgp/web-stream-tools': 0.3.1(@types/node@24.19.0)(typescript@6.0.3)
-      bcryptjs: 3.0.3
-      comlink: 4.4.2
-      core-js: 3.50.0
-      openpgp: '@protontech/openpgp@6.3.1(@openpgp/web-stream-tools@0.3.1(@types/node@24.19.0)(typescript@6.0.3))'
-    transitivePeerDependencies:
-      - '@types/node'
-      - typescript
-
   '@protontech/drive-sdk@0.22.2(@protontech/crypto@2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2))':
     dependencies:
       '@boltffi/runtime': 0.31.0
@@ -34893,25 +34815,11 @@ snapshots:
 
   '@protontech/interval-tree@1.0.0': {}
 
-  '@protontech/logger@0.0.4(@types/node@24.19.0)(@typescript/typescript6@6.0.2)':
+  '@protontech/logger@0.0.5':
     dependencies:
-      '@protontech/crypto': 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       comlink: 4.4.2
       core-js: 3.50.0
       idb: 8.0.3
-    transitivePeerDependencies:
-      - '@types/node'
-      - typescript
-
-  '@protontech/logger@0.0.4(@types/node@24.19.0)(typescript@6.0.3)':
-    dependencies:
-      '@protontech/crypto': 2.1.3(@types/node@24.19.0)(typescript@6.0.3)
-      comlink: 4.4.2
-      core-js: 3.50.0
-      idb: 8.0.3
-    transitivePeerDependencies:
-      - '@types/node'
-      - typescript
 
   '@protontech/mimemessage@1.1.4(supports-color@11.0.0)':
     dependencies:
@@ -34927,10 +34835,6 @@ snapshots:
   '@protontech/openpgp@6.3.1(@openpgp/web-stream-tools@0.3.1(@types/node@24.19.0)(@typescript/typescript6@6.0.2))':
     optionalDependencies:
       '@openpgp/web-stream-tools': 0.3.1(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
-
-  '@protontech/openpgp@6.3.1(@openpgp/web-stream-tools@0.3.1(@types/node@24.19.0)(typescript@6.0.3))':
-    optionalDependencies:
-      '@openpgp/web-stream-tools': 0.3.1(@types/node@24.19.0)(typescript@6.0.3)
 
   '@protontech/pass-rust-core@1.6.0': {}
 

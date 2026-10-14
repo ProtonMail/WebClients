@@ -1,10 +1,10 @@
 import { type MutableRefObject, useEffect, useRef } from 'react';
 
 import { MeetCoreErrorEnum, MlsSyncStateInfo, RejoinReasonInfo } from '@proton-meet/proton-meet-core';
+import { logger } from '@protontech/logger';
 import { c } from 'ttag';
 
 import useAuthentication from '@proton/components/hooks/useAuthentication';
-import { logger } from '@proton/logger';
 import { useMeetErrorReporting } from '@proton/meet';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { setMlsRetrying } from '@proton/meet/store/slices/connectionSlice';

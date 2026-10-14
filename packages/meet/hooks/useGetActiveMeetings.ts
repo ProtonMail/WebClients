@@ -1,5 +1,6 @@
+import { logger } from '@protontech/logger';
+
 import { useApi } from '@proton/app-context/useApi';
-import { logger } from '@proton/logger';
 import { getUpcomingMeetingsQuery } from '@proton/shared/lib/api/meet';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
 

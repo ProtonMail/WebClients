@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useRef } from 'react';
 
+import { logger } from '@protontech/logger';
 import type { LocalVideoTrack, Room } from 'livekit-client';
 import { createLocalVideoTrack } from 'livekit-client';
 
-import { logger } from '@proton/logger';
 import type { BackgroundEffect } from '@proton/meet/store/slices/backgroundSlice';
 import { isChrome, isMobile } from '@proton/shared/lib/helpers/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';

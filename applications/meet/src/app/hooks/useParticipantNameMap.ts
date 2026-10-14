@@ -1,11 +1,11 @@
 import { type RefObject, useCallback, useEffect, useRef } from 'react';
 
 import { useLocalParticipant, useRoomContext } from '@livekit/components-react';
+import { logger } from '@protontech/logger';
 import type { Participant } from 'livekit-client';
 import { c } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
-import { logger } from '@proton/logger';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectJoinedRoom } from '@proton/meet/store/slices/connectionSlice';
 import {

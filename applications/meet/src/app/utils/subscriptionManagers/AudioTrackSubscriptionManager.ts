@@ -1,3 +1,4 @@
+import { logger } from '@protontech/logger';
 import type { Participant, TrackPublication } from 'livekit-client';
 import {
     ConnectionState,
@@ -8,7 +9,6 @@ import {
     Track,
 } from 'livekit-client';
 
-import { logger } from '@proton/logger';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
