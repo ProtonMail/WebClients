@@ -6,22 +6,19 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Prompt, useEventManager, useModalState } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { tracker } from '@proton/telemetry-tracker/tracker';
 
 import { createToken, getTokensByFeature, resumeImport, updateImport } from '../../../api';
 import { ApiImporterError, ApiImporterState } from '../../../api/api.interface';
 import { getImportProviderFromApiProvider } from '../../../helpers/getImportProviderFromApiProvider';
-import { useGetIsBYOE } from '../../../hooks/useGetIsBYOE';
 import useOAuthPopup from '../../../hooks/useOAuthPopup';
 import { getEasySwitchFeaturesFromProducts, getProviderNumber } from '../../../hooks/useOAuthPopup.helpers';
+import { useTrackImportAction } from '../../../hooks/useTrackImportAction';
 import type { ImportToken, OAuthProps } from '../../../interface';
 import { AuthenticationMethod, EASY_SWITCH_SOURCES } from '../../../interface';
 import { reconnectImapImport } from '../../../logic/draft/imapDraft/imapDraft.actions';
 import { cancelImporter } from '../../../logic/importers/importers.actions';
 import type { ActiveImporter, Importer } from '../../../logic/importers/importers.interface';
 import { useEasySwitchDispatch } from '../../../logic/store';
-import { telemetryProduct, telemetryProvider } from '../../../telemetry/dimensions';
-import { easySwitchImportReportAction } from '../../../telemetry/events';
 import { getScopeFromProvider } from '../../Modals/OAuth/OAuthModal.helpers';
 
 interface Props {
@@ -40,7 +37,7 @@ const ImporterRowActions = ({ activeImporter, importer }: Props) => {
     });
 
     const api = useApi();
-    const getIsBYOE = useGetIsBYOE();
+    const trackEvent = useTrackImportAction({ account, provider, product });
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const [loadingPrimaryAction, withLoadingPrimaryAction] = useLoading();
@@ -98,9 +95,6 @@ const ImporterRowActions = ({ activeImporter, importer }: Props) => {
 
     const handleReconnect = async (importerID: string) => {
         await dispatch(reconnectImapImport(importerID));
-        // const apiImporterResponse = await api<ApiImportResponse>(getImport(importerID));
-        // const activeImport = getDeprecatedImporterFormatByID(apiImporterResponse);
-        // await createModal(<ImportMailModal addresses={addresses} currentImport={activeImport} />);
     };
 
     const handleResume = async (ImporterID: string) => {
@@ -112,18 +106,6 @@ const ImporterRowActions = ({ activeImporter, importer }: Props) => {
         );
         await call();
         createNotification({ text: c('Success').t`Resuming import` });
-    };
-
-    const trackEvent = async (action: 'cancel_import' | 'resume_import') => {
-        const isBYOE = await getIsBYOE(account);
-        tracker.emit(easySwitchImportReportAction, {
-            dimensions: {
-                importAction: action,
-                isBYOE,
-                provider: telemetryProvider[provider],
-                product: telemetryProduct[product],
-            },
-        });
     };
 
     const handleCancel = () => {
