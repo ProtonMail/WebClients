@@ -12,6 +12,8 @@ import type { MembersState } from '../members';
 import type { OrganizationState } from '../organization';
 import type { PaymentMethodsState } from '../paymentMethods';
 import type { SamlState } from '../samlSSO';
+import type { AuthDevicesState } from '../sso/authDevices';
+import type { MemberAuthDevicesState } from '../sso/memberAuthDevices';
 import type { SubscriptionState } from '../subscription';
 import type { UserState } from '../user';
 import type { UserInvitationsState } from '../userInvitations';
@@ -30,7 +32,9 @@ export type CoreEventLoopV6RequiredState = UserState &
     SamlState &
     GroupsState &
     GroupMembersState &
-    DelegatedAccessState;
+    DelegatedAccessState &
+    AuthDevicesState &
+    MemberAuthDevicesState;
 
 export type CoreEventLoopV6Callback = ({
     event,

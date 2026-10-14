@@ -11,7 +11,9 @@ import {
     addAuthDeviceConfig,
     associateAuthDeviceConfig,
     deleteAuthDeviceConfig,
+    getAuthDeviceConfig,
     getAuthDevicesConfig,
+    getMemberAuthDeviceConfig,
     getPendingMemberAuthDevicesConfig,
 } from '../api/authDevice';
 import { getApiError } from '../api/helpers/apiErrorHelper';
@@ -509,6 +511,13 @@ export const getPendingMemberAuthDevices = async ({ api }: { api: Api }) => {
     return MemberAuthDevices;
 };
 
+export const getMemberAuthDevice = async ({ api, deviceID }: { api: Api; deviceID: string }) => {
+    const { MemberAuthDevice } = await api<{
+        MemberAuthDevice: MemberAuthDeviceOutput;
+    }>(getMemberAuthDeviceConfig(deviceID));
+    return MemberAuthDevice;
+};
+
 export const getValidActivation = ({
     addresses,
     pendingAuthDevice,
@@ -573,6 +582,11 @@ export const getAllAuthDevices = async ({
         }
     }
     return [];
+};
+
+export const getAuthDevice = async ({ api, deviceID }: { api: Api; deviceID: string }) => {
+    const { AuthDevice } = await api<{ AuthDevice: AuthDeviceOutput }>(getAuthDeviceConfig(deviceID));
+    return AuthDevice;
 };
 
 export const deleteAuthDevice = async ({

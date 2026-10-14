@@ -32,6 +32,11 @@ export const getAuthDevicesConfig = () => ({
     url: `auth/v4/devices`,
 });
 
+export const getAuthDeviceConfig = (deviceID: string) => ({
+    method: 'get',
+    url: `auth/v4/devices/${deviceID}`,
+});
+
 export const deleteAuthDeviceConfig = (deviceID: string) => ({
     method: 'delete',
     url: `auth/v4/devices/${deviceID}`,
@@ -55,6 +60,11 @@ export const askAdminConfig = (deviceID: string) => ({
 export const getPendingMemberAuthDevicesConfig = () => ({
     method: 'get',
     url: `core/v4/members/devices/pending`,
+});
+
+export const getMemberAuthDeviceConfig = (deviceID: string) => ({
+    method: 'get',
+    url: `core/v4/members/devices/${deviceID}`,
 });
 
 export const activateMemberAuthDeviceConfig = ({
