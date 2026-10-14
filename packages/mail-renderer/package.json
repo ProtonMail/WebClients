@@ -14,6 +14,7 @@
         "./helpers/getIframeHtml": "./src/helpers/getIframeHtml.ts",
         "./helpers/transforms/transformAnchors": "./src/helpers/transforms/transformAnchors.ts",
         "./helpers/transforms/transformBase": "./src/helpers/transforms/transformBase.ts",
+        "./helpers/transforms/transformEmbeddedMarkers": "./src/helpers/transforms/transformEmbeddedMarkers.ts",
         "./helpers/transforms/transformEscape": "./src/helpers/transforms/transformEscape.ts",
         "./helpers/transforms/transformLinks": "./src/helpers/transforms/transformLinks.ts",
         "./helpers/transforms/transformRawLinks": "./src/helpers/transforms/transformRawLinks.ts",
