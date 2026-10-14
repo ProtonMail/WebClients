@@ -98,6 +98,8 @@ export interface CoreEventV6Response extends EventV6Defaults {
     OutgoingDelegatedAccess: EventV6Response;
     IncomingDelegatedAccess: EventV6Response;
     GroupOwners: EventV6Response;
+    AuthDevices: EventV6Response;
+    MemberAuthDevices: EventV6Response;
 }
 
 export interface MailEventV6Response extends EventV6Defaults {
