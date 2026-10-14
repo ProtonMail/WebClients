@@ -1,8 +1,8 @@
 import type { FolderKey, FolderKeysByShareId, MaybeNull } from '../../../types';
 import { PassEncryptionTag } from '../../../types';
+import { randomContents } from '../../../utils/tests/fixtures/crypto';
 import { decryptData, encryptData, generateKey, importSymmetricKey } from './crypto-helpers';
 import { hydrateFolderKeys, serializeFolderKeys } from './seralize';
-import { randomContents } from './testing';
 
 describe('folder keys serialization', () => {
     const createFolderKey = async (rotation: number, parentFolderId: MaybeNull<string>): Promise<FolderKey> => {

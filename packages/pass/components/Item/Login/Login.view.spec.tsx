@@ -1,10 +1,9 @@
 import noop from '@proton/utils/noop';
 
 import { itemBuilder } from '../../../lib/items/item.builder';
-import { createTestItem } from '../../../lib/items/item.test.utils';
-import type { ShareItem } from '../../../store/reducers';
-import { ShareRole, ShareType } from '../../../types';
-import { uniqueId } from '../../../utils/string/unique-id';
+import { ShareRole } from '../../../types';
+import { createTestItem } from '../../../utils/tests/fixtures/items';
+import { createTestShare } from '../../../utils/tests/fixtures/shares';
 import { render } from '../../../utils/tests/render';
 import { LoginView } from './Login.view';
 
@@ -26,32 +25,8 @@ const itemActions = {
     handleToggleFlagsClick: noop,
 };
 
-jest.mock('webextension-polyfill', () => ({}));
-jest.mock('imask/esm/masked/range', () => ({}));
-
 describe('Login.view', () => {
-    const mockShareId = uniqueId();
-
-    const mockShare: ShareItem = {
-        addressId: uniqueId(),
-        content: '',
-        createTime: 0,
-        eventId: uniqueId(),
-        newUserInvitesReady: 0,
-        owner: true,
-        shared: false,
-        shareId: mockShareId,
-        shareRoleId: ShareRole.MANAGER,
-        targetId: uniqueId(),
-        targetMaxMembers: 1,
-        targetMembers: 1,
-        targetType: ShareType.Vault,
-        vaultId: uniqueId(),
-        canAutofill: true,
-        flags: 0,
-        permission: 0,
-        groupId: null,
-    };
+    const mockShare = createTestShare({ shareRoleId: ShareRole.MANAGER, owner: true, canAutofill: true });
 
     test('Happy path', async () => {
         const itemEmail = 'user@example.com';

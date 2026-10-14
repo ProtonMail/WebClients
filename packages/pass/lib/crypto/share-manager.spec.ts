@@ -1,9 +1,9 @@
 import type { VaultShareKey } from '../../types';
 import { ShareType } from '../../types';
+import { TEST_USER_KEY_ID, createRandomShare } from '../../utils/tests/fixtures/crypto';
 import { createShareManager } from './share-manager';
 import { generateKey, importSymmetricKey } from './utils/crypto-helpers';
 import { PassCryptoShareError, PassCryptoVaultError } from './utils/errors';
-import { TEST_USER_KEY_ID, createRandomShare } from './utils/testing';
 
 describe('ShareManager', () => {
     test('createShareManager should init manager with share', () => {

@@ -4,9 +4,10 @@ import type { PassConfig } from '../../hooks/usePassConfig';
 import { selectExportData } from '../../store/selectors/export';
 import type { State } from '../../store/types';
 import type { ItemImportIntent } from '../../types';
-import { ContentFormatVersion, ItemState } from '../../types';
-import { ShareType } from '../../types/data/shares';
 import { AutofillMode } from '../../types/protobuf';
+import { createTestItem } from '../../utils/tests/fixtures/items';
+import { createTestShare } from '../../utils/tests/fixtures/shares';
+import { createTestState } from '../../utils/tests/state';
 import { readProtonPassCSV } from '../import/providers/protonpass/protonpass.csv.reader';
 import { itemBuilder } from '../items/item.builder';
 import { createPassExportCSV } from './csv';
@@ -16,41 +17,24 @@ const SHARE_ID = 'testShare';
 const mockConfig = { APP_VERSION: '1.20.0' } as PassConfig;
 
 const mockStateWith = (autofillUrls: { url: string; mode: AutofillMode }[]): State =>
-    ({
-        user: { user: null, plan: null },
-        organization: null,
-        items: {
-            byShareId: {
-                [SHARE_ID]: {
-                    item1: {
-                        itemId: 'item1',
-                        shareId: SHARE_ID,
-                        state: ItemState.Active,
-                        aliasEmail: null,
-                        contentFormatVersion: ContentFormatVersion.Item,
-                        createTime: 1700000000,
-                        modifyTime: 1700000001,
-                        pinned: false,
-                        shareCount: 0,
-                        folderId: null,
-                        data: itemBuilder('login')
-                            .set('content', (content) => content.set('autofillUrls', autofillUrls))
-                            .set('metadata', (metadata) => metadata.set('name', 'Bank login')).data,
-                    },
-                },
-                optimistic: { history: [], checkpoint: undefined },
-            },
-        },
-        shares: {
-            [SHARE_ID]: {
+    createTestState({
+        shares: [
+            createTestShare({
                 shareId: SHARE_ID,
-                targetType: ShareType.Vault,
                 owner: true,
                 content: { name: 'My Vault', description: '', display: {} },
-            },
-        },
-        folders: {},
-    }) as unknown as State;
+            }),
+        ],
+        items: [
+            createTestItem('login', {
+                itemId: 'item1',
+                shareId: SHARE_ID,
+                data: itemBuilder('login')
+                    .set('content', (content) => content.set('autofillUrls', autofillUrls))
+                    .set('metadata', (metadata) => metadata.set('name', 'Bank login')).data,
+            }),
+        ],
+    });
 
 const exportRow = async (state: State): Promise<ExportCSVItem> => {
     const exportData = selectExportData(mockConfig)(state)({});

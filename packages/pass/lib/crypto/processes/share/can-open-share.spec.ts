@@ -8,8 +8,8 @@ import type {
     ShareKeyResponse,
     ShareManager,
 } from '../../../../types';
+import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../utils/tests/fixtures/crypto';
 import { PassCryptoShareError } from '../../utils/errors';
-import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../utils/testing';
 import { canOpenShare } from './can-open-share';
 
 describe('canOpenShare', () => {

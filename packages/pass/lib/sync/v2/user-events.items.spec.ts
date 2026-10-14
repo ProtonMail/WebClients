@@ -3,10 +3,10 @@ import { runSaga } from 'redux-saga';
 import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 
 import { itemsDeleteEvent, itemsUpdated } from '../../../store/actions';
-import { sagaSetup } from '../../../store/sagas/testing';
 import type { ItemId, ShareId, SyncEventShareItemOutput } from '../../../types';
+import { createTestItem } from '../../../utils/tests/fixtures/items';
+import { sagaSetup } from '../../../utils/tests/saga';
 import * as itemRequests from '../../items/item.requests';
-import { createTestItem } from '../../items/item.test.utils';
 import type { EventProcessor } from '../types';
 import { processItemsDeleted, processItemsUpdated } from './user-events.items';
 

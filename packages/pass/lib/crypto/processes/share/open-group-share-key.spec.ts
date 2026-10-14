@@ -1,5 +1,4 @@
 import { PassEncryptionTag } from '../../../../types';
-import { decryptData } from '../../utils/crypto-helpers';
 import {
     createRandomGroupKey,
     createRandomKey,
@@ -7,7 +6,8 @@ import {
     randomContents,
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
-} from '../../utils/testing';
+} from '../../../../utils/tests/fixtures/crypto';
+import { decryptData } from '../../utils/crypto-helpers';
 import { createVault } from '../vault/create-vault';
 import { openGroupShareKey } from './open-group-share-key';
 

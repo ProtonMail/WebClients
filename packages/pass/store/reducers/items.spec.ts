@@ -1,5 +1,5 @@
-import { createTestItem } from '../../lib/items/item.test.utils';
 import { uniqueId } from '../../utils/string/unique-id';
+import { createTestItem } from '../../utils/tests/fixtures/items';
 import { folderDelete } from '../actions';
 import itemsReducer, { updateItem, updateItems, withOptimisticItemsByShareId } from './items';
 

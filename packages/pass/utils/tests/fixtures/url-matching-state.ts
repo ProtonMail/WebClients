@@ -1,8 +1,8 @@
-import { itemBuilder } from '../../lib/items/item.builder';
-import { ItemState } from '../../types';
-import { AutofillMode } from '../../types/protobuf';
-import { getEpoch } from '../../utils/time/epoch';
-import type { State } from '../types';
+import { itemBuilder } from '../../../lib/items/item.builder';
+import type { State } from '../../../store/types';
+import { ItemState } from '../../../types';
+import { AutofillMode } from '../../../types/protobuf';
+import { getEpoch } from '../../time/epoch';
 
 export const getStateMock = () =>
     ({
@@ -50,7 +50,9 @@ export const getStateMock = () =>
                         data: itemBuilder('login')
                             .set('content', (content) =>
                                 content
-                                    .set('autofillUrls', [{ url: 'https://private.subdomain.github.io', mode: AutofillMode.Default }])
+                                    .set('autofillUrls', [
+                                        { url: 'https://private.subdomain.github.io', mode: AutofillMode.Default },
+                                    ])
                                     .set('itemUsername', 'test@github.io')
                             )
                             .set('extraFields', [
@@ -67,7 +69,9 @@ export const getStateMock = () =>
                         state: ItemState.Active,
                         shareId: 'share1',
                         data: itemBuilder('login').set('content', (content) =>
-                            content.set('autofillUrls', [{ url: 'https://othersubdomain.github.io', mode: AutofillMode.Default }])
+                            content.set('autofillUrls', [
+                                { url: 'https://othersubdomain.github.io', mode: AutofillMode.Default },
+                            ])
                         ).data,
                     },
                 },
@@ -124,7 +128,9 @@ export const getStateMock = () =>
                         state: ItemState.Active,
                         shareId: 'share3',
                         data: itemBuilder('login').set('content', (content) =>
-                            content.set('autofillUrls', [{ url: 'https://sub.domain.google.com', mode: AutofillMode.Default }])
+                            content.set('autofillUrls', [
+                                { url: 'https://sub.domain.google.com', mode: AutofillMode.Default },
+                            ])
                         ).data,
                     },
                     item5: {
@@ -133,7 +139,9 @@ export const getStateMock = () =>
                         state: ItemState.Active,
                         shareId: 'share3',
                         data: itemBuilder('login').set('content', (content) =>
-                            content.set('autofillUrls', [{ url: 'https://my.sub.domain.google.com', mode: AutofillMode.Default }])
+                            content.set('autofillUrls', [
+                                { url: 'https://my.sub.domain.google.com', mode: AutofillMode.Default },
+                            ])
                         ).data,
                     },
                     item6: {
@@ -150,7 +158,7 @@ export const getStateMock = () =>
                 share5: {
                     item1: {
                         /* subdomain `A` OTP */
-                        itemId: 'share5-item2',
+                        itemId: 'share5-item1',
                         state: ItemState.Active,
                         shareId: 'share5',
                         lastUseTime: getEpoch() + 1_200,
@@ -163,7 +171,7 @@ export const getStateMock = () =>
                     },
                     item2: {
                         /* subdomain `B` OTP */
-                        itemId: 'share5-item3',
+                        itemId: 'share5-item2',
                         state: ItemState.Active,
                         shareId: 'share5',
                         lastUseTime: getEpoch() + 1_000,
@@ -238,7 +246,9 @@ export const getStateMock = () =>
                         data: itemBuilder('login').set('content', (content) =>
                             content
                                 .set('itemUsername', 'username@subdomain.com')
-                                .set('autofillUrls', [{ url: 'https://domain-of-hidden-share.com', mode: AutofillMode.Default }])
+                                .set('autofillUrls', [
+                                    { url: 'https://domain-of-hidden-share.com', mode: AutofillMode.Default },
+                                ])
                         ).data,
                     },
                 },
@@ -254,6 +264,7 @@ export const getStateMock = () =>
             share6: { shareId: 'share6', flags: 1 },
         },
         sharesDedupe: {
+            dedupe: ['share1', 'share2', 'share3', 'share4', 'share5', 'share6'],
             dedupeAndVisible: ['share1', 'share2', 'share3', 'share4', 'share5'],
         },
         user: {},

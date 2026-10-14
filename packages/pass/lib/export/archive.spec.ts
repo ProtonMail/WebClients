@@ -4,9 +4,9 @@ import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { ContentFormatVersion, ItemState } from '../../types';
 import { uniqueId } from '../../utils/string/unique-id';
+import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../utils/tests/fixtures/crypto';
 import { getEpoch } from '../../utils/time/epoch';
 import { decryptPassExport } from '../crypto/utils/export';
-import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../crypto/utils/testing';
 import { consumeStream } from '../file-attachments/download';
 import { readZIP } from '../import/helpers/zip.reader';
 import { archivePath, createArchive, createExportDataStream, getArchiveName } from './archive';

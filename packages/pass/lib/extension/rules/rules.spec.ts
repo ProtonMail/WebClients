@@ -1,7 +1,7 @@
+import { RULES_V1_MOCK } from '../../../utils/tests/fixtures/website-rules.v1';
+import { RULES_V2_MOCK } from '../../../utils/tests/fixtures/website-rules.v2';
 import { compileRules, expandArrayPattern, matchRules, matchSegments, parseRules, validateRules } from './rules';
-import { RULES_V1_MOCK } from './v1/mock';
 import RULES_V1_PROD from './v1/rules.json';
-import { RULES_V2_MOCK } from './v2/mock';
 import RULES_V2_PROD from './v2/rules.json';
 
 const toDict = (obj: object): object => {

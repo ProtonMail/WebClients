@@ -1,5 +1,5 @@
+import { RULES_V2_MOCK } from '../../../../utils/tests/fixtures/website-rules.v2';
 import { validateRulesV2 } from './definition';
-import { RULES_V2_MOCK } from './mock';
 
 describe('Rules V2', () => {
     describe('Validation', () => {

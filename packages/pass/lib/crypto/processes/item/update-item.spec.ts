@@ -1,8 +1,8 @@
 import type { ItemKey } from '../../../../types';
 import { ContentFormatVersion, PassEncryptionTag } from '../../../../types';
+import { randomContents } from '../../../../utils/tests/fixtures/crypto';
 import { decryptData, generateKey, importSymmetricKey } from '../../utils/crypto-helpers';
 import { PassCryptoItemError } from '../../utils/errors';
-import { randomContents } from '../../utils/testing';
 import { updateItem } from './update-item';
 
 describe('updateItem crypto process', () => {

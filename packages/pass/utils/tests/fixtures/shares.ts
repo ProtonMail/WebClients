@@ -1,8 +1,9 @@
 import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 
-import type { Share } from '../../types';
-import { ShareRole, ShareType } from '../../types';
-import { PassErrorCode } from '../api/errors';
+import { PassErrorCode } from '../../../lib/api/errors';
+import type { Share } from '../../../types';
+import { ShareRole, ShareType } from '../../../types';
+import { uniqueId } from '../../string/unique-id';
 
 export const createTestShare = (overrides: Partial<Share> = {}): Share => ({
     shareId: 'share',
@@ -24,8 +25,23 @@ export const createTestShare = (overrides: Partial<Share> = {}): Share => ({
     eventId: 'event-1',
     groupId: null,
     ...overrides,
-    ...overrides,
 });
+
+export type TestVaultInit = { name: string } & Partial<Share<ShareType.Vault>>;
+
+export const createTestVault = ({ name, ...overrides }: TestVaultInit): Share<ShareType.Vault> => {
+    const shareId = overrides.shareId ?? uniqueId();
+
+    return createTestShare({
+        shareId,
+        vaultId: `vault-${shareId}`,
+        shareRoleId: ShareRole.MANAGER,
+        owner: true,
+        canAutofill: true,
+        content: { name, description: '', display: {} },
+        ...overrides,
+    }) as Share<ShareType.Vault>;
+};
 
 export const createShareRemovedError = (code: PassErrorCode = PassErrorCode.NOT_EXIST_SHARE) => {
     const data = { Code: code, Error: '[TEST] Share Removed' };

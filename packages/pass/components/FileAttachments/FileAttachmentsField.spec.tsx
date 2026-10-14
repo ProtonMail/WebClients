@@ -11,9 +11,6 @@ import { uniqueId } from '../../utils/string/unique-id';
 import { render } from '../../utils/tests/render';
 import { FileAttachmentsField } from './FileAttachmentsField';
 
-jest.mock('webextension-polyfill', () => ({}));
-jest.mock('imask/esm/masked/range', () => ({}));
-
 /** Branches under test are driven by these hooks/selectors. Mock them directly
  * rather than seeding the redux store, so each scenario is isolated. */
 jest.mock('../../hooks/useFeatureFlag', () => ({ useFeatureFlag: jest.fn() }));

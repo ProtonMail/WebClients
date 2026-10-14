@@ -1,5 +1,5 @@
+import { randomContents, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../utils/tests/fixtures/crypto';
 import { decryptPassExport, encryptPassExport } from './export';
-import { randomContents, releaseCryptoProxy, setupCryptoProxyForTesting } from './testing';
 
 describe('PGP Exporting', () => {
     beforeAll(async () => setupCryptoProxyForTesting());

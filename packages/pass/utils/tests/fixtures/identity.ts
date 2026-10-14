@@ -1,5 +1,5 @@
-import type { IdentityFormSection } from './useIdentityForm';
-import type { IdentityFormFields } from './utils';
+import type { IdentityFormSection } from '../../../hooks/identity/useIdentityForm';
+import type { IdentityFormFields } from '../../../hooks/identity/utils';
 
 export const MOCK_FIELDS = {
     fullName: { name: 'fullName', label: 'firstName', placeholder: '' },

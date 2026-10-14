@@ -1,14 +1,14 @@
 import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 
 import { PassSignatureContext } from '../../../../types';
-import { createPassCoreProxy } from '../../../core/core.proxy';
-import type { PassCoreProxy } from '../../../core/core.types';
 import {
     createRandomKey,
     createRandomVaultKey,
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
-} from '../../utils/testing';
+} from '../../../../utils/tests/fixtures/crypto';
+import { createPassCoreProxy } from '../../../core/core.proxy';
+import type { PassCoreProxy } from '../../../core/core.types';
 import { createNewUserSignatureFactory } from './create-new-user-signature';
 
 describe('create new user invite signature', () => {

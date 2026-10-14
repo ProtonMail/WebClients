@@ -1,6 +1,6 @@
 import type { FormSubmission } from '../../types';
+import { getStateMock } from '../../utils/tests/fixtures/url-matching-state';
 import { selectAutofillLoginCandidates, selectOTPCandidate } from './autofill';
-import { getStateMock } from './mock';
 
 const state = getStateMock();
 

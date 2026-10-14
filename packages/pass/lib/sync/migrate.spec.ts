@@ -2,14 +2,14 @@ import { runSaga } from 'redux-saga';
 
 import { setUserAccess, syncMigration } from '../../store/actions';
 import { type HydratedAccessState, default as rootReducer } from '../../store/reducers';
-import { sagaReturn, sagaSetup } from '../../store/sagas/testing';
 import type { RootSagaOptions, State } from '../../store/types';
 import type { Maybe } from '../../types';
 import { type PassEventListResponse, PlanType } from '../../types';
+import { createTestShare } from '../../utils/tests/fixtures/shares';
+import { sagaReturn, sagaSetup } from '../../utils/tests/saga';
 import * as inviteRequests from '../invites/invite.requests';
 import * as organizationRequests from '../organization/organization.requests';
 import * as shareRequests from '../shares/share.requests';
-import { createTestShare } from '../shares/share.test.utils';
 import * as userRequests from '../user/user.requests';
 import { migrate } from './migrate';
 import type { SyncResult } from './types';

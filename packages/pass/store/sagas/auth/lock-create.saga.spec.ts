@@ -4,8 +4,8 @@ import type { LockCreateDTO } from '../../../lib/auth/lock/types';
 import { LockMode } from '../../../lib/auth/lock/types';
 import { last } from '../../../utils/fp/lens';
 import { obfuscate } from '../../../utils/obfuscate/xor';
+import { sagaSetup } from '../../../utils/tests/saga';
 import { lockCreateFailure, lockCreateIntent, lockCreateSuccess, stateDestroy } from '../../actions';
-import { sagaSetup } from '../testing';
 import watcher from './lock-create.saga';
 
 describe('lock-create saga', () => {

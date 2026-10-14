@@ -5,7 +5,7 @@ import { renderHook } from '@testing-library/react';
 
 import { WasmTxBuilder } from '@proton/andromeda';
 import { mockUseNotifications } from '@proton/app-context/testing/vitest/mockUseNotifications';
-import { setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
+import { setupCryptoProxyForTesting } from '@proton/pass/utils/tests/fixtures/crypto';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import { mockUseBitcoinNetwork, mockUseWalletApiClients } from '@proton/wallet/tests/mocks';
 import { getAddressKey } from '@proton/wallet/tests/utils';

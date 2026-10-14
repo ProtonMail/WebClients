@@ -22,3 +22,19 @@ HTMLCanvasElement.prototype.getContext = jest.fn();
 
 jest.mock('loglevel', () => require('@proton/pass/utils/logger/loglevel.mock'));
 jest.mock('@proton/pass/lib/core/ui.proxy');
+jest.mock('webextension-polyfill', () => ({}));
+
+// No extension to answer in jsdom: resolve right away instead of arming a 15s timeout
+jest.mock('@proton/shared/lib/browser/extension', () => ({
+    ...jest.requireActual('@proton/shared/lib/browser/extension'),
+    sendExtensionMessage: jest.fn().mockResolvedValue({ type: 'error', error: 'No extension in tests' }),
+}));
+
+// Module-level channels (service worker client) would otherwise keep jest from exiting
+const NativeBroadcastChannel = global.BroadcastChannel;
+global.BroadcastChannel = class extends NativeBroadcastChannel {
+    constructor(name) {
+        super(name);
+        this.unref?.();
+    }
+};

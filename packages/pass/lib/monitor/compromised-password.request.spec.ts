@@ -1,6 +1,6 @@
 import { CompressionStream, DecompressionStream } from 'node:stream/web';
 
-import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../crypto/utils/testing';
+import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../utils/tests/fixtures/crypto';
 import {
     checkPasswordCompromised,
     fetchCompromisedBucket,
