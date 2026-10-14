@@ -637,6 +637,7 @@ const SubUserCreateModal = ({
                                           selectedRoles={selectedRoles}
                                           onChange={setSelectedRoles}
                                           disabled={
+                                              submitting ||
                                               model.mode !== CreateMemberMode.Password ||
                                               adminRolesUIState !== AdminRolesUIState.Enabled
                                           }
