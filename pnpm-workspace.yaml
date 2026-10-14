@@ -29,6 +29,11 @@ linkWorkspacePackages: true
 # Yarn never installs missing peer dependencies; pnpm does by default.
 autoInstallPeers: false
 
+# pnpm's default. electron-forge refuses to package unless node-linker is hoisted or a hoist
+# pattern is set explicitly; the desktop apps package only the webpack output, not node_modules.
+hoistPattern:
+    - '*'
+
 # @electron/rebuild pulls @electron/node-gyp from a GitHub commit, and pnpm has no per-package
 # exception for it. Yarn accepted every git dependency (approvedGitRepositories: '**').
 blockExoticSubdeps: false
