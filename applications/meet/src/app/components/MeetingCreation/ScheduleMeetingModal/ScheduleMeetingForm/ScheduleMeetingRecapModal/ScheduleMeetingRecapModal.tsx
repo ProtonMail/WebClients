@@ -345,6 +345,7 @@ export const ScheduleMeetingRecapModal = ({
                                 onClose={close}
                                 originalPlacement="bottom-start"
                                 size={{ width: DropdownSizeUnit.Anchor }}
+                                adaptiveForTouchScreens={false}
                                 className="calendar-dropdown"
                             >
                                 <DropdownMenu>
