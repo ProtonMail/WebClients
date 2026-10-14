@@ -627,4 +627,73 @@ describe('useConnectBYOEAddress', () => {
             expect(reports[1].dimensions).toMatchObject({ errorStep: 'address_creation' });
         });
     });
+
+    describe('claimBYOEAddress', () => {
+        const claim = async (args: { importEmails?: boolean; importPeriod?: TIME_PERIOD } = {}) => {
+            const { result } = renderHook(() =>
+                useConnectBYOEAddress({ source: EASY_SWITCH_SOURCES.ACCOUNT_LITE_BYOE })
+            );
+            let outcome: ConnectBYOEAddressResult | undefined;
+            await act(async () => {
+                outcome = await result.current.claimBYOEAddress({
+                    email: mockToken.Account,
+                    importEmails: true,
+                    importPeriod: TIME_PERIOD.BIG_BANG,
+                    ...args,
+                });
+            });
+            return outcome!;
+        };
+
+        beforeEach(() => {
+            jest.clearAllMocks();
+            mockUseBYOEFeatureStatus.mockReturnValue([true, false] as const);
+            mockUseAddresses.mockReturnValue([[], false]);
+            mockFindUserAddress.mockReturnValue(undefined);
+            mockGetIsBYOEAddress.mockReturnValue(false);
+            mockDispatch.mockResolvedValue(createdAddress);
+            mockApi.mockResolvedValue({});
+            mockUseFlag.mockImplementation((flag) => flag === 'CanClaimExternalAddress');
+        });
+
+        it('should start the import task with ClaimAddress, create the address and succeed', async () => {
+            const outcome = await claim({ importEmails: false });
+
+            expect(mockStartImportTask).toHaveBeenCalledWith(
+                expect.objectContaining({
+                    Account: mockToken.Account,
+                    AutomaticImport: false,
+                    ClaimAddress: true,
+                })
+            );
+            expect(outcome).toEqual({ status: 'success', address: createdAddress, importEmails: false });
+        });
+
+        it('should return no-access and do nothing when hasAccessToBYOE is false', async () => {
+            mockUseBYOEFeatureStatus.mockReturnValue([false, false] as const);
+
+            const outcome = await claim();
+
+            expect(outcome).toEqual({ status: 'failure', reason: { type: 'no-access' } });
+            expect(mockApi).not.toHaveBeenCalled();
+        });
+
+        it('should not call the API when claiming is disabled', async () => {
+            mockUseFlag.mockReturnValue(false);
+
+            const outcome = await claim();
+
+            expect(outcome).toEqual({ status: 'failure', reason: { type: 'linked-to-another-account' } });
+            expect(mockApi).not.toHaveBeenCalled();
+        });
+
+        it('should return unknown and not finalize when the claim request fails', async () => {
+            mockApi.mockRejectedValue({ data: { Code: 1, Error: 'Boom' } });
+
+            const outcome = await claim();
+
+            expect(outcome.status).toBe('failure');
+            expect(mockDispatch).not.toHaveBeenCalled();
+        });
+    });
 });
