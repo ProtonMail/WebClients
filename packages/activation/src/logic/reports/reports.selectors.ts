@@ -3,21 +3,10 @@ import { createSelector } from '@reduxjs/toolkit';
 import orderBy from '@proton/utils/orderBy';
 
 import type { EasySwitchState } from '../store';
-import type { Report, ReportSummariesMap, ReportSummary, ReportSummaryID, ReportsMap } from './reports.interface';
+import type { Report, ReportSummariesMap, ReportSummary, ReportsMap } from './reports.interface';
 
 const selectReportsMap = (state: EasySwitchState): ReportsMap => state.reports.reports;
 const selectReportsSummariesMap = (state: EasySwitchState): ReportSummariesMap => state.reports.summaries;
-
-export const selectReportById = createSelector(
-    selectReportsMap,
-    (_: EasySwitchState, ID: string) => ID,
-    (reportsMap, ID) => reportsMap[ID]
-);
-export const selectReportSummaryById = createSelector(
-    selectReportsSummariesMap,
-    (_: EasySwitchState, ID: ReportSummaryID) => ID,
-    (summariesMap, ID) => summariesMap[ID]
-);
 
 const selectReports = createSelector(selectReportsMap, (reportsMap): Report[] => {
     const reports = Object.values(reportsMap);
@@ -30,16 +19,14 @@ const selectReportSummaries = createSelector(selectReportsSummariesMap, (reports
 });
 
 /**
- * @returns array of summary ids ordered by report date DESC
+ * @returns array of report summaries with their report, ordered by report date DESC
  */
-export const selectReportSummaryIdsByDate = createSelector(
+export const selectReportEntriesByDate = createSelector(
     [selectReports, selectReportSummaries],
-    (reports, summaries) =>
+    (reports, summaries): { summary: ReportSummary; report: Report }[] =>
         orderBy(reports, 'endDate')
-            .reduce<ReportSummaryID[]>((acc, { ID }) => {
-                const ids = summaries.filter(({ reportID }) => reportID === ID).map(({ localID }) => localID);
-                acc = [...acc, ...ids];
-                return acc;
-            }, [])
+            .flatMap((report) =>
+                summaries.filter(({ reportID }) => reportID === report.ID).map((summary) => ({ summary, report }))
+            )
             .reverse()
 );
