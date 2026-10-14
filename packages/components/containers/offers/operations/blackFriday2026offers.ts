@@ -126,11 +126,6 @@ const getBiggestSaleTagline = () => {
 };
 
 // translator: offer tagline, shown under the "Black Friday" headline in the offer header
-const getYearlyPlanTagline = () => {
-    return c('bfcampaign2026: Title').t`Save big with a yearly plan`;
-};
-
-// translator: offer tagline, shown under the "Black Friday" headline in the offer header
 const getProtectionForTwoTagline = () => {
     return c('bfcampaign2026: Title').t`Protection for two in a single plan`;
 };
@@ -223,7 +218,7 @@ const plusToUnlimited: BlackFriday2026Offer = {
     dealName: PLAN_NAMES[PLANS.BUNDLE],
     couponCode: COUPON_CODES.BLACK_FRIDAY_2026_BUNDLE,
     features: getPlusToUnlimitedFeatures,
-    title: getYearlyPlanTagline,
+    title: getBiggestSaleTagline,
     modalImage: kv,
 };
 
