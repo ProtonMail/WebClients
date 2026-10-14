@@ -4,24 +4,22 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import type { UserSettings } from '@proton/shared/lib/interfaces/Meet';
 
-import { updateUserSettingsThunk, userSettingsReducer } from './userSettings';
+import { updateLiveCaptionsLocaleThunk, userSettingsReducer, userSettingsThunk } from './userSettings';
 
 vi.mock('@proton/shared/lib/helpers/sentry', () => ({
     captureMessage: vi.fn(),
 }));
 
-const isUpdate = (config: { method?: string }) => config.method === 'put';
+const storedSettings: UserSettings = {
+    MeetingID: 'meeting-id',
+    AddressID: 'address-id',
+    LiveCaptionsLocale: 'de_DE',
+};
 
-const setup = ({ readFails = false }: { readFails?: boolean } = {}) => {
-    let storedSettings: UserSettings = { MeetingID: 'meeting-id', AddressID: 'address-id', CaptionLanguage: 'de' };
-
-    const api = vi.fn(async (config: { method?: string }) => {
-        if (isUpdate(config)) {
-            return {};
-        }
-
-        if (readFails) {
-            throw new Error('offline');
+const setup = () => {
+    const api = vi.fn(async (config: { method?: string; data?: { LiveCaptionsLocale: string | null } }) => {
+        if (config.method === 'put') {
+            return { UserSettings: { ...storedSettings, ...config.data } };
         }
 
         return { UserSettings: storedSettings };
@@ -35,65 +33,48 @@ const setup = ({ readFails = false }: { readFails?: boolean } = {}) => {
             }),
     });
 
-    const setStoredSettings = (next: UserSettings) => {
-        storedSettings = next;
-    };
-
-    return { api, store, setStoredSettings };
+    return { api, store };
 };
 
-describe('updateUserSettingsThunk', () => {
+describe('updateLiveCaptionsLocaleThunk', () => {
     beforeEach(() => {
         vi.clearAllMocks();
     });
 
-    it('sends the settings back as a whole, so the fields it does not touch survive', async () => {
+    it('writes only the locale, so the other settings are left alone', async () => {
         const { api, store } = setup();
 
-        await store.dispatch(updateUserSettingsThunk({ CaptionLanguage: 'fr' })).unwrap();
+        await store.dispatch(updateLiveCaptionsLocaleThunk('fr_FR')).unwrap();
 
         expect(api).toHaveBeenCalledWith({
             method: 'put',
-            url: 'meet/v1/user-settings',
-            data: { MeetingID: 'meeting-id', AddressID: 'address-id', CaptionLanguage: 'fr' },
+            url: 'meet/v1/user-settings/live-captions-locale',
+            data: { LiveCaptionsLocale: 'fr_FR' },
         });
     });
 
-    it('reads the settings again rather than trusting the cached copy', async () => {
-        const { api, store, setStoredSettings } = setup();
+    it('sends null for auto-detect', async () => {
+        const { api, store } = setup();
 
-        await store.dispatch(updateUserSettingsThunk({ CaptionLanguage: 'fr' })).unwrap();
+        await store.dispatch(updateLiveCaptionsLocaleThunk(null)).unwrap();
 
-        setStoredSettings({ MeetingID: 'rotated-meeting-id', AddressID: 'address-id', CaptionLanguage: 'fr' });
-
-        await store.dispatch(updateUserSettingsThunk({ CaptionLanguage: 'de' })).unwrap();
-
-        expect(api).toHaveBeenLastCalledWith({
+        expect(api).toHaveBeenCalledWith({
             method: 'put',
-            url: 'meet/v1/user-settings',
-            data: { MeetingID: 'rotated-meeting-id', AddressID: 'address-id', CaptionLanguage: 'de' },
+            url: 'meet/v1/user-settings/live-captions-locale',
+            data: { LiveCaptionsLocale: null },
         });
     });
 
     it('keeps the cached settings in step with the change', async () => {
         const { store } = setup();
 
-        await store.dispatch(updateUserSettingsThunk({ CaptionLanguage: 'fr' })).unwrap();
+        await store.dispatch(userSettingsThunk());
+        await store.dispatch(updateLiveCaptionsLocaleThunk('fr_FR')).unwrap();
 
         expect(store.getState().meet_user_settings.value).toEqual({
             MeetingID: 'meeting-id',
             AddressID: 'address-id',
-            CaptionLanguage: 'fr',
+            LiveCaptionsLocale: 'fr_FR',
         });
-    });
-
-    it('writes nothing when the current settings cannot be read', async () => {
-        const { api, store } = setup({ readFails: true });
-
-        await expect(store.dispatch(updateUserSettingsThunk({ CaptionLanguage: 'fr' })).unwrap()).rejects.toThrow(
-            'offline'
-        );
-
-        expect(api.mock.calls.some(([config]) => isUpdate(config))).toBe(false);
     });
 });

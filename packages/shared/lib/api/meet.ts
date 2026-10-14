@@ -1,4 +1,4 @@
-import type { MeetingPayload, ParticipantPermissions, UserSettings, WaitingRoomState } from '../interfaces/Meet';
+import type { MeetingPayload, ParticipantPermissions, WaitingRoomState } from '../interfaces/Meet';
 
 export const queryParticipants = (meetingLinkName: string) => {
     return {
@@ -66,11 +66,11 @@ export const getMeetUserSettings = {
     url: `meet/v1/user-settings`,
 };
 
-// Replaces the settings as a whole, not just the fields sent.
-export const updateMeetUserSettingsCall = (data: UserSettings) => {
+// Null asks the agent to detect the language instead.
+export const editMeetUserSettingsLiveCaptionsLocaleCall = (data: { LiveCaptionsLocale: string | null }) => {
     return {
         method: 'put',
-        url: `meet/v1/user-settings`,
+        url: `meet/v1/user-settings/live-captions-locale`,
         data,
     };
 };

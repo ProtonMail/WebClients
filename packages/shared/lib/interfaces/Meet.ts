@@ -96,7 +96,7 @@ export interface Meeting extends Omit<MeetingPayload, 'Name'> {
 export interface UserSettings {
     MeetingID: string;
     AddressID: string;
-    CaptionLanguage?: string | null;
+    LiveCaptionsLocale?: string | null;
 }
 
 export interface CreateMeetingResponse {
@@ -129,4 +129,5 @@ interface EventV6Defaults {
 
 export interface MeetEventResponse extends EventV6Defaults {
     MeetMeetings: EventV6Response;
+    MeetUserSettings?: EventV6Response;
 }
