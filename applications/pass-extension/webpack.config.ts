@@ -136,7 +136,10 @@ const captureCompilation: webpack.WebpackPluginInstance = {
  * dependencies, relative to this app otherwise. Unlike chunk ids, these don't depend on where
  * the package manager stores a package or on its version. */
 const getRootModulePaths = (chunk: PathData['chunk'], chunkGraph = compilation?.chunkGraph): string[] => {
-    if (!chunkGraph || !(chunk instanceof webpack.Chunk)) return [];
+    /** The webpack running the build (`compiler.webpack`) can be another copy than the one this
+     * file imports (pnpm installs one per peer set), so `instanceof webpack.Chunk` would fail. */
+    const Chunk = compilation?.compiler.webpack.Chunk;
+    if (!chunkGraph || !Chunk || !(chunk instanceof Chunk)) return [];
     return chunkGraph.getChunkRootModules(chunk).flatMap((module) => {
         const resource = module.nameForCondition()?.split(path.sep).join('/');
         if (!resource) return [];
