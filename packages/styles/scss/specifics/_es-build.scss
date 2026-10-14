@@ -1,0 +1,15 @@
+@font-face {
+	font-family: 'ES Build';
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src:
+		local('ES Build Medium'),
+		url(~@proton/styles/assets/fonts/ESBuild-Medium.woff2) format('woff2');
+}
+
+.font-es-build {
+	// Only the Medium (500) weight is bundled
+	font-family: 'ES Build', system-ui, sans-serif;
+	font-synthesis: none;
+}
