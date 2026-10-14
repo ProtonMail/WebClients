@@ -61,6 +61,7 @@ export * from './groupOwnerInvites';
 export * from './paymentMethods';
 export * from './paymentStatus';
 export * from './subscription';
+export * from './allSubscriptions';
 export * from './plans';
 export * from './passwordPolicies';
 export * from './passwordReminder';
