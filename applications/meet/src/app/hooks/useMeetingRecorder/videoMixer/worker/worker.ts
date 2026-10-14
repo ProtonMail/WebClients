@@ -107,6 +107,7 @@ async function startEncoder() {
         }
     );
     await state.encoder.start();
+    self.postMessage({ type: 'encoderStarted', audioCodec });
 }
 
 async function stopEncoder() {
