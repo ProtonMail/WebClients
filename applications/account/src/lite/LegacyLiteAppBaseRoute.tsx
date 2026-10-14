@@ -26,9 +26,20 @@ interface Props {
     loader: ReactNode;
     layout: (children: ReactNode, props?: any) => ReactNode;
     initialHashParams: URLSearchParams;
+    /** Search params as they were on first load, before the login flow rewrites the URL. */
+    initialSearchParams: URLSearchParams;
 }
 
-const LegacyLiteAppBaseRoute = ({ action, redirect, app, searchParams, loader, layout, initialHashParams }: Props) => {
+const LegacyLiteAppBaseRoute = ({
+    action,
+    redirect,
+    app,
+    searchParams,
+    loader,
+    layout,
+    initialHashParams,
+    initialSearchParams,
+}: Props) => {
     if (!action || !Object.values<string>(SupportedActions).includes(action)) {
         return <StandardErrorPage>No action parameter found.</StandardErrorPage>;
     }
@@ -40,7 +51,9 @@ const LegacyLiteAppBaseRoute = ({ action, redirect, app, searchParams, loader, l
             {action === SupportedActions.EmailSignatures && <SignatureSettings layout={layout} loader={loader} />}
             {action === SupportedActions.EmailSettings && <EmailSettings layout={layout} loader={loader} />}
             {action === SupportedActions.CategoryView && <CategoriesLiteView layout={layout} loader={loader} />}
-            {action === SupportedActions.BYOEMobile && <BYOEMobile layout={layout} redirect={redirect} />}
+            {action === SupportedActions.BYOEMobile && (
+                <BYOEMobile layout={layout} redirect={redirect} initialSearchParams={initialSearchParams} />
+            )}
             {action === SupportedActions.LabelsSettings && <LabelsSettings layout={layout} loader={loader} />}
             {action === SupportedActions.SpamFiltersSettings && <SpamFiltersSettings layout={layout} />}
             {action === SupportedActions.SignOut && <SignOut layout={layout} initialHashParams={initialHashParams} />}
