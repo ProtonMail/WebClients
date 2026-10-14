@@ -72,6 +72,8 @@ export type PasswordAccountEvent =
     | { type: 'newPassword.submitted'; payload: { password: string } }
     /** The new address for an account recovered through a claimed address. */
     | { type: 'claimedAddress.submitted'; payload: { username: string; domain: string } }
+    /** The user changed the username; a rejected one's message goes. */
+    | { type: 'claimedAddress.usernameEdited' }
     /** From the screen telling where the recovered account's data now lives. */
     | { type: 'claimedAddress.continued' }
     /** From the lost-2FA flow (a child actor): a backup code signed in, or an error to show. */
@@ -107,6 +109,8 @@ interface PasswordAccountMachineContext {
     unlockError: string | undefined;
     /** How the claimed-address recovery finishes, once loaded. */
     claimedAddressSetup: ClaimedAddressSetup | undefined;
+    /** Why the last username for the new address was rejected; shown under its field. */
+    claimedAddressError: string | undefined;
     /** The unlocked keys, for the new address's key; only while it's being created. */
     unlocked: UnlockedKeys | undefined;
     /** The address the recovery created. */
@@ -141,6 +145,10 @@ export const selectClaimedEmail = ({ context }: { context: PasswordAccountMachin
 /** Where the new address can be created, for the claimed-address recovery's create screen. */
 export const selectClaimedAddressGeneration = ({ context }: { context: PasswordAccountMachineContext }) =>
     context.claimedAddressSetup?.type === 'create' ? context.claimedAddressSetup.generation : undefined;
+
+/** Why the last username for the new address was rejected, for its field. */
+export const selectClaimedAddressError = ({ context }: { context: PasswordAccountMachineContext }) =>
+    context.claimedAddressError;
 
 /** Where the recovered account's data now lives: a new address, or one the account already had. */
 export const selectClaimedAddressDone = ({ context }: { context: PasswordAccountMachineContext }) => {
@@ -232,6 +240,30 @@ export const passwordAccountStateMachine = setup({
                 c('Error').t`Incorrect second password. Please try again.`,
         })),
         clearUnlockError: assign({ unlockError: undefined }),
+        /**
+         * Shown under the username, so the user can pick another. When it's the address offered that was taken
+         * meanwhile, it's no longer offered, and the screen asks for a username of the user's own instead.
+         */
+        setClaimedAddressError: assign(({ context }, params: { error: unknown }) => {
+            const { error } = params;
+            if (!(error instanceof UnavailableUsernameError)) {
+                return {};
+            }
+            const setup = context.claimedAddressSetup;
+            const offered = setup?.type === 'create' ? setup.generation.claimableAddress : undefined;
+            const offeredTaken = offered?.username === error.username && offered.domain === error.domain;
+            return {
+                claimedAddressError: error.message,
+                ...(setup?.type === 'create' &&
+                    offeredTaken && {
+                        claimedAddressSetup: {
+                            ...setup,
+                            generation: { ...setup.generation, claimableAddress: undefined },
+                        },
+                    }),
+            };
+        }),
+        clearClaimedAddressError: assign({ claimedAddressError: undefined }),
         setPasswordPolicies: assign((_, params: { passwordPolicies: OrganizationData['passwordPolicies'] }) => ({
             passwordPolicies: params.passwordPolicies,
         })),
@@ -287,6 +319,7 @@ export const passwordAccountStateMachine = setup({
         twoFactorError: undefined,
         unlockError: undefined,
         claimedAddressSetup: undefined,
+        claimedAddressError: undefined,
         unlocked: undefined,
         createdAddress: undefined,
         result: undefined,
@@ -708,7 +741,11 @@ export const passwordAccountStateMachine = setup({
                 },
 
                 create: {
-                    entry: showScreen('claimedAddressCreate'),
+                    entry: [
+                        ...showScreen('claimedAddressCreate'),
+                        // A username rejected before leaving the screen doesn't show when coming back to it
+                        'clearClaimedAddressError',
+                    ],
                     initial: 'idle',
                     on: {
                         'decision.back': { target: '#passwordAccount.cancelled' },
@@ -716,7 +753,11 @@ export const passwordAccountStateMachine = setup({
                     states: {
                         idle: {
                             on: {
-                                'claimedAddress.submitted': { target: 'submitting' },
+                                'claimedAddress.submitted': {
+                                    target: 'submitting',
+                                    actions: 'clearClaimedAddressError',
+                                },
+                                'claimedAddress.usernameEdited': { actions: 'clearClaimedAddressError' },
                             },
                         },
                         submitting: {
@@ -759,7 +800,7 @@ export const passwordAccountStateMachine = setup({
                                         guard: errorOf(UnavailableUsernameError),
                                         target: 'idle',
                                         actions: {
-                                            type: 'reportError',
+                                            type: 'setClaimedAddressError',
                                             params: ({ event }) => ({ error: event.error }),
                                         },
                                     },

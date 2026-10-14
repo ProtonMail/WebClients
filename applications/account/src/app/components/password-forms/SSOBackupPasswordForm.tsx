@@ -16,6 +16,10 @@ interface Props {
     passwordLabel?: string;
     /** Shown between the field and the submit button. */
     hint?: ReactNode;
+    /** Why the last password was rejected, shown under the field. */
+    error?: string;
+    /** The user changed the password. */
+    onChange?: () => void;
 }
 
 const getBackupPasswordData = () => {
@@ -27,7 +31,15 @@ const getBackupPasswordData = () => {
     };
 };
 
-const SSOBackupPasswordForm = ({ onSubmit, submitting, onAskAdminHelp, passwordLabel, hint }: Props) => {
+const SSOBackupPasswordForm = ({
+    onSubmit,
+    submitting,
+    onAskAdminHelp,
+    passwordLabel,
+    hint,
+    error,
+    onChange,
+}: Props) => {
     const [keyPassword, setKeyPassword] = useState('');
 
     const { validator, onFormSubmit } = useFormErrors();
@@ -51,11 +63,14 @@ const SSOBackupPasswordForm = ({ onSubmit, submitting, onAskAdminHelp, passwordL
                 id={data.passwordId}
                 bigger
                 label={passwordLabel ?? data.passwordLabel}
-                error={validator([requiredValidator(keyPassword)])}
+                error={validator([requiredValidator(keyPassword)]) || error}
                 disableChange={submitting}
                 autoFocus
                 value={keyPassword}
-                onValue={setKeyPassword}
+                onValue={(value: string) => {
+                    setKeyPassword(value);
+                    onChange?.();
+                }}
             />
             {hint}
             <div className="mt-6">

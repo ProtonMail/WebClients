@@ -12,6 +12,7 @@ import type { SignInScreen, SignInScreenProps } from '../../../../routes/signInR
 import { useSignInProps } from '../../../../wizard/SignInProvider';
 import { PasswordAccountContext } from '../../PasswordAccountContext';
 import {
+    selectClaimedAddressError,
     selectClaimedAddressGeneration,
     selectClaimedEmail,
     selectSubmitting,
@@ -27,6 +28,7 @@ export const ClaimedAddressCreateScreen: SignInScreen = ({ onBack }: SignInScree
     const claimedEmail = PasswordAccountContext.useSelector(selectClaimedEmail);
     const generation = PasswordAccountContext.useSelector(selectClaimedAddressGeneration);
     const submitting = PasswordAccountContext.useSelector(selectSubmitting);
+    const error = PasswordAccountContext.useSelector(selectClaimedAddressError);
     // Picking a username of their own instead of the one offered
     const [editing, setEditing] = useState(false);
     const [defaultUsername, setDefaultUsername] = useState('');
@@ -57,6 +59,8 @@ export const ClaimedAddressCreateScreen: SignInScreen = ({ onBack }: SignInScree
                         loading={submitting}
                         defaultUsername={defaultUsername}
                         availableDomains={generation?.availableDomains}
+                        error={error}
+                        onChange={() => actorRef.send({ type: 'claimedAddress.usernameEdited' })}
                     />
                 ) : (
                     <ClaimInternalAddressForm

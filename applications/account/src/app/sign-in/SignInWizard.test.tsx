@@ -3,7 +3,13 @@ import { fromCallback, fromPromise } from 'xstate';
 
 import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import { TelemetryUnauthLost2FAEvents } from '@proton/shared/lib/api/telemetry';
-import { SecondPasswordError, TOTPError } from '@proton/shared/lib/authentication/error';
+import {
+    BackupPasswordError,
+    ConversionPasswordError,
+    InvalidRecoveryPhraseError,
+    SecondPasswordError,
+    TOTPError,
+} from '@proton/shared/lib/authentication/error';
 import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import type { KeySalt, User } from '@proton/shared/lib/interfaces';
 
@@ -20,7 +26,10 @@ import type { SignInAuthState } from './state-machine/signInAuthState';
 import type { PrimaryAuthResult } from './steps/credentials/state-machine/credentialsActors';
 import { credentialsStateMachine } from './steps/credentials/state-machine/credentialsStateMachine';
 import { lost2FAStateMachine } from './steps/password-account/screens/lost-two-factor/state-machine/lost2FAStateMachine';
-import { createLost2FAFlow } from './steps/password-account/screens/lost-two-factor/state-machine/verificationActors';
+import {
+    createLost2FAFlow,
+    createVerificationActors,
+} from './steps/password-account/screens/lost-two-factor/state-machine/verificationActors';
 import { passwordAccountStateMachine } from './steps/password-account/state-machine/passwordAccountStateMachine';
 import { type SSODeviceEvent, ssoStateMachine } from './steps/sso/state-machine/ssoStateMachine';
 import { SignInContext } from './wizard/SignInContext';
@@ -46,6 +55,12 @@ jest.mock('@proton/account/safetyReview/verification/verification', () => ({
     ...jest.requireActual('@proton/account/safetyReview/verification/verification'),
     initiateVerification: (...args: unknown[]) => mockInitiateVerification(...(args as [])),
     sendNewCode: () => mockSendNewCode(),
+}));
+
+// The recovery phrase form checks the words against the wordlist; the tests leave refusing a phrase to the API
+jest.mock('@proton/shared/lib/mnemonic', () => ({
+    ...jest.requireActual('@proton/shared/lib/mnemonic'),
+    validateMnemonic: () => Promise.resolve(true),
 }));
 
 const mockCreateNotification = jest.fn();
@@ -317,6 +332,33 @@ describe('SignInWizard', () => {
             expect(screen.getByText(/Your old password will become your/)).toBeInTheDocument();
         });
 
+        it('shows a wrong password under the field, without a notification, and takes another', async () => {
+            mockCreateNotification.mockClear();
+            const unlock = jest.fn(({ password }: { password: string }) =>
+                password === 'wrong'
+                    ? Promise.reject(new ConversionPasswordError())
+                    : new Promise<SSOSignInResult>(() => {})
+            );
+            renderSignInOnSSO({
+                data: conversionData,
+                authResponse: { FirstLoginAfterConversion: true, SSOBackupPasswordDisabled: true },
+                ssoActors: {
+                    unlockWithBackupPassword: fromPromise(({ input }) => unlock(input as { password: string })),
+                },
+            });
+            await continueToPassword();
+            fireEvent.change(screen.getByLabelText('Password'), { target: { value: 'wrong' } });
+            fireEvent.click(screen.getByRole('button', { name: 'Continue' }));
+            expect(await screen.findByText('Incorrect password. Please try again.')).toBeInTheDocument();
+            expect(mockCreateNotification).not.toHaveBeenCalled();
+
+            fireEvent.change(screen.getByLabelText('Password'), { target: { value: 'right' } });
+            expect(screen.queryByText('Incorrect password. Please try again.')).not.toBeInTheDocument();
+            fireEvent.click(screen.getByRole('button', { name: 'Continue' }));
+            await waitFor(() => expect(unlock).toHaveBeenCalledTimes(2));
+            expect(unlock).toHaveBeenLastCalledWith(expect.objectContaining({ password: 'right' }));
+        });
+
         it('never mentions a backup password when the organization disabled it', async () => {
             renderSignInOnSSO({
                 data: conversionData,
@@ -365,6 +407,29 @@ describe('SignInWizard', () => {
         // Typing a new password clears it
         fireEvent.change(screen.getByLabelText('Second password'), { target: { value: 'another' } });
         expect(screen.queryByText('Incorrect second password. Please try again.')).not.toBeInTheDocument();
+    });
+
+    it('shows a wrong backup password under the field, without a notification, and takes another', async () => {
+        mockCreateNotification.mockClear();
+        const unlock = jest.fn(({ password }: { password: string }) =>
+            password === 'wrong' ? Promise.reject(new BackupPasswordError()) : new Promise<SSOSignInResult>(() => {})
+        );
+        renderSignInOnSSO({
+            ssoActors: { unlockWithBackupPassword: fromPromise(({ input }) => unlock(input as { password: string })) },
+        });
+        fireEvent.change(await screen.findByLabelText('Backup password'), { target: { value: 'wrong' } });
+        fireEvent.click(screen.getByRole('button', { name: 'Continue' }));
+        expect(await screen.findByText('Incorrect backup password. Please try again.')).toBeInTheDocument();
+        expect(screen.getByRole('heading', { name: 'Enter your backup password' })).toBeInTheDocument();
+        expect(mockCreateNotification).not.toHaveBeenCalled();
+
+        // Typing a new password clears it, and it can be submitted
+        fireEvent.change(screen.getByLabelText('Backup password'), { target: { value: 'another' } });
+        expect(screen.queryByText('Incorrect backup password. Please try again.')).not.toBeInTheDocument();
+        fireEvent.click(screen.getByRole('button', { name: 'Continue' }));
+        await waitFor(() => expect(unlock).toHaveBeenCalledTimes(2));
+        expect(unlock).toHaveBeenLastCalledWith(expect.objectContaining({ password: 'another' }));
+        expect(screen.queryByText('Incorrect backup password. Please try again.')).not.toBeInTheDocument();
     });
 
     it('keeps the back button on the auto password step once the password is accepted, and ignores it', async () => {
@@ -528,6 +593,53 @@ describe('SignInWizard', () => {
             skipBackupCodes();
             expect(await screen.findByText(/Enter your recovery phrase/)).toBeInTheDocument();
             expectLost2FAFrame('Disable two-factor authentication?');
+        });
+
+        it('shows a wrong recovery phrase under the field, without a notification, and takes another', async () => {
+            mockCreateNotification.mockClear();
+            const message = 'Wrong recovery phrase. Try again or use another recovery method.';
+            const verify = jest.fn(({ phrase }: { phrase: string }) =>
+                phrase.endsWith('about') ? Promise.reject(new InvalidRecoveryPhraseError()) : Promise.resolve()
+            );
+            renderPasswordSignIn(
+                { phrase: true },
+                {
+                    lostTwoFactorFlow: lost2FAStateMachine.provide({
+                        actors: {
+                            ...createVerificationActors({ api: () => new Promise(() => {}) }),
+                            verifyPhraseAndDisable2FA: fromPromise(({ input }) =>
+                                verify(input as { username: string; phrase: string })
+                            ),
+                        },
+                    }),
+                }
+            );
+            await openLostTwoFactor();
+            skipBackupCodes();
+            const field = await screen.findByLabelText('Recovery phrase');
+            // A valid phrase, as far as the form can tell: the API is the one to refuse it
+            const phrase =
+                'abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about';
+            // The form checks the phrase's words asynchronously
+            await act(async () => {
+                fireEvent.change(field, { target: { value: phrase } });
+            });
+            fireEvent.click(screen.getByRole('button', { name: 'Disable' }));
+            expect(await screen.findByText(message)).toBeInTheDocument();
+            expect(mockCreateNotification).not.toHaveBeenCalled();
+
+            // Typing clears it, and the right phrase disables two-factor authentication
+            const rightPhrase = 'legal winner thank year wave sausage worth useful legal winner thank yellow';
+            await act(async () => {
+                fireEvent.change(field, { target: { value: rightPhrase } });
+            });
+            expect(screen.queryByText(message)).not.toBeInTheDocument();
+            fireEvent.click(screen.getByRole('button', { name: 'Disable' }));
+            expect(
+                await screen.findByRole('heading', { name: 'Two-factor authentication disabled' })
+            ).toBeInTheDocument();
+            expect(verify).toHaveBeenCalledTimes(2);
+            expect(verify).toHaveBeenLastCalledWith(expect.objectContaining({ phrase: rightPhrase }));
         });
 
         it('offers support when the account has no recovery method', async () => {

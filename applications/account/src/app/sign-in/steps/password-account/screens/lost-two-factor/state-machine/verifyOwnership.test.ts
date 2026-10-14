@@ -1,6 +1,6 @@
 import { type ActorRefFrom, createActor, fromPromise, setup, waitFor } from 'xstate';
 
-import { InvalidCodeError } from '@proton/shared/lib/authentication/error';
+import { InvalidCodeError, InvalidRecoveryPhraseError } from '@proton/shared/lib/authentication/error';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { Api } from '@proton/shared/lib/interfaces';
 
@@ -351,8 +351,22 @@ describe('lost-2FA phrase verification', () => {
         expect(spy).toHaveBeenCalledWith({ username: 'member@example.com', phrase: 'my phrase' });
     });
 
-    it('reports a failed check and lets the user retry', async () => {
-        const error = new Error('wrong phrase');
+    it('shows a wrong phrase in the form, and clears it on edit', async () => {
+        const { flow, errors } = startPhrase(() => Promise.reject(new InvalidRecoveryPhraseError()));
+        flow.send({ type: 'verification.phraseSubmitted', payload: { phrase: 'wrong' } });
+        await waitFor(flow, (snap) => !!snap.context.phraseError);
+        expect(flow.getSnapshot().matches({ verifyOwnershipWithPhrase: 'editing' })).toBe(true);
+        expect(flow.getSnapshot().context.phraseError).toBe(
+            'Wrong recovery phrase. Try again or use another recovery method.'
+        );
+        expect(errors).toEqual([]);
+
+        flow.send({ type: 'verification.phraseEdited' });
+        expect(flow.getSnapshot().context.phraseError).toBeUndefined();
+    });
+
+    it('reports another failed check and lets the user retry', async () => {
+        const error = new Error('network');
         const { flow, errors } = startPhrase(() => Promise.reject(error));
         flow.send({ type: 'verification.phraseSubmitted', payload: { phrase: 'wrong' } });
         await waitFor(flow, () => errors.length > 0);
@@ -432,5 +446,23 @@ describe('createVerificationActors', () => {
         await waitFor(flow, () => errors.length > 0);
         expect(errors).toEqual([invalidToken]);
         expect(flow.getSnapshot().context.invalidCode).toBe(false);
+    });
+
+    it('turns a phrase the API refuses into a wrong phrase, without disabling two-factor authentication', async () => {
+        const invalidPhrase = {
+            data: { Code: API_CUSTOM_ERROR_CODES.INVALID_LOGIN, Error: 'Invalid recovery phrase. Please try again' },
+        };
+        const api = jest.fn((config: { url: string }) =>
+            config.url === 'auth/v4/mnemonic/reauth' ? Promise.reject(invalidPhrase) : Promise.resolve({})
+        ) as unknown as jest.Mock & Api;
+        const logic = lost2FAStateMachine.provide({ actors: createVerificationActors({ api }) });
+        const { flow, errors } = runFlow(logic, { phrase: true });
+        flow.send({ type: 'verification.phraseSubmitted', payload: { phrase: 'wrong' } });
+        await waitFor(flow, (snap) => !!snap.context.phraseError);
+        expect(flow.getSnapshot().context.phraseError).toBe(
+            'Wrong recovery phrase. Try again or use another recovery method.'
+        );
+        expect(errors).toEqual([]);
+        expect(api.mock.calls.some(([config]) => config.url === DISABLE_2FA)).toBe(false);
     });
 });

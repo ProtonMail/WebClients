@@ -18,6 +18,7 @@ import {
     spawnChild,
 } from 'xstate';
 
+import { PasswordError } from '@proton/shared/lib/authentication/error';
 import type { DeviceSecretUser } from '@proton/shared/lib/keys/device';
 
 import type { AuthSession } from '../../../../content/authSession';
@@ -34,10 +35,10 @@ import {
     type AccountFlowResult,
     failAccountFlow,
     failAccountFlowOnReport,
-    retryOnWrongPassword,
 } from '../../../state-machine/accountFlow';
 import {
     type StepErrorEvent,
+    errorOf,
     isErrorOf,
     reportActorError,
     unprovidedActors,
@@ -70,6 +71,7 @@ type SSOEvent =
     | { type: 'sso.setup.submitted'; payload: { password: string | null } }
     | { type: 'sso.backupPassword.requested' }
     | { type: 'sso.backupPassword.submitted'; payload: { password: string } }
+    | { type: 'sso.backupPassword.edited' }
     | { type: 'sso.adminHelp.requested' }
     | { type: 'sso.adminHelp.confirmed' }
     | { type: 'sso.continued' }
@@ -91,6 +93,8 @@ interface SSOMachineContext {
     session: AuthSession | undefined;
     /** The administrator got the request; asking again goes back to waiting for their approval. */
     adminApprovalRequested: boolean;
+    /** Why the last backup password was rejected, shown under its field until it's edited. */
+    backupPasswordError: string | undefined;
     result: AccountFlowResult | undefined;
 }
 
@@ -198,6 +202,8 @@ export const selectBackupPasswordDisabled = ({ context }: { context: SSOMachineC
 
 export const selectSSOData = ({ context }: { context: SSOMachineContext }) => context.ssoData;
 
+export const selectBackupPasswordError = ({ context }: { context: SSOMachineContext }) => context.backupPasswordError;
+
 /** The screen that shows; the work states keep the last one up. */
 export const selectScreen = ({ context }: { context: SSOMachineContext }) => context.screen;
 
@@ -262,6 +268,10 @@ const ssoSetup = setup({
                   }
         ),
         markAdminApprovalRequested: assign({ adminApprovalRequested: true }),
+        setBackupPasswordError: assign((_, params: { error: unknown }) => ({
+            backupPasswordError: params.error instanceof PasswordError ? params.error.message : undefined,
+        })),
+        clearBackupPasswordError: assign({ backupPasswordError: undefined }),
         setResult: assign((_, params: { result: AccountFlowResult }) => ({ result: params.result })),
         setAccount: assign(({ context }, params: { account: Partial<SignInAuthState['account']> }) => ({
             auth: { ...context.auth, account: { ...context.auth.account, ...params.account } },
@@ -338,6 +348,7 @@ export const ssoStateMachine = ssoSetup.createMachine({
         screen: undefined,
         session: undefined,
         adminApprovalRequested: false,
+        backupPasswordError: undefined,
         result: undefined,
     }),
     output: ({ context }) => context.result ?? { type: 'cancelled' },
@@ -528,12 +539,16 @@ export const ssoStateMachine = ssoSetup.createMachine({
         },
 
         backupPassword: {
-            entry: { type: 'setScreen', params: { screen: 'backupPassword' } },
+            entry: [
+                { type: 'setScreen', params: { screen: 'backupPassword' } },
+                // A password rejected before leaving the screen doesn't show when coming back to it
+                'clearBackupPasswordError',
+            ],
             initial: 'idle',
             states: {
                 idle: {
                     on: {
-                        'sso.backupPassword.submitted': { target: 'unlocking' },
+                        'sso.backupPassword.submitted': { target: 'unlocking', actions: 'clearBackupPasswordError' },
                     },
                 },
                 /** The screen stays, and its ways out are ignored. */
@@ -551,11 +566,23 @@ export const ssoStateMachine = ssoSetup.createMachine({
                             };
                         },
                         onDone: routeSignInResult,
-                        onError: [retryOnWrongPassword('idle'), failAccountFlow],
+                        // A wrong password shows under the field, so the member can try again
+                        onError: [
+                            {
+                                guard: errorOf(PasswordError),
+                                target: 'idle',
+                                actions: {
+                                    type: 'setBackupPasswordError',
+                                    params: ({ event }) => ({ error: event.error }),
+                                },
+                            },
+                            failAccountFlow,
+                        ],
                     },
                 },
             },
             on: {
+                'sso.backupPassword.edited': { actions: 'clearBackupPasswordError' },
                 'sso.adminHelp.requested': askAdminHelp,
                 'decision.back': '#sso.waysIn.previous',
             },

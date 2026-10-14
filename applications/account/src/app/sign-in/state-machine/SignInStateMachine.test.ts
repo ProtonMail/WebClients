@@ -6,6 +6,7 @@ import { ExternalSSOError } from '@proton/shared/lib/authentication/ssoExternalL
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { Address, KeySalt, User } from '@proton/shared/lib/interfaces';
 import { getRequiresPasswordSetup } from '@proton/shared/lib/keys';
+import { ClaimableAddressType } from '@proton/shared/lib/keys/setupAddress';
 import type { OrganizationData } from '@proton/shared/lib/keys/unprivatization/helper';
 
 import type { AuthSession } from '../../content/authSession';
@@ -39,6 +40,7 @@ import {
 import { lost2FAStateMachine } from '../steps/password-account/screens/lost-two-factor/state-machine/lost2FAStateMachine';
 import {
     passwordAccountStateMachine,
+    selectClaimedAddressGeneration,
     selectScreenActor,
 } from '../steps/password-account/state-machine/passwordAccountStateMachine';
 import { type SSODeviceEvent, SSOStateMachineTags, ssoStateMachine } from '../steps/sso/state-machine/ssoStateMachine';
@@ -1985,7 +1987,7 @@ describe('SignInStateMachine', () => {
             await waitUntilSignedIn(actor);
         });
 
-        it('lets the user retry a wrong backup password', async () => {
+        it('shows a wrong backup password in the form, and lets the user retry', async () => {
             let attempt = 0;
             const { actor, errors } = await startOnSSO(
                 { step: SSOLoginCapabilites.ENTER_BACKUP_PASSWORD },
@@ -1999,7 +2001,12 @@ describe('SignInStateMachine', () => {
             sso(actor).send({ type: 'sso.backupPassword.submitted', payload: { password: 'wrong' } });
             await waitUntilSSOSettled(actor);
             expect(ssoScreen(actor)).toBe('backupPassword');
-            expect(errors()).toHaveLength(1);
+            expect(sso(actor).getSnapshot().context.backupPasswordError).toBe('Wrong password');
+            expect(errors()).toEqual([]);
+
+            // Typing a new password clears it
+            sso(actor).send({ type: 'sso.backupPassword.edited' });
+            expect(sso(actor).getSnapshot().context.backupPasswordError).toBeUndefined();
             sso(actor).send({ type: 'sso.backupPassword.submitted', payload: { password: 'right' } });
             await waitUntilSignedIn(actor);
         });
@@ -2304,21 +2311,82 @@ describe('SignInStateMachine', () => {
                 );
             });
 
-            it('shows a taken username and stays on the form, without signing in', async () => {
-                const error = new UnavailableUsernameError(apiError(API_CUSTOM_ERROR_CODES.USERNAME_ALREADY_USED));
+            it('shows a taken username in the form, without signing in, clears it on edit, and takes another', async () => {
+                const error = new UnavailableUsernameError(apiError(API_CUSTOM_ERROR_CODES.USERNAME_ALREADY_USED), {
+                    username: 'new',
+                    domain: 'proton.me',
+                });
+                let attempt = 0;
                 const { actor, spies, errors } = startActor({
                     created: claimed(),
-                    createClaimedAddress: () => Promise.reject(error),
+                    createClaimedAddress: (input) =>
+                        attempt++ === 0
+                            ? Promise.reject(error)
+                            : Promise.resolve({
+                                  session,
+                                  address: `${(input as { username: string }).username}@proton.me`,
+                              }),
                 });
                 await submitCredentials(actor);
                 await submitAddress(actor);
-                expect(errors()).toEqual([error]);
+                expect(errors()).toEqual([]);
                 expect(
                     passwordAccount(actor)
                         .getSnapshot()
                         .matches({ claimedAddress: { create: 'idle' } })
                 ).toBe(true);
+                expect(passwordAccount(actor).getSnapshot().context.claimedAddressError).toBe(error.message);
                 expect(spies.completeSignIn).not.toHaveBeenCalled();
+
+                // Typing another username clears it, and that one is created
+                passwordAccount(actor).send({ type: 'claimedAddress.usernameEdited' });
+                expect(passwordAccount(actor).getSnapshot().context.claimedAddressError).toBeUndefined();
+                passwordAccount(actor).send({
+                    type: 'claimedAddress.submitted',
+                    payload: { username: 'another', domain: 'proton.me' },
+                });
+                await waitUntilSettled(actor);
+                expect(spies.createClaimedAddress).toHaveBeenCalledTimes(2);
+                expect(passwordAccount(actor).getSnapshot().context.screen).toBe('claimedAddressDone');
+                expect(passwordAccount(actor).getSnapshot().context.createdAddress).toBe('another@proton.me');
+                passwordAccount(actor).send({ type: 'claimedAddress.continued' });
+                await waitUntilSettled(actor);
+                expect(isSignedIn(actor)).toBe(true);
+            });
+
+            it.each([
+                ['the address offered', 'new', undefined],
+                [
+                    'a username of their own',
+                    'mine',
+                    { username: 'new', domain: 'proton.me', type: ClaimableAddressType.Any },
+                ],
+            ])('stops offering an address once it was taken, when the user picked %s', async (_, taken, offered) => {
+                const claimableAddress = { username: 'new', domain: 'proton.me', type: ClaimableAddressType.Any };
+                const { actor } = startActor({
+                    created: claimed(),
+                    loadClaimedAddressSetup: () =>
+                        Promise.resolve({
+                            type: 'create',
+                            generation: { availableDomains: ['proton.me'], claimableAddress },
+                        }),
+                    createClaimedAddress: () =>
+                        Promise.reject(
+                            new UnavailableUsernameError(apiError(API_CUSTOM_ERROR_CODES.USERNAME_ALREADY_USED), {
+                                username: taken,
+                                domain: 'proton.me',
+                            })
+                        ),
+                });
+                await submitCredentials(actor);
+                passwordAccount(actor).send({
+                    type: 'claimedAddress.submitted',
+                    payload: { username: taken, domain: 'proton.me' },
+                });
+                await waitUntilSettled(actor);
+                expect(selectClaimedAddressGeneration(passwordAccount(actor).getSnapshot())?.claimableAddress).toEqual(
+                    offered
+                );
             });
 
             it('signs in again after any other failed creation, which may have created the address', async () => {
