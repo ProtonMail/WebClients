@@ -681,6 +681,7 @@ const SubUserEditModal = ({
                                               userRoles={member.UserOrganizationRoles}
                                               isEditingSelf={isSelf}
                                               disabled={
+                                                  submitting ||
                                                   isSelf ||
                                                   isPendingMagicLinkInvite ||
                                                   !hasMemberRoles ||
