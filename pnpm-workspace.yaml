@@ -83,6 +83,20 @@ packageExtensions:
         # Its JSDoc types reference `eslint`.
         peerDependencies:
             eslint: '*'
+    # Both require `electron`, which the desktop apps pin to different versions. Jest mocks are
+    # keyed by resolved path, so `jest.mock('electron')` only applies if they share the app's copy.
+    electron-log@5:
+        peerDependencies:
+            electron: '*'
+        peerDependenciesMeta:
+            electron:
+                optional: true
+    electron-store@8:
+        peerDependencies:
+            electron: '*'
+        peerDependenciesMeta:
+            electron:
+                optional: true
     # vendor/rowsncolumns ship prebuilt dist/ that imports tslib, React and sibling packages it only
     # declares as peers, or not at all. The Sheets sync regenerates their manifests, so the
     # dependencies live here. Versions match docs-editor. Optional imports that were never installed
