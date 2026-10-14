@@ -47,6 +47,9 @@
         "eslint-plugin-testing-library": "^7.16.2",
         "typescript-eslint": "^8.71.0"
     },
+    "devDependencies": {
+        "@eslint/core": "^1.2.1"
+    },
     "peerDependencies": {
         "prettier": "3.9.9",
         "typescript": "^6.0.3"

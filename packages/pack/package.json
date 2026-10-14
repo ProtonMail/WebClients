@@ -57,6 +57,8 @@
         "webpack-subresource-integrity": "^5.1.0"
     },
     "devDependencies": {
+        "@types/node": "catalog:",
+        "@types/webpack-env": "catalog:",
         "@typescript/native": "npm:typescript@^7.0.2",
         "eslint": "^10.11.0",
         "prettier": "^3.9.9",
