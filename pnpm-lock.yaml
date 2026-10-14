@@ -6973,7 +6973,7 @@ importers:
         version: 6.0.3
 
   packages/jest-env:
-    devDependencies:
+    dependencies:
       jest-environment-jsdom:
         specifier: ^30.5.2
         version: 30.5.2(supports-color@11.0.0)
