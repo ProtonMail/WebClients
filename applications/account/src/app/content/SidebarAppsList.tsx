@@ -17,8 +17,6 @@ const SidebarAppsList = () => {
     const [organization] = useOrganization();
     const { getLocalID } = useAuthentication();
     const localId = getLocalID();
-    const isDocsHomepageAvailable = useFlag('DriveDocsLandingPageEnabled');
-    const isSheetsAvailable = useFlag('DocsSheetsEnabled');
     const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
     const isSpacesAvailable = useFlag('SpacesAvailable');
 
@@ -26,8 +24,6 @@ const SidebarAppsList = () => {
         context: 'dropdown',
         user,
         organization,
-        isDocsHomepageAvailable,
-        isSheetsAvailable,
         isAuthenticatorAvailable,
         isSpacesAvailable,
     });

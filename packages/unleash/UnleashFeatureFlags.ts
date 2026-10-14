@@ -101,9 +101,6 @@ export enum CommonFeatureFlag {
     DesktopDownloadApiEnabled = 'DesktopDownloadApiEnabled',
     DisableElectronMail = 'DisableElectronMail',
     DisablePostSubscriptionB2BOnboarding = 'DisablePostSubscriptionB2BOnboarding',
-    // Whether to show Docs in the app switcher. NOT whether the docs homepage is enabled (that's `DocsHomepageEnabled` instead).
-    // We'll clean up the naming of this flag in the future, if we don't remove it before then.
-    DriveDocsLandingPageEnabled = 'DriveDocsLandingPageEnabled',
     EasySwitchB2CForDriveWeb = 'EasySwitchB2CForDriveWeb',
     EasySwitchB2CForDriveWebNewUI = 'EasySwitchB2CForDriveWebNewUI',
     EasySwitchB2CForDriveWebSidebarRollout = 'EasySwitchB2CForDriveWebSidebarRollout',
@@ -159,7 +156,6 @@ export enum CommonFeatureFlag {
 
 enum DocsFeatureFlag {
     // General
-    DocsAppSwitcher = 'DocsAppSwitcher',
     DocsDarkTheme = 'DocsDarkTheme',
     DocsGatePrivateInviteAccess = 'DocsGatePrivateInviteAccess',
     DocsODTEnabled = 'DocsODTEnabled',
@@ -170,21 +166,16 @@ enum DocsFeatureFlag {
     DriveWebTextFileEdit = 'DriveWebTextFileEdit',
     // Comments
     DocsEnableNotificationsOnNewComment = 'DocsEnableNotificationsOnNewComment',
-    // Homepage
-    DocsHomepageEnabled = 'DocsHomepageEnabled',
     // Public sharing
-    DriveDocsPublicSharing = 'DriveDocsPublicSharing',
     DriveDocsPublicSharingDisabled = 'DriveDocsPublicSharingDisabled',
     // Suggestions
     DocsSuggestionsDisabled = 'DocsSuggestionsDisabled',
     // Sheets
     DocsSheetsDisabled = 'DocsSheetsDisabled',
-    DocsSheetsEnabled = 'DocsSheetsEnabled',
     SheetsActionsStorageEnabled = 'SheetsActionsStorageEnabled',
     SheetsCustomDateTimeFormatEnabled = 'SheetsCustomDateTimeFormatEnabled',
     SheetsCustomNumberFormatEnabled = 'SheetsCustomNumberFormatEnabled',
     SheetsDriftDetectionEnabled = 'SheetsDriftDetectionEnabled',
-    SheetsEditorEnabled = 'SheetsEditorEnabled',
     SheetsMountAfterInitialLoadDisabled = 'SheetsMountAfterInitialLoadDisabled',
     SheetsODSExportEnabled = 'SheetsODSExportEnabled',
     SheetsODSImportEnabled = 'SheetsODSImportEnabled',
@@ -206,7 +197,6 @@ enum DocsFeatureFlag {
     DocsInvitationsDriveSDK = 'DocsInvitationsDriveSDK',
     DocsLoadRecentsWithDriveSDK = 'DocsLoadRecentsWithDriveSDK',
     DocsMoveModalDriveSDK = 'DocsMoveModalDriveSDK',
-    DocsRenameWithDriveSDK = 'DocsRenameWithDriveSDK',
     DocsTrashWithDriveSDK = 'DocsTrashWithDriveSDK',
 }
 

@@ -26,8 +26,6 @@ const useAvailableApps = () => {
 
     const [organization] = useOrganization();
 
-    const isDocsHomepageAvailable = useFlag('DriveDocsLandingPageEnabled');
-    const isSheetsAvailable = useFlag('DocsSheetsEnabled');
     const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
     const isSpacesAvailable = useFlag('SpacesAvailable');
 
@@ -35,8 +33,6 @@ const useAvailableApps = () => {
         user,
         context: 'app',
         organization,
-        isDocsHomepageAvailable,
-        isSheetsAvailable,
         isAuthenticatorAvailable,
         isSpacesAvailable,
     });
