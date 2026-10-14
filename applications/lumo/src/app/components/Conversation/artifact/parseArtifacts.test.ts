@@ -1,4 +1,4 @@
-import { getFileExtension, hashArtifactIdentity } from './parseArtifacts';
+import { getFileExtension, getLanguageFromExtension, hashArtifactIdentity } from './parseArtifacts';
 
 describe('hashArtifactIdentity', () => {
     it('returns a stable legacy-prefixed id for the same inputs', () => {
@@ -25,5 +25,18 @@ describe('getFileExtension', () => {
 
     it('falls back to txt for unknown languages', () => {
         expect(getFileExtension('not-a-language')).toBe('txt');
+    });
+});
+
+describe('getLanguageFromExtension', () => {
+    it('maps saved extensions back to a Prism language', () => {
+        expect(getLanguageFromExtension('ts')).toBe('typescript');
+        expect(getLanguageFromExtension('PY')).toBe('python');
+        expect(getLanguageFromExtension('sh')).toBe('bash');
+    });
+
+    it('returns undefined for txt and unknown extensions', () => {
+        expect(getLanguageFromExtension('txt')).toBeUndefined();
+        expect(getLanguageFromExtension('xyz')).toBeUndefined();
     });
 });

@@ -1,10 +1,13 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { Suspense, lazy, useEffect, useMemo, useRef, useState } from 'react';
 
 import { isArtifactShellCrossOrigin } from '../../components/Conversation/artifact/artifactShell';
 import { ARTIFACT_TYPE_CONFIG } from '../../components/Conversation/artifact/artifactTypeConfig';
 import type { ArtifactType } from '../../components/Conversation/artifact/parseArtifacts';
 import { useArtifactShellIframe } from '../../components/Conversation/artifact/useArtifactShellIframe';
+import { useLumoTheme } from '../../providers';
 import { buildStaticPreviewDocument } from './libraryStaticPreview';
+
+const LibraryCodeThumbnailHighlighter = lazy(() => import('./LibraryCodeThumbnailHighlighter'));
 
 // Code thumbnails show the start of the file, like an editor scrolled to the top.
 const CODE_PREVIEW_LINES = 9;
@@ -38,26 +41,47 @@ const DocumentThumbnail = ({ title, subtitle }: DocumentThumbnailProps) => {
     );
 };
 
-interface CodeThumbnailProps {
-    content: string;
+interface PlainCodeLinesProps {
+    lines: string[];
 }
 
-const CodeThumbnail = ({ content }: CodeThumbnailProps) => {
+// Shown until the highlighter chunk loads, laid out like it so the swap doesn't shift anything.
+const PlainCodeLines = ({ lines }: PlainCodeLinesProps) => {
+    return (
+        <>
+            {lines.map((line, index) => {
+                return (
+                    <div key={index} className="flex flex-row flex-nowrap text-pre">
+                        <span
+                            className="shrink-0 color-hint text-right w-custom pr-4"
+                            style={{ '--w-custom': '2.25rem' }}
+                        >
+                            {index + 1}
+                        </span>
+                        <span className="color-norm">{line}</span>
+                    </div>
+                );
+            })}
+        </>
+    );
+};
+
+interface CodeThumbnailProps {
+    content: string;
+    language?: string;
+}
+
+const CodeThumbnail = ({ content, language }: CodeThumbnailProps) => {
+    const { theme } = useLumoTheme();
+    // Only the lines that fit are highlighted, so a long file costs the same as a short one.
     const lines = useMemo(() => {
         return content.split('\n', CODE_PREVIEW_LINES);
     }, [content]);
     return (
         <div className="h-full p-4 bg-weak overflow-hidden text-xs text-monospace" aria-hidden="true">
-            {lines.map((line, index) => {
-                return (
-                    <div key={index} className="flex flex-row flex-nowrap gap-4 whitespace-pre">
-                        <span className="shrink-0 color-hint text-right w-custom" style={{ '--w-custom': '1.25rem' }}>
-                            {index + 1}
-                        </span>
-                        <span className="color-norm overflow-hidden">{line}</span>
-                    </div>
-                );
-            })}
+            <Suspense fallback={<PlainCodeLines lines={lines} />}>
+                <LibraryCodeThumbnailHighlighter code={lines.join('\n')} language={language ?? 'text'} theme={theme} />
+            </Suspense>
         </div>
     );
 };
@@ -197,9 +221,11 @@ interface Props {
     subtitle?: string;
     /** The decrypted source, once loaded. */
     content?: string;
+    /** Prism language id for code, from the saved file's extension. */
+    language?: string;
 }
 
-export const LibraryCreationThumbnail = ({ type, title, subtitle, content }: Props) => {
+export const LibraryCreationThumbnail = ({ type, title, subtitle, content, language }: Props) => {
     if (!type || content === undefined) {
         return <div className="h-full bg-weak rectangle-skeleton keep-motion" aria-hidden="true" />;
     }
@@ -207,7 +233,7 @@ export const LibraryCreationThumbnail = ({ type, title, subtitle, content }: Pro
         return <DocumentThumbnail title={title} subtitle={subtitle} />;
     }
     if (type === 'code') {
-        return <CodeThumbnail content={content} />;
+        return <CodeThumbnail content={content} language={language} />;
     }
     // Local dev serves the shell from Lumo's own origin, where running the page would be unsafe.
     if (!isArtifactShellCrossOrigin()) {

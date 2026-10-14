@@ -8,6 +8,7 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 import { ArtifactExportOverlay } from '../../components/Conversation/artifact/ArtifactExportOverlay';
 import { getArtifactSourceDownloadMimeType } from '../../components/Conversation/artifact/artifactSourceDownload';
 import type { ArtifactSourceDownloadFile } from '../../components/Conversation/artifact/artifactSourceDownload';
+import { getLanguageFromExtension } from '../../components/Conversation/artifact/parseArtifacts';
 import type { ParsedArtifact } from '../../components/Conversation/artifact/parseArtifacts';
 import { useArtifactFileActions } from '../../components/Conversation/artifact/useArtifactFileActions';
 import { useLumoNavigate } from '../../hooks/useLumoNavigate';
@@ -87,6 +88,7 @@ export const LibraryCreationCard = memo(function LibraryCreationCard({ entry }: 
                         title={entry.title}
                         subtitle={chatLabel}
                         content={content}
+                        language={filename ? getLanguageFromExtension(filename.split('.').pop() ?? '') : undefined}
                     />
                 </div>
                 {/* Covers the thumbnail only, which can hold an inert iframe (not allowed inside a

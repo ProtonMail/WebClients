@@ -64,3 +64,11 @@ const LANGUAGE_EXTENSIONS: Record<string, string> = {
 export function getFileExtension(language: string): string {
     return LANGUAGE_EXTENSIONS[language.toLowerCase()] ?? 'txt';
 }
+
+/** The reverse of getFileExtension: a Prism language id for a saved code file, when it is known. */
+export function getLanguageFromExtension(extension: string): string | undefined {
+    const normalized = extension.toLowerCase();
+    return Object.keys(LANGUAGE_EXTENSIONS).find((language) => {
+        return LANGUAGE_EXTENSIONS[language] === normalized;
+    });
+}
