@@ -1,13 +1,23 @@
-import { type PayloadAction, createSelector, createSlice } from '@reduxjs/toolkit';
+import {
+    type PayloadAction,
+    type ThunkAction,
+    type UnknownAction,
+    createSelector,
+    createSlice,
+} from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
 import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
 import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
+import { CacheType } from '@proton/redux-utilities/interface';
+import type { CoreEventV6Response } from '@proton/shared/lib/api/events';
+import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
+import { type UpdateCollectionV6, updateCollectionV6 } from '@proton/shared/lib/eventManager/updateCollectionV6';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
-import type { Domain, EnhancedMember, UserModel } from '@proton/shared/lib/interfaces';
+import type { Api, Domain, EnhancedMember, UserModel } from '@proton/shared/lib/interfaces';
 import type { MemberAuthDeviceOutput } from '@proton/shared/lib/keys/device';
-import { AuthDeviceState, getPendingMemberAuthDevices } from '@proton/shared/lib/keys/device';
+import { AuthDeviceState, getMemberAuthDevice, getPendingMemberAuthDevices } from '@proton/shared/lib/keys/device';
 
 import type { AddressKeysState } from '../addressKeys';
 import { type DomainsState, domainsThunk } from '../domains';
@@ -28,7 +38,7 @@ export interface MemberAuthDevicesState
 type SliceState = MemberAuthDevicesState[typeof name];
 type Model = NonNullable<SliceState['value']>;
 
-const selectMemberAuthDevices = (state: MemberAuthDevicesState) => state.memberAuthDevices;
+export const selectMemberAuthDevices = (state: MemberAuthDevicesState) => state.memberAuthDevices;
 
 export const selectPendingMemberAuthDevices = createSelector(
     [selectMemberAuthDevices, selectMembers, selectOrganizationKey],
@@ -97,6 +107,11 @@ const slice = createSlice({
     name,
     initialState,
     reducers: {
+        eventLoopV6: (state, action: PayloadAction<UpdateCollectionV6<MemberAuthDeviceOutput>>) => {
+            if (state.value) {
+                state.value = updateCollectionV6(state.value, action.payload);
+            }
+        },
         updateMemberAuthDevice: (state, { payload }: PayloadAction<Partial<MemberAuthDeviceOutput>>) => {
             if (!state.value) {
                 return;
@@ -133,3 +148,20 @@ const slice = createSlice({
 export const memberAuthDevicesReducer = { [name]: slice.reducer };
 export const memberAuthDevicesThunk = modelThunk.thunk;
 export const memberAuthDeviceActions = slice.actions;
+
+export const memberAuthDevicesEventLoopV6Thunk = ({
+    event,
+    api,
+}: {
+    event: CoreEventV6Response;
+    api: Api;
+}): ThunkAction<Promise<void>, MemberAuthDevicesState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch) => {
+        await updateCollectionAsyncV6({
+            events: event.MemberAuthDevices,
+            get: (deviceID) => getMemberAuthDevice({ api, deviceID }),
+            refetch: () => dispatch(memberAuthDevicesThunk({ cache: CacheType.None })),
+            update: (result) => dispatch(memberAuthDeviceActions.eventLoopV6(result)),
+        });
+    };
+};
