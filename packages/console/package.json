@@ -18,6 +18,7 @@
         "@proton/eslint-config-proton": "workspace:^",
         "@proton/vitest-config": "workspace:^",
         "@testing-library/jest-dom": "^6.9.1",
+        "@types/webpack-env": "catalog:",
         "@typescript/native": "npm:typescript@^7.0.2",
         "@vitejs/plugin-react": "^6.1.1",
         "@vitest/coverage-v8": "^5.0.2",

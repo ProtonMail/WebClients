@@ -16,10 +16,12 @@ const transform = (arr = []) => {
 
 /**
  * Exclude all node modules, EXCEPT the node modules specified.
+ * pnpm stores packages at node_modules/.pnpm/<id>/node_modules/<name>, so the .pnpm segment is
+ * skipped and the inner node_modules segment decides.
  * @param {Array} nodeModules
  * @return {String}
  */
-const excludeNodeModulesExcept = (nodeModules = []) => `/node_modules/(?!(${transform(nodeModules)}))`;
+const excludeNodeModulesExcept = (nodeModules = []) => `/node_modules/(?!(\\.pnpm/|${transform(nodeModules)}))`;
 
 /**
  * Create a regex matching the strings in the array.

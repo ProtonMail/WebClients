@@ -12,6 +12,8 @@
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
+        "@types/node": "catalog:",
+        "@types/webpack-env": "catalog:",
         "@typescript/native": "npm:typescript@^7.0.2",
         "eslint": "^10.11.0",
         "typescript": "npm:@typescript/typescript6@^6.0.2",
