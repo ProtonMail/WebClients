@@ -14,6 +14,7 @@ import { APPS, OPEN_OFFER_MODAL_EVENT } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import OfferModal from '../../containers/offers/components/OfferModal';
+import { BlackFriday2026Layout } from '../../containers/offers/components/blackFriday2026/BlackFriday2026Layout';
 import useOfferFlags from '../../containers/offers/hooks/useOfferFlags';
 import useOfferModal from '../../containers/offers/hooks/useOfferModal';
 import usePreloadOfferImage from '../../containers/offers/hooks/usePreloadOfferImage';
@@ -59,6 +60,7 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding, sho
     // This component only renders for an offer that is already eligible, so mounting is the signal
     // that the artwork will very likely be needed. Preload it now rather than when the modal mounts.
     usePreloadOfferImage(hasEstimationError ? undefined : offerConfig.images?.modalImage);
+    const shouldDownloadBlackFriday2026Fonts = offerConfig.layout === BlackFriday2026Layout && !hasEstimationError;
 
     // Listen custom event to open offer modal
     useEffect(() => {
@@ -172,6 +174,12 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding, sho
                     {CTAText}
                 </PromotionButton>
             </TopNavbarListItem>
+            {shouldDownloadBlackFriday2026Fonts && (
+                <span className="sr-only" aria-hidden="true">
+                    <span className="font-sofia-sans-condensed">&nbsp;</span>
+                    <span className="font-es-build">&nbsp;</span>
+                </span>
+            )}
             {renderOfferModal && offer && (
                 <OfferModal
                     currency={currency}
