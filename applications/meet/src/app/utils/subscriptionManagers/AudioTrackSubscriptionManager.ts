@@ -8,6 +8,7 @@ import {
     Track,
 } from 'livekit-client';
 
+import { logger } from '@proton/logger';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
@@ -172,8 +173,6 @@ export class AudioTrackSubscriptionManager implements AudioRecoveryAPI {
             const trackKey = trackKeyOf(participant, pub);
 
             if (this.activeRecoveries.has(trackKey)) {
-                // eslint-disable-next-line no-console
-                console.log('Skipping handleAudioTrackPublished, recovery in progress for trackKey:', trackKey);
                 return;
             }
 
@@ -211,8 +210,6 @@ export class AudioTrackSubscriptionManager implements AudioRecoveryAPI {
             const trackKey = trackKeyOf(participant, pub);
 
             if (this.activeRecoveries.has(trackKey)) {
-                // eslint-disable-next-line no-console
-                console.log('Skipping handleTrackUnmuted, recovery in progress for trackKey:', trackKey);
                 return;
             }
 
@@ -253,8 +250,6 @@ export class AudioTrackSubscriptionManager implements AudioRecoveryAPI {
                 const trackKey = trackKeyOf(participant, microphoneAudioPublication);
 
                 if (this.activeRecoveries.has(trackKey)) {
-                    // eslint-disable-next-line no-console
-                    console.log('Skipping handleActiveSpeakerChanged, recovery in progress for trackKey:', trackKey);
                     return;
                 }
 
@@ -325,14 +320,12 @@ export class AudioTrackSubscriptionManager implements AudioRecoveryAPI {
         const trackKey = trackKeyOf(participant, publication);
 
         if (this.activeRecoveries.has(trackKey)) {
-            // eslint-disable-next-line no-console
-            console.warn('AudioTrackSubscriptionManager: recovery already in progress', { trackKey, reason });
+            logger.warn('AudioTrackSubscriptionManager: recovery already in progress', { trackKey, reason });
             return;
         }
 
         this.activeRecoveries.add(trackKey);
-        // eslint-disable-next-line no-console
-        console.log('AudioTrackSubscriptionManager: recoverTrack starting', { trackKey, reason });
+        logger.info('AudioTrackSubscriptionManager: recoverTrack starting', { trackKey, reason });
 
         try {
             if (publication.isEnabled) {
@@ -352,15 +345,13 @@ export class AudioTrackSubscriptionManager implements AudioRecoveryAPI {
             }
 
             if (!this.subscribedMicrophoneTrackPublications.has(publication.trackSid)) {
-                // eslint-disable-next-line no-console
-                console.log('AudioTrackSubscriptionManager: publication left cache mid-recovery, aborting', trackKey);
+                logger.info('AudioTrackSubscriptionManager: publication left cache mid-recovery, aborting', trackKey);
                 this.cleanupRecoveryState(trackKey);
                 return;
             }
 
             if (publication.isSubscribed) {
-                // eslint-disable-next-line no-console
-                console.warn(
+                logger.warn(
                     'AudioTrackSubscriptionManager: still subscribed after setSubscribed(false), retrying',
                     trackKey
                 );
@@ -373,8 +364,7 @@ export class AudioTrackSubscriptionManager implements AudioRecoveryAPI {
                 await wait(isSafari() ? 500 : 100);
             }
             if (!publication.isSubscribed) {
-                // eslint-disable-next-line no-console
-                console.error('AudioTrackSubscriptionManager: failed to resubscribe', trackKey);
+                logger.error('AudioTrackSubscriptionManager: failed to resubscribe', trackKey);
                 this.cleanupRecoveryState(trackKey);
                 return;
             }
@@ -384,8 +374,7 @@ export class AudioTrackSubscriptionManager implements AudioRecoveryAPI {
                 await wait(isSafari() ? 200 : 50);
             }
 
-            // eslint-disable-next-line no-console
-            console.log('AudioTrackSubscriptionManager: recoverTrack completed', {
+            logger.info('AudioTrackSubscriptionManager: recoverTrack completed', {
                 trackKey,
                 reason,
                 cooldownMs: this.RECOVERY_COOLDOWN,
@@ -397,8 +386,6 @@ export class AudioTrackSubscriptionManager implements AudioRecoveryAPI {
             }, this.RECOVERY_COOLDOWN);
             this.recoveryTimeouts.set(trackKey, timeout);
         } catch (error) {
-            // eslint-disable-next-line no-console
-            console.error('AudioTrackSubscriptionManager: recoverTrack threw', error, { trackKey, reason });
             this.reportError?.('AudioTrackSubscriptionManager: recoverTrack threw', {
                 level: 'error',
                 context: { error, trackKey, participant: participant.identity, trackSid: publication.trackSid },
@@ -447,8 +434,6 @@ export class AudioTrackSubscriptionManager implements AudioRecoveryAPI {
             const trackKey = trackKeyOf(item.participant, item.publication);
 
             if (this.activeRecoveries.has(trackKey)) {
-                // eslint-disable-next-line no-console
-                console.log('Skipping reconcile for track in recovery:', trackKey);
                 return;
             }
 

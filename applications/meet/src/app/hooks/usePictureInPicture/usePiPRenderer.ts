@@ -2,6 +2,8 @@ import { useCallback, useRef } from 'react';
 
 import type { Track as LiveKitTrack } from 'livekit-client';
 
+import { logger } from '@proton/logger';
+
 import { PIP_PREVIEW_ITEM_HEIGHT } from '../../constants';
 import { drawMessageOverlay, drawVideoWithAspectRatio } from './drawingUtils';
 import type { PiPOverlayMessage, TrackInfo } from './types';
@@ -20,8 +22,7 @@ export function usePiPRenderer() {
                 videoElement.parentNode.removeChild(videoElement);
             }
         } catch (error) {
-            // eslint-disable-next-line no-console
-            console.error('Error cleaning up video element:', error);
+            logger.error('Error cleaning up video element:', error);
         }
     }, []);
 
@@ -82,8 +83,7 @@ export function usePiPRenderer() {
                         await videoElement.play();
                     }
                 } catch (error) {
-                    // eslint-disable-next-line no-console
-                    console.error('Failed to play video:', error);
+                    logger.error('Failed to play video:', error);
                 }
             };
 

@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
+import { logger } from '@proton/logger';
 import { toToggleState } from '@proton/meet/telemetry/dimensions';
 import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 
@@ -31,8 +32,7 @@ export const useLiveCaptionsToggle = () => {
                 })
             )
         ).catch((error) => {
-            // eslint-disable-next-line no-console
-            console.error('Failed to update live captions', error);
+            logger.error('Failed to update live captions', error);
             createNotification({
                 type: 'error',
                 text: c('Error').t`Failed to update live captions. Please try again.`,

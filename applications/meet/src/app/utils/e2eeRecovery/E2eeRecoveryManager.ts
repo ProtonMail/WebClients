@@ -145,8 +145,6 @@ export class E2eeRecoveryManager {
 
     setup = () => {
         if (this.disabled) {
-            // eslint-disable-next-line no-console
-            console.log(`E2eeRecoveryManager: disabled by flag, skipping setup`);
             return;
         }
 
@@ -250,8 +248,6 @@ export class E2eeRecoveryManager {
         }
         const { identity } = participant;
         const count = this.encryptionErrorsByParticipant.get(identity) ?? 0;
-        // eslint-disable-next-line no-console
-        console.log(`E2eeRecoveryManager: encryption error detected: participant=${identity} count=${count}`);
         this.lastEncryptionErrorByParticipant.set(identity, Date.now());
         if (this.connectedAt === null || Date.now() - this.connectedAt < this.tuning.encryptionErrorGracePeriodMs) {
             return;
@@ -311,8 +307,6 @@ export class E2eeRecoveryManager {
                 }
             }
         } catch (error) {
-            // eslint-disable-next-line no-console
-            console.error(`E2eeRecoveryManager: tick failed`, error);
             this.reportError?.('E2eeRecoveryManager: tick failed', {
                 level: 'error',
                 context: { error },
@@ -573,8 +567,6 @@ export class E2eeRecoveryManager {
         try {
             await this.audioManager.recoverTrack(publication, participant, reason);
         } catch (error) {
-            // eslint-disable-next-line no-console
-            console.error(`E2eeRecoveryManager: audio recoverTrack threw`, error);
             this.reportError?.('E2eeRecoveryManager: audio recoverTrack threw', {
                 level: 'error',
                 context: { error, trackKey, participant: participant.identity, trackSid: publication.trackSid, reason },
@@ -601,8 +593,6 @@ export class E2eeRecoveryManager {
             encryptionErrors: Object.fromEntries(this.encryptionErrorsByParticipant),
         };
 
-        // eslint-disable-next-line no-console
-        console.log(`E2eeRecoveryManager: Session summary`, summary);
         this.reportError?.('E2eeRecoveryManager: Session summary', {
             level: 'warning',
             context: summary,

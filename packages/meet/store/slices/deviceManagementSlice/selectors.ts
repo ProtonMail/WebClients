@@ -1,6 +1,7 @@
 import { createSelector } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
+import { logger } from '@proton/logger';
 import { isLinux } from '@proton/shared/lib/helpers/browser';
 
 import {
@@ -53,8 +54,7 @@ export const selectRealtimeDevices = async (store: MeetStore, kind: 'audioinput'
     try {
         return getSelectableDevices(await navigator.mediaDevices.enumerateDevices(), kind).map(toSerializableDevice);
     } catch (error) {
-        // eslint-disable-next-line no-console
-        console.error('[selectRealtimeDevices] error getting realtime devices, falling back to redux store', error);
+        logger.error('[selectRealtimeDevices] error getting realtime devices, falling back to redux store', error);
 
         switch (kind) {
             case 'audioinput':

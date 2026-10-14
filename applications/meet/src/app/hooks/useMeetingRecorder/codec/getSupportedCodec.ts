@@ -1,3 +1,5 @@
+import { logger } from '@proton/logger';
+
 import { RECORDING_FPS } from '../videoMixer/constants';
 import type { CodecProbeOutcome, RecordingCodec } from './types';
 
@@ -58,8 +60,7 @@ const isCodecSupported = (codec: string): Promise<boolean> => {
             settled = true;
 
             const elapsedMs = Math.round(performance.now() - start);
-            // eslint-disable-next-line no-console
-            console.log(
+            logger.info(
                 `[MeetingRecorder/codec-probe] ${codec} -> ${supported ? 'OK' : 'NO'} (${outcome}, ${elapsedMs}ms)`,
                 extra ?? ''
             );
@@ -228,14 +229,12 @@ export const getSupportedRecordingCodec = async (): Promise<RecordingCodec> => {
     }
 
     if (!codecFound) {
-        // eslint-disable-next-line no-console
-        console.error(
+        logger.error(
             `[MeetingRecorder/codec-probe] No codec passed runtime probe; falling back to '${selectedRecordingCodec.mimeType}' anyway`
         );
     }
 
-    // eslint-disable-next-line no-console
-    console.log('[MeetingRecorder/codec-probe] selected:', selectedRecordingCodec);
+    logger.info('[MeetingRecorder/codec-probe] selected:', selectedRecordingCodec);
 
     return selectedRecordingCodec;
 };

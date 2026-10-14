@@ -4,6 +4,7 @@ import { useRoomContext } from '@livekit/components-react';
 import { ChatEventKind } from '@proton-meet/proton-meet-core';
 import type { RemoteParticipant } from 'livekit-client';
 
+import { logger } from '@proton/logger';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch, useMeetSelector, useMeetStore } from '@proton/meet/store/hooks';
 import {
@@ -168,8 +169,7 @@ export const useChat = () => {
 
                 dispatch(addChatMessages(messagesToAdd));
             } catch (error) {
-                // eslint-disable-next-line no-console
-                console.error('Error handling chat event:', error);
+                logger.error('Error handling chat event:', error);
             }
         },
         [dispatch, isChatOpen, meetCoreClient, reportMeetError, store]
@@ -267,8 +267,7 @@ export const useChat = () => {
 
                 dispatch(addChatMessages([newMessage]));
             } catch (error) {
-                // eslint-disable-next-line no-console
-                console.error('Error handling chat message:', error);
+                logger.error('Error handling chat message:', error);
             }
         },
         [dispatch, isChatOpen, meetCoreClient, reportMeetError]

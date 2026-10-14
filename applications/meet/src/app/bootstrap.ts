@@ -22,7 +22,7 @@ import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
 import createApi from '@proton/shared/lib/api/createApi';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getClientID } from '@proton/shared/lib/apps/helper';
-import { generateLoggerKey } from '@proton/shared/lib/authentication/loggerKey';
+import { type GeneratedLoggerKey, generateLoggerKey } from '@proton/shared/lib/authentication/loggerKey';
 import { cleanupInactivePersistedSessions } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import {
     getPersistedSession,
@@ -31,7 +31,7 @@ import {
 } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { getAppVersionStr } from '@proton/shared/lib/fetch/headers';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
-import { captureMessage, isProduction } from '@proton/shared/lib/helpers/sentry';
+import { captureMessage, isProduction, traceError } from '@proton/shared/lib/helpers/sentry';
 import { getBrowserLocale } from '@proton/shared/lib/i18n/helper';
 import { loadLocales } from '@proton/shared/lib/i18n/loadLocale';
 import type { ProtonConfig, Unwrap } from '@proton/shared/lib/interfaces';
@@ -46,6 +46,12 @@ import { meetTelemetryConfig } from './telemetryConfig';
 import { pruneOrphanBackgroundCaches, purgeUserBackgrounds } from './utils/customBackgrounds/purge';
 import { clearStoredDevices } from './utils/deviceStorage';
 import { clearDisabledRotatePersonalMeeting } from './utils/disableRotatePersonalMeeting';
+import {
+    MEET_LOGGER_NAME,
+    deleteUnusedGuestLoggerDatabases,
+    getGuestLoggerKey,
+    holdGuestLoggerLock,
+} from './utils/meetLogger';
 import { startMeetingInfoPreload } from './utils/startMeetingInfoPreload';
 import { installWaitingRoomCallbackNamespaces } from './utils/wasmUtils';
 import { DirectMeetCoreClient } from './wasm/DirectMeetCoreClient';
@@ -176,25 +182,32 @@ const loadUserData = async (dispatch: MeetDispatch) => {
 
 const initializeLogger = ({
     api,
-    authentication,
     unleashClient,
     appName,
-}: Pick<MeetExtraThunkArguments, 'api' | 'authentication' | 'unleashClient'> & {
+    getLoggerKey,
+}: Pick<MeetExtraThunkArguments, 'api' | 'unleashClient'> & {
     appName: ProtonConfig['APP_NAME'];
+    getLoggerKey: () => Promise<GeneratedLoggerKey>;
 }) => {
     if (!unleashClient.isEnabled('CollectLogs') || unleashClient.isEnabled('MeetCollectLogsKillSwitch')) {
         return;
     }
 
-    void generateLoggerKey(authentication).then(({ key, ID }) =>
-        logger.initialize({
-            encryptionKey: key,
-            appName,
-            loggerID: ID,
-            loggerName: 'meet',
-            consoleLevels: isProduction(window.location.host) ? undefined : ALL_CONSOLE_LEVELS,
-        })
-    );
+    getLoggerKey()
+        .then(({ key, ID }) =>
+            logger.initialize({
+                encryptionKey: key,
+                appName,
+                loggerID: ID,
+                loggerName: MEET_LOGGER_NAME,
+                consoleLevels: isProduction(window.location.host) ? undefined : ALL_CONSOLE_LEVELS,
+            })
+        )
+        .catch((error) => {
+            // eslint-disable-next-line no-console
+            console.error('Failed to initialize the proton logger', error);
+            traceError(error);
+        });
 
     api.addEventListener((event) => {
         if (event.type === 'api-error') {
@@ -304,7 +317,12 @@ const completeAppBootstrap = async ({
         cryptoPromise,
         measureLoadPhase('unleashMs', bootstrap.unleashReady({ unleashClient })).catch(noop),
     ]);
-    initializeLogger({ api, authentication, unleashClient, appName: config.APP_NAME });
+    initializeLogger({
+        api,
+        unleashClient,
+        appName: config.APP_NAME,
+        getLoggerKey: () => generateLoggerKey(authentication),
+    });
     const meetCoreWorkerEnabled = unleashClient.isEnabled(MEET_CORE_WORKER_FLAG);
     const useCachedServerTime = unleashClient.isEnabled(MEET_USE_CACHED_SERVER_TIME_FLAG);
     const meetCoreClient = await measureLoadPhase(
@@ -479,6 +497,18 @@ export const bootstrapGuestApp = async (
     });
 
     await measureLoadPhase('unleashMs', unleashClient.start());
+
+    initializeLogger({
+        api,
+        unleashClient,
+        appName: config.APP_NAME,
+        getLoggerKey: async () => {
+            const guestLoggerKey = await getGuestLoggerKey();
+            await holdGuestLoggerLock(guestLoggerKey.ID);
+            deleteUnusedGuestLoggerDatabases().catch(noop);
+            return guestLoggerKey;
+        },
+    });
 
     const meetCoreWorkerEnabled = unleashClient.isEnabled(MEET_CORE_WORKER_FLAG);
     const useCachedServerTime = unleashClient.isEnabled(MEET_USE_CACHED_SERVER_TIME_FLAG);

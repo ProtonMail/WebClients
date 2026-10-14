@@ -1,4 +1,5 @@
 // Derived from @livekit/track-processors 0.8.1 (Apache-2.0), src/webgl.
+import type { PipelineLogger } from './types';
 
 const GAUSSIAN_MAX_RADIUS = 16;
 const GAUSSIAN_MAX_TAPS = 1 + Math.ceil(GAUSSIAN_MAX_RADIUS / 2);
@@ -338,7 +339,7 @@ const applyBlur = (
 const getMaskDownsampleFactor = (width: number, height: number) =>
     Math.max(1, Math.round(Math.max(width, height) / MASK_BUFFER_TARGET_EDGE));
 
-export const createCompositor = (canvas: CompositorCanvas): Compositor | null => {
+export const createCompositor = (canvas: CompositorCanvas, logger: PipelineLogger): Compositor | null => {
     const gl = (canvas as OffscreenCanvas).getContext('webgl2', {
         antialias: false,
         premultipliedAlpha: true,
@@ -436,8 +437,7 @@ export const createCompositor = (canvas: CompositorCanvas): Compositor | null =>
         try {
             cropped = await resizeImageToCover(image, canvas.width, canvas.height);
         } catch (error) {
-            // eslint-disable-next-line no-console
-            console.error(
+            logger.error(
                 `[bg-compositor] background image could not be cropped, ${isRecrop ? 'keeping the previous crop' : 'using black'}`,
                 error
             );
