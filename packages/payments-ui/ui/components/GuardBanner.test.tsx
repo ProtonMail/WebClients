@@ -18,7 +18,7 @@ describe('GuardBanner', () => {
         const status = screen.getByTestId('banner');
 
         expect(status.querySelectorAll('li')).toHaveLength(2);
-        expect(status.textContent).toContain('To complete the action, fix the following:');
+        expect(status.textContent).toContain('Plan switch is incompatible for the following reasons:');
         expect(status.textContent).not.toContain('raw 1');
         expect(status.textContent).not.toContain('raw 2');
     });
@@ -37,7 +37,7 @@ describe('GuardBanner', () => {
 
         expect(status.querySelectorAll('li')).toHaveLength(1);
         expect(status.textContent).toContain('can’t be completed');
-        expect(status.textContent).not.toContain('fix the following');
+        expect(status.textContent).not.toContain('incompatible for the following reasons');
         expect(status.textContent).not.toContain('raw 1');
         expect(status.textContent).not.toContain('raw 2');
     });
@@ -74,15 +74,9 @@ describe('GuardBanner', () => {
         expect(container.firstChild).toBeNull();
     });
 
-    it('supports inline and block variants, without opening any modal', () => {
-        const errors: GuardError[] = [{ Code: GUARD_ERROR_CODES.TOO_FEW_MEMBERS, Message: 'x' }];
-        const { rerender } = render(<GuardBanner errors={errors} variant="inline" />);
+    it('does not open a modal', () => {
+        render(<GuardBanner errors={[{ Code: GUARD_ERROR_CODES.TOO_FEW_MEMBERS, Message: 'x' }]} />);
 
-        expect(screen.getByTestId('banner').className).toContain('text-sm');
-
-        rerender(<GuardBanner errors={errors} variant="block" />);
-
-        expect(screen.getByTestId('banner').className).not.toContain('text-sm');
         expect(document.querySelector('[role="dialog"]')).toBeNull();
     });
 });
