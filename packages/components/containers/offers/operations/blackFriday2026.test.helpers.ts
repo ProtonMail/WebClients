@@ -1,3 +1,5 @@
+import { getUnixTime } from 'date-fns';
+
 import type { COUPON_CODES } from '@proton/payments/core/constants';
 import { CYCLE, PLANS, PLAN_TYPES } from '@proton/payments/core/constants';
 import type { Currency } from '@proton/payments/core/interface';
@@ -36,6 +38,8 @@ export const freeUser = {
     isDelinquent: false,
     isPaid: false,
     isFree: true,
+    // Well past the free-user minimum account age
+    CreateTime: getUnixTime(new Date(2024, 0, 1)),
 } as unknown as UserModel;
 
 export const paidUser = {
