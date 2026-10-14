@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { logger } from '@proton/logger';
+import { logger } from '@protontech/logger';
+
 import { changeSearchParams, getSearchParams } from '@proton/shared/lib/helpers/url';
 import type { SearchParameters } from '@proton/shared/lib/mail/search';
 

@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 
-import { logger } from '@proton/logger';
+import { logger } from '@protontech/logger';
+
 import { isFirefox, isSafari } from '@proton/shared/lib/helpers/browser';
 
 import type { ToggleAudioType, ToggleVideoType } from '../../types';

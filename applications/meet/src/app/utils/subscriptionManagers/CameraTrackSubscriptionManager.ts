@@ -1,7 +1,7 @@
+import { logger } from '@protontech/logger';
 import type { Room, TrackPublication } from 'livekit-client';
 import { ConnectionState, RemoteTrackPublication, Track, VideoQuality } from 'livekit-client';
 
-import { logger } from '@proton/logger';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 export type RegisterCameraTrackFn = (

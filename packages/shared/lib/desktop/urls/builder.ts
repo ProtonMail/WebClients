@@ -1,4 +1,4 @@
-import { logger } from '@proton/logger';
+import { logger } from '@protontech/logger';
 
 import {
     anyPathPattern,

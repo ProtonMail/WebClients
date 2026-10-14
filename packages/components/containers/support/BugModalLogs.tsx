@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 
+import { logger } from '@protontech/logger';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
-import { logger } from '@proton/logger';
 
 import Collapsible from '../../components/collapsible/Collapsible';
 import CollapsibleContent from '../../components/collapsible/CollapsibleContent';

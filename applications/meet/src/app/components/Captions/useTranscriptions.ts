@@ -1,10 +1,10 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { useConnectionState, useRoomContext } from '@livekit/components-react';
+import { logger } from '@protontech/logger';
 import { ConnectionState } from 'livekit-client';
 import type { Room, TextStreamReader } from 'livekit-client';
 
-import { logger } from '@proton/logger';
 import { useMeetErrorReporting } from '@proton/meet';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectCaptionsAgentPresent } from '@proton/meet/store/slices/participants/agentParticipantsSlice';

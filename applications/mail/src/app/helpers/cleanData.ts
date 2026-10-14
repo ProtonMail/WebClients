@@ -1,5 +1,6 @@
+import { logger } from '@protontech/logger';
+
 import { deleteAssistantCachedFiles } from '@proton/llm/lib/downloader';
-import { logger } from '@proton/logger';
 import type { PersistedSession } from '@proton/shared/lib/authentication/SessionInterface';
 
 import { getExistingIndexService } from '../contentSearch/indexation/IndexService';

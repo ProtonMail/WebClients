@@ -1,12 +1,13 @@
+import { logger } from '@protontech/logger';
+
 import { deleteAssistantCachedFiles } from '@proton/llm/lib/downloader';
-import { logger } from '@proton/logger';
 
 import { getExistingIndexService } from '../contentSearch/indexation/IndexService';
 import { cleanData, cleanDataLogout } from './cleanData';
 
 // These tests pin down cleanData's option gating: each option drives exactly its own cleanup and
 // nothing else, and the injected `esDelete` (not a raw DB drop) is what wipes the v1 ES database.
-jest.mock('@proton/logger', () => ({
+jest.mock('@protontech/logger', () => ({
     logger: {
         isInitialized: jest.fn().mockReturnValue(true),
         clearLogs: jest.fn(),

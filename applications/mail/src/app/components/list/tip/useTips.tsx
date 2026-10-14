@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 
+import { logger } from '@protontech/logger';
 import { differenceInDays } from 'date-fns';
 import { c } from 'ttag';
 
@@ -23,7 +24,6 @@ import { IcShield2Bolt } from '@proton/icons/icons/IcShield2Bolt';
 import { IcTag } from '@proton/icons/icons/IcTag';
 import { IcTrashClock } from '@proton/icons/icons/IcTrashClock';
 import { IcTv } from '@proton/icons/icons/IcTv';
-import { logger } from '@proton/logger';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { PassAliasesProvider } from '@proton/pass/components/Drawer/PassAliases/PassAliasesProvider';

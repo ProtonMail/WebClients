@@ -4,9 +4,9 @@ import {
     type VideoTrackTransformer,
     type VideoTransformerInitOptions,
 } from '@livekit/track-processors';
+import { logger } from '@protontech/logger';
 import type { ProcessorOptions, Track, TrackProcessor } from 'livekit-client';
 
-import { logger } from '@proton/logger';
 import { withTimeout } from '@proton/meet/utils/withTimeout';
 import { isFirefox, isIos } from '@proton/shared/lib/helpers/browser';
 

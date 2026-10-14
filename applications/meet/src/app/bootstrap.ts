@@ -1,4 +1,6 @@
 import init, { App } from '@proton-meet/proton-meet-core';
+import { logger } from '@protontech/logger';
+import { ALL_CONSOLE_LEVELS } from '@protontech/logger/constants';
 import { createBrowserHistory } from 'history';
 
 import { registerSessionListener } from '@proton/account/accountSessions/registerSessionListener';
@@ -11,8 +13,6 @@ import { getDecryptedPersistedState } from '@proton/account/persist/helper';
 import type { NotificationsManager } from '@proton/app-context/notifications/manager';
 import { setupGuestCrossStorage } from '@proton/cross-storage/account/guest';
 import { FeatureCode, fetchFeatures } from '@proton/features/index';
-import { logger } from '@proton/logger';
-import { ALL_CONSOLE_LEVELS } from '@proton/logger/constants';
 import { setMeetCoreErrorResolver } from '@proton/meet/hooks/useMeetErrorReporting';
 import { meetEventLoop } from '@proton/meet/store/meetEventLoop';
 import { userSettingsThunk as meetUserSettingsThunk } from '@proton/meet/store/slices/userSettings';

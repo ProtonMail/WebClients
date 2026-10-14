@@ -16,7 +16,6 @@
     },
     "dependencies": {
         "@proton/colors": "workspace:^",
-        "@proton/logger": "workspace:^",
         "@proton/redux-utilities": "workspace:^",
         "@proton/sanitize": "workspace:^",
         "@proton/sieve": "workspace:^",
@@ -24,6 +23,7 @@
         "@proton/utils": "workspace:^",
         "@protontech/bip39": "^1.1.0",
         "@protontech/crypto": "*",
+        "@protontech/logger": "^0.0.5",
         "@protontech/mimemessage": "~v1.1.4",
         "@protontech/mutex-browser": "^1.0.5",
         "@protontech/telemetry": "^2.2.0",

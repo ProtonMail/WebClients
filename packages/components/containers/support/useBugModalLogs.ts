@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
-import { logger } from '@proton/logger';
+import { logger } from '@protontech/logger';
+
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { getInboxDesktopLogsBlob, isInboxDesktopBugReportLogsSupported } from '@proton/shared/lib/desktop/logHelpers';
