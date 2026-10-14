@@ -3,6 +3,7 @@ import { act, renderHook, waitFor } from '@testing-library/react';
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '@proton/payments/core/constants';
 import type { PaymentVerificatorV5 } from '@proton/payments/core/createPaymentToken';
 import type { AmountAndCurrency, ChargebeeIframeHandles } from '@proton/payments/core/interface';
+import { tracePaymentError } from '@proton/payments/sentry/capture';
 import { apiMock } from '@proton/test-api/api';
 
 import {
@@ -12,6 +13,8 @@ import {
     mockTokenStatus,
 } from './__mocks__/wallet-test-helpers';
 import { type GooglePayModalHandles, useGooglePay } from './useGooglePay';
+
+jest.mock('@proton/payments/sentry/capture', () => ({ tracePaymentError: jest.fn() }));
 
 const amountAndCurrency: AmountAndCurrency = { Amount: 1000, Currency: 'USD' };
 
@@ -124,7 +127,13 @@ describe('useGooglePay', () => {
         });
 
         expect(rendered.onChargeable).not.toHaveBeenCalled();
-        expect(rendered.googlePayModalHandles.onFailure).toHaveBeenCalled();
+        expect(rendered.googlePayModalHandles.onFailure).toHaveBeenCalledWith(
+            expect.objectContaining({ message: 'Something went wrong. Google Pay verification failed.' })
+        );
+        expect(tracePaymentError).toHaveBeenCalledWith(
+            expect.objectContaining({ message: 'Payment token not chargeable' }),
+            expect.objectContaining({ component: 'use-chargebee-wallet', featureFlag: 'PaymentProcessorsRefactor' })
+        );
     });
 
     it('charges only once even if authorization fires twice', async () => {
