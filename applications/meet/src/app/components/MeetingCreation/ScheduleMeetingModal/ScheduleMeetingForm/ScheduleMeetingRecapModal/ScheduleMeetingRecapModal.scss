@@ -63,10 +63,17 @@
 	font-weight: 600;
 }
 
-.done-button {
-	padding: 0.8rem;
+.schedule-meeting-recap-modal .done-button,
+.schedule-meeting-recap-modal .calendar-dropdown-button {
+	padding-block: calc(1rem - 1px);
+	padding-inline: 2.5rem;
 	font-size: 1rem;
 	line-height: 1.5rem;
+	font-weight: 600;
+}
+
+.schedule-meeting-recap-modal .calendar-dropdown-button:not(:hover, :active, :focus-visible) {
+	border-color: var(--border-card);
 }
 
 .meeting-icon--added .meeting-icon-check {
@@ -87,44 +94,46 @@
 	}
 }
 
-.calendar-dropdown-button {
-	padding: 0.8rem;
-	font-size: 1rem;
-}
-
-.calendar-dropdown {
-	color: #0f0f0f66 !important;
-	background: #16161fcc !important;
-	box-shadow: 0 4px 16px 0 #00000040 !important;
-	backdrop-filter: blur(80px) !important;
-	border: 1px solid var(--circle-button-transparent) !important;
-	min-inline-size: 15em;
+.dropdown.calendar-dropdown {
+	border: 1px solid rgb(255 255 255 / 0.08);
+	border-radius: 1.5rem;
+	background-color: color-mix(in srgb, var(--background-norm) 50%, transparent);
+	box-shadow: 0 4px 16px 0 rgb(0 0 0 / 0.25) !important; // PageHeader.scss sets `.dropdown { box-shadow: none !important }`
+	backdrop-filter: blur(8px);
 
 	.dropdown-content {
-		color: #0f0f0f66;
-		background: #16161fcc;
-		box-shadow: 0 4px 16px 0 #00000040;
-		backdrop-filter: blur(80px);
+		padding: 0.5rem;
 		border: none;
-	}
+		background: none;
+		box-shadow: none;
+		backdrop-filter: none;
 
-	.dropdown-content::before,
-	.dropdown-content::after {
-		background: #16161fcc;
+		&::before,
+		&::after {
+			display: none;
+		}
 	}
 
 	.calendar-dropdown-menu {
-		min-block-size: 2.813rem;
+		padding-block: 0.75rem;
+		padding-inline: 1rem;
 		border-radius: 1rem;
-		color: var(--text-weak);
+		color: var(--text-norm);
 		font-size: 0.875rem;
+		line-height: 1.3125rem;
 		font-weight: 500;
 		white-space: nowrap;
-	}
 
-	&::before,
-	&::after {
-		background: #16161fcc !important;
+		&::after {
+			content: none;
+		}
+
+		&:hover,
+		&:focus-visible,
+		&:active {
+			background-color: var(--interaction-weak-minor-1);
+			color: var(--text-norm);
+		}
 	}
 }
 
