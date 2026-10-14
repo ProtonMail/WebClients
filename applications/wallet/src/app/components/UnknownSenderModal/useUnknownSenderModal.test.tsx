@@ -3,7 +3,7 @@ import { act } from '@testing-library/react-hooks';
 
 import { mockUseUserKeys } from '@proton/account/testing/vitest/mockUseUserKeys';
 import { mockUseNotifications } from '@proton/app-context/testing/vitest/mockUseNotifications';
-import { setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
+import { setupCryptoProxyForTesting } from '@proton/pass/utils/tests/fixtures/crypto';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 import {
     mockUseApiWalletTransactionData,

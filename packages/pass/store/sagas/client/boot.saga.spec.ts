@@ -2,9 +2,9 @@ import { runSaga } from 'redux-saga';
 
 import { exposeApi } from '../../../lib/api/api';
 import { AppStatus } from '../../../types';
+import { sagaSetup } from '../../../utils/tests/saga';
 import { bootFailure, bootIntent, cacheConflict, itemsUpdated, stateDestroy } from '../../actions';
 import type { RootSagaOptions } from '../../types';
-import { sagaSetup } from '../testing';
 import watcher from './boot.saga';
 import * as hydrateSaga from './hydrate.saga';
 

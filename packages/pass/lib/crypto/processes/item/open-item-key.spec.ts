@@ -1,7 +1,7 @@
 import type { EncodedItemKeyRotation, VaultShareKey } from '../../../../types';
 import { PassEncryptionTag } from '../../../../types';
+import { TEST_USER_KEY_ID } from '../../../../utils/tests/fixtures/crypto';
 import { encryptData, generateKey, importSymmetricKey } from '../../utils/crypto-helpers';
-import { TEST_USER_KEY_ID } from '../../utils/testing';
 import { openItemKey } from './open-item-key';
 
 describe('openItemKey crypto process', () => {

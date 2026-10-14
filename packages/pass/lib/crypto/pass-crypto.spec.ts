@@ -6,13 +6,7 @@ import type { DecryptedKey, Key, User } from '@proton/shared/lib/interfaces';
 import type { ItemRevisionContentsResponse, ShareGetResponse, ShareKeyResponse } from '../../types';
 import { ContentFormatVersion, ItemState, PassEncryptionTag, ShareRole, ShareType } from '../../types';
 import { createMemoryStore } from '../../utils/store';
-import { createAuthStore, exposeAuthStore } from '../auth/store';
-import { parseGroup } from '../groups/groups.parsers';
-import { PassCrypto, exposePassCrypto } from './index';
-import { createPassCrypto } from './pass-crypto';
-import * as processes from './processes';
-import { decryptData, generateKey, importSymmetricKey } from './utils/crypto-helpers';
-import { PassCryptoHydrationError, PassCryptoNotHydratedError, PassCryptoShareError } from './utils/errors';
+import { uniqueId } from '../../utils/string/unique-id';
 import {
     TEST_KEY_PASSWORD,
     TEST_USER_KEY_ID,
@@ -23,7 +17,14 @@ import {
     randomContents,
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
-} from './utils/testing';
+} from '../../utils/tests/fixtures/crypto';
+import { createAuthStore, exposeAuthStore } from '../auth/store';
+import { parseGroup } from '../groups/groups.parsers';
+import { PassCrypto, exposePassCrypto } from './index';
+import { createPassCrypto } from './pass-crypto';
+import * as processes from './processes';
+import { decryptData, generateKey, importSymmetricKey } from './utils/crypto-helpers';
+import { PassCryptoHydrationError, PassCryptoNotHydratedError, PassCryptoShareError } from './utils/errors';
 
 describe('PassCrypto', () => {
     let user: User;
@@ -31,7 +32,7 @@ describe('PassCrypto', () => {
     let addressKey: DecryptedKey;
     const address = {
         ...randomAddress(),
-        ID: `addressId-${Math.random()}`,
+        ID: `addressId-${uniqueId()}`,
         Status: ADDRESS_STATUS.STATUS_ENABLED,
         Receive: ADDRESS_RECEIVE.RECEIVE_YES,
         Send: ADDRESS_SEND.SEND_YES,
@@ -69,7 +70,7 @@ describe('PassCrypto', () => {
         });
         address.Keys = [
             {
-                ID: `addressId-key-${Math.random()}`,
+                ID: `addressId-key-${uniqueId()}`,
                 PrivateKey: addressArmoredKey,
                 Primary: 1,
                 Active: 1,
@@ -287,13 +288,13 @@ describe('PassCrypto', () => {
                 Permission: 1,
                 Primary: false,
                 Shared: false,
-                ShareID: `shareId-${Math.random()}`,
+                ShareID: `shareId-${uniqueId()}`,
                 ShareRoleID: ShareRole.MANAGER,
-                TargetID: `targetId-${Math.random()}`,
+                TargetID: `targetId-${uniqueId()}`,
                 TargetMaxMembers: 2,
                 TargetMembers: 0,
                 TargetType: ShareType.Vault,
-                VaultID: `vaultId-${Math.random()}`,
+                VaultID: `vaultId-${uniqueId()}`,
                 CanAutoFill: true,
                 Flags: 0,
             };
@@ -329,13 +330,13 @@ describe('PassCrypto', () => {
                 Permission: 1,
                 Primary: false,
                 Shared: false,
-                ShareID: `shareId-${Math.random()}`,
+                ShareID: `shareId-${uniqueId()}`,
                 ShareRoleID: ShareRole.MANAGER,
-                TargetID: `targetId-${Math.random()}`,
+                TargetID: `targetId-${uniqueId()}`,
                 TargetMaxMembers: 2,
                 TargetMembers: 0,
                 TargetType: ShareType.Vault,
-                VaultID: `vaultId-${Math.random()}`,
+                VaultID: `vaultId-${uniqueId()}`,
                 CanAutoFill: true,
                 Flags: 0,
             };
@@ -370,13 +371,13 @@ describe('PassCrypto', () => {
                 Permission: 1,
                 Primary: false,
                 Shared: false,
-                ShareID: `shareId-${Math.random()}`,
+                ShareID: `shareId-${uniqueId()}`,
                 ShareRoleID: ShareRole.MANAGER,
-                TargetID: `targetId-${Math.random()}`,
+                TargetID: `targetId-${uniqueId()}`,
                 TargetMaxMembers: 2,
                 TargetMembers: 0,
                 TargetType: ShareType.Vault,
-                VaultID: `vaultId-${Math.random()}`,
+                VaultID: `vaultId-${uniqueId()}`,
                 CanAutoFill: true,
                 Flags: 0,
             };
@@ -403,13 +404,13 @@ describe('PassCrypto', () => {
                 Permission: 1,
                 Primary: false,
                 Shared: false,
-                ShareID: `shareId-${Math.random()}`,
+                ShareID: `shareId-${uniqueId()}`,
                 ShareRoleID: ShareRole.MANAGER,
-                TargetID: `targetId-${Math.random()}`,
+                TargetID: `targetId-${uniqueId()}`,
                 TargetMaxMembers: 2,
                 TargetMembers: 0,
                 TargetType: ShareType.Vault,
-                VaultID: `vaultId-${Math.random()}`,
+                VaultID: `vaultId-${uniqueId()}`,
                 CanAutoFill: true,
                 Flags: 0,
             };
@@ -532,7 +533,7 @@ describe('PassCrypto', () => {
                 ContentFormatVersion: ContentFormatVersion.Item,
                 CreateTime: 0,
                 Flags: 0,
-                ItemID: `itemId-${Math.random()}`,
+                ItemID: `itemId-${uniqueId()}`,
                 ItemKey: 'base64encoded',
                 KeyRotation: 1,
                 LastUseTime: 0,
@@ -568,7 +569,7 @@ describe('PassCrypto', () => {
                 ContentFormatVersion: ContentFormatVersion.Item,
                 CreateTime: 0,
                 Flags: 0,
-                ItemID: `itemId-${Math.random()}`,
+                ItemID: `itemId-${uniqueId()}`,
                 ItemKey: item.ItemKey,
                 KeyRotation: 1,
                 LastUseTime: 0,

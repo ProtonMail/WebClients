@@ -3,7 +3,7 @@ import { renderHook } from '@testing-library/react';
 import { act } from '@testing-library/react-hooks';
 
 import { mockUseNotifications } from '@proton/app-context/testing/vitest/mockUseNotifications';
-import { setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
+import { setupCryptoProxyForTesting } from '@proton/pass/utils/tests/fixtures/crypto';
 import { mockUseApiWalletTransactionData, mockUseWalletApi, mockUseWalletDispatch } from '@proton/wallet/tests/mocks';
 import type { DecryptedTransactionData } from '@proton/wallet/types';
 import { decryptWalletData } from '@proton/wallet/utils/crypto';

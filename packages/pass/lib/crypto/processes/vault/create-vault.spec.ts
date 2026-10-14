@@ -1,15 +1,15 @@
 import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 
 import { ContentFormatVersion, PassEncryptionTag } from '../../../../types';
-import { decryptData, importSymmetricKey } from '../../utils/crypto-helpers';
-import { PassCryptoVaultError } from '../../utils/errors';
 import {
     createRandomKey,
     randomAddress,
     randomContents,
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
-} from '../../utils/testing';
+} from '../../../../utils/tests/fixtures/crypto';
+import { decryptData, importSymmetricKey } from '../../utils/crypto-helpers';
+import { PassCryptoVaultError } from '../../utils/errors';
 import { createVault } from './create-vault';
 
 describe('createVault crypto process', () => {

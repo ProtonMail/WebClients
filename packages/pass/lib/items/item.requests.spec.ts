@@ -1,12 +1,12 @@
 import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 
 import type { ItemRevisionContentsResponse } from '../../types';
+import { createTestItem } from '../../utils/tests/fixtures/items';
+import { createShareRemovedError } from '../../utils/tests/fixtures/shares';
 import { exposeApi } from '../api/api';
 import { PassErrorCode } from '../api/errors';
 import { PassCrypto } from '../crypto';
-import { createShareRemovedError } from '../shares/share.test.utils';
 import { batchByShareId, intoRevisionID, moveItems, requestItem } from './item.requests';
-import { createTestItem } from './item.test.utils';
 
 const api = jest.fn();
 exposeApi(api as any);

@@ -1,11 +1,11 @@
 import type { Runtime } from 'webextension-polyfill';
 
+import type { FileBuffer } from '@proton/pass/lib/file-storage/types';
 import {
     createMockChunk,
     createMockErrorStream,
     createMockReadableStream,
-} from '@proton/pass/lib/file-storage/testing';
-import type { FileBuffer } from '@proton/pass/lib/file-storage/types';
+} from '@proton/pass/utils/tests/fixtures/file-storage';
 
 import { WorkerMessageType } from '../../types/messages';
 import { portTransferWriter } from './fs.utils';

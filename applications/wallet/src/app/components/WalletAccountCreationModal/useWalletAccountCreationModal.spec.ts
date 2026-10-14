@@ -7,7 +7,7 @@ import { renderHook } from '@testing-library/react-hooks';
 import { mockUseUserKeys } from '@proton/account/testing/vitest/mockUseUserKeys';
 import { type WasmApiWalletAccount, WasmDerivationPath, WasmScriptType } from '@proton/andromeda';
 import { mockUseNotifications } from '@proton/app-context/testing/vitest/mockUseNotifications';
-import { setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
+import { setupCryptoProxyForTesting } from '@proton/pass/utils/tests/fixtures/crypto';
 import { apiWalletAccountOneA, apiWalletAccountOneB, apiWalletsData } from '@proton/wallet/tests/fixtures';
 import { mockUseWalletApiClients, mockUseWalletDispatch } from '@proton/wallet/tests/mocks';
 import { getUserKeys } from '@proton/wallet/tests/utils';

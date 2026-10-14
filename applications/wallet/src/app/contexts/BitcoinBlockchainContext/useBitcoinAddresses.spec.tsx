@@ -5,7 +5,7 @@ import { renderHook } from '@testing-library/react-hooks';
 
 import { mockUseGetAddressKeys } from '@proton/account/testing/vitest/mockUseAddressKeys';
 import { type WasmApiWalletBitcoinAddress, WasmNetwork } from '@proton/andromeda';
-import { setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
+import { setupCryptoProxyForTesting } from '@proton/pass/utils/tests/fixtures/crypto';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
 import { extendStore, setupStore } from '@proton/wallet/store/store';

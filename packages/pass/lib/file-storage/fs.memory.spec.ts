@@ -1,6 +1,6 @@
+import { createMockBlob, createMockReadableStream } from '../../utils/tests/fixtures/file-storage';
 import { FileStorageGarbageCollector } from './fs.gc';
 import { FileStorageMemory, MemoryWritableStream } from './fs.memory';
-import { createMockBlob, createMockReadableStream } from './testing';
 
 describe('FileStorageMemory', () => {
     jest.useFakeTimers();

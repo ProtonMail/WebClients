@@ -8,7 +8,7 @@ import { mockUseAddresses } from '@proton/account/testing/vitest/mockUseAddresse
 import { mockUseUserKeys } from '@proton/account/testing/vitest/mockUseUserKeys';
 import { WasmNetwork } from '@proton/andromeda';
 import { mockUseNotifications } from '@proton/app-context/testing/vitest/mockUseNotifications';
-import { setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
+import { setupCryptoProxyForTesting } from '@proton/pass/utils/tests/fixtures/crypto';
 import { apiWalletsData } from '@proton/wallet/tests/fixtures';
 import { mockUseFiatCurrencies, mockUseWalletApiClients, mockUseWalletDispatch } from '@proton/wallet/tests/mocks';
 import { getAddressKey, getUserKeys } from '@proton/wallet/tests/utils';

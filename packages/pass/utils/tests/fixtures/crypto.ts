@@ -5,10 +5,11 @@ import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import type { AddressKey, Group } from '@proton/shared/lib/interfaces';
 import { type Address, AddressConfirmationState, type DecryptedKey } from '@proton/shared/lib/interfaces';
 
+import { createVault } from '../../../lib/crypto/processes/vault/create-vault';
+import { generateKey, importSymmetricKey } from '../../../lib/crypto/utils/crypto-helpers';
 import type { ItemKey, ShareGetResponse, ShareKeyResponse, TypedOpenedShare, VaultShareKey } from '../../../types';
 import { ContentFormatVersion, ShareType } from '../../../types';
-import { createVault } from '../processes/vault/create-vault';
-import { generateKey, importSymmetricKey } from './crypto-helpers';
+import { uniqueId } from '../../string/unique-id';
 
 /* Load Crypto API outside of web workers, for testing purposes.
  * Dynamic import to avoid loading the library unless required */
@@ -64,13 +65,8 @@ export function randomAddress(): Address {
     };
 }
 
-export function randomContents(length: number = 20): Uint8Array<ArrayBuffer> {
-    const a = [];
-    for (let i = 0; i < length; i++) {
-        a[i] = Math.ceil(Math.random() * 255);
-    }
-    return new Uint8Array(a);
-}
+export const randomContents = (length: number = 20): Uint8Array<ArrayBuffer> =>
+    crypto.getRandomValues(new Uint8Array(length));
 
 export const createRandomShareResponses = async (
     encryptionKey: DecryptedKey,
@@ -99,13 +95,13 @@ export const createRandomShareResponses = async (
             Permission: 1,
             Primary: false,
             Shared: false,
-            ShareID: `shareId-${Math.random()}`,
+            ShareID: `shareId-${uniqueId()}`,
             ShareRoleID: '1',
-            TargetID: `targetId-${Math.random()}`,
+            TargetID: `targetId-${uniqueId()}`,
             TargetMaxMembers: 2,
             TargetMembers: 1,
             TargetType: ShareType.Vault,
-            VaultID: `vaultId-${Math.random()}`,
+            VaultID: `vaultId-${uniqueId()}`,
             CanAutoFill: true,
             Flags: 0,
         },
@@ -120,10 +116,10 @@ export const createRandomShareResponses = async (
 
 export const createRandomShare = <T extends ShareType>(targetType: T): TypedOpenedShare<T> => {
     const base = {
-        shareId: `shareId-${Math.random()}`,
-        vaultId: `vaultId-${Math.random()}`,
-        targetId: `targetId-${Math.random()}`,
-        addressId: `addressId-${Math.random()}`,
+        shareId: `shareId-${uniqueId()}`,
+        vaultId: `vaultId-${uniqueId()}`,
+        targetId: `targetId-${uniqueId()}`,
+        addressId: `addressId-${uniqueId()}`,
         permission: 42,
         expireTime: 0,
         createTime: 0,

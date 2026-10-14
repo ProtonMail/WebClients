@@ -152,7 +152,7 @@ export const createInlineApp = <T extends InlineRequest>({
 
     iframe.style.setProperty(`--frame-animation`, animation);
 
-    const cancel = withContext<() => boolean>((ctx) => Boolean(ctx?.getState().stale));
+    const cancel = withContext<() => boolean>((ctx) => !ctx || ctx.getState().stale);
     const ensureLoaded = asyncLock(() => waitUntil({ check: () => state.loaded, cancel }, 50));
     const ensureReady = asyncLock(() => waitUntil({ check: () => state.ready, cancel }, 20));
 

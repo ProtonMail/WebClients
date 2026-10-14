@@ -1,28 +1,15 @@
 import uniqueId from 'lodash/uniqueId';
 
-import type { ItemRevision } from '../../types';
-import { ContentFormatVersion, ItemState } from '../../types';
 import { prop } from '../../utils/fp/lens';
+import { createTestItem } from '../../utils/tests/fixtures/items';
 import { itemBuilder } from '../items/item.builder';
 import { getDuplicatePasswords } from './monitor.utils';
 
-const createMockItem = (password: string): ItemRevision<'login'> => ({
-    aliasEmail: null,
-    contentFormatVersion: ContentFormatVersion.Item,
-    createTime: -1,
-    data: itemBuilder('login').set('content', (content) => content.set('password', password)).data,
-    flags: 0,
-    itemId: uniqueId(),
-    lastUseTime: null,
-    modifyTime: -1,
-    pinned: false,
-    revision: 1,
-    revisionTime: -1,
-    shareId: 'shareId',
-    state: ItemState.Active,
-    shareCount: 0,
-    folderId: null,
-});
+const createMockItem = (password: string) =>
+    createTestItem('login', {
+        itemId: uniqueId(),
+        data: itemBuilder('login').set('content', (content) => content.set('password', password)).data,
+    });
 
 describe('getDuplicatePasswords', () => {
     test('should correctly identify and return duplicate passwords', () => {
@@ -30,6 +17,7 @@ describe('getDuplicatePasswords', () => {
             ...Array.from({ length: 5 }, () => createMockItem('AAA')),
             ...Array.from({ length: 2 }, () => createMockItem('BBB')),
             ...Array.from({ length: 5 }, () => createMockItem(uniqueId())),
+            // nosemgrep: rules_lgpl_javascript_crypto_rule-node-insecure-random-generator -- shuffles test input, no security use
         ].sort(() => Math.random() - 0.5); /* shuffle the array */
 
         const duplicates = getDuplicatePasswords(items).sort((a, b) => b.length - a.length);

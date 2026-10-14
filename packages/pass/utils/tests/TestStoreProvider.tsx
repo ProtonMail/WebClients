@@ -2,13 +2,14 @@ import { type FC, type PropsWithChildren, useEffect } from 'react';
 import { Provider as ReduxProvider } from 'react-redux';
 
 import { configureStore } from '@reduxjs/toolkit';
+import type { SagaMiddleware } from 'redux-saga';
 import createSagaMiddleware from 'redux-saga';
 
 import { AppStateManager } from '../../components/Core/AppStateManager';
 import { usePassCore } from '../../components/Core/PassCoreProvider';
 import { usePassConfig } from '../../hooks/usePassConfig';
 import type { AuthService } from '../../lib/auth/service';
-import { authStore, createAuthStore, exposeAuthStore } from '../../lib/auth/store';
+import { authStore } from '../../lib/auth/store';
 import { ACTIVE_POLLING_TIMEOUT } from '../../lib/events/constants';
 import { sagaEvents } from '../../store/events';
 import reducer from '../../store/reducers';
@@ -16,24 +17,31 @@ import type { ProxiedSettings } from '../../store/reducers/settings';
 import { requestMiddleware } from '../../store/request/middleware';
 import { rootSagaFactory } from '../../store/sagas';
 import { WEB_SAGAS } from '../../store/sagas/web';
-import { createMemoryStore } from '../store';
+import type { State } from '../../store/types';
 
-const sagaMiddleware = createSagaMiddleware();
+export const createTestStore = (preloadedState?: State) => {
+    const sagaMiddleware = createSagaMiddleware();
 
-const store = configureStore({
-    reducer,
-    middleware: (mw) =>
-        mw({
-            serializableCheck: false,
-            thunk: false,
-            immutableCheck: false,
-        }).concat(requestMiddleware, sagaMiddleware),
-    devTools: ENV !== 'production',
-});
+    const store = configureStore({
+        reducer,
+        preloadedState,
+        middleware: (mw) =>
+            mw({
+                serializableCheck: false,
+                thunk: false,
+                immutableCheck: false,
+            }).concat(requestMiddleware, sagaMiddleware),
+        devTools: ENV !== 'production',
+    });
 
-exposeAuthStore(createAuthStore(createMemoryStore()));
+    return { store, sagaMiddleware };
+};
 
-export const TestStoreProvider: FC<PropsWithChildren> = ({ children }) => {
+export type TestStore = ReturnType<typeof createTestStore>['store'];
+
+type Props = PropsWithChildren<{ store: TestStore; sagaMiddleware: SagaMiddleware }>;
+
+export const TestStoreProvider: FC<Props> = ({ store, sagaMiddleware, children }) => {
     const config = usePassConfig();
     const core = usePassCore();
 

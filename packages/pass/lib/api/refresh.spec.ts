@@ -4,8 +4,8 @@ import { createOfflineError } from '@proton/shared/lib/fetch/ApiError';
 import * as time from '@proton/shared/lib/helpers/promise';
 
 import { AuthMode } from '../../types';
+import { TEST_SERVER_TIME, mockAPIResponse } from '../../utils/tests/fixtures/api';
 import { refreshHandlerFactory } from './refresh';
-import { TEST_SERVER_TIME, mockAPIResponse } from './testing';
 
 jest.mock('@proton/shared/lib/helpers/promise', () => ({
     ...jest.requireActual('@proton/shared/lib/helpers/promise'),

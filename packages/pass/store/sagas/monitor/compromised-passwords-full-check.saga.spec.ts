@@ -3,8 +3,8 @@ import { runSaga } from 'redux-saga';
 
 import { exposeApi } from '../../../lib/api/api';
 import { obfuscate } from '../../../utils/obfuscate/xor';
+import { sagaSetup } from '../../../utils/tests/saga';
 import { requestCancel } from '../../request/actions';
-import { sagaSetup } from '../testing';
 import compromisedPasswordsFullCheck from './compromised-passwords-full-check.saga';
 
 const checkPasswordCompromised = jest.fn();
@@ -179,6 +179,7 @@ describe('compromisedPasswordsFullCheck saga', () => {
     it('does not sync when a password check fails, but keeps other results', async () => {
         logins = [loginItem('s1', 'i1', 'good'), loginItem('s1', 'i2', 'bad')];
         checkPasswordCompromised.mockImplementation(async (password: string) => {
+            // nosemgrep: rules_lgpl_javascript_crypto_rule-node-timing-attack -- mock routing on a fixture password
             if (password === 'bad') throw new Error('network error');
             return { status: 'checked', compromised: false, etag: 'etag' };
         });
@@ -229,6 +230,7 @@ describe('compromisedPasswordsFullCheck saga', () => {
     it('persists already-completed results before tearing down on cancellation', async () => {
         logins = [loginItem('s1', 'i1', 'done'), loginItem('s1', 'i2', 'hangs')];
         checkPasswordCompromised.mockImplementation((password: string, _etag: unknown, signal: AbortSignal) => {
+            // nosemgrep: rules_lgpl_javascript_crypto_rule-node-timing-attack -- mock routing on a fixture password
             if (password === 'done') return Promise.resolve({ status: 'checked', compromised: true, etag: 'etag' });
             return new Promise((_resolve, reject) => {
                 signal.addEventListener('abort', () => reject(new DOMException('Aborted', 'AbortError')));

@@ -2,9 +2,9 @@
  * Keep these tests inline with the rust source: `proton-pass-common/src/share.rs::visible_share_ids` */
 import type { Share } from '../../types';
 import { ShareFlags, ShareRole, ShareType } from '../../types';
+import { createTestShare } from '../../utils/tests/fixtures/shares';
 import { createPassCoreProxy } from '../core/core.proxy';
 import { dedupeShares } from './share.dedupe';
-import { createTestShare } from './share.test.utils';
 
 const TARGET_TYPES = [ShareType.Vault, ShareType.Item];
 

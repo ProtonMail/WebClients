@@ -4,9 +4,9 @@ import { runSaga } from 'redux-saga';
 import type { Group } from '../../../lib/groups/groups.types';
 import type { ItemRevision, Share } from '../../../types';
 import { ShareType } from '../../../types';
+import { sagaSetup } from '../../../utils/tests/saga';
 import { shareDeleted, sharesEventNew } from '../../actions';
 import type { RootSagaOptions, State } from '../../types';
-import { sagaSetup } from '../testing';
 import notificationForShares from './shares-notification.saga';
 
 describe('notif-shares saga', () => {

@@ -5,7 +5,7 @@ import {
     createRandomVaultKey,
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
-} from '../../utils/testing';
+} from '../../../../utils/tests/fixtures/crypto';
 import { createInviteKeys } from './create-invite-keys';
 import { reencryptInviteKeys } from './reencrypt-invite-keys';
 
