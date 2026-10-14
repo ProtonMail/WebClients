@@ -20,10 +20,6 @@ import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages
 import clsx from '@proton/utils/clsx';
 import diff from '@proton/utils/diff';
 
-import type { AddAttachmentsParams } from '../../../hooks/composer/useAttachments/interface';
-import { attachmentByCidOrCloc } from '../../../store/attachments/attachmentsSelectors';
-import type { MailState } from '../../../store/store';
-
 import { locateBlockquote } from '../../../helpers/message/messageBlockquote';
 import { getContent } from '../../../helpers/message/messageContent';
 import {
@@ -33,8 +29,11 @@ import {
     removeEmbeddedHTML,
 } from '../../../helpers/message/messageEmbeddeds';
 import { getEmbeddedImages } from '../../../helpers/message/messageImages';
+import type { AddAttachmentsParams } from '../../../hooks/composer/useAttachments/interface';
+import type { DecryptedAttachment } from '../../../store/attachments/attachmentsTypes';
+import type { MailState } from '../../../store/store';
 import type { MessageChange } from '../Composer';
-import { getAttachedCIDs } from './editorWrapperHelpers';
+import { getAttachedCIDs, getInlineImagesToRestore, getRemovedInlineImageData } from './editorWrapperHelpers';
 
 export interface ExternalEditorActions extends Pick<
     EditorActions,
@@ -104,6 +103,8 @@ const EditorWrapper = ({
     // Keep track of the containing CIDs to detect deletion
     const [cids, setCIDs] = useState<string[]>([]);
     const reuploadingCIDsRef = useRef<Set<string>>(new Set());
+    // Inline images removed by this composer, by CID, so that undo can restore them
+    const removedInlineImagesRef = useRef<Map<string, DecryptedAttachment>>(new Map());
 
     const editorActionsRef = useRef<EditorActions>();
     const handleEditorReady = useCallback((editorActions: EditorActions) => {
@@ -163,6 +164,14 @@ const EditorWrapper = ({
                     const attachment = embeddedImages.find((image) => image.cid === cid)?.attachment;
                     if (attachment) {
                         hasDeletedCid = true;
+
+                        if (canReuploadInlineImages && getStoreState) {
+                            const data = getRemovedInlineImageData(getStoreState(), message, attachment, cid);
+                            if (data) {
+                                removedInlineImagesRef.current.set(cid, data);
+                            }
+                        }
+
                         void onRemoveAttachment(attachment);
                     }
                 });
@@ -174,22 +183,17 @@ const EditorWrapper = ({
                 }
             }
 
-            // Re-upload inline images that are back in the content but whose attachment was deleted.
-            // The original CID is preserved in the attachement slice and used to find the attachment.
-            if (canReuploadInlineImages && missedCIDs.length && onUploadAttachments && getStoreState) {
-                const state = getStoreState();
-                const attachedCIDs = getAttachedCIDs(message);
+            // Re-upload inline images removed by this composer that are back in the content (e.g. undo)
+            if (canReuploadInlineImages && missedCIDs.length && onUploadAttachments) {
+                const imagesToRestore = getInlineImagesToRestore({
+                    missedCIDs,
+                    attachedCIDs: getAttachedCIDs(message),
+                    reuploadingCIDs: reuploadingCIDsRef.current,
+                    removedInlineImages: removedInlineImagesRef.current,
+                });
 
-                for (const cid of missedCIDs) {
-                    if (attachedCIDs.includes(cid) || reuploadingCIDsRef.current.has(cid)) {
-                        continue;
-                    }
-
-                    const attachment = attachmentByCidOrCloc(state, { identifier: cid });
-                    if (!attachment) {
-                        continue;
-                    }
-
+                for (const { cid, attachment } of imagesToRestore) {
+                    removedInlineImagesRef.current.delete(cid);
                     reuploadingCIDsRef.current.add(cid);
                     const blob = new Blob([attachment.data], { type: attachment.type || 'application/octet-stream' });
                     const file = new File([blob], attachment.filename, { type: attachment.type });
