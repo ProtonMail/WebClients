@@ -1,5 +1,7 @@
 @use '~@proton/styles/scss/lib/config' as *;
 @use '~@proton/styles/scss/lib/include-media' as im;
+@use '~@proton/styles/scss/specifics/es-build' as *;
+@use '~@proton/styles/scss/specifics/sofia-sans-condensed' as *;
 
 im.$breakpoints: $breakpoints-product;
 im.$media-expressions: $media-expressions;
@@ -33,7 +35,7 @@ im.$media-expressions: $media-expressions;
 
 	// Zoom in on the moon so it spans most of the header width with its top edge just below the close
 	// button. The origin sits above centre, so scaling pushes the moon down and crops its lower half.
-	transform: scale(1.75);
+	transform: scale(1.7);
 	transform-origin: 50% 22%;
 }
 
@@ -57,7 +59,7 @@ im.$media-expressions: $media-expressions;
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-end;
-	gap: 0.875rem;
+	gap: 0.5em;
 
 	// The headline is anchored to the bottom of the header, 52px up from its lower edge
 	padding-block: 1.2rem 3.25rem;
@@ -72,7 +74,7 @@ im.$media-expressions: $media-expressions;
 }
 
 .bf2026Discount {
-	font-size: 3.25rem;
+	font-size: 4rem; // 64px
 	font-weight: 600;
 	line-height: 0.87;
 	letter-spacing: -0.04em;
@@ -81,13 +83,13 @@ im.$media-expressions: $media-expressions;
 	background-clip: text;
 
 	@include im.media('<=small') {
-		font-size: 2.375rem;
+		font-size: 3rem;
 	}
 }
 
 .bf2026Title {
 	margin: 0;
-	font-size: 3.625rem;
+	font-size: 4.5rem; // 72px
 	font-weight: 900;
 	line-height: 0.82;
 	letter-spacing: -0.02em;
@@ -96,7 +98,7 @@ im.$media-expressions: $media-expressions;
 	color: #f7f5ff;
 
 	@include im.media('<=small') {
-		font-size: 2.75rem;
+		font-size: 3.5rem;
 	}
 }
 
@@ -112,15 +114,15 @@ html:is(
 		[lang^='cs']
 	)
 	.bf2026Title {
-	font-size: 2.75rem;
+	font-size: 3.5rem;
 
 	@include im.media('<=small') {
-		font-size: 2.25rem;
+		font-size: 2.75rem;
 	}
 }
 
 .bf2026Tagline {
-	font-size: 1.25rem;
+	font-size: 1.625rem; // 26px
 	font-weight: 500;
 	line-height: 0.82;
 	letter-spacing: -0.02em;
@@ -128,7 +130,7 @@ html:is(
 	text-wrap: balance;
 
 	@include im.media('<=small') {
-		font-size: 1rem;
+		font-size: 1.25rem;
 	}
 }
 

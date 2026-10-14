@@ -1,0 +1,16 @@
+@font-face {
+	font-family: 'Sofia Sans Condensed';
+	font-style: normal;
+	/* stylelint-disable-next-line */
+	font-weight: 1 1000;
+	font-display: swap;
+	src:
+		local('Sofia Sans Condensed'),
+		url(~@proton/styles/assets/fonts/SofiaSansCondensedVariable.woff2) format('woff2');
+}
+
+.font-sofia-sans-condensed {
+	// Sofia Sans Condensed font weight, from 1 to 1000
+	font-family: 'Sofia Sans Condensed', system-ui, sans-serif;
+	font-synthesis: none;
+}
