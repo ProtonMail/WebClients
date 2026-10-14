@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 import { useRoomContext } from '@livekit/components-react';
+import { logger } from '@protontech/logger';
 import { RemoteTrackPublication } from 'livekit-client';
 import { c } from 'ttag';
 
 import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
-import { logger } from '@proton/logger';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectIsLocalScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';
 import { isSafari } from '@proton/shared/lib/helpers/browser';

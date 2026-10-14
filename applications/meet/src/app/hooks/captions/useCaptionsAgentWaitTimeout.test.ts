@@ -1,6 +1,6 @@
+import { logger } from '@protontech/logger';
 import { act, renderHook } from '@testing-library/react';
 
-import { logger } from '@proton/logger';
 import type { MeetState } from '@proton/meet/store/rootReducer';
 import { STT_AGENT_PREFIX } from '@proton/meet/utils/agents';
 
@@ -18,7 +18,7 @@ vi.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: () => ({ createNotification }),
 }));
 
-vi.mock('@proton/logger', () => ({
+vi.mock('@protontech/logger', () => ({
     logger: { error: vi.fn() },
 }));
 

@@ -1,3 +1,4 @@
+import { logger } from '@protontech/logger';
 import {
     type NoiseSuppressionAudioWorkletBenchmarkCompleteMessage,
     type NoiseSuppressionAudioWorkletHandle,
@@ -5,7 +6,6 @@ import {
     runNoiseSuppressionAudioWorkletBenchmark,
 } from '@workadventure/noise-suppression/audio-worklet';
 
-import { logger } from '@proton/logger';
 import type { ReportMeetError } from '@proton/meet/hooks/useMeetErrorReporting';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 

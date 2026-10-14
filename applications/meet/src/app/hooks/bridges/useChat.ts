@@ -2,9 +2,9 @@ import { useCallback, useEffect } from 'react';
 
 import { useRoomContext } from '@livekit/components-react';
 import { ChatEventKind } from '@proton-meet/proton-meet-core';
+import { logger } from '@protontech/logger';
 import type { RemoteParticipant } from 'livekit-client';
 
-import { logger } from '@proton/logger';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch, useMeetSelector, useMeetStore } from '@proton/meet/store/hooks';
 import {

@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 
+import { logger } from '@protontech/logger';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
@@ -7,7 +8,6 @@ import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownCaret from '@proton/components/components/dropdown/DropdownCaret';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
-import { logger } from '@proton/logger';
 import clsx from '@proton/utils/clsx';
 
 import { OptionButton } from '../../atoms/OptionButton/OptionButton';

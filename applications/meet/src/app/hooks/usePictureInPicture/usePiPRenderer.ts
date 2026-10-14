@@ -1,8 +1,7 @@
 import { useCallback, useRef } from 'react';
 
+import { logger } from '@protontech/logger';
 import type { Track as LiveKitTrack } from 'livekit-client';
-
-import { logger } from '@proton/logger';
 
 import { PIP_PREVIEW_ITEM_HEIGHT } from '../../constants';
 import { drawMessageOverlay, drawVideoWithAspectRatio } from './drawingUtils';

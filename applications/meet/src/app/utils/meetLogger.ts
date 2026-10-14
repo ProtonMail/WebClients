@@ -1,6 +1,6 @@
 import { generateKey, importKey } from '@protontech/crypto/subtle/aesGcm.ts';
+import { LOGGER_DB_PREFIX } from '@protontech/logger/constants';
 
-import { LOGGER_DB_PREFIX } from '@proton/logger/constants';
 import type { GeneratedLoggerKey } from '@proton/shared/lib/authentication/loggerKey';
 import { getItem, setItem } from '@proton/shared/lib/helpers/sessionStorage';
 import noop from '@proton/utils/noop';
