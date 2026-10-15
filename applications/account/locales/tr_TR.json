@@ -2314,6 +2314,9 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Connect Gmail": [
+        "Gmail ile bağlantı kur"
       ]
     },
     "action": {
@@ -7191,6 +7194,15 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "Kurtarma kişilerinizi tanıdığınız ve kolayca ulaşabileceğiniz kişilerden seçmelisiniz."
+      ],
+      "Add contact": [
+        "Kişi ekle"
+      ],
+      "Recover your data before adding a new contact.": [
+        "Yeni bir kişi eklemeden önce verilerinizi kurtarın."
+      ],
+      "Your data is still locked from a password reset. A contact added now won't be able to restore it.": [
+        "Parola sıfırlamadan sonra verileriniz hâlâ kilitli. Şimdi eklenecek bir kişi onları geri yükleyemeyecek."
       ]
     },
     "Empty group name": {
@@ -9598,7 +9610,7 @@
         "Klasörler"
       ],
       "Good to know before you connect": [
-        "Bağlamadan önce bilmek iyi oldu"
+        "Bağlantı kurmadan önce bilmek iyi oldu"
       ],
       "IP address": [
         "IP adresi"
@@ -14516,6 +14528,33 @@
       ],
       "Zoom meeting": [
         "Zoom görüşmesi"
+      ],
+      "${ emailAddress } is used to sign in to another ${ BRAND_NAME } account. We are making the connection seamless, but for now you will need to take a few steps.": [
+        "${ emailAddress } başka bir ${ BRAND_NAME } hesabında oturum açmak için kullanılmış. Bağlantıyı düzeltiyoruz, ancak şimdi birkaç adım atmanız gerekecek."
+      ],
+      "${ reason.email } is used to sign in to another ${ BRAND_NAME } account. You'll pick a new username for that account next time you sign in. Nothing else changes.": [
+        "${ reason.email } başka bir ${ BRAND_NAME } hesabında oturum açmak için kullanılıyor. Bir sonraki oturum açmanızda, o hesap için yeni bir kullanıcı adı seçmeniz istenecek. Başka hiçbir şey değişmeyecek."
+      ],
+      "Please sign in with ${ emailAddress } to continue.": [
+        "İlerlemek için lütfen ${ emailAddress } ile oturum açın."
+      ],
+      "Please sign in with the Gmail account you want to connect to continue.": [
+        "İlerlemek için lütfen bağlantı kurmak istediğiniz Gmail hesabı ile oturum açın."
+      ],
+      "This Gmail is already connected to your ${ BRAND_NAME } account. There's nothing else you need to do.": [
+        "Bu Gmail hesabı zaten ${ BRAND_NAME } hesabınıza bağlı. Yapmanız gereken başka bir şey yok."
+      ],
+      "This Gmail is used to sign in to another ${ BRAND_NAME } account. We are making the connection seamless, but for now you will need to take a few steps.": [
+        "Bu Gmail hesabı başka bir ${ BRAND_NAME } hesabında oturum açmak için kullanılmış. Bağlantıyı düzeltiyoruz, ancak şimdi birkaç adım atmanız gerekecek."
+      ],
+      "We couldn't connect ${ emailAddress }. Try again and select all the boxes when Google asks for access. ${ BRAND_NAME } only uses this access to connect your Gmail.": [
+        "${ emailAddress } hesabınız ile bağlantı kurulamadı. Yeniden deneyin ve Google erişme izni istediğinde tüm kutuları seçin. ${ BRAND_NAME } bu erişme iznini yalnızca Gmail hesabınızı bağlamak için kullanır."
+      ],
+      "We couldn't connect your Gmail right now. Please try again in a few minutes.": [
+        "Şu anda Gmail hesabınız ile bağlantı kurulamadı. Lütfen birkaç dakika sonra yeniden deneyin."
+      ],
+      "We couldn't connect your Gmail. Try again and select all the boxes when Google asks for access. ${ BRAND_NAME } only uses this access to connect your Gmail.": [
+        "Gmail hesabınız ile bağlantı kurulamadı. Yeniden deneyin ve Google erişme izni istediğinde tüm kutuları seçin. ${ BRAND_NAME } bu erişme iznini yalnızca Gmail hesabınızı bağlamak için kullanır."
       ]
     },
     "info": {
@@ -21084,6 +21123,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Aboneliğinizde şu anda uygulanan bir indirim var. Yeni indirime geçmek bu indirimin artık uygulanmayacağı anlamına gelir."
+      ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Tarife geçişi şu nedenlerden dolayı yapılamıyor:"
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Proton Meet koltuk sayısı üye sayısı ile aynı olmalıdır."
+      ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Bu tarife hesabınızdaki yönetilen özellikleri desteklemez."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Bu abonelik şu anda tamamlanamıyor. Lütfen yeniden deneyin."
       ]
     },
     "Payments.Error": {
@@ -27996,6 +28047,21 @@
       ],
       "Your subscriptions": [
         "Abonelikleriniz"
+      ],
+      "Allow access to connect your Gmail": [
+        "Gmail hesabınız ile bağlantı kurmak için erişme izni verin"
+      ],
+      "Good to know before you connect": [
+        "Bağlantı kurmadan önce bilmek iyi oldu"
+      ],
+      "This Gmail is already connected": [
+        "Bu Gmail hesabı ile bağlantı zaten kurulmuş"
+      ],
+      "This Gmail is linked to another ${ BRAND_NAME } account": [
+        "Bu Gmail hesabı başka bir ${ BRAND_NAME } hesabına bağlı"
+      ],
+      "Wrong Gmail account": [
+        "Gmail hesabı yanlış"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
