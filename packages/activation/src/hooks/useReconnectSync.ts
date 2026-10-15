@@ -3,14 +3,14 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { useErrorHandler } from '@proton/components';
 import type { WithLoading } from '@proton/hooks/useLoading';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { Address } from '@proton/shared/lib/interfaces';
 import { getIsBYOEAccount } from '@proton/shared/lib/keys';
-import { tracker } from '@proton/telemetry-tracker/tracker';
 
 import { getTokensByFeature } from '../api';
+import type { ReconnectBYOEAddressResult } from '../byoe/reconnectBYOEAddress.interface';
+import { useReconnectBYOEAddress } from '../byoe/useReconnectBYOEAddress';
+import { getBYOEDisabledNotification } from '../constants';
 import { getBYOEAddressLimit } from '../helpers/byoeAddresses';
 import {
     EASY_SWITCH_FEATURES,
@@ -20,10 +20,8 @@ import {
     type OAuthProps,
 } from '../interface';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '../logic/store';
-import { SyncTokenStrategy, createSyncItem, deleteSyncItem, resumeSyncItem } from '../logic/sync/sync.actions';
+import { SyncTokenStrategy, createSyncItem, resumeSyncItem } from '../logic/sync/sync.actions';
 import { selectSyncByEmail } from '../logic/sync/sync.selectors';
-import { BYOEAddressAction } from '../telemetry/events';
-import { updateBYOEAddressConnection } from '../thunks/updateBYOEAddressConnection';
 import useBYOEAddressesCounts from './useBYOEAddressesCounts';
 import useOAuthPopup from './useOAuthPopup';
 
@@ -31,11 +29,12 @@ const useReconnectSync = (address: Address) => {
     const api = useApi();
     const [user] = useUser();
     const easySwitchDispatch = useEasySwitchDispatch();
-    const dispatch = useDispatch();
     const { createNotification } = useNotifications();
-    const handleError = useErrorHandler();
 
     const { activeBYOEAddresses } = useBYOEAddressesCounts();
+    const { getExistingToken, reconnectWithToken, reconnectWithCode } = useReconnectBYOEAddress({
+        source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_RECONNECT_BYOE,
+    });
 
     const sync = useEasySwitchSelector((state) => selectSyncByEmail(state, address.Email));
 
@@ -137,6 +136,18 @@ const useReconnectSync = (address: Address) => {
         }
     };
 
+    // The hook only returns what happened, showing it to the user is up to this caller.
+    // A failed sync already told the user why (wrong Gmail account, API error), so only the other cases speak here.
+    const notifyReconnectResult = (result: ReconnectBYOEAddressResult) => {
+        if (result.status === 'success') {
+            createNotification({ text: c('Notification').t`Address reconnected.` });
+        } else if (result.reason.type === 'no-access') {
+            createNotification(getBYOEDisabledNotification());
+        } else if (result.reason.type === 'unknown' && result.reason.message) {
+            createNotification({ type: 'error', text: result.reason.message });
+        }
+    };
+
     // Used to reconnect a manually disconnected address. We need to set the address flags and to create the sync again
     const handleReconnect = async ({
         withLoading,
@@ -159,86 +170,20 @@ const useReconnectSync = (address: Address) => {
             return;
         }
 
-        const features = [EASY_SWITCH_FEATURES.BYOE];
-        const { Tokens } = await api<{ Tokens: ImportToken[] }>(
-            getTokensByFeature({
-                Account: address.Email,
-                Features: features,
-                Provider: OAUTH_PROVIDER.GOOGLE,
-            })
-        );
+        const token = await getExistingToken(address);
 
-        if (Tokens.length > 0) {
-            await withLoading(async () => {
-                const result = await easySwitchDispatch(
-                    createSyncItem({
-                        type: SyncTokenStrategy.useExisting,
-                        token: Tokens[0],
-                        Source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_RECONNECT_BYOE,
-                        expectedEmailAddress: address.Email,
-                    })
-                );
-
-                // Do not change the address flags if creating the sync failed (e.g. user logged with the wrong google account)
-                if (result.type.endsWith('rejected')) {
-                    return;
-                }
-
-                try {
-                    await dispatch(updateBYOEAddressConnection({ address, type: 'reconnect' }));
-                } catch (e) {
-                    await easySwitchDispatch(
-                        deleteSyncItem({ syncId: result.payload.sync.id, showNotification: false })
-                    );
-                    handleError(e);
-                    return;
-                }
-
-                tracker.emit(BYOEAddressAction, {
-                    dimensions: {
-                        addressAction: 'reconnect',
-                        provider: 'google',
-                    },
-                });
-
-                createNotification({ text: c('Notification').t`Address reconnected.` });
-            });
+        if (token) {
+            await withLoading(async () => notifyReconnectResult(await reconnectWithToken(address, token)));
         } else {
             void triggerOAuthPopup({
                 provider: OAUTH_PROVIDER.GOOGLE,
-                features,
-                callback: async (oAuthProps: OAuthProps) => {
-                    const { Code, Provider, RedirectUri } = oAuthProps;
-                    await withLoading(async () => {
-                        const result = await easySwitchDispatch(
-                            createSyncItem({
-                                type: SyncTokenStrategy.create,
-                                Code,
-                                Provider,
-                                RedirectUri,
-                                Source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_RECONNECT_BYOE,
-                                expectedEmailAddress: address.Email,
-                                Features: [EASY_SWITCH_FEATURES.BYOE],
-                            })
-                        );
-
-                        // Do not change the address flags if creating the sync failed (e.g. user logged with the wrong google account)
-                        if (result.type.endsWith('rejected')) {
-                            return;
-                        }
-
-                        try {
-                            await dispatch(updateBYOEAddressConnection({ address, type: 'reconnect' }));
-                        } catch (e) {
-                            await easySwitchDispatch(
-                                deleteSyncItem({ syncId: result.payload.sync.id, showNotification: false })
-                            );
-                            handleError(e);
-                            return;
-                        }
-
-                        createNotification({ text: c('Notification').t`Address reconnected.` });
-                    });
+                features: [EASY_SWITCH_FEATURES.BYOE],
+                callback: async ({ Code, RedirectUri }: OAuthProps) => {
+                    await withLoading(async () =>
+                        notifyReconnectResult(
+                            await reconnectWithCode(address, { code: Code, redirectUri: RedirectUri })
+                        )
+                    );
                 },
             });
         }

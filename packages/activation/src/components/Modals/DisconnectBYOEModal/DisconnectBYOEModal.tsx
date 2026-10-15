@@ -1,56 +1,22 @@
 import { c } from 'ttag';
 
-import { useAddresses } from '@proton/account/addresses/hooks';
-import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
-import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { type ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
-import { useLoading } from '@proton/hooks';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
-import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
 import type { Address } from '@proton/shared/lib/interfaces';
-import { isAdmin } from '@proton/shared/lib/user/helpers';
-import { tracker } from '@proton/telemetry-tracker/tracker';
 
-import { useEasySwitchDispatch } from '../../../logic/store';
-import { loadSyncList } from '../../../logic/sync/sync.actions';
-import { BYOEAddressAction } from '../../../telemetry/events';
-import { updateBYOEAddressConnection } from '../../../thunks/updateBYOEAddressConnection';
+import { useDisconnectBYOEAddress } from '../../../byoe/useDisconnectBYOEAddress';
 
 interface Props extends ModalProps {
     address: Address;
 }
 
 const DisconnectBYOEModal = ({ address, ...rest }: Props) => {
-    const { onClose } = rest;
-    const [loading, withLoading] = useLoading(false);
-    const dispatch = useDispatch();
-    const easySwitchDispatch = useEasySwitchDispatch();
-    const [user] = useUser();
-    const [entitlements, loadingEntitlements] = useEntitlementChecksForOrgAndUser();
-    const [addresses] = useAddresses();
-
-    // The disable request needs the organisation scope, which non-admin members of an organisation
-    // don't have. It's also impossible to disable your only address. In both cases the disconnect
-    // runs without the disable step.
-    const isBYOEOnlyAccount = getIsBYOEOnlyAccount(addresses);
-    const isOrganisationMember = entitlements.isMultiUser && !isAdmin(user);
-    const skipDisable = isBYOEOnlyAccount || isOrganisationMember;
+    const { disconnect, skipDisable, loading, isDisconnecting } = useDisconnectBYOEAddress(address);
 
     const handleSubmit = async () => {
-        await dispatch(updateBYOEAddressConnection({ address, type: 'disconnect', skipDisable }));
-        // also update the syncs list
-        void easySwitchDispatch(loadSyncList());
-
-        tracker.emit(BYOEAddressAction, {
-            dimensions: {
-                addressAction: 'disconnect',
-                provider: 'google',
-            },
-        });
-
-        onClose?.();
+        await disconnect();
+        rest.onClose?.();
     };
 
     return (
@@ -73,12 +39,13 @@ const DisconnectBYOEModal = ({ address, ...rest }: Props) => {
                 <div>{c('Description').t`You can reconnect this address at any time.`}</div>
             </ModalTwoContent>
             <ModalTwoFooter>
-                <Button className="w-full" onClick={onClose} disabled={loading}>{c('Action').t`Cancel`}</Button>
+                <Button className="w-full" onClick={rest.onClose} disabled={isDisconnecting}>{c('Action')
+                    .t`Cancel`}</Button>
                 <Button
                     color="danger"
                     className="w-full inline-flex items-center justify-center gap-2"
-                    onClick={() => withLoading(handleSubmit)}
-                    loading={loading || loadingEntitlements}
+                    onClick={handleSubmit}
+                    loading={loading}
                 >
                     {c('Action').t`Disconnect`}
                 </Button>

@@ -13,6 +13,7 @@ import MobileSection from '../../components/MobileSection';
 import MobileSectionLabel from '../../components/MobileSectionLabel';
 import MobileSectionRow from '../../components/MobileSectionRow';
 import { BYOEMobileConnecting } from './BYOEMobileConnecting';
+import { BYOEAddresses } from './components/BYOEAddresses';
 import { ErrorPrompt } from './components/ErrorPrompt';
 import { BYOEMobileProvider, useBYOEMobile } from './context/BYOEMobileProvider';
 
@@ -28,7 +29,10 @@ const BYOEMobileContent = () => {
 
     if (status === 'auto-starting') {
         return (
-            <div className="mobile-settings flex items-center justify-center h-full">
+            <div
+                className="flex items-center justify-center min-h-custom"
+                style={{ '--min-h-custom': 'calc(100dvh - 2rem)' }}
+            >
                 <CircleLoader size="large" />
             </div>
         );
@@ -37,27 +41,22 @@ const BYOEMobileContent = () => {
     const isStartingOAuth = status === 'starting-oauth';
 
     return (
-        <div className="mobile-settings">
+        <>
             <MobileSection>
                 <MobileSectionRow stackContent>
                     <img src={icon} alt="" height={68} width={74} className="mb-4" />
-                    <h2 className="text-3xl text-bold m-0 mb-2">{c('Title').t`Connected addresses`}</h2>
-                    <p className="color-weak m-0 mb-3">{c('Description')
+                    <h2 className="text-3xl text-bold m-0 mb-1.5">{c('Title').t`Connect your Gmail`}</h2>
+                    <p className="color-weak m-0">{c('Description')
                         .t`No ads, no tracking. Use your Gmail in ${BRAND_NAME}. Nothing there gets edited or deleted.`}</p>
                 </MobileSectionRow>
                 <MobileSectionRow>
                     <MobileSectionLabel
                         htmlFor="import-toggle"
-                        description={<span>{c('Label').t`Start with your most recent messages`}</span>}
+                        description={<span>{c('Label').t`Start with your most recent`}</span>}
                     >
                         {c('Label').t`Import your emails`}
                     </MobileSectionLabel>
-                    <Toggle
-                        id="import-toggle"
-                        checked={shouldImportEmails}
-                        onChange={toggle}
-                        disabled={isStartingOAuth}
-                    />
+                    <Toggle id="import-toggle" checked={shouldImportEmails} onChange={toggle} disabled={isLoading} />
                 </MobileSectionRow>
                 <MobileSectionRow>
                     <Button
@@ -75,7 +74,8 @@ const BYOEMobileContent = () => {
                 </MobileSectionRow>
             </MobileSection>
             <ErrorPrompt />
-        </div>
+            <BYOEAddresses />
+        </>
     );
 };
 
@@ -89,13 +89,15 @@ interface Props {
 
 export const BYOEMobile = ({ layout, redirect, initialSearchParams }: Props) => {
     return layout(
-        <EasySwitchStoreProvider>
-            <EasySwitchStoreInitializer>
-                <BYOEMobileProvider redirect={redirect} initialSearchParams={initialSearchParams}>
-                    <BYOEMobileContent />
-                </BYOEMobileProvider>
-            </EasySwitchStoreInitializer>
-        </EasySwitchStoreProvider>,
+        <div className="mobile-settings">
+            <EasySwitchStoreProvider>
+                <EasySwitchStoreInitializer>
+                    <BYOEMobileProvider redirect={redirect} initialSearchParams={initialSearchParams}>
+                        <BYOEMobileContent />
+                    </BYOEMobileProvider>
+                </EasySwitchStoreInitializer>
+            </EasySwitchStoreProvider>
+        </div>,
         { className: 'overflow-auto' }
     );
 };
