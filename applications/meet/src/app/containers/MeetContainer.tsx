@@ -40,7 +40,6 @@ interface MeetContainerProps {
     instantMeeting: boolean;
     assignHost: (participantUuid: string) => Promise<void>;
     getKeychainIndexInformation: () => (number | undefined)[];
-    isUsingTurnRelay: boolean;
     liveKitConnectionState: ConnectionState | null;
     showReconnectedMessage: boolean;
     setShowReconnectedMessage: React.Dispatch<React.SetStateAction<boolean>>;
@@ -66,7 +65,6 @@ export const MeetContainer = ({
     instantMeeting,
     assignHost,
     getKeychainIndexInformation,
-    isUsingTurnRelay,
     liveKitConnectionState,
     showReconnectedMessage,
     setShowReconnectedMessage,
@@ -187,7 +185,6 @@ export const MeetContainer = ({
                     isDisconnected={isDisconnected}
                     liveKitConnectionState={liveKitConnectionState}
                     showReconnectedMessage={showReconnectedMessage}
-                    isUsingTurnRelay={isUsingTurnRelay}
                 >
                     <MeetContext.Provider value={meetContextValue}>
                         {debugOverlay.isOpen && (
@@ -198,7 +195,6 @@ export const MeetContainer = ({
                             />
                         )}
                         <MeetingBody
-                            isUsingTurnRelay={isUsingTurnRelay}
                             liveKitConnectionState={liveKitConnectionState}
                             showReconnectedMessage={showReconnectedMessage}
                             setShowReconnectedMessage={setShowReconnectedMessage}
