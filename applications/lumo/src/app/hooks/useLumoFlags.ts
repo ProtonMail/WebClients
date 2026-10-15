@@ -25,6 +25,7 @@ import { useFlag } from '@proton/unleash/useFlag';
  * - customAgents: Enable the custom agents option in the composer tools dropdown
  * - artifactsView: Enable the create-artifact composer tool and artifact panel interactions
  * - artifactsViewSpotlight: Enable the create-artifact onboarding spotlight and New label
+ * - artifactSlides: Slide decks are JSON rendered to a native .pptx (D18) instead of reveal.js HTML
  * - aiPaperTrailRoute: Enable the AI Paper Trail route (/aitrail)
  * - aiPaperTrailPopup: Show the AI Paper Trail popup panel on the home screen
  * - maxAvailableFree: When enabled, free users can select Lumo Max (default off during high load)
@@ -55,6 +56,7 @@ export const useLumoFlags = () => {
     const customAgents = useFlag('LumoCustomAgents');
     const artifactsView = useFlag('LumoArtifactsView');
     const artifactsViewSpotlight = useFlag('LumoArtifactsViewSpotlight');
+    const artifactSlides = useFlag('LumoArtifactSlides');
     const aiPaperTrailRoute = useFlag('LumoAiPaperTrailRoute');
     const aiPaperTrailPopup = useFlag('LumoAiPaperTrailPopup');
     const maxAvailableFree = useFlag('LumoMaxAvailableFree');
@@ -69,6 +71,7 @@ export const useLumoFlags = () => {
         customAgents,
         artifactsView,
         artifactsViewSpotlight,
+        artifactSlides,
         aiPaperTrailRoute,
         aiPaperTrailPopup,
         imageTools,

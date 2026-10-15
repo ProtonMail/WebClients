@@ -244,6 +244,8 @@ export type SettingsContext = {
     personalization?: PersonalizationSettings;
     isMemoryFeatureEnabled?: boolean;
     isArtifactsViewFeatureEnabled?: boolean;
+    /** `LumoArtifactSlides`: slide decks are JSON rendered to a native .pptx (D18). */
+    isArtifactSlidesFeatureEnabled?: boolean;
     hasLumoPlus?: boolean;
     isVisualizationInstructionsFeatureEnabled?: boolean;
 };
@@ -683,6 +685,7 @@ export function sendMessage({
                         generateTitle,
                         imageAspectRatio: ui.imageAspectRatio,
                         artifactToolMode,
+                        artifactSlideFormat: s.isArtifactSlidesFeatureEnabled ? 'deck' : 'html',
                         config: {
                             enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
                             enableSmoothing: ui.enableSmoothing,
@@ -898,6 +901,7 @@ export function regenerateMessage({
                         modelTier: ui.modelTier,
                         enableSuggestedQuestions: false,
                         artifactToolMode,
+                        artifactSlideFormat: s.isArtifactSlidesFeatureEnabled ? 'deck' : 'html',
                         config: {
                             enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
                             enableSmoothing: ui.enableSmoothing,
@@ -1110,6 +1114,7 @@ export function retrySendMessage({
                         enableSuggestedQuestions: false,
                         generateTitle: requestTitle,
                         artifactToolMode,
+                        artifactSlideFormat: s.isArtifactSlidesFeatureEnabled ? 'deck' : 'html',
                         config: {
                             enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
                             enableSmoothing: ui.enableSmoothing,

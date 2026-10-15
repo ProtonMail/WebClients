@@ -40,6 +40,7 @@ import { addConversation } from '../../redux/slices/core/conversations';
 import { addMessage } from '../../redux/slices/core/messages';
 import { addSpace, newSpaceId } from '../../redux/slices/core/spaces';
 import { type ContentBlock, type Conversation, ConversationStatus, type Message, Role, type Space } from '../../types';
+import { SLIDES_EVAL_FIXTURES } from '../../util/slides/eval/slidesEvalFixtures';
 
 interface TestRendererModalProps {
     open: boolean;
@@ -51,6 +52,16 @@ interface TestContentSample {
     content: string;
     blocks?: ContentBlock[];
 }
+
+const getSlidesEvalFixture = (id: string) => {
+    const fixture = SLIDES_EVAL_FIXTURES.find((item) => {
+        return item.id === id;
+    });
+    if (!fixture) {
+        throw new Error(`Unknown slides eval fixture ${id}`);
+    }
+    return fixture;
+};
 
 function makeArtifactToolCallBlock(
     args: { id: string; type: string; title: string; content: string; language?: string },
@@ -359,6 +370,36 @@ console.log(\`Expected headcount: \${countGuests(sample)}\`);`,
                     content: PRESENTATION_WITH_CHART_PLACEHOLDER,
                 },
                 'call-artifact-viz-slides-ok'
+            ),
+        ],
+    },
+    artifact_deck_json_northwind: {
+        name: 'Artifact panel: JSON slide deck (D18, title + bullets + charts + notes)',
+        content: `Open the **presentation** artifact. It's a JSON deck, drawn by the app (no reveal.js): five slides with bar and line charts and speaker notes. There's no user message with the source data here, so the canvas flags every number as not found in your material. Download → PowerPoint gives the native .pptx.`,
+        blocks: [
+            makeArtifactToolCallBlock(
+                {
+                    id: 'deck-json-northwind',
+                    type: 'presentation',
+                    title: 'Northwind Coffee Q3 2026',
+                    content: JSON.stringify(getSlidesEvalFixture('northwind-q3').modelOutput),
+                },
+                'call-artifact-deck-json-northwind'
+            ),
+        ],
+    },
+    artifact_deck_json_missing_data: {
+        name: 'Artifact panel: JSON slide deck with missing chart data',
+        content: `Open the **presentation** artifact. The market size slide shows a "Data needed" box, and the canvas lists the missing information above the slides.`,
+        blocks: [
+            makeArtifactToolCallBlock(
+                {
+                    id: 'deck-json-missing-data',
+                    type: 'presentation',
+                    title: 'Seed Pitch',
+                    content: JSON.stringify(getSlidesEvalFixture('missing-data').modelOutput),
+                },
+                'call-artifact-deck-json-missing'
             ),
         ],
     },

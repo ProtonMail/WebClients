@@ -1,6 +1,9 @@
 import { yieldToMainThread } from '../../../util/export/exportUiHelpers';
 import type { SlideCaptureProgressCallback } from '../../../util/export/htmlDocumentCapture';
-import { downloadHtmlSlidesAsPptx } from '../../../util/pptx/downloadHtmlAsPptx';
+import { downloadBytes } from '../../../util/pdf/downloadBlob';
+import { downloadHtmlSlidesAsPptx, ensurePptxFileName } from '../../../util/pptx/downloadHtmlAsPptx';
+import { isDeckArtifact } from '../../../util/slides/deckContent';
+import { buildDeckPptxBytes } from './artifactDeckPptx';
 import {
     PRESENTATION_PPTX_EXPORT_OPTIONS,
     artifactSupportsPptxExport,
@@ -17,7 +20,7 @@ export interface DownloadArtifactPptxOptions {
 
 export { artifactSupportsPptxExport } from './artifactHtmlDocument';
 
-/** Download a presentation artifact as PPTX (one rasterized image slide per section). */
+/** Download a presentation as PPTX: native for JSON decks, one rasterized image per slide for HTML decks. */
 export async function downloadArtifactPptx(
     artifact: ParsedArtifact,
     options: DownloadArtifactPptxOptions = {}
@@ -27,6 +30,19 @@ export async function downloadArtifactPptx(
     }
 
     const fileName = buildArtifactFileName(artifact, 'pptx');
+
+    if (isDeckArtifact(artifact)) {
+        try {
+            downloadBytes(
+                await buildDeckPptxBytes(artifact),
+                ensurePptxFileName(fileName),
+                'application/vnd.openxmlformats-officedocument.presentationml.presentation'
+            );
+            return 'success';
+        } catch {
+            return 'failed';
+        }
+    }
 
     options.onProgress?.(0, 1);
     await yieldToMainThread();

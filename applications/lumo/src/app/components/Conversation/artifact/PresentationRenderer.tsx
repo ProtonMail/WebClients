@@ -4,51 +4,15 @@ import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 
+import { looksLikeDeckJson } from '../../../util/slides/deckContent';
 import { ArtifactShellSourceFallback } from './ArtifactShellSourceFallback';
+import { DeckPreview } from './DeckPreview';
 import { buildArtifactDocument } from './WebpageRenderer';
 import type { ArtifactRendererProps } from './artifactRenderers';
 import type { ParsedArtifact } from './parseArtifacts';
 import { renderChartsInSlideContent, slideContentNeedsChartPass } from './presentationCharts';
+import { buildRevealTemplate, injectSlides } from './revealTemplate';
 import { useArtifactShellIframe } from './useArtifactShellIframe';
-
-const SLIDES_PLACEHOLDER = '<!--SLIDES-->';
-
-// Static shell around the model's slide markup: the library, its base stylesheet, and the theme
-// are all app-bundled (see the reveal.js raw-source imports below), never model-supplied — the
-// model only ever contributes inert content for the SLIDES_PLACEHOLDER slot. The combined result
-// still goes through buildArtifactDocument (same bridge-script/sandboxed-iframe treatment as
-// `webpage` artifacts), so this adds no new network-egress surface.
-//
-// html/body get an explicit height: reveal.js's `embedded: true` mode (see setViewport() in
-// reveal.js) deliberately skips adding its own `reveal-full-page` class to <html> — that class is
-// what normally gives <html> a real height (100vh/100dvh) outside embedded mode. Without it,
-// reveal.css's `.reveal { height: 100% }` has no definite ancestor height to resolve against
-// (`.slides` is absolutely positioned, so it doesn't contribute to body's auto content-height
-// either), so `.reveal` collapses to 0 and the deck renders as blank — confirmed live: outside
-// reveal.js's own responsive scroll-view fallback (which applies its own sizing and masked this),
-// `.reveal-viewport` measured a real 0px height while the surrounding iframe did not.
-export function buildRevealTemplate(revealJs: string, revealCss: string, themeCss: string): string {
-    return `<!DOCTYPE html>
-<html>
-<head>
-<style>html, body { height: 100%; margin: 0; }</style>
-<style>${revealCss}</style>
-<style>${themeCss}</style>
-</head>
-<body>
-<div class="reveal"><div class="slides">${SLIDES_PLACEHOLDER}</div></div>
-<script>${revealJs}</script>
-<script>Reveal.initialize({ embedded: true, controls: true, progress: true, center: true, hash: false });</script>
-</body>
-</html>`;
-}
-
-export function injectSlides(template: string, slidesHtml: string): string {
-    // Replacer-function form avoids the special $&/$1/etc. substitution String.replace applies
-    // to a plain string replacement — slide content is free text and could coincidentally
-    // contain a literal "$1"-shaped substring (e.g. pricing).
-    return template.replace(SLIDES_PLACEHOLDER, () => slidesHtml);
-}
 
 interface PresentationIframeContentProps {
     artifact: ParsedArtifact;
@@ -153,6 +117,12 @@ const LazyPresentationIframe = lazy(() =>
 export const PresentationRenderer = memo(function PresentationRenderer({ artifact }: ArtifactRendererProps) {
     if (!artifact.content) {
         return <p className="color-hint text-sm p-4">{c('collider_2025:Info').t`No content generated`}</p>;
+    }
+
+    // JSON decks (D18) are drawn by the app itself; reveal.js and the sandboxed shell are only for
+    // HTML decks made before them or with `LumoArtifactSlides` off.
+    if (looksLikeDeckJson(artifact.content)) {
+        return <DeckPreview artifact={artifact} />;
     }
 
     return (

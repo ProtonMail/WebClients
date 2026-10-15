@@ -8,6 +8,7 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import { useIsGuest } from '../../../providers/IsGuestProvider';
 import { createThrottledProgressCallback, yieldToMainThreadPaint } from '../../../util/export/exportUiHelpers';
 import { downloadBlob } from '../../../util/pdf/downloadBlob';
+import { isDeckArtifact } from '../../../util/slides/deckContent';
 import { bucketArtifactContentLength, sendArtifactDownloadedEvent } from '../../../util/telemetry';
 import type { ArtifactDownloadFormat, ArtifactDownloadLayout, ArtifactDownloadResult } from '../../../util/telemetry';
 import type { IconName } from '../../LumoIcon/LumoIcon';
@@ -221,13 +222,15 @@ export function useArtifactFileActions({
     };
 
     const canExport = !sourceOnly && !exportsDisabled;
+    // JSON decks (D18) have a native PPTX but no PDF yet, and their source is the deck JSON.
+    const isDeck = isDeckArtifact(artifact);
     const sourceExtension =
         (sourceFile && getFileExtension(sourceFile.fileName)) ?? getArtifactSourceDownloadExtension(artifact);
     // Source (what the Library syncs) first, then the exports this type supports.
     const downloadOptions: ArtifactMenuFormatOption[] = [
         {
             key: 'source',
-            label: getArtifactSourceMenuLabel(artifact.type),
+            label: isDeck ? c('collider_2025:Action').t`Slide data` : getArtifactSourceMenuLabel(artifact.type),
             extension: `.${sourceExtension}`,
             icon: artifact.type === 'document' ? 'FileText' : 'FileCode',
             onSelect: () => {
@@ -235,7 +238,7 @@ export function useArtifactFileActions({
             },
         },
     ];
-    if (canExport && artifactSupportsPdfExport(artifact.type)) {
+    if (canExport && artifactSupportsPdfExport(artifact.type) && !isDeck) {
         downloadOptions.push({
             key: 'pdf',
             label: getArtifactFormatMenuLabel('pdf'),
@@ -271,7 +274,9 @@ export function useArtifactFileActions({
 
     const saveFormats =
         !sourceOnly && !isGuest && artifactSupportsSaveToDrive(artifact.type)
-            ? getArtifactSaveFormats(artifact.type)
+            ? getArtifactSaveFormats(artifact.type).filter((format) => {
+                  return !(isDeck && format === 'pdf');
+              })
             : [];
     const saveToDriveOptions: ArtifactMenuFormatOption[] = saveFormats.map((format) => {
         return {

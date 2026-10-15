@@ -32,7 +32,7 @@ import {
 } from '../../types';
 import type { GenerationResponseMessage } from '../../types-api';
 import { markArtifactTelemetryLiveMessage } from './artifact/artifactVersionTelemetry';
-import { createArtifactToolExecutor } from './artifact/createArtifactTool';
+import { type ArtifactSlideFormat, createArtifactToolExecutor } from './artifact/createArtifactTool';
 import type { ArtifactToolMode } from './helper';
 
 /** Options forwarded to sendMessageWithRedux, minus the per-attempt identifiers we manage here. */
@@ -42,6 +42,8 @@ type ForwardedSendOptions = AssistantCallOptions & {
     errorHandler?: (message: GenerationResponseMessage, conversationId: string) => any;
     /** Whether/how the `create_artifact` client tool is registered for this request. See `resolveArtifactToolMode`. */
     artifactToolMode?: ArtifactToolMode;
+    /** How `create_artifact` asks for slide decks: JSON (D18, `LumoArtifactSlides`) or reveal.js HTML. */
+    artifactSlideFormat?: ArtifactSlideFormat;
 };
 
 export type GenerationWithCompactionParams = {
@@ -93,7 +95,7 @@ function resolveClientToolExecutor(sendOptions: ForwardedSendOptions): ClientToo
     const executors: ClientToolExecutor[] = [];
 
     if (sendOptions.artifactToolMode && sendOptions.artifactToolMode !== 'off') {
-        executors.push(createArtifactToolExecutor);
+        executors.push(createArtifactToolExecutor({ slideFormat: sendOptions.artifactSlideFormat ?? 'html' }));
     }
 
     if (isDesktopEnvironment()) {

@@ -6,6 +6,8 @@ import { ensurePdfFileName } from '../../../util/pdf/downloadHtmlAsPdf';
 import { htmlDocumentToPdfBytes, htmlSlideDocumentsToPdfBytes } from '../../../util/pdf/htmlDocumentToPdfBytes';
 import { ensurePptxFileName } from '../../../util/pptx/downloadHtmlAsPptx';
 import { htmlSlidesToPptxBytes } from '../../../util/pptx/htmlSlidesToPptxBytes';
+import { isDeckArtifact } from '../../../util/slides/deckContent';
+import { buildDeckPptxBytes } from './artifactDeckPptx';
 import { prepareDocxCharts } from './artifactDocxCharts';
 import {
     PRESENTATION_PDF_EXPORT_OPTIONS,
@@ -96,6 +98,11 @@ async function buildArtifactPdfFile(
     artifact: ParsedArtifact,
     onProgress?: ArtifactFileBytesProgressCallback
 ): Promise<ArtifactPreparedFile> {
+    if (isDeckArtifact(artifact)) {
+        // Not built yet for JSON decks: the image PDF below needs HTML slides (D18, stage 4).
+        throw new Error('PDF export is not available for this slide deck yet.');
+    }
+
     if (artifact.type === 'presentation') {
         onProgress?.(0, 1);
         await yieldToMainThread();
@@ -149,6 +156,14 @@ async function buildArtifactPptxFile(
 ): Promise<ArtifactPreparedFile> {
     if (artifact.type !== 'presentation') {
         throw new Error('PPTX export is only supported for presentations.');
+    }
+
+    if (isDeckArtifact(artifact)) {
+        return {
+            data: await buildDeckPptxBytes(artifact),
+            fileName: buildArtifactFileName(artifact, 'pptx'),
+            mimeType: SAVE_FORMAT_MIME_TYPES.pptx,
+        };
     }
 
     onProgress?.(0, 1);

@@ -2,6 +2,7 @@ import type { ClientToolExecutor } from '@proton/lumo-api-client';
 
 import { ARTIFACT_CHART_RULES } from '../../../llm/visualizationPrompt';
 import type { ContentBlock } from '../../../types';
+import { readDeckContent } from '../../../util/slides/deckContent';
 import { type ArtifactType, type ParsedArtifact, hashArtifactIdentity, isArtifactType } from './parseArtifacts';
 
 export const CREATE_ARTIFACT_TOOL_NAME = 'create_artifact';
@@ -16,94 +17,138 @@ const USER_FACING_VOCABULARY =
     'mention tool names. If the user mentions a creation or the canvas, they mean content from ' +
     'this tool.';
 
-export const createArtifactToolExecutor: ClientToolExecutor = {
-    getClientTools: async () => [
-        {
-            type: 'function',
-            function: {
-                name: CREATE_ARTIFACT_TOOL_NAME,
-                description:
-                    'Show a substantial, standalone piece of content to the user in a dedicated side panel, ' +
-                    'instead of inline in the chat. Use it only for deliverables the user is likely to copy, ' +
-                    'edit, send, save, or run outside this chat: a drafted email, letter, cover letter, Slack ' +
-                    'message, essay, or report (`type: "document"`), a complete script or program (`code`), ' +
-                    'a web page, interactive demo, or small game (`webpage`), or a slide deck ' +
-                    '(`presentation`). Do NOT use it — regardless of how long the answer is — for answering ' +
-                    'questions, explanations, factual or real-time information (weather, news, stock prices, ' +
-                    'sports scores), summaries of search results, advice, recommendations, comparisons, or ' +
-                    'conversational replies; nor for short code snippets used to illustrate a point, a small table ' +
-                    'or short list, or anything that only makes sense as part of your explanation. Write those inline ' +
-                    'instead. When in doubt, do not use this tool. ' +
-                    'Formats: use ' +
-                    '`type: "code"` (with `language: "html"`) when HTML is meant to be read as source, and ' +
-                    '`type: "webpage"` when it is a complete, self-contained HTML document meant to be ' +
-                    'rendered live in a sandboxed preview (interactive demos, small games, visualizations, ' +
-                    'styled pages) — webpage content must be fully self-contained (inline all CSS in ' +
-                    '`<style>` and all JS in `<script>`; images as `data:` URIs) since it cannot load ' +
-                    'external resources or make network requests when rendered. Use `type: "presentation"` ' +
-                    'specifically for a slide deck meant to be presented slide-by-slide, as opposed to a ' +
-                    'single scrollable page (`webpage`) or linear text (`document`) — for this type, ' +
-                    '`content` must be ONLY one or more `<section>...</section>` fragments (one per slide; ' +
-                    'a nested `<section>` inside one makes a vertical sub-slide), and nothing else: no ' +
-                    '`<html>`/`<head>`/`<body>`, and no `<script>`/`<style>` tags of your own — the app ' +
-                    'supplies the slide library, theme, and initialization, so a full document or your own ' +
-                    'script/style tags would be redundant or conflict with it. The one exception: to include ' +
-                    'a chart on a presentation slide, embed a single spec as ' +
-                    '`<script type="application/lumo-vega-lite+json">{...}</script>` inside that slide\'s ' +
-                    '`<section>` (this script never runs — the app renders it to a static image — so it is ' +
-                    'not "your own script"); never use a ```vega-lite fence in a slide, it shows as raw ' +
-                    'text. In a `document`, put a chart in a ```vega-lite fenced block instead. ' +
-                    ARTIFACT_CHART_RULES +
-                    ' Never put ```card-row or ```card blocks in any artifact: they only render in chat. To ' +
-                    'revise something you already created earlier in this conversation, call this again ' +
-                    'with the exact same ' +
-                    '`id` and the full updated content (never a diff or partial update); use a new `id` ' +
-                    "only for a genuinely new, unrelated artifact. If the user's message references an " +
-                    'artifact by its id, reuse that same id. Call this tool promptly once the content is ' +
-                    'ready; add at most a brief confirmation afterward if needed.' +
-                    USER_FACING_VOCABULARY,
-                parameters: {
-                    type: 'object',
-                    properties: {
-                        id: {
-                            type: 'string',
-                            description:
-                                'A short lowercase-kebab-case slug (2-4 words, e.g. "report-outline") that ' +
-                                'stably identifies this artifact. Reuse the exact same value across turns ' +
-                                'when revising it.',
+/** How slide decks are written: JSON for the native .pptx (D18, `LumoArtifactSlides`) or reveal.js HTML. */
+export type ArtifactSlideFormat = 'deck' | 'html';
+
+// Unchanged from before D18, so turns without `LumoArtifactSlides` get the exact same description.
+const PRESENTATION_HTML_FORMAT =
+    'Use `type: "presentation"` ' +
+    'specifically for a slide deck meant to be presented slide-by-slide, as opposed to a ' +
+    'single scrollable page (`webpage`) or linear text (`document`) — for this type, ' +
+    '`content` must be ONLY one or more `<section>...</section>` fragments (one per slide; ' +
+    'a nested `<section>` inside one makes a vertical sub-slide), and nothing else: no ' +
+    '`<html>`/`<head>`/`<body>`, and no `<script>`/`<style>` tags of your own — the app ' +
+    'supplies the slide library, theme, and initialization, so a full document or your own ' +
+    'script/style tags would be redundant or conflict with it. The one exception: to include ' +
+    'a chart on a presentation slide, embed a single spec as ' +
+    '`<script type="application/lumo-vega-lite+json">{...}</script>` inside that slide\'s ' +
+    '`<section>` (this script never runs — the app renders it to a static image — so it is ' +
+    'not "your own script"); never use a ```vega-lite fence in a slide, it shows as raw ' +
+    'text. In a `document`, put a chart in a ```vega-lite fenced block instead. ';
+
+// D18: the model describes the deck; the app lays it out and writes an editable PowerPoint file.
+// Field names and limits match `parseDeck` (util/slides/deck.ts).
+const PRESENTATION_DECK_FORMAT =
+    'Use `type: "presentation"` for a slide deck meant to be presented slide by slide. For this ' +
+    'type, `content` is a JSON object (as a string), never HTML; the app designs the slides and ' +
+    'makes the PowerPoint file. Shape: {"title": string, "slides": [slide, ...], "gaps": [string], ' +
+    '"calculated": [{"value": string, "how": string}]}. Each slide has a `layout` and optional ' +
+    '`notes` (speaker notes, plain text): {"layout": "title", "title": string, "subtitle": string}; ' +
+    '{"layout": "bullets", "title": string, "bullets": [string or {"text": string, "level": 2}]} ' +
+    '(level 2 is a sub-point of the bullet before it); {"layout": "chart", "title": string, ' +
+    '"chart": {"kind": "bar" | "line" | "pie", "categories": [string], "series": [{"name": string, ' +
+    '"values": [number]}], "unit": string, "source": string}, "takeaway": string}. Start with a ' +
+    'title slide. Keep slides short: at most 6 bullets of about 15 words each; split a long list ' +
+    'over several slides and put detail in the notes. A chart has at most 4 series; a pie has ' +
+    "one. Never invent data: every number on a slide or in a chart must come from the user's " +
+    "messages, their files, or web search results in this conversation, and a chart's `source` " +
+    'says which. List every number you calculated from those in `calculated`, with how: totals, ' +
+    'averages, percentages, and changes such as "+11%" or "-5%". Don\'t add claims the material ' +
+    'doesn\'t support, such as "best quarter ever". If a slide needs data you don\'t have, use {"layout": "chart", ' +
+    '"title": string, "chart": {"missing": "what data is needed"}} and add it to `gaps`; never use ' +
+    "placeholder or example numbers. Write the slides in the user's language. Slide charts use " +
+    'this format, not Vega-Lite; the chart rules below are for documents. In a `document`, put a ' +
+    'chart in a ```vega-lite fenced block. ';
+
+interface CreateArtifactToolOptions {
+    slideFormat: ArtifactSlideFormat;
+}
+
+const buildToolDescription = (slideFormat: ArtifactSlideFormat): string => {
+    return (
+        'Show a substantial, standalone piece of content to the user in a dedicated side panel, ' +
+        'instead of inline in the chat. Use it only for deliverables the user is likely to copy, ' +
+        'edit, send, save, or run outside this chat: a drafted email, letter, cover letter, Slack ' +
+        'message, essay, or report (`type: "document"`), a complete script or program (`code`), ' +
+        'a web page, interactive demo, or small game (`webpage`), or a slide deck ' +
+        '(`presentation`). Do NOT use it — regardless of how long the answer is — for answering ' +
+        'questions, explanations, factual or real-time information (weather, news, stock prices, ' +
+        'sports scores), summaries of search results, advice, recommendations, comparisons, or ' +
+        'conversational replies; nor for short code snippets used to illustrate a point, a small table ' +
+        'or short list, or anything that only makes sense as part of your explanation. Write those inline ' +
+        'instead. When in doubt, do not use this tool. ' +
+        'Formats: use ' +
+        '`type: "code"` (with `language: "html"`) when HTML is meant to be read as source, and ' +
+        '`type: "webpage"` when it is a complete, self-contained HTML document meant to be ' +
+        'rendered live in a sandboxed preview (interactive demos, small games, visualizations, ' +
+        'styled pages) — webpage content must be fully self-contained (inline all CSS in ' +
+        '`<style>` and all JS in `<script>`; images as `data:` URIs) since it cannot load ' +
+        'external resources or make network requests when rendered. ' +
+        (slideFormat === 'deck' ? PRESENTATION_DECK_FORMAT : PRESENTATION_HTML_FORMAT) +
+        ARTIFACT_CHART_RULES +
+        ' Never put ```card-row or ```card blocks in any artifact: they only render in chat. To ' +
+        'revise something you already created earlier in this conversation, call this again ' +
+        'with the exact same ' +
+        '`id` and the full updated content (never a diff or partial update); use a new `id` ' +
+        "only for a genuinely new, unrelated artifact. If the user's message references an " +
+        'artifact by its id, reuse that same id. Call this tool promptly once the content is ' +
+        'ready; add at most a brief confirmation afterward if needed.' +
+        USER_FACING_VOCABULARY
+    );
+};
+
+export const createArtifactToolExecutor = ({ slideFormat }: CreateArtifactToolOptions): ClientToolExecutor => {
+    return {
+        getClientTools: async () => [
+            {
+                type: 'function',
+                function: {
+                    name: CREATE_ARTIFACT_TOOL_NAME,
+                    description: buildToolDescription(slideFormat),
+                    parameters: {
+                        type: 'object',
+                        properties: {
+                            id: {
+                                type: 'string',
+                                description:
+                                    'A short lowercase-kebab-case slug (2-4 words, e.g. "report-outline") that ' +
+                                    'stably identifies this artifact. Reuse the exact same value across turns ' +
+                                    'when revising it.',
+                            },
+                            type: { type: 'string', enum: ['code', 'document', 'webpage', 'presentation'] },
+                            title: {
+                                type: 'string',
+                                description: 'Title case, 2-5 words, describing the content.',
+                            },
+                            language: {
+                                type: 'string',
+                                description:
+                                    'Programming language, only when type is "code" (e.g. python, typescript).',
+                            },
+                            // Declared last: models tend to emit object keys in schema order, and this is
+                            // typically the longest field, which matters for how much of it streams live
+                            // before the tool call is complete.
+                            content: { type: 'string', description: 'The full artifact content.' },
                         },
-                        type: { type: 'string', enum: ['code', 'document', 'webpage', 'presentation'] },
-                        title: {
-                            type: 'string',
-                            description: 'Title case, 2-5 words, describing the content.',
-                        },
-                        language: {
-                            type: 'string',
-                            description: 'Programming language, only when type is "code" (e.g. python, typescript).',
-                        },
-                        // Declared last: models tend to emit object keys in schema order, and this is
-                        // typically the longest field, which matters for how much of it streams live
-                        // before the tool call is complete.
-                        content: { type: 'string', description: 'The full artifact content.' },
+                        required: ['id', 'type', 'title', 'content'],
+                        additionalProperties: false,
                     },
-                    required: ['id', 'type', 'title', 'content'],
-                    additionalProperties: false,
                 },
             },
+        ],
+        canExecute: (name) => name === CREATE_ARTIFACT_TOOL_NAME,
+        execute: async (calls) => {
+            return calls.map(() => ({
+                content: JSON.stringify({
+                    ok: true,
+                    message:
+                        "Created and now shown to the user — don't repeat its content in your reply. " +
+                        'Continue with a brief confirmation or anything else relevant, or stop here if there ' +
+                        'is nothing more to add. Refer to it by what it is, not as an artifact.',
+                }),
+            }));
         },
-    ],
-    canExecute: (name) => name === CREATE_ARTIFACT_TOOL_NAME,
-    execute: async (calls) => {
-        return calls.map(() => ({
-            content: JSON.stringify({
-                ok: true,
-                message:
-                    "Created and now shown to the user — don't repeat its content in your reply. " +
-                    'Continue with a brief confirmation or anything else relevant, or stop here if there ' +
-                    'is nothing more to add. Refer to it by what it is, not as an artifact.',
-            }),
-        }));
-    },
+    };
 };
 
 function normalizeType(value: unknown): ArtifactType | undefined {
@@ -130,8 +175,21 @@ function resolveType(rawType: unknown, language: string | undefined): ArtifactTy
  * Returns `null` only if a field with no reasonable fallback (title/content) is missing.
  */
 export function parseCompleteArtifactToolCall(args: Record<string, unknown>): ParsedArtifact | null {
-    const title = typeof args.title === 'string' ? args.title : undefined;
-    const content = typeof args.content === 'string' ? args.content : undefined;
+    let title = typeof args.title === 'string' ? args.title : undefined;
+    // A deck's content is described to the model as a JSON object; some send the object itself
+    // rather than a string. Keep it as the JSON text the rest of the app stores (D18).
+    const content =
+        typeof args.content === 'string'
+            ? args.content
+            : typeof args.content === 'object' && args.content !== null && !Array.isArray(args.content)
+              ? JSON.stringify(args.content)
+              : undefined;
+
+    // A deck carries its own title, and models sometimes put it only there and leave out the tool's
+    // `title` (model eval, 2026-10-15); without this the creation was dropped silently.
+    if (!title && content !== undefined && args.type === 'presentation') {
+        title = readDeckContent(content)?.deck?.title;
+    }
 
     if (!title || content === undefined) {
         return null;

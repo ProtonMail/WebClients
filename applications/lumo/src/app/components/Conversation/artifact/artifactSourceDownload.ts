@@ -1,3 +1,4 @@
+import { isDeckArtifact } from '../../../util/slides/deckContent';
 import { buildArtifactFileName } from './artifactHtmlDocument';
 import { buildStandalonePresentationHtml } from './artifactPresentationStandalone';
 import { getArtifactSourceDownloadExtension } from './artifactSourceDownloadExtension';
@@ -6,6 +7,7 @@ import type { ParsedArtifact } from './parseArtifacts';
 const SOURCE_DOWNLOAD_MIME_TYPES: Record<string, string> = {
     md: 'text/markdown;charset=utf-8',
     html: 'text/html;charset=utf-8',
+    json: 'application/json;charset=utf-8',
 };
 
 export const getArtifactSourceDownloadMimeType = (extension: string): string => {
@@ -32,7 +34,10 @@ export async function buildArtifactSourceDownloadFile(artifact: ParsedArtifact):
     const fileName = buildArtifactFileName(artifact, extension);
     const mimeType = getArtifactSourceDownloadMimeType(extension);
 
-    const data = artifact.type === 'presentation' ? await buildStandalonePresentationHtml(artifact) : artifact.content;
+    const data =
+        artifact.type === 'presentation' && !isDeckArtifact(artifact)
+            ? await buildStandalonePresentationHtml(artifact)
+            : artifact.content;
 
     return {
         data,
