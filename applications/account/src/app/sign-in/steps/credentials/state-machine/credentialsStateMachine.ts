@@ -41,8 +41,11 @@ export interface CredentialsMachineInput {
     canNavigateBack: boolean;
     /** Apps other than account send SSO users to account's SSO page instead of signing in inline. */
     redirectsSSOToAccount: boolean;
-    /** SSO response token handed over by the identity provider redirect, with the page's remember choice. */
-    externalSSO: { token: string; persistent: boolean } | undefined;
+    /**
+     * SSO response token handed over by the identity provider tab when it signs in itself, with the "Keep me signed in"
+     * choice the opener saved for it, if any.
+     */
+    externalSSO: { token: string; persistent?: boolean } | undefined;
     /** Tell the user to press Sign in to continue with their SSO provider. */
     showSSONotice: boolean;
 }
@@ -65,10 +68,13 @@ interface CredentialsMachineContext {
      * or switched with, so it carries over between forms. Keystrokes stay in the forms.
      */
     username: string;
-    /** The remember choice of the last submission. The password is never kept: only the login request gets it. */
+    /**
+     * "Keep me signed in": on until a submission turns it off, and the forms start with it. The password is never
+     * kept: only the login request gets it.
+     */
     persistent: boolean;
     /** Exchanged once when the SSO form opens, then cleared. */
-    externalSSO: { token: string; persistent: boolean } | undefined;
+    externalSSO: { token: string; persistent?: boolean } | undefined;
     /**
      * The SSO info last loaded for the username, until a provider's window uses up its challenge token. Then the
      * claimed-address choice loads it again, for the next window.
@@ -288,7 +294,7 @@ const ssoProvider = credentialsSetup.createStateConfig({
             },
             invoke: {
                 src: 'authorizeWithSSOProvider',
-                input: ({ context }) => ({ token: context.ssoInfo?.SSOChallengeToken }),
+                input: ({ context }) => ({ token: context.ssoInfo?.SSOChallengeToken, persistent: context.persistent }),
                 onDone: {
                     target: 'exchangingToken',
                     actions: { type: 'setSSOProviderResult', params: ({ event }) => ({ result: event.output }) },
@@ -388,7 +394,7 @@ export const credentialsStateMachine = credentialsSetup.createMachine({
         showSSONotice: input.showSSONotice,
         initialForm: initialForms[input.authTypeData.type],
         username: input.username,
-        persistent: false,
+        persistent: true,
         externalSSO: input.externalSSO,
         ssoInfo: undefined,
         ssoProviderResult: undefined,
@@ -754,6 +760,9 @@ export const selectErrorMessage = (snapshot: CredentialsSnapshot) => snapshot.co
 
 /** The username the forms start with, carried over between them. */
 export const selectUsername = (snapshot: CredentialsSnapshot) => snapshot.context.username;
+
+/** "Keep me signed in" as last submitted, carried over between forms. */
+export const selectPersistent = (snapshot: CredentialsSnapshot) => snapshot.context.persistent;
 
 /** Whether the page itself can be left, which is what back means for the forms that start an attempt. */
 export const selectCanNavigateBack = (snapshot: CredentialsSnapshot) => snapshot.context.canNavigateBack;

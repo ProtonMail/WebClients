@@ -23,8 +23,7 @@ import AbuseModal from './components/AbuseModal';
 import type { SignInLayout } from './components/SignInLayout';
 import { SignInPageLayout } from './components/SignInPageLayout';
 import { SignInPassDesktopLayout } from './components/SignInPassDesktopLayout';
-import { RememberMode, getRememberModeSearchParameter } from './rememberMode';
-import { useRememberPreference } from './steps/credentials/useRememberPreference';
+import { RememberMode, getRememberModeSearchParameter, showsRememberCheckbox } from './rememberMode';
 import { useSignInMachine } from './useSignInMachine';
 import { SignInContext } from './wizard/SignInContext';
 import { SignInProvider } from './wizard/SignInProvider';
@@ -36,6 +35,7 @@ export interface SignInLocationState {
     externalSSO?: {
         token?: string;
         flow?: ExternalSSOFlow;
+        persistent?: boolean;
     };
 }
 
@@ -132,8 +132,6 @@ const SignInFlow = ({
         // The initial search parameters are included to support the parameter being passed to /authorize
         getRememberModeSearchParameter(searchParams, initialSearchParams) ??
         remember;
-    // The same "keep me signed in" choice the form uses, for the token the identity provider redirect hands over
-    const { persistent } = useRememberPreference(rememberMode);
     const isPorkbun = searchParams.get('partner') === 'porkbun';
 
     const handleError = (error: any) => {
@@ -172,7 +170,9 @@ const SignInFlow = ({
                         canNavigateBack: !!onBack,
                         setupVPN,
                         redirectsSSOToAccount,
-                        externalSSO: externalSSOToken ? { token: externalSSOToken, persistent } : undefined,
+                        externalSSO: externalSSOToken
+                            ? { token: externalSSOToken, persistent: state?.externalSSO?.persistent }
+                            : undefined,
                         showSSONotice:
                             authTypeData.type === AuthType.ExternalSSO &&
                             !externalSSOToken &&
@@ -187,7 +187,7 @@ const SignInFlow = ({
                     toAppName={toAppName}
                     showContinueTo={showContinueTo}
                     paths={paths}
-                    remember={rememberMode}
+                    showRememberCheckbox={showsRememberCheckbox(rememberMode)}
                     testflight={testflight}
                     isPorkbun={isPorkbun}
                     onError={handleError}

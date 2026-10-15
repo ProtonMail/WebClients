@@ -5,6 +5,8 @@ import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoa
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
+import { consumeSSOPersistent } from '../sign-in/ssoPersistedState';
+
 /** How the identity provider sent the user back: SP- or IdP-initiated, or the redirect from another app. */
 export enum ExternalSSOFlow {
     Sp = 0,
@@ -14,7 +16,7 @@ export enum ExternalSSOFlow {
 
 interface Props {
     children: ReactNode;
-    onLogin: (data: { username?: string; token?: string; flow: ExternalSSOFlow }) => void;
+    onLogin: (data: { username?: string; token?: string; flow: ExternalSSOFlow; persistent?: boolean }) => void;
     onOAuthLogin: (data: { uid: string; token: string }) => void;
 }
 
@@ -55,7 +57,9 @@ const ExternalSSOConsumer = ({ children, onLogin, onOAuthLogin }: Props) => {
                 window.opener.postMessage({ action: 'sso', payload: { token, uid } }, window.location.origin);
                 await wait(5000);
             }
-            onLogin({ username, token, flow });
+            // Signing in from this tab: "Keep me signed in" as the opener saved it for the provider tab, if it did
+            const persistent = consumeSSOPersistent();
+            onLogin({ username, token, flow, persistent });
         };
 
         run().catch((e) => {

@@ -1,6 +1,7 @@
 import { createActor, toPromise } from 'xstate';
 
 import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
+import { handleExternalSSOLogin } from '@proton/shared/lib/authentication/ssoExternalLogin';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import { ClaimedAddressNoMatchError, loginWithClaimedAddress, loginWithPassword } from '../../../auth/passwordLogin';
@@ -15,6 +16,12 @@ jest.mock('../../../auth/passwordLogin', () => ({
 }));
 const mockLoginWithPassword = jest.mocked(loginWithPassword);
 const mockLoginWithClaimedAddress = jest.mocked(loginWithClaimedAddress);
+
+jest.mock('@proton/shared/lib/authentication/ssoExternalLogin', () => ({
+    ...jest.requireActual('@proton/shared/lib/authentication/ssoExternalLogin'),
+    handleExternalSSOLogin: jest.fn(),
+}));
+const mockHandleExternalSSOLogin = jest.mocked(handleExternalSSOLogin);
 
 /** A promise the test settles by hand, to control when the preparation finishes. */
 const deferred = () => {
@@ -128,9 +135,34 @@ describe('createCredentialsActors', () => {
 
     it('fails the provider window without the challenge token, rather than open it empty', async () => {
         const actors = createCredentialsActors(makeServices(() => Promise.resolve()) as unknown as SignInActorServices);
-        const actor = createActor(actors.authorizeWithSSOProvider, { input: { token: undefined } }).start();
+        const actor = createActor(actors.authorizeWithSSOProvider, {
+            input: { token: undefined, persistent: true },
+        }).start();
         await expect(toPromise(actor)).rejects.toThrow('Missing SSO challenge token');
     });
+
+    it.each([
+        ['succeeds', () => Promise.resolve({ uid: 'uid', token: 'token' })],
+        ['fails', () => Promise.reject(new Error('closed'))],
+    ])(
+        'saves "Keep me signed in" for the provider tab while it is open, and clears it when it %s',
+        async (_, result) => {
+            let storedWhileOpen: string | null = null;
+            mockHandleExternalSSOLogin.mockImplementation(() => {
+                storedWhileOpen = window.sessionStorage.getItem('sso-persistent');
+                return result();
+            });
+            const actors = createCredentialsActors(
+                makeServices(() => Promise.resolve()) as unknown as SignInActorServices
+            );
+            const actor = createActor(actors.authorizeWithSSOProvider, {
+                input: { token: 'challenge', persistent: false },
+            }).start();
+            await toPromise(actor).catch(() => {});
+            expect(storedWhileOpen).toBe('0');
+            expect(window.sessionStorage.getItem('sso-persistent')).toBeNull();
+        }
+    );
 
     it('fails the token exchange without a token, before any request', async () => {
         const services = makeServices(() => Promise.resolve());

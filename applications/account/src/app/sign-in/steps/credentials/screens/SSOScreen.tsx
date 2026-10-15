@@ -18,16 +18,16 @@ import { SubmitButton, getSignInButtonText } from '../fields/SubmitButton';
 import {
     selectAwaitingProvider,
     selectErrorMessage,
+    selectPersistent,
     selectSubmitting,
     selectUsername,
 } from '../state-machine/credentialsStateMachine';
-import { useRememberPreference } from '../useRememberPreference';
 
 /** Sign-in through the organization's identity provider; only the email is asked here, and the provider checks it. */
 
 export const SSOScreen: SignInScreen = ({ onBack }: SignInScreenProps) => {
     const signInProps = useSignInProps();
-    const { layout, compactForm, remember: rememberMode, showContinueTo, toAppName } = signInProps;
+    const { layout, compactForm, showContinueTo, toAppName } = signInProps;
     // The testflight variant's title and subtitle show instead; otherwise the subtitle is the app it continues to, if any
     const title = useTestflightTitle() ?? c('sso').t`Sign in to your organization`;
     const subTitle = useTestflightSubTitle() ?? (getContinueTo(signInProps) || undefined);
@@ -37,7 +37,8 @@ export const SSOScreen: SignInScreen = ({ onBack }: SignInScreenProps) => {
     // Starts with the machine's username, so it carries over between modes
     const initialUsername = CredentialsContext.useSelector(selectUsername);
     const [username, setUsername] = useState(initialUsername);
-    const remember = useRememberPreference(rememberMode);
+    // No checkbox here: the choice the last form submitted, or on
+    const persistent = CredentialsContext.useSelector(selectPersistent);
     const signInText = getSignInText({ showContinueTo, toAppName });
     const awaitingSSOProvider = CredentialsContext.useSelector(selectAwaitingProvider);
     const { validator, onFormSubmit } = useFormErrors();
@@ -45,7 +46,7 @@ export const SSOScreen: SignInScreen = ({ onBack }: SignInScreenProps) => {
     const handleSubmit = () => {
         actorRef.send({
             type: 'credentials.usernameSubmitted',
-            payload: { username, persistent: remember.persistent },
+            payload: { username, persistent },
         });
     };
 
