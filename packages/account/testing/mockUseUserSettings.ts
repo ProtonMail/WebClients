@@ -3,6 +3,7 @@
 import * as useUserSettingsModule from '@proton/account';
 import {
     FIDO2_CREDENTIALS_PIN_VALUE,
+    LOGIN_IDENTIFIER_POLICY,
     PASSWORD_REMINDERS_VALUE,
     type UserSettings,
 } from '@proton/shared/lib/interfaces';
@@ -30,6 +31,7 @@ const defaultUserSettings: UserSettings = {
     InvoiceText: '',
     Locale: 'en',
     LogAuth: 0,
+    LoginIdentifierPolicy: LOGIN_IDENTIFIER_POLICY.ALL,
     News: 0,
     Password: { Mode: 1, ExpirationTime: 0 },
     Mnemonic: { UpdateTime: null },

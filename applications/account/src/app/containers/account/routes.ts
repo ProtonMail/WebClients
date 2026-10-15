@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { getCanShowSignInRestriction } from '@proton/account/signInRestriction/helpers';
 import type { ThemeColor } from '@proton/colors';
 import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
 import type { SectionConfig, SubrouteGroup } from '@proton/components/containers/layout/interface';
@@ -427,6 +428,7 @@ export const getRecoverySettings = ({
 export const getAccountAppRoutes = ({
     app,
     user,
+    entitlements,
     subscription,
     organization,
     recoveryNotification,
@@ -972,6 +974,17 @@ export const getAccountAppRoutes = ({
                             c('Link').t`How does monitoring work?`,
                             c('account_search_index').t`Data breach alerts`,
                             c('account_search_index').t`Leaked password`,
+                        ],
+                        variant: SettingsLayoutVariant.Card,
+                    },
+                    {
+                        text: c('Title').t`Sign-in protection`,
+                        id: 'sign-in-protection',
+                        available:
+                            flags.showSignInRestrictionToggle && getCanShowSignInRestriction({ user, entitlements }),
+                        keywords: [
+                            c('Label').t`Restrict sign-in to primary email address`,
+                            c('Label').t`Restrict sign-in to username`,
                         ],
                         variant: SettingsLayoutVariant.Card,
                     },
