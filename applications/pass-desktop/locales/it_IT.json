@@ -884,6 +884,11 @@
         "Disinstalla ${ PASS_APP_NAME }"
       ]
     },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "${ appName } Applicazione desktop"
+      ]
+    },
     "Button": {
       "More info": [
         "Più informazioni"
@@ -1135,6 +1140,9 @@
       "Editing item failed": [
         "Modifica dell'elemento non riuscita"
       ],
+      "Email is not valid": [
+        "Indirizzo email non valido"
+      ],
       "Empty CSV file": [
         "File CSV vuoto"
       ],
@@ -1146,6 +1154,9 @@
       ],
       "Encrypted JSON not supported": [
         "JSON crittografato non supportato"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Inserisci il tuo nome utente senza il dominio (@esempio.it)"
       ],
       "Error reporting problem": [
         "Errore nella segnalazione del problema"
@@ -1327,6 +1338,9 @@
       "Incorrect backup password. Please try again.": [
         "Password di backup errata. Riprova."
       ],
+      "Incorrect password. Please try again.": [
+        "Password errata. Per favore riprova."
+      ],
       "Incorrect second password. Please try again.": [
         "Password secondaria errata. Riprova."
       ],
@@ -1360,8 +1374,14 @@
       "Network error": [
         "Errore di rete"
       ],
+      "Not a valid number": [
+        "Numero non valido"
+      ],
       "Passphrase is incorrect": [
         "Passphrase non valida"
+      ],
+      "Passwords do not match": [
+        "Le password non corrispondono"
       ],
       "PIN codes do not match": [
         "I codici PIN non corrispondono"
@@ -1426,11 +1446,23 @@
       "The ${ PASS_APP_NAME } desktop app should be logged in.": [
         "L'app desktop ${ PASS_APP_NAME } dovrebbe aver effettuato l'accesso."
       ],
+      "The email addresses do not match": [
+        "Gli indirizzi email non corrispondono."
+      ],
       "The session has expired. Please sign in again.": [
         "La sessione è scaduta. Effettua di nuovo il login."
       ],
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Si è verificato un errore durante la rimozione del link sicuro. Riprova tra qualche minuto."
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Questo campo supera il numero massimo di ${ maximumLength } caratteri."
+      ],
+      "This field is required": [
+        "Campo necessario"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Questo campo richiede un minimo di ${ minimumLength } caratteri."
       ],
       "This invite is no longer available": [
         "Questo invito non è più disponibile"
@@ -1443,6 +1475,9 @@
       ],
       "Try reaching out to the link owner.": [
         "Prova a contattare il proprietario del link."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Prova ad usare solo lettere, numeri e _.-"
       ],
       "Unable to generate an OTP code for this item": [
         "Impossibile generare il codice OTP per questo elemento"
@@ -1477,6 +1512,12 @@
       "Updating vault \"${ payload.content.name }\" failed": [
         "Aggiornamento della cassaforte \"${ payload.content.name }\" non riuscito"
       ],
+      "Username must begin with a letter or digit": [
+        "Il nome utente deve iniziare con una lettera o un numero."
+      ],
+      "Username must end with a letter or digit": [
+        "Il nome utente deve terminare con una lettera o un numero/"
+      ],
       "Vault \"${ payload.content.name }\" creation failed": [
         "Creazione della cassaforte \"${ payload.content.name }\" non riuscita"
       ],
@@ -1500,6 +1541,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "PIN errato. Riprova."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Frase di recupero errata. Riprova o usa un altro metodo di recupero."
       ],
       "Wrong second password": [
         "Seconda password errata"
@@ -2235,8 +2279,7 @@
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri.",
-        "Spostare degli elementi in un'altra cassaforte cancellerà i loro link sicuri."
+        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri."
       ],
       "Moving items": [
         "Spostamento degli elementi"
@@ -2720,6 +2763,9 @@
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Per controllare i tuoi dati importati, clicca sull'icona di ${ PASS_APP_NAME } nella barra degli strumenti del tuo browser."
       ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission.": [
+        "Per configurare lo sblocco biometrico, ${ PASS_APP_NAME } richiede una nuova autorizzazione del browser."
+      ],
       "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
         "Per configurare lo sblocco biometrico, ${ PASS_APP_NAME } richiede una nuova autorizzazione del browser. Dopo averla accettata, l'estensione si ricaricherà. Riapri questa pagina in seguito."
       ],
@@ -2993,6 +3039,9 @@
       "${ hours } hour": [
         "${ hours } ora",
         "${ hours } ore"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } caratteri"
       ],
       "${ minutes } minute": [
         "${ minutes } minuto",
@@ -5373,8 +5422,16 @@
       "OTP secret or URI is invalid": [
         "Il segreto OTP o URI non è valido"
       ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "La password deve contenere almeno ${ MIN_PASSWORD_LENGTH } carattere",
+        "La password deve contenere almeno ${ MIN_PASSWORD_LENGTH } caratteri"
+      ],
       "Section name cannot be empty": [
         "Il nome di sezione non può essere vuoto"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Prova un nome utente più corto (massimo ${ n } carattere)",
+        "Prova un nome utente più corto (massimo ${ n } caratteri)"
       ],
       "URL already exists": [
         "URL già esistente"
@@ -5395,6 +5452,22 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "È richiesta la password di ${ BRAND_NAME }"
+      ],
+      "${ count } folder was merged into its parent folder because the maximum nesting level was reached.": [
+        "cartella ${ count } è stata unita alla cartella padre poiché è stato raggiunto il livello massimo di nidificazione.",
+        "${ count } cartelle sono state unite alle rispettive cartelle padre poiché è stato raggiunto il livello massimo di nidificazione."
+      ],
+      "${ count } folder was not imported because its parent folder reached the maximum number of subfolders. Its items were imported to the closest folder available.": [
+        "cartella ${ count } non è stata importata perché la cartella principale ha raggiunto il numero massimo di sottocartelle. I suoi elementi sono stati importati nella cartella disponibile più vicina",
+        "${ count } cartelle non sono state importate perché le rispettive cartelle principali hanno raggiunto il numero massimo di sottocartelle. I loro elementi sono stati importati nella cartella disponibile più vicina."
+      ],
+      "${ count } folder was not imported because this vault reached its folder limit. Its items were imported to the closest folder available.": [
+        "La cartella ${ count } non è stata importata perché questo archivio ha raggiunto il limite massimo di cartelle. I suoi elementi sono stati importati nella cartella disponibile più vicina.",
+        "${ count } cartelle non sono state importate perché questo archivio ha raggiunto il limite massimo di cartelle. I loro elementi sono stati importati nella cartella disponibile più vicina."
+      ],
+      "${ failed } folder could not be created. Its items were imported to the closest folder available.": [
+        "cartella ${ failed } non è stata creata. I suoi elementi sono stati importati nella cartella disponibile più vicina.",
+        "cartelle ${ failed } non sono state create. I loro elementi sono stati importati nella cartella disponibile più vicin"
       ],
       "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
         "${ modeLabelStong } offre un controllo potente, ma un singolo errore può far sì che il riempimento automatico corrisponda e inserisca dati su siti web fraudolenti o di phishing."
