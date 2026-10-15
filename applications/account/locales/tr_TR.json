@@ -2902,12 +2902,6 @@
       ]
     },
     "bf2023: Info": {
-      "6 TB storage (2x more than any other plan)": [
-        "6 TB depolama alanı (diğer tarifelerin 2 katı)"
-      ],
-      "6 users": [
-        "6 kullanıcı"
-      ],
       "Become a super-supporter. Get access to all current and future ${ BRAND_NAME } services.": [
         "Süper destekçi olun. Var olan ve gelecekteki tüm ${ BRAND_NAME } hizmetlerine erişin."
       ],
@@ -2920,8 +2914,8 @@
       "Premium versions of all ${ BRAND_NAME } services": [
         "Tüm ${ BRAND_NAME } hizmetlerinin ücretli sürümleri"
       ],
-      "The ${ plan } plan is back for a limited time only": [
-        "${ plan } tarifesi kısa bir süre için geri döndü"
+      "The ${ planName } plan is back for a limited time only": [
+        "${ planName } tarifesi kısa bir süre için geri döndü"
       ]
     },
     "bf2023: info": {
@@ -2976,11 +2970,17 @@
       "/month": [
         "/ay"
       ],
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
       "2 individual accounts": [
         "2 bireysel hesap"
       ],
       "2 TB of secure storage": [
         "2 TB güvenli depolama alanı"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB depolama alanı: Geçerli tarifenizin 40 katı"
       ],
       "3 TB of secure storage": [
         "3 TB güvenli depolama alanı"
@@ -2991,21 +2991,31 @@
       "6 individual accounts": [
         "6 bireysel hesap"
       ],
-      "Advanced protection against cyber threats": [
-        "Siber tehditlere karşı gelişmiş koruma"
+      "Built-in 2FA authenticator": [
+        "Hazır iki adımlı kimlik doğrulayıcı"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "İndirimler standart aylık fiyatlara göre hesaplanır. Fatura dönemi sona erdiğinde aboneliğiniz standart yıllık ücret ile yenilenir."
-      ]
-    },
-    "bfcampaign2026: Info, Calendar first": {
-      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "Ücretli ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
+      ],
+      "Online document editor": [
+        "Çevrim içi belge düzenleyici"
+      ],
+      "Recover previous file versions": [
+        "Önceki dosya sürümlerini geri yükleme"
+      ],
+      "Stronger protection against cyber threats": [
+        "Siber tehditlere karşı daha güçlü koruma"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Sınırsız sayıda klasör, etiket ve süzgeç"
+      ],
+      "Use your own email domain": [
+        "Kendi e-posta etki alanınızı kullanma"
       ]
     },
     "bfcampaign2026: Info, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Ücretli ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Ücretli ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "bfcampaign2026: Info, Family, Drive first": {
@@ -3019,13 +3029,36 @@
       ]
     },
     "bfcampaign2026: Info, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Ücretli ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Ücretli ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Ücretli ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Yılın en büyük indirimi"
+      ],
+      "Black Friday": [
+        "Muhteşem Cuma"
+      ],
       "for 12 months": [
         "12 aylık"
+      ],
+      "Last chance to save big": [
+        "Büyük kazanç için son şans"
+      ],
+      "Protect your entire tribe": [
+        "Kabilenizi koruyun"
+      ],
+      "Protection for two in a single plan": [
+        "Tek bir tarife ile iki kişilik koruma"
+      ],
+      "Save big with a yearly plan": [
+        "Yıllık bir tarife ile büyük kazanç sağlayın"
       ]
     },
     "Billing cycle": {
@@ -5532,14 +5565,14 @@
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "E-posta alt bilginizi kendinize göre ayarlayın. Bizimki yerine kendi markanızı gösterin."
       ],
-      "Make your Gmail private in under a minute, without editing or deleting anything there.": [
-        "Gmail iletilerinizi oradaki hiçbir şeyi düzenlemeden veya silmeden bir dakikadan kısa bir sürede gizliliği koruyan duruma getirin."
-      ],
       "Methods that include both password reset and data recovery.": [
         "Hem parola sıfırlama hem de verileri kurtarmayı içeren yöntemler."
       ],
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "Adım adım rehberlerimiz ile çoğu sorun birkaç dakika içinde çözülebilir."
+      ],
+      "No ads, no tracking. Use your Gmail in ${ BRAND_NAME }. Nothing there gets edited or deleted.": [
+        "Reklamsız, izlemesiz. Gmail adresinizi ${ BRAND_NAME } ile kullanın. Gmail üzerinde bir şey değiştirilmez veya silinmez."
       ],
       "No ads. No trackers": [
         "Reklam yok. Etkinlik izleyici yok"
@@ -7506,6 +7539,9 @@
       ],
       "Incorrect password": [
         "Parola geçersiz"
+      ],
+      "Incorrect password. Please try again.": [
+        "Parola yanlış. Lütfen yeniden deneyin."
       ],
       "Incorrect recovery code. Please try again.": [
         "Kurtarma kodu doğru değil. Lütfen yeniden deneyin."
@@ -11994,6 +12030,9 @@
       "Import mailbox": [
         "E-posta kutusunu içe aktar"
       ],
+      "Import show one-time transfers of email, calendars, contacts, or files into your ${ BRAND_NAME } account.": [
+        "İçe aktarma, ${ BRAND_NAME } hesabınıza yapılan tek seferlik e-posta, takvim, kişi ve dosya aktarımlarını gösterir."
+      ],
       "Import show one-time transfers of email, calendars, or contacts into your ${ BRAND_NAME } account.": [
         "E-postaları, takvimleri veya kişileri ${ BRAND_NAME } hesabınıza tek seferlik içe aktarın."
       ],
@@ -13289,9 +13328,6 @@
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Bu hesap, ilkeye aykırı kullanım olasılığı nedeniyle askıya alınmış."
-      ],
-      "This address is already linked to another account": [
-        "Bu adres zaten başka bir hesaba bağlı"
       ],
       "This address now signs in through your organization's identity provider.": [
         "Bu adres artık kuruluşunuzun kimlik hizmet sağlayıcısı ile oturum açıyor."
@@ -15851,9 +15887,6 @@
       "Font size": [
         "Yazı boyutu"
       ],
-      "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
-        "${ DRIVE_SHORT_APP_NAME } ve ${ DOCS_SHORT_APP_NAME } için."
-      ],
       "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
         "${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME } ve ${ SHEETS_SHORT_APP_NAME } için."
       ],
@@ -15934,9 +15967,6 @@
       ],
       "Import interval": [
         "İçe aktarma aralığı"
-      ],
-      "Import messages": [
-        "İletileri içe aktar"
       ],
       "Import to email address": [
         "E-posta adresi içine aktar"
@@ -16370,9 +16400,6 @@
       "Read": [
         "Okunmuş"
       ],
-      "Receive Gmail straight in ${ BRAND_NAME } inbox": [
-        "Gmail iletilerini doğrudan ${ BRAND_NAME } gelen kutusuna alabilirsiniz"
-      ],
       "Recommended": [
         "Önerilir"
       ],
@@ -16462,9 +16489,6 @@
       ],
       "Send crash reports": [
         "Çökme bildirimleri gönderilsin"
-      ],
-      "Send from your Gmail address in ${ BRAND_NAME }": [
-        "${ BRAND_NAME } içinden Gmail adresinizle ileti gönderebilirsiniz"
       ],
       "Send in": [
         "Şu zamanda gönderilsin"
@@ -16817,9 +16841,6 @@
       ],
       "You don't have permissions": [
         "İzniniz yok"
-      ],
-      "You will be able to:": [
-        "Şunları yapabileceksiniz:"
       ],
       "Your activation code:": [
         "Etkinleştirme kodunuz:"
@@ -24144,9 +24165,6 @@
       "Backup password": [
         "Yedek parola"
       ],
-      "Because your organization moved you to single sign-on (SSO), **your old password is saved as your backup password**. You can use it to authorize SSO on a new device.": [
-        "Kuruluşunuz sizi tek oturum açma (SSO) özelliğine geçirdiği için **eski parolanız yedek parola olarak kaydedildi**. Bu parolayı yeni bir aygıt üzerinde tek oturum açma izni vermek için kullanabilirsiniz."
-      ],
       "Cancel": [
         "İptal"
       ],
@@ -24194,9 +24212,6 @@
       "Do you want to remove all other devices than the current one?": [
         "Geçerli aygıt dışındaki diğer tüm aygıtları kaldırmak istiyor musunuz?"
       ],
-      "Enter it to sign in. It is the same as your old password.": [
-        "Oturum açmak için bunu yazın. Eski parolanız ile aynıdır."
-      ],
       "Enter the confirmation code we sent on your other device.": [
         "Diğer aygıtınıza gönderdiğimiz doğrulama kodunu yazın."
       ],
@@ -24205,6 +24220,9 @@
       ],
       "Enter your backup password": [
         "Yedek parolanızı yazın"
+      ],
+      "Enter your password": [
+        "Parolanızı yazın"
       ],
       "For your security, you have been signed out of all your other active devices.": [
         "Güvenliğiniz için diğer tüm aygıtlarınızdaki etkin oturumlarınız kapatıldı."
@@ -24332,6 +24350,9 @@
       "To make sure it's really you trying to sign-in, please enter your backup password.": [
         "Oturum açmaya çalışanın gerçekten siz olduğunuzdan emin olmamız için lütfen yedek parolanızı yazın."
       ],
+      "To make sure it's really you trying to sign-in, please enter your password.": [
+        "Oturum açmaya çalışanın gerçekten siz olduğunuzdan emin olmamız için lütfen parolanızı yazın."
+      ],
       "To make sure it's really you trying to sign-in, share the confirmation code with your administrator **${ adminEmail }** so that they can approve the request for **${ email }**.": [
         "Oturum açmaya çalışanın gerçekten siz olduğunuzdan emin olmak için, onay kodunu yöneticinizle **${ adminEmail }** paylaşın. Böylece **${ email }** isteğini onaylayabilir."
       ],
@@ -24355,6 +24376,9 @@
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "Tek oturum açma hizmeti sağlayıcınıza yönlendirileceksiniz."
+      ],
+      "Your old password will become your **backup password**. You will be able to use it to authorize single sign-on (SSO) on new devices in the future.": [
+        "Eski parolanız **yedek parolanız** olacak. Gelecekte yeni aygıtlarda tek oturum açmayı (SSO) ayarlamak için kullanabileceksiniz."
       ],
       "Your SSO configuration will be deleted.": [
         "Tek oturum açma yapılandırmanız silinecek"
