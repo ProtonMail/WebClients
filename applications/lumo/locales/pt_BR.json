@@ -639,6 +639,109 @@
         "O espaço de armazenamento é compartilhado entre todos os serviços da ${ BRAND_NAME }."
       ]
     },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Aproveitar a oferta"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/mês"
+      ],
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
+      "2 individual accounts": [
+        "2 contas individuais"
+      ],
+      "2 TB of secure storage": [
+        "2 TB de armazenamento seguro"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB de armazenamento: 40x o seu plano atual"
+      ],
+      "3 TB of secure storage": [
+        "3 TB de armazenamento seguro"
+      ],
+      "500 GB of secure storage": [
+        "500 GB de armazenamento seguro"
+      ],
+      "6 individual accounts": [
+        "6 contas individuais"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autenticador de 2FA integrado"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Os descontos são baseados em preços mensais padrão. Sua assinatura será renovada na taxa anual padrão quando o ciclo de faturamento terminar."
+      ],
+      "Online document editor": [
+        "Editor de documentos on-line"
+      ],
+      "Recover previous file versions": [
+        "Recuperar versões de arquivo anteriores"
+      ],
+      "Stronger protection against cyber threats": [
+        "Proteção mais forte contra ameaças cibernéticas"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Pastas, marcadores e filtros ilimitados"
+      ],
+      "Use your own email domain": [
+        "Use seu próprio domínio de e-mail"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium para ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium para ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium para ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium para ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium para ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "A maior promoção do ano"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "por 12 meses"
+      ],
+      "Last chance to save big": [
+        "Última chance de economizar muito"
+      ],
+      "Protect your entire tribe": [
+        "Proteja toda a sua tribo"
+      ],
+      "Protection for two in a single plan": [
+        "Proteção para duas pessoas em um único plano"
+      ],
+      "Save big with a yearly plan": [
+        "Economize bastante com um plano anual"
+      ]
+    },
     "Billing cycle option": {
       "${ n } month": [
         "${ n } mês",
@@ -1324,6 +1427,9 @@
       "Keep it safe — it won't be shown again": [
         "Guarde em segurança - não será exibido novamente"
       ],
+      "Language used when transcribing your voice": [
+        "Idioma usado na transcrição da sua voz"
+      ],
       "Last updated on ${ formattedDate }": [
         "Última atualização em ${ formattedDate }"
       ],
@@ -1565,6 +1671,9 @@
       ],
       "You've reached your ${ LUMO_SHORT_APP_NAME } 2.0 Max limit": [
         "Você atingiu o limite do ${ LUMO_SHORT_APP_NAME } 2.0 Max"
+      ],
+      "You've reached your Apertus 1.5 limit": [
+        "Você atingiu seu limite do Apertus 1.5"
       ]
     },
     "collider_2025: Failure": {
@@ -2442,6 +2551,9 @@
       ],
       "90 days": [
         "90 dias"
+      ],
+      "Auto-detect": [
+        "Detectar automaticamente"
       ]
     },
     "collider_2025: Personality": {
@@ -2538,6 +2650,9 @@
       "Appearance": [
         "Aparência"
       ],
+      "Desktop app": [
+        "Aplicativo para computador"
+      ],
       "General": [
         "Geral"
       ],
@@ -2632,6 +2747,9 @@
       "${ LUMO_SHORT_APP_NAME } Business": [
         "${ LUMO_SHORT_APP_NAME } Business"
       ],
+      "${ LUMO_SHORT_APP_NAME } Desktop settings": [
+        "Configurações do ${ LUMO_SHORT_APP_NAME } para computador"
+      ],
       "${ LUMO_SHORT_APP_NAME } Plus": [
         "${ LUMO_SHORT_APP_NAME } Plus"
       ],
@@ -2677,6 +2795,9 @@
       "Clear chat-based memories?": [
         "Limpar memórias relacionadas ao bate-papo?"
       ],
+      "Connectors": [
+        "Conectores"
+      ],
       "Conversational AI": [
         "IA de conversação"
       ],
@@ -2685,6 +2806,9 @@
       ],
       "Delete everything": [
         "Excluir tudo"
+      ],
+      "Dictation language": [
+        "Idioma do ditado"
       ],
       "Document intelligence": [
         "Inteligência de documentos"
@@ -3074,11 +3198,17 @@
       "Add more information to improve the response": [
         "Inclua mais informações para melhorar a resposta"
       ],
+      "Add row below": [
+        "Adicionar linha abaixo"
+      ],
       "Add to favorites": [
         "Adicionar aos favoritos"
       ],
       "Analyze another export": [
         "Analisar outra exportação"
+      ],
+      "Apply": [
+        "Aplicar"
       ],
       "Ask the model to be more careful and thorough": [
         "Peça ao modelo para ser mais cauteloso e detalhista"
@@ -3088,6 +3218,9 @@
       ],
       "Back to chat": [
         "Voltar ao bate-papo"
+      ],
+      "Bold": [
+        "Negrito"
       ],
       "Cancel": [
         "Cancelar"
@@ -3100,6 +3233,9 @@
       ],
       "Change style": [
         "Alterar estilo"
+      ],
+      "Checklist": [
+        "Lista de verificação"
       ],
       "Choose project icon": [
         "Escolher ícone do projeto"
@@ -3118,6 +3254,9 @@
       ],
       "Code": [
         "Código"
+      ],
+      "Code block": [
+        "Bloco de código"
       ],
       "Continue": [
         "Continuar"
@@ -3152,17 +3291,29 @@
       "Delete chat": [
         "Excluir bate-papo"
       ],
+      "Delete column": [
+        "Excluir coluna"
+      ],
       "Delete conversation": [
         "Excluir conversa"
       ],
       "Delete project": [
         "Excluir projeto"
       ],
+      "Delete row": [
+        "Excluir linha"
+      ],
+      "Delete table": [
+        "Excluir tabela"
+      ],
       "Describe desired changes...": [
         "Descreva as mudanças desejadas..."
       ],
       "Deselect all": [
         "Desmarcar todos"
+      ],
+      "Divider": [
+        "Divisor"
       ],
       "Download": [
         "Baixar"
@@ -3185,11 +3336,20 @@
       "Download source file": [
         "Baixar arquivo de origem"
       ],
+      "Download web presentation (HTML)": [
+        "Baixar apresentação web (HTML)"
+      ],
+      "Download Word (.docx)": [
+        "Baixar Word (.docx)"
+      ],
       "Edit": [
         "Editar"
       ],
       "Edit agent": [
         "Editar agente"
+      ],
+      "Edit as Markdown": [
+        "Editar como Markdown"
       ],
       "Edit image": [
         "Editar imagem"
@@ -3227,14 +3387,35 @@
       "Go to project": [
         "Ir para o projeto"
       ],
+      "Heading 1": [
+        "Cabeçalho 1"
+      ],
+      "Heading 2": [
+        "Cabeçalho 2"
+      ],
+      "Heading 3": [
+        "Cabeçalho 3"
+      ],
       "Hide knowledge panel": [
         "Ocultar painel de conhecimento"
       ],
       "Improve": [
         "Melhorar"
       ],
+      "Inline code": [
+        "Código embutido"
+      ],
+      "Insert table": [
+        "Inserir tabela"
+      ],
+      "Italic": [
+        "Itálico"
+      ],
       "Light": [
         "Claro"
+      ],
+      "Link": [
+        "Link"
       ],
       "Make a copy": [
         "Fazer uma cópia"
@@ -3263,6 +3444,9 @@
       "Next version": [
         "Próxima versão"
       ],
+      "Numbered list": [
+        "Lista numerada"
+      ],
       "Open": [
         "Abrir"
       ],
@@ -3286,6 +3470,12 @@
       ],
       "Previous version": [
         "Versão anterior"
+      ],
+      "Quote": [
+        "Citar"
+      ],
+      "Redo": [
+        "Refazer"
       ],
       "Regenerate": [
         "Gerar novamente"
@@ -3326,6 +3516,9 @@
       "Save": [
         "Salvar"
       ],
+      "Save as PDF…": [
+        "Salvar como PDF…"
+      ],
       "Save to Drive": [
         "Salvar no Drive"
       ],
@@ -3359,6 +3552,9 @@
       "Start a chat": [
         "Iniciar um bate-papo"
       ],
+      "Strikethrough": [
+        "Tachado"
+      ],
       "Think longer": [
         "Pensar por mais tempo"
       ],
@@ -3373,6 +3569,9 @@
       ],
       "Try this": [
         "Tente isto"
+      ],
+      "Undo": [
+        "Desfazer"
       ],
       "Unlink Folder": [
         "Desvincular pasta"
@@ -3400,6 +3599,9 @@
       ],
       "What needs changed?": [
         "O que precisa ser alterado?"
+      ],
+      "Word (.docx)": [
+        "Word (.docx)"
       ]
     },
     "collider_2025:Agent": {
@@ -3729,6 +3931,9 @@
       "Built-in ${ BRAND_NAME } agent": [
         "Agente integrado da ${ BRAND_NAME }"
       ],
+      "Choose a format to export \"${ conversation.title }\":": [
+        "Escolha o formato para exportar ${ conversation.title }:"
+      ],
       "Choose or drop your .zip or conversations.json file. We analyze your ${ PAPER_TRAIL_LIMITS.maxPrompts } most recent prompts.": [
         "Selecione ou solte seu arquivo .zip, ou conversations.json. Analisamos seus ${ PAPER_TRAIL_LIMITS.maxPrompts } prompts mais recentes."
       ],
@@ -3897,11 +4102,20 @@
       "Sign in to your Claude account at claude.ai": [
         "Faça login na sua conta Claude em claude.ai"
       ],
+      "Some content, such as images and attachments, may not be included in the exported file.": [
+        "Alguns conteúdos, como imagens e anexos, podem não ser incluídos no arquivo exportado."
+      ],
       "Something went wrong analysing this export. Please try again.": [
         "Ocorreu um erro ao analisar esta exportação. Tente novamente."
       ],
       "Start a new chat to see it here.": [
         "Inicie uma nova conversa para vê-la aqui."
+      ],
+      "Structured data, aiming for compatibility with the ChatGPT export format": [
+        "Dados estruturados, com o objetivo de garantir a compatibilidade com o formato de exportação do ChatGPT"
+      ],
+      "Text formatted with markdown, easy to read or share": [
+        "Texto formatado com Markdown, fácil de ler ou compartilhar"
       ],
       "These are the most sensitive categories Big Tech AI could infer about you from your chats — even when you never typed them out explicitly.": [
         "Estas são as categorias mais sensíveis que a IA das Big Techs pode inferir sobre você a partir de suas conversas — mesmo quando você nunca as digitou explicitamente."
@@ -4093,6 +4307,9 @@
       "Description (optional)": [
         "Descrição (opcional)"
       ],
+      "Document editor": [
+        "Editor de documentos"
+      ],
       "Draw a sketch": [
         "Desenhe um esboço"
       ],
@@ -4104,6 +4321,9 @@
       ],
       "Folder name": [
         "Nome da pasta"
+      ],
+      "Formatting": [
+        "Formatando"
       ],
       "Generating": [
         "Gerando"
@@ -4592,6 +4812,9 @@
       ],
       "View details": [
         "Ver detalhes"
+      ],
+      "View tool result": [
+        "Mostrar resultado da ferramenta"
       ],
       "Worked on an image": [
         "Trabalhou em uma imagem"
@@ -6065,6 +6288,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } é seu nome de usuário. Para criar um ${ emailAddress }, vá para Configurações > Identidade e endereços > Domínio curto (pm.me)"
       ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Uma mensagem é necessária ao denunciar violação de direitos autorais ou dados roubados"
+      ],
       "Amount above the maximum.": [
         "Quantidade acima do máximo."
       ],
@@ -6082,6 +6308,9 @@
       ],
       "Cannot download a folder": [
         "Não é possível baixar uma pasta"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Não é possível mover o item sem um nome válido, por favor, renomeie o item primeiro"
       ],
       "Cannot share root folder": [
         "Não é possível compartilhar a pasta raiz"
@@ -6103,6 +6332,9 @@
       ],
       "Copying item to a non-folder is not allowed": [
         "Não é permitido copiar o item para um local que não seja uma pasta"
+      ],
+      "Could not find an available name": [
+        "Não foi possível encontrar um nome disponível"
       ],
       "Could not grant access to the organization key": [
         "Não foi possível obter o acesso a chave da organização"
@@ -6176,6 +6408,9 @@
       "Failed to decrypt revision metadata": [
         "Falha ao descriptografar os metadados da revisão"
       ],
+      "Failed to get inviter keys": [
+        "Não conseguiu obter as chaves do convidado"
+      ],
       "Failed to load subscription data. Please try again later.": [
         "Falha ao carregar os dados da assinatura. Tente novamente mais tarde."
       ],
@@ -6193,6 +6428,9 @@
       ],
       "Incorrect backup password. Please try again.": [
         "Senha de backup incorreta. Tente novamente."
+      ],
+      "Incorrect password. Please try again.": [
+        "A senha não é válida. Tente novamente."
       ],
       "Incorrect second password. Please try again.": [
         "Segunda senha incorreta. Tente novamente."
@@ -6257,6 +6495,9 @@
       ],
       "Not a valid number": [
         "Não é um número válido"
+      ],
+      "Only admins can convert external invitations": [
+        "Somente os administradores podem converter convites externos"
       ],
       "Operation aborted": [
         "Operação abortada"
@@ -6411,6 +6652,9 @@
       "This file version could not be uploaded": [
         "Não foi possível fazer o envio desta versão do arquivo"
       ],
+      "This item has no image preview": [
+        "Este item não tem visualização de imagem"
+      ],
       "This item is no longer shared": [
         "Este item não está mais sendo compartilhado"
       ],
@@ -6453,14 +6697,26 @@
       "Wrong billing address": [
         "Endereço de cobrança incorreto"
       ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Frase de recuperação errada. Tente novamente ou use outro método de autenticação."
+      ],
       "You can create public links for your own files only": [
         "Você pode criar links públicos apenas para seus próprios arquivos"
+      ],
+      "You can only leave items that are shared with you": [
+        "Você só pode deixar itens compartilhados com você"
+      ],
+      "You can only upload a new version to a file": [
+        "Você só pode carregar uma nova versão para um arquivo"
       ],
       "You can update a public link for your own files only": [
         "Você pode atualizar um link público apenas para seus próprios arquivos"
       ],
       "You do not have access to this item": [
         "Você não tem acesso a esse item"
+      ],
+      "You do not have access to this shared item": [
+        "Você não tem acesso a esse item compartilhado"
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nome indecifrável"
@@ -9107,8 +9363,14 @@
       "Amount due after trial on ${ formattedDate }": [
         "Valor devido após a avaliação em ${ formattedDate }"
       ],
+      "An organization is required for this plan.": [
+        "Uma organização é necessária para este plano."
+      ],
       "Billing Country": [
         "País de Faturamento"
+      ],
+      "Born Private can’t be purchased with an active subscription.": [
+        "O Born Private não pode ser adquirido com uma assinatura ativa."
       ],
       "Born Private requires a donation.": [
         "Born Private requer uma doação."
@@ -9167,6 +9429,9 @@
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Método de pagamento necessário para que a assinatura seja ativada após o término do período de teste."
       ],
+      "Plan switch is incompatible for the following reasons:": [
+        "O interruptor de plano é incompatível pelas seguintes razões:"
+      ],
       "Please close extra wallet accounts before changing your plan.": [
         "Escolha as contas de wallet adicionais antes de trocar seu plano."
       ],
@@ -9175,6 +9440,9 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reative sua assinatura primeiro para diminuir o número de complementos."
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Os assentos do Proton Meet devem corresponder ao número de membros."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "O preço da renovação está sujeito a alterações de acordo com os ${ termsAndConditionsLink }."
@@ -9239,6 +9507,9 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Esta ação expande a assinatura existente. Você será cobrado apenas pelos novos complementos e pelo tempo restante do ciclo de faturamento atual. A data de renovação da sua assinatura não será alterada."
       ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "Este servidor dedicado é atribuído a um gateway e não pode ser alterado."
+      ],
       "This offer is not available with your current plan.": [
         "Essa oferta não está disponível com seu plano atual."
       ],
@@ -9248,11 +9519,17 @@
       "This plan doesn’t support the members on your account.": [
         "Esse plano não suporta membros na sua conta."
       ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Esta assinatura não pode ser concluída agora. Por favor, tente de novo."
+      ],
       "Timeout exceeded": [
         "Tempo limite excedido"
       ],
       "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
         "Os planos de avaliação não suportam ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Trial plans don’t support custom domains.": [
+        "Os planos de avaliação não suportam domínios personalizados."
       ],
       "Trial plans don’t support dedicated IPs.": [
         "Os planos de avaliação não suportam IPs dedicados."
