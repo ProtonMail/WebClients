@@ -87,14 +87,10 @@ packageExtensions:
         # Its JSDoc types reference `eslint`.
         peerDependencies:
             eslint: '*'
-    # Both require `electron`, which the desktop apps pin to different versions. Jest mocks are
-    # keyed by resolved path, so `jest.mock('electron')` only applies if they share the app's copy.
-    electron-log@5:
-        peerDependencies:
-            electron: '*'
-        peerDependenciesMeta:
-            electron:
-                optional: true
+    # Requires `electron`, which the desktop apps pin to different versions. Jest mocks are keyed by
+    # resolved path, so `jest.mock('electron')` only applies if it shares the app's copy.
+    # electron-log gets no peer. With one, a desktop app on another electron version than
+    # @proton/shared bundles two copies of it and crashes on start.
     electron-store@8:
         peerDependencies:
             electron: '*'
