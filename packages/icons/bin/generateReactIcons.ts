@@ -42,6 +42,27 @@ const disclaimer = `
 `;
 
 const iconsDir = path.join(dirname, '../icons');
+const packageJsonPath = path.join(dirname, '../package.json');
+
+const PACKAGE_JSON_INDENT = 4;
+
+/**
+ * Writes one `exports` entry per generated component. Code wildcards are not allowed in export
+ * maps (see `exports:validate` in `@proton/ci-scripts`). Hand-written entries keep their position
+ * and order.
+ */
+async function writeIconExports(iconNames: string[]) {
+    const packageJson = JSON.parse(await readFile(packageJsonPath, 'utf-8'));
+
+    const handWritten = Object.entries(packageJson.exports ?? {}).filter(([key]) => !key.startsWith('./icons/'));
+    const generated = [...iconNames]
+        .sort()
+        .map((iconName) => [`./icons/${iconName}`, `./icons/${iconName}.tsx`] as const);
+
+    packageJson.exports = Object.fromEntries([...handWritten, ...generated]);
+
+    await writeFile(packageJsonPath, `${JSON.stringify(packageJson, null, PACKAGE_JSON_INDENT)}\n`);
+}
 
 async function run() {
     const iconTemplate = await readFile(path.join(dirname, './IconTemplate.tsx.mustache'), { encoding: 'utf-8' });
@@ -87,6 +108,7 @@ async function run() {
     };
 
     writeFilesPromises.push(generateTypes());
+    writeFilesPromises.push(writeIconExports(icons.map((icon) => icon.name)));
 
     await Promise.all(writeFilesPromises);
 }
