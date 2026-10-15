@@ -20,11 +20,11 @@ Technically, this monorepo is based on pnpm & pnpm workspaces, with unified vers
 
 You'll need to have the following environment to work with this project:
 
-- Node.js LTS
-- pnpm 12 (see the `packageManager` field in `package.json` for the exact version), e.g. `npm install -g pnpm@<version>`
+- Node.js satisfying `engines.node` in the root `package.json` (a `.node-version` file is provided for fnm, mise, and similar tools, and a matching `.nvmrc` for nvm — keep both in sync)
+- pnpm satisfying `engines.pnpm` in the root `package.json` (install with your preferred method, e.g. `npm install -g pnpm`)
 - git
 
-See `package.json` for specific version requirements.
+CI installs the exact pnpm version from the `packageManager` field; locally, any version that satisfies `engines.pnpm` is fine. Wrong package managers are rejected at install time (`preinstall`), and `engine-strict=true` in `.npmrc` makes `pnpm install` fail when Node or pnpm is below the declared floors.
 
 ### Installation
 
