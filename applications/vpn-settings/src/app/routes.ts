@@ -6,6 +6,7 @@ import type {
 } from 'proton-account/src/app/content/router-params';
 import { c } from 'ttag';
 
+import { getCanShowSignInRestriction } from '@proton/account/signInRestriction/helpers';
 import type { ThemeColor } from '@proton/colors/types';
 import type { SectionConfig } from '@proton/components/containers/layout/interface';
 import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
@@ -17,6 +18,7 @@ import { IcPaintRoller } from '@proton/icons/icons/IcPaintRoller';
 import { IcShield } from '@proton/icons/icons/IcShield';
 import { IcSquaresInSquare } from '@proton/icons/icons/IcSquaresInSquare';
 import { IcUserCircle } from '@proton/icons/icons/IcUserCircle';
+import type { EntitlementChecksForOrgAndUser } from '@proton/payments/core/entitlements/interface';
 import {
     type MaybeFreeSubscription,
     getHasVpnB2BPlan,
@@ -33,6 +35,7 @@ import type { VPNDashboardVariant } from '@proton/unleash/UnleashFeatureFlagsVar
 
 interface Arguments {
     user: UserModel;
+    entitlements: EntitlementChecksForOrgAndUser;
     subscription: MaybeFreeSubscription;
     showVPNDashboard: boolean;
     showVPNDashboardVariant: VPNDashboardVariant | 'disabled' | undefined;
@@ -49,6 +52,7 @@ interface Arguments {
 
 export const getRoutes = ({
     user,
+    entitlements,
     subscription,
     showVPNDashboard,
     showVPNDashboardVariant,
@@ -338,6 +342,12 @@ export const getRoutes = ({
                     text: DARK_WEB_MONITORING_NAME,
                     id: 'breaches',
                     available: !isSSOUser,
+                    variant: SettingsLayoutVariant.Card,
+                },
+                {
+                    text: c('Title').t`Sign-in protection`,
+                    id: 'sign-in-protection',
+                    available: flags.showSignInRestrictionToggle && getCanShowSignInRestriction({ user, entitlements }),
                     variant: SettingsLayoutVariant.Card,
                 },
                 {

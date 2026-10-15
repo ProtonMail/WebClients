@@ -84,6 +84,17 @@ export enum FIDO2_CREDENTIALS_PIN_VALUE {
     DISABLED = 0,
 }
 
+/** Bitmask of the identifiers accepted at sign-in */
+export enum LOGIN_IDENTIFIER_POLICY {
+    ALL = 1 << 0,
+    USERNAME = 1 << 1,
+    PRIMARY_ADDRESS = 1 << 2,
+}
+
+/** The only restricted policy the API accepts */
+export const RESTRICTED_LOGIN_IDENTIFIER_POLICY =
+    LOGIN_IDENTIFIER_POLICY.USERNAME | LOGIN_IDENTIFIER_POLICY.PRIMARY_ADDRESS;
+
 export interface Flags {
     Welcomed: number;
     SupportPgpV6Keys: 0 | 1;
@@ -249,6 +260,7 @@ export interface UserSettings {
         Link: string;
     };
     SessionAccountRecovery: 1 | 0;
+    LoginIdentifierPolicy: number;
     Telemetry: 1 | 0;
     Theme: ThemeSetting | null;
     ThemeType: number;

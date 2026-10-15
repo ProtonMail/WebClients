@@ -98,6 +98,7 @@
         "./samlSSO": "./samlSSO/index.ts",
         "./scheduleCall": "./scheduleCall/index.ts",
         "./scimSetup": "./scimSetup/index.ts",
+        "./signInRestriction/SignInRestrictionSection": "./signInRestriction/SignInRestrictionSection.tsx",
         "./signInWithAnotherDevice/SignInWithAnotherDeviceQRCode": "./signInWithAnotherDevice/SignInWithAnotherDeviceQRCode.tsx",
         "./sso/AbstractAuthDeviceModal": "./sso/AbstractAuthDeviceModal.tsx",
         "./sso/AuthDeviceItem": "./sso/AuthDeviceItem.tsx",
