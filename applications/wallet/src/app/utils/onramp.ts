@@ -1,4 +1,4 @@
-import type { WasmGatewayProvider } from 'andromeda-wasm';
+import type { WasmGatewayProvider } from '@proton/andromeda';
 
 export const getGatewayNameByGatewayProvider = (provider?: WasmGatewayProvider): string => {
     switch (provider) {
