@@ -1071,6 +1071,9 @@
       "Editing item failed": [
         "アイテムの編集に失敗しました"
       ],
+      "Email is not valid": [
+        "メールアドレスが無効です"
+      ],
       "Empty CSV file": [
         "CSV ファイルが空です"
       ],
@@ -1082,6 +1085,9 @@
       ],
       "Encrypted JSON not supported": [
         "暗号化 JSON には未対応です"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "ドメイン（@example.com）を含めずにユーザー名を入力してください。"
       ],
       "Error reporting problem": [
         "エラー報告の問題"
@@ -1260,6 +1266,9 @@
       "Incorrect backup password. Please try again.": [
         "間違ったバックアップパスワードです。再度お試しください。"
       ],
+      "Incorrect password. Please try again.": [
+        "パスワードが正しくありません。もう一度お試しください。"
+      ],
       "Incorrect second password. Please try again.": [
         "セカンドパスワードが正しくありません。もう一度お試しください。"
       ],
@@ -1302,8 +1311,14 @@
       "Network error": [
         "ネットワークエラーが発生しました"
       ],
+      "Not a valid number": [
+        "無効な番号です"
+      ],
       "Passphrase is incorrect": [
         "パスフレーズが間違っています"
+      ],
+      "Passwords do not match": [
+        "パスワードが一致しません"
       ],
       "Permission denied for ${ domainsJSX } website access.": [
         "${ domainsJSX } ウェブサイトへのアクセスが拒否されました。"
@@ -1371,6 +1386,9 @@
       "The ${ PASS_APP_NAME } desktop app should be logged in.": [
         "${ PASS_APP_NAME }デスクトップアプリにログインする必要があります。"
       ],
+      "The email addresses do not match": [
+        "メールアドレスが一致しません"
+      ],
       "The URL is in the list": [
         "URLはリストにあります\n"
       ],
@@ -1380,6 +1398,15 @@
       "This domain is already managed by your organization": [
         "このドメインはすでにお客様の組織によって管理されています"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "このフィールドは${ maximumLength }文字の最大値を超えています。"
+      ],
+      "This field is required": [
+        "この項目の入力は必須です"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "このフィールドには ${ minimumLength } 文字以上の入力が必要です。"
+      ],
       "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
         "この問題は、 ${ PASS_SHORT_APP_NAME }を長時間使用しなかった後、またはSafariの履歴を消去した後に発生することがあります。"
       ],
@@ -1388,6 +1415,9 @@
       ],
       "Trashing item failed": [
         "アイテムの削除に失敗しました"
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "文字、数字、_.- のみを使用してみてください。"
       ],
       "Unable to generate an OTP code for this item": [
         "このアイテムの OTP コードを生成できません"
@@ -1422,6 +1452,12 @@
       "Updating vault \"${ payload.content.name }\" failed": [
         "保管庫 “${ payload.content.name }” の更新に失敗しました"
       ],
+      "Username must begin with a letter or digit": [
+        "ユーザー名は英字か数字で始めなければいけません"
+      ],
+      "Username must end with a letter or digit": [
+        "ユーザー名の最後は英字か数字でなければいけません"
+      ],
       "Vault \"${ payload.content.name }\" creation failed": [
         "保管庫 “${ payload.content.name }” の作成に失敗しました"
       ],
@@ -1445,6 +1481,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "PINコードが違います。もう一度やり直してください。"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "間違った回復用フレーズです。再度試すか他の回復手段を使用してください。"
       ],
       "Wrong second password": [
         "セカンドパスワードが正しくありません"
@@ -2182,7 +2221,7 @@
         "「${ payload.content.name }」からすべてのアイテムを移動します"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "アイテムを別の保管庫に移動すると、そのアイテムのセキュアリンクはすべて消去されます。"
+        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
       ],
       "Moving items": [
         "アイテムの移動"
@@ -5208,8 +5247,14 @@
       "OTP secret or URI is invalid": [
         "OTP シークレットまたは URI が無効です"
       ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "パスワードは ${ MIN_PASSWORD_LENGTH } 文字以上必要です"
+      ],
       "Section name cannot be empty": [
         "セクション名は空欄にできません"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "もっと短いユーザ名にしてください (${ n } 文字以内)"
       ],
       "URL already exists": [
         "URLはすでに存在しています"

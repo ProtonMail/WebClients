@@ -1114,6 +1114,9 @@
       "Editing item failed": [
         "Fehler beim Bearbeiten des Eintrags."
       ],
+      "Email is not valid": [
+        "E-Mail-Adresse ungültig"
+      ],
       "Empty CSV file": [
         "Leere CSV-Datei"
       ],
@@ -1125,6 +1128,9 @@
       ],
       "Encrypted JSON not supported": [
         "Verschlüsseltes JSON wird nicht unterstützt."
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Deinen Benutzernamen ohne die Domain (@example.com) eingeben"
       ],
       "Error reporting problem": [
         "Fehler beim Melden des Problems."
@@ -1313,6 +1319,9 @@
       "Incorrect backup password. Please try again.": [
         "Falsches Backup-Passwort. Bitte versuche es erneut."
       ],
+      "Incorrect password. Please try again.": [
+        "Ungültiges Passwort. Bitte versuche es erneut."
+      ],
       "Incorrect second password. Please try again.": [
         "Falsches zusätzliches Passwort. Bitte versuche es erneut."
       ],
@@ -1355,8 +1364,14 @@
       "Network error": [
         "Netzwerkfehler"
       ],
+      "Not a valid number": [
+        "Keine gültige Zahl"
+      ],
       "Passphrase is incorrect": [
         "Passphrase ist falsch"
+      ],
+      "Passwords do not match": [
+        "Die Passwörter stimmen nicht überein"
       ],
       "Permission denied for ${ domainsJSX } website access.": [
         "Zugriff auf die Websites ${ domainsJSX } verweigert."
@@ -1430,6 +1445,9 @@
       "The ${ PASS_APP_NAME } desktop app should be logged in.": [
         "Die ${ PASS_APP_NAME }-Desktop-App sollte angemeldet sein."
       ],
+      "The email addresses do not match": [
+        "Die E-Mail-Adressen stimmen nicht überein"
+      ],
       "The URL is in the list": [
         "Die URL ist in der Liste."
       ],
@@ -1438,6 +1456,15 @@
       ],
       "This domain is already managed by your organization": [
         "Diese Domain wird bereits von deiner Organisation verwaltet"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Das Feld überschreitet die maximale Länge von ${ maximumLength } Zeichen."
+      ],
+      "This field is required": [
+        "Pflichtfeld"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "In dieses Feld müssen mindestens ${ minimumLength } Zeichen eingegeben werden."
       ],
       "This invite is no longer available": [
         "Diese Einladung ist nicht mehr verfügbar"
@@ -1450,6 +1477,9 @@
       ],
       "Trashing item failed": [
         "Fehler beim Verschieben des Eintrags in den Papierkorb."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Bitte nur Buchstaben, Ziffern und die Zeichen _ . - verwenden"
       ],
       "Unable to generate an OTP code for this item": [
         "Es konnte kein OTP-Code für diesen Eintrag generiert werden."
@@ -1487,6 +1517,12 @@
       "Updating vault \"${ payload.content.name }\" failed": [
         "Aktualisieren des Tresors \"${ payload.content.name }\" fehlgeschlagen."
       ],
+      "Username must begin with a letter or digit": [
+        "Der Benutzername muss mit einem Buchstaben oder einer Ziffer beginnen."
+      ],
+      "Username must end with a letter or digit": [
+        "Der Benutzername muss mit einem Buchstaben oder einer Ziffer enden."
+      ],
       "Vault \"${ payload.content.name }\" creation failed": [
         "Erstellen des Tresors \"${ payload.content.name }\" fehlgeschlagen."
       ],
@@ -1510,6 +1546,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Falscher PIN-Code. Versuche es erneut."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Wiederherstellungsphrase ungültig. Versuche es erneut oder verwende eine andere Wiederherstellungsmethode."
       ],
       "Wrong second password": [
         "Falsches zusätzliches Passwort"
@@ -2290,7 +2329,8 @@
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Wenn du einen Eintrag in einen anderen Tresor verschiebst, werden seine sicheren Links gelöscht."
+        "Beim Verschieben eines Eintrags in einen anderen Tresor, werden seine sicheren Verknüpfungen gelöscht.",
+        "Beim Verschieben von Einträgen in einen anderen Tresor, werden ihre sicheren Verknüpfungen gelöscht."
       ],
       "Moving items": [
         "Einträge verschieben"
@@ -3106,6 +3146,9 @@
       "${ hours } hour": [
         "${ hours } Stunde",
         "${ hours } Stunden"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } Zeichen"
       ],
       "${ minutes } minute": [
         "${ minutes } Minute",
@@ -5448,8 +5491,16 @@
       "OTP secret or URI is invalid": [
         "OTP-Geheimnis oder URI ungültig."
       ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Das Passwort muss mindestens ${ MIN_PASSWORD_LENGTH } Zeichen enthalten.",
+        "Passwort muss mindestens ${ MIN_PASSWORD_LENGTH } Zeichen enthalten."
+      ],
       "Section name cannot be empty": [
         "Abschnittsname darf nicht leer sein."
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Bitte einen kürzeren Benutzernamen verwenden (max. ${ n } Zeichen)",
+        "Bitte einen kürzeren Benutzernamen verwenden (max. ${ n } Zeichen)"
       ],
       "URL already exists": [
         "URL existiert bereits"

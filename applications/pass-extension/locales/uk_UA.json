@@ -1086,6 +1086,9 @@
       "Editing item failed": [
         "Помилка редагування елемента"
       ],
+      "Email is not valid": [
+        "Е-пошта недійсна"
+      ],
       "Empty CSV file": [
         "Порожній CSV-файл"
       ],
@@ -1097,6 +1100,9 @@
       ],
       "Encrypted JSON not supported": [
         "Зашифрований JSON не підтримується"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Введіть ім'я користувача без домену (@example.com)"
       ],
       "Error reporting problem": [
         "Помилка під час надсилання повідомлення про проблему"
@@ -1275,6 +1281,9 @@
       "Incorrect backup password. Please try again.": [
         "Неправильний резервний пароль. Будь ласка, спробуйте ще раз."
       ],
+      "Incorrect password. Please try again.": [
+        "Хибний пароль. Повторіть спробу."
+      ],
       "Incorrect second password. Please try again.": [
         "Неправильний другий пароль. Спробуйте ще раз."
       ],
@@ -1317,8 +1326,14 @@
       "Network error": [
         "Помилка мережі"
       ],
+      "Not a valid number": [
+        "Номер недійсний"
+      ],
       "Passphrase is incorrect": [
         "Парольна фраза неправильна"
+      ],
+      "Passwords do not match": [
+        "Паролі відрізняються"
       ],
       "Permission denied for ${ domainsJSX } website access.": [
         "Відхилено запит на доступ до вебсайту ${ domainsJSX }."
@@ -1386,6 +1401,9 @@
       "The ${ PASS_APP_NAME } desktop app should be logged in.": [
         "У настільну програму ${ PASS_APP_NAME } потрібно увійти."
       ],
+      "The email addresses do not match": [
+        "Електронні адреси відрізняються"
+      ],
       "The URL is in the list": [
         "URL-адреса вже є у списку"
       ],
@@ -1395,6 +1413,15 @@
       "This domain is already managed by your organization": [
         "Цей домен уже під керуванням вашої організації"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "У цьому полі перевищено обмеження ${ maximumLength } символів."
+      ],
+      "This field is required": [
+        "Це поле є обов'язковим"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "В цьому полі повинно бути не менше ${ minimumLength } символів."
+      ],
       "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
         "Це може статися після тривалого невикористання ${ PASS_SHORT_APP_NAME } або очищення історії Safari."
       ],
@@ -1403,6 +1430,9 @@
       ],
       "Trashing item failed": [
         "Не вдалося перемістити елемент у смітник"
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Спробуйте використовувати лише літери, цифри та символи _.-"
       ],
       "Unable to generate an OTP code for this item": [
         "Не вдалося створити код OTP для цього елемента"
@@ -1437,6 +1467,12 @@
       "Updating vault \"${ payload.content.name }\" failed": [
         "Не вдалося оновити сховище \"${ payload.content.name }\""
       ],
+      "Username must begin with a letter or digit": [
+        "Ім'я користувача повинно починатися з літери або цифри"
+      ],
+      "Username must end with a letter or digit": [
+        "Ім'я користувача повинно закінчуватися літерою або цифрою"
+      ],
       "Vault \"${ payload.content.name }\" creation failed": [
         "Не вдалося створити сховище \"${ payload.content.name }\""
       ],
@@ -1460,6 +1496,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Неправильний PIN-код. Спробуйте ще раз."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Неправильна фраза відновлення. Спробуйте знову, або використайте інший спосіб відновлення."
       ],
       "Wrong second password": [
         "Неправильний другий пароль"
@@ -2263,7 +2302,10 @@
         "Переміщення всіх елементів із ${ payload.content.name }"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Переміщення елемента до іншого сховища призведе до стирання його безпечних посилань."
+        "Переміщення елемента до іншого сховища призведе до стирання його безпечних посилань.",
+        "Переміщення елементів до іншого сховища призведе до стирання їхніх безпечних посилань.",
+        "Переміщення елементів до іншого сховища призведе до/стирання їхніх безпечних посилань.",
+        "Переміщення елементів до іншого сховища призведе до стирання їхніх безпечних посилань."
       ],
       "Moving items": [
         "Переміщення елементів"
@@ -5379,8 +5421,20 @@
       "OTP secret or URI is invalid": [
         "Секретний ключ OTP або URI неправильний"
       ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Пароль повинен містити принаймні ${ MIN_PASSWORD_LENGTH } символ",
+        "Пароль повинен містити принаймні ${ MIN_PASSWORD_LENGTH } символи",
+        "Пароль повинен містити принаймні ${ MIN_PASSWORD_LENGTH } символів",
+        "Пароль повинен містити принаймні ${ MIN_PASSWORD_LENGTH } символів"
+      ],
       "Section name cannot be empty": [
         "Назва розділу не може бути пустою"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Спробуйте коротше ім'я користувача (до ${ n } символу)",
+        "Спробуйте коротше ім'я користувача (до ${ n } символів)",
+        "Спробуйте коротше ім'я користувача (до ${ n } символів)",
+        "Спробуйте коротше ім'я користувача (до ${ n } символів)"
       ],
       "URL already exists": [
         "URL-адреса вже існує"
