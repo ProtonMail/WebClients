@@ -4311,6 +4311,9 @@
       ],
       "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
         "失敗替 ${ signatureType } 簽名驗證: ${ errorMessage }"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "錯誤的恢復短語。重試或使用其它復原方法。"
       ]
     },
     "error": {
