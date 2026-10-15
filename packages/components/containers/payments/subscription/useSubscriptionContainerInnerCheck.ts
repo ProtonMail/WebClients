@@ -256,6 +256,18 @@ export function useSubscriptionContainerInnerCheck(props: UseSubscriptionContain
             return;
         }
 
+        // Guards are re-evaluated only on checkout, when modifying a paid subscription, and when
+        // the plan/cycle selection changed (or on the first check). Computed after normalizeModel
+        // so planIDs/cycle reflect what is actually sent to subscriptions/check.
+        const validateGuards =
+            copyNewModel.step === SUBSCRIPTION_STEPS.CHECKOUT &&
+            isModifyingPaidSubscriptionSelection(subscription, copyNewModel.planIDs, copyNewModel.cycle) &&
+            (!model.initialCheckComplete || !isSubscriptionSelectionEqual(model, copyNewModel));
+
+        if (validateGuards && checkResult.GuardResult?.length) {
+            setCheckResult({ ...checkResult, GuardResult: [] });
+        }
+
         const checkPromise = (async () => {
             try {
                 abortControllerRef.current?.abort();
@@ -285,16 +297,6 @@ export function useSubscriptionContainerInnerCheck(props: UseSubscriptionContain
                 // while paymentFacadeSelectedMethodType is still SEPA. In this case we want to call /check without
                 // ProrationMode == Exact.
                 const currentlySelectedMethod = selectedMethod ?? paymentFacadeSelectedMethodType;
-
-                // Guards need to be re-evaluated by the subscriptions/check only when:
-                // - the user is on the checkout step (not browsing plans),
-                // - the user is changing an existing paid subscription (nothing to transition from otherwise),
-                // - it is the first check or the plan/cycle selection changed
-                // it skip re-validating on unrelated rechecks, e.g. coupon or address.
-                const validateGuards =
-                    copyNewModel.step === SUBSCRIPTION_STEPS.CHECKOUT &&
-                    isModifyingPaidSubscriptionSelection(subscription, copyNewModel.planIDs, copyNewModel.cycle) &&
-                    (!model.initialCheckComplete || !isSubscriptionSelectionEqual(model, copyNewModel));
 
                 const checkPayload: CheckSubscriptionData = {
                     Codes,
