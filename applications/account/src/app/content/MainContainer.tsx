@@ -217,6 +217,7 @@ const MainContainer = () => {
     const isCryptoPostQuantumOptInEnabled =
         (useFlag('CryptoPostQuantumOptIn') && user.isPrivate) || !!userSettings.Flags.SupportPgpV6Keys;
     const isSsoForPbsEnabled = useFlag('SsoForPbs');
+    const showSignInRestrictionToggle = useFlag('ShowSignInRestrictionToggle');
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
     const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
     const isSpacesAvailable = useFlag('SpacesAvailable');
@@ -314,6 +315,7 @@ const MainContainer = () => {
         isCategoryViewEnabled: canUseCategoryView,
         isReferralProgramEnabled,
         isDriveEasySwitchNewUIEnabled,
+        showSignInRestrictionToggle,
     };
 
     const routes = getRoutes({
