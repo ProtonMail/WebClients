@@ -19,7 +19,6 @@ import { SignInWizard } from './SignInWizard';
 import { AuthType, type AuthTypeData, type SSODataTypes, SSOLoginCapabilites } from './auth/interface';
 import type { PrepareSSOResult, SSOSignInResult } from './auth/sso';
 import { SignInPageLayout } from './components/SignInPageLayout';
-import { RememberMode } from './rememberMode';
 import { SignInStateMachine } from './state-machine/SignInStateMachine';
 import type { CreatedAuth } from './state-machine/signInActors';
 import type { SignInAuthState } from './state-machine/signInAuthState';
@@ -113,7 +112,7 @@ const renderWizard = (
                     canNavigateBack: false,
                     setupVPN: false,
                     redirectsSSOToAccount: false,
-                    externalSSO: withRedirectToken ? { token: 'redirect-token', persistent: false } : undefined,
+                    externalSSO: withRedirectToken ? { token: 'redirect-token' } : undefined,
                     showSSONotice,
                 },
             }}
@@ -125,7 +124,7 @@ const renderWizard = (
                 toAppName={undefined}
                 showContinueTo={false}
                 paths={{} as Paths}
-                remember={RememberMode.Visible}
+                showRememberCheckbox
                 testflight={undefined}
                 isPorkbun={false}
                 onError={jest.fn()}

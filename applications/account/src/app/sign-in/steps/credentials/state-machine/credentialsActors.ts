@@ -19,6 +19,7 @@ import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import type { ClaimedAddressRecovery } from '../../../auth/claimedAddress';
 import { AuthType } from '../../../auth/interface';
 import { ClaimedAddressNoMatchError, loginWithClaimedAddress, loginWithPassword } from '../../../auth/passwordLogin';
+import { clearSSOPersistent, saveSSOPersistent } from '../../../ssoPersistedState';
 import type { SignInActorServices } from '../../../state-machine/signInActors';
 import { rethrowCredentialsError, rethrowSSOTokenError } from './credentialsErrors';
 
@@ -125,12 +126,18 @@ export const createCredentialsActors = (services: SignInActorServices) => {
          * Stopping the actor (cancel, back, unmount) aborts the provider window. It opens with the SSO info's challenge
          * token; checked here, so a missing one fails the step like a request instead of opening the window empty.
          */
-        authorizeWithSSOProvider: fromPromise<SSOProviderResult, { token: string | undefined }>(
+        authorizeWithSSOProvider: fromPromise<SSOProviderResult, { token: string | undefined; persistent: boolean }>(
             async ({ input, signal }) => {
                 if (!input.token) {
                     throw new Error('Missing SSO challenge token');
                 }
-                return handleExternalSSOLogin({ token: input.token, signal });
+                // The provider tab gets a copy, for when it signs in itself; this tab already has the choice
+                saveSSOPersistent(input.persistent);
+                try {
+                    return await handleExternalSSOLogin({ token: input.token, signal });
+                } finally {
+                    clearSSOPersistent();
+                }
             }
         ),
         authenticateWithSSOToken: fromPromise<PrimaryAuthResult, SSOTokenInput>(

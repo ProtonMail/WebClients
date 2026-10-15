@@ -13,17 +13,17 @@ import { SignInFormHeader } from '../SignInFormHeader';
 import { TestflightBanner } from '../Testflight';
 import { CancelSSOButton } from '../fields/CancelSSOButton';
 import { CredentialsUsernameField } from '../fields/CredentialsUsernameField';
-import { RememberCheckbox } from '../fields/RememberCheckbox';
 import { SignUpPrompt } from '../fields/SignUpPrompt';
+import { StaySignedInCheckbox, useStaySignedIn } from '../fields/StaySignedInCheckbox';
 import { SubmitButton } from '../fields/SubmitButton';
 import { getHelpLinks } from '../helpLinks';
 import {
     selectAwaitingProvider,
     selectErrorMessage,
+    selectPersistent,
     selectSubmitting,
     selectUsername,
 } from '../state-machine/credentialsStateMachine';
-import { useRememberPreference } from '../useRememberPreference';
 
 /**
  * The auto sign-in's first step, the username only. The server then says whether the account signs in with a password
@@ -31,21 +31,24 @@ import { useRememberPreference } from '../useRememberPreference';
  * opens the provider window while this stays up with a cancel button).
  */
 export const AutoScreen: SignInScreen = ({ onBack }: SignInScreenProps) => {
-    const { layout, paths, compactForm, isPorkbun, remember: rememberMode } = useSignInProps();
+    const { layout, paths, compactForm, isPorkbun, showRememberCheckbox } = useSignInProps();
     const actorRef = CredentialsContext.useActorRef();
     const errorMessage = CredentialsContext.useSelector(selectErrorMessage);
     const submitting = CredentialsContext.useSelector(selectSubmitting);
     // Starts with the machine's username, so it carries over between modes
     const initialUsername = CredentialsContext.useSelector(selectUsername);
+
     const [username, setUsername] = useState(initialUsername);
-    const remember = useRememberPreference(rememberMode);
     const awaitingSSOProvider = CredentialsContext.useSelector(selectAwaitingProvider);
     const { validator, onFormSubmit } = useFormErrors();
+
+    const initialPersistentValue = CredentialsContext.useSelector(selectPersistent);
+    const staySignedIn = useStaySignedIn(initialPersistentValue);
 
     const handleSubmit = () => {
         actorRef.send({
             type: 'credentials.usernameSubmitted',
-            payload: { username, persistent: remember.persistent },
+            payload: { username, persistent: staySignedIn.persistent },
         });
     };
 
@@ -74,7 +77,7 @@ export const AutoScreen: SignInScreen = ({ onBack }: SignInScreenProps) => {
                     <div className="mb-4">
                         <Link to={getHelpLinks(paths, username).forgotUsernamePath}>{c('Link').t`Forgot email?`}</Link>
                     </div>
-                    <RememberCheckbox remember={remember} disabled={submitting} />
+                    {showRememberCheckbox && <StaySignedInCheckbox staySignedIn={staySignedIn} disabled={submitting} />}
                     <SubmitButton submitting={submitting} compactForm={compactForm}>
                         {c('Action').t`Continue`}
                     </SubmitButton>

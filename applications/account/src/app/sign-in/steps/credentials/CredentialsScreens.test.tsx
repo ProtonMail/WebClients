@@ -11,11 +11,15 @@ import type { Paths } from '../../../content/helper';
 import { SignInWizard } from '../../SignInWizard';
 import { AuthType, type AuthTypeData } from '../../auth/interface';
 import { SignInPageLayout } from '../../components/SignInPageLayout';
-import { RememberMode } from '../../rememberMode';
 import { SignInStateMachine } from '../../state-machine/SignInStateMachine';
 import { SignInContext } from '../../wizard/SignInContext';
 import { SignInProvider } from '../../wizard/SignInProvider';
-import type { CredentialsFormValues, PrimaryAuthResult, SSOProviderResult } from './state-machine/credentialsActors';
+import type {
+    AccountType,
+    CredentialsFormValues,
+    PrimaryAuthResult,
+    SSOProviderResult,
+} from './state-machine/credentialsActors';
 import { InvalidLoginError, SSOSignInRejectedError } from './state-machine/credentialsErrors';
 import { credentialsStateMachine } from './state-machine/credentialsStateMachine';
 
@@ -55,6 +59,7 @@ const renderForm = ({
             credentialsFlow: credentialsStateMachine.provide({
                 actors: {
                     startAuthSession: fromPromise(() => Promise.resolve()),
+                    fetchAccountType: fromPromise(() => Promise.resolve<AccountType>({ type: 'srp' })),
                     authenticateWithPassword: fromPromise(({ input }) => authenticateWithPassword(input)),
                     ...(authenticateWithSSOToken && {
                         fetchSSOInfo: fromPromise(() =>
@@ -91,7 +96,7 @@ const renderForm = ({
                 toAppName={undefined}
                 showContinueTo={false}
                 paths={paths}
-                remember={RememberMode.Visible}
+                showRememberCheckbox
                 testflight={testflight}
                 isPorkbun={false}
                 onError={jest.fn()}
@@ -108,7 +113,7 @@ describe('the credentials screens', () => {
         jest.mocked(useFlag).mockReset();
     });
 
-    it('asks for username and password, then submits them with the remember choice', async () => {
+    it('asks for username and password, then submits them defaulting remember to true', async () => {
         const { authenticateWithPassword } = renderForm();
         const user = userEvent.setup();
 
@@ -121,9 +126,25 @@ describe('the credentials screens', () => {
             expect(authenticateWithPassword).toHaveBeenCalledWith({
                 username: 'user@example.com',
                 password: 'secret',
-                persistent: false,
+                persistent: true,
                 payload: undefined,
             })
+        );
+    });
+
+    it('keeps "Keep me signed in" off on the auto password screen when the username step turned it off', async () => {
+        const { authenticateWithPassword } = renderForm({ authTypeData: { type: AuthType.Auto } });
+        const user = userEvent.setup();
+
+        expect(screen.getByLabelText('Keep me signed in')).toBeChecked();
+        await user.click(screen.getByLabelText('Keep me signed in'));
+        await user.type(screen.getByLabelText('Email or username'), 'user@example.com');
+        await user.click(screen.getByRole('button', { name: 'Continue' }));
+        await user.type(await screen.findByLabelText('Enter your password'), 'secret');
+        await user.click(screen.getByRole('button', { name: 'Sign in' }));
+
+        await waitFor(() =>
+            expect(authenticateWithPassword).toHaveBeenCalledWith(expect.objectContaining({ persistent: false }))
         );
     });
 
