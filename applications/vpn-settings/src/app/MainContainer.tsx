@@ -21,6 +21,7 @@ import { useIsDataRecoveryAvailable } from '@proton/account/recovery/dataRecover
 import { useIsSessionRecoveryAvailable } from '@proton/account/recovery/sessionRecoveryHooks';
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { SafetyReviewRoute } from '@proton/account/safetyReview/components/SafetyReviewRoute';
+import SignInRestrictionSection from '@proton/account/signInRestriction/SignInRestrictionSection';
 import AuthDevicesSettings from '@proton/account/sso/AuthDevicesSettings';
 import MembersAuthDevicesTopBanner from '@proton/account/sso/MembersAuthDevicesTopBanner';
 import { useSubscription } from '@proton/account/subscription/hooks';
@@ -130,6 +131,7 @@ const MainContainer: FunctionComponent = () => {
     const isZoomIntegrationEnabled = !isZoomIntegrationDisabled;
     const isProtonMeetIntegrationEnabled = useFlag('NewScheduleOption');
     const isSsoForPbsEnabled = useFlag('SsoForPbs');
+    const showSignInRestrictionToggle = useFlag('ShowSignInRestrictionToggle');
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
     const isAlwaysOnVpnEnabled = useFlag('B2BAlwaysOnEnabled');
 
@@ -183,10 +185,12 @@ const MainContainer: FunctionComponent = () => {
         isAlwaysOnVpnEnabled,
         isReferralProgramEnabled,
         isDriveEasySwitchNewUIEnabled: false,
+        showSignInRestrictionToggle,
     };
 
     const vpnRoutes = getRoutes({
         user,
+        entitlements,
         subscription,
         showVPNDashboard,
         showVPNDashboardVariant: showVPNDashboardVariant.name,
@@ -417,6 +421,7 @@ const MainContainer: FunctionComponent = () => {
                                     >
                                         <SentinelSection app={app} />
                                         <CredentialLeakSection />
+                                        <SignInRestrictionSection />
                                         <AuthDevicesSettings />
                                         <SessionsSection />
                                         <LogsSection />

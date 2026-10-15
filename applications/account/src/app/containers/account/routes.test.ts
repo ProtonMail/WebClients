@@ -38,6 +38,7 @@ const defaultFlags: Flags = {
     isAlwaysOnVpnEnabled: false,
     isReferralProgramEnabled: false,
     isDriveEasySwitchNewUIEnabled: false,
+    showSignInRestrictionToggle: false,
     canDisplayNonPrivateEmailPhone: false,
     isScribeEnabled: false,
     isZoomIntegrationEnabled: false,

@@ -30,6 +30,7 @@ enum AccountFeatureFlag {
     MailTrialOffer = 'MailTrialOffer',
     PassTrialOffer = 'PassTrialOffer',
     ShowLiteAppCheckoutV2 = 'ShowLiteAppCheckoutV2',
+    ShowSignInRestrictionToggle = 'ShowSignInRestrictionToggle',
     SpacesAvailable = 'SpacesAvailable',
     VisionarySignup = 'VisionarySignup',
     VPNDashboard = 'VPNDashboard',
