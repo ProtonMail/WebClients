@@ -301,7 +301,7 @@ overrides:
   xlsx@^0.18.5: https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz
   yaml@^1.7.2: 1.10.3
 
-packageExtensionsChecksum: sha256-SuHW0dCfspXG19vGH5xC0NAmPd4O+ltJVCgPjNhCbZA=
+packageExtensionsChecksum: sha256-PmAtg70uN6eZEITOxv2pFpkcXJuMi7mi3KH/Gc/2oEI=
 
 patchedDependencies:
   '@mlc-ai/web-llm@0.2.32': f2db861fd9b2307065c0dd450cb8471d7a1aff76a29cd7e383fb2555e831b1eb
@@ -2146,7 +2146,7 @@ importers:
         version: link:../../packages/utils
       electron-log:
         specifier: ^5.4.4
-        version: 5.4.4(electron@43.7.6(supports-color@11.0.0))
+        version: 5.4.4
       electron-store:
         specifier: ^8.2.0
         version: 8.2.0(electron@43.7.6(supports-color@11.0.0))
@@ -3203,7 +3203,7 @@ importers:
         version: link:../../packages/shared
       electron-log:
         specifier: ^5.4.4
-        version: 5.4.4(electron@43.7.6(supports-color@11.0.0))
+        version: 5.4.4
       electron-store:
         specifier: ^8.2.0
         version: 8.2.0(electron@43.7.6(supports-color@11.0.0))
@@ -3520,7 +3520,7 @@ importers:
         version: 4.29.3
       electron-log:
         specifier: ^5.4.4
-        version: 5.4.4(electron@44.4.3(supports-color@11.0.0))
+        version: 5.4.4
       electron-store:
         specifier: ^8.2.0
         version: 8.2.0(electron@44.4.3(supports-color@11.0.0))
@@ -8727,7 +8727,7 @@ importers:
         version: 3.4.16
       electron-log:
         specifier: ^5.4.4
-        version: 5.4.4(electron@43.7.6(supports-color@11.0.0))
+        version: 5.4.4
       file-saver:
         specifier: ^2.0.5
         version: 2.0.5
@@ -20731,11 +20731,6 @@ packages:
   electron-log@5.4.4:
     resolution: {integrity: sha512-istWgaXjBfURBSS8LWVW9C3jsc6+ac+tY1lXrQEOTp0lVj+a4OlO1Tmqb36GgnEUDv92DGC9VI1HNXwJinWpgA==}
     engines: {node: '>= 14'}
-    peerDependencies:
-      electron: '*'
-    peerDependenciesMeta:
-      electron:
-        optional: true
 
   electron-playwright-helpers@1.8.2:
     resolution: {integrity: sha512-sM9fDSEFDOptKDa8oiNphiXdR1KR1uFe8yHnlrnvyQE1ScnHizca/SoYvUdtn+5IuVNTkT8MesKWJ6seS4/zuA==}
@@ -34637,7 +34632,7 @@ snapshots:
       webpack: 5.111.1(@swc/core@1.16.2)(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.28)(sharp@0.35.5(@types/node@24.19.0))(svgo@4.1.0)(webpack-cli@7.2.3)
     optionalDependencies:
       type-fest: 5.9.0
-      webpack-dev-server: 5.2.6(debug@4.4.3(supports-color@11.0.0))(supports-color@11.0.0)(webpack-cli@7.2.3)(webpack@5.111.1)
+      webpack-dev-server: 5.2.6(supports-color@11.0.0)(webpack-cli@7.2.3)(webpack@5.111.1)
       webpack-hot-middleware: 2.26.1
 
   '@pmmmwh/react-refresh-webpack-plugin@0.6.3(react-refresh@0.19.0)(type-fest@5.9.0)(webpack-dev-server@6.0.0)(webpack-hot-middleware@2.26.1)(webpack@5.111.1)':
@@ -41015,13 +41010,7 @@ snapshots:
       - supports-color
     optional: true
 
-  electron-log@5.4.4(electron@43.7.6(supports-color@11.0.0)):
-    optionalDependencies:
-      electron: 43.7.6(supports-color@11.0.0)
-
-  electron-log@5.4.4(electron@44.4.3(supports-color@11.0.0)):
-    optionalDependencies:
-      electron: 44.4.3(supports-color@11.0.0)
+  electron-log@5.4.4: {}
 
   electron-playwright-helpers@1.8.2:
     dependencies:
@@ -51507,7 +51496,8 @@ snapshots:
       js-yaml: 4.3.2
       json5: 2.2.3
       webpack-bundle-analyzer: 5.4.0
-      webpack-dev-server: 5.2.6(debug@4.4.3(supports-color@11.0.0))(supports-color@11.0.0)(webpack-cli@7.2.3)(webpack@5.111.1)
+      webpack-dev-server: 5.2.6(supports-color@11.0.0)(webpack-cli@7.2.3)(webpack@5.111.1)
+    optional: true
 
   webpack-cli@7.2.3(js-yaml@4.3.2)(json5@2.2.3)(webpack-bundle-analyzer@5.4.0)(webpack-dev-server@6.0.0)(webpack@5.111.1):
     dependencies:
@@ -51600,6 +51590,46 @@ snapshots:
       - debug
       - supports-color
       - utf-8-validate
+
+  webpack-dev-server@5.2.6(supports-color@11.0.0)(webpack-cli@7.2.3)(webpack@5.111.1):
+    dependencies:
+      '@types/bonjour': 3.5.13
+      '@types/connect-history-api-fallback': 1.5.4
+      '@types/express': 4.17.25
+      '@types/express-serve-static-core': 4.19.9
+      '@types/serve-index': 1.9.4
+      '@types/serve-static': 1.15.10
+      '@types/sockjs': 0.3.36
+      '@types/ws': 8.18.1
+      ansi-html-community: 0.0.8
+      bonjour-service: 1.4.4
+      chokidar: 3.6.0
+      colorette: 2.0.20
+      compression: 1.8.2(supports-color@11.0.0)
+      connect-history-api-fallback: 2.0.0
+      express: 4.22.2(supports-color@11.0.0)
+      graceful-fs: 4.2.11
+      http-proxy-middleware: 2.0.10(@types/express@4.17.25)(debug@4.4.3(supports-color@11.0.0))
+      ipaddr.js: 2.5.0
+      launch-editor: 2.14.1
+      open: 10.2.0
+      p-retry: 6.2.1
+      schema-utils: 4.5.0
+      selfsigned: 5.5.0
+      serve-index: 1.9.2(supports-color@11.0.0)
+      sockjs: 0.3.24
+      spdy: 4.0.2(supports-color@11.0.0)
+      webpack-dev-middleware: 7.4.6(webpack@5.111.1)
+      ws: 8.21.3
+    optionalDependencies:
+      webpack: 5.111.1(@swc/core@1.16.2)(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.28)(sharp@0.35.5(@types/node@24.19.0))(svgo@4.1.0)(webpack-cli@7.2.3)
+      webpack-cli: 7.2.3(js-yaml@4.3.2)(json5@2.2.3)(webpack-bundle-analyzer@5.4.0)(webpack-dev-server@5.2.6)(webpack@5.111.1)
+    transitivePeerDependencies:
+      - bufferutil
+      - debug
+      - supports-color
+      - utf-8-validate
+    optional: true
 
   webpack-dev-server@6.0.0(supports-color@11.0.0)(webpack-cli@7.2.3)(webpack@5.111.1):
     dependencies:
