@@ -1,7 +1,8 @@
+import { defaultEmojiMessages } from '../Plugins/emoji/emojiMessages'
 import { Dropdown, DropdownButton, DropdownMenu, DropdownMenuButton, SimpleDropdown } from '../Components/Dropdown'
 import Spotlight from '@proton/components/components/spotlight/Spotlight'
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor'
-import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { Fragment, lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 import { $isCodeNode } from '@lexical/code'
 import type { ListType } from '@lexical/list'
@@ -82,6 +83,8 @@ import { OverflowMenuItem } from './OverflowMenuItem'
 import { ToolbarItem } from './ToolbarItem'
 import { BlockTypeMenu } from './BlockTypeMenu'
 
+const EmojiPicker = lazy(() => import('../Plugins/emoji/EmojiPicker'))
+
 function SubscriptIcon() {
   return (
     <span aria-hidden="true" className="relative inline-block h-4 w-4 font-bold leading-none">
@@ -117,9 +120,11 @@ export default function DocumentEditorToolbar({
   onInteraction?: () => void
   isEditorHidden?: boolean
 }) {
-  const { reportError, isAlpha, suggestionsEnabled } = useDocsDependencies()
+  const { reportError, isAlpha, suggestionsEnabled, emojiPickerEnabled, emojiMessages } = useDocsDependencies()
   const [editor] = useLexicalComposerContext()
   const [activeEditor, setActiveEditor] = useState(editor)
+
+  const insertEmojiLabel = (emojiMessages ?? defaultEmojiMessages).insert
 
   const canShowSuggestionsButton = suggestionsEnabled
 
@@ -958,6 +963,35 @@ export default function DocumentEditorToolbar({
           onClick: insertTable,
           icon: <Icon data={Icons.table} viewBox="0 0 33 33" className="h-4 w-4 fill-current" />,
         },
+        ...(emojiPickerEnabled
+          ? [
+              {
+                id: 'emoji-picker',
+                type: 'dropdown' as const,
+                disabled: !isEditable,
+                label: (target: 'toolbar' | 'overflow') =>
+                  target === 'toolbar' ? <span aria-label={insertEmojiLabel}>☺</span> : insertEmojiLabel,
+                tooltip: insertEmojiLabel,
+                menu: (
+                  <Suspense fallback={null}>
+                    <EmojiPicker messages={emojiMessages} />
+                  </Suspense>
+                ),
+                dropdownProps: {
+                  autoClose: false,
+                  autoFocusOnHide: false,
+                  onClosed: () => {
+                    if (document.activeElement === document.body) {
+                      activeEditor.focus()
+                    }
+                  },
+                },
+                useToolbarButton: true,
+                hasCaret: false,
+                overflowBehavior: 'submenu' as const,
+              },
+            ]
+          : []),
         {
           id: 'comment-button',
           type: 'button',
