@@ -18,7 +18,7 @@ export const OtherLoggedInSessionPrompt = ({ onBack }: ForgotPasswordStepProps) 
     const { send } = ForgotPasswordContext.useActorRef();
     const username = ForgotPasswordContext.useSelector(selectUsername);
 
-    const { sendResetPasswordStepLoad } = useResetPasswordTelemetry({ variant: 'B' });
+    const { sendResetPasswordStepLoad } = useResetPasswordTelemetry();
     useEffect(() => {
         sendResetPasswordStepLoad({
             step: 'unauthenticatedRecoveryOtherSessionsPrompt',
