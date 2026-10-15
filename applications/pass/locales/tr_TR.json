@@ -1087,6 +1087,9 @@
       "Editing item failed": [
         "Öge düzenlenemedi"
       ],
+      "Email is not valid": [
+        "E-posta geçersiz"
+      ],
       "Empty CSV file": [
         "CSV dosyası boş"
       ],
@@ -1098,6 +1101,9 @@
       ],
       "Encrypted JSON not supported": [
         "Şifrelenmiş JSON desteklenmiyor"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Kullanıcı adınızı etki alanı (@example.com) olmadan yazın"
       ],
       "Error reporting problem": [
         "Sorun bildirilirken sorun çıktı"
@@ -1289,6 +1295,9 @@
       "Incorrect backup password. Please try again.": [
         "Yedek parola yanlış. Lütfen yeniden deneyin."
       ],
+      "Incorrect password. Please try again.": [
+        "Parola yanlış. Lütfen yeniden deneyin."
+      ],
       "Incorrect second password. Please try again.": [
         "İkinci parola yanlış. Lütfen yeniden deneyin."
       ],
@@ -1322,8 +1331,14 @@
       "Network error": [
         "Ağ sorunu"
       ],
+      "Not a valid number": [
+        "Numara geçerli değil"
+      ],
       "Passphrase is incorrect": [
         "Parola ifadesi doğru değil"
+      ],
+      "Passwords do not match": [
+        "Parola ile onayı aynı değil"
       ],
       "PIN codes do not match": [
         "PIN kodu ile onayı aynı değil"
@@ -1388,11 +1403,23 @@
       "The ${ PASS_APP_NAME } desktop app should be logged in.": [
         "${ PASS_APP_NAME } bilgisayar uygulamasında oturum açılmış olmalıdır."
       ],
+      "The email addresses do not match": [
+        "E-posta adresleri eşleşmiyor"
+      ],
       "The session has expired. Please sign in again.": [
         "Oturumun geçerlilik süresi dolmuş. Lütfen yeniden oturum açın."
       ],
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Güvenli bağlantı kaldırılırken bir hata oluştu. Lütfen birkaç dakika içinde tekrar deneyin."
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Bu alan için izin verilen en fazla ${ maximumLength } karakter uzunluğu aşıldı."
+      ],
+      "This field is required": [
+        "Bu alanın doldurulması zorunludur"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Bu alana en az ${ minimumLength } karakter yazılmalıdır."
       ],
       "This invite is no longer available": [
         "Bu davet artık kullanılamıyor"
@@ -1405,6 +1432,9 @@
       ],
       "Try reaching out to the link owner.": [
         "Bağlantının sahibiyle görüşmeyi deneyin."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Yalnızca harfleri, rakamları ve _.- karakterlerini kullanmayı deneyin"
       ],
       "Unable to generate an OTP code for this item": [
         "Bu öge için tek kullanımlık parola üretilemedi"
@@ -1439,6 +1469,12 @@
       "Updating vault \"${ payload.content.name }\" failed": [
         "\"${ payload.content.name }\" kasası güncellenemedi"
       ],
+      "Username must begin with a letter or digit": [
+        "Kullanıcı adı bir harf ya da rakam ile başlamalı"
+      ],
+      "Username must end with a letter or digit": [
+        "Kullanıcı adı bir harf ya da rakam ile bitmeli"
+      ],
       "Vault \"${ payload.content.name }\" creation failed": [
         "\"${ payload.content.name }\" kasası oluşturulamadı"
       ],
@@ -1462,6 +1498,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "PIN kodu yanlış. Yeniden deneyin."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Kurtarma ifadesi yanlış. Yeniden deneyin ya da başka bir kurtarma yöntemi kullanın."
       ],
       "Wrong second password": [
         "İkinci parola yanlış"
@@ -2922,6 +2961,9 @@
       "${ hours } hour": [
         "${ hours } saat",
         "${ hours } saat"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } karakter"
       ],
       "${ minutes } minute": [
         "${ minutes } dakika",
@@ -5280,8 +5322,16 @@
       "OTP secret or URI is invalid": [
         "Tek kullanımlık parola kodu ya da adresi geçersiz"
       ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Parola en az ${ MIN_PASSWORD_LENGTH } karakter uzunluğunda olmalıdır",
+        "Parola en az ${ MIN_PASSWORD_LENGTH } karakter uzunluğunda olmalıdır"
+      ],
       "Section name cannot be empty": [
         "Bölüm adı boş olamaz"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)",
+        "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)"
       ],
       "URL already exists": [
         "Adres zaten var"

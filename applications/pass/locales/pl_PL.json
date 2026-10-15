@@ -1059,6 +1059,9 @@
       "Editing item failed": [
         "Edytowanie elementu nie powiodło się"
       ],
+      "Email is not valid": [
+        "Adres e-mail nie jest prawidłowy"
+      ],
       "Empty CSV file": [
         "Plik CSV jest pusty"
       ],
@@ -1070,6 +1073,9 @@
       ],
       "Encrypted JSON not supported": [
         "Zaszyfrowany plik JSON nie jest obsługiwany"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Wpisz swoją nazwę użytkownika bez domeny (@example.com)"
       ],
       "Error reporting problem": [
         "Wystąpił błąd podczas zgłaszania problemu"
@@ -1251,6 +1257,9 @@
       "Incorrect backup password. Please try again.": [
         "Hasło zapasowe jest nieprawidłowe. Spróbuj ponownie."
       ],
+      "Incorrect password. Please try again.": [
+        "Hasło jest nieprawidłowe. Spróbuj ponownie."
+      ],
       "Incorrect second password. Please try again.": [
         "Drugie hasło jest nieprawidłowe. Spróbuj ponownie."
       ],
@@ -1284,8 +1293,14 @@
       "Network error": [
         "Błąd sieci"
       ],
+      "Not a valid number": [
+        "Numer telefonu nie jest prawidłowy"
+      ],
       "Passphrase is incorrect": [
         "Hasło jest nieprawidłowe"
+      ],
+      "Passwords do not match": [
+        "Hasła nie pasują do siebie"
       ],
       "PIN codes do not match": [
         "Kody PIN nie pasują do siebie"
@@ -1344,11 +1359,23 @@
       "The ${ PASS_APP_NAME } desktop app should be logged in.": [
         "Aplikacja stacjonarna ${ PASS_APP_NAME } powinna być zalogowana."
       ],
+      "The email addresses do not match": [
+        "Adresy e-mail nie pasują do siebie"
+      ],
       "The session has expired. Please sign in again.": [
         "Sesja wygasła. Zaloguj się ponownie."
       ],
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Wystąpił błąd podczas usuwania linku. Spróbuj ponownie za kilka minut."
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Pole przekracza maksymalną liczbą ${ maximumLength } znaków."
+      ],
+      "This field is required": [
+        "Pole jest wymagane"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Pole musi zawierać co najmniej ${ minimumLength } znaków."
       ],
       "Too many failed attempts. Please sign in again.": [
         "Zbyt wiele nieudanych prób. Zaloguj się ponownie."
@@ -1358,6 +1385,9 @@
       ],
       "Try reaching out to the link owner.": [
         "Skontaktuj się z właścicielem linku."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Użyj tylko liter, cyfr i znaków _.-"
       ],
       "Unable to generate an OTP code for this item": [
         "Nie można wygenerować kodu uwierzytelniającego dla tego elementu"
@@ -1389,6 +1419,12 @@
       "Updating vault \"${ payload.content.name }\" failed": [
         "Aktualizacja sejfu \"${ payload.content.name }\" nie powiodła się"
       ],
+      "Username must begin with a letter or digit": [
+        "Nazwa użytkownika musi zaczynać się literą lub cyfrą"
+      ],
+      "Username must end with a letter or digit": [
+        "Nazwa użytkownika musi kończyć się literą lub cyfrą"
+      ],
       "Vault \"${ payload.content.name }\" creation failed": [
         "Utworzenie sejfu \"${ payload.content.name }\" nie powiodło się"
       ],
@@ -1412,6 +1448,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Kod PIN jest nieprawidłowy. Spróbuj ponownie."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Hasło odzyskiwania jest nieprawidłowe. Spróbuj ponownie lub użyj innej metody odzyskiwania."
       ],
       "Wrong second password": [
         "Drugie hasło jest nieprawidłowe"
@@ -5212,8 +5251,20 @@
       "OTP secret or URI is invalid": [
         "Sekret TOTP lub adres URL jest wymagany"
       ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znak",
+        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znaki",
+        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znaków",
+        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znaków"
+      ],
       "Section name cannot be empty": [
         "Nazwa sekcji nie może być pusta"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znak)",
+        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znaki)",
+        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znaków)",
+        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znaków)"
       ],
       "URL already exists": [
         "Adres URL już istnieje"
