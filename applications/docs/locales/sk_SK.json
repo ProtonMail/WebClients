@@ -3000,14 +3000,8 @@
       "External invitations are temporarily disabled.": [
         "Externé pozvánky sú dočasne zablokované."
       ],
-      "External invitations are temporarily disabled. Please try again later": [
-        "Externé pozvánky sú dočasne deaktivované. Skúste to znova neskôr, prosím"
-      ],
       "Failed to change permissions settings": [
         "Zmena nastavení oprávnení zlyhala"
-      ],
-      "Failed to copy photo to album": [
-        "Nepodarilo sa skopírovať fotografiu do albumu"
       ],
       "Failed to create folder": [
         "Nepodarilo sa vytvoriť priečinok"
@@ -3533,6 +3527,9 @@
       ],
       "Wrong billing address": [
         "Nesprávna fakturačná adresa"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Zlá obnovovacia fráza. Skúste to znovu, alebo použite inú metódu obnovenia."
       ],
       "You can create public links for your own files only": [
         "Verejné odkazy môžete vytvárať iba na svoje vlastné súbory"
@@ -7682,14 +7679,8 @@
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" zdieľané"
       ],
-      "\"${ name }\" deleted": [
-        "\"${ name } bol vymazaný"
-      ],
       "\"${ name }\" deleted permanently from trash": [
         "„${ name }“ trvalo zmazané z koša"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "\"${ name }\" sa nepodarilo vymazať"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "„${ name }“ sa nepodarilo trvalo zmazať z koša"
@@ -7724,23 +7715,11 @@
         "${ count } položiek sa nepodarilo dešifrovať",
         "${ count } položiek sa nepodarilo dešifrovať"
       ],
-      "${ numberOfItems } item deleted": [
-        "${ numberOfItems } položka vymazaná",
-        "${ numberOfItems } položky vymazané",
-        "${ numberOfItems } položiek vymazaných",
-        "${ numberOfItems } položiek vymazaných"
-      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } položka natrvalo odstránená z koša",
         "${ numberOfItems } položky natrvalo odstránené z koša",
         "${ numberOfItems } položiek natrvalo odstránených z koša",
         "${ numberOfItems } položky natrvalo odstránených z koša"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems } položku sa nepodarilo vymazať",
-        "${ numberOfItems } položky sa nepodarilo vymazať",
-        "${ numberOfItems } položiek sa nepodarilo vymazať",
-        "${ numberOfItems } položiek sa nepodarilo vymazať"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems } položku sa nepodarilo natrvalo odstrániť z koša",

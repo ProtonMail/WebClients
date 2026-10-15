@@ -1076,6 +1076,9 @@
       "Editing item failed": [
         "ელემენტის ჩასწორების შეცდომა"
       ],
+      "Email is not valid": [
+        "ელფოსტა არასწორია"
+      ],
       "Empty CSV file": [
         "ცარიელი CSV ფაილი"
       ],
@@ -1087,6 +1090,9 @@
       ],
       "Encrypted JSON not supported": [
         "დაშიფრული JSON-ი მხარდაჭერილი არაა"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "შეიყვანეთ თქვენი მომხმარებლის სახელი დომენის (@example.com) გარეშე"
       ],
       "Error reporting problem": [
         "პრობლემის გადაგზავნის შეცდომა"
@@ -1265,6 +1271,9 @@
       "Incorrect backup password. Please try again.": [
         "არასწორი მარქაფი პაროლი. თავიდან სცადეთ."
       ],
+      "Incorrect password. Please try again.": [
+        "არასწორი პაროლი. თავიდან სცადეთ."
+      ],
       "Incorrect second password. Please try again.": [
         "არასწორი მეორე პაროლი. თავიდან სცადეთ."
       ],
@@ -1307,8 +1316,14 @@
       "Network error": [
         "ქსელის შეცდომა"
       ],
+      "Not a valid number": [
+        "არასწორი ნომერი"
+      ],
       "Passphrase is incorrect": [
         "საკვანძო ფრაზა არასწორია"
+      ],
+      "Passwords do not match": [
+        "პაროლები არ ემთხვევა"
       ],
       "Permission denied for ${ domainsJSX } website access.": [
         "${ domainsJSX } ვებგვერდთან წვდომა აკრძალულია."
@@ -1376,6 +1391,9 @@
       "The ${ PASS_APP_NAME } desktop app should be logged in.": [
         "${ PASS_APP_NAME } სამაგიდო აპში შესული უნდა იყოთ."
       ],
+      "The email addresses do not match": [
+        "ელფოსტის მისამართები არ ემთხვევა"
+      ],
       "The URL is in the list": [
         "ბმული უკვე სიაშია"
       ],
@@ -1385,6 +1403,15 @@
       "This domain is already managed by your organization": [
         "ეს დომენი უკვე იმართება თქვენი ორგანიზაციის მიერ"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "ველი ${ maximumLength } დაშვებულ სიმბოლოს აჭარბებს."
+      ],
+      "This field is required": [
+        "ეს ველი აუცილებელია"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "ეს ველი მოითხოვს, მინიმუმ, ${ minimumLength } სიმბოლოს."
+      ],
       "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
         "ეს, შეიძლება, ${ PASS_SHORT_APP_NAME }-ის დიდი ხნით არგამოყენებამ, ან Safari-ის ისტორიის გასუფთავებამ გამოიწვიოს."
       ],
@@ -1393,6 +1420,9 @@
       ],
       "Trashing item failed": [
         "ელემენტის ნაგვის ყუთში გადატანის შეცდომა"
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "სცადეთ გამოიყენოთ, მხოლოდ, ანბანის სიმბოლოები, ციფრები და _.-"
       ],
       "Unable to generate an OTP code for this item": [
         "ამ ელემენტისთვის OTP კოდის გენერაცია შეუძლებელია"
@@ -1427,6 +1457,12 @@
       "Updating vault \"${ payload.content.name }\" failed": [
         "საცავის \"${ payload.content.name }\" განახლების შეცდომა"
       ],
+      "Username must begin with a letter or digit": [
+        "მომხმარებლის სახელი ასოთი ან ციფრით უნდა იწყებოდეს"
+      ],
+      "Username must end with a letter or digit": [
+        "მომხმარებლის სახელი ასოთი ან ციფრით უნდა მთავრდებოდეს"
+      ],
       "Vault \"${ payload.content.name }\" creation failed": [
         "საცავის \"${ payload.content.name }\" შექმნის შეცდომა"
       ],
@@ -1450,6 +1486,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "PIN-კოდი არასწორია. თავიდან სცადეთ."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "სცადეთ ხელახლა ან გამოიყენეთ აღდგენის სხვა მეთოდი."
       ],
       "Wrong second password": [
         "არასწორი მეორე პაროლი"
@@ -2209,7 +2248,8 @@
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "ელემენტის გადატანა სხვა სეიფში წაშლის მის უსაფრთხო ბმულებს."
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
       ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
@@ -5265,8 +5305,16 @@
       "OTP secret or URI is invalid": [
         "OTP საიდუმლო ან URI არასწორია"
       ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "პაროლი ${ MIN_PASSWORD_LENGTH } სიმბოლოს მაინც უნდა შეიცავდეს",
+        "პაროლი ${ MIN_PASSWORD_LENGTH } სიმბოლოს მაინც უნდა შეიცავდეს"
+      ],
       "Section name cannot be empty": [
         "განყოფლების სახელი ცარიელი ვერ იქნება"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "სცადეთ უფრო მოკლე მომხმარებლის სახელი (მაქს ${ n } სიმბოლო)",
+        "სცადეთ უფრო მოკლე მომხმარებლის სახელი (მაქს ${ n } სიმბოლო)"
       ],
       "URL already exists": [
         "URL უკვე არსებობს"

@@ -2842,14 +2842,8 @@
       "External invitations are temporarily disabled.": [
         "Las invitaciones externas están desactivadas temporalmente."
       ],
-      "External invitations are temporarily disabled. Please try again later": [
-        "Las invitaciones externas están desactivadas temporalmente. Inténtalo más tarde."
-      ],
       "Failed to change permissions settings": [
         "Error al cambiar los ajustes de permisos"
-      ],
-      "Failed to copy photo to album": [
-        "Error al copiar la foto al álbum"
       ],
       "Failed to create folder": [
         "Error al crear la carpeta"
@@ -3197,6 +3191,9 @@
       ],
       "Wrong billing address": [
         "Dirección de facturación incorrecta"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Frase de recuperación incorrecta. Inténtalo de nuevo o utiliza otro método de recuperación."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "No puedes enviar un correo a más de ${ maxContacts } destinatario.",
@@ -6958,14 +6955,8 @@
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" compartido"
       ],
-      "\"${ name }\" deleted": [
-        "«${ name }» está eliminado."
-      ],
       "\"${ name }\" deleted permanently from trash": [
         "Se ha eliminado permanentemente \"${ name }\" de la papelera."
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "Error al eliminar «${ name }»"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "Error al eliminar \"${ name }\" permanentemente de la papelera"
@@ -6995,17 +6986,9 @@
         "Error al descifrar ${ count } elemento",
         "Error al descifrar ${ count } elementos"
       ],
-      "${ numberOfItems } item deleted": [
-        "${ numberOfItems } elemento eliminado",
-        "${ numberOfItems } elementos eliminados"
-      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } elemento eliminado permanentemente de la papelera",
         "${ numberOfItems } elementos eliminados permanentemente de la papelera"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "Error al eliminar ${ numberOfItems } elemento",
-        "Error al eliminar ${ numberOfItems } elementos"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "Error al eliminar ${ numberOfItems } elemento permanentemente de la papelera",

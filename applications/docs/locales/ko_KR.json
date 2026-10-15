@@ -2923,14 +2923,8 @@
       "External invitations are temporarily disabled.": [
         "외부 초대가 일시적으로 비활성화 되었습니다."
       ],
-      "External invitations are temporarily disabled. Please try again later": [
-        "외부 초대가 일시적으로 비활성화 되었습니다. 나중에 다시 시도하세요."
-      ],
       "Failed to change permissions settings": [
         "권한 설정을 변경할 수 없습니다."
-      ],
-      "Failed to copy photo to album": [
-        "사진을 앨범에 복사하지 못했습니다."
       ],
       "Failed to create folder": [
         "폴더 생성 실패"
@@ -3438,6 +3432,9 @@
       ],
       "Wrong billing address": [
         "청구 주소가 잘못되었습니다"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "잘못된 복구 키입니다. 다시 시도하거나 다른 복구 방법을 사용하세요."
       ],
       "You can create public links for your own files only": [
         "내가 소유한 파일만 공개 링크를 생성할 수 있습니다."
@@ -7311,14 +7308,8 @@
       "\"${ fileName }\" shared": [
         "\"${ fileName }\"이(가) 공유됨"
       ],
-      "\"${ name }\" deleted": [
-        "\"${ name }\" 삭제됨"
-      ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" 이(가) 휴지통에서 완전히 삭제되었습니다"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "\"${ name }\" 삭제 실패"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "\"${ name }\" 가 휴지통에서 삭제를 실패했습니다"
@@ -7350,14 +7341,8 @@
       "${ count } item failed to be decrypted": [
         "${ count }개 암호화 해독 실패"
       ],
-      "${ numberOfItems } item deleted": [
-        "${ numberOfItems }개 항목 삭제됨"
-      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems }개가 휴지통에서 영구적으로 삭제되었습니다"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems }개 항목 삭제 실패"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems }개를 휴지통에서 영구적으로 삭제하는 데 실패했습니다"

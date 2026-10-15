@@ -2148,6 +2148,109 @@
         "Spațiul de stocare este partajat între toate serviciile ${ BRAND_NAME }."
       ]
     },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Obțineți oferta"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/lună"
+      ],
+      "15 GB storage": [
+        "15 GiB de spațiu de stocare"
+      ],
+      "2 individual accounts": [
+        "Două conturi individuale"
+      ],
+      "2 TB of secure storage": [
+        "2 TiB de stocare securizată"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GiB de spațiu de stocare: de 40 de ori planul actual"
+      ],
+      "3 TB of secure storage": [
+        "3 TiB de stocare securizată"
+      ],
+      "500 GB of secure storage": [
+        "500 GiB de stocare securizată"
+      ],
+      "6 individual accounts": [
+        "6 conturi individuale"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autentificator A2F încorporat"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Reducerile se bazează pe prețurile lunare standard. Abonamentul se va reînnoi la tariful anual standard la sfârșitul ciclului de facturare."
+      ],
+      "Online document editor": [
+        "Editor de documente online"
+      ],
+      "Recover previous file versions": [
+        "Recuperați versiunile anterioare ale fișierelor"
+      ],
+      "Stronger protection against cyber threats": [
+        "Protecție mai puternică împotriva amenințărilor cibernetice"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Număr nelimitat de foldere, etichete și filtre"
+      ],
+      "Use your own email domain": [
+        "Utilizați propriul domeniu de e-mail"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } și ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } și ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } și ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Cea mai mare reducere a anului"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "pentru 12 luni"
+      ],
+      "Last chance to save big": [
+        "Ultima șansă de a economisi semnificativ"
+      ],
+      "Protect your entire tribe": [
+        "Protejați-vă întreaga familie"
+      ],
+      "Protection for two in a single plan": [
+        "Protecție pentru două persoane într-un singur plan"
+      ],
+      "Save big with a yearly plan": [
+        "Economisiți semnificativ cu un abonament anual"
+      ]
+    },
     "Billing cycle": {
       "Free renewal": [
         "Reînnoire gratuită"
@@ -2539,6 +2642,9 @@
       "The address ${ boldClaimedEmail } has been claimed and can no longer be used for this account. Your data was migrated to the address below and remains private.": [
         "Adresa ${ boldClaimedEmail } a fost revendicată și nu mai poate fi utilizată pentru acest cont. Datele v-au fost migrate la adresa de mai jos și rămân private."
       ],
+      "The address ${ boldClaimedEmail } has been claimed by another organization and can no longer be used for this account. Your data is safe and remains private.": [
+        "Adresa ${ boldClaimedEmail } a fost revendicată de o altă organizație și nu mai poate fi utilizată pentru acest cont. Datele vă sunt în siguranță și rămân private."
+      ],
       "Verify it's you": [
         "Confirmați-vă identitatea"
       ],
@@ -2548,8 +2654,14 @@
       "Your address": [
         "Adresa proprie"
       ],
+      "Your address has been claimed": [
+        "Adresa v-a fost revendicată."
+      ],
       "Your address has changed": [
         "Vi s-a modificat adresa"
+      ],
+      "Your administrator can give you a new address.": [
+        "Administratorul vă poate oferi o adresă nouă."
       ],
       "Your data was migrated to the address below and remains private.": [
         "Datele v-au fost migrate la adresa de mai jos și rămân private."
@@ -4583,6 +4695,9 @@
       "Add 1 more": [
         "Adăugare încă unul"
       ],
+      "Add contact": [
+        "Adăugare contact"
+      ],
       "Add emergency contact": [
         "Adăugați o persoană de contact în caz de urgență"
       ],
@@ -4746,6 +4861,9 @@
       ],
       "Recover data": [
         "Recuperare date"
+      ],
+      "Recover your data before adding a new contact.": [
+        "Recuperați-vă datele înainte de a adăuga un contact nou."
       ],
       "Recovery approved": [
         "Recuperare aprobată"
@@ -4926,6 +5044,9 @@
         "Veți primi acces la contul acestora peste **${ days } zi** sau când vă vor aproba solicitarea.",
         "Veți primi acces la contul acestora peste **${ days } zile** sau când vă vor aproba solicitarea.",
         "Veți primi acces la contul acestora peste **${ days } de zile** sau când vă vor aproba solicitarea."
+      ],
+      "Your data is still locked from a password reset. A contact added now won't be able to restore it.": [
+        "Datele vă sunt în continuare blocate în urma unei resetări a parolei. Un contact adăugat acum nu le va putea restaura."
       ],
       "Your recovery contact has helped you recover data.": [
         "Contactul de recuperare v-a ajutat să recuperați datele."
@@ -5204,6 +5325,9 @@
       ],
       "Incorrect password": [
         "Parolă incorectă"
+      ],
+      "Incorrect password. Please try again.": [
+        "Parolă incorectă. Reîncercați."
       ],
       "Incorrect recovery code. Please try again.": [
         "Cod de recuperare incorect. Reîncercați."
@@ -7638,6 +7762,9 @@
       ],
       "**This will disable 2-factor authentication.**": [
         "**Aceasta va dezactiva autentificarea cu doi factori.**"
+      ],
+      "**We're changing the ${ BRAND_NAME } sign-in page.** Your account and password stay the same.": [
+        "**Modificăm pagina de conectare ${ BRAND_NAME }.** Contul și parola vă rămân neschimbate."
       ],
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Primiți ${ referrerRewardAmount }** în credite pentru fiecare persoană care se abonează."
@@ -10410,6 +10537,9 @@
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Conturile de ${ VPN_APP_NAME } și ${ MAIL_APP_NAME } sunt conectate. Pentru a le șterge pe ambele, conectați-vă la ${ loginLink } și ștergeți contul de acolo."
       ],
+      "Your account and password stay the same.": [
+        "Contul și parola vă rămân neschimbate."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Acest cont are cel puțin o factură restantă. În curând accesul va fi restricționat. ${ payInvoiceLink }"
       ],
@@ -11147,9 +11277,6 @@
       ],
       "Font size": [
         "Mărime font"
-      ],
-      "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
-        "Pentru ${ DRIVE_SHORT_APP_NAME } și ${ DOCS_SHORT_APP_NAME }."
       ],
       "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
         "Pentru ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME } și ${ SHEETS_SHORT_APP_NAME }."
@@ -14668,6 +14795,9 @@
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Metoda de plată este necesară pentru activarea abonamentului după încheierea perioadei de evaluare."
       ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Schimbarea planului este incompatibilă din următoarele motive:"
+      ],
       "Please close extra wallet accounts before changing your plan.": [
         "Închideți conturile suplimentare de portofele înainte de a vă schimba planul."
       ],
@@ -14679,6 +14809,9 @@
       ],
       "Processing payment": [
         "Se procesează plata"
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Numărul de licențe Proton Meet trebuie să corespundă numărului de membri."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Prețul de reînnoire poate fi modificat în conformitate cu informațiile din ${ termsAndConditionsLink }."
@@ -14764,8 +14897,14 @@
       "This payment method will become your new default for all future renewals.": [
         "Această metodă de plată va deveni noua metodă implicită pentru toate reînnoirile viitoare."
       ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Acest plan nu acceptă funcțiile gestionate din contul deținut."
+      ],
       "This plan doesn’t support the members on your account.": [
         "Acest plan nu oferă suport pentru membrii din contul deținut."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Această abonare nu poate fi finalizată momentan. Reîncercați."
       ],
       "Timeout exceeded": [
         "Limită de timp depășită"
@@ -17090,9 +17229,6 @@
       "Backup password": [
         "Parola de rezervă"
       ],
-      "Because your organization moved you to single sign-on (SSO), **your old password is saved as your backup password**. You can use it to authorize SSO on a new device.": [
-        "Deoarece organizația v-a trecut la autentificarea unică (SSO), **vechea parolă este salvată ca parolă de rezervă**. O puteți folosi pentru a autoriza SSO pe un dispozitiv nou."
-      ],
       "Cancel": [
         "Anulare"
       ],
@@ -17142,9 +17278,6 @@
       "Do you want to remove all other devices than the current one?": [
         "Doriți să eliminați toate celelalte dispozitive în afară de cel actual?"
       ],
-      "Enter it to sign in. It is the same as your old password.": [
-        "Introduceți-o pentru a vă conecta. Este aceeași cu vechea parolă."
-      ],
       "Enter the confirmation code we sent on your other device.": [
         "Introduceți codul de confirmare primit pe celălalt dispozitiv."
       ],
@@ -17153,6 +17286,9 @@
       ],
       "Enter your backup password": [
         "Introduceți parola de rezervă"
+      ],
+      "Enter your password": [
+        "Introduceți parola"
       ],
       "For your security, you have been signed out of all your other active devices.": [
         "Pentru securitatea proprie, vi s-a deconectat contul de pe toate celelalte dispozitive active."
@@ -17277,6 +17413,9 @@
       "To make sure it's really you trying to sign-in, please enter your backup password.": [
         "Pentru a dovedi că dețineți contul, introduceți parola de rezervă."
       ],
+      "To make sure it's really you trying to sign-in, please enter your password.": [
+        "Pentru a dovedi că dețineți contul, introduceți parola."
+      ],
       "To make sure it's really you trying to sign-in, share the confirmation code with your administrator **${ adminEmail }** so that they can approve the request for **${ email }**.": [
         "Pentru a ne dovedi că dețineți contul la care încercați să vă conectați, trimiteți codul de confirmare administratorului cu adresa **${ adminEmail }**, astfel încât acesta să vă poată aproba cererea pentru adresa **${ email }**."
       ],
@@ -17300,6 +17439,9 @@
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "Pagina va fi redirecționată spre furnizorul autentificării unice (SSO)."
+      ],
+      "Your old password will become your **backup password**. You will be able to use it to authorize single sign-on (SSO) on new devices in the future.": [
+        "Vechea parolă va deveni **parola de rezervă**. O veți putea folosi pentru a autoriza autentificarea unică (SSO) pe dispozitive noi."
       ],
       "Your SSO configuration will be deleted.": [
         "Configurarea pentru autentificarea unică (SSO) va fi ștearsă."
@@ -20268,6 +20410,9 @@
       ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Conectări securizate pe toate dispozitivele deținute. Include aliasuri nelimitate, partajare, A2F integrată și multe altele."
+      ],
+      "Assigned by a group. Remove the user from the group to change this role": [
+        "Atribuit de un grup. Eliminați utilizatorul din grup pentru a modifica acest rol."
       ],
       "Disables end-to-end email encryption for this group": [
         "Dezactivează criptarea bilaterală a mesajelor pentru acest grup."

@@ -309,9 +309,6 @@
       "Create meeting": [
         "Vytvoriť schôdzu"
       ],
-      "Debug devices": [
-        "Ladiť zariadenia"
-      ],
       "Debug overlay": [
         "Ladiaca vrstva"
       ],
@@ -2187,6 +2184,9 @@
       "Incorrect backup password. Please try again.": [
         "Nesprávne záložné heslo. Skúste to znova, prosím."
       ],
+      "Incorrect password. Please try again.": [
+        "Nesprávne heslo. Skúste to prosím, znovu."
+      ],
       "Incorrect second password. Please try again.": [
         "Nesprávne druhé heslo. Skúste to znova, prosím."
       ],
@@ -2207,9 +2207,6 @@
       ],
       "Legacy public link cannot be updated. Please re-create a new public link.": [
         "Starý verejný odkaz nie je možné aktualizovať. Vytvorte nový verejný odkaz, prosím."
-      ],
-      "Live captions aren't working. Try turning them off and on again.": [
-        "Živé titulky nefungujú. Skúste ich vypnúť a znova zapnúť."
       ],
       "Live captions couldn't be started.": [
         "Živé titulky sa nepodarilo spustiť."
@@ -2432,6 +2429,9 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "Touto metódou sa nám nepodarilo odoslať overovací kód."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Zlá obnovovacia fráza. Skúste to znovu, alebo použite inú metódu obnovenia."
       ],
       "You can create public links for your own files only": [
         "Verejné odkazy môžete vytvárať iba na svoje vlastné súbory"
@@ -2801,9 +2801,6 @@
       ],
       "Camera permission denied": [
         "Povolenie kamery zamietnuté"
-      ],
-      "Captions are on": [
-        "Titulky sú zapnuté"
       ],
       "Changes are staged. Apply to rebuild the preview with the new constants.": [
         "Zmeny sú rozdelené do fáz. Použite príkaz na prekreslenie náhľadu s novými konštantami."

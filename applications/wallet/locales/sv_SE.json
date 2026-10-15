@@ -2373,6 +2373,9 @@
       "Incorrect backup password. Please try again.": [
         "Felaktigt reservlösenord. Försök igen."
       ],
+      "Incorrect password. Please try again.": [
+        "Felaktigt lösenord. Försök igen."
+      ],
       "Incorrect second password. Please try again.": [
         "Felaktigt andra lösenord. Försök igen."
       ],
@@ -2522,6 +2525,9 @@
       ],
       "Wrong billing address": [
         "Fel faktureringsadress"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Fel återställningsfras. Försök igen eller använd en annan återställningsmetod."
       ]
     },
     "Error message": {
@@ -4783,6 +4789,9 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (exkl. moms)"
       ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kan inte kombineras med ${ PLAN_NAMES[PLANS.PASS] }."
+      ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "${ rate } % moms: ${ taxAmountElement }"
       ],
@@ -4914,6 +4923,9 @@
       ],
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Du har redan en prenumeration på detta paket. Du kan ändra din prenumeration på ${ subscriptionPlatform }."
+      ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "Du äger redan ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du kommer snart att omdirigeras till PayPal för att verifiera din betalning."

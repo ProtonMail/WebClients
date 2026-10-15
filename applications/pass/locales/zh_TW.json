@@ -1044,6 +1044,9 @@
       "Editing item failed": [
         "修改項目失敗"
       ],
+      "Email is not valid": [
+        "電郵無效"
+      ],
       "Empty CSV file": [
         "空的 CSV 檔案"
       ],
@@ -1055,6 +1058,9 @@
       ],
       "Encrypted JSON not supported": [
         "不支援加密的JSON檔案"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "輸入不包含網域 (@example.com) 的使用者名稱"
       ],
       "Error reporting problem": [
         "回報錯誤問題"
@@ -1236,6 +1242,9 @@
       "Incorrect backup password. Please try again.": [
         "備份密碼錯誤。請重新再試。"
       ],
+      "Incorrect password. Please try again.": [
+        "密碼不正確。請再試一次。"
+      ],
       "Incorrect second password. Please try again.": [
         "第二密碼錯誤。請重新再試。"
       ],
@@ -1269,8 +1278,14 @@
       "Network error": [
         "網路連線錯誤"
       ],
+      "Not a valid number": [
+        "號碼無效"
+      ],
       "Passphrase is incorrect": [
         "密碼不正確"
+      ],
+      "Passwords do not match": [
+        "密碼不一致"
       ],
       "PIN codes do not match": [
         "PIN 碼不符"
@@ -1329,11 +1344,23 @@
       "The ${ PASS_APP_NAME } desktop app should be logged in.": [
         "應先登入 ${ PASS_APP_NAME } 電腦版應用程式。"
       ],
+      "The email addresses do not match": [
+        "電子郵件位址不相符"
+      ],
       "The session has expired. Please sign in again.": [
         "工作階段已逾期。請重新登入。"
       ],
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "移除安全連結時發生錯誤。請在幾分鐘後重試。"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "此欄位還剩下 ${ maximumLength } 個字元。"
+      ],
+      "This field is required": [
+        "此欄位必填"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "此欄位至少須有 ${ minimumLength } 個字元。"
       ],
       "Too many failed attempts. Please sign in again.": [
         "失敗次數過多。請重新再登入。"
@@ -1343,6 +1370,9 @@
       ],
       "Try reaching out to the link owner.": [
         "請嘗試與該連結的擁有者聯絡。"
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "嘗試僅使用字母、數字與 _.-"
       ],
       "Unable to generate an OTP code for this item": [
         "無法替此項目生成一次性代碼"
@@ -1374,6 +1404,12 @@
       "Updating vault \"${ payload.content.name }\" failed": [
         "更新保管庫${ payload.content.name }失敗"
       ],
+      "Username must begin with a letter or digit": [
+        "使用者名稱的開頭必須為字母或數字"
+      ],
+      "Username must end with a letter or digit": [
+        "使用者名稱的結尾必須為字母或數字"
+      ],
       "Vault \"${ payload.content.name }\" creation failed": [
         "保管庫${ payload.content.name }新增失敗"
       ],
@@ -1397,6 +1433,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "錯誤的個人識別數字代碼，請再嘗試。"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "錯誤的恢復短語。重試或使用其它復原方法。"
       ],
       "Wrong second password": [
         "第二密碼錯誤"
@@ -5041,8 +5080,14 @@
       "OTP secret or URI is invalid": [
         "一次性安全碼或網址錯誤"
       ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "密碼至少必須包含 ${ MIN_PASSWORD_LENGTH } 個字元"
+      ],
       "Section name cannot be empty": [
         "區段名稱不能為空"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "請輸入一個更短的使用者名稱 (${ n } characters max)"
       ],
       "URL already exists": [
         "網址已存在"

@@ -1097,6 +1097,9 @@
       "Editing item failed": [
         "Upravenie položky zlyhalo"
       ],
+      "Email is not valid": [
+        "Emailová adresa nie je platná"
+      ],
       "Empty CSV file": [
         "Prázdny CSV súbor"
       ],
@@ -1108,6 +1111,9 @@
       ],
       "Encrypted JSON not supported": [
         "Šifrovaný JSON nie je podporovaný"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Zadajte používateľské meno bez domény (@príklad.com)"
       ],
       "Error reporting problem": [
         "Chyba pri nahlasovaní problému"
@@ -1301,6 +1307,9 @@
       "Incorrect backup password. Please try again.": [
         "Nesprávne záložné heslo. Skúste to znova, prosím."
       ],
+      "Incorrect password. Please try again.": [
+        "Nesprávne heslo. Skúste to prosím, znovu."
+      ],
       "Incorrect second password. Please try again.": [
         "Nesprávne druhé heslo. Skúste to znova, prosím."
       ],
@@ -1334,8 +1343,14 @@
       "Network error": [
         "Chyba siete"
       ],
+      "Not a valid number": [
+        "Neplatné číslo"
+      ],
       "Passphrase is incorrect": [
         "Prístupová fráza je nesprávna"
+      ],
+      "Passwords do not match": [
+        "Heslá sa nezhodujú"
       ],
       "PIN codes do not match": [
         "PIN kódy sa nezhodujú"
@@ -1400,11 +1415,23 @@
       "The ${ PASS_APP_NAME } desktop app should be logged in.": [
         "V desktopovej aplikácii ${ PASS_APP_NAME } by ste mali byť prihlásení."
       ],
+      "The email addresses do not match": [
+        "Emailové adresy sa nezhodujú"
+      ],
       "The session has expired. Please sign in again.": [
         "Platnosť relácie vypršala. Prihláste sa znovu, prosím."
       ],
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Pri odstraňovaní bezpečného odkazu došlo k chybe. Skúste to o niekoľko minút znova, prosím."
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Toto pole presahuje maximálny počet znakov ${ maximumLength }."
+      ],
+      "This field is required": [
+        "Povinné pole"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Toto pole musí obsahovať minimálne ${ minimumLength } znakov."
       ],
       "This invite is no longer available": [
         "Táto pozvánka už nie je k dispozícii"
@@ -1417,6 +1444,9 @@
       ],
       "Try reaching out to the link owner.": [
         "Skúste kontaktovať vlastníka odkazu."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Skúste používať iba písmená, číslice a _.-"
       ],
       "Unable to generate an OTP code for this item": [
         "Pre túto položku nie je možné vygenerovať OTP kód"
@@ -1451,6 +1481,12 @@
       "Updating vault \"${ payload.content.name }\" failed": [
         "Aktualizácia trezoru \"${ payload.content.name }\" zlyhala"
       ],
+      "Username must begin with a letter or digit": [
+        "Používateľské meno musí začínať písmenom alebo číslom"
+      ],
+      "Username must end with a letter or digit": [
+        "Používateľské meno musí končiť písmenom alebo číslom"
+      ],
       "Vault \"${ payload.content.name }\" creation failed": [
         "Vytvorenie trezoru \"${ payload.content.name }\" zlyhalo"
       ],
@@ -1474,6 +1510,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Nesprávny PIN. Skúste to znova."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Zlá obnovovacia fráza. Skúste to znovu, alebo použite inú metódu obnovenia."
       ],
       "Wrong second password": [
         "Nesprávne druhé heslo"
@@ -3005,6 +3044,9 @@
         "${ hours } hodiny",
         "${ hours } hodín",
         "${ hours } hodín"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } znakov"
       ],
       "${ minutes } minute": [
         "${ minutes } minúta",
@@ -5397,8 +5439,20 @@
       "OTP secret or URI is invalid": [
         "Neplatný OTP tajný kľúč alebo URI"
       ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znak",
+        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znaky",
+        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znakov",
+        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znakov"
+      ],
       "Section name cannot be empty": [
         "Názov sekcie nemôže byť prázdny"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Skúste kratšie používateľské meno (max. ${ n } znak)",
+        "Skúste kratšie používateľské meno (max. ${ n } znaky)",
+        "Skúste kratšie používateľské meno (max. ${ n } znakov)",
+        "Skúste kratšie používateľské meno (max. ${ n } znakov)"
       ],
       "URL already exists": [
         "URL už existuje"

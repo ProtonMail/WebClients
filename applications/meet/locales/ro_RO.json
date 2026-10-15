@@ -306,9 +306,6 @@
       "Create meeting": [
         "Creare conferință"
       ],
-      "Debug devices": [
-        "Depanare dispozitive"
-      ],
       "Debug overlay": [
         "Panou de depanare"
       ],
@@ -441,6 +438,12 @@
       "Join": [
         "Alăturare"
       ],
+      "Join and leave sounds": [
+        "Sunete de conectare și deconectare"
+      ],
+      "Join in browser": [
+        "Alăturare în navigatorul web"
+      ],
       "Join meeting": [
         "Alăturare la întâlnire"
       ],
@@ -473,6 +476,9 @@
       ],
       "Lower hand": [
         "Mâna coborâtă"
+      ],
+      "Meeting debug": [
+        "Depanare conversație"
       ],
       "Meeting info": [
         "Informații conferință"
@@ -515,6 +521,9 @@
       ],
       "Open mention from ${ senderName } in chat": [
         "Deschidere mențiune de la ${ senderName } în conversație"
+      ],
+      "Open this meeting in the desktop app": [
+        "Deschideți această conferință în aplicația desktop"
       ],
       "Participants": [
         "Participanți"
@@ -709,6 +718,9 @@
       "Start meeting": [
         "Începere întâlnire"
       ],
+      "Start meeting in browser": [
+        "Pornire conferință în navigatorul web"
+      ],
       "Start new meeting": [
         "Începere conferință"
       ],
@@ -860,6 +872,9 @@
       ],
       "Incoming video": [
         "Video de intrare"
+      ],
+      "Join and leave sounds": [
+        "Sunete de conectare și deconectare"
       ],
       "Leave Meeting": [
         "Părăsire întâlnire"
@@ -1981,6 +1996,12 @@
       "Cannot verify who uploaded this file": [
         "Nu se poate verifica autorul care a încărcat acest fișier."
       ],
+      "Check your audio settings and try again": [
+        "Verificați setările audio și reîncercați."
+      ],
+      "Connection lost — captions will resume when reconnected": [
+        "Conexiune pierdută — subtitrările se vor relua după reconectare"
+      ],
       "Copy operation aborted": [
         "Operația de copiere a fost anulată."
       ],
@@ -2182,6 +2203,9 @@
       "Incorrect backup password. Please try again.": [
         "Parolă de rezervă incorectă. Reîncercați."
       ],
+      "Incorrect password. Please try again.": [
+        "Parolă incorectă. Reîncercați."
+      ],
       "Incorrect second password. Please try again.": [
         "Parolă secundară incorectă. Încercați din nou."
       ],
@@ -2203,9 +2227,6 @@
       "Legacy public link cannot be updated. Please re-create a new public link.": [
         "Legătura web publică veche nu poate fi actualizată. Creați o legătură web publică nouă."
       ],
-      "Live captions aren't working. Try turning them off and on again.": [
-        "Subtitrările live nu funcționează. Încercați să le dezactivați și să le reactivați."
-      ],
       "Live captions couldn't be started.": [
         "Subtitrările live nu au putut fi pornite."
       ],
@@ -2217,6 +2238,9 @@
       ],
       "Microphone access is blocked. Allow it in your browser settings.": [
         "Accesul la microfon este blocat. Permiteți-l în setările navigatorului web."
+      ],
+      "Microphone not detected": [
+        "Microfon nedetectat"
       ],
       "Missing inviter email": [
         "Lipsește adresa de e-mail a persoanei care a invitat."
@@ -2409,8 +2433,14 @@
       "Too many server requests, please try again later": [
         "Prea multe solicitări pentru server. Reîncercați mai târziu."
       ],
+      "Try turning live captions off and on again.": [
+        "Încercați să dezactivați și să reactivați subtitrările în timp real."
+      ],
       "Try using only letters, numerals, and _.-": [
         "Folosiți doar litere, cifre și _ . -"
+      ],
+      "Unable to generate captions": [
+        "Nu s-au putut genera subtitrări"
       ],
       "Unknown error": [
         "Eroare necunoscută"
@@ -2432,6 +2462,9 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "Nu s-a putut trimite un cod de verificare folosind această metodă."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Frază de recuperare greșită. Încercați din nou sau utilizați o altă metodă de recuperare."
       ],
       "You can create public links for your own files only": [
         "Puteți crea o legătură web publică doar pentru propriile fișiere."
@@ -2746,11 +2779,17 @@
       "Allow camera access to preview your background": [
         "Permiteți accesul camerei pentru examinarea fundalului"
       ],
+      "Already in the app? You can close this tab.": [
+        "Sunteți deja în aplicație? Puteți închide această filă."
+      ],
       "Anonymous ${ particle } ${ participantNumber }": [
         "Anonim ${ particle } ${ participantNumber }"
       ],
       "Anyone with the link can join immediately": [
         "Oricine are legătura web poate participa imediat"
+      ],
+      "App didn't open?": [
+        "Aplicația nu s-a deschis?"
       ],
       "Approve participants before they can join": [
         "Aprobare participanți înainte de participare"
@@ -2794,8 +2833,8 @@
       "Camera permission denied": [
         "Accesul la cameră a fost respins"
       ],
-      "Captions are on": [
-        "Subtitrările sunt activate"
+      "Captions on": [
+        "Subtitrări active"
       ],
       "Changes are staged. Apply to rebuild the preview with the new constants.": [
         "Modificările sunt implementate în etape. Aplicați pentru a reconstrui examinarea cu noile constante."
@@ -3015,6 +3054,9 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Calendarul se încarcă, așteptați. Pagina se va redirecționa către platforma noastră de planificări Calendly într-o filă nouă."
+      ],
+      "Loading captions…": [
+        "Se încarcă subtitrările…"
       ],
       "Loading meeting details...": [
         "Se încarcă detaliile conferinței..."
@@ -3463,6 +3505,9 @@
       "Virtual background initializing": [
         "Se inițializează fundalul virtual"
       ],
+      "Waiting for speech…": [
+        "Se așteaptă vorbirea…"
+      ],
       "Waiting for the host to admit you. The host has been notified that you're waiting.": [
         "Se așteaptă ca gazda să vă admită. Gazda a fost anunțată că așteptați."
       ],
@@ -3742,6 +3787,9 @@
       ],
       "Live caption agent": [
         "Agent subtitrări live"
+      ],
+      "Live captions": [
+        "Subtitrări live"
       ],
       "Manage recordings": [
         "Gestionare înregistrări"

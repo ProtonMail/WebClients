@@ -303,9 +303,6 @@
       "Create meeting": [
         "Görüşme oluştur"
       ],
-      "Debug devices": [
-        "Aygıt hatalarını ayıkla"
-      ],
       "Debug overlay": [
         "Hata ayıklama katmanı"
       ],
@@ -476,6 +473,9 @@
       ],
       "Lower hand": [
         "Eli indir"
+      ],
+      "Meeting debug": [
+        "Görüşme hata ayıklaması"
       ],
       "Meeting info": [
         "Görüşme bilgileri"
@@ -1991,6 +1991,12 @@
       "Cannot verify who uploaded this file": [
         "Bu dosyanın yükleyen kişi doğrulanamadı"
       ],
+      "Check your audio settings and try again": [
+        "Ses ayarlarınızı denetleyip yeniden deneyin"
+      ],
+      "Connection lost — captions will resume when reconnected": [
+        "Bağlantı kesildi. Bağlantı yeniden kurulduğunda alt yazılar sürdürülecek"
+      ],
       "Copy operation aborted": [
         "Kopyalama işlemi iptal edildi"
       ],
@@ -2192,6 +2198,9 @@
       "Incorrect backup password. Please try again.": [
         "Yedek parola yanlış. Lütfen yeniden deneyin."
       ],
+      "Incorrect password. Please try again.": [
+        "Parola yanlış. Lütfen yeniden deneyin."
+      ],
       "Incorrect second password. Please try again.": [
         "İkinci parola yanlış. Lütfen yeniden deneyin."
       ],
@@ -2213,9 +2222,6 @@
       "Legacy public link cannot be updated. Please re-create a new public link.": [
         "Eski herkese açık bağlantı güncellenemedi. Lütfen yeni bir herkese açık bağlantı oluşturun."
       ],
-      "Live captions aren't working. Try turning them off and on again.": [
-        "Canlı alt yazı çalışmıyor. Kapatıp yeniden açmayı deneyin."
-      ],
       "Live captions couldn't be started.": [
         "Canlı alt yazı başlatılamadı."
       ],
@@ -2227,6 +2233,9 @@
       ],
       "Microphone access is blocked. Allow it in your browser settings.": [
         "Mikrofona erişim engellendi. Tarayıcı ayarlarınızdan erişme izni verin."
+      ],
+      "Microphone not detected": [
+        "Mikrofon bulunamadı"
       ],
       "Missing inviter email": [
         "Davet edilenin e-posta adresi eksik"
@@ -2418,8 +2427,14 @@
       "Too many server requests, please try again later": [
         "Çok fazla sayıda sunucu isteği yapıldı. Lütfen bir süre sonra yeniden deneyin"
       ],
+      "Try turning live captions off and on again.": [
+        "Canlı alt yazıyı kapatıp yeniden açmayı deneyin."
+      ],
       "Try using only letters, numerals, and _.-": [
         "Yalnızca harfleri, rakamları ve _.- karakterlerini kullanmayı deneyin"
+      ],
+      "Unable to generate captions": [
+        "Alt yazı oluşturulamadı"
       ],
       "Unknown error": [
         "Bilinmeyen sorun"
@@ -2441,6 +2456,9 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "Doğrulama kodu bu yöntemle gönderilemedi."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Kurtarma ifadesi yanlış. Yeniden deneyin ya da başka bir kurtarma yöntemi kullanın."
       ],
       "You can create public links for your own files only": [
         "Yalnızca kendi dosyalarınız için herkese açık bağlantı oluşturabilirsiniz"
@@ -2798,7 +2816,7 @@
       "Camera permission denied": [
         "Kameraya erişme izni verilmedi"
       ],
-      "Captions are on": [
+      "Captions on": [
         "Alt yazı açık"
       ],
       "Changes are staged. Apply to rebuild the preview with the new constants.": [
@@ -3019,6 +3037,9 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Takvim yüklenirken lütfen bekleyin. Yeni bir sekmede zamanlama platformumuz Calendly açılacak."
+      ],
+      "Loading captions…": [
+        "Alt yazı yükleniyor…"
       ],
       "Loading meeting details...": [
         "Görüşme ayrıntıları yükleniyor..."
@@ -3467,6 +3488,9 @@
       "Virtual background initializing": [
         "Sanal arka plan hazırlanıyor"
       ],
+      "Waiting for speech…": [
+        "Konuşma bekleniyor…"
+      ],
       "Waiting for the host to admit you. The host has been notified that you're waiting.": [
         "Görüşme sahibinin sizi kabul etmesi bekleniyor. Görüşme sahibine beklediğiniz bildirildi."
       ],
@@ -3745,6 +3769,9 @@
       ],
       "Live caption agent": [
         "Canlı alt yazı aracısı"
+      ],
+      "Live captions": [
+        "Canlı alt yazı"
       ],
       "Manage recordings": [
         "Kayıt yönetimi"

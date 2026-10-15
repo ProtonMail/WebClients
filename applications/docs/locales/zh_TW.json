@@ -2860,14 +2860,8 @@
       "External invitations are temporarily disabled.": [
         "外部邀請函已暫時關閉。"
       ],
-      "External invitations are temporarily disabled. Please try again later": [
-        "外部邀請函暫時關閉。請稍後再試。"
-      ],
       "Failed to change permissions settings": [
         "變更權限設定失敗"
-      ],
-      "Failed to copy photo to album": [
-        "複製照片至相簿失敗"
       ],
       "Failed to create folder": [
         "建立資料夾失敗"
@@ -3309,6 +3303,9 @@
       ],
       "Wrong billing address": [
         "錯誤帳單地址"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "錯誤的恢復短語。重試或使用其它復原方法。"
       ],
       "You can update a public link for your own files only": [
         "您只能更新您的檔案公開連結"
@@ -7051,14 +7048,8 @@
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" 已共享"
       ],
-      "\"${ name }\" deleted": [
-        "\"${ name }\"已刪除"
-      ],
       "\"${ name }\" deleted permanently from trash": [
         "檔案 \"${ name }\" 已經從垃圾桶被永久刪除"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "\"${ name }\"創建失敗"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "檔案 \"${ name }\" 未能從垃圾桶中被永久刪除。"
@@ -7087,14 +7078,8 @@
       "${ count } item failed to be decrypted": [
         "${ count } 個項目解密失敗"
       ],
-      "${ numberOfItems } item deleted": [
-        "已刪除${ numberOfItems }項目"
-      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } 個項目已從垃圾桶被永久刪除"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems } 個項目刪除失敗"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems } 個項目未能從垃圾桶中被永久刪除"

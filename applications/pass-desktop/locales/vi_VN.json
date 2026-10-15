@@ -1097,6 +1097,9 @@
       "Editing item failed": [
         "Không chỉnh sửa được mục"
       ],
+      "Email is not valid": [
+        "Email không hợp lệ"
+      ],
       "Empty CSV file": [
         "File CSV trống"
       ],
@@ -1108,6 +1111,9 @@
       ],
       "Encrypted JSON not supported": [
         "Tệp JSON đã mã hóa không được hỗ trợ"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Nhập tên người dùng không bao gồm tên miền (@example.com)"
       ],
       "Error reporting problem": [
         "Lỗi khi báo cáo vấn đề"
@@ -1289,6 +1295,9 @@
       "Incorrect backup password. Please try again.": [
         "Mật khẩu sao lưu không chính xác. Vui lòng thử lại."
       ],
+      "Incorrect password. Please try again.": [
+        "Mật khẩu không đúng. Xin hãy thử lại."
+      ],
       "Incorrect second password. Please try again.": [
         "Mật khẩu thứ hai không chính xác. Hãy thử lại."
       ],
@@ -1322,8 +1331,14 @@
       "Network error": [
         "Lỗi mạng"
       ],
+      "Not a valid number": [
+        "Số không hợp lệ"
+      ],
       "Passphrase is incorrect": [
         "Cụm mật khẩu không chính xác"
+      ],
+      "Passwords do not match": [
+        "Mật khẩu không khớp"
       ],
       "PIN codes do not match": [
         "Mã PIN không khớp"
@@ -1382,11 +1397,23 @@
       "The ${ PASS_APP_NAME } desktop app should be logged in.": [
         "Ứng dụng máy tính ${ PASS_APP_NAME } cần phải được đăng nhập."
       ],
+      "The email addresses do not match": [
+        "Địa chỉ email không giống nhau"
+      ],
       "The session has expired. Please sign in again.": [
         "Phiên đã hết hạn. Vui lòng đăng nhập lại."
       ],
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Đã xảy ra lỗi khi xóa liên kết bảo mật. Vui lòng thử lại sau vài phút."
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Trường này vượt quá giới hạn ${ maximumLength } kí tự"
+      ],
+      "This field is required": [
+        "Trường này là bắt buộc"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Trường này yêu cầu tối thiểu ${ minimumLength } ký tự."
       ],
       "Too many failed attempts. Please sign in again.": [
         "Quá nhiều lần thử thất bại. Vui lòng đăng nhập lại."
@@ -1396,6 +1423,9 @@
       ],
       "Try reaching out to the link owner.": [
         "Hãy thử liên hệ với chủ sở hữu liên kết."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Hãy thử chỉ sử dụng chữ cái, số và _.-"
       ],
       "Unable to generate an OTP code for this item": [
         "Không thể tạo mã OTP cho mục này"
@@ -1427,6 +1457,12 @@
       "Updating vault \"${ payload.content.name }\" failed": [
         "Không cập nhật được kho ${ payload.content.name }"
       ],
+      "Username must begin with a letter or digit": [
+        "Tên người dùng phải bắt đầu bằng chữ hoặc số"
+      ],
+      "Username must end with a letter or digit": [
+        "Tên người dùng phải kết thúc bằng chữ hoặc số"
+      ],
       "Vault \"${ payload.content.name }\" creation failed": [
         "Không tạo được kho \"${ payload.content.name }\""
       ],
@@ -1450,6 +1486,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Sai mã PIN. Hãy thử lại."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Sai cụm từ khôi phục. Thử lại hoặc dùng phương thức khôi phục khác."
       ],
       "Wrong second password": [
         "Sai mật khẩu cấp hai"
@@ -2158,7 +2197,7 @@
         "Đang chuyển tất cả mục từ \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Việc chuyển các mục sang kho khác sẽ xóa các liên kết bảo mật của chúng."
+        "Việc chuyển một mục sang kho khác sẽ xóa các liên kết bảo mật của mục đó."
       ],
       "Moving items": [
         "Đang chuyển mục"
@@ -5232,8 +5271,14 @@
       "OTP secret or URI is invalid": [
         "Mã bí mật OTP hoặc URI không hợp lệ"
       ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Mật khẩu phải có ít nhất ${ MIN_PASSWORD_LENGTH } ký tự"
+      ],
       "Section name cannot be empty": [
         "Tên phần không được để trống"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Hãy thử đặt một tên người dùng ngắn hơn (tối đa${ n } ký tự)"
       ],
       "URL already exists": [
         "URL đã tồn tại"
