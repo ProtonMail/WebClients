@@ -21,7 +21,7 @@ export const VerifyEmailRecoveryCode = ({ onBack }: ForgotPasswordStepProps) => 
     const username = ForgotPasswordContext.useSelector(selectUsername);
     const redactedRecoveryEmail = ForgotPasswordContext.useSelector(selectRedactedRecoveryEmail);
     const awaitingCode = ForgotPasswordContext.useSelector(selectEmailAwaitingCode);
-    const { sendResetPasswordStepLoad } = useResetPasswordTelemetry({ variant: 'B' });
+    const { sendResetPasswordStepLoad } = useResetPasswordTelemetry();
 
     const RedactedEmail = <strong key="redacted-recovery-email">{redactedRecoveryEmail}</strong>;
 
