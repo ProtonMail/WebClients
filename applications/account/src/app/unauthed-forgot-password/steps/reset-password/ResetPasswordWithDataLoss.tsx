@@ -22,7 +22,7 @@ export const ResetPasswordWithDataLoss = ({ onBack }: ForgotPasswordStepProps) =
     const username = ForgotPasswordContext.useSelector(selectUsername);
     const resetResponse = ForgotPasswordContext.useSelector(selectResetResponse);
 
-    const { sendResetPasswordStepLoad } = useResetPasswordTelemetry({ variant: 'B' });
+    const { sendResetPasswordStepLoad } = useResetPasswordTelemetry();
     useEffect(() => {
         sendResetPasswordStepLoad({
             step: 'offerDataLossReset',

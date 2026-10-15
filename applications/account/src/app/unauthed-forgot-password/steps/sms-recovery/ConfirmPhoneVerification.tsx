@@ -26,7 +26,7 @@ export const ConfirmPhoneVerification = ({ onBack }: ForgotPasswordStepProps) =>
     const sendingCode = ForgotPasswordContext.useSelector(selectSubmitting);
     // While the code is sent, "Try another way" waits for it, as the machine does
     const skipWaits = ForgotPasswordContext.useSelector(selectBackWaits);
-    const { sendResetPasswordStepLoad } = useResetPasswordTelemetry({ variant: 'B' });
+    const { sendResetPasswordStepLoad } = useResetPasswordTelemetry();
 
     const RedactedPhoneNumber = <strong key="redacted-phone-number">{redactedRecoveryPhoneNumber}</strong>;
 
