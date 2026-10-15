@@ -98,7 +98,7 @@ export const ResetPasswordPage = ({
         const state: SignInLocationState | undefined = username ? { username } : undefined;
         history.push(loginUrl, state);
     };
-    const { sendResetPasswordPageLoad, sendResetPasswordPageExit } = useResetPasswordTelemetry({ variant: 'B' });
+    const { sendResetPasswordPageLoad, sendResetPasswordPageExit } = useResetPasswordTelemetry();
     const machine = useForgotPasswordMachine({
         onPreSubmit,
         onStartAuth,

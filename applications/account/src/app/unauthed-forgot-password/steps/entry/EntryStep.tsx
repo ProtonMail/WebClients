@@ -19,7 +19,7 @@ import { ForgotPasswordContext } from '../../wizard/ForgotPasswordContext';
 import type { ForgotPasswordStepProps } from '../../wizard/forgotPasswordStep';
 
 export const EntryStep = ({ onBack }: ForgotPasswordStepProps) => {
-    const { sendResetPasswordStepLoad } = useResetPasswordTelemetry({ variant: 'B' });
+    const { sendResetPasswordStepLoad } = useResetPasswordTelemetry();
     const { send } = ForgotPasswordContext.useActorRef();
     // The recovery methods are being requested, or a link that opened the page is being checked
     const loading = ForgotPasswordContext.useSelector(selectSubmitting);

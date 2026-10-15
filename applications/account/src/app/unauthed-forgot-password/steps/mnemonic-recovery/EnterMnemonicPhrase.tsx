@@ -38,7 +38,7 @@ export const EnterMnemonicPhrase = ({ onBack }: ForgotPasswordStepProps) => {
     const skipWaits = ForgotPasswordContext.useSelector(selectBackWaits);
     const hasInvalidMnemonic = mnemonic && mnemonicValidation.filter(isTruthy);
 
-    const { sendResetPasswordStepLoad } = useResetPasswordTelemetry({ variant: 'B' });
+    const { sendResetPasswordStepLoad } = useResetPasswordTelemetry();
     useEffect(() => {
         sendResetPasswordStepLoad({
             step: 'mnemonicRecoveryEnterPhrase',

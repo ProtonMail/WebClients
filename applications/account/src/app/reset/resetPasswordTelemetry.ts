@@ -9,14 +9,11 @@ interface EventProps {
     step: string;
     method: RecoveryMethod | undefined | 'device-recovery';
 }
-interface Props {
-    variant: 'A' | 'B';
-}
 
 /**
  * Hook to send reset password flow telemetry via the API.
  */
-export const useResetPasswordTelemetry = ({ variant }: Props) => {
+export const useResetPasswordTelemetry = () => {
     const api = useApi();
 
     const commonProps = {
@@ -25,15 +22,10 @@ export const useResetPasswordTelemetry = ({ variant }: Props) => {
         delay: false,
     };
 
-    const commonDimensions = {
-        variant,
-    };
-
     const sendResetPasswordPageLoad = useCallback(() => {
         void sendTelemetryReport({
             ...commonProps,
             dimensions: {
-                ...commonDimensions,
                 step: 'entry',
             },
             event: TelemetryResetPasswordEvents.page_load,
@@ -44,7 +36,6 @@ export const useResetPasswordTelemetry = ({ variant }: Props) => {
         void sendTelemetryReport({
             ...commonProps,
             dimensions: {
-                ...commonDimensions,
                 step: 'exit',
             },
             event: TelemetryResetPasswordEvents.page_exit,
@@ -57,7 +48,7 @@ export const useResetPasswordTelemetry = ({ variant }: Props) => {
             void sendTelemetryReport({
                 ...commonProps,
                 event: TelemetryResetPasswordEvents.step_load,
-                dimensions: { step, ...commonDimensions },
+                dimensions: { step },
             });
         },
         [api]
@@ -73,13 +64,11 @@ export const useResetPasswordTelemetry = ({ variant }: Props) => {
         }) => {
             void sendTelemetryReport({
                 ...commonProps,
-
                 event: TelemetryResetPasswordEvents.recovery_methods_requested,
                 dimensions: {
                     step: 'entry',
                     hasPasswordResetMethod: String(hasPasswordResetMethod),
                     hasDataRecoveryMethod: String(hasDataRecoveryMethod),
-                    ...commonDimensions,
                 },
             });
         },
@@ -94,9 +83,8 @@ export const useResetPasswordTelemetry = ({ variant }: Props) => {
 
             void sendTelemetryReport({
                 ...commonProps,
-
                 event: TelemetryResetPasswordEvents.code_sent,
-                dimensions: { method, step, ...commonDimensions },
+                dimensions: { method, step },
             });
         },
         [api]
@@ -111,7 +99,7 @@ export const useResetPasswordTelemetry = ({ variant }: Props) => {
             void sendTelemetryReport({
                 ...commonProps,
                 event: TelemetryResetPasswordEvents.method_validated,
-                dimensions: { method, step, ...commonDimensions },
+                dimensions: { method, step },
             });
         },
         [api]
@@ -126,7 +114,7 @@ export const useResetPasswordTelemetry = ({ variant }: Props) => {
             void sendTelemetryReport({
                 ...commonProps,
                 event: TelemetryResetPasswordEvents.success,
-                dimensions: { method, step, ...commonDimensions },
+                dimensions: { method, step },
             });
             void telemetryReportsBatchQueue.flush();
         },
@@ -142,7 +130,7 @@ export const useResetPasswordTelemetry = ({ variant }: Props) => {
             void sendTelemetryReport({
                 ...commonProps,
                 event: TelemetryResetPasswordEvents.failure,
-                dimensions: { step, method, ...commonDimensions },
+                dimensions: { step, method },
             });
             void telemetryReportsBatchQueue.flush();
         },

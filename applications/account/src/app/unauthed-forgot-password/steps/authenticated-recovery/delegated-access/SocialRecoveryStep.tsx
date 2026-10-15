@@ -30,7 +30,7 @@ export const SocialRecoveryStep = ({ onBack }: ForgotPasswordStepProps) => {
     const delegatedAccessContacts = ForgotPasswordContext.useSelector(selectDelegatedAccessContacts);
     const username = ForgotPasswordContext.useSelector(selectUsername);
 
-    const { sendResetPasswordStepLoad } = useResetPasswordTelemetry({ variant: 'B' });
+    const { sendResetPasswordStepLoad } = useResetPasswordTelemetry();
     useEffect(() => {
         sendResetPasswordStepLoad({
             step: 'authenticatedRecoverySocialRecoveryOffer',

@@ -21,7 +21,7 @@ export const AccountLost = ({ onBack }: ForgotPasswordStepProps) => {
     const resetResponse = ForgotPasswordContext.useSelector(selectResetResponse);
     const username = ForgotPasswordContext.useSelector(selectUsername);
 
-    const { sendResetPasswordStepLoad } = useResetPasswordTelemetry({ variant: 'B' });
+    const { sendResetPasswordStepLoad } = useResetPasswordTelemetry();
     useEffect(() => {
         sendResetPasswordStepLoad({
             step: 'recoveryFailed',

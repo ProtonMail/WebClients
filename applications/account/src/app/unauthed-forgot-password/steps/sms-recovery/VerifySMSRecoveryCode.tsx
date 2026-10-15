@@ -18,7 +18,7 @@ import type { ForgotPasswordStepProps } from '../../wizard/forgotPasswordStep';
 export const VerifySMSRecoveryCode = ({ onBack }: ForgotPasswordStepProps) => {
     const username = ForgotPasswordContext.useSelector(selectUsername);
     const redactedRecoveryPhoneNumber = ForgotPasswordContext.useSelector(selectRedactedRecoveryPhoneNumber);
-    const { sendResetPasswordStepLoad } = useResetPasswordTelemetry({ variant: 'B' });
+    const { sendResetPasswordStepLoad } = useResetPasswordTelemetry();
 
     const RedactedPhoneNumber = <strong key="redacted-phone-number">{redactedRecoveryPhoneNumber}</strong>;
 
