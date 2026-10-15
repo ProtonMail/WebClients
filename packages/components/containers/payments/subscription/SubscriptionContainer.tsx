@@ -1184,15 +1184,15 @@ const SubscriptionContainerInner = ({
                     mode={modeType}
                     hasFreePlan={showFreePlan}
                     subscription={subscription}
-                    onChangePlanIDs={(planIDs, cycle, currency) =>
-                        check({
+                    onChangePlanIDs={(planIDs, cycle, currency) => {
+                        return check({
                             ...model,
                             planIDs,
                             cycle,
                             currency,
                             step: SUBSCRIPTION_STEPS.CHECKOUT,
-                        })
-                    }
+                        });
+                    }}
                     onChangeCycle={handleChangeCycle}
                     onChangeCurrency={handleChangeCurrency}
                     onChangeAudience={setAudience}
