@@ -151,7 +151,6 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
 
     const meetingLinkName = useMeetSelector(selectMeetingLinkName);
     const meetingPassword = useMeetSelector(selectMeetingPassword);
-    const meetingName = useMeetSelector(selectMeetingName);
 
     const isGuestAdmin = useMeetSelector(selectIsGuestAdmin);
 
@@ -330,7 +329,7 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
         }
 
         dispatch(setPreviousMeetingLink(meetingLinkRef.current));
-        dispatch(setPreviousMeetingName(meetingName));
+        dispatch(setPreviousMeetingName(selectMeetingName(store.getState())));
 
         if (isGuest) {
             dispatch(setUpsellModalType(UpsellModalTypes.GuestAccount));
