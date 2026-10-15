@@ -1,4 +1,4 @@
 // Re-export breakpoints before main lib import to ensure consistent behavior.
 // This prevents breakpoint-related media queries from being sensitive to import order.
-@forward '~@proton/styles/scss/pass/pass-breakpoints';
-@forward '~@proton/styles/scss/lib';
+@forward './pass-breakpoints';
+@forward '../lib';

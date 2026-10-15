@@ -36,7 +36,7 @@
                 "stylelint-config-standard-scss",
                 "stylelint-use-logical-spec",
                 "@typescript/native",
-                "^(@proton|@proton-pass-desktop)/|^@types/global-types-monorepo$|^proton-|^(andromeda-wasm|eslint-plugin-custom-rules|pdf-ui)$"
+                "^@proton/(account|activation|calendar|components|docs-core|mail-renderer|nav|payments|payments-ui|redux-shared-store|shared|types)$|^@types/global-types-monorepo$"
             ]
         },
         "applications/account": {
@@ -71,7 +71,8 @@
         },
         "applications/docs": {
             "entry": ["src/app/index.{ts,tsx}", "webpack.config.{js,ts}", "src/app/routes/**/*.{ts,tsx}"],
-            "project": ["src/**/*.{ts,tsx,scss,sass,css}"]
+            "project": ["src/**/*.{ts,tsx,scss,sass,css}"],
+            "ignoreDependencies": ["@proton/raw-images"]
         },
         "applications/docs-editor": {
             "entry": [
@@ -83,7 +84,11 @@
                 "src/app/Shared/Fonts.ts"
             ],
             "project": ["src/**/*.{ts,tsx,scss,sass,css}"],
-            "ignoreDependencies": ["@babel/preset-typescript", "babel-plugin-transform-require-context"]
+            "ignoreDependencies": [
+                "@babel/preset-typescript",
+                "babel-plugin-transform-require-context",
+                "@proton/metrics"
+            ]
         },
         "applications/drive": {
             "entry": ["src/app/index.{ts,tsx}", "src/app/urls.tsx", "webpack.config.{js,ts}"],
@@ -122,7 +127,8 @@
                 "src/app/workers/search/searchWorker.ts",
                 "webpack.config.{js,ts}"
             ],
-            "project": ["src/**/*.{ts,tsx,scss,sass}"]
+            "project": ["src/**/*.{ts,tsx,scss,sass}"],
+            "ignoreDependencies": ["@proton/pass"]
         },
         "applications/mail": {
             "entry": ["src/app/index.{ts,tsx}", "src/app/eo.tsx", "webpack.config.{js,ts}"],
@@ -264,7 +270,8 @@
         },
         "packages/atoms": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"]
+            "project": ["**/*.{ts,tsx}"],
+            "ignoreDependencies": ["@proton/styles"]
         },
         "packages/calendar": {
             "entry": [],
@@ -305,7 +312,7 @@
         "packages/docs-core": {
             "entry": [],
             "project": ["**/*.{ts,tsx}"],
-            "ignoreDependencies": ["@babel/plugin-transform-class-properties"]
+            "ignoreDependencies": ["@babel/plugin-transform-class-properties", "@proton/raw-images"]
         },
         "packages/docs-proto": {
             "entry": [],
@@ -403,7 +410,8 @@
         },
         "packages/offers-delivery": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"]
+            "project": ["**/*.{ts,tsx}"],
+            "ignoreDependencies": ["@proton/styles"]
         },
         "packages/pack": {
             "entry": [
@@ -439,12 +447,14 @@
         },
         "packages/payments": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"]
+            "project": ["**/*.{ts,tsx}"],
+            "ignoreDependencies": ["@proton/metrics"]
         },
         "packages/payments-ui": {
             "entry": [],
             "project": ["**/*.{ts,tsx}"],
-            "ignore": ["./examples/utils.ts"]
+            "ignore": ["./examples/utils.ts"],
+            "ignoreDependencies": ["@proton/features", "@proton/metrics"]
         },
         "packages/polyfill": {
             "entry": [],
@@ -576,6 +586,9 @@
         "vendor/rowsncolumns/common-types": {
             "entry": [],
             "project": []
+        },
+        "packages/charts": {
+            "ignoreDependencies": ["@proton/styles"]
         }
     }
 }

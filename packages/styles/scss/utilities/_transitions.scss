@@ -1,4 +1,4 @@
-@use '~@proton/styles/scss/lib/easing' as *;
+@use '../lib/easing' as *;
 
 :root {
 	--transition-duration: 0.15s;

@@ -33,6 +33,7 @@
         "react": "^18.3.1"
     },
     "devDependencies": {
+        "@proton/eslint-config-proton": "workspace:^",
         "@types/mustache": "^4.2.6",
         "@types/react": "catalog:",
         "eslint": "^10.11.0",
