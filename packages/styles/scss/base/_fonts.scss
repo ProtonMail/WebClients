@@ -1,9 +1,11 @@
+// Sass does not rewrite url(), so css-loader resolves font paths from the app that compiles this
+// file. Apps declare @proton/styles but not inter-ui, hence the path through this package.
 @use '~inter-ui/default' with (
-	$inter-font-path: '~inter-ui/web'
+	$inter-font-path: '~@proton/styles/node_modules/inter-ui/web'
 );
 
 @use '~inter-ui/variable' with (
-	$inter-font-path: '~inter-ui/variable'
+	$inter-font-path: '~@proton/styles/node_modules/inter-ui/variable'
 );
 
 /*

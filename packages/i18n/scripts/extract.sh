@@ -47,12 +47,14 @@ function main {
   node "$(dirname "$0")/extract-sourcemaps.mjs" './dist' 'i18n-js';
 
   # Extract on top of the extracted code from the bundle
-  # Use direct relative path instead of npx or dlx since it doesn't resolve to the installed dependencies
+  # Use this package's own binary instead of npx or dlx since they don't resolve to the installed dependencies
+  local ttagBin;
+  ttagBin="$(cd "$(dirname "$0")/.." && pwd)/node_modules/.bin/ttag";
   (
     cd i18n-js;
     echo "Running ttag extract"
     # Output from ttag extract is full of babel errors, silence it
-    ../../../node_modules/.bin/ttag extract $(getFileList) -o "../${1}" 2>&1;
+    "$ttagBin" extract $(getFileList) -o "../${1}" 2>&1;
     echo "done"
   )
 

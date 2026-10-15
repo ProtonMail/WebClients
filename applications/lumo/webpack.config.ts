@@ -69,15 +69,14 @@ const result = (opts: WebpackEnvArguments): Configuration => {
         );
     }
 
-    // jspdf dynamically imports dompurify from its optional dependency path; the hoisted
-    // node_modules layout puts dompurify at the workspace root, so webpack must alias it
-    // explicitly.
+    // jspdf dynamically imports dompurify, an optional dependency of its own; alias it to the
+    // version lumo declares.
     config.resolve = config.resolve ?? {};
     config.resolve.alias = {
         ...(typeof config.resolve.alias === 'object' && !Array.isArray(config.resolve.alias)
             ? config.resolve.alias
             : {}),
-        dompurify: path.resolve(__dirname, '../../node_modules/dompurify'),
+        dompurify: path.resolve(__dirname, 'node_modules/dompurify'),
     };
 
     // pptxgenjs marks Node built-ins as false in its `browser` field using `node:fs` / `node:https`

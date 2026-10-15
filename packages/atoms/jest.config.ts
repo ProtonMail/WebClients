@@ -1,6 +1,5 @@
 export default {
     setupFilesAfterEnv: ['./jest.setup.ts'],
-    moduleDirectories: ['<rootDir>/node_modules', 'node_modules'],
     testEnvironment: '@proton/jest-env',
     transformIgnorePatterns: [
         'node_modules/(?!(\\.pnpm|@proton/shared|@protontech/telemetry|@protontech/logger|mutex-browser|@protontech/crypto|bip39|@preact/signals-core)/)',

@@ -23,7 +23,6 @@ const transform: Config['transform'] = {
 
 const jestConfig: Config = {
     setupFilesAfterEnv: ['./jest.setup.js'],
-    moduleDirectories: ['<rootDir>/node_modules', 'node_modules'],
     testEnvironment: '@proton/jest-env',
     preset: '@proton/jest-swc-preset',
     transform,
