@@ -15,8 +15,8 @@ import { SketchOverlay } from '../../features/drawingcanvas';
 import { useChatLimitGate } from '../../hooks/useChatLimitGate';
 import useComposerInput from '../../hooks/useComposerInput';
 import { useConversationAgent } from '../../hooks/useConversationAgent';
-import type { DriveSDKMethods } from '../../hooks/useDriveSDK';
 import { useDictationLanguage } from '../../hooks/useDictationLanguage';
+import type { DriveSDKMethods } from '../../hooks/useDriveSDK';
 import { useDriveSDK } from '../../hooks/useDriveSDK';
 import type { HandleSendMessage } from '../../hooks/useLumoActions';
 import { useDragArea } from '../../providers/DragAreaProvider';
@@ -99,7 +99,6 @@ export type ComposerComponentProps = {
     optionalElementBelowComposer?: React.ReactNode;
     /** Minimal agent surface: hides image creation, sketch and Drive upload from the composer. */
     isAgent?: boolean;
-    canDisplayArtifactSpotlight?: boolean;
 };
 
 /**
@@ -130,7 +129,6 @@ const ComposerComponentInner = ({
     canShowGuestNotificationCard = false,
     optionalElementBelowComposer,
     isAgent = false,
-    canDisplayArtifactSpotlight = false,
     driveContext,
 }: ComposerComponentInnerProps) => {
     const { registerFileDropHandler } = useDragArea();
@@ -344,8 +342,7 @@ const ComposerComponentInner = ({
         language: dictationLanguage,
     });
 
-    const [dictationLanguageModalProps, setDictationLanguageModalOpen, renderDictationLanguageModal] =
-        useModalState();
+    const [dictationLanguageModalProps, setDictationLanguageModalOpen, renderDictationLanguageModal] = useModalState();
 
     const handleStartDictation = useCallback(() => {
         // First use: ask for a language before starting; the choice is applied when confirmed.
@@ -579,7 +576,6 @@ const ComposerComponentInner = ({
                                     onCancelDictation={handleCancelDictation}
                                     onAcceptDictation={handleAcceptDictation}
                                     getDictationAudioLevel={getAudioLevel}
-                                    canDisplayArtifactSpotlight={canDisplayArtifactSpotlight}
                                 />
                             </div>
                         </div>
