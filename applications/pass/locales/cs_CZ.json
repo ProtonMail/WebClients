@@ -1059,6 +1059,9 @@
       "Editing item failed": [
         "Úprava položky se nezdařila"
       ],
+      "Email is not valid": [
+        "E-mailová adresa není platná"
+      ],
       "Empty CSV file": [
         "Prázdný soubor CSV"
       ],
@@ -1070,6 +1073,9 @@
       ],
       "Encrypted JSON not supported": [
         "Šifrovaný JSON není podporován"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Zadejte své uživatelské jméno bez domény (@example.com)"
       ],
       "Error reporting problem": [
         "Chyba při hlášení problému"
@@ -1251,6 +1257,9 @@
       "Incorrect backup password. Please try again.": [
         "Nesprávné záložní heslo. Zkuste to prosím znovu."
       ],
+      "Incorrect password. Please try again.": [
+        "Nesprávné heslo. Zkuste to znovu."
+      ],
       "Incorrect second password. Please try again.": [
         "Nesprávné druhé heslo. Zkuste to prosím znovu."
       ],
@@ -1284,8 +1293,14 @@
       "Network error": [
         "Chyba sítě"
       ],
+      "Not a valid number": [
+        "Neplatné číslo"
+      ],
       "Passphrase is incorrect": [
         "Heslo je nesprávné"
+      ],
+      "Passwords do not match": [
+        "Hesla se neshodují"
       ],
       "PIN codes do not match": [
         "PIN kódy se neshodují"
@@ -1344,11 +1359,23 @@
       "The ${ PASS_APP_NAME } desktop app should be logged in.": [
         "V desktopové aplikaci ${ PASS_APP_NAME } byste měli být přihlášeni."
       ],
+      "The email addresses do not match": [
+        "E-mailové adresy se neshodují"
+      ],
       "The session has expired. Please sign in again.": [
         "Platnost relace vypršela. Znovu se přihlaste."
       ],
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Došlo k chybě při odebírání bezpečného odkazu. Zkuste to prosím znovu za několik minut."
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Toto pole přesahuje maximální délku ${ maximumLength } znaků."
+      ],
+      "This field is required": [
+        "Toto pole je povinné"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Toto pole musí obsahovat minimálně ${ minimumLength } znaků."
       ],
       "Too many failed attempts. Please sign in again.": [
         "Příliš mnoho neúspěšných pokusů. Přihlaste se znovu."
@@ -1358,6 +1385,9 @@
       ],
       "Try reaching out to the link owner.": [
         "Zkuste kontaktovat vlastníka odkazu."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Zkuste používat pouze písmena, číslice a _.-"
       ],
       "Unable to generate an OTP code for this item": [
         "Nelze vygenerovat OTP kód pro tuto položku"
@@ -1389,6 +1419,12 @@
       "Updating vault \"${ payload.content.name }\" failed": [
         "Aktualizace trezoru \"${ payload.content.name }\" selhala"
       ],
+      "Username must begin with a letter or digit": [
+        "Uživatelské jméno musí začínat písmenem nebo číslicí"
+      ],
+      "Username must end with a letter or digit": [
+        "Uživatelské jméno musí končit písmenem nebo číslicí"
+      ],
       "Vault \"${ payload.content.name }\" creation failed": [
         "Vytvoření trezoru \"${ payload.content.name }\" selhalo"
       ],
@@ -1412,6 +1448,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Chybný PIN kód. Zkuste to znovu."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Špatná obnovovací fráze. Zkuste znovu použít další obnovovací metodu."
       ],
       "Wrong second password": [
         "Druhé heslo je chybné"
@@ -5212,8 +5251,20 @@
       "OTP secret or URI is invalid": [
         "OTP secret nebo URI jsou neplatné"
       ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znak",
+        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znaky",
+        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znaků",
+        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znaků"
+      ],
       "Section name cannot be empty": [
         "Název sekce nemůže být prázdný"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znak)",
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaky)",
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaků)",
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaků)"
       ],
       "URL already exists": [
         "URL adresa již existuje"

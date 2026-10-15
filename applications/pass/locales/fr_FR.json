@@ -1084,6 +1084,9 @@
       "Editing item failed": [
         "La modification de l'élément n'a pas abouti."
       ],
+      "Email is not valid": [
+        "L'adresse e-mail n'est pas valide."
+      ],
       "Empty CSV file": [
         "Le fichier CSV est vide."
       ],
@@ -1095,6 +1098,9 @@
       ],
       "Encrypted JSON not supported": [
         "Le JSON chiffré n'est pas pris en charge."
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Saisissez votre nom d'utilisateur sans le domaine (@example.com)"
       ],
       "Error reporting problem": [
         "Une erreur s'est produite pendant le signalement du bug."
@@ -1286,6 +1292,9 @@
       "Incorrect backup password. Please try again.": [
         "Le mot de passe de secours n'est pas correct. Veuillez réessayer."
       ],
+      "Incorrect password. Please try again.": [
+        "Le mot de passe n'est pas correct. Réessayez."
+      ],
       "Incorrect second password. Please try again.": [
         "Le second mot de passe n'est pas correct. Veuillez réessayer."
       ],
@@ -1319,8 +1328,14 @@
       "Network error": [
         "Erreur de réseau "
       ],
+      "Not a valid number": [
+        "Le numéro n'est pas valide."
+      ],
       "Passphrase is incorrect": [
         "La phrase secrète n'est pas correcte."
+      ],
+      "Passwords do not match": [
+        "Les mots de passe ne correspondent pas."
       ],
       "PIN codes do not match": [
         "Les codes PIN ne correspondent pas."
@@ -1385,11 +1400,23 @@
       "The ${ PASS_APP_NAME } desktop app should be logged in.": [
         "L'application de bureau ${ PASS_APP_NAME } devrait être connectée."
       ],
+      "The email addresses do not match": [
+        "Les adresses e-mail ne correspondent pas."
+      ],
       "The session has expired. Please sign in again.": [
         "La session a expiré. Nous vous invitons à vous reconnecter."
       ],
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Une erreur s'est produite lors du retrait du lien sécurisé. Nous vous invitons à réessayer dans quelques minutes."
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Ce champ dépasse le maximum de ${ maximumLength } caractères."
+      ],
+      "This field is required": [
+        "Ce champ est nécessaire."
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Ce champ nécessite un minimum de ${ minimumLength } caractères."
       ],
       "This invite is no longer available": [
         "Cette invitation n'est plus disponible"
@@ -1402,6 +1429,9 @@
       ],
       "Try reaching out to the link owner.": [
         "Essayez de contacter le propriétaire du lien."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Essayez d'utiliser uniquement des lettres, des chiffres et ces signes : _ . -"
       ],
       "Unable to generate an OTP code for this item": [
         "Impossible de générer un mot de passe à usage unique (code OTP) pour cet élément."
@@ -1436,6 +1466,12 @@
       "Updating vault \"${ payload.content.name }\" failed": [
         "La mise à jour du coffre-fort « ${ payload.content.name } » n'a pas abouti."
       ],
+      "Username must begin with a letter or digit": [
+        "Le nom d'utilisateur doit commencer par une lettre ou un chiffre."
+      ],
+      "Username must end with a letter or digit": [
+        "Le nom d'utilisateur doit se terminer par une lettre ou un chiffre."
+      ],
       "Vault \"${ payload.content.name }\" creation failed": [
         "La création du coffre-fort « ${ payload.content.name } » n'a pas abouti."
       ],
@@ -1459,6 +1495,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Le code PIN n'est pas correct. Veuillez réessayer."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "La phrase de récupération n'est pas correcte. Réessayez ou utilisez une autre méthode de récupération."
       ],
       "Wrong second password": [
         "Le second mot de passe du compte n'est pas correct."
@@ -2919,6 +2958,9 @@
       "${ hours } hour": [
         "${ hours } heure",
         "${ hours } heures"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } caractères"
       ],
       "${ minutes } minute": [
         "${ minutes } minute",
@@ -5277,8 +5319,16 @@
       "OTP secret or URI is invalid": [
         "La clé secrète du mot de passe à usage unique (OTP) ou l'URI (Uniform Resource Identifier) n'est pas valide."
       ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Le mot de passe doit comporter au moins ${ MIN_PASSWORD_LENGTH } caractère.",
+        "Le mot de passe doit comporter au moins ${ MIN_PASSWORD_LENGTH } caractères."
+      ],
       "Section name cannot be empty": [
         "Le nom de la section ne peut pas être vide."
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Essayez d'utiliser un nom d'utilisateur plus court (${ n } caractère maximum).",
+        "Essayez d'utiliser un nom d'utilisateur plus court (${ n } caractères maximum)."
       ],
       "URL already exists": [
         "L'URL existe déjà."

@@ -1087,6 +1087,9 @@
       "Editing item failed": [
         "Η επεξεργασία του στοιχείου απέτυχε"
       ],
+      "Email is not valid": [
+        "Η διεύθυνση email δεν είναι έγκυρη"
+      ],
       "Empty CSV file": [
         "Άδειο αρχείο CSV"
       ],
@@ -1098,6 +1101,9 @@
       ],
       "Encrypted JSON not supported": [
         "Το κρυπτογραφημένο JSON δεν υποστηρίζεται"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Εισάγετε το όνομα χρήστη σας χωρίς τον τομέα (@example.com)"
       ],
       "Error reporting problem": [
         "Πρόβλημα αναφοράς σφαλμάτων"
@@ -1289,6 +1295,9 @@
       "Incorrect backup password. Please try again.": [
         "Εσφαλμένος εφεδρικός κωδικός πρόσβασης. Παρακαλούμε προσπαθήστε ξανά."
       ],
+      "Incorrect password. Please try again.": [
+        "Λανθασμένος κωδικός. Παρακαλούμε δοκιμάστε ξανά."
+      ],
       "Incorrect second password. Please try again.": [
         "Λανθασμένος δεύτερος κωδικός πρόσβασης. Παρακαλούμε προσπαθήστε ξανά."
       ],
@@ -1322,8 +1331,14 @@
       "Network error": [
         "Σφάλμα δικτύου"
       ],
+      "Not a valid number": [
+        "Μη έγκυρος αριθμός"
+      ],
       "Passphrase is incorrect": [
         "Η φράση πρόσβασης είναι εσφαλμένη"
+      ],
+      "Passwords do not match": [
+        "Οι κωδικοί πρόσβασης δεν ταυτίζονται"
       ],
       "PIN codes do not match": [
         "Οι κωδικοί PIN δεν ταιριάζουν"
@@ -1388,11 +1403,23 @@
       "The ${ PASS_APP_NAME } desktop app should be logged in.": [
         "Θα πρέπει να συνδεθείτε στην εφαρμογή ${ PASS_APP_NAME } για υπολογιστές."
       ],
+      "The email addresses do not match": [
+        "Οι διευθύνσεις email δεν ταιριάζουν."
+      ],
       "The session has expired. Please sign in again.": [
         "Έχει λήξει η συνεδρία σας. Παρακαλώ συνδεθείτε ξανά."
       ],
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Παρουσιάστηκε σφάλμα κατά την κατάργηση του ασφαλούς συνδέσμου. Παρακαλούμε δοκιμάστε ξανά σε λίγα λεπτά."
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Αυτό το πεδίο υπερβαίνει το μέγιστο των χαρακτήρων ${ maximumLength }."
+      ],
+      "This field is required": [
+        "Αυτό το πεδίο είναι υποχρεωτικό"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Αυτό το πεδίο απαιτεί τουλάχιστον ${ minimumLength } χαρακτήρες."
       ],
       "This invite is no longer available": [
         "Αυτή η πρόσκληση δεν είναι πλέον διαθέσιμη"
@@ -1405,6 +1432,9 @@
       ],
       "Try reaching out to the link owner.": [
         "Δοκιμάστε να επικοινωνήσετε με τον κάτοχο του συνδέσμου."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Δοκιμάστε να χρησιμοποιήσετε μόνο γράμματα, αριθμούς και _.-"
       ],
       "Unable to generate an OTP code for this item": [
         "Δεν είναι δυνατή η δημιουργία κωδικού OTP για αυτό το στοιχείο"
@@ -1439,6 +1469,12 @@
       "Updating vault \"${ payload.content.name }\" failed": [
         "Η ενημέρωση της κρύπτης \"${ payload.content.name }\" απέτυχε"
       ],
+      "Username must begin with a letter or digit": [
+        "Το όνομα χρήστη πρέπει να ξεκινά με ένα γράμμα ή ένα ψηφίο"
+      ],
+      "Username must end with a letter or digit": [
+        "Το όνομα χρήστη πρέπει να τελειώνει με γράμμα ή ψηφίο"
+      ],
       "Vault \"${ payload.content.name }\" creation failed": [
         "Η δημιουργία της κρύπτης \"${ payload.content.name }\" απέτυχε"
       ],
@@ -1462,6 +1498,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Λάθος κωδικός PIN. Δοκιμάστε ξανά."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Λανθασμένη φράση ανάκτησης. Δοκιμάστε ξανά ή χρησιμοποιήστε άλλη μέθοδο ανάκτησης."
       ],
       "Wrong second password": [
         "Λανθασμένος δεύτερος κωδικός πρόσβασης"
@@ -2922,6 +2961,9 @@
       "${ hours } hour": [
         "${ hours } ώρα",
         "${ hours } ώρες"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } χαρακτήρες"
       ],
       "${ minutes } minute": [
         "${ minutes } λεπτό",
@@ -5280,8 +5322,16 @@
       "OTP secret or URI is invalid": [
         "Το OTP μυστικό ή το URI δεν είναι έγκυρο"
       ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ MIN_PASSWORD_LENGTH } χαρακτήρα",
+        "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ MIN_PASSWORD_LENGTH } χαρακτήρες"
+      ],
       "Section name cannot be empty": [
         "Το όνομα ενότητας δεν μπορεί να είναι κενό"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Προσπαθήστε να εισάγετε ένα συντομότερο όνομα χρήστη (έως ${ n } χαρακτήρα)",
+        "Προσπαθήστε να εισάγετε ένα συντομότερο όνομα χρήστη (έως ${ n } χαρακτήρες)"
       ],
       "URL already exists": [
         "Το URL υπάρχει ήδη"

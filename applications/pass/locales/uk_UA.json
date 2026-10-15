@@ -1059,6 +1059,9 @@
       "Editing item failed": [
         "Помилка редагування елемента"
       ],
+      "Email is not valid": [
+        "Е-пошта недійсна"
+      ],
       "Empty CSV file": [
         "Порожній CSV-файл"
       ],
@@ -1070,6 +1073,9 @@
       ],
       "Encrypted JSON not supported": [
         "Зашифрований JSON не підтримується"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Введіть ім'я користувача без домену (@example.com)"
       ],
       "Error reporting problem": [
         "Помилка під час надсилання повідомлення про проблему"
@@ -1251,6 +1257,9 @@
       "Incorrect backup password. Please try again.": [
         "Неправильний резервний пароль. Будь ласка, спробуйте ще раз."
       ],
+      "Incorrect password. Please try again.": [
+        "Хибний пароль. Повторіть спробу."
+      ],
       "Incorrect second password. Please try again.": [
         "Неправильний другий пароль. Спробуйте ще раз."
       ],
@@ -1284,8 +1293,14 @@
       "Network error": [
         "Помилка мережі"
       ],
+      "Not a valid number": [
+        "Номер недійсний"
+      ],
       "Passphrase is incorrect": [
         "Парольна фраза неправильна"
+      ],
+      "Passwords do not match": [
+        "Паролі відрізняються"
       ],
       "PIN codes do not match": [
         "PIN-коди відрізняються"
@@ -1344,11 +1359,23 @@
       "The ${ PASS_APP_NAME } desktop app should be logged in.": [
         "У настільну програму ${ PASS_APP_NAME } потрібно увійти."
       ],
+      "The email addresses do not match": [
+        "Електронні адреси відрізняються"
+      ],
       "The session has expired. Please sign in again.": [
         "Термін дії сеансу завершився. Виконайте вхід знову."
       ],
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Виникла помилка при вилученні захищеного посилання. Будь ласка, спробуйте ще раз через кілька хвилин."
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "У цьому полі перевищено обмеження ${ maximumLength } символів."
+      ],
+      "This field is required": [
+        "Це поле є обов'язковим"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "В цьому полі повинно бути не менше ${ minimumLength } символів."
       ],
       "Too many failed attempts. Please sign in again.": [
         "Забагато невдалих спроб. Будь ласка, увійдіть ще раз."
@@ -1358,6 +1385,9 @@
       ],
       "Try reaching out to the link owner.": [
         "Спробуйте знайти власника посилання."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Спробуйте використовувати лише літери, цифри та символи _.-"
       ],
       "Unable to generate an OTP code for this item": [
         "Не вдалося створити код OTP для цього елемента"
@@ -1389,6 +1419,12 @@
       "Updating vault \"${ payload.content.name }\" failed": [
         "Не вдалося оновити сховище \"${ payload.content.name }\""
       ],
+      "Username must begin with a letter or digit": [
+        "Ім'я користувача повинно починатися з літери або цифри"
+      ],
+      "Username must end with a letter or digit": [
+        "Ім'я користувача повинно закінчуватися літерою або цифрою"
+      ],
       "Vault \"${ payload.content.name }\" creation failed": [
         "Не вдалося створити сховище \"${ payload.content.name }\""
       ],
@@ -1412,6 +1448,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Неправильний PIN-код. Спробуйте ще раз."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Неправильна фраза відновлення. Спробуйте знову, або використайте інший спосіб відновлення."
       ],
       "Wrong second password": [
         "Неправильний другий пароль"
@@ -5212,8 +5251,20 @@
       "OTP secret or URI is invalid": [
         "Секретний ключ OTP або URI неправильний"
       ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Пароль повинен містити принаймні ${ MIN_PASSWORD_LENGTH } символ",
+        "Пароль повинен містити принаймні ${ MIN_PASSWORD_LENGTH } символи",
+        "Пароль повинен містити принаймні ${ MIN_PASSWORD_LENGTH } символів",
+        "Пароль повинен містити принаймні ${ MIN_PASSWORD_LENGTH } символів"
+      ],
       "Section name cannot be empty": [
         "Назва розділу не може бути пустою"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Спробуйте коротше ім'я користувача (до ${ n } символу)",
+        "Спробуйте коротше ім'я користувача (до ${ n } символів)",
+        "Спробуйте коротше ім'я користувача (до ${ n } символів)",
+        "Спробуйте коротше ім'я користувача (до ${ n } символів)"
       ],
       "URL already exists": [
         "URL-адреса вже існує"

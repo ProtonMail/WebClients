@@ -1074,6 +1074,9 @@
       "Editing item failed": [
         "항목 수정 실패"
       ],
+      "Email is not valid": [
+        "유효하지 않은 이메일"
+      ],
       "Empty CSV file": [
         "빈 CSV 파일"
       ],
@@ -1085,6 +1088,9 @@
       ],
       "Encrypted JSON not supported": [
         "암호화된 JSON이 지원되지 않습니다."
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "도메인 없이 (@example.co.kr) 사용자 이름을 입력해 주세요."
       ],
       "Error reporting problem": [
         "문제 보고 실패"
@@ -1275,6 +1281,9 @@
       "Incorrect backup password. Please try again.": [
         "백업 비밀번호가 틀렸습니다. 다시 시도해 주세요."
       ],
+      "Incorrect password. Please try again.": [
+        "잘못된 비밀번호입니다. 다시 시도해 주세요."
+      ],
       "Incorrect second password. Please try again.": [
         "2차 비밀번호가 틀렸습니다. 다시 시도해 주세요."
       ],
@@ -1308,8 +1317,14 @@
       "Network error": [
         "네트워크 오류"
       ],
+      "Not a valid number": [
+        "유효하지 않은 번호"
+      ],
       "Passphrase is incorrect": [
         "비밀번호가 올바르지 않습니다."
+      ],
+      "Passwords do not match": [
+        "비밀번호가 일치하지 않습니다"
       ],
       "PIN codes do not match": [
         "PIN 코드가 일치하지 않습니다."
@@ -1374,11 +1389,23 @@
       "The ${ PASS_APP_NAME } desktop app should be logged in.": [
         "${ PASS_APP_NAME } 데스크톱 앱에 로그인해야 합니다."
       ],
+      "The email addresses do not match": [
+        "이메일 주소가 일치하지 않습니다."
+      ],
       "The session has expired. Please sign in again.": [
         "세션이 만료되었습니다. 다시 로그인해 주세요."
       ],
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "안전한 링크 삭제 중 문제가 발생했습니다. 몇 분 후 다시 시도하십시오."
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "이 필드가 최대 ${ maximumLength } 글자를 초과합니다."
+      ],
+      "This field is required": [
+        "필수 기재 항목입니다"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "이 필드에는 ${ minimumLength }자 이상이 필요합니다."
       ],
       "This invite is no longer available": [
         "이 초대는 더 이상 유효하지 않습니다"
@@ -1391,6 +1418,9 @@
       ],
       "Try reaching out to the link owner.": [
         "이 링크 소유자에게 연락을 시도하세요.."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "문자, 숫자 및 _.- 만 사용하십시오"
       ],
       "Unable to generate an OTP code for this item": [
         "해당 항목으로 OTP 코드를 생성할 수 없습니다"
@@ -1425,6 +1455,12 @@
       "Updating vault \"${ payload.content.name }\" failed": [
         "\"${ payload.content.name }\" 금고를 업데이트하는데 실패했습니다."
       ],
+      "Username must begin with a letter or digit": [
+        "사용자명은 문자로 시작해야 합니다"
+      ],
+      "Username must end with a letter or digit": [
+        "사용자 이름은 문자로 시작하여야 합니다."
+      ],
       "Vault \"${ payload.content.name }\" creation failed": [
         "\"${ payload.content.name }\" 금고 생성을 실패했습니다."
       ],
@@ -1448,6 +1484,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "올바르지 않은 PIN 코드입니다. 다시 시도하세요."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "잘못된 복구 키입니다. 다시 시도하거나 다른 복구 방법을 사용하세요."
       ],
       "Wrong second password": [
         "2차 비밀번호 모드가 알맞지 않습니다"
@@ -2868,6 +2907,9 @@
       ],
       "${ hours } hour": [
         "${ hours }시간"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength }자"
       ],
       "${ minutes } minute": [
         "${ minutes }분"
@@ -5209,8 +5251,14 @@
       "OTP secret or URI is invalid": [
         "OTP 시크릿 및 URI가 잘못되었습니다."
       ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "비밀번호는 최소 ${ MIN_PASSWORD_LENGTH }자 이상이어야 합니다"
+      ],
       "Section name cannot be empty": [
         "섹션 이름은 비워둘 수 없습니다"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "더 짧은 이름을 사용하세요 (최대 ${ n }글자)"
       ],
       "URL already exists": [
         "URL이 이미 존재합니다"

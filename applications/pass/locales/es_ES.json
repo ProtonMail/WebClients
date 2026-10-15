@@ -1049,6 +1049,9 @@
       "Editing item failed": [
         "Error al editar el elemento"
       ],
+      "Email is not valid": [
+        "El correo no es válido."
+      ],
       "Empty CSV file": [
         "Archivo CSV vacío"
       ],
@@ -1060,6 +1063,9 @@
       ],
       "Encrypted JSON not supported": [
         "JSON cifrado no soportado"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Introduce tu nombre de usuario sin el dominio (@ejemplo.com)"
       ],
       "Error reporting problem": [
         "Error al notificar el problema"
@@ -1241,6 +1247,9 @@
       "Incorrect backup password. Please try again.": [
         "La contraseña de respaldo no es correcta. Inténtalo de nuevo."
       ],
+      "Incorrect password. Please try again.": [
+        "Contraseña incorrecta. Inténtalo de nuevo."
+      ],
       "Incorrect second password. Please try again.": [
         "La segunda contraseña no es correcta. Inténtalo de nuevo."
       ],
@@ -1274,8 +1283,14 @@
       "Network error": [
         "Error de red"
       ],
+      "Not a valid number": [
+        "No es un número válido."
+      ],
       "Passphrase is incorrect": [
         "La frase contraseña es incorrecta."
+      ],
+      "Passwords do not match": [
+        "Las contraseñas no coinciden."
       ],
       "PIN codes do not match": [
         "Los códigos PIN no coinciden."
@@ -1340,11 +1355,23 @@
       "The ${ PASS_APP_NAME } desktop app should be logged in.": [
         "Se debe haber iniciado sesión en la aplicación de escritorio de ${ PASS_APP_NAME }."
       ],
+      "The email addresses do not match": [
+        "Las direcciones de correo electrónico no coinciden"
+      ],
       "The session has expired. Please sign in again.": [
         "Tu sesión ha expirado. Inicia sesión de nuevo."
       ],
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Se ha producido un error al eliminar el enlace seguro. Intenta de nuevo en unos minutos."
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Este campo excede el máximo de ${ maximumLength } caracteres."
+      ],
+      "This field is required": [
+        "Este campo es obligatorio."
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Este campo requiere un mínimo de ${ minimumLength } caracteres."
       ],
       "Too many failed attempts. Please sign in again.": [
         "Demasiados intentos erróneos. Inicia sesión de nuevo."
@@ -1354,6 +1381,9 @@
       ],
       "Try reaching out to the link owner.": [
         "Intenta comunicarte con el propietario del enlace."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Utiliza solo letras, números y _.-"
       ],
       "Unable to generate an OTP code for this item": [
         "No se puede generar un código OTP para este elemento."
@@ -1385,6 +1415,12 @@
       "Updating vault \"${ payload.content.name }\" failed": [
         "Error al actualizar la caja fuerte \"${ payload.content.name }\""
       ],
+      "Username must begin with a letter or digit": [
+        "El nombre de usuario debe comenzar con una letra o un número."
+      ],
+      "Username must end with a letter or digit": [
+        "El nombre de usuario debe terminar con una letra o un número."
+      ],
       "Vault \"${ payload.content.name }\" creation failed": [
         "Error al crear la caja fuerte \"${ payload.content.name }\""
       ],
@@ -1408,6 +1444,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "El código PIN no es correcto. Intenta de nuevo."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Frase de recuperación incorrecta. Inténtalo de nuevo o utiliza otro método de recuperación."
       ],
       "Wrong second password": [
         "La segunda contraseña no es correcta."
@@ -5106,8 +5145,16 @@
       "OTP secret or URI is invalid": [
         "Clave secreta OTP o URI inválido"
       ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "La contraseña debe contener al menos ${ MIN_PASSWORD_LENGTH } carácter.",
+        "La contraseña debe tener al menos ${ MIN_PASSWORD_LENGTH } caracteres"
+      ],
       "Section name cannot be empty": [
         "El nombre de la sección no puede estar vacío."
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Prueba con un nombre de usuario más corto (máx. ${ n } carácter)",
+        "Prueba con un nombre de usuario más corto (máx. ${ n } caracteres)"
       ],
       "URL already exists": [
         "La URL ya existe."
