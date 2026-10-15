@@ -1140,6 +1140,9 @@
       "Editing item failed": [
         "Redigering af element mislykkedes"
       ],
+      "Email is not valid": [
+        "E-mail er ikke gyldig"
+      ],
       "Empty CSV file": [
         "Tom CSV-fil"
       ],
@@ -1151,6 +1154,9 @@
       ],
       "Encrypted JSON not supported": [
         "Krypteret JSON er ikke understøttet"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Indtast dit brugernavn uden domænet (@example.com)"
       ],
       "Error reporting problem": [
         "Problem med fejlrapportering"
@@ -1342,6 +1348,9 @@
       "Incorrect backup password. Please try again.": [
         "Forkert backupadgangskode. Prøv igen."
       ],
+      "Incorrect password. Please try again.": [
+        "Forkert adgangskode. Prøv venligst igen."
+      ],
       "Incorrect second password. Please try again.": [
         "Forkert anden adgangskode. Prøv igen."
       ],
@@ -1375,8 +1384,14 @@
       "Network error": [
         "Netværksfejl"
       ],
+      "Not a valid number": [
+        "Ikke et gyldigt nummer"
+      ],
       "Passphrase is incorrect": [
         "Adgangssætning er forkert"
+      ],
+      "Passwords do not match": [
+        "Adgangskoder stemmer ikke overens"
       ],
       "PIN codes do not match": [
         "Pinkoder stemmer ikke overens"
@@ -1441,11 +1456,23 @@
       "The ${ PASS_APP_NAME } desktop app should be logged in.": [
         "${ PASS_APP_NAME }-skrivebordsappen burde være logget in."
       ],
+      "The email addresses do not match": [
+        "E-mailadresserne stemmer ikke overens"
+      ],
       "The session has expired. Please sign in again.": [
         "Sessionen er udløbet. Log ind igen."
       ],
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Der opstod en fejl under fjernelse af det sikre link. Prøv igen om et par minutter."
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Dette felt overskrider det maksimale antal tegn på ${ maximumLength }."
+      ],
+      "This field is required": [
+        "Feltet er påkrævet"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Dette felt kræver minimum ${ minimumLength } tegn."
       ],
       "This invite is no longer available": [
         "Denne invitation findes ikke længere"
@@ -1458,6 +1485,9 @@
       ],
       "Try reaching out to the link owner.": [
         "Prøv at kontakte linkets ejer."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Prøv kun at bruge bogstaver, tal og _.-"
       ],
       "Unable to generate an OTP code for this item": [
         "Kunne ikke generere en OTP-kode for dette element"
@@ -1492,6 +1522,12 @@
       "Updating vault \"${ payload.content.name }\" failed": [
         "Opdatering af boksen \"${ payload.content.name }\" mislykkedes"
       ],
+      "Username must begin with a letter or digit": [
+        "Brugernavn skal begynde med et bogstav eller et tal"
+      ],
+      "Username must end with a letter or digit": [
+        "Brugernavn skal ende på et bogstav eller et tal"
+      ],
       "Vault \"${ payload.content.name }\" creation failed": [
         "Oprettelse af boksen \"${ payload.content.name }\" mislykkedes"
       ],
@@ -1515,6 +1551,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Forkert pinkode. Prøv igen."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Forkert gendannelsessætning. Prøv igen eller brug en anden gendannelsesmetode."
       ],
       "Wrong second password": [
         "Forkert anden adgangskode"
@@ -2271,8 +2310,7 @@
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Flyttes et element til en anden boks, slettes dets sikre links.",
-        "Flyttes elementer til en anden boks, slettes deres sikre links."
+        "Hvis du flytter et element til en anden boks, slettes dets sikre links."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -3046,6 +3084,9 @@
       "${ hours } hour": [
         "${ hours } time",
         "${ hours } timer"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } tegn"
       ],
       "${ minutes } minute": [
         "${ minutes } minut",
@@ -5478,8 +5519,16 @@
       "OTP secret or URI is invalid": [
         "OTP-hemmelighed eller URI er ugyldig"
       ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Adgangskode skal indeholde mindst ${ MIN_PASSWORD_LENGTH } tegn",
+        "Adgangskode skal indeholde mindst ${ MIN_PASSWORD_LENGTH } tegn"
+      ],
       "Section name cannot be empty": [
         "Sektionsnavn kan ikke være tomt"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Prøv et kortere brugernavn (maks. ${ n } tegn)",
+        "Prøv et kortere brugernavn (maks. ${ n } tegn)"
       ],
       "URL already exists": [
         "URL findes allerede"
