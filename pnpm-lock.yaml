@@ -8692,8 +8692,8 @@ importers:
         specifier: ^2.2.0
         version: 2.2.0
       '@protontech/tidy-url':
-        specifier: ^1.18.5
-        version: 1.18.5
+        specifier: ^1.18.6
+        version: 1.18.6
       '@protontech/timezone-support':
         specifier: ^2.1.0
         version: 2.1.0
@@ -15508,8 +15508,8 @@ packages:
   '@protontech/telemetry@2.2.0':
     resolution: {integrity: sha512-qmlb2KuT7lmp/i/hJ/wJhYN9PhOHTZjQNXx6Qus4tP8DEJmGIOXshh/iKcJ/S52GNs3hO4O48EoLTFEDkvbcaQ==, tarball: https://nexus.protontech.ch/repository/web-npm-private-and-public/@protontech/telemetry/-/telemetry-2.2.0.tgz}
 
-  '@protontech/tidy-url@1.18.5':
-    resolution: {integrity: sha512-sNHj3vbRlPhL94V9uAH2wTPrz+5YrWolrPGpW3IZVmflrA6pnyLqhcRQ0xktp2nRwnAQExO5mIZ0KR+7OBC+dQ==, tarball: https://nexus.protontech.ch/repository/web-npm-private-and-public/@protontech/tidy-url/-/tidy-url-1.18.5.tgz}
+  '@protontech/tidy-url@1.18.6':
+    resolution: {integrity: sha512-xfUxQZAWMqlZ7NKLrXYyYE5w0tP+3fvChQqeHKsZgGWc1kWYkvIhY5po20l8kR/ZoFWeW3X0S19AE0kSvUZ9qQ==, tarball: https://nexus.protontech.ch/repository/web-npm-private-and-public/@protontech/tidy-url/-/tidy-url-1.18.6.tgz}
 
   '@protontech/timezone-support@2.1.0':
     resolution: {integrity: sha512-ljTYJree6wyP2MJYgrQhZviqYMFy4H8RmEQMhesC5aCqJN1zkbnXiclf8YO6xCbp/WLlOTYoiILvrKpvGLqmjQ==, tarball: https://nexus.protontech.ch/repository/web-npm-private-and-public/@protontech/timezone-support/-/timezone-support-2.1.0.tgz}
@@ -35087,7 +35087,7 @@ snapshots:
 
   '@protontech/telemetry@2.2.0': {}
 
-  '@protontech/tidy-url@1.18.5': {}
+  '@protontech/tidy-url@1.18.6': {}
 
   '@protontech/timezone-support@2.1.0':
     dependencies:
