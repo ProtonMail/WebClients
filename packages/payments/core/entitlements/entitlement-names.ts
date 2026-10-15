@@ -12,6 +12,7 @@ export enum EntitlementName {
     /** Indicates whether this is a business. */
     Business = 'business',
     CatchAll = 'catch-all',
+    CustomDomainAddresses = 'custom-domain-addresses',
     /**
      * @deprecated Archived in Chargebee and scheduled for removal.
      */
@@ -120,7 +121,9 @@ export enum EntitlementName {
     Sentinel = 'sentinel',
     /** Determines whether SSO is supported. */
     Sso = 'sso',
+    /** Determines whether keys for SSO are required */
     SsoKeys = 'sso-keys',
+    UltraVpnServers = 'ultra-vpn-servers',
     /** Enables location filtering for VPN (also known as shared servers). */
     VpnLocationFilter = 'vpn-location-filter',
 }
