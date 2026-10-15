@@ -21,14 +21,14 @@ import { getHelpLinks } from '../helpLinks';
 import {
     selectCanGoBack,
     selectErrorMessage,
+    selectPersistent,
     selectSubmitting,
     selectUsername,
 } from '../state-machine/credentialsStateMachine';
-import { useRememberPreference } from '../useRememberPreference';
 
 /** The auto sign-in's second step: the password for the username `AutoScreen` checked. */
 export const AutoPasswordScreen: SignInScreen = ({ onBack }: SignInScreenProps) => {
-    const { layout, paths, compactForm, remember: rememberMode, showContinueTo, toAppName } = useSignInProps();
+    const { layout, paths, compactForm, showContinueTo, toAppName } = useSignInProps();
     const actorRef = CredentialsContext.useActorRef();
     const errorMessage = CredentialsContext.useSelector(selectErrorMessage);
     const { getPayload } = useLoginChallengeContext();
@@ -39,7 +39,8 @@ export const AutoPasswordScreen: SignInScreen = ({ onBack }: SignInScreenProps) 
     const username = CredentialsContext.useSelector(selectUsername);
     // Back to the username works until the password is accepted; after that the sign-in may leave the page
     const canGoBack = CredentialsContext.useSelector(selectCanGoBack);
-    const remember = useRememberPreference(rememberMode);
+    // No checkbox here: the choice the last form submitted, or on
+    const persistent = CredentialsContext.useSelector(selectPersistent);
     const signInText = getSignInText({ showContinueTo, toAppName });
     const links = getHelpLinks(paths, username);
     const [password, setPassword] = useState('');
@@ -49,7 +50,7 @@ export const AutoPasswordScreen: SignInScreen = ({ onBack }: SignInScreenProps) 
         const payload = await getPayload();
         actorRef.send({
             type: 'credentials.submitted',
-            payload: { username, password, persistent: remember.persistent, payload },
+            payload: { username, password, persistent, payload },
         });
     };
 

@@ -1,11 +1,9 @@
 import { useLayoutEffect, useRef, useState } from 'react';
 
-import useLocalState from '@proton/components/hooks/useLocalState';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 
 import type { OnLoginCallback } from '../content/authSession';
-import { defaultPersistentKey } from '../public/helper';
 import { useResetPasswordTelemetry } from '../reset/resetPasswordTelemetry';
 import { useGetAccountKTActivation } from '../useGetAccountKTActivation';
 import { UnauthedForgotPasswordStateMachine } from './state-machine/UnauthedForgotPasswordStateMachine';
@@ -29,9 +27,8 @@ interface Options {
 export const useForgotPasswordMachine = (options: Options) => {
     const api = useSilentApi();
     const getKtActivation = useGetAccountKTActivation();
-    const [persistent] = useLocalState(false, defaultPersistentKey);
     const telemetry = useResetPasswordTelemetry({ variant: 'B' });
-    const latest = { ...options, persistent, telemetry };
+    const latest = { ...options, telemetry };
     const latestRef = useRef(latest);
     // Updated once the render commits, before any effect or event handler can reach the actors
     useLayoutEffect(() => {
@@ -45,7 +42,8 @@ export const useForgotPasswordMachine = (options: Options) => {
                 await latestRef.current.onPreSubmit();
                 await latestRef.current.onStartAuth();
             },
-            getPersistent: () => latestRef.current.persistent,
+            // "Keep me signed in" is always on for the session the reset signs in with
+            getPersistent: () => true,
             getKtActivation,
             get productParam() {
                 return latestRef.current.productParam;
