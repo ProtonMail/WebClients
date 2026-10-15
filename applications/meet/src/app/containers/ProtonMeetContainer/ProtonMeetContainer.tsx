@@ -532,7 +532,6 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
                             instantMeeting={instantMeetingRef.current}
                             assignHost={assignHost}
                             getKeychainIndexInformation={getKeychainIndexInformation}
-                            isUsingTurnRelay={isUsingTurnRelay}
                             liveKitConnectionState={liveKitConnectionState}
                             showReconnectedMessage={showReconnectedMessage}
                             setShowReconnectedMessage={setShowReconnectedMessage}

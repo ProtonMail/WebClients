@@ -18,26 +18,19 @@ const useSuspendNonCriticalSync = (connectionState: ConnectionAnnouncementState)
     }, [suspendNonCritical, setSuspendNonCritical]);
 };
 
-const AnnouncementSourcesRunner = ({
-    connectionState,
-    isUsingTurnRelay,
-}: {
-    connectionState: ConnectionAnnouncementState;
-    isUsingTurnRelay: boolean;
-}) => {
+const AnnouncementSourcesRunner = ({ connectionState }: { connectionState: ConnectionAnnouncementState }) => {
     useSuspendNonCriticalSync(connectionState);
-    useAnnouncementSources({ connectionState, isUsingTurnRelay });
+    useAnnouncementSources({ connectionState });
     return null;
 };
 
 export type MeetingAnnouncerProps = ConnectionAnnouncementState & {
-    isUsingTurnRelay: boolean;
     children: ReactNode;
 };
 
 // Drives the announcement sources and connection-based suspension for the meeting subtree. The
 // provider itself is mounted higher up (see MeetingAnnouncerProvider in WrappedProtonMeetContainer).
-export const MeetingAnnouncer = ({ isUsingTurnRelay, children, ...connectionState }: MeetingAnnouncerProps) => {
+export const MeetingAnnouncer = ({ children, ...connectionState }: MeetingAnnouncerProps) => {
     const enableAccessibilityAnnouncements = useFlag('EnableAccessibilityAnnouncements');
 
     if (!enableAccessibilityAnnouncements) {
@@ -46,7 +39,7 @@ export const MeetingAnnouncer = ({ isUsingTurnRelay, children, ...connectionStat
 
     return (
         <>
-            <AnnouncementSourcesRunner connectionState={connectionState} isUsingTurnRelay={isUsingTurnRelay} />
+            <AnnouncementSourcesRunner connectionState={connectionState} />
             {children}
         </>
     );
