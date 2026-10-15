@@ -1,18 +1,19 @@
 /**
  * Dynamic imports need to be manually included in the extension's SW via importScript.
- * This file keeps track of the node_modules that are dynamically imported.
+ * This file keeps track of the node_modules that are dynamically imported, by the path of the
+ * chunk's root module (relative to its package, or to this app for local files).
  * The build script will trigger errors when it encounters new unhandled chunks.
  */
 
 const chunkFilename = (chunkDesc: string) => `chunk.crypto-${chunkDesc}.js`;
 
 const CRYPTO_CHUNKS: Record<string, string[]> = {
-    [chunkFilename('nacl')]: ['node_modules_openpgp_dist_lightweight_nacl-fast_min_mjs'],
-    [chunkFilename('pqc')]: ['node_modules_openpgp_dist_lightweight_noble_post_quantum_min_mjs'],
-    [chunkFilename('noblehashes')]: ['node_modules_openpgp_dist_lightweight_noble_hashes_min_mjs'],
-    [chunkFilename('noblecurves')]: ['node_modules_openpgp_dist_lightweight_noble_curves_min_mjs'],
-    [chunkFilename('noblehashes_legacy')]: ['node_modules_protontech_crypto_node_modules_noble_hashes_legacy_js'],
-    [chunkFilename('argon2')]: ['vendor_argon2id_loader_ts', 'node_modules_openpgp_dist_lightweight_argon2id_min_mjs'],
+    [chunkFilename('nacl')]: ['@protontech/openpgp/dist/lightweight/nacl-fast.min.mjs'],
+    [chunkFilename('pqc')]: ['@protontech/openpgp/dist/lightweight/noble_post_quantum.min.mjs'],
+    [chunkFilename('noblehashes')]: ['@protontech/openpgp/dist/lightweight/noble_hashes.min.mjs'],
+    [chunkFilename('noblecurves')]: ['@protontech/openpgp/dist/lightweight/noble_curves.min.mjs'],
+    [chunkFilename('noblehashes_legacy')]: ['@noble/hashes/legacy.js'],
+    [chunkFilename('argon2')]: ['vendor/argon2id.loader.ts', '@protontech/openpgp/dist/lightweight/argon2id.min.mjs'],
 };
 
 /** Dynamically imported crypto chunks that should
@@ -26,8 +27,8 @@ export const CRYPTO_DYNAMIC_IMPORTS_CHUNKS: Record<string, string> = Object.from
 
 /** These are unused by the Pass extension and don't need to be manually handled */
 export const IGNORED_DYNAMIC_IMPORTS_CHUNKS = new Set([
-    'node_modules_x2js_x2js_js',
-    'node_modules_protontech_crypto_src_jsmimeparser_index_js',
-    'node_modules_openpgp_dist_lightweight_legacy_ciphers_min_mjs',
-    'node_modules_openpgp_dist_lightweight_unbzip2-stream_min_mjs',
+    'x2js/x2js.js',
+    '@protontech/crypto/src/jsmimeparser/index.js',
+    '@protontech/openpgp/dist/lightweight/legacy_ciphers.min.mjs',
+    '@protontech/openpgp/dist/lightweight/unbzip2-stream.min.mjs',
 ]);

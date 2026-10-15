@@ -2,7 +2,6 @@ import type { Config } from 'jest';
 
 const jestConfig: Config = {
     setupFilesAfterEnv: ['./jest.setup.js'],
-    moduleDirectories: ['<rootDir>/node_modules', 'node_modules'],
     testPathIgnorePatterns: [],
     transformIgnorePatterns: [],
     preset: '@proton/jest-swc-preset',
