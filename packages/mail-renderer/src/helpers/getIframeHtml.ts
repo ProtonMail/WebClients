@@ -1,5 +1,6 @@
 import { locateHead } from '@proton/mail/helpers/locateHead';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import { neutralizeStyleBreakout } from '@proton/sanitize/escape';
 
 import {
     MESSAGE_IFRAME_PRINT_CLASS,
@@ -7,7 +8,6 @@ import {
     MESSAGE_IFRAME_PRINT_HEADER_ID,
     MESSAGE_IFRAME_ROOT_ID,
 } from '../constants';
-import { neutralizeStyleBreakout } from './transforms/transformStylesheet';
 
 type Options = {
     emailContent: string;
