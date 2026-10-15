@@ -6,8 +6,12 @@ import type { WordCountInfoCollection } from './Utils/WordCount/WordCountTypes'
 import type { DocsComments } from './contract/DocsComments'
 import type { DocsEditorTelemetryEvent } from './contract/DocsEditorTelemetry'
 
+import type { EmojiMessages } from './Plugins/emoji/emojiMessages'
+
 export type DocsDependencies = {
   userName: string
+  emojiMessages?: EmojiMessages
+  emojiPickerEnabled?: boolean
   suggestionsEnabled: boolean
   isAlpha: boolean
   canEdit: boolean
