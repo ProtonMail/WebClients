@@ -1786,6 +1786,12 @@
       "Cannot verify who uploaded this file": [
         "Kan niet verifiëren wie dit bestand heeft geüpload"
       ],
+      "Check your audio settings and try again": [
+        "Controleer je audio-instellingen en probeer het opnieuw"
+      ],
+      "Connection lost — captions will resume when reconnected": [
+        "Verbinding verbroken: de ondertiteling wordt hervat wanneer er opnieuw verbinding wordt gemaakt"
+      ],
       "Copy operation aborted": [
         "Kopieerbewerking afgebroken"
       ],
@@ -1951,6 +1957,9 @@
       "Incorrect backup password. Please try again.": [
         "Onjuist back-up wachtwoord. Probeer het opnieuw."
       ],
+      "Incorrect password. Please try again.": [
+        "Onjuist wachtwoord. Probeer het opnieuw."
+      ],
       "Incorrect second password. Please try again.": [
         "Onjuist tweede wachtwoord. Probeer het opnieuw."
       ],
@@ -1971,6 +1980,9 @@
       ],
       "Legacy public link cannot be updated. Please re-create a new public link.": [
         "Verouderde openbare link kan niet worden bijgewerkt. Maak opnieuw een nieuwe openbare link."
+      ],
+      "Microphone not detected": [
+        "Microfoon niet gedetecteerd"
       ],
       "Missing inviter email": [
         "Ontbrekende e-mail uitnodiger"
@@ -2126,8 +2138,14 @@
       "Too many server requests, please try again later": [
         "Te veel serververzoeken. Probeer het later opnieuw"
       ],
+      "Try turning live captions off and on again.": [
+        "Probeer live ondertiteling uit en weer in te schakelen."
+      ],
       "Try using only letters, numerals, and _.-": [
         "Probeer enkel letters, nummers en _.- te gebruiken"
+      ],
+      "Unable to generate captions": [
+        "Kan geen bijschriften genereren."
       ],
       "Unknown error": [
         "Onbekende fout"
@@ -2146,6 +2164,9 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "We konden via deze methode geen verificatiecode verzenden."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Verkeerde herstelzijn. Probeer opnieuw of probeer een andere herstelmethode."
       ],
       "You can create public links for your own files only": [
         "U kunt alleen openbare links voor uw eigen bestanden maken"
@@ -2447,6 +2468,9 @@
       "Camera permission denied": [
         "Cameratoegang geweigerd"
       ],
+      "Captions on": [
+        "Onderschriften aan"
+      ],
       "Changes are staged. Apply to rebuild the preview with the new constants.": [
         "Wijzigingen zijn klaargezet. Toepassen om het voorbeeld opnieuw op te bouwen met de nieuwe constanten."
       ],
@@ -2650,6 +2674,9 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Laden van kalender, gelieve te wachten. U wordt automatisch doorverwezen naar onze agendaplanner Calendly in een nieuw tabblad."
+      ],
+      "Loading captions…": [
+        "Ondertiteling laden…"
       ],
       "Loading meeting details...": [
         "Vergaderingsgegevens laden..."
@@ -3002,6 +3029,9 @@
       "View ": [
         "Bekijken "
       ],
+      "Waiting for speech…": [
+        "Wachten op spraak…"
+      ],
       "Waiting for the host to admit you. The host has been notified that you're waiting.": [
         "Wachten tot de host u toelaat. De host heeft een melding ontvangen dat u wacht."
       ],
@@ -3235,6 +3265,9 @@
       ],
       "Leave meeting options": [
         "Opties voor verlaten vergadering"
+      ],
+      "Live captions": [
+        "Live ondertiteling"
       ],
       "Manage recordings": [
         "Beheer opnames"

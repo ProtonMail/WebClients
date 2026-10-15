@@ -303,9 +303,6 @@
       "Create meeting": [
         "Δημιουργία σύσκεψης"
       ],
-      "Debug devices": [
-        "Συσκευές εντοπισμού σφαλμάτων"
-      ],
       "Debug overlay": [
         "Επικάλυψη εντοπισμού σφαλμάτων"
       ],
@@ -438,6 +435,12 @@
       "Join": [
         "Συμμετοχή"
       ],
+      "Join and leave sounds": [
+        "Ήχοι σύνδεσης και αποσύνδεσης"
+      ],
+      "Join in browser": [
+        "Συμμετοχή μέσω προγράμματος περιήγησης"
+      ],
       "Join meeting": [
         "Συμμετοχή στη σύσκεψη"
       ],
@@ -470,6 +473,9 @@
       ],
       "Lower hand": [
         "Κατεβάστε το χέρι"
+      ],
+      "Meeting debug": [
+        "Αποσφαλμάτωση σύσκεψης"
       ],
       "Meeting info": [
         "Πληροφορίες συνάντησης"
@@ -512,6 +518,9 @@
       ],
       "Open mention from ${ senderName } in chat": [
         "Ανοιχτή αναφορά από ${ senderName } στη συνομιλία"
+      ],
+      "Open this meeting in the desktop app": [
+        "Ανοίξτε αυτήν τη σύσκεψη στην εφαρμογή για υπολογιστή"
       ],
       "Participants": [
         "Συμμετέχοντες"
@@ -704,6 +713,9 @@
       "Start meeting": [
         "Έναρξη σύσκεψης"
       ],
+      "Start meeting in browser": [
+        "Έναρξη σύσκεψης στο πρόγραμμα περιήγησης"
+      ],
       "Start new meeting": [
         "Έναρξη νέας σύσκεψης"
       ],
@@ -855,6 +867,9 @@
       ],
       "Incoming video": [
         "Εισερχόμενο βίντεο"
+      ],
+      "Join and leave sounds": [
+        "Ήχοι σύνδεσης και αποσύνδεσης"
       ],
       "Leave Meeting": [
         "Αποχώρηση από τη Σύσκεψη"
@@ -1976,6 +1991,12 @@
       "Cannot verify who uploaded this file": [
         "Δεν είναι δυνατή η επαλήθευση ποιος ανέβασε αυτό το αρχείο"
       ],
+      "Check your audio settings and try again": [
+        "Ελέγξτε τις ρυθμίσεις ήχου και δοκιμάστε ξανά"
+      ],
+      "Connection lost — captions will resume when reconnected": [
+        "Η σύνδεση χάθηκε — οι υπότιτλοι θα συνεχιστούν μόλις αποκατασταθεί η σύνδεση"
+      ],
       "Copy operation aborted": [
         "Η λειτουργία αντιγραφής διακόπηκε"
       ],
@@ -2177,6 +2198,9 @@
       "Incorrect backup password. Please try again.": [
         "Εσφαλμένος εφεδρικός κωδικός πρόσβασης. Παρακαλούμε προσπαθήστε ξανά."
       ],
+      "Incorrect password. Please try again.": [
+        "Λανθασμένος κωδικός. Παρακαλούμε δοκιμάστε ξανά."
+      ],
       "Incorrect second password. Please try again.": [
         "Λανθασμένος δεύτερος κωδικός πρόσβασης. Παρακαλούμε προσπαθήστε ξανά."
       ],
@@ -2198,9 +2222,6 @@
       "Legacy public link cannot be updated. Please re-create a new public link.": [
         "Δεν είναι δυνατή η ενημέρωση του παλαιού δημόσιου συνδέσμου. Δημιουργήστε ξανά έναν νέο δημόσιο σύνδεσμο."
       ],
-      "Live captions aren't working. Try turning them off and on again.": [
-        "Οι ζωντανοί υπότιτλοι δε λειτουργούν. Δοκιμάστε να τους απενεργοποιήσετε και να τους ενεργοποιήσετε ξανά."
-      ],
       "Live captions couldn't be started.": [
         "Δεν ήταν δυνατή η εκκίνηση των ζωντανών υπότιτλων."
       ],
@@ -2212,6 +2233,9 @@
       ],
       "Microphone access is blocked. Allow it in your browser settings.": [
         "Η πρόσβαση στο μικρόφωνο είναι αποκλεισμένη. Επιτρέψτε την στις ρυθμίσεις του προγράμματος περιήγησής σας."
+      ],
+      "Microphone not detected": [
+        "Το μικρόφωνο δεν εντοπίστηκε"
       ],
       "Missing inviter email": [
         "Λείπει η διεύθυνση ηλεκτρονικού ταχυδρομείου προσκλητή"
@@ -2403,8 +2427,14 @@
       "Too many server requests, please try again later": [
         "Πάρα πολλά αιτήματα διακομιστή, παρακαλούμε δοκιμάστε ξανά αργότερα."
       ],
+      "Try turning live captions off and on again.": [
+        "Δοκιμάστε να απενεργοποιήσετε και να ενεργοποιήσετε ξανά τους ζωντανούς υπότιτλους."
+      ],
       "Try using only letters, numerals, and _.-": [
         "Δοκιμάστε να χρησιμοποιήσετε μόνο γράμματα, αριθμούς και _.-"
+      ],
+      "Unable to generate captions": [
+        "Δεν ήταν δυνατή η δημιουργία λεζαντών"
       ],
       "Unknown error": [
         "Άγνωστο σφάλμα"
@@ -2426,6 +2456,9 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "Δεν μπορέσαμε να αποστείλουμε κωδικό επιβεβαίωσης με αυτήν τη μέθοδο."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Λανθασμένη φράση ανάκτησης. Δοκιμάστε ξανά ή χρησιμοποιήστε άλλη μέθοδο ανάκτησης."
       ],
       "You can create public links for your own files only": [
         "Μπορείτε να δημιουργήσετε δημόσιους συνδέσμους μόνο για τα δικά σας αρχεία"
@@ -2729,11 +2762,17 @@
       "Allow camera access to preview your background": [
         "Επιτρέψτε την πρόσβαση στην κάμερα για προεπισκόπηση του φόντου σας"
       ],
+      "Already in the app? You can close this tab.": [
+        "Είστε ήδη στην εφαρμογή; Μπορείτε να κλείσετε αυτήν την καρτέλα."
+      ],
       "Anonymous ${ particle } ${ participantNumber }": [
         "Ανώνυμος ${ particle } ${ participantNumber }"
       ],
       "Anyone with the link can join immediately": [
         "Όποιος έχει τον σύνδεσμο μπορεί να συμμετάσχει αμέσως"
+      ],
+      "App didn't open?": [
+        "Δεν άνοιξε η εφαρμογή;"
       ],
       "Approve participants before they can join": [
         "Εγκρίνετε τους συμμετέχοντες πριν μπορέσουν να συμμετάσχουν"
@@ -2777,8 +2816,8 @@
       "Camera permission denied": [
         "Η άδεια χρήσης κάμερας απορρίφθηκε"
       ],
-      "Captions are on": [
-        "Οι υπότιτλοι είναι ενεργοποιημένοι"
+      "Captions on": [
+        "Υπότιτλοι ενεργοποιημένοι"
       ],
       "Changes are staged. Apply to rebuild the preview with the new constants.": [
         "Οι αλλαγές προετοιμάζονται. Εφαρμόστε για να αναδημιουργήσετε την προεπισκόπηση με τις νέες σταθερές."
@@ -2998,6 +3037,9 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Φόρτωση ημερολογίου, παρακαλούμε περιμένετε. Θα μεταφερθείτε στην πλατφόρμα προγραμματισμού Calendly σε μια νέα καρτέλα."
+      ],
+      "Loading captions…": [
+        "Φόρτωση υποτίτλων…"
       ],
       "Loading meeting details...": [
         "Φόρτωση λεπτομερειών σύσκεψης..."
@@ -3446,6 +3488,9 @@
       "Virtual background initializing": [
         "Αρχικοποίηση εικονικού φόντου"
       ],
+      "Waiting for speech…": [
+        "Αναμονή για ομιλία…"
+      ],
       "Waiting for the host to admit you. The host has been notified that you're waiting.": [
         "Αναμονή αποδοχής οικοδεσπότη. Ο οικοδεσπότης έχει ειδοποιηθεί ότι περιμένετε."
       ],
@@ -3724,6 +3769,9 @@
       ],
       "Live caption agent": [
         "Πράκτορας ζωντανών υποτίτλων"
+      ],
+      "Live captions": [
+        "Ζωντανοί υπότιτλοι"
       ],
       "Manage recordings": [
         "Διαχείριση ηχογραφήσεων"
