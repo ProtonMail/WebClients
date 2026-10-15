@@ -20,7 +20,7 @@ import { newVersionUpdater } from '@proton/shared/lib/busy';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import type { UserModel } from '@proton/shared/lib/interfaces';
-import { FlagProvider } from '@proton/unleash/proxy';
+import { UnleashFlagProviderWithToolbar } from '@proton/unleash/UnleashFlagProviderWithToolbar';
 
 import { bootstrapApp } from '../../bootstrap';
 import ConditionalNotificationsChildren from '../../components/ConditionalNotificationsChildren';
@@ -121,7 +121,7 @@ const AuthApp = () => {
                         <AuthenticationProvider store={extraThunkArguments.authentication}>
                             <ApiProvider api={extraThunkArguments.api}>
                                 <DrawerProvider defaultShowDrawerSidebar={state.showDrawerSidebar}>
-                                    <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
+                                    <UnleashFlagProviderWithToolbar unleashClient={extraThunkArguments.unleashClient}>
                                         <Router history={extraThunkArguments.history}>
                                             <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
                                                 <ErrorBoundary big component={<StandardErrorPage big />}>
@@ -137,7 +137,7 @@ const AuthApp = () => {
                                                 </ErrorBoundary>
                                             </EventManagerProvider>
                                         </Router>
-                                    </FlagProvider>
+                                    </UnleashFlagProviderWithToolbar>
                                 </DrawerProvider>
                             </ApiProvider>
                         </AuthenticationProvider>
