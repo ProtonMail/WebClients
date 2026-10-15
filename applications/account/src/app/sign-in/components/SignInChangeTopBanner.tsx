@@ -13,7 +13,6 @@ import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedTex
 import useLocalState from '@proton/components/hooks/useLocalState';
 import { IcBell } from '@proton/icons/icons/IcBell';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import signInChangeGif from './sign-in-change.gif';
@@ -22,10 +21,9 @@ import signInChangeGif from './sign-in-change.gif';
 export const SignInChangeTopBanner = () => {
     const [isDismissed, setIsDismissed] = useLocalState(false, 'sign-in-change-banner-dismissed');
     const [modalProps, setModalOpen, renderModal] = useModalState();
-    const isEnabled = useFlag('SigninPageIsChangingBanner');
     const theme = useTheme();
 
-    if (!isEnabled || isDismissed) {
+    if (isDismissed) {
         return null;
     }
 
