@@ -57,22 +57,22 @@ ignore:
       type: npm
       version: 6.30.6
 
-  ## extract-zip@2.0.1 (via electron@39.8.10 in pass-desktop, @electron/packager on desktop apps)
-  # TODO(Pass team): upgrade proton-pass-desktop from electron 39.8.10 to >=43.7.0.
-  # Electron 43+ depends on @electron-internal/extract-zip; no patched npm release for extract-zip 2.0.1.
+  ## extract-zip@2.0.1 (via @electron/packager, used by electron-forge on all desktop apps)
+  # No patched npm release for extract-zip 2.0.1; @electron/packager 18.3.5 still pins ^2.0.0.
   # Build-time only — electron/electron-packager download pre-built Electron binaries at dev/package time.
+  # The electron package itself no longer contributes it: 44+ uses @electron-internal/extract-zip.
   - vulnerability: GHSA-jmr9-qjv8-65gv
     reason: >-
-      Accepted: build-time tooling via electron@39.8.10 (pass-desktop) and @electron/packager;
-      not shipped in production bundles. TODO(Pass team): upgrade pass-desktop to electron >=43.7.0.
+      Accepted: build-time tooling via @electron/packager; not shipped in production bundles.
+      No patched release of extract-zip 2.0.1.
     package:
       name: extract-zip
       type: npm
       version: 2.0.1
   - vulnerability: GHSA-7pqw-9j4j-h8q3
     reason: >-
-      Accepted: build-time tooling via electron@39.8.10 (pass-desktop) and @electron/packager;
-      not shipped in production bundles. TODO(Pass team): upgrade pass-desktop to electron >=43.7.0.
+      Accepted: build-time tooling via @electron/packager; not shipped in production bundles.
+      No patched release of extract-zip 2.0.1.
     package:
       name: extract-zip
       type: npm
