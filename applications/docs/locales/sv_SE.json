@@ -1149,6 +1149,82 @@
         "Lagringsutrymme delas mellan alla ${ BRAND_NAME }-tjänster."
       ]
     },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Ta del av erbjudandet"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/månad"
+      ],
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "2 individual accounts": [
+        "2 individuella konton"
+      ],
+      "2 TB of secure storage": [
+        "2 TB säkert lagringsutrymme"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB lagringsutrymme: 40x ditt nuvarande paket"
+      ],
+      "3 TB of secure storage": [
+        "3 TB säkert lagringsutrymme"
+      ],
+      "500 GB of secure storage": [
+        "500 GB säkert lagringsutrymme"
+      ],
+      "6 individual accounts": [
+        "6 individuella konton"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Obegränsade mappar, etiketter och filter"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } och ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } och ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } och ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "för 12 månader"
+      ],
+      "Last chance to save big": [
+        "Sista chansen att spara stort"
+      ],
+      "Save big with a yearly plan": [
+        "Spara stort med ett årligt paket"
+      ]
+    },
     "Browser": {
       "${ appName } Desktop application": [
         "Applikation för stationär dator ${ appName }"
@@ -2929,14 +3005,8 @@
       "External invitations are temporarily disabled.": [
         "Externa inbjudningar är tillfälligt inaktiverade."
       ],
-      "External invitations are temporarily disabled. Please try again later": [
-        "Externa inbjudningar är tillfälligt inaktiverade. Försök igen senare"
-      ],
       "Failed to change permissions settings": [
         "Misslyckades att ändra behörighetsinställningar"
-      ],
-      "Failed to copy photo to album": [
-        "Misslyckades att kopiera foto till album"
       ],
       "Failed to create folder": [
         "Misslyckades att skapa mapp"
@@ -3432,6 +3502,9 @@
       ],
       "Wrong billing address": [
         "Fel faktureringsadress"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Fel återställningsfras. Försök igen eller använd en annan återställningsmetod."
       ],
       "You can create public links for your own files only": [
         "Du kan endast skapa offentliga länkar för dina egna filer"
@@ -7371,14 +7444,8 @@
       "\"${ fileName }\" shared": [
         "”${ fileName }” delad"
       ],
-      "\"${ name }\" deleted": [
-        "“${ name }“ borttagen"
-      ],
       "\"${ name }\" deleted permanently from trash": [
         "“${ name }“ togs bort permanent från papperskorg"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "“${ name }“ misslyckades att tas bort"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "“${ name }“ misslyckades att tas bort permanent från papperskorg"
@@ -7411,17 +7478,9 @@
         "${ count } objekt kunde inte dekrypteras",
         "${ count } objekt kunde inte dekrypteras"
       ],
-      "${ numberOfItems } item deleted": [
-        "${ numberOfItems } objekt borttaget",
-        "${ numberOfItems } objekt borttagna"
-      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } objekt har tagits bort permanent från papperskorg",
         "${ numberOfItems } objekt har tagits bort permanent från papperskorg"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems } objekt misslyckades att tas bort",
-        "${ numberOfItems } objekt misslyckades att tas bort"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "“${ numberOfItems }“ fil misslyckades att tas bort permanent från papperskorgen",
@@ -7888,6 +7947,9 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (exkl. moms)"
       ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kan inte kombineras med ${ PLAN_NAMES[PLANS.PASS] }."
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Belopp att betala efter provperioden den ${ formattedDate }"
       ],
@@ -7932,6 +7994,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Därefter förnyas det automatiskt i ${ renewalLength } månad för ${ renewPriceStr }. Du kan avbryta när som helst.",
         "Därefter förnyas det automatiskt i ${ renewalLength } månader för ${ renewPriceStr }. Du kan avbryta när som helst."
+      ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "Du äger redan ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
       ]
     },
     "PGP key encryption warning": {

@@ -2854,14 +2854,8 @@
       "External invitations are temporarily disabled.": [
         "Os convites externos estão temporariamente desativados."
       ],
-      "External invitations are temporarily disabled. Please try again later": [
-        "Os convites externos estão temporariamente desativados. Tente novamente mais tarde."
-      ],
       "Failed to change permissions settings": [
         "Falha ao alterar as definições de permissões"
-      ],
-      "Failed to copy photo to album": [
-        "Erro ao copiar a foto para o álbum"
       ],
       "Failed to create folder": [
         "Erro na criação da pasta"
@@ -3249,6 +3243,9 @@
       ],
       "Wrong billing address": [
         "Endereço de faturação incorreto"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Frase de recuperação incorreta. Tente novamente ou utilize outro método de recuperação."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Não pode enviar um e-mail para mais de ${ maxContacts } destinatário.",
@@ -7020,14 +7017,8 @@
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" partilhado"
       ],
-      "\"${ name }\" deleted": [
-        "«${ name }» foi eliminado."
-      ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" permanentemente eliminado do lixo"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "Erro ao eliminar «${ name }»"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "Erro ao eliminar \"${ name }\" permanentemente do lixo"
@@ -7057,17 +7048,9 @@
         "Erro ao desencriptar ${ count } item",
         "Erro ao desencriptar ${ count } itens"
       ],
-      "${ numberOfItems } item deleted": [
-        "${ numberOfItems } item eliminado",
-        "${ numberOfItems } itens eliminados"
-      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } item permanentemente eliminado do lixo",
         "${ numberOfItems } itens permanentemente eliminados do lixo"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "Erro ao eliminar ${ numberOfItems } item",
-        "Erro ao eliminar ${ numberOfItems } itens"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "Erro ao eliminar ${ numberOfItems } item permanentemente do lixo",
