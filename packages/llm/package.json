@@ -27,8 +27,10 @@
         "ttag": "^1.8.12"
     },
     "devDependencies": {
+        "@proton/eslint-config-proton": "workspace:^",
         "@proton/jest-env": "workspace:^",
         "@proton/jest-swc-preset": "workspace:^",
+        "@proton/redux-shared-store": "workspace:^",
         "@proton/types": "workspace:^",
         "@proton/unleash": "workspace:^",
         "@testing-library/jest-dom": "^6.9.1",

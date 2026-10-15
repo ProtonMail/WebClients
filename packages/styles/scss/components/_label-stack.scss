@@ -1,9 +1,9 @@
 @use 'sass:math';
-@use '~@proton/styles/scss/lib/config' as *;
-@use '~@proton/styles/scss/lib/em' as *;
-@use '~@proton/styles/scss/lib/rem' as *;
-@use '~@proton/styles/scss/lib/easing' as *;
-@use '~@proton/styles/scss/lib/include-media' as im;
+@use '../lib/config' as *;
+@use '../lib/em' as *;
+@use '../lib/rem' as *;
+@use '../lib/easing' as *;
+@use '../lib/include-media' as im;
 im.$breakpoints: $breakpoints-product;
 im.$media-expressions: $media-expressions;
 

@@ -1,7 +1,7 @@
-@use '~@proton/styles/scss/lib/config' as *;
-@use '~@proton/styles/scss/lib/em' as *;
-@use '~@proton/styles/scss/lib/rem' as *;
-@use '~@proton/styles/scss/lib/include-media' as *;
+@use '../lib/config' as *;
+@use '../lib/em' as *;
+@use '../lib/rem' as *;
+@use '../lib/include-media' as *;
 
 // used on switch account, summary section and user dropdown
 .user-initials {

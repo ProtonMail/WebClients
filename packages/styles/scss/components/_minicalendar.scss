@@ -1,8 +1,8 @@
-@use '~@proton/styles/scss/lib/config' as *;
-@use '~@proton/styles/scss/lib/em' as *;
-@use '~@proton/styles/scss/lib/rem' as *;
-@use '~@proton/styles/scss/lib/easing' as *;
-@use '~@proton/styles/scss/base/interactive' as *;
+@use '../lib/config' as *;
+@use '../lib/em' as *;
+@use '../lib/rem' as *;
+@use '../lib/easing' as *;
+@use '../base/interactive' as *;
 
 .minicalendar {
 	// Size of each cell width and height when `fixedSize`property is set.

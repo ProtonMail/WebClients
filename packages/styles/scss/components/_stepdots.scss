@@ -1,5 +1,5 @@
-@use '~@proton/styles/scss/lib/rem' as *;
-@use '~@proton/styles/scss/lib/easing' as *;
+@use '../lib/rem' as *;
+@use '../lib/easing' as *;
 
 .step-dots {
 	&-item:not(:last-child) {

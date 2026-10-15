@@ -26,8 +26,5 @@
         "eslint": "^10.11.0",
         "jest": "^30.5.2",
         "typescript": "npm:@typescript/typescript6@^6.0.2"
-    },
-    "installConfig": {
-        "hoistingLimits": "workspaces"
     }
 }

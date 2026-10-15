@@ -1,5 +1,5 @@
-@use '~@proton/styles/scss/lib/em' as *;
-@use '~@proton/styles/scss/lib/easing' as *;
+@use '../lib/em' as *;
+@use '../lib/easing' as *;
 
 .color-selector {
 	&-container {
