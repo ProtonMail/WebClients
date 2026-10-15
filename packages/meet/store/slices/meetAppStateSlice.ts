@@ -13,6 +13,7 @@ export interface MeetingEndedReason {
 
 interface MeetAppState {
     previousMeetingLink: string | null;
+    previousMeetingName: string;
     upsellModalType: UpsellModalTypes | null;
     invalidMeetingLinkModalOpen: boolean;
     // Raw reason sent by the server on the `room_deleted` topic just before it deletes the room
@@ -21,6 +22,7 @@ interface MeetAppState {
 
 const initialState: MeetAppState = {
     previousMeetingLink: null,
+    previousMeetingName: '',
     upsellModalType: null,
     invalidMeetingLinkModalOpen: false,
     meetingEndedReason: null,
@@ -32,6 +34,9 @@ const slice = createSlice({
     reducers: {
         setPreviousMeetingLink: (state, action: PayloadAction<string | null>) => {
             state.previousMeetingLink = action.payload;
+        },
+        setPreviousMeetingName: (state, action: PayloadAction<string>) => {
+            state.previousMeetingName = action.payload;
         },
         setUpsellModalType: (state, action: PayloadAction<UpsellModalTypes | null>) => {
             state.upsellModalType = action.payload;
@@ -45,11 +50,20 @@ const slice = createSlice({
     },
 });
 
-export const { setPreviousMeetingLink, setUpsellModalType, setInvalidMeetingLinkModalOpen, setMeetingEndedReason } =
-    slice.actions;
+export const {
+    setPreviousMeetingLink,
+    setPreviousMeetingName,
+    setUpsellModalType,
+    setInvalidMeetingLinkModalOpen,
+    setMeetingEndedReason,
+} = slice.actions;
 
 export const selectPreviousMeetingLink = (state: MeetState) => {
     return state.meetAppState.previousMeetingLink;
+};
+
+export const selectPreviousMeetingName = (state: MeetState) => {
+    return state.meetAppState.previousMeetingName;
 };
 
 export const selectUpsellModalType = (state: MeetState) => {
