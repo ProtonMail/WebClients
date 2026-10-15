@@ -32,6 +32,7 @@ import { useFlag } from '@proton/unleash/useFlag';
  * - apertusModelAvailable: Enable the Apertus 15 model in the composer model picker
  * - previewModelAvailable: Enable the internal Lumo Preview model in the composer model picker
  * - dictationV2: Show the dictation mic button in the composer toolbar
+ * - schedules: Enable scheduled tasks (sidebar nav, /schedules page)
  */
 export const useLumoFlags = () => {
     const imageTools = useFlag('LumoImageTools');
@@ -62,6 +63,7 @@ export const useLumoFlags = () => {
     const apertusModelAvailable = useFlag('LumoApertusModel');
     const previewModelAvailable = useFlag('LumoPreviewModel');
     const dictationV2 = useFlag('LumoDictationV2');
+    const schedules = useFlag('LumoSchedules');
 
     return {
         memory,
@@ -92,5 +94,6 @@ export const useLumoFlags = () => {
         apertusModelAvailable,
         previewModelAvailable,
         dictationV2,
+        schedules,
     };
 };
