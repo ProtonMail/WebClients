@@ -1,3 +1,4 @@
+import { logger } from '@protontech/logger';
 import {
     DEEPFILTERNET_SAMPLE_RATE,
     type DeepFilterNetAudioWorkletHandle,
@@ -18,6 +19,8 @@ export { DEEPFILTERNET_SAMPLE_RATE };
 
 const SPEECH_ATTENUATION_DB = 25;
 const PAUSE_ATTENUATION_DB = SPEECH_ATTENUATION_DB;
+
+const SLOW_FRAME_RATIO_TO_REPORT = 0.1;
 
 export const DeepFilterNetFilter = ({
     reportError,
@@ -59,7 +62,22 @@ export const DeepFilterNetFilter = ({
     };
 
     const reportSlowFrames = ({ slowFrames, frames, windows, medianLoad, p95Load, maxLoad }: LoadReport) => {
-        if (slowFrames === 0) {
+        const slowFrameRatio = frames > 0 ? slowFrames / frames : 0;
+
+        const context = {
+            slowFrames,
+            frames,
+            slowFrameRatio: Number(slowFrameRatio.toFixed(3)),
+            windows,
+            medianLoad: Number(medianLoad.toFixed(3)),
+            p95Load: Number(p95Load.toFixed(3)),
+            maxLoad: Number(maxLoad.toFixed(3)),
+            hardwareConcurrency: navigator.hardwareConcurrency,
+            deepFilterNetSlowFramesPercent: Math.floor(slowFrameRatio * 10) * 10,
+        };
+
+        if (slowFrameRatio < SLOW_FRAME_RATIO_TO_REPORT) {
+            logger.info('DeepFilterNet noise suppression performance', context);
             return;
         }
 
@@ -68,16 +86,9 @@ export const DeepFilterNetFilter = ({
             tags: {
                 feature: 'noise-cancellation',
                 deepFilterNetSeverity: 'slow-frames',
+                deepFilterNetSlowFramesPercent: context.deepFilterNetSlowFramesPercent,
             },
-            context: {
-                slowFrames,
-                frames,
-                windows,
-                medianLoad: Number(medianLoad.toFixed(3)),
-                p95Load: Number(p95Load.toFixed(3)),
-                maxLoad: Number(maxLoad.toFixed(3)),
-                hardwareConcurrency: navigator.hardwareConcurrency,
-            },
+            context,
         });
     };
 
