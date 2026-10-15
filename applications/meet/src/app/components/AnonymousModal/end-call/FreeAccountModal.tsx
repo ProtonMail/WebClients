@@ -7,6 +7,7 @@ import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 
 import type { CTAModalBaseProps } from '../shared/types';
 import { EndCallModalShell } from './EndCallModalShell';
+import { LeftMeetingTitle } from './LeftMeetingTitle';
 
 export const FreeAccountModal = ({ open, onClose, action, rejoin }: CTAModalBaseProps) => {
     const history = useHistory();
@@ -29,7 +30,7 @@ export const FreeAccountModal = ({ open, onClose, action, rejoin }: CTAModalBase
                 </Button>
             }
             rejoin={rejoin}
-            title={c('Info').t`You left the meeting`}
+            title={<LeftMeetingTitle />}
             subtitle={c('Info')
                 .t`Host your own secure meeting. Start a call in ${MEET_APP_NAME} and share the link to invite anyone to join. Simple, secure, and free.`}
         />
