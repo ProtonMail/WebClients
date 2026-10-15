@@ -9,6 +9,7 @@
         "config-app": "(packages/config/install 2>/dev/null) || true",
         "create-atom": "pnpm --filter @proton/atoms run create-atom",
         "drive:test-index:staged": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON tests/drive/tools/tests-mapping/test-index.ts --staged",
+        "preinstall": "node utilities/enforce-pnpm/preinstall.mjs",
         "postinstall": "is-ci || (husky; pnpm run config-app)",
         "knip": "knip",
         "knip:staged": "node utilities/knip-staged/knip-staged.mjs",
@@ -56,7 +57,8 @@
     },
     "packageManager": "pnpm@12.8.1",
     "engines": {
-        "node": "^24.18.0"
+        "node": "^24.18.0",
+        "pnpm": "^12.8.1"
     },
     "publishConfig": {
         "registry": "https://nexus.protontech.ch/repository/web-npm/"
