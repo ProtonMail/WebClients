@@ -20,7 +20,7 @@ export const useConversationFocus = (messages: Message[]) => {
     // If last focus actions has been done with keyboard shortcut
     const withKeyboardRef = useRef(false);
 
-    useClickOutsideFocusedMessage(focusIndex ? messages[focusIndex]?.ID : undefined, () => {
+    useClickOutsideFocusedMessage(focusIndex !== undefined ? messages[focusIndex]?.ID : undefined, () => {
         setFocusIndex(undefined);
     });
 
@@ -64,6 +64,8 @@ export const useConversationFocus = (messages: Message[]) => {
         [focusIndex]
     );
 
+    const focusedMessageID = focusIndex !== undefined ? messages[focusIndex]?.ID : undefined;
+
     useEffect(() => {
         if (focusIndex === undefined) {
             return;
@@ -91,7 +93,7 @@ export const useConversationFocus = (messages: Message[]) => {
         withKeyboardRef.current = false;
         preventFocusRef.current = false;
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-39CD66
-    }, [focusIndex]);
+    }, [focusIndex, focusedMessageID]);
 
     useEffect(() => {
         if (focusIndex !== undefined && nextScrollTo) {
