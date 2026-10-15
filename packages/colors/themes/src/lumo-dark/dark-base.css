@@ -1,59 +1,57 @@
 :root,
 .ui-standard {
-    --primary: #8A6EFF;
-    --signal-danger: #DC3251;
-    --signal-warning: #FF9900;
-    --signal-success: #1EA885;
-    --signal-info: #239ECE;
+    --primary: #8a6eff;
+    --signal-danger: #dc3251;
+    --signal-warning: #ff9900;
+    --signal-success: #1ea885;
+    --signal-info: #239ece;
 
-    --interaction-norm: #6D4AFF;
-    --interaction-norm-hover: #7C5CFF;
-    --interaction-norm-active: #8A6EFF;
+    --interaction-norm: #6d4aff;
+    --interaction-norm-hover: #7c5cff;
+    --interaction-norm-active: #8a6eff;
 
-
-    --interaction-weak: #4A4658;
-    --interaction-weak-hover: #5C5969;
-    --interaction-weak-active: #6E6B79;
+    --interaction-weak: #4a4658;
+    --interaction-weak-hover: #5c5969;
+    --interaction-weak-active: #6e6b79;
 
     --text-norm: white;
-    --text-weak: #A7A4B5;
-    --text-hint: #6D697D;
-    --text-disabled: #5B576B;
+    --text-weak: #a7a4b5;
+    --text-hint: #6d697d;
+    --text-disabled: #5b576b;
     --text-invert: #343140;
     --text-markdown: white;
-    --text-dark: #0C0C14;
-     /* Emphasized text */
+    --text-dark: #0c0c14;
+    /* Emphasized text */
     --text-strong: white;
     --text-secondary: white;
 
-    --field-norm: #5B576B;
-    --field-hover: #6D697D;
-    --field-disabled: #3F3B4C;
+    --field-norm: #5b576b;
+    --field-hover: #6d697d;
+    --field-disabled: #3f3b4c;
 
-    --focus-outline: #6D4AFF;
+    --focus-outline: #6d4aff;
     --focus-ring: rgba(109, 74, 255, 0.3);
 
-    --border-norm: #4A4658;
+    --border-norm: #4a4658;
     --border-weak: #343140;
 
     --background-norm: #141414;
     --background-weak: #292733;
-    --background-strong: #3F3B4C;
+    --background-strong: #3f3b4c;
     --background-invert: white;
     --background-light: var(--background-weak);
 
-     /* composer background for small screens */
-      --background-composer-mobile: #292733;
-     /* lumo plus upsell sidebar button background */
+    /* composer background for small screens */
+    --background-composer-mobile: #292733;
+    /* lumo plus upsell sidebar button background */
     --background-upsell-button: #292733;
-     /* lumo plus toggle container background */
+    /* lumo plus toggle container background */
     --background-upsell-toggle: rgba(91, 87, 107, 0.6);
-      /* lumo plus toggle background */
-      --background-upsell-toggle-button: var(--background-weak);
+    /* lumo plus toggle background */
+    --background-upsell-toggle-button: var(--background-weak);
     /* lumo plus toggle container ghost mode */
-     --background-upsell-toggle-ghost-mode: rgba(91, 87, 107, 0.6);
-     --background-upsell-toggle-ghost-mode-button: var(--background-weak);
-
+    --background-upsell-toggle-ghost-mode: rgba(91, 87, 107, 0.6);
+    --background-upsell-toggle-ghost-mode-button: var(--background-weak);
 
     --interaction-default: transparent;
     --interaction-default-hover: rgba(91, 87, 107, 0.2);
@@ -66,10 +64,10 @@
     --backdrop-norm: rgb(38 42 51 / 0.48);
 
     /*  new colors */
-    --background-main-canvas: #0B0B0B;
-    --interaction-secondary: #E57031;
-    --interaction-secondary-hover: #F97316;
-    --interaction-secondary-active: #FB923C;
+    --background-main-canvas: #0b0b0b;
+    --interaction-secondary: #e57031;
+    --interaction-secondary-hover: #f97316;
+    --interaction-secondary-active: #fb923c;
 
     /* For lumo solid weak button background color */
     --interaction-solid-weak-custom: #292929;
@@ -77,13 +75,13 @@
     --interaction-solid-weak-custom-active: #525252;
     --interaction-solid-weak-custom-hover: #3f3f3f;
 
-    --reinforce-norm: #5C3BE7;
-    --reinforce-hover: #6D4AFF;
-    --reinforce-active: #7C5CFF;
+    --reinforce-norm: #5c3be7;
+    --reinforce-hover: #6d4aff;
+    --reinforce-active: #7c5cff;
 
-    --link-norm: #9880FF;
-    --link-hover: #A898ED;
-    --link-active: #BBABFF;
+    --link-norm: #9880ff;
+    --link-hover: #a898ed;
+    --link-active: #bbabff;
 
     /* Lumo dark surfaces: minor-2 is a lighter purple highlight (e.g. avatar hover). */
     --interaction-norm-minor-1: #322956;
@@ -95,8 +93,8 @@
 
     --optional-promotion-background-start: rgb(109 74 255 / 0.15);
     --optional-promotion-background-end: rgb(70 26 255 / 0.04);
-    --optional-upgrade-color-1: #FFAC2E;
-    --optional-upgrade-color-2: #6D4AFF;
+    --optional-upgrade-color-1: #ffac2e;
+    --optional-upgrade-color-2: #6d4aff;
 
     --text-error-banner-title: white;
     --text-error-banner-message: white;
@@ -104,26 +102,26 @@
     --error-banner-high-opacity: 0.55;
     --error-banner-low-opacity: 0.35;
 
-     /* lumo markdown */
-    --markdown-code-background: #282C34;
-     --markdown-pre-background: #282C34;
-     --markdown-pre-border: #343140;
+    /* lumo markdown */
+    --markdown-code-background: #282c34;
+    --markdown-pre-background: #282c34;
+    --markdown-pre-border: #343140;
 
-     /* lumo settings modal */
+    /* lumo settings modal */
     --settings-modal-upsell-background: var(--backdrop-norm);
     --settings-modal-upsell-text: var(--text-norm);
 
     /* lumo logo */
-    --lumo-plus-logo-plus-sign-text:#F7F5FF;
+    --lumo-plus-logo-plus-sign-text: #f7f5ff;
 
     /* background particle  */
     --surface-foreground: #141414;
 
-     /* welcome text */
+    /* welcome text */
     --lumo-welcome-text: white;
 
     /* logo tags */
-    --lumo-logo-tag-pro-background: rgba(255, 255, 255, 0.70);
+    --lumo-logo-tag-pro-background: rgba(255, 255, 255, 0.7);
     --lumo-logo-tag-plus-background: var(--border-weak);
     --lumo-logo-tag-pro-text: var(--text-dark);
     --lumo-logo-tag-plus-text: var(--interaction-weak-active);
@@ -143,6 +141,10 @@
     --glyph-brand: #6d4aff; /* iris-500 */
     --glyph-brand-mid: #7c6df9; /* iris-400 */
     --glyph-brand-strong: #9a97f7; /* iris-300 */
+
+    /* Colours 2026: Control */
+    --border: #292929; /* neutral-800 */
+    --border-mid: #3f3f3f; /* neutral-700 */
 
     /* Colours 2026: Control */
     --control-fill-empty: transparent;

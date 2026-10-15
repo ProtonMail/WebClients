@@ -256,6 +256,7 @@ enum LumoFeatureFlag {
     LumoNewMarketingLinks = 'LumoNewMarketingLinks',
     LumoPreviewModel = 'LumoPreviewModel',
     LumoProjects = 'LumoProjects',
+    LumoSchedules = 'LumoSchedules',
     LumoShowNextPromptSuggestions = 'LumoShowNextPromptSuggestions',
     LumoSmoothedRendering = 'LumoSmoothedRendering',
     LumoSpecialTheme = 'LumoSpecialTheme',
