@@ -345,6 +345,9 @@
       "Connect apps and devices": [
         "Apps en apparaten verbinden"
       ],
+      "Connect Gmail": [
+        "Verbinden met Gmail"
+      ],
       "Connect Gmail address": [
         "Verbind uw Gmail-adres"
       ],
@@ -2469,12 +2472,6 @@
       ]
     },
     "bf2023: Info": {
-      "6 TB storage (2x more than any other plan)": [
-        "6 TB opslagruimte (2x meer dan binnen elk ander abonnement)"
-      ],
-      "6 users": [
-        "6 gebruikers"
-      ],
       "Become a super-supporter. Get access to all current and future ${ BRAND_NAME } services.": [
         "Word een super-superlid. Krijg toegang tot alle huidige en toekomstige diensten van ${ BRAND_NAME }."
       ],
@@ -2486,9 +2483,6 @@
       ],
       "Premium versions of all ${ BRAND_NAME } services": [
         "Premium versies van alle diensten van ${ BRAND_NAME }"
-      ],
-      "The ${ plan } plan is back for a limited time only": [
-        "Het ${ plan }-abonnement is tijdelijk terug"
       ]
     },
     "bf2023: info": {
@@ -4963,6 +4957,9 @@
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "De meeste problemen kunnen binnen enkele minuten worden opgelost met onze stapsgewijze handleidingen."
       ],
+      "No ads, no tracking. Use your Gmail in ${ BRAND_NAME }. Nothing there gets edited or deleted.": [
+        "Geen advertenties, geen tracking. Gebruik uw Gmail in ${ BRAND_NAME }. Niets daar wordt bewerkt of verwijderd."
+      ],
       "No ads. No trackers": [
         "Geen advertenties. Geen trackers"
       ],
@@ -6179,6 +6176,9 @@
       "Add 1 more": [
         "Voeg er nog 1 toe"
       ],
+      "Add contact": [
+        "Contactpersoon toevoegen"
+      ],
       "Add emergency contact": [
         "Contactpersoon voor noodgevallen toevoegen"
       ],
@@ -6347,6 +6347,9 @@
       ],
       "Recover data now": [
         "Herstel nu gegevens"
+      ],
+      "Recover your data before adding a new contact.": [
+        "Herstel uw gegevens voordat u een nieuw contact toevoegt."
       ],
       "Recovery approved": [
         "Herstel goedgekeurd"
@@ -6530,6 +6533,9 @@
       "You'll receive access to their account in **${ days } day**, or when they approve your request.": [
         "U krijgt toegang tot hun account binnen **${ days } dag**, of wanneer zij uw verzoek goedkeuren.",
         "U ontvangt toegang tot hun account over **${ days } dagen**, of wanneer zij uw verzoek goedkeuren."
+      ],
+      "Your data is still locked from a password reset. A contact added now won't be able to restore it.": [
+        "Uw gegevens zijn nog steeds vergrendeld na een wachtwoordreset. Een nu toegevoegde contactpersoon kan deze niet herstellen."
       ],
       "Your emergency contact ${ name } is requesting access to your account.": [
         "Uw noodcontact ${ name } vraagt toegang tot uw account."
@@ -6887,6 +6893,9 @@
       ],
       "Incorrect password": [
         "Ongeldig wachtwoord"
+      ],
+      "Incorrect password. Please try again.": [
+        "Onjuist wachtwoord. Probeer het opnieuw."
       ],
       "Incorrect recovery code. Please try again.": [
         "Ongeldige herstelcode. Probeer het opnieuw."
@@ -9557,6 +9566,9 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } is ongeldig"
       ],
+      "${ emailAddress } is used to sign in to another ${ BRAND_NAME } account. We are making the connection seamless, but for now you will need to take a few steps.": [
+        "${ emailAddress } wordt gebruikt om in te loggen op een ander ${ BRAND_NAME } account. We maken de verbinding naadloos, maar voorlopig moet u een paar stappen ondernemen."
+      ],
       "${ emails.length } member added to the group": [
         "${ emails.length } lid toegevoegd aan de groep",
         "${ emails.length } leden toegevoegd aan de groep"
@@ -9699,6 +9711,9 @@
       ],
       "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
         "${ quarantine }: de geadresseerde platforms vragen de ongeoorloofde e-mails als spam te markeren of ze in quarantaine te plaatsen."
+      ],
+      "${ reason.email } is used to sign in to another ${ BRAND_NAME } account. You'll pick a new username for that account next time you sign in. Nothing else changes.": [
+        "${ reason.email } wordt gebruikt om in te loggen op een ander ${ BRAND_NAME }-account. De volgende keer dat u zich aanmeldt, kiest u een nieuwe gebruikersnaam voor dat account. Verder verandert er niets."
       ],
       "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
         "${ reject }: de geadresseerde platformen vragen de ongeautoriseerde e-mails te verwerpen."
@@ -11154,6 +11169,9 @@
       "Import mailbox": [
         "Mailbox importeren"
       ],
+      "Import show one-time transfers of email, calendars, contacts, or files into your ${ BRAND_NAME } account.": [
+        "Importeren toont eenmalige overdrachten van e-mail, agenda's, contacten of bestanden naar uw ${ BRAND_NAME }-account."
+      ],
       "Import show one-time transfers of email, calendars, or contacts into your ${ BRAND_NAME } account.": [
         "Importeer eenmalige overdrachten van e-mails, agenda’s of contactpersonen naar uw ${ BRAND_NAME }-account."
       ],
@@ -11804,6 +11822,12 @@
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Selecteer het soort link dat u wil invoeren en vul alle velden in."
       ],
+      "Please sign in with ${ emailAddress } to continue.": [
+        "Meld u aan met ${ emailAddress } om door te gaan."
+      ],
+      "Please sign in with the Gmail account you want to connect to continue.": [
+        "Meld u aan met het Gmail-account waarmee u verbinding wilt maken om door te gaan."
+      ],
       "Please specify...": [
         "Specificeer..."
       ],
@@ -12395,6 +12419,12 @@
       "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
         "Dit Gmail-adres is geregistreerd bij een ander ${ BRAND_NAME }-account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI en andere). We werken eraan om deze verbinding naadloos te laten verlopen, maar voorlopig moet u een paar stappen ondernemen."
       ],
+      "This Gmail is already connected to your ${ BRAND_NAME } account. There's nothing else you need to do.": [
+        "Deze Gmail is al gekoppeld aan je ${ BRAND_NAME }-account. Er is niets anders dat u hoeft te doen."
+      ],
+      "This Gmail is used to sign in to another ${ BRAND_NAME } account. We are making the connection seamless, but for now you will need to take a few steps.": [
+        "Deze Gmail wordt gebruikt om in te loggen op een ander ${ BRAND_NAME }-account. We maken de verbinding naadloos, maar voorlopig moet u een paar stappen ondernemen."
+      ],
       "This invitation link has expired. Please contact your administrator to request access.": [
         "Deze uitnodigingslink is verlopen. Neem contact op met uw beheerder om toegang aan te vragen."
       ],
@@ -12880,6 +12910,15 @@
       ],
       "We couldn't complete the transaction. Please try again.": [
         "We konden de transactie niet voltooien. Probeer het opnieuw."
+      ],
+      "We couldn't connect ${ emailAddress }. Try again and select all the boxes when Google asks for access. ${ BRAND_NAME } only uses this access to connect your Gmail.": [
+        "We konden ${ emailAddress } niet verbinden. Probeer het opnieuw en selecteer alle vakjes wanneer Google om toegang vraagt. ${ BRAND_NAME } gebruikt deze toegang alleen om uw Gmail te koppelen."
+      ],
+      "We couldn't connect your Gmail right now. Please try again in a few minutes.": [
+        "We kunnen uw Gmail momenteel niet verbinden. Probeer het over een paar minuten opnieuw."
+      ],
+      "We couldn't connect your Gmail. Try again and select all the boxes when Google asks for access. ${ BRAND_NAME } only uses this access to connect your Gmail.": [
+        "We kunnen uw Gmail niet verbinden. Probeer het opnieuw en selecteer alle vakjes wanneer Google om toegang vraagt. ${ BRAND_NAME } gebruikt deze toegang alleen om je Gmail te koppelen."
       ],
       "We couldn’t process your payment.": [
         "We konden uw betaling niet verwerken."
@@ -14791,9 +14830,6 @@
       ],
       "Font size": [
         "Lettertypegrootte"
-      ],
-      "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
-        "Voor ${ DRIVE_SHORT_APP_NAME } en ${ DOCS_SHORT_APP_NAME }."
       ],
       "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
         "Voor ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME } en ${ SHEETS_SHORT_APP_NAME }."
@@ -19574,11 +19610,17 @@
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Betaalmethode vereist voor de activering van het abonnement nadat de proefversie is afgelopen."
       ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Abonnementwisseling is om de volgende redenen niet compatibel:"
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveer eerst uw abonnement om het aantal add-ons te verminderen."
       ],
       "Processing payment": [
         "Betaling wordt verwerkt"
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Proton Meet licenties moeten overeenkomen met het aantal leden."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Bij vernieuwing zijn prijswijziging volgen volgende ${ termsAndConditionsLink }."
@@ -19639,6 +19681,12 @@
       ],
       "This payment method will become your new default for all future renewals.": [
         "Deze betaalmethode wordt uw nieuwe standaard voor alle toekomstige verlengingen."
+      ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Dit abonnement ondersteunt de beheerde functies van uw account niet."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Dit abonnement kan momenteel niet worden voltooid. Probeer het opnieuw."
       ],
       "Timeout exceeded": [
         "Time-out overschreden"
@@ -24545,6 +24593,9 @@
       "Allocate storage": [
         "Opslag toewijzen"
       ],
+      "Allow access to connect your Gmail": [
+        "Geef toegang om uw Gmail te verbinden"
+      ],
       "Already have multiple accounts?": [
         "Heeft u al meerdere accounts?"
       ],
@@ -25325,6 +25376,9 @@
       "Gift code": [
         "Geschenkcode"
       ],
+      "Good to know before you connect": [
+        "Goed om te weten voordat u verbinding maakt"
+      ],
       "Group": [
         "Groep"
       ],
@@ -26068,6 +26122,12 @@
       "This field cannot contain only spaces": [
         "Dit veld mag niet alleen spaties bevatten"
       ],
+      "This Gmail is already connected": [
+        "Deze Gmail is al verbonden"
+      ],
+      "This Gmail is linked to another ${ BRAND_NAME } account": [
+        "Deze Gmail is gekoppeld aan een ander ${ BRAND_NAME }-account"
+      ],
       "Time zone": [
         "Tijdzone"
       ],
@@ -26259,6 +26319,9 @@
       ],
       "With your ${ BRAND_NAME } Account, you get access to all ${ BRAND_NAME } apps": [
         "Met uw ${ BRAND_NAME }-account krijgt u toegang tot alle ${ BRAND_NAME }-apps"
+      ],
+      "Wrong Gmail account": [
+        "Verkeerd Gmail-account"
       ],
       "You are all set": [
         "U bent helemaal klaar"

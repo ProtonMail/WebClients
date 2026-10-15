@@ -722,6 +722,9 @@
       "Continue with Outlook": [
         "Συνεχίστε με Outlook"
       ],
+      "Continue with single sign-on": [
+        "Συνέχεια με ενιαία σύνδεση"
+      ],
       "Continue with this password": [
         "Συνεχίστε με αυτόν τον κωδικό πρόσβασης"
       ],
@@ -1639,6 +1642,9 @@
       ],
       "Recover data": [
         "Ανάκτηση δεδομένων"
+      ],
+      "Recover previous account": [
+        "Ανάκτηση προηγούμενου λογαριασμού"
       ],
       "Refer a friend": [
         "Συστήστε ένα φίλο"
@@ -2896,12 +2902,6 @@
       ]
     },
     "bf2023: Info": {
-      "6 TB storage (2x more than any other plan)": [
-        "Χώρος αποθήκευσης 6 TB (2 φορές περισσότερος από οποιοδήποτε άλλο πλάνο)"
-      ],
-      "6 users": [
-        "6 χρήστες"
-      ],
       "Become a super-supporter. Get access to all current and future ${ BRAND_NAME } services.": [
         "Γίνετε υπερ-υποστηρικτής. Αποκτήστε πρόσβαση σε όλες τις τρέχουσες και μελλοντικές υπηρεσίες ${ BRAND_NAME }."
       ],
@@ -2914,8 +2914,8 @@
       "Premium versions of all ${ BRAND_NAME } services": [
         "Premium εκδόσεις όλων των υπηρεσιών ${ BRAND_NAME }"
       ],
-      "The ${ plan } plan is back for a limited time only": [
-        "Το πλάνο ${ plan } επιστρέφει μόνο για περιορισμένο χρονικό διάστημα"
+      "The ${ planName } plan is back for a limited time only": [
+        "Το πλάνο ${ planName } επιστρέφει μόνο για περιορισμένο χρονικό διάστημα"
       ]
     },
     "bf2023: info": {
@@ -2956,6 +2956,109 @@
     "BF2024: Tooltip": {
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Ο χώρος αποθήκευσης μοιράζεται μεταξύ όλων των ${ BRAND_NAME } υπηρεσιών."
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Αποκτήστε την προσφορά"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/μήνα"
+      ],
+      "15 GB storage": [
+        "15 GB αποθηκευτικός χώρος"
+      ],
+      "2 individual accounts": [
+        "2 ατομικοί λογαριασμοί"
+      ],
+      "2 TB of secure storage": [
+        "2 TB ασφαλούς αποθήκευσης"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "Αποθηκευτικός χώρος 200 GB: 40 φορές το τρέχον πλάνο σας"
+      ],
+      "3 TB of secure storage": [
+        "3 TB ασφαλούς αποθήκευσης"
+      ],
+      "500 GB of secure storage": [
+        "500 GB ασφαλούς αποθήκευσης"
+      ],
+      "6 individual accounts": [
+        "6 ατομικοί λογαριασμοί"
+      ],
+      "Built-in 2FA authenticator": [
+        "Ενσωματωμένη εφαρμογή ταυτοποίησης 2FA"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση. Η συνδρομή σας θα ανανεωθεί με την τυπική ετήσια χρέωση όταν λήξει ο κύκλος χρέωσης."
+      ],
+      "Online document editor": [
+        "Online επεξεργαστής εγγράφων"
+      ],
+      "Recover previous file versions": [
+        "Ανάκτηση προηγούμενων εκδόσεων αρχείων"
+      ],
+      "Stronger protection against cyber threats": [
+        "Ισχυρότερη προστασία από τις απειλές στον κυβερνοχώρο"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Απεριόριστοι φάκελοι, ετικέτες, και φίλτρα"
+      ],
+      "Use your own email domain": [
+        "Χρησιμοποιήστε τον δικό σας τομέα ηλεκτρονικού ταχυδρομείου"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, και ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, και ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, και ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Η μεγαλύτερη προσφορά της χρονιάς"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "για 12 μήνες"
+      ],
+      "Last chance to save big": [
+        "Τελευταία ευκαιρία για μεγάλες εξοικονομήσεις"
+      ],
+      "Protect your entire tribe": [
+        "Προστάτεψε ολόκληρη τη φυλή σας"
+      ],
+      "Protection for two in a single plan": [
+        "Προστασία για δύο άτομα σε ένα ενιαίο πλάνο"
+      ],
+      "Save big with a yearly plan": [
+        "Κερδίστε σημαντικά με ένα ετήσιο πλάνο"
       ]
     },
     "Billing cycle": {
@@ -3750,6 +3853,50 @@
       "Total for ${ cycle } month": [
         "Σύνολο για ${ cycle } μήνα",
         "Σύνολο για ${ cycle } μήνες"
+      ]
+    },
+    "claimed address": {
+      "Sign in with your organization?": [
+        "Σύνδεση με τον οργανισμό σας;"
+      ],
+      "The address ${ boldClaimedEmail } has been claimed and can no longer be used for this account. Your data is safe and hasn't been shared with anyone. To migrate it to a new account, create a new ${ BRAND_NAME } email address.": [
+        "Η διεύθυνση ${ boldClaimedEmail } έχει ήδη κατοχυρωθεί και δεν μπορεί πλέον να χρησιμοποιηθεί για αυτόν τον λογαριασμό. Τα δεδομένα σας είναι ασφαλή και δεν έχουν κοινοποιηθεί σε κανέναν. Για να τα μεταφέρετε σε νέο λογαριασμό, δημιουργήστε μια νέα διεύθυνση ηλεκτρονικού ταχυδρομείου ${ BRAND_NAME }."
+      ],
+      "The address ${ boldClaimedEmail } has been claimed and can no longer be used for this account. Your data was migrated to the address below and remains private.": [
+        "Η διεύθυνση ${ boldClaimedEmail } έχει κατοχυρωθεί και δεν μπορεί πλέον να χρησιμοποιηθεί για αυτόν τον λογαριασμό. Τα δεδομένα σας μεταφέρθηκαν στην παρακάτω διεύθυνση και παραμένουν ιδιωτικά."
+      ],
+      "The address ${ boldClaimedEmail } has been claimed by another organization and can no longer be used for this account. Your data is safe and remains private.": [
+        "Η διεύθυνση ${ boldClaimedEmail } έχει κατοχυρωθεί από άλλον οργανισμό και δεν μπορεί πλέον να χρησιμοποιηθεί για αυτόν τον λογαριασμό. Τα δεδομένα σας είναι ασφαλή και παραμένουν ιδιωτικά."
+      ],
+      "Verify it's you": [
+        "Επαλήθευση ταυτότητας"
+      ],
+      "You're all set": [
+        "Είσαι έτοιμοι"
+      ],
+      "Your address": [
+        "Η διεύθυνση σας"
+      ],
+      "Your address has been claimed": [
+        "Η διεύθυνσή σας έχει κατοχυρωθεί"
+      ],
+      "Your address has changed": [
+        "Η διεύθυνσή σας έχει αλλάξει"
+      ],
+      "Your administrator can give you a new address.": [
+        "Ο διαχειριστής σας μπορεί να σας δώσει μια νέα διεύθυνση."
+      ],
+      "Your data was migrated to the address below and remains private.": [
+        "Τα δεδομένα σας μεταφέρθηκαν στην παρακάτω διεύθυνση και παραμένουν ιδιωτικά."
+      ],
+      "Your new address": [
+        "Η νέα σας διεύθυνση"
+      ],
+      "Your password remains the same.": [
+        "Ο κωδικός πρόσβασής σας παραμένει ο ίδιος."
+      ],
+      "Your previous username, ${ boldClaimedEmail }, can no longer be used to sign in to this account.": [
+        "Το προηγούμενο όνομα χρήστη σας, ${ boldClaimedEmail }, δεν μπορεί πλέον να χρησιμοποιηθεί για την είσοδο σε αυτόν τον λογαριασμό."
       ]
     },
     "Collapsible tooltip": {
@@ -5418,14 +5565,14 @@
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "Κάντε το υποσέλιδο του email σας δικό σας — προβάλετε τη μοναδική επωνυμία σας, όχι τη δική μας."
       ],
-      "Make your Gmail private in under a minute, without editing or deleting anything there.": [
-        "Κάντε το Gmail σας ιδιωτικό σε λιγότερο από ένα λεπτό, χωρίς να επεξεργαστείτε ή να διαγράψετε τίποτα σε αυτό."
-      ],
       "Methods that include both password reset and data recovery.": [
         "Μέθοδοι που περιλαμβάνουν τόσο επαναφορά κωδικού πρόσβασης όσο και ανάκτηση δεδομένων."
       ],
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "Τα περισσότερα προβλήματα μπορούν να λυθούν σε λίγα λεπτά με τους αναλυτικούς οδηγούς μας."
+      ],
+      "No ads, no tracking. Use your Gmail in ${ BRAND_NAME }. Nothing there gets edited or deleted.": [
+        "Χωρίς διαφημίσεις, χωρίς παρακολούθηση. Χρησιμοποιήστε το Gmail σας στο ${ BRAND_NAME }. Τίποτα δεν τροποποιείται ούτε διαγράφεται."
       ],
       "No ads. No trackers": [
         "Χωρίς διαφημίσεις. Χωρίς ιχνηλάτες"
@@ -7392,6 +7539,9 @@
       ],
       "Incorrect password": [
         "Λανθασμένος κωδικός πρόσβασης"
+      ],
+      "Incorrect password. Please try again.": [
+        "Λανθασμένος κωδικός. Παρακαλούμε δοκιμάστε ξανά."
       ],
       "Incorrect recovery code. Please try again.": [
         "Λανθασμένος κωδικός ανάκτησης. Παρακαλούμε δοκιμάστε ξανά."
@@ -10446,6 +10596,9 @@
       "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
         "**Αυτό θα απενεργοποιήσει τις προωθήσεις email με διατερματική κρυπτογράφηση:** μπορείτε να τις ρυθμίσετε ξανά αργότερα."
       ],
+      "**We're changing the ${ BRAND_NAME } sign-in page.** Your account and password stay the same.": [
+        "**Αλλάζουμε τη σελίδα σύνδεσης του ${ BRAND_NAME }.** Ο λογαριασμός και ο κωδικός πρόσβασής σας παραμένουν ίδιοι."
+      ],
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Λαμβάνετε ${ referrerRewardAmount }** σε πιστώσεις για κάθε φίλο που εγγράφεται."
       ],
@@ -11509,6 +11662,9 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Εισάγετε την ηλ. διεύθυνση ή το όνομα χρήστη του λογαριασμού σας ${ BRAND_NAME }."
       ],
+      "Enter your old password for ${ boldEmail }.": [
+        "Εισαγάγετε τον παλιό σας κωδικό πρόσβασης για το ${ boldEmail }."
+      ],
       "Enter your own password (as organization admin).": [
         "Εισάγετε τον κωδικό πρόσβασής σας (ως διαχειριστής οργανισμού)."
       ],
@@ -11613,6 +11769,9 @@
       ],
       "For just ${ bundlePlanPriceInline }": [
         "Μόνο για ${ bundlePlanPriceInline }"
+      ],
+      "For security, business accounts sign in with a code instead. On your TV, select 'Trouble signing in?' and follow the steps.": [
+        "Για λόγους ασφαλείας, οι επαγγελματικοί λογαριασμοί συνδέονται με τη χρήση κωδικού. Στην τηλεόρασή σας, επιλέξτε \"Πρόβλημα σύνδεσης;\" και ακολουθήστε τα βήματα."
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Για χρήστες που μεταβαίνουν σε ${ MAIL_APP_NAME } από άλλη υπηρεσία ηλεκτρονικού ταχυδρομείου, επιλέξτε την καρτέλα ${ boldAddresses } και προσθέστε όλες τις ενεργές διευθύνσεις ηλεκτρονικού ταχυδρομείου πριν αλλάξετε την εγγραφή MX για να διασφαλίσετε την ομαλή μετάβαση."
@@ -11818,6 +11977,9 @@
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "Εάν χάσατε την πρόσβαση στην εφαρμογή ελέγχου ταυτότητας, μπορείτε να χρησιμοποιήσετε 1 από τους 16 εφεδρικούς κωδικούς ανάκτησης που παρέχονται κατά τη ρύθμιση της ταυτοποίησης δύο παραγόντων. ${ learnMoreLink }"
       ],
+      "If you previously had a personal ${ BRAND_NAME } account with this address, you can recover your data separately.": [
+        "Εάν είχατε προηγουμένως προσωπικό λογαριασμό ${ BRAND_NAME } με αυτή τη διεύθυνση, μπορείτε να ανακτήσετε τα δεδομένα σας ξεχωριστά."
+      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Αν προχωρήσετε με την υποβάθμιση, θα χάσετε πρόσβαση στα χαρακτηριστικά επί πληρωμή των ${ MAIL_APP_NAME } και ${ VPN_APP_NAME }."
       ],
@@ -11867,6 +12029,9 @@
       ],
       "Import mailbox": [
         "Εισαγωγή γραμματοκιβωτίου"
+      ],
+      "Import show one-time transfers of email, calendars, contacts, or files into your ${ BRAND_NAME } account.": [
+        "Εισαγάγετε εφάπαξ μεταφορές email, ημερολογίων, επαφών ή αρχείων στον λογαριασμό σας στο ${ BRAND_NAME }."
       ],
       "Import show one-time transfers of email, calendars, or contacts into your ${ BRAND_NAME } account.": [
         "Εισαγάγετε μεταφορές μίας φοράς των email, ημερολογίων ή επαφών στον λογαριασμό σας στο ${ BRAND_NAME }."
@@ -13164,8 +13329,8 @@
       "This account has been suspended due to a potential policy violation.": [
         "Αυτός ο λογαριασμός έχει ανασταλεί λόγω ενδεχόμενης παραβίασης πολιτικής."
       ],
-      "This address is already linked to another account": [
-        "Αυτή η διεύθυνση είναι ήδη συνδεδεμένη με άλλον λογαριασμό."
+      "This address now signs in through your organization's identity provider.": [
+        "Αυτή η διεύθυνση πραγματοποιεί πλέον είσοδο μέσω του παρόχου ταυτότητας του οργανισμού σας."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Αυτός ο περιηγητής δεν υποστηρίζει προεπισκόπηση αρχείων PDF. Παρακαλούμε κατεβάστε το αρχείο."
@@ -14194,6 +14359,9 @@
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Οι λογαριασμοί σας ${ VPN_APP_NAME } και ${ MAIL_APP_NAME } συνδέονται. Για να διαγράψετε και τους δύο, παρακαλούμε συνδεθείτε στο ${ loginLink } και διαγράψτε τον εκεί λογαριασμό σας."
+      ],
+      "Your account and password stay the same.": [
+        "Ο λογαριασμός και ο κωδικός πρόσβασής σας παραμένουν ίδιοι."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο. Η πρόσβαση σας σύντομα θα περιοριστεί. ${ payInvoiceLink }"
@@ -15719,9 +15887,6 @@
       "Font size": [
         "Μέγεθος γραμματοσειράς"
       ],
-      "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
-        "Για ${ DRIVE_SHORT_APP_NAME } και ${ DOCS_SHORT_APP_NAME }."
-      ],
       "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
         "Για ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, και ${ SHEETS_SHORT_APP_NAME }."
       ],
@@ -15802,9 +15967,6 @@
       ],
       "Import interval": [
         "Μεσοδιάστημα εισαγωγών"
-      ],
-      "Import messages": [
-        "Εισαγωγή μηνυμάτων"
       ],
       "Import to email address": [
         "Εισαγωγή σε διεύθυνση email"
@@ -16238,9 +16400,6 @@
       "Read": [
         "Διαβασμένο"
       ],
-      "Receive Gmail straight in ${ BRAND_NAME } inbox": [
-        "Λάβετε τα μηνύματα του Gmail απευθείας στα εισερχόμενα του ${ BRAND_NAME }"
-      ],
       "Recommended": [
         "Προτεινόμενο"
       ],
@@ -16330,9 +16489,6 @@
       ],
       "Send crash reports": [
         "Αποστολή αναφορών σφαλμάτων"
-      ],
-      "Send from your Gmail address in ${ BRAND_NAME }": [
-        "Αποστολή από τη διεύθυνση Gmail σας στο ${ BRAND_NAME }"
       ],
       "Send in": [
         "Αποστολή στα"
@@ -16685,9 +16841,6 @@
       ],
       "You don't have permissions": [
         "Δεν έχετε δικαιώματα"
-      ],
-      "You will be able to:": [
-        "Θα μπορείτε να:"
       ],
       "Your activation code:": [
         "Ο κωδικός ενεργοποίησης σας:"
@@ -24012,9 +24165,6 @@
       "Backup password": [
         "Εφεδρικός κωδικός πρόσβασης"
       ],
-      "Because your organization moved you to single sign-on (SSO), **your old password is saved as your backup password**. You can use it to authorize SSO on a new device.": [
-        "Επειδή ο οργανισμός σας σάς μετέφερε σε ενιαία σύνδεση (SSO), **ο παλιός σας κωδικός πρόσβασης αποθηκεύεται ως εφεδρικός κωδικός πρόσβασης**. Μπορείτε να τον χρησιμοποιήσετε για να εξουσιοδοτήσετε το SSO σε μια νέα συσκευή."
-      ],
       "Cancel": [
         "Ακύρωση"
       ],
@@ -24062,9 +24212,6 @@
       "Do you want to remove all other devices than the current one?": [
         "Θέλετε να καταργήσετε όλες τις άλλες συσκευές εκτός από την τρέχουσα;"
       ],
-      "Enter it to sign in. It is the same as your old password.": [
-        "Εισαγάγετε τον κωδικό πρόσβασης για να συνδεθείτε. Είναι ο ίδιος με τον παλιό σας κωδικό πρόσβασης."
-      ],
       "Enter the confirmation code we sent on your other device.": [
         "Εισαγάγετε τον κωδικό επιβεβαίωσης που στείλαμε στην άλλη συσκευή σας."
       ],
@@ -24073,6 +24220,9 @@
       ],
       "Enter your backup password": [
         "Εισαγάγετε τον εφεδρικό κωδικό πρόσβασης σας"
+      ],
+      "Enter your password": [
+        "Εισάγετε τον κωδικό πρόσβασης σας"
       ],
       "For your security, you have been signed out of all your other active devices.": [
         "Για την ασφάλειά σας, έχετε αποσυνδεθεί από όλες τις άλλες ενεργές συσκευές σας."
@@ -24200,6 +24350,9 @@
       "To make sure it's really you trying to sign-in, please enter your backup password.": [
         "Για να βεβαιωθείτε ότι προσπαθείτε πραγματικά να συνδεθείτε, εισαγάγετε τον εφεδρικό κωδικό πρόσβασης σας."
       ],
+      "To make sure it's really you trying to sign-in, please enter your password.": [
+        "Για να βεβαιωθείτε ότι προσπαθείτε πραγματικά να συνδεθείτε, εισαγάγετε τον κωδικό πρόσβασης σας."
+      ],
       "To make sure it's really you trying to sign-in, share the confirmation code with your administrator **${ adminEmail }** so that they can approve the request for **${ email }**.": [
         "Για να βεβαιωθείτε ότι προσπαθείτε πραγματικά να συνδεθείτε, μοιραστείτε τον κωδικό επιβεβαίωσης με τον διαχειριστή σας **${ adminEmail }**, ώστε να μπορέσει να εγκρίνει το αίτημα για το **${ email }**."
       ],
@@ -24223,6 +24376,9 @@
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "Θα ανακατευθυνθείτε στον τρίτο πάροχο SSO."
+      ],
+      "Your old password will become your **backup password**. You will be able to use it to authorize single sign-on (SSO) on new devices in the future.": [
+        "Ο παλιός σας κωδικός πρόσβασης θα γίνει ο **κωδικός πρόσβασης εφεδρείας** σας. Θα μπορείτε να τον χρησιμοποιήσετε για την έγκριση της ενιαίας σύνδεσης (SSO) σε νέες συσκευές στο μέλλον."
       ],
       "Your SSO configuration will be deleted.": [
         "Η διαμόρφωση SSO θα διαγραφεί."
@@ -26015,6 +26171,9 @@
       "Billing cycle": [
         "Κύκλος χρέωσης"
       ],
+      "Black Friday": [
+        "Black Friday"
+      ],
       "Block trackers and malware": [
         "Αποκλεισμός ιχνηλατών και κακόβουλου λογισμικού"
       ],
@@ -26164,6 +26323,9 @@
       ],
       "Connected emails": [
         "Συνδεδεμένα email"
+      ],
+      "Connecting...": [
+        "Γίνεται σύνδεση..."
       ],
       "Connection status": [
         "Κατάσταση σύνδεσης"
@@ -27164,6 +27326,9 @@
       ],
       "QR code sign-in": [
         "Σύνδεση με κώδικα QR"
+      ],
+      "QR sign-in isn't available for business accounts": [
+        "Η είσοδος μέσω QR δεν είναι διαθέσιμη για επαγγελματικούς λογαριασμούς"
       ],
       "Ready, set, forward": [
         "Λάβετε θέσεις, έτοιμοι, προωθήστε"
@@ -28298,6 +28463,9 @@
       ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Ασφαλείς συνδέσεις σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα, κοινή χρήση, ενσωματωμένο έλεγχο ταυτότητας δύο παραγόντων (2FA) και πολλά άλλα."
+      ],
+      "Assigned by a group. Remove the user from the group to change this role": [
+        "Ανατέθηκε από μια ομάδα. Αφαιρέστε τον χρήστη από την ομάδα για να αλλάξετε αυτόν τον ρόλο."
       ],
       "Disables end-to-end email encryption for this group": [
         "Απενεργοποιεί την κρυπτογράφηση ηλεκτρονικού ταχυδρομείου από άκρο σε άκρο για αυτήν την ομάδα"

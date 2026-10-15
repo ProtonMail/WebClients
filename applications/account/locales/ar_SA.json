@@ -2526,12 +2526,6 @@
       ]
     },
     "bf2023: Info": {
-      "6 TB storage (2x more than any other plan)": [
-        "مساحة تخزين 6 تيرابايت (ضعف أي خطة أخرى)"
-      ],
-      "6 users": [
-        "6 مستخدمين"
-      ],
       "Become a super-supporter. Get access to all current and future ${ BRAND_NAME } services.": [
         "كُن من كبار الداعمين. واحصل على إمكانية الوصول إلى جميع خدمات ${ BRAND_NAME } الحالية والمستقبلية."
       ],
@@ -2544,8 +2538,8 @@
       "Premium versions of all ${ BRAND_NAME } services": [
         "إصدارات مميزة من جميع خدمات ${ BRAND_NAME }"
       ],
-      "The ${ plan } plan is back for a limited time only": [
-        "عادت خطة ${ plan } لفترة محدودة فقط"
+      "The ${ planName } plan is back for a limited time only": [
+        "عادت خطة ${ planName } لفترة محدودة فقط."
       ]
     },
     "bf2023: info": {
@@ -2590,6 +2584,47 @@
     "BF2024: Tooltip": {
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "مساحة التخزين مشتركة عبر جميع خدمات ${ BRAND_NAME }."
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "15 GB storage": [
+        "سعة تخزين 15 جيجابايت"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "سعة تخزين 200 جيجابايت: تعادل 40 ضعف سعة خطتك الحالية"
+      ],
+      "Built-in 2FA authenticator": [
+        "أداة مدمجة للمصادقة الثنائية (2FA)"
+      ],
+      "Online document editor": [
+        "محرر مستندات عبر الإنترنت"
+      ],
+      "Recover previous file versions": [
+        "استعادة الإصدارات السابقة للملف"
+      ],
+      "Stronger protection against cyber threats": [
+        "حماية أقوى ضد التهديدات السيبرانية"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "عدد غير محدود من المجلدات والتصنيفات وعوامل التصفية"
+      ],
+      "Use your own email domain": [
+        "استخدم نطاق بريدك الإلكتروني الخاص"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "ميزات Premium في ${ DRIVE_SHORT_APP_NAME } و${ MAIL_SHORT_APP_NAME } و${ PASS_SHORT_APP_NAME } و${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "ميزات Premium في ${ MAIL_SHORT_APP_NAME } و${ PASS_SHORT_APP_NAME } و${ DRIVE_SHORT_APP_NAME } و${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "إصدارات Premium من ${ PASS_SHORT_APP_NAME } و${ MAIL_SHORT_APP_NAME } و${ DRIVE_SHORT_APP_NAME } و${ VPN_SHORT_APP_NAME }"
       ]
     },
     "bfcampaign2026: Title": {
@@ -6880,6 +6915,9 @@
       ],
       "Incorrect password": [
         "كلمة السر غير صحيحة"
+      ],
+      "Incorrect password. Please try again.": [
+        "كلمة المرور غير صحيحة. الرجاء المحاولة مرة أخرى."
       ],
       "Incorrect recovery code. Please try again.": [
         "رمز استرداد غير صحيح. يرجى المحاولة مرة أخرى."
@@ -14915,9 +14953,6 @@
       ],
       "Font size": [
         "حجم الخط"
-      ],
-      "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
-        "لـ ${ DRIVE_SHORT_APP_NAME } و ${ DOCS_SHORT_APP_NAME }."
       ],
       "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
         "لـ ${ DRIVE_SHORT_APP_NAME } و ${ DOCS_SHORT_APP_NAME } و ${ SHEETS_SHORT_APP_NAME }."
@@ -23285,6 +23320,9 @@
       "Enter your backup password": [
         "أدخل كلمة مرورك الاحتياطية"
       ],
+      "Enter your password": [
+        "أدخل كلمة المرور"
+      ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "لأمانك، تم تسجيل خروجك من جميع أجهزتك النشطة الأخرى. قبل الوصول إلى حسابك، ستحتاج إلى إدخال كلمة مرور احتياطية جديدة."
       ],
@@ -23402,6 +23440,9 @@
       "To make sure it's really you trying to sign-in, please enter your backup password.": [
         "للتأكد من أنك تحاول بالفعل تسجيل الدخول، يرجى إدخال كلمة مرورك الاحتياطية."
       ],
+      "To make sure it's really you trying to sign-in, please enter your password.": [
+        "للتأكد من أنك أنت من يحاول تسجيل الدخول، يرجى إدخال كلمة المرور الخاصة بك."
+      ],
       "To make sure it's really you trying to sign-in, share the confirmation code with your administrator **${ adminEmail }** so that they can approve the request for **${ email }**.": [
         "للتأكد من أنك تحاول بالفعل تسجيل الدخول، شارك رمز التأكيد مع مسؤولك **${ adminEmail }** حتى يتمكن من الموافقة على طلب **${ email }**."
       ],
@@ -23425,6 +23466,9 @@
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "سيُعاد توجيهك إلى مزود خدمة الدخول الموحد (SSO) التابع للطرف الثالث."
+      ],
+      "Your old password will become your **backup password**. You will be able to use it to authorize single sign-on (SSO) on new devices in the future.": [
+        "ستصبح كلمة مرورك القديمة هي **كلمة المرور الاحتياطية**؛ وستتمكن من استخدامها للمصادقة على تسجيل الدخول الموحد (SSO) في الأجهزة الجديدة مستقبلاً."
       ],
       "Your SSO configuration will be deleted.": [
         "سيُحذف تكوين SSO الخاص بك."

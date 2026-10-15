@@ -665,6 +665,9 @@
       "Connect apps and devices": [
         "Forbind apps og enheder"
       ],
+      "Connect Gmail": [
+        "Forbind Gmail"
+      ],
       "Connect Gmail address": [
         "Forbind Gmail-adresse"
       ],
@@ -2902,12 +2905,6 @@
       ]
     },
     "bf2023: Info": {
-      "6 TB storage (2x more than any other plan)": [
-        "6 TB lagerplads (2x mere end noget andet abonnement)"
-      ],
-      "6 users": [
-        "6 brugere"
-      ],
       "Become a super-supporter. Get access to all current and future ${ BRAND_NAME } services.": [
         "Bliv supersupporter. Få adgang til alle nuværende og fremtidige ${ BRAND_NAME }-tjenester."
       ],
@@ -2920,8 +2917,8 @@
       "Premium versions of all ${ BRAND_NAME } services": [
         "Premiumudgaver af alle ${ BRAND_NAME }-tjenester"
       ],
-      "The ${ plan } plan is back for a limited time only": [
-        "${ plan }-abonnementet er tilbage for en begrænset periode"
+      "The ${ planName } plan is back for a limited time only": [
+        "${ planName }-abonnementet er tilbage i en begrænset periode"
       ]
     },
     "bf2023: info": {
@@ -2976,11 +2973,17 @@
       "/month": [
         "/måned"
       ],
+      "15 GB storage": [
+        "15 GB lagerplads"
+      ],
       "2 individual accounts": [
         "2 individuelle konti"
       ],
       "2 TB of secure storage": [
         "2 TB sikker lagerplads"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB lagerplads: 40x dit nuværende abonnement"
       ],
       "3 TB of secure storage": [
         "3 TB sikker lagerplads"
@@ -2991,21 +2994,31 @@
       "6 individual accounts": [
         "6 individuelle konti"
       ],
-      "Advanced protection against cyber threats": [
-        "Avanceret beskyttelse mod cybertrusler"
+      "Built-in 2FA authenticator": [
+        "Indbygget 2FA-godkender"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "Rabatter beregnes ud fra den normale månedspris. Dit abonnement fornyes til den årlige standardpris når faktureringsperioden udløber."
-      ]
-    },
-    "bfcampaign2026: Info, Calendar first": {
-      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, og ${ VPN_SHORT_APP_NAME }"
+      ],
+      "Online document editor": [
+        "Online dokumentredigering"
+      ],
+      "Recover previous file versions": [
+        "Gendan tidligere filversioner"
+      ],
+      "Stronger protection against cyber threats": [
+        "Stærkere beskyttelse mod cybertrusler"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Ubegrænsede mapper, etiketter og filtre"
+      ],
+      "Use your own email domain": [
+        "Brug dit eget e-mail-domæne"
       ]
     },
     "bfcampaign2026: Info, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, og ${ CALENDAR_SHORT_APP_NAME }"
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } og ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "bfcampaign2026: Info, Family, Drive first": {
@@ -3019,8 +3032,13 @@
       ]
     },
     "bfcampaign2026: Info, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, og ${ CALENDAR_SHORT_APP_NAME }"
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "bfcampaign2026: Title": {
@@ -5550,14 +5568,14 @@
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "Gør din e-mailsidefod til din egen – fremvis dit unikke brand, ikke vores."
       ],
-      "Make your Gmail private in under a minute, without editing or deleting anything there.": [
-        "Gør din Gmail privat på under et minut uden at redigere eller slette noget derfra."
-      ],
       "Methods that include both password reset and data recovery.": [
         "Metoder som inkluderer både nulstilling af adgangskoden og datagendannelse."
       ],
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "De fleste problemer kan løses på nogle få minutter med vores trinvise vejledninger."
+      ],
+      "No ads, no tracking. Use your Gmail in ${ BRAND_NAME }. Nothing there gets edited or deleted.": [
+        "Ingen reklamer, ingen tracking. Brug din Gmail i ${ BRAND_NAME }. Intet bliver redigeret eller slettet der."
       ],
       "No ads. No trackers": [
         "Ingen reklamer. Ingen trackere"
@@ -6807,6 +6825,9 @@
       "Add 1 more": [
         "Tilføj 1 mere"
       ],
+      "Add contact": [
+        "Tilføj kontakt"
+      ],
       "Add emergency contact": [
         "Tilføj nødkontakt"
       ],
@@ -6975,6 +6996,9 @@
       ],
       "Recover data now": [
         "Gendan data nu"
+      ],
+      "Recover your data before adding a new contact.": [
+        "Gendan din data før du tilføjer en ny kontakt."
       ],
       "Recovery approved": [
         "Genoprettelse godkendt"
@@ -7158,6 +7182,9 @@
       "You'll receive access to their account in **${ days } day**, or when they approve your request.": [
         "Du får adgang til deres konto om **${ days } dag**, eller når de godkender din anmodning.",
         "Du vil få adgang til deres konto om **${ days } dage**, eller når de godkender din anmodning."
+      ],
+      "Your data is still locked from a password reset. A contact added now won't be able to restore it.": [
+        "Dine data er stadig låst efter, at din adgangskode er blevet nulstillet. En nyoprettet kontakt vil ikke kunne gendanne dem."
       ],
       "Your emergency contact ${ name } is requesting access to your account.": [
         "Din nødkontakt ${ name } anmoder om adgang til din konto."
@@ -7524,6 +7551,9 @@
       ],
       "Incorrect password": [
         "Forkert adgangskode"
+      ],
+      "Incorrect password. Please try again.": [
+        "Forkert adgangskode. Prøv venligst igen."
       ],
       "Incorrect recovery code. Please try again.": [
         "Forkert gendannelseskode. Prøv igen."
@@ -10284,6 +10314,9 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } er ugyldig"
       ],
+      "${ emailAddress } is used to sign in to another ${ BRAND_NAME } account. We are making the connection seamless, but for now you will need to take a few steps.": [
+        "${ emailAddress } bruges til at logge ind på en anden ${ BRAND_NAME }-konto. Vi er i gang med at gøre det nemt at forbinde, men på nuværende tidspunkt skal du følge nogle få trin."
+      ],
       "${ emails.length } member added to the group": [
         "${ emails.length } medlem tilføjet til gruppen",
         "${ emails.length } medlemmer tilføjet til gruppen"
@@ -10436,6 +10469,9 @@
       ],
       "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
         "${ quarantine }: beder modtagerplatformene om at markere den uautoriserede e-mails som spam eller sætte dem i karantæne."
+      ],
+      "${ reason.email } is used to sign in to another ${ BRAND_NAME } account. You'll pick a new username for that account next time you sign in. Nothing else changes.": [
+        "${ reason.email } bruges til at logge ind på en anden ${ BRAND_NAME }-konto. Du vælger et nyt brugernavn til din konto næste gang du logger ind. Alt andet forbliver uændret."
       ],
       "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
         "${ reject }: beder modtagerplatformene om at afvise de uautoriserede e-mails."
@@ -12015,6 +12051,9 @@
       "Import mailbox": [
         "Importér postkasse"
       ],
+      "Import show one-time transfers of email, calendars, contacts, or files into your ${ BRAND_NAME } account.": [
+        "Importér engangsoverførelser af e-mails, kalendere, kontakter eller filer til din ${ BRAND_NAME }-konto."
+      ],
       "Import show one-time transfers of email, calendars, or contacts into your ${ BRAND_NAME } account.": [
         "Importér engangsoverførelser af e-mails, kalendere eller kontakter til din ${ BRAND_NAME }-konto."
       ],
@@ -12713,6 +12752,12 @@
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Vælg den type link du ønsker at indsætte og udfyld alle felterne."
       ],
+      "Please sign in with ${ emailAddress } to continue.": [
+        "Log ind med ${ emailAddress } for at fortsætte."
+      ],
+      "Please sign in with the Gmail account you want to connect to continue.": [
+        "Log ind med den Gmail-konto, som du vil forbinde, for at fortsætte."
+      ],
       "Please specify...": [
         "Angiv venligst..."
       ],
@@ -13311,9 +13356,6 @@
       "This account has been suspended due to a potential policy violation.": [
         "Denne konto er blevet suspenderet på grund af en potentiel overtrædelse af politik."
       ],
-      "This address is already linked to another account": [
-        "Denne adresse er allerede i brug på en anden konto"
-      ],
       "This address now signs in through your organization's identity provider.": [
         "Denne adresse logger nu ind igennem din organisations identitetsudbyder."
       ],
@@ -13340,6 +13382,12 @@
       ],
       "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
         "Denne Gmail-adresse er registreret med en anden ${ BRAND_NAME }-konto (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, og andre). Vi arbejder på at forbedre forbindelsen, men på nuværende tidspunkt skal du gennem nogle trin."
+      ],
+      "This Gmail is already connected to your ${ BRAND_NAME } account. There's nothing else you need to do.": [
+        "Denne Gmail er allerede forbundet din ${ BRAND_NAME }-konto. Du behøver ikke foretage dig mere."
+      ],
+      "This Gmail is used to sign in to another ${ BRAND_NAME } account. We are making the connection seamless, but for now you will need to take a few steps.": [
+        "Denne Gmail bruges til at logge ind på en anden ${ BRAND_NAME }-konto. Vi er i gang med at gøre det nemt at forbinde, men på nuværende tidspunkt skal du følge nogle få trin."
       ],
       "This invitation link has expired. Please contact your administrator to request access.": [
         "Dette invitationslink er udløbet. Kontakt din administrator for at anmode om adgang."
@@ -13847,6 +13895,15 @@
       ],
       "We couldn't complete the transaction. Please try again.": [
         "Vi kunne ikke gennemføre transaktionen. Prøv igen."
+      ],
+      "We couldn't connect ${ emailAddress }. Try again and select all the boxes when Google asks for access. ${ BRAND_NAME } only uses this access to connect your Gmail.": [
+        "Vi kunne ikke forbinde ${ emailAddress }. Prøv igen, og kryds alle felterne af når Google beder om adgang. ${ BRAND_NAME } bruger kun adgangen til at forbinde din Gmail."
+      ],
+      "We couldn't connect your Gmail right now. Please try again in a few minutes.": [
+        "Vi kunne ikke forbinde din Gmail lige nu. Prøv igen om nogle minutter."
+      ],
+      "We couldn't connect your Gmail. Try again and select all the boxes when Google asks for access. ${ BRAND_NAME } only uses this access to connect your Gmail.": [
+        "Vi kunne ikke forbinde din Gmail. Prøv igen, og kryds alle felterne af når Google beder om adgang. ${ BRAND_NAME } bruger kun adgangen til at forbinde din Gmail."
       ],
       "We couldn't send invoices to your email address. Automatic invoicing has been paused until you update the address.": [
         "Vi kunne ikke sende fakturaer til din e-mailadresse. Automatisk fakturering er sat på pause, indtil du opdaterer adressen."
@@ -15872,9 +15929,6 @@
       "Font size": [
         "Skriftstørrelse"
       ],
-      "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
-        "Til ${ DRIVE_SHORT_APP_NAME } og ${ DOCS_SHORT_APP_NAME }."
-      ],
       "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
         "Til ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME } og ${ SHEETS_SHORT_APP_NAME }."
       ],
@@ -15955,9 +16009,6 @@
       ],
       "Import interval": [
         "Importinterval"
-      ],
-      "Import messages": [
-        "Importér beskeder"
       ],
       "Import to email address": [
         "Importer til e-mailadresse"
@@ -16391,9 +16442,6 @@
       "Read": [
         "Læst"
       ],
-      "Receive Gmail straight in ${ BRAND_NAME } inbox": [
-        "Modtage Gmail direkte i din ${ BRAND_NAME }-indbakke"
-      ],
       "Recommended": [
         "Anbefalet"
       ],
@@ -16483,9 +16531,6 @@
       ],
       "Send crash reports": [
         "Send rapporter om nedbrud"
-      ],
-      "Send from your Gmail address in ${ BRAND_NAME }": [
-        "Sende fra din Gmail-konto i ${ BRAND_NAME }"
       ],
       "Send in": [
         "Send på"
@@ -16838,9 +16883,6 @@
       ],
       "You don't have permissions": [
         "Du har ikke tilladelserne"
-      ],
-      "You will be able to:": [
-        "Du vil kunne:"
       ],
       "Your activation code:": [
         "Din aktiveringskode:"
@@ -20932,6 +20974,9 @@
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Betalingsmetode er påkrævet, for at abonnementet kan aktiveres, efter at prøveversionen udløber."
       ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Abonnementskiftet er ikke kompatibelt af følgende årsager:"
+      ],
       "Please close extra wallet accounts before changing your plan.": [
         "Luk ekstra wallet-konti før du ændrer dit abonnement."
       ],
@@ -20943,6 +20988,9 @@
       ],
       "Processing payment": [
         "Behandler betaling"
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Antallet af pladser i Proton Meet skal matche antallet af medlemmer."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Fornyelsespriser kan ændres i henhold til ${ termsAndConditionsLink }."
@@ -21022,8 +21070,14 @@
       "This payment method will become your new default for all future renewals.": [
         "Denne betalingsmetode bliver din nye standard for alle fremtidige fornyelser."
       ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Dette abonnement understøtter ikke dine administrerede funktioner på din konto."
+      ],
       "This plan doesn’t support the members on your account.": [
         "Dette abonnement understøtter ikke medlemmer på din konto."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Abonnementet kan ikke færdiggøres lige nu. Prøv igen."
       ],
       "Timeout exceeded": [
         "Tidsgrænse overskredet"
@@ -24165,9 +24219,6 @@
       "Backup password": [
         "Backupadgangskode"
       ],
-      "Because your organization moved you to single sign-on (SSO), **your old password is saved as your backup password**. You can use it to authorize SSO on a new device.": [
-        "Fordi din organisation flyttede dig til single sign-on (SSO), **er din gamle adgangskode blevet gemt, som din backupadgangskode**. Du kan bruge den til at godkende SSO på en ny enhed."
-      ],
       "Cancel": [
         "Annuller"
       ],
@@ -24215,9 +24266,6 @@
       "Do you want to remove all other devices than the current one?": [
         "Vil du fjerne alle andre enheder end den nuværende?"
       ],
-      "Enter it to sign in. It is the same as your old password.": [
-        "Indtast den for at logge ind. Det er den samme, som din gamle adgangskode."
-      ],
       "Enter the confirmation code we sent on your other device.": [
         "Indtast bekræftelseskoden, vi sendte til din anden enhed."
       ],
@@ -24226,6 +24274,9 @@
       ],
       "Enter your backup password": [
         "Indtast din sikkerhedskopi-adgangskode"
+      ],
+      "Enter your password": [
+        "Indtast din adgangskode"
       ],
       "For your security, you have been signed out of all your other active devices.": [
         "Af hensyn til din sikkerhed er du blevet logget ud af alle dine andre aktive enheder."
@@ -24353,6 +24404,9 @@
       "To make sure it's really you trying to sign-in, please enter your backup password.": [
         "For at sikre at det virkelig er dig, der forsøger at logge på, bedes du indtaste din backupadgangskode."
       ],
+      "To make sure it's really you trying to sign-in, please enter your password.": [
+        "Indtast din backupadgangskode for at bekræfte, at det er dig der forsøger at logge ind."
+      ],
       "To make sure it's really you trying to sign-in, share the confirmation code with your administrator **${ adminEmail }** so that they can approve the request for **${ email }**.": [
         "For at sikre, at det virkelig er dig, der forsøger at logge ind, bedes du dele bekræftelseskoden med din administrator **${ adminEmail }**, som dermed kan godkende anmodningen for **${ email }**."
       ],
@@ -24376,6 +24430,9 @@
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "Du bliver omdirigeret til din tredjeparts SSO-udbyder."
+      ],
+      "Your old password will become your **backup password**. You will be able to use it to authorize single sign-on (SSO) on new devices in the future.": [
+        "Din gamle adgangskode bliver din **backupadgangskode**. Du vil kunne bruge den til, at godkende single sign-on (SSO) på nye enheder fremadrettet."
       ],
       "Your SSO configuration will be deleted.": [
         "Din SSO-konfiguration vil blive slettet."
@@ -26084,6 +26141,9 @@
       "Allocate storage": [
         "Tildel lagerplads"
       ],
+      "Allow access to connect your Gmail": [
+        "Tillad adgang til at forbinde din Gmail"
+      ],
       "Already have multiple accounts?": [
         "Har du allerede flere konti?"
       ],
@@ -26899,6 +26959,9 @@
       ],
       "Going private": [
         "Bliver privat"
+      ],
+      "Good to know before you connect": [
+        "Nyttigt at vide før du forbinder"
       ],
       "Grant access": [
         "Giv adgang"
@@ -27721,6 +27784,12 @@
       "This field cannot contain only spaces": [
         "Dette felt kan ikke kun indeholde mellemrum"
       ],
+      "This Gmail is already connected": [
+        "Denne Gmail er allerede forbundet"
+      ],
+      "This Gmail is linked to another ${ BRAND_NAME } account": [
+        "Denne Gmail er forbundet en anden ${ BRAND_NAME }-konto"
+      ],
       "Time zone": [
         "Tidszone"
       ],
@@ -27924,6 +27993,9 @@
       ],
       "With your ${ BRAND_NAME } Account, you get access to all ${ BRAND_NAME } apps": [
         "Du får adgang til alle ${ BRAND_NAME } apps med din ${ BRAND_NAME }-konto"
+      ],
+      "Wrong Gmail account": [
+        "Forkert Gmail-konto"
       ],
       "You are all set": [
         "Så er du klar"
