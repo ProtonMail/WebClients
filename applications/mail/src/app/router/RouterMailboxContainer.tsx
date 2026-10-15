@@ -27,6 +27,7 @@ import { getInboxRedirectUrl } from '../helpers/mailboxUrl';
 import useMailDrawer from '../hooks/drawer/useMailDrawer';
 import { useElements } from '../hooks/mailbox/useElements';
 import { useRetryElementsOnReconnect } from '../hooks/mailbox/useRetryElementsOnReconnect';
+import LumoFloatingPanel from '../lumo/floating/LumoFloatingPanel';
 import { MAILBOX_BOUNDS_CLASS } from '../lumo/floating/useMailboxBounds';
 import { selectElementID, selectIsSearching, selectLabelID } from '../store/elements/elementsSelectors';
 import { useMailDispatch, useMailSelector } from '../store/hooks';
@@ -154,6 +155,12 @@ export const RouterMailboxContainer = () => {
                         />
                     </Switch>
                 </PrivateMainArea>
+                {isLumoInMailEnabled && (
+                    <LumoFloatingPanel
+                        mainAreaRef={mainAreaRef}
+                        hasFloatingDrawerButton={canShowDrawer && !showDrawerSidebar}
+                    />
+                )}
             </CategoriesOnboardingProvider>
         </MailboxContainerContextProvider>
     );

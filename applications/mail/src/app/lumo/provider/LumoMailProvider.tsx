@@ -55,6 +55,7 @@ import { load as loadConversationAction } from '../../store/conversations/conver
 import type { ConversationResult } from '../../store/conversations/conversationsTypes';
 import { backendActionStarted, markAll as markAllAction } from '../../store/elements/elementsActions';
 import { useMailDispatch, useMailStore } from '../../store/hooks';
+import { useLumoFloatingPanel } from '../floating/LumoFloatingPanelProvider';
 import { buildDebugReportDraft } from '../helpers/debugReport';
 import type { SieveIssue } from '../helpers/sieve';
 import { assertSieveValid } from '../helpers/sieve';
@@ -117,6 +118,7 @@ const LumoMailProvider = ({ children }: Props) => {
     const onCompose = useOnCompose();
     const draftBodyWriters = useDraftBodyWriters();
     const telemetry = useLumoMailTelemetry();
+    const { detach } = useLumoFloatingPanel();
 
     // Latest values, refreshed every render, so the once-built handlers always read the current
     // snapshot (mirrors the POC's ref pattern; keeps the config referentially stable).
@@ -304,6 +306,7 @@ const LumoMailProvider = ({ children }: Props) => {
             value={{
                 ...conversation,
                 openDebugReport,
+                onDetach: detach,
                 onSuggestionPicked: telemetry.suggestionPicked,
                 cardRenderers: config.cardRenderers,
                 serverToolMeta: config.serverToolMeta,
