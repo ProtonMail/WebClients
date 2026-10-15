@@ -157,6 +157,14 @@ describe('standalone Docs runtime', () => {
       await waitFor(() => expect(ready).toHaveBeenCalledTimes(1))
       await waitFor(() => expect(screen.getByTestId('main-editor')).toHaveTextContent('This document lives in memory'))
       expect(screen.getByTestId('main-editor')).toHaveAttribute('contenteditable', 'true')
+      expect(screen.queryByTestId('emoji-picker')).not.toBeInTheDocument()
+      dependencies = { ...dependencies, emojiPickerEnabled: true }
+      await act(async () => view.rerender(<Tree />))
+      expect(screen.getByTestId('emoji-picker')).toBeInTheDocument()
+      dependencies = { ...dependencies, emojiPickerEnabled: false }
+      await act(async () => view.rerender(<Tree />))
+      expect(screen.queryByTestId('emoji-picker')).not.toBeInTheDocument()
+
       expect(screen.getByTestId('table-of-contents')).toHaveTextContent('Standalone Docs')
       expect(comments.getAllThreads).toHaveBeenCalled()
       expect(comments.subscribeToEvents).toHaveBeenCalled()
