@@ -16,10 +16,15 @@ import {
     selectReconnectionFailed,
     setReconnectionFailed,
 } from '@proton/meet/store/slices/connectionSlice';
-import { selectMeetingLinkName, selectMeetingPassword } from '@proton/meet/store/slices/currentMeeting';
+import {
+    selectMeetingLinkName,
+    selectMeetingName,
+    selectMeetingPassword,
+} from '@proton/meet/store/slices/currentMeeting';
 import {
     setMeetingEndedReason,
     setPreviousMeetingLink,
+    setPreviousMeetingName,
     setUpsellModalType,
 } from '@proton/meet/store/slices/meetAppStateSlice';
 import {
@@ -146,6 +151,7 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
 
     const meetingLinkName = useMeetSelector(selectMeetingLinkName);
     const meetingPassword = useMeetSelector(selectMeetingPassword);
+    const meetingName = useMeetSelector(selectMeetingName);
 
     const isGuestAdmin = useMeetSelector(selectIsGuestAdmin);
 
@@ -324,6 +330,7 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
         }
 
         dispatch(setPreviousMeetingLink(meetingLinkRef.current));
+        dispatch(setPreviousMeetingName(meetingName));
 
         if (isGuest) {
             dispatch(setUpsellModalType(UpsellModalTypes.GuestAccount));
