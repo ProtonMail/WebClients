@@ -4567,6 +4567,9 @@
       ],
       "You reached the maximum number of connected addresses": [
         "Du har nået det maksimale antal forbundne adresser"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Forkert gendannelsessætning. Prøv igen eller brug en anden gendannelsesmetode."
       ]
     },
     "error": {
@@ -11754,6 +11757,18 @@
       ],
       "Your account is too old for Born Private.": [
         "Din konto er for gammel til Born Private."
+      ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Abonnementskiftet er ikke kompatibelt af følgende årsager:"
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Antallet af pladser i Proton Meet skal matche antallet af medlemmer."
+      ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Dette abonnement understøtter ikke dine administrerede funktioner på din konto."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Abonnementet kan ikke færdiggøres lige nu. Prøv igen."
       ]
     },
     "Payments.Error": {
@@ -15826,6 +15841,30 @@
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "Rabatter beregnes ud fra den normale månedspris. Dit abonnement fornyes til den årlige standardpris når faktureringsperioden udløber."
+      ],
+      "15 GB storage": [
+        "15 GB lagerplads"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB lagerplads: 40x dit nuværende abonnement"
+      ],
+      "Built-in 2FA authenticator": [
+        "Indbygget 2FA-godkender"
+      ],
+      "Online document editor": [
+        "Online dokumentredigering"
+      ],
+      "Recover previous file versions": [
+        "Gendan tidligere filversioner"
+      ],
+      "Stronger protection against cyber threats": [
+        "Stærkere beskyttelse mod cybertrusler"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Ubegrænsede mapper, etiketter og filtre"
+      ],
+      "Use your own email domain": [
+        "Brug dit eget e-mail-domæne"
       ]
     },
     "bfcampaign2026: Info, Calendar first": {
@@ -15836,6 +15875,9 @@
     "bfcampaign2026: Info, Drive first": {
       "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, og ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } og ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "bfcampaign2026: Info, Family, Drive first": {
@@ -15851,6 +15893,9 @@
     "bfcampaign2026: Info, Mail first": {
       "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, og ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "bfcampaign2026: Title": {
@@ -15874,6 +15919,11 @@
       ],
       "Save big with a yearly plan": [
         "Spar stort med et årligt abonnement"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ VPN_SHORT_APP_NAME }"
       ]
     }
   }
