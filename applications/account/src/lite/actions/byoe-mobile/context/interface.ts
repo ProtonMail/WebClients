@@ -6,8 +6,9 @@ import { SupportedActions } from '../../../helper';
  * - `auto-starting`: the native app asked to skip the view and starting OAuth automatically.
  * - `starting-oauth`: the user pressed connect and the page is about to navigate to the provider.
  * - `connecting`: back from the provider, the address is being created.
+ * - `reconnecting`: a disconnected address is being reconnected without leaving the page. The screen stays visible.
  */
-export type BYOEMobileStatus = 'idle' | 'auto-starting' | 'starting-oauth' | 'connecting';
+export type BYOEMobileStatus = 'idle' | 'auto-starting' | 'starting-oauth' | 'connecting' | 'reconnecting';
 
 // Google sends the user back here after consent. This exact URL must be allowlisted on the Google OAuth client.
 export const REDIRECT_PATH = `/lite?action=${SupportedActions.BYOEMobile}`;
