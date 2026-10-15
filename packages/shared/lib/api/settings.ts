@@ -4,6 +4,8 @@ import type {
     AI_ASSISTANT_ACCESS,
     DRAWER_VISIBILITY,
     Flags,
+    LOGIN_IDENTIFIER_POLICY,
+    RESTRICTED_LOGIN_IDENTIFIER_POLICY,
     SETTINGS_DATE_FORMAT,
     SETTINGS_LOG_AUTH_STATE,
     SETTINGS_TIME_FORMAT,
@@ -228,6 +230,14 @@ export const updateFlags = (data: Partial<Flags> & { PersistPasswordScope?: bool
 
 export const updateTelemetry = (data: { Telemetry: number }) => ({
     url: 'core/v4/settings/telemetry',
+    method: 'put',
+    data,
+});
+
+export const updateSignInRestriction = (data: {
+    LoginIdentifierPolicy: LOGIN_IDENTIFIER_POLICY.ALL | typeof RESTRICTED_LOGIN_IDENTIFIER_POLICY;
+}) => ({
+    url: 'core/v4/settings/loginidentifierpolicy',
     method: 'put',
     data,
 });

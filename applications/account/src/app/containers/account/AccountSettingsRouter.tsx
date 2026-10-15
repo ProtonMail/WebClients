@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { EmergencyContactSection } from '@proton/account/delegatedAccess/emergencyContact/EmergencyContactSection';
 import { RecoveryContactSection } from '@proton/account/delegatedAccess/recoveryContact/RecoveryContactSection';
+import SignInRestrictionSection from '@proton/account/signInRestriction/SignInRestrictionSection';
 import AuthDevicesSettings from '@proton/account/sso/AuthDevicesSettings';
 import { EasySwitchSettingsArea } from '@proton/activation';
 import { ThirdPartySection } from '@proton/calendar-video-conferencing/thirdParty/ThirdPartySection';
@@ -259,6 +260,7 @@ const AccountSettingsRouter = ({
                 >
                     <SentinelSection app={app} />
                     <CredentialLeakSection />
+                    <SignInRestrictionSection />
                     <AuthDevicesSettings />
                     <SessionsSection />
                     <LogsSection />
