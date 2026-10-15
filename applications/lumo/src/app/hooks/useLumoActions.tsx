@@ -130,6 +130,7 @@ export const useLumoActions = ({
         imageTools: ffImageTools,
         memory: ffMemory,
         artifactsView: ffArtifactsView,
+        artifactSlides: ffArtifactSlides,
         visualizationInstructions: ffVisualizationInstructions,
     } = useLumoFlags();
     const contextFilters = useLumoSelector(selectContextFilters);
@@ -320,6 +321,7 @@ export const useLumoActions = ({
                     personalization,
                     isMemoryFeatureEnabled: ffMemory,
                     isArtifactsViewFeatureEnabled: ffArtifactsView,
+                    isArtifactSlidesFeatureEnabled: ffArtifactSlides,
                     hasLumoPlus,
                     isVisualizationInstructionsFeatureEnabled: ffVisualizationInstructions,
                 },
@@ -414,6 +416,7 @@ export const useLumoActions = ({
                 settingsContext: {
                     personalization,
                     isArtifactsViewFeatureEnabled: ffArtifactsView,
+                    isArtifactSlidesFeatureEnabled: ffArtifactSlides,
                     isVisualizationInstructionsFeatureEnabled: ffVisualizationInstructions,
                 },
                 retryData: {
@@ -482,6 +485,7 @@ export const useLumoActions = ({
                 settingsContext: {
                     personalization,
                     isArtifactsViewFeatureEnabled: ffArtifactsView,
+                    isArtifactSlidesFeatureEnabled: ffArtifactSlides,
                     isVisualizationInstructionsFeatureEnabled: ffVisualizationInstructions,
                 },
             })
@@ -582,6 +586,7 @@ export const useLumoActions = ({
                 settingsContext: {
                     personalization,
                     isArtifactsViewFeatureEnabled: ffArtifactsView,
+                    isArtifactSlidesFeatureEnabled: ffArtifactSlides,
                     isVisualizationInstructionsFeatureEnabled: ffVisualizationInstructions,
                 },
                 regenerateData: {

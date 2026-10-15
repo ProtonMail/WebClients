@@ -100,6 +100,21 @@ describe('useArtifactFileActions', () => {
         expect(downloadBlob).toHaveBeenCalledWith(expect.any(Blob), 'Deck.html');
     });
 
+    // D18: a JSON deck's source is the deck itself; it has a native PPTX but no PDF yet.
+    it('offers a JSON deck its data, PowerPoint, and PowerPoint on Drive, but no PDF', () => {
+        const jsonDeck: ParsedArtifact = {
+            id: 'deck',
+            type: 'presentation',
+            title: 'Deck',
+            content: JSON.stringify({ slides: [{ layout: 'title', title: 'Deck' }] }),
+        };
+        const actions = renderFileActions({ artifact: jsonDeck, layout: 'docked', viewedOlderVersion: false });
+        expect(keys(actions.downloadOptions)).toEqual(['source', 'pptx']);
+        expect(actions.downloadOptions[0].extension).toBe('.json');
+        expect(actions.downloadOptions[0].label).toBe('Slide data');
+        expect(keys(actions.saveToDriveOptions)).toEqual(['pptx']);
+    });
+
     it('hides Save to Drive from guests', () => {
         const actions = renderFileActions({ artifact: document, layout: 'docked', viewedOlderVersion: false }, true);
         expect(actions.saveToDriveOptions).toEqual([]);

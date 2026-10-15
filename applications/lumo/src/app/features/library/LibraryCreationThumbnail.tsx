@@ -1,10 +1,13 @@
 import { Suspense, lazy, useEffect, useMemo, useRef, useState } from 'react';
 
+import { DeckSlide } from '../../components/Conversation/artifact/DeckSlide';
 import { isArtifactShellCrossOrigin } from '../../components/Conversation/artifact/artifactShell';
 import { ARTIFACT_TYPE_CONFIG } from '../../components/Conversation/artifact/artifactTypeConfig';
 import type { ArtifactType } from '../../components/Conversation/artifact/parseArtifacts';
 import { useArtifactShellIframe } from '../../components/Conversation/artifact/useArtifactShellIframe';
 import { useLumoTheme } from '../../providers';
+import { looksLikeDeckJson, readDeckContent } from '../../util/slides/deckContent';
+import { layoutDeck } from '../../util/slides/layoutDeck';
 import { buildStaticPreviewDocument } from './libraryStaticPreview';
 
 const LibraryCodeThumbnailHighlighter = lazy(() => import('./LibraryCodeThumbnailHighlighter'));
@@ -215,6 +218,43 @@ const HtmlThumbnail = ({ type, html, title }: HtmlThumbnailProps) => {
     );
 };
 
+interface DeckThumbnailProps {
+    content: string;
+}
+
+/** A JSON deck's first slide, drawn by the app like the canvas preview: no iframe, nothing runs. */
+const DeckThumbnail = ({ content }: DeckThumbnailProps) => {
+    const frameRef = useRef<HTMLDivElement>(null);
+    const [width, setWidth] = useState(0);
+    const firstSlide = useMemo(() => {
+        const deck = readDeckContent(content)?.deck;
+        return deck ? layoutDeck({ ...deck, slides: deck.slides.slice(0, 1) }).slides[0] : undefined;
+    }, [content]);
+
+    useEffect(() => {
+        const element = frameRef.current;
+        if (!element) {
+            return;
+        }
+        const observer = new ResizeObserver(() => {
+            setWidth(element.clientWidth);
+        });
+        observer.observe(element);
+        return () => {
+            observer.disconnect();
+        };
+    }, []);
+
+    if (!firstSlide) {
+        return <TypeIconThumbnail type="presentation" />;
+    }
+    return (
+        <div ref={frameRef} className="h-full w-full overflow-hidden bg-weak" aria-hidden="true">
+            {width > 0 && <DeckSlide slide={firstSlide} width={width} />}
+        </div>
+    );
+};
+
 interface Props {
     type?: ArtifactType;
     title: string;
@@ -234,6 +274,9 @@ export const LibraryCreationThumbnail = ({ type, title, subtitle, content, langu
     }
     if (type === 'code') {
         return <CodeThumbnail content={content} language={language} />;
+    }
+    if (type === 'presentation' && looksLikeDeckJson(content)) {
+        return <DeckThumbnail content={content} />;
     }
     // Local dev serves the shell from Lumo's own origin, where running the page would be unsafe.
     if (!isArtifactShellCrossOrigin()) {

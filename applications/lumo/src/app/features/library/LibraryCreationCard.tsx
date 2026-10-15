@@ -15,6 +15,7 @@ import { useLumoNavigate } from '../../hooks/useLumoNavigate';
 import { useLumoSelector } from '../../redux/hooks';
 import { selectAttachmentByIdOptional } from '../../redux/selectors';
 import { attachmentDataCache } from '../../services/attachmentDataCache';
+import { looksLikeDeckJson } from '../../util/slides/deckContent';
 import { LibraryCreationMenu } from './LibraryCreationMenu';
 import { LibraryCreationThumbnail } from './LibraryCreationThumbnail';
 import type { LibraryCreationEntry } from './libraryCreations';
@@ -58,8 +59,9 @@ export const LibraryCreationCard = memo(function LibraryCreationCard({ entry }: 
         artifact,
         layout: 'library',
         viewedOlderVersion: false,
-        // A synced deck is the built offline HTML, not the slides the PDF and PowerPoint exports need.
-        sourceOnly: meta?.artifactType === 'presentation',
+        // A synced HTML deck is the built offline page, not the slides the PDF and PowerPoint exports
+        // need. A JSON deck (D18) syncs the deck itself, so its exports work from the card.
+        sourceOnly: meta?.artifactType === 'presentation' && !(content !== undefined && looksLikeDeckJson(content)),
         sourceFile,
     });
     const isExporting = fileActions.exportingKind !== null;

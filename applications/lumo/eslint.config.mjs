@@ -57,4 +57,14 @@ export default defineConfig([
             'no-nested-ternary': 'off',
         },
     },
+    {
+        // Local development tools (slides eval runners, preview comparison) that never ship. They use
+        // packages hoisted in the monorepo (playwright, esbuild, @napi-rs/canvas, @xmldom/xmldom)
+        // rather than adding them to Lumo's dependencies. Both path forms are listed because
+        // lint-staged runs ESLint from the repo root with repo-relative paths.
+        files: ['dev/**', '**/lumo/dev/**'],
+        rules: {
+            'import/no-extraneous-dependencies': 'off',
+        },
+    },
 ]);

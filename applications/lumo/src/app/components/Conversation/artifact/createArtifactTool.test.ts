@@ -6,7 +6,7 @@ import {
 
 describe('createArtifactToolExecutor', () => {
     it('advertises the create_artifact function tool', async () => {
-        const tools = await createArtifactToolExecutor.getClientTools!();
+        const tools = await createArtifactToolExecutor({ slideFormat: 'html' }).getClientTools!();
 
         expect(tools).toHaveLength(1);
         expect(tools[0]!.function.name).toBe(CREATE_ARTIFACT_TOOL_NAME);
@@ -16,7 +16,7 @@ describe('createArtifactToolExecutor', () => {
     // D12: the same Vega-Lite version as the chat [Visualization] rules, one embed syntax per
     // artifact type, and no chat-only card blocks inside artifacts.
     it('scopes chart embedding per artifact type and keeps cards out of artifacts', async () => {
-        const tools = await createArtifactToolExecutor.getClientTools!();
+        const tools = await createArtifactToolExecutor({ slideFormat: 'html' }).getClientTools!();
         const description = tools[0]!.function.description ?? '';
 
         expect(description).toContain('vega-lite/v6.json');
@@ -27,13 +27,43 @@ describe('createArtifactToolExecutor', () => {
         expect(description).toContain('Never put ```card-row or ```card blocks in any artifact');
     });
 
+    // D18: with LumoArtifactSlides, decks are JSON for the native .pptx, and the data rules are explicit.
+    it('asks for JSON decks instead of slide HTML when the deck format is on', async () => {
+        const tools = await createArtifactToolExecutor({ slideFormat: 'deck' }).getClientTools!();
+        const description = tools[0]!.function.description ?? '';
+
+        expect(description).toContain('`content` is a JSON object (as a string), never HTML');
+        expect(description).toContain(
+            '{"layout": "chart", "title": string, "chart": {"missing": "what data is needed"}}'
+        );
+        expect(description).toContain('Never invent data');
+        expect(description).not.toContain('<section>');
+        expect(description).not.toContain('application/lumo-vega-lite+json');
+        expect(description).toContain('In a `document`, put a chart in a ```vega-lite fenced block');
+    });
+
+    it('keeps a deck sent as a JSON object as JSON text', () => {
+        const deck = { title: 'Q3', slides: [{ layout: 'title', title: 'Q3' }] };
+        const artifact = parseCompleteArtifactToolCall({ id: 'q3', type: 'presentation', title: 'Q3', content: deck });
+
+        expect(artifact?.content).toBe(JSON.stringify(deck));
+    });
+
+    it("takes a deck's title from the deck when the tool call leaves it out", () => {
+        const content = JSON.stringify({ title: 'Q3 Results', slides: [{ layout: 'title', title: 'Q3 Results' }] });
+        const artifact = parseCompleteArtifactToolCall({ id: 'q3', type: 'presentation', content });
+
+        expect(artifact?.title).toBe('Q3 Results');
+        expect(parseCompleteArtifactToolCall({ id: 'doc', type: 'document', content: 'Hello' })).toBeNull();
+    });
+
     it('only claims its own tool name', () => {
-        expect(createArtifactToolExecutor.canExecute(CREATE_ARTIFACT_TOOL_NAME)).toBe(true);
-        expect(createArtifactToolExecutor.canExecute('web_search')).toBe(false);
+        expect(createArtifactToolExecutor({ slideFormat: 'html' }).canExecute(CREATE_ARTIFACT_TOOL_NAME)).toBe(true);
+        expect(createArtifactToolExecutor({ slideFormat: 'html' }).canExecute('web_search')).toBe(false);
     });
 
     it('acknowledges every call it executes', async () => {
-        const results = await createArtifactToolExecutor.execute([
+        const results = await createArtifactToolExecutor({ slideFormat: 'html' }).execute([
             { id: 'call_1', name: CREATE_ARTIFACT_TOOL_NAME, arguments: '{}' },
         ]);
 

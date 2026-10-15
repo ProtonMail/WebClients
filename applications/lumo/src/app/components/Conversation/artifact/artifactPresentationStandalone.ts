@@ -1,7 +1,7 @@
-import { buildRevealTemplate, injectSlides } from './PresentationRenderer';
 import { escapeHtml } from './artifactHtmlDocument';
 import type { ParsedArtifact } from './parseArtifacts';
 import { renderChartsInSlideContent } from './presentationCharts';
+import { buildRevealTemplate, injectSlides } from './revealTemplate';
 
 /**
  * Add what a file opened straight from disk needs but the preview shell supplies itself: a charset
