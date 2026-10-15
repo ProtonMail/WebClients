@@ -5008,6 +5008,9 @@
       "Incorrect password": [
         "잘못된 비밀번호입니다"
       ],
+      "Incorrect password. Please try again.": [
+        "잘못된 비밀번호입니다. 다시 시도해 주세요."
+      ],
       "Incorrect recovery code. Please try again.": [
         "잘못된 복구 코드입니다. 다시 시도해주세요."
       ],
@@ -10673,9 +10676,6 @@
       ],
       "Font size": [
         "글자 크기"
-      ],
-      "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
-        "${ DRIVE_SHORT_APP_NAME } 및 ${ DOCS_SHORT_APP_NAME }용."
       ],
       "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
         "${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, 및 ${ SHEETS_SHORT_APP_NAME }용."
@@ -16375,9 +16375,6 @@
       "Backup password": [
         "백업 비밀번호"
       ],
-      "Because your organization moved you to single sign-on (SSO), **your old password is saved as your backup password**. You can use it to authorize SSO on a new device.": [
-        "소속된 조직이 사용자를 싱글 사인 온(SSO)으로 이동 조치하여 **기존 로그인 비밀번호는 백업 비밀번호로 저장되었습니다.** 새 기기에서 SSO 인증을 사옹할 수 있습니다."
-      ],
       "Cancel": [
         "취소"
       ],
@@ -16422,9 +16419,6 @@
       ],
       "Do you want to remove all other devices than the current one?": [
         "현재 세션이 아닌 다른 모든 세션을 삭제하시겠습니까?"
-      ],
-      "Enter it to sign in. It is the same as your old password.": [
-        "로그인하려면 비밀번호를 입력하세요. 기존 비밀번호와 동일한 비밀번호입니다."
       ],
       "Enter the confirmation code we sent on your other device.": [
         "나의 다른 기기로 전송된 확인 코드를 입력하세요."

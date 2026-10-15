@@ -596,6 +596,9 @@
       "Import now": [
         "Importera nu"
       ],
+      "Import paused": [
+        "Import pausad"
+      ],
       "Importing from Google": [
         "Importerar från Google"
       ],
@@ -1513,6 +1516,82 @@
     "BF2024: Tooltip": {
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lagringsutrymme delas mellan alla ${ BRAND_NAME }-tjänster."
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Ta del av erbjudandet"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/månad"
+      ],
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "2 individual accounts": [
+        "2 individuella konton"
+      ],
+      "2 TB of secure storage": [
+        "2 TB säkert lagringsutrymme"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB lagringsutrymme: 40x ditt nuvarande paket"
+      ],
+      "3 TB of secure storage": [
+        "3 TB säkert lagringsutrymme"
+      ],
+      "500 GB of secure storage": [
+        "500 GB säkert lagringsutrymme"
+      ],
+      "6 individual accounts": [
+        "6 individuella konton"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Obegränsade mappar, etiketter och filter"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } och ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } och ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } och ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "för 12 månader"
+      ],
+      "Last chance to save big": [
+        "Sista chansen att spara stort"
+      ],
+      "Save big with a yearly plan": [
+        "Spara stort med ett årligt paket"
       ]
     },
     "Billing cycle option": {
@@ -4040,6 +4119,9 @@
       ],
       "Wrong billing address": [
         "Fel faktureringsadress"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Fel återställningsfras. Försök igen eller använd en annan återställningsmetod."
       ],
       "You can create public links for your own files only": [
         "Du kan endast skapa offentliga länkar för dina egna filer"
@@ -10158,6 +10240,9 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (exkl. moms)"
       ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kan inte kombineras med ${ PLAN_NAMES[PLANS.PASS] }."
+      ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "${ rate } % moms: ${ taxAmountElement }"
       ],
@@ -10289,6 +10374,9 @@
       ],
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Du har redan en prenumeration på detta paket. Du kan ändra din prenumeration på ${ subscriptionPlatform }."
+      ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "Du äger redan ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du kommer snart att omdirigeras till PayPal för att verifiera din betalning."

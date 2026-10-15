@@ -2836,14 +2836,8 @@
       "External invitations are temporarily disabled.": [
         "გარე მოსაწვევები დროებით გათიშულია."
       ],
-      "External invitations are temporarily disabled. Please try again later": [
-        "გარე მოწვევები დროებით გამორთულია. მოგვიანებით სცადეთ"
-      ],
       "Failed to change permissions settings": [
         "ნებართვების პარამეტრების შეცვლა ჩავარდა"
-      ],
-      "Failed to copy photo to album": [
-        "სურათის ალბომში კოპირება ჩავარდა"
       ],
       "Failed to create folder": [
         "საქაღალდის შექმნა ჩავარდა"
@@ -3188,6 +3182,9 @@
       ],
       "Wrong billing address": [
         "არასწორი გადახდის მისამართი"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "სცადეთ ხელახლა ან გამოიყენეთ აღდგენის სხვა მეთოდი."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "თქვენ არ შეგიძლიათ გაგზავნოთ ელფოსტა ${ maxContacts }-ზე მეტი მიმღებით",
@@ -6944,14 +6941,8 @@
       "\"${ fileName }\" shared": [
         "„${ fileName }“ გაზიარებულია"
       ],
-      "\"${ name }\" deleted": [
-        "\"${ name }\" წაიშალა"
-      ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" ნაგვის ყუთიდან წარმატებით წაიშალა"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "\"${ name }\"-ის წაშლის შეცდომა"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "\"${ name }\"-ის ნაგვიდან წაშლის შეცდომა"
@@ -6981,17 +6972,9 @@
         "${ count } ელემენტის გაშიფვრის შეცდომა",
         "${ count } ელემენტის გაშიფვრის შეცდომა"
       ],
-      "${ numberOfItems } item deleted": [
-        "${ numberOfItems } ელემენტის წაიშალა",
-        "${ numberOfItems } ელემენტის წაიშალა"
-      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } ელემენტი წარმატებულად წაიშალა ნაგვის ყუთიდან",
         "${ numberOfItems } ელემენტი წარმატებულად წაიშალა ნაგვის ყუთიდან"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems } ელემენტის წაშლის შეცდომა",
-        "${ numberOfItems } ელემენტის წაშლის შეცდომა"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "ნაგვის ყუთიდან ${ numberOfItems } ელემენტის წაშლის შეცდომა",

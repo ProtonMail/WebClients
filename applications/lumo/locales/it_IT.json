@@ -8,6 +8,9 @@
       "${ BRAND_NAME } shop": [
         "Negozio di ${ BRAND_NAME }"
       ],
+      "Accept dictation": [
+        "Accetta la dettatura"
+      ],
       "Add": [
         "Aggiungi"
       ],
@@ -50,6 +53,9 @@
       ],
       "Cancel": [
         "Annulla"
+      ],
+      "Cancel dictation": [
+        "Annulla dettatura"
       ],
       "Cancel subscription": [
         "Annulla abbonamento"
@@ -391,6 +397,9 @@
       "Switch or add account": [
         "Cambia o aggiungi account"
       ],
+      "Switch to ${ planName }": [
+        "Passa al piano ${ planName }"
+      ],
       "Take a tour": [
         "Fai un tour"
       ],
@@ -524,6 +533,12 @@
       "Domains": [
         "Domini"
       ],
+      "Managed Service Provider": [
+        "Fornitore di servizi gestiti"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Le organizzazioni che dispongono dell'estensione “Managed Service Provider” possono creare e gestire organizzazioni affiliate."
+      ],
       "Servers": [
         "Server"
       ],
@@ -615,6 +630,70 @@
         "Lo spazio di archiviazione è condiviso tra tutti i servizi ${ BRAND_NAME }."
       ]
     },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Ottieni l'offerta"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/mese"
+      ],
+      "2 individual accounts": [
+        "2 account individuali"
+      ],
+      "2 TB of secure storage": [
+        "2 TB di spazio di archiviazione protetto"
+      ],
+      "3 TB of secure storage": [
+        "3 TB di spazio di archiviazione sicuro"
+      ],
+      "500 GB of secure storage": [
+        "500 GB di spazio di archiviazione sicuro"
+      ],
+      "6 individual accounts": [
+        "6 conti individuali"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Gli sconti si basano sui prezzi mensili standard. Il tuo abbonamento si rinnoverà alla tariffa annuale standard al termine del ciclo di fatturazione."
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "La promozione più grande dell'anno"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "per 12 mesi"
+      ],
+      "Last chance to save big": [
+        "Ultima occasione per risparmiare alla grande"
+      ],
+      "Protect your entire tribe": [
+        "Proteggi tutta la tua tribù"
+      ],
+      "Protection for two in a single plan": [
+        "Copertura per due persone in un unico piano"
+      ],
+      "Save big with a yearly plan": [
+        "Risparmia alla grande con un abbonamento annuale"
+      ]
+    },
     "Billing cycle option": {
       "${ n } month": [
         "${ n } mese",
@@ -650,6 +729,11 @@
       ],
       "Yearly": [
         "Annuale"
+      ]
+    },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "${ appName } Applicazione desktop"
       ]
     },
     "Bug category": {
@@ -817,6 +901,15 @@
         "${ users } utente",
         "${ users } utenti"
       ],
+      "Amount due": [
+        "Ammontare dovuto"
+      ],
+      "Amount due after trial": [
+        "Importo dovuto dopo il periodo di prova"
+      ],
+      "Amount due now": [
+        "Importo dovuto ora"
+      ],
       "Subtotal": [
         "Subtotale"
       ],
@@ -826,6 +919,10 @@
       ],
       "Total": [
         "Totale"
+      ],
+      "Total for ${ cycle } month": [
+        "Totale per ${ cycle } mese",
+        "Totale per ${ cycle } mesi"
       ]
     },
     "Collapsible tooltip": {
@@ -972,6 +1069,9 @@
       "Send message": [
         "Invia il messaggio"
       ],
+      "Share your thoughts": [
+        "Condividi la tua opinione"
+      ],
       "Show safety information": [
         "Mostra informazioni di sicurezza"
       ],
@@ -1056,6 +1156,9 @@
       ],
       "Delete all": [
         "Elimina tutto"
+      ],
+      "Dictate": [
+        "Detta"
       ],
       "Get started": [
         "Inizia"
@@ -1210,14 +1313,26 @@
       "${ LUMO_SHORT_APP_NAME } references your saved memories to tailor responses — communication style, expertise, recurring tools, and long-running projects.": [
         "${ LUMO_SHORT_APP_NAME } fa riferimento ai tuoi ricordi salvati per personalizzare le risposte: stile di comunicazione, competenze, strumenti ricorrenti e progetti a lungo termine."
       ],
+      "${ LUMO_SHORT_APP_NAME } will review chat-based memories, remove duplicates, and merge related entries into clearer ones. Memories you wrote yourself are left unchanged.": [
+        "${ LUMO_SHORT_APP_NAME } esaminerà i ricordi basati sulle chat, eliminerà i duplicati e unirà le voci correlate in voci più chiare. I ricordi che hai scritto tu rimarranno invariati."
+      ],
+      "Add connectors, manage credentials, and set tool approval policies.": [
+        "Aggiungere connettori, gestire le credenziali e definire le politiche di approvazione degli strumenti."
+      ],
       "Add your own memories, edit any auto-generated entry, or clear everything at any time. Generated memories you edit are promoted to your own.": [
         "Aggiungi i tuoi ricordi, modifica qualsiasi voce generata automaticamente o cancella tutto in qualsiasi momento. I ricordi generati che modifichi verranno promossi come tuoi."
+      ],
+      "Allow ${ LUMO_SHORT_APP_NAME } to create artifacts in the side panel when appropriate. This is the default for all chats; you can change it for a single chat from the Tools menu.": [
+        "Consenti a ${ LUMO_SHORT_APP_NAME } di creare elementi nel pannello laterale quando opportuno. Questa è l'impostazione predefinita per tutte le chat; è possibile modificarla per una singola chat dal menu Strumenti."
       ],
       "Always enable web search for new conversations": [
         "Abilita sempre la ricerca web per le nuove conversazioni"
       ],
       "API keys let you access ${ LUMO_SHORT_APP_NAME } programmatically. Each key is shown only once upon creation.": [
         "Le chiavi API ti consentono di accedere a ${ LUMO_SHORT_APP_NAME } a livello di programmazione. Ogni chiave viene mostrata una sola volta al momento della creazione."
+      ],
+      "Configure app preferences, keyboard shortcuts, and updates in the desktop settings window.": [
+        "Configura le preferenze dell'app, le scorciatoie da tastiera e gli aggiornamenti nella finestra delle impostazioni del desktop."
       ],
       "Create a key to integrate ${ LUMO_SHORT_APP_NAME } with your scripts and tools.": [
         "Crea una chiave per integrare ${ LUMO_SHORT_APP_NAME } con i tuoi script e strumenti."
@@ -1234,8 +1349,14 @@
       "Include project conversations in the main chat history": [
         "Includi le conversazioni del progetto nella cronologia principale della chat"
       ],
+      "Internal preview of an upcoming model": [
+        "Anteprima interna di un modello di prossima uscita"
+      ],
       "Keep it safe — it won't be shown again": [
         "Conservala al sicuro: non verrà mostrata di nuovo"
+      ],
+      "Language used when transcribing your voice": [
+        "Lingua utilizzata per la trascrizione della tua voce"
       ],
       "Last updated on ${ formattedDate }": [
         "Ultimo aggiornamento il ${ formattedDate }"
@@ -1290,6 +1411,9 @@
       ],
       "Turning off memory will permanently delete all ${ memories.length } saved memories. You can turn on memory later, but the deleted memories cannot be recovered.": [
         "Disattivando la memoria eliminerai in modo permanente tutti i ${ memories.length } ricordi salvati. Potrai riattivare la memoria in seguito, ma i ricordi eliminati non potranno essere recuperati."
+      ],
+      "Your experience shapes ${ LUMO_SHORT_APP_NAME }. Tell us what you think.": [
+        "La tua esperienza contribuisce a plasmare ${ LUMO_SHORT_APP_NAME }. Facci sapere cosa ne pensi."
       ]
     },
     "collider_2025: DisableMemory": {
@@ -1308,6 +1432,12 @@
       ]
     },
     "collider_2025: Error": {
+      "Could not download this artifact.": [
+        "Impossibile scaricare questo artefatto."
+      ],
+      "Could not export this artifact as a Word document.": [
+        "Impossibile esportare questo artefatto come documento Word."
+      ],
       "Could not generate a workflow. Try again.": [
         "Impossibile generare un flusso di lavoro. Riprova."
       ],
@@ -1409,6 +1539,9 @@
       ],
       "Your chats can't be saved right now. Anything you write will be lost if you reload the page.": [
         "In questo momento non è possibile salvare le tue chat. Tutto ciò che scrivi andrà perso se ricarichi la pagina."
+      ],
+      "Your existing ${ LUMO_SHORT_APP_NAME } data can't be decrypted with your current account keys. If you recover your previous keys it will become available again. You can keep using ${ LUMO_SHORT_APP_NAME } normally.": [
+        "I tuoi dati esistenti relativi a ${ LUMO_SHORT_APP_NAME } non possono essere decriptati con le chiavi del tuo account attuale. Se recuperi le tue chiavi precedenti, i dati torneranno disponibili. Puoi continuare a utilizzare ${ LUMO_SHORT_APP_NAME } normalmente."
       ]
     },
     "collider_2025: Error (file processing)": {
@@ -1700,6 +1833,12 @@
       "Conversation": [
         "Conversazione"
       ],
+      "Couldn't open the print dialog, so the PDF was downloaded with each page as an image.": [
+        "Non è stato possibile aprire la finestra di dialogo di stampa, quindi il PDF è stato scaricato con ogni pagina sotto forma di immagine."
+      ],
+      "Couldn't open the rich text editor, so you're editing the Markdown source.": [
+        "Non è stato possibile aprire l'editor di testo formattato, quindi stai modificando il codice sorgente Markdown."
+      ],
       "Create and revoke API keys for programmatic access. Keys are shown only once when created.": [
         "Crea e revoca le chiavi API per l'accesso programmatico. Le chiavi vengono mostrate solo una volta al momento della creazione."
       ],
@@ -1742,6 +1881,9 @@
       "Expires tomorrow": [
         "Scade domani"
       ],
+      "Feedback about Apertus may also be shared with the Apertus team.": [
+        "I commenti su Apertus possono essere condivisi anche con il team di Apertus."
+      ],
       "File too large for preview (>150k tokens)": [
         "File troppo grande per l'anteprima (>150k token)"
       ],
@@ -1762,6 +1904,9 @@
       ],
       "For each day, average tokens per API call (tokens ÷ calls, or 0 if no calls).": [
         "Per ogni giorno, la media dei token per chiamata API (token ÷ chiamate, o 0 se non ci sono chiamate)."
+      ],
+      "For this chat": [
+        "Per questa chat"
       ],
       "Free accounts keep chat history for 7 days from when a chat was created.": [
         "Gli account gratuiti conservano la cronologia delle chat per 7 giorni dalla creazione della chat."
@@ -1853,6 +1998,9 @@
       "No usage yet": [
         "Ancora nessun utilizzo"
       ],
+      "Or pull suggestions from your recent chats.": [
+        "Oppure puoi attingere ai suggerimenti dalle tue chat recenti."
+      ],
       "Over capacity": [
         "Capacità superata"
       ],
@@ -1925,6 +2073,9 @@
       "Sign in or create an account to browse and add files from your ${ DRIVE_APP_NAME } (end-to-end encrypted cloud storage) to your chat knowledge.": [
         "Accedi o crea un account per sfogliare e aggiungere file dal tuo ${ DRIVE_APP_NAME } (archiviazione cloud crittografata end-to-end) alla conoscenza della tua chat."
       ],
+      "Sign in to change this later in Settings → General → Dictation language.": [
+        "Accedi per modificare questa impostazione in un secondo momento in Impostazioni → Generali → Lingua di dettatura."
+      ],
       "Sign in to create and manage API keys for ${ LUMO_SHORT_APP_NAME }.": [
         "Accedi per creare e gestire le chiavi API per ${ LUMO_SHORT_APP_NAME }."
       ],
@@ -1942,6 +2093,9 @@
       ],
       "Table view": [
         "Visualizzazione tabella"
+      ],
+      "Telling us which language you speak helps dictation transcribe your voice accurately.": [
+        "Indicandoci quale lingua parli, aiuti la funzione di dettatura a trascrivere accuratamente la tua voce."
       ],
       "The ${ LUMO_SHORT_APP_NAME } API and API keys are included with ${ LUMO_SHORT_APP_NAME }+. Ask your organization administrator to assign a ${ LUMO_SHORT_APP_NAME } seat to your account.": [
         "L'API di ${ LUMO_SHORT_APP_NAME } e le chiavi API sono incluse in ${ LUMO_SHORT_APP_NAME }+. Chiedi all'amministratore della tua organizzazione di assegnare una licenza ${ LUMO_SHORT_APP_NAME } al tuo account."
@@ -1981,6 +2135,9 @@
       ],
       "This conversation contains many images. ${ LUMO_SHORT_APP_NAME } will only see the most recent ${ MAX_IMAGES_PER_REQUEST } images.": [
         "Questa conversazione contiene molte immagini. ${ LUMO_SHORT_APP_NAME } mostrerà solo le ${ MAX_IMAGES_PER_REQUEST } immagini più recenti."
+      ],
+      "This conversation's full history is also shared by default to help us improve even further. You can opt out on the next dialog.": [
+        "Per aiutarci a migliorare ancora di più, la cronologia completa di questa conversazione viene condivisa per impostazione predefinita. Puoi disattivare questa opzione nella finestra di dialogo successiva."
       ],
       "This file was removed from project knowledge.": [
         "File rimosso dalle conoscenze del progetto"
@@ -2027,8 +2184,17 @@
       "We can help you get started with using the ${ LUMO_SHORT_APP_NAME } API. Describe what you want to automate. ${ LUMO_SHORT_APP_NAME } returns a workflow graph and sample code that calls the ${ LUMO_SHORT_APP_NAME } API.": [
         "Possiamo aiutarti a iniziare a usare l'API di ${ LUMO_SHORT_APP_NAME }. Descrivi cosa vuoi automatizzare. ${ LUMO_SHORT_APP_NAME } restituirà un grafo del workflow e un codice di esempio che chiama l'API di ${ LUMO_SHORT_APP_NAME }."
       ],
+      "When you submit feedback, your prompt and this response are sent to ${ BRAND_NAME } for analysis and improvement.": [
+        "Quando invii un feedback, il tuo messaggio e questa risposta vengono inviati a ${ BRAND_NAME } per essere analizzati e migliorare il servizio."
+      ],
       "You are about to visit an external website:": [
         "Stai per visitare un sito web esterno:"
+      ],
+      "You can change this at any time in Settings → General → Dictation language.": [
+        "Puoi modificare questa impostazione in qualsiasi momento in Impostazioni → Generali → Lingua di dettatura."
+      ],
+      "You have many saved memories. Optimize merges duplicate chat-based entries and keeps the list focused.": [
+        "Hai molti ricordi salvati. La funzione “Ottimizza” unisce le voci duplicate relative alle chat e mantiene l'elenco ben organizzato."
       ],
       "You've reached your image limit for this period.": [
         "Hai raggiunto il limite di immagini per questo periodo."
@@ -2301,6 +2467,9 @@
       ],
       "90 days": [
         "90 giorni"
+      ],
+      "Auto-detect": [
+        "Auto-rilevamento"
       ]
     },
     "collider_2025: Personality": {
@@ -2397,6 +2566,9 @@
       "Appearance": [
         "Aspetto"
       ],
+      "Desktop app": [
+        "App desktop"
+      ],
       "General": [
         "Generali"
       ],
@@ -2405,6 +2577,26 @@
       ],
       "Personalization": [
         "Personalizzazione"
+      ]
+    },
+    "collider_2025: Spotlight": {
+      "Artifacts are now on by default": [
+        "Gli artefatti sono ora attivi per impostazione predefinita"
+      ],
+      "Longer documents, code and slides open here so you can edit and download them.": [
+        "I documenti più lunghi, il codice e le diapositive si aprono qui, in modo da poterli modificare e scaricare."
+      ],
+      "Longer documents, code and slides open here so you can edit, download or save them to Drive.": [
+        "I documenti più lunghi, il codice e le diapositive si aprono qui, così puoi modificarli, scaricarli o salvarli su Drive."
+      ],
+      "Settings": [
+        "Impostazioni"
+      ],
+      "To stop this, turn off ${ createArtifact } in ${ tools } for this chat, or in ${ settings } for all chats.": [
+        "Per impedire che ciò accada, disattiva ${ createArtifact } in ${ tools } per questa chat oppure in ${ settings } per tutte le chat."
+      ],
+      "To stop this, turn off ${ createArtifact } in ${ tools } for this chat.": [
+        "Per impedire che ciò accada, disattiva ${ createArtifact } in ${ tools } per questa chat."
       ]
     },
     "collider_2025: Status": {
@@ -2480,6 +2672,9 @@
       "${ LUMO_SHORT_APP_NAME } Business": [
         "${ LUMO_SHORT_APP_NAME } Business"
       ],
+      "${ LUMO_SHORT_APP_NAME } Desktop settings": [
+        "${ LUMO_SHORT_APP_NAME } Impostazioni desktop"
+      ],
       "${ LUMO_SHORT_APP_NAME } Plus": [
         "${ LUMO_SHORT_APP_NAME } Plus"
       ],
@@ -2510,6 +2705,9 @@
       "Auto update memory": [
         "Aggiornamento automatico memoria"
       ],
+      "Automatic Create Artifact": [
+        "Creazione automatica di un artefatto"
+      ],
       "Automatic web search": [
         "Ricerca web automatica"
       ],
@@ -2519,11 +2717,17 @@
       "Chat": [
         "Chat"
       ],
+      "Choose your dictation language": [
+        "Scegli la lingua della dettatura"
+      ],
       "Clear all memories?": [
         "Vuoi cancellare tutti i ricordi?"
       ],
       "Clear chat-based memories?": [
         "Vuoi cancellare i ricordi basati sulle chat?"
+      ],
+      "Connectors": [
+        "Connettori"
       ],
       "Conversational AI": [
         "IA conversazionale"
@@ -2534,6 +2738,9 @@
       "Delete everything": [
         "Elimina tutto"
       ],
+      "Dictation language": [
+        "Lingua di dettatura"
+      ],
       "Document intelligence": [
         "Analisi intelligente dei documenti"
       ],
@@ -2542,6 +2749,9 @@
       ],
       "Generated code": [
         "Codice generato"
+      ],
+      "Got a minute?": [
+        "Hai un minuto?"
       ],
       "Guest": [
         "Ospite"
@@ -2901,17 +3111,32 @@
       ]
     },
     "collider_2025:Action": {
+      "Add column right": [
+        "Aggiungi colonna a destra"
+      ],
       "Add details": [
         "Aggiungi informazioni"
       ],
       "Add more information to improve the response": [
         "Aggiungi più informazioni per migliorare la risposta"
       ],
+      "Add row below": [
+        "Aggiungi riga sotto"
+      ],
       "Add to favorites": [
         "Aggiungi ai preferiti"
       ],
+      "Apply": [
+        "Applica"
+      ],
       "Ask the model to be more careful and thorough": [
         "Richiedi al modello maggiore precisione e attenzione"
+      ],
+      "Bold": [
+        "Grassetto"
+      ],
+      "Bulleted list": [
+        "Elenco puntato"
       ],
       "Cancel": [
         "Annulla"
@@ -2925,6 +3150,9 @@
       "Change style": [
         "Cambia stile"
       ],
+      "Checklist": [
+        "Checklist"
+      ],
       "Choose project icon": [
         "Scegli un'icona per il progetto"
       ],
@@ -2936,6 +3164,9 @@
       ],
       "Close": [
         "Chiudi"
+      ],
+      "Code block": [
+        "Blocco di codice"
       ],
       "Copy link & caption": [
         "Copia link e didascalia"
@@ -2961,11 +3192,20 @@
       "Delete chat": [
         "Elimina la chat"
       ],
+      "Delete column": [
+        "Elimina colonna"
+      ],
       "Delete conversation": [
         "Elimina conversazione"
       ],
       "Delete project": [
         "Elimina progetto"
+      ],
+      "Delete row": [
+        "Elimina riga"
+      ],
+      "Delete table": [
+        "Elimina tabella"
       ],
       "Describe desired changes...": [
         "Descrivi i cambiamenti desiderati"
@@ -2973,14 +3213,29 @@
       "Deselect all": [
         "Deseleziona tutti"
       ],
+      "Divider": [
+        "Divisore"
+      ],
       "Download": [
         "Scarica"
       ],
       "Download image": [
         "Scarica immagine"
       ],
+      "Download web presentation (HTML)": [
+        "Scarica la presentazione web (HTML)"
+      ],
+      "Download Word (.docx)": [
+        "Scarica Word (.docx)"
+      ],
       "Edit agent": [
         "Modifica agente"
+      ],
+      "Edit as Markdown": [
+        "Modifica come Markdown"
+      ],
+      "Edit as rich text": [
+        "Modifica come testo formattato"
       ],
       "Edit image": [
         "Modifica immagine"
@@ -3003,11 +3258,32 @@
       "Go to project": [
         "Vai al progetto"
       ],
+      "Heading 1": [
+        "Titolo 1"
+      ],
+      "Heading 2": [
+        "Titolo 2"
+      ],
+      "Heading 3": [
+        "Titolo 3"
+      ],
       "Hide knowledge panel": [
         "Nascondi il pannello informativo"
       ],
+      "Inline code": [
+        "Codice in linea"
+      ],
+      "Insert table": [
+        "Inserisci tabella"
+      ],
+      "Italic": [
+        "Corsivo"
+      ],
       "Light": [
         "Chiaro"
+      ],
+      "Link": [
+        "Collegamento"
       ],
       "Make a copy": [
         "Crea una copia"
@@ -3033,11 +3309,20 @@
       "Next message": [
         "Prossimo messaggio"
       ],
+      "Numbered list": [
+        "Elenco numerato"
+      ],
       "Open conversation": [
         "Apri conversazione"
       ],
       "Previous message": [
         "Messaggio precedente"
+      ],
+      "Quote": [
+        "Citazione"
+      ],
+      "Redo": [
+        "Ripristina"
       ],
       "Regenerate": [
         "Rigenera"
@@ -3075,6 +3360,9 @@
       "Reveal my profile": [
         "Rivela il mio profilo"
       ],
+      "Save as PDF…": [
+        "Salva come PDF..."
+      ],
       "Select all": [
         "Seleziona tutto"
       ],
@@ -3093,6 +3381,9 @@
       "Show sidebar": [
         "Mostra barra laterale"
       ],
+      "Strikethrough": [
+        "Barrato"
+      ],
       "Think longer": [
         "Elabora più a lungo"
       ],
@@ -3104,6 +3395,9 @@
       ],
       "Try this": [
         "Prova questo"
+      ],
+      "Undo": [
+        "Annulla"
       ],
       "Unlink Folder": [
         "Scollega cartella"
@@ -3125,6 +3419,9 @@
       ],
       "What needs changed?": [
         "Cosa c'è da cambiare?"
+      ],
+      "Word (.docx)": [
+        "Word (.docx)"
       ]
     },
     "collider_2025:Agent": {
@@ -3459,6 +3756,9 @@
       "From ${ DRIVE_APP_NAME }": [
         "Da ${ DRIVE_APP_NAME }"
       ],
+      "Full history of this conversation, including images and attachments, will be sent to ${ BRAND_NAME } for analysis and improvement.": [
+        "La cronologia completa di questa conversazione, comprese le immagini e gli allegati, verrà inviata a ${ BRAND_NAME } per essere analizzata e migliorare il servizio."
+      ],
       "Get faster, more accurate answers from the web, with citations so you can check the source.": [
         "Ottieni risposte più rapide e precise dal web, con citazioni per poter verificare la fonte."
       ],
@@ -3566,6 +3866,9 @@
       ],
       "Your information is zero-access encrypted": [
         "Le tue informazioni sono crittografate con crittografia a conoscenza zero"
+      ],
+      "Your prompt and this response will be sent to ${ BRAND_NAME } for analysis and improvement. Images and other attachments are not included.": [
+        "La tua richiesta e questa risposta saranno inviate a ${ BRAND_NAME } per essere analizzate e migliorate. Le immagini e gli altri allegati non sono inclusi."
       ]
     },
     "collider_2025:Inspiration suggestion prompt": {
@@ -3682,6 +3985,9 @@
       "Description (optional)": [
         "Descrizione (opzionale)"
       ],
+      "Document editor": [
+        "Editore del documento"
+      ],
       "Draw a sketch": [
         "Disegna uno schizzo"
       ],
@@ -3694,6 +4000,9 @@
       "Folder name": [
         "Nome cartella"
       ],
+      "Formatting": [
+        "Formattazione"
+      ],
       "High": [
         "Alto"
       ],
@@ -3702,6 +4011,9 @@
       ],
       "Image preview": [
         "Anteprima dell'immagine"
+      ],
+      "Include full conversation": [
+        "Includi la conversazione completa"
       ],
       "Inspiration image": [
         "Immagine di ispirazione"
@@ -3717,6 +4029,9 @@
       ],
       "Lending & hiring": [
         "Prestiti e assunzioni"
+      ],
+      "Link address": [
+        "Indirizzo link"
       ],
       "Low": [
         "Basso"
@@ -3819,6 +4134,9 @@
       ],
       "Holiday planner": [
         "Pianificatore di vacanze"
+      ],
+      "Paste or type a link": [
+        "Incolla o digita un link"
       ],
       "Search chats": [
         "Cerca nelle chat"
@@ -4047,6 +4365,9 @@
       "Hide details": [
         "Nascondi dettagli"
       ],
+      "Hide tool result": [
+        "Nascondi il risultato dello strumento"
+      ],
       "Last updated: ": [
         "Ultimo aggiornamento: "
       ],
@@ -4139,6 +4460,9 @@
       ],
       "View details": [
         "Visualizza i dettagli"
+      ],
+      "View tool result": [
+        "Visualizza il risultato dello strumento"
       ],
       "Worked on an image": [
         "Elaborazione di un'immagine"
@@ -5612,6 +5936,9 @@
       "Incorrect backup password. Please try again.": [
         "Password di backup errata. Riprova."
       ],
+      "Incorrect password. Please try again.": [
+        "Password errata. Per favore riprova."
+      ],
       "Incorrect second password. Please try again.": [
         "Password secondaria errata. Riprova."
       ],
@@ -5804,6 +6131,9 @@
       ],
       "Wrong billing address": [
         "Indirizzo di fatturazione errato"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Frase di recupero errata. Riprova o usa un altro metodo di recupero."
       ],
       "You do not have access to this item": [
         "Non hai accesso a questo elemento"
@@ -6059,6 +6389,12 @@
       "0 MB": [
         "0 MB"
       ],
+      "1 device per user": [
+        "1 dispositivo per utente"
+      ],
+      "1 vault per user": [
+        "1 cassaforte per utente"
+      ],
       "30-day money-back guarantee.": [
         "Garanzia di rimborso entro 30 giorni"
       ],
@@ -6130,6 +6466,12 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clicca \"Richiedi nuovo codice\" per ricevere un nuovo codice di verifica al ${ strong }. Se questo numero telefonico è incorretto, clicca su \"Modifica\" per correggerlo."
+      ],
+      "Connecting…": [
+        "Connessione…"
+      ],
+      "Connection error": [
+        "Errore di connessione"
       ],
       "Country code": [
         "Codice nazione"
@@ -6282,6 +6624,9 @@
       "Learn more": [
         "Scopri di più"
       ],
+      "Listening…": [
+        "In ascolto…"
+      ],
       "Loading": [
         "Caricamento in corso"
       ],
@@ -6323,6 +6668,9 @@
       ],
       "No payment is required at this time.": [
         "Al momento non è richiesto alcun pagamento."
+      ],
+      "No payment is required.": [
+        "Non è richiesto alcun pagamento."
       ],
       "No results found": [
         "Nessun risultato trovato"
@@ -8372,6 +8720,12 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (IVA esclusa)"
       ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } non può essere combinato con ${ PLAN_NAMES[PLANS.PASS] }."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } è disponibile solo nei piani aziendali."
+      ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "Imposta del ${ rate }%: ${ taxAmountElement }"
       ],
@@ -8381,8 +8735,23 @@
       "Amount due after trial on ${ formattedDate }": [
         "Importo dovuto dopo la prova il ${ formattedDate }"
       ],
+      "An organization is required for this plan.": [
+        "Per questo piano è necessaria un'organizzazione."
+      ],
       "Billing Country": [
         "Paese di fatturazione"
+      ],
+      "Born Private can’t be purchased with an active subscription.": [
+        "“Born Private” non può essere acquistato se si dispone di un abbonamento attivo."
+      ],
+      "Born Private requires a donation.": [
+        "Per accedere a “Born Private” è richiesta una donazione."
+      ],
+      "Buying credits requires a separate purchase.": [
+        "L'acquisto dei crediti richiede un acquisto separato."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "Effettuando il passaggio, accetti i nostri ${ termsLink }."
       ],
       "Card number": [
         "Numero della carta"
@@ -8423,11 +8792,20 @@
       "More plans are available in other currencies": [
         "Sono disponibili altri piani in altre valute"
       ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "È possibile acquistare solo un ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Paga con ${ IDEAL_WERO_BRAND_NAME }"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Serve un metodo di pagamento per attivare l'abbonamento una volta terminata la prova."
+      ],
+      "Please close extra wallet accounts before changing your plan.": [
+        "Ti preghiamo di chiudere eventuali conti aggiuntivi del portafoglio prima di cambiare piano."
+      ],
+      "Please close extra wallets before changing your plan.": [
+        "Ti preghiamo di chiudere i portafogli in più prima di modificare il tuo piano."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Riattiva prima l'abbonamento per ridurre il numero di componenti aggiuntivi."
@@ -8437,6 +8815,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Rinnova a ${ renewPriceStr }, annulla in qualsiasi momento."
+      ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Il numero dei seggi riservati agli scribi non può superare il numero dei membri."
       ],
       "Tax ${ rate }%": [
         "Imposta ${ rate }%"
@@ -8450,6 +8831,18 @@
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Lo sconto è valido per ${ renewalsWithCoupon } rinnovo.",
         "Lo sconto è valido per ${ renewalsWithCoupon } rinnovi."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "Il piano selezionato non offre un numero sufficiente di indirizzi per il tuo account."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "Il piano selezionato non offre un numero sufficiente di domini per il tuo account."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "Il piano selezionato non offre un numero sufficiente di iscritti per il tuo account."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "Il piano selezionato non offre spazio di archiviazione sufficiente per il tuo account."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Il prezzo scontato speciale è valido per ${ couponRedemptions } mese. Poi si rinnoverà automaticamente a ${ renewPriceStr } per 1 mese. Puoi annullare in qualsiasi momento.",
@@ -8480,14 +8873,35 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Questa azione estende l'abbonamento esistente. Ti verranno addebitati solo i nuovi add-on e il tempo rimanente del ciclo di fatturazione corrente. La data di rinnovo del tuo abbonamento non verrà modificata."
       ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "Questo server dedicato è assegnato a un gateway e non può essere modificato."
+      ],
       "This offer is not available with your current plan.": [
         "Questa offerta non è disponibile con il tuo piano attuale."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Questo diventerà il tuo nuovo metodo di pagamento predefinito per tutti i rinnovi futuri."
       ],
+      "This plan doesn’t support the members on your account.": [
+        "Questo piano non include l'assistenza per gli utenti associati al tuo account."
+      ],
       "Timeout exceeded": [
         "Limite di tempo superato"
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "I piani di prova non supportano le licenze di ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "Trial plans don’t support custom domains.": [
+        "I piani di prova non supportano i domini personalizzati."
+      ],
+      "Trial plans don’t support dedicated IPs.": [
+        "I piani di prova non supportano gli indirizzi IP dedicati."
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "I piani di prova non supportano le licenze Scribe."
+      ],
+      "Trial plans don’t support this many members.": [
+        "I piani di prova non supportano un numero così elevato di iscritti."
       ],
       "VAT number": [
         "Numero partita IVA"
@@ -8501,11 +8915,20 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Hai già un abbonamento a questo piano. Puoi cambiare il tuo abbonamento su ${ subscriptionPlatform }."
       ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "Possiedi già ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "You already own Born Private.": [
+        "Hai già acquistato “Born Private”."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Sarai presto reindirizzato a PayPal per verificare il pagamento."
       ],
       "You will soon be redirected to verify your payment.": [
         "Sarai presto reindirizzato per verificare il pagamento."
+      ],
+      "Your account is too old for Born Private.": [
+        "Il tuo account è troppo vecchio per Born Private."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "La tua valuta è stata cambiata in euro (€) perché ${ IDEAL_WERO_BRAND_NAME } supporta esclusivamente i pagamenti in euro."
@@ -9325,6 +9748,9 @@
       ],
       "Billing cycle": [
         "Ciclo di fatturazione"
+      ],
+      "Black Friday": [
+        "Black Friday"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Annulla l'abbonamento a ${ MAIL_SHORT_APP_NAME }"

@@ -3033,14 +3033,8 @@
       "External invitations are temporarily disabled.": [
         "Знешнія запрашэнні часова адключаны."
       ],
-      "External invitations are temporarily disabled. Please try again later": [
-        "Знешнія запрашэнні часова адключаны. Паўтарыце спробу пазней"
-      ],
       "Failed to change permissions settings": [
         "Не ўдалося змяніць налады дазволаў"
-      ],
-      "Failed to copy photo to album": [
-        "Не ўдалося скапіяваць фатаграфію ў альбом"
       ],
       "Failed to create folder": [
         "Не ўдалося стварыць папку"
@@ -3566,6 +3560,9 @@
       ],
       "Wrong billing address": [
         "Няправільны плацежны адрас"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Няправільная фраза аднаўлення. Паўтарыце спробу або скарыстайцеся іншым спосабам аднаўлення."
       ],
       "You can create public links for your own files only": [
         "Вы можаце ствараць публічныя спасылкі толькі для сваіх уласных файлаў"
@@ -7694,14 +7691,8 @@
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" абагулены"
       ],
-      "\"${ name }\" deleted": [
-        "\"${ name }\" выдалена"
-      ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" незваротна выдалены са сметніцы"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "Не ўдалося выдаліць \"${ name }\""
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "Не ўдалося незваротна выдаліць са сметніцы \"${ name }\""
@@ -7736,23 +7727,11 @@
         "Не ўдалося расшыфраваць ${ count } элементаў",
         "Не ўдалося расшыфраваць ${ count } элементаў"
       ],
-      "${ numberOfItems } item deleted": [
-        "${ numberOfItems } элемент выдалены",
-        "${ numberOfItems } элементы выдалены",
-        "${ numberOfItems } элементаў выдалена",
-        "${ numberOfItems } элементаў выдалена"
-      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } элемент незваротна выдалены са сметніцы",
         "${ numberOfItems } элементы незваротна выдалены са сметніцы",
         "${ numberOfItems } элементаў незваротна выдалены са сметніцы",
         "${ numberOfItems } элементы незваротна выдалены са сметніцы"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "Не ўдалося выдаліць ${ numberOfItems } элемент",
-        "Не ўдалося выдаліць ${ numberOfItems } элементы",
-        "Не ўдалося выдаліць ${ numberOfItems } элементаў",
-        "Не ўдалося выдаліць ${ numberOfItems } элементаў"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "Не ўдалося незваротна выдаліць са сметніцы ${ numberOfItems } элемент",

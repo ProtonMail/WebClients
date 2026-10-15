@@ -303,9 +303,6 @@
       "Create meeting": [
         "Crea una reunió"
       ],
-      "Debug devices": [
-        "Depura els dispositius"
-      ],
       "Debug overlay": [
         "Depura la superposició"
       ],
@@ -439,10 +436,10 @@
         "Uneix-te"
       ],
       "Join and leave sounds": [
-        "Sons d'arribada i sortida"
+        "Sons d'entrada i sortida"
       ],
       "Join in browser": [
-        "Uniu-vos-hi al navegador"
+        "Uneix-m'hi al navegador"
       ],
       "Join meeting": [
         "Uneix-te a la reunió"
@@ -476,6 +473,9 @@
       ],
       "Lower hand": [
         "Abaixa la mà"
+      ],
+      "Meeting debug": [
+        "Depuració de la reunió"
       ],
       "Meeting info": [
         "Informació de la reunió"
@@ -520,7 +520,7 @@
         "Obre la menció de ${ senderName } al xat"
       ],
       "Open this meeting in the desktop app": [
-        "Obrir aquesta reunió a l'aplicació d'escriptori"
+        "Obre aquesta reunió a l'aplicació d'escriptori"
       ],
       "Participants": [
         "Participants"
@@ -714,7 +714,7 @@
         "Inicia la reunió"
       ],
       "Start meeting in browser": [
-        "Iniciar la reunió al navegador"
+        "Inicia la reunió al navegador"
       ],
       "Start new meeting": [
         "Inicia una reunió"
@@ -1991,6 +1991,12 @@
       "Cannot verify who uploaded this file": [
         "No es pot verificar qui ha carregat aquest fitxer"
       ],
+      "Check your audio settings and try again": [
+        "Comproveu les preferències d'àudio i torneu-ho a provar"
+      ],
+      "Connection lost — captions will resume when reconnected": [
+        "S'ha perdut la connexió: els subtítols es reprendran en reconnectar-se"
+      ],
       "Copy operation aborted": [
         "S'ha cancel·lat l'operació de còpia"
       ],
@@ -2192,6 +2198,9 @@
       "Incorrect backup password. Please try again.": [
         "La contrasenya de recuperació no és correcta. Torneu-ho a intentar."
       ],
+      "Incorrect password. Please try again.": [
+        "Contrasenya incorrecta, torneu-ho a intentar."
+      ],
       "Incorrect second password. Please try again.": [
         "La segona contrasenya no és correcta. Torneu-ho a intentar."
       ],
@@ -2213,9 +2222,6 @@
       "Legacy public link cannot be updated. Please re-create a new public link.": [
         "L'enllaç públic antic no es pot actualitzar. Torneu-ne a crear un de nou."
       ],
-      "Live captions aren't working. Try turning them off and on again.": [
-        "Els subtítols en directe no funcionen. Proveu de desactivar-los i tornar-los a activar."
-      ],
       "Live captions couldn't be started.": [
         "No s'han pogut iniciar els subtítols en directe."
       ],
@@ -2227,6 +2233,9 @@
       ],
       "Microphone access is blocked. Allow it in your browser settings.": [
         "L'accés al micròfon està bloquejat. Permeteu-lo a les preferències del navegador."
+      ],
+      "Microphone not detected": [
+        "No s'ha detectat el micròfon"
       ],
       "Missing inviter email": [
         "Falta l'adreça electrònica de qui convida"
@@ -2260,7 +2269,7 @@
         "Número no vàlid"
       ],
       "Not enough storage space to record. Free up space and try again.": [
-        "No hi ha prou espai d'emmagatzematge per enregistrar. Allibereu espai i torneu-ho a provar."
+        "No hi ha prou espai d'emmagatzematge per a enregistrar. Allibereu-ne i torneu-ho a provar."
       ],
       "Only admins can convert external invitations": [
         "Només els administradors poden convertir invitacions externes"
@@ -2418,8 +2427,14 @@
       "Too many server requests, please try again later": [
         "Hi ha massa sol·licituds al servidor, torneu-ho a provar més tard"
       ],
+      "Try turning live captions off and on again.": [
+        "Proveu de desactivar i tornar a activar els subtítols en directe."
+      ],
       "Try using only letters, numerals, and _.-": [
         "Intenteu utilitzar només lletres, numerals i _.-"
+      ],
+      "Unable to generate captions": [
+        "No s'han pogut generar els subtítols"
       ],
       "Unknown error": [
         "Error desconegut"
@@ -2441,6 +2456,9 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "No hem pogut enviar cap codi de verificació mitjançant aquest mètode."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Frase de recuperació incorrecta. Torneu-ho a provar o utilitzeu un altre mètode de recuperació."
       ],
       "You can create public links for your own files only": [
         "Només podeu crear enllaços públics per als vostres propis fitxers"
@@ -2665,7 +2683,7 @@
         "${ MEET_APP_NAME } necessita accés al micròfon perquè els altres us puguin sentir durant la trucada. El podeu apagar en qualsevol moment."
       ],
       "${ MEET_APP_NAME } needs screen recording access so you can share your screen during the call. After you allow it, macOS will ask you to reopen the app.": [
-        "${ MEET_APP_NAME } necessita accés a l'enregistrament de pantalla perquè pugueu compartir-la durant la trucada. Un cop ho autoritzeu, macOS us demanarà que torneu a obrir l'aplicació."
+        "${ MEET_APP_NAME } necessita accés a l'enregistrament de la pantalla perquè pugueu compartir-la durant la trucada. Un cop ho autoritzeu, macOS us demanarà que torneu a obrir l'aplicació."
       ],
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } necessita WebRTC per funcionar. Actualitzeu el navegador o el dispositiu a una versió que sigui compatible amb WebRTC, proveu un altre navegador o desactiveu qualsevol extensió que l'estigui bloquejant."
@@ -2798,8 +2816,8 @@
       "Camera permission denied": [
         "S'ha denegat el permís de la càmera"
       ],
-      "Captions are on": [
-        "Els subtítols estan activats"
+      "Captions on": [
+        "S'han activat els subtítols"
       ],
       "Changes are staged. Apply to rebuild the preview with the new constants.": [
         "S'han preparat els canvis. Apliqueu-los per tornar a generar la previsualització amb les constants noves."
@@ -3020,6 +3038,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "S'està carregant el calendari, espereu. Se us redirigirà a la nostra plataforma de planificació Calendly en una pestanya nova."
       ],
+      "Loading captions…": [
+        "S'estan carregant els subtítols…"
+      ],
       "Loading meeting details...": [
         "S'estan carregant els detalls de la reunió..."
       ],
@@ -3072,7 +3093,7 @@
         "Les gravacions de les reunions no són compatibles amb Firefox."
       ],
       "Meeting recordings aren’t supported in Safari private mode.": [
-        "Les gravacions de reunions no estan disponibles en el mode privat de Safari."
+        "Les gravacions de reunions no són compatibles amb el mode privat de Safari."
       ],
       "Meeting time is up": [
         "S'ha esgotat el temps de la reunió"
@@ -3467,6 +3488,9 @@
       "Virtual background initializing": [
         "S'està inicialitzant el fons virtual"
       ],
+      "Waiting for speech…": [
+        "S'està esperant la veu…"
+      ],
       "Waiting for the host to admit you. The host has been notified that you're waiting.": [
         "S'està esperant que l'amfitrió us admeti. Se l'ha notificat que esteu esperant."
       ],
@@ -3745,6 +3769,9 @@
       ],
       "Live caption agent": [
         "Agent de subtítols en directe"
+      ],
+      "Live captions": [
+        "Subtítols en directe"
       ],
       "Manage recordings": [
         "Gestiona els enregistraments"
@@ -4248,7 +4275,7 @@
         "Permeteu l'accés al micròfon"
       ],
       "Allow screen recording": [
-        "Permet l'enregistrament de pantalla"
+        "Permet l'enregistrament de la pantalla"
       ],
       "Are you sure?": [
         "N'esteu segur?"

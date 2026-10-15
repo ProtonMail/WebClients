@@ -1004,6 +1004,12 @@
       "Domains": [
         "Domini"
       ],
+      "Managed Service Provider": [
+        "Fornitore di servizi gestiti"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Le organizzazioni che dispongono dell'estensione “Managed Service Provider” possono creare e gestire organizzazioni affiliate."
+      ],
       "Servers": [
         "Server"
       ],
@@ -1129,6 +1135,75 @@
     "BF2024: Tooltip": {
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lo spazio di archiviazione è condiviso tra tutti i servizi ${ BRAND_NAME }."
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Ottieni l'offerta"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/mese"
+      ],
+      "2 individual accounts": [
+        "2 account individuali"
+      ],
+      "2 TB of secure storage": [
+        "2 TB di spazio di archiviazione protetto"
+      ],
+      "3 TB of secure storage": [
+        "3 TB di spazio di archiviazione sicuro"
+      ],
+      "500 GB of secure storage": [
+        "500 GB di spazio di archiviazione sicuro"
+      ],
+      "6 individual accounts": [
+        "6 conti individuali"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Gli sconti si basano sui prezzi mensili standard. Il tuo abbonamento si rinnoverà alla tariffa annuale standard al termine del ciclo di fatturazione."
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "La promozione più grande dell'anno"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "per 12 mesi"
+      ],
+      "Last chance to save big": [
+        "Ultima occasione per risparmiare alla grande"
+      ],
+      "Protect your entire tribe": [
+        "Proteggi tutta la tua tribù"
+      ],
+      "Protection for two in a single plan": [
+        "Copertura per due persone in un unico piano"
+      ],
+      "Save big with a yearly plan": [
+        "Risparmia alla grande con un abbonamento annuale"
+      ]
+    },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "${ appName } Applicazione desktop"
       ]
     },
     "Bug category": {
@@ -2870,14 +2945,8 @@
       "External invitations are temporarily disabled.": [
         "Gli inviti esterni sono temporaneamente disabilitati."
       ],
-      "External invitations are temporarily disabled. Please try again later": [
-        "Gli inviti esterni sono temporaneamente disabilitati. Riprova più tardi"
-      ],
       "Failed to change permissions settings": [
         "Impossibile modificare le impostazioni dei permessi"
-      ],
-      "Failed to copy photo to album": [
-        "Impossibile copiare la foto nell'album"
       ],
       "Failed to create folder": [
         "Impossibile creare la cartella"
@@ -3296,6 +3365,9 @@
       "Wrong billing address": [
         "Indirizzo di fatturazione errato"
       ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Frase di recupero errata. Riprova o usa un altro metodo di recupero."
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Non puoi inviare un'email a più di ${ maxContacts } destinatario",
         "Non puoi inviare un'email a più di ${ maxContacts } destinatari"
@@ -3317,6 +3389,9 @@
       ],
       "You must set a name": [
         "È necessario impostare un nome"
+      ],
+      "You reached the maximum number of connected addresses": [
+        "È stato raggiunto il numero massimo di indirizzi connessi"
       ],
       "Your import will not be processed.": [
         "La tua importazione non verrà elaborata."
@@ -4493,6 +4568,9 @@
       ],
       "Display word count": [
         "Visualizza il conteggio delle parole"
+      ],
+      "Do you remember your password?": [
+        "Ti ricordi la tua password?"
       ],
       "Document is in trash": [
         "Il documento è nel cestino"
@@ -5892,6 +5970,9 @@
       ],
       "Your password (trusted contact)": [
         "La tua password (contatto attendibile)"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Nome non decifrabile"
       ]
     },
     "Label for contact group color": {
@@ -7159,14 +7240,8 @@
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" condiviso"
       ],
-      "\"${ name }\" deleted": [
-        "\"${ name }\" eliminato"
-      ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" eliminato definitivamente dal cestino"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "Eliminazione di \"${ name }\" non riuscita"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "Eliminazione definitiva di \"${ name }\" dal cestino non riuscita"
@@ -7199,17 +7274,9 @@
         "Decrittografia di ${ count } elemento non riuscita",
         "Decrittografia di ${ count } elementi non riuscita"
       ],
-      "${ numberOfItems } item deleted": [
-        "${ numberOfItems } elemento eliminato",
-        "${ numberOfItems } elementi eliminati"
-      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } elemento eliminato definitivamente dal cestino",
         "${ numberOfItems } elementi eliminati definitivamente dal cestino"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "Eliminazione di ${ numberOfItems } elemento non riuscita",
-        "Eliminazione di ${ numberOfItems } elementi non riuscita"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "Eliminazione definitiva di ${ numberOfItems } elemento dal cestino non riuscita",
@@ -7271,6 +7338,9 @@
       ],
       "Failed to accept share invitation": [
         "Impossibile accettare l'invito alla condivisione"
+      ],
+      "Failed to apply file. Check the file and try again.": [
+        "Impossibile applicare il file. Controllare il file e riprovare."
       ],
       "Failed to delete document": [
         "Impossibile eliminare il documento"
@@ -7652,8 +7722,38 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (IVA esclusa)"
       ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } non può essere combinato con ${ PLAN_NAMES[PLANS.PASS] }."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } è disponibile solo nei piani aziendali."
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Importo dovuto dopo la prova il ${ formattedDate }"
+      ],
+      "An organization is required for this plan.": [
+        "Per questo piano è necessaria un'organizzazione."
+      ],
+      "Born Private can’t be purchased with an active subscription.": [
+        "“Born Private” non può essere acquistato se si dispone di un abbonamento attivo."
+      ],
+      "Born Private requires a donation.": [
+        "Per accedere a “Born Private” è richiesta una donazione."
+      ],
+      "Buying credits requires a separate purchase.": [
+        "L'acquisto dei crediti richiede un acquisto separato."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "Effettuando il passaggio, accetti i nostri ${ termsLink }."
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "È possibile acquistare solo un ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "Please close extra wallet accounts before changing your plan.": [
+        "Ti preghiamo di chiudere eventuali conti aggiuntivi del portafoglio prima di cambiare piano."
+      ],
+      "Please close extra wallets before changing your plan.": [
+        "Ti preghiamo di chiudere i portafogli in più prima di modificare il tuo piano."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "I prezzi di rinnovo sono soggetti a modifiche in base a ${ termsAndConditionsLink }."
@@ -7661,12 +7761,27 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Rinnova a ${ renewPriceStr }, annulla in qualsiasi momento."
       ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Il numero dei seggi riservati agli scribi non può superare il numero dei membri."
+      ],
       "terms and conditions": [
         "Termini e Condizioni"
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Lo sconto è valido per ${ renewalsWithCoupon } rinnovo.",
         "Lo sconto è valido per ${ renewalsWithCoupon } rinnovi."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "Il piano selezionato non offre un numero sufficiente di indirizzi per il tuo account."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "Il piano selezionato non offre un numero sufficiente di domini per il tuo account."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "Il piano selezionato non offre un numero sufficiente di iscritti per il tuo account."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "Il piano selezionato non offre spazio di archiviazione sufficiente per il tuo account."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Il prezzo scontato speciale è valido per ${ couponRedemptions } mese. Poi si rinnoverà automaticamente a ${ renewPriceStr } per 1 mese. Puoi annullare in qualsiasi momento.",
@@ -7693,6 +7808,36 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Poi verrà rinnovato automaticamente a ${ renewPriceStr } per ${ renewalLength } mese. Puoi annullare in qualsiasi momento.",
         "Poi verrà rinnovato automaticamente a ${ renewPriceStr } per ${ renewalLength } mesi. Puoi annullare in qualsiasi momento."
+      ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "Questo server dedicato è assegnato a un gateway e non può essere modificato."
+      ],
+      "This plan doesn’t support the members on your account.": [
+        "Questo piano non include l'assistenza per gli utenti associati al tuo account."
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "I piani di prova non supportano le licenze di ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "Trial plans don’t support custom domains.": [
+        "I piani di prova non supportano i domini personalizzati."
+      ],
+      "Trial plans don’t support dedicated IPs.": [
+        "I piani di prova non supportano gli indirizzi IP dedicati."
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "I piani di prova non supportano le licenze Scribe."
+      ],
+      "Trial plans don’t support this many members.": [
+        "I piani di prova non supportano un numero così elevato di iscritti."
+      ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "Possiedi già ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "You already own Born Private.": [
+        "Hai già acquistato “Born Private”."
+      ],
+      "Your account is too old for Born Private.": [
+        "Il tuo account è troppo vecchio per Born Private."
       ]
     },
     "PGP key encryption warning": {
@@ -9647,6 +9792,9 @@
       ],
       "The import will start with the most recent messages.": [
         "L'importazione inizierà con i messaggi più recenti."
+      ],
+      "This link has expired. Please extend expiration date": [
+        "Questo link è scaduto. Si prega di prorogare la data di scadenza"
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "A meno che non vengano decifrate, le password crittografate rimangono sicure anche se vengono esposte."

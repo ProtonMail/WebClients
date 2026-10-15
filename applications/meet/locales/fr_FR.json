@@ -262,9 +262,6 @@
       "Create meeting": [
         "Créer une réunion"
       ],
-      "Debug devices": [
-        "Appareils de débogage"
-      ],
       "Debug overlay": [
         "Overlay de débogage"
       ],
@@ -420,6 +417,9 @@
       ],
       "Lower hand": [
         "Baisser la main"
+      ],
+      "Meeting debug": [
+        "Débogage de la réunion"
       ],
       "Meeting info": [
         "Informations sur la réunion"
@@ -1887,6 +1887,12 @@
       "Cannot verify the author of this file": [
         "L'auteur de ce fichier n'a pas pu être vérifié."
       ],
+      "Check your audio settings and try again": [
+        "Vérifiez vos paramètres audio et réessayez"
+      ],
+      "Connection lost — captions will resume when reconnected": [
+        "Connexion perdue, les sous-titres reprendront une fois reconnecté"
+      ],
       "Copy operation aborted": [
         "L'opération de copie a été annulée."
       ],
@@ -2013,6 +2019,9 @@
       "Incorrect backup password. Please try again.": [
         "Le mot de passe de secours n'est pas correct. Veuillez réessayer."
       ],
+      "Incorrect password. Please try again.": [
+        "Le mot de passe n'est pas correct. Réessayez."
+      ],
       "Incorrect second password. Please try again.": [
         "Le second mot de passe n'est pas correct. Veuillez réessayer."
       ],
@@ -2036,6 +2045,9 @@
       ],
       "Message is too long to send": [
         "Le message est trop long pour être envoyé."
+      ],
+      "Microphone not detected": [
+        "Le microphone n'est pas détecté"
       ],
       "Missing inviter email": [
         "L'e-mail de l'inviteur est manquant."
@@ -2182,8 +2194,14 @@
       "Too many server requests, please try again later": [
         "Le nombre de requêtes serveur est trop important. Veuillez réessayer plus tard."
       ],
+      "Try turning live captions off and on again.": [
+        "Essayez de désactiver puis de réactiver les sous-titres en temps réel."
+      ],
       "Try using only letters, numerals, and _.-": [
         "Essayez d'utiliser uniquement des lettres, des chiffres et ces signes : _ . -"
+      ],
+      "Unable to generate captions": [
+        "Les sous-titres ne peuvent pas être générés"
       ],
       "Unknown error": [
         "Erreur inconnue"
@@ -2205,6 +2223,9 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "Nous n'avons pas pu envoyer le code de vérification en utilisant cette méthode."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "La phrase de récupération n'est pas correcte. Réessayez ou utilisez une autre méthode de récupération."
       ],
       "You can update a public link for your own files only": [
         "Vous pouvez uniquement mettre à jour les liens publics pour vos propres fichiers."
@@ -2522,7 +2543,7 @@
       "Camera permission denied": [
         "L'autorisation d'accéder à la caméra a été refusée."
       ],
-      "Captions are on": [
+      "Captions on": [
         "Sous-titres activés"
       ],
       "Changes are staged. Apply to rebuild the preview with the new constants.": [
@@ -2737,6 +2758,9 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Veuillez patienter : le calendrier est en cours de chargement. Vous serez redirigé vers notre plateforme de programmation Calendly dans un nouvel onglet."
+      ],
+      "Loading captions…": [
+        "Chargement des sous-titres en cours…"
       ],
       "Loading meeting details...": [
         "Chargement des informations de la réunion..."
@@ -3164,6 +3188,9 @@
       "Virtual background initializing": [
         "Initialisation de l'arrière-plan virtuel en cours"
       ],
+      "Waiting for speech…": [
+        "En attente de parole…"
+      ],
       "Warning": [
         "Attention"
       ],
@@ -3406,6 +3433,9 @@
       ],
       "Leave meeting options": [
         "Quitter les options de la réunion"
+      ],
+      "Live captions": [
+        "Sous-titres en temps réel"
       ],
       "Manage recordings": [
         "Gérer les enregistrements"

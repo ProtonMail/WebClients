@@ -1092,6 +1092,9 @@
       "Editing item failed": [
         "Editarea articolelor a eșuat."
       ],
+      "Email is not valid": [
+        "E-mailul nu este valid"
+      ],
       "Empty CSV file": [
         "Fișierul CSV este gol."
       ],
@@ -1103,6 +1106,9 @@
       ],
       "Encrypted JSON not supported": [
         "Fișierele JSON criptate nu sunt suportate."
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Introduceți numele de utilizator fără domeniu (@exemplu.com)."
       ],
       "Error reporting problem": [
         "Problemă de raportare a erorii."
@@ -1295,6 +1301,9 @@
       "Incorrect backup password. Please try again.": [
         "Parolă de rezervă incorectă. Reîncercați."
       ],
+      "Incorrect password. Please try again.": [
+        "Parolă incorectă. Reîncercați."
+      ],
       "Incorrect second password. Please try again.": [
         "Parolă secundară incorectă. Încercați din nou."
       ],
@@ -1328,8 +1337,14 @@
       "Network error": [
         "Eroare de rețea."
       ],
+      "Not a valid number": [
+        "Nu este un număr valid"
+      ],
       "Passphrase is incorrect": [
         "Fraza de acces nu este corectă."
+      ],
+      "Passwords do not match": [
+        "Parolele nu coincid"
       ],
       "PIN codes do not match": [
         "Codurile PIN nu coincid."
@@ -1394,11 +1409,23 @@
       "The ${ PASS_APP_NAME } desktop app should be logged in.": [
         "Aplicația desktop ${ PASS_APP_NAME } trebuie să fie conectată."
       ],
+      "The email addresses do not match": [
+        "Adresele de e-mail nu se potrivesc."
+      ],
       "The session has expired. Please sign in again.": [
         "Sesiunea a expirat. Reconectați-vă."
       ],
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "A existat o eroare în timpul eliminării legăturii web securizate. Reîncercați peste câteva minute."
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Acest câmp depășește maximul de ${ maximumLength } de caractere."
+      ],
+      "This field is required": [
+        "Acest câmp este obligatoriu"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Acest câmp necesită un minimum de ${ minimumLength } caractere."
       ],
       "This invite is no longer available": [
         "Această invitație nu mai este disponibilă."
@@ -1411,6 +1438,9 @@
       ],
       "Try reaching out to the link owner.": [
         "Încercați să contactați proprietarul legăturii web."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Folosiți doar litere, cifre și _ . -"
       ],
       "Unable to generate an OTP code for this item": [
         "Nu se poate genera un cod OTP pentru acest articol."
@@ -1445,6 +1475,12 @@
       "Updating vault \"${ payload.content.name }\" failed": [
         "Actualizarea seifului „${ payload.content.name }” a eșuat."
       ],
+      "Username must begin with a letter or digit": [
+        "Numele de utilizator trebuie să înceapă cu o literă sau cifră."
+      ],
+      "Username must end with a letter or digit": [
+        "Numele de utilizator trebuie să se termine cu o literă sau cifră."
+      ],
       "Vault \"${ payload.content.name }\" creation failed": [
         "Crearea seifului „${ payload.content.name }” a eșuat."
       ],
@@ -1468,6 +1504,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Cod PIN greșit. Reîncercați."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Frază de recuperare greșită. Încercați din nou sau utilizați o altă metodă de recuperare."
       ],
       "Wrong second password": [
         "Parola secundară nu este corectă."
@@ -2965,6 +3004,9 @@
         "${ hours } oră",
         "${ hours } ore",
         "${ hours } de ore"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } de caractere"
       ],
       "${ minutes } minute": [
         "${ minutes } minut",
@@ -5340,8 +5382,18 @@
       "OTP secret or URI is invalid": [
         "Secretul OTP sau URI nu este valid."
       ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } caracter",
+        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } caractere",
+        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } de caractere"
+      ],
       "Section name cannot be empty": [
         "Numele secțiunii nu poate fi gol"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)",
+        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)",
+        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)"
       ],
       "URL already exists": [
         "Adresa URL există deja."

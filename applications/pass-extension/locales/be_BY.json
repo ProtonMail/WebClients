@@ -1118,6 +1118,9 @@
       "Editing item failed": [
         "Збой рэдагавання элемента"
       ],
+      "Email is not valid": [
+        "Несапраўдная электронная пошта"
+      ],
       "Empty CSV file": [
         "Пусты файл CSV"
       ],
@@ -1129,6 +1132,9 @@
       ],
       "Encrypted JSON not supported": [
         "Зашыфраваны JSON не падтрымліваецца"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Увядзіце сваё імя карыстальніка без дамена (@example.com)"
       ],
       "Error reporting problem": [
         "Памылка адпраўкі справаздачы аб праблеме"
@@ -1319,6 +1325,9 @@
       "Incorrect backup password. Please try again.": [
         "Няправільны рэзервовы пароль. Паўтарыце спробу."
       ],
+      "Incorrect password. Please try again.": [
+        "Няправільны пароль. Паўтарыце спробу."
+      ],
       "Incorrect second password. Please try again.": [
         "Няправільны другі пароль. Паўтарыце спробу."
       ],
@@ -1361,8 +1370,14 @@
       "Network error": [
         "Памылка сеткі"
       ],
+      "Not a valid number": [
+        "Несапраўдны нумар"
+      ],
       "Passphrase is incorrect": [
         "Няправільная парольная фраза"
+      ],
+      "Passwords do not match": [
+        "Паролі не супадаюць"
       ],
       "Permission denied for ${ domainsJSX } website access.": [
         "Доступ да вэб-сайта ${ domainsJSX } забаронены."
@@ -1436,6 +1451,9 @@
       "The ${ PASS_APP_NAME } desktop app should be logged in.": [
         "Праграма для камп'ютара ${ PASS_APP_NAME } павінна быць аўтарызавана ў сістэме."
       ],
+      "The email addresses do not match": [
+        "Адрасы электроннай пошты не супадаюць"
+      ],
       "The URL is in the list": [
         "URL-адрас знаходзіцца ў спісе"
       ],
@@ -1444,6 +1462,15 @@
       ],
       "This domain is already managed by your organization": [
         "Гэты дамен ужо кіруецца вашай арганізацыяй"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Гэта поле перавышае максімальную колькасць сімвалаў (дазволена: ${ maximumLength })."
+      ],
+      "This field is required": [
+        "Абавязковае поле"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Поле павінна змяшчаць як мінімум ${ minimumLength } сімвалаў."
       ],
       "This invite is no longer available": [
         "Гэта запрашэнне больш недаступна"
@@ -1456,6 +1483,9 @@
       ],
       "Trashing item failed": [
         "Збой перамяшчэння элемента ў сметніцу"
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Паспрабуйце выкарыстоўваць толькі літары, лічбы і _.-"
       ],
       "Unable to generate an OTP code for this item": [
         "Немагчыма згенерыраваць код OTP для гэтага элемента"
@@ -1493,6 +1523,12 @@
       "Updating vault \"${ payload.content.name }\" failed": [
         "Збой абнаўлення сховішча \"${ payload.content.name }\""
       ],
+      "Username must begin with a letter or digit": [
+        "Імя карыстальніка павінна пачынацца з літары або лічбы"
+      ],
+      "Username must end with a letter or digit": [
+        "Імя карыстальніка павінна заканчвацца літарай або лічбай"
+      ],
       "Vault \"${ payload.content.name }\" creation failed": [
         "Збой стварэння сховішча \"${ payload.content.name }\""
       ],
@@ -1516,6 +1552,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Няправільны PIN-код. Паўтарыце спробу."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Няправільная фраза аднаўлення. Паўтарыце спробу або скарыстайцеся іншым спосабам аднаўлення."
       ],
       "Wrong second password": [
         "Няправільны другі пароль"
@@ -2328,7 +2367,10 @@
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Перамяшчэнне элемента ў іншае сховішча прывядзе да выдалення яго бяспечных спасылак."
+        "Перамяшчэнне элемента ў іншае сховішча прывядзе да сцірання яго бяспечных спасылак",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
       ],
       "Moving items": [
         "Перамяшчэнне элементаў"
@@ -3158,6 +3200,9 @@
         "${ hours } гадзіны",
         "${ hours } гадзін",
         "${ hours } гадзін"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "Сімвалаў: ${ length }/${ maxLength }"
       ],
       "${ minutes } minute": [
         "${ minutes } хвіліна",
@@ -5534,8 +5579,20 @@
       "OTP secret or URI is invalid": [
         "Памылковы сакрэт OTP або URL-адрас"
       ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Пароль павінен змяшчаць прынамсі ${ MIN_PASSWORD_LENGTH } сімвал",
+        "Пароль павінен змяшчаць прынамсі ${ MIN_PASSWORD_LENGTH } сімвалы",
+        "Пароль павінен змяшчаць прынамсі ${ MIN_PASSWORD_LENGTH } сімвалаў",
+        "Пароль павінен змяшчаць прынамсі ${ MIN_PASSWORD_LENGTH } сімвалаў"
+      ],
       "Section name cannot be empty": [
         "Назва раздзела не можа быць пустой"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвал)",
+        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалы)",
+        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалаў)",
+        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалаў)"
       ],
       "URL already exists": [
         "URL-адрас ужо існуе"

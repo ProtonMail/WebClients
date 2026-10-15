@@ -1082,6 +1082,9 @@
       "Editing item failed": [
         "Redigering av element mislyktes"
       ],
+      "Email is not valid": [
+        "E-post er ikke gyldig"
+      ],
       "Empty CSV file": [
         "Tom CSV-fil"
       ],
@@ -1093,6 +1096,9 @@
       ],
       "Encrypted JSON not supported": [
         "Kryptert JSON ikke støttet"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Skriv inn brukernavnet ditt uten domenet (@eksempel.com)"
       ],
       "Error reporting problem": [
         "Problem med feilrapportering"
@@ -1274,6 +1280,9 @@
       "Incorrect backup password. Please try again.": [
         "Feil reservepassord. Forsøk igjen."
       ],
+      "Incorrect password. Please try again.": [
+        "Feil passord. Prøv igjen."
+      ],
       "Incorrect second password. Please try again.": [
         "Feil andre passord. Prøv på nytt."
       ],
@@ -1307,8 +1316,14 @@
       "Network error": [
         "Nettverksfeil"
       ],
+      "Not a valid number": [
+        "Ikke et gyldig tall"
+      ],
       "Passphrase is incorrect": [
         "Passfrase er feil"
+      ],
+      "Passwords do not match": [
+        "Passordene samsvarer ikke"
       ],
       "PIN codes do not match": [
         "PIN-kodene samsvarer ikke"
@@ -1373,11 +1388,23 @@
       "The ${ PASS_APP_NAME } desktop app should be logged in.": [
         "Skrivebordsappen ${ PASS_APP_NAME } skal være logget på."
       ],
+      "The email addresses do not match": [
+        "E-postadressene samsvarer ikke"
+      ],
       "The session has expired. Please sign in again.": [
         "Økten er utløpt. Logg på nytt."
       ],
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Det oppstod en feil under fjerning av den sikre koblingen. Prøv igjen om noen minutter."
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Dette feltet overskrider maksimalt tillatt ${ maximumLength } tegn."
+      ],
+      "This field is required": [
+        "Dette feltet er obligatorisk"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Dette feltet krever minimum ${ minimumLength } tegn."
       ],
       "This invite is no longer available": [
         "Denne invitasjonen er ikke lenger tilgjengelig."
@@ -1390,6 +1417,9 @@
       ],
       "Try reaching out to the link owner.": [
         "Prøv å kontakte eieren av koblingen."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Prøv å bruke bare bokstaver, tall og _.-"
       ],
       "Unable to generate an OTP code for this item": [
         "Ikke i stand tl å generere en OTP-kode for dette elementet."
@@ -1424,6 +1454,12 @@
       "Updating vault \"${ payload.content.name }\" failed": [
         "Oppdatering av hvelv \"${ payload.content.name }\" mislyktes."
       ],
+      "Username must begin with a letter or digit": [
+        "Brukernavn må begynne med en bokstav eller ett tall"
+      ],
+      "Username must end with a letter or digit": [
+        "Brukernavn må ende med en bokstav eller ett tall"
+      ],
       "Vault \"${ payload.content.name }\" creation failed": [
         "Opprettelse av hvelv \"${ payload.content.name }\" mislyktes."
       ],
@@ -1447,6 +1483,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Feil PIN-kode. Prøv igjen."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Feil gjenopprettingsfrase. Prøv igjen eller bruk en annen gjenopprettingsmetode."
       ],
       "Wrong second password": [
         "Feil andre passord"
@@ -2872,6 +2911,9 @@
       "${ hours } hour": [
         "${ hours } time",
         "${ hours } timer"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } tegn"
       ],
       "${ minutes } minute": [
         "${ minutes } minutt",
@@ -5178,8 +5220,16 @@
       "OTP secret or URI is invalid": [
         "OTP-hemmelighet eller URI er ugyldig"
       ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Passord må inneholde minst ${ MIN_PASSWORD_LENGTH } tegn",
+        "Passord må inneholde minst ${ MIN_PASSWORD_LENGTH } tegn"
+      ],
       "Section name cannot be empty": [
         "Seksjonsnavn kan ikke være tomt"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Prøv et kortere brukernavn (maks ${ n } tegn)",
+        "Prøv et kortere brukernavn (maks ${ n } tegn)"
       ],
       "URL already exists": [
         "Nettadresse finnes allerede"

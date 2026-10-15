@@ -1076,6 +1076,9 @@
       "Editing item failed": [
         "A edição do item falhou"
       ],
+      "Email is not valid": [
+        "O e-mail não é válido."
+      ],
       "Empty CSV file": [
         "Ficheiro CSV vazio"
       ],
@@ -1087,6 +1090,9 @@
       ],
       "Encrypted JSON not supported": [
         "JSON encriptado não é suportado"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Introduza o seu nome de utilizador sem o domínio (@example.com)"
       ],
       "Error reporting problem": [
         "Problema ao reportar erro."
@@ -1265,6 +1271,9 @@
       "Incorrect backup password. Please try again.": [
         "A palavra-passe de backup não é correta. Tente novamente."
       ],
+      "Incorrect password. Please try again.": [
+        "Palavra-passe incorreta. Tente novamente."
+      ],
       "Incorrect second password. Please try again.": [
         "A secunda palavra-passe não é correta. Tente novamente."
       ],
@@ -1307,8 +1316,14 @@
       "Network error": [
         "Erro de rede"
       ],
+      "Not a valid number": [
+        "O número não é válido."
+      ],
       "Passphrase is incorrect": [
         "A frase-passe está incorreta"
+      ],
+      "Passwords do not match": [
+        "As palavras-passe não correspondem."
       ],
       "Permission denied for ${ domainsJSX } website access.": [
         "Permissão recusada para aceder ao sítio web ${ domainsJSX }."
@@ -1376,6 +1391,9 @@
       "The ${ PASS_APP_NAME } desktop app should be logged in.": [
         "A aplicação de computador do ${ PASS_APP_NAME } deve ter a sessão iniciada."
       ],
+      "The email addresses do not match": [
+        "Os endereços de e-mail não correspondem."
+      ],
       "The URL is in the list": [
         "O URL está na lista."
       ],
@@ -1385,6 +1403,15 @@
       "This domain is already managed by your organization": [
         "Este domínio já é gerido pela sua organização"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Este campo excede o máximo de ${ maximumLength } caracteres."
+      ],
+      "This field is required": [
+        "Este campo é obrigatório"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Este campo requer um mínimo de ${ minimumLength } carateres."
+      ],
       "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
         "Isto pode ocorrer após um longo período de não utilizar o ${ PASS_SHORT_APP_NAME } ou de limpar o seu histórico do Safari."
       ],
@@ -1393,6 +1420,9 @@
       ],
       "Trashing item failed": [
         "Erro ao mover o item para o lixo."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Tente utilizar apenas letras, números e _.-"
       ],
       "Unable to generate an OTP code for this item": [
         "Não é possível gerar um código OTP para este item"
@@ -1427,6 +1457,12 @@
       "Updating vault \"${ payload.content.name }\" failed": [
         "A actualização do cofre \"${ payload.content.name }\" falhou"
       ],
+      "Username must begin with a letter or digit": [
+        "O nome de utilizador deve começar com uma letra ou um algarismo"
+      ],
+      "Username must end with a letter or digit": [
+        "O nome de utilizador deve acabar com uma letra ou algarismo"
+      ],
       "Vault \"${ payload.content.name }\" creation failed": [
         "A criação do cofre \"${ payload.content.name }\" falhou."
       ],
@@ -1450,6 +1486,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Código PIN errado. Tente novamente."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Frase de recuperação incorreta. Tente novamente ou utilize outro método de recuperação."
       ],
       "Wrong second password": [
         "Segunda palavra-passe errada"
@@ -2209,7 +2248,8 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover um item para outro cofre apagará as suas ligações seguras."
+        "Mover um item para outro cofre apagará as suas ligações seguras.",
+        "Mover itens para outro cofre apagará as suas ligações seguras."
       ],
       "Moving items": [
         "A mover itens"
@@ -5262,8 +5302,16 @@
       "OTP secret or URI is invalid": [
         "A chave secreta OTP ou o URI não funciona."
       ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "A palavra-passe deve conter pelo menos ${ MIN_PASSWORD_LENGTH } caráter.",
+        "A palavra-passe deve conter pelo menos ${ MIN_PASSWORD_LENGTH } carateres."
+      ],
       "Section name cannot be empty": [
         "O nome da secção não pode estar vazio."
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Tente um nome de utilizador mais pequeno (máximo de ${ n } caráter)",
+        "Tente um nome de utilizador mais pequeno (máximo de carateres ${ n })"
       ],
       "URL already exists": [
         "O URL já existe."

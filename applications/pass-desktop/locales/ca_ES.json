@@ -1140,6 +1140,9 @@
       "Editing item failed": [
         "No s'ha pogut editar l'element"
       ],
+      "Email is not valid": [
+        "El correu electrònic no és vàlid"
+      ],
       "Empty CSV file": [
         "El fitxer CSV està buit"
       ],
@@ -1151,6 +1154,9 @@
       ],
       "Encrypted JSON not supported": [
         "El JSON xifrat no és compatible"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Introduïu el vostre nom d'usuari sense el domini (@exemple.cat)"
       ],
       "Error reporting problem": [
         "S'ha produït un error en informar del problema"
@@ -1342,6 +1348,9 @@
       "Incorrect backup password. Please try again.": [
         "La contrasenya de recuperació no és correcta. Torneu-ho a intentar."
       ],
+      "Incorrect password. Please try again.": [
+        "Contrasenya incorrecta, torneu-ho a intentar."
+      ],
       "Incorrect second password. Please try again.": [
         "La segona contrasenya no és correcta. Torneu-ho a intentar."
       ],
@@ -1375,8 +1384,14 @@
       "Network error": [
         "Error de xarxa"
       ],
+      "Not a valid number": [
+        "Número no vàlid"
+      ],
       "Passphrase is incorrect": [
         "La frase de contrasenya no és correcta"
+      ],
+      "Passwords do not match": [
+        "Les contrasenyes no coincideixen."
       ],
       "PIN codes do not match": [
         "Els codis PIN no coincideixen"
@@ -1441,11 +1456,23 @@
       "The ${ PASS_APP_NAME } desktop app should be logged in.": [
         "L'aplicació d'escriptori ${ PASS_APP_NAME } hauria de tenir la sessió iniciada."
       ],
+      "The email addresses do not match": [
+        "Les adreces de correu electrònic no coincideixen."
+      ],
       "The session has expired. Please sign in again.": [
         "La sessió ha caducat. Torneu a accedir."
       ],
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "S'ha produït un error en eliminar l'enllaç segur. Torneu a provar-ho en uns minuts."
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Aquest camp excedeix el màxim de ${ maximumLength } caràcters."
+      ],
+      "This field is required": [
+        "Aquest camp és obligatori."
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Aquest camp requereix un mínim de ${ minimumLength } caràcters."
       ],
       "This invite is no longer available": [
         "Aquesta invitació ja no està disponible"
@@ -1458,6 +1485,9 @@
       ],
       "Try reaching out to the link owner.": [
         "Intenteu contactar el propietari de l'enllaç."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Intenteu utilitzar només lletres, numerals i _.-"
       ],
       "Unable to generate an OTP code for this item": [
         "No s'ha pogut generar un codi OTP per a aquest element"
@@ -1492,6 +1522,12 @@
       "Updating vault \"${ payload.content.name }\" failed": [
         "No s'ha pogut actualitzar la caixa forta \"${ payload.content.name }\""
       ],
+      "Username must begin with a letter or digit": [
+        "El nom d'usuari ha de començar amb una lletra o un dígit."
+      ],
+      "Username must end with a letter or digit": [
+        "El nom d'usuari ha d'acabar amb una lletra o un dígit."
+      ],
       "Vault \"${ payload.content.name }\" creation failed": [
         "No s'ha pogut crear la caixa forta \"${ payload.content.name }\""
       ],
@@ -1515,6 +1551,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "El codi PIN no és correcte. Torneu a provar."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Frase de recuperació incorrecta. Torneu-ho a provar o utilitzeu un altre mètode de recuperació."
       ],
       "Wrong second password": [
         "La segona contrasenya és incorrecta."
@@ -2271,8 +2310,7 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborraran els enllaços segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -3046,6 +3084,9 @@
       "${ hours } hour": [
         "${ hours } hora",
         "${ hours } hores"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } caràcters"
       ],
       "${ minutes } minute": [
         "${ minutes } minut",
@@ -5478,8 +5519,16 @@
       "OTP secret or URI is invalid": [
         "La clau secreta OTP o l'URL no són vàlids."
       ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "La contrasenya ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcter",
+        "La contrasenya ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcters"
+      ],
       "Section name cannot be empty": [
         "El nom de la selecció no pot estar buit."
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Proveu amb un nom d'usuari més curt (${ n } caràcter màx.)",
+        "Proveu amb un nom d'usuari més curt (${ n } caràcters màx.)"
       ],
       "URL already exists": [
         "L'URL ja existeix."

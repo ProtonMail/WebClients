@@ -373,6 +373,9 @@
       "Switch or add account": [
         "Cambia o aggiungi account"
       ],
+      "Switch to ${ planName }": [
+        "Passa al piano ${ planName }"
+      ],
       "Take a tour": [
         "Fai un tour"
       ],
@@ -511,6 +514,12 @@
       ],
       "Domains": [
         "Domini"
+      ],
+      "Managed Service Provider": [
+        "Fornitore di servizi gestiti"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Le organizzazioni che dispongono dell'estensione “Managed Service Provider” possono creare e gestire organizzazioni affiliate."
       ],
       "Servers": [
         "Server"
@@ -896,6 +905,11 @@
         "Sat"
       ]
     },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "${ appName } Applicazione desktop"
+      ]
+    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "Problema con ${ LUMO_SHORT_APP_NAME }"
@@ -1098,6 +1112,15 @@
         "${ users } utente",
         "${ users } utenti"
       ],
+      "Amount due": [
+        "Ammontare dovuto"
+      ],
+      "Amount due after trial": [
+        "Importo dovuto dopo il periodo di prova"
+      ],
+      "Amount due now": [
+        "Importo dovuto ora"
+      ],
       "Subtotal": [
         "Subtotale"
       ],
@@ -1107,6 +1130,10 @@
       ],
       "Total": [
         "Totale"
+      ],
+      "Total for ${ cycle } month": [
+        "Totale per ${ cycle } mese",
+        "Totale per ${ cycle } mesi"
       ]
     },
     "Collapsible tooltip": {
@@ -2343,6 +2370,9 @@
       "Incorrect backup password. Please try again.": [
         "Password di backup errata. Riprova."
       ],
+      "Incorrect password. Please try again.": [
+        "Password errata. Per favore riprova."
+      ],
       "Incorrect second password. Please try again.": [
         "Password secondaria errata. Riprova."
       ],
@@ -2492,6 +2522,9 @@
       ],
       "Wrong billing address": [
         "Indirizzo di fatturazione errato"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Frase di recupero errata. Riprova o usa un altro metodo di recupero."
       ]
     },
     "Error message": {
@@ -2786,6 +2819,12 @@
         "+${ organization.BonusVPN } connessione per ${ VPN_APP_NAME } (consente di connettere più dispositivi alla VPN)",
         "+${ organization.BonusVPN } connessioni per ${ VPN_APP_NAME } (consente di connettere più dispositivi alla VPN)"
       ],
+      "1 device per user": [
+        "1 dispositivo per utente"
+      ],
+      "1 vault per user": [
+        "1 cassaforte per utente"
+      ],
       "30-day money-back guarantee.": [
         "Garanzia di rimborso entro 30 giorni"
       ],
@@ -3008,6 +3047,9 @@
       ],
       "No payment is required at this time.": [
         "Al momento non è richiesto alcun pagamento."
+      ],
+      "No payment is required.": [
+        "Non è richiesto alcun pagamento."
       ],
       "No results found": [
         "Nessun risultato trovato"
@@ -4711,6 +4753,12 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (IVA esclusa)"
       ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } non può essere combinato con ${ PLAN_NAMES[PLANS.PASS] }."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } è disponibile solo nei piani aziendali."
+      ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "Imposta del ${ rate }%: ${ taxAmountElement }"
       ],
@@ -4720,8 +4768,23 @@
       "Amount due after trial on ${ formattedDate }": [
         "Importo dovuto dopo la prova il ${ formattedDate }"
       ],
+      "An organization is required for this plan.": [
+        "Per questo piano è necessaria un'organizzazione."
+      ],
       "Billing Country": [
         "Paese di fatturazione"
+      ],
+      "Born Private can’t be purchased with an active subscription.": [
+        "“Born Private” non può essere acquistato se si dispone di un abbonamento attivo."
+      ],
+      "Born Private requires a donation.": [
+        "Per accedere a “Born Private” è richiesta una donazione."
+      ],
+      "Buying credits requires a separate purchase.": [
+        "L'acquisto dei crediti richiede un acquisto separato."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "Effettuando il passaggio, accetti i nostri ${ termsLink }."
       ],
       "Card number": [
         "Numero della carta"
@@ -4762,11 +4825,20 @@
       "More plans are available in other currencies": [
         "Sono disponibili altri piani in altre valute"
       ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "È possibile acquistare solo un ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Paga con ${ IDEAL_WERO_BRAND_NAME }"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Serve un metodo di pagamento per attivare l'abbonamento una volta terminata la prova."
+      ],
+      "Please close extra wallet accounts before changing your plan.": [
+        "Ti preghiamo di chiudere eventuali conti aggiuntivi del portafoglio prima di cambiare piano."
+      ],
+      "Please close extra wallets before changing your plan.": [
+        "Ti preghiamo di chiudere i portafogli in più prima di modificare il tuo piano."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Riattiva prima l'abbonamento per ridurre il numero di componenti aggiuntivi."
@@ -4776,6 +4848,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Rinnova a ${ renewPriceStr }, annulla in qualsiasi momento."
+      ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Il numero dei seggi riservati agli scribi non può superare il numero dei membri."
       ],
       "Tax ${ rate }%": [
         "Imposta ${ rate }%"
@@ -4789,6 +4864,18 @@
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Lo sconto è valido per ${ renewalsWithCoupon } rinnovo.",
         "Lo sconto è valido per ${ renewalsWithCoupon } rinnovi."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "Il piano selezionato non offre un numero sufficiente di indirizzi per il tuo account."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "Il piano selezionato non offre un numero sufficiente di domini per il tuo account."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "Il piano selezionato non offre un numero sufficiente di iscritti per il tuo account."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "Il piano selezionato non offre spazio di archiviazione sufficiente per il tuo account."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Il prezzo scontato speciale è valido per ${ couponRedemptions } mese. Poi si rinnoverà automaticamente a ${ renewPriceStr } per 1 mese. Puoi annullare in qualsiasi momento.",
@@ -4819,14 +4906,35 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Questa azione estende l'abbonamento esistente. Ti verranno addebitati solo i nuovi add-on e il tempo rimanente del ciclo di fatturazione corrente. La data di rinnovo del tuo abbonamento non verrà modificata."
       ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "Questo server dedicato è assegnato a un gateway e non può essere modificato."
+      ],
       "This offer is not available with your current plan.": [
         "Questa offerta non è disponibile con il tuo piano attuale."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Questo diventerà il tuo nuovo metodo di pagamento predefinito per tutti i rinnovi futuri."
       ],
+      "This plan doesn’t support the members on your account.": [
+        "Questo piano non include l'assistenza per gli utenti associati al tuo account."
+      ],
       "Timeout exceeded": [
         "Limite di tempo superato"
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "I piani di prova non supportano le licenze di ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "Trial plans don’t support custom domains.": [
+        "I piani di prova non supportano i domini personalizzati."
+      ],
+      "Trial plans don’t support dedicated IPs.": [
+        "I piani di prova non supportano gli indirizzi IP dedicati."
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "I piani di prova non supportano le licenze Scribe."
+      ],
+      "Trial plans don’t support this many members.": [
+        "I piani di prova non supportano un numero così elevato di iscritti."
       ],
       "VAT number": [
         "Numero partita IVA"
@@ -4840,11 +4948,20 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Hai già un abbonamento a questo piano. Puoi cambiare il tuo abbonamento su ${ subscriptionPlatform }."
       ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "Possiedi già ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "You already own Born Private.": [
+        "Hai già acquistato “Born Private”."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Sarai presto reindirizzato a PayPal per verificare il pagamento."
       ],
       "You will soon be redirected to verify your payment.": [
         "Sarai presto reindirizzato per verificare il pagamento."
+      ],
+      "Your account is too old for Born Private.": [
+        "Il tuo account è troppo vecchio per Born Private."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "La tua valuta è stata cambiata in euro (€) perché ${ IDEAL_WERO_BRAND_NAME } supporta esclusivamente i pagamenti in euro."
@@ -5619,6 +5736,9 @@
       ],
       "Billing cycle": [
         "Ciclo di fatturazione"
+      ],
+      "Black Friday": [
+        "Black Friday"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Annulla l'abbonamento a ${ MAIL_SHORT_APP_NAME }"

@@ -756,7 +756,377 @@
         "Note"
       ]
     },
+    "sheets_2025:Spreadsheet cellFormatOptions": {
+      "Accounting": [
+        "Regnskab"
+      ],
+      "Bottom": [
+        "Nederst"
+      ],
+      "Center": [
+        "Centreret"
+      ],
+      "Clip": [
+        "Klip"
+      ],
+      "Currency": [
+        "Valuta"
+      ],
+      "Currency formats are used for general monetary values.": [
+        "Valutaformater bruges til generelle pengeværdier."
+      ],
+      "Custom": [
+        "Brugerdefineret"
+      ],
+      "Date": [
+        "Dato"
+      ],
+      "Date formats display date and time serial numbers as date values.": [
+        "Datoformater viser datoer og tidsserienumre som datoværdier."
+      ],
+      "Fraction": [
+        "Brøkdel"
+      ],
+      "General": [
+        "Generelt"
+      ],
+      "General format cells have no specific number format.": [
+        "Celler i generelt format angiver ikke et specifikt talformat."
+      ],
+      "Left": [
+        "Venstre"
+      ],
+      "Number": [
+        "Tal"
+      ],
+      "Number is used for general display of numbers.": [
+        "Tal bruges til at vise tal generelt."
+      ],
+      "Overflow": [
+        "Overflow"
+      ],
+      "Percentage": [
+        "Procentdel"
+      ],
+      "Right": [
+        "Højre"
+      ],
+      "Scientific": [
+        "Videnskabelig"
+      ],
+      "Text": [
+        "Tekst"
+      ],
+      "Time": [
+        "Tid"
+      ],
+      "Time formats display date and time serial numbers as date values.": [
+        "Tidsformater viser datoer og tidsserienumre som datoværdier."
+      ],
+      "Top": [
+        "Øverst"
+      ],
+      "Wrap": [
+        "Ombryd"
+      ]
+    },
+    "sheets_2025:Spreadsheet chartAggregates": {
+      "Average": [
+        "Gennemsnit"
+      ],
+      "Count": [
+        "Antal"
+      ],
+      "Max": [
+        "Maks"
+      ],
+      "Median": [
+        "Median"
+      ],
+      "Min": [
+        "Min"
+      ],
+      "Sum": [
+        "Sum"
+      ]
+    },
+    "sheets_2025:Spreadsheet chartEditorDialog": {
+      "None": [
+        "Ingen"
+      ]
+    },
+    "sheets_2025:Spreadsheet chartTypes": {
+      "2D Pie": [
+        "2D lagkage"
+      ],
+      "Clustered Column": [
+        "Grupperet kolonne"
+      ],
+      "Column": [
+        "Kolonne"
+      ],
+      "Doughnut": [
+        "Donut"
+      ],
+      "Hierarchy": [
+        "Hierarki"
+      ],
+      "Line": [
+        "Linje"
+      ],
+      "Pie": [
+        "Lagkage"
+      ],
+      "Smooth line": [
+        "Glat linje"
+      ],
+      "Stacked column": [
+        "Stablet kolonne"
+      ],
+      "Stacked line": [
+        "Stablet linje"
+      ],
+      "Sunburst": [
+        "Sunburst"
+      ],
+      "Treemap": [
+        "Træstruktur"
+      ]
+    },
+    "sheets_2025:Spreadsheet conditions": {
+      "Above average": [
+        "Over gennemsnit"
+      ],
+      "April": [
+        "April"
+      ],
+      "August": [
+        "August"
+      ],
+      "Below average": [
+        "Under gennemsnit"
+      ],
+      "Between": [
+        "Mellem"
+      ],
+      "Bottom N items": [
+        "Nederste N elementer"
+      ],
+      "Bottom N percent": [
+        "Nedre N procent"
+      ],
+      "Checkbox": [
+        "Afkrydsningsfelt"
+      ],
+      "Custom formula": [
+        "Brugerdefineret formular"
+      ],
+      "Date is after": [
+        "Dato er efter"
+      ],
+      "Date is before": [
+        "Dato er før"
+      ],
+      "Date is between": [
+        "Dato er mellem"
+      ],
+      "Date is equal to": [
+        "Dato er lig med"
+      ],
+      "Date is not between": [
+        "Dato er ikke mellem"
+      ],
+      "Date is not equal to": [
+        "Dato er ikke lig med"
+      ],
+      "Date is on or after": [
+        "Dato er på eller efter"
+      ],
+      "Date is on or before": [
+        "Dato er på eller før"
+      ],
+      "Date is valid": [
+        "Dato er gyldig"
+      ],
+      "December": [
+        "December"
+      ],
+      "Dropdown": [
+        "Dropdown"
+      ],
+      "Dropdown (from a range)": [
+        "Dropdown (fra et interval)"
+      ],
+      "Equal to": [
+        "Lig med"
+      ],
+      "Errors": [
+        "Fejl"
+      ],
+      "February": [
+        "Februar"
+      ],
+      "Greater than": [
+        "Større end"
+      ],
+      "Greater than or equal to": [
+        "Større end eller lig med"
+      ],
+      "Greater than or equal to previous": [
+        "Større end eller lig med forrige"
+      ],
+      "Greater than previous": [
+        "Større end forrige"
+      ],
+      "Is empty": [
+        "Er tom"
+      ],
+      "Is not empty": [
+        "Er ikke tom"
+      ],
+      "January": [
+        "Januar"
+      ],
+      "July": [
+        "Juli"
+      ],
+      "June": [
+        "Juni"
+      ],
+      "Last 7 days": [
+        "Sidste 7 dage"
+      ],
+      "Last month": [
+        "Forrige måned"
+      ],
+      "Last quarter": [
+        "Sidste kvartal"
+      ],
+      "Last week": [
+        "Sidste uge"
+      ],
+      "Last year": [
+        "Sidste år"
+      ],
+      "Less than": [
+        "Mindre end"
+      ],
+      "Less than or equal to": [
+        "Mindre end eller lig med"
+      ],
+      "Less than or equal to previous": [
+        "Mindre end eller lig med forrige"
+      ],
+      "Less than previous": [
+        "Mindre end forrige"
+      ],
+      "March": [
+        "Marts"
+      ],
+      "May": [
+        "Maj"
+      ],
+      "Next month": [
+        "Næste måned"
+      ],
+      "Next quarter": [
+        "Næste kvartal"
+      ],
+      "Next week": [
+        "Næste uge"
+      ],
+      "Next year": [
+        "Næste år"
+      ],
+      "No errors": [
+        "Ingen fejl"
+      ],
+      "Not between": [
+        "Ikke mellem"
+      ],
+      "Not equal to": [
+        "Ikke lig med"
+      ],
+      "November": [
+        "November"
+      ],
+      "October": [
+        "Oktober"
+      ],
+      "Quarter 1": [
+        "Kvartal 1"
+      ],
+      "Quarter 2": [
+        "Kvartal 2"
+      ],
+      "Quarter 3": [
+        "Kvartal 3"
+      ],
+      "Quarter 4": [
+        "Kvartal 4"
+      ],
+      "September": [
+        "September"
+      ],
+      "Text contains": [
+        "Tekst indeholder"
+      ],
+      "Text does not contain": [
+        "Teksten indeholder ikke"
+      ],
+      "Text ends with": [
+        "Tekst slutter på"
+      ],
+      "Text is email": [
+        "Tekst er e-mail"
+      ],
+      "Text is exactly": [
+        "Tekst er nøjagtig"
+      ],
+      "Text is not equal": [
+        "Tekst er ikke lig med"
+      ],
+      "Text is URL": [
+        "Tekst er URL"
+      ],
+      "Text starts with": [
+        "Tekst starter med"
+      ],
+      "This month": [
+        "Denne måned"
+      ],
+      "This quarter": [
+        "Dette kvartal"
+      ],
+      "This week": [
+        "Denne uge"
+      ],
+      "This year": [
+        "I år"
+      ],
+      "Today": [
+        "I dag"
+      ],
+      "Tomorrow": [
+        "I morgen"
+      ],
+      "Top N items": [
+        "Øverste N elementer"
+      ],
+      "Top N percent": [
+        "Øverste N procent"
+      ],
+      "Year to date": [
+        "År til dato"
+      ],
+      "Yesterday": [
+        "I går"
+      ]
+    },
     "sheets_2025:Spreadsheet context menu": {
+      "(Blanks)": [
+        "(Tomme)"
+      ],
       "AI Quick Edit": [
         "AI Quick Edit"
       ],
@@ -1102,6 +1472,14 @@
         "År"
       ]
     },
+    "sheets_2025:Spreadsheet customCurrencyFormatDialog": {
+      "Format": [
+        "Format"
+      ],
+      "Symbol": [
+        "Symbol"
+      ]
+    },
     "sheets_2025:Spreadsheet delete sheet dialog": {
       "Are you sure you want to delete ${ sheetName }?": [
         "Er du sikker på at du vil slette ${ sheetName }?"
@@ -1128,6 +1506,11 @@
       ],
       "Your screen is too small to edit this spreadsheet. You’re in view-only mode. To make changes, please open this spreadsheet on a larger screen or expand your browser window.": [
         "Din skærm er for lille til at redigere dette regneark. Du er i skrivebeskyttet tilstand. For at foretage ændringer, skal du åbne dette regneark på en større skærm eller udvide dit browservindue."
+      ]
+    },
+    "sheets_2025:Spreadsheet editingDisabledButton": {
+      "Edit": [
+        "Rediger"
       ]
     },
     "sheets_2025:Spreadsheet editor": {
@@ -1564,6 +1947,9 @@
       ]
     },
     "sheets_2025:Spreadsheet editor search dialog": {
+      "${ current } of ${ total }": [
+        "${ current } af ${ total }"
+      ],
       "Close": [
         "Luk"
       ],
@@ -1607,6 +1993,9 @@
       "Bold": [
         "Fed"
       ],
+      "Border": [
+        "Kant"
+      ],
       "Choose border": [
         "Vælg kant"
       ],
@@ -1630,6 +2019,9 @@
       ],
       "Default (${ defaultFont })": [
         "Standard (${ defaultFont })"
+      ],
+      "Fill color": [
+        "Fyldfarve"
       ],
       "Find": [
         "Find"
@@ -1694,6 +2086,9 @@
       "Strikethrough": [
         "Gennemstreget"
       ],
+      "Text color": [
+        "Tekstfarve"
+      ],
       "Text wrapping": [
         "Tekstombrydning"
       ],
@@ -1757,6 +2152,35 @@
         "Sortér Z → A"
       ]
     },
+    "sheets_2025:Spreadsheet filterByCondition": {
+      "None": [
+        "Ingen"
+      ]
+    },
+    "sheets_2025:Spreadsheet formatMenu": {
+      "Coming soon...": [
+        "Kommer snart..."
+      ]
+    },
+    "sheets_2025:Spreadsheet formulaBar": {
+      "Edit": [
+        "Rediger"
+      ],
+      "Remove": [
+        "Fjern"
+      ],
+      "View": [
+        "Visning"
+      ]
+    },
+    "sheets_2025:Spreadsheet gridFooter": {
+      "Add": [
+        "Tilføj"
+      ],
+      "more rows at the bottom": [
+        "flere rækker i bunden"
+      ]
+    },
     "sheets_2025:Spreadsheet insert link dialog": {
       "Apply": [
         "Anvend"
@@ -1792,23 +2216,23 @@
       "Cancel": [
         "Annuller"
       ],
-      "column": [
-        "kolonne"
-      ],
-      "column width": [
-        "kolonnebredde"
-      ],
-      "Default": [
-        "Standard"
+      "Default ${ size }": [
+        "Standard ${ size }"
       ],
       "OK": [
         "OK"
       ],
-      "row": [
-        "række"
+      "Resize column ${ title }": [
+        "Tilpas kolonnestørrelse ${ title }"
       ],
-      "row height": [
-        "rækkehøjde"
+      "Resize row ${ title }": [
+        "Tilpas rækkestørrelse ${ title }"
+      ],
+      "Specify column width (px)": [
+        "Angiv kolonnebredde (px)"
+      ],
+      "Specify row height (px)": [
+        "Angiv rækkehøjde (px)"
       ]
     },
     "sheets_2025:Spreadsheet sheet status bar": {
@@ -1983,6 +2407,18 @@
       ],
       "Series": [
         "Serie"
+      ],
+      "Series ${ seriesNumber }": [
+        "Serie ${ seriesNumber }"
+      ],
+      "Series ${ seriesNumber } Aggregate": [
+        "Serie ${ seriesNumber } aggregeret"
+      ],
+      "Series ${ seriesNumber } Name": [
+        "Serie ${ seriesNumber } navn"
+      ],
+      "Series ${ seriesNumber } Range": [
+        "Serie ${ seriesNumber } interval"
       ],
       "Show data in hidden rows and columns": [
         "Vis data i skjulte rækker og kolonner"
@@ -2246,6 +2682,26 @@
       ],
       "Table title": [
         "Titel på tabel"
+      ]
+    },
+    "sheets_2025:Spreadsheet viewMenu": {
+      "1 column": [
+        "1 kolonne"
+      ],
+      "1 row": [
+        "1 række"
+      ],
+      "2 columns": [
+        "2 kolonner"
+      ],
+      "2 rows": [
+        "2 rækker"
+      ],
+      "No columns": [
+        "Ingen kolonner"
+      ],
+      "No rows": [
+        "Ingen rækker"
       ]
     },
     "Title": {

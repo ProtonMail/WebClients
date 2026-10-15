@@ -4596,6 +4596,9 @@
       "Incorrect password": [
         "Contraseña incorrecta"
       ],
+      "Incorrect password. Please try again.": [
+        "Contraseña incorrecta. Inténtalo de nuevo."
+      ],
       "Incorrect recovery code. Please try again.": [
         "Código de recuperación incorrecto. Inténtalo de nuevo."
       ],
@@ -9908,9 +9911,6 @@
       ],
       "Font size": [
         "Tamaño de fuente"
-      ],
-      "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
-        "Para ${ DRIVE_SHORT_APP_NAME } y ${ DOCS_SHORT_APP_NAME }."
       ],
       "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
         "Para ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME } y ${ SHEETS_SHORT_APP_NAME }."
@@ -15370,9 +15370,6 @@
       "Backup password": [
         "Contraseña de respaldo"
       ],
-      "Because your organization moved you to single sign-on (SSO), **your old password is saved as your backup password**. You can use it to authorize SSO on a new device.": [
-        "Como tu organización te ha pasado al inicio de sesión único (SSO), **tu contraseña anterior se ha guardado como contraseña de respaldo**. Puedes usarla para autorizar el SSO en un nuevo dispositivo."
-      ],
       "Cancel": [
         "Cancelar"
       ],
@@ -15416,9 +15413,6 @@
       ],
       "Do you want to remove all other devices than the current one?": [
         "¿Quieres eliminar todas las demás sesiones y mantener la actual?"
-      ],
-      "Enter it to sign in. It is the same as your old password.": [
-        "Introdúcela para iniciar sesión. Es la misma que tu contraseña anterior."
       ],
       "Enter the confirmation code we sent on your other device.": [
         "Ingresa el código de confirmación que te enviamos a tu otro dispositivo."

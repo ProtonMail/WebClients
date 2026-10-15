@@ -2382,6 +2382,9 @@
       "Incorrect backup password. Please try again.": [
         "Senha de backup incorreta. Tente novamente."
       ],
+      "Incorrect password. Please try again.": [
+        "A senha não é válida. Tente novamente."
+      ],
       "Incorrect second password. Please try again.": [
         "Segunda senha incorreta. Tente novamente."
       ],
@@ -2531,6 +2534,9 @@
       ],
       "Wrong billing address": [
         "Endereço de cobrança incorreto"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Frase de recuperação errada. Tente novamente ou use outro método de autenticação."
       ]
     },
     "Error message": {
@@ -4825,8 +4831,14 @@
       "Amount due after trial on ${ formattedDate }": [
         "Valor devido após a avaliação em ${ formattedDate }"
       ],
+      "An organization is required for this plan.": [
+        "Uma organização é necessária para este plano."
+      ],
       "Billing Country": [
         "País de Faturamento"
+      ],
+      "Born Private can’t be purchased with an active subscription.": [
+        "O Born Private não pode ser adquirido com uma assinatura ativa."
       ],
       "Born Private requires a donation.": [
         "Born Private requer uma doação."
@@ -4885,6 +4897,9 @@
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Método de pagamento necessário para que a assinatura seja ativada após o término do período de teste."
       ],
+      "Plan switch is incompatible for the following reasons:": [
+        "O interruptor de plano é incompatível pelas seguintes razões:"
+      ],
       "Please close extra wallet accounts before changing your plan.": [
         "Escolha as contas de wallet adicionais antes de trocar seu plano."
       ],
@@ -4893,6 +4908,9 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reative sua assinatura primeiro para diminuir o número de complementos."
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Os assentos do Proton Meet devem corresponder ao número de membros."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "O preço da renovação está sujeito a alterações de acordo com os ${ termsAndConditionsLink }."
@@ -4957,6 +4975,9 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Esta ação expande a assinatura existente. Você será cobrado apenas pelos novos complementos e pelo tempo restante do ciclo de faturamento atual. A data de renovação da sua assinatura não será alterada."
       ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "Este servidor dedicado é atribuído a um gateway e não pode ser alterado."
+      ],
       "This offer is not available with your current plan.": [
         "Essa oferta não está disponível com seu plano atual."
       ],
@@ -4966,11 +4987,17 @@
       "This plan doesn’t support the members on your account.": [
         "Esse plano não suporta membros na sua conta."
       ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Esta assinatura não pode ser concluída agora. Por favor, tente de novo."
+      ],
       "Timeout exceeded": [
         "Tempo limite excedido"
       ],
       "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
         "Os planos de avaliação não suportam ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Trial plans don’t support custom domains.": [
+        "Os planos de avaliação não suportam domínios personalizados."
       ],
       "Trial plans don’t support dedicated IPs.": [
         "Os planos de avaliação não suportam IPs dedicados."

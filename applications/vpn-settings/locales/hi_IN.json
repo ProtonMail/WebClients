@@ -5090,6 +5090,9 @@
       "Incorrect password": [
         "गलत पासवर्ड"
       ],
+      "Incorrect password. Please try again.": [
+        "गलत पासवर्ड। कृपया वापिस कोशिश करें।"
+      ],
       "Incorrect recovery code. Please try again.": [
         "गलत रिकवर कोड। कृपया पुनः प्रयास करें।"
       ],
@@ -10861,9 +10864,6 @@
       "Font size": [
         "फॉन्ट साइज़"
       ],
-      "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
-        "${ DRIVE_SHORT_APP_NAME } और ${ DOCS_SHORT_APP_NAME } के लिए।"
-      ],
       "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
         "${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME } और ${ SHEETS_SHORT_APP_NAME } के लिए।"
       ],
@@ -16633,9 +16633,6 @@
       "Backup password": [
         "बैकअप पासवर्ड"
       ],
-      "Because your organization moved you to single sign-on (SSO), **your old password is saved as your backup password**. You can use it to authorize SSO on a new device.": [
-        "क्योंकि आपके संगठन ने आपको सिंगल साइन-ऑन (SSO) पे मूव किया है, **आपका पुराना पासवर्ड आपके बैकअप पासवर्ड के रूप में सेव किया गया है**। इसका इस्तेमाल किसी नए डिवाइस पे SSO को अधिकृत करने के लिए किया जा सकता है।"
-      ],
       "Cancel": [
         "रद्द करें"
       ],
@@ -16682,9 +16679,6 @@
       ],
       "Do you want to remove all other devices than the current one?": [
         "क्या वर्तमान डिवाइस के अलावा अन्य सभी डिवाइस हटाने हैं?"
-      ],
-      "Enter it to sign in. It is the same as your old password.": [
-        "साइनइन करने के लिए इसे दर्ज करें। ये आपके पुराने पासवर्ड जैसा ही है।"
       ],
       "Enter the confirmation code we sent on your other device.": [
         "वह पुष्टीकरण कोड दर्ज करें जो हमने आपके अन्य डिवाइस पर भेजा था।"

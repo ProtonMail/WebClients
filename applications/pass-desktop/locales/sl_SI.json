@@ -841,6 +841,9 @@
       "Editing item failed": [
         "Urejanje predmeta ni uspelo"
       ],
+      "Email is not valid": [
+        "E-pošta ni veljavna"
+      ],
       "Empty CSV file": [
         "Prazna datoteka CSV"
       ],
@@ -849,6 +852,9 @@
       ],
       "Encrypted JSON not supported": [
         "Šifrirani JSON ni podprt"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Vnesite svoje uporabniško ime brez domene (@primer.com)"
       ],
       "Error reporting problem": [
         "Napaka pri prijavi težave"
@@ -940,6 +946,9 @@
       "Incorrect backup password. Please try again.": [
         "Nepravilno varnostno geslo. Poskusite znova."
       ],
+      "Incorrect password. Please try again.": [
+        "Napačno geslo. Prosimo, poskusite ponovno."
+      ],
       "Incorrect second password. Please try again.": [
         "Nepravilno drugo geslo. Poskusite znova."
       ],
@@ -970,8 +979,14 @@
       "Network error": [
         "Omrežna napaka"
       ],
+      "Not a valid number": [
+        "Ni veljavna številka"
+      ],
       "Passphrase is incorrect": [
         "Geslo ni pravilno"
+      ],
+      "Passwords do not match": [
+        "Gesli se ne ujemata"
       ],
       "PIN codes do not match": [
         "Kodi PIN se ne ujemata"
@@ -1015,8 +1030,20 @@
       "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
         "Namizna aplikacija ${ PASS_APP_NAME } se ne odziva, ali je zagnana?"
       ],
+      "The email addresses do not match": [
+        "E-poštna naslova se ne ujemata"
+      ],
       "The session has expired. Please sign in again.": [
         "Seja je potekla. Prosimo, znova se prijavite."
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "To polje presega število dovoljenih znakov - ${ maximumLength }."
+      ],
+      "This field is required": [
+        "To polje je obvezno"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "To polje zahteva vsaj ${ minimumLength } znakov."
       ],
       "Too many failed attempts. Please sign in again.": [
         "Preveč neuspešnih poskusov. Prosimo, prijavite se znova."
@@ -1026,6 +1053,9 @@
       ],
       "Try reaching out to the link owner.": [
         "Poskusite stopiti v stik z lastnikom povezave."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Poskusite uporabiti samo črke, števke in _.-"
       ],
       "Unable to generate an OTP code for this item": [
         "Za ta predmet ni mogoče ustvariti kode OTP"
@@ -1057,6 +1087,12 @@
       "Updating vault \"${ payload.content.name }\" failed": [
         "Posodabljanje trezorja »${ payload.content.name }« ni uspelo"
       ],
+      "Username must begin with a letter or digit": [
+        "Uporabniško ime se mora začeti s črko ali številko"
+      ],
+      "Username must end with a letter or digit": [
+        "Uporabniško ime se mora končati s črko ali številko"
+      ],
       "Vault \"${ payload.content.name }\" creation failed": [
         "Ustvarjanje trezorja »${ payload.content.name }« ni uspelo"
       ],
@@ -1074,6 +1110,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Napačna koda PIN. Poskusi ponovno."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Napačna obnovitvena fraza. Poskusite znova ali uporabite drug način obnovitve."
       ],
       "Wrong second password": [
         "Napačno drugo geslo"
@@ -3575,8 +3614,20 @@
       "OTP secret or URI is invalid": [
         "Skrivnost OTP ali URI ni veljaven"
       ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Geslo mora vsebovati vsaj ${ MIN_PASSWORD_LENGTH } znak",
+        "Geslo mora vsebovati vsaj ${ MIN_PASSWORD_LENGTH } znakov",
+        "Geslo mora vsebovati vsaj ${ MIN_PASSWORD_LENGTH } znakov",
+        "Geslo mora vsebovati vsaj ${ MIN_PASSWORD_LENGTH } znakov"
+      ],
       "Section name cannot be empty": [
         "Ime razdelka ne sme biti prazno"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Poskusite s krajšim uporabniškim imenom (največ ${ n } znak)",
+        "Poskusite s krajšim uporabniškim imenom (največ ${ n } znaka)",
+        "Poskusite s krajšim uporabniškim imenom (največ ${ n } znaki)",
+        "Poskusite s krajšim uporabniškim imenom (največ ${ n } znakov)"
       ],
       "URL already exists": [
         "URL že obstaja"

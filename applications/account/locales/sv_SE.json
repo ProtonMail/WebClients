@@ -2812,12 +2812,6 @@
       ]
     },
     "bf2023: Info": {
-      "6 TB storage (2x more than any other plan)": [
-        "6 TB lagringsutrymme (2 gånger mer än något annat paket)"
-      ],
-      "6 users": [
-        "6 användare"
-      ],
       "Become a super-supporter. Get access to all current and future ${ BRAND_NAME } services.": [
         "Bli en supersupporter. Få åtkomst till alla nuvarande och framtida ${ BRAND_NAME }-tjänster."
       ],
@@ -2829,9 +2823,6 @@
       ],
       "Premium versions of all ${ BRAND_NAME } services": [
         "Premiumversioner av alla ${ BRAND_NAME }-tjänster"
-      ],
-      "The ${ plan } plan is back for a limited time only": [
-        "Paketet ${ plan } är tillbaka endast under en begränsad tid"
       ]
     },
     "bf2023: info": {
@@ -2874,7 +2865,86 @@
         "Lagringsutrymme delas mellan alla ${ BRAND_NAME }-tjänster."
       ]
     },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Ta del av erbjudandet"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/månad"
+      ],
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "2 individual accounts": [
+        "2 individuella konton"
+      ],
+      "2 TB of secure storage": [
+        "2 TB säkert lagringsutrymme"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB lagringsutrymme: 40x ditt nuvarande paket"
+      ],
+      "3 TB of secure storage": [
+        "3 TB säkert lagringsutrymme"
+      ],
+      "500 GB of secure storage": [
+        "500 GB säkert lagringsutrymme"
+      ],
+      "6 individual accounts": [
+        "6 individuella konton"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Obegränsade mappar, etiketter och filter"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } och ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } och ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } och ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "för 12 månader"
+      ],
+      "Last chance to save big": [
+        "Sista chansen att spara stort"
+      ],
+      "Save big with a yearly plan": [
+        "Spara stort med ett årligt paket"
+      ]
+    },
     "Billing cycle": {
+      "Free renewal": [
+        "Gratis förnyelse"
+      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Förnyas automatiskt med ${ subscriptionManagerName }"
       ]
@@ -3635,11 +3705,17 @@
       ]
     },
     "claimed address": {
+      "Verify it's you": [
+        "Verifiera att det är du"
+      ],
       "Your address": [
         "Din adress"
       ],
       "Your address has changed": [
         "Din adress har ändrats"
+      ],
+      "Your administrator can give you a new address.": [
+        "Din administratör kan ge dig en ny adress."
       ],
       "Your new address": [
         "Din nya adress"
@@ -7235,6 +7311,9 @@
       "Incorrect password": [
         "Felaktigt lösenord"
       ],
+      "Incorrect password. Please try again.": [
+        "Felaktigt lösenord. Försök igen."
+      ],
       "Incorrect recovery code. Please try again.": [
         "Felaktig återställningskod. Försök igen."
       ],
@@ -7886,6 +7965,9 @@
       ],
       "Your import will not be processed.": [
         "Din import kommer inte att bearbetas."
+      ],
+      "Your password couldn't be reset. Please try again.": [
+        "Ditt lösenord kunde inte återställas. Försök igen."
       ],
       "Zero keys reactivated": [
         "Noll nycklar återaktiverade"
@@ -9249,6 +9331,9 @@
       ],
       "Folders": [
         "Mappar"
+      ],
+      "Good to know before you connect": [
+        "Bra att veta innan du ansluter"
       ],
       "IP address": [
         "IP-adress"
@@ -11245,6 +11330,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Ange e-postadressen eller användarnamnet för ditt ${ BRAND_NAME }-konto."
+      ],
+      "Enter your old password for ${ boldEmail }.": [
+        "Ange ditt gamla lösenord för ${ boldEmail }."
       ],
       "Enter your own password (as organization admin).": [
         "Ange ditt eget lösenord (som organisationsadministratör)."
@@ -13790,6 +13878,9 @@
       "Your account was successfully updated with this promotion": [
         "Ditt konto har uppdaterats med denna kampanj"
       ],
+      "Your address was connected": [
+        "Din adress anslöts"
+      ],
       "Your browser blocked the new tab.": [
         "Din webbläsare blockerade den nya fliken."
       ],
@@ -15270,9 +15361,6 @@
       "Font size": [
         "Textstorlek"
       ],
-      "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
-        "För ${ DRIVE_SHORT_APP_NAME } och ${ DOCS_SHORT_APP_NAME }."
-      ],
       "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
         "För ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME } och ${ SHEETS_SHORT_APP_NAME }."
       ],
@@ -15353,9 +15441,6 @@
       ],
       "Import interval": [
         "Importintervall"
-      ],
-      "Import messages": [
-        "Importera meddelanden"
       ],
       "Import to email address": [
         "Importera till e-postadress"
@@ -16218,9 +16303,6 @@
       ],
       "You don't have permissions": [
         "Du har inte behörighet"
-      ],
-      "You will be able to:": [
-        "Du kommer att kunna:"
       ],
       "Your activation code:": [
         "Din aktiveringskod:"
@@ -20134,6 +20216,9 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (exkl. moms)"
       ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kan inte kombineras med ${ PLAN_NAMES[PLANS.PASS] }."
+      ],
       "${ planTitle } + ${ LUMO_SHORT_APP_NAME }": [
         "${ planTitle } + ${ LUMO_SHORT_APP_NAME }"
       ],
@@ -20283,6 +20368,9 @@
       ],
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Du har redan en prenumeration på detta paket. Du kan ändra din prenumeration på ${ subscriptionPlatform }."
+      ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "Du äger redan ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Du kommer att debiteras ${ amountToCharge } från din valda betalningsmetod."
@@ -23398,9 +23486,6 @@
       "Do you want to remove all other devices than the current one?": [
         "Vill du ta bort alla andra enheter än den nuvarande?"
       ],
-      "Enter it to sign in. It is the same as your old password.": [
-        "Ange det för att logga in. Det är samma som ditt gamla lösenord."
-      ],
       "Enter the confirmation code we sent on your other device.": [
         "Ange bekräftelsekoden vi skickade på din andra enhet."
       ],
@@ -23409,6 +23494,9 @@
       ],
       "Enter your backup password": [
         "Ange ditt reservlösenord"
+      ],
+      "Enter your password": [
+        "Ange ditt lösenord"
       ],
       "For your security, you have been signed out of all your other active devices.": [
         "För din säkerhet har du loggats ut från alla dina andra aktiva enheter."

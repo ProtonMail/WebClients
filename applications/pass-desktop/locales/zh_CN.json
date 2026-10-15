@@ -1135,6 +1135,9 @@
       "Editing item failed": [
         "编辑项目失败"
       ],
+      "Email is not valid": [
+        "无效邮箱"
+      ],
       "Empty CSV file": [
         "空 CSV 文件"
       ],
@@ -1146,6 +1149,9 @@
       ],
       "Encrypted JSON not supported": [
         "不支持加密的 JSON"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "请输入您的用户名（不含 @example.com 域名）"
       ],
       "Error reporting problem": [
         "错误报告"
@@ -1336,6 +1342,9 @@
       "Incorrect backup password. Please try again.": [
         "备份密码不正确，请重试。"
       ],
+      "Incorrect password. Please try again.": [
+        "密码错误，请重试。"
+      ],
       "Incorrect second password. Please try again.": [
         "二级密码错误，请重试。"
       ],
@@ -1369,8 +1378,14 @@
       "Network error": [
         "网络错误"
       ],
+      "Not a valid number": [
+        "无效号码"
+      ],
       "Passphrase is incorrect": [
         "密码不正确"
+      ],
+      "Passwords do not match": [
+        "密码不匹配"
       ],
       "PIN codes do not match": [
         "两次输入的 PIN 码不一致"
@@ -1435,11 +1450,23 @@
       "The ${ PASS_APP_NAME } desktop app should be logged in.": [
         "${ PASS_APP_NAME } 电脑版应处于登录状态！"
       ],
+      "The email addresses do not match": [
+        "邮箱地址不一致"
+      ],
       "The session has expired. Please sign in again.": [
         "登录状态已过期，请重新登录。"
       ],
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "删除安全链接时出现错误。请几分钟后再试。"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "此项超过了 ${ maximumLength } 个字符的长度限制。"
+      ],
+      "This field is required": [
+        "此项必须填写"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "该字段至少需要 ${ minimumLength } 个字符。"
       ],
       "This invite is no longer available": [
         "此邀请已不可用"
@@ -1452,6 +1479,9 @@
       ],
       "Try reaching out to the link owner.": [
         "尝试联系链接所有者。"
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "请使用英文字母、阿拉伯数字或 _ . - 符号"
       ],
       "Unable to generate an OTP code for this item": [
         "无法为该项目生成 OTP 代码"
@@ -1486,6 +1516,12 @@
       "Updating vault \"${ payload.content.name }\" failed": [
         "更新保险库 “${ payload.content.name }” 失败"
       ],
+      "Username must begin with a letter or digit": [
+        "用户名必须以字母或数字开头"
+      ],
+      "Username must end with a letter or digit": [
+        "用户名必须以字母或数字结尾"
+      ],
       "Vault \"${ payload.content.name }\" creation failed": [
         "保险库 “${ payload.content.name }” 创建失败"
       ],
@@ -1509,6 +1545,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "解锁密码错误，请重试。"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "恢复短语错误，请重试或使用其他恢复方法。"
       ],
       "Wrong second password": [
         "二级密码错误"
@@ -2244,7 +2283,7 @@
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "将项目移动到另一个保险库会删除其安全链接。"
+        "将项目移至其他保险库会清除其安全链接！"
       ],
       "Moving items": [
         "正在移动"
@@ -3002,6 +3041,9 @@
       ],
       "${ hours } hour": [
         "${ hours } 小时"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length } / ${ maxLength } 个字符"
       ],
       "${ minutes } minute": [
         "${ minutes } 分钟"
@@ -5414,8 +5456,14 @@
       "OTP secret or URI is invalid": [
         "动态密码或网址无效"
       ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "密码必须至少包含 ${ MIN_PASSWORD_LENGTH } 个字符"
+      ],
       "Section name cannot be empty": [
         "分组名称不能为空"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "请缩短用户名（最长 ${ n } 个字符）"
       ],
       "URL already exists": [
         "网址已存在"

@@ -756,7 +756,377 @@
         "Remarque"
       ]
     },
+    "sheets_2025:Spreadsheet cellFormatOptions": {
+      "Accounting": [
+        "Comptabilité"
+      ],
+      "Bottom": [
+        "Dernier"
+      ],
+      "Center": [
+        "Centrer"
+      ],
+      "Clip": [
+        "Couper"
+      ],
+      "Currency": [
+        "Devise"
+      ],
+      "Currency formats are used for general monetary values.": [
+        "Les devises monétaires sont utilisés pour les valeurs monétaires générales."
+      ],
+      "Custom": [
+        "Personnalisé"
+      ],
+      "Date": [
+        "Date"
+      ],
+      "Date formats display date and time serial numbers as date values.": [
+        "Les formats de date affichent les numéros de série des dates et des heures comme des valeurs de date."
+      ],
+      "Fraction": [
+        "Fraction"
+      ],
+      "General": [
+        "Général"
+      ],
+      "General format cells have no specific number format.": [
+        "Les cellules de format général n'ont pas de format numérique spécifique."
+      ],
+      "Left": [
+        "Gauche"
+      ],
+      "Number": [
+        "Nombre"
+      ],
+      "Number is used for general display of numbers.": [
+        "Nombre est utilisé pour l'affichage général des nombres."
+      ],
+      "Overflow": [
+        "Débordement"
+      ],
+      "Percentage": [
+        "Pourcentage"
+      ],
+      "Right": [
+        "Droit"
+      ],
+      "Scientific": [
+        "Scientifique"
+      ],
+      "Text": [
+        "Texte"
+      ],
+      "Time": [
+        "Heure"
+      ],
+      "Time formats display date and time serial numbers as date values.": [
+        "Les formats de date affichent les numéros de série des dates et des heures comme des valeurs de date."
+      ],
+      "Top": [
+        "En haut"
+      ],
+      "Wrap": [
+        "Ajustement"
+      ]
+    },
+    "sheets_2025:Spreadsheet chartAggregates": {
+      "Average": [
+        "Moyenne"
+      ],
+      "Count": [
+        "Compte"
+      ],
+      "Max": [
+        "Max"
+      ],
+      "Median": [
+        "Médiane"
+      ],
+      "Min": [
+        "Min"
+      ],
+      "Sum": [
+        "Somme"
+      ]
+    },
+    "sheets_2025:Spreadsheet chartEditorDialog": {
+      "None": [
+        "Aucun"
+      ]
+    },
+    "sheets_2025:Spreadsheet chartTypes": {
+      "2D Pie": [
+        "Diagramme circulaire en 2D"
+      ],
+      "Clustered Column": [
+        "Histogramme"
+      ],
+      "Column": [
+        "Colonne"
+      ],
+      "Doughnut": [
+        "Graphique en anneaux"
+      ],
+      "Hierarchy": [
+        "Hiérarchie"
+      ],
+      "Line": [
+        "Ligne"
+      ],
+      "Pie": [
+        "Diagramme circulaire"
+      ],
+      "Smooth line": [
+        "Ligne lissée"
+      ],
+      "Stacked column": [
+        "Colonne empilée"
+      ],
+      "Stacked line": [
+        "Ligne empilée"
+      ],
+      "Sunburst": [
+        "Diagramme en rayons de soleil"
+      ],
+      "Treemap": [
+        "Carte proportionnelle"
+      ]
+    },
+    "sheets_2025:Spreadsheet conditions": {
+      "Above average": [
+        "Supérieur à la moyenne"
+      ],
+      "April": [
+        "Avril"
+      ],
+      "August": [
+        "Août"
+      ],
+      "Below average": [
+        "Inférieur à la moyenne"
+      ],
+      "Between": [
+        "Entre"
+      ],
+      "Bottom N items": [
+        "Les derniers N éléments"
+      ],
+      "Bottom N percent": [
+        "Les N derniers éléments"
+      ],
+      "Checkbox": [
+        "Case à cocher"
+      ],
+      "Custom formula": [
+        "Formule personnalisée"
+      ],
+      "Date is after": [
+        "La date est postérieure"
+      ],
+      "Date is before": [
+        "La date est ultérieure au"
+      ],
+      "Date is between": [
+        "La date est comprise entre"
+      ],
+      "Date is equal to": [
+        "La date est égale à"
+      ],
+      "Date is not between": [
+        "La date n'est pas comprise entre"
+      ],
+      "Date is not equal to": [
+        "La date n’est pas égale à"
+      ],
+      "Date is on or after": [
+        "Date à partir du ou après le"
+      ],
+      "Date is on or before": [
+        "Date à partir du ou avant le"
+      ],
+      "Date is valid": [
+        "Date est valide"
+      ],
+      "December": [
+        "Décembre"
+      ],
+      "Dropdown": [
+        "Menu déroulant"
+      ],
+      "Dropdown (from a range)": [
+        "Menu déroulant (depuis une plage)"
+      ],
+      "Equal to": [
+        "Égal à"
+      ],
+      "Errors": [
+        "Erreurs"
+      ],
+      "February": [
+        "Février"
+      ],
+      "Greater than": [
+        "Plus grand que"
+      ],
+      "Greater than or equal to": [
+        "Supérieur ou égal à"
+      ],
+      "Greater than or equal to previous": [
+        "Supérieur ou égal au précédent"
+      ],
+      "Greater than previous": [
+        "Supérieur au précédent"
+      ],
+      "Is empty": [
+        "Est vide"
+      ],
+      "Is not empty": [
+        "N'est pas vide"
+      ],
+      "January": [
+        "Janvier"
+      ],
+      "July": [
+        "Juillet"
+      ],
+      "June": [
+        "Juin"
+      ],
+      "Last 7 days": [
+        "Les 7 derniers jours"
+      ],
+      "Last month": [
+        "Le mois dernier"
+      ],
+      "Last quarter": [
+        "Le dernier trimestre"
+      ],
+      "Last week": [
+        "Semaine dernière"
+      ],
+      "Last year": [
+        "L'année dernière"
+      ],
+      "Less than": [
+        "Inférieure à"
+      ],
+      "Less than or equal to": [
+        "Inférieur ou égal à"
+      ],
+      "Less than or equal to previous": [
+        "Inférieur ou égal au précédent"
+      ],
+      "Less than previous": [
+        "Inférieur au précédent"
+      ],
+      "March": [
+        "Mars"
+      ],
+      "May": [
+        "Mai"
+      ],
+      "Next month": [
+        "Mois suivant"
+      ],
+      "Next quarter": [
+        "Trimestre suivant"
+      ],
+      "Next week": [
+        "Semaine suivante"
+      ],
+      "Next year": [
+        "Année suivante"
+      ],
+      "No errors": [
+        "Aucune erreur"
+      ],
+      "Not between": [
+        "N’est pas entre"
+      ],
+      "Not equal to": [
+        "N'est pas égal à"
+      ],
+      "November": [
+        "Novembre"
+      ],
+      "October": [
+        "Octobre"
+      ],
+      "Quarter 1": [
+        "Trimestre 1"
+      ],
+      "Quarter 2": [
+        "Trimestre 2"
+      ],
+      "Quarter 3": [
+        "Trimestre 3"
+      ],
+      "Quarter 4": [
+        "Trimestre 4"
+      ],
+      "September": [
+        "Septembre"
+      ],
+      "Text contains": [
+        "Le texte contient"
+      ],
+      "Text does not contain": [
+        "Le texte ne contient pas"
+      ],
+      "Text ends with": [
+        "Texte se terminant avec"
+      ],
+      "Text is email": [
+        "Texte est un message"
+      ],
+      "Text is exactly": [
+        "Texte est exactement"
+      ],
+      "Text is not equal": [
+        "Le texte n'est pas égal à"
+      ],
+      "Text is URL": [
+        "Le texte est une URL"
+      ],
+      "Text starts with": [
+        "Le texte commence par"
+      ],
+      "This month": [
+        "Mois en cours"
+      ],
+      "This quarter": [
+        "Ce trimestre"
+      ],
+      "This week": [
+        "Cette semaine"
+      ],
+      "This year": [
+        "Cette année"
+      ],
+      "Today": [
+        "Aujourd'hui"
+      ],
+      "Tomorrow": [
+        "Demain"
+      ],
+      "Top N items": [
+        "Les N premiers éléments"
+      ],
+      "Top N percent": [
+        "N pourcent supérieur"
+      ],
+      "Year to date": [
+        "Cumul de l'année"
+      ],
+      "Yesterday": [
+        "Hier"
+      ]
+    },
     "sheets_2025:Spreadsheet context menu": {
+      "(Blanks)": [
+        "(Vides)"
+      ],
       "AI Quick Edit": [
         "Modification rapide par IA"
       ],
@@ -1102,6 +1472,14 @@
         "Année"
       ]
     },
+    "sheets_2025:Spreadsheet customCurrencyFormatDialog": {
+      "Format": [
+        "Format"
+      ],
+      "Symbol": [
+        "Symbole"
+      ]
+    },
     "sheets_2025:Spreadsheet delete sheet dialog": {
       "Are you sure you want to delete ${ sheetName }?": [
         "Voulez-vous vraiment supprimer ${ sheetName } ?"
@@ -1128,6 +1506,11 @@
       ],
       "Your screen is too small to edit this spreadsheet. You’re in view-only mode. To make changes, please open this spreadsheet on a larger screen or expand your browser window.": [
         "Votre écran est trop petit pour modifier cette feuille de calcul. Vous êtes en mode lecture seule. Pour apporter des modifications, veuillez ouvrir cette feuille de calcul sur un écran plus grand ou agrandir la fenêtre de votre navigateur."
+      ]
+    },
+    "sheets_2025:Spreadsheet editingDisabledButton": {
+      "Edit": [
+        "Modifier"
       ]
     },
     "sheets_2025:Spreadsheet editor": {
@@ -1564,6 +1947,9 @@
       ]
     },
     "sheets_2025:Spreadsheet editor search dialog": {
+      "${ current } of ${ total }": [
+        "${ current } sur ${ total }"
+      ],
       "Close": [
         "Fermer"
       ],
@@ -1607,6 +1993,9 @@
       "Bold": [
         "Gras"
       ],
+      "Border": [
+        "Bordure"
+      ],
       "Choose border": [
         "Choisir une bordure"
       ],
@@ -1630,6 +2019,9 @@
       ],
       "Default (${ defaultFont })": [
         "Par défaut (${ defaultFont })"
+      ],
+      "Fill color": [
+        "Couleur de remplissage"
       ],
       "Find": [
         "Rechercher"
@@ -1694,6 +2086,9 @@
       "Strikethrough": [
         "Barré"
       ],
+      "Text color": [
+        "Couleur du texte"
+      ],
       "Text wrapping": [
         "Habillage du texte"
       ],
@@ -1757,6 +2152,35 @@
         "Trier Z → A"
       ]
     },
+    "sheets_2025:Spreadsheet filterByCondition": {
+      "None": [
+        "Aucun"
+      ]
+    },
+    "sheets_2025:Spreadsheet formatMenu": {
+      "Coming soon...": [
+        "Bientôt disponible..."
+      ]
+    },
+    "sheets_2025:Spreadsheet formulaBar": {
+      "Edit": [
+        "Modifier"
+      ],
+      "Remove": [
+        "Retirer"
+      ],
+      "View": [
+        "Affichage"
+      ]
+    },
+    "sheets_2025:Spreadsheet gridFooter": {
+      "Add": [
+        "Ajouter"
+      ],
+      "more rows at the bottom": [
+        "Plus de lignes en bas"
+      ]
+    },
     "sheets_2025:Spreadsheet insert link dialog": {
       "Apply": [
         "Appliquer"
@@ -1792,23 +2216,23 @@
       "Cancel": [
         "Annuler"
       ],
-      "column": [
-        "colonne"
-      ],
-      "column width": [
-        "largeur de colonne"
-      ],
-      "Default": [
-        "Par défaut"
+      "Default ${ size }": [
+        "Par défaut ${ size }"
       ],
       "OK": [
         "OK"
       ],
-      "row": [
-        "ligne"
+      "Resize column ${ title }": [
+        "Redimensionner la colonne ${ title }"
       ],
-      "row height": [
-        "Hauteur de ligne"
+      "Resize row ${ title }": [
+        "Redimensionner la ligne ${ title }"
+      ],
+      "Specify column width (px)": [
+        "Indiquez la largeur de colonne (px)"
+      ],
+      "Specify row height (px)": [
+        "Indiquer la hauteur de ligne (px)"
       ]
     },
     "sheets_2025:Spreadsheet sheet status bar": {
@@ -1983,6 +2407,18 @@
       ],
       "Series": [
         "Séries"
+      ],
+      "Series ${ seriesNumber }": [
+        "Série ${ seriesNumber }"
+      ],
+      "Series ${ seriesNumber } Aggregate": [
+        "Agrégat de la série ${ seriesNumber }"
+      ],
+      "Series ${ seriesNumber } Name": [
+        "Série ${ seriesNumber } Nom"
+      ],
+      "Series ${ seriesNumber } Range": [
+        "Plage de la série ${ seriesNumber }"
       ],
       "Show data in hidden rows and columns": [
         "Afficher les données dans les lignes et colonnes masquées"
@@ -2246,6 +2682,26 @@
       ],
       "Table title": [
         "Titre du tableau"
+      ]
+    },
+    "sheets_2025:Spreadsheet viewMenu": {
+      "1 column": [
+        "1 colonne"
+      ],
+      "1 row": [
+        "1 ligne"
+      ],
+      "2 columns": [
+        "2 colonnes"
+      ],
+      "2 rows": [
+        "2 lignes"
+      ],
+      "No columns": [
+        "Aucune colonne"
+      ],
+      "No rows": [
+        "Aucune ligne"
       ]
     },
     "Title": {

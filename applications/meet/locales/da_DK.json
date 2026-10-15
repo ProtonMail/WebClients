@@ -303,9 +303,6 @@
       "Create meeting": [
         "Opret møde"
       ],
-      "Debug devices": [
-        "Fejlfind enheder"
-      ],
       "Debug overlay": [
         "Debug overlay"
       ],
@@ -476,6 +473,9 @@
       ],
       "Lower hand": [
         "Sænk hånden"
+      ],
+      "Meeting debug": [
+        "Debug møde"
       ],
       "Meeting info": [
         "Mødeinfo"
@@ -1991,6 +1991,12 @@
       "Cannot verify who uploaded this file": [
         "Kan ikke bekræfte hvem, der uploadede filen"
       ],
+      "Check your audio settings and try again": [
+        "Tjek din lydindstillinger og prøv igen"
+      ],
+      "Connection lost — captions will resume when reconnected": [
+        "Forbindelse tabt – undertekster genoptages så snart forbindelsen genoprettes"
+      ],
       "Copy operation aborted": [
         "Kopiering afbrudt"
       ],
@@ -2192,6 +2198,9 @@
       "Incorrect backup password. Please try again.": [
         "Forkert backupadgangskode. Prøv igen."
       ],
+      "Incorrect password. Please try again.": [
+        "Forkert adgangskode. Prøv venligst igen."
+      ],
       "Incorrect second password. Please try again.": [
         "Forkert anden adgangskode. Prøv igen."
       ],
@@ -2212,9 +2221,6 @@
       ],
       "Legacy public link cannot be updated. Please re-create a new public link.": [
         "Legacy offentlige links kan ikke opdateres. Opret et nyt offentligt link."
-      ],
-      "Live captions aren't working. Try turning them off and on again.": [
-        "Live undertekster virker ikke. Prøv at slå dem fra og til igen."
       ],
       "Live captions couldn't be started.": [
         "Live undertekster kunne ikke startes."
@@ -2418,8 +2424,14 @@
       "Too many server requests, please try again later": [
         "For mange serverforespørgsler, prøv igen senere"
       ],
+      "Try turning live captions off and on again.": [
+        "Prøv at slå live undertekster fra og til igen."
+      ],
       "Try using only letters, numerals, and _.-": [
         "Prøv kun at bruge bogstaver, tal og _.-"
+      ],
+      "Unable to generate captions": [
+        "Kunne ikke generere undertekster"
       ],
       "Unknown error": [
         "Ukendt fejl"
@@ -2441,6 +2453,9 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "Vi kunne ikke sende en bekræftelseskode ved hjælp af denne metode."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Forkert gendannelsessætning. Prøv igen eller brug en anden gendannelsesmetode."
       ],
       "You can create public links for your own files only": [
         "Du kan kun oprette et offentligt link for dine egne filer"
@@ -2798,8 +2813,8 @@
       "Camera permission denied": [
         "Kameratilladelse nægtet"
       ],
-      "Captions are on": [
-        "Undertekster er slået til"
+      "Captions on": [
+        "Undertekster slået til"
       ],
       "Changes are staged. Apply to rebuild the preview with the new constants.": [
         "Ændringerne er klar. Anvend dem for at oprette forhåndsvisningen igen med de nye konstanter."
@@ -3019,6 +3034,9 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Indlæser kalender, vent venligst. Du vil blive omdirigeret til vores planlægningsplatform Calendly i en ny fane."
+      ],
+      "Loading captions…": [
+        "Indlæser undertekster..."
       ],
       "Loading meeting details...": [
         "Indlæser mødedetaljer..."
@@ -3467,6 +3485,9 @@
       "Virtual background initializing": [
         "Aktiverer virtuel baggrund"
       ],
+      "Waiting for speech…": [
+        "Venter på at der bliver talt..."
+      ],
       "Waiting for the host to admit you. The host has been notified that you're waiting.": [
         "Venter på at værten giver dig adgang. Værten er blevet underrettet om at du venter."
       ],
@@ -3745,6 +3766,9 @@
       ],
       "Live caption agent": [
         "Agent til live undertekster"
+      ],
+      "Live captions": [
+        "Live undertekster"
       ],
       "Manage recordings": [
         "Administrer optagelser"

@@ -4189,6 +4189,9 @@
       "Add 1 more": [
         "Voeg er nog 1 toe"
       ],
+      "Add contact": [
+        "Contactpersoon toevoegen"
+      ],
       "Add emergency contact": [
         "Contactpersoon voor noodgevallen toevoegen"
       ],
@@ -4351,6 +4354,9 @@
       ],
       "Recover data": [
         "Gegevens herstellen"
+      ],
+      "Recover your data before adding a new contact.": [
+        "Herstel uw gegevens voordat u een nieuw contact toevoegt."
       ],
       "Recovery approved": [
         "Herstel goedgekeurd"
@@ -4528,6 +4534,9 @@
       "You'll receive access to their account in **${ days } day**, or when they approve your request.": [
         "U krijgt toegang tot hun account binnen **${ days } dag**, of wanneer zij uw verzoek goedkeuren.",
         "U ontvangt toegang tot hun account over **${ days } dagen**, of wanneer zij uw verzoek goedkeuren."
+      ],
+      "Your data is still locked from a password reset. A contact added now won't be able to restore it.": [
+        "Uw gegevens zijn nog steeds vergrendeld na een wachtwoordreset. Een nu toegevoegde contactpersoon kan deze niet herstellen."
       ],
       "Your recovery contact has helped you recover data.": [
         "Uw herstelcontact heeft u geholpen bij het herstellen van gegevens."
@@ -4804,6 +4813,9 @@
       ],
       "Incorrect password": [
         "Ongeldig wachtwoord"
+      ],
+      "Incorrect password. Please try again.": [
+        "Onjuist wachtwoord. Probeer het opnieuw."
       ],
       "Incorrect recovery code. Please try again.": [
         "Ongeldige herstelcode. Probeer het opnieuw."
@@ -10459,9 +10471,6 @@
       "Font size": [
         "Lettertypegrootte"
       ],
-      "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
-        "Voor ${ DRIVE_SHORT_APP_NAME } en ${ DOCS_SHORT_APP_NAME }."
-      ],
       "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
         "Voor ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME } en ${ SHEETS_SHORT_APP_NAME }."
       ],
@@ -13708,11 +13717,17 @@
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Betaalmethode vereist voor de activering van het abonnement nadat de proefversie is afgelopen."
       ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Abonnementwisseling is om de volgende redenen niet compatibel:"
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveer eerst uw abonnement om het aantal add-ons te verminderen."
       ],
       "Processing payment": [
         "Betaling wordt verwerkt"
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Proton Meet licenties moeten overeenkomen met het aantal leden."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Bij vernieuwing zijn prijswijziging volgen volgende ${ termsAndConditionsLink }."
@@ -13773,6 +13788,12 @@
       ],
       "This payment method will become your new default for all future renewals.": [
         "Deze betaalmethode wordt uw nieuwe standaard voor alle toekomstige verlengingen."
+      ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Dit abonnement ondersteunt de beheerde functies van uw account niet."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Dit abonnement kan momenteel niet worden voltooid. Probeer het opnieuw."
       ],
       "Timeout exceeded": [
         "Time-out overschreden"

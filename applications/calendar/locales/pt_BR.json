@@ -1360,6 +1360,109 @@
         "O espaço de armazenamento é compartilhado entre todos os serviços da ${ BRAND_NAME }."
       ]
     },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Aproveitar a oferta"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/mês"
+      ],
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
+      "2 individual accounts": [
+        "2 contas individuais"
+      ],
+      "2 TB of secure storage": [
+        "2 TB de armazenamento seguro"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB de armazenamento: 40x o seu plano atual"
+      ],
+      "3 TB of secure storage": [
+        "3 TB de armazenamento seguro"
+      ],
+      "500 GB of secure storage": [
+        "500 GB de armazenamento seguro"
+      ],
+      "6 individual accounts": [
+        "6 contas individuais"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autenticador de 2FA integrado"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Os descontos são baseados em preços mensais padrão. Sua assinatura será renovada na taxa anual padrão quando o ciclo de faturamento terminar."
+      ],
+      "Online document editor": [
+        "Editor de documentos on-line"
+      ],
+      "Recover previous file versions": [
+        "Recuperar versões de arquivo anteriores"
+      ],
+      "Stronger protection against cyber threats": [
+        "Proteção mais forte contra ameaças cibernéticas"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Pastas, marcadores e filtros ilimitados"
+      ],
+      "Use your own email domain": [
+        "Use seu próprio domínio de e-mail"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium para ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium para ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium para ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium para ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium para ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "A maior promoção do ano"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "por 12 meses"
+      ],
+      "Last chance to save big": [
+        "Última chance de economizar muito"
+      ],
+      "Protect your entire tribe": [
+        "Proteja toda a sua tribo"
+      ],
+      "Protection for two in a single plan": [
+        "Proteção para duas pessoas em um único plano"
+      ],
+      "Save big with a yearly plan": [
+        "Economize bastante com um plano anual"
+      ]
+    },
     "Billing cycle option": {
       "${ n } month": [
         "${ n } mês",
@@ -3479,6 +3582,9 @@
       "A group with this name already exists": [
         "Já existe um grupo com esse"
       ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Uma mensagem é necessária ao denunciar violação de direitos autorais ou dados roubados"
+      ],
       "A problem occurred, please try again.": [
         "Ocorreu um erro. Tente novamente."
       ],
@@ -3487,6 +3593,9 @@
       ],
       "Address could not be added.": [
         "O endereço não pôde ser adicionado."
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "O endereço já é usado por um usuário fora da sua organização. Entre em contato com o suporte ao cliente para resolver isso"
       ],
       "Address primary private key not found": [
         "Chave privada principal do endereço não encontrada"
@@ -3533,6 +3642,9 @@
       "Cannot export this contact": [
         "Não é possível exportar este contato."
       ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Não é possível mover o item sem um nome válido, por favor, renomeie o item primeiro"
+      ],
       "Cannot share root folder": [
         "Não é possível compartilhar a pasta raiz"
       ],
@@ -3571,6 +3683,9 @@
       ],
       "Copying item to a non-folder is not allowed": [
         "Não é permitido copiar o item para um local que não seja uma pasta"
+      ],
+      "Could not find an available name": [
+        "Não foi possível encontrar um nome disponível"
       ],
       "Could not grant access to the organization key": [
         "Não foi possível obter o acesso a chave da organização"
@@ -3691,6 +3806,9 @@
       "Failed to get event": [
         "Falha ao obter o evento"
       ],
+      "Failed to get inviter keys": [
+        "Não conseguiu obter as chaves do convidado"
+      ],
       "Failed to get original occurrence in series": [
         "Não foi possível obter a ocorrência original em série."
       ],
@@ -3732,6 +3850,9 @@
       ],
       "Incorrect backup password. Please try again.": [
         "Senha de backup incorreta. Tente novamente."
+      ],
+      "Incorrect password. Please try again.": [
+        "A senha não é válida. Tente novamente."
       ],
       "Incorrect second password. Please try again.": [
         "Segunda senha incorreta. Tente novamente."
@@ -3886,6 +4007,9 @@
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "Um dos grupos não tem contatos: ${ noContactGroupList }",
         "Alguns dos grupos não tem contatos: ${ noContactGroupList } "
+      ],
+      "Only admins can convert external invitations": [
+        "Somente os administradores podem converter convites externos"
       ],
       "Operation aborted": [
         "Operação abortada"
@@ -4159,6 +4283,9 @@
       "This folder name is not available. Please choose a different name.": [
         "Este nome para a pasta não está disponível. Escolha outro nome."
       ],
+      "This item has no image preview": [
+        "Este item não tem visualização de imagem"
+      ],
       "This item is no longer shared": [
         "Este item não está mais sendo compartilhado"
       ],
@@ -4222,6 +4349,9 @@
       "Wrong billing address": [
         "Endereço de cobrança incorreto"
       ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Frase de recuperação errada. Tente novamente ou use outro método de autenticação."
+      ],
       "You already added this holidays calendar": [
         "Você já adicionou feriados"
       ],
@@ -4230,6 +4360,12 @@
       ],
       "You can create public links for your own files only": [
         "Você pode criar links públicos apenas para seus próprios arquivos"
+      ],
+      "You can only leave items that are shared with you": [
+        "Você só pode deixar itens compartilhados com você"
+      ],
+      "You can only upload a new version to a file": [
+        "Você só pode carregar uma nova versão para um arquivo"
       ],
       "You can update a public link for your own files only": [
         "Você pode atualizar um link público apenas para seus próprios arquivos"
@@ -4243,6 +4379,9 @@
       ],
       "You do not have access to this item": [
         "Você não tem acesso a esse item"
+      ],
+      "You do not have access to this shared item": [
+        "Você não tem acesso a esse item compartilhado"
       ],
       "You have reached the maximum number of calendars.": [
         "Você atingiu o número máximo de calendários."
@@ -4258,6 +4397,9 @@
       ],
       "You must set a name": [
         "Você deve especificar um nome"
+      ],
+      "You reached the maximum number of connected addresses": [
+        "Você atingiu o número máximo de endereços conectados"
       ],
       "Your import will not be processed.": [
         "Sua importação não será processada."
@@ -5362,6 +5504,9 @@
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
         "${ timeRemaining } deixado em sua avaliação. ${ addPaymentMethodLink } para evitar perder acesso. ${ learnMoreLink }"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Restam ${ timeRemaining } do seu período de teste. ${ addPaymentMethodLink } para manter sua assinatura. ${ learnMoreLink }"
+      ],
       "${ total } user found": [
         "${ total } usuário encontrado",
         "${ total } usuários encontrados"
@@ -5467,6 +5612,9 @@
       ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Os anunciantes rastreiam sua navegação para exibir anúncios segmentados. O ${ VPN_APP_NAME } bloqueia rastreadores e anúncios, tornando sua conexão mais rápida e melhorando sua experiência on-line."
+      ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "Após a atualização, o Mac pode pedir uma senha. Digite a senha que você usa para desbloquear o Mac e clique em Sempre Permitir para ficar conectado. ${ learnMore }"
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Assistente com tecnologia de IA para ajudar você a criar e-mails melhores, com rapidez e facilidade."
@@ -6465,6 +6613,9 @@
       ],
       "To migrate this user, enable their address under ${ usersAddressesLink }.": [
         "Para migrar este usuário, ative o endereço dele em ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Para migrar esse usuário, eles precisam aceitar seu convite para participar ${ BRAND_NAME }."
       ],
       "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
         "Para migrar este usuário, remova-o do arquivo no seu ${ provider.adminConsoleName }."
@@ -9523,6 +9674,9 @@
       "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
         "**Se você continuar após o seu teste, ** você pode cancelar dentro de 30 dias e obter um reembolso pro-rata."
       ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Uma vez que sua assinatura completa começa... ** Você ainda pode cancelar dentro de 30 dias e obter um reembolso proporcional."
+      ],
       "Add a payment method": [
         "Adicionar método de pagamento"
       ],
@@ -9794,8 +9948,14 @@
       "Amount due after trial on ${ formattedDate }": [
         "Valor devido após a avaliação em ${ formattedDate }"
       ],
+      "An organization is required for this plan.": [
+        "Uma organização é necessária para este plano."
+      ],
       "Billing Country": [
         "País de Faturamento"
+      ],
+      "Born Private can’t be purchased with an active subscription.": [
+        "O Born Private não pode ser adquirido com uma assinatura ativa."
       ],
       "Born Private requires a donation.": [
         "Born Private requer uma doação."
@@ -9854,6 +10014,9 @@
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Método de pagamento necessário para que a assinatura seja ativada após o término do período de teste."
       ],
+      "Plan switch is incompatible for the following reasons:": [
+        "O interruptor de plano é incompatível pelas seguintes razões:"
+      ],
       "Please close extra wallet accounts before changing your plan.": [
         "Escolha as contas de wallet adicionais antes de trocar seu plano."
       ],
@@ -9862,6 +10025,9 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reative sua assinatura primeiro para diminuir o número de complementos."
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Os assentos do Proton Meet devem corresponder ao número de membros."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "O preço da renovação está sujeito a alterações de acordo com os ${ termsAndConditionsLink }."
@@ -9926,6 +10092,9 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Esta ação expande a assinatura existente. Você será cobrado apenas pelos novos complementos e pelo tempo restante do ciclo de faturamento atual. A data de renovação da sua assinatura não será alterada."
       ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "Este servidor dedicado é atribuído a um gateway e não pode ser alterado."
+      ],
       "This offer is not available with your current plan.": [
         "Essa oferta não está disponível com seu plano atual."
       ],
@@ -9935,11 +10104,17 @@
       "This plan doesn’t support the members on your account.": [
         "Esse plano não suporta membros na sua conta."
       ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Esta assinatura não pode ser concluída agora. Por favor, tente de novo."
+      ],
       "Timeout exceeded": [
         "Tempo limite excedido"
       ],
       "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
         "Os planos de avaliação não suportam ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Trial plans don’t support custom domains.": [
+        "Os planos de avaliação não suportam domínios personalizados."
       ],
       "Trial plans don’t support dedicated IPs.": [
         "Os planos de avaliação não suportam IPs dedicados."

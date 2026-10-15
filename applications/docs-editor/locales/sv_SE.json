@@ -733,6 +733,220 @@
         "Anteckning"
       ]
     },
+    "sheets_2025:Spreadsheet cellFormatOptions": {
+      "Bottom": [
+        "Bottom"
+      ],
+      "Center": [
+        "Centrerat"
+      ],
+      "Currency": [
+        "Valuta"
+      ],
+      "Custom": [
+        "Anpassad"
+      ],
+      "Date": [
+        "Datum"
+      ],
+      "General": [
+        "Allmänt"
+      ],
+      "Left": [
+        "Vänster"
+      ],
+      "Number": [
+        "Nummer"
+      ],
+      "Percentage": [
+        "Procent"
+      ],
+      "Right": [
+        "Höger"
+      ],
+      "Text": [
+        "Text"
+      ],
+      "Time": [
+        "Tid"
+      ],
+      "Top": [
+        "Toppen"
+      ]
+    },
+    "sheets_2025:Spreadsheet chartAggregates": {
+      "Average": [
+        "Genomsnittlig"
+      ],
+      "Max": [
+        "Max"
+      ],
+      "Median": [
+        "Median"
+      ],
+      "Min": [
+        "Min"
+      ]
+    },
+    "sheets_2025:Spreadsheet chartEditorDialog": {
+      "None": [
+        "Ingen"
+      ]
+    },
+    "sheets_2025:Spreadsheet chartTypes": {
+      "Column": [
+        "Kolumn"
+      ],
+      "Hierarchy": [
+        "Hierarki"
+      ],
+      "Stacked column": [
+        "Staplad kolumn"
+      ]
+    },
+    "sheets_2025:Spreadsheet conditions": {
+      "Above average": [
+        "Över genomsnitt"
+      ],
+      "April": [
+        "April"
+      ],
+      "August": [
+        "Augusti"
+      ],
+      "Below average": [
+        "Under genomsnitt"
+      ],
+      "Between": [
+        "Mellan"
+      ],
+      "Checkbox": [
+        "Kryssruta"
+      ],
+      "Date is valid": [
+        "Datum är giltigt"
+      ],
+      "December": [
+        "December"
+      ],
+      "Dropdown": [
+        "Rullgardinsmeny"
+      ],
+      "Errors": [
+        "Fel"
+      ],
+      "February": [
+        "Februari"
+      ],
+      "Is empty": [
+        "Är tom"
+      ],
+      "Is not empty": [
+        "Är inte tom"
+      ],
+      "January": [
+        "Januari"
+      ],
+      "July": [
+        "Juli"
+      ],
+      "June": [
+        "Juni"
+      ],
+      "Last 7 days": [
+        "Senaste 7 dagarna"
+      ],
+      "Last month": [
+        "Förra månaden"
+      ],
+      "Last quarter": [
+        "Sista kvarteret"
+      ],
+      "Last week": [
+        "Förra veckan"
+      ],
+      "Last year": [
+        "Förra året"
+      ],
+      "March": [
+        "Mars"
+      ],
+      "May": [
+        "Maj"
+      ],
+      "Next month": [
+        "Nästa månad"
+      ],
+      "Next quarter": [
+        "Nästa kvartal"
+      ],
+      "Next week": [
+        "Nästa vecka"
+      ],
+      "Next year": [
+        "Nästa år"
+      ],
+      "No errors": [
+        "Inga fel"
+      ],
+      "Not between": [
+        "Inte mellan"
+      ],
+      "November": [
+        "November"
+      ],
+      "October": [
+        "Oktober"
+      ],
+      "Quarter 1": [
+        "Kvartal 1"
+      ],
+      "Quarter 2": [
+        "Kvartal 2"
+      ],
+      "Quarter 3": [
+        "Kvartal 3"
+      ],
+      "Quarter 4": [
+        "Kvartal 4"
+      ],
+      "September": [
+        "September"
+      ],
+      "Text contains": [
+        "Text innehåller"
+      ],
+      "Text is exactly": [
+        "Text är exakt"
+      ],
+      "Text is URL": [
+        "Text är URL"
+      ],
+      "This month": [
+        "Denna månad"
+      ],
+      "This quarter": [
+        "Detta kvartal"
+      ],
+      "This week": [
+        "Denna vecka"
+      ],
+      "This year": [
+        "Detta år"
+      ],
+      "Today": [
+        "Idag"
+      ],
+      "Tomorrow": [
+        "Imorgon"
+      ],
+      "Year to date": [
+        "År till datum"
+      ],
+      "Yesterday": [
+        "Igår"
+      ]
+    },
     "sheets_2025:Spreadsheet context menu": {
       "AI Quick Edit": [
         "AI-snabbredigering"
@@ -1079,6 +1293,14 @@
         "År"
       ]
     },
+    "sheets_2025:Spreadsheet customCurrencyFormatDialog": {
+      "Format": [
+        "Format"
+      ],
+      "Symbol": [
+        "Symbol"
+      ]
+    },
     "sheets_2025:Spreadsheet delete sheet dialog": {
       "Are you sure you want to delete ${ sheetName }?": [
         "Är du säker på att du vill ta bort ${ sheetName }?"
@@ -1105,6 +1327,11 @@
       ],
       "Your screen is too small to edit this spreadsheet. You’re in view-only mode. To make changes, please open this spreadsheet on a larger screen or expand your browser window.": [
         "Din skärm är för liten för att redigera detta kalkylblad. Du är i visningsläge. För att göra ändringar öppnar du kalkylbladet på en större skärm eller förstorar ditt webbläsarfönster."
+      ]
+    },
+    "sheets_2025:Spreadsheet editingDisabledButton": {
+      "Edit": [
+        "Redigera"
       ]
     },
     "sheets_2025:Spreadsheet editor": {
@@ -1581,6 +1808,9 @@
       "Bold": [
         "Fet"
       ],
+      "Border": [
+        "Ram"
+      ],
       "Choose border": [
         "Välj ram"
       ],
@@ -1601,6 +1831,9 @@
       ],
       "Default (${ defaultFont })": [
         "Standard (${ defaultFont })"
+      ],
+      "Fill color": [
+        "Fyllningsfärg"
       ],
       "Find": [
         "Hitta"
@@ -1665,6 +1898,9 @@
       "Strikethrough": [
         "Linje igenom"
       ],
+      "Text color": [
+        "Textfärg"
+      ],
       "Text wrapping": [
         "Radbrytning"
       ],
@@ -1728,6 +1964,29 @@
         "Sortera Ö → A"
       ]
     },
+    "sheets_2025:Spreadsheet filterByCondition": {
+      "None": [
+        "Ingen"
+      ]
+    },
+    "sheets_2025:Spreadsheet formatMenu": {
+      "Coming soon...": [
+        "Kommer snart …"
+      ]
+    },
+    "sheets_2025:Spreadsheet formulaBar": {
+      "Edit": [
+        "Redigera"
+      ],
+      "Remove": [
+        "Ta bort"
+      ]
+    },
+    "sheets_2025:Spreadsheet gridFooter": {
+      "Add": [
+        "Lägg till"
+      ]
+    },
     "sheets_2025:Spreadsheet insert link dialog": {
       "Apply": [
         "Tillämpa"
@@ -1763,23 +2022,8 @@
       "Cancel": [
         "Avbryt"
       ],
-      "column": [
-        "kolumn"
-      ],
-      "column width": [
-        "kolumnbredd"
-      ],
-      "Default": [
-        "Standard"
-      ],
       "OK": [
         "OK"
-      ],
-      "row": [
-        "rad"
-      ],
-      "row height": [
-        "radhöjd"
       ]
     },
     "sheets_2025:Spreadsheet sheet status bar": {
@@ -2217,6 +2461,26 @@
       ],
       "Table title": [
         "Tabellrubrik"
+      ]
+    },
+    "sheets_2025:Spreadsheet viewMenu": {
+      "1 column": [
+        "1 kolumn"
+      ],
+      "1 row": [
+        "1 rad"
+      ],
+      "2 columns": [
+        "2 kolumner"
+      ],
+      "2 rows": [
+        "2 rader"
+      ],
+      "No columns": [
+        "Inga kolumner"
+      ],
+      "No rows": [
+        "Inga rader"
       ]
     },
     "Title": {

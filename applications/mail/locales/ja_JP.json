@@ -4720,6 +4720,9 @@
       "Incorrect backup password. Please try again.": [
         "間違ったバックアップパスワードです。再度お試しください。"
       ],
+      "Incorrect password. Please try again.": [
+        "パスワードが正しくありません。もう一度お試しください。"
+      ],
       "Incorrect second password. Please try again.": [
         "セカンドパスワードが正しくありません。もう一度お試しください。"
       ],
@@ -5187,6 +5190,9 @@
       ],
       "Wrong password": [
         "パスワードが正しくありません"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "間違った回復用フレーズです。再度試すか他の回復手段を使用してください。"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "${ maxContacts }件以上の宛先へメールを送信することはできません"

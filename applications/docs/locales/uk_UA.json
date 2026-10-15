@@ -2950,14 +2950,8 @@
       "External invitations are temporarily disabled.": [
         "Зовнішні запрошення тимчасово вимкнено."
       ],
-      "External invitations are temporarily disabled. Please try again later": [
-        "Зовнішні запрошення тимчасово вимкнені. Спробуйте ще раз пізніше"
-      ],
       "Failed to change permissions settings": [
         "Не вдалося змінити дозволи налаштувань"
-      ],
-      "Failed to copy photo to album": [
-        "Не вдалося скопіювати фотографію до альбому"
       ],
       "Failed to create folder": [
         "Не вдалося створити папку"
@@ -3453,6 +3447,9 @@
       ],
       "Wrong billing address": [
         "Неправильна платіжна адреса"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Неправильна фраза відновлення. Спробуйте знову, або використайте інший спосіб відновлення."
       ],
       "You can create public links for your own files only": [
         "Ви можете створювати загальнодоступні посилання лише на свої власні файли"
@@ -7484,14 +7481,8 @@
       "\"${ fileName }\" shared": [
         "Надано спільний доступ до «${ fileName }»"
       ],
-      "\"${ name }\" deleted": [
-        "\"${ name }\" видалено"
-      ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" видалено зі смітника остаточно"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "\"${ name }\" не вдалося видалити"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "\"${ name }\" не вдалося остаточно видалити зі смітника"
@@ -7523,23 +7514,11 @@
         "Не вдалося розшифрувати ${ count } елементів",
         "Не вдалося розшифрувати ${ count } елемента"
       ],
-      "${ numberOfItems } item deleted": [
-        "${ numberOfItems } елемент видалено",
-        "${ numberOfItems } елементів видалено",
-        "${ numberOfItems } елементів видалено",
-        "${ numberOfItems } елементів видалено"
-      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } елемент видалено зі смітника остаточно",
         "${ numberOfItems } елементи видалено зі смітника остаточно",
         "${ numberOfItems } елементів видалено зі смітника остаточно",
         "${ numberOfItems } елементів видалено зі смітника остаточно"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems } елемент не вдалося видалити",
-        "${ numberOfItems } елементів не вдалося видалити",
-        "${ numberOfItems } елементів не вдалося видалити",
-        "${ numberOfItems } елементів не вдалося видалити"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems } елемент не вдалося остаточно видалити зі смітника",

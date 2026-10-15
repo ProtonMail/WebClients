@@ -4587,6 +4587,9 @@
       "Incorrect password": [
         "パスワードが正しくありません"
       ],
+      "Incorrect password. Please try again.": [
+        "パスワードが正しくありません。もう一度お試しください。"
+      ],
       "Incorrect recovery code. Please try again.": [
         "無効な回復用コードです。再度お試しください。"
       ],
@@ -9796,9 +9799,6 @@
       ],
       "Font size": [
         "フォントサイズ"
-      ],
-      "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
-        "${ DRIVE_SHORT_APP_NAME } と ${ DOCS_SHORT_APP_NAME } 向けです。"
       ],
       "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
         "${ DRIVE_SHORT_APP_NAME }、${ DOCS_SHORT_APP_NAME }、${ SHEETS_SHORT_APP_NAME }向け。"
