@@ -1071,6 +1071,9 @@
       "Editing item failed": [
         "Item gagal diedit"
       ],
+      "Email is not valid": [
+        "Email tidak valid"
+      ],
       "Empty CSV file": [
         "File CSV kosong"
       ],
@@ -1082,6 +1085,9 @@
       ],
       "Encrypted JSON not supported": [
         "JSON terenkripsi tidak didukung"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Masukkan nama pengguna tanpa domain (@example.com)"
       ],
       "Error reporting problem": [
         "Terjadi masalah saat melaporkan kesalahan"
@@ -1260,6 +1266,9 @@
       "Incorrect backup password. Please try again.": [
         "Kata sandi cadangan salah. Silakan coba lagi."
       ],
+      "Incorrect password. Please try again.": [
+        "Kata sandi salah. Silakan coba lagi."
+      ],
       "Incorrect second password. Please try again.": [
         "Kata sandi kedua salah. Silakan coba lagi."
       ],
@@ -1302,8 +1311,14 @@
       "Network error": [
         "Kesalahan jaringan"
       ],
+      "Not a valid number": [
+        "Nomor telepon tidak valid"
+      ],
       "Passphrase is incorrect": [
         "Frasa sandi salah"
+      ],
+      "Passwords do not match": [
+        "Kata sandi tidak sesuai"
       ],
       "Permission denied for ${ domainsJSX } website access.": [
         "Izin untuk akses situs web ${ domainsJSX } ditolak."
@@ -1371,6 +1386,9 @@
       "The ${ PASS_APP_NAME } desktop app should be logged in.": [
         "Aplikasi desktop ${ PASS_APP_NAME } harus masuk log."
       ],
+      "The email addresses do not match": [
+        "Alamat email tidak sesuai"
+      ],
       "The URL is in the list": [
         "URL ada dalam daftar ini"
       ],
@@ -1380,6 +1398,15 @@
       "This domain is already managed by your organization": [
         "Domain ini sudah dikelola oleh organisasi Anda"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Isi kolom ini melebihi panjang maksimal ${ maximumLength } karakter."
+      ],
+      "This field is required": [
+        "Kolom ini wajib diisi"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Kolom ini harus diisi dengan minimal ${ minimumLength } karakter."
+      ],
       "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
         "Hal ini dapat terjadi setelah Anda tidak memakai ${ PASS_SHORT_APP_NAME } dalam jangka waktu yang lama atau menghapus riwayat Safari Anda."
       ],
@@ -1388,6 +1415,9 @@
       ],
       "Trashing item failed": [
         "Item gagal dibuang"
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Cobalah untuk hanya menggunakan huruf, angka, dan tanda _.-"
       ],
       "Unable to generate an OTP code for this item": [
         "Tidak dapat membuat kode OTP untuk item ini"
@@ -1422,6 +1452,12 @@
       "Updating vault \"${ payload.content.name }\" failed": [
         "Gagal memperbarui brankas \"${ payload.content.name }\""
       ],
+      "Username must begin with a letter or digit": [
+        "Nama pengguna harus dimulai dengan huruf atau angka"
+      ],
+      "Username must end with a letter or digit": [
+        "Nama pengguna harus diakhiri dengan huruf atau angka"
+      ],
       "Vault \"${ payload.content.name }\" creation failed": [
         "Pembuatan brankas \"${ payload.content.name }\" gagal"
       ],
@@ -1445,6 +1481,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Kode PIN salah. Coba lagi."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Frasa pemulihan salah. Mohon coba lagi atau gunakan metode pemulihan lain."
       ],
       "Wrong second password": [
         "Kata sandi kedua salah"
@@ -5211,8 +5250,14 @@
       "OTP secret or URI is invalid": [
         "Rahasia OTP atau URI tidak valid"
       ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Kata sandi harus mengandung setidaknya ${ MIN_PASSWORD_LENGTH } karakter"
+      ],
       "Section name cannot be empty": [
         "Nama bagian tidak dapat dikosongkan"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Cobalah nama pengguna yang lebih pendek (maksimal ${ n } karakter)"
       ],
       "URL already exists": [
         "URL sudah ada"

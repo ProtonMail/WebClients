@@ -1111,6 +1111,9 @@
       "Editing item failed": [
         "Erro ao editar o item"
       ],
+      "Email is not valid": [
+        "O e-mail não é válido."
+      ],
       "Empty CSV file": [
         "Arquivo CSV vazio"
       ],
@@ -1122,6 +1125,9 @@
       ],
       "Encrypted JSON not supported": [
         "JSON criptografado não suportado"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Insira seu nome de usuário sem o domínio (@example.com)"
       ],
       "Error reporting problem": [
         "Erro ao relatar o problema"
@@ -1310,6 +1316,9 @@
       "Incorrect backup password. Please try again.": [
         "Senha de backup incorreta. Tente novamente."
       ],
+      "Incorrect password. Please try again.": [
+        "A senha não é válida. Tente novamente."
+      ],
       "Incorrect second password. Please try again.": [
         "Segunda senha incorreta. Tente novamente."
       ],
@@ -1352,8 +1361,14 @@
       "Network error": [
         "Erro de rede"
       ],
+      "Not a valid number": [
+        "Não é um número válido"
+      ],
       "Passphrase is incorrect": [
         "A frase secreta está incorreta"
+      ],
+      "Passwords do not match": [
+        "As senhas não correspondem"
       ],
       "Permission denied for ${ domainsJSX } website access.": [
         "Permissão negada para acessar o site de ${ domainsJSX }."
@@ -1427,6 +1442,9 @@
       "The ${ PASS_APP_NAME } desktop app should be logged in.": [
         "O aplicativo para computador do ${ PASS_APP_NAME } deve estar iniciado a sessão."
       ],
+      "The email addresses do not match": [
+        "Os endereços de e-mail não correspondem."
+      ],
       "The URL is in the list": [
         "A URL está na lista"
       ],
@@ -1435,6 +1453,15 @@
       ],
       "This domain is already managed by your organization": [
         "Esse domínio já é gerenciada pela sua organização"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Este campo excede o máximo de ${ maximumLength } caracteres."
+      ],
+      "This field is required": [
+        "Este campo é obrigatório"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Este campo exige um mínimo de ${ minimumLength } caracteres."
       ],
       "This invite is no longer available": [
         "Este convite não está mais disponível"
@@ -1447,6 +1474,9 @@
       ],
       "Trashing item failed": [
         "Erro ao mover item para a lixeira"
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Tente usar apenas letras, números e _.-"
       ],
       "Unable to generate an OTP code for this item": [
         "Não é possível gerar um código OTP para este item"
@@ -1484,6 +1514,12 @@
       "Updating vault \"${ payload.content.name }\" failed": [
         "Erro ao atualizar o cofre \"${ payload.content.name }\""
       ],
+      "Username must begin with a letter or digit": [
+        "O nome de usuário deve começar com uma letra ou dígito"
+      ],
+      "Username must end with a letter or digit": [
+        "O nome de usuário deve terminar com uma letra ou dígito"
+      ],
       "Vault \"${ payload.content.name }\" creation failed": [
         "Erro ao criar o cofre \"${ payload.content.name }\""
       ],
@@ -1507,6 +1543,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Código PIN errado. Tente novamente."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Frase de recuperação errada. Tente novamente ou use outro método de autenticação."
       ],
       "Wrong second password": [
         "Segunda senha incorreta"
@@ -2278,7 +2317,8 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outro cofre apagará seu link seguro."
+        "Movendo um item para outro cofre apagará seu link seguro.",
+        "Movendo item para outro cofre apagará seus links seguros."
       ],
       "Moving items": [
         "Movendo itens"
@@ -3074,6 +3114,9 @@
       "${ hours } hour": [
         "${ hours } hora",
         "${ hours } horas"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } caracteres"
       ],
       "${ minutes } minute": [
         "${ minutes } minutos",
@@ -4615,6 +4658,9 @@
       "This URL will NOT be blocked from autofill": [
         "Esta URL NÃO será bloqueada no preenchimento automático"
       ],
+      "URL doesn't match the rule": [
+        "URL não corresponde a regra"
+      ],
       "URL matches the rule": [
         "A URL corresponde à regra"
       ]
@@ -5413,8 +5459,16 @@
       "OTP secret or URI is invalid": [
         "A chave secreta OTP ou o URL não funciona."
       ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "A senha deve conter ao menos ${ MIN_PASSWORD_LENGTH } caractere",
+        "A senha deve conter ao menos ${ MIN_PASSWORD_LENGTH } caracteres"
+      ],
       "Section name cannot be empty": [
         "O nome da seção não pode estar vazio"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Tente um nome de usuário mais curto (máximo de ${ n } caractere)",
+        "Tente um nome de usuário mais curto (máximo de ${ n } caracteres)"
       ],
       "URL already exists": [
         "URL já existe"
