@@ -2399,6 +2399,9 @@
       "Incorrect backup password. Please try again.": [
         "Parolă de rezervă incorectă. Reîncercați."
       ],
+      "Incorrect password. Please try again.": [
+        "Parolă incorectă. Reîncercați."
+      ],
       "Incorrect second password. Please try again.": [
         "Parolă secundară incorectă. Încercați din nou."
       ],
@@ -2548,6 +2551,9 @@
       ],
       "Wrong billing address": [
         "Adresă de facturare incorectă."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Frază de recuperare greșită. Încercați din nou sau utilizați o altă metodă de recuperare."
       ]
     },
     "Error message": {
@@ -4953,6 +4959,9 @@
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Metoda de plată este necesară pentru activarea abonamentului după încheierea perioadei de evaluare."
       ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Schimbarea planului este incompatibilă din următoarele motive:"
+      ],
       "Please close extra wallet accounts before changing your plan.": [
         "Închideți conturile suplimentare de portofele înainte de a vă schimba planul."
       ],
@@ -4961,6 +4970,9 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactivați mai întâi abonamentul pentru a reduce numărul de module."
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Numărul de licențe Proton Meet trebuie să corespundă numărului de membri."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Prețul de reînnoire poate fi modificat în conformitate cu informațiile din ${ termsAndConditionsLink }."
@@ -5040,8 +5052,14 @@
       "This payment method will become your new default for all future renewals.": [
         "Această metodă de plată va deveni noua metodă implicită pentru toate reînnoirile viitoare."
       ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Acest plan nu acceptă funcțiile gestionate din contul deținut."
+      ],
       "This plan doesn’t support the members on your account.": [
         "Acest plan nu oferă suport pentru membrii din contul deținut."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Această abonare nu poate fi finalizată momentan. Reîncercați."
       ],
       "Timeout exceeded": [
         "Limită de timp depășită"

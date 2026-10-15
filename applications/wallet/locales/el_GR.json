@@ -2382,6 +2382,9 @@
       "Incorrect backup password. Please try again.": [
         "Εσφαλμένος εφεδρικός κωδικός πρόσβασης. Παρακαλούμε προσπαθήστε ξανά."
       ],
+      "Incorrect password. Please try again.": [
+        "Λανθασμένος κωδικός. Παρακαλούμε δοκιμάστε ξανά."
+      ],
       "Incorrect second password. Please try again.": [
         "Λανθασμένος δεύτερος κωδικός πρόσβασης. Παρακαλούμε προσπαθήστε ξανά."
       ],
@@ -2531,6 +2534,9 @@
       ],
       "Wrong billing address": [
         "Λανθασμένη διεύθυνσης χρέωσης"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Λανθασμένη φράση ανάκτησης. Δοκιμάστε ξανά ή χρησιμοποιήστε άλλη μέθοδο ανάκτησης."
       ]
     },
     "Error message": {
@@ -5798,6 +5804,9 @@
       ],
       "Billing cycle": [
         "Κύκλος χρέωσης"
+      ],
+      "Black Friday": [
+        "Black Friday"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Ακύρωση συνδρομής ${ MAIL_SHORT_APP_NAME }"
