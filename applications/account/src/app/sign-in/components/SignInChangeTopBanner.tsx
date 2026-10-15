@@ -15,15 +15,18 @@ import { IcBell } from '@proton/icons/icons/IcBell';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
+import { CredentialsContext } from '../steps/credentials/CredentialsContext';
+import { selectStartsOnOneStepSignIn } from '../steps/credentials/state-machine/credentialsStateMachine';
 import signInChangeGif from './sign-in-change.gif';
 
 /** Announces the upcoming two-step sign-in (username, then password), above the credentials screens. */
 export const SignInChangeTopBanner = () => {
+    const startsOnOneStepSignIn = CredentialsContext.useSelector(selectStartsOnOneStepSignIn);
     const [isDismissed, setIsDismissed] = useLocalState(false, 'sign-in-change-banner-dismissed');
     const [modalProps, setModalOpen, renderModal] = useModalState();
     const theme = useTheme();
 
-    if (isDismissed) {
+    if (!startsOnOneStepSignIn || isDismissed) {
         return null;
     }
 

@@ -113,6 +113,20 @@ describe('the credentials screens', () => {
         jest.mocked(useFlag).mockReset();
     });
 
+    it.each([
+        ['one-page password sign-in', { type: AuthType.Srp }, true],
+        ['username-first sign-in', { type: AuthType.Auto }, false],
+        ['second password step', { type: AuthType.AutoSrp, username: 'member@example.com' }, false],
+        ['SSO sign-in', { type: AuthType.ExternalSSO }, false],
+    ] as const)('shows the sign-in change banner only for %s', (_, authTypeData, showsBanner) => {
+        renderForm({ authTypeData });
+        if (showsBanner) {
+            expect(screen.getByTestId('sign-in-change-banner')).toBeInTheDocument();
+        } else {
+            expect(screen.queryByTestId('sign-in-change-banner')).not.toBeInTheDocument();
+        }
+    });
+
     it('asks for username and password, then submits them defaulting remember to true', async () => {
         const { authenticateWithPassword } = renderForm();
         const user = userEvent.setup();
@@ -136,11 +150,13 @@ describe('the credentials screens', () => {
         const { authenticateWithPassword } = renderForm({ authTypeData: { type: AuthType.Auto } });
         const user = userEvent.setup();
 
+        expect(screen.queryByTestId('sign-in-change-banner')).not.toBeInTheDocument();
         expect(screen.getByLabelText('Keep me signed in')).toBeChecked();
         await user.click(screen.getByLabelText('Keep me signed in'));
         await user.type(screen.getByLabelText('Email or username'), 'user@example.com');
         await user.click(screen.getByRole('button', { name: 'Continue' }));
         await user.type(await screen.findByLabelText('Enter your password'), 'secret');
+        expect(screen.queryByTestId('sign-in-change-banner')).not.toBeInTheDocument();
         await user.click(screen.getByRole('button', { name: 'Sign in' }));
 
         await waitFor(() =>
