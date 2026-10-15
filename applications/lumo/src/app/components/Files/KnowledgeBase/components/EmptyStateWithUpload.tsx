@@ -108,10 +108,10 @@ export const EmptyStateWithUpload = ({
                 })}
             </div>
             <div className="flex flex-column gap-2">
-                <h3 className="m-0 text-lg text-bold">{c('collider_2025: Info').t`No files or artifacts yet`}</h3>
+                <h3 className="m-0 text-lg text-bold">{c('collider_2025: Info').t`No files or creations yet`}</h3>
                 <p className="m-0 color-weak">
                     {c('collider_2025: Info')
-                        .t`Upload files or add them from ${DRIVE_APP_NAME} to give ${LUMO_SHORT_APP_NAME} context. ${LUMO_SHORT_APP_NAME} generated Artifacts in this chat will appear here.`}
+                        .t`Upload files or add them from ${DRIVE_APP_NAME} to give ${LUMO_SHORT_APP_NAME} context. ${LUMO_SHORT_APP_NAME} creations from this chat will appear here.`}
                 </p>
             </div>
             <div className="flex flex-row flex-wrap items-center justify-center gap-2">

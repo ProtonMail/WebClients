@@ -16,7 +16,7 @@ const ArtifactCreateSpotlightContent = () => {
     return (
         <div className="flex flex-column flex-nowrap items-start">
             <p className="text-lg text-bold m-0 mb-1">{c('collider_2025: Spotlight')
-                .t`Create artifacts with ${LUMO_SHORT_APP_NAME}`}</p>
+                .t`Create with ${LUMO_SHORT_APP_NAME}`}</p>
             <p className="m-0 text-sm color-weak">{c('collider_2025: Spotlight')
                 .t`Turn ideas into documents, code, and more. Open Tools to get started.`}</p>
         </div>

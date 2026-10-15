@@ -7,7 +7,7 @@ export const ArtifactChipLoading = () => {
         <ArtifactChipShell
             type="document"
             className="artifact-chip--loading mt-2 mb-4"
-            title={c('collider_2025:Info').t`Creating artifact…`}
+            title={c('collider_2025:Info').t`Creating…`}
             subtitle={<span className="text-xs color-weak">{c('collider_2025:Info').t`Preparing…`}</span>}
         />
     );

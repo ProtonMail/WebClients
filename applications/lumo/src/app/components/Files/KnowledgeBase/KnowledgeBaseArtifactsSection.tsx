@@ -24,7 +24,7 @@ export const KnowledgeBaseArtifactsSection = ({ artifacts, onOpenArtifact }: Kno
     return (
         <div className="mb-6 w-full min-w-0 max-w-full">
             <h3 className="text-sm text-bold mb-1">
-                {c('collider_2025: Info').t`Artifacts`}{' '}
+                {c('collider_2025: Info').t`Creations`}{' '}
                 <span className="color-weak text-normal">{artifacts.length}</span>
             </h3>
             <p className="text-xs color-weak mb-3">
