@@ -303,9 +303,6 @@
       "Create meeting": [
         "Criar reunião"
       ],
-      "Debug devices": [
-        "Dispositivos de depuração"
-      ],
       "Debug overlay": [
         "Sobreposição de depuração"
       ],
@@ -435,6 +432,12 @@
       "Join": [
         "Entrar"
       ],
+      "Join and leave sounds": [
+        "Sons de entrada e saída"
+      ],
+      "Join in browser": [
+        "Participar no navegador"
+      ],
       "Join meeting": [
         "Entrar na reunião"
       ],
@@ -464,6 +467,9 @@
       ],
       "Lower hand": [
         "Baixar mão"
+      ],
+      "Meeting debug": [
+        "Depuração da reunião"
       ],
       "Meeting info": [
         "Informação da reunião:"
@@ -698,6 +704,9 @@
       "Start meeting": [
         "Iniciar reunião"
       ],
+      "Start meeting in browser": [
+        "Iniciar reunião no navegador"
+      ],
       "Start new meeting": [
         "Iniciar nova reunião"
       ],
@@ -849,6 +858,9 @@
       ],
       "Incoming video": [
         "Vídeo recebido"
+      ],
+      "Join and leave sounds": [
+        "Sons de entrada e saída"
       ],
       "Leave Meeting": [
         "Sair da reunião"
@@ -1940,6 +1952,9 @@
       ]
     },
     "Error": {
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Uma mensagem é necessária ao denunciar violação de direitos autorais ou dados roubados"
+      ],
       "An error occurred": [
         "Ocorreu um erro"
       ],
@@ -1954,6 +1969,9 @@
       ],
       "Cannot download a folder": [
         "Não é possível baixar uma pasta"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Não é possível mover o item sem um nome válido, por favor, renomeie o item primeiro"
       ],
       "Cannot share root folder": [
         "Não é possível compartilhar a pasta raiz"
@@ -1972,6 +1990,9 @@
       ],
       "Could not add this background. Please try again.": [
         "Não foi possível adicionar este plano de fundo. Tente novamente."
+      ],
+      "Could not find an available name": [
+        "Não foi possível encontrar um nome disponível"
       ],
       "Could not load sharing details": [
         "Não foi possível carregar os detalhes do compartilhamento"
@@ -2090,6 +2111,9 @@
       "Failed to edit room name": [
         "Falha ao editar nome da sala"
       ],
+      "Failed to get inviter keys": [
+        "Não conseguiu obter as chaves do convidado"
+      ],
       "Failed to join meeting. Please try again later.": [
         "Falha ao entrar na reunião. Tente novamente mais tarde."
       ],
@@ -2153,6 +2177,9 @@
       "Incorrect backup password. Please try again.": [
         "Senha de backup incorreta. Tente novamente."
       ],
+      "Incorrect password. Please try again.": [
+        "A senha não é válida. Tente novamente."
+      ],
       "Incorrect second password. Please try again.": [
         "Segunda senha incorreta. Tente novamente."
       ],
@@ -2174,9 +2201,6 @@
       "Legacy public link cannot be updated. Please re-create a new public link.": [
         "O link público antigo não pode ser atualizado. Crie um novo link público."
       ],
-      "Live captions aren't working. Try turning them off and on again.": [
-        "As legendas ao vivo não estão funcionando. Tente desativar e ativar de novo."
-      ],
       "Live captions couldn't be started.": [
         "Não foi possível iniciar as legendas ao vivo"
       ],
@@ -2188,6 +2212,9 @@
       ],
       "Microphone access is blocked. Allow it in your browser settings.": [
         "O acesso ao microfone está bloqueado. Permita-o nas configurações do seu navegador."
+      ],
+      "Microphone not detected": [
+        "Microfone não detectado"
       ],
       "Missing inviter email": [
         "E-mail de quem fez o convite ausente"
@@ -2219,6 +2246,9 @@
       ],
       "Not a valid number": [
         "Não é um número válido"
+      ],
+      "Only admins can convert external invitations": [
+        "Somente os administradores podem converter convites externos"
       ],
       "Operation aborted": [
         "Operação abortada"
@@ -2343,6 +2373,9 @@
       "This image could not be read. Pick another one.": [
         "Esta imagem não pôde ser lida. Escolha outra."
       ],
+      "This item has no image preview": [
+        "Este item não tem visualização de imagem"
+      ],
       "This item is no longer shared": [
         "Este item não está mais sendo compartilhado"
       ],
@@ -2358,8 +2391,14 @@
       "Too many server requests, please try again later": [
         "Muitas solicitações ao servidor, tente novamente mais tarde"
       ],
+      "Try turning live captions off and on again.": [
+        "Tente desativar e reativar as legendas ao vivo."
+      ],
       "Try using only letters, numerals, and _.-": [
         "Tente usar apenas letras, números e _.-"
+      ],
+      "Unable to generate captions": [
+        "Não foi possível gerar legendas"
       ],
       "Unknown error": [
         "Erro desconhecido"
@@ -2379,14 +2418,26 @@
       "We couldn’t send a verification code using this method.": [
         "Não conseguimos enviar um código de verificação usando este método."
       ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Frase de recuperação errada. Tente novamente ou use outro método de autenticação."
+      ],
       "You can create public links for your own files only": [
         "Você pode criar links públicos apenas para seus próprios arquivos"
+      ],
+      "You can only leave items that are shared with you": [
+        "Você só pode deixar itens compartilhados com você"
+      ],
+      "You can only upload a new version to a file": [
+        "Você só pode carregar uma nova versão para um arquivo"
       ],
       "You can update a public link for your own files only": [
         "Você pode atualizar um link público apenas para seus próprios arquivos"
       ],
       "You do not have access to this item": [
         "Você não tem acesso a esse item"
+      ],
+      "You do not have access to this shared item": [
+        "Você não tem acesso a esse item compartilhado"
       ],
       "You have reached the maximum number of custom backgrounds.": [
         "Você atingiu o número máximo de planos de fundos personalizados."
@@ -2592,6 +2643,9 @@
       "${ MEET_APP_NAME } needs microphone access so others can hear you during the call. You can turn it off at any time.": [
         "O ${ MEET_APP_NAME } precisa de acesso ao microfone para que os outros possam ouvir você durante a chamada. Você pode desativar essa função a qualquer momento."
       ],
+      "${ MEET_APP_NAME } needs screen recording access so you can share your screen during the call. After you allow it, macOS will ask you to reopen the app.": [
+        "${ MEET_APP_NAME } precisa de acesso de gravação de tela para que você possa compartilhar sua tela durante a chamada. Após permitir, o macOS solicitará que você reabra o aplicativo."
+      ],
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "O ${ MEET_APP_NAME } precisa do WebRTC para funcionar. Atualize seu navegador ou dispositivo para uma versão que tenha suporte para WebRTC, tente usar outro navegador ou desative todas as extensões que possam estar bloqueando-o."
       ],
@@ -2662,11 +2716,17 @@
       "Allow camera access to preview your background": [
         "Permitir que a câmera acesse o seu plano de fundo para pré-visualizá-lo"
       ],
+      "Already in the app? You can close this tab.": [
+        "Já está no aplicativo? Você pode fechar esta guia."
+      ],
       "Anonymous ${ particle } ${ participantNumber }": [
         "Anônimo ${ particle } ${ participantNumber }"
       ],
       "Anyone with the link can join immediately": [
         "Qualquer pessoa que tenha o link pode participar imediatamente"
+      ],
+      "App didn't open?": [
+        "O aplicativo não abriu?"
       ],
       "Approve participants before they can join": [
         "Aprovar os participantes antes que eles possam entrar"
@@ -2710,8 +2770,8 @@
       "Camera permission denied": [
         "Permissão da câmera negada"
       ],
-      "Captions are on": [
-        "As legendas estão ativadas"
+      "Captions on": [
+        "Legendas ativadas"
       ],
       "Changes are staged. Apply to rebuild the preview with the new constants.": [
         "As alterações foram preparadas. Aplique para recriar a pré-visualização com as novas constantes."
@@ -2929,6 +2989,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Carregando o calendário, aguarde. Você será redirecionado à nossa plataforma de agendamento Calendly numa nova guia."
       ],
+      "Loading captions…": [
+        "Carregando legendas…"
+      ],
       "Loading meeting details...": [
         "Carregando detalhes da reunião..."
       ],
@@ -3073,6 +3136,9 @@
       "Now using ${ first } and ${ second }.": [
         "Agora usando ${ first } e ${ second }."
       ],
+      "Now using ${ first }, ${ second } and ${ third }.": [
+        "Agora usando ${ first }, ${ second } e ${ third }."
+      ],
       "Now using ${ first }.": [
         "Agora usando ${ first }."
       ],
@@ -3199,11 +3265,20 @@
       "Selected devices have disconnected.": [
         "Os dispositivos selecionados foram desconectados."
       ],
+      "Selected microphone and camera have disconnected.": [
+        "O microfone e a câmera selecionados foram desconectados."
+      ],
       "Selected microphone and speaker have disconnected.": [
         "O microfone e o alto-falante selecionados foram desconectados."
       ],
+      "Selected microphone has disconnected.": [
+        "O microfone selecionado foi desconectado."
+      ],
       "Selected speaker and camera have disconnected.": [
         "O alto-falante e a câmera selecionados foram desconectados."
+      ],
+      "Selected speaker has disconnected.": [
+        "O alto-falante selecionado foi desconectado."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Os servidores estão inacessíveis. Tente novamente em alguns minutos"
@@ -3343,6 +3418,9 @@
       "Virtual background initializing": [
         "Inicializando plano de fundo virtual"
       ],
+      "Waiting for speech…": [
+        "Aguardando para falar…"
+      ],
       "Waiting for the host to admit you. The host has been notified that you're waiting.": [
         "Aguardando o organizador permitir sua entrada. O organizador foi notificado de que você está aguardando."
       ],
@@ -3387,6 +3465,9 @@
       ],
       "You can now return to the application to continue": [
         "Agora você pode retornar ao aplicativo para continuar"
+      ],
+      "You can save up to ${ max } of your own backgrounds.": [
+        "Você pode salvar até ${ max } de seus próprios papeis de parede."
       ],
       "You can still turn off your microphone and camera anytime in the meeting": [
         "Você ainda pode desligar seu microfone e câmera a qualquer momento na reunião."
@@ -3612,6 +3693,9 @@
       ],
       "Live caption agent": [
         "Agente de legenda ao vivo"
+      ],
+      "Live captions": [
+        "Legendas ao vivo"
       ],
       "Manage recordings": [
         "Gerenciar gravações"
