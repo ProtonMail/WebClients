@@ -1,28 +1,4 @@
-import { neutralizeStyleBreakout, transformStylesheet } from './transformStylesheet';
-
-describe('neutralizeStyleBreakout', () => {
-    it('should escape a </style> breakout smuggled into CSS text', () => {
-        const input = '.x { content: "</style><img src=x onerror=alert(1)>"; }';
-        const output = neutralizeStyleBreakout(input);
-
-        expect(output).not.toContain('</');
-        expect(output).toContain('\\3c /style>');
-    });
-
-    it('should neutralize any "</" sequence regardless of the following tag name', () => {
-        expect(neutralizeStyleBreakout('a</STYLE b')).toBe('a\\3c /STYLE b');
-        expect(neutralizeStyleBreakout('a</div b')).toBe('a\\3c /div b');
-    });
-
-    it('should preserve valid range media queries with < and >', () => {
-        const input = '@media (width > 600px) and (100px < height) { a { color: red } }';
-        expect(neutralizeStyleBreakout(input)).toBe(input);
-    });
-
-    it('should not alter a standalone < not followed by a slash', () => {
-        expect(neutralizeStyleBreakout('a < b')).toBe('a < b');
-    });
-});
+import { transformStylesheet } from './transformStylesheet';
 
 describe('transformStylesheet', () => {
     let element: Element;

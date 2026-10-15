@@ -1,7 +1,7 @@
 import type { Config } from 'dompurify';
 import DOMPurify from 'dompurify';
 
-import { escapeForbiddenStyle, escapeURLinStyle, unescape } from './escape';
+import { escapeForbiddenStyle, escapeURLinStyle, neutralizeStyleBreakout, unescape } from './escape';
 
 const toMap = (list: string[]) =>
     list.reduce<{ [key: string]: true | undefined }>((acc, key) => {
@@ -151,8 +151,9 @@ const beforeSanitizeElements = (node: Node) => {
     const element = node as HTMLElement;
 
     if (element.tagName.toUpperCase() === 'STYLE') {
-        const escaped = escapeForbiddenStyle(escapeURLinStyle(element.innerHTML || ''));
-        element.innerHTML = escaped;
+        // escapeForbiddenStyle decodes every HTML/CSS escape, so its output can contain a literal `</style>`
+        const escaped = neutralizeStyleBreakout(escapeForbiddenStyle(escapeURLinStyle(element.innerHTML || '')));
+        element.textContent = escaped;
     }
 
     if (element.tagName.toUpperCase() === 'BODY') {
