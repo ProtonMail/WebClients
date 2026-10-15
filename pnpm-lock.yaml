@@ -6245,7 +6245,7 @@ importers:
     dependencies:
       '@ariakit/react':
         specifier: 0.4.29
-        version: 0.4.29(react-dom@19.3.0(react@18.3.1))(react@18.3.1)
+        version: 0.4.29(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@lexical/yjs':
         specifier: 0.31.2
         version: 0.31.2(yjs@13.6.27)
@@ -6285,6 +6285,9 @@ importers:
       react:
         specifier: ^18.3.1
         version: 18.3.1
+      react-dom:
+        specifier: ^18.3.1
+        version: 18.3.1(react@18.3.1)
       ttag:
         specifier: ^1.8.12
         version: 1.8.12
@@ -29531,17 +29534,6 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@ariakit/react-components@0.1.2(react-dom@19.3.0(react@18.3.1))(react@18.3.1)':
-    dependencies:
-      '@ariakit/components': 0.1.2
-      '@ariakit/react-store': 0.1.2(react@18.3.1)
-      '@ariakit/react-utils': 0.1.2(react@18.3.1)
-      '@ariakit/store': 0.1.2
-      '@ariakit/utils': 0.1.2
-      '@floating-ui/dom': 1.8.0
-      react: 18.3.1
-      react-dom: 19.3.0(react@18.3.1)
-
   '@ariakit/react-components@0.3.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@ariakit/components': 0.1.5
@@ -29586,12 +29578,6 @@ snapshots:
       '@ariakit/react-components': 0.1.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
-
-  '@ariakit/react@0.4.29(react-dom@19.3.0(react@18.3.1))(react@18.3.1)':
-    dependencies:
-      '@ariakit/react-components': 0.1.2(react-dom@19.3.0(react@18.3.1))(react@18.3.1)
-      react: 18.3.1
-      react-dom: 19.3.0(react@18.3.1)
 
   '@ariakit/store@0.1.2':
     dependencies:
@@ -41350,13 +41336,13 @@ snapshots:
       - supports-color
     optional: true
 
-  electron-log@5.4.4(electron@44.4.3(supports-color@11.0.0)):
-    optionalDependencies:
-      electron: 44.4.3(supports-color@11.0.0)
-
   electron-log@5.4.4(electron@43.7.6(supports-color@11.0.0)):
     optionalDependencies:
       electron: 43.7.6(supports-color@11.0.0)
+
+  electron-log@5.4.4(electron@44.4.3(supports-color@11.0.0)):
+    optionalDependencies:
+      electron: 44.4.3(supports-color@11.0.0)
 
   electron-playwright-helpers@1.8.2:
     dependencies:
@@ -41376,19 +41362,19 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  electron-store@8.2.0(electron@44.4.3(supports-color@11.0.0)):
-    dependencies:
-      conf: 10.2.0
-      type-fest: 2.19.0
-    optionalDependencies:
-      electron: 44.4.3(supports-color@11.0.0)
-
   electron-store@8.2.0(electron@43.7.6(supports-color@11.0.0)):
     dependencies:
       conf: 10.2.0
       type-fest: 2.19.0
     optionalDependencies:
       electron: 43.7.6(supports-color@11.0.0)
+
+  electron-store@8.2.0(electron@44.4.3(supports-color@11.0.0)):
+    dependencies:
+      conf: 10.2.0
+      type-fest: 2.19.0
+    optionalDependencies:
+      electron: 44.4.3(supports-color@11.0.0)
 
   electron-to-chromium@1.5.442: {}
 
@@ -48384,11 +48370,6 @@ snapshots:
       loose-envify: 1.4.0
       react: 18.3.1
       scheduler: 0.23.2
-
-  react-dom@19.3.0(react@18.3.1):
-    dependencies:
-      react: 18.3.1
-      scheduler: 0.28.0
 
   react-dom@19.3.0(react@19.3.0):
     dependencies:
