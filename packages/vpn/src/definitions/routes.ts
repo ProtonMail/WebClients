@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { getCanShowSignInRestriction } from '@proton/account/signInRestriction/helpers';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { IcArrowDownToSquare } from '@proton/icons/icons/IcArrowDownToSquare';
 import { IcBrandProtonVpnFilled } from '@proton/icons/icons/IcBrandProtonVpnFilled';
@@ -436,6 +437,17 @@ const routesDefinition = {
                             text: DARK_WEB_MONITORING_NAME,
                             to: 'breaches',
                             isVisible: ({ context }) => !getIsSSOVPNOnlyAccount(context.user),
+                        },
+                        {
+                            id: 'my-account.security-and-privacy.sign-in-protection',
+                            text: () => c('Title').t`Sign-in protection`,
+                            to: 'sign-in-protection',
+                            isVisible: ({ context }) =>
+                                !!context.flags.ShowSignInRestrictionToggle &&
+                                getCanShowSignInRestriction({
+                                    user: context.user,
+                                    entitlements: context.entitlements,
+                                }),
                         },
                         {
                             id: 'my-account.security-and-privacy.devices',
