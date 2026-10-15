@@ -194,6 +194,44 @@ describe('protonizer - body style sanitization', () => {
     });
 });
 
+describe('protonizer - style element breakout', () => {
+    it.each([
+        '\\3c/style>',
+        '\\00003c/style>',
+        '\\3c/style\\3e',
+        '&lt;/style>',
+        '&#60;/style>',
+        '&#x3c;/style>',
+        '&amp;#x3c;/style>',
+    ])('should not let %s in a body style break out once serialized', (breakout) => {
+        const css = `.x{content:"${breakout}\\3cimg src=x onerror=\\22window.__PWN=1\\22>"}`;
+        const html = `<html><head></head><body><style>${css}</style><p>Hello</p></body></html>`;
+        const result = protonizer(html, true);
+        const body = result.querySelector('body') as HTMLElement;
+
+        expect(body.innerHTML).not.toMatch(/<\/style/i);
+
+        const rendered = new DOMParser().parseFromString(`<body>${body.innerHTML}</body>`, 'text/html');
+        expect(rendered.querySelector('img')).toBeNull();
+        expect(rendered.querySelector('p')?.textContent).toBe('Hello');
+    });
+
+    it('should re-escape a decoded </style> in the style text instead of writing it literally', () => {
+        const html = '<html><head></head><body><style>.x{content:"\\3c/style>"}</style></body></html>';
+        const result = protonizer(html, true);
+
+        expect(result.querySelector('style')?.textContent).toBe('.x{content:"\\3c /style>"}');
+    });
+
+    it('should keep legitimate CSS in a style element untouched', () => {
+        const css = '@media (width > 600px) { .a { color: red; } }';
+        const html = `<html><head><style>${css}</style></head><body></body></html>`;
+        const result = protonizer(html, true);
+
+        expect(result.querySelector('style')?.textContent).toBe(css);
+    });
+});
+
 describe('sanitizeComposerReply', () => {
     it('should remove all <style> tags from the input element', () => {
         const input = document.createElement('div');

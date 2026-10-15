@@ -179,6 +179,18 @@ export const escapeForbiddenStyle = (style: string): string => {
     return parsedStyle;
 };
 
+/**
+ * `<style>` is a rawtext element: a literal `</style>` in its text terminates it when the
+ * document is serialized and re-parsed (mXSS). Escape sanitizers and the browser's CSSOM
+ * `cssText` serialization both decode CSS escapes (e.g. `\3c` -> `<`) without re-escaping
+ * them for that context.
+ *
+ * Only `</` can close a `<style>` rawtext element, so we re-escape just that `<` back
+ * to a CSS hex escape. This renders identically to `<` inside CSS string values while
+ * preserving valid range media queries such as `@media (width > 600px)`.
+ */
+export const neutralizeStyleBreakout = (css: string) => css.replace(/<(?=\/)/g, '\\3c ');
+
 const HTML_ENTITIES_TO_REMOVE_CHAR_CODES: number[] = [
     9, // Tab : &Tab; - &#x00009; - &#9;
     10, // New line : &NewLine; - &#x0000A; - &#10;
