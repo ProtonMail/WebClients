@@ -2832,14 +2832,8 @@
       "External invitations are temporarily disabled.": [
         "Zunanja povabila so začasno onemogočena."
       ],
-      "External invitations are temporarily disabled. Please try again later": [
-        "Zunanja povabila so začasno onemogočena. Poskusite znova pozneje."
-      ],
       "Failed to change permissions settings": [
         "Ni uspelo spremeniti nastavitev dovoljenj"
-      ],
-      "Failed to copy photo to album": [
-        "Ni mogoče kopirati fotografije v album"
       ],
       "Failed to create public share node": [
         "Ni uspelo ustvariti vozlišča javne povezave"
@@ -3257,6 +3251,9 @@
       ],
       "Wrong billing address": [
         "Napačen naslov za izstavitev računa"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Napačna obnovitvena fraza. Poskusite znova ali uporabite drug način obnovitve."
       ],
       "You can create public links for your own files only": [
         "Javne povezave lahko ustvarjate samo do lastnih datotek"
@@ -7126,14 +7123,8 @@
       ]
     },
     "Notification": {
-      "\"${ name }\" deleted": [
-        "'${ name }' izbrisano"
-      ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name } je trajno izbrisan iz smetnjaka"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "${ name } ni bilo mogoče izbrisati"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "\"${ name } ni bilo mogoče trajno izbrisati iz smetnjaka"
@@ -7165,23 +7156,11 @@
         "${ count } predmetov ni bilo mogoče dešifrirati",
         "${ count } predmetov ni bilo mogoče dešifrirati"
       ],
-      "${ numberOfItems } item deleted": [
-        "${ numberOfItems } predmet izbrisan",
-        "${ numberOfItems } predmeta izbrisana",
-        "${ numberOfItems } predmeti izbrisani",
-        "${ numberOfItems } predmetov izbrisanih"
-      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } predmet je trajno izbrisan iz smetnjaka",
         "${ numberOfItems } predmeta sta trajno izbrisana iz smetnjaka",
         "${ numberOfItems } predmeti so trajno izbrisani iz smetnjaka",
         "${ numberOfItems } predmeti so trajno izbrisani iz smetnjaka"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems } predmeta ni bilo mogoče izbrisati",
-        "${ numberOfItems } predmetov ni bilo mogoče izbrisati",
-        "${ numberOfItems } predmetov ni bilo mogoče izbrisati",
-        "${ numberOfItems } predmetov ni bilo mogoče izbrisati"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems } predmeta ni bilo mogoče trajno izbrisati iz smetnjaka",

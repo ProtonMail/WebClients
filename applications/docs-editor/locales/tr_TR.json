@@ -756,7 +756,377 @@
         "Not"
       ]
     },
+    "sheets_2025:Spreadsheet cellFormatOptions": {
+      "Accounting": [
+        "Muhasebe"
+      ],
+      "Bottom": [
+        "Alta"
+      ],
+      "Center": [
+        "Ortaya"
+      ],
+      "Clip": [
+        "Kırp"
+      ],
+      "Currency": [
+        "Para birimi"
+      ],
+      "Currency formats are used for general monetary values.": [
+        "Genel parasal değerler için para birimi biçimleri kullanılır."
+      ],
+      "Custom": [
+        "Özel"
+      ],
+      "Date": [
+        "Tarih"
+      ],
+      "Date formats display date and time serial numbers as date values.": [
+        "Tarih biçimleri, tarih ve saat seri numaralarını tarih değerleri olarak görüntüler."
+      ],
+      "Fraction": [
+        "Kesir"
+      ],
+      "General": [
+        "Genel"
+      ],
+      "General format cells have no specific number format.": [
+        "Genel biçim hücrelerinin belirli bir sayı biçimi yoktur."
+      ],
+      "Left": [
+        "Sola"
+      ],
+      "Number": [
+        "Sayı"
+      ],
+      "Number is used for general display of numbers.": [
+        "Sayı, genel olarak sayıların gösterimi için kullanılır."
+      ],
+      "Overflow": [
+        "Taşma"
+      ],
+      "Percentage": [
+        "Yüzde"
+      ],
+      "Right": [
+        "Sağa"
+      ],
+      "Scientific": [
+        "Bilimsel"
+      ],
+      "Text": [
+        "Yazı"
+      ],
+      "Time": [
+        "Saat"
+      ],
+      "Time formats display date and time serial numbers as date values.": [
+        "Saat biçimleri, tarih ve saat seri numaralarını tarih değerleri olarak görüntüler."
+      ],
+      "Top": [
+        "Üste"
+      ],
+      "Wrap": [
+        "Kaydır"
+      ]
+    },
+    "sheets_2025:Spreadsheet chartAggregates": {
+      "Average": [
+        "Ortalama"
+      ],
+      "Count": [
+        "Sayı"
+      ],
+      "Max": [
+        "En fazla"
+      ],
+      "Median": [
+        "Ortanca"
+      ],
+      "Min": [
+        "En az"
+      ],
+      "Sum": [
+        "Toplam"
+      ]
+    },
+    "sheets_2025:Spreadsheet chartEditorDialog": {
+      "None": [
+        "Yok"
+      ]
+    },
+    "sheets_2025:Spreadsheet chartTypes": {
+      "2D Pie": [
+        "2B dilim"
+      ],
+      "Clustered Column": [
+        "Kümelenmiş sütun"
+      ],
+      "Column": [
+        "Sütun"
+      ],
+      "Doughnut": [
+        "Halka"
+      ],
+      "Hierarchy": [
+        "Hiyerarşi"
+      ],
+      "Line": [
+        "Çizgi"
+      ],
+      "Pie": [
+        "Dilim"
+      ],
+      "Smooth line": [
+        "Düz çizgi"
+      ],
+      "Stacked column": [
+        "Yığılı sütun"
+      ],
+      "Stacked line": [
+        "Yığılmış çizgi"
+      ],
+      "Sunburst": [
+        "Güneş ışını"
+      ],
+      "Treemap": [
+        "Ağaç haritası"
+      ]
+    },
+    "sheets_2025:Spreadsheet conditions": {
+      "Above average": [
+        "Ortalamanın üstünde olan"
+      ],
+      "April": [
+        "Nisan"
+      ],
+      "August": [
+        "Ağustos"
+      ],
+      "Below average": [
+        "Ortalamanın altında olan"
+      ],
+      "Between": [
+        "Şunun arasında olan"
+      ],
+      "Bottom N items": [
+        "Alt N öge"
+      ],
+      "Bottom N percent": [
+        "Alt yüzde N"
+      ],
+      "Checkbox": [
+        "İşaret kutusu"
+      ],
+      "Custom formula": [
+        "Özel formül"
+      ],
+      "Date is after": [
+        "Tarih şundan sonra olan"
+      ],
+      "Date is before": [
+        "Tarih şundan önce olan"
+      ],
+      "Date is between": [
+        "Tarih şunun arasında olan"
+      ],
+      "Date is equal to": [
+        "Tarih şuna eşit olan"
+      ],
+      "Date is not between": [
+        "Tarih şunun arasında olmayan"
+      ],
+      "Date is not equal to": [
+        "Tarih şuna eşit olmayan"
+      ],
+      "Date is on or after": [
+        "Şu tarihte ya da sonra olan"
+      ],
+      "Date is on or before": [
+        "Şu tarihte ya da önce olan"
+      ],
+      "Date is valid": [
+        "Tarih geçerli"
+      ],
+      "December": [
+        "Aralık"
+      ],
+      "Dropdown": [
+        "Açılan kutu"
+      ],
+      "Dropdown (from a range)": [
+        "Açılan kutu (bir aralıktan)"
+      ],
+      "Equal to": [
+        "Şuna eşit olan"
+      ],
+      "Errors": [
+        "Hatalar"
+      ],
+      "February": [
+        "Şubat"
+      ],
+      "Greater than": [
+        "Şundan büyük olan"
+      ],
+      "Greater than or equal to": [
+        "Şundan büyük ya da eşit olan"
+      ],
+      "Greater than or equal to previous": [
+        "Öncekinden büyük ya da eşit olan"
+      ],
+      "Greater than previous": [
+        "Öncekinden büyük olan"
+      ],
+      "Is empty": [
+        "Boş olan"
+      ],
+      "Is not empty": [
+        "Boş olmayan"
+      ],
+      "January": [
+        "Ocak"
+      ],
+      "July": [
+        "Temmuz"
+      ],
+      "June": [
+        "Haziran"
+      ],
+      "Last 7 days": [
+        "Son 7 gün"
+      ],
+      "Last month": [
+        "Önceki ay"
+      ],
+      "Last quarter": [
+        "Geçen çeyrek"
+      ],
+      "Last week": [
+        "Önceki hafta"
+      ],
+      "Last year": [
+        "Önceki yıl"
+      ],
+      "Less than": [
+        "Şundan az olan"
+      ],
+      "Less than or equal to": [
+        "Şundan küçük ya da eşit olan"
+      ],
+      "Less than or equal to previous": [
+        "Öncekinden küçük ya da eşit olan"
+      ],
+      "Less than previous": [
+        "Öncekinden küçük olan"
+      ],
+      "March": [
+        "Mart"
+      ],
+      "May": [
+        "Mayıs"
+      ],
+      "Next month": [
+        "Sonraki ay"
+      ],
+      "Next quarter": [
+        "Sonraki çeyrek"
+      ],
+      "Next week": [
+        "Sonraki hafta"
+      ],
+      "Next year": [
+        "Sonraki yıl"
+      ],
+      "No errors": [
+        "Hata yok"
+      ],
+      "Not between": [
+        "Şunun arasında olmayan"
+      ],
+      "Not equal to": [
+        "Şuna eşit olmayan"
+      ],
+      "November": [
+        "Kasım"
+      ],
+      "October": [
+        "Ekim"
+      ],
+      "Quarter 1": [
+        "1. çeyrek"
+      ],
+      "Quarter 2": [
+        "2. çeyrek"
+      ],
+      "Quarter 3": [
+        "3. çeyrek"
+      ],
+      "Quarter 4": [
+        "4. çeyrek"
+      ],
+      "September": [
+        "Eylül"
+      ],
+      "Text contains": [
+        "Yazı şunu içeren"
+      ],
+      "Text does not contain": [
+        "Yazıda şunu içermeyen"
+      ],
+      "Text ends with": [
+        "Yazı şununla biten"
+      ],
+      "Text is email": [
+        "Yazı bir e-posta adresi"
+      ],
+      "Text is exactly": [
+        "Yazı tam olarak şu olan"
+      ],
+      "Text is not equal": [
+        "Yazı şununla aynı olmayan"
+      ],
+      "Text is URL": [
+        "Yazı bir adres"
+      ],
+      "Text starts with": [
+        "Yazı şununla başlayan"
+      ],
+      "This month": [
+        "Bu ay"
+      ],
+      "This quarter": [
+        "Bu çeyrek"
+      ],
+      "This week": [
+        "Bu hafta"
+      ],
+      "This year": [
+        "Bu yıl"
+      ],
+      "Today": [
+        "Bugün"
+      ],
+      "Tomorrow": [
+        "Yarın"
+      ],
+      "Top N items": [
+        "Üst N öge"
+      ],
+      "Top N percent": [
+        "Üst yüzde N"
+      ],
+      "Year to date": [
+        "Yılbaşından bugüne kadar"
+      ],
+      "Yesterday": [
+        "Dün"
+      ]
+    },
     "sheets_2025:Spreadsheet context menu": {
+      "(Blanks)": [
+        "(Boş olan)"
+      ],
       "AI Quick Edit": [
         "Yapay zeka ile hızlı düzenleme"
       ],
@@ -1102,6 +1472,14 @@
         "Yıl"
       ]
     },
+    "sheets_2025:Spreadsheet customCurrencyFormatDialog": {
+      "Format": [
+        "Biçim"
+      ],
+      "Symbol": [
+        "Simge"
+      ]
+    },
     "sheets_2025:Spreadsheet delete sheet dialog": {
       "Are you sure you want to delete ${ sheetName }?": [
         "${ sheetName } çalışma sayfasını silmek istediğinize emin misiniz?"
@@ -1128,6 +1506,11 @@
       ],
       "Your screen is too small to edit this spreadsheet. You’re in view-only mode. To make changes, please open this spreadsheet on a larger screen or expand your browser window.": [
         "Ekranınız bu elektronik tabloyu düzenlemek için çok küçük. Yalnızca görüntüleme kipindesiniz. Değişiklik yapmak için bu elektronik tabloyu daha büyük bir ekranda açın veya tarayıcı pencerenizi genişletin."
+      ]
+    },
+    "sheets_2025:Spreadsheet editingDisabledButton": {
+      "Edit": [
+        "Düzenle"
       ]
     },
     "sheets_2025:Spreadsheet editor": {
@@ -1564,6 +1947,9 @@
       ]
     },
     "sheets_2025:Spreadsheet editor search dialog": {
+      "${ current } of ${ total }": [
+        "${ current } / ${ total }"
+      ],
       "Close": [
         "Kapat"
       ],
@@ -1607,6 +1993,9 @@
       "Bold": [
         "Koyu"
       ],
+      "Border": [
+        "Kenarlık"
+      ],
       "Choose border": [
         "Kenarlık seçin"
       ],
@@ -1630,6 +2019,9 @@
       ],
       "Default (${ defaultFont })": [
         "Varsayılan (${ defaultFont })"
+      ],
+      "Fill color": [
+        "Dolgu rengi"
       ],
       "Find": [
         "Bul"
@@ -1694,6 +2086,9 @@
       "Strikethrough": [
         "Üzeri çizili"
       ],
+      "Text color": [
+        "Yazı rengi"
+      ],
       "Text wrapping": [
         "Yazı kaydırma"
       ],
@@ -1757,6 +2152,35 @@
         "Z → A sırala"
       ]
     },
+    "sheets_2025:Spreadsheet filterByCondition": {
+      "None": [
+        "Yok"
+      ]
+    },
+    "sheets_2025:Spreadsheet formatMenu": {
+      "Coming soon...": [
+        "Yakında..."
+      ]
+    },
+    "sheets_2025:Spreadsheet formulaBar": {
+      "Edit": [
+        "Düzenle"
+      ],
+      "Remove": [
+        "Kaldır"
+      ],
+      "View": [
+        "Görüntüle"
+      ]
+    },
+    "sheets_2025:Spreadsheet gridFooter": {
+      "Add": [
+        "Ekle"
+      ],
+      "more rows at the bottom": [
+        "satır daha altta"
+      ]
+    },
     "sheets_2025:Spreadsheet insert link dialog": {
       "Apply": [
         "Uygula"
@@ -1792,23 +2216,23 @@
       "Cancel": [
         "İptal"
       ],
-      "column": [
-        "sütun"
-      ],
-      "column width": [
-        "sütun genişliği"
-      ],
-      "Default": [
-        "Varsayılan"
+      "Default ${ size }": [
+        "Varsayılan ${ size }"
       ],
       "OK": [
         "Tamam"
       ],
-      "row": [
-        "satır"
+      "Resize column ${ title }": [
+        "${ title } sütununu yeniden boyutlandır"
       ],
-      "row height": [
-        "satır yüksekliği"
+      "Resize row ${ title }": [
+        "${ title } satırını yeniden boyutlandır"
+      ],
+      "Specify column width (px)": [
+        "Sütun genişliğini belirtin (px)"
+      ],
+      "Specify row height (px)": [
+        "Satır yüksekliğini belirtin (px)"
       ]
     },
     "sheets_2025:Spreadsheet sheet status bar": {
@@ -1983,6 +2407,18 @@
       ],
       "Series": [
         "Seriler"
+      ],
+      "Series ${ seriesNumber }": [
+        "${ seriesNumber }. dizi"
+      ],
+      "Series ${ seriesNumber } Aggregate": [
+        "${ seriesNumber }. dizi toplamı"
+      ],
+      "Series ${ seriesNumber } Name": [
+        "${ seriesNumber }. dizi adı"
+      ],
+      "Series ${ seriesNumber } Range": [
+        "${ seriesNumber }. dizi aralığı"
       ],
       "Show data in hidden rows and columns": [
         "Gizli satır ve sütunlardaki verileri görüntüle"
@@ -2246,6 +2682,26 @@
       ],
       "Table title": [
         "Tablo başlığı"
+      ]
+    },
+    "sheets_2025:Spreadsheet viewMenu": {
+      "1 column": [
+        "1 sütun"
+      ],
+      "1 row": [
+        "1 satır"
+      ],
+      "2 columns": [
+        "2 sütun"
+      ],
+      "2 rows": [
+        "2 satır"
+      ],
+      "No columns": [
+        "Herhangi bir sütun yok"
+      ],
+      "No rows": [
+        "Herhangi bir satır yok"
       ]
     },
     "Title": {

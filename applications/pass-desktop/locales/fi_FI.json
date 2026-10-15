@@ -1117,6 +1117,9 @@
       "Editing item failed": [
         "Kohteen muokkaus epäonnistui"
       ],
+      "Email is not valid": [
+        "Virheellinen sähköpostiosoite"
+      ],
       "Empty CSV file": [
         "Tyhjä CSV-tiedosto"
       ],
@@ -1128,6 +1131,9 @@
       ],
       "Encrypted JSON not supported": [
         "Salattua JSON-tiedostoa ei tueta"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Syötä käyttäjätunnuksesi ilman verkkotunnusta (@example.com)"
       ],
       "Error reporting problem": [
         "Virheraportoinnin ongelma"
@@ -1309,6 +1315,9 @@
       "Incorrect backup password. Please try again.": [
         "Väärä varasalasana. Yritä uudelleen."
       ],
+      "Incorrect password. Please try again.": [
+        "Virheellinen salasana. Yritä uudelleen."
+      ],
       "Incorrect second password. Please try again.": [
         "Väärä toine salasana. Yritä uudelleen."
       ],
@@ -1342,8 +1351,14 @@
       "Network error": [
         "Verkkovirhe"
       ],
+      "Not a valid number": [
+        "Virheellinen numero"
+      ],
       "Passphrase is incorrect": [
         "Salalause on virheellinen"
+      ],
+      "Passwords do not match": [
+        "Salasanat eivät täsmää"
       ],
       "PIN codes do not match": [
         "PIN-koodit eivät täsmää"
@@ -1408,11 +1423,23 @@
       "The ${ PASS_APP_NAME } desktop app should be logged in.": [
         "${ PASS_APP_NAME } -työpöytäsovelluksessa pitäisi olla kirjautuneena sisään."
       ],
+      "The email addresses do not match": [
+        "Sähköpostiosoitteet eivät täsmää"
+      ],
       "The session has expired. Please sign in again.": [
         "Istunto on erääntynyt. Kirjaudu sisään uudelleen."
       ],
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Virhe poistettaessa suojattua linkkiä. Yritä muutaman minuutin kuluttua uudelleen."
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Kenttä ylittää ${ maximumLength }-merkin enimmäismäärän."
+      ],
+      "This field is required": [
+        "Tämä kenttä vaaditaan"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Kenttä edellyttää vähintään ${ minimumLength } merkkiä."
       ],
       "Too many failed attempts. Please sign in again.": [
         "Liian monta epäonnistunutta yritystä. Kirjaudu sisään uudelleen."
@@ -1422,6 +1449,9 @@
       ],
       "Try reaching out to the link owner.": [
         "Yritä tavoittaa linkin omistaja."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Kokeile vain kirjaimia, numeroita ja merkkejä _.-"
       ],
       "Unable to generate an OTP code for this item": [
         "OTP-koodia ei voida luoda tälle kohteelle"
@@ -1456,6 +1486,12 @@
       "Updating vault \"${ payload.content.name }\" failed": [
         "Holvin \"${ payload.content.name }\" päivitys epäonnistui"
       ],
+      "Username must begin with a letter or digit": [
+        "Käyttäjätunnuksen on alettava kirjaimella tai numerolla"
+      ],
+      "Username must end with a letter or digit": [
+        "Käyttäjätunnuksen on päätyttävä kirjaimella tai numerolla"
+      ],
       "Vault \"${ payload.content.name }\" creation failed": [
         "Holvin \"${ payload.content.name }\" luonti epäonnistui"
       ],
@@ -1479,6 +1515,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Väärä PIN-koodi. Yritä uudelleen."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Väärä palautuslauseke. Yritä uudelleen tai kokeile toista palautustapaa."
       ],
       "Wrong second password": [
         "Toinen salasana on väärin"
@@ -2214,8 +2253,7 @@
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
-        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
+        "Kohteen siirtäminen toiseen holviin pyyhkii sen suojatut linkit."
       ],
       "Moving items": [
         "Siirretään kohteita"
@@ -2969,6 +3007,9 @@
       "${ hours } hour": [
         "${ hours } tunti",
         "${ hours } tuntia"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } merkkiä"
       ],
       "${ minutes } minute": [
         "${ minutes } minuutti",
@@ -5328,8 +5369,16 @@
       "OTP secret or URI is invalid": [
         "OTP-salaisuus tai URI on virheellinen"
       ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Salasanan täytyy sisältää ainakin ${ MIN_PASSWORD_LENGTH } merkki",
+        "Salasanan täytyy sisältää vähintään ${ MIN_PASSWORD_LENGTH }-merkkiä"
+      ],
       "Section name cannot be empty": [
         "Osion nimi ei voi olla tyhjä"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Kokeile lyhyempää käyttäjätunnusta (enintään ${ n } merkki)",
+        "Kokeile lyhyempää käyttäjätunnusta (enintään ${ n } merkkiä)"
       ],
       "URL already exists": [
         "URL-osoite on jo olemassa"

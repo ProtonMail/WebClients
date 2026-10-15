@@ -2878,14 +2878,8 @@
       "External invitations are temporarily disabled.": [
         "Zewnętrzne zaproszenia są tymczasowo wyłączone."
       ],
-      "External invitations are temporarily disabled. Please try again later": [
-        "Zewnętrzne zaproszenia są tymczasowo wyłączone. Spróbuj ponownie później"
-      ],
       "Failed to change permissions settings": [
         "Nie udało się zmienić ustawień uprawnień"
-      ],
-      "Failed to copy photo to album": [
-        "Nie udało się skopiować zdjęcia do albumu"
       ],
       "Failed to create folder": [
         "Nie udało się utworzyć folderu"
@@ -3240,6 +3234,9 @@
       ],
       "Wrong billing address": [
         "Nieprawidłowy adres rozliczeniowy"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Hasło odzyskiwania jest nieprawidłowe. Spróbuj ponownie lub użyj innej metody odzyskiwania."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Nie możesz wysłać wiadomości do ponad ${ maxContacts } odbiorcy",
@@ -7176,14 +7173,8 @@
       "\"${ fileName }\" shared": [
         "Udostępniono „${ fileName }”"
       ],
-      "\"${ name }\" deleted": [
-        "Usunięto \"${ name }\""
-      ],
       "\"${ name }\" deleted permanently from trash": [
         "Element \"${ name }\" został trwale usunięty"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "Usunięcie elementu \"${ name }\" nie powiodło się"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "Nie udało się trwale usunąć elementu \"${ name }\""
@@ -7215,23 +7206,11 @@
         "Odszyfrowanie ${ count } elementów nie powiodło się",
         "Odszyfrowanie ${ count } elementów nie powiodło się"
       ],
-      "${ numberOfItems } item deleted": [
-        "Usunięto ${ numberOfItems } element",
-        "Usunięto ${ numberOfItems } elementy",
-        "Usunięto ${ numberOfItems } elementów",
-        "Usunięto ${ numberOfItems } elementów"
-      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "Element został trwale usunięty",
         "Usunięto trwale ${ numberOfItems } elementy",
         "Usunięto trwale ${ numberOfItems } elementów",
         "Usunięto trwale ${ numberOfItems } elementów"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "Usunięcie ${ numberOfItems } elementu nie powiodło się",
-        "Usunięcie ${ numberOfItems } elementów nie powiodło się",
-        "Usunięcie ${ numberOfItems } elementów nie powiodło się",
-        "Usunięcie ${ numberOfItems } elementów nie powiodło się"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "Nie udało się trwale usunąć ${ numberOfItems } elementu",

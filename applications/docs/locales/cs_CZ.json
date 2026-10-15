@@ -2878,14 +2878,8 @@
       "External invitations are temporarily disabled.": [
         "Externí pozvánky jsou dočasně zakázány."
       ],
-      "External invitations are temporarily disabled. Please try again later": [
-        "Externí pozvánky jsou dočasně zakázány. Zkuste to prosím později"
-      ],
       "Failed to change permissions settings": [
         "Změna nastavení oprávnění selhala"
-      ],
-      "Failed to copy photo to album": [
-        "Kopírování fotky do alba selhalo"
       ],
       "Failed to create folder": [
         "Vytvoření složky selhalo"
@@ -3240,6 +3234,9 @@
       ],
       "Wrong billing address": [
         "Nesprávná fakturační adresa"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Špatná obnovovací fráze. Zkuste znovu použít další obnovovací metodu."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Nemůžete odeslat e-mail více než ${ maxContacts } příjemci najednou",
@@ -7176,14 +7173,8 @@
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" sdíleno"
       ],
-      "\"${ name }\" deleted": [
-        "\"${ name }\" smazáno"
-      ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" trvale odstraněno z koše"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "\"${ name }\" se nepodařilo smazat"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "\"${ name }\" se nepodařilo trvale smazat z koše"
@@ -7215,23 +7206,11 @@
         "${ count } položek se nepodařilo dešifrovat",
         "${ count } položek se nepodařilo dešifrovat"
       ],
-      "${ numberOfItems } item deleted": [
-        "${ numberOfItems } položka smazána",
-        "${ numberOfItems } položky smazány",
-        "${ numberOfItems } položek smazáno",
-        "${ numberOfItems } položek smazáno"
-      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } položka trvale odstraněna z koše",
         "${ numberOfItems } položky trvale odstraněny z koše",
         "${ numberOfItems } položek trvale odstraněno z koše",
         "${ numberOfItems } položek trvale odstraněno z koše"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems } položku se nepodařilo smazat",
-        "${ numberOfItems } položky se nepodařilo smazat",
-        "${ numberOfItems } položek se nepodařilo smazat",
-        "${ numberOfItems } položek se nepodařilo smazat"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems } položku se nepodařilo trvale odstranit z koše",

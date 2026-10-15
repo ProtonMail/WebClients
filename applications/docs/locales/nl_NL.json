@@ -2946,14 +2946,8 @@
       "External invitations are temporarily disabled.": [
         "Externe uitnodigingen zijn tijdelijk uitgeschakeld."
       ],
-      "External invitations are temporarily disabled. Please try again later": [
-        "Externe uitnodigingen zijn tijdelijk uitgeschakeld. Probeer het later opnieuw"
-      ],
       "Failed to change permissions settings": [
         "Het wijzigen van instellingen voor toelatingen is mislukt"
-      ],
-      "Failed to copy photo to album": [
-        "Kopiëren van foto naar album is mislukt."
       ],
       "Failed to create folder": [
         "Mislukt om map aan te maken"
@@ -3467,6 +3461,9 @@
       ],
       "Wrong billing address": [
         "Verkeerd factuuradres"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Verkeerde herstelzijn. Probeer opnieuw of probeer een andere herstelmethode."
       ],
       "You can create public links for your own files only": [
         "U kunt alleen openbare links voor uw eigen bestanden maken"
@@ -7368,14 +7365,8 @@
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" gedeeld"
       ],
-      "\"${ name }\" deleted": [
-        "\"${ name }\" verwijderd"
-      ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" permanent verwijderd uit de prullenbak"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "\"${ name }\" kon niet verwijderd worden"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "\"${ name }\" konden niet permanent verwijderd worden uit prullenbak"
@@ -7408,17 +7399,9 @@
         "${ count } item kon niet worden ontsleuteld",
         "${ count } items konden niet worden ontsleuteld"
       ],
-      "${ numberOfItems } item deleted": [
-        "${ numberOfItems } item verwijderd",
-        "${ numberOfItems } items verwijderd"
-      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } item permanent verwijderd uit de prullenbak",
         "${ numberOfItems } items permanent verwijderd uit de prullenbak"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems } item kon niet worden verwijderd",
-        "${ numberOfItems } items konden niet verwijderd worden"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems }\" item kon niet permanent verwijderd worden uit prullenbak",
@@ -7873,6 +7856,9 @@
       "Amount due after trial on ${ formattedDate }": [
         "Verschuldigd bedrag na de proefversie op ${ formattedDate }"
       ],
+      "Proton Meet seats must match the number of members.": [
+        "Proton Meet licenties moeten overeenkomen met het aantal leden."
+      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Bij vernieuwing zijn prijswijziging volgen volgende ${ termsAndConditionsLink }."
       ],
@@ -7911,6 +7897,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Dan wordt het automatisch verlengd op ${ renewPriceStr } voor ${ renewalLength } maand. U kunt op elk moment annuleren.",
         "Dan wordt het automatisch vernieuwd op ${ renewPriceStr } voor ${ renewalLength } maanden. U kunt op elk moment annuleren."
+      ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Dit abonnement ondersteunt de beheerde functies van uw account niet."
       ]
     },
     "PGP key encryption warning": {

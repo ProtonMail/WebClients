@@ -1126,6 +1126,9 @@
       "Editing item failed": [
         "Item bewerken mislukt"
       ],
+      "Email is not valid": [
+        "E-mailadres is ongeldig"
+      ],
       "Empty CSV file": [
         "Leeg csv-bestand"
       ],
@@ -1137,6 +1140,9 @@
       ],
       "Encrypted JSON not supported": [
         "Versleutelde JSON niet ondersteund"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Voer uw gebruikersnaam in zonder het domein (@example.com)"
       ],
       "Error reporting problem": [
         "Fout bij melden van het probleem"
@@ -1318,6 +1324,9 @@
       "Incorrect backup password. Please try again.": [
         "Onjuist back-up wachtwoord. Probeer het opnieuw."
       ],
+      "Incorrect password. Please try again.": [
+        "Onjuist wachtwoord. Probeer het opnieuw."
+      ],
       "Incorrect second password. Please try again.": [
         "Onjuist tweede wachtwoord. Probeer het opnieuw."
       ],
@@ -1351,8 +1360,14 @@
       "Network error": [
         "Netwerkfout"
       ],
+      "Not a valid number": [
+        "Geen geldig getal"
+      ],
       "Passphrase is incorrect": [
         "Wachtzin is onjuist"
+      ],
+      "Passwords do not match": [
+        "Wachtwoorden komen niet overeen"
       ],
       "PIN codes do not match": [
         "Pincodes komen niet overeen"
@@ -1417,11 +1432,23 @@
       "The ${ PASS_APP_NAME } desktop app should be logged in.": [
         "De desktop-app ${ PASS_APP_NAME } moet ingelogd zijn."
       ],
+      "The email addresses do not match": [
+        "De e-mailadressen komen niet overeen"
+      ],
       "The session has expired. Please sign in again.": [
         "De sessie is verlopen. Log opnieuw in."
       ],
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Er is een fout opgetreden bij het verwijderen van de beveiligde link. Probeer het over een paar minuten opnieuw."
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Dit veld overschrijdt het maximum ${ maximumLength } tekens."
+      ],
+      "This field is required": [
+        "Dit veld is vereist"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Dit veld vereist een minimum van ${ minimumLength } tekens."
       ],
       "Too many failed attempts. Please sign in again.": [
         "Te veel mislukte pogingen. Log opnieuw in."
@@ -1431,6 +1458,9 @@
       ],
       "Try reaching out to the link owner.": [
         "Probeer uit te reiken aan de eigenaar van de koppeling."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Probeer enkel letters, nummers en _.- te gebruiken"
       ],
       "Unable to generate an OTP code for this item": [
         "Kan geen OTP-code genereren voor dit item"
@@ -1465,6 +1495,12 @@
       "Updating vault \"${ payload.content.name }\" failed": [
         "Bijwerken kluis \"${ payload.content.name }\" mislukt"
       ],
+      "Username must begin with a letter or digit": [
+        "Gebruikersnaam moet met een letter of cijfer beginnen"
+      ],
+      "Username must end with a letter or digit": [
+        "Gebruikersnaam moet met een letter of cijfer eindigen"
+      ],
       "Vault \"${ payload.content.name }\" creation failed": [
         "Kluis \"${ payload.content.name }\" aanmaken mislukt"
       ],
@@ -1488,6 +1524,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Verkeerde pincode. Probeer opnieuw."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Verkeerde herstelzijn. Probeer opnieuw of probeer een andere herstelmethode."
       ],
       "Wrong second password": [
         "Foutief tweede wachtwoord"
@@ -2223,8 +2262,7 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
-        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -5364,8 +5402,16 @@
       "OTP secret or URI is invalid": [
         "OTP-geheim of URI is ongeldig"
       ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } teken bevatten",
+        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } tekens bevatten"
+      ],
       "Section name cannot be empty": [
         "Sectienaam kan niet leeg zijn"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Probeer een kortere gebruikersnaam (maximum ${ n } teken)",
+        "Probeer een kortere gebruikersnaam (maximum ${ n } tekens)"
       ],
       "URL already exists": [
         "URL bestaat al"

@@ -309,9 +309,6 @@
       "Create meeting": [
         "Стварыць сустрэчу"
       ],
-      "Debug devices": [
-        "Адладка прылад"
-      ],
       "Debug overlay": [
         "Адладка накладання"
       ],
@@ -2184,6 +2181,9 @@
       "Incorrect backup password. Please try again.": [
         "Няправільны рэзервовы пароль. Паўтарыце спробу."
       ],
+      "Incorrect password. Please try again.": [
+        "Няправільны пароль. Паўтарыце спробу."
+      ],
       "Incorrect second password. Please try again.": [
         "Няправільны другі пароль. Паўтарыце спробу."
       ],
@@ -2204,9 +2204,6 @@
       ],
       "Legacy public link cannot be updated. Please re-create a new public link.": [
         "Састарэлая публічная спасылка не можа быць абноўлена. Паўторна стварыце новую публічную спасылку."
-      ],
-      "Live captions aren't working. Try turning them off and on again.": [
-        "Дынамічныя цітры не працуюць. Паспрабуйце спачатку выключыць іх, а потым зноў уключыць."
       ],
       "Live captions couldn't be started.": [
         "Немагчыма запусціць дынамічныя цітры."
@@ -2423,6 +2420,9 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "Немагчыма адправіць код спраўджання з дапамогай гэтага спосабу."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Няправільная фраза аднаўлення. Паўтарыце спробу або скарыстайцеся іншым спосабам аднаўлення."
       ],
       "You can create public links for your own files only": [
         "Вы можаце ствараць публічныя спасылкі толькі для сваіх уласных файлаў"
@@ -2777,9 +2777,6 @@
       ],
       "Camera permission denied": [
         "Доступ да камеры забаронены"
-      ],
-      "Captions are on": [
-        "Субцітры ўключаны"
       ],
       "Changes are staged. Apply to rebuild the preview with the new constants.": [
         "Змены падрыхтаваны. Прымяніце іх, каб перабудаваць папярэдні прагляд з новымі канстантамі."
