@@ -2382,6 +2382,9 @@
       "Incorrect backup password. Please try again.": [
         "La contrasenya de recuperació no és correcta. Torneu-ho a intentar."
       ],
+      "Incorrect password. Please try again.": [
+        "Contrasenya incorrecta, torneu-ho a intentar."
+      ],
       "Incorrect second password. Please try again.": [
         "La segona contrasenya no és correcta. Torneu-ho a intentar."
       ],
@@ -2531,6 +2534,9 @@
       ],
       "Wrong billing address": [
         "L'adreça de facturació és incorrecta"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Frase de recuperació incorrecta. Torneu-ho a provar o utilitzeu un altre mètode de recuperació."
       ]
     },
     "Error message": {
@@ -4885,6 +4891,9 @@
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Es requereix un mètode de pagament perquè la subscripció s'activi un cop finalitzi la prova."
       ],
+      "Plan switch is incompatible for the following reasons:": [
+        "El canvi de pla no és compatible pels motius següents:"
+      ],
       "Please close extra wallet accounts before changing your plan.": [
         "Tanqueu els comptes de cartera addicionals abans de canviar de pla."
       ],
@@ -4893,6 +4902,9 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveu primer la subscripció per disminuir el nombre de complements."
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Les llicències de Proton Meet han de coincidir amb el nombre de membres."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "El preu de la renovació està subjecte a canvis segons ${ termsAndConditionsLink }."
@@ -4966,8 +4978,14 @@
       "This payment method will become your new default for all future renewals.": [
         "Aquest mètode de pagament esdevindrà el vostre nou mètode per defecte per a totes les renovacions futures."
       ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Aquest pla no admet les funcions gestionades del vostre compte."
+      ],
       "This plan doesn’t support the members on your account.": [
         "Aquest pla no suporta els membres del vostre compte."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Aquesta subscripció no es pot completar ara mateix. Torneu-ho a provar."
       ],
       "Timeout exceeded": [
         "S'ha superat el temps d'espera."
