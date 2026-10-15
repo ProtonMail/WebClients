@@ -20,6 +20,7 @@
         "@babel/preset-typescript": "^7.29.7",
         "@babel/runtime": "^7.29.7",
         "@pmmmwh/react-refresh-webpack-plugin": "^0.6.3",
+        "@proton/shared": "workspace:^",
         "@sentry/webpack-plugin": "^1.21.0",
         "@swc/core": "^1.16.13",
         "autoprefixer": "^10.6.1",
@@ -57,6 +58,7 @@
         "webpack-subresource-integrity": "^5.1.0"
     },
     "devDependencies": {
+        "@proton/eslint-config-proton": "workspace:^",
         "@types/node": "catalog:",
         "@types/webpack-env": "catalog:",
         "@typescript/native": "npm:typescript@^7.0.2",

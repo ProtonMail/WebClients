@@ -12,6 +12,10 @@
         "@proton/llm": "workspace:^"
     },
     "devDependencies": {
+        "@proton/components": "workspace:^",
+        "@proton/eslint-config-proton": "workspace:^",
+        "@proton/jest-env": "workspace:^",
+        "@proton/jest-swc-preset": "workspace:^",
         "@types/jest": "catalog:",
         "@types/node": "catalog:",
         "@types/webpack-env": "catalog:",

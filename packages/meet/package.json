@@ -40,6 +40,7 @@
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
+        "@proton/pack": "workspace:^",
         "@proton/polyfill": "workspace:^",
         "@proton/vitest-config": "workspace:^",
         "@testing-library/jest-dom": "^6.9.1",
