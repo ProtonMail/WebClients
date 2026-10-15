@@ -27,7 +27,7 @@ interface Options {
 export const useForgotPasswordMachine = (options: Options) => {
     const api = useSilentApi();
     const getKtActivation = useGetAccountKTActivation();
-    const telemetry = useResetPasswordTelemetry({ variant: 'B' });
+    const telemetry = useResetPasswordTelemetry();
     const latest = { ...options, telemetry };
     const latestRef = useRef(latest);
     // Updated once the render commits, before any effect or event handler can reach the actors

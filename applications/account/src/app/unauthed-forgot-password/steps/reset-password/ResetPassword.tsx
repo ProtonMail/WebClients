@@ -28,7 +28,7 @@ export const ResetPassword = ({ onBack }: ForgotPasswordStepProps) => {
     const submitting = ForgotPasswordContext.useSelector(selectSubmitting);
     const { createNotification } = useNotifications();
     const errorHandler = useErrorHandler();
-    const { sendResetPasswordStepLoad } = useResetPasswordTelemetry({ variant: 'B' });
+    const { sendResetPasswordStepLoad } = useResetPasswordTelemetry();
 
     useEffect(() => {
         sendResetPasswordStepLoad({
