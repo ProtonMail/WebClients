@@ -756,7 +756,377 @@
         "Σημείωση"
       ]
     },
+    "sheets_2025:Spreadsheet cellFormatOptions": {
+      "Accounting": [
+        "Λογιστική"
+      ],
+      "Bottom": [
+        "Κάτω"
+      ],
+      "Center": [
+        "Κέντρο"
+      ],
+      "Clip": [
+        "Κλιπ"
+      ],
+      "Currency": [
+        "Νόμισμα"
+      ],
+      "Currency formats are used for general monetary values.": [
+        "Οι μορφές νομίσματος χρησιμοποιούνται για γενικές χρηματικές αξίες."
+      ],
+      "Custom": [
+        "Προσαρμοσμένο"
+      ],
+      "Date": [
+        "Ημερομηνία"
+      ],
+      "Date formats display date and time serial numbers as date values.": [
+        "Οι μορφές ημερομηνίας εμφανίζουν τους σειριακούς αριθμούς ημερομηνίας και ώρας ως τιμές ημερομηνίας."
+      ],
+      "Fraction": [
+        "Κλάσμα"
+      ],
+      "General": [
+        "Γενικά"
+      ],
+      "General format cells have no specific number format.": [
+        "Τα κελιά με τη μορφή Γενική δεν έχουν συγκεκριμένη μορφή αριθμού."
+      ],
+      "Left": [
+        "Αριστερά"
+      ],
+      "Number": [
+        "Νούμερο"
+      ],
+      "Number is used for general display of numbers.": [
+        "Το Νούμερο χρησιμοποιείται για τη γενική εμφάνιση αριθμών."
+      ],
+      "Overflow": [
+        "Υπερχείλιση"
+      ],
+      "Percentage": [
+        "Ποσοστό"
+      ],
+      "Right": [
+        "Δεξιά"
+      ],
+      "Scientific": [
+        "Επιστημονικό"
+      ],
+      "Text": [
+        "Κείμενο"
+      ],
+      "Time": [
+        "Ώρα"
+      ],
+      "Time formats display date and time serial numbers as date values.": [
+        "Οι μορφές ώρας εμφανίζουν τους σειριακούς αριθμούς ημερομηνίας και ώρας ως τιμές ημερομηνίας."
+      ],
+      "Top": [
+        "Πάνω"
+      ],
+      "Wrap": [
+        "Αναδίπλωση γραμμής"
+      ]
+    },
+    "sheets_2025:Spreadsheet chartAggregates": {
+      "Average": [
+        "Μέσος όρος"
+      ],
+      "Count": [
+        "Πλήθος"
+      ],
+      "Max": [
+        "Μέγιστο"
+      ],
+      "Median": [
+        "Διάμεσος"
+      ],
+      "Min": [
+        "Ελάχιστο"
+      ],
+      "Sum": [
+        "Σύνολο"
+      ]
+    },
+    "sheets_2025:Spreadsheet chartEditorDialog": {
+      "None": [
+        "Κανένα"
+      ]
+    },
+    "sheets_2025:Spreadsheet chartTypes": {
+      "2D Pie": [
+        "2D Πίτα"
+      ],
+      "Clustered Column": [
+        "Στήλη Τμημάτων"
+      ],
+      "Column": [
+        "Στήλη"
+      ],
+      "Doughnut": [
+        "Δακτύλιος"
+      ],
+      "Hierarchy": [
+        "Ιεραρχία"
+      ],
+      "Line": [
+        "Γραμμή"
+      ],
+      "Pie": [
+        "Πίτα"
+      ],
+      "Smooth line": [
+        "Ομαλή γραμμή"
+      ],
+      "Stacked column": [
+        "Σωρευμένη στήλη"
+      ],
+      "Stacked line": [
+        "Στοιβαγμένη γραμμή"
+      ],
+      "Sunburst": [
+        "Ηλιαχτίδα"
+      ],
+      "Treemap": [
+        "Δενδροειδές διάγραμμα"
+      ]
+    },
+    "sheets_2025:Spreadsheet conditions": {
+      "Above average": [
+        "Άνω του μετρίου"
+      ],
+      "April": [
+        "Απρίλιος"
+      ],
+      "August": [
+        "Αύγουστος"
+      ],
+      "Below average": [
+        "Κάτω του μετρίου"
+      ],
+      "Between": [
+        "Ανάμεσα"
+      ],
+      "Bottom N items": [
+        "Τα N χαμηλότερα στοιχεία"
+      ],
+      "Bottom N percent": [
+        "Το χαμηλότερο N% ποσοστό"
+      ],
+      "Checkbox": [
+        "Checkbox"
+      ],
+      "Custom formula": [
+        "Προσαρμοσμένος τύπος"
+      ],
+      "Date is after": [
+        "Η ημερομηνία είναι μεταγενέστερη από"
+      ],
+      "Date is before": [
+        "Η ημερομηνία είναι προγενέστερη από"
+      ],
+      "Date is between": [
+        "Η ημερομηνία είναι μεταξύ"
+      ],
+      "Date is equal to": [
+        "Η ημερομηνία είναι ίση με"
+      ],
+      "Date is not between": [
+        "Η ημερομηνία δεν είναι μεταξύ"
+      ],
+      "Date is not equal to": [
+        "Η ημερομηνία δεν είναι ίση με"
+      ],
+      "Date is on or after": [
+        "Η ημερομηνία είναι ίδια ή μεταγενέστερη"
+      ],
+      "Date is on or before": [
+        "Η ημερομηνία είναι ίδια ή προγενέστερη"
+      ],
+      "Date is valid": [
+        "Η ημερομηνία είναι έγκυρη"
+      ],
+      "December": [
+        "Δεκέμβριος"
+      ],
+      "Dropdown": [
+        "Αναπτυσσόμενου μενού"
+      ],
+      "Dropdown (from a range)": [
+        "Αναπτυσσόμενη λίστα (από εύρος)"
+      ],
+      "Equal to": [
+        "Ισούται με"
+      ],
+      "Errors": [
+        "Σφάλματα"
+      ],
+      "February": [
+        "Φεβρουάριος"
+      ],
+      "Greater than": [
+        "Μεγαλύτερο από"
+      ],
+      "Greater than or equal to": [
+        "Μεγαλύτερο από ή ίσο με"
+      ],
+      "Greater than or equal to previous": [
+        "Μεγαλύτερο ή ίσο με το προηγούμενο"
+      ],
+      "Greater than previous": [
+        "Μεγαλύτερο από το προηγούμενο"
+      ],
+      "Is empty": [
+        "Είναι άδειο"
+      ],
+      "Is not empty": [
+        "Δεν είναι κενό"
+      ],
+      "January": [
+        "Ιανουάριος"
+      ],
+      "July": [
+        "Ιούλιος"
+      ],
+      "June": [
+        "Ιούνιος"
+      ],
+      "Last 7 days": [
+        "Τελευταίες 7 ημέρες"
+      ],
+      "Last month": [
+        "Προηγούμενος μήνας"
+      ],
+      "Last quarter": [
+        "Προηγούμενο τρίμηνο"
+      ],
+      "Last week": [
+        "Περασμένη εβδομάδα"
+      ],
+      "Last year": [
+        "Προηγούμενο χρόνο"
+      ],
+      "Less than": [
+        "Λιγότερο από"
+      ],
+      "Less than or equal to": [
+        "Μικρότερη ή ίση με"
+      ],
+      "Less than or equal to previous": [
+        "Μικρότερο ή ίσο με το προηγούμενο"
+      ],
+      "Less than previous": [
+        "Λιγότερο από το προηγούμενο"
+      ],
+      "March": [
+        "Μάρτιος"
+      ],
+      "May": [
+        "Μάιος"
+      ],
+      "Next month": [
+        "Επόμενος μήνας"
+      ],
+      "Next quarter": [
+        "Επόμενο τρίμηνο"
+      ],
+      "Next week": [
+        "Επόμενη εβδομάδα"
+      ],
+      "Next year": [
+        "Επόμενο έτος"
+      ],
+      "No errors": [
+        "Χωρίς σφάλματα"
+      ],
+      "Not between": [
+        "Όχι ανάμεσα"
+      ],
+      "Not equal to": [
+        "Δεν είναι ίση με"
+      ],
+      "November": [
+        "Νοέμβριος"
+      ],
+      "October": [
+        "Οκτώβριος"
+      ],
+      "Quarter 1": [
+        "1ο τρίμηνο"
+      ],
+      "Quarter 2": [
+        "2ο τρίμηνο"
+      ],
+      "Quarter 3": [
+        "3ο τρίμηνο"
+      ],
+      "Quarter 4": [
+        "4ο τρίμηνο"
+      ],
+      "September": [
+        "Σεπτέμβριος"
+      ],
+      "Text contains": [
+        "Το κείμενο περιέχει"
+      ],
+      "Text does not contain": [
+        "Το κείμενο δεν περιέχει"
+      ],
+      "Text ends with": [
+        "Το κείμενο τελειώνει με"
+      ],
+      "Text is email": [
+        "Το κείμενο είναι email"
+      ],
+      "Text is exactly": [
+        "Το κείμενο είναι ακριβώς"
+      ],
+      "Text is not equal": [
+        "Το κείμενο δεν είναι ίσο"
+      ],
+      "Text is URL": [
+        "Το κείμενο είναι URL"
+      ],
+      "Text starts with": [
+        "Το κείμενο ξεκινά με"
+      ],
+      "This month": [
+        "Αυτό το μήνα"
+      ],
+      "This quarter": [
+        "Τρέχον τρίμηνο"
+      ],
+      "This week": [
+        "Τρέχουσα εβδομάδα"
+      ],
+      "This year": [
+        "Αυτό το χρόνο"
+      ],
+      "Today": [
+        "Σήμερα"
+      ],
+      "Tomorrow": [
+        "Αύριο"
+      ],
+      "Top N items": [
+        "Τα N κορυφαία στοιχεία"
+      ],
+      "Top N percent": [
+        "Κορυφαίο N τοις εκατό"
+      ],
+      "Year to date": [
+        "Έτος έως σήμερα"
+      ],
+      "Yesterday": [
+        "Χθες"
+      ]
+    },
     "sheets_2025:Spreadsheet context menu": {
+      "(Blanks)": [
+        "(Κενά)"
+      ],
       "AI Quick Edit": [
         "Γρήγορη επεξεργασία AI"
       ],
@@ -1102,6 +1472,14 @@
         "Έτος"
       ]
     },
+    "sheets_2025:Spreadsheet customCurrencyFormatDialog": {
+      "Format": [
+        "Μορφή"
+      ],
+      "Symbol": [
+        "Σύμβολο"
+      ]
+    },
     "sheets_2025:Spreadsheet delete sheet dialog": {
       "Are you sure you want to delete ${ sheetName }?": [
         "Θέλετε σίγουρα να διαγράψετε το ${ sheetName }?"
@@ -1128,6 +1506,11 @@
       ],
       "Your screen is too small to edit this spreadsheet. You’re in view-only mode. To make changes, please open this spreadsheet on a larger screen or expand your browser window.": [
         "Η οθόνη σας είναι πολύ μικρή για να επεξεργαστείτε αυτό το υπολογιστικό φύλλο. Βρίσκεστε σε λειτουργία μόνο για προβολή. Για να κάνετε αλλαγές, ανοίξτε αυτό το υπολογιστικό φύλλο σε μεγαλύτερη οθόνη ή διευρύνετε το παράθυρο του προγράμματος περιήγησης."
+      ]
+    },
+    "sheets_2025:Spreadsheet editingDisabledButton": {
+      "Edit": [
+        "Επεξεργασία"
       ]
     },
     "sheets_2025:Spreadsheet editor": {
@@ -1564,6 +1947,9 @@
       ]
     },
     "sheets_2025:Spreadsheet editor search dialog": {
+      "${ current } of ${ total }": [
+        "${ current } από ${ total }"
+      ],
       "Close": [
         "Κλείσιμο"
       ],
@@ -1607,6 +1993,9 @@
       "Bold": [
         "Έντονοι Χαρακτήρες"
       ],
+      "Border": [
+        "Όρια"
+      ],
       "Choose border": [
         "Επιλέξτε περίγραμμα"
       ],
@@ -1630,6 +2019,9 @@
       ],
       "Default (${ defaultFont })": [
         "Προεπιλογή (${ defaultFont })"
+      ],
+      "Fill color": [
+        "Χρώμα γεμίσματος"
       ],
       "Find": [
         "Εύρεση"
@@ -1694,6 +2086,9 @@
       "Strikethrough": [
         "Διακριτή διαγραφή"
       ],
+      "Text color": [
+        "Χρώμα κειμένου"
+      ],
       "Text wrapping": [
         "Περιτύλιξη κειμένου"
       ],
@@ -1757,6 +2152,35 @@
         "Ταξινόμηση Ω → A"
       ]
     },
+    "sheets_2025:Spreadsheet filterByCondition": {
+      "None": [
+        "Κανένα"
+      ]
+    },
+    "sheets_2025:Spreadsheet formatMenu": {
+      "Coming soon...": [
+        "Προσεχώς..."
+      ]
+    },
+    "sheets_2025:Spreadsheet formulaBar": {
+      "Edit": [
+        "Επεξεργασία"
+      ],
+      "Remove": [
+        "Αφαίρεση"
+      ],
+      "View": [
+        "Προβολή"
+      ]
+    },
+    "sheets_2025:Spreadsheet gridFooter": {
+      "Add": [
+        "Προσθήκη"
+      ],
+      "more rows at the bottom": [
+        "περισσότερες γραμμές στο κάτω μέρος"
+      ]
+    },
     "sheets_2025:Spreadsheet insert link dialog": {
       "Apply": [
         "Εφαρμογή"
@@ -1792,23 +2216,23 @@
       "Cancel": [
         "Ακύρωση"
       ],
-      "column": [
-        "στήλη"
-      ],
-      "column width": [
-        "πλάτος στήλης"
-      ],
-      "Default": [
-        "Προεπιλογή"
+      "Default ${ size }": [
+        "Προεπιλογή ${ size }"
       ],
       "OK": [
         "ΟΚ"
       ],
-      "row": [
-        "σειρά"
+      "Resize column ${ title }": [
+        "Αλλαγή μεγέθους στήλης ${ title }"
       ],
-      "row height": [
-        "ύψος σειράς"
+      "Resize row ${ title }": [
+        "Αλλαγή μεγέθους γραμμής ${ title }"
+      ],
+      "Specify column width (px)": [
+        "Καθορίστε το πλάτος της στήλης (px)"
+      ],
+      "Specify row height (px)": [
+        "Καθορίστε το ύψος της γραμμής (px)"
       ]
     },
     "sheets_2025:Spreadsheet sheet status bar": {
@@ -1983,6 +2407,18 @@
       ],
       "Series": [
         "Σειρές"
+      ],
+      "Series ${ seriesNumber }": [
+        "Σειρά ${ seriesNumber }"
+      ],
+      "Series ${ seriesNumber } Aggregate": [
+        "Σύνολο ${ seriesNumber } Σειράς"
+      ],
+      "Series ${ seriesNumber } Name": [
+        "Όνομα ${ seriesNumber } Σειράς"
+      ],
+      "Series ${ seriesNumber } Range": [
+        "Εύρος ${ seriesNumber } Σειράς"
       ],
       "Show data in hidden rows and columns": [
         "Εμφάνιση δεδομένων σε κρυφές σειρές και στήλες"
@@ -2246,6 +2682,26 @@
       ],
       "Table title": [
         "Τίτλος πίνακα"
+      ]
+    },
+    "sheets_2025:Spreadsheet viewMenu": {
+      "1 column": [
+        "1 στήλη"
+      ],
+      "1 row": [
+        "1 γραμμή"
+      ],
+      "2 columns": [
+        "2 στήλες"
+      ],
+      "2 rows": [
+        "2 γραμμές"
+      ],
+      "No columns": [
+        "Δεν υπάρχουν στήλες"
+      ],
+      "No rows": [
+        "Δεν υπάρχουν γραμμές"
       ]
     },
     "Title": {
