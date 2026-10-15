@@ -303,9 +303,6 @@
       "Create meeting": [
         "Crear una reunión"
       ],
-      "Debug devices": [
-        "Dispositivos de depuración"
-      ],
       "Debug overlay": [
         "Superposición de depuración"
       ],
@@ -2177,6 +2174,9 @@
       "Incorrect backup password. Please try again.": [
         "La contraseña de respaldo no es correcta. Inténtelo de nuevo."
       ],
+      "Incorrect password. Please try again.": [
+        "Contraseña incorrecta. Intente de nuevo."
+      ],
       "Incorrect second password. Please try again.": [
         "La segunda contraseña no es correcta. Inténtelo de nuevo."
       ],
@@ -2197,9 +2197,6 @@
       ],
       "Legacy public link cannot be updated. Please re-create a new public link.": [
         "El enlace público anterior no se puede actualizar. Cree otro enlace público."
-      ],
-      "Live captions aren't working. Try turning them off and on again.": [
-        "No funcionan los subtítulos en directo. Pruebe desactivarlos y activarlos de nuevo."
       ],
       "Live captions couldn't be started.": [
         "No se pudieron iniciar los subtítulos en directo."
@@ -2426,6 +2423,9 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "No pudimos enviar un código de verificación usando este método."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Frase de recuperación incorrecta. Vuelva a intentarlo o use otro método de recuperación."
       ],
       "You can create public links for your own files only": [
         "Puede crear enlaces públicos solo para sus propios archivos"
@@ -2776,9 +2776,6 @@
       ],
       "Camera permission denied": [
         "Permiso de cámara denegado"
-      ],
-      "Captions are on": [
-        "Los subtítulos están activos"
       ],
       "Changes are staged. Apply to rebuild the preview with the new constants.": [
         "Los cambios se realizan por fases. Aplique para reconstruir la vista previa con las constantes nuevas."

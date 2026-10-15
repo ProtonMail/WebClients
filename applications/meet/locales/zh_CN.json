@@ -2124,6 +2124,9 @@
       "Incorrect backup password. Please try again.": [
         "备份密码不正确，请重试。"
       ],
+      "Incorrect password. Please try again.": [
+        "密码错误，请重试。"
+      ],
       "Incorrect second password. Please try again.": [
         "二级密码错误，请重试。"
       ],
@@ -2144,9 +2147,6 @@
       ],
       "Legacy public link cannot be updated. Please re-create a new public link.": [
         "旧版公开链接无法更新，请重新创建新的公开链接！"
-      ],
-      "Live captions aren't working. Try turning them off and on again.": [
-        "实时字幕无法使用，请尝试关闭后重新开启。"
       ],
       "Live captions couldn't be started.": [
         "无法开启实时字幕。"
@@ -2366,6 +2366,9 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "我们无法通过此类方式发送验证码。"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "恢复短语错误，请重试或使用其他恢复方法。"
       ],
       "You can create public links for your own files only": [
         "您只能为自己拥有的文件创建公开链接"
@@ -2696,9 +2699,6 @@
       ],
       "Camera permission denied": [
         "摄像头权限被拒绝"
-      ],
-      "Captions are on": [
-        "字幕已开启"
       ],
       "Changes are staged. Apply to rebuild the preview with the new constants.": [
         "更改已暂存，应用以使用新常量重建预览。"

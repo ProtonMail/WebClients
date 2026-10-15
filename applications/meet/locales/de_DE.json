@@ -303,9 +303,6 @@
       "Create meeting": [
         "Meeting erstellen"
       ],
-      "Debug devices": [
-        "Fehler auf Geräten beheben"
-      ],
       "Debug overlay": [
         "Debug-Overlay"
       ],
@@ -1991,6 +1988,12 @@
       "Cannot verify who uploaded this file": [
         "Es lässt sich nicht feststellen, wer diese Datei hochgeladen hat"
       ],
+      "Check your audio settings and try again": [
+        "Überprüfe deine Audioeinstellungen und versuche es erneut"
+      ],
+      "Connection lost — captions will resume when reconnected": [
+        "Verbindung unterbrochen – die Untertitel werden fortgesetzt, sobald die Verbindung wiederhergestellt ist"
+      ],
       "Copy operation aborted": [
         "Kopiervorgang abgebrochen"
       ],
@@ -2192,6 +2195,9 @@
       "Incorrect backup password. Please try again.": [
         "Falsches Backup-Passwort. Bitte versuche es erneut."
       ],
+      "Incorrect password. Please try again.": [
+        "Ungültiges Passwort. Bitte versuche es erneut."
+      ],
       "Incorrect second password. Please try again.": [
         "Falsches zusätzliches Passwort. Bitte versuche es erneut."
       ],
@@ -2213,9 +2219,6 @@
       "Legacy public link cannot be updated. Please re-create a new public link.": [
         "Der alte öffentliche Link kann nicht aktualisiert werden. Bitte erstelle einen neuen öffentlichen Link."
       ],
-      "Live captions aren't working. Try turning them off and on again.": [
-        "Die Live-Untertitel funktionieren nicht. Versuche, sie einmal aus- und wieder einzuschalten."
-      ],
       "Live captions couldn't be started.": [
         "Die Live-Untertitel konnten nicht gestartet werden."
       ],
@@ -2227,6 +2230,9 @@
       ],
       "Microphone access is blocked. Allow it in your browser settings.": [
         "Der Zugriff auf das Mikrofon ist gesperrt. Bitte aktiviere ihn in deinen Browsereinstellungen."
+      ],
+      "Microphone not detected": [
+        "Kein Mikrofon erkannt"
       ],
       "Missing inviter email": [
         "E-Mail-Adresse des Einladers fehlt"
@@ -2418,8 +2424,14 @@
       "Too many server requests, please try again later": [
         "Zu viele Server-Anfragen bitte versuche es später erneut"
       ],
+      "Try turning live captions off and on again.": [
+        "Versuche, die Live-Untertitel einmal aus- und wieder einzuschalten."
+      ],
       "Try using only letters, numerals, and _.-": [
         "Bitte nur Buchstaben, Ziffern und die Zeichen _ . - verwenden"
+      ],
+      "Unable to generate captions": [
+        "Bildbeschreibungen konnten nicht generiert werden"
       ],
       "Unknown error": [
         "Unbekannter Fehler"
@@ -2441,6 +2453,9 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "Wir konnten mit dieser Methode keinen Bestätigungscode senden."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Wiederherstellungsphrase ungültig. Versuche es erneut oder verwende eine andere Wiederherstellungsmethode."
       ],
       "You can create public links for your own files only": [
         "Du kannst öffentliche Links nur für deine eigenen Dateien erstellen"
@@ -2798,8 +2813,8 @@
       "Camera permission denied": [
         "Kamerazugriff verweigert"
       ],
-      "Captions are on": [
-        "Untertitel sind eingeschaltet"
+      "Captions on": [
+        "Untertitel ein"
       ],
       "Changes are staged. Apply to rebuild the preview with the new constants.": [
         "Änderungen wurden zwischengespeichert. Wende sie an, um die Vorschau mit den neuen Konstanten neu zu erstellen."
@@ -3019,6 +3034,9 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Kalender wird geladen, bitte warte. Du wirst in einer neuen Registerkarte zu unserer Terminplanungsplattform Calendly weitergeleitet."
+      ],
+      "Loading captions…": [
+        "Untertitel werden geladen …"
       ],
       "Loading meeting details...": [
         "Details zur Besprechung werden geladen..."
@@ -3467,6 +3485,9 @@
       "Virtual background initializing": [
         "Virtueller Hintergrund wird initialisiert"
       ],
+      "Waiting for speech…": [
+        "Auf Sprechen wird gewartet …"
+      ],
       "Waiting for the host to admit you. The host has been notified that you're waiting.": [
         "Warten bis der Organisator dich zulässt. Er wurde darüber informiert, dass du wartest."
       ],
@@ -3745,6 +3766,9 @@
       ],
       "Live caption agent": [
         "Live-Untertitel-Agent"
+      ],
+      "Live captions": [
+        "Live-Untertitel"
       ],
       "Manage recordings": [
         "Aufnahmen verwalten"
