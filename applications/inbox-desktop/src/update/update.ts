@@ -2,7 +2,6 @@ import { DESKTOP_PLATFORMS, MAIL_APP_NAME, RELEASE_CATEGORIES } from "@proton/sh
 import { DesktopVersion, VersionFile, VersionFileSchema } from "@proton/shared/lib/desktop/DesktopVersion";
 import { app, autoUpdater, dialog } from "electron";
 import { c } from "ttag";
-import { updateElectronApp, UpdateSourceType } from "update-electron-app";
 import pkg from "../../package.json";
 import { getSettings } from "../store/settingsStore";
 import { semver } from "../utils/external/packages/pass/utils/string/semver";
@@ -16,14 +15,14 @@ import { isNetworkError } from "../utils/netErrors";
 import { sentryReport } from "../utils/sentryReport";
 import { updateSession } from "../utils/session";
 import * as updateUtils from "./utils";
+import os from "node:os";
+import { getPlatformFeed } from "./platform";
 
 type LocalDesktopVersion = {
     Version: DesktopVersion["Version"];
     RolloutProportion: DesktopVersion["RolloutProportion"];
     CategoryName: DesktopVersion["CategoryName"];
 };
-
-let stopElectronUpdaterPolling: (() => void) | undefined;
 
 export let updateDownloaded = false;
 export let cachedLatestVersion: DesktopVersion | null = null;
@@ -45,6 +44,11 @@ export function initializeUpdateChecks() {
     // Resets on successful download or when no update is available (updater is healthy).
     const AUTO_UPDATER_ERROR_THRESHOLD = 3;
     let nonNetworkAutoUpdaterErrors = 0;
+
+    autoUpdater.on("checking-for-update", () => {
+        updateLogger.log("Checking for new update");
+        updateLogger.log("autoUpdater feedURL: " + autoUpdater.getFeedURL);
+    });
 
     autoUpdater.on("error", (error) => {
         if (isNetworkError(error)) {
@@ -71,11 +75,7 @@ export function initializeUpdateChecks() {
     autoUpdater.on("update-downloaded", async () => {
         nonNetworkAutoUpdaterErrors = 0;
         updateDownloaded = true;
-        stopElectronUpdaterPolling?.();
         updateLogger.info("Update downloaded, showing prompt.");
-
-        // Replaces update-electron-app dialog message with a custom one
-        // https://github.com/electron/update-electron-app/blob/f5e1f6d9944809c75129b74d82fcd76cc9e325b2/src/index.ts#L165-L176
 
         const { t } = c("Update prompt");
         const { response } = await dialog.showMessageBox({
@@ -112,6 +112,31 @@ export function initializeUpdateChecks() {
 
 const validUpdate = {} as DesktopVersion;
 
+function setValidUpdate(newUpdate: DesktopVersion) {
+    validUpdate.Version = newUpdate.Version;
+    validUpdate.CategoryName = newUpdate.CategoryName;
+    validUpdate.RolloutProportion = newUpdate.RolloutProportion;
+}
+
+function setAutoUpdaterFeed(feedURL: string): void {
+    const options: Electron.FeedURLOptions = {
+        url: feedURL,
+        serverType: "default",
+    };
+
+    if (getPlatform() === DESKTOP_PLATFORMS.MACOS) {
+        options.url += "/RELEASES.json";
+        options.serverType = "json";
+    }
+
+    const userAgent = `${pkg.name}${pkg.version} (${os.platform()}:${os.arch()})`;
+
+    const headers = { "User-Agent": userAgent };
+    options.headers = headers;
+
+    autoUpdater.setFeedURL(options);
+}
+
 async function checkForValidUpdates() {
     updateLogger.info("Checking for new valid version.");
 
@@ -134,6 +159,7 @@ async function checkForValidUpdates() {
     }
 
     const ffManager = getFeatureFlagManager();
+
     const newUpdate = getNewUpdate(
         local,
         availableVersions,
@@ -146,22 +172,24 @@ async function checkForValidUpdates() {
     }
     updateLogger.info("New valid update found! new:", newUpdate, "local:", local);
 
-    validUpdate.Version = newUpdate.Version;
-    validUpdate.CategoryName = newUpdate.CategoryName;
-    validUpdate.RolloutProportion = newUpdate.RolloutProportion;
+    setValidUpdate(newUpdate);
 
-    const { stopUpdates } = updateElectronApp({
-        updateSource: {
-            type: UpdateSourceType.StaticStorage,
-            baseUrl: `https://proton.me/download/mail/${platform}/${newUpdate.Version}/`,
-        },
-        updateInterval: updateUtils.getElectronUpdaterFetchInterval(),
-        logger: updateLogger,
-        notifyUser: false,
-    });
-    stopElectronUpdaterPolling = stopUpdates;
+    const platformFeed = getPlatformFeed(newUpdate.Version, platform);
+    if (!platformFeed) {
+        return;
+    }
+
+    setAutoUpdaterFeed(platformFeed);
+    autoUpdater.checkForUpdates();
 }
 
+/**
+ * Check whether there is a new update available to install.
+ * @param local {LocalDesktopVersion} current installed version
+ * @param unorderedAvailableVersions {VersionFile} all available versions
+ * @param electronAndOSVersionConstraintsDisabled {boolean} specific electron or OS guards disabled
+ * @returns {DesktopVersion|undefined} the new Desktop Version
+ */
 function getNewUpdate(
     local: LocalDesktopVersion,
     unorderedAvailableVersions: VersionFile,
@@ -231,7 +259,10 @@ function getNewUpdate(
         }))();
 }
 
-function scheduleNextCheck() {
+/**
+ *  scheduleNextCheck sets a timeout for when to check the next valid update.
+ */
+function scheduleNextCheck(): void {
     const delay = pkg.config.updateInterval + updateUtils.getVersionManifestFetchJitterMs();
     setTimeout(async () => {
         try {
@@ -247,11 +278,11 @@ function getVersionURL(platform: DESKTOP_PLATFORMS) {
     return `https://proton.me/download/mail/${platform}/version.json`;
 }
 
-function isANewerThanB(a: string, b: string) {
+function isANewerThanB(a: string, b: string): boolean {
     return semver(a) > semver(b);
 }
 
-function isANewerOrEqualToB(a: string, b: string) {
+function isANewerOrEqualToB(a: string, b: string): boolean {
     return semver(a) >= semver(b);
 }
 
