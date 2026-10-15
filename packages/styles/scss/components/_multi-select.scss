@@ -1,5 +1,5 @@
-@use '~@proton/styles/scss/lib/config' as *;
-@use '~@proton/styles/scss/lib/easing' as *;
+@use '../lib/config' as *;
+@use '../lib/easing' as *;
 
 .multi-select {
 	&-container {
