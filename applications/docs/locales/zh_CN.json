@@ -2934,14 +2934,8 @@
       "External invitations are temporarily disabled.": [
         "外部邀请暂时被禁用。"
       ],
-      "External invitations are temporarily disabled. Please try again later": [
-        "外部邀请暂时禁用。请稍后重试"
-      ],
       "Failed to change permissions settings": [
         "更改权限设置失败"
-      ],
-      "Failed to copy photo to album": [
-        "无法将照片复制到相册"
       ],
       "Failed to create folder": [
         "创建文件夹失败"
@@ -3449,6 +3443,9 @@
       ],
       "Wrong billing address": [
         "错误的账单地址"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "恢复短语错误，请重试或使用其他恢复方法。"
       ],
       "You can create public links for your own files only": [
         "您只能为自己拥有的文件创建公开链接"
@@ -7331,14 +7328,8 @@
       "\"${ fileName }\" shared": [
         "“${ fileName }”已共享"
       ],
-      "\"${ name }\" deleted": [
-        "“${ name }” 已删除"
-      ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" 已从回收站永久删除"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "“${ name }” 删除失败"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "\"${ name }\" 回收站永久删除失败"
@@ -7370,14 +7361,8 @@
       "${ count } item failed to be decrypted": [
         "${ count } 个项目解密失败"
       ],
-      "${ numberOfItems } item deleted": [
-        "${ numberOfItems } 项目已删除"
-      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } 个项目已从回收站永久删除"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems } 项目删除失败"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems }\" 个项目从回收站永久删除失败"

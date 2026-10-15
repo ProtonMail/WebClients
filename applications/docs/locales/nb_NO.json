@@ -2942,14 +2942,8 @@
       "External invitations are temporarily disabled.": [
         "Eksterne invitasjoner er midlertidig deaktivert."
       ],
-      "External invitations are temporarily disabled. Please try again later": [
-        "Eksterne invitasjoner er midlertidig deaktivert. Prøv igjen senere."
-      ],
       "Failed to change permissions settings": [
         "Kunne ikke endre tillatelsesinnstillinger"
-      ],
-      "Failed to copy photo to album": [
-        "Kunne ikke kopiere bildet til albumet"
       ],
       "Failed to create folder": [
         "Kunne ikke opprette mappe"
@@ -3463,6 +3457,9 @@
       ],
       "Wrong billing address": [
         "Feil faktureringsadresse"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Feil gjenopprettingsfrase. Prøv igjen eller bruk en annen gjenopprettingsmetode."
       ],
       "You can create public links for your own files only": [
         "Du kan bare opprette offentlige koblinger for dine egne filer"
@@ -7423,14 +7420,8 @@
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" delt"
       ],
-      "\"${ name }\" deleted": [
-        "\"${ name }\" slettet"
-      ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" slettet permanent fra papirkurven"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "\"${ name } ble ikke slettet"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "\"${ name }\" kunne ikke slettes permanent fra papirkurven."
@@ -7463,17 +7454,9 @@
         "${ count } element ble ikke dekryptert",
         "${ count } elementer ble ikke dekryptert"
       ],
-      "${ numberOfItems } item deleted": [
-        "${ numberOfItems } element slettet",
-        "${ numberOfItems } elementer slettet"
-      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } element slettet permanent fra papirkurven",
         "${ numberOfItems } elementer slettet permanent fra papirkurven"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems } element ble ikke slettet",
-        "${ numberOfItems } elementer ble ikke slettet"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems } element kunne ikke slettes permanent fra papirkurven",

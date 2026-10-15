@@ -2875,14 +2875,8 @@
       "External invitations are temporarily disabled.": [
         "Внешние приглашения временно отключены."
       ],
-      "External invitations are temporarily disabled. Please try again later": [
-        "Внешние приглашения временно отключены. Повторите попытку позже"
-      ],
       "Failed to change permissions settings": [
         "Не удалось изменить настройки разрешений"
-      ],
-      "Failed to copy photo to album": [
-        "Не удалось скопировать фото в альбом"
       ],
       "Failed to create folder": [
         "Не удалось создать папку"
@@ -3237,6 +3231,9 @@
       ],
       "Wrong billing address": [
         "Неверный адрес для выставления счетов"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Неправильная фраза для восстановления пароля. Попробуйте снова или используйте другой метод восстановления."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Нельзя отправить письмо более чем ${ maxContacts } получателю",
@@ -7168,14 +7165,8 @@
       "\"${ fileName }\" shared": [
         "Общий доступ к «${ fileName }» открыт"
       ],
-      "\"${ name }\" deleted": [
-        "\"${ name }\" удалён"
-      ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" безвозвратно удалено из корзины"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "Не удалось удалить \"${ name }\""
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "\"${ name }\" не удалось окончательно удалить из корзины"
@@ -7207,23 +7198,11 @@
         "${ count } элементов не удалось расшифровать",
         "${ count } элементов не удалось расшифровать"
       ],
-      "${ numberOfItems } item deleted": [
-        "${ numberOfItems } элемент удалён",
-        "${ numberOfItems } элемента удалены",
-        "${ numberOfItems } элементов удалены",
-        "${ numberOfItems } элемента удалены"
-      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } элемент окончательно удален из корзины",
         "${ numberOfItems } элемента окончательно удалены из корзины",
         "${ numberOfItems } элементов окончательно удалены из корзины",
         "${ numberOfItems } элементов окончательно удалены из корзины"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems } элемент не удалось удалить",
-        "${ numberOfItems } элемента не удалось удалить",
-        "${ numberOfItems } элементов не удалось удалить",
-        "${ numberOfItems } элемента не удалось удалить"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems } элемент не удалось окончательно удалить из корзины",
