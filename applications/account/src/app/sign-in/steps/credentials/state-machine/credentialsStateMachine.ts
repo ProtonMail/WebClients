@@ -726,6 +726,9 @@ export const credentialsStateMachine = credentialsSetup.createMachine({
 
 type CredentialsSnapshot = SnapshotFrom<typeof credentialsStateMachine>;
 
+/** The announcement applies only to the sign-in that starts with username and password on one page. */
+export const selectStartsOnOneStepSignIn = (snapshot: CredentialsSnapshot) => snapshot.context.initialForm === 'srp';
+
 /** Which credentials form shows, for the UI. */
 export const selectCredentialsForm = (snapshot: CredentialsSnapshot): CredentialsForm => {
     if (snapshot.matches({ form: { claimedAddress: 'verify' } })) {
