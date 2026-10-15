@@ -39,7 +39,9 @@
         "updateInterval": 3600000
     },
     "dependencies": {
+        "@proton/metrics": "workspace:^",
         "@proton/shared": "workspace:^",
+        "@proton/utils": "workspace:^",
         "electron-log": "^5.4.4",
         "electron-store": "^8.2.0",
         "execa": "^8.0.1",

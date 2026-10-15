@@ -18,6 +18,7 @@
         "dompurify": "^3.4.16"
     },
     "devDependencies": {
+        "@proton/eslint-config-proton": "workspace:^",
         "@proton/jest-swc-preset": "workspace:^",
         "@types/jest": "catalog:",
         "@types/node": "catalog:",
