@@ -502,7 +502,7 @@
         "Color de fons en ${ name } i color de text en blanc"
       ],
       "${ name } text color and highlight": [
-        "Color del text i de ressaltat en ${ name }"
+        "Color i ressaltat del text en ${ name }"
       ],
       "${ name } text color with no background": [
         "Color del text en ${ name } sense fons"
@@ -706,7 +706,7 @@
         "Discontinua"
       ],
       "Dotted": [
-        "Puntejada"
+        "Puntejat"
       ],
       "Double": [
         "Doble"
@@ -756,7 +756,377 @@
         "Nota"
       ]
     },
+    "sheets_2025:Spreadsheet cellFormatOptions": {
+      "Accounting": [
+        "Comptabilitat"
+      ],
+      "Bottom": [
+        "Inferior"
+      ],
+      "Center": [
+        "Centrar-ho"
+      ],
+      "Clip": [
+        "Retallar"
+      ],
+      "Currency": [
+        "Moneda"
+      ],
+      "Currency formats are used for general monetary values.": [
+        "Els formats de moneda s'utilitzen per a valors monetaris generals."
+      ],
+      "Custom": [
+        "Personalitzat"
+      ],
+      "Date": [
+        "Data"
+      ],
+      "Date formats display date and time serial numbers as date values.": [
+        "Els formats de data mostren els números consecutius de data i hora com a valors de data."
+      ],
+      "Fraction": [
+        "Fracció"
+      ],
+      "General": [
+        "General"
+      ],
+      "General format cells have no specific number format.": [
+        "Les cel·les amb format general no tenen cap format numèric específic."
+      ],
+      "Left": [
+        "Esquerra"
+      ],
+      "Number": [
+        "Nombre"
+      ],
+      "Number is used for general display of numbers.": [
+        "El número s'utilitza per a la visualització general de nombres."
+      ],
+      "Overflow": [
+        "Desbordament"
+      ],
+      "Percentage": [
+        "Percentatge"
+      ],
+      "Right": [
+        "Dreta"
+      ],
+      "Scientific": [
+        "Científic"
+      ],
+      "Text": [
+        "Text"
+      ],
+      "Time": [
+        "Hora"
+      ],
+      "Time formats display date and time serial numbers as date values.": [
+        "Els formats d'hora mostren els números de sèrie de data i hora com a valors de data."
+      ],
+      "Top": [
+        "Superior"
+      ],
+      "Wrap": [
+        "Embolicar"
+      ]
+    },
+    "sheets_2025:Spreadsheet chartAggregates": {
+      "Average": [
+        "Mitjana"
+      ],
+      "Count": [
+        "Comptar"
+      ],
+      "Max": [
+        "Màxim"
+      ],
+      "Median": [
+        "Mediana"
+      ],
+      "Min": [
+        "Mínim"
+      ],
+      "Sum": [
+        "Suma"
+      ]
+    },
+    "sheets_2025:Spreadsheet chartEditorDialog": {
+      "None": [
+        "Cap"
+      ]
+    },
+    "sheets_2025:Spreadsheet chartTypes": {
+      "2D Pie": [
+        "Gràfic de sectors 2D"
+      ],
+      "Clustered Column": [
+        "Columna agrupada"
+      ],
+      "Column": [
+        "Columna"
+      ],
+      "Doughnut": [
+        "Anelles"
+      ],
+      "Hierarchy": [
+        "Jerarquia"
+      ],
+      "Line": [
+        "Línia"
+      ],
+      "Pie": [
+        "Gràfic de sectors"
+      ],
+      "Smooth line": [
+        "Línia suau"
+      ],
+      "Stacked column": [
+        "Columna apilada"
+      ],
+      "Stacked line": [
+        "Línia apilada"
+      ],
+      "Sunburst": [
+        "Sunburst"
+      ],
+      "Treemap": [
+        "Mapa d'arbre"
+      ]
+    },
+    "sheets_2025:Spreadsheet conditions": {
+      "Above average": [
+        "Per sobre de la mitjana"
+      ],
+      "April": [
+        "abril"
+      ],
+      "August": [
+        "agost"
+      ],
+      "Below average": [
+        "Per sota de la mitjana"
+      ],
+      "Between": [
+        "Entre"
+      ],
+      "Bottom N items": [
+        "El percentatge de N inferior"
+      ],
+      "Bottom N percent": [
+        "Percentatge N inferior"
+      ],
+      "Checkbox": [
+        "Casella de selecció"
+      ],
+      "Custom formula": [
+        "Fórmula personalitzada"
+      ],
+      "Date is after": [
+        "La data és posterior a"
+      ],
+      "Date is before": [
+        "La data és anterior a"
+      ],
+      "Date is between": [
+        "La data està entre"
+      ],
+      "Date is equal to": [
+        "La data és igual a"
+      ],
+      "Date is not between": [
+        "La data no està entre"
+      ],
+      "Date is not equal to": [
+        "La data no és igual a"
+      ],
+      "Date is on or after": [
+        "La data és igual o posterior a"
+      ],
+      "Date is on or before": [
+        "La data és igual o anterior a"
+      ],
+      "Date is valid": [
+        "La data és vàlida"
+      ],
+      "December": [
+        "desembre"
+      ],
+      "Dropdown": [
+        "Desplegable"
+      ],
+      "Dropdown (from a range)": [
+        "Menú desplegable (d'un rang)"
+      ],
+      "Equal to": [
+        "Igual a"
+      ],
+      "Errors": [
+        "Errors"
+      ],
+      "February": [
+        "febrer"
+      ],
+      "Greater than": [
+        "Més gran que"
+      ],
+      "Greater than or equal to": [
+        "Més gran o igual que"
+      ],
+      "Greater than or equal to previous": [
+        "Major o igual que l'anterior"
+      ],
+      "Greater than previous": [
+        "Més gran que l'anterior"
+      ],
+      "Is empty": [
+        "Està buit"
+      ],
+      "Is not empty": [
+        "No està buit"
+      ],
+      "January": [
+        "gener"
+      ],
+      "July": [
+        "juliol"
+      ],
+      "June": [
+        "juny"
+      ],
+      "Last 7 days": [
+        "Últims 7 dies"
+      ],
+      "Last month": [
+        "El mes passat"
+      ],
+      "Last quarter": [
+        "Darrer trimestre"
+      ],
+      "Last week": [
+        "La setmana passada"
+      ],
+      "Last year": [
+        "L'any passat"
+      ],
+      "Less than": [
+        "Menor que"
+      ],
+      "Less than or equal to": [
+        "Menor o igual que"
+      ],
+      "Less than or equal to previous": [
+        "Menor o igual a l'anterior"
+      ],
+      "Less than previous": [
+        "Menor que l'anterior"
+      ],
+      "March": [
+        "març"
+      ],
+      "May": [
+        "maig"
+      ],
+      "Next month": [
+        "Mes següent"
+      ],
+      "Next quarter": [
+        "El trimestre vinent"
+      ],
+      "Next week": [
+        "Setmana entrant"
+      ],
+      "Next year": [
+        "Any vinent"
+      ],
+      "No errors": [
+        "Sense errors"
+      ],
+      "Not between": [
+        "No entre"
+      ],
+      "Not equal to": [
+        "No és igual que"
+      ],
+      "November": [
+        "novembre"
+      ],
+      "October": [
+        "octubre"
+      ],
+      "Quarter 1": [
+        "Trimestre 1"
+      ],
+      "Quarter 2": [
+        "Trimestre 2"
+      ],
+      "Quarter 3": [
+        "3r Trimestre"
+      ],
+      "Quarter 4": [
+        "Trimestre 4"
+      ],
+      "September": [
+        "setembre"
+      ],
+      "Text contains": [
+        "El text conté"
+      ],
+      "Text does not contain": [
+        "El text no conté"
+      ],
+      "Text ends with": [
+        "El text acaba amb"
+      ],
+      "Text is email": [
+        "El text és un correu electrònic"
+      ],
+      "Text is exactly": [
+        "El text és exactament"
+      ],
+      "Text is not equal": [
+        "El text no és igual a"
+      ],
+      "Text is URL": [
+        "El text és un URL"
+      ],
+      "Text starts with": [
+        "El text comença per"
+      ],
+      "This month": [
+        "Aquest mes"
+      ],
+      "This quarter": [
+        "Aquest trimestre"
+      ],
+      "This week": [
+        "Aquesta setmana"
+      ],
+      "This year": [
+        "Aquest any"
+      ],
+      "Today": [
+        "Avui"
+      ],
+      "Tomorrow": [
+        "Demà"
+      ],
+      "Top N items": [
+        "Els N elements superiors"
+      ],
+      "Top N percent": [
+        "El percentatge d'N superior"
+      ],
+      "Year to date": [
+        "Enguany"
+      ],
+      "Yesterday": [
+        "Ahir"
+      ]
+    },
     "sheets_2025:Spreadsheet context menu": {
+      "(Blanks)": [
+        "(En blanc)"
+      ],
       "AI Quick Edit": [
         "Edició ràpida amb IA"
       ],
@@ -791,7 +1161,7 @@
         "Copiar-ho"
       ],
       "Create a filter": [
-        "Crear un filtre"
+        "Crea un filtre"
       ],
       "Custom": [
         "Personalitzar"
@@ -1102,6 +1472,14 @@
         "Any"
       ]
     },
+    "sheets_2025:Spreadsheet customCurrencyFormatDialog": {
+      "Format": [
+        "Format"
+      ],
+      "Symbol": [
+        "Símbol"
+      ]
+    },
     "sheets_2025:Spreadsheet delete sheet dialog": {
       "Are you sure you want to delete ${ sheetName }?": [
         "Esteu segur que voleu eliminar \"${ sheetName }\"?"
@@ -1128,6 +1506,11 @@
       ],
       "Your screen is too small to edit this spreadsheet. You’re in view-only mode. To make changes, please open this spreadsheet on a larger screen or expand your browser window.": [
         "La vostra pantalla és massa petita per editar aquest full de càlcul. Sou al mode de només lectura. Per fer-hi canvis, obriu aquest full de càlcul en una pantalla més gran o amplieu la finestra del vostre navegador."
+      ]
+    },
+    "sheets_2025:Spreadsheet editingDisabledButton": {
+      "Edit": [
+        "Editar-ho"
       ]
     },
     "sheets_2025:Spreadsheet editor": {
@@ -1206,13 +1589,13 @@
         "Només el format"
       ],
       "Formula only": [
-        "Només fórmula"
+        "Només la fórmula"
       ],
       "Link only": [
         "Només l'enllaç"
       ],
       "Paste": [
-        "Enganxar"
+        "Enganxa"
       ],
       "Paste special": [
         "Enganxament especial"
@@ -1300,7 +1683,7 @@
         "Estils de cel·la"
       ],
       "Clear": [
-        "Netejar-ho"
+        "Neteja"
       ],
       "Clear content": [
         "Netejar el contingut"
@@ -1564,6 +1947,9 @@
       ]
     },
     "sheets_2025:Spreadsheet editor search dialog": {
+      "${ current } of ${ total }": [
+        "${ current } de ${ total }"
+      ],
       "Close": [
         "Tancar-ho"
       ],
@@ -1582,7 +1968,7 @@
         "Cancel·lar-ho"
       ],
       "Locale": [
-        "Ubicació"
+        "Configuració regional"
       ],
       "Save and reload": [
         "Desar-ho i tornar-ho a carregar"
@@ -1607,6 +1993,9 @@
       "Bold": [
         "Negreta"
       ],
+      "Border": [
+        "Vora"
+      ],
       "Choose border": [
         "Escolliu vora"
       ],
@@ -1630,6 +2019,9 @@
       ],
       "Default (${ defaultFont })": [
         "(${ defaultFont }) per defecte"
+      ],
+      "Fill color": [
+        "Color de fons"
       ],
       "Find": [
         "Cerca"
@@ -1694,6 +2086,9 @@
       "Strikethrough": [
         "Ratllat"
       ],
+      "Text color": [
+        "Color del text"
+      ],
       "Text wrapping": [
         "Ajust del text"
       ],
@@ -1757,6 +2152,35 @@
         "Ordena Z → A"
       ]
     },
+    "sheets_2025:Spreadsheet filterByCondition": {
+      "None": [
+        "Cap"
+      ]
+    },
+    "sheets_2025:Spreadsheet formatMenu": {
+      "Coming soon...": [
+        "Pròximament..."
+      ]
+    },
+    "sheets_2025:Spreadsheet formulaBar": {
+      "Edit": [
+        "Editar-ho"
+      ],
+      "Remove": [
+        "Esborrar-ho"
+      ],
+      "View": [
+        "Vista"
+      ]
+    },
+    "sheets_2025:Spreadsheet gridFooter": {
+      "Add": [
+        "Afegir-ne"
+      ],
+      "more rows at the bottom": [
+        "més files a la part inferior"
+      ]
+    },
     "sheets_2025:Spreadsheet insert link dialog": {
       "Apply": [
         "Aplicar-ho"
@@ -1792,23 +2216,23 @@
       "Cancel": [
         "Cancel·lar-ho"
       ],
-      "column": [
-        "columna"
-      ],
-      "column width": [
-        "amplada de la columna"
-      ],
-      "Default": [
-        "Per defecte"
+      "Default ${ size }": [
+        "Per defecte ${ size }"
       ],
       "OK": [
         "D'acord"
       ],
-      "row": [
-        "fila"
+      "Resize column ${ title }": [
+        "Canviar la mida de la columna ${ title }"
       ],
-      "row height": [
-        "alçada de la fila"
+      "Resize row ${ title }": [
+        "Canviar la mida de la fila ${ title }"
+      ],
+      "Specify column width (px)": [
+        "Especificar l'ample de la columna (px)"
+      ],
+      "Specify row height (px)": [
+        "Especificar l'alçada de la fila (px)"
       ]
     },
     "sheets_2025:Spreadsheet sheet status bar": {
@@ -1816,10 +2240,10 @@
         "Mitjana"
       ],
       "Count": [
-        "Comptar"
+        "Quantitat"
       ],
       "Customize Status Bar": [
-        "Personalitzar la barra d'estat"
+        "Personalitza la barra d'estat"
       ],
       "Max": [
         "Màxim"
@@ -1984,6 +2408,18 @@
       "Series": [
         "Sèries"
       ],
+      "Series ${ seriesNumber }": [
+        "Sèrie ${ seriesNumber }"
+      ],
+      "Series ${ seriesNumber } Aggregate": [
+        "Agregat de la sèrie ${ seriesNumber }"
+      ],
+      "Series ${ seriesNumber } Name": [
+        "Nom de la sèrie ${ seriesNumber }"
+      ],
+      "Series ${ seriesNumber } Range": [
+        "Rang de la sèrie ${ seriesNumber }"
+      ],
       "Show data in hidden rows and columns": [
         "Mostrar les dades de les files i columnes amagades"
       ],
@@ -2076,7 +2512,7 @@
         "Aplicar-ho"
       ],
       "Apply to create a custom currency": [
-        "Aplicar-ho per crear una moneda personalitzada"
+        "Aplica-ho per a crear una moneda personalitzada"
       ],
       "Cancel": [
         "Cancel·lar-ho"
@@ -2180,7 +2616,7 @@
         "Afegir un interval amb nom"
       ],
       "Apply to range": [
-        "Aplicar a l'interval"
+        "Aplica-ho a l'interval"
       ],
       "Cancel": [
         "Cancel·lar-ho"
@@ -2246,6 +2682,26 @@
       ],
       "Table title": [
         "Títol de la taula"
+      ]
+    },
+    "sheets_2025:Spreadsheet viewMenu": {
+      "1 column": [
+        "1 columna"
+      ],
+      "1 row": [
+        "1 fila"
+      ],
+      "2 columns": [
+        "2 columnes"
+      ],
+      "2 rows": [
+        "2 files"
+      ],
+      "No columns": [
+        "Sense columnes"
+      ],
+      "No rows": [
+        "Sense files"
       ]
     },
     "Title": {

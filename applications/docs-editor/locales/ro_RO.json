@@ -757,7 +757,377 @@
         "Notă"
       ]
     },
+    "sheets_2025:Spreadsheet cellFormatOptions": {
+      "Accounting": [
+        "Contabilitate"
+      ],
+      "Bottom": [
+        "Jos"
+      ],
+      "Center": [
+        "Centrare"
+      ],
+      "Clip": [
+        "Videoclip"
+      ],
+      "Currency": [
+        "Moneda"
+      ],
+      "Currency formats are used for general monetary values.": [
+        "Formatele valutare sunt utilizate pentru valori monetare generale."
+      ],
+      "Custom": [
+        "Personal"
+      ],
+      "Date": [
+        "Dată"
+      ],
+      "Date formats display date and time serial numbers as date values.": [
+        "Formatele de dată afișează numerele seriale pentru dată și oră sub formă de valori de dată."
+      ],
+      "Fraction": [
+        "Fracție"
+      ],
+      "General": [
+        "Generale"
+      ],
+      "General format cells have no specific number format.": [
+        "Celulele cu format general nu au un format numeric specific."
+      ],
+      "Left": [
+        "Stânga"
+      ],
+      "Number": [
+        "Număr"
+      ],
+      "Number is used for general display of numbers.": [
+        "„Număr” este utilizat pentru afișarea generală a numerelor."
+      ],
+      "Overflow": [
+        "Depășire"
+      ],
+      "Percentage": [
+        "Procentaj"
+      ],
+      "Right": [
+        "Dreapta"
+      ],
+      "Scientific": [
+        "Științific"
+      ],
+      "Text": [
+        "Text"
+      ],
+      "Time": [
+        "Timp"
+      ],
+      "Time formats display date and time serial numbers as date values.": [
+        "Formatele de timp afișează numerele de serie pentru dată și oră sub formă de valori de dată."
+      ],
+      "Top": [
+        "Sus"
+      ],
+      "Wrap": [
+        "Încapsulare"
+      ]
+    },
+    "sheets_2025:Spreadsheet chartAggregates": {
+      "Average": [
+        "Medie"
+      ],
+      "Count": [
+        "Total"
+      ],
+      "Max": [
+        "Maxim"
+      ],
+      "Median": [
+        "Mediană"
+      ],
+      "Min": [
+        "Minim"
+      ],
+      "Sum": [
+        "Sumă"
+      ]
+    },
+    "sheets_2025:Spreadsheet chartEditorDialog": {
+      "None": [
+        "Niciuna"
+      ]
+    },
+    "sheets_2025:Spreadsheet chartTypes": {
+      "2D Pie": [
+        "Plăcintă 2D"
+      ],
+      "Clustered Column": [
+        "Coloane grupate"
+      ],
+      "Column": [
+        "Coloana"
+      ],
+      "Doughnut": [
+        "Gogoașă"
+      ],
+      "Hierarchy": [
+        "Ierarhie"
+      ],
+      "Line": [
+        "Linia"
+      ],
+      "Pie": [
+        "Plăcintă"
+      ],
+      "Smooth line": [
+        "Linie fină"
+      ],
+      "Stacked column": [
+        "Coloane suprapuse"
+      ],
+      "Stacked line": [
+        "Linie suprapusă"
+      ],
+      "Sunburst": [
+        "Explozie solară"
+      ],
+      "Treemap": [
+        "Hartă arborescentă"
+      ]
+    },
+    "sheets_2025:Spreadsheet conditions": {
+      "Above average": [
+        "Peste medie"
+      ],
+      "April": [
+        "Aprilie"
+      ],
+      "August": [
+        "August"
+      ],
+      "Below average": [
+        "Sub medie"
+      ],
+      "Between": [
+        "Între"
+      ],
+      "Bottom N items": [
+        "Ultimele N articole"
+      ],
+      "Bottom N percent": [
+        "Ultimul procentaj de N"
+      ],
+      "Checkbox": [
+        "Caseta de selectare"
+      ],
+      "Custom formula": [
+        "Formulă personală"
+      ],
+      "Date is after": [
+        "Data este după"
+      ],
+      "Date is before": [
+        "Data este înainte"
+      ],
+      "Date is between": [
+        "Data este între"
+      ],
+      "Date is equal to": [
+        "Data este egală cu"
+      ],
+      "Date is not between": [
+        "Data nu este între"
+      ],
+      "Date is not equal to": [
+        "Data nu este egală cu"
+      ],
+      "Date is on or after": [
+        "Data este egală cu sau ulterioară"
+      ],
+      "Date is on or before": [
+        "Data este egală cu sau anterioară"
+      ],
+      "Date is valid": [
+        "Data este validă."
+      ],
+      "December": [
+        "Decembrie"
+      ],
+      "Dropdown": [
+        "Listă derulantă"
+      ],
+      "Dropdown (from a range)": [
+        "Listă derulantă (dintr-un interval)"
+      ],
+      "Equal to": [
+        "Egal cu"
+      ],
+      "Errors": [
+        "Erori"
+      ],
+      "February": [
+        "Februarie"
+      ],
+      "Greater than": [
+        "Mai mare decât"
+      ],
+      "Greater than or equal to": [
+        "Mai mare sau egal decât"
+      ],
+      "Greater than or equal to previous": [
+        "Mai mare sau egal cu precedentul"
+      ],
+      "Greater than previous": [
+        "Mai mare decât anteriorul"
+      ],
+      "Is empty": [
+        "Este gol"
+      ],
+      "Is not empty": [
+        "Nu este gol"
+      ],
+      "January": [
+        "Ianuarie"
+      ],
+      "July": [
+        "Iulie"
+      ],
+      "June": [
+        "Iunie"
+      ],
+      "Last 7 days": [
+        "Ultimele 7 zile"
+      ],
+      "Last month": [
+        "Ultima lună"
+      ],
+      "Last quarter": [
+        "Trimestrul trecut"
+      ],
+      "Last week": [
+        "Săptămâna trecută"
+      ],
+      "Last year": [
+        "Ultimul an"
+      ],
+      "Less than": [
+        "Mai puțin de"
+      ],
+      "Less than or equal to": [
+        "Mai mic sau egal cu"
+      ],
+      "Less than or equal to previous": [
+        "Mai mic sau egal cu precedentul"
+      ],
+      "Less than previous": [
+        "Mai mic decât anteriorul"
+      ],
+      "March": [
+        "Martie"
+      ],
+      "May": [
+        "Mai"
+      ],
+      "Next month": [
+        "Luna viitoare"
+      ],
+      "Next quarter": [
+        "Sfertul următor"
+      ],
+      "Next week": [
+        "Săptămâna viitoare"
+      ],
+      "Next year": [
+        "Anul următor"
+      ],
+      "No errors": [
+        "Nu sunt erori."
+      ],
+      "Not between": [
+        "Nu e între"
+      ],
+      "Not equal to": [
+        "Nu este egal cu"
+      ],
+      "November": [
+        "Noiembrie"
+      ],
+      "October": [
+        "Octombrie"
+      ],
+      "Quarter 1": [
+        "Sfertul 1"
+      ],
+      "Quarter 2": [
+        "Sfertul 2"
+      ],
+      "Quarter 3": [
+        "Sfertul 3"
+      ],
+      "Quarter 4": [
+        "Sfertul 4"
+      ],
+      "September": [
+        "Septembrie"
+      ],
+      "Text contains": [
+        "Textul conține"
+      ],
+      "Text does not contain": [
+        "Textul nu conține"
+      ],
+      "Text ends with": [
+        "Textul se termină cu"
+      ],
+      "Text is email": [
+        "Textul este e-mail"
+      ],
+      "Text is exactly": [
+        "Textul este exact"
+      ],
+      "Text is not equal": [
+        "Textul nu este egal"
+      ],
+      "Text is URL": [
+        "Textul este URL"
+      ],
+      "Text starts with": [
+        "Textul începe cu"
+      ],
+      "This month": [
+        "Luna curentă"
+      ],
+      "This quarter": [
+        "Acest sfert"
+      ],
+      "This week": [
+        "Săptămâna asta"
+      ],
+      "This year": [
+        "Acest an"
+      ],
+      "Today": [
+        "Astăzi"
+      ],
+      "Tomorrow": [
+        "Mâine"
+      ],
+      "Top N items": [
+        "Top N articole"
+      ],
+      "Top N percent": [
+        "Primele N procente"
+      ],
+      "Year to date": [
+        "Ultimul an"
+      ],
+      "Yesterday": [
+        "Ieri"
+      ]
+    },
     "sheets_2025:Spreadsheet context menu": {
+      "(Blanks)": [
+        "(Spații libere)"
+      ],
       "AI Quick Edit": [
         "Editare rapidă IA"
       ],
@@ -1105,6 +1475,14 @@
         "An"
       ]
     },
+    "sheets_2025:Spreadsheet customCurrencyFormatDialog": {
+      "Format": [
+        "Format"
+      ],
+      "Symbol": [
+        "Simbol"
+      ]
+    },
     "sheets_2025:Spreadsheet delete sheet dialog": {
       "Are you sure you want to delete ${ sheetName }?": [
         "Sigur doriți să ștergeți „${ sheetName }”?"
@@ -1131,6 +1509,11 @@
       ],
       "Your screen is too small to edit this spreadsheet. You’re in view-only mode. To make changes, please open this spreadsheet on a larger screen or expand your browser window.": [
         "Ecranul este prea mic pentru a edita această foaie de calcul. Sunteți în modul doar vizualizare. Pentru a face modificări, deschideți această foaie de calcul pe un ecran mai mare sau extindeți fereastra navigatorului web."
+      ]
+    },
+    "sheets_2025:Spreadsheet editingDisabledButton": {
+      "Edit": [
+        "Editare"
       ]
     },
     "sheets_2025:Spreadsheet editor": {
@@ -1569,6 +1952,9 @@
       ]
     },
     "sheets_2025:Spreadsheet editor search dialog": {
+      "${ current } of ${ total }": [
+        "${ current } din ${ total }"
+      ],
       "Close": [
         "Închidere"
       ],
@@ -1612,6 +1998,9 @@
       "Bold": [
         "Îngroșat"
       ],
+      "Border": [
+        "Bordură"
+      ],
       "Choose border": [
         "Alegere bordură"
       ],
@@ -1635,6 +2024,9 @@
       ],
       "Default (${ defaultFont })": [
         "Implicit (${ defaultFont })"
+      ],
+      "Fill color": [
+        "Culoare umplere"
       ],
       "Find": [
         "Căutare"
@@ -1699,6 +2091,9 @@
       "Strikethrough": [
         "Tăiat cu o linie"
       ],
+      "Text color": [
+        "Culoare text"
+      ],
       "Text wrapping": [
         "Încadrare text"
       ],
@@ -1762,6 +2157,35 @@
         "Sortare Z → A"
       ]
     },
+    "sheets_2025:Spreadsheet filterByCondition": {
+      "None": [
+        "Niciunul"
+      ]
+    },
+    "sheets_2025:Spreadsheet formatMenu": {
+      "Coming soon...": [
+        "În curând..."
+      ]
+    },
+    "sheets_2025:Spreadsheet formulaBar": {
+      "Edit": [
+        "Editare"
+      ],
+      "Remove": [
+        "Eliminare"
+      ],
+      "View": [
+        "Afișare"
+      ]
+    },
+    "sheets_2025:Spreadsheet gridFooter": {
+      "Add": [
+        "Adăugare"
+      ],
+      "more rows at the bottom": [
+        "mai multe rânduri jos"
+      ]
+    },
     "sheets_2025:Spreadsheet insert link dialog": {
       "Apply": [
         "Aplicare"
@@ -1797,23 +2221,23 @@
       "Cancel": [
         "Anulare"
       ],
-      "column": [
-        "coloana"
-      ],
-      "column width": [
-        "lățime coloană"
-      ],
-      "Default": [
-        "Implicit"
+      "Default ${ size }": [
+        "Implicit ${ size }"
       ],
       "OK": [
         "OK"
       ],
-      "row": [
-        "rând"
+      "Resize column ${ title }": [
+        "Redimensionare coloana ${ title }"
       ],
-      "row height": [
-        "Înălțime rând"
+      "Resize row ${ title }": [
+        "Redimensionare rândul ${ title }"
+      ],
+      "Specify column width (px)": [
+        "Specificați lățimea coloanei (px)"
+      ],
+      "Specify row height (px)": [
+        "Specificați înălțimea rândului (px)"
       ]
     },
     "sheets_2025:Spreadsheet sheet status bar": {
@@ -1988,6 +2412,18 @@
       ],
       "Series": [
         "Serie"
+      ],
+      "Series ${ seriesNumber }": [
+        "Seria ${ seriesNumber }"
+      ],
+      "Series ${ seriesNumber } Aggregate": [
+        "Agregat din seria ${ seriesNumber }"
+      ],
+      "Series ${ seriesNumber } Name": [
+        "Numele seriei ${ seriesNumber }"
+      ],
+      "Series ${ seriesNumber } Range": [
+        "Interval serie ${ seriesNumber }"
       ],
       "Show data in hidden rows and columns": [
         "Afișare date din rânduri și coloane ascunse"
@@ -2251,6 +2687,26 @@
       ],
       "Table title": [
         "Titlu tabel"
+      ]
+    },
+    "sheets_2025:Spreadsheet viewMenu": {
+      "1 column": [
+        "1 coloană"
+      ],
+      "1 row": [
+        "1 rând"
+      ],
+      "2 columns": [
+        "Două coloane"
+      ],
+      "2 rows": [
+        "Două rânduri"
+      ],
+      "No columns": [
+        "Fără coloane"
+      ],
+      "No rows": [
+        "Niciun rând"
       ]
     },
     "Title": {

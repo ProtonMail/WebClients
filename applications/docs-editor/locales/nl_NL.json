@@ -744,7 +744,377 @@
         "Notitie"
       ]
     },
+    "sheets_2025:Spreadsheet cellFormatOptions": {
+      "Accounting": [
+        "Boekhouding"
+      ],
+      "Bottom": [
+        "Onderaan"
+      ],
+      "Center": [
+        "Centreer"
+      ],
+      "Clip": [
+        "Clip"
+      ],
+      "Currency": [
+        "Valuta"
+      ],
+      "Currency formats are used for general monetary values.": [
+        "Valutaformaten worden gebruikt voor algemene geldwaarden."
+      ],
+      "Custom": [
+        "Aangepast"
+      ],
+      "Date": [
+        "Datum"
+      ],
+      "Date formats display date and time serial numbers as date values.": [
+        "Datumnotaties geven datum- en tijdserienummers weer als datumwaarden."
+      ],
+      "Fraction": [
+        "Fractie"
+      ],
+      "General": [
+        "Algemeen"
+      ],
+      "General format cells have no specific number format.": [
+        "Cellen met een algemeen formaat hebben geen specifiek getalformaat."
+      ],
+      "Left": [
+        "Links"
+      ],
+      "Number": [
+        "Getal"
+      ],
+      "Number is used for general display of numbers.": [
+        "Getal wordt gebruikt voor de algemene weergave van getallen."
+      ],
+      "Overflow": [
+        "Overloop"
+      ],
+      "Percentage": [
+        "Percentage"
+      ],
+      "Right": [
+        "Rechts"
+      ],
+      "Scientific": [
+        "Wetenschappelijk"
+      ],
+      "Text": [
+        "Tekst"
+      ],
+      "Time": [
+        "Tijd"
+      ],
+      "Time formats display date and time serial numbers as date values.": [
+        "Tijdnotaties geven datum- en tijdserienummers weer als datumwaarden."
+      ],
+      "Top": [
+        "Bovenste"
+      ],
+      "Wrap": [
+        "Omsluiten"
+      ]
+    },
+    "sheets_2025:Spreadsheet chartAggregates": {
+      "Average": [
+        "Gemiddelde"
+      ],
+      "Count": [
+        "Aantal"
+      ],
+      "Max": [
+        "Max"
+      ],
+      "Median": [
+        "Mediaan"
+      ],
+      "Min": [
+        "Min"
+      ],
+      "Sum": [
+        "Som"
+      ]
+    },
+    "sheets_2025:Spreadsheet chartEditorDialog": {
+      "None": [
+        "Geen"
+      ]
+    },
+    "sheets_2025:Spreadsheet chartTypes": {
+      "2D Pie": [
+        "2D Taart"
+      ],
+      "Clustered Column": [
+        "Gegroepeerde kolom"
+      ],
+      "Column": [
+        "Kolom"
+      ],
+      "Doughnut": [
+        "Ring"
+      ],
+      "Hierarchy": [
+        "Hiërarchie"
+      ],
+      "Line": [
+        "Lijn"
+      ],
+      "Pie": [
+        "Stuk"
+      ],
+      "Smooth line": [
+        "Vloeiende lijn"
+      ],
+      "Stacked column": [
+        "Gestapelde kolom"
+      ],
+      "Stacked line": [
+        "Gestapelde lijn"
+      ],
+      "Sunburst": [
+        "Zonnestraal"
+      ],
+      "Treemap": [
+        "Boomstructuur"
+      ]
+    },
+    "sheets_2025:Spreadsheet conditions": {
+      "Above average": [
+        "Boven gemiddeld"
+      ],
+      "April": [
+        "April"
+      ],
+      "August": [
+        "Augustus"
+      ],
+      "Below average": [
+        "Beneden gemiddeld"
+      ],
+      "Between": [
+        "Tussen"
+      ],
+      "Bottom N items": [
+        "Laatste N items"
+      ],
+      "Bottom N percent": [
+        "Laagste N procent"
+      ],
+      "Checkbox": [
+        "Checkbox"
+      ],
+      "Custom formula": [
+        "Aangepaste formule"
+      ],
+      "Date is after": [
+        "Datum is na"
+      ],
+      "Date is before": [
+        "Datum ligt voor"
+      ],
+      "Date is between": [
+        "Datum ligt tussen"
+      ],
+      "Date is equal to": [
+        "Datum is gelijk aan"
+      ],
+      "Date is not between": [
+        "Datum ligt niet tussen"
+      ],
+      "Date is not equal to": [
+        "Datum is niet gelijk aan"
+      ],
+      "Date is on or after": [
+        "Datum is op of na"
+      ],
+      "Date is on or before": [
+        "Datum is op of voor"
+      ],
+      "Date is valid": [
+        "Datum is geldig"
+      ],
+      "December": [
+        "December"
+      ],
+      "Dropdown": [
+        "Keuzemenu"
+      ],
+      "Dropdown (from a range)": [
+        "Vervolgkeuzelijst (uit een bereik)"
+      ],
+      "Equal to": [
+        "Gelijk aan"
+      ],
+      "Errors": [
+        "Fouten"
+      ],
+      "February": [
+        "Februari"
+      ],
+      "Greater than": [
+        "Groter dan"
+      ],
+      "Greater than or equal to": [
+        "Groter dan of gelijk aan"
+      ],
+      "Greater than or equal to previous": [
+        "Groter dan of gelijk aan de vorige"
+      ],
+      "Greater than previous": [
+        "Groter dan vorige"
+      ],
+      "Is empty": [
+        "Is leeg"
+      ],
+      "Is not empty": [
+        "Is niet leeg"
+      ],
+      "January": [
+        "Januari"
+      ],
+      "July": [
+        "Juli"
+      ],
+      "June": [
+        "Juni"
+      ],
+      "Last 7 days": [
+        "Afgelopen 7 dagen"
+      ],
+      "Last month": [
+        "Afgelopen maand"
+      ],
+      "Last quarter": [
+        "Laatste kwartaal"
+      ],
+      "Last week": [
+        "Laatste week"
+      ],
+      "Last year": [
+        "Afgelopen jaar"
+      ],
+      "Less than": [
+        "Kleiner dan"
+      ],
+      "Less than or equal to": [
+        "Kleiner dan of gelijk aan"
+      ],
+      "Less than or equal to previous": [
+        "Kleiner dan of gelijk aan vorige"
+      ],
+      "Less than previous": [
+        "Kleiner dan vorige"
+      ],
+      "March": [
+        "Maart"
+      ],
+      "May": [
+        "Mei"
+      ],
+      "Next month": [
+        "Volgende maand"
+      ],
+      "Next quarter": [
+        "Volgend kwartaal"
+      ],
+      "Next week": [
+        "Volgende week"
+      ],
+      "Next year": [
+        "Volgend jaar"
+      ],
+      "No errors": [
+        "Geen fouten"
+      ],
+      "Not between": [
+        "Niet tussen"
+      ],
+      "Not equal to": [
+        "Niet gelijk aan"
+      ],
+      "November": [
+        "November"
+      ],
+      "October": [
+        "Oktober"
+      ],
+      "Quarter 1": [
+        "Kwartaal 1"
+      ],
+      "Quarter 2": [
+        "Kwartaal 2"
+      ],
+      "Quarter 3": [
+        "Kwartaal 3"
+      ],
+      "Quarter 4": [
+        "Kwartaal 4"
+      ],
+      "September": [
+        "September"
+      ],
+      "Text contains": [
+        "Tekst bevat"
+      ],
+      "Text does not contain": [
+        "Tekst bevat geen"
+      ],
+      "Text ends with": [
+        "De tekst eindigt met"
+      ],
+      "Text is email": [
+        "Tekst is een e-mail"
+      ],
+      "Text is exactly": [
+        "Tekst is exact"
+      ],
+      "Text is not equal": [
+        "Tekst is niet gelijk"
+      ],
+      "Text is URL": [
+        "Tekst is URL"
+      ],
+      "Text starts with": [
+        "Tekst begint met"
+      ],
+      "This month": [
+        "Deze maand"
+      ],
+      "This quarter": [
+        "Dit kwartaal"
+      ],
+      "This week": [
+        "Deze week"
+      ],
+      "This year": [
+        "Dit jaar"
+      ],
+      "Today": [
+        "Vandaag"
+      ],
+      "Tomorrow": [
+        "Morgen"
+      ],
+      "Top N items": [
+        "Top N items"
+      ],
+      "Top N percent": [
+        "Hoogste N procent"
+      ],
+      "Year to date": [
+        "Dit jaar"
+      ],
+      "Yesterday": [
+        "Gisteren"
+      ]
+    },
     "sheets_2025:Spreadsheet context menu": {
+      "(Blanks)": [
+        "(Spaties)"
+      ],
       "AI Quick Edit": [
         "AI Snelle Bewerking"
       ],
@@ -1090,6 +1460,14 @@
         "Jaar"
       ]
     },
+    "sheets_2025:Spreadsheet customCurrencyFormatDialog": {
+      "Format": [
+        "Formatteer"
+      ],
+      "Symbol": [
+        "Symbool"
+      ]
+    },
     "sheets_2025:Spreadsheet delete sheet dialog": {
       "Are you sure you want to delete ${ sheetName }?": [
         "Weet u zeker dat u \"${ sheetName }\" wilt verwijderen?"
@@ -1116,6 +1494,11 @@
       ],
       "Your screen is too small to edit this spreadsheet. You’re in view-only mode. To make changes, please open this spreadsheet on a larger screen or expand your browser window.": [
         "Uw scherm is te klein om dit spreadsheet te bewerken. U bevindt zich in de alleen-lezenmodus. Om wijzigingen aan te brengen, opent u dit spreadsheet op een groter scherm of vergroot u uw browservenster."
+      ]
+    },
+    "sheets_2025:Spreadsheet editingDisabledButton": {
+      "Edit": [
+        "Bewerken"
       ]
     },
     "sheets_2025:Spreadsheet editor": {
@@ -1549,6 +1932,9 @@
       ]
     },
     "sheets_2025:Spreadsheet editor search dialog": {
+      "${ current } of ${ total }": [
+        "${ current } van ${ total }"
+      ],
       "Close": [
         "Sluiten"
       ],
@@ -1592,6 +1978,9 @@
       "Bold": [
         "Dikgedrukt"
       ],
+      "Border": [
+        "Rand"
+      ],
       "Choose border": [
         "Kies rand"
       ],
@@ -1615,6 +2004,9 @@
       ],
       "Default (${ defaultFont })": [
         "Standaard (${ defaultFont })"
+      ],
+      "Fill color": [
+        "Opvulkleur"
       ],
       "Find": [
         "Zoeken"
@@ -1679,6 +2071,9 @@
       "Strikethrough": [
         "Doorstrepen"
       ],
+      "Text color": [
+        "Tekstkleur"
+      ],
       "Text wrapping": [
         "Tekstterugloop"
       ],
@@ -1742,6 +2137,35 @@
         "Sorteren Z → A"
       ]
     },
+    "sheets_2025:Spreadsheet filterByCondition": {
+      "None": [
+        "Geen"
+      ]
+    },
+    "sheets_2025:Spreadsheet formatMenu": {
+      "Coming soon...": [
+        "Binnenkort beschikbaar..."
+      ]
+    },
+    "sheets_2025:Spreadsheet formulaBar": {
+      "Edit": [
+        "Bewerken"
+      ],
+      "Remove": [
+        "Verwijderen"
+      ],
+      "View": [
+        "Bekijken"
+      ]
+    },
+    "sheets_2025:Spreadsheet gridFooter": {
+      "Add": [
+        "Toevoegen"
+      ],
+      "more rows at the bottom": [
+        "Meer rijen onderaan"
+      ]
+    },
     "sheets_2025:Spreadsheet insert link dialog": {
       "Apply": [
         "Toepassen"
@@ -1777,23 +2201,23 @@
       "Cancel": [
         "Annuleren"
       ],
-      "column": [
-        "kolom"
-      ],
-      "column width": [
-        "kolombreedte"
-      ],
-      "Default": [
-        "Standaard"
+      "Default ${ size }": [
+        "Standaard (${ size }"
       ],
       "OK": [
         "OK"
       ],
-      "row": [
-        "rij"
+      "Resize column ${ title }": [
+        "Kolombreedte van ${ title } aanpassen"
       ],
-      "row height": [
-        "rijhoogte"
+      "Resize row ${ title }": [
+        "Rijhoogte van ${ title } aanpassen"
+      ],
+      "Specify column width (px)": [
+        "Kolombreedte opgeven (px)"
+      ],
+      "Specify row height (px)": [
+        "Specificeer rijhoogte (px)"
       ]
     },
     "sheets_2025:Spreadsheet sheet status bar": {
@@ -1968,6 +2392,18 @@
       ],
       "Series": [
         "Reeks"
+      ],
+      "Series ${ seriesNumber }": [
+        "Serie ${ seriesNumber }"
+      ],
+      "Series ${ seriesNumber } Aggregate": [
+        "Serie ${ seriesNumber } Aggregatie"
+      ],
+      "Series ${ seriesNumber } Name": [
+        "Serie ${ seriesNumber } Naam"
+      ],
+      "Series ${ seriesNumber } Range": [
+        "Serie ${ seriesNumber } Bereik"
       ],
       "Show data in hidden rows and columns": [
         "Gegevens weergeven in verborgen rijen en kolommen"
@@ -2231,6 +2667,26 @@
       ],
       "Table title": [
         "Tabeltitel"
+      ]
+    },
+    "sheets_2025:Spreadsheet viewMenu": {
+      "1 column": [
+        "1 kolom"
+      ],
+      "1 row": [
+        "1 rij"
+      ],
+      "2 columns": [
+        "2 kolommen"
+      ],
+      "2 rows": [
+        "2 rijen"
+      ],
+      "No columns": [
+        "Geen kolommen"
+      ],
+      "No rows": [
+        "Geen rijen"
       ]
     },
     "Title": {
