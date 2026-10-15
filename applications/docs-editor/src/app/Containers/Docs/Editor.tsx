@@ -2,7 +2,7 @@ import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import { ListPlugin } from '@lexical/react/LexicalListPlugin'
 import { HorizontalRulePlugin } from '@lexical/react/LexicalHorizontalRulePlugin'
 import { BuildInitialEditorConfig, ShouldBootstrap } from './InitialEditorConfig'
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type { Provider } from '@lexical/yjs'
 import type { YDocMap, DocStateInterface, DocumentRole } from '@proton/docs-shared'
 import type { EditorInitializationConfig } from './contract/EditorInitialization'
@@ -56,6 +56,8 @@ import { TableOfContents } from '../../Components/TableOfContents/TableOfContent
 import DocsLayout from '../DocsLayout'
 import { useDocsDependencies } from './DocsDependenciesProvider'
 
+const EmojiAutocompletePlugin = lazy(() => import('./Plugins/emoji/EmojiAutocompletePlugin'))
+
 const TypingBotEnabled = false
 
 export type EditorProps = {
@@ -106,6 +108,8 @@ export function Editor({
   const [collabCursorsContainer, setCollabCursorsContainer] = useState<HTMLDivElement | null>(null)
 
   const {
+    emojiPickerEnabled,
+    emojiMessages,
     userName,
     isAlpha,
     logger,
@@ -250,6 +254,11 @@ export function Editor({
           <DocsLayout.RightPanel />
         </DocsLayout.Grid>
 
+        {emojiPickerEnabled && (
+          <Suspense fallback={null}>
+            <EmojiAutocompletePlugin messages={emojiMessages} />
+          </Suspense>
+        )}
         <FixBrokenTabNode />
         <KeyboardShortcutsPlugin />
         <FormattingPlugin />

@@ -41,7 +41,7 @@ export function OverflowMenuItem({ item }: { item: ToolbarItemInterface }) {
       data-testid={`overflow-${item.id}`}
       disabled={item.disabled}
       // Closing a submenu returns focus to its item in the overflow menu.
-      contentProps={{ ...item.dropdownProps, autoFocusOnHide: true }}
+      contentProps={{ ...item.dropdownProps, autoFocusOnHide: item.dropdownProps.autoFocusOnHide ?? true }}
     >
       {item.menu}
     </SimpleDropdown>
