@@ -6,6 +6,16 @@ import { type ArtifactType, type ParsedArtifact, hashArtifactIdentity, isArtifac
 
 export const CREATE_ARTIFACT_TOOL_NAME = 'create_artifact';
 
+// "Artifact" is the internal and model-facing term; users see "creation", and the panel is the
+// "canvas". Without this, the model echoes the tool's own vocabulary ("I've created an artifact
+// in the side panel") back to the user.
+const USER_FACING_VOCABULARY =
+    ' How to talk about this to the user: the app never shows the words "artifact" or "side ' +
+    'panel", or this tool\'s name. Refer to the content by what it is ("your email", "the script", ' +
+    '"the slide deck"); if you need a general word, call it a creation, shown in the canvas. Never ' +
+    'mention tool names. If the user mentions a creation or the canvas, they mean content from ' +
+    'this tool.';
+
 export const createArtifactToolExecutor: ClientToolExecutor = {
     getClientTools: async () => [
         {
@@ -50,7 +60,8 @@ export const createArtifactToolExecutor: ClientToolExecutor = {
                     '`id` and the full updated content (never a diff or partial update); use a new `id` ' +
                     "only for a genuinely new, unrelated artifact. If the user's message references an " +
                     'artifact by its id, reuse that same id. Call this tool promptly once the content is ' +
-                    'ready; add at most a brief confirmation afterward if needed.',
+                    'ready; add at most a brief confirmation afterward if needed.' +
+                    USER_FACING_VOCABULARY,
                 parameters: {
                     type: 'object',
                     properties: {
@@ -87,9 +98,9 @@ export const createArtifactToolExecutor: ClientToolExecutor = {
             content: JSON.stringify({
                 ok: true,
                 message:
-                    "Artifact created and is now shown to the user in the side panel — don't repeat its " +
-                    'content in your reply. Continue with a brief confirmation or anything else relevant, or ' +
-                    'stop here if there is nothing more to add.',
+                    "Created and now shown to the user — don't repeat its content in your reply. " +
+                    'Continue with a brief confirmation or anything else relevant, or stop here if there ' +
+                    'is nothing more to add. Refer to it by what it is, not as an artifact.',
             }),
         }));
     },

@@ -27,6 +27,6 @@ export const getArtifactDrawerTypeLabel = (type: ArtifactType, language?: string
         case 'presentation':
             return c('collider_2025:Info').t`Presentation · HTML`;
         default:
-            return c('collider_2025:Info').t`Artifact`;
+            return c('collider_2025:Info').t`Creation`;
     }
 };

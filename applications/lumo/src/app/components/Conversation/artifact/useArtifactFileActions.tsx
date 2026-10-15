@@ -123,7 +123,7 @@ export function useArtifactFileActions({
             reportDownload('source', 'error');
             createNotification({
                 type: 'error',
-                text: c('collider_2025: Error').t`Could not download this artifact.`,
+                text: c('collider_2025: Error').t`Could not download this file.`,
             });
         }
     };
@@ -139,7 +139,7 @@ export function useArtifactFileActions({
             reportDownload('docx', 'error');
             createNotification({
                 type: 'error',
-                text: c('collider_2025: Error').t`Could not export this artifact as a Word document.`,
+                text: c('collider_2025: Error').t`Could not export as a Word document.`,
             });
         }
     };
@@ -184,7 +184,7 @@ export function useArtifactFileActions({
         } else {
             createNotification({
                 type: 'error',
-                text: c('collider_2025: Error').t`Could not export this artifact as PDF.`,
+                text: c('collider_2025: Error').t`Could not export as PDF.`,
             });
         }
     };
@@ -206,14 +206,14 @@ export function useArtifactFileActions({
                 reportDownload('pptx', 'error');
                 createNotification({
                     type: 'error',
-                    text: c('collider_2025: Error').t`Could not export this artifact as PPTX.`,
+                    text: c('collider_2025: Error').t`Could not export as PPTX.`,
                 });
             }
         } catch {
             reportDownload('pptx', 'error');
             createNotification({
                 type: 'error',
-                text: c('collider_2025: Error').t`Could not export this artifact as PPTX.`,
+                text: c('collider_2025: Error').t`Could not export as PPTX.`,
             });
         } finally {
             setExportingKind(null);

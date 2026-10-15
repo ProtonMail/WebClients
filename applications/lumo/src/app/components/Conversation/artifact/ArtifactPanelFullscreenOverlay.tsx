@@ -56,7 +56,7 @@ export const ArtifactPanelFullscreenOverlay = ({
             className="artifact-fullscreen-overlay fixed inset-0 z-previewer flex flex-column bg-norm"
             role="dialog"
             aria-modal="true"
-            aria-label={c('collider_2025:Label').t`Artifact full screen view`}
+            aria-label={c('collider_2025:Label').t`Canvas full screen view`}
         >
             <ArtifactPanel isGenerating={isGenerating} layout="fullscreen" />
         </div>,

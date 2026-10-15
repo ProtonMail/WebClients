@@ -142,7 +142,7 @@ export const LibraryView = ({ isProcessingAttachment, prefillQuery }: Props) => 
                             <h1 className="text-3xl text-bold m-0">{c('collider_2025:Title').t`Library`}</h1>
                             <p className="m-0 color-weak">
                                 {c('collider_2025:Info')
-                                    .t`Artifacts and images ${LUMO_SHORT_APP_NAME} created in your chats.`}
+                                    .t`Creations and images ${LUMO_SHORT_APP_NAME} made in your chats.`}
                             </p>
                         </div>
                         {activeTab === 'creations' && (

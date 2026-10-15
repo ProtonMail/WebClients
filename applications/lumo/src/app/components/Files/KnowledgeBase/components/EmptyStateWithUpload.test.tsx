@@ -33,7 +33,7 @@ describe('EmptyStateWithUpload', () => {
         mockFlags.artifactsView = false;
         const { onShowDriveBrowser } = renderEmptyState();
 
-        expect(screen.queryByText('No files or artifacts yet')).not.toBeInTheDocument();
+        expect(screen.queryByText('No files or creations yet')).not.toBeInTheDocument();
         expect(screen.getByRole('button', { name: 'Add from computer' })).toBeInTheDocument();
         fireEvent.click(screen.getByRole('button', { name: 'Add from Drive' }));
         expect(onShowDriveBrowser).toHaveBeenCalledTimes(1);
@@ -42,8 +42,8 @@ describe('EmptyStateWithUpload', () => {
     it('shows the heading, description and both actions', () => {
         renderEmptyState();
 
-        expect(screen.getByText('No files or artifacts yet')).toBeInTheDocument();
-        expect(screen.getByText(/generated Artifacts in this chat will appear here\./)).toBeInTheDocument();
+        expect(screen.getByText('No files or creations yet')).toBeInTheDocument();
+        expect(screen.getByText(/creations from this chat will appear here\./)).toBeInTheDocument();
         expect(screen.getByRole('button', { name: 'Upload' })).toBeInTheDocument();
         expect(screen.getByRole('button', { name: 'Add from Drive' })).toBeInTheDocument();
     });
