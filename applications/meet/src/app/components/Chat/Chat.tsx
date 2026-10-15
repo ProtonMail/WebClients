@@ -92,6 +92,16 @@ export const Chat = () => {
         resetNewMessages();
     };
 
+    const sendRootMessage = (message: string) => {
+        const el = scrollRef.current;
+        if (el) {
+            el.scrollTop = el.scrollHeight;
+        }
+        wasAtBottomRef.current = true;
+        resetNewMessages();
+        return sendMessage(message);
+    };
+
     // A root is pinned when it rests at the pin line (below the header) with its thread still below.
     const updateStuckThreadState = useCallback(() => {
         const container = scrollRef.current;
@@ -387,7 +397,7 @@ export const Chat = () => {
                         />
                     </div>
                 )}
-                <ChatMessage onMessageSend={sendMessage} />
+                <ChatMessage onMessageSend={sendRootMessage} />
             </div>
         </SideBar>
     );
