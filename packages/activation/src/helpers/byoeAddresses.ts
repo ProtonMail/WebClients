@@ -8,7 +8,7 @@ import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 import { MAX_SYNC_FREE_USER, MAX_SYNC_PAID_USER } from '../constants';
 import type { Sync } from '../logic/sync/sync.interface';
 
-const getIsActiveBYOEAddress = (address: Address) => {
+export const getIsActiveBYOEAddress = (address: Address) => {
     if (address.Status === ADDRESS_STATUS.STATUS_DISABLED) {
         return false;
     }
