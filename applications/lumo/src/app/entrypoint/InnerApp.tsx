@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react';
+import { Suspense, lazy } from 'react';
 import { Route, BrowserRouter as Router, Switch, useRouteMatch } from 'react-router-dom';
 
 import ConversationSkeleton from '../components/ConversationSkeleton';
@@ -21,10 +21,13 @@ const AiPaperTrailView = lazy(() =>
     import('../features/aiPaperTrail/AiPaperTrailView').then((m) => ({ default: m.AiPaperTrailView }))
 );
 const AllChatsView = lazy(() => import('../features/allChats/AllChatsView').then((m) => ({ default: m.AllChatsView })));
+const SchedulesView = lazy(() =>
+    import('../features/schedules/SchedulesView').then((m) => ({ default: m.SchedulesView }))
+);
 
 export function InnerApp() {
     const { url } = useRouteMatch(); // either "/guest" or "/u/:sessionId"
-    const { apiKeyManagement, imageTools, aiPaperTrailRoute } = useLumoFlags();
+    const { apiKeyManagement, imageTools, aiPaperTrailRoute, schedules } = useLumoFlags();
 
     return (
         <PandocProvider>
@@ -49,6 +52,7 @@ export function InnerApp() {
                                     {imageTools && <Route exact path="/images" component={ConversationPage} />}
                                     {apiKeyManagement && <Route exact path="/docs/api" component={ApiDocsPage} />}
                                     <Route exact path="/chats" component={AllChatsView} />
+                                    {schedules && <Route exact path="/schedules" component={SchedulesView} />}
 
                                     <Route exact path="/" component={ConversationPage} />
                                     <Route path="/c/:conversationId" component={ConversationPage} />
