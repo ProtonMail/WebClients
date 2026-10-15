@@ -3,6 +3,8 @@ import { $findMatchingParent, $insertFirst } from '@lexical/utils'
 import { v4 as uuidv4 } from 'uuid'
 import type { LexicalEditor, ElementNode, RangeSelection, LexicalNode } from 'lexical'
 import {
+  $addUpdateTag,
+  PASTE_TAG,
   $isDecoratorNode,
   $isParagraphNode,
   OUTDENT_CONTENT_COMMAND,
@@ -62,6 +64,10 @@ export function $handleBeforeInputEvent(
   createWarningNotification?: (message: string) => void,
 ): boolean {
   const inputType = event.inputType
+
+  if (inputType === 'insertFromPaste' || inputType === 'insertFromPasteAsQuotation') {
+    $addUpdateTag(PASTE_TAG)
+  }
 
   logger.info('suggestion-mode: handleBeforeInput', inputType)
 
@@ -275,6 +281,16 @@ function $handleInsertInput(
     `Has data transfer: ${!!dataTransfer} `,
     `Has targetRange: ${!!targetRange}`,
   )
+
+  // Replace text within a pending insertion before deletion can detach its text node.
+  if (
+    inputType === 'insertReplacementText' &&
+    !selection.isCollapsed() &&
+    existingParentSuggestion?.getSuggestionTypeOrThrow() === 'insert' &&
+    $isWholeSelectionInsideSuggestion(selection)
+  ) {
+    return $handleReplacementTextInsideInsertSuggestion(selection, data, dataTransfer, logger)
+  }
 
   /**
    * When inserting nodes generated from a dataTransfer, we want to let the `selectionInsertClipboardNodes`
@@ -769,17 +785,26 @@ function $handleReplacementTextInsideInsertSuggestion(
     return true
   }
   logger.info('suggestion-mode: Will insert replacement text', newText)
-  const anchor = selection.anchor
-  const focusOffset = selection.focus.offset
-  const toDelete = focusOffset - anchor.offset
-  selection.focus.set(anchor.key, anchor.offset, anchor.type)
-  const node = anchor.getNode()
-  if (!$isTextNode(node)) {
-    logger.info('suggestion-mode: Current anchor node is not text node', node)
+  const start = selection.isBackward() ? selection.focus : selection.anchor
+  const end = selection.isBackward() ? selection.anchor : selection.focus
+  const first = start.getNode()
+  if (!$isTextNode(first)) {
     return true
   }
-  node.spliceText(anchor.offset, toDelete, newText)
-  const newOffset = anchor.offset + newText.length
-  node.select(newOffset, newOffset)
+  const selectedLeaves = selection.getNodes().filter((node) => !$isElementNode(node))
+  const toDelete = first.is(end.getNode()) ? end.offset - start.offset : first.getTextContentSize() - start.offset
+  first.spliceText(start.offset, toDelete, newText)
+  for (const node of selectedLeaves) {
+    if (node.is(first)) {
+      continue
+    }
+    if ($isTextNode(node) && node.is(end.getNode())) {
+      node.spliceText(0, end.offset, '')
+    } else {
+      node.remove()
+    }
+  }
+  const newOffset = start.offset + newText.length
+  first.select(newOffset, newOffset)
   return true
 }
