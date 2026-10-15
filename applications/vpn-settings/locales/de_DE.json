@@ -2147,11 +2147,17 @@
       "/month": [
         "/Monat"
       ],
+      "15 GB storage": [
+        "15 GB Speicherplatz"
+      ],
       "2 individual accounts": [
         "2 Einzelkonten"
       ],
       "2 TB of secure storage": [
         "2 TB sicherer Speicherplatz"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB Speicherplatz: das 40-fache Ihres aktuellen Abonnements"
       ],
       "3 TB of secure storage": [
         "3 TB sicherer Speicherplatz"
@@ -2162,21 +2168,31 @@
       "6 individual accounts": [
         "6 Einzelkonten"
       ],
-      "Advanced protection against cyber threats": [
-        "Umfassender Schutz vor Cyber-Bedrohungen"
+      "Built-in 2FA authenticator": [
+        "Integrierter 2FA-Authentifikator"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "Die Rabatte beziehen sich auf die regulären monatlichen Preise. Dein Abonnement verlängert sich nach Ablauf des Abrechnungszeitraums zum regulären Jahrespreis."
-      ]
-    },
-    "bfcampaign2026: Info, Calendar first": {
-      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, und ${ VPN_SHORT_APP_NAME }"
+      ],
+      "Online document editor": [
+        "Dokumente Online bearbeiten"
+      ],
+      "Recover previous file versions": [
+        "Vorherige Dateiversionen wiederherstellen"
+      ],
+      "Stronger protection against cyber threats": [
+        "Besserer Schutz vor Cyber-Bedrohungen"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"
+      ],
+      "Use your own email domain": [
+        "Nutze deine eigene E-Mail-Domain"
       ]
     },
     "bfcampaign2026: Info, Drive first": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, und ${ CALENDAR_SHORT_APP_NAME }"
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, und ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "bfcampaign2026: Info, Family, Drive first": {
@@ -2190,8 +2206,13 @@
       ]
     },
     "bfcampaign2026: Info, Mail first": {
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME }"
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, und ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, und ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "bfcampaign2026: Title": {
@@ -5254,6 +5275,9 @@
       ],
       "Incorrect password": [
         "Ungültiges Passwort"
+      ],
+      "Incorrect password. Please try again.": [
+        "Ungültiges Passwort. Bitte versuche es erneut."
       ],
       "Incorrect recovery code. Please try again.": [
         "Ungültiger Wiederherstellungscode. Bitte versuche es erneut."
@@ -11104,9 +11128,6 @@
       "Font size": [
         "Schriftgröße"
       ],
-      "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
-        "Für ${ DRIVE_SHORT_APP_NAME } und ${ DOCS_SHORT_APP_NAME }."
-      ],
       "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
         "Für ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME } und ${ SHEETS_SHORT_APP_NAME }."
       ],
@@ -16948,9 +16969,6 @@
       "Backup password": [
         "Backup-Passwort"
       ],
-      "Because your organization moved you to single sign-on (SSO), **your old password is saved as your backup password**. You can use it to authorize SSO on a new device.": [
-        "Da deine Organisation auf Single Sign-On (SSO) umgestellt hat, **wird dein altes Passwort als Backup-Passwort gespeichert**. Du kannst es verwenden, um SSO auf einem neuen Gerät zu autorisieren."
-      ],
       "Cancel": [
         "Abbrechen"
       ],
@@ -16998,9 +17016,6 @@
       "Do you want to remove all other devices than the current one?": [
         "Möchtest du alle anderen Geräte (außer das aktuelle) entfernen?"
       ],
-      "Enter it to sign in. It is the same as your old password.": [
-        "Gib es ein, um dich anzumelden. Es entspricht deinem bisherigen Passwort."
-      ],
       "Enter the confirmation code we sent on your other device.": [
         "Gib den Bestätigungscode ein, den wir auf dein anderes Gerät gesendet haben."
       ],
@@ -17009,6 +17024,9 @@
       ],
       "Enter your backup password": [
         "Gib dein Backup-Passwort ein"
+      ],
+      "Enter your password": [
+        "Passwort eingeben"
       ],
       "For your security, you have been signed out of all your other active devices.": [
         "Zu deiner Sicherheit wurdest du von allen deiner anderen aktiven Geräten abgemeldet."
@@ -17156,6 +17174,9 @@
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "Du wirst zu deinem SSO-Anbieter weitergeleitet."
+      ],
+      "Your old password will become your **backup password**. You will be able to use it to authorize single sign-on (SSO) on new devices in the future.": [
+        "Dein bisheriges Passwort wird zu deinem **Sicherungspasswort**. Damit kannst du in Zukunft auf neuen Geräten die Single-Sign-On-Funktion (SSO) autorisieren."
       ],
       "Your SSO configuration will be deleted.": [
         "Deine SSO-Konfiguration wird gelöscht."

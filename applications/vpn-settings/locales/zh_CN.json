@@ -5123,6 +5123,9 @@
       "Incorrect password": [
         "密码错误"
       ],
+      "Incorrect password. Please try again.": [
+        "密码错误，请重试。"
+      ],
       "Incorrect recovery code. Please try again.": [
         "恢复码错误，请重试。"
       ],
@@ -10860,9 +10863,6 @@
       ],
       "Font size": [
         "字号"
-      ],
-      "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
-        "适用于 ${ DRIVE_SHORT_APP_NAME } 和 ${ DOCS_SHORT_APP_NAME }"
       ],
       "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
         "适用于 ${ DRIVE_SHORT_APP_NAME }、${ DOCS_SHORT_APP_NAME } 和 ${ SHEETS_SHORT_APP_NAME }"
@@ -16607,9 +16607,6 @@
       "Backup password": [
         "备用密码"
       ],
-      "Because your organization moved you to single sign-on (SSO), **your old password is saved as your backup password**. You can use it to authorize SSO on a new device.": [
-        "由于您的组织已将您迁移至单点登录 (SSO)，**您的旧密码已保存为备用密码**。您可以在新设备上使用它来授权 SSO 登录。"
-      ],
       "Cancel": [
         "取消"
       ],
@@ -16654,9 +16651,6 @@
       ],
       "Do you want to remove all other devices than the current one?": [
         "除当前设备外，您还想移除所有其他设备吗？"
-      ],
-      "Enter it to sign in. It is the same as your old password.": [
-        "请输入该密码进行登录，它与您的旧密码相同。"
       ],
       "Enter the confirmation code we sent on your other device.": [
         "输入我们发送到您另一台设备上的确认代码。"
