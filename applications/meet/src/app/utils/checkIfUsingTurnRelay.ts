@@ -1,3 +1,4 @@
+import { logger } from '@protontech/logger';
 import type { Room } from 'livekit-client';
 
 interface RTCIceCandidate {
@@ -67,7 +68,15 @@ export const checkIfUsingTurnRelay = async (room: Room): Promise<boolean> => {
     const local = candidates.get(pair.localCandidateId);
     const remote = candidates.get(pair.remoteCandidateId);
 
-    return local?.candidateType === 'relay' || remote?.candidateType === 'relay';
+    const isRelayCandidate = local?.candidateType === 'relay' || remote?.candidateType === 'relay';
+
+    if (isRelayCandidate) {
+        logger.info('Using TURN relay');
+    } else {
+        logger.info('Using STUN UDP');
+    }
+
+    return isRelayCandidate;
 };
 
 export const getIceCandidateInfo = async (room: Room): Promise<IceCandidateInfo> => {

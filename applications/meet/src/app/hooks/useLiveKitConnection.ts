@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import { useRoomContext } from '@livekit/components-react';
+import { logger } from '@protontech/logger';
 import type { Room } from 'livekit-client';
 import { c } from 'ttag';
 
@@ -108,6 +109,8 @@ export const useLiveKitConnection = ({ reportMeetError }: UseLiveKitConnectionPa
     };
 
     const connectViaTurnRelay = async (url: string, token: string, timeout: number): Promise<void> => {
+        logger.info('Connecting via TURN relay');
+
         try {
             await connectWithTimeout(url, token, timeout, {
                 autoSubscribe: false,
@@ -123,6 +126,8 @@ export const useLiveKitConnection = ({ reportMeetError }: UseLiveKitConnectionPa
     };
 
     const connectDirect = async (url: string, token: string, timeout: number): Promise<void> => {
+        logger.info('Connecting directly');
+
         await connectWithTimeout(
             url,
             token,
