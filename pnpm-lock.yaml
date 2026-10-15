@@ -338,186 +338,42 @@ importers:
       '@prettier/plugin-xml':
         specifier: ^3.4.2
         version: 3.4.2(prettier@3.9.9)
-      '@proton-pass-desktop/native':
-        specifier: workspace:^
-        version: link:applications/pass-desktop/native
       '@proton/account':
         specifier: workspace:^
         version: link:packages/account
       '@proton/activation':
         specifier: workspace:^
         version: link:packages/activation
-      '@proton/ai-assistant':
-        specifier: workspace:^
-        version: link:packages/ai-assistant
-      '@proton/app-context':
-        specifier: workspace:^
-        version: link:packages/app-context
-      '@proton/atoms':
-        specifier: workspace:^
-        version: link:packages/atoms
       '@proton/calendar':
         specifier: workspace:^
         version: link:packages/calendar
-      '@proton/calendar-video-conferencing':
-        specifier: workspace:^
-        version: link:packages/calendar-video-conferencing
-      '@proton/challenge':
-        specifier: workspace:^
-        version: link:packages/challenge
-      '@proton/chargebee':
-        specifier: workspace:^
-        version: link:packages/chargebee
-      '@proton/charts':
-        specifier: workspace:^
-        version: link:packages/charts
-      '@proton/colors':
-        specifier: workspace:^
-        version: link:packages/colors
       '@proton/components':
         specifier: workspace:^
         version: link:packages/components
-      '@proton/cross-storage':
-        specifier: workspace:^
-        version: link:packages/cross-storage
       '@proton/docs-core':
         specifier: workspace:^
         version: link:packages/docs-core
-      '@proton/docs-proto':
-        specifier: workspace:^
-        version: link:packages/docs-proto
-      '@proton/docs-shared':
-        specifier: workspace:^
-        version: link:packages/docs-shared
-      '@proton/drive':
-        specifier: workspace:^
-        version: link:packages/drive
-      '@proton/drive-store':
-        specifier: workspace:^
-        version: link:packages/drive-store
-      '@proton/encrypted-search':
-        specifier: workspace:^
-        version: link:packages/encrypted-search
-      '@proton/features':
-        specifier: workspace:^
-        version: link:packages/features
-      '@proton/hooks':
-        specifier: workspace:^
-        version: link:packages/hooks
-      '@proton/i18n':
-        specifier: workspace:^
-        version: link:packages/i18n
-      '@proton/icons':
-        specifier: workspace:^
-        version: link:packages/icons
-      '@proton/jest-env':
-        specifier: workspace:^
-        version: link:packages/jest-env
-      '@proton/jest-swc-preset':
-        specifier: workspace:^
-        version: link:packages/jest-swc-preset
-      '@proton/key-transparency':
-        specifier: workspace:^
-        version: link:packages/key-transparency
-      '@proton/llm':
-        specifier: workspace:^
-        version: link:packages/llm
-      '@proton/lumo-api-client':
-        specifier: workspace:^
-        version: link:packages/lumo-api-client
-      '@proton/lumo-ui':
-        specifier: workspace:^
-        version: link:packages/lumo-ui
-      '@proton/mail':
-        specifier: workspace:^
-        version: link:packages/mail
       '@proton/mail-renderer':
         specifier: workspace:^
         version: link:packages/mail-renderer
-      '@proton/meet':
-        specifier: workspace:^
-        version: link:packages/meet
-      '@proton/metrics':
-        specifier: workspace:^
-        version: link:packages/metrics
       '@proton/nav':
         specifier: workspace:^
         version: link:packages/nav
-      '@proton/offers-delivery':
-        specifier: workspace:^
-        version: link:packages/offers-delivery
-      '@proton/pack':
-        specifier: workspace:^
-        version: link:packages/pack
-      '@proton/pass':
-        specifier: workspace:^
-        version: link:packages/pass
-      '@proton/pass-docs':
-        specifier: workspace:^
-        version: link:packages/pass/docs/starlight
       '@proton/payments':
         specifier: workspace:^
         version: link:packages/payments
       '@proton/payments-ui':
         specifier: workspace:^
         version: link:packages/payments-ui
-      '@proton/polyfill':
-        specifier: workspace:^
-        version: link:packages/polyfill
-      '@proton/raw-images':
-        specifier: workspace:^
-        version: link:packages/raw-images
-      '@proton/react-polymorphic-types':
-        specifier: workspace:^
-        version: link:packages/react-polymorphic-types
-      '@proton/react-redux-store':
-        specifier: workspace:^
-        version: link:packages/react-redux-store
-      '@proton/recovery-kit':
-        specifier: workspace:^
-        version: link:packages/recovery-kit
       '@proton/redux-shared-store':
         specifier: workspace:^
         version: link:packages/redux-shared-store
-      '@proton/redux-shared-store-types':
-        specifier: workspace:^
-        version: link:packages/redux-shared-store-types
-      '@proton/redux-utilities':
-        specifier: workspace:^
-        version: link:packages/redux-utilities
-      '@proton/sanitize':
-        specifier: workspace:^
-        version: link:packages/sanitize
       '@proton/shared':
         specifier: workspace:^
         version: link:packages/shared
-      '@proton/sieve':
-        specifier: workspace:^
-        version: link:packages/sieve
-      '@proton/styles':
-        specifier: workspace:^
-        version: link:packages/styles
-      '@proton/test-api':
-        specifier: workspace:^
-        version: link:packages/test-api
       '@proton/types':
         specifier: workspace:^
         version: link:packages/types
-      '@proton/unleash':
-        specifier: workspace:^
-        version: link:packages/unleash
-      '@proton/utils':
-        specifier: workspace:^
-        version: link:packages/utils
-      '@proton/vitest-config':
-        specifier: workspace:^
-        version: link:packages/vitest-config
-      '@proton/vpn':
-        specifier: workspace:^
-        version: link:packages/vpn
-      '@proton/wallet':
-        specifier: workspace:^
-        version: link:packages/wallet
       '@trivago/prettier-plugin-sort-imports':
         specifier: ^6.0.2
         version: 6.0.2(@vue/compiler-sfc@3.5.42)(prettier@3.9.9)(supports-color@11.0.0)(svelte@5.56.4(@typescript-eslint/types@8.70.0))
@@ -530,15 +386,9 @@ importers:
       '@typescript/native':
         specifier: npm:typescript@^7.0.2
         version: typescript@7.0.2
-      andromeda-wasm:
-        specifier: workspace:^
-        version: link:packages/wasm/andromeda
       eslint:
         specifier: ^10.11.0
         version: 10.11.0(jiti@2.7.0)(supports-color@11.0.0)
-      eslint-plugin-custom-rules:
-        specifier: workspace:^
-        version: link:packages/eslint-plugin-custom-rules
       husky:
         specifier: ^9.1.7
         version: 9.1.7
@@ -551,81 +401,12 @@ importers:
       nyc:
         specifier: ^17.1.0
         version: 17.1.0(supports-color@11.0.0)
-      pdf-ui:
-        specifier: workspace:^
-        version: link:applications/pdf-ui
       prettier:
         specifier: ^3.9.9
         version: 3.9.9
       prettier-plugin-tailwindcss:
         specifier: ^0.8.1
         version: 0.8.1(@trivago/prettier-plugin-sort-imports@6.0.2(@vue/compiler-sfc@3.5.42)(prettier@3.9.9)(supports-color@11.0.0)(svelte@5.56.4(@typescript-eslint/types@8.70.0)))(prettier@3.9.9)
-      proton-account:
-        specifier: workspace:^
-        version: link:applications/account
-      proton-admin:
-        specifier: workspace:^
-        version: link:applications/admin
-      proton-authenticator:
-        specifier: workspace:^
-        version: link:applications/authenticator
-      proton-calendar:
-        specifier: workspace:^
-        version: link:applications/calendar
-      proton-console:
-        specifier: workspace:^
-        version: link:applications/console
-      proton-docs:
-        specifier: workspace:^
-        version: link:applications/docs
-      proton-docs-editor:
-        specifier: workspace:^
-        version: link:applications/docs-editor
-      proton-drive:
-        specifier: workspace:^
-        version: link:applications/drive
-      proton-inbox-desktop:
-        specifier: workspace:^
-        version: link:applications/inbox-desktop
-      proton-lumo:
-        specifier: workspace:^
-        version: link:applications/lumo
-      proton-mail:
-        specifier: workspace:^
-        version: link:applications/mail
-      proton-meet:
-        specifier: workspace:^
-        version: link:applications/meet
-      proton-meet-desktop:
-        specifier: workspace:^
-        version: link:applications/meet-desktop
-      proton-pass:
-        specifier: workspace:^
-        version: link:applications/pass
-      proton-pass-desktop:
-        specifier: workspace:^
-        version: link:applications/pass-desktop
-      proton-pass-extension:
-        specifier: workspace:^
-        version: link:applications/pass-extension
-      proton-pass-web:
-        specifier: workspace:proton-pass@^
-        version: link:applications/pass
-      proton-preview-sandbox:
-        specifier: workspace:^
-        version: link:applications/preview-sandbox
-      proton-storybook:
-        specifier: workspace:^
-        version: link:applications/storybook
-      proton-verify:
-        specifier: workspace:^
-        version: link:applications/verify
-      proton-vpn-settings:
-        specifier: workspace:^
-        version: link:applications/vpn-settings
-      proton-wallet:
-        specifier: workspace:^
-        version: link:applications/wallet
       sort-package-json:
         specifier: ^4.0.0
         version: 4.0.0
@@ -1178,6 +959,9 @@ importers:
       '@proton/i18n':
         specifier: workspace:^
         version: link:../../packages/i18n
+      '@proton/jest-env':
+        specifier: workspace:^
+        version: link:../../packages/jest-env
       '@proton/jest-swc-preset':
         specifier: workspace:^
         version: link:../../packages/jest-swc-preset
@@ -1694,6 +1478,9 @@ importers:
       '@proton/jest-swc-preset':
         specifier: workspace:^
         version: link:../../packages/jest-swc-preset
+      '@proton/raw-images':
+        specifier: workspace:^
+        version: link:../../packages/raw-images
       '@testing-library/dom':
         specifier: ^10.4.2
         version: 10.4.2
@@ -1995,6 +1782,9 @@ importers:
       '@proton/jest-env':
         specifier: workspace:^
         version: link:../../packages/jest-env
+      '@proton/metrics':
+        specifier: workspace:^
+        version: link:../../packages/metrics
       '@proton/unleash':
         specifier: workspace:^
         version: link:../../packages/unleash
@@ -2344,9 +2134,15 @@ importers:
 
   applications/inbox-desktop:
     dependencies:
+      '@proton/metrics':
+        specifier: workspace:^
+        version: link:../../packages/metrics
       '@proton/shared':
         specifier: workspace:^
         version: link:../../packages/shared
+      '@proton/utils':
+        specifier: workspace:^
+        version: link:../../packages/utils
       electron-log:
         specifier: ^5.4.4
         version: 5.4.4(electron@43.7.6(supports-color@11.0.0))
@@ -2567,6 +2363,9 @@ importers:
       '@proton/redux-shared-store':
         specifier: workspace:^
         version: link:../../packages/redux-shared-store
+      '@proton/redux-shared-store-types':
+        specifier: workspace:^
+        version: link:../../packages/redux-shared-store-types
       '@proton/redux-utilities':
         specifier: workspace:^
         version: link:../../packages/redux-utilities
@@ -2772,12 +2571,21 @@ importers:
       '@jest/globals':
         specifier: ^30.5.2
         version: 30.5.2(supports-color@11.0.0)
+      '@proton/eslint-config-proton':
+        specifier: workspace:^
+        version: link:../../packages/eslint-config-proton
       '@proton/i18n':
         specifier: workspace:^
         version: link:../../packages/i18n
+      '@proton/jest-env':
+        specifier: workspace:^
+        version: link:../../packages/jest-env
       '@proton/jest-swc-preset':
         specifier: workspace:^
         version: link:../../packages/jest-swc-preset
+      '@proton/pass':
+        specifier: workspace:^
+        version: link:../../packages/pass
       '@testing-library/jest-dom':
         specifier: ^6.9.1
         version: 6.9.1
@@ -3779,6 +3587,9 @@ importers:
       '@proton/i18n':
         specifier: workspace:^
         version: link:../../packages/i18n
+      '@proton/jest-env':
+        specifier: workspace:^
+        version: link:../../packages/jest-env
       '@proton/jest-swc-preset':
         specifier: workspace:^
         version: link:../../packages/jest-swc-preset
@@ -3954,6 +3765,9 @@ importers:
       '@pmmmwh/react-refresh-webpack-plugin':
         specifier: ^0.6.3
         version: 0.6.3(react-refresh@0.19.0)(type-fest@5.9.0)(webpack-dev-server@6.0.0)(webpack-hot-middleware@2.26.1)(webpack@5.111.1)
+      '@proton/eslint-config-proton':
+        specifier: workspace:^
+        version: link:../../packages/eslint-config-proton
       '@proton/i18n':
         specifier: workspace:^
         version: link:../../packages/i18n
@@ -5049,6 +4863,18 @@ importers:
         specifier: workspace:^
         version: link:../llm
     devDependencies:
+      '@proton/components':
+        specifier: workspace:^
+        version: link:../components
+      '@proton/eslint-config-proton':
+        specifier: workspace:^
+        version: link:../eslint-config-proton
+      '@proton/jest-env':
+        specifier: workspace:^
+        version: link:../jest-env
+      '@proton/jest-swc-preset':
+        specifier: workspace:^
+        version: link:../jest-swc-preset
       '@types/jest':
         specifier: 'catalog:'
         version: 30.0.0
@@ -5192,6 +5018,9 @@ importers:
       '@proton/jest-swc-preset':
         specifier: workspace:^
         version: link:../jest-swc-preset
+      '@proton/styles':
+        specifier: workspace:^
+        version: link:../styles
       '@testing-library/dom':
         specifier: ^10.4.2
         version: 10.4.2
@@ -5544,6 +5373,9 @@ importers:
       '@fullhuman/postcss-purgecss':
         specifier: ^7.0.2
         version: 7.0.2(postcss@8.5.28)
+      '@proton/eslint-config-proton':
+        specifier: workspace:^
+        version: link:../eslint-config-proton
       '@proton/jest-env':
         specifier: workspace:^
         version: link:../jest-env
@@ -5623,6 +5455,9 @@ importers:
       '@proton/eslint-config-proton':
         specifier: workspace:^
         version: link:../eslint-config-proton
+      '@proton/styles':
+        specifier: workspace:^
+        version: link:../styles
       '@proton/vitest-config':
         specifier: workspace:^
         version: link:../vitest-config
@@ -6176,6 +6011,9 @@ importers:
       '@proton/jest-env':
         specifier: workspace:^
         version: link:../jest-env
+      '@proton/raw-images':
+        specifier: workspace:^
+        version: link:../raw-images
       '@testing-library/jest-dom':
         specifier: ^6.9.1
         version: 6.9.1
@@ -6228,6 +6066,9 @@ importers:
         specifier: 1.41.3
         version: 1.41.3
     devDependencies:
+      '@proton/eslint-config-proton':
+        specifier: workspace:^
+        version: link:../eslint-config-proton
       '@types/google-protobuf':
         specifier: ^3.15.12
         version: 3.15.12
@@ -6258,6 +6099,9 @@ importers:
       '@proton/docs-proto':
         specifier: workspace:^
         version: link:../docs-proto
+      '@proton/icons':
+        specifier: workspace:^
+        version: link:../icons
       '@proton/metrics':
         specifier: workspace:^
         version: link:../metrics
@@ -6443,6 +6287,9 @@ importers:
         specifier: ^4.5.7
         version: 4.5.7(@types/react@18.3.31)(immer@11.1.18)(react@18.3.1)
     devDependencies:
+      '@proton/eslint-config-proton':
+        specifier: workspace:^
+        version: link:../eslint-config-proton
       '@proton/jest-env':
         specifier: workspace:^
         version: link:../jest-env
@@ -6943,6 +6790,9 @@ importers:
         specifier: ^1.12.0
         version: 1.12.0(@typescript-eslint/types@8.70.0)(encoding@0.1.13)(supports-color@11.0.0)
     devDependencies:
+      '@proton/eslint-config-proton':
+        specifier: workspace:^
+        version: link:../eslint-config-proton
       eslint:
         specifier: ^10.11.0
         version: 10.11.0(jiti@2.7.0)(supports-color@11.0.0)
@@ -6968,6 +6818,9 @@ importers:
         specifier: ^18.3.1
         version: 18.3.1
     devDependencies:
+      '@proton/eslint-config-proton':
+        specifier: workspace:^
+        version: link:../eslint-config-proton
       '@types/mustache':
         specifier: ^4.2.6
         version: 4.2.6
@@ -6989,6 +6842,10 @@ importers:
       jest-environment-jsdom:
         specifier: ^30.5.2
         version: 30.5.2(supports-color@11.0.0)
+    devDependencies:
+      '@proton/eslint-config-proton':
+        specifier: workspace:^
+        version: link:../eslint-config-proton
 
   packages/jest-swc-preset:
     dependencies:
@@ -7117,12 +6974,18 @@ importers:
         specifier: ^1.8.12
         version: 1.8.12
     devDependencies:
+      '@proton/eslint-config-proton':
+        specifier: workspace:^
+        version: link:../eslint-config-proton
       '@proton/jest-env':
         specifier: workspace:^
         version: link:../jest-env
       '@proton/jest-swc-preset':
         specifier: workspace:^
         version: link:../jest-swc-preset
+      '@proton/redux-shared-store':
+        specifier: workspace:^
+        version: link:../redux-shared-store
       '@proton/types':
         specifier: workspace:^
         version: link:../types
@@ -7178,6 +7041,9 @@ importers:
         specifier: ^14.0.2
         version: 14.0.2
     devDependencies:
+      '@proton/eslint-config-proton':
+        specifier: workspace:^
+        version: link:../eslint-config-proton
       '@proton/jest-swc-preset':
         specifier: workspace:^
         version: link:../jest-swc-preset
@@ -7460,6 +7326,9 @@ importers:
         specifier: ^1.8.12
         version: 1.8.12
     devDependencies:
+      '@proton/eslint-config-proton':
+        specifier: workspace:^
+        version: link:../eslint-config-proton
       '@proton/jest-swc-preset':
         specifier: workspace:^
         version: link:../jest-swc-preset
@@ -7569,6 +7438,9 @@ importers:
       '@proton/eslint-config-proton':
         specifier: workspace:^
         version: link:../eslint-config-proton
+      '@proton/pack':
+        specifier: workspace:^
+        version: link:../pack
       '@proton/polyfill':
         specifier: workspace:^
         version: link:../polyfill
@@ -7821,6 +7693,9 @@ importers:
       '@pmmmwh/react-refresh-webpack-plugin':
         specifier: ^0.6.3
         version: 0.6.3(react-refresh@0.19.0)(type-fest@5.9.0)(webpack-dev-server@6.0.0)(webpack-hot-middleware@2.26.1)(webpack@5.111.1)
+      '@proton/shared':
+        specifier: workspace:^
+        version: link:../shared
       '@sentry/webpack-plugin':
         specifier: ^1.21.0
         version: 1.21.0(supports-color@11.0.0)
@@ -7927,6 +7802,9 @@ importers:
         specifier: ^5.1.0
         version: 5.1.0(html-webpack-plugin@5.6.8(webpack@5.111.1))(webpack@5.111.1)
     devDependencies:
+      '@proton/eslint-config-proton':
+        specifier: workspace:^
+        version: link:../eslint-config-proton
       '@types/node':
         specifier: 'catalog:'
         version: 24.19.0
@@ -7975,6 +7853,9 @@ importers:
       '@proton/payments':
         specifier: workspace:^
         version: link:../payments
+      '@proton/react-polymorphic-types':
+        specifier: workspace:^
+        version: link:../react-polymorphic-types
       '@proton/shared':
         specifier: workspace:^
         version: link:../shared
@@ -8087,6 +7968,9 @@ importers:
       '@proton/jest-swc-preset':
         specifier: workspace:^
         version: link:../jest-swc-preset
+      '@proton/pack':
+        specifier: workspace:^
+        version: link:../pack
       '@proton/prettier-config-proton':
         specifier: workspace:^
         version: link:../prettier-config
@@ -8210,6 +8094,9 @@ importers:
       '@proton/styles':
         specifier: workspace:^
         version: link:../styles
+      '@proton/unleash':
+        specifier: workspace:^
+        version: link:../unleash
       '@proton/utils':
         specifier: workspace:^
         version: link:../utils
@@ -8250,6 +8137,9 @@ importers:
       '@proton/jest-swc-preset':
         specifier: workspace:^
         version: link:../jest-swc-preset
+      '@proton/metrics':
+        specifier: workspace:^
+        version: link:../metrics
       '@proton/test-api':
         specifier: workspace:^
         version: link:../test-api
@@ -8353,12 +8243,21 @@ importers:
       '@proton/eslint-config-proton':
         specifier: workspace:^
         version: link:../eslint-config-proton
+      '@proton/features':
+        specifier: workspace:^
+        version: link:../features
       '@proton/jest-env':
         specifier: workspace:^
         version: link:../jest-env
       '@proton/jest-swc-preset':
         specifier: workspace:^
         version: link:../jest-swc-preset
+      '@proton/metrics':
+        specifier: workspace:^
+        version: link:../metrics
+      '@proton/redux-shared-store-types':
+        specifier: workspace:^
+        version: link:../redux-shared-store-types
       '@proton/test-api':
         specifier: workspace:^
         version: link:../test-api
@@ -8441,6 +8340,9 @@ importers:
 
   packages/prettier-config:
     devDependencies:
+      '@proton/eslint-config-proton':
+        specifier: workspace:^
+        version: link:../eslint-config-proton
       eslint:
         specifier: ^10.11.0
         version: 10.11.0(jiti@2.7.0)(supports-color@11.0.0)
@@ -8450,12 +8352,18 @@ importers:
 
   packages/raw-images:
     devDependencies:
+      '@proton/eslint-config-proton':
+        specifier: workspace:^
+        version: link:../eslint-config-proton
       eslint:
         specifier: ^10.11.0
         version: 10.11.0(jiti@2.7.0)(supports-color@11.0.0)
 
   packages/react-polymorphic-types:
     devDependencies:
+      '@proton/eslint-config-proton':
+        specifier: workspace:^
+        version: link:../eslint-config-proton
       '@types/node':
         specifier: 'catalog:'
         version: 24.19.0
@@ -8481,6 +8389,9 @@ importers:
         specifier: ^9.3.0
         version: 9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
     devDependencies:
+      '@proton/eslint-config-proton':
+        specifier: workspace:^
+        version: link:../eslint-config-proton
       '@types/react':
         specifier: 'catalog:'
         version: 18.3.31
@@ -8622,6 +8533,9 @@ importers:
         specifier: ^9.3.0
         version: 9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
     devDependencies:
+      '@proton/eslint-config-proton':
+        specifier: workspace:^
+        version: link:../eslint-config-proton
       '@types/history':
         specifier: 'catalog:'
         version: 4.7.11
@@ -8656,6 +8570,9 @@ importers:
       '@jest/globals':
         specifier: ^30.5.2
         version: 30.5.2(supports-color@11.0.0)
+      '@proton/eslint-config-proton':
+        specifier: workspace:^
+        version: link:../eslint-config-proton
       '@proton/jest-swc-preset':
         specifier: workspace:^
         version: link:../jest-swc-preset
@@ -8705,6 +8622,9 @@ importers:
         specifier: ^3.4.16
         version: 3.4.16
     devDependencies:
+      '@proton/eslint-config-proton':
+        specifier: workspace:^
+        version: link:../eslint-config-proton
       '@proton/jest-swc-preset':
         specifier: workspace:^
         version: link:../jest-swc-preset
@@ -8853,6 +8773,9 @@ importers:
       '@proton/polyfill':
         specifier: workspace:^
         version: link:../polyfill
+      '@proton/test-api':
+        specifier: workspace:^
+        version: link:../test-api
       '@proton/types':
         specifier: workspace:^
         version: link:../types
@@ -8965,6 +8888,10 @@ importers:
       stylelint-use-logical-spec:
         specifier: ^5.0.1
         version: 5.0.1(stylelint@15.11.0(supports-color@11.0.0)(typescript@6.0.3))
+    devDependencies:
+      '@proton/eslint-config-proton':
+        specifier: workspace:^
+        version: link:../eslint-config-proton
 
   packages/styles:
     dependencies:
@@ -9307,6 +9234,9 @@ importers:
       '@proton/redux-shared-store':
         specifier: workspace:^
         version: link:../redux-shared-store
+      '@proton/redux-shared-store-types':
+        specifier: workspace:^
+        version: link:../redux-shared-store-types
       '@proton/redux-utilities':
         specifier: workspace:^
         version: link:../redux-utilities
@@ -9338,6 +9268,9 @@ importers:
         specifier: ^1.8.12
         version: 1.8.12
     devDependencies:
+      '@proton/eslint-config-proton':
+        specifier: workspace:^
+        version: link:../eslint-config-proton
       '@proton/mail':
         specifier: workspace:^
         version: link:../mail
@@ -9804,6 +9737,9 @@ importers:
       '@proton/jest-swc-preset':
         specifier: workspace:^
         version: link:../../packages/jest-swc-preset
+      '@proton/styles':
+        specifier: workspace:^
+        version: link:../../packages/styles
       '@types/jest':
         specifier: 'catalog:'
         version: 30.0.0
@@ -9893,6 +9829,9 @@ importers:
         specifier: ^5.111.1
         version: 5.111.1(@swc/core@1.16.2)(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.28)(sharp@0.35.5(@types/node@24.19.0))(svgo@4.1.0)
     devDependencies:
+      '@proton/eslint-config-proton':
+        specifier: workspace:^
+        version: link:../../packages/eslint-config-proton
       '@proton/jest-swc-preset':
         specifier: workspace:^
         version: link:../../packages/jest-swc-preset
@@ -9952,6 +9891,9 @@ importers:
         specifier: ^4.23.15
         version: 4.23.15
     devDependencies:
+      '@proton/eslint-config-proton':
+        specifier: workspace:^
+        version: link:../../packages/eslint-config-proton
       '@types/node':
         specifier: ^22.20.4
         version: 22.20.4
@@ -9963,6 +9905,9 @@ importers:
 
   utilities/scripts:
     devDependencies:
+      '@proton/eslint-config-proton':
+        specifier: workspace:^
+        version: link:../../packages/eslint-config-proton
       '@types/node':
         specifier: 'catalog:'
         version: 24.19.0

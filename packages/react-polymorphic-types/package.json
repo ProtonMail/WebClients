@@ -19,6 +19,7 @@
         "check:types": "tsc --checkers 1"
     },
     "devDependencies": {
+        "@proton/eslint-config-proton": "workspace:^",
         "@types/node": "catalog:",
         "@types/react": "catalog:",
         "@types/webpack-env": "catalog:",
