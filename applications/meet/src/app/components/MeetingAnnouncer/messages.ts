@@ -118,8 +118,4 @@ export const announcementMessages = {
     customBackgroundRemoved: () => c('Accessibility announcement').t`Background removed`,
 
     backgroundEffectCleared: () => c('Accessibility announcement').t`Background effect turned off`,
-
-    turnRelayActive: () =>
-        c('Accessibility announcement')
-            .t`Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.`,
 };
