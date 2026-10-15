@@ -6,12 +6,17 @@ import type {
     ConnectBYOEAddressFailure,
     ConnectBYOEAddressResult,
 } from '@proton/activation/src/byoe/connectBYOEAddress.interface';
+import type { ReconnectBYOEAddressResult } from '@proton/activation/src/byoe/reconnectBYOEAddress.interface';
 import { useConnectBYOEAddress } from '@proton/activation/src/byoe/useConnectBYOEAddress';
 import type { OAuthCallbackResult, OAuthRedirectState } from '@proton/activation/src/byoe/useOAuthRedirectFlow.helpers';
+import { useReconnectBYOEAddress } from '@proton/activation/src/byoe/useReconnectBYOEAddress';
+import { getBYOEDisabledNotification } from '@proton/activation/src/constants';
+import { useBYOEAddresses } from '@proton/activation/src/hooks/useBYOEAddresses';
 import { EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
 import { trackBYOECreationError } from '@proton/activation/src/telemetry/byoeCreationFunnel';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
+import type { Address } from '@proton/shared/lib/interfaces';
 
 import { getNativeSuccessUrl } from '../redirectToNative';
 import type { BYOEMobileStatus } from './interface';
@@ -34,6 +39,11 @@ export const useBYOEMobileConnection = ({ redirectUri, defaultImportEmails, setS
     const { connectBYOEAddressWithCode, claimBYOEAddress } = useConnectBYOEAddress({
         source: EASY_SWITCH_SOURCES.ACCOUNT_LITE_BYOE,
     });
+
+    const { getExistingToken, reconnectWithToken, reconnectWithCode } = useReconnectBYOEAddress({
+        source: EASY_SWITCH_SOURCES.ACCOUNT_LITE_BYOE,
+    });
+    const { addresses } = useBYOEAddresses();
 
     // State stored before leaving for Google, kept for the retry and the claim, which happen after the round trip
     const oauthStateRef = useRef<OAuthRedirectState | undefined>(undefined);
@@ -79,9 +89,81 @@ export const useBYOEMobileConnection = ({ redirectUri, defaultImportEmails, setS
         }
     };
 
+    /**
+     * Tells the user how a reconnection went. A failed sync already told the user why (wrong Gmail account,
+     * API error), so only the other cases speak here.
+     */
+    const notifyReconnectResult = (result: ReconnectBYOEAddressResult) => {
+        if (result.status === 'success') {
+            createNotification({ text: c('Notification').t`Address reconnected.` });
+        } else if (result.reason.type === 'no-access') {
+            createNotification(getBYOEDisabledNotification());
+        } else if (result.reason.type === 'unknown' && result.reason.message) {
+            createNotification({ type: 'error', text: result.reason.message });
+        }
+    };
+
+    /**
+     * Runs a reconnection behind `status`. Unlike a new connection, the user stays on the page afterwards,
+     * and a failure is a notification: retrying would start the flow of a new address.
+     */
+    const runReconnection = async (
+        run: () => Promise<ReconnectBYOEAddressResult>,
+        status: Extract<BYOEMobileStatus, 'connecting' | 'reconnecting'>,
+        email: string
+    ) => {
+        setConnectingEmail(email);
+        setStatus(status);
+        setError(null);
+        try {
+            notifyReconnectResult(await run());
+        } catch {
+            createNotification({ type: 'error', text: c('Error').t`We couldn't reconnect this address.` });
+        } finally {
+            setStatus('idle');
+        }
+    };
+
+    /**
+     * Reconnects a disconnected address with the permission the user already granted.
+     * Resolves to `permission-required` when there is none: the caller must then send the user to Google.
+     */
+    const reconnectAddress = async (address: Address): Promise<'reconnected' | 'permission-required'> => {
+        // Locks the screen while the token is looked up, so no other action can start in the meantime
+        setConnectingEmail(address.Email);
+        setStatus('reconnecting');
+
+        const token = await getExistingToken(address).catch(() => undefined);
+        if (!token) {
+            return 'permission-required';
+        }
+
+        await runReconnection(() => reconnectWithToken(address, token), 'reconnecting', address.Email);
+        return 'reconnected';
+    };
+
     /** Finishes the OAuth round trip: Google redirected back with either a code or an error. */
     const handleOAuthCallback = async (callback: Exclude<OAuthCallbackResult, { type: 'none' }>) => {
         oauthStateRef.current = callback.state;
+
+        // Google was asked to reconnect a known address: the flow is not a new connection
+        const reconnectAddressID = callback.state?.reconnectAddressID;
+        const addressToReconnect = reconnectAddressID
+            ? addresses.find((address) => address.ID === reconnectAddressID)
+            : undefined;
+        if (addressToReconnect) {
+            if (callback.type === 'error') {
+                createNotification({ type: 'error', text: c('Error').t`Permissions request failed.` });
+                return;
+            }
+
+            await runReconnection(
+                () => reconnectWithCode(addressToReconnect, { code: callback.code, redirectUri }),
+                'connecting',
+                addressToReconnect.Email
+            );
+            return;
+        }
 
         if (callback.type === 'error') {
             trackBYOECreationError('authentication');
@@ -112,5 +194,6 @@ export const useBYOEMobileConnection = ({ redirectUri, defaultImportEmails, setS
         getLastImportEmails: () => oauthStateRef.current?.importEmails ?? defaultImportEmails,
         handleOAuthCallback,
         claimAddress,
+        reconnectAddress,
     };
 };

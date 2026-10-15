@@ -24,6 +24,21 @@ describe('useOAuthRedirectFlow helpers', () => {
             expect(readOAuthRedirectState()).toEqual({ uid: 'abc', importEmails: true, redirect: 'proton://done' });
         });
 
+        it('should keep the expected email address of a reconnection', () => {
+            storeOAuthRedirectState({ uid: 'abc', importEmails: false, reconnectAddressID: 'address-id' });
+
+            expect(readOAuthRedirectState()?.reconnectAddressID).toBe('address-id');
+        });
+
+        it('should drop an expected email address that is not a string', () => {
+            sessionStorage.setItem(
+                STORAGE_KEY,
+                JSON.stringify({ uid: 'abc', importEmails: false, reconnectAddressID: 42 })
+            );
+
+            expect(readOAuthRedirectState()?.reconnectAddressID).toBeUndefined();
+        });
+
         it('should drop a redirect that is not a string', () => {
             sessionStorage.setItem(STORAGE_KEY, JSON.stringify({ uid: 'abc', importEmails: false, redirect: 42 }));
 

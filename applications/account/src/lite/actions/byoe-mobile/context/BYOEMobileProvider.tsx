@@ -13,6 +13,7 @@ import {
 } from '@proton/activation/src/telemetry/byoeCreationFunnel';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
+import type { Address } from '@proton/shared/lib/interfaces';
 
 import { type BYOEMobileStatus, REDIRECT_PATH } from './interface';
 import { type ClaimableFailure, useBYOEMobileConnection } from './useBYOEMobileConnection';
@@ -29,6 +30,9 @@ interface BYOEMobileContextValue {
     retry: () => void;
     /** Connects an address used on another account, once the user confirmed it. */
     claimAddress: (failure: ClaimableFailure) => Promise<void>;
+    canStartOAuthFlow: () => boolean;
+    /** Reconnects a disconnected address. Reconnecting counts as adding one, so the same checks apply. */
+    reconnectAddress: (address: Address) => Promise<void>;
     startOAuthFlowIfAllowed: (importEmails: boolean) => void;
 }
 
@@ -79,15 +83,22 @@ export const BYOEMobileProvider = ({ redirect, initialSearchParams, children }: 
         return autoParams.autoConnect && callback.type === 'none' ? 'auto-starting' : 'idle';
     });
 
-    const { connectingEmail, error, dismissError, getLastImportEmails, handleOAuthCallback, claimAddress } =
-        useBYOEMobileConnection({
-            redirectUri,
-            defaultImportEmails: autoParams.importEmails,
-            setStatus,
-        });
+    const {
+        connectingEmail,
+        error,
+        dismissError,
+        getLastImportEmails,
+        handleOAuthCallback,
+        claimAddress,
+        reconnectAddress: reconnectWithExistingPermission,
+    } = useBYOEMobileConnection({
+        redirectUri,
+        defaultImportEmails: autoParams.importEmails,
+        setStatus,
+    });
 
-    const isStartingOAuth = status === 'starting-oauth';
-    const isLoading = isStartingOAuth || isLoadingGating;
+    // Every action of the screen is disabled while one is running, so two can never overlap
+    const isLoading = status === 'starting-oauth' || status === 'reconnecting' || isLoadingGating;
 
     const startOAuthFlowNow = (importEmails: boolean) => {
         // The page navigates away right after, so the telemetry event must be sent before starting the flow.
@@ -95,6 +106,13 @@ export const BYOEMobileProvider = ({ redirect, initialSearchParams, children }: 
         // The page navigates away, so the auto-starting status is intentionally never reset.
         setStatus(status === 'auto-starting' ? 'auto-starting' : 'starting-oauth');
         startOAuthFlow({ importEmails, redirect, sessionUID: UID, creationStartedAt: getBYOECreationStartedAt() });
+    };
+
+    // The address already has its messages and the user stays on the page afterwards: nothing to import or hand back
+    const startReconnectOAuthFlow = (address: Address) => {
+        // The page navigates away, so the status is intentionally never reset.
+        setStatus('starting-oauth');
+        startOAuthFlow({ importEmails: false, reconnectAddressID: address.ID, sessionUID: UID });
     };
 
     const canStartOAuthFlow = (): boolean => {
@@ -161,6 +179,15 @@ export const BYOEMobileProvider = ({ redirect, initialSearchParams, children }: 
         }
     };
 
+    const reconnectAddress = async (address: Address) => {
+        if (canStartOAuthFlow()) {
+            const outcome = await reconnectWithExistingPermission(address);
+            if (outcome === 'permission-required') {
+                startReconnectOAuthFlow(address);
+            }
+        }
+    };
+
     const retry = () => {
         dismissError();
         startOAuthFlowIfAllowed(getLastImportEmails());
@@ -170,6 +197,8 @@ export const BYOEMobileProvider = ({ redirect, initialSearchParams, children }: 
         <BYOEMobileContext.Provider
             value={{
                 status,
+                canStartOAuthFlow,
+                reconnectAddress,
                 connectingEmail,
                 error,
                 dismissError,
