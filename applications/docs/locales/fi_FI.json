@@ -2845,14 +2845,8 @@
       "External invitations are temporarily disabled.": [
         "Ulkoiset kutsut on tilapäisesti poistettu käytöstä."
       ],
-      "External invitations are temporarily disabled. Please try again later": [
-        "Ulkoiset kutsut on tilapäisesti poistettu käytöstä. Yritä myöhemmin uudelleen."
-      ],
       "Failed to change permissions settings": [
         "Käyttöoikeuksien muuttaminen epäonnistui"
-      ],
-      "Failed to copy photo to album": [
-        "Kuvan kopiointi albumiin epäonnistui"
       ],
       "Failed to create folder": [
         "Kansion luominen epäonnistui"
@@ -3218,6 +3212,9 @@
       ],
       "Wrong billing address": [
         "Virheellinen laskutusosoite"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Väärä palautuslauseke. Yritä uudelleen tai kokeile toista palautustapaa."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Voit lähettää viestin enintään ${ maxContacts } vastaanottajalle",
@@ -7045,14 +7042,8 @@
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" jaettiin"
       ],
-      "\"${ name }\" deleted": [
-        "\"${ name }\" poistettiin"
-      ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" poistettiin roskakorista pysyvästi"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "Kohteen \"${ name }\" poisto epäonnistui"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "Kohteen \"${ name }\" pysyvä poisto roskakorista epäonnistui"
@@ -7085,17 +7076,9 @@
         "${ count } kohteen salauksen purku epäonnistui",
         "${ count } kohteen salauksen purku epäonnistui"
       ],
-      "${ numberOfItems } item deleted": [
-        "${ numberOfItems } kohde poistettu",
-        "${ numberOfItems } kohdetta poistettu"
-      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } kohde poistettiin roskakorista pysyvästi",
         "${ numberOfItems } kohdetta poistettiin roskakorista pysyvästi"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems } kohteen poisto epäonnistui",
-        "${ numberOfItems } kohteen poisto epäonnistui"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems } kohteen pysyvä poisto roskakorista epäonnistui",
