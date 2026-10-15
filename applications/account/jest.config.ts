@@ -2,7 +2,6 @@ import type { Config } from 'jest';
 
 const jestConfig: Config = {
     setupFilesAfterEnv: ['./jest.setup.js'],
-    moduleDirectories: ['<rootDir>/node_modules', 'node_modules'],
     testEnvironment: '@proton/jest-env',
     maxWorkers: 1,
     workerIdleMemoryLimit: '1G',

@@ -10,9 +10,6 @@ packages:
     - utilities/*
     - vendor/*/*
 
-# Same flat node_modules layout Yarn's node-modules linker produced.
-nodeLinker: hoisted
-
 # Each workspace declares the type packages it uses. Most list node, webpack-env and jest in
 # compilerOptions.types through tsconfig.base.json, so these ranges are shared here.
 catalog:
@@ -31,6 +28,11 @@ catalog:
 linkWorkspacePackages: true
 # Yarn never installs missing peer dependencies; pnpm does by default.
 autoInstallPeers: false
+
+# pnpm's default. electron-forge refuses to package unless node-linker is hoisted or a hoist
+# pattern is set explicitly; the desktop apps package only the webpack output, not node_modules.
+hoistPattern:
+    - '*'
 
 # @electron/rebuild pulls @electron/node-gyp from a GitHub commit, and pnpm has no per-package
 # exception for it. Yarn accepted every git dependency (approvedGitRepositories: '**').
@@ -81,6 +83,161 @@ packageExtensions:
         # Its JSDoc types reference `eslint`.
         peerDependencies:
             eslint: '*'
+    # Both require `electron`, which the desktop apps pin to different versions. Jest mocks are
+    # keyed by resolved path, so `jest.mock('electron')` only applies if they share the app's copy.
+    electron-log@5:
+        peerDependencies:
+            electron: '*'
+        peerDependenciesMeta:
+            electron:
+                optional: true
+    electron-store@8:
+        peerDependencies:
+            electron: '*'
+        peerDependenciesMeta:
+            electron:
+                optional: true
+    # vendor/rowsncolumns ship prebuilt dist/ that imports tslib, React and sibling packages it only
+    # declares as peers, or not at all. The Sheets sync regenerates their manifests, so the
+    # dependencies live here. Versions match docs-editor. Optional imports that were never installed
+    # (plotly, y-websocket, @hocuspocus/provider, canvas, @rowsncolumns/pivot) are left out; charts'
+    # plotly/plot.js is not imported by any other module.
+    '@rowsncolumns/calculation-worker':
+        dependencies:
+            '@rowsncolumns/common-types': 'workspace:^'
+            '@rowsncolumns/dag': 'workspace:^'
+            '@rowsncolumns/fast-formula-parser': 'workspace:^'
+            '@rowsncolumns/functions': 'workspace:^'
+            '@rowsncolumns/spreadsheet': 'workspace:^'
+            '@rowsncolumns/utils': 'workspace:^'
+            tslib: '^2.8.1'
+    '@rowsncolumns/calculator':
+        dependencies:
+            '@rowsncolumns/common-types': 'workspace:^'
+            tslib: '^2.8.1'
+    '@rowsncolumns/charts':
+        dependencies:
+            '@rowsncolumns/common-types': 'workspace:^'
+            '@rowsncolumns/grid': 'workspace:^'
+            '@rowsncolumns/icons': 'workspace:^'
+            '@rowsncolumns/spreadsheet': 'workspace:^'
+            '@rowsncolumns/spreadsheet-state': 'workspace:^'
+            '@rowsncolumns/toolkit': 'workspace:^'
+            '@rowsncolumns/ui': 'workspace:^'
+            '@rowsncolumns/utils': 'workspace:^'
+            '@types/react': '^18.3.31'
+            immer: '^11.1.18'
+            jotai: '^2.15.1'
+            react: '^18.3.1'
+            react-dom: '^18.3.1'
+            tslib: '^2.8.1'
+    '@rowsncolumns/dag':
+        dependencies:
+            tslib: '^2.8.1'
+    '@rowsncolumns/date-parser':
+        dependencies:
+            '@rowsncolumns/utils': 'workspace:^'
+            tslib: '^2.8.1'
+    '@rowsncolumns/fast-formula-parser':
+        dependencies:
+            '@rowsncolumns/calculator': 'workspace:^'
+            '@rowsncolumns/common-types': 'workspace:^'
+            '@rowsncolumns/dag': 'workspace:^'
+    '@rowsncolumns/functions':
+        dependencies:
+            '@rowsncolumns/calculator': 'workspace:^'
+            '@rowsncolumns/common-types': 'workspace:^'
+            '@rowsncolumns/fast-formula-parser': 'workspace:^'
+            '@rowsncolumns/toolkit': 'workspace:^'
+            '@rowsncolumns/utils': 'workspace:^'
+            tslib: '^2.8.1'
+    '@rowsncolumns/grid':
+        dependencies:
+            '@types/react': '^18.3.31'
+            react: '^18.3.1'
+            react-dom: '^18.3.1'
+            tslib: '^2.8.1'
+    '@rowsncolumns/icons':
+        dependencies:
+            '@types/react': '^18.3.31'
+            react: '^18.3.1'
+            tslib: '^2.8.1'
+    '@rowsncolumns/spreadsheet':
+        dependencies:
+            '@rowsncolumns/fast-formula-parser': 'workspace:^'
+            '@rowsncolumns/spreadsheet-state': 'workspace:^'
+            '@types/react': '^18.3.31'
+            konva: '^10.0.12'
+            react: '^18.3.1'
+            react-dom: '^18.3.1'
+            react-konva: '18.2.10'
+            scheduler: '>=0.25.0'
+            tslib: '^2.8.1'
+    '@rowsncolumns/spreadsheet-state':
+        dependencies:
+            '@rowsncolumns/calculator': 'workspace:^'
+            '@rowsncolumns/charts': 'workspace:^'
+            '@rowsncolumns/common-types': 'workspace:^'
+            '@rowsncolumns/dag': 'workspace:^'
+            '@rowsncolumns/fast-formula-parser': 'workspace:^'
+            '@rowsncolumns/grid': 'workspace:^'
+            '@rowsncolumns/icons': 'workspace:^'
+            '@rowsncolumns/spreadsheet': 'workspace:^'
+            '@rowsncolumns/ui': 'workspace:^'
+            '@rowsncolumns/utils': 'workspace:^'
+            '@types/react': '^18.3.31'
+            lodash: '^4.18.1'
+            react: '^18.3.1'
+            tslib: '^2.8.1'
+    '@rowsncolumns/toolkit':
+        dependencies:
+            '@rowsncolumns/common-types': 'workspace:^'
+            '@rowsncolumns/date-parser': 'workspace:^'
+            '@rowsncolumns/spreadsheet': 'workspace:^'
+            '@rowsncolumns/spreadsheet-state': 'workspace:^'
+            '@rowsncolumns/utils': 'workspace:^'
+            tslib: '^2.8.1'
+    '@rowsncolumns/ui':
+        dependencies:
+            '@radix-ui/react-popper': '1.2.7'
+            '@radix-ui/react-portal': '1.1.9'
+            '@radix-ui/react-slot': '1.2.3'
+            '@rowsncolumns/calculator': 'workspace:^'
+            '@rowsncolumns/common-types': 'workspace:^'
+            '@rowsncolumns/fast-formula-parser': 'workspace:^'
+            '@rowsncolumns/grid': 'workspace:^'
+            '@rowsncolumns/icons': 'workspace:^'
+            '@rowsncolumns/spreadsheet': 'workspace:^'
+            '@rowsncolumns/utils': 'workspace:^'
+            '@types/react': '^18.3.31'
+            lodash: '^4.18.1'
+            react: '^18.3.1'
+            react-dom: '^18.3.1'
+            tslib: '^2.8.1'
+    '@rowsncolumns/utils':
+        dependencies:
+            '@rowsncolumns/calculator': 'workspace:^'
+            tslib: '^2.8.1'
+    '@rowsncolumns/version-comparison':
+        dependencies:
+            '@rowsncolumns/common-types': 'workspace:^'
+            '@rowsncolumns/utils': 'workspace:^'
+            '@types/react': '^18.3.31'
+            react: '^18.3.1'
+    '@rowsncolumns/y-spreadsheet':
+        dependencies:
+            '@rowsncolumns/common-types': 'workspace:^'
+            '@rowsncolumns/grid': 'workspace:^'
+            '@rowsncolumns/spreadsheet': 'workspace:^'
+            '@rowsncolumns/spreadsheet-state': 'workspace:^'
+            '@rowsncolumns/ui': 'workspace:^'
+            '@rowsncolumns/utils': 'workspace:^'
+            '@types/react': '^18.3.31'
+            immer: '^11.1.18'
+            react: '^18.3.1'
+            react-dom: '^18.3.1'
+            tslib: '^2.8.1'
+            yjs: '^13.6.15'
 
 overrides:
     '@babel/runtime-corejs3@^7.24.4': '7.29.7'
