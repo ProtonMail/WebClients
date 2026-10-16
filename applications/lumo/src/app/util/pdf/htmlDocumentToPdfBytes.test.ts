@@ -88,7 +88,7 @@ describe('htmlDocumentToPdfBytes', () => {
         });
     });
 
-    it('mounts export HTML off-screen and captures the markdown body at full height', async () => {
+    it('renders the markdown document through its sandboxed export iframe', async () => {
         const html = `<!DOCTYPE html><html><head><style>.pdf-export-body { margin: 0; }</style></head><body><article class="artifact-markdown"><p>Document body</p></article></body></html>`;
 
         await htmlDocumentToPdfBytes(html);
@@ -96,7 +96,7 @@ describe('htmlDocumentToPdfBytes', () => {
         expect(document.querySelector('[data-pdf-export-root]')).toBeNull();
         expect(mockHtml2canvas).toHaveBeenCalledTimes(1);
         const captureTarget = mockHtml2canvas.mock.calls[0]?.[0] as HTMLElement | undefined;
-        expect(captureTarget?.className).toBe('artifact-markdown');
+        expect(captureTarget?.hasAttribute('data-pdf-export-iframe')).toBe(true);
         const captureOptions = (mockHtml2canvas.mock.calls[0] as unknown[] | undefined)?.[1] as
             Record<string, unknown> | undefined;
         expect(captureOptions).toEqual(
@@ -126,10 +126,26 @@ describe('htmlDocumentToPdfBytes', () => {
         expect(mockAddPage).toHaveBeenCalledTimes(expectedPages - 1);
         expect(onProgress).toHaveBeenLastCalledWith(expectedPages, expectedPages);
 
-        const sliceOffsets = mockHtml2canvas.mock.calls.map((call) => {
-            return (call[1] as { y: number }).y;
-        });
-        expect(sliceOffsets[0]).toBe(0);
+        const sliceOffsets = await Promise.all(
+            mockHtml2canvas.mock.calls.map(async (call) => {
+                const options = call[1] as unknown as {
+                    height: number;
+                    onclone: (document: Document, target: HTMLElement) => Promise<void>;
+                };
+                const clone = document.createElement('iframe');
+                clone.setAttribute('sandbox', 'allow-same-origin');
+                document.body.appendChild(clone);
+                try {
+                    await options.onclone(document, clone);
+                    expect(Number(clone.height)).toBeLessThanOrEqual(pageHeightCss);
+                    const transform = clone.contentDocument!.documentElement.style.transform;
+                    return -Number(transform.match(/, ([-\d.]+)px/)![1]);
+                } finally {
+                    clone.remove();
+                }
+            })
+        );
+        expect(sliceOffsets[0]).toBeCloseTo(0);
         expect(sliceOffsets[1]).toBeCloseTo(pageHeightCss);
 
         mockAddImage.mock.calls.forEach((call) => {
