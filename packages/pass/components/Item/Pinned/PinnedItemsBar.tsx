@@ -108,7 +108,7 @@ export const PinnedItemsBar: FC = () => {
 
     /** Updates navigation on item select:
      * Trashed items -> trash view with reset filters
-     * Regular items -> share view with preserved/updated shareId filter */
+     * Regular items -> share view with preserved/updated shareId and folder filters */
     const onSelect = useCallback((item: ItemRevision) => {
         const { shareId, itemId } = item;
         const share = selectShare(shareId)(store.getState());
@@ -124,6 +124,7 @@ export const PinnedItemsBar: FC = () => {
         })();
 
         const { type, selectedShareId } = filtersRef?.current ?? {};
+        const vaultSelected = selectedShareId !== null;
 
         selectItem(shareId, itemId, {
             scope,
@@ -132,7 +133,8 @@ export const PinnedItemsBar: FC = () => {
                     ? getInitialFilters()
                     : {
                           search: '',
-                          selectedShareId: selectedShareId !== null ? shareId : null,
+                          selectedShareId: vaultSelected ? shareId : null,
+                          selectedFolderId: vaultSelected ? (item.folderId ?? null) : null,
                           type: type !== '*' && type !== item.data.type ? '*' : type,
                       },
         });
