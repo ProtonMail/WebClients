@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "Botiga de ${ BRAND_NAME }"
       ],
+      "${ LUMO_SHORT_APP_NAME } actions": [
+        "Accions de ${ LUMO_SHORT_APP_NAME }"
+      ],
       "A to Z": [
         "De la A a la Z"
       ],
@@ -467,6 +470,9 @@
       ],
       "Display navigation bar": [
         "Mostra la barra de navegació"
+      ],
+      "Dock to side panel": [
+        "Acoblar el panell lateral"
       ],
       "Don't show this offer again": [
         "No em torneu a mostrar aquesta oferta"
@@ -1519,6 +1525,9 @@
       "Switch or add account": [
         "Canvia o afegeix un compte"
       ],
+      "Switch sides": [
+        "Canviar de banda"
+      ],
       "Switch to ${ planName }": [
         "Canvia a ${ planName }"
       ],
@@ -2245,9 +2254,6 @@
       ],
       "Protection for two in a single plan": [
         "Protecció per a dos en un sol pla"
-      ],
-      "Save big with a yearly plan": [
-        "Estalvieu molt amb un pla anual"
       ]
     },
     "Billing cycle option": {
@@ -8234,8 +8240,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"

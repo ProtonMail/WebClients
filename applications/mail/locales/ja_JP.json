@@ -1443,6 +1443,9 @@
       "Stay": [
         "終了しない"
       ],
+      "Stop": [
+        "ストップ"
+      ],
       "Stop downloading assistant": [
         "アシスタントのダウンロードを停止"
       ],
@@ -1826,6 +1829,9 @@
       "Domains": [
         "ドメイン"
       ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "マネージドサービスプロバイダーアドオンを導入している組織は、子会社組織を作成および管理できます。"
+      ],
       "Servers": [
         "サーバー"
       ],
@@ -2048,6 +2054,11 @@
     "bfcampaign2026: Action": {
       "Black Friday": [
         "ブラックフライデー"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "Use your own email domain": [
+        "独自のメールドメインを使用"
       ]
     },
     "Billing cycle option": {
@@ -2556,6 +2567,9 @@
       ],
       "Total": [
         "合計"
+      ],
+      "Total for ${ cycle } month": [
+        "合計 ${ cycle } か月"
       ]
     },
     "Collapsible tooltip": {
@@ -6720,6 +6734,9 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } 件の ${ VPN_APP_NAME } 接続 (より多くのデバイスを VPN に接続可能)"
       ],
+      "1 vault per user": [
+        "一人のユーザーにつき一つの保管庫"
+      ],
       "30-day money-back guarantee.": [
         "30日間の返金保証。"
       ],
@@ -7341,6 +7358,9 @@
       "Forgot password?": [
         "パスワードを忘れましたか？"
       ],
+      "Found ${ count } contact": [
+        "${ count } 件の連絡先を削除"
+      ],
       "Found a current encrypted search index with ${ oldIndexSize } message.": [
         "現在の暗号化された検索インデックスが見つかりました。メッセージ数: ${ oldIndexSize }。"
       ],
@@ -7377,6 +7397,12 @@
       "here": [
         "こちら"
       ],
+      "Hey Lumo, I'm going away and want an out-of-office reply set up. Ask me for the dates and what it should say, then show me the message before you turn it on.": [
+        "Hey Lumo、旅行に行くから不在通知を設定して。日付とメッセージの内容を確認して、有効にする前にメッセージを見せてくれ。"
+      ],
+      "Hey Lumo, walk me through how you can help me with my mailbox. What kinds of things can I ask you to do, and what can't you help with?": [
+        "Hey Lumo、私のメールボックスについて何を手伝ってくれるのか教えて。どんなことを頼めるの？どんなことは手伝ってくれないの？"
+      ],
       "Hide original message": [
         "元のメッセージを非表示"
       ],
@@ -7385,6 +7411,9 @@
       ],
       "How hide-my-email aliases works": [
         "hide-my-email エイリアスの仕組み"
+      ],
+      "I'll look at what you get most of and the folders and filters you already have, then suggest what to improve and what's missing. Nothing moves until you say so.": [
+        "あなたがよく利用するコンテンツや、既に作成済みのフォルダやフィルターを確認した上で、改善点や不足している点をご提案します。お客様のご要望がない限り、何も変更は行いません。"
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "このメッセージを非 ${ MAIL_APP_NAME } ユーザーに送信しています。"
@@ -7471,7 +7500,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像を挿入"
+        "画像の挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -7716,6 +7745,9 @@
       "Not connected": [
         "接続されていません"
       ],
+      "Not found in the foundation-search index.": [
+        "対象のデータが見つかりませんでした。"
+      ],
       "Number of dedicated servers in the organization": [
         "組織内の専用サーバー数"
       ],
@@ -7914,6 +7946,9 @@
       "Read ${ count } message in this thread": [
         "このスレッドの${ count }件のメッセージを既読にする"
       ],
+      "Read ${ count } open draft": [
+        "${ count }件の未読下書きを読みました"
+      ],
       "Read your ${ count } filter": [
         "${ count }件のフィルターを既読にする"
       ],
@@ -7946,6 +7981,9 @@
       ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "このアプリに関連するすべてのデータを削除します (ダウンロードしたメッセージなど…)"
+      ],
+      "Rename this folder": [
+        "フォルダ名を変更"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "フィッシング詐欺としてこのメッセージを報告すると、私たちにこのメッセージが送信され、私たちはこのメッセージを分析してフィルターを改善することができます。メッセージを報告すると、このメッセージのすべての内容を私たちが閲覧可能になります。"
@@ -9350,6 +9388,9 @@
       "Automated confirmations and alerts": [
         "自動確認とアラート"
       ],
+      "Away message": [
+        "不在メッセージ"
+      ],
       "BCC": [
         "BCC"
       ],
@@ -10392,6 +10433,9 @@
       ],
       "Pay invoice": [
         "請求の支払い"
+      ],
+      "Pay it": [
+        "支払う"
       ],
       "Privacy policy": [
         "プライバシーポリシー"
@@ -12563,8 +12607,14 @@
       "This payment method will become your new default for all future renewals.": [
         "この支払い方法は、今後のすべての更新について、お客様の新しいデフォルトになります。"
       ],
+      "This plan doesn’t support the members on your account.": [
+        "このプランは、お客様のアカウントに登録されているメンバーをサポートしていません。"
+      ],
       "Timeout exceeded": [
         "タイムアウトを超えました"
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "トライアルプランは Scrieシート をサポートしていません。"
       ],
       "VAT number": [
         "VAT番号"
@@ -12661,6 +12711,11 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "更新価格は、請求地域およびVAT番号によって異なります。"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - 末尾が${ Last4 }のカード"
       ]
     },
     "Payments.Sepa": {
@@ -13606,6 +13661,11 @@
       ],
       "Private, fast, and organized": [
         "プラベートで高速かつ機能的"
+      ]
+    },
+    "Snooze info": {
+      "${ count } email → ${ wakeTime }": [
+        "${ count }件のメール→${ wakeTime }"
       ]
     },
     "Snooze message": {

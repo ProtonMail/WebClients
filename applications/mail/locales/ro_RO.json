@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
       ],
+      "${ LUMO_SHORT_APP_NAME } actions": [
+        "Acțiuni ${ LUMO_SHORT_APP_NAME }"
+      ],
       "A to Z": [
         "De la A la Z"
       ],
@@ -470,6 +473,9 @@
       ],
       "Display navigation bar": [
         "Afișare bară de navigare"
+      ],
+      "Dock to side panel": [
+        "Andocare la panou lateral"
       ],
       "Don't show this offer again": [
         "Nu mai afișa această ofertă"
@@ -1523,6 +1529,9 @@
       "Switch or add account": [
         "Schimbare sau adăugare cont"
       ],
+      "Switch sides": [
+        "Schimbare parte"
+      ],
       "Switch to ${ planName }": [
         "Comutare la ${ planName }"
       ],
@@ -2262,9 +2271,6 @@
       ],
       "Protection for two in a single plan": [
         "Protecție pentru două persoane într-un singur plan"
-      ],
-      "Save big with a yearly plan": [
-        "Economisiți semnificativ cu un abonament anual"
       ]
     },
     "Billing cycle option": {
@@ -8372,9 +8378,7 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine",
-        "Inserare imagini",
-        "Inserare imagini"
+        "Inserare imagine"
       ],
       "Insert link": [
         "Inserare legătură web"
