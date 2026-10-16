@@ -1328,6 +1328,9 @@
       ],
       "More info": [
         "もっと詳しく"
+      ],
+      "Stop": [
+        "ストップ"
       ]
     },
     "Action: Docs": {
@@ -1431,6 +1434,9 @@
       ],
       "${ quantity } custom domain": [
         "${ quantity } 個のカスタムドメイン"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "マネージドサービスプロバイダーアドオンを導入している組織は、子会社組織を作成および管理できます。"
       ]
     },
     "Alert": {
@@ -1905,6 +1911,9 @@
       ],
       "Total for ${ n } month": [
         "合計 ${ n } か月"
+      ],
+      "Total for ${ cycle } month": [
+        "合計 ${ cycle } か月"
       ]
     },
     "Collapsible tooltip": {
@@ -7433,6 +7442,9 @@
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "現在アクセスが集中しているため、一時的にご利用いただけません。後ほど再度お試しください。"
+      ],
+      "1 vault per user": [
+        "一人のユーザーにつき一つの保管庫"
       ]
     },
     "info": {
@@ -8484,6 +8496,9 @@
       ],
       "What’s this?": [
         "これは何ですか?"
+      ],
+      "Pay it": [
+        "支払う"
       ]
     },
     "List title": {
@@ -10839,6 +10854,12 @@
       ],
       "VAT reverse charge mechanism applies.": [
         "VATリバースチャージ方式が適用されます。"
+      ],
+      "This plan doesn’t support the members on your account.": [
+        "このプランは、お客様のアカウントに登録されているメンバーをサポートしていません。"
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "トライアルプランは Scrieシート をサポートしていません。"
       ]
     },
     "Payments.Error": {
@@ -10919,6 +10940,9 @@
       ],
       "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "Google Pay - 末尾が${ paymentMethod.Details.Last4 }のカード"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - 末尾が${ Last4 }のカード"
       ]
     },
     "Payments.Sepa": {
@@ -14585,6 +14609,11 @@
     "bfcampaign2026: Action": {
       "Black Friday": [
         "ブラックフライデー"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "Use your own email domain": [
+        "独自のメールドメインを使用"
       ]
     }
   }
