@@ -13,11 +13,16 @@ export const event = createAction<ApiEvent>('event');
 export const loadDashboard = createAsyncThunk<void, undefined, EasySwitchThunkExtra>(
     'dashboard/load',
     async (_, thunkApi) => {
-        await Promise.all([
+        const results = await Promise.all([
             thunkApi.dispatch(loadSyncList()),
             thunkApi.dispatch(loadReports()),
             thunkApi.dispatch(loadImporters()),
         ]);
+
+        // Dispatching a thunk never throws, so a failing request has to be surfaced here for callers using unwrap()
+        if (results.some((result) => result.meta.requestStatus === 'rejected')) {
+            throw new Error('Failed to load the dashboard');
+        }
     }
 );
 

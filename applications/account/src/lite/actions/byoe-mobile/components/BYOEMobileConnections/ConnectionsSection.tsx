@@ -10,14 +10,14 @@ interface Props extends PropsWithChildren {
     title: string;
 }
 
-export const CollapsibleSection = ({ title, children }: Props) => {
+export const ConnectionsSection = ({ title, children }: Props) => {
     return (
         <Collapsible expandByDefault>
             <CollapsibleHeader
                 className="px-4 pt-4 mb-1 color-hint text-semibold"
                 suffix={
                     <CollapsibleHeaderIconButton>
-                        <IcChevronDown />
+                        <IcChevronDown size={5} className="color-hint" />
                     </CollapsibleHeaderIconButton>
                 }
             >

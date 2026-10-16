@@ -1,9 +1,8 @@
-import { c } from 'ttag';
-
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 
 import { ApiImporterState, ApiReportRollbackState } from '../../../api/api.interface';
+import { getReportString, getRollbackStateString } from './reportStrings';
 
 interface Props {
     status: ApiImporterState;
@@ -11,41 +10,35 @@ interface Props {
 }
 
 const ReportRowStatus = ({ status, rollbackState }: Props) => {
-    if (rollbackState === ApiReportRollbackState.ROLLED_BACK || rollbackState === ApiReportRollbackState.ROLLING_BACK) {
-        switch (rollbackState) {
-            case ApiReportRollbackState.ROLLED_BACK:
-                return (
-                    <div className="inline-flex gap-2 color-success items-center">
-                        <IcCheckmarkCircleFilled />
-                        {/* translator: When undoing an import in easy switch section has completed */}
-                        <span>{c('Import status').t`Undo finished`}</span>
-                    </div>
-                );
-            case ApiReportRollbackState.ROLLING_BACK:
-                // translator: When the user decided to undo an import in easy switch section, action is running
-                return <span className="color-weak">{c('Import status').t`Undo in progress`}</span>;
-        }
+    if (rollbackState === ApiReportRollbackState.ROLLED_BACK) {
+        const rollbackString = getRollbackStateString(rollbackState);
+        return (
+            <div className="inline-flex gap-2 color-success items-center">
+                <IcCheckmarkCircleFilled />
+                <span>{rollbackString}</span>
+            </div>
+        );
     }
 
-    switch (status) {
-        case ApiImporterState.PAUSED:
-            return <span className="color-weak">{c('Import status').t`Paused`}</span>;
-        case ApiImporterState.CANCELED:
-            return <span className="color-weak">{c('Import status').t`Canceled`}</span>;
-        case ApiImporterState.DONE:
-            return (
-                <div className="inline-flex gap-2 color-success items-center">
-                    <IcCheckmarkCircleFilled />
-                    <span>{c('Import status').t`Imported`}</span>
-                </div>
-            );
-        case ApiImporterState.FAILED:
-            return (
-                <div className="inline-flex gap-2 color-danger items-center">
-                    <IcExclamationCircleFilled />
-                    <span>{c('Import status').t`Failed`}</span>
-                </div>
-            );
+    if (rollbackState === ApiReportRollbackState.ROLLING_BACK) {
+        const rollbackString = getRollbackStateString(rollbackState);
+        return <span className="color-weak">{rollbackString}</span>;
+    }
+
+    const statusString = getReportString(status);
+    if (status === ApiImporterState.PAUSED || status === ApiImporterState.CANCELED) {
+        return <span className="color-weak">{statusString}</span>;
+    }
+
+    if (status === ApiImporterState.DONE || status === ApiImporterState.FAILED) {
+        const icon = status === ApiImporterState.DONE ? <IcCheckmarkCircleFilled /> : <IcExclamationCircleFilled />;
+        const colorClass = status === ApiImporterState.DONE ? 'color-success' : 'color-danger';
+        return (
+            <div className={`inline-flex gap-2 ${colorClass} items-center`}>
+                {icon}
+                <span>{statusString}</span>
+            </div>
+        );
     }
 
     return null;
