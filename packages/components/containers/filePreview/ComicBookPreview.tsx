@@ -8,34 +8,43 @@ import clsx from '@proton/utils/clsx';
 
 import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
 
+const IMAGE_SIGNATURES = [
+    { mimeType: 'image/png', signature: [0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a] },
+    { mimeType: 'image/jpeg', signature: [0xff, 0xd8, 0xff] },
+];
+
 const extract = (files: typeof JSZip.files) =>
     Object.keys(files)
         .filter((name) => /\.(jpe?g|png)$/i.test(name)) // we can have some extra metadata files, we only care about images
         .sort(); // CBZ images are sorted by page number
 
-const getExtractedImagesFromCBZ = async (cbz: Blob | Uint8Array<ArrayBuffer>[]) => {
+/**
+ * Archive entries are attacker-controlled: an empty-type Blob can be sniffed as HTML when opened in a new tab
+ * and would run in the app origin, so only entries with a known image signature are kept, typed explicitly.
+ */
+const getImageBlobFromEntry = async (entry: JSZip.JSZipObject) => {
+    const bytes = (await entry.async('uint8array')) as Uint8Array<ArrayBuffer>;
+    const mimeType = IMAGE_SIGNATURES.find(({ signature }) =>
+        signature.every((byte, index) => bytes[index] === byte)
+    )?.mimeType;
+    return mimeType ? new Blob([bytes], { type: mimeType }) : undefined;
+};
+
+export const getExtractedImagesFromCBZ = async (cbz: Blob | Uint8Array<ArrayBuffer>[]) => {
     const zip = await JSZip.loadAsync(cbz instanceof Blob ? cbz : new Blob(cbz));
-    return Promise.all(
-        extract(zip.files).map(async (fileName) => {
-            const blob = await zip.files[fileName].async('blob');
-            return URL.createObjectURL(blob);
-        })
-    ).finally(() => {
-        return [];
-    });
+    const blobs = await Promise.all(extract(zip.files).map((fileName) => getImageBlobFromEntry(zip.files[fileName])));
+    return blobs.filter((blob) => blob !== undefined).map((blob) => URL.createObjectURL(blob));
 };
 
 export const getCBZCover = async (cbz: Blob) => {
-    let file = undefined;
     const zip = await JSZip.loadAsync(cbz);
-    const cover = extract(zip.files).at(0);
-    if (cover) {
-        file = await zip.files[cover].async('blob');
+    for (const cover of extract(zip.files)) {
+        const file = await getImageBlobFromEntry(zip.files[cover]);
+        if (file) {
+            return { cover, file };
+        }
     }
-    return {
-        cover,
-        file,
-    };
+    return { cover: undefined, file: undefined };
 };
 
 const ComicBookPreview = ({
