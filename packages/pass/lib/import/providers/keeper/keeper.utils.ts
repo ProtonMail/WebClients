@@ -1,9 +1,16 @@
 import { c } from 'ttag';
 
-import type { DeobfuscatedItemExtraField, ItemContent } from '../../../../types';
+import type { DeobfuscatedItemExtraField, ItemContent, Maybe } from '../../../../types';
+import { truthy } from '../../../../utils/fp/predicates';
 import { isEmptyString } from '../../../../utils/string/is-empty-string';
 import { itemBuilder } from '../../../items/item.builder';
-import type { KeeperCustomFieldValue, KeeperCustomFields, KeeperItem, KeeperPhoneField } from './keeper.types';
+import type {
+    KeeperCustomFieldValue,
+    KeeperCustomFields,
+    KeeperFolder,
+    KeeperItem,
+    KeeperPhoneField,
+} from './keeper.types';
 
 const getCleanLabel = (label?: string) => {
     const clean = label?.replace(/^(\$text:|\$name:|\$secret:|\$)|:1$/g, '');
@@ -110,3 +117,15 @@ export const getKeeperBuiltinExtraFields = (item: KeeperItem) =>
         if (content) acc.push({ fieldName, type: 'text', data: { content } });
         return acc;
     }, []);
+
+/** `folder` is a path inside `shared_folder` when both are set */
+const getKeeperFolderEntryPath = ({ shared_folder, folder }: KeeperFolder) =>
+    [shared_folder, folder].filter(truthy).join('\\');
+
+/** A record can be in a private folder and a shared folder at once: prefer the private one */
+export const getKeeperFolderPath = (item: KeeperItem): Maybe<string> => {
+    const privateFolder = item.folders?.find(({ folder, shared_folder }) => folder && !shared_folder);
+    const sharedFolder = item.folders?.find(({ shared_folder }) => shared_folder);
+    const entry = privateFolder ?? sharedFolder;
+    return entry ? getKeeperFolderEntryPath(entry) : undefined;
+};

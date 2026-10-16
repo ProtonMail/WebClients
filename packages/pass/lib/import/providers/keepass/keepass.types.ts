@@ -21,6 +21,7 @@ export type KeePassEntry = {
 };
 
 export type KeePassGroup = {
+    UUID: string;
     Name: string;
     Entry?: MaybeArray<KeePassEntry>;
     Group?: MaybeArray<KeePassGroup>;
@@ -28,6 +29,9 @@ export type KeePassGroup = {
 
 export type KeePassFile = {
     KeePassFile: {
+        Meta?: {
+            RecycleBinUUID?: string;
+        };
         Root: {
             Group?: MaybeArray<KeePassGroup>;
         };
