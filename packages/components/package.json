@@ -114,14 +114,14 @@
         "@webgpu/types": "^0.1.74",
         "core-js": "^3.50.0",
         "cross-fetch": "^4.1.0",
-        "eslint": "^10.11.0",
+        "eslint": "^10.12.0",
         "jest": "^30.5.2",
         "jest-mock": "^30.5.2",
         "msw": "2.12.14",
         "prettier": "^3.9.9",
         "react-redux": "^9.3.0",
         "typescript": "npm:@typescript/typescript6@^6.0.2",
-        "vitest": "^5.0.2"
+        "vitest": "^5.0.4"
     },
     "peerDependencies": {
         "@proton/activation": "*",
