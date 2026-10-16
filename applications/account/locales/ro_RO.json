@@ -8285,6 +8285,12 @@
       ],
       "Zero keys reactivated": [
         "Zero taste reactivate."
+      ],
+      "We couldn't disconnect this address. Please try again.": [
+        "Nu s-a putut deconecta această adresă. Reîncercați."
+      ],
+      "We couldn't reconnect this address.": [
+        "Nu s-a putut reconecta această adresă."
       ]
     },
     "error": {
@@ -14704,6 +14710,24 @@
       ],
       "Zoom meeting": [
         "o întâlnire pe Zoom"
+      ],
+      "Connected": [
+        "Conectat"
+      ],
+      "Disconnected": [
+        "Deconectat"
+      ],
+      "Messages from other ${ BRAND_NAME } users also lose end-to-end encryption.": [
+        "Mesajele de la alți utilizatori ${ BRAND_NAME } își pierd și ele criptarea bilaterală."
+      ],
+      "When sign-in is restricted, only ${ primaryEmailElement } and your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Atunci când autentificarea este restricționată, doar ${ primaryEmailElement } și numele de utilizator ${ usernameElement } pot fi utilizate pentru a vă autentifica. Celelalte adrese nu le mai puteți asocia cu contul personal, chiar dacă cineva le cunoaște."
+      ],
+      "When sign-in is restricted, only your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Când autentificarea este restricționată, doar numele de utilizator ${ usernameElement } poate fi utilizat pentru a vă autentifica. Celelalte adrese nu vă pot fi asociate cu contul, chiar dacă cineva le cunoaște."
+      ],
+      "You won't be able to send or receive as ${ email } in ${ BRAND_NAME } anymore.": [
+        "Nu veți mai putea trimite sau primi mesaje cu adresa ${ email } în ${ BRAND_NAME }."
       ]
     },
     "info": {
@@ -17074,6 +17098,18 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Connect ${ item.Email }": [
+        "Conectare ${ item.Email }"
+      ],
+      "Restrict sign-in to primary email address": [
+        "Restricționare autentificare la adresa de e-mail principală"
+      ],
+      "Restrict sign-in to username": [
+        "Restricționare autentificare la numele de utilizator"
+      ],
+      "Start with your most recent": [
+        "Începeți cu cea mai recentă"
       ]
     },
     "label": {
@@ -28389,6 +28425,18 @@
       ],
       "Your subscriptions": [
         "Abonamente personale"
+      ],
+      "Addresses": [
+        "Adrese"
+      ],
+      "Connect your Gmail": [
+        "Conectați-vă adresa Gmail"
+      ],
+      "Disconnect this address?": [
+        "Deconectați această adresă?"
+      ],
+      "Sign-in protection": [
+        "Protecție la autentificare"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
