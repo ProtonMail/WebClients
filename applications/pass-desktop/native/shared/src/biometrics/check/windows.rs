@@ -40,6 +40,8 @@ use windows::Win32::UI::WindowsAndMessaging::{
     WNDCLASSW, WS_EX_LAYERED, WS_EX_TOOLWINDOW, WS_EX_TOPMOST, WS_POPUP,
 };
 
+use crate::biometrics::PresenceCheckCancelled;
+
 const WINDOW_CLASS: PCWSTR = w!("ProtonPassBiometricPromptOwner");
 const WM_OPERATION_COMPLETED: u32 = WM_APP;
 const FOREGROUND_TIMEOUT: Duration = Duration::from_millis(1500);
@@ -90,7 +92,7 @@ pub(crate) fn convert(result: UserConsentVerificationResult) -> Result<()> {
         UserConsentVerificationResult::DeviceNotPresent => bail!("No authentication device found."),
         UserConsentVerificationResult::DisabledByPolicy => bail!("Authentication device is disabled by policy."),
         UserConsentVerificationResult::NotConfiguredForUser => bail!("No authentication device configured."),
-        UserConsentVerificationResult::Canceled => bail!("Authentication cancelled."),
+        UserConsentVerificationResult::Canceled => Err(PresenceCheckCancelled.into()),
         UserConsentVerificationResult::RetriesExhausted => bail!("There have been too many failed attempts."),
         _ => bail!("Biometric authentication failed."),
     }
