@@ -1,5 +1,7 @@
 import type { Config } from 'jest';
 
+import { getTransformIgnorePatterns } from '@proton/jest-swc-preset/transformIgnorePatterns.js';
+
 const jestConfig: Config = {
     forceExit: true,
     setupFilesAfterEnv: ['./jest.setup.js'],
@@ -16,9 +18,12 @@ const jestConfig: Config = {
     preset: '@proton/jest-swc-preset',
     testEnvironment: '@proton/jest-env',
     resolver: './jest.resolver.js',
-    transformIgnorePatterns: [
-        'node_modules/(?!(\\.pnpm|@proton/shared|@proton/components|@proton/proton-foundation-search|@protontech/telemetry|@protontech/logger|@protontech/mutex-browser|@protontech/crypto|@protontech/drive-sdk|openpgp|@protontech/openpgp|@openpgp/web-stream-tools|@protontech/bip39|emoji-mart|@preact/signals-core|@scure/base)/|client-zip|uuid)',
-    ],
+    transformIgnorePatterns: getTransformIgnorePatterns([
+        '@proton/proton-foundation-search',
+        '@protontech/drive-sdk',
+        'client-zip',
+        'uuid',
+    ]),
     moduleNameMapper: {
         '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm)$': '@proton/components/__mocks__/fileMock.js',
         '\\.(css|scss|less)$': '@proton/components/__mocks__/styleMock.js',
