@@ -24,7 +24,7 @@ import {
 
 /** The three reversible system locations move_emails can send mail to. NOT deletion: mail in
  *  Trash/Archive/Spam can be moved back. Permanent delete is deliberately absent (no tool covers it). */
-const MOVE_LOCATIONS = ['trash', 'archive', 'spam'] as const;
+export const MOVE_LOCATIONS = ['trash', 'archive', 'spam'] as const;
 
 export type MoveLocation = (typeof MOVE_LOCATIONS)[number];
 
