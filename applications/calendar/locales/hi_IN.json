@@ -6864,6 +6864,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "आप बुकिंग स्लॉट की सीमा तक पहुँच चुके हैं (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "We'll get back to you shortly.": [
+        "हम शीघ्र ही आपसे संपर्क करेंगे।"
       ]
     },
     "info": {
@@ -7613,6 +7616,12 @@
       ],
       "Zoom meeting": [
         "ज़ूम मीटिंग"
+      ],
+      "Please share any feedback to help us improve.": [
+        "हमें बेहतर बनाने में मदद करने के लिए कोई भी सुझाव साझा करें।"
+      ],
+      "Why would you like to cancel?": [
+        "इसे रद्द करने की वजह क्या है?"
       ]
     },
     "label": {
@@ -10310,6 +10319,9 @@
       ],
       "ZIP code": [
         "ZIP कोड"
+      ],
+      "Please select the main reason": [
+        "कृपया मुख्य कारण को चुनें"
       ]
     },
     "Placeholder for contact group name": {
@@ -12716,6 +12728,12 @@
       ],
       "Your shorter address is now ready": [
         "आपका छोटा पता अब तैयार है"
+      ],
+      "Contact us": [
+        "हमसे संपर्क करें"
+      ],
+      "Request sent": [
+        "अनुरोध भेजा गया"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13367,6 +13385,20 @@
       ],
       "Passcode:": [
         "पासकोड:"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "मुझे एक और सेवा मिली जो मुझे बेहतर लगी"
+      ],
+      "It’s missing a key feature": [
+        "यह एक महत्वपूर्ण खासियत गायब है"
+      ],
+      "It’s too expensive": [
+        "यह बहुत महंगा है"
+      ],
+      "Other": [
+        "दूसरा"
       ]
     }
   }

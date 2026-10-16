@@ -6466,6 +6466,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "予約枠の上限に達しました${ numberOfSlots }/${ MAX_BOOKING_SLOTS }"
+      ],
+      "We'll get back to you shortly.": [
+        "すぐにお返事します。"
       ]
     },
     "info": {
@@ -7197,6 +7200,12 @@
       ],
       "Zoom meeting": [
         "Zoom ミーティング"
+      ],
+      "Please share any feedback to help us improve.": [
+        "ご意見、ご感想がありましたら、ぜひお聞かせください。"
+      ],
+      "Why would you like to cancel?": [
+        "なぜキャンセルしたいのですか？"
       ]
     },
     "label": {
@@ -9686,6 +9695,9 @@
       ],
       "ZIP code": [
         "郵便番号"
+      ],
+      "Please select the main reason": [
+        "主な理由をお選びください。"
       ]
     },
     "Placeholder for contact group name": {
@@ -12010,6 +12022,12 @@
       ],
       "Your shorter address is now ready": [
         "短いアドレスの準備ができました"
+      ],
+      "Contact us": [
+        "お問い合わせ"
+      ],
+      "Request sent": [
+        "リクエスト送信"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12609,6 +12627,20 @@
       ],
       "Passcode:": [
         "パスコード："
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "もっと気に入ったサービスを見つけた"
+      ],
+      "It’s missing a key feature": [
+        "重要な機能が欠けている"
+      ],
+      "It’s too expensive": [
+        "これは高すぎる"
+      ],
+      "Other": [
+        "その他"
       ]
     }
   }
