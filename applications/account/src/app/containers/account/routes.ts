@@ -19,7 +19,6 @@ import { IcUser } from '@proton/icons/icons/IcUser';
 import { getIsConsumerPassPlan } from '@proton/payments/core/plan/helpers';
 import {
     type MaybeFreeSubscription,
-    getHasExternalMemberCapableB2BPlan,
     getHasVpnB2BPlan,
     hasCancellablePlan,
     hasLumo,
@@ -130,8 +129,7 @@ function getV1DashboardSections(
     isMember: boolean,
     cancellablePlan: boolean,
     subscription: MaybeFreeSubscription,
-    cancellableOnlyViaSupport: boolean,
-    hasExternalMemberCapableB2BPlan: boolean
+    cancellableOnlyViaSupport: boolean
 ) {
     return [
         // do not show Your Plan section for Pass users
@@ -239,17 +237,6 @@ function getV1DashboardSections(
                 c('Action').t`Contact us`,
                 c('account_search_index').t`Cancel plan`,
                 c('account_search_index').t`Customer support`,
-            ],
-        },
-        {
-            text: c('Title').t`Cancel subscription`,
-            id: 'downgrade-account',
-            available:
-                isPaid && canPay && !cancellablePlan && !hasExternalMemberCapableB2BPlan && !cancellableOnlyViaSupport,
-            keywords: [
-                c('account_search_index').t`Downgrade plan`,
-                c('account_search_index').t`Downgrade to Free`,
-                c('account_search_index').t`Cancel plan`,
             ],
         },
     ];
@@ -467,8 +454,6 @@ export const getAccountAppRoutes = ({
     const isVisionaryPlan = !!organization && isOrganizationVisionary(organization);
     const isMemberProton = Type === UserType.PROTON;
 
-    const hasExternalMemberCapableB2BPlan = getHasExternalMemberCapableB2BPlan(subscription);
-
     const cancellablePlan = hasCancellablePlan(subscription);
     const cancellableOnlyViaSupport = isCancellableOnlyViaSupport(subscription);
 
@@ -617,8 +602,7 @@ export const getAccountAppRoutes = ({
                           isMember,
                           cancellablePlan,
                           subscription,
-                          cancellableOnlyViaSupport,
-                          hasExternalMemberCapableB2BPlan
+                          cancellableOnlyViaSupport
                       ),
             },
             subscription: {
@@ -735,22 +719,6 @@ export const getAccountAppRoutes = ({
                             c('Action').t`Contact us`,
                             c('account_search_index').t`Cancel plan`,
                             c('account_search_index').t`Customer support`,
-                        ],
-                    },
-                    {
-                        text: c('Title').t`Cancel subscription`,
-                        id: 'downgrade-account',
-                        available:
-                            isPaid &&
-                            canPay &&
-                            !cancellablePlan &&
-                            !hasExternalMemberCapableB2BPlan &&
-                            !cancellableOnlyViaSupport,
-                        variant: SettingsLayoutVariant.Card,
-                        keywords: [
-                            c('account_search_index').t`Downgrade plan`,
-                            c('account_search_index').t`Downgrade to Free`,
-                            c('account_search_index').t`Cancel plan`,
                         ],
                     },
                 ],

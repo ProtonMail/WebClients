@@ -1,19 +1,19 @@
 import { useModalTwoPromise } from '../../../../../components/modalTwo/useModalTwo';
 import { componentsHookRenderer } from '../../../../contacts/tests/render';
-import { useCalendarDowngradeStep } from '../useCalendarDowngradeStep';
+import { useCancelViaSupportStep } from '../useCancelViaSupportStep';
 
 jest.mock('../../../../../components/modalTwo/useModalTwo');
 
 const mockShowModal = jest.fn();
 
-describe('useCalendarDowngradeStep', () => {
+describe('useCancelViaSupportStep', () => {
     beforeEach(() => {
         jest.resetAllMocks();
         jest.mocked(useModalTwoPromise).mockReturnValue([() => null, mockShowModal]);
     });
 
     it('should call showModal when canShow returns true', async () => {
-        const { result } = componentsHookRenderer(() => useCalendarDowngradeStep({ canShow: async () => true }));
+        const { result } = componentsHookRenderer(() => useCancelViaSupportStep({ canShow: async () => true }));
 
         await result.current.show();
 
@@ -21,7 +21,7 @@ describe('useCalendarDowngradeStep', () => {
     });
 
     it('should not call showModal when canShow returns false', async () => {
-        const { result } = componentsHookRenderer(() => useCalendarDowngradeStep({ canShow: async () => false }));
+        const { result } = componentsHookRenderer(() => useCancelViaSupportStep({ canShow: async () => false }));
 
         await result.current.show();
 

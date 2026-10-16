@@ -16,7 +16,7 @@ import SettingsLink from '../../../../components/link/SettingsLink';
 import useSettingsLink from '../../../../components/link/useSettingsLink';
 import useModalState from '../../../../components/modalTwo/useModalState';
 import useAppTitle from '../../../../hooks/useAppTitle';
-import { useSubscriptionModal } from '../SubscriptionModalProvider';
+import { useSubscriptionModalRaw } from '../SubscriptionModalProvider';
 import { useCancelSubscriptionFlow } from '../cancelSubscription/useCancelSubscriptionFlow';
 import { SUBSCRIPTION_STEPS } from '../constants';
 import useSubscriptionModalTelemetry from '../useSubscriptionModalTelemetry';
@@ -36,7 +36,7 @@ interface Props {
 export const CancellationReminderSection = ({ app }: Props) => {
     const [subscription] = useSubscription();
     const { reportCancellationOnSameDay } = useSubscriptionModalTelemetry();
-    const [openSubscriptionModal] = useSubscriptionModal();
+    const openSubscriptionModal = useSubscriptionModalRaw();
     const { b2bAccess, b2cAccess, redirectToDashboard, setStartedCancellation } = useCancellationFlow();
     const { sendCancelPageKeepPlanReport, sendCancelPageConfirmCancelReport } = useCancellationTelemetry();
 
@@ -89,10 +89,10 @@ export const CancellationReminderSection = ({ app }: Props) => {
             void reportCancellationOnSameDay();
         }
 
-        if (status === 'cancelled' || status === 'downgraded') {
+        if (status === 'cancelled') {
             setRedirectModalOpen(true);
         } else if (status === 'upsold') {
-            openSubscriptionModal({
+            void openSubscriptionModal({
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
                 plan: config.upsellPlan,
