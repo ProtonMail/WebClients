@@ -3059,9 +3059,6 @@
       ],
       "Protection for two in a single plan": [
         "Beskyttelse til to i et enkelt abonnement"
-      ],
-      "Save big with a yearly plan": [
-        "Spar stort med et årligt abonnement"
       ]
     },
     "Billing cycle": {
@@ -8153,6 +8150,12 @@
       "Verification keys for ${ signatureType } are not available": [
         "Bekræftelsesnøgler til ${ signatureType } er ikke tilgængelige"
       ],
+      "We couldn't disconnect this address. Please try again.": [
+        "Vi kunne ikke forbinde denne adresse. Prøv igen."
+      ],
+      "We couldn't reconnect this address.": [
+        "Vi kunne ikke genoprette forbindelsen til adressen."
+      ],
       "We couldn't sign you in": [
         "Vi kunne ikke logge dig på"
       ],
@@ -11200,6 +11203,9 @@
       "Connect and manage your external mailboxes in ${ MAIL_APP_NAME }.": [
         "Forbind og administrer dine eksterne e-mails i ${ MAIL_APP_NAME }."
       ],
+      "Connected": [
+        "Forbundet"
+      ],
       "Connecting to Google Drive and preparing your import.": [
         "Forbinder til Google Drive og forbereder din import."
       ],
@@ -11405,6 +11411,9 @@
       ],
       "Disabling the data backup on this device will prevent you from automatically unlocking your encrypted data after a password reset.": [
         "Ved at deaktivere sikkerhedskopiering af data på denne enhed, mister du muligheden for automatisk at låse op for din krypterede data efter du har nulstillet adgangskoden."
+      ],
+      "Disconnected": [
+        "Frakoblet"
       ],
       "Discount": [
         "Rabat"
@@ -12387,6 +12396,9 @@
       ],
       "Merged": [
         "Flettet"
+      ],
+      "Messages from other ${ BRAND_NAME } users also lose end-to-end encryption.": [
+        "Beskeder fra andre ${ BRAND_NAME }-brugere mister også end-to-end-kryptering."
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Beskeder i mappen Sendt eller Udkast vil fortsat blive vist i den pågældende mappe, selvom du flytter dem til en anden mappe."
@@ -14334,6 +14346,9 @@
       "You will regain complete or partial access to your encrypted data.": [
         "Du vil få fuld eller delvis adgang til dine krypterede data igen."
       ],
+      "You won't be able to send or receive as ${ email } in ${ BRAND_NAME } anymore.": [
+        "Du vil ikke længere kunne sende eller modtage som ${ email } i ${ BRAND_NAME }."
+      ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Der bliver ikke trukket noget hvis du annullerer inden ${ trialEndsOnFormatted }."
       ],
@@ -15631,6 +15646,9 @@
       "Confirm second password": [
         "Bekræft anden adgangskode"
       ],
+      "Connect ${ item.Email }": [
+        "Forbind ${ item.Email }"
+      ],
       "Contacts": [
         "Kontakter"
       ],
@@ -16490,6 +16508,12 @@
       "Reserved email address": [
         "Reserveret e-mailadresse"
       ],
+      "Restrict sign-in to primary email address": [
+        "Begræns log-ind til primær e-mailadresse"
+      ],
+      "Restrict sign-in to username": [
+        "Begræns log-ind til brugernavn"
+      ],
       "Reveal password": [
         "Vis adgangskode"
       ],
@@ -16641,8 +16665,8 @@
       "Start weekday": [
         "Første ugedag"
       ],
-      "Start with your most recent messages": [
-        "Start med dine seneste beskeder"
+      "Start with your most recent": [
+        "Start med dine seneste"
       ],
       "Starts with": [
         "Begynder med"
@@ -26132,6 +26156,9 @@
       "Address and key verification": [
         "Adresse- og nøglebekræftelse"
       ],
+      "Addresses": [
+        "Adresser"
+      ],
       "Advanced configuration": [
         "Avanceret konfiguration"
       ],
@@ -26375,8 +26402,8 @@
       "Connect your custom domain": [
         "Forbind dit brugerdefinerede domæne"
       ],
-      "Connected addresses": [
-        "Forbundne adresser"
+      "Connect your Gmail": [
+        "Forbind din Gmail"
       ],
       "Connected emails": [
         "Forbundne e-mails"
@@ -26640,6 +26667,9 @@
       ],
       "Discard changes?": [
         "Kassér ændringer?"
+      ],
+      "Disconnect this address?": [
+        "Afbryd forbindelsen til denne adresse?"
       ],
       "Disconnected from Gmail": [
         "Forbindelsen til Gmail er afbrudt"
@@ -27647,6 +27677,9 @@
       ],
       "Sign out on all devices?": [
         "Log ud på alle enheder?"
+      ],
+      "Sign-in protection": [
+        "Beskyttelse ved log-ind"
       ],
       "Signed in successfully!": [
         "Det lykkedes at logge ind!"
