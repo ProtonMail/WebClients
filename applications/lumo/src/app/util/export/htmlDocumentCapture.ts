@@ -272,6 +272,45 @@ export async function captureElementToCanvas(
         html2canvasOptions.windowHeight = captureHeight;
     }
 
+    const frame = target.ownerDocument.defaultView?.frameElement;
+    if (frame?.tagName === 'IFRAME' && frame.hasAttribute('data-pdf-export-iframe')) {
+        const exportFrame = frame as HTMLIFrameElement;
+        const bounds = target.getBoundingClientRect();
+        const frameHeight = options.captureSlice?.height ?? captureHeight;
+        const offsetY = bounds.top + (options.captureSlice?.y ?? 0);
+        const doctype = target.ownerDocument.doctype;
+        const html = `${doctype ? new XMLSerializer().serializeToString(doctype) : ''}${target.ownerDocument.documentElement.outerHTML}`;
+
+        // Clone from the parent page: WebKit blocks html2canvas's load handlers inside the sandbox.
+        return html2canvas(exportFrame, {
+            ...html2canvasOptions,
+            x: 0,
+            y: 0,
+            width: captureWidth,
+            height: options.captureSlice?.height ?? captureHeight,
+            onclone: async (_document: Document, clonedElement: HTMLElement) => {
+                const clonedFrame = clonedElement as HTMLIFrameElement;
+                const clonedDocument = clonedFrame.contentDocument;
+                if (!clonedDocument) {
+                    throw new Error('Cloned export document is unavailable.');
+                }
+
+                // html2canvas needs explicit iframe dimensions and does not copy its document.
+                clonedFrame.width = String(captureWidth);
+                clonedFrame.height = String(frameHeight);
+                clonedFrame.style.width = `${captureWidth}px`;
+                clonedFrame.style.height = `${frameHeight}px`;
+                clonedDocument.open();
+                clonedDocument.write(html);
+                clonedDocument.close();
+                clonedDocument.documentElement.style.transform = `translate(${-bounds.left}px, ${-offsetY}px)`;
+                clonedDocument.documentElement.style.transformOrigin = '0 0';
+                await waitForDocumentFonts(clonedDocument);
+                await waitForLayoutSettle();
+            },
+        });
+    }
+
     return html2canvas(target, html2canvasOptions);
 }
 
