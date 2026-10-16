@@ -6,7 +6,7 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
-import { useModalState } from '@proton/components';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 import googleLogo from '@proton/styles/assets/img/import/providers/google.svg';
 
