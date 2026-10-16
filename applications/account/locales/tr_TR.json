@@ -8230,6 +8230,12 @@
       ],
       "Zero keys reactivated": [
         "Hiç bir anahtar yeniden kullanıma alınmadı"
+      ],
+      "We couldn't disconnect this address. Please try again.": [
+        "Bu adresin bağlantısını kesilemedi. Lütfen yeniden deneyin."
+      ],
+      "We couldn't reconnect this address.": [
+        "Bu adres yeniden bağlanamadı."
       ]
     },
     "error": {
@@ -14555,6 +14561,24 @@
       ],
       "We couldn't connect your Gmail. Try again and select all the boxes when Google asks for access. ${ BRAND_NAME } only uses this access to connect your Gmail.": [
         "Gmail hesabınız ile bağlantı kurulamadı. Yeniden deneyin ve Google erişme izni istediğinde tüm kutuları seçin. ${ BRAND_NAME } bu erişme iznini yalnızca Gmail hesabınızı bağlamak için kullanır."
+      ],
+      "Connected": [
+        "Bağlı"
+      ],
+      "Disconnected": [
+        "Bağlı değil"
+      ],
+      "Messages from other ${ BRAND_NAME } users also lose end-to-end encryption.": [
+        "Diğer ${ BRAND_NAME } kullanıcılarından gelen iletiler de uçtan uca şifrelemeyi kaybeder."
+      ],
+      "When sign-in is restricted, only ${ primaryEmailElement } and your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Oturum açma kısıtlandığında, oturum açmak için yalnızca ${ primaryEmailElement } ve ${ usernameElement } kullanıcı adınız kullanılabilir. Diğer adresleriniz, birileri onları bilse bile hesabınıza bağlanamaz."
+      ],
+      "When sign-in is restricted, only your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Oturum açma kısıtlandığında, oturum açmak için yalnızca ${ usernameElement } kullanıcı adınız kullanılabilir. Diğer adresleriniz, birileri onları bilse bile hesabınıza bağlanamaz."
+      ],
+      "You won't be able to send or receive as ${ email } in ${ BRAND_NAME } anymore.": [
+        "Artık ${ BRAND_NAME } içinden ${ email } olarak ileti gönderemeyecek veya alamayacaksınız."
       ]
     },
     "info": {
@@ -16916,6 +16940,18 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Connect ${ item.Email }": [
+        "${ item.Email } bağlantısı kur"
+      ],
+      "Restrict sign-in to primary email address": [
+        "Oturum açma birincil e-posta adresi ile kısıtlansın"
+      ],
+      "Restrict sign-in to username": [
+        "Oturum açma kullanıcı adıyla kısıtlansın"
+      ],
+      "Start with your most recent": [
+        "Son ögeleriniz ile başlayın"
       ]
     },
     "label": {
@@ -28062,6 +28098,18 @@
       ],
       "Wrong Gmail account": [
         "Gmail hesabı yanlış"
+      ],
+      "Addresses": [
+        "Adresler"
+      ],
+      "Connect your Gmail": [
+        "Gmail hesabınızı bağlayın"
+      ],
+      "Disconnect this address?": [
+        "Bu adresin bağlantısı kesilsin mi?"
+      ],
+      "Sign-in protection": [
+        "Oturum açma koruması"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

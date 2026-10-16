@@ -8230,6 +8230,12 @@
       ],
       "Zero keys reactivated": [
         "Cap clau s'ha reactivat"
+      ],
+      "We couldn't disconnect this address. Please try again.": [
+        "No s'ha pogut desconnectar aquesta adreça. Torneu-ho a provar."
+      ],
+      "We couldn't reconnect this address.": [
+        "No s'ha pogut tornar a connectar aquesta adreça."
       ]
     },
     "error": {
@@ -14555,6 +14561,24 @@
       ],
       "Zoom meeting": [
         "reunió de Zoom"
+      ],
+      "Connected": [
+        "Connectat"
+      ],
+      "Disconnected": [
+        "S'ha desconnectat"
+      ],
+      "Messages from other ${ BRAND_NAME } users also lose end-to-end encryption.": [
+        "Els missatges d'altres usuaris de ${ BRAND_NAME } també perden el xifratge d'extrem a extrem."
+      ],
+      "When sign-in is restricted, only ${ primaryEmailElement } and your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Quan l'inici de sessió està restringit, només ${ primaryEmailElement } i el vostre nom d'usuari ${ usernameElement } es poden utilitzar per iniciar sessió. Les vostres altres adreces no es poden tornar a enllaçar al vostre compte, fins i tot si algú les coneix."
+      ],
+      "When sign-in is restricted, only your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Quan l'inici de sessió està restringit, només el vostre nom d'usuari ${ usernameElement } es pot utilitzar per iniciar sessió. Les vostres altres adreces no es poden tornar a enllaçar al vostre compte, fins i tot si algú les coneix."
+      ],
+      "You won't be able to send or receive as ${ email } in ${ BRAND_NAME } anymore.": [
+        "No podreu enviar ni rebre missatges com a ${ email } a ${ BRAND_NAME } mai més."
       ]
     },
     "info": {
@@ -16916,6 +16940,18 @@
       ],
       "ZIP code": [
         "Codi postal"
+      ],
+      "Connect ${ item.Email }": [
+        "Connectar ${ item.Email }"
+      ],
+      "Restrict sign-in to primary email address": [
+        "Restringiu l'inici de sessió a l'adreça de correu electrònic primària"
+      ],
+      "Restrict sign-in to username": [
+        "Restringiu l'inici de sessió al nom d'usuari"
+      ],
+      "Start with your most recent": [
+        "Comenceu amb el més recent"
       ]
     },
     "label": {
@@ -28065,6 +28101,18 @@
       ],
       "Your subscriptions": [
         "Les vostres subscripcions"
+      ],
+      "Addresses": [
+        "Adreces"
+      ],
+      "Connect your Gmail": [
+        "Connecteu el vostre Gmail"
+      ],
+      "Disconnect this address?": [
+        "Voleu desconnectar aquesta adreça?"
+      ],
+      "Sign-in protection": [
+        "Protecció d'inici de sessió"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

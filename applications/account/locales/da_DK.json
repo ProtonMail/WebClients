@@ -8230,6 +8230,12 @@
       ],
       "Zero keys reactivated": [
         "Nul nøgler genaktiveret"
+      ],
+      "We couldn't disconnect this address. Please try again.": [
+        "Vi kunne ikke forbinde denne adresse. Prøv igen."
+      ],
+      "We couldn't reconnect this address.": [
+        "Vi kunne ikke genoprette forbindelsen til adressen."
       ]
     },
     "error": {
@@ -14558,6 +14564,18 @@
       ],
       "Zoom meeting": [
         "Zoom-møde"
+      ],
+      "Connected": [
+        "Forbundet"
+      ],
+      "Disconnected": [
+        "Frakoblet"
+      ],
+      "Messages from other ${ BRAND_NAME } users also lose end-to-end encryption.": [
+        "Beskeder fra andre ${ BRAND_NAME }-brugere mister også end-to-end-kryptering."
+      ],
+      "You won't be able to send or receive as ${ email } in ${ BRAND_NAME } anymore.": [
+        "Du vil ikke længere kunne sende eller modtage som ${ email } i ${ BRAND_NAME }."
       ]
     },
     "info": {
@@ -16919,6 +16937,18 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Connect ${ item.Email }": [
+        "Forbind ${ item.Email }"
+      ],
+      "Restrict sign-in to primary email address": [
+        "Begræns log-ind til primær e-mailadresse"
+      ],
+      "Restrict sign-in to username": [
+        "Begræns log-ind til brugernavn"
+      ],
+      "Start with your most recent": [
+        "Start med dine seneste"
       ]
     },
     "label": {
@@ -28065,6 +28095,18 @@
       ],
       "Your subscriptions": [
         "Dine abonnementer"
+      ],
+      "Addresses": [
+        "Adresser"
+      ],
+      "Connect your Gmail": [
+        "Forbind din Gmail"
+      ],
+      "Disconnect this address?": [
+        "Afbryd forbindelsen til denne adresse?"
+      ],
+      "Sign-in protection": [
+        "Beskyttelse ved log-ind"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
