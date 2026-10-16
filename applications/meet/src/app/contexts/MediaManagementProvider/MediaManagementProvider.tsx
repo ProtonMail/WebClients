@@ -56,6 +56,7 @@ import { requestPermissionWithTelemetry } from '../../telemetry/permissions';
 import type { InitializeDevices, SwitchActiveDevice } from '../../types';
 import { supportsSetSinkId } from '../../utils/browser';
 import { createDummyVideoTrack } from '../../utils/dummyVideoTrack';
+import { isMicrophoneOnDevice } from '../../utils/isMicrophoneOnDevice';
 import type { MeetAudioContext } from '../../utils/meet-audio-context';
 import { BackgroundEffectsContext } from '../BackgroundEffects/BackgroundEffectsContext';
 import { useAppliedBackgroundEffect } from '../BackgroundEffects/useAppliedBackgroundEffect';
@@ -127,23 +128,27 @@ export const MediaManagementProvider = ({
                 deviceType === 'audiooutput' && (isSystemDefaultDevice || isDefaultDevice(deviceId));
             const targetDeviceId = isOutputSystemDefault ? '' : deviceId;
 
-            const activeDeviceIdByType: Record<'audioinput' | 'videoinput', string | null> = {
-                audioinput: activeMicrophoneDeviceId,
-                videoinput: activeCameraDeviceId,
-            };
-
             // getActiveDevice is set after LiveKit's switch resolves, so a timed out or failed one
             // leaves the old value and the next attempt still runs. options.audioOutput is written
             // before the await and only reverted on rejection, so a hang leaves it claiming a device
             // that was never applied. Its map is seeded with 'default', which the collapse above
             // keeps a target from ever matching.
-            // Inputs stay on the store: re-applying them restarts the capture.
-            const appliedDeviceId =
-                deviceType === 'audiooutput' ? room.getActiveDevice('audiooutput') : activeDeviceIdByType[deviceType];
+            // Inputs are never re-applied: that restarts the capture.
+            let isApplied: boolean;
+            if (deviceType === 'audiooutput') {
+                isApplied = room.getActiveDevice('audiooutput') === targetDeviceId;
+            } else if (deviceType === 'audioinput') {
+                const microphoneTrack = room.localParticipant.getTrackPublication(Track.Source.Microphone)?.audioTrack;
+                isApplied = microphoneTrack
+                    ? await isMicrophoneOnDevice(microphoneTrack, targetDeviceId)
+                    : activeMicrophoneDeviceId === targetDeviceId;
+            } else {
+                isApplied = activeCameraDeviceId === targetDeviceId;
+            }
 
             try {
                 try {
-                    if (appliedDeviceId !== targetDeviceId) {
+                    if (!isApplied) {
                         await withTimeout(
                             room.switchActiveDevice(deviceType, targetDeviceId),
                             'Switch active device',
