@@ -211,6 +211,21 @@ export const createClientToolExecutor = (config: ClientToolExecutorConfig): Lumo
         }
     };
 
+    /**
+     * Run the tool's own {@link ToolDefinition.checkParams}, converting a {@link ToolInputError} into a tool
+     * error result the model can act on. Returns `undefined` when the params pass; any other error propagates.
+     */
+    const guardParams = (definition: ToolDefinition, params: Record<string, any>): ClientToolResult | undefined => {
+        try {
+            definition.checkParams?.(params);
+        } catch (error) {
+            if (error instanceof ToolInputError) {
+                return errorResult(error.message);
+            }
+            throw error;
+        }
+    };
+
     const runHandler = async (
         definition: ToolDefinition,
         params: Record<string, any>,
@@ -290,7 +305,7 @@ export const createClientToolExecutor = (config: ClientToolExecutorConfig): Lumo
         approvedParams: Record<string, any>,
         options?: ExecuteOptions
     ): Promise<ClientToolResult> => {
-        const approvedError = guardReferences(definition, approvedParams);
+        const approvedError = guardReferences(definition, approvedParams) ?? guardParams(definition, approvedParams);
         if (approvedError) {
             return approvedError;
         }
@@ -323,7 +338,7 @@ export const createClientToolExecutor = (config: ClientToolExecutorConfig): Lumo
         }
         const args = validation.value;
 
-        const argsError = guardReferences(definition, args);
+        const argsError = guardReferences(definition, args) ?? guardParams(definition, args);
         if (argsError) {
             return argsError;
         }
@@ -342,7 +357,7 @@ export const createClientToolExecutor = (config: ClientToolExecutorConfig): Lumo
             if (decision.action === 'cancel') {
                 return okResult('The user declined that change. Suggest an alternative or ask what they want instead.');
             }
-            // Unconditional: `guardReferences` re-throws anything that is not an `UnknownReferenceError`,
+            // Unconditional: `guardReferences` and `guardParams` re-throw any error they do not convert,
             // and a tile left in `APPLYING` has no other way out.
             try {
                 const result = await applyConfirmed(definition, args, decision.params, options);

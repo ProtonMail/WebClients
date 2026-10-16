@@ -7,7 +7,7 @@ import type { Recipient } from '@proton/shared/lib/interfaces';
 import type { RecipientType } from '../../../models/address';
 import { resolveTypedId } from '../../helpers/references';
 import type { DraftChangeability, MailToolDeps, MailToolModule } from '../../toolModule';
-import { toRecipients } from './recipients';
+import { assertRecipientShape, toRecipients } from './recipients';
 import { reviseDraftCardRenderer } from './reviseDraftCard';
 
 /** Named once, so the schema and the free-text list cannot drift apart on a rename. */
@@ -78,6 +78,16 @@ export const reviseDraftDefinition: ToolDefinition<ReviseDraftParams, ReviseDraf
             call: { draft: 'composer-x7b2q1', to: ['contact-9jyvpd'] },
         },
     ],
+    checkParams: ({ body, to, cc }) => {
+        if (!body?.trim() && !to?.length && !cc?.length) {
+            throw new ToolInputError(
+                'Nothing to change on that draft: pass `body` to replace its text, ' +
+                    '`to` or `cc` to readdress it, or both.'
+            );
+        }
+
+        [...(to ?? []), ...(cc ?? [])].forEach(assertRecipientShape);
+    },
     serializeForLumo: (result) =>
         `${OUTCOME_RESULT[result.outcome]} It is in the composer the user is looking at, unsent.`,
     // Translated copy, so the labels stay inside the call rather than in a table frozen at import.
@@ -147,13 +157,6 @@ export const createReviseDraftHandler =
             recipients.CCList = toRecipients(mail, cc, references);
         }
         const retargeted = Object.keys(recipients).length > 0;
-
-        if (!body && !retargeted) {
-            throw new ToolInputError(
-                'Nothing to change on that draft: pass `body` to replace its text, ' +
-                    '`to` or `cc` to readdress it, or both.'
-            );
-        }
 
         assertChangeable(mail.getDraftChangeability(composerID), { retargeted, rewrote: !!body });
 
