@@ -1,6 +1,4 @@
-import { act, fireEvent, screen } from '@testing-library/react';
-
-import { wait } from '@proton/shared/lib/helpers/promise';
+import { fireEvent, screen, waitFor } from '@testing-library/react';
 
 import { addApiMock } from '../../../helpers/tests/api';
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/tests/crypto';
@@ -104,12 +102,9 @@ describe('Encrypted Outside Unlock', () => {
         fireEvent.change(unlockInput, { target: { value: EOPassword } });
         fireEvent.keyDown(unlockInput, { key: 'Enter' });
 
-        // Wait for redirection
-        await act(async () => {
-            await wait(2000);
+        // Redirects to /eo/message/validID once the token is decrypted
+        await waitFor(() => {
+            expect(history.location.pathname).toBe(`/eo/message/${validID}`);
         });
-
-        // Redirects to /eo/message/validID
-        expect(history.location.pathname).toBe(`/eo/message/${validID}`);
     });
 });
