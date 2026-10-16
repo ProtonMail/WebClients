@@ -16,7 +16,6 @@ import type { CancellationStepConfig } from './types';
 
 interface ShowProps {
     app: ProductParam;
-    cancellationFlow: boolean;
 }
 
 export const useHighlightPlanDowngradeStep = ({ canShow }: CancellationStepConfig) => {
@@ -33,7 +32,7 @@ export const useHighlightPlanDowngradeStep = ({ canShow }: CancellationStepConfi
         return <HighlightPlanDowngradeModal {...props} onConfirm={onResolve} onClose={onReject} />;
     });
 
-    const show = async ({ app, cancellationFlow }: ShowProps) => {
+    const show = async ({ app }: ShowProps) => {
         if (!(await canShow())) {
             return;
         }
@@ -53,7 +52,7 @@ export const useHighlightPlanDowngradeStep = ({ canShow }: CancellationStepConfi
             return;
         }
 
-        if (cancellationFlow && !planSupportsCancellationDowngradeModal(shortPlan.plan)) {
+        if (!planSupportsCancellationDowngradeModal(shortPlan.plan)) {
             return;
         }
 
@@ -64,7 +63,6 @@ export const useHighlightPlanDowngradeStep = ({ canShow }: CancellationStepConfi
             shortPlan,
             periodEnd: getRenewalTime(subscription),
             freePlan,
-            cancellationFlow,
             subscription,
         });
     };

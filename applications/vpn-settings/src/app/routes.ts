@@ -170,21 +170,6 @@ export const getRoutes = ({
                     variant: SettingsLayoutVariant.Card,
                 },
                 {
-                    text: c('Title').t`Downgrade account`,
-                    id: 'downgrade-account',
-                    // The !!subscritpion check is essential here to make sure that all the boolean variables
-                    // that depend on subscription are correctly computed before the first rendering.
-                    // Otherwise the component will be mounted and immediately unmounted which can cause memory leaks due
-                    // to async calls that started in a rendering cycle.
-                    available:
-                        !!subscription &&
-                        user.isPaid &&
-                        !cancellablePlan &&
-                        !hasVpnB2BPlan &&
-                        !cancellableOnlyViaSupport,
-                    variant: SettingsLayoutVariant.Card,
-                },
-                {
                     text: c('Title').t`Cancel subscription`,
                     id: 'cancel-via-support',
                     // B2B cancellation has a different flow, so we don't consider it a classic cancellable plan
@@ -242,20 +227,6 @@ export const getRoutes = ({
                         user.isPaid &&
                         cancellablePlan &&
                         isSubscriptionRenewEnabled(subscription) &&
-                        !cancellableOnlyViaSupport,
-                },
-                {
-                    text: c('Title').t`Downgrade account`,
-                    id: 'downgrade-account',
-                    // The !!subscritpion check is essential here to make sure that all the boolean variables
-                    // that depend on subscription are correctly computed before the first rendering.
-                    // Otherwise the component will be mounted and immediately unmounted which can cause memory leaks due
-                    // to async calls that started in a rendering cycle.
-                    available:
-                        !!subscription &&
-                        user.isPaid &&
-                        !cancellablePlan &&
-                        !hasVpnB2BPlan &&
                         !cancellableOnlyViaSupport,
                 },
                 {
