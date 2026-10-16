@@ -188,7 +188,14 @@ export const CategoriesOnboardingProvider = ({ children }: PropsWithChildren) =>
             handleSkip,
             completeCurrentStep,
         }),
-        [activeStep, tabSpotlightStep, listSpotlightStep, userIsInB2COnboardingFlow, handleSkip, completeCurrentStep]
+        [
+            activeStep,
+            tabSpotlightStep,
+            listSpotlightStep,
+            userIsInB2COnboardingFlow,
+            handleSkip,
+            completeCurrentStep,
+        ]
     );
 
     return <CategoriesOnboardingContext.Provider value={value}>{children}</CategoriesOnboardingContext.Provider>;

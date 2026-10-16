@@ -70,7 +70,7 @@ const TopNavbarB2BOnboardingButton = () => {
         show: showSpotlight,
         onDisplayed,
         onClose,
-    } = useSpotlightOnFeature(FeatureCode.B2BOnboardingSpotlight, true);
+    } = useSpotlightOnFeature(FeatureCode.B2BOnboardingSpotlight, canShowB2BButton);
     const shouldShowSpotlight = useSpotlightShow(showSpotlight, 3 * SECOND);
 
     const [contextMenuOpened, setContextMenuOpened] = useState(false);
