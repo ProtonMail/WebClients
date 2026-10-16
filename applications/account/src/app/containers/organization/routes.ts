@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { getIsSystemGroup } from '@proton/account/groups/groupFlags';
 import type { SectionConfig, SidebarConfig } from '@proton/components/containers/layout/interface';
 import { isScribeSupported } from '@proton/components/helpers/assistant';
 import { IcArchiveBox } from '@proton/icons/icons/IcArchiveBox';
@@ -17,20 +18,8 @@ import { IcSliders } from '@proton/icons/icons/IcSliders';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { IcVault } from '@proton/icons/icons/IcVault';
 import { PLANS } from '@proton/payments/core/constants';
-import {
-    getIsB2BAudienceFromPlan,
-    organizationOrSubscriptionSupportsSSO,
-    upsellPlanSSO,
-} from '@proton/payments/core/plan/helpers';
-import {
-    getHasExternalMemberCapableB2BPlan,
-    getHasMemberCapablePlan,
-    getHasVpnB2BPlan,
-    getHasVpnGatewaysUpsellPlan,
-    hasAnyB2bBundle,
-    hasMeet,
-    hasMeetBusiness,
-} from '@proton/payments/core/subscription/helpers';
+import { organizationOrSubscriptionSupportsSSO, upsellPlanSSO } from '@proton/payments/core/plan/helpers';
+import { getHasVpnGatewaysUpsellPlan, hasMeet, hasMeetBusiness } from '@proton/payments/core/subscription/helpers';
 import { appSupportsSSO } from '@proton/shared/lib/apps/apps';
 import {
     APPS,
@@ -78,23 +67,19 @@ export const getOrganizationAppRoutes = ({
     const isOrgConfigured = hasOrganizationKey || hasOrganization;
     const hasActiveOrganizationKey = isOrgActive && hasOrganizationKey;
     const hasActiveOrganization = isOrgActive && hasOrganization;
-    const hasMemberCapablePlan = getHasMemberCapablePlan(organization, subscription);
+    const hasMemberCapablePlan = entitlements.isMultiUser;
     const hasSubUsers = (organization?.UsedMembers || 0) > 1;
 
     const canManageOrganization = !!organization && permissions['account.organization_identity.read'];
     const canSchedulePhoneCalls = canScheduleOrganizationPhoneCalls({ organization, user });
 
-    const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
-
     // MSP subsidiary orgs don't own their subscription (it belongs to the MSP manager), so `subscription`
     // resolves to the free/dummy value for them. Workaround: MSP currently only runs on Pass Pro, which is
     // already an external-member-capable plan, so treat subsidiaries as such directly.
-    const hasExternalMemberCapableB2BPlan =
-        getHasExternalMemberCapableB2BPlan(subscription) || !!organization?.IsSubsidiary;
+    const hasExternalMemberCapableB2BPlan = entitlements.hasExternalManagedMembers || !!organization?.IsSubsidiary;
 
     const canShowB2BActivityMonitorEvents =
-        (isOrgConfigured || getIsB2BAudienceFromPlan(organization?.PlanName)) &&
-        !!permissions['account.activity_log.read'];
+        (isOrgConfigured || entitlements.isB2B) && !!permissions['account.activity_log.read'];
 
     const canShowB2BConnectionEvents =
         entitlements.hasVpnActivityMonitor &&
@@ -106,13 +91,13 @@ export const getOrganizationAppRoutes = ({
     const isPartOfFamily = getOrganizationDenomination(organization) === 'familyGroup';
     const isPassFamilyPlan = isOrganizationPassFamily(organization);
 
-    const isPassEssentials = organization?.PlanName === PLANS.PASS_PRO;
-
-    const hasGroups = (groups?.length ?? 0) > 0;
+    const alreadyHasGroups = !!groups?.some((group) => !getIsSystemGroup(group));
+    const canUseGroups = hasActiveOrganizationKey && entitlements.hasGroups;
+    const canUpgradeToGroups = entitlements.isPassB2BWithoutGroups;
     const canShowGroupsSection =
         (permissions['account.group.read'] || !!isGroupOwner) &&
         !!organization &&
-        (hasGroups || isPassEssentials || (hasActiveOrganizationKey && entitlements.hasGroups));
+        (alreadyHasGroups || canUpgradeToGroups || canUseGroups);
 
     const hasUsedMembers = (organization?.UsedMembers ?? 0) > 1;
     const canShowUsersAndAddressesSection =
@@ -234,7 +219,7 @@ export const getOrganizationAppRoutes = ({
             icon: IcPassGroup,
             noTitle: true,
             available: canShowGroupsSection,
-            upgradeRequired: isPassEssentials,
+            upgradeRequired: !entitlements.hasGroups && !alreadyHasGroups,
             subsections: [
                 {
                     id: 'groups-management',
@@ -354,10 +339,7 @@ export const getOrganizationAppRoutes = ({
                 .t`Enforce VPN usage across your organization by blocking internet access unless a VPN connection is active.`,
             to: '/always-on-vpn',
             icon: IcVault,
-            available:
-                isAlwaysOnVpnEnabled &&
-                permissions['account.always_on.read'] &&
-                (hasVpnB2BPlan || hasAnyB2bBundle(subscription)),
+            available: isAlwaysOnVpnEnabled && permissions['account.always_on.read'] && entitlements.isVpnB2B,
         },
         connectionEvents: {
             id: 'connectionEvents',
@@ -383,7 +365,7 @@ export const getOrganizationAppRoutes = ({
             to: '/activity-monitor',
             icon: IcCardIdentity,
             available: canShowB2BActivityMonitorEvents,
-            upgradeRequired: isPassEssentials,
+            upgradeRequired: entitlements.isPassB2BWithoutActivityMonitor,
             subsections: [
                 {
                     id: 'activity-monitor-dashboard',

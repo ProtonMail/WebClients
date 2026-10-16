@@ -84,6 +84,18 @@ export const entitlementChecksForSelection = {
         }),
 
     hasScribe: (r) => r.hasEntitlement(EntitlementName.MaxScribe),
+
+    hasExternalManagedMembers: (r) => r.hasEntitlement(EntitlementName.ExternalManagedMembers),
+
+    isPassB2BWithoutActivityMonitor: (r) =>
+        r.hasMatchingSubscription({ includes: [EntitlementName.Business, EntitlementName.FlagsPass] }) &&
+        !r.hasEntitlement(EntitlementName.ActivityMonitorPass),
+
+    hasOrganizationPolicy: (r) => r.hasEntitlement(EntitlementName.OrganizationPolicy),
+
+    isPassB2BWithoutGroups: (r) =>
+        r.hasMatchingSubscription({ includes: [EntitlementName.Business, EntitlementName.FlagsPass] }) &&
+        !r.hasEntitlement(EntitlementName.Groups),
 } satisfies Record<string, EntitlementCheckForSelection>;
 
 /**
