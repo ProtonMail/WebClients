@@ -40,6 +40,7 @@ export type Props = {
     showVisionaryWarning: boolean;
     onSubmit: () => void;
     app: ProductParam;
+    showIdealAuthorizationNote?: boolean;
 };
 
 export const SubscriptionSubmitButton = ({
@@ -57,6 +58,7 @@ export const SubscriptionSubmitButton = ({
     couponConfig,
     showVisionaryWarning,
     app,
+    showIdealAuthorizationNote,
 }: Props) => {
     if (paymentForbiddenReason.forbidden) {
         const info = (() => {
@@ -171,6 +173,7 @@ export const SubscriptionSubmitButton = ({
                 data-testid="confirm"
                 product={app}
                 telemetryContext="subscription-modification"
+                showIdealAuthorizationNote={showIdealAuthorizationNote}
                 {...payButtonProps}
             />
             {paymentWarnings}
