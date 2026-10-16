@@ -16,15 +16,10 @@ import {
     selectReconnectionFailed,
     setReconnectionFailed,
 } from '@proton/meet/store/slices/connectionSlice';
+import { selectMeetingLinkName, selectMeetingPassword } from '@proton/meet/store/slices/currentMeeting';
 import {
-    selectMeetingLinkName,
-    selectMeetingName,
-    selectMeetingPassword,
-} from '@proton/meet/store/slices/currentMeeting';
-import {
+    savePreviousMeeting,
     setMeetingEndedReason,
-    setPreviousMeetingLink,
-    setPreviousMeetingName,
     setUpsellModalType,
 } from '@proton/meet/store/slices/meetAppStateSlice';
 import {
@@ -328,8 +323,7 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
             return;
         }
 
-        dispatch(setPreviousMeetingLink(meetingLinkRef.current));
-        dispatch(setPreviousMeetingName(selectMeetingName(store.getState())));
+        dispatch(savePreviousMeeting(meetingLinkRef.current));
 
         if (isGuest) {
             dispatch(setUpsellModalType(UpsellModalTypes.GuestAccount));
@@ -376,7 +370,7 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
     };
 
     const handleMeetingExpired = async () => {
-        dispatch(setPreviousMeetingLink(meetingLinkRef.current));
+        dispatch(savePreviousMeeting(meetingLinkRef.current));
         if (isLocalParticipantAdminOrHost || isGuestAdmin) {
             isExpiringRef.current = true;
             dispatch(

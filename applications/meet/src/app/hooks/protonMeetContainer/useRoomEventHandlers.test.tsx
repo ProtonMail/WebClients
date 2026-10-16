@@ -8,7 +8,11 @@ import type { Mock } from 'vitest';
 
 import { useMeetDispatch, useMeetStore } from '@proton/meet/store/hooks';
 import { setIsReconnecting, setJoinedRoom } from '@proton/meet/store/slices/connectionSlice';
-import { setMeetingEndedReason, setUpsellModalType } from '@proton/meet/store/slices/meetAppStateSlice';
+import {
+    setMeetingEndedReason,
+    setPreviousMeeting,
+    setUpsellModalType,
+} from '@proton/meet/store/slices/meetAppStateSlice';
 import { UpsellModalTypes } from '@proton/meet/types/types';
 import { SECOND } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -31,12 +35,14 @@ const useFlagMock = useFlag as unknown as Mock;
 
 const mockRoom = { on: vi.fn(), off: vi.fn() };
 const mockHistory = { push: vi.fn() };
-const mockDispatch = vi.fn();
-const mockStore = {
-    getState: () => ({
-        participants: { localParticipantIdentity: 'host', participantsMap: { host: { IsHost: true } } },
-    }),
-};
+const getMockState = () => ({
+    participants: { localParticipantIdentity: 'host', participantsMap: { host: { IsHost: true } } },
+    meetingInfoModel: { value: { meetingName: 'Design Weekly' } },
+});
+const mockDispatch: Mock = vi.fn((action) =>
+    typeof action === 'function' ? action(mockDispatch, getMockState, undefined) : action
+);
+const mockStore = { getState: getMockState };
 const mockMeetCoreClient = { leaveMeeting: vi.fn().mockResolvedValue(undefined) };
 
 const createParams = (overrides: Record<string, any> = {}) => ({
@@ -107,7 +113,7 @@ describe('useRoomEventHandlers', () => {
             expect(mockMeetCoreClient.leaveMeeting).not.toHaveBeenCalled();
         });
 
-        it('on ROOM_DELETED cleans up, sets the meeting-ended upsell and navigates to the dashboard', () => {
+        it('on ROOM_DELETED cleans up, saves the meeting, sets the meeting-ended upsell and navigates to the dashboard', () => {
             const params = createParams();
             renderHook(() => useRoomEventHandlers(params));
 
@@ -115,17 +121,23 @@ describe('useRoomEventHandlers', () => {
 
             expect(mockMeetCoreClient.leaveMeeting).toHaveBeenCalledTimes(1);
             expect(params.cleanupMlsState).toHaveBeenCalledTimes(1);
+            expect(mockDispatch).toHaveBeenCalledWith(
+                setPreviousMeeting({ link: 'https://meet/link', name: 'Design Weekly' })
+            );
             expect(mockDispatch).toHaveBeenCalledWith(setUpsellModalType(UpsellModalTypes.MeetingEnded));
             expect(mockHistory.push).toHaveBeenCalledWith('/dashboard');
             expect(params.meetingLinkNameRef.current).toBe('');
         });
 
-        it('on PARTICIPANT_REMOVED sets the removed upsell and navigates', () => {
+        it('on PARTICIPANT_REMOVED saves the meeting, sets the removed upsell and navigates', () => {
             const params = createParams();
             renderHook(() => useRoomEventHandlers(params));
 
             act(() => getHandler(RoomEvent.Disconnected)(DisconnectReason.PARTICIPANT_REMOVED));
 
+            expect(mockDispatch).toHaveBeenCalledWith(
+                setPreviousMeeting({ link: 'https://meet/link', name: 'Design Weekly' })
+            );
             expect(mockDispatch).toHaveBeenCalledWith(setUpsellModalType(UpsellModalTypes.RemovedFromMeeting));
             expect(mockHistory.push).toHaveBeenCalledWith('/dashboard');
         });
@@ -149,12 +161,13 @@ describe('useRoomEventHandlers', () => {
             expect(mockMeetCoreClient.leaveMeeting).not.toHaveBeenCalled();
         });
 
-        it('does not set the meeting-ended upsell when the meeting is expiring', () => {
+        it('does not save the meeting or set the meeting-ended upsell when the meeting is expiring', () => {
             const params = createParams({ isExpiringRef: { current: true } });
             renderHook(() => useRoomEventHandlers(params));
 
             act(() => getHandler(RoomEvent.Disconnected)(DisconnectReason.ROOM_DELETED));
 
+            expect(mockDispatch).not.toHaveBeenCalledWith(expect.objectContaining({ type: setPreviousMeeting.type }));
             expect(mockDispatch).not.toHaveBeenCalledWith(setUpsellModalType(UpsellModalTypes.MeetingEnded));
             expect(params.isExpiringRef.current).toBe(false);
             expect(mockHistory.push).toHaveBeenCalledWith('/dashboard');
