@@ -36,6 +36,7 @@ import { CHAT_MESSAGE_MAX_LENGTH } from '../../constants';
 import { useParticipantDisplayColors } from '../../hooks/useParticipantDisplayColors';
 import { useStableCallback } from '../../hooks/useStableCallback';
 import { getParticipantInitials } from '../../utils/getParticipantInitials';
+import { getLumoEmojiPickerOptions } from '../../utils/lumoEmojis/lumoEmojiPicker';
 import { trimMessage } from '../../utils/trim-message';
 import type { MentionInputHandle } from '../MentionInput/MentionInput';
 import { MentionInput } from '../MentionInput/MentionInput';
@@ -53,7 +54,7 @@ const EmojiPicker = ({
     perLine,
 }: {
     autoFocus: boolean;
-    onEmojiSelect: (emoji: { native: string }) => void;
+    onEmojiSelect: (text: string) => void;
     set: string;
     skinTonePosition: string;
     previewPosition: string;
@@ -63,8 +64,8 @@ const EmojiPicker = ({
 
     useEffect(() => {
         const picker = new Picker({
+            ...getLumoEmojiPickerOptions(onEmojiSelect),
             autoFocus,
-            onEmojiSelect,
             set,
             skinTonePosition,
             previewPosition,
@@ -278,8 +279,18 @@ export const ChatMessage = ({
         });
     });
 
-    const handleEmojiSelect = useStableCallback((emoji: { native: string }) => {
-        composerRef.current?.insertText(emoji.native);
+    const handleEmojiSelect = useStableCallback((text: string) => {
+        if (trimmedMessageLength + text.length > CHAT_MESSAGE_MAX_LENGTH) {
+            createNotification({
+                key: 'chat-emoji-too-long',
+                type: 'error',
+                text: c('Error').t`The emoji could not be added because the message is at its character limit`,
+            });
+            setEmojiPickerOpen(false);
+            return;
+        }
+
+        composerRef.current?.insertText(text);
         setEmojiPickerOpen(false);
         composerRef.current?.focus();
     });
