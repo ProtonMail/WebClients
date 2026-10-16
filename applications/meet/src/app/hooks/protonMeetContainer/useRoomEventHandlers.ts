@@ -11,8 +11,8 @@ import { useMeetDispatch, useMeetStore } from '@proton/meet/store/hooks';
 import { resetChatAndReactions } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { setIsReconnecting, setJoinedRoom } from '@proton/meet/store/slices/connectionSlice';
 import {
+    savePreviousMeeting,
     setMeetingEndedReason,
-    setPreviousMeetingLink,
     setUpsellModalType,
 } from '@proton/meet/store/slices/meetAppStateSlice';
 import { selectIsLocalParticipantHost } from '@proton/meet/store/slices/participants/participantsSlice';
@@ -217,12 +217,12 @@ export const useRoomEventHandlers = ({
 
         if (reason === DisconnectReason.ROOM_DELETED) {
             if (!isExpiringRef.current) {
-                dispatch(setPreviousMeetingLink(meetingLinkRef.current));
+                dispatch(savePreviousMeeting(meetingLinkRef.current));
                 dispatch(setUpsellModalType(UpsellModalTypes.MeetingEnded));
             }
             isExpiringRef.current = false;
         } else if (reason === DisconnectReason.PARTICIPANT_REMOVED) {
-            dispatch(setPreviousMeetingLink(meetingLinkRef.current));
+            dispatch(savePreviousMeeting(meetingLinkRef.current));
             dispatch(setUpsellModalType(UpsellModalTypes.RemovedFromMeeting));
         } else if (reason !== undefined && reason !== DisconnectReason.CLIENT_INITIATED) {
             reportMeetError('Room disconnected unexpectedly', { context: { error: DisconnectReason[reason] } });

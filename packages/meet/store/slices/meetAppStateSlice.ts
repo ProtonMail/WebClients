@@ -1,8 +1,11 @@
-import type { PayloadAction } from '@reduxjs/toolkit';
+import type { PayloadAction, ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
+
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 
 import type { UpsellModalTypes } from '../../types/types';
 import type { MeetState } from '../store';
+import { selectMeetingName } from './currentMeeting';
 
 export interface MeetingEndedReason {
     // Not narrowed to `MeetingEndedReasons`: the server may send values this client does not know yet
@@ -32,11 +35,9 @@ const slice = createSlice({
     name: 'meetAppState',
     initialState,
     reducers: {
-        setPreviousMeetingLink: (state, action: PayloadAction<string | null>) => {
-            state.previousMeetingLink = action.payload;
-        },
-        setPreviousMeetingName: (state, action: PayloadAction<string>) => {
-            state.previousMeetingName = action.payload;
+        setPreviousMeeting: (state, action: PayloadAction<{ link: string | null; name: string }>) => {
+            state.previousMeetingLink = action.payload.link;
+            state.previousMeetingName = action.payload.name;
         },
         setUpsellModalType: (state, action: PayloadAction<UpsellModalTypes | null>) => {
             state.upsellModalType = action.payload;
@@ -50,13 +51,14 @@ const slice = createSlice({
     },
 });
 
-export const {
-    setPreviousMeetingLink,
-    setPreviousMeetingName,
-    setUpsellModalType,
-    setInvalidMeetingLinkModalOpen,
-    setMeetingEndedReason,
-} = slice.actions;
+export const { setPreviousMeeting, setUpsellModalType, setInvalidMeetingLinkModalOpen, setMeetingEndedReason } =
+    slice.actions;
+
+export const savePreviousMeeting =
+    (link: string | null): ThunkAction<void, MeetState, ProtonThunkArguments, UnknownAction> =>
+    (dispatch, getState) => {
+        dispatch(setPreviousMeeting({ link, name: selectMeetingName(getState()) }));
+    };
 
 export const selectPreviousMeetingLink = (state: MeetState) => {
     return state.meetAppState.previousMeetingLink;

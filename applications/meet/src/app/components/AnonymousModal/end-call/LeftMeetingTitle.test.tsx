@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import { render, screen } from '@testing-library/react';
 
-import { meetAppStateReducer, setPreviousMeetingName } from '@proton/meet/store/slices/meetAppStateSlice';
+import { meetAppStateReducer, setPreviousMeeting } from '@proton/meet/store/slices/meetAppStateSlice';
 import { ProtonStoreContext } from '@proton/react-redux-store';
 
 import { LeftMeetingTitle } from './LeftMeetingTitle';
@@ -20,7 +20,7 @@ const renderLeftMeetingTitle = (store: ReturnType<typeof createStore>) =>
 describe('LeftMeetingTitle', () => {
     it('names the meeting the user left', () => {
         const store = createStore();
-        store.dispatch(setPreviousMeetingName('Design Weekly'));
+        store.dispatch(setPreviousMeeting({ link: null, name: 'Design Weekly' }));
 
         renderLeftMeetingTitle(store);
 
