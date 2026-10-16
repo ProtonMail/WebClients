@@ -79,7 +79,7 @@ export const PassEvents = ({ upgradeRequired }: { upgradeRequired: boolean }) =>
     const fetchPassLogs = async (params: B2BLogsQuery) => {
         try {
             const { Items, Total } = await api(getPassLogs(params));
-            const passEvents = toCamelCase(Items);
+            const passEvents: PassEvent[] = toCamelCase(Items);
             setEvents(passEvents);
             setTotal(Total | 0);
         } catch (e) {
