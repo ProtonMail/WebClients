@@ -23,10 +23,10 @@ interface Params {
  * page is only reachable with the `account.user.read` permission, so everyone who sees it is already an admin.
  */
 export const getIsAdminConsoleSurveyEligible = ({ entitlements, usedMembers, localeCode }: Params) => {
-    // The spec targets the B2B Pass, VPN and Workspace plans. `isBusiness` alone would also match business plans
+    // The spec targets the B2B Pass, VPN and Workspace plans. `isB2B` alone would also match business plans
     // that are not in the study (Mail, Drive, Meet, Lumo), so the plan must also include VPN or Pass.
     return (
-        entitlements.isVpnOrPassBusiness &&
+        entitlements.isVpnOrPassB2B &&
         usedMembers > ADMIN_CONSOLE_SURVEY_MIN_USERS &&
         ADMIN_CONSOLE_SURVEY_LANGUAGES.includes(getLanguageCode(localeCode))
     );

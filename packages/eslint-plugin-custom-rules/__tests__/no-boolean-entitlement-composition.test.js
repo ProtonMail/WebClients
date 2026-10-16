@@ -14,17 +14,17 @@ const ruleTester = new RuleTester({
 const registryFilename = path.resolve(__dirname, '../../payments/core/entitlements/checks.ts');
 
 // A real path inside the monorepo, so the rule finds the check registry and knows the names of the
-// checks bound onto the resolver (`isBusiness`, `hasVpn`, ...). Not the registry itself, which the rule
+// checks bound onto the resolver (`isB2B`, `hasVpn`, ...). Not the registry itself, which the rule
 // skips entirely.
 const filename = path.resolve(__dirname, '../../payments/core/entitlements/resolver.ts');
 
 ruleTester.run('no-boolean-entitlement-composition', rule, {
     valid: [
-        { code: `const isBusiness = r.hasEntitlement(EntitlementName.Business);`, filename },
-        { code: `if (entitlements.isBusiness) { upsell(); }`, filename },
+        { code: `const isB2B = r.hasEntitlement(EntitlementName.Business);`, filename },
+        { code: `if (entitlements.isB2B) { upsell(); }`, filename },
         // The registry is where a combination gets its name, so it is not checked at all
         {
-            code: `const checks = { isBusiness: (r) => r.hasEntitlement(A) && !r.hasEntitlement(B) };`,
+            code: `const checks = { isB2B: (r) => r.hasEntitlement(A) && !r.hasEntitlement(B) };`,
             filename: registryFilename,
         },
         // A single check may be negated: it still asks about one entitlement
@@ -57,7 +57,7 @@ ruleTester.run('no-boolean-entitlement-composition', rule, {
     ],
     invalid: [
         {
-            code: `const showVpnPanel = entitlements.isBusiness && entitlements.hasVpn;`,
+            code: `const showVpnPanel = entitlements.isB2B && entitlements.hasVpn;`,
             filename,
             errors: [
                 { messageId: 'combinedEntitlementChecks', data: { count: 2 } },
@@ -87,7 +87,7 @@ ruleTester.run('no-boolean-entitlement-composition', rule, {
 ruleTester.run('no-boolean-entitlement-composition (outside the monorepo)', rule, {
     valid: [
         // Without the registry, named checks are indistinguishable from any other property
-        { code: `const show = entitlements.isBusiness || entitlements.hasVpn;`, filename: '/tmp/file.ts' },
+        { code: `const show = entitlements.isB2B || entitlements.hasVpn;`, filename: '/tmp/file.ts' },
     ],
     invalid: [
         {

@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { useOrganization } from '@proton/account/organization/hooks';
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import Info from '@proton/components/components/link/Info';
@@ -67,8 +66,6 @@ const MspMonthlyCostsSection = () => {
     const handleError = useErrorHandler();
     const [organization] = useOrganization();
     const mspId = organization?.ID;
-    const [subscription] = useSubscription();
-    const currency = subscription?.Currency;
 
     const [billingSummary, setBillingSummary] = useState<MspBillingSummary>();
     const [billingSummaryLoading, setBillingSummaryLoading] = useState(true);
@@ -109,7 +106,7 @@ const MspMonthlyCostsSection = () => {
             .finally(() => setBillingPeriodsLoading(false));
     }, [mspId, page]);
 
-    if (!currency || billingSummaryLoading || dailyUsageLoading || billingPeriodsLoading || !billingSummary) {
+    if (billingSummaryLoading || dailyUsageLoading || billingPeriodsLoading || !billingSummary) {
         return null;
     }
 

@@ -4,8 +4,8 @@ import { buildAddress } from '../testing/buildAddress';
 import { buildUser } from '../testing/buildUser';
 import { getCanShowSignInRestriction, getIsSignInRestricted, getSignInIdentifiers } from './helpers';
 
-const consumer = { isBusiness: false };
-const business = { isBusiness: true };
+const consumer = { isB2B: false };
+const business = { isB2B: true };
 
 describe('getSignInIdentifiers', () => {
     it('uses the primary address when there is one', () => {

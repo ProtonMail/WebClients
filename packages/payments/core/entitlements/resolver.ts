@@ -137,7 +137,7 @@ const normalizeSubscriptionsInput = (subscriptions: Subscription[] | MaybeFreeSu
  *
  * @example
  * const resolver = createEntitlementResolverForOrgAndUser(entitlementCatalog, entitlements, [subscription]);
- * const isBusiness = resolver.isBusiness;
+ * const isB2B = resolver.isB2B;
  * const memberSpace = resolver.quantityForMember(EntitlementName.MaxSpace);
  */
 export const createEntitlementResolverForOrgAndUser = (

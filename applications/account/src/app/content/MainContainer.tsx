@@ -63,7 +63,6 @@ import useShowThemeSelection from '@proton/components/hooks/useShowThemeSelectio
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
 import useToggle from '@proton/hooks/useToggle';
 import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
-import { getHasPassB2BPlan, hasAIAssistant, hasAllProductsB2CPlan } from '@proton/payments/core/subscription/helpers';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { getToApp } from '@proton/shared/lib/authentication/apps';
@@ -239,11 +238,11 @@ const MainContainer = () => {
     const appSlug = isGenericSettings ? '' : getSlugFromApp(app);
 
     // We hide the assistant upsell for users on Mail and Calendar app without the assistant when the kill switch is enabled
-    const hasAssistant = hasAIAssistant(subscription);
-    const hasAllProducts = hasAllProductsB2CPlan(subscription);
     const isInAllowedApps =
-        hasAllProducts || appFromPathname === APPS.PROTONMAIL || appFromPathname === APPS.PROTONCALENDAR;
-    const assistantKillSwitch = isInAllowedApps ? !hasAssistant : true;
+        entitlements.hasAllCoreProductsB2C ||
+        appFromPathname === APPS.PROTONMAIL ||
+        appFromPathname === APPS.PROTONCALENDAR;
+    const assistantKillSwitch = isInAllowedApps ? !entitlements.hasScribe : true;
 
     const organizationTheme = useOrganizationTheme();
     const [memberships, loadingGroupMembership] = useGroupMemberships();
@@ -343,8 +342,6 @@ const MainContainer = () => {
     const to = isLocal ? `/${getSlugFromApp(app)}` : '/';
     const pathPrefix = isGenericSettings ? '' : `/${appSlug}`;
 
-    const hasPassB2bPlan = getHasPassB2BPlan(subscription);
-
     // Zendesk Chat Integration
     const { handleOpenZendeskChat, showZendeskChat, zendeskRef } = useZendeskChat(user);
 
@@ -360,7 +357,7 @@ const MainContainer = () => {
             );
         }
 
-        if (app === APPS.PROTONPASS && hasPassB2bPlan) {
+        if (app === APPS.PROTONPASS && entitlements.isPassB2B) {
             return <PassForBusinessLogo />;
         }
 
