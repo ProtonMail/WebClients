@@ -26,6 +26,7 @@ import { ApplePayButton } from './ApplePayButton';
 import { ChargebeeIdealButton } from './ChargebeeIdealButton';
 import { ChargebeePaypalButton } from './ChargebeePaypalButton';
 import { GooglePayButton } from './GooglePayButton';
+import { IdealAuthorizationText, isIdealAuthorizationNoteShown } from './IdealAuthorizationText';
 
 export type PayButtonOnClickPayload = {
     type: 'paypal' | 'apple-pay' | 'google-pay' | 'card' | 'ideal';
@@ -45,6 +46,7 @@ type Props = {
     product: ProductParam;
     telemetryContext: PaymentTelemetryContext;
     isAuthenticated?: boolean;
+    showIdealAuthorizationNote?: boolean;
 } & ButtonProps;
 
 export const PayButton = ({
@@ -61,6 +63,7 @@ export const PayButton = ({
     product,
     telemetryContext,
     isAuthenticated: isAuthenticatedProp,
+    showIdealAuthorizationNote = true,
     ...rest
 }: Props) => {
     const { APP_NAME } = useConfig();
@@ -224,11 +227,18 @@ export const PayButton = ({
         (mustCheckVatNumberErrors && vatNumber?.vatFormErrorMessage) ||
         (idealAccountHolderNameMissing && c('Payments.Error').t`Please enter the account holder name`);
 
+    const idealAuthorizationNote = showIdealAuthorizationNote && isIdealAuthorizationNoteShown(paymentFacade) && (
+        <div className="mt-4 text-center">
+            <IdealAuthorizationText />
+        </div>
+    );
+
     if (!errorMessage) {
         return (
             <>
                 {submitButton}
                 {suffixElement}
+                {idealAuthorizationNote}
             </>
         );
     }
@@ -240,6 +250,7 @@ export const PayButton = ({
                 <div>{submitButton}</div>
             </Tooltip>
             {suffixElement}
+            {idealAuthorizationNote}
         </>
     );
 };

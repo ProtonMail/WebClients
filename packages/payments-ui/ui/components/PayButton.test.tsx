@@ -9,11 +9,12 @@ import type { PaymentsApi } from '@proton/payments/core/interface';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { APPS } from '@proton/shared/lib/constants';
-import { renderWithProviders } from '../../testing/renderWithProviders';
 
+import { renderWithProviders } from '../../testing/renderWithProviders';
 import { useEditBillingAddressModal } from '../billing-address/containers/useEditBillingAddressModal';
 import type { TaxCountryHook } from '../billing-address/hooks/useTaxCountry';
 import type { VatNumberHook } from '../billing-address/hooks/useVatNumber';
+import { getIdealAuthorizationText } from './IdealAuthorizationText';
 import { PayButton } from './PayButton';
 
 jest.mock('@proton/app-context/useConfig');
@@ -31,6 +32,9 @@ jest.mock('./ApplePayButton', () => ({
 }));
 jest.mock('./GooglePayButton', () => ({
     GooglePayButton: () => <div data-testid="google-pay-button" />,
+}));
+jest.mock('./ChargebeeIdealButton', () => ({
+    ChargebeeIdealButton: () => <div data-testid="chargebee-ideal-button" />,
 }));
 
 const mockUseConfig = jest.mocked(useConfig);
@@ -58,6 +62,7 @@ function createPaymentFacade(overrides: Record<string, unknown> = {}) {
     return {
         selectedMethodValue: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
         selectedMethodType: 'card',
+        amount: 1000,
         subscription: buildSubscription(),
         currency: 'USD',
         user: { Currency: 'USD' },
@@ -84,6 +89,7 @@ function renderPayButton(
         disabled?: boolean;
         onClick?: jest.Mock;
         isAuthenticated?: boolean;
+        showIdealAuthorizationNote?: boolean;
     } = {}
 ) {
     const taxCountry = options.taxCountry ?? createTaxCountry();
@@ -99,6 +105,7 @@ function renderPayButton(
             disabled={options.disabled}
             onClick={options.onClick}
             isAuthenticated={options.isAuthenticated ?? false}
+            showIdealAuthorizationNote={options.showIdealAuthorizationNote}
             data-testid="pay-cta"
         >
             {options.children ?? 'Pay now'}
@@ -257,6 +264,47 @@ describe('PayButton', () => {
             renderPayButton({ paymentFacade });
 
             expect(screen.getByTestId('google-pay-button')).toBeInTheDocument();
+        });
+
+        it('renders the iDEAL authorization note under the button when iDEAL is selected', () => {
+            const paymentFacade = createPaymentFacade({
+                selectedMethodValue: PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL,
+                chargebeeIdeal: { accountHolderNameMissing: false },
+            });
+
+            renderPayButton({ paymentFacade });
+
+            expect(screen.getByTestId('chargebee-ideal-button')).toBeInTheDocument();
+            expect(screen.getByText(getIdealAuthorizationText())).toBeInTheDocument();
+        });
+
+        it('does not render the iDEAL authorization note when showIdealAuthorizationNote is false', () => {
+            const paymentFacade = createPaymentFacade({
+                selectedMethodValue: PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL,
+                chargebeeIdeal: { accountHolderNameMissing: false },
+            });
+
+            renderPayButton({ paymentFacade, showIdealAuthorizationNote: false });
+
+            expect(screen.queryByText(getIdealAuthorizationText())).not.toBeInTheDocument();
+        });
+
+        it('does not render the iDEAL authorization note when nothing is charged', () => {
+            const paymentFacade = createPaymentFacade({
+                selectedMethodValue: PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL,
+                chargebeeIdeal: { accountHolderNameMissing: false },
+                amount: 0,
+            });
+
+            renderPayButton({ paymentFacade });
+
+            expect(screen.queryByText(getIdealAuthorizationText())).not.toBeInTheDocument();
+        });
+
+        it('does not render the iDEAL authorization note when card is selected', () => {
+            renderPayButton();
+
+            expect(screen.queryByText(getIdealAuthorizationText())).not.toBeInTheDocument();
         });
     });
 });
