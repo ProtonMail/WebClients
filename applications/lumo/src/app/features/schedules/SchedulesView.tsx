@@ -1,4 +1,5 @@
 import { useNativeComposerVisibilityApi } from '../../components/Composer/hooks/useNativeComposerVisibilityApi';
+import { RecurrenceRuleFieldset } from '../../components/RecurrenceRuleFieldset/RecurrenceRuleFieldset';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
 import { ScheduleTemplateGrid } from './components/ScheduleTemplateGrid';
 import { SchedulesEmptyState } from './components/SchedulesEmptyState';
@@ -16,6 +17,21 @@ export const SchedulesView = () => {
                     <SchedulesPageHeader />
                     <SchedulesEmptyState />
                     <ScheduleTemplateGrid />
+                    {
+                        /* TODO: Remove this once the recurrence rule fieldset is used or knip complains about it */
+                        false && (
+                            <RecurrenceRuleFieldset
+                                onChange={() => {}}
+                                recurrenceRule={{
+                                    frequency: 'DAILY',
+                                    hour: 0,
+                                    minute: 0,
+                                    timezone: 'UTC',
+                                }}
+                                title=""
+                            />
+                        )
+                    }
                 </div>
             </div>
         </LumoLayoutWithDrawer>
