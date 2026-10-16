@@ -1,10 +1,8 @@
 //@ts-check
-import { fixupPluginRules } from '@eslint/compat';
 import protontechEnforceUint8ArrayArraybuffer from '@protontech/eslint-plugin-enforce-uint8array-arraybuffer';
 import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
 import compat from 'eslint-plugin-compat';
 import customRules from 'eslint-plugin-custom-rules';
-import importPlugin from 'eslint-plugin-import';
 import { createNodeResolver, importX } from 'eslint-plugin-import-x';
 import lodash from 'eslint-plugin-lodash';
 import monorepoCop from 'eslint-plugin-monorepo-cop';
@@ -14,7 +12,7 @@ import { defineConfig, globalIgnores } from 'eslint/config';
 import { configs, parser, plugin } from 'typescript-eslint';
 
 import { createExtraneousDependenciesRule } from './extraneousDependencies.js';
-import { allExtensions, allGlobs, typeScriptExtensions, typescriptGlobs } from './globs.js';
+import { allExtensions, allGlobs, typescriptGlobs } from './globs.js';
 import { createRestrictedImportRule } from './restrictedImports.js';
 
 export default defineConfig(
@@ -23,9 +21,8 @@ export default defineConfig(
         plugins: {
             '@typescript-eslint': plugin,
             'custom-rules': customRules,
-            // import still uses deprecated `context` methods removed in ESLint 10
-            import: fixupPluginRules(importPlugin),
-            'import-x': importX,
+            // import-x registered under the `import` name so rule names stay `import/*`; its settings still use `import-x/*`
+            import: importX,
             // monorepo-cop is legacy typed, so we need to cast it to the correct type
             'monorepo-cop': /** @type {import('eslint').ESLint.Plugin} */ (/** @type {unknown} */ (monorepoCop)),
             'no-only-tests': noOnlyTests,
@@ -291,9 +288,6 @@ export default defineConfig(
             'import/no-named-as-default-member': 'warn',
 
             /**
-             * Cycle detection comes from `eslint-plugin-import-x` because `eslint-plugin-import`'s
-             * `no-cycle` accounted for >90% of total rule time across the monorepo.
-             *
              * With `ignoreExternal: true`, import-x skips imports classified as "external" by
              * `isExternalModule`. That classification is broader than
              * `import-x/external-module-folders` alone: a resolved path is external when it is
@@ -306,7 +300,7 @@ export default defineConfig(
              * `node_modules`. npm dependencies resolve under the repo-root `node_modules/` and
              * are external for the same outside-package-folder reason.
              */
-            'import-x/no-cycle': ['error', { ignoreExternal: true }],
+            'import/no-cycle': ['error', { ignoreExternal: true }],
 
             /**
              * NOTE: We use `no-duplicate-imports` with `allowSeparateTypeImports: true`
@@ -337,17 +331,6 @@ export default defineConfig(
             'no-restricted-imports': createRestrictedImportRule(),
         },
         settings: {
-            'import/extensions': allExtensions,
-            'import/external-module-folders': ['node_modules', 'node_modules/@types'],
-            'import/parsers': {
-                '@typescript-eslint/parser': typeScriptExtensions,
-            },
-            'import/resolver': {
-                node: {
-                    extensions: allExtensions,
-                },
-                typescript: true,
-            },
             'import-x/extensions': allExtensions,
             'import-x/external-module-folders': ['node_modules', 'node_modules/@types'],
             'import-x/resolver-next': [
@@ -364,6 +347,7 @@ export default defineConfig(
             'import/named': 'off',
             'import/namespace': 'off',
             'import/default': 'off',
+            'import/export': 'off',
             'import/order': 'off',
             'import/no-named-as-default-member': 'off',
             'import/no-unresolved': 'off',
