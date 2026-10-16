@@ -1,4 +1,4 @@
-import { fitCanvasToFrame, mountExportDocument } from './htmlDocumentCapture';
+import { captureElementToCanvas, fitCanvasToFrame, mountExportDocument } from './htmlDocumentCapture';
 
 describe('mountExportDocument', () => {
     afterEach(() => {
@@ -27,6 +27,56 @@ describe('mountExportDocument', () => {
         expect(mounted.ownerDocument.querySelector('script')).toBeNull();
         expect(mounted.root.textContent).toContain('Safe');
     });
+});
+
+describe('captureElementToCanvas', () => {
+    afterEach(() => {
+        document.querySelectorAll('[data-pdf-export-root], [data-capture-clone]').forEach((node) => node.remove());
+    });
+
+    it.each([undefined, { y: 1200, height: 100 }])(
+        'captures the sandboxed export iframe from its parent (slice: %j)',
+        async (slice) => {
+            const mounted = await mountExportDocument(
+                '<!doctype html><html><body><p>Sample document</p></body></html>',
+                794
+            );
+            const canvas = document.createElement('canvas');
+            const clonedFrame = document.createElement('iframe');
+            clonedFrame.setAttribute('data-capture-clone', 'true');
+            clonedFrame.setAttribute('sandbox', mounted.iframe.getAttribute('sandbox')!);
+            document.body.appendChild(clonedFrame);
+            const render = jest.fn(async (_target: HTMLElement, options: Record<string, unknown>) => {
+                const onclone = options.onclone as
+                    ((document: Document, target: HTMLElement) => Promise<void>) | undefined;
+                await onclone?.(document, clonedFrame);
+                return canvas;
+            });
+
+            const result = await captureElementToCanvas(mounted.root, 794, 2, render, {
+                captureHeight: 200,
+                captureSlice: slice,
+            });
+
+            expect(render.mock.calls[0]![0]).toBe(mounted.iframe);
+            expect(result).toBe(canvas);
+            expect(clonedFrame.contentDocument?.body.textContent).toContain('Sample document');
+            expect(clonedFrame.width).toBe('794');
+            expect(clonedFrame.height).toBe(String(slice?.height ?? 200));
+            expect(clonedFrame.contentDocument?.compatMode).toBe('CSS1Compat');
+            expect(clonedFrame.contentDocument?.documentElement.style.transform).toBe(
+                `translate(0px, ${-(slice?.y ?? 0)}px)`
+            );
+            expect(render.mock.calls[0]![1]).toEqual(
+                expect.objectContaining({
+                    x: 0,
+                    y: 0,
+                    height: slice?.height ?? 200,
+                })
+            );
+            expect(clonedFrame.getAttribute('sandbox')).toBe('allow-same-origin');
+        }
+    );
 });
 
 describe('fitCanvasToFrame', () => {
