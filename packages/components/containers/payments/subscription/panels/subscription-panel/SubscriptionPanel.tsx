@@ -320,7 +320,7 @@ const SubscriptionPanel = ({ app, subscription, organization, entitlements, user
     };
 
     const b2bUsersItem: Item | false = !!userText &&
-        (MaxMembers > 1 || entitlements.isBusiness || upsellsShowB2BUsersRow(upsells)) && {
+        (MaxMembers > 1 || entitlements.isB2B || upsellsShowB2BUsersRow(upsells)) && {
             id: 'users',
             icon: IcUsers,
             text: userText,
@@ -363,7 +363,7 @@ const SubscriptionPanel = ({ app, subscription, organization, entitlements, user
             return false;
         }
 
-        const showGetMoreButton = MaxAI < MaxMembers && entitlements.isBusiness;
+        const showGetMoreButton = MaxAI < MaxMembers && entitlements.isB2B;
         const actionElement = showGetMoreButton ? <GetMoreButton /> : null;
 
         return {
@@ -473,7 +473,7 @@ const SubscriptionPanel = ({ app, subscription, organization, entitlements, user
                 ...b2bUsersItem,
                 actionElement: getMoreButtonVpnUpsell,
             },
-            entitlements.isVpnBusiness && {
+            entitlements.isVpnB2B && {
                 id: 'servers',
                 icon: IcServers,
                 text: serverText,

@@ -46,7 +46,7 @@ export const useGetEntitlementCatalog = hooks.useGet;
  * - resolver.quantityTotal(name)     → org-total quantity (number)
  *
  * Examples of quick checks:
- * - resolver.isBusiness
+ * - resolver.isB2B
  * - resolver.hasLumo
  * - resolver.hasSentinel
  * - resolver.hasVpn
@@ -54,7 +54,7 @@ export const useGetEntitlementCatalog = hooks.useGet;
  * @example
  * const [entitlements, loading] = useEntitlementChecksForOrgAndUser();
  * const maxSpace = entitlements.quantityForMember(EntitlementName.MaxSpace);
- * const isBusiness = entitlements.isBusiness;
+ * const isB2B = entitlements.isB2B;
  */
 export const useEntitlementChecksForOrgAndUser = (): [EntitlementChecksForOrgAndUser, boolean] => {
     const [allEntitlements, loadingEntitlements] = useAllEntitlements();
