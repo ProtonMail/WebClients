@@ -10,12 +10,31 @@ import { EncryptedSearchReader } from '../import/EncryptedSearchReader';
 import type { MetricService } from '../metrics/MetricService';
 import type { ContentSearchEndReason } from '../metrics/interface';
 import type { Logger } from '../utils/logger';
-import { Search } from './Search';
+import { Search, type SearchOutcome } from './Search';
 import type SearchWorker from './SearchWorker';
+
+const reportSearchOutcome = (search: Search, outcome: SearchOutcome, metricService: MetricService) => {
+    if (outcome === 'no-index') {
+        metricService.searchCancelled();
+        return;
+    }
+    if (outcome === 'failed') {
+        metricService.searchCompleted({ hasResults: false, status: 'error', resultCount: 0 });
+        return;
+    }
+    const resultCount = search.results?.length ?? 0;
+    metricService.searchCompleted({
+        hasResults: resultCount > 0,
+        status: 'success',
+        resultCount,
+    });
+};
 
 /** public interface into search functionality */
 export class SearchService {
     private workerReadyPromise: Promise<Comlink.Remote<SearchWorker> | undefined> | undefined;
+    /** The most recent search; only its completion is reported — see `search()`. */
+    private currentSearch: Search | undefined;
 
     constructor(
         private readonly userId: string,
@@ -39,18 +58,16 @@ export class SearchService {
             EncryptedSearchReader.open(this.userId, await this.getUserKeys())
         );
         search.start();
+        this.currentSearch = search;
         this.startSearchSession();
+        this.metricService.searchStarted();
 
         void search.done.then((outcome) => {
-            if (outcome !== 'completed') {
-                return;
+            // A superseded search isn't cancelled (see `Search.dispose`) and still completes; its
+            // session and start time have been replaced by the newer search's, so don't report it.
+            if (search === this.currentSearch) {
+                reportSearchOutcome(search, outcome, this.metricService);
             }
-            const resultCount = search.results?.length ?? 0;
-            this.metricService.searchCompleted({
-                hasResults: resultCount > 0,
-                status: 'success',
-                resultCount,
-            });
         });
         return search;
     }
