@@ -31,7 +31,26 @@ describe('printHtmlDocument', () => {
         });
     });
 
-    it('prints from a hidden sandboxed iframe instead of opening a popup', async () => {
+    it.each([
+        'ProtonLumo/2.1.1 (iOS 26.0; Apple iPhone17,1)',
+        'ProtonLumo/2.1.1 (iPadOS 26.0; Apple iPad14,3)',
+        'ProtonLumo/2.1.1 (Android 16; Pixel 9)',
+    ])('returns false in native apps so the caller downloads a PDF (%s)', async (userAgent) => {
+        jest.spyOn(navigator, 'userAgent', 'get').mockReturnValue(userAgent);
+
+        const result = await printHtmlDocument('<html><body><p>Report</p></body></html>');
+
+        expect(result).toBe(false);
+        expect(getPrintFrame()).toBeNull();
+        expect(printSpy).toBeUndefined();
+    });
+
+    it.each([
+        'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 Version/26.0 Safari/605.1.15',
+        'Mozilla/5.0 (iPhone; CPU iPhone OS 26_0 like Mac OS X) AppleWebKit/605.1.15 Version/26.0 Mobile Safari/604.1',
+        'Mozilla/5.0 (Linux; Android 16; Pixel 9) AppleWebKit/537.36 Chrome/141.0.0.0 Mobile Safari/537.36',
+    ])('preserves hidden-frame printing in browsers (%s)', async (userAgent) => {
+        jest.spyOn(navigator, 'userAgent', 'get').mockReturnValue(userAgent);
         const openSpy = jest.spyOn(window, 'open');
 
         await expect(printHtmlDocument('<html><body><p>Report</p></body></html>')).resolves.toBe(true);
