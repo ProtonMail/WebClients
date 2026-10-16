@@ -22,6 +22,13 @@ describe('ReportRowStatus', () => {
         screen.getByText('Failed');
     });
 
+    it('Should display nothing for a running status', () => {
+        const { container } = easySwitchRender(
+            <ReportRowStatus status={ApiImporterState.RUNNING} rollbackState={undefined} />
+        );
+        expect(container).toBeEmptyDOMElement();
+    });
+
     it('Should display ROLLED_BACK status', () => {
         easySwitchRender(
             <ReportRowStatus status={ApiImporterState.FAILED} rollbackState={ApiReportRollbackState.ROLLED_BACK} />
