@@ -78,7 +78,7 @@ export const getThemeFromLocation = (
         };
     }
 
-    if (pathname === SSO_PATHS.PASS_EXTENSION_ONBOARDING) {
+    if (pathname === SSO_PATHS.PASS_EXTENSION_ONBOARDING || pathname === SSO_PATHS.PASS_ACCOUNT_ONBOARDING) {
         return {
             DarkTheme: ThemeTypes.PassDark,
             Mode: ThemeModeSetting.Dark,

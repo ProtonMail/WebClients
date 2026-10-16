@@ -23,6 +23,7 @@ import {
     clientStale,
     clientUnauthorized,
 } from '@proton/pass/lib/client';
+import { getToolbarPinState } from '@proton/pass/lib/extension/utils/pinned';
 import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import browser from '@proton/pass/lib/globals/browser';
 import { ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
@@ -487,10 +488,22 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
         }
     );
 
+    const handleAccountProbe: MessageHandlerCallback<WorkerMessageType.ACCOUNT_PROBE_2> = async () => {
+        const authenticated = authStore.hasSession();
+        const pinned = await getToolbarPinState();
+        /** Firefox extension URLs embed a per-install UUID: only
+         * hand it out when the page needs it to open the extension */
+        const url = authenticated ? browser.runtime.getURL('') : null;
+        logger.debug(`[AuthService] account probe [authenticated=${authenticated}, pinned=${pinned}]`);
+        return { authenticated, pinned, url };
+    };
+
     authService.listen = withContext<() => void>((ctx) => {
         void alarms.hydrate();
 
+        // Legacy we keep for retro-compatibility
         WorkerMessageBroker.registerMessage(WorkerMessageType.ACCOUNT_PROBE, () => true);
+        WorkerMessageBroker.registerMessage(WorkerMessageType.ACCOUNT_PROBE_2, handleAccountProbe);
         WorkerMessageBroker.registerMessage(WorkerMessageType.ACCOUNT_FORK, handleAccountFork);
         WorkerMessageBroker.registerMessage(WorkerMessageType.AUTH_CHECK, handleAuthCheck);
         WorkerMessageBroker.registerMessage(WorkerMessageType.AUTH_CONFIRM_PASSWORD, handlePasswordConfirm);

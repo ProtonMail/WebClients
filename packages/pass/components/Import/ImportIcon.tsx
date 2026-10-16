@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import type { CSSProperties, FC } from 'react';
 
 import onepassword from '../../assets/import/1password-icon-48.png';
 import applePasswords from '../../assets/import/apple-passwords-icon-48.png';
@@ -43,12 +43,13 @@ const IMPORT_ICON_MAP: ImportIconMap = {
     [ImportProvider.KASPERSKY]: kaspersky,
 };
 
-type Props = { provider: ImportProvider; className?: string };
+type Props = { provider: ImportProvider; className?: string; style?: CSSProperties };
 
-export const ImportIcon: FC<Props> = ({ provider, className }) => {
+export const ImportIcon: FC<Props> = ({ provider, className, style }) => {
     return (
         <img
             className={className}
+            style={style}
             alt={PROVIDER_INFO_MAP[provider].title}
             src={IMPORT_ICON_MAP[provider]}
             width="24"
