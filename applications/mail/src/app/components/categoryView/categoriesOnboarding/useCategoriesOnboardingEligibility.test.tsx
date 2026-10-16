@@ -172,6 +172,7 @@ describe('useCategoriesOnboardingEligibility', () => {
                 mockAllMailCount(10);
 
                 expect(renderEligibility()).toStrictEqual({
+                    isLoading: false,
                     isUserEligible: true,
                     onboardingFlow: OnboardingFlow.B2B,
                     flagValue: FeatureValueDefault,
@@ -184,6 +185,7 @@ describe('useCategoriesOnboardingEligibility', () => {
                 mockCategoriesView({ isCategoryViewEnabled: false, canUseCategoryView: false });
 
                 expect(renderEligibility()).toStrictEqual({
+                    isLoading: false,
                     isUserEligible: false,
                     onboardingFlow: OnboardingFlow.B2B,
                     flagValue: FeatureValueDefault,
@@ -196,6 +198,7 @@ describe('useCategoriesOnboardingEligibility', () => {
                 mockFeatures({ b2bOnboardingFlag: B2B_ONBOARDING_SEEN });
 
                 expect(renderEligibility()).toStrictEqual({
+                    isLoading: false,
                     isUserEligible: false,
                     onboardingFlow: OnboardingFlow.B2B,
                     flagValue: B2B_ONBOARDING_SEEN,
@@ -208,6 +211,7 @@ describe('useCategoriesOnboardingEligibility', () => {
                 mockMailCategoryView(true);
 
                 expect(renderEligibility()).toStrictEqual({
+                    isLoading: false,
                     isUserEligible: false,
                     onboardingFlow: OnboardingFlow.B2B,
                     flagValue: FeatureValueDefault,
@@ -221,6 +225,7 @@ describe('useCategoriesOnboardingEligibility', () => {
                 mockAllMailCount(20);
 
                 expect(renderEligibility()).toStrictEqual({
+                    isLoading: false,
                     isUserEligible: true,
                     onboardingFlow: OnboardingFlow.B2B,
                     flagValue: FeatureValueDefault,
@@ -233,6 +238,7 @@ describe('useCategoriesOnboardingEligibility', () => {
                 mockFeatures({ b2bOnboardingFlag: B2B_ONBOARDING_SEEN });
 
                 expect(renderEligibility()).toStrictEqual({
+                    isLoading: false,
                     isUserEligible: false,
                     onboardingFlow: OnboardingFlow.B2B,
                     flagValue: B2B_ONBOARDING_SEEN,
@@ -244,6 +250,7 @@ describe('useCategoriesOnboardingEligibility', () => {
                 mockAllMailCount(10);
 
                 expect(renderEligibility()).toStrictEqual({
+                    isLoading: false,
                     isUserEligible: false,
                     onboardingFlow: OnboardingFlow.B2B,
                     flagValue: FeatureValueDefault,
@@ -256,6 +263,7 @@ describe('useCategoriesOnboardingEligibility', () => {
                 mockMailCategoryView(true);
 
                 expect(renderEligibility()).toStrictEqual({
+                    isLoading: false,
                     isUserEligible: false,
                     onboardingFlow: OnboardingFlow.B2B,
                     flagValue: FeatureValueDefault,
@@ -275,6 +283,7 @@ describe('useCategoriesOnboardingEligibility', () => {
                 mockAllMailCount(10);
 
                 expect(renderEligibility()).toStrictEqual({
+                    isLoading: false,
                     isUserEligible: true,
                     onboardingFlow: OnboardingFlow.B2C,
                     flagValue: FeatureValueDefault,
@@ -287,6 +296,7 @@ describe('useCategoriesOnboardingEligibility', () => {
                 mockChecklistDisplay(CHECKLIST_DISPLAY_TYPE.FULL);
 
                 expect(renderEligibility()).toStrictEqual({
+                    isLoading: false,
                     isUserEligible: false,
                     onboardingFlow: OnboardingFlow.B2C,
                     flagValue: FeatureValueDefault,
@@ -298,6 +308,7 @@ describe('useCategoriesOnboardingEligibility', () => {
                 mockAllMailCount(5);
 
                 expect(renderEligibility()).toStrictEqual({
+                    isLoading: false,
                     isUserEligible: false,
                     onboardingFlow: OnboardingFlow.B2C,
                     flagValue: FeatureValueDefault,
@@ -310,6 +321,7 @@ describe('useCategoriesOnboardingEligibility', () => {
                 mockFeatures({ b2cOnboardingFlag: B2C_ONBOARDING_SEEN });
 
                 expect(renderEligibility()).toStrictEqual({
+                    isLoading: false,
                     isUserEligible: false,
                     onboardingFlow: OnboardingFlow.B2C,
                     flagValue: B2C_ONBOARDING_SEEN,
@@ -322,6 +334,7 @@ describe('useCategoriesOnboardingEligibility', () => {
                 mockFeatures({ b2cOnboardingFlag: B2C_ONBOARDING_IN_PROGRESS });
 
                 expect(renderEligibility()).toStrictEqual({
+                    isLoading: false,
                     isUserEligible: true,
                     onboardingFlow: OnboardingFlow.B2C,
                     flagValue: B2C_ONBOARDING_IN_PROGRESS,
@@ -335,6 +348,7 @@ describe('useCategoriesOnboardingEligibility', () => {
                 mockFeatures({ b2cOnboardingFlag: B2C_ONBOARDING_IN_PROGRESS });
 
                 expect(renderEligibility()).toStrictEqual({
+                    isLoading: false,
                     isUserEligible: false,
                     onboardingFlow: OnboardingFlow.B2C,
                     flagValue: B2C_ONBOARDING_IN_PROGRESS,
@@ -349,6 +363,7 @@ describe('useCategoriesOnboardingEligibility', () => {
                 mockAllMailCount(100);
 
                 expect(renderEligibility()).toStrictEqual({
+                    isLoading: false,
                     isUserEligible: true,
                     onboardingFlow: OnboardingFlow.FREE_PROMPT,
                     flagValue: FeatureValueDefault,
@@ -361,6 +376,7 @@ describe('useCategoriesOnboardingEligibility', () => {
                 mockAllMailCount(100);
 
                 expect(renderEligibility()).toStrictEqual({
+                    isLoading: false,
                     isUserEligible: false,
                     onboardingFlow: OnboardingFlow.FREE_PROMPT,
                     flagValue: FeatureValueDefault,
@@ -373,6 +389,7 @@ describe('useCategoriesOnboardingEligibility', () => {
                 mockAllMailCount(40);
 
                 expect(renderEligibility()).toStrictEqual({
+                    isLoading: false,
                     isUserEligible: false,
                     onboardingFlow: OnboardingFlow.FREE_PROMPT,
                     flagValue: FeatureValueDefault,
@@ -386,6 +403,7 @@ describe('useCategoriesOnboardingEligibility', () => {
                 mockFeatures({ b2cOnboardingFlag: CategoriesOnboardingFlags.SPOTLIGHT_FREE_USERS });
 
                 expect(renderEligibility()).toStrictEqual({
+                    isLoading: false,
                     isUserEligible: false,
                     onboardingFlow: OnboardingFlow.FREE_PROMPT,
                     flagValue: CategoriesOnboardingFlags.SPOTLIGHT_FREE_USERS,
@@ -399,6 +417,7 @@ describe('useCategoriesOnboardingEligibility', () => {
                 mockCategoriesView({ isCategoryViewEnabled: false });
 
                 expect(renderEligibility()).toStrictEqual({
+                    isLoading: false,
                     isUserEligible: false,
                     onboardingFlow: OnboardingFlow.FREE_PROMPT,
                     flagValue: FeatureValueDefault,
@@ -411,6 +430,7 @@ describe('useCategoriesOnboardingEligibility', () => {
                 mockAllMailCount(100);
 
                 expect(renderEligibility()).toStrictEqual({
+                    isLoading: false,
                     isUserEligible: false,
                     onboardingFlow: OnboardingFlow.FREE_PROMPT,
                     flagValue: FeatureValueDefault,
