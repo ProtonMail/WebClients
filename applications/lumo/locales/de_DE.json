@@ -737,9 +737,6 @@
       ],
       "Protection for two in a single plan": [
         "Schutz für zwei Personen in einem einzigen Tarif"
-      ],
-      "Save big with a yearly plan": [
-        "Spare viel Geld mit einem Jahresabo"
       ]
     },
     "Billing cycle option": {
@@ -3873,6 +3870,9 @@
       "Filter & Sort": [
         "Filtern & Sortieren"
       ],
+      "Hide templates": [
+        "Vorlagen ausblenden"
+      ],
       "Images": [
         "Bilder"
       ],
@@ -3894,6 +3894,9 @@
       "New project": [
         "Neues Projekt"
       ],
+      "New task": [
+        "Neue Aufgabe"
+      ],
       "Projects": [
         "Projekte"
       ],
@@ -3902,6 +3905,9 @@
       ],
       "Save here": [
         "Hier speichern"
+      ],
+      "Scheduled": [
+        "Geplant"
       ],
       "Search": [
         "Suche"
@@ -3917,6 +3923,9 @@
       ],
       "Settings": [
         "Einstellungen"
+      ],
+      "Show templates": [
+        "Vorlagen anzeigen"
       ],
       "Untitled chat": [
         "Unbenannter Chat"
@@ -4036,6 +4045,9 @@
       "${ lineCount } line": [
         "${ lineCount } Zeile",
         "${ lineCount } Zeilen"
+      ],
+      "${ LUMO_SHORT_APP_NAME } can run a prompt for you every morning, every Friday, or whenever you like.": [
+        "${ LUMO_SHORT_APP_NAME } kann jeden Morgen, jeden Freitag oder wann immer du möchtest eine Aufforderung für dich anzeigen."
       ],
       "${ LUMO_SHORT_APP_NAME } is a private AI. Your conversations are encrypted and never used to train AI models.": [
         "${ LUMO_SHORT_APP_NAME } ist eine private KI. Deine Unterhaltungen sind verschlüsselt und werden niemals zum Trainieren von KI-Modellen verwendet."
@@ -4313,6 +4325,9 @@
       ],
       "Revising your artifact…": [
         "Dein Artefakt wird überarbeitet…"
+      ],
+      "Run tasks on a schedule or whenever you need them. Tasks run on this computer while ${ LUMO_SHORT_APP_NAME } is open.": [
+        "Führe Aufgaben nach einem Zeitplan oder bei Bedarf aus. Die Aufgaben werden auf diesem Computer ausgeführt, solange ${ LUMO_SHORT_APP_NAME } geöffnet bleibt."
       ],
       "Saving as ${ formatLabel }. Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to use, then click \"Save here\".": [
         "Als ${ formatLabel } speichern. Gehe zum Ordner ${ DRIVE_SHORT_APP_NAME }, den du verwenden möchtest, und klicke dann auf «Hier speichern»."
@@ -4683,6 +4698,9 @@
       ],
       "Upload": [
         "Hochladen"
+      ],
+      "Use template": [
+        "Vorlage verwenden"
       ]
     },
     "collider_2025:Notification": {
@@ -5355,6 +5373,9 @@
       "No project chats yet": [
         "Noch keine Projekt-Chats"
       ],
+      "No scheduled tasks yet": [
+        "Noch keine geplanten Aufgaben"
+      ],
       "Nothing here yet": [
         "Hier gibt es noch nichts"
       ],
@@ -5385,6 +5406,9 @@
       "Save to ${ DRIVE_SHORT_APP_NAME }": [
         "In ${ DRIVE_SHORT_APP_NAME } speichern"
       ],
+      "Scheduled tasks": [
+        "Geplante Aufgaben"
+      ],
       "See what Big Tech AI already knows about you": [
         "Finden heraus, was die KI der großen Tech-Konzerne bereits über dich weiß"
       ],
@@ -5411,6 +5435,12 @@
       ],
       "Start a new conversation": [
         "Neue Unterhaltung beginnen"
+      ],
+      "Start from a template": [
+        "Mit einer Vorlage beginnen"
+      ],
+      "Templates hidden": [
+        "Vorlagen ausgeblendet"
       ],
       "That's why we built ${ LUMO_SHORT_APP_NAME }: To bring you all the benefits of AI, without compromising your privacy and data security.": [
         "Deshalb haben wir ${ LUMO_SHORT_APP_NAME } entwickelt: Um dir alle Vorteile von KI zu bieten, ohne deine Privatsphäre und Datensicherheit zu gefährden."
@@ -9728,6 +9758,9 @@
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Für die Aktivierung des Abonnements nach dem Ende der Testversion ist eine Zahlungsmethode erforderlich."
       ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Der Tarifwechsel ist aus folgenden Gründen nicht möglich:"
+      ],
       "Please close extra wallet accounts before changing your plan.": [
         "Bitte schließe alle zusätzlichen Wallet-Konten, bevor du dein Abonnement wechselst."
       ],
@@ -9736,6 +9769,9 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Bitte reaktiviere zuerst dein Abonnement, um die Anzahl der Add-ons zu verringern."
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Die Anzahl der Plätze bei Proton Meet muss mit der Anzahl der Teilnehmer übereinstimmen."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Die Preise für Verlängerungen können sich gemäß ${ termsAndConditionsLink } ändern."
@@ -9809,8 +9845,14 @@
       "This payment method will become your new default for all future renewals.": [
         "Diese Zahlungsmethode wird dein neuer Standard für alle zukünftigen Verlängerungen."
       ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Dieser Tarif unterstützt für dein Konto keine Verwaltungsfunktionen."
+      ],
       "This plan doesn’t support the members on your account.": [
         "Dieses Abonnement bietet keine Unterstützung für die Mitglieder deines Kontos."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Dieses Abonnement kann derzeit nicht abgeschlossen werden. Bitte versuche es erneut."
       ],
       "Timeout exceeded": [
         "Zeitlimit überschritten"

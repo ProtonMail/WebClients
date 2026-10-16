@@ -737,9 +737,6 @@
       ],
       "Protection for two in a single plan": [
         "Tek bir tarife ile iki kişilik koruma"
-      ],
-      "Save big with a yearly plan": [
-        "Yıllık bir tarife ile büyük kazanç sağlayın"
       ]
     },
     "Billing cycle option": {
@@ -3873,6 +3870,9 @@
       "Filter & Sort": [
         "Süz ve sırala"
       ],
+      "Hide templates": [
+        "Kalıpları gizle"
+      ],
       "Images": [
         "Görseller"
       ],
@@ -3894,6 +3894,9 @@
       "New project": [
         "Yeni proje"
       ],
+      "New task": [
+        "Yeni görev"
+      ],
       "Projects": [
         "Projeler"
       ],
@@ -3902,6 +3905,9 @@
       ],
       "Save here": [
         "Buraya kaydet"
+      ],
+      "Scheduled": [
+        "Zamanlanmış"
       ],
       "Search": [
         "Ara"
@@ -3917,6 +3923,9 @@
       ],
       "Settings": [
         "Ayarlar"
+      ],
+      "Show templates": [
+        "Kalıpları görüntüle"
       ],
       "Untitled chat": [
         "Başlıksız sohbet"
@@ -4036,6 +4045,9 @@
       "${ lineCount } line": [
         "${ lineCount } satır",
         "${ lineCount } satır"
+      ],
+      "${ LUMO_SHORT_APP_NAME } can run a prompt for you every morning, every Friday, or whenever you like.": [
+        "${ LUMO_SHORT_APP_NAME } her sabah, her Cuma veya istediğiniz zaman sizin için bir istem yürütebilir."
       ],
       "${ LUMO_SHORT_APP_NAME } is a private AI. Your conversations are encrypted and never used to train AI models.": [
         "${ LUMO_SHORT_APP_NAME } gizliliği koruyan bir yapay zekadır. Yazışmalarınız şifrelenir ve hiçbir zaman yapay zeka modellerini eğitmek için kullanılmaz."
@@ -4313,6 +4325,9 @@
       ],
       "Revising your artifact…": [
         "Yapıtınız gözden geçiriliyor…"
+      ],
+      "Run tasks on a schedule or whenever you need them. Tasks run on this computer while ${ LUMO_SHORT_APP_NAME } is open.": [
+        "Görevleri bir zamanlamaya göre veya gerek duyduğunuzda yürütün. Görevler bu bilgisayarda ${ LUMO_SHORT_APP_NAME } açıkken yürütülür."
       ],
       "Saving as ${ formatLabel }. Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to use, then click \"Save here\".": [
         "${ formatLabel } olarak kaydediliyor. Kullanmak istediğiniz ${ DRIVE_SHORT_APP_NAME } klasörüne gidin ve ardından \"Buraya kaydet\" üzerine tıklayın."
@@ -4683,6 +4698,9 @@
       ],
       "Upload": [
         "Yükle"
+      ],
+      "Use template": [
+        "Kullanılacak kalıp"
       ]
     },
     "collider_2025:Notification": {
@@ -5355,6 +5373,9 @@
       "No project chats yet": [
         "Henüz bir proje sohbeti yok"
       ],
+      "No scheduled tasks yet": [
+        "Henüz bir zamanlanmış görev yok"
+      ],
       "Nothing here yet": [
         "Henüz burada bir şey yok"
       ],
@@ -5385,6 +5406,9 @@
       "Save to ${ DRIVE_SHORT_APP_NAME }": [
         "${ DRIVE_SHORT_APP_NAME } üzerine kaydet"
       ],
+      "Scheduled tasks": [
+        "Zamanlanmış görevler"
+      ],
       "See what Big Tech AI already knows about you": [
         "Big Tech şirketlerinin yapay zekasının sizinle ilgili neler bildiğini görün"
       ],
@@ -5411,6 +5435,12 @@
       ],
       "Start a new conversation": [
         "Yeni bir yazışma başlat"
+      ],
+      "Start from a template": [
+        "Bir kalıp ile başlayın"
+      ],
+      "Templates hidden": [
+        "Kalıplar gizlenmiş"
       ],
       "That's why we built ${ LUMO_SHORT_APP_NAME }: To bring you all the benefits of AI, without compromising your privacy and data security.": [
         "Bu yüzden ${ LUMO_SHORT_APP_NAME } uygulamasını geliştirdik: Size, gizliliğinizden ve veri güvenliğinizden ödün vermeden yapay zekanın tüm yararlarını sunuyoruz."
@@ -9728,6 +9758,9 @@
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Deneme süresi sona erdikten sonra aboneliğin kullanıma alınması için bir ödeme yöntemi gereklidir."
       ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Tarife geçişi şu nedenlerden dolayı yapılamıyor:"
+      ],
       "Please close extra wallet accounts before changing your plan.": [
         "Lütfen tarifenizi değiştirmeden önce ek cüzdan hesaplarını kapatın."
       ],
@@ -9736,6 +9769,9 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Eklenti sayısını azaltmak için öncelikle lütfen aboneliğinizi yeniden kullanıma alın."
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Proton Meet koltuk sayısı üye sayısı ile aynı olmalıdır."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Yenileme fiyatları ${ termsAndConditionsLink } içeriğine göre değişebilir."
@@ -9809,8 +9845,14 @@
       "This payment method will become your new default for all future renewals.": [
         "Gelecekteki tüm yenilemeler için varsayılan olarak bu ödeme yöntemi kullanılacak."
       ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Bu tarife hesabınızdaki yönetilen özellikleri desteklemez."
+      ],
       "This plan doesn’t support the members on your account.": [
         "Bu tarife hesabınızdaki üyeleri desteklemez."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Bu abonelik şu anda tamamlanamıyor. Lütfen yeniden deneyin."
       ],
       "Timeout exceeded": [
         "Zaman aşımı süresi aşıldı"
