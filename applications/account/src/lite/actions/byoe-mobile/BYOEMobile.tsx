@@ -13,7 +13,7 @@ import MobileSection from '../../components/MobileSection';
 import MobileSectionLabel from '../../components/MobileSectionLabel';
 import MobileSectionRow from '../../components/MobileSectionRow';
 import { BYOEMobileConnecting } from './BYOEMobileConnecting';
-import { BYOEAddresses } from './components/BYOEAddresses';
+import { BYOEMobileConnections } from './components/BYOEMobileConnections/BYOEMobileConnections';
 import { ErrorPrompt } from './components/ErrorPrompt';
 import { BYOEMobileProvider, useBYOEMobile } from './context/BYOEMobileProvider';
 
@@ -74,7 +74,7 @@ const BYOEMobileContent = () => {
                 </MobileSectionRow>
             </MobileSection>
             <ErrorPrompt />
-            <BYOEAddresses />
+            <BYOEMobileConnections />
         </>
     );
 };
