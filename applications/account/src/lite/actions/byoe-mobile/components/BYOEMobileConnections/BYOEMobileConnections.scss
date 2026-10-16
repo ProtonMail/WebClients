@@ -1,0 +1,24 @@
+.byoe-mobile-connections-content {
+	opacity: 1;
+	animation: byoe-mobile-connections-fade-in 0.5s linear;
+}
+
+// The content appears without sliding in
+@media (prefers-reduced-motion: reduce) {
+	.byoe-mobile-connections-content {
+		animation: none;
+	}
+}
+
+@keyframes byoe-mobile-connections-fade-in {
+	0% {
+		opacity: 0;
+		transform: translateY(10px);
+		animation-timing-function: ease-out;
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
