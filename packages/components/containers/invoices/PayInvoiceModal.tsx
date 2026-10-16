@@ -12,6 +12,10 @@ import { ChargebeeIdealButton } from '@proton/payments-ui/ui/components/Chargebe
 import { WALLET_BUTTON_WIDTH } from '@proton/payments-ui/ui/components/ChargebeeIframe';
 import { ChargebeePaypalButton } from '@proton/payments-ui/ui/components/ChargebeePaypalButton';
 import { GooglePayButton } from '@proton/payments-ui/ui/components/GooglePayButton';
+import {
+    IdealAuthorizationText,
+    isIdealAuthorizationNoteShown,
+} from '@proton/payments-ui/ui/components/IdealAuthorizationText';
 import { checkInvoice } from '@proton/payments/core/api/api';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { Currency, Invoice } from '@proton/payments/core/interface';
@@ -220,6 +224,11 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, app, ...rest }: Props) => {
                             </Field>
                         </Row>
                         {amountDue > 0 ? <PaymentWrapper {...paymentFacade} noMaxWidth /> : null}
+                        {isIdealAuthorizationNoteShown(paymentFacade) && (
+                            <div className="mt-4">
+                                <IdealAuthorizationText />
+                            </div>
+                        )}
                     </>
                 )}
             </ModalTwoContent>
