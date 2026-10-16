@@ -4891,6 +4891,9 @@
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Für die Aktivierung des Abonnements nach dem Ende der Testversion ist eine Zahlungsmethode erforderlich."
       ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Der Tarifwechsel ist aus folgenden Gründen nicht möglich:"
+      ],
       "Please close extra wallet accounts before changing your plan.": [
         "Bitte schließe alle zusätzlichen Wallet-Konten, bevor du dein Abonnement wechselst."
       ],
@@ -4899,6 +4902,9 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Bitte reaktiviere zuerst dein Abonnement, um die Anzahl der Add-ons zu verringern."
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Die Anzahl der Plätze bei Proton Meet muss mit der Anzahl der Teilnehmer übereinstimmen."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Die Preise für Verlängerungen können sich gemäß ${ termsAndConditionsLink } ändern."
@@ -4972,8 +4978,14 @@
       "This payment method will become your new default for all future renewals.": [
         "Diese Zahlungsmethode wird dein neuer Standard für alle zukünftigen Verlängerungen."
       ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Dieser Tarif unterstützt für dein Konto keine Verwaltungsfunktionen."
+      ],
       "This plan doesn’t support the members on your account.": [
         "Dieses Abonnement bietet keine Unterstützung für die Mitglieder deines Kontos."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Dieses Abonnement kann derzeit nicht abgeschlossen werden. Bitte versuche es erneut."
       ],
       "Timeout exceeded": [
         "Zeitlimit überschritten"

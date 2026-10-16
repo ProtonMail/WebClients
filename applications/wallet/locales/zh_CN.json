@@ -4823,6 +4823,9 @@
       "Payment method required for the subscription to be activated after the trial ends.": [
         "您需要提供付款方式，以便试用期结束后激活订阅。"
       ],
+      "Plan switch is incompatible for the following reasons:": [
+        "套餐切换不兼容，原因如下："
+      ],
       "Please close extra wallet accounts before changing your plan.": [
         "请在更改套餐前关闭多余的钱包账户。"
       ],
@@ -4831,6 +4834,9 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "请先重新激活您的订阅以减少附加功能。"
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Proton Meet 席位数量必须与成员数量匹配。"
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "续费价格会根据${ termsAndConditionsLink }进行调整。"
@@ -4898,8 +4904,14 @@
       "This payment method will become your new default for all future renewals.": [
         "此付款方式将成为您未来所有续订的新默认方式。"
       ],
+      "This plan doesn’t support the managed features on your account.": [
+        "此套餐不支持您账户上的托管功能。"
+      ],
       "This plan doesn’t support the members on your account.": [
         "此套餐不支持您账户中的成员。"
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "当前无法完成此订阅，请重试。"
       ],
       "Timeout exceeded": [
         "超时"
