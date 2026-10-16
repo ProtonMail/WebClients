@@ -43,4 +43,9 @@ describe('ReportRowStatus', () => {
         easySwitchRender(<ImporterRowStatus state={ApiImporterState.DELAYED} errorCode={undefined} />);
         screen.getByText('Delayed');
     });
+
+    it.each([ApiImporterState.DONE, ApiImporterState.FAILED])('Should display %s as in progress', (state) => {
+        easySwitchRender(<ImporterRowStatus state={state} errorCode={undefined} />);
+        screen.getByText('In progress...');
+    });
 });

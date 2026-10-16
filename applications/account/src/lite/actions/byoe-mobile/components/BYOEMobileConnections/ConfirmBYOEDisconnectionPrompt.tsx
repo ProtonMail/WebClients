@@ -13,10 +13,17 @@ interface Props extends Pick<PromptProps, 'open' | 'onClose' | 'onExit'> {
     address: Address;
 }
 
-export const ConfirmBYOEDisconnection = ({ address, onClose, ...rest }: Props) => {
+export const ConfirmBYOEDisconnectionPrompt = ({ address, onClose, ...rest }: Props) => {
     const { disconnect, loading, isDisconnecting } = useDisconnectBYOEAddress(address);
 
     const { createNotification } = useNotifications();
+
+    // Closing mid-request would hide the outcome from the user
+    const handleClose = () => {
+        if (!isDisconnecting) {
+            onClose?.();
+        }
+    };
 
     const handleDisconnect = async () => {
         try {
@@ -36,12 +43,14 @@ export const ConfirmBYOEDisconnection = ({ address, onClose, ...rest }: Props) =
     return (
         <Prompt
             {...rest}
-            onClose={onClose}
+            onClose={handleClose}
+            disableCloseOnEscape={isDisconnecting}
+            disableCloseWhenClickOutside={isDisconnecting}
             title={c('Title').t`Disconnect this address?`}
             buttons={[
                 <Button color="danger" onClick={handleDisconnect} loading={loading}>{c('Action')
                     .t`Disconnect`}</Button>,
-                <Button onClick={onClose} disabled={isDisconnecting}>{c('Action').t`Cancel`}</Button>,
+                <Button onClick={handleClose} disabled={isDisconnecting}>{c('Action').t`Cancel`}</Button>,
             ]}
         >
             <p className="mt-0 mb-3">{c('Info')

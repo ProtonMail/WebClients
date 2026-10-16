@@ -1,0 +1,47 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
+.dot-wave-loader {
+	&-dot {
+		inline-size: rem(8);
+		block-size: rem(8);
+		opacity: 0.4;
+		background: var(--text-hint);
+		animation: dot-wave-loader 1s linear infinite;
+
+		&:nth-child(2) {
+			animation-delay: 0.15s;
+		}
+
+		&:nth-child(3) {
+			animation-delay: 0.3s;
+		}
+	}
+}
+
+// With reduced motion the dots stay still, at a fixed opacity so they still read as a loader
+@media (prefers-reduced-motion: reduce) {
+	.dot-wave-loader-dot {
+		animation: none;
+		opacity: 0.7;
+	}
+}
+
+@keyframes dot-wave-loader {
+	0% {
+		translate: 0 0;
+		opacity: 0.4;
+		animation-timing-function: ease-out;
+	}
+
+	30% {
+		translate: 0 rem(-6);
+		opacity: 1;
+		animation-timing-function: ease-in;
+	}
+
+	60%,
+	100% {
+		translate: 0 0;
+		opacity: 0.4;
+	}
+}
