@@ -6465,6 +6465,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "თქვენ მიაღწიეთ დაჯავშნის სლოტების ლიმიტს (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "We'll get back to you shortly.": [
+        "მალე დავბრუნდები."
       ]
     },
     "info": {
@@ -7202,6 +7205,12 @@
       ],
       "Zoom meeting": [
         "Zoom-ის შეხვედრა"
+      ],
+      "Please share any feedback to help us improve.": [
+        "გაგვიზიარეთ თქვენი აზრი."
+      ],
+      "Why would you like to cancel?": [
+        "რატომ აუქმებთ?"
       ]
     },
     "label": {
@@ -9743,6 +9752,9 @@
       ],
       "ZIP code": [
         "საფოსტო კოდი"
+      ],
+      "Please select the main reason": [
+        "აირჩიეთ მთავარი მიზეზი"
       ]
     },
     "Placeholder for contact group name": {
@@ -12117,6 +12129,12 @@
       ],
       "Your shorter address is now ready": [
         "თქვენი მოკლე მისამართი ახლა მზადაა"
+      ],
+      "Contact us": [
+        "დაგვიკავშირდით"
+      ],
+      "Request sent": [
+        "მოთხოვნა გაიგზავნა"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12760,6 +12778,20 @@
       ],
       "Passcode:": [
         "საკვანძო კოდი:"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "სხვა სერვისი ვიპოვე, რომელიც უფრო მომწონს"
+      ],
+      "It’s missing a key feature": [
+        "აკლია ძრითადი ფუნქცია"
+      ],
+      "It’s too expensive": [
+        "ძალიან ძვირია"
+      ],
+      "Other": [
+        "სხვა"
       ]
     }
   }

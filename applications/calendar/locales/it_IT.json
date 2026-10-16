@@ -6761,6 +6761,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Hai raggiunto il limite di slot di prenotazione (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "We'll get back to you shortly.": [
+        "Ti risponderemo a breve."
       ]
     },
     "info": {
@@ -7510,6 +7513,12 @@
       ],
       "Zoom meeting": [
         "Riunione Zoom"
+      ],
+      "Please share any feedback to help us improve.": [
+        "Condividi un feedback per aiutarci a migliorare."
+      ],
+      "Why would you like to cancel?": [
+        "Perché vorresti annullare?"
       ]
     },
     "label": {
@@ -10161,6 +10170,9 @@
       ],
       "ZIP code": [
         "Codice postale"
+      ],
+      "Please select the main reason": [
+        "Seleziona il motivo principale"
       ]
     },
     "Placeholder for contact group name": {
@@ -12570,6 +12582,12 @@
       ],
       "Your shorter address is now ready": [
         "Il tuo indirizzo breve ora è pronto"
+      ],
+      "Contact us": [
+        "Contattaci"
+      ],
+      "Request sent": [
+        "Richiesta inviata"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13222,6 +13240,20 @@
       ],
       "Passcode:": [
         "Codice di accesso:"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Ho trovato un altro servizio che mi piace di più"
+      ],
+      "It’s missing a key feature": [
+        "Manca una caratteristica chiave"
+      ],
+      "It’s too expensive": [
+        "È troppo caro"
+      ],
+      "Other": [
+        "Altro"
       ]
     }
   }

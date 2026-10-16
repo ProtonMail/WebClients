@@ -7082,6 +7082,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Dosiahli ste limit rezervačných slotov (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "We'll get back to you shortly.": [
+        "O chvíľu sa vám ozveme."
       ]
     },
     "info": {
@@ -7843,6 +7846,12 @@
       ],
       "Zoom meeting": [
         "Zoom schôdzka"
+      ],
+      "Please share any feedback to help us improve.": [
+        "Prosím zdieľajte akúkoľvek spätnú väzbu, aby ste nám pomohli zlepšiť sa."
+      ],
+      "Why would you like to cancel?": [
+        "Prečo chcete zrušiť?"
       ]
     },
     "label": {
@@ -10706,6 +10715,9 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Please select the main reason": [
+        "Prosím vyberte hlavný dôvod"
       ]
     },
     "Placeholder for contact group name": {
@@ -13234,6 +13246,12 @@
       ],
       "Your shorter address is now ready": [
         "Vaša skrátená adresa je pripravená"
+      ],
+      "Contact us": [
+        "Kontaktujte nás"
+      ],
+      "Request sent": [
+        "Požiadavka odoslaná"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13977,6 +13995,20 @@
       ],
       "Passcode:": [
         "Prístupový kód:"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Našiel som inú službu, ktorá sa mi páči viac"
+      ],
+      "It’s missing a key feature": [
+        "Nemá kľúčovú funkciu"
+      ],
+      "It’s too expensive": [
+        "Je to príliš drahé"
+      ],
+      "Other": [
+        "Iné"
       ]
     }
   }

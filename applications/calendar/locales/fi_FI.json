@@ -6494,6 +6494,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Olet saavuttanut varausaikojen enimmäismäärän (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })."
+      ],
+      "We'll get back to you shortly.": [
+        "Palaamme asiaan pian."
       ]
     },
     "info": {
@@ -7243,6 +7246,12 @@
       ],
       "Zoom meeting": [
         "Zoom-kokous"
+      ],
+      "Please share any feedback to help us improve.": [
+        "Kerro mielipiteesi ja auta meitä parantamaan."
+      ],
+      "Why would you like to cancel?": [
+        "Miksi haluat perua tilauksen?"
       ]
     },
     "label": {
@@ -9790,6 +9799,9 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "Please select the main reason": [
+        "Valitse ensisijainen syy"
       ]
     },
     "Placeholder for contact group name": {
@@ -12178,6 +12190,12 @@
       ],
       "Your shorter address is now ready": [
         "Lyhyempi osoittesi on nyt valmis"
+      ],
+      "Contact us": [
+        "Ota yhteyttä"
+      ],
+      "Request sent": [
+        "Pyyntö lähetetty"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12824,6 +12842,20 @@
       ],
       "Passcode:": [
         "Tunnuskoodi:"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Löysin toisen palvelun, josta pidän enemmän"
+      ],
+      "It’s missing a key feature": [
+        "Siitä puuttuu olennainen ominaisuus"
+      ],
+      "It’s too expensive": [
+        "Se on liian kallis"
+      ],
+      "Other": [
+        "Muu"
       ]
     }
   }
