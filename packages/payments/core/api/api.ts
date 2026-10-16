@@ -75,12 +75,6 @@ export interface FeedbackDowngradeData {
     Context: 'vpn' | 'mail';
 }
 
-export const deleteSubscription = (data: FeedbackDowngradeData) => ({
-    url: `payments/v5/subscription`,
-    method: 'delete',
-    data,
-});
-
 export enum ProrationMode {
     Default = 0,
     Exact = 1,
