@@ -38,7 +38,8 @@ export const useAdminRolesUI = (): [AdminRolesUIState, boolean] => {
     const loading = loadingUserPermissions || loadingEntitlements || loadingOrganization;
 
     // Admin Roles is not integrated with MSP, hide its UI for now by FF
-    const hideForMSP = organization?.IsSubsidiary && !isAdminRolesWithMspEnabled;
+    const isMspOrganization = organization?.IsSubsidiary || entitlements.hasSubsidiaries;
+    const hideForMSP = isMspOrganization && !isAdminRolesWithMspEnabled;
     if (!userPermissions?.ShowAdminRolesUI || hideForMSP) {
         return [AdminRolesUIState.Hidden, loading];
     }
