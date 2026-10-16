@@ -13,7 +13,8 @@ import {
 import { useCallback, useState } from 'react'
 import { c } from 'ttag'
 import { useApplication } from '~/utils/application-context'
-import { getFullPathFromAncestry, getIsSharedWithMe } from '~/drive-sdk'
+import { getFullPathFromAncestry } from '~/drive-sdk/getFullPathFromAncestry'
+import { getIsSharedWithMe } from '~/drive-sdk/getIsSharedWithMe'
 import { createDocumentItem } from './create-document-items'
 import { useRecentsStore } from './use-recents-store'
 import { getRoleFromHierarchy } from '@proton/docs-core/lib/DriveSDK/getRoleFromHierarchy'
@@ -59,7 +60,6 @@ export function useRecents(drive: ProtonDriveClient) {
               level: 'warning',
               message: 'Missing node while iterating',
               data: {
-                uidsToLoad,
                 missingNodeUid: node.missingUid,
               },
             })
@@ -150,6 +150,7 @@ export function useRecents(drive: ProtonDriveClient) {
             })
           }
 
+          // Known race: documents removed by events while fetching are restored here - fixed by next fetch
           setRecentDocuments(documentItems)
           setInitialized()
           setIsRecentsUpdating(false)
@@ -170,13 +171,13 @@ export function useRecents(drive: ProtonDriveClient) {
   )
 
   const updateRenamedDocumentInCache = useCallback((uniqueId: string, name: string) => {
-    const { recentDocuments, setDocument } = useRecentsStore.getState()
+    const { recentDocuments, updateDocument } = useRecentsStore.getState()
 
     const document = Object.values(recentDocuments).find((item) => {
       return `${item.volumeId}-${item.linkId}` === uniqueId
     })
     if (document) {
-      setDocument({ ...document, name })
+      updateDocument({ ...document, name })
     }
 
     return Promise.resolve() // For backwards compatibility
@@ -184,7 +185,7 @@ export function useRecents(drive: ProtonDriveClient) {
 
   const recentsListener: SDKEventListener = useCallback(async (event: DriveEvent) => {
     const drive = getDrive()
-    const { setDocument, setRecentDocuments, removeChildrenOf, removeDocument } = useRecentsStore.getState()
+    const { updateDocument, removeChildrenOf, removeDocument } = useRecentsStore.getState()
 
     if (event.type === 'node_deleted') {
       removeDocument(event.nodeUid)
@@ -207,7 +208,7 @@ export function useRecents(drive: ProtonDriveClient) {
             // Updated document is not in recents list - ignore
             return
           }
-          setDocument(await loadDocument(drive, event.nodeUid, document))
+          updateDocument(await loadDocument(drive, event.nodeUid, document))
         } else if (node.type === NodeType.Folder) {
           const childrenOfUpdatedFolder: RecentDocumentsItemValue[] = []
 
@@ -222,12 +223,18 @@ export function useRecents(drive: ProtonDriveClient) {
 
           // In case we have children of the updated folder we'll only reload existing nodes
           if (childrenOfUpdatedFolder.length > 0) {
-            const updatedDocuments = await Promise.all(
+            const results = await Promise.allSettled(
               childrenOfUpdatedFolder.map((document) =>
                 loadDocument(drive, generateNodeUid(document.volumeId, document.linkId), document),
               ),
             )
-            setRecentDocuments(updatedDocuments)
+            for (const result of results) {
+              if (result.status === 'fulfilled') {
+                updateDocument(result.value)
+              } else {
+                traceRecentsError(result.reason)
+              }
+            }
           } else {
             // This is probably a folder restored from trash - reload everything
             // Currently not supported
