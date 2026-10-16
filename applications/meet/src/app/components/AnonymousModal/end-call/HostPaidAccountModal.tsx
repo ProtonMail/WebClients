@@ -4,7 +4,7 @@ import { UpsellModalTypes } from '@proton/meet/types/types';
 
 import type { CTAModalBaseProps } from '../shared/types';
 import { EndCallModalShell } from './EndCallModalShell';
-import { LeftMeetingTitle } from './LeftMeetingTitle';
+import { PostCallTitle } from './PostCallTitle';
 
 export const HostPaidAccountModal = ({ open, onClose, rejoin, upsellModalType }: CTAModalBaseProps) => {
     const isExpired = upsellModalType === UpsellModalTypes.MeetingExpiredHostPaid;
@@ -14,7 +14,7 @@ export const HostPaidAccountModal = ({ open, onClose, rejoin, upsellModalType }:
             open={open}
             onClose={onClose}
             rejoin={isExpired ? undefined : rejoin}
-            title={isExpired ? c('Info').t`Meeting time is up` : <LeftMeetingTitle />}
+            title={<PostCallTitle kind={isExpired ? 'timeUp' : 'left'} />}
             subtitle={c('Info').t`Thank you for hosting a premium meeting.`}
             upsellModalType={upsellModalType}
         />

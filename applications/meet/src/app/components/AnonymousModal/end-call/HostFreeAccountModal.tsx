@@ -9,7 +9,7 @@ import { PLANS } from '@proton/payments/core/constants';
 
 import type { CTAModalBaseProps } from '../shared/types';
 import { EndCallModalShell } from './EndCallModalShell';
-import { LeftMeetingTitle } from './LeftMeetingTitle';
+import { PostCallTitle } from './PostCallTitle';
 
 export const HostFreeAccountModal = ({ open, onClose, rejoin, action, upsellModalType }: CTAModalBaseProps) => {
     const goToSettings = useSettingsLink();
@@ -35,7 +35,7 @@ export const HostFreeAccountModal = ({ open, onClose, rejoin, action, upsellModa
                 </Button>
             }
             rejoin={isExpired ? undefined : rejoin}
-            title={isExpired ? c('Info').t`Meeting time is up` : <LeftMeetingTitle />}
+            title={<PostCallTitle kind={isExpired ? 'timeUp' : 'left'} />}
             subtitle={
                 isExpired
                     ? c('Info')

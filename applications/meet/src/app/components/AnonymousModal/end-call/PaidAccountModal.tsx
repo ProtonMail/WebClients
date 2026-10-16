@@ -2,14 +2,14 @@ import { c } from 'ttag';
 
 import type { CTAModalBaseProps } from '../shared/types';
 import { EndCallModalShell } from './EndCallModalShell';
-import { LeftMeetingTitle } from './LeftMeetingTitle';
+import { PostCallTitle } from './PostCallTitle';
 
 export const PaidAccountModal = ({ open, onClose, rejoin }: CTAModalBaseProps) => (
     <EndCallModalShell
         open={open}
         onClose={onClose}
         rejoin={rejoin}
-        title={<LeftMeetingTitle />}
+        title={<PostCallTitle kind="left" />}
         subtitle={c('Info').t`Thank you for joining.`}
     />
 );

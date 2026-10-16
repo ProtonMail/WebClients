@@ -1,13 +1,20 @@
-import { render, screen } from '@testing-library/react';
-import type { Mock } from 'vitest';
+import { Provider } from 'react-redux';
 
-import { useMeetSelector } from '@proton/meet/store/hooks';
+import { configureStore } from '@reduxjs/toolkit';
+import { render, screen } from '@testing-library/react';
+
+import {
+    meetAppStateReducer,
+    setMeetingEndedReason,
+    setPreviousMeeting,
+} from '@proton/meet/store/slices/meetAppStateSlice';
+import type { MeetingEndedReason } from '@proton/meet/store/slices/meetAppStateSlice';
+import { ProtonStoreContext } from '@proton/react-redux-store';
 
 import { MeetingEndedModal } from './MeetingEndedModal';
 
-vi.mock('@proton/meet/store/hooks', () => ({ useMeetSelector: vi.fn() }));
 vi.mock('./EndCallModalShell', () => ({
-    EndCallModalShell: ({ title, subtitle }: { title: string; subtitle: string }) => (
+    EndCallModalShell: ({ title, subtitle }: { title: React.ReactNode; subtitle: string }) => (
         <>
             <h1>{title}</h1>
             <p>{subtitle}</p>
@@ -15,11 +22,18 @@ vi.mock('./EndCallModalShell', () => ({
     ),
 }));
 
-const useMeetSelectorMock = useMeetSelector as unknown as Mock;
+const renderWithReason = (reason: unknown, meetingName?: string) => {
+    const store = configureStore({ reducer: { ...meetAppStateReducer } });
+    store.dispatch(setMeetingEndedReason(reason as MeetingEndedReason | null));
+    if (meetingName) {
+        store.dispatch(setPreviousMeeting({ link: null, name: meetingName }));
+    }
 
-const renderWithReason = (reason: unknown) => {
-    useMeetSelectorMock.mockReturnValue(reason);
-    render(<MeetingEndedModal open onClose={vi.fn()} action={vi.fn()} />);
+    render(
+        <Provider context={ProtonStoreContext} store={store}>
+            <MeetingEndedModal open onClose={vi.fn()} action={vi.fn()} />
+        </Provider>
+    );
 };
 
 describe('MeetingEndedModal', () => {
@@ -47,5 +61,23 @@ describe('MeetingEndedModal', () => {
 
         expect(screen.getByText('Meeting time is up')).toBeInTheDocument();
         expect(screen.getByText('This meeting reached the time limit.')).toBeInTheDocument();
+    });
+
+    it('names the meeting that ended because another meeting is in progress', () => {
+        renderWithReason({ reason: 'AnotherMeetingInProgress', isLocalParticipantHost: true }, 'Design Weekly');
+
+        expect(screen.getByText('Design Weekly has ended')).toBeInTheDocument();
+    });
+
+    it('names the meeting whose time is up', () => {
+        renderWithReason({ reason: 'TimeLimitExceeded', isLocalParticipantHost: true }, 'Design Weekly');
+
+        expect(screen.getByText('Time is up for Design Weekly')).toBeInTheDocument();
+    });
+
+    it('falls back to a generic ended title when there is no reason and no name', () => {
+        renderWithReason(null);
+
+        expect(screen.getByText('Meeting ended')).toBeInTheDocument();
     });
 });
