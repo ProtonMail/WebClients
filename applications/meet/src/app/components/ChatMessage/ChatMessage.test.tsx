@@ -709,7 +709,7 @@ describe('ChatMessage', () => {
             });
         };
 
-        const pickEmoji = async (selection: EmojiMartSelection) => {
+        const openEmojiPicker = async () => {
             const user = userEvent.setup();
 
             await user.click(screen.getByRole('button', { name: 'Insert emoji' }));
@@ -717,10 +717,17 @@ describe('ChatMessage', () => {
             await act(async () => {
                 window.getSelection()?.collapse(screen.getByRole('dialog', { name: 'Emoji picker' }), 0);
             });
+        };
 
+        const chooseEmoji = async (selection: EmojiMartSelection) => {
             await act(async () => {
                 emojiMartMocks.latestPickerProps?.onEmojiSelect(selection);
             });
+        };
+
+        const pickEmoji = async (selection: EmojiMartSelection) => {
+            await openEmojiPicker();
+            await chooseEmoji(selection);
         };
 
         it('shows a typed token as its image and keeps the token as the value', async () => {
@@ -780,6 +787,25 @@ describe('ChatMessage', () => {
             expect(screen.queryByRole('dialog', { name: 'Emoji picker' })).not.toBeInTheDocument();
         });
 
+        it('inserts a picked emoji at the caret when someone joins while the picker is open', async () => {
+            const store = createMockStore();
+            renderComposer(vi.fn(), store);
+
+            await type('hello');
+            await placeCaret(2);
+            await openEmojiPicker();
+
+            await act(async () => {
+                store.dispatch(
+                    mergeParticipantDecryptedNameMap({ 'dddddddd-1111-2222-3333-444444444444': 'Dana Lee' })
+                );
+            });
+
+            await chooseEmoji(FIRE_SELECTION);
+
+            expect(getValue()).toBe('he🔥llo');
+        });
+
         it('refuses an emoji that would not fit and says why', async () => {
             renderComposer();
 
@@ -794,5 +820,25 @@ describe('ChatMessage', () => {
             );
             expect(screen.queryByRole('dialog', { name: 'Emoji picker' })).not.toBeInTheDocument();
         });
+
+        it.each([
+            { kind: 'Lumo', selection: CHEFS_KISS_SELECTION, inserted: '[lumo_emoji:chefs-kiss]' },
+            { kind: 'native', selection: FIRE_SELECTION, inserted: '🔥' },
+        ])(
+            'refuses a $kind emoji that would not fit once the trailing space before it counts',
+            async ({ selection, inserted }) => {
+                renderComposer();
+
+                const message = `${'a'.repeat(CHAT_MESSAGE_MAX_LENGTH - inserted.length)} `;
+
+                await type(message);
+                await pickEmoji(selection);
+
+                expect(getValue()).toBe(message);
+                expect(createNotification).toHaveBeenCalledWith(
+                    expect.objectContaining({ key: 'chat-emoji-too-long', type: 'error' })
+                );
+            }
+        );
     });
 });

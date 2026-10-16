@@ -280,7 +280,7 @@ export const ChatMessage = ({
     });
 
     const handleEmojiSelect = useStableCallback((text: string) => {
-        if (trimmedMessageLength + text.length > CHAT_MESSAGE_MAX_LENGTH) {
+        if (currentMessage.current.length + text.length > CHAT_MESSAGE_MAX_LENGTH) {
             createNotification({
                 key: 'chat-emoji-too-long',
                 type: 'error',
