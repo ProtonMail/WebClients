@@ -1,6 +1,6 @@
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
-import { type ItemImportIntent, ItemState } from '../../../../types';
+import { type ItemImportIntent, ItemState, type MaybeNull } from '../../../../types';
 import { AutofillMode } from '../../../../types/protobuf';
 import { partition } from '../../../../utils/array/partition';
 import { prop } from '../../../../utils/fp/lens';
@@ -8,11 +8,11 @@ import { logger } from '../../../../utils/logger';
 import { semver } from '../../../../utils/string/semver';
 import { uniqueId } from '../../../../utils/string/unique-id';
 import { archivePath } from '../../../export/archive';
-import type { ExportData, ExportedItem } from '../../../export/types';
+import type { ExportData, ExportedFolder, ExportedItem } from '../../../export/types';
 import { obfuscateItem } from '../../../items/item.obfuscation';
 import { ImportProviderError } from '../../helpers/error';
 import { sanitizeAutofillUrls } from '../../helpers/transformers';
-import type { ImportReaderResult, ImportVault } from '../../types';
+import type { ImportFolder, ImportReaderResult, ImportVault } from '../../types';
 
 type ProtonPassReaderPayload = {
     /** list of current email aliases so we don't import
@@ -22,6 +22,29 @@ type ProtonPassReaderPayload = {
     passphrase?: string;
     userId?: string;
     onPassphrase: () => Promise<string>;
+};
+
+/** Orders folders parent-first, as the export order is not guaranteed.
+ * A folder whose parent is missing from the export moves to the vault root. */
+const getImportFolders = (exportedFolders: ExportedFolder[]): ImportFolder[] => {
+    const byId = new Map(exportedFolders.map((folder) => [folder.folderId, folder]));
+
+    const children = new Map<MaybeNull<string>, ImportFolder[]>();
+
+    for (const folder of byId.values()) {
+        const parentExported = folder.parentFolderId !== null && byId.has(folder.parentFolderId);
+        const parentId = parentExported ? folder.parentFolderId : null;
+        const siblings = children.get(parentId) ?? [];
+        siblings.push({ id: folder.folderId, name: folder.name, parentId });
+        children.set(parentId, siblings);
+    }
+
+    const withDescendants = (folder: ImportFolder): ImportFolder[] => [
+        folder,
+        ...(children.get(folder.id) ?? []).flatMap(withDescendants),
+    ];
+
+    return (children.get(null) ?? []).flatMap(withDescendants);
 };
 
 export const readProtonPassJSON = (
@@ -41,14 +64,16 @@ export const readProtonPassJSON = (
             item.data.type === 'alias' ? userId === payload.userId : true;
 
         const vaults = Object.values(parsedExport.vaults).map<{ vault: ImportVault; ignored: string[] }>(
-            ({ name, items }) => {
+            ({ name, folders = [], items }) => {
                 const [itemsToImport, ignoredAliases] = partition(items, aliasOwnedByUser);
+                const orderedFolders = getImportFolders(folders);
+                const folderIds = new Set(orderedFolders.map(prop('id')));
 
                 return {
                     vault: {
                         name: name,
                         shareId: null,
-                        folders: [],
+                        folders: orderedFolders,
                         items: itemsToImport.reduce<ItemImportIntent[]>((acc, item) => {
                             /* Don't import existing aliases */
                             if (
@@ -92,6 +117,7 @@ export const readProtonPassJSON = (
                                         : {}),
                                 }),
                                 trashed: item.state === ItemState.Trashed,
+                                folderId: item.folderId && folderIds.has(item.folderId) ? item.folderId : null,
                                 createTime: item.createTime,
                                 modifyTime: item.modifyTime,
                                 files: attachments

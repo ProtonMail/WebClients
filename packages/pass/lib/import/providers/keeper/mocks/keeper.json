@@ -1,5 +1,15 @@
 {
-    "shared_folders": [],
+    "shared_folders": [
+        {
+            "path": "shared1"
+        },
+        {
+            "path": "shared2"
+        },
+        {
+            "path": "shared3\\nested"
+        }
+    ],
     "records": [
         {
             "uid": 1,
@@ -235,6 +245,49 @@
                 "$text:custom field:1": "custom value"
             },
             "password": "password123"
+        },
+        {
+            "uid": 20,
+            "title": "login of private and shared folders",
+            "$type": "login",
+            "login": "john",
+            "password": "password",
+            "folders": [
+                {
+                    "shared_folder": "shared1",
+                    "folder": "sub1",
+                    "can_edit": true,
+                    "can_share": true
+                },
+                {
+                    "folder": "private1"
+                }
+            ]
+        },
+        {
+            "uid": 21,
+            "title": "login of shared2",
+            "$type": "login",
+            "login": "john",
+            "password": "password",
+            "folders": [
+                {
+                    "shared_folder": "shared2"
+                }
+            ]
+        },
+        {
+            "uid": 22,
+            "title": "login of shared3 subfolder",
+            "$type": "login",
+            "login": "john",
+            "password": "password",
+            "folders": [
+                {
+                    "shared_folder": "shared3\\nested",
+                    "folder": "sub3"
+                }
+            ]
         }
     ]
 }

@@ -1,14 +1,13 @@
 import { c } from 'ttag';
 
 import capitalize from '@proton/utils/capitalize';
-import lastItem from '@proton/utils/lastItem';
 
 import type { ItemImportIntent } from '../../../../types';
 import { WifiSecurity } from '../../../../types/protobuf';
-import { groupByKey } from '../../../../utils/array/group-by-key';
 import { logger } from '../../../../utils/logger';
 import { readCSV } from '../../helpers/csv.reader';
 import { ImportProviderError } from '../../helpers/error';
+import { createImportFolderTree } from '../../helpers/folders';
 import {
     getEmailOrUsername,
     getImportedVaultName,
@@ -91,7 +90,7 @@ const processCustomItem = (item: LastPassItem): ItemImportIntent<'custom'> =>
 export const readLastPassData = async (file: File): Promise<ImportReaderResult> => {
     const ignored: string[] = [];
     const warnings: string[] = [];
-    const vaults: ImportVault[] = [];
+    const vaultItems: ItemImportIntent[] = [];
 
     try {
         const data = await file.text();
@@ -107,50 +106,37 @@ export const readLastPassData = async (file: File): Promise<ImportReaderResult> 
                 ),
         });
 
-        const groupedByVault = groupByKey(
-            result.items.map((item) => ({
-                ...item,
-                grouping: item.grouping ? lastItem(item.grouping?.split('\\')) : '',
-            })),
-            'grouping'
-        );
+        const tree = createImportFolderTree({ separator: '\\' });
 
-        for (const vaultItems of groupedByVault) {
-            if (vaultItems.length === 0) continue;
-            const items: ItemImportIntent[] = [];
+        for (const item of result.items) {
+            const folderId = tree.add(item.grouping);
+            const itemType = extractLastPassFieldValue(item?.extra, 'NoteType');
+            const type = capitalize(itemType ?? c('Label').t`Unknown`);
+            const title = item?.name ?? '';
 
-            for (const item of vaultItems) {
-                const itemType = extractLastPassFieldValue(item?.extra, 'NoteType');
-                const type = capitalize(itemType ?? c('Label').t`Unknown`);
-                const title = item?.name ?? '';
+            try {
+                const value = await (async (): Promise<ItemImportIntent> => {
+                    const isLoginItem = item.url !== 'http://sn';
+                    if (isLoginItem) return processLoginItem(item);
+                    if (!itemType) return processNoteItem(item);
+                    if (itemType === LastPassNoteType.CREDIT_CARD) return processCreditCardItem(item);
+                    if (itemType === LastPassNoteType.ADDRESS) return processIdentityItem(item);
+                    if (itemType === LastPassNoteType.SSH_KEY) return processSshItem(item);
+                    if (itemType === LastPassNoteType.WIFI_PASSWORD) return processWifiItem(item);
+                    return processCustomItem(item);
+                })();
 
-                try {
-                    const value = await (async (): Promise<ItemImportIntent> => {
-                        const isLoginItem = item.url !== 'http://sn';
-                        if (isLoginItem) return processLoginItem(item);
-                        if (!itemType) return processNoteItem(item);
-                        if (itemType === LastPassNoteType.CREDIT_CARD) return processCreditCardItem(item);
-                        if (itemType === LastPassNoteType.ADDRESS) return processIdentityItem(item);
-                        if (itemType === LastPassNoteType.SSH_KEY) return processSshItem(item);
-                        if (itemType === LastPassNoteType.WIFI_PASSWORD) return processWifiItem(item);
-                        return processCustomItem(item);
-                    })();
-
-                    if (!value) ignored.push(`[${type}] ${title}`);
-                    else items.push(value);
-                } catch (err) {
-                    ignored.push(`[${type}] ${title}`);
-                    logger.warn('[Importer::LastPass]', err);
-                }
+                if (!value) ignored.push(`[${type}] ${title}`);
+                else vaultItems.push({ ...value, folderId });
+            } catch (err) {
+                ignored.push(`[${type}] ${title}`);
+                logger.warn('[Importer::LastPass]', err);
             }
-
-            vaults.push({
-                name: getImportedVaultName(vaultItems?.[0].grouping),
-                shareId: null,
-                folders: [],
-                items,
-            });
         }
+
+        const vaults: ImportVault[] = [
+            { name: getImportedVaultName(), shareId: null, folders: tree.folders, items: vaultItems },
+        ];
 
         return { vaults, ignored, warnings };
     } catch (e) {

@@ -5,6 +5,7 @@ export enum NordPassType {
     CREDIT_CARD = 'credit_card',
     IDENTITY = 'identity',
     NOTE = 'note',
+    FOLDER = 'folder',
 }
 
 export type NordPassItem = {
