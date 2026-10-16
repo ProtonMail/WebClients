@@ -27,11 +27,12 @@ const jestConfig: Config = {
     preset: '@proton/jest-swc-preset',
     transform,
     transformIgnorePatterns: [
-        'node_modules/(?!(\\.pnpm|@proton/shared|@proton/components|@protontech/telemetry|@protontech/logger|@protontech/crypto|openpgp|@protontech/openpgp|@openpgp/web-stream-tools|otpauth|@protontech/pass-rust-core/ui|@protontech/pass-rust-core/worker|@protontech/autofill|@protontech/fathom|@protontech/ml-inference|@preact/signals-core|@scure/base)/)',
+        'node_modules/(?!(\\.pnpm|@proton/shared|@proton/components|@protontech/telemetry|@protontech/logger|@protontech/crypto|openpgp|@protontech/openpgp|@openpgp/web-stream-tools|otpauth|@protontech/pass-rust-core/ui|@protontech/pass-rust-core/worker|@protontech/autofill|@protontech/fathom|@protontech/ml-inference|@preact/signals-core|@scure/base|@protontech/mutex-browser|msw|@mswjs|until-async)/)',
     ],
     coverageReporters: ['text-summary', 'json'],
     reporters: ['default', ['jest-junit', { suiteNameTemplate: '{filepath}', outputName: 'test-report.xml' }]],
     testTimeout: 30000,
+    resolver: './jest.resolver.js',
     moduleNameMapper: {
         '\\.(css|scss|less)$': '@proton/components/__mocks__/styleMock.js',
         '\\.raw.scss$': '@proton/components/__mocks__/styleMock.js',
