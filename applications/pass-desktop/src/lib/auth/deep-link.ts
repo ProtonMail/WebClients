@@ -29,6 +29,12 @@ export const getLoginUrl = (hash: string) => `${MAIN_WINDOW_WEBPACK_ENTRY}#/logi
  * in the external browser. */
 export const getExternalLoginUrl = () => `${MAIN_WINDOW_WEBPACK_ENTRY}#/auth/external`;
 
+/** The app uses hash routing: when only the hash changes, `loadURL` is a
+ * same-document navigation and the running app keeps its state. Reloading
+ * forces a fresh boot on the target route. */
+export const loadWithReload = (ctx: PassElectronContext, url: string) =>
+    ctx.window?.loadURL(url).then(() => ctx.window?.reload());
+
 /** Test if deep links are supported by this OS/installation.
  * Fire-and-forget: `deepLinkSupported` only flips to `true` once the OS
  * round-trips `protonpass://test` back through `open-url`/`second-instance`
@@ -87,11 +93,7 @@ export const handleDeepLink = (url: string, ctx: PassElectronContext) => {
 
         if (selector !== null) consumedSelectors.add(selector);
 
-        void ctx.window
-            ?.loadURL(getLoginUrl(hash))
-            // Force a page reload so even if only the hash is changed
-            // we're ensured the new login will be considered as new
-            .then(() => ctx.window?.reload());
+        void loadWithReload(ctx, getLoginUrl(hash));
         return;
     }
 

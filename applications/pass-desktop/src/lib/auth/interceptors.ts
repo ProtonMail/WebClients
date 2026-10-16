@@ -16,6 +16,7 @@ import {
     getLoginUrl,
     handleDeepLink,
     isDeepLinkSupported,
+    loadWithReload,
 } from './deep-link';
 
 /** `RememberMode.HiddenEnabled` from the account app */
@@ -45,7 +46,7 @@ export const authInterceptors = (app: Electron.App, ctx: PassElectronContext) =>
             ) {
                 evt.preventDefault();
                 logger.debug(`[will-navigate] allow (external): ${url.toString()}`);
-                void ctx.window?.loadURL(getExternalLoginUrl());
+                void loadWithReload(ctx, getExternalLoginUrl());
                 return shell.openExternal(url.href).catch(noop);
             }
 
@@ -72,7 +73,7 @@ export const authInterceptors = (app: Electron.App, ctx: PassElectronContext) =>
 
                 logger.info(`[will-navigate] external login with redirect: ${url.href}`);
 
-                void ctx.window?.loadURL(getExternalLoginUrl());
+                void loadWithReload(ctx, getExternalLoginUrl());
 
                 return shell.openExternal(url.href).catch(noop);
             }
