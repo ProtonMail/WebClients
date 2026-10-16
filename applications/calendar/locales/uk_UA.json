@@ -6954,6 +6954,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Ви досягли ліміту слотів для бронювання (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "We'll get back to you shortly.": [
+        "Ми незабаром з вами зв'яжемося."
       ]
     },
     "info": {
@@ -7703,6 +7706,12 @@
       ],
       "Zoom meeting": [
         "Зустріч Zoom"
+      ],
+      "Please share any feedback to help us improve.": [
+        "Поділіться своїм відгуком, щоб допомогти нам вдосконалюватися."
+      ],
+      "Why would you like to cancel?": [
+        "Чому ви хочете скасувати?"
       ]
     },
     "label": {
@@ -10397,6 +10406,9 @@
       ],
       "ZIP code": [
         "Поштовий індекс"
+      ],
+      "Please select the main reason": [
+        "Оберіть основну причину"
       ]
     },
     "Placeholder for contact group name": {
@@ -12922,6 +12934,12 @@
       ],
       "Your shorter address is now ready": [
         "Ваша коротша адреса готова"
+      ],
+      "Contact us": [
+        "Зв'яжіться з нами"
+      ],
+      "Request sent": [
+        "Запит надіслано"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13662,6 +13680,20 @@
       ],
       "Passcode:": [
         "Код доступу"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Я використовую інший сервіс, який мені більше подобається"
+      ],
+      "It’s missing a key feature": [
+        "Відсутня важлива функція"
+      ],
+      "It’s too expensive": [
+        "Занадто дорого"
+      ],
+      "Other": [
+        "Інше"
       ]
     }
   }

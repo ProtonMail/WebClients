@@ -6912,6 +6912,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "您已达到预约时段数量上限 (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "We'll get back to you shortly.": [
+        "我们会尽快回复您。"
       ]
     },
     "info": {
@@ -7655,6 +7658,12 @@
       ],
       "Zoom meeting": [
         "Zoom 会议"
+      ],
+      "Please share any feedback to help us improve.": [
+        "请分享任何反馈意见，以帮助我们改进工作。"
+      ],
+      "Why would you like to cancel?": [
+        "您为什么想要取消？"
       ]
     },
     "label": {
@@ -10305,6 +10314,9 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "Please select the main reason": [
+        "请选择主要原因"
       ]
     },
     "Placeholder for contact group name": {
@@ -12671,6 +12683,12 @@
       ],
       "Your shorter address is now ready": [
         "您的较短地址现已准备就绪"
+      ],
+      "Contact us": [
+        "联系我们"
+      ],
+      "Request sent": [
+        "请求已发送"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13282,6 +13300,20 @@
       ],
       "Passcode:": [
         "密码："
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "不如别的产品好用"
+      ],
+      "It’s missing a key feature": [
+        "缺少一个关键功能"
+      ],
+      "It’s too expensive": [
+        "价格太贵"
+      ],
+      "Other": [
+        "其它"
       ]
     }
   }

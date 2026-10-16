@@ -7007,6 +7007,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Έχετε φτάσει στο όριο των διαθέσιμων θέσεων κράτησης (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "We'll get back to you shortly.": [
+        "Θα επικοινωνήσουμε μαζί σας σύντομα."
       ]
     },
     "info": {
@@ -7756,6 +7759,12 @@
       ],
       "Zoom meeting": [
         "Τηλεδιάσκεψη Zoom"
+      ],
+      "Please share any feedback to help us improve.": [
+        "Μοιραστείτε τυχόν σχόλια για να μας βοηθήσετε να βελτιωθούμε."
+      ],
+      "Why would you like to cancel?": [
+        "Γιατί θέλετε να ακυρώσετε;"
       ]
     },
     "label": {
@@ -10481,6 +10490,9 @@
       ],
       "ZIP code": [
         "Ταχυδρομικός κώδικας"
+      ],
+      "Please select the main reason": [
+        "Παρακαλούμε επιλέξτε τον κύριο λόγο"
       ]
     },
     "Placeholder for contact group name": {
@@ -12902,6 +12914,12 @@
       ],
       "Your shorter address is now ready": [
         "Η συντομότερη διεύθυνσή σας είναι τώρα έτοιμη"
+      ],
+      "Contact us": [
+        "Επικοινωνήστε μαζί μας"
+      ],
+      "Request sent": [
+        "Το αίτημα εστάλη"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13557,6 +13575,20 @@
       ],
       "Passcode:": [
         "Κωδικός πρόσβασης:"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Βρήκα μια άλλη υπηρεσία που μου αρέσει περισσότερο"
+      ],
+      "It’s missing a key feature": [
+        "Λείπει μια βασική δυνατότητα"
+      ],
+      "It’s too expensive": [
+        "Είναι πολύ ακριβό"
+      ],
+      "Other": [
+        "Άλλο"
       ]
     }
   }

@@ -6765,6 +6765,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "예약 슬롯 한도에 도달했습니다 (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "We'll get back to you shortly.": [
+        "곧 돌아오겠습니다."
       ]
     },
     "info": {
@@ -7508,6 +7511,12 @@
       ],
       "Zoom meeting": [
         "Zoom 화상 회의"
+      ],
+      "Please share any feedback to help us improve.": [
+        "기능을 향상시키기 위해 피드백을 공유해 주세요."
+      ],
+      "Why would you like to cancel?": [
+        "취소하려는 이유가 무엇인가요?"
       ]
     },
     "label": {
@@ -10107,6 +10116,9 @@
       ],
       "ZIP code": [
         "우편 번호"
+      ],
+      "Please select the main reason": [
+        "주요 사유를 선택해 주세요."
       ]
     },
     "Placeholder for contact group name": {
@@ -12470,6 +12482,12 @@
       ],
       "Your shorter address is now ready": [
         "짧은 주소가 준비되었습니다"
+      ],
+      "Contact us": [
+        "문의"
+      ],
+      "Request sent": [
+        "요청 발송완료"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13081,6 +13099,20 @@
       ],
       "Passcode:": [
         "비밀번호:"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "더 낫다고 생각되는 서비스를 찾았습니다"
+      ],
+      "It’s missing a key feature": [
+        "핵심 기능이 없습니다"
+      ],
+      "It’s too expensive": [
+        "너무 비쌉니다"
+      ],
+      "Other": [
+        "기타"
       ]
     }
   }

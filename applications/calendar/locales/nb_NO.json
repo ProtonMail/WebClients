@@ -6857,6 +6857,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Du har nådd grensen for antall bestillingsplasser (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "We'll get back to you shortly.": [
+        "Vi vil komme tilbake til deg innen kort tid."
       ]
     },
     "info": {
@@ -7606,6 +7609,12 @@
       ],
       "Zoom meeting": [
         "Zoom-møte"
+      ],
+      "Please share any feedback to help us improve.": [
+        "Gjerne del eventuelle tilbakemeldinger for å hjelpe oss med å bli bedre."
+      ],
+      "Why would you like to cancel?": [
+        "Hvorfor ønsker du å avbryte?"
       ]
     },
     "label": {
@@ -10211,6 +10220,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Please select the main reason": [
+        "Velg hovedårsaken"
       ]
     },
     "Placeholder for contact group name": {
@@ -12629,6 +12641,12 @@
       ],
       "Your shorter address is now ready": [
         "Den kortere adressen din er nå klar"
+      ],
+      "Contact us": [
+        "Kontakt oss"
+      ],
+      "Request sent": [
+        "Forespørsel sendt"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13281,6 +13299,20 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Jeg fant en annen tjeneste som jeg liker bedre"
+      ],
+      "It’s missing a key feature": [
+        "Det mangler en nøkkelfunksjon"
+      ],
+      "It’s too expensive": [
+        "Det er for dyrt"
+      ],
+      "Other": [
+        "Annen"
       ]
     }
   }
