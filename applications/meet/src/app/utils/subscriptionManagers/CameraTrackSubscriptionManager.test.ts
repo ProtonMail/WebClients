@@ -9,6 +9,10 @@ vi.mock('@proton/shared/lib/helpers/promise', () => ({
     wait: () => Promise.resolve(),
 }));
 
+vi.mock('@proton/shared/lib/helpers/dom', () => ({
+    isDocumentVisible: () => true,
+}));
+
 const defineWritable = (obj: any, key: string, value: any) => {
     Object.defineProperty(obj, key, {
         value,
@@ -407,6 +411,174 @@ describe('CameraTrackSubscriptionCache', () => {
         // pub2 should not be touched since it was already subscribed
         expect(pub2SetSubscribedSpy).not.toHaveBeenCalled();
         expect(pub2SetEnabledSpy).not.toHaveBeenCalled();
+    });
+
+    it('should reset a held track that decoded no new frame between two reconciles', async () => {
+        const manager = new CameraTrackSubscriptionManager(10, mockRoom);
+        manager.setPolicy(lowQualityPolicy);
+        manager.setAllowResettingFrozenVideoTracks(true);
+
+        const pub = createCameraPublication('track-1');
+        manager.register(pub, 'p1');
+        await waitFor(() => {
+            expect(pub.isSubscribed).toBe(true);
+            expect(pub.isEnabled).toBe(true);
+        });
+
+        let framesDecoded = 10;
+        defineWritable(pub, 'track', {
+            receiver: {
+                getStats: async () => new Map([['inbound', { type: 'inbound-rtp', framesDecoded }]]),
+            },
+        });
+        const setSubscribedSpy = vi.spyOn(pub, 'setSubscribed');
+
+        manager.reconcileCameraTracks();
+        await flushPendingWork();
+        framesDecoded = 20;
+        manager.reconcileCameraTracks();
+        await flushPendingWork();
+        expect(setSubscribedSpy).not.toHaveBeenCalled();
+
+        manager.reconcileCameraTracks();
+        await flushPendingWork();
+        await waitFor(() => {
+            expect(setSubscribedSpy).toHaveBeenCalledWith(false);
+            expect(setSubscribedSpy).toHaveBeenLastCalledWith(true);
+            expect(pub.isEnabled).toBe(true);
+        });
+    });
+
+    it('should stop resetting a track that stays frozen after the maximum number of resets', async () => {
+        const manager = new CameraTrackSubscriptionManager(10, mockRoom);
+        manager.setPolicy(lowQualityPolicy);
+        manager.setAllowResettingFrozenVideoTracks(true);
+
+        const pub = createCameraPublication('track-1');
+        manager.register(pub, 'p1');
+        await waitFor(() => {
+            expect(pub.isSubscribed).toBe(true);
+        });
+
+        defineWritable(pub, 'track', {
+            receiver: {
+                getStats: async () => new Map([['inbound', { type: 'inbound-rtp', framesDecoded: 10 }]]),
+            },
+        });
+        const setSubscribedSpy = vi.spyOn(pub, 'setSubscribed');
+
+        for (let i = 0; i < 10; i++) {
+            manager.reconcileCameraTracks();
+            await flushPendingWork();
+        }
+
+        expect(setSubscribedSpy.mock.calls.filter(([subscribed]) => subscribed === false)).toHaveLength(3);
+    });
+
+    it('should not reset a frozen track that the server paused', async () => {
+        const manager = new CameraTrackSubscriptionManager(10, mockRoom);
+        manager.setPolicy(lowQualityPolicy);
+        manager.setAllowResettingFrozenVideoTracks(true);
+
+        const pub = createCameraPublication('track-1');
+        manager.register(pub, 'p1');
+        await waitFor(() => {
+            expect(pub.isSubscribed).toBe(true);
+        });
+
+        defineWritable(pub, 'track', {
+            streamState: Track.StreamState.Paused,
+            receiver: {
+                getStats: async () => new Map([['inbound', { type: 'inbound-rtp', framesDecoded: 10 }]]),
+            },
+        });
+        const setSubscribedSpy = vi.spyOn(pub, 'setSubscribed');
+
+        manager.reconcileCameraTracks();
+        await flushPendingWork();
+        manager.reconcileCameraTracks();
+        await flushPendingWork();
+
+        expect(setSubscribedSpy).not.toHaveBeenCalled();
+    });
+
+    it('should not reset a frozen track when resetting frozen tracks is not allowed', async () => {
+        const manager = new CameraTrackSubscriptionManager(10, mockRoom);
+        manager.setPolicy(lowQualityPolicy);
+
+        const pub = createCameraPublication('track-1');
+        manager.register(pub, 'p1');
+        await waitFor(() => {
+            expect(pub.isSubscribed).toBe(true);
+        });
+
+        defineWritable(pub, 'track', {
+            receiver: {
+                getStats: async () => new Map([['inbound', { type: 'inbound-rtp', framesDecoded: 10 }]]),
+            },
+        });
+        const setSubscribedSpy = vi.spyOn(pub, 'setSubscribed');
+
+        manager.reconcileCameraTracks();
+        await flushPendingWork();
+        manager.reconcileCameraTracks();
+        await flushPendingWork();
+
+        expect(setSubscribedSpy).not.toHaveBeenCalled();
+    });
+
+    it('should not reset a frozen track that is disabled', async () => {
+        const manager = new CameraTrackSubscriptionManager(10, mockRoom);
+        manager.setPolicy(lowQualityPolicy);
+        manager.setAllowResettingFrozenVideoTracks(true);
+
+        const pub = createCameraPublication('track-1');
+        manager.register(pub, 'p1');
+        await waitFor(() => {
+            expect(pub.isSubscribed).toBe(true);
+        });
+
+        defineWritable(pub, 'isEnabled', false);
+        defineWritable(pub, 'track', {
+            receiver: {
+                getStats: async () => new Map([['inbound', { type: 'inbound-rtp', framesDecoded: 10 }]]),
+            },
+        });
+        const setSubscribedSpy = vi.spyOn(pub, 'setSubscribed');
+
+        manager.reconcileCameraTracks();
+        await flushPendingWork();
+        manager.reconcileCameraTracks();
+        await flushPendingWork();
+
+        expect(setSubscribedSpy).not.toHaveBeenCalled();
+    });
+
+    it('should not reset a frozen track that is muted', async () => {
+        const manager = new CameraTrackSubscriptionManager(10, mockRoom);
+        manager.setPolicy(lowQualityPolicy);
+        manager.setAllowResettingFrozenVideoTracks(true);
+
+        const pub = createCameraPublication('track-1');
+        manager.register(pub, 'p1');
+        await waitFor(() => {
+            expect(pub.isSubscribed).toBe(true);
+        });
+
+        defineWritable(pub, 'isMuted', true);
+        defineWritable(pub, 'track', {
+            receiver: {
+                getStats: async () => new Map([['inbound', { type: 'inbound-rtp', framesDecoded: 10 }]]),
+            },
+        });
+        const setSubscribedSpy = vi.spyOn(pub, 'setSubscribed');
+
+        manager.reconcileCameraTracks();
+        await flushPendingWork();
+        manager.reconcileCameraTracks();
+        await flushPendingWork();
+
+        expect(setSubscribedSpy).not.toHaveBeenCalled();
     });
 
     it('should not reconcile camera tracks when room is not connected', () => {
