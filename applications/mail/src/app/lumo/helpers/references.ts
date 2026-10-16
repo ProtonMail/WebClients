@@ -18,12 +18,8 @@ export const resolveId = (reference: string, references: ReferenceRegistry): str
     return id;
 };
 
-/**
- * Resolve a reference the caller already knows the KIND of. The registry is one flat map across kinds, so
- * an `email-…` passed where a folder belongs would otherwise resolve to a message id and navigate the
- * mailbox to a nonsense route. Throws a {@link ToolInputError} the model can act on instead.
- */
-export const resolveTypedId = (reference: string, kinds: ReferenceKind[], references: ReferenceRegistry): string => {
+/** The registry-free half of {@link resolveTypedId}: rejects a reference of the wrong kind by its prefix. */
+export const assertReferenceKind = (reference: string, kinds: ReferenceKind[]): void => {
     if (!kinds.some((kind) => reference.startsWith(`${kind}-`))) {
         throw new ToolInputError(
             `"${reference}" is not a ${kinds.join(' or ')} reference. Re-read the ${kinds.join(
@@ -31,6 +27,15 @@ export const resolveTypedId = (reference: string, kinds: ReferenceKind[], refere
             )} list for valid ones.`
         );
     }
+};
+
+/**
+ * Resolve a reference the caller already knows the KIND of. The registry is one flat map across kinds, so
+ * an `email-…` passed where a folder belongs would otherwise resolve to a message id and navigate the
+ * mailbox to a nonsense route. Throws a {@link ToolInputError} the model can act on instead.
+ */
+export const resolveTypedId = (reference: string, kinds: ReferenceKind[], references: ReferenceRegistry): string => {
+    assertReferenceKind(reference, kinds);
     return resolveId(reference, references);
 };
 

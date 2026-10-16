@@ -1,3 +1,5 @@
+import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
+import type { ToolDefinition } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
 import type { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import type { MessageState, PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
@@ -27,6 +29,18 @@ export const decryptedParent = (id: string): MessageState =>
         data: { ID: id, Subject: 'Booking', Sender: { Address: 'bob@example.com', Name: 'Bob' } },
         messageDocument: { initialized: true, document: window.document.createElement('div') },
     }) as unknown as MessageState;
+
+/** What `checkParams` threw; the engine only turns a ToolInputError into an error for the model. */
+export const checkParamsRejection = <Params>(definition: ToolDefinition<Params>, params: Record<string, any>) => {
+    let thrown: unknown;
+    try {
+        definition.checkParams!(params as Params);
+    } catch (error) {
+        thrown = error;
+    }
+    expect(thrown).toBeInstanceOf(ToolInputError);
+    return (thrown as ToolInputError).message;
+};
 
 interface HarnessOptions {
     messages?: Record<string, MessageState>;

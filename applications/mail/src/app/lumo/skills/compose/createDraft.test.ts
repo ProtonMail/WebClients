@@ -5,9 +5,9 @@ import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 
 import { DraftKind } from '../../helpers/draftKind';
 import { conversationReferenceFor } from '../../helpers/references';
-import { ADA, composeHarness, decryptedParent } from './compose.test.helpers';
+import { ADA, checkParamsRejection, composeHarness, decryptedParent } from './compose.test.helpers';
 import type { CreateDraftParams } from './createDraft';
-import { createCreateDraftHandler } from './createDraft';
+import { createCreateDraftHandler, createDraftDefinition } from './createDraft';
 
 const harness = (options?: Parameters<typeof composeHarness>[0]) => {
     const { deps, references, ...recorded } = composeHarness(options);
@@ -66,12 +66,12 @@ describe('create_draft', () => {
         ]);
     });
 
-    it('rejects a recipient that is neither an address nor a contact reference', async () => {
-        const { create } = harness();
+    it('hands compose the body without its surrounding whitespace', async () => {
+        const { create, composed } = harness();
 
-        await expect(create({ kind: DraftKind.NEW, to: ['Ada'], body: 'Hello' })).rejects.toThrow(
-            'neither a valid email address nor a contact-… reference'
-        );
+        await create({ kind: DraftKind.NEW, to: ['grace@example.com'], body: '\n  Hello  \n' });
+
+        expect(composed[0].bodyBeforeQuote).toBe('Hello');
     });
 
     it('rejects a contact reference the address book no longer holds', async () => {
@@ -174,28 +174,6 @@ describe('create_draft', () => {
         expect(composed).toEqual([]);
     });
 
-    it('requires the answered email on a reply', async () => {
-        const { create } = harness();
-
-        await expect(create({ kind: DraftKind.REPLY, body: 'Yes' })).rejects.toThrow('needs `answers`');
-    });
-
-    it('rejects the fields a reply inherits, naming them', async () => {
-        const parent = decryptedParent('MESSAGE_1');
-        const { create, references } = harness({ messages: { MESSAGE_1: parent } });
-        const answers = references.referenceFor('email', 'MESSAGE_1');
-
-        await expect(
-            create({
-                kind: DraftKind.REPLY,
-                answers,
-                to: ['grace@example.com'],
-                subject: 'Re: Booking',
-                body: 'Yes',
-            })
-        ).rejects.toThrow('so to, subject cannot be set on this call');
-    });
-
     it('sets recipients on a forward via the composer store', async () => {
         const parent = decryptedParent('MESSAGE_1');
         const { create, references, readdressed } = harness({ messages: { MESSAGE_1: parent } });
@@ -212,29 +190,69 @@ describe('create_draft', () => {
         ]);
     });
 
-    it('rejects subject on a forward, which inherits it', async () => {
-        const parent = decryptedParent('MESSAGE_1');
-        const { create, references } = harness({ messages: { MESSAGE_1: parent } });
-        const answers = references.referenceFor('email', 'MESSAGE_1');
+    /** The engine runs these before the confirm card, so a call that fails one never shows the user a card. */
+    describe('checking the arguments before the confirm card', () => {
+        const rejectionOf = (params: Record<string, any>) => {
+            return checkParamsRejection(createDraftDefinition, params);
+        };
 
-        await expect(
-            create({ kind: DraftKind.FORWARD, answers, subject: 'Custom subject', body: 'FYI' })
-        ).rejects.toThrow('subject cannot be set on this call');
-    });
-
-    it('rejects an answered email on a new message', async () => {
-        const { create, references } = harness();
-        const answers = references.referenceFor('email', 'MESSAGE_1');
-
-        await expect(create({ kind: DraftKind.NEW, answers, body: 'Hello' })).rejects.toThrow(
-            'only belongs on a reply'
+        it.each(createDraftDefinition.examples!.map((example) => [example.context, example.call]))(
+            'accepts the documented call: %s',
+            (_context, call) => {
+                expect(() => createDraftDefinition.checkParams!(call as CreateDraftParams)).not.toThrow();
+            }
         );
-    });
 
-    it('rejects an empty body, which a new draft has nothing else to hold', async () => {
-        const { create } = harness();
+        it('rejects a recipient that is neither an address nor a contact reference', () => {
+            expect(rejectionOf({ kind: DraftKind.NEW, to: ['Ada'], body: 'Hello' })).toContain(
+                'neither a valid email address nor a contact-… reference'
+            );
+        });
 
-        await expect(create({ kind: DraftKind.NEW, body: '   ' })).rejects.toThrow('`body` was empty');
+        it('rejects a malformed recipient in cc on a forward', () => {
+            expect(rejectionOf({ kind: DraftKind.FORWARD, answers: 'email-a1', cc: ['Grace'], body: 'FYI' })).toContain(
+                '"Grace" is neither a valid email address'
+            );
+        });
+
+        it('requires the answered email on a reply', () => {
+            expect(rejectionOf({ kind: DraftKind.REPLY, body: 'Yes' })).toContain('needs `answers`');
+        });
+
+        it('rejects the fields a reply inherits, naming them', () => {
+            expect(
+                rejectionOf({
+                    kind: DraftKind.REPLY,
+                    answers: 'email-a1',
+                    to: ['grace@example.com'],
+                    cc: ['ada@example.com'],
+                    subject: 'Re: Booking',
+                    body: 'Yes',
+                })
+            ).toContain('so to, cc, subject cannot be set on this call');
+        });
+
+        it('rejects subject on a forward, which inherits it', () => {
+            expect(
+                rejectionOf({ kind: DraftKind.FORWARD, answers: 'email-a1', subject: 'Custom subject', body: 'FYI' })
+            ).toContain('subject cannot be set on this call');
+        });
+
+        it('rejects an answered email on a new message', () => {
+            expect(rejectionOf({ kind: DraftKind.NEW, answers: 'email-a1', body: 'Hello' })).toContain(
+                'only belongs on a reply'
+            );
+        });
+
+        it('rejects an answered reference that is not an email', () => {
+            expect(rejectionOf({ kind: DraftKind.REPLY, answers: 'folder-x1', body: 'Yes' })).toContain(
+                '"folder-x1" is not a email reference'
+            );
+        });
+
+        it('rejects an empty body, which a new draft has nothing else to hold', () => {
+            expect(rejectionOf({ kind: DraftKind.NEW, body: '   ' })).toContain('`body` was empty');
+        });
     });
 
     /** `composer-0` is already open in the harness, so this fails if it names any composer but the new one. */
