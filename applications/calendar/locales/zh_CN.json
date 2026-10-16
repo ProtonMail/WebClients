@@ -1344,6 +1344,106 @@
         "存储空间在所有 ${ BRAND_NAME } 服务之间共享"
       ]
     },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "黑色星期五"
+      ],
+      "Get the deal": [
+        "获取优惠"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/月"
+      ],
+      "15 GB storage": [
+        "15 GB 存储空间"
+      ],
+      "2 individual accounts": [
+        "2 个独立账户"
+      ],
+      "2 TB of secure storage": [
+        "2 TB 安全存储空间"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB 存储空间：当前套餐的 40 倍"
+      ],
+      "3 TB of secure storage": [
+        "3 TB 安全存储空间"
+      ],
+      "500 GB of secure storage": [
+        "500 GB 安全存储空间"
+      ],
+      "6 individual accounts": [
+        "6 个独立账户"
+      ],
+      "Built-in 2FA authenticator": [
+        "内置 2FA 验证器"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "折扣基于标准月度价格。结算周期结束时，您的订阅将按标准年度费率续订。"
+      ],
+      "Online document editor": [
+        "在线文档编辑器"
+      ],
+      "Recover previous file versions": [
+        "恢复先前的文件版本"
+      ],
+      "Stronger protection against cyber threats": [
+        "针对网络威胁提供更强有力的保护"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "文件夹、标签、筛选规则不限量"
+      ],
+      "Use your own email domain": [
+        "使用自有邮箱域名"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "高级版 ${ DRIVE_SHORT_APP_NAME }、${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME } 和 ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "高级版 ${ DRIVE_SHORT_APP_NAME }、${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "高级版 ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "高级版 ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 和 ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "高级版 ${ PASS_SHORT_APP_NAME }、${ MAIL_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 和 ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "年份最大特卖"
+      ],
+      "Black Friday": [
+        "黑色星期五"
+      ],
+      "for 12 months": [
+        "年费"
+      ],
+      "Last chance to save big": [
+        "最后的促销机会"
+      ],
+      "Protect your entire tribe": [
+        "保护您的整个家庭"
+      ],
+      "Protection for two in a single plan": [
+        "单个套餐为两人提供保护"
+      ]
+    },
     "Billing cycle option": {
       "${ n } month": [
         "${ n } 个月"
@@ -9735,6 +9835,9 @@
       "Payment method required for the subscription to be activated after the trial ends.": [
         "您需要提供付款方式，以便试用期结束后激活订阅。"
       ],
+      "Plan switch is incompatible for the following reasons:": [
+        "套餐切换不兼容，原因如下："
+      ],
       "Please close extra wallet accounts before changing your plan.": [
         "请在更改套餐前关闭多余的钱包账户。"
       ],
@@ -9743,6 +9846,9 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "请先重新激活您的订阅以减少附加功能。"
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Proton Meet 席位数量必须与成员数量匹配。"
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "续费价格会根据${ termsAndConditionsLink }进行调整。"
@@ -9810,8 +9916,14 @@
       "This payment method will become your new default for all future renewals.": [
         "此付款方式将成为您未来所有续订的新默认方式。"
       ],
+      "This plan doesn’t support the managed features on your account.": [
+        "此套餐不支持您账户上的托管功能。"
+      ],
       "This plan doesn’t support the members on your account.": [
         "此套餐不支持您账户中的成员。"
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "当前无法完成此订阅，请重试。"
       ],
       "Timeout exceeded": [
         "超时"
