@@ -20,9 +20,9 @@ export const getCanShowSignInRestriction = ({
     entitlements,
 }: {
     user: User;
-    entitlements: Pick<EntitlementChecksForOrgAndUser, 'isBusiness'>;
+    entitlements: Pick<EntitlementChecksForOrgAndUser, 'isB2B'>;
 }) => {
-    if (entitlements.isBusiness || user.Type !== UserType.PROTON) {
+    if (entitlements.isB2B || user.Type !== UserType.PROTON) {
         return false;
     }
     return Boolean(user.Name);

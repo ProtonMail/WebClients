@@ -56,7 +56,7 @@ describe('createEntitlementResolver', () => {
             quantity: 0,
             scope: EntitlementScope.Organization,
         });
-        expect(resolver.isBusiness).toBe(false);
+        expect(resolver.isB2B).toBe(false);
     });
 
     it('delegates each method to the captured entitlements', () => {
@@ -120,8 +120,8 @@ describe('createEntitlementResolver', () => {
         );
         const consumer = createEntitlementResolverForOrgAndUser(emptyCatalog, makeEntitlements([], [], []), []);
 
-        expect(business.isBusiness).toBe(true);
-        expect(consumer.isBusiness).toBe(false);
+        expect(business.isB2B).toBe(true);
+        expect(consumer.isB2B).toBe(false);
     });
 
     describe('isB2cMultiUser', () => {
@@ -179,7 +179,7 @@ describe('createEntitlementResolver', () => {
 
             expect(resolver.quantityTotal(EntitlementName.Business)).toBe(0);
             expect(resolver.hasEntitlement(EntitlementName.Business)).toBe(false);
-            expect(resolver.isBusiness).toBe(false);
+            expect(resolver.isB2B).toBe(false);
         });
 
         it('does not let a zero-quantity catalog entry satisfy includes or trip excludes', () => {
@@ -258,7 +258,7 @@ describe('createEntitlementResolverForSelection', () => {
         expect(resolver.hasEntitlement(EntitlementName.Business)).toBe(false);
         // eslint-disable-next-line custom-rules/no-single-entitlement-condition -- testing `hasMatchingSubscription` itself
         expect(resolver.hasMatchingSubscription({ includes: [EntitlementName.Business] })).toBe(false);
-        expect(resolver.isBusiness).toBe(false);
+        expect(resolver.isB2B).toBe(false);
     });
 
     it('returns 0 for an empty selection', () => {
@@ -283,13 +283,13 @@ describe('createEntitlementResolverForSelection', () => {
         };
 
         const business = createEntitlementResolverForSelection(b2bCatalog, PLANS.MAIL_PRO);
-        expect(business.isBusiness).toBe(true);
+        expect(business.isB2B).toBe(true);
         expect(business.hasSentinel).toBe(true);
         expect(business.isMultiUser).toBe(true);
         expect(business.hasVpn).toBe(false);
 
         const free = createEntitlementResolverForSelection(b2bCatalog, null);
-        expect(free.isBusiness).toBe(false);
+        expect(free.isB2B).toBe(false);
         expect(free.hasSentinel).toBe(false);
     });
 });
@@ -488,8 +488,8 @@ describe('createEntitlementResolverForOrgAndUser subscription queries', () => {
         const selected = resolver.withSelection(PLANS.VPN2024);
 
         expect(selected.hasVpn).toBe(true);
-        expect(selected.isBusiness).toBe(false);
-        expect(resolver.withSelection(PLANS.MAIL_PRO).isBusiness).toBe(true);
+        expect(selected.isB2B).toBe(false);
+        expect(resolver.withSelection(PLANS.MAIL_PRO).isB2B).toBe(true);
     });
 });
 
@@ -549,6 +549,6 @@ describe('createEntitlementResolverForOrgAndUser subscription input shapes', () 
         const resolver = createEntitlementResolverForOrgAndUser(catalog, emptyEntitlements, mailPro);
 
         // Business comes from the primary and VPN from the secondary, so no one subscription grants both
-        expect(resolver.isVpnBusiness).toBe(false);
+        expect(resolver.isVpnB2B).toBe(false);
     });
 });

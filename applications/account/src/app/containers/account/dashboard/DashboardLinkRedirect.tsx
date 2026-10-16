@@ -3,8 +3,8 @@ import { Redirect, useLocation } from 'react-router-dom';
 
 import type { Location } from 'history';
 
+import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
-import { useSubscription } from '@proton/account/subscription/hooks';
 import PrivateMainAreaLoading from '@proton/components/containers/layout/PrivateMainAreaLoading';
 import { getIsSectionAvailable } from '@proton/components/containers/layout/helper';
 import type { SectionConfig } from '@proton/components/containers/layout/interface';
@@ -34,10 +34,10 @@ interface Props {
 
 export function DashboardLinkRedirect({ subscription, path, children }: Props) {
     const location = useLocation();
-    const [, loadingSubscription] = useSubscription();
+    const [, loadingAllSubscriptions] = useAllSubscriptions();
     const [, loadingOrganization] = useOrganization();
 
-    if (loadingSubscription || loadingOrganization) {
+    if (loadingAllSubscriptions || loadingOrganization) {
         return <PrivateMainAreaLoading />;
     } else if (getIsSectionAvailable(subscription) && shouldRedirectToSubscriptions(location)) {
         return <Redirect to={`${path}${subscription.to}${location.search}${location.hash}`} />;
