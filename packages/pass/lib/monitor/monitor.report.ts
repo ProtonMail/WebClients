@@ -1,6 +1,7 @@
 import debounce from 'lodash/debounce';
 
 import {
+    selectCompromisedPasswordsReportCount,
     selectDuplicatePasswords,
     selectExcludedItems,
     selectOwnedVaults,
@@ -31,6 +32,7 @@ export const createMonitorReport = debounce(
             const shareIds = selectOwnedVaults(state).map(prop('shareId'));
             const reusedCount = selectDuplicatePasswords(shareIds)(state).length;
             const excludedCount = selectExcludedItems(shareIds)(state).length;
+            const compromisedCount = selectCompromisedPasswordsReportCount(shareIds)(state);
             const missing2FAs = await monitor.checkMissing2FAs({ shareIds });
             const weakPasswords = await monitor.checkWeakPasswords({ shareIds });
 
@@ -42,6 +44,7 @@ export const createMonitorReport = debounce(
                     ReusedPasswords: reusedCount,
                     Inactive2FA: missing2FAs.length,
                     WeakPasswords: weakPasswords.length,
+                    CompromisedPasswords: compromisedCount,
                 },
                 { dedupeKey: 'name' }
             );
