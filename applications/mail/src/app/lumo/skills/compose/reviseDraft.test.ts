@@ -1,7 +1,7 @@
 import type { DraftChangeability } from '../../toolModule';
-import { ADA, CHANGEABLE, composeHarness } from './compose.test.helpers';
+import { ADA, CHANGEABLE, checkParamsRejection, composeHarness } from './compose.test.helpers';
 import type { ReviseDraftParams } from './reviseDraft';
-import { ReviseOutcome, createReviseDraftHandler } from './reviseDraft';
+import { ReviseOutcome, createReviseDraftHandler, reviseDraftDefinition } from './reviseDraft';
 
 const harness = (options?: Parameters<typeof composeHarness>[0]) => {
     const { deps, references, ...recorded } = composeHarness(options);
@@ -165,11 +165,33 @@ describe('revise_draft', () => {
         await expect(revise({ draft: email, body: 'Hello' })).rejects.toThrow('is not a composer reference');
     });
 
-    it('rejects a call that would change nothing', async () => {
-        const { revise, draft, written, readdressed } = openDraft();
+    /** The engine runs these before the confirm card, so a call that fails one never shows the user a card. */
+    describe('checking the arguments before the confirm card', () => {
+        const rejectionOf = (params: Record<string, any>) => {
+            return checkParamsRejection(reviseDraftDefinition, params);
+        };
 
-        await expect(revise({ draft })).rejects.toThrow('Nothing to change');
-        expect(written).toEqual([]);
-        expect(readdressed).toEqual([]);
+        it.each(reviseDraftDefinition.examples!.map((example) => [example.context, example.call]))(
+            'accepts the documented call: %s',
+            (_context, call) => {
+                expect(() => reviseDraftDefinition.checkParams!(call as ReviseDraftParams)).not.toThrow();
+            }
+        );
+
+        it('rejects a call that would change nothing', () => {
+            expect(rejectionOf({ draft: 'composer-x1', body: '  ', to: [] })).toContain('Nothing to change');
+        });
+
+        it('accepts a call that only readdresses cc', () => {
+            expect(() =>
+                reviseDraftDefinition.checkParams!({ draft: 'composer-x1', cc: ['ada@example.com'] })
+            ).not.toThrow();
+        });
+
+        it.each(['to', 'cc'])('rejects a malformed address in %s', (field) => {
+            expect(rejectionOf({ draft: 'composer-x1', [field]: ['Cristiano'] })).toContain(
+                '"Cristiano" is neither a valid email address nor a contact-… reference'
+            );
+        });
     });
 });
