@@ -8,13 +8,13 @@ import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitleme
 import { APPS } from '@proton/shared/lib/constants';
 
 import type { AccountRecoveryRouterFlags, AccountRouterParams, Flags } from '../../content/router-params';
+import { defaultFlags } from '../../content/testing/buildOrganizationRouterParams';
 import { getAccountAppRoutes } from './routes';
 
 jest.mock('@proton/payments/core/subscription/helpers', () => ({
     ...jest.requireActual('@proton/payments/core/subscription/helpers'),
     hasCancellablePlan: jest.fn(),
     isCancellableOnlyViaSupport: jest.fn(),
-    getHasExternalMemberCapableB2BPlan: jest.fn().mockReturnValue(false),
     getHasVpnB2BPlan: jest.fn().mockReturnValue(false),
     isManagedExternally: jest.fn().mockReturnValue(false),
     hasLumo: jest.fn().mockReturnValue(false),
@@ -32,22 +32,6 @@ const accountRecoveryRouterFlags: AccountRecoveryRouterFlags = {
     isDelegatedAccessAvailable: false,
     isNonPrivateDelegatedAccessAvailable: false,
     isRecoveryScoreBannerAvailable: false,
-};
-
-const defaultFlags: Flags = {
-    isAlwaysOnVpnEnabled: false,
-    isReferralProgramEnabled: false,
-    isDriveEasySwitchNewUIEnabled: false,
-    showSignInRestrictionToggle: false,
-    canDisplayNonPrivateEmailPhone: false,
-    isScribeEnabled: false,
-    isZoomIntegrationEnabled: false,
-    isProtonMeetIntegrationEnabled: false,
-    isCryptoPostQuantumOptInEnabled: false,
-    isSsoForPbsEnabled: false,
-    isRetentionPoliciesEnabled: false,
-    isAuthenticatorAvailable: false,
-    isCategoryViewEnabled: false,
 };
 
 type Overrides = Omit<Partial<AccountRouterParams>, 'flags'> & { flags?: Partial<Flags> };

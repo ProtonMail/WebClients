@@ -97,3 +97,83 @@ describe('isPassB2B', () => {
         expect(isPassB2B(plan)).toBe(false);
     });
 });
+
+describe('Pass business upgrade checks', () => {
+    const passCatalog = buildEntitlementCatalog({
+        [PLANS.PASS_PRO]: [EntitlementName.Business, EntitlementName.FlagsPass],
+        [PLANS.PASS_BUSINESS]: [
+            EntitlementName.Business,
+            EntitlementName.FlagsPass,
+            EntitlementName.ActivityMonitorPass,
+            EntitlementName.OrganizationPolicy,
+            EntitlementName.Groups,
+        ],
+        [PLANS.VPN_BUSINESS]: [EntitlementName.Business, EntitlementName.OrganizationPolicy, EntitlementName.Groups],
+        [PLANS.PASS]: [EntitlementName.FlagsPass],
+    });
+
+    const checksFor = (plan: PLANS) => createEntitlementResolverForSelection(passCatalog, buildSubscription(plan));
+
+    it('flags activity monitor and groups as upgrades for passpro2024', () => {
+        const checks = checksFor(PLANS.PASS_PRO);
+
+        expect(checks.isPassB2BWithoutActivityMonitor).toBe(true);
+        expect(checks.isPassB2BWithoutGroups).toBe(true);
+    });
+
+    it('flags no upgrade for passbiz2024', () => {
+        const checks = checksFor(PLANS.PASS_BUSINESS);
+
+        expect(checks.isPassB2BWithoutActivityMonitor).toBe(false);
+        expect(checks.isPassB2BWithoutGroups).toBe(false);
+    });
+
+    it.each([PLANS.VPN_BUSINESS, PLANS.PASS])('flags no upgrade for non Pass business plan %s', (plan) => {
+        const checks = checksFor(plan);
+
+        expect(checks.isPassB2BWithoutActivityMonitor).toBe(false);
+        expect(checks.isPassB2BWithoutGroups).toBe(false);
+    });
+});
+
+describe('hasOrganizationPolicy', () => {
+    const organizationPolicyCatalog = buildEntitlementCatalog({
+        [PLANS.PASS_BUSINESS]: [
+            EntitlementName.Business,
+            EntitlementName.FlagsPass,
+            EntitlementName.OrganizationPolicy,
+        ],
+        [PLANS.PASS_PRO]: [EntitlementName.Business, EntitlementName.FlagsPass],
+    });
+
+    it('returns true for passbiz2024, which grants organization policy', () => {
+        expect(
+            createEntitlementResolverForSelection(organizationPolicyCatalog, PLANS.PASS_BUSINESS).hasOrganizationPolicy
+        ).toBe(true);
+    });
+
+    it('returns false for passpro2024, which does not grant organization policy', () => {
+        expect(
+            createEntitlementResolverForSelection(organizationPolicyCatalog, PLANS.PASS_PRO).hasOrganizationPolicy
+        ).toBe(false);
+    });
+});
+
+describe('hasExternalManagedMembers', () => {
+    const externalMembersCatalog = buildEntitlementCatalog({
+        [PLANS.VPN_PRO]: [EntitlementName.Business, EntitlementName.ExternalManagedMembers],
+        [PLANS.MAIL_PRO]: [EntitlementName.Business],
+    });
+
+    it('returns true for a plan that grants external managed members', () => {
+        expect(
+            createEntitlementResolverForSelection(externalMembersCatalog, PLANS.VPN_PRO).hasExternalManagedMembers
+        ).toBe(true);
+    });
+
+    it('returns false for a plan without external managed members', () => {
+        expect(
+            createEntitlementResolverForSelection(externalMembersCatalog, PLANS.MAIL_PRO).hasExternalManagedMembers
+        ).toBe(false);
+    });
+});
