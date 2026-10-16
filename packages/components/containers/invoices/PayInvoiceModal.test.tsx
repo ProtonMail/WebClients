@@ -161,6 +161,20 @@ describe('PayInvoiceModal', () => {
         });
     });
 
+    it('should close the modal even if a refresh after paying fails', async () => {
+        call.mockRejectedValueOnce(new Error('events failed'));
+        const onClose = jest.fn();
+
+        renderPayInvoiceModal({ onClose });
+
+        await userEvent.click(screen.getByTestId('pay-invoice-button'));
+
+        await waitFor(() => {
+            expect(onClose).toHaveBeenCalledTimes(1);
+        });
+        expect(payInvoice).toHaveBeenCalledWith(baseInvoice.ID, 'v4');
+    });
+
     it.each([
         [PAYMENT_METHOD_TYPES.APPLE_PAY, 'apple-pay-button'],
         [PAYMENT_METHOD_TYPES.GOOGLE_PAY, 'google-pay-button'],
