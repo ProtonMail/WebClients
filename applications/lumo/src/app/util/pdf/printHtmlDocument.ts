@@ -1,3 +1,5 @@
+import { getNativeAppInfo } from '../userAgent';
+
 /**
  * Safety net for removing the print frame if `afterprint` never fires. Generous on purpose: removing
  * the frame while a non-blocking print dialog (Safari) is still open would blank the printout.
@@ -48,10 +50,16 @@ async function waitForPrintResources(ownerDocument: Document): Promise<void> {
  * `allow-scripts` (content is sanitized upstream; scripts are stripped again here); `allow-modals`
  * is required for `print()` to work in a sandboxed frame.
  *
- * Resolves `true` once the print dialog was opened (Chrome blocks until it closes; Safari returns
- * immediately), `false` when printing isn't available so the caller can fall back.
+ * Resolves `true` when the print call returns without throwing (not confirmation that a dialog
+ * appeared), `false` when printing isn't available so the caller can fall back.
  */
 export async function printHtmlDocument(html: string, options: PrintHtmlDocumentOptions = {}): Promise<boolean> {
+    // Native shells use the downloadable PDF fallback instead of the browser print dialog.
+    const platform = getNativeAppInfo()?.platform;
+    if (platform === 'ios' || platform === 'android') {
+        return false;
+    }
+
     const iframe = document.createElement('iframe');
     iframe.setAttribute('sandbox', 'allow-same-origin allow-modals');
     iframe.setAttribute('data-print-frame', 'true');
