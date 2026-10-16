@@ -21,6 +21,7 @@ import {
 } from '../types';
 import { mapify } from '../util/collections';
 import { isNonNullable } from '../util/nullable';
+import { LocalFlagsDb } from './localFlagsDb';
 import { getIndexedDB, requestToPromise, withCursor } from './util';
 
 // Type aliases for backwards compatibility (assets are now attachments)
@@ -456,6 +457,7 @@ export class DbApi {
     private readonly attachmentStore: StoreOperations<SerializedAttachment>;
     private readonly assetStore: StoreOperations<SerializedAsset>;
     private readonly userId: string | undefined;
+    public readonly localFlags: LocalFlagsDb;
     private isReconnecting = false;
     private reconnectAttempts = 0;
     private readonly maxReconnectAttempts = 5;
@@ -471,6 +473,7 @@ export class DbApi {
 
         this.userId = userId;
         this.db = this.openDb(userId);
+        this.localFlags = new LocalFlagsDb(userId);
 
         // Initialize store operations
         this.spaceStore = new StoreOperations(this.db, storeConfigs.space);

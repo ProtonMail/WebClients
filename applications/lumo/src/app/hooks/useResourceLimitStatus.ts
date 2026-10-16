@@ -4,7 +4,7 @@ import { APPROACHING_LIMIT_RATIO, RESOURCE_LIMITS, type ResourceLimitType } from
 import { useLumoSelector } from '../redux/hooks';
 import { selectAttachmentsBySpaceId, selectMessagesByConversationId } from '../redux/selectors';
 import type { DebugLimitOverride } from '../redux/slices/meta/errors';
-import { selectDebugLimitOverride } from '../redux/slices/meta/errors';
+import { selectDebugLimitOverride, selectIsMessageLimitReached } from '../redux/slices/meta/errors';
 import type { ConversationId, SpaceId } from '../types';
 
 export interface ResourceLimitStatus {
@@ -57,15 +57,18 @@ const buildStatus = (
 export const useMessagesLimitStatus = (conversationId: ConversationId | null | undefined): ResourceLimitStatus => {
     const messages = useLumoSelector(selectMessagesByConversationId(conversationId));
     const overrideState = useLumoSelector(selectDebugLimitOverride('messages'));
-    return useMemo(
-        () =>
-            buildStatus(
-                'messages',
-                Object.keys(messages).length,
-                conversationId && overrideState.conversationId === conversationId ? overrideState.override : null
-            ),
-        [messages, conversationId, overrideState]
-    );
+    const isRejectedByServer = useLumoSelector(selectIsMessageLimitReached(conversationId));
+    return useMemo(() => {
+        const status = buildStatus(
+            'messages',
+            Object.keys(messages).length,
+            conversationId && overrideState.conversationId === conversationId ? overrideState.override : null
+        );
+        if (isRejectedByServer && !status.isAtLimit) {
+            return { ...status, remaining: 0, isApproaching: false, isAtLimit: true };
+        }
+        return status;
+    }, [messages, conversationId, overrideState, isRejectedByServer]);
 };
 
 export const useAssetsLimitStatus = (spaceId: SpaceId | null | undefined): ResourceLimitStatus => {

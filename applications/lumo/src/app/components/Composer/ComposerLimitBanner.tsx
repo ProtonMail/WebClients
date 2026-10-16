@@ -102,7 +102,10 @@ export const ComposerLimitBanner = ({ conversationId, spaceId, onOpenFiles }: Pr
     // Mobile has a dedicated native composer, so resource-limit cards would
     // render in the wrong place. The resource-limit toast (wired up in
     // `useResourceLimitNotifications`) still fires on 422 responses.
-    if (isMobile) {
+    // A conversation at its message limit hides the composer entirely, so the
+    // card is the only way forward and must show everywhere.
+    const isConversationClosed = canShowMessageLimit && messagesStatus.isAtLimit;
+    if (isMobile && !isConversationClosed) {
         return null;
     }
 
