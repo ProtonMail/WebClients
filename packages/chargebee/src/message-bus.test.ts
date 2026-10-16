@@ -5,6 +5,7 @@ import type {
     ChargebeeSubmitEventResponse,
     FormValidationErrors,
     GetHeightResponsePayload,
+    IdealAuthorizedPayload,
     MessageBusResponse,
     PaymentIntent,
     PaypalAuthorizedPayload,
@@ -729,4 +730,43 @@ it('should listen to direct debit submit event', () => {
         }),
         expectedParentOrigin
     );
+});
+
+const expectPostedMessage = (nthCall: number, message: object) =>
+    expect(window.parent.postMessage).toHaveBeenNthCalledWith(nthCall, JSON.stringify(message), expectedParentOrigin);
+
+it('should send ideal authorized message on both the legacy and the generic apm event', () => {
+    const data: IdealAuthorizedPayload = {
+        paymentIntent: {
+            type: 'payment_intent',
+        } as any,
+    };
+
+    messageBus?.sendIdealAuthorizedMessage(data);
+
+    expectPostedMessage(1, { type: 'ideal-authorized', status: 'success', data });
+    expectPostedMessage(2, { type: 'apm-authorized', method: 'ideal', status: 'success', data });
+});
+
+it('should send ideal failed message on both the legacy and the generic apm event', () => {
+    const error = { message: 'error' };
+
+    messageBus?.sendIdealFailedMessage(error);
+
+    expectPostedMessage(1, { type: 'ideal-failed', status: 'failure', error });
+    expectPostedMessage(2, { type: 'apm-failed', method: 'ideal', status: 'failure', error });
+});
+
+it('should send ideal clicked message on both the legacy and the generic apm event', () => {
+    messageBus?.sendIdealClickedMessage();
+
+    expectPostedMessage(1, { type: 'ideal-clicked', status: 'success', data: {} });
+    expectPostedMessage(2, { type: 'apm-clicked', method: 'ideal', status: 'success', data: {} });
+});
+
+it('should send ideal cancelled message on both the legacy and the generic apm event', () => {
+    messageBus?.sendIdealCancelledMessage();
+
+    expectPostedMessage(1, { type: 'ideal-cancelled', status: 'success', data: {} });
+    expectPostedMessage(2, { type: 'apm-cancelled', method: 'ideal', status: 'success', data: {} });
 });
