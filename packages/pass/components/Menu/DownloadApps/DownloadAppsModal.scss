@@ -1,0 +1,102 @@
+.pass-download-apps-modal-content {
+	align-items: center;
+}
+
+.pass-download-apps-modal-divider {
+	flex-shrink: 0;
+	inline-size: 1px;
+	block-size: 75px;
+	margin-block-start: -70px;
+	background-color: var(--border-weak);
+}
+
+.pass-download-apps-mobile-copy {
+	gap: 0.25rem;
+}
+
+.pass-download-apps-mobile-title {
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 20px;
+	text-align: center;
+	color: var(--text-norm);
+}
+
+.pass-download-apps-mobile-subtitle {
+	font-size: 13px;
+	line-height: 20px;
+	text-align: center;
+	color: var(--text-weak);
+}
+
+.pass-download-apps-laptop {
+	display: block;
+	inline-size: auto;
+	block-size: 7rem;
+}
+
+.pass-download-apps-qr {
+	display: block;
+	inline-size: 108px;
+	block-size: 108px;
+}
+
+.pass-download-apps-button-group {
+	--download-apps-button-bg: var(--interaction-norm);
+	--download-apps-button-text: var(--interaction-norm-contrast);
+	--download-apps-button-separator: rgb(from var(--interaction-norm-contrast) r g b / 0.35);
+
+	border-radius: 16px;
+	overflow: hidden;
+	background-color: var(--download-apps-button-bg);
+
+	.button-group-item.button-solid-norm {
+		--button-default-background-color: var(--download-apps-button-bg);
+		--button-hover-background-color: var(--download-apps-button-bg);
+		--button-active-background-color: var(--download-apps-button-bg);
+		--button-default-text-color: var(--download-apps-button-text);
+		--button-hover-text-color: var(--download-apps-button-text);
+		--button-active-text-color: var(--download-apps-button-text);
+		--button-default-border-color: transparent;
+		--button-hover-border-color: transparent;
+		--button-active-border-color: transparent;
+		--focus-outline: var(--download-apps-button-bg);
+
+		border-radius: 0;
+	}
+
+	.button-group-item:first-child {
+		border-start-start-radius: 16px;
+		border-end-start-radius: 16px;
+	}
+
+	.pass-download-apps-button-label {
+		max-inline-size: 180px;
+		min-inline-size: 0;
+		flex: 0 1 auto;
+		overflow: hidden;
+	}
+
+	.pass-download-apps-button-label-text {
+		display: block;
+		max-inline-size: 100%;
+	}
+
+	.button-group-item:last-child {
+		border-start-end-radius: 16px;
+		border-end-end-radius: 16px;
+	}
+
+	.pass-download-apps-button-dropdown {
+		position: relative;
+
+		&::before {
+			content: '';
+			position: absolute;
+			inset-block: 2px;
+			inset-inline-start: 0;
+			inline-size: 1px;
+			background-color: var(--download-apps-button-separator);
+		}
+	}
+}
