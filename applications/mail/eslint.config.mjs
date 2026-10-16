@@ -28,6 +28,24 @@ const restrictedImportOptions = {
     ],
 };
 
+/**
+ * Tests must not wait in real time: a `wait(2000)` costs two seconds on every run, for every engineer and CI job.
+ * Use fake timers (`jest.useFakeTimers({ advanceTimers: true })` and `jest.advanceTimersByTimeAsync`), or `waitFor` on the expected outcome.
+ */
+const noRealTimeWaitInTests = [
+    {
+        selector: "CallExpression[callee.name='wait']:not([arguments.0.value=0])",
+        message:
+            'Do not wait in real time in tests. Use fake timers (jest.advanceTimersByTimeAsync) or waitFor on the expected outcome.',
+    },
+    {
+        selector:
+            "NewExpression[callee.name='Promise'] CallExpression[callee.name='setTimeout'][arguments.length>1]:not([arguments.1.value=0])",
+        message:
+            'Do not wait in real time in tests. Use fake timers (jest.advanceTimersByTimeAsync) or waitFor on the expected outcome.',
+    },
+];
+
 const noEnumDestructuring = {
     selector: "VariableDeclarator[id.type='ObjectPattern'][init.name=/^[A-Z_]+$/]",
     message:
@@ -65,6 +83,12 @@ export default defineConfig([
                         'Mint email references with emailReferenceFor, messageReferenceFor or conversationReferenceFor, so a conversation id is fetched from the right endpoint once it leaves every store.',
                 },
             ],
+        },
+    },
+    {
+        files: ['src/**/*.test.{ts,tsx}', 'src/app/helpers/tests/**/*.{ts,tsx}'],
+        rules: {
+            'no-restricted-syntax': ['error', noEnumDestructuring, ...noRealTimeWaitInTests],
         },
     },
     {
