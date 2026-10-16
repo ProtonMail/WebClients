@@ -10,6 +10,7 @@ import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectActiveSpeakerSpotlightIdentity } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 import { selectMeetSettings, selectParticipantsWithDisabledVideos } from '@proton/meet/store/slices/settings';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { useParticipantQuality } from '../../hooks/useParticipantQuality';
 import { useStableCallback } from '../../hooks/useStableCallback';
@@ -35,12 +36,17 @@ export const CameraTrackSubscriptionManagerProvider = ({ children }: { children:
     const participantQuality = useParticipantQuality();
 
     const spotlightParticipantIdentity = useMeetSelector(selectActiveSpeakerSpotlightIdentity);
+    const allowResettingFrozenVideoTracks = useFlag('MeetAllowResettingFrozenVideoTracks');
 
     const [manager, setManager] = useState(() => new CameraTrackSubscriptionManager(DEFAULT_CAPACITY, room));
 
     useEffect(() => {
         manager.setPolicy({ disableVideos, participantsWithDisabledVideos, participantQuality });
     }, [manager, disableVideos, participantsWithDisabledVideos, participantQuality]);
+
+    useEffect(() => {
+        manager.setAllowResettingFrozenVideoTracks(allowResettingFrozenVideoTracks);
+    }, [manager, allowResettingFrozenVideoTracks]);
 
     useEffect(() => {
         manager.setSpotlightParticipantIdentity(spotlightParticipantIdentity);

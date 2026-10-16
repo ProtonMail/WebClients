@@ -7,7 +7,7 @@ import type { InboundRtpStats, ReceiverStatsTick } from './types';
  * undefined if the receiver doesn't expose getStats yet (e.g. the track is
  * still being subscribed or the underlying transceiver was just replaced).
  */
-const readInboundRtp = async (publication: RemoteTrackPublication): Promise<InboundRtpStats | undefined> => {
+export const readInboundRtp = async (publication: RemoteTrackPublication): Promise<InboundRtpStats | undefined> => {
     const receiver = publication.track?.receiver;
 
     if (!receiver?.getStats) {
