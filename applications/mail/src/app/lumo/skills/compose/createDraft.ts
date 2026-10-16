@@ -4,11 +4,10 @@ import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
 import type { PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
 import type { Recipient } from '@proton/shared/lib/interfaces';
-import { isDraft } from '@proton/shared/lib/mail/messages';
 
 import { selectParams } from '../../../store/elements/elementsSelectors';
 import { DraftKind, MESSAGE_ACTION_FOR } from '../../helpers/draftKind';
-import { withStepTimeout } from '../../helpers/messages';
+import { isUnsent, replyTargetIDFor, withStepTimeout } from '../../helpers/messages';
 import { assertReferenceKind, isConversationReferenceID, resolveTypedId } from '../../helpers/references';
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
 import { createDraftCardRenderer } from './createDraftCard';
@@ -181,12 +180,9 @@ const answeredMessage = async (mail: MailToolDeps, id: string): Promise<PartialM
     return message?.data && message.messageDocument?.initialized === true ? message : undefined;
 };
 
-/** A reply answers one message, so a conversation reference stands for its newest message that is not a draft. */
-const newestMessageIDOf = async (mail: MailToolDeps, conversationID: string): Promise<string | undefined> => {
-    const storedMessages = () => {
-        return mail.store.getState().conversations[conversationID]?.Messages ?? [];
-    };
-    if (!storedMessages().length) {
+/** A reply answers one message, so a conversation reference stands for the one Mail's own Reply would answer. */
+const replyTargetOf = async (mail: MailToolDeps, conversationID: string): Promise<string | undefined> => {
+    if (!mail.store.getState().conversations[conversationID]?.Messages?.length) {
         try {
             await withStepTimeout(mail.loadConversation(conversationID));
         } catch {
@@ -194,8 +190,7 @@ const newestMessageIDOf = async (mail: MailToolDeps, conversationID: string): Pr
         }
     }
 
-    const nonDrafts = storedMessages().filter((message) => !isDraft(message));
-    return nonDrafts.sort((a, b) => b.Time - a.Time)[0]?.ID;
+    return replyTargetIDFor(mail.store, conversationID);
 };
 
 /** The email a reply or forward quotes, and from which it inherits its recipients and subject. */
@@ -206,12 +201,20 @@ const quotedMessage = async (
 ): Promise<PartialMessageState> => {
     // `checkParams` has already required `answers` on every answering kind.
     const id = resolveTypedId(answers ?? '', ['email'], references);
-    const messageID = isConversationReferenceID(references, id) ? await newestMessageIDOf(mail, id) : id;
+    const messageID = isConversationReferenceID(references, id) ? await replyTargetOf(mail, id) : id;
     const referenceMessage = messageID ? await answeredMessage(mail, messageID) : undefined;
     if (!referenceMessage) {
         throw new ToolInputError(
             `That email could not be read, so there was nothing to quote in the ${kind}. ` +
                 'Opening and reading the email is what decrypts it.'
+        );
+    }
+
+    if (isUnsent(referenceMessage.data)) {
+        throw new ToolInputError(
+            'That email had not been sent yet (it was still in the Outbox or scheduled), so nothing was drafted: ' +
+                'an unsent email cannot be replied to or forwarded. Tell the user, and offer to answer an earlier ' +
+                'message in the conversation instead.'
         );
     }
 
