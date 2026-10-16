@@ -74,6 +74,11 @@ describe('native-messaging errors', () => {
             expect(getNativeMessageErrorKind(new NativeMessageError(type))).toBe('auth');
         });
 
+        test('classifies BIOMETRICS_CANCELLED as cancel', () => {
+            const error = new NativeMessageError(NativeMessageErrorType.BIOMETRICS_CANCELLED);
+            expect(getNativeMessageErrorKind(error)).toBe('cancel');
+        });
+
         test.each([
             NativeMessageErrorType.TIMEOUT,
             NativeMessageErrorType.HOST_NOT_FOUND,

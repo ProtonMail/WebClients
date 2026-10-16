@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
+import { useAppState } from '../../components/Core/AppStateProvider';
 import type { AuthRouteState } from '../../components/Navigation/routing';
 import type { Maybe, MaybeNull } from '../../types';
 import { isMainFrame } from '../../utils/dom/is-main-frame';
@@ -16,6 +17,7 @@ type Props = {
  * Consider visibility and if lock has been user initiated */
 export const useAutoUnlock = ({ loading, onUnlock }: Props) => {
     const history = useHistory<MaybeNull<AuthRouteState>>();
+    const { unlockDeclined = false } = useAppState();
     const [isError, setIsError] = useState(false);
     const focusRetry = useRef<Maybe<() => void>>();
 
@@ -27,8 +29,10 @@ export const useAutoUnlock = ({ loading, onUnlock }: Props) => {
     const autoUnlock = useStatefulRef((visible: boolean): void => {
         cancelFocusRetry();
 
-        /** if unlock errored, stop triggering automatically */
-        if (isError) return;
+        /** if unlock errored, stop triggering automatically. `unlockDeclined` carries
+         * a dismissed prompt across popup re-opens: the popup closes when the OS
+         * prompt takes focus, losing `isError`. */
+        if (isError || unlockDeclined) return;
 
         /** if user has triggered the lock - don't auto-prompt.  */
         const { userInitiatedLock = false } = history?.location.state ?? {};

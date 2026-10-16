@@ -36,7 +36,8 @@ const checkVerifier = async (lockSecret: string, desktopLockVerifier: string) =>
  * dropdown has no notification UI). */
 export const desktopLockAdapterFactory = (
     auth: AuthService,
-    nativeMessaging: NativeMessagingService
+    nativeMessaging: NativeMessagingService,
+    onDeclined: () => void
 ): LockAdapterDesktop => {
     const { authStore } = auth.config;
 
@@ -113,9 +114,19 @@ export const desktopLockAdapterFactory = (
             let authError: NativeMessageError | undefined;
 
             const secret = await sendUnlockMessage(nativeMessaging, authStore).catch((err: NativeMessageError) => {
+                const kind = getNativeMessageErrorKind(err);
+
+                /** The user dismissed the prompt: not a failed attempt, the session stays locked
+                 * and clients stop auto-prompting until the user asks again. */
+                if (kind === 'cancel') {
+                    logger.info('[DesktopLock] unlock cancelled');
+                    onDeclined();
+                    throw err;
+                }
+
                 /** Infrastructure errors (timeout / account mismatch): the biometric check
                  * never ran, so surface them without counting a failed attempt. */
-                if (getNativeMessageErrorKind(err) !== 'auth') {
+                if (kind !== 'auth') {
                     logger.warn('[DesktopLock] unlock failed (infra)', err.type);
                     throw err;
                 }
