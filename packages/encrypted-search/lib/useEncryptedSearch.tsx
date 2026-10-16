@@ -97,6 +97,8 @@ interface Props<ESItemMetadata, ESSearchParameters, ESItemContent = void> {
     esCallbacks: ESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent>;
     contentIndexingSuccessMessage?: string;
     onMetadataIndexed?: (metrics: IndexingMetrics) => void;
+    /** Called when a search starts running — pairs with `onSearchCompleted`, which measures `durationMs` from here. */
+    onSearchStarted?: () => void;
     /** Called when a search completes — routing to v1 or v2 telemetry is the caller's call, not this library's. */
     onSearchCompleted?: (params: {
         hasResults: boolean;
@@ -129,6 +131,7 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
     esCallbacks: inputESCallbacks,
     contentIndexingSuccessMessage,
     onMetadataIndexed,
+    onSearchStarted,
     onSearchCompleted,
     onIndexCompleted,
     onIndexingStarted,
@@ -1088,6 +1091,8 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
             }
         }
 
+        onSearchStarted?.();
+
         setESStatus((esStatus) => ({
             ...esStatus,
             isSearching: true,
@@ -1191,6 +1196,7 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
         }
 
         const start = performance.now();
+        onSearchStarted?.();
         const hasApostrophe = (esCallbacks.getKeywords(esSearchParams) || []).some((keyword) => keyword.includes(`'`));
         const { resultsArray, newLastTimePoint } = await uncachedSearch<
             ESItemMetadata,

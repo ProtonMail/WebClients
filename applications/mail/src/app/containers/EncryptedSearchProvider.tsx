@@ -107,6 +107,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         refreshMask: EVENT_ERRORS.MAIL,
         esCallbacks,
         // `MetricService` already reports these for v2 — only report v1's own numbers when it's the active engine.
+        onSearchStarted: isV2Active ? undefined : () => metricService.current?.searchStarted(),
         onSearchCompleted: isV2Active ? undefined : (params) => metricService.current?.searchCompleted(params),
         onIndexCompleted: isV2Active ? undefined : (params) => metricService.current?.mailboxIndexCompleted(params),
         onIndexingStarted: isV2Active ? undefined : () => metricService.current?.startIndexing(),
