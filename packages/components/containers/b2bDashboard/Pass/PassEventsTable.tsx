@@ -1,11 +1,10 @@
-import { useEffect, useRef, useState } from 'react';
+import { type ReactNode, useEffect, useRef, useState } from 'react';
 
 import { getUnixTime, parseISO } from 'date-fns';
 import { c } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { getShareID } from '@proton/shared/lib/api/b2bevents';
 import { APPS, SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { getInitials } from '@proton/shared/lib/helpers/string';
@@ -18,8 +17,7 @@ import TableBody from '../../../components/table/TableBody';
 import TableRow from '../../../components/table/TableRow';
 import Time from '../../../components/time/Time';
 import { NoEventsInfo } from '../NoEventsInfo';
-import { getDesciptionText, getDescriptionTextWithLink } from './helpers';
-import type { PassEvent } from './interface';
+import type { PassEvent, PassEventData } from './interface';
 
 interface Props {
     events: PassEvent[];
@@ -30,11 +28,19 @@ interface Props {
     onToggleSort: (direction: SORT_DIRECTION) => void;
 }
 
-interface DescriptionProps {
-    event: string;
-    hasInvalidShareId: boolean;
+interface DetailsProps {
+    eventType: string;
+    eventData: PassEventData;
     shareId?: string;
-    itemId?: string;
+    onEmailClick: (email: string) => void;
+}
+
+interface TargetIdProps {
+    /** Full ID, shown as the tooltip since the label is truncated. */
+    id: string;
+    label: string;
+    /** Pass app path, when the target is reachable. */
+    to?: string;
 }
 
 interface SortConfig {
@@ -44,38 +50,92 @@ interface SortConfig {
 
 type IdsMap = Record<string, string | undefined>;
 
-const Description = ({ shareId, itemId, event, hasInvalidShareId }: DescriptionProps) => {
-    if (hasInvalidShareId) {
-        return (
-            <Tooltip title={c('Info').t`Vault either deleted or requires access permissions`}>
-                <span className="">{getDesciptionText(event)}</span>
-            </Tooltip>
-        );
-    }
-    if (shareId && itemId) {
-        const vaultLink = (
-            <AppLink key="link" toApp={APPS.PROTONPASS} to={`/share/${shareId}/item/${itemId}`}>{c('Link')
-                .t`Vault`}</AppLink>
-        );
-        return <span>{getDescriptionTextWithLink(event, vaultLink)}</span>;
-    }
-    if (shareId) {
-        const vaultLink = (
-            <AppLink key="link" toApp={APPS.PROTONPASS} to={`/share/${shareId}`}>{c('Link').t`Vault`}</AppLink>
-        );
-        return <span>{getDescriptionTextWithLink(event, vaultLink)}</span>;
-    }
-    return (
-        <div className="flex flex-column">
-            <span className="">{getDesciptionText(event)}</span>
-        </div>
+/**
+ * IDs are long base64 strings, so only a prefix is shown. Enough to match a row against the
+ * `EventData.VaultID` / `EventData.ItemID` columns of the CSV export.
+ */
+const ID_PREVIEW_LENGTH = 8;
+
+/** `EventData` is an untyped cast, so a field promised as a string can arrive as anything. */
+const asText = (value: unknown): string | undefined =>
+    typeof value === 'string' && value.length > 0 ? value : undefined;
+
+/** The item is gone after these, so its ID is shown but not linked. */
+const DELETED_ITEM_EVENT_TYPES = new Set(['ItemDeleted']);
+
+/** The ID always renders. Linking it needs a share, which an admin only has on vaults shared with them. */
+const TargetId = ({ id, label, to }: TargetIdProps) => {
+    const preview = id.length > ID_PREVIEW_LENGTH ? `${id.slice(0, ID_PREVIEW_LENGTH)}…` : id;
+    const text = `${label} ${preview}`;
+
+    return to ? (
+        <AppLink toApp={APPS.PROTONPASS} title={id} to={to}>
+            {text}
+        </AppLink>
+    ) : (
+        <span title={id} className="text-ellipsis max-w-full">
+            {text}
+        </span>
     );
+};
+
+/**
+ * Extra context for event where the name itself doesn't convey
+ */
+const Details = ({ eventType, eventData, shareId, onEmailClick }: DetailsProps) => {
+    const vaultId = asText(eventData.vaultId);
+    const itemId = asText(eventData.itemId);
+    const email = asText(eventData.shareEmail) ?? asText(eventData.invitedEmail) ?? asText(eventData.email);
+    const parts: ReactNode[] = [];
+
+    if (vaultId) {
+        parts.push(
+            <TargetId
+                key="vault"
+                id={vaultId}
+                label={c('Label').t`Vault`}
+                to={shareId ? `/share/${shareId}` : undefined}
+            />
+        );
+    }
+
+    if (itemId) {
+        const isReachable = Boolean(shareId) && !DELETED_ITEM_EVENT_TYPES.has(eventType);
+
+        parts.push(
+            <TargetId
+                key="item"
+                id={itemId}
+                label={c('Label').t`Item`}
+                to={isReachable ? `/share/${shareId}/item/${itemId}` : undefined}
+            />
+        );
+    }
+
+    if (email) {
+        parts.push(
+            <button
+                key="email"
+                type="button"
+                title={email}
+                className="text-left text-ellipsis max-w-full"
+                onClick={() => onEmailClick(email)}
+            >
+                {email}
+            </button>
+        );
+    }
+
+    if (!parts.length) {
+        return <span className="color-weak">-</span>;
+    }
+
+    return <div className="flex flex-column">{parts}</div>;
 };
 
 const PassEventsTable = ({ events, loading, onEventClick, onTimeClick, onEmailOrIpClick, onToggleSort }: Props) => {
     const api = useApi();
     const [shareIds, setShareIds] = useState<IdsMap>({});
-    const [invalidShareIds, setInvalidShareIds] = useState<Set<string>>(new Set());
     const cache = useRef<IdsMap>({});
 
     const vaultIds = [...new Set(events.map((event) => event.eventData?.vaultId).filter(isTruthy))];
@@ -83,28 +143,23 @@ const PassEventsTable = ({ events, loading, onEventClick, onTimeClick, onEmailOr
     useEffect(() => {
         const fetchShareIds = async () => {
             const idsMap: IdsMap = {};
-            const newInvalidIds = new Set(invalidShareIds);
 
             await Promise.all(
+                /** Having no share is normal, not an error: the API answers `200` with a null `Share`. */
                 vaultIds.map(async (vaultId) => {
-                    if (cache.current[vaultId]) {
-                        idsMap[vaultId] = cache.current[vaultId];
-                        newInvalidIds.delete(vaultId);
-                    } else {
+                    if (!(vaultId in cache.current)) {
                         try {
                             const { Share } = await api(getShareID(vaultId));
-                            const shareId: string | undefined = Share.ShareID;
-                            idsMap[vaultId] = shareId;
-                            cache.current[vaultId] = shareId;
-                            newInvalidIds.delete(vaultId);
+                            cache.current[vaultId] = asText(Share?.ShareID);
                         } catch (e) {
-                            newInvalidIds.add(vaultId);
+                            cache.current[vaultId] = undefined;
                         }
                     }
+
+                    idsMap[vaultId] = cache.current[vaultId];
                 })
             );
             setShareIds((prev) => ({ ...prev, ...idsMap }));
-            setInvalidShareIds(newInvalidIds);
         };
 
         if (vaultIds.length > 0) {
@@ -125,7 +180,9 @@ const PassEventsTable = ({ events, loading, onEventClick, onTimeClick, onEmailOr
         onToggleSort(sortConfig.direction);
     };
 
-    // Empty only counts once loading finished, otherwise this hides the loading skeleton.
+    // Only claim there are no events once we actually know. While the first request is in flight
+    // `events` is still empty, and returning early here would show the empty state instead of the
+    // loading skeleton that `TableBody` renders.
     if (events.length === 0 && !loading) {
         return <NoEventsInfo />;
     }
@@ -138,18 +195,17 @@ const PassEventsTable = ({ events, loading, onEventClick, onTimeClick, onEmailOr
                 cells={[
                     { content: c('Title').t`User`, className: 'w-1/4' },
                     { key: 'time', content: c('TableHeader').t`Event`, sorting: true, className: 'w-1/4' },
-                    { content: c('Title').t`Description`, className: 'w-1/4' },
+                    { content: c('Title').t`Details`, className: 'w-1/4' },
                     { content: c('Title').t`IP`, className: 'w-1/4' },
                 ]}
             />
             <TableBody colSpan={5} loading={loading}>
                 {events.map(({ time, user, eventType, eventTypeName, ip, eventData }, index) => {
                     const { name, email } = user;
-                    const { vaultId, itemId } = eventData;
+                    const { vaultId } = eventData ?? {};
                     const key = index;
 
                     const shareId = vaultId ? shareIds[vaultId] : undefined;
-                    const hasInvalidShareId = vaultId ? invalidShareIds.has(vaultId) : false;
                     const initials = name ? getInitials(name) : email.charAt(0);
                     const formattedTime = getUnixTime(parseISO(time));
 
@@ -186,11 +242,11 @@ const PassEventsTable = ({ events, loading, onEventClick, onTimeClick, onEmailOr
                                         {formattedTime}
                                     </Time>
                                 </div>,
-                                <Description
+                                <Details
+                                    eventType={eventType}
+                                    eventData={eventData ?? {}}
                                     shareId={shareId}
-                                    itemId={itemId}
-                                    event={eventType}
-                                    hasInvalidShareId={hasInvalidShareId}
+                                    onEmailClick={onEmailOrIpClick}
                                 />,
                                 // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
                                 <span onClick={() => onEmailOrIpClick(ip)} className="cursor-pointer">
