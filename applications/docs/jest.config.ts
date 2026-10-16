@@ -15,7 +15,6 @@ const jestConfig: Config = {
     '\\.(md)$': '<rootDir>/src/__mocks__/mdMock.ts',
     // Support import aliases.
     '^~/components/(.*)$': '<rootDir>/src/app/components/$1',
-    '^~/drive-sdk$': '<rootDir>/src/app/drive-sdk',
     '^~/drive-sdk/(.*)$': '<rootDir>/src/app/drive-sdk/$1',
     '^~/utils/(.*)$': '<rootDir>/src/app/utils/$1',
     '^~/redux-store/(.*)$': '<rootDir>/src/app/redux-store/$1',
