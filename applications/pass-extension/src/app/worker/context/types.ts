@@ -33,6 +33,7 @@ import type { VaultsService } from '../services/vaults';
 export interface WorkerContextInterface {
     status: AppStatus;
     booted: boolean;
+    unlockDeclined: boolean;
     authStore: AuthStore;
     service: {
         activation: ActivationService;
@@ -67,6 +68,8 @@ export interface WorkerContextInterface {
     setStatus: (status: AppStatus) => void;
     /** `booted` flag update  */
     setBooted: (booted: boolean) => void;
+    /** `unlockDeclined` flag update, reset on every `status` change */
+    setUnlockDeclined: (declined: boolean) => void;
     /** Returns the current worker state */
     getState: () => AppState;
     /** Returned promise will resolve when worker "ready" */
