@@ -1109,6 +1109,7 @@ const SubscriptionContainerInner = ({
             showVisionaryWarning={renderVisionaryDowngradeWarningText}
             onSubmit={onSubmit}
             app={app}
+            showIdealAuthorizationNote={false}
         />
     );
 

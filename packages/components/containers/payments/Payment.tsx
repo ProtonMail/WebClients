@@ -25,7 +25,6 @@ import {
     ChargebeeSavedCardWrapper,
 } from '@proton/payments-ui/ui/components/ChargebeeWrapper';
 import { IdealAccountHolderInput } from '@proton/payments-ui/ui/components/IdealAccountHolderInput';
-import { IdealAuthorizationText } from '@proton/payments-ui/ui/components/IdealAuthorizationText';
 import { type DirectDebitProps, SepaDirectDebit } from '@proton/payments-ui/ui/components/SepaDirectDebit';
 import { getMinCreditAmount, getMinDonationAmount } from '@proton/payments/core/amount-limits';
 import type { BillingAddressStatus } from '@proton/payments/core/billing-address/billing-address';
@@ -319,9 +318,6 @@ export const PaymentsNoApi = ({
                         {method === PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL && (
                             <>
                                 <IdealAccountHolderInput chargebeeIdeal={chargebeeIdeal} />
-                                <div className="my-2">
-                                    <IdealAuthorizationText />
-                                </div>
                                 {taxFields}
                                 <div className="p-4 border rounded bg-weak mb-4" data-testid="ideal-view">
                                     <IdealInfoMessage />

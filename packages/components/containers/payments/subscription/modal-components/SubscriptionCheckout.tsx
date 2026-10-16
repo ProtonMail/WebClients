@@ -11,6 +11,10 @@ import type { PaymentFacade } from '@proton/payments-ui/client-extensions/usePay
 import type { MethodsHook } from '@proton/payments-ui/react-extensions/index';
 import type { TaxCountryHook } from '@proton/payments-ui/ui/billing-address/hooks/useTaxCountry';
 import { GuardBanner } from '@proton/payments-ui/ui/components/GuardBanner';
+import {
+    IdealAuthorizationText,
+    isIdealAuthorizationNoteShown,
+} from '@proton/payments-ui/ui/components/IdealAuthorizationText';
 import type { CouponConfigRendered } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';
 import { createCheckoutView } from '@proton/payments-ui/ui/headless-checkout/checkout-view';
 import type { CheckoutModifiers } from '@proton/payments/core/checkout-modifiers';
@@ -371,7 +375,16 @@ const SubscriptionCheckout = ({
                 selectedPlan: new SelectedPlan(planIDs, plansMap, cycle, currency),
                 paymentForbiddenReason,
             })}
-            description={showPlanDescription ? <PlanDescription list={list} /> : null}
+            description={
+                <>
+                    {isIdealAuthorizationNoteShown(paymentFacade) && !paymentForbiddenReason.forbidden && (
+                        <div className="mt-2">
+                            <IdealAuthorizationText />
+                        </div>
+                    )}
+                    {showPlanDescription ? <PlanDescription list={list} /> : null}
+                </>
+            }
             disableCurrencySelector={disableCurrencySelector}
             renewNotice={checkoutView.render('renewalNotice')}
             showPaymentProtectionCopy={!isPassBasic}
