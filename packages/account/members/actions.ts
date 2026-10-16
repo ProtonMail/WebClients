@@ -66,7 +66,7 @@ import {
     getPrivateAdminError,
     setAdminRoles,
 } from '../organizationKey/actions';
-import { classifyRoleChange } from '../organizationKey/classifyRoleChange';
+import { classifyRoleChange, getIsMemberAdminOrPendingAdmin } from '../organizationKey/classifyRoleChange';
 import { type OrganizationRolesState, organizationRolesThunk } from '../organizationRoles';
 import {
     hasUserSourcedOwnerRole,
@@ -223,7 +223,7 @@ export const assignMemberRoles = ({
         );
         const currentRolesRequireOrgKey = currentRoles.some(({ Role }) => isOrgKeyRequired(Role));
 
-        if (!desiredRolesRequireOrgKey || currentRolesRequireOrgKey || member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN) {
+        if (!desiredRolesRequireOrgKey || currentRolesRequireOrgKey || getIsMemberAdminOrPendingAdmin(member)) {
             return dispatch(updateMemberRoles({ member, currentRoles, desiredRoleIds, api }));
         }
 
@@ -266,7 +266,7 @@ export const provideOrgKeyAccessToMember = ({
     UnknownAction
 > => {
     return async (dispatch) => {
-        if (member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN) {
+        if (getIsMemberAdminOrPendingAdmin(member)) {
             return;
         }
         const organizationKey = await dispatch(organizationKeyThunk());
