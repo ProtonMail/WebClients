@@ -7,6 +7,7 @@ import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useLumoSelector } from '../../redux/hooks';
 import { selectConversationById } from '../../redux/selectors';
 import type { ConversationId, SpaceId } from '../../types';
+import { isInternalLumoHost } from '../../util/internalHost';
 import { NotificationsTab } from './NotificationsTab';
 import { PerformanceTab } from './PerformanceTab';
 import { RenderingTab } from './RenderingTab';
@@ -63,17 +64,21 @@ const DebugView = () => {
         return () => window.removeEventListener('keydown', handleKeyPress);
     }, [isVisible]);
 
-    // Derive the active tab so guests can't land on Search/Storage even briefly.
-    const activeTab: ActiveTab =
-        !isLoggedIn && (activeTabState === 'search' || activeTabState === 'storage') ? 'performance' : activeTabState;
+    const isInternalHost = isInternalLumoHost();
+
+    // Derive the active tab so a hidden tab can't be shown even briefly.
+    const isTabHidden =
+        (!isLoggedIn && (activeTabState === 'search' || activeTabState === 'storage')) ||
+        (!isInternalHost && (activeTabState === 'rendering' || activeTabState === 'notifications'));
+    const activeTab: ActiveTab = isTabHidden ? 'performance' : activeTabState;
 
     if (!isVisible) return null;
 
     const tabs: { id: ActiveTab; label: string }[] = [
         { id: 'performance', label: c('lumo: Debug View').t`Performance` },
-        { id: 'rendering', label: c('lumo: Debug View').t`Rendering` },
+        ...(isInternalHost ? [{ id: 'rendering' as const, label: c('lumo: Debug View').t`Rendering` }] : []),
         ...(isLoggedIn ? [{ id: 'search' as const, label: c('lumo: Debug View').t`Search` }] : []),
-        { id: 'notifications', label: c('lumo: Debug View').t`Notifications` },
+        ...(isInternalHost ? [{ id: 'notifications' as const, label: c('lumo: Debug View').t`Notifications` }] : []),
         ...(isLoggedIn ? [{ id: 'storage' as const, label: c('lumo: Debug View').t`Storage` }] : []),
     ];
 
@@ -88,7 +93,7 @@ const DebugView = () => {
                     <NotificationsTab currentConversationId={currentConversationId} currentSpaceId={currentSpaceId} />
                 );
             case 'storage':
-                return <StorageTab currentConversationId={currentConversationId} />;
+                return <StorageTab currentConversationId={currentConversationId} showInternalTools={isInternalHost} />;
             case 'performance':
             default:
                 return <PerformanceTab isVisible={isVisible} />;
