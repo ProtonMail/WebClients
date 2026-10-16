@@ -2,7 +2,8 @@ import globals from "globals";
 import { configs } from "typescript-eslint";
 import { defineConfig, globalIgnores } from "eslint/config";
 import js from "@eslint/js";
-import importPlugin from "eslint-plugin-import";
+import { createTypeScriptImportResolver } from "eslint-import-resolver-typescript";
+import { createNodeResolver, importX } from "eslint-plugin-import-x";
 
 import noElectronStoreDirect from "./eslint-rules/no-electron-store-direct.mjs";
 
@@ -10,9 +11,9 @@ export default defineConfig(
     js.configs.recommended,
     configs.eslintRecommended,
     configs.recommended,
-    importPlugin.flatConfigs.recommended,
-    importPlugin.flatConfigs.electron,
-    importPlugin.flatConfigs.typescript,
+    importX.flatConfigs.recommended,
+    importX.flatConfigs.electron,
+    importX.flatConfigs.typescript,
     {
         languageOptions: {
             parserOptions: {
@@ -28,13 +29,11 @@ export default defineConfig(
             },
         },
         settings: {
-            "import/extensions": [".js", ".mjs", ".jsx", ".ts", ".tsx", ".d.ts"],
-            "import/resolver": {
-                typescript: {},
-                node: {
-                    extensions: [".js", ".jsx", ".ts", ".tsx", ".d.ts"],
-                },
-            },
+            "import-x/extensions": [".js", ".mjs", ".jsx", ".ts", ".tsx", ".d.ts"],
+            "import-x/resolver-next": [
+                createTypeScriptImportResolver(),
+                createNodeResolver({ extensions: [".js", ".jsx", ".ts", ".tsx", ".d.ts"] }),
+            ],
         },
         plugins: {
             "inbox-desktop": {
