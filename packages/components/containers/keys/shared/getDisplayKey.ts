@@ -74,7 +74,10 @@ export const getDisplayKey = ({
 
     const hasUserPermission = isPrivate && isSelf;
     const canModify = isAddressKey && hasUserPermission && !isPrimary;
-    const canDeleteForwarding = (isPrivate || !isSelf) && (AddressForwardingID === null || GroupMemberID === null);
+    // A forwarding key may only be deleted once it is no longer linked to an active address forwarding
+    // nor to a group membership. Use falsy checks so both `null` and missing (`undefined`) fields are handled.
+    const isUnlinkedForwardingKey = !AddressForwardingID && !GroupMemberID;
+    const canDeleteForwarding = (isPrivate || !isSelf) && isUnlinkedForwardingKey;
 
     return {
         ID,
