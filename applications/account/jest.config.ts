@@ -1,13 +1,13 @@
 import type { Config } from 'jest';
 
+import { getTransformIgnorePatterns } from '@proton/jest-swc-preset/transformIgnorePatterns.js';
+
 const jestConfig: Config = {
     setupFilesAfterEnv: ['./jest.setup.js'],
     testEnvironment: '@proton/jest-env',
     maxWorkers: 1,
     workerIdleMemoryLimit: '1G',
-    transformIgnorePatterns: [
-        'node_modules/(?!(\\.pnpm|@proton/shared|@proton/components|@protontech/telemetry|@protontech/logger|@protontech/mutex-browser|@protontech/crypto|openpgp|@protontech/openpgp|@openpgp/web-stream-tools|@protontech/bip39|emoji-mart|@preact/signals-core|@scure/base)/)',
-    ],
+    transformIgnorePatterns: getTransformIgnorePatterns(),
     preset: '@proton/jest-swc-preset',
     moduleNameMapper: {
         '\\.(jpg|jpeg|png|pdf|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm)$':

@@ -1784,6 +1784,9 @@ importers:
       '@proton/jest-env':
         specifier: workspace:^
         version: link:../../packages/jest-env
+      '@proton/jest-swc-preset':
+        specifier: workspace:^
+        version: link:../../packages/jest-swc-preset
       '@proton/metrics':
         specifier: workspace:^
         version: link:../../packages/metrics
@@ -6019,6 +6022,9 @@ importers:
       '@proton/jest-env':
         specifier: workspace:^
         version: link:../jest-env
+      '@proton/jest-swc-preset':
+        specifier: workspace:^
+        version: link:../jest-swc-preset
       '@proton/raw-images':
         specifier: workspace:^
         version: link:../raw-images
@@ -6162,6 +6168,9 @@ importers:
       '@proton/jest-env':
         specifier: workspace:^
         version: link:../jest-env
+      '@proton/jest-swc-preset':
+        specifier: workspace:^
+        version: link:../jest-swc-preset
       '@proton/unleash':
         specifier: workspace:^
         version: link:../unleash
