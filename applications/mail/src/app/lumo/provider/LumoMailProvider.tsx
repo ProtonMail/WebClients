@@ -42,6 +42,8 @@ import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import type { Contact } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
+import { MailFeatureFlag } from '@proton/unleash/Flags';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { useDraftBodyWriters } from '../../containers/DraftBodyWriterProvider';
@@ -121,6 +123,7 @@ const LumoMailProvider = ({ children }: Props) => {
     const draftBodyWriters = useDraftBodyWriters();
     const telemetry = useLumoMailTelemetry();
     const { detach } = useLumoFloatingPanel();
+    const standalonePrompt = useFlag(MailFeatureFlag.LumoInMailStandalonePrompt);
 
     // Latest values, refreshed every render, so the once-built handlers always read the current
     // snapshot (mirrors the POC's ref pattern; keeps the config referentially stable).
@@ -151,6 +154,7 @@ const LumoMailProvider = ({ children }: Props) => {
         onCompose,
         draftBodyWriters,
         telemetry,
+        standalonePrompt,
     };
     const latest = useRef(current);
     latest.current = current;
@@ -282,7 +286,8 @@ const LumoMailProvider = ({ children }: Props) => {
             toolFailed: (toolName, toolKind) => latest.current.telemetry.toolFailed(toolName, toolKind),
         };
 
-        return buildLumoMailConfig(deps, configTelemetry);
+        // Read once, like the rest of the config: a flag change applies from the next mount.
+        return buildLumoMailConfig(deps, configTelemetry, latest.current.standalonePrompt);
     }, []);
 
     const conversation = useLumoAgent(config);
