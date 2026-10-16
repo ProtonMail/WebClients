@@ -1,4 +1,4 @@
-import { getAuthorName } from '~/drive-sdk'
+import { getAuthorName } from '~/drive-sdk/getAuthorName'
 import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions'
 import { SHARE_MEMBER_STATE } from '@proton/shared/lib/drive/constants'
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link'
