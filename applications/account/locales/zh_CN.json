@@ -2314,6 +2314,9 @@
       ],
       "Zoom out": [
         "缩小"
+      ],
+      "Connect Gmail": [
+        "关联 Gmail"
       ]
     },
     "action": {
@@ -2901,6 +2904,9 @@
       ],
       "Premium versions of all ${ BRAND_NAME } services": [
         "所有 ${ BRAND_NAME } 服务的付费版本"
+      ],
+      "The ${ planName } plan is back for a limited time only": [
+        "${ planName } 套餐限时回归"
       ]
     },
     "bf2023: info": {
@@ -3755,6 +3761,15 @@
       ],
       "Your previous username, ${ boldClaimedEmail }, can no longer be used to sign in to this account.": [
         "您之前的用户名 ${ boldClaimedEmail } 将无法再用于登录此账户。"
+      ],
+      "The address ${ boldClaimedEmail } has been claimed by another organization and can no longer be used for this account. Your data is safe and remains private.": [
+        "地址 ${ boldClaimedEmail } 已被其他组织占用，无法再用于此账户。您的数据安全且保持私密。"
+      ],
+      "Your address has been claimed": [
+        "您的地址已被占用"
+      ],
+      "Your administrator can give you a new address.": [
+        "您的管理员可以为您提供一个新地址。"
       ]
     },
     "Collapsible tooltip": {
@@ -5581,6 +5596,9 @@
       ],
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "您的套餐总共支持 ${ MAX_SYNC_PAID_USER } 个 Gmail 地址"
+      ],
+      "No ads, no tracking. Use your Gmail in ${ BRAND_NAME }. Nothing there gets edited or deleted.": [
+        "无广告，无跟踪。在 ${ BRAND_NAME } 中使用您的 Gmail，其中的任何内容都不会被编辑或删除。"
       ]
     },
     "description": {
@@ -7027,6 +7045,15 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "您的恢复联系人应是您认识并能轻松联系到的人！"
+      ],
+      "Add contact": [
+        "添加联系人"
+      ],
+      "Recover your data before adding a new contact.": [
+        "在添加新联系人之前，请先恢复您的数据。"
+      ],
+      "Your data is still locked from a password reset. A contact added now won't be able to restore it.": [
+        "您的数据仍因密码重置而被锁定，现在添加的联系人将无法恢复它。"
       ]
     },
     "Empty group name": {
@@ -8045,6 +8072,12 @@
       ],
       "Zero keys reactivated": [
         "未重新激活任何密钥"
+      ],
+      "We couldn't disconnect this address. Please try again.": [
+        "我们无法取消关联该地址，请重试。"
+      ],
+      "We couldn't reconnect this address.": [
+        "我们无法重新关联此地址。"
       ]
     },
     "error": {
@@ -14232,6 +14265,63 @@
       ],
       "Zoom meeting": [
         "Zoom 会议"
+      ],
+      "${ emailAddress } is used to sign in to another ${ BRAND_NAME } account. We are making the connection seamless, but for now you will need to take a few steps.": [
+        "${ emailAddress } 已用于登录另一个 ${ BRAND_NAME } 账户。我们正在实现无缝关联，但目前您需要执行一些操作。"
+      ],
+      "${ reason.email } is used to sign in to another ${ BRAND_NAME } account. You'll pick a new username for that account next time you sign in. Nothing else changes.": [
+        "${ reason.email } 已用于登录另一个 ${ BRAND_NAME } 账户。您下次登录该账户时将选择一个新的用户名，其他内容保持不变。"
+      ],
+      "**We're changing the ${ BRAND_NAME } sign-in page.** Your account and password stay the same.": [
+        "**我们正在更改 ${ BRAND_NAME } 登录页面。** 您的账户和密码保持不变。"
+      ],
+      "Connected": [
+        "已关联"
+      ],
+      "Disconnected": [
+        "取消关联"
+      ],
+      "For security, business accounts sign in with a code instead. On your TV, select 'Trouble signing in?' and follow the steps.": [
+        "出于安全考虑，企业账户需改用验证码登录。在您的电视上，选择“登录遇到问题？”并按照步骤操作。"
+      ],
+      "Import show one-time transfers of email, calendars, contacts, or files into your ${ BRAND_NAME } account.": [
+        "导入是指将邮件、日历、联系人或文件一次性转移到您的 ${ BRAND_NAME } 账户。"
+      ],
+      "Messages from other ${ BRAND_NAME } users also lose end-to-end encryption.": [
+        "来自其他 ${ BRAND_NAME } 用户的邮件也会失去端到端加密。"
+      ],
+      "Please sign in with ${ emailAddress } to continue.": [
+        "请使用 ${ emailAddress } 登录以继续。"
+      ],
+      "Please sign in with the Gmail account you want to connect to continue.": [
+        "请使用您要关联的 Gmail 账户登录以继续。"
+      ],
+      "This Gmail is already connected to your ${ BRAND_NAME } account. There's nothing else you need to do.": [
+        "此 Gmail 已关联到您的 ${ BRAND_NAME } 账户，您无需进行其他操作。"
+      ],
+      "This Gmail is used to sign in to another ${ BRAND_NAME } account. We are making the connection seamless, but for now you will need to take a few steps.": [
+        "此 Gmail 已用于登录另一个 ${ BRAND_NAME } 账户。我们正在实现无缝关联，但目前您需要执行一些操作。"
+      ],
+      "We couldn't connect ${ emailAddress }. Try again and select all the boxes when Google asks for access. ${ BRAND_NAME } only uses this access to connect your Gmail.": [
+        "我们无法关联 ${ emailAddress }。请重试，并在 Google 请求访问权限时勾选所有选项。${ BRAND_NAME } 仅使用此权限来关联您的 Gmail。"
+      ],
+      "We couldn't connect your Gmail right now. Please try again in a few minutes.": [
+        "我们目前无法关联您的 Gmail，请几分钟后重试。"
+      ],
+      "We couldn't connect your Gmail. Try again and select all the boxes when Google asks for access. ${ BRAND_NAME } only uses this access to connect your Gmail.": [
+        "我们无法关联您的 Gmail。请重试，并在 Google 请求访问权限时勾选所有选项。${ BRAND_NAME } 仅使用此权限来关联您的 Gmail。"
+      ],
+      "When sign-in is restricted, only ${ primaryEmailElement } and your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "当登录受限时，仅可使用 ${ primaryEmailElement } 和您的用户名 ${ usernameElement } 登录。即使他人知晓，您的其他地址也无法关联到您的账户。"
+      ],
+      "When sign-in is restricted, only your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "当登录受限时，仅可使用您的用户名 ${ usernameElement } 登录。即使他人知晓，您的其他地址也无法关联到您的账户。"
+      ],
+      "You won't be able to send or receive as ${ email } in ${ BRAND_NAME } anymore.": [
+        "您将无法再在 ${ BRAND_NAME } 中以 ${ email } 的身份收发邮件。"
+      ],
+      "Your account and password stay the same.": [
+        "您的账户和密码保持不变。"
       ]
     },
     "info": {
@@ -16584,6 +16674,18 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "Connect ${ item.Email }": [
+        "关联 ${ item.Email }"
+      ],
+      "Restrict sign-in to primary email address": [
+        "限制仅使用主邮箱地址登录"
+      ],
+      "Restrict sign-in to username": [
+        "限制仅使用用户名登录"
+      ],
+      "Start with your most recent": [
+        "从最近的开始"
       ]
     },
     "label": {
@@ -20722,6 +20824,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "您当前的订阅已享有折扣优惠，转用新的促销意味着现有折扣将不再适用。"
+      ],
+      "Plan switch is incompatible for the following reasons:": [
+        "套餐切换不兼容，原因如下："
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Proton Meet 席位数量必须与成员数量匹配。"
+      ],
+      "This plan doesn’t support the managed features on your account.": [
+        "此套餐不支持您账户上的托管功能。"
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "当前无法完成此订阅，请重试。"
       ]
     },
     "Payments.Error": {
@@ -23955,6 +24069,15 @@
       ],
       "Your SSO configuration will be deleted.": [
         "您的 SSO 配置将被删除。"
+      ],
+      "Enter your password": [
+        "请输入您的密码"
+      ],
+      "To make sure it's really you trying to sign-in, please enter your password.": [
+        "为确保是您本人尝试登录，请输入您的密码。"
+      ],
+      "Your old password will become your **backup password**. You will be able to use it to authorize single sign-on (SSO) on new devices in the future.": [
+        "您的旧密码将成为您的**备用密码**，未来您将能够使用它来授权在新设备上进行单点登录 (SSO)。"
       ]
     },
     "sso: auth device state": {
@@ -27522,6 +27645,36 @@
       ],
       "Your subscriptions": [
         "您的账户等级"
+      ],
+      "Addresses": [
+        "地址"
+      ],
+      "Allow access to connect your Gmail": [
+        "允许访问以关联您的 Gmail"
+      ],
+      "Connect your Gmail": [
+        "关联您的 Gmail"
+      ],
+      "Disconnect this address?": [
+        "取消关联该地址？"
+      ],
+      "Good to know before you connect": [
+        "关联前须知"
+      ],
+      "QR sign-in isn't available for business accounts": [
+        "企业账户无法使用扫码登录"
+      ],
+      "Sign-in protection": [
+        "登录保护"
+      ],
+      "This Gmail is already connected": [
+        "此 Gmail 已被关联"
+      ],
+      "This Gmail is linked to another ${ BRAND_NAME } account": [
+        "此 Gmail 已关联至另一个 ${ BRAND_NAME } 账户"
+      ],
+      "Wrong Gmail account": [
+        "Gmail 账户错误"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -28031,6 +28184,9 @@
       ],
       "Waiting for user to accept the invitation": [
         "等待用户接受邀请"
+      ],
+      "Assigned by a group. Remove the user from the group to change this role": [
+        "由群组分配，请将该用户移出群组以更改此角色"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -29151,6 +29307,106 @@
       ],
       "Yearly, ${ untilString }": [
         "每一年，${ untilString }"
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "黑色星期五"
+      ],
+      "Get the deal": [
+        "获取优惠"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/月"
+      ],
+      "15 GB storage": [
+        "15 GB 存储空间"
+      ],
+      "2 individual accounts": [
+        "2 个独立账户"
+      ],
+      "2 TB of secure storage": [
+        "2 TB 安全存储空间"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB 存储空间：当前套餐的 40 倍"
+      ],
+      "3 TB of secure storage": [
+        "3 TB 安全存储空间"
+      ],
+      "500 GB of secure storage": [
+        "500 GB 安全存储空间"
+      ],
+      "6 individual accounts": [
+        "6 个独立账户"
+      ],
+      "Built-in 2FA authenticator": [
+        "内置 2FA 验证器"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "折扣基于标准月度价格。结算周期结束时，您的订阅将按标准年度费率续订。"
+      ],
+      "Online document editor": [
+        "在线文档编辑器"
+      ],
+      "Recover previous file versions": [
+        "恢复先前的文件版本"
+      ],
+      "Stronger protection against cyber threats": [
+        "针对网络威胁提供更强有力的保护"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "文件夹、标签、筛选规则不限量"
+      ],
+      "Use your own email domain": [
+        "使用自有邮箱域名"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "高级版 ${ DRIVE_SHORT_APP_NAME }、${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME } 和 ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "高级版 ${ DRIVE_SHORT_APP_NAME }、${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "高级版 ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "高级版 ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 和 ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "高级版 ${ PASS_SHORT_APP_NAME }、${ MAIL_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 和 ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "年份最大特卖"
+      ],
+      "Black Friday": [
+        "黑色星期五"
+      ],
+      "for 12 months": [
+        "年费"
+      ],
+      "Last chance to save big": [
+        "最后的促销机会"
+      ],
+      "Protect your entire tribe": [
+        "保护您的整个家庭"
+      ],
+      "Protection for two in a single plan": [
+        "单个套餐为两人提供保护"
       ]
     }
   }

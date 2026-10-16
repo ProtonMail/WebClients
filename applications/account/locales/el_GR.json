@@ -2314,6 +2314,9 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ],
+      "Connect Gmail": [
+        "Σύνδεση στο Gmail"
       ]
     },
     "action": {
@@ -7191,6 +7194,15 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "Οι επαφές σας για την ανάκτηση πρέπει να είναι άτομα που γνωρίζετε και με τα οποία μπορείτε να επικοινωνήσετε εύκολα."
+      ],
+      "Add contact": [
+        "Προσθήκη επαφής"
+      ],
+      "Recover your data before adding a new contact.": [
+        "Ανακτήστε τα δεδομένα σας πριν προσθέσετε μια νέα επαφή."
+      ],
+      "Your data is still locked from a password reset. A contact added now won't be able to restore it.": [
+        "Τα δεδομένα σας παραμένουν κλειδωμένα λόγω επαναφοράς κωδικού πρόσβασης. Μια επαφή που θα προστεθεί τώρα δε θα μπορέσει να τα επαναφέρει."
       ]
     },
     "Empty group name": {
@@ -14516,6 +14528,33 @@
       ],
       "Zoom meeting": [
         "Σύσκεψη Zoom"
+      ],
+      "${ emailAddress } is used to sign in to another ${ BRAND_NAME } account. We are making the connection seamless, but for now you will need to take a few steps.": [
+        "Η διεύθυνση ${ emailAddress } χρησιμοποιείται για τη σύνδεση σε έναν άλλον λογαριασμό ${ BRAND_NAME }. Κάνουμε τη διαδικασία σύνδεσης απρόσκοπτη, αλλά προς το παρόν θα χρειαστεί να ακολουθήσετε μερικά βήματα."
+      ],
+      "${ reason.email } is used to sign in to another ${ BRAND_NAME } account. You'll pick a new username for that account next time you sign in. Nothing else changes.": [
+        "Το ${ reason.email } χρησιμοποιείται για τη σύνδεση σε έναν άλλον λογαριασμό ${ BRAND_NAME }. Θα επιλέξετε νέο όνομα χρήστη για αυτόν τον λογαριασμό την επόμενη φορά που θα συνδεθείτε. Τίποτα άλλο δεν αλλάζει."
+      ],
+      "Please sign in with ${ emailAddress } to continue.": [
+        "Παρακαλώ συνδεθείτε με τη διεύθυνση ${ emailAddress } για να συνεχίσετε."
+      ],
+      "Please sign in with the Gmail account you want to connect to continue.": [
+        "Παρακαλούμε συνδεθείτε με τον λογαριασμό Gmail που θέλετε να συνδέσετε, για να συνεχίσετε."
+      ],
+      "This Gmail is already connected to your ${ BRAND_NAME } account. There's nothing else you need to do.": [
+        "Αυτός ο λογαριασμός Gmail είναι ήδη συνδεδεμένος με τον ${ BRAND_NAME } λογαριασμό σας. Δε χρειάζεται να κάνετε τίποτα άλλο."
+      ],
+      "This Gmail is used to sign in to another ${ BRAND_NAME } account. We are making the connection seamless, but for now you will need to take a few steps.": [
+        "Αυτός ο λογαριασμός Gmail χρησιμοποιείται για τη σύνδεση σε έναν άλλον λογαριασμό ${ BRAND_NAME }. Κάνουμε τη διαδικασία σύνδεσης απρόσκοπτη, αλλά προς το παρόν θα χρειαστεί να ακολουθήσετε μερικά βήματα."
+      ],
+      "We couldn't connect ${ emailAddress }. Try again and select all the boxes when Google asks for access. ${ BRAND_NAME } only uses this access to connect your Gmail.": [
+        "Δεν μπορέσαμε να συνδέσουμε το ${ emailAddress } σας. Δοκιμάστε ξανά και επιλέξτε όλα τα πλαίσια όταν η Google ζητήσει πρόσβαση. Το ${ BRAND_NAME } χρησιμοποιεί αυτή την πρόσβαση μόνο για να συνδέσει το Gmail σας."
+      ],
+      "We couldn't connect your Gmail right now. Please try again in a few minutes.": [
+        "Δεν ήταν δυνατή η σύνδεση του Gmail σας αυτή τη στιγμή. Παρακαλούμε δοκιμάστε ξανά σε λίγα λεπτά."
+      ],
+      "We couldn't connect your Gmail. Try again and select all the boxes when Google asks for access. ${ BRAND_NAME } only uses this access to connect your Gmail.": [
+        "Δεν μπορέσαμε να συνδέσουμε το Gmail σας. Δοκιμάστε ξανά και επιλέξτε όλα τα πλαίσια όταν η Google ζητήσει πρόσβαση. Το ${ BRAND_NAME } χρησιμοποιεί αυτή την πρόσβαση μόνο για να συνδέσει το Gmail σας."
       ]
     },
     "info": {
@@ -21084,6 +21123,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Η συνδρομή σας έχει ήδη μια υπάρχουσα έκπτωση. Η μετάβαση σε αυτή τη νέα προσφορά σημαίνει ότι η υπάρχουσα έκπτωση δε θα ισχύει πλέον."
+      ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Η αλλαγή προγράμματος δεν είναι δυνατή για τους εξής λόγους:"
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Οι θέσεις στο Proton Meet πρέπει να αντιστοιχούν στον αριθμό των μελών."
+      ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Αυτό το πρόγραμμα δεν υποστηρίζει τις διαχειριζόμενες λειτουργίες στον λογαριασμό σας."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Αυτή η συνδρομή δεν μπορεί να ολοκληρωθεί αυτή τη στιγμή. Παρακαλούμε δοκιμάστε ξανά."
       ]
     },
     "Payments.Error": {
@@ -27996,6 +28047,24 @@
       ],
       "Your subscriptions": [
         "Οι συνδρομές σας"
+      ],
+      "Addresses": [
+        "Διευθύνσεις"
+      ],
+      "Allow access to connect your Gmail": [
+        "Παραχωρήστε πρόσβαση για να συνδέσετε το Gmail σας"
+      ],
+      "Good to know before you connect": [
+        "Χρήσιμες πληροφορίες πριν τη σύνδεση"
+      ],
+      "This Gmail is already connected": [
+        "Αυτός ο λογαριασμός Gmail είναι ήδη συνδεδεμένος"
+      ],
+      "This Gmail is linked to another ${ BRAND_NAME } account": [
+        "Αυτό το Gmail είναι συνδεδεμένο με έναν άλλο λογαριασμό ${ BRAND_NAME }"
+      ],
+      "Wrong Gmail account": [
+        "Λάθος λογαριασμός Gmail"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

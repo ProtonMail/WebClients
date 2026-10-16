@@ -2314,6 +2314,9 @@
       ],
       "Zoom out": [
         "Verkleinern"
+      ],
+      "Connect Gmail": [
+        "Mit Gmail verbinden"
       ]
     },
     "action": {
@@ -7191,6 +7194,15 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "Deine Wiederherstellungskontakte sollten Personen sein, die du kennst und die du leicht erreichen kannst."
+      ],
+      "Add contact": [
+        "Kontakt hinzufügen"
+      ],
+      "Recover your data before adding a new contact.": [
+        "Stelle deine Daten wieder her, bevor du einen neuen Kontakt hinzufügst."
+      ],
+      "Your data is still locked from a password reset. A contact added now won't be able to restore it.": [
+        "Deine Daten sind nach dem Zurücksetzen des Passworts weiterhin gesperrt. Ein jetzt erst hinzugefügter Kontakt kann diese nicht wiederherstellen."
       ]
     },
     "Empty group name": {
@@ -8218,6 +8230,12 @@
       ],
       "Zero keys reactivated": [
         "Kein Schüssel wiederhergestellt"
+      ],
+      "We couldn't disconnect this address. Please try again.": [
+        "Deine E-Mail-Adresse konnte nicht getrennt werden. Bitte versuche es erneut."
+      ],
+      "We couldn't reconnect this address.": [
+        "Es konnte keine Verbindung zu dieser E-Mail-Adresse hergestellt werden."
       ]
     },
     "error": {
@@ -14516,6 +14534,51 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
+      ],
+      "${ emailAddress } is used to sign in to another ${ BRAND_NAME } account. We are making the connection seamless, but for now you will need to take a few steps.": [
+        "Diese E-Mail-Adresse ${ emailAddress } wird verwendet, um sich bei einem anderen ${ BRAND_NAME }-Konto anzumelden. Es wird daran gearbeitet, diesen Vorgang zu vereinfachen, doch vorerst müssen noch einige Schritte durchgeführt werden."
+      ],
+      "${ reason.email } is used to sign in to another ${ BRAND_NAME } account. You'll pick a new username for that account next time you sign in. Nothing else changes.": [
+        "${ reason.email } wird verwendet, um sich bei einem anderen ${ BRAND_NAME }-Konto anzumelden. Wenn du dich das nächste Mal bei diesem Konto anmeldest, wählst du einen neuen Benutzernamen. Ansonsten ändert sich nichts."
+      ],
+      "Connected": [
+        "Verbunden"
+      ],
+      "Disconnected": [
+        "Verbindung getrennt"
+      ],
+      "Messages from other ${ BRAND_NAME } users also lose end-to-end encryption.": [
+        "Auch Nachrichten von anderen ${ BRAND_NAME }-Nutzern sind dann nicht mehr durch eine Ende-zu-Ende-Verschlüsselung geschützt."
+      ],
+      "Please sign in with ${ emailAddress } to continue.": [
+        "Bitte melde dich mit ${ emailAddress } an, um fortfahren zu können."
+      ],
+      "Please sign in with the Gmail account you want to connect to continue.": [
+        "Bitte melde dich mit dem Gmail-Konto an, das du verknüpfen möchtest, um fortzufahren."
+      ],
+      "This Gmail is already connected to your ${ BRAND_NAME } account. There's nothing else you need to do.": [
+        "Dieses Gmail-Konto ist bereits mit deinem ${ BRAND_NAME }-Konto verknüpft. Du musst nichts weiter tun."
+      ],
+      "This Gmail is used to sign in to another ${ BRAND_NAME } account. We are making the connection seamless, but for now you will need to take a few steps.": [
+        "Dieses Gmail-Konto wird verwendet, um sich bei einem anderen ${ BRAND_NAME }-Konto anzumelden. Es wird daran gearbeitet, diesen Vorgang zu vereinfachen, doch vorerst müssen noch einige Schritte durchgeführt werden."
+      ],
+      "We couldn't connect ${ emailAddress }. Try again and select all the boxes when Google asks for access. ${ BRAND_NAME } only uses this access to connect your Gmail.": [
+        "Es konnte keine Verbindung zu ${ emailAddress } hergestellt werden. Versuche es erneut und aktiviere alle Kontrollkästchen, wenn Google dich um Zugriff bittet. ${ BRAND_NAME } nutzt diesen Zugriff ausschließlich, um eine Verbindung zu deinem Gmail-Konto herzustellen."
+      ],
+      "We couldn't connect your Gmail right now. Please try again in a few minutes.": [
+        "Leider konnte derzeit keine Verbindung zu deinem Gmail-Konto hergestellt werden. Bitte versuche es in ein paar Minuten erneut."
+      ],
+      "We couldn't connect your Gmail. Try again and select all the boxes when Google asks for access. ${ BRAND_NAME } only uses this access to connect your Gmail.": [
+        "Es konnte keine Verbindung zu deinem Gmail-Konto hergestellt werden. Versuche es erneut und aktiviere alle Kontrollkästchen, wenn Google dich um Zugriff bittet. ${ BRAND_NAME } nutzt diesen Zugriff ausschließlich, um eine Verbindung zu deinem Gmail-Konto herzustellen."
+      ],
+      "When sign-in is restricted, only ${ primaryEmailElement } and your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Wenn die Anmeldung eingeschränkt ist, können nur ${ primaryEmailElement } und dein Benutzername ${ usernameElement } zur Anmeldung verwendet werden. Deine anderen E-Mail-Adressen können nicht mit deinem Konto verknüpft werden, selbst wenn jemand sie kennt."
+      ],
+      "When sign-in is restricted, only your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Wenn die Anmeldung eingeschränkt ist, kann nur dein Benutzername ${ usernameElement } zur Anmeldung verwendet werden. Deine anderen E-Mail-Adressen können nicht mit deinem Konto in Verbindung gebracht werden, selbst wenn jemand sie kennt."
+      ],
+      "You won't be able to send or receive as ${ email } in ${ BRAND_NAME } anymore.": [
+        "Du kannst unter der E-Mail-Adresse ${ email } bei ${ BRAND_NAME } keine Nachrichten mehr senden oder empfangen."
       ]
     },
     "info": {
@@ -16877,6 +16940,18 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Connect ${ item.Email }": [
+        "Mit ${ item.Email } verbinden"
+      ],
+      "Restrict sign-in to primary email address": [
+        "Anmeldung auf die Haupt-E-Mail-Adresse beschränken"
+      ],
+      "Restrict sign-in to username": [
+        "Anmeldung auf Benutzernamen beschränken"
+      ],
+      "Start with your most recent": [
+        "Mit den neuesten beginnen"
       ]
     },
     "label": {
@@ -21084,6 +21159,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Dein Abonnement hat derzeit einen bestehenden Rabatt. Der Wechsel zu dieser neuen Aktion bedeutet, dass der bestehende Rabatt nicht länger angewendet wird."
+      ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Der Tarifwechsel ist aus folgenden Gründen nicht möglich:"
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Die Anzahl der Plätze bei Proton Meet muss mit der Anzahl der Teilnehmer übereinstimmen."
+      ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Dieser Tarif unterstützt für dein Konto keine Verwaltungsfunktionen."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Dieses Abonnement kann derzeit nicht abgeschlossen werden. Bitte versuche es erneut."
       ]
     },
     "Payments.Error": {
@@ -24379,6 +24466,9 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Deine SSO-Konfiguration wird gelöscht."
+      ],
+      "To make sure it's really you trying to sign-in, please enter your password.": [
+        "Um sicherzustellen, dass es wirklich du bist, der sich anmelden möchte, gib bitte dein Passwort ein."
       ]
     },
     "sso: auth device state": {
@@ -27993,6 +28083,33 @@
       ],
       "Your subscriptions": [
         "Deine Abonnements"
+      ],
+      "Addresses": [
+        "Adressen"
+      ],
+      "Allow access to connect your Gmail": [
+        "Zugriff zulassen, um Ihr Gmail-Konto verknüpfen zu können"
+      ],
+      "Connect your Gmail": [
+        "Mit Gmail verbinden"
+      ],
+      "Disconnect this address?": [
+        "Verbindung zu dieser Adresse trennen?"
+      ],
+      "Good to know before you connect": [
+        "Was Du vor dem Verbinden beachten solltest"
+      ],
+      "Sign-in protection": [
+        "Anmeldeschutz"
+      ],
+      "This Gmail is already connected": [
+        "Dieses Gmail-Konto ist bereits verbunden"
+      ],
+      "This Gmail is linked to another ${ BRAND_NAME } account": [
+        "Dieses Gmail-Konto ist bereits mit einem anderen ${ BRAND_NAME }-Konto verknüpft."
+      ],
+      "Wrong Gmail account": [
+        "Falsches Gmail-Konto"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

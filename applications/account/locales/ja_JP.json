@@ -1988,6 +1988,9 @@
       ],
       "Writing assistant seats": [
         "執筆アシスタントシート"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "マネージドサービスプロバイダーアドオンを導入している組織は、子会社組織を作成および管理できます。"
       ]
     },
     "Address action": {
@@ -3175,6 +3178,9 @@
       ],
       "Total": [
         "合計"
+      ],
+      "Total for ${ cycle } month": [
+        "合計 ${ cycle } か月"
       ]
     },
     "claimed address": {
@@ -12731,6 +12737,9 @@
       ],
       "Zoom meeting": [
         "Zoom ミーティング"
+      ],
+      "1 vault per user": [
+        "一人のユーザーにつき一つの保管庫"
       ]
     },
     "info": {
@@ -15380,6 +15389,9 @@
       ],
       "What’s this?": [
         "これは何ですか?"
+      ],
+      "Pay it": [
+        "支払う"
       ]
     },
     "Link (Scribe)": {
@@ -18798,6 +18810,12 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "あなたのサブスクリプションは現在、割引が適用されています。この新しいプロモーションに移行すると、既存の割引は適用されなくなります。"
+      ],
+      "This plan doesn’t support the members on your account.": [
+        "このプランは、お客様のアカウントに登録されているメンバーをサポートしていません。"
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "トライアルプランは Scrieシート をサポートしていません。"
       ]
     },
     "Payments.Error": {
@@ -25175,6 +25193,9 @@
       ],
       "Your subscriptions": [
         "あなたのサブスクリプション"
+      ],
+      "Addresses": [
+        "メールアドレス"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -26685,6 +26706,16 @@
       ],
       "Yearly, ${ untilString }": [
         "毎年、${ untilString }"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "Use your own email domain": [
+        "独自のメールドメインを使用"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - 末尾が${ Last4 }のカード"
       ]
     }
   }
