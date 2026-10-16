@@ -5,9 +5,12 @@ import { getBufferHash } from '@proton/docs-core/lib/utils/hash'
 import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle'
 import { IcCross } from '@proton/icons/icons/IcCross'
 import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle'
+import { isLocalEnvironment } from '@proton/shared/lib/env'
 import { useEffect, useRef, useState } from 'react'
 import { mergeUpdates } from 'yjs'
 import { createStore, useStore } from 'zustand'
+
+const canSyncOverWebSocket = () => isLocalEnvironment()
 
 const createUpdateReplayToolStore = (editorController: EditorControllerInterface) => {
   return createStore<{
@@ -174,6 +177,9 @@ const createUpdateReplayToolStore = (editorController: EditorControllerInterface
     },
 
     createNewConnection: () => {
+      if (!canSyncOverWebSocket()) {
+        return
+      }
       const store = get()
       if (store.ws && store.ws.readyState === WebSocket.OPEN) {
         store.ws.close()
@@ -278,7 +284,7 @@ export default function UpdateReplayTool({
 
   const didSetupInitialConnection = useRef(false)
   useEffect(() => {
-    if (didSetupInitialConnection.current) {
+    if (!canSyncOverWebSocket() || didSetupInitialConnection.current) {
       return
     }
     createNewConnection()
@@ -301,20 +307,26 @@ export default function UpdateReplayTool({
         </button>
       </div>
       <div className="flex flex-col gap-2 p-2">
-        <div className="flex items-center gap-2">
-          {isConnected ? <IcCheckmarkCircle className="h-3.5 w-3.5" /> : <IcCrossCircle className="h-3.5 w-3.5" />}
-          {isConnected ? 'Connected' : 'Disconnected'}
-          {!isConnected && (
-            <Button
-              size="small"
-              onClick={() => {
-                createNewConnection()
-              }}
-            >
-              Connect
-            </Button>
-          )}
-        </div>
+        {canSyncOverWebSocket() ? (
+          <div className="flex items-center gap-2">
+            {isConnected ? <IcCheckmarkCircle className="h-3.5 w-3.5" /> : <IcCrossCircle className="h-3.5 w-3.5" />}
+            {isConnected ? 'Connected' : 'Disconnected'}
+            {!isConnected && (
+              <Button
+                size="small"
+                onClick={() => {
+                  createNewConnection()
+                }}
+              >
+                Connect
+              </Button>
+            )}
+          </div>
+        ) : (
+          <div className="text-sm leading-snug text-[--text-weak]">
+            Multi-tab sync uses a local relay on port 3001 and is only available in local dev.
+          </div>
+        )}
         <label>
           <div className="mb-1.5 text-sm leading-none">Updates to apply:</div>
           <input
