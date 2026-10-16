@@ -365,7 +365,6 @@ export { CancelSubscriptionSection } from './containers/payments/subscription/ca
 export { default as CancelSubscriptionViaSupportSection } from './containers/payments/subscription/cancelSubscriptionViaSupport/CancelSubscriptionViaSupportSection';
 export { SUBSCRIPTION_STEPS } from './containers/payments/subscription/constants';
 export { default as DashboardTelemetry } from './containers/payments/subscription/DashboardTelemetry';
-export { default as DowngradeSubscriptionSection } from './containers/payments/subscription/DowngradeSubscriptionSection';
 export {
     default as SubscriptionModalProvider,
     UpsellModalTelemetryProvider,

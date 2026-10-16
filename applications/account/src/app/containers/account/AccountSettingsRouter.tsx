@@ -36,7 +36,6 @@ import PlansSection from '@proton/components/containers/payments/PlansSection';
 import SubscriptionsSection from '@proton/components/containers/payments/SubscriptionsSection';
 import PaymentMethodsSection from '@proton/components/containers/payments/methods/PaymentMethodsSection';
 import DashboardTelemetry from '@proton/components/containers/payments/subscription/DashboardTelemetry';
-import DowngradeSubscriptionSection from '@proton/components/containers/payments/subscription/DowngradeSubscriptionSection';
 import { UpsellModalTelemetryProvider } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import YourPlanSection from '@proton/components/containers/payments/subscription/YourPlanSection';
 import DashboardComparePlansCTA from '@proton/components/containers/payments/subscription/YourPlanSectionV2/DashboardComparePlansCTA';
@@ -160,7 +159,6 @@ const AccountSettingsRouter = ({
                             <EmailSubscriptionSection toggleContainerClassName="gap-4" />
                             <CancelSubscriptionSection app={app} />
                             <CancelSubscriptionViaSupportSection />
-                            <DowngradeSubscriptionSection app={app} />
                         </PrivateMainSettingsArea>
                     </UpsellModalTelemetryProvider>
                 </Route>
@@ -181,7 +179,6 @@ const AccountSettingsRouter = ({
                         <EmailSubscriptionSection toggleContainerClassName="gap-4" />
                         <CancelSubscriptionSection app={app} />
                         <CancelSubscriptionViaSupportSection />
-                        <DowngradeSubscriptionSection app={app} />
                     </PrivateMainSettingsArea>
                 </Route>
             )}

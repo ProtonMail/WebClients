@@ -3,15 +3,13 @@ import userEvent from '@testing-library/user-event';
 
 import { getOrganizationState } from '@proton/account/testing/redux-state';
 import { getModelState } from '@proton/account/tests';
-import { changeRenewState, deleteSubscription } from '@proton/payments/core/api/api';
+import { changeRenewState } from '@proton/payments/core/api/api';
 import { FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
 import { Renew } from '@proton/payments/core/subscription/constants';
-import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
-import { PLANS_MAP } from '@proton/payments/testing/data-plans';
 import { getSubscriptionState } from '@proton/payments/testing/redux-state';
-import { APPS, PRODUCT_BIT } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import { apiMock } from '@proton/test-api/api';
@@ -28,7 +26,7 @@ const userModel: UserModel = {
 
 const vpnSubscription = buildSubscription(PLANS.VPN2024);
 
-const mailProSubscription = buildSubscription(PLANS.MAIL_PRO);
+const vpnBusinessSubscription = buildSubscription(PLANS.VPN_BUSINESS);
 
 type HookRef = { hook?: ReturnType<typeof useCancelSubscriptionFlow> };
 const Component = ({ hookRef }: { hookRef: HookRef }) => {
@@ -107,7 +105,7 @@ describe('cancel subscription', () => {
         });
     });
 
-    it.each([PLANS.VPN2024, PLANS.PASS, PLANS.VPN_PASS_BUNDLE])(
+    it.each([PLANS.VPN2024, PLANS.PASS, PLANS.VPN_PASS_BUNDLE, PLANS.MAIL_PRO])(
         'should send the API request for subscription cancellation and return the result: %s',
         async (plan) => {
             const subscription = {
@@ -162,50 +160,22 @@ describe('cancel subscription', () => {
     );
 });
 
-describe('downgrade subscription', () => {
-    it('should downgrade a mail subscription', async () => {
-        const {
-            hookRef,
-            result: { container },
-        } = setup({
+describe('subscription cancellable only via support', () => {
+    it('should show the contact us modal and keep the subscription without calling the API', async () => {
+        const { hookRef } = setup({
             preloadedState: {
-                subscription: getSubscriptionState(mailProSubscription),
-                user: getModelState({ ...userModel, hasPaidMail: true, Subscribed: PRODUCT_BIT.MAIL }),
+                subscription: getSubscriptionState(vpnBusinessSubscription),
+                user: getModelState({ ...userModel }),
                 organization: getOrganizationState(organization),
-                plans: {
-                    ...getModelState({ plans: Object.values(PLANS_MAP), freePlan: FREE_PLAN }),
-                    meta: { fetchedAt: Date.now(), fetchedEphemeral: true },
-                },
             },
         });
 
-        const cancelSubscriptionPromise = hookRef.hook?.cancelSubscription({
-            forceDeleteSubscription: true,
-        });
+        const cancelSubscriptionPromise = hookRef.hook?.cancelSubscription({});
 
-        await screen.findByTestId('highlight-downgrade-to-free');
-        await userEvent.click(screen.getByTestId('highlight-downgrade-to-free'));
+        expect(await screen.findByText('Why would you like to cancel?')).toBeInTheDocument();
+        await userEvent.click(screen.getByRole('button', { name: 'Cancel' }));
 
-        await wait(0);
-        await userEvent.type(container.querySelector('#confirm-text')!, organization.Name);
-        await userEvent.click(screen.getByTestId('confirm-member-delete'));
-        await wait(0);
-        await userEvent.click(screen.getByTestId('confirm-downgrade-btn'));
-        await wait(0);
-        await userEvent.click(screen.getByTestId('highlight-downgrade-to-free'));
-        await wait(0);
-        await userEvent.click(container.querySelector('#reason') as HTMLButtonElement);
-        await userEvent.click(screen.getByText('I use a different Proton account'));
-        await userEvent.click(screen.getByTestId('submitFeedback'));
-
-        expect(apiMock).toHaveBeenCalledWith(
-            deleteSubscription({
-                Reason: 'DIFFERENT_ACCOUNT',
-                Feedback: '',
-                ReasonDetails: '',
-                Context: 'mail',
-            })
-        );
-        await expect(cancelSubscriptionPromise).resolves.toEqual({ status: 'downgraded' });
+        await expect(cancelSubscriptionPromise).resolves.toEqual({ status: 'kept' });
+        expect(apiMock).not.toHaveBeenCalledWith(expect.objectContaining({ url: 'payments/v5/subscription' }));
     });
 });
