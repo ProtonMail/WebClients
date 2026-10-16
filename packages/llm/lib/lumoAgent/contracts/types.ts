@@ -141,6 +141,11 @@ export interface ToolDefinition<Params = any, Result = any> {
      * context). Additive: leaving it undefined is fine.
      */
     examples?: ToolExample[];
+    /**
+     * Cheap, store-free checks on the arguments themselves, run before a mutation's confirm card and again on
+     * the approved params. Throws a ToolInputError naming what to change.
+     */
+    checkParams?(params: Params): void;
     /** Concise text fed back to the model. Uses the {@link ReferenceRegistry} to render real ids as references. */
     serializeForLumo(result: Result, references: ReferenceRegistry): string;
     /** The transparency chip shown for this tool's run. */
