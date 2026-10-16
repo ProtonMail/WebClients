@@ -1,0 +1,9 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
+.week-day-picker {
+	&__day {
+		inline-size: #{rem(34)};
+		block-size: #{rem(34)};
+		font-size: #{rem(13)};
+	}
+}
