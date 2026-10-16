@@ -1,0 +1,33 @@
+.pass-onboarding-stepper {
+	position: relative;
+	isolation: isolate;
+
+	&-shapes {
+		position: absolute;
+		inset: 0;
+		inline-size: 100%;
+		block-size: 100%;
+		overflow: visible;
+		z-index: -1;
+
+		path {
+			fill: var(--onboarding-card-bg);
+			stroke: var(--onboarding-card-border);
+			stroke-width: 1;
+
+			&.active {
+				fill: color-mix(in srgb, var(--pass-main-color) 30%, transparent);
+			}
+		}
+	}
+
+	& > :not(svg) {
+		text-align: center;
+		color: var(--text-norm);
+		padding-block: 1rem;
+	}
+
+	& > :not(svg) ~ :not(svg) {
+		padding-inline-start: 2.5rem;
+	}
+}

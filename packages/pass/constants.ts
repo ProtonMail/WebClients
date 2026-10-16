@@ -50,6 +50,7 @@ export const PASS_CREDENTIAL_CHECK_URL = 'https://credential-check.protonweb.com
 
 export const PRIVATE_DOMAINS_URL = 'https://proton.me/download/pass/auto-detection/public_suffix_list.dat';
 export const WEBSITE_RULES_URL = 'https://proton.me/download/pass/auto-detection/rules.json';
+export const PASS_POPULAR_SERVICES_URL = 'https://proton.me/download/pass/popular-services/services.json';
 
 export const MODEL_REGISTRY_URL = 'https://proton.me/download/pass/model-registry/model-registry.json';
 export const MODEL_ARTIFACTS_BASE_URL = 'https://proton.me/download/pass/model-artifacts';

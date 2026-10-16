@@ -1,0 +1,17 @@
+.pass-onboarding-card {
+	border-radius: 2rem;
+	background: var(--onboarding-card-bg);
+	border: 1px solid var(--onboarding-card-border);
+
+	&--glass {
+		background: var(--onboarding-card-glass-bg);
+		border-color: var(--onboarding-card-glass-border);
+		box-shadow:
+			0 -133px 37px 0 rgb(55 37 128 / 0),
+			0 -85px 34px 0 rgb(55 37 128 / 0.01),
+			0 -48px 29px 0 rgb(55 37 128 / 0.05),
+			0 -21px 21px 0 rgb(55 37 128 / 0.09),
+			0 -5px 12px 0 rgb(55 37 128 / 0.1);
+		backdrop-filter: blur(8px);
+	}
+}

@@ -3,7 +3,7 @@ import { call as callEffect, put, race, take, takeEvery } from 'redux-saga/effec
 
 import identity from '@proton/utils/identity';
 
-import { isActionWithSender, withSender } from '../actions/enhancers/endpoint';
+import { withIntentSender } from '../actions/enhancers/endpoint';
 import type { RootSagaOptions } from '../types';
 import { matchCancel } from './actions';
 import type { RequestFailure, RequestFlow, RequestIntent, RequestSuccess } from './flow';
@@ -52,11 +52,5 @@ const createParametrizedRequestSaga = <T extends RequestFlow<any, any, any>, P e
 export const createRequestSaga = <T extends RequestFlow<any, any, any>>(options: RequestFlowSaga<T, [RootSagaOptions]>) =>
     createParametrizedRequestSaga<T, [RootSagaOptions]>({
         ...options,
-        enhance: (action, intent) => {
-            /** Enhance the result actions with the sender metadata.
-             * This is only used for the extension when we may want
-             * to process actions for a specific endpoint */
-            const sender = isActionWithSender(intent) ? intent.meta.sender : null;
-            return sender ? withSender(sender)(action) : action;
-        },
+        enhance: withIntentSender,
     });

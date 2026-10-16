@@ -14,7 +14,7 @@ import type { PlanIDs } from '@proton/payments/core/interface';
 import { BRAND_NAME, DARK_WEB_MONITORING_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { continueToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 
-import { Layout } from '../components/Layout/Layout';
+import { Layout } from '../components/Layout';
 import { OfferModal } from '../components/OfferModal/OfferModal';
 import { PlanCard, type PlanCardProps } from '../components/PlansTable/PlanCard';
 import { family, getPassPlusOfferPlan, passPlus, unlimited } from '../plans';

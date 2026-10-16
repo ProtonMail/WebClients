@@ -73,6 +73,10 @@ const getPassCoreProviderProps = (
     const onTelemetry = sendTelemetryEvent(messageFactory);
     const popupController = endpoint === 'popup' ? createPopupController() : undefined;
 
+    const themeManager = createPassThemeManager({
+        getTheme: async () => theme ?? (await settings.resolve().catch(noop))?.theme,
+    });
+
     return {
         config,
         connectivity: createConnectivityProxy(endpoint),
@@ -95,9 +99,10 @@ const getPassCoreProviderProps = (
                     .then((res) => res.type === 'success' && res.enabled)
                     .catch(() => false),
         },
-        theme: createPassThemeManager({
-            getTheme: async () => theme ?? (await settings.resolve().catch(noop))?.theme,
-        }),
+        /** A forced theme is applied once through `sync` (internal state update),
+         * external `setState` calls (eg: on worker settings updates) are ignored
+         * so the user's theme setting cannot override it */
+        theme: theme ? { ...themeManager, setState: noop } : themeManager,
 
         generateOTP: (payload) =>
             sendMessage.on(messageFactory({ type: WorkerMessageType.OTP_CODE_GENERATE, payload }), (response) =>

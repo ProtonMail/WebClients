@@ -443,6 +443,7 @@ export const SSO_PATHS = {
     PASS_SIGNUP_B2B: '/pass/signup/business',
     PASS_SIGN_IN: '/pass',
     PASS_EXTENSION_ONBOARDING: '/pass/extension-onboarding',
+    PASS_ACCOUNT_ONBOARDING: '/pass/account-onboarding',
     DOCS_SIGNUP: '/docs/signup',
     DOCS_SIGN_IN: '/docs',
     WALLET_SIGNUP: '/wallet/signup',

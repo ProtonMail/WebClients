@@ -1,0 +1,31 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
+.pass-onboarding-open-extension {
+	inset-block-start: 2rem;
+	inset-inline-end: 8rem;
+
+	.pass-onboarding-open-extension-card {
+		inset-block-start: 5rem;
+		inset-inline-end: 1rem;
+		padding-block: 0.75rem;
+		padding-inline: 1.5rem;
+		border-radius: 9999px;
+		background: var(--onboarding-norm-bg);
+
+		svg {
+			margin-inline-end: 0.5rem;
+		}
+	}
+}
+
+.pass-onboarding-open-extension-margin {
+	margin-block-start: 18rem;
+
+	@include im.media('>large') {
+		margin-block-start: unset;
+	}
+}
