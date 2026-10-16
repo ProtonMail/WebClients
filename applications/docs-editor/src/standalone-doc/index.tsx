@@ -1,5 +1,3 @@
-import '../app/style'
-import './standalone-doc.css'
 import { DocumentRole, EditorSystemMode } from '@proton/docs-shared'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type { LexicalEditor } from 'lexical'
@@ -16,6 +14,9 @@ import { ThemeStyles } from '../app/Theme'
 import { EditorThemeProvider, useEditorTheme } from '../app/Theme/EditorThemeProvider'
 import { createStandaloneDocClient } from './client'
 import { createStandaloneDocSession } from './session'
+// Keep these last so Tailwind utilities override component styles such as `.button`.
+import '../app/style'
+import './standalone-doc.css'
 
 document.title = 'Standalone Docs'
 
