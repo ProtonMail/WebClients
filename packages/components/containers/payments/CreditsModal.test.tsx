@@ -2,6 +2,7 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { IDEAL_WERO_BRAND_NAME } from '@proton/chargebee/lib/constants';
+import { getIdealAuthorizationText } from '@proton/payments-ui/ui/components/IdealAuthorizationText';
 import { buyCredit, createToken } from '@proton/payments/core/api/api';
 import { PAYMENT_TOKEN_STATUS } from '@proton/payments/core/constants';
 import { MOCK_PAYMENT_STATUS, mockPaymentMethods, mockPaymentStatus } from '@proton/payments/testing/api-endpoints';
@@ -627,4 +628,18 @@ it('should offer iDEAL when the account country is the Netherlands', async () =>
     render(<ContextCreditsModal paymentStatus={{ ...status, CountryCode: 'NL' }} open={true} app={APPS.PROTONMAIL} />);
 
     expect(await screen.findByText(`${IDEAL_WERO_BRAND_NAME}`)).toBeInTheDocument();
+});
+
+it('should render the iDEAL authorization note only when iDEAL is selected', async () => {
+    const useFlagMock = jest.spyOn(require('@proton/unleash/useFlag'), 'useFlag');
+    useFlagMock.mockImplementation((flag) => flag === 'EnableIdeal');
+
+    render(<ContextCreditsModal paymentStatus={{ ...status, CountryCode: 'NL' }} open={true} app={APPS.PROTONMAIL} />);
+
+    const idealOption = await screen.findByText(`${IDEAL_WERO_BRAND_NAME}`);
+    expect(screen.queryByText(getIdealAuthorizationText())).not.toBeInTheDocument();
+
+    await userEvent.click(idealOption);
+
+    expect(await screen.findByText(getIdealAuthorizationText())).toBeInTheDocument();
 });

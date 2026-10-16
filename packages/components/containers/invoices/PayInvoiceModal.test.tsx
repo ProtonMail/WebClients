@@ -4,6 +4,7 @@ import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { useGetPaymentsInit } from '@proton/account/paymentsInit/hooks';
+import { getIdealAuthorizationText } from '@proton/payments-ui/ui/components/IdealAuthorizationText';
 import { InvoiceState, PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { Invoice } from '@proton/payments/core/interface';
 import { CacheType } from '@proton/redux-utilities/interface';
@@ -36,7 +37,7 @@ const chargebeeCardProcessPaymentToken = jest.fn((onChargeable: OnChargeable) =>
 const selectedProcessorProcessPaymentToken = jest.fn().mockResolvedValue(undefined);
 
 jest.mock('@proton/payments-ui/client-extensions/usePaymentFacade', () => ({
-    usePaymentFacade: ({ onChargeable }: { onChargeable: OnChargeable }) => {
+    usePaymentFacade: ({ onChargeable, amount }: { onChargeable: OnChargeable; amount: number }) => {
         authorizeWalletPayment = () => onChargeable({ payInvoice });
 
         return {
@@ -48,6 +49,7 @@ jest.mock('@proton/payments-ui/client-extensions/usePaymentFacade', () => ({
                 ? { processPaymentToken: selectedProcessorProcessPaymentToken, meta: { type: selectedMethodValue } }
                 : undefined,
             selectedMethodValue,
+            amount,
             methods: { loading: false },
             chargebeePaypal: {},
             chargebeeIdeal: {},
@@ -62,6 +64,14 @@ jest.mock('@proton/payments-ui/ui/components/ApplePayButton', () => ({
     ApplePayButton: () => (
         <button type="button" data-testid="apple-pay-button">
             Apple Pay
+        </button>
+    ),
+}));
+
+jest.mock('@proton/payments-ui/ui/components/ChargebeeIdealButton', () => ({
+    ChargebeeIdealButton: () => (
+        <button type="button" data-testid="chargebee-ideal-button">
+            iDEAL
         </button>
     ),
 }));
@@ -225,6 +235,19 @@ describe('PayInvoiceModal', () => {
             expect(chargebeeCardProcessPaymentToken).not.toHaveBeenCalled();
         }
     );
+
+    it.each([
+        [PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL, 1000, true],
+        [PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL, 0, false],
+        [PAYMENT_METHOD_TYPES.CHARGEBEE_CARD, 1000, false],
+    ])('renders the iDEAL authorization note for %s with amount due %s: %s', (method, amount, shown) => {
+        selectedMethodValue = method;
+        amountDue = amount;
+
+        renderPayInvoiceModal();
+
+        expect(!!screen.queryByText(getIdealAuthorizationText())).toBe(shown);
+    });
 
     it('should not pay a non-zero invoice when no payment method is selected', async () => {
         amountDue = 1000;

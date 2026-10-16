@@ -15,6 +15,10 @@ import { useAutomaticCurrency } from '@proton/payments-ui/client-extensions/useA
 import { usePaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
 import { ChargebeeIdealButton } from '@proton/payments-ui/ui/components/ChargebeeIdealButton';
 import { ChargebeePaypalButton } from '@proton/payments-ui/ui/components/ChargebeePaypalButton';
+import {
+    IdealAuthorizationText,
+    isIdealAuthorizationNoteShown,
+} from '@proton/payments-ui/ui/components/IdealAuthorizationText';
 import { usePaymentPollers } from '@proton/payments-ui/ui/hooks/usePaymentPollers';
 import { getMaxBitcoinAmount, getMinBitcoinAmount, getMinCreditAmount } from '@proton/payments/core/amount-limits';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
@@ -286,6 +290,11 @@ const CreditsModal = ({ paymentStatus, app, ...props }: Props) => {
                     >
                         {c('Payments').jt`You will be charged ${amountToCharge} from your selected payment method.`}
                     </p>
+                )}
+                {isIdealAuthorizationNoteShown(paymentFacade) && (
+                    <div className="mt-4">
+                        <IdealAuthorizationText />
+                    </div>
                 )}
             </ModalTwoContent>
 

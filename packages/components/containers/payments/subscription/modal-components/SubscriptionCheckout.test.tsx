@@ -4,8 +4,9 @@ import { screen } from '@testing-library/react';
 
 import { buildUser } from '@proton/account/testing/buildUser';
 import { useTaxCountry } from '@proton/payments-ui/ui/billing-address/hooks/useTaxCountry';
+import { getIdealAuthorizationText } from '@proton/payments-ui/ui/components/IdealAuthorizationText';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
-import { CYCLE, PLANS } from '@proton/payments/core/constants';
+import { CYCLE, PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';
 import { SubscriptionMode, TaxMode } from '@proton/payments/core/subscription/constants';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
@@ -27,15 +28,18 @@ jest.mock('../../Checkout', () => {
         children,
         renewNotice,
         showPaymentProtectionCopy,
+        description,
     }: {
         children: ReactNode;
         renewNotice: ReactNode;
         showPaymentProtectionCopy: boolean;
+        description: ReactNode;
     }) => (
         <>
             {children}
             <div data-testid="renew-notice">{renewNotice}</div>
             {showPaymentProtectionCopy && <div data-testid="payment-protection-copy" />}
+            {description}
         </>
     );
     return {
@@ -362,6 +366,47 @@ describe('SubscriptionCheckout', () => {
         expect(container).not.toHaveTextContent('-CHF 107.73');
         expect(container).toHaveTextContent('CHF 107.73');
     });
+
+    it.each([
+        [PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL, 1000, { forbidden: false }, true],
+        [PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL, 0, { forbidden: false }, false],
+        [PAYMENT_METHOD_TYPES.CHARGEBEE_CARD, 1000, { forbidden: false }, false],
+        [PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL, 1000, { forbidden: true, reason: 'already-subscribed' }, false],
+    ] as const)(
+        'renders the iDEAL authorization note for %s with amount %s and %o: %s',
+        (selectedMethodValue, amount, paymentForbiddenReason, shown) => {
+            renderWithProviders(
+                <WrappedSubscriptionCheckout
+                    freePlan={FREE_PLAN}
+                    checkResult={getOptimisticCheckResult({
+                        cycle: CYCLE.YEARLY,
+                        planIDs: { [PLANS.MAIL]: 1 },
+                        plansMap: {} as any,
+                        currency: 'EUR',
+                    })}
+                    plansMap={{} as any}
+                    currency="EUR"
+                    cycle={CYCLE.YEARLY}
+                    planIDs={{ [PLANS.MAIL]: 1 }}
+                    user={buildUser()}
+                    onChangeCurrency={() => {}}
+                    isProration={false}
+                    isCustomBilling={false}
+                    isScheduledChargedImmediately={false}
+                    isScheduledChargedLater={false}
+                    isScheduled={false}
+                    subscription={buildSubscription()}
+                    paymentForbiddenReason={paymentForbiddenReason}
+                    paymentMethods={{} as any}
+                    paymentFacade={{ showTaxCountry: true, selectedMethodValue, amount } as any}
+                    trial={false}
+                    submit={<button type="submit">Pay</button>}
+                />
+            );
+
+            expect(!!screen.queryByText(getIdealAuthorizationText())).toBe(shown);
+        }
+    );
 
     it('should display correct billing cycle text for yearly subscription', () => {
         const { container } = renderWithProviders(
