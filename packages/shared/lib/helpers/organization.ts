@@ -34,10 +34,6 @@ export const hasDeletionWhitelisted = (organization: Partial<Organization> = {})
     return hasBit(organization.Flags, ORGANIZATION_FLAGS.DELETION_WHITELISTED);
 };
 
-export const hasBonuses = (organization: Partial<Organization> = {}) => {
-    return !!organization.Flags || !!organization.LoyaltyCounter;
-};
-
 export const hasTwoFARequiredForAdminOnly = (organization: Partial<Organization> = {}) => {
     return organization.TwoFactorRequired === ORGANIZATION_TWOFA_SETTING.REQUIRED_ADMIN_ONLY;
 };
