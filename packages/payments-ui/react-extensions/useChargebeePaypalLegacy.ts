@@ -16,6 +16,7 @@ import type { PaymentProcessorHook } from '@proton/payments/core/payment-process
 import type { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
+import { abortSignalAny } from '../client-extensions/validators/AbortSignalAny';
 import { usePaymentProcessor } from './usePaymentProcessor';
 
 export interface Props {
@@ -106,12 +107,18 @@ export const useChargebeePaypal = (
             return;
         }
 
+        const setupSignal = abortSignalAny([abortSignal, paymentProcessor.startSetup()]);
+
         const initPaypalPromise = handles.initializePaypal();
 
         const fetchTokenPromise = fetchPaymentToken();
 
         withInitializing(async () => {
             await Promise.all([initPaypalPromise, fetchTokenPromise]);
+            if (setupSignal.aborted) {
+                return;
+            }
+
             await paymentProcessor.setPaypalPaymentIntent(abortSignal);
         }).catch(noop);
     };
