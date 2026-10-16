@@ -1556,7 +1556,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar clave"
+        "Confiar clave",
+        "Confiar claves"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -5591,6 +5592,9 @@
       ],
       "You reached the maximum number of connected addresses": [
         "Alcanzó el número máximo de direcciones conectadas"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Frase de recuperación incorrecta. Vuelva a intentarlo o use otro método de recuperación."
       ]
     },
     "error": {
@@ -8106,8 +8110,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"

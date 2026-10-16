@@ -1523,7 +1523,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar na chave"
+        "Confiar na chave",
+        "Confiar nas chaves"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -5294,6 +5295,9 @@
       ],
       "Incorrect password. Please try again.": [
         "Palavra-passe incorreta. Tente novamente."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Frase de recuperação incorreta. Tente novamente ou utilize outro método de recuperação."
       ]
     },
     "error": {
@@ -7608,8 +7612,7 @@
         "A inicializar…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir uma imagem"
       ],
       "Insert link": [
         "Inserir uma ligação"

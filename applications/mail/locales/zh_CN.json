@@ -1766,6 +1766,15 @@
       ],
       "Switch to ${ planName }": [
         "切换至 ${ planName }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } actions": [
+        "${ LUMO_SHORT_APP_NAME } 操作"
+      ],
+      "Dock to side panel": [
+        "停靠至侧边栏"
+      ],
+      "Switch sides": [
+        "切换面板"
       ]
     },
     "action": {
@@ -5543,6 +5552,9 @@
       ],
       "You reached the maximum number of connected addresses": [
         "您已达到关联地址的最大数量"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "恢复短语错误，请重试或使用其他恢复方法。"
       ]
     },
     "error": {
@@ -13681,6 +13693,18 @@
       ],
       "Your account is too old for Born Private.": [
         "您的账户注册时间过长，无法使用 Born Private。"
+      ],
+      "Plan switch is incompatible for the following reasons:": [
+        "套餐切换不兼容，原因如下："
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Proton Meet 席位数量必须与成员数量匹配。"
+      ],
+      "This plan doesn’t support the managed features on your account.": [
+        "此套餐不支持您账户上的托管功能。"
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "当前无法完成此订阅，请重试。"
       ]
     },
     "Payments.Error": {
@@ -17824,6 +17848,106 @@
     "BYOE": {
       "Your newest emails will be imported first. Emails you've already imported won't be copied again.": [
         "您的最新邮件将优先导入，已导入的邮件不会再次复制。"
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "黑色星期五"
+      ],
+      "Get the deal": [
+        "获取优惠"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/月"
+      ],
+      "15 GB storage": [
+        "15 GB 存储空间"
+      ],
+      "2 individual accounts": [
+        "2 个独立账户"
+      ],
+      "2 TB of secure storage": [
+        "2 TB 安全存储空间"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB 存储空间：当前套餐的 40 倍"
+      ],
+      "3 TB of secure storage": [
+        "3 TB 安全存储空间"
+      ],
+      "500 GB of secure storage": [
+        "500 GB 安全存储空间"
+      ],
+      "6 individual accounts": [
+        "6 个独立账户"
+      ],
+      "Built-in 2FA authenticator": [
+        "内置 2FA 验证器"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "折扣基于标准月度价格。结算周期结束时，您的订阅将按标准年度费率续订。"
+      ],
+      "Online document editor": [
+        "在线文档编辑器"
+      ],
+      "Recover previous file versions": [
+        "恢复先前的文件版本"
+      ],
+      "Stronger protection against cyber threats": [
+        "针对网络威胁提供更强有力的保护"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "文件夹、标签、筛选规则不限量"
+      ],
+      "Use your own email domain": [
+        "使用自有邮箱域名"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "高级版 ${ DRIVE_SHORT_APP_NAME }、${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME } 和 ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "高级版 ${ DRIVE_SHORT_APP_NAME }、${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "高级版 ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "高级版 ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 和 ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "高级版 ${ PASS_SHORT_APP_NAME }、${ MAIL_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 和 ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "年份最大特卖"
+      ],
+      "Black Friday": [
+        "黑色星期五"
+      ],
+      "for 12 months": [
+        "年费"
+      ],
+      "Last chance to save big": [
+        "最后的促销机会"
+      ],
+      "Protect your entire tribe": [
+        "保护您的整个家庭"
+      ],
+      "Protection for two in a single plan": [
+        "单个套餐为两人提供保护"
       ]
     }
   }

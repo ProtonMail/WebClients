@@ -1518,7 +1518,9 @@
         "Vjeruj"
       ],
       "Trust key": [
-        "Ključ povjerenja"
+        "Vjeruj ključu",
+        "Vjeruj ključevima",
+        "Vjeruj ključevima"
       ],
       "Trust public key": [
         "Vjeruj javnom ključu"
@@ -5259,6 +5261,9 @@
       ],
       "Incorrect password. Please try again.": [
         "Netočna lozinka. Pokušajte ponovo."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Pogrešna fraza za oporavak. Pokušajte ponovno ili upotrijebite drugu metodu oporavka."
       ]
     },
     "error": {
@@ -7639,9 +7644,7 @@
         "Inicijalizacija…"
       ],
       "Insert image": [
-        "Umetni sliku",
-        "Umetni slike",
-        "Umetni slike"
+        "Umetni sliku"
       ],
       "Insert link": [
         "Umetni poveznicu"

@@ -1568,7 +1568,8 @@
         "De confiança"
       ],
       "Trust key": [
-        "Marca com a clau de confiança"
+        "Confia en aquesta clau",
+        "Confia en aquestes claus"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -1771,6 +1772,15 @@
       ],
       "Zoom out": [
         "Allunyar"
+      ],
+      "${ LUMO_SHORT_APP_NAME } actions": [
+        "Accions de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Dock to side panel": [
+        "Acoblar el panell lateral"
+      ],
+      "Switch sides": [
+        "Canviar de banda"
       ]
     },
     "action": {
@@ -5601,6 +5611,9 @@
       ],
       "Incorrect password. Please try again.": [
         "Contrasenya incorrecta, torneu-ho a intentar."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Frase de recuperació incorrecta. Torneu-ho a provar o utilitzeu un altre mètode de recuperació."
       ]
     },
     "error": {
@@ -6824,7 +6837,7 @@
     },
     "Import provider": {
       "Import from ${ providerName }": [
-        "Importeu des de ${ providerName }"
+        "Importa des de ${ providerName }"
       ],
       "More import options": [
         "Més opcions d'importació"
@@ -8128,8 +8141,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -13923,6 +13935,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "La vostra subscripció ja té un descompte aplicat. Canviar a aquesta nova promoció implica que el descompte actual ja no s'aplicarà."
+      ],
+      "Plan switch is incompatible for the following reasons:": [
+        "El canvi de pla no és compatible pels motius següents:"
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Les llicències de Proton Meet han de coincidir amb el nombre de membres."
+      ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Aquest pla no admet les funcions gestionades del vostre compte."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Aquesta subscripció no es pot completar ara mateix. Torneu-ho a provar."
       ]
     },
     "Payments.Error": {
@@ -18243,7 +18267,7 @@
         "Recupereu versions anteriors dels fitxers"
       ],
       "Stronger protection against cyber threats": [
-        "Protecció més forta contra amenaces cibernètiques"
+        "Una protecció més forta contra amenaces cibernètiques"
       ],
       "Unlimited folders, labels, and filters": [
         "Carpetes, etiquetes i filtres il·limitats"

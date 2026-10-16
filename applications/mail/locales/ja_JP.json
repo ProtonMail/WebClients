@@ -1706,6 +1706,9 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Stop": [
+        "ストップ"
       ]
     },
     "action": {
@@ -1837,6 +1840,9 @@
       ],
       "Writing assistant seats": [
         "執筆アシスタントシート"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "マネージドサービスプロバイダーアドオンを導入している組織は、子会社組織を作成および管理できます。"
       ]
     },
     "Alert": {
@@ -2551,6 +2557,9 @@
       ],
       "Total": [
         "合計"
+      ],
+      "Total for ${ cycle } month": [
+        "合計 ${ cycle } か月"
       ]
     },
     "Collapsible tooltip": {
@@ -5230,6 +5239,9 @@
       ],
       "Incorrect password. Please try again.": [
         "パスワードが正しくありません。もう一度お試しください。"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "間違った回復用フレーズです。再度試すか他の回復手段を使用してください。"
       ]
     },
     "error": {
@@ -7463,7 +7475,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像を挿入"
+        "画像の挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -8937,6 +8949,30 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "不要なものが整理された受信トレイまで、あと数クリックです。"
+      ],
+      "1 vault per user": [
+        "一人のユーザーにつき一つの保管庫"
+      ],
+      "Found ${ count } contact": [
+        "${ count } 件の連絡先を削除"
+      ],
+      "Hey Lumo, I'm going away and want an out-of-office reply set up. Ask me for the dates and what it should say, then show me the message before you turn it on.": [
+        "Hey Lumo、旅行に行くから不在通知を設定して。日付とメッセージの内容を確認して、有効にする前にメッセージを見せてくれ。"
+      ],
+      "Hey Lumo, walk me through how you can help me with my mailbox. What kinds of things can I ask you to do, and what can't you help with?": [
+        "Hey Lumo、私のメールボックスについて何を手伝ってくれるのか教えて。どんなことを頼めるの？どんなことは手伝ってくれないの？"
+      ],
+      "I'll look at what you get most of and the folders and filters you already have, then suggest what to improve and what's missing. Nothing moves until you say so.": [
+        "あなたがよく利用するコンテンツや、既に作成済みのフォルダやフィルターを確認した上で、改善点や不足している点をご提案します。お客様のご要望がない限り、何も変更は行いません。"
+      ],
+      "Not found in the foundation-search index.": [
+        "対象のデータが見つかりませんでした。"
+      ],
+      "Read ${ count } open draft": [
+        "${ count }件の未読下書きを読みました"
+      ],
+      "Rename this folder": [
+        "フォルダ名を変更"
       ]
     },
     "info": {
@@ -10130,6 +10166,9 @@
       ],
       "ZIP code": [
         "郵便番号"
+      ],
+      "Away message": [
+        "不在メッセージ"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10477,6 +10516,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "更新された招待を表示するには、鍵を再度有効にする必要があります"
+      ],
+      "Pay it": [
+        "支払う"
       ]
     },
     "Link to calendar event": {
@@ -12584,6 +12626,12 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "あなたのサブスクリプションは現在、割引が適用されています。この新しいプロモーションに移行すると、既存の割引は適用されなくなります。"
+      ],
+      "This plan doesn’t support the members on your account.": [
+        "このプランは、お客様のアカウントに登録されているメンバーをサポートしていません。"
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "トライアルプランは Scrieシート をサポートしていません。"
       ]
     },
     "Payments.Error": {
@@ -16598,6 +16646,21 @@
     "bfcampaign2026: Action": {
       "Black Friday": [
         "ブラックフライデー"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "Use your own email domain": [
+        "独自のメールドメインを使用"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - 末尾が${ Last4 }のカード"
+      ]
+    },
+    "Snooze info": {
+      "${ count } email → ${ wakeTime }": [
+        "${ count }件のメール→${ wakeTime }"
       ]
     }
   }

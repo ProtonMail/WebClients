@@ -1559,7 +1559,8 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel"
+        "Lita på nyckel",
+        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -5535,6 +5536,9 @@
       ],
       "Incorrect password. Please try again.": [
         "Felaktigt lösenord. Försök igen."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Fel återställningsfras. Försök igen eller använd en annan återställningsmetod."
       ]
     },
     "error": {
@@ -7999,8 +8003,7 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -9698,6 +9701,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du är bara några klick bort från en skräpfri inkorg"
+      ],
+      "Please update ${ MAIL_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "Uppdatera ${ MAIL_APP_NAME } för att fortsätta använda appen ${ downloadUpdate }"
       ]
     },
     "info": {
@@ -13566,6 +13572,12 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Din prenumeration har för närvarande en befintlig rabatt. Att flytta till denna nya kampanj innebär att den befintliga rabatten inte längre kommer att tillämpas."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kan inte kombineras med ${ PLAN_NAMES[PLANS.PASS] }."
+      ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "Du äger redan ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
       ]
     },
     "Payments.Error": {
@@ -17841,6 +17853,15 @@
       ],
       "6 individual accounts": [
         "6 individuella konton"
+      ],
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB lagringsutrymme: 40x ditt nuvarande paket"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Obegränsade mappar, etiketter och filter"
       ]
     },
     "bfcampaign2026: Info, Family, Drive first": {
@@ -17860,6 +17881,26 @@
       ],
       "Save big with a yearly plan": [
         "Spara stort med ett årligt paket"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } och ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } och ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } och ${ VPN_SHORT_APP_NAME }"
       ]
     }
   }
