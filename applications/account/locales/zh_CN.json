@@ -665,6 +665,9 @@
       "Connect apps and devices": [
         "连接应用和设备"
       ],
+      "Connect Gmail": [
+        "关联 Gmail"
+      ],
       "Connect Gmail address": [
         "关联 Gmail 地址"
       ],
@@ -2901,6 +2904,9 @@
       ],
       "Premium versions of all ${ BRAND_NAME } services": [
         "所有 ${ BRAND_NAME } 服务的付费版本"
+      ],
+      "The ${ planName } plan is back for a limited time only": [
+        "${ planName } 套餐限时回归"
       ]
     },
     "bf2023: info": {
@@ -3832,6 +3838,9 @@
       "The address ${ boldClaimedEmail } has been claimed and can no longer be used for this account. Your data was migrated to the address below and remains private.": [
         "地址 ${ boldClaimedEmail } 已被认领，无法再用于此账户。您的数据已迁移至以下地址，并保持私密。"
       ],
+      "The address ${ boldClaimedEmail } has been claimed by another organization and can no longer be used for this account. Your data is safe and remains private.": [
+        "地址 ${ boldClaimedEmail } 已被其他组织占用，无法再用于此账户。您的数据安全且保持私密。"
+      ],
       "Verify it's you": [
         "验证您的身份"
       ],
@@ -3841,8 +3850,14 @@
       "Your address": [
         "您的地址"
       ],
+      "Your address has been claimed": [
+        "您的地址已被占用"
+      ],
       "Your address has changed": [
         "您的地址已更改"
+      ],
+      "Your administrator can give you a new address.": [
+        "您的管理员可以为您提供一个新地址。"
       ],
       "Your data was migrated to the address below and remains private.": [
         "您的数据已迁移至以下地址，并保持私密。"
@@ -5523,6 +5538,9 @@
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "大多数问题可通过我们的分步指南在几分钟内解决！"
       ],
+      "No ads, no tracking. Use your Gmail in ${ BRAND_NAME }. Nothing there gets edited or deleted.": [
+        "无广告，无跟踪。在 ${ BRAND_NAME } 中使用您的 Gmail，其中的任何内容都不会被编辑或删除。"
+      ],
       "No ads. No trackers": [
         "无广告、无追踪"
       ],
@@ -6762,6 +6780,9 @@
       "Add 1 more": [
         "再添加 1 个"
       ],
+      "Add contact": [
+        "添加联系人"
+      ],
       "Add emergency contact": [
         "添加紧急联系人"
       ],
@@ -6929,6 +6950,9 @@
       ],
       "Recover data now": [
         "立即恢复数据"
+      ],
+      "Recover your data before adding a new contact.": [
+        "在添加新联系人之前，请先恢复您的数据。"
       ],
       "Recovery approved": [
         "恢复已批准"
@@ -7109,6 +7133,9 @@
       ],
       "You'll receive access to their account in **${ days } day**, or when they approve your request.": [
         "您将在**${ days } 天**内获得其账户访问权限，或在他们批准您的请求时。"
+      ],
+      "Your data is still locked from a password reset. A contact added now won't be able to restore it.": [
+        "您的数据仍因密码重置而被锁定，现在添加的联系人将无法恢复它。"
       ],
       "Your emergency contact ${ name } is requesting access to your account.": [
         "您的紧急联系人 ${ name } 正在请求访问您的账户。"
@@ -8067,6 +8094,12 @@
       ],
       "Verification keys for ${ signatureType } are not available": [
         "${ signatureType } 的验证密钥不可用"
+      ],
+      "We couldn't disconnect this address. Please try again.": [
+        "我们无法取消关联该地址，请重试。"
+      ],
+      "We couldn't reconnect this address.": [
+        "我们无法重新关联此地址。"
       ],
       "We couldn't sign you in": [
         "我们无法为您登录"
@@ -10193,6 +10226,9 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } 无效"
       ],
+      "${ emailAddress } is used to sign in to another ${ BRAND_NAME } account. We are making the connection seamless, but for now you will need to take a few steps.": [
+        "${ emailAddress } 已用于登录另一个 ${ BRAND_NAME } 账户。我们正在实现无缝关联，但目前您需要执行一些操作。"
+      ],
       "${ emails.length } member added to the group": [
         "${ emails.length } 位成员已添加到群组"
       ],
@@ -10331,6 +10367,9 @@
       "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
         "${ quarantine }：请求收件人将未经授权的电子邮件标记为垃圾邮件或将其隔离。"
       ],
+      "${ reason.email } is used to sign in to another ${ BRAND_NAME } account. You'll pick a new username for that account next time you sign in. Nothing else changes.": [
+        "${ reason.email } 已用于登录另一个 ${ BRAND_NAME } 账户。您下次登录该账户时将选择一个新的用户名，其他内容保持不变。"
+      ],
       "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
         "${ reject }：请求收件人拒绝未经授权的电子邮件。"
       ],
@@ -10465,6 +10504,9 @@
       ],
       "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
         "**此操作将禁用端到端加密的邮件转发：** 您之后可以重新设置。"
+      ],
+      "**We're changing the ${ BRAND_NAME } sign-in page.** Your account and password stay the same.": [
+        "**我们正在更改 ${ BRAND_NAME } 登录页面。** 您的账户和密码保持不变。"
       ],
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "每位好友订阅后，您可获得 **${ referrerRewardAmount }** 积分！"
@@ -11036,6 +11078,9 @@
       "Connect and manage your external mailboxes in ${ MAIL_APP_NAME }.": [
         "在 ${ MAIL_APP_NAME } 中关联和管理您的外部邮箱。"
       ],
+      "Connected": [
+        "已关联"
+      ],
       "Connecting to Google Drive and preparing your import.": [
         "正在关联到 Google Drive 并准备您的导入。"
       ],
@@ -11236,6 +11281,9 @@
       ],
       "Disabling the data backup on this device will prevent you from automatically unlocking your encrypted data after a password reset.": [
         "在此设备上禁用数据备份后，您将无法在重置密码后自动解锁加密数据。"
+      ],
+      "Disconnected": [
+        "取消关联"
       ],
       "Discount": [
         "优惠"
@@ -11621,6 +11669,9 @@
       "For just ${ bundlePlanPriceInline }": [
         "仅需 ${ bundlePlanPriceInline }"
       ],
+      "For security, business accounts sign in with a code instead. On your TV, select 'Trouble signing in?' and follow the steps.": [
+        "出于安全考虑，企业账户需改用验证码登录。在您的电视上，选择“登录遇到问题？”并按照步骤操作。"
+      ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "如果您正在将另一款邮箱服务更换为 ${ MAIL_APP_NAME }，更改 MX 记录前请先在${ boldAddresses }设置中添加所有已在使用的邮箱地址，确保邮件投递路径能够无缝切换。"
       ],
@@ -11875,6 +11926,9 @@
       ],
       "Import mailbox": [
         "导入收件箱"
+      ],
+      "Import show one-time transfers of email, calendars, contacts, or files into your ${ BRAND_NAME } account.": [
+        "导入是指将邮件、日历、联系人或文件一次性转移到您的 ${ BRAND_NAME } 账户。"
       ],
       "Import show one-time transfers of email, calendars, or contacts into your ${ BRAND_NAME } account.": [
         "导入是指将邮件、日历或联系人一次性转移到您的 ${ BRAND_NAME } 账户。"
@@ -12208,6 +12262,9 @@
       ],
       "Merged": [
         "已合并"
+      ],
+      "Messages from other ${ BRAND_NAME } users also lose end-to-end encryption.": [
+        "来自其他 ${ BRAND_NAME } 用户的邮件也会失去端到端加密。"
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "“已发送”和“草稿”文件夹中的邮件始终显示在相应文件夹中，无论移动与否。"
@@ -12568,6 +12625,12 @@
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "选择链接类型并填写相关信息。"
+      ],
+      "Please sign in with ${ emailAddress } to continue.": [
+        "请使用 ${ emailAddress } 登录以继续。"
+      ],
+      "Please sign in with the Gmail account you want to connect to continue.": [
+        "请使用您要关联的 Gmail 账户登录以继续。"
       ],
       "Please specify...": [
         "请指定..."
@@ -13187,6 +13250,12 @@
       "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
         "该 Gmail 地址已注册到另一个 ${ BRAND_NAME } 账户（${ VPN_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ WALLET_SHORT_APP_NAME }、${ LUMO_SHORT_APP_NAME } AI 等）。我们正在努力实现无缝连接，但目前您需要执行几个步骤。"
       ],
+      "This Gmail is already connected to your ${ BRAND_NAME } account. There's nothing else you need to do.": [
+        "此 Gmail 已关联到您的 ${ BRAND_NAME } 账户，您无需进行其他操作。"
+      ],
+      "This Gmail is used to sign in to another ${ BRAND_NAME } account. We are making the connection seamless, but for now you will need to take a few steps.": [
+        "此 Gmail 已用于登录另一个 ${ BRAND_NAME } 账户。我们正在实现无缝关联，但目前您需要执行一些操作。"
+      ],
       "This invitation link has expired. Please contact your administrator to request access.": [
         "此邀请链接已过期。请联系您的管理员请求访问。"
       ],
@@ -13694,6 +13763,15 @@
       "We couldn't complete the transaction. Please try again.": [
         "我们无法完成交易。请重试。"
       ],
+      "We couldn't connect ${ emailAddress }. Try again and select all the boxes when Google asks for access. ${ BRAND_NAME } only uses this access to connect your Gmail.": [
+        "我们无法关联 ${ emailAddress }。请重试，并在 Google 请求访问权限时勾选所有选项。${ BRAND_NAME } 仅使用此权限来关联您的 Gmail。"
+      ],
+      "We couldn't connect your Gmail right now. Please try again in a few minutes.": [
+        "我们目前无法关联您的 Gmail，请几分钟后重试。"
+      ],
+      "We couldn't connect your Gmail. Try again and select all the boxes when Google asks for access. ${ BRAND_NAME } only uses this access to connect your Gmail.": [
+        "我们无法关联您的 Gmail。请重试，并在 Google 请求访问权限时勾选所有选项。${ BRAND_NAME } 仅使用此权限来关联您的 Gmail。"
+      ],
       "We couldn't send invoices to your email address. Automatic invoicing has been paused until you update the address.": [
         "我们无法将发票发送至您的邮箱地址，自动开票已暂停，直到您更新地址为止！"
       ],
@@ -13813,6 +13891,12 @@
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "开启通知后，我们将通过密保邮箱提醒您 ${ MAIL_APP_NAME } 收到的新邮件。"
+      ],
+      "When sign-in is restricted, only ${ primaryEmailElement } and your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "当登录受限时，仅可使用 ${ primaryEmailElement } 和您的用户名 ${ usernameElement } 登录。即使他人知晓，您的其他地址也无法关联到您的账户。"
+      ],
+      "When sign-in is restricted, only your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "当登录受限时，仅可使用您的用户名 ${ usernameElement } 登录。即使他人知晓，您的其他地址也无法关联到您的账户。"
       ],
       "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
         "当您取消当前的付费订阅时，套餐余额将以账户积分的形式返还给您，同时您将转为 ${ BRAND_NAME } ${ PLANS.FREE } 套餐。"
@@ -14114,6 +14198,9 @@
       "You will regain complete or partial access to your encrypted data.": [
         "您将重新获得对加密数据的完全或部分访问权限。"
       ],
+      "You won't be able to send or receive as ${ email } in ${ BRAND_NAME } anymore.": [
+        "您将无法再在 ${ BRAND_NAME } 中以 ${ email } 的身份收发邮件。"
+      ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "如果您在 ${ trialEndsOnFormatted } 之前取消，将不会被收取费用。"
       ],
@@ -14179,6 +14266,9 @@
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "您的 ${ VPN_APP_NAME } 和 ${ MAIL_APP_NAME } 账户已关联。要删除它们，请登录 ${ loginLink } 并在那里删除您的账户。"
+      ],
+      "Your account and password stay the same.": [
+        "您的账户和密码保持不变。"
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "您的账户有逾期未支付的账单，很快将被限制使用。${ payInvoiceLink }"
@@ -15398,6 +15488,9 @@
       "Confirm second password": [
         "确认二级密码"
       ],
+      "Connect ${ item.Email }": [
+        "关联 ${ item.Email }"
+      ],
       "Contacts": [
         "通讯录"
       ],
@@ -16256,6 +16349,12 @@
       "Reserved email address": [
         "预留的邮箱地址"
       ],
+      "Restrict sign-in to primary email address": [
+        "限制仅使用主邮箱地址登录"
+      ],
+      "Restrict sign-in to username": [
+        "限制仅使用用户名登录"
+      ],
       "Reveal password": [
         "显示密码"
       ],
@@ -16405,6 +16504,9 @@
       ],
       "Start weekday": [
         "起始日期"
+      ],
+      "Start with your most recent": [
+        "从最近的开始"
       ],
       "Starts with": [
         "开头为"
@@ -23912,6 +24014,9 @@
       "Enter your backup password": [
         "输入您的备份密码"
       ],
+      "Enter your password": [
+        "请输入您的密码"
+      ],
       "For your security, you have been signed out of all your other active devices.": [
         "为了您的安全，您已从所有其他活跃设备中登出。"
       ],
@@ -24038,6 +24143,9 @@
       "To make sure it's really you trying to sign-in, please enter your backup password.": [
         "为了确保是您本人在登录，请输入您的备用密码。"
       ],
+      "To make sure it's really you trying to sign-in, please enter your password.": [
+        "为确保是您本人尝试登录，请输入您的密码。"
+      ],
       "To make sure it's really you trying to sign-in, share the confirmation code with your administrator **${ adminEmail }** so that they can approve the request for **${ email }**.": [
         "为确保真的是您在尝试登录，请与管理员 **${ adminEmail }** 共享确认代码，以便他们批准 **${ email }** 的请求。"
       ],
@@ -24061,6 +24169,9 @@
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "您将被重定向到您的第三方 SSO 提供商。"
+      ],
+      "Your old password will become your **backup password**. You will be able to use it to authorize single sign-on (SSO) on new devices in the future.": [
+        "您的旧密码将成为您的**备用密码**，未来您将能够使用它来授权在新设备上进行单点登录 (SSO)。"
       ],
       "Your SSO configuration will be deleted.": [
         "您的 SSO 配置将被删除。"
@@ -25733,6 +25844,9 @@
       "Allocate storage": [
         "分配存储空间"
       ],
+      "Allow access to connect your Gmail": [
+        "允许访问以关联您的 Gmail"
+      ],
       "Already have multiple accounts?": [
         "已有多个账户？"
       ],
@@ -25963,6 +26077,9 @@
       ],
       "Connect your custom domain": [
         "连接您的自定义域名"
+      ],
+      "Connect your Gmail": [
+        "关联您的 Gmail"
       ],
       "Connected emails": [
         "已关联的邮箱"
@@ -26224,6 +26341,9 @@
       ],
       "Discard changes?": [
         "放弃更改？"
+      ],
+      "Disconnect this address?": [
+        "取消关联该地址？"
       ],
       "Disconnected from Gmail": [
         "取消关联 Gmail"
@@ -26542,6 +26662,9 @@
       ],
       "Going private": [
         "转为私有"
+      ],
+      "Good to know before you connect": [
+        "关联前须知"
       ],
       "Grant access": [
         "授予访问权限"
@@ -26966,6 +27089,9 @@
       "QR code sign-in": [
         "二维码登录"
       ],
+      "QR sign-in isn't available for business accounts": [
+        "企业账户无法使用扫码登录"
+      ],
       "Ready, set, forward": [
         "准备就绪，开始转发"
       ],
@@ -27224,6 +27350,9 @@
       "Sign out on all devices?": [
         "登出所有设备？"
       ],
+      "Sign-in protection": [
+        "登录保护"
+      ],
       "Signed in successfully!": [
         "登录成功！"
       ],
@@ -27358,6 +27487,12 @@
       ],
       "This field cannot contain only spaces": [
         "该字段不能只包含空格"
+      ],
+      "This Gmail is already connected": [
+        "此 Gmail 已被关联"
+      ],
+      "This Gmail is linked to another ${ BRAND_NAME } account": [
+        "此 Gmail 已关联至另一个 ${ BRAND_NAME } 账户"
       ],
       "Time zone": [
         "时区"
@@ -27562,6 +27697,9 @@
       ],
       "With your ${ BRAND_NAME } Account, you get access to all ${ BRAND_NAME } apps": [
         "使用您的 ${ BRAND_NAME } 账户，您可以访问所有 ${ BRAND_NAME } 应用"
+      ],
+      "Wrong Gmail account": [
+        "Gmail 账户错误"
       ],
       "You are all set": [
         "一切就绪"
@@ -28098,6 +28236,9 @@
       ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: 安全登录您的所有设备。包括无限邮箱别名、共享、集成 2FA 等等。"
+      ],
+      "Assigned by a group. Remove the user from the group to change this role": [
+        "由群组分配，请将该用户移出群组以更改此角色"
       ],
       "Disables end-to-end email encryption for this group": [
         "禁用该组的端到端电子邮件加密"
