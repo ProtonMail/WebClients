@@ -8,11 +8,15 @@ import { MeetingEndedReasons } from '@proton/meet/types/types';
 
 import type { CTAModalBaseProps } from '../shared/types';
 import { EndCallModalShell } from './EndCallModalShell';
+import type { PostCallTitleKind } from './PostCallTitle';
+import { PostCallTitle } from './PostCallTitle';
 
-const getContent = (meetingEndedReason: MeetingEndedReason | null) => {
+const getContent = (
+    meetingEndedReason: MeetingEndedReason | null
+): { titleKind: PostCallTitleKind; subtitle: string } => {
     if (meetingEndedReason?.reason === MeetingEndedReasons.AnotherMeetingInProgress) {
         return {
-            title: c('Info').t`Meeting ended`,
+            titleKind: 'ended',
             subtitle: meetingEndedReason.isLocalParticipantHost
                 ? c('Info').t`You have too many meetings in progress`
                 : c('Info').t`Host has another meeting in progress`,
@@ -21,7 +25,7 @@ const getContent = (meetingEndedReason: MeetingEndedReason | null) => {
 
     if (meetingEndedReason?.reason === MeetingEndedReasons.TimeLimitExceeded) {
         return {
-            title: c('Info').t`Meeting time is up`,
+            titleKind: 'timeUp',
             subtitle: meetingEndedReason.isLocalParticipantHost
                 ? c('Info')
                       .t`This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.`
@@ -29,13 +33,13 @@ const getContent = (meetingEndedReason: MeetingEndedReason | null) => {
         };
     }
     return {
-        title: c('Info').t`Meeting ended`,
+        titleKind: 'ended',
         subtitle: c('Info').t`Everyone has been disconnected from the call.`,
     };
 };
 
 export const MeetingEndedModal = ({ open, onClose }: CTAModalBaseProps) => {
-    const { title, subtitle } = getContent(useMeetSelector(selectMeetingEndedReason));
+    const { titleKind, subtitle } = getContent(useMeetSelector(selectMeetingEndedReason));
 
     return (
         <EndCallModalShell
@@ -52,7 +56,7 @@ export const MeetingEndedModal = ({ open, onClose }: CTAModalBaseProps) => {
                     {c('Action').t`Return to dashboard`}
                 </Button>
             }
-            title={title}
+            title={<PostCallTitle kind={titleKind} />}
             subtitle={subtitle}
         />
     );
