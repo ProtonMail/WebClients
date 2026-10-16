@@ -1481,8 +1481,7 @@
         "Megbízható"
       ],
       "Trust key": [
-        "Kulcs megjelölése megbízhatóként",
-        "Kulcsok megjelölése megbízhatóként"
+        "Megbízható kulcs"
       ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
@@ -7188,6 +7187,7 @@
         "Inicializálás…"
       ],
       "Insert image": [
+        "Kép beillesztése",
         "Kép beillesztése"
       ],
       "Insert link": [
@@ -8610,6 +8610,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Már csak néhány kattintás választja el a rendetlenség-mentes postaládától"
+      ],
+      "We'll get back to you shortly.": [
+        "Hamarosan válaszolunk."
       ]
     },
     "info": {
@@ -9663,6 +9666,12 @@
       ],
       "ZIP code": [
         "Irányítószám"
+      ],
+      "Please share any feedback to help us improve.": [
+        "Kérjük, ossza meg ossza meg velünk visszajelzéseit, hogy segítsen nekünk fejlődni."
+      ],
+      "Why would you like to cancel?": [
+        "Miért szeretne törölni?"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12134,6 +12143,9 @@
       ],
       "ZIP code": [
         "Irányítószám"
+      ],
+      "Please select the main reason": [
+        "Válassza ki a fő okot"
       ]
     },
     "Placeholder for contact group name": {
@@ -15073,6 +15085,12 @@
       ],
       "Your shorter address is now ready": [
         "A rövidebb címe elkészült"
+      ],
+      "Contact us": [
+        "Kapcsolatfelvétel"
+      ],
+      "Request sent": [
+        "Kérés elküldve"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15684,6 +15702,20 @@
       ],
       "Passcode:": [
         "Belépési kód:"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Találtam egy másik szolgáltatást, ami jobban tetszik"
+      ],
+      "It’s missing a key feature": [
+        "Hiányzik belőle egy kulcsfontosságú funkció"
+      ],
+      "It’s too expensive": [
+        "Túl drága"
+      ],
+      "Other": [
+        "Egyéb"
       ]
     }
   }

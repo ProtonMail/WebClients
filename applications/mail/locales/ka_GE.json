@@ -1514,8 +1514,7 @@
         "ნდობა"
       ],
       "Trust key": [
-        "ნდობის გასაღები",
-        "ნდობის გასაღებები"
+        "გასაღების სანდოობა"
       ],
       "Trust public key": [
         "ამ საჯარო გასაღების ნდობა"
@@ -7515,7 +7514,8 @@
         "ინიციალიზაცია…"
       ],
       "Insert image": [
-        "გამოსახულების ჩასმა"
+        "გამოსახულების ჩასმა",
+        "გამოსახულებების ჩასმა"
       ],
       "Insert link": [
         "ბმულის ჩასმა"
@@ -8972,6 +8972,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "გაჭედვისგან თავისუფალი საფოსტო ყუთისგან რამდენიმე წკაპი გაშორებთ"
+      ],
+      "We'll get back to you shortly.": [
+        "მალე დავბრუნდები."
       ]
     },
     "info": {
@@ -10167,6 +10170,12 @@
       ],
       "ZIP code": [
         "საფოსტო კოდი"
+      ],
+      "Please share any feedback to help us improve.": [
+        "გაგვიზიარეთ თქვენი აზრი."
+      ],
+      "Why would you like to cancel?": [
+        "რატომ აუქმებთ?"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12998,6 +13007,9 @@
       ],
       "ZIP code": [
         "საფოსტო კოდი"
+      ],
+      "Please select the main reason": [
+        "აირჩიეთ მთავარი მიზეზი"
       ]
     },
     "Placeholder for contact group name": {
@@ -16098,6 +16110,12 @@
       ],
       "Your shorter address is now ready": [
         "თქვენი მოკლე მისამართი ახლა მზადაა"
+      ],
+      "Contact us": [
+        "დაგვიკავშირდით"
+      ],
+      "Request sent": [
+        "მოთხოვნა გაიგზავნა"
       ]
     },
     "Title header for keys table": {
@@ -16748,6 +16766,20 @@
       ],
       "Passcode:": [
         "საკვანძო კოდი:"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "სხვა სერვისი ვიპოვე, რომელიც უფრო მომწონს"
+      ],
+      "It’s missing a key feature": [
+        "აკლია ძრითადი ფუნქცია"
+      ],
+      "It’s too expensive": [
+        "ძალიან ძვირია"
+      ],
+      "Other": [
+        "სხვა"
       ]
     }
   }
