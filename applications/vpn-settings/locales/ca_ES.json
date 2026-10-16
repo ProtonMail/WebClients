@@ -2233,9 +2233,6 @@
       ],
       "Protection for two in a single plan": [
         "Protecció per a dos en un sol pla"
-      ],
-      "Save big with a yearly plan": [
-        "Estalvieu molt amb un pla anual"
       ]
     },
     "Billing cycle": {
@@ -10117,6 +10114,12 @@
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Quan activeu SAML per a ${ appName } al vostre proveïdor d'identitat, és possible que se us demani que utilitzeu l'URL de la crida de retorn (ACS) i l'identificador de l'emissor. Només cal copiar i enganxar les dades de sota als camps del proveïdor d'identitat."
       ],
+      "When sign-in is restricted, only ${ primaryEmailElement } and your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Quan l'inici de sessió està restringit, només ${ primaryEmailElement } i el vostre nom d'usuari ${ usernameElement } es poden utilitzar per iniciar sessió. Les vostres altres adreces no es poden tornar a enllaçar al vostre compte, fins i tot si algú les coneix."
+      ],
+      "When sign-in is restricted, only your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Quan l'inici de sessió està restringit, només el vostre nom d'usuari ${ usernameElement } es pot utilitzar per iniciar sessió. Les vostres altres adreces no es poden tornar a enllaçar al vostre compte, fins i tot si algú les coneix."
+      ],
       "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
         "Quan cancel·leu la vostra subscripció de pagament actual, el saldo de la vostra subscripció es retornarà com a crèdits al compte i se us canviarà al pla ${ BRAND_NAME } ${ PLANS.FREE }."
       ],
@@ -11478,6 +11481,12 @@
       ],
       "Require password check-ins": [
         "Requereix verificacions de contrasenya"
+      ],
+      "Restrict sign-in to primary email address": [
+        "Restringiu l'inici de sessió a l'adreça de correu electrònic primària"
+      ],
+      "Restrict sign-in to username": [
+        "Restringiu l'inici de sessió al nom d'usuari"
       ],
       "Reveal password": [
         "Mostra la contrasenya"
@@ -19537,6 +19546,9 @@
       ],
       "Sign out": [
         "Tanca la sessió"
+      ],
+      "Sign-in protection": [
+        "Protecció d'inici de sessió"
       ],
       "Signed in to another account": [
         "S'ha iniciat la sessió a un altre compte"

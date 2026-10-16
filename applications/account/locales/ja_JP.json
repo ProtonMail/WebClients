@@ -1977,6 +1977,9 @@
       "Domains": [
         "ドメイン"
       ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "マネージドサービスプロバイダーアドオンを導入している組織は、子会社組織を作成および管理できます。"
+      ],
       "Servers": [
         "サーバー"
       ],
@@ -2452,6 +2455,11 @@
     "bfcampaign2026: Action": {
       "Black Friday": [
         "ブラックフライデー"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "Use your own email domain": [
+        "独自のメールドメインを使用"
       ]
     },
     "Billing cycle": {
@@ -3175,6 +3183,9 @@
       ],
       "Total": [
         "合計"
+      ],
+      "Total for ${ cycle } month": [
+        "合計 ${ cycle } か月"
       ]
     },
     "claimed address": {
@@ -9357,6 +9368,9 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } 件の ${ VPN_APP_NAME } 接続 (より多くのデバイスを VPN に接続可能)"
       ],
+      "1 vault per user": [
+        "一人のユーザーにつき一つの保管庫"
+      ],
       "2FA disabled": [
         "2要素認証は無効"
       ],
@@ -15312,6 +15326,9 @@
       "Pay invoice": [
         "請求の支払い"
       ],
+      "Pay it": [
+        "支払う"
+      ],
       "Privacy policy": [
         "プライバシーポリシー"
       ],
@@ -18766,8 +18783,14 @@
       "This payment method will become your new default for all future renewals.": [
         "この支払い方法は、今後のすべての更新について、お客様の新しいデフォルトになります。"
       ],
+      "This plan doesn’t support the members on your account.": [
+        "このプランは、お客様のアカウントに登録されているメンバーをサポートしていません。"
+      ],
       "Timeout exceeded": [
         "タイムアウトを超えました"
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "トライアルプランは Scrieシート をサポートしていません。"
       ],
       "VAT number": [
         "VAT番号"
@@ -18880,6 +18903,11 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "更新価格は、請求地域およびVAT番号によって異なります。"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - 末尾が${ Last4 }のカード"
       ]
     },
     "Payments.Sepa": {
@@ -23468,6 +23496,9 @@
       ],
       "Address and key verification": [
         "アドレスとキー認証"
+      ],
+      "Addresses": [
+        "メールアドレス"
       ],
       "Advanced recovery options": [
         "高度な回復オプション"

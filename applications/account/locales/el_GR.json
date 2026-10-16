@@ -665,6 +665,9 @@
       "Connect apps and devices": [
         "Σύνδεση εφαρμογών και συσκευών"
       ],
+      "Connect Gmail": [
+        "Σύνδεση στο Gmail"
+      ],
       "Connect Gmail address": [
         "Σύνδεση διεύθυνσης Gmail"
       ],
@@ -3056,9 +3059,6 @@
       ],
       "Protection for two in a single plan": [
         "Προστασία για δύο άτομα σε ένα ενιαίο πλάνο"
-      ],
-      "Save big with a yearly plan": [
-        "Κερδίστε σημαντικά με ένα ετήσιο πλάνο"
       ]
     },
     "Billing cycle": {
@@ -6822,6 +6822,9 @@
       "Add 1 more": [
         "Προσθέστε 1 ακόμα"
       ],
+      "Add contact": [
+        "Προσθήκη επαφής"
+      ],
       "Add emergency contact": [
         "Προσθήκη επαφής έκτακτης ανάγκης"
       ],
@@ -6990,6 +6993,9 @@
       ],
       "Recover data now": [
         "Ανάκτηση δεδομένων τώρα"
+      ],
+      "Recover your data before adding a new contact.": [
+        "Ανακτήστε τα δεδομένα σας πριν προσθέσετε μια νέα επαφή."
       ],
       "Recovery approved": [
         "Η ανάκτηση εγκρίθηκε"
@@ -7173,6 +7179,9 @@
       "You'll receive access to their account in **${ days } day**, or when they approve your request.": [
         "Θα λάβετε πρόσβαση στον λογαριασμό τους σε **${ days } ημέρα**, ή όταν εγκρίνουν το αίτημά σας.",
         "Θα αποκτήσετε πρόσβαση στον λογαριασμό τους σε **${ days } ημέρες**, ή όταν εγκρίνουν το αίτημά σας."
+      ],
+      "Your data is still locked from a password reset. A contact added now won't be able to restore it.": [
+        "Τα δεδομένα σας παραμένουν κλειδωμένα λόγω επαναφοράς κωδικού πρόσβασης. Μια επαφή που θα προστεθεί τώρα δε θα μπορέσει να τα επαναφέρει."
       ],
       "Your emergency contact ${ name } is requesting access to your account.": [
         "Η επαφή έκτακτης ανάγκης σας ${ name } ζητά πρόσβαση στον λογαριασμό σας."
@@ -10299,6 +10308,9 @@
       "${ emailAddress } is invalid": [
         "Η ${ emailAddress } είναι μη έγκυρη"
       ],
+      "${ emailAddress } is used to sign in to another ${ BRAND_NAME } account. We are making the connection seamless, but for now you will need to take a few steps.": [
+        "Η διεύθυνση ${ emailAddress } χρησιμοποιείται για τη σύνδεση σε έναν άλλον λογαριασμό ${ BRAND_NAME }. Κάνουμε τη διαδικασία σύνδεσης απρόσκοπτη, αλλά προς το παρόν θα χρειαστεί να ακολουθήσετε μερικά βήματα."
+      ],
       "${ emails.length } member added to the group": [
         "${ emails.length } μέλος προστέθηκε στην ομάδα",
         "${ emails.length } μέλη προστέθηκαν στην ομάδα"
@@ -10451,6 +10463,9 @@
       ],
       "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
         "${ quarantine }: ζητώντας από τις πλατφόρμες παραληπτών να επισημάνουν τα μη εξουσιοδοτημένα μηνύματα ηλεκτρονικού ταχυδρομείου ως ανεπιθύμητα ή να τα θέσουν σε καραντίνα."
+      ],
+      "${ reason.email } is used to sign in to another ${ BRAND_NAME } account. You'll pick a new username for that account next time you sign in. Nothing else changes.": [
+        "Το ${ reason.email } χρησιμοποιείται για τη σύνδεση σε έναν άλλον λογαριασμό ${ BRAND_NAME }. Θα επιλέξετε νέο όνομα χρήστη για αυτόν τον λογαριασμό την επόμενη φορά που θα συνδεθείτε. Τίποτα άλλο δεν αλλάζει."
       ],
       "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
         "${ reject }: ζητώντας από τις πλατφόρμες παραληπτών να απορρίψουν τα μη εξουσιοδοτημένα μηνύματα ηλεκτρονικού ταχυδρομείου."
@@ -12731,6 +12746,12 @@
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Επιλέξτε τον τύπο σύνδεσμου που θέλετε να εισαγάγετε και συμπληρώστε όλα τα πεδία."
       ],
+      "Please sign in with ${ emailAddress } to continue.": [
+        "Παρακαλώ συνδεθείτε με τη διεύθυνση ${ emailAddress } για να συνεχίσετε."
+      ],
+      "Please sign in with the Gmail account you want to connect to continue.": [
+        "Παρακαλούμε συνδεθείτε με τον λογαριασμό Gmail που θέλετε να συνδέσετε, για να συνεχίσετε."
+      ],
       "Please specify...": [
         "Παρακαλούμε καθορίστε..."
       ],
@@ -13356,6 +13377,12 @@
       "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
         "Αυτή η διεύθυνση Gmail είναι καταχωρημένη σε έναν άλλο λογαριασμό ${ BRAND_NAME } (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } ΤΝ και άλλους). Προσπαθούμε να κάνουμε αυτήν τη σύνδεση απρόσκοπτη, αλλά προς το παρόν θα πρέπει να κάνετε μερικά βήματα."
       ],
+      "This Gmail is already connected to your ${ BRAND_NAME } account. There's nothing else you need to do.": [
+        "Αυτός ο λογαριασμός Gmail είναι ήδη συνδεδεμένος με τον ${ BRAND_NAME } λογαριασμό σας. Δε χρειάζεται να κάνετε τίποτα άλλο."
+      ],
+      "This Gmail is used to sign in to another ${ BRAND_NAME } account. We are making the connection seamless, but for now you will need to take a few steps.": [
+        "Αυτός ο λογαριασμός Gmail χρησιμοποιείται για τη σύνδεση σε έναν άλλον λογαριασμό ${ BRAND_NAME }. Κάνουμε τη διαδικασία σύνδεσης απρόσκοπτη, αλλά προς το παρόν θα χρειαστεί να ακολουθήσετε μερικά βήματα."
+      ],
       "This invitation link has expired. Please contact your administrator to request access.": [
         "Αυτή η σύνδεση πρόσκλησης έχει λήξει. Παρακαλούμε επικοινωνήστε με τον διαχειριστή σας για να ζητήσετε πρόσβαση."
       ],
@@ -13862,6 +13889,15 @@
       ],
       "We couldn't complete the transaction. Please try again.": [
         "Δεν μπορέσαμε να ολοκληρώσουμε τη συναλλαγή. Παρακαλούμε προσπαθήστε ξανά."
+      ],
+      "We couldn't connect ${ emailAddress }. Try again and select all the boxes when Google asks for access. ${ BRAND_NAME } only uses this access to connect your Gmail.": [
+        "Δεν μπορέσαμε να συνδέσουμε το ${ emailAddress } σας. Δοκιμάστε ξανά και επιλέξτε όλα τα πλαίσια όταν η Google ζητήσει πρόσβαση. Το ${ BRAND_NAME } χρησιμοποιεί αυτή την πρόσβαση μόνο για να συνδέσει το Gmail σας."
+      ],
+      "We couldn't connect your Gmail right now. Please try again in a few minutes.": [
+        "Δεν ήταν δυνατή η σύνδεση του Gmail σας αυτή τη στιγμή. Παρακαλούμε δοκιμάστε ξανά σε λίγα λεπτά."
+      ],
+      "We couldn't connect your Gmail. Try again and select all the boxes when Google asks for access. ${ BRAND_NAME } only uses this access to connect your Gmail.": [
+        "Δεν μπορέσαμε να συνδέσουμε το Gmail σας. Δοκιμάστε ξανά και επιλέξτε όλα τα πλαίσια όταν η Google ζητήσει πρόσβαση. Το ${ BRAND_NAME } χρησιμοποιεί αυτή την πρόσβαση μόνο για να συνδέσει το Gmail σας."
       ],
       "We couldn't send invoices to your email address. Automatic invoicing has been paused until you update the address.": [
         "Δεν ήταν δυνατή η αποστολή τιμολογίων στη διεύθυνση ηλεκτρονικού ταχυδρομείου σας. Η αυτόματη τιμολόγηση έχει διακοπεί προσωρινά μέχρι να ενημερώσετε τη διεύθυνση."
@@ -16598,9 +16634,6 @@
       ],
       "Start weekday": [
         "Εκκίνηση της εβδομάδας"
-      ],
-      "Start with your most recent messages": [
-        "Ξεκινήστε με τα πιο πρόσφατα μηνύματά σας"
       ],
       "Starts with": [
         "Ξεκινάει με"
@@ -20932,6 +20965,9 @@
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Η μέθοδος πληρωμής απαιτείται για την ενεργοποίηση της συνδρομής μετά τη λήξη της δοκιμαστικής περιόδου."
       ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Η αλλαγή προγράμματος δεν είναι δυνατή για τους εξής λόγους:"
+      ],
       "Please close extra wallet accounts before changing your plan.": [
         "Παρακαλούμε κλείστε τους επιπλέον λογαριασμούς πορτοφολιού πριν αλλάξετε το πλάνο σας."
       ],
@@ -20943,6 +20979,9 @@
       ],
       "Processing payment": [
         "Επεξεργασία πληρωμής"
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Οι θέσεις στο Proton Meet πρέπει να αντιστοιχούν στον αριθμό των μελών."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Η τιμολόγηση ανανέωσης υπόκειται σε αλλαγές σύμφωνα με τους ${ termsAndConditionsLink }."
@@ -21022,8 +21061,14 @@
       "This payment method will become your new default for all future renewals.": [
         "Αυτή η μέθοδος πληρωμής θα γίνει η νέα σας προεπιλογή για όλες τις μελλοντικές ανανεώσεις."
       ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Αυτό το πρόγραμμα δεν υποστηρίζει τις διαχειριζόμενες λειτουργίες στον λογαριασμό σας."
+      ],
       "This plan doesn’t support the members on your account.": [
         "Αυτό το πλάνο δεν υποστηρίζει τα μέλη στον λογαριασμό σας."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Αυτή η συνδρομή δεν μπορεί να ολοκληρωθεί αυτή τη στιγμή. Παρακαλούμε δοκιμάστε ξανά."
       ],
       "Timeout exceeded": [
         "Υπέρβαση χρονικού ορίου"
@@ -26078,6 +26123,9 @@
       "Address and key verification": [
         "Επαλήθευση διεύθυνσης και κλειδιού"
       ],
+      "Addresses": [
+        "Διευθύνσεις"
+      ],
       "Advanced configuration": [
         "Προηγμένη διαμόρφωση"
       ],
@@ -26086,6 +26134,9 @@
       ],
       "Allocate storage": [
         "Κατανομή αποθηκευτικού χώρου"
+      ],
+      "Allow access to connect your Gmail": [
+        "Παραχωρήστε πρόσβαση για να συνδέσετε το Gmail σας"
       ],
       "Already have multiple accounts?": [
         "Έχετε ήδη πολλούς λογαριασμούς;"
@@ -26317,9 +26368,6 @@
       ],
       "Connect your custom domain": [
         "Συνδέστε τον προσαρμοσμένο τομέα σας"
-      ],
-      "Connected addresses": [
-        "Συνδεδεμένες διευθύνσεις"
       ],
       "Connected emails": [
         "Συνδεδεμένα email"
@@ -26902,6 +26950,9 @@
       ],
       "Going private": [
         "Μετάβαση σε ιδιωτικό"
+      ],
+      "Good to know before you connect": [
+        "Χρήσιμες πληροφορίες πριν τη σύνδεση"
       ],
       "Grant access": [
         "Παραχώρηση πρόσβασης"
@@ -27724,6 +27775,12 @@
       "This field cannot contain only spaces": [
         "Αυτό το πεδίο δεν μπορεί να περιέχει μόνο κενά διαστήματα"
       ],
+      "This Gmail is already connected": [
+        "Αυτός ο λογαριασμός Gmail είναι ήδη συνδεδεμένος"
+      ],
+      "This Gmail is linked to another ${ BRAND_NAME } account": [
+        "Αυτό το Gmail είναι συνδεδεμένο με έναν άλλο λογαριασμό ${ BRAND_NAME }"
+      ],
       "Time zone": [
         "Ζωνη ωρας"
       ],
@@ -27927,6 +27984,9 @@
       ],
       "With your ${ BRAND_NAME } Account, you get access to all ${ BRAND_NAME } apps": [
         "Με τον λογαριασμό σας ${ BRAND_NAME }, έχετε πρόσβαση σε όλες τις εφαρμογές ${ BRAND_NAME }"
+      ],
+      "Wrong Gmail account": [
+        "Λάθος λογαριασμός Gmail"
       ],
       "You are all set": [
         "Είστε έτοιμοι"
