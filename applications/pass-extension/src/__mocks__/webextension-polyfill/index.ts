@@ -57,6 +57,14 @@ const browser = {
             addListener: jest.fn(),
         },
     },
+    windows: {
+        WINDOW_ID_NONE: -1,
+        getLastFocused: jest.fn().mockResolvedValue({ focused: false }),
+        onFocusChanged: {
+            addListener: jest.fn(),
+            removeListener: jest.fn(),
+        },
+    },
 };
 
 export const clearBrowserMocks = () => {
@@ -85,6 +93,9 @@ export const clearBrowserMocks = () => {
     browser.tabs.query.mockClear();
     browser.tabs.get.mockClear();
     browser.tabs.onUpdated.addListener.mockClear();
+    browser.windows.getLastFocused.mockClear();
+    browser.windows.onFocusChanged.addListener.mockClear();
+    browser.windows.onFocusChanged.removeListener.mockClear();
 };
 
 export default browser;
