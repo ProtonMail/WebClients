@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
 import type { ItemImportIntent, Maybe } from '../../../../types';
-import { groupByKey } from '../../../../utils/array/group-by-key';
 import { safeCall } from '../../../../utils/fp/safe-call';
 import { logger } from '../../../../utils/logger';
 import { readCSV } from '../../helpers/csv.reader';
 import { ImportProviderError } from '../../helpers/error';
+import { createImportFolderTree } from '../../helpers/folders';
 import {
     getEmailOrUsername,
     getImportedVaultName,
@@ -65,7 +65,6 @@ const processCreditCardItem = (item: NordPassItem): ItemImportIntent<'creditCard
 export const readNordPassData = async (file: File): Promise<ImportReaderResult> => {
     const ignored: string[] = [];
     const warnings: string[] = [];
-    const vaults: ImportVault[] = [];
 
     try {
         const data = await file.text();
@@ -78,45 +77,47 @@ export const readNordPassData = async (file: File): Promise<ImportReaderResult> 
             onError: (error) => warnings.push(error),
         });
 
-        for (const vaultItems of groupByKey(parsed.items, 'folder')) {
-            if (vaultItems.length === 0) continue;
+        const tree = createImportFolderTree();
+        const vaultItems: ItemImportIntent[] = [];
 
-            /** FIXME: when supporting folders we should preserve the
-             * NordPass folder structure when importing */
-            const name = getImportedVaultName(vaultItems?.[0].folder);
-            const items: ItemImportIntent[] = [];
-
-            for (const item of vaultItems) {
-                const type = item?.type ?? c('Label').t`Unknown`;
-                const title = item?.name ?? '';
-
-                try {
-                    const value = await (async (): Promise<Maybe<ItemImportIntent>> => {
-                        switch (item.type) {
-                            case NordPassType.CREDIT_CARD:
-                                return processCreditCardItem(item);
-                            case NordPassType.IDENTITY:
-                                return processIdentityItem(item);
-                            case NordPassType.LOGIN:
-                                return processLoginItem(item);
-                            case NordPassType.NOTE:
-                                return processNoteItem(item);
-                        }
-                    })();
-
-                    if (!value) ignored.push(`[${type}] ${title}`);
-                    else {
-                        value.extraFields = extractNordPassExtraFields(item);
-                        items.push(value);
-                    }
-                } catch (err) {
-                    ignored.push(`[${type}] ${title}`);
-                    logger.warn('[Importer::NordPass]', err);
-                }
+        for (const item of parsed.items) {
+            if (item.type === NordPassType.FOLDER) {
+                tree.add(item.name);
+                continue;
             }
 
-            vaults.push({ name, items, shareId: null, folders: [] });
+            const type = item?.type ?? c('Label').t`Unknown`;
+            const title = item?.name ?? '';
+            const folderId = tree.add(item.folder);
+
+            try {
+                const value = await (async (): Promise<Maybe<ItemImportIntent>> => {
+                    switch (item.type) {
+                        case NordPassType.CREDIT_CARD:
+                            return processCreditCardItem(item);
+                        case NordPassType.IDENTITY:
+                            return processIdentityItem(item);
+                        case NordPassType.LOGIN:
+                            return processLoginItem(item);
+                        case NordPassType.NOTE:
+                            return processNoteItem(item);
+                    }
+                })();
+
+                if (!value) ignored.push(`[${type}] ${title}`);
+                else {
+                    value.extraFields = extractNordPassExtraFields(item);
+                    vaultItems.push({ ...value, folderId });
+                }
+            } catch (err) {
+                ignored.push(`[${type}] ${title}`);
+                logger.warn('[Importer::NordPass]', err);
+            }
         }
+
+        const vaults: ImportVault[] = [
+            { name: getImportedVaultName(), shareId: null, folders: tree.folders, items: vaultItems },
+        ];
 
         return { vaults, ignored, warnings };
     } catch (e) {

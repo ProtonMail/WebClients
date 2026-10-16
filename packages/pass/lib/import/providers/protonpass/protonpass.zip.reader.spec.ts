@@ -3,7 +3,7 @@ import fs from 'fs';
 import type { ItemImportIntent } from '../../../../types';
 import { AutofillMode } from '../../../../types/protobuf';
 import { deobfuscate } from '../../../../utils/obfuscate/xor';
-import type { ImportPayload } from '../../types';
+import type { ImportPayload, ImportVault } from '../../types';
 import { readProtonPassZIP } from './protonpass.zip.reader';
 
 describe('Import Proton Pass ZIP', () => {
@@ -72,7 +72,7 @@ describe('Import Proton Pass ZIP', () => {
 
     it('should import all items', async () => {
         const total = payload.vaults.reduce((acc, { items }) => acc + items.length, 0);
-        expect(total).toEqual(7);
+        expect(total).toEqual(9);
     });
 
     it('should not import existing aliases', async () => {
@@ -81,5 +81,47 @@ describe('Import Proton Pass ZIP', () => {
             (item) => item.type === 'alias'
         );
         expect(aliasesWithoutCurrentAliases.length).toEqual(aliases.length - currentAliases.length);
+    });
+
+    it('should rebuild the folder hierarchy of each vault parent-first', () => {
+        const [personal, notSoPersonal, second, exportVault] = payload.vaults;
+
+        expect(personal.folders.map(({ name, parentId }) => [name, parentId])).toEqual([
+            ['Clients', null],
+            ['Nested', personal.folders[0].id],
+            ['Empty folder', null],
+        ]);
+        expect(notSoPersonal.folders).toEqual([]);
+        expect(second.folders).toEqual([]);
+        expect(exportVault.folders.map(({ name, parentId }) => [name, parentId])).toEqual([
+            ['level1', null],
+            ['level2', exportVault.folders[0].id],
+        ]);
+    });
+
+    it('should place each item in its folder', () => {
+        const [personal, , , exportVault] = payload.vaults;
+
+        const getItemFolderNames = ({ folders, items }: ImportVault) => {
+            const folderNames = new Map(folders.map(({ id, name }) => [id, name]));
+            return items.map(({ metadata, folderId }) => [metadata.name, folderNames.get(folderId ?? '') ?? null]);
+        };
+
+        expect(getItemFolderNames(personal)).toEqual([
+            ['identity', null],
+            ['infra', 'Clients'],
+            ['test', 'Nested'],
+        ]);
+        expect(getItemFolderNames(exportVault)).toEqual([
+            ['sub item', 'level1'],
+            ['folder item', 'level2'],
+        ]);
+    });
+
+    it('should import older exports without folders', () => {
+        const [vault] = oldFormatPayload.vaults;
+
+        expect(vault.folders).toEqual([]);
+        expect(vault.items.every(({ folderId }) => folderId === null)).toBe(true);
     });
 });
