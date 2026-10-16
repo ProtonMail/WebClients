@@ -45,6 +45,7 @@ const sendReportMonitor = async (events: B2BEvent<B2BEventName.ReportMonitor>) =
             Inactive2FA: events.Inactive2FA,
             ExcludedItems: events.ExcludedItems,
             WeakPasswords: events.WeakPasswords,
+            ...(events.CompromisedPasswords !== null ? { CompromisedPasswords: events.CompromisedPasswords } : {}),
         },
     });
 
