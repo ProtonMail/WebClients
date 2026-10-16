@@ -36,6 +36,9 @@ jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
     loadCryptoWorker: jest.fn(),
 }));
 
+// The Sentry SDK is heavy to load and never sends anything in tests (see the mock for details)
+jest.mock('@sentry/browser', () => jest.requireActual('./src/__mocks__/sentryBrowser').default);
+
 // Globally mocked @proton/components modules
 jest.mock('@proton/components/hooks/useEventManager.ts', () => {
     const subscribe = jest.fn();
