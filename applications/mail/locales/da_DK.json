@@ -1574,8 +1574,7 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Betroet nøgle",
-        "Betroede nøgler"
+        "Stol på nøgle"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -8238,7 +8237,8 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede"
+        "Indsæt billede",
+        "Indsæt billeder"
       ],
       "Insert link": [
         "Indsæt link"
@@ -10038,6 +10038,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er få klik fra en ryddelig indbakke."
+      ],
+      "We'll get back to you shortly.": [
+        "Tak! Vi vender tilbage til dig inden længe."
       ]
     },
     "info": {
@@ -11380,6 +11383,12 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Please share any feedback to help us improve.": [
+        "Del gerne feedback, så vi kan forbedre os."
+      ],
+      "Why would you like to cancel?": [
+        "Hvorfor ønsker du at opsige?"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14410,6 +14419,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Please select the main reason": [
+        "Vælg venligst hovedårsagen"
       ]
     },
     "Placeholder for contact group name": {
@@ -17578,6 +17590,12 @@
       ],
       "Your shorter address is now ready": [
         "Din kortere adresse er nu klar"
+      ],
+      "Contact us": [
+        "Kontakt os"
+      ],
+      "Request sent": [
+        "Anmodning sendt"
       ]
     },
     "Title header for keys table": {
@@ -18240,6 +18258,20 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Jeg fandt en anden tjeneste, som jeg synes bedre om"
+      ],
+      "It’s missing a key feature": [
+        "Den mangler en nøglefunktion"
+      ],
+      "It’s too expensive": [
+        "Det er for dyrt"
+      ],
+      "Other": [
+        "Andet"
       ]
     }
   }

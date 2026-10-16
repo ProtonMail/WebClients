@@ -1565,8 +1565,7 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Faire confiance à cette clé",
-        "Faire confiance à ces clés"
+        "Clé de confiance"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -8106,7 +8105,8 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image"
+        "Insérer une image",
+        "Insérer des images"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -9840,6 +9840,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Plus que quelques clics pour une boite de réception bien rangée"
+      ],
+      "We'll get back to you shortly.": [
+        "Nous vous recontacterons prochainement."
       ]
     },
     "info": {
@@ -11158,6 +11161,12 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Please share any feedback to help us improve.": [
+        "N'hésitez pas à nous faire part de vos commentaires pour nous aider à nous améliorer."
+      ],
+      "Why would you like to cancel?": [
+        "Pourquoi voulez-vous annuler votre abonnement ?"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14173,6 +14182,9 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Please select the main reason": [
+        "Sélectionnez la raison principale."
       ]
     },
     "Placeholder for contact group name": {
@@ -17329,6 +17341,12 @@
       ],
       "Your shorter address is now ready": [
         "Votre adresse au format plus court est maintenant prête."
+      ],
+      "Contact us": [
+        "Nous contacter"
+      ],
+      "Request sent": [
+        "La demande a été envoyée."
       ]
     },
     "Title header for keys table": {
@@ -17985,6 +18003,20 @@
       ],
       "Passcode:": [
         "Code d’accès :"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "J'ai trouvé un autre service que je préfère."
+      ],
+      "It’s missing a key feature": [
+        "Il manque une fonction importante."
+      ],
+      "It’s too expensive": [
+        "C'est trop cher."
+      ],
+      "Other": [
+        "Autre"
       ]
     }
   }

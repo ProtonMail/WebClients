@@ -1522,10 +1522,7 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům"
+        "Důvěřovat klíči"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -7773,7 +7770,10 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek"
+        "Vložit obrázek",
+        "Vložit obrázky",
+        "Vložit obrázky",
+        "Vložit obrázky"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -9286,6 +9286,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Od doručené pošty bez nepořádku vás dělí jen několik kliknutí"
+      ],
+      "We'll get back to you shortly.": [
+        "Brzy se vám ozveme."
       ]
     },
     "info": {
@@ -10497,6 +10500,12 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Please share any feedback to help us improve.": [
+        "Podělte se s námi o jakoukoli zpětnou vazbu, která nám pomůže se zlepšit."
+      ],
+      "Why would you like to cancel?": [
+        "Proč chcete zušit?"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13428,6 +13437,9 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Please select the main reason": [
+        "Vyberte prosím hlavní důvod"
       ]
     },
     "Placeholder for contact group name": {
@@ -16714,6 +16726,12 @@
       ],
       "Your shorter address is now ready": [
         "Vaše kratší adresa je nyní připravena"
+      ],
+      "Contact us": [
+        "Kontaktujte nás"
+      ],
+      "Request sent": [
+        "Požadavek odeslán"
       ]
     },
     "Title header for keys table": {
@@ -17454,6 +17472,20 @@
       ],
       "Passcode:": [
         "Přístupový kód:"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Našel jsem jinou službu, která se mi líbí více"
+      ],
+      "It’s missing a key feature": [
+        "Chybí mi důležitá funkce"
+      ],
+      "It’s too expensive": [
+        "Cena je příliš vysoká"
+      ],
+      "Other": [
+        "Ostatní"
       ]
     }
   }

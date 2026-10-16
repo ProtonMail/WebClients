@@ -1522,10 +1522,7 @@
         "Доверять"
       ],
       "Trust key": [
-        "Доверенный ключ",
-        "Доверенных ключа",
-        "Доверенных ключей",
-        "Доверенных ключей"
+        "Доверять ключу"
       ],
       "Trust public key": [
         "Доверять открытым ключам"
@@ -7796,7 +7793,10 @@
         "Инициализация…"
       ],
       "Insert image": [
-        "Вставить изображение"
+        "Вставить изображение",
+        "Вставить изображения",
+        "Вставить изображения",
+        "Вставить изображения"
       ],
       "Insert link": [
         "Вставить ссылку"
@@ -9309,6 +9309,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Вы всего в нескольких нажатиях от почтового ящика, свободного от хлама"
+      ],
+      "We'll get back to you shortly.": [
+        "Мы свяжемся с Вами в ближайшее время."
       ]
     },
     "info": {
@@ -10520,6 +10523,12 @@
       ],
       "ZIP code": [
         "Почтовый индекс"
+      ],
+      "Please share any feedback to help us improve.": [
+        "Оставляйте любые отзывы, чтобы помочь нам совершенствоваться."
+      ],
+      "Why would you like to cancel?": [
+        "Почему вы хотите отменить?"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13448,6 +13457,9 @@
       ],
       "ZIP code": [
         "Почтовый индекс"
+      ],
+      "Please select the main reason": [
+        "Выберите основную причину"
       ]
     },
     "Placeholder for contact group name": {
@@ -16734,6 +16746,12 @@
       ],
       "Your shorter address is now ready": [
         "Ваш укороченный адрес готов"
+      ],
+      "Contact us": [
+        "Свяжитесь с нами"
+      ],
+      "Request sent": [
+        "Запрос отправлен"
       ]
     },
     "Title header for keys table": {
@@ -17474,6 +17492,20 @@
       ],
       "Passcode:": [
         "Код доступа:"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Я нашел другой сервис, который мне больше нравится"
+      ],
+      "It’s missing a key feature": [
+        "Отсутствует ключевая функция"
+      ],
+      "It’s too expensive": [
+        "Слишком дорого"
+      ],
+      "Other": [
+        "Другое"
       ]
     }
   }

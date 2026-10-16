@@ -1576,10 +1576,7 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу",
-        "Давяраць ключам",
-        "Давяраць ключам",
-        "Давяраць ключам"
+        "Давяраць ключу"
       ],
       "Trust public key": [
         "Давяраць адкрытаму ключу"
@@ -8396,7 +8393,10 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс"
+        "Уставіць відарыс",
+        "Уставіць відарысы",
+        "Уставіць відарысы",
+        "Уставіць відарысы"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -10239,6 +10239,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Вам засталося некалькі націскаў, каб навесці парадак у сваёй паштовай скрыні"
+      ],
+      "We'll get back to you shortly.": [
+        "Мы звяжамся з вамі ў самы бліжэйшы час."
       ]
     },
     "info": {
@@ -11597,6 +11600,12 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Please share any feedback to help us improve.": [
+        "Падзяліцеся з намі якім-небудзь водгукам, каб дапамагчы палепшыць наш сэрвіс."
+      ],
+      "Why would you like to cancel?": [
+        "Чаму вы вырашылі скасаваць?"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14689,6 +14698,9 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Please select the main reason": [
+        "Выберыце асноўную прычыну"
       ]
     },
     "Placeholder for contact group name": {
@@ -18045,6 +18057,12 @@
       ],
       "Your shorter address is now ready": [
         "Ваш больш кароткі адрас гатовы да выкарыстання"
+      ],
+      "Contact us": [
+        "Звязацца з намі"
+      ],
+      "Request sent": [
+        "Запыт адпраўлены"
       ]
     },
     "Title header for keys table": {
@@ -18797,6 +18815,20 @@
       ],
       "Passcode:": [
         "Код доступу:"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Я знайшоў больш прывабны сэрвіс"
+      ],
+      "It’s missing a key feature": [
+        "Адсутнічаюць ключавыя функцыі"
+      ],
+      "It’s too expensive": [
+        "Занадта дорага"
+      ],
+      "Other": [
+        "Іншае"
       ]
     }
   }

@@ -1518,9 +1518,7 @@
         "Vjeruj"
       ],
       "Trust key": [
-        "Vjeruj ključu",
-        "Vjeruj ključevima",
-        "Vjeruj ključevima"
+        "Ključ povjerenja"
       ],
       "Trust public key": [
         "Vjeruj javnom ključu"
@@ -7644,7 +7642,9 @@
         "Inicijalizacija…"
       ],
       "Insert image": [
-        "Umetni sliku"
+        "Umetni sliku",
+        "Umetni slike",
+        "Umetni slike"
       ],
       "Insert link": [
         "Umetni poveznicu"
@@ -9129,6 +9129,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Samo Vas nekoliko klikova dijeli od pristigle pošte bez nereda"
+      ],
+      "We'll get back to you shortly.": [
+        "Javit ćemo vam se uskoro."
       ]
     },
     "info": {
@@ -10332,6 +10335,12 @@
       ],
       "ZIP code": [
         "Poštanski broj"
+      ],
+      "Please share any feedback to help us improve.": [
+        "Podijelite povratne informacije kako biste nam pomogli da se poboljšamo."
+      ],
+      "Why would you like to cancel?": [
+        "Zašto želite poništiti pretplatu?"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13213,6 +13222,9 @@
       ],
       "ZIP code": [
         "Poštanski broj"
+      ],
+      "Please select the main reason": [
+        "Odaberite glavni razlog"
       ]
     },
     "Placeholder for contact group name": {
@@ -16406,6 +16418,12 @@
       ],
       "Your shorter address is now ready": [
         "Vaša kraća adresa je sada spremna"
+      ],
+      "Contact us": [
+        "Kontaktirajte nas"
+      ],
+      "Request sent": [
+        "Zahtjev poslan"
       ]
     },
     "Title header for keys table": {
@@ -17098,6 +17116,20 @@
       ],
       "Passcode:": [
         "Pristupni kôd:"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Pronašao/la sam drugu uslugu koja mi se više sviđa"
+      ],
+      "It’s missing a key feature": [
+        "Nedostaje ključna značajka"
+      ],
+      "It’s too expensive": [
+        "Preskupo je"
+      ],
+      "Other": [
+        "Ostalo"
       ]
     }
   }

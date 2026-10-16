@@ -1577,8 +1577,7 @@
         "Vertrauen"
       ],
       "Trust key": [
-        "Schlüssel vertrauen",
-        "Schlüsseln vertrauen"
+        "Schlüssel vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -8241,7 +8240,8 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen"
+        "Bild einfügen",
+        "Bilder einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -10041,6 +10041,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du bist nur ein paar Klicks von einem aufgeräumten Posteingang entfernt"
+      ],
+      "We'll get back to you shortly.": [
+        "Wir melden uns in Kürze bei dir."
       ]
     },
     "info": {
@@ -11383,6 +11386,12 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Please share any feedback to help us improve.": [
+        "Bitte teile uns dein Feedback mit, damit wir uns verbessern können."
+      ],
+      "Why would you like to cancel?": [
+        "Warum möchtest du stornieren?"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14413,6 +14422,9 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Please select the main reason": [
+        "Bitte wähle den Hauptgrund"
       ]
     },
     "Placeholder for contact group name": {
@@ -17581,6 +17593,12 @@
       ],
       "Your shorter address is now ready": [
         "Deine kürzere E-Mail-Adresse ist jetzt fertig"
+      ],
+      "Contact us": [
+        "Kontaktiere uns"
+      ],
+      "Request sent": [
+        "Anfrage gesendet"
       ]
     },
     "Title header for keys table": {
@@ -18243,6 +18261,20 @@
       ],
       "Passcode:": [
         "Passcode:"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Ich habe einen anderen Dienst gefunden, der mir mehr zusagt"
+      ],
+      "It’s missing a key feature": [
+        "Eine wichtige Funktion fehlt"
+      ],
+      "It’s too expensive": [
+        "Es ist mir zu teuer"
+      ],
+      "Other": [
+        "Anderer Grund"
       ]
     }
   }

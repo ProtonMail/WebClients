@@ -1573,10 +1573,7 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče"
+        "Dôveryhodný kľúč"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -8398,7 +8395,10 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok"
+        "Vložiť obrázok",
+        "Vložiť obrázky",
+        "Vložiť obrázky",
+        "Vložiť obrázky"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -10265,6 +10265,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Ste len pár kliknutí od prehľadnej doručenej pošty."
+      ],
+      "We'll get back to you shortly.": [
+        "O chvíľu sa vám ozveme."
       ]
     },
     "info": {
@@ -11623,6 +11626,12 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Please share any feedback to help us improve.": [
+        "Prosím zdieľajte akúkoľvek spätnú väzbu, aby ste nám pomohli zlepšiť sa."
+      ],
+      "Why would you like to cancel?": [
+        "Prečo chcete zrušiť?"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14741,6 +14750,9 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Please select the main reason": [
+        "Prosím vyberte hlavný dôvod"
       ]
     },
     "Placeholder for contact group name": {
@@ -18094,6 +18106,12 @@
       ],
       "Your shorter address is now ready": [
         "Vaša skrátená adresa je pripravená"
+      ],
+      "Contact us": [
+        "Kontaktujte nás"
+      ],
+      "Request sent": [
+        "Požiadavka odoslaná"
       ]
     },
     "Title header for keys table": {
@@ -18846,6 +18864,20 @@
       ],
       "Passcode:": [
         "Prístupový kód:"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Našiel som inú službu, ktorá sa mi páči viac"
+      ],
+      "It’s missing a key feature": [
+        "Nemá kľúčovú funkciu"
+      ],
+      "It’s too expensive": [
+        "Je to príliš drahé"
+      ],
+      "Other": [
+        "Iné"
       ]
     }
   }

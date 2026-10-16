@@ -1513,10 +1513,7 @@
         "Zaupaj"
       ],
       "Trust key": [
-        "Ključ zaupanja",
-        "Ključa zaupanja",
-        "Ključi zaupanja",
-        "Ključev zaupanja"
+        "Zaupaj ključu"
       ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
@@ -7788,7 +7785,10 @@
         "Zagon …"
       ],
       "Insert image": [
-        "Vstavi sliko"
+        "Vstavi sliko",
+        "Vstavi sliki",
+        "Vstavi slike",
+        "Vstavi slik"
       ],
       "Insert link": [
         "Vstavi povezavo"
@@ -9355,6 +9355,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Do urejenega poštnega predala vas loči le nekaj klikov."
+      ],
+      "We'll get back to you shortly.": [
+        "Kmalu vam bomo odgovorili."
       ]
     },
     "info": {
@@ -10548,6 +10551,12 @@
       ],
       "ZIP code": [
         "Poštna številka"
+      ],
+      "Please share any feedback to help us improve.": [
+        "Prosimo, sporočite nam povratne informacije, da se nam pomagate izboljšati."
+      ],
+      "Why would you like to cancel?": [
+        "Zakaj bi želeli preklicati?"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13335,6 +13344,9 @@
       ],
       "ZIP code": [
         "Poštna številka"
+      ],
+      "Please select the main reason": [
+        "Prosimo, izberite glavni razlog."
       ]
     },
     "Placeholder for contact group name": {
@@ -16480,6 +16492,12 @@
       ],
       "Your shorter address is now ready": [
         "Vaš krajši naslov je zdaj pripravljen"
+      ],
+      "Contact us": [
+        "Kontaktirajte nas"
+      ],
+      "Request sent": [
+        "Zahteva je poslana"
       ]
     },
     "Title header for keys table": {
@@ -17186,6 +17204,20 @@
       ],
       "Passcode:": [
         "Koda za dostop:"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Našel sem drugo storitev, ki mi je bolj všeč."
+      ],
+      "It’s missing a key feature": [
+        "Manjka bistvena funkcija."
+      ],
+      "It’s too expensive": [
+        "Predrago"
+      ],
+      "Other": [
+        "Drugo"
       ]
     }
   }
