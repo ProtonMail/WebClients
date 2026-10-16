@@ -4,6 +4,7 @@ import { Button } from '@proton/atoms/Button/Button';
 
 import type { CTAModalBaseProps } from '../shared/types';
 import { EndCallModalShell } from './EndCallModalShell';
+import { PostCallTitle } from './PostCallTitle';
 
 export const RemovedFromMeetingModal = ({ open, onClose }: CTAModalBaseProps) => {
     return (
@@ -21,7 +22,7 @@ export const RemovedFromMeetingModal = ({ open, onClose }: CTAModalBaseProps) =>
                     {c('Action').t`Return to dashboard`}
                 </Button>
             }
-            title={c('Info').t`You were removed from the meeting`}
+            title={<PostCallTitle kind="removed" />}
             subtitle={c('Info')
                 .t`The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.`}
         />
