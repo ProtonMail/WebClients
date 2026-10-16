@@ -60,14 +60,25 @@ const getSharedLabels = () => ({
     exportPasswords: <strong key="exportPasswords">{c('Import Tutorial').t`Export passwords`}</strong>,
 });
 
+/* extracted to avoid translations with duplicate variable keys */
+
+const openAndSelect = (name: ReactNode, menu: ReactNode, option: ReactNode) =>
+    c('Import Tutorial').jt`Open ${name} and select ${menu} → ${option}.`;
+
+const openAndGoTo = (name: ReactNode, menu: ReactNode, option: ReactNode) =>
+    c('Import Tutorial').jt`Open ${name} and go to ${menu} → ${option}.`;
+
+const select = (option: ReactNode) => c('Import Tutorial').jt`Select ${option}.`;
+
+const selectInMenu = (menu: ReactNode, option: ReactNode) => c('Import Tutorial').jt`Select ${menu} → ${option}.`;
+
 const TUTORIALS: Record<ImportProvider, Tutorial> = {
     [ImportProvider.PROTONPASS]: (name) => {
         const { settings, exportLabel } = getSharedLabels();
 
         return (
             <>
-                <Step image={proton1}>{c('Import Tutorial')
-                    .jt`Open ${name} and select ${settings} → ${exportLabel}.`}</Step>
+                <Step image={proton1}>{openAndSelect(name, settings, exportLabel)}</Step>
                 <Step image={proton2}>{c('Import Tutorial').jt`Choose the file format → Select ${exportLabel}.`}</Step>
             </>
         );
@@ -136,10 +147,8 @@ const TUTORIALS: Record<ImportProvider, Tutorial> = {
 
         return (
             <>
-                <Step image={bitwarden1}>
-                    {c('Import Tutorial').jt`Open ${name} and go to ${settings} → ${vaultOptions}.`}
-                </Step>
-                <Step image={bitwarden2}>{c('Import Tutorial').jt`Select ${exportLabel}.`}</Step>
+                <Step image={bitwarden1}>{openAndGoTo(name, settings, vaultOptions)}</Step>
+                <Step image={bitwarden2}>{select(exportLabel)}</Step>
                 <Step image={bitwarden3}>
                     {c('Import Tutorial')
                         .jt`Choose ${formatJson} as the file format, click ${exportLabel} and confirm with your master password.`}
@@ -181,7 +190,7 @@ const TUTORIALS: Record<ImportProvider, Tutorial> = {
 
         return (
             <>
-                <Step image={apple1}>{c('Import Tutorial').jt`Open ${name} and go to ${file} → ${exportAll}.`}</Step>
+                <Step image={apple1}>{openAndGoTo(name, file, exportAll)}</Step>
             </>
         );
     },
@@ -193,9 +202,7 @@ const TUTORIALS: Record<ImportProvider, Tutorial> = {
 
         return (
             <>
-                <Step image={keeper1}>
-                    {c('Import Tutorial').jt`Open ${name} and select ${yourUsername} → ${settings}.`}
-                </Step>
+                <Step image={keeper1}>{openAndSelect(name, yourUsername, settings)}</Step>
                 <Step image={keeper2}>
                     {c('Import Tutorial').jt`Select ${exportLabel} → ${chooseJson} → ${exportAgain}.`}
                 </Step>
@@ -209,7 +216,7 @@ const TUTORIALS: Record<ImportProvider, Tutorial> = {
         return (
             <>
                 <Step image={roboform1}>{c('Import Tutorial').jt`Open ${name} and select ${settings}.`}</Step>
-                <Step image={roboform2}>{c('Import Tutorial').jt`Select ${accountAndData} → ${exportLabel}.`}</Step>
+                <Step image={roboform2}>{selectInMenu(accountAndData, exportLabel)}</Step>
             </>
         );
     },
@@ -220,7 +227,7 @@ const TUTORIALS: Record<ImportProvider, Tutorial> = {
         return (
             <>
                 <Step image={nordpass1}>{c('Import Tutorial').jt`Open ${name} and select ${settings}.`}</Step>
-                <Step image={nordpass2}>{c('Import Tutorial').jt`Select ${exportItems}.`}</Step>
+                <Step image={nordpass2}>{select(exportItems)}</Step>
             </>
         );
     },
@@ -229,8 +236,7 @@ const TUTORIALS: Record<ImportProvider, Tutorial> = {
 
         return (
             <>
-                <Step image={keepass1}>{c('Import Tutorial')
-                    .jt`Open ${name} and select ${file} → ${exportLabel}.`}</Step>
+                <Step image={keepass1}>{openAndSelect(name, file, exportLabel)}</Step>
             </>
         );
     },
@@ -240,9 +246,7 @@ const TUTORIALS: Record<ImportProvider, Tutorial> = {
 
         return (
             <>
-                <Step image={kaspersky1}>
-                    {c('Import Tutorial').jt`Open ${name} and select ${moreActions} → ${exportToTxt}.`}
-                </Step>
+                <Step image={kaspersky1}>{openAndSelect(name, moreActions, exportToTxt)}</Step>
             </>
         );
     },
@@ -251,8 +255,7 @@ const TUTORIALS: Record<ImportProvider, Tutorial> = {
 
         return (
             <>
-                <Step image={enpass1}>{c('Import Tutorial')
-                    .jt`Open ${name} and select ${file} → ${exportLabel}.`}</Step>
+                <Step image={enpass1}>{openAndSelect(name, file, exportLabel)}</Step>
             </>
         );
     },
@@ -264,10 +267,9 @@ const TUTORIALS: Record<ImportProvider, Tutorial> = {
 
         return (
             <>
-                <Step image={dashlane1}>{c('Import Tutorial')
-                    .jt`Open ${name} and select ${vault} → ${settings}.`}</Step>
-                <Step image={dashlane2}>{c('Import Tutorial').jt`Select ${exportData}.`}</Step>
-                <Step image={dashlane3}>{c('Import Tutorial').jt`Select ${exportToCsv}.`}</Step>
+                <Step image={dashlane1}>{openAndSelect(name, vault, settings)}</Step>
+                <Step image={dashlane2}>{select(exportData)}</Step>
+                <Step image={dashlane3}>{select(exportToCsv)}</Step>
             </>
         );
     },
@@ -308,9 +310,7 @@ const TUTORIALS: Record<ImportProvider, Tutorial> = {
         return (
             <>
                 <Step image={edge1}>{c('Import Tutorial').jt`Open ${name} and select ⋯.`}</Step>
-                <Step image={edge2}>
-                    {c('Import Tutorial').jt`Select ${passwordsAndAutofill} → ${microsoftPasswordManager}.`}
-                </Step>
+                <Step image={edge2}>{selectInMenu(passwordsAndAutofill, microsoftPasswordManager)}</Step>
                 <Step image={edge3}>{c('Import Tutorial').jt`Select ⋯ → ${exportPasswords}.`}</Step>
             </>
         );
