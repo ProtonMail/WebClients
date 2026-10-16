@@ -41,6 +41,7 @@ import type { Api } from '@proton/pass/types/api/api';
 import type { NativeMessageErrorType } from '@proton/pass/types/desktop';
 import type { MaybeNull } from '@proton/pass/types/utils/index';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
+import type { ClientEndpoint } from '@proton/pass/types/worker/runtime';
 import { AppStatus } from '@proton/pass/types/worker/state';
 import { or } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
@@ -59,6 +60,7 @@ import { backgroundMessage } from '../../../../lib/message/send-message';
 import { getMinimalHostPermissions, hasHostPermissions } from '../../../../lib/utils/permissions';
 import { isPagePort, isPopupPort } from '../../../../lib/utils/port';
 import { intoSafariCredentials, safariPullFork, sendSafariMessage } from '../../../../lib/utils/safari';
+import { waitForWindowFocus } from '../../../../lib/utils/windows';
 import { WorkerMessageType } from '../../../../types/messages';
 import config from '../../../config';
 import WorkerMessageBroker from '../../channel';
@@ -74,6 +76,8 @@ export interface ExtensionAuthService extends AuthService {
     alarms: AuthAlarms;
     listen: () => void;
 }
+
+const POPUP_REOPEN_FOCUS_TIMEOUT = 2_000;
 
 export const createAuthService = (api: Api, authStore: AuthStore) => {
     const alarms = createAuthAlarms();
@@ -425,19 +429,35 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
         }
     );
 
-    const handleUnlock: MessageHandlerCallback<WorkerMessageType.AUTH_UNLOCK> = withContext((ctx, { payload }) =>
-        ctx.service.store.dispatchAsyncRequest(unlock, payload).then((res) => {
-            switch (res.type) {
-                case 'success':
-                    return { ok: true };
-                case 'failure':
-                    /** Desktop unlock carries the typed `NativeMessageErrorType` (not a localized
-                     * string) so the popup can reconstruct and localize the error at the edge. */
-                    return payload.mode === LockMode.DESKTOP
-                        ? { ok: false, errorType: res.error as NativeMessageErrorType }
-                        : { ok: false, error: res.error };
-            }
-        })
+    /** Firefox closes the popup when the OS biometric prompt steals focus.
+     * Reopening it requires Firefox 149+ (no user gesture needed) and is
+     * rejected on older versions or when the window is unfocused, so wait
+     * briefly for the window to regain focus after the OS prompt closes. */
+    const reopenPopupAfterDesktopUnlock = async (sender: ClientEndpoint, mode: LockMode) => {
+        if (BUILD_TARGET !== 'firefox' || sender !== 'popup' || mode !== LockMode.DESKTOP) return;
+
+        const focused = await waitForWindowFocus(POPUP_REOPEN_FOCUS_TIMEOUT);
+        if (!focused) return logger.info('[AuthService] popup not reopened [unfocused]');
+        if (WorkerMessageBroker.ports.query(isPopupPort).length > 0) return;
+
+        await browser.action.openPopup().catch((err) => logger.warn('[AuthService] popup reopen refused', err));
+    };
+
+    const handleUnlock: MessageHandlerCallback<WorkerMessageType.AUTH_UNLOCK> = withContext(
+        (ctx, { payload, sender }) =>
+            ctx.service.store.dispatchAsyncRequest(unlock, payload).then((res) => {
+                switch (res.type) {
+                    case 'success':
+                        reopenPopupAfterDesktopUnlock(sender, payload.mode).catch(noop);
+                        return { ok: true };
+                    case 'failure':
+                        /** Desktop unlock carries the typed `NativeMessageErrorType` (not a localized
+                         * string) so the popup can reconstruct and localize the error at the edge. */
+                        return payload.mode === LockMode.DESKTOP
+                            ? { ok: false, errorType: res.error as NativeMessageErrorType }
+                            : { ok: false, error: res.error };
+                }
+            })
     );
 
     /* only extend the session lock if a lock is registered and we've reached at least 50%

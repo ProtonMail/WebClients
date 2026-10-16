@@ -47,6 +47,10 @@ export type AppState = {
      * the extension context. For web/desktop, prefer using the
      * `authStore` directly. */
     UID?: Maybe<string>;
+    /** Extension only: the user dismissed the desktop unlock prompt.
+     * Auto-unlock then waits for an explicit gesture until the
+     * client status changes. */
+    unlockDeclined?: boolean;
 };
 
 export type SessionStoreData = AuthSession & { resumeCount: number; resumeAttemptedAt: MaybeNull<number> };

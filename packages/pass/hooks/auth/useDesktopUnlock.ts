@@ -6,6 +6,7 @@ import { useOnlineRef } from '../../components/Core/ConnectivityProvider';
 import { useUnlock } from '../../components/Lock/UnlockProvider';
 import type { UnlockDTO } from '../../lib/auth/lock/types';
 import { LockMode } from '../../lib/auth/lock/types';
+import { getNativeMessageErrorKind } from '../../lib/native-messaging/errors';
 import { useAutoUnlock } from './useAutoUnlock';
 
 export const useDesktopUnlock = ({ silentErrors } = { silentErrors: false }) => {
@@ -21,7 +22,8 @@ export const useDesktopUnlock = ({ silentErrors } = { silentErrors: false }) => 
         const dto: UnlockDTO = { mode: LockMode.DESKTOP, key: '', offline: !online.current };
 
         await unlock(dto).catch((err: Error) => {
-            if (!silentErrors) createNotification({ type: 'error', text: err.message });
+            const cancelled = getNativeMessageErrorKind(err) === 'cancel';
+            if (!silentErrors && !cancelled) createNotification({ type: 'error', text: err.message });
             throw err;
         });
 
