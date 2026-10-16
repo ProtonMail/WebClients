@@ -1,7 +1,13 @@
 import { describe, expect, it } from 'vitest';
 
 import { isValidMessageString } from '../isValidMessageString';
-import { LUMO_EMOJI_IDS, getLumoEmojiSrc, getLumoEmojiToken, splitTextIntoLumoEmojiSegments } from './lumoEmojis';
+import {
+    LUMO_EMOJI_IDS,
+    getLumoEmojiSrc,
+    getLumoEmojiStillSrc,
+    getLumoEmojiToken,
+    splitTextIntoLumoEmojiSegments,
+} from './lumoEmojis';
 
 describe('splitTextIntoLumoEmojiSegments', () => {
     it('splits a token out of the surrounding text', () => {
@@ -40,7 +46,7 @@ describe('splitTextIntoLumoEmojiSegments', () => {
 });
 
 describe('LUMO_EMOJI_IDS', () => {
-    it('gives every Lumo emoji a token the receiver accepts, that splits back into it, and its own GIF', () => {
+    it('gives every Lumo emoji a token the receiver accepts, that splits back into it, its own GIF and its own still PNG', () => {
         expect(LUMO_EMOJI_IDS).toContain('this-is-fine');
 
         for (const id of LUMO_EMOJI_IDS) {
@@ -49,6 +55,7 @@ describe('LUMO_EMOJI_IDS', () => {
             expect(isValidMessageString(token)).toBe(true);
             expect(splitTextIntoLumoEmojiSegments(token)).toEqual([{ type: 'lumoEmoji', id }]);
             expect(getLumoEmojiSrc(id)).toContain(`/lumo-emojis/${id}.gif`);
+            expect(getLumoEmojiStillSrc(id)).toContain(`/lumo-emojis/${id}.png`);
         }
     });
 });

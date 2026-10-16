@@ -99,6 +99,19 @@ describe('ChatMessageContent', () => {
         expect(screen.queryByText(/lumo_emoji/)).not.toBeInTheDocument();
     });
 
+    it('offers the still image of a Lumo emoji under the reduced-motion media query', () => {
+        renderContent('[lumo_emoji:this-is-fine]');
+
+        const image = screen.getByRole('img', { name: 'This is fine' });
+        const stillImageSource = image.previousElementSibling;
+
+        expect(image.parentElement?.tagName).toBe('PICTURE');
+        expect(stillImageSource?.tagName).toBe('SOURCE');
+        expect(stillImageSource).toHaveAttribute('media', '(prefers-reduced-motion: reduce)');
+        expect(stillImageSource).toHaveAttribute('srcset', expect.stringContaining('/lumo-emojis/this-is-fine.png'));
+        expect(image).toHaveAttribute('src', expect.stringContaining('/lumo-emojis/this-is-fine.gif'));
+    });
+
     it('renders a mention and a Lumo emoji in one message', () => {
         renderContent(`[participant_uuid:${ALICE}] [lumo_emoji:cash]`);
 

@@ -1,6 +1,6 @@
 import data from '@emoji-mart/data';
 import { SearchIndex, init } from 'emoji-mart';
-import { describe, expect, it, vi } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import { getLumoEmojiPickerOptions } from './lumoEmojiPicker';
 
@@ -49,5 +49,39 @@ describe('getLumoEmojiPickerOptions', () => {
         await openPicker();
 
         expect(await searchIds('chefs kiss')).toEqual(['lumo-chefs-kiss']);
+    });
+});
+
+describe('Lumo section images', () => {
+    const defaultMatchMedia = window.matchMedia;
+
+    afterEach(() => {
+        window.matchMedia = defaultMatchMedia;
+    });
+
+    const getRocketSkinsInFreshPicker = async () => {
+        vi.resetModules();
+
+        const { getLumoEmojiPickerOptions: getFreshLumoEmojiPickerOptions } = await import('./lumoEmojiPicker');
+        const [lumoCategory] = getFreshLumoEmojiPickerOptions(vi.fn()).custom;
+
+        return lumoCategory.emojis.find(({ id }) => id === 'lumo-rocket')?.skins;
+    };
+
+    it('shows the animated image by default', async () => {
+        expect(await getRocketSkinsInFreshPicker()).toEqual([
+            { src: expect.stringContaining('/lumo-emojis/rocket.gif') },
+        ]);
+    });
+
+    it('shows the still image when the system asks for reduced motion', async () => {
+        window.matchMedia = (query) => ({
+            ...defaultMatchMedia(query),
+            matches: query === '(prefers-reduced-motion: reduce)',
+        });
+
+        expect(await getRocketSkinsInFreshPicker()).toEqual([
+            { src: expect.stringContaining('/lumo-emojis/rocket.png') },
+        ]);
     });
 });
