@@ -1,7 +1,9 @@
+import { act } from '@testing-library/react';
+
 import type { BackendPaymentIntent } from '@proton/payments/core/api/api';
 import { PAYMENT_TOKEN_STATUS } from '@proton/payments/core/constants';
-import type { ChargebeeIframeEvents, ChargebeeIframeHandles } from '@proton/payments/core/interface';
-import { addApiMock } from '@proton/test-api/api';
+import type { AmountAndCurrency, ChargebeeIframeEvents, ChargebeeIframeHandles } from '@proton/payments/core/interface';
+import { addApiMock, apiMock } from '@proton/test-api/api';
 
 const paymentIntentData: BackendPaymentIntent = {
     ID: 'id',
@@ -27,6 +29,37 @@ export function mockPaymentIntent({
     status = PAYMENT_TOKEN_STATUS.CHARGEABLE,
 }: { token?: string; status?: PAYMENT_TOKEN_STATUS } = {}) {
     addApiMock('payments/v5/tokens', () => ({ Token: token, Status: status, Data: paymentIntentData }));
+}
+
+/**
+ * Holds every token request until the test settles it, keyed by the requested amount, so a test can
+ * decide in which order overlapping setups get their token.
+ */
+export function deferTokenRequests() {
+    const pending = new Map<number, { resolve: (value: any) => void; reject: (error: any) => void }>();
+    addApiMock('payments/v5/tokens', ({ data }) => {
+        return new Promise((resolve, reject) => pending.set(data.Amount, { resolve, reject }));
+    });
+    const tokenResponse = (token: string) => ({
+        Token: token,
+        Status: PAYMENT_TOKEN_STATUS.CHARGEABLE,
+        Data: { ID: token },
+    });
+    return {
+        resolve: async (amount: AmountAndCurrency, token: string) => {
+            await act(async () => pending.get(amount.Amount)?.resolve(tokenResponse(token)));
+        },
+        reject: async (amount: AmountAndCurrency) => {
+            await act(async () => pending.get(amount.Amount)?.reject(new Error('Payment processor unavailable')));
+        },
+    };
+}
+
+export function getRequestedTokenAmounts() {
+    return apiMock.mock.calls
+        .map(([request]) => request)
+        .filter((request) => request.url === 'payments/v5/tokens')
+        .map((request) => request.data.Amount);
 }
 
 export function mockTokenStatus(status: PAYMENT_TOKEN_STATUS, token = 'token') {
