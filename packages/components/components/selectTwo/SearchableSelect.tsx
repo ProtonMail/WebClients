@@ -32,6 +32,8 @@ export interface SearcheableSelectProps<V> extends SelectProps<V> {
     anchorRef?: MutableRefObject<HTMLButtonElement | null>;
     prefixIcon?: ReactNode;
     onSearchInputChange?: (value: string) => void;
+    fullWidth?: boolean;
+    noCaret?: boolean;
 }
 
 const SearchableSelect = <V extends any>({
