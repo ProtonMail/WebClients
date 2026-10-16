@@ -336,7 +336,7 @@ describe('Composer scheduled messages', () => {
         const message = setupMessage('Subject', [user as Recipient]);
         setupTest();
 
-        await helper(message, getPreloadState({ hasPaidMail: true, scheduledTotalCount: 100 }));
+        await helper(message, getPreloadState({ hasPaidMail: true, scheduledTotalCount: 1000 }));
 
         const sendActions = screen.getByTestId('composer:send-actions');
         const dropdownButton = getByTestIdDefault(sendActions, 'composer:scheduled-send:open-dropdown');
