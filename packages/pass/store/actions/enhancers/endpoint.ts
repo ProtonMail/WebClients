@@ -22,6 +22,11 @@ export const isActionWithSender = <T extends Action>(action?: T): action is With
     return meta?.sender !== undefined;
 };
 
+/** Forwards the intent's sender to a result action. Only used by the
+ * extension to process result actions for a specific endpoint */
+export const withIntentSender = <A extends Action>(action: A, intent: Action): A =>
+    isActionWithSender(intent) && intent.meta.sender ? withSender(intent.meta.sender)(action) : action;
+
 export const isActionFrom =
     (endpoint: ClientEndpoint) =>
     <T extends Action>(action?: T): action is WithSenderAction<T> =>

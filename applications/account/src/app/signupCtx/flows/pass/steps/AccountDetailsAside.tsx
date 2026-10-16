@@ -2,6 +2,8 @@ import { memo } from 'react';
 
 import { c } from 'ttag';
 
+import { Card } from '@proton/pass/components/Onboarding/UI/Card';
+
 import chromeImage from '../assets/images/chrome.svg';
 import firefoxImage from '../assets/images/firefox.svg';
 import iosImage from '../assets/images/ios.svg';
@@ -10,20 +12,23 @@ import nonFulfilledStarImage from '../assets/images/star-non-fulfilled.svg';
 import starImage from '../assets/images/star.svg';
 import swissFlag from '../assets/images/swiss-flag.svg';
 
+import './AccountDetailsAside.scss';
+
 const PLATFORM_LOGOS = [iosImage, playStoreImage, chromeImage, firefoxImage];
 
 export const AccountDetailsAside = memo(() => (
-    <section
-        className="pass-signup-card-glass w-7/10 flex flex-column items-center py-16 px-4 rounded-lg max-w-custom min-w-custom"
+    <Card
+        variant="glass"
+        className="w-7/10 flex flex-column items-center py-16 px-4 max-w-custom min-w-custom"
         style={{ '--max-w-custom': '35em', '--min-w-custom': '30em' }}
     >
         <h2 className="font-arizona text-4xl text-center">{c('Signup')
             .t`Trusted by over 100 million people and businesses`}</h2>
-        <div>
+        <div className="pass-onboarding-stars">
             {Array.from({ length: 4 }).map((_, i) => (
-                <img key={`star-icon-${i}`} src={starImage} className="star" alt="Star icon" width={90} height={90} />
+                <img key={`star-icon-${i}`} src={starImage} alt="Star icon" width={90} height={90} />
             ))}
-            <img src={nonFulfilledStarImage} className="star" alt="Star icon" width={90} height={90} />
+            <img src={nonFulfilledStarImage} alt="Star icon" width={90} height={90} />
         </div>
         <h2 className="font-arizona text-4xl text-center mt-custom" style={{ '--mt-custom': `-0.5em` }}>{c('Signup')
             .t`4.8+ rating`}</h2>
@@ -42,7 +47,7 @@ export const AccountDetailsAside = memo(() => (
             <img src={swissFlag} alt="Swiss flag" />
             <h2 className="font-arizona text-5xl text-center">{c('Signup').t`Swiss-based`}</h2>
         </div>
-    </section>
+    </Card>
 ));
 
 AccountDetailsAside.displayName = 'AccountDetailsAside';

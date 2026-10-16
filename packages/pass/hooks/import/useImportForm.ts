@@ -11,6 +11,7 @@ import type FileInput from '@proton/components/components/input/FileInput';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import identity from '@proton/utils/identity';
+import noop from '@proton/utils/noop';
 
 import { useCurrentTabID } from '../../components/Core/PassCoreProvider';
 import { useFoldersAccess } from '../../components/Folders/useFoldersAccess';
@@ -20,8 +21,8 @@ import { splitFoldersIntoVaults } from '../../lib/import/helpers/folders';
 import type { ImportProgress, ImportReport } from '../../lib/import/helpers/report';
 import { computeProgress, getImportCounts } from '../../lib/import/helpers/report';
 import { importReader } from '../../lib/import/reader';
-import type { ImportFileReader, ImportPayload } from '../../lib/import/types';
-import { ImportProvider } from '../../lib/import/types';
+import type { ImportEntryPoint, ImportFileReader, ImportPayload } from '../../lib/import/types';
+import { ImportProvider, getSupportedFileTypes } from '../../lib/import/types';
 import { importItems, importReport } from '../../store/actions';
 import { requestCancel } from '../../store/request/actions';
 import { selectAllAliasItems, selectRequestProgress, selectUser } from '../../store/selectors';
@@ -62,11 +63,17 @@ type OnPassphraseImport = () => Promise<OnPassphraseImportResult>;
 export type OnWillSubmitImport = (payload: ImportPayload) => Promise<OnWillSubmitImportResult>;
 
 type UseImportFormOptions = {
+    importEntryPoint: ImportEntryPoint;
     onPassphrase: OnPassphraseImport;
     onWillSubmit: OnWillSubmitImport;
+    onSuccess?: () => void;
+    provider?: MaybeNull<ImportProvider>;
 };
 
-const getInitialFormValues = (): ImportFormValues => ({ file: null, provider: null });
+const getInitialFormValues = (provider: MaybeNull<ImportProvider>): ImportFormValues => ({
+    file: null,
+    provider,
+});
 
 const createFileValidator = (allow: string[]) =>
     pipe(
@@ -85,7 +92,13 @@ const validateImportForm = ({ provider, file }: ImportFormValues): FormikErrors<
 const isNonEmptyImportPayload = (payload: ImportPayload) =>
     payload.vaults.length > 0 && payload.vaults.some(({ items }) => items.length > 0);
 
-export const useImportForm = ({ onPassphrase, onWillSubmit }: UseImportFormOptions): ImportFormContext => {
+export const useImportForm = ({
+    importEntryPoint,
+    onPassphrase,
+    onWillSubmit,
+    onSuccess = noop,
+    provider: initialProvider = null,
+}: UseImportFormOptions): ImportFormContext => {
     const { createNotification } = useNotifications();
     const ctrl = useRef<MaybeNull<AbortController>>(null);
     const importFiles = useFileImporter();
@@ -101,7 +114,7 @@ export const useImportForm = ({ onPassphrase, onWillSubmit }: UseImportFormOptio
 
     const [busy, setBusy] = useState(false);
     const [dropzoneHovered, setDropzoneHovered] = useState(false);
-    const [supportedFileTypes, setSupportedFileTypes] = useState<string[]>([]);
+    const [supportedFileTypes, setSupportedFileTypes] = useState<string[]>(getSupportedFileTypes(initialProvider));
 
     const user = useSelector(selectUser);
     const aliases = useSelector(selectAllAliasItems);
@@ -127,6 +140,12 @@ export const useImportForm = ({ onPassphrase, onWillSubmit }: UseImportFormOptio
 
         let report: MaybeNull<ImportReport> = null;
         let reader: MaybeNull<ImportFileReader> = null;
+
+        const commitReport = () => {
+            if (!report) return;
+            dispatch(importReport(report));
+            report = null;
+        };
 
         try {
             /** 1. Try to read the imported file. If files are included,
@@ -171,7 +190,7 @@ export const useImportForm = ({ onPassphrase, onWillSubmit }: UseImportFormOptio
 
                 /** 3.a Start the item import sequence */
                 setProgress({ ...getImportCounts(data), step: 'items' });
-                const res = await doImportItems({ data, provider, tabId });
+                const res = await doImportItems({ data, provider, importEntryPoint, tabId });
                 report = { ...res.data.report };
 
                 /** 4. Start the file import sequence */
@@ -185,7 +204,14 @@ export const useImportForm = ({ onPassphrase, onWillSubmit }: UseImportFormOptio
                     if (hasFiles) await importFiles.start(fileReader, files, report, signal);
 
                     await wait(500);
-                    void setValues(getInitialFormValues());
+                    void setValues(getInitialFormValues(initialProvider));
+
+                    /** Commit before `onSuccess` : consumers may navigate to a view
+                     * reading the report from the store. On extension clients this only
+                     * lands synchronously because `importReport` is tagged as a
+                     * synchronous action — see `relayMiddleware`. */
+                    commitReport();
+                    onSuccess();
                 }
             }
         } catch (error) {
@@ -198,7 +224,7 @@ export const useImportForm = ({ onPassphrase, onWillSubmit }: UseImportFormOptio
                 });
             }
         } finally {
-            if (report) dispatch(importReport(report));
+            commitReport();
             importFiles.reset();
             setProgress(null);
             setBusy(false);
@@ -208,7 +234,7 @@ export const useImportForm = ({ onPassphrase, onWillSubmit }: UseImportFormOptio
     }, []);
 
     const form = useFormik<ImportFormValues>({
-        initialValues: getInitialFormValues(),
+        initialValues: getInitialFormValues(initialProvider),
         initialErrors: { file: '' },
         validateOnChange: true,
         validateOnMount: true,

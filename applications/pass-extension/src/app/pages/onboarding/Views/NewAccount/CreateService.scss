@@ -1,0 +1,56 @@
+.pass-onboarding .onboarding-autocomplete {
+	label {
+		background: var(--onboarding-dark-bg);
+		border-radius: 1.5rem;
+
+		input {
+			background: none;
+			border: none;
+			padding-block: 0;
+			padding-inline: 0.5rem;
+			font-size: 1.2rem;
+		}
+	}
+
+	.button {
+		inline-size: 3.5rem;
+		block-size: 3.5rem;
+	}
+}
+
+.dropdown.onboarding-autocomplete-suggestions {
+	--pass-main-color: #985eef;
+	--onboarding-card-bg: color-mix(in srgb, var(--pass-main-color) 15%, transparent);
+	--onboarding-card-border: color-mix(in srgb, var(--pass-main-color) 25%, transparent);
+
+	background: none;
+	border: none;
+	border-radius: 0;
+	box-shadow: none;
+
+	.dropdown-content {
+		background: none;
+		border: none;
+
+		&::before,
+		&::after {
+			display: none;
+		}
+	}
+
+	.dropdown-item {
+		border-block-end: 1px solid var(--onboarding-card-border);
+
+		&:last-child {
+			border: none;
+		}
+	}
+
+	.dropdown-item-button {
+		border-radius: 0.5rem;
+
+		&.active {
+			background-color: var(--onboarding-card-bg);
+		}
+	}
+}

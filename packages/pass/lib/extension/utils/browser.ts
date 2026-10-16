@@ -1,4 +1,4 @@
-import { isBrave, isChrome, isEdgeChromium } from '@proton/shared/lib/helpers/browser';
+import { isBrave, isChrome, isEdgeChromium, isFirefox, isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { Clients, PASS_CHROME_URL, PASS_EDGE_URL, PASS_FIREFOX_URL } from '../../../constants';
 import type { MaybeNull } from '../../../types';
@@ -24,5 +24,15 @@ export const getExtensionSupportedBrowser = (): MaybeNull<SupportedExtensionClie
     if (isBrave()) return Clients.Brave;
     if (isEdgeChromium()) return Clients.Edge;
     // TEMP disable FF if (isFirefox()) return Clients.Firefox;
+    return null;
+};
+
+/** Widens {@link getExtensionSupportedBrowser} to the clients we can point at a
+ * store listing, including the ones the extension does not autodetect. */
+export const getBrowserClient = (): MaybeNull<Clients> => {
+    const supported = getExtensionSupportedBrowser();
+    if (supported) return supported;
+    if (isSafari()) return Clients.Safari;
+    if (isFirefox()) return Clients.Firefox;
     return null;
 };

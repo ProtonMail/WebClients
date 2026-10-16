@@ -11,7 +11,7 @@ import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
-import { Layout } from '../components/Layout/Layout';
+import { Layout } from '../components/Layout';
 import { passLifetime } from '../plans';
 
 type ItemProps = {
@@ -133,7 +133,7 @@ export const CycleSelectorStep: FC<Props> = ({ onContinue, onBack }) => {
                     </div>
                 </div>
                 <Item
-                    className="border-primary"
+                    className="border-primary bg-norm"
                     label={
                         <span
                             className="w-fit-content rounded text-semibold px-2 py-1"
@@ -147,6 +147,7 @@ export const CycleSelectorStep: FC<Props> = ({ onContinue, onBack }) => {
                     onClick={() => handleSelect(CYCLE.YEARLY)}
                 />
                 <Item
+                    className="bg-norm"
                     title={c('Title').t`Monthly`}
                     subtitle={c('Label').t`Billed monthly.`}
                     price={getMonthlyPrice(CYCLE.MONTHLY)}

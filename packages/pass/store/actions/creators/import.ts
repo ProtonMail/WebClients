@@ -2,15 +2,17 @@ import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import type { ImportReport } from '../../../lib/import/helpers/report';
-import type { ImportPayload, ImportProvider } from '../../../lib/import/types';
+import type { ImportEntryPoint, ImportPayload, ImportProvider } from '../../../lib/import/types';
 import type { ClientEndpoint, IndexedByShareIdAndItemId, ItemRevision, WithTabId } from '../../../types';
 import { withRequestProgress } from '../../request/enhancers';
 import { requestActionsFactory } from '../../request/flow';
 import { withCache } from '../enhancers/cache';
+import { withSynchronousAction } from '../enhancers/client';
 import { withItems } from '../enhancers/items';
 import { withNotification } from '../enhancers/notification';
 
-type ImportIntentDTO = { data: ImportPayload; provider: ImportProvider };
+type ImportIntentDTO = { data: ImportPayload; provider: ImportProvider; importEntryPoint: ImportEntryPoint };
+
 type ImportFailureDTO = { report: ImportReport; endpoint?: ClientEndpoint };
 type ImportSuccessDTO = {
     report: ImportReport;
@@ -39,4 +41,6 @@ export const importItemsProgress = createAction(
     withRequestProgress((payload: ImportProgressDTO) => withCache({ payload }))
 );
 
-export const importReport = createAction('import::files::report', (report: ImportReport) => withCache({ payload: { report } }));
+export const importReport = createAction('import::files::report', (report: ImportReport) =>
+    withCache(withSynchronousAction({ payload: { report } }))
+);

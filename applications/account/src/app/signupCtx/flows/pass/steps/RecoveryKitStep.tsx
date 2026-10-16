@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
 import RecoveryStepContent from '../../../containers/recovery/RecoveryStepContent';
-import { Layout } from '../components/Layout/Layout';
+import { Layout } from '../components/Layout';
 import { RecoveryKitAside } from './RecoveryKitAside';
 
 type Props = {

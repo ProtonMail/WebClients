@@ -1,5 +1,7 @@
 @use '~@proton/styles/scss/lib/config' as *;
 @use '~@proton/styles/scss/lib/include-media' as im;
+@use '~@proton/colors/themes/src/storefront/prominent-base';
+
 im.$breakpoints: $breakpoints-product;
 im.$media-expressions: $media-expressions;
 
@@ -7,18 +9,30 @@ body {
 	overflow-y: auto;
 }
 
+#root {
+	block-size: 100%;
+}
+
 .proton-hidden {
 	display: none;
 }
 
-.pass-signup {
-	--pass-signup-bg: #1d1738;
+.pass-onboarding {
+	--pass-main-color: #985eef;
+	--onboarding-card-bg: color-mix(in srgb, var(--pass-main-color) 15%, transparent);
+	--onboarding-card-border: color-mix(in srgb, var(--pass-main-color) 25%, transparent);
+	--onboarding-card-glass-bg: color-mix(in srgb, white 10%, transparent);
+	--onboarding-card-glass-border: color-mix(in srgb, white 15%, transparent);
+	--onboarding-norm-bg: color-mix(in srgb, var(--onboarding-opaque-bg) 80%, transparent);
+	--onboarding-dark-main: oklch(from var(--pass-main-color) calc(l - 1) c h);
+	--onboarding-dark-bg: color-mix(in srgb, var(--onboarding-dark-main) 80%, transparent);
+	--onboarding-opaque-bg: #210b40;
+	--onboarding-opaque-active-bg: #381b61;
+	--onboarding-opaque-border: #523088;
+	--onboarding-border-radius: 2rem;
 
+	background: radial-gradient(#221850 15%, #191333 35%, var(--background-lowered));
 	scroll-behavior: smooth;
-
-	.signup-bg-gradient {
-		background: var(--pass-signup-bg);
-	}
 
 	.signup-layout-gap {
 		gap: var(--space-4);
@@ -32,43 +46,6 @@ body {
 		}
 	}
 
-	&-promotion-bg {
-		background:
-			linear-gradient(
-				78deg,
-				var(--promotion-background-start, rgb(109 74 255 / 0.15)) 0%,
-				var(--promotion-background-end, rgb(70 26 255 / 0.04)) 100%
-			),
-			var(--promotion-background-end);
-	}
-
-	&-card-glass {
-		background: rgb(248 250 252 / 0.1);
-		box-shadow:
-			0 -133px 37px 0 rgb(55 37 128 / 0),
-			0 -85px 34px 0 rgb(55 37 128 / 0.01),
-			0 -48px 29px 0 rgb(55 37 128 / 0.05),
-			0 -21px 21px 0 rgb(55 37 128 / 0.09),
-			0 -5px 12px 0 rgb(55 37 128 / 0.1);
-		backdrop-filter: blur(8px);
-
-		/* Provided svg has whitespaces that can't be cropped because of the shadow effect.
-		 * This css, applies a negative margin to each star sibling, so it match the design. */
-		.star + .star {
-			margin-inline-start: -2rem;
-		}
-	}
-
-	&-button-border {
-		border: 2px solid var(--text-norm);
-		transition: all 0.2s linear;
-
-		&:hover {
-			border: 2px solid var(--text-norm);
-			box-shadow: 0 0 8px 0 var(--text-norm);
-		}
-	}
-
 	.bg-invert {
 		background-color: var(--background-invert);
 	}
@@ -79,7 +56,7 @@ body {
 		@supports (background: conic-gradient(white, black)) {
 			border: 3px solid transparent;
 			background:
-				linear-gradient(var(--pass-signup-bg), var(--pass-signup-bg)) padding-box,
+				linear-gradient(var(--onboarding-opaque-bg), var(--onboarding-opaque-bg)) padding-box,
 				conic-gradient(
 						from 0deg at 50% 50%,
 						#8a6eff 0deg,
@@ -114,8 +91,30 @@ body {
 		font-size: 14px;
 	}
 
-	.button-outline-norm {
-		background-color: transparent;
+	.bg-norm {
+		background: var(--onboarding-norm-bg);
+	}
+
+	.banner--danger {
+		background: linear-gradient(#3a1604 0%, #2f0e01 100%);
+		border-color: #662708;
+		border-radius: 1rem;
+
+		.banner-icon {
+			color: #feb14b;
+			margin-block: 0;
+			align-self: center;
+			padding: 0.5rem;
+
+			svg {
+				block-size: 2rem;
+				inline-size: 2rem;
+			}
+		}
+
+		p {
+			margin-block: 0.5rem;
+		}
 	}
 }
 

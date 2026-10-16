@@ -9,10 +9,15 @@ import { Onboarding } from './Onboarding';
 const container = document.getElementById('root');
 const root = createRoot(container!);
 
-root.render(
-    <ExtensionRoot endpoint="page" theme={PassThemeOption.PassDark}>
-        <ExtensionSetup>
-            <Onboarding />
-        </ExtensionSetup>
-    </ExtensionRoot>
-);
+/** Web accessible for the account app links: never render framed, to prevent clickjacking */
+const isFramed = window.top !== window;
+
+if (!isFramed) {
+    root.render(
+        <ExtensionRoot endpoint="page" theme={PassThemeOption.PassDark} wasm>
+            <ExtensionSetup>
+                <Onboarding />
+            </ExtensionSetup>
+        </ExtensionRoot>
+    );
+}

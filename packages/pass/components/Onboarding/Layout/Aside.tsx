@@ -2,11 +2,11 @@ import type { FC, PropsWithChildren } from 'react';
 
 import clsx from '@proton/utils/clsx';
 
-import background190 from '../../assets/images/aside_background/aside_background_w_190.webp';
-import background619 from '../../assets/images/aside_background/aside_background_w_619.webp';
-import background864 from '../../assets/images/aside_background/aside_background_w_864.webp';
-import background961 from '../../assets/images/aside_background/aside_background_w_961.webp';
-import background1000 from '../../assets/images/aside_background/aside_background_w_1000.webp';
+import background190 from '../../../assets/aside_background/aside_background_w_190.webp';
+import background619 from '../../../assets/aside_background/aside_background_w_619.webp';
+import background864 from '../../../assets/aside_background/aside_background_w_864.webp';
+import background961 from '../../../assets/aside_background/aside_background_w_961.webp';
+import background1000 from '../../../assets/aside_background/aside_background_w_1000.webp';
 
 type AsideProps = { className?: string };
 

@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import type { ItemImportIntent, MaybeNull } from '../../types';
+import { partition } from '../../utils/array/partition';
 
 export enum ImportProvider {
     APPLEPASSWORDS = 'applepasswords',
@@ -25,99 +26,129 @@ export enum ImportProvider {
     CSV = 'csv',
 }
 
-export const PROVIDER_INFO_MAP: Record<ImportProvider, { title: string; fileExtension: string; tutorialUrl: string }> =
-    {
-        [ImportProvider.APPLEPASSWORDS]: {
-            title: 'Apple Passwords',
-            fileExtension: 'csv',
-            tutorialUrl: '',
-        },
-        [ImportProvider.BITWARDEN]: {
-            title: 'Bitwarden',
-            fileExtension: 'json, zip',
-            tutorialUrl: 'https://proton.me/support/pass-import-bitwarden',
-        },
-        [ImportProvider.BRAVE]: {
-            title: 'Brave',
-            fileExtension: 'csv',
-            tutorialUrl: 'https://proton.me/support/pass-import-brave',
-        },
-        [ImportProvider.CHROME]: {
-            title: 'Chrome',
-            fileExtension: 'csv',
-            tutorialUrl: 'https://proton.me/support/pass-import-chrome',
-        },
-        [ImportProvider.EDGE]: {
-            title: 'Edge',
-            fileExtension: 'csv',
-            tutorialUrl: 'https://proton.me/support/pass-import-edge',
-        },
-        [ImportProvider.FIREFOX]: {
-            title: 'Firefox',
-            fileExtension: 'csv',
-            tutorialUrl: 'https://proton.me/support/pass-import-firefox',
-        },
-        [ImportProvider.KEEPASS]: {
-            title: 'KeePass',
-            fileExtension: 'xml',
-            tutorialUrl: 'https://proton.me/support/pass-import-keepass',
-        },
-        [ImportProvider.LASTPASS]: {
-            title: 'LastPass',
-            fileExtension: 'csv',
-            tutorialUrl: 'https://proton.me/support/pass-import-lastpass',
-        },
-        [ImportProvider.ONEPASSWORD]: {
-            title: '1Password',
-            fileExtension: '1pux, 1pif, zip',
-            tutorialUrl: 'https://proton.me/support/pass-import-1password',
-        },
-        [ImportProvider.DASHLANE]: {
-            title: 'Dashlane',
-            fileExtension: 'zip, csv',
-            tutorialUrl: 'https://proton.me/support/pass-import-dashlane',
-        },
-        [ImportProvider.PROTONPASS]: {
-            title: PASS_APP_NAME,
-            fileExtension: 'zip, pgp, csv',
-            tutorialUrl: '',
-        },
-        [ImportProvider.SAFARI]: {
-            title: 'Safari',
-            fileExtension: 'csv',
-            tutorialUrl: 'https://proton.me/support/pass-import-safari',
-        },
-        [ImportProvider.KEEPER]: {
-            title: 'Keeper',
-            fileExtension: 'json',
-            tutorialUrl: 'https://proton.me/support/pass-import-keeper',
-        },
-        [ImportProvider.ROBOFORM]: {
-            title: 'Roboform',
-            fileExtension: 'csv',
-            tutorialUrl: '',
-        },
-        [ImportProvider.NORDPASS]: {
-            title: 'NordPass',
-            fileExtension: 'csv',
-            tutorialUrl: '',
-        },
-        [ImportProvider.ENPASS]: {
-            title: 'Enpass',
-            fileExtension: 'json',
-            tutorialUrl: '',
-        },
-        [ImportProvider.KASPERSKY]: {
-            title: 'Kaspersky',
-            fileExtension: 'txt',
-            tutorialUrl: '',
-        },
-        [ImportProvider.CSV]: {
-            title: c('Label').t`Generic CSV`,
-            fileExtension: 'csv',
-            tutorialUrl: '',
-        },
-    };
+export type ImportEntryPoint = 'settings' | 'onboarding';
+
+export type ImportProviderInfo = { title: string; fileExtension: string; tutorialUrl: string; isBrowser: boolean };
+
+export const PROVIDER_INFO_MAP: Record<ImportProvider, ImportProviderInfo> = {
+    [ImportProvider.APPLEPASSWORDS]: {
+        title: 'Apple Passwords',
+        fileExtension: 'csv',
+        tutorialUrl: '',
+        isBrowser: false,
+    },
+    [ImportProvider.BITWARDEN]: {
+        title: 'Bitwarden',
+        fileExtension: 'json, zip',
+        tutorialUrl: 'https://proton.me/support/pass-import-bitwarden',
+        isBrowser: false,
+    },
+    [ImportProvider.BRAVE]: {
+        title: 'Brave',
+        fileExtension: 'csv',
+        tutorialUrl: 'https://proton.me/support/pass-import-brave',
+        isBrowser: true,
+    },
+    [ImportProvider.CHROME]: {
+        title: 'Chrome',
+        fileExtension: 'csv',
+        tutorialUrl: 'https://proton.me/support/pass-import-chrome',
+        isBrowser: true,
+    },
+    [ImportProvider.EDGE]: {
+        title: 'Edge',
+        fileExtension: 'csv',
+        tutorialUrl: 'https://proton.me/support/pass-import-edge',
+        isBrowser: true,
+    },
+    [ImportProvider.FIREFOX]: {
+        title: 'Firefox',
+        fileExtension: 'csv',
+        tutorialUrl: 'https://proton.me/support/pass-import-firefox',
+        isBrowser: true,
+    },
+    [ImportProvider.KEEPASS]: {
+        title: 'KeePass',
+        fileExtension: 'xml',
+        tutorialUrl: 'https://proton.me/support/pass-import-keepass',
+        isBrowser: false,
+    },
+    [ImportProvider.LASTPASS]: {
+        title: 'LastPass',
+        fileExtension: 'csv',
+        tutorialUrl: 'https://proton.me/support/pass-import-lastpass',
+        isBrowser: false,
+    },
+    [ImportProvider.ONEPASSWORD]: {
+        title: '1Password',
+        fileExtension: '1pux, 1pif, zip',
+        tutorialUrl: 'https://proton.me/support/pass-import-1password',
+        isBrowser: false,
+    },
+    [ImportProvider.DASHLANE]: {
+        title: 'Dashlane',
+        fileExtension: 'zip, csv',
+        tutorialUrl: 'https://proton.me/support/pass-import-dashlane',
+        isBrowser: false,
+    },
+    [ImportProvider.PROTONPASS]: {
+        title: PASS_APP_NAME,
+        fileExtension: 'zip, pgp, csv',
+        tutorialUrl: '',
+        isBrowser: false,
+    },
+    [ImportProvider.SAFARI]: {
+        title: 'Safari',
+        fileExtension: 'csv',
+        tutorialUrl: 'https://proton.me/support/pass-import-safari',
+        isBrowser: true,
+    },
+    [ImportProvider.KEEPER]: {
+        title: 'Keeper',
+        fileExtension: 'json',
+        tutorialUrl: 'https://proton.me/support/pass-import-keeper',
+        isBrowser: false,
+    },
+    [ImportProvider.ROBOFORM]: {
+        title: 'Roboform',
+        fileExtension: 'csv',
+        tutorialUrl: '',
+        isBrowser: false,
+    },
+    [ImportProvider.NORDPASS]: {
+        title: 'NordPass',
+        fileExtension: 'csv',
+        tutorialUrl: '',
+        isBrowser: false,
+    },
+    [ImportProvider.ENPASS]: {
+        title: 'Enpass',
+        fileExtension: 'json',
+        tutorialUrl: '',
+        isBrowser: false,
+    },
+    [ImportProvider.KASPERSKY]: {
+        title: 'Kaspersky',
+        fileExtension: 'txt',
+        tutorialUrl: '',
+        isBrowser: false,
+    },
+    [ImportProvider.CSV]: {
+        title: c('Label').t`Generic CSV`,
+        fileExtension: 'csv',
+        tutorialUrl: '',
+        isBrowser: false,
+    },
+};
+
+/** Supported file extensions for a provider, `''` meaning extension-less
+ * files are accepted — KeePass(XC) exports an `.xml` without extension on
+ * some platforms, and requiring `.xml` forced users to rename the file. */
+export const getSupportedFileTypes = (provider: MaybeNull<ImportProvider>): string[] => {
+    if (!provider) return [];
+    const extensions = PROVIDER_INFO_MAP[provider].fileExtension.split(', ');
+    return provider === ImportProvider.KEEPASS ? [...extensions, ''] : extensions;
+};
 
 /** Sort alphabetically, except for generic CSV which is last */
 export const ImportProviderValues = Object.values(ImportProvider).sort((a, b) => {
@@ -125,6 +156,11 @@ export const ImportProviderValues = Object.values(ImportProvider).sort((a, b) =>
     if (b === 'csv') return -1;
     else return a.localeCompare(b);
 });
+
+export const [ImportProviderBrowsers, ImportProviderPasswordManagers] = partition(
+    Object.entries(PROVIDER_INFO_MAP).map(([key, values]) => ({ key: key as ImportProvider, ...values })),
+    (provider) => provider.isBrowser
+);
 
 export type ImportReaderPayload = {
     file: File;

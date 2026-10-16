@@ -2,7 +2,6 @@ import type { Permissions, Runtime } from 'webextension-polyfill';
 
 import { MIN_CACHE_VERSION, RUNTIME_RELOAD_THROTTLE } from '@proton/pass/constants';
 import { api } from '@proton/pass/lib/api/api';
-import { requestFork } from '@proton/pass/lib/auth/fork';
 import type { AuthSession } from '@proton/pass/lib/auth/session';
 import { authStore } from '@proton/pass/lib/auth/store';
 import { clientErrored, clientOffline, clientPasswordLocked, clientStale } from '@proton/pass/lib/client';
@@ -21,8 +20,7 @@ import { safeAsyncCall } from '@proton/pass/utils/fp/safe-call';
 import { logger } from '@proton/pass/utils/logger';
 import { UNIX_HOUR } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
-import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
-import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
+import { SSO_PATHS } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 import { semver } from '@proton/utils/semver';
 
@@ -39,6 +37,7 @@ import WorkerMessageBroker from '../channel';
 import { EXTENSION_KEY } from '../constants';
 import { withContext } from '../context/inject';
 import { shouldForceLock } from './auth/auth.utils';
+import { isNavigatorSource } from './connectivity';
 
 type ActivationServiceState = {
     updateAvailable: MaybeNull<string>;
@@ -137,24 +136,7 @@ export const createActivationService = () => {
             await ctx.service.injection.updateScripts();
 
             if (!hasSession) {
-                const fork = (forkType: ForkType) =>
-                    requestFork({
-                        host: config.SSO_URL,
-                        app: APPS.PROTONPASSBROWSEREXTENSION,
-                        forkType,
-                        plan: BUILD_TARGET === 'safari' && forkType === ForkType.SIGNUP ? 'free' : undefined,
-                    });
-
-                /* Extract URL parameters of fork
-                 * (without the hostname which will be built later for security) */
-                const loginParams = new URL(fork(ForkType.LOGIN).url).searchParams.toString();
-                const signupParams = new URL(fork(ForkType.SIGNUP).url).searchParams.toString();
-
-                const searchParams = new URLSearchParams();
-                searchParams.append('loginParams', loginParams);
-                searchParams.append('signupParams', signupParams);
-
-                const url = `${config.SSO_URL}${SSO_PATHS.PASS_EXTENSION_ONBOARDING}?${searchParams.toString()}`;
+                const url = `${config.SSO_URL}${SSO_PATHS.PASS_EXTENSION_ONBOARDING}`;
 
                 await browser.tabs.create({ url }).catch(noop);
                 void ctx.service.settings.onInstall();
@@ -175,22 +157,23 @@ export const createActivationService = () => {
      * changes as soon as possible. Regarding the content-script, we simply wait for a
      * ready state as its less "critical" */
     const handleClientInit = withContext<MessageHandlerCallback<WorkerMessageType.CLIENT_INIT>>(
-        async (ctx, message: WorkerMessageWithSender<ClientInitMessage>) => {
+        async (ctx, message: WorkerMessageWithSender<ClientInitMessage>, sender) => {
             const { sender: endpoint, payload } = message;
             const { tabId } = payload;
             const { status } = ctx.getState();
             const fromPopup = endpoint === 'popup';
             const fromPage = endpoint === 'page';
             const fromClientApp = fromPopup || fromPage;
+            const fromNavigatorSource = isNavigatorSource(endpoint, sender);
 
-            /** Forward the popup's navigator state into the worker's service as
+            /** Forward the client's navigator state into the worker's service as
              * navigator events are unreliable. Drives the same retry handler
              * transition  as a worker-observed navigator transition would.
-             * Popup-only: see `CONNECTIVITY_SYNC` for the rationale. */
-            if (fromPopup) ctx.service.connectivity.syncNavigatorOnline(payload.online);
-            const revalidateConn = fromPopup && payload.online && !ctx.service.connectivity.online;
+             * See `isNavigatorSource` for the trusted clients. */
+            if (fromNavigatorSource) ctx.service.connectivity.syncNavigatorOnline(payload.online);
+            const revalidateConn = fromNavigatorSource && payload.online && !ctx.service.connectivity.online;
 
-            /** Resolve real connectivity status on popup wakeup when the worker thinks
+            /** Resolve real connectivity status on client wakeup when the worker thinks
              * it's offline. Skip the probe entirely if the client signaled offline.
              * no point pinging when the device itself reports no network. */
             if (revalidateConn) await ctx.service.connectivity.check();

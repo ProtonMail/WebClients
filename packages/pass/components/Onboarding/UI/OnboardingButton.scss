@@ -1,0 +1,39 @@
+/** white buttons used as primary */
+.button.pass-onboarding-button-norm {
+	background: var(--background-invert);
+	color: black;
+
+	&:hover {
+		background: color-mix(in srgb, var(--background-invert) 92%, black);
+	}
+
+	&:active {
+		background: color-mix(in srgb, var(--background-invert) 85%, black);
+	}
+
+	&:disabled {
+		background: var(--onboarding-norm-bg);
+		border: 1px solid var(--onboarding-card-border);
+	}
+
+	&[aria-busy='true'] {
+		background: var(--background-invert);
+	}
+}
+
+/** outline button with onboarding opacity colors */
+.button.pass-onboarding-button-outline-norm {
+	color: var(--text-norm);
+	background: var(--onboarding-norm-bg);
+	border: 1px solid var(--onboarding-card-border);
+
+	&:hover,
+	&:active {
+		background: var(--onboarding-card-bg);
+	}
+
+	&:disabled {
+		background: var(--onboarding-norm-bg);
+		border: 1px solid var(--onboarding-card-border);
+	}
+}

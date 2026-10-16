@@ -1,5 +1,6 @@
 .pass-plan-card {
 	border: 1px solid var(--border-norm);
+	background: var(--onboarding-norm-bg);
 
 	&:nth-child(1) {
 		border-radius: 12px 0 0 12px;
@@ -10,11 +11,11 @@
 	}
 
 	&-recommended {
-		border-radius: 0 0 12px 12px!important;
+		border-radius: 0 0 12px 12px !important;
 
 		&-banner {
 			// border: 3px * 2 = 6px + 1 adjustment px = 7px
-			width: calc(100% + 7px);
+			inline-size: calc(100% + 7px);
 			border-radius: 12px 12px 0 0;
 		}
 	}

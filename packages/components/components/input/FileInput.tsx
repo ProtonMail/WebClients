@@ -15,11 +15,12 @@ interface Props extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>,
     disabled?: boolean;
     shape?: ButtonLikeShape;
     color?: ThemeColorUnion;
+    pill?: boolean;
     loading?: boolean;
 }
 
 const FileInput = (
-    { children, id = 'fileInput', className, onChange, disabled, shape, color, loading, ...rest }: Props,
+    { children, id = 'fileInput', className, onChange, disabled, shape, color, pill, loading, ...rest }: Props,
     ref: Ref<HTMLInputElement>
 ) => {
     const inputRef = useRef<HTMLInputElement>(null);
@@ -33,6 +34,7 @@ const FileInput = (
             disabled={disabled}
             shape={shape}
             color={color}
+            pill={pill}
             loading={loading}
         >
             <input

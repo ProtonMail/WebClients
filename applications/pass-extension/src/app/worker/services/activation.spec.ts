@@ -279,10 +279,21 @@ describe('Activation service - `CLIENT_INIT`', () => {
             expect(connectivity.syncNavigatorOnline).not.toHaveBeenCalled();
         });
 
-        test('does not sync from page senders', async () => {
-            /** Page (settings/onboarding) skipped: only popup is the trusted source. */
-            await handler(initMessage('page', { online: false }), {});
+        test('forwards top-level page `payload.online` to connectivity service', async () => {
+            await handler(initMessage('page', { online: false }), { frameId: 0 });
+            expect(connectivity.syncNavigatorOnline).toHaveBeenCalledWith(false);
+        });
+
+        test('does not sync from page senders embedded in a frame', async () => {
+            await handler(initMessage('page', { online: false }), { frameId: 3 });
             expect(connectivity.syncNavigatorOnline).not.toHaveBeenCalled();
+        });
+
+        test('probes when a top-level page signals online and worker thinks offline', async () => {
+            ctx.status = AppStatus.READY;
+            connectivity.online = false;
+            await handler(initMessage('page', { online: true }), { frameId: 0 });
+            expect(connectivity.check).toHaveBeenCalledTimes(1);
         });
     });
 });
