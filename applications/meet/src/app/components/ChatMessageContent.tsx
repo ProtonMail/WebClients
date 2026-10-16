@@ -4,12 +4,10 @@ import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { getHostname } from '@proton/components/helpers/url';
-import { splitMessageIntoMentionSegments } from '@proton/meet/utils/mentions/mentionToken';
 import { PROTON_DOMAINS } from '@proton/shared/lib/constants';
 import { isSubDomain } from '@proton/shared/lib/helpers/url';
 
-import { addSpecialCharactersForMessageDisplay } from '../utils/addSpecialCharactersForMessageDisplay';
-import { Mention } from './Mention/Mention';
+import { MessageSegments } from './MessageSegments/MessageSegments';
 import { OpenLinkModal } from './OpenLinkModal/OpenLinkModal';
 
 // Simple URL regex - matches http:// or https:// followed by non-whitespace characters
@@ -89,21 +87,14 @@ interface ChatMessageContentProps {
 }
 
 export const ChatMessageContent = ({ message }: ChatMessageContentProps) => {
-    const decodedMessage = addSpecialCharactersForMessageDisplay(message);
-
     const [currentLink, setCurrentLink] = useState<string | null>(null);
-
-    const segments = splitMessageIntoMentionSegments(decodedMessage);
 
     return (
         <>
-            {segments.map((segment, index) =>
-                segment.type === 'mention' ? (
-                    <Mention key={`mention-${index}`} id={segment.id} />
-                ) : (
-                    <LinkifiedText key={`text-${index}`} text={segment.text} onLinkClick={setCurrentLink} />
-                )
-            )}
+            <MessageSegments
+                message={message}
+                renderText={(text) => <LinkifiedText text={text} onLinkClick={setCurrentLink} />}
+            />
             {!!currentLink && <OpenLinkModal link={currentLink} onClose={() => setCurrentLink(null)} />}
         </>
     );
