@@ -7,6 +7,7 @@ import { TelemetryMeetDashboardEvents, sendMeetDashboardEvent } from '@proton/me
 
 import type { CTAModalBaseProps } from '../shared/types';
 import { EndCallModalShell } from './EndCallModalShell';
+import { PostCallTitle } from './PostCallTitle';
 
 export const GuestAccountModal = ({ open, onClose, action, rejoin }: CTAModalBaseProps) => {
     const subtitle = useMemo(() => {
@@ -49,7 +50,7 @@ export const GuestAccountModal = ({ open, onClose, action, rejoin }: CTAModalBas
                 </>
             }
             rejoin={rejoin}
-            title={c('Info').t`You left the meeting`}
+            title={<PostCallTitle kind="left" />}
             subtitle={subtitle}
         />
     );
