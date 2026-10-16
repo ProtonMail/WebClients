@@ -137,6 +137,9 @@
       "Insert comment": [
         "Inserare comentariu"
       ],
+      "Insert emoji": [
+        "Inserare emoji"
+      ],
       "Insert image": [
         "Inserare imagine"
       ],
@@ -336,9 +339,38 @@
         "Utilizați meniul derulant de mai sus pentru a comuta și pentru a începe să faceți sugestii."
       ]
     },
+    "Emoji category": {
+      "Activities": [
+        "Activități"
+      ],
+      "Animals and nature": [
+        "Animale și natură"
+      ],
+      "Flags": [
+        "Steaguri"
+      ],
+      "Food and drink": [
+        "Mâncare şi băutură"
+      ],
+      "Objects": [
+        "Obiecte"
+      ],
+      "Smileys and people": [
+        "Zâmbete și persoane"
+      ],
+      "Symbols": [
+        "Simboluri"
+      ],
+      "Travel and places": [
+        "Călătorii și locuri"
+      ]
+    },
     "Error": {
       "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again. If the error persists, please open Version History from the menu options to attempt to restore your document to an earlier version.": [
         "A apărut o eroare la încărcarea documentului. Pentru a preveni coruperea documentelor, editorul a fost blocat. Reîncărcați pagina și reîncercați. Dacă eroarea persistă, deschideți istoricul versiunilor din opțiunile meniului pentru a încerca să restaurați documentul la o versiune anterioară."
+      ],
+      "Could not load emoji. Close the picker and try again.": [
+        "Nu s-au putut încărca emoticoanele. Închideți selectorul și reîncercați."
       ],
       "Failed to export document.": [
         "Exportarea documentului a eșuat."
@@ -452,6 +484,9 @@
       "Loading": [
         "Se încarcă"
       ],
+      "Loading emoji…": [
+        "Se încarcă emoticoanele…"
+      ],
       "Loading spreadsheet content...": [
         "Conținutul foii de calcul se încarcă..."
       ],
@@ -463,6 +498,9 @@
       ],
       "No comments": [
         "Nu sunt comentarii"
+      ],
+      "No emoji found": [
+        "Nu s-au găsit emoticoane."
       ],
       "No title": [
         "Fără titlu"
@@ -553,6 +591,12 @@
       "Duplicate table row": [
         "Duplicare rând tabel"
       ],
+      "Emoji": [
+        "Emoticon"
+      ],
+      "Emoji suggestions": [
+        "Sugestii de emoticoane"
+      ],
       "Format": [
         "Format"
       ],
@@ -592,11 +636,20 @@
       "Page break": [
         "Întrerupere pagină"
       ],
+      "Recent": [
+        "Recente"
+      ],
       "Replace": [
         "Înlocuire"
       ],
       "Replace link": [
         "Înlocuire legătură web"
+      ],
+      "Search emoji": [
+        "Căutare emoticoane"
+      ],
+      "Search results": [
+        "Rezultate căutare"
       ],
       "Text and highlight color": [
         "Text și culoare evidențiere"
