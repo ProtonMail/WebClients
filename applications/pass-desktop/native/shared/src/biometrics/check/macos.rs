@@ -7,10 +7,14 @@ use std::sync::mpsc;
 
 use anyhow::{anyhow, ensure, Result};
 use block2::RcBlock;
-use objc2_foundation::{NSError, NSString};
-use objc2_local_authentication::{LAContext, LAPolicy};
+use objc2_foundation::{NSError, NSInteger, NSString};
+use objc2_local_authentication::{LAContext, LAError, LAPolicy};
+
+use crate::biometrics::PresenceCheckCancelled;
 
 const POLICY: LAPolicy = LAPolicy::DeviceOwnerAuthentication;
+
+const CANCELLATIONS: [LAError; 3] = [LAError::UserCancel, LAError::SystemCancel, LAError::AppCancel];
 
 pub fn generic_check_presence(reason: String) -> Result<()> {
     // An empty reason makes `evaluatePolicy` raise `NSInvalidArgumentException`, which
@@ -42,7 +46,12 @@ fn evaluation_result(authenticated: bool, error: *mut NSError) -> Result<()> {
     }
 
     match unsafe { error.as_ref() } {
+        Some(error) if is_cancellation(error.code()) => Err(PresenceCheckCancelled.into()),
         Some(error) => Err(anyhow!("Authentication failure {}", error.code())),
         None => Err(anyhow!("Authentication failure")),
     }
+}
+
+fn is_cancellation(code: NSInteger) -> bool {
+    CANCELLATIONS.contains(&LAError(code))
 }

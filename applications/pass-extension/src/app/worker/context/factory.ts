@@ -77,7 +77,13 @@ export const createWorkerContext = (config: ProtonConfig) => {
 
     if (ENV === 'development') QA_SERVICE?.init(storage.local);
     auth.registerLockAdapter(sessionLockAdapterFactory(auth));
-    auth.registerLockAdapter(desktopLockAdapterFactory(auth, nativeMessaging));
+    auth.registerLockAdapter(
+        desktopLockAdapterFactory(
+            auth,
+            nativeMessaging,
+            withContext((ctx) => ctx.setUnlockDeclined(true))
+        )
+    );
     auth.registerLockAdapter(passwordLockAdapterFactory(auth));
 
     exposePassCrypto(createPassCrypto(core, store));
@@ -96,6 +102,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
     const context = WorkerContext.set({
         status: AppStatus.IDLE,
         booted: false,
+        unlockDeclined: false,
         authStore,
         service: {
             activation: createActivationService(),
@@ -145,6 +152,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
                 lockSetup,
                 status: context.status,
                 UID: authStore.getUID(),
+                unlockDeclined: context.unlockDeclined,
             };
         },
 
@@ -152,6 +160,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
             if (context.status !== status) {
                 logger.info(`[Worker::Context] Status update : ${context.status} -> ${status}`);
                 context.status = status;
+                context.unlockDeclined = false;
                 setPopupIcon(status);
                 onStateUpdate();
             }
@@ -160,6 +169,13 @@ export const createWorkerContext = (config: ProtonConfig) => {
         setBooted(booted) {
             if (context.booted !== booted) {
                 context.booted = booted;
+                onStateUpdate();
+            }
+        },
+
+        setUnlockDeclined(declined) {
+            if (context.unlockDeclined !== declined) {
+                context.unlockDeclined = declined;
                 onStateUpdate();
             }
         },

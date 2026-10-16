@@ -28,6 +28,8 @@ export const getMessageForNativeMessageError = (error: NativeMessageErrorType) =
             return c('Error').t`Biometric lock credentials not found.`;
         case NativeMessageErrorType.BIOMETRICS_FAILED:
             return c('Error').t`Biometric authentication failed.`;
+        case NativeMessageErrorType.BIOMETRICS_CANCELLED:
+            return c('Error').t`Biometric authentication cancelled.`;
         case NativeMessageErrorType.DESKTOP_LOCK_NOT_CONFIGURED:
             return c('Error').t`Biometric lock is not configured.`;
         case NativeMessageErrorType.SECRET_MISMATCH:
@@ -84,7 +86,7 @@ export const getForNativeMessageErrorFromConnectionError = (
 export const getNativeMessageErrorType = (err: unknown): NativeMessageErrorType | null =>
     err instanceof NativeMessageError ? err.type : null;
 
-export type NativeMessageErrorKind = 'auth' | 'infra';
+export type NativeMessageErrorKind = 'auth' | 'cancel' | 'infra';
 
 const getErrorTypeKind = (type: NativeMessageErrorType): NativeMessageErrorKind => {
     switch (type) {
@@ -93,6 +95,8 @@ const getErrorTypeKind = (type: NativeMessageErrorType): NativeMessageErrorKind 
         case NativeMessageErrorType.SECRET_MISMATCH:
         case NativeMessageErrorType.TOO_MANY_ATTEMPTS:
             return 'auth';
+        case NativeMessageErrorType.BIOMETRICS_CANCELLED:
+            return 'cancel';
         case NativeMessageErrorType.HOST_NOT_FOUND:
         case NativeMessageErrorType.HOST_NOT_RESPONDING:
         case NativeMessageErrorType.DESKTOP_APP_LOCKED:

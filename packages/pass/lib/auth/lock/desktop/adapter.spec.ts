@@ -23,11 +23,13 @@ const setupAdapter = () => {
     const logout = jest.fn().mockResolvedValue(undefined);
     const auth = { persistSession, syncLock, lock, logout, config: { authStore } };
     const nativeMessaging = {} as any;
+    const onDeclined = jest.fn();
 
     return {
-        adapter: desktopLockAdapterFactory(auth as any, nativeMessaging),
+        adapter: desktopLockAdapterFactory(auth as any, nativeMessaging, onDeclined),
         authStore,
         auth,
+        onDeclined,
     };
 };
 
@@ -152,7 +154,7 @@ describe('DesktopLock adapter', () => {
         });
 
         test('on an infrastructure error (timeout): rethrows the type without counting a failed attempt', async () => {
-            const { adapter, auth } = setupAdapter();
+            const { adapter, auth, onDeclined } = setupAdapter();
             await adapter.create('', 600);
             unlockMessage.mockRejectedValue(new NativeMessageError(NativeMessageErrorType.TIMEOUT));
             auth.syncLock.mockClear();
@@ -162,6 +164,25 @@ describe('DesktopLock adapter', () => {
             expect(error.type).toBe(NativeMessageErrorType.TIMEOUT);
 
             /** Infra errors mean the biometric check never ran: no retry increment, no lock, no logout. */
+            expect(onDeclined).not.toHaveBeenCalled();
+            expect(auth.syncLock).not.toHaveBeenCalled();
+            expect(auth.lock).not.toHaveBeenCalled();
+            expect(auth.logout).not.toHaveBeenCalled();
+        });
+
+        test('on a cancelled prompt after 2 failed attempts: declines and rethrows without counting, locking or logging out', async () => {
+            const { adapter, auth, authStore, onDeclined } = setupAdapter();
+            await adapter.create('', 600);
+            authStore.setUnlockRetryCount(2);
+            unlockMessage.mockRejectedValue(new NativeMessageError(NativeMessageErrorType.BIOMETRICS_CANCELLED));
+            auth.syncLock.mockClear();
+
+            const error = await adapter.unlock('').catch((err) => err);
+            expect(error).toBeInstanceOf(NativeMessageError);
+            expect(error.type).toBe(NativeMessageErrorType.BIOMETRICS_CANCELLED);
+
+            expect(onDeclined).toHaveBeenCalledTimes(1);
+            expect(authStore.getUnlockRetryCount()).toBe(2);
             expect(auth.syncLock).not.toHaveBeenCalled();
             expect(auth.lock).not.toHaveBeenCalled();
             expect(auth.logout).not.toHaveBeenCalled();

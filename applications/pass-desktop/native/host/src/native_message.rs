@@ -38,6 +38,7 @@ pub enum NativeErrorCode {
     HostNotResponding,
     DesktopAppNotLoggedIn,
     BiometricsFailed,
+    BiometricsCancelled,
     SecretNotFound,
     Unknown,
 }
@@ -48,6 +49,7 @@ impl fmt::Display for NativeErrorCode {
             Self::HostNotResponding => "HOST_NOT_RESPONDING",
             Self::DesktopAppNotLoggedIn => "DESKTOP_APP_NOT_LOGGED_IN",
             Self::BiometricsFailed => "BIOMETRICS_FAILED",
+            Self::BiometricsCancelled => "BIOMETRICS_CANCELLED",
             Self::SecretNotFound => "SECRET_NOT_FOUND",
             Self::Unknown => "UNKNOWN",
         };
