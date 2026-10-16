@@ -6,6 +6,7 @@ import { isDocumentVisible } from '@proton/shared/lib/helpers/dom';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { readInboundRtp } from '../e2eeRecovery/inboundRtpStats';
+import type { ReportError } from '../e2eeRecovery/types';
 
 export type RegisterCameraTrackFn = (
     publication: TrackPublication | undefined,
@@ -54,18 +55,22 @@ export class CameraTrackSubscriptionManager {
     private participantQuality: VideoQuality | undefined;
     private spotlightParticipantIdentity: string | undefined;
     private videosPaused = false;
+    private trackSidsFailingToUpdate = new Set<string>();
+    private reportError?: ReportError;
 
-    constructor(capacity: number, room: Room) {
+    constructor(capacity: number, room: Room, reportError?: ReportError) {
         this.capacity = capacity;
         this.room = room;
+        this.reportError = reportError;
     }
 
     private runSerialized(op: () => Promise<void> | void) {
         this.operationChain = this.operationChain
             .then(() => Promise.resolve(op()))
             .catch((error) => {
-                // eslint-disable-next-line no-console
-                console.error('Error running serialized operation', error);
+                this.reportError?.('CameraTrackSubscriptionManager: serialized operation threw', {
+                    context: { error },
+                });
             });
         return this.operationChain;
     }
@@ -339,9 +344,20 @@ export class CameraTrackSubscriptionManager {
                 if (!shouldBeDisabled && desiredQuality !== undefined && publication.videoQuality !== desiredQuality) {
                     publication.setVideoQuality(desiredQuality);
                 }
+
+                if (this.trackSidsFailingToUpdate.delete(trackSid)) {
+                    logger.info('CameraTrackSubscriptionManager: publication recovered', {
+                        trackSid,
+                        participantIdentity,
+                    });
+                }
             } catch (error) {
-                // eslint-disable-next-line no-console
-                console.error(error);
+                if (!this.trackSidsFailingToUpdate.has(trackSid)) {
+                    this.trackSidsFailingToUpdate.add(trackSid);
+                    this.reportError?.('CameraTrackSubscriptionManager: failed to update publication', {
+                        context: { error, trackSid, participantIdentity },
+                    });
+                }
             }
         }
     }
