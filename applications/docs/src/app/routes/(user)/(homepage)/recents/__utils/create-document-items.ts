@@ -1,9 +1,9 @@
 import { ServerTime } from '@proton/docs-shared/lib/ServerTime'
 import { type MemberRole, type NodeEntity, splitNodeUid } from '@proton/drive'
-import { getAuthorName } from '~/drive-sdk'
+import { getAuthorName } from '~/drive-sdk/getAuthorName'
 import { mimeTypeToProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import type { RecentDocumentsItemValue } from '@proton/docs-core/lib/Services/recent-documents'
-import { getNodeName } from '@proton/docs-core/lib/DriveSDK/getNodeName'
+import { getNodeNameOrFallback } from '@proton/docs-core/lib/DriveSDK/getNodeName'
 
 /**
  * Creates value for RecentDocumentsItem instances based on node data from SDK and response from /recents endpoint
@@ -26,7 +26,7 @@ export function createDocumentItem(
 
   return {
     type: mimeTypeToProtonDocumentType(node.mediaType) ?? 'document',
-    name: getNodeName(node) ?? '',
+    name: getNodeNameOrFallback(node),
     linkId,
     parentLinkId,
     volumeId,
@@ -64,7 +64,7 @@ export function nodeToTrashedDocumentItem(node: NodeEntity): RecentDocumentsItem
   const { nodeId: parentLinkId } = node.parentUid ? splitNodeUid(node.parentUid) : {}
 
   return {
-    name: getNodeName(node) ?? '',
+    name: getNodeNameOrFallback(node),
     type: mimeTypeToProtonDocumentType(node.mediaType) ?? 'document',
     linkId,
     parentLinkId,

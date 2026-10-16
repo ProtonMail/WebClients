@@ -114,7 +114,7 @@ These packages are being phased out; development happens inside the two apps.
 - Name files and directories in `camelCase` (`useRecentsStore.ts`). Exception: a file whose main purpose is exporting one React component or class takes its name (`DocumentToolbar.tsx`). Older kebab-case names exist; use camelCase for new ones and when renaming.
 - Group by purpose (`utils/auth.ts`), not by kind (`hooks/`). `components/` is the one allowed kind-named directory.
 - Keep the tree flat: few categories, little nesting.
-- Import across the app with the aliases in `tsconfig.json` (`~/components/*`, `~/utils/*`, `~/drive-sdk`, `~/redux-store/*`, `~/config`). Adding an alias means adding it to both `tsconfig.json` and `jest.config.ts` `moduleNameMapper`.
+- Import across the app with the aliases in `tsconfig.json` (`~/components/*`, `~/utils/*`, `~/drive-sdk/*`, `~/redux-store/*`, `~/config`). Adding an alias means adding it to both `tsconfig.json` and `jest.config.ts` `moduleNameMapper`.
 
 ### Routes
 

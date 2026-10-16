@@ -5,7 +5,7 @@ import { create } from 'zustand'
 interface RecentsStore {
   recentDocuments: { [nodeUid: string]: RecentDocumentsItemValue }
   setRecentDocuments: (documents: RecentDocumentsItemValue[]) => void
-  setDocument: (updatedDocument: RecentDocumentsItemValue) => void
+  updateDocument: (updatedDocument: RecentDocumentsItemValue) => void
   removeDocument: (nodeUid: string) => void
   removeChildrenOf: (parentFolderUid: string) => void
 
@@ -25,13 +25,15 @@ export const useRecentsStore = create((set): RecentsStore => ({
       return { recentDocuments }
     }),
 
-  setDocument: (updatedDocument) =>
-    set((state) => ({
-      recentDocuments: {
-        ...state.recentDocuments,
-        [generateNodeUid(updatedDocument.volumeId, updatedDocument.linkId)]: updatedDocument,
-      },
-    })),
+  updateDocument: (updatedDocument) =>
+    set((state) => {
+      const nodeUid = generateNodeUid(updatedDocument.volumeId, updatedDocument.linkId)
+      // Document could be removed while its update was loading - do not restore it
+      if (!state.recentDocuments[nodeUid]) {
+        return state
+      }
+      return { recentDocuments: { ...state.recentDocuments, [nodeUid]: updatedDocument } }
+    }),
 
   removeDocument: (nodeUid) =>
     set((state) => {
