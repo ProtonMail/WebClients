@@ -78,7 +78,8 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, app, ...rest }: Props) => {
         onChargeable: (operations) => {
             return withLoading(async () => {
                 await operations.payInvoice(invoice.ID, invoicePaymentsVersion);
-                await Promise.all([
+                // The invoice is already paid, so a failed refresh must not keep the modal open
+                await Promise.allSettled([
                     call(), // Update user.Delinquent to hide TopBanner
                     fetchInvoices(),
                     getPaymentsInit({ cache: CacheType.None }),
