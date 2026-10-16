@@ -1,0 +1,174 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;",
+    "language": "cs_CZ"
+  },
+  "contexts": {
+    "App menu": {
+      "About ${ MEET_APP_NAME }": [
+        "O ${ MEET_APP_NAME }"
+      ],
+      "Actual Size": [
+        "Skutečná velikost"
+      ],
+      "Clear application data": [
+        "Vyčistit data aplikace"
+      ],
+      "Close Window": [
+        "Zavřít okno"
+      ],
+      "Copy": [
+        "Kopírovat"
+      ],
+      "Cut": [
+        "Vyjmout"
+      ],
+      "Delete": [
+        "Smazat"
+      ],
+      "Force Reload": [
+        "Vynutit obnovení"
+      ],
+      "Hide ${ MEET_APP_NAME }": [
+        "Skrýt ${ MEET_APP_NAME }"
+      ],
+      "Hide Others": [
+        "Skrýt ostatní"
+      ],
+      "Minimize": [
+        "Minimalizovat"
+      ],
+      "Paste": [
+        "Vložit"
+      ],
+      "Paste and Match Style": [
+        "Vložit a přizpůsobit styl"
+      ],
+      "Quit": [
+        "Ukončit"
+      ],
+      "Quit ${ MEET_APP_NAME }": [
+        "Ukončit ${ MEET_APP_NAME }"
+      ],
+      "Redo": [
+        "Opakovat"
+      ],
+      "Reload": [
+        "Znovu načíst"
+      ],
+      "Select All": [
+        "Vybrat vše"
+      ],
+      "Show All": [
+        "Zobrazit vše"
+      ],
+      "Show logs": [
+        "Zobrazit logy"
+      ],
+      "Speech": [
+        "Řeč"
+      ],
+      "Start ${ MEET_APP_NAME } at login": [
+        "Spustit ${ MEET_APP_NAME } při přihlášení"
+      ],
+      "Start Speaking": [
+        "Začněte mluvit"
+      ],
+      "Stop Speaking": [
+        "Přestaňte mluvit"
+      ],
+      "Toggle Developer Tools": [
+        "Přepnout nástroje pro vývojáře"
+      ],
+      "Toggle Full Screen": [
+        "Přepnout na režim celé obrazovky"
+      ],
+      "Undo": [
+        "Zpět"
+      ],
+      "Zoom": [
+        "Přiblížit"
+      ],
+      "Zoom In": [
+        "Přiblížit"
+      ],
+      "Zoom Out": [
+        "Oddálit"
+      ]
+    },
+    "App Menu": {
+      "Services": [
+        "Služby"
+      ]
+    },
+    "Download warning": {
+      "A recording is still being saved": [
+        "Nahrávka se stále ukládá"
+      ],
+      "Continue downloading": [
+        "Pokračovat ve stahování"
+      ],
+      "If you quit now, the file may be incomplete or empty. Quit anyway?": [
+        "Pokud nyní ukončíte aplikaci, soubor může být neúplný nebo prázdný. Chcete přesto ukončit?"
+      ],
+      "Quit anyway": [
+        "Přesto ukončit"
+      ],
+      "Recording download in progress": [
+        "Probíhá stahování nahrávky"
+      ]
+    },
+    "Error dialog": {
+      "Due to an error, the app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.": [
+        "Kvůli chybě se aplikace ukončí. Zkuste ji spustit znovu, a pokud problém přetrvává, kontaktujte nás. Informace o chybě naleznete v logu aplikace."
+      ],
+      "Unexpected error": [
+        "Neočekávaná chyba"
+      ]
+    },
+    "error screen": {
+      "Cannot establish connection": [
+        "Nelze navázat připojení"
+      ],
+      "Check your internet connection or network settings. If the issue persists, please contact customer support.": [
+        "Zkontrolujte připojení k internetu nebo nastavení sítě. Pokud problém přetrvává, kontaktujte zákaznickou podporu."
+      ],
+      "Try again": [
+        "Zkusit znovu"
+      ]
+    },
+    "loading screen": {
+      "Loading ${ title }…": [
+        "Načítání ${ title }…"
+      ]
+    },
+    "Menu": {
+      "Edit": [
+        "Upravit"
+      ],
+      "File": [
+        "Soubor"
+      ],
+      "View": [
+        "Zobrazit"
+      ],
+      "Window": [
+        "Okno"
+      ]
+    },
+    "Unload warning": {
+      "Changes you made may not be saved.": [
+        "Provedené změny nemusí být uloženy."
+      ],
+      "Leave": [
+        "Opustit"
+      ],
+      "Leave page?": [
+        "Opustit stránku?"
+      ],
+      "Stay": [
+        "Zůstat"
+      ]
+    }
+  }
+}
