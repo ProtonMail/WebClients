@@ -383,6 +383,7 @@ enum MeetFeatureFlag {
     MeetExtendedTelemetry = 'MeetExtendedTelemetry',
     MeetHandleStalledLiveKitReconnect = 'MeetHandleStalledLiveKitReconnect',
     MeetJoinLeaveSoundsNotifications = 'MeetJoinLeaveSoundsNotifications',
+    MeetAllowResettingFrozenVideoTracks = 'MeetAllowResettingFrozenVideoTracks',
 }
 
 enum PaymentsFeatureFlag {
