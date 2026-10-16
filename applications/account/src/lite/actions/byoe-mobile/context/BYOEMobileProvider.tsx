@@ -61,7 +61,7 @@ const getAutoConnectParams = (params: URLSearchParams) => {
 };
 
 export const BYOEMobileProvider = ({ redirect, initialSearchParams, children }: Props) => {
-    const { UID } = useAuthentication();
+    const { UID, localID } = useAuthentication();
     const { createNotification } = useNotifications();
 
     const { isLoadingGating, checkGating } = useBYOEGating();
@@ -105,14 +105,25 @@ export const BYOEMobileProvider = ({ redirect, initialSearchParams, children }: 
         trackBYOEGoogleSignInClicked({ hasImportEmails: importEmails, importPeriod: undefined });
         // The page navigates away, so the auto-starting status is intentionally never reset.
         setStatus(status === 'auto-starting' ? 'auto-starting' : 'starting-oauth');
-        startOAuthFlow({ importEmails, redirect, sessionUID: UID, creationStartedAt: getBYOECreationStartedAt() });
+        startOAuthFlow({
+            importEmails,
+            redirect,
+            sessionUID: UID,
+            sessionLocalID: localID,
+            creationStartedAt: getBYOECreationStartedAt(),
+        });
     };
 
     // The address already has its messages and the user stays on the page afterwards: nothing to import or hand back
     const startReconnectOAuthFlow = (address: Address) => {
         // The page navigates away, so the status is intentionally never reset.
         setStatus('starting-oauth');
-        startOAuthFlow({ importEmails: false, reconnectAddressID: address.ID, sessionUID: UID });
+        startOAuthFlow({
+            importEmails: false,
+            reconnectAddressID: address.ID,
+            sessionUID: UID,
+            sessionLocalID: localID,
+        });
     };
 
     const canStartOAuthFlow = (): boolean => {
