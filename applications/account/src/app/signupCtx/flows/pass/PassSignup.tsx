@@ -1,13 +1,14 @@
-import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useEffect, useRef, useState } from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
 
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import { CYCLE } from '@proton/payments/core/constants';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import type { GetActiveSessionsResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { SignupType } from '../../../signup/interfaces';
 import { type BaseSignupContextProps, SignupContextProvider, useSignup } from '../../context/SignupContext';
@@ -33,9 +34,14 @@ enum Step {
 const PassSignup = () => {
     const signup = useSignup();
     const payments = usePaymentOptimistic();
+    const history = useHistory();
+    const newOnboardingFlag = useFlag('PassAccountNewOnboarding');
 
     const [step, setStep] = useState<Step>(Step.Signup);
     const [skippedCycle, setSkippedCycle] = useState(false);
+    /** Address the account was created with: re-validating the form
+     * later in the flow can return a stale value of the email field */
+    const signupAddress = useRef('');
 
     useEffect(() => {
         /**
@@ -45,11 +51,22 @@ const PassSignup = () => {
         void payments.checkMultiplePlans([getPassPlusOfferPlan(payments.selectedPlan.currency)]);
     }, [payments.selectedPlan.currency]);
 
+    const goToOnboarding = () => {
+        if (newOnboardingFlag) {
+            history.replace(`${SSO_PATHS.PASS_ACCOUNT_ONBOARDING}?flow=pass_ctx_signup`, {
+                email: signupAddress.current,
+            });
+        } else {
+            setStep(Step.InstallExtension);
+        }
+    };
+
     return (
-        <main className="pass-signup flex h-full overflow-auto">
+        <div className="pass-signup flex h-full overflow-auto">
             {step === Step.Signup && (
                 <AccountDetailsStep
-                    onContinue={async () => {
+                    onContinue={async ({ email, username, domain }) => {
+                        signupAddress.current = email || `${username}@${domain}`;
                         await signup.createUser();
                         await signup.setupUser();
                         setStep(Step.RecoveryKit);
@@ -67,7 +84,7 @@ const PassSignup = () => {
                             }
                             return setStep(Step.Payment);
                         }
-                        setStep(Step.InstallExtension);
+                        goToOnboarding();
                     }}
                 />
             )}
@@ -78,7 +95,7 @@ const PassSignup = () => {
                 <PaymentStep
                     onContinue={async () => {
                         await signup.setupSubscription();
-                        setStep(Step.InstallExtension);
+                        goToOnboarding();
                     }}
                     onBack={() => {
                         if (!skippedCycle) {
@@ -95,7 +112,7 @@ const PassSignup = () => {
                     }}
                 />
             )}
-        </main>
+        </div>
     );
 };
 

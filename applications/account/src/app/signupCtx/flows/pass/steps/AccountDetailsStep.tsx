@@ -10,11 +10,11 @@ import MailLogo from '@proton/components/components/logo/MailLogo';
 import { IcShield2CheckFilled } from '@proton/icons/icons/IcShield2CheckFilled';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
-import { SignupType } from '../../../../signup/interfaces';
+import { type AccountData, SignupType } from '../../../../signup/interfaces';
 import { usePasswordInputSpotlight } from '../../../containers/password/usePasswordInput';
 import useEmailInput from '../../../containers/username/useEmailInput';
 import { useSignup } from '../../../context/SignupContext';
-import { Layout } from '../components/Layout/Layout';
+import { Layout } from '../components/Layout';
 import { AccountDetailsAside } from './AccountDetailsAside';
 
 const SwitchSignupType = () => {
@@ -60,7 +60,7 @@ const SwitchSignupType = () => {
 };
 
 type Props = {
-    onContinue: () => Promise<void>;
+    onContinue: (accountData: AccountData) => Promise<void>;
 };
 
 export const AccountDetailsStep: FC<Props> = ({ onContinue }) => {
@@ -85,7 +85,7 @@ export const AccountDetailsStep: FC<Props> = ({ onContinue }) => {
             setLoading(true);
             const accountData = await signup.accountForm.getValidAccountData({ passwords: true });
             signup.submitAccountData(accountData);
-            await onContinue();
+            await onContinue(accountData);
         } finally {
             setLoading(false);
         }

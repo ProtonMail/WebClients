@@ -1,0 +1,56 @@
+.pass-onboarding .pass-onboarding-sample {
+	& > div {
+		background-color: var(--onboarding-opaque-bg);
+		border-color: var(--onboarding-opaque-border);
+		border-radius: var(--onboarding-border-radius);
+		margin-inline: auto;
+	}
+
+	& > div:nth-of-type(1) {
+		margin-block-end: -3.5rem;
+		block-size: 4rem;
+		inline-size: 20rem;
+	}
+
+	&.single > div:nth-of-type(1) {
+		display: none;
+	}
+
+	& > div:nth-of-type(2) {
+		margin-block-end: -3.5rem;
+		block-size: 4rem;
+		inline-size: 22rem;
+	}
+
+	&.single > div:nth-of-type(2) {
+		display: none;
+	}
+
+	& > div:nth-of-type(3) {
+		min-inline-size: 24rem;
+	}
+
+	& > img:nth-of-type(1) {
+		position: absolute;
+		inline-size: 1.5rem;
+		inset-block-start: 1.8rem;
+		inset-inline-end: 1.8rem;
+	}
+
+	&.single > img:nth-of-type(1) {
+		inset-block-start: 1.2rem;
+		inset-inline-end: 1.5rem;
+	}
+
+	& > img:nth-of-type(2) {
+		position: absolute;
+		inline-size: 2.5rem;
+		inset-block-start: 2.5rem;
+		inset-inline-end: 0;
+	}
+
+	&.single > img:nth-of-type(2) {
+		inset-block-start: 2rem;
+		inset-inline-end: -0.5rem;
+	}
+}

@@ -24,6 +24,10 @@ interface Props<V> {
      * The number of hidden results that are not displayed in the list.
      */
     hiddenResultsCount?: number;
+    /**
+     * Additional classes to pass to the dropdown.
+     */
+    dropdownClassName?: string;
 }
 
 const AutocompleteList = <V,>({
@@ -35,6 +39,7 @@ const AutocompleteList = <V,>({
     anchorRef,
     searchResultsCount,
     hiddenResultsCount,
+    dropdownClassName,
 }: Props<V>) => {
     const items = Children.map(children, (child, index) => {
         return cloneElement(child, {
@@ -84,6 +89,7 @@ const AutocompleteList = <V,>({
                 }}
                 disableFocusTrap
                 disableDefaultArrowNavigation
+                className={dropdownClassName}
             >
                 {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
                 <ul id={id} className="unstyled m-0 p-0" onMouseDown={handleListMouseDown}>

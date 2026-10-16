@@ -52,6 +52,7 @@ export const Import: FC = () => {
     );
 
     const { form, dropzone, busy, progress, cancel } = useImportForm({
+        importEntryPoint: 'settings',
         onWillSubmit,
         onPassphrase: () =>
             new Promise((onSubmit) => passphraseModal.handler({ onSubmit }).catch(() => ({ ok: false }))),

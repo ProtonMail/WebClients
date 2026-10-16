@@ -26,6 +26,7 @@ const WorkerMessageBroker = createMessageBroker({
         WorkerMessageType.ACCOUNT_FORK,
         WorkerMessageType.ACCOUNT_ONBOARDING,
         WorkerMessageType.ACCOUNT_PROBE,
+        WorkerMessageType.ACCOUNT_PROBE_2,
     ],
     strictOriginCheck: [
         WorkerMessageType.ALIAS_CREATE,

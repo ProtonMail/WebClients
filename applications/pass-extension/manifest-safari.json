@@ -101,6 +101,16 @@
             "matches": ["https://*/*", "http://*/*"]
         },
         {
+            "resources": ["onboarding.html"],
+            "matches": [
+                "https://*.proton.me/*",
+                "https://*.proton.dev/*",
+                "https://*.proton.black/*",
+                "https://*.proton.pink/*",
+                "https://*.protontech.ch/*"
+            ]
+        },
+        {
             "resources": ["*.wasm"],
             "matches": ["<all_urls>"]
         }

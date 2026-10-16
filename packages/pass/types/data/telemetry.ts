@@ -1,5 +1,5 @@
 import type { InAppNotification, PassPlanResponse } from '..';
-import type { ImportProvider } from '../../lib/import/types';
+import type { ImportEntryPoint, ImportProvider } from '../../lib/import/types';
 import type { TelemetryInAppNotificationStatus } from './notification';
 
 export type TelemetryPlatform = 'browser' | 'any';
@@ -107,7 +107,7 @@ export type ExtensionCopiedFromLoginDimensions = {
 
 type ImportValues = { item_count: number; vaults: number };
 
-type ImportDimensions = { source: ImportProvider };
+type ImportDimensions = { source: ImportProvider; importEntryPoint: ImportEntryPoint };
 type ItemDimensions = { type: TelemetryItemType };
 type FileDimensions = { mimeType: string };
 type NotificationDimensions = { notificationKey: InAppNotification['NotificationKey'] };

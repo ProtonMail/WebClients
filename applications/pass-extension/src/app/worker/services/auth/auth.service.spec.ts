@@ -22,6 +22,9 @@ import { createAuthService } from './auth.service';
 
 jest.mock('../../channel');
 jest.mock('../../../../lib/utils/permissions');
+jest.mock('@proton/pass/lib/extension/utils/pinned', () => ({
+    getToolbarPinState: jest.fn().mockResolvedValue('unpinned'),
+}));
 
 const { default: WorkerMessageBroker, mockHandlers } = jest.requireMock('../../channel') as typeof ChannelMock;
 const permissions = permissionUtils as jest.MockedObject<typeof permissionUtils>;
@@ -581,6 +584,7 @@ describe('Extension AuthService', () => {
 
             test.each([
                 WorkerMessageType.ACCOUNT_PROBE,
+                WorkerMessageType.ACCOUNT_PROBE_2,
                 WorkerMessageType.ACCOUNT_FORK,
                 WorkerMessageType.AUTH_CHECK,
                 WorkerMessageType.AUTH_CONFIRM_PASSWORD,
@@ -589,6 +593,23 @@ describe('Extension AuthService', () => {
                 WorkerMessageType.AUTH_UNLOCK,
             ])('should register `%s` handler', (message) => {
                 expect(WorkerMessageBroker.registerMessage).toHaveBeenCalledWith(message, expect.any(Function));
+            });
+        });
+
+        describe('`ACCOUNT_PROBE_2`', () => {
+            test('should report a signed out extension without any user data nor its URL', async () => {
+                const handler = mockHandlers.get(WorkerMessageType.ACCOUNT_PROBE_2);
+                const result = await handler?.({}, {});
+
+                expect(result).toStrictEqual({ authenticated: false, pinned: 'unpinned', url: null });
+            });
+
+            test('should report a signed in extension without leaking its email', async () => {
+                authStore.setSession({ UID: 'uid', UserID: 'user-id', LocalID: 0 });
+                const handler = mockHandlers.get(WorkerMessageType.ACCOUNT_PROBE_2);
+                const result = await handler?.({}, {});
+
+                expect(result).toStrictEqual({ authenticated: true, pinned: 'unpinned', url: 'test://' });
             });
         });
 

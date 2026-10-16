@@ -7,14 +7,13 @@ import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { clients } from '@proton/pass/clients';
 import { Clients } from '@proton/pass/constants';
-import { getExtensionSupportedBrowser } from '@proton/pass/lib/extension/utils/browser';
+import { getBrowserClient } from '@proton/pass/lib/extension/utils/browser';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
-import { isFirefox, isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { getTelemetryClientType } from '../../../../single-signup-v2/measure';
 import browserImage from '../assets/images/browser.svg';
-import { Layout } from '../components/Layout/Layout';
+import { Layout } from '../components/Layout';
 import { measureSignupCtx } from '../measure';
 
 type Props = {
@@ -24,22 +23,7 @@ type Props = {
 export const InstallExtensionStep: FC<Props> = ({ onContinue }) => {
     const api = useApi();
 
-    const browserType: Clients | null = useMemo(() => {
-        const supportedBrowser = getExtensionSupportedBrowser();
-
-        if (supportedBrowser) {
-            return supportedBrowser;
-        }
-        if (isSafari()) {
-            return Clients.Safari;
-        }
-        if (isFirefox()) {
-            return Clients.Firefox;
-        }
-
-        return null;
-    }, []);
-
+    const browserType = useMemo(getBrowserClient, []);
     const browser = browserType ? clients[browserType] : null;
 
     const platforms = [
@@ -52,7 +36,9 @@ export const InstallExtensionStep: FC<Props> = ({ onContinue }) => {
 
     useEffect(() => {
         void measureSignupCtx(api, {
+            flow: 'pass_ctx_signup',
             event: TelemetryAccountSignupEvents.onboardFinish,
+            dimensions: { onboarding: 'old' },
         });
     }, []);
 
@@ -60,8 +46,9 @@ export const InstallExtensionStep: FC<Props> = ({ onContinue }) => {
         const telemetryClientType = browserType ? getTelemetryClientType(browserType) : 'unknown';
 
         void measureSignupCtx(api, {
+            flow: 'pass_ctx_signup',
             event: TelemetryAccountSignupEvents.interactDownload,
-            dimensions: { click: `download_${telemetryClientType}` },
+            dimensions: { click: `download_${telemetryClientType}`, onboarding: 'old' },
         });
     };
 

@@ -36,7 +36,7 @@ function SignedOutSection() {
                 {user.canPay && c('Description').t`Upgrade anytime to stay signed in on multiple devices.`}
             </p>
             <div className="flex gap-2">
-                <ButtonLike color="norm" fullWidth as={Href} href={SSO_PATHS.LOGIN} target={'_self'}>{c('Action')
+                <ButtonLike color="norm" fullWidth as={Href} href={SSO_PATHS.LOGIN} target={'_self'}>{c('Sign out')
                     .t`Sign in to ${providerName}`}</ButtonLike>
                 {user.canPay && (
                     <ButtonLike as={Href} href={'/lite?action=subscribe-account'} target={'_self'} fullWidth>{c(
