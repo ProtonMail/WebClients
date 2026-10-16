@@ -15,7 +15,6 @@ import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 import { useGetStartedChecklist } from '../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import { useMailboxCounter } from '../../../hooks/mailboxCounter/useMailboxCounter';
 import { useMailSelector } from '../../../store/hooks';
-
 import { useCategoriesView } from '../useCategoriesView';
 import { hasSeenAllOnboarding, hasSeenFreeUserSpotlight } from './categoriesOnboarding.helpers';
 import { OnboardingFlow, type OnboardingInfo } from './onboardingInterface';
@@ -52,6 +51,7 @@ export const useCategoriesOnboardingEligibility = (): OnboardingInfo => {
 
     if (loading || !accountDateThreshold.feature?.Value) {
         return {
+            isLoading: !!loading,
             isUserEligible: false,
             flagValue: FeatureValueDefault,
             onboardingFlow: OnboardingFlow.NONE,
@@ -82,6 +82,7 @@ export const useCategoriesOnboardingEligibility = (): OnboardingInfo => {
         if (isExistingUser) {
             // Existing users see the spotlight right away
             return {
+                isLoading: false,
                 isUserEligible: basicEligibility,
                 flagValue: b2bOnboardingViewFlag.feature?.Value ?? 0,
                 onboardingFlow: OnboardingFlow.B2B,
@@ -89,6 +90,7 @@ export const useCategoriesOnboardingEligibility = (): OnboardingInfo => {
         } else {
             // New B2B users see the spotlight once they have a given amount of email
             return {
+                isLoading: false,
                 isUserEligible: basicEligibility && allMailsElementsCount.Total >= B2B_REQUIRED_NUMBER_OF_MAILS,
                 flagValue: b2bOnboardingViewFlag.feature?.Value ?? 0,
                 onboardingFlow: OnboardingFlow.B2B,
@@ -105,6 +107,7 @@ export const useCategoriesOnboardingEligibility = (): OnboardingInfo => {
         const hasSeenSpotlight = hasSeenFreeUserSpotlight(b2cOnboardingViewFlag.feature?.Value ?? 0);
 
         return {
+            isLoading: false,
             isUserEligible:
                 isCategoryViewEnabled &&
                 isUserFree &&
@@ -121,6 +124,7 @@ export const useCategoriesOnboardingEligibility = (): OnboardingInfo => {
 
     // Existing B2C users see the card if they have a given number of emails and the checklist is no longer present on the list of email
     return {
+        isLoading: false,
         isUserEligible:
             isCategoryViewEnabled &&
             isExistingUser &&

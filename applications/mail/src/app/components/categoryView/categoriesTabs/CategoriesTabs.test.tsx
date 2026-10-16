@@ -29,6 +29,10 @@ jest.mock('../categoriesOnboarding/CategoriesOnboardingSpotlights', () => ({
     CategoriesOnboardingSpotlight: ({ children }: PropsWithChildren) => <>{children}</>,
 }));
 
+jest.mock('../categoriesImproveSpotlight/useCategoriesImproveSpotlight', () => ({
+    useCategoriesImproveSpotlight: jest.fn(() => ({ isEligible: false })),
+}));
+
 jest.mock('../categoriesOnboarding/CategoriesOnboardingContext', () => ({
     useCategoriesOnboarding: jest.fn(() => ({
         activeStep: 6, // OnboardingStep.DONE
