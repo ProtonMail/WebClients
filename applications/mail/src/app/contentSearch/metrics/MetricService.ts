@@ -44,7 +44,7 @@ export class MetricService {
     /** Set by `startMailboxIndexing`; `mailbox_index_completed`'s `durationMs` is measured from here. */
     private indexingStartedAt?: number;
 
-    /** Set by `startSearchSession`; `query_completed`'s `durationMs` is measured from here. */
+    /** Set by `searchStarted`; `query_completed`'s `durationMs` is measured from here. */
     private searchStartedAt?: number;
 
     /** Refreshed per render by `useContentSearch` — for `mailbox_index_completed`'s `mailboxAddressType`. */
@@ -97,13 +97,31 @@ export class MetricService {
     startSearchSession() {
         this.endSearchSession('newSearch');
         this.logger.info('Search session started');
-        this.searchStartedAt = Date.now();
         this.session = {
             startedAt: Date.now(),
             hasResults: false,
             resultsOpened: 0,
             actionsPerformed: 0,
         };
+    }
+
+    /**
+     * Call each time a search runs, including re-runs within the same session (pagination, sort,
+     * filter) — `searchCompleted` measures from the most recent call.
+     */
+    searchStarted() {
+        this.searchStartedAt = Date.now();
+    }
+
+    /**
+     * Call when a started search never ran — e.g. there was no index yet and the query went to the
+     * server. Drops the pending start and the session without reporting either: there is no content
+     * search to report on.
+     */
+    searchCancelled() {
+        this.logger.info('Search cancelled');
+        this.searchStartedAt = undefined;
+        this.session = undefined;
     }
 
     searchCompleted({
@@ -120,7 +138,7 @@ export class MetricService {
         this.logger.info('Search completed');
 
         const endTime = Date.now();
-        const startTime = this.searchStartedAt ?? 0;
+        const startTime = this.searchStartedAt;
 
         this.searchStartedAt = undefined;
 
@@ -128,6 +146,12 @@ export class MetricService {
             session.hasResults = hasResults;
             session.scrollerMode = SEARCH_RESULT_SCROLLER_MODE;
         });
+
+        // Without a matching `searchStarted` there is no duration to report.
+        if (startTime === undefined) {
+            this.logger.warn('Search completed without a matching start, not reporting query_completed');
+            return;
+        }
 
         this.reportTelemetry(
             buildQueryCompletedPayload({
