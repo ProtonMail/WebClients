@@ -488,6 +488,9 @@
       "Connect apps and devices": [
         "Connecter les applications et les appareils"
       ],
+      "Connect Gmail": [
+        "Connecter Gmail"
+      ],
       "Connect Gmail address": [
         "Connecter l'adresse Gmail"
       ],
@@ -2849,9 +2852,6 @@
       ],
       "Protection for two in a single plan": [
         "Une protection pour deux personnes dans un seul abonnement"
-      ],
-      "Save big with a yearly plan": [
-        "Faites de grosses économies grâce à un abonnement annuel"
       ]
     },
     "Billing cycle": {
@@ -6586,6 +6586,9 @@
       ],
       "Add 1 more": [
         "Ajouter 1 autre"
+      ],
+      "Add contact": [
+        "Ajouter un contact"
       ],
       "Add emergency contact": [
         "Ajouter un contact d'urgence"
@@ -10775,6 +10778,9 @@
       "Connect and manage your external mailboxes in ${ MAIL_APP_NAME }.": [
         "Connectez et gérez vos messageries externes dans ${ MAIL_APP_NAME }"
       ],
+      "Connected": [
+        "Connecté"
+      ],
       "Connecting to Google Drive and preparing your import.": [
         "Connexion à Google Drive et préparation de l'importation en cours."
       ],
@@ -10971,6 +10977,9 @@
       ],
       "Disabling the data backup on this device will prevent you from automatically unlocking your encrypted data after a password reset.": [
         "Désactiver la sauvegarde des données sur cet appareil vous empêchera de déverrouiller automatiquement vos données chiffrées après une réinitialisation de mot de passe."
+      ],
+      "Disconnected": [
+        "Déconnecté"
       ],
       "Discount": [
         "Réduction"
@@ -16084,9 +16093,6 @@
       ],
       "Start weekday": [
         "Premier jour de la semaine"
-      ],
-      "Start with your most recent messages": [
-        "Commencer par vos messages les plus récents"
       ],
       "Starts with": [
         "Commence par"
@@ -25395,6 +25401,9 @@
       "Address and key verification": [
         "Vérification de l'adresse et de la clé"
       ],
+      "Addresses": [
+        "Adresses"
+      ],
       "Advanced configuration": [
         "Configuration avancée"
       ],
@@ -25632,8 +25641,8 @@
       "Connect your custom domain": [
         "Connectez votre domaine personnalisé"
       ],
-      "Connected addresses": [
-        "Adresses connectées"
+      "Connect your Gmail": [
+        "Connectez votre Gmail"
       ],
       "Connected emails": [
         "E-mails connectés"
@@ -25897,6 +25906,9 @@
       ],
       "Discard changes?": [
         "Abandonner les modifications ?"
+      ],
+      "Disconnect this address?": [
+        "Déconnecter cette adresse ?"
       ],
       "Disconnected from Gmail": [
         "Déconnecté de Gmail"
@@ -26210,6 +26222,9 @@
       ],
       "Gift code": [
         "Code-cadeau"
+      ],
+      "Good to know before you connect": [
+        "Bon à savoir avant de vous connecter"
       ],
       "Grant access": [
         "Autoriser l'accès"
@@ -26995,6 +27010,12 @@
       ],
       "This field cannot contain only spaces": [
         "Ce champ ne doit pas contenir uniquement des espaces"
+      ],
+      "This Gmail is already connected": [
+        "Ce Gmail est déjà connecté"
+      ],
+      "This Gmail is linked to another ${ BRAND_NAME } account": [
+        "Ce compte Gmail est associé à un autre compte ${ BRAND_NAME }."
       ],
       "Time zone": [
         "Fuseau horaire"

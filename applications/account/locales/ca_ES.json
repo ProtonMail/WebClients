@@ -3059,9 +3059,6 @@
       ],
       "Protection for two in a single plan": [
         "Protecció per a dos en un sol pla"
-      ],
-      "Save big with a yearly plan": [
-        "Estalvieu molt amb un pla anual"
       ]
     },
     "Billing cycle": {
@@ -8153,6 +8150,12 @@
       "Verification keys for ${ signatureType } are not available": [
         "Les claus de verificació per ${ signatureType } no estan disponibles"
       ],
+      "We couldn't disconnect this address. Please try again.": [
+        "No s'ha pogut desconnectar aquesta adreça. Torneu-ho a provar."
+      ],
+      "We couldn't reconnect this address.": [
+        "No s'ha pogut tornar a connectar aquesta adreça."
+      ],
       "We couldn't sign you in": [
         "No hem pogut iniciar la sessió."
       ],
@@ -11197,6 +11200,9 @@
       "Connect and manage your external mailboxes in ${ MAIL_APP_NAME }.": [
         "Connecteu i gestioneu les vostres bústies de correu externes a ${ MAIL_APP_NAME }."
       ],
+      "Connected": [
+        "Connectat"
+      ],
       "Connecting to Google Drive and preparing your import.": [
         "S'està connectant a Google Drive i preparant la importació."
       ],
@@ -11402,6 +11408,9 @@
       ],
       "Disabling the data backup on this device will prevent you from automatically unlocking your encrypted data after a password reset.": [
         "Si desactiveu la còpia de seguretat de dades en aquest dispositiu, no podreu desbloquejar automàticament les dades xifrades després d'un restabliment de contrasenya."
+      ],
+      "Disconnected": [
+        "S'ha desconnectat"
       ],
       "Discount": [
         "Descompte"
@@ -12384,6 +12393,9 @@
       ],
       "Merged": [
         "Combinats"
+      ],
+      "Messages from other ${ BRAND_NAME } users also lose end-to-end encryption.": [
+        "Els missatges d'altres usuaris de ${ BRAND_NAME } també perden el xifratge d'extrem a extrem."
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Els missatges a la carpeta d'Enviats o Esborranys continuaran apareixent a aquestes carpetes, fins i tot si els moveu a una altra carpeta."
@@ -14022,6 +14034,12 @@
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Quan les notificacions estiguin activades, us enviarem una alerta a l'adreça de correu electrònic de recuperació si teniu missatges nous al compte de ${ MAIL_APP_NAME }."
       ],
+      "When sign-in is restricted, only ${ primaryEmailElement } and your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Quan l'inici de sessió està restringit, només ${ primaryEmailElement } i el vostre nom d'usuari ${ usernameElement } es poden utilitzar per iniciar sessió. Les vostres altres adreces no es poden tornar a enllaçar al vostre compte, fins i tot si algú les coneix."
+      ],
+      "When sign-in is restricted, only your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Quan l'inici de sessió està restringit, només el vostre nom d'usuari ${ usernameElement } es pot utilitzar per iniciar sessió. Les vostres altres adreces no es poden tornar a enllaçar al vostre compte, fins i tot si algú les coneix."
+      ],
       "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
         "Quan cancel·leu la vostra subscripció de pagament actual, el saldo de la vostra subscripció es retornarà com a crèdits al compte i se us canviarà al pla ${ BRAND_NAME } ${ PLANS.FREE }."
       ],
@@ -14330,6 +14348,9 @@
       ],
       "You will regain complete or partial access to your encrypted data.": [
         "Recuperareu l'accés complet o parcial a les vostres dades xifrades."
+      ],
+      "You won't be able to send or receive as ${ email } in ${ BRAND_NAME } anymore.": [
+        "No podreu enviar ni rebre missatges com a ${ email } a ${ BRAND_NAME } mai més."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "No se us cobrarà res si cancel·leu abans del ${ trialEndsOnFormatted }."
@@ -15628,6 +15649,9 @@
       "Confirm second password": [
         "Confirmeu la segona contrasenya"
       ],
+      "Connect ${ item.Email }": [
+        "Connectar ${ item.Email }"
+      ],
       "Contacts": [
         "Contactes"
       ],
@@ -16487,6 +16511,12 @@
       "Reserved email address": [
         "Adreça de correu electrònic reservada"
       ],
+      "Restrict sign-in to primary email address": [
+        "Restringiu l'inici de sessió a l'adreça de correu electrònic primària"
+      ],
+      "Restrict sign-in to username": [
+        "Restringiu l'inici de sessió al nom d'usuari"
+      ],
       "Reveal password": [
         "Mostra la contrasenya"
       ],
@@ -16638,8 +16668,8 @@
       "Start weekday": [
         "Primer dia de la setmana"
       ],
-      "Start with your most recent messages": [
-        "Comenceu pels vostres missatges més recents"
+      "Start with your most recent": [
+        "Comenceu amb el més recent"
       ],
       "Starts with": [
         "Comença amb"
@@ -26132,6 +26162,9 @@
       "Address and key verification": [
         "Verificació de l'adreça i de la clau"
       ],
+      "Addresses": [
+        "Adreces"
+      ],
       "Advanced configuration": [
         "Configuració avançada"
       ],
@@ -26375,8 +26408,8 @@
       "Connect your custom domain": [
         "Connecteu el vostre domini personalitzat"
       ],
-      "Connected addresses": [
-        "Adreces connectades"
+      "Connect your Gmail": [
+        "Connecteu el vostre Gmail"
       ],
       "Connected emails": [
         "Correus electrònics connectats"
@@ -26640,6 +26673,9 @@
       ],
       "Discard changes?": [
         "Voleu descartar els canvis?"
+      ],
+      "Disconnect this address?": [
+        "Voleu desconnectar aquesta adreça?"
       ],
       "Disconnected from Gmail": [
         "S'ha desconnectat de Gmail"
@@ -27647,6 +27683,9 @@
       ],
       "Sign out on all devices?": [
         "Voleu tancar la sessió en tots els dispositius?"
+      ],
+      "Sign-in protection": [
+        "Protecció d'inici de sessió"
       ],
       "Signed in successfully!": [
         "Heu iniciat la sessió."

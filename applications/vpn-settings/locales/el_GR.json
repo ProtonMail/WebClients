@@ -2233,9 +2233,6 @@
       ],
       "Protection for two in a single plan": [
         "Προστασία για δύο άτομα σε ένα ενιαίο πλάνο"
-      ],
-      "Save big with a yearly plan": [
-        "Κερδίστε σημαντικά με ένα ετήσιο πλάνο"
       ]
     },
     "Billing cycle": {
@@ -4660,6 +4657,9 @@
       "Add 1 more": [
         "Προσθέστε 1 ακόμα"
       ],
+      "Add contact": [
+        "Προσθήκη επαφής"
+      ],
       "Add emergency contact": [
         "Προσθήκη επαφής έκτακτης ανάγκης"
       ],
@@ -4822,6 +4822,9 @@
       ],
       "Recover data": [
         "Ανάκτηση δεδομένων"
+      ],
+      "Recover your data before adding a new contact.": [
+        "Ανακτήστε τα δεδομένα σας πριν προσθέσετε μια νέα επαφή."
       ],
       "Recovery approved": [
         "Η ανάκτηση εγκρίθηκε"
@@ -4999,6 +5002,9 @@
       "You'll receive access to their account in **${ days } day**, or when they approve your request.": [
         "Θα λάβετε πρόσβαση στον λογαριασμό τους σε **${ days } ημέρα**, ή όταν εγκρίνουν το αίτημά σας.",
         "Θα αποκτήσετε πρόσβαση στον λογαριασμό τους σε **${ days } ημέρες**, ή όταν εγκρίνουν το αίτημά σας."
+      ],
+      "Your data is still locked from a password reset. A contact added now won't be able to restore it.": [
+        "Τα δεδομένα σας παραμένουν κλειδωμένα λόγω επαναφοράς κωδικού πρόσβασης. Μια επαφή που θα προστεθεί τώρα δε θα μπορέσει να τα επαναφέρει."
       ],
       "Your recovery contact has helped you recover data.": [
         "Η επαφή ανάκτησής σας, σας βοήθησε να ανακτήσετε τα δεδομένα."
@@ -14592,6 +14598,9 @@
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Η μέθοδος πληρωμής απαιτείται για την ενεργοποίηση της συνδρομής μετά τη λήξη της δοκιμαστικής περιόδου."
       ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Η αλλαγή προγράμματος δεν είναι δυνατή για τους εξής λόγους:"
+      ],
       "Please close extra wallet accounts before changing your plan.": [
         "Παρακαλούμε κλείστε τους επιπλέον λογαριασμούς πορτοφολιού πριν αλλάξετε το πλάνο σας."
       ],
@@ -14603,6 +14612,9 @@
       ],
       "Processing payment": [
         "Επεξεργασία πληρωμής"
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Οι θέσεις στο Proton Meet πρέπει να αντιστοιχούν στον αριθμό των μελών."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Η τιμολόγηση ανανέωσης υπόκειται σε αλλαγές σύμφωνα με τους ${ termsAndConditionsLink }."
@@ -14682,8 +14694,14 @@
       "This payment method will become your new default for all future renewals.": [
         "Αυτή η μέθοδος πληρωμής θα γίνει η νέα σας προεπιλογή για όλες τις μελλοντικές ανανεώσεις."
       ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Αυτό το πρόγραμμα δεν υποστηρίζει τις διαχειριζόμενες λειτουργίες στον λογαριασμό σας."
+      ],
       "This plan doesn’t support the members on your account.": [
         "Αυτό το πλάνο δεν υποστηρίζει τα μέλη στον λογαριασμό σας."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Αυτή η συνδρομή δεν μπορεί να ολοκληρωθεί αυτή τη στιγμή. Παρακαλούμε δοκιμάστε ξανά."
       ],
       "Timeout exceeded": [
         "Υπέρβαση χρονικού ορίου"

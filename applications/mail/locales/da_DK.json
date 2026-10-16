@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
+      "${ LUMO_SHORT_APP_NAME } actions": [
+        "${ LUMO_SHORT_APP_NAME }-handlinger"
+      ],
       "A to Z": [
         "A til Z"
       ],
@@ -467,6 +470,9 @@
       ],
       "Display navigation bar": [
         "Fremvis navigationsbjælke"
+      ],
+      "Dock to side panel": [
+        "Fastgør til sidepanel"
       ],
       "Don't show this offer again": [
         "Vis ikke dette tilbud igen"
@@ -2245,9 +2251,6 @@
       ],
       "Protection for two in a single plan": [
         "Beskyttelse til to i et enkelt abonnement"
-      ],
-      "Save big with a yearly plan": [
-        "Spar stort med et årligt abonnement"
       ]
     },
     "Billing cycle option": {
@@ -8234,8 +8237,7 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede",
-        "Indsæt billeder"
+        "Indsæt billede"
       ],
       "Insert link": [
         "Indsæt link"
