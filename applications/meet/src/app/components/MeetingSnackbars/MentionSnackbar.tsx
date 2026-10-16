@@ -3,12 +3,10 @@ import { c } from 'ttag';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectParticipantName } from '@proton/meet/store/slices/participants/participantsSlice';
 import type { MeetChatMessage } from '@proton/meet/types/types';
-import { splitMessageIntoMentionSegments } from '@proton/meet/utils/mentions/mentionToken';
 
 import { CloseButton } from '../../atoms/CloseButton/CloseButton';
 import { useParticipantDisplayColors } from '../../hooks/useParticipantDisplayColors';
-import { addSpecialCharactersForMessageDisplay } from '../../utils/addSpecialCharactersForMessageDisplay';
-import { Mention } from '../Mention/Mention';
+import { MessageSegments } from '../MessageSegments/MessageSegments';
 import { MeetingSnackbarCard } from './MeetingSnackbarCard';
 import { MeetingSnackbarContent } from './MeetingSnackbarContent';
 
@@ -24,8 +22,6 @@ export const MentionSnackbar = ({ message, onClose, onOpen }: Props) => {
     const {
         participantColors: { profileTextColor },
     } = useParticipantDisplayColors(message.identity);
-
-    const segments = splitMessageIntoMentionSegments(addSpecialCharactersForMessageDisplay(message.message));
 
     const senderNameNode = (
         <bdi key="sender-name" className={profileTextColor}>
@@ -48,13 +44,7 @@ export const MentionSnackbar = ({ message, onClose, onOpen }: Props) => {
                     // translator: full sentence is "<participant name> mentioned you"
                     c('Info').jt`${senderNameNode} mentioned you`
                 }
-                body={segments.map((segment, index) =>
-                    segment.type === 'mention' ? (
-                        <Mention key={`mention-${index}`} id={segment.id} />
-                    ) : (
-                        <span key={`text-${index}`}>{segment.text}</span>
-                    )
-                )}
+                body={<MessageSegments message={message.message} />}
             />
 
             <CloseButton onClose={onClose} className="ml-auto" />
