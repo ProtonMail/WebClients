@@ -109,13 +109,37 @@ const withToolTelemetry =
     };
 
 /**
+ * A rejected argument check is a failed run too: before `checkParams` existed, the same rejections were
+ * thrown by the handler and counted there.
+ */
+const withCheckTelemetry = (definition: ToolDefinition, telemetry: LumoMailConfigTelemetry): ToolDefinition => {
+    const { name, kind, checkParams } = definition;
+    if (!checkParams) {
+        return definition;
+    }
+
+    return {
+        ...definition,
+        checkParams: (params) => {
+            try {
+                checkParams(params);
+            } catch (error) {
+                telemetry.toolFailed(name, kind);
+                throw error;
+            }
+        },
+    };
+};
+
+/**
  * Assemble the {@link LumoAgentConfig} handed to `useLumoAgent`, binding every handler to the Mail
  * store via `deps`. Called ONCE from the provider (deps read current values through getters/methods, so
  * the built config stays referentially stable across renders — the hook rebuilds its executor only when
  * the config identity changes).
  */
 export const buildLumoMailConfig = (deps: MailToolDeps, telemetry: LumoMailConfigTelemetry): LumoAgentConfig => {
-    const definitions: ToolDefinition[] = MODULES.map(({ definition, createGuide }) => {
+    const definitions: ToolDefinition[] = MODULES.map(({ definition: rawDefinition, createGuide }) => {
+        const definition = withCheckTelemetry(rawDefinition, telemetry);
         if (!createGuide) {
             return definition;
         }
