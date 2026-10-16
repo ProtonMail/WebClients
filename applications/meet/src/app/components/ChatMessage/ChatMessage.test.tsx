@@ -1,7 +1,7 @@
 import { Provider } from 'react-redux';
 
 import { configureStore } from '@reduxjs/toolkit';
-import { act, cleanup, render, screen } from '@testing-library/react';
+import { act, cleanup, render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import type { LexicalEditor } from 'lexical';
 import { $getRoot, $getSelection, $isRangeSelection, UNDO_COMMAND } from 'lexical';
@@ -9,7 +9,7 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import type { NotificationsManager } from '@proton/app-context/notifications/manager';
 import { NotificationsContext } from '@proton/app-context/notifications/notificationsContext';
-import { chatAndReactionsReducer } from '@proton/meet/store/slices/chatAndReactionsSlice';
+import { chatAndReactionsReducer, setDraftMessage } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import {
     mergeParticipantDecryptedNameMap,
     participantsReducer,
@@ -30,6 +30,42 @@ import { ChatMessage } from './ChatMessage';
 
 const unleashMocks = vi.hoisted(() => ({ useFlag: vi.fn(() => true) }));
 vi.mock('@proton/unleash/useFlag', () => unleashMocks);
+
+interface EmojiMartSelection {
+    id: string;
+    name: string;
+    native?: string;
+    keywords: string[];
+    shortcodes: string;
+}
+
+interface EmojiMartPickerProps {
+    onEmojiSelect: (selection: EmojiMartSelection) => void;
+}
+
+const emojiMartMocks = vi.hoisted(() => ({ latestPickerProps: null as EmojiMartPickerProps | null }));
+vi.mock('emoji-mart', () => ({
+    Picker: class {
+        constructor(props: EmojiMartPickerProps) {
+            emojiMartMocks.latestPickerProps = props;
+        }
+    },
+}));
+
+const CHEFS_KISS_SELECTION: EmojiMartSelection = {
+    id: 'lumo-chefs-kiss',
+    name: "Chef's kiss",
+    keywords: ['chefs', 'kiss'],
+    shortcodes: ':lumo-chefs-kiss:',
+};
+
+const FIRE_SELECTION: EmojiMartSelection = {
+    id: 'fire',
+    name: 'Fire',
+    native: '🔥',
+    keywords: ['hot', 'cook', 'flame'],
+    shortcodes: ':fire:',
+};
 
 const LOCAL_IDENTITY = 'aaaaaaaa-1111-2222-3333-444444444444';
 const ALICE_IDENTITY = 'bbbbbbbb-1111-2222-3333-444444444444';
@@ -661,6 +697,102 @@ describe('ChatMessage', () => {
 
             expect(getValue().startsWith(`${ALICE_TOKEN} `)).toBe(true);
             expect(getValue()).toHaveLength(CHAT_MESSAGE_MAX_LENGTH);
+        });
+    });
+
+    describe('Lumo emojis', () => {
+        const placeCaret = async (offset: number) => {
+            await act(async () => {
+                getEditor().update(() => {
+                    $getRoot().getAllTextNodes()[0].select(offset, offset);
+                });
+            });
+        };
+
+        const pickEmoji = async (selection: EmojiMartSelection) => {
+            const user = userEvent.setup();
+
+            await user.click(screen.getByRole('button', { name: 'Insert emoji' }));
+
+            await act(async () => {
+                window.getSelection()?.collapse(screen.getByRole('dialog', { name: 'Emoji picker' }), 0);
+            });
+
+            await act(async () => {
+                emojiMartMocks.latestPickerProps?.onEmojiSelect(selection);
+            });
+        };
+
+        it('shows a typed token as its image and keeps the token as the value', async () => {
+            renderComposer();
+
+            await type('[lumo_emoji:rocket]');
+
+            expect(within(getComposer()).getByRole('img', { name: 'Rocket' })).toBeInTheDocument();
+            expect(getComposer().textContent).toBe('');
+            expect(getValue()).toBe('[lumo_emoji:rocket]');
+        });
+
+        it('mounts a stored draft with its token shown as an image', async () => {
+            const store = createMockStore();
+            store.dispatch(setDraftMessage('see [lumo_emoji:rocket]'));
+
+            renderComposer(vi.fn(), store);
+
+            expect(await within(getComposer()).findByRole('img', { name: 'Rocket' })).toBeInTheDocument();
+            expect(getComposer().textContent).toBe('see ');
+            expect(getValue()).toBe('see [lumo_emoji:rocket]');
+        });
+
+        it('restores the image when sending fails', async () => {
+            const onMessageSend = renderComposer(vi.fn().mockResolvedValue(false));
+            const user = userEvent.setup();
+
+            await type('[lumo_emoji:rocket]');
+            await user.keyboard('{Enter}');
+
+            await act(async () => {});
+
+            expect(onMessageSend).toHaveBeenCalledWith('[lumo_emoji:rocket]');
+            expect(within(getComposer()).getByRole('img', { name: 'Rocket' })).toBeInTheDocument();
+            expect(getValue()).toBe('[lumo_emoji:rocket]');
+        });
+
+        it('inserts a picked emoji at the caret', async () => {
+            renderComposer();
+
+            await type('hello');
+            await placeCaret(2);
+            await pickEmoji(FIRE_SELECTION);
+
+            expect(getValue()).toBe('he🔥llo');
+        });
+
+        it('inserts a picked Lumo emoji at the caret', async () => {
+            renderComposer();
+
+            await type('hello');
+            await placeCaret(2);
+            await pickEmoji(CHEFS_KISS_SELECTION);
+
+            expect(getValue()).toBe('he[lumo_emoji:chefs-kiss]llo');
+            expect(within(getComposer()).getByRole('img', { name: "Chef's kiss" })).toBeInTheDocument();
+            expect(screen.queryByRole('dialog', { name: 'Emoji picker' })).not.toBeInTheDocument();
+        });
+
+        it('refuses an emoji that would not fit and says why', async () => {
+            renderComposer();
+
+            const filler = 'a'.repeat(CHAT_MESSAGE_MAX_LENGTH - 5);
+
+            await type(filler);
+            await pickEmoji(CHEFS_KISS_SELECTION);
+
+            expect(getValue()).toBe(filler);
+            expect(createNotification).toHaveBeenCalledWith(
+                expect.objectContaining({ key: 'chat-emoji-too-long', type: 'error' })
+            );
+            expect(screen.queryByRole('dialog', { name: 'Emoji picker' })).not.toBeInTheDocument();
         });
     });
 });

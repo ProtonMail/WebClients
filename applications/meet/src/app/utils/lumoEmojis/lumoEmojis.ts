@@ -86,6 +86,8 @@ export const getLumoEmojiSrc = (id: LumoEmojiId) => LUMO_EMOJI_DEFINITIONS[id].s
 
 export const getLumoEmojiName = (id: LumoEmojiId) => LUMO_EMOJI_DEFINITIONS[id].getName();
 
+export const getLumoEmojiToken = (id: LumoEmojiId) => `[lumo_emoji:${id}]`;
+
 export const splitTextIntoLumoEmojiSegments = (text: string): LumoEmojiSegment[] => {
     const segments: LumoEmojiSegment[] = [];
 
