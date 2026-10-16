@@ -61,9 +61,6 @@
       "A participant reacted with ${ emoji }": [
         "一名參與者以 ${ emoji } 做出反應"
       ],
-      "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
-        "由於網路限制，已透過 TURN 中繼模式連線。這可能會增加延遲並影響通話品質。"
-      ],
       "Connection lost. Reconnecting…": [
         "連線中斷。正在重新連線…"
       ],
@@ -769,11 +766,6 @@
     "Badge": {
       "Active": [
         "生效"
-      ]
-    },
-    "Banner": {
-      "Connected via TURN relay mode due to your network restrictions. This may increase latency and affect call quality.": [
-        "由於您的網路限制，已透過 TURN 轉送模式連線。這可能會增加延遲並影響通話品質。"
       ]
     },
     "Bug category": {

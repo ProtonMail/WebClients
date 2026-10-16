@@ -75,7 +75,7 @@
         "Tanca"
       ],
       "Close outline": [
-        "Tancar l'esquema"
+        "Tanca l'esquema"
       ],
       "Code block": [
         "Bloc de codi"
@@ -136,6 +136,9 @@
       ],
       "Insert comment": [
         "Insereix un comentari"
+      ],
+      "Insert emoji": [
+        "Insereix un emoji"
       ],
       "Insert image": [
         "Insereix una imatge"
@@ -336,15 +339,44 @@
         "Utilitzeu el menú desplegable de dalt per canviar i començar a fer suggeriments."
       ]
     },
+    "Emoji category": {
+      "Activities": [
+        "Activitats"
+      ],
+      "Animals and nature": [
+        "Animals i natura"
+      ],
+      "Flags": [
+        "Banderes"
+      ],
+      "Food and drink": [
+        "Menjar i beure"
+      ],
+      "Objects": [
+        "Objectes"
+      ],
+      "Smileys and people": [
+        "Somriures i persones"
+      ],
+      "Symbols": [
+        "Símbols"
+      ],
+      "Travel and places": [
+        "Viatges i llocs"
+      ]
+    },
     "Error": {
       "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again. If the error persists, please open Version History from the menu options to attempt to restore your document to an earlier version.": [
-        "S'ha produït un error en carregar el document. Per evitar la corrupció del document, l'editor s'ha bloquejat. Torneu a carregar la pàgina i torneu-ho a provar. Si l'error continua, obriu l'historial de versions des de les opcions del menú per intentar restaurar el document a una versió anterior."
+        "S'ha produït un error en carregar el document. Per a evitar la corrupció del document, l'editor s'ha bloquejat. Torneu a carregar la pàgina i proveu de nou. Si l'error continua, obriu l'historial de versions des de les opcions del menú per a intentar restaurar el document a una versió anterior."
+      ],
+      "Could not load emoji. Close the picker and try again.": [
+        "No s'ha pogut carregar l'emoticona. Tanqueu el selector i torneu-ho a provar."
       ],
       "Failed to export document.": [
         "No s'ha pogut exportar el document."
       ],
       "Failed to import document due to unsupported file format.": [
-        "S'ha produït un error en importar el document per un format de fitxer no compatible."
+        "No s'ha pogut importar el document perquè el format del fitxer no és compatible."
       ],
       "Failed to import HTML due to unknown error.": [
         "No s'ha pogut importar el codi HTML a causa d'un error desconegut."
@@ -371,7 +403,7 @@
         "Aquest full de càlcul és incompatible amb la versió actual del client. Torneu a carregar el client. Si l'error persisteix, contacteu amb el servei de suport."
       ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
-        "No s'ha pogut convertir el document Word. Està protegit per contrasenya? Si és així, esborreu la contrasenya i torneu a provar-ho."
+        "No s'ha pogut convertir el document de Word. Està protegit per contrasenya? Si és així, esborreu la contrasenya i torneu a provar-ho."
       ]
     },
     "Error message": {
@@ -451,6 +483,9 @@
       "Loading": [
         "Carregant"
       ],
+      "Loading emoji…": [
+        "S'estan carregant les emoticones…"
+      ],
       "Loading spreadsheet content...": [
         "S'està carregant el contingut del full de càlcul"
       ],
@@ -463,11 +498,14 @@
       "No comments": [
         "Sense comentaris"
       ],
+      "No emoji found": [
+        "No s'ha trobat cap emoticona"
+      ],
       "No title": [
         "Sense títol"
       ],
       "Open the link to download the image, then use \"Insert image\" to add it to this document.": [
-        "Obriu l'enllaç per baixar la imatge i a continuació utilitzeu \"Inserir imatge\" per afegir-la a aquest document."
+        "Obriu l'enllaç per a descarregar la imatge i, a continuació, utilitzeu \"Insereix una imatge\" per a afegir-la a aquest document."
       ],
       "Remote image blocked": [
         "S'ha bloquejat la imatge remota"
@@ -485,10 +523,10 @@
         "El contingut que esteu intentant enganxar és massa gran per enganxar-lo d'una vegada. Torneu-ho a intentar enganxant trossos més petits cada vegada."
       ],
       "The language you're using isn’t currently supported in suggestion mode. Please switch to edit mode or change the language.": [
-        "L'idioma que utilitzeu actualment no és encara compatible amb el mode de suggeriments. Canvieu al mode d'edició o canvieu l'idioma."
+        "L'idioma que utilitzeu actualment no és compatible amb el mode de suggeriments. Canvieu al mode d'edició o trieu un altre idioma."
       ],
       "This paste was blocked because the text contains invalid characters.": [
-        "Aquest text per enganxar s'ha bloquejat perquè conté caràcters no vàlids."
+        "S'ha blocat l'acció d'enganxar perquè el text conté caràcters no vàlids."
       ],
       "Viewing": [
         "Visualització"
@@ -552,6 +590,12 @@
       "Duplicate table row": [
         "Duplica una fila a la taula"
       ],
+      "Emoji": [
+        "Emoticona"
+      ],
+      "Emoji suggestions": [
+        "Suggeriment d'emoticones"
+      ],
       "Format": [
         "Format"
       ],
@@ -591,14 +635,23 @@
       "Page break": [
         "Salt de pàgina"
       ],
+      "Recent": [
+        "Recents"
+      ],
       "Replace": [
         "Reemplaça"
       ],
       "Replace link": [
         "Substitueix l'enllaç"
       ],
+      "Search emoji": [
+        "Cercar una emoticona"
+      ],
+      "Search results": [
+        "Resultat de la cerca"
+      ],
       "Text and highlight color": [
-        "Color del text i de ressaltat"
+        "Color del text i del ressaltat"
       ],
       "with \"${ replaceWith }\"": [
         "per «${ replaceWith }»"
@@ -634,7 +687,7 @@
         "Colors recents"
       ],
       "Reset": [
-        "Restablir-ho"
+        "Restableix"
       ],
       "Standard colors": [
         "Colors estàndard"
@@ -650,7 +703,7 @@
     },
     "sheets_2025:Range selector": {
       "Range selector": [
-        "Selector de rang"
+        "Selector d'interval"
       ]
     },
     "sheets_2025:Range selector menu": {
@@ -672,7 +725,7 @@
         "Canviar el color"
       ],
       "Delete": [
-        "Eliminar-ho"
+        "Elimina"
       ],
       "Duplicate": [
         "Duplicar-ho"
@@ -681,7 +734,7 @@
         "Amagar el full"
       ],
       "Move left": [
-        "Ho desplaça a l'esquerra"
+        "Mou a l'esquerra"
       ],
       "Move right": [
         "Moure-ho a la dreta"
@@ -767,7 +820,7 @@
         "Centrar-ho"
       ],
       "Clip": [
-        "Retallar"
+        "Retalla"
       ],
       "Currency": [
         "Moneda"
@@ -782,7 +835,7 @@
         "Data"
       ],
       "Date formats display date and time serial numbers as date values.": [
-        "Els formats de data mostren els números consecutius de data i hora com a valors de data."
+        "Els formats de data mostren els números de sèrie de data i hora com a valors de data."
       ],
       "Fraction": [
         "Fracció"
@@ -835,10 +888,10 @@
         "Mitjana"
       ],
       "Count": [
-        "Comptar"
+        "Quantitat"
       ],
       "Max": [
-        "Màxim"
+        "Màx."
       ],
       "Median": [
         "Mediana"
@@ -881,13 +934,13 @@
         "Línia suau"
       ],
       "Stacked column": [
-        "Columna apilada"
+        "Columnes apilades"
       ],
       "Stacked line": [
         "Línia apilada"
       ],
       "Sunburst": [
-        "Sunburst"
+        "Projecció solar"
       ],
       "Treemap": [
         "Mapa d'arbre"
@@ -1000,7 +1053,7 @@
         "El mes passat"
       ],
       "Last quarter": [
-        "Darrer trimestre"
+        "El darrer trimestre"
       ],
       "Last week": [
         "La setmana passada"
@@ -1030,13 +1083,13 @@
         "Mes següent"
       ],
       "Next quarter": [
-        "El trimestre vinent"
+        "El trimestre següent"
       ],
       "Next week": [
-        "Setmana entrant"
+        "Setmana següent"
       ],
       "Next year": [
-        "Any vinent"
+        "Any següent"
       ],
       "No errors": [
         "Sense errors"
@@ -1054,16 +1107,16 @@
         "octubre"
       ],
       "Quarter 1": [
-        "Trimestre 1"
+        "1r trimestre"
       ],
       "Quarter 2": [
-        "Trimestre 2"
+        "2n trimestre"
       ],
       "Quarter 3": [
-        "3r Trimestre"
+        "3r trimestre"
       ],
       "Quarter 4": [
-        "Trimestre 4"
+        "4t trimestre"
       ],
       "September": [
         "setembre"
@@ -1155,7 +1208,7 @@
         "Convertir a interval"
       ],
       "Convert to table": [
-        "Convertir a taula"
+        "Converteix en una taula"
       ],
       "Copy": [
         "Copiar-ho"
@@ -1170,7 +1223,7 @@
         "Validació de dades"
       ],
       "Define named range": [
-        "Definir un interval amb nom"
+        "Defineix un interval amb nom"
       ],
       "Delete": [
         "Eliminar"
@@ -1197,7 +1250,7 @@
         "Editar la taula"
       ],
       "Filter": [
-        "Filtrar-ho"
+        "Filtra"
       ],
       "Formatting only": [
         "Només el format"
@@ -1218,10 +1271,10 @@
         "Amaga la fila"
       ],
       "Insert cells and shift cells down": [
-        "Insereix cel·les i les desplaça cap avall"
+        "Insereix cel·les i desplaça les cel·les cap avall"
       ],
       "Insert cells and shift cells right": [
-        "Inserir cel·les i desplaçar-les cap a la dreta"
+        "Insereix cel·les i desplaça les cel·les cap a la dreta"
       ],
       "Insert link": [
         "Inserir un enllaç"
@@ -1233,7 +1286,7 @@
         "Inserir una columna a l'esquerra"
       ],
       "Insert table column to the right": [
-        "Inserir la columna a la dreta"
+        "Insereix una columna a la dreta"
       ],
       "Insert table row": [
         "Inserir una fila a la taula"
@@ -1245,7 +1298,7 @@
         "Més accions de cel·la"
       ],
       "Paste": [
-        "Enganxar-ho"
+        "Enganxa"
       ],
       "Paste special": [
         "Enganxament especial"
@@ -1299,7 +1352,7 @@
         "Descongelar les files"
       ],
       "Values only": [
-        "Només valors"
+        "Només els valors"
       ]
     },
     "sheets_2025:Spreadsheet context menu (columns/rows)": {
@@ -1318,7 +1371,7 @@
         "a sota"
       ],
       "Insert": [
-        "Inserir"
+        "Insereix"
       ],
       "left": [
         "esquerra"
@@ -1332,7 +1385,7 @@
         "Aplicar"
       ],
       "Cancel": [
-        "Cancel·lar"
+        "Cancel·la"
       ],
       "Custom date and time formats": [
         "Formats de data i hora personalitzats"
@@ -1485,10 +1538,10 @@
         "Esteu segur que voleu eliminar \"${ sheetName }\"?"
       ],
       "Cancel": [
-        "Cancel·lar-ho"
+        "Cancel·la"
       ],
       "Delete": [
-        "Eliminar-ho"
+        "Elimina"
       ],
       "Delete sheet": [
         "Eliminar el full"
@@ -1496,7 +1549,7 @@
     },
     "sheets_2025:Spreadsheet editing disabled dialog": {
       "Mobile Editing Coming Soon": [
-        "L'edició al mòbil estarà disponible aviat"
+        "L'edició en dispositius mòbils estarà disponible aviat"
       ],
       "Screen too small for editing": [
         "La pantalla és massa petita per editar"
@@ -1510,7 +1563,7 @@
     },
     "sheets_2025:Spreadsheet editingDisabledButton": {
       "Edit": [
-        "Editar-ho"
+        "Edita"
       ]
     },
     "sheets_2025:Spreadsheet editor": {
@@ -1526,7 +1579,7 @@
     },
     "sheets_2025:Spreadsheet editor cell merge options": {
       "Merge all": [
-        "Fusionar-ho tot"
+        "Fusiona-ho tot"
       ],
       "Merge cells": [
         "Fusionar les cel·les"
@@ -1543,7 +1596,7 @@
     },
     "sheets_2025:Spreadsheet editor menubar data menu": {
       "Create a filter": [
-        "Crear un filtre"
+        "Crea un filtre"
       ],
       "Data validation": [
         "Validació de dades"
@@ -1555,7 +1608,7 @@
         "Esborrar el filtre"
       ],
       "Sort sheet": [
-        "Ordenar el full"
+        "Ordena el full"
       ],
       "Unlock range": [
         "Desbloquejar l'interval"
@@ -1572,7 +1625,7 @@
         "columna ${ columnLetter }"
       ],
       "Sort sheet by": [
-        "Ordenar el full per"
+        "Ordena el full per"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar edit menu": {
@@ -1580,7 +1633,7 @@
         "Copia"
       ],
       "Cut": [
-        "Retallar"
+        "Retalla"
       ],
       "Find": [
         "Cercar"
@@ -1601,13 +1654,13 @@
         "Enganxament especial"
       ],
       "Redo": [
-        "Refer-ho"
+        "Refés"
       ],
       "Transposed": [
-        "Transposada"
+        "Transposat"
       ],
       "Undo": [
-        "Desfer-ho"
+        "Desfés"
       ],
       "Values only": [
         "Només valors"
@@ -1648,7 +1701,7 @@
         "Crea un full de càlcul"
       ],
       "Open Proton Drive": [
-        "Obrir Proton Drive"
+        "Obre Proton Drive"
       ],
       "OpenDocument Spreadsheet (.ods) (Beta)": [
         "Full de càlcul d'OpenDocument (.ods) (Beta)"
@@ -1663,13 +1716,13 @@
         "Preferències"
       ],
       "Tab Separated Values (.tsv)": [
-        "Valors separats per tabulador (.tsv)"
+        "Valors separats per tabulacions (.tsv)"
       ],
       "Toggle debug mode": [
         "Commuta el mode de depuració"
       ],
       "View recent spreadsheets": [
-        "Visualitza fulls de càlcul recents"
+        "Mostra fulls de càlcul recents"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar format menu": {
@@ -1704,7 +1757,7 @@
         "Número"
       ],
       "Strikethrough": [
-        "Vora-ratllat"
+        "Ratllat"
       ],
       "Table formatting": [
         "Format de la taula"
@@ -1716,7 +1769,7 @@
         "Tema"
       ],
       "Underline": [
-        "Subratllat"
+        "Subratlla"
       ],
       "Wrapping": [
         "Ajustament"
@@ -1744,13 +1797,13 @@
     },
     "sheets_2025:Spreadsheet editor menubar format menu (wrapping)": {
       "Clip": [
-        "Retalleu"
+        "Retalla"
       ],
       "Overflow": [
         "Sobreeiximent"
       ],
       "Wrap": [
-        "Ajusteu"
+        "Ajusta"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar insert menu": {
@@ -1810,7 +1863,7 @@
         "a sota"
       ],
       "Insert": [
-        "Inserir"
+        "Insereix"
       ],
       "left": [
         "esquerra"
@@ -1853,7 +1906,7 @@
         "Mostra"
       ],
       "Zoom": [
-        "Ampliació"
+        "Zoom"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar view menu (freeze submenu)": {
@@ -1874,7 +1927,7 @@
     },
     "sheets_2025:Spreadsheet editor number formats menu": {
       "$ US Dollar": [
-        "$ Dòlar USA"
+        "$ Dòlar EUA"
       ],
       "Accounting": [
         "Comptabilitat"
@@ -1928,7 +1981,7 @@
         "Text sense format"
       ],
       "Scientific": [
-        "Científica"
+        "Científic"
       ],
       "Time": [
         "Hora"
@@ -1951,13 +2004,13 @@
         "${ current } de ${ total }"
       ],
       "Close": [
-        "Tancar-ho"
+        "Tanca"
       ],
       "Go to next": [
         "Anar al següent"
       ],
       "Go to previous": [
-        "Anar a l'anterior"
+        "Ves a l'anterior"
       ]
     },
     "sheets_2025:Spreadsheet editor spreadsheet settings dialog": {
@@ -1971,7 +2024,7 @@
         "Configuració regional"
       ],
       "Save and reload": [
-        "Desar-ho i tornar-ho a carregar"
+        "Desa i torna a carregar"
       ],
       "Settings for this spreadsheet": [
         "Preferències d'aquest full de càlcul"
@@ -1982,13 +2035,13 @@
     },
     "sheets_2025:Spreadsheet editor toolbar": {
       "Apply border": [
-        "Aplicar la vora"
+        "Aplica la vora"
       ],
       "Apply fill color": [
         "Aplicar el color d'emplenat"
       ],
       "Apply text color": [
-        "Aplicar el color del text"
+        "Aplica el color del text"
       ],
       "Bold": [
         "Negreta"
@@ -1997,7 +2050,7 @@
         "Vora"
       ],
       "Choose border": [
-        "Escolliu vora"
+        "Tria una vora"
       ],
       "Choose fill color": [
         "Escolliu color d'emplenat"
@@ -2018,7 +2071,7 @@
         "Reduir la mida de la lletra"
       ],
       "Default (${ defaultFont })": [
-        "(${ defaultFont }) per defecte"
+        "Per defecte (${ defaultFont })"
       ],
       "Fill color": [
         "Color de fons"
@@ -2072,7 +2125,7 @@
         "Més formats"
       ],
       "Paint format": [
-        "Format de pintura"
+        "Copia el format"
       ],
       "Redo": [
         "Refer-ho"
@@ -2090,13 +2143,13 @@
         "Color del text"
       ],
       "Text wrapping": [
-        "Ajust del text"
+        "Ajustament del text"
       ],
       "Underline": [
         "Subratllat"
       ],
       "Undo": [
-        "Desfer-ho"
+        "Desfés"
       ],
       "Unmerge cells": [
         "Desagrupar les cel·les"
@@ -2105,15 +2158,15 @@
         "Alineació vertical"
       ],
       "Zoom": [
-        "Ampliació"
+        "Zoom"
       ]
     },
     "sheets_2025:Spreadsheet filter menu": {
       "Apply": [
-        "Aplicar-ho"
+        "Aplica"
       ],
       "Cancel": [
-        "Cancel·lar-ho"
+        "Cancel·la"
       ],
       "Clear": [
         "Netejar"
@@ -2122,19 +2175,19 @@
         "Copia"
       ],
       "Delete table column": [
-        "Eliminar la columna de la taula"
+        "Elimina la columna de la taula"
       ],
       "Enter value": [
         "Introduir un valor"
       ],
       "Filter by condition": [
-        "Filtrar per condició"
+        "Filtra per condició"
       ],
       "Filter by value": [
         "Filtrar-ho per valor"
       ],
       "Insert 1 table column left": [
-        "Inserir 1 columna a l'esquerra"
+        "Insereix 1 columna a l'esquerra"
       ],
       "Insert 1 table column right": [
         "Inserir 1 columna a la dreta"
@@ -2143,7 +2196,7 @@
         "Enganxar-ho"
       ],
       "Select all": [
-        "Seleccionar-ho tot"
+        "Selecciona-ho tot"
       ],
       "Sort A → Z": [
         "Ordena A → Z"
@@ -2164,10 +2217,10 @@
     },
     "sheets_2025:Spreadsheet formulaBar": {
       "Edit": [
-        "Editar-ho"
+        "Edita"
       ],
       "Remove": [
-        "Esborrar-ho"
+        "Esborra"
       ],
       "View": [
         "Vista"
@@ -2183,7 +2236,7 @@
     },
     "sheets_2025:Spreadsheet insert link dialog": {
       "Apply": [
-        "Aplicar-ho"
+        "Aplica"
       ],
       "Cancel": [
         "Cancel·lar"
@@ -2192,7 +2245,7 @@
         "Inserir un enllaç"
       ],
       "Paste link": [
-        "Enganxar l'enllaç"
+        "Enganxa l'enllaç"
       ]
     },
     "sheets_2025:Spreadsheet link tooltip": {
@@ -2214,7 +2267,7 @@
     },
     "sheets_2025:Spreadsheet resize dimension dialog": {
       "Cancel": [
-        "Cancel·lar-ho"
+        "Cancel·la"
       ],
       "Default ${ size }": [
         "Per defecte ${ size }"
@@ -2223,7 +2276,7 @@
         "D'acord"
       ],
       "Resize column ${ title }": [
-        "Canviar la mida de la columna ${ title }"
+        "Canvia la mida de la columna ${ title }"
       ],
       "Resize row ${ title }": [
         "Canviar la mida de la fila ${ title }"
@@ -2232,7 +2285,7 @@
         "Especificar l'ample de la columna (px)"
       ],
       "Specify row height (px)": [
-        "Especificar l'alçada de la fila (px)"
+        "Especifica l'alçària de la fila (px)"
       ]
     },
     "sheets_2025:Spreadsheet sheet status bar": {
@@ -2246,7 +2299,7 @@
         "Personalitza la barra d'estat"
       ],
       "Max": [
-        "Màxim"
+        "Màx."
       ],
       "Min": [
         "Mínim"
@@ -2284,7 +2337,7 @@
         "Símbol de moneda"
       ],
       "Custom": [
-        "Personalitzar"
+        "Personalitzat"
       ],
       "Decimal places": [
         "Posicions decimals"
@@ -2299,7 +2352,7 @@
         "Mida de la lletra"
       ],
       "Format cells": [
-        "Formatar les cel·les"
+        "Formata les cel·les"
       ],
       "General": [
         "General"
@@ -2317,7 +2370,7 @@
         "Fusionar"
       ],
       "Merge all": [
-        "Fusionar-ho tot"
+        "Fusiona-ho tot"
       ],
       "Merge horizontally": [
         "Combinar horitzontalment"
@@ -2338,7 +2391,7 @@
         "Desar-ho"
       ],
       "Strikethrough": [
-        "Vora-ratllat"
+        "Ratllat"
       ],
       "Text control": [
         "Control del text"
@@ -2350,7 +2403,7 @@
         "Tipus"
       ],
       "Underline": [
-        "Subratllar"
+        "Subratlla"
       ],
       "Unmerge": [
         "Separar-les"
@@ -2403,7 +2456,7 @@
         "Desar-ho"
       ],
       "Select a range": [
-        "Seleccionar un interval"
+        "Selecciona un interval"
       ],
       "Series": [
         "Sèries"
@@ -2432,7 +2485,7 @@
     },
     "sheets_2025:Spreadsheet sidebar conditional format dialog": {
       "Add another range": [
-        "Afegir un altre interval"
+        "Afegeix un altre interval"
       ],
       "Add another rule": [
         "Afegir una altra regla"
@@ -2441,7 +2494,7 @@
         "Afegir una regla"
       ],
       "Apply to range": [
-        "Aplicar a l'interval"
+        "Aplica a l'interval"
       ],
       "Cancel": [
         "Cancel·lar-ho"
@@ -2462,7 +2515,7 @@
         "Eliminar la regla"
       ],
       "Enter a formula": [
-        "Introduir una fórmula"
+        "Introduïu una fórmula"
       ],
       "Enter value": [
         "Introduïu un valor"
@@ -2498,7 +2551,7 @@
         "Previsualització"
       ],
       "Save": [
-        "Desar-ho"
+        "Desa"
       ],
       "Select a range": [
         "Seleccionar un interval"
@@ -2509,7 +2562,7 @@
     },
     "sheets_2025:Spreadsheet sidebar custom currency format dialog": {
       "Apply": [
-        "Aplicar-ho"
+        "Aplica"
       ],
       "Apply to create a custom currency": [
         "Aplica-ho per a crear una moneda personalitzada"
@@ -2526,10 +2579,10 @@
     },
     "sheets_2025:Spreadsheet sidebar custom number format dialog": {
       "Apply": [
-        "Aplicar-ho"
+        "Aplica"
       ],
       "Apply to create a custom number format": [
-        "Apliqueu-ho per crear un format numèric personalitzat"
+        "Aplica per a crear un format numèric personalitzat"
       ],
       "Cancel": [
         "Cancel·lar-ho"
@@ -2573,10 +2626,10 @@
         "Permetre espais en blanc"
       ],
       "Apply to range": [
-        "Aplicar-ho a l'interval"
+        "Aplica a l'interval"
       ],
       "Cancel": [
-        "Cancel·lar-ho"
+        "Cancel·la"
       ],
       "Data validation": [
         "Validació de dades"
@@ -2588,7 +2641,7 @@
         "Introduïu una fórmula"
       ],
       "Enter value": [
-        "Introduir un valor"
+        "Introduïu un valor"
       ],
       "Formula": [
         "Fórmula"
@@ -2597,7 +2650,7 @@
         "Desar-ho"
       ],
       "Select a range": [
-        "Seleccionar un interval"
+        "Selecciona un interval"
       ],
       "Validation rules": [
         "Regles de validació"
@@ -2619,7 +2672,7 @@
         "Aplica-ho a l'interval"
       ],
       "Cancel": [
-        "Cancel·lar-ho"
+        "Cancel·la"
       ],
       "Delete named range": [
         "Eliminar l’interval amb nom"
@@ -2643,7 +2696,7 @@
         "Interval"
       ],
       "Save": [
-        "Desar-ho"
+        "Desa"
       ],
       "Text or formula": [
         "Text o fórmula"
@@ -2654,13 +2707,13 @@
     },
     "sheets_2025:Spreadsheet sidebar table editor dialog": {
       "Banded columns": [
-        "Columnes alternes"
+        "Columnes alternades"
       ],
       "Banded rows": [
         "Files alternes"
       ],
       "Cancel": [
-        "Cancel·lar-ho"
+        "Cancel·la"
       ],
       "Edit table": [
         "Editar la taula"
@@ -2723,10 +2776,10 @@
     },
     "Warning": {
       "Making suggestions inside code blocks is not supported": [
-        "No s'admet afegir suggeriments als blocs de codi."
+        "No s'admet fer suggeriments dins dels blocs de codi."
       ],
       "Pasting remote images is not supported. Download the image and use \"Insert image\" instead.": [
-        "No es permet enganxar imatges remotes. Baixeu la imatge i utilitzeu \"Inserir imatge\" en lloc d'això."
+        "No s'admet enganxar imatges remotes. Descarregueu la imatge i utilitzeu \"Insereix una imatge\"."
       ]
     }
   }

@@ -61,9 +61,6 @@
       "A participant reacted with ${ emoji }": [
         "Uczestnik zareagował: ${ emoji }"
       ],
-      "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
-        "Połączono w trybie przekaźnika TURN z powodu ograniczeń sieciowych. Może to zwiększyć opóźnienia i wpłynąć na jakość połączenia."
-      ],
       "Connection lost. Reconnecting…": [
         "Połączenie przerwane. Ponowne łączenie…"
       ],
@@ -778,11 +775,6 @@
     "Badge": {
       "Active": [
         "Aktywne"
-      ]
-    },
-    "Banner": {
-      "Connected via TURN relay mode due to your network restrictions. This may increase latency and affect call quality.": [
-        "Połączono przez tryb przekaźnika TURN ze względu na ograniczenia sieciowe. Może to zwiększyć opóźnienie i wpłynąć na jakość połączenia."
       ]
     },
     "Bug category": {

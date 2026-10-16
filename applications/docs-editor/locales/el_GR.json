@@ -137,6 +137,9 @@
       "Insert comment": [
         "Εισάγετε σχόλιο"
       ],
+      "Insert emoji": [
+        "Εισάγετε emoji"
+      ],
       "Insert image": [
         "Εισαγωγή εικόνας"
       ],
@@ -336,9 +339,38 @@
         "Χρησιμοποιήστε το αναπτυσσόμενο μενού παραπάνω για να αλλάξετε και να αρχίσετε να κάνετε προτάσεις."
       ]
     },
+    "Emoji category": {
+      "Activities": [
+        "Δραστηριότητες"
+      ],
+      "Animals and nature": [
+        "Ζώα και φύση"
+      ],
+      "Flags": [
+        "Δείκτες"
+      ],
+      "Food and drink": [
+        "Φαγητό και ποτό"
+      ],
+      "Objects": [
+        "Αντικείμενα"
+      ],
+      "Smileys and people": [
+        "Φατσούλες και άνθρωποι"
+      ],
+      "Symbols": [
+        "Σύμβολα"
+      ],
+      "Travel and places": [
+        "Ταξίδια και μέρη"
+      ]
+    },
     "Error": {
       "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again. If the error persists, please open Version History from the menu options to attempt to restore your document to an earlier version.": [
         "Συνέβη κάποιο σφάλμα κατά τη φόρτωση του εγγράφου. Για να αποφευχθεί η αλλοίωση του εγγράφου, ο επεξεργαστής κειμένου έχει κλειδωθεί. Παρακαλούμε ανανεώστε τη σελίδα και προσπαθήστε ξανά. Αν το σφάλμα παραμένει, ανοίξτε το Ιστορικό Εκδόσεων από τις επιλογές του μενού για να επιχειρήσετε να επαναφέρετε το έγγραφο σε μια προηγούμενη έκδοση."
+      ],
+      "Could not load emoji. Close the picker and try again.": [
+        "Δεν ήταν δυνατή η φόρτωση του emoji. Κλείστε το παράθυρο επιλογής και δοκιμάστε ξανά."
       ],
       "Failed to export document.": [
         "Αποτυχία εξαγωγής εγγράφου."
@@ -451,6 +483,9 @@
       "Loading": [
         "Φόρτωση"
       ],
+      "Loading emoji…": [
+        "Φόρτωση emoji…"
+      ],
       "Loading spreadsheet content...": [
         "Φόρτωση περιεχομένου υπολογιστικού φύλλου..."
       ],
@@ -462,6 +497,9 @@
       ],
       "No comments": [
         "Δεν υπάρχουν σχόλια"
+      ],
+      "No emoji found": [
+        "Δε βρέθηκαν emoji"
       ],
       "No title": [
         "Χωρίς τίτλο"
@@ -552,6 +590,12 @@
       "Duplicate table row": [
         "Διπλασιασμός γραμμής πίνακα"
       ],
+      "Emoji": [
+        "Emoji"
+      ],
+      "Emoji suggestions": [
+        "Προτάσεις emoji"
+      ],
       "Format": [
         "Μορφή"
       ],
@@ -591,11 +635,20 @@
       "Page break": [
         "Αλλαγή σελίδας"
       ],
+      "Recent": [
+        "Πρόσφατα"
+      ],
       "Replace": [
         "Αντικατάσταση"
       ],
       "Replace link": [
         "Αντικατάσταση συνδέσμου"
+      ],
+      "Search emoji": [
+        "Αναζητήστε emoji"
+      ],
+      "Search results": [
+        "Αποτελέσματα αναζήτησης"
       ],
       "Text and highlight color": [
         "Χρώμα κειμένου και επισήμανσης"
