@@ -2,11 +2,11 @@ import { act, fireEvent, screen, waitFor } from '@testing-library/react';
 
 import { mockDefaultBreakpoints } from '@proton/components/testing/mockUseActiveBreakpoint';
 import type { MessageState, PublicPrivateKey } from '@proton/mail/store/messages/messagesTypes';
-import { wait } from '@proton/shared/lib/helpers/promise';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import range from '@proton/utils/range';
 
+import { LOAD_RETRY_DELAY } from '../../constants';
 import { addApiMock } from '../../helpers/tests/api';
 import { assertFocus } from '../../helpers/tests/assertion';
 import { addApiKeys } from '../../helpers/tests/crypto';
@@ -214,19 +214,19 @@ describe('ConversationView', () => {
                     messageDraftActions.sent(makeMessage('test-message 2', new Date('2020-01-04').getTime()))
                 );
             });
-            // Wait for react to reflect store update
-            await wait(50);
-
             // List order should change after draft is sent because of the date change
-            const elementsReordered = screen.getAllByText('test-message ', { exact: false });
-            expect(elementsReordered[0].textContent).toContain('test-message 1');
-            expect(elementsReordered[1].textContent).toContain('test-message 3');
-            expect(elementsReordered[2].textContent).toContain('test-message 2');
+            await waitFor(() => {
+                const elementsReordered = screen.getAllByText('test-message ', { exact: false });
+                expect(elementsReordered[0].textContent).toContain('test-message 1');
+                expect(elementsReordered[1].textContent).toContain('test-message 3');
+                expect(elementsReordered[2].textContent).toContain('test-message 2');
+            });
         });
     });
 
     describe('Auto reload', () => {
         it('should reload a conversation if first request failed', async () => {
+            jest.useFakeTimers({ advanceTimers: true });
             mockConsole();
 
             const response = { Conversation: conversation, Messages: [message] };
@@ -245,7 +245,9 @@ describe('ConversationView', () => {
             const header = screen.getByTestId('conversation-header') as HTMLHeadingElement;
             expect(header.getAttribute('class')).toContain('is-loading');
 
-            await wait(3002);
+            await act(async () => {
+                await jest.advanceTimersByTimeAsync(LOAD_RETRY_DELAY);
+            });
             await waitFor(() => {
                 expect(getSpy).toHaveBeenCalledTimes(2);
             });
@@ -259,7 +261,7 @@ describe('ConversationView', () => {
         });
 
         it('should show error banner after 4 attemps', async () => {
-            jest.useFakeTimers();
+            jest.useFakeTimers({ advanceTimers: true });
             mockConsole();
 
             const getSpy = jest.fn(() => {
@@ -272,17 +274,17 @@ describe('ConversationView', () => {
             await setup({});
 
             await act(async () => {
-                jest.advanceTimersByTime(5000);
+                await jest.advanceTimersByTimeAsync(LOAD_RETRY_DELAY);
             });
-            await waitForSpyCall({ spy: getSpy, callTimes: 2, disableFakeTimers: true });
+            await waitForSpyCall({ spy: getSpy, callTimes: 2 });
             await act(async () => {
-                jest.advanceTimersByTime(5000);
+                await jest.advanceTimersByTimeAsync(LOAD_RETRY_DELAY);
             });
-            await waitForSpyCall({ spy: getSpy, callTimes: 3, disableFakeTimers: true });
+            await waitForSpyCall({ spy: getSpy, callTimes: 3 });
             await act(async () => {
-                jest.advanceTimersByTime(5000);
+                await jest.advanceTimersByTimeAsync(LOAD_RETRY_DELAY);
             });
-            await waitForSpyCall({ spy: getSpy, callTimes: 4, disableFakeTimers: true });
+            await waitForSpyCall({ spy: getSpy, callTimes: 4 });
 
             screen.getByText('Network error', { exact: false });
             screen.getByText('Try again');

@@ -160,6 +160,13 @@ describe('Composer attachments', () => {
 
     beforeEach(() => {
         clearAll();
+        // The autosave debounce (2s) and the minimum "Message sent" notification delay (2.5s) are
+        // skipped on the fake clock; `advanceTimers` keeps the crypto and short timers running as usual.
+        jest.useFakeTimers({ advanceTimers: true });
+    });
+
+    afterEach(() => {
+        jest.useRealTimers();
     });
 
     it('should not show embedded modal when plaintext mode', async () => {

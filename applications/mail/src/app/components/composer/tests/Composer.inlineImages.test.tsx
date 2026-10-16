@@ -1,3 +1,4 @@
+import { act } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
 import { getModelState } from '@proton/account/tests';
@@ -36,7 +37,11 @@ const cachedAttachment = (cid: string, cloc: string): DecryptedAttachment => ({
     cloc,
 });
 
-const waitForImageDeletionWatcher = () => new Promise((resolve) => setTimeout(resolve, 1500));
+// The image deletion watcher is debounced (500ms). Leave it ample time to run, on the fake clock.
+const waitForImageDeletionWatcher = () =>
+    act(async () => {
+        await jest.advanceTimersByTimeAsync(1500);
+    });
 
 describe('Composer inline image re-upload', () => {
     let fromKeys: GeneratedKey;
@@ -51,7 +56,12 @@ describe('Composer inline image re-upload', () => {
         await releaseCryptoProxy();
     });
 
+    beforeEach(() => {
+        jest.useFakeTimers({ advanceTimers: true });
+    });
+
     afterEach(() => {
+        jest.useRealTimers();
         clearAll();
     });
 
