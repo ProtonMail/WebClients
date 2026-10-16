@@ -25,7 +25,13 @@ module.exports = {
                     },
                 },
                 env: {
-                    /* polyfill typed-array base64 and hex functions */
+                    /**
+                     * Tests run on Node, not in the browsers we ship to: compile for the running Node version.
+                     * Without targets, swc falls back to old browser targets, downlevels every module (object
+                     * spread, async, classes) and requires dozens of core-js polyfills per file.
+                     */
+                    targets: { node: process.versions.node },
+                    /* polyfill what Node still lacks, e.g. typed-array base64 and hex functions */
                     mode: 'usage',
                     shippedProposals: true,
                     coreJs: require('core-js/package.json').version,
