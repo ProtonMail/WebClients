@@ -1,116 +1,9 @@
 import { format } from 'date-fns';
-import { c } from 'ttag';
 
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 
 export const PAGINATION_LIMIT = 50;
 export const ALL_EVENTS_DEFAULT = 'All Events';
-
-export const getDesciptionText = (event: string): string => {
-    switch (event) {
-        case 'InviteCreated':
-            return c('Info').t`Invite for organization created`;
-        case 'InviteAccepted':
-            return c('Info').t`Invite for organization accepted`;
-        case 'InviteDeleted':
-            return c('Info').t`Invite deleted`;
-        case 'InviteRejected':
-            return c('Info').t`Invite rejected`;
-        case 'NewUserInviteCreated':
-            return c('Info').t`New user invited to organization`;
-        case 'NewUserInviteDeleted':
-            return c('Info').t`Invite for new user deleted`;
-        case 'ItemCreated':
-            return c('Info').t`Item created in vault`;
-        case 'ItemUpdated':
-            return c('Info').t`Item updated in vault`;
-        case 'ItemUsed':
-            return c('Info').t`Item autofilled in vault`;
-        case 'ItemRead':
-            return c('Info').t`Item read in vault`;
-        case 'ItemDeleted':
-            return c('Info').t`Item deleted from vault`;
-        case 'ItemTrashed':
-            return c('Info').t`Item in vault trashed`;
-        case 'ItemUntrashed':
-            return c('Info').t`Item in vault untrashed`;
-        case 'ItemChangedFlags':
-            return c('Info').t`Item flags changed in vault`;
-        case 'ShareCreated':
-            return c('Info').t`Vault shared with email`;
-        case 'ShareDeleted':
-            return c('Info').t`Shared vault deleted`;
-        case 'ShareUpdated':
-            return c('Info').t`Shared vault updated`;
-        case 'VaultCreated':
-            return c('Info').t`Vault created`;
-        case 'VaultDeleted':
-            return c('Info').t`Vault deleted`;
-        case 'VaultUpdated':
-            return c('Info').t`Vault updated`;
-        case 'BreachCustomEmailCreated':
-            return c('Info').t`Pass Monitor - custom email created`;
-        case 'BreachCustomEmailValidated':
-            return c('Info').t`Pass Monitor - custom email confirmed`;
-        case 'BreachCustomEmailDeleted':
-            return c('Info').t`Pass Monitor - custom email deleted`;
-        default:
-            return c('Info').t`Unknown event type`;
-    }
-};
-
-export const getDescriptionTextWithLink = (event: string, vaultLink: React.JSX.Element) => {
-    switch (event) {
-        case 'InviteCreated':
-            return c('Info').jt`Invite for organization created`;
-        case 'InviteAccepted':
-            return c('Info').jt`Invite for organization accepted`;
-        case 'InviteDeleted':
-            return c('Info').jt`Invite deleted`;
-        case 'InviteRejected':
-            return c('Info').jt`Invite rejected`;
-        case 'NewUserInviteCreated':
-            return c('Info').jt`New user invited to organization`;
-        case 'NewUserInviteDeleted':
-            return c('Info').jt`Invite for new user deleted`;
-        case 'ItemCreated':
-            return c('Info').jt`Item created in ${vaultLink}`;
-        case 'ItemUpdated':
-            return c('Info').jt`Item updated in ${vaultLink}`;
-        case 'ItemUsed':
-            return c('Info').jt`Item autofilled in ${vaultLink}`;
-        case 'ItemRead':
-            return c('Info').jt`Item read in ${vaultLink}`;
-        case 'ItemDeleted':
-            return c('Info').jt`Item deleted from ${vaultLink}`;
-        case 'ItemTrashed':
-            return c('Info').jt`Item in ${vaultLink} trashed`;
-        case 'ItemUntrashed':
-            return c('Info').jt`Item in ${vaultLink} untrashed`;
-        case 'ItemChangedFlags':
-            return c('Info').jt`Item flags changed in ${vaultLink}`;
-        case 'ShareCreated':
-            return c('Info').jt`${vaultLink} shared with email`;
-        case 'ShareDeleted':
-            return c('Info').jt`Shared ${vaultLink} deleted`;
-        case 'ShareUpdated':
-            return c('Info').jt`Shared ${vaultLink} updated`;
-        case 'VaultCreated':
-            return c('Info').jt`${vaultLink} created`;
-        case 'VaultDeleted':
-            return c('Info').jt`${vaultLink} deleted`;
-        case 'VaultUpdated':
-            return c('Info').jt`${vaultLink} updated`;
-        case 'BreachCustomEmailCreated':
-            return c('Info').jt`Pass Monitor - custom email created`;
-        case 'BreachCustomEmailValidated':
-            return c('Info').jt`Pass Monitor - custom email confirmed`;
-        case 'BreachCustomEmailDeleted':
-            return c('Info').jt`Pass Monitor - custom email deleted`;
-        default:
-            return c('Info').jt`Unknown event type`;
-    }
-};
 
 export interface EventObject {
     EventType: string;
@@ -126,6 +19,9 @@ export const getConnectionEvents = (items: EventObject[]): EventObject[] => {
 };
 
 export const getLocalTimeStringFromDate = (time: Date) => {
+    // Machine-readable timestamp for the StartTime/EndTime query params, so it must stay
+    // locale-independent: localizing it would change what we send to the API.
+    // eslint-disable-next-line custom-rules/date-formatting-locale
     return format(time, "yyyy-MM-dd'T'HH:mm:ssxxx");
 };
 
