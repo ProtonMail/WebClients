@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Logo } from '@proton/components';
+import Logo from '@proton/components/components/logo/Logo';
 import { IcArrowUpAndRightBig } from '@proton/icons/icons/IcArrowUpAndRightBig';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import envelope from '@proton/styles/assets/img/illustrations/envelope.svg';

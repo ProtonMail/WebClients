@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
 import { addDays } from 'date-fns';
 
-import { EasySwitchProvider } from '@proton/activation/index';
+import EasySwitchProvider from '@proton/activation/src/logic/StoreProvider';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 
 import type { OnboardingChecklistContext } from '../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
