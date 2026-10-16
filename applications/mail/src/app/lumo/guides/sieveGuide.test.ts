@@ -1,6 +1,10 @@
 import { createFilterDefinition } from '../skills/filters/createFilter';
 import { updateFilterDefinition } from '../skills/filters/updateFilter';
-import { PROTON_SIEVE_DIALECT_REFERENCE, SIEVE_SPAM_GUARD } from './sieveGuide';
+import {
+    PROTON_SIEVE_DIALECT_REFERENCE,
+    SIEVE_SPAM_GUARD,
+    STANDALONE_PROTON_SIEVE_DIALECT_REFERENCE,
+} from './sieveGuide';
 
 const exampleScripts = [createFilterDefinition, updateFilterDefinition].flatMap(({ name, examples = [] }) =>
     examples.map(({ call }, index) => [`${name} example ${index}`, call.sieve] as const)
@@ -18,6 +22,10 @@ describe('the spam guard is identical everywhere it is shown', () => {
 
     it('appears in the guide both as the mandatory prologue and in the worked example', () => {
         expect(PROTON_SIEVE_DIALECT_REFERENCE.split(SIEVE_SPAM_GUARD)).toHaveLength(3);
+    });
+
+    it('appears in the standalone guide both as the mandatory prologue and in the worked example', () => {
+        expect(STANDALONE_PROTON_SIEVE_DIALECT_REFERENCE.split(SIEVE_SPAM_GUARD)).toHaveLength(3);
     });
 
     // The guide is a template literal, so an unescaped `${1}` would interpolate away to nothing.
