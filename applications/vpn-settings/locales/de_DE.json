@@ -2233,9 +2233,6 @@
       ],
       "Protection for two in a single plan": [
         "Schutz für zwei Personen in einem einzigen Tarif"
-      ],
-      "Save big with a yearly plan": [
-        "Spare viel Geld mit einem Jahresabo"
       ]
     },
     "Billing cycle": {
@@ -4660,6 +4657,9 @@
       "Add 1 more": [
         "1 weiteren hinzufügen"
       ],
+      "Add contact": [
+        "Kontakt hinzufügen"
+      ],
       "Add emergency contact": [
         "Notfallkontakt hinzufügen"
       ],
@@ -4822,6 +4822,9 @@
       ],
       "Recover data": [
         "Daten wiederherstellen"
+      ],
+      "Recover your data before adding a new contact.": [
+        "Stelle deine Daten wieder her, bevor du einen neuen Kontakt hinzufügst."
       ],
       "Recovery approved": [
         "Wiederherstellung genehmigt"
@@ -4999,6 +5002,9 @@
       "You'll receive access to their account in **${ days } day**, or when they approve your request.": [
         "Du erhältst Zugriff zu deren Konto in **${ days } Tag**, oder wenn sie deine Anfrage genehmigen.",
         "Du erhältst Zugriff zu deren Konto in **${ days } Tagen**, oder wenn sie deine Anfrage genehmigen."
+      ],
+      "Your data is still locked from a password reset. A contact added now won't be able to restore it.": [
+        "Deine Daten sind nach dem Zurücksetzen des Passworts weiterhin gesperrt. Ein jetzt erst hinzugefügter Kontakt kann diese nicht wiederherstellen."
       ],
       "Your recovery contact has helped you recover data.": [
         "Dein Wiederherstellungskontakt hat dir geholfen, Daten wiederherzustellen."
@@ -10108,6 +10114,12 @@
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Beim Aktivieren von SAML für ${ appName } in deinem Identitätsanbieter wirst du vielleicht aufgefordert, die Callback (ACS) URL und die Aussteller-ID zu nutzen. Kopiere einfach die Daten unten in die Felder deines Identitätsanbieters."
       ],
+      "When sign-in is restricted, only ${ primaryEmailElement } and your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Wenn die Anmeldung eingeschränkt ist, können nur ${ primaryEmailElement } und dein Benutzername ${ usernameElement } zur Anmeldung verwendet werden. Deine anderen E-Mail-Adressen können nicht mit deinem Konto verknüpft werden, selbst wenn jemand sie kennt."
+      ],
+      "When sign-in is restricted, only your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Wenn die Anmeldung eingeschränkt ist, kann nur dein Benutzername ${ usernameElement } zur Anmeldung verwendet werden. Deine anderen E-Mail-Adressen können nicht mit deinem Konto in Verbindung gebracht werden, selbst wenn jemand sie kennt."
+      ],
       "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
         "Wenn du dein aktuell bezahltes Abonnement kündigst, wird der Restbetrag deines Abonnements als Kontoguthaben zurückerstattet und du wirst auf das ${ BRAND_NAME } ${ PLANS.FREE }-Abonnement herabgestuft."
       ],
@@ -11469,6 +11481,12 @@
       ],
       "Require password check-ins": [
         "Passwort-Check-ins verlangen"
+      ],
+      "Restrict sign-in to primary email address": [
+        "Anmeldung auf die Haupt-E-Mail-Adresse beschränken"
+      ],
+      "Restrict sign-in to username": [
+        "Anmeldung auf Benutzernamen beschränken"
       ],
       "Reveal password": [
         "Passwort anzeigen"
@@ -14592,6 +14610,9 @@
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Für die Aktivierung des Abonnements nach dem Ende der Testversion ist eine Zahlungsmethode erforderlich."
       ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Der Tarifwechsel ist aus folgenden Gründen nicht möglich:"
+      ],
       "Please close extra wallet accounts before changing your plan.": [
         "Bitte schließe alle zusätzlichen Wallet-Konten, bevor du dein Abonnement wechselst."
       ],
@@ -14603,6 +14624,9 @@
       ],
       "Processing payment": [
         "Zahlungsabwicklung"
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Die Anzahl der Plätze bei Proton Meet muss mit der Anzahl der Teilnehmer übereinstimmen."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Die Preise für Verlängerungen können sich gemäß ${ termsAndConditionsLink } ändern."
@@ -14682,8 +14706,14 @@
       "This payment method will become your new default for all future renewals.": [
         "Diese Zahlungsmethode wird dein neuer Standard für alle zukünftigen Verlängerungen."
       ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Dieser Tarif unterstützt für dein Konto keine Verwaltungsfunktionen."
+      ],
       "This plan doesn’t support the members on your account.": [
         "Dieses Abonnement bietet keine Unterstützung für die Mitglieder deines Kontos."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Dieses Abonnement kann derzeit nicht abgeschlossen werden. Bitte versuche es erneut."
       ],
       "Timeout exceeded": [
         "Zeitlimit überschritten"
@@ -17151,6 +17181,9 @@
       "To make sure it's really you trying to sign-in, please enter your backup password.": [
         "Um sicherzugehen, dass es wirklich du bist, der versucht, sich bei deinem Konto anzumelden, gib bitten dein Sicherungskennwort ein."
       ],
+      "To make sure it's really you trying to sign-in, please enter your password.": [
+        "Um sicherzustellen, dass es wirklich du bist, der sich anmelden möchte, gib bitte dein Passwort ein."
+      ],
       "To make sure it's really you trying to sign-in, share the confirmation code with your administrator **${ adminEmail }** so that they can approve the request for **${ email }**.": [
         "Um sicherzugehen, dass es wirklich du bist, der versucht, sich bei deinem Konto anzumelden, gib den Bestätigungscode an deinen Administrator **${ adminEmail }** weiter, damit er die Anfrage für **${ email }** genehmigen kann."
       ],
@@ -19510,6 +19543,9 @@
       ],
       "Sign out": [
         "Abmelden"
+      ],
+      "Sign-in protection": [
+        "Anmeldeschutz"
       ],
       "Signed in to another account": [
         "Bei einem anderen Konto angemeldet"

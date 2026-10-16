@@ -2246,9 +2246,6 @@
       ],
       "Protection for two in a single plan": [
         "Protecție pentru două persoane într-un singur plan"
-      ],
-      "Save big with a yearly plan": [
-        "Economisiți semnificativ cu un abonament anual"
       ]
     },
     "Billing cycle": {
@@ -10239,6 +10236,12 @@
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Când activați SAML pentru ${ appName } în furnizorul de identitate, vi se poate solicita să utilizați adresa URL de apel invers (ACS) și ID-ul emitentului. Doar copiați și lipiți datele de mai jos în câmpurile furnizorului de identitate."
       ],
+      "When sign-in is restricted, only ${ primaryEmailElement } and your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Atunci când autentificarea este restricționată, doar ${ primaryEmailElement } și numele de utilizator ${ usernameElement } pot fi utilizate pentru a vă autentifica. Celelalte adrese nu le mai puteți asocia cu contul personal, chiar dacă cineva le cunoaște."
+      ],
+      "When sign-in is restricted, only your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Când autentificarea este restricționată, doar numele de utilizator ${ usernameElement } poate fi utilizat pentru a vă autentifica. Celelalte adrese nu vă pot fi asociate cu contul, chiar dacă cineva le cunoaște."
+      ],
       "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
         "Dacă vă anulați abonamentul actual cu plată, soldul abonamentului va fi returnat sub formă de credite de cont și contul va fi retrogradat la planul ${ BRAND_NAME } ${ PLANS.FREE }."
       ],
@@ -11619,6 +11622,12 @@
       ],
       "Require password check-ins": [
         "Necesită confirmarea parolei"
+      ],
+      "Restrict sign-in to primary email address": [
+        "Restricționare autentificare la adresa de e-mail principală"
+      ],
+      "Restrict sign-in to username": [
+        "Restricționare autentificare la numele de utilizator"
       ],
       "Reveal password": [
         "Afișare parolă"
@@ -19811,6 +19820,9 @@
       ],
       "Sign out": [
         "Deconectare"
+      ],
+      "Sign-in protection": [
+        "Protecție la autentificare"
       ],
       "Signed in to another account": [
         "Conectat la un alt cont"

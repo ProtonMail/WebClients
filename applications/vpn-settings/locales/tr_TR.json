@@ -2233,9 +2233,6 @@
       ],
       "Protection for two in a single plan": [
         "Tek bir tarife ile iki kişilik koruma"
-      ],
-      "Save big with a yearly plan": [
-        "Yıllık bir tarife ile büyük kazanç sağlayın"
       ]
     },
     "Billing cycle": {
@@ -4660,6 +4657,9 @@
       "Add 1 more": [
         "1 tane daha ekle"
       ],
+      "Add contact": [
+        "Kişi ekle"
+      ],
       "Add emergency contact": [
         "Acil durum kişisi ekle"
       ],
@@ -4822,6 +4822,9 @@
       ],
       "Recover data": [
         "Verileri kurtar"
+      ],
+      "Recover your data before adding a new contact.": [
+        "Yeni bir kişi eklemeden önce verilerinizi kurtarın."
       ],
       "Recovery approved": [
         "Kurtarma onaylandı"
@@ -4999,6 +5002,9 @@
       "You'll receive access to their account in **${ days } day**, or when they approve your request.": [
         "Hesabına **${ days } gün** içinde ya da isteğinizi onayladığında erişiminiz olacak.",
         "Hesabına **${ days } gün** içinde ya da isteğinizi onayladığında erişiminiz olacak."
+      ],
+      "Your data is still locked from a password reset. A contact added now won't be able to restore it.": [
+        "Parola sıfırlamadan sonra verileriniz hâlâ kilitli. Şimdi eklenecek bir kişi onları geri yükleyemeyecek."
       ],
       "Your recovery contact has helped you recover data.": [
         "Kurtarma kişiniz verilerinizi kurtarmanıza yardımcı oldu."
@@ -6895,7 +6901,7 @@
         "Etkinlik"
       ],
       "Good to know before you connect": [
-        "Bağlamadan önce bilmek iyi oldu"
+        "Bağlantı kurmadan önce bilmek iyi oldu"
       ],
       "IP address": [
         "IP adresi"
@@ -10108,6 +10114,12 @@
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Kimlik hizmeti sağlayıcınızda ${ appName } için SAML özelliğini etkinleştirirken geri çağırma (ACS) adresini ve yayıncı kimliğini kullanmanız istenebilir. Aşağıdaki verileri kopyalayıp kimlik hizmeti sağlayıcı alanlarına yapıştırmanız yeterlidir."
       ],
+      "When sign-in is restricted, only ${ primaryEmailElement } and your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Oturum açma kısıtlandığında, oturum açmak için yalnızca ${ primaryEmailElement } ve ${ usernameElement } kullanıcı adınız kullanılabilir. Diğer adresleriniz, birileri onları bilse bile hesabınıza bağlanamaz."
+      ],
+      "When sign-in is restricted, only your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Oturum açma kısıtlandığında, oturum açmak için yalnızca ${ usernameElement } kullanıcı adınız kullanılabilir. Diğer adresleriniz, birileri onları bilse bile hesabınıza bağlanamaz."
+      ],
       "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
         "Geçerli ücretli aboneliğinizi iptal ettiğinizde, aboneliğinizin bakiyesi hesap kredisi olarak iade edilir ve ${ BRAND_NAME } ${ PLANS.FREE } tarifesine geçersiniz."
       ],
@@ -11469,6 +11481,12 @@
       ],
       "Require password check-ins": [
         "Parola denetimi zorunlu olsun"
+      ],
+      "Restrict sign-in to primary email address": [
+        "Oturum açma birincil e-posta adresi ile kısıtlansın"
+      ],
+      "Restrict sign-in to username": [
+        "Oturum açma kullanıcı adıyla kısıtlansın"
       ],
       "Reveal password": [
         "Parolayı görüntüle"
@@ -14592,6 +14610,9 @@
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Deneme süresi sona erdikten sonra aboneliğin kullanıma alınması için bir ödeme yöntemi gereklidir."
       ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Tarife geçişi şu nedenlerden dolayı yapılamıyor:"
+      ],
       "Please close extra wallet accounts before changing your plan.": [
         "Lütfen tarifenizi değiştirmeden önce ek cüzdan hesaplarını kapatın."
       ],
@@ -14603,6 +14624,9 @@
       ],
       "Processing payment": [
         "Ödeme işleniyor"
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Proton Meet koltuk sayısı üye sayısı ile aynı olmalıdır."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Yenileme fiyatları ${ termsAndConditionsLink } içeriğine göre değişebilir."
@@ -14682,8 +14706,14 @@
       "This payment method will become your new default for all future renewals.": [
         "Gelecekteki tüm yenilemeler için varsayılan olarak bu ödeme yöntemi kullanılacak."
       ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Bu tarife hesabınızdaki yönetilen özellikleri desteklemez."
+      ],
       "This plan doesn’t support the members on your account.": [
         "Bu tarife hesabınızdaki üyeleri desteklemez."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Bu abonelik şu anda tamamlanamıyor. Lütfen yeniden deneyin."
       ],
       "Timeout exceeded": [
         "Zaman aşımı süresi aşıldı"
@@ -19513,6 +19543,9 @@
       ],
       "Sign out": [
         "Oturumu kapat"
+      ],
+      "Sign-in protection": [
+        "Oturum açma koruması"
       ],
       "Signed in to another account": [
         "Başka bir hesabın oturumu açıldı"
