@@ -15,10 +15,11 @@ import { SketchOverlay } from '../../features/drawingcanvas';
 import { useChatLimitGate } from '../../hooks/useChatLimitGate';
 import useComposerInput from '../../hooks/useComposerInput';
 import { useConversationAgent } from '../../hooks/useConversationAgent';
-import type { DriveSDKMethods } from '../../hooks/useDriveSDK';
 import { useDictationLanguage } from '../../hooks/useDictationLanguage';
+import type { DriveSDKMethods } from '../../hooks/useDriveSDK';
 import { useDriveSDK } from '../../hooks/useDriveSDK';
 import type { HandleSendMessage } from '../../hooks/useLumoActions';
+import { useMessagesLimitStatus } from '../../hooks/useResourceLimitStatus';
 import { useDragArea } from '../../providers/DragAreaProvider';
 import { useGhostChat } from '../../providers/GhostChatProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
@@ -150,6 +151,9 @@ const ComposerComponentInner = ({
     const { createNotification } = useNotifications();
     const isGuest = useIsGuest();
     const { isBlocked: isChatLimitBlocked, ensureTierError } = useChatLimitGate();
+    const conversationId = messageChain?.[0]?.conversationId;
+    const { isAtLimit: isMessageLimitReached } = useMessagesLimitStatus(conversationId);
+    const isConversationClosed = Boolean(conversationId) && isMessageLimitReached;
 
     const { selectedAspectRatio, handleAspectRatioChange, isCreateImageMode, setIsCreateImageMode, buildImageOptions } =
         useComposerWithImageGeneration({
@@ -215,7 +219,7 @@ const ComposerComponentInner = ({
     }, [autoOpenSketch]);
 
     const nativeComposerVisibilityApi = useNativeComposerHostVisibilityApi({
-        hideComposer: showDrawingModal || isSheetModalOpen,
+        hideComposer: showDrawingModal || isSheetModalOpen || isConversationClosed,
     });
     useNativeComposerFeatureFlagsApi();
     useNativeComposerCustomLumoApi(messageChain?.[0]?.conversationId, canUseAgents);
@@ -271,6 +275,9 @@ const ComposerComponentInner = ({
             if (!value.trim() && !hasAttachments) {
                 return;
             }
+            if (isConversationClosed) {
+                return;
+            }
             if (isChatLimitBlocked) {
                 ensureTierError();
                 return;
@@ -285,6 +292,7 @@ const ComposerComponentInner = ({
             isProcessingAttachment,
             buildImageOptions,
             isChatLimitBlocked,
+            isConversationClosed,
             ensureTierError,
             hasAttachments,
         ]
@@ -344,8 +352,7 @@ const ComposerComponentInner = ({
         language: dictationLanguage,
     });
 
-    const [dictationLanguageModalProps, setDictationLanguageModalOpen, renderDictationLanguageModal] =
-        useModalState();
+    const [dictationLanguageModalProps, setDictationLanguageModalOpen, renderDictationLanguageModal] = useModalState();
 
     const handleStartDictation = useCallback(() => {
         // First use: ask for a language before starting; the choice is applied when confirmed.
@@ -506,89 +513,96 @@ const ComposerComponentInner = ({
                     {composerPreInputContent}
                 </div>
 
-                <div
-                    style={{ visibility: nativeComposerVisibilityApi.showWebComposer() ? 'visible' : 'hidden' }}
-                    className="w-full"
-                    ref={inputContainerRef}
-                >
-                    <section
-                        ref={composerContainerRef}
-                        className={clsx(
-                            'flex flex-column flex-nowrap min-h-custom items-center gap-2',
-                            className,
-                            isGhostChatMode && 'ghost-mode'
-                        )}
-                        style={{ '--min-h-custom': '4.375rem' /* 70px */ }}
-                        aria-label={c('collider_2025: Info').t`Ask anything to ${LUMO_SHORT_APP_NAME}`}
+                {!isConversationClosed && (
+                    <div
+                        style={{ visibility: nativeComposerVisibilityApi.showWebComposer() ? 'visible' : 'hidden' }}
+                        className="w-full"
+                        ref={inputContainerRef}
                     >
-                        <h2 className="sr-only">{c('collider_2025: Info')
-                            .t`Ask anything to ${LUMO_SHORT_APP_NAME}`}</h2>
+                        <section
+                            ref={composerContainerRef}
+                            className={clsx(
+                                'flex flex-column flex-nowrap min-h-custom items-center gap-2',
+                                className,
+                                isGhostChatMode && 'ghost-mode'
+                            )}
+                            style={{ '--min-h-custom': '4.375rem' /* 70px */ }}
+                            aria-label={c('collider_2025: Info').t`Ask anything to ${LUMO_SHORT_APP_NAME}`}
+                        >
+                            <h2 className="sr-only">{c('collider_2025: Info')
+                                .t`Ask anything to ${LUMO_SHORT_APP_NAME}`}</h2>
 
-                        {showLegalDisclaimer && <GuestDisclaimer />}
+                            {showLegalDisclaimer && <GuestDisclaimer />}
 
-                        <div className="composer-input-glow-wrapper w-full">
-                            <div
-                                className={clsx('lumo-input-container bg-norm w-full', isGhostChatMode && 'ghost-mode')}
-                            >
-                                {canUseAgents && (
-                                    <ComposerAgentBar conversationId={messageChain?.[0]?.conversationId} />
-                                )}
-                                {hasAttachments && (
-                                    <ComposerAttachmentArea
-                                        provisionalAttachments={provisionalAttachments}
-                                        allRelevantAttachments={allRelevantAttachments}
+                            <div className="composer-input-glow-wrapper w-full">
+                                <div
+                                    className={clsx(
+                                        'lumo-input-container bg-norm w-full',
+                                        isGhostChatMode && 'ghost-mode'
+                                    )}
+                                >
+                                    {canUseAgents && (
+                                        <ComposerAgentBar conversationId={messageChain?.[0]?.conversationId} />
+                                    )}
+                                    {hasAttachments && (
+                                        <ComposerAttachmentArea
+                                            provisionalAttachments={provisionalAttachments}
+                                            allRelevantAttachments={allRelevantAttachments}
+                                            messageChain={messageChain}
+                                            onDeleteAttachment={handleDeleteAttachment}
+                                            onViewFile={onOpenFilePreview ?? (() => {})}
+                                            onOpenFiles={handleOpenFiles}
+                                        />
+                                    )}
+                                    <ComposerEditorArea
+                                        composerInput={composerInput}
+                                        canShowSendButton={canShowSendButton}
+                                        sendIsDisabled={sendIsDisabled}
+                                        isDictating={isDictating}
+                                        isGenerating={isGenerating ?? false}
+                                        isProcessingAttachment={isProcessingAttachment}
+                                        onAbort={onAbort}
+                                        onSubmit={handleSubmit}
+                                        spaceId={spaceId}
                                         messageChain={messageChain}
-                                        onDeleteAttachment={handleDeleteAttachment}
-                                        onViewFile={onOpenFilePreview ?? (() => {})}
-                                        onOpenFiles={handleOpenFiles}
+                                        isAutocompleteActiveRef={isAutocompleteActiveRef}
+                                        browseFolderChildren={driveContext?.browseFolderChildren}
+                                        downloadFile={driveContext?.downloadFile}
+                                        userId={driveContext?.userId}
+                                        placeholder={placeholder}
                                     />
-                                )}
-                                <ComposerEditorArea
-                                    composerInput={composerInput}
-                                    canShowSendButton={canShowSendButton}
-                                    sendIsDisabled={sendIsDisabled}
-                                    isDictating={isDictating}
-                                    isGenerating={isGenerating ?? false}
-                                    isProcessingAttachment={isProcessingAttachment}
-                                    onAbort={onAbort}
-                                    onSubmit={handleSubmit}
-                                    spaceId={spaceId}
-                                    messageChain={messageChain}
-                                    isAutocompleteActiveRef={isAutocompleteActiveRef}
-                                    browseFolderChildren={driveContext?.browseFolderChildren}
-                                    downloadFile={driveContext?.downloadFile}
-                                    userId={driveContext?.userId}
-                                    placeholder={placeholder}
-                                />
-                                <ComposerToolbar
-                                    composerMode={composerMode}
-                                    onFilesSelected={handleFilesSelected}
-                                    onBrowseDrive={handleBrowseDrive}
-                                    onDrawSketch={handleDrawSketch}
-                                    fileUploadMode={fileUploadMode}
-                                    selectedAspectRatio={selectedAspectRatio}
-                                    onAspectRatioChange={handleAspectRatioChange}
-                                    isCreateImageMode={isCreateImageMode}
-                                    onCreateImageModeChange={handleCreateImageModeChange}
-                                    canUseAgents={canUseAgents}
-                                    isAgent={isAgent}
-                                    isDictating={isDictating}
-                                    isDictationConnected={isDictationConnected}
-                                    dictationError={dictationError}
-                                    onToggleDictation={handleStartDictation}
-                                    onCancelDictation={handleCancelDictation}
-                                    onAcceptDictation={handleAcceptDictation}
-                                    getDictationAudioLevel={getAudioLevel}
-                                    canDisplayArtifactSpotlight={canDisplayArtifactSpotlight}
-                                />
+                                    <ComposerToolbar
+                                        composerMode={composerMode}
+                                        onFilesSelected={handleFilesSelected}
+                                        onBrowseDrive={handleBrowseDrive}
+                                        onDrawSketch={handleDrawSketch}
+                                        fileUploadMode={fileUploadMode}
+                                        selectedAspectRatio={selectedAspectRatio}
+                                        onAspectRatioChange={handleAspectRatioChange}
+                                        isCreateImageMode={isCreateImageMode}
+                                        onCreateImageModeChange={handleCreateImageModeChange}
+                                        canUseAgents={canUseAgents}
+                                        isAgent={isAgent}
+                                        isDictating={isDictating}
+                                        isDictationConnected={isDictationConnected}
+                                        dictationError={dictationError}
+                                        onToggleDictation={handleStartDictation}
+                                        onCancelDictation={handleCancelDictation}
+                                        onAcceptDictation={handleAcceptDictation}
+                                        getDictationAudioLevel={getAudioLevel}
+                                        canDisplayArtifactSpotlight={canDisplayArtifactSpotlight}
+                                    />
+                                </div>
                             </div>
-                        </div>
-                        {optionalElementBelowComposer && <div className="mt-1.5">{optionalElementBelowComposer}</div>}
-                        {/* {isGuest && (
+                            {optionalElementBelowComposer && (
+                                <div className="mt-1.5">{optionalElementBelowComposer}</div>
+                            )}
+                            {/* {isGuest && (
                         <TermsAndConditions className={clsx('m-0', isAgent ? 'text-center' : 'hidden md:block')} />
                     )} */}
-                    </section>
-                </div>
+                        </section>
+                    </div>
+                )}
             </div>
 
             <SketchOverlay

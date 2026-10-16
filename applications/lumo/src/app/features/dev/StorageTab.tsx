@@ -32,9 +32,11 @@ const ts = () => new Date().toISOString().replace(/[:.]/g, '-');
 
 interface StorageTabProps {
     currentConversationId: string | undefined;
+    /** Shows the tools that mutate data or simulate failures (compaction, unavailable-screen preview). */
+    showInternalTools: boolean;
 }
 
-export const StorageTab = ({ currentConversationId }: StorageTabProps) => {
+export const StorageTab = ({ currentConversationId, showInternalTools }: StorageTabProps) => {
     const [user] = useUser();
     const userId = user?.ID;
     const dispatch = useLumoDispatch();
@@ -167,7 +169,7 @@ export const StorageTab = ({ currentConversationId }: StorageTabProps) => {
 
     return (
         <div className="debug-view-tab-panel">
-            {previewUnavailable && (
+            {showInternalTools && previewUnavailable && (
                 <div
                     style={{
                         position: 'fixed',
@@ -259,56 +261,62 @@ export const StorageTab = ({ currentConversationId }: StorageTabProps) => {
                 >
                     💬 {c('lumo: Debug View').t`Export current conversation (JSON)`}
                 </button>
-                <button
-                    className="debug-view-btn debug-view-btn--secondary"
-                    onClick={() => setPreviewUnavailable(true)}
-                >
-                    🚫 {c('lumo: Debug View').t`Preview "IndexedDB unavailable" screen`}
-                </button>
+                {showInternalTools && (
+                    <button
+                        className="debug-view-btn debug-view-btn--secondary"
+                        onClick={() => setPreviewUnavailable(true)}
+                    >
+                        🚫 {c('lumo: Debug View').t`Preview "IndexedDB unavailable" screen`}
+                    </button>
+                )}
                 <div className="debug-view-hint">
                     {c('lumo: Debug View')
                         .t`Messages rejected by the backend (e.g. limits) remain locally in IndexedDB with a dirty flag. Exports decrypt content from the in-memory Redux state and tag unsynced messages with _dirty: true. Space encryption keys are stripped.`}
                 </div>
             </div>
 
-            <div className="debug-view-header" style={{ marginTop: '12px' }}>
-                <span className="debug-view-header-icon">🗜️</span>
-                {c('lumo: Debug View').t`Compaction`}
-            </div>
+            {showInternalTools && (
+                <>
+                    <div className="debug-view-header" style={{ marginTop: '12px' }}>
+                        <span className="debug-view-header-icon">🗜️</span>
+                        {c('lumo: Debug View').t`Compaction`}
+                    </div>
 
-            <div className="debug-view-row">
-                <span className="debug-view-label">{c('lumo: Debug View').t`Current conversation`}</span>
-                <span className={`debug-view-value ${currentConversationId ? '' : 'debug-view-value--warn'}`}>
-                    {currentConversationId ?? c('lumo: Debug View').t`None open`}
-                </span>
-            </div>
+                    <div className="debug-view-row">
+                        <span className="debug-view-label">{c('lumo: Debug View').t`Current conversation`}</span>
+                        <span className={`debug-view-value ${currentConversationId ? '' : 'debug-view-value--warn'}`}>
+                            {currentConversationId ?? c('lumo: Debug View').t`None open`}
+                        </span>
+                    </div>
 
-            {compactionError && (
-                <div className="debug-view-row">
-                    <span className="debug-view-value debug-view-value--danger">{compactionError}</span>
-                </div>
+                    {compactionError && (
+                        <div className="debug-view-row">
+                            <span className="debug-view-value debug-view-value--danger">{compactionError}</span>
+                        </div>
+                    )}
+
+                    <div className="debug-view-section debug-view-actions">
+                        <button
+                            className="debug-view-btn debug-view-btn--primary"
+                            onClick={() => runCompaction(false)}
+                            disabled={!currentConversationId || compactionRunning}
+                        >
+                            🗜️ {c('lumo: Debug View').t`Trigger compaction`}
+                        </button>
+                        <button
+                            className="debug-view-btn debug-view-btn--secondary"
+                            onClick={() => runCompaction(true)}
+                            disabled={!currentConversationId || compactionRunning}
+                        >
+                            🧠 {c('lumo: Debug View').t`Trigger compaction (force summarization)`}
+                        </button>
+                        <div className="debug-view-hint">
+                            {c('lumo: Debug View')
+                                .t`Runs the compaction engine over the displayed branch and inserts a compaction boundary, without generating a reply. "Force summarization" always runs the LLM summary step even when cheaper strategies already free up enough space.`}
+                        </div>
+                    </div>
+                </>
             )}
-
-            <div className="debug-view-section debug-view-actions">
-                <button
-                    className="debug-view-btn debug-view-btn--primary"
-                    onClick={() => runCompaction(false)}
-                    disabled={!currentConversationId || compactionRunning}
-                >
-                    🗜️ {c('lumo: Debug View').t`Trigger compaction`}
-                </button>
-                <button
-                    className="debug-view-btn debug-view-btn--secondary"
-                    onClick={() => runCompaction(true)}
-                    disabled={!currentConversationId || compactionRunning}
-                >
-                    🧠 {c('lumo: Debug View').t`Trigger compaction (force summarization)`}
-                </button>
-                <div className="debug-view-hint">
-                    {c('lumo: Debug View')
-                        .t`Runs the compaction engine over the displayed branch and inserts a compaction boundary, without generating a reply. "Force summarization" always runs the LLM summary step even when cheaper strategies already free up enough space.`}
-                </div>
-            </div>
         </div>
     );
 };

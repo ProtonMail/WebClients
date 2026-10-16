@@ -306,6 +306,7 @@ export function* pushMessage({ payload }: { payload: PushMessageRequest }): Saga
                     limit: MAX_MESSAGES_PER_CONVERSATION,
                     conversationId: message?.conversationId,
                     serverMessage: e.serverMessage,
+                    code: e.code,
                 })
             );
             yield put(pushMessageFailure({ ...payload, error: `${e}` }));
