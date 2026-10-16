@@ -1,6 +1,6 @@
 import { stat, unlink } from 'node:fs/promises';
 import { join } from 'node:path';
-import { isProdEnv, isWindows } from '../../utils/platform';
+import { isMac, isProdEnv, isWindows } from '../../utils/platform';
 
 export const getHostLocation = (app: Electron.App) => {
     // Packaged Windows builds are MSIX: the host exe lives inside the protected
@@ -10,6 +10,12 @@ export const getHostLocation = (app: Electron.App) => {
     // requires an absolute path, so register the alias.
     if (isWindows() && isProdEnv()) {
         return join(process.env.LOCALAPPDATA ?? '', 'Microsoft', 'WindowsApps', 'proton_pass_nm_host.exe');
+    }
+
+    // Packaged macOS builds wrap the host in its own app bundle (forge.config.ts) so
+    // its Touch ID and keychain prompts show the Proton Pass name and icon.
+    if (isMac() && isProdEnv()) {
+        return join(app.getAppPath(), '../../Helpers/proton_pass_nm_host.app/Contents/MacOS/proton_pass_nm_host');
     }
 
     return join(
