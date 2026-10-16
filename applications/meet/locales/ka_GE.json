@@ -61,9 +61,6 @@
       "A participant reacted with ${ emoji }": [
         "მონაწილემ გამოხატა რეაქცია: ${ emoji }"
       ],
-      "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
-        "დაკავშირება მოხდა TURN რეტრანსლაციის რეჟიმით, ქსელის შეზღუდვების გამო. ამან შეიძლება გაზარდოს დაყოვნება და გავლენა მოახდინოს ზარის ხარისხზე."
-      ],
       "Connection lost. Reconnecting…": [
         "კავშირი გაწყდა. მიმდინარეობს თავიდან დაკავშირება…"
       ],
@@ -772,11 +769,6 @@
     "Badge": {
       "Active": [
         "აქტიური"
-      ]
-    },
-    "Banner": {
-      "Connected via TURN relay mode due to your network restrictions. This may increase latency and affect call quality.": [
-        "დაკავშირება მოხდა TURN რეტრანსლაციის რეჟიმით, თქვენი ქსელის შეზღუდვების გამო. ამან შეიძლება გაზარდოს დაყოვნება და გავლენა მოახდინოს ზარის ხარისხზე."
       ]
     },
     "Bug category": {
