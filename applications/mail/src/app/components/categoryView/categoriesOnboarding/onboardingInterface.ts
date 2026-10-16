@@ -7,6 +7,7 @@ export enum OnboardingFlow {
 
 export interface OnboardingInfo {
     onboardingFlow: OnboardingFlow;
+    isLoading: boolean;
     isUserEligible: boolean;
     flagValue: number;
 }

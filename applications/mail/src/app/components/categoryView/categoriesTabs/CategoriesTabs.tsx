@@ -12,8 +12,11 @@ import clsx from '@proton/utils/clsx';
 import { selectActiveCategoryID, selectCategoryIDs } from '../../../store/elements/elementsSelectors';
 import { useMailSelector } from '../../../store/hooks';
 import { selectDraggingElements, selectSelectAll } from '../../../store/layout/layoutSliceSelectors';
+import { CategoriesImproveSpotlight } from '../categoriesImproveSpotlight/CategoriesImproveSpotlight';
+import { useCategoriesImproveSpotlight } from '../categoriesImproveSpotlight/useCategoriesImproveSpotlight';
 import { useCategoriesOnboarding } from '../categoriesOnboarding/CategoriesOnboardingContext';
 import { CategoriesOnboardingSpotlight } from '../categoriesOnboarding/CategoriesOnboardingSpotlights';
+import { HIGHLIGHTED_ITEM_INDEX } from '../categoriesOnboarding/onboardingInterface';
 import { useCategoriesView } from '../useCategoriesView';
 import { useRecategorizeElement } from '../useRecategorizeElement';
 import { CategoriesTabsError, CategoryTabError } from './CategoryTabsErrors';
@@ -28,6 +31,7 @@ const CategoriesTabsList = () => {
     const recategorizeElement = useRecategorizeElement();
     const { activeCategoriesTabs } = useCategoriesView();
     const { tabSpotlightStep } = useCategoriesOnboarding();
+    const improveSpotlight = useCategoriesImproveSpotlight();
 
     const categoryIDs = useMailSelector(selectCategoryIDs);
     const activeCategoryID = useMailSelector(selectActiveCategoryID);
@@ -87,36 +91,7 @@ const CategoriesTabsList = () => {
                 onDragEnd={handleDragEnd}
             >
                 {activeCategoriesTabs.map((category, idx) => {
-                    const tabState = getTabState({
-                        category,
-                        draggedOverCategoryId,
-                        categoryIDs,
-                        selectAll,
-                    });
-
-                    // Show the spotlight on the second tab.
-                    // It will be social most of the time but some users might have changed categories
-                    if (idx === 1 && tabSpotlightStep) {
-                        return (
-                            <CategoriesOnboardingSpotlight step={tabSpotlightStep} key={category.id}>
-                                <div
-                                    className="tab-wrapper"
-                                    onDragOver={handleDragOver(category.id)}
-                                    onDrop={handleDrop(category.id)}
-                                >
-                                    <ErrorBoundary component={<CategoryTabError />} logger={logger}>
-                                        <Tab
-                                            category={category}
-                                            tabState={tabState}
-                                            userIsDragging={isDraggingElements}
-                                        />
-                                    </ErrorBoundary>
-                                </div>
-                            </CategoriesOnboardingSpotlight>
-                        );
-                    }
-
-                    return (
+                    const tab = (
                         <div
                             key={category.id}
                             className="tab-wrapper"
@@ -124,10 +99,43 @@ const CategoriesTabsList = () => {
                             onDrop={handleDrop(category.id)}
                         >
                             <ErrorBoundary component={<CategoryTabError />} logger={logger}>
-                                <Tab category={category} tabState={tabState} userIsDragging={isDraggingElements} />
+                                <Tab
+                                    category={category}
+                                    tabState={getTabState({ category, draggedOverCategoryId, categoryIDs, selectAll })}
+                                    userIsDragging={isDraggingElements}
+                                />
                             </ErrorBoundary>
                         </div>
                     );
+
+                    // Spotlights are shown on the second tab.
+                    // It will be social most of the time but some users might have changed categories
+                    if (idx !== HIGHLIGHTED_ITEM_INDEX) {
+                        return tab;
+                    }
+
+                    if (tabSpotlightStep) {
+                        return (
+                            <CategoriesOnboardingSpotlight step={tabSpotlightStep} key={category.id}>
+                                {tab}
+                            </CategoriesOnboardingSpotlight>
+                        );
+                    }
+
+                    if (improveSpotlight.isEligible) {
+                        return (
+                            <CategoriesImproveSpotlight
+                                key={category.id}
+                                show={improveSpotlight.show}
+                                onDisplayed={improveSpotlight.onDisplayed}
+                                onClose={improveSpotlight.onClose}
+                            >
+                                {tab}
+                            </CategoriesImproveSpotlight>
+                        );
+                    }
+
+                    return tab;
                 })}
             </div>
         </>
