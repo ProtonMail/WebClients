@@ -45,7 +45,7 @@ export const ImportReport = () => {
     const imported = report.total;
     const total = imported + report.ignored.length;
     const percentage = total > 0 ? Math.floor((imported * 100) / total) : 100;
-    const ignoredCount = report.ignored.length;
+    const totalIgnored = report.ignored.length;
 
     const handleClose = () => window.close();
 
@@ -53,7 +53,7 @@ export const ImportReport = () => {
         <Layout>
             <OpenExtension />
             <div className="flex flex-column items-center lg:w-2/3 pass-onboarding-open-extension-margin">
-                <Header {...getReportHeader(imported, ignoredCount)} />
+                <Header {...getReportHeader(imported, totalIgnored)} />
                 {report.sampleItem && (
                     <Sample
                         service={report.sampleItem.name}
@@ -76,13 +76,13 @@ export const ImportReport = () => {
                             }
                         </span>
                     </p>
-                    {ignoredCount > 0 && (
+                    {totalIgnored > 0 && (
                         <Banner variant="danger" className="text-lg mt-8">
                             <p className="text-semibold">
                                 {c('Info').ngettext(
-                                    msgid`The following ${ignoredCount} item could not be imported:`,
-                                    `The following ${ignoredCount} items could not be imported:`,
-                                    ignoredCount
+                                    msgid`The following ${totalIgnored} item could not be imported:`,
+                                    `The following ${totalIgnored} items could not be imported:`,
+                                    totalIgnored
                                 )}
                             </p>
                             {report.ignored.map((ignored, idx) => (
