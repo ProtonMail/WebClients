@@ -1481,7 +1481,8 @@
         "Megbízható"
       ],
       "Trust key": [
-        "Megbízható kulcs"
+        "Kulcs megjelölése megbízhatóként",
+        "Kulcsok megjelölése megbízhatóként"
       ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
@@ -4988,6 +4989,9 @@
       ],
       "Incorrect password. Please try again.": [
         "Hibás jelszó. Próbálja meg újra."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Hibás helyreállító jelmondat. Próbálja meg újra vagy próbáljon másik helyreállítási módszert."
       ]
     },
     "error": {
@@ -7184,7 +7188,6 @@
         "Inicializálás…"
       ],
       "Insert image": [
-        "Kép beillesztése",
         "Kép beillesztése"
       ],
       "Insert link": [

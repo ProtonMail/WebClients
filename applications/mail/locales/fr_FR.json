@@ -1565,7 +1565,8 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance"
+        "Faire confiance à cette clé",
+        "Faire confiance à ces clés"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -5505,6 +5506,9 @@
       ],
       "Incorrect password. Please try again.": [
         "Le mot de passe n'est pas correct. Réessayez."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "La phrase de récupération n'est pas correcte. Réessayez ou utilisez une autre méthode de récupération."
       ]
     },
     "error": {
@@ -8002,8 +8006,7 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image",
-        "Insérer des images"
+        "Insérer une image"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -18003,7 +18006,7 @@
         "Éditeur de documents en ligne"
       ],
       "Recover previous file versions": [
-        "Récupérez les versions précédentes de fichiers"
+        "Récupérez les versions précédentes des fichiers"
       ],
       "Stronger protection against cyber threats": [
         "Une protection renforcée contre les cybermenaces"

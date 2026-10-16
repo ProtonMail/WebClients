@@ -1532,7 +1532,8 @@
         "Considera attendibile"
       ],
       "Trust key": [
-        "Affida chiave"
+        "chiave attendibile",
+        "chiavi attendibili"
       ],
       "Trust public key": [
         "Chiave pubblica attendibile"
@@ -5389,6 +5390,9 @@
       ],
       "You reached the maximum number of connected addresses": [
         "È stato raggiunto il numero massimo di indirizzi connessi"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Frase di recupero errata. Riprova o usa un altro metodo di recupero."
       ]
     },
     "error": {
@@ -7769,8 +7773,7 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine",
-        "Inserisci immagini"
+        "Inserisci immagine"
       ],
       "Insert link": [
         "Inserisci link"
@@ -9392,6 +9395,12 @@
       ],
       "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
         "Il tuo account Gmail è collegato a questo indirizzo ${ MAIL_APP_NAME }"
+      ],
+      "Move emails": [
+        "Sposta e-mail"
+      ],
+      "Opened ${ location }": [
+        "Inaugurato a ${ location }"
       ]
     },
     "info": {
