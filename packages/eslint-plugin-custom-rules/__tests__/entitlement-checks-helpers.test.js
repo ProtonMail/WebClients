@@ -12,7 +12,7 @@ describe('parseRegisteredCheckNames', () => {
                 isB2cMultiUser: (r) => r.hasMatchingSubscription({ includes: [EntitlementName.MultiUser] }),
 
                 /** doc comment { with a brace } */
-                isBusiness: (r) => r.hasEntitlement(EntitlementName.Business),
+                isB2B: (r) => r.hasEntitlement(EntitlementName.Business),
             } satisfies Record<string, EntitlementCheckForSelection>;
 
             export const entitlementChecksForOrgAndUser = {
@@ -22,7 +22,7 @@ describe('parseRegisteredCheckNames', () => {
             } satisfies Record<string, EntitlementCheckForOrgAndUser>;
         `);
 
-        expect([...names]).toEqual(['isB2cMultiUser', 'isBusiness', 'hasSeats']);
+        expect([...names]).toEqual(['isB2cMultiUser', 'isB2B', 'hasSeats']);
     });
 
     it('finds nothing in a source without a registry', () => {
@@ -36,7 +36,7 @@ describe('parseRegisteredCheckNames', () => {
         );
 
         expect([...parseRegisteredCheckNames(checksSource)]).toEqual(
-            expect.arrayContaining(['isBusiness', 'isMultiUser', 'isMspEligible', 'hasVpn'])
+            expect.arrayContaining(['isB2B', 'isMultiUser', 'isMspEligible', 'hasVpn'])
         );
     });
 });

@@ -38,7 +38,7 @@ export const entitlementChecksForSelection = {
     isB2cMultiUser: (r) =>
         r.hasMatchingSubscription({ includes: [EntitlementName.MultiUser], excludes: [EntitlementName.Business] }),
 
-    isBusiness: (r) => r.hasEntitlement(EntitlementName.Business),
+    isB2B: (r) => r.hasEntitlement(EntitlementName.Business),
 
     isMultiUser: (r) => r.hasEntitlement(EntitlementName.MultiUser),
 
@@ -58,9 +58,11 @@ export const entitlementChecksForSelection = {
 
     hasAdminRoles: (r) => r.hasEntitlement(EntitlementName.AdminRoles),
 
-    isVpnBusiness: (r) => r.hasMatchingSubscription({ includes: [EntitlementName.Business, EntitlementName.FlagsVpn] }),
+    isVpnB2B: (r) => r.hasMatchingSubscription({ includes: [EntitlementName.Business, EntitlementName.FlagsVpn] }),
 
-    isVpnOrPassBusiness: (r) =>
+    isPassB2B: (r) => r.hasMatchingSubscription({ includes: [EntitlementName.Business, EntitlementName.FlagsPass] }),
+
+    isVpnOrPassB2B: (r) =>
         r.hasMatchingSubscription({ includes: [EntitlementName.Business, EntitlementName.FlagsVpn] }) ||
         r.hasMatchingSubscription({ includes: [EntitlementName.Business, EntitlementName.FlagsPass] }),
 
@@ -69,6 +71,19 @@ export const entitlementChecksForSelection = {
     hasVpnLocationFilter: (r) => r.hasEntitlement(EntitlementName.VpnLocationFilter),
 
     hasGroups: (r) => r.hasEntitlement(EntitlementName.Groups),
+
+    hasAllCoreProductsB2C: (r) =>
+        r.hasMatchingSubscription({
+            includes: [
+                EntitlementName.FlagsDrive,
+                EntitlementName.FlagsInbox,
+                EntitlementName.FlagsPass,
+                EntitlementName.FlagsVpn,
+            ],
+            excludes: [EntitlementName.Business],
+        }),
+
+    hasScribe: (r) => r.hasEntitlement(EntitlementName.MaxScribe),
 } satisfies Record<string, EntitlementCheckForSelection>;
 
 /**

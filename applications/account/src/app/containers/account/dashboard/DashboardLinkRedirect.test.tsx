@@ -2,14 +2,14 @@ import { MemoryRouter, Route } from 'react-router-dom';
 
 import { render, screen } from '@testing-library/react';
 
+import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
-import { useSubscription } from '@proton/account/subscription/hooks';
 import type { SectionConfig } from '@proton/components/containers/layout/interface';
 import { IcCreditCard } from '@proton/icons/icons/IcCreditCard';
 
 import { DashboardLinkRedirect } from './DashboardLinkRedirect';
 
-jest.mock('@proton/account/subscription/hooks', () => ({ useSubscription: jest.fn() }));
+jest.mock('@proton/account/allSubscriptions/hooks', () => ({ useAllSubscriptions: jest.fn() }));
 jest.mock('@proton/account/organization/hooks', () => ({ useOrganization: jest.fn() }));
 jest.mock(
     '@proton/components/containers/layout/PrivateMainAreaLoading',
@@ -19,7 +19,7 @@ jest.mock(
         }
 );
 
-const mockUseSubscription = useSubscription as jest.Mock;
+const mockUseAllSubscriptions = useAllSubscriptions as jest.Mock;
 const mockUseOrganization = useOrganization as jest.Mock;
 
 const getSubscription = (available: boolean): SectionConfig => ({
@@ -47,12 +47,12 @@ const renderDashboardLinkRedirect = (entry: string, subscription = getSubscripti
 
 describe('DashboardLinkRedirect', () => {
     beforeEach(() => {
-        mockUseSubscription.mockReturnValue([{}, false]);
+        mockUseAllSubscriptions.mockReturnValue([[], false]);
         mockUseOrganization.mockReturnValue([{}, false]);
     });
 
     it('waits for the subscription to load before redirecting', () => {
-        mockUseSubscription.mockReturnValue([undefined, true]);
+        mockUseAllSubscriptions.mockReturnValue([undefined, true]);
 
         renderDashboardLinkRedirect('/vpn/dashboard#invoices');
 
