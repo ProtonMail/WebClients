@@ -4,6 +4,7 @@ import type {
     ToolName as TransportToolName,
 } from '@proton/lumo-api-client';
 
+import { ToolInputError } from '../contracts/errors';
 import type {
     ActionRequest,
     ToolName as FrameworkToolName,
@@ -464,6 +465,85 @@ describe('createClientToolExecutor', () => {
             });
             const [result] = await executor.execute([call('move_items', { target: 'x' })]);
             expect(result.is_error).toBe(true);
+        });
+    });
+
+    describe("execute — a tool's own argument check", () => {
+        const checkedMove = def('move_items', {
+            kind: 'mutation',
+            paramsSchema: OBJECT_SCHEMA({ target: { type: 'string' } }, ['target']),
+            checkParams: (params: { target: string }) => {
+                if (params.target === 'Trash') {
+                    throw new ToolInputError('Items cannot be moved to Trash. Pick another folder.');
+                }
+            },
+        });
+
+        const build = (confirm: ConfirmController) => {
+            const handled: Record<string, any>[] = [];
+            const executor = createClientToolExecutor({
+                definitions: [checkedMove],
+                references: createReferenceRegistry(),
+                handlers: {
+                    move_items: async (params) => {
+                        handled.push(params);
+                        return {};
+                    },
+                },
+                confirm,
+            });
+            return { executor, handled };
+        };
+
+        it('rejects bad arguments before the confirm card, telling the model what to change', async () => {
+            const confirm = scriptedConfirm({ action: 'apply', params: { target: 'Trash' } });
+            const { executor, handled } = build(confirm);
+
+            const [result] = await executor.execute([call('move_items', { target: 'Trash' })]);
+
+            expect(result.is_error).toBe(true);
+            expect(JSON.parse(result.content)).toEqual({
+                error: 'Items cannot be moved to Trash. Pick another folder.',
+            });
+            expect(confirm.calls).toEqual([]);
+            expect(handled).toEqual([]);
+        });
+
+        it('re-checks the approved params, failing the tile without running the handler', async () => {
+            const confirm = scriptedConfirm({ action: 'apply', params: { target: 'Trash' } });
+            const { executor, handled } = build(confirm);
+
+            const [result] = await executor.execute([call('move_items', { target: 'Archive' })]);
+
+            expect(confirm.calls).toHaveLength(1);
+            expect(result.is_error).toBe(true);
+            expect(JSON.parse(result.content)).toEqual({
+                error: 'Items cannot be moved to Trash. Pick another folder.',
+            });
+            expect(handled).toEqual([]);
+            expect(confirm.outcomes).toEqual([ConfirmOutcome.FAILED]);
+        });
+
+        it('lets an unexpected error from the check propagate', async () => {
+            const confirm = scriptedConfirm({ action: 'apply', params: { target: 'Archive' } });
+            const executor = createClientToolExecutor({
+                definitions: [
+                    {
+                        ...checkedMove,
+                        checkParams: () => {
+                            throw new Error('the check itself broke');
+                        },
+                    },
+                ],
+                references: createReferenceRegistry(),
+                handlers: { move_items: async () => ({}) },
+                confirm,
+            });
+
+            await expect(executor.execute([call('move_items', { target: 'Archive' })])).rejects.toThrow(
+                'the check itself broke'
+            );
+            expect(confirm.calls).toEqual([]);
         });
     });
 
