@@ -41,7 +41,7 @@ describe('PostCallTitle', () => {
         expect(screen.getByText(fallback)).toBeInTheDocument();
     });
 
-    it('wraps and truncates long titles', () => {
+    it('applies the wrap and two-line clamp classes to the title', () => {
         const store = createStore();
         store.dispatch(setPreviousMeeting({ link: null, name: 'Design Weekly' }));
 

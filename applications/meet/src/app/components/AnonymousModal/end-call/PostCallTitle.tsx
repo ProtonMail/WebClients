@@ -5,7 +5,7 @@ import { selectPreviousMeetingName } from '@proton/meet/store/slices/meetAppStat
 
 export type PostCallTitleKind = 'left' | 'ended' | 'timeUp' | 'removed';
 
-const titleByKind: Record<PostCallTitleKind, (meetingName: string | null) => string> = {
+const titleByKind: Record<PostCallTitleKind, (meetingName: string) => string> = {
     left: (meetingName) => (meetingName ? c('Info').t`You left ${meetingName}` : c('Info').t`You left the meeting`),
     ended: (meetingName) => (meetingName ? c('Info').t`${meetingName} has ended` : c('Info').t`Meeting ended`),
     timeUp: (meetingName) =>
