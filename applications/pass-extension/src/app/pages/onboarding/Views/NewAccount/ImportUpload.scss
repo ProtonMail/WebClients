@@ -1,0 +1,11 @@
+.pass-onboarding .pass-import-upload {
+	border-color: color-mix(in srgb, var(--pass-main-color) 50%, transparent);
+	background-color: color-mix(in srgb, var(--pass-main-color) 5%, transparent);
+	transition: all ease 0.3s;
+
+	.button-pill {
+		background: none;
+		padding-inline: 2rem;
+		border-color: white;
+	}
+}

@@ -126,7 +126,7 @@ const StepAuthenticate: FC<StepComponentProps> = ({ model: { provider }, onNext 
             {tokens && !tokens.length && (
                 <Button color="norm" onClick={handleAddToken} className="flex items-center text-semibold p-2 pr-6">
                     <img src={provider.iconSrc} alt="" width={40} height={40} className="mr-4 bg-weak p-2 rounded" />
-                    {c('Action').t`Sign in to ${providerName}`}
+                    {c('Easy switch').t`Sign in to ${providerName}`}
                 </Button>
             )}
             {!tokens && <CircleLoader />}

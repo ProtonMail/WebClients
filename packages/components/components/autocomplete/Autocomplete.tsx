@@ -1,4 +1,7 @@
+import type { ReactNode, RefObject } from 'react';
 import { useRef } from 'react';
+
+import type { MatchChunk } from '@proton/shared/lib/helpers/regex';
 
 import type { Props as InputProps } from '../input/Input';
 import Input from '../input/Input';
@@ -38,6 +41,19 @@ export interface Props<T> extends Omit<InputProps, 'value' | 'onChange' | 'onSel
      * Determines whether to show a hint that there are more results than the limit.
      */
     showHiddenResultsHint?: boolean;
+    /**
+     * Optional function to have a custom way to render options in the list.
+     */
+    renderOption?: (option: T, chunks: MatchChunk[]) => ReactNode;
+    /**
+     * Suggestions dropdown will have the input as anchor by default.
+     * Set that ref if your want to anchor them differently.
+     */
+    suggestionsRef?: RefObject<HTMLElement>;
+    /**
+     * Additional classes to pass to the dropdown.
+     */
+    dropdownClassName?: string;
 }
 
 const Autocomplete = <T,>({
@@ -50,6 +66,9 @@ const Autocomplete = <T,>({
     searchMinLength = 0,
     getData,
     showHiddenResultsHint = false,
+    renderOption,
+    suggestionsRef,
+    dropdownClassName,
     ...rest
 }: Props<T>) => {
     const inputRef = useRef<HTMLInputElement>(null);
@@ -76,6 +95,14 @@ const Autocomplete = <T,>({
 
     const extraResultsCount = options.length > limit ? options.length - limit : 0;
 
+    const anchorRef = (() => {
+        if (suggestionsRef) {
+            return suggestionsRef;
+        } else {
+            return containerRef.current ? containerRef : inputRef;
+        }
+    })();
+
     return (
         <>
             <Input
@@ -97,8 +124,9 @@ const Autocomplete = <T,>({
                 }}
             />
             <AutocompleteList
-                anchorRef={containerRef.current ? containerRef : inputRef}
+                anchorRef={anchorRef}
                 hiddenResultsCount={showHiddenResultsHint ? extraResultsCount : undefined}
+                dropdownClassName={dropdownClassName}
                 {...suggestionProps}
             >
                 {filteredOptions.map(({ chunks, text, option }, index) => {
@@ -111,7 +139,7 @@ const Autocomplete = <T,>({
                             disableFocusOnActive
                             onChange={handleSelectOption}
                         >
-                            <Marks chunks={chunks}>{text}</Marks>
+                            {renderOption ? renderOption(option, chunks) : <Marks chunks={chunks}>{text}</Marks>}
                         </Option>
                     );
                 })}

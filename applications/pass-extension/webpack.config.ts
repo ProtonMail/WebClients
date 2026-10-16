@@ -389,6 +389,12 @@ const config: Configuration = {
                                 break;
                         }
 
+                        /* onboarding is only opened from the account app */
+                        const onboardingResource = manifest.web_accessible_resources.find(
+                            ({ resources }: { resources: string[] }) => resources.includes('onboarding.html')
+                        );
+                        onboardingResource.matches = [`https://account.${API_ENV}/*`];
+
                         if (BETA) {
                             manifest.name = 'Proton Pass (BETA)';
                             manifest.icons = {

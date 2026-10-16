@@ -19,6 +19,7 @@ import type { PauseListEntry } from '@proton/pass/lib/settings/pause-list';
 import type { Notification } from '@proton/pass/store/actions/enhancers/notification';
 import type { FeatureFlagState, FoldersByShareId, VaultShareItem } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
+import type { ToolbarPinState } from '@proton/pass/types/browser';
 import type { ShareId } from '@proton/pass/types/crypto/pass-types';
 import type { AliasOptionsResult } from '@proton/pass/types/data/alias';
 import type { B2BEvent } from '@proton/pass/types/data/b2b';
@@ -88,6 +89,7 @@ export enum WorkerMessageType {
     ACCOUNT_FORK = 'fork',
     ACCOUNT_ONBOARDING = 'pass-onboarding',
     ACCOUNT_PROBE = 'pass-installed',
+    ACCOUNT_PROBE_2 = 'pass-account-probe',
     ALIAS_CREATE = 'ALIAS_CREATE',
     ALIAS_OPTIONS = 'ALIAS_OPTIONS',
 
@@ -194,6 +196,7 @@ type AccountAuthExtMessage = { type: WorkerMessageType.ACCOUNT_EXTENSION };
 type AccountForkMessage = WithPayload<WorkerMessageType.ACCOUNT_FORK, ExtensionForkPayload>;
 type AccountPassOnboardingMessage = { type: WorkerMessageType.ACCOUNT_ONBOARDING };
 type AccountProbeMessage = { type: WorkerMessageType.ACCOUNT_PROBE };
+type AccountProbe2Message = { type: WorkerMessageType.ACCOUNT_PROBE_2 };
 
 type AliasCreateMessage = WithPayload<WorkerMessageType.ALIAS_CREATE, AliasCreateRequest>;
 type AliasOptionsMessage = { type: WorkerMessageType.ALIAS_OPTIONS };
@@ -301,6 +304,7 @@ export type WorkerMessage =
     | AccountForkMessage
     | AccountPassOnboardingMessage
     | AccountProbeMessage
+    | AccountProbe2Message
     | AliasCreateMessage
     | AliasOptionsMessage
     | AuthChangedMessage
@@ -397,6 +401,11 @@ export type MessageSuccess<T> = T extends { [key: string]: any } ? T & { type: '
 export type MaybeMessage<T> = MessageSuccess<T> | MessageFailure;
 
 type WorkerMessageResponseMap = {
+    [WorkerMessageType.ACCOUNT_PROBE_2]: {
+        authenticated: boolean;
+        pinned: ToolbarPinState;
+        url: MaybeNull<string>;
+    };
     [WorkerMessageType.ACCOUNT_FORK]: { payload: ExtensionForkResultPayload };
     [WorkerMessageType.ALIAS_CREATE]: Result;
     [WorkerMessageType.ALIAS_OPTIONS]: Result<AliasOptionsResult>;

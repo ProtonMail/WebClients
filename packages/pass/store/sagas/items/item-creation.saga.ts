@@ -9,6 +9,7 @@ import type { ItemRevision } from '../../../types';
 import { TelemetryEventName, TelemetryItemType } from '../../../types/data/telemetry';
 import { deobfuscate } from '../../../utils/obfuscate/xor';
 import { filesResolve, itemCreate, itemCreateDismiss } from '../../actions';
+import { withIntentSender } from '../../actions/enhancers/endpoint';
 import { withRevalidate } from '../../request/enhancers';
 import { selectShareOrThrow } from '../../selectors';
 import { SelectorError } from '../../selectors/errors';
@@ -47,14 +48,15 @@ function* singleItemCreationWorker(options: RootSagaOptions, action: ItemCreatio
         if (hasTotp) void telemetry?.push(createTelemetryEvent(TelemetryEventName.TwoFACreation, {}, {}));
     } catch (error) {
         if (error instanceof SelectorError) yield put(itemCreateDismiss({ optimisticId, shareId, itemName }));
-        yield put(itemCreate.failure(meta.request.id, error, { optimisticId, shareId }));
+        yield put(withIntentSender(itemCreate.failure(meta.request.id, error, { optimisticId, shareId }), action));
     }
 }
 
-function* withAliasCreationWorker(options: RootSagaOptions, { payload: createIntent, meta }: ItemWithAliasCreationAction) {
+function* withAliasCreationWorker(options: RootSagaOptions, action: ItemWithAliasCreationAction) {
     const { getTelemetry } = options;
     const telemetry = getTelemetry();
 
+    const { payload: createIntent, meta } = action;
     const { shareId, optimisticId, files } = createIntent;
     const shouldLink = files.toAdd.length > 0;
 
@@ -70,7 +72,7 @@ function* withAliasCreationWorker(options: RootSagaOptions, { payload: createInt
         void telemetry?.push(createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: TelemetryItemType[aliasItem.data.type] }));
         if (deobfuscate(content.totpUri)) void telemetry?.push(createTelemetryEvent(TelemetryEventName.TwoFACreation, {}, {}));
     } catch (error) {
-        yield put(itemCreate.failure(meta.request.id, error, { optimisticId, shareId }));
+        yield put(withIntentSender(itemCreate.failure(meta.request.id, error, { optimisticId, shareId }), action));
     }
 }
 

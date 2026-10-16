@@ -7,7 +7,7 @@ import chunk from '@proton/utils/chunk';
 import { MAX_BATCH_PER_IMPORT_REQUEST } from '../../../constants';
 import type { FolderLimits, FoldersById } from '../../../lib/folders/folder.utils';
 import { planImportFolders } from '../../../lib/import/helpers/folders';
-import { type ImportReport, formatIgnoredItem } from '../../../lib/import/helpers/report';
+import { type ImportReport, formatIgnoredItem, getSampleLoginPreview } from '../../../lib/import/helpers/report';
 import type { ImportFolder, ImportVault } from '../../../lib/import/types';
 import { importItemsBatch } from '../../../lib/items/item.requests';
 import { createTelemetryEvent } from '../../../lib/telemetry/utils';
@@ -18,6 +18,7 @@ import type {
     IndexedByShareIdAndItemId,
     ItemImportIntent,
     ItemRevision,
+    LoginItemPreview,
     Maybe,
     MaybeNull,
     PassPlanResponse,
@@ -149,7 +150,7 @@ function* importFoldersForVault(options: { state: ImportWorkerState; shareId: st
 function* importWorker(
     state: ImportWorkerState,
     { getTelemetry }: RootSagaOptions,
-    { payload: { data, provider }, meta }: WithSenderAction<ReturnType<typeof importItems.intent>>
+    { payload: { data, provider, importEntryPoint }, meta }: WithSenderAction<ReturnType<typeof importItems.intent>>
 ): Generator {
     const telemetry = getTelemetry();
     const requestID = meta.request.id;
@@ -165,6 +166,7 @@ function* importWorker(
     const pendingFiles: string[] = [];
     const filesForImport: IndexedByShareIdAndItemId<string[]> = {};
     const ignored = [...data.ignored];
+    let sampleItem: MaybeNull<LoginItemPreview> = null;
 
     const passPlan: UserPassPlan = yield select(selectPassPlan);
     const userPlan: MaybeNull<PassPlanResponse> = yield select(selectUserPlan);
@@ -226,6 +228,7 @@ function* importWorker(
             total: counts.items,
             totalFiles: counts.files,
             warnings: data.warnings.concat(folderWarnings),
+            sampleItem,
         };
     };
 
@@ -264,6 +267,8 @@ function* importWorker(
                         assertNotAborted(state);
 
                         const items: ItemRevision[] = yield importItemsBatch({ shareId, importIntents });
+
+                        if (sampleItem === null) sampleItem = getSampleLoginPreview(items);
 
                         items.forEach(({ data, shareId, itemId }) => {
                             const { itemUuid } = data.metadata;
@@ -314,7 +319,7 @@ function* importWorker(
             createTelemetryEvent(
                 TelemetryEventName.ImportCompletion,
                 { item_count: counts.items, vaults: importVaults.length },
-                { source: provider }
+                { source: provider, importEntryPoint }
             )
         );
 
