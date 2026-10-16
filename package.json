@@ -44,16 +44,16 @@
         "@types/global-types-monorepo": "workspace:^",
         "@types/node": "catalog:",
         "@typescript/native": "npm:typescript@^7.0.2",
-        "eslint": "^10.11.0",
+        "eslint": "^10.12.0",
         "husky": "^9.1.7",
-        "knip": "^6.38.0",
+        "knip": "^6.41.0",
         "lint-staged": "^17.6.0",
         "nyc": "^17.1.0",
         "prettier": "^3.9.9",
         "prettier-plugin-tailwindcss": "^0.8.1",
         "sort-package-json": "^4.0.0",
         "stylelint": "^15.11.0",
-        "turbo": "2.11.5"
+        "turbo": "2.11.8"
     },
     "packageManager": "pnpm@12.8.1",
     "engines": {

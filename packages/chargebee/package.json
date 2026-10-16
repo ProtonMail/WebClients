@@ -29,13 +29,13 @@
         "@types/webpack-env": "catalog:",
         "@typescript/native": "npm:typescript@^7.0.2",
         "concurrently": "^8.2.2",
-        "eslint": "^10.11.0",
+        "eslint": "^10.12.0",
         "jest": "^30.5.2",
         "jest-junit": "^16.0.0",
         "postcss": "^8.5.28",
         "serve": "^14.2.6",
         "typescript": "npm:@typescript/typescript6@^6.0.2",
-        "vite": "^8.3.1",
+        "vite": "^8.3.4",
         "vite-plugin-mkcert": "^1.17.12",
         "vite-plugin-singlefile": "^2.3.3"
     }
