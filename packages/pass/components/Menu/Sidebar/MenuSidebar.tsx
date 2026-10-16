@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import { IcBolt } from '@proton/icons/icons/IcBolt';
-import { IcMobile } from '@proton/icons/icons/IcMobile';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 
 import { useVaultCreationPolicy } from '../../../hooks/organization/useVaultCreationPolicy';
@@ -16,6 +15,8 @@ import { getMonitorRoute } from '../../Navigation/routing';
 import { InAppNotificationContainer } from '../../Notifications/InAppNotificationPortal';
 import { OrganizationPolicyTooltip } from '../../Organization/OrganizationPolicyTooltip';
 import { useVaultActions } from '../../Vault/VaultActionsProvider';
+import { DownloadAppsButton } from '../DownloadApps/DownloadAppsButton';
+import { useDownloadAppsModal } from '../DownloadApps/useDownloadAppsModal';
 import { MonitorButton } from '../Monitor/MonitorButton';
 import { SharedMenu } from '../Shared/SharedMenu';
 import { Submenu } from '../Submenu';
@@ -35,6 +36,7 @@ export const MenuSidebar: FC<Props> = ({ onLock, onLogout, userPanel }) => {
     const menu = useMenuItems();
     const vaultActions = useVaultActions();
     const { vaultCreationDisabled } = useVaultCreationPolicy();
+    const [downloadAppsModal, showDownloadAppsModal] = useDownloadAppsModal();
 
     return (
         <div className="flex flex-column flex-nowrap justify-space-between flex-1 overflow-auto">
@@ -87,19 +89,7 @@ export const MenuSidebar: FC<Props> = ({ onLock, onLogout, userPanel }) => {
                     headerClassname="mx-3 pr-2 py-1"
                     contentClassname="mx-3"
                 />
-                <Submenu
-                    icon={IcMobile}
-                    label={
-                        DESKTOP_BUILD
-                            ? c('Action').t`Get mobile apps`
-                            : // translator: if the translated text is longer than the english text,
-                              // please simply translate as "Get apps" because UI space is limited.
-                              c('Action').t`Get mobile and desktop apps`
-                    }
-                    items={menu.download}
-                    headerClassname="mx-3 pr-2 py-1"
-                    contentClassname="mx-3"
-                />
+                <DownloadAppsButton openModal={() => showDownloadAppsModal({})} />
 
                 <div className="shrink-0">
                     <InAppNotificationContainer className="px-4 py-2" />
@@ -114,6 +104,7 @@ export const MenuSidebar: FC<Props> = ({ onLock, onLogout, userPanel }) => {
                     <UserStorage />
                 </div>
             </div>
+            {downloadAppsModal}
         </div>
     );
 };

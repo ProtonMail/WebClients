@@ -13,7 +13,6 @@ import { IcArrowOutFromRectangle } from '@proton/icons/icons/IcArrowOutFromRecta
 import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
 import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
 import { IcLock } from '@proton/icons/icons/IcLock';
-import { IcMobile } from '@proton/icons/icons/IcMobile';
 import { IcNotepadChecklist } from '@proton/icons/icons/IcNotepadChecklist';
 import { IcPassShieldWarning } from '@proton/icons/icons/IcPassShieldWarning';
 import { IcUser } from '@proton/icons/icons/IcUser';
@@ -32,6 +31,8 @@ import { useNavigate } from '../../Navigation/NavigationActions';
 import { getLocalPath } from '../../Navigation/routing';
 import { useOrganization } from '../../Organization/OrganizationProvider';
 import { AdminPanelLabel } from '../B2B/AdminPanelLabel';
+import { DownloadAppsButton } from '../DownloadApps/DownloadAppsButton';
+import { useDownloadAppsModal } from '../DownloadApps/useDownloadAppsModal';
 import { Submenu } from '../Submenu';
 import { AppMenuButton } from './MenuButtons';
 import { MenuUser } from './MenuUser';
@@ -60,10 +61,11 @@ export const MenuDropdown: FC<Props> = ({ onLock, onLogout, interactive }) => {
     const org = useOrganization();
 
     const appMenu = usePopperAnchor<HTMLButtonElement>();
+    const [downloadAppsModal, showDownloadAppsModal] = useDownloadAppsModal();
 
     const withAppMenuClose = withTap(appMenu.close);
 
-    const { advanced, download } = useMenuItems(useMemo(() => ({ onAction: appMenu.close }), [appMenu.close]));
+    const { advanced } = useMenuItems(useMemo(() => ({ onAction: appMenu.close }), [appMenu.close]));
 
     const accountMenuItems: MenuItem[] = useMemo(
         () => [
@@ -155,18 +157,16 @@ export const MenuDropdown: FC<Props> = ({ onLock, onLogout, interactive }) => {
 
                     <hr className="my-2 mx-4" aria-hidden="true" />
 
-                    <Submenu
-                        icon={IcMobile}
-                        label={
-                            // translator: if the translated text is longer than the english text,
-                            // please simply translate as "Get apps" because UI space is limited.
-                            c('Action').t`Get mobile and desktop apps`
-                        }
-                        items={download}
+                    <DownloadAppsButton
+                        openModal={() => showDownloadAppsModal({})}
+                        onAction={appMenu.close}
+                        parentClassName=""
+                        className="pt-1.5 pb-1.5"
                     />
                     <Submenu icon={IcUser} label={c('Action').t`Account`} items={accountMenuItems} />
                 </DropdownMenu>
             </Dropdown>
+            {downloadAppsModal}
         </nav>
     );
 };
