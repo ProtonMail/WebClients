@@ -41,7 +41,7 @@ const mockDefineSidebar = defineSidebar as MockedFunction<any>;
 const user = { ID: 'user' };
 const subscription = { ID: 'subscription' };
 const organization = { ID: 'organization' };
-const entitlements = { isVpnBusiness: true };
+const entitlements = { isVpnB2B: true };
 const permissions = { 'organization.gateways': true };
 
 describe('useB2BAdminSidebarFeature', () => {
@@ -101,7 +101,7 @@ describe('useB2BAdminSidebarFeature', () => {
     });
 
     it('is disabled and settled when the organization is not a vpn business', () => {
-        mockUseEntitlementChecks.mockReturnValue([{ isVpnBusiness: false }, false]);
+        mockUseEntitlementChecks.mockReturnValue([{ isVpnB2B: false }, false]);
 
         const { result } = renderHook(() => useB2BAdminSidebarFeature({ prefix: '/vpn' }));
 

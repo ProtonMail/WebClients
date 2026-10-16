@@ -142,7 +142,7 @@ describe('entitlement resolver parity on quantity semantics', () => {
 
             expect(resolver.quantityTotal(EntitlementName.MaxSpace)).toBe(51200);
             expect(resolver.quantityTotal(nameOutsideThePlan)).toBe(0);
-            expect(resolver.isBusiness).toBe(true);
+            expect(resolver.isB2B).toBe(true);
             expect(resolver.isMultiUser).toBe(true);
             expect(resolver.isB2cMultiUser).toBe(false);
         }
@@ -169,7 +169,7 @@ describe('entitlement resolver parity on quantity semantics', () => {
 
         for (const resolver of [selection, orgAndUser, businessAbsent]) {
             expect(resolver.hasEntitlement(EntitlementName.Business)).toBe(false);
-            expect(resolver.isBusiness).toBe(false);
+            expect(resolver.isB2B).toBe(false);
             expect(resolver.quantityTotal(EntitlementName.Business)).toBe(0);
             expect(resolver.hasMatchingSubscription(includesOnly(EntitlementName.Business))).toBe(false);
             expect(resolver.hasMatchingSubscription(includesOnly(EntitlementName.MultiUser))).toBe(true);
@@ -196,7 +196,7 @@ describe('entitlement resolver parity on quantity semantics', () => {
         );
 
         expect(businessRevoked.hasEntitlement(EntitlementName.Business)).toBe(false);
-        expect(businessRevoked.isBusiness).toBe(false);
+        expect(businessRevoked.isB2B).toBe(false);
         // `hasMatchingSubscription` reads the catalog fold of the subscription, so the revoked quantity is invisible to it
         expect(businessRevoked.hasMatchingSubscription(includesOnly(EntitlementName.Business))).toBe(true);
         expect(businessRevoked.findSubscriptionsMatching(includesOnly(EntitlementName.Business))).toEqual({

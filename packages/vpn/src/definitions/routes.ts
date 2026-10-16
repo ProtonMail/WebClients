@@ -81,7 +81,7 @@ const routesDefinition = {
         {
             id: 'organization',
             label: () => c('Title').t`Organization`,
-            isVisible: ({ context }) => context.entitlements.isVpnBusiness,
+            isVisible: ({ context }) => context.entitlements.isVpnB2B,
             children: [
                 {
                     id: 'organization.home',

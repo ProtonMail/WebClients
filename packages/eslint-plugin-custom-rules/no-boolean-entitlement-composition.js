@@ -1,7 +1,7 @@
 /*
 
 // ❌ Wrong - two entitlement checks combined by hand; the combination is the domain question and has no name
-const showVpnPanel = entitlements.isBusiness && entitlements.hasVpn;
+const showVpnPanel = entitlements.isB2B && entitlements.hasVpn;
 
 // ❌ Wrong - a negated check still counts as one of the two
 const showUpsell = !entitlements.hasEntitlement(EntitlementName.Business) && entitlements.hasSentinel;
@@ -15,7 +15,7 @@ const showFamilyUpsell = entitlements.isB2cMultiUser;
 // ✅ Correct - inside the check registry itself, which is where a combination gets its name, so the whole
 // file is skipped
 // packages/payments/core/entitlements/checks.ts
-isBusiness: (r) => r.hasEntitlement(EntitlementName.Business) && !r.hasEntitlement(EntitlementName.MultiUser)
+isB2B: (r) => r.hasEntitlement(EntitlementName.Business) && !r.hasEntitlement(EntitlementName.MultiUser)
 
 // ✅ Correct - one entitlement check combined with conditions the registry cannot express (a plan helper,
 // a feature flag, whether the organization is loaded)

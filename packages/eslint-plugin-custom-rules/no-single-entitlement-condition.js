@@ -1,10 +1,10 @@
 /*
 
 // ❌ Wrong - a single entitlement and no exclusions is the question hasEntitlement answers
-isBusiness: (r) => r.hasMatchingSubscription({ includes: [EntitlementName.Business] })
+isB2B: (r) => r.hasMatchingSubscription({ includes: [EntitlementName.Business] })
 
 // ❌ Wrong - an empty excludes list excludes nothing
-isBusiness: (r) => r.hasMatchingSubscription({ includes: [EntitlementName.Business], excludes: [] })
+isB2B: (r) => r.hasMatchingSubscription({ includes: [EntitlementName.Business], excludes: [] })
 
 // ❌ Wrong - hasEntitlement is the question being asked, and on the org/user resolver it also carries
 // stronger guarantees
@@ -15,7 +15,7 @@ const showUpsell = entitlements.hasMatchingSubscription({ includes: [Entitlement
 const { result } = entitlements.findSubscriptionsMatching({ includes: [EntitlementName.Business] });
 
 // ✅ Correct
-isBusiness: (r) => r.hasEntitlement(EntitlementName.Business)
+isB2B: (r) => r.hasEntitlement(EntitlementName.Business)
 
 // ✅ Correct - the exclusion carries meaning, so the condition cannot collapse into one name
 isB2cMultiUser: (r) => r.hasMatchingSubscription({ includes: [EntitlementName.MultiUser], excludes: [EntitlementName.Business] })

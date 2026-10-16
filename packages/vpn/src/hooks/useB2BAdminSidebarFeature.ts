@@ -72,7 +72,7 @@ export const useB2BAdminSidebarFeature = ({
     if (skip || !subscription || !organization || !permissions) {
         return disabled(true);
     }
-    const hasVpnOrganization = entitlements.isVpnBusiness;
+    const hasVpnOrganization = entitlements.isVpnB2B;
     if (!isEnabled || !hasVpnOrganization || hasNoOrgPermissions(permissions)) {
         return disabled(false);
     }

@@ -32,7 +32,7 @@ describe('a plan missing from the entitlement catalog', () => {
         const resolver = createEntitlementResolverForSelection(entitlementCatalog, missingPlan);
 
         expect(resolver.isB2cMultiUser).toBe(false);
-        expect(resolver.isVpnBusiness).toBe(false);
+        expect(resolver.isVpnB2B).toBe(false);
     });
 
     it('denies an excludes-only condition instead of letting an empty fold exclude everything', () => {

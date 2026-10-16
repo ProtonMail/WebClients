@@ -173,7 +173,7 @@ export interface EntitlementResolverForOrgAndUser extends EntitlementResolverFor
 export type EntitlementCheckForSelection<TResult = unknown> = (resolver: EntitlementResolverForSelection) => TResult;
 
 /**
- * A named, reusable entitlement check (e.g. `isBusiness`). It only receives the core resolver,
+ * A named, reusable entitlement check (e.g. `isB2B`). It only receives the core resolver,
  * so it can never read raw entitlements itself and therefore stays consistent with how
  * entitlements are resolved everywhere else. Register checks in `entitlementChecksForOrgAndUser`
  * (or `entitlementChecksForSelection` for catalog-based selection checks).
@@ -184,7 +184,7 @@ export type SingleEntitlementCheckForOrgAndUser<TResult = unknown> = (
 
 /**
  * A check registry (see {@link entitlementChecksForSelection}) turned into the resolved values it produces when every
- * check in it is applied to a resolver: `isBusiness: (r) => boolean` becomes `isBusiness: boolean`.
+ * check in it is applied to a resolver: `isB2B: (r) => boolean` becomes `isB2B: boolean`.
  *
  * The parameter is typed as `never` on purpose: it only has to accept any registry whose values are unary functions,
  * whatever resolver they ask for.
