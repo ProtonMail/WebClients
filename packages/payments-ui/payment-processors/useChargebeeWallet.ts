@@ -25,6 +25,8 @@ import { type PaymentsCaptureOptions, tracePaymentError } from '@proton/payments
 import type { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
+import { abortSignalAny } from '../client-extensions/validators/AbortSignalAny';
+
 type WalletModalHandles = {
     onAuthorize: () => void;
     onClick: () => void;
@@ -111,6 +113,12 @@ export const useChargebeeWallet = (
     const threeDsStartedRef = useRef(false);
     // identifies the token a verification was issued for, so a superseded one cannot report back
     const attemptRef = useRef(0);
+    // A new amount starts a new setup while the previous one may still be in flight. The previous one must not arm the
+    // iframe or store its token, otherwise the user approves and pays the previous amount.
+    const setupAbortControllerRef = useRef(new AbortController());
+    // Overlapping token requests for the same user can fail at the payment provider (422, Code 2900, the generic
+    // "provider unavailable" error), so they go one at a time
+    const pendingTokenRequestRef = useRef<Promise<unknown>>(Promise.resolve());
 
     // `onAuthorize` is what dismisses the pending-verification modal, so wallets that cannot verify
     // must fire it on the iframe event — even when the token turns out not to be chargeable. A
@@ -133,27 +141,41 @@ export const useChargebeeWallet = (
     const [fetchingToken, withFetchingToken] = useLoading();
     const [initializing, withInitializing] = useLoading();
 
-    const fetchPaymentToken = () =>
-        withFetchingToken(async () => {
-            const {
-                Token: PaymentToken,
-                Status,
-                Data: bePaymentIntentData,
-            } = await fetchPaymentIntentV5(api, {
+    const requestPaymentToken = async (setupSignal?: AbortSignal) => {
+        const request = pendingTokenRequestRef.current.catch(noop).then(() => {
+            if (setupSignal?.aborted) {
+                throw new DOMException(`Outdated ${cfg.bePaymentType} setup`, 'AbortError');
+            }
+            return fetchPaymentIntentV5(api, {
                 ...amountAndCurrency,
                 Payment: { Type: cfg.bePaymentType },
             } as WalletPaymentIntentData);
+        });
+        pendingTokenRequestRef.current = request;
 
-            attemptRef.current += 1;
-            fetchedPaymentTokenRef.current = {
-                ...amountAndCurrency,
-                PaymentToken,
-                v: 5,
-                chargeable: Status === PAYMENT_TOKEN_STATUS.CHARGEABLE,
-                authorized: true,
-                type: cfg.type,
-            };
-            paymentIntentRef.current = convertPaymentIntentData(bePaymentIntentData);
+        const { Token: PaymentToken, Status, Data: bePaymentIntentData } = await request;
+
+        const token: ChargebeeFetchedPaymentToken = {
+            ...amountAndCurrency,
+            PaymentToken,
+            v: 5,
+            chargeable: Status === PAYMENT_TOKEN_STATUS.CHARGEABLE,
+            authorized: true,
+            type: cfg.type,
+        };
+
+        return { token, paymentIntent: convertPaymentIntentData(bePaymentIntentData) };
+    };
+
+    const storePaymentToken = ({ token, paymentIntent }: Awaited<ReturnType<typeof requestPaymentToken>>) => {
+        attemptRef.current += 1;
+        fetchedPaymentTokenRef.current = token;
+        paymentIntentRef.current = paymentIntent;
+    };
+
+    const fetchPaymentToken = () =>
+        withFetchingToken(async () => {
+            storePaymentToken(await requestPaymentToken());
         });
 
     const verifyPaymentToken = async () => {};
@@ -177,7 +199,15 @@ export const useChargebeeWallet = (
         return onChargeableRef.current?.({ ...token, chargeable: true as const });
     };
 
+    const startSetup = (abortSignal?: AbortSignal) => {
+        setupAbortControllerRef.current.abort();
+        setupAbortControllerRef.current = new AbortController();
+        const setupSignal = setupAbortControllerRef.current.signal;
+        return abortSignal ? abortSignalAny([abortSignal, setupSignal]) : setupSignal;
+    };
+
     const reset = () => {
+        setupAbortControllerRef.current.abort();
         for (const removeEventListener of eventListenersRef.current) {
             removeEventListener();
         }
@@ -301,11 +331,19 @@ export const useChargebeeWallet = (
             return;
         }
 
+        const setupSignal = startSetup(abortSignal);
+
         const initIframePromise = handles[cfg.handles.initialize]();
-        const fetchTokenPromise = fetchPaymentToken();
+        const tokenPromise = requestPaymentToken(setupSignal);
+        withFetchingToken(tokenPromise).catch(noop);
 
         withInitializing(async () => {
-            await Promise.all([initIframePromise, fetchTokenPromise]);
+            const [, fetched] = await Promise.all([initIframePromise, tokenPromise]);
+            if (setupSignal.aborted) {
+                return;
+            }
+
+            storePaymentToken(fetched);
             await setPaymentIntent(abortSignal);
 
             modalHandlesRef.current?.onInitialize?.();
