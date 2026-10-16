@@ -121,7 +121,8 @@ The host registration is done at app launch by the Rust `install()` (host name `
 | Context | Path |
 | --- | --- |
 | Dev (`yarn start`) | `<appPath>/native/target/release/proton_pass_nm_host[.exe]` |
-| Packaged macOS/Linux | `<app resources>/assets/proton_pass_nm_host` |
+| Packaged macOS | `Proton Pass.app/Contents/Helpers/proton_pass_nm_host.app/Contents/MacOS/proton_pass_nm_host` (wrapped in its own bundle at packaging so its prompts show the Proton Pass name and icon) |
+| Packaged Linux | `<app resources>/assets/proton_pass_nm_host` |
 | Packaged Windows (MSIX) | registered alias `%LOCALAPPDATA%\Microsoft\WindowsApps\proton_pass_nm_host.exe`; real exe at `...\WindowsApps\ProtonPass_<version>_x64__<hash>\app\resources\assets\proton_pass_nm_host.exe` |
 
 **Manifest registration.** On macOS/Linux a JSON manifest file (`me.proton.pass.nm.json`) is written per browser. On Windows the same JSON file is written **and** a registry key under `HKCU` points to it. Directories below are the user-scope locations (from the `native_messaging` crate's `browsers.toml`):

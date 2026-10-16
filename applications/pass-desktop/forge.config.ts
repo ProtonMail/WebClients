@@ -22,6 +22,7 @@ import mainConfig from './webpack.main.config';
 import rendererConfig from './webpack.renderer.config';
 
 type Hash = NonNullable<NonNullable<MakerMSIXConfig['windowsSignOptions']>['hashes']>[number];
+type PackagerHook = NonNullable<NonNullable<ForgeConfig['packagerConfig']>['afterCopyExtraResources']>[number];
 
 // macos sign options
 const osxNotarize =
@@ -59,12 +60,36 @@ const buildAppxManifest = (): Maybe<string> => {
     return outPath;
 };
 
+// macOS names and badges the Touch ID and keychain prompts after the bundle whose main executable
+// triggers them, so the native messaging host gets its own app bundle to show "Proton Pass" and its
+// icon. Runs before signing: osx-sign signs the nested bundle like Electron's helper apps.
+const wrapMacHostInBundle = async (stagingPath: string) => {
+    // nosemgrep: path-join-resolve-traversal -- packager staging directory, not user input
+    const inContents = (...segments: string[]) => path.join(stagingPath, 'Proton Pass.app', 'Contents', ...segments);
+    const assets = ['Resources', 'assets'];
+    const bundle = ['Helpers', 'proton_pass_nm_host.app', 'Contents'];
+    await fs.mkdir(inContents(...bundle, 'MacOS'), { recursive: true });
+    await fs.mkdir(inContents(...bundle, 'Resources'), { recursive: true });
+    await fs.rename(
+        inContents(...assets, 'proton_pass_nm_host'),
+        inContents(...bundle, 'MacOS', 'proton_pass_nm_host')
+    );
+    await fs.copyFile(path.join(__dirname, 'native', 'host', 'Info.plist'), inContents(...bundle, 'Info.plist'));
+    await fs.copyFile(inContents(...assets, 'logo.icns'), inContents(...bundle, 'Resources', 'logo.icns'));
+};
+
+const bundleMacHost: PackagerHook = (stagingPath, _electronVersion, platform, _arch, done) => {
+    if (platform !== 'darwin') return done();
+    wrapMacHostInBundle(stagingPath).then(() => done(), done);
+};
+
 const config: ForgeConfig = {
     outDir: process.env.OUTPUT_PATH,
     packagerConfig: {
         asar: true,
         icon: 'assets/logo',
         extraResource: ['assets', ...getExtraResource()],
+        afterCopyExtraResources: [bundleMacHost],
         appBundleId: 'me.proton.pass.electron',
         executableName: process.platform === 'win32' ? 'ProtonPass' : 'Proton Pass',
         // required for debian, else MakerDeb will incorrectly use name from package.json
@@ -77,7 +102,7 @@ const config: ForgeConfig = {
         // node_modules `.node` files into both bundles (the universal variant is preferred at runtime anyway).
         osxUniversal: {
             x64ArchFiles:
-                '{Contents/Resources/assets/proton_pass_nm_host,Contents/Resources/app.asar.unpacked/.webpack/main/native_modules/*.node}',
+                '{Contents/Helpers/proton_pass_nm_host.app/Contents/MacOS/proton_pass_nm_host,Contents/Resources/app.asar.unpacked/.webpack/main/native_modules/*.node}',
         },
         // Protocol handler for external login flow
         protocols: [
