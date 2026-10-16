@@ -1,5 +1,6 @@
 import type { ReactElement } from 'react';
 
+import type { ButtonProps } from '@proton/atoms/Button/Button';
 import { Button } from '@proton/atoms/Button/Button';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
@@ -10,9 +11,10 @@ interface Props {
     className?: string;
     clear?: string;
     onClear?: () => void;
+    buttonProps?: ButtonProps;
 }
 
-const AttachedFile = ({ file, icon, className, clear, onClear, ...rest }: Props) => {
+const AttachedFile = ({ file, icon, className, clear, onClear, buttonProps, ...rest }: Props) => {
     const [fileName, extension] = splitExtension(file.name);
 
     return (
@@ -28,7 +30,7 @@ const AttachedFile = ({ file, icon, className, clear, onClear, ...rest }: Props)
                     <div>{`${extension.toUpperCase()} - ${humanSize({ bytes: file.size })}`}</div>
                 </div>
                 {clear && onClear && (
-                    <Button className="shrink-0" onClick={onClear}>
+                    <Button className="shrink-0" onClick={onClear} {...buttonProps}>
                         {clear}
                     </Button>
                 )}

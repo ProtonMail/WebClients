@@ -40,6 +40,16 @@ window.addEventListener('message', async (message) => {
                         })
                     );
 
+                case WorkerMessageType.ACCOUNT_PROBE_2:
+                    return await sendMessage.on(
+                        contentScriptMessage({ type: WorkerMessageType.ACCOUNT_PROBE_2 }),
+                        (response) =>
+                            window.postMessage({
+                                token: message.data?.token,
+                                ...response,
+                            })
+                    );
+
                 case WorkerMessageType.ACCOUNT_PROBE:
                     return window.postMessage(
                         successMessage({

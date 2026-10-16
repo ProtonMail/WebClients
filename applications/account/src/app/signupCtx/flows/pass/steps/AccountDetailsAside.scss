@@ -1,0 +1,5 @@
+/* Provided svg has whitespaces that can't be cropped because of the shadow effect.
+ * This css, applies a negative margin to each star sibling, so it match the design. */
+.pass-onboarding-stars > img + img {
+	margin-inline-start: -2rem;
+}

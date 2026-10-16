@@ -21,7 +21,7 @@ import { APPS, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 
 import { useSignup } from '../../../context/SignupContext';
-import { Layout } from '../components/Layout/Layout';
+import { Layout } from '../components/Layout';
 import { passPlus } from '../plans';
 
 type Props = {

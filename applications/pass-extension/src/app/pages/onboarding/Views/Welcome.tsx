@@ -1,162 +1,78 @@
-import { type FC, useMemo, useState } from 'react';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { Href } from '@proton/atoms/Href/Href';
-import thumbnail from '@proton/pass/assets/extension-onboarding/proton-pass-tutorial-thumbnail.jpg';
-import accountSetupImg from '@proton/pass/assets/protonpass-account.svg';
-import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
-import { PASS_VIDEO_URL } from '@proton/pass/constants';
-import { clientReady } from '@proton/pass/lib/client';
-import { SpotlightMessage } from '@proton/pass/types/worker/spotlight';
-import { PASS_APP_NAME } from '@proton/shared/lib/constants';
-import { PASS_ANDROID_URL, PASS_IOS_URL } from '@proton/shared/lib/pass/constants';
-import appStoreSvg from '@proton/styles/assets/img/illustrations/app-store.svg';
-import playStoreSvg from '@proton/styles/assets/img/illustrations/play-store.svg';
-import clsx from '@proton/utils/clsx';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
+import { PasswordConfirm } from '@proton/pass/components/Lock/PasswordConfirm';
+import { Layout } from '@proton/pass/components/Onboarding/Layout/Layout';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
+import { PasswordVerification } from '@proton/pass/lib/auth/password';
+import { clientErrored, clientLocked, clientMissingScope, clientUnauthorized } from '@proton/pass/lib/client';
+import { selectCanCreateItems, selectVisibleItems } from '@proton/pass/store/selectors';
+import { PassFeature } from '@proton/pass/types/api/features';
 import noop from '@proton/utils/noop';
 
-import { ExtensionHead } from '../../../../lib/components/Extension/ExtensionHead';
-import { useExtensionClientInit } from '../../../../lib/hooks/useExtensionClientInit';
 import { pageMessage, sendMessage } from '../../../../lib/message/send-message';
 import { WorkerMessageType } from '../../../../types/messages';
-import { OnboardingCard } from '../Card/OnboardingCard';
-import { OnboardingHeader } from '../Header/OnboardingHeader';
 
-import './Welcome.scss';
+const ITEMS_COUNT_THRESHOLD = 0;
 
-export const Welcome: FC = () => {
-    const [pendingAccess, setPendingAccess] = useState(false);
+const resumeLogin = () =>
+    sendMessage(pageMessage({ type: WorkerMessageType.AUTH_INIT, options: { forceLock: false } })).catch(noop);
 
-    useExtensionClientInit(
-        useMemo(
-            () => ({
-                onConnectivity: noop,
-                onStateChange: ({ status }) => {
-                    if (clientReady(status)) {
-                        void sendMessage.onSuccess(
-                            pageMessage({ type: WorkerMessageType.SPOTLIGHT_REQUEST }),
-                            async ({ message }) => setPendingAccess(message === SpotlightMessage.PENDING_SHARE_ACCESS)
-                        );
-                    }
-                },
-            }),
-            []
-        )
-    );
+export const Welcome = () => {
+    const history = useHistory();
+    const { booted, status } = useAppState();
+    const items = useSelector(selectVisibleItems);
+    const canCreateItems = useSelector(selectCanCreateItems);
+    const newOnboardingFlag = useFeatureFlag(PassFeature.PassNewOnboarding);
+    const sessionLost = clientUnauthorized(status) || clientErrored(status);
 
-    return (
-        <>
-            <ExtensionHead title={c('Title').t`Thank you for installing ${PASS_APP_NAME}`} />
-            <div className="pass-onboarding ui-standard w-full min-h-custom" style={{ '--min-h-custom': '100vh' }}>
-                <div className="m-auto p-14 color-norm flex justify-center">
-                    <div className="pass-onboarding--gradient"></div>
-                    <div className="flex flex-column max-w-custom" style={{ '--max-w-custom': '64rem' }}>
-                        <OnboardingHeader />
+    useEffect(() => {
+        if (sessionLost) return history.replace('/thank-you');
+        if (!booted) return;
+        if (newOnboardingFlag && canCreateItems && items.length <= ITEMS_COUNT_THRESHOLD) {
+            history.replace('/new-account');
+        } else {
+            history.replace('/thank-you');
+        }
+    }, [booted, sessionLost]);
 
-                        <div className={clsx('anime-reveal', !pendingAccess && 'anime-reveal--hidden')}>
-                            {pendingAccess && (
-                                <OnboardingCard className="mb-4 items-center">
-                                    <div className="flex-1">
-                                        <h3>{c('Info').t`Pending access to the shared data`}</h3>
-                                        <span>{c('Info')
-                                            .t`For security reason, your access needs to be confirmed`}</span>
-                                    </div>
-                                    <img
-                                        className="h-custom shrink-0"
-                                        style={{ '--h-custom': '4rem' }}
-                                        src={accountSetupImg}
-                                        alt=""
-                                    />
-                                </OnboardingCard>
-                            )}
-                        </div>
-
-                        <div className="flex gap-14">
-                            {/* left section */}
-                            <div className="flex pass-welcome--on-medium-default-grow" style={{ flex: 2 }}>
-                                <div className="flex flex-column flex-1">
-                                    <h1 className="text-xl pass-onboarding--white-text mb-4 text-bold">
-                                        <span className="text-rg">{c('Title')
-                                            .jt`The extension is now ready to use.`}</span>
-                                    </h1>
-                                    <h3 className="mb-5 text-xl">
-                                        {c('Info')
-                                            .t`Here you will find all the necessary information to get you started.`}
-                                    </h3>
-                                    <div className="pass-welcome--onboarding-video rounded-xl">
-                                        {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-                                        <video
-                                            className="w-full"
-                                            preload="metadata"
-                                            src={PASS_VIDEO_URL}
-                                            poster={thumbnail}
-                                            title={c('Info').t`Discover ${PASS_APP_NAME} video`}
-                                            controls
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* right section */}
-                            <div className="flex pass-welcome--on-medium-default-grow" style={{ flex: 1 }}>
-                                <div className="flex flex-column flex-1 gap-12">
-                                    {/* right section upper subsection */}
-                                    <div className="flex flex-column gap-5">
-                                        <h1 className="text-xl pass-onboarding--white-text text-bold">
-                                            <span className="text-rg">{c('Title')
-                                                .jt`Switching to ${PASS_APP_NAME}?`}</span>
-                                        </h1>
-                                        <img src="/assets/onboarding-import.png" alt="" />
-                                        <div className="text-xl">
-                                            {c('Info').t`Easily import your existing passwords into ${PASS_APP_NAME}.`}
-                                        </div>
-                                        <ButtonLike
-                                            as="a"
-                                            href="/settings.html#/import"
-                                            className={`w-full ${SubTheme.VIOLET} pass-welcome--import-btn`}
-                                            pill
-                                            size="large"
-                                            shape="solid"
-                                            color="norm"
-                                            aria-label={c('Action').t`Import your passwords`}
-                                        >
-                                            {c('Action').t`Import your passwords`}
-                                        </ButtonLike>
-                                    </div>
-                                    {/* right section lower subsection */}
-                                    <div className="flex flex-column gap-5">
-                                        <h1 className="text-xl pass-onboarding--white-text text-bold">
-                                            <span className="text-rg">{c('Title').jt`Get the mobile apps`}</span>
-                                        </h1>
-                                        <div className="text-xl">{c('Info')
-                                            .t`Access your passwords on the go with our mobile apps.`}</div>
-                                        <div className="flex gap-3 flex-nowrap">
-                                            <Href href={PASS_ANDROID_URL}>
-                                                <img
-                                                    className="h-custom"
-                                                    style={{ '--h-custom': '2.5rem' }}
-                                                    src={playStoreSvg}
-                                                    alt="Play Store"
-                                                />
-                                            </Href>
-                                            <Href href={PASS_IOS_URL}>
-                                                <img
-                                                    className="h-custom"
-                                                    style={{ '--h-custom': '2.5rem ' }}
-                                                    src={appStoreSvg}
-                                                    alt="App Store"
-                                                />
-                                            </Href>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+    if (clientMissingScope(status)) {
+        return (
+            <Layout>
+                <div className="flex p-14 w-full flex-column items-center gap-4">
+                    <h3>{c('Info').t`Enter your extra password`}</h3>
+                    <div className="w-full max-w-custom" style={{ '--max-w-custom': '25rem' }}>
+                        <PasswordConfirm mode={PasswordVerification.EXTRA_PASSWORD} onSuccess={resumeLogin} />
                     </div>
                 </div>
+            </Layout>
+        );
+    }
+
+    if (clientLocked(status)) {
+        return (
+            <Layout>
+                <div className="flex p-14 w-full flex-column items-center gap-4">
+                    <h3>{c('Info').t`Open the extension to unlock it`}</h3>
+                    <CircleLoader size="large" className="color-primary" />
+                    <em>{c('Info').t`Don’t close this tab`}</em>
+                </div>
+            </Layout>
+        );
+    }
+
+    return (
+        <Layout>
+            <div className="flex p-14 w-full flex-column items-center gap-4">
+                <h3 className="">{c('Title').t`Starting the extension`}</h3>
+                <CircleLoader size="large" className="color-primary" />
+                <em>{c('Info').t`Don’t close this tab`}</em>
             </div>
-        </>
+        </Layout>
     );
 };

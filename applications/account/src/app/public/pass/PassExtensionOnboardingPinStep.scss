@@ -1,0 +1,9 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
+.pass-extension-onboarding-pin-dot {
+	inline-size: rem(24);
+	block-size: rem(24);
+	font-size: rem(11);
+	color: var(--background-invert);
+	background: var(--primary);
+}

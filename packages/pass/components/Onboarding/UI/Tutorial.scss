@@ -1,0 +1,12 @@
+.pass-onboarding-tutorial {
+	p {
+		margin-block: 1rem;
+		margin-inline: 0;
+	}
+
+	img {
+		border-radius: 1rem;
+		inline-size: 100%;
+		border: 1px solid var(--onboarding-card-border);
+	}
+}

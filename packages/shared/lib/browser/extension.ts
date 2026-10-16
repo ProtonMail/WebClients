@@ -10,10 +10,16 @@ import { browserAPI, isChromiumBased, isSafari } from '../helpers/browser';
 type ExtensionForkMessage = { type: 'fork'; payload: ExtensionForkPayload };
 type ExtensionAuthenticatedMessage = { type: 'auth-ext' };
 export type PassInstalledMessage = { type: 'pass-installed' };
+
 type PassOnboardingMessage = { type: 'pass-onboarding' };
+type PassExtensionProbeMessage = { type: 'pass-account-probe' };
 
 export type ExtensionMessage =
-    ExtensionForkMessage | ExtensionAuthenticatedMessage | PassInstalledMessage | PassOnboardingMessage;
+    | ExtensionForkMessage
+    | ExtensionAuthenticatedMessage
+    | PassInstalledMessage
+    | PassOnboardingMessage
+    | PassExtensionProbeMessage;
 
 export type ExtensionApp = keyof typeof EXTENSIONS;
 
