@@ -45,8 +45,9 @@ const getSources = (scaleFactor: number) =>
     desktopCapturer.getSources({
         types: ["screen", "window"],
         thumbnailSize: {
-            width: THUMBNAIL_SIZE.width * scaleFactor,
-            height: THUMBNAIL_SIZE.height * scaleFactor,
+            // Windows scale factors are often fractional; Electron expects whole pixels.
+            width: Math.round(THUMBNAIL_SIZE.width * scaleFactor),
+            height: Math.round(THUMBNAIL_SIZE.height * scaleFactor),
         },
         fetchWindowIcons: true,
     });
@@ -229,22 +230,25 @@ const createPickerWindow = (parent: BrowserWindow | undefined) => {
 
 export const pickScreenSource = async (audioRequested: boolean): Promise<ScreenPickerResult | undefined> => {
     if (isPicking) {
+        mainLogger.info("Screen picker already open, declining new request");
         activePicker?.focus();
         return undefined;
     }
     isPicking = true;
 
-    const parent = getParentWindow();
-    const scaleFactor = parent ? screen.getDisplayMatching(parent.getBounds()).scaleFactor : 1;
+    // Anything throwing before the picker settles must release the flag, or every later share is declined.
     let sources: DesktopCapturerSource[];
+    let picker: BrowserWindow;
+    let scaleFactor: number;
     try {
+        const parent = getParentWindow();
+        scaleFactor = parent ? screen.getDisplayMatching(parent.getBounds()).scaleFactor : 1;
         sources = await getSources(scaleFactor);
+        picker = createPickerWindow(parent);
     } catch (error) {
         isPicking = false;
         throw error;
     }
-
-    const picker = createPickerWindow(parent);
     activePicker = picker;
 
     return new Promise((resolve) => {
