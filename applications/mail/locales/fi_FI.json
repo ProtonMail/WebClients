@@ -1526,8 +1526,7 @@
         "Luota"
       ],
       "Trust key": [
-        "Luota avaimeen",
-        "Luota avaimiin"
+        "Luota avaimeen"
       ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
@@ -7590,7 +7589,8 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva"
+        "Lisää kuva",
+        "Lisää kuvia"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -9087,6 +9087,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Olet vain muutaman klikkauksen päässä siististä postilaatikosta"
+      ],
+      "We'll get back to you shortly.": [
+        "Palaamme asiaan pian."
       ]
     },
     "info": {
@@ -10327,6 +10330,12 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "Please share any feedback to help us improve.": [
+        "Kerro mielipiteesi ja auta meitä parantamaan."
+      ],
+      "Why would you like to cancel?": [
+        "Miksi haluat perua tilauksen?"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13173,6 +13182,9 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "Please select the main reason": [
+        "Valitse ensisijainen syy"
       ]
     },
     "Placeholder for contact group name": {
@@ -16290,6 +16302,12 @@
       ],
       "Your shorter address is now ready": [
         "Lyhyempi osoittesi on nyt valmis"
+      ],
+      "Contact us": [
+        "Ota yhteyttä"
+      ],
+      "Request sent": [
+        "Pyyntö lähetetty"
       ]
     },
     "Title header for keys table": {
@@ -16943,6 +16961,20 @@
       ],
       "Passcode:": [
         "Tunnuskoodi:"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Löysin toisen palvelun, josta pidän enemmän"
+      ],
+      "It’s missing a key feature": [
+        "Siitä puuttuu olennainen ominaisuus"
+      ],
+      "It’s too expensive": [
+        "Se on liian kallis"
+      ],
+      "Other": [
+        "Muu"
       ]
     }
   }

@@ -1514,8 +1514,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Clave de confianza",
-        "Claves de confianza"
+        "Clave de confianza"
       ],
       "Trust public key": [
         "Confiar en la clave pública"
@@ -7538,7 +7537,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen"
+        "Insertar una imagen",
+        "Insertar imágenes"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -9010,6 +9010,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Estás a solo unos clics de tener una bandeja de entrada ordenada"
+      ],
+      "We'll get back to you shortly.": [
+        "Te contactaremos en breve."
       ]
     },
     "info": {
@@ -10214,6 +10217,12 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Please share any feedback to help us improve.": [
+        "Compártenos cualquier comentario para ayudarnos a mejorar."
+      ],
+      "Why would you like to cancel?": [
+        "¿Por qué quieres cancelar?"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13054,6 +13063,9 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Please select the main reason": [
+        "Selecciona el motivo principal."
       ]
     },
     "Placeholder for contact group name": {
@@ -16157,6 +16169,12 @@
       ],
       "Your shorter address is now ready": [
         "Tu dirección en formato más corto ya está lista."
+      ],
+      "Contact us": [
+        "Contacta con nosotros"
+      ],
+      "Request sent": [
+        "Solicitud enviada"
       ]
     },
     "Title header for keys table": {
@@ -16807,6 +16825,20 @@
       ],
       "Passcode:": [
         "Código de acceso:"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "He encontrado otro servicio que me gusta mejor."
+      ],
+      "It’s missing a key feature": [
+        "Falta una función importante."
+      ],
+      "It’s too expensive": [
+        "Es demasiado caro."
+      ],
+      "Other": [
+        "Otro"
       ]
     }
   }
