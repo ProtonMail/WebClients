@@ -1,0 +1,174 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);",
+    "language": "pl_PL"
+  },
+  "contexts": {
+    "App menu": {
+      "About ${ MEET_APP_NAME }": [
+        "O aplikacji ${ MEET_APP_NAME }"
+      ],
+      "Actual Size": [
+        "Rozmiar rzeczywisty"
+      ],
+      "Clear application data": [
+        "Wyczyść dane aplikacji"
+      ],
+      "Close Window": [
+        "Zamknij okno"
+      ],
+      "Copy": [
+        "Kopiuj"
+      ],
+      "Cut": [
+        "Wytnij"
+      ],
+      "Delete": [
+        "Usuń"
+      ],
+      "Force Reload": [
+        "Odśwież"
+      ],
+      "Hide ${ MEET_APP_NAME }": [
+        "Ukryj ${ MEET_APP_NAME }"
+      ],
+      "Hide Others": [
+        "Ukryj inne"
+      ],
+      "Minimize": [
+        "Minimalizuj"
+      ],
+      "Paste": [
+        "Wklej"
+      ],
+      "Paste and Match Style": [
+        "Wklej jako zwykły tekst"
+      ],
+      "Quit": [
+        "Zakończ"
+      ],
+      "Quit ${ MEET_APP_NAME }": [
+        "Zakończ ${ MEET_APP_NAME }"
+      ],
+      "Redo": [
+        "Powtórz"
+      ],
+      "Reload": [
+        "Odśwież"
+      ],
+      "Select All": [
+        "Zaznacz wszystko"
+      ],
+      "Show All": [
+        "Pokaż wszystko"
+      ],
+      "Show logs": [
+        "Pokaż logi"
+      ],
+      "Speech": [
+        "Mowa"
+      ],
+      "Start ${ MEET_APP_NAME } at login": [
+        "Uruchom ${ MEET_APP_NAME } podczas logowania"
+      ],
+      "Start Speaking": [
+        "Zacznij mówić"
+      ],
+      "Stop Speaking": [
+        "Przestań mówić"
+      ],
+      "Toggle Developer Tools": [
+        "Przełącz narzędzia deweloperskie"
+      ],
+      "Toggle Full Screen": [
+        "Pełny ekran"
+      ],
+      "Undo": [
+        "Cofnij"
+      ],
+      "Zoom": [
+        "Powiększenie"
+      ],
+      "Zoom In": [
+        "Powiększ"
+      ],
+      "Zoom Out": [
+        "Pomniejsz"
+      ]
+    },
+    "App Menu": {
+      "Services": [
+        "Usługi"
+      ]
+    },
+    "Download warning": {
+      "A recording is still being saved": [
+        "Nagranie jest nadal zapisywane"
+      ],
+      "Continue downloading": [
+        "Kontynuuj pobieranie"
+      ],
+      "If you quit now, the file may be incomplete or empty. Quit anyway?": [
+        "Jeśli teraz wyjdziesz, plik może być niekompletny lub pusty. Czy na pewno chcesz wyjść?"
+      ],
+      "Quit anyway": [
+        "Wyjdź mimo to"
+      ],
+      "Recording download in progress": [
+        "Trwa pobieranie nagrania"
+      ]
+    },
+    "Error dialog": {
+      "Due to an error, the app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.": [
+        "Aplikacja zostanie zamknięta z powodu błędu. Spróbuj uruchomić ją ponownie. Jeśli problem powtarza się, skontaktuj się z nami. Szczegóły błędu możesz znaleźć w logach aplikacji."
+      ],
+      "Unexpected error": [
+        "Wystąpił nieoczekiwany błąd"
+      ]
+    },
+    "error screen": {
+      "Cannot establish connection": [
+        "Nie można ustanowić połączenia"
+      ],
+      "Check your internet connection or network settings. If the issue persists, please contact customer support.": [
+        "Sprawdź połączenie internetowe lub ustawienia sieciowe. Jeśli problem będzie się powtarzał, skontaktuj się ze wsparciem klienta."
+      ],
+      "Try again": [
+        "Spróbuj ponownie"
+      ]
+    },
+    "loading screen": {
+      "Loading ${ title }…": [
+        "Ładowanie ${ title }..."
+      ]
+    },
+    "Menu": {
+      "Edit": [
+        "Edytuj"
+      ],
+      "File": [
+        "Plik"
+      ],
+      "View": [
+        "Widok"
+      ],
+      "Window": [
+        "Okno"
+      ]
+    },
+    "Unload warning": {
+      "Changes you made may not be saved.": [
+        "Zmiany mogą nie zostać zapisane."
+      ],
+      "Leave": [
+        "Opuść"
+      ],
+      "Leave page?": [
+        "Opuścić stronę?"
+      ],
+      "Stay": [
+        "Pozostań"
+      ]
+    }
+  }
+}
