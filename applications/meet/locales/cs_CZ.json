@@ -61,9 +61,6 @@
       "A participant reacted with ${ emoji }": [
         "Účastník reagoval pomocí ${ emoji }"
       ],
-      "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
-        "Připojeno přes režim přenosu TURN z důvodu síťových omezení. To může zvýšit latenci a ovlivnit kvalitu hovoru."
-      ],
       "Connection lost. Reconnecting…": [
         "Připojení ztraceno. Probíhá opětovné připojování…"
       ],
@@ -778,11 +775,6 @@
     "Badge": {
       "Active": [
         "Aktivní"
-      ]
-    },
-    "Banner": {
-      "Connected via TURN relay mode due to your network restrictions. This may increase latency and affect call quality.": [
-        "Připojeno přes režim předávání TURN kvůli omezením vaší sítě. To může zvýšit latenci a ovlivnit kvalitu hovoru."
       ]
     },
     "Bug category": {
