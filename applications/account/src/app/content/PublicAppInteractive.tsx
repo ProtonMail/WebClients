@@ -63,6 +63,7 @@ import { getProvisioningToken } from '../signup/orgProvisioning';
 import { getSignupMeta } from '../signup/signupPagesJson';
 import Activation from '../signupCtx/flows/bornPrivate/activation/Activation';
 import Recovery from '../signupCtx/flows/bornPrivate/recovery/Recovery';
+import { SpacesSignIn } from '../signupCtx/flows/spacesFlows';
 import SingleSignupContainer from '../single-signup/SingleSignupContainer';
 import { extraThunkArguments } from '../store/public-thunk';
 import { ResetPasswordPage } from '../unauthed-forgot-password/ResetPasswordPage';
@@ -483,6 +484,7 @@ const PublicAppInteractive = ({
                                                 SSO_PATHS.LUMO_SIGNUP_B2B,
                                                 SSO_PATHS.MEET_SIGNUP,
                                                 SSO_PATHS.MEET_SIGNUP_B2B,
+                                                SSO_PATHS.SPACES_SIGNUP,
                                                 SSO_PATHS.PORKBUN_SIGNUP,
                                                 SSO_PATHS.PORKBUN_SIGN_IN,
                                                 SSO_PATHS.BORN_PRIVATE,
@@ -575,6 +577,24 @@ const PublicAppInteractive = ({
                                                 />
                                             </UnAuthenticated>
                                         </Route>
+                                        {SpacesSignIn && (
+                                            <Route path={SSO_PATHS.SPACES_SIGN_IN} exact>
+                                                <UnAuthenticated>
+                                                    <SpacesSignIn
+                                                        toApp={maybePreAppIntent}
+                                                        toAppName={toAppName}
+                                                        productParam={productParam}
+                                                        initialSearchParams={initialSearchParams}
+                                                        paths={paths}
+                                                        hasBack={hasBackToSwitch}
+                                                        handleLogin={handleLogin}
+                                                        onGetActiveSessions={handleGetActiveSessions}
+                                                        onPreSubmit={handlePreSubmit}
+                                                        onStartAuth={handleStartAuth}
+                                                    />
+                                                </UnAuthenticated>
+                                            </Route>
+                                        )}
                                         <Route path={loginPaths} exact>
                                             <UnAuthenticated>
                                                 <SignInContainer

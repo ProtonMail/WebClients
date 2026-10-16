@@ -29,6 +29,7 @@ export const SERVICES: { [key: string]: APP_NAMES } = {
     lumo: APPS.PROTONLUMO,
     authenticator: APPS.PROTONAUTHENTICATOR,
     meet: APPS.PROTONMEET,
+    spaces: APPS.PROTONSPACES,
 };
 
 const getProduct = (maybeProduct: string | undefined): APP_NAMES | undefined => {

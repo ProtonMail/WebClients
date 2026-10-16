@@ -32,7 +32,15 @@ import {
  * opens the provider window while this stays up with a cancel button).
  */
 export const AutoScreen: SignInScreen = ({ onBack }: SignInScreenProps) => {
-    const { layout, paths, compactForm, isPorkbun, showRememberCheckbox } = useSignInProps();
+    const {
+        layout,
+        paths,
+        compactForm,
+        isPorkbun,
+        showRememberCheckbox,
+        showSignUpPrompt = true,
+        usernameReadOnly,
+    } = useSignInProps();
     const actorRef = CredentialsContext.useActorRef();
     const errorMessage = CredentialsContext.useSelector(selectErrorMessage);
     const submitting = CredentialsContext.useSelector(selectSubmitting);
@@ -76,7 +84,11 @@ export const AutoScreen: SignInScreen = ({ onBack }: SignInScreenProps) => {
                         error={validator([requiredValidator(username)]) || !!errorMessage}
                     />
                     <div className="mb-4">
-                        <Link to={getHelpLinks(paths, username).forgotUsernamePath}>{c('Link').t`Forgot email?`}</Link>
+                        {!usernameReadOnly && (
+                            <Link to={getHelpLinks(paths, username).forgotUsernamePath}>
+                                {c('Link').t`Forgot email?`}
+                            </Link>
+                        )}
                     </div>
                     {showRememberCheckbox && <StaySignedInCheckbox staySignedIn={staySignedIn} disabled={submitting} />}
                     <SubmitButton submitting={submitting} compactForm={compactForm}>
@@ -85,7 +97,9 @@ export const AutoScreen: SignInScreen = ({ onBack }: SignInScreenProps) => {
                     {awaitingSSOProvider && (
                         <CancelSSOButton onClick={() => actorRef.send({ type: 'externalSSO.cancelled' })} />
                     )}
-                    {!compactForm && !isPorkbun && <SignUpPrompt paths={paths} className="text-center mt-6" />}
+                    {!compactForm && !isPorkbun && showSignUpPrompt && (
+                        <SignUpPrompt paths={paths} className="text-center mt-6" />
+                    )}
                     {!compactForm && <TroubleSigningInDropdown paths={paths} {...getHelpLinks(paths, username)} />}
                 </form>
             </layout.Body>

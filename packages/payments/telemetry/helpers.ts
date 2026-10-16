@@ -262,6 +262,8 @@ export type PaymentTelemetryContext =
     | 'ctx-signup-meet-b2c-plan'
     /** Context-based Mail signup */
     | 'ctx-signup-mail'
+    /** Context-based Spaces signup */
+    | 'ctx-signup-spaces'
     /** Context-based referral signup */
     | 'ctx-signup-referral'
     /** Context-based email reservation */

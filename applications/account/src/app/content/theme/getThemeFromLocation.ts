@@ -68,6 +68,7 @@ export const getThemeFromLocation = (
         pathname === SSO_PATHS.DOCS_SIGNUP ||
         pathname === SSO_PATHS.VPN_SIGNUP ||
         pathname === SSO_PATHS.LUMO_SIGNUP ||
+        pathname === SSO_PATHS.SPACES_SIGN_IN ||
         pathname === SSO_PATHS.BORN_PRIVATE ||
         pathname === SSO_PATHS.BORN_PRIVATE_ACTIVATE ||
         pathname === SSO_PATHS.BORN_PRIVATE_RECOVERY

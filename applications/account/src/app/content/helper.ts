@@ -13,6 +13,7 @@ import {
     getIsMailApp,
     getIsMeetApp,
     getIsPassApp,
+    getIsSpacesApp,
     getIsVPNApp,
     getIsWalletApp,
 } from '@proton/shared/lib/authentication/apps';
@@ -54,6 +55,9 @@ const getLoginUrl = (localePath: string, app: APP_NAMES | undefined) => {
         }
         if (getIsMeetApp(app)) {
             return { path: SSO_PATHS.MEET_SIGN_IN };
+        }
+        if (getIsSpacesApp(app)) {
+            return { path: SSO_PATHS.SPACES_SIGN_IN };
         }
 
         return { path: SSO_PATHS.LOGIN };
@@ -117,6 +121,9 @@ const getSignupUrl = (
         }
         if (getIsMeetApp(app)) {
             return { path: SSO_PATHS.MEET_SIGNUP, params };
+        }
+        if (getIsSpacesApp(app)) {
+            return { path: SSO_PATHS.SPACES_SIGNUP, params };
         }
 
         if (productParam === 'business') {
