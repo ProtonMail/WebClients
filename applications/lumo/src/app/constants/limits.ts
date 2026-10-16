@@ -2,6 +2,8 @@ export const MAX_MESSAGES_PER_CONVERSATION = 250;
 export const MAX_ASSETS_PER_SPACE = 100;
 export const MAX_CONVERSATIONS_PER_SPACE = 100;
 export const MAX_SPACES_PER_USER = 10000;
+/** `Code` of the 422 the backend returns when a hard limit above is hit (`HardLimitExceededException`). */
+export const HARD_LIMIT_EXCEEDED_CODE = 500_001;
 export const FREE_USER_CHAT_RETENTION_DAYS = 7;
 /** Extra days after the retention window before a free-user chat is deleted client-side. */
 export const FREE_USER_CHAT_DELETION_GRACE_DAYS = 1;

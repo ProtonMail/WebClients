@@ -65,6 +65,7 @@ import { useConversationState } from './useConversationState';
 import { useLumoFlags } from './useLumoFlags';
 import { usePersonalization } from './usePersonalization';
 import usePreferredSiblings from './usePreferredSiblings';
+import { useMessagesLimitStatus } from './useResourceLimitStatus';
 
 // Constants
 const OPERATION_MESSAGES = {
@@ -124,6 +125,7 @@ export const useLumoActions = ({
     const { preferredSiblings, preferSibling, getSiblingInfo } = usePreferredSiblings(messageMap);
     const { hasConversationErrors, clearErrors } = useConversationErrors(conversationId);
     const { isBlocked: isChatLimitBlocked, ensureTierError } = useChatLimitGate();
+    const { isAtLimit: isMessageLimitReached } = useMessagesLimitStatus(conversationId);
     const {
         smoothRendering: ffSmoothRendering,
         externalTools: ffExternalTools,
@@ -602,6 +604,10 @@ export const useLumoActions = ({
             return;
         }
 
+        if (isMessageLimitReached) {
+            return;
+        }
+
         if (isChatLimitBlocked) {
             ensureTierError();
             return;
@@ -772,7 +778,7 @@ export const useLumoActions = ({
         artifactTitle,
         newContent,
     }) => {
-        if (!ffArtifactsView) {
+        if (!ffArtifactsView || isMessageLimitReached) {
             return;
         }
 
@@ -827,7 +833,7 @@ export const useLumoActions = ({
 
     // For retry actions initiated in ErrorCard component due to generation errors
     const handleRetryGeneration = async (error: ConversationError) => {
-        if (!error.actionParams || isOperationInProgress()) return;
+        if (!error.actionParams || isOperationInProgress() || isMessageLimitReached) return;
 
         if (error.actionParams.actionType === 'send') {
             // Reuse the existing retry action logic
