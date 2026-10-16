@@ -154,6 +154,10 @@ export const getParameters = (
             return parsedCycle;
         }
 
+        if (expandsSubscription && subscription?.Cycle) {
+            return subscription.Cycle;
+        }
+
         if (subscription?.Cycle) {
             return Math.min(subscription.Cycle, DEFAULT_CYCLE);
         }
