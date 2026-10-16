@@ -48,6 +48,7 @@ import {
 import {
     addConversation,
     deleteAllConversations,
+    deleteConversation,
     expireConversationsRequest,
     locallyDeleteConversationFromLocalRequest,
     locallyDeleteConversationFromRemoteRequest,
@@ -97,6 +98,7 @@ import {
     pushSpaceRequest,
     pushSpaceSuccess,
 } from '../slices/core/spaces';
+import { addResourceLimitError, clearMessageLimitReached } from '../slices/meta/errors';
 import { setReduxLoadedFromIdb } from '../slices/meta/initialization';
 import type { LumoState } from '../store';
 import {
@@ -132,6 +134,12 @@ import {
 } from './conversations';
 import { guestMigrationSaga } from './guestMigration';
 import { considerSavingIdMapToIdb } from './idmap';
+import {
+    loadMessageLimitReached,
+    persistAllMessageLimitsCleared,
+    persistMessageLimitCleared,
+    persistMessageLimitReached,
+} from './messageLimit';
 import {
     deserializeMessageSaga,
     logPullMessageFailure,
@@ -175,9 +183,7 @@ export { setRetryPushEveryMs } from './sagaErrors';
  * Wraps a saga so that calls with the same action.payload.id
  * are queued and run one-by-one.
  */
-function noRaceSameId<A extends { payload: { id: string } }>(
-    worker: (action: A) => SagaIterator
-): Saga<[action: A]> {
+function noRaceSameId<A extends { payload: { id: string } }>(worker: (action: A) => SagaIterator): Saga<[action: A]> {
     const queues: Record<string, A[]> = {};
     const processing: Record<string, boolean> = {};
 
@@ -209,9 +215,7 @@ function noRaceSameId<A extends { payload: { id: string } }>(
  * Wraps a saga so that calls with the same action.payload.id
  * are ignored if one is already running.
  */
-function dedupSameId<A extends { payload: { id: string } }>(
-    worker: (action: A) => SagaIterator
-): Saga<[action: A]> {
+function dedupSameId<A extends { payload: { id: string } }>(worker: (action: A) => SagaIterator): Saga<[action: A]> {
     const processing: Record<string, boolean> = {};
 
     return function* (action: A): SagaIterator {
@@ -480,6 +484,9 @@ export function* rootSaga(opts?: { crashIfErrors: boolean }) {
     console.log('in rootSaga');
     const crashIfErrors = opts?.crashIfErrors ?? false;
 
+    // Needs only `dbApi`, not the master key, so the composer is locked as early as possible.
+    yield spawn(loadMessageLimitReached);
+
     // prettier-ignore
     // @formatter:off
     const watchers = ([
@@ -543,6 +550,11 @@ export function* rootSaga(opts?: { crashIfErrors: boolean }) {
         function*() { yield takeEvery(locallyRefreshShallowAttachmentFromRemoteRequest, refreshShallowAttachmentFromRemote)},
         function*() { yield takeEvery(indexAttachmentRequest, indexAttachment)},
         function*() { yield takeEvery(unindexAttachmentRequest, unindexAttachment)},
+
+        function*() { yield takeEvery(addResourceLimitError, persistMessageLimitReached)},
+        function*() { yield takeEvery(clearMessageLimitReached, persistMessageLimitCleared)},
+        function*() { yield takeEvery(deleteConversation, persistMessageLimitCleared)},
+        function*() { yield takeEvery(deleteAllSpacesSuccess, persistAllMessageLimitsCleared)},
 
         function*() { yield takeEvery(addMasterKey, initAppSaga)},
         function*() { yield takeEvery(reloadReduxRequest, reloadRedux) },

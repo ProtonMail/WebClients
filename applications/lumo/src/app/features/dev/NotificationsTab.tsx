@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import {
+    HARD_LIMIT_EXCEEDED_CODE,
     MAX_ASSETS_PER_SPACE,
     MAX_CONVERSATIONS_PER_SPACE,
     MAX_MESSAGES_PER_CONVERSATION,
@@ -12,7 +13,9 @@ import type { DebugLimitOverride } from '../../redux/slices/meta/errors';
 import {
     addResourceLimitError,
     clearAllDebugLimitOverrides,
+    clearMessageLimitReached,
     selectAllDebugLimitOverrides,
+    selectIsMessageLimitReached,
     setDebugLimitOverride,
 } from '../../redux/slices/meta/errors';
 import { isNativeComposerBridgeAvailable, onLimitReachedError } from '../../remote/nativeComposerBridgeHelpers';
@@ -57,6 +60,7 @@ interface NotificationsTabProps {
 export const NotificationsTab = ({ currentConversationId, currentSpaceId }: NotificationsTabProps) => {
     const dispatch = useLumoDispatch();
     const debugOverrides = useLumoSelector(selectAllDebugLimitOverrides);
+    const isCurrentConversationLocked = useLumoSelector(selectIsMessageLimitReached(currentConversationId));
     const { lumoUserType } = useLumoPlan();
     const debugMaxOverride = useDebugMaxModelOverride();
     const debugModelLimitsExhausted = useDebugModelLimitsExhausted();
@@ -71,6 +75,27 @@ export const NotificationsTab = ({ currentConversationId, currentSpaceId }: Noti
                 serverMessage: `[debug] Simulated 422 from backend for ${resource}`,
             })
         );
+    };
+
+    const simulateServerMessageLimit = () => {
+        if (!currentConversationId) {
+            return;
+        }
+        dispatch(
+            addResourceLimitError({
+                resource: 'messages',
+                limit: MAX_MESSAGES_PER_CONVERSATION,
+                conversationId: currentConversationId,
+                code: HARD_LIMIT_EXCEEDED_CODE,
+                serverMessage: '[debug] Simulated 422 from backend for messages',
+            })
+        );
+    };
+
+    const unlockCurrentConversation = () => {
+        if (currentConversationId) {
+            dispatch(clearMessageLimitReached(currentConversationId));
+        }
     };
 
     const triggerNativeBridgeLimit = (resource: Resource, limit: number) => {
@@ -154,6 +179,39 @@ export const NotificationsTab = ({ currentConversationId, currentSpaceId }: Noti
                 <div className="debug-view-hint">
                     {c('lumo: Debug View')
                         .t`Dispatches a simulated 422 limit error, which will be surfaced by the in-app notifier.`}
+                </div>
+            </div>
+
+            <div className="debug-view-header" style={{ marginTop: '12px' }}>
+                <span className="debug-view-header-icon">🔒</span>
+                {c('lumo: Debug View').t`Server message limit (current chat)`}
+            </div>
+            <div className="debug-view-row">
+                <span className="debug-view-label">{c('lumo: Debug View').t`Locked`}</span>
+                <span className={`debug-view-value ${isCurrentConversationLocked ? 'debug-view-value--danger' : ''}`}>
+                    {isCurrentConversationLocked ? c('lumo: Debug View').t`Yes` : c('lumo: Debug View').t`No`}
+                </span>
+            </div>
+            <div className="debug-view-actions">
+                <button
+                    className="debug-view-btn debug-view-btn--secondary"
+                    onClick={simulateServerMessageLimit}
+                    disabled={!currentConversationId || isCurrentConversationLocked}
+                >
+                    💬 {c('lumo: Debug View').t`Simulate server rejection`}
+                </button>
+                <button
+                    className="debug-view-btn debug-view-btn--secondary"
+                    onClick={unlockCurrentConversation}
+                    disabled={!isCurrentConversationLocked}
+                >
+                    🔓 {c('lumo: Debug View').t`Unlock`}
+                </button>
+                <div className="debug-view-hint">
+                    {currentConversationId
+                        ? c('lumo: Debug View')
+                              .t`Behaves as if the backend refused a message for this chat: shows the toast, replaces the composer with "Start new chat", and saves the lock to IndexedDB so it survives a reload. Unlock removes it from both.`
+                        : c('lumo: Debug View').t`Open a conversation to simulate the server message limit.`}
                 </div>
             </div>
 
