@@ -422,3 +422,43 @@ export type IdealCancelledMessage = MessageBusResponseSuccess<{}> & {
 export function isIdealCancelledMessage(obj: any): obj is IdealCancelledMessage {
     return obj && obj.type === idealCancelledMessageType;
 }
+
+/**
+ * Generic bus for redirect-based alternative payment methods (iDEAL, KakaoPay, …). Every method
+ * emits the same four events and tags them with `method`, so the host dispatches on the tag
+ * instead of gaining a new event quadruple per method.
+ *
+ * A new method widens `ApmMethod` and calls `MessageBus.sendApm*Message` with its tag — it does
+ * not get, or need, `send<Method>*Message` wrappers of its own. Those exist only for iDEAL,
+ * which predates this bus and so has to keep emitting its legacy `ideal-*` events alongside the
+ * generic ones. That legacy pair goes away once every host has been on the generic listener for
+ * a full release.
+ */
+export type ApmMethod = 'ideal';
+
+export const apmAuthorizedMessageType = 'apm-authorized';
+export type ApmAuthorizedPayload = {
+    paymentIntent: AuthorizedPaymentIntent;
+};
+export type ApmAuthorizedMessage = MessageBusResponseSuccess<ApmAuthorizedPayload> & {
+    type: typeof apmAuthorizedMessageType;
+    method: ApmMethod;
+};
+
+export const apmFailedMessageType = 'apm-failed';
+export type ApmFailedMessage = MessageBusResponseFailure & {
+    type: typeof apmFailedMessageType;
+    method: ApmMethod;
+};
+
+export const apmClickedMessageType = 'apm-clicked';
+export type ApmClickedMessage = MessageBusResponseSuccess<{}> & {
+    type: typeof apmClickedMessageType;
+    method: ApmMethod;
+};
+
+export const apmCancelledMessageType = 'apm-cancelled';
+export type ApmCancelledMessage = MessageBusResponseSuccess<{}> & {
+    type: typeof apmCancelledMessageType;
+    method: ApmMethod;
+};

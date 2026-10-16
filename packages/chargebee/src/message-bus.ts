@@ -3,6 +3,12 @@ import noop from '@proton/utils/noop';
 import { getParentOrigin } from '../lib/get-parent-origin';
 import { toRedactedJson } from '../lib/redact-sensitive';
 import type {
+    ApmAuthorizedMessage,
+    ApmAuthorizedPayload,
+    ApmCancelledMessage,
+    ApmClickedMessage,
+    ApmFailedMessage,
+    ApmMethod,
     ApplePayAuthorizedPayload,
     ApplePayAvailability,
     ApplePayCancelledMessage,
@@ -43,6 +49,10 @@ import type {
     UpdateFieldsPayload,
 } from '../lib/types';
 import {
+    apmAuthorizedMessageType,
+    apmCancelledMessageType,
+    apmClickedMessageType,
+    apmFailedMessageType,
     applePayAuthorizedMessageType,
     applePayCancelledMessageType,
     applePayClickedMessageType,
@@ -746,6 +756,50 @@ export class MessageBus {
         this.sendMessage(message);
     }
 
+    sendApmAuthorizedMessage(method: ApmMethod, data: ApmAuthorizedPayload) {
+        const message: ApmAuthorizedMessage = {
+            type: apmAuthorizedMessageType,
+            method,
+            status: 'success',
+            data,
+        };
+
+        this.sendMessage(message);
+    }
+
+    sendApmFailedMessage(method: ApmMethod, error: any) {
+        const message: ApmFailedMessage = {
+            type: apmFailedMessageType,
+            method,
+            status: 'failure',
+            error,
+        };
+
+        this.sendMessage(message);
+    }
+
+    sendApmClickedMessage(method: ApmMethod) {
+        const message: ApmClickedMessage = {
+            type: apmClickedMessageType,
+            method,
+            status: 'success',
+            data: {},
+        };
+
+        this.sendMessage(message);
+    }
+
+    sendApmCancelledMessage(method: ApmMethod) {
+        const message: ApmCancelledMessage = {
+            type: apmCancelledMessageType,
+            method,
+            status: 'success',
+            data: {},
+        };
+
+        this.sendMessage(message);
+    }
+
     sendIdealAuthorizedMessage(data: IdealAuthorizedPayload) {
         const message: MessageBusResponse<IdealAuthorizedPayload> = {
             status: 'success',
@@ -756,6 +810,8 @@ export class MessageBus {
             type: idealAuthorizedMessageType,
             ...message,
         });
+
+        this.sendApmAuthorizedMessage('ideal', data);
     }
 
     sendIdealFailedMessage(error: any) {
@@ -766,6 +822,8 @@ export class MessageBus {
         };
 
         this.sendMessage(message);
+
+        this.sendApmFailedMessage('ideal', error);
     }
 
     sendIdealClickedMessage() {
@@ -776,6 +834,8 @@ export class MessageBus {
         };
 
         this.sendMessage(message);
+
+        this.sendApmClickedMessage('ideal');
     }
 
     sendIdealCancelledMessage() {
@@ -786,6 +846,8 @@ export class MessageBus {
         };
 
         this.sendMessage(message);
+
+        this.sendApmCancelledMessage('ideal');
     }
 
     /**
