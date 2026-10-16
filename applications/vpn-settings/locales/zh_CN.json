@@ -2591,6 +2591,9 @@
       "The address ${ boldClaimedEmail } has been claimed and can no longer be used for this account. Your data was migrated to the address below and remains private.": [
         "地址 ${ boldClaimedEmail } 已被认领，无法再用于此账户。您的数据已迁移至以下地址，并保持私密。"
       ],
+      "The address ${ boldClaimedEmail } has been claimed by another organization and can no longer be used for this account. Your data is safe and remains private.": [
+        "地址 ${ boldClaimedEmail } 已被其他组织占用，无法再用于此账户。您的数据安全且保持私密。"
+      ],
       "Verify it's you": [
         "验证您的身份"
       ],
@@ -2600,8 +2603,14 @@
       "Your address": [
         "您的地址"
       ],
+      "Your address has been claimed": [
+        "您的地址已被占用"
+      ],
       "Your address has changed": [
         "您的地址已更改"
+      ],
+      "Your administrator can give you a new address.": [
+        "您的管理员可以为您提供一个新地址。"
       ],
       "Your data was migrated to the address below and remains private.": [
         "您的数据已迁移至以下地址，并保持私密。"
@@ -4613,6 +4622,9 @@
       "Add 1 more": [
         "再添加 1 个"
       ],
+      "Add contact": [
+        "添加联系人"
+      ],
       "Add emergency contact": [
         "添加紧急联系人"
       ],
@@ -4774,6 +4786,9 @@
       ],
       "Recover data": [
         "恢复数据"
+      ],
+      "Recover your data before adding a new contact.": [
+        "在添加新联系人之前，请先恢复您的数据。"
       ],
       "Recovery approved": [
         "恢复已批准"
@@ -4948,6 +4963,9 @@
       ],
       "You'll receive access to their account in **${ days } day**, or when they approve your request.": [
         "您将在**${ days } 天**内获得其账户访问权限，或在他们批准您的请求时。"
+      ],
+      "Your data is still locked from a password reset. A contact added now won't be able to restore it.": [
+        "您的数据仍因密码重置而被锁定，现在添加的联系人将无法恢复它。"
       ],
       "Your recovery contact has helped you recover data.": [
         "您的恢复联系人已帮助您恢复数据！"
@@ -7542,6 +7560,9 @@
       "**This will disable 2-factor authentication.**": [
         "**这将禁用 2FA！**"
       ],
+      "**We're changing the ${ BRAND_NAME } sign-in page.** Your account and password stay the same.": [
+        "**我们正在更改 ${ BRAND_NAME } 登录页面。** 您的账户和密码保持不变。"
+      ],
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "每位好友订阅后，您可获得 **${ referrerRewardAmount }** 积分！"
       ],
@@ -9966,6 +9987,12 @@
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "在身份提供商中为 ${ appName } 启用 SAML 时，系统可能会提示您使用回调 (ACS) URL 和颁发者 ID。只需将以下数据复制粘贴到您的身份提供商字段中即可。"
       ],
+      "When sign-in is restricted, only ${ primaryEmailElement } and your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "当登录受限时，仅可使用 ${ primaryEmailElement } 和您的用户名 ${ usernameElement } 登录。即使他人知晓，您的其他地址也无法关联到您的账户。"
+      ],
+      "When sign-in is restricted, only your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "当登录受限时，仅可使用您的用户名 ${ usernameElement } 登录。即使他人知晓，您的其他地址也无法关联到您的账户。"
+      ],
       "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
         "当您取消当前的付费订阅时，套餐余额将以账户积分的形式返还给您，同时您将转为 ${ BRAND_NAME } ${ PLANS.FREE } 套餐。"
       ],
@@ -10241,6 +10268,9 @@
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "您的 ${ VPN_APP_NAME } 和 ${ MAIL_APP_NAME } 账户已关联。要删除它们，请登录 ${ loginLink } 并在那里删除您的账户。"
+      ],
+      "Your account and password stay the same.": [
+        "您的账户和密码保持不变。"
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "您的账户有逾期未支付的账单，很快将被限制使用。${ payInvoiceLink }"
@@ -11305,6 +11335,12 @@
       ],
       "Require password check-ins": [
         "要求密码检查"
+      ],
+      "Restrict sign-in to primary email address": [
+        "限制仅使用主邮箱地址登录"
+      ],
+      "Restrict sign-in to username": [
+        "限制仅使用用户名登录"
       ],
       "Reveal password": [
         "显示密码"
@@ -16773,6 +16809,9 @@
       "Enter your backup password": [
         "输入您的备份密码"
       ],
+      "Enter your password": [
+        "请输入您的密码"
+      ],
       "For your security, you have been signed out of all your other active devices.": [
         "为了您的安全，您已从所有其他活跃设备中登出。"
       ],
@@ -16896,6 +16935,9 @@
       "To make sure it's really you trying to sign-in, please enter your backup password.": [
         "为了确保是您本人在登录，请输入您的备用密码。"
       ],
+      "To make sure it's really you trying to sign-in, please enter your password.": [
+        "为确保是您本人尝试登录，请输入您的密码。"
+      ],
       "To make sure it's really you trying to sign-in, share the confirmation code with your administrator **${ adminEmail }** so that they can approve the request for **${ email }**.": [
         "为确保真的是您在尝试登录，请与管理员 **${ adminEmail }** 共享确认代码，以便他们批准 **${ email }** 的请求。"
       ],
@@ -16919,6 +16961,9 @@
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "您将被重定向到您的第三方 SSO 提供商。"
+      ],
+      "Your old password will become your **backup password**. You will be able to use it to authorize single sign-on (SSO) on new devices in the future.": [
+        "您的旧密码将成为您的**备用密码**，未来您将能够使用它来授权在新设备上进行单点登录 (SSO)。"
       ],
       "Your SSO configuration will be deleted.": [
         "您的 SSO 配置将被删除。"
@@ -19217,6 +19262,9 @@
       "Sign out": [
         "登出"
       ],
+      "Sign-in protection": [
+        "登录保护"
+      ],
       "Signed in to another account": [
         "已登录另一账户"
       ],
@@ -19813,6 +19861,9 @@
       ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: 安全登录您的所有设备。包括无限邮箱别名、共享、集成 2FA 等等。"
+      ],
+      "Assigned by a group. Remove the user from the group to change this role": [
+        "由群组分配，请将该用户移出群组以更改此角色"
       ],
       "Disables end-to-end email encryption for this group": [
         "禁用该组的端到端电子邮件加密"
