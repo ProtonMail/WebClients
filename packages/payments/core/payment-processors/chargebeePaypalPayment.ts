@@ -4,6 +4,7 @@ import {
     isMessageBusResponseFailure,
 } from '@proton/chargebee/lib/types';
 import type { Api } from '@proton/shared/lib/interfaces';
+import noop from '@proton/utils/noop';
 
 import { getTokenStatusV5 } from '../api/api';
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '../constants';
@@ -37,6 +38,14 @@ export class ChargebeePaypalPaymentProcessor extends PaymentProcessor<ChargebeeP
 
     private removeEventListeners: RemoveEventListener[] = [];
 
+    // A new amount starts a new setup while the previous one may still be in flight. The previous one must not arm the
+    // iframe or store its token, otherwise the user approves the previous amount.
+    private setupAbortController = new AbortController();
+
+    // Overlapping token requests for the same user can fail at the payment provider (422, Code 2900, the generic
+    // "provider unavailable" error), so they go one at a time
+    private pendingTokenRequest: Promise<unknown> = Promise.resolve();
+
     constructor(
         public verifyPayment: PaymentVerificatorV5,
         public api: Api,
@@ -54,19 +63,39 @@ export class ChargebeePaypalPaymentProcessor extends PaymentProcessor<ChargebeeP
         );
     }
 
+    startSetup() {
+        this.setupAbortController.abort();
+        this.setupAbortController = new AbortController();
+        return this.setupAbortController.signal;
+    }
+
     async fetchPaymentToken() {
+        const setupSignal = this.setupAbortController.signal;
+        const amountAndCurrency = this.amountAndCurrency;
         try {
-            const fetchedPaymentToken = await createPaymentTokenV5Paypal(
-                {
-                    type: PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
-                    amountAndCurrency: this.amountAndCurrency,
-                },
-                {
-                    api: this.api,
-                    handles: this.handles,
-                    events: this.events,
+            const request = this.pendingTokenRequest.catch(noop).then(() => {
+                if (setupSignal.aborted) {
+                    throw new DOMException('Outdated PayPal setup', 'AbortError');
                 }
-            );
+                return createPaymentTokenV5Paypal(
+                    {
+                        type: PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
+                        amountAndCurrency,
+                    },
+                    {
+                        api: this.api,
+                        handles: this.handles,
+                        events: this.events,
+                    }
+                );
+            });
+            this.pendingTokenRequest = request;
+
+            const fetchedPaymentToken = await request;
+
+            if (setupSignal.aborted) {
+                return fetchedPaymentToken;
+            }
 
             this.paymentIntent = fetchedPaymentToken.paymentIntent;
             this.fetchedPaymentToken = fetchedPaymentToken;
@@ -149,6 +178,7 @@ export class ChargebeePaypalPaymentProcessor extends PaymentProcessor<ChargebeeP
     }
 
     reset() {
+        this.startSetup();
         this.fetchedPaymentToken = null;
         for (const removeEventListener of this.removeEventListeners) {
             removeEventListener();
