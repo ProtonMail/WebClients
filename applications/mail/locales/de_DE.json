@@ -1781,6 +1781,15 @@
       ],
       "Switch to ${ planName }": [
         "Zu ${ planName } wechseln"
+      ],
+      "${ LUMO_SHORT_APP_NAME } actions": [
+        "${ LUMO_SHORT_APP_NAME }-Aktionen"
+      ],
+      "Dock to side panel": [
+        "An Seitenleiste anheften"
+      ],
+      "Switch sides": [
+        "Seiten wechseln"
       ]
     },
     "action": {
@@ -5743,6 +5752,9 @@
       ],
       "Incorrect password. Please try again.": [
         "Ungültiges Passwort. Bitte versuche es erneut."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Wiederherstellungsphrase ungültig. Versuche es erneut oder verwende eine andere Wiederherstellungsmethode."
       ]
     },
     "error": {
@@ -14159,6 +14171,18 @@
       ],
       "By switching, you agree to our ${ termsLink }.": [
         "Mit dem Wechsel erklärst du dich mit unseren ${ termsLink } einverstanden."
+      ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Der Tarifwechsel ist aus folgenden Gründen nicht möglich:"
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Die Anzahl der Plätze bei Proton Meet muss mit der Anzahl der Teilnehmer übereinstimmen."
+      ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Dieser Tarif unterstützt für dein Konto keine Verwaltungsfunktionen."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Dieses Abonnement kann derzeit nicht abgeschlossen werden. Bitte versuche es erneut."
       ]
     },
     "Payments.Error": {

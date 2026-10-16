@@ -1781,6 +1781,12 @@
       ],
       "Write ${ count } logs": [
         "Escreva ${ count } registros"
+      ],
+      "${ LUMO_SHORT_APP_NAME } actions": [
+        "Ações de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Switch sides": [
+        "Trocar de lado"
       ]
     },
     "action": {
@@ -5743,6 +5749,9 @@
       ],
       "You reached the maximum number of connected addresses": [
         "Você atingiu o número máximo de endereços conectados"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Frase de recuperação errada. Tente novamente ou use outro método de autenticação."
       ]
     },
     "error": {
@@ -14153,6 +14162,15 @@
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "Sua moeda foi alterada para euros (€) porque ${ IDEAL_WERO_BRAND_NAME } suporta apenas pagamentos em euros."
+      ],
+      "Plan switch is incompatible for the following reasons:": [
+        "O interruptor de plano é incompatível pelas seguintes razões:"
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Os assentos do Proton Meet devem corresponder ao número de membros."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Esta assinatura não pode ser concluída agora. Por favor, tente de novo."
       ]
     },
     "Payments.Error": {

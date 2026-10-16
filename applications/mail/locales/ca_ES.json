@@ -1781,6 +1781,15 @@
       ],
       "Switch to ${ planName }": [
         "Canvia a ${ planName }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } actions": [
+        "Accions de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Dock to side panel": [
+        "Acoblar el panell lateral"
+      ],
+      "Switch sides": [
+        "Canviar de banda"
       ]
     },
     "action": {
@@ -5743,6 +5752,9 @@
       ],
       "Incorrect password. Please try again.": [
         "Contrasenya incorrecta, torneu-ho a intentar."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Frase de recuperació incorrecta. Torneu-ho a provar o utilitzeu un altre mètode de recuperació."
       ]
     },
     "error": {
@@ -14159,6 +14171,18 @@
       ],
       "By switching, you agree to our ${ termsLink }.": [
         "En canviar, accepteu els nostres ${ termsLink }."
+      ],
+      "Plan switch is incompatible for the following reasons:": [
+        "El canvi de pla no és compatible pels motius següents:"
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Les llicències de Proton Meet han de coincidir amb el nombre de membres."
+      ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Aquest pla no admet les funcions gestionades del vostre compte."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Aquesta subscripció no es pot completar ara mateix. Torneu-ho a provar."
       ]
     },
     "Payments.Error": {

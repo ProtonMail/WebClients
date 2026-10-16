@@ -1781,6 +1781,15 @@
       ],
       "Switch to ${ planName }": [
         "${ planName } tarifesine geç"
+      ],
+      "${ LUMO_SHORT_APP_NAME } actions": [
+        "${ LUMO_SHORT_APP_NAME } işlemleri"
+      ],
+      "Dock to side panel": [
+        "Yan panoya kenetlen"
+      ],
+      "Switch sides": [
+        "Yanları değiştir"
       ]
     },
     "action": {
@@ -5743,6 +5752,9 @@
       ],
       "Incorrect password. Please try again.": [
         "Parola yanlış. Lütfen yeniden deneyin."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Kurtarma ifadesi yanlış. Yeniden deneyin ya da başka bir kurtarma yöntemi kullanın."
       ]
     },
     "error": {
@@ -6658,7 +6670,7 @@
         "Kullanıcı adı"
       ],
       "Good to know before you connect": [
-        "Bağlamadan önce bilmek iyi oldu"
+        "Bağlantı kurmadan önce bilmek iyi oldu"
       ]
     },
     "Hint": {
@@ -14159,6 +14171,18 @@
       ],
       "Your account is too old for Born Private.": [
         "Hesabınız Born Private için çok eski."
+      ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Tarife geçişi şu nedenlerden dolayı yapılamıyor:"
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Proton Meet koltuk sayısı üye sayısı ile aynı olmalıdır."
+      ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Bu tarife hesabınızdaki yönetilen özellikleri desteklemez."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Bu abonelik şu anda tamamlanamıyor. Lütfen yeniden deneyin."
       ]
     },
     "Payments.Error": {
