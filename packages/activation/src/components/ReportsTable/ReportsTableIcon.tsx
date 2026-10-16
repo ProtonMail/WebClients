@@ -16,7 +16,7 @@ interface Props {
     product: ImportType;
 }
 
-const providerLogos: Partial<Record<ImportProvider, string>> = {
+export const providerLogos: Partial<Record<ImportProvider, string>> = {
     [ImportProvider.GOOGLE]: googleLogo,
     [ImportProvider.OUTLOOK]: outlookLogo,
     [ImportProvider.YAHOO]: yahooLogo,
