@@ -6,6 +6,7 @@ import type { Participant, TrackPublication } from 'livekit-client';
 import { RoomEvent } from 'livekit-client';
 
 import { PAGE_SIZE, SMALL_SCREEN_PAGE_SIZE } from '@proton/meet/constants';
+import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectActiveSpeakerSpotlightIdentity } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 import { selectMeetSettings, selectParticipantsWithDisabledVideos } from '@proton/meet/store/slices/settings';
@@ -37,8 +38,11 @@ export const CameraTrackSubscriptionManagerProvider = ({ children }: { children:
 
     const spotlightParticipantIdentity = useMeetSelector(selectActiveSpeakerSpotlightIdentity);
     const allowResettingFrozenVideoTracks = useFlag('MeetAllowResettingFrozenVideoTracks');
+    const { reportMeetError } = useMeetErrorReporting();
 
-    const [manager, setManager] = useState(() => new CameraTrackSubscriptionManager(DEFAULT_CAPACITY, room));
+    const [manager, setManager] = useState(
+        () => new CameraTrackSubscriptionManager(DEFAULT_CAPACITY, room, reportMeetError)
+    );
 
     useEffect(() => {
         manager.setPolicy({ disableVideos, participantsWithDisabledVideos, participantQuality });
@@ -56,7 +60,7 @@ export const CameraTrackSubscriptionManagerProvider = ({ children }: { children:
     const handleDisconnected = useStableCallback(() => {
         manager.destroy();
 
-        const newManager = new CameraTrackSubscriptionManager(DEFAULT_CAPACITY, room);
+        const newManager = new CameraTrackSubscriptionManager(DEFAULT_CAPACITY, room, reportMeetError);
         newManager.setPolicy({ disableVideos, participantsWithDisabledVideos, participantQuality });
         newManager.setSpotlightParticipantIdentity(spotlightParticipantIdentity);
         newManager.setupReconcileLoop();
