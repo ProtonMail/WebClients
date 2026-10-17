@@ -1,15 +1,35 @@
-import { Kbd } from '@proton/atoms/Kbd/Kbd'
+import { clsx } from 'clsx'
+import { c } from 'ttag'
+import { Kbd } from '../../Components/atoms'
+import type { KbdProps } from '../../Components/atoms'
 import { isMac } from '../../Utils/isMac'
-import type { ComponentProps } from 'react'
 
 const MacCommandKey = '\u{2318}'
 const CtrlKey = 'Ctrl'
 const ModifierKey = isMac() ? MacCommandKey : CtrlKey
 
-export const ShortcutKbd = (props: ComponentProps<typeof Kbd>) => (
-  <Kbd {...props} className="text-sm capitalize leading-4" />
-)
+const keyboardShortcutLabel = (shortcut: string) => c('Label').t`Keyboard shortcut: ${shortcut}`
 
-export const ModifierKbd = () => (
-  <Kbd className="flex items-center justify-center text-lg leading-4" shortcut={ModifierKey} />
-)
+export type ShortcutKbdProps = Omit<KbdProps, 'children' | 'ref'> & {
+  shortcut: string
+}
+
+export function ShortcutKbd({ shortcut, className, ...props }: ShortcutKbdProps) {
+  return (
+    <Kbd
+      aria-label={keyboardShortcutLabel(shortcut)}
+      {...props}
+      className={clsx('text-sm capitalize leading-4', className)}
+    >
+      {shortcut}
+    </Kbd>
+  )
+}
+
+export function ModifierKbd() {
+  return (
+    <Kbd aria-label={keyboardShortcutLabel(ModifierKey)} className="flex items-center justify-center text-lg leading-4">
+      {ModifierKey}
+    </Kbd>
+  )
+}
