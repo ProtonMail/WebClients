@@ -3,8 +3,8 @@ import { ACCENT_COLORS_MAP } from '@proton/shared/lib/colors'
 import tinycolor from 'tinycolor2'
 import genAccentColorShades from '@proton/colors/gen-accent-shades'
 import { useCallback, useMemo, useState } from 'react'
-import { Button } from '@proton/atoms/Button/Button'
 import { MenuItem } from '@ariakit/react'
+import { Button } from './ui'
 
 const Colors = {
   black: {
