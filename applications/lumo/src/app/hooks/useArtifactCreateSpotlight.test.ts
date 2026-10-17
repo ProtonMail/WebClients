@@ -2,7 +2,7 @@ import { act, renderHook } from '@testing-library/react';
 
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 
-import { ARTIFACT_CREATE_SPOTLIGHT_ID } from '../constants/artifactOnboarding';
+import { ARTIFACT_CREATE_SPOTLIGHT_ID, ARTIFACT_NEW_LABEL_END_DATE } from '../constants/artifactOnboarding';
 import { useIsGuest } from '../providers/IsGuestProvider';
 import { useLumoSelector } from '../redux/hooks';
 import {
@@ -84,6 +84,22 @@ const setup = ({
 describe('useArtifactCreateSpotlight', () => {
     beforeEach(() => {
         jest.clearAllMocks();
+        // Pin the clock before the New label end date so the tests don't depend on the real date.
+        jest.useFakeTimers({ now: ARTIFACT_NEW_LABEL_END_DATE - 24 * 60 * 60 * 1000 });
+    });
+
+    afterEach(() => {
+        jest.useRealTimers();
+    });
+
+    it('hides the spotlight and the New label once the end date has passed', () => {
+        jest.setSystemTime(ARTIFACT_NEW_LABEL_END_DATE);
+        setup();
+
+        const { result } = renderHook(() => useArtifactCreateSpotlight(true));
+
+        expect(result.current.shouldShowSpotlight).toBe(false);
+        expect(result.current.showNewLabel).toBe(false);
     });
 
     it('shows the spotlight for a first-time auth user when artifactsView is enabled', () => {
