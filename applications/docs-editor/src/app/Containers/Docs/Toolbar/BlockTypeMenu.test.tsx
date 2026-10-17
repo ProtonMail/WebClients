@@ -63,3 +63,18 @@ it('disables block formatting when the document is not editable', async () => {
   expect(formatHeading).not.toHaveBeenCalled()
   expect(screen.getByRole('menu')).toBeVisible()
 })
+
+it('shows the block type shortcut when its menu item gets keyboard focus', async () => {
+  renderMenu()
+  const normal = await screen.findByRole('menuitem', { name: 'Normal' })
+  await waitFor(() => expect(normal).toHaveFocus())
+
+  fireEvent.keyDown(normal, { key: 'ArrowDown' })
+
+  const heading = screen.getByRole('menuitem', { name: 'Heading 1' })
+  expect(heading).toHaveFocus()
+  const tooltip = await screen.findByRole('tooltip', { name: /Keyboard shortcut: 1$/ })
+  expect(heading).toHaveAccessibleDescription(/Alt 1$/)
+  expect(within(tooltip).getByLabelText('Keyboard shortcut: Alt')).toBeVisible()
+  await waitFor(() => expect(screen.getAllByRole('tooltip')).toEqual([tooltip]))
+})
