@@ -1,7 +1,5 @@
 import { defaultEmojiMessages } from '../Plugins/emoji/emojiMessages'
 import { Dropdown, DropdownButton, DropdownMenu, DropdownMenuButton, SimpleDropdown } from '../Components/Dropdown'
-import Spotlight from '@proton/components/components/spotlight/Spotlight'
-import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor'
 import { Fragment, lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 import { $isCodeNode } from '@lexical/code'
@@ -42,7 +40,7 @@ import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
 import { Button } from '@proton/atoms/Button/Button'
 import { Icon } from '../Components/Icon'
 import * as Icons from '../Components/icons'
-import { rootFontSize } from '@proton/shared/lib/helpers/dom'
+import { rootFontSize } from '../Utils/rootFontSize'
 import { clsx } from 'clsx'
 import { c } from 'ttag'
 import { FontColorMenu } from '../Components/ColorMenu'
@@ -74,7 +72,7 @@ import { INSERT_FILE_COMMAND } from '../Commands/Events'
 import { EditorUserMode } from '../contract/EditorUserMode'
 import type { BlockType } from '../Plugins/BlockTypePlugin'
 import { blockTypeToBlockName, SET_BLOCK_TYPE_COMMAND } from '../Plugins/BlockTypePlugin'
-import { TooltipKey, useTooltipOnce, EditorSystemMode } from '@proton/docs-shared'
+import type { EditorSystemMode } from '@proton/docs-shared'
 import { InteractionDropdownButton } from './InteractionDropdownButton'
 import { stepFontSize } from './stepFontSize'
 import { isMobile } from './isMobile'
@@ -105,7 +103,6 @@ function SuperscriptIcon() {
 
 export default function DocumentEditorToolbar({
   userMode,
-  systemMode,
   onUserModeChange,
   hasEditAccess,
   isPreviewModeToolbar = false,
@@ -634,14 +631,6 @@ export default function DocumentEditorToolbar({
   const isPreviewMode = userMode === EditorUserMode.Preview
   const isSuggestionMode = userMode === EditorUserMode.Suggest
 
-  const { shouldShowTooltip: suggestionTooltipNotShownPreviously } = useTooltipOnce(
-    TooltipKey.DocsSuggestionModeSpotlight,
-    new Date('2024-11-22'),
-  )
-
-  const shouldShowSuggestionTooltip =
-    systemMode !== EditorSystemMode.PublicView && suggestionTooltipNotShownPreviously && !isMobile()
-
   const buttonsContainerRef = useRef<HTMLDivElement | null>(null)
   const [visibleButtons, setVisibleButtons] = useState<Record<string, boolean>>({})
   useEffect(() => {
@@ -686,12 +675,10 @@ export default function DocumentEditorToolbar({
     }
   }, [])
 
-  const {
-    anchorRef: overflowMenuAnchorRef,
-    isOpen: isOverflowMenuOpen,
-    toggle: toggleOverflowMenu,
-    close: closeOverflowMenu,
-  } = usePopperAnchor<HTMLButtonElement>()
+  const overflowMenuAnchorRef = useRef<HTMLButtonElement>(null)
+  const [isOverflowMenuOpen, setIsOverflowMenuOpen] = useState(false)
+  const toggleOverflowMenu = () => setIsOverflowMenuOpen((isOpen) => !isOpen)
+  const closeOverflowMenu = () => setIsOverflowMenuOpen(false)
 
   const toolbarItems: ToolbarItems = [
     {
@@ -1355,98 +1342,79 @@ export default function DocumentEditorToolbar({
           </DropdownMenu>
         </Dropdown>
         {!isEditorHidden && (
-          <Spotlight
-            show={shouldShowSuggestionTooltip}
+          <SimpleDropdown
+            as={Button}
+            shape="solid"
+            type="button"
+            disabled={!hasEditAccess}
+            className="ml-auto grid flex-shrink-0 grid-cols-2 grid-rows-1 justify-items-start gap-2 py-2 text-sm md:grid-cols-[1rem_1fr_1rem]"
+            style={{
+              border: '0',
+              backgroundColor: isSuggestionMode ? 'var(--signal-success)' : undefined,
+              color: isSuggestionMode ? 'var(--signal-success-contrast)' : undefined,
+            }}
+            caretClassName="!ml-0"
             content={
-              <div className="flex items-center gap-4 md:flex-nowrap">
-                <Icon data={Icons.spotlightIllustration} viewBox="0 0 48 48" size={12} className="h-12 w-12 shrink-0" />
-                <div className="flex flex-col gap-1">
-                  <div className="text-sm font-bold">{c('Title').t`Explore the New Suggestion Mode`}</div>
-                  <div className="text-sm">{c('Description')
-                    .t`Use the dropdown above to switch and start making suggestions.`}</div>
+              <>
+                <div className={clsx('contents *:[grid-row:1]', isEditMode ? '*:opacity-100' : '*:[opacity:0]')}>
+                  <Icon data={Icons.pencil} className="flex-shrink-0 [grid-column:1]" />
+                  <span className="flex-shrink-0 [display:none] [grid-column:2] md:block">{c('Info').t`Editing`}</span>
                 </div>
-              </div>
+                <div className={clsx('contents *:[grid-row:1]', isSuggestionMode ? '*:opacity-100' : '*:[opacity:0]')}>
+                  <Icon data={Icons.speechBubblePen} className="h-4 w-4 flex-shrink-0 [grid-column:1]" />
+                  <span className="flex-shrink-0 [display:none] [grid-column:2] md:block">{c('Info')
+                    .t`Suggesting`}</span>
+                </div>
+                <div className={clsx('contents *:[grid-row:1]', isPreviewMode ? '*:opacity-100' : '*:[opacity:0]')}>
+                  <Icon data={Icons.eye} className="flex-shrink-0 [grid-column:1]" />
+                  <span className="flex-shrink-0 [display:none] [grid-column:2] md:block">{c('Info').t`Viewing`}</span>
+                </div>
+              </>
             }
-            originalPlacement="bottom-end"
+            contentProps={DropdownContentProps}
+            data-testid="user-mode-dropdown"
+            data-interaction-mode={userMode}
           >
-            <SimpleDropdown
-              as={Button}
-              shape="solid"
-              type="button"
-              disabled={!hasEditAccess}
-              className="ml-auto grid flex-shrink-0 grid-cols-2 grid-rows-1 justify-items-start gap-2 py-2 text-sm md:grid-cols-[1rem_1fr_1rem]"
-              style={{
-                border: '0',
-                backgroundColor: isSuggestionMode ? 'var(--signal-success)' : undefined,
-                color: isSuggestionMode ? 'var(--signal-success-contrast)' : undefined,
-              }}
-              caretClassName="!ml-0"
-              content={
+            <DropdownMenu>
+              {hasEditAccess && (
                 <>
-                  <div className={clsx('contents *:[grid-row:1]', isEditMode ? '*:opacity-100' : '*:[opacity:0]')}>
-                    <Icon data={Icons.pencil} className="flex-shrink-0 [grid-column:1]" />
-                    <span className="flex-shrink-0 [display:none] [grid-column:2] md:block">{c('Info')
-                      .t`Editing`}</span>
-                  </div>
-                  <div
-                    className={clsx('contents *:[grid-row:1]', isSuggestionMode ? '*:opacity-100' : '*:[opacity:0]')}
-                  >
-                    <Icon data={Icons.speechBubblePen} className="h-4 w-4 flex-shrink-0 [grid-column:1]" />
-                    <span className="flex-shrink-0 [display:none] [grid-column:2] md:block">{c('Info')
-                      .t`Suggesting`}</span>
-                  </div>
-                  <div className={clsx('contents *:[grid-row:1]', isPreviewMode ? '*:opacity-100' : '*:[opacity:0]')}>
-                    <Icon data={Icons.eye} className="flex-shrink-0 [grid-column:1]" />
-                    <span className="flex-shrink-0 [display:none] [grid-column:2] md:block">{c('Info')
-                      .t`Viewing`}</span>
-                  </div>
-                </>
-              }
-              contentProps={DropdownContentProps}
-              data-testid="user-mode-dropdown"
-              data-interaction-mode={userMode}
-            >
-              <DropdownMenu>
-                {hasEditAccess && (
-                  <>
+                  <InteractionDropdownButton
+                    isActive={isEditMode}
+                    onClick={() => {
+                      onUserModeChange(EditorUserMode.Edit)
+                    }}
+                    icon={<Icon data={Icons.pencil} size={4} />}
+                    label={c('Info').t`Editing`}
+                    description={c('Description').t`Edit document directly`}
+                    data-testid={`edit-dropdown-button${isPreviewModeToolbar ? '-preview' : ''}`}
+                  />
+                  {canShowSuggestionsButton && (
                     <InteractionDropdownButton
-                      isActive={isEditMode}
+                      isActive={isSuggestionMode}
+                      icon={<Icon data={Icons.speechBubblePen} className="h-4 w-4" />}
+                      label={c('Info').t`Suggesting`}
+                      description={c('Description').t`Edits become suggestions`}
                       onClick={() => {
-                        onUserModeChange(EditorUserMode.Edit)
+                        onUserModeChange(EditorUserMode.Suggest)
                       }}
-                      icon={<Icon data={Icons.pencil} size={4} />}
-                      label={c('Info').t`Editing`}
-                      description={c('Description').t`Edit document directly`}
-                      data-testid={`edit-dropdown-button${isPreviewModeToolbar ? '-preview' : ''}`}
+                      data-testid={`suggest-dropdown-button${isPreviewModeToolbar ? '-preview' : ''}`}
+                      disabled={isMobile()}
                     />
-                    {canShowSuggestionsButton && (
-                      <InteractionDropdownButton
-                        isActive={isSuggestionMode}
-                        icon={<Icon data={Icons.speechBubblePen} className="h-4 w-4" />}
-                        label={c('Info').t`Suggesting`}
-                        description={c('Description').t`Edits become suggestions`}
-                        onClick={() => {
-                          onUserModeChange(EditorUserMode.Suggest)
-                        }}
-                        data-testid={`suggest-dropdown-button${isPreviewModeToolbar ? '-preview' : ''}`}
-                        disabled={isMobile()}
-                      />
-                    )}
-                  </>
-                )}
-                <InteractionDropdownButton
-                  isActive={isPreviewMode}
-                  label={c('Info').t`Viewing`}
-                  icon={<Icon data={Icons.eye} size={4} />}
-                  description={c('Description').t`Read or print final document`}
-                  onClick={() => {
-                    onUserModeChange(EditorUserMode.Preview)
-                  }}
-                  data-testid={`view-dropdown-button${isPreviewModeToolbar ? '-preview' : ''}`}
-                />
-              </DropdownMenu>
-            </SimpleDropdown>
-          </Spotlight>
+                  )}
+                </>
+              )}
+              <InteractionDropdownButton
+                isActive={isPreviewMode}
+                label={c('Info').t`Viewing`}
+                icon={<Icon data={Icons.eye} size={4} />}
+                description={c('Description').t`Read or print final document`}
+                onClick={() => {
+                  onUserModeChange(EditorUserMode.Preview)
+                }}
+                data-testid={`view-dropdown-button${isPreviewModeToolbar ? '-preview' : ''}`}
+              />
+            </DropdownMenu>
+          </SimpleDropdown>
         )}
       </div>
     </div>
