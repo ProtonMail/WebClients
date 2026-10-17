@@ -1,10 +1,11 @@
 import * as Ariakit from '@ariakit/react'
-import { Button } from '@proton/atoms/Button/Button'
 import { clsx } from 'clsx'
 import type { ComponentPropsWithoutRef, ElementType, HTMLAttributes, ReactNode, RefObject } from 'react'
 import { createContext, forwardRef, useContext, useEffect, useRef } from 'react'
+import type { ButtonOptions } from './atoms'
 import { Icon } from './Icon'
 import * as Icons from './icons'
+import { Button } from './ui'
 
 // Mirror Sheets styling, with menus above the Docs comments sidebar (z-30).
 const popoverClassName =
@@ -123,46 +124,29 @@ export function Dropdown({
   )
 }
 
-export interface DropdownButtonProps extends Omit<ComponentPropsWithoutRef<'button'>, 'color'> {
+/**
+ * Props other than the dropdown's own reach `as` unchanged, so pass only the ones it accepts:
+ * `ButtonOptions` for the default `Button`, `active` and `label` for `ToolbarButton`.
+ */
+export interface DropdownButtonProps extends Omit<ComponentPropsWithoutRef<'button'>, 'color'>, ButtonOptions {
   as?: ElementType
   hasCaret?: boolean
   isOpen?: boolean
   caretClassName?: string
-  // Presentation props are forwarded when rendering an existing Docs button.
-  shape?: 'ghost' | 'solid' | 'outline'
-  color?: string
-  size?: 'small' | 'medium' | 'large'
-  icon?: boolean
   active?: boolean
   label?: ReactNode
 }
 
 export const DropdownButton = forwardRef<HTMLButtonElement, DropdownButtonProps>(function DropdownButton(
-  {
-    as: Component = Button,
-    hasCaret = false,
-    isOpen,
-    caretClassName,
-    children,
-    className,
-    shape,
-    color,
-    size,
-    icon,
-    active,
-    label,
-    ...props
-  },
+  { as: Component = Button, hasCaret = false, isOpen, caretClassName, children, className, ...props },
   ref,
 ) {
-  const presentationProps = Component === 'button' ? {} : { shape, color, size, icon, active, label }
   return (
     <Component
       ref={ref}
       type="button"
       data-testid="dropdown-button"
       aria-expanded={isOpen}
-      {...presentationProps}
       {...props}
       className={clsx('text-nowrap', hasCaret && 'flex flex-nowrap items-center', className)}
     >
