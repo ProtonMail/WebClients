@@ -2,6 +2,21 @@ import { act, fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { useRef, useState } from 'react'
 import { Dropdown, DropdownMenu, DropdownMenuButton, SimpleDropdown } from './Dropdown'
 
+it('renders its trigger with the Docs button by default, styled by the forwarded presentation props', () => {
+  render(
+    <SimpleDropdown content="Options" shape="ghost" size="small" icon hasCaret={false}>
+      <DropdownMenuButton>Edit</DropdownMenuButton>
+    </SimpleDropdown>,
+  )
+
+  const trigger = screen.getByRole('button', { name: 'Options' })
+  expect(trigger).toHaveClass('bg-[--interaction-default]', 'px-[calc(5em/14)]')
+  expect(trigger.className).not.toMatch(/(^|\s)button(-|\s|$)/)
+  for (const prop of ['shape', 'size', 'icon']) {
+    expect(trigger).not.toHaveAttribute(prop)
+  }
+})
+
 it('allows switching directly to another menu without making the page inert', async () => {
   render(
     <>
