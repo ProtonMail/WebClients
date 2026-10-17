@@ -1,13 +1,12 @@
 import { DropdownMenu, DropdownMenuButton, SimpleDropdown } from '../../Components/Dropdown'
 import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton'
-import { Button } from '@proton/atoms/Button/Button'
 import { UserAvatar, UserAvatarSizeEnum } from '@proton/atoms/UserAvatar/UserAvatar'
 import * as Ariakit from '@ariakit/react'
 import type { MouseEventHandler, ReactElement } from 'react'
 import { useCallback, useState } from 'react'
 import type { CommentInterface, CommentThreadInterface } from '@proton/docs-shared'
 import { Icon } from '../../Components/Icon'
-import { Tooltip } from '../../Components/ui'
+import { IconButton, Tooltip } from '../../Components/ui'
 import * as Icons from '../../Components/icons'
 import { CommentThreadState } from '@proton/docs-shared'
 import { AnonymousUserEmail } from '../../Utils/AnonymousUser'
@@ -207,43 +206,38 @@ export function CommentsPanelListComment({
 
           {isSuggestionComment && suggestionsEnabled && thread.state === CommentThreadState.Active && (
             <>
-              <LabelTooltip label={c('Action').t`Decline suggestion`}>
-                <Button
-                  onClick={handleRejectSuggestion}
-                  icon
-                  pill
-                  shape="ghost"
-                  size="small"
-                  className={clsx(
-                    'pointer-events-auto flex-shrink-0 opacity-0 hover:opacity-100 focus:opacity-100 group-hover/comment:opacity-100',
-                    isFirstComment && 'group-focus-within/thread:opacity-100',
-                  )}
-                  data-testid="suggestion-reject-button"
-                >
-                  <Icon data={Icons.cross} size={4.5} />
-                </Button>
-              </LabelTooltip>
-              <LabelTooltip label={c('Action').t`Accept suggestion`}>
-                <Button
-                  onClick={handleAcceptSuggestion}
-                  icon
-                  pill
-                  shape="ghost"
-                  size="small"
-                  className={clsx(
-                    'pointer-events-auto flex-shrink-0 opacity-0 hover:opacity-100 focus:opacity-100 group-hover/comment:opacity-100',
-                    isFirstComment && 'group-focus-within/thread:opacity-100',
-                  )}
-                  data-testid="suggestion-accept-button"
-                >
-                  <Icon data={Icons.checkmark} size={4.5} />
-                </Button>
-              </LabelTooltip>
+              <IconButton
+                label={c('Action').t`Decline suggestion`}
+                onClick={handleRejectSuggestion}
+                pill
+                shape="ghost"
+                size="small"
+                className={clsx(
+                  'pointer-events-auto flex-shrink-0 opacity-0 hover:opacity-100 focus:opacity-100 group-hover/comment:opacity-100',
+                  isFirstComment && 'group-focus-within/thread:opacity-100',
+                )}
+                data-testid="suggestion-reject-button"
+              >
+                <Icon data={Icons.cross} size={4.5} />
+              </IconButton>
+              <IconButton
+                label={c('Action').t`Accept suggestion`}
+                onClick={handleAcceptSuggestion}
+                pill
+                shape="ghost"
+                size="small"
+                className={clsx(
+                  'pointer-events-auto flex-shrink-0 opacity-0 hover:opacity-100 focus:opacity-100 group-hover/comment:opacity-100',
+                  isFirstComment && 'group-focus-within/thread:opacity-100',
+                )}
+                data-testid="suggestion-accept-button"
+              >
+                <Icon data={Icons.checkmark} size={4.5} />
+              </IconButton>
             </>
           )}
           {canShowOptions && (
             <SimpleDropdown
-              as={Button}
               shape="ghost"
               size="small"
               icon

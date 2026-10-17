@@ -1,5 +1,5 @@
 import { SimpleDropdown } from '../Components/Dropdown'
-import { Button } from '@proton/atoms/Button/Button'
+import { Button } from '../Components/ui'
 import { ShortcutLabel } from '../Plugins/KeyboardShortcuts/ShortcutLabel'
 import type { ToolbarItemInterface } from './ToolbarItemInterface'
 import ToolbarTooltip from './ToolbarTooltip'
@@ -24,17 +24,17 @@ export function ToolbarItem({ item }: { item: ToolbarItemInterface }) {
     )
   }
 
+  const triggerProps = item.useToolbarButton
+    ? { as: ToolbarButton, active: item.active }
+    : ({ as: Button, shape: 'ghost', color: 'norm' } as const)
   const dropdown = (
     <SimpleDropdown
-      as={item.useToolbarButton ? ToolbarButton : Button}
-      shape="ghost"
+      {...triggerProps}
       type="button"
-      color="norm"
       className="px-2 text-left text-sm text-[--text-norm]"
       content={item.label('toolbar')}
       disabled={item.disabled}
       contentProps={item.dropdownProps}
-      active={item.active}
       data-testid={item.id}
       hasCaret={item.hasCaret}
       onClick={() => {
