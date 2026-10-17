@@ -1,12 +1,13 @@
 import { DropdownMenu, DropdownMenuButton, SimpleDropdown } from '../../Components/Dropdown'
 import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton'
 import { Button } from '@proton/atoms/Button/Button'
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip'
 import { UserAvatar, UserAvatarSizeEnum } from '@proton/atoms/UserAvatar/UserAvatar'
-import type { MouseEventHandler } from 'react'
+import * as Ariakit from '@ariakit/react'
+import type { MouseEventHandler, ReactElement } from 'react'
 import { useCallback, useState } from 'react'
 import type { CommentInterface, CommentThreadInterface } from '@proton/docs-shared'
 import { Icon } from '../../Components/Icon'
+import { Tooltip } from '../../Components/ui'
 import * as Icons from '../../Components/icons'
 import { CommentThreadState } from '@proton/docs-shared'
 import { AnonymousUserEmail } from '../../Utils/AnonymousUser'
@@ -206,8 +207,9 @@ export function CommentsPanelListComment({
 
           {isSuggestionComment && suggestionsEnabled && thread.state === CommentThreadState.Active && (
             <>
-              <Tooltip title={c('Action').t`Decline suggestion`} onClick={handleRejectSuggestion}>
+              <LabelTooltip label={c('Action').t`Decline suggestion`}>
                 <Button
+                  onClick={handleRejectSuggestion}
                   icon
                   pill
                   shape="ghost"
@@ -220,9 +222,10 @@ export function CommentsPanelListComment({
                 >
                   <Icon data={Icons.cross} size={4.5} />
                 </Button>
-              </Tooltip>
-              <Tooltip title={c('Action').t`Accept suggestion`} onClick={handleAcceptSuggestion}>
+              </LabelTooltip>
+              <LabelTooltip label={c('Action').t`Accept suggestion`}>
                 <Button
+                  onClick={handleAcceptSuggestion}
                   icon
                   pill
                   shape="ghost"
@@ -235,7 +238,7 @@ export function CommentsPanelListComment({
                 >
                   <Icon data={Icons.checkmark} size={4.5} />
                 </Button>
-              </Tooltip>
+              </LabelTooltip>
             </>
           )}
           {canShowOptions && (
@@ -312,13 +315,15 @@ export function CommentsPanelListComment({
             </SimpleDropdown>
           )}
           {!comment.verificationResult.verified && comment.verificationResult.verificationAvailable && (
-            <Tooltip
-              title={c('Action').t`Signature could not be verified`}
-              className="flex-shrink-0"
-              data-testid="comment-signature-unverified"
-            >
-              <Icon data={Icons.exclamationTriangleFilled} size={4.5} />
-            </Tooltip>
+            <LabelTooltip label={c('Action').t`Signature could not be verified`}>
+              <Icon
+                data={Icons.exclamationTriangleFilled}
+                size={4.5}
+                className="flex-shrink-0"
+                aria-hidden={false}
+                data-testid="comment-signature-unverified"
+              />
+            </LabelTooltip>
           )}
         </div>
         {/* eslint-disable-next-line no-nested-ternary */}
@@ -379,5 +384,21 @@ export function CommentsPanelListComment({
         )}
       </li>
     </>
+  )
+}
+
+type LabelTooltipProps = {
+  label: string
+  children: ReactElement
+}
+
+function LabelTooltip({ label, children }: LabelTooltipProps) {
+  return (
+    <Ariakit.TooltipProvider>
+      <Ariakit.TooltipAnchor render={children} aria-label={label} />
+      <Tooltip aria-hidden="true" portal gutter={4}>
+        {label}
+      </Tooltip>
+    </Ariakit.TooltipProvider>
   )
 }
