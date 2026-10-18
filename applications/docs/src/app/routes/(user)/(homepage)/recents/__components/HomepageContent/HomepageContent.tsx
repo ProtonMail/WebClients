@@ -1,4 +1,5 @@
-import Icon from '@proton/components/components/icon/Icon'
+import { IcBrandProtonDocs } from '@proton/icons/icons/IcBrandProtonDocs'
+import { IcBrandProtonSheets } from '@proton/icons/icons/IcBrandProtonSheets'
 import useAuthentication from '@proton/components/hooks/useAuthentication'
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
 import type { TableVariant } from './DocumentsTable'
@@ -8,7 +9,7 @@ import { ContextMenuProvider } from './DocContextMenu/context'
 import { c } from 'ttag'
 import { useHomepageView } from '../../__utils/homepage-view'
 import { forwardRef, useEffect } from 'react'
-import { COLOR_BY_TYPE, ContentSheet, ICON_BY_TYPE } from './shared'
+import { COLOR_BY_TYPE, ContentSheet } from './shared'
 import emptyStateRecentsImage from './empty-state-recents.svg'
 import emptyStateImage from './empty-state.svg'
 import clsx from '@proton/utils/clsx'
@@ -151,8 +152,7 @@ function RecentsEmptyStateButtons() {
           setTimeout(updateRecentDocuments, REFRESH_AFTER_NEW_DOCUMENT)
         }}
       >
-        <Icon
-          name={ICON_BY_TYPE.document}
+        <IcBrandProtonDocs
           size={4}
           className="shrink-0 text-[--icon-color]"
           style={{ '--icon-color': COLOR_BY_TYPE.document }}
@@ -165,8 +165,7 @@ function RecentsEmptyStateButtons() {
           className="relative"
           render={<Ariakit.Role.a href={getAppHref('/sheet', APPS.PROTONDOCS, getLocalID())} target="_blank" />}
         >
-          <Icon
-            name={ICON_BY_TYPE.spreadsheet}
+          <IcBrandProtonSheets
             size={4}
             className="shrink-0 text-[--icon-color]"
             style={{ '--icon-color': COLOR_BY_TYPE.spreadsheet }}

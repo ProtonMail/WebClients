@@ -2,7 +2,8 @@ import AppsDropdown from '@proton/components/containers/app/AppsDropdown'
 import AppVersion from '@proton/components/components/version/AppVersion'
 import DrawerApp from '@proton/components/components/drawer/DrawerApp'
 import { getAppVersion } from '@proton/components/helpers/appVersion'
-import Icon from '@proton/components/components/icon/Icon'
+import { IcBrandProtonDocs } from '@proton/icons/icons/IcBrandProtonDocs'
+import { IcBrandProtonSheets } from '@proton/icons/icons/IcBrandProtonSheets'
 import Logo from '@proton/components/components/logo/Logo'
 import { NOTIFICATION_DEFAULT_EXPIRATION_TIME } from '@proton/app-context/notifications/constants'
 import PrivateAppContainer from '@proton/components/containers/app/PrivateAppContainer'
@@ -52,7 +53,7 @@ import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
 import { useApplication } from '~/utils/application-context'
 import { goToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag'
 import * as Ariakit from '@ariakit/react'
-import { COLOR_BY_TYPE, ICON_BY_TYPE } from './HomepageContent/shared'
+import { COLOR_BY_TYPE } from './HomepageContent/shared'
 import { NewDocumentMenu } from './HomepageContent/NewDocumentMenu'
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 
@@ -369,8 +370,7 @@ function Sidebar({ expanded, onToggle, setExpanded }: SidebarProps) {
                   isActive={(match) => Boolean(match?.isExact && type === 'document')}
                 >
                   <span className="flex items-center gap-2">
-                    <Icon
-                      name={ICON_BY_TYPE.document}
+                    <IcBrandProtonDocs
                       className="shrink-0 text-[--icon-color]"
                       style={{ '--icon-color': COLOR_BY_TYPE.document }}
                     />
@@ -392,8 +392,7 @@ function Sidebar({ expanded, onToggle, setExpanded }: SidebarProps) {
                   isActive={(match) => Boolean(match?.isExact && type === 'spreadsheet')}
                 >
                   <span className="flex items-center gap-2">
-                    <Icon
-                      name={ICON_BY_TYPE.spreadsheet}
+                    <IcBrandProtonSheets
                       className="shrink-0 text-[--icon-color]"
                       style={{ '--icon-color': COLOR_BY_TYPE.spreadsheet }}
                     />
