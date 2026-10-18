@@ -1,7 +1,8 @@
 import * as Ariakit from '@ariakit/react'
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark'
+import { IcChevronRightFilled } from '@proton/icons/icons/IcChevronRightFilled'
 import clsx from '@proton/utils/clsx'
 import { type ReactNode, forwardRef } from 'react'
-import { Icon } from './icon'
 
 // dropdown
 // --------
@@ -25,8 +26,6 @@ export const DROPDOWN_POPOVER_DEFAULTS = {
   gutter: 4,
 }
 
-const DROPDOWN_ITEM_SELECTED_INDICATOR_ICON = 'checkmark'
-const DROPDOWN_ITEM_SUBMENU_INDICATOR_ICON = 'chevron-right-filled'
 export type DropdownItemOptions = {
   /**
    * Expected to be 16px wide.
@@ -76,22 +75,18 @@ export const DropdownItem = forwardRef<HTMLDivElement, DropdownItemProps>(functi
 ) {
   leadingIconSlot =
     leadingIconSlot ??
-    (selectedIndicator ? (
-      <Icon legacyName={DROPDOWN_ITEM_SELECTED_INDICATOR_ICON} className="text-[--text-norm]" />
-    ) : undefined) ??
+    (selectedIndicator ? <IcCheckmark className="text-[--text-norm]" /> : undefined) ??
     (leadingIndent ? <span className="w-4" /> : undefined)
 
   if (submenuIndicator) {
-    trailingIconSlot = trailingIconSlot ?? (
-      <Icon legacyName={DROPDOWN_ITEM_SUBMENU_INDICATOR_ICON} className="text-current" />
-    )
+    trailingIconSlot = trailingIconSlot ?? <IcChevronRightFilled className="text-current" />
   }
   return (
     <Ariakit.Role
       ref={ref}
       {...props}
       className={clsx(
-        'flex select-none flex-nowrap items-start gap-2 py-[.4375rem] text-[.875rem] text-[--text-norm]',
+        'flex flex-nowrap items-start gap-2 py-[.4375rem] text-[.875rem] text-[--text-norm] select-none',
         'disabled:text-[--text-hint] aria-disabled:text-[--text-hint]',
         padding && 'px-4',
         // TODO: "hocus" type tw variant
@@ -137,7 +132,7 @@ export const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(function Tooltip
       ref={ref}
       {...props}
       className={clsx(
-        'leading-0 z-20 flex shrink-0 items-center gap-1 rounded-[.5rem] bg-[#0C0C14] px-2 py-[.375rem] text-[.75rem] text-[white] shadow-[0px_-2px_12px_0px_rgba(0,0,0,0.05)]',
+        'z-20 flex shrink-0 items-center gap-1 rounded-[.5rem] bg-[#0C0C14] px-2 py-[.375rem] text-[.75rem] leading-0 text-[white] shadow-[0px_-2px_12px_0px_rgba(0,0,0,0.05)]',
         props.className,
       )}
     >
