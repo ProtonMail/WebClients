@@ -1,13 +1,11 @@
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton'
-import Icon from '@proton/components/components/icon/Icon'
 import type { ComponentPropsWithoutRef, PropsWithChildren, ReactElement } from 'react'
 
-import type { IconName } from '@proton/icons/types'
 import clsx from '@proton/utils/clsx'
 
 export interface ContextMenuButtonProps extends ComponentPropsWithoutRef<'button'> {
   name: string
-  icon: IconName | ReactElement<any>
+  icon: ReactElement<any>
   action: () => void
   close: () => void
 }
@@ -37,7 +35,7 @@ export function ContextMenuButton({
       }}
     >
       <div className="flex shrink-0 flex-nowrap items-center text-left">
-        {typeof icon === 'string' ? <Icon className="mr-2 shrink-0" name={icon} /> : icon}
+        {icon}
         {name}
       </div>
       {children}
