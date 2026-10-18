@@ -1,4 +1,3 @@
-import Icon from '@proton/components/components/icon/Icon'
 import { Avatar } from '@proton/atoms/Avatar/Avatar'
 import { Button } from '@proton/atoms/Button/Button'
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip'
@@ -108,6 +107,7 @@ function InvitesTableContent(allProps: InvitesTableProps & { useDocInvites: DocI
             }
 
             const type = isProtonDocsDocument(invite.link.mimeType) ? 'document' : 'spreadsheet'
+            const DocumentTypeIcon = ICON_BY_TYPE[type]
 
             return (
               <Table.Row key={invite.invitation.invitationId} data-testid="invite-row">
@@ -117,8 +117,7 @@ function InvitesTableContent(allProps: InvitesTableProps & { useDocInvites: DocI
                     title={invite.decryptedLinkName}
                   >
                     <span className="flex flex-nowrap items-center gap-3">
-                      <Icon
-                        name={ICON_BY_TYPE[type]}
+                      <DocumentTypeIcon
                         size={5}
                         className="shrink-0 text-[--icon-color]"
                         style={{ '--icon-color': COLOR_BY_TYPE[type] }}

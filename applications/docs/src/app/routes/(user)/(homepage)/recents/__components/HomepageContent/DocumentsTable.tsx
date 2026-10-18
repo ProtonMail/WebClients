@@ -8,16 +8,19 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip'
 import Dropdown from '@proton/components/components/dropdown/Dropdown'
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu'
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton'
-import Icon from '@proton/components/components/icon/Icon'
 import useAuthentication from '@proton/components/hooks/useAuthentication'
 import { DateFormatter, type RecentDocumentsItem } from '@proton/docs-core'
+import type { IconComponent } from '@proton/icons/component'
 import { IcArrowDown } from '@proton/icons/icons/IcArrowDown'
 import { IcArrowDownArrowUp } from '@proton/icons/icons/IcArrowDownArrowUp'
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark'
+import { IcFolder } from '@proton/icons/icons/IcFolder'
+import { IcInbox } from '@proton/icons/icons/IcInbox'
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical'
+import { IcTrash } from '@proton/icons/icons/IcTrash'
 import { IcUser } from '@proton/icons/icons/IcUser'
 import { IcUserFilled } from '@proton/icons/icons/IcUserFilled'
-import type { IconName } from '@proton/icons/types'
+import { IcUsers } from '@proton/icons/icons/IcUsers'
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks'
 import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
@@ -298,19 +301,19 @@ function Row({ document, variant, addresses }: RowProps) {
     throw new Error('Unexpected missing location')
   }
 
-  let locationIcon: IconName
+  let LocationIcon: IconComponent
   let locationLabel: string
   if (variant === 'trash') {
-    locationIcon = 'trash'
+    LocationIcon = IcTrash
     locationLabel = c('Label').t`Trash`
   } else if (location?.type === 'shared-with-me') {
-    locationIcon = 'users'
+    LocationIcon = IcUsers
     locationLabel = c('Label').t`Shared with me`
   } else if (location?.type === 'root') {
-    locationIcon = 'inbox'
+    LocationIcon = IcInbox
     locationLabel = c('Label').t`My files`
   } else {
-    locationIcon = 'folder'
+    LocationIcon = IcFolder
     locationLabel = location?.path.at(-1)!
   }
   const isLocationPath = location?.type === 'path'
@@ -329,7 +332,7 @@ function Row({ document, variant, addresses }: RowProps) {
       title={!isLocationPath ? locationLabel : undefined}
       data-testid="document-location-button"
     >
-      <Icon className="mr-2 shrink-0" name={locationIcon} />
+      <LocationIcon className="mr-2 shrink-0" />
       <span className="overflow-hidden text-ellipsis">{locationLabel}</span>
     </Button>
   )
@@ -340,6 +343,7 @@ function Row({ document, variant, addresses }: RowProps) {
   const contextMenu = useContextMenu()
 
   const isRenaming = documentActions.isRenaming(document)
+  const DocumentTypeIcon = ICON_BY_TYPE[document.type]
 
   return (
     <Table.Row
@@ -356,8 +360,7 @@ function Row({ document, variant, addresses }: RowProps) {
     >
       <Table.DataCell>
         <span title={document.name} className="flex flex-nowrap items-center gap-3">
-          <Icon
-            name={ICON_BY_TYPE[document.type]}
+          <DocumentTypeIcon
             size={5}
             className="shrink-0 text-[--icon-color]"
             style={{ '--icon-color': COLOR_BY_TYPE[document.type] }}
