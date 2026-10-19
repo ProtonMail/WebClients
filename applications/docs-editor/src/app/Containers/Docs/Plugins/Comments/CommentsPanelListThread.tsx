@@ -4,10 +4,10 @@ import { useEffect, useMemo, useState } from 'react'
 import { clsx } from 'clsx'
 import { CommentsPanelListComment } from './CommentsPanelListComment'
 import { CommentsComposer } from './CommentsComposer'
-import type { CommentInterface, CommentThreadInterface } from '@proton/docs-shared'
-import { CommentThreadState, CommentThreadType, CommentType } from '@proton/docs-shared'
 import { Icon } from '../../Components/Icon'
 import * as Icons from '../../Components/icons'
+import type { DocsComment, DocsCommentThread } from '../../contract/DocsCommentThread'
+import { CommentThreadStates, CommentThreadTypes, CommentTypes } from '../../contract/DocsCommentThread'
 import { c, msgid } from 'ttag'
 import { useDocsDependencies } from '../../DocsDependenciesProvider'
 import { useCommentsContext } from './CommentsContext'
@@ -18,7 +18,7 @@ export const TYPING_STATUS_CHANGE_EVENT_COMMAND = createCommand<{
   threadId: string
 }>('TYPING_STATUS_CHANGE_EVENT_COMMAND')
 
-export function CommentsPanelListThread({ thread, className }: { thread: CommentThreadInterface; className?: string }) {
+export function CommentsPanelListThread({ thread, className }: { thread: DocsCommentThread; className?: string }) {
   const { reportError } = useDocsDependencies()
   const [editor] = useLexicalComposerContext()
   const {
@@ -42,7 +42,7 @@ export function CommentsPanelListThread({ thread, className }: { thread: Comment
     return getMarkNodes(markID) ?? []
   }, [getMarkNodes, markID])
 
-  const isSuggestionThread = thread.type === CommentThreadType.Suggestion
+  const isSuggestionThread = thread.type === CommentThreadTypes.Suggestion
 
   const [element, setElement] = useState<HTMLLIElement | null>(null)
   const [isFocusWithin, setIsFocusWithin] = useState(false)
@@ -189,7 +189,7 @@ export function CommentsPanelListThread({ thread, className }: { thread: Comment
     }
   }, [editor, isActive, isHovering, markNodes])
 
-  const isResolved = thread.state === CommentThreadState.Resolved
+  const isResolved = thread.state === CommentThreadStates.Resolved
 
   const firstTyper = typers[0]
   const allTypersExceptLast = typers.slice(0, -1).join(', ')
@@ -198,19 +198,16 @@ export function CommentsPanelListThread({ thread, className }: { thread: Comment
   const usersTranslation = typers.length === 1 ? firstTyper : c('Info').t`${allTypersExceptLast} and ${lastTyper}`
 
   const isSuggestionClosed =
-    thread.state === CommentThreadState.Accepted || thread.state === CommentThreadState.Rejected
+    thread.state === CommentThreadStates.Accepted || thread.state === CommentThreadStates.Rejected
 
   const canShowReplyBox = canComment && !thread.isPlaceholder && !isDeleting && !isResolved && !isSuggestionClosed
 
-  const [suggestionSummaryComment, regularComments] = useMemo((): [
-    CommentInterface | undefined,
-    CommentInterface[],
-  ] => {
-    const regularComments: CommentInterface[] = []
-    let suggestionSummaryComment: CommentInterface | undefined
+  const [suggestionSummaryComment, regularComments] = useMemo((): [DocsComment | undefined, DocsComment[]] => {
+    const regularComments: DocsComment[] = []
+    let suggestionSummaryComment: DocsComment | undefined
 
     for (const comment of thread.comments) {
-      if (comment.type === CommentType.Suggestion) {
+      if (comment.type === CommentTypes.Suggestion) {
         suggestionSummaryComment = comment
       } else {
         regularComments.push(comment)
