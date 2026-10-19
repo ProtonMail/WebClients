@@ -4,15 +4,12 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import {
-    Loader,
-    type ModalProps,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    RadioGroup,
-} from '@proton/components';
+import RadioGroup from '@proton/components/components/input/RadioGroup';
+import Loader from '@proton/components/components/loader/Loader';
+import ModalTwo, { type ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';

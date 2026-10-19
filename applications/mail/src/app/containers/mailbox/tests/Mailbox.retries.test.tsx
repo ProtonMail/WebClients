@@ -17,7 +17,16 @@ jest.mock('proton-mail/metrics/useMailELDTMetric', () => ({
 }));
 
 describe('Mailbox retries and waitings', () => {
-    beforeEach(clearAll);
+    beforeEach(() => {
+        clearAll();
+        // Retries are scheduled with setTimeout (2s on error, 10s on stale). `advanceTimers` keeps
+        // zero-delay timers flowing during setup; the retry delays are then skipped explicitly.
+        jest.useFakeTimers({ advanceTimers: true });
+    });
+
+    afterEach(() => {
+        jest.useRealTimers();
+    });
 
     it('should retry when API call fails', async () => {
         const conversations = getElements(3);
@@ -43,7 +52,7 @@ describe('Mailbox retries and waitings', () => {
         expectElements(getItems, conversations.length, true);
 
         await act(async () => {
-            await wait(2000);
+            await jest.advanceTimersByTimeAsync(2000);
         });
 
         expect(conversationRequestSpy).toHaveBeenCalledTimes(2);
@@ -71,7 +80,7 @@ describe('Mailbox retries and waitings', () => {
         expect(conversationRequestSpy).toHaveBeenCalledTimes(1);
 
         await act(async () => {
-            await wait(10000);
+            await jest.advanceTimersByTimeAsync(10000);
         });
 
         expect(conversationRequestSpy).toHaveBeenCalledTimes(2);

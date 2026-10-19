@@ -6,6 +6,13 @@ import { send } from './EOReply.test.helpers';
 
 jest.setTimeout(20000);
 
+// The "Message sent" notification is kept for at least 2.5s, which the test would otherwise wait out.
+// Fake timers are not an option here: the EO message is decrypted with real crypto while rendering.
+jest.mock('../../../../constants', () => ({
+    ...jest.requireActual('../../../../constants'),
+    MIN_DELAY_SENT_NOTIFICATION: 0,
+}));
+
 describe('EO Reply send', () => {
     beforeAll(async () => {
         await setupCryptoProxyForTesting();

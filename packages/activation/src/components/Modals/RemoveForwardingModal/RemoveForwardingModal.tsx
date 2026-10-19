@@ -1,8 +1,8 @@
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Prompt } from '@proton/components';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import { MAX_SYNC_PAID_USER } from '../../../constants';

@@ -56,7 +56,17 @@ jest.mock('@proton/components/components/editor/rooster/helpers/getRoosterEditor
 });
 
 describe('Composer switch plaintext <-> html', () => {
-    beforeEach(clearAll);
+    beforeEach(() => {
+        clearAll();
+        // Switching the editor mode triggers the autosave, which is debounced for 2s.
+        // Fake timers let `waitForSpyCall` skip that delay instead of waiting it out.
+        jest.useFakeTimers({ advanceTimers: true });
+    });
+
+    afterEach(() => {
+        jest.useRealTimers();
+    });
+
     afterAll(clearAll);
 
     const composerID = 'composer-test-id';
