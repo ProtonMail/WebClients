@@ -1,4 +1,4 @@
-import { getNativeSuccessUrl } from './redirectToNative';
+import { getNativeSuccessUrl, getNativeUpsellUrl } from './redirectToNative';
 
 describe('getNativeSuccessUrl', () => {
     it('should add the status and email to the redirect', () => {
@@ -25,4 +25,22 @@ describe('getNativeSuccessUrl', () => {
             expect(getNativeSuccessUrl(redirect, 'a@b.c')).toBeUndefined();
         }
     );
+});
+
+describe('getNativeUpsellUrl', () => {
+    it('should add the upsell status to the redirect', () => {
+        expect(getNativeUpsellUrl('protonmail://connect-gmail/return')).toBe(
+            'protonmail://connect-gmail/return?status=upsell'
+        );
+    });
+
+    it('should drop the query and hash already on the redirect', () => {
+        expect(getNativeUpsellUrl('protonmail://connect-gmail/return?x=1#frag')).toBe(
+            'protonmail://connect-gmail/return?status=upsell'
+        );
+    });
+
+    it.each([undefined, '', 'https://evil.com'])('should return undefined for %p', (redirect) => {
+        expect(getNativeUpsellUrl(redirect)).toBeUndefined();
+    });
 });
