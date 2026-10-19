@@ -1,11 +1,11 @@
 import { act, fireEvent, render, screen, waitFor, within } from '@testing-library/react'
 import type { LexicalEditor } from 'lexical'
-import { DocumentRole, EditorSystemMode } from '@proton/docs-shared'
 import {
   CommentThreadStates,
   CommentThreadTypes,
   CommentTypes,
   DocsDependenciesProvider,
+  EditorSystemMode,
   EditorUserMode,
   StandaloneDocsEditor,
   type DocsCommentThread,
@@ -88,7 +88,6 @@ describe('standalone Docs runtime', () => {
     const reportError = jest.fn()
     const ready = jest.fn()
     const session = createStandaloneDocSession(ready, reportError)
-    const role = new DocumentRole('Editor')
     let editor: LexicalEditor | null = null
     const setEditorRef = (instance: LexicalEditor | null) => {
       editor = instance
@@ -120,7 +119,6 @@ describe('standalone Docs runtime', () => {
       docState: session.docState,
       documentId: session.documentId,
       editingLocked: false,
-      role,
       onEditorError: reportError,
       hidden: false,
       editorInitializationConfig: session.initialization,
@@ -149,6 +147,11 @@ describe('standalone Docs runtime', () => {
       await waitFor(() => expect(ready).toHaveBeenCalledTimes(1))
       await waitFor(() => expect(screen.getByTestId('main-editor')).toHaveTextContent('This document lives in memory'))
       expect(screen.getByTestId('main-editor')).toHaveAttribute('contenteditable', 'true')
+      expect(session.docState.awareness.getLocalState()).toMatchObject({
+        name: 'Local user',
+        awarenessData: { userId: 'Local user' },
+      })
+      expect(screen.getByTestId('user-mode-dropdown')).toBeEnabled()
       expect(screen.queryByTestId('emoji-picker')).not.toBeInTheDocument()
       dependencies = { ...dependencies, emojiPickerEnabled: true }
       await act(async () => view.rerender(<Tree />))
@@ -190,6 +193,7 @@ describe('standalone Docs runtime', () => {
       await act(async () => view.rerender(<Tree />))
       await waitFor(() => expect(screen.getByTestId('comment-author')).toHaveTextContent('Updated contact'))
       expect(screen.queryByText('Reply...')).not.toBeInTheDocument()
+      expect(screen.getByTestId('user-mode-dropdown')).toBeDisabled()
       expect(unsubscribeEvents).toHaveBeenCalledTimes(priorEvents + 1)
       expect(unsubscribeAwareness).toHaveBeenCalledTimes(priorAwareness + 1)
       expect(replacement.subscribeToEvents).toHaveBeenCalled()
@@ -204,7 +208,6 @@ describe('standalone Docs runtime', () => {
           <DocsLayout.Container isSuggestionMode={false}>
             <PreviewModeEditor
               clonedEditorState={clonedEditorState}
-              role={role}
               onUserModeChange={jest.fn()}
               initialScrollTop={null}
               tableOfContentsVisible

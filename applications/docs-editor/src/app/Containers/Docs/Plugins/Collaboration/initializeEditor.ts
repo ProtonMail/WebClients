@@ -1,13 +1,18 @@
 import type { LexicalEditor } from 'lexical'
 import { $getRoot, $createParagraphNode, $getSelection } from 'lexical'
 import type { EditorInitializationConfig } from '../../contract/EditorInitialization'
-import { DocWillInitializeWithEmptyNodeEvent } from '@proton/docs-shared'
 import { TranslatedResult } from '../../Utils/TranslatedResult'
 import { $importDataIntoEditor } from '../../Conversion/ImportDataIntoEditor'
 import type { Binding } from '@lexical/yjs'
 import { CLEAR_HISTORY_COMMAND } from './useYjsHistory'
 import type { DocsDependencies } from '../../DocsDependenciesProvider'
 import { c } from 'ttag'
+
+/**
+ * Emitted on the Yjs doc before it is initialized with an empty node.
+ * The host's `DocState` in `@proton/docs-shared` listens for it, so the value must match its copy.
+ */
+const DocWillInitializeWithEmptyNodeEvent = 'sync'
 
 /**
  * When a completely new document is created, the lexical editor state

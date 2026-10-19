@@ -6,7 +6,7 @@ import { RootContainer } from './Containers/RootContainer'
 import { SyncBundleFail } from './Containers/SyncBundleFail'
 import './style'
 import { reportErrorToSentry } from './Utils/errorMessage'
-import type { EditorSystemMode } from '@proton/docs-shared/lib/EditorSystemMode'
+import type { EditorSystemMode } from './Containers/Docs/public'
 import type { DocumentType } from '@proton/docs-shared'
 import { syncBundle, SyncBundleResult } from './Utils/syncBundle'
 

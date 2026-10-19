@@ -13,7 +13,6 @@ import {
   EDITOR_READY_POST_MESSAGE_EVENT,
   LiveCommentsEvent,
   SheetImportEvent,
-  EditorSystemMode,
 } from '@proton/docs-shared'
 
 import { bootstrapEditorApp } from '../Lib/Bootstrap'
@@ -58,7 +57,11 @@ import { toSheetsInitialization } from './adapters/sheets/utils/sheets-initializ
 import SheetsLayout from './SheetsLayout'
 import { useEditorTheme } from '../Theme/EditorThemeProvider'
 import { DocsAdapter } from './adapters/docs/DocsAdapter'
-import { StandaloneDocsEditor, type EditorInitializationConfig as DocsEditorInitializationConfig } from './Docs/public'
+import {
+  EditorSystemMode,
+  StandaloneDocsEditor,
+  type EditorInitializationConfig as DocsEditorInitializationConfig,
+} from './Docs/public'
 import { toDocsExportFormat, toDocsInitialization } from './adapters/docs/utils/docs-conversion-adapter'
 
 type AppProps = {
@@ -731,7 +734,6 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
           <DocsAdapter clientInvoker={bridge.getClientInvoker()}>
             <PreviewModeEditor
               clonedEditorState={clonedEditorState}
-              role={application.getRole()}
               onUserModeChange={onUserModeChange}
               initialScrollTop={scrollPositionBeforePreview.current}
               tableOfContentsVisible={tableOfContentsVisibleState}
@@ -755,7 +757,6 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
               onEditorReadyToReceiveUpdates={onEditorReadyToReceiveUpdates}
               onEditorLoadError={onEditorLoadError}
               onUserModeChange={onUserModeChange}
-              role={application.getRole()}
               setEditorRef={setEditorRef}
               showTreeView={showTreeView}
               systemMode={systemMode}
