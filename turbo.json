@@ -1,4 +1,5 @@
 {
+    "agentGuidance": false,
     "$schema": "https://turbo.build/schema.json",
     "globalEnv": ["APPLICATION", "CI_COMMIT_TAG"],
     "globalPassThroughEnv": [
