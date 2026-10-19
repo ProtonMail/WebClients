@@ -1,10 +1,9 @@
 import { DropdownMenu, DropdownMenuButton, SimpleDropdown } from '../../Components/Dropdown'
-import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton'
-import { UserAvatar, UserAvatarSizeEnum } from '@proton/atoms/UserAvatar/UserAvatar'
 import * as Ariakit from '@ariakit/react'
 import type { MouseEventHandler, ReactElement } from 'react'
 import { useCallback, useState } from 'react'
 import { Icon } from '../../Components/Icon'
+import { Avatar } from '../../Components/atoms'
 import { IconButton, Tooltip } from '../../Components/ui'
 import * as Icons from '../../Components/icons'
 import type { DocsComment, DocsCommentThread } from '../../contract/DocsCommentThread'
@@ -177,20 +176,13 @@ export function CommentsPanelListComment({
         data-testid="thread-comments-list"
       >
         <div className="mb-1.5 flex flex-nowrap items-center gap-1.5">
+          {/* The author's name is shown beside the avatar, so the avatar repeats nothing to a screen reader. */}
           {comment.author ? (
-            <UserAvatar
-              size={UserAvatarSizeEnum.Small}
-              name={authorDisplayName}
-              color={color ? { hsl: color } : undefined}
-              className="mr-1 flex-shrink-0 rounded-[--border-radius-md] text-[0.75rem]"
-            />
+            <Avatar name={authorDisplayName} color={color} className="mr-1" aria-hidden />
           ) : (
-            <div
-              className="h-custom w-custom bg-strong mr-1 flex flex-shrink-0 items-center justify-center rounded-lg"
-              style={{ '--h-custom': '1.75rem', '--w-custom': '1.75rem' }}
-            >
+            <Avatar className="mr-1" aria-hidden>
               <Icon data={Icons.user} />
-            </div>
+            </Avatar>
           )}
           <div className="mr-auto flex flex-col overflow-hidden">
             <span
@@ -348,21 +340,27 @@ export function CommentsPanelListComment({
             onCancel={cancelEditing}
             buttons={(canSubmit, submitComment) => (
               <>
-                <ToolbarButton
-                  className="rounded-full border-none"
-                  title={c('Action').t`Cancel`}
-                  icon={<Icon data={Icons.crossCircleFilled} size={6} />}
+                <IconButton
+                  label={c('Action').t`Cancel`}
+                  shape="ghost"
+                  size="small"
+                  pill
                   onClick={cancelEditing}
                   data-testid="edit-comment-cancel-button"
-                />
-                <ToolbarButton
-                  className="rounded-full border-none"
-                  title={c('Action').t`Save`}
-                  icon={<Icon data={Icons.checkmarkCircleFilled} size={6} className="fill-[--primary]" />}
+                >
+                  <Icon data={Icons.crossCircleFilled} size={6} />
+                </IconButton>
+                <IconButton
+                  label={c('Action').t`Save`}
+                  shape="ghost"
+                  size="small"
+                  pill
                   disabled={!canSubmit}
                   onClick={submitComment}
                   data-testid="edit-comment-save-button"
-                />
+                >
+                  <Icon data={Icons.checkmarkCircleFilled} size={6} className="fill-[--primary]" />
+                </IconButton>
               </>
             )}
           />
