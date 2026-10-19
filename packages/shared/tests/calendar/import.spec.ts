@@ -1097,7 +1097,7 @@ END:VEVENT`;
             ...omit(event, ['dtend']),
             uid: { value: 'uid@proton.me' },
             sequence: { value: 0 },
-            color: { value: ACCENT_COLORS_MAP.enzian.color },
+            color: { value: ACCENT_COLORS_MAP.pacific.color },
         });
     });
 
