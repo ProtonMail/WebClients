@@ -231,6 +231,7 @@ const OrganizationPasswordPoliciesSection = ({ organization }: OrganizationProto
     ];
 
     const handleSave = async () => {
+        const previousPolicies = organization?.Settings?.PasswordPolicies;
         const serializedPolicies = serializePolicyState({ ...defaultPolicyState, ...policyState });
 
         try {
@@ -242,10 +243,10 @@ const OrganizationPasswordPoliciesSection = ({ organization }: OrganizationProto
             createNotification({ text: c('Info').t`Preference saved` });
         } catch (error) {
             setPolicyState(policyState);
-            // Revert change on 403 cancellation
+            // Revert optimistic update on failure
             dispatch(
                 organizationActions.updateOrganizationSettings({
-                    value: { PasswordPolicies: serializedPolicies },
+                    value: { PasswordPolicies: previousPolicies },
                 })
             );
         }
