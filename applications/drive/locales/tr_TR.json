@@ -1392,6 +1392,9 @@
       ],
       "Import paused": [
         "İçe aktarma işlemi duraklatıldı"
+      ],
+      "Subscribe": [
+        "Abone ol"
       ]
     },
     "Action: Docs": {
@@ -8135,6 +8138,12 @@
       ],
       "Your import is blocked. Upgrade now to bring the rest of your files over.": [
         "İçe aktarım işleminiz engellendi. Dosyalarınızın geri kalanını aktarmak için tarifenizi yükseltin."
+      ],
+      "We'll get back to you shortly.": [
+        "Size en kısa sürede geri dönüş yapacağız."
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "Ücretsiz deneme süreniz sona erdi. Ekibinizin erişimini sürdürmek ve hesaplarını güvende tutmak için şimdi abone olun."
       ]
     },
     "info": {
@@ -9048,6 +9057,21 @@
       ],
       "Image": [
         "Görsel"
+      ],
+      "Amount": [
+        "Tutar"
+      ],
+      "Amount due": [
+        "Ödenecek tutar"
+      ],
+      "Credits used": [
+        "Kullanılan kredi"
+      ],
+      "Please share any feedback to help us improve.": [
+        "Hizmetlerimizi geliştirebilmemiz için bizi bilgilendirin."
+      ],
+      "Why would you like to cancel?": [
+        "Neden iptal etmek istiyorsunuz?"
       ]
     },
     "Label for contact group color": {
@@ -12105,6 +12129,9 @@
       ],
       "Ask anything…": [
         "Herhangi bir şey sorun…"
+      ],
+      "Please select the main reason": [
+        "Lütfen temel nedeni seçin"
       ]
     },
     "Placeholder for contact group name": {
@@ -13610,6 +13637,9 @@
       ],
       "You have successfully unsubscribed": [
         "Aboneliği sonlandırdınız"
+      ],
+      "Invoice paid": [
+        "Fatura ödendi"
       ]
     },
     "Suffix": {
@@ -14988,6 +15018,18 @@
       ],
       "Black Friday": [
         "Muhteşem Cuma"
+      ],
+      "Contact us": [
+        "Bize ulaşın"
+      ],
+      "Pay invoice": [
+        "Faturayı öde"
+      ],
+      "Request sent": [
+        "İstek gönderildi"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "${ planTitle } tarifesine abone olun"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15704,6 +15746,9 @@
       ],
       "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
         "Kabul ederek, ödeme hizmeti sağlayıcımız olan ${ BRAND_NAME } ve Stripe kuruluşlarına, aboneliğiniz için gelecekteki ödemeleri bu banka hesabından SEPA otomatik ödemesi ile alma ve bankanıza bu ödemeleri borçlandırma yetkisi vermiş olursunuz. İlk ödemeniz şimdi ${ IDEAL_WERO_BRAND_NAME } tarafından yapıldı. Siz iptal edene kadar tarifeniz otomatik olarak yenilenecek. Her ödemeden önce sizi bilgilendireceğiz. Otomatik ödemeler için, bankanızla olan anlaşmanızın şartlarına göre, borç tarihinden itibaren 8 hafta içinde bankanızdan geri ödeme isteğinde bulunabilirsiniz. Bu durum, şu anda yaptığınız ${ IDEAL_WERO_BRAND_NAME } ödemesi için geçerli değildir."
+      ],
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Kabul ederek, ödeme hizmeti sağlayıcımız olan ${ BRAND_NAME } ve Stripe kuruluşlarına, aboneliğiniz için gelecekteki ödemeleri bu banka hesabından SEPA otomatik ödemesi ile alma ve bankanıza bu ödemeleri borçlandırma yetkisi vermiş olursunuz. İlk ödemeniz şimdi ${ IDEAL_WERO_BRAND_NAME } tarafından yapıldı. Siz iptal edene kadar tarifeniz otomatik olarak yenilenecek. Her ödemeden önce sizi bilgilendireceğiz. Otomatik ödemeler için, bankanızla olan anlaşmanızın şartlarına göre, borç tarihinden itibaren 8 hafta içinde bankanızdan geri ödeme isteğinde bulunabilirsiniz. Bu durum, şu anda yaptığınız ${ IDEAL_WERO_BRAND_NAME } ödemesi için geçerli değildir."
       ]
     },
     "q3campaign2026: Action": {
@@ -15939,6 +15984,20 @@
     "bfcampaign2026: Info, Pass first": {
       "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
         "Ücretli ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Daha çok sevdiğim başka bir hizmet buldum"
+      ],
+      "It’s missing a key feature": [
+        "Temel bir özellik eksik"
+      ],
+      "It’s too expensive": [
+        "Çok pahalı"
+      ],
+      "Other": [
+        "Diğer"
       ]
     }
   }

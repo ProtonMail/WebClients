@@ -1389,6 +1389,9 @@
       ],
       "Import paused": [
         "Importation suspendue"
+      ],
+      "Subscribe": [
+        "S'abonner"
       ]
     },
     "Action: Docs": {
@@ -8001,6 +8004,12 @@
       ],
       "Your import is blocked. Upgrade now to bring the rest of your files over.": [
         "Votre importation est bloquée. Changer d'abonnement maintenant pour transférer le reste de vos fichiers."
+      ],
+      "We'll get back to you shortly.": [
+        "Nous vous recontacterons prochainement."
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "Votre période d’essai gratuite est terminée. Abonnez-vous dès maintenant pour maintenir l’accès de votre équipe sans interruption et assurer la sécurité de vos comptes."
       ]
     },
     "info": {
@@ -8917,6 +8926,21 @@
       ],
       "Image": [
         "Image"
+      ],
+      "Amount": [
+        "Montant"
+      ],
+      "Amount due": [
+        "Montant à payer"
+      ],
+      "Credits used": [
+        "Crédits utilisés"
+      ],
+      "Please share any feedback to help us improve.": [
+        "N'hésitez pas à nous faire part de vos commentaires pour nous aider à nous améliorer."
+      ],
+      "Why would you like to cancel?": [
+        "Pourquoi voulez-vous annuler votre abonnement ?"
       ]
     },
     "Label for contact group color": {
@@ -12016,6 +12040,9 @@
       ],
       "Ask anything…": [
         "Demandez ce que vous voulez…"
+      ],
+      "Please select the main reason": [
+        "Sélectionnez la raison principale."
       ]
     },
     "Placeholder for contact group name": {
@@ -13521,6 +13548,9 @@
       ],
       "You have successfully unsubscribed": [
         "La désinscription a été effectuée."
+      ],
+      "Invoice paid": [
+        "La facture a été payée."
       ]
     },
     "Suffix": {
@@ -14890,6 +14920,18 @@
       ],
       "Black Friday": [
         "Black Friday"
+      ],
+      "Contact us": [
+        "Nous contacter"
+      ],
+      "Pay invoice": [
+        "Payer la facture"
+      ],
+      "Request sent": [
+        "La demande a été envoyée."
+      ],
+      "Subscribe to ${ planTitle }": [
+        "S’abonner à ${ planTitle }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15596,6 +15638,9 @@
       ],
       "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
         "En confirmant, vous autorisez ${ BRAND_NAME } et Stripe, notre prestataire de services de paiement, à prélever les futurs paiements liés à votre abonnement sur ce compte bancaire par prélèvement SEPA, et votre banque à débiter ces montants. Votre premier paiement est effectué dès maintenant par ${ IDEAL_WERO_BRAND_NAME }. Votre abonnement est renouvelé automatiquement jusqu’à ce que vous le résiliiez ; nous vous en informerons avant chaque prélèvement. Pour les prélèvements automatiques, vous pouvez demander un remboursement à votre banque dans un délai de 8 semaines à compter de la date de prélèvement, conformément aux conditions de votre contrat bancaire. Cela ne s'applique pas au paiement ${ IDEAL_WERO_BRAND_NAME } que vous effectuez actuellement."
+      ],
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "En confirmant, vous autorisez ${ BRAND_NAME } et Stripe, notre prestataire de services de paiement, à prélever les futurs paiements liés à votre abonnement sur ce compte bancaire par prélèvement SEPA, et votre banque à débiter ces montants. Votre premier paiement est effectué dès maintenant par ${ IDEAL_WERO_BRAND_NAME }. Votre abonnement est renouvelé automatiquement jusqu’à ce que vous le résiliiez ; nous vous en informerons avant chaque prélèvement. Pour les prélèvements automatiques, vous pouvez demander un remboursement à votre banque dans un délai de 8 semaines à compter de la date de prélèvement, conformément aux conditions de votre contrat bancaire. Cela ne s'applique pas au paiement ${ IDEAL_WERO_BRAND_NAME } que vous effectuez actuellement."
       ]
     },
     "q3campaign2026: Action": {
@@ -15831,6 +15876,20 @@
     "bfcampaign2026: Info, Pass first": {
       "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
         "${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } et ${ VPN_SHORT_APP_NAME } Premium"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "J'ai trouvé un autre service que je préfère."
+      ],
+      "It’s missing a key feature": [
+        "Il manque une fonction importante."
+      ],
+      "It’s too expensive": [
+        "C'est trop cher."
+      ],
+      "Other": [
+        "Autre"
       ]
     }
   }

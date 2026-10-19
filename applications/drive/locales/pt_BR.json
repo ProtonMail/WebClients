@@ -1389,6 +1389,9 @@
       ],
       "Detach": [
         "Desassociar"
+      ],
+      "Subscribe": [
+        "Inscrever-me"
       ]
     },
     "Action: Docs": {
@@ -8003,6 +8006,9 @@
       ],
       "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
         "Para migrar esse usuário, eles precisam aceitar seu convite para participar ${ BRAND_NAME }."
+      ],
+      "We'll get back to you shortly.": [
+        "Nós entraremos em contato com você em breve."
       ]
     },
     "info": {
@@ -8919,6 +8925,21 @@
       ],
       "Image": [
         "Imagem"
+      ],
+      "Amount": [
+        "Valor"
+      ],
+      "Amount due": [
+        "Valor a pagar"
+      ],
+      "Credits used": [
+        "Créditos usados"
+      ],
+      "Please share any feedback to help us improve.": [
+        "Compartilhe qualquer feedback para nos ajudar a melhorar."
+      ],
+      "Why would you like to cancel?": [
+        "Porque você gostaria de cancelar?"
       ]
     },
     "Label for contact group color": {
@@ -12024,6 +12045,9 @@
       ],
       "Ask anything…": [
         "Pergunte qualquer coisa…"
+      ],
+      "Please select the main reason": [
+        "Selecione o principal motivo"
       ]
     },
     "Placeholder for contact group name": {
@@ -13526,6 +13550,9 @@
       ],
       "You have successfully unsubscribed": [
         "Você cancelou a inscrição"
+      ],
+      "Invoice paid": [
+        "Fatura paga"
       ]
     },
     "Suffix": {
@@ -14889,6 +14916,15 @@
       ],
       "Black Friday": [
         "Black Friday"
+      ],
+      "Contact us": [
+        "Fale conosco"
+      ],
+      "Pay invoice": [
+        "Pagar fatura"
+      ],
+      "Request sent": [
+        "Pedido enviado"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15820,6 +15856,20 @@
     "bfcampaign2026: Info, Pass first": {
       "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
         "Premium para ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Encontrei outro serviço que gosto mais"
+      ],
+      "It’s missing a key feature": [
+        "Está faltando um recurso-chave"
+      ],
+      "It’s too expensive": [
+        "É muito caro"
+      ],
+      "Other": [
+        "Outros"
       ]
     }
   }
