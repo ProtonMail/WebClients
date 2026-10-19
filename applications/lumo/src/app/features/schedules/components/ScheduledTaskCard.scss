@@ -1,0 +1,26 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
+.scheduled-task-card {
+	gap: #{rem(10)};
+
+	&__title {
+		font-size: #{rem(15)};
+	}
+
+	&__status-dot {
+		inline-size: #{rem(8)};
+		block-size: #{rem(8)};
+		background-color: var(--glyph-low);
+	}
+
+	&__menu-button {
+		margin-inline-end: #{rem(-6)};
+	}
+
+	&__schedule-chip {
+		background-color: var(--signal-success-minor-1);
+		padding-block: #{rem(2)};
+		padding-inline: #{rem(6)};
+		border-radius: #{rem(6)};
+	}
+}

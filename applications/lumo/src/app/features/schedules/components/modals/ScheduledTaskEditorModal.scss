@@ -1,0 +1,61 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
+.scheduled-task-editor-modal {
+	--border-norm: var(--border);
+	--border-weak: var(--border);
+
+	.modal-two-dialog {
+		max-inline-size: #{rem(640)};
+	}
+
+	.modal-two-header {
+		margin: 0;
+		padding-block: #{rem(20)} #{rem(16)};
+		padding-inline: #{rem(24)} #{rem(16)};
+		border-block-end: 1px solid var(--border);
+	}
+
+	.modal-two-header-actions {
+		margin-inline-end: 0;
+	}
+
+	.button-outline-weak {
+		--button-default-border-color: var(--border);
+	}
+
+	&__title {
+		font-size: #{rem(20)} !important;
+	}
+
+	&__add-connector-chip {
+		padding-block: #{rem(5)};
+		padding-inline: #{rem(8)} #{rem(10)};
+		font-size: #{rem(13)};
+
+		&.border {
+			border-color: var(--border-mid);
+		}
+
+		&:hover,
+		&:focus-visible {
+			background-color: var(--control-fill-low) !important;
+		}
+
+		&:active {
+			background-color: var(--control-fill-mid) !important;
+		}
+	}
+
+	&__auto-approve-icon {
+		inline-size: #{rem(40)};
+		block-size: #{rem(40)};
+	}
+
+	&__auto-approve-label {
+		font-size: #{rem(15)};
+	}
+
+	&__footer button {
+		margin-block-end: 0;
+	}
+}

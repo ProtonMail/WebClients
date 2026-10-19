@@ -4,6 +4,8 @@ import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { LumoIcon } from '../../../components/LumoIcon/LumoIcon';
 
+import './SchedulesEmptyState.scss';
+
 export const SchedulesEmptyState = () => {
     return (
         <div className="schedules-empty-state flex flex-column items-center gap-3 mx-auto text-center">

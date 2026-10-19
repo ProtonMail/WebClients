@@ -1,5 +1,6 @@
-import { useMemo } from 'react';
+import { useId, useMemo } from 'react';
 
+import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
@@ -8,19 +9,22 @@ import { getFormattedWeekdays } from '@proton/shared/lib/date/date';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 
+import { FieldError } from './FieldError';
 import type { WeekdayToken } from './types';
 
 import './WeekDayPicker.scss';
 
 interface WeekDayPickerProps {
     days: WeekdayToken[];
+    error?: string;
     onChange: (days: WeekdayToken[]) => void;
 }
 
 /**
  * WeekDayPicker component displays a list of buttons for selecting the days of the week.
  */
-export const WeekDayPicker = ({ days, onChange }: WeekDayPickerProps) => {
+export const WeekDayPicker = ({ days, error, onChange }: WeekDayPickerProps) => {
+    const errorId = useId();
     const [userSettings] = useUserSettings();
 
     const options = useMemo(() => {
@@ -52,29 +56,36 @@ export const WeekDayPicker = ({ days, onChange }: WeekDayPickerProps) => {
     };
 
     return (
-        <div
-            aria-label={
-                // translator: Accessible label for the button group that allows users to select the days of the week.
-                c('collider_2025:Label').t`Days of week`
-            }
-            className="week-day-picker flex gap-1.5"
-        >
-            {options.map(({ day, displayLabel, ariaLabel }) => {
-                const isSelected = selectedDays.has(day);
-                return (
-                    <Button
-                        aria-label={ariaLabel}
-                        aria-pressed={isSelected}
-                        className="week-day-picker__day items-center justify-center p-0 rounded-full"
-                        color={isSelected ? 'norm' : 'weak'}
-                        key={day}
-                        onClick={() => onDayClick(day)}
-                        type="button"
-                    >
-                        {displayLabel}
-                    </Button>
-                );
-            })}
+        <div className="flex flex-column">
+            <div
+                aria-describedby={error ? errorId : undefined}
+                aria-label={
+                    // translator: Accessible label for the button group that allows users to select the days of the week.
+                    c('collider_2025:Label').t`Days of week`
+                }
+                className="week-day-picker flex gap-1.5"
+            >
+                {options.map(({ day, displayLabel, ariaLabel }) => {
+                    const isSelected = selectedDays.has(day);
+                    return (
+                        <Button
+                            aria-label={ariaLabel}
+                            aria-pressed={isSelected}
+                            className={clsx([
+                                'week-day-picker__day items-center justify-center p-0 rounded-full',
+                                error && 'border-danger',
+                            ])}
+                            color={isSelected ? 'norm' : 'weak'}
+                            key={day}
+                            onClick={() => onDayClick(day)}
+                            type="button"
+                        >
+                            {displayLabel}
+                        </Button>
+                    );
+                })}
+            </div>
+            {error && <FieldError id={errorId} message={error} />}
         </div>
     );
 };
