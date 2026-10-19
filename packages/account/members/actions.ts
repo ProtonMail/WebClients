@@ -310,7 +310,7 @@ export const resumeMemberRoleAssignment = ({
         // Refresh the roles to clear pending flag
         await dispatch(getMemberRoles({ member, cache: CacheType.None }));
         const refreshed = (await dispatch(membersThunk())).find(({ ID }) => ID === memberID);
-        if (refreshed && getHasIncompleteOrgKeyGrant(refreshed)) {
+        if (refreshed && getHasIncompleteOrgKeyGrant(refreshed) && !getMemberUnprivatizationMode(refreshed).makeAdmin) {
             // TODO: provideOrgKeyAccessToMember no-ops for a member who is already an admin but lost access to
             // the org key. To fix that, we need to change `classifyRoleChange` to allow admin -> admin.
             throw new Error(c('Error').t`Could not grant access to the organization key`);
