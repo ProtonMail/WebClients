@@ -22,7 +22,7 @@ import {
 } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 import { uiStateReducer } from '@proton/meet/store/slices/uiStateSlice';
 import { getMentionToken } from '@proton/meet/utils/mentions/mentionToken';
-import { ProtonStoreContext } from '@proton/react-redux-store';
+import { ProtonStoreContext } from '@proton/react-redux-store/ProtonStoreContext';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { CHAT_MESSAGE_MAX_LENGTH } from '../../constants';

@@ -1,4 +1,5 @@
-import type { ConnectionCloseReason, ConnectionReadyPayload } from '@proton/docs-proto'
+import type { ConnectionCloseReason } from '@proton/docs-proto/ConnectionCloseReason/ConnectionCloseReason'
+import type { ConnectionReadyPayload } from '@proton/docs-proto/Payload/ConnectionReadyPayload'
 import type {
   DecryptedMessage,
   ProcessedIncomingRealtimeEventMessage,

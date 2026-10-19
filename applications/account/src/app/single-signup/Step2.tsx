@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import metrics from '@proton/metrics';
+import metrics from '@proton/metrics/metricsInstance';
 import { telemetry } from '@proton/shared/lib/telemetry';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';

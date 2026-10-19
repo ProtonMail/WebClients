@@ -1,6 +1,6 @@
 import { NodeType } from '@protontech/drive-sdk';
 
-import metrics from '@proton/metrics';
+import metrics from '@proton/metrics/metricsInstance';
 
 import { TransferSpeedMetrics } from '../../transferPerformance';
 import { UploadDriveClientRegistry } from '../UploadDriveClientRegistry';

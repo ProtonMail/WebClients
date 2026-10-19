@@ -1,9 +1,10 @@
 import { EditorController } from './EditorController'
 import type { Logger } from '@proton/shared/lib/logs'
 import { BroadcastSource, DocumentRole, DocUpdateOrigin } from '@proton/docs-shared'
-import type { ConnectionCloseReason } from '@proton/docs-proto'
-import { EventType, EventTypeEnum } from '@proton/docs-proto'
-import metrics from '@proton/metrics'
+import type { ConnectionCloseReason } from '@proton/docs-proto/ConnectionCloseReason/ConnectionCloseReason'
+import { EventType } from '@proton/docs-proto/Event/EventType'
+import { EventTypeEnum } from '@proton/docs-proto/Event/EventTypeEnum'
+import metrics from '@proton/metrics/metricsInstance'
 import type { DocumentStateValues } from '../State/DocumentState'
 import { DocumentState } from '../State/DocumentState'
 import type { ClientRequiresEditorMethods, DecryptedMessage, InternalEventBusInterface } from '@proton/docs-shared'
@@ -12,7 +13,7 @@ import type { DecryptedCommit } from '../Models/DecryptedCommit'
 import { LoadLogger } from '../LoadLogger/LoadLogger'
 import { downloadExport } from '../UseCase/ExportAndDownload'
 
-jest.mock('@proton/metrics', () => ({
+jest.mock('@proton/metrics/metricsInstance', () => ({
   docs_readonly_mode_documents_total: {
     increment: jest.fn(),
   },

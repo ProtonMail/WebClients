@@ -10,7 +10,7 @@ import { BroadcastSource, CommentsMessageType, LiveCommentsEvent } from '@proton
 import { CreateRealtimeCommentPayload } from '../../Services/Comments/CreateRealtimeCommentPayload'
 import { CommentTypers } from './CommentTypers'
 import type { WebsocketServiceInterface } from '../../Services/Websockets/WebsocketServiceInterface'
-import { EventTypeEnum } from '@proton/docs-proto'
+import { EventTypeEnum } from '@proton/docs-proto/Event/EventTypeEnum'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 
 export class LiveComments {

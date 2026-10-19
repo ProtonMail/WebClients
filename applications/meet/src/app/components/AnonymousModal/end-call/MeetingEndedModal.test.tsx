@@ -9,7 +9,7 @@ import {
     setPreviousMeeting,
 } from '@proton/meet/store/slices/meetAppStateSlice';
 import type { MeetingEndedReason } from '@proton/meet/store/slices/meetAppStateSlice';
-import { ProtonStoreContext } from '@proton/react-redux-store';
+import { ProtonStoreContext } from '@proton/react-redux-store/ProtonStoreContext';
 
 import { MeetingEndedModal } from './MeetingEndedModal';
 

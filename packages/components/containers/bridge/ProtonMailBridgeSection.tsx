@@ -8,7 +8,7 @@ import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { IcBrandApple } from '@proton/icons/icons/IcBrandApple';
 import { IcBrandLinux } from '@proton/icons/icons/IcBrandLinux';
 import { IcBrandWindows } from '@proton/icons/icons/IcBrandWindows';
-import metrics from '@proton/metrics';
+import metrics from '@proton/metrics/metricsInstance';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { VersionLoadError } from '@proton/shared/lib/apps/desktopVersions';
 import {

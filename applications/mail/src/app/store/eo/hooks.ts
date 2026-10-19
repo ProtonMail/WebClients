@@ -1,6 +1,6 @@
 import type { TypedUseSelectorHook } from 'react-redux';
 
-import { baseUseDispatch, baseUseSelector, baseUseStore } from '@proton/react-redux-store';
+import { baseUseDispatch, baseUseSelector, baseUseStore } from '@proton/react-redux-store/ProtonStoreContext';
 
 import type { EODispatch, EOStore, EOStoreState } from './eoStore';
 

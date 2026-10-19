@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import type { Action, ThunkDispatch } from '@reduxjs/toolkit';
 import { createSelector } from '@reduxjs/toolkit';
 
-import { baseUseDispatch, baseUseSelector } from '@proton/react-redux-store';
+import { baseUseDispatch, baseUseSelector } from '@proton/react-redux-store/ProtonStoreContext';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import type { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
 
@@ -34,7 +34,7 @@ export const useDomainsAddresses = (domains: Domain[] | undefined) => {
             return;
         }
         domains.forEach((domain) => {
-            dispatch(domainAddressesThunk({ domainID: domain.ID }));
+            void dispatch(domainAddressesThunk({ domainID: domain.ID }));
         });
     }, [domains]);
     return [selectedValue.value, selectedValue.loading] as const;

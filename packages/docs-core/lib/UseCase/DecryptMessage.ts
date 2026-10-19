@@ -1,5 +1,5 @@
-import type { Event } from '@proton/docs-proto'
-import { DocumentUpdate } from '@proton/docs-proto'
+import type { Event } from '@proton/docs-proto/Generated/Event'
+import { DocumentUpdate } from '@proton/docs-proto/Generated/DocumentUpdate'
 import type { EncryptionService } from '../Services/Encryption/EncryptionService'
 import { GetAssociatedEncryptionDataForRealtimeMessage } from './GetAdditionalEncryptionData'
 import type { EncryptionContext } from '../Services/Encryption/EncryptionContext'

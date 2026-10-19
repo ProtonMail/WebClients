@@ -1,4 +1,4 @@
-import metrics from '@proton/metrics';
+import metrics from '@proton/metrics/metricsInstance';
 import type { HttpsProtonMeDriveThumbnailErrorsTotalV1SchemaJson } from '@proton/metrics/types/drive_thumbnail_errors_total_v1.schema';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 

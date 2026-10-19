@@ -7,7 +7,7 @@ import { act, renderHook } from '@testing-library/react';
 import type { Mock } from 'vitest';
 
 import { deviceManagementReducer, setPermissions } from '@proton/meet/store/slices/deviceManagementSlice';
-import { ProtonStoreContext } from '@proton/react-redux-store';
+import { ProtonStoreContext } from '@proton/react-redux-store/ProtonStoreContext';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
 
 import { checkIfUsingTurnRelay } from '../utils/checkIfUsingTurnRelay';

@@ -1,6 +1,6 @@
 import type { YjsState, Result, DocumentType, NodeMeta } from '@proton/docs-shared'
 import type { NativeVersionHistory } from '../VersionHistory'
-import type { DocumentUpdate } from '@proton/docs-proto'
+import type { DocumentUpdate } from '@proton/docs-proto/Generated/DocumentUpdate'
 
 export interface AuthenticatedDocControllerInterface {
   didTrashDocInCurrentSession: boolean

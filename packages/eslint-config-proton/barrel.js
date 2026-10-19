@@ -8,7 +8,20 @@ export const componentsPackage = '@proton/components';
 export const hooksPackage = '@proton/hooks';
 export const iconsPackage = '@proton/icons';
 
-const defaultPackages = [atomsPackage, componentsPackage, iconsPackage];
+/** Packages with an explicit `exports` map, whose bare specifier no longer resolves. */
+const migratedPackages = [
+    '@proton/chargebee',
+    '@proton/collect-metrics',
+    '@proton/colors',
+    '@proton/docs-proto',
+    '@proton/metrics',
+    '@proton/raw-images',
+    '@proton/react-redux-store',
+    '@proton/recovery-kit',
+    '@proton/sanitize',
+];
+
+const defaultPackages = [atomsPackage, componentsPackage, iconsPackage, ...migratedPackages];
 
 const barrelMessage = 'You should avoid barrel imports. Prefer full path imports.';
 
@@ -62,4 +75,4 @@ export function createBarrelConfig(options = {}) {
 }
 
 // Default export with all packages for backward compatibility
-export default createBarrelConfig({ packages: ['@proton/atoms', '@proton/components', '@proton/icons'] });
+export default createBarrelConfig();

@@ -6,8 +6,12 @@ import type {
   WebsocketConnectionInterface,
 } from '@proton/docs-shared'
 import { BroadcastSource, ConnectionType, Result } from '@proton/docs-shared'
-import type { ServerMessageWithDocumentUpdates, ServerMessageWithEvents } from '@proton/docs-proto'
-import { DecryptedValue, EventTypeEnum } from '@proton/docs-proto'
+import type {
+  ServerMessageWithDocumentUpdates,
+  ServerMessageWithEvents,
+} from '@proton/docs-proto/Generated/ServerMessage'
+import { DecryptedValue } from '@proton/docs-proto/DecryptedValue'
+import { EventTypeEnum } from '@proton/docs-proto/Event/EventTypeEnum'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 import type { FetchRealtimeToken } from '../../UseCase/FetchRealtimeToken'
 import type { DecryptMessage } from '../../UseCase/DecryptMessage'

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
-import { ThemeColor } from '@proton/colors';
+import { ThemeColor } from '@proton/colors/types';
 
 const meta: Meta<typeof Href> = {
     title: 'Atoms/Href',

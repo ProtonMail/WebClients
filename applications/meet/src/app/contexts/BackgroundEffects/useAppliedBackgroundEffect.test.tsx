@@ -6,7 +6,7 @@ import { describe, expect, it, vi } from 'vitest';
 
 import type { BackgroundEffect } from '@proton/meet/store/slices/backgroundSlice';
 import { backgroundReducer, initialState } from '@proton/meet/store/slices/backgroundSlice';
-import { ProtonStoreContext } from '@proton/react-redux-store';
+import { ProtonStoreContext } from '@proton/react-redux-store/ProtonStoreContext';
 
 import { useAppliedBackgroundEffect } from './useAppliedBackgroundEffect';
 

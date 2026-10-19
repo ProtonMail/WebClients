@@ -12,7 +12,7 @@ import type { MetricPerformanceEvent } from '@protontech/drive-sdk/dist/interfac
 import type { LogHandler, MetricRecord, MetricHandler as SDKMetricHandler } from '@protontech/drive-sdk/dist/telemetry';
 import { LogFilter, LogLevel, Telemetry } from '@protontech/drive-sdk/dist/telemetry';
 
-import metrics from '@proton/metrics';
+import metrics from '@proton/metrics/metricsInstance';
 import { getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 

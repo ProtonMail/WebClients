@@ -23,6 +23,6 @@
     "target": "esnext",
     "outDir": "./dist"
   },
-  "include": ["lib/**/*", "bin/**/*", "index.ts", "tsconfig.json"],
+  "include": ["lib/**/*", "bin/**/*", "tsconfig.json"],
   "exclude": ["**/*.spec.ts", "dist"]
 }

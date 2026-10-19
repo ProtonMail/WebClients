@@ -15,7 +15,7 @@ import ThemeProvider from '@proton/components/containers/themes/ThemeProvider';
 import { PreventLeaveProvider } from '@proton/components/hooks/usePreventLeave';
 import useInstance from '@proton/hooks/useInstance';
 import Icons from '@proton/icons/Icons';
-import metrics from '@proton/metrics';
+import metrics from '@proton/metrics/metricsInstance';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import createApi from '@proton/shared/lib/api/createApi';
 // eslint-disable-next-line no-restricted-imports -- bootstrap code runs outside React, hooks are not available

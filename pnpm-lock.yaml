@@ -5566,6 +5566,9 @@ importers:
       jest:
         specifier: ^30.5.2
         version: 30.5.2(@types/node@24.19.0)(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.18(@swc/helpers@0.5.17))(@types/node@24.19.0)(@typescript/typescript6@6.0.2))
+      ts-loader:
+        specifier: ^9.6.2
+        version: 9.6.2(@typescript/typescript6@6.0.2)(loader-utils@2.0.4)(webpack@5.111.1)
       ts-node:
         specifier: ^10.9.2
         version: 10.9.2(@swc/core@1.16.18(@swc/helpers@0.5.17))(@types/node@24.19.0)(@typescript/typescript6@6.0.2)

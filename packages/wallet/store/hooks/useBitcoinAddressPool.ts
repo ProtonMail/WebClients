@@ -3,8 +3,8 @@ import { useCallback, useEffect } from 'react';
 import { createSelector } from '@reduxjs/toolkit';
 
 import type { WasmApiWalletBitcoinAddress } from '@proton/andromeda';
-import { baseUseSelector } from '@proton/react-redux-store';
-import { createHooks  } from '@proton/redux-utilities/hooks';
+import { baseUseSelector } from '@proton/react-redux-store/ProtonStoreContext';
+import { createHooks } from '@proton/redux-utilities/hooks';
 import { CacheType } from '@proton/redux-utilities/interface';
 
 import { bitcoinAddressPoolThunk, selectBitcoinAddressPool } from '../slices';

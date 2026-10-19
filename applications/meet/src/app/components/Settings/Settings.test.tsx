@@ -26,7 +26,7 @@ import { settingsReducer } from '@proton/meet/store/slices/settings';
 import { MeetingSideBars, uiStateReducer } from '@proton/meet/store/slices/uiStateSlice';
 import { meetUserReducer } from '@proton/meet/store/slices/userSlice';
 import { ParticipantCapabilityPermission } from '@proton/meet/types/types';
-import { ProtonStoreContext } from '@proton/react-redux-store';
+import { ProtonStoreContext } from '@proton/react-redux-store/ProtonStoreContext';
 
 import { BackgroundEffectsContext } from '../../contexts/BackgroundEffects/BackgroundEffectsContext';
 import type { MediaManagementContextType } from '../../contexts/MediaManagementProvider/MediaManagementContext';

@@ -6,7 +6,7 @@ import { type Action, configureStore, createSlice } from '@reduxjs/toolkit';
 import { act, render, waitFor } from '@testing-library/react';
 import type { Store } from 'redux';
 
-import { ProtonStoreContext } from '@proton/react-redux-store';
+import { ProtonStoreContext } from '@proton/react-redux-store/ProtonStoreContext';
 
 import { createAsyncModelThunk, handleAsyncModel } from './creator';
 import { ModelThunkDispatcher, createHooks } from './hooks';

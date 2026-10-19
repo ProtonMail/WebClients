@@ -1,4 +1,4 @@
-import metrics from '@proton/metrics';
+import metrics from '@proton/metrics/metricsInstance';
 
 import {
     SENTRY_REPORT_BURST_MAX_ATTEMPTS,
@@ -13,7 +13,7 @@ import type { IndexerTaskKind } from './types';
 
 jest.mock('./Logger');
 
-jest.mock('@proton/metrics', () => ({
+jest.mock('@proton/metrics/metricsInstance', () => ({
     __esModule: true,
     default: {
         drive_search_initial_indexing_total: { increment: jest.fn() },

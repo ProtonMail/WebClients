@@ -1,13 +1,13 @@
 import { ThumbnailType } from '@protontech/drive-sdk';
 
-import type { createWorker } from '@proton/raw-images/src';
+import type { createWorker } from '@proton/raw-images/createWorker';
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 
 import * as constants from '../constants';
 import { MissingDataError, UnsupportedFormatError } from '../thumbnailError';
 import { RawImageHandler } from './rawImageHandler';
 
-jest.mock('@proton/raw-images/src', () => ({
+jest.mock('@proton/raw-images/createWorker', () => ({
     createWorker: jest.fn(),
 }));
 
@@ -25,7 +25,7 @@ describe('RawImageHandler', () => {
         handler = new RawImageHandler();
         jest.clearAllMocks();
 
-        const rawImagesModule = await import('@proton/raw-images/src');
+        const rawImagesModule = await import('@proton/raw-images/createWorker');
         mockCreateWorker = jest.mocked(rawImagesModule.createWorker);
     });
 

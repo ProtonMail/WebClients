@@ -21,8 +21,8 @@ jest.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: jest.fn().mockReturnValue({ createNotification: jest.fn() }),
 }));
 
-jest.mock('@proton/react-redux-store', () => ({
-    ...jest.requireActual('@proton/react-redux-store'),
+jest.mock('@proton/react-redux-store/ProtonStoreContext', () => ({
+    ...jest.requireActual('@proton/react-redux-store/ProtonStoreContext'),
     baseUseDispatch: () => jest.fn(),
 }));
 

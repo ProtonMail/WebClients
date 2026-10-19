@@ -20,7 +20,7 @@ import type {
 } from '@proton/docs-core'
 import type { DocumentType } from '@proton/docs-shared'
 import clsx from '@proton/utils/clsx'
-import { ConnectionCloseReason } from '@proton/docs-proto'
+import { ConnectionCloseReason } from '@proton/docs-proto/ConnectionCloseReason/ConnectionCloseReason'
 import { Tooltip } from '@proton/docs-shared/components/ui/ui'
 import * as Ariakit from '@ariakit/react'
 

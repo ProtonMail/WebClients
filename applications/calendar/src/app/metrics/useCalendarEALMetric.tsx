@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 
-import metrics from '@proton/metrics';
+import metrics from '@proton/metrics/metricsInstance';
 import { useFlag } from '@proton/unleash/useFlag';
 
 type ActionType = 'delete' | 'edit';

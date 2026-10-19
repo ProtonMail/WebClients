@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { getCanShowSignInRestriction } from '@proton/account/signInRestriction/helpers';
-import type { ThemeColor } from '@proton/colors';
+import type { ThemeColor } from '@proton/colors/types';
 import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
 import type { SectionConfig, SubrouteGroup } from '@proton/components/containers/layout/interface';
 import { IcArrowDownToSquare } from '@proton/icons/icons/IcArrowDownToSquare';

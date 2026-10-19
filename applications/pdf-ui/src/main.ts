@@ -1,13 +1,13 @@
 import { Designer } from '@pdfme/ui';
 import Toastify from 'toastify-js';
+import 'toastify-js/src/toastify.css';
 
-import { getFont } from '@proton/recovery-kit';
 import { getFilledTemplate } from '@proton/recovery-kit/filledTemplate';
+import { getFont } from '@proton/recovery-kit/generatePDFKit';
 
 import textToClipboard from './textToClipboard';
 
 import './style.css';
-import 'toastify-js/src/toastify.css';
 
 async function main() {
     const domContainer = document.getElementById('container');

@@ -5,7 +5,7 @@ import type { DocumentKeys, PublicDocumentKeys } from '@proton/docs-shared'
 import { GetAssociatedEncryptionDataForComment } from './GetAdditionalEncryptionData'
 import type { EncryptionContext } from '../Services/Encryption/EncryptionContext'
 import { utf8StringToUint8Array } from '@protontech/crypto/utils'
-import metrics from '@proton/metrics'
+import metrics from '@proton/metrics/metricsInstance'
 import { canKeysSign } from '../Types/DocumentEntitlements'
 
 export class EncryptComment implements UseCaseInterface<string> {

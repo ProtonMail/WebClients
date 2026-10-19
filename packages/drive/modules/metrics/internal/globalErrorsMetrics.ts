@@ -1,6 +1,6 @@
 import type { MetricEvent } from '@protontech/drive-sdk';
 
-import metrics from '@proton/metrics';
+import metrics from '@proton/metrics/metricsInstance';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 import { logging } from '../../logging';

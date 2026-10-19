@@ -1,6 +1,6 @@
 import { ApiResult } from '@proton/docs-shared'
 import type { DocsApi } from '../Api/DocsApi'
-import { Commit } from '@proton/docs-proto'
+import { Commit } from '@proton/docs-proto/Generated/Commit'
 import type { CacheService } from '../Services/CacheService'
 import type { NodeMeta, PublicNodeMeta } from '@proton/docs-shared'
 

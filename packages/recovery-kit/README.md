@@ -5,7 +5,7 @@ Enables the programmatic generation of the recovery kit pdf.
 ## Usage
 
 ```ts
-import { generatePDFKit } from '@proton/recovery-kit';
+import { generatePDFKit } from '@proton/recovery-kit/generatePDFKit';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 
 const pdf = await generatePDFKit({

@@ -21,7 +21,7 @@ import { IcKey } from '@proton/icons/icons/IcKey';
 import { IcMinusCircle } from '@proton/icons/icons/IcMinusCircle';
 import { IcShareNode } from '@proton/icons/icons/IcShareNode';
 import { IcShieldHalfFilled } from '@proton/icons/icons/IcShieldHalfFilled';
-import { baseUseSelector } from '@proton/react-redux-store';
+import { baseUseSelector } from '@proton/react-redux-store/ProtonStoreContext';
 import type { MemberUsageColumnState } from '@proton/shared/lib/api/members';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { hasMailProduct } from '@proton/shared/lib/helpers/organization';

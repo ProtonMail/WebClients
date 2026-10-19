@@ -4,7 +4,7 @@ import { useGetSubscription } from '@proton/account/subscription/hooks';
 import { useGetUser } from '@proton/account/user/hooks';
 import { useGetUserSettings } from '@proton/account/userSettings/hooks';
 import { useApi } from '@proton/app-context/useApi';
-import { baseUseStore } from '@proton/react-redux-store';
+import { baseUseStore } from '@proton/react-redux-store/ProtonStoreContext';
 import {
     TelemetryCategoriesOnboardingEvents,
     type TelemetryEvents,

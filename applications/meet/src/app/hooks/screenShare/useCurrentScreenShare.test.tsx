@@ -11,7 +11,7 @@ import type { Mock } from 'vitest';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { deviceManagementReducer } from '@proton/meet/store/slices/deviceManagementSlice';
 import { screenShareStatusReducer } from '@proton/meet/store/slices/screenShareStatusSlice';
-import { ProtonStoreContext } from '@proton/react-redux-store';
+import { ProtonStoreContext } from '@proton/react-redux-store/ProtonStoreContext';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 
 import { useCurrentScreenShare } from './useCurrentScreenShare';

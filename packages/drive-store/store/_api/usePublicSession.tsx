@@ -2,7 +2,7 @@ import { createContext, useContext, useRef, useState } from 'react';
 
 import { useApi } from '@proton/app-context/useApi';
 import { useAuthentication } from '@proton/components';
-import metrics from '@proton/metrics';
+import metrics from '@proton/metrics/metricsInstance';
 import { queryInitSRPHandshake, queryShareURLAuth } from '@proton/shared/lib/api/drive/sharing';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
@@ -93,19 +93,16 @@ function usePublicSessionProvider() {
             try {
                 metrics.setAuthHeaders(session.UID);
                 await handleHandshakeInitSession(session);
-            } catch (e) {
-                console.warn('Cannot resume session');
-            }
+            } catch {}
         } else if (persistedSession) {
             try {
                 metrics.setAuthHeaders(persistedSession.UID);
                 // We need to silence reponse, in case the token is invalid we just want to show not logged-in page instead of have error notification
                 const resumedSession = await resumeSession({ api: silentApi, localID: persistedSession.localID });
                 await handleHandshakeInitSession(resumedSession);
-            } catch (e) {
+            } catch {
                 // TODO: Probably getLastPersistedLocalID is the source of issue
                 // Investigate why later
-                console.warn('Cannot resume session');
             }
         }
 

@@ -3,7 +3,7 @@ import { useCallback, useEffect } from 'react';
 import { createSelector } from '@reduxjs/toolkit';
 
 import type { WasmApiExchangeRate, WasmFiatCurrencySymbol } from '@proton/andromeda';
-import { baseUseSelector } from '@proton/react-redux-store';
+import { baseUseSelector } from '@proton/react-redux-store/ProtonStoreContext';
 import { createHooks } from '@proton/redux-utilities/hooks';
 
 import { exchangeRateThunk, selectExchangeRate } from '../slices';

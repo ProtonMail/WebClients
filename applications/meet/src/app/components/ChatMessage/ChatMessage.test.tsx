@@ -20,7 +20,7 @@ import {
     sortedParticipantsReducer,
 } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 import { getMentionToken } from '@proton/meet/utils/mentions/mentionToken';
-import { ProtonStoreContext } from '@proton/react-redux-store';
+import { ProtonStoreContext } from '@proton/react-redux-store/ProtonStoreContext';
 
 import { CHAT_MESSAGE_MAX_LENGTH } from '../../constants';
 import { $readMentionValue } from '../../utils/mentions/mentionEditorState';

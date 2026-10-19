@@ -39,7 +39,10 @@ const isCR3File = (data: Uint8Array<ArrayBuffer>, fileName: string = '') => {
  * Creates a RawProcessor instance wrapped in a Web Worker for background processing
  * @returns Promise resolving to a worker interface
  */
-export async function createWorker(rawData: Uint8Array<ArrayBuffer>, fileName?: string): Promise<RawProcessorWorkerInterface> {
+export async function createWorker(
+    rawData: Uint8Array<ArrayBuffer>,
+    fileName?: string
+): Promise<RawProcessorWorkerInterface> {
     const worker = isCR3File(rawData, fileName)
         ? new Worker(/* webpackChunkName: "proton-cr3-images" */ new URL('./worker-cr3', import.meta.url))
         : new Worker(/* webpackChunkName: "proton-raw-images" */ new URL('./worker-dcraw', import.meta.url));
@@ -59,7 +62,6 @@ export async function createWorker(rawData: Uint8Array<ArrayBuffer>, fileName?: 
         const promise = pendingPromises.get(id);
 
         if (!promise) {
-            console.warn(`Received response for unknown message ID: ${id}`);
             return;
         }
 
