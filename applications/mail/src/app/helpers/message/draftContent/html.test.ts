@@ -4,11 +4,7 @@ import type { Recipient } from '@proton/shared/lib/interfaces';
 import { FORWARDED_MESSAGE } from '@proton/shared/lib/mail/messages';
 
 import { formatFullDate } from '../../date';
-import {
-    createHTMLDraftContent,
-    generateBlockquote,
-    generatePreviousMessageInfos,
-} from './html';
+import { createHTMLDraftContent, generateBlockquote, generatePreviousMessageInfos } from './html';
 
 // Mock dependencies to avoid DOM and other issues in tests
 jest.mock('../messageContentConversion', () => ({
@@ -218,6 +214,22 @@ describe('draft content html', () => {
             expect(result).toContain('To:');
             expect(result).toContain('CC:');
         });
+
+        it.each([MESSAGE_ACTIONS.REPLY, MESSAGE_ACTIONS.FORWARD])(
+            'should open the %s quote with an empty line so editing the body cannot remove it',
+            (action) => {
+                const referenceMessage = {
+                    data: { ID: 'test-id', Time: Date.now() / 1000, Sender: sender, MIMEType: 'text/plain' },
+                    decryption: { decryptedBody: 'Original message' },
+                } as any;
+
+                const result = generateBlockquote(referenceMessage, mailSettings, userSettings, addresses, action);
+                const quote = new DOMParser().parseFromString(result, 'text/html').body.firstElementChild;
+
+                expect(quote?.className).toBe('protonmail_quote');
+                expect(quote?.firstChild?.nodeName).toBe('BR');
+            }
+        );
     });
 
     describe('createHTMLDraftContent', () => {

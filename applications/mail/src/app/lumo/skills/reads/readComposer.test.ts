@@ -65,7 +65,6 @@ const plainTextDraft = (
     const signature = withSignature
         ? getAddressPlainTextSignature({
               senderAddress: SENDER,
-              action: MESSAGE_ACTIONS.NEW,
               addresses,
               mailSettings,
               userSettings,
