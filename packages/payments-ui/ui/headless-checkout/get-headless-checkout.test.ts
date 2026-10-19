@@ -113,6 +113,7 @@ describe('getHeadlessCheckout', () => {
                 'vatReverseCharge',
                 'planAmountWithDiscountPerMonth',
                 'baseRenewAmount',
+                'guard',
             ]);
         });
     });

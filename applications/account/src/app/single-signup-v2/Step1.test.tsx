@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import { screen, waitFor } from '@testing-library/react';
+import { act, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import { ADDON_NAMES, COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
+import { GUARD_ERROR_CODES } from '@proton/payments/core/subscription/guard';
 import type { Coupon } from '@proton/payments/core/subscription/interface';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import {
     createMockModel,
     createMockSignupConfiguration,
@@ -20,20 +22,53 @@ import { SignupMode, UpsellTypes } from './interface';
 // Mock PlanCardSelector to simplify testing and provide stable test IDs
 jest.mock('./PlanCardSelector', () => ({
     __esModule: true,
-    PlanCardSelector: ({ cycle, currency, _plansMap, selectedPlanName }: any) => (
+    PlanCardSelector: ({ cycle, currency, _plansMap, selectedPlanName, onSelect }: any) => (
         <div data-testid="plan-card-selector">
             <span>Selected: {selectedPlanName}</span>
             <span>Cycle: {cycle}</span>
             <span>Currency: {currency}</span>
+            <button data-testid="select-vpn" onClick={() => onSelect({ [PLANS.VPN2024]: 1 }, PLANS.VPN2024)}>
+                select vpn
+            </button>
         </div>
     ),
 }));
 
-// Mock AccountStepPayment to avoid act() warnings from useMethods hook
-jest.mock('./AccountStepPayment', () => ({
-    __esModule: true,
-    default: () => <div data-testid="account-step-payment-mock">Payment Mock</div>,
-}));
+// Mock AccountStepPayment to avoid act() warnings from useMethods hook.
+// It reads the guard like the real component does: from the optimistic-aware options.checkResult.
+jest.mock('./AccountStepPayment', () => {
+    const { getHeadlessCheckout } = jest.requireActual(
+        '@proton/payments-ui/ui/headless-checkout/get-headless-checkout'
+    );
+    const { GuardBanner } = jest.requireActual('@proton/payments-ui/ui/components/GuardBanner');
+    return {
+        __esModule: true,
+        default: ({ handleOptimistic, model, options, app }: any) => {
+            const { getItem } = getHeadlessCheckout({
+                planIDs: options.planIDs,
+                plansMap: model.plansMap,
+                checkResult: options.checkResult,
+                app,
+            });
+            return (
+                <div data-testid="account-step-payment-mock">
+                    Payment Mock
+                    <button data-testid="change-cycle" onClick={() => handleOptimistic({ cycle: CYCLE.YEARLY })}>
+                        change cycle
+                    </button>
+                    <button
+                        data-testid="change-addons"
+                        onClick={() => handleOptimistic({ planIDs: { [PLANS.VPN2024]: 2 } })}
+                    >
+                        change addons
+                    </button>
+                    <span data-testid="check-result-amount">{options.checkResult.AmountDue}</span>
+                    <GuardBanner errors={getItem('guard').guards} />
+                </div>
+            );
+        },
+    };
+});
 
 const renderStep1 = (overrides?: Partial<React.ComponentProps<typeof Step1>>) => {
     const defaultProps = {
@@ -430,5 +465,184 @@ describe('Step1 - paymentless B2B trial', () => {
         const optimistic = updater(createPaymentlessTrialModel()).optimistic;
         expect(optimistic.planIDs).toEqual({ [PLANS.PASS_PRO]: 1, [ADDON_NAMES.MEMBER_PASS_PRO]: 3 });
         expect(optimistic.checkResult.SubscriptionMode).toBe(SubscriptionMode.Trial);
+    });
+});
+
+describe('Step1 - subscription guards', () => {
+    const CHECK_URL = 'payments/v5/subscription/check';
+    const STORAGE_COPY = /enough storage for your account/i;
+    const blocked = { GuardResult: 'raw backend message', GuardResultCode: GUARD_ERROR_CODES.TOO_LITTLE_SPACE };
+
+    type CheckRequest = {
+        data: any;
+        resolve: (extra?: Record<string, unknown>) => void;
+        reject: (error: unknown) => void;
+    };
+
+    const renderSignedInStep1 = () => {
+        const requests: CheckRequest[] = [];
+        const api = jest.fn((query: any) => {
+            if (query.url !== CHECK_URL) {
+                return Promise.resolve({});
+            }
+            return new Promise((resolve, reject) => {
+                requests.push({
+                    data: query.data,
+                    resolve: (extra) =>
+                        resolve({
+                            Amount: 1234,
+                            AmountDue: 1234,
+                            Proration: 0,
+                            CouponDiscount: 0,
+                            Gift: 0,
+                            Credit: 0,
+                            Coupon: null,
+                            Cycle: query.data.Cycle,
+                            Currency: query.data.Currency,
+                            TaxMode: 'TaxIncluded',
+                            Taxes: [],
+                            SubscriptionMode: 0,
+                            BaseRenewAmount: null,
+                            RenewCycle: null,
+                            PeriodEnd: 0,
+                            ...extra,
+                        }),
+                    reject,
+                });
+            });
+        });
+
+        const SignedInStep1 = () => {
+            const [model, setModel] = useState(() => ({
+                ...createMockModel(),
+                session: {
+                    subscription: buildSubscription(PLANS.BUNDLE),
+                    state: { payable: true },
+                    resumedSessionResult: { UID: 'uid', User: { ID: 'user', Currency: 'USD' } },
+                },
+            }));
+            return (
+                <Step1
+                    initialSessionsLength={false}
+                    signupConfiguration={createMockSignupConfiguration()}
+                    signupParameters={createMockSignupParameters()}
+                    isLargeViewport
+                    measure={jest.fn()}
+                    onComplete={jest.fn()}
+                    model={model}
+                    setModel={setModel as any}
+                    currentPlan={undefined}
+                    mode={SignupMode.Default}
+                    api={api as any}
+                    onTriggerModals={jest.fn()}
+                    onOpenLogin={jest.fn()}
+                    onOpenSwitch={jest.fn()}
+                    onSignOut={async () => {}}
+                    step1Ref={{ current: null } as any}
+                    onChangeCurrency={async () => ({}) as any}
+                    signupTrial={false}
+                    telemetryContext={{} as any}
+                />
+            );
+        };
+
+        renderWithProviders(<SignedInStep1 />, { preloadedState: {} });
+
+        const nextRequest = async (index: number) => {
+            await waitFor(() => expect(requests.length).toBeGreaterThan(index));
+            return requests[index];
+        };
+
+        return { requests, nextRequest };
+    };
+
+    it('sends no check request while the user has not selected anything', async () => {
+        const { requests } = renderSignedInStep1();
+
+        await screen.findByTestId('select-vpn');
+
+        expect(requests).toHaveLength(0);
+    });
+
+    it('sends ValidateGuards:true exactly once for a settled selection', async () => {
+        const { requests, nextRequest } = renderSignedInStep1();
+
+        await userEvent.click(await screen.findByTestId('select-vpn'));
+        const request = await nextRequest(0);
+
+        expect(request.data).toMatchObject({ Plans: { [PLANS.VPN2024]: 1 }, ValidateGuards: true });
+        await act(async () => request.resolve());
+        expect(requests).toHaveLength(1);
+    });
+
+    it('shows the guard warning and keeps the check result when the result is blocked', async () => {
+        const { nextRequest } = renderSignedInStep1();
+
+        await userEvent.click(await screen.findByTestId('select-vpn'));
+        await act(async () => (await nextRequest(0)).resolve(blocked));
+
+        expect(await screen.findByText(STORAGE_COPY)).toBeInTheDocument();
+        expect(screen.queryByText('raw backend message')).not.toBeInTheDocument();
+        expect(screen.getByTestId('check-result-amount')).toHaveTextContent('1234');
+    });
+
+    it('shows no warning when the result is allowed', async () => {
+        const { nextRequest } = renderSignedInStep1();
+
+        await userEvent.click(await screen.findByTestId('select-vpn'));
+        await act(async () => (await nextRequest(0)).resolve());
+
+        await waitFor(() => expect(screen.getByTestId('check-result-amount')).toHaveTextContent('1234'));
+        expect(screen.queryByText(STORAGE_COPY)).not.toBeInTheDocument();
+    });
+
+    it.each([
+        ['billing cycle', 'change-cycle'],
+        ['addon count', 'change-addons'],
+    ])('clears the stale warning synchronously and re-checks when the %s changes', async (_, buttonTestId) => {
+        const { requests, nextRequest } = renderSignedInStep1();
+        await userEvent.click(await screen.findByTestId('select-vpn'));
+        await act(async () => (await nextRequest(0)).resolve(blocked));
+        expect(await screen.findByText(STORAGE_COPY)).toBeInTheDocument();
+
+        await userEvent.click(screen.getByTestId(buttonTestId));
+
+        expect(screen.queryByText(STORAGE_COPY)).not.toBeInTheDocument();
+        const request = await nextRequest(1);
+        expect(request.data.ValidateGuards).toBe(true);
+        expect(screen.queryByText(STORAGE_COPY)).not.toBeInTheDocument();
+        await act(async () => request.resolve());
+        expect(requests).toHaveLength(2);
+        expect(screen.queryByText(STORAGE_COPY)).not.toBeInTheDocument();
+    });
+
+    it('only displays the result of the latest selection when responses arrive out of order', async () => {
+        const { nextRequest } = renderSignedInStep1();
+        await userEvent.click(await screen.findByTestId('select-vpn'));
+        const first = await nextRequest(0);
+        await userEvent.click(screen.getByTestId('change-cycle'));
+        const second = await nextRequest(1);
+
+        await act(async () => second.resolve());
+        await act(async () => first.resolve(blocked));
+
+        await waitFor(() => expect(screen.getByTestId('check-result-amount')).toHaveTextContent('1234'));
+        expect(screen.queryByText(STORAGE_COPY)).not.toBeInTheDocument();
+    });
+
+    it('recovers from a failed check: no warning, no "allowed" copy, retry works', async () => {
+        const { nextRequest } = renderSignedInStep1();
+        await userEvent.click(await screen.findByTestId('select-vpn'));
+        await act(async () => (await nextRequest(0)).reject(new Error('timeout')));
+
+        expect(screen.queryByText(STORAGE_COPY)).not.toBeInTheDocument();
+        expect(screen.queryByText(/allowed/i)).not.toBeInTheDocument();
+
+        await userEvent.click(screen.getByTestId('select-vpn'));
+        const retry = await nextRequest(1);
+        expect(retry.data.ValidateGuards).toBe(true);
+        await act(async () => retry.resolve(blocked));
+
+        expect(await screen.findByText(STORAGE_COPY)).toBeInTheDocument();
     });
 });
