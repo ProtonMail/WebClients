@@ -1,3 +1,7 @@
+import type { ReactNode } from 'react';
+
+import { c } from 'ttag';
+
 import { getCreditCardTypeByBrand } from '@proton/components/containers/payments/methods/PaymentMethodDetails';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { PlainPaymentMethodType } from '@proton/payments/core/interface';
@@ -19,30 +23,23 @@ interface Props {
     type: PlainPaymentMethodType;
 }
 
-const PaymentMethodIcon = ({ type }: Props) => {
-    if (type === PAYMENT_METHOD_TYPES.GOOGLE_PAY) {
-        return <img src={googlePaySvg} alt="Google pay" />;
-    } else if (type === PAYMENT_METHOD_TYPES.APPLE_PAY) {
-        return <img src={applePayIcon} alt="Apple pay" />;
-    } else if (type === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT) {
-        return <img src={bankTransferIcon} alt="SEPA" />;
-    } else if (type === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN) {
-        return <img src={bitcoinIcon} alt="Bitcoin" />;
-    } else if (type === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
-        return <img src={paypalIcon} alt="PayPal" />;
-    } else if (type === PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL) {
-        return <img src={idealIcon} alt="iDEAL" />;
-    } else if (type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD) {
-        return (
-            <span className="flex gap-1">
-                <img src={visaIcon} alt="Visa" width="32" />
-                <img src={masterCardIcon} alt="Mastercard" width="32" />
-                <img src={amexIcon} alt="American Express" width="32" />
-                <img src={additionalCardsIcon} alt="More cards" />
-            </span>
-        );
-    }
-    return null;
+const iconByMethodType: Partial<Record<PlainPaymentMethodType, () => ReactNode>> = {
+    [PAYMENT_METHOD_TYPES.GOOGLE_PAY]: () => <img src={googlePaySvg} alt="Google Pay" />,
+    [PAYMENT_METHOD_TYPES.APPLE_PAY]: () => <img src={applePayIcon} alt="Apple Pay" />,
+    [PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT]: () => <img src={bankTransferIcon} alt="SEPA" />,
+    [PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN]: () => <img src={bitcoinIcon} alt="Bitcoin" />,
+    [PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL]: () => <img src={paypalIcon} alt="PayPal" />,
+    [PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL]: () => <img src={idealIcon} alt="iDEAL" />,
+    [PAYMENT_METHOD_TYPES.CHARGEBEE_CARD]: () => (
+        <span className="flex gap-1">
+            <img src={visaIcon} alt="Visa" width="32" />
+            <img src={masterCardIcon} alt="Mastercard" width="32" />
+            <img src={amexIcon} alt="American Express" width="32" />
+            <img src={additionalCardsIcon} alt={c('Info').t`More cards`} />
+        </span>
+    ),
 };
+
+const PaymentMethodIcon = ({ type }: Props) => iconByMethodType[type]?.() ?? null;
 
 export default PaymentMethodIcon;
