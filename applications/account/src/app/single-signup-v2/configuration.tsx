@@ -48,7 +48,7 @@ import type { IconSize } from '@proton/icons/types';
 import { PLANS } from '@proton/payments/core/constants';
 import type { FreePlanDefault, Plan } from '@proton/payments/core/plan/interface';
 import { APPS, type APP_NAMES, DUO_MAX_USERS, FAMILY_MAX_USERS } from '@proton/shared/lib/constants';
-import { CSS_BASE_UNIT_SIZE } from '@proton/styles';
+import { CSS_BASE_UNIT_SIZE } from '@proton/styles/constants';
 
 import bundleVpnPass from './bundle-vpn-pass.svg';
 import bundle from './bundle.svg';
