@@ -19,7 +19,7 @@ const mockSession = {
 let webRequestRouter: typeof import("./webRequestRouter").webRequestRouter;
 
 beforeEach(async () => {
-    jest.doMock("../session", () => ({ appSession: () => mockSession }));
+    jest.doMock("./partitions", () => ({ appSession: () => mockSession }));
     await jest.isolateModulesAsync(async () => {
         ({ webRequestRouter } = await import("./webRequestRouter"));
     });

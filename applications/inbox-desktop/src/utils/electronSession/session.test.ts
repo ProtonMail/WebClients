@@ -3,10 +3,10 @@ import {
     destroyFeatureFlagManagerTest,
     getFeatureFlagManager,
     initializeFeatureFlagManagerTest,
-} from "./flags/manager";
-import { FeatureFlag } from "./flags/flags";
+} from "../flags/manager";
+import { FeatureFlag } from "../flags/flags";
 
-jest.mock("../store/safeStore/safeStore", () => ({
+jest.mock("../../store/safeStore/safeStore", () => ({
     SafeStore: class {
         get = jest.fn();
         set = jest.fn();
@@ -14,7 +14,7 @@ jest.mock("../store/safeStore/safeStore", () => ({
     },
 }));
 
-jest.mock("./log", () => ({
+jest.mock("../log", () => ({
     flagManagerLogger: {
         info: jest.fn(),
         debug: jest.fn(),
@@ -26,7 +26,7 @@ jest.mock("./log", () => ({
 const mockExecuteJavaScript = jest.fn();
 const mockGetMailView = jest.fn();
 
-jest.mock("./view/viewManagement", () => ({
+jest.mock("../view/viewManagement", () => ({
     getMailView: () => mockGetMailView(),
 }));
 
