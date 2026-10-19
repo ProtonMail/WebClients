@@ -2,7 +2,7 @@ import { BrowserWindowConstructorOptions } from "electron";
 import { MINIMUM_HEIGHT, MINIMUM_WIDTH, getWindowBounds } from "../../store/boundsStore";
 import { getSettings } from "../../store/settingsStore";
 import { isLinux, isMac, isWindows } from "../helpers";
-import { appSession } from "../session";
+import { appSession } from "../electronSession/partitions";
 import { MAIL_APP_NAME } from "@proton/shared/lib/constants";
 import { isProdEnv } from "../isProdEnv";
 import { getIconResourcePath } from "../../constants/resources";

@@ -35,7 +35,6 @@ import {
 import { getAllAppVersions, storeAppVersion } from "../utils/appVersions";
 import metrics from "../utils/metrics";
 import telemetryService from "../utils/telemetry";
-import { toggleAppCache } from "../utils/appCache";
 import { getLogs } from "../utils/log/getLogsIPC";
 import { handleLogoutIPC } from "../utils/logout/logout";
 import { profiler } from "../utils/profiler/profiler";
@@ -300,8 +299,7 @@ export const handleIPCCalls = () => {
                 case "setDefaultMailtoBannerDismissedPermanently":
                     setDefaultMailtoBannerDismissedPermanently();
                     break;
-                case "toggleAppCache":
-                    toggleAppCache({ enabled: payload });
+                case "toggleAppCache": // INDA-782 - remove-me
                     break;
                 case "setAllowedProtocols":
                     externalProtocolManager.extendAllowedProtocols(payload.source ?? "ipc", payload.protocols);
