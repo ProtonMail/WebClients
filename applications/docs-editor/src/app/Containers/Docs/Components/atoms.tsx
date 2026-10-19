@@ -2,6 +2,8 @@ import * as Ariakit from '@ariakit/react'
 import { clsx } from 'clsx'
 import type { ReactNode } from 'react'
 import { forwardRef } from 'react'
+import tinycolor from 'tinycolor2'
+import { getAccentColorForUsername } from '../Utils/getAccentColorForUsername'
 
 export type TooltipOptions = {
   /**
@@ -30,7 +32,7 @@ export type ButtonOptions = {
   /** @default 'solid' */
   shape?: 'solid' | 'ghost'
   /**
-   * The text colour of a ghost button. A solid button is always weak.
+   * `norm` fills a solid button with the primary colour, and colours a ghost button's text with it.
    * @default 'weak'
    */
   color?: 'norm' | 'weak'
@@ -51,9 +53,28 @@ const buttonBaseClassName = clsx(
   'disabled:pointer-events-none disabled:text-[--text-weak] disabled:opacity-50',
 )
 
-const buttonShapeClassNames: Record<NonNullable<ButtonOptions['shape']>, string> = {
-  solid: 'bg-[--interaction-weak] hover:bg-[--interaction-weak-major-1] active:bg-[--interaction-weak-major-2]',
-  ghost: 'bg-[--interaction-default] hover:bg-[--interaction-default-hover] active:bg-[--interaction-default-active]',
+type ButtonVariantClassNames = Record<
+  NonNullable<ButtonOptions['shape']>,
+  Record<NonNullable<ButtonOptions['color']>, string>
+>
+
+const ghostBackgroundClassName =
+  'bg-[--interaction-default] hover:bg-[--interaction-default-hover] active:bg-[--interaction-default-active]'
+
+const buttonBackgroundClassNames: ButtonVariantClassNames = {
+  solid: {
+    weak: 'bg-[--interaction-weak] hover:bg-[--interaction-weak-major-1] active:bg-[--interaction-weak-major-2]',
+    norm: 'bg-[--interaction-norm] hover:bg-[--interaction-norm-major-1] active:bg-[--interaction-norm-major-2]',
+  },
+  ghost: {
+    weak: ghostBackgroundClassName,
+    norm: ghostBackgroundClassName,
+  },
+}
+
+const buttonTextClassNames: ButtonVariantClassNames = {
+  solid: { weak: 'text-[--text-norm]', norm: 'text-[--interaction-norm-contrast]' },
+  ghost: { weak: 'text-[--text-norm]', norm: 'text-[--interaction-norm-major-1]' },
 }
 
 const ghostNormStateTextClassName =
@@ -94,11 +115,10 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
       {...props}
       className={clsx(
         buttonBaseClassName,
-        buttonShapeClassNames[shape],
+        buttonBackgroundClassNames[shape][color],
         isGhostNorm && ghostNormStateTextClassName,
         // shortcut: only `text-[--…]` counts as a caller text colour; widen the prefixes if callers use others.
-        !classNameSetsUtility(className, ['text-[--']) &&
-          (isGhostNorm ? 'text-[--interaction-norm-major-1]' : 'text-[--text-norm]'),
+        !classNameSetsUtility(className, ['text-[--']) && buttonTextClassNames[shape][color],
         !classNameSetsUtility(className, ['p-', 'px-']) && padding.x,
         !classNameSetsUtility(className, ['p-', 'py-']) && padding.y,
         !classNameSetsUtility(className, ['rounded']) && (pill ? 'rounded-[2em]' : 'rounded-[--border-radius-md]'),
@@ -106,6 +126,59 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
         className,
       )}
     />
+  )
+})
+
+export interface AvatarProps extends Omit<Ariakit.RoleProps<'span'>, 'color'> {
+  /** The name the avatar stands for. Its initial and, without `color`, its colour come from it. */
+  name?: string
+  /** The author's awareness colour, an `hsl()` string. */
+  color?: string
+}
+
+/**
+ * Proton's `UserAvatar` reads the hue off the awareness colour with a regex that drops a hue of 0,
+ * and falls back to the name's accent colour. Keep both, so a collaborator's avatar does not change
+ * colour now that Docs picks it here.
+ */
+function getAvatarHue(name: string, color: string | undefined) {
+  const awarenessColor = color ? tinycolor(color) : undefined
+  if (awarenessColor?.isValid()) {
+    const hue = awarenessColor.toHsl().h
+    if (hue) {
+      return hue
+    }
+  }
+  return tinycolor(getAccentColorForUsername(name)).toHsl().h
+}
+
+/**
+ * An author's initial on their own colour, in the 1.75rem square Proton's `UserAvatar` draws.
+ * Name it with `aria-label` and `role="img"`, or hide it with `aria-hidden` where the name is
+ * already shown beside it.
+ */
+export const Avatar = forwardRef<HTMLSpanElement, AvatarProps>(function Avatar(
+  { name, color, children, ...props },
+  ref,
+) {
+  const hue = name ? getAvatarHue(name, color) : undefined
+  return (
+    <Ariakit.Role.span
+      ref={ref}
+      {...props}
+      className={clsx(
+        'flex h-[1.75rem] w-[1.75rem] shrink-0 select-none items-center justify-center overflow-hidden rounded-[--border-radius-md] text-[.75rem] font-semibold capitalize',
+        hue === undefined && 'bg-[--background-strong]',
+        props.className,
+      )}
+      style={
+        hue === undefined
+          ? props.style
+          : { backgroundColor: `hsl(${hue}, 100%, 90%)`, color: `hsl(${hue}, 100%, 10%)`, ...props.style }
+      }
+    >
+      {children ?? name?.slice(0, 1)}
+    </Ariakit.Role.span>
   )
 })
 

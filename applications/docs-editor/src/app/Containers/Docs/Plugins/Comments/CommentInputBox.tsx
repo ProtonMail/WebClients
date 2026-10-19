@@ -1,4 +1,3 @@
-import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton'
 import type { LexicalEditor, RangeSelection } from 'lexical'
 import { createDOMRange } from '@lexical/selection'
 import { $getSelection, $isRangeSelection } from 'lexical'
@@ -7,6 +6,7 @@ import { CommentsComposer } from './CommentsComposer'
 import { c } from 'ttag'
 import { Icon } from '../../Components/Icon'
 import * as Icons from '../../Components/icons'
+import { IconButton } from '../../Components/ui'
 import { useCommentsContext } from './CommentsContext'
 import { createRectsFromDOMRange } from '../../Utils/createRectsFromDOMRange'
 
@@ -154,14 +154,16 @@ export function CommentInputBox({ editor, cancelAddComment }: { editor: LexicalE
         onCancel={cancelAddComment}
         onTextContentChange={onTextChange}
         buttons={(canSubmit, submitComment) => (
-          <ToolbarButton
-            className="bg-primary rounded-full p-1"
-            title={c('Action').t`Add comment`}
-            icon={<Icon data={Icons.arrowUp} size={3.5} />}
+          <IconButton
+            label={c('Action').t`Add comment`}
+            color="norm"
+            pill
             disabled={!canSubmit}
             onClick={submitComment}
             data-testid="comments-floating-send-button"
-          />
+          >
+            <Icon data={Icons.arrowUp} size={3.5} />
+          </IconButton>
         )}
         data-testid="comments-floating-input-section"
       />
