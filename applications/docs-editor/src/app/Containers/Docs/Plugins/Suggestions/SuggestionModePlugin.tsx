@@ -26,7 +26,7 @@ import { useEffect, useRef } from 'react'
 import { ProtonNode, $isSuggestionNode } from './ProtonNode'
 import { SuggestionTypesThatCanBeEmpty, type SuggestionID } from './Types'
 import { BEFOREINPUT_EVENT_COMMAND, COMPOSITION_START_EVENT_COMMAND, INSERT_FILE_COMMAND } from '../../Commands/Events'
-import type { CommentThreadInterface } from '@proton/docs-shared'
+import type { DocsCommentThread } from '../../contract/DocsCommentThread'
 import type { SuggestionSummaryType } from '../../contract/SuggestionType'
 import { useMarkNodesContext } from '../MarkNodesContext'
 import { ACCEPT_SUGGESTION_COMMAND, REJECT_SUGGESTION_COMMAND, TOGGLE_SUGGESTION_MODE_COMMAND } from './Commands'
@@ -101,8 +101,8 @@ export function SuggestionModePlugin({
     suggestionID: string,
     commentContent: string,
     suggestionType: SuggestionSummaryType,
-  ): Promise<CommentThreadInterface | undefined>
-  getAllThreads(): Promise<CommentThreadInterface[]>
+  ): Promise<DocsCommentThread | undefined>
+  getAllThreads(): Promise<DocsCommentThread[]>
   reopenSuggestion(threadId: string): Promise<boolean>
   rejectSuggestion(threadId: string): Promise<boolean>
   onUserModeChange: (mode: EditorUserMode) => void

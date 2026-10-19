@@ -22,6 +22,7 @@ import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
 import { EditorUserMode } from '../Lib/EditorUserMode'
 import { exportDataFromEditorState } from './Docs/Conversion/Exporter/ExportDataFromEditorState'
 import { loadLocales } from '@proton/account/bootstrap'
+import { dateLocale } from '@proton/shared/lib/i18n'
 import { PreviewModeEditor } from './Docs/PreviewModeEditor'
 import { rejectAllSuggestions } from './Docs/Plugins/Suggestions/rejectAllSuggestions'
 import { removeCommentThreadMarks } from './Docs/Utils/removeCommentThreadMarks'
@@ -263,6 +264,8 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
 
       async loadUserSettings(settings) {
         void loadLocales({ locales, userSettings: settings })
+          .catch(reportErrorToSentry)
+          .finally(() => application.setDateLocale(dateLocale))
         application.setLocale(settings.Locale)
       },
 

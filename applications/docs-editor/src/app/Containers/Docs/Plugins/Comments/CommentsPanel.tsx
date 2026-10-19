@@ -1,9 +1,9 @@
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
-import type { CommentThreadInterface } from '@proton/docs-shared'
 import { Icon } from '../../Components/Icon'
 import * as Icons from '../../Components/icons'
-import { CommentThreadState } from '@proton/docs-shared'
-import clsx from 'clsx'
+import type { DocsCommentThread } from '../../contract/DocsCommentThread'
+import { CommentThreadStates } from '../../contract/DocsCommentThread'
+import { clsx } from 'clsx'
 import { memo, useMemo } from 'react'
 import { c } from 'ttag'
 import { CommentsPanelList } from './CommentsPanelList'
@@ -12,7 +12,7 @@ function CommentsPanel({
   threads,
   setShowComments,
 }: {
-  threads: CommentThreadInterface[]
+  threads: DocsCommentThread[]
   setShowComments: (show: boolean) => void
 }): JSX.Element {
   const [editor] = useLexicalComposerContext()
@@ -20,10 +20,10 @@ function CommentsPanel({
   const isEmpty = threads.length === 0
 
   const active = useMemo(
-    () => threads.filter((thread) => thread.state === CommentThreadState.Active).reverse(),
+    () => threads.filter((thread) => thread.state === CommentThreadStates.Active).reverse(),
     [threads],
   )
-  const resolved = useMemo(() => threads.filter((thread) => thread.state !== CommentThreadState.Active), [threads])
+  const resolved = useMemo(() => threads.filter((thread) => thread.state !== CommentThreadStates.Active), [threads])
 
   return (
     <div

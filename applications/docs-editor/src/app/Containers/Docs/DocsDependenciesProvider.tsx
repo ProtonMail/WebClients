@@ -4,6 +4,7 @@ import type { DocsLogger } from './contract/DocsLogger'
 import type { SafeDocsUserState } from './contract/Awareness'
 import type { WordCountInfoCollection } from './Utils/WordCount/WordCountTypes'
 import type { DocsComments } from './contract/DocsComments'
+import type { DocsDateFormat } from './contract/DocsDateFormat'
 import type { DocsEditorTelemetryEvent } from './contract/DocsEditorTelemetry'
 
 import type { EmojiMessages } from './Plugins/emoji/emojiMessages'
@@ -17,6 +18,7 @@ export type DocsDependencies = {
   canEdit: boolean
   canComment: boolean
   languageCode: Intl.LocalesArgument
+  dateFormat: DocsDateFormat
   getDisplayNameForEmail: (email: string | undefined) => string
   comments: DocsComments
   reportError: (error: unknown, extra?: Record<string, unknown>) => void

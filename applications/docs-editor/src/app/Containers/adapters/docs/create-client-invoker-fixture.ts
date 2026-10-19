@@ -5,6 +5,11 @@ import { createStandaloneDocClient } from '../../../../standalone-doc/client'
 export function createClientInvokerFixture(): EditorRequiresClientMethods {
   return {
     ...createStandaloneDocClient(jest.fn(), () => () => {}),
+    // The standalone client answers in the editor's own comment contract, which the host's is wider than.
+    getAllThreads: jest.fn(async () => []),
+    createComment: jest.fn(async () => undefined),
+    createCommentThread: jest.fn(async () => undefined),
+    createSuggestionThread: jest.fn(async () => undefined),
     editorRequestsPropagationOfUpdate: jest.fn(async () => {}),
     editorReportingEvent: jest.fn(async () => {}),
     editorReportingTelemetry: jest.fn(async () => {}),
