@@ -44,14 +44,20 @@ type MemberRolesResponse = {
     RequiresOrgKeyPromotion: boolean;
 };
 
+/** Only the batch endpoint reports org key demotion state. */
+type BatchMemberRolesResponse = MemberRolesResponse & {
+    RequiresOrgKeyDemotion: boolean;
+    HasScheduledOrgKeyDemotion: boolean;
+};
+
 type MembersRolesResponse = {
-    Members: (MemberRolesResponse & { MemberID: string })[];
+    Members: (BatchMemberRolesResponse & { MemberID: string })[];
 };
 
 /** One member's roles request as committed in bulk by {@link getMemberRolesBatch}; no response means it failed. */
 type MemberRolesResult = {
     member: Member;
-    response: MemberRolesResponse | undefined;
+    response: BatchMemberRolesResponse | undefined;
 };
 
 enum ValueType {
@@ -135,6 +141,8 @@ const slice = createSlice({
                         roleState: 'initial',
                         UserOrganizationRoles: [],
                         requiresOrgKeyPromotion: false,
+                        requiresOrgKeyDemotion: false,
+                        hasScheduledOrgKeyDemotion: false,
                     }),
                     merge: (a, b): EnhancedMember => ({
                         ...a,
@@ -181,6 +189,8 @@ const slice = createSlice({
                 roleState: 'initial' as const,
                 UserOrganizationRoles: [],
                 requiresOrgKeyPromotion: false,
+                requiresOrgKeyDemotion: false,
+                hasScheduledOrgKeyDemotion: false,
             };
             if (memberIndex === -1) {
                 state.value.push(newMember);
@@ -204,6 +214,8 @@ const slice = createSlice({
                     // here would mask a member whose org key grant is still pending. It's cleared by an
                     // explicit getMemberRoles refetch instead.
                     requiresOrgKeyPromotion: previousMember.requiresOrgKeyPromotion,
+                    requiresOrgKeyDemotion: previousMember.requiresOrgKeyDemotion,
+                    hasScheduledOrgKeyDemotion: previousMember.hasScheduledOrgKeyDemotion,
                 };
                 const mergedValue: EnhancedMember = {
                     ...newMember,
@@ -280,6 +292,8 @@ const slice = createSlice({
                 member.roleState = 'full';
                 member.UserOrganizationRoles = response.RoleAssignments;
                 member.requiresOrgKeyPromotion = response.RequiresOrgKeyPromotion;
+                member.requiresOrgKeyDemotion = response.RequiresOrgKeyDemotion;
+                member.hasScheduledOrgKeyDemotion = response.HasScheduledOrgKeyDemotion;
             });
         },
         invalidateMemberRoles: (state, action: PayloadAction<{ member: Member }>) => {
@@ -347,6 +361,8 @@ const slice = createSlice({
                             roleState: 'initial',
                             UserOrganizationRoles: [],
                             requiresOrgKeyPromotion: false,
+                            requiresOrgKeyDemotion: false,
+                            hasScheduledOrgKeyDemotion: false,
                         };
                     },
                     merge: (a, b): EnhancedMember => {
@@ -390,6 +406,8 @@ const modelThunk = (options?: {
                         roleState: 'initial' as const,
                         UserOrganizationRoles: [],
                         requiresOrgKeyPromotion: false,
+                        requiresOrgKeyDemotion: false,
+                        hasScheduledOrgKeyDemotion: false,
                     }));
                 });
                 return {
@@ -484,7 +502,7 @@ export const getMemberAddresses = ({
 const MEMBER_ROLES_CHUNK_SIZE = 250;
 
 const getRolesByMemberID = ({ Members }: MembersRolesResponse) =>
-    new Map<string, MemberRolesResponse>(Members.map((memberRoles) => [memberRoles.MemberID, memberRoles]));
+    new Map<string, BatchMemberRolesResponse>(Members.map((memberRoles) => [memberRoles.MemberID, memberRoles]));
 
 const getTemporaryRolePromiseMap = (() => {
     let map: undefined | Map<string, Promise<RoleAssignment[]>>;
@@ -592,7 +610,7 @@ export const getMemberRolesBatch = ({
             const rolesByMemberID = await extra
                 .api<MembersRolesResponse>(getMembersOrganizationRoles(group.map(({ ID }) => ID)))
                 .then(getRolesByMemberID)
-                .catch(() => new Map<string, MemberRolesResponse>());
+                .catch(() => new Map<string, BatchMemberRolesResponse>());
 
             const results = group.map((member) => ({ member, response: rolesByMemberID.get(member.ID) }));
             dispatch(slice.actions.memberRolesFetchSettled(results));

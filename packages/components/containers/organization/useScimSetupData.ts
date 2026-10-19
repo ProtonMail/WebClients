@@ -3,9 +3,12 @@ import { useEffect, useState } from 'react';
 import { useGetGroupMembers } from '@proton/account/groupMembers/hooks';
 import { getIsScimGroup } from '@proton/account/groups/groupFlags';
 import { useGroups } from '@proton/account/groups/hooks';
+import { useMembers } from '@proton/account/members/hooks';
+import { useMemberRoles } from '@proton/account/members/useMemberRoles';
 import {
     ItemStatus,
     Phase,
+    selectMembersRequiringOrgKeyDemotion,
     selectPendingScimGroups,
     selectPendingScimMembersByGroup,
     selectPendingScimUsers,
@@ -49,6 +52,11 @@ const useScimSetupData = () => {
     const pendingUsers = useSelector(selectPendingScimUsers);
     const pendingGroups = useSelector(selectPendingScimGroups);
     const pendingMembersByGroup = useSelector(selectPendingScimMembersByGroup);
+    const membersRequiringOrgKeyDemotion = useSelector(selectMembersRequiringOrgKeyDemotion);
+
+    // Org key demotion state comes with the member roles, which the Groups page doesn't load otherwise
+    const [members] = useMembers();
+    useMemberRoles({ members: isEnabled ? members : undefined });
 
     const getGroupMembers = useGetGroupMembers();
     const [groups] = useGroups();
@@ -118,6 +126,7 @@ const useScimSetupData = () => {
         pendingUsers,
         pendingGroups,
         pendingMembersByGroup,
+        membersRequiringOrgKeyDemotion,
         userStatuses,
         groupStatuses,
         groupMemberStatuses,
