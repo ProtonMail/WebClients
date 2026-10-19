@@ -51,6 +51,8 @@ interface HarnessOptions {
     onInitializeMessage?: (id: string) => void;
     /** The composer id `composeDraft` adds to the store, as `onCompose` does; null for a refused compose. */
     opensComposer?: string | null;
+    /** The folder the user is on; the Inbox unless the case says otherwise. */
+    labelID?: string;
 }
 
 /** `composer-0` starts open, so a test that expects a newly opened composer fails if it names that one. */
@@ -61,6 +63,7 @@ export const composeHarness = ({
     changeability = {},
     onInitializeMessage,
     opensComposer = 'composer-1',
+    labelID = MAILBOX_LABEL_IDS.INBOX,
 }: HarnessOptions = {}) => {
     const composed: { action: MESSAGE_ACTIONS; referenceMessage: PartialMessageState; bodyBeforeQuote?: string }[] = [];
     const written: { composerID: string; body: string }[] = [];
@@ -73,7 +76,7 @@ export const composeHarness = ({
                 composers: { composers },
                 messages,
                 conversations,
-                elements: { elements: {}, params: { labelID: MAILBOX_LABEL_IDS.INBOX } },
+                elements: { elements: {}, params: { labelID } },
             }),
         },
         getContactEmails: () => [ADA],
