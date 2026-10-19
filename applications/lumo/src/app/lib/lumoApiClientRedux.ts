@@ -44,6 +44,7 @@ import { recordLastRequest } from '../services/feedback/lastRequestStore';
 import { applyUsageFromStreamMessage } from '../services/usageLimitsStore';
 import { ConversationStatus, Role } from '../types';
 import { CONTEXT_LENGTH_EXCEEDED_CODE } from '../types-api';
+import { getLumoFeatureFlagsForChatCompletions } from '../util/unleashFeatureFlagsForObservability';
 import { createImageAttachment, generateImageMarkdown } from './imageAttachment';
 
 export const getTerminalTypeForApiError = (error: unknown) => {
@@ -103,9 +104,12 @@ export function sendMessageWithRedux(
             ...config,
         });
 
+        const featureFlags = getLumoFeatureFlagsForChatCompletions();
+
         try {
             return await client.callAssistant(api, turns, {
                 ...assistantOptions,
+                featureFlags,
                 chunkCallback: async (message: GenerationResponseMessage) => {
                     switch (message.type) {
                         case 'tool-error':

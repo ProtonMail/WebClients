@@ -1,5 +1,6 @@
 import type {
     ChatCompletionsContentPart,
+    ChatCompletionsFeatureFlags,
     ChatCompletionsFunctionTool,
     ChatCompletionsImagePart,
     ChatCompletionsLumoExtension,
@@ -41,6 +42,8 @@ export type ToChatCompletionsOptions = {
      * request. Merged with `request.options.tools`.
      */
     serverTools?: ToolName[];
+    /** Lumo Unleash toggles attached to `lumo.feature_flags` for observability. */
+    featureFlags?: ChatCompletionsFeatureFlags;
 };
 
 export function resolveChatModel(modelTier: LumoApiModelTier = 'auto', model?: string): string {
@@ -231,6 +234,10 @@ function buildLumoExtension(
 
     if (request.options?.image_aspect_ratio) {
         lumo.image_aspect_ratio = request.options.image_aspect_ratio;
+    }
+
+    if (options.featureFlags !== undefined) {
+        lumo.feature_flags = options.featureFlags;
     }
 
     return lumo;
