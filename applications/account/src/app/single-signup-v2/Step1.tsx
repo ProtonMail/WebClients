@@ -642,7 +642,7 @@ const Step1 = ({
             : getFreeSubscriptionData(model.subscriptionData);
 
     const termsAndConditionsLink = (
-        <Href className="color-weak" key="terms" href={getLocaleTermsURL(app)}>
+        <Href className="color-norm" key="terms" href={getLocaleTermsURL(app)}>
             {
                 // translator: Full sentence "By continuing, you agree to our terms and conditions and privacy policy."
                 c('new_plans: signup').t`terms and conditions`
@@ -651,7 +651,7 @@ const Step1 = ({
     );
 
     const privacyPolicyLink = (
-        <Href className="color-weak" key="privacy" href={getPrivacyPolicyURL(app)}>
+        <Href className="color-norm" key="privacy" href={getPrivacyPolicyURL(app)}>
             {
                 // translator: Full sentence "By continuing, you agree to our terms and conditions and privacy policy."
                 c('Link').t`privacy policy`
@@ -660,7 +660,7 @@ const Step1 = ({
     );
 
     const terms = (
-        <div className="mt-4 text-sm color-weak text-center">
+        <div className="mt-4 text-sm text-center">
             {
                 // translator: Full sentence "By continuing, you agree to our terms and conditions and privacy policy."
                 c('pass_signup_2023: Info')
@@ -717,7 +717,7 @@ const Step1 = ({
             taxInclusive: () => null,
             renewalNotice: ({ content }) =>
                 !checkTrial ? (
-                    <div className="w-full text-sm color-norm opacity-70">
+                    <div className="w-full mt-4 text-sm color-norm text-center">
                         <span className="pr-1">*</span>
                         {content}
                     </div>
@@ -911,7 +911,6 @@ const Step1 = ({
                 </div>
             }
             logo={logo}
-            footer={checkoutView.render('renewalNotice')}
             hasDecoration
             bottomRight={<SignupSupportDropdown isDarkBg={isDarkBg} />}
             className={className}
@@ -1542,6 +1541,7 @@ const Step1 = ({
                                     selectedMethodRef.current = method;
                                 }}
                                 couponConfig={couponConfig}
+                                renewalNotice={checkoutView.render('renewalNotice')}
                             />
                         </BoxContent>
                     </Box>

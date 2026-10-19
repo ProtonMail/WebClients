@@ -80,6 +80,7 @@ interface Props {
     telemetryContext: PaymentTelemetryContext;
     onMethodChanged: (method: AvailablePaymentMethod) => void;
     couponConfig: CouponConfigMetadata | undefined;
+    renewalNotice: ReactNode;
 }
 
 const AccountStepPayment = ({
@@ -109,6 +110,7 @@ const AccountStepPayment = ({
     telemetryContext,
     onMethodChanged,
     couponConfig,
+    renewalNotice,
 }: Props) => {
     const signupV2Theme = useSignupV2Theme();
     const formRef = useRef<HTMLFormElement>(null);
@@ -424,7 +426,7 @@ const AccountStepPayment = ({
                     // Users who selected bitcoin, can't click "pay" to signup. They need to transfer BTC to the
                     // displayed address, and then the subscription will be created.
                     if (isBitcoin && isAuthenticated) {
-                        return null;
+                        return renewalNotice;
                     }
 
                     const buttonProps = isBitcoin
@@ -472,18 +474,13 @@ const AccountStepPayment = ({
                                 pill
                                 data-testid="pay"
                                 className="lumo-payment-trigger" //do not remove `lumo-payment-trigger` it's being used by lumo mobile
-                                suffix={(type) => {
-                                    if (type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD) {
-                                        return (
-                                            <>
-                                                {guaranteeElement}
-                                                {showAlert3ds && <Alert3ds />}
-                                            </>
-                                        );
-                                    }
-
-                                    return guaranteeElement;
-                                }}
+                                suffix={(type) => (
+                                    <>
+                                        {guaranteeElement}
+                                        {renewalNotice}
+                                        {type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD && showAlert3ds && <Alert3ds />}
+                                    </>
+                                )}
                                 formInvalid={!isFormValid}
                                 // optimistic check result means that we didn't perform the actual check call because it was
                                 // forbidden due to combination of current subscription and the new plan/cycle/currency.

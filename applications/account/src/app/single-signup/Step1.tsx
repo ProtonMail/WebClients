@@ -6,14 +6,12 @@ import { c } from 'ttag';
 
 import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
-import { Href } from '@proton/atoms/Href/Href';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { Vr } from '@proton/atoms/Vr/Vr';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Price from '@proton/components/components/price/Price';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import Toggle from '@proton/components/components/toggle/Toggle';
-import Alert3ds from '@proton/components/containers/payments/Alert3ds';
 import CurrencySelector from '@proton/components/containers/payments/CurrencySelector';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
 import { useVpn2024SignupExperiment } from '@proton/components/containers/payments/subscription/helpers/useVpn2024SignupExperiment';
@@ -32,7 +30,6 @@ import { usePaymentFacade } from '@proton/payments-ui/client-extensions/usePayme
 import { usePaymentsApi } from '@proton/payments-ui/react-extensions/usePaymentsApi';
 import { useBillingAddress } from '@proton/payments-ui/ui/billing-address/hooks/useBillingAddress';
 import { PayButton } from '@proton/payments-ui/ui/components/PayButton';
-import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/payments-ui/ui/components/RenewalNotice';
 import type { FullBillingAddressFlat } from '@proton/payments/core/billing-address/billing-address';
 import { getBillingAddressFromPaymentStatus } from '@proton/payments/core/billing-address/billing-address-from-payments-status';
 import { type PaymentsCheckoutUI, getCheckoutUi, getOptimisticCheckResult } from '@proton/payments/core/checkout';
@@ -77,7 +74,6 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 import { VPN_SERVERS } from '@proton/vpn/constants/vpnServers';
 
-import { getLocaleTermsURL } from '../content/helper';
 import SignupSupportDropdown from '../signup/SignupSupportDropdown';
 import { getSubscriptionPrices } from '../signup/helper';
 import type { SignupCacheResult, SubscriptionData } from '../signup/interfaces';
@@ -100,6 +96,7 @@ import Guarantee from './Guarantee';
 import GuaranteeCard from './GuaranteeCard';
 import type { Background } from './Layout';
 import Layout from './Layout';
+import PayButtonSuffix from './PayButtonSuffix';
 import PaymentSummary from './PaymentSummary';
 import RightPlanSummary from './RightPlanSummary';
 import SignIntoLink from './SignIntoLink';
@@ -656,18 +653,6 @@ const Step1 = ({
         onVatChange: (vatNumber) => debouncedHandleOptimistic({ vatNumber }),
     });
 
-    const termsHref = (() => {
-        return getLocaleTermsURL(APPS.PROTONVPN_SETTINGS);
-    })();
-    const termsAndConditions = (
-        <Href key="terms" href={termsHref} className="color-weak">
-            {
-                // translator: Full sentence "By clicking on "Pay", you agree to our terms and conditions."
-                c('new_plans: signup').t`terms and conditions`
-            }
-        </Href>
-    );
-
     const getCheckoutForCycle = (
         planIDs: PlanIDs,
         subscriptionMapping: CycleMapping<SubscriptionData>,
@@ -865,21 +850,6 @@ const Step1 = ({
 
     // const isCyberWeekPeriod = getIsCyberWeekPeriod();
     // const isBlackFridayPeriod = getIsBlackFridayPeriod();
-
-    const showRenewalNotice = !hasSelectedFree;
-    const renewalNotice = showRenewalNotice && (
-        <div className="w-full text-sm color-norm opacity-70 text-center">
-            <div className="mx-auto w-full md:w-7/10">
-                *
-                {getCheckoutRenewNoticeTextFromCheckResult({
-                    checkResult: options.checkResult,
-                    plansMap: model.plansMap,
-                    planIDs: options.planIDs,
-                    app: APPS.PROTONVPN_SETTINGS,
-                })}
-            </div>
-        </div>
-    );
 
     const process = (processor: PaymentProcessorHook | undefined) => {
         async function run() {
@@ -1205,7 +1175,6 @@ const Step1 = ({
     return (
         <Layout
             hasDecoration
-            footer={renewalNotice}
             className={className}
             bottomRight={
                 <SignupSupportDropdown
@@ -1575,22 +1544,6 @@ const Step1 = ({
                                             if (loadingPaymentsForm) {
                                                 return;
                                             }
-                                            const guaranteeElement = hasGuarantee ? (
-                                                <div className="text-center color-success my-4">
-                                                    <Guarantee />
-                                                </div>
-                                            ) : null;
-                                            const tncElement = (
-                                                <div className="mt-4 text-sm color-weak text-center">
-                                                    {checkTrial
-                                                        ? // translator: Full sentence "By clicking on "Try", you agree to our terms and conditions."
-                                                          c('b2b_trials_2025_Info')
-                                                              .jt`By clicking on "Try", you agree to our ${termsAndConditions}.`
-                                                        : // translator: Full sentence "By clicking on "Pay", you agree to our terms and conditions."
-                                                          c('new_plans: signup')
-                                                              .jt`By clicking on "Pay", you agree to our ${termsAndConditions}.`}
-                                                </div>
-                                            );
 
                                             return (
                                                 <PayButton
@@ -1603,15 +1556,15 @@ const Step1 = ({
                                                     loading={loadingSignup}
                                                     disabled={disablePayButton}
                                                     suffix={(type) => (
-                                                        <>
-                                                            {guaranteeElement}
-                                                            {type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD ? (
-                                                                <Alert3ds />
-                                                            ) : (
-                                                                ''
-                                                            )}
-                                                            {tncElement}
-                                                        </>
+                                                        <PayButtonSuffix
+                                                            paymentMethodType={type}
+                                                            hasGuarantee={hasGuarantee}
+                                                            hasSelectedFree={hasSelectedFree}
+                                                            checkTrial={checkTrial}
+                                                            checkResult={options.checkResult}
+                                                            plansMap={model.plansMap}
+                                                            planIDs={options.planIDs}
+                                                        />
                                                     )}
                                                     formInvalid={!isFormValid}
                                                     product={APPS.PROTONVPN_SETTINGS}
