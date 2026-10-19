@@ -1,17 +1,16 @@
 import { $getRoot } from 'lexical'
+import { applyUpdate, Doc } from 'yjs'
 import * as ReactTestUtils from '../TestUtils/react-test-utils'
 import type { EditorClient } from '../TestUtils/EditorClient'
 import { createEditorClient } from '../TestUtils/EditorClient'
 import type { RtsMessagePayload } from '@proton/docs-shared/lib/Doc/RtsMessagePayload'
 
-function corruptBytes(bytes: Uint8Array<ArrayBuffer>, corruptionRate = 0.1): Uint8Array<ArrayBuffer> {
-  const corrupted = new Uint8Array(bytes)
-  for (let i = 0; i < corrupted.length; i++) {
-    if (Math.random() < corruptionRate) {
-      corrupted[i] = Math.floor(Math.random() * 256)
-    }
-  }
-  return corrupted
+/**
+ * Keeps only the client and struct counts of a Yjs update, so decoding fails before any struct is integrated.
+ * Randomly overwriting bytes is not used because some corruptions still decode as a valid, destructive update.
+ */
+function corruptBytes(bytes: Uint8Array<ArrayBuffer>): Uint8Array<ArrayBuffer> {
+  return bytes.slice(0, 2)
 }
 
 async function getExampleEdits() {
@@ -82,7 +81,9 @@ describe('YjsReadonlyPlugin', () => {
       const { exampleEdits } = await getExampleEdits()
 
       const lastEdit = exampleEdits[exampleEdits.length - 1].content
-      exampleEdits[exampleEdits.length - 1].content = corruptBytes(lastEdit)
+      const corruptedEdit = corruptBytes(lastEdit)
+      expect(() => applyUpdate(new Doc(), corruptedEdit)).toThrow()
+      exampleEdits[exampleEdits.length - 1].content = corruptedEdit
 
       const expectedState = await getEditorStateWhenApplyingEdits(exampleEdits.slice(0, -1))
 
