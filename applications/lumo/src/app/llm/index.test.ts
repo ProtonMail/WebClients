@@ -41,7 +41,7 @@ describe('prepareTurns — artifact tool nudge', () => {
             'create'
         );
         const nudge = turns.find((turn) => turn.role === Role.System && turn.content?.includes('create_artifact'));
-        expect(nudge?.content).toContain('activated Create Artifact mode');
+        expect(nudge?.content).toContain('answered as a creation in the canvas');
     });
 
     it('injects the judgment-based nudge (not the forced one) when artifactToolMode is "auto"', () => {
@@ -57,7 +57,7 @@ describe('prepareTurns — artifact tool nudge', () => {
         );
         const nudge = turns.find((turn) => turn.role === Role.System && turn.content?.includes('create_artifact'));
         expect(nudge?.content).toContain('most messages should be answered normally in the chat');
-        expect(nudge?.content).not.toContain('activated Create Artifact mode');
+        expect(nudge?.content).not.toContain('answered as a creation in the canvas');
     });
 
     it('injects the revise-only nudge when artifactToolMode is "revise"', () => {
@@ -73,7 +73,7 @@ describe('prepareTurns — artifact tool nudge', () => {
         );
         const nudge = turns.find((turn) => turn.role === Role.System && turn.content?.includes('create_artifact'));
         expect(nudge?.content).toContain('only to revise');
-        expect(nudge?.content).not.toContain('activated Create Artifact mode');
+        expect(nudge?.content).not.toContain('answered as a creation in the canvas');
     });
 });
 

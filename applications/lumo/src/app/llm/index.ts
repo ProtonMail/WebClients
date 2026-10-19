@@ -110,9 +110,9 @@ function attachmentToWireImage(attachment: Attachment): WireImage {
     };
 }
 
-// The user explicitly opted in this turn (clicked "Create artifact" in the composer), so there's
+// The user explicitly opted in this turn (Create mode in the composer), so there's
 // no need to convince the model the content "qualifies" — just tell it what to do.
-const ARTIFACT_TOOL_CREATE_NUDGE = `The user has activated Create Artifact mode for this message. Produce your response using the "${CREATE_ARTIFACT_TOOL_NAME}" tool (see its description for format and when it applies) — either creating a new artifact or revising one already in this conversation, whichever the request calls for.`;
+const ARTIFACT_TOOL_CREATE_NUDGE = `The user has asked for this message to be answered as a creation in the canvas. Produce your response using the "${CREATE_ARTIFACT_TOOL_NAME}" tool (see its description for format and when it applies) — either creating a new artifact or revising one already in this conversation, whichever the request calls for.`;
 
 // Creation is enabled by default, so the tool is registered on ordinary turns. The model must
 // decide for itself whether the request qualifies — and the default answer is "no". Without an
@@ -124,7 +124,7 @@ const ARTIFACT_TOOL_AUTO_NUDGE = `The "${CREATE_ARTIFACT_TOOL_NAME}" tool is ava
 // available so ordinary follow-ups (including the artifact panel's own selection-based inline-edit
 // requests) can revise it. Explicitly scoped to revision only: the user turned creation off, so
 // the model must not spawn a second, unrelated artifact.
-const ARTIFACT_TOOL_REVISE_NUDGE = `The "${CREATE_ARTIFACT_TOOL_NAME}" tool is available in this conversation only to revise an artifact already created earlier (reuse its exact "id"). Do not use it to create a new, unrelated artifact — the user has turned off artifact creation, so write any new content in the chat instead.`;
+const ARTIFACT_TOOL_REVISE_NUDGE = `The "${CREATE_ARTIFACT_TOOL_NAME}" tool is available in this conversation only to revise an artifact already created earlier (reuse its exact "id"). Do not use it to create a new, unrelated artifact — the user has turned off creations, so write any new content in the chat instead.`;
 
 function getArtifactToolNudge(mode: Exclude<ArtifactToolMode, 'off'>): string {
     if (mode === 'create') {

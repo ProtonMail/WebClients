@@ -9,8 +9,8 @@ import type { ArtifactType } from './parseArtifacts';
 const ARTIFACT_ICON_TYPES: ArtifactType[] = ['document', 'code', 'webpage', 'presentation'];
 
 const LOADING_MESSAGES = [
-    () => c('collider_2025:Info').t`Creating artifact…`,
-    () => c('collider_2025:Info').t`Preparing your side panel…`,
+    () => c('collider_2025:Info').t`Creating…`,
+    () => c('collider_2025:Info').t`Preparing your canvas…`,
     () => c('collider_2025:Info').t`Drafting content…`,
     () => c('collider_2025:Info').t`Almost ready…`,
 ] as const;

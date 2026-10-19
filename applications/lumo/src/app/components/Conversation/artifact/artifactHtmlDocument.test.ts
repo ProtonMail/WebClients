@@ -78,7 +78,7 @@ describe('buildArtifactFileName', () => {
         ['Plan - v2', 'Plan - v2.pdf'],
         ['Tab\tand\nnewline', 'Tab and newline.pdf'],
         ['Résumé 日本語', 'Résumé 日本語.pdf'],
-        ['???', 'artifact.pdf'],
+        ['???', 'creation.pdf'],
     ])('keeps "%s" readable as "%s"', (title, expected) => {
         expect(buildArtifactFileName({ id: 'a1', type: 'document', title, content: 'x' }, 'pdf')).toBe(expected);
     });

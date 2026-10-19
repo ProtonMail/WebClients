@@ -1,5 +1,5 @@
-import { Suspense, lazy } from 'react';
-import { Route, BrowserRouter as Router, Switch, useRouteMatch } from 'react-router-dom';
+import React, { Suspense, lazy } from 'react';
+import { Redirect, Route, BrowserRouter as Router, Switch, useRouteMatch } from 'react-router-dom';
 
 import ConversationSkeleton from '../components/ConversationSkeleton';
 import DebugView from '../features/dev/DebugView';
@@ -27,7 +27,7 @@ const SchedulesView = lazy(() =>
 
 export function InnerApp() {
     const { url } = useRouteMatch(); // either "/guest" or "/u/:sessionId"
-    const { apiKeyManagement, imageTools, aiPaperTrailRoute, schedules } = useLumoFlags();
+    const { apiKeyManagement, imageTools, artifactsView, aiPaperTrailRoute, schedules } = useLumoFlags();
 
     return (
         <PandocProvider>
@@ -49,7 +49,20 @@ export function InnerApp() {
                                 <Switch>
                                     <Route exact path="/projects" component={ProjectsView} />
                                     <Route path="/projects/:projectId" component={ProjectDetailView} />
-                                    {imageTools && <Route exact path="/images" component={ConversationPage} />}
+                                    {artifactsView && <Route exact path="/library" component={ConversationPage} />}
+                                    {imageTools && !artifactsView && (
+                                        <Route exact path="/images" component={ConversationPage} />
+                                    )}
+                                    {/* With artifacts view, Images and Creations are Library tabs. */}
+                                    {artifactsView && imageTools && (
+                                        <Redirect
+                                            exact
+                                            from="/images"
+                                            to={{ pathname: '/library', search: '?tab=images' }}
+                                        />
+                                    )}
+                                    {artifactsView && <Redirect exact from="/creations" to="/library" />}
+                                    {!artifactsView && imageTools && <Redirect exact from="/library" to="/images" />}
                                     {apiKeyManagement && <Route exact path="/docs/api" component={ApiDocsPage} />}
                                     <Route exact path="/chats" component={AllChatsView} />
                                     {schedules && <Route exact path="/schedules" component={SchedulesView} />}

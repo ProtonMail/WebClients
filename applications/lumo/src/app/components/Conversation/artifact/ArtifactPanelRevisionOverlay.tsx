@@ -7,7 +7,7 @@ import { ARTIFACT_TYPE_CONFIG } from './artifactTypeConfig';
 import type { ArtifactType } from './parseArtifacts';
 
 const REVISION_MESSAGES = [
-    () => c('collider_2025:Info').t`Revising your artifact…`,
+    () => c('collider_2025:Info').t`Revising your creation…`,
     () => c('collider_2025:Info').t`Applying your changes…`,
     () => c('collider_2025:Info').t`Updating content…`,
     () => c('collider_2025:Info').t`Almost ready…`,
