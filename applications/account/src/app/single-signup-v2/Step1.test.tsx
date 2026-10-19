@@ -43,7 +43,7 @@ jest.mock('./AccountStepPayment', () => {
     const { GuardBanner } = jest.requireActual('@proton/payments-ui/ui/components/GuardBanner');
     return {
         __esModule: true,
-        default: ({ handleOptimistic, model, options, app }: any) => {
+        default: ({ handleOptimistic, model, options, app, renewalNotice }: any) => {
             const { getItem } = getHeadlessCheckout({
                 planIDs: options.planIDs,
                 plansMap: model.plansMap,
@@ -53,6 +53,7 @@ jest.mock('./AccountStepPayment', () => {
             return (
                 <div data-testid="account-step-payment-mock">
                     Payment Mock
+                    {renewalNotice}
                     <button data-testid="change-cycle" onClick={() => handleOptimistic({ cycle: CYCLE.YEARLY })}>
                         change cycle
                     </button>
