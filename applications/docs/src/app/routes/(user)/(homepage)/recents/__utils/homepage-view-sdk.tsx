@@ -29,6 +29,7 @@ import { useTrashed } from './use-trashed'
 import { c } from 'ttag'
 import { useNotifications } from '@proton/app-context/useNotifications'
 import { getEventSubscriber } from '~/drive-sdk/event-subscriber'
+import { getCoreEventSubscriber } from '~/drive-sdk/core-event-subscriber'
 import { traceRecentsError } from './traceRecentsError'
 import { useAddresses } from '@proton/account/addresses/hooks'
 import type { Address } from '@proton/shared/lib/interfaces'
@@ -74,6 +75,14 @@ export function HomepageViewProviderSDK({ children }: HomepageViewProviderProps)
   useEffect(() => {
     void loadData()
     return () => abortLoad.current?.abort()
+  }, [loadData])
+
+  // Shared documents can appear or disappear
+  useEffect(() => {
+    const coreSubscriber = getCoreEventSubscriber()
+    const reloadOnCoreEvent = () => loadData()
+    const removeListener = coreSubscriber.addListener(reloadOnCoreEvent)
+    return removeListener
   }, [loadData])
 
   // Loading it once here to avoid doing it every time we subscribe
