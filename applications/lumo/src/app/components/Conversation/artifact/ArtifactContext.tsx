@@ -10,7 +10,13 @@ import {
     useState,
 } from 'react';
 
+import { useLumoFlags } from '../../../hooks/useLumoFlags';
+import { useQueryParam } from '../../../hooks/useQueryParam';
 import { getMessageBlocks } from '../../../messageHelpers';
+import { useOptionalArtifactPanelHostActions } from '../../../providers/ArtifactPanelHostProvider';
+import { useOptionalRightPanel } from '../../../providers/RightPanelProvider';
+import { useLumoDispatch } from '../../../redux/hooks';
+import { syncArtifactAssetRequest } from '../../../redux/slices/artifactAssetSync';
 import type { Message } from '../../../types';
 import { Role } from '../../../types-api';
 import {
@@ -22,6 +28,7 @@ import {
     sendArtifactPanelOpenedEvent,
     sendArtifactRevisedEvent,
 } from '../../../util/telemetry';
+import { artifactTypeSupportsAssetSync } from './artifactAssetSyncSupport';
 import {
     isArtifactGenerationLoading,
     isArtifactPanelGenerationLoading,
@@ -80,6 +87,11 @@ export const ArtifactProvider = ({
     linearChain,
     isGenerating = false,
 }: ArtifactProviderProps) => {
+    const dispatch = useLumoDispatch();
+    const rightPanel = useOptionalRightPanel();
+    const artifactPanelHostActions = useOptionalArtifactPanelHostActions();
+    const { artifactsView: isArtifactsViewFlagEnabled } = useLumoFlags();
+    const openArtifactQueryParam = useQueryParam('artifact', true, 'search', Boolean(conversationId));
     const registry = useArtifactRegistry(linearChain);
     const [selectedId, setSelectedId] = useState<string | null>(null);
     const [selectedVersionIndex, setSelectedVersionIndex] = useState(0);
@@ -98,6 +110,8 @@ export const ArtifactProvider = ({
     const panelOpenedAtRef = useRef<number | null>(null);
     // Tracks the in-flight assistant message so auto-open applies only to the current generation.
     const inFlightAssistantMessageIdRef = useRef<string | null>(null);
+    // The `?artifact=` deep link already opened, so later registry changes don't reopen it.
+    const handledArtifactQueryParamRef = useRef<string | null>(null);
 
     const lastMessage = linearChain.at(-1);
     const parentUserMessage = useMemo(() => {
@@ -264,16 +278,50 @@ export const ArtifactProvider = ({
         panelOpenedAtRef.current = null;
     }, [conversationId]);
 
+    useEffect(() => {
+        if (!conversationId || !isArtifactsViewFlagEnabled) {
+            return;
+        }
+
+        for (const [artifactId, entry] of Object.entries(registry)) {
+            const latestVersion = entry.versions.at(-1);
+            if (!latestVersion || latestVersion.provisional) {
+                continue;
+            }
+            if (!artifactTypeSupportsAssetSync(entry.type)) {
+                continue;
+            }
+
+            dispatch(
+                syncArtifactAssetRequest({
+                    conversationId,
+                    artifactId,
+                    messageId: latestVersion.messageId,
+                    title: entry.title,
+                    type: entry.type,
+                    content: latestVersion.content,
+                    language: latestVersion.language ?? entry.language,
+                })
+            );
+        }
+    }, [conversationId, dispatch, isArtifactsViewFlagEnabled, registry]);
+
     const isLoadingPanelOpen = !panelUserClosed && selectedId === null && artifactPanelGenerationLoading;
     isLoadingPanelOpenRef.current = isLoadingPanelOpen;
 
     // Creation/revision telemetry: only versions produced by a generation or manual edit started in
     // this tab are reported (see `artifactVersionTelemetry.ts`), never history re-derived on load.
     useEffect(() => {
+        // Runs before the effect below that follows a new version, so the refs still hold what the
+        // panel showed when the revision was requested.
+        const viewedVersion = selectedIdRef.current
+            ? { artifactId: selectedIdRef.current, versionIndex: selectedVersionIndexRef.current }
+            : null;
         const { events, consumedMessageIds } = collectArtifactVersionTelemetry(
             registry,
             linearChain,
-            getArtifactTelemetryLiveMessages()
+            getArtifactTelemetryLiveMessages(),
+            viewedVersion
         );
 
         consumeArtifactTelemetryLiveMessages(consumedMessageIds);
@@ -310,9 +358,25 @@ export const ArtifactProvider = ({
             setSelectedVersionIndex(index);
             setPanelUserClosed(false);
             markSeen(id, index);
+            rightPanel?.close();
         },
-        [registry, markSeen]
+        [registry, markSeen, rightPanel]
     );
+
+    // `useQueryParam` keeps the value after stripping it from the URL, so open it once per conversation
+    // and value; otherwise every registry change (e.g. a new reply) would reopen it over the user's choice.
+    useEffect(() => {
+        if (!openArtifactQueryParam) {
+            handledArtifactQueryParamRef.current = null;
+            return;
+        }
+        const handledKey = `${conversationId}:${openArtifactQueryParam}`;
+        if (handledArtifactQueryParamRef.current === handledKey || !registry[openArtifactQueryParam]) {
+            return;
+        }
+        handledArtifactQueryParamRef.current = handledKey;
+        openArtifact(openArtifactQueryParam, undefined, 'auto');
+    }, [conversationId, openArtifactQueryParam, openArtifact, registry]);
 
     useLayoutEffect(() => {
         if (!pendingArtifactPanelOpen || !lastMessage || lastMessage.role !== Role.Assistant) {
@@ -372,7 +436,11 @@ export const ArtifactProvider = ({
             } else {
                 const prevCount = prevVersionCountsRef.current[selectedId] ?? entry.versions.length;
                 const wasViewingLatest = selectedVersionIndexRef.current === prevCount - 1;
-                if (entry.versions.length > prevCount && wasViewingLatest) {
+                if (
+                    entry.versions.length > prevCount &&
+                    wasViewingLatest &&
+                    !artifactPanelHostActions?.isManualArtifactEditActive()
+                ) {
                     const latestIndex = entry.versions.length - 1;
                     setSelectedVersionIndex(latestIndex);
                     markSeen(selectedId, latestIndex);
@@ -387,7 +455,7 @@ export const ArtifactProvider = ({
         prevVersionCountsRef.current = counts;
         // Only re-run when the registry itself changes — selectedId/selectedVersionIndex
         // are read from refs/closure to avoid re-running this sync on every navigation.
-    }, [registry]);
+    }, [artifactPanelHostActions, registry]);
 
     // As soon as a complete artifact resolves mid-generation, show it immediately rather than
     // waiting for the `openArtifact` effect above to run on the next commit.

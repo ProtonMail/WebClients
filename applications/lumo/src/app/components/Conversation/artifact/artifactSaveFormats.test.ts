@@ -1,9 +1,9 @@
 import {
     artifactSupportsSaveToDrive,
-    getArtifactDownloadLabel,
+    getArtifactFormatMenuLabel,
     getArtifactSaveFormatLabel,
     getArtifactSaveFormats,
-    getArtifactSourceDownloadLabel,
+    getArtifactSourceMenuLabel,
 } from './artifactSaveFormats';
 
 describe('artifactSaveFormats', () => {
@@ -32,16 +32,13 @@ describe('artifactSaveFormats', () => {
         expect(getArtifactSaveFormatLabel('pptx')).toContain('PowerPoint');
     });
 
-    it('provides download labels that distinguish source, plain text, and exports', () => {
-        expect(getArtifactSourceDownloadLabel('document')).toContain('Markdown');
-        expect(getArtifactSourceDownloadLabel('presentation')).toContain('HTML');
-        expect(getArtifactDownloadLabel('txt')).toContain('plain text');
-        expect(getArtifactDownloadLabel('pdf')).toContain('PDF');
-        expect(getArtifactDownloadLabel('docx')).toBe('Download Word (.docx)');
-    });
-
-    it('labels document PDF as a dialog-backed save and presentation PDF as a download', () => {
-        expect(getArtifactDownloadLabel('pdf', 'document')).toBe('Save as PDF…');
-        expect(getArtifactDownloadLabel('pdf', 'presentation')).toBe('Download PDF');
+    it("names formats and each type's source download for the title menu", () => {
+        expect(getArtifactFormatMenuLabel('md')).toBe('Markdown');
+        expect(getArtifactFormatMenuLabel('docx')).toBe('Word document');
+        expect(getArtifactFormatMenuLabel('pptx')).toBe('PowerPoint');
+        expect(getArtifactSourceMenuLabel('document')).toBe('Markdown');
+        expect(getArtifactSourceMenuLabel('presentation')).toBe('Web presentation');
+        expect(getArtifactSourceMenuLabel('webpage')).toBe('Webpage');
+        expect(getArtifactSourceMenuLabel('code')).toBe('Source file');
     });
 });
