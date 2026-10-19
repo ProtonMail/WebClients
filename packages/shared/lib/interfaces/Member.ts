@@ -171,6 +171,8 @@ type MemberRoleState = {
     roleState: 'initial' | 'stale' | 'pending' | 'rejected' | 'full';
     UserOrganizationRoles: RoleAssignment[];
     requiresOrgKeyPromotion: boolean;
+    requiresOrgKeyDemotion: boolean;
+    hasScheduledOrgKeyDemotion: boolean;
 };
 
 export type EnhancedMember = Member & MemberAddressState & MemberRoleState;
