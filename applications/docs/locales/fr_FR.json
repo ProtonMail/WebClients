@@ -5632,6 +5632,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Vous pourrez toujours consulter les données de votre propre compte, mais tous les comptes utilisateur seront retirés de votre organisation."
+      ],
+      "We'll get back to you shortly.": [
+        "Nous vous recontacterons prochainement."
       ]
     },
     "info": {
@@ -6096,6 +6099,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nom indéchiffrable"
+      ],
+      "Please share any feedback to help us improve.": [
+        "N'hésitez pas à nous faire part de vos commentaires pour nous aider à nous améliorer."
+      ],
+      "Why would you like to cancel?": [
+        "Pourquoi voulez-vous annuler votre abonnement ?"
       ]
     },
     "Label for contact group color": {
@@ -8134,6 +8143,9 @@
       ],
       "Your organization name": [
         "Nom de votre organisation"
+      ],
+      "Please select the main reason": [
+        "Sélectionnez la raison principale."
       ]
     },
     "Placeholder for contact group name": {
@@ -9870,6 +9882,12 @@
       ],
       "Your exposed information": [
         "Vos informations exposées"
+      ],
+      "Contact us": [
+        "Nous contacter"
+      ],
+      "Request sent": [
+        "La demande a été envoyée."
       ]
     },
     "Title header for keys table": {
@@ -10240,6 +10258,20 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Votre version d'essai se terminera le ${ textDate }. Vous ne serez pas facturé si vous annulez avant le ${ textDate }. ${ action }"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "J'ai trouvé un autre service que je préfère."
+      ],
+      "It’s missing a key feature": [
+        "Il manque une fonction importante."
+      ],
+      "It’s too expensive": [
+        "C'est trop cher."
+      ],
+      "Other": [
+        "Autre"
       ]
     }
   }

@@ -5238,6 +5238,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "თქვენ კვლავ შეძლებთ საკუთარი ანგარიშის მონაცემების ნახვას, მაგრამ მომხმარებლის ყველა ანგარიში ამოიშლება თქვენი ორგანიზაციიდან."
+      ],
+      "We'll get back to you shortly.": [
+        "მალე დავბრუნდები."
       ]
     },
     "info": {
@@ -5687,6 +5690,12 @@
       ],
       "Your password (trusted contact)": [
         "თქვენი პაროლი (სანდო კონტაქტი)"
+      ],
+      "Please share any feedback to help us improve.": [
+        "გაგვიზიარეთ თქვენი აზრი."
+      ],
+      "Why would you like to cancel?": [
+        "რატომ აუქმებთ?"
       ]
     },
     "Label for contact group color": {
@@ -7571,6 +7580,9 @@
       ],
       "Your organization name": [
         "თქვენი ორგანიზაციის სახელი"
+      ],
+      "Please select the main reason": [
+        "აირჩიეთ მთავარი მიზეზი"
       ]
     },
     "Placeholder for contact group name": {
@@ -9263,6 +9275,12 @@
       ],
       "Your exposed information": [
         "თქვენი გაჟონილი ინფორმაცია"
+      ],
+      "Contact us": [
+        "დაგვიკავშირდით"
+      ],
+      "Request sent": [
+        "მოთხოვნა გაიგზავნა"
       ]
     },
     "Title header for keys table": {
@@ -9624,6 +9642,20 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "თქვენი საცდელი პერიოდი დასრულდება: ${ textDate }. თუ გააუქმებთ ${ textDate }-მდე, თანხა არ ჩამოგეჭრებათ. ${ action }"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "სხვა სერვისი ვიპოვე, რომელიც უფრო მომწონს"
+      ],
+      "It’s missing a key feature": [
+        "აკლია ძრითადი ფუნქცია"
+      ],
+      "It’s too expensive": [
+        "ძალიან ძვირია"
+      ],
+      "Other": [
+        "სხვა"
       ]
     }
   }

@@ -5594,6 +5594,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "자신의 계정 데이터는 여전히 볼 수 있지만 모든 사용자 계정이 조직에서 제거됩니다."
+      ],
+      "We'll get back to you shortly.": [
+        "곧 돌아오겠습니다."
       ]
     },
     "info": {
@@ -6065,6 +6068,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ 복호화할 수 없는 이름"
+      ],
+      "Please share any feedback to help us improve.": [
+        "기능을 향상시키기 위해 피드백을 공유해 주세요."
+      ],
+      "Why would you like to cancel?": [
+        "취소하려는 이유가 무엇인가요?"
       ]
     },
     "Label for contact group color": {
@@ -8012,6 +8021,9 @@
       ],
       "Your organization name": [
         "조직 이름"
+      ],
+      "Please select the main reason": [
+        "주요 사유를 선택해 주세요."
       ]
     },
     "Placeholder for contact group name": {
@@ -9721,6 +9733,12 @@
       ],
       "Your exposed information": [
         "사용자의 노출된 정보"
+      ],
+      "Contact us": [
+        "문의"
+      ],
+      "Request sent": [
+        "요청 발송완료"
       ]
     },
     "Title header for keys table": {
@@ -10082,6 +10100,20 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "무료 체험이 ${ textDate }에 종료됩니다. ${ textDate } 이전에 취소시 요금이 청구되지 않습니다. ${ action }"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "더 낫다고 생각되는 서비스를 찾았습니다"
+      ],
+      "It’s missing a key feature": [
+        "핵심 기능이 없습니다"
+      ],
+      "It’s too expensive": [
+        "너무 비쌉니다"
+      ],
+      "Other": [
+        "기타"
       ]
     }
   }

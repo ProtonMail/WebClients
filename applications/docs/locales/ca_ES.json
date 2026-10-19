@@ -37,7 +37,7 @@
         "Botiga de ${ BRAND_NAME }"
       ],
       "Accept invitation": [
-        "Accepta invitació"
+        "Accepta la invitació"
       ],
       "Accept invitation to document": [
         "Accepta la invitació al document"
@@ -94,7 +94,7 @@
         "Aplica"
       ],
       "Ask me next time": [
-        "Pregunteu-m'ho la pròxima vegada"
+        "Pregunta-m'ho la pròxima vegada"
       ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Es permet un màxim d'${ maxContacts } contacte per grup de contactes.",
@@ -173,10 +173,10 @@
         "Replega"
       ],
       "Collapse list": [
-        "Reduí la llista"
+        "Plega la llista"
       ],
       "Collapse list of pending invitations": [
-        "Reduí la llista d'invitacions pendents"
+        "Plega la llista d'invitacions pendents"
       ],
       "Compose": [
         "Redactar"
@@ -245,7 +245,7 @@
         "Crear un nou grup de contactes"
       ],
       "Create new ${ SHEETS_APP_NAME }": [
-        "Creeu un full de càlcul nou de ${ SHEETS_APP_NAME }"
+        "Crea un full de càlcul nou de ${ SHEETS_APP_NAME }"
       ],
       "Create new folder": [
         "Crea una carpeta"
@@ -286,7 +286,7 @@
         "Eliminar grup de contactes"
       ],
       "Delete older revisions": [
-        "Elimineu les revisions antigues"
+        "Elimina les revisions més antigues"
       ],
       "Delete permanently": [
         "Elimina de manera permanent"
@@ -316,10 +316,10 @@
         "Descarregueu-ne una còpia (en format docx)"
       ],
       "Download a copy (as xlsx)": [
-        "Descarregueu-ne una còpia (en format xlsx)"
+        "Descarrega una còpia (com a xlsx)"
       ],
       "Download debug information": [
-        "Descarregueu la informació de depuració"
+        "Descarrega la informació de depuració"
       ],
       "Download logs": [
         "Descarrega els registres"
@@ -361,22 +361,22 @@
         "Exporta el grup de contactes"
       ],
       "Export editor state for version": [
-        "Exportar l'estat de l'editor per a la versió"
+        "Exporta l'estat de l'editor per a la versió"
       ],
       "Export selection as .vcf": [
         "Exporta la selecció com a .vcf"
       ],
       "Export this version (as docx)": [
-        "Exportar aquesta versió (com a docx)"
+        "Exporta aquesta versió (com a docx)"
       ],
       "Export this version (as odt) (Beta)": [
-        "Exportar aquesta versió (com a odt) (Beta)"
+        "Exporta aquesta versió (com a odt) (Beta)"
       ],
       "Export this version (as xlsx)": [
-        "Exporta aquesta versió (en format xlsx)"
+        "Exporta aquesta versió (com a xlsx)"
       ],
       "Export YJS state for version": [
-        "Exportar l'estat de YJS per a la versió"
+        "Exporta l'estat de YJS per a la versió"
       ],
       "Forgot password?": [
         "Heu oblidat la contrasenya?"
@@ -592,7 +592,7 @@
         "Obre la navegació"
       ],
       "OpenDocument Text (.odt) (Beta)": [
-        "Text OpenDocument (.odt) (Beta)"
+        "Text d'OpenDocument (.odt) (Beta)"
       ],
       "PDF (.pdf)": [
         "PDF (.pdf)"
@@ -637,7 +637,7 @@
         "Recarrega"
       ],
       "Reload spreadsheet": [
-        "Torneu a carregar el full de càlcul"
+        "Torna a carregar el full de càlcul"
       ],
       "Remove": [
         "Esborra"
@@ -667,7 +667,7 @@
         "Notifica un problema"
       ],
       "Report issue": [
-        "Informeu d'un problema"
+        "Informa d'un problema"
       ],
       "Request a call": [
         "Sol·licita una trucada"
@@ -709,7 +709,7 @@
         "Desa els canvis"
       ],
       "Save preferences": [
-        "Desar les preferències"
+        "Desa les preferències"
       ],
       "Search": [
         "Cerca"
@@ -841,7 +841,7 @@
         "Proveu amb un altre mètode"
       ],
       "Try Workspace": [
-        "Proveu Workspace"
+        "Prova Workspace"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Habilita ${ DARK_WEB_MONITORING_NAME }"
@@ -910,8 +910,8 @@
         "Mostra"
       ],
       "View ${ pendingCount } invitation": [
-        "Visualitza ${ pendingCount } invitació",
-        "Visualitza totes ${ pendingCount } invitacions"
+        "Mostra ${ pendingCount } invitació",
+        "Mostra les ${ pendingCount } invitacions"
       ],
       "View all reports": [
         "Mostra tots els informes"
@@ -920,7 +920,7 @@
         "Mostra la factura"
       ],
       "View only": [
-        "De només lectura"
+        "Només lectura"
       ],
       "Web page (.html)": [
         "Pàgina web (.html)"
@@ -932,7 +932,7 @@
         "paraules"
       ],
       "words out of": [
-        "paraules sobre"
+        "paraules de"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "No podeu enviar fitxers vCard de més d'${ maxAttachments } contacte.",
@@ -2947,7 +2947,7 @@
         "Error d'autenticació."
       ],
       "Because this document was in a shared folder, only the folder owner can restore it": [
-        "Aquest document es trobava en una carpeta compartida i només el propietari de la carpeta el pot restaurar"
+        "Com que aquest document es trobava en una carpeta compartida, només el propietari de la carpeta el pot restaurar"
       ],
       "Bookmark password is not available": [
         "La contrasenya del marcador de pàgina no està disponible"
@@ -3561,13 +3561,13 @@
         "Les claus de verificació per ${ signatureType } no estan disponibles"
       ],
       "We are having trouble saving recent edits. Please refresh the page.": [
-        "Estem tenint problemes per desar les edicions recents. Actualitzeu la pàgina."
+        "Estem tenint problemes per a desar les edicions recents. Actualitzeu la pàgina."
       ],
       "We are having trouble syncing your document. Please refresh the page.": [
-        "Estem tenint problemes per sincronitzar el vostre document. Actualitzeu la pàgina."
+        "Estem tenint problemes per a sincronitzar el document. Actualitzeu la pàgina."
       ],
       "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
-        "No s'ha pogut importar aquest fitxer a ${ SHEETS_APP_NAME }. Podeu provar de copiar i enganxar el contingut en un nou ${ SHEETS_APP_NAME }."
+        "No hem pogut importar aquest fitxer al ${ SHEETS_APP_NAME }. Podeu intentar copiar i enganxar el contingut en un nou ${ SHEETS_APP_NAME }."
       ],
       "We couldn’t send a verification code using this method.": [
         "No hem pogut enviar cap codi de verificació mitjançant aquest mètode."
@@ -4483,10 +4483,10 @@
     },
     "Info": {
       "\"${ documentTitle }\" has been moved to the trash. It will stay there until you restore it or delete it permanently.": [
-        "«${ documentTitle }» s'ha mogut a la paperera. Hi romandrà fins que el restaureu o el suprimiu permanentment."
+        "«${ documentTitle }» s'ha mogut a la paperera. Hi romandrà fins que el restaureu o l'elimineu permanentment."
       ],
       "\"${ documentTitle }\" is in trash and will stay there until you delete it permanently.": [
-        "«${ documentTitle }» és a la paperera i hi romandrà fins que el suprimiu permanentment."
+        "«${ documentTitle }» és a la paperera i hi romandrà fins que l'elimineu permanentment."
       ],
       "${ addressCount } email address": [
         "${ addressCount } adreça de correu electrònic",
@@ -4532,7 +4532,7 @@
         "${ contactsLength } contactes"
       ],
       "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
-        "${ DOCS_APP_NAME } us permet col·laborar en temps real amb el xifratge d’extrem a extrem per a una privadesa total. Creeu una còpia per començar a editar-lo o demaneu accés d'edició al propietari."
+        "${ DOCS_APP_NAME } us permet col·laborar en temps real amb xifratge d’extrem a extrem per a una completa privacitat. Creeu una còpia per a començar a editar o demaneu accés d'edició al propietari."
       ],
       "${ DOCS_SHORT_APP_NAME } in": [
         "${ DOCS_SHORT_APP_NAME } a"
@@ -4718,7 +4718,7 @@
         "Només es pot visualitzar"
       ],
       "Can't move a folder into itself": [
-        "No es pot moure una carpeta dins d'ella mateixa"
+        "No es pot moure una carpeta dins de si mateixa"
       ],
       "Can't write into folder": [
         "No es pot escriure a la carpeta"
@@ -4804,7 +4804,7 @@
         "Creeu la vostra primera carpeta i comenceu a moure fitxers."
       ],
       "Creating new document...": [
-        "S'està creant el nou document..."
+        "S'està creant un document..."
       ],
       "Current plan": [
         "Pla actual"
@@ -4909,7 +4909,7 @@
         "Error de sincronització"
       ],
       "Every change you make is automatically and securely saved to Drive.": [
-        "Cada canvi que feu es desa automàticament i de forma segura al Drive."
+        "Tots els canvis que feu es desen de manera automàtica i segura al Drive."
       ],
       "Everything in ${ planOrAppName }": [
         "Tot a ${ planOrAppName }"
@@ -4942,10 +4942,10 @@
         "Geobloqueig"
       ],
       "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
-        "Obtingueu una adreça de correu electrònic professional @lavostra-empresa.com, 1 TB d'emmagatzematge segur per usuari, trucades de vídeo més llargues i molt més amb el Workspace de ${ BRAND_NAME }."
+        "Obteniu una adreça de correu electrònic professional @la-vostra-companyia.com, 1 TB d'emmagatzematge segur per usuari, trucades de vídeo més llargues i molt més amb ${ BRAND_NAME } Workspace."
       ],
       "Get email updates for comments and suggestions added to your documents.": [
-        "Rebeu actualitzacions per correu dels comentaris i suggeriments afegits als vostres documents."
+        "Rebeu actualitzacions per correu electrònic dels comentaris i suggeriments afegits als vostres documents."
       ],
       "Get Notified About Comments": [
         "Rebeu notificacions sobre els comentaris"
@@ -4954,16 +4954,16 @@
         "Els governs i els ISP poden controlar la vostra activitat en línia. En amagar la vostra IP real i xifrar la vostra activitat, la vostra navegació esdevé privada."
       ],
       "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
-        "Ajudeu-nos a millorar aquesta experiència informant del problema. Si us sentiu còmode compartint el contingut del full de càlcul, adjunteu la informació de depuració següent al vostre informe."
+        "Ajudeu-nos a millorar aquesta experiència informant del problema. Si us sentiu còmode compartint el contingut del full de càlcul, adjunteu la informació de depuració següent a l'informe."
       ],
       "Help us improve this experience by reporting the issue. Please attach the debug information below to your report.": [
-        "Ajudeu-nos a millorar aquesta experiència informant de la incidència. Adjunteu la informació de depuració de més avall al vostre informe."
+        "Ajudeu-nos a millorar aquesta experiència informant de la incidència. Adjunteu la informació de depuració de més avall a l'informe."
       ],
       "here": [
         "aquí"
       ],
       "Hide table of contents": [
-        "Amagar la taula de continguts"
+        "Amaga la taula de continguts"
       ],
       "High Priority": [
         "Alta prioritat"
@@ -5099,7 +5099,7 @@
         "Els registres ens ajuden a entendre què va passar abans que es produís el problema. Inclouen accions de l'aplicació i missatges d'error, però no el contingut dels missatges."
       ],
       "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
-        "Sembla que no teniu connexió. El document no es pot editar sense connexió. Comproveu la connectivitat del dispositiu."
+        "Sembla que esteu fora de línia. No es pot editar el document sense connexió. Comproveu la connectivitat del dispositiu."
       ],
       "Low Priority": [
         "Prioritat baixa"
@@ -5178,7 +5178,7 @@
         "Una o més de les vostres claus de confiança han estat marcades com a \"compromeses\" pel seu propietari. Us recomanem que marqueu aquestes claus com a \"no confiables\"."
       ],
       "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
-        "Vaja! Aquest full de càlcul no pot desar les darreres modificacions, així que hem aturat l'edició per evitar que perdeu la feina."
+        "Aquest full de càlcul no pot desar les darreres modificacions, així que hem aturat l'edició per a evitar que perdeu la feina."
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Obriu la guia per obtenir accions recomanades i enllaços útils."
@@ -5220,7 +5220,7 @@
         "Introduïu la contrasenya per a desxifrar i veure el contingut."
       ],
       "Please export a copy of your current changes from the main menu and reload the page.": [
-        "Si us plau, exporteu una còpia dels canvis actuals des del menú principal i torneu a carregar la pàgina."
+        "Exporteu una còpia dels canvis actuals des del menú principal i torneu a carregar la pàgina."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Tingueu en compte que les adreces assignades a aquests grups NO se suprimeixen."
@@ -5405,7 +5405,7 @@
         "El propietari d'aquesta adreça ha desactivat el xifratge d'extrem a extrem. Per a poder enviar-hi correus electrònics xifrats, el propietari ha de tornar a activar el xifratge d’extrem a extrem."
       ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "Sembla que l'URL que heu introduït s'ha copiat incorrectament d'Slack. Quan copieu enllaços llargs d'Slack, feu clic amb el botó dret a l'enllaç i trieu \"Copiar l'enllaç\", en lloc de copiar directament el text truncat de l'URL."
+        "Sembla que l'URL que heu introduït s'ha copiat incorrectament d'Slack. Quan copieu enllaços llargs d'Slack, feu clic amb el botó dret a l'enllaç i trieu \"Copia l'enllaç\", en lloc de copiar directament el text truncat de l'URL."
       ],
       "There are no documents in the trash.": [
         "No hi ha documents a la paperera."
@@ -5417,22 +5417,22 @@
         "Aquesta adreça està inactivada. Per tal de poder enviar-hi, el propietari l'ha d'activar en primer lloc."
       ],
       "This document has grown too large to edit. You can remove older revisions to continue editing.": [
-        "Aquest document és massa gran per editar-lo. Podeu esborrar les versions anteriors per continuar-lo editant."
+        "Aquest document és massa gran per a editar-lo. Podeu esborrar les versions anteriors per a continuar editant."
       ],
       "This document has grown too large, and your latest changes couldn’t be saved. Download a copy to keep your work.": [
-        "Aquest document és massa gran i no s’han pogut desar els darrers canvis. Descarregueu-ne una còpia per a no perdre la vostra feina."
+        "Aquest document és massa gran i no s’han pogut desar els darrers canvis. Descarregueu-ne una còpia per a no perdre la feina."
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
-        "Aquest document té molta activitat. Algunes funcions poden estar temporalment no disponibles."
+        "Aquest document té molta activitat. Algunes característiques poden no estar disponibles temporalment."
       ],
       "This document has many active collaborators. Real-time editing is temporarily unavailable. Refresh to view the latest updates.": [
         "Aquest document té molts col·laboradors actius. L'edició en temps real no està disponible temporalment. Actualitzeu-lo per veure les últimes novetats."
       ],
       "This document may not exist, or we are having issues loading it. Please reload the page and try again.": [
-        "És possible que aquest document no existeixi o estem tenint problemes per carregar-lo. Torneu a carregar la pàgina i torneu-ho a provar."
+        "És possible que aquest document no existeixi, o bé estem tenint problemes per a carregar-lo. Torneu a carregar la pàgina i proveu de nou."
       ],
       "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists or reach out to the owner for access.": [
-        "És possible que aquest document no existeixi o que no tingueu permís per visualitzar-lo. Podeu provar de tornar a carregar la pàgina per veure si el problema persisteix o contactar amb el propietari per accedir-hi."
+        "És possible que aquest document no existeixi o que no tingueu permís per a visualitzar-lo. Podeu provar de tornar a carregar la pàgina per a veure si el problema persisteix o contactar amb el propietari per a demanar-hi accés."
       ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Aquest és un nom o un sobrenom per a la vostra organització que els usuaris veuran. Podeu canviar-lo en qualsevol moment."
@@ -5465,7 +5465,7 @@
         "Per lluitar contra el correu brossa i l'abús, verifiqueu que sou humà."
       ],
       "To help troubleshoot the issue, debug information will be uploaded to your Drive and shared securely with the ${ BRAND_NAME } support team. It may include file contents. You can stop sharing at any time, and the shared data is deleted after the review is complete.": [
-        "Per ajudar a resoldre el problema, es carregarà informació de depuració al vostre Drive i es compartirà de manera segura amb l'equip de suport de ${ BRAND_NAME }. Això pot incloure el contingut de fitxers. Podreu deixar de compartir-la en qualsevol moment, i les dades compartides s'eliminaran quan s'hagi completat la revisió."
+        "Per a ajudar a resoldre el problema, es carregarà informació de depuració al vostre Drive i es compartirà de manera segura amb l'equip de suport de ${ BRAND_NAME }. Això pot incloure el contingut de fitxers. Podreu deixar de compartir-la en qualsevol moment i les dades compartides s'eliminaran quan s'hagi completat la revisió."
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Per ajudar-vos a recordar la contrasenya, us demanarem que la introduïu periòdicament. Amb el temps, us la demanarem menys sovint."
@@ -5564,7 +5564,7 @@
         "Enviarem un codi de verificació nou a ${ strong }"
       ],
       "We've detected that you've previously experienced issues opening a document.": [
-        "Hem detectat que anteriorment heu tingut problemes per obrir un document."
+        "Hem detectat que anteriorment heu tingut problemes per a obrir un document."
       ],
       "Week": [
         "Setmana"
@@ -5573,13 +5573,13 @@
         "Què voleu fer?"
       ],
       "When the dialog opens, change the \"Destination\" to \"Save as PDF\", then press Save.": [
-        "Quan la caixa de diàleg estigui oberta, seleccioneu Destinació, trieu «Desa com a PDF» i feu clic a «Desa»."
+        "En obrir-se el quadre de diàleg, canvieu la «Destinació» a «Desa com a PDF» i feu clic a «Desa»."
       ],
       "When the dialog opens, change the \"Destination\" to \"Save to PDF\", then press Save.": [
-        "Quan la caixa de diàleg estigui oberta, seleccioneu Destinació, trieu «Desa com a PDF» i feu clic a «Desa»."
+        "En obrir-se el quadre de diàleg, canvieu la «Destinació» a «Desa com a PDF» i feu clic a Desa."
       ],
       "When the dialog opens, select \"PDF\" in the lower-left corner, then press Save.": [
-        "Quan la caixa de diàleg estigui oberta, seleccioneu «PDF» a la part inferior esquerra i premeu Desa."
+        "En obrir-se el quadre de diàleg, seleccioneu «PDF» a la part inferior esquerra i premeu Desa."
       ],
       "When working remotely": [
         "Quan es treballa a distància"
@@ -5624,7 +5624,7 @@
         "Heu iniciat sessió com a ${ username }."
       ],
       "You are currently viewing this document in view-only mode. Reach out to the owner to request access to edit and comment.": [
-        "Actualment esteu veient aquest document en mode de només visualització. Poseu-vos en contacte amb el propietari per demanar accés per editar i comentar."
+        "Actualment esteu veient aquest document en mode de només visualització. Poseu-vos en contacte amb el propietari per a demanar accés per a editar i comentar."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Esteu utilitzant més emmagatzematge del que hi ha inclòs al pla ${ downgradedPlanName }. Elimineu o traieu dades per a poder degradar."
@@ -5665,7 +5665,7 @@
         "Teniu una factura pendent de pagament el ${ dueDate } ${ payInvoiceLink }"
       ],
       "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
-        "És possible que no tingueu els permisos necessaris per veure'l amb el vostre compte seleccionat. Proveu amb un altre compte o contacteu amb el propietari per accedir-hi."
+        "És possible que no tingueu els permisos necessaris per a veure'l amb el compte seleccionat. Proveu amb un altre compte o contacteu amb el propietari per a demanar-hi accés."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Heu de desactivar o esborrar qualsevol usuari, adreça o domini personalitzat addicional de ${ MAIL_APP_NAME } abans de passar a un pla inferior."
@@ -5714,16 +5714,16 @@
         "El vostre compte té almenys una factura en retard. El vostre accés aviat quedarà restringit. ${ payInvoiceLink }"
       ],
       "Your browser's Print dialog will now open, where you can export your document to PDF.": [
-        "S'obrirà el quadre de diàleg Imprimir del navegador, on podreu exportar el vostre document a PDF."
+        "S'obrirà el quadre de diàleg Imprimeix del navegador, on podreu exportar el document a PDF."
       ],
       "Your changes are being synced to Drive. Please do not close the web page.": [
         "S'estan sincronitzant els canvis al Drive. No tanqueu la pàgina web."
       ],
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
-        "Els vostres canvis no s'han sincronitzat. Drive intentarà desar els canvis automàticament. No tanqueu la pàgina web."
+        "Els canvis no s'han pogut sincronitzar. Drive intentarà desar els canvis automàticament. No tanqueu la pàgina web."
       ],
       "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
-        "El vostre document actual serà substituït per aquesta versió. Els comentaris i els suggeriments s'eliminaran del document, però es mantindran accessibles a l'historial de comentaris."
+        "Se substituirà el document actual per aquesta versió. Els comentaris i els suggeriments s'esborraran del document, però es mantindran accessibles a l'historial de comentaris."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Les vostres dades estan a punt per ser importades des de ${ importedEmailAddressStrong } al vostre compte de ${ BRAND_NAME }."
@@ -5794,6 +5794,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Encara podreu veure les dades del vostre compte, però tots els comptes d'usuari s'eliminaran de la vostra organització."
+      ],
+      "We'll get back to you shortly.": [
+        "Ens posarem en contacte aviat."
       ]
     },
     "info": {
@@ -6071,10 +6074,10 @@
         "Inclou els registres de l'aplicació a l'informe d'errors"
       ],
       "Include debug information": [
-        "Incloeu-hi la informació de depuració"
+        "Inclou informació de depuració"
       ],
       "Include document name in notification": [
-        "Incloure el nom del document a la notificació"
+        "Inclou el nom del document a la notificació"
       ],
       "Include message and file name in invite email": [
         "Inclou el missatge i el nom del fitxer al correu electrònic d'invitació"
@@ -6266,7 +6269,13 @@
         "La vostra contrasenya (contacte de confiança)"
       ],
       "⚠️ Undecryptable name": [
-        "⚠️Aquest nom no es pot desencriptar"
+        "⚠️ No es pot desxifrar aquest nom"
+      ],
+      "Please share any feedback to help us improve.": [
+        "Compartiu qualsevol comentari per a ajudar-nos a millorar."
+      ],
+      "Why would you like to cancel?": [
+        "Per què voleu cancel·lar?"
       ]
     },
     "Label for contact group color": {
@@ -7628,7 +7637,7 @@
         "S'ha actualitzat l'accés."
       ],
       "Because this document was in a shared folder, only the folder owner can restore it": [
-        "Aquest document es trobava en una carpeta compartida i només el propietari de la carpeta el pot restaurar"
+        "Com que aquest document es trobava en una carpeta compartida, només el propietari de la carpeta el pot restaurar"
       ],
       "Cannot load next page": [
         "No s'ha pogut carregar la pàgina següent"
@@ -7640,7 +7649,7 @@
         "Grup de contactes actualitzat"
       ],
       "Document moved to trash": [
-        "S'ha enviat el document a la paperera"
+        "S'ha mogut el document a la paperera"
       ],
       "Document restored from trash": [
         "S'ha restaurat el document de la paperera"
@@ -7706,7 +7715,7 @@
         "Documents recents actualitzats"
       ],
       "Report submitted successfully": [
-        "L'informe s'ha enviat correctament"
+        "S'ha enviat l'informe correctament"
       ],
       "Root folder failed to be loaded": [
         "No s'ha pogut carregar la carpeta arrel"
@@ -8320,6 +8329,9 @@
       ],
       "Your organization name": [
         "El nom de la vostra organització"
+      ],
+      "Please select the main reason": [
+        "Seleccioneu el motiu principal."
       ]
     },
     "Placeholder for contact group name": {
@@ -8446,7 +8458,7 @@
         "Eliminat"
       ],
       "Earlier": [
-        "Anteriorment"
+        "Anterior"
       ],
       "Location": [
         "Ubicació"
@@ -8801,7 +8813,7 @@
         "Microsoft Excel (.xlsx)"
       ],
       "New spreadsheet": [
-        "Full de càlcul nou"
+        "Crea un full de càlcul"
       ],
       "Tab Separated Values (.tsv)": [
         "Valors separats per tabulador (.tsv)"
@@ -8812,10 +8824,10 @@
         "S'està creant el full de càlcul..."
       ],
       "Detect automatically": [
-        "Ho detecta automàticament"
+        "Detecta automàticament"
       ],
       "Insert as new sheet": [
-        "Inseriu-ho com a full nou"
+        "Insereix com a full nou"
       ],
       "Replace current sheet": [
         "Reemplaça el full actual"
@@ -8824,13 +8836,13 @@
         "Substitueix les dades a la cel·la seleccionada"
       ],
       "Replace spreadsheet": [
-        "Substituïu el full de càlcul"
+        "Substitueix el full de càlcul"
       ],
       "Select a file to import": [
-        "Seleccioneu un fitxer a importar"
+        "Seleccioneu un fitxer per a importar"
       ],
       "Your current spreadsheet, including all sheets within it, will be replaced with this version.": [
-        "El vostre full de càlcul actual, amb tots els fulls que conté, se substituirà per aquesta versió."
+        "El full de càlcul actual, amb tots els fulls que conté, se substituirà per aquesta versió."
       ]
     },
     "sheets_2025:Label": {
@@ -8849,7 +8861,7 @@
     },
     "sheets_2025:Title": {
       "Import data": [
-        "Importeu dades"
+        "Importa les dades"
       ]
     },
     "Signing preference for emails": {
@@ -8865,7 +8877,7 @@
         "Creat per"
       ],
       "Last viewed first": [
-        "Darrera visita primer"
+        "Els últims vistos primer"
       ],
       "Location": [
         "Ubicació"
@@ -9061,7 +9073,7 @@
         "Ara els editors podran gestionar les comparticions i convidar altres persones. Podreu desactivar-ho quan vulgueu a les preferències de compartició."
       ],
       "To edit this document, create a copy that you can modify.": [
-        "Per editar aquest document, creeu una còpia que pugueu editar."
+        "Per a editar aquest document, creeu-ne una còpia que pugueu modificar."
       ]
     },
     "sso": {
@@ -9697,7 +9709,7 @@
         "Editar imatge"
       ],
       "Editing paused": [
-        "S'ha pausat l'edició"
+        "S'ha posat en pausa l'edició"
       ],
       "Email addresses": [
         "Adreces de correu electrònic"
@@ -9794,7 +9806,7 @@
         "Confirmació d'enllaç"
       ],
       "Make a copy to your ${ DRIVE_APP_NAME }": [
-        "Feu una còpia al vostre ${ DRIVE_APP_NAME }"
+        "Feu una còpia al ${ DRIVE_APP_NAME }"
       ],
       "Make a secure connection your default": [
         "Feu d'una connexió segura l'opció predeterminada"
@@ -10071,6 +10083,12 @@
       ],
       "Your exposed information": [
         "La vostra informació exposada"
+      ],
+      "Contact us": [
+        "Contacteu amb nosaltres"
+      ],
+      "Request sent": [
+        "S'ha enviat la sol·licitud."
       ]
     },
     "Title header for keys table": {
@@ -10447,6 +10465,20 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "La vostra prova finalitzarà el ${ textDate }. No se us cobrarà si cancel·leu abans del ${ textDate }. ${ action }"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "He trobat un altre servei que m'agrada més."
+      ],
+      "It’s missing a key feature": [
+        "Li falta una característica clau."
+      ],
+      "It’s too expensive": [
+        "És massa car."
+      ],
+      "Other": [
+        "Altre"
       ]
     }
   }
