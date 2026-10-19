@@ -1,7 +1,6 @@
 import { EditorExporter } from './EditorExporter'
 import type { Provider } from '@lexical/yjs'
 import { createBinding, syncLexicalUpdateToYjs } from '@lexical/yjs'
-import type { YDocMap } from '@proton/docs-shared'
 import { Doc, encodeStateAsUpdate } from 'yjs'
 
 /**
@@ -26,7 +25,7 @@ export class EditorYjsExporter extends EditorExporter {
 
     const id = 'yjs-export'
     const doc = new Doc()
-    const docMap: YDocMap = new Map([[id, doc]])
+    const docMap = new Map([[id, doc]])
     const binding = createBinding(this.editor, provider, id, doc, docMap)
 
     const removeListener = this.editor.registerUpdateListener(
