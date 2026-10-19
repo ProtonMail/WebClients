@@ -4,6 +4,7 @@ import type { ConnectBYOEAddressFailure } from '@proton/activation/src/byoe/conn
 import { useBYOEGating } from '@proton/activation/src/byoe/useBYOEGating';
 import { useOAuthRedirectFlow } from '@proton/activation/src/byoe/useOAuthRedirectFlow';
 import { getBYOEDisabledNotification, getGenericLimitReached } from '@proton/activation/src/constants';
+import type { BYOEAddressLimit } from '@proton/activation/src/helpers/byoeAddresses';
 import { EASY_SWITCH_FEATURES, EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
 import {
     getBYOECreationStartedAt,
@@ -13,8 +14,10 @@ import {
 } from '@proton/activation/src/telemetry/byoeCreationFunnel';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
+import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import type { Address } from '@proton/shared/lib/interfaces';
 
+import { getNativeUpsellUrl } from '../redirectToNative';
 import { type BYOEMobileStatus, REDIRECT_PATH } from './interface';
 import { type ClaimableFailure, useBYOEMobileConnection } from './useBYOEMobileConnection';
 
@@ -22,6 +25,8 @@ interface BYOEMobileContextValue {
     status: BYOEMobileStatus;
     isLoading: boolean;
     defaultImportEmails: boolean;
+    /** Which address limit the user reached, if any. Undefined while loading or when they can still add one. */
+    limitReached: BYOEAddressLimit | undefined;
     connectingEmail: string | undefined;
     /** Why the last attempt failed, until the user dismisses it. */
     error: ConnectBYOEAddressFailure | null;
@@ -100,6 +105,20 @@ export const BYOEMobileProvider = ({ redirect, initialSearchParams, children }: 
     // Every action of the screen is disabled while one is running, so two can never overlap
     const isLoading = status === 'starting-oauth' || status === 'reconnecting' || isLoadingGating;
 
+    // Without a valid native redirect there is nobody to show the upsell to, so the generic limit message applies
+    const upsellUrl = getNativeUpsellUrl(redirect);
+
+    // The gating outcome is undefined while the gating check is loading, so the button copy can be determined immediately.
+    // A free user without upsell URL gets no limit state: the button stays "Connect" and the click shows the generic toast.
+    const gatingOutcome = isLoadingGating ? undefined : checkGating();
+    const getLimitReached = (): BYOEAddressLimit | undefined => {
+        if (gatingOutcome === 'free-limit') {
+            return upsellUrl ? gatingOutcome : undefined;
+        }
+        return gatingOutcome === 'paid-limit' ? gatingOutcome : undefined;
+    };
+    const limitReached = getLimitReached();
+
     const startOAuthFlowNow = (importEmails: boolean) => {
         // The page navigates away right after, so the telemetry event must be sent before starting the flow.
         trackBYOEGoogleSignInClicked({ hasImportEmails: importEmails, importPeriod: undefined });
@@ -132,8 +151,14 @@ export const BYOEMobileProvider = ({ redirect, initialSearchParams, children }: 
             return true;
         }
 
+        if (outcome === 'free-limit' && upsellUrl) {
+            replaceUrl(upsellUrl);
+            return false;
+        }
+
         if (outcome === 'feature-disabled' || outcome === 'no-access') {
             createNotification(getBYOEDisabledNotification());
+            // We still handle the 'free-limit' and 'paid-limit' here in case of missing redirect URL or uncaught click
         } else if (outcome === 'free-limit' || outcome === 'paid-limit') {
             createNotification(getGenericLimitReached());
         }
@@ -217,6 +242,7 @@ export const BYOEMobileProvider = ({ redirect, initialSearchParams, children }: 
                 claimAddress,
                 startOAuthFlowIfAllowed,
                 isLoading,
+                limitReached,
                 defaultImportEmails: autoParams.importEmails,
             }}
         >
