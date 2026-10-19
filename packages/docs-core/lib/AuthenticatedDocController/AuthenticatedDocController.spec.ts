@@ -12,7 +12,7 @@ import { DocumentMeta } from '../Models/DocumentMeta'
 import type { GetNode } from '../UseCase/GetNode'
 import type { DocumentStateValues } from '../State/DocumentState'
 import { DocumentState } from '../State/DocumentState'
-import { DocumentUpdate } from '@proton/docs-proto'
+import { DocumentUpdate } from '@proton/docs-proto/Generated/DocumentUpdate'
 
 describe('AuthenticatedDocController', () => {
   let controller: AuthenticatedDocController

@@ -1,6 +1,6 @@
 import { CryptoProxy } from '@protontech/crypto'
 import { VERIFICATION_STATUS } from '@protontech/crypto/constants'
-import { SignedPlaintextContent } from '@proton/docs-proto'
+import { SignedPlaintextContent } from '@proton/docs-proto/Generated/DocumentUpdate'
 import { EncryptionService } from './EncryptionService'
 import { HKDF_SALT_SIZE } from '../../Crypto/Constants'
 import { deriveGcmKey } from '../../Crypto/deriveGcmKey'

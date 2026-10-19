@@ -1,4 +1,4 @@
-import metrics from '@proton/metrics';
+import metrics from '@proton/metrics/metricsInstance';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 
 import { logging } from '../../logging';

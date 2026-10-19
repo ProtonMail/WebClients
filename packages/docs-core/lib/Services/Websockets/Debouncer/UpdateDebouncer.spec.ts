@@ -1,4 +1,4 @@
-import { DecryptedValue } from '@proton/docs-proto'
+import { DecryptedValue } from '@proton/docs-proto/DecryptedValue'
 import type { NodeMeta } from '@proton/docs-shared'
 import { UpdateDebouncer } from './UpdateDebouncer'
 import { DocumentDebounceMode } from './DocumentDebounceMode'

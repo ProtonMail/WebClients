@@ -15,7 +15,7 @@ jest.mock('@proton/app-context/useApi', () => ({
     useApi: () => mockApiRequest,
 }));
 
-jest.mock('@proton/metrics', () => ({
+jest.mock('@proton/metrics/metricsInstance', () => ({
     __esModule: true,
     default: {
         drive_warnings_total: {

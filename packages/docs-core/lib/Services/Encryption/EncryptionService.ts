@@ -6,7 +6,7 @@ import type {
   VERIFICATION_STATUS,
 } from '@protontech/crypto'
 import { CryptoProxy } from '@protontech/crypto'
-import { SignedPlaintextContent } from '@proton/docs-proto'
+import { SignedPlaintextContent } from '@proton/docs-proto/Generated/DocumentUpdate'
 import {
   encryptDataWith16ByteIV as gcmEncryptWith16ByteIV,
   decryptData as gcmDecrypt,

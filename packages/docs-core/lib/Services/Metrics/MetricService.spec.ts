@@ -1,8 +1,8 @@
-import metrics from '@proton/metrics'
+import metrics from '@proton/metrics/metricsInstance'
 import { MetricService } from './MetricService'
 import type { Api } from '@proton/shared/lib/interfaces'
 
-jest.mock('@proton/metrics')
+jest.mock('@proton/metrics/metricsInstance')
 
 describe('MetricService', () => {
   let metricService: MetricService

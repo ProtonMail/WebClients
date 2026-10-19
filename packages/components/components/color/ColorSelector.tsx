@@ -1,7 +1,7 @@
 import tinycolor from 'tinycolor2';
 import { c } from 'ttag';
 
-import { genAccentShades } from '@proton/colors';
+import genAccentShades from '@proton/colors/gen-accent-shades';
 import useInstance from '@proton/hooks/useInstance';
 import capitalize from '@proton/utils/capitalize';
 import clsx from '@proton/utils/clsx';

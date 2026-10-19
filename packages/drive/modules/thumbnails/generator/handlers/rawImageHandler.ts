@@ -1,6 +1,6 @@
 import type { ThumbnailType } from '@protontech/drive-sdk';
 
-import { type RawProcessorWorkerInterface, createWorker } from '@proton/raw-images/src';
+import { type RawProcessorWorkerInterface, createWorker } from '@proton/raw-images/createWorker';
 import type { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 import {
     getFileExtension,

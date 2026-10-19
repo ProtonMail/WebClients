@@ -13,7 +13,7 @@ import {
 } from '@proton/meet/store/slices/currentMeeting';
 import { meetingInfoThunk } from '@proton/meet/store/slices/meetingInfoModel';
 import { initialState as initialSettingsState, settingsReducer } from '@proton/meet/store/slices/settings';
-import { ProtonStoreContext } from '@proton/react-redux-store';
+import { ProtonStoreContext } from '@proton/react-redux-store/ProtonStoreContext';
 
 import type { JoinLocationState } from '../../types';
 import { useInvalidMeetingLink } from './useInvalidMeetingLink';

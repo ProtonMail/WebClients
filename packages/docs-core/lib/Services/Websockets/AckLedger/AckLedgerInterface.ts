@@ -1,4 +1,6 @@
-import type { ClientMessageWithDocumentUpdates, DocumentUpdate, ServerMessageWithMessageAcks } from '@proton/docs-proto'
+import type { ClientMessageWithDocumentUpdates } from '@proton/docs-proto/Generated/ClientMessage'
+import type { DocumentUpdate } from '@proton/docs-proto/Generated/DocumentUpdate'
+import type { ServerMessageWithMessageAcks } from '@proton/docs-proto/Generated/ServerMessage'
 
 export interface AckLedgerInterface {
   messagePosted(message: ClientMessageWithDocumentUpdates): void

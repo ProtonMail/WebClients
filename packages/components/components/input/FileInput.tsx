@@ -3,7 +3,7 @@ import { forwardRef, useRef } from 'react';
 
 import type { ButtonLikeShape } from '@proton/atoms/Button/ButtonLike';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import type { ThemeColorUnion } from '@proton/colors';
+import type { ThemeColorUnion } from '@proton/colors/types';
 import { useCombinedRefs } from '@proton/hooks';
 import clsx from '@proton/utils/clsx';
 

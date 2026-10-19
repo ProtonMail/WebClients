@@ -6,7 +6,7 @@ import { CanvasError, NoHandlerError, ThumbnailSizeError, wrapError } from './th
 import { generateThumbnail } from './thumbnailGenerator';
 
 jest.mock('./handlerRegistry');
-jest.mock('@proton/metrics', () => ({
+jest.mock('@proton/metrics/metricsInstance', () => ({
     __esModule: true,
     default: {
         drive_thumbnail_errors_total: { increment: jest.fn() },
@@ -24,7 +24,7 @@ jest.mock('@proton/shared/lib/helpers/browser', () => ({
 const mockProcess = jest.fn();
 jest.requireMock('./handlerRegistry').ThumbnailProcessor.mockImplementation(() => ({ process: mockProcess }));
 
-const mockMetrics = jest.requireMock('@proton/metrics').default;
+const mockMetrics = jest.requireMock('@proton/metrics/metricsInstance').default;
 const mockErrorsIncrement = mockMetrics.drive_thumbnail_errors_total.increment;
 const mockNoHandlerIncrement = mockMetrics.drive_thumbnail_no_handler_total.increment;
 const mockSuccessRateIncrement = mockMetrics.drive_thumbnail_success_rate_total.increment;

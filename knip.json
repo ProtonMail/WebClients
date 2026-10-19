@@ -288,12 +288,12 @@
         "packages/chargebee": {
             "entry": [],
             "project": ["**/*.{ts,tsx}"],
-            "ignoreDependencies": ["@proton/styles"],
-            "ignore": ["./lib/types.ts"]
+            "ignoreDependencies": ["@proton/styles"]
         },
         "packages/colors": {
-            "entry": [],
-            "project": ["**/*.{ts,tsx}"]
+            "entry": ["tool/tool.ts"],
+            "project": ["**/*.{ts,tsx}"],
+            "ignoreDependencies": ["ts-loader"]
         },
         "packages/components": {
             "entry": [],
@@ -315,7 +315,7 @@
             "ignoreDependencies": ["@babel/plugin-transform-class-properties", "@proton/raw-images"]
         },
         "packages/docs-proto": {
-            "entry": [],
+            "entry": ["lib/index.ts"],
             "project": ["**/*.{ts,tsx}"]
         },
         "packages/docs-shared": {

@@ -7,10 +7,10 @@ import type { DocumentKeys, PublicDocumentKeys } from '@proton/docs-shared'
 import { GetAssociatedEncryptionDataForComment, isAnonymousComment } from './GetAdditionalEncryptionData'
 import type { EncryptionContext } from '../Services/Encryption/EncryptionContext'
 import { Comment } from '../Models'
-import metrics from '@proton/metrics'
+import metrics from '@proton/metrics/metricsInstance'
 import type { CommentResponseDto } from '../Api/Types/CommentResponseDto'
 import { canKeysSign } from '../Types/DocumentEntitlements'
-import type { SignedPlaintextContent } from '@proton/docs-proto'
+import type { SignedPlaintextContent } from '@proton/docs-proto/Generated/DocumentUpdate'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 
 export class DecryptComment implements UseCaseInterface<Comment> {

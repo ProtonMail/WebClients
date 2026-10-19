@@ -1,13 +1,13 @@
 import { render, screen } from '@testing-library/react';
 
-import metrics from '@proton/metrics';
+import metrics from '@proton/metrics/metricsInstance';
 import { FlagContext } from '@proton/unleash/proxy';
 
 import useDocumentTitle from '../../hooks/useDocumentTitle';
 import StandardErrorPage from './StandardErrorPage';
 
 jest.mock('../../hooks/useDocumentTitle');
-jest.mock('@proton/metrics', () => ({
+jest.mock('@proton/metrics/metricsInstance', () => ({
     core_ui_blocking_error_page_total: {
         increment: jest.fn(),
     },

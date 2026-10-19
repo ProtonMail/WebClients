@@ -6,7 +6,8 @@ import type {
   WebsocketConnectionInterface,
   DocumentType,
 } from '@proton/docs-shared'
-import type { DocumentUpdate, EventTypeEnum } from '@proton/docs-proto'
+import type { EventTypeEnum } from '@proton/docs-proto/Event/EventTypeEnum'
+import type { DocumentUpdate } from '@proton/docs-proto/Generated/DocumentUpdate'
 import type { DocumentState, PublicDocumentState } from '../../State/DocumentState'
 
 export interface WebsocketServiceInterface {

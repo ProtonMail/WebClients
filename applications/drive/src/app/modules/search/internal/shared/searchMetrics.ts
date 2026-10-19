@@ -1,4 +1,4 @@
-import metrics from '@proton/metrics';
+import metrics from '@proton/metrics/metricsInstance';
 import type { HttpsProtonMeWebDriveSearchEnvironmentIncompatibilityTotalV1SchemaJson } from '@proton/metrics/types/web_drive_search_environment_incompatibility_total_v1.schema';
 import type { HttpsProtonMeWebDriveSearchPermanentErrorsTotalV1SchemaJson } from '@proton/metrics/types/web_drive_search_permanent_errors_total_v1.schema';
 

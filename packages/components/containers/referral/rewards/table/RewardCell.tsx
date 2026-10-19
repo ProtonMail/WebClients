@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import type { ThemeColorUnion } from '@proton/colors';
+import type { ThemeColorUnion } from '@proton/colors/types';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { CYCLE } from '@proton/payments/core/constants';
 import type { Referral } from '@proton/shared/lib/interfaces';

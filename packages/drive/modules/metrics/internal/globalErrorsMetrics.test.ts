@@ -1,10 +1,10 @@
-import metrics from '@proton/metrics';
+import metrics from '@proton/metrics/metricsInstance';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 import { GlobalErrorsMetrics } from './globalErrorsMetrics';
 import { MetricUserPlan } from './types';
 
-jest.mock('@proton/metrics', () => ({
+jest.mock('@proton/metrics/metricsInstance', () => ({
     __esModule: true,
     default: {
         drive_error_total: {

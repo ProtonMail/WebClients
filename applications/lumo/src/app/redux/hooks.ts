@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import type { Selector, TypedUseSelectorHook } from 'react-redux';
 
-import { baseUseDispatch, baseUseSelector, baseUseStore } from '@proton/react-redux-store';
+import { baseUseDispatch, baseUseSelector, baseUseStore } from '@proton/react-redux-store/ProtonStoreContext';
 
 import type { LumoDispatch, LumoState } from './store';
 

@@ -1,4 +1,4 @@
-import { RTSConfig } from '@proton/docs-proto'
+import { RTSConfig } from '@proton/docs-proto/RTSConfig'
 
 export const MAX_DOC_SIZE = 25_000_000
 export const MAX_DOC_SIZE_THRESHOLD = 24_000_000

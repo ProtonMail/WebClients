@@ -17,7 +17,7 @@ import { InputField as InputFieldTwo } from '@proton/components/components/v2/fi
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useLoading from '@proton/hooks/useLoading';
-import metrics from '@proton/metrics';
+import metrics from '@proton/metrics/metricsInstance';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import {
