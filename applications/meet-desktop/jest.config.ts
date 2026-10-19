@@ -1,13 +1,12 @@
 import type { Config } from "jest";
+import { getTransformIgnorePatterns } from "@proton/jest-swc-preset/transformIgnorePatterns.js";
 
 const jestConfig: Config = {
     clearMocks: true,
     testEnvironment: "node",
     setupFiles: ["<rootDir>/jest.setup.ts"],
     preset: "@proton/jest-swc-preset",
-    transformIgnorePatterns: [
-        "node_modules/(?!(\\.pnpm|@proton/shared|@proton/components|@protontech/telemetry|@protontech/logger|@protontech/crypto|openpgp|@protontech/openpgp|@openpgp/web-stream-tools|otpauth|@protontech/pass-rust-core/ui|@preact/signals-core)/)",
-    ],
+    transformIgnorePatterns: getTransformIgnorePatterns(["otpauth", "@protontech/pass-rust-core/ui"]),
     moduleNameMapper: {
         "\\.css": "<rootDir>/src/utils/tests/fileMock.ts",
     },
