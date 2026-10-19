@@ -65,6 +65,7 @@ function StandaloneDoc() {
       canEdit: role.canEdit(),
       canComment: role.canComment(),
       languageCode: 'en',
+      dateFormat: { localeCode: 'en-US', hourCycle: 'h12' },
       getDisplayNameForEmail: (email) => email ?? 'Anonymous',
       comments,
       logger: session.logger,

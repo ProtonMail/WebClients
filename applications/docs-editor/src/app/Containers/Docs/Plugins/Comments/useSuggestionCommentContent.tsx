@@ -1,5 +1,5 @@
-import type { CommentInterface, CommentThreadInterface } from '@proton/docs-shared'
 import type { LexicalEditor } from 'lexical'
+import type { DocsComment, DocsCommentThread } from '../../contract/DocsCommentThread'
 import { useState, useEffect, Fragment } from 'react'
 import debounce from 'lodash/debounce'
 import { useMarkNodesContext } from '../MarkNodesContext'
@@ -16,8 +16,8 @@ const icon = <Icon data={Icons.speechBubblePen} className="inline h-4 w-4 align-
  * suggestion is accepted or rejected, then it will try to parse and display existing content.
  */
 export function useSuggestionCommentContent(
-  comment: CommentInterface,
-  thread: CommentThreadInterface,
+  comment: DocsComment,
+  thread: DocsCommentThread,
   suggestionID: string | null,
   editor: LexicalEditor,
 ) {

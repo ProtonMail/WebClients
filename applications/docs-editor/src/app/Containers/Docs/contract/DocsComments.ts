@@ -1,4 +1,4 @@
-import type { CommentInterface, CommentThreadInterface } from '@proton/docs-shared'
+import type { DocsComment, DocsCommentThread } from './DocsCommentThread'
 import type { SafeDocsUserState } from './Awareness'
 import type { SuggestionSummaryType } from './SuggestionType'
 
@@ -9,18 +9,18 @@ export type DocsCommentEvent =
 
 /** Comment operations and incoming events supplied by the embedding host. */
 export type DocsComments = {
-  getAllThreads(): Promise<CommentThreadInterface[]>
+  getAllThreads(): Promise<DocsCommentThread[]>
   createCommentThread(
     content: string,
     markID?: string,
     createMarkNode?: boolean,
-  ): Promise<CommentThreadInterface | undefined>
+  ): Promise<DocsCommentThread | undefined>
   createSuggestionThread(
     suggestionID: string,
     content: string,
     suggestionType: SuggestionSummaryType,
-  ): Promise<CommentThreadInterface | undefined>
-  createComment(content: string, threadId: string): Promise<CommentInterface | undefined>
+  ): Promise<DocsCommentThread | undefined>
+  createComment(content: string, threadId: string): Promise<DocsComment | undefined>
   editComment(threadId: string, commentId: string, content: string): Promise<boolean>
   deleteComment(threadId: string, commentId: string): Promise<boolean>
   resolveThread(threadId: string): Promise<boolean>

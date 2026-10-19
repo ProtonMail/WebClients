@@ -2,6 +2,9 @@ import { act, render } from '@testing-library/react'
 import type { ComponentProps, ReactNode } from 'react'
 import type { ClientRequiresEditorMethods, DocumentType, EditorInitializationConfig } from '@proton/docs-shared'
 import { EditorSystemMode } from '@proton/docs-shared'
+import { loadLocales } from '@proton/account/bootstrap'
+import { setDateLocales } from '@proton/shared/lib/i18n'
+import { enGBLocale, enUSLocale } from '@proton/shared/lib/i18n/dateFnLocales'
 import type { EditorConfig } from '../Lib/useBridge'
 import { reportErrorToSentry } from '../Utils/errorMessage'
 import { App } from './App'
@@ -50,6 +53,8 @@ function setup(documentType: DocumentType = 'doc') {
     application: {
       logger: { info: jest.fn(), debug: jest.fn() },
       setRole: jest.fn(),
+      setLocale: jest.fn(),
+      setDateLocale: jest.fn(),
       setAppVersion: jest.fn(),
       getRole: () => ({ canEdit: () => true }),
     },
@@ -84,12 +89,15 @@ function setup(documentType: DocumentType = 'doc') {
     })
   }
 
-  return { bridgeState, reportUserInterfaceError, initialize, rerender: () => view.rerender(element()) }
+  return { bridgeState, handler, reportUserInterfaceError, initialize, rerender: () => view.rerender(element()) }
 }
 
 describe('App bridge initialization', () => {
   beforeEach(() => {
     jest.clearAllMocks()
+  })
+  afterEach(() => {
+    setDateLocales({ dateLocale: enUSLocale })
   })
 
   it.each([
@@ -156,6 +164,40 @@ describe('App bridge initialization', () => {
       expect(reportUserInterfaceError).not.toHaveBeenCalled()
     },
   )
+
+  it("hands the account's date locale to the editor once the user settings have loaded it", async () => {
+    const { bridgeState, handler } = setup()
+    const settings = { Locale: 'en_GB' } as Parameters<ClientRequiresEditorMethods['loadUserSettings']>[0]
+    jest.mocked(loadLocales).mockImplementation(async () => {
+      setDateLocales({ dateLocale: enGBLocale })
+      return { update: true, localeCode: 'en_GB' }
+    })
+
+    await act(async () => {
+      await handler.loadUserSettings(settings)
+    })
+
+    expect(loadLocales).toHaveBeenCalledWith({ locales: [], userSettings: settings })
+    expect(bridgeState.application.setLocale).toHaveBeenCalledWith('en_GB')
+    expect(bridgeState.application.setDateLocale).toHaveBeenCalledWith(enGBLocale)
+  })
+
+  it('reports a failed translation load and still hands over the loaded date locale', async () => {
+    const { bridgeState, handler } = setup()
+    const settings = { Locale: 'en_GB' } as Parameters<ClientRequiresEditorMethods['loadUserSettings']>[0]
+    const error = new Error('No locale data for requested localeCode')
+    jest.mocked(loadLocales).mockImplementation(async () => {
+      setDateLocales({ dateLocale: enGBLocale })
+      throw error
+    })
+
+    await act(async () => {
+      await handler.loadUserSettings(settings)
+    })
+
+    expect(reportErrorToSentry).toHaveBeenCalledWith(error)
+    expect(bridgeState.application.setDateLocale).toHaveBeenCalledWith(enGBLocale)
+  })
 
   it('continues accepting spreadsheet conversions for Sheets', async () => {
     const { bridgeState, reportUserInterfaceError, initialize } = setup('sheet')

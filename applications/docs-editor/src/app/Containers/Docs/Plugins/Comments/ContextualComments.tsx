@@ -1,6 +1,6 @@
 import { usePopper } from '@proton/atoms/Popper/usePopper'
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor'
-import type { CommentThreadInterface } from '@proton/docs-shared'
+import type { DocsCommentThread } from '../../contract/DocsCommentThread'
 import { CommentsPanelListThread } from './CommentsPanelListThread'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
@@ -22,7 +22,7 @@ import { getContextualCommentsWidth, getDocsLayoutScrollContainer } from '../../
 const COMMENT_INPUT_ID = 'comment-input'
 const COMMENTS_WIDTH = 'max(20.5vw, 300px)'
 
-function ThreadPopoverButton({ thread }: { thread: CommentThreadInterface }) {
+function ThreadPopoverButton({ thread }: { thread: DocsCommentThread }) {
   const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>()
   const popoverRef = useRef<HTMLDivElement | null>(null)
   const { floating, position } = usePopper({
@@ -81,7 +81,7 @@ function ThreadComponent({
   thread,
   showContextualPanels,
 }: {
-  thread: CommentThreadInterface
+  thread: DocsCommentThread
   showContextualPanels: boolean
 }) {
   if (showContextualPanels) {
@@ -93,7 +93,7 @@ function ThreadComponent({
   return <ThreadPopoverButton thread={thread} />
 }
 
-export function ContextualComments({ activeThreads }: { activeThreads: CommentThreadInterface[] }) {
+export function ContextualComments({ activeThreads }: { activeThreads: DocsCommentThread[] }) {
   const [editor] = useLexicalComposerContext()
   const { setWidth: setRightPanelWidth } = useRightPanelContext()
   const viewportWidth = useViewportWidth()
@@ -129,7 +129,7 @@ export function ContextualComments({ activeThreads }: { activeThreads: CommentTh
 
   const getThreadPositions = useCallback(() => {
     editor.read(() => {
-      const getFirstAssociatedMarkNodeForThread = (thread: CommentThreadInterface) => {
+      const getFirstAssociatedMarkNodeForThread = (thread: DocsCommentThread) => {
         const markID = thread.markID
         const markNodeKeys = markNodeMap.get(markID)
         if (markNodeKeys === undefined) {
@@ -152,12 +152,11 @@ export function ContextualComments({ activeThreads }: { activeThreads: CommentTh
         return markRect
       }
 
-      const items: ({ node: LexicalNode | null } & (
-        { thread: CommentThreadInterface } | { selection: RangeSelection }
-      ))[] = activeThreads.map((thread) => ({
-        thread,
-        node: getFirstAssociatedMarkNodeForThread(thread),
-      }))
+      const items: ({ node: LexicalNode | null } & ({ thread: DocsCommentThread } | { selection: RangeSelection }))[] =
+        activeThreads.map((thread) => ({
+          thread,
+          node: getFirstAssociatedMarkNodeForThread(thread),
+        }))
 
       if (shouldShowCommentInputBoxAsContextual) {
         items.push({

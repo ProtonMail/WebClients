@@ -20,6 +20,7 @@ import { useApplication } from '../../ApplicationProvider'
 import { useSyncedState } from '../../../Hooks/useSyncedState'
 import { useContactEmails } from '../../../Hooks/useContactEmails'
 import { createDocsCommentsService } from './create-docs-comments-service'
+import { toDocsDateFormat } from './toDocsDateFormat'
 
 const hostTelemetryEvents: Record<DocsEditorTelemetryEvent, TelemetryDocsEditorEvents> = {
   [DocsEditorTelemetryEvents.table_of_contents_available]: TelemetryDocsEditorEvents.table_of_contents_available,
@@ -61,6 +62,9 @@ export function DocsAdapter({
   }, [clientInvoker])
   const [languageCode, setLanguageCode] = useState(application.languageCode)
   useEffect(() => application.subscribeToLocale(setLanguageCode), [application])
+  const [dateLocale, setDateLocale] = useState(application.dateLocale)
+  useEffect(() => application.subscribeToDateLocale(setDateLocale), [application])
+  const dateFormat = useMemo(() => toDocsDateFormat(dateLocale), [dateLocale])
   const comments = useMemo(
     () => createDocsCommentsService(clientInvoker, application.eventBus),
     [clientInvoker, application.eventBus],
@@ -164,6 +168,7 @@ export function DocsAdapter({
       canEdit,
       canComment,
       languageCode,
+      dateFormat,
       getDisplayNameForEmail: displayNameForEmail,
       comments,
       reportError,
@@ -192,6 +197,7 @@ export function DocsAdapter({
       canEdit,
       canComment,
       languageCode,
+      dateFormat,
       displayNameForEmail,
       comments,
       reportError,

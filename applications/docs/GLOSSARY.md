@@ -102,7 +102,7 @@ When a term has more than one meaning in code, the **Ambiguous** note says which
 ## Collaboration
 
 - **Role**: a user's permission on a document (`DocumentRole`: `Viewer`, `Commenter`, `Editor`, `Admin`, `PublicViewer`, `PublicEditor`...). Check capabilities with its methods (`canEdit()`, `canComment()`, `canShare()`...). `shared/Doc/DocumentRole.ts`.
-- **Comment thread**: `CommentThreadType` is `Comment` or `Suggestion`. Comment threads are `Active` or `Resolved`; suggestion threads are `Active`, `Accepted` or `Rejected`. `shared/CommentThread*.ts`.
+- **Comment thread**: `CommentThreadType` is `Comment` or `Suggestion`. Comment threads are `Active` or `Resolved`; suggestion threads are `Active`, `Accepted` or `Rejected`. `shared/CommentThread*.ts`, and as `DocsCommentThread` / `DocsComment` in `editor/Containers/Docs/contract/DocsCommentThread.ts` for the standalone editor.
 - **Suggestion mode**: editing where changes become suggestions others accept or reject (`EditorUserMode.Suggest`). Suggested content is wrapped in `ProtonNode` (`editor/Containers/Docs/Plugins/Suggestions/`); saved documents depend on it.
 - **Live comments**: who is currently typing in each comment thread, broadcast over RTS. `core/Realtime/LiveComments/`.
 - **Version history**: past revisions, built by grouping DUs (`core/VersionHistory/`), shown in `HistoryViewerModal`.

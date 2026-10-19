@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import type { CommentThreadInterface } from '@proton/docs-shared'
+import type { DocsCommentThread } from '../../contract/DocsCommentThread'
 import { CommentsPanelListThread } from './CommentsPanelListThread'
 
-export function CommentsPanelList({ threads }: { threads: CommentThreadInterface[] }): JSX.Element {
+export function CommentsPanelList({ threads }: { threads: DocsCommentThread[] }): JSX.Element {
   const [counter, setCounter] = useState(0)
 
   useEffect(() => {
