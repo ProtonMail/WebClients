@@ -1,6 +1,15 @@
-import { CommentsEvent, DocAwarenessEvent, InternalEventBus, LiveCommentsEvent } from '@proton/docs-shared'
-import type { CommentThreadInterface } from '@proton/docs-shared'
-import type { SafeDocsUserState } from '../../Docs/public'
+import {
+  CommentsEvent,
+  CommentThreadState as HostCommentThreadState,
+  CommentThreadType as HostCommentThreadType,
+  CommentType as HostCommentType,
+  DocAwarenessEvent,
+  InternalEventBus,
+  LiveCommentsEvent,
+} from '@proton/docs-shared'
+import type { CommentInterface, CommentThreadInterface } from '@proton/docs-shared'
+import type { DocsComment, DocsCommentThread, SafeDocsUserState } from '../../Docs/public'
+import { CommentThreadStates, CommentThreadTypes, CommentTypes } from '../../Docs/public'
 import { createClientInvokerFixture } from './create-client-invoker-fixture'
 import { createDocsCommentsService } from './create-docs-comments-service'
 
@@ -96,6 +105,23 @@ describe('Docs comments host adapter', () => {
     expect(await service.editComment('thread', 'comment', 'content')).toBe(true)
   })
 
+  it('gives the editor the thread and comment states the host sends', () => {
+    expect(CommentThreadStates).toEqual({
+      Active: HostCommentThreadState.Active,
+      Resolved: HostCommentThreadState.Resolved,
+      Accepted: HostCommentThreadState.Accepted,
+      Rejected: HostCommentThreadState.Rejected,
+    })
+    expect(CommentThreadTypes).toEqual({
+      Comment: HostCommentThreadType.Comment,
+      Suggestion: HostCommentThreadType.Suggestion,
+    })
+    expect(CommentTypes).toEqual({
+      Comment: HostCommentType.Comment,
+      Suggestion: HostCommentType.Suggestion,
+    })
+  })
+
   it('preserves rejected host promises for the editor to handle', async () => {
     const client = createClientInvokerFixture()
     const error = new Error('Comment mutation failed')
@@ -106,3 +132,26 @@ describe('Docs comments host adapter', () => {
     await expect(service.getTypersExcludingSelf('thread')).rejects.toBe(error)
   })
 })
+
+// Compiled by the app typecheck; this function is deliberately not executed.
+function typecheckHostCompatibility(
+  hostThread: CommentThreadInterface,
+  hostComment: CommentInterface,
+  hostState: HostCommentThreadState,
+  hostThreadType: HostCommentThreadType,
+  hostCommentType: HostCommentType,
+) {
+  const thread: DocsCommentThread = hostThread
+  const comment: DocsComment = hostComment
+  const state: DocsCommentThread['state'] = hostState
+  const threadType: DocsCommentThread['type'] = hostThreadType
+  const commentType: DocsComment['type'] = hostCommentType
+  // @ts-expect-error The container reads no thread modify time, so the contract does not promise one.
+  const threadModifyTime: unknown = thread.modifyTime
+  // @ts-expect-error The container reads no comment modify time, so the contract does not promise one.
+  const commentModifyTime: unknown = comment.modifyTime
+  // @ts-expect-error A host time object keeps only its own properties across the bridge's structured clone.
+  const commentMilliseconds: unknown = comment.createTime.milliseconds
+  return { state, threadType, commentType, threadModifyTime, commentModifyTime, commentMilliseconds }
+}
+void typecheckHostCompatibility

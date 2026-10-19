@@ -16,6 +16,7 @@ function createDependencies(reportError: DocsDependencies['reportError']): DocsD
     canEdit: true,
     canComment: true,
     languageCode: 'en',
+    dateFormat: { localeCode: 'en-US', hourCycle: 'h12' },
     getDisplayNameForEmail: (email) => email ?? 'Anonymous',
     comments: {
       getAllThreads: jest.fn(),

@@ -1,9 +1,13 @@
 import { versionCookieAtLoad } from '@proton/components/helpers/versionCookie'
 import type { DocumentRoleType } from '@proton/docs-shared'
 import { DocumentRole, InternalEventBus, SyncedEditorState } from '@proton/docs-shared'
+import { dateLocale as hostDateLocale } from '@proton/shared/lib/i18n'
 import type { Environment } from '@proton/shared/lib/interfaces'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 import { Logger } from '@proton/shared/lib/logs'
+
+/** The account's date-fns locale, which `loadLocales` builds from its locale and time format settings. */
+type DateLocale = typeof hostDateLocale
 
 export class Application {
   public readonly eventBus = new InternalEventBus()
@@ -13,6 +17,8 @@ export class Application {
   public readonly logger: LoggerInterface
   public languageCode: Intl.LocalesArgument = 'en'
   private readonly localeSubscribers = new Set<(languageCode: Intl.LocalesArgument) => void>()
+  public dateLocale: DateLocale = hostDateLocale
+  private readonly dateLocaleSubscribers = new Set<(dateLocale: DateLocale) => void>()
   public appVersion: string = ''
 
   /**
@@ -47,6 +53,19 @@ export class Application {
     callback(this.languageCode)
     return () => {
       this.localeSubscribers.delete(callback)
+    }
+  }
+
+  public setDateLocale(dateLocale: DateLocale): void {
+    this.dateLocale = dateLocale
+    this.dateLocaleSubscribers.forEach((callback) => callback(dateLocale))
+  }
+
+  public subscribeToDateLocale(callback: (dateLocale: DateLocale) => void): () => void {
+    this.dateLocaleSubscribers.add(callback)
+    callback(this.dateLocale)
+    return () => {
+      this.dateLocaleSubscribers.delete(callback)
     }
   }
 

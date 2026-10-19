@@ -5,6 +5,9 @@ import type { EditorRequiresClientMethods } from '@proton/docs-shared'
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact'
 import { isDevOrBlack } from '@proton/shared/lib/env'
 import { TelemetryDocsEditorEvents } from '@proton/shared/lib/api/telemetry'
+import { getDateFnLocaleWithSettings } from '@proton/shared/lib/i18n/dateFnLocale'
+import { enGBLocale, enUSLocale } from '@proton/shared/lib/i18n/dateFnLocales'
+import { SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces'
 import { DocsEditorTelemetryEvents } from '../../Docs/contract/DocsEditorTelemetry'
 import type { SafeDocsUserState } from '../../Docs/public'
 import { useDocsDependencies, type DocsDependencies } from '../../Docs/DocsDependenciesProvider'
@@ -223,6 +226,22 @@ describe('DocsAdapter runtime services', () => {
     expect(onCleanup).toHaveBeenLastCalledWith(replacement)
     act(() => replacement.setLocale('pt_PT'))
     expect(host.dependencies.languageCode).toBe('nl')
+  })
+
+  it("follows the account's date locale for absolute times without a parent render", () => {
+    const host = setup()
+    expect(host.dependencies.dateFormat).toEqual({ localeCode: 'en-US', hourCycle: 'h12' })
+    const initialServices = host.dependencies
+    act(() => host.application.setDateLocale(enGBLocale))
+    expect(host.dependencies.dateFormat).toEqual({ localeCode: 'en-GB', hourCycle: 'h23' })
+    expect(host.dependencies.comments).toBe(initialServices.comments)
+
+    const replacement = new Application()
+    replacement.setDateLocale(getDateFnLocaleWithSettings(enGBLocale, { TimeFormat: SETTINGS_TIME_FORMAT.H12 }))
+    host.rerender(replacement)
+    expect(host.dependencies.dateFormat).toEqual({ localeCode: 'en-GB', hourCycle: 'h12' })
+    act(() => host.application.setDateLocale(enUSLocale))
+    expect(host.dependencies.dateFormat).toEqual({ localeCode: 'en-GB', hourCycle: 'h12' })
   })
 
   it('rebinds comments and awareness subscriptions on dependency replacement and removes them on unmount', () => {
