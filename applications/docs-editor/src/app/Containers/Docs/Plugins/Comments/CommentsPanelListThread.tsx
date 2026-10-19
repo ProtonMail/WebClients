@@ -1,4 +1,3 @@
-import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton'
 import type { MouseEventHandler } from 'react'
 import { useEffect, useMemo, useState } from 'react'
 import { clsx } from 'clsx'
@@ -6,6 +5,7 @@ import { CommentsPanelListComment } from './CommentsPanelListComment'
 import { CommentsComposer } from './CommentsComposer'
 import { Icon } from '../../Components/Icon'
 import * as Icons from '../../Components/icons'
+import { IconButton } from '../../Components/ui'
 import type { DocsComment, DocsCommentThread } from '../../contract/DocsCommentThread'
 import { CommentThreadStates, CommentThreadTypes, CommentTypes } from '../../contract/DocsCommentThread'
 import { c, msgid } from 'ttag'
@@ -296,14 +296,16 @@ export function CommentsPanelListThread({ thread, className }: { thread: DocsCom
                 return null
               }
               return (
-                <ToolbarButton
-                  className="bg-primary rounded-full p-1"
-                  title={c('Action').t`Reply`}
-                  icon={<Icon data={Icons.arrowUp} size={3.5} />}
+                <IconButton
+                  label={c('Action').t`Reply`}
+                  color="norm"
+                  pill
                   disabled={!canSubmit}
                   onClick={submitComment}
                   data-testid="reply-in-send-button"
-                />
+                >
+                  <Icon data={Icons.arrowUp} size={3.5} />
+                </IconButton>
               )
             }}
           />
