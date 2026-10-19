@@ -1,11 +1,11 @@
 import { MetricVolumeType } from '@protontech/drive-sdk';
 
-import metrics from '@proton/metrics';
+import metrics from '@proton/metrics/metricsInstance';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
 import { MetricHandler, reduceSizePrecision } from './telemetry';
 
-jest.mock('@proton/metrics', () => ({
+jest.mock('@proton/metrics/metricsInstance', () => ({
     drive_sdk_api_retry_succeeded_total: {
         increment: jest.fn(),
     },

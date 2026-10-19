@@ -1,6 +1,6 @@
 import type { ComponentType, ReactNode } from 'react';
 
-import type { ThemeColor } from '@proton/colors';
+import type { ThemeColor } from '@proton/colors/types';
 import type { IconSize } from '@proton/icons/types';
 
 /**

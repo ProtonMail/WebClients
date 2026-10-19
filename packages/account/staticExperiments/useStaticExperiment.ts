@@ -1,4 +1,4 @@
-import { baseUseSelector } from '@proton/react-redux-store';
+import { baseUseSelector } from '@proton/react-redux-store/ProtonStoreContext';
 
 import { selectStaticExperiments } from './slice';
 import type { StaticExperimentName, StaticExperimentVariant } from './types';

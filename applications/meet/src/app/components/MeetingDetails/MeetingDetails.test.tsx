@@ -16,7 +16,7 @@ import {
 import { MeetingSideBars, uiStateReducer } from '@proton/meet/store/slices/uiStateSlice';
 import { initialState as initialMeetUserState, meetUserReducer } from '@proton/meet/store/slices/userSlice';
 import { getMeetingLink } from '@proton/meet/utils/getMeetingLink';
-import { ProtonStoreContext } from '@proton/react-redux-store';
+import { ProtonStoreContext } from '@proton/react-redux-store/ProtonStoreContext';
 
 import { MeetContext } from '../../contexts/MeetContext';
 import { WrappedMeetingDetails } from './MeetingDetails';

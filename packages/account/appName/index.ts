@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { baseUseSelector } from '@proton/react-redux-store';
+import { baseUseSelector } from '@proton/react-redux-store/ProtonStoreContext';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 
 const name = 'appName' as const;

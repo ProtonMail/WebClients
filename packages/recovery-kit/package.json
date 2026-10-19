@@ -1,6 +1,10 @@
 {
     "name": "@proton/recovery-kit",
     "description": "Recovery kit pdf generation",
+    "exports": {
+        "./filledTemplate": "./filledTemplate.ts",
+        "./generatePDFKit": "./generatePDFKit.ts"
+    },
     "scripts": {
         "check:types": "tsc --checkers 1",
         "lint": "eslint --quiet",

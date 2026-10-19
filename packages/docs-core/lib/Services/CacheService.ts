@@ -12,7 +12,7 @@ import type { EncryptionService } from './Encryption/EncryptionService'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 import type { DatabaseSchema } from '../Database/Schema'
 import type { IndexedDatabase } from '../Database/IndexedDB'
-import { Commit } from '@proton/docs-proto'
+import { Commit } from '@proton/docs-proto/Generated/Commit'
 import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@protontech/crypto/utils'
 
 type CachedValue = {

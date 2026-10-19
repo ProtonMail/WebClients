@@ -12,7 +12,7 @@ import { IcMobile } from '@proton/icons/icons/IcMobile';
 import { IcSpeechBubble } from '@proton/icons/icons/IcSpeechBubble';
 import { IcStorage } from '@proton/icons/icons/IcStorage';
 import { IcUser } from '@proton/icons/icons/IcUser';
-import { baseUseSelector } from '@proton/react-redux-store';
+import { baseUseSelector } from '@proton/react-redux-store/ProtonStoreContext';
 import { TelemetrySecurityCenterEvents } from '@proton/shared/lib/api/telemetry';
 import { useFlag } from '@proton/unleash/useFlag';
 

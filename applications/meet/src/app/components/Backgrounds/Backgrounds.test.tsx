@@ -15,7 +15,7 @@ import {
 import { deviceManagementReducer } from '@proton/meet/store/slices/deviceManagementSlice';
 import { MeetingSideBars, uiStateReducer } from '@proton/meet/store/slices/uiStateSlice';
 import { MAX_BACKGROUNDS_PER_NAMESPACE } from '@proton/meet/utils/customBackgrounds';
-import { ProtonStoreContext } from '@proton/react-redux-store';
+import { ProtonStoreContext } from '@proton/react-redux-store/ProtonStoreContext';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import { BackgroundEffectsContext } from '../../contexts/BackgroundEffects/BackgroundEffectsContext';

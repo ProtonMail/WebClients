@@ -2,7 +2,10 @@ import { useEffect } from 'react';
 
 import type { Action, ThunkDispatch } from '@reduxjs/toolkit';
 
-import { baseUseDispatch as useDispatch, baseUseSelector as useSelector } from '@proton/react-redux-store';
+import {
+    baseUseDispatch as useDispatch,
+    baseUseSelector as useSelector,
+} from '@proton/react-redux-store/ProtonStoreContext';
 import { CacheType, type ReducerValue } from '@proton/redux-utilities/interface';
 import type { PasswordPolicies } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';

@@ -15,7 +15,7 @@ import {
     selectChatMessages,
 } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { MeetingSideBars, toggleSideBarState, uiStateReducer } from '@proton/meet/store/slices/uiStateSlice';
-import { ProtonStoreContext } from '@proton/react-redux-store';
+import { ProtonStoreContext } from '@proton/react-redux-store/ProtonStoreContext';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { CHAT_MESSAGE_MAX_LENGTH } from '../../constants';

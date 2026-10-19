@@ -21,7 +21,7 @@ import { CompatRouter } from 'react-router-dom-v5-compat'
 import { UnleashFlagProviderWithToolbar } from '@proton/unleash/UnleashFlagProviderWithToolbar'
 
 import useEffectOnce from '@proton/hooks/useEffectOnce'
-import metrics from '@proton/metrics'
+import metrics from '@proton/metrics/metricsInstance'
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider'
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error'
 import type { UserModel } from '@proton/shared/lib/interfaces'

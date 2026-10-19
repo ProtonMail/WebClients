@@ -4,8 +4,9 @@
     "description": "Processing RAW Images with WASM",
     "repository": "git@gitlab.protontech.ch:drive/raw-images.git",
     "author": "Gregory Linford <gregory.linford@proton.ch>",
-    "main": "src/index.ts",
-    "types": "src/index.ts",
+    "exports": {
+        "./createWorker": "./src/createWorker.ts"
+    },
     "files": [
         "src",
         "build-dcraw.sh",

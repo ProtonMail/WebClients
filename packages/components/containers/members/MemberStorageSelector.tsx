@@ -7,7 +7,8 @@ import type { getStorageRange, getTotalStorage } from '@proton/account/organizat
 import { Donut } from '@proton/atoms/Donut/Donut';
 import { Slider } from '@proton/atoms/Slider/Slider';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { ThemeColor, getVariableFromThemeColor } from '@proton/colors';
+import getVariableFromThemeColor from '@proton/colors/get-variable-from-theme-color';
+import { ThemeColor } from '@proton/colors/types';
 import humanSize, { getLongSizeFormat, getSizeFormat, getUnit } from '@proton/shared/lib/helpers/humanSize';
 import { sizeUnits } from '@proton/shared/lib/helpers/size';
 import generateUID from '@proton/utils/generateUID';

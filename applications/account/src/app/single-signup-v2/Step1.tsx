@@ -20,7 +20,7 @@ import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { useHandler } from '@proton/components/hooks/useHandler';
 import useLoading from '@proton/hooks/useLoading';
-import metrics from '@proton/metrics';
+import metrics from '@proton/metrics/metricsInstance';
 import { useCurrencies } from '@proton/payments-ui/client-extensions/useCurrencies';
 import { usePaymentsApi } from '@proton/payments-ui/react-extensions/usePaymentsApi';
 import { useCouponConfig } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';

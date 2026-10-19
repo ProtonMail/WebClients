@@ -3,7 +3,7 @@ import { type ReactNode, useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import metrics from '@proton/metrics';
+import metrics from '@proton/metrics/metricsInstance';
 import clsx from '@proton/utils/clsx';
 
 import useDocumentTitle from '../../hooks/useDocumentTitle';

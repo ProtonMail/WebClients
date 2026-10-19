@@ -4,7 +4,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { render, screen } from '@testing-library/react';
 
 import { meetAppStateReducer, setPreviousMeeting } from '@proton/meet/store/slices/meetAppStateSlice';
-import { ProtonStoreContext } from '@proton/react-redux-store';
+import { ProtonStoreContext } from '@proton/react-redux-store/ProtonStoreContext';
 
 import type { PostCallTitleKind } from './PostCallTitle';
 import { PostCallTitle } from './PostCallTitle';

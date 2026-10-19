@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import type { ButtonLikeShape } from '@proton/atoms/Button/ButtonLike';
-import type { ThemeColorUnion } from '@proton/colors';
+import type { ThemeColorUnion } from '@proton/colors/types';
 
 import { LumoIcon } from '../LumoIcon/LumoIcon';
 
@@ -124,7 +124,13 @@ export const ComposerNotificationCard = ({
                     onClick={onDismiss}
                     title={c('Action').t`Dismiss`}
                 >
-                    <LumoIcon name="X" width={12} height={12} className='color-weak' aria-label={c('Action').t`Dismiss`} />
+                    <LumoIcon
+                        name="X"
+                        width={12}
+                        height={12}
+                        className="color-weak"
+                        aria-label={c('Action').t`Dismiss`}
+                    />
                 </Button>
             )}
         </div>

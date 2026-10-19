@@ -5,7 +5,7 @@ import { type DomainAddressesState, domainAddressesThunk } from '@proton/account
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useLoading } from '@proton/hooks';
-import { baseUseDispatch } from '@proton/react-redux-store';
+import { baseUseDispatch } from '@proton/react-redux-store/ProtonStoreContext';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { updateCatchAll } from '@proton/shared/lib/api/domains';
@@ -40,7 +40,7 @@ const AddressCatchAll = ({ address, domain, onChange, disabled }: Props) => {
             disabled={loading || disabled}
             checked={!!address.CatchAll}
             onChange={async ({ target }) => {
-                withLoading(update(target.checked));
+                void withLoading(update(target.checked));
             }}
         />
     );

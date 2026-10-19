@@ -1,4 +1,4 @@
-import metrics from './index';
+import metrics from './metricsInstance';
 
 type EventLoopType = 'core' | 'mail' | 'calendar' | 'contact';
 

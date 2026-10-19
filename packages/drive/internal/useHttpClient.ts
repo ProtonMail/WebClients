@@ -8,7 +8,7 @@ import type {
 import { AbortError } from '@protontech/drive-sdk';
 
 import { useApi } from '@proton/app-context/useApi';
-import metrics from '@proton/metrics';
+import metrics from '@proton/metrics/metricsInstance';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { PROTON_LOCAL_DOMAIN } from '@proton/shared/lib/localDev';
 

@@ -12,8 +12,8 @@ import type { LoggerInterface } from '@proton/shared/lib/logs'
 import type { UnleashClient } from '@proton/unleash/UnleashClient'
 import type { CacheService } from '../Services/CacheService'
 
-jest.mock('@proton/docs-proto', () => ({
-  ...jest.requireActual('@proton/docs-proto'),
+jest.mock('@proton/docs-proto/Generated/Squash', () => ({
+  ...jest.requireActual('@proton/docs-proto/Generated/Squash'),
   SquashLock: {
     deserializeBinary: jest.fn().mockReturnValue({
       commit: {

@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { baseUseSelector } from '@proton/react-redux-store';
+import { baseUseSelector } from '@proton/react-redux-store/ProtonStoreContext';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Label } from '@proton/shared/lib/interfaces';
 import type { CategoryViewVariantVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
@@ -18,7 +18,7 @@ import { CATEGORIES_COLOR_SHADES } from './categoriesConstants';
 import { useCategoriesData } from './useCategoriesData';
 
 jest.mock('@proton/unleash/proxy');
-jest.mock('@proton/react-redux-store');
+jest.mock('@proton/react-redux-store/ProtonStoreContext');
 jest.mock('@proton/unleash/useFlag');
 jest.mock('@proton/unleash/useVariant');
 

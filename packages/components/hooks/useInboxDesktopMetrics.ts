@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import metrics from '@proton/metrics';
+import metrics from '@proton/metrics/metricsInstance';
 import {
     addIPCHostUpdateListener,
     canListenInboxDesktopHostMessages,
@@ -18,10 +18,10 @@ export const useInboxDesktopMetrics = () => {
             metrics.desktop_inbox_heartbeat_total.increment(payload.Labels);
         });
 
-        invokeInboxDesktopIPC({ type: 'metricsListenerChanged', payload: 'ready' });
+        void invokeInboxDesktopIPC({ type: 'metricsListenerChanged', payload: 'ready' });
 
         return () => {
-            invokeInboxDesktopIPC({ type: 'metricsListenerChanged', payload: 'removed' });
+            void invokeInboxDesktopIPC({ type: 'metricsListenerChanged', payload: 'removed' });
             metricsListener.removeListener();
         };
     }, []);

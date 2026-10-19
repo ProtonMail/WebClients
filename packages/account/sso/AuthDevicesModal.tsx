@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { useLoading } from '@proton/hooks';
-import { baseUseDispatch } from '@proton/react-redux-store';
+import { baseUseDispatch } from '@proton/react-redux-store/ProtonStoreContext';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import noop from '@proton/utils/noop';
 

@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom-v5-compat';
 
 import { c, msgid } from 'ttag';
 
-import type { ThemeColorUnion } from '@proton/colors';
+import type { ThemeColorUnion } from '@proton/colors/types';
 import {
     FloatingButton,
     Row,

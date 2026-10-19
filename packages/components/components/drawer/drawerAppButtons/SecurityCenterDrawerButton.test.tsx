@@ -8,7 +8,7 @@ import {
     selectUnreadBreachesCount,
 } from '@proton/account';
 import { ThemeColor } from '@proton/colors/types';
-import { baseUseSelector } from '@proton/react-redux-store';
+import { baseUseSelector } from '@proton/react-redux-store/ProtonStoreContext';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import SecurityCenterDrawerAppButton from '../drawerAppButtons/SecurityCenterDrawerAppButton';
@@ -27,7 +27,7 @@ jest.mock('@proton/unleash/useFlag', () => ({
     useFlag: jest.fn(),
 }));
 
-jest.mock('@proton/react-redux-store', () => ({
+jest.mock('@proton/react-redux-store/ProtonStoreContext', () => ({
     baseUseSelector: jest.fn(),
 }));
 

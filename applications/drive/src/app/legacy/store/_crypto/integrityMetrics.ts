@@ -1,7 +1,7 @@
 import { fromUnixTime } from 'date-fns';
 
 import { driveMetrics } from '@proton/drive/modules/metrics';
-import metrics from '@proton/metrics';
+import metrics from '@proton/metrics/metricsInstance';
 
 import type { MetricUserPlan } from '../../../utils/type/MetricTypes';
 
