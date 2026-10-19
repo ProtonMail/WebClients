@@ -14,7 +14,7 @@ import useDriveNavigation from './useNavigate';
  * @deprecated
  */
 export function useLegacyContextShareHandler() {
-    const { navigateToLink, navigateToNoAccess } = useDriveNavigation();
+    const { redirectToLink, redirectToAlbum, navigateToNoAccess } = useDriveNavigation();
     const { acceptInvitation } = useInvitationsActions();
     const api = useApi();
 
@@ -40,7 +40,10 @@ export function useLegacyContextShareHandler() {
             const isFile = type === NodeType.File || type === NodeType.Photo;
             if (!!response.ContextShare) {
                 void countActionWithTelemetry(Actions.RedirectToCorrectContextShare);
-                return navigateToLink(
+                if (type === NodeType.Album) {
+                    return redirectToAlbum(response.ContextShare.ShareID, linkId);
+                }
+                return redirectToLink(
                     response.ContextShare.ShareID,
                     linkId,
                     isFile,
@@ -55,7 +58,11 @@ export function useLegacyContextShareHandler() {
                 const uid = generateNodeUid(invitation.VolumeID, linkId);
                 const invitationUid = generateInvitationUid(invitation.ShareID, invitation.InvitationID);
                 await acceptInvitation(uid, invitationUid, type);
-                navigateToLink(
+                if (type === NodeType.Album) {
+                    redirectToAlbum(invitation.ShareID, linkId);
+                    return;
+                }
+                redirectToLink(
                     invitation.ShareID,
                     linkId,
                     isFile,
@@ -68,7 +75,7 @@ export function useLegacyContextShareHandler() {
             navigateToNoAccess();
             return;
         },
-        [acceptInvitation, api, navigateToLink, navigateToNoAccess]
+        [acceptInvitation, api, redirectToLink, redirectToAlbum, navigateToNoAccess]
     );
 
     return { handleContextShare };
