@@ -7,12 +7,16 @@ interface DocInvitationsStore {
   rawInvitations: ProtonInvitationWithNode[]
   convertedInvitations: ExtendedInvitationDetails[]
   setInvitations: (invitations: ProtonInvitationWithNode[]) => void
-  removeInvitation: (invitationUid: string) => void
   updateInvitation: (invitationId: string, patch: Partial<ExtendedInvitationDetails>) => void
 }
 
-function toConvertedInvitations(invitations: ProtonInvitationWithNode[]) {
-  return invitations.map((invitation) => sdkInvitationToExtended(invitation))
+// Keeps lock of invitations that are being accepted
+function toConvertedInvitations(invitations: ProtonInvitationWithNode[], previous: ExtendedInvitationDetails[]) {
+  const lockedIds = new Set(previous.filter((item) => item.isLocked).map((item) => item.invitation.invitationId))
+  return invitations.map((invitation) => ({
+    ...sdkInvitationToExtended(invitation),
+    isLocked: lockedIds.has(invitation.uid),
+  }))
 }
 
 export const useDocInvitationsStore = create((set): DocInvitationsStore => ({
@@ -20,14 +24,9 @@ export const useDocInvitationsStore = create((set): DocInvitationsStore => ({
   convertedInvitations: [],
 
   setInvitations: (invitations) =>
-    set(() => ({ rawInvitations: invitations, convertedInvitations: toConvertedInvitations(invitations) })),
-
-  removeInvitation: (invitationUid) =>
     set((state) => ({
-      rawInvitations: state.rawInvitations.filter((invitation) => invitation.uid !== invitationUid),
-      convertedInvitations: state.convertedInvitations.filter(
-        (invitation) => invitation.invitation.invitationId !== invitationUid,
-      ),
+      rawInvitations: invitations,
+      convertedInvitations: toConvertedInvitations(invitations, state.convertedInvitations),
     })),
 
   updateInvitation: (invitationId, newValues) =>

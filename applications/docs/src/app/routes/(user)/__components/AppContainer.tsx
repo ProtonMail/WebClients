@@ -10,6 +10,7 @@ import { ApplicationProvider } from '~/utils/application-context'
 import { DocsNotificationsProvider } from '../__utils/notifications-context'
 import { DOCUMENT_CREATION_PATHS, DOCUMENT_EDITOR_PATH, DocsUrlContextProvider } from '~/utils/docs-url-bar'
 import { useInitializeApplication } from './useInitializeApplication'
+import { useCoreEventSubscription } from '~/drive-sdk/core-event-subscriber'
 import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
 import { HOMEPAGE_PATHS, HOMEPAGE_RECENTS_PATH } from '../__utils/homepage-paths'
 
@@ -40,6 +41,7 @@ export function AppContainer() {
 function Content() {
   const driveCompat = useDriveCompat()
   const application = useInitializeApplication({ driveCompat })
+  useCoreEventSubscription()
   return (
     <ApplicationProvider application={application}>
       <DocsNotificationsProvider>
