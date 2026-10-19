@@ -28,7 +28,7 @@ jest.mock('../../../hooks/useModals', () =>
 
 jest.mock('../../../hooks/useEventManager', () =>
     jest.fn().mockReturnValue({
-        call: jest.fn(),
+        call: jest.fn().mockResolvedValue(undefined),
     })
 );
 
@@ -214,7 +214,7 @@ describe('PaymentMethodActions', () => {
             (api as jest.Mock).mockReset();
 
             const { call } = useEventManager();
-            (call as jest.Mock).mockReset();
+            (call as jest.Mock).mockReset().mockResolvedValue(undefined);
 
             const { createNotification } = useNotifications();
             (createNotification as jest.Mock).mockReset();
@@ -232,6 +232,92 @@ describe('PaymentMethodActions', () => {
             });
             await waitFor(async () => {
                 expect(createNotification).toHaveBeenCalled();
+            });
+        });
+
+        it('should confirm the default change when the event refresh fails', async () => {
+            const method0: SavedPaymentMethod = {
+                Order: 0,
+                ID: 'id-000',
+                Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
+                Details: {
+                    Name: 'John Smith',
+                    ExpMonth: '01',
+                    ExpYear: '2055',
+                    ZIP: '12345',
+                    Country: 'US',
+                    Last4: '4242',
+                    Brand: 'Visa',
+                },
+                Autopay: Autopay.ENABLE,
+                IsDefault: true,
+            };
+            const method1: SavedPaymentMethod = {
+                ...method0,
+                Order: 1,
+                ID: 'id-123',
+                Details: { ...method0.Details, Last4: '4444', Brand: 'Mastercard' },
+                IsDefault: false,
+            };
+
+            const api = useApi();
+            (api as jest.Mock).mockReset();
+
+            const { call } = useEventManager();
+            (call as jest.Mock).mockReset().mockRejectedValue(new Error('events failed'));
+
+            const { createNotification } = useNotifications();
+            (createNotification as jest.Mock).mockReset();
+
+            render(<PaymentMethodActions method={method1} methods={[method0, method1]} app={APPS.PROTONMAIL} />);
+
+            await openActionsDropdown();
+            await userEvent.click(await screen.findByText('Mark as default'));
+
+            await waitFor(() => {
+                expect(createNotification).toHaveBeenCalledWith({ text: 'Payment method updated' });
+            });
+            expect(api).toHaveBeenCalledWith(orderPaymentMethods(['id-123', 'id-000']));
+        });
+
+        it('should confirm the deletion and close the modal when the event refresh fails', async () => {
+            const method: SavedPaymentMethod = {
+                Order: 1,
+                ID: 'id-123',
+                Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
+                Details: {
+                    Name: 'John Smith',
+                    ExpMonth: '01',
+                    ExpYear: '2038',
+                    ZIP: '12345',
+                    Country: 'US',
+                    Last4: '4444',
+                    Brand: 'Mastercard',
+                },
+                Autopay: Autopay.ENABLE,
+            };
+
+            const api = useApi();
+            (api as jest.Mock).mockReset();
+
+            const { call } = useEventManager();
+            (call as jest.Mock).mockReset().mockRejectedValue(new Error('events failed'));
+
+            const { createNotification } = useNotifications();
+            (createNotification as jest.Mock).mockReset();
+
+            render(<PaymentMethodActions method={method} methods={[method]} app={APPS.PROTONMAIL} />);
+
+            await openActionsDropdown();
+            await userEvent.click(await screen.findByTestId('Delete'));
+            await userEvent.click(await screen.findByTestId('confirm-deletion'));
+
+            await waitFor(() => {
+                expect(createNotification).toHaveBeenCalledWith({ text: 'Payment method deleted' });
+            });
+            expect(api).toHaveBeenCalledWith(deletePaymentMethod('id-123'));
+            await waitFor(() => {
+                expect(screen.getByTestId('confirm-deletion').closest('.modal-two--out')).not.toBeNull();
             });
         });
 
@@ -258,7 +344,7 @@ describe('PaymentMethodActions', () => {
             (api as jest.Mock).mockReset();
 
             const { call } = useEventManager();
-            (call as jest.Mock).mockReset();
+            (call as jest.Mock).mockReset().mockResolvedValue(undefined);
 
             const { createNotification } = useNotifications();
             (createNotification as jest.Mock).mockReset();
