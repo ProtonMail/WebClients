@@ -65,6 +65,12 @@ export const useConversationPanelState = () => {
         open();
     }, [open]);
 
+    /** Open the All files drawer without toggle semantics (e.g. back from artifact panel). */
+    const handleShowFilesDrawer = useCallback(() => {
+        setOpenPanel({ type: 'files', filterMessage: undefined });
+        open();
+    }, [open]);
+
     const handleClosePanel = useCallback(() => {
         setOpenPanel({ type: 'files' });
         close();
@@ -90,6 +96,7 @@ export const useConversationPanelState = () => {
         handleOpenSources,
         handleOpenFiles,
         handleShowDriveBrowser,
+        handleShowFilesDrawer,
         handleClosePanel,
         handleOpenFilePreview,
         handleClearFilter,
