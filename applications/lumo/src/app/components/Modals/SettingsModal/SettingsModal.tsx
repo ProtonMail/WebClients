@@ -14,8 +14,8 @@ import { isDesktopEnvironment } from '@proton/lumo-api-client/core/desktop-tools
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useLumoUserSettings } from '../../../hooks';
-import { useDriveFolderIndexing } from '../../../hooks/useDriveFolderIndexing';
 import { useDictationLanguage } from '../../../hooks/useDictationLanguage';
+import { useDriveFolderIndexing } from '../../../hooks/useDriveFolderIndexing';
 import { useLumoAnimatedBackground } from '../../../hooks/useLumoAnimatedBackground';
 import { useLumoAuthAction } from '../../../hooks/useLumoAuthAction';
 import { useLumoFlags } from '../../../hooks/useLumoFlags';
@@ -41,8 +41,8 @@ import { CreateFreeAccountLink } from '../../Guest/CreateFreeAccountLink/CreateF
 import { SignInButton } from '../../Guest/SignInLink';
 import { type IconName, LumoIcon } from '../../LumoIcon/LumoIcon';
 import AboutPanel from './AboutPanel';
-import DesktopSettingsPanel from './DesktopSettingsPanel';
 import DeleteAllButton from './DeleteAllButton';
+import DesktopSettingsPanel from './DesktopSettingsPanel';
 import { FontSizeSettingRow } from './FontSizeSettingRow';
 import MemoryPanel from './MemoryPanel';
 import MobileManageSubscriptionButton from './MobileManageSubscriptionButton';
@@ -334,9 +334,9 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
             {isArtifactsViewEnabled && (
                 <SettingsSectionItem
                     icon="FileText"
-                    text={c('collider_2025: Title').t`Automatic Create Artifact`}
+                    text={c('collider_2025: Title').t`Automatic creations`}
                     subtext={c('collider_2025: Description')
-                        .t`Allow ${LUMO_SHORT_APP_NAME} to create artifacts in the side panel when appropriate. This is the default for all chats; you can change it for a single chat from the Tools menu.`}
+                        .t`Allow ${LUMO_SHORT_APP_NAME} to open longer documents, code, and slides in the canvas when appropriate. This is the default for all chats; you can change it for a single chat from the Tools menu.`}
                     button={
                         <Toggle
                             id="automatic-artifact-creation-toggle"

@@ -136,8 +136,8 @@ const PHASE_ACTIVE: Record<ThinkingPhase, readonly (() => string)[]> = {
         () => c('collider_2025:Reasoning').t`Extracting page content`,
     ],
     create_artifact: [
-        () => c('collider_2025:Reasoning').t`Creating artifact`,
-        () => c('collider_2025:Reasoning').t`Preparing your side panel`,
+        () => c('collider_2025:Reasoning').t`Working on your creation`,
+        () => c('collider_2025:Reasoning').t`Preparing your canvas`,
     ],
     other: [() => c('collider_2025:Reasoning').t`Using a tool`],
 };
@@ -177,8 +177,8 @@ const PHASE_COMPLETE: Record<ThinkingPhase, readonly (() => string)[]> = {
         () => c('collider_2025:Reasoning').t`Extracted page content`,
     ],
     create_artifact: [
-        () => c('collider_2025:Reasoning').t`Created artifact`,
-        () => c('collider_2025:Reasoning').t`Prepared your side panel`,
+        () => c('collider_2025:Reasoning').t`Finished your creation`,
+        () => c('collider_2025:Reasoning').t`Prepared your canvas`,
     ],
     other: [() => c('collider_2025:Reasoning').t`Used a tool`],
 };
