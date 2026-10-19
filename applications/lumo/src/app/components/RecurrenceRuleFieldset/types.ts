@@ -44,3 +44,8 @@ interface MonthlyRecurrenceRule extends RecurrenceSchedule {
 export type RecurrenceRule = OnceRecurrenceRule | DailyRecurrenceRule | WeeklyRecurrenceRule | MonthlyRecurrenceRule;
 
 export type RecurrenceRuleFrequency = RecurrenceRule['frequency'];
+
+/** Validation error keys for recurrence controls in `RecurrenceRuleFieldset`. */
+export type RecurrenceRuleValidationField = 'time' | 'dateTime' | 'weekDayPicker' | 'monthDayPicker';
+
+export type RecurrenceRuleFieldErrors = Partial<Record<RecurrenceRuleValidationField, string>>;

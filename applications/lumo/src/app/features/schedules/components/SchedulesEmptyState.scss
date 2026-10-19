@@ -1,0 +1,15 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
+.schedules-empty-state {
+	max-inline-size: #{rem(420)};
+
+	&__icon {
+		block-size: #{rem(56)};
+		inline-size: #{rem(56)};
+		background-color: var(--control-fill-strong);
+	}
+
+	&__description {
+		color: var(--glyph-mid);
+	}
+}

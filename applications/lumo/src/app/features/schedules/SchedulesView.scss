@@ -1,6 +1,9 @@
 @use '~@proton/styles/scss/lib/rem' as *;
 
 .schedules-view {
+	--border-norm: var(--border);
+	--border-weak: var(--border);
+
 	color: var(--glyph);
 	padding-block-start: #{rem(6)};
 	margin-block-start: #{rem(-6)};
@@ -8,93 +11,8 @@
 	&__inner {
 		max-inline-size: #{rem(960)};
 	}
-}
 
-.schedules-page-header {
-	&__subtitle {
-		color: var(--glyph-mid);
-	}
-}
-
-.schedules-empty-state {
-	max-inline-size: #{rem(420)};
-
-	&__icon {
-		block-size: #{rem(56)};
-		inline-size: #{rem(56)};
-		background-color: var(--control-fill-strong);
-	}
-
-	&__description {
-		color: var(--glyph-mid);
-	}
-}
-
-.schedule-templates {
-	&__heading {
-		color: var(--glyph-low);
-	}
-
-	&__toggle {
-		color: var(--glyph-mid) !important;
-		text-decoration-line: underline;
-		text-underline-position: from-font;
-	}
-}
-
-.schedule-template-card {
-	&__icon-container {
-		inline-size: #{rem(32)};
-		block-size: #{rem(32)};
-		background-color: var(--control-fill-mid);
-		border-color: var(--border) !important;
-	}
-
-	&__icon-plus {
-		display: none;
-	}
-
-	&__title {
-		font-size: #{rem(15)};
-	}
-
-	&__description {
-		color: var(--glyph-mid);
-	}
-
-	&__schedule-label {
-		font-size: #{rem(13)};
-		color: var(--glyph-low);
-	}
-
-	&__use-template {
-		border-color: var(--border-mid);
-		display: none;
-	}
-
-	&:is(:hover, :focus-visible, :active) {
-		background-color: var(--control-fill-mid) !important;
-		align-items: center;
-	}
-
-	&:is(:active) {
-		background-color: var(--control-fill-strong) !important;
-	}
-
-	&:is(:hover, :focus-visible, :active) &__icon-container {
-		background-color: transparent;
-		border-color: transparent !important;
-	}
-
-	&:is(:hover, :focus-visible, :active) &__icon-plus {
-		display: block;
-	}
-
-	&:is(:hover, :focus-visible, :active) &__icon {
-		display: none;
-	}
-
-	&:is(:hover, :focus-visible, :active) &__use-template {
-		display: block;
+	& > * {
+		margin-block-end: #{rem(32)};
 	}
 }
