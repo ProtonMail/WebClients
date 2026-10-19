@@ -19,6 +19,7 @@ const migratedPackages = [
     '@proton/react-redux-store',
     '@proton/recovery-kit',
     '@proton/sanitize',
+    '@proton/styles',
 ];
 
 const defaultPackages = [atomsPackage, componentsPackage, iconsPackage, ...migratedPackages];

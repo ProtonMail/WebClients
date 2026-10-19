@@ -1,4 +1,4 @@
-const flags = require.context('@proton/styles/assets/img/flags', true, /.svg$/);
+import flags from '@proton/styles/flagSvgs';
 
 const flagsMap = flags.keys().reduce<Partial<{ [key: string]: () => string }>>((acc, key) => {
     acc[key] = () => flags(key);

@@ -14,7 +14,7 @@ import {
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { CSS_BASE_UNIT_SIZE } from '@proton/styles';
+import { CSS_BASE_UNIT_SIZE } from '@proton/styles/constants';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
