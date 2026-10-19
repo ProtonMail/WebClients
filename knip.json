@@ -573,6 +573,10 @@
             "entry": [],
             "project": []
         },
+        "utilities/playwright-mocks": {
+            "entry": [],
+            "project": ["**/*.ts"]
+        },
         "utilities/publish": {
             "entry": [],
             "project": []
