@@ -1,6 +1,7 @@
 import type { Config } from 'jest';
 
 import swcPreset from '@proton/jest-swc-preset';
+import { getTransformIgnorePatterns } from '@proton/jest-swc-preset/transformIgnorePatterns.js';
 
 const [swcTransformKey, [swcJest, swcOptions]] = Object.entries(swcPreset.transform)[0] as [string, [string, any]];
 
@@ -26,9 +27,17 @@ const jestConfig: Config = {
     testEnvironment: '@proton/jest-env',
     preset: '@proton/jest-swc-preset',
     transform,
-    transformIgnorePatterns: [
-        'node_modules/(?!(\\.pnpm|@proton/shared|@proton/components|@protontech/telemetry|@protontech/logger|@protontech/crypto|openpgp|@protontech/openpgp|@openpgp/web-stream-tools|otpauth|@protontech/pass-rust-core/ui|@protontech/pass-rust-core/worker|@protontech/autofill|@protontech/fathom|@protontech/ml-inference|@preact/signals-core|@scure/base|@protontech/mutex-browser|msw|@mswjs|until-async)/)',
-    ],
+    transformIgnorePatterns: getTransformIgnorePatterns([
+        'otpauth',
+        '@protontech/pass-rust-core/ui',
+        '@protontech/pass-rust-core/worker',
+        '@protontech/autofill',
+        '@protontech/fathom',
+        '@protontech/ml-inference',
+        'msw',
+        '@mswjs',
+        'until-async',
+    ]),
     coverageReporters: ['text-summary', 'json'],
     reporters: ['default', ['jest-junit', { suiteNameTemplate: '{filepath}', outputName: 'test-report.xml' }]],
     testTimeout: 30000,

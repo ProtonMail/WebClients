@@ -1,9 +1,9 @@
 import type { Config } from 'jest';
 
+import { getTransformIgnorePatterns } from '@proton/jest-swc-preset/transformIgnorePatterns.js';
+
 const jestConfig: Config = {
-    transformIgnorePatterns: [
-        'node_modules/(?!(\\.pnpm|@proton/shared|@proton/components|@protontech/telemetry|@protontech/logger|@protontech/mutex-browser|@protontech/crypto|openpgp|@protontech/openpgp|@openpgp/web-stream-tools|@protontech/bip39|otpauth|@preact/signals-core)/)',
-    ],
+    transformIgnorePatterns: getTransformIgnorePatterns(['otpauth']),
     preset: '@proton/jest-swc-preset',
     coverageReporters: ['text-summary', 'json'],
     reporters: ['default', ['jest-junit', { suiteNameTemplate: '{filepath}', outputName: 'test-report.xml' }]],

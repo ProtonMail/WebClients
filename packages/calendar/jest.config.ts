@@ -1,9 +1,9 @@
 import type { Config } from 'jest';
 
+import { getTransformIgnorePatterns } from '@proton/jest-swc-preset/transformIgnorePatterns.js';
+
 const jestConfig: Config = {
-    transformIgnorePatterns: [
-        'node_modules/(?!(\\.pnpm|@proton/shared|@proton/components|@protontech/telemetry|@protontech/logger|mutex-browser|@protontech/crypto|bip39|@preact/signals-core|@scure/base)/)',
-    ],
+    transformIgnorePatterns: getTransformIgnorePatterns(),
     preset: '@proton/jest-swc-preset',
     setupFilesAfterEnv: ['./jest.setup.ts'],
     testEnvironment: '@proton/jest-env',

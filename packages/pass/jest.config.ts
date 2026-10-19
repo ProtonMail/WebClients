@@ -1,11 +1,20 @@
 import type { Config } from 'jest';
 
+import { getTransformIgnorePatterns } from '@proton/jest-swc-preset/transformIgnorePatterns.js';
+
 const jestConfig: Config = {
     setupFilesAfterEnv: ['./jest.setup.js'],
     testEnvironment: '@proton/jest-env',
-    transformIgnorePatterns: [
-        'node_modules/(?!(\\.pnpm|@proton/shared|@proton/components|@protontech/telemetry|@protontech/logger|@protontech/mutex-browser|@protontech/crypto|openpgp|@protontech/openpgp|@openpgp/web-stream-tools|@protontech/bip39|otpauth|@protontech/pass-rust-core/ui|@protontech/pass-rust-core/worker|@protontech/autofill|@protontech/fathom|@protontech/ml-inference|client-zip|imask|@preact/signals-core|@scure/base)/)',
-    ],
+    transformIgnorePatterns: getTransformIgnorePatterns([
+        'imask',
+        'otpauth',
+        '@protontech/pass-rust-core/ui',
+        '@protontech/pass-rust-core/worker',
+        '@protontech/autofill',
+        '@protontech/fathom',
+        '@protontech/ml-inference',
+        'client-zip',
+    ]),
     preset: '@proton/jest-swc-preset',
     coverageReporters: ['text-summary', 'json'],
     moduleNameMapper: {
