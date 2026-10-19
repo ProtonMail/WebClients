@@ -64,7 +64,12 @@ export const useBYOEMobileConnection = ({ redirectUri, defaultImportEmails, setS
             replaceUrl(nativeUrl);
             return true;
         }
-        createNotification({ text: c('Info').t`Your address was connected` });
+
+        const notificationText = result.importEmails
+            ? c('Info').t`Your address was connected. We're importing your emails.`
+            : c('Info').t`Your address was connected`;
+
+        createNotification({ text: notificationText });
         return false;
     };
 
