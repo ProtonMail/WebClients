@@ -1,4 +1,3 @@
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint'
 import type { LexicalEditor, NodeKey } from 'lexical'
 import { useCallback, useEffect, useLayoutEffect, useRef } from 'react'
 import { c } from 'ttag'
@@ -11,6 +10,10 @@ import clsx from 'clsx'
 import { useDocsUserMode } from '../../DocsPresentationProvider'
 import { EditorUserMode } from '../../contract/EditorUserMode'
 import { useDocsDependencies } from '../../DocsDependenciesProvider'
+import { useViewportWidth } from '../../../DocsLayout'
+
+// Proton's "small" breakpoint, at a 16px root font size.
+const SMALL_VIEWPORT_MAX_WIDTH = 680
 
 export function FloatingQuickActions({
   anchorKey,
@@ -26,7 +29,7 @@ export function FloatingQuickActions({
   const isSuggestionMode = userMode === EditorUserMode.Suggest
 
   const boxRef = useRef<HTMLDivElement>(null)
-  const { viewportWidth } = useActiveBreakpoint()
+  const isSmallViewport = useViewportWidth() <= SMALL_VIEWPORT_MAX_WIDTH
 
   const updatePosition = useCallback(() => {
     const boxElem = boxRef.current
@@ -43,7 +46,7 @@ export function FloatingQuickActions({
       const rootRect = rootElement.getBoundingClientRect()
       const containerRect = positionContainer.getBoundingClientRect()
       const { top: anchorTop } = anchorElement.getBoundingClientRect()
-      if (viewportWidth['<=small']) {
+      if (isSmallViewport) {
         boxElem.style.left = ''
         boxElem.style.right = '5px'
       } else {
@@ -52,7 +55,7 @@ export function FloatingQuickActions({
       }
       boxElem.style.top = `${anchorTop - containerRect.top}px`
     }
-  }, [anchorKey, editor, viewportWidth])
+  }, [anchorKey, editor, isSmallViewport])
 
   useEffect(() => {
     window.addEventListener('resize', updatePosition)
