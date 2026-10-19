@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import type { ModalStateProps } from '@proton/components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 
 import type { Project } from '../types';
 
@@ -19,14 +19,19 @@ export const DeleteProjectModal = ({ project, onConfirmDelete, ...modalProps }: 
         modalProps.onClose?.();
     };
 
+    const taskName = project.name;
+
     return (
         <ModalTwo {...modalProps} size="small">
             <ModalTwoHeader title={c('collider_2025:Title').t`Delete project?`} />
             <ModalTwoContent>
                 <div className="delete-project-modal-content">
                     <p className="mb-4">
-                        {c('collider_2025:Info')
-                            .t`Are you sure you want to delete "${project.name}"? This action cannot be undone.`}
+                        {
+                            // translator: Warning before deleting an item. ${taskName} is the project or scheduled task name.
+                            c('collider_2025:Info')
+                                .t`Are you sure you want to delete "${taskName}"? This action cannot be undone.`
+                        }
                     </p>
                     {project.conversationCount !== undefined && project.conversationCount > 0 && (
                         <div className="delete-project-modal-warning">
@@ -61,4 +66,3 @@ export const DeleteProjectModal = ({ project, onConfirmDelete, ...modalProps }: 
         </ModalTwo>
     );
 };
-
