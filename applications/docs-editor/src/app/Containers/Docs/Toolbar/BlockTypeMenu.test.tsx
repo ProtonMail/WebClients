@@ -78,3 +78,35 @@ it('shows the block type shortcut when its menu item gets keyboard focus', async
   expect(within(tooltip).getByLabelText('Keyboard shortcut: Alt')).toBeVisible()
   await waitFor(() => expect(screen.getAllByRole('tooltip')).toEqual([tooltip]))
 })
+
+it('closes the menu on Escape while a menu item shows its shortcut, so the toolbar can refocus the editor', async () => {
+  render(
+    <>
+      <div contentEditable aria-label="Editor" />
+      <SimpleDropdown
+        content="Block type"
+        contentProps={{
+          // As the toolbar does: refocus the editor only when closing the menu left focus nowhere.
+          autoFocusOnHide: false,
+          onClosed: () => {
+            if (document.activeElement === document.body) {
+              screen.getByLabelText('Editor').focus()
+            }
+          },
+        }}
+      >
+        <BlockTypeMenu isEditable formatParagraph={jest.fn()} formatHeading={jest.fn()} />
+      </SimpleDropdown>
+    </>,
+  )
+  fireEvent.click(screen.getByRole('button', { name: 'Block type' }))
+  const normal = await screen.findByRole('menuitem', { name: 'Normal' })
+  await waitFor(() => expect(normal).toHaveFocus())
+  await screen.findByRole('tooltip', { name: /Keyboard shortcut: 0$/ })
+
+  fireEvent.keyDown(normal, { key: 'Escape' })
+
+  await waitFor(() => expect(screen.queryByRole('menu')).not.toBeInTheDocument())
+  expect(screen.queryByRole('tooltip')).not.toBeInTheDocument()
+  await waitFor(() => expect(screen.getByLabelText('Editor')).toHaveFocus())
+})
