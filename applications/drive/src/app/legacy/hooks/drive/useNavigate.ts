@@ -87,8 +87,12 @@ function useDriveNavigation() {
         [navigateToLink, navigateToAlbum]
     );
 
-    const redirectToLink = useCallback((shareId: string, linkId: string, isFile: boolean) => {
-        navigate(`/${shareId}/${toLinkURLType(isFile)}/${linkId}`, { replace: true });
+    const redirectToLink = useCallback((shareId: string, linkId: string, isFile: boolean, rPath?: string) => {
+        navigate(`/${shareId}/${toLinkURLType(isFile)}/${linkId}${rPath ? `?r=${rPath}` : ''}`, { replace: true });
+    }, []);
+
+    const redirectToAlbum = useCallback((shareId: string, linkId: string) => {
+        navigate(`/photos/albums/${shareId}/album/${linkId}`, { replace: true });
     }, []);
 
     const navigateToRoot = useCallback(() => {
@@ -153,6 +157,7 @@ function useDriveNavigation() {
         navigateToDevices,
         navigateToSharedWithMe,
         redirectToLink,
+        redirectToAlbum,
         navigateToAlbum,
         navigateToPhotos,
         navigateToAlbums,
