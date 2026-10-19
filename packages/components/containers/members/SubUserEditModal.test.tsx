@@ -114,6 +114,8 @@ const getMember = (member: Partial<EnhancedMember>) =>
         roleState: 'full',
         UserOrganizationRoles: [],
         requiresOrgKeyPromotion: false,
+        requiresOrgKeyDemotion: false,
+        hasScheduledOrgKeyDemotion: false,
         ...member,
     }) as EnhancedMember;
 

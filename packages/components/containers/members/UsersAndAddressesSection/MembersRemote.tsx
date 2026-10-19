@@ -38,6 +38,8 @@ export const MembersRemote = ({ app, showUsage = false }: { app: APP_NAMES; show
                 roleState: 'initial',
                 UserOrganizationRoles: [],
                 requiresOrgKeyPromotion: false,
+                requiresOrgKeyDemotion: false,
+                hasScheduledOrgKeyDemotion: false,
             })),
         [rawMembers]
     );
