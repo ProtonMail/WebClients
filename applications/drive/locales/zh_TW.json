@@ -1337,6 +1337,9 @@
       ],
       "New chat": [
         "新增聊天"
+      ],
+      "Subscribe": [
+        "訂閱"
       ]
     },
     "Action: Sheets": {
@@ -4314,6 +4317,12 @@
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "錯誤的恢復短語。重試或使用其它復原方法。"
+      ],
+      "Organization does not have enough seats available": [
+        "組織沒有足夠的可用座席"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "無可用於 ${ signatureType } 種類的金鑰驗證"
       ]
     },
     "error": {
@@ -7514,6 +7523,15 @@
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "因為過量請求暫時不可用。請稍後在試。"
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } 包含撰稿助理"
+      ],
+      "1 device per user": [
+        "1 台裝置每位使用者"
+      ],
+      "We'll get back to you shortly.": [
+        "我們會盡快回覆您。"
       ]
     },
     "info": {
@@ -8403,6 +8421,21 @@
       ],
       "User opted in": [
         "使用者已加入"
+      ],
+      "Amount": [
+        "金額"
+      ],
+      "Amount due": [
+        "應付金額"
+      ],
+      "Credits used": [
+        "已使用儲值"
+      ],
+      "Please share any feedback to help us improve.": [
+        "請提供任何意見回饋以協助我們改進。"
+      ],
+      "Why would you like to cancel?": [
+        "為什麼您想要取消呢？"
       ]
     },
     "Label for contact group color": {
@@ -11010,6 +11043,9 @@
       ],
       "Google Pay - card ending in ${ Last4 }": [
         "Google Pay - 卡片於 ${ Last4 } 結束"
+      ],
+      "Bank transfer - ${ iban }": [
+        "匯款 - ${ iban }"
       ]
     },
     "Payments.Sepa": {
@@ -11226,6 +11262,9 @@
       ],
       "Ask anything…": [
         "詢問任何事…"
+      ],
+      "Please select the main reason": [
+        "請選擇主要原因"
       ]
     },
     "Placeholder for contact group name": {
@@ -12670,6 +12709,9 @@
       ],
       "You have successfully unsubscribed": [
         "您已成功取消訂購"
+      ],
+      "Invoice paid": [
+        "帳單已付"
       ]
     },
     "Suffix": {
@@ -13951,6 +13993,18 @@
       ],
       "Something went wrong": [
         "發生錯誤"
+      ],
+      "Black Friday": [
+        "黑色星期五"
+      ],
+      "Contact us": [
+        "聯絡我們"
+      ],
+      "Pay invoice": [
+        "支付帳單"
+      ],
+      "Request sent": [
+        "已送出需求"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14613,6 +14667,9 @@
       ],
       "Pending": [
         "等待中"
+      ],
+      "Has errors": [
+        "有錯誤"
       ]
     },
     "Filter": {
@@ -14739,6 +14796,20 @@
     "tryduo2026: Title": {
       "for 12 months": [
         "12 個月"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "我找到了另一個我更喜歡的服務"
+      ],
+      "It’s missing a key feature": [
+        "缺少關鍵功能"
+      ],
+      "It’s too expensive": [
+        "價格太貴了"
+      ],
+      "Other": [
+        "其他"
       ]
     }
   }
