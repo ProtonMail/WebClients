@@ -5854,6 +5854,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Вы ўсё яшчэ зможаце праглядаць даныя свайго ўласнага ўліковага запісу, але ўсе ўліковыя запісы карыстальнікаў будуць выдалены з вашай арганізацыі."
+      ],
+      "We'll get back to you shortly.": [
+        "Мы звяжамся з вамі ў самы бліжэйшы час."
       ]
     },
     "info": {
@@ -6331,6 +6334,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Назва не паддаецца расшыфроўцы"
+      ],
+      "Please share any feedback to help us improve.": [
+        "Падзяліцеся з намі якім-небудзь водгукам, каб дапамагчы палепшыць наш сэрвіс."
+      ],
+      "Why would you like to cancel?": [
+        "Чаму вы вырашылі скасаваць?"
       ]
     },
     "Label for contact group color": {
@@ -8470,6 +8479,9 @@
       ],
       "Your organization name": [
         "Ваша назва арганізацыі"
+      ],
+      "Please select the main reason": [
+        "Выберыце асноўную прычыну"
       ]
     },
     "Placeholder for contact group name": {
@@ -10302,6 +10314,12 @@
       ],
       "Your exposed information": [
         "Вашы скампраметаваныя звесткі"
+      ],
+      "Contact us": [
+        "Звязацца з намі"
+      ],
+      "Request sent": [
+        "Запыт адпраўлены"
       ]
     },
     "Title header for keys table": {
@@ -10705,6 +10723,20 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Ваш пробны перыяд завершыцца ${ textDate }. З вас не будзе спаганяцца плата, калі вы адмовіцеся да ${ textDate }. ${ action }"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Я знайшоў больш прывабны сэрвіс"
+      ],
+      "It’s missing a key feature": [
+        "Адсутнічаюць ключавыя функцыі"
+      ],
+      "It’s too expensive": [
+        "Занадта дорага"
+      ],
+      "Other": [
+        "Іншае"
       ]
     }
   }
