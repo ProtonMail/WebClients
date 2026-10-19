@@ -266,6 +266,23 @@ describe('toChatCompletionsBody', () => {
             image_aspect_ratio: '16:9',
         });
     });
+
+    it('maps feature flag maps into the lumo extension', () => {
+        expect(
+            toChatCompletionsBody(baseRequest, {
+                featureFlags: {
+                    LumoTooling: 'true',
+                    LumoHighLoad: 'false',
+                },
+            }).lumo
+        ).toEqual({
+            client_type: 'frontend',
+            feature_flags: {
+                LumoTooling: 'true',
+                LumoHighLoad: 'false',
+            },
+        });
+    });
 });
 
 describe('formatRequestedModel', () => {
