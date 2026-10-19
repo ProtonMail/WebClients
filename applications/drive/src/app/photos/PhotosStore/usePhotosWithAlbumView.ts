@@ -3,9 +3,12 @@ import { useParams } from 'react-router-dom-v5-compat';
 
 import { useShallow } from 'zustand/react/shallow';
 
-import { getDriveForPhotos } from '@proton/drive/index';
+import { NodeType, ValidationError, getDriveForPhotos } from '@proton/drive/index';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 
+import { useLegacyContextShareHandler } from '../../legacy/hooks/drive/useLegacyContextShareHandler';
+import useNavigate from '../../legacy/hooks/drive/useNavigate';
 import { DownloadManager } from '../../modules/download/DownloadManager';
 import { AlbumsPageTypes, usePhotoLayoutStore } from '../layout.store';
 import { loadCurrentAlbum } from '../loaders/loadAlbum';
@@ -16,6 +19,8 @@ import { usePhotosStore } from '../usePhotos.store';
 
 export const usePhotosWithAlbumsView = () => {
     const { albumShareId, albumLinkId } = useParams<{ albumShareId?: string; albumLinkId?: string }>();
+    const { handleContextShare } = useLegacyContextShareHandler();
+    const { navigateToNoAccess } = useNavigate();
 
     const {
         albumPhotoTimelineUids,
@@ -57,8 +62,29 @@ export const usePhotosWithAlbumsView = () => {
         ) {
             void getDriveForPhotos()
                 .getNodeUid(albumShareId, albumLinkId)
-                .then((currentAlbumNodeUid) => {
-                    void loadCurrentAlbum(currentAlbumNodeUid, usePhotosStore.getState, abortController.signal);
+                .then(async (currentAlbumNodeUid) => {
+                    await loadCurrentAlbum(currentAlbumNodeUid, usePhotosStore.getState, abortController.signal);
+                    if (!abortController.signal.aborted && !useAlbumsStore.getState().getCurrentAlbum()) {
+                        navigateToNoAccess();
+                    }
+                })
+                .catch((err: unknown) => {
+                    if (abortController.signal.aborted) {
+                        return;
+                    }
+                    if (err instanceof ValidationError && err.code === API_CUSTOM_ERROR_CODES.NOT_ALLOWED) {
+                        return handleContextShare(abortController.signal, {
+                            shareId: albumShareId,
+                            linkId: albumLinkId,
+                            type: NodeType.Album,
+                        });
+                    }
+                    navigateToNoAccess();
+                })
+                .catch(() => {
+                    if (!abortController.signal.aborted) {
+                        navigateToNoAccess();
+                    }
                 });
             if (AlbumsPageTypes.ALBUMSADDPHOTOS === currentPageType) {
                 void loadTimelinePhotos(abortController.signal);
@@ -70,7 +96,7 @@ export const usePhotosWithAlbumsView = () => {
         return () => {
             abortController.abort();
         };
-    }, [albumLinkId, albumShareId, currentPageType]);
+    }, [albumLinkId, albumShareId, currentPageType, handleContextShare, navigateToNoAccess]);
 
     const requestDownload = useCallback(async (photosUids: string[]) => {
         await DownloadManager.getInstance().downloadPhotos(photosUids);
