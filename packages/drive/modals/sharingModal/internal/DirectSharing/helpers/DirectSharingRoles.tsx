@@ -1,6 +1,8 @@
 import { MemberRole, type NonProtonInvitationState } from '@protontech/drive-sdk';
 import { c } from 'ttag';
 
+import { IcEye } from '@proton/icons/icons/IcEye';
+import { IcPencil } from '@proton/icons/icons/IcPencil';
 import noop from '@proton/utils/noop';
 
 import { DropdownMenuItem } from '../../DropdownMenuItem';
@@ -33,14 +35,14 @@ export function DirectSharingRoles({
             <DropdownMenuItem
                 label={getRoleLabel(MemberRole.Viewer, c('Label').t`Viewer`)}
                 description={c('Info').t`Can view only`}
-                iconName="eye"
+                icon={IcEye}
                 onClick={selectedRole === MemberRole.Viewer ? noop : () => onChangeRole(MemberRole.Viewer)}
                 isSelected={selectedRole === MemberRole.Viewer}
             />
             <DropdownMenuItem
                 label={getRoleLabel(MemberRole.Editor, c('Label').t`Editor`)}
                 description={editorsManageAccess ? c('Info').t`Can edit and manage access` : c('Info').t`Can edit`}
-                iconName="pencil"
+                icon={IcPencil}
                 onClick={isEditorOrAdmin ? noop : () => onChangeRole(MemberRole.Editor)}
                 // If editors can manage access internally they are actually admins
                 isSelected={isEditorOrAdmin}

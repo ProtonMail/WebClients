@@ -5,6 +5,9 @@ import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Dropdown, DropdownButton, DropdownMenu } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
+import { IcLink } from '@proton/icons/icons/IcLink';
+import { IcPaperPlaneHorizontal } from '@proton/icons/icons/IcPaperPlaneHorizontal';
 
 import { DropdownMenuItem } from '../DropdownMenuItem';
 import type { DirectSharingRole } from '../interfaces';
@@ -66,20 +69,20 @@ export function DirectSharingMemberMenu({
                     {onResendInvitation && (
                         <DropdownMenuItem
                             label={c('Action').t`Resend invite`}
-                            iconName="paper-plane-horizontal"
+                            icon={IcPaperPlaneHorizontal}
                             onClick={() => withLoading(onResendInvitation)}
                         />
                     )}
                     {onCopyInvitationLink && (
                         <DropdownMenuItem
                             label={c('Action').t`Copy invite link`}
-                            iconName="link"
+                            icon={IcLink}
                             onClick={onCopyInvitationLink}
                         />
                     )}
                     <DropdownMenuItem
                         label={c('Action').t`Remove access`}
-                        iconName="cross-big"
+                        icon={IcCrossBig}
                         onClick={() => withLoading(onRemoveAccess)}
                     />
                 </DropdownMenu>

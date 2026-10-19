@@ -4,6 +4,8 @@ import { c } from 'ttag';
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import { Dropdown, DropdownButton, DropdownMenu } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
+import { IcEye } from '@proton/icons/icons/IcEye';
+import { IcPencil } from '@proton/icons/icons/IcPencil';
 
 import { DropdownMenuItem } from '../DropdownMenuItem';
 
@@ -43,14 +45,14 @@ export const PublicRoleDropdownMenu = ({ disabled, selectedRole, onChangeRole }:
                 <DropdownMenu>
                     <DropdownMenuItem
                         isSelected={selectedRole === MemberRole.Viewer}
-                        iconName="eye"
+                        icon={IcEye}
                         label={c('Label').t`Viewer`}
                         description={c('Info').t`Can view only`}
                         onClick={() => withLoading(onChangeRole(MemberRole.Viewer))}
                     />
                     <DropdownMenuItem
                         isSelected={selectedRole === MemberRole.Editor}
-                        iconName="pencil"
+                        icon={IcPencil}
                         label={c('Label').t`Editor`}
                         description={c('Info').t`Can view and edit`}
                         onClick={() => withLoading(onChangeRole(MemberRole.Editor))}
