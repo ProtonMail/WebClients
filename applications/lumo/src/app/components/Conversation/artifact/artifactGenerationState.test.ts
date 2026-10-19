@@ -236,11 +236,13 @@ describe('isArtifactRevisionLoading', () => {
                     messageId: 'assistant-1',
                     content: 'Version 1',
                     createdAt: '2024-01-01T00:00:00.000Z',
+                    source: 'prompt',
                 },
                 {
                     messageId: 'assistant-2',
                     content: 'Version 2',
                     createdAt: '2024-01-02T00:00:00.000Z',
+                    source: 'prompt',
                 },
             ],
         },

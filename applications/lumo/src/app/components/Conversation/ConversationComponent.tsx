@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -6,9 +6,12 @@ import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useConversationPanelState } from '../../hooks/useConversationPanelState';
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
+import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useRetryPanel } from '../../hooks/useRetryPanel';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
+import { useArtifactPanelHostActions } from '../../providers/ArtifactPanelHostProvider';
 import { useConversationActions } from '../../providers/ConversationActionsProvider';
+import { useRightPanel } from '../../providers/RightPanelProvider';
 import { useWebSearch } from '../../providers/WebSearchProvider';
 import { useLumoSelector } from '../../redux/hooks';
 import { selectConversationErrors } from '../../redux/slices/meta/errors';
@@ -24,6 +27,8 @@ import { ArtifactProvider, useArtifactContext } from './artifact/ArtifactContext
 import ArtifactPanel from './artifact/ArtifactPanel';
 import { ArtifactPanelFullscreenOverlay } from './artifact/ArtifactPanelFullscreenOverlay';
 import { ArtifactPanelMobileOverlay } from './artifact/ArtifactPanelMobileOverlay';
+import { ArtifactPanelSlot } from './artifact/ArtifactPanelSlot';
+import { getConversationArtifactsForDrawer } from './artifact/conversationArtifactDrawerList';
 import { ConversationHeader } from './messageChain/ConversationHeader';
 import { MessageChainComponent } from './messageChain/MessageChainComponent';
 import DesktopApprovalCards from './messageChain/message/DesktopToolApproval/DesktopApprovalCards';
@@ -64,20 +69,27 @@ const ConversationLayout = ({
     const inputContainerRef = useRef<HTMLDivElement>(null);
     const composerContainerRef = useRef<HTMLDivElement>(null);
     const chatContainerRef = useRef<HTMLDivElement>(null);
-    const splitRowRef = useRef<HTMLDivElement>(null);
+    const artifactPanelContainerRef = useRef<HTMLDivElement>(null);
+    const { setPanelFlexBasisPct } = useArtifactPanelHostActions();
 
     const { isWebSearchButtonToggled } = useWebSearch();
 
     const {
         openPanel,
         getDrawerTitle,
-        handleOpenSources,
-        handleOpenFiles,
-        handleShowDriveBrowser,
+        handleOpenSources: openSourcesPanel,
+        handleOpenFiles: openFilesPanel,
+        handleShowDriveBrowser: showDriveBrowserPanel,
+        handleShowFilesDrawer: showFilesDrawer,
         handleClosePanel,
-        handleOpenFilePreview,
+        handleOpenFilePreview: openFilePreviewPanel,
         handleClearFilter,
     } = useConversationPanelState();
+
+    const { close: closeRightDrawer, isOpen: isRightDrawerOpen } = useRightPanel();
+    const { artifactsView: isArtifactsViewEnabled } = useLumoFlags();
+
+    const { isPanelOpen, isFullscreen, exitFullscreen, closePanel, openArtifact, registry } = useArtifactContext();
 
     const { retryPanelState, handleRetryPanelToggle, handleRetryPanelClose, handleRetry } = useRetryPanel({
         messageChain,
@@ -93,20 +105,85 @@ const ConversationLayout = ({
         conversationId ? selectConversationErrors(state, conversationId) : []
     );
 
-    // Artifact panel split state
-    const { isPanelOpen, isFullscreen, exitFullscreen } = useArtifactContext();
     const { isSmallScreen: isArtifactMobileLayout } = useIsLumoSmallScreen();
     const [panelWidthPct, setPanelWidthPct] = useState(55);
     const panelWidthPctRef = useRef(panelWidthPct);
     panelWidthPctRef.current = panelWidthPct;
     const dragWidthPctRef = useRef(panelWidthPct);
-    const artifactPanelContainerRef = useRef<HTMLDivElement>(null);
 
-    const applyArtifactPanelWidthPct = useCallback((pct: number) => {
-        if (artifactPanelContainerRef.current) {
-            artifactPanelContainerRef.current.style.flex = `0 0 ${pct}%`;
+    const drawerArtifacts = useMemo(() => {
+        if (!isArtifactsViewEnabled) {
+            return [];
         }
-    }, []);
+        return getConversationArtifactsForDrawer(registry);
+    }, [isArtifactsViewEnabled, registry]);
+
+    const handleOpenFiles = useCallback(
+        (message?: Parameters<typeof openFilesPanel>[0]) => {
+            if (isPanelOpen) {
+                closePanel();
+            }
+            openFilesPanel(message);
+        },
+        [closePanel, isPanelOpen, openFilesPanel]
+    );
+
+    const handleShowDriveBrowser = useCallback(() => {
+        if (isPanelOpen) {
+            closePanel();
+        }
+        showDriveBrowserPanel();
+    }, [closePanel, isPanelOpen, showDriveBrowserPanel]);
+
+    const handleOpenFilePreview = useCallback(
+        (attachment: Parameters<typeof openFilePreviewPanel>[0]) => {
+            if (isPanelOpen) {
+                closePanel();
+            }
+            openFilePreviewPanel(attachment);
+        },
+        [closePanel, isPanelOpen, openFilePreviewPanel]
+    );
+
+    const handleOpenSources = useCallback(
+        (message: Parameters<typeof openSourcesPanel>[0]) => {
+            if (isPanelOpen) {
+                closePanel();
+            }
+            openSourcesPanel(message);
+        },
+        [closePanel, isPanelOpen, openSourcesPanel]
+    );
+
+    const handleOpenArtifactFromDrawer = useCallback(
+        (artifactId: string) => {
+            closeRightDrawer();
+            openArtifact(artifactId, undefined, 'chip');
+        },
+        [closeRightDrawer, openArtifact]
+    );
+
+    const handleArtifactBackToFiles = useCallback(() => {
+        closePanel();
+        showFilesDrawer();
+    }, [closePanel, showFilesDrawer]);
+
+    useEffect(() => {
+        setPanelFlexBasisPct(panelWidthPct);
+    }, [panelWidthPct, setPanelFlexBasisPct]);
+
+    useEffect(() => {
+        if (isRightDrawerOpen && isPanelOpen) {
+            closePanel();
+        }
+    }, [closePanel, isPanelOpen, isRightDrawerOpen]);
+
+    const applyArtifactPanelWidthPct = useCallback(
+        (pct: number) => {
+            setPanelFlexBasisPct(pct);
+        },
+        [setPanelFlexBasisPct]
+    );
 
     const handleArtifactResizePointerDown = useCallback(
         (e: React.PointerEvent<HTMLDivElement>) => {
@@ -126,7 +203,9 @@ const ConversationLayout = ({
                 if (ev.pointerId !== pointerId) {
                     return;
                 }
-                const containerWidth = splitRowRef.current?.clientWidth ?? window.innerWidth;
+                const containerWidth =
+                    artifactPanelContainerRef.current?.closest('.main-layout-component')?.clientWidth ??
+                    window.innerWidth;
                 const dx = ev.clientX - startX;
                 const deltaPct = (dx / containerWidth) * 100;
                 const newPct = Math.max(25, Math.min(75, startPct - deltaPct));
@@ -190,6 +269,8 @@ const ConversationLayout = ({
                                     onClearFilter={handleClearFilter}
                                     initialShowDriveBrowser={openPanel.autoShowDriveBrowser}
                                     spaceId={conversation?.spaceId}
+                                    drawerArtifacts={drawerArtifacts}
+                                    onOpenArtifact={handleOpenArtifactFromDrawer}
                                 />
                             )}
                             {openPanel.type === 'file-preview' && openPanel.attachment && (
@@ -206,73 +287,64 @@ const ConversationLayout = ({
                 }}
             >
                 <div
-                    ref={splitRowRef}
-                    className="conversation-split-row flex-1 min-h-0 w-full flex flex-row flex-nowrap overflow-hidden min-w-0"
+                    ref={chatContainerRef}
+                    className="conversation-split-row lumo-chat-container flex flex-column flex-1 min-h-0 w-full relative reset4print overflow-hidden min-w-0"
                 >
-                    <div
-                        ref={chatContainerRef}
-                        className="lumo-chat-container flex flex-row flex-nowrap flex-1 relative reset4print overflow-hidden min-w-0"
-                    >
-                        {/* Chat panel */}
-                        <div className="outer conversation-page-component flex flex-column flex-nowrap reset4print overflow-hidden rounded-xl w-full">
-                            <MessageChainComponent
-                                messageChainRef={messageChainRef}
-                                messageChain={messageChain}
-                                handleRegenerateMessage={handleRegenerateMessage}
-                                handleEditMessage={handleEditMessage}
-                                getSiblingInfo={getSiblingInfo}
+                    <div className="outer conversation-page-component flex flex-column flex-nowrap reset4print overflow-hidden rounded-xl w-full flex-1 min-h-0">
+                        <MessageChainComponent
+                            messageChainRef={messageChainRef}
+                            messageChain={messageChain}
+                            handleRegenerateMessage={handleRegenerateMessage}
+                            handleEditMessage={handleEditMessage}
+                            getSiblingInfo={getSiblingInfo}
+                            isGenerating={isGenerating}
+                            sourcesContainerRef={sourcesContainerRef}
+                            handleOpenSources={handleOpenSources}
+                            handleOpenFiles={handleOpenFiles}
+                            handleOpenFilePreview={handleOpenFilePreview}
+                            onRetryPanelToggle={handleRetryPanelToggle}
+                            composerContainerRef={composerContainerRef}
+                            conversationId={conversationId}
+                            afterMessages={<DesktopApprovalCards />}
+                        />
+                        {conversationErrors.length > 0 && (
+                            <ErrorCard error={conversationErrors[0]} index={0} onRetry={handleRetryGeneration} />
+                        )}
+                        <ConversationSurvey isGenerating={isGenerating} />
+                        <div
+                            ref={composerContainerRef}
+                            className="lumo-chat-item flex flex-column no-print w-full md:w-2/3 mx-auto max-w-custom"
+                            style={{ '--max-w-custom': '51.25rem' } as React.CSSProperties}
+                        >
+                            <ImageLimitNotice exceedsLimit={imageLimitExceeded} />
+                            <ComposerComponent
+                                composerMode={ComposerMode.CONVERSATION}
+                                handleSendMessage={handleSendMessage}
+                                onAbort={handleAbort}
                                 isGenerating={isGenerating}
-                                sourcesContainerRef={sourcesContainerRef}
-                                handleOpenSources={handleOpenSources}
+                                isProcessingAttachment={isProcessingAttachment}
+                                inputContainerRef={inputContainerRef}
+                                messageChain={messageChain}
                                 handleOpenFiles={handleOpenFiles}
-                                handleOpenFilePreview={handleOpenFilePreview}
-                                onRetryPanelToggle={handleRetryPanelToggle}
-                                composerContainerRef={composerContainerRef}
-                                conversationId={conversationId}
-                                afterMessages={<DesktopApprovalCards />}
+                                onShowDriveBrowser={handleShowDriveBrowser}
+                                onOpenFilePreview={handleOpenFilePreview}
+                                initialQuery={initialQuery}
+                                prefillQuery={prefillQuery}
+                                spaceId={conversation?.spaceId}
+                                canShowGuestNotificationCard
                             />
-                            {/* TODO: update to show all conversations errors at some point */}
-                            {conversationErrors.length > 0 && (
-                                <ErrorCard error={conversationErrors[0]} index={0} onRetry={handleRetryGeneration} />
-                            )}
-                            <ConversationSurvey isGenerating={isGenerating} />
-                            <div
-                                ref={composerContainerRef}
-                                className="lumo-chat-item flex flex-column no-print w-full md:w-2/3 mx-auto max-w-custom"
-                                style={{ '--max-w-custom': '51.25rem' } as React.CSSProperties}
-                            >
-                                <ImageLimitNotice exceedsLimit={imageLimitExceeded} />
-                                <ComposerComponent
-                                    composerMode={ComposerMode.CONVERSATION}
-                                    handleSendMessage={handleSendMessage}
-                                    onAbort={handleAbort}
-                                    isGenerating={isGenerating}
-                                    isProcessingAttachment={isProcessingAttachment}
-                                    inputContainerRef={inputContainerRef}
-                                    messageChain={messageChain}
-                                    handleOpenFiles={handleOpenFiles}
-                                    onShowDriveBrowser={handleShowDriveBrowser}
-                                    onOpenFilePreview={handleOpenFilePreview}
-                                    initialQuery={initialQuery}
-                                    prefillQuery={prefillQuery}
-                                    spaceId={conversation?.spaceId}
-                                    canShowGuestNotificationCard
-                                />
-                            </div>
-                            <p className="text-center relative color-weak text-xs my-2 hidden md:block">
-                                {c('collider_2025: Disclosure')
-                                    .t`${LUMO_SHORT_APP_NAME} can make mistakes. Please double-check responses.`}
-                            </p>
                         </div>
-
-                        {/* Artifact split panel (desktop only) */}
+                        <p className="text-center relative color-weak text-xs my-2 hidden md:block">
+                            {c('collider_2025: Disclosure')
+                                .t`${LUMO_SHORT_APP_NAME} can make mistakes. Please double-check responses.`}
+                        </p>
                     </div>
-
-                    {isPanelOpen && !isArtifactMobileLayout && !isFullscreen && (
+                </div>
+                <ArtifactPanelSlot>
+                    {isPanelOpen && !isArtifactMobileLayout && !isFullscreen ? (
                         <div
                             ref={artifactPanelContainerRef}
-                            className="artifact-panel-container hidden md:flex flex-column min-w-0"
-                            style={{ flex: `0 0 ${panelWidthPct}%` }}
+                            className="artifact-panel-container flex flex-column min-w-0 h-full w-full relative"
                         >
                             <div
                                 className="artifact-panel-resize-handle"
@@ -280,11 +352,11 @@ const ConversationLayout = ({
                                 aria-hidden
                             />
                             <div className="artifact-panel-content flex flex-column flex-1 min-h-0 min-w-0 overflow-hidden">
-                                <ArtifactPanel isGenerating={isGenerating} />
+                                <ArtifactPanel isGenerating={isGenerating} onBackToFiles={handleArtifactBackToFiles} />
                             </div>
                         </div>
-                    )}
-                </div>
+                    ) : null}
+                </ArtifactPanelSlot>
                 {retryPanelState.show && retryPanelState.buttonRef && (
                     <FloatingRetryPanel
                         buttonRef={retryPanelState.buttonRef}

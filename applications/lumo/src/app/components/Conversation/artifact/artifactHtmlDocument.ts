@@ -177,7 +177,7 @@ function buildArtifactFileStem(title: string): string {
 
 export function buildArtifactFileName(artifact: ParsedArtifact, extension: string): string {
     const normalizedExtension = extension.replace(/^\./, '');
-    return `${buildArtifactFileStem(artifact.title) || 'artifact'}.${normalizedExtension}`;
+    return `${buildArtifactFileStem(artifact.title) || 'creation'}.${normalizedExtension}`;
 }
 
 export function escapeHtml(value: string): string {

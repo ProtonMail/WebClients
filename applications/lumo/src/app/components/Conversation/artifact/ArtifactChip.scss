@@ -1,0 +1,143 @@
+.artifact-chip {
+	box-sizing: border-box;
+	flex-wrap: nowrap;
+	max-inline-size: 100%;
+	min-inline-size: 0;
+	transition:
+		opacity 150ms ease,
+		border-color 150ms ease;
+	user-select: none;
+	min-block-size: 4.25rem;
+	box-shadow: none;
+
+	&--superseded {
+		opacity: 0.75;
+	}
+
+	&--active {
+		border-color: var(--border-norm);
+	}
+
+	&--loading {
+		cursor: default;
+	}
+}
+
+.artifact-chip-icon-pane {
+	display: flex;
+	flex-shrink: 0;
+	align-items: center;
+	justify-content: center;
+	align-self: stretch;
+	inline-size: 3.25rem;
+	min-block-size: 100%;
+
+	&--document {
+		background-color: #e8f0fe;
+		color: #1a73e8;
+	}
+
+	&--code {
+		background-color: #f0e8ff;
+		color: #7c3aed;
+	}
+
+	&--webpage {
+		background-color: #fff0e5;
+		color: #e8710a;
+	}
+
+	&--presentation {
+		background-color: #e3f5ec;
+		color: #1e8e4c;
+	}
+
+	&--superseded {
+		background-color: var(--background-weak);
+		color: var(--text-hint);
+	}
+}
+
+.artifact-chip-body {
+	flex: 1 1 auto;
+	min-inline-size: 0;
+}
+
+.artifact-chip-primary {
+	display: flex;
+	flex: 1 1 auto;
+	min-inline-size: 0;
+	border: none;
+	background: transparent;
+	padding: 0;
+	font: inherit;
+	color: inherit;
+	text-align: start;
+
+	&:not(:disabled) {
+		cursor: pointer;
+	}
+
+	&:disabled {
+		cursor: default;
+	}
+}
+
+.artifact-chip-main {
+	display: flex;
+	flex: 1 1 auto;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	min-inline-size: 0;
+	text-align: start;
+	border: none;
+	background: transparent;
+	padding: 0;
+	font: inherit;
+	color: inherit;
+
+	&:not(:disabled) {
+		cursor: pointer;
+	}
+
+	&:disabled {
+		cursor: default;
+	}
+}
+
+.artifact-chip-actions {
+	flex-shrink: 0;
+	align-self: stretch;
+	display: flex;
+	align-items: center;
+	padding-block: 0.75rem;
+}
+
+.artifact-chip-trailing {
+	flex-shrink: 0;
+	align-self: stretch;
+	display: flex;
+	align-items: center;
+	padding-block: 0.75rem;
+}
+
+.creations-artifact-chip .artifact-chip-main {
+	// Match conversation chip body height (title + subtitle line).
+	min-block-size: 2.75rem;
+}
+
+.creations-artifact-chip:not(:has(.artifact-chip-main:disabled)) {
+	cursor: pointer;
+}
+
+.creations-artifact-chip:hover:not(:has(.artifact-chip-main:disabled)),
+.creations-artifact-chip:focus-within {
+	border-color: var(--border-norm);
+}
+
+.creations-row-title-placeholder {
+	block-size: 0.875rem;
+	inline-size: 40%;
+	max-inline-size: 12.5rem;
+}

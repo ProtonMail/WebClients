@@ -225,12 +225,21 @@ const CreateTabContent = ({
     );
 };
 
+export type GalleryViewLayout = 'standalone' | 'embedded';
+
 export interface GalleryViewProps {
     isProcessingAttachment: boolean;
     prefillQuery?: string;
+    /** Standalone `/images` page (Create / Gallery tabs). Embedded omits tabs inside Library. */
+    layout?: GalleryViewLayout;
 }
 
-export const GalleryView = ({ isProcessingAttachment, prefillQuery: externalPrefill }: GalleryViewProps) => {
+export const GalleryView = ({
+    isProcessingAttachment,
+    prefillQuery: externalPrefill,
+    layout = 'standalone',
+}: GalleryViewProps) => {
+    const isEmbedded = layout === 'embedded';
     const { handleSendMessage } = useConversationActions();
     const { isSmallScreen } = useSidebar();
     const isGuest = useIsGuest();
@@ -290,10 +299,15 @@ export const GalleryView = ({ isProcessingAttachment, prefillQuery: externalPref
     //     [navigate, nativeComposerVisibilityApi]
     // );
 
-    const handleTryPrompt = useCallback((prompt: string) => {
-        setComposerPrefill(prompt);
-        setActiveTab('create');
-    }, []);
+    const handleTryPrompt = useCallback(
+        (prompt: string) => {
+            setComposerPrefill(prompt);
+            if (!isEmbedded) {
+                setActiveTab('create');
+            }
+        },
+        [isEmbedded]
+    );
 
     const handleShowDriveBrowser = useCallback(() => {
         driveBrowserModal.openModal(true);
@@ -332,20 +346,92 @@ export const GalleryView = ({ isProcessingAttachment, prefillQuery: externalPref
 
     useNativeComposerImageGenerationStateApi();
 
+    const guestGallery = (
+        <div className="gallery-view">
+            <GuestSignInState
+                image={lumoImageLight}
+                imageAlt=""
+                title={c('collider_2025:Title').t`Sign in to build your gallery`}
+                description={c('collider_2025:Info')
+                    .t`Create images, apply styles, and sketch ideas. Sign in or create a free account to save your creations.`}
+            />
+        </div>
+    );
+
+    const galleryBody = (
+        <div className="gallery-view">
+            <input
+                ref={editImageFileRef}
+                type="file"
+                accept="image/*"
+                multiple
+                className="sr-only"
+                onChange={handleEditImageFileChange}
+            />
+            {isEmbedded ? (
+                <GalleryTabContent
+                    hasImages={hasImages}
+                    createdScrollRef={createdScrollRef}
+                    galleryImages={galleryImages}
+                    handleSketchEditExport={handleSketchEditExport}
+                    isSmallScreen={isSmallScreen}
+                    handleSendMessage={handleSendMessage}
+                    isProcessingAttachment={isProcessingAttachment}
+                    composerPrefill={composerPrefill}
+                    gallerySketchTrigger={gallerySketchTrigger}
+                    onTryPrompt={handleTryPrompt}
+                    onShowDriveBrowser={handleShowDriveBrowser}
+                />
+            ) : (
+                <>
+                    {activeTab === 'create' && (
+                        <CreateTabContent
+                            handleSendMessage={handleSendMessage}
+                            isProcessingAttachment={isProcessingAttachment}
+                            composerPrefill={composerPrefill}
+                            gallerySketchTrigger={gallerySketchTrigger}
+                            onShowDriveBrowser={handleShowDriveBrowser}
+                        />
+                    )}
+                    {activeTab === 'gallery' && (
+                        <GalleryTabContent
+                            hasImages={hasImages}
+                            createdScrollRef={createdScrollRef}
+                            galleryImages={galleryImages}
+                            handleSketchEditExport={handleSketchEditExport}
+                            isSmallScreen={isSmallScreen}
+                            handleSendMessage={handleSendMessage}
+                            isProcessingAttachment={isProcessingAttachment}
+                            composerPrefill={composerPrefill}
+                            gallerySketchTrigger={gallerySketchTrigger}
+                            onTryPrompt={handleTryPrompt}
+                            onShowDriveBrowser={handleShowDriveBrowser}
+                        />
+                    )}
+                </>
+            )}
+            {driveBrowserModal.render && (
+                <FilesManagementView
+                    messageChain={[]}
+                    filesContainerRef={filesContainerRef}
+                    onClose={driveBrowserModal.modalProps.onClose}
+                    modalProps={driveBrowserModal.modalProps}
+                    initialShowDriveBrowser
+                    forceModal
+                />
+            )}
+        </div>
+    );
+
     if (isGuest) {
-        return (
-            <LumoLayoutWithDrawer drawer={{ disabled: true }}>
-                <div className="gallery-view">
-                    <GuestSignInState
-                        image={lumoImageLight}
-                        imageAlt=""
-                        title={c('collider_2025:Title').t`Sign in to build your gallery`}
-                        description={c('collider_2025:Info')
-                            .t`Create images, apply styles, and sketch ideas. Sign in or create a free account to save your creations.`}
-                    />
-                </div>
-            </LumoLayoutWithDrawer>
-        );
+        if (isEmbedded) {
+            return guestGallery;
+        }
+        return <LumoLayoutWithDrawer drawer={{ disabled: true }}>{guestGallery}</LumoLayoutWithDrawer>;
+    }
+
+    if (isEmbedded) {
+        return galleryBody;
     }
 
     return (
@@ -374,51 +460,7 @@ export const GalleryView = ({ isProcessingAttachment, prefillQuery: externalPref
                 ),
             }}
         >
-            <div className="gallery-view">
-                <input
-                    ref={editImageFileRef}
-                    type="file"
-                    accept="image/*"
-                    multiple
-                    className="sr-only"
-                    onChange={handleEditImageFileChange}
-                />
-                {activeTab === 'create' && (
-                    <CreateTabContent
-                        handleSendMessage={handleSendMessage}
-                        isProcessingAttachment={isProcessingAttachment}
-                        composerPrefill={composerPrefill}
-                        gallerySketchTrigger={gallerySketchTrigger}
-                        onShowDriveBrowser={handleShowDriveBrowser}
-                        // onSuggestionClick={handleSuggestionClick}
-                    />
-                )}
-                {activeTab === 'gallery' && (
-                    <GalleryTabContent
-                        hasImages={hasImages}
-                        createdScrollRef={createdScrollRef}
-                        galleryImages={galleryImages}
-                        handleSketchEditExport={handleSketchEditExport}
-                        isSmallScreen={isSmallScreen}
-                        handleSendMessage={handleSendMessage}
-                        isProcessingAttachment={isProcessingAttachment}
-                        composerPrefill={composerPrefill}
-                        gallerySketchTrigger={gallerySketchTrigger}
-                        onTryPrompt={handleTryPrompt}
-                        onShowDriveBrowser={handleShowDriveBrowser}
-                    />
-                )}
-                {driveBrowserModal.render && (
-                    <FilesManagementView
-                        messageChain={[]}
-                        filesContainerRef={filesContainerRef}
-                        onClose={driveBrowserModal.modalProps.onClose}
-                        modalProps={driveBrowserModal.modalProps}
-                        initialShowDriveBrowser
-                        forceModal
-                    />
-                )}
-            </div>
+            {galleryBody}
         </LumoLayoutWithDrawer>
     );
 };

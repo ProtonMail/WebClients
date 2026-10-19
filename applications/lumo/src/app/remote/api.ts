@@ -47,8 +47,7 @@ import type {
 import { objectToPascalCaseKeys, oldestDateReducer } from './util';
 
 export type RemoteStatus = 'ok' | 'deleted';
-type ResourceName =
-    'masterkeys' | 'spaces' | 'conversations' | 'messages' | 'assets' | 'personalization' | 'settings';
+type ResourceName = 'masterkeys' | 'spaces' | 'conversations' | 'messages' | 'assets' | 'personalization' | 'settings';
 
 // prettier-ignore
 type PostableResource =
@@ -75,11 +74,13 @@ export enum AssetType {
     // Generic = 0,
     GeneratedImage = 1,
     // GeneratedVideo = 2,
-    // GeneratedDoc = 3,
+    GeneratedDoc = 3,
 }
 
 type ListGeneratedAssetsParams = {
     assetType?: AssetType;
+    // Max rows returned, newest first. The server defaults to 100 and has no cap.
+    pageSize?: number;
     createTimeSince?: number; // unix timestamp (seconds)
     createTimeUntil?: number; // unix timestamp (seconds)
 };
@@ -641,6 +642,9 @@ export class LumoApi {
         const queryParams: Record<string, string> = {};
         if (params?.assetType !== undefined) {
             queryParams.AssetType = String(params.assetType);
+        }
+        if (params?.pageSize !== undefined) {
+            queryParams.PageSize = String(params.pageSize);
         }
         if (params?.createTimeSince !== undefined) {
             queryParams.CreateTimeSince = String(params.createTimeSince);

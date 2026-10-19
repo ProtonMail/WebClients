@@ -13,7 +13,6 @@ import { ComposerMode } from '../../types';
 import { getAcceptAttributeString } from '../../util/filetypes';
 import { sendFileUploadEvent, sendVoiceEntryEvent } from '../../util/telemetry';
 import { LumoIcon } from '../LumoIcon/LumoIcon';
-import { ArtifactCreateSpotlight } from './ArtifactCreateSpotlight';
 import AspectRatioDropdown from './AspectRatioDropdown';
 import { ModelModeDropdown } from './ModelModeDropdown';
 import { ToolMenuDropdown } from './ToolMenuDropdown';
@@ -116,7 +115,6 @@ export interface ComposerToolbarProps {
     onCancelDictation: () => void;
     onAcceptDictation: () => void;
     getDictationAudioLevel: () => number;
-    canDisplayArtifactSpotlight?: boolean;
 }
 
 export const ComposerToolbar = ({
@@ -138,7 +136,6 @@ export const ComposerToolbar = ({
     onCancelDictation,
     onAcceptDictation,
     getDictationAudioLevel,
-    canDisplayArtifactSpotlight = false,
 }: ComposerToolbarProps) => {
     const [showToolsMenu, setShowToolsMenu] = useState(false);
     const {
@@ -148,14 +145,11 @@ export const ComposerToolbar = ({
         dictationV2: isDictationV2Enabled,
     } = useLumoFlags();
     const isLandingPage = composerMode === ComposerMode.NEW_CONVERSATION;
-    const { anchorRef, markSpotlightSeen, shouldShowSpotlight, showNewLabel } = useArtifactCreateSpotlight(
-        canDisplayArtifactSpotlight && isLandingPage
-    );
+    const { anchorRef, showNewLabel } = useArtifactCreateSpotlight(isLandingPage);
 
     const handleToolsButtonClick = useCallback(() => {
-        markSpotlightSeen();
         setShowToolsMenu((prev) => !prev);
-    }, [markSpotlightSeen]);
+    }, []);
 
     const handleVoiceEntryClick = useCallback(() => {
         sendVoiceEntryEvent('start');
@@ -193,25 +187,19 @@ export const ComposerToolbar = ({
                 <UploadMenuSection {...uploadSectionProps} />
                 {(isToolsFlagEnabled || isArtifactsViewFlagEnabled) && !isCreateImageMode && !isAgent && (
                     <>
-                        <ArtifactCreateSpotlight
-                            anchorRef={anchorRef}
-                            onClose={() => markSpotlightSeen()}
-                            show={shouldShowSpotlight && !showToolsMenu}
+                        <Button
+                            ref={anchorRef}
+                            className={clsx(
+                                'border-0 shrink-0 flex flex-row flex-nowrap gap-2 items-center py-1.5 rounded-full',
+                                showToolsMenu && 'is-active'
+                            )}
+                            onClick={handleToolsButtonClick}
+                            shape="ghost"
+                            size="small"
                         >
-                            <Button
-                                ref={anchorRef}
-                                className={clsx(
-                                    'border-0 shrink-0 flex flex-row flex-nowrap gap-2 items-center py-1.5 rounded-full',
-                                    showToolsMenu && 'is-active'
-                                )}
-                                onClick={handleToolsButtonClick}
-                                shape="ghost"
-                                size="small"
-                            >
-                                <LumoIcon name="SlidersHorizontal" />
-                                <span className="hidden sm:block text-sm">{c('collider_2025: Button').t`Tools`}</span>
-                            </Button>
-                        </ArtifactCreateSpotlight>
+                            <LumoIcon name="SlidersHorizontal" />
+                            <span className="hidden sm:block text-sm">{c('collider_2025: Button').t`Tools`}</span>
+                        </Button>
                         <ToolMenuDropdown
                             isOpen={showToolsMenu}
                             anchorRef={anchorRef}
@@ -219,7 +207,6 @@ export const ComposerToolbar = ({
                             onClickCreateImageOption={() => onCreateImageModeChange(true)}
                             canUseAgents={canUseAgents}
                             showArtifactNewLabel={showNewLabel}
-                            onArtifactCreationToggle={markSpotlightSeen}
                         />
                     </>
                 )}

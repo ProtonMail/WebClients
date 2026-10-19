@@ -45,6 +45,45 @@ function makeArtifactMessage(content: string, args: ArtifactToolArgs, overrides?
 }
 
 describe('buildArtifactRegistry', () => {
+    it('records where each version came from and the request behind it', () => {
+        const docArgs = { id: 'doc', type: 'document', title: 'Doc' };
+        const prompt = makeMessage({ role: Role.User, content: 'Write an\n  invitation   email' });
+        const created = makeArtifactMessage('Done.', { ...docArgs, content: 'v1' }, { parentId: prompt.id });
+        const inlineAsk = makeMessage({
+            role: Role.User,
+            parentId: created.id,
+            content: 'Generated instruction prompt',
+            artifactAction: {
+                kind: 'edit',
+                artifactId: 'doc',
+                artifactTitle: 'Doc',
+                artifactType: 'document',
+                selection: 'v1',
+                userInstruction: 'make it shorter',
+            },
+        });
+        const revised = makeArtifactMessage('Shorter.', { ...docArgs, content: 'v2' }, { parentId: inlineAsk.id });
+        const manual = makeMessage({
+            role: Role.User,
+            parentId: revised.id,
+            content: '',
+            blocks: [toolCallBlock({ ...docArgs, content: 'v3' }, 'call_m')],
+            artifactManualEdit: { artifactId: 'doc', artifactTitle: 'Doc', artifactType: 'document' },
+        });
+
+        const versions = buildArtifactRegistry([prompt, created, inlineAsk, revised, manual]).doc.versions;
+
+        expect(
+            versions.map((version) => {
+                return { source: version.source, promptExcerpt: version.promptExcerpt };
+            })
+        ).toEqual([
+            { source: 'prompt', promptExcerpt: 'Write an invitation email' },
+            { source: 'inline-edit', promptExcerpt: 'make it shorter' },
+            { source: 'manual-edit', promptExcerpt: undefined },
+        ]);
+    });
+
     it('registers a single artifact with one version', () => {
         const chain: Message[] = [
             makeArtifactMessage('Here is your poem.', {

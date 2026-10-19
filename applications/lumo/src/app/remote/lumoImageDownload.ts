@@ -23,22 +23,6 @@
  * In all cases `base64` is WITHOUT the `data:...;base64,` prefix. There is no iOS file handler yet.
  */
 
-declare global {
-    interface Window {
-        Android?: {
-            saveBase64Image?: (base64: string, mimeType: string, name: string) => void;
-            saveBase64File?: (base64: string, mimeType: string, name: string) => void;
-        };
-        webkit?: {
-            messageHandlers?: {
-                saveImage?: {
-                    postMessage: (message: { base64: string; mimeType: string; name: string }) => void;
-                };
-            };
-        };
-    }
-}
-
 /**
  * True when a native image-save bridge is actually wired up on `window`.
  *

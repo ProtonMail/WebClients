@@ -53,7 +53,10 @@ export const RightDrawer = ({ className, isFullscreen, onClose }: RightDrawerPro
                         <DrawerToggleButton />
                     </div>
                 </div> */}
-                <div ref={contentRef} className="right-drawer-content flex flex-column flex-1 overflow-auto w-full" />
+                <div
+                    ref={contentRef}
+                    className="right-drawer-content flex flex-column flex-1 overflow-auto w-full min-w-0 max-w-full"
+                />
             </aside>
         </>
     );
