@@ -2,8 +2,6 @@ import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proto
 import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
 
-import { isElectronMail } from '../../helpers/desktop';
-import { captureMessage } from '../../helpers/sentry';
 import type { CalendarEventData } from '../../interfaces/calendar/Event';
 import type { SimpleMap } from '../../interfaces/utils';
 import { CALENDAR_CARD_TYPE, EVENT_VERIFICATION_STATUS } from '../constants';
@@ -69,11 +67,9 @@ const getVerifiedLegacy = async ({
      * Verification of an ical card may have failed because the signature is a legacy one,
      * done as text and therefore using OpenPGP normalization (\n -> \r\n) + stripping trailing spaces.
      *
-     * We try to verify the signature in the legacy way and log the fact in Sentry
+     * We try to verify the signature in the legacy way. This is an expected path for events signed by
+     * older clients, so it is not reported to Sentry (it generated ~80k events per week).
      */
-    if (!isElectronMail) {
-        captureMessage('Fallback to legacy signature verification of calendar event', { level: 'info' });
-    }
     const { verificationStatus: verificationStatusLegacy } = await CryptoProxy.verifyMessage({
         textData,
         stripTrailingSpaces: true,
