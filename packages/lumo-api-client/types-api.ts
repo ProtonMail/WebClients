@@ -176,12 +176,16 @@ export type ChatCompletionsMessage = {
 
 export type LumoCompletionTarget = 'message' | 'title' | 'suggested_questions';
 
+/** Unleash Lumo toggles for observability (`flag name` → serialized value). */
+export type ChatCompletionsFeatureFlags = Record<string, string>;
+
 export type ChatCompletionsLumoExtension = {
     client_type: 'frontend';
     target?: LumoCompletionTarget;
     request_key?: string;
     request_id?: string;
     image_aspect_ratio?: ImageAspectRatio;
+    feature_flags?: ChatCompletionsFeatureFlags;
 };
 
 export type ChatCompletionsStreamOptions = {
