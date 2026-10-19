@@ -1,18 +1,16 @@
-import TimeIntl from '@proton/components/components/time/TimeIntl'
-import { ServerTime } from '@proton/docs-shared'
-import { useMemo } from 'react'
 import { c } from 'ttag'
+import type { DocsCommentTime } from '../../contract/DocsCommentThread'
+import type { DocsDateFormat } from '../../contract/DocsDateFormat'
+import { commentDate, formatAbsoluteTime, formatRelativeTime, isNewerThan } from '../../Utils/commentTime'
 
-export function CommentTime({
-  createTime,
-  languageCode,
-}: {
-  createTime: ServerTime
+export type CommentTimeProps = {
+  createTime: DocsCommentTime
   languageCode: Intl.LocalesArgument
-}) {
-  const createTimeUtil = useMemo(() => new ServerTime(createTime.serverTimestamp), [createTime.serverTimestamp])
+  dateFormat: DocsDateFormat
+}
 
-  if (createTimeUtil.isNewerThan(10, 'seconds')) {
+export function CommentTime({ createTime, languageCode, dateFormat }: CommentTimeProps) {
+  if (isNewerThan(createTime, 10, 'seconds')) {
     return (
       <span data-testid="comment-time-just-now">{
         // translator: indicates the comment has been added less than 10 seconds ago
@@ -21,25 +19,9 @@ export function CommentTime({
     )
   }
 
-  if (createTimeUtil.isNewerThan(60, 'minutes')) {
-    return (
-      <span data-testid="comment-time-ago">
-        {createTimeUtil.relativeFormat(createTimeUtil.relativeMinutes, 'minute', languageCode)}
-      </span>
-    )
+  if (isNewerThan(createTime, 60, 'minutes')) {
+    return <span data-testid="comment-time-ago">{formatRelativeTime(createTime, languageCode)}</span>
   }
 
-  return (
-    <TimeIntl
-      options={{
-        year: 'numeric',
-        day: 'numeric',
-        month: 'short',
-        hour: 'numeric',
-        minute: 'numeric',
-      }}
-    >
-      {createTimeUtil.serverTimestamp}
-    </TimeIntl>
-  )
+  return <time dateTime={commentDate(createTime).toISOString()}>{formatAbsoluteTime(createTime, dateFormat)}</time>
 }

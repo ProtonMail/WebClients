@@ -4,11 +4,11 @@ import { UserAvatar, UserAvatarSizeEnum } from '@proton/atoms/UserAvatar/UserAva
 import * as Ariakit from '@ariakit/react'
 import type { MouseEventHandler, ReactElement } from 'react'
 import { useCallback, useState } from 'react'
-import type { CommentInterface, CommentThreadInterface } from '@proton/docs-shared'
 import { Icon } from '../../Components/Icon'
 import { IconButton, Tooltip } from '../../Components/ui'
 import * as Icons from '../../Components/icons'
-import { CommentThreadState } from '@proton/docs-shared'
+import type { DocsComment, DocsCommentThread } from '../../contract/DocsCommentThread'
+import { CommentThreadStates } from '../../contract/DocsCommentThread'
 import { AnonymousUserEmail } from '../../Utils/AnonymousUser'
 import { clsx } from 'clsx'
 import { c } from 'ttag'
@@ -29,8 +29,8 @@ export function CommentsPanelListComment({
   isSuggestionThread,
   setIsDeletingThread,
 }: {
-  comment: CommentInterface
-  thread: CommentThreadInterface
+  comment: DocsComment
+  thread: DocsCommentThread
   isFirstComment: boolean
   isSuggestionThread: boolean
   setIsDeletingThread: (isDeleting: boolean) => void
@@ -54,6 +54,7 @@ export function CommentsPanelListComment({
     showConfirmModal,
     canEdit,
     languageCode,
+    dateFormat,
     logger,
     userName,
     suggestionsEnabled,
@@ -142,7 +143,7 @@ export function CommentsPanelListComment({
 
   const isAuthorCurrentUser = comment.author === userAddress || (!comment.author && userAddress === AnonymousUserEmail)
 
-  const isThreadActive = thread.state === CommentThreadState.Active
+  const isThreadActive = thread.state === CommentThreadStates.Active
 
   const authorDisplayName = isAuthorCurrentUser ? userName : getDisplayNameForEmail(comment.author)
   const color = awarenessStates.find((state) => state.name === comment.author)?.color
@@ -199,12 +200,11 @@ export function CommentsPanelListComment({
               {authorDisplayName}
             </span>
             <span className="select-none text-xs opacity-50" data-testid="comment-creation-time">
-              <CommentTime createTime={comment.createTime} languageCode={languageCode} />
-              {comment.createTime.milliseconds !== comment.modifyTime.milliseconds && ' • Edited'}
+              <CommentTime createTime={comment.createTime} languageCode={languageCode} dateFormat={dateFormat} />
             </span>
           </div>
 
-          {isSuggestionComment && suggestionsEnabled && thread.state === CommentThreadState.Active && (
+          {isSuggestionComment && suggestionsEnabled && thread.state === CommentThreadStates.Active && (
             <>
               <IconButton
                 label={c('Action').t`Decline suggestion`}

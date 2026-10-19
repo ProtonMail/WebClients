@@ -1,18 +1,14 @@
 import { act, fireEvent, render, screen, waitFor, within } from '@testing-library/react'
 import type { LexicalEditor } from 'lexical'
+import { DocumentRole, EditorSystemMode } from '@proton/docs-shared'
 import {
-  CommentThreadState,
-  CommentThreadType,
-  CommentType,
-  DocumentRole,
-  EditorSystemMode,
-  ServerTime,
-  type CommentThreadInterface,
-} from '@proton/docs-shared'
-import {
+  CommentThreadStates,
+  CommentThreadTypes,
+  CommentTypes,
   DocsDependenciesProvider,
   EditorUserMode,
   StandaloneDocsEditor,
+  type DocsCommentThread,
   type DocsDependencies,
   type DocsComments,
 } from '../app/Containers/Docs/public'
@@ -23,33 +19,28 @@ import DocsLayout from '../app/Containers/DocsLayout'
 import { createStandaloneDocClient } from './client'
 import { createStandaloneDocSession } from './session'
 
-function createThread(): CommentThreadInterface {
-  const time = ServerTime.now()
+/** Threads reach the editor as structured-cloned data, so the times are plain timestamps. */
+function createThread(): DocsCommentThread {
+  const createdAt = { serverTimestamp: Math.round(Date.now() / 1000) - 60 }
   return {
     id: 'thread-id',
     localID: 'thread-id',
     markID: 'mark-id',
-    createTime: time,
-    modifyTime: time,
-    state: CommentThreadState.Active,
-    type: CommentThreadType.Comment,
+    createTime: createdAt,
+    state: CommentThreadStates.Active,
+    type: CommentThreadTypes.Comment,
     isPlaceholder: false,
     comments: [
       {
         id: 'comment-id',
-        createTime: time,
-        modifyTime: time,
+        createTime: createdAt,
         content: 'A loaded comment',
-        parentCommentID: null,
         author: 'collaborator@example.test',
-        comments: [],
         isPlaceholder: false,
-        type: CommentType.Comment,
+        type: CommentTypes.Comment,
         verificationResult: { verified: true },
-        asPayload: jest.fn(),
       },
     ],
-    asPayload: jest.fn(),
   }
 }
 
@@ -61,6 +52,7 @@ function createDependencies(comments: DocsComments, reportError: DocsDependencie
     canEdit: true,
     canComment: true,
     languageCode: 'en',
+    dateFormat: { localeCode: 'en-US', hourCycle: 'h12' },
     getDisplayNameForEmail: (email) => email ?? 'Anonymous',
     comments,
     logger: { info: jest.fn(), warn: jest.fn(), error: jest.fn() },
@@ -172,6 +164,7 @@ describe('standalone Docs runtime', () => {
       await act(() => editor!.dispatchCommand(SHOW_ALL_COMMENTS_COMMAND, undefined))
       expect(await screen.findByText('A loaded comment')).toBeInTheDocument()
       expect(screen.getByTestId('comment-author')).toHaveTextContent('collaborator@example.test')
+      expect(screen.getByTestId('comment-creation-time')).toHaveTextContent(/^1 min\. ago$/)
       expect(screen.getByText('Reply...')).toBeInTheDocument()
 
       jest.mocked(comments.getTypersExcludingSelf).mockResolvedValue(['Collaborator'])
