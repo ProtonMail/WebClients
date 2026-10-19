@@ -3,7 +3,7 @@ jest.mock("electron", () => ({
     autoUpdater: { on: jest.fn() },
 }));
 
-jest.mock("../utils/session", () => ({
+jest.mock("../utils/electronSession/partitions", () => ({
     updateSession: jest.fn(),
     appSession: jest.fn(),
 }));
@@ -15,7 +15,7 @@ jest.mock("../utils/view/viewManagement", () => ({
     getMailView: jest.fn(),
 }));
 
-import { updateSession } from "../utils/session";
+import { updateSession } from "../utils/electronSession/partitions";
 import { sentryReport } from "../utils/sentryReport";
 import { getAvailableVersionsTestOnly, resetVersionFetchCounterTestOnly } from "./update";
 import { DESKTOP_PLATFORMS } from "@proton/shared/lib/constants";

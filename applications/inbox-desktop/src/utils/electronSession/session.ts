@@ -1,19 +1,12 @@
-import { app, session } from "electron";
+import { app } from "electron";
 
-import { isHostAllowed } from "./urls/urlTests";
-import { ALLOWED_PERMISSIONS } from "../constants";
-import { mainLogger } from "./log";
-import { getSettings } from "../store/settingsStore";
-import { getFeatureFlagManager } from "./flags/manager";
-import { FeatureFlag } from "./flags/flags";
-import { updateTrackedUID } from "./electronSession/uidTracker";
-
-export const appSession = () => {
-    const cache = getSettings().appCacheEnabled || false;
-    return session.fromPartition("persist:app", { cache });
-};
-
-export const updateSession = () => session.fromPartition("persist:update", { cache: false });
+import { isHostAllowed } from "../urls/urlTests";
+import { ALLOWED_PERMISSIONS } from "../../constants";
+import { mainLogger } from "../log";
+import { getFeatureFlagManager } from "../flags/manager";
+import { FeatureFlag } from "../flags/flags";
+import { updateTrackedUID } from "./uidTracker";
+import { appSession } from "./partitions";
 
 export const setRequestPermission = () => {
     // Security addition, reject all permissions except notifications

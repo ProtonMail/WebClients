@@ -10,7 +10,7 @@ jest.mock("./isProdEnv", () => ({
 jest.mock("../../package.json", () => ({ name: "test", version: "1.0.0" }), { virtual: true });
 jest.mock("./helpers", () => ({ isMac: true, isWindows: false, isLinux: false }));
 jest.mock("../ipc/ipcConstants", () => ({ DESKTOP_FEATURES: {} }));
-jest.mock("./session", () => ({ appSession: jest.fn(), updateSession: jest.fn() }));
+jest.mock("./electronSession/partitions", () => ({ appSession: jest.fn(), updateSession: jest.fn() }));
 jest.mock("../store/settingsStore", () => ({ getSettings: jest.fn(() => ({})) }));
 jest.mock("../store/boundsStore", () => ({ getWindowBounds: jest.fn(() => ({})) }));
 jest.mock("./view/viewManagement", () => ({

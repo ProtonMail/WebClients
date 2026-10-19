@@ -1,7 +1,7 @@
 // Note: onBeforeSendHeaders is not included here because it only has a single consumer (session.ts).
 // If multiplexing is ever needed for it, add it here following the same pattern.
 import { Session } from "electron";
-import { appSession } from "../session";
+import { appSession } from "./partitions";
 import { webRequestRouterLogger } from "../log";
 
 type Unsubscribe = () => void;
