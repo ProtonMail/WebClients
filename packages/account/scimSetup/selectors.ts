@@ -59,6 +59,18 @@ export const selectPendingScimMembersByGroup = createSelector(
 );
 
 /**
+ * Members who still hold the organization key although no assigned role grants access to it, e.g.
+ * after a SCIM sync removed them from their last admin group. Only known once member roles are loaded.
+ * Excludes the current user, as the API never demotes the admin who approves the clean-up, and members
+ * whose demotion is already scheduled, as nothing is left to approve for them.
+ */
+export const selectMembersRequiringOrgKeyDemotion = createSelector(selectMembers, (membersState) =>
+    (membersState.value ?? []).filter(
+        (member) => member.requiresOrgKeyDemotion && !member.hasScheduledOrgKeyDemotion && !member.Self
+    )
+);
+
+/**
  * Groups that need finalizing during SCIM setup: newly synced groups still missing keys, plus
  * existing SCIM groups that have keys but gained pending-keys members.
  */
