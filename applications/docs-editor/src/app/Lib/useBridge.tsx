@@ -9,7 +9,7 @@ import type { DocsAwarenessStateChangeData } from '@proton/docs-shared/lib/DocAw
 import { DocAwarenessEvent } from '@proton/docs-shared/lib/DocAwarenessEvent'
 import type { YDocMap } from '@proton/docs-shared/lib/YDocMap'
 import type { Doc as YDoc } from 'yjs'
-import { EditorSystemMode } from '@proton/docs-shared/lib/EditorSystemMode'
+import { EditorSystemMode } from '../Containers/Docs/public'
 import type { EditorInitializationConfig } from '@proton/docs-shared/lib/EditorInitializationConfig'
 import { reportErrorToSentry } from '../Utils/errorMessage'
 import { c } from 'ttag'

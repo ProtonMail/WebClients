@@ -1,9 +1,10 @@
-import { DocumentRole, EditorSystemMode } from '@proton/docs-shared'
+import { DocumentRole } from '@proton/docs-shared'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type { LexicalEditor } from 'lexical'
 import { createRoot } from 'react-dom/client'
 import {
   DocsDependenciesProvider,
+  EditorSystemMode,
   EditorUserMode,
   StandaloneDocsEditor,
   type DocsDependencies,
@@ -130,7 +131,6 @@ function StandaloneDoc() {
               docState={session.docState}
               documentId={session.documentId}
               editingLocked={!ready || failed || userMode === EditorUserMode.Preview}
-              role={role}
               onEditorError={onEditorError}
               hidden={!ready}
               editorInitializationConfig={session.initialization}

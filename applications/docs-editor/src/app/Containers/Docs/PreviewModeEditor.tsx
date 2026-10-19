@@ -5,8 +5,7 @@ import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import { ProtonContentEditable } from './ContentEditable/ProtonContentEditable'
 import { DefaultFont } from './Constants/Fonts'
-import type { DocumentRole } from '@proton/docs-shared'
-import { EditorSystemMode } from '@proton/docs-shared'
+import { EditorSystemMode } from './contract/EditorSystemMode'
 import Toolbar from './Toolbar/Toolbar'
 import { EditorUserMode } from './contract/EditorUserMode'
 import type { EditorState } from 'lexical'
@@ -22,7 +21,6 @@ import { useDocsDependencies } from './DocsDependenciesProvider'
 
 interface PreviewModeEditorProps {
   clonedEditorState: EditorState
-  role: DocumentRole
   onUserModeChange: (mode: EditorUserMode) => void
   initialScrollTop: number | null
   tableOfContentsVisible: boolean
@@ -31,13 +29,12 @@ interface PreviewModeEditorProps {
 
 export function PreviewModeEditor({
   clonedEditorState,
-  role,
   onUserModeChange,
   initialScrollTop,
   tableOfContentsVisible,
   hidden,
 }: PreviewModeEditorProps) {
-  const { openLink, getDocumentUrl, replaceDocumentUrl, reportTelemetry } = useDocsDependencies()
+  const { canEdit, openLink, getDocumentUrl, replaceDocumentUrl, reportTelemetry } = useDocsDependencies()
 
   return (
     <SafeLexicalComposer
@@ -55,7 +52,7 @@ export function PreviewModeEditor({
       })}
     >
       <Toolbar
-        hasEditAccess={role.canEdit()}
+        hasEditAccess={canEdit}
         userMode={EditorUserMode.Preview}
         onUserModeChange={onUserModeChange}
         isPreviewModeToolbar
