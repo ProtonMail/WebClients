@@ -7,6 +7,7 @@ import { useGetPlans } from '@proton/account/plans/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
+import { Href } from '@proton/atoms/Href/Href';
 import { Badge } from '@proton/components/components/badge/Badge';
 import Logo from '@proton/components/components/logo/Logo';
 import Price from '@proton/components/components/price/Price';
@@ -16,6 +17,7 @@ import { IcShield } from '@proton/icons/icons/IcShield';
 import { PLANS } from '@proton/payments/core/constants';
 import type { Plan } from '@proton/payments/core/plan/interface';
 import { BRAND_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { getSupportContactURL } from '@proton/shared/lib/helpers/url';
 
 import { FeatureItem } from '../components/FeatureItem';
 import { freeFeatures, paidFeatures } from '../utils/features';
@@ -73,6 +75,11 @@ const PaidFeatureList = () => {
 };
 
 const Surface = ({ signupPath }: { signupPath: string }) => {
+    const customerSupportLink = (
+        <Href className="color-norm" key="customer-support" href={getSupportContactURL({})}>{c('Link')
+            .t`Customer Support`}</Href>
+    );
+
     return (
         <Card background={false} rounded className="flex flex-column p-4 gap-6 w-full">
             <div className="flex flex-row flex-nowrap justify-space-between items-center">
@@ -83,9 +90,13 @@ const Surface = ({ signupPath }: { signupPath: string }) => {
                 <Badge type="primary">{c('Info').t`BEST FOR TV`}</Badge>
             </div>
             <PlanPrice />
-            <div className="flex flex-row items-center gap-1">
-                <IcShield className="color-success" />
-                <span className="color-success">{c('Info').t`30-day money-back guarantee`}</span>
+            <div className="flex flex-column gap-1">
+                <div className="flex flex-row items-center gap-1">
+                    <IcShield className="color-success" />
+                    <span className="color-success">{c('Info').t`30-day money-back guarantee`}</span>
+                </div>
+                <span>{c('Info')
+                    .jt`Cancel within 30 days of your purchase and contact our ${customerSupportLink} to obtain a refund.`}</span>
             </div>
             <PaidFeatureList />
             <Link className="w-full" to={`${signupPath}?plan=${PLANS.VPN2024}&billing=1`}>
