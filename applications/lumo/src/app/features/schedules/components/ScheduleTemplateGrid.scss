@@ -1,0 +1,8 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
+.schedule-template-grid {
+	&__toggle {
+		text-decoration-line: underline;
+		text-underline-position: from-font;
+	}
+}
