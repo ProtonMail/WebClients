@@ -10,6 +10,7 @@ import {
     unprivatizeMemberKeysRoute,
 } from '@proton/shared/lib/api/members';
 import { MEMBER_PRIVATE, MEMBER_ROLE } from '@proton/shared/lib/constants';
+import { getIsAddressEnabled } from '@proton/shared/lib/helpers/address';
 import { captureMessage, getSentryError } from '@proton/shared/lib/helpers/sentry';
 import type { Api, KTUserContext, Member, MemberReadyForAutomaticUnprivatization } from '@proton/shared/lib/interfaces';
 import { getIsMemberSetup } from '@proton/shared/lib/keys/memberHelper';
@@ -95,7 +96,9 @@ export const requestUnprivatization = ({
             );
         }
         const memberAddresses = await dispatch(getMemberAddresses({ member, retry: true }));
-        const primaryEmailAddress = memberAddresses?.[0].Email;
+        // Disabled addresses can hold an obsolete signed key list (Data: null), which makes the member
+        // fail to accept the request. Pick the first enabled address instead of relying on ordering.
+        const primaryEmailAddress = memberAddresses?.find(getIsAddressEnabled)?.Email;
         if (!primaryEmailAddress) {
             throw new MemberCreationValidationError(
                 c('unprivatization').t`The user must have an address to request data access`
