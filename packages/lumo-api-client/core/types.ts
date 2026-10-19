@@ -11,6 +11,7 @@
 import type { AesGcmCryptoKey } from '../crypto/types';
 import type { Base64, RequestId, Status } from '../types';
 import {
+    type ChatCompletionsFeatureFlags,
     type ChatCompletionsFunctionTool,
     type ChatCompletionsRequest,
     type ChatEndpointGenerationRequest,
@@ -222,6 +223,8 @@ export interface AssistantCallOptions {
      * don't trigger it.
      */
     recordRequestCallback?: RecordRequestCallback;
+    /** Lumo Unleash toggles; forwarded on the wire as `lumo.feature_flags`. */
+    featureFlags?: ChatCompletionsFeatureFlags;
 }
 
 export interface AssistantCallResult {
