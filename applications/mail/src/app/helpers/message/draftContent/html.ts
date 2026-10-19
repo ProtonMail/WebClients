@@ -8,15 +8,14 @@ import type { Address, MailSettings, Recipient, UserSettings } from '@proton/sha
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { FORWARDED_MESSAGE, isPlainText } from '@proton/shared/lib/mail/messages';
 
-import { CLASSNAME_BLOCKQUOTE } from '../messageDraftConstants';
-import { formatRecipientsString } from '../messageDraftFormat';
-import { insertSignature } from '../messageSignature';
-
 import { formatFullDate } from '../../date';
 import { getDate } from '../../elementTypeGuards';
 import { plainTextToHTML } from '../messageContentConversion';
 import { getDocumentContent } from '../messageContentQuery';
+import { CLASSNAME_BLOCKQUOTE } from '../messageDraftConstants';
+import { formatRecipientsString } from '../messageDraftFormat';
 import { restoreImages } from '../messageImages';
+import { insertSignature } from '../messageSignature';
 
 export const generatePreviousMessageInfos = (referenceMessage: PartialMessageState, action: MESSAGE_ACTIONS) => {
     /**
@@ -101,7 +100,7 @@ export const generateBlockquote = (
 
     const previousMessageInfos = generatePreviousMessageInfos(referenceMessage, action);
 
-    return `<div class="${CLASSNAME_BLOCKQUOTE}">
+    return `<div class="${CLASSNAME_BLOCKQUOTE}"><br>
         ${previousMessageInfos}
         <blockquote class="${CLASSNAME_BLOCKQUOTE}" type="cite">
             ${previousContent}
@@ -134,20 +133,12 @@ export const createHTMLDraftContent = ({
     let messageWithSignature: string;
     if (action === MESSAGE_ACTIONS.NEW && messageBody) {
         // For mailto bodies, place it first then the signature after.
-        const signatureOnly = insertSignature(
-            '',
-            senderAddress?.Signature,
-            action,
-            mailSettings,
-            userSettings,
-            fontStyle
-        );
+        const signatureOnly = insertSignature('', senderAddress?.Signature, mailSettings, userSettings, fontStyle);
         messageWithSignature = messageBody + signatureOnly;
     } else {
         messageWithSignature = insertSignature(
             messageBody,
             senderAddress?.Signature,
-            action,
             mailSettings,
             userSettings,
             fontStyle

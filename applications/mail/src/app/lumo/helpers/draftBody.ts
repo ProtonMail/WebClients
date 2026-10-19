@@ -37,7 +37,6 @@ export const writtenDraftBody = ({ message, addresses, mailSettings, userSetting
     if (isPlainText(message.data)) {
         const signature = getAddressPlainTextSignature({
             senderAddress: message.data?.Sender?.Address,
-            action: message.draftFlags?.action,
             addresses,
             mailSettings,
             userSettings,
