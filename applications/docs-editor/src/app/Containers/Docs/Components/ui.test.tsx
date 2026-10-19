@@ -73,6 +73,20 @@ it('styles the solid and ghost variants with theme variables only', () => {
   }
 })
 
+it('fills a solid norm button with the primary colour', () => {
+  render(
+    <Button shape="solid" color="norm">
+      Send
+    </Button>,
+  )
+
+  expect(screen.getByRole('button', { name: 'Send' })).toHaveClass(
+    'bg-[--interaction-norm]',
+    'text-[--interaction-norm-contrast]',
+    'hover:bg-[--interaction-norm-major-1]',
+  )
+})
+
 it('uses square padding for icon buttons and a pill radius when asked', () => {
   render(
     <>
