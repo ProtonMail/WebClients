@@ -956,7 +956,7 @@ export default function DocumentEditorToolbar({
                 type: 'dropdown' as const,
                 disabled: !isEditable,
                 label: (target: 'toolbar' | 'overflow') =>
-                  target === 'toolbar' ? <span aria-label={insertEmojiLabel}>☺</span> : insertEmojiLabel,
+                  target === 'toolbar' ? <Icon data={Icons.emoji} alt={insertEmojiLabel} /> : insertEmojiLabel,
                 tooltip: insertEmojiLabel,
                 menu: (
                   <Suspense fallback={null}>
@@ -965,6 +965,7 @@ export default function DocumentEditorToolbar({
                 ),
                 dropdownProps: {
                   autoClose: false,
+                  autoFocusOnShow: false,
                   autoFocusOnHide: false,
                   onClosed: () => {
                     if (document.activeElement === document.body) {

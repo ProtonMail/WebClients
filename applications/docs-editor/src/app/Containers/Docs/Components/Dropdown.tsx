@@ -19,6 +19,7 @@ export interface DropdownProps extends HTMLAttributes<HTMLDivElement> {
   isOpen?: boolean
   onClose?: () => void
   onClosed?: () => void
+  autoFocusOnShow?: boolean
   autoFocusOnHide?: boolean
   originalPlacement?: Ariakit.MenuStoreProps['placement']
   offset?: number
@@ -35,6 +36,7 @@ function DropdownContent({
   store,
   children,
   onClosed,
+  autoFocusOnShow = true,
   autoFocusOnHide = true,
   offset = 4,
   autoClose = true,
@@ -64,7 +66,8 @@ function DropdownContent({
         // Menus dismiss on outside interaction without blocking other toolbar controls.
         modal={false}
         unmountOnHide
-        autoFocusOnShow={!disableFocusTrap}
+        // Content that focuses its own control turns this off, or Ariakit moves focus to the menu after it.
+        autoFocusOnShow={autoFocusOnShow && !disableFocusTrap}
         // Return focus to the trigger unless the consumer manages focus on close.
         autoFocusOnHide={autoFocusOnHide}
         // Table selection updates restore editor focus while these menus stay open.
