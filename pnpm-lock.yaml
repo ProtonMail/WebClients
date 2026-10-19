@@ -8920,10 +8920,6 @@ importers:
         version: link:../eslint-config-proton
 
   packages/styles:
-    dependencies:
-      inter-ui:
-        specifier: ^4.1.1
-        version: 4.1.1
     devDependencies:
       sass:
         specifier: ^1.80.3
@@ -9562,9 +9558,6 @@ importers:
       include-media:
         specifier: ^2.0.0
         version: 2.0.0
-      inter-ui:
-        specifier: ^4.1.1
-        version: 4.1.1
       prettier:
         specifier: ^3.9.10
         version: 3.9.10
@@ -22474,10 +22467,6 @@ packages:
   inquirer@8.2.7:
     resolution: {integrity: sha512-UjOaSel/iddGZJ5xP/Eixh6dY1XghiBw4XK13rCCIJcJfyhhoul/7KhLLUGtebEj6GDYM6Vnx/mVsjx2L/mFIA==}
     engines: {node: '>=12.0.0'}
-
-  inter-ui@4.1.1:
-    resolution: {integrity: sha512-451h0J29HyOmA+JXgSi/6M12tL7ZCZ8arYKZUXiOXTJpJbAKqJvFh3k5SiV3x7tKe0C0KyrKUUiQIvvZ2PQDcA==}
-    engines: {node: '>=16.0.0'}
 
   internal-slot@1.1.0:
     resolution: {integrity: sha512-4gd7VpWNQNB4UKKCFFVcp1AVv+FMOgs9NKzjHKusc8jTMhd5eL1NqQqOpE0KzMds804/yHlglp3uxgluOqAPLw==}
@@ -43177,8 +43166,6 @@ snapshots:
       wrap-ansi: 6.2.0
     transitivePeerDependencies:
       - '@types/node'
-
-  inter-ui@4.1.1: {}
 
   internal-slot@1.1.0:
     dependencies:

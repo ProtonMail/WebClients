@@ -512,8 +512,7 @@
         "packages/styles": {
             "entry": ["eslint.config.{js,mjs,ts}"],
             "project": ["**/*.{ts,tsx,scss,sass}"],
-            "ignore": ["scss/**"],
-            "ignoreDependencies": ["inter-ui"]
+            "ignore": ["scss/**"]
         },
         "packages/telemetry-tracker": {
             "entry": [],
