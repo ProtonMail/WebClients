@@ -43,7 +43,7 @@ import type { Plan } from '@proton/payments/core/plan/interface';
 import { getFreeTitle } from '@proton/payments/core/subscription/freePlans';
 import { APPS, BRAND_NAME, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
-import { CSS_BASE_UNIT_SIZE } from '@proton/styles';
+import { CSS_BASE_UNIT_SIZE } from '@proton/styles/constants';
 import isTruthy from '@proton/utils/isTruthy';
 import { VPN_SERVERS } from '@proton/vpn/constants/vpnServers';
 
