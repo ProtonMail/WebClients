@@ -43,6 +43,7 @@
             "@proton/pack/*": ["./packages/pack/*"],
             "@proton/pass/*": ["./packages/pass/*"],
             "@proton/payments/*": ["./packages/payments/*"],
+            "@proton/playwright-mocks/*": ["./utilities/playwright-mocks/src/*"],
             "@proton/payments-ui/*": ["./packages/payments-ui/*"],
             "@proton/polyfill/*": ["./packages/polyfill/*"],
             "@proton/redux-shared-store/*": ["./packages/redux-shared-store/*"],
