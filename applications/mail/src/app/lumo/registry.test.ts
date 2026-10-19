@@ -1,3 +1,4 @@
+import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
 
 import { buildLumoMailConfig } from './registry';
@@ -38,6 +39,39 @@ describe('the telemetry wrapper around every Mail tool handler', () => {
         await expect(runListFolders()).rejects.toBe(refused);
 
         expect(telemetry.toolFailed).toHaveBeenCalledWith('list_folders', 'read');
+        expect(telemetry.toolSucceeded).not.toHaveBeenCalled();
+    });
+});
+
+describe('the telemetry wrapper around a tool argument check', () => {
+    const createDraftCheck = () => {
+        const telemetry: LumoMailConfigTelemetry = {
+            promptSent: jest.fn(),
+            chainEnded: jest.fn(),
+            confirmAnswered: jest.fn(),
+            toolSucceeded: jest.fn(),
+            toolFailed: jest.fn(),
+        };
+        const { definitions } = buildLumoMailConfig({} as MailToolDeps, telemetry);
+        const checkParams = definitions.find((definition) => definition.name === 'create_draft')!.checkParams!;
+
+        return { telemetry, checkParams };
+    };
+
+    it('reports a rejected check as a failed run and still throws to the engine', () => {
+        const { telemetry, checkParams } = createDraftCheck();
+
+        expect(() => checkParams({ kind: 'new', to: ['ada@example.com'], body: ' ' })).toThrow(ToolInputError);
+
+        expect(telemetry.toolFailed).toHaveBeenCalledWith('create_draft', 'mutation');
+    });
+
+    it('reports nothing for a check that passes', () => {
+        const { telemetry, checkParams } = createDraftCheck();
+
+        checkParams({ kind: 'new', to: ['ada@example.com'], body: 'Hi Ada' });
+
+        expect(telemetry.toolFailed).not.toHaveBeenCalled();
         expect(telemetry.toolSucceeded).not.toHaveBeenCalled();
     });
 });

@@ -3,6 +3,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
+import { isDraft, isOutbox, isScheduled, isSentAutoReply } from '@proton/shared/lib/mail/messages';
 
 import { getCurrentFolderIDs, hasLabel, isElementMessage } from '../../helpers/elements';
 import { convertCustomViewLabelsToAlmostAllMail } from '../../helpers/labels';
@@ -71,22 +72,46 @@ const messagesInLocation = (messages: Message[], labelID: string): Message[] => 
     return messages.filter((message) => inTrash === hasLabel(message, MAILBOX_LABEL_IDS.TRASH));
 };
 
+const conversationMessages = (store: ToolStore, conversationID: string): Message[] => {
+    return store.getState().conversations[conversationID]?.Messages ?? [];
+};
+
 /**
  * Mirrors `ConversationView`: the message a conversation opens on is NOT simply the newest — an older unread
  * one is expanded ahead of it, and drafts are skipped entirely.
  */
-const expandedMessageIDFor = (store: ToolStore, conversationID: string): string | undefined => {
-    const messages = store.getState().conversations[conversationID]?.Messages;
-    if (!messages?.length) {
-        return undefined;
-    }
-
+const messageToExpand = (store: ToolStore, messages: Message[]): Message | undefined => {
     const labelID = convertCustomViewLabelsToAlmostAllMail(selectParams(store.getState()).labelID);
 
     return findMessageToExpand(
         labelID,
         [...messagesInLocation(messages, labelID)].sort((a, b) => a.Time - b.Time)
-    )?.ID;
+    );
+};
+
+const expandedMessageIDFor = (store: ToolStore, conversationID: string): string | undefined => {
+    return messageToExpand(store, conversationMessages(store, conversationID))?.ID;
+};
+
+/** Still in the Outbox: compose treats a scheduled message as one, refusing it or force-sending it first. */
+export const isUnsent = (message?: Partial<Message>): boolean => {
+    return !!(isOutbox(message) || isScheduled(message));
+};
+
+/**
+ * The message Mail's Reply answers for a conversation: the one it opens on, among the messages already sent,
+ * else the newest sent one. An unsent message is never chosen, so a reply can never force-send it, and
+ * neither is a draft, which the Drafts view would otherwise open on.
+ */
+export const replyTargetIDFor = (store: ToolStore, conversationID: string): string | undefined => {
+    const sent = conversationMessages(store, conversationID).filter(
+        (message) => !isUnsent(message) && !isDraft(message)
+    );
+    const newestSent = () => {
+        return sent.filter((message) => !isSentAutoReply(message)).sort((a, b) => b.Time - a.Time)[0];
+    };
+
+    return (messageToExpand(store, sent) ?? newestSent())?.ID;
 };
 
 /**
