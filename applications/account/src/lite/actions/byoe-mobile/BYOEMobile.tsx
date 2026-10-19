@@ -1,9 +1,11 @@
 import { c } from 'ttag';
 
+import ReachedLimitForwardingModal from '@proton/activation/src/components/Modals/ReachedLimitForwardingModal/ReachedLimitForwardingModal';
 import EasySwitchStoreInitializer from '@proton/activation/src/logic/EasySwitchStoreInitializer';
 import EasySwitchStoreProvider from '@proton/activation/src/logic/StoreProvider';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import useToggle from '@proton/hooks/useToggle';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -20,8 +22,11 @@ import { BYOEMobileProvider, useBYOEMobile } from './context/BYOEMobileProvider'
 import '../MobileSettings.scss';
 
 const BYOEMobileContent = () => {
-    const { isLoading, defaultImportEmails, status, connectingEmail, startOAuthFlowIfAllowed } = useBYOEMobile();
+    const { isLoading, defaultImportEmails, limitReached, status, connectingEmail, startOAuthFlowIfAllowed } =
+        useBYOEMobile();
     const { state: shouldImportEmails, toggle } = useToggle(defaultImportEmails);
+
+    const [modalProps, setPaidLimitModalOpen, render] = useModalState();
 
     if (status === 'connecting') {
         return <BYOEMobileConnecting email={connectingEmail} />;
@@ -39,6 +44,22 @@ const BYOEMobileContent = () => {
     }
 
     const isStartingOAuth = status === 'starting-oauth';
+
+    const getButtonCopy = () => {
+        if (limitReached === 'free-limit') {
+            return c('Action').t`Upgrade to connect`;
+        }
+
+        return shouldImportEmails ? c('Action').t`Connect and import` : c('Action').t`Connect`;
+    };
+
+    const handleClick = () => {
+        if (limitReached === 'paid-limit') {
+            setPaidLimitModalOpen(true);
+        } else {
+            startOAuthFlowIfAllowed(shouldImportEmails);
+        }
+    };
 
     return (
         <>
@@ -65,16 +86,17 @@ const BYOEMobileContent = () => {
                         color="norm"
                         shape="solid"
                         className="rounded-full"
-                        onClick={() => startOAuthFlowIfAllowed(shouldImportEmails)}
+                        onClick={handleClick}
                         loading={isStartingOAuth}
                         disabled={isLoading}
                     >
-                        {shouldImportEmails ? c('Action').t`Connect and import` : c('Action').t`Connect`}
+                        {getButtonCopy()}
                     </Button>
                 </MobileSectionRow>
             </MobileSection>
             <ErrorPrompt />
             <BYOEMobileConnections />
+            {render && <ReachedLimitForwardingModal {...modalProps} />}
         </>
     );
 };
