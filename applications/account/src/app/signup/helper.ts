@@ -3,11 +3,11 @@ import type { Location } from 'history';
 import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
 import type { BillingAddressExtended } from '@proton/payments/core/billing-address/billing-address';
 import { PLANS } from '@proton/payments/core/constants';
-import type { Currency, Cycle, PaymentsApi, PlanIDs } from '@proton/payments/core/interface';
+import type { Currency, Cycle, FreeSubscription, PaymentsApi, PlanIDs } from '@proton/payments/core/interface';
 import { hasPlanIDs } from '@proton/payments/core/planIDs';
 import { getFreeCheckResult } from '@proton/payments/core/subscription/freePlans';
-import { getAutoCoupon } from '@proton/payments/core/subscription/helpers';
-import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import { getAutoCoupon, isModifyingPaidSubscriptionSelection } from '@proton/payments/core/subscription/helpers';
+import type { Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 import { getCroHeaders, getOwnershipVerificationHeaders } from '@proton/shared/lib/fetch/headers';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
@@ -26,6 +26,7 @@ export async function getSubscriptionPrices({
     ValidateBillingAddress,
     VatId,
     previousEstimation,
+    subscription,
 }: {
     paymentsApi: PaymentsApi;
     planIDs: PlanIDs;
@@ -37,6 +38,7 @@ export async function getSubscriptionPrices({
     ValidateBillingAddress?: boolean;
     VatId: string | undefined;
     previousEstimation?: SubscriptionEstimation;
+    subscription?: Subscription | FreeSubscription;
 }): Promise<SubscriptionEstimation> {
     if (!hasPlanIDs(planIDs) || planIDs[PLANS.FREE]) {
         return getFreeCheckResult(currency, cycle);
@@ -68,6 +70,10 @@ export async function getSubscriptionPrices({
 
     if (trial) {
         data.IsTrial = true;
+    }
+
+    if (subscription && isModifyingPaidSubscriptionSelection(subscription, planIDs, cycle)) {
+        data.ValidateGuards = true;
     }
 
     return paymentsApi.checkSubscription(data, { previousEstimation });

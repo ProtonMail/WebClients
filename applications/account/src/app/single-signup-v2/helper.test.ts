@@ -4,12 +4,13 @@ import type { PaymentsApi } from '@proton/payments/core/interface';
 import type { Plan, PlansMap } from '@proton/payments/core/plan/interface';
 import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
 import type { Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getLongTestPlans, getTestPlansMap } from '@proton/payments/testing/data-plans';
 import { USER_ROLES } from '@proton/shared/lib/constants';
 import type { Api, User } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 
-import { getAccessiblePlans, getSessionCycle, getUserInfo } from './helper';
+import { getAccessiblePlans, getSessionCycle, getSubscriptionData, getUserInfo } from './helper';
 import type { PlanCard, SignupParameters2 } from './interface';
 
 jest.mock('@proton/payments/core/api/api', () => ({
@@ -360,5 +361,38 @@ describe('getUserInfo cycle for a signed-in user', () => {
         expect(subscriptionData.planIDs).toEqual(planIDs);
         expect(checkSubscription).toHaveBeenCalledTimes(1);
         expect(checkSubscription.mock.calls[0][0]).toMatchObject({ Cycle: CYCLE.YEARLY, CouponCode: CAPE_COUPON });
+    });
+});
+
+describe('getSubscriptionData guards', () => {
+    const plansMap = getTestPlansMap('USD');
+    const getPaymentsApiMock = () => {
+        const checkSubscription = jest.fn(async (data: CheckSubscriptionData) => ({ requestData: data }) as any);
+        return { paymentsApi: { checkSubscription } as unknown as PaymentsApi, checkSubscription };
+    };
+    const options = {
+        plansMap,
+        planIDs: { [PLANS.VPN2024]: 1 },
+        cycle: CYCLE.YEARLY,
+        currency: 'USD' as const,
+        billingAddress: { CountryCode: 'CH', State: null },
+        VatId: undefined,
+    };
+
+    it('asks the initial check to validate guards when a paid subscription is being modified', async () => {
+        const { paymentsApi, checkSubscription } = getPaymentsApiMock();
+
+        await getSubscriptionData(paymentsApi, { ...options, subscription: buildSubscription(PLANS.BUNDLE) });
+
+        expect(checkSubscription).toHaveBeenCalledTimes(1);
+        expect(checkSubscription.mock.calls[0][0].ValidateGuards).toBe(true);
+    });
+
+    it('does not ask to validate guards for a visitor without subscription', async () => {
+        const { paymentsApi, checkSubscription } = getPaymentsApiMock();
+
+        await getSubscriptionData(paymentsApi, options);
+
+        expect(checkSubscription.mock.calls[0][0]).not.toHaveProperty('ValidateGuards');
     });
 });

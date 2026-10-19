@@ -126,6 +126,7 @@ export const getSubscriptionData = async (
             trial: options.trial,
             ValidateBillingAddress: options.ValidateBillingAddress,
             VatId: options.VatId,
+            subscription: options.subscription,
         });
     })();
 

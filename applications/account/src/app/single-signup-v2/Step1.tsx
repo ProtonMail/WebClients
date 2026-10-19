@@ -306,6 +306,7 @@ const Step1 = ({
             ValidateBillingAddress: true,
             VatId: values.vatNumber,
             previousEstimation: model.subscriptionData.checkResult,
+            subscription: model.session?.subscription,
         });
     };
 
