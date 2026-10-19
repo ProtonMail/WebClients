@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 
-import metrics from '@proton/metrics';
+import metrics from '@proton/metrics/metricsInstance';
 import type { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 

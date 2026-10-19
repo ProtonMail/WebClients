@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLikeShapeEnum, ButtonLikeSizeEnum } from '@proton/atoms/Button/ButtonLike';
 import type { ButtonLikeOwnProps } from '@proton/atoms/Button/ButtonLike';
-import { ThemeColor } from '@proton/colors';
+import { ThemeColor } from '@proton/colors/types';
 
 const meta: Meta<typeof Button> = {
     title: 'Atoms/Button',

@@ -3,7 +3,7 @@ import { useCallback, useMemo } from 'react';
 
 import type { Action, ThunkDispatch } from '@reduxjs/toolkit';
 
-import { baseUseDispatch, baseUseSelector } from '@proton/react-redux-store';
+import { baseUseDispatch, baseUseSelector } from '@proton/react-redux-store/ProtonStoreContext';
 import { getCurrentUnixTimestamp } from '@proton/shared/lib/helpers/time';
 import { CommonFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';

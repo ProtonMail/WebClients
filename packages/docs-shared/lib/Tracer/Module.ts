@@ -1,5 +1,5 @@
 import { GenerateUUID } from '../GenerateUuid'
-import metrics from '@proton/metrics'
+import metrics from '@proton/metrics/metricsInstance'
 import Persistence from './Persistence'
 import {
   REPORT_FILE_NAME,

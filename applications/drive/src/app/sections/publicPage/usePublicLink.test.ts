@@ -31,7 +31,7 @@ jest.mock('@proton/drive/modules/upload', () => ({
     uploadManager: { setDriveClient: jest.fn() },
 }));
 
-jest.mock('@proton/metrics', () => ({
+jest.mock('@proton/metrics/metricsInstance', () => ({
     __esModule: true,
     default: {
         setAuthHeaders: jest.fn(),

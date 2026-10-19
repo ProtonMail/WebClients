@@ -1,4 +1,4 @@
-import metrics from '@proton/metrics';
+import metrics from '@proton/metrics/metricsInstance';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { TelemetryReport } from '@proton/shared/lib/api/telemetry';
 import { TelemetryKeyTransparencyErrorEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';

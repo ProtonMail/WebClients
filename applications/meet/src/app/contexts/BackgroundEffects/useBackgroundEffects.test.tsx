@@ -9,7 +9,7 @@ import { backgroundReducer, initialState } from '@proton/meet/store/slices/backg
 import { deviceManagementReducer } from '@proton/meet/store/slices/deviceManagementSlice';
 import { meetUserReducer } from '@proton/meet/store/slices/userSlice';
 import { getVirtualBackgroundSource } from '@proton/meet/utils/virtualBackgrounds';
-import { ProtonStoreContext } from '@proton/react-redux-store';
+import { ProtonStoreContext } from '@proton/react-redux-store/ProtonStoreContext';
 
 import { useBackgroundEffects } from './useBackgroundEffects';
 

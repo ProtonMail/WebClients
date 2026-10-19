@@ -1,4 +1,4 @@
-import metrics from '@proton/metrics'
+import metrics from '@proton/metrics/metricsInstance'
 import { getBrowserForMetrics } from './getBrowserForMetrics'
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics'
 import type { Api } from '@proton/shared/lib/interfaces'
@@ -10,7 +10,7 @@ import type {
 import { TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry'
 import type { SuggestionSummaryType } from '@proton/docs-shared/lib/SuggestionType'
 import { ConnectionCloseMetrics } from '../../Realtime/ConnectionCloseMetrics'
-import type { ConnectionCloseReason } from '@proton/docs-proto'
+import type { ConnectionCloseReason } from '@proton/docs-proto/ConnectionCloseReason/ConnectionCloseReason'
 
 const HEARTBEAT_INTERVAL = 60_000
 

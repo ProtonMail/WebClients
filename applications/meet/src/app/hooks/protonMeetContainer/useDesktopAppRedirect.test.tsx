@@ -8,7 +8,7 @@ import {
     currentMeetingReducer,
     initialState as initialCurrentMeetingState,
 } from '@proton/meet/store/slices/currentMeeting';
-import { ProtonStoreContext } from '@proton/react-redux-store';
+import { ProtonStoreContext } from '@proton/react-redux-store/ProtonStoreContext';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { getDesktopAppPreference, tryOpenInDesktopApp } from '../../utils/desktopAppDetector';

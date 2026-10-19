@@ -12,7 +12,7 @@ import {
     resetWaitingRoom,
     waitingRoomReducer,
 } from '@proton/meet/store/slices/waitingRoomSlice';
-import { ProtonStoreContext } from '@proton/react-redux-store';
+import { ProtonStoreContext } from '@proton/react-redux-store/ProtonStoreContext';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createPromise } from '@proton/shared/lib/helpers/promise';
 

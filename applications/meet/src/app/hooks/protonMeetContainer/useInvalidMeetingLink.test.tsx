@@ -8,7 +8,7 @@ import type { Mock } from 'vitest';
 import { meetAppStateReducer } from '@proton/meet/store/slices/meetAppStateSlice';
 import { meetingsThunk } from '@proton/meet/store/slices/meetings';
 import { initialState as initialUserState, meetUserReducer } from '@proton/meet/store/slices/userSlice';
-import { ProtonStoreContext } from '@proton/react-redux-store';
+import { ProtonStoreContext } from '@proton/react-redux-store/ProtonStoreContext';
 
 import { useInvalidMeetingLink } from './useInvalidMeetingLink';
 

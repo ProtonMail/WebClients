@@ -46,7 +46,8 @@ module.exports = ({
     let WebpackCollectMetricsPlugin;
 
     if (isProtonCI) {
-        WebpackCollectMetricsPlugin = require('@proton/collect-metrics').WebpackCollectMetricsPlugin;
+        WebpackCollectMetricsPlugin =
+            require('@proton/collect-metrics/helpers/webpack-collect-metrics-plugin').WebpackCollectMetricsPlugin;
     }
 
     return [

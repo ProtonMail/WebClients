@@ -18,7 +18,7 @@ import {
 
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
-import metrics from './index';
+import metrics from './metricsInstance';
 
 const SAMPLING_PERCENT = 5;
 

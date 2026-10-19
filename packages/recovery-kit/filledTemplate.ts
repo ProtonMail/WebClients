@@ -1,4 +1,4 @@
-import { getTemplate } from './index';
+import { getTemplate } from './generatePDFKit';
 // To avoid this asset getting included in the account bundle
 import filledTemplate from './templates/filled_template.pdf';
 

@@ -2,6 +2,12 @@
     "name": "@proton/chargebee",
     "version": "0.0.0",
     "private": true,
+    "exports": {
+        "./lib/constants": "./lib/constants.ts",
+        "./lib/css-variables": "./lib/css-variables.ts",
+        "./lib/getCanMakePaymentsWithActiveCard": "./lib/getCanMakePaymentsWithActiveCard.ts",
+        "./lib/types": "./lib/types.ts"
+    },
     "scripts": {
         "build": "tsc && NODE_ENV='production' vite build",
         "build:watch": "tsc && NODE_ENV='development' vite build --watch",

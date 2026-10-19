@@ -4,7 +4,7 @@ import tinycolor from 'tinycolor2';
 import { c } from 'ttag';
 
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
-import { genAccentShades } from '@proton/colors';
+import genAccentShades from '@proton/colors/gen-accent-shades';
 import { IcCrossSmall } from '@proton/icons/icons/IcCrossSmall';
 import clsx from '@proton/utils/clsx';
 

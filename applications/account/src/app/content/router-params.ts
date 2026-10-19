@@ -1,4 +1,4 @@
-import type { ThemeColor } from '@proton/colors';
+import type { ThemeColor } from '@proton/colors/types';
 import type { EntitlementChecksForOrgAndUser } from '@proton/payments/core/entitlements/interface';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import type { APP_NAMES } from '@proton/shared/lib/constants';

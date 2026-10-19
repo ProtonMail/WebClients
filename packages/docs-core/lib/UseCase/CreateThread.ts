@@ -1,15 +1,22 @@
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
-import { Result } from '@proton/docs-shared'
 import { Comment, CommentThread } from '../Models'
-import type { CommentMarkNodeChangeData, CommentThreadInterface, InternalEventBusInterface } from '@proton/docs-shared'
-import { CommentThreadState, CommentType, CommentsEvent, ServerTime } from '@proton/docs-shared'
-import { GenerateUUID } from '@proton/docs-shared'
+import {
+  CommentThreadState,
+  CommentThreadType,
+  CommentType,
+  CommentsEvent,
+  GenerateUUID,
+  Result,
+  ServerTime,
+  type CommentMarkNodeChangeData,
+  type CommentThreadInterface,
+  type InternalEventBusInterface,
+} from '@proton/docs-shared'
 import type { EncryptComment } from './EncryptComment'
 import type { DecryptComment } from './DecryptComment'
 import type { LocalCommentsState } from '../Services/Comments/LocalCommentsState'
 import type { DocsApi } from '../Api/DocsApi'
-import metrics from '@proton/metrics'
-import { CommentThreadType } from '@proton/docs-shared'
+import metrics from '@proton/metrics/metricsInstance'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 import type { DocumentEntitlements, PublicDocumentEntitlements } from '../Types/DocumentEntitlements'
 

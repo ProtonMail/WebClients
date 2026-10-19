@@ -25,7 +25,7 @@ import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useLoading from '@proton/hooks/useLoading';
 import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import { IcShieldExclamationFilled } from '@proton/icons/icons/IcShieldExclamationFilled';
-import metrics from '@proton/metrics';
+import metrics from '@proton/metrics/metricsInstance';
 import observeApiError from '@proton/metrics/observeApiError';
 import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';

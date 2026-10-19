@@ -1,4 +1,4 @@
-import type { EventTypeEnum } from '@proton/docs-proto'
+import type { EventTypeEnum } from '@proton/docs-proto/Event/EventTypeEnum'
 
 export type RtsMessagePayload = {
   content: Uint8Array<ArrayBuffer>

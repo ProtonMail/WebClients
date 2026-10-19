@@ -1,5 +1,5 @@
 import { Result } from '@proton/docs-shared'
-import type { DocumentUpdate } from '@proton/docs-proto'
+import type { DocumentUpdate } from '@proton/docs-proto/Generated/DocumentUpdate'
 import type { DecryptedMessage } from '@proton/docs-shared'
 import { mergeUpdates } from 'yjs'
 import type { LoggerInterface } from '@proton/shared/lib/logs'

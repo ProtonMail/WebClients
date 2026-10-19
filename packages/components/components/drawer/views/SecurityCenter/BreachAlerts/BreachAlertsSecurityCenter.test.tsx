@@ -17,7 +17,7 @@ jest.mock('../../../../../containers/credentialLeak/useBreaches', () => ({
     useBreaches: jest.fn().mockReturnValue({ breaches: [], actions: jest.fn() }),
 }));
 
-jest.mock('@proton/react-redux-store', () => ({
+jest.mock('@proton/react-redux-store/ProtonStoreContext', () => ({
     __esModule: true,
     baseUseDispatch: jest.fn(),
     baseUseSelector: jest.fn(),

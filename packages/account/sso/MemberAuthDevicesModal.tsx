@@ -16,7 +16,7 @@ import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { useEffectOnce, useLoading } from '@proton/hooks';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { IcUser } from '@proton/icons/icons/IcUser';
-import { baseUseDispatch } from '@proton/react-redux-store';
+import { baseUseDispatch } from '@proton/react-redux-store/ProtonStoreContext';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getValidActivation } from '@proton/shared/lib/keys/device';

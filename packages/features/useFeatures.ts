@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo } from 'react';
 
 import type { Action, ThunkDispatch } from '@reduxjs/toolkit';
 
-import { baseUseDispatch, baseUseSelector } from '@proton/react-redux-store';
+import { baseUseDispatch, baseUseSelector } from '@proton/react-redux-store/ProtonStoreContext';
 import noop from '@proton/utils/noop';
 import unique from '@proton/utils/unique';
 

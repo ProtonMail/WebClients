@@ -5,7 +5,7 @@ import 'fake-indexeddb/auto';
 
 import { RateLimitedError as SdkRateLimitedError } from '@proton/drive';
 import { createMockNodeEntity } from '@proton/drive/modules/testing';
-import metrics from '@proton/metrics';
+import metrics from '@proton/metrics/metricsInstance';
 
 import { SearchDB } from '../../shared/SearchDB';
 import {

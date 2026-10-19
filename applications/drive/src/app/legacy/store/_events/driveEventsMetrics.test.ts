@@ -1,4 +1,4 @@
-import metrics from '@proton/metrics';
+import metrics from '@proton/metrics/metricsInstance';
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 import type { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
 
@@ -7,7 +7,7 @@ import type { EncryptedLink } from '../_links';
 import { VolumeTypeForEvents } from '../_volumes';
 import { EventsMetrics, countEventsPerType } from './driveEventsMetrics';
 
-jest.mock('@proton/metrics', () => ({
+jest.mock('@proton/metrics/metricsInstance', () => ({
     drive_sync_event_total: {
         increment: jest.fn(),
     },

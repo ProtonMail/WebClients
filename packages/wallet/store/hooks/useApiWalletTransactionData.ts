@@ -4,7 +4,7 @@ import { createSelector } from '@reduxjs/toolkit';
 import isEqual from 'lodash/isEqual';
 
 import usePrevious from '@proton/hooks/usePrevious';
-import { baseUseSelector } from '@proton/react-redux-store';
+import { baseUseSelector } from '@proton/react-redux-store/ProtonStoreContext';
 import { createHooks } from '@proton/redux-utilities/hooks';
 import { pick } from '@proton/shared/lib/helpers/object';
 

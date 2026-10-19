@@ -1,7 +1,8 @@
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 import { AckLedger } from './AckLedger'
-import type { ClientMessageWithDocumentUpdates, ServerMessageWithMessageAcks } from '@proton/docs-proto'
-import metrics from '@proton/metrics'
+import type { ClientMessageWithDocumentUpdates } from '@proton/docs-proto/Generated/ClientMessage'
+import type { ServerMessageWithMessageAcks } from '@proton/docs-proto/Generated/ServerMessage'
+import metrics from '@proton/metrics/metricsInstance'
 
 const mockMetric = jest.mocked(metrics.docs_document_updates_ack_error_total.increment)
 

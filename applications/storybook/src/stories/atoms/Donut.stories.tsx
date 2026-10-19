@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
 import { Donut } from '@proton/atoms/Donut/Donut';
-import { ThemeColor } from '@proton/colors';
+import { ThemeColor } from '@proton/colors/types';
 
 const meta: Meta<typeof Donut> = {
     title: 'Atoms/Donut',

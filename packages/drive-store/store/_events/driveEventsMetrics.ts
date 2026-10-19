@@ -1,6 +1,6 @@
 import 'core-js/actual/set/difference';
 
-import metrics from '@proton/metrics';
+import metrics from '@proton/metrics/metricsInstance';
 import type { HttpsProtonMeDriveSyncErrorsTotalV1SchemaJson } from '@proton/metrics/types/drive_sync_errors_total_v1.schema';
 import { getIsNetworkError, getIsOfflineError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';

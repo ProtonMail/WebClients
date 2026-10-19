@@ -4,7 +4,7 @@ import { forwardRef } from 'react';
 import { c } from 'ttag';
 
 import { NotificationDot } from '@proton/atoms/NotificationDot/NotificationDot';
-import type { ThemeColor } from '@proton/colors';
+import type { ThemeColor } from '@proton/colors/types';
 import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 
 import type { IconComponent } from '../../containers/layout/interface';

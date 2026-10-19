@@ -1,5 +1,5 @@
 import { LoadLogger } from '../LoadLogger/LoadLogger'
-import type { Commit } from '@proton/docs-proto'
+import type { Commit } from '@proton/docs-proto/Generated/Commit'
 import {
   DynamicResult,
   type ApiResult,

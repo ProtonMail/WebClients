@@ -1,8 +1,8 @@
 import type { ElementType, ForwardedRef } from 'react';
 import { forwardRef } from 'react';
 
-import type { ThemeColorUnion } from '@proton/colors';
-import { ThemeColor } from '@proton/colors';
+import type { ThemeColorUnion } from '@proton/colors/types';
+import { ThemeColor } from '@proton/colors/types';
 import type { PolymorphicForwardRefExoticComponent, PolymorphicPropsWithRef } from '@proton/react-polymorphic-types';
 import clsx from '@proton/utils/clsx';
 

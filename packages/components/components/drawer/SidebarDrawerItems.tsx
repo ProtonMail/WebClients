@@ -8,7 +8,7 @@ import { ThemeColor } from '@proton/colors/types';
 import type { IconComponent } from '@proton/icons/component';
 import { IcShield } from '@proton/icons/icons/IcShield';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
-import { baseUseSelector } from '@proton/react-redux-store';
+import { baseUseSelector } from '@proton/react-redux-store/ProtonStoreContext';
 import type { OpenDrawerArgs } from '@proton/shared/lib/drawer/interfaces';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 
@@ -26,7 +26,7 @@ interface SidebarDrawerItemProps {
 
 const SidebarDrawerItem = ({ name, icon, onClick, right }: SidebarDrawerItemProps) => {
     return (
-        <button type="button" onClick={onClick} className="navigation-link">
+        <button type="button" onClick={onClick} className="navigation-link" aria-label={name}>
             <SidebarListItemContent left={<SidebarListItemContentIcon icon={icon} />} right={right}>
                 <span>{name}</span>
             </SidebarListItemContent>

@@ -1,4 +1,4 @@
-import metrics from '@proton/metrics';
+import metrics from '@proton/metrics/metricsInstance';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { getCurrentTab, getNewWindow } from '@proton/shared/lib/helpers/window';
