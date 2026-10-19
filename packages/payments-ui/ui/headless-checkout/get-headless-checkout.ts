@@ -30,6 +30,7 @@ import { COUPON_LINE_ITEM_TYPE, type CouponLineItem, createCouponItem } from './
 import { CREDIT_LINE_ITEM_TYPE, type CreditLineItem, createCreditItem } from './items/credit';
 import { DISCOUNT_LINE_ITEM_TYPE, type DiscountLineItem, createDiscountItem } from './items/discount';
 import { GIFT_LINE_ITEM_TYPE, type GiftLineItem, createGiftItem } from './items/gift';
+import { GUARD_LINE_ITEM_TYPE, type GuardLineItem, createGuardItem } from './items/guard';
 import { MEMBERS_LINE_ITEM_TYPE, type MembersLineItem, createMembersItem } from './items/members';
 import { NEXT_BILLING_LINE_ITEM_TYPE, type NextBillingLineItem, createNextBillingItem } from './items/next-billing';
 import { PLAN_AMOUNT_LINE_ITEM_TYPE, type PlanAmountLineItem, createPlanAmountItem } from './items/plan-amount';
@@ -75,7 +76,7 @@ export type CheckoutLineItemMandatory =
     | TaxInclusiveLineItem
     | VatReverseChargeLineItem;
 
-export type CheckoutLineItemOptional = PlanAmountWithDiscountPerMonthLineItem | BaseRenewAmount;
+export type CheckoutLineItemOptional = PlanAmountWithDiscountPerMonthLineItem | BaseRenewAmount | GuardLineItem;
 
 export type CheckoutLineItem = CheckoutLineItemMandatory | CheckoutLineItemOptional;
 /**
@@ -220,6 +221,7 @@ export function getHeadlessCheckout(params: GetHeadlessCheckoutParams) {
         [VAT_REVERSE_CHARGE_LINE_ITEM_TYPE]: createVatReverseChargeItem(ctx),
         [PLAN_AMOUNT_WITH_DISCOUNT_PER_MONTH_LINE_ITEM_TYPE]: createPlanAmountWithDiscountPerMonthItem(ctx),
         [BASE_RENEW_AMOUNT_LINE_ITEM_TYPE]: createBaseRenewAmountItem(ctx),
+        [GUARD_LINE_ITEM_TYPE]: createGuardItem(ctx),
     };
 
     const isB2B = getIsB2BAudienceFromPlan(ctx.checkoutUi.planName);
@@ -237,6 +239,8 @@ export function getHeadlessCheckout(params: GetHeadlessCheckoutParams) {
         isTaxInclusive: ctx.isTaxInclusive,
         isTaxExclusive: ctx.isTaxExclusive,
         isTaxReverseCharged: ctx.isTaxReverseCharged,
+        /** True when the backend refused this selection (non-empty GuardResult). Consumers should disable the confirming CTA. */
+        isGuardBlocked: items.guard.visible,
 
         items,
 

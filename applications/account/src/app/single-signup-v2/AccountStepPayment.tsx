@@ -11,7 +11,9 @@ import type { WithLoading } from '@proton/hooks/useLoading';
 import { BilledUserInlineMessage } from '@proton/payments-ui/client-extensions/billed-user/index';
 import { usePaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
 import { useBillingAddress } from '@proton/payments-ui/ui/billing-address/hooks/useBillingAddress';
+import { GuardBanner } from '@proton/payments-ui/ui/components/GuardBanner';
 import { PayButton } from '@proton/payments-ui/ui/components/PayButton';
+import { getHeadlessCheckout } from '@proton/payments-ui/ui/headless-checkout/get-headless-checkout';
 import type { FullBillingAddressFlat } from '@proton/payments/core/billing-address/billing-address';
 import { ADDON_PREFIXES, PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { CouponConfigMetadata } from '@proton/payments/core/coupon-config/interface';
@@ -24,7 +26,6 @@ import type {
 } from '@proton/payments/core/interface';
 import { isCurrencyRestrictedMethod } from '@proton/payments/core/payment-methods/currencyOverride';
 import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
-import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
 import type { Plan } from '@proton/payments/core/plan/interface';
 import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
 import { isV5PaymentToken } from '@proton/payments/core/type-guards';
@@ -140,8 +141,15 @@ const AccountStepPayment = ({
 
     const { subscriptionData } = model;
 
+    const { isB2B, isGuardBlocked, getItem } = getHeadlessCheckout({
+        planIDs: options.planIDs,
+        plansMap: model.plansMap,
+        checkResult: options.checkResult,
+        app,
+    });
+
     const validatePayment = () => {
-        if (loadingSignup || loadingPaymentDetails) {
+        if (loadingSignup || loadingPaymentDetails || isGuardBlocked) {
             return false;
         }
         return true;
@@ -335,8 +343,6 @@ const AccountStepPayment = ({
         return <BilledUserInlineMessage />;
     }
 
-    const isB2BPlan = getIsB2BAudienceFromPlan(selectedPlan.Name);
-
     const isSignupPass = paymentFacade.flow === 'signup-pass' || paymentFacade.flow === 'signup-pass-upgrade';
 
     const selectedMethodCard = paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD;
@@ -381,7 +387,7 @@ const AccountStepPayment = ({
                             plansMap={model.plansMap}
                             selectedPlanIDs={planIDs}
                             onChangePlanIDs={(planIDs) => handleOptimistic({ planIDs })}
-                            audience={isB2BPlan ? Audience.B2B : Audience.B2C}
+                            audience={isB2B ? Audience.B2B : Audience.B2C}
                             showUsersTooltip
                             isTrialMode={signupParameters.trial}
                             addonFlags={{
@@ -454,6 +460,7 @@ const AccountStepPayment = ({
 
                     return (
                         <div>
+                            <GuardBanner errors={getItem('guard').guards} className="mb-4" />
                             <PayButton
                                 size="large"
                                 color="norm"
@@ -481,7 +488,7 @@ const AccountStepPayment = ({
                                 // optimistic check result means that we didn't perform the actual check call because it was
                                 // forbidden due to combination of current subscription and the new plan/cycle/currency.
                                 // We aren't allowed to re-subscribe the same plan.
-                                disabled={model.subscriptionData.checkResult.optimistic}
+                                disabled={model.subscriptionData.checkResult.optimistic || isGuardBlocked}
                                 product={app}
                                 telemetryContext={telemetryContext}
                                 isAuthenticated={isAuthenticated}
