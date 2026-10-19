@@ -45,7 +45,7 @@ const replaceSignature = (
     userSettings: UserSettings | undefined
 ) => {
     const fontStyle = defaultFontStyle(mailSettings);
-    const signatureTemplate = templateBuilder(signature, mailSettings, userSettings, fontStyle, false, true);
+    const signatureTemplate = templateBuilder(signature, mailSettings, userSettings, fontStyle, true);
     const signatureText = toText(signatureTemplate)
         .replace(/\u200B/g, '')
         .trim();
@@ -66,7 +66,6 @@ const attachSignature = (
         mailSettings,
         userSettings,
         fontStyle,
-        false,
         !plaintext.startsWith(SIGNATURE_PLACEHOLDER)
     );
     return input.replace(SIGNATURE_PLACEHOLDER, signatureTemplate);
