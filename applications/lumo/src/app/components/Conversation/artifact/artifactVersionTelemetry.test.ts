@@ -88,7 +88,13 @@ describe('collectArtifactVersionTelemetry', () => {
     const secondAssistant: Message = { ...assistantRevisionMessage, id: 'assistant-1', parentId: 'user-1' };
 
     const version = (messageId: string, content: string, provisional?: boolean) => {
-        return { messageId, content, createdAt: '2026-01-01T00:00:00Z', ...(provisional && { provisional }) };
+        return {
+            messageId,
+            content,
+            createdAt: '2026-01-01T00:00:00Z',
+            source: 'prompt' as const,
+            ...(provisional && { provisional }),
+        };
     };
 
     const registryWith = (versions: ReturnType<typeof version>[], type: 'document' | 'code' = 'document') => {
@@ -167,9 +173,38 @@ describe('collectArtifactVersionTelemetry', () => {
                     contentLengthBucket: '0-1k',
                     revisionSource: 'inline-edit',
                     versionNumber: 2,
+                    viewedOlderVersion: false,
                 },
             },
         ]);
+    });
+
+    it('flags a revision that arrived while the panel showed an older version of that artifact', () => {
+        const registry = registryWith([
+            version('assistant-0', 'a'),
+            version('manual-1', 'b'),
+            version('assistant-1', 'c'),
+        ]);
+        const chain = [firstAssistant, manualEditMessage, promptUserMessage, assistantRevisionMessage];
+        const liveRevision = live({ 'assistant-1': { artifactToolMode: 'revise' } });
+
+        const viewingV1 = collectArtifactVersionTelemetry(registry, chain, liveRevision, {
+            artifactId: 'doc-1',
+            versionIndex: 0,
+        });
+        // v2 was the latest when the user asked, so this is an ordinary revision.
+        const viewingPreviousLatest = collectArtifactVersionTelemetry(registry, chain, liveRevision, {
+            artifactId: 'doc-1',
+            versionIndex: 1,
+        });
+        const viewingOtherArtifact = collectArtifactVersionTelemetry(registry, chain, liveRevision, {
+            artifactId: 'other',
+            versionIndex: 0,
+        });
+
+        expect(viewingV1.events[0].payload).toMatchObject({ viewedOlderVersion: true });
+        expect(viewingPreviousLatest.events[0].payload).toMatchObject({ viewedOlderVersion: false });
+        expect(viewingOtherArtifact.events[0].payload).toMatchObject({ viewedOlderVersion: false });
     });
 
     it('reports manual edits without a tool mode', () => {

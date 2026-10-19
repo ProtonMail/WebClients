@@ -16,6 +16,8 @@ import {
     sendArtifactRevisedEvent,
     sendArtifactSaveToDriveCompletedEvent,
     sendArtifactTurnContextEvent,
+    sendArtifactVersionHistoryOpenedEvent,
+    sendArtifactVersionSelectedEvent,
     sendArtifactWebpageViewToggledEvent,
     setLumoTelemetryEnabled,
 } from './telemetry';
@@ -89,7 +91,7 @@ describe('artifact event payloads', () => {
 
     it('sends nothing while telemetry is disabled', () => {
         setLumoTelemetryEnabled(false);
-        sendArtifactContentCopiedEvent({ artifactType: 'code', layout: 'docked' });
+        sendArtifactContentCopiedEvent({ artifactType: 'code', layout: 'docked', viewedOlderVersion: false });
 
         expect(sendCustomEvent).not.toHaveBeenCalled();
     });
@@ -118,6 +120,7 @@ describe('artifact event payloads', () => {
             contentLengthBucket: '0-1k',
             revisionSource: 'inline-edit',
             versionNumber: 2,
+            viewedOlderVersion: false,
         });
         sendArtifactRevisedEvent({
             artifactType: 'document',
@@ -125,6 +128,7 @@ describe('artifact event payloads', () => {
             contentLengthBucket: '0-1k',
             revisionSource: 'manual-edit',
             versionNumber: 3,
+            viewedOlderVersion: true,
         });
         sendArtifactPanelOpenedEvent({ source: 'chip', artifactType: 'presentation', artifactPosition: 1 });
         sendArtifactPanelClosedEvent({
@@ -133,13 +137,14 @@ describe('artifact event payloads', () => {
             openDurationBucket: '1m-5m',
         });
         sendArtifactPanelClosedEvent({ closedDuringLoading: true });
-        sendArtifactContentCopiedEvent({ artifactType: 'code', layout: 'fullscreen' });
+        sendArtifactContentCopiedEvent({ artifactType: 'code', layout: 'fullscreen', viewedOlderVersion: true });
         sendArtifactDownloadedEvent({
             format: 'pptx',
             artifactType: 'presentation',
             layout: 'docked',
             result: 'error',
             contentLengthBucket: '1k-10k',
+            viewedOlderVersion: false,
         });
         sendArtifactDownloadedEvent({
             format: 'pdf',
@@ -147,10 +152,24 @@ describe('artifact event payloads', () => {
             layout: 'fullscreen',
             result: 'print_dialog',
             contentLengthBucket: '10k+',
+            viewedOlderVersion: true,
         });
         sendArtifactSaveToDriveCompletedEvent({ format: 'md', artifactType: 'document', result: 'success' });
         sendArtifactInlineActionSentEvent({ kind: 'explain', artifactType: 'code', layout: 'mobile' });
         sendArtifactWebpageViewToggledEvent({ mode: 'code', layout: 'docked' });
+        sendArtifactVersionHistoryOpenedEvent({ artifactType: 'document', layout: 'docked', versionCount: 4 });
+        sendArtifactVersionSelectedEvent({
+            artifactType: 'document',
+            layout: 'docked',
+            source: 'history',
+            versionsBehindLatest: 2,
+        });
+        sendArtifactVersionSelectedEvent({
+            artifactType: 'document',
+            layout: 'fullscreen',
+            source: 'banner',
+            versionsBehindLatest: 0,
+        });
 
         expect(sendCustomEvent.mock.calls).toMatchSnapshot();
     });

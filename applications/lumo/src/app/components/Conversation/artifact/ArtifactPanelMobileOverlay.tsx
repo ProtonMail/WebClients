@@ -34,7 +34,7 @@ export const ArtifactPanelMobileOverlay = ({ isOpen, isGenerating = false }: Art
             className="fixed inset-0 z-floating-action-buttons flex flex-column bg-norm"
             role="dialog"
             aria-modal="true"
-            aria-label={c('collider_2025:Label').t`Artifact view`}
+            aria-label={c('collider_2025:Label').t`Canvas`}
         >
             <ArtifactPanel isGenerating={isGenerating} layout="mobile" />
         </div>,

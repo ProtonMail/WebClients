@@ -1,3 +1,4 @@
+/// <reference path="./desktop-window.d.ts" />
 import type { ChatCompletionsFlatFunctionTool, ChatCompletionsFunctionTool } from '../types-api';
 import type { ClientToolExecutor, ClientToolResult, PendingClientToolCall } from './client-tools';
 import type { LumoApiClientConfig } from './types';
@@ -11,7 +12,7 @@ type NativeToolResultMessage = {
     is_error?: boolean;
 };
 
-type DesktopExternalTools = {
+export type DesktopExternalTools = {
     ready?: Promise<void>;
     getTools?: () => ChatCompletionsFlatFunctionTool[] | ChatCompletionsFunctionTool[];
     getFlatApiTools?: () => ChatCompletionsFlatFunctionTool[];
@@ -41,7 +42,7 @@ export type DesktopConnector = {
     tools?: { name: string; title?: string; description?: string }[];
 };
 
-type LumoConnectorsApi = DesktopExternalTools & {
+export type LumoConnectorsApi = DesktopExternalTools & {
     getOpenAITools?: () => ChatCompletionsFunctionTool[];
     ensureOpenAIToolShape?: (
         tool: ChatCompletionsFunctionTool | ChatCompletionsFlatFunctionTool
@@ -71,19 +72,6 @@ export type DesktopToolApprovalResolved = {
 
 export const TOOL_APPROVAL_REQUEST_EVENT = 'lumo:tool-approval-request';
 export const TOOL_APPROVAL_RESOLVED_EVENT = 'lumo:tool-approval-resolved';
-
-declare global {
-    interface Window {
-        __TAURI__?: {
-            external_tools?: DesktopExternalTools;
-        };
-        LumoConnectors?: LumoConnectorsApi;
-    }
-    interface WindowEventMap {
-        'lumo:tool-approval-request': CustomEvent<DesktopToolApprovalRequest>;
-        'lumo:tool-approval-resolved': CustomEvent<DesktopToolApprovalResolved>;
-    }
-}
 
 function getDesktopBridge(): DesktopExternalTools | null {
     return window.__TAURI__?.external_tools ?? window.LumoConnectors ?? null;

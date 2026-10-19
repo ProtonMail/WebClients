@@ -5,6 +5,7 @@ import { call, delay, fork, getContext, put, select } from 'redux-saga/effects';
 import { MAX_ASSETS_PER_SPACE } from '../../constants/limits';
 import type { AesGcmCryptoKey } from '../../crypto/types';
 import type { DbApi } from '../../indexedDb/db';
+import { isGeneratedArtifactAttachment } from '../../lib/generatedArtifactAttachment';
 import type { LumoApi, RemoteStatus } from '../../remote/api';
 import { AssetType } from '../../remote/api';
 import { convertNewAttachmentToApi } from '../../remote/conversion';
@@ -381,9 +382,15 @@ export function* pushAttachment({ payload }: { payload: PushAttachmentRequest })
         // Save the attachment to IndexedDB with a dirty flag
         yield call(saveDirtyAttachment, serializedAttachment);
 
-        // Tag AI-generated images so the server can index them under /assets/generated
+        // Tag AI-generated images and artifact assets for /assets/generated listing.
         const isGeneratedImage = attachment.role === 'assistant' && attachment.mimeType?.startsWith('image/');
-        const assetType = isGeneratedImage ? AssetType.GeneratedImage : undefined;
+        const isGeneratedArtifact = isGeneratedArtifactAttachment(attachment);
+        let assetType: AssetType | undefined;
+        if (isGeneratedImage) {
+            assetType = AssetType.GeneratedImage;
+        } else if (isGeneratedArtifact) {
+            assetType = AssetType.GeneratedDoc;
+        }
 
         // Always use POST for attachments (which are assets), never PUT
         const entry: IdMapEntry = yield call(callWithRetry, httpPostAttachment, [

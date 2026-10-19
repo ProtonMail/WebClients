@@ -31,6 +31,7 @@ const jestConfig: Config = {
         'unist-util-is',
         'vega',
         'vega-.*',
+        'json-stringify-pretty-compact',
         'd3-.*',
         'internmap',
         'delaunator',

@@ -18,6 +18,7 @@ import { useSidebar } from '../../providers/SidebarProvider';
 import { LumoSidebarUpsell } from '../../upsells';
 import LumoLogoHeader from '../header/LumoLogo';
 import { ChatsSidebarSection } from './components/ChatsSidebarSection';
+import { LibrarySidebarButton } from './components/LibrarySidebarButton';
 import { NewChatSidebarButton } from './components/NewChatSidebarButton';
 import { SearchSection } from './components/SearchSection';
 import { SidebarBottomUserArea } from './components/SidebarBottomUserArea';
@@ -35,7 +36,7 @@ const ProjectsSidebarSection = lazy(() =>
 
 const LumoSidebarContent = () => {
     const { isSmallScreen, toggle, closeOnItemClick } = useSidebar();
-    const { showMobileHeader, showSearch, showGallery, showSchedules } = useSidebarVisibility();
+    const { showMobileHeader, showSearch, showGallery, showLibrary, showSchedules } = useSidebarVisibility();
     const isGuest = useIsGuest();
     const settingsModal = useModalStateObject();
     const {
@@ -77,14 +78,6 @@ const LumoSidebarContent = () => {
                 <Scroll className="sidebar-main-scroll flex flex-column flex-1 min-h-0" scrollContained>
                     <div className="sidebar-section flex flex-column gap-1">
                         {showSearch && <SearchSection onSearchClick={() => openSearchModal(true)} />}
-                        {showGallery && (
-                            <SidebarRouteButton
-                                icon="Images"
-                                label={c('collider_2025:Button').t`Images`}
-                                onItemClick={closeOnItemClick}
-                                pathname="/images"
-                            />
-                        )}
                         {showSchedules && (
                             <SidebarRouteButton
                                 icon="Clock"
@@ -93,6 +86,15 @@ const LumoSidebarContent = () => {
                                 pathname="/schedules"
                             />
                         )}
+                        {showGallery && (
+                            <SidebarRouteButton
+                                icon="Images"
+                                label={c('collider_2025:Button').t`Images`}
+                                onItemClick={closeOnItemClick}
+                                pathname="/images"
+                            />
+                        )}
+                        {showLibrary && <LibrarySidebarButton onItemClick={closeOnItemClick} />}
                         {apiKeyManagement && (
                             <SidebarRouteButton
                                 icon="CodeXml"

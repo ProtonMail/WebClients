@@ -399,6 +399,33 @@ function isArtifactManualEditMeta(value: unknown): value is ArtifactManualEditMe
     );
 }
 
+/** Encrypted attachment metadata for a Lumo artifact persisted as a GeneratedDoc space asset. */
+export type GeneratedArtifactAssetMeta = {
+    conversationId: ConversationId;
+    artifactId: string;
+    artifactType: ArtifactType;
+    artifactTitle: string;
+};
+
+function isGeneratedArtifactAssetMeta(value: unknown): value is GeneratedArtifactAssetMeta {
+    if (typeof value !== 'object' || value === null) {
+        return false;
+    }
+    const meta = value as GeneratedArtifactAssetMeta;
+    return (
+        typeof meta.conversationId === 'string' &&
+        typeof meta.artifactId === 'string' &&
+        typeof meta.artifactTitle === 'string' &&
+        isArtifactType(meta.artifactType)
+    );
+}
+
+/** Points at the current GeneratedDoc asset row for one artifact slug in a conversation. */
+export type ArtifactAssetPointer = {
+    attachmentId: AttachmentId;
+    syncedMessageId: MessageId;
+};
+
 export type MessagePriv = {
     // Legacy fields (kept for backward compatibility)
     context?: string;
@@ -732,6 +759,8 @@ export type ConversationPriv = {
     // Per-conversation override of LumoUserSettings.automaticArtifactCreation, set from the composer
     // tool menu. Undefined means the conversation follows the global default.
     artifactCreation?: boolean;
+    /** Latest synced GeneratedDoc asset per artifact id (model slug) in this chat. */
+    artifactAssets?: Record<string, ArtifactAssetPointer>;
 };
 
 export type LocalFlags = {
@@ -759,12 +788,13 @@ export function getConversationPub(c: ConversationPub): ConversationPub {
 }
 
 export function getConversationPriv(c: ConversationPriv): ConversationPriv {
-    const { title, agentId, artifactCreation } = c;
+    const { title, agentId, artifactCreation, artifactAssets } = c;
     return {
         title,
         ...(agentId && { agentId }),
         // Explicit `false` is meaningful (the user turned creation off for this chat), so don't drop it.
         ...(artifactCreation !== undefined && { artifactCreation }),
+        ...(artifactAssets !== undefined && { artifactAssets }),
     };
 }
 
@@ -779,8 +809,19 @@ export function splitConversation(c: Conversation): {
 }
 
 export function cleanConversation(conversation: Conversation): Conversation {
-    const { id, spaceId, createdAt, updatedAt, title, agentId, artifactCreation, starred, status, ghost } =
-        conversation;
+    const {
+        id,
+        spaceId,
+        createdAt,
+        updatedAt,
+        title,
+        agentId,
+        artifactCreation,
+        artifactAssets,
+        starred,
+        status,
+        ghost,
+    } = conversation;
     return {
         id,
         spaceId,
@@ -789,6 +830,7 @@ export function cleanConversation(conversation: Conversation): Conversation {
         title,
         ...(agentId && { agentId }),
         ...(artifactCreation !== undefined && { artifactCreation }),
+        ...(artifactAssets !== undefined && { artifactAssets }),
         ...(starred && { starred: true }),
         // `status` is local-only, so a conversation coming back from the server never carries one.
         // Defaulting it to COMPLETED invented a "generation finished" that never happened.
@@ -858,6 +900,7 @@ export type AttachmentPriv = {
     tokenCount?: number; // cached token count for LLM context size calculation
     imagePreview?: Uint8Array<ArrayBuffer>; // if the attachment is an image: small definition image for preview
     role?: 'user' | 'assistant'; // source of attachment, defaults to 'user' for backward compatibility
+    generatedArtifactAsset?: GeneratedArtifactAssetMeta;
 };
 
 // This contains metadata as well as the complete blob data.
@@ -907,7 +950,8 @@ export function isAttachmentPriv(value: any): value is AttachmentPriv {
         (value.processedRowCount === undefined || typeof value.processedRowCount === 'number') &&
         (value.imagePreview === undefined || value.imagePreview instanceof Uint8Array) &&
         (value.tokenCount === undefined || typeof value.tokenCount === 'number') &&
-        (value.role === undefined || value.role === 'user' || value.role === 'assistant')
+        (value.role === undefined || value.role === 'user' || value.role === 'assistant') &&
+        (value.generatedArtifactAsset === undefined || isGeneratedArtifactAssetMeta(value.generatedArtifactAsset))
     );
 }
 
@@ -963,6 +1007,7 @@ export function getAttachmentPriv(m: AttachmentPriv): AttachmentPriv {
         tokenCount,
         imagePreview,
         role,
+        generatedArtifactAsset,
     } = m;
     return {
         filename,
@@ -975,6 +1020,7 @@ export function getAttachmentPriv(m: AttachmentPriv): AttachmentPriv {
         tokenCount,
         imagePreview,
         role,
+        ...(generatedArtifactAsset !== undefined && { generatedArtifactAsset }),
     };
 }
 
@@ -1013,6 +1059,7 @@ export function cleanAttachment(attachment: Attachment): Attachment {
         processedRowCount,
         tokenCount,
         role,
+        generatedArtifactAsset,
     } = attachment;
     return {
         id,
@@ -1036,6 +1083,7 @@ export function cleanAttachment(attachment: Attachment): Attachment {
         ...(processedRowCount !== undefined && { processedRowCount }),
         ...(tokenCount !== undefined && { tokenCount }),
         ...(role !== undefined && { role }),
+        ...(generatedArtifactAsset !== undefined && { generatedArtifactAsset }),
     };
 }
 

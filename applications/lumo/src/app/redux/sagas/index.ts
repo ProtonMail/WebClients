@@ -26,6 +26,7 @@ import {
     getSpaceDek,
 } from '../../types';
 import { mapEmpty, mapIds, mapLength } from '../../util/collections';
+import { syncArtifactAssetRequest } from '../slices/artifactAssetSync';
 import { reloadReduxRequest, stopRootSaga, unloadReduxRequest } from '../slices/core';
 import {
     addAttachment,
@@ -101,6 +102,7 @@ import {
 import { addResourceLimitError, clearMessageLimitReached } from '../slices/meta/errors';
 import { setReduxLoadedFromIdb } from '../slices/meta/initialization';
 import type { LumoState } from '../store';
+import { syncArtifactAssetSerialized } from './artifactAssets';
 import {
     deserializeAttachmentSaga,
     indexAttachment,
@@ -536,6 +538,7 @@ export function* rootSaga(opts?: { crashIfErrors: boolean }) {
         function*() { yield takeEvery(pullMessageFailure, logPullMessageFailure)},
         function*() { yield takeEvery(locallyRefreshMessageFromRemoteRequest, refreshMessageFromRemote)},
 
+        function*() { yield takeEvery(syncArtifactAssetRequest, syncArtifactAssetSerialized)},
         function*() { yield takeEvery(pushAttachmentRequest, noRaceSameId(pushAttachment))},
         function*() { yield takeEvery(pushAttachmentSuccess, logPushAttachmentSuccess)},
         function*() { yield takeEvery(pushAttachmentFailure, logPushAttachmentFailure)},

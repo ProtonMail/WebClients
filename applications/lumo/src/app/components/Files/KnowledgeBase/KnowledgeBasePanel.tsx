@@ -21,11 +21,13 @@ import { dedupeAttachmentsByDocumentKey, getAttachmentDocumentKey } from '../../
 import { useExcelSheetSelection } from '../../Composer/ExcelSheetSelectionModal';
 import { useFileHandling } from '../../Composer/hooks/useFileHandling';
 import { useNativeComposerVisibilityApi } from '../../Composer/hooks/useNativeComposerVisibilityApi';
+import type { ConversationArtifactDrawerEntry } from '../../Conversation/artifact/conversationArtifactDrawerList';
 import { KnowledgeBaseGuestDriveUpsell } from '../../Guest/KnowledgeBaseGuestDriveUpsell';
 import { LumoIcon } from '../../LumoIcon/LumoIcon';
 import { FilePreviewPanel } from '../Common/FilePreviewPanel';
 import { DriveBrowser } from '../DriveBrowser';
 import { ContextUsageBreakdown } from './ContextUsageBreakdown';
+import { KnowledgeBaseArtifactsSection } from './KnowledgeBaseArtifactsSection';
 import { KnowledgeBaseFileItem } from './KnowledgeBaseFileItem';
 import { EmptyStateWithUpload } from './components';
 
@@ -345,6 +347,8 @@ interface KnowledgeBasePanelProps {
     onClearFilter?: () => void;
     initialShowDriveBrowser?: boolean;
     spaceId?: string;
+    drawerArtifacts?: ConversationArtifactDrawerEntry[];
+    onOpenArtifact?: (artifactId: string) => void;
 }
 
 export const KnowledgeBasePanel = ({
@@ -358,6 +362,8 @@ export const KnowledgeBasePanel = ({
     onClearFilter,
     initialShowDriveBrowser = false,
     spaceId,
+    drawerArtifacts = [],
+    onOpenArtifact,
 }: KnowledgeBasePanelProps) => {
     const dispatch = useLumoDispatch();
     const { createNotification } = useNotifications();
@@ -510,6 +516,7 @@ export const KnowledgeBasePanel = ({
         allFiles.length === 0 &&
         currentAttachments.length === 0 &&
         autoRetrievedAttachments.length === 0 &&
+        drawerArtifacts.length === 0 &&
         !linkedDriveFolder;
 
     const indicatorIconName = showKnowledgeExplanation ? 'ChevronUp' : 'ChevronDown';
@@ -524,9 +531,9 @@ export const KnowledgeBasePanel = ({
                 >
                     {/* Header */}
                     <div className="shrink-0 mb-4">
-                        <div className="flex flex-row items-center justify-space-between">
-                            <div className="flex flex-row flex-nowrap items-center gap-1">
-                                <p className="m-0 text-lg text-bold">
+                        <div className="flex flex-row items-center justify-space-between gap-2 min-w-0">
+                            <div className="flex flex-row flex-nowrap items-center gap-1 min-w-0 flex-1">
+                                <p className="m-0 text-lg text-bold text-ellipsis overflow-hidden whitespace-nowrap min-w-0">
                                     {c('collider_2025: Info').t`All files in this chat`}
                                 </p>
                             </div>
@@ -536,7 +543,7 @@ export const KnowledgeBasePanel = ({
                                     size="small"
                                     shape="outline"
                                     onClick={() => setShowDriveBrowser(true)}
-                                    className="shrink-0 flex flex-row flex-nowrap items-center gap-2"
+                                    className="shrink-0 flex flex-row flex-nowrap items-center gap-2 max-w-full"
                                     title={c('collider_2025: KBActionTitle').t`Add from ${DRIVE_SHORT_APP_NAME}`}
                                 >
                                     <IcBrandProtonDrive size={4} />
@@ -570,7 +577,7 @@ export const KnowledgeBasePanel = ({
                     )}
 
                     {/* File list */}
-                    <div className="flex-1 min-h-0 overflow-y-auto">
+                    <div className="flex-1 min-h-0 min-w-0 overflow-y-auto overflow-x-hidden">
                         {filterMessage ? (
                             <FilteredFilesContent
                                 allFiles={allFiles}
@@ -581,6 +588,13 @@ export const KnowledgeBasePanel = ({
                             />
                         ) : (
                             <>
+                                {onOpenArtifact && drawerArtifacts.length > 0 && (
+                                    <KnowledgeBaseArtifactsSection
+                                        artifacts={drawerArtifacts}
+                                        onOpenArtifact={onOpenArtifact}
+                                    />
+                                )}
+
                                 {(linkedDriveFolder || autoRetrievedAttachments.length > 0) && (
                                     <RetrievedKnowledgeSection
                                         activeAutoRetrieved={activeAutoRetrieved}

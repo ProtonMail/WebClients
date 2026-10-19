@@ -35,7 +35,7 @@ export interface ExportArtifactPdfOptions {
     onProgress?: PdfExportProgressCallback;
 }
 
-export { artifactSupportsPdfExport, buildArtifactFileName } from './artifactHtmlDocument';
+export { artifactSupportsPdfExport } from './artifactHtmlDocument';
 
 export function getArtifactPdfExportMode(type: ArtifactType): ArtifactPdfExportMode | undefined {
     if (type === 'document') {
