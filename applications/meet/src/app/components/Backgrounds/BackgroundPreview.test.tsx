@@ -5,7 +5,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 
 import { backgroundReducer } from '@proton/meet/store/slices/backgroundSlice';
 import { deviceManagementReducer } from '@proton/meet/store/slices/deviceManagementSlice';
-import { ProtonStoreContext } from '@proton/react-redux-store';
+import { ProtonStoreContext } from '@proton/react-redux-store/ProtonStoreContext';
 
 import type { MediaManagementContextType } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { MediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';

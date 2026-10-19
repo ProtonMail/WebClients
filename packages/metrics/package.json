@@ -3,10 +3,21 @@
     "description": "Metrics library",
     "sideEffects": false,
     "exports": {
-        ".": "./index.ts",
         "./eventLoopMetrics": "./eventLoopMetrics.ts",
+        "./metricsInstance": "./metricsInstance.ts",
         "./observeApiError": "./lib/observeApiError.ts",
-        "./types/*": "./types/*.d.ts",
+        "./types/desktop_inbox_heartbeat_total_v1.schema": "./types/desktop_inbox_heartbeat_total_v1.schema.d.ts",
+        "./types/docs_readonly_mode_documents_total_v1.schema": "./types/docs_readonly_mode_documents_total_v1.schema.d.ts",
+        "./types/docs_realtime_disconnect_error_total_v2.schema": "./types/docs_realtime_disconnect_error_total_v2.schema.d.ts",
+        "./types/drive_download_errors_total_v2.schema": "./types/drive_download_errors_total_v2.schema.d.ts",
+        "./types/drive_photos_transfer_to_photo_stream_histogram_v1.schema": "./types/drive_photos_transfer_to_photo_stream_histogram_v1.schema.d.ts",
+        "./types/drive_sync_errors_total_v1.schema": "./types/drive_sync_errors_total_v1.schema.d.ts",
+        "./types/drive_thumbnail_errors_total_v1.schema": "./types/drive_thumbnail_errors_total_v1.schema.d.ts",
+        "./types/drive_users_success_rate_total_v1.schema": "./types/drive_users_success_rate_total_v1.schema.d.ts",
+        "./types/web_core_vpn_single_signup_step1_interaction_total_v1.schema": "./types/web_core_vpn_single_signup_step1_interaction_total_v1.schema.d.ts",
+        "./types/web_drive_search_environment_incompatibility_total_v1.schema": "./types/web_drive_search_environment_incompatibility_total_v1.schema.d.ts",
+        "./types/web_drive_search_permanent_errors_total_v1.schema": "./types/web_drive_search_permanent_errors_total_v1.schema.d.ts",
+        "./types/web_mail_performance_email_list_display_time_histogram_v1.schema": "./types/web_mail_performance_email_list_display_time_histogram_v1.schema.d.ts",
         "./webvitals": "./webvitals.ts"
     },
     "scripts": {

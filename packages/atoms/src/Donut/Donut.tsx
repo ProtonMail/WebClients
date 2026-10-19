@@ -1,4 +1,5 @@
-import { ThemeColor, getVariableFromThemeColor } from '@proton/colors';
+import getVariableFromThemeColor from '@proton/colors/get-variable-from-theme-color';
+import { ThemeColor } from '@proton/colors/types';
 import percentOf from '@proton/utils/percentOf';
 
 import { useSvgId } from '../helpers/useSvgId';

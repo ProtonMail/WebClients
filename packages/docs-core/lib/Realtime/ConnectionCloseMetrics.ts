@@ -1,4 +1,4 @@
-import { ConnectionCloseReason } from '@proton/docs-proto'
+import { ConnectionCloseReason } from '@proton/docs-proto/ConnectionCloseReason/ConnectionCloseReason'
 import type { HttpsProtonMeDocsRealtimeDisconnectErrorTotalV2SchemaJson } from '@proton/metrics/types/docs_realtime_disconnect_error_total_v2.schema'
 
 export const ConnectionCloseMetrics: Record<

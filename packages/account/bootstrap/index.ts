@@ -4,8 +4,8 @@ import { wrapUnloadError } from '@proton/components/containers/app/errorRefresh'
 import { handleEarlyAccessDesynchronization } from '@proton/components/helpers/earlyAccessDesynchronization';
 import { updateVersionCookie, versionCookieAtLoad } from '@proton/components/helpers/versionCookie';
 import type { Feature } from '@proton/features';
-import metrics from '@proton/metrics';
 import { eventLoopTimingTracker } from '@proton/metrics/eventLoopMetrics';
+import metrics from '@proton/metrics/metricsInstance';
 import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
 import {
     type CalendarEventV6Response,

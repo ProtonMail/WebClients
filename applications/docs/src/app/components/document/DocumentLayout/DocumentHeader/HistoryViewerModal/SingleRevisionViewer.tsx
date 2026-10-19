@@ -8,7 +8,7 @@ import { ClientToEditorBridge } from '@proton/docs-core'
 import { useApplication } from '~/utils/application-context'
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider'
 import { useIsDarkThemeEnabled } from '~/utils/flags'
-import { EventTypeEnum } from '@proton/docs-proto'
+import { EventTypeEnum } from '@proton/docs-proto/Event/EventTypeEnum'
 import type { FeatureFlag } from '@proton/unleash/Flags'
 import { useFlag } from '@proton/unleash/useFlag'
 

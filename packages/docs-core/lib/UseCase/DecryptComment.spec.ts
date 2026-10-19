@@ -6,7 +6,7 @@ import type { CommentResponseDto } from '../Api/Types/CommentResponseDto'
 import type { EncryptionContext } from '../Services/Encryption/EncryptionContext'
 import type { EncryptionService } from '../Services/Encryption/EncryptionService'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
-import type { SignedPlaintextContent } from '@proton/docs-proto'
+import type { SignedPlaintextContent } from '@proton/docs-proto/Generated/DocumentUpdate'
 
 jest.mock('./GetAdditionalEncryptionData', () => ({
   ...jest.requireActual('./GetAdditionalEncryptionData'),

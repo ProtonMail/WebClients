@@ -2,7 +2,7 @@ import { useCallback, useEffect } from 'react';
 
 import { createSelector } from '@reduxjs/toolkit';
 
-import { baseUseSelector } from '@proton/react-redux-store';
+import { baseUseSelector } from '@proton/react-redux-store/ProtonStoreContext';
 import { createHooks } from '@proton/redux-utilities/hooks';
 
 import type { GetQuotesArgs, QuotesByProvider } from '../slices/quotesByProvider';

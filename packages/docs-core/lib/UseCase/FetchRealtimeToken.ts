@@ -1,6 +1,6 @@
 import { ApiResult, type RealtimeTokenResult } from '@proton/docs-shared'
 import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
-import metrics from '@proton/metrics'
+import metrics from '@proton/metrics/metricsInstance'
 import type { DocsApi } from '../Api/DocsApi'
 import type { NodeMeta, PublicNodeMeta } from '@proton/docs-shared'
 import { z } from 'zod'

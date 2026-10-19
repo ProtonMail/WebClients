@@ -10,7 +10,7 @@ import {
     initialState as initialParticipantsState,
     participantsReducer,
 } from '@proton/meet/store/slices/participants/participantsSlice';
-import { ProtonStoreContext } from '@proton/react-redux-store';
+import { ProtonStoreContext } from '@proton/react-redux-store/ProtonStoreContext';
 
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import { useMeetingCleanup } from './useMeetingCleanup';

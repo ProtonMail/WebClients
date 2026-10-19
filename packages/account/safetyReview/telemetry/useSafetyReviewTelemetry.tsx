@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { baseUseDispatch } from '@proton/react-redux-store';
+import { baseUseDispatch } from '@proton/react-redux-store/ProtonStoreContext';
 
 import { safetyReviewListenerStarted, safetyReviewListenerStopped } from './listenerActions';
 

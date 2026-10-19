@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 
 import type { Action, ThunkDispatch } from '@reduxjs/toolkit';
 
-import { baseUseDispatch, baseUseSelector } from '@proton/react-redux-store';
+import { baseUseDispatch, baseUseSelector } from '@proton/react-redux-store/ProtonStoreContext';
 
 import {
     type EligibleTrials,

@@ -1,6 +1,6 @@
 import { CommentThread } from '../Models'
 import { CommentThreadType, CommentType, ServerTime, Result } from '@proton/docs-shared'
-import metrics from '@proton/metrics'
+import metrics from '@proton/metrics/metricsInstance'
 import type { DecryptComment } from './DecryptComment'
 import type { DocsApi } from '../Api/DocsApi'
 import type { DocumentEntitlements, PublicDocumentEntitlements } from '../Types/DocumentEntitlements'

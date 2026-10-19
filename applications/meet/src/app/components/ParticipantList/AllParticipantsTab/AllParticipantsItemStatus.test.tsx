@@ -17,7 +17,7 @@ import {
     screenShareStatusReducer,
 } from '@proton/meet/store/slices/screenShareStatusSlice';
 import { ParticipantCapabilityPermission } from '@proton/meet/types/types';
-import { ProtonStoreContext } from '@proton/react-redux-store';
+import { ProtonStoreContext } from '@proton/react-redux-store/ProtonStoreContext';
 
 import { AllParticipantsItemStatus } from './AllParticipantsItemStatus';
 

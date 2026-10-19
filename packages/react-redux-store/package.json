@@ -2,7 +2,7 @@
     "name": "@proton/react-redux-store",
     "description": "Shared react redux store context",
     "exports": {
-        ".": "./index.tsx"
+        "./ProtonStoreContext": "./ProtonStoreContext.ts"
     },
     "dependencies": {
         "react": "^18.3.1",

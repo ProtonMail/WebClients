@@ -1,5 +1,5 @@
 import { eventLoopTimingTracker } from '../eventLoopMetrics';
-import metrics from '../index';
+import metrics from '../metricsInstance';
 
 describe('EventLoopTimingTracker', () => {
     let mockHistogramObserve: jest.Mock;

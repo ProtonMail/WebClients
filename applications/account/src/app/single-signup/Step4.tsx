@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import metrics from '@proton/metrics';
+import metrics from '@proton/metrics/metricsInstance';
 import { getWelcomeToText } from '@proton/shared/lib/apps/text';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';

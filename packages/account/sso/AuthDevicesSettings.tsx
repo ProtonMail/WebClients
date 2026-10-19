@@ -19,7 +19,7 @@ import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading, { useLoadingByKey } from '@proton/hooks/useLoading';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcCross } from '@proton/icons/icons/IcCross';
-import { baseUseDispatch } from '@proton/react-redux-store';
+import { baseUseDispatch } from '@proton/react-redux-store/ProtonStoreContext';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import {
     type AuthDeviceOutput,

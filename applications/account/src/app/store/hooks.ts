@@ -1,4 +1,4 @@
-import { baseUseDispatch } from '@proton/react-redux-store';
+import { baseUseDispatch } from '@proton/react-redux-store/ProtonStoreContext';
 
 import type { AccountDispatch } from './store';
 

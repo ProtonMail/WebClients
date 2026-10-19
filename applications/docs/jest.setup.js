@@ -27,7 +27,7 @@ jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
 // Silence JDOM warnings triggered by emoji-mart
 HTMLCanvasElement.prototype.getContext = jest.fn()
 
-jest.mock('@proton/raw-images', () => ({
+jest.mock('@proton/raw-images/createWorker', () => ({
   __esModule: true,
 }))
 

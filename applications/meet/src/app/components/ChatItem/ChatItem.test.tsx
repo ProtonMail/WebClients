@@ -13,7 +13,7 @@ import {
 import { sortedParticipantsReducer } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 import type { MeetChatMessage, ParticipantEventRecord } from '@proton/meet/types/types';
 import { ParticipantEvent } from '@proton/meet/types/types';
-import { ProtonStoreContext } from '@proton/react-redux-store';
+import { ProtonStoreContext } from '@proton/react-redux-store/ProtonStoreContext';
 
 import { ChatItem } from './ChatItem';
 

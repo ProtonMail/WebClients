@@ -10,7 +10,7 @@ import {
     initialState,
 } from '@proton/meet/store/slices/backgroundSlice';
 import { meetUserReducer } from '@proton/meet/store/slices/userSlice';
-import { ProtonStoreContext } from '@proton/react-redux-store';
+import { ProtonStoreContext } from '@proton/react-redux-store/ProtonStoreContext';
 
 import { useBackgroundEffectAnnouncements } from './useBackgroundEffectAnnouncements';
 
