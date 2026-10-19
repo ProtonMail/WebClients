@@ -1,17 +1,17 @@
 import type { ReactNode } from 'react';
 
-import { DropdownMenuButton, Icon } from '@proton/components';
+import { DropdownMenuButton } from '@proton/components';
+import type { IconComponent } from '@proton/icons/component';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
-import type { IconName } from '@proton/icons/types';
 
 export const DropdownMenuItem = ({
-    iconName,
+    icon: Icon,
     label,
     description,
     isSelected,
     onClick,
 }: {
-    iconName?: IconName;
+    icon?: IconComponent;
     label: ReactNode;
     description?: string;
     isSelected?: boolean;
@@ -19,7 +19,7 @@ export const DropdownMenuItem = ({
 }) => (
     <DropdownMenuButton className="text-left flex justify-space-between items-center flex-nowrap" onClick={onClick}>
         <span className="flex items-center flex-nowrap mr-14">
-            {iconName && <Icon name={iconName} className="mr-2" />}
+            {Icon && <Icon className="mr-2" />}
             <div>
                 {label}
                 <p className="text-left color-weak text-sm">{description}</p>
