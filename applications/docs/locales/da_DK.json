@@ -5794,6 +5794,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du vil stadig kunne se dine egne kontodata, men alle brugerkonti vil blive fjernet fra din organisation."
+      ],
+      "We'll get back to you shortly.": [
+        "Tak! Vi vender tilbage til dig inden længe."
       ]
     },
     "info": {
@@ -6267,6 +6270,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Navn, der ikke kan dekrypteres"
+      ],
+      "Please share any feedback to help us improve.": [
+        "Del gerne feedback, så vi kan forbedre os."
+      ],
+      "Why would you like to cancel?": [
+        "Hvorfor ønsker du at opsige?"
       ]
     },
     "Label for contact group color": {
@@ -8320,6 +8329,9 @@
       ],
       "Your organization name": [
         "Dit organisationsnavn"
+      ],
+      "Please select the main reason": [
+        "Vælg venligst hovedårsagen"
       ]
     },
     "Placeholder for contact group name": {
@@ -10071,6 +10083,12 @@
       ],
       "Your exposed information": [
         "Dine blotlagte oplysninger"
+      ],
+      "Contact us": [
+        "Kontakt os"
+      ],
+      "Request sent": [
+        "Anmodning sendt"
       ]
     },
     "Title header for keys table": {
@@ -10447,6 +10465,20 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Din prøveperiode udløber den ${ textDate }. Du vil ikke blive opkrævet, hvis du opsiger før den ${ textDate }. ${ action }"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Jeg fandt en anden tjeneste, som jeg synes bedre om"
+      ],
+      "It’s missing a key feature": [
+        "Den mangler en nøglefunktion"
+      ],
+      "It’s too expensive": [
+        "Det er for dyrt"
+      ],
+      "Other": [
+        "Andet"
       ]
     }
   }

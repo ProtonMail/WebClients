@@ -5842,6 +5842,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Stále si budete môcť prezerať svoje vlastné údaje, ale všetky používateľské účty budú z vašej organizácie odstránené."
+      ],
+      "We'll get back to you shortly.": [
+        "O chvíľu sa vám ozveme."
       ]
     },
     "info": {
@@ -6319,6 +6322,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nerozšifrovateľný názov"
+      ],
+      "Please share any feedback to help us improve.": [
+        "Prosím zdieľajte akúkoľvek spätnú väzbu, aby ste nám pomohli zlepšiť sa."
+      ],
+      "Why would you like to cancel?": [
+        "Prečo chcete zrušiť?"
       ]
     },
     "Label for contact group color": {
@@ -8482,6 +8491,9 @@
       ],
       "Your organization name": [
         "Názov vašej organizácie"
+      ],
+      "Please select the main reason": [
+        "Prosím vyberte hlavný dôvod"
       ]
     },
     "Placeholder for contact group name": {
@@ -10317,6 +10329,12 @@
       ],
       "Your exposed information": [
         "Vaše odhalené informácie"
+      ],
+      "Contact us": [
+        "Kontaktujte nás"
+      ],
+      "Request sent": [
+        "Požiadavka odoslaná"
       ]
     },
     "Title header for keys table": {
@@ -10723,6 +10741,20 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Vaše skúšobné obdobie skončí dňa ${ textDate }. Ak ho zrušíte pred ${ textDate }, nebudú vám účtované žiadne poplatky. ${ action }"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Našiel som inú službu, ktorá sa mi páči viac"
+      ],
+      "It’s missing a key feature": [
+        "Nemá kľúčovú funkciu"
+      ],
+      "It’s too expensive": [
+        "Je to príliš drahé"
+      ],
+      "Other": [
+        "Iné"
       ]
     }
   }

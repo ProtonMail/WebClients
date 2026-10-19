@@ -5714,6 +5714,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "您仍然可以查看您自己的账户数据，但所有用户账户将从您的组织中移除。"
+      ],
+      "We'll get back to you shortly.": [
+        "我们会尽快回复您。"
       ]
     },
     "info": {
@@ -6185,6 +6188,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ 无法解密的名称"
+      ],
+      "Please share any feedback to help us improve.": [
+        "请分享任何反馈意见，以帮助我们改进工作。"
+      ],
+      "Why would you like to cancel?": [
+        "您为什么想要取消？"
       ]
     },
     "Label for contact group color": {
@@ -8180,6 +8189,9 @@
       ],
       "Your organization name": [
         "您的组织名称"
+      ],
+      "Please select the main reason": [
+        "请选择主要原因"
       ]
     },
     "Placeholder for contact group name": {
@@ -9889,6 +9901,12 @@
       ],
       "Your exposed information": [
         "您的泄露信息"
+      ],
+      "Contact us": [
+        "联系我们"
+      ],
+      "Request sent": [
+        "请求已发送"
       ]
     },
     "Title header for keys table": {
@@ -10250,6 +10268,20 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "您的试用将于 ${ textDate } 结束。若在 ${ textDate } 前取消，则不会向您收费。${ action }"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "不如别的产品好用"
+      ],
+      "It’s missing a key feature": [
+        "缺少一个关键功能"
+      ],
+      "It’s too expensive": [
+        "价格太贵"
+      ],
+      "Other": [
+        "其它"
       ]
     }
   }

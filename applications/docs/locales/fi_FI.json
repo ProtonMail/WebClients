@@ -5315,6 +5315,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Voit silti tarkastella omia tilitietojasi, mutta kaikki käyttäjätilit poistetaan organisaatiostasi."
+      ],
+      "We'll get back to you shortly.": [
+        "Palaamme asiaan pian."
       ]
     },
     "info": {
@@ -5785,6 +5788,12 @@
       ],
       "Your password (trusted contact)": [
         "Salasananne (luotettu yhteystieto)"
+      ],
+      "Please share any feedback to help us improve.": [
+        "Kerro mielipiteesi ja auta meitä parantamaan."
+      ],
+      "Why would you like to cancel?": [
+        "Miksi haluat perua tilauksen?"
       ]
     },
     "Label for contact group color": {
@@ -7699,6 +7708,9 @@
       ],
       "Your organization name": [
         "Organisaatiosi nimi"
+      ],
+      "Please select the main reason": [
+        "Valitse ensisijainen syy"
       ]
     },
     "Placeholder for contact group name": {
@@ -9420,6 +9432,12 @@
       ],
       "Your exposed information": [
         "Paljastuneet tietosi"
+      ],
+      "Contact us": [
+        "Ota yhteyttä"
+      ],
+      "Request sent": [
+        "Pyyntö lähetetty"
       ]
     },
     "Title header for keys table": {
@@ -9784,6 +9802,20 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Kokeilujaksosi päättyy ${ textDate }. Sinua ei veloiteta, jos peruutat tilauksesi ennen ${ textDate }. ${ action }"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Löysin toisen palvelun, josta pidän enemmän"
+      ],
+      "It’s missing a key feature": [
+        "Siitä puuttuu olennainen ominaisuus"
+      ],
+      "It’s too expensive": [
+        "Se on liian kallis"
+      ],
+      "Other": [
+        "Muu"
       ]
     }
   }

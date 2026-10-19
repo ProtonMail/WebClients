@@ -5388,6 +5388,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Nadal będziesz mógł przeglądać dane konta, ale wszystkie konta użytkowników zostaną usunięte z organizacji."
+      ],
+      "We'll get back to you shortly.": [
+        "Skontaktujemy się z Tobą wkrótce."
       ]
     },
     "info": {
@@ -5841,6 +5844,12 @@
       ],
       "Your password (trusted contact)": [
         "Twoje hasło (zaufany kontakt)"
+      ],
+      "Please share any feedback to help us improve.": [
+        "Podziel się opinią, aby pomóc nam ulepszyć usługę."
+      ],
+      "Why would you like to cancel?": [
+        "Dlaczego chcesz anulować plan?"
       ]
     },
     "Label for contact group color": {
@@ -7841,6 +7850,9 @@
       ],
       "Your organization name": [
         "Twoja nazwa organizacji"
+      ],
+      "Please select the main reason": [
+        "Wybierz główny powód"
       ]
     },
     "Placeholder for contact group name": {
@@ -9617,6 +9629,12 @@
       ],
       "Your exposed information": [
         "Twoje ujawnione informacje:"
+      ],
+      "Contact us": [
+        "Skontaktuj się z nami"
+      ],
+      "Request sent": [
+        "Żądanie zostało wysłane"
       ]
     },
     "Title header for keys table": {
@@ -10008,6 +10026,20 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Twoja wersja próbna zakończy się ${ textDate }. Nie zostaną naliczone opłaty, jeśli anulujesz subskrypcję przed ${ textDate }. ${ action }"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Mam inną, lepszą usługę"
+      ],
+      "It’s missing a key feature": [
+        "Brak kluczowej funkcji"
+      ],
+      "It’s too expensive": [
+        "Cena jest zbyt wysoka"
+      ],
+      "Other": [
+        "Inny"
       ]
     }
   }

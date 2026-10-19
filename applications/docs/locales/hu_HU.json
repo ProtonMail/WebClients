@@ -4828,6 +4828,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Továbbra is megtekintheti saját fiókadatait, de az összes felhasználói fiók eltávolításra kerül a szervezetéből."
+      ],
+      "We'll get back to you shortly.": [
+        "Hamarosan válaszolunk."
       ]
     },
     "info": {
@@ -5199,6 +5202,12 @@
       ],
       "Your password (admin)": [
         "Jelszó (adminisztrátor)"
+      ],
+      "Please share any feedback to help us improve.": [
+        "Kérjük, ossza meg ossza meg velünk visszajelzéseit, hogy segítsen nekünk fejlődni."
+      ],
+      "Why would you like to cancel?": [
+        "Miért szeretne törölni?"
       ]
     },
     "Label for contact group color": {
@@ -6922,6 +6931,9 @@
       ],
       "Your organization name": [
         "A szervezet neve"
+      ],
+      "Please select the main reason": [
+        "Válassza ki a fő okot"
       ]
     },
     "Placeholder for contact group name": {
@@ -8421,6 +8433,12 @@
       ],
       "Your exposed information": [
         "Az ön kiszivárgott információi"
+      ],
+      "Contact us": [
+        "Kapcsolatfelvétel"
+      ],
+      "Request sent": [
+        "Kérés elküldve"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -8740,6 +8758,20 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "A próbaidőszak vége: ${ textDate }. Nem kerül díj felszámításra, ha ennél korábban lemondja: ${ textDate }. ${ action }"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Találtam egy másik szolgáltatást, ami jobban tetszik"
+      ],
+      "It’s missing a key feature": [
+        "Hiányzik belőle egy kulcsfontosságú funkció"
+      ],
+      "It’s too expensive": [
+        "Túl drága"
+      ],
+      "Other": [
+        "Egyéb"
       ]
     }
   }

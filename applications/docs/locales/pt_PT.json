@@ -5305,6 +5305,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Ainda poderá ver os seus dados de conta, mas todas as contas de utilizador serão removidas da sua organização."
+      ],
+      "We'll get back to you shortly.": [
+        "Entraremos em contacto consigo em breve."
       ]
     },
     "info": {
@@ -5754,6 +5757,12 @@
       ],
       "Your password (trusted contact)": [
         "A sua palavra-passe (contacto de confiança)"
+      ],
+      "Please share any feedback to help us improve.": [
+        "Partilhe qualquer comentário para nos ajudar a melhorar."
+      ],
+      "Why would you like to cancel?": [
+        "Por que motivo pretende cancelar?"
       ]
     },
     "Label for contact group color": {
@@ -7647,6 +7656,9 @@
       ],
       "Your organization name": [
         "O nome da sua organização"
+      ],
+      "Please select the main reason": [
+        "Selecione o motivo principal"
       ]
     },
     "Placeholder for contact group name": {
@@ -9344,6 +9356,12 @@
       ],
       "Your exposed information": [
         "As suas informações expostas"
+      ],
+      "Contact us": [
+        "Contacte-nos"
+      ],
+      "Request sent": [
+        "O pedido foi enviado."
       ]
     },
     "Title header for keys table": {
@@ -9705,6 +9723,20 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "O seu período experimental termina em ${ textDate }. Não lhe será cobrado qualquer valor se cancelar antes de ${ textDate }. ${ action }"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Encontrei outro serviço do qual gosto mais"
+      ],
+      "It’s missing a key feature": [
+        "Falta uma funcionalidade essencial"
+      ],
+      "It’s too expensive": [
+        "É muito caro."
+      ],
+      "Other": [
+        "Outro"
       ]
     }
   }

@@ -5791,6 +5791,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Θα εξακολουθείτε να μπορείτε να βλέπετε τα δικά σας δεδομένα λογαριασμού, αλλά όλοι οι λογαριασμοί χρηστών θα καταργηθούν από τον οργανισμό σας."
+      ],
+      "We'll get back to you shortly.": [
+        "Θα επικοινωνήσουμε μαζί σας σύντομα."
       ]
     },
     "info": {
@@ -6264,6 +6267,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Μη αποκρυπτογραφήσιμο όνομα"
+      ],
+      "Please share any feedback to help us improve.": [
+        "Μοιραστείτε τυχόν σχόλια για να μας βοηθήσετε να βελτιωθούμε."
+      ],
+      "Why would you like to cancel?": [
+        "Γιατί θέλετε να ακυρώσετε;"
       ]
     },
     "Label for contact group color": {
@@ -8317,6 +8326,9 @@
       ],
       "Your organization name": [
         "Το όνομα του οργανισμού σας"
+      ],
+      "Please select the main reason": [
+        "Παρακαλούμε επιλέξτε τον κύριο λόγο"
       ]
     },
     "Placeholder for contact group name": {
@@ -10068,6 +10080,12 @@
       ],
       "Your exposed information": [
         "Οι εκτεθειμένες πληροφορίες σας"
+      ],
+      "Contact us": [
+        "Επικοινωνήστε μαζί μας"
+      ],
+      "Request sent": [
+        "Το αίτημα εστάλη"
       ]
     },
     "Title header for keys table": {
@@ -10444,6 +10462,20 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Η δοκιμαστική περίοδος θα λήξει στις ${ textDate }. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ textDate }. ${ action }"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Βρήκα μια άλλη υπηρεσία που μου αρέσει περισσότερο"
+      ],
+      "It’s missing a key feature": [
+        "Λείπει μια βασική δυνατότητα"
+      ],
+      "It’s too expensive": [
+        "Είναι πολύ ακριβό"
+      ],
+      "Other": [
+        "Άλλο"
       ]
     }
   }

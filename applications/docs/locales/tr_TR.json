@@ -5791,6 +5791,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Kendi hesap bilgilerinizi görmeyi sürdürebileceksiniz. Ancak kuruluşunuzun tüm kullanıcı hesapları silinecek."
+      ],
+      "We'll get back to you shortly.": [
+        "Size en kısa sürede geri dönüş yapacağız."
       ]
     },
     "info": {
@@ -6264,6 +6267,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Şifresi çözülemeyen ad"
+      ],
+      "Please share any feedback to help us improve.": [
+        "Hizmetlerimizi geliştirebilmemiz için bizi bilgilendirin."
+      ],
+      "Why would you like to cancel?": [
+        "Neden iptal etmek istiyorsunuz?"
       ]
     },
     "Label for contact group color": {
@@ -8317,6 +8326,9 @@
       ],
       "Your organization name": [
         "Kuruluşunuzun adı"
+      ],
+      "Please select the main reason": [
+        "Lütfen temel nedeni seçin"
       ]
     },
     "Placeholder for contact group name": {
@@ -10068,6 +10080,12 @@
       ],
       "Your exposed information": [
         "Sızdırılmış bilgileriniz"
+      ],
+      "Contact us": [
+        "Bize ulaşın"
+      ],
+      "Request sent": [
+        "İstek gönderildi"
       ]
     },
     "Title header for keys table": {
@@ -10444,6 +10462,20 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Deneme süreniz ${ textDate } tarihinde sona erecek. ${ textDate } tarihinden önce iptal ederseniz sizden ücret alınmayacak. ${ action }"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Daha çok sevdiğim başka bir hizmet buldum"
+      ],
+      "It’s missing a key feature": [
+        "Temel bir özellik eksik"
+      ],
+      "It’s too expensive": [
+        "Çok pahalı"
+      ],
+      "Other": [
+        "Diğer"
       ]
     }
   }

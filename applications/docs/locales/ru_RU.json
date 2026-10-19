@@ -5385,6 +5385,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Вы по-прежнему сможете просматривать данные своего аккаунта, но все аккаунты пользователей будут удалены из вашей организации."
+      ],
+      "We'll get back to you shortly.": [
+        "Мы свяжемся с Вами в ближайшее время."
       ]
     },
     "info": {
@@ -5838,6 +5841,12 @@
       ],
       "Your password (trusted contact)": [
         "Ваш пароль (доверенный контакт)"
+      ],
+      "Please share any feedback to help us improve.": [
+        "Оставляйте любые отзывы, чтобы помочь нам совершенствоваться."
+      ],
+      "Why would you like to cancel?": [
+        "Почему вы хотите отменить?"
       ]
     },
     "Label for contact group color": {
@@ -7833,6 +7842,9 @@
       ],
       "Your organization name": [
         "Название вашей организации"
+      ],
+      "Please select the main reason": [
+        "Выберите основную причину"
       ]
     },
     "Placeholder for contact group name": {
@@ -9609,6 +9621,12 @@
       ],
       "Your exposed information": [
         "Ваша раскрытая информация"
+      ],
+      "Contact us": [
+        "Свяжитесь с нами"
+      ],
+      "Request sent": [
+        "Запрос отправлен"
       ]
     },
     "Title header for keys table": {
@@ -10000,6 +10018,20 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Ваша пробная версия заканчивается ${ textDate }. Если вы отмените подписку до ${ textDate }, плата списана не будет. ${ action }"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Я нашел другой сервис, который мне больше нравится"
+      ],
+      "It’s missing a key feature": [
+        "Отсутствует ключевая функция"
+      ],
+      "It’s too expensive": [
+        "Слишком дорого"
+      ],
+      "Other": [
+        "Другое"
       ]
     }
   }

@@ -5791,6 +5791,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du kannst weiterhin deine eigenen Kontodaten ansehen, aber alle Benutzerkonten werden aus deiner Organisation entfernt."
+      ],
+      "We'll get back to you shortly.": [
+        "Wir melden uns in Kürze bei dir."
       ]
     },
     "info": {
@@ -6264,6 +6267,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nicht entschlüsselbarer Name"
+      ],
+      "Please share any feedback to help us improve.": [
+        "Bitte teile uns dein Feedback mit, damit wir uns verbessern können."
+      ],
+      "Why would you like to cancel?": [
+        "Warum möchtest du stornieren?"
       ]
     },
     "Label for contact group color": {
@@ -8317,6 +8326,9 @@
       ],
       "Your organization name": [
         "Name deiner Organisation"
+      ],
+      "Please select the main reason": [
+        "Bitte wähle den Hauptgrund"
       ]
     },
     "Placeholder for contact group name": {
@@ -10068,6 +10080,12 @@
       ],
       "Your exposed information": [
         "Deine exponierten Informationen"
+      ],
+      "Contact us": [
+        "Kontaktiere uns"
+      ],
+      "Request sent": [
+        "Anfrage gesendet"
       ]
     },
     "Title header for keys table": {
@@ -10444,6 +10462,20 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Deine Testversion endet am ${ textDate }. Dir werden keine Kosten berechnet, wenn du vor dem ${ textDate } kündigst. ${ action }"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Ich habe einen anderen Dienst gefunden, der mir mehr zusagt"
+      ],
+      "It’s missing a key feature": [
+        "Eine wichtige Funktion fehlt"
+      ],
+      "It’s too expensive": [
+        "Es ist mir zu teuer"
+      ],
+      "Other": [
+        "Anderer Grund"
       ]
     }
   }
