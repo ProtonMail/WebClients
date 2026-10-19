@@ -4,7 +4,9 @@ import { c, msgid } from 'ttag';
 
 import { useConfig } from '@proton/app-context/useConfig';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { type ModalStateProps, SettingsLink, UpsellModal } from '@proton/components';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
+import UpsellModal from '@proton/components/components/upsell/UpsellModal/UpsellModal';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { MAIL_APP_NAME, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';

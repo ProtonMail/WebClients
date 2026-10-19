@@ -2,7 +2,11 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Checkbox, type ModalProps, ModalTwo, ModalTwoHeader, Option, SelectTwo } from '@proton/components';
+import Checkbox from '@proton/components/components/input/Checkbox';
+import ModalTwo, { type ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import Option from '@proton/components/components/option/Option';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import byoeConnectGmail from '@proton/styles/assets/img/illustrations/byoe-connect-gmail.svg';
 import byoeForwarding from '@proton/styles/assets/img/illustrations/byoe-forwarding.svg';

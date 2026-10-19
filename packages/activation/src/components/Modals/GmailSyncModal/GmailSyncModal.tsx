@@ -3,7 +3,9 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { type ModalProps, ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
+import ModalTwo, { type ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 
 import { getBYOEFailNotification, getSyncSuccessNotification } from '../../../constants';
 import useOAuthPopup from '../../../hooks/useOAuthPopup';
