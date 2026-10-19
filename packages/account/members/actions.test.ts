@@ -1,11 +1,11 @@
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { MEMBER_ROLE } from '@proton/shared/lib/constants';
 import type { Api, EnhancedMember } from '@proton/shared/lib/interfaces';
-import { MemberUnprivatizationState } from '@proton/shared/lib/interfaces';
+import { MEMBER_ORG_KEY_STATE, MemberUnprivatizationState } from '@proton/shared/lib/interfaces';
 import type { OrganizationRole } from '@proton/shared/lib/interfaces/OrganizationRole';
 import { PREDEFINED_ROLE_NAME } from '@proton/shared/lib/interfaces/OrganizationRole';
 
-import { assignMemberRoles, provideOrgKeyAccessToMember } from './actions';
+import { assignMemberRoles, provideOrgKeyAccessToMember, resumeMemberRoleAssignment } from './actions';
 
 jest.mock('../organizationRoles', () => ({
     ...jest.requireActual('../organizationRoles'),
@@ -20,6 +20,8 @@ jest.mock('../organizationKey', () => ({
 jest.mock('./index', () => ({
     ...jest.requireActual('./index'),
     updateMemberRoles: jest.fn(() => 'updateMemberRoles'),
+    membersThunk: jest.fn(() => 'membersThunk'),
+    getMemberRoles: jest.fn(() => 'getMemberRoles'),
 }));
 
 const ownerRole = {
@@ -30,6 +32,8 @@ const ownerRole = {
 const pendingAdminMember = {
     ID: 'member-id',
     Role: MEMBER_ROLE.ORGANIZATION_MEMBER,
+    AccessToOrgKey: MEMBER_ORG_KEY_STATE.NoKey,
+    requiresOrgKeyPromotion: true,
     Unprivatization: {
         State: MemberUnprivatizationState.Pending,
         InvitationData: JSON.stringify({ Address: 'user@example.com', Revision: 1, Admin: true }),
@@ -38,7 +42,19 @@ const pendingAdminMember = {
 
 const api = jest.fn() as unknown as Api;
 
-const dispatch = jest.fn(async (action: unknown) => {
+const getState = jest.fn();
+const extra = {} as ProtonThunkArguments;
+
+const dispatch: jest.Mock = jest.fn(async (action: unknown) => {
+    if (typeof action === 'function') {
+        return action(dispatch, getState, extra);
+    }
+    if (action === 'membersThunk') {
+        return [pendingAdminMember];
+    }
+    if (action === 'getMemberRoles') {
+        return [];
+    }
     if (action === 'organizationRolesThunk') {
         return [ownerRole];
     }
@@ -47,9 +63,6 @@ const dispatch = jest.fn(async (action: unknown) => {
     }
     throw new Error(`Unexpected dispatch ${String(action)}`);
 });
-
-const getState = jest.fn();
-const extra = {} as ProtonThunkArguments;
 
 describe('member role actions with a pending admin invitation', () => {
     beforeEach(() => {
@@ -74,5 +87,11 @@ describe('member role actions with a pending admin invitation', () => {
         await provideOrgKeyAccessToMember({ member: pendingAdminMember, api })(dispatch as any, getState, extra);
 
         expect(dispatch).not.toHaveBeenCalled();
+    });
+
+    it('resumes the role assignment without an error while the member has not accepted the invitation', async () => {
+        await expect(
+            resumeMemberRoleAssignment({ memberID: pendingAdminMember.ID, api })(dispatch as any, getState, extra)
+        ).resolves.toBeUndefined();
     });
 });
