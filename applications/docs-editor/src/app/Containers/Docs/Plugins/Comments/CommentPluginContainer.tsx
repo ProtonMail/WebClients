@@ -15,8 +15,8 @@ import { createPortal } from 'react-dom'
 
 import { FloatingQuickActions } from './FloatingQuickActions'
 import CommentsPanel from './CommentsPanel'
-import type { CommentThreadInterface } from '@proton/docs-shared'
-import { CommentThreadState } from '@proton/docs-shared'
+import type { DocsCommentThread } from '../../contract/DocsCommentThread'
+import { CommentThreadStates } from '../../contract/DocsCommentThread'
 import { INSERT_INLINE_COMMENT_COMMAND, SHOW_ALL_COMMENTS_COMMAND } from '../../Commands'
 import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
 import { CommentsProvider } from './CommentsContext'
@@ -49,6 +49,7 @@ export default function CommentPlugin({
     canEdit,
     canComment,
     languageCode,
+    dateFormat,
     getDisplayNameForEmail,
   } = useDocsDependencies()
   const [editor] = useLexicalComposerContext()
@@ -60,7 +61,7 @@ export default function CommentPlugin({
   /** Top level comment only, not reply */
   const [currentCommentDraft, setCurrentCommentDraft] = useState<string | undefined>()
 
-  const [threads, setThreads] = useState<CommentThreadInterface[]>([])
+  const [threads, setThreads] = useState<DocsCommentThread[]>([])
   const threadMarkIDs = useRef(new Set<string>())
   threadMarkIDs.current = new Set(threads.map((thread) => thread.markID).filter((id): id is string => !!id))
 
@@ -71,7 +72,7 @@ export default function CommentPlugin({
   }, [editor, documentId, isSuggestionMode])
 
   const activeThreads = useMemo(() => {
-    const activeThreads = threads.filter((thread) => thread.state === CommentThreadState.Active)
+    const activeThreads = threads.filter((thread) => thread.state === CommentThreadStates.Active)
     return activeThreads
   }, [threads])
 
@@ -312,7 +313,7 @@ export default function CommentPlugin({
             if (!$isCommentThreadMarkNode(node)) {
               continue
             }
-            const isThreadResolved = thread.state === CommentThreadState.Resolved
+            const isThreadResolved = thread.state === CommentThreadStates.Resolved
             if (node.getResolved() !== isThreadResolved) {
               nonUndoableUpdate(editor, collabContext.undoManager, () => {
                 node.setResolved(isThreadResolved)
@@ -398,6 +399,7 @@ export default function CommentPlugin({
         canEdit,
         canComment,
         languageCode,
+        dateFormat,
         logger,
         userName,
         suggestionsEnabled,
