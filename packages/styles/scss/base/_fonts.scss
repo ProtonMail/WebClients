@@ -1,24 +1,56 @@
-// Sass does not rewrite url(), so css-loader resolves font paths from the app that compiles this
-// file. Apps declare @proton/styles but not inter-ui, hence the path through this package.
-@use '~inter-ui/default' with (
-	$inter-font-path: '~@proton/styles/node_modules/inter-ui/web'
-);
+@font-face {
+	font-family: Inter;
+	font-style: normal;
+	font-weight: normal;
+	font-display: swap;
+	src: url(~@proton/styles/assets/fonts/Inter-Regular.woff2) format('woff2');
+}
 
-@use '~inter-ui/variable' with (
-	$inter-font-path: '~@proton/styles/node_modules/inter-ui/variable'
-);
+@font-face {
+	font-family: Inter;
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url(~@proton/styles/assets/fonts/Inter-Medium.woff2) format('woff2');
+}
 
-/*
-Only include font faces that we need.
-Only used by outdated browsers/os
-Minimises the number of font requests made which is then duplicated by the challenge script. This can be removed when the challenge script no longer makes style requests.
-*/
-@include default.weight-400-normal;
-@include default.weight-500-normal;
-@include default.weight-600-normal;
-@include default.weight-700-normal;
+@font-face {
+	font-family: Inter;
+	font-style: normal;
+	font-weight: 600;
+	font-display: swap;
+	src: url(~@proton/styles/assets/fonts/Inter-SemiBold.woff2) format('woff2');
+}
 
-@include variable.all;
+@font-face {
+	font-family: Inter;
+	font-style: normal;
+	font-weight: bold;
+	font-display: swap;
+	src: url(~@proton/styles/assets/fonts/Inter-Bold.woff2) format('woff2');
+}
+
+@font-face {
+	font-family: InterVariable;
+	font-weight: 100 900;
+	font-style: normal;
+	font-display: swap;
+	src:
+		url(~@proton/styles/assets/fonts/InterVariable.woff2) format('woff2 supports variations(gvar)'),
+		url(~@proton/styles/assets/fonts/InterVariable.woff2) format('woff2-variations'),
+		url(~@proton/styles/assets/fonts/InterVariable.woff2) format('woff2');
+}
+
+@font-face {
+	font-family: InterVariable;
+	font-weight: 100 900;
+	font-style: italic;
+	font-display: swap;
+	src:
+		url(~@proton/styles/assets/fonts/InterVariable-Italic.woff2) format('woff2 supports variations(gvar)'),
+		url(~@proton/styles/assets/fonts/InterVariable-Italic.woff2) format('woff2-variations'),
+		url(~@proton/styles/assets/fonts/InterVariable-Italic.woff2) format('woff2');
+}
 
 // --------------------------------------------------------------------------------------
 
