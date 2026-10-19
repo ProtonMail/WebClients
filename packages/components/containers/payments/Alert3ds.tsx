@@ -4,6 +4,7 @@ import americanExpressSafekeySvg from '@proton/styles/assets/img/bank-icons/amex
 import discoverProtectBuySvg from '@proton/styles/assets/img/bank-icons/discover-protectbuy-colored.svg';
 import jcbLogoSvg from '@proton/styles/assets/img/bank-icons/jcb-logo.png';
 import mastercardSecurecodeSvg from '@proton/styles/assets/img/bank-icons/mastercard-securecode-colored.svg';
+import unionpayLogoSvg from '@proton/styles/assets/img/bank-icons/unionpay-logo.svg';
 import verifiedByVisaSvg from '@proton/styles/assets/img/bank-icons/visa-secure-colored.svg';
 
 const Alert3ds = () => {
@@ -30,6 +31,7 @@ const Alert3ds = () => {
                     src={americanExpressSafekeySvg}
                 />
                 <img alt={c('Info').t`JCB logo`} style={{ maxHeight: '44px' }} src={jcbLogoSvg} />
+                <img alt={c('Info').t`UnionPay logo`} style={{ maxHeight: '44px' }} src={unionpayLogoSvg} />
             </div>
         </div>
     );
