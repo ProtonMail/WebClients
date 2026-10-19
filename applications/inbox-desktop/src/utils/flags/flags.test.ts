@@ -200,6 +200,21 @@ describe("FeatureFlagManager", () => {
             expect(mockStore.set).not.toHaveBeenCalled();
         });
 
+        it("should keep cached flags when remote data is an empty list", async () => {
+            mockStore.get.mockReturnValue({
+                flags: { [FeatureFlag.INDA_TEST_FLAG_1]: true },
+                lastUpdated: Date.now(),
+            });
+            mockExecuteJavaScript.mockResolvedValue(JSON.stringify([]));
+
+            initializeFeatureFlagManagerTest({ store: mockStore });
+            const manager = getFeatureFlagManager();
+            await mockExecuteJavaScript.mock.results[0].value;
+
+            expect(manager.isEnabled(FeatureFlag.INDA_TEST_FLAG_1)).toBe(true);
+            expect(mockStore.set).not.toHaveBeenCalled();
+        });
+
         it("should reset flags not found in remote data", async () => {
             mockStore.get.mockReturnValue({
                 flags: {
@@ -275,6 +290,97 @@ describe("FeatureFlagManager", () => {
             expect(storedData.flags).toEqual(expect.any(Object));
             expect(storedData.lastUpdated).toBeGreaterThan(0);
             expect(manager.isEnabled(FeatureFlag.INDA_TEST_FLAG_1)).toBe(true);
+        });
+    });
+
+    describe("Flag change handlers", () => {
+        it("should call handlers with cached values on startup", () => {
+            const handler = jest.fn();
+            mockStore.get.mockReturnValue({
+                flags: { [FeatureFlag.INDA_TEST_FLAG_1]: true },
+                lastUpdated: Date.now(),
+            });
+
+            initializeFeatureFlagManagerTest({
+                store: mockStore,
+                flagChangeHandlers: { [FeatureFlag.INDA_TEST_FLAG_1]: [handler] },
+            });
+
+            expect(handler).toHaveBeenCalledTimes(1);
+            expect(handler).toHaveBeenCalledWith(true);
+        });
+
+        it("should not call handlers on startup for flags absent from cache", () => {
+            const handler = jest.fn();
+
+            initializeFeatureFlagManagerTest({
+                store: mockStore,
+                flagChangeHandlers: { [FeatureFlag.INDA_TEST_FLAG_1]: [handler] },
+            });
+
+            expect(handler).not.toHaveBeenCalled();
+        });
+
+        it("should call handlers with the new value when a flag changes", async () => {
+            const handler = jest.fn();
+            mockExecuteJavaScript.mockResolvedValue(
+                JSON.stringify([{ name: FeatureFlag.INDA_TEST_FLAG_1, enabled: true }]),
+            );
+
+            initializeFeatureFlagManagerTest({
+                store: mockStore,
+                flagChangeHandlers: { [FeatureFlag.INDA_TEST_FLAG_1]: [handler] },
+            });
+            await mockExecuteJavaScript.mock.results[0].value;
+
+            expect(handler).toHaveBeenCalledTimes(1);
+            expect(handler).toHaveBeenCalledWith(true);
+        });
+
+        it("should not call handlers again when a flag value is unchanged", async () => {
+            const handler = jest.fn();
+            mockStore.get.mockReturnValue({
+                flags: { [FeatureFlag.INDA_TEST_FLAG_1]: true },
+                lastUpdated: Date.now(),
+            });
+            mockExecuteJavaScript.mockResolvedValue(
+                JSON.stringify([{ name: FeatureFlag.INDA_TEST_FLAG_1, enabled: true }]),
+            );
+
+            initializeFeatureFlagManagerTest({
+                store: mockStore,
+                flagChangeHandlers: { [FeatureFlag.INDA_TEST_FLAG_1]: [handler] },
+            });
+            handler.mockClear();
+            await mockExecuteJavaScript.mock.results[0].value;
+
+            expect(handler).not.toHaveBeenCalled();
+        });
+
+        it("should keep updating flags when a handler throws", async () => {
+            const throwingHandler = jest.fn(() => {
+                throw new Error("handler failure");
+            });
+            mockExecuteJavaScript.mockResolvedValue(
+                JSON.stringify([
+                    { name: FeatureFlag.INDA_TEST_FLAG_1, enabled: true },
+                    { name: FeatureFlag.INDA_TEST_FLAG_2, enabled: true },
+                ]),
+            );
+
+            initializeFeatureFlagManagerTest({
+                store: mockStore,
+                flagChangeHandlers: { [FeatureFlag.INDA_TEST_FLAG_1]: [throwingHandler] },
+            });
+            const manager = getFeatureFlagManager();
+            await mockExecuteJavaScript.mock.results[0].value;
+
+            expect(flagManagerLogger.error).toHaveBeenCalledWith("Flag change handler failure", {
+                flag: FeatureFlag.INDA_TEST_FLAG_1,
+                error: expect.any(Error),
+            });
+            expect(manager.isEnabled(FeatureFlag.INDA_TEST_FLAG_2)).toBe(true);
+            expect(mockStore.set).toHaveBeenCalled();
         });
     });
 

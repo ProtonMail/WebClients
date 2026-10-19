@@ -103,7 +103,7 @@ export type IPCInboxClientUpdateMessage =
     | { type: 'triggerCrash'; payload?: undefined }
     | { type: 'reportTestingError'; payload?: undefined }
     | { type: 'metricsListenerChanged'; payload: 'ready' | 'removed' }
-    | { type: 'toggleAppCache'; payload: boolean }
+    | { type: 'toggleAppCache'; payload: boolean } // INDA-782: remove this
     /**
      * @deprecated for Desktop Clients with Electron 41+
      */
