@@ -11,6 +11,12 @@ import { Button } from './ui'
 const popoverClassName =
   'z-40 max-h-[--popover-available-height] max-w-[--popover-available-width] overflow-auto overscroll-contain rounded-[.5rem] border border-[--border-weak] bg-[--background-norm] py-2 shadow-[0px_8px_24px_0px_rgba(0,0,0,0.16)] focus:outline-none'
 
+export interface DropdownPopoverProps extends Ariakit.RoleProps {}
+
+export const DropdownPopover = forwardRef<HTMLDivElement, DropdownPopoverProps>(function DropdownPopover(props, ref) {
+  return <Ariakit.Role ref={ref} {...props} className={clsx(popoverClassName, props.className)} />
+})
+
 const AutoCloseContext = createContext(true)
 
 export interface DropdownProps extends HTMLAttributes<HTMLDivElement> {
