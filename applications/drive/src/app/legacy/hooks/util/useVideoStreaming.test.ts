@@ -1,7 +1,7 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
 import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
-import metrics from '@proton/metrics';
+import metrics from '@proton/metrics/metricsInstance';
 import { isVideo } from '@proton/shared/lib/helpers/mimetype';
 
 import { initDownloadSW } from '../../../modules/fileSaver/download';
@@ -20,7 +20,7 @@ jest.mock('uuid', () => ({
     v4: jest.fn(() => 'test-uuid-123'),
 }));
 
-jest.mock('@proton/metrics', () => ({
+jest.mock('@proton/metrics/metricsInstance', () => ({
     drive_warnings_total: {
         increment: jest.fn(),
     },

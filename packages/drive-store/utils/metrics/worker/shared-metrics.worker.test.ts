@@ -1,9 +1,9 @@
-import metrics from '@proton/metrics';
+import metrics from '@proton/metrics/metricsInstance';
 
 import { UserAvailabilityTypes } from '../types/userSuccessMetricsTypes';
 import { MetricSharedWorker } from './shared-metrics.worker';
 
-jest.mock('@proton/metrics', () => ({
+jest.mock('@proton/metrics/metricsInstance', () => ({
     setVersionHeaders: jest.fn(),
     setAuthHeaders: jest.fn(),
     drive_users_success_rate_total: {

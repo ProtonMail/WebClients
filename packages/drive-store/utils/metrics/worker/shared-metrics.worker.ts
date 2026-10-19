@@ -1,7 +1,7 @@
 /// <reference lib="webworker" />
 import { expose } from 'comlink';
 
-import metrics from '@proton/metrics';
+import metrics from '@proton/metrics/metricsInstance';
 import type { HttpsProtonMeDriveUsersSuccessRateTotalV1SchemaJson } from '@proton/metrics/types/drive_users_success_rate_total_v1.schema';
 
 import type { MetricSharedWorkerInterface } from '../types/userSuccessMetricsTypes';

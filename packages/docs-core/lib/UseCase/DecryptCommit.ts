@@ -1,10 +1,10 @@
 import type { DecryptMessage } from './DecryptMessage'
-import type { Commit } from '@proton/docs-proto'
+import type { Commit } from '@proton/docs-proto/Generated/Commit'
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { Result } from '@proton/docs-shared'
 import type { DecryptedMessage, DocumentKeys } from '@proton/docs-shared'
 import { DecryptedCommit } from '../Models/DecryptedCommit'
-import metrics from '@proton/metrics'
+import metrics from '@proton/metrics/metricsInstance'
 import { processMultipleDocumentUpdates } from '../utils/document-update-chunking'
 
 type DecryptCommitDTO = {

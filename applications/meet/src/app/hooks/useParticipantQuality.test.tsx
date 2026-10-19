@@ -14,7 +14,7 @@ import {
     initialState as initialScreenShareStatusState,
     screenShareStatusReducer,
 } from '@proton/meet/store/slices/screenShareStatusSlice';
-import { ProtonStoreContext } from '@proton/react-redux-store';
+import { ProtonStoreContext } from '@proton/react-redux-store/ProtonStoreContext';
 
 import { useParticipantQuality } from './useParticipantQuality';
 

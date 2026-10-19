@@ -1,4 +1,4 @@
-import { baseUseSelector as useSelector } from '@proton/react-redux-store';
+import { baseUseSelector as useSelector } from '@proton/react-redux-store/ProtonStoreContext';
 
 import { selectHideAmounts } from '../slices/hideAmounts';
 

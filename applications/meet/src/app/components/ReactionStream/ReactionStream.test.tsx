@@ -9,7 +9,7 @@ import {
     initialState as initialParticipantsState,
     participantsReducer,
 } from '@proton/meet/store/slices/participants/participantsSlice';
-import { ProtonStoreContext } from '@proton/react-redux-store';
+import { ProtonStoreContext } from '@proton/react-redux-store/ProtonStoreContext';
 
 import { RAISE_HAND_EMOJI } from '../../constants';
 import { ReactionStream } from './ReactionStream';

@@ -1,4 +1,5 @@
-import type { ConnectionCloseReason, DocumentUpdate } from '@proton/docs-proto'
+import type { ConnectionCloseReason } from '@proton/docs-proto/ConnectionCloseReason/ConnectionCloseReason'
+import type { DocumentUpdate } from '@proton/docs-proto/Generated/DocumentUpdate'
 import { BasePropertiesState } from '@proton/docs-shared'
 import type {
   DocumentRole,

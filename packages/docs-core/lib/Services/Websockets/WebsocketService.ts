@@ -22,28 +22,25 @@ import type { LoggerInterface } from '@proton/shared/lib/logs'
 import { WebsocketConnection } from '../../Realtime/WebsocketConnection'
 import type { FetchRealtimeToken } from '../../UseCase/FetchRealtimeToken'
 import type { WebsocketServiceInterface } from './WebsocketServiceInterface'
-import metrics from '@proton/metrics'
+import metrics from '@proton/metrics/metricsInstance'
 import type {
   ServerMessageWithEvents,
   ServerMessageWithDocumentUpdates,
   ServerMessageWithMessageAcks,
-  ConnectionReadyPayload,
-} from '@proton/docs-proto'
-import {
-  CreateDocumentUpdate,
-  DocumentUpdate,
-  ClientMessage,
-  ServerMessage,
-  ServerMessageType,
-  EventTypeEnum,
-  EventType,
-  CreateClientEventMessage,
-  ClientEventVersion,
-  CreateDocumentUpdateMessage,
-  DocumentUpdateVersion,
-  ConnectionCloseReason,
-  DecryptedValue,
-} from '@proton/docs-proto'
+} from '@proton/docs-proto/Generated/ServerMessage'
+import type { ConnectionReadyPayload } from '@proton/docs-proto/Payload/ConnectionReadyPayload'
+import { ConnectionCloseReason } from '@proton/docs-proto/ConnectionCloseReason/ConnectionCloseReason'
+import { DecryptedValue } from '@proton/docs-proto/DecryptedValue'
+import { EventType } from '@proton/docs-proto/Event/EventType'
+import { EventTypeEnum } from '@proton/docs-proto/Event/EventTypeEnum'
+import { CreateClientEventMessage } from '@proton/docs-proto/Factory/CreateClientEventMessage'
+import { CreateDocumentUpdate } from '@proton/docs-proto/Factory/CreateDocumentUpdate'
+import { CreateDocumentUpdateMessage } from '@proton/docs-proto/Factory/CreateDocumentUpdateMessage'
+import { ClientMessage } from '@proton/docs-proto/Generated/ClientMessage'
+import { DocumentUpdate } from '@proton/docs-proto/Generated/DocumentUpdate'
+import { ServerMessage } from '@proton/docs-proto/Generated/ServerMessage'
+import { ServerMessageType } from '@proton/docs-proto/ServerMessage/ServerMessageType'
+import { ClientEventVersion, DocumentUpdateVersion } from '@proton/docs-proto/Version'
 import { c } from 'ttag'
 import type { DecryptMessage } from '../../UseCase/DecryptMessage'
 import type { DocumentConnectionRecord } from './DocumentConnectionRecord'

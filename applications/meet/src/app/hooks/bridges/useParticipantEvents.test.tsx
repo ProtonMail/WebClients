@@ -12,7 +12,7 @@ import {
 } from '@proton/meet/store/slices/settings';
 import { ParticipantEvent } from '@proton/meet/types/types';
 import { STT_AGENT_PREFIX } from '@proton/meet/utils/agents';
-import { ProtonStoreContext } from '@proton/react-redux-store';
+import { ProtonStoreContext } from '@proton/react-redux-store/ProtonStoreContext';
 
 import { JOIN_SOUND_NOTIFICATION_PARTICIPANT_LIMIT } from '../../constants';
 import { useParticipantEvents } from './useParticipantEvents';

@@ -6,7 +6,7 @@ import { useConfig } from '@proton/app-context/useConfig';
 import StandardErrorPage from '@proton/components/containers/app/StandardErrorPage';
 import { shouldTraceError, useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
-import metrics from '@proton/metrics';
+import metrics from '@proton/metrics/metricsInstance';
 import { observeError } from '@proton/metrics/observeApiError';
 import type { OnChargeable } from '@proton/payments-ui/client-extensions/usePaymentFacade';
 import {

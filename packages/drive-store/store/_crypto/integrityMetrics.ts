@@ -1,6 +1,6 @@
 import { fromUnixTime } from 'date-fns';
 
-import metrics from '@proton/metrics';
+import metrics from '@proton/metrics/metricsInstance';
 
 import { UserAvailabilityTypes } from '../../utils/metrics/types/userSuccessMetricsTypes';
 import { userSuccessMetrics } from '../../utils/metrics/userSuccessMetrics';

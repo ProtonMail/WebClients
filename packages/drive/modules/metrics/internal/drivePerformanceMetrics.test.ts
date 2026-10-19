@@ -1,9 +1,9 @@
-import metrics from '@proton/metrics';
+import metrics from '@proton/metrics/metricsInstance';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 
 import { DrivePerformanceMetrics } from './drivePerformanceMetrics';
 
-jest.mock('@proton/metrics', () => ({
+jest.mock('@proton/metrics/metricsInstance', () => ({
     __esModule: true,
     default: {
         drive_performance_v2_pageload_histogram: {

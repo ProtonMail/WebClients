@@ -10,7 +10,7 @@ import {
     participantsReducer,
     setLocalParticipantIdentity,
 } from '@proton/meet/store/slices/participants/participantsSlice';
-import { ProtonStoreContext } from '@proton/react-redux-store';
+import { ProtonStoreContext } from '@proton/react-redux-store/ProtonStoreContext';
 
 import { getParticipantDisplayColorsByIdentity } from '../utils/participantDisplayColors/getParticipantDisplayColorsByIdentity';
 import { ChatMessageContent } from './ChatMessageContent';

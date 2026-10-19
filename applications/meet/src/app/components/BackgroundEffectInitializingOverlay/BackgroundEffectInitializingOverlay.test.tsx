@@ -5,7 +5,7 @@ import { render, screen } from '@testing-library/react';
 
 import type { BackgroundState } from '@proton/meet/store/slices/backgroundSlice';
 import { backgroundReducer } from '@proton/meet/store/slices/backgroundSlice';
-import { ProtonStoreContext } from '@proton/react-redux-store';
+import { ProtonStoreContext } from '@proton/react-redux-store/ProtonStoreContext';
 
 import { BackgroundEffectInitializingOverlay } from './BackgroundEffectInitializingOverlay';
 

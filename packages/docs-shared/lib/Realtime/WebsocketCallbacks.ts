@@ -1,4 +1,4 @@
-import type { ConnectionCloseReason } from '@proton/docs-proto'
+import type { ConnectionCloseReason } from '@proton/docs-proto/ConnectionCloseReason/ConnectionCloseReason'
 import type { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
 import type { ConnectionType } from './WebsocketConnectionInterface'
 
