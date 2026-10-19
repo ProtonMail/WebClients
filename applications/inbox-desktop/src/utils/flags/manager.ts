@@ -2,6 +2,7 @@ import { getMailView } from "../view/viewManagement";
 import { FeatureFlag } from "./flags";
 import { flagManagerLogger } from "../log";
 import { SafeStore } from "../../store/safeStore/safeStore";
+import { featureFlagChangeHandlers, FeatureFlagChangeHandlers } from "./changeHandlers";
 
 const cacheFilename = "ff_cache";
 const cacheFieldName = "featureFlags";
@@ -22,9 +23,15 @@ class FeatureFlagManager {
     private checkInterval: NodeJS.Timeout | null = null;
     private checkIntervalDurationMS: number = 60 * 1000;
     private store: SafeStore<{ featureFlags: FeatureFlagCache }>;
+    private flagChangeHandlers: FeatureFlagChangeHandlers;
 
-    constructor(checkIntervalDurationMS: number, storeMock?: SafeStore<{ featureFlags: FeatureFlagCache }>) {
+    constructor(
+        checkIntervalDurationMS: number,
+        flagChangeHandlers: FeatureFlagChangeHandlers,
+        storeMock?: SafeStore<{ featureFlags: FeatureFlagCache }>,
+    ) {
         this.checkIntervalDurationMS = checkIntervalDurationMS;
+        this.flagChangeHandlers = flagChangeHandlers;
         this.store =
             storeMock ||
             new SafeStore<{ featureFlags: FeatureFlagCache }>("featureFlag", {
@@ -37,7 +44,8 @@ class FeatureFlagManager {
                 },
             });
 
-        this.loadFromCache();
+        const cachedFlags = this.loadFromCache();
+        this.runCachedFlagChangeHandlers(cachedFlags);
         this.startPeriodicCheck();
     }
 
@@ -48,7 +56,7 @@ class FeatureFlagManager {
         }
     }
 
-    private loadFromCache(): void {
+    private loadFromCache(): FeatureFlagCache["flags"] {
         const cached = this.store.get(cacheFieldName);
 
         for (const flag of Object.values(FeatureFlag)) {
@@ -60,6 +68,8 @@ class FeatureFlagManager {
             lastUpdated: new Date(cached.lastUpdated).toISOString(),
             flags: Object.fromEntries(this.flags),
         });
+
+        return cached.flags;
     }
 
     private saveToCache(): void {
@@ -110,7 +120,7 @@ class FeatureFlagManager {
             return;
         }
 
-        if (!Array.isArray(flags)) {
+        if (!Array.isArray(flags) || flags.length === 0) {
             return;
         }
 
@@ -149,8 +159,29 @@ class FeatureFlagManager {
         flagManagerLogger.info("Feature flag periodic check started", { intervalMS });
     }
 
+    private runCachedFlagChangeHandlers(cachedFlags: FeatureFlagCache["flags"]) {
+        for (const [flag, value] of Object.entries(cachedFlags)) {
+            this.runFlagChangeHandlers(flag as FeatureFlag, value);
+        }
+    }
+
+    private runFlagChangeHandlers(flag: FeatureFlag, value: boolean) {
+        for (const handler of this.flagChangeHandlers[flag] ?? []) {
+            try {
+                handler(value);
+            } catch (error) {
+                flagManagerLogger.error("Flag change handler failure", { flag, error });
+            }
+        }
+    }
+
     private setFlag(flag: FeatureFlag, value: boolean) {
+        if (this.flags.get(flag) === value) {
+            return;
+        }
+
         this.flags.set(flag, value);
+        this.runFlagChangeHandlers(flag, value);
     }
 
     isEnabled(flag: FeatureFlag): boolean {
@@ -160,7 +191,7 @@ class FeatureFlagManager {
 
 export const initializeFeatureFlagManager = () => {
     if (featureFlagManager) return;
-    featureFlagManager = new FeatureFlagManager(pollIntervalMS);
+    featureFlagManager = new FeatureFlagManager(pollIntervalMS, featureFlagChangeHandlers);
 };
 
 export const getFeatureFlagManager = (): FeatureFlagManager => {
@@ -172,10 +203,18 @@ export const getFeatureFlagManager = (): FeatureFlagManager => {
     return featureFlagManager;
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const initializeFeatureFlagManagerTest = (options?: { store?: any; pollInterval?: number }) => {
+export const initializeFeatureFlagManagerTest = (options?: {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    store?: any;
+    pollInterval?: number;
+    flagChangeHandlers?: FeatureFlagChangeHandlers;
+}) => {
     if (featureFlagManager) return;
-    featureFlagManager = new FeatureFlagManager(options?.pollInterval ?? pollIntervalMS, options?.store);
+    featureFlagManager = new FeatureFlagManager(
+        options?.pollInterval ?? pollIntervalMS,
+        options?.flagChangeHandlers ?? {},
+        options?.store,
+    );
 };
 
 export const destroyFeatureFlagManagerTest = () => {
