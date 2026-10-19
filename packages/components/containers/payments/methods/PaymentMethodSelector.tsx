@@ -11,6 +11,7 @@ import googlePayMarkSvg from '@proton/styles/assets/img/bank-icons/google-pay-ma
 import idealMarkSvg from '@proton/styles/assets/img/bank-icons/ideal.svg';
 import jcbLogoSvg from '@proton/styles/assets/img/bank-icons/jcb-logo.png';
 import mastercardSecurecodeSvg from '@proton/styles/assets/img/bank-icons/mastercard-securecode-colored.svg';
+import unionpayLogoSvg from '@proton/styles/assets/img/bank-icons/unionpay-logo.svg';
 import verifiedByVisaSvg from '@proton/styles/assets/img/bank-icons/visa-secure-colored.svg';
 import clsx from '@proton/utils/clsx';
 
@@ -149,6 +150,11 @@ const PaymentMethodSelector = ({
                                             alt={c('Info').t`JCB logo`}
                                             style={{ maxHeight: '26px' }}
                                             src={jcbLogoSvg}
+                                        />
+                                        <img
+                                            alt={c('Info').t`UnionPay logo`}
+                                            style={{ maxHeight: '26px' }}
+                                            src={unionpayLogoSvg}
                                         />
                                     </div>
                                 )
