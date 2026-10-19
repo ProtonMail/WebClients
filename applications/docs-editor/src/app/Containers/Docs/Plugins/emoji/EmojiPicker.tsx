@@ -20,6 +20,7 @@ export default function EmojiPicker({ messages = defaultEmojiMessages }: EmojiPi
   const selection = useRef<RangeSelection>()
   const search = useRef<HTMLInputElement>(null)
   const store = useCompositeStore({ focusLoop: true })
+  useEffect(() => search.current?.focus(), [])
   useEffect(() => {
     let disposed = false
     const capture = () =>
@@ -42,7 +43,6 @@ export default function EmojiPicker({ messages = defaultEmojiMessages }: EmojiPi
         const data = result.getValue()
         if (!disposed) {
           setEmojis(data)
-          search.current?.focus()
         }
       })
       .catch(() => {
@@ -81,6 +81,12 @@ export default function EmojiPicker({ messages = defaultEmojiMessages }: EmojiPi
       className="w-72 p-2"
       data-testid="emoji-picker-menu"
       onClick={(event) => event.stopPropagation()}
+      // Pointer clicks leave focus in the search box, so typing keeps filtering after an insert.
+      onMouseDown={(event) => {
+        if (event.target !== search.current) {
+          event.preventDefault()
+        }
+      }}
       onKeyDown={(event) => {
         if (event.key !== 'Escape') {
           event.stopPropagation()
