@@ -1,0 +1,19 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
+.schedule-template-card {
+	&__icon-container {
+		inline-size: #{rem(32)};
+		block-size: #{rem(32)};
+		background-color: var(--control-fill-mid);
+	}
+
+	&__title {
+		font-size: #{rem(15)};
+	}
+
+	&:hover,
+	&:focus-visible,
+	&:active {
+		background-color: var(--background-norm) !important;
+	}
+}
