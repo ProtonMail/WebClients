@@ -402,9 +402,8 @@ export const useComposerContent = (args: EditorArgs) => {
     const senderAddress = modelMessage.data?.Sender?.Address;
     const draftAction = modelMessage.draftFlags?.action;
     const addressSignature = useMemo(
-        () =>
-            getAddressPlainTextSignature({ senderAddress, action: draftAction, addresses, mailSettings, userSettings }),
-        [senderAddress, draftAction, mailSettings, userSettings, addresses]
+        () => getAddressPlainTextSignature({ senderAddress, addresses, mailSettings, userSettings }),
+        [senderAddress, mailSettings, userSettings, addresses]
     );
 
     /**
