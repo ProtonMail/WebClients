@@ -14,7 +14,7 @@ import { updateLogger } from "../utils/log";
 import { quitTracker } from "../utils/log/quitTracker";
 import { isNetworkError } from "../utils/netErrors";
 import { sentryReport } from "../utils/sentryReport";
-import { updateSession } from "../utils/session";
+import { updateSession } from "../utils/electronSession/partitions";
 import * as updateUtils from "./utils";
 
 type LocalDesktopVersion = {

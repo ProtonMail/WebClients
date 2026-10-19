@@ -9,7 +9,7 @@ import {
     SeverityLevel,
 } from "@sentry/electron/main";
 
-import { appSession, updateSession } from "./session";
+import { appSession, updateSession } from "./electronSession/partitions";
 import pkg from "../../package.json";
 import { app } from "electron";
 import { getAppID } from "../store/idStore";
