@@ -2,10 +2,12 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
+import { Href } from '@proton/atoms/Href/Href';
 import { IcClock } from '@proton/icons/icons/IcClock';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { IcShield } from '@proton/icons/icons/IcShield';
 import type { Currency } from '@proton/payments/core/interface';
+import { getSupportContactURL } from '@proton/shared/lib/helpers/url';
 
 import CurrencySelector from './CurrencySelector';
 
@@ -34,6 +36,10 @@ const Checkout = ({
     disableCurrencySelector,
     showPaymentProtectionCopy = true,
 }: Props) => {
+    const customerSupportLink = (
+        <Href key="customer-support" href={getSupportContactURL({})}>{c('Link').t`Customer Support`}</Href>
+    );
+
     return (
         <div className="p-6">
             <div className="flex flex-nowrap mb-5">
@@ -75,7 +81,8 @@ const Checkout = ({
                         <span className="shrink-0 mr-2">
                             <IcClock />
                         </span>
-                        <span className="flex-1">{c('Info').t`30-day money-back guarantee.`}</span>
+                        <span className="flex-1">{c('Info')
+                            .jt`30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${customerSupportLink} to obtain a refund.`}</span>
                     </div>
                 )}
             </div>
