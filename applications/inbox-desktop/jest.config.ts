@@ -1,4 +1,5 @@
 import type { Config } from "jest";
+import { getTransformIgnorePatterns } from "@proton/jest-swc-preset/transformIgnorePatterns.js";
 
 const jestConfig: Config = {
     clearMocks: true,
@@ -8,9 +9,7 @@ const jestConfig: Config = {
     // Runs shared URL rule specs so desktop-only MRs still check the rules shared with web.
     roots: ["<rootDir>", "<rootDir>/../../packages/shared/tests/desktop"],
     testMatch: ["<rootDir>/src/**/*.test.ts", "**/packages/shared/tests/desktop/urls.spec.ts"],
-    transformIgnorePatterns: [
-        "node_modules/(?!(\\.pnpm|@proton/shared|@proton/components|@protontech/telemetry|@protontech/logger|@protontech/crypto|openpgp|@protontech/openpgp|@openpgp/web-stream-tools|otpauth|@protontech/pass-rust-core/ui|@preact/signals-core)/)",
-    ],
+    transformIgnorePatterns: getTransformIgnorePatterns(["otpauth", "@protontech/pass-rust-core/ui"]),
     moduleNameMapper: {
         "\\.css": "<rootDir>/src/utils/tests/fileMock.ts",
         "^update-electron-app$": "<rootDir>/src/__mocks__/update-electron-app.ts",
