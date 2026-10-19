@@ -268,7 +268,12 @@ const config: Configuration = {
             ...(BUILD_TARGET === 'safari'
                 ? /* exclude `webextension-polyfill` from safari build to avoid
                    * service-worker registration errors when worker fails. */
-                  { 'webextension-polyfill': '@proton/pass/lib/globals/webextension-polyfill.stub.ts' }
+                  {
+                      'webextension-polyfill': path.resolve(
+                          __dirname,
+                          'node_modules/@proton/pass/lib/globals/webextension-polyfill.stub.ts'
+                      ),
+                  }
                 : {}),
             /* friends don't let friends publish code with `eval` : but that didn't stop `ttag`  */
             ttag$: path.resolve(__dirname, 'node_modules/ttag/dist/ttag.min.js'),
