@@ -1399,6 +1399,9 @@
       ],
       "Import paused": [
         "Importare suspendată"
+      ],
+      "Subscribe": [
+        "Abonare"
       ]
     },
     "Action: Docs": {
@@ -8259,6 +8262,12 @@
       ],
       "Your import is blocked. Upgrade now to bring the rest of your files over.": [
         "Importarea este blocată. Treceți la un plan superior acum pentru a transfera și restul fișierelor."
+      ],
+      "We'll get back to you shortly.": [
+        "Vom reveni în curând."
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "Perioada de probare gratuită s-a încheiat. Abonați-vă acum pentru a asigura accesul neîntrerupt al echipei proprii și securitatea conturilor."
       ]
     },
     "info": {
@@ -9178,6 +9187,21 @@
       ],
       "Image": [
         "Imagine"
+      ],
+      "Amount": [
+        "Suma"
+      ],
+      "Amount due": [
+        "Suma datorată"
+      ],
+      "Credits used": [
+        "Credite folosite"
+      ],
+      "Please share any feedback to help us improve.": [
+        "Vă rugăm să ne spuneți orice pentru a ne ajuta la îmbunătățirea serviciilor."
+      ],
+      "Why would you like to cancel?": [
+        "De ce doriți să anulați?"
       ]
     },
     "Label for contact group color": {
@@ -12314,6 +12338,9 @@
       ],
       "Ask anything…": [
         "Întreabă-mă orice…"
+      ],
+      "Please select the main reason": [
+        "Selectați motivul principal"
       ]
     },
     "Placeholder for contact group name": {
@@ -13860,6 +13887,9 @@
       ],
       "You have successfully unsubscribed": [
         "V-ați dezabonat cu succes"
+      ],
+      "Invoice paid": [
+        "Factură plătită"
       ]
     },
     "Suffix": {
@@ -15254,6 +15284,18 @@
       ],
       "Black Friday": [
         "Black Friday"
+      ],
+      "Contact us": [
+        "Contactați-ne"
+      ],
+      "Pay invoice": [
+        "Plată factură"
+      ],
+      "Request sent": [
+        "Solicitare trimisă"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "Abonare la ${ planTitle }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15988,6 +16030,9 @@
       ],
       "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
         "Prin confirmare, autorizați ${ BRAND_NAME } și Stripe, furnizorul nostru de servicii de plată, să colecteze plățile viitoare pentru abonament din acest cont bancar prin Debit Direct SEPA, iar banca să vă debiteze aceste plăți. Prima plată este efectuată acum de către ${ IDEAL_WERO_BRAND_NAME }. Planul se reînnoiește automat până la anularea acestuia; vă vom notifica înainte de fiecare colectare. Pentru colectările prin debit direct, puteți solicita o rambursare de la banca proprie în termen de 8 săptămâni de la data debitării, în conformitate cu termenii acordului cu banca. Aceasta nu se aplică plății ${ IDEAL_WERO_BRAND_NAME } pe care o efectuați acum."
+      ],
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Prin confirmare, autorizați ${ BRAND_NAME } și Stripe, furnizorul nostru de servicii de plată, să încaseze plățile viitoare pentru abonament din acest cont bancar prin debitare directă SEPA, iar banca să vă efectueze aceste plăți. Prima plată este efectuată acum prin ${ IDEAL_WERO_BRAND_NAME }. Abonamentul se reînnoiește automat până în momentul în care îl anulați; vă vom notifica înainte de fiecare încasare. În cazul plăților prin debitare directă, puteți solicita băncii rambursarea sumei în termen de 8 săptămâni de la data debitării, conform termenilor contractului încheiat cu banca. Această prevedere nu se aplică plății prin ${ IDEAL_WERO_BRAND_NAME } pe care o efectuați în acest moment."
       ]
     },
     "q3campaign2026: Action": {
@@ -16223,6 +16268,20 @@
     "bfcampaign2026: Info, Pass first": {
       "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
         "${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } și ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Am găsit un alt serviciu care îmi place mai mult"
+      ],
+      "It’s missing a key feature": [
+        "Lipsește o funcție importantă"
+      ],
+      "It’s too expensive": [
+        "Este prea scump"
+      ],
+      "Other": [
+        "Altceva"
       ]
     }
   }

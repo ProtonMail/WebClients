@@ -1403,6 +1403,12 @@
       ],
       "Detach": [
         "Odpojiť"
+      ],
+      "Import paused": [
+        "Import pozastavený"
+      ],
+      "Subscribe": [
+        "Predplatiť"
       ]
     },
     "Action: Docs": {
@@ -4642,6 +4648,9 @@
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Zlá obnovovacia fráza. Skúste to znovu, alebo použite inú metódu obnovenia."
+      ],
+      "You reached the maximum number of connected addresses": [
+        "Dosiahli ste maximálny počet pripojených adries"
       ]
     },
     "error": {
@@ -8353,6 +8362,18 @@
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "V súčasnosti nie je k dispozícii kvôli veľkému záujmu. Skúste to neskôr, prosím."
+      ],
+      "If you've already upgraded, you can resume your import in ${ easySwitchSettingsLink }. You can also cancel it there.": [
+        "Ak ste už navýšenie vykonali, môžete import obnoviť v ${ easySwitchSettingsLink }. Tam ho môžete aj zrušiť."
+      ],
+      "We'll get back to you shortly.": [
+        "O chvíľu sa vám ozveme."
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "Vaša bezplatná skúšobná verzia vypršala. Predplaťte si službu hneď teraz, aby mal váš tím nepretržitý prístup a aby boli účty v bezpečí."
+      ],
+      "Your import is blocked. Upgrade now to bring the rest of your files over.": [
+        "Váš import je blokovaný. Zvýšte úroveň plánu hneď teraz, aby ste mohli preniesť aj zvyšné súbory."
       ]
     },
     "info": {
@@ -9278,6 +9299,21 @@
       ],
       "Image": [
         "Obrázok"
+      ],
+      "Amount": [
+        "Čiastka"
+      ],
+      "Amount due": [
+        "Čiastka k zaplateniu"
+      ],
+      "Credits used": [
+        "Použité kredity"
+      ],
+      "Please share any feedback to help us improve.": [
+        "Prosím zdieľajte akúkoľvek spätnú väzbu, aby ste nám pomohli zlepšiť sa."
+      ],
+      "Why would you like to cancel?": [
+        "Prečo chcete zrušiť?"
       ]
     },
     "Label for contact group color": {
@@ -12167,6 +12203,18 @@
       ],
       "Your account is too old for Born Private.": [
         "Váš účet je príliš starý na službu Born Private."
+      ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Zmena tarifného plánu nie je možná z nasledujúcich dôvodov:"
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Počet miest Proton Meet sa musí zhodovať s počtom členov."
+      ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Tento plán nepodporuje spravované funkcie vo vašom účte."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Toto predplatné momentálne nie je možné dokončiť. Skúste to neskôr, prosím."
       ]
     },
     "Payments.Error": {
@@ -12481,6 +12529,9 @@
       ],
       "Ask anything…": [
         "Opýtajte sa na čokoľvek..."
+      ],
+      "Please select the main reason": [
+        "Prosím vyberte hlavný dôvod"
       ]
     },
     "Placeholder for contact group name": {
@@ -13972,6 +14023,9 @@
       ],
       "You have successfully unsubscribed": [
         "Predplatné bolo úspešne zrušené"
+      ],
+      "Invoice paid": [
+        "Faktúra uhradená"
       ]
     },
     "Suffix": {
@@ -15376,6 +15430,24 @@
       ],
       "Bring your Google Drive files to ${ DRIVE_APP_NAME }": [
         "Preneste si súbory z Google Drive do ${ DRIVE_APP_NAME }"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Contact us": [
+        "Kontaktujte nás"
+      ],
+      "More storage needed to finish your import": [
+        "Na dokončenie importu je potrebný väčší úložný priestor"
+      ],
+      "Pay invoice": [
+        "Zaplatiť faktúru"
+      ],
+      "Request sent": [
+        "Požiadavka odoslaná"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "Odoberať ${ planTitle }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16122,6 +16194,9 @@
       ],
       "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
         "Potvrdením oprávňujete spoločnosť ${ BRAND_NAME } a Stripe, nášho poskytovateľa platobných služieb, aby z tohto bankového účtu prostredníctvom priameho inkasa SEPA inkasovali budúce platby za vaše predplatné, a vašu banku, aby tieto platby strhla. Vaša prvá platba je realizovaná teraz spoločnosťou ${ IDEAL_WERO_BRAND_NAME }. Váš balík sa automaticky obnovuje, kým ho nezrušíte; pred každým inkasom vás budeme informovať. V prípade inkás prostredníctvom priameho inkasa môžete požiadať svoju banku o vrátenie platby do 8 týždňov od dátumu inkasa v súlade s podmienkami vašej zmluvy s bankou. Toto sa nevzťahuje na platbu spoločnosti ${ IDEAL_WERO_BRAND_NAME }, ktorú práve uskutočňujete."
+      ],
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Potvrdením oprávňujete spoločnosť ${ BRAND_NAME } a Stripe, nášho poskytovateľa platobných služieb, aby z tohto bankového účtu prostredníctvom priameho inkasa SEPA inkasovali budúce platby za vaše predplatné, a vašu banku, aby tieto platby strhla. Vaša prvá platba sa uskutoční teraz prostredníctvom spoločnosti ${ IDEAL_WERO_BRAND_NAME }. Váš balík sa automaticky obnovuje, kým ho nezrušíte; pred každým inkasom vás budeme informovať. V prípade inkás prostredníctvom priameho inkasa môžete požiadať svoju banku o vrátenie platby do 8 týždňov od dátumu inkasa v súlade s podmienkami vašej zmluvy s bankou. Toto sa nevzťahuje na platbu spoločnosti ${ IDEAL_WERO_BRAND_NAME }, ktorú práve uskutočňujete."
       ]
     },
     "ngc_access_banner: action": {
@@ -16240,6 +16315,20 @@
     "tryduo2026: Title": {
       "for 12 months": [
         "na 12 mesiacov"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Našiel som inú službu, ktorá sa mi páči viac"
+      ],
+      "It’s missing a key feature": [
+        "Nemá kľúčovú funkciu"
+      ],
+      "It’s too expensive": [
+        "Je to príliš drahé"
+      ],
+      "Other": [
+        "Iné"
       ]
     }
   }

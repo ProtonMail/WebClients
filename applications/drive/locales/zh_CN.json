@@ -1385,6 +1385,9 @@
       ],
       "Switch to ${ planName }": [
         "切换至 ${ planName }"
+      ],
+      "Subscribe": [
+        "订阅"
       ]
     },
     "Action: Docs": {
@@ -7990,6 +7993,12 @@
       ],
       "Your import is blocked. Upgrade now to bring the rest of your files over.": [
         "您的导入已被阻止，立即升级以迁移剩余的文件。"
+      ],
+      "We'll get back to you shortly.": [
+        "我们会尽快回复您。"
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "您的免费试用已结束。立即订阅，以保持团队访问不中断并确保账户安全。"
       ]
     },
     "info": {
@@ -8897,6 +8906,21 @@
       ],
       "Image": [
         "图像"
+      ],
+      "Amount": [
+        "金额"
+      ],
+      "Amount due": [
+        "应付金额"
+      ],
+      "Credits used": [
+        "扣除余额"
+      ],
+      "Please share any feedback to help us improve.": [
+        "请分享任何反馈意见，以帮助我们改进工作。"
+      ],
+      "Why would you like to cancel?": [
+        "您为什么想要取消？"
       ]
     },
     "Label for contact group color": {
@@ -11875,6 +11899,9 @@
       ],
       "Ask anything…": [
         "提问…"
+      ],
+      "Please select the main reason": [
+        "请选择主要原因"
       ]
     },
     "Placeholder for contact group name": {
@@ -13243,6 +13270,9 @@
       ],
       "You have successfully unsubscribed": [
         "您已退订成功"
+      ],
+      "Invoice paid": [
+        "支付完成"
       ]
     },
     "Suffix": {
@@ -14605,6 +14635,18 @@
       ],
       "Welcome to ${ DRIVE_APP_NAME }": [
         "欢迎使用 ${ DRIVE_APP_NAME }"
+      ],
+      "Contact us": [
+        "联系我们"
+      ],
+      "Pay invoice": [
+        "支付账单"
+      ],
+      "Request sent": [
+        "请求已发送"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "订阅 ${ planTitle }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15300,6 +15342,9 @@
       ],
       "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
         "确认即表示您授权 ${ BRAND_NAME } 及我们的支付服务商 Stripe 通过 SEPA 直接借记从该银行账户收取您订阅的未来款项，并授权您的银行执行这些扣款。您的首笔付款现通过 ${ IDEAL_WERO_BRAND_NAME } 完成。您的套餐将自动续订，直至您取消；我们会在每次扣款前通知您。对于直接借记扣款，根据您与银行达成的协议条款，您可在扣款日起 8 周内向银行申请退款。此规定不适用于您当前正在进行的 ${ IDEAL_WERO_BRAND_NAME } 付款。"
+      ],
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "确认即表示您授权 ${ BRAND_NAME } 及我们的支付服务商 Stripe 通过 SEPA 直接借记从该银行账户收取您订阅的未来款项，并授权您的银行执行这些扣款。您的首笔付款现通过 ${ IDEAL_WERO_BRAND_NAME } 完成。您的套餐将自动续订，直至您取消；我们会在每次扣款前通知您。对于直接借记扣款，根据您与银行达成的协议条款，您可在扣款日起 8 周内向银行申请退款。此规定不适用于您当前正在进行的 ${ IDEAL_WERO_BRAND_NAME } 付款。"
       ]
     },
     "ngc_access_banner: action": {
@@ -15518,6 +15563,20 @@
       ],
       "Protection for two in a single plan": [
         "单个套餐为两人提供保护"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "不如别的产品好用"
+      ],
+      "It’s missing a key feature": [
+        "缺少一个关键功能"
+      ],
+      "It’s too expensive": [
+        "价格太贵"
+      ],
+      "Other": [
+        "其它"
       ]
     }
   }

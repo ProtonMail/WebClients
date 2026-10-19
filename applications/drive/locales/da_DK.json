@@ -1392,6 +1392,9 @@
       ],
       "Import paused": [
         "Import sat på pause"
+      ],
+      "Subscribe": [
+        "Abonnér"
       ]
     },
     "Action: Docs": {
@@ -8113,6 +8116,12 @@
       ],
       "Your import is blocked. Upgrade now to bring the rest of your files over.": [
         "Din import er blokeret. Opgrader nu for at føre resten af dine filer over."
+      ],
+      "We'll get back to you shortly.": [
+        "Tak! Vi vender tilbage til dig inden længe."
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "Din gratis prøveperiode er afsluttet. Abonnér nu så dit team beholder adgang, og deres konti forbliver sikre."
       ]
     },
     "info": {
@@ -9026,6 +9035,21 @@
       ],
       "Image": [
         "Billede"
+      ],
+      "Amount": [
+        "Beløb"
+      ],
+      "Amount due": [
+        "Forfaldent beløb"
+      ],
+      "Credits used": [
+        "Kredit forbrugt"
+      ],
+      "Please share any feedback to help us improve.": [
+        "Del gerne feedback, så vi kan forbedre os."
+      ],
+      "Why would you like to cancel?": [
+        "Hvorfor ønsker du at opsige?"
       ]
     },
     "Label for contact group color": {
@@ -12083,6 +12107,9 @@
       ],
       "Ask anything…": [
         "Spørg om hvad som helst..."
+      ],
+      "Please select the main reason": [
+        "Vælg venligst hovedårsagen"
       ]
     },
     "Placeholder for contact group name": {
@@ -13588,6 +13615,9 @@
       ],
       "You have successfully unsubscribed": [
         "Du har afmeldt dig"
+      ],
+      "Invoice paid": [
+        "Faktura betalt"
       ]
     },
     "Suffix": {
@@ -14966,6 +14996,18 @@
       ],
       "Black Friday": [
         "Black Friday"
+      ],
+      "Contact us": [
+        "Kontakt os"
+      ],
+      "Pay invoice": [
+        "Betal faktura"
+      ],
+      "Request sent": [
+        "Anmodning sendt"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "Abonnér på ${ planTitle }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15689,6 +15731,9 @@
       ],
       "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
         "Ved at bekræfte autoriserer du ${ BRAND_NAME } og Stripe, vores betalingstjenesteudbyder, til at hæve fremtidige betalinger for dit abonnement fra denne bankkonto med SEPA Direct Debit, og at banken kan debitere de betalinger. Din første betaling forfalder fra ${ IDEAL_WERO_BRAND_NAME } nu. Dit abonnement fornyes automatisk indtil du opsiger; vi giver dig besked før hver betaling. For Direct Debit-opkrævninger kan du anmode om en refundering fra din bank indenfor 8 uger af debiteringsdatoen efter din og din banks aftalevilkår. Dette gælder ikke for den betaling med ${ IDEAL_WERO_BRAND_NAME }, som du er i gang med nu."
+      ],
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Ved at bekræfte autoriserer du ${ BRAND_NAME } og Stripe, vores betalingstjenesteudbyder, til at hæve fremtidige betalinger for dit abonnement fra denne bankkonto med SEPA Direct Debit, og at banken kan debitere de betalinger. Din første betaling forfalder fra ${ IDEAL_WERO_BRAND_NAME } nu. Dit abonnement fornyes automatisk indtil du opsiger, og vi giver dig besked før hver betaling. For Direct Debit-opkrævninger kan du anmode om en refundering fra din bank indenfor 8 uger af debiteringsdatoen efter din og din banks aftalevilkår. Dette gælder ikke for den betaling med ${ IDEAL_WERO_BRAND_NAME }, som du er i gang med nu."
       ]
     },
     "q3campaign2026: Action": {
@@ -15924,6 +15969,20 @@
     "bfcampaign2026: Info, Pass first": {
       "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
         "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Jeg fandt en anden tjeneste, som jeg synes bedre om"
+      ],
+      "It’s missing a key feature": [
+        "Den mangler en nøglefunktion"
+      ],
+      "It’s too expensive": [
+        "Det er for dyrt"
+      ],
+      "Other": [
+        "Andet"
       ]
     }
   }
