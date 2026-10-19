@@ -1,6 +1,7 @@
 import { Request } from "electron";
 import { checkKeys, verifyDownloadCertificate, VerificationResult, resetPinningReportedTestOnly } from "./keyPinning";
 import { sentryReport } from "./sentryReport";
+import { networkLogger } from "./log";
 
 jest.mock("electron", () => ({
     app: {
@@ -110,6 +111,7 @@ describe("checkKeys", () => {
     test("reports to Sentry with app-session context on cert pinning failure", () => {
         const r = {
             hostname: "proton.me",
+            certificate: { issuerName: "Interceptor Root CA" },
             validatedCertificate: { data: CERTIFICATE_DATA_rsa4096_badssl_com },
         } as Request;
 
@@ -127,6 +129,7 @@ describe("checkKeys", () => {
     test("reports to Sentry only once per session for the same hostname", () => {
         const r = {
             hostname: "proton.me",
+            certificate: { issuerName: "Interceptor Root CA" },
             validatedCertificate: { data: CERTIFICATE_DATA_rsa4096_badssl_com },
         } as Request;
 
@@ -140,10 +143,12 @@ describe("checkKeys", () => {
     test("reports separately for different hostnames", () => {
         const mail = {
             hostname: "mail.proton.me",
+            certificate: { issuerName: "Interceptor Root CA" },
             validatedCertificate: { data: CERTIFICATE_DATA_rsa4096_badssl_com },
         } as Request;
         const calendar = {
             hostname: "calendar.proton.me",
+            certificate: { issuerName: "Interceptor Root CA" },
             validatedCertificate: { data: CERTIFICATE_DATA_rsa4096_badssl_com },
         } as Request;
 
@@ -151,6 +156,24 @@ describe("checkKeys", () => {
         checkKeys(calendar);
 
         expect(sentryReport.reportMessage).toHaveBeenCalledTimes(2);
+    });
+
+    test("logs the certificate issuer on cert pinning failure", () => {
+        const r = {
+            hostname: "mail.proton.me",
+            certificate: { issuerName: "Interceptor Root CA" },
+            validatedCertificate: { data: CERTIFICATE_DATA_rsa4096_badssl_com },
+            isIssuedByKnownRoot: false,
+            verificationResult: "OK",
+        } as Request;
+
+        checkKeys(r);
+
+        expect(networkLogger.error).toHaveBeenCalledWith("Certificate Pinning failed for host", "mail.proton.me", {
+            issuer: "Interceptor Root CA",
+            isIssuedByKnownRoot: false,
+            verificationResult: "OK",
+        });
     });
 });
 

@@ -19,7 +19,11 @@ export const checkKeys = (request: Request) => {
 
         if (hasProtonMeCert(request)) return 0;
 
-        networkLogger.error("Certificate Pinning failed for host", request.hostname);
+        networkLogger.error("Certificate Pinning failed for host", request.hostname, {
+            issuer: request.certificate.issuerName,
+            isIssuedByKnownRoot: request.isIssuedByKnownRoot,
+            verificationResult: request.verificationResult,
+        });
         if (!appSessionPinningReported.has(request.hostname)) {
             appSessionPinningReported.add(request.hostname);
             sentryReport.reportMessage("certificate pinning failed", {
