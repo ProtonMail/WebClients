@@ -4,10 +4,11 @@ import { HorizontalRulePlugin } from '@lexical/react/LexicalHorizontalRulePlugin
 import { BuildInitialEditorConfig, ShouldBootstrap } from './InitialEditorConfig'
 import { lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type { Provider } from '@lexical/yjs'
-import type { YDocMap, DocStateInterface, DocumentRole } from '@proton/docs-shared'
+import type { Doc } from 'yjs'
 import type { EditorInitializationConfig } from './contract/EditorInitialization'
+import type { DocsDocumentAdapter } from './contract/DocsDocumentAdapter'
 import { v4 as uuidv4 } from 'uuid'
-import { DocProvider } from '@proton/docs-shared'
+import { DocsDocProvider } from './Plugins/Collaboration/DocsDocProvider'
 import { AnonymousUserDisplayName, getRandomAnonymousUserLetter } from './Utils/AnonymousUser'
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
 import { MarkdownShortcutPlugin } from '@lexical/react/LexicalMarkdownShortcutPlugin'
@@ -43,7 +44,7 @@ import { clsx } from 'clsx'
 import { ProtonLinkPlugin } from './Plugins/Link/LinkPlugin'
 import { FormattingPlugin } from './Plugins/FormattingPlugin'
 import { EditorUserMode } from './contract/EditorUserMode'
-import { EditorSystemMode } from '@proton/docs-shared/lib/EditorSystemMode'
+import { EditorSystemMode } from './contract/EditorSystemMode'
 import { BlockTypePlugin } from './Plugins/BlockTypePlugin'
 import { YjsReadonlyPlugin } from './Plugins/YjsReadonly/YjsReadonlyPlugin'
 import { FixBrokenListItemPlugin } from './Plugins/FixBrokenListItemPlugin'
@@ -61,11 +62,10 @@ const EmojiAutocompletePlugin = lazy(() => import('./Plugins/emoji/EmojiAutocomp
 const TypingBotEnabled = false
 
 export type EditorProps = {
-  docMap: YDocMap
-  docState: DocStateInterface
+  docMap: Map<string, Doc>
+  docState: DocsDocumentAdapter
   documentId: string
   editingLocked: boolean
-  role: DocumentRole
   onEditorError: (error: Error) => void
   hidden: boolean
   editorInitializationConfig?: EditorInitializationConfig
@@ -88,7 +88,6 @@ export function Editor({
   documentId,
   editingLocked,
   editorInitializationConfig,
-  role,
   hidden,
   onEditorError,
   onEditorReadyToReceiveUpdates,
@@ -112,6 +111,7 @@ export function Editor({
     emojiMessages,
     userName,
     isAlpha,
+    canEdit,
     logger,
     openLink,
     showGenericAlertModal,
@@ -140,7 +140,7 @@ export function Editor({
 
   const yjsWebsockProvider = useMemo(() => {
     const baseProvider = (): Provider => {
-      return new DocProvider(docState)
+      return new DocsDocProvider(docState.awareness)
     }
 
     return baseProvider
@@ -209,7 +209,7 @@ export function Editor({
         {(systemMode === EditorSystemMode.Edit || systemMode === EditorSystemMode.PublicView) && (
           <Toolbar
             onInteraction={reportToolbarInteraction}
-            hasEditAccess={role.canEdit()}
+            hasEditAccess={canEdit}
             isEditorHidden={hidden}
             onUserModeChange={onUserModeChange}
             systemMode={systemMode}

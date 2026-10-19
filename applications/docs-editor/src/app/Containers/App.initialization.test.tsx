@@ -1,20 +1,18 @@
 import { act, render } from '@testing-library/react'
 import type { ComponentProps, ReactNode } from 'react'
 import type { ClientRequiresEditorMethods, DocumentType, EditorInitializationConfig } from '@proton/docs-shared'
-import { EditorSystemMode } from '@proton/docs-shared'
 import { loadLocales } from '@proton/account/bootstrap'
 import { setDateLocales } from '@proton/shared/lib/i18n'
 import { enGBLocale, enUSLocale } from '@proton/shared/lib/i18n/dateFnLocales'
 import type { EditorConfig } from '../Lib/useBridge'
 import { reportErrorToSentry } from '../Utils/errorMessage'
 import { App } from './App'
-import { StandaloneDocsEditor } from './Docs/public'
+import { EditorSystemMode, StandaloneDocsEditor } from './Docs/public'
 import { EditorStateProvider } from './EditorStateProvider'
 
 jest.mock('@proton/docs-shared', () => ({
   BridgeOriginProvider: { GetClientOrigin: () => 'http://localhost' },
   EDITOR_READY_POST_MESSAGE_EVENT: 'editor-ready',
-  EditorSystemMode: { Edit: 'edit', Revision: 'revision', PublicView: 'public-view' },
 }))
 jest.mock('@proton/hooks/useEffectOnce', () => ({ __esModule: true, default: jest.fn() }))
 jest.mock('@proton/account/bootstrap', () => ({ loadLocales: jest.fn() }))
@@ -31,7 +29,10 @@ jest.mock('../Theme/EditorThemeProvider', () => {
 })
 jest.mock('./Docs/Conversion/Exporter/ExportDataFromEditorState', () => ({ exportDataFromEditorState: jest.fn() }))
 jest.mock('./Docs/PreviewModeEditor', () => ({ PreviewModeEditor: () => null }))
-jest.mock('./Docs/public', () => ({ StandaloneDocsEditor: jest.fn(() => null) }))
+jest.mock('./Docs/public', () => ({
+  StandaloneDocsEditor: jest.fn(() => null),
+  EditorSystemMode: jest.requireActual('./Docs/contract/EditorSystemMode').EditorSystemMode,
+}))
 jest.mock('./Spreadsheet/public', () => ({ StandaloneSheetsEditor: () => null }))
 jest.mock('./adapters/docs/DocsAdapter', () => ({ DocsAdapter: ({ children }: { children: ReactNode }) => children }))
 jest.mock('./adapters/sheets/SheetsAdapter', () => ({

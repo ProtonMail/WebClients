@@ -40,7 +40,7 @@ When a term has more than one meaning in code, the **Ambiguous** note says which
   - **`EditorToClientRequestHandler`** (`core/Bridge/`): answers editor calls in the client, delegating to `EditorOrchestrator`. Its editor-side counterpart is the `requestHandler` object in `editor/Containers/App.tsx`.
   - **`BridgeOriginProvider`** (`shared/Bridge/`): the expected client and editor origins, used as every `postMessage` target.
 - **`SyncedEditorState`**: properties the client mirrors into the editor (`userName`, `suggestionsEnabled`, `receivedEverythingFromRTS`...). `shared/State/SyncedEditorState.ts`.
-- **`EditorSystemMode`** (`Edit`, `Revision`, `PublicView`): the presentation mode, set by context, not the user. `shared/EditorSystemMode.ts`.
+- **`EditorSystemMode`** (`Edit`, `Revision`, `PublicView`): the presentation mode, set by context, not the user. The client uses `shared/EditorSystemMode.ts` and sends the value in the editor URL's `mode` parameter; the editor uses its copy in `editor/Containers/Docs/contract/EditorSystemMode.ts`. Change both together.
 - **`EditorUserMode`** (`Edit`, `Preview`, `Suggest`): the mode the user picks, limited by the system mode. `editor/Containers/Docs/contract/EditorUserMode.ts`.
   - **Ambiguous**: `EditorSystemMode.Edit` and `EditorUserMode.Edit` are different values. `EditorInitializationConfig.mode` (`creation` / `conversion`) and `DocumentAction` `mode` are unrelated to both.
 
