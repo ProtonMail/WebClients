@@ -1,8 +1,10 @@
 import type { PropsWithChildren, ReactNode } from 'react'
+import { useState } from 'react'
 import { act, fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { CommentThreadState, type CommentInterface, type CommentThreadInterface } from '@proton/docs-shared'
 import { CommentsPanelListComment } from './CommentsPanelListComment'
 import { useCommentsContext } from './CommentsContext'
+import { DeleteCommentDialog, type DeleteCommentDialogOptions } from './DeleteCommentDialog'
 import { DocsDependenciesProvider, type DocsDependencies } from '../../DocsDependenciesProvider'
 import { ACCEPT_SUGGESTION_COMMAND, REJECT_SUGGESTION_COMMAND } from '../Suggestions/Commands'
 
@@ -40,12 +42,17 @@ function DependenciesWrapper({ children }: PropsWithChildren) {
 const acceptSuggestion = jest.fn(() => Promise.resolve(true))
 const rejectSuggestion = jest.fn(() => Promise.resolve(true))
 const editComment = jest.fn(() => Promise.resolve(true))
+const deleteThread = jest.fn(() => Promise.resolve(true))
+const deleteComment = jest.fn(() => Promise.resolve(true))
+const removeMarkNode = jest.fn()
+const showDeleteDialog = jest.fn()
 
 type RenderOptions = {
   verified?: boolean
   author?: string
   awarenessColor?: string
   isFirstComment?: boolean
+  isSuggestionThread?: boolean
 }
 
 function renderComment({
@@ -53,6 +60,7 @@ function renderComment({
   author = 'other@proton.me',
   awarenessColor,
   isFirstComment = true,
+  isSuggestionThread = true,
 }: RenderOptions = {}) {
   jest.mocked(useCommentsContext).mockReturnValue({
     userAddress: 'me@proton.me',
@@ -60,6 +68,10 @@ function renderComment({
     acceptSuggestion,
     rejectSuggestion,
     editComment,
+    deleteThread,
+    deleteComment,
+    removeMarkNode,
+    showDeleteDialog,
     markNodeMap: new Map(),
     awarenessStates: awarenessColor ? [{ name: author, color: awarenessColor }] : [],
     canEdit: true,
@@ -93,7 +105,7 @@ function renderComment({
       comment={comment}
       thread={thread}
       isFirstComment={isFirstComment}
-      isSuggestionThread
+      isSuggestionThread={isSuggestionThread}
       setIsDeletingThread={jest.fn()}
     />,
     { wrapper: DependenciesWrapper },
@@ -109,8 +121,15 @@ async function expectTooltipShown(text: string) {
   await waitFor(() => expect(screen.getByText(text, { selector: '[role="tooltip"] *' })).toBeVisible())
 }
 
+function DeleteDialogHost() {
+  const [options, setOptions] = useState<DeleteCommentDialogOptions | null>(null)
+  showDeleteDialog.mockImplementation(setOptions)
+  return options && <DeleteCommentDialog {...options} onClose={() => setOptions(null)} />
+}
+
 afterEach(() => {
   jest.clearAllMocks()
+  showDeleteDialog.mockReset()
 })
 
 it('accepts the suggestion from its named button and shows the tooltip on focus', async () => {
@@ -162,6 +181,87 @@ it('leaves editing from the named cancel button', async () => {
 
   await waitFor(() => expect(screen.queryByRole('button', { name: 'Save' })).not.toBeInTheDocument())
   expect(editComment).not.toHaveBeenCalled()
+})
+
+it('asks to confirm deleting the thread, and confirming waits for the deletion before removing its mark', async () => {
+  let finishDeleting: (deleted: boolean) => void = () => {}
+  deleteThread.mockImplementationOnce(() => new Promise<boolean>((resolve) => (finishDeleting = resolve)))
+  renderComment({ author: 'me@proton.me', isSuggestionThread: false })
+
+  fireEvent.click(screen.getByRole('button', { name: 'More options' }))
+  fireEvent.click(await screen.findByRole('menuitem', { name: 'Delete thread' }))
+
+  expect(showDeleteDialog).toHaveBeenCalledTimes(1)
+  const [{ title, onDelete }] = showDeleteDialog.mock.calls[0]
+  expect(title).toBe('Delete thread')
+  expect(deleteThread).not.toHaveBeenCalled()
+
+  let deleted = false
+  let deletion = Promise.resolve()
+  act(() => {
+    deletion = onDelete().then(() => {
+      deleted = true
+    })
+  })
+  expect(deleteThread).toHaveBeenCalledWith('thread-id')
+  await act(() => Promise.resolve())
+  expect(deleted).toBe(false)
+
+  await act(async () => {
+    finishDeleting(true)
+    await deletion
+  })
+  expect(deleted).toBe(true)
+  expect(removeMarkNode).toHaveBeenCalledWith('mark-id')
+})
+
+it('asks to confirm deleting a reply, and confirming deletes only that comment', async () => {
+  renderComment({ author: 'me@proton.me', isFirstComment: false })
+
+  fireEvent.click(screen.getByRole('button', { name: 'More options' }))
+  fireEvent.click(await screen.findByRole('menuitem', { name: 'Delete comment' }))
+
+  const [{ title, onDelete }] = showDeleteDialog.mock.calls[0]
+  expect(title).toBe('Delete comment')
+  await act(() => onDelete())
+  expect(deleteComment).toHaveBeenCalledWith('thread-id', 'comment-id')
+  expect(removeMarkNode).not.toHaveBeenCalled()
+})
+
+it('returns focus to the options button when the delete dialog opened from its menu is dismissed', async () => {
+  render(<DeleteDialogHost />, { wrapper: DependenciesWrapper })
+  renderComment({ author: 'me@proton.me', isFirstComment: false })
+  const options = screen.getByRole('button', { name: 'More options' })
+  // JSDOM has no layout; Ariakit checks visibility before restoring focus.
+  Object.defineProperty(options, 'offsetWidth', { value: 1 })
+  act(() => options.focus())
+
+  fireEvent.click(options)
+  fireEvent.click(await screen.findByRole('menuitem', { name: 'Delete comment' }))
+  const cancel = await screen.findByRole('button', { name: 'Cancel' })
+  await waitFor(() => expect(cancel).toHaveFocus())
+  fireEvent.keyDown(cancel, { key: 'Escape' })
+
+  await waitFor(() => expect(screen.queryByRole('dialog')).not.toBeInTheDocument())
+  await waitFor(() => expect(options).toHaveFocus())
+  expect(deleteComment).not.toHaveBeenCalled()
+})
+
+it('returns focus to the options button shown again after a deletion fails', async () => {
+  // JSDOM has no layout; Ariakit checks visibility before restoring focus.
+  jest.spyOn(HTMLElement.prototype, 'offsetWidth', 'get').mockReturnValue(1)
+  deleteComment.mockResolvedValueOnce(false)
+  render(<DeleteDialogHost />, { wrapper: DependenciesWrapper })
+  renderComment({ author: 'me@proton.me', isFirstComment: false })
+
+  fireEvent.click(screen.getByRole('button', { name: 'More options' }))
+  fireEvent.click(await screen.findByRole('menuitem', { name: 'Delete comment' }))
+  fireEvent.click(await screen.findByRole('button', { name: 'Delete' }))
+
+  await waitFor(() => expect(screen.queryByRole('dialog')).not.toBeInTheDocument())
+  expect(deleteComment).toHaveBeenCalledWith('thread-id', 'comment-id')
+  await waitFor(() => expect(screen.getByRole('button', { name: 'More options' })).toHaveFocus())
+  jest.restoreAllMocks()
 })
 
 it('names the unverified signature warning and shows its tooltip on focus', async () => {
