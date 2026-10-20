@@ -11,8 +11,9 @@ import { useGetCalendarUserSettings } from '@proton/calendar/calendarUserSetting
 import { getEventsCount } from '@proton/shared/lib/api/calendars';
 import { getApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
 import { processInBatches } from '@proton/shared/lib/calendar/export/export';
-import type { ExportCalendarModel, ExportError, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
-import { EXPORT_ERRORS, EXPORT_STEPS } from '@proton/shared/lib/interfaces/calendar';
+import type { ExportCalendarModel, ExportError } from '@proton/shared/lib/interfaces/calendar/Export';
+import { EXPORT_ERRORS, EXPORT_STEPS } from '@proton/shared/lib/interfaces/calendar/Export';
+import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
 import DynamicProgress from '../../../components/progress/DynamicProgress';
 import { useGetCalendarInfo } from '../../../hooks/useGetCalendarInfo';

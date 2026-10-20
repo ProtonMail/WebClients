@@ -5,8 +5,8 @@ import { c } from 'ttag';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { IcCrossCircleFilled } from '@proton/icons/icons/IcCrossCircleFilled';
-import type { Domain } from '@proton/shared/lib/interfaces';
-import { DOMAIN_STATE } from '@proton/shared/lib/interfaces';
+import type { Domain } from '@proton/shared/lib/interfaces/Domain';
+import { DOMAIN_STATE } from '@proton/shared/lib/interfaces/Domain';
 
 import useModalState from '../../../components/modalTwo/useModalState';
 import TXTRecordModal from './TXTRecordModal';

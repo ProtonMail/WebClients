@@ -7,7 +7,7 @@ import { useApi } from '@proton/app-context/useApi';
 import { useDeclarativeLocalState } from '@proton/components/hooks/useDeclarativeLocalState.ts';
 import { getIsVpnB2BPlan } from '@proton/payments/core/plan/helpers';
 import { removeItem } from '@proton/shared/lib/helpers/storage';
-import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
+import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
 import noop from '@proton/utils/noop';
 

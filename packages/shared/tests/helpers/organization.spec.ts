@@ -1,5 +1,5 @@
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '../../lib/helpers/organization';
-import type { Organization } from '../../lib/interfaces';
+import type { Organization } from '../../lib/interfaces/Organization';
 
 describe('hasOrganizationSetup', () => {
     it('Should return false when RequiresKey not set', () => {

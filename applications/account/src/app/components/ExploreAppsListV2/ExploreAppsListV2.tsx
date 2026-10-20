@@ -17,8 +17,8 @@ import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getIsEventModified, getShouldProcessLinkClick } from '@proton/shared/lib/helpers/dom';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { goToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
-import type { User } from '@proton/shared/lib/interfaces';
-import { getIsBYOEAccount, getIsExternalAccount } from '@proton/shared/lib/keys';
+import type { User } from '@proton/shared/lib/interfaces/User';
+import { getIsBYOEAccount, getIsExternalAccount } from '@proton/shared/lib/keys/accountType';
 import {
     hasPaidDrive,
     hasPaidLumo,

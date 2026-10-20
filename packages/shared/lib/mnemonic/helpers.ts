@@ -1,9 +1,12 @@
 import { CryptoProxy } from '@protontech/crypto';
 import { computeKeyPassword, generateKeySalt } from '@protontech/crypto/srp';
 
-import { getHasMigratedAddressKeys } from '../../lib/keys';
 import { isPrivate, isSelf } from '../../lib/user/helpers';
-import type { Address, Api, DecryptedKey, User } from '../interfaces';
+import type { Address } from '../interfaces/Address';
+import type { Api } from '../interfaces/Api';
+import type { DecryptedKey } from '../interfaces/Key';
+import type { User } from '../interfaces/User';
+import { getHasMigratedAddressKeys } from '../keys/keyMigration';
 import { srpGetVerify } from '../srp';
 import { generateMnemonicBase64RandomBytes, generateMnemonicFromBase64RandomBytes } from './bip39Wrapper';
 

@@ -1,6 +1,6 @@
 import type { MutableRefObject } from 'react';
 
-import type { DecryptedKey } from '@proton/shared/lib/interfaces';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 
 import type { CachedItem, ESEvent, ESIndexingState, ESItem, ESItemInfo, ESStatus, ESTimepoint } from './interfaces';
 

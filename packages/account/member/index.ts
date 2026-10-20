@@ -7,7 +7,8 @@ import { getInitialModelState } from '@proton/redux-utilities/initialModelState'
 import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { getSelfMember } from '@proton/shared/lib/api/members';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
-import type { Member, User } from '@proton/shared/lib/interfaces';
+import type { Member } from '@proton/shared/lib/interfaces/Member';
+import type { User } from '@proton/shared/lib/interfaces/User';
 import { isAdmin, isMember } from '@proton/shared/lib/user/helpers';
 
 import type { AddressKeysState } from '../addressKeys';

@@ -1,5 +1,6 @@
 import { getOrganization as coreGetOrganization, getOrganizationKeys } from '@proton/shared/lib/api/organization';
-import type { Organization, OrganizationKey } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
+import type { OrganizationKey } from '@proton/shared/lib/interfaces/OrganizationKey';
 
 import type { OrganizationState } from '../../store/reducers/organization';
 import type {

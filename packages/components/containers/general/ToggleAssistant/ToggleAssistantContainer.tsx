@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Href } from '@proton/atoms/Href/Href';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
+import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces/UserSettings';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { getWritingAssistantTitle } from '../../../helpers/assistant';

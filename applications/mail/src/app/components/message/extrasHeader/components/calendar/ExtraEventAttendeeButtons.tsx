@@ -24,7 +24,7 @@ import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import type { Participant, SavedInviteData } from '@proton/shared/lib/interfaces/calendar';
+import type { Participant, SavedInviteData } from '@proton/shared/lib/interfaces/calendar/Invite';
 import type { RequireSome } from '@proton/shared/lib/interfaces/utils';
 import { EncryptionPreferencesError } from '@proton/shared/lib/mail/encryptionPreferences';
 import { RE_PREFIX, formatSubject } from '@proton/shared/lib/mail/messages';

@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
-import type { AuthLog } from '@proton/shared/lib/authlog';
+import type { AuthLog } from '@proton/shared/lib/authlog/AuthLog';
 import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/constants';
-import { SETTINGS_LOG_AUTH_STATE } from '@proton/shared/lib/interfaces';
+import { SETTINGS_LOG_AUTH_STATE } from '@proton/shared/lib/interfaces/UserSettings';
 import emptySearchSvg from '@proton/styles/assets/img/illustrations/empty-search.svg';
 import isTruthy from '@proton/utils/isTruthy';
 

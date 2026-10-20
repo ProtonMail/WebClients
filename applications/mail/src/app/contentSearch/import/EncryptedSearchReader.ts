@@ -8,11 +8,10 @@ import type {
     EncryptedMetadataItem,
     EncryptedSearchDB,
 } from '@proton/encrypted-search/lib/models';
-import type { DecryptedKey } from '@proton/shared/lib/interfaces';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 import isTruthy from '@proton/utils/isTruthy';
 
 import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSearch';
-
 import type { ImportIssue } from './Import';
 import { ImportIssueSeverity } from './Import';
 

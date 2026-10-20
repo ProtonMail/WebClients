@@ -1,18 +1,15 @@
+import { type AlgorithmInfo, CryptoProxy, type PrivateKeyReference, type PublicKeyReference } from '@protontech/crypto';
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
-import { type AlgorithmInfo, CryptoProxy, type PrivateKeyReference, type PublicKeyReference } from '@protontech/crypto';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import type {
-    Address,
-    AddressKey,
-    DecryptedAddressKey,
-    DecryptedKey,
-    Key,
-    SignedKeyListItem,
-    SimpleMap,
-    UserModel,
-} from '@proton/shared/lib/interfaces';
-import { ParsedSignedKeyList, getDecryptedOrganizationKey, splitKeys } from '@proton/shared/lib/keys';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { AddressKey, DecryptedAddressKey, DecryptedKey, Key } from '@proton/shared/lib/interfaces/Key';
+import type { SignedKeyListItem } from '@proton/shared/lib/interfaces/SignedKeyList';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import { getDecryptedOrganizationKey } from '@proton/shared/lib/keys/getDecryptedOrganizationKey';
+import { splitKeys } from '@proton/shared/lib/keys/keys';
+import { ParsedSignedKeyList } from '@proton/shared/lib/keys/parsedSignedKeyList';
 import noop from '@proton/utils/noop';
 import unique from '@proton/utils/unique';
 
@@ -160,13 +157,10 @@ export const getAddressKeysMetadata = ({
         );
 
         return {
-            addressKeyMetadataList: addressKeyMetadataList.map(
-                (result): KeyMetadata<AddressKey> => ({
-                    ...result,
-                    invalidKeyError:
-                        inactiveAddressKeyErrorsMap[result.Key.ID] || activeAddressKeyErrorsMap[result.Key.ID],
-                })
-            ),
+            addressKeyMetadataList: addressKeyMetadataList.map((result): KeyMetadata<AddressKey> => ({
+                ...result,
+                invalidKeyError: inactiveAddressKeyErrorsMap[result.Key.ID] || activeAddressKeyErrorsMap[result.Key.ID],
+            })),
             existingAlgorithms,
             signedKeyListMap,
             existsPrimaryKeyV6,

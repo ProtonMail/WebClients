@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import busy, { domIsBusy } from '@proton/shared/lib/busy';
+import busy, { domIsBusy } from '@proton/shared/lib/busy/busy';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { loadLocales } from '@proton/shared/lib/i18n/loadLocale';
 import { locales } from '@proton/shared/lib/i18n/locales';

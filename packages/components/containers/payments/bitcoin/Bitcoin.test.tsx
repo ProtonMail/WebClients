@@ -5,7 +5,7 @@ import useBitcoin, { BITCOIN_POLLING_INTERVAL } from '@proton/payments-ui/react-
 import { createToken, getTokenStatusV5 } from '@proton/payments/core/api/api';
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '@proton/payments/core/constants';
 import type { Currency } from '@proton/payments/core/interface';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import { addApiMock, apiMock } from '@proton/test-api/api';
 import { flushPromises } from '@proton/test-api/flush-promises';
 

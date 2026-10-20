@@ -4,7 +4,7 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { addDomain, deleteDomain as deleteDomainConfig, getDomain } from '@proton/shared/lib/api/domains';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import type { Domain } from '@proton/shared/lib/interfaces';
+import type { Domain } from '@proton/shared/lib/interfaces/Domain';
 
 import { type OrganizationState, organizationThunk } from '../organization';
 import { type DomainsState, removeDomain, upsertDomain } from './index';

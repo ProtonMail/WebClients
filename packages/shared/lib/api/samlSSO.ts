@@ -1,4 +1,4 @@
-import { IDP_TYPE } from '../interfaces';
+import { IDP_TYPE } from '../interfaces/SSO';
 
 export const getSAMLConfigs = () => ({
     url: 'core/v4/saml/configs',

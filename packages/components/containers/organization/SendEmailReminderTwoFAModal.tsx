@@ -8,7 +8,8 @@ import { useLoading } from '@proton/hooks';
 import { sendEmailReminderTwoFA } from '@proton/shared/lib/api/organization';
 import { MEMBER_ROLE } from '@proton/shared/lib/constants';
 import { getInitials } from '@proton/shared/lib/helpers/string';
-import type { Address, Member, PartialMemberAddress } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { Member, PartialMemberAddress } from '@proton/shared/lib/interfaces/Member';
 import noop from '@proton/utils/noop';
 
 import { Badge } from '../../components/badge/Badge';

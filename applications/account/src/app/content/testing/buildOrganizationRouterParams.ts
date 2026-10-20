@@ -8,7 +8,9 @@ import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitleme
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { makeEntitlements } from '@proton/payments/testing/makeEntitlements';
 import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
-import { type Group, type GroupFlags, type OrganizationExtended, PERMISSIONS } from '@proton/shared/lib/interfaces';
+import type { Group, GroupFlags } from '@proton/shared/lib/interfaces/Group';
+import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';
+import { PERMISSIONS } from '@proton/shared/lib/interfaces/UserPermission';
 
 import type { Flags, OrganizationRouterParams } from '../router-params';
 

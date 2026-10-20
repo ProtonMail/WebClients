@@ -8,7 +8,7 @@ import TableHeader from '@proton/components/components/table/TableHeader';
 import TableRow from '@proton/components/components/table/TableRow';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcCross } from '@proton/icons/icons/IcCross';
-import type { SimpleMap } from '@proton/shared/lib/interfaces';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 import AuthDeviceItem from './AuthDeviceItem';
 import type { PendingAdminActivation, PendingAdminActivations } from './memberAuthDevices';

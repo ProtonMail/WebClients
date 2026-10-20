@@ -22,7 +22,7 @@ import type {
 } from '@proton/payments/core/interface';
 import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
 import { type PaymentsCaptureOptions, tracePaymentError } from '@proton/payments/sentry/capture';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import noop from '@proton/utils/noop';
 
 import { abortSignalAny } from '../client-extensions/validators/AbortSignalAny';

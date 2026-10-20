@@ -18,7 +18,7 @@ import { DrawerProvider } from '@proton/components/hooks/drawer/useDrawer';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
-import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
+import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces/UserSettings';
 import { UnleashFlagProviderWithToolbar } from '@proton/unleash/UnleashFlagProviderWithToolbar';
 
 import { bootstrapApp } from './bootstrap';

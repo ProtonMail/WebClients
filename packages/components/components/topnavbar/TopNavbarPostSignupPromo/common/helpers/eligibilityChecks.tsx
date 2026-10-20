@@ -6,7 +6,8 @@ import { isManagedExternally } from '@proton/payments/core/subscription/helpers'
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { isFreeSubscription, isValidPlanName } from '@proton/payments/core/type-guards';
 import { APPS } from '@proton/shared/lib/constants';
-import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
 
 import OfferSubscription from '../../../../../containers/offers/helpers/offerSubscription';

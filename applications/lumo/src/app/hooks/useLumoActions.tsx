@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 
 import { useApi } from '@proton/app-context/useApi';
-import type { User } from '@proton/shared/lib/interfaces';
+import type { User } from '@proton/shared/lib/interfaces/User';
 
 import { buildArtifactActionLlmPrompt } from '../components/Conversation/artifact/artifactActionPrompts';
 import { markArtifactTelemetryLiveMessage } from '../components/Conversation/artifact/artifactVersionTelemetry';

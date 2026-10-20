@@ -5,7 +5,7 @@ import { BookingLocation } from '@proton/calendar/bookings/types';
 import type { BookingPageEditData } from '@proton/calendar/bookings/types';
 import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
 import { convertUTCDateTimeToZone, fromUTCDate, getTimezone, toLocalDate } from '@proton/shared/lib/date/timezone';
-import type { UserSettings } from '@proton/shared/lib/interfaces';
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import type {
     CalendarBootstrap,
     CalendarUserSettings,

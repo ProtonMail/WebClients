@@ -1,4 +1,4 @@
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import type { DownloadCallbacks, DownloadStreamControls, LinkDownload, LogCallback } from '../interface';
 import initDownloadLinkFile from './downloadLinkFile';

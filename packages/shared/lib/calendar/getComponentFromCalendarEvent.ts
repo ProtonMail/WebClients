@@ -1,4 +1,4 @@
-import type { CalendarEvent, SharedVcalVeventComponent } from '../interfaces/calendar';
+import type { CalendarEvent, SharedVcalVeventComponent } from '../interfaces/calendar/Event';
 import { CALENDAR_CARD_TYPE } from './constants';
 import { unwrap } from './helper';
 import { parse } from './vcal';

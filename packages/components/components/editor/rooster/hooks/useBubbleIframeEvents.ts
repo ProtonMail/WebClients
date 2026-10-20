@@ -2,7 +2,7 @@ import type { RefObject } from 'react';
 import { useCallback, useEffect } from 'react';
 
 import { cloneEvent, isKeyboardEvent } from '@proton/shared/lib/helpers/events';
-import { KeyboardKey } from '@proton/shared/lib/interfaces';
+import { KeyboardKey } from '@proton/shared/lib/interfaces/Hotkeys';
 import { isValidShortcut } from '@proton/shared/lib/shortcuts/helpers';
 import { editorShortcuts } from '@proton/shared/lib/shortcuts/mail';
 

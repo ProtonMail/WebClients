@@ -32,7 +32,7 @@ import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
-import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
+import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces/UserSettings';
 import { UnleashFlagProviderWithToolbar } from '@proton/unleash/UnleashFlagProviderWithToolbar';
 import { ExtendedApiProvider } from '@proton/wallet/contexts';
 import type { WalletStore } from '@proton/wallet/store/store';

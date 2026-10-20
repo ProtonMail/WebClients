@@ -4,9 +4,10 @@ import { getBusySlots } from '@proton/shared/lib/api/calendars';
 import { BUSY_TIME_SLOTS_MAX_ATTENDEES_DISPLAYED } from '@proton/shared/lib/calendar/constants';
 import { ACCENT_COLORS } from '@proton/shared/lib/colors';
 import { convertZonedDateTimeToUTC, fromUTCDate, toUTCDate } from '@proton/shared/lib/date/timezone';
-import type { Api } from '@proton/shared/lib/interfaces';
-import type { CalendarWithOwnMembers, GetBusySlotsResponse } from '@proton/shared/lib/interfaces/calendar';
-import { BUSY_TIME_SLOT_TYPE } from '@proton/shared/lib/interfaces/calendar';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { GetBusySlotsResponse } from '@proton/shared/lib/interfaces/calendar/Api';
+import { BUSY_TIME_SLOT_TYPE } from '@proton/shared/lib/interfaces/calendar/Api';
+import type { CalendarWithOwnMembers } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import diff from '@proton/utils/diff';
 
 import type { CalendarState } from '../store';

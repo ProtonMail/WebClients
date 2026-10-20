@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { useGroupMemberships } from '@proton/account/groupMemberships/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
-import type { GroupMembership } from '@proton/shared/lib/interfaces';
+import type { GroupMembership } from '@proton/shared/lib/interfaces/GroupMember';
 
 import Loader from '../../../components/loader/Loader';
 import Table from '../../../components/table/Table';

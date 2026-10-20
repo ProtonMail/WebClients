@@ -7,7 +7,7 @@ import {
     getHasNonCancelledSingleEdits,
     getMustResetPartstat,
 } from '@proton/shared/lib/calendar/mailIntegration/invite';
-import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar/Event';
 import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
 import type { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';

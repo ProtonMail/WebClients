@@ -31,9 +31,10 @@ import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
 import { toUTCDate } from '@proton/shared/lib/date/timezone';
 import createCache from '@proton/shared/lib/helpers/cache';
-import type { Nullable, UserSettings } from '@proton/shared/lib/interfaces';
-import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
-import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
+import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces/UserSettings';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
+import type { Nullable } from '@proton/shared/lib/interfaces/utils';
 import { mockApiWithServer } from '@proton/test-api/mockApiWithServer';
 import { useFlag } from '@proton/unleash/useFlag';
 

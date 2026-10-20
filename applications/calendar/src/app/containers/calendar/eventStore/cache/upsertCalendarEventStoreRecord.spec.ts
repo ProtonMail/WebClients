@@ -5,7 +5,7 @@ import type {
     CalendarEvent,
     CalendarEventBlobData,
     CalendarEventSharedData,
-} from '@proton/shared/lib/interfaces/calendar';
+} from '@proton/shared/lib/interfaces/calendar/Event';
 
 import { getHasUpdatedAttendees, getHasUpdatedEventData } from './upsertCalendarEventStoreRecord';
 

@@ -3,8 +3,9 @@ import type { SessionKey } from '@protontech/crypto';
 import { encryptSlotBookingSharedKeyPackets } from '@proton/calendar/bookings/crypto/bookingEncryption';
 import { getIsAddressActive, getIsAddressExternal, getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
-import type { Address } from '@proton/shared/lib/interfaces';
-import type { CalendarUserSettings, DecryptedCalendarKey } from '@proton/shared/lib/interfaces/calendar';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar/Calendar';
+import type { DecryptedCalendarKey } from '@proton/shared/lib/interfaces/calendar/CalendarKey';
 
 export type AttendeeSharedKeyPacketResult =
     { type: 'success'; keyPacket: string } | { type: 'skipped' } | { type: 'disabled_address' };

@@ -13,7 +13,7 @@ import { getPlanFromPlanIDs } from '@proton/payments/core/plan/helpers';
 import type { PlansMap } from '@proton/payments/core/plan/interface';
 import { getRenewCycle } from '@proton/payments/core/renewals';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
-import { Audience } from '@proton/shared/lib/interfaces';
+import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import clsx from '@proton/utils/clsx';
 
 import SaveLabel from './SaveLabel';

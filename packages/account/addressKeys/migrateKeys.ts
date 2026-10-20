@@ -5,7 +5,7 @@ import { createKeyMigrationKTVerifier } from '@proton/key-transparency/shared';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { getHasMigratedAddressKeys, migrateMemberAddressKeys, migrateUser } from '@proton/shared/lib/keys';
+import { getHasMigratedAddressKeys, migrateMemberAddressKeys, migrateUser } from '@proton/shared/lib/keys/keyMigration';
 
 import { type AddressesState, addressesThunk } from '../addresses';
 import type { KtState } from '../kt';

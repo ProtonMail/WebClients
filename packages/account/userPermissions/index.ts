@@ -7,7 +7,8 @@ import { getInitialModelState } from '@proton/redux-utilities/initialModelState'
 import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { getUserPermissions } from '@proton/shared/lib/api/userPermissions';
 import { USER_ROLES } from '@proton/shared/lib/constants';
-import { type OrgPermissions, PERMISSIONS, type User, type UserPermission } from '@proton/shared/lib/interfaces';
+import type { User } from '@proton/shared/lib/interfaces/User';
+import { type OrgPermissions, PERMISSIONS, type UserPermission } from '@proton/shared/lib/interfaces/UserPermission';
 
 import { serverEvent } from '../eventLoop';
 import { getIsOrganizationOwner, isOwnerRole } from '../organizationRoles/helpers';

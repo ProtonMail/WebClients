@@ -1,7 +1,8 @@
 import type { ReactNode, RefObject } from 'react';
 import { useCallback } from 'react';
 
-import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 

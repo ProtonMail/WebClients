@@ -4,8 +4,8 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { Href } from '@proton/atoms/Href/Href';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getBlogURL } from '@proton/shared/lib/helpers/url';
-import type { Domain } from '@proton/shared/lib/interfaces';
-import { DKIM_STATE } from '@proton/shared/lib/interfaces';
+import type { Domain } from '@proton/shared/lib/interfaces/Domain';
+import { DKIM_STATE } from '@proton/shared/lib/interfaces/Domain';
 
 import Alert from '../../components/alert/Alert';
 import Copy from '../../components/button/Copy';

@@ -2,8 +2,10 @@ import type { PrivateKeyReference, PrivateKeyReferenceV4 } from '@protontech/cry
 import { CryptoProxy, toPublicKeyReference } from '@protontech/crypto';
 
 import { KEYGEN_CONFIGS, KEYGEN_TYPES } from '../../lib/constants';
-import type { Key, KeyGenConfig, KeyGenConfigV6 } from '../../lib/interfaces';
-import { generateAddressKey, generateAddressKeyTokens, generateUserKey } from '../../lib/keys';
+import type { Key } from '../../lib/interfaces/Key';
+import type { KeyGenConfig, KeyGenConfigV6 } from '../../lib/interfaces/KeyGenConfig';
+import { generateAddressKey, generateAddressKeyTokens } from '../../lib/keys/addressKeys';
+import { generateUserKey } from '../../lib/keys/userKeys';
 
 const defaultKeyGenConfig = KEYGEN_CONFIGS[KEYGEN_TYPES.CURVE25519];
 

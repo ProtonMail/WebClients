@@ -13,12 +13,9 @@ import { modelToNotifications } from '@proton/shared/lib/calendar/alarms/modelTo
 import { getIsHolidaysCalendar, getShowDuration } from '@proton/shared/lib/calendar/calendar';
 import { CALENDAR_SHARE_BUSY_TIME_SLOTS, MAX_DEFAULT_NOTIFICATIONS } from '@proton/shared/lib/calendar/constants';
 import { getCalendarEventDefaultDuration } from '@proton/shared/lib/calendar/eventDefaults';
-import type {
-    CalendarBootstrap,
-    NotificationModel,
-    SubscribedCalendar,
-    VisualCalendar,
-} from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarBootstrap, VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
+import type { NotificationModel } from '@proton/shared/lib/interfaces/calendar/Notification';
+import type { SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar/Subscription';
 
 import Option from '../../../components/option/Option';
 import SelectTwo from '../../../components/selectTwo/SelectTwo';

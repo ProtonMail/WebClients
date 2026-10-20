@@ -7,7 +7,8 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { acceptGroupOwnerInvite as acceptGroupOwnerInviteApi } from '@proton/shared/lib/api/groups';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import type { Api, GroupOwnerInvite } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { GroupOwnerInvite } from '@proton/shared/lib/interfaces/GroupMember';
 import { encryptGroupOwnerTokenPackets } from '@proton/shared/lib/keys/groupKeys';
 
 import { getAddressKeysByUsageThunk } from '../addressKeys/getAddressKeysByUsage';

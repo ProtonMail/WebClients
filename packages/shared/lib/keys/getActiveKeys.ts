@@ -2,17 +2,17 @@ import type { PrivateKeyReferenceV4, PrivateKeyReferenceV6, PublicKeyReference }
 
 import { KEY_FLAG } from '../constants';
 import { clearBit } from '../helpers/bitset';
-import type { DecryptedAddressKey } from '../interfaces';
+import type { Address } from '../interfaces/Address';
+import type { DecryptedAddressKey } from '../interfaces/Key';
 import {
     type ActiveAddressKeysByVersion,
     type ActiveKey,
     type ActiveKeyWithVersion,
-    type Address,
     type DecryptedKey,
     type Key,
-    type SignedKeyList,
     isActiveKeyV6,
-} from '../interfaces';
+} from '../interfaces/Key';
+import type { SignedKeyList } from '../interfaces/SignedKeyList';
 import { getDefaultKeyFlags } from './keyFlags';
 import { ParsedSignedKeyList } from './parsedSignedKeyList';
 

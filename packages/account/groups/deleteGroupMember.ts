@@ -2,7 +2,9 @@ import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { deleteGroupMember as deleteGroupMemberApi } from '@proton/shared/lib/api/groups';
-import type { Group, GroupMember, Member } from '@proton/shared/lib/interfaces';
+import type { Group } from '@proton/shared/lib/interfaces/Group';
+import type { GroupMember } from '@proton/shared/lib/interfaces/GroupMember';
+import type { Member } from '@proton/shared/lib/interfaces/Member';
 
 import { type GroupMembersState, groupMembersActions } from '../groupMembers';
 import { type MembersState, invalidateMemberRoles } from '../members';

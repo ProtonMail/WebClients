@@ -2,7 +2,7 @@ import { CALENDAR_CARD_TYPE } from '@proton/shared/lib/calendar/constants';
 import { unwrap } from '@proton/shared/lib/calendar/helper';
 import { parse } from '@proton/shared/lib/calendar/vcal';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar/Event';
 
 import type { CalendarVcalVeventComponent, SharedVcalVeventComponent } from '../interface';
 

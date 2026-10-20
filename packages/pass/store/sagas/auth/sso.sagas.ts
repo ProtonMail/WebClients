@@ -1,7 +1,9 @@
 import { select } from 'redux-saga/effects';
 
 import { rejectAuthDeviceConfig } from '@proton/shared/lib/api/authDevice';
-import type { Address, DecryptedAddressKey, User } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces/Key';
+import type { User } from '@proton/shared/lib/interfaces/User';
 import type { AuthDeviceOutput, DeviceSecretData } from '@proton/shared/lib/keys/device';
 import { getAllAuthDevices } from '@proton/shared/lib/keys/device';
 import {

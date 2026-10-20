@@ -9,8 +9,8 @@ import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { APPS, MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { hasReachedFolderLimit, hasReachedLabelLimit } from '@proton/shared/lib/helpers/folder';
-import type { Label } from '@proton/shared/lib/interfaces';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
 
 import { useLabelActionsContext } from './EditLabelContext';
 

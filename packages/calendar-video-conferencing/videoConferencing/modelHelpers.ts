@@ -1,8 +1,6 @@
-import type {
-    EventModelReadView,
-    VIDEO_CONFERENCE_PROVIDER,
-    VcalVeventComponent,
-} from '@proton/shared/lib/interfaces/calendar';
+import type { VIDEO_CONFERENCE_PROVIDER } from '@proton/shared/lib/interfaces/calendar/Api';
+import type { EventModelReadView } from '@proton/shared/lib/interfaces/calendar/Event';
+import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
 const isVcalEvent = (model: EventModelReadView | VcalVeventComponent): model is VcalVeventComponent => {
     return 'component' in model;

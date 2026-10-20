@@ -28,15 +28,13 @@ import { getSubscriptionState } from '@proton/payments/testing/redux-state';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import { APPS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import type {
-    ApiEnvironmentConfig,
-    CachedOrganizationKey,
-    DecryptedKey,
-    ProtonConfig,
-    UserModel,
-    UserSettings,
-} from '@proton/shared/lib/interfaces';
-import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
+import type { ApiEnvironmentConfig } from '@proton/shared/lib/interfaces/ApiEnvironmentConfig';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
+import type { CachedOrganizationKey } from '@proton/shared/lib/interfaces/OrganizationKey';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
+import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar/Calendar';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 import { DEFAULT_MAIL_SETTINGS, DELAY_IN_SECONDS, PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
 
 import { ComposerAssistantProvider } from '../../components/assistant/provider/ComposerAssistantProvider';

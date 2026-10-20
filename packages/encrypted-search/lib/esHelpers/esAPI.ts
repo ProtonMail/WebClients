@@ -2,7 +2,7 @@ import { getIsOfflineError, getIsTimeoutError, isNotExistError } from '@proton/s
 import { SECOND } from '@proton/shared/lib/constants';
 import { randomDelay } from '@proton/shared/lib/helpers/metrics';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import { ES_MAX_RETRIES, ES_TEMPORARY_ERRORS } from '../constants';
 import { readNumMetadata } from '../esIDB/metadata';

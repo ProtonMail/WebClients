@@ -1,7 +1,8 @@
 import { useRef } from 'react';
 
 import { SETTINGS_VIEW, VIEWS } from '@proton/shared/lib/calendar/constants';
-import { endOfWeek, startOfWeek } from '@proton/shared/lib/date-fns-utc';
+import endOfWeek from '@proton/shared/lib/date-fns-utc/endOfWeek';
+import startOfWeek from '@proton/shared/lib/date-fns-utc/startOfWeek';
 import noop from '@proton/utils/noop';
 
 import TimeGrid from '../../components/calendar/TimeGrid';

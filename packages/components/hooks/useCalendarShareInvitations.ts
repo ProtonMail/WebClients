@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useApi } from '@proton/app-context/useApi';
 import { useLoading } from '@proton/hooks';
 import { getAllInvitations } from '@proton/shared/lib/api/calendars';
-import type { CalendarMemberInvitation } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarMemberInvitation } from '@proton/shared/lib/interfaces/calendar/CalendarMember';
 import noop from '@proton/utils/noop';
 
 const useCalendarShareInvitations = () => {

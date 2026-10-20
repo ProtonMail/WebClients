@@ -5,7 +5,7 @@ import { useGetUser } from '@proton/account/user/hooks';
 import { getDrive } from '@proton/drive';
 import type { BusDriverClient } from '@proton/drive/modules/busDriver';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
-import type { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { EasySwitchUserType, NO_USER_INFO } from './getEasySwitchSidebarUserType';

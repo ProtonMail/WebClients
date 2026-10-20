@@ -8,7 +8,8 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { useGetCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import { useLoading } from '@proton/hooks';
 import { getActiveAddresses, getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
-import type { CalendarViewModelFull, SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarViewModelFull, VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
+import type { SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar/Subscription';
 
 import { getCalendarModel } from '../calendarModal/personalCalendarModal/calendarModalState';
 

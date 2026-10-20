@@ -1,5 +1,5 @@
 import type { RecentDocumentsItem } from '@proton/docs-core'
-import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts'
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact'
 import { c } from 'ttag'
 
 export function getOwnerName(

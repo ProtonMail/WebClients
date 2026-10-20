@@ -1,7 +1,7 @@
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import type { ResignSKLWithPrimaryKeyArguments } from '@proton/shared/lib/interfaces';
-import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
-import { getSignedKeyListSignature } from '@proton/shared/lib/keys';
+import type { ResignSKLWithPrimaryKeyArguments } from '@proton/shared/lib/interfaces/KeyTransparency';
+import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
+import { getSignedKeyListSignature } from '@proton/shared/lib/keys/signedKeyList';
 
 import { fetchSignedKeyLists, fetchVerifiedEpoch, updateSignedKeyListSignature } from '../helpers/apiHelpers';
 import { KT_ERROR_TYPE, ktSentryReportError } from '../helpers/utils';

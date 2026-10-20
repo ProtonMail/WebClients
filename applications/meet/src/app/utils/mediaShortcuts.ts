@@ -1,5 +1,5 @@
 import { altKey, isMac, metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';
-import { KeyboardKey } from '@proton/shared/lib/interfaces';
+import { KeyboardKey } from '@proton/shared/lib/interfaces/Hotkeys';
 
 /**
  * Single source of truth for the camera/microphone toggle keyboard shortcuts.

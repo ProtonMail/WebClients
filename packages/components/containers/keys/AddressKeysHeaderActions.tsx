@@ -2,7 +2,7 @@ import type { ChangeEvent } from 'react';
 
 import { c } from 'ttag';
 
-import type { Address } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
 import isTruthy from '@proton/utils/isTruthy';
 
 import DropdownActions from '../../components/dropdown/DropdownActions';

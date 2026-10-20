@@ -1,7 +1,7 @@
 import { createContext, useContext, useMemo } from 'react';
 
 import type { AssistantSubscriptionStatus } from '@proton/components/hooks/assistant/useAssistantSubscriptionStatus';
-import type { ASSISTANT_TYPE, ERROR_TYPE } from '@proton/shared/lib/assistant';
+import type { ASSISTANT_TYPE, ERROR_TYPE } from '@proton/shared/lib/assistant/types';
 
 import type { Action, AssistantConfig, GenerationCallback, OpenedAssistant, OpenedAssistantStatus } from '../types';
 import type { AssistantError } from './useAssistantErrors';

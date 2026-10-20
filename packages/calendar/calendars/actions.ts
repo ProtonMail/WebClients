@@ -7,7 +7,7 @@ import { updateMember } from '@proton/shared/lib/api/calendars';
 import { updateOrganizationSettings } from '@proton/shared/lib/api/organization';
 import { CALENDAR_DISPLAY } from '@proton/shared/lib/calendar/constants';
 import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
-import type { OrganizationSettingsBooleanProperties } from '@proton/shared/lib/interfaces';
+import type { OrganizationSettingsBooleanProperties } from '@proton/shared/lib/interfaces/Organization';
 
 import { type CalendarsState, calendarsActions, calendarsThunk } from './index';
 

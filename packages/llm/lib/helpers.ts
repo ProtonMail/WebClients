@@ -1,8 +1,9 @@
-import { GENERATION_TYPE, checkHardwareForAssistant } from '@proton/shared/lib/assistant';
+import { checkHardwareForAssistant } from '@proton/shared/lib/assistant/checkHardwareForAssistant';
+import { GENERATION_TYPE } from '@proton/shared/lib/assistant/types';
 import { isChromiumBased, isFirefox, isMobile } from '@proton/shared/lib/helpers/browser';
 import { getMessageEventType } from '@proton/shared/lib/helpers/messageEvent';
 import { getApiSubdomainUrl, isURLProtonInternal } from '@proton/shared/lib/helpers/url';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import window from '@proton/shared/lib/window';
 
 import { getAssistantModels } from './api';

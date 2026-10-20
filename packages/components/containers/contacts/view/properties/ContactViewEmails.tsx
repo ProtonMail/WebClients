@@ -6,7 +6,7 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { getSortedProperties } from '@proton/shared/lib/contacts/properties';
-import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 
 import Copy from '../../../../components/button/Copy';

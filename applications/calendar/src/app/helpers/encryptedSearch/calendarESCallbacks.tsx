@@ -15,7 +15,7 @@ import type {
 import { getEventsCount, queryLatestModelEventID } from '@proton/shared/lib/api/calendars';
 import { getLatestID } from '@proton/shared/lib/api/events';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
 import chunk from '@proton/utils/chunk';
 

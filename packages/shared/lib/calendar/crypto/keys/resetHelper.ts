@@ -4,8 +4,8 @@ import { CacheType } from '@proton/redux-utilities/interface';
 
 import { getSilentApi } from '../../../api/helpers/customConfig';
 import getHasSharedCalendars from '../../../calendar/sharing/getHasSharedCalendars';
-import type { Api } from '../../../interfaces';
-import type { VisualCalendar } from '../../../interfaces/calendar';
+import type { Api } from '../../../interfaces/Api';
+import type { VisualCalendar } from '../../../interfaces/calendar/Calendar';
 import type { GetAddressKeys } from '../../../interfaces/hooks/GetAddressKeys';
 import type { GetAddresses } from '../../../interfaces/hooks/GetAddresses';
 import type { GetCalendarBootstrap } from '../../../interfaces/hooks/GetCalendarBootstrap';

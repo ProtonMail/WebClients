@@ -11,7 +11,8 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { mockUseFeatureBarrel } from '@proton/features/testing/mockUseFeatureBarrel';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { ADDRESS_FLAGS, ADDRESS_STATUS, ADDRESS_TYPE } from '@proton/shared/lib/constants';
-import type { Address, UserModel } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { SortableList } from '../../components/dnd/SortableList';
@@ -39,7 +40,7 @@ const mockedOrderAddresses = orderAddresses as jest.MockedFunction<typeof orderA
 jest.mock('@proton/redux-shared-store/sharedProvider');
 const mockedUseDispatch = useDispatch as jest.MockedFunction<typeof useDispatch>;
 
-jest.mock('@proton/shared/lib/helpers/upsell.ts', () => ({ __esModule: true, getUpsellRef: () => '' }));
+jest.mock('@proton/shared/lib/helpers/upsell', () => ({ __esModule: true, getUpsellRef: () => '' }));
 
 jest.mock('../../components/dnd/SortableList');
 const ActualSortableList = jest.requireActual('../../components/dnd/SortableList').SortableList;

@@ -1,7 +1,7 @@
 import { canKeyEncryptAndDecrypt } from '@protontech/crypto';
 
-import type { AddressKey, KeyPair, KeysPair } from '@proton/shared/lib/interfaces';
-import { getAddressKeyPassword, getDecryptedAddressKey } from '@proton/shared/lib/keys';
+import type { AddressKey, KeyPair, KeysPair } from '@proton/shared/lib/interfaces/Key';
+import { getAddressKeyPassword, getDecryptedAddressKey } from '@proton/shared/lib/keys/addressKeys';
 
 enum InvalidKeyErrorEnum {
     AddressKeySuccessError = 0,

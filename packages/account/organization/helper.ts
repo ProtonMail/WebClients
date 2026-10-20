@@ -1,5 +1,5 @@
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { type User, UserLockedFlags } from '@proton/shared/lib/interfaces';
+import { type User, UserLockedFlags } from '@proton/shared/lib/interfaces/User';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 
 const getIsOrgAdminUserInLockedState = (user: User) =>

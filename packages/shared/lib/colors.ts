@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
-import type { SimpleMap } from './interfaces';
+import type { SimpleMap } from './interfaces/utils';
 
 export const ACCENT_COLORS_MAP = {
     purple: { color: '#8080FF', getName: () => c('color').t`purple` },

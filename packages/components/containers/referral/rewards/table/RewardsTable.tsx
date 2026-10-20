@@ -2,8 +2,8 @@ import { c } from 'ttag';
 
 import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
 import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
-import type { Referral } from '@proton/shared/lib/interfaces';
-import { ReferralState } from '@proton/shared/lib/interfaces';
+import type { Referral } from '@proton/shared/lib/interfaces/Referrals';
+import { ReferralState } from '@proton/shared/lib/interfaces/Referrals';
 
 import Table from '../../../../components/table/Table';
 import TableBody from '../../../../components/table/TableBody';

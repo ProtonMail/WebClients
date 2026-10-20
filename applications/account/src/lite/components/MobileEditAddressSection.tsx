@@ -12,7 +12,7 @@ import { InputField as InputFieldTwo } from '@proton/components/components/v2/fi
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import type { WithLoading } from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import type { Address } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
 import { formatSignature } from '@proton/shared/lib/mail/signature';
 
 import MobileSectionLabel from './MobileSectionLabel';

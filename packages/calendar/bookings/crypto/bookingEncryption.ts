@@ -8,7 +8,10 @@ import type {
     BookingPageSlotsPayload,
 } from '@proton/shared/lib/interfaces/calendar/Bookings';
 import type { DecryptedCalendarKey } from '@proton/shared/lib/interfaces/calendar/CalendarKey';
-import type { PrimaryAddressKeyForEncryption, PrimaryAddressKeysForSigning } from '@proton/shared/lib/keys';
+import type {
+    PrimaryAddressKeyForEncryption,
+    PrimaryAddressKeysForSigning,
+} from '@proton/shared/lib/keys/getPrimaryKey';
 
 import type { BookingPageEditData, SerializedFormData } from '../types';
 import { BookingLocation } from '../types';

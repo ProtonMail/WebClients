@@ -1,7 +1,7 @@
 import { FREQUENCY, ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS } from '@proton/shared/lib/calendar/constants';
 import { getDisplayTitle } from '@proton/shared/lib/calendar/helper';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
-import type { EventModelReadView } from '@proton/shared/lib/interfaces/calendar';
+import type { EventModelReadView } from '@proton/shared/lib/interfaces/calendar/Event';
 
 import getIsTemporaryViewEvent from '../../containers/calendar/getIsTemporaryViewEvent';
 import type { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';

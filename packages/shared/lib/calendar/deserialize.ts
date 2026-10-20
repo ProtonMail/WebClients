@@ -4,17 +4,16 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { getIsAddressActive, getIsAddressExternal } from '../helpers/address';
 import { canonicalizeInternalEmail } from '../helpers/email';
-import type { Address, Nullable } from '../interfaces';
+import type { Address } from '../interfaces/Address';
 import type { VerificationPreferences } from '../interfaces/VerificationPreferences';
+import type { CalendarNotificationSettings, CalendarSettings } from '../interfaces/calendar/Calendar';
+import type { CalendarEvent } from '../interfaces/calendar/Event';
 import type {
-    CalendarEvent,
-    CalendarNotificationSettings,
-    CalendarSettings,
     VcalAttendeeProperty,
     VcalOrganizerProperty,
     VcalVeventComponent,
-} from '../interfaces/calendar';
-import type { SimpleMap } from '../interfaces/utils';
+} from '../interfaces/calendar/VcalModel';
+import type { Nullable, SimpleMap } from '../interfaces/utils';
 import { toSessionKey } from '../keys/sessionKey';
 import { modelToValarmComponent } from './alarms/modelToValarm';
 import { apiNotificationsToModel } from './alarms/notificationsToModel';

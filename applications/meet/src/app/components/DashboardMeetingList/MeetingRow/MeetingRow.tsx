@@ -19,8 +19,8 @@ import { TelemetryMeetDashboardEvents, sendMeetDashboardEvent } from '@proton/me
 import { PASSWORD_SEPARATOR } from '@proton/meet/utils/cryptoUtils';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
-import type { SETTINGS_DATE_FORMAT } from '@proton/shared/lib/interfaces';
 import { type Meeting, MeetingType, WaitingRoomState } from '@proton/shared/lib/interfaces/Meet';
+import type { SETTINGS_DATE_FORMAT } from '@proton/shared/lib/interfaces/UserSettings';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 

@@ -4,7 +4,8 @@ import CalendarSelect from '@proton/components/components/calendarSelect/Calenda
 import type { SelectTwoProps } from '@proton/components/components/selectTwo/SelectTwo';
 import { useLoading } from '@proton/hooks';
 import { notificationsToModel } from '@proton/shared/lib/calendar/alarms/notificationsToModel';
-import type { CalendarMember, EventModel } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarMember } from '@proton/shared/lib/interfaces/calendar/CalendarMember';
+import type { EventModel } from '@proton/shared/lib/interfaces/calendar/Event';
 
 import { getIsAvailableCalendar } from '../../../helpers/event';
 import { getInitialMemberModel, getOrganizerAndSelfAddressModel } from '../eventForm/state';

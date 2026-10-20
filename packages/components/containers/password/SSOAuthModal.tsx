@@ -12,7 +12,7 @@ import type { SSOInfoResponse } from '@proton/shared/lib/authentication/interfac
 import { ExternalSSOError, handleExternalSSOLogin } from '@proton/shared/lib/authentication/ssoExternalLogin';
 import { API_CODES, APPS } from '@proton/shared/lib/constants';
 import { getVpnAccountUrl } from '@proton/shared/lib/helpers/url';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import noop from '@proton/utils/noop';
 
 import Prompt, { type PromptProps } from '../../components/prompt/Prompt';

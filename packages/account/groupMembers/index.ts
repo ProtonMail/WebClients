@@ -16,8 +16,11 @@ import { getGroupMember, getGroupMembers } from '@proton/shared/lib/api/groups';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
 import type { UpdateCollectionV6 } from '@proton/shared/lib/eventManager/updateCollectionV6';
-import type { Api, Group, GroupMember, GroupMembershipReturn, User } from '@proton/shared/lib/interfaces';
-import { GROUP_MEMBER_STATE } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { Group } from '@proton/shared/lib/interfaces/Group';
+import type { GroupMember, GroupMembershipReturn } from '@proton/shared/lib/interfaces/GroupMember';
+import { GROUP_MEMBER_STATE } from '@proton/shared/lib/interfaces/GroupMember';
+import type { User } from '@proton/shared/lib/interfaces/User';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
 
 import { serverEvent } from '../eventLoop';

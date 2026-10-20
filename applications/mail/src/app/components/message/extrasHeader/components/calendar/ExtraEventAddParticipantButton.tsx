@@ -16,8 +16,8 @@ import { APPS } from '@proton/shared/lib/constants';
 import { postMessageToIframe } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 import { omit } from '@proton/shared/lib/helpers/object';
-import type { RequireSome } from '@proton/shared/lib/interfaces';
-import type { SyncMultipleApiSuccessResponses } from '@proton/shared/lib/interfaces/calendar';
+import type { SyncMultipleApiSuccessResponses } from '@proton/shared/lib/interfaces/calendar/Event';
+import type { RequireSome } from '@proton/shared/lib/interfaces/utils';
 import { EncryptionPreferencesError } from '@proton/shared/lib/mail/encryptionPreferences';
 import noop from '@proton/utils/noop';
 

@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
 import type { EntitlementChecksForOrgAndUser } from '@proton/payments/core/entitlements/interface';
-import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
+import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';
 
 import ActivityMonitorDashboard from './ActivityMonitorDashboard';
 

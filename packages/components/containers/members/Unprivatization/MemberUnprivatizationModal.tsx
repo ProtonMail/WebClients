@@ -9,7 +9,7 @@ import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButto
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
-import type { Member } from '@proton/shared/lib/interfaces';
+import type { Member } from '@proton/shared/lib/interfaces/Member';
 import { getMemberHasOrgKeyResetPrivatization } from '@proton/shared/lib/keys/memberHelper';
 
 import type { ModalProps } from '../../../components/modalTwo/Modal';

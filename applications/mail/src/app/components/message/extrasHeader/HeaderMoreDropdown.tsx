@@ -51,7 +51,7 @@ import type {
 } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS, MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { isExpiringByRetentionRule } from '@proton/shared/lib/mail/messages';

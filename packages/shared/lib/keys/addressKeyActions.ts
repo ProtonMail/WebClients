@@ -1,5 +1,8 @@
 import { removeAddressKeyRoute, setKeyFlagsRoute, setKeyPrimaryRoute } from '../api/keys';
-import type { ActiveKeyWithVersion, Address, Api, DecryptedAddressKey, KeyTransparencyVerify } from '../interfaces';
+import type { Address } from '../interfaces/Address';
+import type { Api } from '../interfaces/Api';
+import type { ActiveKeyWithVersion, DecryptedAddressKey } from '../interfaces/Key';
+import type { KeyTransparencyVerify } from '../interfaces/KeyTransparency';
 import { getActiveAddressKeys, getNormalizedActiveAddressKeys } from './getActiveKeys';
 import { type FlagAction, getNewAddressKeyFlags } from './getNewAddressKeyFlags';
 import { getDefaultKeyFlags } from './keyFlags';

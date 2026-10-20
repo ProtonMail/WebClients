@@ -7,7 +7,7 @@ import type {
     GENERATION_SELECTION_TYPE,
     GENERATION_TYPE,
     INCOMPATIBILITY_TYPE,
-} from '@proton/shared/lib/assistant';
+} from '@proton/shared/lib/assistant/types';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 
 const useAssistantTelemetry = () => {

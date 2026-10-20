@@ -4,7 +4,7 @@ import { type Action, type ThunkDispatch, createSelector } from '@reduxjs/toolki
 
 import { baseUseDispatch, baseUseSelector } from '@proton/react-redux-store/ProtonStoreContext';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import type { Contact } from '@proton/shared/lib/interfaces/contacts';
+import type { Contact } from '@proton/shared/lib/interfaces/contacts/Contact';
 
 import { type ContactState, contactThunk, selectContact } from './contactSlice';
 

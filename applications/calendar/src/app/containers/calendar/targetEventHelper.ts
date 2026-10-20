@@ -1,5 +1,6 @@
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
-import { differenceInCalendarDays, differenceInCalendarWeeks } from '@proton/shared/lib/date-fns-utc';
+import differenceInCalendarDays from '@proton/shared/lib/date-fns-utc/differenceInCalendarDays';
+import differenceInCalendarWeeks from '@proton/shared/lib/date-fns-utc/differenceInCalendarWeeks';
 
 import { TYPE } from '../../components/calendar/interactions/constants';
 import type { EventTargetAction } from './interface';

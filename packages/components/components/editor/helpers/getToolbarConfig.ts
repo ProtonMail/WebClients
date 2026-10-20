@@ -1,6 +1,6 @@
 import type { Alignment, FormatState, IEditor } from 'roosterjs-editor-types';
 
-import type { Optional } from '@proton/shared/lib/interfaces';
+import type { Optional } from '@proton/shared/lib/interfaces/utils';
 import type { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 
 import { DEFAULT_BACKGROUND, DEFAULT_FONT_COLOR } from '../constants';

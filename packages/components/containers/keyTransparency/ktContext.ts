@@ -1,6 +1,6 @@
 import type { KeyTransparencyState } from '@proton/key-transparency/interfaces';
 import { defaultKeyTransparencyState } from '@proton/key-transparency/shared';
-import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
+import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
 
 export interface KTContext {
     ktActivation: KeyTransparencyActivation;

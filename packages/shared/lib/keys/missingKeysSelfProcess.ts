@@ -1,6 +1,10 @@
 import { KEYGEN_CONFIGS, KEYGEN_TYPES } from '../constants';
-import type { Address, Api, DecryptedKey, KeyGenConfig, KeyTransparencyVerify } from '../interfaces';
-import { createAddressKeyLegacy, createAddressKeyV2 } from './add';
+import type { Address } from '../interfaces/Address';
+import type { Api } from '../interfaces/Api';
+import type { DecryptedKey } from '../interfaces/Key';
+import type { KeyGenConfig } from '../interfaces/KeyGenConfig';
+import type { KeyTransparencyVerify } from '../interfaces/KeyTransparency';
+import { createAddressKeyLegacy, createAddressKeyV2 } from './add/addAddressKeyHelper';
 import { getHasMigratedAddressKeys } from './keyMigration';
 
 type OnUpdateCallback = (ID: string, update: { status: 'loading' | 'error' | 'ok'; result?: string }) => void;

@@ -9,14 +9,13 @@ import { omit } from '../helpers/object';
 import { SentryCalendarInitiatives, traceInitiativeError } from '../helpers/sentry';
 import { normalize, truncatePossiblyQuotedString } from '../helpers/string';
 import type { VerificationPreferences } from '../interfaces/VerificationPreferences';
+import type { Attendee, AttendeeModel } from '../interfaces/calendar/Event';
 import type {
-    Attendee,
-    AttendeeModel,
     VcalAttendeeProperty,
     VcalOrganizerProperty,
     VcalPmVeventComponent,
     VcalVeventComponent,
-} from '../interfaces/calendar';
+} from '../interfaces/calendar/VcalModel';
 import type { GetCanonicalEmailsMap } from '../interfaces/hooks/GetCanonicalEmailsMap';
 import type { RequireSome, SimpleMap } from '../interfaces/utils';
 import {

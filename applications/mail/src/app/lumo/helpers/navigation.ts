@@ -6,7 +6,7 @@ import type { ReferenceRegistry } from '@proton/llm/lib/lumoAgent/contracts/type
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { changeSearchParams } from '@proton/shared/lib/helpers/url';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { ALMOST_ALL_MAIL, SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 import type { SearchParameters } from '@proton/shared/lib/mail/search';
 
@@ -30,7 +30,6 @@ import {
     usedEncryptedSearch as usedEncryptedSearchSelector,
 } from '../../store/elements/elementsSelectors';
 import type { ElementsStateParams } from '../../store/elements/elementsTypes';
-
 import type { MailboxFilter, MailboxSort } from '../skills/reads/mailboxView';
 import type { OpenFolderLocation } from '../skills/reads/openFolder';
 import type { AgentEmailPage } from '../skills/reads/rows';

@@ -20,7 +20,7 @@ import { getTimezone } from '@proton/shared/lib/date/timezone';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 import { languageCode } from '@proton/shared/lib/i18n';
 import { getBrowserLanguageTags } from '@proton/shared/lib/i18n/helper';
-import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import noop from '@proton/utils/noop';
 
 interface Props {

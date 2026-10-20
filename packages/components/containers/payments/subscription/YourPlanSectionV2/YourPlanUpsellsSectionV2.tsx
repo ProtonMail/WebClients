@@ -45,7 +45,7 @@ import { getTrialInfoForSingleSubscription } from '@proton/payments/core/trials'
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import type { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
 import type { VPNDashboardVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
 import { useVariant } from '@proton/unleash/useVariant';

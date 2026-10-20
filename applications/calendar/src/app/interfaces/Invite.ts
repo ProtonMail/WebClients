@@ -1,16 +1,11 @@
 import type { PublicKeyReference } from '@protontech/crypto';
 
 import type { ICAL_ATTENDEE_STATUS, RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
-import type { Address, RequireSome } from '@proton/shared/lib/interfaces';
-import type {
-    AttendeeComment,
-    CalendarEvent,
-    PartstatData,
-    VcalAttendeeProperty,
-    VcalVeventComponent,
-} from '@proton/shared/lib/interfaces/calendar';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { AttendeeComment, CalendarEvent, PartstatData } from '@proton/shared/lib/interfaces/calendar/Event';
+import type { VcalAttendeeProperty, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import type { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
-import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import type { RequireSome, SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 export enum INVITE_ACTION_TYPES {
     NONE = 0,

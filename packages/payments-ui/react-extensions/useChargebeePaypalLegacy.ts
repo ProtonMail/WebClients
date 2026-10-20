@@ -13,7 +13,7 @@ import {
     ChargebeePaypalPaymentProcessor,
 } from '@proton/payments/core/payment-processors/chargebeePaypalPayment';
 import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import noop from '@proton/utils/noop';
 
 import { abortSignalAny } from '../client-extensions/validators/AbortSignalAny';

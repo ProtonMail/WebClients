@@ -6,7 +6,7 @@ import type { ThemeColorUnion } from '@proton/colors/types';
 import { usePasswordPolicyValidation } from '@proton/components/components/passwordPolicy';
 import PasswordWithPolicyInputs from '@proton/components/components/passwordPolicy/PasswordWithPolicyInputs';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import type { PasswordPolicies } from '@proton/shared/lib/interfaces';
+import type { PasswordPolicies } from '@proton/shared/lib/interfaces/PasswordPolicy';
 
 import {
     getBackupPasswordFormLabels,

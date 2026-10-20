@@ -13,7 +13,7 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { registerSessionRemovalListener } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import { setMetricsEnabled } from '@proton/shared/lib/helpers/metrics';
-import type { ProtonConfig } from '@proton/shared/lib/interfaces';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 import type { UserSettingsResponse } from '@proton/shared/lib/interfaces/drive/userSettings';
 import { appMode } from '@proton/shared/lib/webpack.constants';
 import { initTracker } from '@proton/telemetry-tracker/tracker';

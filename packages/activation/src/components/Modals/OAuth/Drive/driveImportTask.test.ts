@@ -1,6 +1,6 @@
 import type { ProtonDriveClient } from '@protontech/drive-sdk';
 
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import type { LaunchImportPayload } from '../../../../interface';
 import { IMPORT_ERROR } from '../../../../interface';

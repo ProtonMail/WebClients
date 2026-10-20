@@ -4,8 +4,10 @@ import { PasswordError, TOTPError } from '@proton/shared/lib/authentication/erro
 import type { SSOInfoResponse } from '@proton/shared/lib/authentication/interface';
 import { ExternalSSOError } from '@proton/shared/lib/authentication/ssoExternalLogin';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import type { Address, KeySalt, User } from '@proton/shared/lib/interfaces';
-import { getRequiresPasswordSetup } from '@proton/shared/lib/keys';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { KeySalt } from '@proton/shared/lib/interfaces/KeySalt';
+import type { User } from '@proton/shared/lib/interfaces/User';
+import { getRequiresPasswordSetup } from '@proton/shared/lib/keys/accountType';
 import { ClaimableAddressType } from '@proton/shared/lib/keys/setupAddress';
 import type { OrganizationData } from '@proton/shared/lib/keys/unprivatization/helper';
 
@@ -48,8 +50,8 @@ import { type SignInMachineEmitted, type SignInMachineInput, SignInStateMachine 
 import type { CreatedAuth } from './signInActors';
 import type { SignInAuthState } from './signInAuthState';
 
-jest.mock('@proton/shared/lib/keys', () => ({
-    ...jest.requireActual('@proton/shared/lib/keys'),
+jest.mock('@proton/shared/lib/keys/accountType', () => ({
+    ...jest.requireActual('@proton/shared/lib/keys/accountType'),
     getRequiresPasswordSetup: jest.fn(() => false),
 }));
 

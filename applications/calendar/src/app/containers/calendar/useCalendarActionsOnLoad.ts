@@ -5,8 +5,8 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { changeCalendarVisiblity } from '@proton/calendar/calendars/actions';
 import { calendarUrlQueryParams } from '@proton/calendar/constants';
 import { getQueryParamsStatus } from '@proton/calendar/utils';
-import type { Address } from '@proton/shared/lib/interfaces';
-import type { CalendarBootstrap, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { CalendarBootstrap, VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 
 import { useCalendarDispatch } from '../../store/hooks';
 import type { CalendarEventsCache } from './eventStore/interface';

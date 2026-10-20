@@ -1,5 +1,6 @@
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
-import type { OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
+import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 
 /**

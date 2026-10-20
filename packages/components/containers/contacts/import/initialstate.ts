@@ -1,5 +1,5 @@
-import type { ImportContactsModel } from '@proton/shared/lib/interfaces/contacts';
-import { IMPORT_STEPS } from '@proton/shared/lib/interfaces/contacts';
+import type { ImportContactsModel } from '@proton/shared/lib/interfaces/contacts/Import';
+import { IMPORT_STEPS } from '@proton/shared/lib/interfaces/contacts/Import';
 
 export const getInitialState = (): ImportContactsModel => ({
     step: IMPORT_STEPS.ATTACHING,

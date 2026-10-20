@@ -1,13 +1,13 @@
 import type { PrivateKeyReference } from '@protontech/crypto';
 
-import type { Address, Key, User, Address as tsAddress, User as tsUser } from '../../lib/interfaces';
-import {
-    getDecryptedAddressKeysHelper,
-    getDecryptedUserKeysHelper,
-    getHasMigratedAddressKey,
-    reactivateKeysProcess,
-} from '../../lib/keys';
+import type { Address, Address as tsAddress } from '../../lib/interfaces/Address';
+import type { Key } from '../../lib/interfaces/Key';
+import type { User, User as tsUser } from '../../lib/interfaces/User';
+import { getDecryptedAddressKeysHelper } from '../../lib/keys/getDecryptedAddressKeys';
+import { getDecryptedUserKeysHelper } from '../../lib/keys/getDecryptedUserKeys';
+import { getHasMigratedAddressKey } from '../../lib/keys/keyMigration';
 import type { KeyReactivationData, KeyReactivationRecord } from '../../lib/keys/reactivation/interface';
+import { reactivateKeysProcess } from '../../lib/keys/reactivation/reactivateKeysProcess';
 import { getAddressKey, getAddressKeyHelper, getLegacyAddressKey, getUserKey } from './keyDataHelper';
 
 const DEFAULT_KEYPASSWORD = '1';

@@ -1,6 +1,6 @@
 import { API_CUSTOM_ERROR_CODES } from '../../errors';
 import { getVerificationHeaders } from '../../fetch/headers';
-import type { HumanVerificationMethodType } from '../../interfaces';
+import type { HumanVerificationMethodType } from '../../interfaces/HumanVerification';
 
 export const getHumanVerificationData = (error: any) => {
     const { Details: { HumanVerificationToken: token, HumanVerificationMethods: methods = [], Title: title } = {} } =

@@ -5,7 +5,7 @@ import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { FAMILY_MAX_USERS } from '@proton/shared/lib/constants';
 import { getPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
-import { Audience } from '@proton/shared/lib/interfaces';
+import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 
 import { getSimplePriceString } from '../../../../../components/price/helper';
 import useDashboardPaymentFlow from '../../../../../hooks/useDashboardPaymentFlow';

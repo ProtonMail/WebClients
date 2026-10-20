@@ -2,7 +2,7 @@ import { jest } from '@jest/globals';
 import type { PrivateKeyReference } from '@protontech/crypto';
 import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 
-import type { DecryptedKey } from '@proton/shared/lib/interfaces';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 
 import { addMasterKey, masterKeyFailed } from '../redux/slices/core/credentials';
 import { addDataLossWarning } from '../redux/slices/meta/errors';
@@ -76,8 +76,7 @@ describe('loadKeysAndMasterKey — recovery from undecryptable envelopes (LUMO-8
                 postMasterKey = postMasterKey;
                 findBestKey = (keys: Envelope[]) =>
                     keys.reduce(
-                        (best: Envelope | undefined, current: Envelope) =>
-                            !best || current.isLatest ? current : best,
+                        (best: Envelope | undefined, current: Envelope) => (!best || current.isLatest ? current : best),
                         undefined as Envelope | undefined
                     );
             }

@@ -10,15 +10,22 @@ import { extractContactImportCategories, getContactId, splitErrors } from '@prot
 import { getContactCategories, getContactEmails } from '@proton/shared/lib/contacts/properties';
 import { prepareForSaving } from '@proton/shared/lib/contacts/surgery';
 import { SentryCommonInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
-import type { Api, KeyPair, Label, SimpleMap } from '@proton/shared/lib/interfaces';
-import type { ImportCategories, ImportedContact } from '@proton/shared/lib/interfaces/contacts';
-import { IMPORT_GROUPS_ACTION } from '@proton/shared/lib/interfaces/contacts';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { KeyPair } from '@proton/shared/lib/interfaces/Key';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
 import type {
     AddContactsApiResponse,
     AddContactsApiResponses,
 } from '@proton/shared/lib/interfaces/contacts/ContactApi';
-import type { EncryptedContact, ImportContactsModel } from '@proton/shared/lib/interfaces/contacts/Import';
+import type {
+    EncryptedContact,
+    ImportCategories,
+    ImportContactsModel,
+    ImportedContact,
+} from '@proton/shared/lib/interfaces/contacts/Import';
+import { IMPORT_GROUPS_ACTION } from '@proton/shared/lib/interfaces/contacts/Import';
 import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import chunk from '@proton/utils/chunk';
 import noop from '@proton/utils/noop';
 import uniqueBy from '@proton/utils/uniqueBy';

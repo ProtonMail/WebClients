@@ -4,7 +4,8 @@ import { getTranslatedRoleName } from '@proton/account/organizationRoles/helpers
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { MEMBER_ROLE } from '@proton/shared/lib/constants';
-import { type Member, ROLE_SOURCE, type RoleAssignment } from '@proton/shared/lib/interfaces';
+import type { Member } from '@proton/shared/lib/interfaces/Member';
+import { ROLE_SOURCE, type RoleAssignment } from '@proton/shared/lib/interfaces/OrganizationRole';
 
 interface AggregatedRole {
     Role: RoleAssignment['Role'];

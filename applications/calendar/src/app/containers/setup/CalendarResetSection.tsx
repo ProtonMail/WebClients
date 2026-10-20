@@ -10,7 +10,7 @@ import CollapsibleHeader from '@proton/components/components/collapsible/Collaps
 import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import encryptedEventSvg from '@proton/styles/assets/img/illustrations/encrypted-event.svg';
 
 const getFirstParagraphText = (resetAll: boolean) => {

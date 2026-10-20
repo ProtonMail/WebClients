@@ -7,12 +7,10 @@ import { removeVideoConfInfoFromDescription } from '@proton/calendar-video-confe
 import { EVENT_VERIFICATION_STATUS, MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { getDtendProperty } from '@proton/shared/lib/calendar/vcalConverter';
 import { getVeventStatus } from '@proton/shared/lib/calendar/vcalHelper';
-import {
-    type EventModelView,
-    type SelfAddressData,
-    VIDEO_CONFERENCE_PROVIDER,
-    type VcalVeventComponent,
-} from '@proton/shared/lib/interfaces/calendar';
+import { VIDEO_CONFERENCE_PROVIDER } from '@proton/shared/lib/interfaces/calendar/Api';
+import type { SelfAddressData } from '@proton/shared/lib/interfaces/calendar/Decrypt';
+import type { EventModelView } from '@proton/shared/lib/interfaces/calendar/Event';
+import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import truncate from '@proton/utils/truncate';
 
 import { propertiesToAttendeeModel } from './propertiesToAttendeeModel';

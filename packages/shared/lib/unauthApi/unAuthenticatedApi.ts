@@ -25,7 +25,8 @@ import { getUIDHeaderValue, withAuthHeaders, withUIDHeaders } from '../fetch/hea
 import { createPromise, wait } from '../helpers/promise';
 import { setUID } from '../helpers/sentry';
 import { getItem, removeItem, setItem } from '../helpers/sessionStorage';
-import type { Api, HumanVerificationMethodType } from '../interfaces';
+import type { Api } from '../interfaces/Api';
+import type { HumanVerificationMethodType } from '../interfaces/HumanVerification';
 
 const setupComplete = Symbol('setup complete');
 

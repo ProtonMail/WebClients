@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { useUserKeys } from '@proton/account/userKeys/hooks';
 import { useContact } from '@proton/mail/store/contacts/contactHooks';
-import type { ContactFormatted } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactFormatted } from '@proton/shared/lib/interfaces/contacts/Contact';
 import clsx from '@proton/utils/clsx';
 
 import DropdownActions from '../../../../components/dropdown/DropdownActions';

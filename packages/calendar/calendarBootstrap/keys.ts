@@ -12,11 +12,11 @@ import {
     getDecryptedCalendarKeys,
 } from '@proton/shared/lib/calendar/crypto/keys/calendarKeys';
 import { getAddressesMembersMap } from '@proton/shared/lib/calendar/crypto/keys/helpers';
-import type { Address } from '@proton/shared/lib/interfaces';
-import type { MemberPassphrase } from '@proton/shared/lib/interfaces/calendar';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { MemberPassphrase } from '@proton/shared/lib/interfaces/calendar/Passphrase';
 import type { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
 import type { GetDecryptedPassphraseAndCalendarKeys } from '@proton/shared/lib/interfaces/hooks/GetDecryptedPassphraseAndCalendarKeys';
-import { splitKeys } from '@proton/shared/lib/keys';
+import { splitKeys } from '@proton/shared/lib/keys/keys';
 import noop from '@proton/utils/noop';
 
 import type { CalendarsBootstrapState } from './index';

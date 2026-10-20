@@ -16,17 +16,17 @@ import { readFileAsString } from '../../helpers/file';
 import { sendMultipleTelemetryReports, sendTelemetryReport } from '../../helpers/metrics';
 import { captureMessage } from '../../helpers/sentry';
 import { dateLocale } from '../../i18n';
-import type { Api, SimpleMap } from '../../interfaces';
+import type { Api } from '../../interfaces/Api';
+import type { CalendarEvent } from '../../interfaces/calendar/Event';
+import type { ImportCalendarModel, ImportedEvent } from '../../interfaces/calendar/Import';
 import type {
-    CalendarEvent,
-    ImportCalendarModel,
-    ImportedEvent,
     VcalCalendarComponentWithMaybeErrors,
     VcalErrorComponent,
     VcalVcalendarWithMaybeErrors,
     VcalVeventComponent,
     VcalVtimezoneComponent,
-} from '../../interfaces/calendar';
+} from '../../interfaces/calendar/VcalModel';
+import type { SimpleMap } from '../../interfaces/utils';
 import { ICAL_METHOD, IMPORT_ERROR_TYPE, MAX_CALENDARS_PAID, MAX_IMPORT_EVENTS } from '../constants';
 import getComponentFromCalendarEvent from '../getComponentFromCalendarEvent';
 import { generateVeventHashUID, getNaiveDomainFromUID, getOriginalUID } from '../helper';

@@ -1,8 +1,11 @@
 import { CryptoProxy } from '@protontech/crypto';
+
 import getRandomString from '@proton/utils/getRandomString';
 import isTruthy from '@proton/utils/isTruthy';
 
-import type { Address, DecryptedKey, InactiveKey, Key, User } from '../interfaces';
+import type { Address } from '../interfaces/Address';
+import type { DecryptedKey, InactiveKey, Key } from '../interfaces/Key';
+import type { User } from '../interfaces/User';
 import type {
     KeyReactivationRequest,
     KeyReactivationRequestState,

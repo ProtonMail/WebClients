@@ -1,14 +1,12 @@
 import type { KTVerifier } from '@proton/key-transparency/helpers';
 import { resignSKLWithPrimaryKey } from '@proton/key-transparency/shared';
-import type {
-    Address,
-    Api,
-    DecryptedAddressKey,
-    DecryptedKey,
-    KeyTransparencyActivation,
-    UserModel,
-} from '@proton/shared/lib/interfaces';
-import { getPrimaryAddressKeysForSigning, unsetV6PrimaryAddressKey } from '@proton/shared/lib/keys';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { DecryptedAddressKey, DecryptedKey } from '@proton/shared/lib/interfaces/Key';
+import type { KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import { unsetV6PrimaryAddressKey } from '@proton/shared/lib/keys/addressKeyActions';
+import { getPrimaryAddressKeysForSigning } from '@proton/shared/lib/keys/getPrimaryKey';
 
 export const unsetV6PrimaryKey = async ({
     ID,

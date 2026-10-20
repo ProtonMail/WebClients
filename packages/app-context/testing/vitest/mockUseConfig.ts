@@ -4,7 +4,7 @@ import { vi } from 'vitest';
 // eslint-disable-next-line custom-rules/no-package-self-import, import/no-extraneous-dependencies -- vitest module identity
 import * as useConfigModule from '@proton/app-context/useConfig';
 import { APPS, CLIENT_TYPES } from '@proton/shared/lib/constants';
-import type { ProtonConfig } from '@proton/shared/lib/interfaces';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 
 export const mockUseConfig = (value?: Partial<ProtonConfig>) => {
     const spy = vi.spyOn(useConfigModule, 'useConfig');

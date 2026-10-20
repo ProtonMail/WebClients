@@ -9,7 +9,7 @@ import { getMeetingQuery, getUpcomingMeetingsQuery } from '@proton/shared/lib/ap
 import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
 import type { UpdateCollectionV6 } from '@proton/shared/lib/eventManager/updateCollectionV6';
 import { updateCollectionV6 } from '@proton/shared/lib/eventManager/updateCollectionV6';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { MeetEventResponse, Meeting } from '@proton/shared/lib/interfaces/Meet';
 
 const name = 'meet_meetings' as const;

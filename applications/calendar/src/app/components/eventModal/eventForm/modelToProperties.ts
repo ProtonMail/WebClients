@@ -15,7 +15,7 @@ import {
 } from '@proton/shared/lib/calendar/vcalConverter';
 import { withRequiredProperties } from '@proton/shared/lib/calendar/veventHelper';
 import { omit } from '@proton/shared/lib/helpers/object';
-import type { DateTimeModel, EventModel } from '@proton/shared/lib/interfaces/calendar';
+import type { DateTimeModel, EventModel } from '@proton/shared/lib/interfaces/calendar/Event';
 import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
 import modelToFrequencyProperties from './modelToFrequencyProperties';

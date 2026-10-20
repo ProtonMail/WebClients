@@ -12,7 +12,8 @@ import { TelemetryAccountDashboardEvents, TelemetryMeasurementGroups } from '@pr
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { DASHBOARD_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import type { Api, User } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { User } from '@proton/shared/lib/interfaces/User';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { getSimplePriceString } from '../../../../../components/price/helper';

@@ -5,7 +5,7 @@ import { serverTime } from '@protontech/crypto';
 
 import { KT_ERROR_TYPE, ktSentryReportError } from '@proton/key-transparency/helpers';
 import { SECOND } from '@proton/shared/lib/constants';
-import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
+import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
 
 import useApiStatus from '../../hooks/useApiStatus';
 import useOnline from '../../hooks/useOnline';

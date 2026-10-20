@@ -15,14 +15,14 @@ import '@proton/shared/lib/api/passwordPolicies';
 import { BRAND_NAME, MIN_PASSWORD_LENGTH } from '@proton/shared/lib/constants';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { getBlogURL } from '@proton/shared/lib/helpers/url';
+import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';
 import {
-    type OrganizationExtended,
     type PasswordPoliciesState,
     type PasswordPolicyName,
     type PasswordPolicySetting,
     type PasswordPolicySettings,
     PasswordPolicyState,
-} from '@proton/shared/lib/interfaces';
+} from '@proton/shared/lib/interfaces/PasswordPolicy';
 import noop from '@proton/utils/noop';
 
 import RadioGroup from '../../components/input/RadioGroup';

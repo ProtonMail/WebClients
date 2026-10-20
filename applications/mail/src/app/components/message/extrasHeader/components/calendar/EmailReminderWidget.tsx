@@ -43,7 +43,9 @@ import { getIsEventCancelled } from '@proton/shared/lib/calendar/veventHelper';
 import { APPS, CALENDAR_APP_NAME, SECOND } from '@proton/shared/lib/constants';
 import { toUTCDate } from '@proton/shared/lib/date/timezone';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { CalendarEvent, VcalVeventComponent, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
+import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar/Event';
+import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getParsedHeadersFirstValue } from '@proton/shared/lib/mail/messages';
 

@@ -1,4 +1,4 @@
-import type { Api } from '../../interfaces';
+import type { Api } from '../../interfaces/Api';
 import type { ProduceForkParametersFull } from './produce';
 
 export interface OauthAuthorizeResponse {

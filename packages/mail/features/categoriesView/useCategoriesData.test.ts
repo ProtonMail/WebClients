@@ -2,7 +2,7 @@ import { renderHook } from '@testing-library/react-hooks';
 
 import { baseUseSelector } from '@proton/react-redux-store/ProtonStoreContext';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { Label } from '@proton/shared/lib/interfaces';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
 import type { CategoryViewVariantVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
 import { useFlagsStatus } from '@proton/unleash/proxy';
 import { useFlag } from '@proton/unleash/useFlag';

@@ -3,7 +3,8 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import { Audience, type Organization } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
+import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import illustration from '@proton/styles/assets/img/illustrations/activity-monitor-illustration.svg';
 
 import SettingsSectionWide from '../../account/SettingsSectionWide';

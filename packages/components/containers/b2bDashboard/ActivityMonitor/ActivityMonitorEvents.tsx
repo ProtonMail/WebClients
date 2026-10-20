@@ -9,7 +9,7 @@ import { Href } from '@proton/atoms/Href/Href';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { deleteOrgUsersAuthLogs } from '@proton/shared/lib/api/b2bevents';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { OrganizationSettings } from '@proton/shared/lib/interfaces';
+import type { OrganizationSettings } from '@proton/shared/lib/interfaces/Organization';
 
 import useModalState from '../../../components/modalTwo/useModalState';
 import Toggle from '../../../components/toggle/Toggle';

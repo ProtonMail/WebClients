@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
-import type { B2BAuthLog } from '@proton/shared/lib/authlog';
+import type { B2BAuthLog } from '@proton/shared/lib/authlog/AuthLog';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 
 import Alert from '../../components/alert/Alert';

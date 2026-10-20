@@ -6,7 +6,7 @@ import { useModalTwoPromise } from '@proton/components/components/modalTwo/useMo
 import AssistantIncompatibleBrowserModal from '@proton/components/containers/payments/subscription/assistant/AssistantIncompatibleBrowserModal';
 import AssistantIncompatibleHardwareModal from '@proton/components/containers/payments/subscription/assistant/AssistantIncompatibleHardwareModal';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
-import { INCOMPATIBILITY_TYPE } from '@proton/shared/lib/assistant';
+import { INCOMPATIBILITY_TYPE } from '@proton/shared/lib/assistant/types';
 
 import type { ComposerKeyedManager } from '../../../helpers/composer/composerKeyedManager';
 import { createComposerKeyedManager } from '../../../helpers/composer/composerKeyedManager';

@@ -9,7 +9,7 @@ import type {
     PublicPrivateKey,
 } from '@proton/mail/store/messages/messagesTypes';
 import { createDraft, updateDraft } from '@proton/shared/lib/api/messages';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import type { CREATE_DRAFT_MESSAGE_ACTION } from '@proton/shared/lib/interfaces/message';
 import { getAttachments, isPlainText } from '@proton/shared/lib/mail/messages';

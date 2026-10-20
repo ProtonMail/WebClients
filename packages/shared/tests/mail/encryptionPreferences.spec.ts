@@ -2,8 +2,9 @@ import type { PublicKeyReference } from '@protontech/crypto';
 
 import type { CONTACT_MIME_TYPES } from '../../lib/constants';
 import { MIME_TYPES, MIME_TYPES_MORE, PGP_SCHEMES, PGP_SCHEMES_MORE } from '../../lib/constants';
-import type { MailSettings, SelfSend } from '../../lib/interfaces';
-import { KT_VERIFICATION_STATUS } from '../../lib/interfaces';
+import type { SelfSend } from '../../lib/interfaces/EncryptionPreferences';
+import { KT_VERIFICATION_STATUS } from '../../lib/interfaces/KeyTransparency';
+import type { MailSettings } from '../../lib/interfaces/MailSettings';
 import extractEncryptionPreferences, { ENCRYPTION_PREFERENCES_ERROR_TYPES } from '../../lib/mail/encryptionPreferences';
 import { PACKAGE_TYPE, SIGN } from '../../lib/mail/mailSettings';
 

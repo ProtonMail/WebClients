@@ -11,7 +11,7 @@ import { queryFilter, queryFilters } from '@proton/shared/lib/api/filters';
 import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
 import { type UpdateCollectionV6, updateCollectionV6 } from '@proton/shared/lib/eventManager/updateCollectionV6';
 import updateCollection, { sortCollection } from '@proton/shared/lib/helpers/updateCollection';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { Filter } from '@proton/sieve/filterModel';
 import { removeById } from '@proton/utils/removeById';
 import { upsertById } from '@proton/utils/upsertById';

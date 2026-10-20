@@ -4,7 +4,7 @@ import { getIsScimGroup } from '@proton/account/groups/groupFlags';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { getTranslatedRoleName } from '@proton/account/organizationRoles/helpers';
 import { Button } from '@proton/atoms/Button/Button';
-import type { EnhancedGroup } from '@proton/shared/lib/interfaces';
+import type { EnhancedGroup } from '@proton/shared/lib/interfaces/Group';
 import clsx from '@proton/utils/clsx';
 
 import RoleAssignmentStatusIcon from '../../members/rolesAndPermissions/RoleAssignmentStatusIcon';

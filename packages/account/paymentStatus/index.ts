@@ -16,7 +16,7 @@ import { getInitialModelState } from '@proton/redux-utilities/initialModelState'
 import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { cacheHelper, createPromiseStore } from '@proton/redux-utilities/promiseStore';
 import { MINUTE } from '@proton/shared/lib/constants';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 const name = 'paymentStatus' as const;
 

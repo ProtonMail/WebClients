@@ -3,15 +3,11 @@ import { CryptoProxy } from '@protontech/crypto';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { getIsAddressDisabled } from '../helpers/addressStatus';
-import type {
-    ActiveAddressKeysByVersion,
-    Address,
-    Api,
-    DecryptedAddressKey,
-    KeyMigrationKTVerifier,
-    KeyTransparencyVerify,
-    SignedKeyList,
-} from '../interfaces';
+import type { Address } from '../interfaces/Address';
+import type { Api } from '../interfaces/Api';
+import type { ActiveAddressKeysByVersion, DecryptedAddressKey } from '../interfaces/Key';
+import type { KeyMigrationKTVerifier, KeyTransparencyVerify } from '../interfaces/KeyTransparency';
+import type { SignedKeyList } from '../interfaces/SignedKeyList';
 import { getActiveAddressKeys, getNormalizedActiveAddressKeys } from './getActiveKeys';
 import { type PrimaryAddressKeysForSigning, getPrimaryAddressKeysForSigning } from './getPrimaryKey';
 import { KT_SKL_SIGNING_CONTEXT } from './signedKeyListContext';

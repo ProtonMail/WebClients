@@ -6,7 +6,7 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import DeleteLabelModal from '@proton/components/containers/labels/modals/DeleteLabelModal';
 import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { Label } from '@proton/shared/lib/interfaces';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
 
 import { getStandardFolders } from '../../helpers/labels';
 

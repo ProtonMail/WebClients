@@ -12,8 +12,9 @@ import { CacheType } from '@proton/redux-utilities/interface';
 import { getSAMLEdugainInfo, setupEdugainSAML } from '@proton/shared/lib/api/samlSSO';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { isValidHttpUrl } from '@proton/shared/lib/helpers/url';
-import type { Domain, EduGainOrganization } from '@proton/shared/lib/interfaces';
-import { EdugainAffiliations } from '@proton/shared/lib/interfaces';
+import type { Domain } from '@proton/shared/lib/interfaces/Domain';
+import type { EduGainOrganization } from '@proton/shared/lib/interfaces/SSO';
+import { EdugainAffiliations } from '@proton/shared/lib/interfaces/SSO';
 import clsx from '@proton/utils/clsx';
 
 import Form from '../../../components/form/Form';

@@ -1,4 +1,4 @@
-import type { SignedKeyList } from '../interfaces';
+import type { SignedKeyList } from '../interfaces/SignedKeyList';
 
 interface SetupMemberKeyAddressKeyPayload {
     AddressID: string;

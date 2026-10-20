@@ -6,14 +6,11 @@ import {
 } from '@protontech/crypto';
 
 import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS, KEYGEN_TYPES } from '../constants';
-import type { ActiveAddressKeysByVersion, ActiveKey } from '../interfaces';
-import {
-    type Address,
-    type AddressKeyPayloadV2,
-    type KeyGenConfig,
-    type PreAuthKTVerify,
-    isActiveKeyV6,
-} from '../interfaces';
+import type { Address, AddressKeyPayloadV2 } from '../interfaces/Address';
+import type { ActiveAddressKeysByVersion, ActiveKey } from '../interfaces/Key';
+import { isActiveKeyV6 } from '../interfaces/Key';
+import type { KeyGenConfig } from '../interfaces/KeyGenConfig';
+import type { PreAuthKTVerify } from '../interfaces/KeyTransparency';
 import { generateAddressKey, generateAddressKeyTokens } from './addressKeys';
 import { getActiveKeyObject, getNormalizedActiveAddressKeys } from './getActiveKeys';
 import { getDefaultKeyFlags } from './keyFlags';

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { OrganizerModel } from '@proton/shared/lib/interfaces/calendar';
+import type { OrganizerModel } from '@proton/shared/lib/interfaces/calendar/Event';
 
 interface Props {
     organizer: OrganizerModel;

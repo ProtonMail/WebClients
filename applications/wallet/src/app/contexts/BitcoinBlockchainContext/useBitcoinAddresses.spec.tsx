@@ -7,7 +7,7 @@ import { mockUseGetAddressKeys } from '@proton/account/testing/vitest/mockUseAdd
 import { type WasmApiWalletBitcoinAddress, WasmNetwork } from '@proton/andromeda';
 import { setupCryptoProxyForTesting } from '@proton/pass/utils/tests/fixtures/crypto';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
-import type { SimpleMap } from '@proton/shared/lib/interfaces';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { extendStore, setupStore } from '@proton/wallet/store/store';
 import { apiWalletsData } from '@proton/wallet/tests/fixtures';
 import {

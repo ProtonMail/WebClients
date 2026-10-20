@@ -9,7 +9,7 @@ import type { ButtonProps } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { MIN_PASSWORD_LENGTH } from '@proton/shared/lib/constants';
-import type { CreateMemberMode } from '@proton/shared/lib/interfaces';
+import type { CreateMemberMode } from '@proton/shared/lib/interfaces/Member';
 
 import FileInput from '../../../../components/input/FileInput';
 import useModalState from '../../../../components/modalTwo/useModalState';

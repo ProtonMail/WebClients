@@ -4,12 +4,10 @@ import { conversationCountsActions, selectConversationCounts } from '@proton/mai
 import { messageCountsActions, selectMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { Label } from '@proton/shared/lib/interfaces';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import type { RequireSome } from '@proton/shared/lib/interfaces/utils';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
-
-import { useMailDispatch, useMailStore } from '../../store/hooks';
 
 import { updateCounters } from '../../helpers/counter';
 import {
@@ -35,6 +33,7 @@ import {
     optimisticApplyLabels as optimisticApplyLabelsElementsAction,
     optimisticMarkAs as optimisticMarkAsElementsAction,
 } from '../../store/elements/elementsActions';
+import { useMailDispatch, useMailStore } from '../../store/hooks';
 import {
     optimisticApplyLabels as optimisticApplyLabelsMessageAction,
     optimisticMarkAs as optimisticMarkAsMessageAction,

@@ -2,7 +2,7 @@ import { jest } from '@jest/globals';
 import type { PrivateKeyReference } from '@protontech/crypto';
 import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 
-import type { DecryptedAddressKey, DecryptedKey } from '@proton/shared/lib/interfaces';
+import type { DecryptedAddressKey, DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 
 import { decryptMasterKeyEnvelope } from './lumoBootstrap';
 

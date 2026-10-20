@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { KeyWithRecoverySecret } from '@proton/shared/lib/interfaces';
+import type { KeyWithRecoverySecret } from '@proton/shared/lib/interfaces/Key';
 
 import { KeyUploadContent, type KeyUploadContentProps } from './KeyUploadContent';
 import type { Props as SelectRecoveryFilesProps } from './SelectRecoveryFiles';

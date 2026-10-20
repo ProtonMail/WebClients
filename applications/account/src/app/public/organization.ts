@@ -1,4 +1,4 @@
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import { getOrganizationExtended } from '@proton/shared/lib/organization/api';
 
 import type { OnLoginCallbackArguments } from '../content/authSession';

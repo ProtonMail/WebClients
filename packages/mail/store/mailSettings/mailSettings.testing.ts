@@ -1,5 +1,5 @@
 import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { DEFAULT_MAIL_SETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
 import type { MailSettingState } from './index';

@@ -1,9 +1,11 @@
 import type { PrivateKeyReference } from '@protontech/crypto';
 import { CryptoProxy } from '@protontech/crypto';
+
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import type { DecryptedKey, Address as tsAddress } from '../interfaces';
+import type { Address as tsAddress } from '../interfaces/Address';
+import type { DecryptedKey } from '../interfaces/Key';
 import { getEncryptedArmoredAddressKey } from './addressKeys';
 import { getHasMigratedAddressKeys } from './keyMigration';
 
@@ -117,13 +119,13 @@ export const getUpdateKeysPayload = async ({
 
     return hasMigratedAddressKeys
         ? {
-            UserKeys: armoredUserKeys,
-            KeySalt: keySalt,
-            OrganizationKey: armoredOrganizationKey,
-        }
+              UserKeys: armoredUserKeys,
+              KeySalt: keySalt,
+              OrganizationKey: armoredOrganizationKey,
+          }
         : {
-            Keys: [...armoredUserKeys, ...armoredAddressesKeys],
-            KeySalt: keySalt,
-            OrganizationKey: armoredOrganizationKey,
-        };
+              Keys: [...armoredUserKeys, ...armoredAddressesKeys],
+              KeySalt: keySalt,
+              OrganizationKey: armoredOrganizationKey,
+          };
 };

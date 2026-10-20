@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
-import { VIDEO_CONFERENCE_PROVIDER } from '@proton/shared/lib/interfaces/calendar';
+import { VIDEO_CONFERENCE_PROVIDER } from '@proton/shared/lib/interfaces/calendar/Api';
 
 import { type BaseMeetingUrls, SEPARATOR_PROTON_EVENTS, VIDEO_CONF_SERVICES } from './constants';
 

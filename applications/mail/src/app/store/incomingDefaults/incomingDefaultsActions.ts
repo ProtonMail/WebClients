@@ -6,7 +6,7 @@ import {
     getIncomingDefaults,
 } from '@proton/shared/lib/api/incomingDefaults';
 import { INCOMING_DEFAULTS_LOCATION } from '@proton/shared/lib/constants';
-import type { IncomingDefault } from '@proton/shared/lib/interfaces';
+import type { IncomingDefault } from '@proton/shared/lib/interfaces/IncomingDefault';
 
 import type { IncomingDefaultEvent } from '../../models/event';
 import type { MailThunkExtra } from '../store';

@@ -1,7 +1,10 @@
 import unary from '@proton/utils/unary';
 
 import { ADDRESS_FLAGS, ADDRESS_TYPE, MEMBER_TYPE } from '../constants';
-import type { Address, Domain, Member, UserModel } from '../interfaces';
+import type { Address } from '../interfaces/Address';
+import type { Domain } from '../interfaces/Domain';
+import type { Member } from '../interfaces/Member';
+import type { UserModel } from '../interfaces/User';
 import { getIsDomainActive } from '../organization/domain';
 import { getIsAddressActive } from './addressStatus';
 import { hasBit } from './bitset';

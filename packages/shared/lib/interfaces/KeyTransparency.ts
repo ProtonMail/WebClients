@@ -1,7 +1,7 @@
 import type { PublicKeyReference } from '@protontech/crypto';
 
 import type { APP_NAMES } from '../constants';
-import type { PrimaryAddressKeysForSigning } from '../keys';
+import type { PrimaryAddressKeysForSigning } from '../keys/getPrimaryKey';
 import type { Address } from './Address';
 import type { Api } from './Api';
 import type { ProcessedApiKey } from './EncryptionPreferences';

@@ -1,6 +1,6 @@
 import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
+import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
 
 interface State {
     value: KeyTransparencyActivation;

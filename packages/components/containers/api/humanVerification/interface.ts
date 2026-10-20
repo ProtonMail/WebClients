@@ -1,4 +1,4 @@
-import type { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
+import type { HumanVerificationMethodType } from '@proton/shared/lib/interfaces/HumanVerification';
 
 type OwnershipChallengeType = 'external' | 'login' | 'verify_address';
 

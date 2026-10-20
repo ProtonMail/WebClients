@@ -1,9 +1,9 @@
 import { type TelemetryConfig, ProtonTelemetry as createTelemetry } from '@protontech/telemetry';
 
-import { getClientID } from '../apps/helper';
-import { getAppVersionStr } from '../fetch/headers';
-import { captureMessage } from '../helpers/sentry';
-import type { ProtonConfig } from '../interfaces';
+import { getClientID } from './apps/helper';
+import { getAppVersionStr } from './fetch/headers';
+import { captureMessage } from './helpers/sentry';
+import type { ProtonConfig } from './interfaces/config';
 
 type EventArgs = Parameters<ReturnType<typeof createTelemetry>['sendCustomEvent']>;
 export interface TelemetryInitOptions {

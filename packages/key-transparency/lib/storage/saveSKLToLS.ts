@@ -1,7 +1,7 @@
 import { CryptoProxy, serverTime } from '@protontech/crypto';
 
 import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';
-import type { SaveSKLToLS } from '@proton/shared/lib/interfaces';
+import type { SaveSKLToLS } from '@proton/shared/lib/interfaces/KeyTransparency';
 
 import type { KTBlobContent } from '../interfaces';
 import { getKTLocalStorage } from './ktStorageAPI';

@@ -1,5 +1,5 @@
 import { addMonths } from '@proton/shared/lib/date-fns-utc';
-import type { EitherOr } from '@proton/shared/lib/interfaces';
+import type { EitherOr } from '@proton/shared/lib/interfaces/utils';
 
 import { CYCLE, PLANS } from '../core/constants';
 import type { Currency, PlanIDs } from '../core/interface';

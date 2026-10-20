@@ -83,7 +83,8 @@ import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/plans';
 import { APPS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import type { Organization, UserModel } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 

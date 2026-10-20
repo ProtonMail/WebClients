@@ -18,15 +18,13 @@ import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import { APPS, CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
 import { prepareVCardContact } from '@proton/shared/lib/contacts/encrypt';
 import { parseToVCard } from '@proton/shared/lib/contacts/vcard';
-import type {
-    ApiEnvironmentConfig,
-    CachedOrganizationKey,
-    DecryptedKey,
-    MailSettings,
-    ProtonConfig,
-    UserModel,
-    UserSettings,
-} from '@proton/shared/lib/interfaces';
+import type { ApiEnvironmentConfig } from '@proton/shared/lib/interfaces/ApiEnvironmentConfig';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
+import type { CachedOrganizationKey } from '@proton/shared/lib/interfaces/OrganizationKey';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 import { apiMock } from '@proton/test-api/api';
 
 import { mockCache } from '../../../testing/cache';

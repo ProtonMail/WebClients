@@ -2,8 +2,9 @@ import { IcArchiveBox } from '@proton/icons/icons/IcArchiveBox';
 import { IcEnvelopeOpen } from '@proton/icons/icons/IcEnvelopeOpen';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { FILTER_STATUS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { Folder, UserModel } from '@proton/shared/lib/interfaces';
+import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import type { Filter } from '@proton/sieve/filterModel';
 
 import {

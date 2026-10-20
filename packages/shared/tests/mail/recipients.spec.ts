@@ -1,4 +1,4 @@
-import type { Recipient } from '../../lib/interfaces';
+import type { Recipient } from '../../lib/interfaces/Address';
 import {
     clearValue,
     findRecipientsWithSpaceSeparator,

@@ -1,6 +1,6 @@
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcShieldFilled } from '@proton/icons/icons/IcShieldFilled';
-import { ProtectionType } from '@proton/shared/lib/authlog';
+import { ProtectionType } from '@proton/shared/lib/authlog/AuthLog';
 import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 
 type Props = {

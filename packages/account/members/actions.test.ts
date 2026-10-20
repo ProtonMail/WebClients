@@ -1,7 +1,8 @@
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { MEMBER_ROLE } from '@proton/shared/lib/constants';
-import type { Api, EnhancedMember } from '@proton/shared/lib/interfaces';
-import { MEMBER_ORG_KEY_STATE, MemberUnprivatizationState } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { EnhancedMember } from '@proton/shared/lib/interfaces/Member';
+import { MEMBER_ORG_KEY_STATE, MemberUnprivatizationState } from '@proton/shared/lib/interfaces/Member';
 import type { OrganizationRole } from '@proton/shared/lib/interfaces/OrganizationRole';
 import { PREDEFINED_ROLE_NAME } from '@proton/shared/lib/interfaces/OrganizationRole';
 

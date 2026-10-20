@@ -1,8 +1,6 @@
 import { addLocale as ttagAddLocale, useLocale as ttagUseLocale } from 'ttag';
 
 import { DEFAULT_LOCALE } from '../constants';
-import type { DateFormatOptions } from '../interfaces/Locale';
-import { getBrowserLocale, getClosestLocaleCode } from './helper';
 import {
     browserDateLocale,
     browserLocaleCode,
@@ -12,7 +10,9 @@ import {
     defaultDateLocale,
     localeCode,
     setDateLocales,
-} from './index';
+} from '../i18n';
+import type { DateFormatOptions } from '../interfaces/Locale';
+import { getBrowserLocale, getClosestLocaleCode } from './helper';
 import { loadDateLocale } from './loadLocale';
 import { locales } from './locales';
 

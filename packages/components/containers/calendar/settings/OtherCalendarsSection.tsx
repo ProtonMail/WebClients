@@ -15,14 +15,12 @@ import { getCalendarsLimitReachedText } from '@proton/shared/lib/calendar/calend
 import { APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { Address, UserModel } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
-import type {
-    CalendarMemberInvitation,
-    HolidaysDirectoryCalendar,
-    SubscribedCalendar,
-    VisualCalendar,
-} from '@proton/shared/lib/interfaces/calendar';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import type { HolidaysDirectoryCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
+import type { CalendarMemberInvitation } from '@proton/shared/lib/interfaces/calendar/CalendarMember';
+import type { SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar/Subscription';
 
 import Alert from '../../../components/alert/Alert';
 import SettingsLink from '../../../components/link/SettingsLink';

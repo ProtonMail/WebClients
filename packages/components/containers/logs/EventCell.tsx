@@ -3,8 +3,8 @@ import { IcCrossCircleFilled } from '@proton/icons/icons/IcCrossCircleFilled';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { IcPassShieldFillDanger } from '@proton/icons/icons/IcPassShieldFillDanger';
 import { IcShield2CheckFilled } from '@proton/icons/icons/IcShield2CheckFilled';
-import type { AuthLog } from '@proton/shared/lib/authlog';
-import { AuthLogStatus } from '@proton/shared/lib/authlog';
+import type { AuthLog } from '@proton/shared/lib/authlog/AuthLog';
+import { AuthLogStatus } from '@proton/shared/lib/authlog/AuthLog';
 import clsx from '@proton/utils/clsx';
 
 interface Props {

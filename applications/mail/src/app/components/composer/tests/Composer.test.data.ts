@@ -1,4 +1,4 @@
-import type { Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 
 export const fromFields = {
     fromAddress: 'from@protonmail.com',

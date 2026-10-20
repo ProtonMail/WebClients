@@ -2,7 +2,7 @@ import type { ActionRequest, ReferenceLabels } from '@proton/llm/lib/lumoAgent/c
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
 import sentenceText from '@proton/llm/lib/lumoAgent/ui/sentenceText';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
-import type { Folder } from '@proton/shared/lib/interfaces';
+import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 
 import type { MailToolDeps } from '../../toolModule';
 import { createRenameFolderHandler, renameFolderDefinition, renameFolderModule } from './renameFolder';

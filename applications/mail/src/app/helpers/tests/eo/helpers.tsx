@@ -1,7 +1,7 @@
 import { CryptoProxy } from '@protontech/crypto';
 
 import { MIME_TYPES } from '@proton/shared/lib/constants';
-import type { Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { loadEOMessage, loadEOToken } from '../../../store/eo/eoActions';

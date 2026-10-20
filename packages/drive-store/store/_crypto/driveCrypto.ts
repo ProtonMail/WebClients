@@ -4,7 +4,7 @@ import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
-import { getPrimaryKey } from '@proton/shared/lib/keys';
+import { getPrimaryKey } from '@proton/shared/lib/keys/getPrimaryKey';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 
 // Special case for drive to allow users with just an external address

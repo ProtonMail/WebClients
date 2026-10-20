@@ -15,7 +15,7 @@ import { IcPenSparks } from '@proton/icons/icons/IcPenSparks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateOrganizationSettings } from '@proton/shared/lib/api/organization';
 import { APPS } from '@proton/shared/lib/constants';
-import type { OrganizationSettings } from '@proton/shared/lib/interfaces';
+import type { OrganizationSettings } from '@proton/shared/lib/interfaces/Organization';
 import lumoIcon from '@proton/styles/assets/img/lumo/lumo-cat-icon.svg';
 import { useFlag } from '@proton/unleash/useFlag';
 

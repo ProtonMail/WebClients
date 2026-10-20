@@ -18,7 +18,7 @@ import useInstance from '@proton/hooks/useInstance';
 import Icons from '@proton/icons/Icons';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import createApi from '@proton/shared/lib/api/createApi';
-import { isWebView } from '@proton/shared/lib/broadcast';
+import { isWebView } from '@proton/shared/lib/broadcast/broadcast';
 
 import Verify from './Verify';
 import broadcast, { MessageType } from './broadcast';

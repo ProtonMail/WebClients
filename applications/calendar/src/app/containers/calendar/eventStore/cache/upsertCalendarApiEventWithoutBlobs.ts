@@ -1,5 +1,5 @@
 import { pick } from '@proton/shared/lib/helpers/object';
-import type { CalendarEventWithoutBlob } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarEventWithoutBlob } from '@proton/shared/lib/interfaces/calendar/Event';
 
 import type { CalendarEventsCache } from '../interface';
 import getComponentFromCalendarEventWithoutBlob from './getComponentFromCalendarEventWithoutBlob';

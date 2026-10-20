@@ -7,7 +7,7 @@ import { useLoading } from '@proton/hooks';
 import { useContactGroups } from '@proton/mail/store/labels/hooks';
 import { allSucceded } from '@proton/shared/lib/api/helpers/response';
 import { deleteLabels } from '@proton/shared/lib/api/labels';
-import type { ContactGroup } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 
 import Alert from '../../../components/alert/Alert';
 import type { ModalProps } from '../../../components/modalTwo/Modal';

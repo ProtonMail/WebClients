@@ -9,7 +9,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
 import useLoading from '@proton/hooks/useLoading';
-import { ForkSearchParameters } from '@proton/shared/lib/authentication/fork';
+import { ForkSearchParameters } from '@proton/shared/lib/authentication/fork/constants';
 import { BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import signOutOfAllDevices from '@proton/styles/assets/img/illustrations/sign-out-devices.svg';
 import signedOutOfAllDevices from '@proton/styles/assets/img/illustrations/signed-out-devices.svg';

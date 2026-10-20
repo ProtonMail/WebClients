@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
+import type { DomainAddress } from '@proton/shared/lib/interfaces/Address';
+import type { Domain } from '@proton/shared/lib/interfaces/Domain';
 
 import Info from '../../components/link/Info';
 import type { ModalProps } from '../../components/modalTwo/Modal';

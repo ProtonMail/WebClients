@@ -4,7 +4,7 @@ import Option from '@proton/components/components/option/Option';
 import SearchableSelect from '@proton/components/components/selectTwo/SearchableSelect';
 import DateInputTwo from '@proton/components/components/v2/input/DateInputTwo';
 import { IcClock } from '@proton/icons/icons/IcClock';
-import type { SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces';
+import type { SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces/UserSettings';
 import clsx from '@proton/utils/clsx';
 
 import type { FormValues, OnDateTimeChange } from './MeetingCreation/ScheduleMeetingModal/ScheduleMeetingForm/types';

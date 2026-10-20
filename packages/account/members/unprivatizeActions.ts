@@ -12,7 +12,9 @@ import {
 import { MEMBER_PRIVATE, MEMBER_ROLE } from '@proton/shared/lib/constants';
 import { getIsAddressEnabled } from '@proton/shared/lib/helpers/address';
 import { captureMessage, getSentryError } from '@proton/shared/lib/helpers/sentry';
-import type { Api, KTUserContext, Member, MemberReadyForAutomaticUnprivatization } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { KTUserContext } from '@proton/shared/lib/interfaces/KeyTransparency';
+import type { Member, MemberReadyForAutomaticUnprivatization } from '@proton/shared/lib/interfaces/Member';
 import { getIsMemberSetup } from '@proton/shared/lib/keys/memberHelper';
 import noop from '@proton/utils/noop';
 

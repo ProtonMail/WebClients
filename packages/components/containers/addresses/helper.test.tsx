@@ -7,7 +7,9 @@ import {
     MEMBER_ROLE,
     MEMBER_TYPE,
 } from '@proton/shared/lib/constants';
-import type { Address, Member, PartialMemberAddress, UserModel } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { Member, PartialMemberAddress } from '@proton/shared/lib/interfaces/Member';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import {
     canReceive,

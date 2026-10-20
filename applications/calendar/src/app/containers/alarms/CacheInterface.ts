@@ -1,4 +1,4 @@
-import type { CalendarAlarm } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarAlarm } from '@proton/shared/lib/interfaces/calendar/Alarm';
 
 interface CalendarAlarmCacheRecord {
     result?: CalendarAlarm[];

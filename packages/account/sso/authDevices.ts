@@ -15,7 +15,7 @@ import type { CoreEventV6Response } from '@proton/shared/lib/api/events';
 import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
 import { type UpdateCollectionV6, updateCollectionV6 } from '@proton/shared/lib/eventManager/updateCollectionV6';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import {
     type AuthDeviceOutput,
     AuthDeviceState,

@@ -29,7 +29,7 @@ import { getSessionDisplayData } from '@proton/shared/lib/authentication/session
 import { APPS, type APP_NAMES, BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { getShouldProcessLinkClick } from '@proton/shared/lib/helpers/dom';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import { getHasRecoveryMessage, removeDeviceRecovery } from '@proton/shared/lib/recoveryFile/storage';
 import clamp from '@proton/utils/clamp';
 import clsx from '@proton/utils/clsx';

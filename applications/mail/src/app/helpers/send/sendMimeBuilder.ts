@@ -8,7 +8,7 @@ import type {
     MessageState,
 } from '@proton/mail/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { getAttachments, isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
 

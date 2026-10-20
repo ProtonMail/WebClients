@@ -1,15 +1,14 @@
 import { CryptoProxy, KeyCompatibilityLevel } from '@protontech/crypto';
 
 import { getAllPublicKeys } from '@proton/shared/lib/api/keys';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type {
-    Api,
     ApiAddressKey,
-    FetchedSignedKeyList,
     GetAllPublicKeysResponse,
-    KTUserContext,
-    KeyTransparencyVerificationResult,
     ProcessedApiKey,
-} from '@proton/shared/lib/interfaces';
+} from '@proton/shared/lib/interfaces/EncryptionPreferences';
+import type { KTUserContext, KeyTransparencyVerificationResult } from '@proton/shared/lib/interfaces/KeyTransparency';
+import type { FetchedSignedKeyList } from '@proton/shared/lib/interfaces/SignedKeyList';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { verifyOutboundPublicKeys } from '../helpers/verifyOutboundPublicKeys';

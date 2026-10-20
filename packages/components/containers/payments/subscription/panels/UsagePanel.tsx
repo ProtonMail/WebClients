@@ -8,8 +8,10 @@ import { IcCalendarCheckmark } from '@proton/icons/icons/IcCalendarCheckmark';
 import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
 import { IcStorage } from '@proton/icons/icons/IcStorage';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import type { Address, Organization, UserModel } from '@proton/shared/lib/interfaces';
-import type { Calendar } from '@proton/shared/lib/interfaces/calendar';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import type { Calendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import isTruthy from '@proton/utils/isTruthy';
 import percentage from '@proton/utils/percentage';
 

@@ -15,7 +15,8 @@ import { getIsIframe } from '@proton/shared/lib/helpers/browser';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { create, createElectronNotification } from '@proton/shared/lib/helpers/desktopNotification';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import type { CalendarAlarm, CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarAlarm } from '@proton/shared/lib/interfaces/calendar/Alarm';
+import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar/Event';
 import noop from '@proton/utils/noop';
 
 import notificationIcon from '../../../assets/notification.png';

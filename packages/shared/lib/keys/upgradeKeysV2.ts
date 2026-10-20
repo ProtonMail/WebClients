@@ -7,22 +7,13 @@ import { upgradeKeysRoute } from '../api/keys';
 import { getOrganizationKeys } from '../api/organization';
 import { USER_ROLES } from '../constants';
 import { toMap } from '../helpers/object';
-import type {
-    Api,
-    CachedOrganizationKey,
-    DecryptedAddressKey,
-    DecryptedKey,
-    Key,
-    KeyMigrationKTVerifier,
-    KeyTransparencyVerify,
-    PreAuthKTVerify,
-    SignedKeyList,
-    User,
-    Address as tsAddress,
-    Key as tsKey,
-    OrganizationKey as tsOrganizationKey,
-    User as tsUser,
-} from '../interfaces';
+import type { Address as tsAddress } from '../interfaces/Address';
+import type { Api } from '../interfaces/Api';
+import type { DecryptedAddressKey, DecryptedKey, Key, Key as tsKey } from '../interfaces/Key';
+import type { KeyMigrationKTVerifier, KeyTransparencyVerify, PreAuthKTVerify } from '../interfaces/KeyTransparency';
+import type { CachedOrganizationKey, OrganizationKey as tsOrganizationKey } from '../interfaces/OrganizationKey';
+import type { SignedKeyList } from '../interfaces/SignedKeyList';
+import type { User, User as tsUser } from '../interfaces/User';
 import { srpVerify } from '../srp';
 import { generateAddressKeyTokens, reformatAddressKey } from './addressKeys';
 import { getDecryptedAddressKeysHelper } from './getDecryptedAddressKeys';

@@ -15,7 +15,7 @@ import type {
 } from '@proton/payments/core/interface';
 import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
 import { SavedChargebeePaymentProcessor } from '@proton/payments/core/payment-processors/savedChargebeePayment';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import noop from '@proton/utils/noop';
 
 export interface Props {

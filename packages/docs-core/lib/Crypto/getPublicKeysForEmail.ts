@@ -1,6 +1,7 @@
 import { getAllPublicKeys } from '@proton/shared/lib/api/keys'
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors'
-import type { Api, GetAllPublicKeysResponse } from '@proton/shared/lib/interfaces'
+import type { Api } from '@proton/shared/lib/interfaces/Api'
+import type { GetAllPublicKeysResponse } from '@proton/shared/lib/interfaces/EncryptionPreferences'
 
 const MISSING_ADDRESS_CODES = [
   API_CUSTOM_ERROR_CODES.KEY_GET_ADDRESS_MISSING,

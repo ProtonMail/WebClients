@@ -8,7 +8,7 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcChevronsLeft } from '@proton/icons/icons/IcChevronsLeft';
 import { IcChevronsRight } from '@proton/icons/icons/IcChevronsRight';
 import { updateHideDrawer } from '@proton/shared/lib/api/settings';
-import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
+import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces/UserSettings';
 import clsx from '@proton/utils/clsx';
 
 import useDrawer from '../../hooks/drawer/useDrawer';

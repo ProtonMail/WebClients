@@ -1,6 +1,7 @@
 import { subDays } from 'date-fns';
 
-import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 
 import { getIsUserEligibleForOneDollar } from './drivePostSignupOneDollarHelper';
 

@@ -2,7 +2,7 @@ import { MESSAGE_IMAGE_ATTRIBUTES_TO_FIND, MESSAGE_IMAGE_ATTRIBUTES_TO_LOAD } fr
 import { removeEncodedAndUnencodedLineBreaks } from '@proton/mail/helpers/string';
 import type { MessageRemoteImage, MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { hasShowRemote } from '@proton/shared/lib/mail/images';
 import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/mail/mailSettings';
 import { isDraft } from '@proton/shared/lib/mail/messages';

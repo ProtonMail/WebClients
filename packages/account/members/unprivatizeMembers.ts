@@ -12,7 +12,7 @@ import type {
     Member,
     MemberReadyForAutomaticUnprivatization,
     MemberReadyForManualUnprivatization,
-} from '@proton/shared/lib/interfaces';
+} from '@proton/shared/lib/interfaces/Member';
 
 import type { KtState } from '../kt';
 import { getKTUserContext } from '../kt/actions';

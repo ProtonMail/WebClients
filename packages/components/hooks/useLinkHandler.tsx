@@ -7,7 +7,7 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { PROTON_DOMAINS, SSO_PATHS } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { getSecondLevelDomain, isSubDomain } from '@proton/shared/lib/helpers/url';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { CONFIRM_LINK } from '@proton/shared/lib/mail/mailSettings';
 import isTruthy from '@proton/utils/isTruthy';
 

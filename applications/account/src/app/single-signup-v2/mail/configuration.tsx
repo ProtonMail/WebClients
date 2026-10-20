@@ -53,7 +53,7 @@ import {
     SSO_PATHS,
 } from '@proton/shared/lib/constants';
 import { everythingInPlanOrAppNamePlusText } from '@proton/shared/lib/i18n/ttag';
-import { Audience } from '@proton/shared/lib/interfaces';
+import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { SignupType } from '../../signup/interfaces';

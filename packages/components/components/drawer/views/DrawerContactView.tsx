@@ -6,7 +6,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { EasySwitchProvider } from '@proton/activation';
 import { Button } from '@proton/atoms/Button/Button';
 import useContactsDrawerFromURL from '@proton/mail/hooks/autoOpenContacts/useContactsDrawerFromURL';
-import type { Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import noop from '@proton/utils/noop';
 
 import { useContactMergeModals } from '../../../containers/contacts/hooks/useContactMergeModals';

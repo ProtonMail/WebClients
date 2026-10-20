@@ -1,4 +1,4 @@
-import type { ProtonConfig } from '@proton/shared/lib/interfaces';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 
 export interface ProtonPackOptions {
     version: string;

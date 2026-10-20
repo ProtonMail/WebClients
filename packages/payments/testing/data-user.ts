@@ -1,6 +1,6 @@
 import cloneDeep from 'lodash/cloneDeep';
 
-import type { User, UserModel } from '@proton/shared/lib/interfaces';
+import type { User, UserModel } from '@proton/shared/lib/interfaces/User';
 import { formatUser } from '@proton/shared/lib/user/helpers';
 
 const user: User = {

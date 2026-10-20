@@ -11,7 +11,7 @@ import { useLoading } from '@proton/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { Address } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
 import { formatSignature } from '@proton/shared/lib/mail/signature';
 
 import Editor from '../../components/editor/Editor';

@@ -2,7 +2,7 @@ import { END_TYPE, FREQUENCY, MONTHLY_TYPE } from '@proton/shared/lib/calendar/c
 import { getNegativeSetpos, getPositiveSetpos } from '@proton/shared/lib/calendar/recurrence/rrule';
 import { getUntilProperty, numericDayToDay } from '@proton/shared/lib/calendar/vcalConverter';
 import { fromLocalDate } from '@proton/shared/lib/date/timezone';
-import type { EventModel } from '@proton/shared/lib/interfaces/calendar';
+import type { EventModel } from '@proton/shared/lib/interfaces/calendar/Event';
 import type { VcalRruleProperty } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import unique from '@proton/utils/unique';
 

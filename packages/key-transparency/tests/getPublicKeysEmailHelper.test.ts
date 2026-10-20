@@ -1,7 +1,7 @@
 import { vi } from 'vitest';
 
 import { KEY_FLAG, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
-import { type KTUserContext, KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
+import { type KTUserContext, KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
 
 import { getPublicKeysEmailHelper } from '../lib/keys';
 

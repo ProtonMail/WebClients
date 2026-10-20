@@ -9,7 +9,7 @@ import type { AmountAndCurrency, ChargeablePaymentParameters, Currency } from '@
 import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 export const BITCOIN_POLLING_INTERVAL = 10000;
 

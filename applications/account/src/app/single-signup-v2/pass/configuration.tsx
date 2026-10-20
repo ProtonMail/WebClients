@@ -74,7 +74,7 @@ import {
     VPN_CONNECTIONS,
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
-import { Audience } from '@proton/shared/lib/interfaces';
+import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import onboardingFamilyPlan from '@proton/styles/assets/img/onboarding/familyPlan.svg';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';

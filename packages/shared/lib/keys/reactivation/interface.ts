@@ -1,6 +1,8 @@
 import type { PrivateKeyReference } from '@protontech/crypto';
 
-import type { Address, InactiveKey, Key, User } from '../../interfaces';
+import type { Address } from '../../interfaces/Address';
+import type { InactiveKey, Key } from '../../interfaces/Key';
+import type { User } from '../../interfaces/User';
 
 export interface KeyReactivationData {
     id: string;

@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
 import { PLANS } from '@proton/payments/core/constants';
-import type { Organization } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 
 import MembersStep from './MembersStep';
 

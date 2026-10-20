@@ -18,8 +18,8 @@ import { IcPassword } from '@proton/icons/icons/IcPassword';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
-import { getIsGlobalSSOAccount } from '@proton/shared/lib/keys';
+import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces/UserSettings';
+import { getIsGlobalSSOAccount } from '@proton/shared/lib/keys/accountType';
 
 import Info from '../../components/link/Info';
 import Loader from '../../components/loader/Loader';

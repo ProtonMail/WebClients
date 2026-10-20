@@ -1,4 +1,5 @@
-import type { NotificationModel, VcalDurationValue } from '../../interfaces/calendar';
+import type { NotificationModel } from '../../interfaces/calendar/Notification';
+import type { VcalDurationValue } from '../../interfaces/calendar/VcalModel';
 import { normalizeRelativeTrigger, transformBeforeAt } from '../alarms/trigger';
 import type { NOTIFICATION_TYPE_API } from '../constants';
 import { NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '../constants';

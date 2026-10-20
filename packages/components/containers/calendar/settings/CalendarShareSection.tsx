@@ -20,8 +20,10 @@ import {
 } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { Address, UserModel } from '@proton/shared/lib/interfaces';
-import type { CalendarMember, CalendarMemberInvitation, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
+import type { CalendarMember, CalendarMemberInvitation } from '@proton/shared/lib/interfaces/calendar/CalendarMember';
 
 import SettingsLink from '../../../components/link/SettingsLink';
 import useModalState from '../../../components/modalTwo/useModalState';

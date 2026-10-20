@@ -5,7 +5,7 @@ import type {
     MessageRemoteImage,
     MessageState,
 } from '@proton/mail/store/messages/messagesTypes';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { DEFAULT_MAIL_SETTINGS } from '@proton/shared/lib/mail/mailSettings';
 import { isDraft } from '@proton/shared/lib/mail/messages';
 import { transformLinkify } from '@proton/shared/lib/mail/transformLinkify';

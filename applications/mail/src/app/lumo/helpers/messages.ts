@@ -1,6 +1,6 @@
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { Folder } from '@proton/shared/lib/interfaces';
+import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import { isDraft, isOutbox, isScheduled, isSentAutoReply } from '@proton/shared/lib/mail/messages';

@@ -4,7 +4,7 @@ import { clearSession } from '@proton/shared/lib/authentication/handleLogoutFrom
 import { getPersistedSessions } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import { type ExternalSessionPayload, buildExternalSessionsViaFork } from '../remote/externalSession';
 import { sendSessionMigrationToNative } from '../remote/nativeAuthBridge';

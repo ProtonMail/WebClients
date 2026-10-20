@@ -15,7 +15,7 @@ import {
     PASS_SHORT_APP_NAME,
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
-import { Audience } from '@proton/shared/lib/interfaces';
+import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 
 import { SignupType } from '../../signup/interfaces';
 import Benefits from '../Benefits';

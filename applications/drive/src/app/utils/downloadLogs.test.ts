@@ -1,9 +1,10 @@
-import { format } from '@proton/shared/lib/date-fns-utc';
+import format from '@proton/shared/lib/date-fns-utc/format';
 
 import { downloadLogs } from './downloadLogs';
 
-jest.mock('@proton/shared/lib/date-fns-utc', () => ({
-    format: jest.fn(),
+jest.mock('@proton/shared/lib/date-fns-utc/format', () => ({
+    __esModule: true,
+    default: jest.fn(),
 }));
 
 describe('downloadLogs', () => {

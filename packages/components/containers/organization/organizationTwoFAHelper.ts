@@ -1,4 +1,4 @@
-import { type EnhancedMember, MEMBER_STATE } from '@proton/shared/lib/interfaces';
+import { type EnhancedMember, MEMBER_STATE } from '@proton/shared/lib/interfaces/Member';
 
 export const getTwoFAMemberStatistics = (members?: EnhancedMember[]) => {
     const canHaveTwoFAMembers =

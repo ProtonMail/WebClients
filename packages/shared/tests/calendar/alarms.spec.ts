@@ -14,14 +14,14 @@ import { propertyToUTCDate } from '../../lib/calendar/vcalConverter';
 import { DAY, HOUR, MINUTE, WEEK } from '../../lib/constants';
 import { convertUTCDateTimeToZone, convertZonedDateTimeToUTC, toUTCDate } from '../../lib/date/timezone';
 import { pick } from '../../lib/helpers/object';
+import type { DateTime } from '../../lib/interfaces/calendar/Date';
+import type { NotificationModel } from '../../lib/interfaces/calendar/Notification';
 import type {
-    DateTime,
-    NotificationModel,
     VcalDateProperty,
     VcalTriggerProperty,
     VcalValarmRelativeComponent,
     VcalVeventComponent,
-} from '../../lib/interfaces/calendar';
+} from '../../lib/interfaces/calendar/VcalModel';
 
 const formatOptions = { locale: enUS };
 const tzidEurope = 'Europe/Zurich';

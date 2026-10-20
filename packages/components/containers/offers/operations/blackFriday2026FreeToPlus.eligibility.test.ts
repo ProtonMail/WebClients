@@ -1,7 +1,7 @@
 import { getUnixTime, subHours } from 'date-fns';
 
 import { PLANS } from '@proton/payments/core/constants';
-import type { ProtonConfig } from '@proton/shared/lib/interfaces';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 
 import {
     accountAppConfig,

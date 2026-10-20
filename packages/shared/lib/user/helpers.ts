@@ -3,7 +3,7 @@ import { differenceInDays, fromUnixTime } from 'date-fns';
 import { SessionAccessTypeFlag, getSessionAccessTypeMask } from '../authentication/sessionAccessType';
 import { PRODUCT_BIT, USER_ROLES } from '../constants';
 import { hasBit } from '../helpers/bitset';
-import type { User, UserInfo, UserModel } from '../interfaces';
+import type { User, UserInfo, UserModel } from '../interfaces/User';
 
 const { ADMIN_ROLE, MEMBER_ROLE, FREE_ROLE } = USER_ROLES;
 

@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import type { IconSize } from '@proton/icons/types';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
-import type { Optional } from '@proton/shared/lib/interfaces';
+import type { Optional } from '@proton/shared/lib/interfaces/utils';
 
 import useDrawer from '../../../hooks/drawer/useDrawer';
 import LumoDrawerLogo from '../drawerIcons/LumoDrawerLogo';

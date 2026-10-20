@@ -1,9 +1,8 @@
 import type { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { formatFolderName } from '@proton/shared/lib/helpers/folder';
-import type { FolderWithSubFolders } from '@proton/shared/lib/interfaces';
+import type { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 
 import type { getStandardFolders } from '../../../../helpers/labels';
-
 import type { Item, ItemCustomFolder, ItemDefaultFolder, ItemLabel } from './useLocationFieldOptions';
 
 export const isDefaultFolder = (item: Item): item is ItemDefaultFolder => 'url' in item && 'icon' in item;

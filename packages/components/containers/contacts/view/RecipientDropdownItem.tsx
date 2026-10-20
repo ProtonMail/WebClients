@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { getInitials } from '@proton/shared/lib/helpers/string';
-import type { Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 
 import Copy from '../../../components/button/Copy';
 import ProtonBadgeType from '../../../components/protonBadge/ProtonBadgeType';

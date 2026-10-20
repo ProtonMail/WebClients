@@ -1,5 +1,5 @@
 import { getUIDHeaderValue, withAuthHeaders, withUIDHeaders } from '../../fetch/headers';
-import type { Api } from '../../interfaces';
+import type { Api } from '../../interfaces/Api';
 
 /**
  * @description Use `useSilentApi` hook if using the method in a React component.

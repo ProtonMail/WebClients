@@ -1,4 +1,4 @@
-import type { User, UserModel } from '@proton/shared/lib/interfaces';
+import type { User, UserModel } from '@proton/shared/lib/interfaces/User';
 import type { FeatureFlag } from '@proton/unleash/Flags';
 import isTruthy from '@proton/utils/isTruthy';
 

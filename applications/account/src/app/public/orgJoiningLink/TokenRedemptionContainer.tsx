@@ -37,15 +37,12 @@ import {
     passwordLengthValidator,
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
-import type {
-    Address,
-    Api,
-    DecryptedAddressKey,
-    DecryptedKey,
-    KeySalt,
-    PasswordPolicies,
-    User,
-} from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { DecryptedAddressKey, DecryptedKey } from '@proton/shared/lib/interfaces/Key';
+import type { KeySalt } from '@proton/shared/lib/interfaces/KeySalt';
+import type { PasswordPolicies } from '@proton/shared/lib/interfaces/PasswordPolicy';
+import type { User } from '@proton/shared/lib/interfaces/User';
 import { getUpdateKeysPayload } from '@proton/shared/lib/keys/changePassword';
 import { getDecryptedAddressKeysHelper } from '@proton/shared/lib/keys/getDecryptedAddressKeys';
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys/getDecryptedUserKeys';

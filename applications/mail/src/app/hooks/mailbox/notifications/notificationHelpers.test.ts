@@ -1,7 +1,7 @@
 import type { History } from 'history';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 

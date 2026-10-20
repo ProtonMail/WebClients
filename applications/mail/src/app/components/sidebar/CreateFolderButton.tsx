@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { hasReachedFolderLimit } from '@proton/shared/lib/helpers/folder';
-import type { Folder } from '@proton/shared/lib/interfaces';
+import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import clsx from '@proton/utils/clsx';
 
 import { useLabelActionsContext } from './EditLabelContext';

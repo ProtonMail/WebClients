@@ -15,7 +15,8 @@ import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import type { OrganizationExtended, OrganizationSettings, Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
+import type { OrganizationExtended, OrganizationSettings } from '@proton/shared/lib/interfaces/Organization';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 

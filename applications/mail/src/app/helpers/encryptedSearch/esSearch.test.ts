@@ -1,6 +1,6 @@
 import type { NormalizedSearchParams } from '@proton/encrypted-search/models';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 
 import type { ESMessage } from '../../models/encryptedSearch';
 import { normaliseSearchParams, testMetadata } from './esSearch';

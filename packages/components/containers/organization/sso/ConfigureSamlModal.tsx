@@ -15,7 +15,7 @@ import { CacheType } from '@proton/redux-utilities/interface';
 import { setupSAMLFields, setupSAMLUrl, setupSAMLXml } from '@proton/shared/lib/api/samlSSO';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import type { Domain } from '@proton/shared/lib/interfaces';
+import type { Domain } from '@proton/shared/lib/interfaces/Domain';
 import dragAndDrop from '@proton/styles/assets/img/illustrations/drag-and-drop-img.svg';
 
 import Dropzone from '../../../components/dropzone/Dropzone';

@@ -19,16 +19,21 @@ import {
 import { KEYGEN_CONFIGS, KEYGEN_TYPES, MEMBER_PRIVATE, MEMBER_ROLE } from '@proton/shared/lib/constants';
 import { getIsAddressConfirmed, getIsAddressEnabled } from '@proton/shared/lib/helpers/address';
 import { captureMessage, getSentryError } from '@proton/shared/lib/helpers/sentry';
-import type {
-    Address,
-    Api,
-    CachedOrganizationKey,
-    EnhancedMember,
-    Group,
-    KTUserContext,
-    Member,
-} from '@proton/shared/lib/interfaces';
-import { MEMBER_ORG_KEY_STATE } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { Group } from '@proton/shared/lib/interfaces/Group';
+import type { KTUserContext } from '@proton/shared/lib/interfaces/KeyTransparency';
+import type { EnhancedMember, Member } from '@proton/shared/lib/interfaces/Member';
+import { MEMBER_ORG_KEY_STATE } from '@proton/shared/lib/interfaces/Member';
+import type { CachedOrganizationKey } from '@proton/shared/lib/interfaces/OrganizationKey';
+import { reencryptAddressKeyTokenUsingOrgKey } from '@proton/shared/lib/keys/addressKeys';
+import { getOrganizationKeyToken } from '@proton/shared/lib/keys/getDecryptedOrganizationKey';
+import { getDecryptedUserKeys } from '@proton/shared/lib/keys/getDecryptedUserKeys';
+import { getPrimaryKey } from '@proton/shared/lib/keys/getPrimaryKey';
+import { getHasMigratedAddressKeys } from '@proton/shared/lib/keys/keyMigration';
+import { splitKeys } from '@proton/shared/lib/keys/keys';
+import { getIsMemberSetup, getIsNonPrivateMemberSetup } from '@proton/shared/lib/keys/memberHelper';
+import type { OrganizationKeyActivation, OrganizationKeyInvitation } from '@proton/shared/lib/keys/organizationKeyDto';
 import {
     type OrganizationKeyTokenData,
     type OrganizationKeyTokenDataSigner,
@@ -40,19 +45,11 @@ import {
     generatePrivateMemberInvitation,
     generatePublicMemberActivation,
     getDecryptedOrganizationKeyTokenData,
-    getDecryptedUserKeys,
-    getHasMigratedAddressKeys,
     getIsPasswordless,
-    getOrganizationKeyToken,
     getOrganizationKeyTokenDataSigner,
-    getPrimaryKey,
     getReEncryptedPublicMemberTokensPayloadLegacy,
     getReEncryptedPublicMemberTokensPayloadV2,
-    reencryptAddressKeyTokenUsingOrgKey,
-    splitKeys,
-} from '@proton/shared/lib/keys';
-import { getIsMemberSetup, getIsNonPrivateMemberSetup } from '@proton/shared/lib/keys/memberHelper';
-import type { OrganizationKeyActivation, OrganizationKeyInvitation } from '@proton/shared/lib/keys/organizationKeyDto';
+} from '@proton/shared/lib/keys/organizationKeys';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 

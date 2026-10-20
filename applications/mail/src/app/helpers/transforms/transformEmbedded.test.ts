@@ -1,6 +1,6 @@
 import { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';
 import type { MessageImage, MessageState } from '@proton/mail/store/messages/messagesTypes';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { SHOW_IMAGES } from '@proton/shared/lib/mail/mailSettings';
 

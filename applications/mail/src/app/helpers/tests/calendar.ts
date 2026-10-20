@@ -7,12 +7,8 @@ import { getDtendProperty, propertyToUTCDate } from '@proton/shared/lib/calendar
 import { getPropertyTzid } from '@proton/shared/lib/calendar/vcalHelper';
 import { getIsAllDay } from '@proton/shared/lib/calendar/veventHelper';
 import { booleanToNumber } from '@proton/shared/lib/helpers/boolean';
-import type {
-    Attendee,
-    CalendarEvent,
-    CalendarEventData,
-    VcalVeventComponent,
-} from '@proton/shared/lib/interfaces/calendar';
+import type { Attendee, CalendarEvent, CalendarEventData } from '@proton/shared/lib/interfaces/calendar/Event';
+import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
 const withAuthorCard = (card: Omit<CalendarEventData, 'Author'>, author: string): CalendarEventData => {
     return {

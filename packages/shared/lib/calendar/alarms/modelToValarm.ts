@@ -1,4 +1,4 @@
-import type { NotificationModel } from '../../interfaces/calendar';
+import type { NotificationModel } from '../../interfaces/calendar/Notification';
 import type { VcalValarmComponent } from '../../interfaces/calendar/VcalModel';
 import { ICAL_ALARM_ACTION, NOTIFICATION_TYPE_API } from '../constants';
 import { getValarmTrigger } from './getValarmTrigger';

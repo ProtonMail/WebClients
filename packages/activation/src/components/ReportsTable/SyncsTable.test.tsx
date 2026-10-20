@@ -4,7 +4,7 @@ import { setupServer } from 'msw/node';
 
 import { getModelState } from '@proton/account/tests';
 import { ADDRESS_FLAGS, ADDRESS_RECEIVE, ADDRESS_STATUS } from '@proton/shared/lib/constants';
-import type { Address } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
 
 import { headers } from '../../../msw.header';
 import { easySwitchRender } from '../../tests/render';

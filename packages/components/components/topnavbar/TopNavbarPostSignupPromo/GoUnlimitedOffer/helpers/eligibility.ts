@@ -1,7 +1,8 @@
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { APPS } from '@proton/shared/lib/constants';
-import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 
 import {
     checkAppIsValid,

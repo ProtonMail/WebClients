@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
 import { INVOICE_EMAIL_STATE } from '@proton/shared/lib/constants';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import type { InvoiceEmailSettings } from '@proton/shared/lib/interfaces';
+import type { InvoiceEmailSettings } from '@proton/shared/lib/interfaces/Organization';
 import noop from '@proton/utils/noop';
 
 import Form from '../../../components/form/Form';

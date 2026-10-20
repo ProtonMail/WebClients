@@ -1,5 +1,5 @@
 import { dateLocale } from '@proton/shared/lib/i18n';
-import { SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces';
+import { SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces/UserSettings';
 
 export const formatDate = (date: Date, timezone: string) => {
     const formatter = new Intl.DateTimeFormat(dateLocale.code, {

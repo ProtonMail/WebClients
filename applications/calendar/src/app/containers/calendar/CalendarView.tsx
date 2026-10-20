@@ -1,7 +1,7 @@
 import type { MutableRefObject, Ref, RefObject } from 'react';
 
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
-import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 
 import DayGrid from '../../components/calendar/DayGrid';
 import TimeGrid from '../../components/calendar/TimeGrid';

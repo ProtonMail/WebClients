@@ -1,14 +1,14 @@
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import type { PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
-import type { Address, MailSettings, Recipient, UserSettings } from '@proton/shared/lib/interfaces';
+import type { Address, Recipient } from '@proton/shared/lib/interfaces/Address';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import { PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
 import { FORWARDED_MESSAGE } from '@proton/shared/lib/mail/messages';
 import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
 
 import { formatFullDate } from '../date';
-import { createNewDraft } from './messageDraft';
-
 import mails from './__fixtures__/messageBlockquote.fixtures';
 import {
     locateBlockquote,
@@ -16,6 +16,7 @@ import {
     removeSignatureFromHTMLMessage,
     removeSignatureFromPlainTextMessage,
 } from './messageBlockquote';
+import { createNewDraft } from './messageDraft';
 import { exportPlainTextSignature } from './messageSignature';
 
 // Normalize whitespace for comparison (editors often strip trailing spaces)

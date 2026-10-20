@@ -1,5 +1,5 @@
 import { USER_ROLES } from '@proton/shared/lib/constants';
-import type { User } from '@proton/shared/lib/interfaces';
+import type { User } from '@proton/shared/lib/interfaces/User';
 
 export const enum TelemetryUserTier {
     internal = 'internal',

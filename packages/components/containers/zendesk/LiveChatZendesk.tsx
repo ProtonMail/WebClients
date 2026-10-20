@@ -8,7 +8,7 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import * as sessionStorageWrapper from '@proton/shared/lib/helpers/sessionStorage';
 import * as localStorageWrapper from '@proton/shared/lib/helpers/storage';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import noop from '@proton/utils/noop';
 
 import { useSilentApi } from '../../hooks/useSilentApi';

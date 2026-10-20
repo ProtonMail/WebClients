@@ -1,5 +1,5 @@
 import { type CategoryLabelID, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { Label } from '@proton/shared/lib/interfaces';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
 
 const categoryRank: Record<CategoryLabelID, number> = {
     [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]: 1,

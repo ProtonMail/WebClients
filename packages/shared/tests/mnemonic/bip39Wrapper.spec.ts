@@ -3,7 +3,7 @@ import {
     generateMnemonicFromBase64RandomBytes,
     mnemonicToBase64RandomBytes,
     validateMnemonic,
-} from '../../lib/mnemonic';
+} from '../../lib/mnemonic/bip39Wrapper';
 
 describe('generateMnemonicBase64RandomBytes', () => {
     it('should return base64 string', () => {

@@ -1,7 +1,7 @@
 import loginWithFallback from '@proton/shared/lib/authentication/loginWithFallback';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { createOfflineError, createTimeoutError } from '@proton/shared/lib/fetch/ApiError';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import { ClaimedAddressNoMatchError, loginWithClaimedAddress, loginWithPassword } from './passwordLogin';
 

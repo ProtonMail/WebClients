@@ -9,7 +9,7 @@ import { userPermissionsThunk } from '@proton/account/userPermissions';
 import { userSettingsThunk } from '@proton/account/userSettings';
 import { welcomeFlagsActions } from '@proton/account/welcomeFlags';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import type { TtagLocaleMap } from '@proton/shared/lib/interfaces';
+import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import { telemetry } from '@proton/shared/lib/telemetry';
 import noop from '@proton/utils/noop';
 

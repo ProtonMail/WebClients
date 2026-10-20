@@ -1,5 +1,5 @@
 import { getLabelNameAnonymised } from '@proton/mail/helpers/location';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 
 import { getLabelID, getPageSizeString, pathnameToLabelName } from './mailMetricsHelper';

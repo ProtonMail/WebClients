@@ -3,7 +3,9 @@ import loudRejection from 'loud-rejection';
 
 import { getModelState } from '@proton/account/tests';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
-import type { Address, AddressKey, Recipient, UserModel } from '@proton/shared/lib/interfaces';
+import type { Address, Recipient } from '@proton/shared/lib/interfaces/Address';
+import type { AddressKey } from '@proton/shared/lib/interfaces/Key';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import { addApiMock } from '../../../helpers/tests/api';
 import { minimalCache } from '../../../helpers/tests/cache';

@@ -1,9 +1,10 @@
+import { CryptoProxy } from '@protontech/crypto';
 import isDeepEqual from 'lodash/isEqual';
 
-import { CryptoProxy } from '@protontech/crypto';
 import type { SharedStartListening } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
-import type { Address, DecryptedAddressKey, DecryptedKey, Key } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { DecryptedAddressKey, DecryptedKey, Key } from '@proton/shared/lib/interfaces/Key';
 import noop from '@proton/utils/noop';
 
 import { selectAddresses } from '../addresses';

@@ -8,7 +8,7 @@ import { reauthByEmailVerification, reauthBySmsVerification } from '@proton/shar
 import { InvalidCodeError, InvalidRecoveryPhraseError } from '@proton/shared/lib/authentication/error';
 import type { InfoResponse } from '@proton/shared/lib/authentication/interface';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { mnemonicToBase64RandomBytes } from '@proton/shared/lib/mnemonic';
+import { mnemonicToBase64RandomBytes } from '@proton/shared/lib/mnemonic/bip39Wrapper';
 import { srpAuth } from '@proton/shared/lib/srp';
 
 import { verifyTwoFactor } from '../../../../../auth/secondFactor';

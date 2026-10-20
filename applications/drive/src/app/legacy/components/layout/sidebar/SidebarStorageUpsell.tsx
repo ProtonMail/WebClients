@@ -22,7 +22,7 @@ import {
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
-import type { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import {
     SpaceState,
     getAppSpace,

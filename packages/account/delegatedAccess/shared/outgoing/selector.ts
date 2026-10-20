@@ -1,8 +1,8 @@
 import { createSelector } from '@reduxjs/toolkit';
 
 import { getContactEmailKey } from '@proton/shared/lib/contacts/getContactEmailsMap';
-import type { Address } from '@proton/shared/lib/interfaces';
-import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import { getLikelyHasKeysToReactivate } from '@proton/shared/lib/keys/getInactiveKeys';
 import { hasPaidPass } from '@proton/shared/lib/user/helpers';
 

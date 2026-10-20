@@ -6,10 +6,10 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { getDisplayTitle } from '@proton/shared/lib/calendar/helper';
-import { format as formatUTC } from '@proton/shared/lib/date-fns-utc';
+import formatUTC from '@proton/shared/lib/date-fns-utc/format';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import type { Nullable } from '@proton/shared/lib/interfaces';
-import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
+import type { Nullable } from '@proton/shared/lib/interfaces/utils';
 import clsx from '@proton/utils/clsx';
 
 import { useCalendarSearch } from './CalendarSearchProvider';

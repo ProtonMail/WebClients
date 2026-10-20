@@ -2,7 +2,7 @@ import { c, msgid } from 'ttag';
 
 import { DAY } from '@proton/shared/lib/constants';
 import { isValidDate } from '@proton/shared/lib/date/date';
-import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 
 import type { IncomingDelegatedAccessOutput } from '../interface';
 

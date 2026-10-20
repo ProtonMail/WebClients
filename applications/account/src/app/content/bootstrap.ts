@@ -36,7 +36,7 @@ import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import { isProduction } from '@proton/shared/lib/helpers/sentry';
-import type { ProtonConfig } from '@proton/shared/lib/interfaces';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 import { telemetry } from '@proton/shared/lib/telemetry';
 import { initTracker } from '@proton/telemetry-tracker/tracker';
 import noop from '@proton/utils/noop';

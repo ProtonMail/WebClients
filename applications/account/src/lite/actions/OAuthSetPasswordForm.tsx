@@ -18,8 +18,10 @@ import { persistSession } from '@proton/shared/lib/authentication/persistedSessi
 import { getPersistedSessionByUID } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { APPS, BRAND_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { getMinPasswordLengthMessage, passwordLengthValidator } from '@proton/shared/lib/helpers/formValidators';
-import { type Api, KeyTransparencyActivation, type User } from '@proton/shared/lib/interfaces';
-import { handleSetupKeys } from '@proton/shared/lib/keys';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
+import type { User } from '@proton/shared/lib/interfaces/User';
+import { handleSetupKeys } from '@proton/shared/lib/keys/setupKeys';
 
 const handleSetup = async ({ user, password, api, uid }: { user: User; password: string; api: Api; uid: string }) => {
     const { preAuthKTVerify, preAuthKTCommit } = createPreAuthKTVerifier(KeyTransparencyActivation.DISABLED);

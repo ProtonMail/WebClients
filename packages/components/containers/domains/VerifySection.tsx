@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Href } from '@proton/atoms/Href/Href';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { Domain } from '@proton/shared/lib/interfaces';
+import type { Domain } from '@proton/shared/lib/interfaces/Domain';
 
 import Alert from '../../components/alert/Alert';
 import Copy from '../../components/button/Copy';

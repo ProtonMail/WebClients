@@ -4,7 +4,7 @@ import { IcPhone } from '@proton/icons/icons/IcPhone';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { PLANS } from '@proton/payments/core/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { Audience } from '@proton/shared/lib/interfaces';
+import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 
 import type { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 import { getActivityLogText, getTeamPoliciesText } from './pass';

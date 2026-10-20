@@ -4,10 +4,11 @@ import { createCalendar, updateCalendarUserSettings } from '../../../api/calenda
 import { getRandomAccentColor } from '../../../colors';
 import { getTimezone } from '../../../date/timezone';
 import { getActiveAddresses } from '../../../helpers/address';
-import type { Address, Api } from '../../../interfaces';
-import type { CalendarWithOwnMembers } from '../../../interfaces/calendar';
+import type { Address } from '../../../interfaces/Address';
+import type { Api } from '../../../interfaces/Api';
+import type { CalendarWithOwnMembers } from '../../../interfaces/calendar/Calendar';
 import type { GetAddressKeys } from '../../../interfaces/hooks/GetAddressKeys';
-import { getPrimaryKey } from '../../../keys';
+import { getPrimaryKey } from '../../../keys/getPrimaryKey';
 import { DEFAULT_CALENDAR } from '../../constants';
 import { setupCalendarKey } from './setupCalendarKeys';
 

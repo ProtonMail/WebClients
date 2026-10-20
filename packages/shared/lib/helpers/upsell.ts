@@ -1,6 +1,7 @@
 import type { APP_NAMES, UPSELL_COMPONENT, UPSELL_FEATURE } from '../constants';
 import { APPS, APP_UPSELL_REF_PATH } from '../constants';
-import type { Audience, UserModel } from '../interfaces';
+import type { Audience } from '../interfaces/Subscription';
+import type { UserModel } from '../interfaces/User';
 import { type COUPON_CODES, type CYCLE, PLANS } from '../payments/constants';
 import { correctDeprecatedPlanName } from '../payments/plan/helpers';
 import { getPlan } from '../payments/subscription/helpers/plan-info';

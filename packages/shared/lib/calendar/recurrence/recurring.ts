@@ -1,5 +1,6 @@
 /* eslint-disable no-param-reassign */
-import { addDays, addMilliseconds, differenceInCalendarDays, max } from '../../date-fns-utc';
+import { addDays, addMilliseconds, max } from '../../date-fns-utc';
+import differenceInCalendarDays from '../../date-fns-utc/differenceInCalendarDays';
 import { convertUTCDateTimeToZone, convertZonedDateTimeToUTC, fromUTCDate, toUTCDate } from '../../date/timezone';
 import type {
     VcalDateOrDateTimeProperty,

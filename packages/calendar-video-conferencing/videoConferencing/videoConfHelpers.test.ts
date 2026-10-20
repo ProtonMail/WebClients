@@ -1,4 +1,4 @@
-import { VIDEO_CONFERENCE_PROVIDER } from '@proton/shared/lib/interfaces/calendar';
+import { VIDEO_CONFERENCE_PROVIDER } from '@proton/shared/lib/interfaces/calendar/Api';
 
 import { SEPARATOR_PROTON_EVENTS, VIDEO_CONF_SERVICES } from './constants';
 import {

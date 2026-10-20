@@ -1,5 +1,6 @@
 import { PLANS } from '@proton/payments/core/constants';
-import type { Organization, UserModel } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import {
     B2B_PLANS_SUPPORTING_SCRIBE,

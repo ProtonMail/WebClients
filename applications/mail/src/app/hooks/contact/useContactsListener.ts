@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
 
+import type { PublicKeyReference } from '@protontech/crypto';
+
 import { useUserKeys } from '@proton/account/userKeys/hooks';
 import useEventManager from '@proton/components/hooks/useEventManager';
-import type { PublicKeyReference } from '@protontech/crypto';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { useContactGroups } from '@proton/mail/store/labels/hooks';
 import { removeEmailsFromEncryptionPreferencesCache } from '@proton/mail/store/messages/encryptionPreferences';
@@ -10,12 +11,11 @@ import { CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
 import { readSigned } from '@proton/shared/lib/contacts/decrypt';
 import { parseToVCard } from '@proton/shared/lib/contacts/vcard';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
-import type { Contact } from '@proton/shared/lib/interfaces/contacts';
+import type { Contact } from '@proton/shared/lib/interfaces/contacts/Contact';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 
-import { useMailDispatch } from '../../store/hooks';
-
 import { refresh } from '../../store/contacts/contactsActions';
+import { useMailDispatch } from '../../store/hooks';
 import { resetVerification } from '../../store/messages/read/messagesReadActions';
 
 /**

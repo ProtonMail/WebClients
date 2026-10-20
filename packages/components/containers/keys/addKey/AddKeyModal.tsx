@@ -13,7 +13,7 @@ import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCirc
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS, KEYGEN_TYPES } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
-import { getAlgorithmExists } from '@proton/shared/lib/keys';
+import { getAlgorithmExists } from '@proton/shared/lib/keys/keyAlgorithm';
 import noop from '@proton/utils/noop';
 
 import type { ModalProps } from '../../../components/modalTwo/Modal';

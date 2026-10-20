@@ -8,7 +8,7 @@ import { getInitialModelState } from '@proton/redux-utilities/initialModelState'
 import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { getReferralInfo as getReferralInfoApi } from '@proton/shared/lib/api/core/referrals';
 import { HOUR } from '@proton/shared/lib/constants';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 interface ReferralInfo {
     currency: string;

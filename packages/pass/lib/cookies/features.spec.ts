@@ -6,7 +6,10 @@ import { getFeaturesFromCookie, updateFeatureVariantCookie } from './features';
 jest.mock('@proton/shared/lib/helpers/cookies');
 jest.mock('@proton/shared/lib/date-fns-utc', () => ({
     addDays: jest.fn((date) => date),
-    endOfDay: jest.fn((date) => date),
+}));
+jest.mock('@proton/shared/lib/date-fns-utc/endOfDay', () => ({
+    __esModule: true,
+    default: jest.fn((date) => date),
 }));
 
 const mockGetCookie = getCookie as jest.MockedFunction<typeof getCookie>;

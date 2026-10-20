@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { syncDomain } from '@proton/account/domains/actions';
 import { Button } from '@proton/atoms/Button/Button';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { DKIM_STATE } from '@proton/shared/lib/interfaces';
+import { DKIM_STATE } from '@proton/shared/lib/interfaces/Domain';
 
 import DNSGroupRecords, { type DNSGroup } from './DNSGroupRecords';
 import DomainHelp from './DomainHelp';

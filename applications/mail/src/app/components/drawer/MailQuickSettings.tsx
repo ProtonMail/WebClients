@@ -53,12 +53,9 @@ import { KEY_TRANSPARENCY_REMINDER_UPDATE } from '@proton/shared/lib/drawer/inte
 import { isChromiumBased, isFirefox, openNewTab } from '@proton/shared/lib/helpers/browser';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import {
-    AI_ASSISTANT_ACCESS,
-    KeyTransparencyActivation,
-    type MailSettings,
-    type UserSettings,
-} from '@proton/shared/lib/interfaces';
+import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
+import { AI_ASSISTANT_ACCESS, type UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import { COMPOSER_MODE, VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSettings';
 import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';

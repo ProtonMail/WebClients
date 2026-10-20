@@ -2,14 +2,11 @@ import { CryptoProxy } from '@protontech/crypto';
 
 import { activateKeyRoute, activateKeyRouteV2 } from '../api/keys';
 import { MEMBER_PRIVATE } from '../constants';
-import type {
-    Address,
-    Api,
-    DecryptedAddressKey,
-    DecryptedKey,
-    KeyTransparencyVerify,
-    UserModel as tsUserModel,
-} from '../interfaces';
+import type { Address } from '../interfaces/Address';
+import type { Api } from '../interfaces/Api';
+import type { DecryptedAddressKey, DecryptedKey } from '../interfaces/Key';
+import type { KeyTransparencyVerify } from '../interfaces/KeyTransparency';
+import type { UserModel as tsUserModel } from '../interfaces/User';
 import { generateAddressKeyTokens } from './addressKeys';
 import { getActiveAddressKeys, getNormalizedActiveAddressKeys } from './getActiveKeys';
 import { getPrimaryKey } from './getPrimaryKey';

@@ -20,7 +20,8 @@ import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { KEY_FLAG, SECOND } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { GROUP_MEMBER_STATE, type Group } from '@proton/shared/lib/interfaces';
+import type { Group } from '@proton/shared/lib/interfaces/Group';
+import { GROUP_MEMBER_STATE } from '@proton/shared/lib/interfaces/GroupMember';
 
 import Copy from '../../../components/button/Copy';
 import { useModalStateObject } from '../../../components/modalTwo/useModalState';

@@ -26,7 +26,7 @@ import SsoPage from '@proton/components/containers/organization/sso/SsoPage';
 import { SentinelSection } from '@proton/components/containers/sentinel/SentinelSection';
 import type { EntitlementChecksForOrgAndUser } from '@proton/payments/core/entitlements/interface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
+import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';
 import {
     AlwaysOnVpnRoute,
     GatewayMonitorRoute,

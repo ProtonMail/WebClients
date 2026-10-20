@@ -5,7 +5,7 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { getTestStore } from '@proton/redux-shared-store/test';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { USER_ROLES } from '@proton/shared/lib/constants';
-import type { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import { type SubscriptionState, subscriptionReducer } from '../subscription';
 import { getModelState } from '../testing/getModelState';

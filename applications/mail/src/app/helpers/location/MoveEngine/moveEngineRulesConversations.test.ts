@@ -1,13 +1,12 @@
 import { describe } from '@jest/globals';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { Folder, Label } from '@proton/shared/lib/interfaces';
+import type { Folder } from '@proton/shared/lib/interfaces/Folder';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import {
-    ERROR_ELEMENT_NOT_CONVERSATION,
-    MoveEngineRuleResult,
-} from './moveEngineInterface';
+import type { Conversation } from '../../../models/conversation';
+import { ERROR_ELEMENT_NOT_CONVERSATION, MoveEngineRuleResult } from './moveEngineInterface';
 import {
     conversationAllDraftRules,
     conversationAllMailRules,
@@ -27,7 +26,6 @@ import {
     conversationStarredRules,
     conversationTrashRules,
 } from './moveEngineRulesConversations';
-import type { Conversation } from '../../../models/conversation';
 
 const customLabels = [
     { ID: 'customLabelID', Name: 'Custom label' },

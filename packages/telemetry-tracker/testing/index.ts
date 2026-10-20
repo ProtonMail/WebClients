@@ -1,5 +1,5 @@
 import type { TelemetryReport } from '@proton/shared/lib/api/telemetry';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import { Tracker, setTrackerInstance } from '../lib/tracker';
 

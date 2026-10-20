@@ -28,7 +28,7 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import * as sessionStorage from '@proton/shared/lib/helpers/sessionStorage';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { UnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
 import noop from '@proton/utils/noop';
 

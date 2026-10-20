@@ -4,9 +4,8 @@ import type {
     CalendarEventMetadata,
     CalendarEventSharedData,
     OrganizerModel,
-    VcalAttendeeProperty,
-    VcalOrganizerProperty,
-} from '@proton/shared/lib/interfaces/calendar';
+} from '@proton/shared/lib/interfaces/calendar/Event';
+import type { VcalAttendeeProperty, VcalOrganizerProperty } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
 export interface ESOrganizerModel extends Pick<OrganizerModel, 'email' | 'cn'> {}
 export interface ESAttendeeModel extends Pick<AttendeeModel, 'email' | 'cn' | 'role' | 'partstat'> {}

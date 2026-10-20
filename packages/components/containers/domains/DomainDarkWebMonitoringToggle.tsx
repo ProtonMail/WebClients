@@ -9,7 +9,7 @@ import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { disableDomainBreachAlert, enableDomainBreachAlert } from '@proton/shared/lib/api/breaches';
 import { DARK_WEB_MONITORING_NAME } from '@proton/shared/lib/constants';
-import type { Domain } from '@proton/shared/lib/interfaces';
+import type { Domain } from '@proton/shared/lib/interfaces/Domain';
 
 import Toggle from '../../components/toggle/Toggle';
 

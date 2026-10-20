@@ -25,7 +25,7 @@ import { tracePaymentError } from '@proton/payments/sentry/capture';
 import type { UpsellTelemetryContext } from '@proton/payments/telemetry/shared-checkout-telemetry';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import type { Organization } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 
 import useModalState from '../../../components/modalTwo/useModalState';
 import { useRedirectToAccountApp } from '../../desktop/useRedirectToAccountApp';

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import chunk from '@proton/utils/chunk';
 import isTruthy from '@proton/utils/isTruthy';
 

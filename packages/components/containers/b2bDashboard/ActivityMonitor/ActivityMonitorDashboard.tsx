@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import type { EntitlementChecksForOrgAndUser } from '@proton/payments/core/entitlements/interface';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
-import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
+import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { Tabs } from '../../../components/tabs/Tabs';

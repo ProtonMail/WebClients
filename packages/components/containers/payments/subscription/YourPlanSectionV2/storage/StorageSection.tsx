@@ -29,7 +29,8 @@ import {
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { sizeUnits } from '@proton/shared/lib/helpers/size';
 import { getInitials } from '@proton/shared/lib/helpers/string';
-import type { Organization, UserModel } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { isOrganization } from '@proton/shared/lib/organization/helper';
 import {
     SpaceStateThemeColorMap,

@@ -12,7 +12,7 @@ import ModalsChildren from '@proton/components/containers/modals/Children';
 import ModalsProvider from '@proton/components/containers/modals/Provider';
 import { APPS } from '@proton/shared/lib/constants';
 import createCache from '@proton/shared/lib/helpers/cache';
-import type { ProtonConfig } from '@proton/shared/lib/interfaces';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 
 import NotificationsTestProvider from './NotificationsTestProvider';
 

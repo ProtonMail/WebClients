@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import isTruthy from '@proton/utils/isTruthy';
 
 import Table from '../../../components/table/Table';

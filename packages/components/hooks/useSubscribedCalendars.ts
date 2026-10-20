@@ -14,15 +14,13 @@ import {
     getIsCalendarMemberEventManagerDelete,
     getIsCalendarMemberEventManagerUpdate,
 } from '@proton/shared/lib/eventManager/calendar/helpers';
+import type { Calendar, CalendarWithOwnMembers, VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
+import type { CalendarMember } from '@proton/shared/lib/interfaces/calendar/CalendarMember';
 import type {
-    Calendar,
-    CalendarMember,
     CalendarSubscription,
     CalendarSubscriptionResponse,
-    CalendarWithOwnMembers,
     SubscribedCalendar,
-    VisualCalendar,
-} from '@proton/shared/lib/interfaces/calendar';
+} from '@proton/shared/lib/interfaces/calendar/Subscription';
 import addItem from '@proton/utils/addItem';
 import removeItem from '@proton/utils/removeIndex';
 import updateItem from '@proton/utils/updateItem';

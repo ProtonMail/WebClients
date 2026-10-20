@@ -1,7 +1,9 @@
 import { c } from 'ttag';
 
-import type { Api, ApiKeysConfig, KTUserContext } from '@proton/shared/lib/interfaces';
-import { KT_VERIFICATION_STATUS, KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { ApiKeysConfig } from '@proton/shared/lib/interfaces/EncryptionPreferences';
+import type { KTUserContext } from '@proton/shared/lib/interfaces/KeyTransparency';
+import { KT_VERIFICATION_STATUS, KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
 
 import { KT_ERROR_TYPE, ktKeyVerificationFailureTelemetryAndMetrics, ktSentryReport } from '../helpers/utils';
 import getPublicKeysEmailHelperWithKT from './getPublicKeysEmailHelperWithKT';

@@ -2,7 +2,9 @@ import isDeepEqual from 'lodash/isEqual';
 
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS } from '@proton/shared/lib/constants';
-import { Audience, type Organization, type UserModel } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
+import { Audience } from '@proton/shared/lib/interfaces/Subscription';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import {
     type ADDON_NAMES,

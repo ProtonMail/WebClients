@@ -1,5 +1,5 @@
 import type { CategoryLabelID } from '@proton/shared/lib/constants';
-import type { SimpleMap } from '@proton/shared/lib/interfaces';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import type { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import type { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';

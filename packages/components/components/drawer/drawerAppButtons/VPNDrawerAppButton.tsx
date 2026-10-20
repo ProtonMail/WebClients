@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
-import type { Optional } from '@proton/shared/lib/interfaces';
+import type { Optional } from '@proton/shared/lib/interfaces/utils';
 
 import useDrawer from '../../../hooks/drawer/useDrawer';
 import VPNDrawerLogo from '../drawerIcons/VPNDrawerLogo';

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
-import type { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 

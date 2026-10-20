@@ -1,6 +1,7 @@
 import type { PLANS } from '@proton/payments/core/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import type { Subscription, SubscriptionPlan } from '@proton/shared/lib/interfaces';
+import type { SubscriptionPlan } from '@proton/shared/lib/payments/plan/interface';
+import type { Subscription } from '@proton/shared/lib/payments/subscription/interface';
 
 export type ConfigProps = {
     app?: APP_NAMES;

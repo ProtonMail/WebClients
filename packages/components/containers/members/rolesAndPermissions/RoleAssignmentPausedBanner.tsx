@@ -3,7 +3,7 @@ import { c, msgid } from 'ttag';
 import { AdminRolesUIState, useAdminRolesUI } from '@proton/account/userPermissions/hooks';
 import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
-import { ROLE_SOURCE } from '@proton/shared/lib/interfaces';
+import { ROLE_SOURCE } from '@proton/shared/lib/interfaces/OrganizationRole';
 import capitalize from '@proton/utils/capitalize';
 
 const RoleAssignmentPausedBanner = ({

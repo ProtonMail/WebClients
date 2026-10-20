@@ -1,8 +1,8 @@
 import { CALENDAR_TYPE } from '../../../lib/calendar/constants';
 import { getCalendarIsNotSyncedInfo, getNotSyncedInfo, getSyncingInfo } from '../../../lib/calendar/subscribe/helpers';
 import { HOUR } from '../../../lib/constants';
-import type { VisualCalendar } from '../../../lib/interfaces/calendar';
-import { CALENDAR_SUBSCRIPTION_STATUS } from '../../../lib/interfaces/calendar';
+import type { VisualCalendar } from '../../../lib/interfaces/calendar/Calendar';
+import { CALENDAR_SUBSCRIPTION_STATUS } from '../../../lib/interfaces/calendar/Subscription';
 
 const {
     OK,

@@ -7,7 +7,7 @@ import SidebarList from '@proton/components/components/sidebar/SidebarList';
 import SimpleSidebarListItemHeader from '@proton/components/components/sidebar/SimpleSidebarListItemHeader';
 import useLocalState from '@proton/components/hooks/useLocalState';
 import { useLoadingByKey } from '@proton/hooks/useLoading';
-import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import noop from '@proton/utils/noop';
 
 import { useCalendarDispatch } from '../../../store/hooks';

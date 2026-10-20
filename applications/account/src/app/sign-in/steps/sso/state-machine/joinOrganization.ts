@@ -1,4 +1,4 @@
-import type { User } from '@proton/shared/lib/interfaces';
+import type { User } from '@proton/shared/lib/interfaces/User';
 
 import type { SSODataTypes } from '../../../auth/interface';
 import { NO_PASSWORD_POLICIES } from '../../../state-machine/accountFlow';

@@ -8,8 +8,9 @@ import { getApiError, getIs401Error, getIsConnectionIssue } from '@proton/shared
 import { getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { PersistedSession } from '@proton/shared/lib/authentication/SessionInterface';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
-import { type ConsumeForkParameters, consumeFork } from '@proton/shared/lib/authentication/fork';
 import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
+import { consumeFork } from '@proton/shared/lib/authentication/fork/consume';
+import type { ConsumeForkParameters } from '@proton/shared/lib/authentication/fork/getConsumeForkParameters';
 import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { resumeSession as coreResumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { getPersistedSessions } from '@proton/shared/lib/authentication/persistedSessionStorage';

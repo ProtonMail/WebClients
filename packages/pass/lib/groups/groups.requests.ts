@@ -3,7 +3,7 @@ import {
     getGroupMembers as coreGetGroupMembers,
     getGroups as coreGetGroups,
 } from '@proton/shared/lib/api/groups';
-import { GROUP_MEMBER_STATE } from '@proton/shared/lib/interfaces';
+import { GROUP_MEMBER_STATE } from '@proton/shared/lib/interfaces/GroupMember';
 
 import { api } from '../api/api';
 import { parseGroup, parseGroupMember } from './groups.parsers';

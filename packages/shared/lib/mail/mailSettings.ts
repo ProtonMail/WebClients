@@ -1,5 +1,5 @@
 import { MIME_TYPES } from '../constants';
-import type { MailSettings } from '../interfaces';
+import type { MailSettings } from '../interfaces/MailSettings';
 
 export const MAX_RECIPIENTS = 100;
 

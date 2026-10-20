@@ -16,10 +16,10 @@ import useEffectOnce from '@proton/hooks/useEffectOnce';
 import metrics from '@proton/metrics/metricsInstance';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import { getClientID } from '@proton/shared/lib/apps/helper';
-import { newVersionUpdater } from '@proton/shared/lib/busy';
+import { newVersionUpdater } from '@proton/shared/lib/busy/busy';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
-import type { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { UnleashFlagProviderWithToolbar } from '@proton/unleash/UnleashFlagProviderWithToolbar';
 
 import { bootstrapApp } from '../../bootstrap';

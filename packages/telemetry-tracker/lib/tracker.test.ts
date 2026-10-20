@@ -1,7 +1,7 @@
 import { TelemetryBringYourOwnEmailEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import * as sentry from '@proton/shared/lib/helpers/sentry';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import { telemetry } from '@proton/shared/lib/telemetry';
 
 import { allowed, bool, defineEvent, defineTimer, duration, number, topValues } from '../events';

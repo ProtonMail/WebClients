@@ -13,7 +13,8 @@ import {
 } from '@proton/shared/lib/api/msp';
 import type { MspDelegatedManager } from '@proton/shared/lib/api/msp';
 import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS, MEMBER_PRIVATE, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
-import type { Address, KeyPair } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { KeyPair } from '@proton/shared/lib/interfaces/Key';
 import type { MspSubsidiary } from '@proton/shared/lib/interfaces/Msp';
 import { getPrimaryKey } from '@proton/shared/lib/keys/getPrimaryKey';
 import { getMemberKeys } from '@proton/shared/lib/keys/memberKeys';

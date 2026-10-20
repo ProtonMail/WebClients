@@ -41,8 +41,8 @@ import type {
 } from '@proton/payments/core/interface';
 import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
 import type { Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
-import type { User } from '@proton/shared/lib/interfaces';
-import { isBilledUser } from '@proton/shared/lib/interfaces';
+import type { User } from '@proton/shared/lib/interfaces/User';
+import { isBilledUser } from '@proton/shared/lib/interfaces/User';
 import clsx from '@proton/utils/clsx';
 
 import Loader from '../../components/loader/Loader';

@@ -5,7 +5,7 @@ import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/h
 import { APPS_WITH_IN_APP_PAYMENTS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
 import { formatURLForAjaxRequest } from '@proton/shared/lib/helpers/url';
-import type { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import noop from '@proton/utils/noop';
 
 import type {

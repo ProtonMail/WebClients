@@ -1,7 +1,9 @@
 import { all, call, fork, put, select } from 'redux-saga/effects';
 
 import { getEvents, getLatestID } from '@proton/shared/lib/api/events';
-import type { Address, User, UserSettings } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { User } from '@proton/shared/lib/interfaces/User';
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import identity from '@proton/utils/identity';
 
 import { PassCrypto } from '../../../../lib/crypto';

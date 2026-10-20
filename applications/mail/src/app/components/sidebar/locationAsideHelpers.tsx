@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 

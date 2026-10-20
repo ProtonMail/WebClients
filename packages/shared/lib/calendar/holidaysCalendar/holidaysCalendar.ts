@@ -4,8 +4,8 @@ import unique from '@proton/utils/unique';
 
 import { getPrimaryAddress } from '../../helpers/address';
 import { getLanguageCode, getNaiveCountryCode } from '../../i18n/helper';
-import type { Address } from '../../interfaces';
-import type { CalendarNotificationSettings, HolidaysDirectoryCalendar } from '../../interfaces/calendar';
+import type { Address } from '../../interfaces/Address';
+import type { CalendarNotificationSettings, HolidaysDirectoryCalendar } from '../../interfaces/calendar/Calendar';
 import type { GetAddressKeys } from '../../interfaces/hooks/GetAddressKeys';
 import { encryptPassphraseSessionKey, signPassphrase } from '../crypto/keys/calendarKeys';
 

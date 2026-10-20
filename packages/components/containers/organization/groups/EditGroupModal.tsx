@@ -18,7 +18,7 @@ import { IcUser } from '@proton/icons/icons/IcUser';
 import { KEY_FLAG } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { stripWhitespace } from '@proton/shared/lib/helpers/string';
-import { GroupPermissions } from '@proton/shared/lib/interfaces';
+import { GroupPermissions } from '@proton/shared/lib/interfaces/Group';
 
 import InputFieldStacked from '../../../components/inputFieldStacked/InputFieldStacked';
 import InputFieldStackedGroup from '../../../components/inputFieldStacked/InputFieldStackedGroup';

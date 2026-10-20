@@ -1,5 +1,6 @@
-import type { DecryptedAddressKey, DecryptedKey, User } from '@proton/shared/lib/interfaces';
-import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
+import type { DecryptedAddressKey, DecryptedKey } from '@proton/shared/lib/interfaces/Key';
+import type { User } from '@proton/shared/lib/interfaces/User';
+import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys/getDecryptedUserKeys';
 import { getUserKey } from '@proton/shared/tests/keys/keyDataHelper';
 
 import { generateAddress, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../utils/tests/crypto';

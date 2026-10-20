@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 import { TelemetryCollapsibleLeftSidebarEvents, TelemetryMeasurementGroups } from '../api/telemetry';
 import type { APP_NAMES } from '../constants';
-import type { Api } from '../interfaces';
+import type { Api } from '../interfaces/Api';
 import { sendTelemetryReport } from './metrics';
 
 export const enum COLLAPSE_EVENTS {

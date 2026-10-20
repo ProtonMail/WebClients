@@ -6,7 +6,7 @@ import { syncDomain } from '@proton/account/domains/actions';
 import { Button } from '@proton/atoms/Button/Button';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { SPF_STATE } from '@proton/shared/lib/interfaces';
+import { SPF_STATE } from '@proton/shared/lib/interfaces/Domain';
 
 import DNSGroupRecords, { type DNSGroup } from './DNSGroupRecords';
 import DomainHelp from './DomainHelp';

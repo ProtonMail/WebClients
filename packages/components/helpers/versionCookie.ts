@@ -1,7 +1,7 @@
 import type { Feature } from '@proton/features/interface';
 import { doesNotSupportEarlyAccessVersion } from '@proton/shared/lib/helpers/browser';
 import { deleteCookie, getCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
-import type { Environment } from '@proton/shared/lib/interfaces';
+import type { Environment } from '@proton/shared/lib/interfaces/Environment';
 
 export const versionCookieAtLoad = getCookie('Tag') as Environment | undefined;
 

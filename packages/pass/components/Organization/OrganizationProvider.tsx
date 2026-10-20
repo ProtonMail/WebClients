@@ -3,7 +3,7 @@ import { createContext, useContext, useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { PLANS } from '@proton/payments/core/constants';
-import type { Organization } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
 
 import { isB2BAdmin } from '../../lib/organization/helpers';

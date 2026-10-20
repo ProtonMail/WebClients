@@ -5,8 +5,10 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
-import type { EnhancedMember, Group, GroupMember } from '@proton/shared/lib/interfaces';
-import { GROUP_MEMBER_TYPE } from '@proton/shared/lib/interfaces';
+import type { Group } from '@proton/shared/lib/interfaces/Group';
+import type { GroupMember } from '@proton/shared/lib/interfaces/GroupMember';
+import { GROUP_MEMBER_TYPE } from '@proton/shared/lib/interfaces/GroupMember';
+import type { EnhancedMember } from '@proton/shared/lib/interfaces/Member';
 
 import ModalTwo from '../../../components/modalTwo/Modal';
 import ModalTwoContent from '../../../components/modalTwo/ModalContent';

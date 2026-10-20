@@ -6,7 +6,8 @@ import { ROOSTER_EDITOR_ID } from '@proton/components/components/editor/constant
 import { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';
 import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
-import type { AddressKey, MailSettings } from '@proton/shared/lib/interfaces';
+import type { AddressKey } from '@proton/shared/lib/interfaces/Key';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { SIGN } from '@proton/shared/lib/mail/mailSettings';
 
 import { addApiMock } from '../../../helpers/tests/api';

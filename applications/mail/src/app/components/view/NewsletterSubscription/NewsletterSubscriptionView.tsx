@@ -9,7 +9,7 @@ import StandardErrorPage from '@proton/components/containers/app/StandardErrorPa
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import { domIsBusy } from '@proton/shared/lib/busy';
+import { domIsBusy } from '@proton/shared/lib/busy/busy';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS, type MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 

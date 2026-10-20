@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import type { Environment } from '../interfaces';
+import type { Environment } from '../interfaces/Environment';
 import type { DesktopInboxHeartbeatMetricPayload } from '../metrics/desktopInboxHeartbeat';
 import type { ColorScheme } from '../themes/constants';
 import type { ThemeSetting } from '../themes/themes';

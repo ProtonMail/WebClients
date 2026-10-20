@@ -4,8 +4,8 @@ import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 
 import { addressKeysThunk, addressesThunk, userKeysThunk } from '@proton/account';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-import type { DecryptedAddressKey, DecryptedKey } from '@proton/shared/lib/interfaces';
-import { getPrimaryKey } from '@proton/shared/lib/keys';
+import type { DecryptedAddressKey, DecryptedKey } from '@proton/shared/lib/interfaces/Key';
+import { getPrimaryKey } from '@proton/shared/lib/keys/getPrimaryKey';
 
 import { generateMasterKeyBytes } from '../crypto';
 import {

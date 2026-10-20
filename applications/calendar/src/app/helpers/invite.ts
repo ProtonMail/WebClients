@@ -1,5 +1,5 @@
 import { getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
-import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
 import type { InviteActions } from '../interfaces/Invite';
 import { INVITE_ACTION_TYPES } from '../interfaces/Invite';

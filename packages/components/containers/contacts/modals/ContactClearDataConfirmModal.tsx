@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
-import type { Key } from '@proton/shared/lib/interfaces';
+import type { Key } from '@proton/shared/lib/interfaces/Key';
 
 import Alert from '../../../components/alert/Alert';
 import Row from '../../../components/container/Row';

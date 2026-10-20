@@ -7,25 +7,17 @@ import { addressType } from '@proton/shared/lib/api/addresses';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { ADDRESS_TYPE, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
-import type {
-    ActiveKeyWithVersion,
-    Address,
-    Api,
-    DecryptedAddressKey,
-    Domain,
-    EnhancedMember,
-    KeyTransparencyCommit,
-    KeyTransparencyVerify,
-    PartialMemberAddress,
-} from '@proton/shared/lib/interfaces';
-import { VERIFY_STATE } from '@proton/shared/lib/interfaces';
-import {
-    clearKeyFlagsToEnableEmailE2EE,
-    getActiveAddressKeys,
-    getMemberKeys,
-    getNormalizedActiveAddressKeys,
-    getSignedKeyListWithDeferredPublish,
-} from '@proton/shared/lib/keys';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { Domain } from '@proton/shared/lib/interfaces/Domain';
+import { VERIFY_STATE } from '@proton/shared/lib/interfaces/Domain';
+import type { ActiveKeyWithVersion, DecryptedAddressKey } from '@proton/shared/lib/interfaces/Key';
+import type { KeyTransparencyCommit, KeyTransparencyVerify } from '@proton/shared/lib/interfaces/KeyTransparency';
+import type { EnhancedMember, PartialMemberAddress } from '@proton/shared/lib/interfaces/Member';
+import { getActiveAddressKeys, getNormalizedActiveAddressKeys } from '@proton/shared/lib/keys/getActiveKeys';
+import { clearKeyFlagsToEnableEmailE2EE } from '@proton/shared/lib/keys/keyFlags';
+import { getMemberKeys } from '@proton/shared/lib/keys/memberKeys';
+import { getSignedKeyListWithDeferredPublish } from '@proton/shared/lib/keys/signedKeyList';
 
 import { type AddressKeysState, addressKeysThunk } from '../addressKeys';
 import { type AddressesState, addressesThunk } from '../addresses';

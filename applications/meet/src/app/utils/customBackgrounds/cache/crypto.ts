@@ -9,7 +9,7 @@ import {
 } from '@protontech/crypto/subtle/aesGcm.ts';
 
 import { getItem, setItem } from '@proton/shared/lib/helpers/sessionStorage';
-import type { DecryptedKey } from '@proton/shared/lib/interfaces';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 
 import { GUEST_BACKGROUND_KEY_STORAGE_KEY } from '../constants';
 import type { BackgroundField } from '../types';

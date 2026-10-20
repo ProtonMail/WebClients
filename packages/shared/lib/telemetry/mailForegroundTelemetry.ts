@@ -10,7 +10,7 @@ import { getVisibilityStateSingleton, isVisible } from '../eventManager/Visibili
 import { isLinux, isMac } from '../helpers/browser';
 import { isElectronMail } from '../helpers/desktop';
 import { sendTelemetryReport } from '../helpers/metrics';
-import type { Api } from '../interfaces';
+import type { Api } from '../interfaces/Api';
 
 type AppClient = 'web-mail' | 'macos-mail' | 'windows-mail' | 'linux-mail';
 

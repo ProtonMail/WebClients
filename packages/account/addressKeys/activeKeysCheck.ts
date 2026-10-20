@@ -5,7 +5,7 @@ import { createKTVerifier } from '@proton/key-transparency/helpers';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { captureMessage, getSentryError } from '@proton/shared/lib/helpers/sentry';
-import { hasActiveKeysMismatch, updateActiveKeys } from '@proton/shared/lib/keys';
+import { hasActiveKeysMismatch, updateActiveKeys } from '@proton/shared/lib/keys/updateActiveKeys';
 
 import { type AddressesState, addressesThunk } from '../addresses';
 import type { KtState } from '../kt';

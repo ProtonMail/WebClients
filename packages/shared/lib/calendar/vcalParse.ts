@@ -7,7 +7,7 @@ import type {
     VcalDateValue,
     VcalDurationValue,
     VcalRrulePropertyValue,
-} from '../interfaces/calendar';
+} from '../interfaces/calendar/VcalModel';
 import { UNIQUE_PROPERTIES } from './vcalDefinition';
 
 const getInternalDateValue = (value: any): VcalDateValue => {

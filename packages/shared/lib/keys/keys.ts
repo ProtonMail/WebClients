@@ -3,7 +3,8 @@ import { CryptoProxy } from '@protontech/crypto';
 import { computeKeyPassword, generateKeySalt } from '@protontech/crypto/srp';
 
 import { extractEmailFromUserID } from '../helpers/email';
-import type { Key, KeyPair, KeySalt as tsKeySalt } from '../interfaces';
+import type { Key, KeyPair } from '../interfaces/Key';
+import type { KeySalt as tsKeySalt } from '../interfaces/KeySalt';
 
 export const generateKeySaltAndPassphrase = async (password: string) => {
     const salt = generateKeySalt();

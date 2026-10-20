@@ -12,7 +12,7 @@ import {
     rejectCalendarShareInvitation,
 } from '@proton/shared/lib/calendar/sharing/shareProton/shareProton';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
-import type { CalendarMemberInvitation } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarMemberInvitation } from '@proton/shared/lib/interfaces/calendar/CalendarMember';
 
 import useEventManager from './useEventManager';
 import useGetEncryptionPreferences from './useGetEncryptionPreferences';

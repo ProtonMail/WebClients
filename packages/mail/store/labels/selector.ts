@@ -1,7 +1,8 @@
 import { createSelector } from '@reduxjs/toolkit';
 
 import { CATEGORY_LABEL_IDS, type CategoryLabelID, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { type Category, type Label, hasUnseenTracking } from '@proton/shared/lib/interfaces';
+import { type Category, hasUnseenTracking } from '@proton/shared/lib/interfaces/Category';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
 
 import type { CategoryTab } from '../../features/categoriesView/categoriesConstants';
 import { getCategoryTabFromLabel } from '../../features/categoriesView/categoriesHelpers';

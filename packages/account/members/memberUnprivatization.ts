@@ -8,8 +8,8 @@ import type {
     MemberUnprivatizationAcceptState,
     MemberUnprivatizationAutomaticApproveState,
     MemberUnprivatizationManualApproveState,
-} from '@proton/shared/lib/interfaces';
-import { MemberUnprivatizationState } from '@proton/shared/lib/interfaces';
+} from '@proton/shared/lib/interfaces/Member';
+import { MemberUnprivatizationState } from '@proton/shared/lib/interfaces/Member';
 import { getIsMemberSetup } from '@proton/shared/lib/keys/memberHelper';
 import { getHasPausedRoleAssignment } from '@proton/shared/lib/organization/helper';
 

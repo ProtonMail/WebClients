@@ -15,14 +15,11 @@ import { getIsAllDay } from '../../lib/calendar/veventHelper';
 import { ACCENT_COLORS_MAP } from '../../lib/colors';
 import { omit } from '../../lib/helpers/object';
 import { toCRLF } from '../../lib/helpers/string';
-import type { RequireSome } from '../../lib/interfaces';
 import type { VerificationPreferences } from '../../lib/interfaces/VerificationPreferences';
-import type {
-    Attendee,
-    CalendarEventData,
-    CreateOrUpdateCalendarEventData,
-    VcalVeventComponent,
-} from '../../lib/interfaces/calendar';
+import type { CreateOrUpdateCalendarEventData } from '../../lib/interfaces/calendar/Api';
+import type { Attendee, CalendarEventData } from '../../lib/interfaces/calendar/Event';
+import type { VcalVeventComponent } from '../../lib/interfaces/calendar/VcalModel';
+import type { RequireSome } from '../../lib/interfaces/utils';
 import { DecryptableKey, DecryptableKey2 } from '../keys/keys.data';
 
 const getVevent = (hasColor = false): VcalVeventComponent => {

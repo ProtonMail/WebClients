@@ -20,8 +20,8 @@ import { IcMoneyBills } from '@proton/icons/icons/IcMoneyBills';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { isAndroid } from '@proton/shared/lib/helpers/browser';
 import { getIsAccountRecoveryAvailable } from '@proton/shared/lib/helpers/recovery';
-import { UserType } from '@proton/shared/lib/interfaces';
-import { getIsExternalAccount } from '@proton/shared/lib/keys/setupAddress';
+import { UserType } from '@proton/shared/lib/interfaces/User';
+import { getIsExternalAccount } from '@proton/shared/lib/keys/accountType';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { LiteAppPaths } from '../../helper';

@@ -1,7 +1,7 @@
 import { getIsAddressDisabled } from '@proton/shared/lib/helpers/address';
-import type { ResetSelfAudit } from '@proton/shared/lib/interfaces';
-import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
-import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
+import type { ResetSelfAudit } from '@proton/shared/lib/interfaces/KeyTransparency';
+import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
+import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys/getDecryptedUserKeys';
 
 import { fetchLatestEpoch, uploadVerifiedEpoch } from '../helpers/apiHelpers';
 import { KT_ERROR_TYPE, ktSentryReportError } from '../helpers/utils';

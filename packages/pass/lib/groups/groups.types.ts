@@ -1,4 +1,6 @@
-import type { AddressKey, Group as CoreGroup, GroupMember as CoreGroupMember } from '@proton/shared/lib/interfaces';
+import type { Group as CoreGroup } from '@proton/shared/lib/interfaces/Group';
+import type { GroupMember as CoreGroupMember } from '@proton/shared/lib/interfaces/GroupMember';
+import type { AddressKey } from '@proton/shared/lib/interfaces/Key';
 
 import type { MaybeNull } from '../../types/utils';
 

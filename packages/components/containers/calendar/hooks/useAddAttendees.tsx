@@ -25,15 +25,12 @@ import { createCalendarEvent } from '@proton/shared/lib/calendar/serialize';
 import { prodId } from '@proton/shared/lib/calendar/vcalConfig';
 import { withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
 import { omit } from '@proton/shared/lib/helpers/object';
-import type { SimpleMap } from '@proton/shared/lib/interfaces';
-import type {
-    CalendarEvent,
-    SyncMultipleApiResponse,
-    VcalAttendeeProperty,
-    VcalVeventComponent,
-} from '@proton/shared/lib/interfaces/calendar';
-import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { SyncMultipleApiResponse } from '@proton/shared/lib/interfaces/calendar/Api';
+import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar/Event';
+import type { VcalAttendeeProperty, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
 
 import { useGetCalendarInfo } from '../../../hooks/useGetCalendarInfo';

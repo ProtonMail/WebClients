@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { IcLock } from '@proton/icons/icons/IcLock';
-import { ForkType, requestFork } from '@proton/shared/lib/authentication/fork';
+import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
+import { requestFork } from '@proton/shared/lib/authentication/fork/consume';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { DashboardMeetingListTab } from './types';

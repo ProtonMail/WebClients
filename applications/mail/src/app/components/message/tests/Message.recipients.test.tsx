@@ -2,7 +2,7 @@ import { act } from 'react';
 
 import { screen } from '@testing-library/react';
 
-import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 
 import { clearAll } from '../../../helpers/tests/helper';
 import { refresh } from '../../../store/contacts/contactsActions';

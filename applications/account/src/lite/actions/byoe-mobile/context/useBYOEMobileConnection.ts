@@ -16,7 +16,7 @@ import { EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
 import { trackBYOECreationError } from '@proton/activation/src/telemetry/byoeCreationFunnel';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
-import type { Address } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
 
 import { getNativeSuccessUrl } from '../redirectToNative';
 import type { BYOEMobileStatus } from './interface';

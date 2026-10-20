@@ -16,7 +16,8 @@ import {
 } from '@proton/shared/lib/api/drive/volume';
 import { getEncryptedSessionKey } from '@proton/shared/lib/calendar/crypto/encrypt';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import type { Address, DecryptedAddressKey } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces/Key';
 import { type GetDriveVolumeResult, VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
 import { encryptPassphrase, generateLookupHash, sign } from '@proton/shared/lib/keys/driveKeys';
 

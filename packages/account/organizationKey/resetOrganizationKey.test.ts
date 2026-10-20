@@ -1,5 +1,5 @@
 import { MEMBER_PRIVATE } from '@proton/shared/lib/constants';
-import type { EnhancedMember } from '@proton/shared/lib/interfaces';
+import type { EnhancedMember } from '@proton/shared/lib/interfaces/Member';
 
 import { getMembersToPrivatizeForOrganizationKeyReset } from './resetOrganizationKey';
 

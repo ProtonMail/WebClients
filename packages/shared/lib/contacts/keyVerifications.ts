@@ -2,8 +2,8 @@ import type { KeyID } from '@protontech/crypto';
 import { CryptoProxy } from '@protontech/crypto';
 
 import { CONTACT_CARD_TYPE } from '../constants';
-import type { Key } from '../interfaces';
-import type { Contact } from '../interfaces/contacts';
+import type { Key } from '../interfaces/Key';
+import type { Contact } from '../interfaces/contacts/Contact';
 
 export interface KeyWithIds {
     key: Key;
@@ -40,11 +40,11 @@ const getContactKeyIds = async (contact: Contact, fromEncryption: boolean) => {
             selectedCards.map(async (card) => {
                 const keyIDs = fromEncryption
                     ? await CryptoProxy.getMessageInfo({ armoredMessage: card.Data }).then(
-                        ({ encryptionKeyIDs }) => encryptionKeyIDs
-                    )
+                          ({ encryptionKeyIDs }) => encryptionKeyIDs
+                      )
                     : await CryptoProxy.getSignatureInfo({ armoredSignature: card.Signature as string }).then(
-                        ({ signingKeyIDs }) => signingKeyIDs
-                    );
+                          ({ signingKeyIDs }) => signingKeyIDs
+                      );
 
                 return keyIDs;
             })

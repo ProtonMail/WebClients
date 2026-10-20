@@ -1,4 +1,4 @@
-import type { Organization } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 
 import { isB2BAdmin } from '../lib/organization/helpers';
 import type { MaybeNull, PassCryptoSnapshot, SerializedCryptoContext } from '../types';

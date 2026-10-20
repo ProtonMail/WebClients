@@ -2,7 +2,7 @@ import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
 import { webcrypto } from 'node:crypto';
 
-import type { DecryptedKey } from '@proton/shared/lib/interfaces';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 
 import {
     getCachedThumbnail,

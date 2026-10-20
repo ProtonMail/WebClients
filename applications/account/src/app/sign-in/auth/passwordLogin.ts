@@ -5,7 +5,7 @@ import { getApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
 import type { ClaimedAddressID, InfoResponse } from '@proton/shared/lib/authentication/interface';
 import loginWithFallback from '@proton/shared/lib/authentication/loginWithFallback';
 import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 /**
  * Fails every candidate the same way, so trying the next one wouldn't help: the connection, the sign-in being

@@ -1,4 +1,4 @@
-import type { User } from '@proton/shared/lib/interfaces';
+import type { User } from '@proton/shared/lib/interfaces/User';
 import { formatUser } from '@proton/shared/lib/user/helpers';
 
 import { MetricUserPlan } from '../../utils/type/MetricTypes';

@@ -4,7 +4,7 @@ import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/refere
 import type { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import type { MessageState, PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 

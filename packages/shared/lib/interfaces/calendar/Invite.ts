@@ -1,6 +1,6 @@
-import type { Nullable } from '..';
 import type { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_STATUS } from '../../calendar/constants';
 import type { DecryptedKey } from '../Key';
+import type { Nullable } from '../utils';
 import type { CalendarSettings, VisualCalendar } from './Calendar';
 import type { DecryptedCalendarKey } from './CalendarKey';
 import type { CalendarEvent } from './Event';

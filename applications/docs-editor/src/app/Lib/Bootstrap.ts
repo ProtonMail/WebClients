@@ -1,5 +1,5 @@
 import * as bootstrap from '@proton/account/bootstrap'
-import type { ProtonConfig } from '@proton/shared/lib/interfaces'
+import type { ProtonConfig } from '@proton/shared/lib/interfaces/config'
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales'
 
 import locales from '../locales'

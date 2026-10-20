@@ -1,7 +1,7 @@
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { getTestStore } from '@proton/redux-shared-store/test';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
-import type { Address } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
 
 import { serverEvent } from '../eventLoop';
 import { addressesReducer, addressesThunk, selectAddresses } from './index';

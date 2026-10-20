@@ -8,7 +8,7 @@ import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Card } from '@proton/atoms/Card/Card';
 import { PLANS } from '@proton/payments/core/constants';
 import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
-import { Audience } from '@proton/shared/lib/interfaces';
+import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import clsx from '@proton/utils/clsx';
 
 import SettingsLink from '../../components/link/SettingsLink';

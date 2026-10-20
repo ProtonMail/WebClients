@@ -1,7 +1,7 @@
 import { useSubscription } from '@proton/account/subscription/hooks';
 import useFeature from '@proton/features/useFeature';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
-import { domIsBusy } from '@proton/shared/lib/busy';
+import { domIsBusy } from '@proton/shared/lib/busy/busy';
 
 import type { OfferHookReturnValue } from '../../common/helpers/interface';
 import type { SupportedPlans } from '../helpers/interface';

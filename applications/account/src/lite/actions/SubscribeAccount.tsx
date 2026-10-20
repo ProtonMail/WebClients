@@ -49,7 +49,7 @@ import {
     VPN_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
-import type { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { canPay } from '@proton/shared/lib/user/helpers';
 import type { FeatureFlagVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
 import { useVariant } from '@proton/unleash/useVariant';

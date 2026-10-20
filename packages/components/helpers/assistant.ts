@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import { PLANS } from '@proton/payments/core/constants';
 import { BRAND_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-import type { Organization, UserModel } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 // B2C plans having Scribe by default
 const B2C_PLANS_INCLUDING_SCRIBE = [PLANS.VISIONARY, PLANS.DUO, PLANS.FAMILY];

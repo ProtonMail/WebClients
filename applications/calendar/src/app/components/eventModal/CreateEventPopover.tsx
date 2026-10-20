@@ -11,8 +11,8 @@ import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { VIEWS } from '@proton/shared/lib/calendar/constants';
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
-import type { Address } from '@proton/shared/lib/interfaces';
-import type { EventModel } from '@proton/shared/lib/interfaces/calendar';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { EventModel } from '@proton/shared/lib/interfaces/calendar/Event';
 
 import { getCannotSaveEvent } from '../../helpers/event';
 import { useRect } from '../../hooks/useRect';

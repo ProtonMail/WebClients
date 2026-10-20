@@ -6,7 +6,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { getAllowedTimeZones } from '../api/calendars';
 import { SECOND } from '../constants';
-import type { Api } from '../interfaces';
+import type { Api } from '../interfaces/Api';
 import type { DateTime } from '../interfaces/calendar/Date';
 import {
     FALLBACK_ALLOWED_SUPPORTED_TIMEZONES_LIST,

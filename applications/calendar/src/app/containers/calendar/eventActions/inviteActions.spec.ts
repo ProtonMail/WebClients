@@ -3,12 +3,12 @@ import type { SendIcsParams } from '@proton/components/hooks/useSendIcs';
 import { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_RSVP, ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { buildMailTo } from '@proton/shared/lib/helpers/email';
 import { omit } from '@proton/shared/lib/helpers/object';
-import type { SimpleMap } from '@proton/shared/lib/interfaces';
-import type { VcalAttendeeProperty, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
-import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { VcalAttendeeProperty, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { GetVTimezonesMap } from '@proton/shared/lib/interfaces/hooks/GetVTimezonesMap';
 import type { RelocalizeText } from '@proton/shared/lib/interfaces/hooks/RelocalizeText';
 import type { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
 
 import { INVITE_ACTION_TYPES } from '../../../interfaces/Invite';

@@ -11,7 +11,7 @@ import { userThunk } from '@proton/account/user';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import type { Address } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
 import noop from '@proton/utils/noop';
 
 import { convertToBYOEAddress, createBYOEAddress as createBYOEAddressApi } from '../api/api';

@@ -2,7 +2,7 @@ import type { AlgorithmInfo } from '@protontech/crypto';
 
 import unique from '@proton/utils/unique';
 
-import type { KeyGenConfig, KeyGenConfigV6 } from '../interfaces';
+import type { KeyGenConfig, KeyGenConfigV6 } from '../interfaces/KeyGenConfig';
 
 const formatCurveName = (curve: AlgorithmInfo['curve']) => {
     switch (curve) {

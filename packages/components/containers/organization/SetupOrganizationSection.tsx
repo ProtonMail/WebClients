@@ -11,7 +11,7 @@ import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { DRIVE_APP_NAME, MAIL_APP_NAME, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { Organization } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 
 import Loader from '../../components/loader/Loader';
 import useModalState from '../../components/modalTwo/useModalState';

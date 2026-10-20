@@ -3,7 +3,6 @@ import { addDays, fromUnixTime } from 'date-fns';
 import truncate from '@proton/utils/truncate';
 import unique from '@proton/utils/unique';
 
-import type { RequireOnly, RequireSome } from '../../../lib/interfaces';
 import { getClosestProtonColor } from '../../colors';
 import { DAY } from '../../constants';
 import { convertUTCDateTimeToZone, fromUTCDate, getSupportedTimezone } from '../../date/timezone';
@@ -16,7 +15,8 @@ import type {
     VcalDurationValue,
     VcalFloatingDateTimeProperty,
     VcalVeventComponent,
-} from '../../interfaces/calendar';
+} from '../../interfaces/calendar/VcalModel';
+import type { RequireOnly, RequireSome } from '../../interfaces/utils';
 import { dedupeAlarmsWithNormalizedTriggers } from '../alarms';
 import { getAttendeeEmail, getSupportedAttendee, getSupportedOrganizer } from '../attendees';
 import { ICAL_METHOD, MAX_CHARS_API, MAX_ICAL_SEQUENCE } from '../constants';

@@ -1,7 +1,8 @@
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLikeShapeEnum, ButtonLikeSizeEnum } from '@proton/atoms/Button/ButtonLike';
 import { isUrlPasswordValid } from '@proton/meet/utils/isUrlPasswordValid';
-import { ForkType, requestFork } from '@proton/shared/lib/authentication/fork';
+import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
+import { requestFork } from '@proton/shared/lib/authentication/fork/consume';
 import { APPS } from '@proton/shared/lib/constants';
 
 type Props = {

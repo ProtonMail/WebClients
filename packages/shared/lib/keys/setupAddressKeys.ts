@@ -1,6 +1,8 @@
 import { setupAddress as setupAddressRoute } from '../api/addresses';
 import type { ProductParam } from '../apps/product';
-import type { Api, PreAuthKTVerify, Address as tsAddress } from '../interfaces';
+import type { Address as tsAddress } from '../interfaces/Address';
+import type { Api } from '../interfaces/Api';
+import type { PreAuthKTVerify } from '../interfaces/KeyTransparency';
 import type { DeviceSecretData } from './device';
 import { handleSetupKeys } from './setupKeys';
 

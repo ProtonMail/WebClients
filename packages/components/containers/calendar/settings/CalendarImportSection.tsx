@@ -8,8 +8,8 @@ import { getProbablyActiveCalendars, getWritableCalendars } from '@proton/shared
 import { IMPORT_CALENDAR_FAQ_URL } from '@proton/shared/lib/calendar/constants';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { UserModel } from '@proton/shared/lib/interfaces';
-import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import Alert from '../../../components/alert/Alert';

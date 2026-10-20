@@ -16,9 +16,9 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import type { Member } from '@proton/shared/lib/interfaces';
-import { getCanGenerateMemberKeys, getShouldSetupMemberKeys } from '@proton/shared/lib/keys';
+import type { Member } from '@proton/shared/lib/interfaces/Member';
 import { getIsMemberDisabled, getIsMemberInvited } from '@proton/shared/lib/keys/memberHelper';
+import { getCanGenerateMemberKeys, getShouldSetupMemberKeys } from '@proton/shared/lib/keys/memberKeys';
 
 import { DropdownSizeUnit } from '../../components/dropdown/utils';
 import type { ModalProps } from '../../components/modalTwo/Modal';

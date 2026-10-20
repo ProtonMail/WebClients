@@ -3,7 +3,7 @@ import type {
     SyncMultipleApiResponse,
     SyncMultipleApiResponses,
     UpdateEventPartApiResponse,
-} from '@proton/shared/lib/interfaces/calendar';
+} from '@proton/shared/lib/interfaces/calendar/Api';
 
 import type { OpenedMailEvent } from '../../../../hooks/useGetOpenedMailEvents';
 import type {

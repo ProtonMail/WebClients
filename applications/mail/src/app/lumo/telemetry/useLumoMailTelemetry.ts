@@ -6,7 +6,7 @@ import type { LumoAgentTelemetry, LumoConfirmAnswer } from '@proton/llm/lib/lumo
 import { LumoChainEnd } from '@proton/llm/lib/lumoAgent/ui/types';
 import { TelemetryMailLumoEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import type { SimpleMap } from '@proton/shared/lib/interfaces';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 /** The `reason` dimension, shared by `chain_end` and `tool_end`; a tool only ever reports the first two. */
 enum EndReason {

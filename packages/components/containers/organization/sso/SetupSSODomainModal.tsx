@@ -11,8 +11,8 @@ import metrics from '@proton/metrics/metricsInstance';
 import observeApiError from '@proton/metrics/observeApiError';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import type { Domain } from '@proton/shared/lib/interfaces';
-import { VERIFY_STATE } from '@proton/shared/lib/interfaces';
+import type { Domain } from '@proton/shared/lib/interfaces/Domain';
+import { VERIFY_STATE } from '@proton/shared/lib/interfaces/Domain';
 
 import Form from '../../../components/form/Form';
 import type { ModalProps } from '../../../components/modalTwo/Modal';

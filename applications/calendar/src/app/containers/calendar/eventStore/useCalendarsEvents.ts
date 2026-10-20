@@ -1,7 +1,7 @@
 import type { MutableRefObject } from 'react';
 import { useEffect, useMemo, useState } from 'react';
 
-import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 
 import type { OpenedMailEvent } from '../../../hooks/useGetOpenedMailEvents';
 import { visualEventsSelector } from '../../../store/events/eventsSelectors';

@@ -9,7 +9,7 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateSpamAction, updateStickyLabels, updateViewMode } from '@proton/shared/lib/api/mailSettings';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 import { STICKY_LABELS, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 

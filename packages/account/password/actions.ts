@@ -7,9 +7,10 @@ import { disable2FA as disable2FAConfig, updatePassword } from '@proton/shared/l
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import mutatePassword from '@proton/shared/lib/authentication/mutate';
 import { getPersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
-import type { Api } from '@proton/shared/lib/interfaces';
-import { generateKeySaltAndPassphrase, getIsPasswordless } from '@proton/shared/lib/keys';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import { getUpdateKeysPayload } from '@proton/shared/lib/keys/changePassword';
+import { generateKeySaltAndPassphrase } from '@proton/shared/lib/keys/keys';
+import { getIsPasswordless } from '@proton/shared/lib/keys/organizationKeys';
 import { srpVerify } from '@proton/shared/lib/srp';
 
 import { type AddressKeysState, addressKeysThunk } from '../addressKeys';

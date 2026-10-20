@@ -3,7 +3,8 @@ import deepFreeze from 'deep-freeze';
 import type { PersistedSession } from '@proton/shared/lib/authentication/SessionInterface';
 import type { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
 import { getPersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
-import type { ProtonConfig, User } from '@proton/shared/lib/interfaces';
+import type { User } from '@proton/shared/lib/interfaces/User';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 import noop from '@proton/utils/noop';
 
 import { getDecryptedCache, getEncryptedCache } from './crypto';

@@ -1,5 +1,6 @@
 import type { IconComponent } from '@proton/icons/component';
-import type { Folder, FolderWithSubFolders, MailSettings } from '@proton/shared/lib/interfaces';
+import type { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 
 export type FolderItem = Folder & {
     icon: IconComponent;

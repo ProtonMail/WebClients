@@ -12,7 +12,8 @@ import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { TelemetryMailDrivePostSignupOneDollarEvents } from '@proton/shared/lib/api/telemetry';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
-import { type Organization, isBilledUser } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
+import { isBilledUser } from '@proton/shared/lib/interfaces/User';
 import clsx from '@proton/utils/clsx';
 
 import ModalTwo from '../../../components/modalTwo/Modal';

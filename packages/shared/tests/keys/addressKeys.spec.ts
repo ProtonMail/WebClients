@@ -1,11 +1,11 @@
-import type { Address } from '../../lib/interfaces';
+import type { Address } from '../../lib/interfaces/Address';
 import {
     decryptAddressKeyToken,
     generateAddressKey,
     generateAddressKeyTokens,
-    generateUserKey,
     getNewAddressKeyToken,
-} from '../../lib/keys';
+} from '../../lib/keys/addressKeys';
+import { generateUserKey } from '../../lib/keys/userKeys';
 
 describe('address keys', () => {
     it('should throw if generated key cannot decrypt', async () => {

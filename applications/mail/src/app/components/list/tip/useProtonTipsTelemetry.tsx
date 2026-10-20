@@ -5,7 +5,7 @@ import { getPlan } from '@proton/payments/core/subscription/helpers';
 import type { TelemetryEvents } from '@proton/shared/lib/api/telemetry';
 import { TelemetryMeasurementGroups, TelemetryProtonTipsEvents } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import type { SimpleMap } from '@proton/shared/lib/interfaces';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 import type { TipActionType } from '../../../models/tip';
 

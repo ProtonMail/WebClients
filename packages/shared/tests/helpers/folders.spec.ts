@@ -1,6 +1,7 @@
 import { hasReachedFolderLimit, hasReachedLabelLimit } from '../../lib/helpers/folder';
-import type { Label, UserModel } from '../../lib/interfaces';
 import type { Folder } from '../../lib/interfaces/Folder';
+import type { Label } from '../../lib/interfaces/Label';
+import type { UserModel } from '../../lib/interfaces/User';
 
 describe('folders helpers', () => {
     describe('hasReachedFolderLimit', () => {

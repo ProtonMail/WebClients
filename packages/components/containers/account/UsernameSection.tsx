@@ -41,9 +41,10 @@ import {
 import { getIsAddressEnabled } from '@proton/shared/lib/helpers/address';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
-import type { Address } from '@proton/shared/lib/interfaces';
-import { AddressConfirmationState, SessionRecoveryState, UserType } from '@proton/shared/lib/interfaces';
-import { getCanSetupProtonAddress, getIsExternalAccount } from '@proton/shared/lib/keys';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import { AddressConfirmationState } from '@proton/shared/lib/interfaces/Address';
+import { SessionRecoveryState, UserType } from '@proton/shared/lib/interfaces/User';
+import { getCanSetupProtonAddress, getIsExternalAccount } from '@proton/shared/lib/keys/accountType';
 
 import { Badge } from '../../components/badge/Badge';
 import AppLink from '../../components/link/AppLink';

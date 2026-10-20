@@ -14,7 +14,7 @@ import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/h
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
-import type { Audience } from '@proton/shared/lib/interfaces';
+import type { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';

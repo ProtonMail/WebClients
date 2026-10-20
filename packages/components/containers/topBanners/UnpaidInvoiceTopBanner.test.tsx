@@ -1,8 +1,8 @@
 import { screen } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/tests';
-import { UNPAID_STATE } from '@proton/shared/lib/interfaces';
-import type { UserModel } from '@proton/shared/lib/interfaces';
+import { UNPAID_STATE } from '@proton/shared/lib/interfaces/User';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import { renderWithProviders } from '../../testing/renderWithProviders';
 import UnpaidInvoiceTopBanner from './UnpaidInvoiceTopBanner';

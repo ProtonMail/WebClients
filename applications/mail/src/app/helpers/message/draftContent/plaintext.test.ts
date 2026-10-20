@@ -2,7 +2,7 @@ import { addDays, getUnixTime } from 'date-fns';
 
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
-import type { Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { FORWARDED_MESSAGE } from '@proton/shared/lib/mail/messages';
 
 import { formatFullDate } from '../../date';

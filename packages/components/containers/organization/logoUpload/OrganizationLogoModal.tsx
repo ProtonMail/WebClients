@@ -23,7 +23,7 @@ import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { toBase64 } from '@proton/shared/lib/helpers/file';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { extractBase64Image, resizeImage, toBlob } from '@proton/shared/lib/helpers/image';
-import type { Organization } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 

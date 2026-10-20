@@ -13,11 +13,11 @@ import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
 import { clearLogs, queryLogs } from '@proton/shared/lib/api/logs';
 import { updateLogAuth } from '@proton/shared/lib/api/settings';
-import type { AuthLog } from '@proton/shared/lib/authlog';
+import type { AuthLog } from '@proton/shared/lib/authlog/AuthLog';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { SETTINGS_LOG_AUTH_STATE } from '@proton/shared/lib/interfaces';
+import { SETTINGS_LOG_AUTH_STATE } from '@proton/shared/lib/interfaces/UserSettings';
 import noop from '@proton/utils/noop';
 
 import Info from '../../components/link/Info';

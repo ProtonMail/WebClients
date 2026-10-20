@@ -16,14 +16,12 @@ import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
-import type {
-    Address,
-    Api,
-    HumanVerificationMethodType,
-    KeyTransparencyActivation,
-    Organization,
-    User,
-} from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { HumanVerificationMethodType } from '@proton/shared/lib/interfaces/HumanVerification';
+import type { KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
+import type { User } from '@proton/shared/lib/interfaces/User';
 
 import type { AppIntent, AuthSession } from '../content/authSession';
 import type { AddressGeneration } from '../setup-address/addressGeneration';

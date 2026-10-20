@@ -1,6 +1,6 @@
 import { ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS } from '../constants';
-import type { Address } from '../interfaces';
-import { AddressConfirmationState } from '../interfaces';
+import type { Address } from '../interfaces/Address';
+import { AddressConfirmationState } from '../interfaces/Address';
 
 export const getIsAddressEnabled = (address: Address) => {
     return address.Status === ADDRESS_STATUS.STATUS_ENABLED;

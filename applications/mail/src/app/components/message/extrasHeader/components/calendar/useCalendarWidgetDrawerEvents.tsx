@@ -4,7 +4,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import { getIsDrawerPostMessage, postMessageToIframe } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 import { getMessageEventType } from '@proton/shared/lib/helpers/messageEvent';
-import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar/Event';
 
 interface Props {
     messageID: string;

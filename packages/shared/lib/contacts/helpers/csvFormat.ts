@@ -2,7 +2,7 @@ import capitalize from '@proton/utils/capitalize';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { normalize } from '../../helpers/string';
-import type { ContactValue } from '../../interfaces/contacts';
+import type { ContactValue } from '../../interfaces/contacts/Contact';
 import type {
     Combine,
     Display,
