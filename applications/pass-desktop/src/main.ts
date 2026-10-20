@@ -189,6 +189,13 @@ const onActivate = (secureSession: Session) => () => {
     if (BrowserWindow.getAllWindows().length === 0) return createWindow(secureSession);
 };
 
+const REMOTE_DEBUGGING_SWITCHES = ['remote-debugging-port', 'remote-debugging-address', 'remote-debugging-pipe'];
+
+if (!isE2E() && REMOTE_DEBUGGING_SWITCHES.some((name) => app.commandLine.hasSwitch(name))) {
+    logger.error('[main] Remote debugging switch detected, exiting');
+    process.exit(1);
+}
+
 if (!app.requestSingleInstanceLock()) {
     // Hard-exit: app.quit() is async and would let the rest of this module
     // keep running — including testDeepLinkSupport(), which would fire
