@@ -20,7 +20,6 @@ type AppContext = 'dropdown' | 'app';
 export interface GetAvailableAppsByUserTypeArguments {
     user?: User;
     context: AppContext;
-    isAuthenticatorAvailable: boolean;
     isSpacesAvailable: boolean;
     oauth?: boolean;
 }
@@ -41,7 +40,6 @@ const allApps: APP_NAMES[] = [
     APPS.PROTONWALLET,
     APPS.PROTONLUMO,
     APPS.PROTONMEET,
-    APPS.PROTONAUTHENTICATOR,
     APPS.PROTONSPACES,
 ];
 
@@ -90,7 +88,6 @@ const getAvailableAppsByUser = (options: GetAvailableAppsByUserTypeArguments): A
             APPS.PROTONWALLET,
             APPS.PROTONLUMO,
             APPS.PROTONMEET,
-            APPS.PROTONAUTHENTICATOR,
             APPS.PROTONSPACES,
         ]);
     }
@@ -116,9 +113,6 @@ export const getAvailableApps = (
 ) => {
     const removeApps: AppSet = new Set();
 
-    if (options.context === 'dropdown' && !options.isAuthenticatorAvailable) {
-        removeApps.add(APPS.PROTONAUTHENTICATOR);
-    }
     if (options.context === 'dropdown' && !options.isSpacesAvailable) {
         removeApps.add(APPS.PROTONSPACES);
     }

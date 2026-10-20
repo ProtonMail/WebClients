@@ -494,7 +494,6 @@ const MainContainer = () => {
         user,
         context: 'app',
         organization,
-        isAuthenticatorAvailable,
         isSpacesAvailable,
     });
 

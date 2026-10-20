@@ -17,7 +17,6 @@ export const AppSwitcher = ({ hasBorder, app }: { hasBorder?: boolean; app: APP_
     const { viewportWidth } = useActiveBreakpoint();
     const [organization] = useOrganization();
 
-    const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
     const isSpacesAvailable = useFlag('SpacesAvailable');
 
     if (viewportWidth['<=small']) {
@@ -25,7 +24,6 @@ export const AppSwitcher = ({ hasBorder, app }: { hasBorder?: boolean; app: APP_
             user,
             context: 'dropdown',
             organization,
-            isAuthenticatorAvailable,
             isSpacesAvailable,
         });
         if (availableApps.length <= 1) {

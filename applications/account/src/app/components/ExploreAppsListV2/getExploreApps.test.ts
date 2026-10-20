@@ -34,7 +34,6 @@ const createMockUser = (overrides: Partial<User> = {}): User => {
 };
 
 const defaultOptions = {
-    isAuthenticatorAvailable: true,
     isSpacesAvailable: true,
 };
 

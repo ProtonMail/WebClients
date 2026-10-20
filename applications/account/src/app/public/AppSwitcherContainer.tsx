@@ -123,7 +123,6 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
     const error = state.error;
     const { User, Organization, persistedSession } = session.data;
 
-    const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
     const isSpacesAvailable = useFlag('SpacesAvailable');
     const subscribed = User.Subscribed;
     const { sendAppClick } = useExploreAppsListTelemetry();
@@ -134,7 +133,6 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
         user: User,
         organization: Organization,
         oauth: persistedSession.source === SessionSource.Oauth,
-        isAuthenticatorAvailable,
         isSpacesAvailable,
     }).concat(getForbiddenAppConfigs({ user: User, forbiddenApps }));
 
