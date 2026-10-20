@@ -20,7 +20,7 @@ import useLoading from '@proton/hooks/useLoading';
 import { createPreAuthKTVerifier } from '@proton/key-transparency/shared';
 import { authJwt, getInfo } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-// eslint-disable-next-line no-restricted-imports
+// eslint-disable-next-line proton/restricted-imports
 import { getAuthAPI, getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import { getToAppFromSubscribed } from '@proton/shared/lib/authentication/apps';

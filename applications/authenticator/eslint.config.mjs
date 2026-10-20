@@ -1,11 +1,11 @@
 import { defineConfig } from 'eslint/config';
 
 import defaultConfig from '@proton/eslint-config-proton/all';
-import { createBarrelConfig } from '@proton/eslint-config-proton/barrel';
+import { createRestrictedImportsConfig } from '@proton/eslint-config-proton/restrictedImports';
 
 export default defineConfig([
     defaultConfig,
-    createBarrelConfig(),
+    createRestrictedImportsConfig({ rollout: ['components-barrel'] }),
     {
         rules: {
             'no-console': ['error', { allow: ['warn', 'error'] }],

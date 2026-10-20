@@ -10,9 +10,9 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { Tab } from '@proton/components/components/tabs/Tabs';
 import { Tabs } from '@proton/components/components/tabs/Tabs';
-// eslint-disable-next-line no-restricted-imports
+// eslint-disable-next-line proton/restricted-imports
 import { useConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
-// eslint-disable-next-line no-restricted-imports
+// eslint-disable-next-line proton/restricted-imports
 import { useMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
 import { selectCategories } from '@proton/mail/store/labels';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
