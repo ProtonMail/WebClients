@@ -20,6 +20,7 @@ import {
     getIsBYOEAccount,
     getIsExternalAccount,
     getIsExternalUserWithoutProtonAddressCreation,
+    getIsSSOAccount,
     getIsVPNOnlyAccount,
     getRequiresMailKeySetup,
 } from './accountType';
@@ -237,7 +238,9 @@ export const getRequiresProtonAddressFromAdmin = (toApp: APP_NAMES, user: tsUser
     const product = getProduct(toApp);
     return (
         (product === Product.Mail || product === Product.Calendar) &&
-        getIsExternalUserWithoutProtonAddressCreation(user)
+        getIsExternalUserWithoutProtonAddressCreation(user) &&
+        // SSO accounts can't use Mail or Calendar at all, which the fork API tells them
+        !getIsSSOAccount(user)
     );
 };
 

@@ -54,6 +54,12 @@ const externalUserWithoutProtonAddressCreation: Partial<UserModel> = {
     Flags: { ...buildUser().Flags, 'no-proton-address': true },
 };
 
+// Like a provisioned global SSO member: managed, with keys, and without a Proton address
+const globalSSOUser: Partial<UserModel> = {
+    ...externalUserWithoutProtonAddressCreation,
+    Flags: { ...buildUser().Flags, sso: true, 'no-proton-address': true },
+};
+
 const setup = ({
     source = SessionSource.Proton,
     user = {},
@@ -127,6 +133,26 @@ describe('getProduceForkLoginResult', () => {
             expect(url.pathname).toContain(SETUP_ADDRESS_PATH);
             expect(url.searchParams.get('to')).toBe(app);
             expect(mockProduceFork).not.toHaveBeenCalled();
+        }
+    );
+
+    it.each([APPS.PROTONMAIL, APPS.PROTONCALENDAR])(
+        'leaves a global SSO account forking to %s to the fork API, rather than asking its administrator',
+        async (app) => {
+            mockProduceFork.mockRejectedValue({
+                data: {
+                    Code: API_CUSTOM_ERROR_CODES.SSO_APPLICATION_INVALID,
+                    Error: 'This application is not supported',
+                },
+            });
+
+            const result = await setup({ user: globalSSOUser, app });
+
+            expect(mockProduceFork).toHaveBeenCalled();
+            expect(result).toMatchObject({
+                type: 'app-switcher',
+                payload: { error: { type: 'unsupported-app', app } },
+            });
         }
     );
 
