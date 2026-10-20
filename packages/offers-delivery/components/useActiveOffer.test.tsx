@@ -28,7 +28,11 @@ const rawCampaign = (variant: CampaignVariant): RawCampaign => {
     return {
         CampaignKey: 'campaign-1',
         MessageKey: 'message-1',
-        Cta: { Type: CampaignCtaType.INTERNAL_GO_TO, Ref: 'GoToUpsell' },
+        Cta: {
+            Type: CampaignCtaType.INTERNAL_GO_TO,
+            InternalGoTo: { Destination: 'GoToUpsell', GoToUpsell: null },
+            ExternalGoTo: null,
+        },
         MessageBody: {
             Banner: variant === CampaignVariant.BANNER ? body : null,
             Modal: variant === CampaignVariant.MODAL ? body : null,

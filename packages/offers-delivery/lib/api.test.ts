@@ -1,5 +1,5 @@
-import { CampaignCtaType, CampaignEventAction, CampaignVariant } from '../interface';
-import { type OffersRoutes, getCampaign, sendCampaignEvent } from './api';
+import { CampaignCtaType, CampaignEventAction, CampaignVariant, type MaybeNull } from '../interface';
+import { type OffersRoutes, type RawCta, getCampaign, sendCampaignEvent } from './api';
 
 const routes: OffersRoutes = {
     getCampaign: () => ({ url: 'inapp/evaluate', method: 'get' }),
@@ -9,7 +9,11 @@ const routes: OffersRoutes = {
 const bannerCampaign = () => ({
     CampaignKey: 'summer_promo',
     MessageKey: 'pass_upsell',
-    Cta: { Type: CampaignCtaType.INTERNAL_GO_TO, Ref: 'GoToUpsell' },
+    Cta: {
+        Type: CampaignCtaType.INTERNAL_GO_TO,
+        InternalGoTo: { Destination: 'GoToUpsell', GoToUpsell: null },
+        ExternalGoTo: null,
+    } as MaybeNull<RawCta>,
     MessageBody: {
         Banner: {
             Title: 'Title',
@@ -42,7 +46,7 @@ describe('getCampaign', () => {
             startTime: 1786628940,
             endTime: null,
             variant: CampaignVariant.BANNER,
-            cta: { kind: 'upgrade' },
+            cta: { kind: 'upgrade', params: null },
             message: {
                 title: 'Title',
                 body: 'Description',
@@ -77,7 +81,11 @@ describe('getCampaign', () => {
 
     it('resolves an ExternalGoTo cta to its href rather than dropping it', async () => {
         const raw = bannerCampaign();
-        raw.Cta = { Type: CampaignCtaType.EXTERNAL_GO_TO, Ref: 'https://proton.me/promo' };
+        raw.Cta = {
+            Type: CampaignCtaType.EXTERNAL_GO_TO,
+            InternalGoTo: null,
+            ExternalGoTo: { Url: 'https://proton.me/promo' },
+        };
         const api = apiReturning({ Campaign: raw, Code: 1000 });
 
         expect((await getCampaign(api, routes))?.cta).toEqual({
@@ -170,7 +178,7 @@ describe('getCampaign', () => {
 
     it('carries a null cta through', async () => {
         const raw = bannerCampaign();
-        (raw as any).Cta = null;
+        raw.Cta = null;
         const api = apiReturning({ Campaign: raw, Code: 1000 });
 
         expect((await getCampaign(api, routes))?.cta).toBeNull();
@@ -178,7 +186,11 @@ describe('getCampaign', () => {
 
     it('resolves the cta ref at ingest, dropping a hostile ref to null', async () => {
         const raw = bannerCampaign();
-        raw.Cta = { Type: CampaignCtaType.EXTERNAL_GO_TO, Ref: 'javascript:alert(1)' };
+        raw.Cta = {
+            Type: CampaignCtaType.EXTERNAL_GO_TO,
+            InternalGoTo: null,
+            ExternalGoTo: { Url: 'javascript:alert(1)' },
+        };
         const api = apiReturning({ Campaign: raw, Code: 1000 });
 
         expect((await getCampaign(api, routes))?.cta).toBeNull();

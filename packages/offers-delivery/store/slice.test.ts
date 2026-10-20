@@ -22,7 +22,7 @@ const makeCampaign = (overrides: Partial<Campaign> = {}): Campaign => ({
     startTime: NOW_EPOCH - 100,
     endTime: NOW_EPOCH + 100,
     variant: CampaignVariant.BANNER,
-    cta: { kind: 'upgrade' },
+    cta: { kind: 'upgrade', params: null },
     message: { title: 't', body: 'b', ctaText: 'go', imageUrl: null },
     ...overrides,
 });
@@ -228,7 +228,11 @@ const MINUTE_MS = 60 * 1000;
 const rawCampaign = (campaignKey = 'campaign-a') => ({
     CampaignKey: campaignKey,
     MessageKey: 'message-a',
-    Cta: { Type: CampaignCtaType.INTERNAL_GO_TO, Ref: 'GoToUpsell' },
+    Cta: {
+        Type: CampaignCtaType.INTERNAL_GO_TO,
+        InternalGoTo: { Destination: 'GoToUpsell', GoToUpsell: null },
+        ExternalGoTo: null,
+    },
     MessageBody: {
         Banner: { Title: 'Title', Body: 'Body', CtaText: 'Go', Images: null },
         Modal: null,
