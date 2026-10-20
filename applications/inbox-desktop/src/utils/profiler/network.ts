@@ -1,5 +1,5 @@
 import { performance } from "node:perf_hooks";
-import { net } from "electron";
+import { net, session as electronSession, Session } from "electron";
 
 const PROBE_TARGETS = ["https://mail.proton.me", "https://mail-api.proton.me"] as const;
 const PROBE_COUNT = 3;
@@ -19,7 +19,7 @@ interface TargetProbeResult {
 }
 
 // ttfbMs - time to first byte in Ms
-function probeOnce(url: string): Promise<{ ttfbMs: number | null; errorCode: string | null }> {
+export function probeOnce(url: string, session: Session): Promise<{ ttfbMs: number | null; errorCode: string | null }> {
     return new Promise((resolve) => {
         const start = performance.now();
         let settled = false;
@@ -29,7 +29,7 @@ function probeOnce(url: string): Promise<{ ttfbMs: number | null; errorCode: str
             resolve(result);
         };
 
-        const req = net.request({ method: "HEAD", url });
+        const req = net.request({ method: "HEAD", url, session });
         req.setHeader("Connection", "close");
 
         const timer = setTimeout(() => {
@@ -55,7 +55,7 @@ function probeOnce(url: string): Promise<{ ttfbMs: number | null; errorCode: str
 async function probeTarget(url: string): Promise<TargetProbeResult> {
     const entries: { ttfbMs: number | null; errorCode: string | null }[] = [];
     for (let i = 0; i < PROBE_COUNT; i++) {
-        entries.push(await probeOnce(url));
+        entries.push(await probeOnce(url, electronSession.defaultSession));
         if (i < PROBE_COUNT - 1) {
             await new Promise<void>((r) => setTimeout(r, PROBE_GAP_MS));
         }
