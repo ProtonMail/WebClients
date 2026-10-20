@@ -1,8 +1,8 @@
-import { useState } from 'react';
 import type { ReactNode } from 'react';
+import { useState } from 'react';
 
 import { clsx } from 'clsx';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
@@ -67,33 +67,61 @@ function getNativeToolCallLabel(name: string, args: Record<string, unknown>): [s
     const argStr = (key: string) => (typeof args[key] === 'string' ? (args[key] as string) : '');
 
     if (name === 'filesystem__fs_search') {
-        const query = argStr('query') || 'files';
-        return [`Searching files for "${query}"...`, `Searched files for "${query}" and sent results back`];
+        // translator: Computer files, such as documents and images.
+        const query = argStr('query') || c('collider_2025:Reasoning').t`files`;
+        // translator: Assistant activity status. ${query} is the search text.
+        return [
+            c('collider_2025:Reasoning').t`Searching files for "${query}"...`,
+            c('collider_2025:Reasoning').t`Searched files for "${query}" and sent results back`,
+        ];
     }
     if (name === 'filesystem__fs_read') {
-        const path = argStr('path') || 'file';
-        return [`Reading ${path}...`, `Read ${path} and sent contents back`];
+        // translator: A computer file, such as a document or image.
+        const path = argStr('path') || c('collider_2025:Reasoning').t`file`;
+        // translator: Assistant activity status. ${path} is the file path.
+        return [
+            c('collider_2025:Reasoning').t`Reading ${path}...`,
+            c('collider_2025:Reasoning').t`Read ${path} and sent contents back`,
+        ];
     }
     if (name === 'filesystem__fs_write') {
-        const path = argStr('path') || 'file';
-        return [`Writing ${path}...`, `Updated ${path}`];
+        // translator: A computer file, such as a document or image.
+        const path = argStr('path') || c('collider_2025:Reasoning').t`file`;
+        // translator: Assistant activity status. ${path} is the file path.
+        return [c('collider_2025:Reasoning').t`Writing ${path}...`, c('collider_2025:Reasoning').t`Updated ${path}`];
     }
     if (name === 'filesystem__fs_edit') {
-        const path = argStr('path') || 'file';
-        return [`Editing ${path}...`, `Edited ${path}`];
+        // translator: A computer file, such as a document or image.
+        const path = argStr('path') || c('collider_2025:Reasoning').t`file`;
+        // translator: Assistant activity status. ${path} is the file path.
+        return [c('collider_2025:Reasoning').t`Editing ${path}...`, c('collider_2025:Reasoning').t`Edited ${path}`];
     }
     if (name === 'bash__run') {
-        const command = argStr('command') || 'command';
+        // translator: A shell command executed on the user's computer.
+        const command = argStr('command') || c('collider_2025:Reasoning').t`command`;
         const short = command.length > 60 ? `${command.slice(0, 57)}...` : command;
-        return [`Running \`${short}\`...`, `Ran command and sent output back`];
+        // translator: Assistant activity status. ${short} is a truncated shell command.
+        return [
+            c('collider_2025:Reasoning').t`Running \`${short}\`...`,
+            c('collider_2025:Reasoning').t`Ran command and sent output back`,
+        ];
     }
     if (name === 'browser__fetch' || name === 'browser__navigate') {
-        const url = argStr('url') || 'page';
-        return [`Fetching ${url}...`, `Fetched ${url} and sent contents back`];
+        // translator: A web page.
+        const url = argStr('url') || c('collider_2025:Reasoning').t`page`;
+        // translator: Assistant activity status. ${url} is the page URL.
+        return [
+            c('collider_2025:Reasoning').t`Fetching ${url}...`,
+            c('collider_2025:Reasoning').t`Fetched ${url} and sent contents back`,
+        ];
     }
 
     const shortName = name.includes('__') ? name.split('__').slice(1).join('__') : name;
-    return [`Running ${shortName}...`, `Ran ${shortName} and sent results back`];
+    // translator: Assistant activity status. ${shortName} is the tool identifier (not translated).
+    return [
+        c('collider_2025:Reasoning').t`Running ${shortName}...`,
+        c('collider_2025:Reasoning').t`Ran ${shortName} and sent results back`,
+    ];
 }
 
 function getToolCallLabel(toolCall: ToolCallData | ToolCallAnnouncement): [string, string] {
@@ -105,52 +133,86 @@ function getToolCallLabel(toolCall: ToolCallData | ToolCallAnnouncement): [strin
     switch (toolCall.name) {
         case 'web_search': {
             const query = toolCall.arguments?.query;
+            // translator: Assistant activity status. ${query} is the search text.
             return query
-                ? [`Searching the web for "${query}"...`, `Searched the web for "${query}"`]
-                : ['Searching the web...', 'Searched the web'];
+                ? [
+                      c('collider_2025:Reasoning').t`Searching the web for "${query}"...`,
+                      c('collider_2025:Reasoning').t`Searched the web for "${query}"`,
+                  ]
+                : [
+                      c('collider_2025:Reasoning').t`Searching the web...`,
+                      c('collider_2025:Reasoning').t`Searched the web`,
+                  ];
         }
         case 'weather': {
             const loc = toolCall.arguments?.location;
             const location = loc ? ('city' in loc ? loc.city : `${loc.lat}, ${loc.lon}`) : undefined;
+            // translator: Assistant activity status. ${location} is a city name or coordinates.
             return location
-                ? [`Checking the weather in ${location}...`, `Checked the weather in ${location}`]
-                : ['Checking the weather...', 'Checked the weather'];
+                ? [
+                      c('collider_2025:Reasoning').t`Checking the weather in ${location}...`,
+                      c('collider_2025:Reasoning').t`Checked the weather in ${location}`,
+                  ]
+                : [
+                      c('collider_2025:Reasoning').t`Checking the weather...`,
+                      c('collider_2025:Reasoning').t`Checked the weather`,
+                  ];
         }
         case 'stock': {
             const symbol = toolCall.arguments?.symbol;
+            // translator: Assistant activity status. ${symbol} is the stock or cryptocurrency ticker.
             return symbol
-                ? [`Looking up ${symbol} stock prices...`, `Looked up ${symbol} stock prices`]
-                : ['Looking up stock prices...', 'Looked up stock prices'];
+                ? [
+                      c('collider_2025:Reasoning').t`Looking up ${symbol} stock prices...`,
+                      c('collider_2025:Reasoning').t`Looked up ${symbol} stock prices`,
+                  ]
+                : [
+                      c('collider_2025:Reasoning').t`Looking up stock prices...`,
+                      c('collider_2025:Reasoning').t`Looked up stock prices`,
+                  ];
         }
         case 'cryptocurrency': {
             const symbol = toolCall.arguments?.symbol;
+            // translator: Assistant activity status. ${symbol} is the stock or cryptocurrency ticker.
             return symbol
-                ? [`Checking ${symbol} cryptocurrency prices...`, `Checked ${symbol} cryptocurrency prices`]
-                : ['Checking cryptocurrency prices...', 'Checked cryptocurrency prices'];
+                ? [
+                      c('collider_2025:Reasoning').t`Checking ${symbol} cryptocurrency prices...`,
+                      c('collider_2025:Reasoning').t`Checked ${symbol} cryptocurrency prices`,
+                  ]
+                : [
+                      c('collider_2025:Reasoning').t`Checking cryptocurrency prices...`,
+                      c('collider_2025:Reasoning').t`Checked cryptocurrency prices`,
+                  ];
         }
         case 'describe_image':
+            // translator: Assistant activity status.
             return [
                 c('collider_2025:Reasoning').t`Looking at your image...`,
                 c('collider_2025:Reasoning').t`Looked at your image`,
             ];
         case 'generate_image':
+            // translator: Assistant activity status.
             return [
                 c('collider_2025:Reasoning').t`Generating image...`,
                 c('collider_2025:Reasoning').t`Generated image`,
             ];
         case 'edit_image':
+            // translator: Assistant activity status.
             return [c('collider_2025:Reasoning').t`Editing image...`, c('collider_2025:Reasoning').t`Edited image`];
         case 'proton_info':
+            // translator: Assistant activity status. ${BRAND_NAME} is the product brand name.
             return [
                 c('collider_2025:Reasoning').t`Checking ${BRAND_NAME} knowledge...`,
                 c('collider_2025:Reasoning').t`Checked ${BRAND_NAME} knowledge`,
             ];
         case 'web_extract':
+            // translator: Assistant activity status.
             return [
                 c('collider_2025:Reasoning').t`Extracting content from page...`,
                 c('collider_2025:Reasoning').t`Extracted page content`,
             ];
         default:
+            // translator: Assistant activity status.
             return [c('collider_2025:Reasoning').t`Executing tool...`, c('collider_2025:Reasoning').t`Executed tool`];
     }
 }
@@ -284,66 +346,99 @@ function mergeConsecutiveReasoningSteps(steps: ThinkingStep[]): ThinkingStep[] {
 }
 
 function getReasoningStepLabel(): string {
+    // translator: Heading for the assistant's thought process.
     return c('collider_2025:Reasoning').t`Reasoning`;
 }
 
 function getToolCallShortLabel(toolCall: ToolCallData | ToolCallAnnouncement): [string, string] {
     if (isNativeToolCallData(toolCall)) {
         if (toolCall.name === 'filesystem__fs_search') {
-            return ['Searching files...', 'Searched files'];
+            // translator: Assistant activity status.
+            return [c('collider_2025:Reasoning').t`Searching files...`, c('collider_2025:Reasoning').t`Searched files`];
         }
         if (toolCall.name === 'filesystem__fs_read') {
-            return ['Reading file...', 'Read file'];
+            // translator: Assistant activity status.
+            return [c('collider_2025:Reasoning').t`Reading file...`, c('collider_2025:Reasoning').t`Read file`];
         }
         if (toolCall.name === 'filesystem__fs_write') {
-            return ['Writing file...', 'Updated file'];
+            // translator: Assistant activity status.
+            return [c('collider_2025:Reasoning').t`Writing file...`, c('collider_2025:Reasoning').t`Updated file`];
         }
         if (toolCall.name === 'filesystem__fs_edit') {
-            return ['Editing file...', 'Edited file'];
+            // translator: Assistant activity status.
+            return [c('collider_2025:Reasoning').t`Editing file...`, c('collider_2025:Reasoning').t`Edited file`];
         }
         if (toolCall.name === 'bash__run') {
-            return ['Running command...', 'Ran command'];
+            // translator: Assistant activity status.
+            return [c('collider_2025:Reasoning').t`Running command...`, c('collider_2025:Reasoning').t`Ran command`];
         }
         if (toolCall.name === 'browser__fetch' || toolCall.name === 'browser__navigate') {
-            return ['Fetching page...', 'Fetched page'];
+            // translator: Assistant activity status.
+            return [c('collider_2025:Reasoning').t`Fetching page...`, c('collider_2025:Reasoning').t`Fetched page`];
         }
 
         const shortName = toolCall.name.includes('__') ? toolCall.name.split('__').slice(1).join('__') : toolCall.name;
-        return [`Running ${shortName}...`, `Ran ${shortName}`];
+        // translator: Assistant activity status. ${shortName} is the tool identifier (not translated).
+        return [
+            c('collider_2025:Reasoning').t`Running ${shortName}...`,
+            c('collider_2025:Reasoning').t`Ran ${shortName}`,
+        ];
     }
 
     switch (toolCall.name) {
         case 'web_search':
-            return ['Searching the web...', 'Searched the web'];
+            // translator: Assistant activity status.
+            return [
+                c('collider_2025:Reasoning').t`Searching the web...`,
+                c('collider_2025:Reasoning').t`Searched the web`,
+            ];
         case 'weather':
-            return ['Checking the weather...', 'Checked the weather'];
+            // translator: Assistant activity status.
+            return [
+                c('collider_2025:Reasoning').t`Checking the weather...`,
+                c('collider_2025:Reasoning').t`Checked the weather`,
+            ];
         case 'stock':
-            return ['Looking up stock prices...', 'Looked up stock prices'];
+            // translator: Assistant activity status.
+            return [
+                c('collider_2025:Reasoning').t`Looking up stock prices...`,
+                c('collider_2025:Reasoning').t`Looked up stock prices`,
+            ];
         case 'cryptocurrency':
-            return ['Checking cryptocurrency prices...', 'Checked cryptocurrency prices'];
+            // translator: Assistant activity status.
+            return [
+                c('collider_2025:Reasoning').t`Checking cryptocurrency prices...`,
+                c('collider_2025:Reasoning').t`Checked cryptocurrency prices`,
+            ];
         case 'describe_image':
+            // translator: Assistant activity status.
             return [
                 c('collider_2025:Reasoning').t`Looking at your image...`,
                 c('collider_2025:Reasoning').t`Looked at your image`,
             ];
         case 'generate_image':
+            // translator: Assistant activity status.
             return [
                 c('collider_2025:Reasoning').t`Generating image...`,
                 c('collider_2025:Reasoning').t`Generated image`,
             ];
         case 'edit_image':
+            // translator: Assistant activity status.
             return [c('collider_2025:Reasoning').t`Editing image...`, c('collider_2025:Reasoning').t`Edited image`];
         case 'proton_info':
+            // translator: Assistant activity status. ${BRAND_NAME} is the product brand name.
             return [
                 c('collider_2025:Reasoning').t`Checking ${BRAND_NAME} knowledge...`,
                 c('collider_2025:Reasoning').t`Checked ${BRAND_NAME} knowledge`,
             ];
         case 'web_extract':
+            // translator: Assistant activity status.
             return [
                 c('collider_2025:Reasoning').t`Extracting content from page...`,
                 c('collider_2025:Reasoning').t`Extracted page content`,
             ];
         default:
+            // translator: Assistant activity status.
             return [c('collider_2025:Reasoning').t`Executing tool...`, c('collider_2025:Reasoning').t`Executed tool`];
     }
 }
@@ -490,7 +585,13 @@ const DoneStep = () => (
         </ThinkingStepTrack>
 
         <div className="thinking-step-content min-w-0 text-rg lh130">
-            <span className="color-hint">{c('collider_2025:Reasoning').t`Done`}</span>
+            <span className="color-hint">
+                {
+                    // translator: Completion status for the assistant's work.
+
+                    c('collider_2025:Reasoning').t`Done`
+                }
+            </span>
         </div>
     </div>
 );
@@ -678,6 +779,9 @@ const ToolCallStep = ({
             ? parseImageToolResult(result)
             : null;
     const webExtractResult = hasDetails && toolCall.name === 'web_extract' ? parseWebExtractResult(result) : null;
+    const resultCount = webSearchResults?.results.length ?? 0;
+    const urlCount = (webExtractResult?.results.length ?? 0) + (webExtractResult?.failedUrls.length ?? 0);
+    const failedCount = webExtractResult?.failedUrls.length ?? 0;
     const hasInlineCard =
         hasDetails &&
         (toolCall.name === 'stock' ||
@@ -799,24 +903,46 @@ const ToolCallStep = ({
                                 {hasError && (
                                     <span className="flex items-center gap-1 text-sm color-danger">
                                         <LumoIcon name="CircleAlert" width={12} height={12} />
-                                        Failed
+                                        {
+                                            // translator: Failure status for an assistant action.
+
+                                            c('collider_2025:Label').t`Failed`
+                                        }
                                     </span>
                                 )}
                                 {webSearchResults && webSearchResults.results.length > 0 && (
                                     <span className="text-sm color-weak">
-                                        {webSearchResults.results.length}{' '}
-                                        {webSearchResults.results.length === 1 ? 'result' : 'results'}
+                                        {
+                                            // translator: Search-result count. ${resultCount} is the number of matching links.
+                                            c('collider_2025:Reasoning').ngettext(
+                                                msgid`${resultCount} result`,
+                                                `${resultCount} results`,
+                                                resultCount
+                                            )
+                                        }
                                     </span>
                                 )}
                                 {webExtractResult && (
                                     <span className="text-sm color-weak">
-                                        {webExtractResult.results.length + webExtractResult.failedUrls.length}{' '}
-                                        {webExtractResult.results.length + webExtractResult.failedUrls.length === 1
-                                            ? 'URL'
-                                            : 'URLs'}
+                                        {
+                                            // translator: Count of web pages processed. ${urlCount} includes successful and failed attempts.
+                                            c('collider_2025:Reasoning').ngettext(
+                                                msgid`${urlCount} URL`,
+                                                `${urlCount} URLs`,
+                                                urlCount
+                                            )
+                                        }
                                         {webExtractResult.failedUrls.length > 0 && (
                                             <span className="color-danger ml-1">
-                                                · {webExtractResult.failedUrls.length} failed
+                                                ·{' '}
+                                                {
+                                                    // translator: Failure count. ${failedCount} is the number of web pages that could not be read.
+                                                    c('collider_2025:Reasoning').ngettext(
+                                                        msgid`${failedCount} failed`,
+                                                        `${failedCount} failed`,
+                                                        failedCount
+                                                    )
+                                                }
                                             </span>
                                         )}
                                     </span>
