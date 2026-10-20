@@ -348,9 +348,6 @@
       "Connect to video conferencing": [
         "დაკავსირება ვიდეოკონფერენციასთან"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "შემოიერთეთ თქვენი ${ BRAND_NAME }-ის ანგარიში"
-      ],
       "Connect your email": [
         "დაუკავშირეთ თქვენი ელფოსტა"
       ],
@@ -429,14 +426,8 @@
       "Create": [
         "შექმნა"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "შექმენით ${ BRAND_NAME }-ის ანგარიში"
-      ],
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "${ BRAND_NAME }-ის გარეთ გაზიარების ბმულის შექმნა"
-      ],
-      "Create an account": [
-        "ანგარიშის შექმნა"
       ],
       "Create calendar": [
         "კალენდრის შექმნა"
@@ -611,9 +602,6 @@
       ],
       "Done": [
         "მზადაა"
-      ],
-      "Downgrade": [
-        "ტარიფის ჩამოწევა"
       ],
       "Download": [
         "გადმოწერა"
@@ -1278,17 +1266,11 @@
       "Reload": [
         "თავიდან ჩატვირთვა"
       ],
-      "Reload page": [
-        "გვერდის განახლება"
-      ],
       "Remove": [
         "წაშლა"
       ],
       "Remove all other devices": [
         "ყველა სხვა მოწყობილობის წაშლა"
-      ],
-      "Remove bonuses": [
-        "ბონუსების წაშლა"
       ],
       "Remove button": [
         "ღილაკის მოცილება"
@@ -2428,11 +2410,6 @@
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "უკაცრავად, ეს შეთავაზება თქვენს მიმდინარე სატარიფო გეგმასთან ხელმისაწვდომი არაა. მაგრამ შეგიძლიათ მიიღოთ ${ discountPercentage } ფასდაკლება ${ plan.Title }-დან, თუ გამოწერა ${ cycle } თვე იქნება.",
         "უკაცრავად, ეს შეთავაზება თქვენს მიმდინარე სატარიფო გეგმასთან ხელმისაწვდომი არაა. მაგრამ შეგიძლიათ მიიღოთ ${ discountPercentage } ფასდაკლება ${ plan.Title }-დან, თუ გამოწერა ${ cycle } თვე იქნება."
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "30 დღიანი გარანტირებული ფულის დაბრუნება"
       ]
     },
     "bf2023: Title": {
@@ -7534,14 +7511,6 @@
         "მოსაწვევის ნახვა"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "საოჯახო ჯგუფი უცნობია. თავიდან სცადეთ."
-      ],
-      "Organization not recognized. Try again.": [
-        "უცნობი ორგანიზაცია. თავიდან სცადეთ."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } ჯგუფები"
@@ -7719,22 +7688,8 @@
       ]
     },
     "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "დასამოწმებლად შეიყვანეთ ოჯახის სახელი"
-      ],
-      "Enter organization name to confirm": [
-        "დასამოწმებლად შეიყვანეთ ორგანიზაციის სახელი"
-      ],
       "Family name": [
         "ოჯახის სახელი"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "თქვენს ორგანიზაციასთან დაკავშირებული ქვემომხმარებლები, ანგარიშები და მონაცემები სამუდამოდ წაიშლება."
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "ეს ოჯახის ყველა წევრს ${ BRAND_NAME }-ის ყველა ფასიან ფუნქციას გაუუქმებს."
       ]
     },
     "familyOffer_2023:Settings section title": {
@@ -7762,12 +7717,6 @@
       ],
       "Change family name": [
         "ოჯახის სახელის შეცვლა"
-      ],
-      "Delete family group?": [
-        "წავშალო საოჯახო ჯგუფი?"
-      ],
-      "Delete organization?": [
-        "წავშალო ორგანიზაცია?"
       ],
       "Edit user storage": [
         "მომხმარებლის საცავის ჩასწორება"
@@ -8995,12 +8944,6 @@
       ],
       "Paused": [
         "შეჩერებული"
-      ],
-      "Undo finished": [
-        "დასრულებულის გაუქმება"
-      ],
-      "Undo in progress": [
-        "მიმდინარეობს გაუქმება"
       ]
     },
     "Import type": {
@@ -9286,18 +9229,6 @@
       "${ url } deleted.": [
         "${ url } წაიშალა."
       ],
-      "${ vaultLink } created": [
-        "${ vaultLink } შეიქმნა"
-      ],
-      "${ vaultLink } deleted": [
-        "${ vaultLink } წაიშალა"
-      ],
-      "${ vaultLink } shared with email": [
-        "${ vaultLink } გაზიარებულია ელფოსტით"
-      ],
-      "${ vaultLink } updated": [
-        "${ vaultLink } განახლდა"
-      ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
         "${ VPN_SHORT_APP_NAME } მალავს თქვენს ტრაფიკს. ${ PASS_SHORT_APP_NAME } მალავს თქვენს იდენტობას\n— შეუზღუდავი **hide-my-email ალიასები** და **ბნელი ქსელის გაფრთხილებები** თუ თქვენი მონაცემები ოდესმე გასკდება."
       ],
@@ -9384,21 +9315,11 @@
         "+ კიდევ ${ invisibleCount }",
         "+ კიდევ ${ invisibleCount }"
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } დამატებითი საცავი"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } შეერთება ${ VPN_APP_NAME }-სთვის (უფლებას გაძლევთ VPN-ს მეტი მოწყობილობით დაუკავშირდეთ )",
-        "+${ organization.BonusVPN } შეერთება ${ VPN_APP_NAME }-სთვის (უფლებას გაძლევთ VPN-ს მეტი მოწყობილობით დაუკავშირდეთ )"
-      ],
       "2FA disabled": [
         "2FA გათიშულია"
       ],
       "30-day money-back guarantee": [
         "30 დღიანი გარანტირებული ფულის დაბრუნება"
-      ],
-      "30-day money-back guarantee.": [
-        "30 დღიანი გარანტირებული ფულის დაბრუნება."
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ protonSubdomain } დაჰოსტილია ${ BRAND_NAME }-ის მიერ, რაც ქვედომენების სწრაფად მორგების საშუალება გაძლევთ. ${ learnMoreLink }"
@@ -9791,9 +9712,6 @@
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "ანგარიშის მონიტორის გამორთვით, თქვენ ასევე წაშლით მთელ თქვენს ისტორიას. დარწმუნებული ხართ, რომ გსურთ ამის გამორთვა?"
       ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "უფასო გეგმაზე ჩამოწევით ამ ბენეფიტებს სამუდამოდ დაკარგავთ. მაშინაც კი, თუ მომავალში ფასიან ტარიფზე ისევ განახლდებით."
-      ],
       "By leaving now, changes may not be saved": [
         "თუ გახვალთ, ცვლილებები არ შეინახება"
       ],
@@ -10111,9 +10029,6 @@
       ],
       "Downgrade": [
         "ტარიფის ჩამოწევა"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "გეგმის ჩამოწევა შეწყვეტს შეერთებას ფასიან ${ VPN_APP_NAME } სერვერებთან."
       ],
       "Download ${ VPN_APP_NAME }": [
         "ჩამოტვირთეთ ${ VPN_APP_NAME }"
@@ -10568,15 +10483,6 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "თუ თქვენს 2FA-ჩართულ მოწყობილობას დაკარგავთ, ეს კოდები თქვენს ანგარიშში შესასვლელად 6-ციფრიანი 2FA კოდის მაგიერ შეგიძლიათ, გამოიყენოთ. ყოველი კოდი, მხოლოდ, ერთხელ იქნება ნაჩვენები."
       ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "თუ მაინც აპირებთ, ჩამოსწიოთ სატარიფო გეგმა, გაითვალისწინეთ, რომ ${ MAIL_APP_NAME }-ის და ${ VPN_APP_NAME }-ის ფასიან ფუნქციებთან წვდომას დაკარგავთ."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "თუ გააგრძელებთ ჩამოწევას, თქვენ დაკარგავთ წვდომას ${ MAIL_APP_NAME }-ის ფასიან სერვისებთან, დამატებითი საცავისა და ფილტრების ჩათვლით."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "თუ მაინც აპირებთ ჩამოსწიოთ სატარიფო გეგმა, გაითვალისწინეთ, რომ ${ VPN_APP_NAME }-ის ფასიან ფუნქციებთან წვდომას დაკარგავთ."
-      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "თუ შეიძინეთ სასაჩუქრე კოდი ან მიიღეთ იგი ჩვენი მხარდაჭერის გუნდისგან, შეგიძლიათ შეიყვანოთ იგი აქ."
       ],
@@ -10690,23 +10596,8 @@
       "Invitation link used": [
         "გამოყენებული მოწვევის ბმული"
       ],
-      "Invite deleted": [
-        "მოწვევა წაიშალა"
-      ],
       "Invite family members and get everything up and running.": [
         "მოიწვიეთ ოჯახის წევრები და აამუშავეთ ყველაფერი."
-      ],
-      "Invite for new user deleted": [
-        "ახალი მომხმარებლის მოწვევა წაიშალა"
-      ],
-      "Invite for organization accepted": [
-        "მოწვევა ორგანიზაციისთვის მიღებულია"
-      ],
-      "Invite for organization created": [
-        "მოწვევა ორგანიზაციისთვის შექმნილია"
-      ],
-      "Invite rejected": [
-        "მოწვევა უარყოფილია"
       ],
       "Invite successfully sent": [
         "მოსაწვევი წარმატებით გაიგზავნა",
@@ -10726,54 +10617,6 @@
       ],
       "It's better to have:": [
         "უკეთესია, გქონდეთ:"
-      ],
-      "Item autofilled in ${ vaultLink }": [
-        "ელემენტი ავტოშევსებულია ${ vaultLink }-ში"
-      ],
-      "Item autofilled in vault": [
-        "ელემენტი ავტოშევსებულია საცავში"
-      ],
-      "Item created in ${ vaultLink }": [
-        "ელემენტი შეიქმნა ${ vaultLink }-ში"
-      ],
-      "Item created in vault": [
-        "ელემენტი შეიქმნა საცავში"
-      ],
-      "Item deleted from ${ vaultLink }": [
-        "ელემენტი წაიშალა ${ vaultLink }-დან"
-      ],
-      "Item deleted from vault": [
-        "ელემენტი წაიშალა საცავიდან"
-      ],
-      "Item flags changed in ${ vaultLink }": [
-        "ელემენტის ალმები შეიცვალა ${ vaultLink }-ში"
-      ],
-      "Item flags changed in vault": [
-        "ელემენტის ალმები შეიცვალა საცავში"
-      ],
-      "Item in ${ vaultLink } trashed": [
-        "ელემენტი ${ vaultLink }-დან გადატანილია ნაგვის ყუთში"
-      ],
-      "Item in ${ vaultLink } untrashed": [
-        "ელემენტი ${ vaultLink }-დან გადმოტანილია ნაგვის ყუთიდან"
-      ],
-      "Item in vault trashed": [
-        "საცავის ელემენტი გადმოტანილია საცავის ნაგვის ყუთში"
-      ],
-      "Item in vault untrashed": [
-        "ელემენტი გადმოტანილია საცავის ნაგვის ყუთიდან"
-      ],
-      "Item read in ${ vaultLink }": [
-        "ელემენტი წაკითხულია ${ vaultLink }-ში"
-      ],
-      "Item read in vault": [
-        "ელემენტი წაკითხულია საცავში"
-      ],
-      "Item updated in ${ vaultLink }": [
-        "ელემენტი განახლდა ${ vaultLink }-ში"
-      ],
-      "Item updated in vault": [
-        "ელემენტი განახლდა საცავში"
       ],
       "It’s often the easiest way to recover your account if you’re signed in.": [
         "ხშირად ეს არის თქვენი ანგარიშის აღდგენის ყველაზე მარტივი გზა, თუ უკვე შესული ხართ."
@@ -10970,9 +10813,6 @@
       "New group created via your identity provider and pending review.": [
         "ახალი ჯგუფი შექმნილია თქვენი იდენტობის პროვაიდერის მეშვეობით და ელოდება განხილვას."
       ],
-      "New user invited to organization": [
-        "ახალი მომხმარებელი მოწვეულია მორგანიზაციაში"
-      ],
       "New VPN connection data will stop being collected and shown.": [
         "ახალი VPN მიერთების მონაცემების შეგროვებას და ჩვენებას შევწყვეტთ."
       ],
@@ -11137,15 +10977,6 @@
       "Paid for a plan": [
         "გადახდილია სატარიფო გეგმისთვის"
       ],
-      "Pass Monitor - custom email confirmed": [
-        "Pass Monitor - მორგებული ელფოსტა დადასტურებულია"
-      ],
-      "Pass Monitor - custom email created": [
-        "Pass Monitor - მორგებული ელფოსტა შეიქმნა"
-      ],
-      "Pass Monitor - custom email deleted": [
-        "Pass Monitor - მორგებული ელფოსტა წაიშალა"
-      ],
       "Pass usage logs": [
         "Pass-ის გამოყენების ჟურნალი"
       ],
@@ -11225,9 +11056,6 @@
       ],
       "Please open the document to view it.": [
         "გახსენით დოკუმენტი, რომ ნახოთ ის."
-      ],
-      "Please open your browser extension settings and allow ${ PASS_APP_NAME } extension to access website data. Then, reload this page.": [
-        "გთხოვთ გახსნათ თქვენი ბრაუზერის გაფართოების პარამეტრები და მისცეთ ${ PASS_APP_NAME } გაფართოებას ვებსაიტის მონაცემებზე წვდომის უფლება. შემდეგ გადატვირთეთ ეს გვერდი."
       ],
       "Please reconnect to continue.": [
         "გთხოვთ ხელახლა დაუკავშირდეთ გასაგრძელებლად."
@@ -11502,21 +11330,9 @@
       "Settings updated": [
         "პარამეტრები განახლებულია"
       ],
-      "Shared ${ vaultLink } deleted": [
-        "გაზიარებული ${ vaultLink } წაიშალა"
-      ],
-      "Shared ${ vaultLink } updated": [
-        "გაზიარებული ${ vaultLink } განახლდა"
-      ],
       "Shared server country (${ countriesCount })": [
         "უფასო სერვერის ქვეყანა (${ countriesCount })",
         "უფასო სერვერის ქვეყანა (${ countriesCount })"
-      ],
-      "Shared vault deleted": [
-        "გაზიარებული საცავი წაიშალა"
-      ],
-      "Shared vault updated": [
-        "გაზიარებული საცავი განახლდა"
       ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "შეტყობინებების სიაში თითოეული გამომზავნის გამოსახულების ჩვენება. თუ სურათი ხელმისაწვდომი არაა, გამომგზავნის ინიციალებს გაჩვენებთ."
@@ -11536,9 +11352,6 @@
       "Sign in only": [
         "მხოლოდ შესვლა"
       ],
-      "Sign in or create an account to continue.": [
-        "გასაგრძელებლად შედით ან შექმენით ანგარიში."
-      ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "თქვენი მისამართის გასააქტიურებლად შედით ${ MAIL_APP_NAME }-ში"
       ],
@@ -11547,9 +11360,6 @@
       ],
       "Signed up": [
         "რეგისტრირებული"
-      ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "რადგან თქვენ ერთგული მომხმარებელი ბრძანდებით, ანგარიშისთვის დამატებითი თვისებებია ხელმისაწვდომი."
       ],
       "Smart Routed through a different country.": [
         "ჭკვიანი მარშრუტიზაციით გატარებულია სხვა ქვეყნის გავლით."
@@ -11596,12 +11406,6 @@
       ],
       "Step ${ step }/${ totalSteps }": [
         "ნაბიჯი ${ step } / ${ totalSteps }-დან"
-      ],
-      "Step 1 of 2": [
-        "ნაბიჯი 1 2-დან"
-      ],
-      "Step 2 of 2": [
-        "ნაბიჯი 2 2-დან"
       ],
       "Storage allocated to other users in this organisation": [
         "ამ ორგანიზაციის სხვა მომხმარებლებისთვის გამოყოფილი საცავი"
@@ -12054,9 +11858,6 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "იდენტიფიკატორის მომწოდებლის მიერ გენერირებული უნიკალური ID, ჩვეულებრივ, ბმულის ფორმაში, რომელიც იდენტიფიკატორის მომწოდებლის სახელს შეიცავს. (მაგ: https://idp.example.com/XXXXX)."
       ],
-      "Unknown event type": [
-        "უცნობი მოვლენის ტიპი"
-      ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "თუ არ გახვალთ თქვენი ანგარიშიდან ან პაროლს არ შეცვლით, თქვენი სესია აქტიური დარჩება. სესიებს ვადა 60 დღის უმოქმედობის შემდეგ გასდით."
       ],
@@ -12150,21 +11951,6 @@
       "Users": [
         "მომხმარებლები"
       ],
-      "Vault created": [
-        "საცავი შეიქმნა"
-      ],
-      "Vault deleted": [
-        "საცავი წაიშალა"
-      ],
-      "Vault either deleted or requires access permissions": [
-        "საცავი ან წაშლილია, ან წვდომის უფლებები გჭირდებათ"
-      ],
-      "Vault shared with email": [
-        "საცავი გაზიარებულია ელფოსტით"
-      ],
-      "Vault updated": [
-        "საცავი განახლდა"
-      ],
       "Verification code sent.": [
         "გადამოწმების კოდი გაიგზავნა."
       ],
@@ -12182,9 +11968,6 @@
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "შეამოწმეთ თქვენი იდენტიფიკატორი დროზე დამოკიდებული ერთჯერადი პაროლით ავთენტიკატორი აპიდან"
-      ],
-      "Verifying ${ PASS_APP_NAME } browser extension...": [
-        "მოწმდება ${ PASS_APP_NAME } ბრაუზერის გაფართოება..."
       ],
       "Verifying your payment": [
         "თქვენი გადახდის გადამოწმება"
@@ -12320,9 +12103,6 @@
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "როდესაც შეტყობინებები ჩართულია, ჩვენ გამოვაგზავნით გაფრთხილებას თქვენს აღდგენის ელფოსტის მისამართზე, თუ გექნებათ ახალი შეტყობინებები თქვენს ${ MAIL_APP_NAME } ანგარიშზე."
-      ],
-      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
-        "როცა თქვენს მიმდინარე გამოწერას აუქმებთ, თქვენი გამოწერის ბალანსი ანგარიშის კრედიტების სახით დაგიბრუნდებათ და სატარრიფო გეგმა ${ BRAND_NAME } ${ PLANS.FREE }-ზე ჩამოიწევა."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "როცა გააუქმებთ, თქვენი გამოწერა აღარ განახლდება, მაგრამ სატარიფო გეგმით გამოწერის პერიოდის ბოლომდე შეგეძლებათ, ისარგებლოთ. ამის შემდეგ, ის ${ BRAND_NAME } Free სატარიფო გეგმაზე ჩამოიწევა."
@@ -12566,9 +12346,6 @@
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "თქვენ უნდა გაააქტიუროთ თქვენი ორგანიზაციის პირადი გასაღები თქვენი ორგანიზაციის ადმინისტრატორის მიერ მოწოდებული სარეზერვო ორგანიზაციის გასაღების პაროლით."
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "სატარიფო გეგმის ჩამოწევამდე საჭიროა ${ MAIL_APP_NAME }-ის მომხმარებლების, მისამართების და ხელით მითითებული დომენების წაშლა."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "PayPal-ის გადახდის მეთოდად დასამატებლად მასზე საკრედიტო ბარათი ან ბანკის ანგარიში უნდა გქონდეთ მიბმული."
@@ -15433,9 +15210,6 @@
       "use a data recovery method": [
         "მონაცემთა აღდგენის მეთოდის გამოყენება"
       ],
-      "Vault": [
-        "საცავი"
-      ],
       "View guide": [
         "სახელმძღვანელოს ნახვა"
       ],
@@ -16382,9 +16156,6 @@
       ]
     },
     "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
-      ],
       "Explore all ${ BRAND_NAME } plans": [
         "${ BRAND_NAME }-ის ყველა ტარიფის გადახედვა"
       ],
@@ -22285,9 +22056,6 @@
       "Upgrade your plan to increase your storage.": [
         "ასწიეთ თქვენი სატარიფო გეგმა საცავის ზომის გასაზრდელად."
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "ჩვენ დავამატებთ კრედიტებს დარჩენილი დროისთვის თქვენს ${ BRAND_NAME }-ის ანგარიშს."
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "**${ currentPlanName }**-ის ანგარიშზე **${ daysRemaining }** დაგრჩათ.",
         "**${ currentPlanName }**-ის ანგარიშზე **${ daysRemaining }** დაგრჩათ."
@@ -23162,9 +22930,6 @@
       "You have successfully canceled your subscription.": [
         "ტარიფი წარმატებით გააუქმეთ."
       ],
-      "You have successfully unsubscribed": [
-        "გამოწერა წარმატებით გაუქმდა"
-      ],
       "You will receive your username via email within a minute if you entered a valid recovery email address.": [
         "თუ ელფოსტის მისამართი სწორია, რამდენიმე წუთში თქვენ მიიღებთ ელ-ფოსტას თქვენი მომხმარებლის სახელებით."
       ],
@@ -23507,9 +23272,6 @@
       ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
-      ],
-      "${ PASS_APP_NAME } is missing permissions": [
-        "${ PASS_APP_NAME }-ს აკლია ნებართვები"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "${ PASS_SHORT_APP_NAME }-ის მონიტორინგის ანგარიში"
@@ -23872,12 +23634,6 @@
       "Confirm": [
         "დასტური"
       ],
-      "Confirm downgrade": [
-        "ტარიფის ჩამოწევის დადასტურება"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "დაადასტურეთ ${ BRAND_NAME } -ის დამატებითი ჯილდოების დაკარგვა"
-      ],
       "Connect ${ name }": [
         "${ name }-სთან დაკავშირება"
       ],
@@ -23895,9 +23651,6 @@
       ],
       "Connect to video conferencing": [
         "დაკავსირება ვიდეოკონფერენციასთან"
-      ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "შემოიერთეთ თქვენი ${ BRAND_NAME }-ის ანგარიში"
       ],
       "Connect your custom domain": [
         "თქვენი დომენის დაკავსირება"
@@ -24158,9 +23911,6 @@
       ],
       "Downgrade account": [
         "ანგარიშის ტარიფის ჩამოწევა"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა?"
       ],
       "Download ${ app }": [
         "${ app }-ის გადმოწერა"
@@ -25322,9 +25072,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "მოგესალმებათ ${ BRAND_NAME } for Business"
-      ],
-      "Welcome to your new password manager!": [
-        "მოგესალმებით თქვენი ახალ პაროლების მმართველში!"
       ],
       "What changes if you switch to the Free plan": [
         "რა იცვლება, თუ გადახვალთ Free plan-ზე"
@@ -26633,12 +26380,6 @@
       ],
       "By removing this phone number, you will no longer be able to recover your account.": [
         "ამ ტელეფონის ნომრის ამოშლით, თქვენ ვეღარ შეძლებთ თქვენი ანგარიშის აღდგენას."
-      ],
-      "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
-        "შესვლა ვერ მოხერხდა. გთხოვთ გახსნათ ${ PASS_APP_NAME } ბრაუზერის გაფართოება და შეხვიდეთ იქიდან."
-      ],
-      "Could not sign up. Please open ${ PASS_APP_NAME } browser extension and sign up from there.": [
-        "რეგისტრაცია ვერ მოხერხდა. გთხოვთ გახსნათ ${ PASS_APP_NAME } ბრაუზერის გაფართოება და დარეგისტრირდეთ იქიდან."
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "შემოტანას თუ გააუქმებთ, მისი გაგრძელება შეუძლებელი იქნება. ${ BRAND_NAME }-მა ყველაფერი, რაც უკვე გააკეთა, თქვენს ანგარიშში შეინახა. მაინც გნებავთ გაუქმება?"

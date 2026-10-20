@@ -237,6 +237,9 @@
       "Cancel": [
         "Annuleren"
       ],
+      "Cancel import": [
+        "Import annuleren"
+      ],
       "Cancel request": [
         "Aanvraag annuleren"
       ],
@@ -354,9 +357,6 @@
       "Connect to video conferencing": [
         "Verbinding maken met videovergadering"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Koppel uw ${ BRAND_NAME }-account"
-      ],
       "Connect your email": [
         "Verbind uw e-mailadres"
       ],
@@ -438,14 +438,8 @@
       "Create": [
         "Aanmaken"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Maak een ${ BRAND_NAME }-account aan"
-      ],
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "Maak een link om te delen met iedereen buiten ${ BRAND_NAME }"
-      ],
-      "Create an account": [
-        "Een account aanmaken"
       ],
       "Create calendar": [
         "Agenda aanmaken"
@@ -626,9 +620,6 @@
       ],
       "Done": [
         "Klaar"
-      ],
-      "Downgrade": [
-        "Downgraden"
       ],
       "Download": [
         "Downloaden"
@@ -984,6 +975,9 @@
       "Import": [
         "Importeren"
       ],
+      "Import actions": [
+        "Acties importeren"
+      ],
       "Import emails, calendars, contacts": [
         "Importeer e-mails, agenda's, contacten"
       ],
@@ -1302,17 +1296,11 @@
       "Reload": [
         "Opnieuw laden"
       ],
-      "Reload page": [
-        "Pagina vernieuwen"
-      ],
       "Remove": [
         "Verwijderen"
       ],
       "Remove all other devices": [
         "Alle andere apparaten verwijderen"
-      ],
-      "Remove bonuses": [
-        "Verwijder bonussen"
       ],
       "Remove button": [
         "Knop verwijderen"
@@ -1328,6 +1316,9 @@
       ],
       "Remove from favorites": [
         "Verwijder uit favorieten"
+      ],
+      "Remove from the list": [
+        "Verwijderen uit de lijst"
       ],
       "Remove gift code": [
         "Verwijder geschenkcode"
@@ -1772,6 +1763,9 @@
       ],
       "Upgrade to Business": [
         "Upgraden naar Business"
+      ],
+      "Upgrade to connect": [
+        "Upgrade om verbinding te maken"
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Upgrade om ${ PROTON_SENTINEL_NAME } in te schakelen"
@@ -2492,8 +2486,8 @@
       ]
     },
     "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "30 dagen geld-terug-garantie"
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30 dagen geld-terug-garantie: annuleer binnen 30 dagen na uw aankoop en neem contact op met onze ${ customerSupportLink } om uw geld terug te krijgen."
       ]
     },
     "bf2023: Title": {
@@ -6721,6 +6715,9 @@
       "Couldn't load transactions. Please try again later.": [
         "Kon transacties niet laden. Probeer het later nog eens."
       ],
+      "Couldn't load your connections": [
+        "Kan je verbindingen niet laden"
+      ],
       "Creating documents in non-folders is not allowed": [
         "Het aanmaken van documenten in niet-mappen is niet toegestaan"
       ],
@@ -7936,14 +7933,6 @@
         "Uitnodiging weergeven"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "Gezinsgroep niet herkend. Probeer het opnieuw."
-      ],
-      "Organization not recognized. Try again.": [
-        "Organisatie niet herkend. Probeer het opnieuw."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-groepen"
@@ -8124,22 +8113,8 @@
       ]
     },
     "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "Voer de groepsnaam van het gezin in om te bevestigen"
-      ],
-      "Enter organization name to confirm": [
-        "Voer de organisatienaam in om te bevestigen"
-      ],
       "Family name": [
         "Gezinsnaam"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Hiermee worden alle subgebruikers, accounts en gegevens die zijn gekoppeld aan uw organisatie, verwijderd."
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Hiermee worden alle premium functies van ${ BRAND_NAME } verwijderd voor elk gezinslid."
       ]
     },
     "familyOffer_2023:Settings section title": {
@@ -8167,12 +8142,6 @@
       ],
       "Change family name": [
         "Gezinsnaam wijzigen"
-      ],
-      "Delete family group?": [
-        "Gezinsgroep verwijderen?"
-      ],
-      "Delete organization?": [
-        "Organisatie verwijderen?"
       ],
       "Edit user storage": [
         "Gebruikersopslag bewerken"
@@ -9448,11 +9417,8 @@
       "Pending": [
         "In behandeling"
       ],
-      "Undo finished": [
-        "Ongedaan maken voltooid"
-      ],
-      "Undo in progress": [
-        "Bezig met ongedaan maken"
+      "Queued": [
+        "In wachtrij"
       ]
     },
     "Import type": {
@@ -9756,18 +9722,6 @@
       "${ url } deleted.": [
         "${ url } verwijderd."
       ],
-      "${ vaultLink } created": [
-        "${ vaultLink } aangemaakt"
-      ],
-      "${ vaultLink } deleted": [
-        "${ vaultLink } verwijderd"
-      ],
-      "${ vaultLink } shared with email": [
-        "${ vaultLink } gedeeld met e-mailadres"
-      ],
-      "${ vaultLink } updated": [
-        "${ vaultLink } bijgewerkt"
-      ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
         "${ VPN_SHORT_APP_NAME } verbergt uw internetverkeer. ${ PASS_SHORT_APP_NAME } verbergt uw identiteit\n— oneindig **hide-my-email aliassen** en **dark-web waarschuwingen** als uw gegevens ooit uitlekken."
       ],
@@ -9854,21 +9808,14 @@
         "+ ${ invisibleCount } Meer",
         "+ ${ invisibleCount } Meer"
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } bonus opslag"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } verbinding voor ${ VPN_APP_NAME } (stelt u in staat meer apparaten aan VPN te verbinden)",
-        "+${ organization.BonusVPN } verbindingen voor ${ VPN_APP_NAME } (stelt u in staat meer apparaten aan VPN te verbinden)"
-      ],
       "2FA disabled": [
         "Tweestapsverificatie uitgeschakeld"
       ],
       "30-day money-back guarantee": [
         "30 dagen geld-terug-garantie"
       ],
-      "30-day money-back guarantee.": [
-        "30-dagen geld terug garantie."
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30 dagen geld-terug-garantie: annuleer binnen 30 dagen na uw aankoop en neem contact op met onze ${ customerSupportLink } om uw geld terug te krijgen."
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Een ${ protonSubdomain } wordt gehost door ${ BRAND_NAME }, waardoor u snel een subdomein kunt instellen. ${ learnMoreLink }"
@@ -10282,9 +10229,6 @@
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "Door het uitschakelen van beveiligingsmonitoring wist u ook uw gehele geschiedenis. Weet u zeker dat u dit wilt uitschakelen?"
       ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Door het downgraden naar een gratis abonnement verliest u deze voordelen, zelfs als u in de toekomst opnieuw upgrade."
-      ],
       "By leaving now, changes may not be saved": [
         "Door nu te verlaten, worden wijzigingen mogelijk niet opgeslagen"
       ],
@@ -10305,6 +10249,9 @@
       ],
       "Cancel anytime": [
         "Op elk moment opzeggen"
+      ],
+      "Cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Annuleer binnen 30 dagen na uw aankoop en neem contact op met onze ${ customerSupportLink } om uw geld terug te krijgen."
       ],
       "Can’t access your recovery email?": [
         "Geen toegang tot uw herstel mail?"
@@ -10623,9 +10570,6 @@
       ],
       "Downgrade": [
         "Downgraden"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Downgraden zal alle verbindingen naar betaalde ${ VPN_APP_NAME }-servers beëindigen."
       ],
       "Download ${ mobileConfigArtifact } and open it on each Mac to install the profile, then approve it in System Settings.": [
         "Download ${ mobileConfigArtifact } en open het bestand op elke Mac om het profiel te installeren. Keur het vervolgens goed in de Systeeminstellingen."
@@ -11116,15 +11060,6 @@
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "Als u de toegang tot uw authenticator-app bent kwijtgeraakt, kunt u 1 van de 16 back-upherstelcodes gebruiken die u krijgt bij het instellen van tweefactorauthenticatie. ${ learnMoreLink }"
       ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Als u doorgaat met de downgrade, verliest u toegang tot betaalde functies van ${ MAIL_APP_NAME } en ${ VPN_APP_NAME }."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Als u doorgaat met de downgrade, verliest u de toegang tot betaalde functies van ${ MAIL_APP_NAME }, waaronder extra opslag en filters."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Als u doorgaat met de downgrade, verliest u toegang tot betaalde functies van ${ VPN_APP_NAME }."
-      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Als u een geschenkcode heeft gekocht of ontvangen van ons supportteam, kunt u deze hier invoeren."
       ],
@@ -11241,23 +11176,8 @@
       "Invitation link used": [
         "Uitnodigingslink gebruikt"
       ],
-      "Invite deleted": [
-        "Uitnodiging verwijderd"
-      ],
       "Invite family members and get everything up and running.": [
         "Nodig familie leden uit en krijg alles opgestart."
-      ],
-      "Invite for new user deleted": [
-        "Uitnodiging voor nieuwe gebruiker verwijderd"
-      ],
-      "Invite for organization accepted": [
-        "Uitnodiging voor organisatie geaccepteerd"
-      ],
-      "Invite for organization created": [
-        "Uitnodiging voor organisatie aangemaakt"
-      ],
-      "Invite rejected": [
-        "Uitnodiging afgewezen"
       ],
       "Invite successfully sent": [
         "Uitnodiging succesvol verzonden",
@@ -11277,54 +11197,6 @@
       ],
       "It's better to have:": [
         "Het is beter om:"
-      ],
-      "Item autofilled in ${ vaultLink }": [
-        "Item automatisch gevuld in ${ vaultLink }"
-      ],
-      "Item autofilled in vault": [
-        "Item automatisch gevuld in kluis"
-      ],
-      "Item created in ${ vaultLink }": [
-        "Item aangemaakt in ${ vaultLink }"
-      ],
-      "Item created in vault": [
-        "Item aangemaakt in kluis"
-      ],
-      "Item deleted from ${ vaultLink }": [
-        "Item verwijderd uit ${ vaultLink }"
-      ],
-      "Item deleted from vault": [
-        "Item verwijderd uit kluis"
-      ],
-      "Item flags changed in ${ vaultLink }": [
-        "Item markeringen veranderd in ${ vaultLink }"
-      ],
-      "Item flags changed in vault": [
-        "Item markeringen veranderd in kluis"
-      ],
-      "Item in ${ vaultLink } trashed": [
-        "Item in ${ vaultLink } weggegooid naar prullenbak"
-      ],
-      "Item in ${ vaultLink } untrashed": [
-        "Item in ${ vaultLink } terug uit prullenbak gehaald"
-      ],
-      "Item in vault trashed": [
-        "Item in kluis weggegooid naar prullenbak"
-      ],
-      "Item in vault untrashed": [
-        "Item in kluis terug uit prullenbak gehaald"
-      ],
-      "Item read in ${ vaultLink }": [
-        "Item gelezen in ${ vaultLink }"
-      ],
-      "Item read in vault": [
-        "Item gelezen in kluis"
-      ],
-      "Item updated in ${ vaultLink }": [
-        "Item bijgewerkt in ${ vaultLink }"
-      ],
-      "Item updated in vault": [
-        "Item bijgewerkt in kluis"
       ],
       "It’s often the easiest way to recover your account if you’re signed in.": [
         "Het is vaak de gemakkelijkste manier om uw account te herstellen als u bent ingelogd."
@@ -11503,6 +11375,9 @@
       "Monthly ${ onDayString }": [
         "Maandelijks ${ onDayString }"
       ],
+      "More cards": [
+        "Meer kaarten"
+      ],
       "Multi-user support not enabled.": [
         "Ondersteuning voor meerdere gebruikers niet ingeschakeld."
       ],
@@ -11532,9 +11407,6 @@
       ],
       "New group created via your identity provider and pending review.": [
         "Nieuwe groep aangemaakt via uw identiteitsprovider en in afwachting van beoordeling."
-      ],
-      "New user invited to organization": [
-        "Nieuwe gebruiker uitgenodigd voor de organisatie"
       ],
       "New VPN connection data will stop being collected and shown.": [
         "Nieuwe VPN-verbindingsgegevens zullen niet langer worden verzameld en getoond."
@@ -11715,15 +11587,6 @@
       "Paid for a plan": [
         "Betaald voor een abonnement"
       ],
-      "Pass Monitor - custom email confirmed": [
-        "Pass Monitor - aangepaste e-mail bevestigd"
-      ],
-      "Pass Monitor - custom email created": [
-        "Pass Monitor - aangepaste e-mail aangemaakt"
-      ],
-      "Pass Monitor - custom email deleted": [
-        "Pass Monitor - aangepaste e-mail verwijderd"
-      ],
       "Pass usage logs": [
         "Pass-gebruikslogboeken"
       ],
@@ -11803,9 +11666,6 @@
       ],
       "Please open the document to view it.": [
         "Open het document om het te bekijken."
-      ],
-      "Please open your browser extension settings and allow ${ PASS_APP_NAME } extension to access website data. Then, reload this page.": [
-        "Open de instellingen van uw browser-extensie en sta de ${ PASS_APP_NAME }-extensie toe om websitegegevens te openen. Laad deze pagina vervolgens opnieuw."
       ],
       "Please reconnect to continue.": [
         "Maak opnieuw verbinding om door te gaan."
@@ -12056,6 +11916,9 @@
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Verzonden met <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> beveiligde e-mail."
       ],
+      "SEPA Bank transfer": [
+        "SEPA bankoverschrijving"
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "SEPA-betalingen zijn momenteel niet beschikbaar. Probeer het later nogmaals."
       ],
@@ -12095,21 +11958,9 @@
       "Settings updated": [
         "Instellingen bijgewerkt"
       ],
-      "Shared ${ vaultLink } deleted": [
-        "Gedeelde ${ vaultLink } verwijderd"
-      ],
-      "Shared ${ vaultLink } updated": [
-        "Gedeelde ${ vaultLink } bijgewerkt"
-      ],
       "Shared server country (${ countriesCount })": [
         "Land met gedeelde server (${ countriesCount })",
         "Landen met gedeelde server (${ countriesCount })"
-      ],
-      "Shared vault deleted": [
-        "Gedeelde kluis verwijderd"
-      ],
-      "Shared vault updated": [
-        "Gedeelde kluis bijgewerkt"
       ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Toon de afbeelding van elke afzender in deze berichtlijst. De afzenders initialen zullen worden getoond als er geen foto beschikbaar is."
@@ -12129,9 +11980,6 @@
       "Sign in only": [
         "Alleen inloggen"
       ],
-      "Sign in or create an account to continue.": [
-        "Log in of maak een account aan om verder te gaan."
-      ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Meld aan bij ${ MAIL_APP_NAME } om uw adres te activeren."
       ],
@@ -12140,9 +11988,6 @@
       ],
       "Signed up": [
         "Geregistreerd"
-      ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
       ],
       "Smart Routed through a different country.": [
         "Slim gerouteerd door een ander land."
@@ -12192,12 +12037,6 @@
       ],
       "Step ${ step }/${ totalSteps }": [
         "Stap ${ step }/${ totalSteps }"
-      ],
-      "Step 1 of 2": [
-        "Stap 1 van 2"
-      ],
-      "Step 2 of 2": [
-        "Stap 2 van 2"
       ],
       "Storage allocated to other users in this organisation": [
         "Opslagruimte toegewezen aan andere gebruikers binnen deze organisatie"
@@ -12701,11 +12540,11 @@
       "Unfortunately there is no recovery method available for this account.": [
         "Helaas is er geen herstelmethode beschikbaar voor dit account."
       ],
+      "UnionPay logo": [
+        "Union Pay-logo"
+      ],
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Unieke ID gegenereerd door uw identiteitsprovider, meestal in de vorm van een URL die de naam van de identiteitsprovider erin bevat (bv. https://idp.example.com/XXXXX)."
-      ],
-      "Unknown event type": [
-        "Onbekend gebeurtenistype"
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Tenzij u uitlogt of uw wachtwoord wijzigt, blijft uw sessie actief. Sessies verlopen na 60 dagen van inactiviteit."
@@ -12824,21 +12663,6 @@
       "Using a different MDM? Any MDM that supports deploying a configuration profile will work. Refer to your MDM's documentation on how to upload and assign it to your device fleet.": [
         "Gebruikt u een andere MDM? Elke MDM die het implementeren van een configuratieprofiel ondersteunt, is geschikt. Raadpleeg de documentatie van uw MDM voor informatie over hoe u het profiel kunt uploaden en toewijzen aan uw apparatenpark."
       ],
-      "Vault created": [
-        "Kluis aangemaakt"
-      ],
-      "Vault deleted": [
-        "Kluis verwijderd"
-      ],
-      "Vault either deleted or requires access permissions": [
-        "Kluis is verwijderd of vereist toegangsrechten"
-      ],
-      "Vault shared with email": [
-        "Kluis gedeeld met e-mailadres"
-      ],
-      "Vault updated": [
-        "Kluis bijgewerkt"
-      ],
       "Verification code sent.": [
         "Verificatiecode verzonden"
       ],
@@ -12856,9 +12680,6 @@
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Controleer uw identiteit met een tijdgebonden eenmalig wachtwoord van een authenticator app"
-      ],
-      "Verifying ${ PASS_APP_NAME } browser extension...": [
-        "De ${ PASS_APP_NAME } browser-extensie verifiëren..."
       ],
       "Verifying your payment": [
         "Verifiëren van uw betaling"
@@ -13009,9 +12830,6 @@
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Wanneer notificaties zijn ingeschakeld sturen wij een melding naar uw herstel e-mailadres als u nieuwe berichten in uw ${ MAIL_APP_NAME }-account heeft."
-      ],
-      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
-        "Wanneer u uw huidige betaalde abonnement annuleert, zal het saldo van uw abonnement als accounttegoed worden teruggestort en wordt u gedowngrade naar het ${ BRAND_NAME } ${ PLANS.FREE } abonnement."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Wanneer u opzegt, dan zal uw abonnement niet worden verlengd, maar u kunt nog steeds van de voordelen van uw abonnement genieten tot het einde van de abonnementsperiode. Daarna wordt u gedowngraded naar het ${ BRAND_NAME } Free abonnement."
@@ -13265,9 +13083,6 @@
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "U moet de geheime sleutel van uw organisatie met het wachtwoord van uw backup organisatiesleutel, die u via uw organisatiebeheerder kan verkrijgen, activeren."
       ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "U moet alle extra ${ MAIL_APP_NAME }-gebruikers, adressen en aangepaste domeinen uitschakelen of verwijderen voordat u kunt downgraden."
-      ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "U moet een kredietkaart of een bankrekening gekoppeld hebben aan uw PayPal-account om deze toe te voegen als betaalmethode."
       ],
@@ -13374,6 +13189,9 @@
       ],
       "Your account was successfully updated with this promotion": [
         "Uw account werd succesvol bijgewerkt met deze promotie."
+      ],
+      "Your address was connected. We're importing your emails.": [
+        "Uw adres is gekoppeld. We importeren uw e-mails."
       ],
       "Your Always-on VPN device profile is ready to deploy.": [
         "Uw Always-on VPN-apparaatprofiel is klaar voor implementatie."
@@ -14942,6 +14760,9 @@
       "Issuer ID": [
         "ID uitgevende instelling"
       ],
+      "Item": [
+        "Item"
+      ],
       "Keep emails in Sent/Drafts": [
         "E-mails behouden in Verzonden/Concepten"
       ],
@@ -15669,6 +15490,9 @@
       "Value": [
         "Waarde"
       ],
+      "Vault": [
+        "Kluis"
+      ],
       "Vault, item & secure link sharing": [
         "Kluis, item en beveiligde link delen"
       ],
@@ -16005,6 +15829,9 @@
       "Create an alias": [
         "Alias aanmaken"
       ],
+      "Customer Support": [
+        "Klantendienst"
+      ],
       "data recovery option": [
         "optie voor gegevensherstel"
       ],
@@ -16178,9 +16005,6 @@
       ],
       "use a data recovery method": [
         "gebruik een methode voor gegevensherstel"
-      ],
-      "Vault": [
-        "Kluis"
       ],
       "View guide": [
         "Bekijk gids"
@@ -17137,9 +16961,6 @@
       ]
     },
     "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade naar ${ downgradedPlanName }"
-      ],
       "Explore all ${ BRAND_NAME } plans": [
         "Bekijk alle ${ BRAND_NAME }-abonnementen"
       ],
@@ -19751,8 +19572,8 @@
       ]
     },
     "Payments.iDEAL": {
-      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
-        "Door te bevestigen geeft u toestemming aan ${ BRAND_NAME } en Stripe, onze betalingsdienstaanbieder, onze betalingsdienstaanbieder, om toekomstige betalingen voor uw abonnement van deze bankrekening te innen via SEPA Direct Debit, en uw bank om deze betalingen af ​​te schrijven. Uw eerste betaling wordt nu uitgevoerd door ${ IDEAL_WERO_BRAND_NAME }. Uw abonnement wordt automatisch verlengd, totdat u opzegt; wij zullen u vóór elke ophaling op de hoogte stellen. Bij automatische incasso kunt u binnen 8 weken na de incassodatum een ​​teruggave aanvragen bij uw bank, conform de voorwaarden die u met uw bank heeft afgesproken. Dit is niet van toepassing op de betaling van ${ IDEAL_WERO_BRAND_NAME } die u nu doet."
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Door te bevestigen geeft u ${ BRAND_NAME } en Stripe, onze betalingsdienstaanbieder, toestemming om toekomstige betalingen voor uw abonnement van deze bankrekening te innen via SEPA automatische incasso, en uw bank om deze betalingen af ​​te schrijven. Uw eerste betaling wordt nu uitgevoerd door ${ IDEAL_WERO_BRAND_NAME }. Uw abonnement wordt automatisch verlengd, totdat u opzegt; wij zullen u vóór elke ophaling op de hoogte stellen. Bij automatische incasso kunt u binnen 8 weken na de incassodatum een ​​teruggave aanvragen bij uw bank, conform de voorwaarden die u met uw bank heeft afgesproken. Dit is niet van toepassing op de betaling van ${ IDEAL_WERO_BRAND_NAME } die u nu doet."
       ]
     },
     "Payments.info": {
@@ -20937,6 +20758,14 @@
       ],
       "User Admin": [
         "Gebruiker Beheerder"
+      ]
+    },
+    "Rollback state": {
+      "Undo finished": [
+        "Ongedaan maken voltooid"
+      ],
+      "Undo in progress": [
+        "Bezig met ongedaan maken"
       ]
     },
     "Safety review": {
@@ -23155,9 +22984,6 @@
       "Upgrade your plan to increase your storage.": [
         "Upgrade uw abonnement om de opslag te verhogen."
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "We zullen de credits voor de resterende tijd toevoegen aan uw ${ BRAND_NAME }-account."
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "U heeft nog **${ daysRemaining }** dag over van uw **${ currentPlanName }** abonnement.",
         "U heeft nog **${ daysRemaining }** dagen over van uw **${ currentPlanName }** abonnement."
@@ -24039,9 +23865,6 @@
       "You have successfully canceled your subscription.": [
         "U heeft uw abonnement succesvol geannuleerd."
       ],
-      "You have successfully unsubscribed": [
-        "U bent succesvol afgemeld"
-      ],
       "You will receive your username via email within a minute if you entered a valid recovery email address.": [
         "U ontvangt uw gebruikersnaam via e-mail binnen een minuut als u een geldig herstel-e-mailadres hebt ingevoerd."
       ],
@@ -24396,9 +24219,6 @@
       ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
-      ],
-      "${ PASS_APP_NAME } is missing permissions": [
-        "${ PASS_APP_NAME } mist permissies"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "${ PASS_SHORT_APP_NAME } Monitor Rapport"
@@ -24782,12 +24602,6 @@
       "Confirm": [
         "Bevestigen"
       ],
-      "Confirm downgrade": [
-        "Downgrade bevestigen"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Bevestig verlies van ${ BRAND_NAME }-bonussen"
-      ],
       "Connect ${ name }": [
         "Verbind ${ name }"
       ],
@@ -24805,9 +24619,6 @@
       ],
       "Connect to video conferencing": [
         "Verbinding maken met videoconferentie"
-      ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Koppel uw ${ BRAND_NAME }-account"
       ],
       "Connect your custom domain": [
         "Verbind uw eigen domein"
@@ -25083,9 +24894,6 @@
       ],
       "Downgrade account": [
         "Account downgraden"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "Downgrade naar ${ downgradedPlanName }?"
       ],
       "Download ${ app }": [
         "${ app } downloaden"
@@ -26289,9 +26097,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Welkom bij ${ BRAND_NAME } voor Business"
-      ],
-      "Welcome to your new password manager!": [
-        "Welkom bij uw nieuwe wachtwoordbeheerder!"
       ],
       "What are you migrating?": [
         "Wat migreert u?"
@@ -27648,12 +27453,6 @@
       ],
       "By removing this phone number, you will no longer be able to recover your account.": [
         "Door dit telefoonnummer te verwijderen, kunt u uw account niet meer herstellen."
-      ],
-      "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
-        "Kan niet inloggen. Open de ${ PASS_APP_NAME } browser-extensie en log daar in."
-      ],
-      "Could not sign up. Please open ${ PASS_APP_NAME } browser extension and sign up from there.": [
-        "Kan niet registreren. Open de ${ PASS_APP_NAME } browser-extensie en registreer u van daaruit."
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Als u deze import annuleert, zult u niet in staat zijn om deze te hervatten. ${ BRAND_NAME } heeft alle voortgang in uw account opgeslagen. Toch annuleren?"

@@ -348,9 +348,6 @@
       "Connect to video conferencing": [
         "Підключіться до відеоконференцій"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Під'єднати обліковий запис ${ BRAND_NAME }"
-      ],
       "Connect your email": [
         "Підключіть свою електронну пошту"
       ],
@@ -429,14 +426,8 @@
       "Create": [
         "Створити"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Створіть обліковий запис ${ BRAND_NAME }"
-      ],
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "Створити посилання для спільного доступу з будь-ким за межами ${ BRAND_NAME }"
-      ],
-      "Create an account": [
-        "Зареєструватися"
       ],
       "Create calendar": [
         "Створити календар"
@@ -611,9 +602,6 @@
       ],
       "Done": [
         "Готово"
-      ],
-      "Downgrade": [
-        "Перейти на нижчий тарифний план"
       ],
       "Download": [
         "Завантажити"
@@ -1278,17 +1266,11 @@
       "Reload": [
         "Перезавантажити"
       ],
-      "Reload page": [
-        "Перезавантажити сторінку"
-      ],
       "Remove": [
         "Вилучити"
       ],
       "Remove all other devices": [
         "Вилучити всі інші пристрої"
-      ],
-      "Remove bonuses": [
-        "Вилучити бонуси"
       ],
       "Remove button": [
         "Вилучити кнопку"
@@ -2458,11 +2440,6 @@
         "На жаль, ця пропозиція недоступна для вашого поточного тарифного плану. Але ви можете отримати ${ discountPercentage } від ${ plan.Title } при підписці на ${ cycle } місяці.",
         "На жаль, ця пропозиція недоступна для вашого поточного тарифного плану. Але ви можете отримати ${ discountPercentage } від ${ plan.Title } при підписці на ${ cycle } місяців.",
         "На жаль, ця пропозиція недоступна для вашого поточного тарифного плану. Але ви можете отримати ${ discountPercentage } від ${ plan.Title } при підписці на ${ cycle } місяців."
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "Гарантія повернення коштів протягом 30 днів"
       ]
     },
     "bf2023: Title": {
@@ -7862,14 +7839,6 @@
         "Переглянути запрошення"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "Родинну групу не розпізнано. Спробуйте знову."
-      ],
-      "Organization not recognized. Try again.": [
-        "Організацію не розпізнано. Спробуйте знову."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "Групи ${ BRAND_NAME }"
@@ -8057,22 +8026,8 @@
       ]
     },
     "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "Введіть назву родини для підтвердження"
-      ],
-      "Enter organization name to confirm": [
-        "Введіть назву організації для підтвердження"
-      ],
       "Family name": [
         "Назва родини"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Ця дія остаточно видалить усіх підлеглих користувачів, облікові записи, а також дані, пов'язані з вашою організацією."
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Це вилучить усі преміумфункції ${ BRAND_NAME } для всіх учасників родини."
       ]
     },
     "familyOffer_2023:Settings section title": {
@@ -8100,12 +8055,6 @@
       ],
       "Change family name": [
         "Змінити назву родини"
-      ],
-      "Delete family group?": [
-        "Видалити родинну групу?"
-      ],
-      "Delete organization?": [
-        "Видалити організацію?"
       ],
       "Edit user storage": [
         "Змінити обсяг сховища користувача"
@@ -9398,12 +9347,6 @@
       ],
       "Pending": [
         "Очікування"
-      ],
-      "Undo finished": [
-        "Скасування завершено"
-      ],
-      "Undo in progress": [
-        "Скасування в процесі"
       ]
     },
     "Import type": {
@@ -9746,18 +9689,6 @@
       "${ url } deleted.": [
         "${ url } видалено."
       ],
-      "${ vaultLink } created": [
-        "${ vaultLink } створено"
-      ],
-      "${ vaultLink } deleted": [
-        "${ vaultLink } видалено"
-      ],
-      "${ vaultLink } shared with email": [
-        "${ vaultLink } надіслано поштою"
-      ],
-      "${ vaultLink } updated": [
-        "${ vaultLink } оновлено"
-      ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
         "${ VPN_SHORT_APP_NAME } приховує ваш трафік. ${ PASS_SHORT_APP_NAME } приховує ваші особисті дані — необмежена кількість **hide-my-email aliases** та **dark-web alerts** у разі витоку ваших даних."
       ],
@@ -9848,23 +9779,11 @@
         "+${ invisibleCount } ще",
         "+${ invisibleCount } ще"
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } додаткового сховища"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } з'єднання для ${ VPN_APP_NAME } (дозволяє приєднати більше пристроїв до VPN)",
-        "+${ organization.BonusVPN } з'єднання для ${ VPN_APP_NAME } (дозволяє приєднати більше пристроїв до VPN)",
-        "+${ organization.BonusVPN } з'єднань для ${ VPN_APP_NAME } (дозволяє приєднати більше пристроїв до VPN)",
-        "+${ organization.BonusVPN } з'єднань для ${ VPN_APP_NAME } (дозволяє приєднати більше пристроїв до VPN)"
-      ],
       "2FA disabled": [
         "Двофакторна автентифікація вимкнена"
       ],
       "30-day money-back guarantee": [
         "Гарантія повернення грошей протягом 30 днів"
-      ],
-      "30-day money-back guarantee.": [
-        "Гарантія повернення грошей протягом 30 днів."
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ protonSubdomain } розміщується на хостингу ${ BRAND_NAME }, що дозволяє швидко налаштувати субдомен. ${ learnMoreLink }"
@@ -10274,9 +10193,6 @@
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "Вимкнувши моніторинг облікового запису, ви також очистите всю свою історію. Ви впевнені, що хочете вимкнути це?"
       ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Повернувшись на безплатний тарифний план, ви остаточно втратите ці переваги, навіть якщо в майбутньому поновите передплату."
-      ],
       "By leaving now, changes may not be saved": [
         "Якщо ви зараз підете, зміни можуть не зберегтися"
       ],
@@ -10603,9 +10519,6 @@
       ],
       "Downgrade": [
         "Перейти на нижчий тарифний план"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Перехід на тарифний план нижчого рівня розірве всі з'єднання з платними серверами ${ VPN_APP_NAME }."
       ],
       "Download ${ VPN_APP_NAME }": [
         "Завантажити ${ VPN_APP_NAME }"
@@ -11063,15 +10976,6 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Якщо ви втратите свій пристрій двоетапної перевірки, можна скористатися цими кодами замість 6-значного коду перевірки для входу в обліковий запис. Кожен код можна використати лише один раз."
       ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Якщо ви продовжите перехід на нижчий тарифний план, ви втратите доступ до платних функцій ${ MAIL_APP_NAME } та ${ VPN_APP_NAME }."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Якщо ви продовжите перехід на нижчий тарифний план, ви втратите доступ до платних функцій ${ MAIL_APP_NAME }, включно з додатковим сховищем та фільтрами."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Якщо ви продовжите перехід на нижчий тарифний план, ви втратите доступ до платних функцій ${ VPN_APP_NAME }."
-      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Якщо ви придбали подарунковий код або отримали його від нашої служби підтримки, ви можете ввести його тут."
       ],
@@ -11189,23 +11093,8 @@
       "Invitation link used": [
         "Посилання на запрошення використано"
       ],
-      "Invite deleted": [
-        "Запрошення видалено"
-      ],
       "Invite family members and get everything up and running.": [
         "Запросіть членів родини та налаштуйте все для роботи."
-      ],
-      "Invite for new user deleted": [
-        "Запрошення для нового користувача видалено"
-      ],
-      "Invite for organization accepted": [
-        "Запрошення для організації прийнято"
-      ],
-      "Invite for organization created": [
-        "Запрошення до організації створено"
-      ],
-      "Invite rejected": [
-        "Запрошення відхилено"
       ],
       "Invite successfully sent": [
         "Запрошення успішно надіслано",
@@ -11227,54 +11116,6 @@
       ],
       "It's better to have:": [
         "Бажано мати:"
-      ],
-      "Item autofilled in ${ vaultLink }": [
-        "Елемент автозаповнено в ${ vaultLink }"
-      ],
-      "Item autofilled in vault": [
-        "Елемент автоматично заповнений у сховищі"
-      ],
-      "Item created in ${ vaultLink }": [
-        "Елемент створено в ${ vaultLink }"
-      ],
-      "Item created in vault": [
-        "Елемент створений у сховищі"
-      ],
-      "Item deleted from ${ vaultLink }": [
-        "Елемент видалено з ${ vaultLink }"
-      ],
-      "Item deleted from vault": [
-        "Елемент видалено зі сховища"
-      ],
-      "Item flags changed in ${ vaultLink }": [
-        "Прапори елемента змінено в ${ vaultLink }"
-      ],
-      "Item flags changed in vault": [
-        "Прапори предметів/предмету змінено в сховищі"
-      ],
-      "Item in ${ vaultLink } trashed": [
-        "Елемент в ${ vaultLink } переміщено в смітник"
-      ],
-      "Item in ${ vaultLink } untrashed": [
-        "Елемент в ${ vaultLink } повернено зі смітника"
-      ],
-      "Item in vault trashed": [
-        "Елемент зі сховища переміщено до смітника"
-      ],
-      "Item in vault untrashed": [
-        "Елемент забрано зі смітника сховища"
-      ],
-      "Item read in ${ vaultLink }": [
-        "Елемент прочитано в ${ vaultLink }"
-      ],
-      "Item read in vault": [
-        "Пункт прочитаний у сховищі"
-      ],
-      "Item updated in ${ vaultLink }": [
-        "Елемент оновлено в ${ vaultLink }"
-      ],
-      "Item updated in vault": [
-        "Елемент оновлено в сховищі"
       ],
       "It’s often the easiest way to recover your account if you’re signed in.": [
         "Часто це найпростіший спосіб відновити свій обліковий запис, якщо ви вже увійшли."
@@ -11471,9 +11312,6 @@
       "New group created via your identity provider and pending review.": [
         "Нову групу створено через вашого постачальника ідентифікації та вона очікує на розгляд."
       ],
-      "New user invited to organization": [
-        "До організації запрошено нового користувача"
-      ],
       "New VPN connection data will stop being collected and shown.": [
         "Нові дані про VPN-з'єднання перестануть збиратися і показуватися."
       ],
@@ -11645,15 +11483,6 @@
       "Paid for a plan": [
         "Сплачено за тарифний план"
       ],
-      "Pass Monitor - custom email confirmed": [
-        "Pass Monitor – користувацьку пошту підтверджено"
-      ],
-      "Pass Monitor - custom email created": [
-        "Pass Monitor – користувацька пошта створена"
-      ],
-      "Pass Monitor - custom email deleted": [
-        "Pass Monitor – користувацьку пошту видалено"
-      ],
       "Pass usage logs": [
         "Журнали використання Pass"
       ],
@@ -11737,9 +11566,6 @@
       ],
       "Please open the document to view it.": [
         "Щоб переглянути документ, відкрийте його."
-      ],
-      "Please open your browser extension settings and allow ${ PASS_APP_NAME } extension to access website data. Then, reload this page.": [
-        "Відкрийте налаштування розширення браузера та дозвольте розширенню ${ PASS_APP_NAME } доступ до даних вебсайту. Потім перезавантажте цю сторінку."
       ],
       "Please reconnect to continue.": [
         "Повторно з'єднайтеся, щоб продовжити."
@@ -12017,23 +11843,11 @@
       "Settings updated": [
         "Налаштування оновлено"
       ],
-      "Shared ${ vaultLink } deleted": [
-        "Надіслане ${ vaultLink } видалено"
-      ],
-      "Shared ${ vaultLink } updated": [
-        "Надіслане ${ vaultLink } оновлено"
-      ],
       "Shared server country (${ countriesCount })": [
         "Країна спільного сервера (${ countriesCount })",
         "Країни спільного сервера (${ countriesCount })",
         "Країни спільного сервера (${ countriesCount })",
         "Країни спільного сервера (${ countriesCount })"
-      ],
-      "Shared vault deleted": [
-        "Спільне сховище видалено"
-      ],
-      "Shared vault updated": [
-        "Спільне сховище оновлено"
       ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Показувати зображення відправників у списку повідомлень. Якщо фото недоступне, показуватимуться ініціали відправника."
@@ -12053,9 +11867,6 @@
       "Sign in only": [
         "Лише для входу"
       ],
-      "Sign in or create an account to continue.": [
-        "Увійдіть або створіть обліковий запис, щоб продовжити."
-      ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Увійдіть до ${ MAIL_APP_NAME }, щоб активувати свою адресу"
       ],
@@ -12064,9 +11875,6 @@
       ],
       "Signed up": [
         "Зареєстровано"
-      ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Оскільки ви лояльний користувач, ваш обліковий запис має увімкнені додаткові функції."
       ],
       "Smart Routed through a different country.": [
         "Перенаправлено через іншу країну за допомогою Smart Routing."
@@ -12115,12 +11923,6 @@
       ],
       "Step ${ step }/${ totalSteps }": [
         "Крок ${ step }/${ totalSteps }"
-      ],
-      "Step 1 of 2": [
-        "Крок 1 з 2"
-      ],
-      "Step 2 of 2": [
-        "Крок 2 з 2"
       ],
       "Storage allocated to other users in this organisation": [
         "Обсяг сховища, розподілений між іншими користувачами в цій організації"
@@ -12611,9 +12413,6 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Унікальний ідентифікатор, згенерований вашим провайдером ідентифікації, зазвичай у вигляді URL-адреси, що містить ім'я провайдера (наприклад, https://idp.example.com/XXXXX)."
       ],
-      "Unknown event type": [
-        "Невідомий тип події"
-      ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Доки ви не вийдете зі свого облікового запису чи не зміните пароль, ваш сеанс залишатиметься активним. Термін дії сеансів завершується через 60 днів неактивності."
       ],
@@ -12707,21 +12506,6 @@
       "Users": [
         "Користувачі"
       ],
-      "Vault created": [
-        "Сховище створено"
-      ],
-      "Vault deleted": [
-        "Сховище видалено"
-      ],
-      "Vault either deleted or requires access permissions": [
-        "Сховище або видалено, або вимагає дозволу на доступ"
-      ],
-      "Vault shared with email": [
-        "Сховище поширено за допомогою електронної пошти"
-      ],
-      "Vault updated": [
-        "Сховище оновлено"
-      ],
       "Verification code sent.": [
         "Код підтвердження відправлено."
       ],
@@ -12739,9 +12523,6 @@
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Підтверджуйте свій вхід у систему за допомогою тимчасових одноразових кодів, отриманих із програми авторизації"
-      ],
-      "Verifying ${ PASS_APP_NAME } browser extension...": [
-        "Перевірка розширення браузера ${ PASS_APP_NAME }..."
       ],
       "Verifying your payment": [
         "Перевірка вашого платежу"
@@ -12877,9 +12658,6 @@
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Коли сповіщення увімкнено, ми надсилатимемо попередження на вашу резервну адресу електронної пошти, якщо ви матимете нові повідомлення у вашому обліковому записі ${ MAIL_APP_NAME }."
-      ],
-      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
-        "Коли ви скасуєте поточну платну підписку, залишок вашої підписки буде повернено як кредит облікового запису і вас буде переведено на ${ BRAND_NAME } ${ PLANS.FREE } план."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Якщо ви скасуєте підписку, ваша підписка не буде поновлена, але ви все одно зможете користуватися перевагами плану до кінця періоду підписки. Після цього ви перейдете до ${ BRAND_NAME } безоплатного плану."
@@ -13144,9 +12922,6 @@
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "Ви повинні активувати свій приватний ключ організації за допомогою пароля відновлення ключа організації, який вам було надано адміністратором організації."
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Для можливості переходу на тарифний план нижчого рівня ви повинні вилучити будь-яких додаткових користувачів ${ MAIL_APP_NAME }, адреси та власні домени."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "У вас повинна бути кредитна картка чи банківський рахунок, пов'язаний з вашим обліковим записом PayPal, для можливості його використання, як спосіб оплати."
@@ -16034,9 +15809,6 @@
       "use a data recovery method": [
         "використовувати спосіб відновлення даних"
       ],
-      "Vault": [
-        "Сховище"
-      ],
       "View guide": [
         "Переглянути посібник"
       ],
@@ -17019,9 +16791,6 @@
       ]
     },
     "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Понизити до ${ downgradedPlanName }"
-      ],
       "Explore all ${ BRAND_NAME } plans": [
         "Переглянути всі тарифні плани ${ BRAND_NAME }"
       ],
@@ -23141,9 +22910,6 @@
       "Upgrade your plan to increase your storage.": [
         "Оновіть свій тарифний план, щоб збільшити обсяг сховища."
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Ми додамо невитрачений залишок коштів як кредити до вашого облікового запису ${ BRAND_NAME }."
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "Залишився **${ daysRemaining }** день до завершення дії вашого тарифного плану **${ currentPlanName }**.",
         "Залишилося **${ daysRemaining }** дні до завершення дії вашого тарифного плану **${ currentPlanName }**.",
@@ -24064,9 +23830,6 @@
       "You have successfully canceled your subscription.": [
         "Ви успішно скасували передплату."
       ],
-      "You have successfully unsubscribed": [
-        "Ви успішно скасували передплату"
-      ],
       "You will receive your username via email within a minute if you entered a valid recovery email address.": [
         "Ви отримаєте своє ім'я користувача електронною поштою протягом хвилини, якщо ви ввели дійсну адресу електронної пошти для відновлення."
       ],
@@ -24446,9 +24209,6 @@
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
       ],
-      "${ PASS_APP_NAME } is missing permissions": [
-        "У ${ PASS_APP_NAME } відсутні дозволи"
-      ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "Звіт ${ PASS_SHORT_APP_NAME } Monitor"
       ],
@@ -24812,12 +24572,6 @@
       "Confirm": [
         "Підтвердити"
       ],
-      "Confirm downgrade": [
-        "Підтвердити перехід"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Підтвердьте втрату бонусів ${ BRAND_NAME }"
-      ],
       "Connect ${ name }": [
         "Під'єднати ${ name }"
       ],
@@ -24835,9 +24589,6 @@
       ],
       "Connect to video conferencing": [
         "Підключіться до відеоконференцій"
-      ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Під'єднати обліковий запис ${ BRAND_NAME }"
       ],
       "Connect your custom domain": [
         "Підключіть власний домен"
@@ -25099,9 +24850,6 @@
       ],
       "Downgrade account": [
         "Понизити тарифний план"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "Понизити до ${ downgradedPlanName }?"
       ],
       "Download ${ app }": [
         "Завантажити ${ app }"
@@ -26275,9 +26023,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Ласкаво просимо до ${ BRAND_NAME } для бізнесу"
-      ],
-      "Welcome to your new password manager!": [
-        "Ласкаво просимо до нового менеджера паролів!"
       ],
       "What are you migrating?": [
         "Що саме ви переносите?"
@@ -27632,12 +27377,6 @@
       ],
       "By removing this phone number, you will no longer be able to recover your account.": [
         "Вилучивши цей номер телефону, ви більше не зможете відновити свій обліковий запис."
-      ],
-      "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
-        "Не вдалося увійти. Відкрийте розширення браузера ${ PASS_APP_NAME } та виконайте вхід звідти."
-      ],
-      "Could not sign up. Please open ${ PASS_APP_NAME } browser extension and sign up from there.": [
-        "Не вдалося зареєструватися. Відкрийте розширення браузера ${ PASS_APP_NAME } і зареєструйтеся звідти."
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Якщо ви скасуєте це імпортування, ви не зможете його продовжити. ${ BRAND_NAME } зберіг перебіг процесу до вашого облікового запису. Усе одно скасувати?"
