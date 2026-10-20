@@ -18,7 +18,7 @@ export interface PersonalizationTrait {
     sentence: string; // The sentence that gets added to the text area
 }
 
-export const AVAILABLE_TRAITS: PersonalizationTrait[] = [
+export const getAvailableTraits = (): PersonalizationTrait[] => [
     {
         id: 'chatty',
         label: c('collider_2025: Trait').t`Chatty`,
@@ -69,38 +69,39 @@ export const AVAILABLE_TRAITS: PersonalizationTrait[] = [
     },
 ];
 
-export const PERSONALITY_OPTIONS = [
-    {
-        value: 'default',
-        label: c('collider_2025: Personality').t`Default`,
-        description: c('collider_2025: Personality Description').t`Cheerful and adaptive`,
-    },
-    {
-        value: 'business-cat',
-        label: c('collider_2025: Personality').t`Business Cat`,
-        description: c('collider_2025: Personality Description').t`Professional but still a cat`,
-    },
-    {
-        value: 'sassy-cat',
-        label: c('collider_2025: Personality').t`Sassy Cat`,
-        description: c('collider_2025: Personality Description').t`Witty with a bit of attitude`,
-    },
-    {
-        value: 'wise-cat',
-        label: c('collider_2025: Personality').t`Wise Cat`,
-        description: c('collider_2025: Personality Description').t`Thoughtful and philosophical`,
-    },
-    {
-        value: 'playful-cat',
-        label: c('collider_2025: Personality').t`Playful Cat`,
-        description: c('collider_2025: Personality Description').t`Energetic and fun-loving`,
-    },
-    {
-        value: 'lazy-cat',
-        label: c('collider_2025: Personality').t`Lazy Cat`,
-        description: c('collider_2025: Personality Description').t`Chill and laid-back`,
-    },
-] as const;
+export const getPersonalityOptions = () =>
+    [
+        {
+            value: 'default',
+            label: c('collider_2025: Personality').t`Default`,
+            description: c('collider_2025: Personality Description').t`Cheerful and adaptive`,
+        },
+        {
+            value: 'business-cat',
+            label: c('collider_2025: Personality').t`Business Cat`,
+            description: c('collider_2025: Personality Description').t`Professional but still a cat`,
+        },
+        {
+            value: 'sassy-cat',
+            label: c('collider_2025: Personality').t`Sassy Cat`,
+            description: c('collider_2025: Personality Description').t`Witty with a bit of attitude`,
+        },
+        {
+            value: 'wise-cat',
+            label: c('collider_2025: Personality').t`Wise Cat`,
+            description: c('collider_2025: Personality Description').t`Thoughtful and philosophical`,
+        },
+        {
+            value: 'playful-cat',
+            label: c('collider_2025: Personality').t`Playful Cat`,
+            description: c('collider_2025: Personality Description').t`Energetic and fun-loving`,
+        },
+        {
+            value: 'lazy-cat',
+            label: c('collider_2025: Personality').t`Lazy Cat`,
+            description: c('collider_2025: Personality Description').t`Chill and laid-back`,
+        },
+    ] as const;
 
 const initialState: PersonalizationSettings = {
     nickname: '',

@@ -1,3 +1,5 @@
+import { c } from 'ttag';
+
 import { scaleChartFontSize } from '../../../util/scaleChartFontSize';
 import { PROTON_DRIVE_RED, PROTON_PURPLE, PROTON_STATIC_COLOR_BAND_FIELD } from './protonChartTokens';
 
@@ -527,6 +529,7 @@ function buildSubchart(
     total: number,
     xEncoding: Record<string, unknown>
 ): Record<string, unknown> {
+    const seriesNumber = index + 1;
     const flattened = { ...layer };
     flattenYAxis(flattened);
 
@@ -545,7 +548,8 @@ function buildSubchart(
         width: 'container',
         height: 130,
         title: {
-            text: getYFieldTitle(flattened) ?? `Series ${index + 1}`,
+            // translator: Chart heading. A series is a set of related data points; ${seriesNumber} is its one-based number.
+            text: getYFieldTitle(flattened) ?? c('collider_2025:Label').t`Series ${seriesNumber}`,
             fontSize: scaleChartFontSize(12, true),
             anchor: 'start',
         },
@@ -652,8 +656,18 @@ function inferChartFromValues(values: Record<string, unknown>[]): Record<string,
             mark: 'line',
             encoding: {
                 x: xEncoding,
-                y: { field: 'value', type: 'quantitative', title: 'Value' },
-                color: { field: 'series', type: 'nominal', title: 'Series' },
+                y: {
+                    field: 'value',
+                    type: 'quantitative',
+                    // translator: Chart axis label for a numerical measurement.
+                    title: c('collider_2025:Label').t`Value`,
+                },
+                color: {
+                    field: 'series',
+                    type: 'nominal',
+                    // translator: Chart legend title. A series is a set of related data points.
+                    title: c('collider_2025:Label').t`Series`,
+                },
             },
         });
     }
@@ -818,7 +832,8 @@ function configureArcLegendAndTooltips(arcLayer: Record<string, unknown>): void 
             field: thetaField,
             type: 'quantitative',
             format: '.0f',
-            title: 'Share (%)',
+            // translator: Chart tooltip label for the percentage of the total.
+            title: c('collider_2025:Label').t`Share (%)`,
         });
     }
 

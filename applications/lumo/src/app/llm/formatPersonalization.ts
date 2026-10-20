@@ -1,4 +1,5 @@
-import { PERSONALITY_OPTIONS, type PersonalizationSettings } from '../redux/slices/personalization';
+import type { PersonalizationSettings } from '../redux/slices/personalization';
+import { getPersonalityOptions } from '../redux/slices/personalization';
 
 export function formatPersonalization(personalization: PersonalizationSettings | undefined): string {
     if (!personalization || !personalization.enableForNewChats) {
@@ -16,7 +17,7 @@ export function formatPersonalization(personalization: PersonalizationSettings |
     }
 
     if (personalization.personality !== 'default') {
-        const personalityOption = PERSONALITY_OPTIONS.find((p) => p.value === personalization.personality);
+        const personalityOption = getPersonalityOptions().find((p) => p.value === personalization.personality);
         const description = personalityOption?.description;
         if (description) {
             parts.push(`Please adopt a ${description.toLowerCase()} personality.`);
