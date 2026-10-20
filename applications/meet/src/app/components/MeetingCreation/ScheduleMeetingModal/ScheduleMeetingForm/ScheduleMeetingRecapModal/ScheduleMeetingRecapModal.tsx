@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import { useState } from 'react';
 
 import { c } from 'ttag';
@@ -9,8 +10,14 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import useAppLink from '@proton/components/components/link/useAppLink';
-import { Dropdown, DropdownButton, DropdownMenu, DropdownMenuButton } from '@proton/components/index';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
+import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 import { IcPenSquare } from '@proton/icons/icons/IcPenSquare';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { IcSquares } from '@proton/icons/icons/IcSquares';
@@ -30,6 +37,14 @@ import { ScheduleMeetingRecapAnimatedIcon } from './ScheduleMeetingRecapAnimated
 import { calendarDateFormats } from './utils';
 
 import './ScheduleMeetingRecapModal.scss';
+
+interface CalendarOption {
+    key: string;
+    label: string;
+    icon: ReactNode;
+    onClick: () => void;
+    opensInNewTab: boolean;
+}
 
 interface ScheduleMeetingModalProps {
     open: boolean;
@@ -151,6 +166,41 @@ export const ScheduleMeetingRecapModal = ({
         URL.revokeObjectURL(url);
     };
 
+    const calendarOptions: CalendarOption[] = [
+        {
+            key: 'outlook-calendar',
+            label: c('Label').t`Outlook Calendar`,
+            icon: <IcArrowOutSquare className="shrink-0 color-weak" />,
+            onClick: handleOutlookDeepLink,
+            opensInNewTab: true,
+        },
+        {
+            key: 'google-calendar',
+            label: c('Label').t`Google Calendar`,
+            icon: <IcArrowOutSquare className="shrink-0 color-weak" />,
+            onClick: handleGoogleDeepLink,
+            opensInNewTab: true,
+        },
+        {
+            key: 'ics',
+            label: c('Label').t`Download .ics`,
+            icon: <IcArrowDownLine className="shrink-0 color-weak" />,
+            onClick: handleIcs,
+            opensInNewTab: false,
+        },
+        ...(isProtonCalendarDeepLinkEnabled
+            ? [
+                  {
+                      key: 'proton-calendar',
+                      label: CALENDAR_APP_NAME,
+                      icon: <IcArrowOutSquare className="shrink-0 color-weak" />,
+                      onClick: handleProtonCalendarDeepLink,
+                      opensInNewTab: true,
+                  },
+              ]
+            : []),
+    ];
+
     return (
         <TranslucentModal
             open={open}
@@ -188,7 +238,7 @@ export const ScheduleMeetingRecapModal = ({
             }
         >
             <div
-                style={{ '--max-w-custom': '35rem' }}
+                style={{ '--max-w-custom': '33.5rem' }}
                 className={`max-w-custom schedule-meeting-recap-modal variant-${variant}`}
             >
                 <div className="flex md:items-center justify-center">
@@ -231,7 +281,7 @@ export const ScheduleMeetingRecapModal = ({
                     )}
                 </p>
                 <div className="flex flex-column items-center align-center mt-10 gap-10">
-                    <div className="w-full md:w-4/5">
+                    <div className="w-full">
                         <Card
                             className="flex flex-column meeting-details-card p-6"
                             bordered={false}
@@ -273,18 +323,18 @@ export const ScheduleMeetingRecapModal = ({
                             </p>
                         </Card>
                     </div>
-                    <div className="flex flex-nowrap flex-column *:min-size-auto gap-2 w-full md:w-4/5">
-                        <div className="w-full">
+                    <div className="flex flex-nowrap flex-column md:flex-row *:min-size-auto gap-2 w-full">
+                        <div className="flex-1">
                             <DropdownButton
                                 ref={anchorRef}
                                 isOpen={isOpen}
                                 onClick={toggle}
                                 hasCaret={false}
                                 shape="ghost"
-                                className="text-semibold w-full calendar-dropdown-button secondary rounded-full border-none flex items-center justify-center"
+                                className="text-semibold w-full calendar-dropdown-button secondary rounded-full flex items-center justify-center"
                                 size="large"
                             >
-                                <span className="inline-flex items-center flex-nowrap gap-2">
+                                <span className="inline-flex items-center flex-nowrap gap-4">
                                     <IcPlus size={4} className="shrink-0" />
                                     {c('Label').t`Add to calendar`}
                                 </span>
@@ -293,51 +343,42 @@ export const ScheduleMeetingRecapModal = ({
                                 isOpen={isOpen}
                                 anchorRef={anchorRef}
                                 onClose={close}
-                                className="calendar-dropdown meet-radius"
+                                originalPlacement="bottom-start"
+                                size={{ width: DropdownSizeUnit.Anchor, maxWidth: DropdownSizeUnit.Viewport }}
+                                adaptiveForTouchScreens={false}
+                                className="calendar-dropdown"
                             >
                                 <DropdownMenu>
-                                    <DropdownMenuButton
-                                        className="calendar-dropdown-menu text-left large-meet-radius flex flex-nowrap items-center gap-2 border-none shrink-0"
-                                        key="outlook-calendar"
-                                        onClick={handleOutlookDeepLink}
-                                    >
-                                        {c('Label').t`Outlook Calendar`}
-                                        <span className="sr-only">{c('Accessibility').t`(opens in new tab)`}</span>
-                                    </DropdownMenuButton>
-                                    <DropdownMenuButton
-                                        className="calendar-dropdown-menu text-left large-meet-radius flex flex-nowrap items-center gap-2 border-none shrink-0"
-                                        key="google-calendar"
-                                        onClick={handleGoogleDeepLink}
-                                    >
-                                        {c('Label').t`Google Calendar`}
-                                        <span className="sr-only">{c('Accessibility').t`(opens in new tab)`}</span>
-                                    </DropdownMenuButton>
-                                    <DropdownMenuButton
-                                        className="calendar-dropdown-menu text-left large-meet-radius flex flex-nowrap items-center gap-2 border-none shrink-0"
-                                        key="ics"
-                                        onClick={handleIcs}
-                                    >
-                                        {c('Label').t`Download .ics`}
-                                    </DropdownMenuButton>
-                                    {isProtonCalendarDeepLinkEnabled && (
+                                    {calendarOptions.map(({ key, label, icon, onClick, opensInNewTab }) => (
                                         <DropdownMenuButton
-                                            className="calendar-dropdown-menu text-left large-meet-radius flex flex-nowrap items-center gap-2 border-none shrink-0"
-                                            key="proton-calendar"
-                                            onClick={handleProtonCalendarDeepLink}
+                                            key={key}
+                                            className="calendar-dropdown-menu text-left flex flex-nowrap items-center gap-3 border-none shrink-0"
+                                            liClassName="w-full"
+                                            onClick={onClick}
                                         >
-                                            {CALENDAR_APP_NAME}
+                                            <span className="flex-1 text-left text-nowrap">
+                                                {label}
+                                                {opensInNewTab && (
+                                                    <span className="sr-only">
+                                                        {c('Accessibility').t`(opens in new tab)`}
+                                                    </span>
+                                                )}
+                                            </span>
+                                            {icon}
                                         </DropdownMenuButton>
-                                    )}
+                                    ))}
                                 </DropdownMenu>
                             </Dropdown>
                         </div>
-                        <Button
-                            className="done-button primary text-semibold rounded-full w-full"
-                            onClick={() => {
-                                onClose();
-                            }}
-                            size="large"
-                        >{c('Action').t`Done`}</Button>
+                        <div className="flex-1">
+                            <Button
+                                className="done-button primary text-semibold rounded-full w-full"
+                                onClick={() => {
+                                    onClose();
+                                }}
+                                size="large"
+                            >{c('Action').t`Done`}</Button>
+                        </div>
                     </div>
                 </div>
             </div>
