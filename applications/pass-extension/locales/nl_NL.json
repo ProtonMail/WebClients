@@ -821,6 +821,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Uw wachtwoordbeheerder staat hier niet tussen? Vraag het aan."
+      ],
+      "Download for macOS": [
+        "Download voor macOS"
+      ],
+      "Download for Windows": [
+        "Download voor Windows"
       ]
     },
     "Activity": {
@@ -5331,6 +5337,12 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "U staat op het punt ${ aliasCount } alias permanent te verwijderen.",
         "U staat op het punt ${ aliasCount } aliassen permanent te verwijderen."
+      ],
+      "Export": [
+        "Exporteren"
+      ],
+      "Import failed": [
+        "Import mislukt"
       ]
     },
     "Title_cloned_item": {
@@ -5707,6 +5719,21 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Met uw abonnement kunt u niet meerdere kluizen maken. Alle items worden geïmporteerd in uw eerste kluis. Upgrade uw abonnement om in meerdere kluizen te importeren."
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } resultaat niet getoond",
+        "${ hiddenResultsCount } resultaten worden niet getoond"
+      ]
+    },
+    "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "${ itemsCount } suggestie gevonden, gebruik het toetsenbord om te navigeren.",
+        "${ itemsCount } suggesties gevonden, gebruik het toetsenbord om te navigeren."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Gebruik omhoog- en omlaagknoppen om suggesties te openen en te bladeren na invoer. Druk op Enter om uw keuze te bevestigen, of op Escape om het suggestievak te sluiten."
       ]
     }
   }

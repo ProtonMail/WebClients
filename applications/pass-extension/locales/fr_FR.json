@@ -824,6 +824,21 @@
       ],
       "Your password manager is not here? Request it.": [
         "Vous ne trouvez pas votre gestionnaire de mots de passe ? Demandez-le."
+      ],
+      "Create a login": [
+        "Créer un identifiant"
+      ],
+      "Download for Linux": [
+        "Télécharger la version pour Linux"
+      ],
+      "Download for macOS": [
+        "Télécharger pour macOS"
+      ],
+      "Download for Windows": [
+        "Télécharger pour Windows"
+      ],
+      "Skip for now": [
+        "Ignorer pour le moment"
       ]
     },
     "Activity": {
@@ -1564,6 +1579,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Votre code PIN a été retiré par un autre client de ${ PASS_APP_NAME }."
+      ],
+      "Biometric authentication cancelled.": [
+        "L'Authentification biométrique a été annulée."
       ]
     },
     "Error message": {
@@ -4330,6 +4348,18 @@
       ],
       "ZIP or Postal code": [
         "Code postal"
+      ],
+      "Linux": [
+        "Linux"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Service": [
+        "Service"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Link": {
@@ -5454,6 +5484,45 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Vous êtes sur le point de supprimer définitivement ${ aliasCount } alias.",
         "Vous êtes sur le point de supprimer définitivement ${ aliasCount } alias."
+      ],
+      "Browsers": [
+        "Navigateurs"
+      ],
+      "Export": [
+        "Exporter"
+      ],
+      "Fill in your details": [
+        "Renseignez vos informations"
+      ],
+      "First login created": [
+        "Premier identifiant créé"
+      ],
+      "Get mobile apps": [
+        "Télécharger les applications mobiles"
+      ],
+      "Import completed with warnings": [
+        "L'importation a terminé avec des avertissements"
+      ],
+      "Import failed": [
+        "L'importation n'a pas abouti."
+      ],
+      "Import successful": [
+        "Importation réussie"
+      ],
+      "Imported from:": [
+        "Importé depuis :"
+      ],
+      "Password managers": [
+        "Gestionnaires de mots de passe"
+      ],
+      "Select your password manager": [
+        "Sélectionnez votre gestionnaire de mots de passe"
+      ],
+      "Upload": [
+        "Importer"
+      ],
+      "Upload your data": [
+        "Importer vos données"
       ]
     },
     "Title_cloned_item": {
@@ -5848,6 +5917,98 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Votre abonnement ne vous permet pas de créer plusieurs coffres-forts. Tous les éléments seront importés dans votre premier coffre-fort. Changez d'abonnement pour pouvoir importer dans plusieurs coffres-forts."
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } autre résultat non affiché",
+        "${ hiddenResultsCount } autres résultats non affichés"
+      ]
+    },
+    "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "${ itemsCount } suggestion a été trouvée. Utilisez le clavier pour naviguer.",
+        "${ itemsCount } suggestions ont été trouvées. Utilisez le clavier pour naviguer."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Utilisez les touches Haut et Bas pour afficher et parcourir les suggestions après la saisie. Appuyez sur Entrée pour confirmer votre choix ou sur Esc (ou Échap) pour fermer la boite de suggestions."
+      ]
+    },
+    "Import Tutorial": {
+      "Advanced Options": [
+        "Options avancées"
+      ],
+      "Export": [
+        "Exporter"
+      ],
+      "Export Data": [
+        "Exporter les données"
+      ],
+      "Export data": [
+        "Exporter les données"
+      ],
+      "Export items": [
+        "Exporter les éléments"
+      ],
+      "Export passwords": [
+        "Exporter les mots de passe"
+      ],
+      "Export to CSV": [
+        "Exporter au format CSV"
+      ],
+      "Export to TXT": [
+        "Exporter au format TXT"
+      ],
+      "File": [
+        "Fichier"
+      ],
+      "Go to ${ passwords }.": [
+        "Accéder à ${ passwords }."
+      ],
+      "Microsoft password manager": [
+        "Gestionnaire de mots de passe Microsoft"
+      ],
+      "More actions": [
+        "Actions supplémentaires"
+      ],
+      "Open ${ name } and go to ⋮ → ${ passwordsAndAutofill } → ${ googlePasswordManager }.": [
+        "Ouvrez ${ name } et accédez à ⋮ → ${ passwordsAndAutofill } → ${ googlePasswordManager }."
+      ],
+      "Open ${ name } and go to ☰ → ${ settings } → ${ autoFill }.": [
+        "Ouvrez ${ name } et accédez à ☰ → ${ settings } → ${ autoFill }."
+      ],
+      "Open ${ name } and select ${ menu } → ${ option }.": [
+        "Ouvrez ${ name } et sélectionnez ${ menu } → ${ option }."
+      ],
+      "Open ${ name } and select ⋯.": [
+        "Ouvrez ${ name } et sélectionnez ⋯."
+      ],
+      "Open ${ name } and select ☰ → ${ passwords }.": [
+        "Ouvrez ${ name } et sélectionnez ☰ → ${ passwords }."
+      ],
+      "Passwords": [
+        "Mots de passe"
+      ],
+      "Select ${ menu } → ${ option }.": [
+        "Sélectionnez ${ menu } → ${ option }."
+      ],
+      "Select ${ option }.": [
+        "Sélectionnez ${ option }."
+      ],
+      "Select ⋯ → ${ exportPasswords }.": [
+        "Sélectionnez ⋯ → ${ exportPasswords }."
+      ],
+      "Settings": [
+        "Paramètres"
+      ],
+      "Vault": [
+        "Coffre-fort"
+      ],
+      "Vault options": [
+        "Options du coffre-fort"
+      ],
+      "your username": [
+        "votre nom d’utilisateur"
       ]
     }
   }

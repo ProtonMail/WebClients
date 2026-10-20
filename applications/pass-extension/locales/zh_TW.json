@@ -804,6 +804,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "找不到您使用的密碼管理器？歡迎告訴我們"
+      ],
+      "Download for macOS": [
+        "下載 macOS 版"
+      ],
+      "Download for Windows": [
+        "下載 Windows 版"
       ]
     },
     "Activity": {
@@ -5211,6 +5217,12 @@
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "您即將永久刪除 ${ aliasCount } 個別名。"
+      ],
+      "Export": [
+        "匯出"
+      ],
+      "Import failed": [
+        "匯入失敗"
       ]
     },
     "Title_cloned_item": {
@@ -5565,6 +5577,19 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "您的訂閱不允許新增多重保管庫。預設會把所有項目匯入第一個保管庫。若要匯入多重保管庫，需升級訂閱。"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } 個以上的結果未顯示"
+      ]
+    },
+    "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "找到${ itemsCount }個推薦，使用鍵盤移動"
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "使用向上、向下方向鍵存取並瀏覽輸入建議。按一下 [Enter] 鍵確認選項，或 [Esc] 鍵關閉建議方塊。"
       ]
     }
   }

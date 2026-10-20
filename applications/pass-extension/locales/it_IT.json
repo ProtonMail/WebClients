@@ -827,6 +827,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Il tuo gestore di password non è presente? Richiedilo."
+      ],
+      "Download for macOS": [
+        "Scarica per macOS"
+      ],
+      "Download for Windows": [
+        "Scarica per Windows"
       ]
     },
     "Activity": {
@@ -3058,6 +3064,12 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "La tua organizzazione richiede che tu protegga l'accesso a ${ PASS_APP_NAME }"
+      ],
+      "iOS and Android Apps": [
+        "iOS e Android Apps"
+      ],
+      "Scan to download": [
+        "Scansiona per scaricare"
       ]
     },
     "Keyboard key": {
@@ -5366,6 +5378,15 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Stai per eliminare definitivamente ${ aliasCount } alias.",
         "Stai per eliminare definitivamente ${ aliasCount } alias."
+      ],
+      "Export": [
+        "Esporta"
+      ],
+      "Get mobile and desktop apps": [
+        "Scarica le app per dispositivi mobili e desktop."
+      ],
+      "Import failed": [
+        "Importazione non riuscita"
       ]
     },
     "Title_cloned_item": {
@@ -5742,6 +5763,21 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Il tuo abbonamento non ti consente di creare più casseforti. Tutti gli elementi verranno importati nella tua prima cassaforte. Per importare in più casseforti, effettua l'upgrade del tuo abbonamento."
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } altro risultato non mostrato",
+        "${ hiddenResultsCount } altri risultati non mostrati"
+      ]
+    },
+    "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Trovato ${ itemsCount } suggerimento, usa la tastiera per navigare.",
+        "Trovati ${ itemsCount } suggerimenti, usa la tastiera per navigare."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Usa i tasti Su e Giù per accedere e sfogliare i suggerimenti dopo l'input. Premi Invio per confermare la tua scelta o Esc per chiudere la casella dei suggerimenti."
       ]
     }
   }

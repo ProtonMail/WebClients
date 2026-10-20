@@ -804,6 +804,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Trình quản lý mật khẩu không có ở đây? Hãy yêu cầu."
+      ],
+      "Download for macOS": [
+        "Tải xuống cho macOS"
+      ],
+      "Download for Windows": [
+        "Tải xuống cho Windows"
       ]
     },
     "Activity": {
@@ -5211,6 +5217,12 @@
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Bạn sắp xóa vĩnh viễn ${ aliasCount } biệt danh."
+      ],
+      "Export": [
+        "Xuất"
+      ],
+      "Import failed": [
+        "Không nhập được"
       ]
     },
     "Title_cloned_item": {
@@ -5565,6 +5577,19 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Gói đăng ký không cho phép tạo nhiều kho. Tất cả mục sẽ được nhập vào kho chính. Hãy nâng cấp gói đăng ký để nhập vào nhiều kho."
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } kết quả khác không hiển thị"
+      ]
+    },
+    "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Đã tìm thấy ${ itemsCount } gợi ý, sử dụng bàn phím để điều hướng."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Dùng các phím Up và Down để truy cập và tìm kiếm các gợi ý sau khi nhập đầu vào. Nhấn Enter để xác nhận lựa chọn, hoặc Escape để đóng hộp các gợi ý."
       ]
     }
   }

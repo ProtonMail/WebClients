@@ -831,6 +831,21 @@
       ],
       "Your password manager is not here? Request it.": [
         "Адсутнічае ваш менеджар пароляў? Запытайце яго."
+      ],
+      "Create a login": [
+        "Стварыць запіс уваходу"
+      ],
+      "Download for Linux": [
+        "Спампаваць для Linux"
+      ],
+      "Download for macOS": [
+        "Спампаваць для macOS"
+      ],
+      "Download for Windows": [
+        "Спампаваць для Windows"
+      ],
+      "Skip for now": [
+        "Пакуль прапусціць"
       ]
     },
     "Activity": {
@@ -3136,6 +3151,18 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ваша арганізацыя патрабуе, каб вы забяспечылі доступ да ${ PASS_APP_NAME }"
+      ],
+      "Don’t close this tab": [
+        "Не закрывайце гэту ўкладку"
+      ],
+      "iOS and Android Apps": [
+        "Праграмы для iOS і Android"
+      ],
+      "Open the extension here.": [
+        "Адкрыйце пашырэнне тут."
+      ],
+      "Scan to download": [
+        "Сканіраваць і спампаваць"
       ]
     },
     "Keyboard key": {
@@ -4397,6 +4424,18 @@
       ],
       "ZIP or Postal code": [
         "Паштовы індэкс"
+      ],
+      "Linux": [
+        "Linux"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Service": [
+        "Сэрвіс"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Link": {
@@ -4747,6 +4786,9 @@
       ],
       "Used on ${ url }": [
         "Выкарыстоўваецца на ${ url }"
+      ],
+      "E.g.: Google": [
+        "Напрыклад: Google"
       ]
     },
     "Result": {
@@ -5543,6 +5585,39 @@
         "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімы.",
         "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімаў.",
         "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімаў."
+      ],
+      "Browsers": [
+        "Браўзеры"
+      ],
+      "Create your first login": [
+        "Стварыце свой першы запіс уваходу"
+      ],
+      "Export": [
+        "Экспартаванне"
+      ],
+      "Fill in your details": [
+        "Запоўніце свае звесткі"
+      ],
+      "First login created": [
+        "Першы запіс уваходу створаны"
+      ],
+      "Get mobile and desktop apps": [
+        "Атрымаць мабільныя праграмы і праграмы для камп'ютара"
+      ],
+      "Import failed": [
+        "Не ўдалося імпартаваць"
+      ],
+      "Imported from:": [
+        "Імпартавана з:"
+      ],
+      "Move everything at once": [
+        "Перамясціць усё адразу"
+      ],
+      "Starting the extension": [
+        "Запуск пашырэння"
+      ],
+      "Upload": [
+        "Запампоўванне"
       ]
     },
     "Title_cloned_item": {
@@ -5927,6 +6002,96 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Ваша падпіска не дазваляе ствараць некалькі сховішчаў. Усе элементы будуць імпартаваны ў ваша першае сховішча. Палепшыце сваю падпіску, каб мець магчымасць імпартаваць у некалькі сховішчаў."
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "Яшчэ ${ hiddenResultsCount } вынік не паказаны",
+        "Яшчэ ${ hiddenResultsCount } вынікі не паказаны",
+        "Яшчэ ${ hiddenResultsCount } вынікаў не паказаны",
+        "Яшчэ ${ hiddenResultsCount } вынікаў не паказаны"
+      ]
+    },
+    "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Знойдзена ${ itemsCount } прапанова. Выкарыстоўвайце клавіятуру для навігацыі.",
+        "Знойдзена ${ itemsCount } прапановы. Выкарыстоўвайце клавіятуру для навігацыі.",
+        "Знойдзена ${ itemsCount } прапаноў. Выкарыстоўвайце клавіятуру для навігацыі.",
+        "Знойдзена ${ itemsCount } прапаноў. Выкарыстоўвайце клавіятуру для навігацыі."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Выкарыстоўвайце клавішы Уверх і Уніз, каб атрымаць доступ і прагледзець прапановы пасля ўводу. Націсніце Enter, каб пацвердзіць свой выбар або Escape, каб закрыць акно прапаноў."
+      ]
+    },
+    "Import Tutorial": {
+      "Account & Data": [
+        "Уліковы запіс і даныя"
+      ],
+      "Autofill and passwords": [
+        "Аўтазапаўненне і паролі"
+      ],
+      "Choose JSON downloads": [
+        "Выберыце спампаваны файл JSON"
+      ],
+      "Download file": [
+        "Спампаваць файл"
+      ],
+      "Export": [
+        "Экспарт"
+      ],
+      "Export Data": [
+        "Экспарт даных"
+      ],
+      "Export data": [
+        "Экспарт даных"
+      ],
+      "Export file format: 1PUX": [
+        "Фармат экспарту файла: 1PUX"
+      ],
+      "Export items": [
+        "Экспарт элементаў"
+      ],
+      "Export to CSV": [
+        "Экспартаваць у CSV"
+      ],
+      "Export to TXT": [
+        "Экспартаванне ў TXT"
+      ],
+      "File": [
+        "Файл"
+      ],
+      "Go to ${ passwords }.": [
+        "Перайдзіце ў ${ passwords }."
+      ],
+      "Google Password Manager": [
+        "Менеджар пароляў Google"
+      ],
+      "More actions": [
+        "Больш дзеянняў"
+      ],
+      "Passwords and Autofill": [
+        "Паролі і аўтазапаўненне"
+      ],
+      "Passwords and autofill": [
+        "Паролі і аўтазапаўненне"
+      ],
+      "Select ${ option }.": [
+        "Выберыце ${ option }."
+      ],
+      "Settings": [
+        "Налады"
+      ],
+      "Submit": [
+        "Адпраўка"
+      ],
+      "Vault": [
+        "Сховішча"
+      ],
+      "Vault options": [
+        "Параметры сховішча"
+      ],
+      "your username": [
+        "ваша імя карыстальніка"
       ]
     }
   }

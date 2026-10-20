@@ -810,6 +810,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Nie ma Twojego menadżera haseł? Zgłoś to."
+      ],
+      "Download for macOS": [
+        "Pobierz dla systemu macOS"
+      ],
+      "Download for Windows": [
+        "Pobierz dla systemu Windows"
       ]
     },
     "Activity": {
@@ -5385,6 +5391,12 @@
         "Zamierzasz trwale usunąć ${ aliasCount } aliasy.",
         "Zamierzasz trwale usunąć ${ aliasCount } aliasów.",
         "Zamierzasz trwale usunąć ${ aliasCount } aliasów."
+      ],
+      "Export": [
+        "Eksportuj"
+      ],
+      "Import failed": [
+        "Importowanie nie powiodło się"
       ]
     },
     "Title_cloned_item": {
@@ -5757,6 +5769,25 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Subskrypcja nie pozwala na tworzenie wielu sejfów. Wszystkie elementy zostaną zaimportowane do pierwszego sejfu. Ulepsz plan, aby importować do wielu sejfów."
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } kolejny wynik nie jest pokazywany",
+        "${ hiddenResultsCount } kolejne wyniki nie są pokazywane",
+        "${ hiddenResultsCount } kolejnych wyników nie jest pokazywanych",
+        "${ hiddenResultsCount } kolejnych wyników nie jest pokazywanych"
+      ]
+    },
+    "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Została znaleziona ${ itemsCount } sugestia. Użyj klawiszy do nawigacji.",
+        "Zostały znalezione ${ itemsCount } sugestie. Użyj klawiszy do nawigacji.",
+        "Zostało znalezionych ${ itemsCount } sugestii. Użyj klawiszy do nawigacji.",
+        "Zostało znalezionych ${ itemsCount } sugestii. Użyj klawiszy do nawigacji."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Użyj klawiszy strzałek w górę i w dół, aby zobaczyć i wybrać sugestie. Naciśnij klawisz Enter, aby potwierdzić swój wybór lub Escape, aby zamknąć pole sugestii."
       ]
     }
   }
