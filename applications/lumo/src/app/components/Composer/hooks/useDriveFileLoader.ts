@@ -1,7 +1,10 @@
 /** Lazy loads and refreshes the flat Drive file list from a linked folder. */
 import { useCallback, useEffect, useRef, useState } from 'react';
 
+import { isDriveFileSupported } from '../../../util/filetypes';
 import type { DriveSDKFunctions } from './useFileMentionAutocomplete';
+
+export type DriveFileEntry = { id: string; name: string; mediaType?: string };
 
 export function useDriveFileLoader(
     linkedDriveFolder: { folderId: string } | undefined,
@@ -10,10 +13,10 @@ export function useDriveFileLoader(
     /** Bumps when the search index changes — triggers a fresh Drive folder listing. */
     driveIndexRevision: number = 0
 ): {
-    driveFiles: { id: string; name: string }[];
+    driveFiles: DriveFileEntry[];
     refreshDriveFiles: () => Promise<void>;
 } {
-    const [driveFiles, setDriveFiles] = useState<{ id: string; name: string }[]>([]);
+    const [driveFiles, setDriveFiles] = useState<DriveFileEntry[]>([]);
     const driveFilesLoadedRef = useRef(false);
 
     useEffect(() => {
@@ -24,18 +27,20 @@ export function useDriveFileLoader(
     }, [linkedDriveFolder]);
 
     const loadRecursively = useCallback(
-        async (folderId: string, path: string = ''): Promise<{ id: string; name: string; path: string }[]> => {
+        async (folderId: string, path: string = ''): Promise<DriveFileEntry[]> => {
             if (!driveSDK) return [];
 
             try {
                 const children = await driveSDK.browseFolderChildren(folderId);
-                const allFiles: { id: string; name: string; path: string }[] = [];
+                const allFiles: DriveFileEntry[] = [];
 
                 for (const child of children) {
                     const childPath = path ? `${path}/${child.name}` : child.name;
 
                     if (child.type === 'file') {
-                        allFiles.push({ id: child.id, name: child.name, path: childPath });
+                        if (isDriveFileSupported(child.name, child.mediaType)) {
+                            allFiles.push({ id: child.id, name: childPath, mediaType: child.mediaType });
+                        }
                     } else if (child.type === 'folder') {
                         const subFiles = await loadRecursively(child.id, childPath);
                         allFiles.push(...subFiles);
@@ -56,7 +61,7 @@ export function useDriveFileLoader(
 
         try {
             const allFiles = await loadRecursively(linkedDriveFolder.folderId);
-            setDriveFiles(allFiles.map((file) => ({ id: file.id, name: file.path })));
+            setDriveFiles(allFiles);
             driveFilesLoadedRef.current = true;
             onRefresh?.();
         } catch (error) {
