@@ -5,6 +5,53 @@ const MAX_CHUNK_TOKENS = 6000;
 const OVERLAP_TOKENS = 500;
 const CHUNKING_THRESHOLD_TOKENS = 20000;
 
+/**
+ * Split text into sentences on whitespace that follows a sentence terminator (`.`, `!`, `?`).
+ *
+ * This is an exact replacement for `text.split(/(?<=[.!?])\s+/)`. Safari before 16.4 throws
+ * `SyntaxError: invalid group specifier name` while it is *parsing* that lookbehind literal, so
+ * the module could not even load and attachment chunking failed for anyone on an older
+ * iOS/Safari build. Scanning by index needs no lookbehind and reproduces the old pieces exactly,
+ * including the trailing empty string `String.prototype.split` leaves when the text ends with a
+ * terminator plus whitespace.
+ */
+export function splitSentences(text: string): string[] {
+    if (text === '') {
+        // `''.split(anything)` is `['']`, and the scan below would produce `[]`.
+        return [''];
+    }
+
+    const sentences: string[] = [];
+    let start = 0;
+    let index = 0;
+
+    while (index < text.length) {
+        const char = text[index];
+        if (char === '.' || char === '!' || char === '?') {
+            let end = index + 1;
+            while (end < text.length && /\s/.test(text[end])) {
+                end++;
+            }
+            if (end > index + 1) {
+                // Keep the terminator with the sentence it closes, drop the whitespace run.
+                sentences.push(text.slice(start, index + 1));
+                index = start = end;
+                continue;
+            }
+        }
+        index++;
+    }
+
+    if (start < text.length) {
+        sentences.push(text.slice(start));
+    } else if (start > 0) {
+        // Mirrors the zero-width match at end of input that makes split() append ''.
+        sentences.push('');
+    }
+
+    return sentences;
+}
+
 function estimateTokens(text: string): number {
     return Math.ceil(text.length / CHARS_PER_TOKEN);
 }
@@ -19,25 +66,25 @@ function needsChunking(content: string): boolean {
  */
 function findSemanticBoundaries(text: string): number[] {
     const boundaries: number[] = [0];
-    
+
     // Look for section headers (markdown-style or numbered sections)
     const sectionPattern = /\n(?=#{1,3}\s|\d+\.\s|[A-Z][A-Z\s]+:?\n)/g;
     let match;
     while ((match = sectionPattern.exec(text)) !== null) {
         boundaries.push(match.index + 1); // +1 to start after the newline
     }
-    
+
     // Also look for double newlines (paragraph breaks) as fallback boundaries
     const paragraphPattern = /\n\n+/g;
     while ((match = paragraphPattern.exec(text)) !== null) {
         // Only add if not too close to existing boundary
         const pos = match.index + match[0].length;
-        const nearExisting = boundaries.some(b => Math.abs(b - pos) < 100);
+        const nearExisting = boundaries.some((b) => Math.abs(b - pos) < 100);
         if (!nearExisting) {
             boundaries.push(pos);
         }
     }
-    
+
     boundaries.push(text.length);
     return boundaries.sort((a, b) => a - b);
 }
@@ -48,50 +95,50 @@ function findSemanticBoundaries(text: string): number[] {
 function extractChunkTitle(text: string, startPos: number): string | undefined {
     // Look for the first heading or significant line
     const textSlice = text.slice(startPos, startPos + 500);
-    
+
     // Try to find a markdown heading
     const headingMatch = textSlice.match(/^#{1,3}\s+(.+?)[\n\r]/);
     if (headingMatch) {
         return headingMatch[1].trim().slice(0, 100);
     }
-    
+
     // Try to find a numbered section
     const numberedMatch = textSlice.match(/^(\d+\.[\d.]*\s+.+?)[\n\r]/);
     if (numberedMatch) {
         return numberedMatch[1].trim().slice(0, 100);
     }
-    
+
     // Use first line as fallback
     const firstLine = textSlice.split(/[\n\r]/)[0]?.trim();
     if (firstLine && firstLine.length > 10 && firstLine.length < 100) {
         return firstLine;
     }
-    
+
     return undefined;
 }
 
 export function chunkDocument(doc: DriveDocument): DriveDocument[] {
     const content = doc.content;
-    
+
     if (!needsChunking(content)) {
         return [doc];
     }
-    
+
     const maxChunkChars = MAX_CHUNK_TOKENS * CHARS_PER_TOKEN;
     const overlapChars = OVERLAP_TOKENS * CHARS_PER_TOKEN;
-    
+
     const boundaries = findSemanticBoundaries(content);
     const chunks: DriveDocument[] = [];
-    
+
     let chunkStart = 0;
     let chunkContent = '';
     let chunkIndex = 0;
-    
+
     for (let i = 0; i < boundaries.length - 1; i++) {
         const sectionStart = boundaries[i];
         const sectionEnd = boundaries[i + 1];
         const section = content.slice(sectionStart, sectionEnd);
-        
+
         // If adding this section would exceed max size, finalize current chunk
         if (chunkContent.length > 0 && chunkContent.length + section.length > maxChunkChars) {
             // Create chunk
@@ -105,23 +152,23 @@ export function chunkDocument(doc: DriveDocument): DriveDocument[] {
                 chunkIndex,
                 chunkTitle,
             });
-            
+
             chunkIndex++;
-            
+
             // Start new chunk with overlap from end of previous
             const overlapStart = Math.max(0, chunkContent.length - overlapChars);
             chunkContent = chunkContent.slice(overlapStart);
             chunkStart = sectionStart - chunkContent.length;
         }
-        
+
         chunkContent += section;
-        
+
         // If this section alone is too big, split it further
         if (section.length > maxChunkChars) {
             // Split by sentences or fixed size
-            const sentences = section.split(/(?<=[.!?])\s+/);
+            const sentences = splitSentences(section);
             let subChunk = '';
-            
+
             for (const sentence of sentences) {
                 if (subChunk.length + sentence.length > maxChunkChars && subChunk.length > 0) {
                     const chunkTitle = extractChunkTitle(subChunk, 0);
@@ -143,7 +190,7 @@ export function chunkDocument(doc: DriveDocument): DriveDocument[] {
             chunkContent = subChunk;
         }
     }
-    
+
     // Don't forget the last chunk
     if (chunkContent.trim().length > 0) {
         const chunkTitle = extractChunkTitle(content, chunkStart);
@@ -158,11 +205,11 @@ export function chunkDocument(doc: DriveDocument): DriveDocument[] {
         });
         chunkIndex++;
     }
-    
+
     const totalChunks = chunks.length;
-    chunks.forEach(chunk => {
+    chunks.forEach((chunk) => {
         chunk.totalChunks = totalChunks;
     });
-    
+
     return chunks;
 }
