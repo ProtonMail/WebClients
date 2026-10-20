@@ -66,6 +66,7 @@ import type {
 } from '@proton/payments/core/interface';
 import { capturePaymentMessage } from '@proton/payments/sentry/capture';
 import { promiseWithTimeout } from '@proton/shared/lib/helpers/promise';
+import { getSentryError } from '@proton/shared/lib/helpers/sentry';
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 import { ColorScheme } from '@proton/shared/lib/themes/constants';
 
@@ -148,6 +149,13 @@ export function getInitializationFailureReason(error: any) {
     }
 
     return error?.status === 'failure' ? 'reported-by-iframe' : 'parent-side-error';
+}
+
+export function isInitializationFailureReportable(error: any) {
+    const alreadyReportedByIframe =
+        getInitializationFailureReason(error) === 'reported-by-iframe' && error.type === 'set-configuration-response';
+
+    return !alreadyReportedByIframe && !!getSentryError(error);
 }
 
 function iframeAction<T>(
@@ -1027,6 +1035,10 @@ export const ChargebeeIframe = ({
     const threeDs = useThreeDsChallenge(false);
 
     const reportInitializationFailure = (error: any) => {
+        if (!isInitializationFailureReportable(error)) {
+            return;
+        }
+
         const reason = getInitializationFailureReason(error);
         const technicalError = getChargebeeTechnicalError(error);
 
