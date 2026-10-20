@@ -446,7 +446,6 @@ export const getAccountAppRoutes = ({
         isPassConsumerOrPassFamilyOrg ||
         (isFree && app === APPS.PROTONPASS) ||
         (isFree && app === APPS.PROTONLUMO) ||
-        (isFree && app === APPS.PROTONAUTHENTICATOR) ||
         (isFree && app === APPS.PROTONMEET)
     );
 
@@ -470,7 +469,6 @@ export const getAccountAppRoutes = ({
         (!isExternalUser || isBYOEUser) &&
         !(
             app === APPS.PROTONPASS ||
-            app === APPS.PROTONAUTHENTICATOR ||
             app === APPS.PROTONMEET ||
             app === APPS.PROTONACCOUNT ||
             app === APPS.PROTONLUMO

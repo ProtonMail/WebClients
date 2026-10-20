@@ -126,9 +126,6 @@ const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand, routes }
                             {app === APPS.PROTONPASS && <SidebarListWrapper prefix={prefix} {...routes.pass} />}
                             {app === APPS.PROTONDOCS && <SidebarListWrapper prefix={prefix} {...routes.docs} />}
                             {app === APPS.PROTONWALLET && <SidebarListWrapper prefix={prefix} {...routes.wallet} />}
-                            {app === APPS.PROTONAUTHENTICATOR && (
-                                <SidebarListWrapper prefix={prefix} {...routes.authenticator} />
-                            )}
                             {routes.organization.available && (
                                 <SidebarListWrapper prefix={prefix} {...routes.organization} />
                             )}
