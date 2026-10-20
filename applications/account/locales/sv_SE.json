@@ -2254,6 +2254,27 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Cancel import": [
+        "Avbryt import"
+      ],
+      "Connect Gmail": [
+        "Anslut Gmail"
+      ],
+      "Recover previous account": [
+        "Återställ tidigare konto"
+      ],
+      "Remove from the list": [
+        "Ta bort från listan"
+      ],
+      "Sign in to ${ PASS_APP_NAME }": [
+        "Logga in på ${ PASS_APP_NAME }"
+      ],
+      "Take the survey": [
+        "Gör undersökningen"
+      ],
+      "Upgrade to connect": [
+        "Uppgradera för att ansluta"
       ]
     },
     "action": {
@@ -3716,6 +3737,9 @@
       ],
       "Your new address": [
         "Din nya adress"
+      ],
+      "Sign in with your organization?": [
+        "Logga in med din organisation?"
       ]
     },
     "Collapsible tooltip": {
@@ -5532,6 +5556,12 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Ditt paket stöder totalt ${ MAX_SYNC_PAID_USER } Gmail-adress",
         "Ditt paket stöder ett totalt antal av ${ MAX_SYNC_PAID_USER } Gmail-adresser"
+      ],
+      "Access your passwords on all your devices": [
+        "Kom åt dina lösenord på alla dina enheter"
+      ],
+      "Create strong password with one click": [
+        "Skapa starkt lösenord med ett klick"
       ]
     },
     "description": {
@@ -5984,6 +6014,9 @@
       ],
       "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
         "Du vidarebefordrar e-post från ett externt konto till ${ MAIL_APP_NAME }."
+      ],
+      "Sign in to ${ providerName }": [
+        "Logga in på ${ providerName }"
       ]
     },
     "Edit billing address form note": {
@@ -6983,6 +7016,9 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "Dina återställningskontakter bör vara personer du känner och lätt kan kontakta."
+      ],
+      "Add contact": [
+        "Lägg till kontakt"
       ]
     },
     "Empty group name": {
@@ -7968,6 +8004,12 @@
       ],
       "Zero keys reactivated": [
         "Noll nycklar återaktiverade"
+      ],
+      "Couldn't load your connections": [
+        "Kunde inte ladda dina anslutningar"
+      ],
+      "We couldn't reconnect this address.": [
+        "Vi kunde inte ansluta denna adress igen."
       ]
     },
     "error": {
@@ -9910,6 +9952,9 @@
       ],
       "Undo in progress": [
         "Ångra pågår"
+      ],
+      "Queued": [
+        "I kö"
       ]
     },
     "Import type": {
@@ -14007,6 +14052,24 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ],
+      "Connected": [
+        "Ansluten"
+      ],
+      "Disconnected": [
+        "Frånkopplad"
+      ],
+      "More cards": [
+        "Fler kort"
+      ],
+      "Please sign in with ${ emailAddress } to continue.": [
+        "Logga in med ${ emailAddress } för att fortsätta."
+      ],
+      "Recommended on trusted devices. ${ learnMoreLink }": [
+        "Rekommenderas på betrodda enheter. ${ learnMoreLink }"
+      ],
+      "SEPA Bank transfer": [
+        "SEPA banköverföring"
       ]
     },
     "info": {
@@ -16336,6 +16399,15 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Item": [
+        "Objekt"
+      ],
+      "Restrict sign-in to username": [
+        "Begränsa inloggning till användarnamn"
+      ],
+      "Vault": [
+        "Valv"
       ]
     },
     "label": {
@@ -16768,6 +16840,9 @@
       ],
       "What’s this?": [
         "Vad är detta?"
+      ],
+      "Customer Support": [
+        "Kundtjänst"
       ]
     },
     "Link (Scribe)": {
@@ -27210,6 +27285,33 @@
       ],
       "Your subscriptions": [
         "Din prenumeration"
+      ],
+      "Add ${ PASS_APP_NAME } to your browser": [
+        "Lägg till ${ PASS_APP_NAME } i din webbläsare"
+      ],
+      "Connect your Gmail": [
+        "Anslut din Gmail"
+      ],
+      "Disconnect this address?": [
+        "Koppla från denna adress?"
+      ],
+      "Good to know before you connect": [
+        "Bra att veta innan du ansluter"
+      ],
+      "Save time:": [
+        "Spara tid:"
+      ],
+      "Sign-in protection": [
+        "Inloggningsskydd"
+      ],
+      "Skip for now": [
+        "Hoppa över just nu"
+      ],
+      "Stay connected:": [
+        "Förbli ansluten:"
+      ],
+      "Wrong Gmail account": [
+        "Fel Gmail-konto"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -28847,6 +28949,19 @@
       ],
       "Yearly, ${ untilString }": [
         "Årligen, ${ untilString }"
+      ]
+    },
+    "Rollback state": {
+      "Undo finished": [
+        "Ångra klar"
+      ],
+      "Undo in progress": [
+        "Ångra pågår"
+      ]
+    },
+    "Sign out": {
+      "Sign in to ${ providerName }": [
+        "Logga in på ${ providerName }"
       ]
     }
   }

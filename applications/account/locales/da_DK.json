@@ -2317,6 +2317,27 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Cancel import": [
+        "Annuller import"
+      ],
+      "Create a ${ ACCOUNT_APP_NAME }": [
+        "Opret en ${ ACCOUNT_APP_NAME }"
+      ],
+      "Import actions": [
+        "Importér handlinger"
+      ],
+      "Remove from the list": [
+        "Fjern fra listen"
+      ],
+      "Sign in to ${ PASS_APP_NAME }": [
+        "Log ind på ${ PASS_APP_NAME }"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Begynd at bruge ${ PASS_APP_NAME }"
+      ],
+      "Upgrade to connect": [
+        "Opgrader for at forbinde"
       ]
     },
     "action": {
@@ -2930,6 +2951,9 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30 dages tilbagebetalingsgaranti"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30-dages fortrydelsesret: annuller indenfor 30 dage af dit køb, og kontakt vores ${ customerSupportLink } for at få en refusion."
       ]
     },
     "bf2023: Title": {
@@ -5737,6 +5761,15 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Dit abonnement understøtter i alt ${ MAX_SYNC_PAID_USER } Gmail-adresse",
         "Dit abonnement understøtter i alt ${ MAX_SYNC_PAID_USER } Gmail-adresser"
+      ],
+      "Access your passwords on all your devices": [
+        "Få adgang til dine adgangskoder på alle dine enheder"
+      ],
+      "Autofill logins instantly on any site": [
+        "Udfyld automatisk log-ind oplysninger på enhver side"
+      ],
+      "Create strong password with one click": [
+        "Opret stærke adgangskoder med ét klik"
       ]
     },
     "description": {
@@ -6192,6 +6225,9 @@
       ],
       "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
         "Du videresender e-mails fra én ekstern konto til ${ MAIL_APP_NAME }."
+      ],
+      "Sign in to ${ providerName }": [
+        "Log ind på ${ providerName }"
       ]
     },
     "Edit billing address form note": {
@@ -8233,6 +8269,9 @@
       ],
       "Zero keys reactivated": [
         "Nul nøgler genaktiveret"
+      ],
+      "Couldn't load your connections": [
+        "Kunne ikke indlæse dine forbindelser"
       ]
     },
     "error": {
@@ -10204,6 +10243,9 @@
       ],
       "Undo in progress": [
         "Fortrydelse i gang"
+      ],
+      "Queued": [
+        "I kø"
       ]
     },
     "Import type": {
@@ -14573,6 +14615,27 @@
       ],
       "Zoom meeting": [
         "Zoom-møde"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30-dages fortrydelsesret: annuller indenfor 30 dage af dit køb, og kontakt vores ${ customerSupportLink } for at få en refusion."
+      ],
+      "Cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Annuller indenfor 30 dage af dit køb, og kontakt vores ${ customerSupportLink } for at få en refusion."
+      ],
+      "More cards": [
+        "Flere kort"
+      ],
+      "SEPA Bank transfer": [
+        "SEPA bankoverførsel"
+      ],
+      "UnionPay logo": [
+        "UnionPay logo"
+      ],
+      "Your address was connected. We're importing your emails.": [
+        "Din adresse blev forbundet. Vi importerer dine e-mails."
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "Din gratis prøveperiode er afsluttet. Abonnér nu så dit team beholder adgang, og deres konti forbliver sikre."
       ]
     },
     "info": {
@@ -16943,6 +17006,12 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Item": [
+        "Element"
+      ],
+      "Vault": [
+        "Boks"
       ]
     },
     "label": {
@@ -17378,6 +17447,9 @@
       ],
       "What’s this?": [
         "Hvad er dette?"
+      ],
+      "Customer Support": [
+        "Kundesupport"
       ]
     },
     "Link (Scribe)": {
@@ -21198,6 +21270,9 @@
     "Payments.iDEAL": {
       "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
         "Ved at bekræfte autoriserer du ${ BRAND_NAME } og Stripe, vores betalingstjenesteudbyder, til at hæve fremtidige betalinger for dit abonnement fra denne bankkonto med SEPA Direct Debit, og at banken kan debitere de betalinger. Din første betaling forfalder fra ${ IDEAL_WERO_BRAND_NAME } nu. Dit abonnement fornyes automatisk indtil du opsiger; vi giver dig besked før hver betaling. For Direct Debit-opkrævninger kan du anmode om en refundering fra din bank indenfor 8 uger af debiteringsdatoen efter din og din banks aftalevilkår. Dette gælder ikke for den betaling med ${ IDEAL_WERO_BRAND_NAME }, som du er i gang med nu."
+      ],
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Ved at bekræfte autoriserer du ${ BRAND_NAME } og Stripe, vores betalingstjenesteudbyder, til at hæve fremtidige betalinger for dit abonnement fra denne bankkonto med SEPA Direct Debit, og at banken kan debitere de betalinger. Din første betaling forfalder fra ${ IDEAL_WERO_BRAND_NAME } nu. Dit abonnement fornyes automatisk indtil du opsiger, og vi giver dig besked før hver betaling. For Direct Debit-opkrævninger kan du anmode om en refundering fra din bank indenfor 8 uger af debiteringsdatoen efter din og din banks aftalevilkår. Dette gælder ikke for den betaling med ${ IDEAL_WERO_BRAND_NAME }, som du er i gang med nu."
       ]
     },
     "Payments.info": {
@@ -28098,6 +28173,39 @@
       ],
       "Your subscriptions": [
         "Dine abonnementer"
+      ],
+      "${ PASS_APP_NAME }: Welcome": [
+        "${ PASS_APP_NAME }: Velkommen"
+      ],
+      "Add ${ PASS_APP_NAME } to ${ browserName }": [
+        "Tilføj ${ PASS_APP_NAME } til ${ browserName }"
+      ],
+      "Add ${ PASS_APP_NAME } to your browser": [
+        "Tilføj ${ PASS_APP_NAME } til din browser"
+      ],
+      "Connect your ${ ACCOUNT_APP_NAME }": [
+        "Forbind din ${ ACCOUNT_APP_NAME }"
+      ],
+      "Over 95% of users love our extension": [
+        "Over 95% af brugere elsker vores browserudvidelse"
+      ],
+      "Save time:": [
+        "Spar tid:"
+      ],
+      "Skip for now": [
+        "Spring over for nu"
+      ],
+      "Stay connected:": [
+        "Forbliv tilsluttet:"
+      ],
+      "Stay safe:": [
+        "Beskyt dig selv:"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "Abonnér på ${ planTitle }"
+      ],
+      "Unlock the power of autofill with ${ PASS_APP_NAME } in your browser": [
+        "Lås op for autofyld med ${ PASS_APP_NAME } i din browser"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -29781,6 +29889,19 @@
       ],
       "Yearly, ${ untilString }": [
         "Årligt, ${ untilString }"
+      ]
+    },
+    "Rollback state": {
+      "Undo finished": [
+        "Fortrydelse afsluttet"
+      ],
+      "Undo in progress": [
+        "Fortrydelse i gang"
+      ]
+    },
+    "Sign out": {
+      "Sign in to ${ providerName }": [
+        "Log ind på ${ providerName }"
       ]
     }
   }
