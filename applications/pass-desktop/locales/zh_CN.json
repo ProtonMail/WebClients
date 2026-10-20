@@ -25,12 +25,6 @@
       ]
     },
     "Action": {
-      "${ PASS_SHORT_APP_NAME } for Android": [
-        "${ PASS_SHORT_APP_NAME } Android 版"
-      ],
-      "${ PASS_SHORT_APP_NAME } for iOS": [
-        "${ PASS_SHORT_APP_NAME } for iOS"
-      ],
       "Accept": [
         "接受"
       ],
@@ -345,6 +339,12 @@
       ],
       "Done": [
         "完成"
+      ],
+      "Download for macOS": [
+        "下载 macOS 版"
+      ],
+      "Download for Windows": [
+        "下载 Windows 版"
       ],
       "Download this CSV template": [
         "下载CSV模板"
@@ -2183,6 +2183,9 @@
       "invites you to access items in": [
         "邀请您访问其中的项目"
       ],
+      "iOS and Android Apps": [
+        "iOS 和 Android 应用"
+      ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "您似乎已登录到 ${ PASS_APP_NAME } 。如果您正在尝试使用不同的账户登录，请先从扩展中登出。"
       ],
@@ -2281,9 +2284,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "正在从 \"${ payload.content.name }\" 移动所有项目"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "将项目移至其他保险库会清除其安全链接！"
       ],
       "Moving items": [
         "正在移动"
@@ -2575,6 +2575,9 @@
       ],
       "Restoring trashed items...": [
         "正在还原回收站中的项目..."
+      ],
+      "Scan to download": [
+        "扫描以下载"
       ],
       "Secure links": [
         "安全链接"
@@ -5061,6 +5064,9 @@
       ],
       "Folder options": [
         "文件夹选项"
+      ],
+      "Get mobile and desktop apps": [
+        "获取移动和桌面应用"
       ],
       "Get Started": [
         "立即体验"

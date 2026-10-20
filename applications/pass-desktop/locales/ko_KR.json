@@ -25,12 +25,6 @@
       ]
     },
     "Action": {
-      "${ PASS_SHORT_APP_NAME } for Android": [
-        "Android용 ${ PASS_SHORT_APP_NAME }"
-      ],
-      "${ PASS_SHORT_APP_NAME } for iOS": [
-        "iOS용 ${ PASS_SHORT_APP_NAME }"
-      ],
       "Accept": [
         "수락"
       ],
@@ -342,6 +336,12 @@
       ],
       "Done": [
         "완료"
+      ],
+      "Download for macOS": [
+        "macOS용 다운로드"
+      ],
+      "Download for Windows": [
+        "Windows용 다운로드"
       ],
       "Download this CSV template": [
         "CSV 양식 다운로드"
@@ -2175,6 +2175,9 @@
       "invites you to access items in": [
         "님이 항목 공유를 초대합니다:"
       ],
+      "iOS and Android Apps": [
+        "iOS 및 Android 앱"
+      ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "이미 ${ PASS_APP_NAME }에 로그인 된 것 같습니다. 만약 다른 계정으로 로그인을 시도하는 중이라면, 확장 프로그램에서 로그아웃 하세요."
       ],
@@ -2273,9 +2276,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동시 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
@@ -2567,6 +2567,9 @@
       ],
       "Restoring trashed items...": [
         "휴지통 내 항목 복구 중..."
+      ],
+      "Scan to download": [
+        "스캔하여 다운로드"
       ],
       "Secure links": [
         "안전한 링크"
@@ -5053,6 +5056,9 @@
       ],
       "Folder options": [
         "폴더 옵션"
+      ],
+      "Get mobile and desktop apps": [
+        "모바일 및 데스크톱 앱 다운로드"
       ],
       "Get Started": [
         "시작하기"

@@ -25,12 +25,6 @@
       ]
     },
     "Action": {
-      "${ PASS_SHORT_APP_NAME } for Android": [
-        "${ PASS_SHORT_APP_NAME } Android-სთვის"
-      ],
-      "${ PASS_SHORT_APP_NAME } for iOS": [
-        "${ PASS_SHORT_APP_NAME } iOS-სთვის"
-      ],
       "Accept": [
         "დასტური"
       ],
@@ -333,6 +327,12 @@
       ],
       "Done": [
         "მზადაა"
+      ],
+      "Download for macOS": [
+        "გადმოწერა macOS-სთვის"
+      ],
+      "Download for Windows": [
+        "გადმოწერა Windows-სთვის"
       ],
       "Download this CSV template": [
         "გადმოწერეთ ეს CSV ნიმუში"
@@ -2223,7 +2223,8 @@
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "ელემენტის გადატანა სხვა სეიფში წაშლის მის უსაფრთხო ბმულებს."
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
       ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"

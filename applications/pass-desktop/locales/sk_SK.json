@@ -25,12 +25,6 @@
       ]
     },
     "Action": {
-      "${ PASS_SHORT_APP_NAME } for Android": [
-        "${ PASS_SHORT_APP_NAME } pre Android"
-      ],
-      "${ PASS_SHORT_APP_NAME } for iOS": [
-        "${ PASS_SHORT_APP_NAME } pre iOS"
-      ],
       "Accept": [
         "Prijať"
       ],
@@ -346,6 +340,15 @@
       "Done": [
         "Hotovo"
       ],
+      "Download for Linux": [
+        "Stiahnuť pre Linux"
+      ],
+      "Download for macOS": [
+        "Stiahnuť pre macOS"
+      ],
+      "Download for Windows": [
+        "Stiahnuť pre Windows"
+      ],
       "Download this CSV template": [
         "Stiahnuť si túto CSV šablónu"
       ],
@@ -555,6 +558,9 @@
       ],
       "Open navigation": [
         "Otvoriť menu"
+      ],
+      "Open platform selection dropdown": [
+        "Rozbaľovacie menu na výber otvorenej platformy"
       ],
       "Organize vaults": [
         "Usporiadať trezory"
@@ -1065,6 +1071,9 @@
       ],
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Overenie zlyhalo. Potvrďte svoje druhé heslo, ak chcete pokračovať v exporte"
+      ],
+      "Biometric authentication cancelled.": [
+        "Biometrické overenie zrušené."
       ],
       "Biometric authentication failed.": [
         "Biometrické overenie zlyhalo."
@@ -2258,6 +2267,9 @@
       "invites you to access items in": [
         "vás pozýva na prístup k položkám v"
       ],
+      "iOS and Android Apps": [
+        "iOS a Android aplikácie"
+      ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Zdá sa, že účet ${ PASS_APP_NAME } už je prihlásený. Ak sa pokúšate prihlásiť pomocou iného účtu, najskôr sa odhláste z rozšírenia, prosím."
       ],
@@ -2364,7 +2376,10 @@
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy."
+        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
       ],
       "Moving items": [
         "Presúvanie položiek"
@@ -2666,6 +2681,12 @@
       "Restoring trashed items...": [
         "Obnovovanie položiek z koša..."
       ],
+      "Scan to download": [
+        "Naskenovaním stiahnite"
+      ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "Naskenujte a stiahnite si aplikáciu ${ PASS_APP_NAME } pre iOS a Android"
+      ],
       "Secure links": [
         "Bezpečné odkazy"
       ],
@@ -2869,6 +2890,9 @@
       ],
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Ak chcete skontrolovať importované údaje, kliknite na ikonu ${ PASS_APP_NAME } v nástrojovom paneli prehliadača."
+      ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission.": [
+        "Na nastavenie odomknutia pomocou biometrických údajov vyžaduje aplikácia ${ PASS_APP_NAME } nové povolenie prehliadača."
       ],
       "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
         "Na nastavenie odomykania pomocou biometrických údajov vyžaduje ${ PASS_APP_NAME } nové povolenie prehliadača. Po ich udelení sa rozšírenie znovu načíta. Následne znovu otvorte túto stránku, prosím."
@@ -3822,11 +3846,17 @@
       "LinkedIn account": [
         "Účet LinkedIn"
       ],
+      "Linux": [
+        "Linux"
+      ],
       "Login": [
         "Prihlásenie"
       ],
       "Logins": [
         "Prihlásenia"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Mailboxes": [
         "Poštové schránky"
@@ -4415,6 +4445,9 @@
       ],
       "WiFi network": [
         "WiFi sieť"
+      ],
+      "Windows": [
+        "Windows"
       ],
       "Work details": [
         "Podrobnosti o pracovnej činnosti"
@@ -5226,6 +5259,12 @@
       ],
       "Folder options": [
         "Možnosti priečinka"
+      ],
+      "Get mobile and desktop apps": [
+        "Získať mobilné a desktopové aplikácie"
+      ],
+      "Get mobile apps": [
+        "Získať mobilné aplikácie"
       ],
       "Get Started": [
         "Začíname"
