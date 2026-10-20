@@ -3,7 +3,12 @@ import { act, renderHook } from '@testing-library/react';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import type { PaymentIntent } from '@proton/chargebee/lib/types';
 
-import { getIframeUrl, getInitializationFailureReason, useCbIframe } from './ChargebeeIframe';
+import {
+    getIframeUrl,
+    getInitializationFailureReason,
+    isInitializationFailureReportable,
+    useCbIframe,
+} from './ChargebeeIframe';
 
 jest.mock('@proton/app-context/useApi', () => ({
     useApi: jest
@@ -68,6 +73,54 @@ describe('getInitializationFailureReason', () => {
 
     it('should not blame the iframe for a plain Error thrown on the parent side', () => {
         expect(getInitializationFailureReason(new Error('Apple Pay session aborted'))).toBe('parent-side-error');
+    });
+});
+
+describe('isInitializationFailureReportable', () => {
+    it('should skip a set-configuration failure because the iframe already reported it', () => {
+        const envelope = {
+            type: 'set-configuration-response',
+            correlationId: 'id-1',
+            status: 'failure',
+            error: { name: 'Error', message: 'Chargebee script failed to load' },
+        };
+
+        expect(isInitializationFailureReportable(envelope)).toBe(false);
+    });
+
+    it('should report a set-configuration timeout', () => {
+        const timeout = {
+            type: 'set-configuration-response',
+            correlationId: 'id-1',
+            status: 'failure',
+            error: 'Timeout exceeded',
+        };
+
+        expect(isInitializationFailureReportable(timeout)).toBe(true);
+    });
+
+    it('should report a failure envelope from another iframe action', () => {
+        const envelope = {
+            type: 'set-paypal-payment-intent-response',
+            correlationId: 'id-2',
+            status: 'failure',
+            error: { name: 'ChargebeeError', message: 'Paypal failed' },
+        };
+
+        expect(isInitializationFailureReportable(envelope)).toBe(true);
+    });
+
+    it.each([
+        Object.assign(new Error('No network connection'), { name: 'OfflineError' }),
+        Object.assign(new Error('Request timed out'), { name: 'TimeoutError' }),
+        Object.assign(new Error('signal is aborted without reason'), { name: 'AbortError' }),
+        new TypeError('Failed to fetch'),
+    ])('should skip the network error $name', (error) => {
+        expect(isInitializationFailureReportable(error)).toBe(false);
+    });
+
+    it('should report a parent-side Error', () => {
+        expect(isInitializationFailureReportable(new Error('Apple Pay session aborted'))).toBe(true);
     });
 });
 
