@@ -2,7 +2,6 @@ import type { IconSize } from '@proton/icons/types';
 
 const VpnProLogo = ({ size }: { size: IconSize }) => {
     return (
-        // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
         <svg
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -10,6 +9,7 @@ const VpnProLogo = ({ size }: { size: IconSize }) => {
             height="24"
             viewBox="0 0 26 24"
             fill="none"
+            // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
             role="img"
             className={`icon-size-${size}`}
         >
