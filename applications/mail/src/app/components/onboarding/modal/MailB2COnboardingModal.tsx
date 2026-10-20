@@ -57,7 +57,7 @@ const STEPS: Record<
         eligible: isNewOnboardingThemesStepEligible,
         component: NewOnboardingThemes,
     },
-    // TODO add new telemetry
+    // DAWG-88 add new telemetry
     'new-onboarding-organization': {
         eligible: isNewOnboardingOrganizationStepEligible,
         component: NewOnboardingOrganizationStep,
@@ -70,17 +70,17 @@ const STEPS: Record<
         eligible: isGetDesktopAppStepEligible,
         component: GetDesktopAppStep,
     },
-    // TODO add new telemetry
+    // DAWG-88 add new telemetry
     'activate-premium-features': {
         eligible: isActivatePremiumFeaturesStepEligible,
         component: ActivatePremiumFeaturesStep,
     },
-    // TODO add new telemetry
+    // DAWG-88 add new telemetry
     partner: {
         eligible: isPartnerStepEligible,
         component: PartnerStep,
     },
-    // TODO add new telemetry
+    // DAWG-88 add new telemetry
     'display-name': {
         eligible: isDisplayNameStepEligible,
         component: DisplayNameStep,
