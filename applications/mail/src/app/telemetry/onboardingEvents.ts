@@ -32,7 +32,7 @@ const onboardingTimer = defineTimer('mailOnboarding');
 
 const baseValues = {
     activeMs: duration(),
-    timestamp: number(),
+    timestampMs: number(),
 };
 
 const baseEvent = {
@@ -69,7 +69,7 @@ const themeStepCompleted = defineEvent({
 /** Idempotent: the first event of the onboarding starts the timer */
 const withTiming = () => {
     tracker.startTimer(onboardingTimer);
-    return { values: { timestamp: Date.now() } };
+    return { values: { timestampMs: Date.now() } };
 };
 
 const timing = { durationFrom: onboardingTimer };
