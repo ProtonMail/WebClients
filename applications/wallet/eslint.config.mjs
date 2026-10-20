@@ -1,15 +1,11 @@
 import { defineConfig } from 'eslint/config';
 
 import defaultConfig from '@proton/eslint-config-proton/all';
-import { iconRestrictedImports } from '@proton/eslint-config-proton/icon';
+import { createRestrictedImportsConfig } from '@proton/eslint-config-proton/restrictedImports';
 
 export default defineConfig([
     defaultConfig,
-    {
-        rules: {
-            '@typescript-eslint/no-restricted-imports': ['error', { paths: iconRestrictedImports }],
-        },
-    },
+    createRestrictedImportsConfig({ rollout: ['icon-component'] }),
     {
         files: ['**/*.test.ts'],
         rules: {

@@ -1,12 +1,13 @@
 import { defineConfig } from 'eslint/config';
 
 import defaultConfig from '@proton/eslint-config-proton/all';
-import { atomsPackage, componentsPackage, createBarrelConfig, iconsPackage } from '@proton/eslint-config-proton/barrel';
-import { iconRestrictedImports } from '@proton/eslint-config-proton/icon';
+import { createRestrictedImportsConfig } from '@proton/eslint-config-proton/restrictedImports';
 
 export default defineConfig([
     defaultConfig,
-    createBarrelConfig({ packages: [atomsPackage, iconsPackage, componentsPackage] }),
+    createRestrictedImportsConfig({
+        rollout: ['components-barrel', 'icon-component'],
+    }),
     {
         rules: {
             'react-hooks/exhaustive-deps': 'error',
@@ -18,7 +19,6 @@ export default defineConfig([
                         'Destructuring of enum-like constants is not allowed. Use CONSTANT.PROPERTY instead to maintain code readability.',
                 },
             ],
-            '@typescript-eslint/no-restricted-imports': ['error', { paths: iconRestrictedImports }],
         },
     },
 ]);

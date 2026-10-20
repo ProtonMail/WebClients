@@ -18,7 +18,7 @@ import Icons from '@proton/icons/Icons';
 import metrics from '@proton/metrics/metricsInstance';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import createApi from '@proton/shared/lib/api/createApi';
-// eslint-disable-next-line no-restricted-imports -- bootstrap code runs outside React, hooks are not available
+// eslint-disable-next-line proton/restricted-imports -- bootstrap code runs outside React, hooks are not available
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getValidatedProtonProtocolRedirect } from '@proton/shared/lib/authentication/fork/getValidatedProtonProtocol';

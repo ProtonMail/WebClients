@@ -21,7 +21,7 @@ import { driveMetrics } from '@proton/drive/modules/metrics';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import createApi from '@proton/shared/lib/api/createApi';
-// eslint-disable-next-line no-restricted-imports
+// eslint-disable-next-line proton/restricted-imports
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { UnleashFlagProviderWithToolbar } from '@proton/unleash/UnleashFlagProviderWithToolbar';
