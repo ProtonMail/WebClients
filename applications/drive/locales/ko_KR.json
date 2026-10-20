@@ -378,9 +378,6 @@
       "Done": [
         "완료"
       ],
-      "Downgrade": [
-        "다운그레이드"
-      ],
       "Download": [
         "다운로드"
       ],
@@ -834,9 +831,6 @@
       "Remove access": [
         "접근 제거"
       ],
-      "Remove bonuses": [
-        "보너스 제거"
-      ],
       "Remove button": [
         "버튼 삭제"
       ],
@@ -1106,6 +1100,9 @@
       ],
       "Submit report": [
         "신고 제출"
+      ],
+      "Subscribe": [
+        "구독"
       ],
       "Subscribe now": [
         "지금 구독하기"
@@ -1469,11 +1466,6 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "프리미엄 암호 관리자"
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "30일 무료체험"
       ]
     },
     "BF2024: Deal details": {
@@ -4339,14 +4331,6 @@
         "플랜 변경"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "가족 그룹 인증 실패. 다시 시도하십시오."
-      ],
-      "Organization not recognized. Try again.": [
-        "조직에 인정되지 않음. 다시 시도하십시오."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } 그룹"
@@ -4413,30 +4397,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "사용자의 계정이 할당된 ${ inviteSpace }을(를) 초과하는 스토리지의 ${ usedSpace }을(를) 사용하고 있습니다. 일부 데이터를 삭제하거나 플랜을 구매한 관리자에게 저장 공간을 늘리도록 요청하세요."
-      ]
-    },
-    "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "계속하려면 가족 그룹 이름을 입력하세요."
-      ],
-      "Enter organization name to confirm": [
-        "계속하려면 조직 이름을 입력하세요"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "이는 모든 하위 사용자, 계정, 사용자의 조직과 연관된 데이터를 영구적으로 삭제합니다."
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "모든 가족 구성원이 ${ BRAND_NAME } 프리미엄 기능들을 사용할 수 없습니다."
-      ]
-    },
-    "familyOffer_2023:Title": {
-      "Delete family group?": [
-        "가족 그룹을 삭제하시겠어요?"
-      ],
-      "Delete organization?": [
-        "조직을 삭제합니까?"
       ]
     },
     "Feature": {
@@ -5185,15 +5145,6 @@
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "회원님 또한 구독하는 친구 한 명당 **${ referrerRewardAmount } 크레딧**을 받게 됩니다."
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } 추가 저장공간"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "${ VPN_APP_NAME } 을 위한 +${ organization.BonusVPN } 연결 (더 많은 기기를 VPN에 연결할 수 있습니다)"
-      ],
-      "30-day money-back guarantee.": [
-        "30일 환불 보장"
-      ],
       "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
         "${ DRIVE_APP_NAME }의 새로운 버전을 사용할 수 있습니다. 계속 검색하려면 새로고침하세요."
       ],
@@ -5355,9 +5306,6 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "조직의 브랜드 아이덴티티를 증진하고 사용자를 위한 더욱 일관된 온라인 경험을 창출하십시오."
-      ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "무료 플랜으로 다운그레이드하면, 만약에 나중에 다시 업그레이드 한다 해도 다음 혜택을 영구적으로 잃을 것입니다."
       ],
       "Calendar side panel": [
         "캘린더 사이드 패널"
@@ -5529,9 +5477,6 @@
       ],
       "Downgrade": [
         "다운그레이드"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "다운그레이드하면 유료 ${ VPN_APP_NAME } 서버에 대한 모든 연결이 종료됩니다."
       ],
       "Download ${ name } app": [
         "${ name }앱 설치"
@@ -5730,15 +5675,6 @@
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "인증 앱에 접근할 수 없는 경우, 2단계 인증을 설정할 때 제공된 16개의 백업 복구 코드 중 1개를 사용할 수 있습니다. ${ learnMoreLink }"
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "다운그레이드를 진행하면 ${ MAIL_APP_NAME } 과 ${ VPN_APP_NAME } 의 유료 기능을 사용할 수 없습니다."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "다운그레이드를 진행하면 추가 저장공관과 필터를 포함한 ${ MAIL_APP_NAME } 의 유료 기능을 사용할 수 없습니다."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "다운그레이드를 진행하면 ${ VPN_APP_NAME } 유료 기능을 사용할 수 없습니다."
       ],
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
         "만약 나 자신을 제거하는 경우, \"${ fileName }\"에 대한 접근 권한을 잃게 되며, 소유자가 다시 공유하지 않는 한 다시 열 수 없게 됩니다."
@@ -6400,9 +6336,6 @@
       "Signature check will be ignored": [
         "서명 확인이 무시됩니다"
       ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "로얄 사용자시기에, 계정에 추가적인 기능이 활성화 되었습니다."
-      ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "일부 정부는 특정 웹사이트에 대한 접근을 차단하거나 제한합니다. VPN이 사용자의 활동과 신원을 비공개로 유지하면서 검열을 우회하는 데 도움을 드립니다."
       ],
@@ -6802,6 +6735,9 @@
       "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
         "불러오기가 완료되면 이메일로 알려드립니다. 불러온 파일은 ${ DRIVE_APP_NAME }의 폴더에서 찾을 수 있습니다."
       ],
+      "We'll get back to you shortly.": [
+        "곧 돌아오겠습니다."
+      ],
       "We'll notify you when the import is done.": [
         "처리가 완료되면 알려드리겠습니다."
       ],
@@ -6936,9 +6872,6 @@
       ],
       "You may be redirected to your bank’s website.": [
         "은행 웹사이트로 리다이렉트 됩니다."
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "다운그레이드하기 전에 모든 ${ MAIL_APP_NAME } 사용자와 주소, 그리고 사용자 지정 도메인을 비활성화해야 합니다."
       ],
       "You need access": [
         "접근 권한이 필요합니다"
@@ -7236,6 +7169,12 @@
       "Allow editors to change permissions and share.": [
         "편집자가 권한을 변경하거나 공유하도록 허용합니다."
       ],
+      "Amount": [
+        "금액"
+      ],
+      "Amount due": [
+        "지불할 금액"
+      ],
       "Anderson": [
         "길동"
       ],
@@ -7385,6 +7324,9 @@
       ],
       "Credits": [
         "크레딧"
+      ],
+      "Credits used": [
+        "사용된 크레딧"
       ],
       "Delete": [
         "삭제"
@@ -7695,6 +7637,9 @@
       "Please provide full details to help us take appropriate action": [
         "적절한 조치를 취할 수 있도록 전체 세부사항을 제공해 주세요"
       ],
+      "Please share any feedback to help us improve.": [
+        "기능을 향상시키기 위해 피드백을 공유해 주세요."
+      ],
       "Port": [
         "포트"
       ],
@@ -7880,6 +7825,9 @@
       ],
       "What happened?": [
         "무슨 일인가요?"
+      ],
+      "Why would you like to cancel?": [
+        "취소하려는 이유가 무엇인가요?"
       ],
       "Yes, I want to permanently delete my old files": [
         "네, 저는 이전 파일을 완전히 삭제하고 싶습니다"
@@ -8496,38 +8444,20 @@
         "중간 VPN 속도"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "계정 삭제"
-      ],
-      "Downgrade account": [
-        "계정 다운그레이드"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "무료로 ${ BRAND_NAME } 받기"
-      ],
-      "Get ${ planName }": [
-        "${ planName } 받기"
-      ],
-      "Keep ${ plan }": [
-        "${ plan }  유지"
-      ],
-      "Keep account": [
-        "계정 유지"
-      ],
-      "Switch plan": [
-        "플랜 변경"
-      ]
-    },
     "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName }(으)로 다운그래이드"
-      ],
       "Plans starting from ${ priceDrivePlus }": [
         "${ priceDrivePlus }부터 시작"
       ],
       "Upgrade": [
         "업그레이드"
+      ]
+    },
+    "new_plans: action": {
+      "Get ${ BRAND_NAME } for free": [
+        "무료로 ${ BRAND_NAME } 받기"
+      ],
+      "Get ${ planName }": [
+        "${ planName } 받기"
       ]
     },
     "new_plans: feature": {
@@ -9040,18 +8970,6 @@
       "For next-level password management and identity protection.": [
         "한 차원 높은 비밀번호 관리 및 신원 보호를 위한."
       ],
-      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
-        "만약 계정을 삭제한다면, ${ visionary } 플랜 혜택을 모두 잃게되며, 계정을 새로 생성하여도 사용할 수 없습니다."
-      ],
-      "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
-        "만약 계정을 다운그레이드 한다면, ${ visionary } 플랜의 혜택을 모두 잃게 되며, 다시 구독하여도 사용할 수 없습니다."
-      ],
-      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
-        "만약 다른 플랜으로 변경하면, 모든 ${ visionary } 플랜 혜택을 잃게 되며, 다시 ${ visionary } 로 변경할 수 없습니다."
-      ],
-      "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
-        "${ visionary } 플랜은 특별한 기능과 혜택이 있는 기존 ${ BRAND_NAME } 사용자를 위한 플랜입니다. 따라서, 새로운 사용자가 구독할 수 없습니다."
-      ],
       "Pay once, secure your passwords and identity forever.": [
         "한 번만 결제하여 평생 비밀번호와 신원 정보를 보호하세요."
       ],
@@ -9081,12 +8999,6 @@
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
         "최대 두 명을 위한 무제한 개인정보 보호 및 추가적인 저장공간."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
-        "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 삭제하신다면, 프로모션이 적용된 가격을 잃게되어 만일 새로운 계정을 추가한다고 하더라도 다시 누리실 수 없습니다."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
-        "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 다운그레이드 하신다면, 프로모션이 적용된 가격을 잃게되어 만일 다시 구독을 시도하더라도 다시 누리실 수 없습니다."
       ]
     },
     "new_plans: label": {
@@ -9106,20 +9018,11 @@
       ]
     },
     "new_plans: title": {
-      "Delete account?": [
-        "계정을 삭제할까요?"
-      ],
-      "Downgrade account?": [
-        "계정을 다운그레이드할까요?"
-      ],
       "Review subscription": [
         "구독 검토"
       ],
       "Review subscription and pay": [
         "구독 및 결제 검토"
-      ],
-      "Switch plans?": [
-        "플랜을 변경하시겠어요?"
       ]
     },
     "new_plans: tooltip": {
@@ -10337,11 +10240,6 @@
         "문제가 발생했습니다. Google Pay 인증에 실패했습니다."
       ]
     },
-    "Payments.iDEAL": {
-      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
-        "확인을 선택하면 회원님은 ${ BRAND_NAME } 및 당사의 결제 서비스 제공업체인 Stripe이 SEPA 자동이체(Direct Debit)를 통해 본 은행 계좌에서 향후 구독 결제금을 수금하고, 해당 은행이 결제금을 출금하도록 승인하게 됩니다. 첫 결제는 지금 ${ IDEAL_WERO_BRAND_NAME }을(를) 통해 진행됩니다. 구독은 취소할 때까지 자동으로 갱신되며, 결제 전 미리 안내해 드립니다. 자동이체 수금의 경우 은행과의 약관에 따라 출금일로부터 8주 이내에 은행에 환불을 요청할 수 있습니다. 이는 지금 진행 중인 ${ IDEAL_WERO_BRAND_NAME } 결제에는 적용되지 않습니다."
-      ]
-    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "이전 플랜 구독으로 사용하지 않은 부분에 대한 크레딧"
@@ -10565,6 +10463,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "문제를 설명해 주시고 오류 메시지를 포함해 주십시오"
+      ],
+      "Please select the main reason": [
+        "주요 사유를 선택해 주세요."
       ],
       "Postal code": [
         "우편번호"
@@ -11348,9 +11249,6 @@
       "upgrade for more storage": [
         "추가 저장 공간을 위해 업그레이드 하세요."
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "${ BRAND_NAME } 계정에 남은 시간에 대해 크레딧을 추가해 드립니다."
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "**${ currentPlanName }** 플랜에서 **${ daysRemaining }**일이 남아있습니다."
       ],
@@ -11862,6 +11760,9 @@
       "Invitation rejected": [
         "초대 거부됨"
       ],
+      "Invoice paid": [
+        "미납 청구서 결제 완료"
+      ],
       "Payment method added": [
         "결제 수단이 추가되었습니다."
       ],
@@ -11894,9 +11795,6 @@
       ],
       "You have successfully canceled your subscription.": [
         "구독을 성공적으로 취소하셨습니다."
-      ],
-      "You have successfully unsubscribed": [
-        "성공적으로 구독 취소했습니다."
       ]
     },
     "Suffix": {
@@ -12201,12 +12099,6 @@
       "Configure migration": [
         "이전 작업 구성"
       ],
-      "Confirm downgrade": [
-        "다운그레이드 확인"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "${ BRAND_NAME } 의 보너스를 잃는 것을 확인합니다"
-      ],
       "Confirmation required": [
         "최종 확인 필요"
       ],
@@ -12224,6 +12116,9 @@
       ],
       "Contact group": [
         "연락처 그룹"
+      ],
+      "Contact us": [
+        "문의"
       ],
       "Contacts": [
         "연락처"
@@ -12353,9 +12248,6 @@
       ],
       "Downgrade account": [
         "계정 다운그레이드"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "${ downgradedPlanName }(으)로 다운그래이드?"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } 앱 다운로드"
@@ -12690,6 +12582,9 @@
       "Out of storage space": [
         "저장 공간 부족"
       ],
+      "Pay invoice": [
+        "청구서 지불"
+      ],
       "Payment failed": [
         "결제 실패"
       ],
@@ -12770,6 +12665,9 @@
       ],
       "Request new code": [
         "새 코드 요청"
+      ],
+      "Request sent": [
+        "요청 발송완료"
       ],
       "Restore your files": [
         "파일 복원"
@@ -13343,6 +13241,20 @@
       ],
       "Replay video": [
         "영상 다시 보기"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "더 낫다고 생각되는 서비스를 찾았습니다"
+      ],
+      "It’s missing a key feature": [
+        "핵심 기능이 없습니다"
+      ],
+      "It’s too expensive": [
+        "너무 비쌉니다"
+      ],
+      "Other": [
+        "기타"
       ]
     },
     "VPN Plan Feature": {

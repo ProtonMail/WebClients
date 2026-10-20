@@ -336,9 +336,6 @@
       "Done": [
         "Gotowe"
       ],
-      "Downgrade": [
-        "Obniż plan"
-      ],
       "Download": [
         "Pobierz"
       ],
@@ -711,9 +708,6 @@
       "Remove access": [
         "Usuń dostęp"
       ],
-      "Remove bonuses": [
-        "Zrezygnuj z bonusów"
-      ],
       "Remove button": [
         "Usuń przycisk"
       ],
@@ -920,6 +914,9 @@
       ],
       "Submit report": [
         "Wyślij raport"
+      ],
+      "Subscribe": [
+        "Subskrybuj"
       ],
       "Subscribe now": [
         "Subskrybuj teraz"
@@ -1276,11 +1273,6 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Menedżer haseł w wersji premium"
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "30-dniowa gwarancja zwrotu pieniędzy"
       ]
     },
     "BF2024: Deal details": {
@@ -3824,14 +3816,6 @@
         "Zmień plany"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "Grupa rodziny nie została rozpoznana. Spróbuj ponownie."
-      ],
-      "Organization not recognized. Try again.": [
-        "Organizacja nie została rozpoznana. Spróbuj ponownie."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "Grupy ${ BRAND_NAME }"
@@ -3898,30 +3882,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Twoje konto wykorzystuje ${ usedSpace } przestrzeni dyskowej, co przekracza przypisany limit (${ inviteSpace }). Usuń dane lub skontaktuj się z administratorem planu, żeby zwiększyć przestrzeń dyskową."
-      ]
-    },
-    "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "Wpisz nazwę grupy rodzinnej, aby potwierdzić"
-      ],
-      "Enter organization name to confirm": [
-        "Wpisz nazwę organizacji, aby potwierdzić"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "To spowoduje trwałe usunięcie wszystkich użytkowników, kont i danych powiązanych z organizacją."
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Spowoduje to usunięcie wszystkich funkcji premium każdego użytkownika rodziny ${ BRAND_NAME }."
-      ]
-    },
-    "familyOffer_2023:Title": {
-      "Delete family group?": [
-        "Usunąć grupę rodzinną?"
-      ],
-      "Delete organization?": [
-        "Usunąć organizację?"
       ]
     },
     "Feature": {
@@ -4645,18 +4605,6 @@
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Otrzymujesz ${ referrerRewardAmount }** w środkach za każdego znajomego, który zasubskrybuje plan."
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } bonusowej przestrzeni dyskowej"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } połączenie ${ VPN_APP_NAME } (pozwala na podłączenie dodatkowych urządzeń do sieci VPN)",
-        "+${ organization.BonusVPN } połączenia ${ VPN_APP_NAME } (pozwalają na podłączenie dodatkowych urządzeń do sieci VPN)",
-        "+${ organization.BonusVPN } połączeń ${ VPN_APP_NAME } (pozwalają na podłączenie dodatkowych urządzeń do sieci VPN)",
-        "+${ organization.BonusVPN } połączeń ${ VPN_APP_NAME } (pozwalają na podłączenie dodatkowych urządzeń do sieci VPN)"
-      ],
-      "30-day money-back guarantee.": [
-        "30-dniowa gwarancja zwrotu pieniędzy."
-      ],
       "A number will be added to the filename": [
         "Do nazwy pliku zostanie dodany numer"
       ],
@@ -4788,9 +4736,6 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Zwiększ rozpoznawalność marki."
-      ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Obniżając plan do wersji Free, utracisz te bonusy na zawsze, nawet jeśli w przyszłości ponownie ulepszysz swoje konto."
       ],
       "Calendar side panel": [
         "Panel boczny kalendarza"
@@ -4932,9 +4877,6 @@
       ],
       "Downgrade": [
         "Obniż plan"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Obniżenie planu spowoduje zakończenie wszystkich połączeń z płatnymi serwerami ${ VPN_APP_NAME }."
       ],
       "Download current logs": [
         "Pobierz logi"
@@ -5079,15 +5021,6 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Jeśli nie widzisz wiadomości w skrzynce odbiorczej, sprawdź folder spam."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Po obniżeniu planu stracisz dostęp do płatnych funkcji poczty ${ MAIL_APP_NAME } i usługi ${ VPN_APP_NAME }."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Po obniżeniu planu stracisz dostęp do płatnych funkcji poczty ${ MAIL_APP_NAME }, takich jak dodatkowa przestrzeń dyskowa i filtry."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Po obniżeniu planu stracisz dostęp do płatnych funkcji usługi ${ VPN_APP_NAME }."
       ],
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
         "Jeśli się usuniesz, stracisz dostęp do „${ fileName }” i nie będziesz mieć możliwości ponownego otwarcia tego elementu, chyba że właściciel ponownie go Tobie udostępni."
@@ -5488,9 +5421,6 @@
       "Signature check will be ignored": [
         "Sprawdzanie podpisu zostanie pominięte"
       ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Dzięki temu, że od dawna jesteś użytkownikiem, Twoje konto posiada dodatkowe funkcje."
-      ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Niektóre rządy blokują lub ograniczają dostęp do niektórych stron internetowych. VPN pomaga ominąć cenzurę, zachowując prywatność użytkownika."
       ],
@@ -5779,6 +5709,9 @@
       "We'll email you once import is complete.": [
         "Otrzymasz wiadomość po dokończeniu procesu importowania."
       ],
+      "We'll get back to you shortly.": [
+        "Skontaktujemy się z Tobą wkrótce."
+      ],
       "We'll notify you when the import is done.": [
         "Powiadomimy Cię, kiedy proces importowania danych zostanie zakończony."
       ],
@@ -5883,9 +5816,6 @@
       ],
       "You may be redirected to your bank’s website.": [
         "Możesz zostać przekierowany na stronę banku."
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Przed obniżeniem planu musisz wyłączyć lub usunąć dodatkowych użytkowników ${ MAIL_APP_NAME }, adresy i niestandardowe domeny."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "W tym dniu stracisz dostęp do funkcji planu ${ planTitle }."
@@ -6147,6 +6077,12 @@
       "Allow editors to change permissions and share": [
         "Zezwalaj osobom edytującym na zmianę uprawnień i udostępnianie"
       ],
+      "Amount": [
+        "Kwota"
+      ],
+      "Amount due": [
+        "Do zapłaty"
+      ],
       "Anderson": [
         "Nowak"
       ],
@@ -6278,6 +6214,9 @@
       ],
       "Credits": [
         "Środki"
+      ],
+      "Credits used": [
+        "Użyte środki"
       ],
       "Delete": [
         "Usuń"
@@ -6528,6 +6467,9 @@
       "Please provide full details to help us take appropriate action": [
         "Wpisz szczegóły, abyśmy mogli podjąć odpowiednie działania"
       ],
+      "Please share any feedback to help us improve.": [
+        "Podziel się opinią, aby pomóc nam ulepszyć usługę."
+      ],
       "Port": [
         "Port"
       ],
@@ -6668,6 +6610,9 @@
       ],
       "What happened?": [
         "Co się stało?"
+      ],
+      "Why would you like to cancel?": [
+        "Dlaczego chcesz anulować plan?"
       ],
       "Your IP": [
         "Twój adres IP"
@@ -7353,38 +7298,20 @@
         "Umiarkowana prędkość VPN"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Usuń konto"
-      ],
-      "Downgrade account": [
-        "Obniż plan"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Uzyskaj ${ BRAND_NAME } za darmo"
-      ],
-      "Get ${ planName }": [
-        "Wybierz plan ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Zachowaj plan ${ plan }"
-      ],
-      "Keep account": [
-        "Zachowaj konto"
-      ],
-      "Switch plan": [
-        "Zmień plan"
-      ]
-    },
     "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Obniż plan do wersji ${ downgradedPlanName }"
-      ],
       "Plans starting from ${ priceDrivePlus }": [
         "Od ${ priceDrivePlus }"
       ],
       "Upgrade": [
         "Ulepsz"
+      ]
+    },
+    "new_plans: action": {
+      "Get ${ BRAND_NAME } for free": [
+        "Uzyskaj ${ BRAND_NAME } za darmo"
+      ],
+      "Get ${ planName }": [
+        "Wybierz plan ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -7957,18 +7884,6 @@
       "For next-level password management and identity protection.": [
         "Zarządzanie hasłami i ochrona tożsamości na najwyższym poziomie."
       ],
-      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
-        "Jeśli usuniesz konto, stracisz wszystkie bonusy planu ${ visionary }, które nie będą dostępne przy tworzeniu nowego konta."
-      ],
-      "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
-        "Jeśli obniżysz plan, stracisz wszystkie bonusy planu ${ visionary }, które nie będą dostępne przy ponownej subskrypcji."
-      ],
-      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
-        "Jeśli zmienisz plan, stracisz wszystkie bonusy planu ${ visionary }, a ponowny powrót do planu ${ visionary } nie będzie możliwy."
-      ],
-      "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
-        "Plan ${ visionary } nie jest już dostępny dla nowych subskrybentów, ponieważ jest to specjalny plan dla pierwotnych użytkowników ${ BRAND_NAME }, posiadający specjalne funkcje i bonusy."
-      ],
       "Pay once, secure your passwords and identity forever.": [
         "Zapłać raz, zabezpiecz swoje hasła i tożsamość na zawsze."
       ],
@@ -7998,12 +7913,6 @@
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
         "Nieograniczona prywatność i więcej przestrzeni dyskowej dla 2 osób."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
-        "Korzystasz z promocyjnej ceny na swój obecny plan. Usunięcie konta spowoduje utratę promocyjnej ceny i nie będzie ona dostępna przy tworzeniu nowego konta."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
-        "Korzystasz z promocyjnej ceny na swój obecny plan. Jeśli obniżysz plan, stracisz promocyjną cenę i nie będzie ona dostępna przy ponownej subskrypcji."
       ]
     },
     "new_plans: label": {
@@ -8023,20 +7932,11 @@
       ]
     },
     "new_plans: title": {
-      "Delete account?": [
-        "Usunąć konto?"
-      ],
-      "Downgrade account?": [
-        "Obniżyć plan?"
-      ],
       "Review subscription": [
         "Podsumowanie subskrypcji"
       ],
       "Review subscription and pay": [
         "Przejrzyj subskrypcję i zapłać"
-      ],
-      "Switch plans?": [
-        "Zmienić plany?"
       ]
     },
     "new_plans: tooltip": {
@@ -9176,6 +9076,9 @@
       "Please describe the problem and include any error messages": [
         "Opisz problem i dołącz wszelkie informacje o błędach"
       ],
+      "Please select the main reason": [
+        "Wybierz główny powód"
+      ],
       "Postal code": [
         "Kod pocztowy"
       ],
@@ -9998,9 +9901,6 @@
       "upgrade for more storage": [
         "ulepsz konto, aby uzyskać większą przestrzeń dyskową"
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Za pozostały czas otrzymasz środki na konto ${ BRAND_NAME }."
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "Pozostał **${ daysRemaining }** dzień korzystania z planu **${ currentPlanName }**.",
         "Pozostały **${ daysRemaining }** dni korzystania z planu **${ currentPlanName }**.",
@@ -10521,6 +10421,9 @@
       "Invitation rejected": [
         "Zaproszenie zostało odrzucone"
       ],
+      "Invoice paid": [
+        "Faktura została zapłacona"
+      ],
       "Payment method added": [
         "Metoda płatności została dodana"
       ],
@@ -10550,9 +10453,6 @@
       ],
       "You have successfully canceled your subscription.": [
         "Subskrypcja została anulowana."
-      ],
-      "You have successfully unsubscribed": [
-        "Subskrypcja została anulowana"
       ]
     },
     "Suffix": {
@@ -10822,12 +10722,6 @@
       "Computers": [
         "Urządzenia"
       ],
-      "Confirm downgrade": [
-        "Potwierdź obniżenie planu"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Potwierdź utratę ${ BRAND_NAME } bonusów"
-      ],
       "Connect apps and devices": [
         "Połącz aplikacje i urządzenia"
       ],
@@ -10842,6 +10736,9 @@
       ],
       "Contact group": [
         "Grupa kontaktów"
+      ],
+      "Contact us": [
+        "Skontaktuj się z nami"
       ],
       "Contacts": [
         "Kontakty"
@@ -10974,9 +10871,6 @@
       ],
       "Downgrade account": [
         "Obniż plan"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "Obniżyć plan do wersji ${ downgradedPlanName }?"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Pobierz aplikacje ${ DRIVE_APP_NAME }"
@@ -11218,6 +11112,9 @@
       "Out of storage space": [
         "Brak wolnej przestrzeni dyskowej"
       ],
+      "Pay invoice": [
+        "Zapłać fakturę"
+      ],
       "Payment failed": [
         "Płatność nie powiodła się"
       ],
@@ -11286,6 +11183,9 @@
       ],
       "Request new code": [
         "Poproś o nowy kod"
+      ],
+      "Request sent": [
+        "Żądanie zostało wysłane"
       ],
       "Reverse charge not supported": [
         "Mechanizm odwrotnego obciążenia nie jest obsługiwany"
@@ -11791,6 +11691,20 @@
       ],
       "Replay video": [
         "Powtórz wideo"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Mam inną, lepszą usługę"
+      ],
+      "It’s missing a key feature": [
+        "Brak kluczowej funkcji"
+      ],
+      "It’s too expensive": [
+        "Cena jest zbyt wysoka"
+      ],
+      "Other": [
+        "Inny"
       ]
     },
     "VPN Plan Feature": {
