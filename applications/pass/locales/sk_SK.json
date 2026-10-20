@@ -813,6 +813,18 @@
       ],
       "Your password manager is not here? Request it.": [
         "Chýba tu váš správca hesiel? Požiadajte oň."
+      ],
+      "Download for Linux": [
+        "Stiahnuť pre Linux"
+      ],
+      "Download for macOS": [
+        "Stiahnuť pre macOS"
+      ],
+      "Download for Windows": [
+        "Stiahnuť pre Windows"
+      ],
+      "Open platform selection dropdown": [
+        "Rozbaľovacie menu na výber otvorenej platformy"
       ]
     },
     "Activity": {
@@ -1528,6 +1540,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Váš PIN kód bol odstránený iným klientom ${ PASS_APP_NAME }"
+      ],
+      "Biometric authentication cancelled.": [
+        "Biometrické overenie zrušené."
       ]
     },
     "Error message": {
@@ -2271,7 +2286,10 @@
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy."
+        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
       ],
       "Moving items": [
         "Presúvanie položiek"
@@ -2983,6 +3001,18 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Vaša organizácia vyžaduje, aby ste zabezpečili svoj prístup k ${ PASS_APP_NAME }"
+      ],
+      "iOS and Android Apps": [
+        "iOS a Android aplikácie"
+      ],
+      "Scan to download": [
+        "Naskenovaním stiahnite"
+      ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "Naskenujte a stiahnite si aplikáciu ${ PASS_APP_NAME } pre iOS a Android"
+      ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission.": [
+        "Na nastavenie odomknutia pomocou biometrických údajov vyžaduje aplikácia ${ PASS_APP_NAME } nové povolenie prehliadača."
       ]
     },
     "Keyboard key": {
@@ -4271,6 +4301,15 @@
       ],
       "ZIP or Postal code": [
         "PSČ"
+      ],
+      "Linux": [
+        "Linux"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Link": {
@@ -5401,6 +5440,12 @@
         "Chystáte sa natrvalo vymazať ${ aliasCount } aliasy.",
         "Chystáte sa natrvalo vymazať ${ aliasCount } aliasov.",
         "Chystáte sa natrvalo vymazať ${ aliasCount } aliasov."
+      ],
+      "Get mobile and desktop apps": [
+        "Získať mobilné a desktopové aplikácie"
+      ],
+      "Get mobile apps": [
+        "Získať mobilné aplikácie"
       ]
     },
     "Title_cloned_item": {
