@@ -25,10 +25,14 @@ const renderCard = () => {
 beforeEach(() => jest.clearAllMocks());
 
 describe('LumoFloatingPanelCard', () => {
-    it('renders the transcript without its own prompt, closing through the host', () => {
+    it('renders the transcript without its own prompt or thinking row, closing through the host', () => {
         renderCard();
 
-        expect(jest.mocked(ConnectedLumoAgentPanel).mock.lastCall![0]).toEqual({ onClose, showPromptInput: false });
+        expect(jest.mocked(ConnectedLumoAgentPanel).mock.lastCall![0]).toEqual({
+            onClose,
+            showPromptInput: false,
+            showThinking: false,
+        });
     });
 
     it('closes on Escape inside the card without letting it reach the page', () => {

@@ -25,6 +25,8 @@ interface Props {
     placeholder?: string;
     /** Off for a host that renders the prompt outside the panel. */
     showPromptInput?: boolean;
+    /** Off for a host that shows its own thinking state, like Mail's floating cat. */
+    showThinking?: boolean;
     draft: string;
     onDraftChange: (draft: string) => void;
     onSend: (text: string) => void;
@@ -53,6 +55,7 @@ const LumoAgentPanel = ({
     thinkingLabel,
     placeholder,
     showPromptInput = true,
+    showThinking = true,
     draft,
     onDraftChange,
     onSend,
@@ -177,7 +180,7 @@ const LumoAgentPanel = ({
                     <WelcomeSuggestions cards={suggestions} onPick={pickSuggestion} />
                 )}
                 {items.map(renderItem)}
-                {isGenerating && <LumoThinking label={thinkingLabel} />}
+                {isGenerating && showThinking && <LumoThinking label={thinkingLabel} />}
                 {/* Idle Lumo mark beneath the latest turn, once a conversation exists (like lumo.proton.me). */}
                 {!isGenerating && items.length > 0 && <LumoLogo className="lumo-agent-avatar" />}
             </div>

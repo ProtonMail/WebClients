@@ -22,6 +22,7 @@ const renderView = (onDetach?: () => void) => {
     const drawer: LumoAgentDrawerValue = {
         items: [],
         isBusy: false,
+        lastChainEnd: null,
         hasConversation: false,
         draft: '',
         setDraft: jest.fn(),

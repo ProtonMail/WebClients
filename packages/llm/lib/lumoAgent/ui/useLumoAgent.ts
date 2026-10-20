@@ -121,6 +121,8 @@ const useLumoAgent = (config: LumoAgentConfig) => {
 
     const [items, setItems] = useState<LumoAgentItem[]>([]);
     const [isBusy, setIsBusy] = useState(false);
+    // Cleared when a chain starts, so a chain that is abandoned before it reports reads as no outcome
+    const [lastChainEnd, setLastChainEnd] = useState<LumoChainEnd | null>(null);
     const [sessionKey, setSessionKey] = useState(0);
     const [draft, setDraft] = useState('');
 
@@ -326,6 +328,7 @@ const useLumoAgent = (config: LumoAgentConfig) => {
     const runChain = useCallback(
         async (turns: Turn[], userText: string) => {
             setIsBusy(true);
+            setLastChainEnd(null);
 
             const controller = new AbortController();
             controllerRef.current = controller;
@@ -333,11 +336,16 @@ const useLumoAgent = (config: LumoAgentConfig) => {
             const startedAt = performance.now();
             // Counted here rather than off the returned turns, because a chain that throws never returns any.
             let toolCalls = 0;
-            const reportChainEnd = (end: LumoChainEnd) =>
+            const reportChainEnd = (end: LumoChainEnd) => {
+                // An abandoned chain's late report must not overwrite the outcome its successor owns
+                if (controllerRef.current === controller) {
+                    setLastChainEnd(end);
+                }
                 telemetryRef.current?.chainEnded(end, {
                     durationMs: performance.now() - startedAt,
                     toolCalls,
                 });
+            };
 
             // A tool can hand over an image mid-chain (the file on screen, say) — a tool result is text
             // only. The chain re-sends its turns every round, so attaching it to the message the user
@@ -521,6 +529,7 @@ const useLumoAgent = (config: LumoAgentConfig) => {
     return {
         items,
         isBusy,
+        lastChainEnd,
         hasConversation: items.length > 0,
         draft,
         setDraft,

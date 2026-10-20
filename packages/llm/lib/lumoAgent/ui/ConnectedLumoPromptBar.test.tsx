@@ -14,21 +14,24 @@ jest.mock('./pendingConfirm', () => ({ isAgentGenerating: jest.fn() }));
 
 const items: LumoAgentItem[] = [{ id: 1, kind: 'user', text: 'archive the invoices' }];
 
+const makeDrawer = (): LumoAgentDrawerValue => ({
+    items,
+    isBusy: false,
+    lastChainEnd: null,
+    hasConversation: true,
+    draft: 'archive the',
+    setDraft: jest.fn(),
+    send: jest.fn(),
+    confirm: jest.fn(),
+    cancel: jest.fn(),
+    stop: jest.fn(),
+    clear: jest.fn(),
+});
+
 describe('ConnectedLumoPromptBar', () => {
     it('focuses itself on mount and drives the bar from the conversation', () => {
         jest.mocked(isAgentGenerating).mockReturnValue(true);
-        const drawer: LumoAgentDrawerValue = {
-            items,
-            isBusy: false,
-            hasConversation: true,
-            draft: 'archive the',
-            setDraft: jest.fn(),
-            send: jest.fn(),
-            confirm: jest.fn(),
-            cancel: jest.fn(),
-            stop: jest.fn(),
-            clear: jest.fn(),
-        };
+        const drawer = makeDrawer();
         const onClose = jest.fn();
 
         render(
@@ -47,5 +50,21 @@ describe('ConnectedLumoPromptBar', () => {
             onStop: drawer.stop,
             onClose,
         });
+    });
+
+    it('stores each draft change in the conversation before telling the host', () => {
+        const drawer = makeDrawer();
+        const calls: string[] = [];
+        jest.mocked(drawer.setDraft).mockImplementation((draft) => calls.push(`setDraft:${draft}`));
+        const onDraftChange = jest.fn((draft: string) => calls.push(`host:${draft}`));
+
+        render(
+            <LumoAgentDrawerContext.Provider value={drawer}>
+                <ConnectedLumoPromptBar onClose={jest.fn()} onDraftChange={onDraftChange} />
+            </LumoAgentDrawerContext.Provider>
+        );
+        jest.mocked(LumoAgentPromptBar).mock.lastCall![0].onDraftChange('archive the invoices');
+
+        expect(calls).toEqual(['setDraft:archive the invoices', 'host:archive the invoices']);
     });
 });

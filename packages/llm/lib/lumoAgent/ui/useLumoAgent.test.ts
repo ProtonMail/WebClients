@@ -1025,6 +1025,7 @@ describe('useLumoAgent', () => {
             });
 
             expect(lastChainEnd()).toEqual([LumoChainEnd.SUCCEEDED, { durationMs: expect.any(Number), toolCalls: 1 }]);
+            expect(result.current.lastChainEnd).toBe(LumoChainEnd.SUCCEEDED);
         });
 
         it('reports a chain that threw as failed', async () => {
@@ -1038,6 +1039,7 @@ describe('useLumoAgent', () => {
             });
 
             expect(lastChainEnd()[0]).toBe(LumoChainEnd.FAILED);
+            expect(result.current.lastChainEnd).toBe(LumoChainEnd.FAILED);
         });
 
         // The two arms of the same catch: a transport that gave up and a user who did are opposite
@@ -1159,6 +1161,7 @@ describe('useLumoAgent', () => {
             });
 
             expect(telemetry.chainEnded.mock.calls.map(([end]) => end)).toContain(LumoChainEnd.REPLACED);
+            expect(result.current.lastChainEnd).toBe(LumoChainEnd.SUCCEEDED);
         });
 
         it('names the tool on the card the user answered', async () => {
