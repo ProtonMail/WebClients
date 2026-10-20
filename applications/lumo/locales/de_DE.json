@@ -123,9 +123,6 @@
       "Decrease": [
         "Verkleinern"
       ],
-      "Delete": [
-        "Löschen"
-      ],
       "Delete ${ count } conversation?": [
         "${ count } Unterhaltung löschen?",
         "${ count } Unterhaltungen löschen?"
@@ -147,9 +144,6 @@
       ],
       "Done": [
         "Fertig"
-      ],
-      "Downgrade": [
-        "Zurückstufen"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME }-Apps herunterladen"
@@ -198,6 +192,9 @@
       ],
       "Go to panel ${ index }": [
         "Seitenleiste ${ index } öffnen"
+      ],
+      "Got it": [
+        "Verstanden"
       ],
       "Help": [
         "Hilfe"
@@ -256,6 +253,9 @@
       "New key": [
         "Neuer Schlüssel"
       ],
+      "Next month": [
+        "Nächster Monat"
+      ],
       "Next page": [
         "Nächste Seite"
       ],
@@ -286,6 +286,9 @@
       "Preview logs": [
         "Protokollvorschau"
       ],
+      "Previous month": [
+        "Vorheriger Monat"
+      ],
       "Previous page": [
         "Vorherige Seite"
       ],
@@ -309,9 +312,6 @@
       ],
       "Remove": [
         "Entfernen"
-      ],
-      "Remove bonuses": [
-        "Prämien entfernen"
       ],
       "Remove gift code": [
         "Geschenkgutschein entfernen"
@@ -608,11 +608,6 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Premium-Passwortmanager"
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "30 Tage Geld-zurück-Garantie"
       ]
     },
     "BF2024: Deal details": {
@@ -1000,6 +995,9 @@
       "Add file to ${ DRIVE_APP_NAME }": [
         "Datei zu ${ DRIVE_APP_NAME } hinzufügen"
       ],
+      "Add from ${ DRIVE_SHORT_APP_NAME }": [
+        "Aus ${ DRIVE_SHORT_APP_NAME } hinzufügen"
+      ],
       "Add memory": [
         "Erinnerung hinzufügen"
       ],
@@ -1041,9 +1039,6 @@
       ],
       "Continue": [
         "Fortfahren"
-      ],
-      "Create artifact": [
-        "Artefakt erstellen"
       ],
       "Create folder": [
         "Ordner erstellen"
@@ -1174,6 +1169,9 @@
       "Update from chats (${ newPromptsSinceLastUpdate } new)": [
         "Aus Chats (${ newPromptsSinceLastUpdate } neuer) aktualisieren",
         "Aus Chats (${ newPromptsSinceLastUpdate } neue) aktualisieren"
+      ],
+      "Upload": [
+        "Hochladen"
       ],
       "Upload file to Drive": [
         "Datei auf Drive hochladen"
@@ -1446,8 +1444,8 @@
       "After you continue, Apertus will appear as the selected model in the model menu. You can use that menu to switch to another model at any time.": [
         "Sobald du fortfährst, wird Apertus im Modellmenü als ausgewähltes Modell angezeigt. Über dieses Menü kannst du jederzeit zu einem anderen Modell wechseln."
       ],
-      "Allow ${ LUMO_SHORT_APP_NAME } to create artifacts in the side panel when appropriate. This is the default for all chats; you can change it for a single chat from the Tools menu.": [
-        "Ermögliche ${ LUMO_SHORT_APP_NAME }, bei Bedarf Elemente im Seitenbereich zu erstellen. Dies ist die Standardeinstellung für alle Chats; Diese können für einen einzelnen Chat über das Menü „Extras“ geändert werden."
+      "Allow ${ LUMO_SHORT_APP_NAME } to open longer documents, code, and slides in the canvas when appropriate. This is the default for all chats; you can change it for a single chat from the Tools menu.": [
+        "Erlaube ${ LUMO_SHORT_APP_NAME }, längere Dokumente, Code und Folien bei Bedarf im Arbeitsbereich zu öffnen. Dies ist die Standardeinstellung für alle Chats; du kannst sie für einen einzelnen Chat über das Menü «Extras» ändern."
       ],
       "Always enable web search for new conversations": [
         "Immer Websuche für neue Unterhaltungen aktivieren"
@@ -1568,17 +1566,17 @@
       ]
     },
     "collider_2025: Error": {
-      "Could not download this artifact.": [
-        "Dieses Element konnte nicht heruntergeladen werden."
+      "Could not download this file.": [
+        "Diese Datei konnte nicht heruntergeladen werden."
       ],
-      "Could not export this artifact as a Word document.": [
-        "Dieses Element konnte nicht als Word-Dokument exportiert werden."
+      "Could not export as a Word document.": [
+        "Konnte nicht als Word-Dokument exportiert werden."
       ],
-      "Could not export this artifact as PDF.": [
-        "Dieses Artefakt konnte nicht als PDF exportiert werden."
+      "Could not export as PDF.": [
+        "Konnte nicht als PDF exportiert werden."
       ],
-      "Could not export this artifact as PPTX.": [
-        "Dieses Artefakt konnte nicht als PPTX exportiert werden."
+      "Could not export as PPTX.": [
+        "Konnte nicht als PPTX exportiert werden."
       ],
       "Could not generate a workflow. Try again.": [
         "Workflow konnte nicht generiert werden. Versuche es erneut."
@@ -2387,6 +2385,9 @@
       "Upgrade for unlimited chats, projects, larger file uploads, and more.": [
         "Mache ein Upgrade für unbegrenzte Chats, Projekte, größere Datei-Uploads und mehr."
       ],
+      "Upload from your computer": [
+        "Von deinem Computer hochladen"
+      ],
       "Uploading \"${ file.name }\" to ${ DRIVE_APP_NAME }...": [
         "\"${ file.name }\" wird zu ${ DRIVE_APP_NAME } hochgeladen..."
       ],
@@ -2816,29 +2817,11 @@
       ]
     },
     "collider_2025: Spotlight": {
-      "Artifacts are now on by default": [
-        "Artefakte sind nun standardmäßig aktiviert"
-      ],
-      "Create artifacts with ${ LUMO_SHORT_APP_NAME }": [
-        "Artefakt mit ${ LUMO_SHORT_APP_NAME } erstellen"
-      ],
-      "Longer documents, code and slides open here so you can edit and download them.": [
-        "Längere Dokumente, Programmcode und Präsentationen können hier geöffnet werden, sodass diese bearbeitet und heruntergeladen werden können."
-      ],
-      "Longer documents, code and slides open here so you can edit, download or save them to Drive.": [
-        "Längere Dokumente, Code und Präsentation werden hier geöffnet, sodass Sie sie bearbeiten, herunterladen oder in Drive speichern können."
+      "Documents, code, and web pages now open in a canvas beside your chat. Ask ${ LUMO_SHORT_APP_NAME } for changes, compare versions, and download your work.": [
+        "Dokumente, Code und Webseiten werden nun in einem Arbeitsbereich neben deinem Chat geöffnet. Frage ${ LUMO_SHORT_APP_NAME } nach Änderungen, vergleiche Versionen und lade deine Arbeit herunter."
       ],
       "Settings": [
         "Einstellungen"
-      ],
-      "To stop this, turn off ${ createArtifact } in ${ tools } for this chat, or in ${ settings } for all chats.": [
-        "Um dies zu verhindern, deaktiviere ${ createArtifact } in ${ tools } für diesen Chat oder in ${ settings } für alle Chats."
-      ],
-      "To stop this, turn off ${ createArtifact } in ${ tools } for this chat.": [
-        "Um dies zu verhindern, deaktiviere ${ createArtifact } in ${ tools } für diesen Chat."
-      ],
-      "Turn ideas into documents, code, and more. Open Tools to get started.": [
-        "Verwandle Ideen in Dokumente, Code und vieles mehr. Öffne «Tools», um loszulegen."
       ]
     },
     "collider_2025: Status": {
@@ -2952,9 +2935,6 @@
       ],
       "Auto update memory": [
         "Erinnerungen automatisch aktualisieren"
-      ],
-      "Automatic Create Artifact": [
-        "Artefakt automatisch erstellen"
       ],
       "Automatic web search": [
         "Automatische Websuche"
@@ -3374,6 +3354,9 @@
       "Add column right": [
         "Spalte rechts einfügen"
       ],
+      "Add connector": [
+        "Konnektor hinzufügen"
+      ],
       "Add details": [
         "Details hinzufügen"
       ],
@@ -3386,6 +3369,9 @@
       "Add to favorites": [
         "Zu Favoriten hinzufügen"
       ],
+      "All": [
+        "Alle"
+      ],
       "Analyze another export": [
         "Einen anderen Export analysieren"
       ],
@@ -3397,6 +3383,9 @@
       ],
       "Back": [
         "Zurück"
+      ],
+      "Back to all files": [
+        "Zurück zu allen Dateien"
       ],
       "Back to chat": [
         "Zurück zum Chat"
@@ -3446,8 +3435,8 @@
       "Continue": [
         "Fortfahren"
       ],
-      "Copy content": [
-        "Inhalt kopieren"
+      "Copy": [
+        "Kopieren"
       ],
       "Copy link & caption": [
         "Link & Bildunterschrift kopieren"
@@ -3491,41 +3480,29 @@
       "Delete table": [
         "Tabelle löschen"
       ],
+      "Delete task": [
+        "Aufgabe löschen"
+      ],
       "Describe desired changes...": [
         "Beschreibe gewünschte Änderungen..."
       ],
       "Deselect all": [
         "Alle abwählen"
       ],
+      "Discard changes": [
+        "Änderungen verwerfen"
+      ],
       "Divider": [
         "Trennzeichen"
+      ],
+      "Documents": [
+        "Dokumente"
       ],
       "Download": [
         "Herunterladen"
       ],
       "Download image": [
         "Bild herunterladen"
-      ],
-      "Download PDF": [
-        "PDF herunterladen"
-      ],
-      "Download plain text": [
-        "Klartext herunterladen"
-      ],
-      "Download PPTX": [
-        "PPTX herunterladen"
-      ],
-      "Download source (Markdown)": [
-        "Quelle herunterladen (Markdown)"
-      ],
-      "Download source file": [
-        "Quelldatei herunterladen"
-      ],
-      "Download web presentation (HTML)": [
-        "Webpräsentation (HTML) herunterladen"
-      ],
-      "Download Word (.docx)": [
-        "Als Word-Datei (.docx) herunterladen"
       ],
       "Edit": [
         "Bearbeiten"
@@ -3599,6 +3576,9 @@
       "Italic": [
         "Kursiv"
       ],
+      "Keep editing": [
+        "Bearbeitung fortsetzen"
+      ],
       "Light": [
         "Hell"
       ],
@@ -3614,8 +3594,17 @@
       "Manage Drive folder link": [
         "Drive-Ordnerlink verwalten"
       ],
+      "Markdown": [
+        "Markdown"
+      ],
       "Modify": [
         "Anpassen"
+      ],
+      "More actions": [
+        "Weitere Aktionen"
+      ],
+      "More actions for ${ title }": [
+        "Weitere Aktionen für ${ title }"
       ],
       "More breadcrumbs": [
         "Weitere Navigationspfade"
@@ -3629,14 +3618,17 @@
       "Next message": [
         "Nächste Nachricht"
       ],
-      "Next version": [
-        "Nächste Version"
-      ],
       "Numbered list": [
         "Nummerierte Liste"
       ],
       "Open": [
         "Öffnen"
+      ],
+      "Open ${ entry.title } in its chat": [
+        "${ entry.title } in diesem Chat öffnen"
+      ],
+      "Open chat": [
+        "Chat öffnen"
       ],
       "Open conversation": [
         "Unterhaltung öffnen"
@@ -3644,8 +3636,14 @@
       "PDF": [
         "PDF"
       ],
+      "Plain text": [
+        "Klartext"
+      ],
       "Plain text (.txt)": [
         "Klartext (.txt)"
+      ],
+      "PowerPoint": [
+        "PowerPoint"
       ],
       "PowerPoint (.pptx)": [
         "PowerPoint (.pptx)"
@@ -3655,9 +3653,6 @@
       ],
       "Previous message": [
         "Vorherige Nachricht"
-      ],
-      "Previous version": [
-        "Vorherige Version"
       ],
       "Quote": [
         "Zitat"
@@ -3704,11 +3699,8 @@
       "Save": [
         "Speichern"
       ],
-      "Save as PDF…": [
-        "Als PDF speichern …"
-      ],
-      "Save to Drive": [
-        "In Drive speichern"
+      "Save to ${ DRIVE_APP_NAME }": [
+        "In ${ DRIVE_APP_NAME } speichern"
       ],
       "Select all": [
         "Alles auswählen"
@@ -3718,6 +3710,9 @@
       ],
       "Select conversation": [
         "Unterhaltung auswählen"
+      ],
+      "Select time zone": [
+        "Zeitzone auswählen"
       ],
       "Send": [
         "Senden"
@@ -3731,17 +3726,29 @@
       "Show knowledge panel": [
         "Wissenspanel anzeigen"
       ],
+      "Show more": [
+        "Mehr anzeigen"
+      ],
       "Show sidebar": [
         "Seitenleiste anzeigen"
       ],
+      "Slides": [
+        "Folien"
+      ],
       "Source (Markdown)": [
         "Quelle (Markdown)"
+      ],
+      "Source file": [
+        "Quelldatei"
       ],
       "Start a chat": [
         "Chat beginnen"
       ],
       "Strikethrough": [
         "Durchgestrichen"
+      ],
+      "Task options": [
+        "Aufgaben-Optionen"
       ],
       "Think longer": [
         "Länger nachdenken"
@@ -3779,17 +3786,35 @@
       "Upload your AI export": [
         "Lade deinen KI-Export hoch"
       ],
+      "Versions and actions": [
+        "Versionen und Aktionen"
+      ],
+      "View latest": [
+        "Neueste anzeigen"
+      ],
       "View mode": [
         "Ansichtsmodus"
       ],
       "View v${ versionNumber }": [
         "V${ versionNumber } anzeigen"
       ],
+      "Web": [
+        "Web"
+      ],
+      "Web presentation": [
+        "Webpräsentation"
+      ],
+      "Webpage": [
+        "Webseite"
+      ],
       "What needs changed?": [
         "Was muss geändert werden?"
       ],
       "Word (.docx)": [
         "Word (.docx)"
+      ],
+      "Word document": [
+        "Word-Dokument"
       ]
     },
     "collider_2025:Agent": {
@@ -3825,6 +3850,11 @@
         "Schreibassistent"
       ]
     },
+    "collider_2025:Alert": {
+      "Please fix the form errors and try again.": [
+        "Bitte behebe die Fehler im Formular und versuche es erneut."
+      ]
+    },
     "collider_2025:Badge": {
       "Built-in": [
         "Integriert"
@@ -3858,8 +3888,14 @@
       "Create project": [
         "Projekt erstellen"
       ],
+      "Create task": [
+        "Aufgabe erstellen"
+      ],
       "Delete": [
         "Löschen"
+      ],
+      "Delete task": [
+        "Aufgabe löschen"
       ],
       "Edit": [
         "Bearbeiten"
@@ -3875,6 +3911,9 @@
       ],
       "Images": [
         "Bilder"
+      ],
+      "Library": [
+        "Bibliothek"
       ],
       "Link this folder": [
         "Diesen Ordner verknüpfen"
@@ -3902,6 +3941,9 @@
       ],
       "Save": [
         "Speichern"
+      ],
+      "Save changes": [
+        "Änderungen speichern"
       ],
       "Save here": [
         "Hier speichern"
@@ -3934,6 +3976,11 @@
         "Vom Computer hochladen"
       ]
     },
+    "collider_2025:Description": {
+      "Use the connectors above without asking. Off: pause and notify me before each Ask tool.": [
+        "Verwende die oben genannten Konnektoren, ohne zu fragen. Ausgeschaltet: Vor jedem Frage-Tool pausieren und mich benachrichtigen."
+      ]
+    },
     "collider_2025:Error": {
       "${ LUMO_SHORT_APP_NAME } needs local database storage (IndexedDB) to run, but it isn't available in this browser. This can happen when cookies or website data are blocked, in private browsing, or with Lockdown Mode enabled. Please allow website data for this site and reload.": [
         "${ LUMO_SHORT_APP_NAME } benötigt zum Ausführen lokalen Datenspeicher (IndexedDB), der in diesem Browser jedoch nicht verfügbar ist. Dies kann passieren, wenn Cookies oder Website-Daten blockiert sind, im Inkognito-Modus gesurft wird oder der Sperrmodus aktiviert ist. Bitte lass Website-Daten für diese Seite zu und lade die Seite neu."
@@ -3941,8 +3988,23 @@
       "Cannot link the root folder. Please select a subfolder.": [
         "Du kannst nicht den Stammordner verknüpfen. Wähle bitte einen Unterordner aus."
       ],
+      "Choose a date and time in the future": [
+        "Wähle ein Datum und eine Urzeit, die in der Zukunft liegen"
+      ],
       "Database connection lost. Please refresh the page to continue.": [
         "Datenbankverbindung verloren. Bitte lade die Seite neu, um fortzufahren."
+      ],
+      "Enter a name": [
+        "Name eingeben"
+      ],
+      "Enter a valid date and time for this one-time run": [
+        "Gib ein gültiges Datum und eine gültige Uhrzeit für diese einmalige Ausführung ein"
+      ],
+      "Enter a valid time": [
+        "Gib eine gültige Uhrzeit ein"
+      ],
+      "Enter instructions for each run": [
+        "Instruktionen für jede Ausführung eingeben"
       ],
       "Error uploading file: ${ file.name }": [
         "Fehler beim Hochladen der Datei: ${ file.name }"
@@ -3979,6 +4041,12 @@
       ],
       "Project not found": [
         "Projekt nicht gefunden"
+      ],
+      "Select at least one day of the month": [
+        "Wähle mindestens einen Tag des Monats"
+      ],
+      "Select at least one day of the week": [
+        "Wähle mindestens einen Tag der Woche"
       ]
     },
     "collider_2025:Error (validation)": {
@@ -4080,6 +4148,9 @@
         "${ wordCount } Wort",
         "${ wordCount } Wörter"
       ],
+      "(latest)": [
+        "(Neuste)"
+      ],
       "ad value": [
         "Werbewert"
       ],
@@ -4110,8 +4181,8 @@
       "Applying your changes…": [
         "Deine Änderungen werden angewendet…"
       ],
-      "Are you sure you want to delete \"${ project.name }\"? This action cannot be undone.": [
-        "Möchtest du \"${ project.name }\" wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden."
+      "Are you sure you want to delete \"${ taskName }\"? This action cannot be undone.": [
+        "Möchtest du \"${ taskName }\" wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden."
       ],
       "Ask a question to get started. Your conversation is private.": [
         "Stelle eine Frage, um loszulegen. Dein Gespräch ist vertraulich."
@@ -4155,6 +4226,12 @@
       "Click your profile icon in the bottom-left corner of the page": [
         "Klicke auf dein Profil-Symbol in der unteren linken Ecke der Seite"
       ],
+      "Code": [
+        "Code"
+      ],
+      "Code · ${ langLabel }": [
+        "Code · ${ langLabel }"
+      ],
       "Conversation encrypted": [
         "Unterhaltung verschlüsselt"
       ],
@@ -4163,9 +4240,6 @@
       ],
       "Cookies or website data are blocked in your browser settings": [
         "In deinen Browsereinstellungen sind Cookies oder Website-Daten blockiert"
-      ],
-      "Copied": [
-        "Kopiert"
       ],
       "Create images, apply styles, and sketch ideas. Sign in or create a free account to save your creations.": [
         "Erstelle Bilder, wende Stile an und skizziere Ideen. Melde dich an oder erstelle ein kostenloses Konto, um deine Kreationen zu speichern."
@@ -4176,11 +4250,11 @@
       "Create visuals from a prompt, edit photos, analyze charts, or turn rough sketches into polished graphics.": [
         "Erstelle Grafiken aus einer Eingabeaufforderung, bearbeite Fotos, analysiere Diagramme oder verwandle grobe Skizzen in ausgearbeitete Grafiken."
       ],
-      "Creating artifact": [
-        "Artefakt wird erstellt"
+      "Created": [
+        "Erstellt"
       ],
-      "Creating artifact…": [
-        "Artefakt wird erstellt…"
+      "Creating…": [
+        "Wird erstellt…"
       ],
       "Current chat:": [
         "Aktueller Chat:"
@@ -4194,6 +4268,12 @@
       "Discover what Big Tech AI could piece together about you from your chat history — and get a privacy score you can share.": [
         "Finde heraus, was die KI von Big Tech aus deinem Chatverlauf über dich zusammensetzen könnte – und erhalte einen Privatsphäre-Score, den du teilen kannst."
       ],
+      "Document · MD": [
+        "Dokument · MD"
+      ],
+      "Documents, code and webpages created in your chats will appear here.": [
+        "In deinen Chats erstellte Dokumente, Code und Webseiten werden hier angezeigt."
+      ],
       "Drafting content…": [
         "Inhalt wird entworfen…"
       ],
@@ -4202,6 +4282,9 @@
       ],
       "Drive files are not available for guest users": [
         "Drive-Dateien sind für Gastbenutzer nicht verfügbar"
+      ],
+      "Edited by hand": [
+        "Manuell bearbeitet"
       ],
       "Every conversation leaves behind small clues. On their own, they don't say much. Together, they can reveal a surprisingly detailed picture of your life. This report shows what other AI providers can infer from your chats. But unlike them, ${ LUMO_SHORT_APP_NAME } doesn't see your data.": [
         "Jede Unterhaltung hinterlässt kleine Hinweise. Für sich genommen sagen sie nicht viel aus. Zusammengenommen können sie jedoch ein überraschend detailliertes Bild deines Lebens zeichnen. Dieser Bericht zeigt, welche Rückschlüsse andere KI-Anbieter aus deinen Chats ziehen können. Im Gegensatz zu ihnen hat ${ LUMO_SHORT_APP_NAME } jedoch keinen Zugriff auf deine Daten."
@@ -4302,11 +4385,14 @@
       "Please upload your AI export before continuing.": [
         "Bitte lade deinen KI-Export hoch, bevor du fortfährst."
       ],
-      "Preparing your side panel…": [
-        "Seitenleiste wird vorbereitet…"
+      "Preparing your canvas…": [
+        "Dein Arbeitsbereich wird vorbereitet…"
       ],
       "Preparing…": [
         "Wird vorbereitet…"
+      ],
+      "Presentation · HTML": [
+        "Präsentation · HTML"
       ],
       "Processing file...": [
         "Datei wird verarbeitet..."
@@ -4323,11 +4409,14 @@
       "red flags": [
         "Warnsignale"
       ],
-      "Revising your artifact…": [
-        "Dein Artefakt wird überarbeitet…"
+      "Revised": [
+        "Überarbeitet"
       ],
       "Run tasks on a schedule or whenever you need them. Tasks run on this computer while ${ LUMO_SHORT_APP_NAME } is open.": [
         "Führe Aufgaben nach einem Zeitplan oder bei Bedarf aus. Die Aufgaben werden auf diesem Computer ausgeführt, solange ${ LUMO_SHORT_APP_NAME } geöffnet bleibt."
+      ],
+      "Runs on this computer while ${ LUMO_SHORT_APP_NAME } is open. If your computer is asleep, it runs when ${ LUMO_SHORT_APP_NAME } next opens.": [
+        "Wird auf diesem Computer ausgeführt, solange ${ LUMO_SHORT_APP_NAME } geöffnet ist. Befindet sich dein Computer im Ruhezustand, wird die Anwendung ausgeführt, sobald ${ LUMO_SHORT_APP_NAME } das nächste Mal geöffnet wird."
       ],
       "Saving as ${ formatLabel }. Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to use, then click \"Save here\".": [
         "Als ${ formatLabel } speichern. Gehe zum Ordner ${ DRIVE_SHORT_APP_NAME }, den du verwenden möchtest, und klicke dann auf «Hier speichern»."
@@ -4425,17 +4514,26 @@
       "v${ versionNumber }": [
         "V${ versionNumber }"
       ],
-      "v${ versionNumber } of ${ totalVersions }": [
-        "V${ versionNumber } von ${ totalVersions }"
-      ],
       "We'll save your card so you can attach it to the post — social sites can't add the image for you.": [
         "Wir speichern deine Karte, damit du sie an den Post anhängen kannst – soziale Netzwerke können das Bild nicht für dich hinzufügen."
+      ],
+      "Webpage · HTML": [
+        "Webseite · HTML"
+      ],
+      "You": [
+        "Du"
       ],
       "You edited ${ meta.artifactTitle }": [
         "Du hast ${ meta.artifactTitle } bearbeitet"
       ],
+      "You may have unsaved changes. If you leave now, your edits will be lost.": [
+        "Möglicherweise hast du noch nicht gespeicherte Änderungen. Wenn du die Seite jetzt verlässt, gehen deine Änderungen verloren."
+      ],
       "You're using private browsing": [
         "Du benutzt privates Surfen"
+      ],
+      "You're viewing version ${ versionNumber } of ${ versionCount }, from ${ time }.": [
+        "Du siehst gerade Version ${ versionNumber } von ${ versionCount }, vom ${ time }."
       ],
       "Your export is encrypted in transit and processed without being stored on ${ LUMO_SHORT_APP_NAME }'s servers.": [
         "Dein Export wird während der Übertragung verschlüsselt und verarbeitet, ohne auf den Servern von ${ LUMO_SHORT_APP_NAME } gespeichert zu werden."
@@ -4549,11 +4647,11 @@
       "AI platform": [
         "KI-Plattform"
       ],
-      "Artifact full screen view": [
-        "Vollbildansicht des Artefakts"
+      "Canvas": [
+        "Arbeitsbereich"
       ],
-      "Artifact view": [
-        "Artefaktansicht"
+      "Canvas full screen view": [
+        "Vollbildansicht des Arbeitsbereichs"
       ],
       "Card theme": [
         "Karten-Farbschema"
@@ -4563,6 +4661,9 @@
       ],
       "chats": [
         "Chats"
+      ],
+      "Connectors this task can use": [
+        "Konnektoren, die diese Aufgabe verwenden können"
       ],
       "Conversation starters (optional)": [
         "Unterhaltungsaufhänger (optional)"
@@ -4575,6 +4676,15 @@
       ],
       "Data brokers": [
         "Datenhändler"
+      ],
+      "Date": [
+        "Datum"
+      ],
+      "Days of month": [
+        "Tage des Monats"
+      ],
+      "Days of week": [
+        "Tage der Woche"
       ],
       "Describe what to change": [
         "Beschreibe, was geändert werden soll"
@@ -4591,6 +4701,9 @@
       "Edit conversation title": [
         "Titel der Unterhaltung bearbeiten"
       ],
+      "Filter by type": [
+        "Nach Typ filtern"
+      ],
       "Fine": [
         "Fein"
       ],
@@ -4599,6 +4712,9 @@
       ],
       "Formatting": [
         "Formatierung"
+      ],
+      "Frequency": [
+        "Zeitraum"
       ],
       "Generating": [
         "Wird erzeugt"
@@ -4657,6 +4773,9 @@
       "Name": [
         "Name"
       ],
+      "Notify me when a run finishes": [
+        "Benachrichtige mich, wenn eine Ausführung beendet ist"
+      ],
       "Personalized pricing": [
         "Individuelle Preisgestaltung"
       ],
@@ -4678,6 +4797,9 @@
       "Scams": [
         "Betrugsversuche"
       ],
+      "Search library": [
+        "Bibliothek durchsuchen"
+      ],
       "Selected:": [
         "Ausgewählt:"
       ],
@@ -4686,6 +4808,9 @@
       ],
       "Thick": [
         "Dick"
+      ],
+      "Time": [
+        "Uhrzeit"
       ],
       "Tips": [
         "Hinweise"
@@ -4696,11 +4821,17 @@
       "Untitled project": [
         "Unbenanntes Projekt"
       ],
+      "Untitled task": [
+        "Unbenannte Aufgabe"
+      ],
       "Upload": [
         "Hochladen"
       ],
-      "Use template": [
-        "Vorlage verwenden"
+      "What should ${ LUMO_SHORT_APP_NAME } do each time?": [
+        "Was soll ${ LUMO_SHORT_APP_NAME } jedes Mal tun?"
+      ],
+      "When to run": [
+        "Wann ausführen"
       ]
     },
     "collider_2025:Notification": {
@@ -4715,8 +4846,17 @@
       "All": [
         "Alle"
       ],
+      "Always local time": [
+        "Immer lokale Zeit"
+      ],
+      "Daily": [
+        "Täglich"
+      ],
       "Date created": [
         "Erstellungsdatum"
+      ],
+      "Day ${ day }": [
+        "Tag ${ day }"
       ],
       "Favorited": [
         "Favorisiert"
@@ -4726,6 +4866,15 @@
       ],
       "Last updated": [
         "Zuletzt aktualisiert"
+      ],
+      "Monthly": [
+        "Monatlich"
+      ],
+      "Once": [
+        "Einmal"
+      ],
+      "Weekly": [
+        "Wöchentlich"
       ]
     },
     "collider_2025:Placeholder": {
@@ -4779,6 +4928,9 @@
       ],
       "Search custom ${ LUMO_SHORT_APP_NAME }": [
         "Benutzerdefinierte ${ LUMO_SHORT_APP_NAME } suchen"
+      ],
+      "Search library": [
+        "Bibliothek durchsuchen"
       ],
       "Sign in required": [
         "Anmeldung erforderlich"
@@ -4962,14 +5114,8 @@
       "Created an image": [
         "Bild erstellt"
       ],
-      "Created artifact": [
-        "Artefakt erstellt"
-      ],
       "Creating an image": [
         "Bild wird erstellt"
-      ],
-      "Creating artifact": [
-        "Artefakt wird erstellt"
       ],
       "Dividend Yield": [
         "Dividendenrendite"
@@ -5064,11 +5210,8 @@
       "Performance comparison": [
         "Leistungsvergleich"
       ],
-      "Prepared your side panel": [
-        "Seitenleiste vorbereitet"
-      ],
-      "Preparing your side panel": [
-        "Seitenleiste wird vorbereitet"
+      "Prepared your canvas": [
+        "Dein Arbeitsbereich ist vorbereitet"
       ],
       "Price": [
         "Preis"
@@ -5203,6 +5346,9 @@
       ],
       "Gallery": [
         "Galerie"
+      ],
+      "Images": [
+        "Bilder"
       ]
     },
     "collider_2025:Time": {
@@ -5212,8 +5358,26 @@
       "${ ageMinutes }m ago": [
         "Vor ${ ageMinutes } Min."
       ],
+      "${ day } at ${ time }": [
+        "${ day } um ${ time }"
+      ],
+      "${ minutes } min": [
+        "${ minutes } Min."
+      ],
       "Just now": [
         "Gerade eben"
+      ],
+      "Now": [
+        "Jetzt"
+      ],
+      "Today at ${ time }": [
+        "Heute um ${ time }"
+      ],
+      "Yesterday": [
+        "Gestern"
+      ],
+      "Yesterday at ${ time }": [
+        "Gestern um ${ time }"
       ]
     },
     "collider_2025:Title": {
@@ -5222,6 +5386,9 @@
       ],
       "An AI assistant should empower you, not exploit you for your data.": [
         "Ein KI-Assistent sollte dich unterstützen, statt dich für deine Daten auszunutzen."
+      ],
+      "Auto-approve": [
+        "Automatische Genehmigung"
       ],
       "Better web search": [
         "Bessere Web-Suche"
@@ -5262,11 +5429,20 @@
       "Delete project?": [
         "Projekt löschen?"
       ],
+      "Delete scheduled task?": [
+        "Geplante Aufgabe löschen?"
+      ],
       "Delete your data regularly": [
         "Lösche deine Daten regelmäßig"
       ],
       "Detail makes fraud convincing": [
         "Details machen Betrug überzeugend"
+      ],
+      "Discard changes?": [
+        "Änderungen verwerfen?"
+      ],
+      "Download as": [
+        "Herunterladen als"
       ],
       "Edit custom ${ LUMO_SHORT_APP_NAME }": [
         "Benutzerdefinierte ${ LUMO_SHORT_APP_NAME } bearbeiten"
@@ -5276,6 +5452,9 @@
       ],
       "Edit Project": [
         "Projekt bearbeiten"
+      ],
+      "Edit scheduled task": [
+        "Geplante Aufgabe bearbeiten"
       ],
       "Every clarification is a new data point": [
         "Jede Präzisierung ist ein neuer Datenpunkt"
@@ -5325,6 +5504,9 @@
       "Introducing ${ LUMO_SHORT_APP_NAME } 2.0": [
         "Wir präsentieren ${ LUMO_SHORT_APP_NAME } 2.0"
       ],
+      "Library": [
+        "Bibliothek"
+      ],
       "Link Drive Folder": [
         "Drive-Ordner verknüpfen"
       ],
@@ -5357,6 +5539,9 @@
       ],
       "My Projects": [
         "Meine Projekte"
+      ],
+      "New scheduled task": [
+        "Neue geplante Aufgabe"
       ],
       "No chat history yet. Let's start chatting!": [
         "Noch kein Chatverlauf vorhanden. Lass uns chatten!"
@@ -5402,6 +5587,9 @@
       ],
       "Review privacy settings": [
         "Datenschutzeinstellungen überprüfen"
+      ],
+      "Save as": [
+        "Speichern als"
       ],
       "Save to ${ DRIVE_SHORT_APP_NAME }": [
         "In ${ DRIVE_SHORT_APP_NAME } speichern"
@@ -5457,11 +5645,17 @@
       "Untitled conversation": [
         "Unterhaltung ohne Titel"
       ],
+      "Untitled document": [
+        "Unbenanntes Dokument"
+      ],
       "Upload your data export": [
         "Deinen Daten-Export hochladen"
       ],
       "Use AI on your terms": [
         "KI zu deinen Bedingungen nutzen"
+      ],
+      "Versions": [
+        "Versionen"
       ],
       "We couldn't read your paper trail": [
         "Wir konnten deinen Aktivitätsverlauf nicht lesen"
@@ -5492,6 +5686,9 @@
       ],
       "Your shareable card": [
         "Deine teilbare Karte"
+      ],
+      "Your tasks": [
+        "Deine Aufgaben"
       ],
       "Your traits get bundled and sold": [
         "Deine Eigenschaften werden zu Paketen zusammengefasst und verkauft"
@@ -7073,38 +7270,6 @@
         "Kein Bild ausgewählt"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "Family-Gruppe nicht erkannt. Bitte versuche es erneut."
-      ],
-      "Organization not recognized. Try again.": [
-        "Organisation nicht erkannt. Bitte versuche es erneut."
-      ]
-    },
-    "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "Gib zur Bestätigung den Namen der Family-Gruppe ein"
-      ],
-      "Enter organization name to confirm": [
-        "Gib zur Bestätigung den Namen der Organisation ein"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Dadurch werden alle mit deiner Organisation verbundenen Unterbenutzer, Konten und Daten dauerhaft gelöscht."
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Dadurch werden alle Premiumfunktionen von ${ BRAND_NAME } für jedes Family-Mitglied entfernt."
-      ]
-    },
-    "familyOffer_2023:Title": {
-      "Delete family group?": [
-        "Family-Gruppe löschen?"
-      ],
-      "Delete organization?": [
-        "Organisation löschen?"
-      ]
-    },
     "Feature": {
       "Unlimited hide-my-email aliases": [
         "Unbegrenzte hide-my-email-Aliasse"
@@ -7291,13 +7456,6 @@
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/Monat)"
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } Bonus-Speicherplatz"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "${ organization.BonusVPN } zusätzliche Verbindung für ${ VPN_APP_NAME } (ermöglicht es dir, weitere Geräte mit VPN zu verbinden)",
-        "${ organization.BonusVPN } zusätzliche Verbindungen für ${ VPN_APP_NAME } (ermöglicht es dir, weitere Geräte mit VPN zu verbinden)"
-      ],
       "0 MB": [
         "0 MB"
       ],
@@ -7306,9 +7464,6 @@
       ],
       "1 vault per user": [
         "1 Tresor je Benutzer"
-      ],
-      "30-day money-back guarantee.": [
-        "30 Tage Geld-zurück-Garantie."
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Eine Telefonnummer kann nur zum Verifizieren eines ${ BRAND_NAME }-Kontos verwendet werden."
@@ -7363,9 +7518,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Abrechnungszeitraum: ${ text }"
-      ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Durch den Wechsel auf das kostenlose Abonnement verlierst du diese Leistungen dauerhaft, auch wenn du in Zukunft wieder auf ein kostenpflichtiges Abonnement umsteigst."
       ],
       "Chart spec view": [
         "Ansicht der Diagrammspezifikation"
@@ -7427,9 +7579,6 @@
       ],
       "Downgrade": [
         "Downgraden"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Das Downgraden beendet alle Verbindungen zu kostenpflichtigen ${ VPN_APP_NAME }-Servern."
       ],
       "Download current logs": [
         "Aktuelle Protokolle herunterladen"
@@ -7502,15 +7651,6 @@
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "Wenn du den Zugriff auf deine Authenticator-App verloren hast, kannst du 1 der 16 Wiederherstellungscodes verwenden, die du beim Einrichten der Zwei-Faktor-Authentifizierung erhalten hast. ${ learnMoreLink }"
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Wenn du mit dem Downgrade fortfährst, verlierst du den Zugang zu den kostenpflichtigen Funktionen von ${ MAIL_APP_NAME } und ${ VPN_APP_NAME }."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Wenn du mit dem Downgrade fortfährst, verlierst du den Zugang zu den kostenpflichtigen Funktionen von ${ MAIL_APP_NAME }, einschließlich zusätzlichem Speicher und Filtern."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Wenn du mit dem Downgrade fortfährst, verlierst du den Zugang zu den kostenpflichtigen Funktionen von ${ VPN_APP_NAME }."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Im nächsten Schritt kann eine Einzahlung mit einer Bitcoin-Adresse getätigt werden."
@@ -7668,9 +7808,6 @@
       "Setting up your new address…": [
         "Einrichtung deiner neuen E-Mail-Adresse…"
       ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Da du ein treuer Benutzer bist, wurden deinem Konto zusätzliche Funktionen hinzugefügt."
-      ],
       "Size:": [
         "Größe:"
       ],
@@ -7771,8 +7908,14 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Wir werden dich in einem neuen Browser-Tab zu PayPal umleiten, um diese Zahlung abzuschließen. Falls du Pop-up-Blocker verwendest, deaktiviere diese bitte, um fortzufahren."
       ],
+      "We'll get back to you shortly.": [
+        "Wir melden uns in Kürze bei dir."
+      ],
       "We'll send a new verification code to ${ strong }": [
         "Wir senden einen neuen Verifizierungscode an ${ strong }"
+      ],
+      "Week": [
+        "Woche"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Möchtest du einen neuen Verifizierungscode anfordern oder eine alternative Verifizierungsmethode verwenden?"
@@ -7817,9 +7960,6 @@
       ],
       "You may be redirected to your bank’s website.": [
         "Du wirst möglicherweise zur Website deiner Bank weitergeleitet."
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Du musst alle zusätzlichen Benutzer, Adressen und benutzerdefinierten Domänen von ${ MAIL_APP_NAME } deaktivieren oder entfernen, bevor du dein Abonnement downgraden kannst."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "An diesem Datum verlierst du den Zugang zu ${ planTitle }-Funktionen."
@@ -8081,6 +8221,9 @@
       "Phone number": [
         "Telefonnummer"
       ],
+      "Please share any feedback to help us improve.": [
+        "Bitte teile uns dein Feedback mit, damit wir uns verbessern können."
+      ],
       "Postal code": [
         "Postleitzahl"
       ],
@@ -8126,6 +8269,9 @@
       "What should ${ LUMO_SHORT_APP_NAME } call you?": [
         "Wie soll ${ LUMO_SHORT_APP_NAME } dich nennen?"
       ],
+      "Why would you like to cancel?": [
+        "Warum möchtest du stornieren?"
+      ],
       "Your password (admin)": [
         "Dein Passwort (Admin)"
       ],
@@ -8169,6 +8315,9 @@
       ],
       "clearing your browser cache": [
         "Leeren des Browser-Cache"
+      ],
+      "Customer Support": [
+        "Kundensupport"
       ],
       "Enforcing 2FA for organizations": [
         "2FA für Organisationen erzwingen"
@@ -8245,6 +8394,9 @@
       ],
       "Assets": [
         "Vermögenswerte"
+      ],
+      "Behaves as if the backend refused a message for this chat: shows the toast, replaces the composer with \"Start new chat\", and saves the lock to IndexedDB so it survives a reload. Unlock removes it from both.": [
+        "Verhält sich so, als hätte das Backend eine Nachricht für diesen Chat abgelehnt: Es wird eine Toast-Meldung angezeigt, das Eingabefeld wird durch „Neuen Chat starten“ ersetzt und die Sperre wird in IndexedDB gespeichert, damit sie auch nach einem Neuladen erhalten bleibt. Durch das Entsperren wird sie aus beiden entfernt."
       ],
       "Buffer size": [
         "Puffergröße"
@@ -8324,6 +8476,9 @@
       "Local storage (IndexedDB)": [
         "Lokaler Speicher (indexierte Datenbank)"
       ],
+      "Locked": [
+        "Gesperrt"
+      ],
       "max": [
         "max."
       ],
@@ -8365,6 +8520,9 @@
       ],
       "Open a conversation to enable generation error testing.": [
         "Eine Unterhaltung öffnen, um die Fehlerprüfung bei der Erzeugung zu aktivieren."
+      ],
+      "Open a conversation to simulate the server message limit.": [
+        "Öffne eine Unterhaltung, um das Nachrichtenlimit des Servers zu simulieren."
       ],
       "Performance": [
         "Leistung"
@@ -8413,6 +8571,12 @@
       ],
       "Send spaces limit to native": [
         "Limit für Spaces an Native senden"
+      ],
+      "Server message limit (current chat)": [
+        "Nachrichtenlimit des Servers (aktueller Chat)"
+      ],
+      "Simulate server rejection": [
+        "Server-Ablehnung simulieren"
       ],
       "Smoothing (Spring-Mass)": [
         "Glättung (Feder-Masse)"
@@ -8485,6 +8649,9 @@
       ],
       "Triggers generation error messages with tier-specific messaging. User type: ${ lumoUserType }": [
         "Löst Fehlermeldungen mit stufenspezifischen Meldungen aus. Benutzertyp: ${ lumoUserType }"
+      ],
+      "Unlock": [
+        "Entsperren"
       ],
       "Unsynced conversations": [
         "Nicht synchronisierte Unterhaltungen"
@@ -8660,31 +8827,11 @@
       ]
     },
     "new_plans: action": {
-      "Delete account": [
-        "Konto löschen"
-      ],
-      "Downgrade account": [
-        "Konto downgraden"
-      ],
       "Get ${ BRAND_NAME } for free": [
         "${ BRAND_NAME } kostenlos holen"
       ],
       "Get ${ planName }": [
         "${ planName } holen"
-      ],
-      "Keep ${ plan }": [
-        "${ plan } behalten"
-      ],
-      "Keep account": [
-        "Konto behalten"
-      ],
-      "Switch plan": [
-        "Abonnement wechseln"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade auf ${ downgradedPlanName }"
       ]
     },
     "new_plans: feature": {
@@ -9168,18 +9315,6 @@
       "For next-level password management and identity protection.": [
         "Für die nächste Stufe der Passwortverwaltung und des Identitätsschutzes."
       ],
-      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
-        "Wenn du dein Konto löschst, verlierst du alle Vorteile des ${ visionary }-Abonnements und es wird für dich nicht verfügbar sein, wenn du ein neues Konto erstellst."
-      ],
-      "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
-        "Wenn du dein Konto zurückstufst, verlierst du alle Vorteile des ${ visionary }-Abonnements und es wird für dich anschließend nicht mehr verfügbar sein."
-      ],
-      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
-        "Wenn du zu einem anderen Abonnement wechselst, verlierst du alle Vorteile des ${ visionary }-Abonnements und kannst du anschließend nicht zu ${ visionary } zurückwechseln."
-      ],
-      "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
-        "Unser ${ visionary }-Abonnement steht neuen Benutzern nicht länger zur Verfügung, da es ein spezielles Abonnement für Originalbenutzer von ${ BRAND_NAME } ist und besondere Funktionen und Vorteile umfasst."
-      ],
       "Pay once, secure your passwords and identity forever.": [
         "Einmal bezahlen, Passwörter und Identität für immer sichern."
       ],
@@ -9209,29 +9344,14 @@
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
         "Unbegrenzte Privatsphäre und mehr Speicher für bis zu 2 Personen."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
-        "Bei deinem aktuellen Abonnement profitierst du von einem Sonderangebotspreis. Wenn du dein Konto löschst, können wir ihn dir nicht mehr ermöglichen, wenn du ein neues Konto erstellst."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
-        "Bei deinem aktuellen Abonnement profitierst du von einem Sonderangebotspreis. Wenn du dein Konto downgradest, können wir ihn dir nicht mehr ermöglichen, wenn du ein neues Abonnement abschließt."
       ]
     },
     "new_plans: title": {
-      "Delete account?": [
-        "Konto löschen?"
-      ],
-      "Downgrade account?": [
-        "Konto downgraden?"
-      ],
       "Review subscription": [
         "Abonnement überprüfen"
       ],
       "Review subscription and pay": [
         "Abonnement prüfen und bezahlen"
-      ],
-      "Switch plans?": [
-        "Abonnement wechseln?"
       ]
     },
     "new_plans: tooltip": {
@@ -9944,8 +10064,8 @@
       ]
     },
     "Payments.iDEAL": {
-      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
-        "Mit der Bestätigung ermächtigst du ${ BRAND_NAME } und Stripe, unseren Zahlungsdienstleister, zukünftige Zahlungen für dein Abonnement per SEPA-Lastschrift von diesem Bankkonto einzuziehen, und deiner Bank, diese Zahlungen abzubuchen. Deine erste Zahlung erfolgt jetzt durch ${ IDEAL_WERO_BRAND_NAME }. Dein Abonnement verlängert sich automatisch, bis du es kündigst; wir werden dich vor jeder Abbuchung benachrichtigen. Bei Einzügen per Lastschrift kannst du gemäß den Bedingungen deiner Vereinbarung mit Ihrer Bank innerhalb von 8 Wochen nach dem Abbuchungsdatum eine Rückerstattung bei deiner Bank beantragen. Dies gilt nicht für die Zahlung an ${ IDEAL_WERO_BRAND_NAME }, die du gerade vornimmst."
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Mit deiner Bestätigung ermächtigst du ${ BRAND_NAME } und Stripe (unserem Zahlungsdienstleister), zukünftige Zahlungen für dein Abonnement per SEPA-Lastschrift von diesem Bankkonto einzuziehen, und deine Bank, diese Zahlungen abzubuchen. Deine erste Zahlung wird jetzt von ${ IDEAL_WERO_BRAND_NAME } vorgenommen. Dein Abonnement verlängert sich automatisch, bis du es kündigst; Du wirst vor jeder Abbuchung benachrichtigt. Bei Lastschriften können Sie gemäß den Bedingungen Ihrer Vereinbarung mit Ihrer Bank innerhalb von 8 Wochen nach dem Abbuchungsdatum eine Rückerstattung bei Ihrer Bank beantragen. Dies gilt nicht für die Zahlung an ${ IDEAL_WERO_BRAND_NAME }, die Sie gerade vornehmen."
       ]
     },
     "Payments.info": {
@@ -10064,6 +10184,9 @@
       "e.g. My automation script": [
         "z. B. Mein Automatisierungsskript"
       ],
+      "E.g., ": [
+        "Z. B. "
+      ],
       "Enter a name": [
         "Name eingeben"
       ],
@@ -10084,6 +10207,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Bitte beschreibe das Problem und füge alle Fehlermeldungen hinzu"
+      ],
+      "Please select the main reason": [
+        "Bitte wähle den Hauptgrund"
       ],
       "Postal code": [
         "Postleitzahl"
@@ -10458,9 +10584,6 @@
       "Storage used": [
         "Speicher genutzt"
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Wir fügen das Guthaben für die verbleibende Zeit deinem ${ BRAND_NAME }-Konto hinzu."
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "Dir verbleibt noch **${ daysRemaining }** Tag bei deinem **${ currentPlanName }**-Abonnement.",
         "Dir verbleiben noch **${ daysRemaining }** Tage bei deinem **${ currentPlanName }**-Abonnement."
@@ -10641,9 +10764,6 @@
       ],
       "You have successfully canceled your subscription.": [
         "Du hast dein Abonnement erfolgreich gekündigt."
-      ],
-      "You have successfully unsubscribed": [
-        "Du hast das Abonnement erfolgreich gekündigt."
       ]
     },
     "Suffix": {
@@ -10704,6 +10824,39 @@
         "Gestern"
       ]
     },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } h",
+        "${ hours } h"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 h",
+        "${ hoursInt }.5 h"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } Stunde",
+        "${ hours } Stunden"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 Stunden",
+        "${ hoursInt }.5 Stunden"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } Minute",
+        "${ minutes } Minuten"
+      ]
+    },
+    "Timezone search placeholder": {
+      "Search time zones": [
+        "Zeitzonen durchsuchen"
+      ]
+    },
     "Title": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe-Schreibassistent"
@@ -10756,12 +10909,6 @@
       "Collaborate on documents": [
         "Gemeinsam an Dokumenten arbeiten"
       ],
-      "Confirm downgrade": [
-        "Zurückstufen bestätigen"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Den Verlust der ${ BRAND_NAME }-Boni bestätigen"
-      ],
       "Connect apps and devices": [
         "Apps und Geräte verbinden"
       ],
@@ -10770,6 +10917,9 @@
       ],
       "Connect your custom domain": [
         "Verbinde deine eigene Domain"
+      ],
+      "Contact us": [
+        "Kontaktiere uns"
       ],
       "Coupon": [
         "Gutschein"
@@ -10782,9 +10932,6 @@
       ],
       "Downgrade account": [
         "Konto downgraden"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "Auf ${ downgradedPlanName } downgraden?"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME }-Apps herunterladen"
@@ -10834,6 +10981,9 @@
       "Migrate your organization to ${ BRAND_NAME }": [
         "Deine Organisation nach ${ BRAND_NAME } migrieren"
       ],
+      "Minicalendar": [
+        "Minikalender"
+      ],
       "My Files": [
         "Meine Dateien"
       ],
@@ -10863,6 +11013,9 @@
       ],
       "Request new code": [
         "Neuen Code anfordern"
+      ],
+      "Request sent": [
+        "Anfrage gesendet"
       ],
       "Reverse charge not supported": [
         "Rückerstattungen der Umsatzsteuer nicht unterstützt"
@@ -10932,6 +11085,11 @@
       ],
       "Your shorter address is now ready": [
         "Deine kürzere E-Mail-Adresse ist jetzt fertig"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Heute"
       ]
     },
     "Tooltip": {
@@ -11022,6 +11180,20 @@
       "Try a shorter username (${ n } character max)": [
         "Bitte einen kürzeren Benutzernamen verwenden (max. ${ n } Zeichen)",
         "Bitte einen kürzeren Benutzernamen verwenden (max. ${ n } Zeichen)"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Ich habe einen anderen Dienst gefunden, der mir mehr zusagt"
+      ],
+      "It’s missing a key feature": [
+        "Eine wichtige Funktion fehlt"
+      ],
+      "It’s too expensive": [
+        "Es ist mir zu teuer"
+      ],
+      "Other": [
+        "Anderer Grund"
       ]
     },
     "VPN Plan Feature": {
