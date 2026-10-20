@@ -1,9 +1,11 @@
 import type { ReactNode, SyntheticEvent } from 'react';
-import { useCallback, useState } from 'react';
+import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
 import dragdropImageSvg from '@proton/styles/assets/img/illustrations/drag-and-drop.svg';
+
+import { useUploadDragDropOverlay } from './useUploadDragDropOverlay';
 
 import './UploadDragDrop.scss';
 
@@ -15,30 +17,7 @@ interface UploadDragDropProps {
 }
 
 export const UploadDragDrop = ({ children, className, disabled, onDrop }: UploadDragDropProps) => {
-    const [overlayIsVisible, setOverlayIsVisible] = useState(false);
-
-    const overlayEnabled = !disabled;
-
-    const handleDragOver = useCallback(
-        (e: React.DragEvent<HTMLDivElement>) => {
-            if (!e.dataTransfer.types.includes('Files')) {
-                return;
-            }
-
-            if (overlayIsVisible !== overlayEnabled) {
-                setOverlayIsVisible(overlayEnabled);
-            }
-        },
-        [overlayEnabled, overlayIsVisible]
-    );
-
-    const handleDragLeave = (e: React.DragEvent<HTMLDivElement>) => {
-        // Ignore dragLeave events fired when the cursor moves over a child element of the overlay
-        if (e.relatedTarget instanceof Node && e.currentTarget.contains(e.relatedTarget)) {
-            return;
-        }
-        setOverlayIsVisible(false);
-    };
+    const { isOverlayVisible, handleDragOver, handleDragLeave } = useUploadDragDropOverlay(!disabled);
 
     const preventDefaultEvent = useCallback((e: SyntheticEvent) => e.preventDefault(), []);
 
@@ -51,14 +30,15 @@ export const UploadDragDrop = ({ children, className, disabled, onDrop }: Upload
         >
             <img className="visibility-hidden absolute h-0 w-0" src={dragdropImageSvg} alt="" aria-hidden="true" />
             {children}
-            {overlayEnabled && overlayIsVisible && (
+            {isOverlayVisible && (
                 <div
                     className="upload-drag-drop"
                     onDragLeave={handleDragLeave}
                     onDragOver={preventDefaultEvent}
                     onDrop={(e) => {
-                        setOverlayIsVisible(false);
-                        void onDrop(e.dataTransfer);
+                        if (e.dataTransfer) {
+                            void onDrop(e.dataTransfer);
+                        }
                     }}
                 >
                     <section className="upload-drag-drop-infobox p-14 pt-11">
