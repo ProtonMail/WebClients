@@ -53,10 +53,26 @@ const RUN_POSES: Record<CatRun, CatPose> = {
     [CatRun.SKID]: CatPose.SKID,
 };
 
+export enum CatTrick {
+    SCHRODINGER_IN_BOX = 'schrodinger-in-box',
+    SCHRODINGER_OUT_OF_BOX = 'schrodinger-out-of-box',
+    NINE_LIVES = 'nine-lives',
+    ENCRYPT = 'encrypt',
+}
+
+const TRICK_POSES: Record<CatTrick, CatPose> = {
+    [CatTrick.SCHRODINGER_IN_BOX]: CatPose.SCHRODINGER_IN_BOX,
+    [CatTrick.SCHRODINGER_OUT_OF_BOX]: CatPose.SCHRODINGER_OUT_OF_BOX,
+    [CatTrick.NINE_LIVES]: CatPose.NINE_LIVES,
+    [CatTrick.ENCRYPT]: CatPose.ENCRYPT,
+};
+
 interface CatState {
     jump: CatJump | null;
     isHidden: boolean;
     run: CatRun | null;
+    trick: CatTrick | null;
+    isSweeping: boolean;
     isHovered: boolean;
     isChatOpen: boolean;
     activity: CatActivity | null;
@@ -70,6 +86,8 @@ export const selectCatPose = ({
     jump,
     isHidden,
     run,
+    trick,
+    isSweeping,
     isHovered,
     isChatOpen,
     activity,
@@ -87,6 +105,12 @@ export const selectCatPose = ({
     }
     if (run) {
         return RUN_POSES[run];
+    }
+    if (trick) {
+        return TRICK_POSES[trick];
+    }
+    if (isSweeping) {
+        return CatPose.SWEEP;
     }
     if (isHovered) {
         return CatPose.PERK;

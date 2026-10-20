@@ -1,5 +1,5 @@
-import { CatPose } from './catPose';
-import { CAT_SPRITE_MANIFEST, getPoseAnimation } from './catSpriteManifest';
+import { CatPose, CatTrick } from './catPose';
+import { CAT_SPRITE_MANIFEST, CAT_TRICK_MS, SWEEP_MS, getPoseAnimation } from './catSpriteManifest';
 
 const PIXEL_REM = 0.1875;
 const STEP_EASING = 'steps(1, end)';
@@ -23,6 +23,21 @@ describe('CAT_SPRITE_MANIFEST', () => {
     it.each(poseEntries)('$pose holds only its last step when it plays once', ({ playsOnce, steps }) => {
         const heldStepIndexes = steps.flatMap(({ ms }, index) => (ms === 0 ? [index] : []));
         expect(heldStepIndexes).toEqual(playsOnce ? [steps.length - 1] : []);
+    });
+});
+
+describe('play-once lengths', () => {
+    it('lingers on the sweep for its linger past the last step', () => {
+        expect(SWEEP_MS).toBe(2500);
+    });
+
+    it('times each trick from its steps plus its linger', () => {
+        expect(CAT_TRICK_MS).toEqual({
+            [CatTrick.SCHRODINGER_IN_BOX]: 5740,
+            [CatTrick.SCHRODINGER_OUT_OF_BOX]: 6960,
+            [CatTrick.NINE_LIVES]: 4090,
+            [CatTrick.ENCRYPT]: 4060,
+        });
     });
 });
 

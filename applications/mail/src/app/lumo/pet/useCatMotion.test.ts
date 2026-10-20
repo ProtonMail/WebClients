@@ -1,7 +1,7 @@
 import { act, renderHook } from '@testing-library/react';
 
 import { PanelSide } from '../floating/panelSide';
-import { CatJump } from './catPose';
+import { CatJump, CatRun, CatTrick } from './catPose';
 import { useCatMotion } from './useCatMotion';
 
 const initialProps = { side: PanelSide.RIGHT, isCatHidden: false, canJump: true, runMs: 1000 };
@@ -44,5 +44,25 @@ describe('useCatMotion', () => {
 
         expect(result.current.shownSide).toBe(PanelSide.LEFT);
         expect(result.current.motion.run).toBeNull();
+    });
+
+    it('plays no trick while running', () => {
+        const { result, rerender } = renderMotion();
+        rerender({ ...initialProps, side: PanelSide.LEFT });
+        expect(result.current.motion.run).toBe(CatRun.GALLOP);
+
+        act(() => result.current.playTrick(CatTrick.ENCRYPT));
+
+        expect(result.current.motion.trick).toBeNull();
+    });
+
+    it('plays no trick while jumping back in', () => {
+        const { result, rerender } = renderMotion({ isCatHidden: true });
+        rerender({ ...initialProps, isCatHidden: false });
+        expect(result.current.motion.jump).toBe(CatJump.IN);
+
+        act(() => result.current.playTrick(CatTrick.ENCRYPT));
+
+        expect(result.current.motion.trick).toBeNull();
     });
 });
