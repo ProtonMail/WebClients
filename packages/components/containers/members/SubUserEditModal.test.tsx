@@ -2,7 +2,13 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 
 import { assignMemberRoles } from '@proton/account';
 import { MEMBER_PRIVATE, MEMBER_ROLE } from '@proton/shared/lib/constants';
-import type { EnhancedMember } from '@proton/shared/lib/interfaces';
+import type {
+    CachedOrganizationKey,
+    EnhancedMember,
+    MemberUnprivatization,
+    Organization,
+} from '@proton/shared/lib/interfaces';
+import { MemberUnprivatizationState } from '@proton/shared/lib/interfaces';
 import type { OrganizationRole, RoleAssignment } from '@proton/shared/lib/interfaces/OrganizationRole';
 import { PREDEFINED_ROLE_NAME, ROLE_SOURCE } from '@proton/shared/lib/interfaces/OrganizationRole';
 
@@ -58,12 +64,20 @@ jest.mock('@proton/account/organizationRoles/hooks', () => ({
     useOrganizationRoles: () => [[mockOwnerRole, mockUserAdminRole], false],
 }));
 
+const defaultOrganization = { MaxVPN: 0, MaxAI: 0, MaxLumo: 0 } as Organization;
+let mockOrganization = defaultOrganization;
 jest.mock('@proton/account/organization/hooks', () => ({
-    useOrganization: () => [{ MaxVPN: 0, MaxAI: 0, MaxLumo: 0 }],
+    useOrganization: () => [mockOrganization],
 }));
+let mockOrganizationKey: CachedOrganizationKey | undefined;
 jest.mock('@proton/account/organizationKey/hooks', () => ({
-    useOrganizationKey: () => [undefined],
+    useOrganizationKey: () => [mockOrganizationKey],
 }));
+const passwordlessOrganizationKey = {
+    Key: { Passwordless: true },
+    privateKey: {},
+    publicKey: {},
+} as CachedOrganizationKey;
 jest.mock('@proton/features', () => ({
     ...jest.requireActual('@proton/features'),
     useFeature: () => ({ feature: undefined, loading: false }),
@@ -145,6 +159,8 @@ describe('SubUserEditModal', () => {
     afterEach(() => {
         jest.clearAllMocks();
         mockDispatch.mockImplementation(mockDefaultDispatch);
+        mockOrganizationKey = undefined;
+        mockOrganization = defaultOrganization;
     });
 
     it.each([
@@ -271,6 +287,65 @@ describe('SubUserEditModal', () => {
         expect(mockCreateNotification).toHaveBeenCalledWith({
             type: 'error',
             text: "Role changes were not saved because the user's roles could not be loaded.",
+        });
+    });
+
+    describe('with a passwordless organization key', () => {
+        beforeEach(() => {
+            mockOrganizationKey = passwordlessOrganizationKey;
+        });
+
+        it('explains that an SSO member without keys gets administrator rights at the next sign in', () => {
+            renderModal(getMember({ Role: MEMBER_ROLE.ORGANIZATION_MEMBER, SSO: 1 }));
+
+            fireEvent.click(screen.getByRole('tab', { name: 'Roles and permissions' }));
+            fireEvent.click(screen.getByLabelText('User Admin'));
+
+            expect(
+                screen.getByText('This user gets administrator rights the next time they sign in.')
+            ).toBeInTheDocument();
+        });
+
+        it('explains the next sign in while the admin invitation of an SSO member is pending', () => {
+            const pendingAdminInvitation = {
+                State: MemberUnprivatizationState.Pending,
+                InvitationData: JSON.stringify({ Address: 'user@example.com', Revision: 1, Admin: true }),
+            } as MemberUnprivatization;
+            renderModal(
+                getMember({ Role: MEMBER_ROLE.ORGANIZATION_MEMBER, SSO: 1, Unprivatization: pendingAdminInvitation })
+            );
+
+            fireEvent.click(screen.getByRole('tab', { name: 'Roles and permissions' }));
+
+            expect(
+                screen.getByText('This user gets administrator rights the next time they sign in.')
+            ).toBeInTheDocument();
+        });
+
+        it('does not explain the next sign in for an SSO member with keys', () => {
+            renderModal(getMember({ Role: MEMBER_ROLE.ORGANIZATION_MEMBER, SSO: 1, PublicKey: 'public-key' }));
+
+            fireEvent.click(screen.getByRole('tab', { name: 'Roles and permissions' }));
+            fireEvent.click(screen.getByLabelText('User Admin'));
+
+            expect(
+                screen.queryByText('This user gets administrator rights the next time they sign in.')
+            ).not.toBeInTheDocument();
+        });
+
+        it('explains the next sign in when the organization disabled the backup password', () => {
+            mockOrganization = {
+                ...defaultOrganization,
+                Settings: { SSOBackupPasswordDisabled: true },
+            } as Organization;
+            renderModal(getMember({ Role: MEMBER_ROLE.ORGANIZATION_MEMBER, SSO: 1 }));
+
+            fireEvent.click(screen.getByRole('tab', { name: 'Roles and permissions' }));
+            fireEvent.click(screen.getByLabelText('User Admin'));
+
+            expect(
+                screen.getByText('This user gets administrator rights the next time they sign in.')
+            ).toBeInTheDocument();
         });
     });
 });

@@ -101,14 +101,20 @@ export const getEditOwnRolesText = () => {
     return c('user_modal').t`You can't change your own roles. Ask another admin to change them.`;
 };
 
+export const getNextSignInForAdminText = () => {
+    return c('user_modal').t`This user gets administrator rights the next time they sign in.`;
+};
+
 export const getRolesTabBanner = ({
     showUpgrade,
     pendingInvitation,
     isEditingSelf = false,
+    requiresSignInForAdmin = false,
 }: {
     showUpgrade: boolean;
     pendingInvitation: boolean;
     isEditingSelf?: boolean;
+    requiresSignInForAdmin?: boolean;
 }): string | undefined => {
     if (showUpgrade) {
         return getUpgradeForAdminRolesText();
@@ -118,6 +124,9 @@ export const getRolesTabBanner = ({
     }
     if (isEditingSelf) {
         return getEditOwnRolesText();
+    }
+    if (requiresSignInForAdmin) {
+        return getNextSignInForAdminText();
     }
     return undefined;
 };
