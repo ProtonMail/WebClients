@@ -74,6 +74,9 @@ allowBuilds:
     ttag-cli: false
 
 patchedDependencies:
+    # Touch-only fix: tapping from a cell in one table into another threw "Cell not found in table." and
+    # locked the Docs editor. Upstream has the same check (0.52.0 has it); drop this when upgrading Lexical.
+    '@lexical/table@0.31.2': patches/@lexical__table@0.31.2.patch
     '@mlc-ai/web-llm@0.2.32': patches/@mlc-ai__web-llm@0.2.32.patch
     '@pdf-lib/standard-fonts@1.0.0': patches/@pdf-lib__standard-fonts@1.0.0.patch
     eslint-plugin-monorepo-cop@1.0.2: patches/eslint-plugin-monorepo-cop@1.0.2.patch
