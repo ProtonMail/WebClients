@@ -26,14 +26,12 @@ const useAvailableApps = () => {
 
     const [organization] = useOrganization();
 
-    const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
     const isSpacesAvailable = useFlag('SpacesAvailable');
 
     const availableApps = getAvailableApps({
         user,
         context: 'app',
         organization,
-        isAuthenticatorAvailable,
         isSpacesAvailable,
     });
 
