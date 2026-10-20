@@ -18,6 +18,7 @@ import DocsLayout from '../DocsLayout'
 import { getDocsLayoutScrollContainer } from './Layout/docsLayoutUtils'
 import { ReadonlyLinkFixPlugin } from './Plugins/Link/ReadonlyLinkFixPlugin'
 import { useDocsDependencies } from './DocsDependenciesProvider'
+import { DocsStyleScope } from './DocsStyleScope'
 
 interface PreviewModeEditorProps {
   clonedEditorState: EditorState
@@ -37,63 +38,65 @@ export function PreviewModeEditor({
   const { canEdit, openLink, getDocumentUrl, replaceDocumentUrl, reportTelemetry } = useDocsDependencies()
 
   return (
-    <SafeLexicalComposer
-      initialConfig={BuildInitialEditorConfig({
-        onError: console.error,
-        editorState: (editor) => {
-          /**
-           * Required to add this before the table nodes are created
-           * since the table wrapper is only added if this is enabled
-           * before the `createDOM` method for a table node is run.
-           */
-          setScrollableTablesActive(editor, true)
-          editor.setEditorState(clonedEditorState)
-        },
-      })}
-    >
-      <Toolbar
-        hasEditAccess={canEdit}
-        userMode={EditorUserMode.Preview}
-        onUserModeChange={onUserModeChange}
-        isPreviewModeToolbar
-        systemMode={EditorSystemMode.PublicView}
-      />
-      <DocsLayout.Grid leftPanelEnabled={tableOfContentsVisible}>
-        <DocsLayout.LeftPanel>
-          {tableOfContentsVisible && (
-            <TableOfContents
-              editorHidden={hidden}
-              getDocumentUrl={getDocumentUrl}
-              replaceDocumentUrl={replaceDocumentUrl}
-              reportTelemetry={reportTelemetry}
-            />
-          )}
-        </DocsLayout.LeftPanel>
-        <DocsLayout.CenterPanel>
-          <RichTextPlugin
-            contentEditable={
-              <ProtonContentEditable
-                className="DocumentEditor w-full max-w-full print:w-full print:max-w-full"
-                style={{
-                  fontFamily: DefaultFont.value,
-                  gridRow: 1,
-                  gridColumn: 1,
-                }}
-                isSuggestionMode={false}
-                data-testid="preview-mode-editor"
+    <DocsStyleScope>
+      <SafeLexicalComposer
+        initialConfig={BuildInitialEditorConfig({
+          onError: console.error,
+          editorState: (editor) => {
+            /**
+             * Required to add this before the table nodes are created
+             * since the table wrapper is only added if this is enabled
+             * before the `createDOM` method for a table node is run.
+             */
+            setScrollableTablesActive(editor, true)
+            editor.setEditorState(clonedEditorState)
+          },
+        })}
+      >
+        <Toolbar
+          hasEditAccess={canEdit}
+          userMode={EditorUserMode.Preview}
+          onUserModeChange={onUserModeChange}
+          isPreviewModeToolbar
+          systemMode={EditorSystemMode.PublicView}
+        />
+        <DocsLayout.Grid leftPanelEnabled={tableOfContentsVisible}>
+          <DocsLayout.LeftPanel>
+            {tableOfContentsVisible && (
+              <TableOfContents
+                editorHidden={hidden}
+                getDocumentUrl={getDocumentUrl}
+                replaceDocumentUrl={replaceDocumentUrl}
+                reportTelemetry={reportTelemetry}
               />
-            }
-            placeholder={null}
-            ErrorBoundary={LexicalErrorBoundary}
-          />
-        </DocsLayout.CenterPanel>
-      </DocsLayout.Grid>
+            )}
+          </DocsLayout.LeftPanel>
+          <DocsLayout.CenterPanel>
+            <RichTextPlugin
+              contentEditable={
+                <ProtonContentEditable
+                  className="DocumentEditor w-full max-w-full print:w-full print:max-w-full"
+                  style={{
+                    fontFamily: DefaultFont.value,
+                    gridRow: 1,
+                    gridColumn: 1,
+                  }}
+                  isSuggestionMode={false}
+                  data-testid="preview-mode-editor"
+                />
+              }
+              placeholder={null}
+              ErrorBoundary={LexicalErrorBoundary}
+            />
+          </DocsLayout.CenterPanel>
+        </DocsLayout.Grid>
 
-      <PreviewStateSyncPlugin clonedEditorState={clonedEditorState} />
-      <PreviewScrollRestorePlugin initialScrollTop={initialScrollTop} />
-      <PreviewCleanupPlugin />
-      <ReadonlyLinkFixPlugin openLink={openLink} />
-    </SafeLexicalComposer>
+        <PreviewStateSyncPlugin clonedEditorState={clonedEditorState} />
+        <PreviewScrollRestorePlugin initialScrollTop={initialScrollTop} />
+        <PreviewCleanupPlugin />
+        <ReadonlyLinkFixPlugin openLink={openLink} />
+      </SafeLexicalComposer>
+    </DocsStyleScope>
   )
 }
 

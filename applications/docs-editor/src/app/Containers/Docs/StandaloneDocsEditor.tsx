@@ -1,5 +1,6 @@
 import { Editor, type EditorProps } from './Editor'
 import { DocsPresentationProvider } from './DocsPresentationProvider'
+import { DocsStyleScope } from './DocsStyleScope'
 
 /**
  * Standalone Docs editor entry point.
@@ -7,8 +8,10 @@ import { DocsPresentationProvider } from './DocsPresentationProvider'
  */
 export function StandaloneDocsEditor(props: EditorProps) {
   return (
-    <DocsPresentationProvider userMode={props.userMode}>
-      <Editor {...props} />
-    </DocsPresentationProvider>
+    <DocsStyleScope>
+      <DocsPresentationProvider userMode={props.userMode}>
+        <Editor {...props} />
+      </DocsPresentationProvider>
+    </DocsStyleScope>
   )
 }

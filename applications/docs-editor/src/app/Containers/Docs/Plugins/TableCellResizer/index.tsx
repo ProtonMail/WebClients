@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
+import * as Ariakit from '@ariakit/react'
 import type { TableDOMCell } from '@lexical/table'
 import type { LexicalEditor } from 'lexical'
 
@@ -19,7 +20,7 @@ import { calculateZoomLevel } from '@lexical/utils'
 import { $getNearestNodeFromDOMNode } from 'lexical'
 import * as React from 'react'
 import type { MouseEventHandler, ReactPortal } from 'react'
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 
 import { useDocsUserMode } from '../../DocsPresentationProvider'
@@ -308,6 +309,7 @@ function TableCellResizer({ editor }: { editor: LexicalEditor }): JSX.Element {
 
   const getResizers = useCallback(() => {
     if (activeCell) {
+      // Viewport coordinates, as the resizer renders in the scope's portal root, fixed at the viewport origin.
       const { height, width, top, left } = activeCell.elem.getBoundingClientRect()
       const zoom = calculateZoomLevel(activeCell.elem)
       const zoneWidth = 7.5 // Pixel width of the zone where you can drag the edge
@@ -316,8 +318,8 @@ function TableCellResizer({ editor }: { editor: LexicalEditor }): JSX.Element {
           backgroundColor: 'none',
           cursor: 'row-resize',
           height: `${zoneWidth}px`,
-          left: `${window.pageXOffset + left}px`,
-          top: `${window.pageYOffset + top + height - (isActiveCellInLastRow ? zoneWidth : zoneWidth / 2)}px`,
+          left: `${left}px`,
+          top: `${top + height - (isActiveCellInLastRow ? zoneWidth : zoneWidth / 2)}px`,
           width: `${width}px`,
           opacity: 0.25,
         },
@@ -325,8 +327,8 @@ function TableCellResizer({ editor }: { editor: LexicalEditor }): JSX.Element {
           backgroundColor: 'none',
           cursor: 'col-resize',
           height: `${height}px`,
-          left: `${window.pageXOffset + left + width - zoneWidth / 2}px`,
-          top: `${window.pageYOffset + top}px`,
+          left: `${left + width - zoneWidth / 2}px`,
+          top: `${top}px`,
           width: `${zoneWidth}px`,
           opacity: 0.25,
         },
@@ -336,13 +338,13 @@ function TableCellResizer({ editor }: { editor: LexicalEditor }): JSX.Element {
 
       if (draggingDirection && mouseCurrentPos && tableRect) {
         if (isHeightChanging(draggingDirection)) {
-          styles[draggingDirection].left = `${window.pageXOffset + tableRect.left}px`
-          styles[draggingDirection].top = `${window.pageYOffset + mouseCurrentPos.y / zoom}px`
+          styles[draggingDirection].left = `${tableRect.left}px`
+          styles[draggingDirection].top = `${mouseCurrentPos.y / zoom}px`
           styles[draggingDirection].height = '3px'
           styles[draggingDirection].width = `${tableRect.width}px`
         } else {
-          styles[draggingDirection].top = `${window.pageYOffset + tableRect.top}px`
-          styles[draggingDirection].left = `${window.pageXOffset + mouseCurrentPos.x / zoom}px`
+          styles[draggingDirection].top = `${tableRect.top}px`
+          styles[draggingDirection].left = `${mouseCurrentPos.x / zoom}px`
           styles[draggingDirection].width = '3px'
           styles[draggingDirection].height = `${tableRect.height}px`
         }
@@ -392,9 +394,13 @@ export default function TableCellResizerPlugin(): null | ReactPortal {
 
   const userMode = useDocsUserMode()
   const isSuggestionMode = userMode === EditorUserMode.Suggest
+  const portalRoot = useContext(Ariakit.PortalContext)
 
   return useMemo(
-    () => (isEditable && !isSuggestionMode ? createPortal(<TableCellResizer editor={editor} />, document.body) : null),
-    [editor, isEditable, isSuggestionMode],
+    () =>
+      isEditable && !isSuggestionMode
+        ? createPortal(<TableCellResizer editor={editor} />, portalRoot ?? document.body)
+        : null,
+    [editor, isEditable, isSuggestionMode, portalRoot],
   )
 }
