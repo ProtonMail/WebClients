@@ -1730,6 +1730,18 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Add more details": [
+        "新增更多詳細資料"
+      ],
+      "Don't show this offer again": [
+        "不再顯示此優惠"
+      ],
+      "Special Offer": [
+        "特別優惠"
+      ],
+      "Subscribe": [
+        "訂閱"
       ]
     },
     "action": {
@@ -4254,6 +4266,9 @@
     "Desktop notification body": {
       "${ messageCount } new message": [
         "${ messageCount } 封新郵件"
+      ],
+      "From: ${ sender } - ${ subject }": [
+        "來自：${ sender } 寄件者- ${ subject } 主旨"
       ]
     },
     "Desktop notification title": {
@@ -5370,6 +5385,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "搜尋結果過多。請縮小您的搜尋範圍並重新試試。"
+      ],
+      "Organization does not have enough seats available": [
+        "組織沒有足夠的可用座席"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "無可用於 ${ signatureType } 種類的金鑰驗證"
       ]
     },
     "error": {
@@ -6577,6 +6598,9 @@
       ],
       "Pending": [
         "等待中"
+      ],
+      "Has errors": [
+        "有錯誤"
       ]
     },
     "Import warning": {
@@ -9263,6 +9287,36 @@
       ],
       "We'll get back to you shortly.": [
         "我們會盡快回覆您。"
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } 包含撰稿助理"
+      ],
+      "1 device per user": [
+        "1 台裝置每位使用者"
+      ],
+      "Change your mailbox layout": [
+        "變更您的電子郵件信箱版面配置"
+      ],
+      "No draft open": [
+        "無開啟的草稿"
+      ],
+      "No emails selected": [
+        "沒有選擇的電子郵件"
+      ],
+      "open draft": [
+        "開啟草稿"
+      ],
+      "Rename label": [
+        "重新命名標籤"
+      ],
+      "Rename this label": [
+        "移除此標籤"
+      ],
+      "Results came from the local search.": [
+        "結果來自本地搜尋。"
+      ],
+      "Results came from the server.": [
+        "結果來自伺服器。"
       ]
     },
     "info": {
@@ -9512,6 +9566,9 @@
       ],
       "Star": [
         "標注星號"
+      ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "關閉 ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Keyboard shortcut name, switch to Calendar": {
@@ -10525,6 +10582,24 @@
       ],
       "Why would you like to cancel?": [
         "為什麼您想要取消呢？"
+      ],
+      "Amount": [
+        "金額"
+      ],
+      "Amount due": [
+        "應付金額"
+      ],
+      "Cc": [
+        "副本"
+      ],
+      "Credits used": [
+        "已使用儲值"
+      ],
+      "Log performance": [
+        "日誌偏好"
+      ],
+      "Return on": [
+        "返回至"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13097,6 +13172,9 @@
     "Payments.Saved payment method details": {
       "Google Pay - card ending in ${ Last4 }": [
         "Google Pay - 卡片於 ${ Last4 } 結束"
+      ],
+      "Bank transfer - ${ iban }": [
+        "匯款 - ${ iban }"
       ]
     },
     "Payments.Sepa": {
@@ -15144,6 +15222,9 @@
       ],
       "You have successfully unsubscribed": [
         "您已成功取消訂購"
+      ],
+      "Invoice paid": [
+        "帳單已付"
       ]
     },
     "Success notification": {
@@ -16438,6 +16519,12 @@
       ],
       "Request sent": [
         "已送出需求"
+      ],
+      "Black Friday": [
+        "黑色星期五"
+      ],
+      "Pay invoice": [
+        "支付帳單"
       ]
     },
     "Title header for keys table": {
@@ -17060,6 +17147,105 @@
       ],
       "Other": [
         "其他"
+      ]
+    },
+    "Action: rename label": {
+      "Rename ${ label } to…": [
+        "重新命名 ${ label } 至…"
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "黑色星期五特惠活動"
+      ],
+      "Get the deal": [
+        "取得優惠"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/月"
+      ],
+      "15 GB storage": [
+        "15 GB 儲存空間"
+      ],
+      "2 individual accounts": [
+        "2 個獨立帳號"
+      ],
+      "2 TB of secure storage": [
+        "2 TB 安全儲存空間"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB 儲存空間：為您目前方案的 40 倍"
+      ],
+      "3 TB of secure storage": [
+        "3 TB 安全儲存空間"
+      ],
+      "500 GB of secure storage": [
+        "500 GB 安全儲存空間"
+      ],
+      "6 individual accounts": [
+        "6 個獨立帳號"
+      ],
+      "Built-in 2FA authenticator": [
+        "內建雙重驗證程式"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "折扣以標準月費為準。您的訂閱將在帳單週期結束時以標準年費續訂。"
+      ],
+      "Online document editor": [
+        "線上文件編輯器"
+      ],
+      "Recover previous file versions": [
+        "復原先前的檔案版本"
+      ],
+      "Stronger protection against cyber threats": [
+        "針對網路威脅的更強大保護"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "資料夾、標籤與篩選器無上限"
+      ],
+      "Use your own email domain": [
+        "使用您專屬的電子郵件網域"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "進階版 ${ DRIVE_SHORT_APP_NAME }、${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME } 和 ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "進階版 ${ DRIVE_SHORT_APP_NAME }、${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "進階版 ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "進階版 ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 和 ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "進階版 ${ PASS_SHORT_APP_NAME }、${ MAIL_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 和 ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "全年力度最大的優惠活動"
+      ],
+      "Black Friday": [
+        "黑色星期五特惠活動"
+      ],
+      "for 12 months": [
+        "為期 12 個月"
+      ],
+      "Last chance to save big": [
+        "把握最後優惠機會"
       ]
     }
   }

@@ -1481,7 +1481,8 @@
         "Megbízható"
       ],
       "Trust key": [
-        "Megbízható kulcs"
+        "Kulcs megjelölése megbízhatóként",
+        "Kulcsok megjelölése megbízhatóként"
       ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
@@ -7187,7 +7188,6 @@
         "Inicializálás…"
       ],
       "Insert image": [
-        "Kép beillesztése",
         "Kép beillesztése"
       ],
       "Insert link": [
@@ -9672,6 +9672,15 @@
       ],
       "Why would you like to cancel?": [
         "Miért szeretne törölni?"
+      ],
+      "Amount": [
+        "Összeg"
+      ],
+      "Amount due": [
+        "Esedékes összeg"
+      ],
+      "Credits used": [
+        "Felhasznált kredit"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13864,6 +13873,9 @@
       ],
       "You have successfully unsubscribed": [
         "Sikeresen leiratkozott"
+      ],
+      "Invoice paid": [
+        "Számla fizetve"
       ]
     },
     "Success notification": {
@@ -15091,6 +15103,9 @@
       ],
       "Request sent": [
         "Kérés elküldve"
+      ],
+      "Pay invoice": [
+        "Számla kifizetése"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15716,6 +15731,72 @@
       ],
       "Other": [
         "Egyéb"
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Szerezze meg az ajánlatot"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/hónap"
+      ],
+      "15 GB storage": [
+        "15 GB tárhely"
+      ],
+      "2 individual accounts": [
+        "2 egyéni fiók"
+      ],
+      "2 TB of secure storage": [
+        "2 TB biztonságos tárhely"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB tárhely: a jelenlegi csomag 40-szorosa"
+      ],
+      "3 TB of secure storage": [
+        "3 TB biztonságos tárhely"
+      ],
+      "500 GB of secure storage": [
+        "500 GB biztonságos tárhely"
+      ],
+      "6 individual accounts": [
+        "6 egyéni fiók"
+      ],
+      "Built-in 2FA authenticator": [
+        "Beépített kétlépcsős hitelesítés"
+      ],
+      "Online document editor": [
+        "Online dokumentumszerkesztő"
+      ],
+      "Recover previous file versions": [
+        "Korábbi fájlverziók helyreállítása"
+      ],
+      "Stronger protection against cyber threats": [
+        "Erősebb védelem a kiberfenyegetések ellen"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Korlátlan mappák, címkék és szűrők"
+      ],
+      "Use your own email domain": [
+        "Saját e-mail domain név használata"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Az év legnagyobb akciója"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "12 hónapra"
+      ],
+      "Last chance to save big": [
+        "Utolsó lehetőség a nagy megtakarításra"
       ]
     }
   }

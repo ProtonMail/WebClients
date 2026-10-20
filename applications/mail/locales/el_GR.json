@@ -1568,7 +1568,8 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Εμπιστοσύνη στο κλειδί"
+        "Κλειδί Εμπιστοσύνης",
+        "Κλειδιά Εμπιστοσύνης"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -1771,6 +1772,18 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ],
+      "${ LUMO_SHORT_APP_NAME } actions": [
+        "${ LUMO_SHORT_APP_NAME } ενέργειες"
+      ],
+      "Dock to side panel": [
+        "Προσάρτηση στο πλευρικό πάνελ"
+      ],
+      "Subscribe": [
+        "Εγγραφή"
+      ],
+      "Switch sides": [
+        "Αλλάξτε πλευρές"
       ]
     },
     "action": {
@@ -2160,7 +2173,7 @@
         "/μήνα"
       ],
       "15 GB storage": [
-        "15 GB αποθηκευτικός χώρος"
+        "15 GB αποθήκευσης"
       ],
       "2 individual accounts": [
         "2 ατομικοί λογαριασμοί"
@@ -2169,7 +2182,7 @@
         "2 TB ασφαλούς αποθήκευσης"
       ],
       "200 GB storage: 40x your current plan": [
-        "Αποθηκευτικός χώρος 200 GB: 40 φορές το τρέχον πλάνο σας"
+        "200 GB αποθήκευσης: 40x το τρέχον πρόγραμμά σας"
       ],
       "3 TB of secure storage": [
         "3 TB ασφαλούς αποθήκευσης"
@@ -2181,7 +2194,7 @@
         "6 ατομικοί λογαριασμοί"
       ],
       "Built-in 2FA authenticator": [
-        "Ενσωματωμένη εφαρμογή ταυτοποίησης 2FA"
+        "Ενσωματωμένη εφαρμογή ταυτοποίησης δύο παραγόντων"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση. Η συνδρομή σας θα ανανεωθεί με την τυπική ετήσια χρέωση όταν λήξει ο κύκλος χρέωσης."
@@ -2196,10 +2209,10 @@
         "Ισχυρότερη προστασία από τις απειλές στον κυβερνοχώρο"
       ],
       "Unlimited folders, labels, and filters": [
-        "Απεριόριστοι φάκελοι, ετικέτες, και φίλτρα"
+        "Απεριόριστοι φάκελοι, ετικέτες και φίλτρα"
       ],
       "Use your own email domain": [
-        "Χρησιμοποιήστε τον δικό σας τομέα ηλεκτρονικού ταχυδρομείου"
+        "Χρησιμοποιήστε τον δικό σας τομέα email"
       ]
     },
     "bfcampaign2026: Info, Drive first": {
@@ -2229,7 +2242,7 @@
     },
     "bfcampaign2026: Title": {
       "Biggest sale of the year": [
-        "Η μεγαλύτερη προσφορά της χρονιάς"
+        "Οι μεγαλύτερες εκπτώσεις της χρονιάς"
       ],
       "Black Friday": [
         "Black Friday"
@@ -2238,7 +2251,7 @@
         "για 12 μήνες"
       ],
       "Last chance to save big": [
-        "Τελευταία ευκαιρία για μεγάλες εξοικονομήσεις"
+        "Τελευταία ευκαιρία για μεγάλη εξοικονόμηση"
       ],
       "Protect your entire tribe": [
         "Προστάτεψε ολόκληρη τη φυλή σας"
@@ -4439,6 +4452,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Έχετε ήδη δημιουργήσει 10 ψευδώνυμα. Αποκτήστε απεριόριστα ψευδώνυμα και 500 GB αποθηκευτικού χώρου με ${ BRAND_NAME } Unlimited."
+      ],
+      "Move emails to the right category to improve categorization.": [
+        "Μετακινήστε τα ηλεκτρονικά μηνύματα στην κατάλληλη κατηγορία για να βελτιώσετε την κατηγοριοποίηση."
       ]
     },
     "description": {
@@ -8231,8 +8247,7 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας",
-        "Εισαγωγή εικόνων"
+        "Εισαγωγή εικόνας"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -10035,6 +10050,9 @@
       ],
       "We'll get back to you shortly.": [
         "Θα επικοινωνήσουμε μαζί σας σύντομα."
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "Η δωρεάν δοκιμή σας έληξε. Κάντε εγγραφή τώρα για να διασφαλίσετε την αδιάλειπτη πρόσβαση της ομάδας σας και την ασφάλεια των λογαριασμών."
       ]
     },
     "info": {
@@ -11383,6 +11401,15 @@
       ],
       "Why would you like to cancel?": [
         "Γιατί θέλετε να ακυρώσετε;"
+      ],
+      "Amount": [
+        "Ποσό"
+      ],
+      "Amount due": [
+        "Οφειλόμενο ποσό"
+      ],
+      "Credits used": [
+        "Χρησιμοποιημένες μονάδες"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14083,6 +14110,9 @@
     "Payments.iDEAL": {
       "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
         "Με την επιβεβαίωση, εξουσιοδοτείτε την ${ BRAND_NAME } και την Stripe, τον πάροχο υπηρεσιών πληρωμών μας, να εισπράττουν μελλοντικές πληρωμές για τη συνδρομή σας από αυτόν τον τραπεζικό λογαριασμό μέσω Άμεσης Χρέωσης SEPA και την τράπεζά σας να χρεώνει αυτές τις πληρωμές. Η πρώτη σας πληρωμή πραγματοποιείται τώρα από την ${ IDEAL_WERO_BRAND_NAME }. Το πλάνο σας ανανεώνεται αυτόματα μέχρι να ακυρώσετε. Θα σας ειδοποιούμε πριν από κάθε είσπραξη. Για εισπράξεις με άμεση χρέωση, μπορείτε να ζητήσετε επιστροφή χρημάτων από την τράπεζά σας εντός 8 εβδομάδων από την ημερομηνία χρέωσης, σύμφωνα με τους όρους της συμφωνίας σας με την τράπεζά σας. Αυτό δεν ισχύει για την πληρωμή ${ IDEAL_WERO_BRAND_NAME } που πραγματοποιείτε τώρα."
+      ],
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Με την επιβεβαίωση, εξουσιοδοτείτε την ${ BRAND_NAME } και τη Stripe, τον πάροχο υπηρεσιών πληρωμών μας, να εισπράττουν μελλοντικές πληρωμές για τη συνδρομή σας από αυτόν τον τραπεζικό λογαριασμό μέσω άμεσης χρέωσης SEPA (SEPA Direct Debit), καθώς και την τράπεζά σας να εκτελεί αυτές τις χρεώσεις. Η πρώτη σας πληρωμή πραγματοποιείται τώρα μέσω της ${ IDEAL_WERO_BRAND_NAME }. Το πρόγραμμά σας ανανεώνεται αυτόματα, εκτός εάν το ακυρώσετε· θα σας ειδοποιούμε πριν από κάθε είσπραξη. Για τις πληρωμές μέσω άμεσης χρέωσης, μπορείτε να ζητήσετε επιστροφή χρημάτων από την τράπεζά σας εντός 8 εβδομάδων από την ημερομηνία χρέωσης, σύμφωνα με τους όρους της συμφωνίας σας με την τράπεζα. Αυτό δεν ισχύει για την πληρωμή μέσω ${ IDEAL_WERO_BRAND_NAME } που πραγματοποιείτε αυτή τη στιγμή."
       ]
     },
     "Payments.info": {
@@ -16264,6 +16294,9 @@
       ],
       "You have successfully unsubscribed": [
         "Διαγραφήκατε με επιτυχία"
+      ],
+      "Invoice paid": [
+        "Το τιμολόγιο πληρώθηκε"
       ]
     },
     "Success notification": {
@@ -17590,6 +17623,15 @@
       ],
       "Request sent": [
         "Το αίτημα εστάλη"
+      ],
+      "Make Categories work better for you": [
+        "Κάντε τις Κατηγορίες να λειτουργούν καλύτερα για εσάς"
+      ],
+      "Pay invoice": [
+        "Πληρωμή τιμολογίου"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "Εγγραφείτε στο ${ planTitle }"
       ]
     },
     "Title header for keys table": {
