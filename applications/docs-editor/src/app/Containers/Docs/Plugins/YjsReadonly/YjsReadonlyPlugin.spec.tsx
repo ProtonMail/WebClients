@@ -1,9 +1,8 @@
 import { $getRoot } from 'lexical'
 import { applyUpdate, Doc } from 'yjs'
 import * as ReactTestUtils from '../TestUtils/react-test-utils'
-import type { EditorClient } from '../TestUtils/EditorClient'
+import type { EditorClient, YjsUpdate } from '../TestUtils/EditorClient'
 import { createEditorClient } from '../TestUtils/EditorClient'
-import type { RtsMessagePayload } from '@proton/docs-shared/lib/Doc/RtsMessagePayload'
 
 /**
  * Keeps only the client and struct counts of a Yjs update, so decoding fails before any struct is integrated.
@@ -21,9 +20,9 @@ async function getExampleEdits() {
   await tempClient.insertText('World')
   await tempClient.insertText('!')
 
-  expect(tempClient.propagatedMessages.length).toBe(3)
+  expect(tempClient.propagatedUpdates.length).toBe(4)
 
-  const exampleEdits = tempClient.propagatedMessages.slice()
+  const exampleEdits = tempClient.propagatedUpdates.slice()
   const exampleState = tempClient.getStateAsJson()
 
   await tempClient.cleanup()
@@ -31,12 +30,12 @@ async function getExampleEdits() {
   return { exampleEdits, exampleState }
 }
 
-async function getEditorStateWhenApplyingEdits(edits: RtsMessagePayload[]) {
+async function getEditorStateWhenApplyingEdits(edits: YjsUpdate[]) {
   const client = await createEditorClient()
 
   await ReactTestUtils.act(async () => {
     for (const edit of edits) {
-      client.state.receiveMessage(edit)
+      client.state.receiveUpdate(edit)
     }
   })
 
@@ -62,7 +61,7 @@ describe('YjsReadonlyPlugin', () => {
 
       await ReactTestUtils.act(async () => {
         for (const edit of exampleEdits) {
-          client1.state.receiveMessage(edit)
+          client1.state.receiveUpdate(edit)
         }
       })
 
@@ -80,10 +79,9 @@ describe('YjsReadonlyPlugin', () => {
     test('corrupting the last edit should still display the previous state', async () => {
       const { exampleEdits } = await getExampleEdits()
 
-      const lastEdit = exampleEdits[exampleEdits.length - 1].content
-      const corruptedEdit = corruptBytes(lastEdit)
+      const corruptedEdit = corruptBytes(exampleEdits[exampleEdits.length - 1])
       expect(() => applyUpdate(new Doc(), corruptedEdit)).toThrow()
-      exampleEdits[exampleEdits.length - 1].content = corruptedEdit
+      exampleEdits[exampleEdits.length - 1] = corruptedEdit
 
       const expectedState = await getEditorStateWhenApplyingEdits(exampleEdits.slice(0, -1))
 
@@ -93,7 +91,7 @@ describe('YjsReadonlyPlugin', () => {
         console.error = jest.fn()
         for (const edit of exampleEdits) {
           try {
-            client1.state.receiveMessage(edit)
+            client1.state.receiveUpdate(edit)
           } catch (error) {}
         }
       })
