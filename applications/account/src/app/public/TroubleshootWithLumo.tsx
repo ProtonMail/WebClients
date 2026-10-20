@@ -66,8 +66,8 @@ const TroubleshootWithLumo = () => {
     return (
         <div className="relative inline-block text-left">
             {src && (
-                // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
                 <div
+                    // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
                     role="dialog"
                     aria-label={title}
                     aria-hidden={!isOpen}

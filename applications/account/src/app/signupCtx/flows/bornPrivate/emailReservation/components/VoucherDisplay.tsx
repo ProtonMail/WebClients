@@ -23,9 +23,9 @@ const VoucherDisplay = ({ reservedEmail, activationCode }: VoucherDisplayProps) 
 
     return (
         <div className="w-full h-full flex items-center justify-center relative">
-            {/* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */}
             <svg
                 xmlns="http://www.w3.org/2000/svg"
+                // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
                 role="img"
                 width="464"
                 height="650"
