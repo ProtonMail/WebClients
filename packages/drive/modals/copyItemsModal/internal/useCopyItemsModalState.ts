@@ -21,6 +21,7 @@ export type CopyModalItem = {
     uid: string;
     parentUid?: string;
     name: string;
+    type: NodeType;
 };
 
 type CopyItemsModalInnerProps = {

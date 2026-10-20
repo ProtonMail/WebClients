@@ -1,12 +1,12 @@
 import type { NodeMeta } from '@proton/docs-shared/lib/BasicTypes'
-import { generateNodeUid, getDrive } from '@proton/drive'
+import { NodeType, generateNodeUid, getDrive } from '@proton/drive'
 import { traceErrorSDK } from './traceErrorSDK'
 
 export async function findAvailableNodeName(parentMeta: NodeMeta, candidateName: string) {
   const drive = getDrive()
   try {
     const parentFolderUid = generateNodeUid(parentMeta.volumeId, parentMeta.linkId)
-    const fileName = await drive.getAvailableName(parentFolderUid, candidateName)
+    const fileName = await drive.getAvailableName(parentFolderUid, candidateName, NodeType.File)
     return fileName
   } catch (error) {
     traceErrorSDK(error, 'DocsDriveCompatSDK')
