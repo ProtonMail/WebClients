@@ -2,8 +2,8 @@ import type { DocsComment, DocsCommentThread } from '../../contract/DocsCommentT
 import type { SafeDocsUserState } from '../../contract/Awareness'
 import { createContext, useContext } from 'react'
 import type { LexicalNode, NodeKey, RangeSelection } from 'lexical'
-import type { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal'
 import type { DocsLogger } from '../../contract/DocsLogger'
+import type { DeleteCommentDialogOptions } from './DeleteCommentDialog'
 import type { DocsDateFormat } from '../../contract/DocsDateFormat'
 
 type CommentsContextValue = {
@@ -39,7 +39,7 @@ type CommentsContextValue = {
 
   awarenessStates: SafeDocsUserState[]
 
-  showConfirmModal: ReturnType<typeof useConfirmActionModal>[1]
+  showDeleteDialog: (options: DeleteCommentDialogOptions) => void
 
   commentInputSelection: RangeSelection | undefined
   cancelAddComment: () => void
