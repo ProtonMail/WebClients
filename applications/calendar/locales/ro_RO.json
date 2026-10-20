@@ -1056,6 +1056,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Perioada de încercare a versiunii pentru desktop se încheie ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Subscribe": [
+        "Abonare"
       ]
     },
     "action": {
@@ -1389,31 +1392,31 @@
         "/lună"
       ],
       "15 GB storage": [
-        "15 GiB de spațiu de stocare"
+        "15 GB de stocare"
       ],
       "2 individual accounts": [
-        "Două conturi individuale"
+        "2 conturi individuale"
       ],
       "2 TB of secure storage": [
-        "2 TiB de stocare securizată"
+        "2 TB de stocare securizată"
       ],
       "200 GB storage: 40x your current plan": [
-        "200 GiB de spațiu de stocare: de 40 de ori planul actual"
+        "200 GB spațiu de stocare: de 40x mai mult față de planul actual"
       ],
       "3 TB of secure storage": [
-        "3 TiB de stocare securizată"
+        "3 TB de stocare securizată"
       ],
       "500 GB of secure storage": [
-        "500 GiB de stocare securizată"
+        "500 GB de stocare securizată"
       ],
       "6 individual accounts": [
         "6 conturi individuale"
       ],
       "Built-in 2FA authenticator": [
-        "Autentificator A2F încorporat"
+        "Autentificator 2FA încorporat"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Reducerile se bazează pe prețurile lunare standard. Abonamentul se va reînnoi la tariful anual standard la sfârșitul ciclului de facturare."
+        "Reducerile se calculează față de prețul lunar standard. Abonamentul dvs. se va reînnoi la tariful anual standard atunci când se încheie ciclul de facturare."
       ],
       "Online document editor": [
         "Editor de documente online"
@@ -1458,7 +1461,7 @@
     },
     "bfcampaign2026: Title": {
       "Biggest sale of the year": [
-        "Cea mai mare reducere a anului"
+        "Cea mai mare promoție a anului"
       ],
       "Black Friday": [
         "Black Friday"
@@ -1467,7 +1470,7 @@
         "pentru 12 luni"
       ],
       "Last chance to save big": [
-        "Ultima șansă de a economisi semnificativ"
+        "Ultima șansă pentru o reducere mare"
       ],
       "Protect your entire tribe": [
         "Protejați-vă întreaga familie"
@@ -7105,6 +7108,9 @@
       ],
       "We'll get back to you shortly.": [
         "Vom reveni în curând."
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "Perioada de probare gratuită s-a încheiat. Abonați-vă acum pentru a asigura accesul neîntrerupt al echipei proprii și securitatea conturilor."
       ]
     },
     "info": {
@@ -7866,6 +7872,15 @@
       ],
       "Why would you like to cancel?": [
         "De ce doriți să anulați?"
+      ],
+      "Amount": [
+        "Suma"
+      ],
+      "Amount due": [
+        "Suma datorată"
+      ],
+      "Credits used": [
+        "Credite folosite"
       ]
     },
     "label": {
@@ -10378,6 +10393,9 @@
     "Payments.iDEAL": {
       "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
         "Prin confirmare, autorizați ${ BRAND_NAME } și Stripe, furnizorul nostru de servicii de plată, să colecteze plățile viitoare pentru abonament din acest cont bancar prin Debit Direct SEPA, iar banca să vă debiteze aceste plăți. Prima plată este efectuată acum de către ${ IDEAL_WERO_BRAND_NAME }. Planul se reînnoiește automat până la anularea acestuia; vă vom notifica înainte de fiecare colectare. Pentru colectările prin debit direct, puteți solicita o rambursare de la banca proprie în termen de 8 săptămâni de la data debitării, în conformitate cu termenii acordului cu banca. Aceasta nu se aplică plății ${ IDEAL_WERO_BRAND_NAME } pe care o efectuați acum."
+      ],
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Prin confirmare, autorizați ${ BRAND_NAME } și Stripe, furnizorul nostru de servicii de plată, să încaseze plățile viitoare pentru abonament din acest cont bancar prin debitare directă SEPA, iar banca să vă efectueze aceste plăți. Prima plată este efectuată acum prin ${ IDEAL_WERO_BRAND_NAME }. Abonamentul se reînnoiește automat până în momentul în care îl anulați; vă vom notifica înainte de fiecare încasare. În cazul plăților prin debitare directă, puteți solicita băncii rambursarea sumei în termen de 8 săptămâni de la data debitării, conform termenilor contractului încheiat cu banca. Această prevedere nu se aplică plății prin ${ IDEAL_WERO_BRAND_NAME } pe care o efectuați în acest moment."
       ]
     },
     "Payments.info": {
@@ -12162,6 +12180,9 @@
       ],
       "You have successfully unsubscribed": [
         "V-ați dezabonat cu succes"
+      ],
+      "Invoice paid": [
+        "Factură plătită"
       ]
     },
     "Suffix": {
@@ -13151,6 +13172,12 @@
       ],
       "Request sent": [
         "Solicitare trimisă"
+      ],
+      "Pay invoice": [
+        "Plată factură"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "Abonare la ${ planTitle }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
