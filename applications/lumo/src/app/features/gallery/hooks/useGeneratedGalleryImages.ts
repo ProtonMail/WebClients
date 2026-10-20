@@ -1,11 +1,13 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-import { AssetType, type GeneratedAssetFromApi } from '../../../remote/api';
+import { c } from 'ttag';
+
 import { useIsChatHistoryHydrating } from '../../../hooks/useIsChatHistoryHydrating';
 import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
-import { addIdMapEntry } from '../../../redux/slices/core/idmap';
 import { addAttachment } from '../../../redux/slices/core/attachments';
+import { addIdMapEntry } from '../../../redux/slices/core/idmap';
 import { extraThunkArguments } from '../../../redux/thunk';
+import { AssetType, type GeneratedAssetFromApi } from '../../../remote/api';
 
 type GalleryImageItem = {
     localId: string;
@@ -44,9 +46,27 @@ function groupIntoSections(items: GalleryImageItem[]): GallerySection[] {
     }
 
     const sections: GallerySection[] = [];
-    if (last7.length > 0) sections.push({ label: 'Last 7 days', items: last7 });
-    if (last30.length > 0) sections.push({ label: 'Last 30 days', items: last30 });
-    if (older.length > 0) sections.push({ label: 'Older', items: older });
+    if (last7.length > 0) {
+        sections.push({
+            // translator: Date group heading in the generated image gallery.
+            label: c('collider_2025:Label').t`Last 7 days`,
+            items: last7,
+        });
+    }
+    if (last30.length > 0) {
+        sections.push({
+            // translator: Date group heading in the generated image gallery.
+            label: c('collider_2025:Label').t`Last 30 days`,
+            items: last30,
+        });
+    }
+    if (older.length > 0) {
+        sections.push({
+            // translator: Date group heading in the generated image gallery.
+            label: c('collider_2025:Label').t`Older`,
+            items: older,
+        });
+    }
     return sections;
 }
 
@@ -112,21 +132,18 @@ export function useGeneratedGalleryImages() {
         [dispatch, idmap, spaces]
     );
 
-    const fetchSection = useCallback(
-        async (createTimeSince?: number, createTimeUntil?: number) => {
-            const { lumoApi } = extraThunkArguments;
-            if (!lumoApi) return [];
+    const fetchSection = useCallback(async (createTimeSince?: number, createTimeUntil?: number) => {
+        const { lumoApi } = extraThunkArguments;
+        if (!lumoApi) return [];
 
-            const assets = await lumoApi.listGeneratedAssets({
-                assetType: AssetType.GeneratedImage,
-                createTimeSince,
-                createTimeUntil,
-            });
+        const assets = await lumoApi.listGeneratedAssets({
+            assetType: AssetType.GeneratedImage,
+            createTimeSince,
+            createTimeUntil,
+        });
 
-            return assets;
-        },
-        []
-    );
+        return assets;
+    }, []);
 
     const load = useCallback(async () => {
         setStatus('loading');

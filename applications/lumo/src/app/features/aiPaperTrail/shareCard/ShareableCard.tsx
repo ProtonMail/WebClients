@@ -17,7 +17,7 @@ import { triggerFileDownload } from '../../../util/triggerFileDownload';
 import type { PaperTrailCardData } from '../reportTypes';
 import { ShareCardCanvasPreview } from './ShareCardCanvasPreview';
 import type { ShareCardTheme } from './drawShareCard';
-import { SHARE_TEXT, SHARE_URL, type SocialPlatform, buildShareIntentUrl } from './socialShare';
+import { SHARE_URL, type SocialPlatform, buildShareIntentUrl, getShareText } from './socialShare';
 
 import './ShareableCard.scss';
 
@@ -85,14 +85,14 @@ export const ShareableCard = ({ data, ...modalProps }: Props) => {
     // Web share intents can't carry the image, so save the card first for the user to attach,
     // then open the platform's compose window.
     const handleSocialShare = (platform: SocialPlatform) => {
-        const intentUrl = buildShareIntentUrl(platform, { url: SHARE_URL, text: SHARE_TEXT });
+        const intentUrl = buildShareIntentUrl(platform, { url: SHARE_URL, text: getShareText() });
         window.open(intentUrl, '_blank', 'noopener,noreferrer');
         void handleDownload();
     };
 
     const handleCopyLink = async () => {
         try {
-            await navigator.clipboard.writeText(`${SHARE_TEXT} ${SHARE_URL}`);
+            await navigator.clipboard.writeText(`${getShareText()} ${SHARE_URL}`);
             setLinkCopied(true);
             setTimeout(() => setLinkCopied(false), 2000);
         } catch {

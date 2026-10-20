@@ -1,7 +1,11 @@
 import { useEffect, useRef } from 'react';
-import type { CanvasConfig, Stroke } from './types';
+
+import { c } from 'ttag';
+
 import { useCanvasRenderer } from './hooks/useCanvasRenderer';
 import { useDrawing } from './hooks/useDrawing';
+import type { CanvasConfig, Stroke } from './types';
+
 import './Canvas.scss';
 
 interface CanvasProps {
@@ -140,7 +144,10 @@ export const Canvas = ({
                 <div className="canvas__loading-overlay absolute inset-0 flex items-center justify-center">
                     <div className="text-center">
                         <div className="canvas__loading-spinner inline-block rounded-full" />
-                        <p className="mt-2 color-norm">Loading image...</p>
+                        <p className="mt-2 color-norm">{
+                            // translator: Status while an image opens in the drawing editor.
+                            c('collider_2025:Label').t`Loading image...`
+                        }</p>
                     </div>
                 </div>
             )}

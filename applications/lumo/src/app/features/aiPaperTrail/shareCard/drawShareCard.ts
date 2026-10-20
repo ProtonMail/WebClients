@@ -1,3 +1,5 @@
+import { c } from 'ttag';
+
 import lumoSideeyeIcon from '@proton/styles/assets/img/lumo/lumo-sideeye.svg';
 
 import type { PaperTrailCardData } from '../reportTypes';
@@ -258,7 +260,8 @@ const drawShareCard = (
     ctx.textAlign = 'center';
     ctx.fillStyle = palette.title;
     ctx.font = `700 ${LAYOUT.titleSize}px ${SYNE_FONT}`;
-    ctx.fillText('My AI Paper Trail', cx, titleY);
+    // translator: Share-card title. AI Paper Trail refers to the personal information revealed by someone's AI chat history.
+    ctx.fillText(c('collider_2025:Label').t`My AI Paper Trail`, cx, titleY);
 
     const heroX = LAYOUT.padding;
     const heroY = titleY + LAYOUT.titleToHero;
@@ -278,7 +281,8 @@ const drawShareCard = (
     ctx.textAlign = 'left';
     ctx.font = `700 30px ${SYNE_FONT}`;
     ctx.fillStyle = palette.title;
-    ctx.fillText('Privacy Exposure', heroInnerX, heroTitleY);
+    // translator: Heading above a score of how much personal information an AI can infer from chat history.
+    ctx.fillText(c('collider_2025:Label').t`Privacy Exposure`, heroInnerX, heroTitleY);
 
     const contentY = heroTitleY + 14;
     const contentH = heroY + heroH - LAYOUT.cardPad - contentY;
@@ -309,7 +313,8 @@ const drawShareCard = (
     ctx.fillText(String(data.exposureScore), ringCx, ringCy - 8);
     ctx.font = `600 ${Math.round(ringRadius * 0.22)}px ${FONT_STACK}`;
     ctx.fillStyle = palette.subtle;
-    ctx.fillText('OUT OF 100', ringCx, ringCy + ringRadius * 0.45);
+    // translator: Score denominator displayed below the privacy exposure score; 100 is the maximum score.
+    ctx.fillText(c('collider_2025:Label').t`Out of 100`.toUpperCase(), ringCx, ringCy + ringRadius * 0.45);
     ctx.textBaseline = 'alphabetic';
 
     const statsX = heroInnerX + leftW + LAYOUT.heroColGap;
@@ -321,6 +326,10 @@ const drawShareCard = (
     ctx.fill();
 
     const rowH = statsH / 2;
+    // translator: Label for the category describing how much personal information the person reveals in AI chats.
+    const privacyTypeTitle = c('collider_2025:Label').t`My Privacy Type`;
+    // translator: Label for the estimated monetary value of personal information revealed in AI chats.
+    const dataValueTitle = c('collider_2025:Label').t`My Data Value`;
     drawStatRow(
         ctx,
         palette,
@@ -329,7 +338,7 @@ const drawShareCard = (
         statsW,
         rowH,
         assets.privacyIcon,
-        'My Privacy Type',
+        privacyTypeTitle,
         privacyTypeLabel(data.exposureScore)
     );
     ctx.beginPath();
@@ -346,7 +355,7 @@ const drawShareCard = (
         statsW,
         rowH,
         assets.valueIcon,
-        'My Data Value',
+        dataValueTitle,
         formatValue(data.estimatedValueUsd)
     );
 
@@ -369,7 +378,8 @@ const drawShareCard = (
     ctx.textAlign = 'left';
     ctx.fillStyle = palette.title;
     ctx.font = `800 24px ${FONT_STACK}`;
-    ctx.fillText('What AI Knows About Me', heroX + LAYOUT.knowledgePadX, knowledgeTitleY);
+    // translator: Heading above personal facts an AI can infer from the person's chat history.
+    ctx.fillText(c('collider_2025:Label').t`What AI Knows About Me`, heroX + LAYOUT.knowledgePadX, knowledgeTitleY);
 
     areas.forEach((area, i) => {
         const col = i < half ? 0 : 1;
@@ -411,7 +421,8 @@ const drawShareCard = (
         ctx.stroke();
 
         ctx.font = `600 26px ${FONT_STACK}`;
-        const footerPrefix = "What's your AI Paper Trail? ";
+        // translator: Casual invitation to find out what personal information AI chats reveal. AI Paper Trail is the report name.
+        const footerPrefix = c('collider_2025:Label').t`What's your AI Paper Trail? `;
         ctx.fillStyle = palette.subtle;
         const prefixWidth = ctx.measureText(footerPrefix).width;
         const urlWidth = ctx.measureText(SHARE_CARD_URL).width;

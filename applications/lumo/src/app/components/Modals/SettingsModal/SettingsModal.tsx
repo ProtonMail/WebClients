@@ -566,7 +566,10 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
                         <div className="flex flex-column flex-nowrap flex-1 content-container">
                             {/* Mobile: settings title */}
                             <div className="mobile-section-header md:hidden">
-                                <h1 className="text-2xl text-bold m-0">Settings</h1>
+                                <h1 className="text-2xl text-bold m-0">{
+                                    // translator: Heading of the app settings panel.
+                                    c('collider_2025:Label').t`Settings`
+                                }</h1>
                             </div>
 
                             {/* Desktop: top bar with active panel name */}

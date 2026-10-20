@@ -27,7 +27,8 @@ export const PaperTrailHeader = ({ onStartChat }: Props) => {
     };
 
     const logo = <PaperTrailLogo height="20px" />;
-    const logoLinkLabel = `Go to ${LUMO_SHORT_APP_NAME} homepage`;
+    // translator: Accessible link to the Lumo homepage; LUMO_SHORT_APP_NAME is the product name.
+    const logoLinkLabel = c('collider_2025:Label').t`Go to ${LUMO_SHORT_APP_NAME} homepage`;
 
     return (
         <>
