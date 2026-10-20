@@ -22,7 +22,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 import { ParticipantAvatar } from '../../atoms/ParticipantAvatar/ParticipantAvatar';
 import { useChatMessage } from '../../hooks/bridges/useChatMessage';
 import { useChatMessageReaction } from '../../hooks/bridges/useChatMessageReaction';
-import { useMentionPlainText } from '../../hooks/useMentionPlainText';
+import { useMessagePlainText } from '../../hooks/useMessagePlainText';
 import { useToolbarRovingFocus } from '../../hooks/useToolbarRovingFocus';
 import { getAgentDisplayInfo } from '../../utils/getAgentDisplayInfo';
 import { ChatMessageContent } from '../ChatMessageContent';
@@ -96,7 +96,7 @@ export const ChatItem = ({ meetingName, item, displayDate = true, variant = 'def
     const isMessage = isMeetChatMessage(item);
 
     const announce = useAnnounce();
-    const toMentionPlainText = useMentionPlainText();
+    const toMessagePlainText = useMessagePlainText();
 
     const rowRef = useRef<HTMLDivElement>(null);
 
@@ -123,7 +123,7 @@ export const ChatItem = ({ meetingName, item, displayDate = true, variant = 'def
             return;
         }
 
-        announce(announcementMessages.chatMessageContent(toMentionPlainText(item.message), participantName), {
+        announce(announcementMessages.chatMessageContent(toMessagePlainText(item.message), participantName), {
             dedupeKey: `chat-focus-${item.id}`,
         });
     };
