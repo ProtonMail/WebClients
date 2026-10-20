@@ -459,9 +459,6 @@
       "Done": [
         "Selesai"
       ],
-      "Downgrade": [
-        "Turunkan"
-      ],
       "Download": [
         "Unduh"
       ],
@@ -1143,9 +1140,6 @@
       "Remove ${ attachmentName }": [
         "Hapus ${ attachmentName }"
       ],
-      "Remove bonuses": [
-        "Hapus bonus"
-      ],
       "Remove button": [
         "Hapus tombol"
       ],
@@ -1466,6 +1460,9 @@
       ],
       "Submit": [
         "Kirim"
+      ],
+      "Subscribe": [
+        "Berlangganan"
       ],
       "Subscribe now": [
         "Langgan sekarang"
@@ -2020,11 +2017,6 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Pengelola Kata Sandi Premium"
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "Jaminan uang kembali dalam 30 hari"
       ]
     },
     "BF2024: Deal details": {
@@ -5464,14 +5456,6 @@
         "Ganti paket"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "Grup keluarga tidak dikenal. Silakan coba lagi."
-      ],
-      "Organization not recognized. Try again.": [
-        "Organisasi tidak dikenal. Coba lagi."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "Grup ${ BRAND_NAME }"
@@ -5537,22 +5521,6 @@
         "Akun Anda menggunakan ruang penyimpanan sebesar ${ usedSpace }, yang melebihi batas ${ inviteSpace } yang dialokasikan kepada Anda. Hapus sebagian data atau minta kepada admin paket untuk meningkatkan ruang penyimpanan Anda."
       ]
     },
-    "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "Masukkan nama grup keluarga untuk mengonfirmasi"
-      ],
-      "Enter organization name to confirm": [
-        "Masukkan nama organisasi untuk mengonfirmasi"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Ini akan menghapus semua subpengguna, akun, dan data yang terkait dengan organisasi Anda."
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Ini akan menghapus semua fitur ${ BRAND_NAME } premium untuk setiap anggota keluarga."
-      ]
-    },
     "familyOffer_2023:Onboarding Proton": {
       "Configure your family account and invite users": [
         "Atur akun keluarga Anda dan undang pengguna"
@@ -5565,14 +5533,6 @@
       ],
       "Set up your family account": [
         "Siapkan akun keluarga Anda"
-      ]
-    },
-    "familyOffer_2023:Title": {
-      "Delete family group?": [
-        "Hapus grup keluarga?"
-      ],
-      "Delete organization?": [
-        "Hapus organisasi?"
       ]
     },
     "Feature": {
@@ -6662,15 +6622,6 @@
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Anda mendapatkan ${ referrerRewardAmount }** dalam bentuk kredit untuk setiap teman yang berlangganan."
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } ruang penyimpanan tambahan"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } koneksi untuk ${ VPN_APP_NAME } (memungkinkan Anda untuk menyambungkan lebih banyak perangkat ke VPN)"
-      ],
-      "30-day money-back guarantee.": [
-        "Jaminan 30 hari uang kembali."
-      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Masing-masing nomor telepon hanya dapat digunakan untuk memverifikasi satu akun ${ BRAND_NAME }"
       ],
@@ -6905,9 +6856,6 @@
       "Bulk delete": [
         "Penghapusan massal"
       ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Dengan menurunkan paket ke Gratis, Anda akan kehilangan manfaat ini secara permanen, meskipun Anda meningkatkan paket lagi di masa mendatang."
-      ],
       "Calendar side panel": [
         "Panel samping kalender"
       ],
@@ -7093,9 +7041,6 @@
       ],
       "Downgrade": [
         "Turunkan"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Menurunkan akun akan memutus seluruh koneksi ke server ${ VPN_APP_NAME } berbayar."
       ],
       "Download application logs for troubleshooting": [
         "Unduh log aplikasi untuk penyelesaian masalah"
@@ -7357,15 +7302,6 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Apabila Anda tidak menemukan email ini pada kotak masuk, silakan periksa folder spam Anda."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Apabila Anda lanjut menurunkan akun, Anda akan kehilangan akses ke berbagai fitur berbayar ${ MAIL_APP_NAME } dan ${ VPN_APP_NAME }."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Jika Anda melanjutkan penurunan paket, Anda akan kehilangan akses ke fitur berbayar ${ MAIL_APP_NAME }, termasuk penyimpanan tambahan dan filter."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Apabila Anda lanjut menurunkan akun, Anda akan kehilangan akses ke berbagai fitur berbayar ${ VPN_APP_NAME }."
       ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "Apabila alias Anda dijual, dibocorkan, atau disalahgunakan, Anda hanya perlu menonaktifkan alias ini untuk berhenti menerima spam."
@@ -8009,9 +7945,6 @@
       "Show original message": [
         "Tampilkan pesan asli"
       ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Berhubung Anda telah menjadi pengguna yang setia, akun Anda akan memiliki berbagai fitur tambahan yang dapat Anda gunakan."
-      ],
       "Snooze messages for later so they are top of your inbox when you want": [
         "Tunda pesan ke kemudian waktu sehingga pesan ini dapat muncul pada kotak masuk di waktu yang Anda inginkan"
       ],
@@ -8534,6 +8467,9 @@
       "We'll email you once import is complete.": [
         "Kami akan mengirimkan email kepada Anda setelah impor ini selesai."
       ],
+      "We'll get back to you shortly.": [
+        "Kami akan segera menghubungi Anda kembali."
+      ],
       "We'll notify you when the import is done.": [
         "Kami akan memberitahukan Anda apabila proses impor telah selesai."
       ],
@@ -8704,9 +8640,6 @@
       ],
       "You may be redirected to your bank’s website.": [
         "Anda mungkin akan dialihkan ke situs web milik bank Anda."
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Anda harus terlebih dahulu menonaktifkan atau menghapus seluruh pengguna, alamat, dan domain khusus tambahan yang terdapat pada ${ MAIL_APP_NAME } sebelum Anda dapat menurunkan jenis akun Anda."
       ],
       "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
         "Anda memilih **${ checked } percakapan** di kategori ${ categoryLabel }"
@@ -9235,6 +9168,12 @@
       "Always move sender's emails": [
         "Selalu pindahkan email pengirim"
       ],
+      "Amount": [
+        "Jumlah"
+      ],
+      "Amount due": [
+        "Jumlah tagihan"
+      ],
       "AND": [
         "DAN"
       ],
@@ -9414,6 +9353,9 @@
       ],
       "Credits": [
         "Kredit"
+      ],
+      "Credits used": [
+        "Kredit yang digunakan"
       ],
       "Current context": [
         "Konteks saat ini"
@@ -9829,6 +9771,9 @@
       "Phone number": [
         "Nomor telepon"
       ],
+      "Please share any feedback to help us improve.": [
+        "Silakan bagikan masukan apa pun untuk membantu kami berkembang."
+      ],
       "Port": [
         "Port"
       ],
@@ -10083,6 +10028,9 @@
       ],
       "What happened?": [
         "Apa yang terjadi?"
+      ],
+      "Why would you like to cancel?": [
+        "Mengapa Anda ingin membatalkan?"
       ],
       "With attachment": [
         "Dengan lampiran"
@@ -10895,35 +10843,17 @@
         "Kecepatan VPN sedang"
       ]
     },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "Dapatkan ${ planTitle }"
+      ]
+    },
     "new_plans: action": {
-      "Delete account": [
-        "Hapus akun"
-      ],
-      "Downgrade account": [
-        "Turunkan jenis akun"
-      ],
       "Get ${ BRAND_NAME } for free": [
         "Dapatkan ${ BRAND_NAME } secara gratis"
       ],
       "Get ${ planName }": [
         "Dapatkan ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Pertahankan ${ plan }"
-      ],
-      "Keep account": [
-        "Pertahankan akun"
-      ],
-      "Switch plan": [
-        "Ganti paket"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Turunkan ke ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Dapatkan ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -11424,18 +11354,6 @@
       "For next-level password management and identity protection.": [
         "Manajemen kata sandi dan perlindungan identitas tingkat lanjut."
       ],
-      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
-        "Dengan menghapus akun Anda, Anda akan kehilangan seluruh manfaat yang dimiliki oleh paket ${ visionary } dan paket tersebut tidak akan lagi tersedia apabila Anda membuat akun baru."
-      ],
-      "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
-        "Dengan menurunkan jenis akun Anda, Anda akan kehilangan seluruh manfaat yang dimiliki oleh paket ${ visionary } dan Anda tidak akan lagi dapat berlangganan ke paket tersebut ke depannya."
-      ],
-      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
-        "Dengan beralih ke paket lainnya, Anda akan kehilangan seluruh manfaat yang dimiliki oleh paket ${ visionary } dan Anda tidak akan lagi dapat beralih kembali ke ${ visionary } ke depannya."
-      ],
-      "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
-        "Paket ${ visionary } kami tidak lagi tersedia kepada pengguna baru karena paket tersebut merupakan paket khusus yang hanya tersedia bagi para pengguna ${ BRAND_NAME } lama dengan berbagai fitur dan manfaat spesial."
-      ],
       "Pay once, secure your passwords and identity forever.": [
         "Bayar satu kali, amankan kata sandi dan identitas Anda selamanya"
       ],
@@ -11465,12 +11383,6 @@
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
         "Privasi tanpa batas dan ruang penyimpanan yang lebih lowong untuk hingga 2 orang pengguna."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
-        "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menghapus akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon apabila Anda membuat akun baru."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
-        "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
       ]
     },
     "new_plans: label": {
@@ -11490,20 +11402,11 @@
       ]
     },
     "new_plans: title": {
-      "Delete account?": [
-        "Hapus akun?"
-      ],
-      "Downgrade account?": [
-        "Turunkan jenis akun?"
-      ],
       "Review subscription": [
         "Tinjau langganan"
       ],
       "Review subscription and pay": [
         "Peninjauan dan pembayaran langganan"
-      ],
-      "Switch plans?": [
-        "Ganti paket?"
       ]
     },
     "new_plans: tooltip": {
@@ -12807,6 +12710,9 @@
       "Please insert link first": [
         "Silakan sisipkan tautan terlebih dulu"
       ],
+      "Please select the main reason": [
+        "Silakan pilih alasan utama"
+      ],
       "Please share what you expected": [
         "Silakan bagikan hal seperti apa yang Anda harapkan"
       ],
@@ -13947,9 +13853,6 @@
       "upgrade for more storage": [
         "tingkatkan akun Anda untuk memperoleh lebih banyak ruang penyimpanan"
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Kami akan menambahkan kredit untuk sisa waktu ke Akun ${ BRAND_NAME } Anda."
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "Anda masih memiliki **${ daysRemaining }** hari tersisa pada paket **${ currentPlanName }** Anda."
       ],
@@ -14540,6 +14443,9 @@
       "Invitation rejected": [
         "Undangan ditolak"
       ],
+      "Invoice paid": [
+        "Faktur dibayar"
+      ],
       "Keyboard shortcuts preferences updated": [
         "Preferensi pintasan keyboard diperbarui"
       ],
@@ -14662,9 +14568,6 @@
       ],
       "You have successfully canceled your subscription.": [
         "Anda telah berhasil membatalkan langganan Anda."
-      ],
-      "You have successfully unsubscribed": [
-        "Anda berhasil berhenti berlangganan"
       ]
     },
     "Success notification": {
@@ -15027,12 +14930,6 @@
       "Collaborate on documents": [
         "Berkolaborasi dalam dokumen"
       ],
-      "Confirm downgrade": [
-        "Konfirmasi penurunan akun"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Konfirmasi hilangnya bonus ${ BRAND_NAME }"
-      ],
       "Confirm recipient address?": [
         "Konfirmasi alamat penerima?"
       ],
@@ -15053,6 +14950,9 @@
       ],
       "Contact group": [
         "Grup kontak"
+      ],
+      "Contact us": [
+        "Hubungi kami"
       ],
       "Contacts": [
         "Kontak"
@@ -15173,9 +15073,6 @@
       ],
       "Downgrade account": [
         "Turunkan jenis akun"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "Turunkan ke ${ downgradedPlanName }?"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Unduh aplikasi ${ DRIVE_APP_NAME }"
@@ -15558,6 +15455,9 @@
       "Other names": [
         "Nama lain"
       ],
+      "Pay invoice": [
+        "Bayar faktur"
+      ],
       "Payment failed": [
         "Pembayaran gagal"
       ],
@@ -15641,6 +15541,9 @@
       ],
       "Request new code": [
         "Minta kode baru"
+      ],
+      "Request sent": [
+        "Permintaan terkirim"
       ],
       "Reverse charge not supported": [
         "Reverse charge tidak didukung"
@@ -16152,6 +16055,20 @@
       ],
       "Replay video": [
         "Putar ulang video"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Saya menemukan layanan lain yang saya lebih suka"
+      ],
+      "It’s missing a key feature": [
+        "Fitur utama yang belum ada"
+      ],
+      "It’s too expensive": [
+        "Terlalu mahal"
+      ],
+      "Other": [
+        "Lainnya"
       ]
     },
     "VPN Plan Feature": {
