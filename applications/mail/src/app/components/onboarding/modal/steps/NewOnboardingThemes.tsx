@@ -1,5 +1,3 @@
-import { useEffect } from 'react';
-
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -14,11 +12,11 @@ import { isMobile } from '@proton/shared/lib/helpers/browser';
 import type { ThemeTypes } from '@proton/shared/lib/themes/constants';
 import clsx from '@proton/utils/clsx';
 
+import { TrackOnboardingStepLoad } from '../../../../telemetry/TrackOnboardingStepLoad';
 import {
     ONBOARDING_ACTIONS,
     ONBOARDING_STEPS,
     trackStepInteracted,
-    trackStepViewed,
     trackThemeStepCompleted,
 } from '../../../../telemetry/onboardingEvents';
 import { useMailOnboardingTelemetry } from '../../useMailOnboardingTelemetry';
@@ -36,10 +34,6 @@ const NewOnboardingThemes = ({ onNext }: OnboardingStepRenderCallback) => {
     const largeSizeProps = getThemeCardSize('large');
     const mediumSizeProps = getThemeCardSize('medium');
     const sizeProps = mobile ? mediumSizeProps : largeSizeProps;
-
-    useEffect(() => {
-        trackStepViewed(ONBOARDING_STEPS.themeSelection);
-    }, []);
 
     const handleThemeChange = (newThemeType: ThemeTypes) => {
         theme.setTheme(newThemeType);
@@ -60,6 +54,7 @@ const NewOnboardingThemes = ({ onNext }: OnboardingStepRenderCallback) => {
 
     return (
         <OnboardingStep>
+            <TrackOnboardingStepLoad step={ONBOARDING_STEPS.themeSelection} />
             <OnboardingContent
                 title={c('Onboarding Proton').t`Make it your own`}
                 description={c('Onboarding Proton').t`Choose your preferred look and feel.`}

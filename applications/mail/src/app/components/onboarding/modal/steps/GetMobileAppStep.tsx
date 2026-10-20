@@ -1,5 +1,3 @@
-import { useEffect } from 'react';
-
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -16,12 +14,12 @@ import mobileAppImg1x from '@proton/styles/assets/img/onboarding/mail_onboarding
 import mobileAppImg2x from '@proton/styles/assets/img/onboarding/mail_onboarding_mobile_app_download_qr@2x.webp';
 import clsx from '@proton/utils/clsx';
 
+import { TrackOnboardingStepLoad } from '../../../../telemetry/TrackOnboardingStepLoad';
 import {
     ONBOARDING_ACTIONS,
     ONBOARDING_STEPS,
     trackStepCompleted,
     trackStepInteracted,
-    trackStepViewed,
 } from '../../../../telemetry/onboardingEvents';
 import type { OnboardingStepEligibleCallback } from '../interface';
 import OnboardingContent from '../layout/OnboardingContent';
@@ -35,10 +33,6 @@ export const isGetMobileAppStepEligible: OnboardingStepEligibleCallback = async 
 
 const GetMobileAppStep = ({ onNext }: OnboardingStepRenderCallback) => {
     const { viewportWidth } = useActiveBreakpoint();
-
-    useEffect(() => {
-        trackStepViewed(ONBOARDING_STEPS.mobileApp);
-    }, []);
 
     const handleNext = () => {
         trackStepCompleted(ONBOARDING_STEPS.mobileApp);
@@ -73,6 +67,7 @@ const GetMobileAppStep = ({ onNext }: OnboardingStepRenderCallback) => {
 
     return (
         <OnboardingStep>
+            <TrackOnboardingStepLoad step={ONBOARDING_STEPS.mobileApp} />
             <OnboardingContent
                 title={c('Onboarding modal').t`Anytime, anywhere access`}
                 description={

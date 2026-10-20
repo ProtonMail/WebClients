@@ -1,4 +1,4 @@
-import { type ReactNode, useEffect } from 'react';
+import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
@@ -18,7 +18,8 @@ import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useGetStartedChecklist } from '../../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
-import { ONBOARDING_STEPS, trackStepCompleted, trackStepViewed } from '../../../../telemetry/onboardingEvents';
+import { TrackOnboardingStepLoad } from '../../../../telemetry/TrackOnboardingStepLoad';
+import { ONBOARDING_STEPS, trackStepCompleted } from '../../../../telemetry/onboardingEvents';
 import type { OnboardingStepEligibleCallback } from '../interface';
 import OnboardingContent from '../layout/OnboardingContent';
 
@@ -107,10 +108,6 @@ const OnboardingWelcomeStep = ({ onNext }: OnboardingStepRenderCallback) => {
     const [user] = useUser();
     const privacyFeature = getPrivacyFeatures(user);
 
-    useEffect(() => {
-        trackStepViewed(ONBOARDING_STEPS.welcome);
-    }, []);
-
     const handleNext = () => {
         void markItemsAsDone('ProtectInbox');
         trackStepCompleted(ONBOARDING_STEPS.welcome);
@@ -119,6 +116,7 @@ const OnboardingWelcomeStep = ({ onNext }: OnboardingStepRenderCallback) => {
 
     return (
         <OnboardingStep>
+            <TrackOnboardingStepLoad step={ONBOARDING_STEPS.welcome} />
             <OnboardingContent
                 title={c('Onboarding modal').t`Welcome to ${MAIL_APP_NAME}`}
                 description={c('Onboarding modal').t`Where privacy is default.`}
