@@ -64,7 +64,6 @@ export const defaultFlags: Flags = {
     isCryptoPostQuantumOptInEnabled: false,
     isSsoForPbsEnabled: false,
     isRetentionPoliciesEnabled: false,
-    isAuthenticatorAvailable: false,
     isCategoryViewEnabled: false,
 };
 
