@@ -328,9 +328,32 @@
       ],
       "Read or print final document": [
         "Läs eller skriv ut slutdokument"
+      ]
+    },
+    "Emoji category": {
+      "Activities": [
+        "Aktiviteter"
       ],
-      "Use the dropdown above to switch and start making suggestions.": [
-        "Använd rullgardinsmenyn ovan för att byta och börja ge förslag."
+      "Animals and nature": [
+        "Djur och natur"
+      ],
+      "Flags": [
+        "Flaggor"
+      ],
+      "Food and drink": [
+        "Mat och dryck"
+      ],
+      "Objects": [
+        "Objekt"
+      ],
+      "Smileys and people": [
+        "Smileys och människor"
+      ],
+      "Symbols": [
+        "Symboler"
+      ],
+      "Travel and places": [
+        "Resor och platser"
       ]
     },
     "Error": {
@@ -442,6 +465,9 @@
       "Loading": [
         "Laddar"
       ],
+      "Loading emoji…": [
+        "Laddar emoji …"
+      ],
       "NEW": [
         "NYTT"
       ],
@@ -537,6 +563,9 @@
       "Duplicate table row": [
         "Duplicera tabellrad"
       ],
+      "Emoji": [
+        "Emoji"
+      ],
       "Format": [
         "Format"
       ],
@@ -584,6 +613,12 @@
       ],
       "Replace link": [
         "Ersätt länk"
+      ],
+      "Search emoji": [
+        "Sök emoji"
+      ],
+      "Search results": [
+        "Sökresultat"
       ],
       "Text and highlight color": [
         "Text- och markeringsfärg"
@@ -808,6 +843,9 @@
       ],
       "Stacked column": [
         "Staplad kolumn"
+      ],
+      "Treemap": [
+        "Trädkarta"
       ]
     },
     "sheets_2025:Spreadsheet conditions": {
@@ -828,6 +866,15 @@
       ],
       "Checkbox": [
         "Kryssruta"
+      ],
+      "Date is after": [
+        "Datum är efter"
+      ],
+      "Date is between": [
+        "Datum är mellan"
+      ],
+      "Date is not between": [
+        "Datum är inte mellan"
       ],
       "Date is valid": [
         "Datum är giltigt"
@@ -898,6 +945,9 @@
       "Not between": [
         "Inte mellan"
       ],
+      "Not equal to": [
+        "Inte lika med"
+      ],
       "November": [
         "November"
       ],
@@ -922,11 +972,23 @@
       "Text contains": [
         "Text innehåller"
       ],
+      "Text does not contain": [
+        "Text innehåller inte"
+      ],
+      "Text is email": [
+        "Text är e-post"
+      ],
       "Text is exactly": [
         "Text är exakt"
       ],
+      "Text is not equal": [
+        "Text är inte lika"
+      ],
       "Text is URL": [
         "Text är URL"
+      ],
+      "Text starts with": [
+        "Text börjar med"
       ],
       "This month": [
         "Denna månad"
@@ -1774,6 +1836,9 @@
       ]
     },
     "sheets_2025:Spreadsheet editor search dialog": {
+      "${ current } of ${ total }": [
+        "${ current } av ${ total }"
+      ],
       "Close": [
         "Stäng"
       ],
@@ -2027,6 +2092,9 @@
     "sheets_2025:Spreadsheet resize dimension dialog": {
       "Cancel": [
         "Avbryt"
+      ],
+      "Default ${ size }": [
+        "Standard ${ size }"
       ],
       "OK": [
         "OK"
@@ -2495,9 +2563,6 @@
       ],
       "Delete thread": [
         "Ta bort tråd"
-      ],
-      "Explore the New Suggestion Mode": [
-        "Utforska det nya förslagsläget"
       ],
       "Language not supported": [
         "Språk stöds inte"
