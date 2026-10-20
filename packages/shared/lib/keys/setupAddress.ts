@@ -1,8 +1,10 @@
 import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 import { c } from 'ttag';
 
+import { Product } from '../ProductEnum';
 import { updateUsername } from '../api/settings';
 import { queryCheckUsernameAvailability } from '../api/user';
+import { getProduct } from '../apps/helper';
 import type { ProductParam } from '../apps/product';
 import { getRequiresAddress, getRequiresProtonAddress } from '../authentication/apps';
 import { getClientKey } from '../authentication/clientKey';
@@ -14,7 +16,13 @@ import type { Api } from '../interfaces/Api';
 import type { PreAuthKTVerify } from '../interfaces/KeyTransparency';
 import type { User, User as tsUser } from '../interfaces/User';
 import { isPrivate } from '../user/helpers';
-import { getIsBYOEAccount, getIsExternalAccount, getIsVPNOnlyAccount, getRequiresMailKeySetup } from './accountType';
+import {
+    getIsBYOEAccount,
+    getIsExternalAccount,
+    getIsExternalUserWithoutProtonAddressCreation,
+    getIsVPNOnlyAccount,
+    getRequiresMailKeySetup,
+} from './accountType';
 import { createAddressKeyLegacy, createAddressKeyV2 } from './add/addAddressKeyHelper';
 import { getDecryptedUserKeysHelper } from './getDecryptedUserKeys';
 import { getHasMigratedAddressKeys } from './keyMigration';
@@ -218,6 +226,18 @@ export const getRequiresAddressSetup = (toApp: APP_NAMES, user: tsUser) => {
     return (
         (getRequiresProtonAddress(toApp) && getIsExternalAccount(user)) ||
         (getRequiresAddress(toApp) && (getIsVPNOnlyAccount(user) || getRequiresMailKeySetup(user)))
+    );
+};
+
+/**
+ * Whether the app, one of Mail's or Calendar's, needs a Proton address that the user can't create, e.g. as a managed
+ * user, so that only their administrator can give them one
+ */
+export const getRequiresProtonAddressFromAdmin = (toApp: APP_NAMES, user: tsUser) => {
+    const product = getProduct(toApp);
+    return (
+        (product === Product.Mail || product === Product.Calendar) &&
+        getIsExternalUserWithoutProtonAddressCreation(user)
     );
 };
 
