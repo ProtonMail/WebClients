@@ -1,7 +1,7 @@
 import { DropdownMenu, DropdownMenuButton, SimpleDropdown } from '../../Components/Dropdown'
 import * as Ariakit from '@ariakit/react'
 import type { MouseEventHandler, ReactElement } from 'react'
-import { useCallback, useState } from 'react'
+import { useCallback, useRef, useState } from 'react'
 import { Icon } from '../../Components/Icon'
 import { Avatar } from '../../Components/atoms'
 import { IconButton, Tooltip } from '../../Components/ui'
@@ -50,7 +50,7 @@ export function CommentsPanelListComment({
     markNodeMap,
     removeMarkNode,
     awarenessStates,
-    showConfirmModal,
+    showDeleteDialog,
     canEdit,
     languageCode,
     dateFormat,
@@ -64,6 +64,7 @@ export function CommentsPanelListComment({
   const [isDeleting, setIsDeleting] = useState(false)
   const [isEditing, setIsEditing] = useState(false)
   const [isOptionsMenuOpen, setIsOptionsMenuOpen] = useState(false)
+  const optionsButtonRef = useRef<HTMLButtonElement>(null)
 
   const isSuggestionComment = isFirstComment && isSuggestionThread
   const suggestionID = isSuggestionComment ? thread.markID : null
@@ -101,21 +102,20 @@ export function CommentsPanelListComment({
     editor.focus()
   }
 
-  const handleDeleteThread = async () => {
-    showConfirmModal({
+  const handleDeleteThread = () => {
+    showDeleteDialog({
       title: c('Title').t`Delete thread`,
-      submitText: c('Action').t`Delete`,
       message: c('Info').t`Are you sure you want to delete this thread?`,
-      onSubmit: async () => {
+      finalFocus: optionsButtonRef,
+      onDelete: () => {
         setIsDeleting(true)
         setIsDeletingThread(true)
-        deleteThread(thread.id)
+        return deleteThread(thread.id)
           .then((deleted) => {
             if (deleted) {
               removeMarkNode(thread.markID)
             }
           })
-          .catch(reportError)
           .finally(() => {
             setIsDeleting(false)
             setIsDeletingThread(false)
@@ -125,17 +125,15 @@ export function CommentsPanelListComment({
   }
 
   const handleDeleteComment = () => {
-    showConfirmModal({
+    showDeleteDialog({
       title: c('Title').t`Delete comment`,
-      submitText: c('Action').t`Delete`,
       message: c('Info').t`Are you sure you want to delete this comment?`,
-      onSubmit: async () => {
+      finalFocus: optionsButtonRef,
+      onDelete: () => {
         setIsDeleting(true)
-        deleteComment(thread.id, comment.id)
-          .catch(reportError)
-          .finally(() => {
-            setIsDeleting(false)
-          })
+        return deleteComment(thread.id, comment.id).finally(() => {
+          setIsDeleting(false)
+        })
       },
     })
   }
@@ -230,6 +228,7 @@ export function CommentsPanelListComment({
           )}
           {canShowOptions && (
             <SimpleDropdown
+              ref={optionsButtonRef}
               shape="ghost"
               size="small"
               icon
@@ -285,7 +284,7 @@ export function CommentsPanelListComment({
                     className="flex items-center gap-3 text-left text-sm hover:text-[color:--signal-danger]"
                     onClick={() => {
                       if (isFirstComment) {
-                        handleDeleteThread().catch(reportError)
+                        handleDeleteThread()
                         return
                       }
 
