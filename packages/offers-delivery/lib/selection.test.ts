@@ -9,7 +9,7 @@ const makeCampaign = (overrides: Partial<Campaign> = {}): Campaign => ({
     startTime: NOW - 100,
     endTime: NOW + 100,
     variant: CampaignVariant.BANNER,
-    cta: { kind: 'upgrade' },
+    cta: { kind: 'upgrade', params: null },
     message: { title: 'title', body: 'body', ctaText: 'go', imageUrl: null },
     ...overrides,
 });
