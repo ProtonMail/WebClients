@@ -15,16 +15,9 @@ export const clampCardWidth = (width: number, mailboxWidth: number) => {
     return clamp(width, CARD_MIN_WIDTH, Math.max(CARD_MIN_WIDTH, mailboxWidth * CARD_MAX_MAILBOX_RATIO));
 };
 
-interface ResizeGrip {
-    position: ResizeHandlePosition;
-    spansPrompt: boolean;
-}
-
-/** On the left the grip sits on the card's inner edge, clear of the prompt and the hamburger below it. */
-export const getResizeGrip = (side: PanelSide): ResizeGrip => {
-    return side === PanelSide.RIGHT
-        ? { position: ResizeHandlePosition.LEFT, spansPrompt: true }
-        : { position: ResizeHandlePosition.RIGHT, spansPrompt: false };
+/** The grip sits on the card's inner edge, which the prompt beside the cat shares. */
+export const getResizeGripPosition = (side: PanelSide): ResizeHandlePosition => {
+    return side === PanelSide.RIGHT ? ResizeHandlePosition.LEFT : ResizeHandlePosition.RIGHT;
 };
 
 interface CardResizeDrag {
