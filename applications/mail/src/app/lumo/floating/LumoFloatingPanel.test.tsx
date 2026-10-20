@@ -4,11 +4,13 @@ import { act, fireEvent, render, screen } from '@testing-library/react';
 
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useReducedMotion } from '@proton/components/hooks/useReducedMotion';
+import ConnectedLumoPromptBar from '@proton/llm/lib/lumoAgent/ui/ConnectedLumoPromptBar';
 import { useLumoAgentDrawer } from '@proton/llm/lib/lumoAgent/ui/lumoAgentDrawerContext';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 
 import { ResizeHandlePosition } from '../../components/list/ResizeHandle';
 import CatSprite from '../pet/CatSprite';
+import { CatPose } from '../pet/catPose';
 import LumoFloatingPanel from './LumoFloatingPanel';
 import { useLumoFloatingPanel } from './LumoFloatingPanelProvider';
 import { CARD_MIN_WIDTH, CARD_RESIZING_CLASS } from './cardResize';
@@ -260,6 +262,15 @@ describe('LumoFloatingPanel', () => {
 
         expect(overlay(container)).not.toHaveClass(RUNNING_CLASS);
         expect(container.querySelector('.lumo-pet-menu')).toBeInTheDocument();
+    });
+
+    it('has the cat watch the prompt while the user types in it', async () => {
+        await renderPanel({ shownSide: PanelSide.RIGHT });
+        expect(shownSprite().pose).toBe(CatPose.SIT);
+
+        act(() => jest.mocked(ConnectedLumoPromptBar).mock.lastCall![0].onDraftChange!('archive the'));
+
+        expect(shownSprite().pose).toBe(CatPose.WATCH_LEFT);
     });
 
     it.each([

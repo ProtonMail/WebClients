@@ -1,3 +1,5 @@
+import { PanelSide } from '../floating/panelSide';
+
 export enum CatPose {
     SIT = 'sit',
     THINK = 'think',
@@ -29,6 +31,18 @@ const JUMP_POSES: Record<CatJump, CatPose> = {
     [CatJump.IN]: CatPose.JUMP_IN,
 };
 
+export enum CatActivity {
+    BROWSE_FOLDERS = 'browse-folders',
+    SEARCH = 'search',
+    WRITE = 'write',
+}
+
+const ACTIVITY_POSES: Record<CatActivity, CatPose> = {
+    [CatActivity.BROWSE_FOLDERS]: CatPose.BROWSE_FOLDERS,
+    [CatActivity.SEARCH]: CatPose.SEARCH,
+    [CatActivity.WRITE]: CatPose.WRITE,
+};
+
 export enum CatRun {
     GALLOP = 'gallop',
     SKID = 'skid',
@@ -44,9 +58,26 @@ interface CatState {
     isHidden: boolean;
     run: CatRun | null;
     isHovered: boolean;
+    isChatOpen: boolean;
+    activity: CatActivity | null;
+    isThinking: boolean;
+    isCelebrating: boolean;
+    isTyping: boolean;
+    side: PanelSide;
 }
 
-export const selectCatPose = ({ jump, isHidden, run, isHovered }: CatState): CatPose => {
+export const selectCatPose = ({
+    jump,
+    isHidden,
+    run,
+    isHovered,
+    isChatOpen,
+    activity,
+    isThinking,
+    isCelebrating,
+    isTyping,
+    side,
+}: CatState): CatPose => {
     if (jump) {
         return JUMP_POSES[jump];
     }
@@ -59,6 +90,22 @@ export const selectCatPose = ({ jump, isHidden, run, isHovered }: CatState): Cat
     }
     if (isHovered) {
         return CatPose.PERK;
+    }
+    if (isCelebrating) {
+        return CatPose.HAPPY;
+    }
+    // Lumo keeps working with the chat closed, but the cat only acts it out beside the chat
+    if (!isChatOpen) {
+        return CatPose.SIT;
+    }
+    if (activity) {
+        return ACTIVITY_POSES[activity];
+    }
+    if (isThinking) {
+        return CatPose.THINK;
+    }
+    if (isTyping) {
+        return side === PanelSide.RIGHT ? CatPose.WATCH_LEFT : CatPose.WATCH_RIGHT;
     }
     return CatPose.SIT;
 };
