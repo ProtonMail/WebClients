@@ -1,9 +1,8 @@
 import { ONBOARDING_THEMES } from '@proton/components/containers/onboarding/constants';
 import { TelemetryMailOnboardingEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
-import { allowed, defineEvent } from '@proton/telemetry-tracker/events';
+import { allowed, defineEvent, defineTimer, duration, number } from '@proton/telemetry-tracker/events';
 import { tracker } from '@proton/telemetry-tracker/tracker';
 
-// TODO how we send the time?
 // TODO remove the delay false
 
 export enum ONBOARDING_STEPS {
@@ -25,9 +24,18 @@ const baseDimensions = {
     step: allowed(Object.values(ONBOARDING_STEPS)),
 };
 
+/** Time the user spent in the onboarding, sent as `activeMs` on every event */
+const onboardingTimer = defineTimer('mailOnboarding');
+
+const baseValues = {
+    activeMs: duration(),
+    timestamp: number(),
+};
+
 const baseEvent = {
     target: 'telemetry',
     group: TelemetryMeasurementGroups.mailOnboarding,
+    values: baseValues,
     delay: false,
 } as const;
 
@@ -56,20 +64,33 @@ const themeStepCompleted = defineEvent({
     dimensions: { ...baseDimensions, theme: allowed(ONBOARDING_THEMES.map(({ label }) => label)) },
 });
 
+/** Idempotent: the first event of the onboarding starts the timer */
+const withTiming = () => {
+    tracker.startTimer(onboardingTimer);
+    return { values: { timestamp: Date.now() } };
+};
+
+const timing = { durationFrom: onboardingTimer };
+
 export const trackStepViewed = (step: ONBOARDING_STEPS) => {
-    tracker.emit(stepLoad, { dimensions: { flow: 'onboarding', step } });
+    tracker.emit(stepLoad, { dimensions: { flow: 'onboarding', step }, ...withTiming() }, timing);
 };
 
 export const trackStepInteracted = (step: ONBOARDING_STEPS, action: ONBOARDING_ACTIONS) => {
-    tracker.emit(stepInteracted, { dimensions: { flow: 'onboarding', step, action } });
+    tracker.emit(stepInteracted, { dimensions: { flow: 'onboarding', step, action }, ...withTiming() }, timing);
 };
 
 export const trackStepCompleted = (step: ONBOARDING_STEPS) => {
-    tracker.emit(stepCompleted, { dimensions: { flow: 'onboarding', step } });
+    tracker.emit(stepCompleted, { dimensions: { flow: 'onboarding', step }, ...withTiming() }, timing);
 };
 
 export const trackThemeStepCompleted = (theme: (typeof ONBOARDING_THEMES)[number]['label']) => {
-    tracker.emit(themeStepCompleted, {
-        dimensions: { flow: 'onboarding', step: ONBOARDING_STEPS.themeSelection, theme },
-    });
+    tracker.emit(
+        themeStepCompleted,
+        {
+            dimensions: { flow: 'onboarding', step: ONBOARDING_STEPS.themeSelection, theme },
+            ...withTiming(),
+        },
+        timing
+    );
 };
