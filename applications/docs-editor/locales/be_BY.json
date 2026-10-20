@@ -334,9 +334,29 @@
       ],
       "Read or print final document": [
         "Прачытаць або раздрукаваць канчатковы дакумент"
+      ]
+    },
+    "Emoji category": {
+      "Activities": [
+        "Актыўнасць"
       ],
-      "Use the dropdown above to switch and start making suggestions.": [
-        "Выкарыстоўвайце выпадальнае меню вышэй, каб пераключыцца і пачаць рабіць прапановы."
+      "Animals and nature": [
+        "Жывёлы і прырода"
+      ],
+      "Flags": [
+        "Сцягі"
+      ],
+      "Food and drink": [
+        "Ежа і напоі"
+      ],
+      "Objects": [
+        "Аб’екты"
+      ],
+      "Smileys and people": [
+        "Смайлікі і людзі"
+      ],
+      "Symbols": [
+        "Сімвалы"
       ]
     },
     "Error": {
@@ -456,6 +476,9 @@
       "Loading": [
         "Загрузка"
       ],
+      "Loading emoji…": [
+        "Загрузка эмодзі..."
+      ],
       "Loading spreadsheet content...": [
         "Загрузка змесціва электроннай табліцы..."
       ],
@@ -467,6 +490,9 @@
       ],
       "No comments": [
         "Няма каментарыяў"
+      ],
+      "No emoji found": [
+        "Эмодзі не знойдзены"
       ],
       "No title": [
         "Без загалоўка"
@@ -551,6 +577,9 @@
       "Duplicate table row": [
         "Дубліраваць радок табліцы"
       ],
+      "Emoji": [
+        "Эмодзі"
+      ],
       "Format": [
         "Фармат"
       ],
@@ -598,6 +627,12 @@
       ],
       "Replace link": [
         "Замяніць спасылку"
+      ],
+      "Search emoji": [
+        "Пошук эмодзі"
+      ],
+      "Search results": [
+        "Вынікі пошуку"
       ],
       "Text and highlight color": [
         "Колер тэксту і вылучэнне"
@@ -756,6 +791,280 @@
       ],
       "Note": [
         "Нататка"
+      ]
+    },
+    "sheets_2025:Spreadsheet cellFormatOptions": {
+      "Accounting": [
+        "Бухгалтарскі ўлік"
+      ],
+      "Bottom": [
+        "Знізу"
+      ],
+      "Center": [
+        "Па цэнтры"
+      ],
+      "Clip": [
+        "Кліп"
+      ],
+      "Custom": [
+        "Карыстальніцкі"
+      ],
+      "Date": [
+        "Дата"
+      ],
+      "General": [
+        "Агульныя"
+      ],
+      "Left": [
+        "Злева"
+      ],
+      "Number": [
+        "Нумар"
+      ],
+      "Overflow": [
+        "Перапаўненне"
+      ],
+      "Percentage": [
+        "Працэнт"
+      ],
+      "Right": [
+        "Справа"
+      ],
+      "Scientific": [
+        "Навуковы"
+      ],
+      "Text": [
+        "Тэкст"
+      ],
+      "Time": [
+        "Час"
+      ],
+      "Top": [
+        "Зверху"
+      ],
+      "Wrap": [
+        "Перанос радкоў"
+      ]
+    },
+    "sheets_2025:Spreadsheet chartAggregates": {
+      "Average": [
+        "Сярэдняе"
+      ],
+      "Count": [
+        "Колькасць"
+      ],
+      "Max": [
+        "Максімум"
+      ],
+      "Median": [
+        "Медыяна"
+      ],
+      "Min": [
+        "Мінімум"
+      ],
+      "Sum": [
+        "Сума"
+      ]
+    },
+    "sheets_2025:Spreadsheet chartEditorDialog": {
+      "None": [
+        "Адсутнічае"
+      ]
+    },
+    "sheets_2025:Spreadsheet chartTypes": {
+      "2D Pie": [
+        "Двухмерная кругавая дыяграма"
+      ],
+      "Clustered Column": [
+        "Гістаграма з групаваннем"
+      ],
+      "Column": [
+        "Слупок"
+      ],
+      "Doughnut": [
+        "Кальцавая дыяграма"
+      ],
+      "Hierarchy": [
+        "Iерархія"
+      ],
+      "Line": [
+        "Лінія"
+      ],
+      "Pie": [
+        "Кругавая дыяграма"
+      ],
+      "Smooth line": [
+        "Роўная лінія"
+      ],
+      "Stacked column": [
+        "Дыяграма з накапленнем"
+      ],
+      "Stacked line": [
+        "Лінейная дыяграма з накапленнем"
+      ],
+      "Sunburst": [
+        "Кругавая шматузроўневая дыяграма"
+      ],
+      "Treemap": [
+        "Дрэвападобная дыяграма"
+      ]
+    },
+    "sheets_2025:Spreadsheet conditions": {
+      "Above average": [
+        "Вышэй за сярэдняе"
+      ],
+      "April": [
+        "Красавік"
+      ],
+      "August": [
+        "Жнівень"
+      ],
+      "Below average": [
+        "Ніжэй за сярэдняе"
+      ],
+      "Between": [
+        "Паміж"
+      ],
+      "Bottom N items": [
+        "Ніжнія N элементаў"
+      ],
+      "Bottom N percent": [
+        "Ніжнія N працэнтаў"
+      ],
+      "Checkbox": [
+        "Птушка"
+      ],
+      "Custom formula": [
+        "Карыстальніцкая формула"
+      ],
+      "Date is after": [
+        "Дата пасля"
+      ],
+      "Date is before": [
+        "Дата да"
+      ],
+      "Date is between": [
+        "Дата паміж"
+      ],
+      "Date is equal to": [
+        "Дата роўная"
+      ],
+      "Date is not between": [
+        "Дата не паміж"
+      ],
+      "Date is not equal to": [
+        "Дата не роўная"
+      ],
+      "Date is on or after": [
+        "Дата дня або пасля"
+      ],
+      "Date is on or before": [
+        "Дата роўная або да"
+      ],
+      "Date is valid": [
+        "Сапраўдная дата"
+      ],
+      "Dropdown": [
+        "Выпадное меню"
+      ],
+      "Dropdown (from a range)": [
+        "Выпадное меню (з дыяпазону)"
+      ],
+      "Equal to": [
+        "Роўны"
+      ],
+      "Errors": [
+        "Памылкі"
+      ],
+      "Greater than": [
+        "Больш за"
+      ],
+      "Greater than or equal to": [
+        "Больш або роўнае"
+      ],
+      "Greater than previous": [
+        "Больш, чым папярэдняе"
+      ],
+      "Is not empty": [
+        "Не пусты"
+      ],
+      "January": [
+        "Студзень"
+      ],
+      "July": [
+        "Ліпень"
+      ],
+      "June": [
+        "Чэрвень"
+      ],
+      "Last 7 days": [
+        "За апошнія 7 дзён"
+      ],
+      "Last month": [
+        "За апошні месяц"
+      ],
+      "Last quarter": [
+        "Апошні квартал"
+      ],
+      "Less than or equal to": [
+        "Менш або роўнае"
+      ],
+      "Less than previous": [
+        "Менш, чым папярэдняе"
+      ],
+      "March": [
+        "Сакавік"
+      ],
+      "May": [
+        "Травень"
+      ],
+      "Next month": [
+        "За наступны месяц"
+      ],
+      "Next quarter": [
+        "За наступны квартал"
+      ],
+      "Not between": [
+        "Не паміж"
+      ],
+      "Not equal to": [
+        "Не роўнае"
+      ],
+      "October": [
+        "Кастрычнік"
+      ],
+      "Quarter 1": [
+        "1-шы квартал"
+      ],
+      "Text contains": [
+        "Тэкст змяшчае"
+      ],
+      "Text does not contain": [
+        "Тэкст не змяшчае"
+      ],
+      "Text is email": [
+        "Тэкст з'яўляецца адрасам электроннай пошты"
+      ],
+      "Text is URL": [
+        "Тэкст з'яўляецца URL-адрасам"
+      ],
+      "This month": [
+        "У гэтым месяцы"
+      ],
+      "This quarter": [
+        "За гэты квартал"
+      ],
+      "Today": [
+        "Сёння"
+      ],
+      "Top N items": [
+        "Верхнія N элементаў"
+      ],
+      "Top N percent": [
+        "Верхнія N працэнтаў"
+      ],
+      "Year to date": [
+        "За апошні год"
       ]
     },
     "sheets_2025:Spreadsheet context menu": {
@@ -1108,6 +1417,14 @@
         "Год"
       ]
     },
+    "sheets_2025:Spreadsheet customCurrencyFormatDialog": {
+      "Format": [
+        "Фармат"
+      ],
+      "Symbol": [
+        "Сімвал"
+      ]
+    },
     "sheets_2025:Spreadsheet delete sheet dialog": {
       "Are you sure you want to delete ${ sheetName }?": [
         "Вы сапраўды хочаце выдаліць ${ sheetName }?"
@@ -1134,6 +1451,11 @@
       ],
       "Your screen is too small to edit this spreadsheet. You’re in view-only mode. To make changes, please open this spreadsheet on a larger screen or expand your browser window.": [
         "Памер вашага экрана занадта маленькі, каб рэдагаваць гэту электронную табліцу. Вы знаходзіцеся ў рэжыме прагляду. Адкрыйце гэту электронную табліцу на прыладзе з большым экранам або разгарніце акно браўзера, каб зрабіць змены."
+      ]
+    },
+    "sheets_2025:Spreadsheet editingDisabledButton": {
+      "Edit": [
+        "Рэдагаваць"
       ]
     },
     "sheets_2025:Spreadsheet editor": {
@@ -1390,7 +1712,7 @@
         "Слупкі"
       ],
       "Dropdown": [
-        "Выпадны спіс"
+        "Выпадное меню"
       ],
       "Function": [
         "Функцыя"
@@ -1617,6 +1939,9 @@
       "Bold": [
         "Тоўсты"
       ],
+      "Border": [
+        "Мяжа"
+      ],
       "Choose border": [
         "Выберыце межы"
       ],
@@ -1640,6 +1965,9 @@
       ],
       "Default (${ defaultFont })": [
         "Прадвызначаны (${ defaultFont })"
+      ],
+      "Fill color": [
+        "Колер запаўнення"
       ],
       "Find": [
         "Знайсці"
@@ -1704,6 +2032,9 @@
       "Strikethrough": [
         "Закрэслены"
       ],
+      "Text color": [
+        "Колер тэксту"
+      ],
       "Text wrapping": [
         "Перанос радкоў"
       ],
@@ -1767,6 +2098,35 @@
         "Сартаваць Я → А"
       ]
     },
+    "sheets_2025:Spreadsheet filterByCondition": {
+      "None": [
+        "Адсутнічае"
+      ]
+    },
+    "sheets_2025:Spreadsheet formatMenu": {
+      "Coming soon...": [
+        "Неўзабаве з'явіцца..."
+      ]
+    },
+    "sheets_2025:Spreadsheet formulaBar": {
+      "Edit": [
+        "Рэдагаваць"
+      ],
+      "Remove": [
+        "Выдаліць"
+      ],
+      "View": [
+        "Выгляд"
+      ]
+    },
+    "sheets_2025:Spreadsheet gridFooter": {
+      "Add": [
+        "Дадаць"
+      ],
+      "more rows at the bottom": [
+        "больш радкоў знізу"
+      ]
+    },
     "sheets_2025:Spreadsheet insert link dialog": {
       "Apply": [
         "Прымяніць"
@@ -1804,6 +2164,15 @@
       ],
       "OK": [
         "OK"
+      ],
+      "Resize column ${ title }": [
+        "Змяніць памер слупка ${ title }"
+      ],
+      "Resize row ${ title }": [
+        "Змяніць памер радка ${ title }"
+      ],
+      "Specify row height (px)": [
+        "Укажыце вышыню радка (px)"
       ]
     },
     "sheets_2025:Spreadsheet sheet status bar": {
@@ -1944,7 +2313,7 @@
         "Скасаваць"
       ],
       "Chart data range": [
-        "Дыяпазон даных дыяграмы"
+        "Дыяпазон даных для дыяграмы"
       ],
       "Chart editor": [
         "Рэдактар дыяграмы"
@@ -1978,6 +2347,18 @@
       ],
       "Series": [
         "Серыі"
+      ],
+      "Series ${ seriesNumber }": [
+        "Серыя ${ seriesNumber }"
+      ],
+      "Series ${ seriesNumber } Aggregate": [
+        "Сукупнасць серыі ${ seriesNumber }"
+      ],
+      "Series ${ seriesNumber } Name": [
+        "Назва серыі ${ seriesNumber }"
+      ],
+      "Series ${ seriesNumber } Range": [
+        "Дыяпазон серыі ${ seriesNumber }"
       ],
       "Show data in hidden rows and columns": [
         "Паказаць даныя ў схаваных радках і слупках"
@@ -2243,15 +2624,29 @@
         "Назва табліцы"
       ]
     },
+    "sheets_2025:Spreadsheet viewMenu": {
+      "1 row": [
+        "1 радок"
+      ],
+      "2 columns": [
+        "2 слупкі"
+      ],
+      "2 rows": [
+        "2 радкі"
+      ],
+      "No columns": [
+        "Без слупкоў"
+      ],
+      "No rows": [
+        "Без радкоў"
+      ]
+    },
     "Title": {
       "Delete comment": [
         "Выдаліць каментарый"
       ],
       "Delete thread": [
         "Выдаліць гутарку"
-      ],
-      "Explore the New Suggestion Mode": [
-        "Даследуйце новы рэжым прапановы"
       ],
       "Language not supported": [
         "Мова не падтрымліваецца"
