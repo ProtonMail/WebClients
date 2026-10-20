@@ -33,6 +33,9 @@ interface LumoFloatingPanelValue {
     toggleLumo: () => void;
     closePanel: () => void;
     switchSides: () => void;
+    isCatHidden: boolean;
+    hideCat: () => void;
+    revealCat: () => void;
 }
 
 const LumoFloatingPanelContext = createContext<LumoFloatingPanelValue | null>(null);
@@ -55,6 +58,7 @@ export const LumoFloatingPanelProvider = ({ children }: Props) => {
     const [isPanelOpen, setIsPanelOpen] = useState(false);
     const [sideState, setSideState] = useState(INITIAL_PANEL_SIDE_STATE);
     const [cardWidth, setCardWidth] = useState(CARD_MIN_WIDTH);
+    const [isCatHidden, setIsCatHidden] = useState(false);
     const hasComposers = useMailSelector(selectComposersCount) > 0;
     const { appInView, toggleDrawerApp } = useDrawer();
     const { assistantOpened } = useLumoMailTelemetry();
@@ -78,6 +82,7 @@ export const LumoFloatingPanelProvider = ({ children }: Props) => {
         toggleDrawer();
         setIsDetached(true);
         setIsPanelOpen(true);
+        setIsCatHidden(false);
     };
 
     const dock = () => {
@@ -96,9 +101,19 @@ export const LumoFloatingPanelProvider = ({ children }: Props) => {
         assistantOpened();
         if (isDetached) {
             setIsPanelOpen(true);
+            setIsCatHidden(false);
             return;
         }
         toggleDrawer();
+    };
+
+    const hideCat = () => {
+        setIsPanelOpen(false);
+        setIsCatHidden(true);
+    };
+
+    const revealCat = () => {
+        setIsCatHidden(false);
     };
 
     const closeLumo = isDetached ? closePanel : toggleDrawer;
@@ -123,6 +138,9 @@ export const LumoFloatingPanelProvider = ({ children }: Props) => {
                 toggleLumo: isCurrentSurfaceOpen ? closeLumo : openLumo,
                 closePanel,
                 switchSides,
+                isCatHidden,
+                hideCat,
+                revealCat,
             }}
         >
             {children}

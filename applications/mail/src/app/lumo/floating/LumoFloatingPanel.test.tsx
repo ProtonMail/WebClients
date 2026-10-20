@@ -3,9 +3,12 @@ import { createRef } from 'react';
 import { act, fireEvent, render, screen } from '@testing-library/react';
 
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import { useReducedMotion } from '@proton/components/hooks/useReducedMotion';
 import { useLumoAgentDrawer } from '@proton/llm/lib/lumoAgent/ui/lumoAgentDrawerContext';
+import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 
 import { ResizeHandlePosition } from '../../components/list/ResizeHandle';
+import CatSprite from '../pet/CatSprite';
 import LumoFloatingPanel from './LumoFloatingPanel';
 import { useLumoFloatingPanel } from './LumoFloatingPanelProvider';
 import { CARD_MIN_WIDTH, CARD_RESIZING_CLASS } from './cardResize';
@@ -13,11 +16,13 @@ import { PanelSide } from './panelSide';
 import { useMailboxBounds } from './useMailboxBounds';
 
 jest.mock('@proton/components/hooks/useActiveBreakpoint', () => ({ __esModule: true, default: jest.fn() }));
+jest.mock('@proton/components/hooks/useReducedMotion', () => ({ useReducedMotion: jest.fn() }));
 jest.mock('@proton/llm/lib/lumoAgent/ui/lumoAgentDrawerContext', () => ({ useLumoAgentDrawer: jest.fn() }));
 jest.mock('@proton/llm/lib/lumoAgent/ui/ConnectedLumoPromptBar', () => ({
     __esModule: true,
     default: jest.fn(() => null),
 }));
+jest.mock('@proton/shared/lib/helpers/dom', () => ({ rootFontSize: jest.fn() }));
 jest.mock('../pet/CatSprite', () => ({ __esModule: true, default: jest.fn(() => null) }));
 jest.mock('./LumoFloatingPanelCard', () => ({ __esModule: true, default: () => null }));
 jest.mock('./LumoFloatingPanelProvider', () => ({ useLumoFloatingPanel: jest.fn() }));
@@ -31,6 +36,8 @@ const toggleLumo = jest.fn();
 const closePanel = jest.fn();
 const switchSides = jest.fn();
 const dock = jest.fn();
+const hideCat = jest.fn();
+const revealCat = jest.fn();
 const clear = jest.fn();
 const openDebugReport = jest.fn();
 
@@ -42,6 +49,9 @@ interface Setup {
     cardWidth?: number;
     shownSide?: PanelSide;
     hasFloatingDrawerButton?: boolean;
+    isCatHidden?: boolean;
+    isReducedMotion?: boolean;
+    mailboxWidth?: number;
 }
 
 const mockPanel = ({
@@ -51,6 +61,9 @@ const mockPanel = ({
     hasBounds = true,
     cardWidth = CARD_MIN_WIDTH,
     shownSide = PanelSide.LEFT,
+    isCatHidden = false,
+    isReducedMotion = false,
+    mailboxWidth = MAILBOX_WIDTH,
 }: Setup) => {
     jest.mocked(useLumoFloatingPanel).mockReturnValue({
         isDetached,
@@ -64,6 +77,9 @@ const mockPanel = ({
         toggleLumo,
         closePanel,
         switchSides,
+        isCatHidden,
+        hideCat,
+        revealCat,
     });
     jest.mocked(useLumoAgentDrawer).mockReturnValue({
         items: [],
@@ -76,8 +92,9 @@ const mockPanel = ({
         viewportWidth: { '<=small': isSmallViewport },
     } as unknown as ReturnType<typeof useActiveBreakpoint>);
     jest.mocked(useMailboxBounds).mockReturnValue(
-        hasBounds ? ({ top: 0, left: 0, width: MAILBOX_WIDTH, height: 800 } as DOMRect) : null
+        hasBounds ? ({ top: 0, left: 0, width: mailboxWidth, height: 800 } as DOMRect) : null
     );
+    jest.mocked(useReducedMotion).mockReturnValue(isReducedMotion);
 };
 
 const renderPanel = async (setup: Setup = {}) => {
@@ -99,9 +116,20 @@ const resizeGrip = () => screen.getByRole('button', { name: 'Resize panel' });
 const cat = () => screen.queryByRole('button', { name: 'Toggle Lumo' });
 const chat = () => document.getElementById('drawer-app-lumo');
 const overlay = (container: HTMLElement) => container.firstChild as HTMLElement;
+const panelDock = (container: HTMLElement) => container.querySelector('.lumo-floating-panel-dock')!;
+const catSlot = (container: HTMLElement) => container.querySelector('.lumo-pet-cat-slot')!;
+const shownSprite = () => jest.mocked(CatSprite).mock.lastCall![0];
+const isCatMirrored = () => shownSprite().isMirrored;
+const RUNNING_CLASS = 'lumo-floating-panel--running';
+
+// jsdom has no TransitionEvent, so the generic event it falls back to drops propertyName
+const endTransition = (element: Element, propertyName: string) => {
+    fireEvent(element, Object.assign(new Event('transitionend', { bubbles: true }), { propertyName }));
+};
 
 beforeEach(() => {
     jest.clearAllMocks();
+    jest.mocked(rootFontSize).mockReturnValue(16);
 });
 
 describe('LumoFloatingPanel', () => {
@@ -143,10 +171,95 @@ describe('LumoFloatingPanel', () => {
         fireEvent.click(screen.getByRole('button', { name: 'Move Lumo to the right' }));
         fireEvent.click(screen.getByRole('button', { name: 'Dock to side panel' }));
         fireEvent.click(screen.getByRole('button', { name: 'Report a problem' }));
+        fireEvent.click(screen.getByRole('button', { name: 'Hide Lumo' }));
 
         expect(switchSides).toHaveBeenCalledTimes(1);
         expect(dock).toHaveBeenCalledTimes(1);
         expect(openDebugReport).toHaveBeenCalledTimes(1);
+        expect(hideCat).toHaveBeenCalledTimes(1);
+    });
+
+    it('reveals the hidden cat from its ears', async () => {
+        await renderPanel({ isPanelOpen: false, isCatHidden: true });
+
+        fireEvent.click(screen.getByRole('button', { name: 'Show Lumo' }));
+
+        expect(revealCat).toHaveBeenCalledTimes(1);
+    });
+
+    it('gallops the cat, card and prompt to the new side together, until the dock arrives', async () => {
+        const { container, rerenderPanel } = await renderPanel({ shownSide: PanelSide.RIGHT });
+        expect(overlay(container).style.getPropertyValue('--lumo-floating-panel-run-ms')).toBe(
+            `${((MAILBOX_WIDTH - 16 - 16 - 96) / 600) * 1000}ms`
+        );
+
+        act(() => rerenderPanel({ shownSide: PanelSide.LEFT }));
+        expect(overlay(container)).toHaveClass(RUNNING_CLASS);
+        expect(isCatMirrored()).toBe(true);
+        expect(overlay(container)).toHaveClass('lumo-floating-panel--left');
+
+        endTransition(catSlot(container), 'transform');
+        endTransition(panelDock(container), 'opacity');
+        expect(overlay(container)).toHaveClass(RUNNING_CLASS);
+
+        endTransition(panelDock(container), 'transform');
+        expect(overlay(container)).not.toHaveClass(RUNNING_CLASS);
+        expect(isCatMirrored()).toBe(false);
+    });
+
+    it('caps the run at 1.5s across a wide mailbox', async () => {
+        const { container } = await renderPanel({ mailboxWidth: 2000 });
+
+        expect(overlay(container).style.getPropertyValue('--lumo-floating-panel-run-ms')).toBe('1500ms');
+    });
+
+    it('measures the run in rem, so a larger font size shortens it', async () => {
+        jest.mocked(rootFontSize).mockReturnValue(20);
+
+        const { container } = await renderPanel({ hasFloatingDrawerButton: true });
+
+        expect(overlay(container).style.getPropertyValue('--lumo-floating-panel-run-ms')).toBe(
+            `${((MAILBOX_WIDTH - (1 + 1 + 6 + 2) * 20) / 600) * 1000}ms`
+        );
+    });
+
+    it('moves straight to the new side with reduced motion', async () => {
+        const { container, rerenderPanel } = await renderPanel({ isReducedMotion: true, shownSide: PanelSide.RIGHT });
+
+        act(() => rerenderPanel({ shownSide: PanelSide.LEFT }));
+
+        expect(overlay(container)).not.toHaveClass(RUNNING_CLASS);
+        expect(overlay(container)).toHaveClass('lumo-floating-panel--left');
+    });
+
+    it('jumps the cat into hiding, then keeps it dropped once the jump ends', async () => {
+        const { container, rerenderPanel } = await renderPanel();
+
+        act(() => rerenderPanel({ isPanelOpen: false, isCatHidden: true }));
+        expect(catSlot(container)).toHaveClass('lumo-pet-cat-slot--hidden', 'lumo-pet-cat-slot--jump-out');
+
+        fireEvent.animationEnd(catSlot(container));
+        expect(catSlot(container)).toHaveClass('lumo-pet-cat-slot--hidden');
+        expect(catSlot(container)).not.toHaveClass('lumo-pet-cat-slot--jump-out');
+    });
+
+    it('drops the cat into hiding without a jump with reduced motion', async () => {
+        const { container, rerenderPanel } = await renderPanel({ isReducedMotion: true });
+
+        act(() => rerenderPanel({ isPanelOpen: false, isCatHidden: true }));
+
+        expect(catSlot(container)).toHaveClass('lumo-pet-cat-slot--hidden');
+        expect(catSlot(container)).not.toHaveClass('lumo-pet-cat-slot--jump-out');
+    });
+
+    it('does not run while docked, so a later detach shows a sitting cat', async () => {
+        const { container, rerenderPanel } = await renderPanel({ isDetached: false, shownSide: PanelSide.RIGHT });
+
+        act(() => rerenderPanel({ shownSide: PanelSide.LEFT }));
+        act(() => rerenderPanel({ isDetached: true }));
+
+        expect(overlay(container)).not.toHaveClass(RUNNING_CLASS);
+        expect(container.querySelector('.lumo-pet-menu')).toBeInTheDocument();
     });
 
     it.each([
