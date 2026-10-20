@@ -300,9 +300,6 @@
       "Done": [
         "Opravljeno"
       ],
-      "Downgrade": [
-        "Zmanjšaj"
-      ],
       "Download": [
         "Prenesi"
       ],
@@ -555,9 +552,6 @@
       "Open": [
         "Odpri"
       ],
-      "Open ${ CALENDAR_APP_NAME } settings": [
-        "Odprite nastavitve za ${ CALENDAR_APP_NAME }"
-      ],
       "Open ${ DRIVE_APP_NAME }": [
         "Odpri ${ DRIVE_APP_NAME }"
       ],
@@ -614,9 +608,6 @@
       ],
       "Remove access": [
         "Odstrani dostop"
-      ],
-      "Remove bonuses": [
-        "Odstrani bonuse"
       ],
       "Remove button": [
         "Odstranite gumb"
@@ -1077,11 +1068,6 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Premijski upravitelj gesel"
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "30-dnevno jamstvo z vračilom denarja"
       ]
     },
     "BF2024: Deal details": {
@@ -3526,14 +3512,6 @@
         "Zamenjaj paket"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "Družinska skupina ni prepoznana. Poskusite znova."
-      ],
-      "Organization not recognized. Try again.": [
-        "Organizacija ni prepoznana. Poskusite znova."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "Skupine ${ BRAND_NAME }"
@@ -3600,30 +3578,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Vaš račun zaseda ${ usedSpace } prostora za shranjevanje, kar presega vam dodeljenih ${ inviteSpace }. Izbrišite nekaj podatkov ali prosite skrbnika paketa, naj vam dodeli več prostora."
-      ]
-    },
-    "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "Vnesite ime družinske skupine za potrditev."
-      ],
-      "Enter organization name to confirm": [
-        "Vnesite ime organizacije za potrditev."
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "To bo trajno izbrisalo vse uporabnike, račune in podatke, povezane z vašo organizacijo."
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "To bo odstranilo vse ${ BRAND_NAME } premijske funkcije za vsakega družinskega člana."
-      ]
-    },
-    "familyOffer_2023:Title": {
-      "Delete family group?": [
-        "Izbriši družinsko skupino?"
-      ],
-      "Delete organization?": [
-        "Izbriši organizacijo?"
       ]
     },
     "Feature": {
@@ -4307,15 +4261,6 @@
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Pridobite ${ referrerRewardAmount }** kot dobropis za vsakega prijatelja, ki se naroči na paket."
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } dodaten prostor za shranjevanje"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } povezava za ${ VPN_APP_NAME } (omogoča vam povezavo več naprav na VPN).",
-        "+${ organization.BonusVPN } povezavi za ${ VPN_APP_NAME } (omogoča vam povezavo več naprav na VPN).",
-        "+${ organization.BonusVPN } povezave za ${ VPN_APP_NAME } (omogoča vam povezavo več naprav na VPN).",
-        "+${ organization.BonusVPN } povezav za ${ VPN_APP_NAME } (omogoča vam povezavo več naprav na VPN)."
-      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "S telefonsko številko lahko preverite samo en ${ BRAND_NAME } račun"
       ],
@@ -4381,9 +4326,6 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Preden zahtevate novo kodo za preverjanje, preverite mapo za neželeno pošto in preverite, ali je ${ strong } pravilen naslov."
-      ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "S prehodom na brezplačni paket boste trajno izgubili te ugodnosti, tudi če v prihodnosti znova nadgradite."
       ],
       "Calendar side panel": [
         "Stranska plošča s koledarjem"
@@ -4511,9 +4453,6 @@
       "Downgrade": [
         "Zmanjšaj"
       ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Zmanjšanje paketa bo prekinila vse povezave do plačljivih ${ VPN_APP_NAME } strežnikov."
-      ],
       "Drop file here to upload": [
         "Spusti datoteko tukaj za nalaganje."
       ],
@@ -4627,15 +4566,6 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Če sporočila ne najdete v nabiralniku, poglejte v mapo z neželeno pošto."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Če nadaljujete s podgradnjo, boste izgubili dostop do plačljivih funkcij ${ MAIL_APP_NAME } in ${ VPN_APP_NAME }."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Če nadaljujete s podgradnjo, boste izgubili dostop do plačljivih funkcij ${ MAIL_APP_NAME }, vključno z dodatnim prostorom za shranjevanje in filtri."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Če nadaljujete s podgradnjo, boste izgubili dostop do plačljivih funkcij ${ VPN_APP_NAME }."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Uvozi ${ calendarCount } od ${ totalCalendarsCount } koledarja",
@@ -4976,9 +4906,6 @@
       "Show table of contents": [
         "Pokaži kazalo"
       ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Ker ste zvest uporabnik, smo vašemu računu omogočili dodatne funkcionalnosti."
-      ],
       "Some edits are taking longer to sync than expected.": [
         "Sinhronizacija nekaterih popravkov traja dlje, kot je bilo pričakovano."
       ],
@@ -5168,6 +5095,9 @@
       "We'll email you once import is complete.": [
         "Ko bo uvoz končan, vam pošljemo e-poštno sporočilo."
       ],
+      "We'll get back to you shortly.": [
+        "Kmalu vam bomo odgovorili."
+      ],
       "We'll notify you when the import is done.": [
         "Obvestili vas bomo, ko se bo uvoz dokončal."
       ],
@@ -5252,18 +5182,6 @@
       "You can close the tab or browser in the meantime.": [
         "Medtem lahko zaprete zavihek ali brskalnik."
       ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Lahko obdržite do ${ MAX_CALENDARS_FREE } koledar. Preden prekličete naročnino na ${ MAIL_SHORT_APP_NAME }, prosimo odstranite deljene povezave do koledarjev in uporabnike storitve ${ BRAND_NAME }, s katerimi ste delili svoje koledarje.",
-        "Lahko obdržite do ${ MAX_CALENDARS_FREE } koledarja. Preden prekličete naročnino na ${ MAIL_SHORT_APP_NAME }, prosimo odstranite deljene povezave do koledarjev in uporabnike storitve ${ BRAND_NAME }, s katerimi ste delili svoje koledarje.",
-        "Lahko obdržite do ${ MAX_CALENDARS_FREE } koledarje. Preden prekličete naročnino na ${ MAIL_SHORT_APP_NAME }, prosimo odstranite deljene povezave do koledarjev in uporabnike storitve ${ BRAND_NAME }, s katerimi ste delili svoje koledarje.",
-        "Lahko obdržite do ${ MAX_CALENDARS_FREE } koledarjev. Preden prekličete naročnino na ${ MAIL_SHORT_APP_NAME }, prosimo odstranite deljene povezave do koledarjev in uporabnike storitve ${ BRAND_NAME }, s katerimi ste delili svoje koledarje."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Lahko obdržite ${ MAX_CALENDARS_FREE } koledar. Preden prekličete naročnino, prosimo odstranite deljene povezave do koledarjev in slehernega uporabnika ${ BRAND_NAME }, s katerim ste delili svoje koledarje.",
-        "Lahko obdržite do ${ MAX_CALENDARS_FREE } koledarja. Preden prekličete naročnino, prosimo odstranite deljene povezave do koledarjev in slehernega uporabnika ${ BRAND_NAME }, s katerim ste delili svoje koledarje.",
-        "Lahko obdržite do ${ MAX_CALENDARS_FREE } koledarje. Preden prekličete naročnino, prosimo odstranite deljene povezave do koledarjev in slehernega uporabnika ${ BRAND_NAME }, s katerim ste delili svoje koledarje.",
-        "Lahko obdržite do ${ MAX_CALENDARS_FREE } koledarjev. Preden prekličete naročnino, prosimo odstranite deljene povezave do koledarjev in slehernega uporabnika ${ BRAND_NAME }, s katerim ste delili svoje koledarje."
-      ],
       "You can now return to the application to continue": [
         "Zdaj se lahko vrnete v aplikacijo in nadaljujete"
       ],
@@ -5278,9 +5196,6 @@
       ],
       "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
         "Morda nimate potrebnih dovoljenj za ogled z izbranim računom. Poskusite z drugim računom ali se za dostop obrnite na lastnika."
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Preden lahko zmanjšate paket, morate onemogočiti ali odstraniti vse dodatne uporabnike, naslove in domene po meri aplikacije ${ MAIL_APP_NAME }."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Dostop do funkcij ${ planTitle } boste izgubili na ta datum."
@@ -5413,11 +5328,6 @@
         "${ selectedFoldersCount } izbrani oznaki",
         "${ selectedFoldersCount } izbrane oznake",
         "${ selectedFoldersCount } izbranih oznak"
-      ]
-    },
-    "Info; access rights for shared calendar": {
-      "View only": [
-        "Samo za branje"
       ]
     },
     "Key badge": {
@@ -5732,6 +5642,9 @@
       "Phone number": [
         "Telefonska številka"
       ],
+      "Please share any feedback to help us improve.": [
+        "Prosimo, sporočite nam povratne informacije, da se nam pomagate izboljšati."
+      ],
       "Port": [
         "Vrata"
       ],
@@ -5821,6 +5734,9 @@
       ],
       "What happened?": [
         "Kaj se je zgodilo?"
+      ],
+      "Why would you like to cancel?": [
+        "Zakaj bi želeli preklicati?"
       ],
       "Your IP": [
         "Vaš IP"
@@ -6197,38 +6113,20 @@
         "Srednja hitrost VPN"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Izbriši račun"
-      ],
-      "Downgrade account": [
-        "Zmanjšaj račun"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Pridobite ${ BRAND_NAME } brezplačno"
-      ],
-      "Get ${ planName }": [
-        "Pridobi ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Ohrani ${ plan }."
-      ],
-      "Keep account": [
-        "Ohrani račun"
-      ],
-      "Switch plan": [
-        "Zamenjaj paket"
-      ]
-    },
     "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Zmanjšanje paketa na ${ downgradedPlanName }."
-      ],
       "Plans starting from ${ priceDrivePlus }": [
         "Paketi že od ${ priceDrivePlus }"
       ],
       "Upgrade": [
         "Nadgradnja"
+      ]
+    },
+    "new_plans: action": {
+      "Get ${ BRAND_NAME } for free": [
+        "Pridobite ${ BRAND_NAME } brezplačno"
+      ],
+      "Get ${ planName }": [
+        "Pridobi ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -6795,18 +6693,6 @@
       "For next-level password management and identity protection.": [
         "Za napredno upravljanje gesel in zaščito identitete."
       ],
-      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
-        "Če izbrišete svoj račun, izgubite vse prednosti paketa ${ visionary }, in te ne bodo na voljo, če ustvarite nov račun."
-      ],
-      "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
-        "Če zmanjšate svoj paket, izgubite vse prednosti paketa ${ visionary }, in te ne bodo na voljo, če ustvarite nov račun."
-      ],
-      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
-        "Če preklopite na drug paket, izgubite vse ugodnosti paketa ${ visionary } in ne boste mogli več preklopiti nazaj na ${ visionary }."
-      ],
-      "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
-        "Naš ${ visionary } paket ni več na voljo za nove naročnike, saj gre za poseben paket za prvotne uporabnike ${ BRAND_NAME } s posebnimi funkcijami in ugodnostmi."
-      ],
       "Pay once, secure your passwords and identity forever.": [
         "Plačajte enkrat, za vedno si zavarujte gesla in identiteto."
       ],
@@ -6836,12 +6722,6 @@
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
         "Neomejena zasebnost in več shrambe za do dve osebi."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
-        "Uživate v promocijski ceni na vašem trenutnem paketu. Če izbrišete svoj račun, boste izgubili promocijsko ceno in ta ne bo na voljo, če ustvarite nov račun."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
-        "Uživate v promocijski ceni na vašem trenutnem paketu. Če boste zmanjšali svoj paket, boste izgubili promocijsko ceno in ta ne bo na voljo, če se poskusite ponovno naročiti."
       ]
     },
     "new_plans: Subtext": {
@@ -6850,17 +6730,6 @@
       ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "Znižana cena ${ priceCoupon } velja za prvi mesec. Nato se bo samodejno obnovila po ceni ${ priceLine }. Naročnino lahko kadar koli prekličete."
-      ]
-    },
-    "new_plans: title": {
-      "Delete account?": [
-        "Izbriši račun?"
-      ],
-      "Downgrade account?": [
-        "Zmanjšaj račun?"
-      ],
-      "Switch plans?": [
-        "Zamenjaj paket?"
       ]
     },
     "new_plans: tooltip": {
@@ -7711,6 +7580,9 @@
       "Please describe the problem and include any error messages": [
         "Opišite težavo in vključite morebitna sporočila o napakah."
       ],
+      "Please select the main reason": [
+        "Prosimo, izberite glavni razlog."
+      ],
       "Search": [
         "Iskanje"
       ],
@@ -8150,11 +8022,6 @@
         "Izpis brez spremembe gesla?"
       ]
     },
-    "Shared calendar; Info about calendar owner": {
-      "Shared by ${ ownerName }": [
-        "Delil z ${ ownerName }"
-      ]
-    },
     "sheets_2025:Action": {
       "Comma Separated Values (.csv)": [
         "Vrednosti, ločene s vejico (.csv)"
@@ -8485,9 +8352,6 @@
       "upgrade for more storage": [
         "dokupite prostor za shranjevanje"
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Dobroimetje za preostali čas bomo dodali vašemu ${ BRAND_NAME } računu."
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "Na trenutnem paketu **${ currentPlanName }** vam je preostal še **${ daysRemaining }** dan uporabe.",
         "Na trenutnem paketu **${ currentPlanName }** sta vam preostala še **${ daysRemaining }** dneva uporabe.",
@@ -8715,9 +8579,6 @@
       ],
       "You have successfully canceled your subscription.": [
         "Uspešno ste preklicali naročnino."
-      ],
-      "You have successfully unsubscribed": [
-        "Naročnina je preklicana"
       ]
     },
     "Suffix": {
@@ -8884,9 +8745,6 @@
       "Birthday": [
         "Rojstni dan"
       ],
-      "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
-        "Prekliči ${ MAIL_SHORT_APP_NAME } naročnino"
-      ],
       "Cancel subscription?": [
         "Prekliči naročnino?"
       ],
@@ -8914,12 +8772,6 @@
       "Computers": [
         "Računalniki"
       ],
-      "Confirm downgrade": [
-        "Potrdite zmanjšanje paketa"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Potrdite izgubo bonusov za ${ BRAND_NAME }"
-      ],
       "Connect apps and devices": [
         "Povežite aplikacije in naprave"
       ],
@@ -8934,6 +8786,9 @@
       ],
       "Contact group": [
         "Skupina stikov"
+      ],
+      "Contact us": [
+        "Kontaktirajte nas"
       ],
       "Contacts": [
         "Stiki"
@@ -9030,12 +8885,6 @@
       ],
       "Domain names": [
         "Imena domen"
-      ],
-      "Downgrade account": [
-        "Zmanjšaj račun"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "Zmanjšaj na paket ${ downgradedPlanName }?"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Prenesite aplikacije ${ DRIVE_APP_NAME }"
@@ -9261,6 +9110,9 @@
       ],
       "Request new code": [
         "Zahtevaj novo kodo"
+      ],
+      "Request sent": [
+        "Zahteva je poslana"
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Shrani za kasneje v ${ DRIVE_APP_NAME }"
@@ -9595,6 +9447,20 @@
       ],
       "Replay video": [
         "Znova predvajaj videoposnetek"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Našel sem drugo storitev, ki mi je bolj všeč."
+      ],
+      "It’s missing a key feature": [
+        "Manjka bistvena funkcija."
+      ],
+      "It’s too expensive": [
+        "Predrago"
+      ],
+      "Other": [
+        "Drugo"
       ]
     },
     "VPN Plan Feature": {
