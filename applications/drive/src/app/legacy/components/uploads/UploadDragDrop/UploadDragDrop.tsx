@@ -1,11 +1,12 @@
 import type { ReactNode, SyntheticEvent } from 'react';
-import { useCallback, useState } from 'react';
+import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
 import dragdropImageSvg from '@proton/styles/assets/img/illustrations/drag-and-drop.svg';
 
 import { useFileDrop } from '../../../../legacy/hooks/drive/useFileDrop';
+import { useUploadDragDropOverlay } from '../../../../statelessComponents/UploadDragDrop/useUploadDragDropOverlay';
 
 import './UploadDragDrop.scss';
 
@@ -37,26 +38,7 @@ const UploadDragDrop = ({
         parentLinkId,
     });
 
-    const [overlayIsVisible, setOverlayIsVisible] = useState(false);
-
-    const overlayEnabled = !disabled;
-
-    const handleDragOver = useCallback(
-        (e: React.DragEvent<HTMLDivElement>) => {
-            if (!e.dataTransfer.types.includes('Files')) {
-                return;
-            }
-
-            if (overlayIsVisible !== overlayEnabled) {
-                setOverlayIsVisible(overlayEnabled);
-            }
-        },
-        [overlayEnabled, overlayIsVisible]
-    );
-
-    const handleDragLeave = () => {
-        setOverlayIsVisible(false);
-    };
+    const { isOverlayVisible, handleDragOver, handleDragLeave } = useUploadDragDropOverlay(!disabled);
 
     const preventDefaultEvent = useCallback((e: SyntheticEvent) => e.preventDefault(), []);
 
@@ -70,14 +52,15 @@ const UploadDragDrop = ({
         >
             <img className="visibility-hidden absolute h-0 w-0" src={dragdropImageSvg} alt="" aria-hidden="true" />
             {children}
-            {overlayEnabled && overlayIsVisible && (
+            {isOverlayVisible && (
                 <div
                     className="upload-drag-drop"
                     onDragLeave={handleDragLeave}
                     onDragOver={preventDefaultEvent}
                     onDrop={(e) => {
-                        setOverlayIsVisible(false);
-                        void handleDrop(e);
+                        if (e.dataTransfer) {
+                            void handleDrop(e);
+                        }
                         void onDrop?.();
                     }}
                 >
