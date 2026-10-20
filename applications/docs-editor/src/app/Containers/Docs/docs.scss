@@ -1,0 +1,117 @@
+/* stylelint-disable */
+
+.docs-editor-root {
+	/* Docs owns these values. Hosts only select light or dark mode. */
+	--backdrop-norm: rgb(38 42 51 / 0.48);
+	--background-norm: white;
+	--background-strong: #e5e4e1;
+	--background-weak: #f5f4f2;
+	--border-norm: #d1cfcd;
+	--border-radius-lg: 0.75rem;
+	--border-radius-md: 0.5rem;
+	--border-radius-sm: 0.25rem;
+	--border-weak: #eae7e4;
+	--docs-primary-accent: #0284c7;
+	--field-norm: #adaba8;
+	--focus-outline: #6d4aff;
+	--focus-ring: rgb(109 74 255 / 0.2);
+	--interaction-default: transparent;
+	--interaction-default-active: rgb(194 192 190 / 0.35);
+	--interaction-default-hover: rgb(194 193 192 / 0.2);
+	--interaction-norm: #6d4aff;
+	--interaction-norm-contrast: white;
+	--interaction-norm-major-1: #6243e6;
+	--interaction-norm-major-2: #573bcc;
+	--interaction-norm-major-3: #4c34b3;
+	--interaction-norm-minor-1: #e2dbff;
+	--interaction-weak: #eae7e4;
+	--interaction-weak-major-1: #dedbd9;
+	--interaction-weak-major-2: #d3d0cd;
+	--interaction-weak-minor-1: #f5f3f2;
+	--interaction-weak-minor-2: #f9f8f7;
+	--optional-background-lowered: #f8f8f6;
+	--primary: #6d4aff;
+	--primary-contrast: white;
+	--primary-major-3: #4c34b3;
+	--primary-minor-1: #e2dbff;
+	--scrollbar-thumb-color: #d1cfcd;
+	--signal-danger: #dc3251;
+	--signal-danger-contrast: white;
+	--signal-danger-major-1: #c62d49;
+	--signal-danger-major-2: #b02841;
+	--signal-info: #239ece;
+	--signal-info-minor-1: #d3ecf5;
+	--signal-success: #1ea885;
+	--signal-success-contrast: white;
+	--signal-warning: #ff9900;
+	--text-hint: #8f8d8a;
+	--text-norm: #0c0c14;
+	--text-weak: #5c5958;
+}
+
+[data-theme-mode='dark'] .docs-editor-root {
+	--backdrop-norm: rgb(22 20 28 / 0.48);
+	--background-norm: #16141c;
+	--background-strong: #3f3b4c;
+	--background-weak: #292733;
+	--border-norm: #4a4658;
+	--border-weak: #343140;
+	--field-norm: #5b576b;
+	--focus-ring: rgb(109 74 255 / 0.3);
+	--interaction-default-active: rgb(91 87 107 / 0.4);
+	--interaction-default-hover: rgb(91 87 107 / 0.2);
+	--interaction-norm-major-1: #7c5cff;
+	--interaction-norm-major-2: #8a6eff;
+	--interaction-norm-major-3: #9980ff;
+	--interaction-norm-minor-1: #21164d;
+	--interaction-weak: #4a4658;
+	--interaction-weak-major-1: #5c5969;
+	--interaction-weak-major-2: #6e6b79;
+	--interaction-weak-minor-1: #25232c;
+	--interaction-weak-minor-2: #16151a;
+	--optional-background-lowered: #0e0d12;
+	--primary: #8a6eff;
+	--primary-major-3: #ad9aff;
+	--primary-minor-1: #29214d;
+	--scrollbar-thumb-color: #4a4658;
+	--signal-danger: #f5385a;
+	--signal-danger-major-1: #f64c6b;
+	--signal-danger-major-2: #f7607b;
+	--signal-info-minor-1: #0b2f3e;
+	--text-hint: #6d697d;
+	--text-norm: white;
+	--text-weak: #a7a4b5;
+}
+
+.docs-editor-root {
+	*:focus,
+	*:focus-visible {
+		outline-color: var(--primary-major-3);
+	}
+
+	@media print {
+		// prevent cursors and names/email to be printed
+		.Lexical__cursorsContainer {
+			display: none;
+		}
+
+		::-webkit-scrollbar {
+			display: none !important;
+		}
+
+		* {
+			scrollbar-width: none !important;
+		}
+
+		.Lexical__table {
+			min-inline-size: 0;
+		}
+	}
+}
+
+// PDF export prints this iframe, so the parent app's @page rule does not apply.
+// Remove page margins to suppress browser-added titles, dates, and URLs.
+@page {
+	size: auto;
+	margin: 0;
+}
