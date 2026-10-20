@@ -18,6 +18,8 @@ import { MemberUnprivatizationMode, getMemberUnprivatizationMode } from '@proton
 import { useOrganization } from '@proton/account/organization/hooks';
 import { getStorageRange, getTotalStorage } from '@proton/account/organization/storage';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
+import { isOrgKeyRequired } from '@proton/account/organizationRoles/helpers';
+import { useOrganizationRoles } from '@proton/account/organizationRoles/hooks';
 import { AdminRolesUIState, useAdminRolesUI } from '@proton/account/userPermissions/hooks';
 import useBYOEFeatureStatus from '@proton/activation/src/hooks/useBYOEFeatureStatus';
 import { useNotifications } from '@proton/app-context/useNotifications';
@@ -34,6 +36,7 @@ import { sizeUnits } from '@proton/shared/lib/helpers/size';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { EnhancedMember, Member } from '@proton/shared/lib/interfaces';
 import { getIsPasswordless } from '@proton/shared/lib/keys';
+import { getIsMemberSetup } from '@proton/shared/lib/keys/memberHelper';
 import noop from '@proton/utils/noop';
 
 import type { ModalProps } from '../../components/modalTwo/Modal';
@@ -136,6 +139,7 @@ const SubUserEditModal = ({
 }: Props) => {
     const [organization] = useOrganization();
     const [organizationKey] = useOrganizationKey();
+    const [organizationRoles] = useOrganizationRoles();
     const dispatch = useDispatch();
     const storageSizeUnit = sizeUnits.GB;
     const { validator, onFormSubmit } = useFormErrors();
@@ -196,6 +200,14 @@ const SubUserEditModal = ({
     const hasVPN = Boolean(organization?.MaxVPN);
     const unprivatization = getMemberUnprivatizationMode(member);
     const isPendingMagicLinkInvite = unprivatization.mode === MemberUnprivatizationMode.MagicLinkInvite;
+    const selectedRolesRequireOrgKey =
+        organizationRoles?.some((role) => selectedRoles.has(role.OrganizationRoleID) && isOrgKeyRequired(role)) ??
+        false;
+    const requiresSignInForAdmin =
+        passwordlessMode &&
+        Boolean(member.SSO) &&
+        !getIsMemberSetup(member) &&
+        (selectedRolesRequireOrgKey || unprivatization.makeAdmin);
 
     const isSelf = Boolean(member.Self);
 
@@ -693,6 +705,7 @@ const SubUserEditModal = ({
                                                       !loadingAdminRolesUI,
                                                   pendingInvitation: isPendingMagicLinkInvite,
                                                   isEditingSelf: isSelf,
+                                                  requiresSignInForAdmin,
                                               })}
                                           />
                                       ),
