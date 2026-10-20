@@ -3,8 +3,9 @@ import { useMemo, useRef } from 'react';
 import { AutoSizer, List } from 'react-virtualized';
 
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
-import type { Recipient, UserModel } from '@proton/shared/lib/interfaces';
-import type { ContactFormatted, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import type { ContactFormatted, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 import { useContactFocus } from '../../../hooks/useContactFocus';

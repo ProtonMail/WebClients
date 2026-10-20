@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import { TransferCancel } from '../../../components/TransferManager/transfer';
 import { ValidationError } from '../../../utils/errorHandling/ValidationError';

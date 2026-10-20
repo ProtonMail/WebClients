@@ -16,7 +16,7 @@ import type { InfoAuthedResponse } from '@proton/shared/lib/authentication/inter
 import { getAccessTypeFromMask } from '@proton/shared/lib/authentication/sessionAccessType';
 import type { TwoFactorAuthTypes } from '@proton/shared/lib/authentication/twoFactor';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import type { Unwrap } from '@proton/shared/lib/interfaces';
+import type { Unwrap } from '@proton/shared/lib/interfaces/utils';
 import { type Credentials, srpAuth } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 

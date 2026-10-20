@@ -2,8 +2,9 @@ import orderBy from '@proton/utils/orderBy';
 import range from '@proton/utils/range';
 
 import { FREE_USER_FOLDERS_LIMIT, FREE_USER_LABELS_LIMIT, ROOT_FOLDER } from '../constants';
-import type { Label, UserModel } from '../interfaces';
 import type { Folder, FolderWithSubFolders } from '../interfaces/Folder';
+import type { Label } from '../interfaces/Label';
+import type { UserModel } from '../interfaces/User';
 
 export const order = (folders: Folder[] = []) => orderBy(folders, 'Order');
 

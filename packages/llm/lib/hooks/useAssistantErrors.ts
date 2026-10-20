@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
-import { ASSISTANT_TYPE, ERROR_TYPE } from '@proton/shared/lib/assistant';
+import { ASSISTANT_TYPE, ERROR_TYPE } from '@proton/shared/lib/assistant/types';
 
 export enum AssistantErrorTypes {
     globalError = 0,

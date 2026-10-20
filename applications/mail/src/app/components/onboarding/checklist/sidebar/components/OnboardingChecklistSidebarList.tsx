@@ -6,11 +6,10 @@ import {
     CheckListProtectInbox,
     CheckListReviewImports,
 } from '@proton/components/components/checklist/CheckList';
-import { ChecklistKey } from '@proton/shared/lib/interfaces';
+import { ChecklistKey } from '@proton/shared/lib/interfaces/Checklist';
 import clsx from '@proton/utils/clsx';
 
 import { useGetStartedChecklist } from '../../../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
-
 import { useOnboardingChecklistModalsContext } from '../../OnboardingChecklistModalsProvider';
 
 const OnboardingChecklistSidebarList = () => {

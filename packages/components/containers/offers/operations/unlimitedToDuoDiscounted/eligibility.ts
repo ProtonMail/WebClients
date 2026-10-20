@@ -4,7 +4,8 @@ import type { Subscription } from '@proton/payments/core/subscription/interface'
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
-import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
 
 import { hasIntentionalScheduledModification } from '../../helpers/hasIntentionalScheduledModification';

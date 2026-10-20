@@ -5,7 +5,7 @@ import { subscribeToEventNotifierLoops } from '../api/eventNotifier';
 import { FIBONACCI_LIST } from '../constants';
 import { type VisibilityState, getVisibilityStateSingleton } from '../eventManager/VisibilityState';
 import { SentryCommonInitiatives, captureInitiativeMessage } from '../helpers/sentry';
-import type { Api } from '../interfaces';
+import type { Api } from '../interfaces/Api';
 import {
     EventNotifierEventName,
     type EventNotifierLoop,

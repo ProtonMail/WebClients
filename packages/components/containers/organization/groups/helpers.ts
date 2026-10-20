@@ -1,5 +1,7 @@
-import type { EnhancedMember, GroupMember, PartialMemberAddress, Recipient } from '@proton/shared/lib/interfaces';
-import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
+import type { GroupMember } from '@proton/shared/lib/interfaces/GroupMember';
+import type { EnhancedMember, PartialMemberAddress } from '@proton/shared/lib/interfaces/Member';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import getRandomString, { DEFAULT_LOWERCASE_CHARSET } from '@proton/utils/getRandomString';
 import isTruthy from '@proton/utils/isTruthy';
 

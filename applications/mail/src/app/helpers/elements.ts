@@ -4,7 +4,7 @@ import { isCustomLabel } from '@proton/mail/helpers/location';
 import { type CategoryLabelID, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import { omit, toMap } from '@proton/shared/lib/helpers/object';
-import type { Address } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';

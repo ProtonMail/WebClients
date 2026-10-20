@@ -2,14 +2,10 @@ import type { PrivateKeyReference, PrivateKeyReferenceV4, PrivateKeyReferenceV6 
 import { CryptoProxy } from '@protontech/crypto';
 
 import { createAddressKeyRouteV2 } from '../../api/keys';
-import {
-    type ActiveKeyWithVersion,
-    type Address,
-    type Api,
-    type DecryptedAddressKey,
-    type KeyTransparencyVerify,
-    isActiveKeyV6,
-} from '../../interfaces';
+import type { Address } from '../../interfaces/Address';
+import type { Api } from '../../interfaces/Api';
+import { type ActiveKeyWithVersion, type DecryptedAddressKey, isActiveKeyV6 } from '../../interfaces/Key';
+import type { KeyTransparencyVerify } from '../../interfaces/KeyTransparency';
 import { generateAddressKeyTokens } from '../addressKeys';
 import {
     getActiveAddressKeys,

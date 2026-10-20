@@ -1,17 +1,17 @@
 import { getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
+import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import {
-    ForkType,
     type ProduceForkParametersFull,
     getProduceForkParameters,
     getRequiredForkParameters,
-} from '@proton/shared/lib/authentication/fork';
+} from '@proton/shared/lib/authentication/fork/produce';
 import {
     type GetActiveSessionsResult,
     getActiveSessions,
     resumeSession,
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import { type ProtonForkData, SSOType } from '../actions/forkInterface';
 import { getProduceForkLoginResult } from '../actions/getProduceForkLoginResult';

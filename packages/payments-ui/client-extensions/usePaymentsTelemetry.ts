@@ -4,7 +4,7 @@ import type { Cycle, PaymentMethodFlow } from '@proton/payments/core/interface';
 import type { PaymentProcessorType } from '@proton/payments/core/payment-processors/interface';
 import { TelemetryMeasurementGroups, TelemetryPaymentsEvents } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import noop from '@proton/utils/noop';
 
 interface Overrides {

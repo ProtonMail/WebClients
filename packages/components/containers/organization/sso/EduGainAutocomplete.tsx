@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { isValidHttpUrl } from '@proton/shared/lib/helpers/url';
-import type { EduGainOrganization } from '@proton/shared/lib/interfaces';
+import type { EduGainOrganization } from '@proton/shared/lib/interfaces/SSO';
 
 import AutocompleteList from '../../../components/autocomplete/AutocompleteList';
 import { useAutocomplete, useAutocompleteFilter } from '../../../components/autocomplete/useAutocomplete';

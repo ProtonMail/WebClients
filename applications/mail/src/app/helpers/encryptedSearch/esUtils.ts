@@ -2,7 +2,7 @@ import type { History, Location } from 'history';
 
 import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { LabelCount } from '@proton/shared/lib/interfaces';
+import type { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 
 import { isSearch as checkIsSearch } from '../elements';

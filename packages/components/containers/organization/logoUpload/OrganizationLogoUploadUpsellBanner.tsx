@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { PLANS } from '@proton/payments/core/constants';
-import type { Organization } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import lightlabellingUpsellSvg from '@proton/styles/assets/img/illustrations/account-lightlabelling-upsell.svg';
 
 import { useBundleProPlan } from '../../../hooks/useHasPlan';

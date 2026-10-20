@@ -7,7 +7,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
 import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { APPS } from '@proton/shared/lib/constants';
-import type { PartstatActions } from '@proton/shared/lib/interfaces/calendar';
+import type { PartstatActions } from '@proton/shared/lib/interfaces/calendar/Invite';
 
 import { ButtonGroup } from '../../components/button/ButtonGroup';
 import DropdownMenu from '../../components/dropdown/DropdownMenu';

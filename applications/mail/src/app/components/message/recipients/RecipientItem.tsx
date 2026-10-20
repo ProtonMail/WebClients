@@ -1,11 +1,11 @@
 import { useRef } from 'react';
 
+import type { PublicKeyReference } from '@protontech/crypto';
 import { c } from 'ttag';
 
 import type { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
-import type { PublicKeyReference } from '@protontech/crypto';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
-import type { Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 
 import type { RecipientOrGroup } from '../../../models/address';
 import type { MapStatusIcons, StatusIcon } from '../../../models/crypto';

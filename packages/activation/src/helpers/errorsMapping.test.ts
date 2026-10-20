@@ -1,5 +1,5 @@
-import type { Label } from '@proton/shared/lib/interfaces';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
 
 import MailImportFoldersParser from './MailImportFoldersParser/MailImportFoldersParser';
 import { getApiFoldersTestHelper } from './MailImportFoldersParser/MailImportFoldersParser.test';

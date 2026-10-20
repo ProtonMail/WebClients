@@ -7,7 +7,7 @@ import { getIsActiveBYOEAddress } from '@proton/activation/src/helpers/byoeAddre
 import { useBYOEAddresses } from '@proton/activation/src/hooks/useBYOEAddresses';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
-import type { Address } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
 
 import { useBYOEMobile } from '../../context/BYOEMobileProvider';
 import { ConfirmBYOEDisconnectionPrompt } from './ConfirmBYOEDisconnectionPrompt';

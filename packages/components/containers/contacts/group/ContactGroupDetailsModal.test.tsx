@@ -1,6 +1,6 @@
 import { getModelState } from '@proton/account/tests';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
-import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 
 import { clearAll, minimalCache, renderWithProviders } from '../tests/render';
 import type { ContactGroupDetailsProps } from './ContactGroupDetailsModal';

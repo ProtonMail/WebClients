@@ -24,7 +24,7 @@ import {
     toLocalDate,
     toUTCDate,
 } from '@proton/shared/lib/date/timezone';
-import type { SETTINGS_WEEK_START, UserSettings } from '@proton/shared/lib/interfaces';
+import type { SETTINGS_WEEK_START, UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 import isTruthy from '@proton/utils/isTruthy';

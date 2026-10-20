@@ -20,7 +20,8 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME, LUMO_APP_NAME, MAIL_APP_NAME, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { sizeUnits } from '@proton/shared/lib/helpers/size';
-import type { Member, Organization } from '@proton/shared/lib/interfaces';
+import type { Member } from '@proton/shared/lib/interfaces/Member';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import clamp from '@proton/utils/clamp';
 
 import Modal from '../../components/modalTwo/Modal';

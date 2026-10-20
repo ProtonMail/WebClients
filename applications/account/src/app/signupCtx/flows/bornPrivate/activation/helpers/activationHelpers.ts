@@ -8,8 +8,10 @@ import { SessionSource } from '@proton/shared/lib/authentication/SessionInterfac
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { APPS } from '@proton/shared/lib/constants';
-import type { Api, KeyTransparencyActivation, User } from '@proton/shared/lib/interfaces';
-import { handleSetupKeys } from '@proton/shared/lib/keys';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
+import type { User } from '@proton/shared/lib/interfaces/User';
+import { handleSetupKeys } from '@proton/shared/lib/keys/setupKeys';
 import { srpAuth, srpVerify } from '@proton/shared/lib/srp';
 
 import { authenticateDonationUser } from '../../emailReservation/helpers/emailReservationRequests';

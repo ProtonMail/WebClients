@@ -14,14 +14,12 @@ import { getHasStartChanged } from '@proton/shared/lib/calendar/vcalConverter';
 import { getHasAttendees } from '@proton/shared/lib/calendar/vcalHelper';
 import { getIsAllDay, withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
 import { omit } from '@proton/shared/lib/helpers/object';
-import type { RequireSome, SimpleMap } from '@proton/shared/lib/interfaces';
-import type {
-    CalendarEvent,
-    SyncMultipleApiResponse,
-    VcalVeventComponent,
-} from '@proton/shared/lib/interfaces/calendar';
+import type { SyncMultipleApiResponse } from '@proton/shared/lib/interfaces/calendar/Api';
+import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar/Event';
+import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import type { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
 import type { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
+import type { RequireSome, SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import unary from '@proton/utils/unary';
 
 import type { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';

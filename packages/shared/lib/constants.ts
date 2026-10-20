@@ -1,7 +1,7 @@
 import type { enums } from '@protontech/crypto';
 
 import { Product } from './ProductEnum';
-import type { KeyGenConfig, KeyGenConfigV6 } from './interfaces';
+import type { KeyGenConfig, KeyGenConfigV6 } from './interfaces/KeyGenConfig';
 
 export const DEFAULT_TIMEOUT = 30000; // default fetch timeout
 export const RETRY_DELAY_MAX = 10; // seconds

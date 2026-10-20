@@ -19,7 +19,7 @@ import { useAssistant } from '@proton/llm/lib';
 import type { AssistantFeedback } from '@proton/shared/lib/api/feedback';
 import { sendAssistantFeedback } from '@proton/shared/lib/api/feedback';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
+import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces/UserSettings';
 
 interface Props extends ModalStateProps {
     result?: string;

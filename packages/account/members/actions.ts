@@ -34,18 +34,16 @@ import {
     VPN_CONNECTIONS,
 } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import type {
-    Address,
-    Api,
-    Domain,
-    EnhancedMember,
-    Member,
-    Organization,
-    RoleAssignment,
-} from '@proton/shared/lib/interfaces';
-import { CreateMemberMode } from '@proton/shared/lib/interfaces';
-import { getIsPasswordless, setupMemberKeys } from '@proton/shared/lib/keys';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { Domain } from '@proton/shared/lib/interfaces/Domain';
+import type { EnhancedMember, Member } from '@proton/shared/lib/interfaces/Member';
+import { CreateMemberMode } from '@proton/shared/lib/interfaces/Member';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
+import type { RoleAssignment } from '@proton/shared/lib/interfaces/OrganizationRole';
 import { getIsMemberSetup } from '@proton/shared/lib/keys/memberHelper';
+import { setupMemberKeys } from '@proton/shared/lib/keys/memberKeys';
+import { getIsPasswordless } from '@proton/shared/lib/keys/organizationKeys';
 import { getHasIncompleteOrgKeyGrant, getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
 import { srpVerify } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';

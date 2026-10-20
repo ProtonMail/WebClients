@@ -14,7 +14,7 @@ import { useRecoverySettingsTelemetry } from '@proton/components/containers/reco
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
-import { SETTINGS_STATUS, type UserSettings } from '@proton/shared/lib/interfaces';
+import { SETTINGS_STATUS, type UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import noop from '@proton/utils/noop';
 
 import { RecoveryMethodWarningModal } from '../delegatedAccess/recoveryContact/RecoveryMethodWarningModal';

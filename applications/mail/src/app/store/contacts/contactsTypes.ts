@@ -1,5 +1,5 @@
-import type { SimpleMap } from '@proton/shared/lib/interfaces';
-import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 export type ContactsMap = SimpleMap<ContactEmail>;
 export type ContactsMapWithDuplicates = SimpleMap<ContactEmail[]>;

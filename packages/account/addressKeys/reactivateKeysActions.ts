@@ -11,18 +11,18 @@ import { getKeySalts } from '@proton/shared/lib/api/keys';
 import type { MnemonicKeyResponse } from '@proton/shared/lib/api/settingsMnemonic';
 import { getMnemonicUserKeys } from '@proton/shared/lib/api/settingsMnemonic';
 import { lockSensitiveSettings } from '@proton/shared/lib/api/user';
-import type { KeySalt } from '@proton/shared/lib/interfaces';
-import type { ReactivateKeyResult } from '@proton/shared/lib/keys';
-import {
-    type KeyReactivationData,
-    type KeyReactivationRecord,
-    type KeyReactivationRequestState,
-    type KeyReactivationRequestStateData,
-    type ReactivateKeysResult,
-    decryptPrivateKeyWithSalt,
-    getHasMigratedAddressKey,
-    reactivateKeysProcess,
-} from '@proton/shared/lib/keys';
+import type { KeySalt } from '@proton/shared/lib/interfaces/KeySalt';
+import { getHasMigratedAddressKey } from '@proton/shared/lib/keys/keyMigration';
+import { decryptPrivateKeyWithSalt } from '@proton/shared/lib/keys/keys';
+import type {
+    KeyReactivationData,
+    KeyReactivationRecord,
+    KeyReactivationRequestState,
+    KeyReactivationRequestStateData,
+    ReactivateKeyResult,
+    ReactivateKeysResult,
+} from '@proton/shared/lib/keys/reactivation/interface';
+import { reactivateKeysProcess } from '@proton/shared/lib/keys/reactivation/reactivateKeysProcess';
 import { mnemonicToBase64RandomBytes } from '@proton/shared/lib/mnemonic/bip39Wrapper';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';

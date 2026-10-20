@@ -4,7 +4,7 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import ModalsProvider from '@proton/components/containers/modals/Provider';
 import { PRODUCT_BIT } from '@proton/shared/lib/constants';
-import type { Address } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { MAX_SYNC_FREE_USER, MAX_SYNC_PAID_USER } from '../../constants';

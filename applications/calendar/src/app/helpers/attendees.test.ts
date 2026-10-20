@@ -1,5 +1,5 @@
-import type { SimpleMap } from '@proton/shared/lib/interfaces';
-import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 import type { DisplayNameEmail } from '../containers/calendar/interface';
 import { getOrganizerDisplayData } from './attendees';

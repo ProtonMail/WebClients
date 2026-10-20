@@ -17,7 +17,7 @@ import { userSettingsThunk } from '@proton/account/userSettings';
 import { initMainHost } from '@proton/cross-storage/host';
 import { mailSettingsThunk } from '@proton/mail/store/mailSettings';
 import createApi from '@proton/shared/lib/api/createApi';
-import { requestFork } from '@proton/shared/lib/authentication/fork';
+import { requestFork } from '@proton/shared/lib/authentication/fork/consume';
 import { APPS } from '@proton/shared/lib/constants';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import noop from '@proton/utils/noop';

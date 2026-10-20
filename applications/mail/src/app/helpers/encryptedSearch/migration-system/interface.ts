@@ -1,6 +1,6 @@
 import type { ESCiphertext } from '@proton/encrypted-search/models';
 import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
-import type { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import type { ESMessageContent } from '../../../models/encryptedSearch';
 import type { CONTENT_VERSION } from '../esBuild';

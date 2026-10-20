@@ -18,7 +18,8 @@ import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getVpnAccountUrl } from '@proton/shared/lib/helpers/url';
-import type { Api, Domain } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { Domain } from '@proton/shared/lib/interfaces/Domain';
 import noop from '@proton/utils/noop';
 
 import type { ModalProps } from '../../../components/modalTwo/Modal';

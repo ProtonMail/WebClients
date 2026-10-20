@@ -2,7 +2,7 @@ import type { ComponentType, ReactNode } from 'react';
 
 import Icons from '@proton/icons/Icons';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import type { ProtonConfig } from '@proton/shared/lib/interfaces';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 
 import SpotlightProvider from '../../components/spotlight/Provider';
 import { PreventLeaveProvider } from '../../hooks/usePreventLeave';

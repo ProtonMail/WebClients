@@ -1,6 +1,7 @@
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';
 import { toText } from '@proton/mail/helpers/parserHtml';
-import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 
 import { templateBuilder } from './message/messageSignature';
 import { SIGNATURE_PLACEHOLDER, escapeBackslash, extractContentFromPtag, getMarkdownParser } from './textToHtmlUtils';

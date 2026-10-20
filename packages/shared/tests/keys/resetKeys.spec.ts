@@ -1,8 +1,8 @@
 import { CryptoProxy } from '@protontech/crypto';
 
 import { KEYGEN_CONFIGS, KEYGEN_TYPES } from '../../lib/constants';
-import type { Address } from '../../lib/interfaces';
-import { getResetAddressesKeysV2 } from '../../lib/keys';
+import type { Address } from '../../lib/interfaces/Address';
+import { getResetAddressesKeysV2 } from '../../lib/keys/resetKeys';
 
 describe('reset keys v2', () => {
     it('should return an empty result', async () => {

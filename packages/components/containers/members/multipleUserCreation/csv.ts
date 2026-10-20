@@ -4,7 +4,7 @@ import Papa from 'papaparse';
 import { MIN_PASSWORD_LENGTH } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { sizeUnits } from '@proton/shared/lib/helpers/size';
-import { CreateMemberMode } from '@proton/shared/lib/interfaces';
+import { CreateMemberMode } from '@proton/shared/lib/interfaces/Member';
 
 import { MAX_IMPORT_FILE_SIZE, MAX_NUMBER_OF_USER_ROWS } from './constants';
 import CsvConversionError, { CSV_CONVERSION_ERROR_TYPE } from './errors/CsvConversionError';

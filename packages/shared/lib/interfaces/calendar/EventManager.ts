@@ -1,13 +1,10 @@
 import type { EVENT_ACTIONS } from '../../constants';
-import type {
-    Calendar,
-    CalendarAlarm,
-    CalendarEventWithoutBlob,
-    CalendarMember,
-    CalendarSubscription,
-    CalendarUrl,
-    CalendarWithOwnMembers,
-} from './index';
+import type { CalendarAlarm } from './Alarm';
+import type { Calendar, CalendarWithOwnMembers } from './Calendar';
+import type { CalendarMember } from './CalendarMember';
+import type { CalendarEventWithoutBlob } from './Event';
+import type { CalendarUrl } from './Link';
+import type { CalendarSubscription } from './Subscription';
 
 interface CalendarAlarmEventManagerDelete {
     ID: string;

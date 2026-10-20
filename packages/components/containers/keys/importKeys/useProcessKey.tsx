@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { useGetUserSettings } from '@proton/account/userSettings/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
-import type { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
+import type { ArmoredKeyWithInfo } from '@proton/shared/lib/keys/keyImport';
 
 import useModalState from '../../../components/modalTwo/useModalState';
 import DecryptFileKeyModal from '../shared/DecryptFileKeyModal';

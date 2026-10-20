@@ -2,7 +2,8 @@ import { fireEvent, screen } from '@testing-library/dom';
 
 import type { ModalStateProps } from '@proton/components';
 import { CALENDAR_DISPLAY, CALENDAR_TYPE } from '@proton/shared/lib/calendar/constants';
-import type { CalendarMember, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
+import type { CalendarMember } from '@proton/shared/lib/interfaces/calendar/CalendarMember';
 
 import useAvailableAddresses from '../../../../../hooks/useAvailableAddresses';
 import type { ImporterCalendar } from '../../../../../logic/draft/oauthDraft/oauthDraft.interface';

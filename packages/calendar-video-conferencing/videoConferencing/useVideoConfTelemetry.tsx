@@ -5,7 +5,7 @@ import { useApi } from '@proton/app-context/useApi';
 import type { TelemetryEvents } from '@proton/shared/lib/api/telemetry';
 import { TelemetryCalendarVideoConferencing, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReportWithBaseDimensions } from '@proton/shared/lib/helpers/metrics';
-import type { SimpleMap } from '@proton/shared/lib/interfaces';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 export enum VideoConferenceSource {
     no_video_conf = 'no_video_conf',

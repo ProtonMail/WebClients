@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { isDialogOpen, isModalOpen, modalTwoBackdropRootClassName } from '@proton/shared/lib/busy';
+import { isDialogOpen, isModalOpen, modalTwoBackdropRootClassName } from '@proton/shared/lib/busy/busy';
 import clsx from '@proton/utils/clsx';
 
 import './Backdrop.scss';

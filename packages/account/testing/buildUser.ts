@@ -1,5 +1,6 @@
 import { selfAccessTypeMask } from '@proton/shared/lib/authentication/sessionAccessType';
-import type { Key, UserModel } from '@proton/shared/lib/interfaces';
+import type { Key } from '@proton/shared/lib/interfaces/Key';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import { privateKeyA } from './data/keys';
 

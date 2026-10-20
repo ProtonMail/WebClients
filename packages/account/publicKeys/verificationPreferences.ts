@@ -1,6 +1,6 @@
+import type { PublicKeyReference } from '@protontech/crypto';
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
-import type { PublicKeyReference } from '@protontech/crypto';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import getPublicKeysVcardHelper from '@proton/shared/lib/api/helpers/getPublicKeysVcardHelper';
 import { ADDRESS_STATUS, KEY_FLAG, MINUTE, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
@@ -9,8 +9,8 @@ import { canonicalizeEmail, canonicalizeInternalEmail } from '@proton/shared/lib
 import { KT_VERIFICATION_STATUS } from '@proton/shared/lib/interfaces/KeyTransparency';
 import type { VerificationPreferences } from '@proton/shared/lib/interfaces/VerificationPreferences';
 import type { GetVerificationPreferences } from '@proton/shared/lib/interfaces/hooks/GetVerificationPreferences';
-import { splitKeys } from '@proton/shared/lib/keys';
 import { getActiveAddressKeys } from '@proton/shared/lib/keys/getActiveKeys';
+import { splitKeys } from '@proton/shared/lib/keys/keys';
 import { getVerifyingKeys } from '@proton/shared/lib/keys/publicKeys';
 import { type Record, getPromiseValue } from '@proton/shared/lib/models/cache';
 

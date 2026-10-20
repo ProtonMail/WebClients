@@ -1,7 +1,7 @@
 import type { SubSectionConfig } from '@proton/components/containers/layout/interface';
 import { PLANS } from '@proton/payments/core/constants';
 import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
-import { GroupFlags } from '@proton/shared/lib/interfaces';
+import { GroupFlags } from '@proton/shared/lib/interfaces/Group';
 
 import {
     buildGroup,

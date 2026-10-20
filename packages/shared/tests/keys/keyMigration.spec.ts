@@ -1,12 +1,11 @@
-import type { Unwrap, Address as tsAddress, User as tsUser } from '../../lib/interfaces';
-import {
-    decryptAddressKeyToken,
-    getDecryptedAddressKeysHelper,
-    getDecryptedUserKeysHelper,
-    getEmailFromKey,
-    splitKeys,
-} from '../../lib/keys';
+import type { Address as tsAddress } from '../../lib/interfaces/Address';
+import type { User as tsUser } from '../../lib/interfaces/User';
+import type { Unwrap } from '../../lib/interfaces/utils';
+import { decryptAddressKeyToken } from '../../lib/keys/addressKeys';
+import { getDecryptedAddressKeysHelper } from '../../lib/keys/getDecryptedAddressKeys';
+import { getDecryptedUserKeysHelper } from '../../lib/keys/getDecryptedUserKeys';
 import { getAddressKeysMigrationPayload, migrateAddressKeys } from '../../lib/keys/keyMigration';
+import { getEmailFromKey, splitKeys } from '../../lib/keys/keys';
 import { getLegacyAddressKey, getUserKey } from './keyDataHelper';
 
 const DEFAULT_KEYPASSWORD = '123';

@@ -2,7 +2,7 @@ import { apiHelper } from '@proton/encrypted-search/esHelpers';
 import { removeBase64 } from '@proton/mail-renderer/helpers/transforms/transformEscape';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { removeHTMLComments } from '@proton/shared/lib/helpers/string';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import type { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';

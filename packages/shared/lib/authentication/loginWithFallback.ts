@@ -1,7 +1,7 @@
 import { getAuthVersionWithFallback } from '@protontech/crypto/srp';
 
 import { PASSWORD_WRONG_ERROR, auth, getInfo } from '../api/auth';
-import type { Api } from '../interfaces';
+import type { Api } from '../interfaces/Api';
 import { srpAuth } from '../srp';
 import type { AuthResponse, AuthVersion, ChallengePayload, ClaimedAddressID, InfoResponse } from './interface';
 

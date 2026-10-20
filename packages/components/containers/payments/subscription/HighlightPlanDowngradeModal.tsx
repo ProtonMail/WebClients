@@ -11,7 +11,7 @@ import type { Subscription } from '@proton/payments/core/subscription/interface'
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getDifferenceInDays } from '@proton/shared/lib/date/date';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import type { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { getSpace } from '@proton/shared/lib/user/storage';
 
 import Form from '../../../components/form/Form';

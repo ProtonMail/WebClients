@@ -5,7 +5,7 @@ import { c, msgid } from 'ttag';
 import { useGetUserInvitations } from '@proton/account/userInvitations/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { CacheType } from '@proton/redux-utilities/interface';
-import type { PendingInvitation } from '@proton/shared/lib/interfaces';
+import type { PendingInvitation } from '@proton/shared/lib/interfaces/PendingInvitation';
 import noop from '@proton/utils/noop';
 
 import useModalState from '../../../../components/modalTwo/useModalState';

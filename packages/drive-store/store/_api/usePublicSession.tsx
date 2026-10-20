@@ -9,7 +9,7 @@ import type { ResumedSessionResult } from '@proton/shared/lib/authentication/per
 import { resumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getUIDHeaders, withAuthHeaders } from '@proton/shared/lib/fetch/headers';
-import type { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import type { SRPHandshakeInfo } from '@proton/shared/lib/interfaces/drive/sharing';
 import { srpAuth } from '@proton/shared/lib/srp';
 import { formatUser } from '@proton/shared/lib/user/helpers';

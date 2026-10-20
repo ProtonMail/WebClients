@@ -2,7 +2,7 @@ import { FIBONACCI_LIST, INTERVAL_EVENT_TIMER } from '../../lib/constants';
 import type { VisibilityState } from '../../lib/eventManager/VisibilityState';
 import { EventNotifier } from '../../lib/eventNotifier/EventNotifier';
 import { EventNotifierLoopType, type EventNotifierPing } from '../../lib/eventNotifier/interface';
-import type { Api } from '../../lib/interfaces';
+import type { Api } from '../../lib/interfaces/Api';
 
 const URL = 'https://mail.proton.me/api/event-notifier/v1/events';
 

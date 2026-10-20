@@ -2,13 +2,12 @@ import { useEffect, useState } from 'react';
 
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import { ChecklistKey } from '@proton/shared/lib/interfaces';
+import { ChecklistKey } from '@proton/shared/lib/interfaces/Checklist';
 
-import { UserOnboardingImporters } from './UserOnboardingImporters';
 import { useGetStartedChecklist } from '../../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import { isColumnMode } from '../../../../helpers/mailSettings';
-
 import UserOnboardingAccountsSwitcher from './UserOnboardingAccountsSwitcher';
+import { UserOnboardingImporters } from './UserOnboardingImporters';
 
 const enum ListPlaceholderStep {
     AccountsSwitcher = 'accountsSwitcher',

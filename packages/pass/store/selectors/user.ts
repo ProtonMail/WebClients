@@ -1,7 +1,9 @@
 import { createSelector } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import { type Address, SETTINGS_PASSWORD_MODE, UserType } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import { UserType } from '@proton/shared/lib/interfaces/User';
+import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces/UserSettings';
 import { AuthDeviceState } from '@proton/shared/lib/keys/device';
 
 import type { AuthStore } from '../../lib/auth/store';

@@ -2,7 +2,7 @@ import type createApi from '../api/createApi';
 import type { AuthenticationStore } from '../authentication/createAuthenticationStore';
 import { getIsIframe } from '../helpers/browser';
 import { initElectronClassnames } from '../helpers/initElectronClassnames';
-import type { ProtonConfig } from '../interfaces';
+import type { ProtonConfig } from '../interfaces/config';
 import { listenFreeTrialSessionExpiration } from './endOfTrialHelpers';
 import { BASELINE_ALLOWED_CONTENT_PROTOCOLS, BASELINE_ALLOWED_PROTOCOLS } from './externalProtocols';
 import { handleInboxDesktopIPCPostMessages } from './ipcHelpers';

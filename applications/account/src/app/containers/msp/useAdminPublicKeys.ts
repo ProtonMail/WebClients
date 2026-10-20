@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 
 import { MEMBER_ROLE } from '@proton/shared/lib/constants';
-import type { Member } from '@proton/shared/lib/interfaces';
+import type { Member } from '@proton/shared/lib/interfaces/Member';
 
 // Org admins implicitly have access to every subsidiary, so consumers that display delegated
 // managers exclude admins to avoid a redundant entry (they can end up as an explicit delegated

@@ -13,14 +13,10 @@ import { CALENDAR_DISPLAY } from '@proton/shared/lib/calendar/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
 import { type UpdateCollectionV6, updateCollectionV6 } from '@proton/shared/lib/eventManager/updateCollectionV6';
-import type { Api } from '@proton/shared/lib/interfaces';
-import {
-    CALENDAR_ORDER_BY,
-    CALENDAR_RETURN_FLAGS,
-    type Calendar,
-    type CalendarMember,
-    type CalendarWithOwnMembers,
-} from '@proton/shared/lib/interfaces/calendar';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import { CALENDAR_ORDER_BY, CALENDAR_RETURN_FLAGS } from '@proton/shared/lib/interfaces/calendar/Api';
+import type { Calendar, CalendarWithOwnMembers } from '@proton/shared/lib/interfaces/calendar/Calendar';
+import type { CalendarMember } from '@proton/shared/lib/interfaces/calendar/CalendarMember';
 
 export interface CalendarsState extends AddressesState {
     calendars: ModelState<CalendarWithOwnMembers[]>;

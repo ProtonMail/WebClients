@@ -4,7 +4,7 @@ import { getConversation, queryConversations } from '@proton/shared/lib/api/conv
 import type { MailboxItemsQueryParams } from '@proton/shared/lib/api/mailbox';
 import { getMessage, queryMessageMetadata } from '@proton/shared/lib/api/messages';
 import { omit, pick } from '@proton/shared/lib/helpers/object';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 import range from '@proton/utils/range';
 

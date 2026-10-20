@@ -1,6 +1,10 @@
 import type { PrivateKeyReference } from '@protontech/crypto';
 
-import type { Address, Api, KeyGenConfig, KeyTransparencyVerify, Member } from '../interfaces';
+import type { Address } from '../interfaces/Address';
+import type { Api } from '../interfaces/Api';
+import type { KeyGenConfig } from '../interfaces/KeyGenConfig';
+import type { KeyTransparencyVerify } from '../interfaces/KeyTransparency';
+import type { Member } from '../interfaces/Member';
 import { getHasMemberMigratedAddressKeys } from './keyMigration';
 import { createMemberAddressKeysLegacy, createMemberAddressKeysV2, getDecryptedMemberKey } from './memberKeys';
 

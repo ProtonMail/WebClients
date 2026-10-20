@@ -5,7 +5,8 @@ import { c, msgid } from 'ttag';
 import { useMembersRemote } from '@proton/account/members/useMembersRemote';
 import { useMembersUsage } from '@proton/account/members/useMembersUsage';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { type EnhancedMember, ROLE_SOURCE } from '@proton/shared/lib/interfaces';
+import type { EnhancedMember } from '@proton/shared/lib/interfaces/Member';
+import { ROLE_SOURCE } from '@proton/shared/lib/interfaces/OrganizationRole';
 
 import SearchInput from '../../../components/input/SearchInput';
 import Pagination from '../../../components/pagination/Pagination';

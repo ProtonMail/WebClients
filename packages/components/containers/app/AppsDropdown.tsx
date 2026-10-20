@@ -16,7 +16,8 @@ import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { isPassUser } from '@proton/shared/lib/helpers/usedClientsFlags';
-import type { OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
+import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import SimpleDropdown from '../../components/dropdown/SimpleDropdown';

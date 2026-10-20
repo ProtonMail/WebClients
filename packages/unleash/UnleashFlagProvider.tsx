@@ -4,7 +4,7 @@ import { FlagProvider } from '@unleash/proxy-client-react';
 import type { IConfig, UnleashClient } from 'unleash-proxy-client';
 
 import { createPromise } from '@proton/shared/lib/helpers/promise';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import ProtonUnleashStorageProvider, { featureFlagStorageKey } from './storage/UnleashStorageProvider';
 

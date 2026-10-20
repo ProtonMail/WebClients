@@ -3,7 +3,8 @@ import { queryCreateUser, queryCreateUserExternal } from '@proton/shared/lib/api
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { CLIENT_TYPES } from '@proton/shared/lib/constants';
 import { mergeHeaders, withVerificationHeaders } from '@proton/shared/lib/fetch/headers';
-import type { Api, User } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { User } from '@proton/shared/lib/interfaces/User';
 import { srpVerify } from '@proton/shared/lib/srp';
 
 import {

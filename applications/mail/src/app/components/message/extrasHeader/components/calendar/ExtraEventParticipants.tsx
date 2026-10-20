@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import type { Participant } from '@proton/shared/lib/interfaces/calendar';
+import type { Participant } from '@proton/shared/lib/interfaces/calendar/Invite';
 
 import ExtraEventParticipant from './ExtraEventParticipant';
 

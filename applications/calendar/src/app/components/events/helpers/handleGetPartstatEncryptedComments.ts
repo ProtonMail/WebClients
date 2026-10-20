@@ -1,6 +1,6 @@
 import { getEncryptedRSVPComment } from '@proton/shared/lib/calendar/crypto/helpers';
 import { getSharedSessionKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';
-import type { PartstatData } from '@proton/shared/lib/interfaces/calendar';
+import type { PartstatData } from '@proton/shared/lib/interfaces/calendar/Event';
 import type { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
 import type { GetCalendarKeys } from '@proton/shared/lib/interfaces/hooks/GetCalendarKeys';
 

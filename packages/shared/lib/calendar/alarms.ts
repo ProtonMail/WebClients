@@ -4,12 +4,12 @@ import uniqueBy from '@proton/utils/uniqueBy';
 import { MINUTE } from '../constants';
 import { fromUTCDateToTimezone, getTimezoneOffset } from '../date/timezone';
 import { omit } from '../helpers/object';
+import type { NotificationModel } from '../interfaces/calendar/Notification';
 import type {
-    NotificationModel,
     VcalDurationValue,
     VcalValarmRelativeComponent,
     VcalVeventComponent,
-} from '../interfaces/calendar';
+} from '../interfaces/calendar/VcalModel';
 import getAlarmMessageText from './alarms/getAlarmMessageText';
 import { getValarmTrigger } from './alarms/getValarmTrigger';
 import { normalizeDurationToUnit } from './alarms/trigger';

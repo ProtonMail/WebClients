@@ -6,7 +6,7 @@ import type { IconComponent } from '@proton/icons/component';
 import type { IconSize } from '@proton/icons/types';
 import type { COUPON_CODES, CYCLE } from '@proton/payments/core/constants';
 import type { Currency, PlanIDs } from '@proton/payments/core/interface';
-import type { Optional } from '@proton/shared/lib/interfaces';
+import type { Optional } from '@proton/shared/lib/interfaces/utils';
 
 import type { PlanCardFeatureIcon } from '../payments/features/interface';
 import type { OfferProduct } from './helpers/getOfferProduct';

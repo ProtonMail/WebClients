@@ -8,7 +8,9 @@ import type {
     MessageStateWithData,
 } from '@proton/mail/store/messages/messagesTypes';
 import { addPlusAlias } from '@proton/shared/lib/helpers/email';
-import type { Address, MailSettings, Recipient, UserSettings } from '@proton/shared/lib/interfaces';
+import type { Address, Recipient } from '@proton/shared/lib/interfaces/Address';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { FORWARDED_MESSAGE, FW_PREFIX, RE_PREFIX, formatSubject } from '@proton/shared/lib/mail/messages';

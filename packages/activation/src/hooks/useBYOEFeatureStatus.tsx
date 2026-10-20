@@ -1,6 +1,6 @@
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { getIsBYOEAccount } from '@proton/shared/lib/keys';
+import { getIsBYOEAccount } from '@proton/shared/lib/keys/accountType';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { getCanSeeBYOE } from '../helpers/byoeAccess.ts';

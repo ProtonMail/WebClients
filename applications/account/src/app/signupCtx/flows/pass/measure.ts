@@ -1,7 +1,7 @@
 import type { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import noop from '@proton/utils/noop';
 
 import type { TelemetryDownloadExtension } from '../../../single-signup-v2/measure';

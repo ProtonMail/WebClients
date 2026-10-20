@@ -1,4 +1,4 @@
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import { ADDON_NAMES, PLANS } from '../constants';
 import { SubscriptionPlatform } from '../subscription/constants';

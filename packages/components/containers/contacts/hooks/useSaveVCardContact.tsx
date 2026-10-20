@@ -10,8 +10,8 @@ import { API_CODES } from '@proton/shared/lib/constants';
 import { CATEGORIES, OVERWRITE } from '@proton/shared/lib/contacts/constants';
 import { prepareVCardContacts } from '@proton/shared/lib/contacts/encrypt';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 import type { ContactMetadata } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type {
     AddContactsApiResponses,

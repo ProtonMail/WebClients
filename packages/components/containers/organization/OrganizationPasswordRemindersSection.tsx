@@ -10,7 +10,7 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateOrganizationSettings } from '@proton/shared/lib/api/organization';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { OrganizationExtended, OrganizationSettings } from '@proton/shared/lib/interfaces';
+import type { OrganizationExtended, OrganizationSettings } from '@proton/shared/lib/interfaces/Organization';
 
 import Info from '../../components/link/Info';
 import Loader from '../../components/loader/Loader';

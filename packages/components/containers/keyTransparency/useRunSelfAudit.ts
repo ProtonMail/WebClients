@@ -24,7 +24,7 @@ import { CacheType } from '@proton/redux-utilities/interface';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { MINUTE } from '@proton/shared/lib/constants';
 import { KEY_TRANSPARENCY_REMINDER_UPDATE } from '@proton/shared/lib/drawer/interfaces';
-import type { DecryptedAddressKey, KeyPair } from '@proton/shared/lib/interfaces';
+import type { DecryptedAddressKey, KeyPair } from '@proton/shared/lib/interfaces/Key';
 
 const SELF_AUDIT_MAX_TRIALS = 6;
 

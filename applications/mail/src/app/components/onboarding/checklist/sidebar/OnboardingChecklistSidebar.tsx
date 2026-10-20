@@ -4,10 +4,9 @@ import { c, msgid } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import useLocalState from '@proton/components/hooks/useLocalState';
 import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
-import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
+import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces/Checklist';
 
 import { useGetStartedChecklist } from '../../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
-
 import { useMailOnboardingTelemetry } from '../../useMailOnboardingTelemetry';
 import OnboardingChecklistModalsProvider from '../OnboardingChecklistModalsProvider';
 import useOnboardingChecklist from '../useOnboardingChecklist';

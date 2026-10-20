@@ -1,7 +1,8 @@
 import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import type { Label, LabelCount, MailSettings, SafeLabelCount } from '@proton/shared/lib/interfaces';
+import type { Label, LabelCount, SafeLabelCount } from '@proton/shared/lib/interfaces/Label';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 
 import { isConversationMode } from '../../helpers/mailSettings';
 

@@ -1,8 +1,8 @@
 import { createSelector } from '@reduxjs/toolkit';
 import { fromUnixTime } from 'date-fns';
 
-import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
-import { getIsMnemonicAvailable } from '@proton/shared/lib/mnemonic';
+import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces/User';
+import { getIsMnemonicAvailable } from '@proton/shared/lib/mnemonic/helpers';
 
 import { selectAddresses } from '../addresses';
 import { selectUser } from '../user';

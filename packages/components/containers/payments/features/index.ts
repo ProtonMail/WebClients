@@ -1,6 +1,6 @@
 import type { PLANS } from '@proton/payments/core/constants';
 import type { FreePlanDefault, PlansMap } from '@proton/payments/core/plan/interface';
-import type { Audience } from '@proton/shared/lib/interfaces';
+import type { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { getSupportFeatures, getTeamManagementFeatures } from './b2b';

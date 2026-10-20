@@ -4,7 +4,7 @@ import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/cryp
 
 import { isElectronMail } from '../../helpers/desktop';
 import { captureMessage } from '../../helpers/sentry';
-import type { CalendarEventData } from '../../interfaces/calendar';
+import type { CalendarEventData } from '../../interfaces/calendar/Event';
 import type { SimpleMap } from '../../interfaces/utils';
 import { CALENDAR_CARD_TYPE, EVENT_VERIFICATION_STATUS } from '../constants';
 

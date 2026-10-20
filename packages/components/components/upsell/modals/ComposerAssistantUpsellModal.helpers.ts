@@ -3,7 +3,8 @@ import type { AmountAndCurrency } from '@proton/payments/core/interface';
 import { type MaybeFreeSubscription, getPlanName } from '@proton/payments/core/subscription/helpers';
 import type { FullPlansMap } from '@proton/payments/core/subscription/interface';
 import { isFreeSubscription } from '@proton/payments/core/type-guards';
-import type { Member, Organization } from '@proton/shared/lib/interfaces';
+import type { Member } from '@proton/shared/lib/interfaces/Member';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import { isOrganization, isSuperAdmin } from '@proton/shared/lib/organization/helper';
 
 import { B2C_PLANS_SUPPORTING_SCRIBE } from '../../../helpers/assistant';

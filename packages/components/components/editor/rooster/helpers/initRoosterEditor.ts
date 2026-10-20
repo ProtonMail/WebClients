@@ -4,7 +4,7 @@ import type { DefaultFormat, EditorPlugin, IEditor } from 'roosterjs-editor-type
 import { Direction } from 'roosterjs-editor-types';
 
 import { isMac } from '@proton/shared/lib/helpers/browser';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 
 import {

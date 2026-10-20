@@ -1,6 +1,6 @@
 import { RouteExecutor } from './RouteExecutor'
 import { ApiResult } from '@proton/docs-shared'
-import type { Api } from '@proton/shared/lib/interfaces'
+import type { Api } from '@proton/shared/lib/interfaces/Api'
 
 describe('RouteExecutor', () => {
   let mockApi: jest.MockedFunction<Api>

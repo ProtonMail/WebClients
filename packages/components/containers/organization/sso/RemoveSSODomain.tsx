@@ -9,7 +9,7 @@ import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics/metricsInstance';
 import observeApiError from '@proton/metrics/observeApiError';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import type { Domain } from '@proton/shared/lib/interfaces';
+import type { Domain } from '@proton/shared/lib/interfaces/Domain';
 
 import type { PromptProps } from '../../../components/prompt/Prompt';
 import Prompt from '../../../components/prompt/Prompt';

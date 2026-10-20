@@ -1,4 +1,4 @@
-import type { CalendarWithOwnMembers } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarWithOwnMembers } from '@proton/shared/lib/interfaces/calendar/Calendar';
 
 export const getCalendarAndOwner = (selectedCalendarId: string, calendars?: CalendarWithOwnMembers[]) => {
     const calendar = calendars?.find((calendar) => calendar.ID === selectedCalendarId);

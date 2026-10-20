@@ -1,4 +1,4 @@
-import type { EnhancedMember } from '@proton/shared/lib/interfaces';
+import type { EnhancedMember } from '@proton/shared/lib/interfaces/Member';
 
 import type { MembersState } from '../members';
 import { selectMembersRequiringOrgKeyDemotion } from './selectors';

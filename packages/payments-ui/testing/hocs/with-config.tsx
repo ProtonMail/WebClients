@@ -2,7 +2,7 @@ import type { ComponentType } from 'react';
 
 import { ConfigContext } from '@proton/app-context/configContext';
 import { CLIENT_TYPES } from '@proton/shared/lib/constants';
-import type { ProtonConfig } from '@proton/shared/lib/interfaces';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 
 const defaultProtonConfig: ProtonConfig = {
     CLIENT_TYPE: CLIENT_TYPES.MAIL,

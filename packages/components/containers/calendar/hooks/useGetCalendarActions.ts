@@ -15,9 +15,13 @@ import {
     updateCalendar,
 } from '@proton/shared/lib/calendar/calendar';
 import { setupCalendarKey } from '@proton/shared/lib/calendar/crypto/keys/setupCalendarKeys';
-import type { CalendarSettings, CalendarWithOwnMembers, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import type { CalendarCreateData } from '@proton/shared/lib/interfaces/calendar/Api';
-import { getPrimaryKey } from '@proton/shared/lib/keys';
+import type {
+    CalendarSettings,
+    CalendarWithOwnMembers,
+    VisualCalendar,
+} from '@proton/shared/lib/interfaces/calendar/Calendar';
+import { getPrimaryKey } from '@proton/shared/lib/keys/getPrimaryKey';
 
 import useEventManager from '../../../hooks/useEventManager';
 import { useCalendarModelEventManager } from '../../eventManager/calendar/CalendarModelEventManagerProvider';

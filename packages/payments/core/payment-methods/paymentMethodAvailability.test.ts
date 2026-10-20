@@ -1,5 +1,5 @@
 import { buildUser } from '@proton/account/testing/buildUser';
-import { UNPAID_STATE } from '@proton/shared/lib/interfaces';
+import { UNPAID_STATE } from '@proton/shared/lib/interfaces/User';
 
 import { buildSubscription } from '../../testing/buildSubscription';
 import {

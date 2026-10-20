@@ -13,7 +13,7 @@ import { IcUsersFilled } from '@proton/icons/icons/IcUsersFilled';
 import { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { getInitials } from '@proton/shared/lib/helpers/string';
-import type { Organization } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 
 import Checkbox from '../../../../components/input/Checkbox';
 import Table from '../../../../components/table/Table';

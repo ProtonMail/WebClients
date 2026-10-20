@@ -1,4 +1,5 @@
-import type { Key, UserModel } from '@proton/shared/lib/interfaces';
+import type { Key } from '@proton/shared/lib/interfaces/Key';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import { getDisplayKey } from './getDisplayKey';
 
@@ -62,9 +63,9 @@ describe('getDisplayKey - forwarding key deletion', () => {
     });
 
     it('prevents deleting a key linked to both', () => {
-        expect(
-            getForwardingKeyCanDelete({ AddressForwardingID: 'forwarding-id', GroupMemberID: 'member-id' })
-        ).toBe(false);
+        expect(getForwardingKeyCanDelete({ AddressForwardingID: 'forwarding-id', GroupMemberID: 'member-id' })).toBe(
+            false
+        );
     });
 
     it('prevents a non-private user from deleting their own unlinked forwarding key', () => {

@@ -17,12 +17,12 @@ import useInstance from '@proton/hooks/useInstance';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { queryCheckVerificationCode } from '@proton/shared/lib/api/user';
 import { submitExternalCaptcha } from '@proton/shared/lib/api/verification';
-import { getGenericErrorPayload } from '@proton/shared/lib/broadcast';
+import { getGenericErrorPayload } from '@proton/shared/lib/broadcast/helper';
 import { createOfflineError } from '@proton/shared/lib/fetch/ApiError';
 import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
 import { loadLocales } from '@proton/shared/lib/i18n/loadLocale';
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
-import type { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
+import type { HumanVerificationMethodType } from '@proton/shared/lib/interfaces/HumanVerification';
 import { getDarkThemes } from '@proton/shared/lib/themes/themes';
 
 import broadcast, { MessageType } from './broadcast';

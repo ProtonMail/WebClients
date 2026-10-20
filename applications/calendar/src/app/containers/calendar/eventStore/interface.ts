@@ -2,13 +2,10 @@ import type createIntervalTree from '@protontech/interval-tree';
 
 import type { CALENDAR_SIGNED_FIELDS, SHARED_SIGNED_FIELDS } from '@proton/shared/lib/calendar/constants';
 import type { OccurrenceIterationCache } from '@proton/shared/lib/calendar/recurrence/recurring';
-import type { RequireSome } from '@proton/shared/lib/interfaces';
-import type {
-    CalendarEvent,
-    CalendarEventSharedData,
-    DecryptedVeventResult,
-} from '@proton/shared/lib/interfaces/calendar';
+import type { DecryptedVeventResult } from '@proton/shared/lib/interfaces/calendar/Decrypt';
+import type { CalendarEvent, CalendarEventSharedData } from '@proton/shared/lib/interfaces/calendar/Event';
 import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
+import type { RequireSome } from '@proton/shared/lib/interfaces/utils';
 
 import type { EventInternalProperties } from '../../../interfaces/EventInternalProperties';
 

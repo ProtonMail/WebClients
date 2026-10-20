@@ -1,4 +1,4 @@
-import { EdugainAffiliations } from '@proton/shared/lib/interfaces';
+import { EdugainAffiliations } from '@proton/shared/lib/interfaces/SSO';
 
 // Affiliations won't be translated for now
 export const EdugainAffiliationLabels: Record<EdugainAffiliations, string> = {

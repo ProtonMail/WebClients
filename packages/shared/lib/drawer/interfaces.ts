@@ -1,7 +1,8 @@
 import type { PersistedSession } from '../authentication/SessionInterface';
 import type { OfflineKey } from '../authentication/offlineKey';
 import type { APPS } from '../constants';
-import type { Environment, User as tsUser } from '../interfaces';
+import type { Environment } from '../interfaces/Environment';
+import type { User as tsUser } from '../interfaces/User';
 import type { VCardContact } from '../interfaces/contacts/VCard';
 import type { ThemeSetting } from '../themes/themes';
 

@@ -1,6 +1,6 @@
 import { CryptoProxy } from '@protontech/crypto';
 
-import type { DecryptedKey } from '@proton/shared/lib/interfaces';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 
 import type { VaultCreateRequest } from '../../../../types';
 import { ContentFormatVersion, PassEncryptionTag } from '../../../../types';

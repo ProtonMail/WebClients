@@ -6,7 +6,7 @@ import type { Currency, FreeSubscription } from '@proton/payments/core/interface
 import type { Plan } from '@proton/payments/core/plan/interface';
 import type { FullPlansMap, Subscription } from '@proton/payments/core/subscription/interface';
 import { getPlansMap as getPlansMapInner } from '@proton/payments/core/subscription/plans-map-wrapper';
-import type { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import { type GetPreferredCurrencyParamsHook, useCurrencies } from '../../client-extensions/useCurrencies';
 

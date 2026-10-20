@@ -8,7 +8,7 @@ import type { Props } from '@proton/components/components/drawer/drawerAppButton
 import FeatureTourDrawerSpotlight from '@proton/components/components/featureTour/FeatureTourDrawerSpotlight';
 import { FEATURE_TOUR_STEPS } from '@proton/components/components/featureTour/constants';
 import LogoBase from '@proton/components/components/logo/LogoBase';
-import type { Optional } from '@proton/shared/lib/interfaces';
+import type { Optional } from '@proton/shared/lib/interfaces/utils';
 import generateUID from '@proton/utils/generateUID';
 
 import { useMailDispatch } from '../../store/hooks';

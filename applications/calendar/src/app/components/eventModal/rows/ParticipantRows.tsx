@@ -2,9 +2,9 @@ import React, { useCallback, useRef } from 'react';
 
 import debounce from 'lodash/debounce';
 
-import type { SimpleMap } from '@proton/shared/lib/interfaces';
-import type { AttendeeModel } from '@proton/shared/lib/interfaces/calendar';
-import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { AttendeeModel } from '@proton/shared/lib/interfaces/calendar/Event';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 import { busySlotsActions } from '../../../store/busySlots/busySlotsSlice';
 import { useCalendarDispatch } from '../../../store/hooks';

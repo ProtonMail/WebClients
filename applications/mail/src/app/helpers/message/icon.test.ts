@@ -9,7 +9,7 @@ import { IcLockOpenPenFilled } from '@proton/icons/icons/IcLockOpenPenFilled';
 import { IcLockPenFilled } from '@proton/icons/icons/IcLockPenFilled';
 import type { MessageState, MessageVerification } from '@proton/mail/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
-import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
+import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MAIL_VERIFICATION_STATUS, SIGNATURE_START } from '@proton/shared/lib/mail/constants';
 import {

@@ -1,4 +1,4 @@
-import { format } from '@proton/shared/lib/date-fns-utc';
+import format from '@proton/shared/lib/date-fns-utc/format';
 
 export const downloadLogs = (logs: string[]) => {
     if (logs.length === 0) {

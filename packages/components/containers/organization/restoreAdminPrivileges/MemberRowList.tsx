@@ -1,6 +1,6 @@
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
-import type { Member } from '@proton/shared/lib/interfaces';
+import type { Member } from '@proton/shared/lib/interfaces/Member';
 import { getMemberEmailOrName } from '@proton/shared/lib/keys/memberHelper';
 import clsx from '@proton/utils/clsx';
 

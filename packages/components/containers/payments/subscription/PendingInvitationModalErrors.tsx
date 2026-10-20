@@ -9,7 +9,7 @@ import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButto
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import type { AcceptInvitationValidation, PendingInvitation } from '@proton/shared/lib/interfaces';
+import type { AcceptInvitationValidation, PendingInvitation } from '@proton/shared/lib/interfaces/PendingInvitation';
 import { getUsedSpace } from '@proton/shared/lib/user/storage';
 
 import SettingsLink from '../../../components/link/SettingsLink';

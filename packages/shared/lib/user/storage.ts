@@ -4,7 +4,7 @@ import { ThemeColor } from '@proton/colors/types';
 
 import type { APP_NAMES } from '../constants';
 import { APPS } from '../constants';
-import type { User, UserModel } from '../interfaces';
+import type { User, UserModel } from '../interfaces/User';
 import { PLANS } from '../payments/constants';
 import { getHasMailB2BPlan } from '../payments/subscription/helpers/plan-b2b';
 import { hasVisionary } from '../payments/subscription/helpers/plan-matching';

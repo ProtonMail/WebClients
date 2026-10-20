@@ -84,7 +84,7 @@ import { versionCookieAtLoad } from '@proton/components/helpers/versionCookie'
 import { useMoveItemsModal } from '@proton/drive/public/moveItemsModal'
 import { generateNodeUid, getDrive } from '@proton/drive'
 import { IcListBullets } from '@proton/icons/icons/IcListBullets'
-import type { UserModel } from '@proton/shared/lib/interfaces'
+import type { UserModel } from '@proton/shared/lib/interfaces/User'
 import { useOpenDocument } from '@proton/docs-shared/lib/Hooks/useOpenDocument'
 
 export type DocumentTitleDropdownProps = {

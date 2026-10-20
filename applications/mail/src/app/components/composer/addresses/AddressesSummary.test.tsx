@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 
-import type { ContactGroup } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import noop from '@proton/utils/noop';
 

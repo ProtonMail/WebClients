@@ -7,7 +7,8 @@ import { createHooks } from '@proton/redux-utilities/hooks';
 import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
 import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { queryConversationCount } from '@proton/shared/lib/api/conversations';
-import type { Folder, Label, LabelCount } from '@proton/shared/lib/interfaces';
+import type { Folder } from '@proton/shared/lib/interfaces/Folder';
+import type { Label, LabelCount } from '@proton/shared/lib/interfaces/Label';
 import type { Conversation } from '@proton/shared/lib/interfaces/mail/Conversation';
 import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 

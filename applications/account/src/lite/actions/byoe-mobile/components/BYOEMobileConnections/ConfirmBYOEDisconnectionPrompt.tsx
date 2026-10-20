@@ -7,7 +7,7 @@ import type { PromptProps } from '@proton/components/components/prompt/Prompt';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import type { Address } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
 
 interface Props extends Pick<PromptProps, 'open' | 'onClose' | 'onExit'> {
     address: Address;

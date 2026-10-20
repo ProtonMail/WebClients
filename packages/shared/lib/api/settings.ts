@@ -10,7 +10,7 @@ import type {
     SETTINGS_LOG_AUTH_STATE,
     SETTINGS_TIME_FORMAT,
     SETTINGS_WEEK_START,
-} from '../interfaces';
+} from '../interfaces/UserSettings';
 import type { ThemeSetting } from '../themes/themes';
 import type { RegistrationOptions } from '../webauthn/interface';
 

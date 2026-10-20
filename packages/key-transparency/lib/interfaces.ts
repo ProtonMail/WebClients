@@ -1,11 +1,8 @@
-import type {
-    Address,
-    Api,
-    DecryptedAddressKey,
-    FetchedSignedKeyList,
-    KTUserContext,
-    KeyPair,
-} from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { DecryptedAddressKey, KeyPair } from '@proton/shared/lib/interfaces/Key';
+import type { KTUserContext } from '@proton/shared/lib/interfaces/KeyTransparency';
+import type { FetchedSignedKeyList } from '@proton/shared/lib/interfaces/SignedKeyList';
 
 import type { KT_CERTIFICATE_ISSUER, KT_DOMAINS } from './constants/constants';
 import type { KeyTransparencyError } from './helpers/utils';

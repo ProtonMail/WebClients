@@ -1,6 +1,6 @@
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { DelegatedAccessStateEnum, DelegatedAccessTypeEnum } from '@proton/shared/lib/interfaces/DelegatedAccess';
-import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 
 import { getContact, getParsedDateTime } from '../../emergencyContact/helper';
 import type { OutgoingDelegatedAccessOutput, OutgoingEphemeral } from '../../interface';

@@ -1,14 +1,14 @@
 import { addDays, isValid } from 'date-fns';
 
 import { DAY } from '@proton/shared/lib/constants';
-import { startOfDay } from '@proton/shared/lib/date-fns-utc';
+import startOfDay from '@proton/shared/lib/date-fns-utc/startOfDay';
 import {
     convertZonedDateTimeToUTC,
     fromUTCDate,
     fromUTCDateToTimezone,
     toUTCDate,
 } from '@proton/shared/lib/date/timezone';
-import type { DateTimeModel, EventModel } from '@proton/shared/lib/interfaces/calendar';
+import type { DateTimeModel, EventModel } from '@proton/shared/lib/interfaces/calendar/Event';
 
 import getFrequencyModelChange from '../eventForm/getFrequencyModelChange';
 import { getDateTimeState, getTimeInUtc } from '../eventForm/time';

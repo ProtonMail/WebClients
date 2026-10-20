@@ -1,4 +1,4 @@
-import type { OrganizationExtended, OrganizationSettings } from '@proton/shared/lib/interfaces';
+import type { OrganizationExtended, OrganizationSettings } from '@proton/shared/lib/interfaces/Organization';
 
 import type { MailStateSlice } from './buildMailState';
 

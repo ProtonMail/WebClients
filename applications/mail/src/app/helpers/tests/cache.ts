@@ -2,7 +2,8 @@ import { clearCache, mockCache } from '@proton/components/testing/cache';
 import type { Base64Cache } from '@proton/mail/hooks/useBase64Cache';
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import createCache from '@proton/shared/lib/helpers/cache';
-import type { Address, Key } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { Key } from '@proton/shared/lib/interfaces/Key';
 
 /**
  * Export for backward compatibility in the tests. It can be gradually migrated to use

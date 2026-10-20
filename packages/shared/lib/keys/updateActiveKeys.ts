@@ -1,6 +1,9 @@
 import type { ActiveAddressKeyPayload } from '../api/keys';
 import { AddressActiveStatus, updateAddressActiveKeysRoute } from '../api/keys';
-import type { ActiveKey, Address, AddressKey, Api, DecryptedAddressKey, KeyTransparencyVerify } from '../interfaces';
+import type { Address } from '../interfaces/Address';
+import type { Api } from '../interfaces/Api';
+import type { ActiveKey, AddressKey, DecryptedAddressKey } from '../interfaces/Key';
+import type { KeyTransparencyVerify } from '../interfaces/KeyTransparency';
 import { getActiveAddressKeys, getNormalizedActiveAddressKeys } from './getActiveKeys';
 import { getInactiveKeys } from './getInactiveKeys';
 import { getSignedKeyListWithDeferredPublish } from './signedKeyList';

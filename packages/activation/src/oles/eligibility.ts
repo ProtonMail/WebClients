@@ -2,7 +2,8 @@ import { PLANS } from '@proton/payments/core/constants';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
-import type { Organization, UserModel } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { isOrganizationB2B } from '@proton/shared/lib/organization/helper';
 
 const hasSupportedPlan = (plan: PLANS) =>

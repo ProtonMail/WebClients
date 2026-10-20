@@ -2,7 +2,7 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Draft } from 'immer';
 
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
-import type { IncomingDefault } from '@proton/shared/lib/interfaces';
+import type { IncomingDefault } from '@proton/shared/lib/interfaces/IncomingDefault';
 
 import type { IncomingDefaultEvent } from '../../models/event';
 import type { IncomingDefaultsState } from './incomingDefaultsTypes';

@@ -1,5 +1,5 @@
 import { convertZonedDateTimeToUTC, toUTCDate } from '@proton/shared/lib/date/timezone';
-import type { DateTimeModel } from '@proton/shared/lib/interfaces/calendar';
+import type { DateTimeModel } from '@proton/shared/lib/interfaces/calendar/Event';
 
 export const getDateTimeState = (utcDate: Date, tzid: string): DateTimeModel => {
     return {

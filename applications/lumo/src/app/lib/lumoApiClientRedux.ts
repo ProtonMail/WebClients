@@ -11,7 +11,7 @@ import type {
 } from '@proton/lumo-api-client/core/types';
 import { postProcessTitle } from '@proton/lumo-api-client/utils';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import { selectAttachmentsBySpaceId } from '../redux/selectors';
 import { addAttachment, pushAttachmentRequest } from '../redux/slices/core/attachments';

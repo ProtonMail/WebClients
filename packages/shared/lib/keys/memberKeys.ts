@@ -5,18 +5,14 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { createMemberKeyRoute, setupMemberKeyRoute } from '../api/memberKeys';
 import { MEMBER_PRIVATE } from '../constants';
-import type {
-    Api,
-    CachedOrganizationKey,
-    DecryptedAddressKey,
-    KeyGenConfig,
-    KeyPair,
-    KeyTransparencyVerify,
-    UserModel,
-    Address as tsAddress,
-    Key as tsKey,
-    Member as tsMember,
-} from '../interfaces';
+import type { Address as tsAddress } from '../interfaces/Address';
+import type { Api } from '../interfaces/Api';
+import type { DecryptedAddressKey, KeyPair, Key as tsKey } from '../interfaces/Key';
+import type { KeyGenConfig } from '../interfaces/KeyGenConfig';
+import type { KeyTransparencyVerify } from '../interfaces/KeyTransparency';
+import type { Member as tsMember } from '../interfaces/Member';
+import type { CachedOrganizationKey } from '../interfaces/OrganizationKey';
+import type { UserModel } from '../interfaces/User';
 import { srpVerify } from '../srp';
 import { generateAddressKey, generateAddressKeyTokens } from './addressKeys';
 import {
@@ -135,10 +131,10 @@ const setupMemberKeyV2 = async ({
     const { Member } = skipSrp
         ? await api<{ Member: tsMember }>(setupMemberKeyConfig)
         : await srpVerify<{ Member: tsMember }>({
-            api,
-            credentials: { password },
-            config: setupMemberKeyConfig,
-        });
+              api,
+              credentials: { password },
+              config: setupMemberKeyConfig,
+          });
 
     await Promise.all(
         AddressKeysWithOnSKLPublish.map(({ onSKLPublishSuccess }) =>

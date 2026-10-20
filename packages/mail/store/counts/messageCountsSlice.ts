@@ -7,7 +7,7 @@ import { createHooks } from '@proton/redux-utilities/hooks';
 import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
 import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { queryMessageCount } from '@proton/shared/lib/api/messages';
-import type { LabelCount } from '@proton/shared/lib/interfaces';
+import type { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { type MailSettingState, mailSettingsThunk } from '../mailSettings';

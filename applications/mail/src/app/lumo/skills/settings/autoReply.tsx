@@ -16,7 +16,7 @@ import { toText } from '@proton/mail/helpers/parserHtml';
 import { htmlEntities, replaceLineBreaks } from '@proton/mail/helpers/string';
 import { AutoReplyDuration } from '@proton/shared/lib/constants';
 import { getTimeZoneOptions, getTimezone } from '@proton/shared/lib/date/timezone';
-import type { AutoResponder } from '@proton/shared/lib/interfaces';
+import type { AutoResponder } from '@proton/shared/lib/interfaces/MailSettings';
 
 import { formatLocalDateTime } from '../../helpers/formatting';
 import { truncateBody } from '../../helpers/messages';

@@ -9,7 +9,7 @@ import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
-import type { EnhancedGroup, Group } from '@proton/shared/lib/interfaces';
+import type { EnhancedGroup, Group } from '@proton/shared/lib/interfaces/Group';
 
 import GroupItem from './GroupItem';
 import { useGroupsManagement } from './context/GroupsManagementContext';

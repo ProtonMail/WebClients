@@ -11,7 +11,7 @@ import { updateDateFormat } from '@proton/shared/lib/api/settings';
 import { dateLocaleCode } from '@proton/shared/lib/i18n';
 import { getBrowserLocale } from '@proton/shared/lib/i18n/helper';
 import { loadDateLocale } from '@proton/shared/lib/i18n/loadLocale';
-import { SETTINGS_DATE_FORMAT, type UserSettings } from '@proton/shared/lib/interfaces';
+import { SETTINGS_DATE_FORMAT, type UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import { getDefaultDateFormat } from '@proton/shared/lib/settings/helper';
 
 import Option from '../../components/option/Option';

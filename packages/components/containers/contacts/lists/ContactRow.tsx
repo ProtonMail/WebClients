@@ -8,8 +8,8 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcPenSquare } from '@proton/icons/icons/IcPenSquare';
 import { addPlus } from '@proton/shared/lib/helpers/string';
-import type { Recipient } from '@proton/shared/lib/interfaces';
-import type { ContactFormatted, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
+import type { ContactFormatted, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import clsx from '@proton/utils/clsx';
 

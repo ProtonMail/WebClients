@@ -3,7 +3,8 @@ import {
     getPersistedSessions,
     removePersistedSessionByLocalIDAndUID,
 } from '@proton/shared/lib/authentication/persistedSessionStorage';
-import type { Api, DecryptedKey } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 import noop from '@proton/utils/noop';
 
 import { db } from '../db/db';

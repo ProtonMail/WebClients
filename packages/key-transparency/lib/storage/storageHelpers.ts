@@ -1,6 +1,7 @@
 import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto';
 import { CryptoProxy } from '@protontech/crypto';
-import type { KTLocalStorageAPI } from '@proton/shared/lib/interfaces';
+
+import type { KTLocalStorageAPI } from '@proton/shared/lib/interfaces/KeyTransparency';
 
 import { KT_ERROR_TYPE, ktSentryReportError, throwKTError } from '../helpers/utils';
 import type { KTBlobContent, KTBlobValuesWithInfo, SelfAuditResult } from '../interfaces';

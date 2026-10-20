@@ -1,5 +1,5 @@
-import type { DateFormatOptions } from '../interfaces/Locale';
-import { enUSLocale } from './dateFnLocales';
+import type { DateFormatOptions } from './interfaces/Locale';
+import { enUSLocale } from './i18n/dateFnLocales';
 
 /**
  * The locales are exported as mutable exports:

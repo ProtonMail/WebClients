@@ -6,16 +6,16 @@ import truncate from '@proton/utils/truncate';
 import { CONTACT_CARD_TYPE, FORBIDDEN_LABEL_NAMES } from '../../constants';
 import { SentryCommonInitiatives, traceInitiativeError } from '../../helpers/sentry';
 import { normalize } from '../../helpers/string';
+import type { ContactGroup, ContactMetadata } from '../../interfaces/contacts/Contact';
 import type {
-    ContactGroup,
-    ContactMetadata,
+    ACCEPTED_EXTENSIONS,
+    EncryptedContact,
     ImportCategories,
+    ImportContactsModel,
     ImportedContact,
     SimpleEncryptedContact,
-} from '../../interfaces/contacts';
-import { IMPORT_GROUPS_ACTION } from '../../interfaces/contacts';
-import type { ACCEPTED_EXTENSIONS, EncryptedContact, ImportContactsModel } from '../../interfaces/contacts/Import';
-import { EXTENSION } from '../../interfaces/contacts/Import';
+} from '../../interfaces/contacts/Import';
+import { EXTENSION, IMPORT_GROUPS_ACTION } from '../../interfaces/contacts/Import';
 import type { VCardContact, VCardProperty } from '../../interfaces/contacts/VCard';
 import type { SimpleMap } from '../../interfaces/utils';
 import { MAX_CONTACT_ID_CHARS_DISPLAY } from '../constants';

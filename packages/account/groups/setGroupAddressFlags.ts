@@ -4,7 +4,8 @@ import { createKTVerifier } from '@proton/key-transparency/helpers';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getIsExpectSignatureDisabled } from '@proton/shared/lib/helpers/address';
-import type { Address, DecryptedAddressKey } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces/Key';
 import { setAddressFlagsHelper } from '@proton/shared/lib/keys/addressFlagsHelper';
 
 import type { AddressesState } from '../addresses';

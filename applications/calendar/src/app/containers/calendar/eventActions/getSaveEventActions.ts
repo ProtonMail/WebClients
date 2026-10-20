@@ -9,8 +9,10 @@ import { buildVcalOrganizer, dayToNumericDay } from '@proton/shared/lib/calendar
 import { getHasAttendees } from '@proton/shared/lib/calendar/vcalHelper';
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { omit } from '@proton/shared/lib/helpers/object';
-import type { Address, Api } from '@proton/shared/lib/interfaces';
-import type { CalendarBootstrap, SyncMultipleApiResponse } from '@proton/shared/lib/interfaces/calendar';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { SyncMultipleApiResponse } from '@proton/shared/lib/interfaces/calendar/Api';
+import type { CalendarBootstrap } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import type { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
 import type { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';

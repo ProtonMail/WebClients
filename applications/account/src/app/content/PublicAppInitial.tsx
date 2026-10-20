@@ -7,7 +7,7 @@ import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import {
     getEmailSessionForkSearchParameter,
     getLocalIDForkSearchParameter,
-} from '@proton/shared/lib/authentication/fork';
+} from '@proton/shared/lib/authentication/fork/validation';
 import type { ActiveSession, GetActiveSessionsResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { getActiveSessions } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { SSO_PATHS } from '@proton/shared/lib/constants';

@@ -5,13 +5,10 @@ import { waitFor } from '@testing-library/react';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { getTestStore } from '@proton/redux-shared-store/test';
-import {
-    type Address,
-    type CachedOrganizationKey,
-    type EnhancedGroup,
-    GroupFlags,
-    KeyTransparencyActivation,
-} from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import { type EnhancedGroup, GroupFlags } from '@proton/shared/lib/interfaces/Group';
+import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
+import type { CachedOrganizationKey } from '@proton/shared/lib/interfaces/OrganizationKey';
 import { createGroupAddressKey } from '@proton/shared/lib/keys/groupKeys';
 
 import { type GroupsState, groupsReducer, selectGroups } from '../groups';

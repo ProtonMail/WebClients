@@ -1,7 +1,7 @@
 import { type ESCiphertext, type IndexKey, encryptItem } from '@protontech/crypto/subtle/ad-hoc/encryptedSearch.ts';
 
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
-import type { AddressEvent } from '@proton/shared/lib/interfaces';
+import type { AddressEvent } from '@proton/shared/lib/interfaces/Address';
 
 import { APOSTROPHES_REGEXP, DIACRITICS_REGEXP, QUOTES_REGEXP } from '../constants';
 import type { ESTimepoint, GetItemInfo } from '../models';

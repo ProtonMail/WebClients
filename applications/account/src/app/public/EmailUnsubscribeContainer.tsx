@@ -25,7 +25,7 @@ import {
     getSubscriptionPatchUpdate,
     getUpdatedNewsBitmap,
 } from '@proton/shared/lib/helpers/newsletter';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import EmailSubscriptionManagement from '../components/EmailSubscriptionManagement';
 import { EmailUnsubscribedContainer } from '../components/EmailUnsubscribed';

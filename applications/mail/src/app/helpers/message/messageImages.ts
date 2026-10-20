@@ -8,7 +8,7 @@ import type {
     MessageState,
 } from '@proton/mail/store/messages/messagesTypes';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import uniqueBy from '@proton/utils/uniqueBy';
 
 import {

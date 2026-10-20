@@ -15,13 +15,13 @@ import UpsellModalUpgradeButton from '@proton/components/components/upsell/Upsel
 import useUpsellModalConfig from '@proton/components/components/upsell/UpsellModal/hooks/useUpsellModalConfig.ts';
 import { useHasInboxDesktopInAppPayments } from '@proton/components/containers/desktop/useHasInboxDesktopInAppPayments.ts';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
-import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper.ts';
+import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, MAIL_APP_NAME, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
-import humanSize from '@proton/shared/lib/helpers/humanSize.ts';
-import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell.ts';
-import type { UserModel } from '@proton/shared/lib/interfaces';
-import { getAppSpace, getSpace } from '@proton/shared/lib/user/storage.ts';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import { getAppSpace, getSpace } from '@proton/shared/lib/user/storage';
 import clsx from '@proton/utils/clsx';
 
 import { trackBYOEUpsellModalViewed } from '../../../telemetry/byoeCreationFunnel';

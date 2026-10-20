@@ -1,5 +1,5 @@
 import { createContext } from 'react';
 
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 export const ApiContext = createContext<Api>(undefined as any);

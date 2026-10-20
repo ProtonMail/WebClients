@@ -18,17 +18,16 @@ import {
     getTimezoneOffset,
 } from '../../date/timezone';
 import { dateLocale } from '../../i18n';
-import type { Address, Api, Key } from '../../interfaces';
+import type { Address } from '../../interfaces/Address';
+import type { Api } from '../../interfaces/Api';
+import type { Key } from '../../interfaces/Key';
 import type { VerificationPreferences } from '../../interfaces/VerificationPreferences';
-import type {
-    CalendarEvent,
-    CalendarSettings,
-    ExportError,
-    VcalVeventComponent,
-    VisualCalendar,
-} from '../../interfaces/calendar';
-import { EXPORT_EVENT_ERROR_TYPES } from '../../interfaces/calendar';
 import type { CalendarEventsIDsQuery } from '../../interfaces/calendar/Api';
+import type { CalendarSettings, VisualCalendar } from '../../interfaces/calendar/Calendar';
+import type { CalendarEvent } from '../../interfaces/calendar/Event';
+import type { ExportError } from '../../interfaces/calendar/Export';
+import { EXPORT_EVENT_ERROR_TYPES } from '../../interfaces/calendar/Export';
+import type { VcalVeventComponent } from '../../interfaces/calendar/VcalModel';
 import type { GetAddressKeys } from '../../interfaces/hooks/GetAddressKeys';
 import type { GetCalendarKeys } from '../../interfaces/hooks/GetCalendarKeys';
 import { getIsAutoAddedInvite } from '../apiModels';

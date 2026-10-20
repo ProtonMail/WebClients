@@ -7,7 +7,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
-import type { PartialMemberAddress } from '@proton/shared/lib/interfaces';
+import type { PartialMemberAddress } from '@proton/shared/lib/interfaces/Member';
 import clsx from '@proton/utils/clsx';
 
 const amountOfDisplayedAddresses = 3;

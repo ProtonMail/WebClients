@@ -11,7 +11,7 @@ import {
     guessTimezone,
 } from '../../lib/date/timezone';
 import { MANUAL_TIMEZONE_LINKS, unsupportedTimezoneLinks } from '../../lib/date/timezoneDatabase';
-import type { SimpleMap } from '../../lib/interfaces';
+import type { SimpleMap } from '../../lib/interfaces/utils';
 
 describe('convert utc', () => {
     const obj = (year: number, month: number, day: number, hours = 0, minutes = 0, seconds = 0) => ({

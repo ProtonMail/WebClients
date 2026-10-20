@@ -1,4 +1,4 @@
-import type { KeyReactivationRequestState } from '@proton/shared/lib/keys';
+import type { KeyReactivationRequestState } from '@proton/shared/lib/keys/reactivation/interface';
 
 export interface ReactivateKeysContentProps {
     keyReactivationStates: KeyReactivationRequestState[];

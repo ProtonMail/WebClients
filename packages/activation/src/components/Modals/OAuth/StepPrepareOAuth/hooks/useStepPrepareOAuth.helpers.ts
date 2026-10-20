@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
 import { willUserReachCalendarsLimit } from '@proton/shared/lib/calendar/calendarLimits';
-import type { Label } from '@proton/shared/lib/interfaces';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
-import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { getMailMappingErrors } from '../../../../../helpers/getMailMappingErrors';

@@ -14,7 +14,7 @@ import {
     updateRightToLeft,
 } from '@proton/shared/lib/api/mailSettings';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 
 import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE } from '../../components/editor/constants';

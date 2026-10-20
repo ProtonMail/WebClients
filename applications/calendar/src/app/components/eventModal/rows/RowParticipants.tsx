@@ -7,8 +7,8 @@ import { IcUsers } from '@proton/icons/icons/IcUsers';
 import type { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { PARTICIPANTS_INPUT_ID } from '@proton/shared/lib/calendar/constants';
 import { getIsProtonUID } from '@proton/shared/lib/calendar/helper';
-import type { Address } from '@proton/shared/lib/interfaces';
-import type { AttendeeModel, EventModel } from '@proton/shared/lib/interfaces/calendar';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { AttendeeModel, EventModel } from '@proton/shared/lib/interfaces/calendar/Event';
 
 import { getOrganizerAndSelfAddressModel } from '../eventForm/state';
 import ParticipantsInput from '../inputs/ParticipantsInput';

@@ -2,8 +2,8 @@ import { c } from 'ttag';
 
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
-import type { GroupMember } from '@proton/shared/lib/interfaces';
-import { GROUP_MEMBER_TYPE } from '@proton/shared/lib/interfaces';
+import type { GroupMember } from '@proton/shared/lib/interfaces/GroupMember';
+import { GROUP_MEMBER_TYPE } from '@proton/shared/lib/interfaces/GroupMember';
 
 import Loader from '../../../components/loader/Loader';
 

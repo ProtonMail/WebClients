@@ -1,7 +1,7 @@
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
-import type { ProtonConfig } from '@proton/shared/lib/interfaces';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 
 /**
  * The BF 2026 campaign runs in Mail, Calendar and Drive, plus the matching product dashboards in the

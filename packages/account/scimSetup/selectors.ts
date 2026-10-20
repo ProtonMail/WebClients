@@ -2,8 +2,9 @@ import { createSelector } from '@reduxjs/toolkit';
 
 import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
 import { getTotalEntitlementQuantity } from '@proton/payments/core/entitlements/helpers';
-import { type EnhancedMember, GROUP_MEMBER_STATE } from '@proton/shared/lib/interfaces';
+import { GROUP_MEMBER_STATE } from '@proton/shared/lib/interfaces/GroupMember';
 import type { GroupMember } from '@proton/shared/lib/interfaces/GroupMember';
+import type { EnhancedMember } from '@proton/shared/lib/interfaces/Member';
 import { getIsMemberSetup } from '@proton/shared/lib/keys/memberHelper';
 
 import { selectEntitlements } from '../entitlements';

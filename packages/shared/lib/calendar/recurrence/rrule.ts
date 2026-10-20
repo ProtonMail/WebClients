@@ -7,7 +7,6 @@ import {
     toUTCDate,
 } from '../../date/timezone';
 import { omit, pick } from '../../helpers/object';
-import type { RequireSome } from '../../interfaces';
 import type {
     VcalDateOrDateTimeProperty,
     VcalDateOrDateTimeValue,
@@ -17,6 +16,7 @@ import type {
     VcalRrulePropertyValue,
     VcalVeventComponent,
 } from '../../interfaces/calendar/VcalModel';
+import type { RequireSome } from '../../interfaces/utils';
 import {
     FREQUENCY,
     FREQUENCY_COUNT_MAX,

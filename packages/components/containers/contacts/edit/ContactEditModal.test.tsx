@@ -8,8 +8,9 @@ import * as mailLabelHooks from '@proton/mail/store/labels/hooks';
 import * as mailSettingsHooks from '@proton/mail/store/mailSettings/hooks';
 import { API_CODES, CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
 import { parseToVCard } from '@proton/shared/lib/contacts/vcard';
-import type { MailSettings, UserModel } from '@proton/shared/lib/interfaces';
-import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 import { addApiMock } from '@proton/test-api/api';
 
 import { clearAll, minimalCache, mockedCryptoApi, notificationManager, renderWithProviders } from '../tests/render';
@@ -44,7 +45,7 @@ jest.mock('@proton/mail/store/mailSettings/hooks', () => ({
     ...jest.requireActual('@proton/mail/store/mailSettings/hooks'),
 }));
 
-jest.mock('@proton/shared/lib/helpers/image.ts', () => ({
+jest.mock('@proton/shared/lib/helpers/image', () => ({
     toImage: (src: string) => ({ src }),
 }));
 

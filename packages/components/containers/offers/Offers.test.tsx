@@ -5,7 +5,8 @@ import type { FeatureCode } from '@proton/features';
 import { APPS } from '@proton/shared/lib/constants';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
 import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter';
-import type { UserModel, UserSettings } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 
 import TopNavbarUpsell from '../../components/topnavbar/TopNavbarUpsell';
 import { clearAll, renderWithProviders } from '../contacts/tests/render';

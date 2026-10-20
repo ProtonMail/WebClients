@@ -20,7 +20,7 @@ import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { getVisualCalendars, sortCalendars } from '@proton/shared/lib/calendar/calendar';
 import { getIsCalendarSubpage } from '@proton/shared/lib/calendar/settingsRoutes';
-import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 

@@ -4,7 +4,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import type { ModalStateProps } from '@proton/components';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 
 import type { ImporterCalendar } from '../../../../../logic/draft/oauthDraft/oauthDraft.interface';
 import CustomizeCalendarImportModalLimitReached from './CustomizeCalendarImportModalLimitReached';

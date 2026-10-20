@@ -7,10 +7,9 @@ import { CALENDAR_SETTINGS_SECTION_ID, ICAL_ATTENDEE_STATUS, ICAL_METHOD } from 
 import { getInteroperabilityOperationsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
 import { APPS, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
-import type { RequireSome } from '@proton/shared/lib/interfaces';
+import type { RequireSome } from '@proton/shared/lib/interfaces/utils';
 
 import OpenInCalendarButton from '../../components/message/extrasHeader/components/calendar/OpenInCalendarButton';
-
 import type { InvitationModel } from './invite';
 
 export const getCalendarEventLink = (model: RequireSome<InvitationModel, 'invitationIcs'>) => {

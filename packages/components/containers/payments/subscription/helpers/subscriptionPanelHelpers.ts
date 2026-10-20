@@ -9,9 +9,10 @@ import {
     ORGANIZATION_STATE,
     VPN_CONNECTIONS,
 } from '@proton/shared/lib/constants';
-import type { Address, Organization, UserModel } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
-import { getScribeWritingAssistantText } from '../assistant/helpers';
 import { getNCalendarsText } from '../../features/calendar';
 import { getFreeUsersText } from '../../features/highlights';
 import {
@@ -20,6 +21,7 @@ import {
     getHighSpeedVPNConnectionsText,
     getVPNConnectionsText,
 } from '../../features/vpn';
+import { getScribeWritingAssistantText } from '../assistant/helpers';
 import type { Upsell } from './dashboard-upsells';
 
 /**
@@ -138,11 +140,7 @@ const getMaxVPNDevicesText = () => {
     );
 };
 
-const getWritingAssistantText = (
-    organization: Organization | undefined,
-    maxMembers: number,
-    scribeToLumo: boolean
-) => {
+const getWritingAssistantText = (organization: Organization | undefined, maxMembers: number, scribeToLumo: boolean) => {
     const maxAi = organization?.MaxAI ?? 0;
 
     if (maxAi === 0) {

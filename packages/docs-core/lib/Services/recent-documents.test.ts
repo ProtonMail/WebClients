@@ -4,7 +4,7 @@ import type { DriveCompat } from '@proton/drive-store/lib'
 import type { DocsApi } from './../Api/DocsApi'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 import type { RecentDocumentAPIItem } from './../Api/Types/GetRecentsResponse'
-import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces'
+import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces/Key'
 import type { CacheService } from './CacheService'
 
 describe('RecentDocumentsService', () => {

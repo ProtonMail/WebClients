@@ -1,8 +1,8 @@
 import { type PayloadAction, createSelector, createSlice } from '@reduxjs/toolkit';
 
-import type { InactiveKey } from '@proton/shared/lib/interfaces';
-import type { KeyReactivationRequest } from '@proton/shared/lib/keys';
+import type { InactiveKey } from '@proton/shared/lib/interfaces/Key';
 import { getAllKeysReactivationRequests } from '@proton/shared/lib/keys/getInactiveKeys';
+import type { KeyReactivationRequest } from '@proton/shared/lib/keys/reactivation/interface';
 
 import { type AddressesState, selectAddresses } from '../addresses';
 import { type UserState, selectUser } from '../user';

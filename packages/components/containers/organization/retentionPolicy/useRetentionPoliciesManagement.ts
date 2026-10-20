@@ -11,7 +11,7 @@ import {
     updateRetentionRuleApi,
 } from '@proton/shared/lib/api/retentionPolicies';
 import type { RetentionRulePayload } from '@proton/shared/lib/api/retentionPolicies';
-import type { Organization } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import type { RetentionRule } from '@proton/shared/lib/interfaces/RetentionRule';
 
 import useErrorHandler from '../../../hooks/useErrorHandler';

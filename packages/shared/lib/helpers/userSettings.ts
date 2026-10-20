@@ -1,5 +1,5 @@
 import { SETTINGS_PROTON_SENTINEL_STATE } from '../constants';
-import type { UserSettings } from '../interfaces';
+import type { UserSettings } from '../interfaces/UserSettings';
 
 export const isProtonSentinelEligible = (userSettings: UserSettings) => {
     return (

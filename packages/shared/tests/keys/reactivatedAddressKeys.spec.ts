@@ -1,7 +1,10 @@
 import { CryptoProxy } from '@protontech/crypto';
 
-import type { Key, Address as tsAddress, User as tsUser } from '../../lib/interfaces';
-import { getDecryptedAddressKeysHelper, getDecryptedUserKeysHelper } from '../../lib/keys';
+import type { Address as tsAddress } from '../../lib/interfaces/Address';
+import type { Key } from '../../lib/interfaces/Key';
+import type { User as tsUser } from '../../lib/interfaces/User';
+import { getDecryptedAddressKeysHelper } from '../../lib/keys/getDecryptedAddressKeys';
+import { getDecryptedUserKeysHelper } from '../../lib/keys/getDecryptedUserKeys';
 import {
     getAddressReactivationPayload,
     getReactivatedAddressKeys,

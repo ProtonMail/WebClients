@@ -6,7 +6,8 @@ import { TelemetryKeyTransparencyErrorEvents, TelemetryMeasurementGroups } from 
 import { PROTON_DOMAINS } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import type { Api, SimpleMap } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 import { EXPECTED_EPOCH_INTERVAL, KT_DOMAINS, MAX_EPOCH_INTERVAL } from '../constants/constants';
 

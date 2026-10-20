@@ -6,14 +6,16 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
-import type { Address, Member, UserModel } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { Member } from '@proton/shared/lib/interfaces/Member';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import {
     getCanGenerateMemberKeys,
     getShouldSetupMemberKeys,
-    missingKeysMemberProcess,
-    missingKeysSelfProcess,
     setupMemberKeys,
-} from '@proton/shared/lib/keys';
+} from '@proton/shared/lib/keys/memberKeys';
+import { missingKeysMemberProcess } from '@proton/shared/lib/keys/missingKeysMemberProcess';
+import { missingKeysSelfProcess } from '@proton/shared/lib/keys/missingKeysSelfProcess';
 import { getOrganizationKeyInfo, validateOrganizationKey } from '@proton/shared/lib/organization/helper';
 
 import { type AddressesState, addressesThunk } from '../addresses';

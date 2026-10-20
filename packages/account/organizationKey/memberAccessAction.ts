@@ -11,8 +11,8 @@ import {
     maybeResumeSessionByUser,
     persistSession,
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import type { Member } from '@proton/shared/lib/interfaces';
-import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
+import type { Member } from '@proton/shared/lib/interfaces/Member';
+import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys/getDecryptedUserKeys';
 import noop from '@proton/utils/noop';
 
 import type { MembersState } from '../members';

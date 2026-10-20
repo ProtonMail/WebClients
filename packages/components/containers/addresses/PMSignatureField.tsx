@@ -5,20 +5,20 @@ import { useUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useLoading } from '@proton/hooks';
+import useToggle from '@proton/hooks/useToggle';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updatePMSignature } from '@proton/shared/lib/api/mailSettings';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
 import signatureImg from '@proton/styles/assets/img/illustrations/new-upsells-img/tools.svg';
 
 import useModalState from '../../components/modalTwo/useModalState';
 import Toggle from '../../components/toggle/Toggle';
 import UpsellModal from '../../components/upsell/UpsellModal/UpsellModal';
-import useToggle from '@proton/hooks/useToggle'
 
 interface Props {
     id: string;

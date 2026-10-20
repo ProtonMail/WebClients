@@ -24,7 +24,7 @@ import type { ModelState } from '@proton/redux-utilities/initialModelState/inter
 import { CacheType } from '@proton/redux-utilities/interface';
 import { cacheHelper, createPromiseStore, getIsStaleRefetch } from '@proton/redux-utilities/promiseStore';
 import { DAY } from '@proton/shared/lib/constants';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import { type PaymentStatusState, paymentStatusThunk } from '../paymentStatus';
 import { type SubscriptionState, subscriptionThunk } from '../subscription';

@@ -1,6 +1,6 @@
 import { APPS, APP_UPSELL_REF_PATH, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '../../lib/constants';
 import { addUpsellPath, getUpgradePath, getUpsellRef, getUpsellRefFromApp } from '../../lib/helpers/upsell';
-import type { UserModel } from '../../lib/interfaces';
+import type { UserModel } from '../../lib/interfaces/User';
 import { PLANS, PLAN_TYPES } from '../../lib/payments/constants';
 import type { Subscription } from '../../lib/payments/subscription/interface';
 

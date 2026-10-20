@@ -1,9 +1,9 @@
 import { reformatApiErrorMessage } from '@proton/shared/lib/calendar/api';
 import { getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
 import { getHasRecurrenceId } from '@proton/shared/lib/calendar/vcalHelper';
-import type { SimpleMap } from '@proton/shared/lib/interfaces';
-import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import type { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 import type { InviteActions } from '../interfaces/Invite';
 import { INVITE_ACTION_TYPES } from '../interfaces/Invite';

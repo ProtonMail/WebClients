@@ -9,25 +9,17 @@ import { getClientKey } from '../authentication/clientKey';
 import { getDecryptedBlob, getEncryptedBlob } from '../authentication/sessionBlobCryptoHelper';
 import { APPS, type APP_NAMES, KEYGEN_CONFIGS, KEYGEN_TYPES } from '../constants';
 import { getEmailParts, removePlusAliasLocalPart } from '../helpers/email';
-import type { Address, Api, PreAuthKTVerify, User, User as tsUser } from '../interfaces';
+import type { Address } from '../interfaces/Address';
+import type { Api } from '../interfaces/Api';
+import type { PreAuthKTVerify } from '../interfaces/KeyTransparency';
+import type { User, User as tsUser } from '../interfaces/User';
 import { isPrivate } from '../user/helpers';
 import { getIsBYOEAccount, getIsExternalAccount, getIsVPNOnlyAccount, getRequiresMailKeySetup } from './accountType';
-import { createAddressKeyLegacy, createAddressKeyV2 } from './add';
+import { createAddressKeyLegacy, createAddressKeyV2 } from './add/addAddressKeyHelper';
 import { getDecryptedUserKeysHelper } from './getDecryptedUserKeys';
 import { getHasMigratedAddressKeys } from './keyMigration';
 import { handleSetupAddress } from './setupAddressKeys';
 import { handleSetupKeys } from './setupKeys';
-
-export {
-    getCanSetupProtonAddress,
-    getIsBYOEAccount,
-    getIsExternalAccount,
-    getIsExternalUserWithoutProtonAddressCreation,
-    getIsGlobalSSOAccount,
-    getIsSSOAccount,
-    getIsSSOVPNOnlyAccount,
-    getRequiresPasswordSetup,
-} from './accountType';
 
 export const getLocalPart = (email: string) => {
     const [localPart] = getEmailParts(email);

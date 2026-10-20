@@ -1,7 +1,7 @@
 import loudRejection from 'loud-rejection';
 
 import { ADDRESS_FLAGS, MIME_TYPES, MIME_TYPES_MORE, PGP_SCHEMES } from '@proton/shared/lib/constants';
-import type { Address, Recipient } from '@proton/shared/lib/interfaces';
+import type { Address, Recipient } from '@proton/shared/lib/interfaces/Address';
 import type { EncryptionPreferences } from '@proton/shared/lib/mail/encryptionPreferences';
 import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';

@@ -27,7 +27,8 @@ import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers
 import type { PaymentStage } from '@proton/payments/telemetry/shared-checkout-telemetry';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
-import type { Api, User } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { User } from '@proton/shared/lib/interfaces/User';
 
 import type { OnMethodChangedHandler, Operations, OperationsData } from '../react-extensions';
 import { usePaymentFacade as useInnerPaymentFacade } from '../react-extensions';

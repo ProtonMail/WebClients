@@ -1,12 +1,12 @@
 import type { SIEVE_VERSION, SieveBranch } from '@proton/sieve/types';
 
 import type {
-    Api,
     ForwardingState,
     ForwardingType,
     IncomingAddressForwarding,
     OutgoingAddressForwarding,
-} from '../interfaces';
+} from '../interfaces/AddressForwarding';
+import type { Api } from '../interfaces/Api';
 import queryPages from './helpers/queryPages';
 
 interface ProxyInstance {

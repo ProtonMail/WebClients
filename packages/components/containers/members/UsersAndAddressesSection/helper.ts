@@ -1,8 +1,8 @@
 import { c, msgid } from 'ttag';
 
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import type { EnhancedMember } from '@proton/shared/lib/interfaces';
-import { TwoFactorStatusFlags } from '@proton/shared/lib/interfaces';
+import type { EnhancedMember } from '@proton/shared/lib/interfaces/Member';
+import { TwoFactorStatusFlags } from '@proton/shared/lib/interfaces/Member';
 
 export const getInvitationLimit = (n: number) => {
     return c('familyOffer_2023:Family plan').ngettext(

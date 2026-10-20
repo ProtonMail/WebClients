@@ -6,7 +6,7 @@ import {
     NOTIFICATION_UNITS,
     NOTIFICATION_WHEN,
 } from '@proton/shared/lib/calendar/constants';
-import type { EventModel, FrequencyModel } from '@proton/shared/lib/interfaces/calendar';
+import type { EventModel, FrequencyModel } from '@proton/shared/lib/interfaces/calendar/Event';
 
 import type { CalendarViewEvent } from '../../../calendar/interface';
 

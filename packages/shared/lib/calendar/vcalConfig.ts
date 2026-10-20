@@ -1,5 +1,5 @@
 import { getClientID } from '../apps/helper';
-import type { ProtonConfig } from '../interfaces';
+import type { ProtonConfig } from '../interfaces/config';
 
 /**
  * Given an app config the prodId is fixed, so it's convenient to have
