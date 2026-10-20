@@ -1,6 +1,7 @@
 import type { SerializedUrlRule } from "@proton/shared/lib/desktop/urls/builder";
 import { matchUrlRules } from "@proton/shared/lib/desktop/urls/matcher";
 import { URL_RULES } from "@proton/shared/lib/desktop/urls/rules";
+import { urlRedirectsLogger } from "../log";
 
 class UrlRedirectManager {
     private ruleIds: Set<string> = new Set();
@@ -24,7 +25,7 @@ class UrlRedirectManager {
     }
 
     public match(url: string): boolean {
-        return matchUrlRules(url, this.rules);
+        return matchUrlRules(url, this.rules, urlRedirectsLogger);
     }
 
     public static getInstance(): UrlRedirectManager {

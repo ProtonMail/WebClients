@@ -47,6 +47,7 @@ export type IPCInboxDesktopFeature =
     | 'ClearAppModal'
     | 'SnapSupport'
     | 'BugReportLogAttachments'
+    | 'BugReportProfilerAttachments'
     /**
      * @deprecated on Desktop clients running Electron 41+
      */
@@ -114,11 +115,17 @@ export type IPCInboxClientUpdateMessage =
     | { type: 'setAllowedProtocols'; payload: { protocols: string[]; source: ProtocolSource } }
     | { type: 'setUrlRedirectRules'; payload: { rules: SerializedUrlRule[] } }
     | { type: 'authStatusResult'; payload: { hasAuth: boolean; uuid: string } };
-export type IPCInboxClientGetAsyncDataMessage = {
-    type: 'getElectronLogs';
-    args: [maxSize?: number];
-    result: Uint8Array<ArrayBuffer> | null;
-};
+export type IPCInboxClientGetAsyncDataMessage =
+    | {
+          type: 'getElectronLogs';
+          args: [maxSize?: number];
+          result: Uint8Array<ArrayBuffer> | null;
+      }
+    | {
+          type: 'getProfilerReports';
+          args: [maxSize?: number];
+          result: { name: string; data: Uint8Array<ArrayBuffer> }[];
+      };
 export type IPCInboxClientUpdateMessageType = IPCInboxClientUpdateMessage['type'];
 
 export const IPCInboxHostUpdateMessageSchema = z.discriminatedUnion('type', [
