@@ -1,3 +1,5 @@
+import { c } from 'ttag';
+
 /** A single inferred fact within a category. */
 export interface PaperTrailFinding {
     /** Short tag, e.g. "Income" or "Location". */
@@ -132,18 +134,23 @@ export const privacyTypeLabel = (score: number): string => {
     const clamped = clampScore(score);
 
     if (clamped >= 81) {
-        return 'Digital oversharing';
+        // translator: The user's chats reveal so much personal detail that their life is highly exposed to profiling. Playful, not accusatory.
+        return c('collider_2025:Label').t`Digital oversharing`;
     }
     if (clamped >= 61) {
-        return 'Easy to profile';
+        // translator: Enough information was shared in AI chats that an advertiser or stranger could infer a detailed picture of the user. Short headline on the share card.
+        return c('collider_2025:Label').t`Easy to profile`;
     }
     if (clamped >= 41) {
-        return 'Leaving receipts';
+        // translator: Playful privacy category: leaving evidence of personal information in chat history, rather than shopping receipts.
+        return c('collider_2025:Label').t`Leaving receipts`;
     }
     if (clamped >= 21) {
-        return 'Hard to read';
+        // translator: Privacy category: little personal information can be inferred about this person.
+        return c('collider_2025:Label').t`Hard to read`;
     }
-    return 'Privacy maxxing';
+    // translator: Playful internet slang for maximizing privacy; the lowest exposure category.
+    return c('collider_2025:Label').t`Privacy maxxing`;
 };
 
 /**

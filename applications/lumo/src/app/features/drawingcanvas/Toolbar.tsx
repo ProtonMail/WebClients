@@ -21,7 +21,7 @@ interface ToolbarProps {
     canRedo: boolean;
 }
 
-const MODAL_COLORS = [
+const getModalColors = () => [
     { value: '#ffffff', label: c('Color').t`White`, bordered: true },
     { value: '#000000', label: c('Color').t`Black` },
     { value: '#f4a8b8', label: c('Color').t`Pink` },
@@ -30,7 +30,7 @@ const MODAL_COLORS = [
     { value: '#90caf9', label: c('Color').t`Blue` },
 ];
 
-const STROKE_WIDTHS = [
+const getStrokeWidths = () => [
     { value: 2, label: c('collider_2025:Label').t`Fine` },
     { value: 4, label: c('collider_2025:Label').t`Medium` },
     { value: 8, label: c('collider_2025:Label').t`Thick` },
@@ -81,7 +81,7 @@ export const Toolbar = ({
                     </button>
                     {showStrokeMenu && (
                         <span className="sketch-toolbar__stroke-popup absolute inline-flex flex-column gap-0.5 p-1 rounded-xl border bg-norm shadow-lifted">
-                            {STROKE_WIDTHS.map((stroke) => (
+                            {getStrokeWidths().map((stroke) => (
                                 <button
                                     key={stroke.value}
                                     type="button"
@@ -110,7 +110,7 @@ export const Toolbar = ({
                 </span>
 
                 <div className="sketch-toolbar__colors flex items-center gap-1.5 shrink-0 overflow-x-auto flex-nowrap px-1 order-2 w-full pb-0.5 md:order-initial md:w-auto md:pb-0">
-                    {MODAL_COLORS.map((color) => (
+                    {getModalColors().map((color) => (
                         <button
                             key={color.value}
                             type="button"

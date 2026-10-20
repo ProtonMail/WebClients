@@ -1,5 +1,7 @@
 import { useCallback, useState } from 'react';
 
+import { c } from 'ttag';
+
 import { useApi } from '@proton/app-context/useApi';
 
 import { initializeNewSpaceAndConversation, sendMessage } from '../../components/Conversation/helper';
@@ -66,7 +68,8 @@ export const useStartPaperTrail = (): StartResult => {
                 exportData = await parseExportFile(file);
             } catch (e) {
                 setStatus('error');
-                setError(e instanceof Error ? e.message : 'Could not read this file.');
+                // translator: Error shown when reading an uploaded conversation export or starting its analysis.
+                setError(e instanceof Error ? e.message : c('collider_2025:Error').t`Could not read this file.`);
                 return;
             }
 
@@ -123,7 +126,12 @@ export const useStartPaperTrail = (): StartResult => {
                 );
             } catch (e) {
                 setStatus('error');
-                setError(e instanceof Error ? e.message : 'Something went wrong starting the analysis.');
+                // translator: Error shown when reading an uploaded conversation export or starting its analysis.
+                setError(
+                    e instanceof Error
+                        ? e.message
+                        : c('collider_2025:Error').t`Something went wrong starting the analysis.`
+                );
             }
         },
         [api, dispatch, personalization, ffSmoothRendering]

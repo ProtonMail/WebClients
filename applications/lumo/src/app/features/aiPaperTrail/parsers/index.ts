@@ -1,10 +1,12 @@
+import { c } from 'ttag';
+
 import { isChatGptExport, parseChatGptExport } from './chatgpt';
 import { isClaudeExport, parseClaudeExport } from './claude';
 import { type NormalizedExport, PaperTrailParseError } from './types';
 import { readConversationsFromZip } from './zipConversations';
 
-export type { NormalizedExport, NormalizedUserPrompt } from './types';
 export { PaperTrailParseError } from './types';
+export type { NormalizedExport, NormalizedUserPrompt } from './types';
 
 const isZip = (file: File): boolean =>
     file.name.toLowerCase().endsWith('.zip') ||
@@ -20,12 +22,15 @@ export const formatPaperTrailFileReadError = (error: unknown): string => {
         return error.message;
     }
     if (isNotReadableError(error)) {
-        return 'We could not read this file. Select it again, or move it out of cloud storage before uploading.';
+        // translator: Error shown when reading an uploaded conversation export or starting its analysis.
+        return c('collider_2025:Error')
+            .t`We could not read this file. Select it again, or move it out of cloud storage before uploading.`;
     }
     if (error instanceof Error) {
         return error.message;
     }
-    return 'Could not read this file.';
+    // translator: Error shown when reading an uploaded conversation export or starting its analysis.
+    return c('collider_2025:Error').t`Could not read this file.`;
 };
 
 /** Parse the raw text of a conversations.json into a normalized export. */
@@ -34,7 +39,8 @@ export const parseExportText = (text: string): NormalizedExport => {
     try {
         data = JSON.parse(text);
     } catch {
-        throw new PaperTrailParseError('The uploaded file is not valid JSON.');
+        // translator: Error shown when reading an uploaded conversation export or starting its analysis.
+        throw new PaperTrailParseError(c('collider_2025:Error').t`The uploaded file is not valid JSON.`);
     }
 
     // ChatGPT is checked first: its `mapping` shape is unambiguous.
@@ -44,7 +50,8 @@ export const parseExportText = (text: string): NormalizedExport => {
     if (isClaudeExport(data)) {
         return parseClaudeExport(data);
     }
-    throw new PaperTrailParseError('This does not look like a ChatGPT or Claude export.');
+    // translator: Error shown when reading an uploaded conversation export or starting its analysis.
+    throw new PaperTrailParseError(c('collider_2025:Error').t`This does not look like a ChatGPT or Claude export.`);
 };
 
 /**
@@ -61,7 +68,10 @@ export const parseExportFile = async (file: File): Promise<NormalizedExport> => 
     const result = parseExportText(text);
 
     if (result.conversations.length === 0) {
-        throw new PaperTrailParseError('No conversations with user messages were found in this export.');
+        // translator: Error shown when reading an uploaded conversation export or starting its analysis.
+        throw new PaperTrailParseError(
+            c('collider_2025:Error').t`No conversations with user messages were found in this export.`
+        );
     }
     return result;
 };

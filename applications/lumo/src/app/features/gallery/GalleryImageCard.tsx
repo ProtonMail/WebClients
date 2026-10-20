@@ -3,6 +3,7 @@ import { useCallback, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { formatIntlDate } from '@proton/shared/lib/date/formatIntlDate';
 
 import { useFileHandling } from '../../components/Composer/hooks/useFileHandling';
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
@@ -75,7 +76,7 @@ export const GalleryImageCard = ({ attachmentId, createdAt, onExport, imageSrcOv
         [imageDataUrl, attachment, handleFilesSelected, navigate]
     );
 
-    const formattedDate = createdAt.toLocaleDateString(undefined, {
+    const formattedDate = formatIntlDate(createdAt, {
         month: 'short',
         day: 'numeric',
         year: createdAt.getFullYear() !== new Date().getFullYear() ? 'numeric' : undefined,
@@ -98,11 +99,17 @@ export const GalleryImageCard = ({ attachmentId, createdAt, onExport, imageSrcOv
                 onClick={() => openOverlay('preview')}
                 onMouseEnter={() => setHovered(true)}
                 onMouseLeave={() => setHovered(false)}
-                aria-label={`Generated image from ${formattedDate}`}
+                aria-label={
+                    // translator: Accessible description of a generated image; formattedDate is its creation date.
+                    c('collider_2025:Label').t`Generated image from ${formattedDate}`
+                }
             >
                 <img
                     src={imageDataUrl}
-                    alt={`Generated image from ${formattedDate}`}
+                    alt={
+                        // translator: Accessible description of a generated image; formattedDate is its creation date.
+                        c('collider_2025:Label').t`Generated image from ${formattedDate}`
+                    }
                     className="gallery-card__image"
                     loading="lazy"
                 />

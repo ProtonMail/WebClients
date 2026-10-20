@@ -15,8 +15,8 @@ import { initialFeatureFlags } from '../../../redux/slices/featureFlags';
 import type { LumoUserSettings } from '../../../redux/slices/lumoUserSettings';
 import { saveLumoUserSettingsToRemote } from '../../../redux/slices/lumoUserSettingsThunks';
 import {
-    AVAILABLE_TRAITS,
     type PersonalizationSettings,
+    getAvailableTraits,
     resetPersonalizationSettings,
     savePersonalizationSettings,
     toggleTrait,
@@ -190,7 +190,7 @@ const PersonalizationPanel = () => {
 
     const handleTraitToggle = (traitId: string) => {
         setHasUserInteracted(true);
-        const trait = AVAILABLE_TRAITS.find((t) => t.id === traitId);
+        const trait = getAvailableTraits().find((t) => t.id === traitId);
         if (!trait) return;
 
         // Always add the trait (never remove it once clicked)
@@ -351,8 +351,9 @@ const PersonalizationPanel = () => {
 
                                 {/* Trait Pills - only show unselected traits */}
                                 <div className="trait-pills flex flex-wrap gap-1 mb-2">
-                                    {AVAILABLE_TRAITS.filter((trait) => !personalization.traits.includes(trait.id)).map(
-                                        (trait) => (
+                                    {getAvailableTraits()
+                                        .filter((trait) => !personalization.traits.includes(trait.id))
+                                        .map((trait) => (
                                             <Tooltip key={trait.id} title={trait.description}>
                                                 <Button
                                                     size="small"
@@ -365,12 +366,14 @@ const PersonalizationPanel = () => {
                                                     {trait.label}
                                                 </Button>
                                             </Tooltip>
-                                        )
-                                    )}
+                                        ))}
 
                                     {/* Show message when all traits are selected */}
-                                    {AVAILABLE_TRAITS.length === personalization.traits.length && (
-                                        <div className="text-sm color-weak italic">All traits have been selected</div>
+                                    {getAvailableTraits().length === personalization.traits.length && (
+                                        <div className="text-sm color-weak italic">{
+                                            // translator: Status in personalization settings. Traits are qualities of the assistant, such as chatty or witty.
+                                            c('collider_2025:Label').t`All traits have been selected`
+                                        }</div>
                                     )}
 
                                     {/* Reset traits button - only show if traits are selected */}
