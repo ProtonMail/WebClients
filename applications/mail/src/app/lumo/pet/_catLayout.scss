@@ -1,5 +1,6 @@
 @use '~@proton/styles/scss/lib/rem' as *;
 
+// Mirrored by INSET_REM and CAT_SIZE_REM in LumoFloatingPanel.tsx, which time the run across the mailbox
 $cat-inset: rem(16);
 $cat-size: rem(96);
 $card-gap: rem(8);
