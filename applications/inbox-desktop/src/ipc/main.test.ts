@@ -4,6 +4,7 @@ import { ipcLogger } from "../utils/log";
 import { getTheme } from "../utils/themes";
 import { storeAppVersion } from "../utils/appVersions";
 import { getLogs } from "../utils/log/getLogsIPC";
+import { getProfilerReports } from "../utils/profiler/reports";
 import { clearOAuthSession, startOAuthSession } from "../utils/oauthSession";
 
 jest.mock("electron", () => ({
@@ -25,6 +26,7 @@ jest.mock("../utils/themes", () => ({ getTheme: jest.fn(() => "mocked-theme") })
 jest.mock("../utils/appVersions", () => ({ storeAppVersion: jest.fn() }));
 jest.mock("../utils/log/getLogsIPC", () => ({ getLogs: jest.fn(async () => "logs") }));
 jest.mock("../utils/profiler/profiler", () => ({ profiler: { ipcMessage: jest.fn() } }));
+jest.mock("../utils/profiler/reports", () => ({ getProfilerReports: jest.fn(async () => []) }));
 jest.mock("../utils/sentryReport");
 
 jest.mock("../store/settingsStore", () => ({}));
@@ -126,6 +128,12 @@ describe("IPC sender origin validation", () => {
         await expect(handlers.getAsyncData(eventFrom(origin), "getElectronLogs", 1000)).resolves.toBeNull();
 
         expect(getLogs).not.toHaveBeenCalled();
+    });
+
+    it.each(UNTRUSTED_ORIGINS)("does not serve profiler reports to %s", async (_, origin) => {
+        await expect(handlers.getAsyncData(eventFrom(origin), "getProfilerReports", 1000)).resolves.toBeNull();
+
+        expect(getProfilerReports).not.toHaveBeenCalled();
     });
 
     it("logs the rejected channel and origin", () => {

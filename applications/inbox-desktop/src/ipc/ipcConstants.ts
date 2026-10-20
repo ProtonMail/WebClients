@@ -18,6 +18,7 @@ export const DESKTOP_FEATURES = {
     ClearAppModal: true,
     SnapSupport: true,
     BugReportLogAttachments: true,
+    BugReportProfilerAttachments: true,
     /**
      * @deprecated for clients running Electron 41+.
      */

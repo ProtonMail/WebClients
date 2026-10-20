@@ -10,6 +10,7 @@ import { SnapshotRecorder } from "./snapshots";
 import { IpcRecorder } from "./ipc";
 import { StartupRequestRecorder } from "./startupRequests";
 import { systemContext } from "./system";
+import { PROFILER_REPORT_EXTENSION, PROFILER_REPORT_PREFIX } from "./reports";
 import { restartApp } from "../restartApp";
 
 class Profiler {
@@ -117,7 +118,7 @@ class Profiler {
             const networkProbePromise = buildNetworkProbe();
 
             const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
-            const filename = `proton-mail-profile-${timestamp}.json`;
+            const filename = `${PROFILER_REPORT_PREFIX}${timestamp}${PROFILER_REPORT_EXTENSION}`;
             const outputPath = path.join(app.getPath("logs"), filename);
 
             const [proxyConfig, networkProbe] = await Promise.all([
