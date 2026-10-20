@@ -807,6 +807,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "您的密码管理器不在这里？请求添加它。"
+      ],
+      "Download for macOS": [
+        "下载 macOS 版"
+      ],
+      "Download for Windows": [
+        "下载 Windows 版"
       ]
     },
     "Activity": {
@@ -2190,7 +2196,7 @@
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "将项目移至其他保险库会清除其安全链接！"
+        "将项目移动到另一个保险库会删除其安全链接。"
       ],
       "Moving items": [
         "正在移动"
@@ -2881,6 +2887,12 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "您的组织要求您确保您对 ${ PASS_APP_NAME }的访问"
+      ],
+      "iOS and Android Apps": [
+        "iOS 和 Android 应用"
+      ],
+      "Scan to download": [
+        "扫描以下载"
       ]
     },
     "Keyboard key": {
@@ -5221,6 +5233,9 @@
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "您将永久删除 ${ aliasCount } 个别名。"
+      ],
+      "Get mobile and desktop apps": [
+        "获取移动和桌面应用"
       ]
     },
     "Title_cloned_item": {
