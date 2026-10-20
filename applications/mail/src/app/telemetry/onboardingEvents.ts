@@ -66,6 +66,12 @@ const themeStepCompleted = defineEvent({
     dimensions: { ...baseDimensions, theme: allowed(ONBOARDING_THEMES.map(({ label }) => label)) },
 });
 
+const flowFinished = defineEvent({
+    ...baseEvent,
+    event: TelemetryMailOnboardingEvents.flowFinished,
+    dimensions: { flow: baseDimensions.flow },
+});
+
 /** Idempotent: the first event of the onboarding starts the timer */
 const withTiming = () => {
     tracker.startTimer(onboardingTimer);
@@ -97,6 +103,10 @@ const trackThemeStepCompleted = (theme: OnboardingThemeLabel) => {
     );
 };
 
+const trackFlowFinished = () => {
+    tracker.emit(flowFinished, { dimensions: { flow: 'onboarding' }, ...withTiming() }, { ...timing, stopTimer: true });
+};
+
 /** Replays of the onboarding are not tracked, the funnel only measures first-time users */
 export const useOnboardingTracking = () => {
     const { welcomeFlags } = useWelcomeFlags();
@@ -122,6 +132,11 @@ export const useOnboardingTracking = () => {
         trackThemeStepCompleted: (theme: OnboardingThemeLabel) => {
             if (!isReplay) {
                 trackThemeStepCompleted(theme);
+            }
+        },
+        trackFlowFinished: () => {
+            if (!isReplay) {
+                trackFlowFinished();
             }
         },
     };
