@@ -26,7 +26,7 @@ import { SideBar } from '../../atoms/SideBar/SideBar';
 import { useChatMessage } from '../../hooks/bridges/useChatMessage';
 import { useChatMessageListNavigation } from '../../hooks/useChatMessageListNavigation';
 import { useMeetingRoomUpdates } from '../../hooks/useMeetingRoomUpdates';
-import { useMentionPlainText } from '../../hooks/useMentionPlainText';
+import { useMessagePlainText } from '../../hooks/useMessagePlainText';
 import { useScrollChatToMessage } from '../../hooks/useScrollChatToMessage';
 import { ChatItem } from '../ChatItem/ChatItem';
 import { ChatThread } from '../ChatItem/ChatThread';
@@ -208,7 +208,7 @@ export const Chat = () => {
 
     const lowerCaseSearchExpression = searchExpression.toLowerCase();
 
-    const toMentionPlainText = useMentionPlainText();
+    const toMessagePlainText = useMessagePlainText();
 
     const filteredMeetingRoomUpdates =
         !isSearchOn || !searchExpression
@@ -216,7 +216,7 @@ export const Chat = () => {
             : meetingRoomUpdates.filter((item) => {
                   const message = (item as MeetChatMessage)?.message;
 
-                  return !!message && toMentionPlainText(message).toLowerCase().includes(lowerCaseSearchExpression);
+                  return !!message && toMessagePlainText(message).toLowerCase().includes(lowerCaseSearchExpression);
               });
 
     // Group thread replies under their root message. A reply carries the thread `topicId` (which

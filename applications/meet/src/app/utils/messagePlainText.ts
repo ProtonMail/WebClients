@@ -1,7 +1,7 @@
 import { replaceMentionTokens } from '@proton/meet/utils/mentions/mentionToken';
 
-import { getLumoEmojiName, splitTextIntoLumoEmojiSegments } from '../lumoEmojis/lumoEmojis';
-import { getMentionName } from './mentionLabel';
+import { getLumoEmojiName, splitTextIntoLumoEmojiSegments } from './lumoEmojis/lumoEmojis';
+import { getMentionName } from './mentions/mentionLabel';
 
 const ENDS_WITH_LETTER_OR_DIGIT_REGEX = /[\p{L}\p{N}]$/u;
 const STARTS_WITH_LETTER_OR_DIGIT_REGEX = /^[\p{L}\p{N}]/u;
@@ -16,7 +16,7 @@ const needsSpaceBetween = (previousPart: PlainTextPart, part: PlainTextPart) =>
     ENDS_WITH_LETTER_OR_DIGIT_REGEX.test(previousPart.text) &&
     STARTS_WITH_LETTER_OR_DIGIT_REGEX.test(part.text);
 
-export const getMentionPlainText = (
+export const getMessagePlainText = (
     text: string,
     {
         participantNameMap,
