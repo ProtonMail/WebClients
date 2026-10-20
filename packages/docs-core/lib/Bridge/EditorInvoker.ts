@@ -16,7 +16,7 @@ import type {
 import { EditorBridgeMessageType, BridgeOriginProvider, GenerateUUID } from '@proton/docs-shared'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 import type { SerializedEditorState } from 'lexical'
-import type { UserSettings } from '@proton/shared/lib/interfaces'
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings'
 
 /** Allows the client to invoke methods on the editor */
 export class EditorInvoker implements ClientRequiresEditorMethods {

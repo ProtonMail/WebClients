@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { BRAND_NAME, MAIL_SHORT_APP_NAME } from '../constants';
-import type { VisualCalendar } from '../interfaces/calendar';
+import type { VisualCalendar } from '../interfaces/calendar/Calendar';
 import { getOwnedPersonalCalendars } from './calendarTaxonomy';
 import { MAX_CALENDARS_FREE, MAX_CALENDARS_PAID } from './constants';
 

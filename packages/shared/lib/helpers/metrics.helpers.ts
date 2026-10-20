@@ -1,4 +1,4 @@
-import type { UserModel } from '../interfaces';
+import type { UserModel } from '../interfaces/User';
 import { CYCLE } from '../payments/constants';
 import type { Cycle } from '../payments/interface';
 import { getUserCreationDate, getUserDaysSinceCreation } from '../user/helpers';

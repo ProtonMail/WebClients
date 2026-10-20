@@ -1,5 +1,5 @@
 import { BASE_SIZE, sizeUnits } from '@proton/shared/lib/helpers/size';
-import { CreateMemberMode } from '@proton/shared/lib/interfaces';
+import { CreateMemberMode } from '@proton/shared/lib/interfaces/Member';
 
 import type { CsvConfig } from './csv';
 import { getSampleCSV, parseMultiUserCsv } from './csv';

@@ -2,7 +2,7 @@ import type { Filter } from '@proton/sieve/filterModel';
 
 import { FILTER_STATUS } from '../../lib/constants';
 import { hasReachedFiltersLimit } from '../../lib/helpers/filters';
-import type { UserModel } from '../../lib/interfaces';
+import type { UserModel } from '../../lib/interfaces/User';
 
 describe('filters helpers', () => {
     it('should have reached filters limit on free user', () => {

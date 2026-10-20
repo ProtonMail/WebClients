@@ -4,8 +4,8 @@ import { useRef } from 'react';
 import isDeepEqual from 'lodash/isEqual';
 
 import { isMac } from '@proton/shared/lib/helpers/browser';
-import type { KeyboardKeyType } from '@proton/shared/lib/interfaces';
-import { KeyboardKey } from '@proton/shared/lib/interfaces';
+import type { KeyboardKeyType } from '@proton/shared/lib/interfaces/Hotkeys';
+import { KeyboardKey } from '@proton/shared/lib/interfaces/Hotkeys';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useEventListener } from './useHandler';

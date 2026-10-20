@@ -24,7 +24,7 @@ import { isSubscriptionCheckForbiddenWithReason } from '@proton/payments/core/su
 import { tracePaymentError } from '@proton/payments/sentry/capture';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { Audience } from '@proton/shared/lib/interfaces';
+import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import noop from '@proton/utils/noop';
 
 import { getCodesForSubscription } from '../helpers';

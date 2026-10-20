@@ -10,8 +10,10 @@ import { getIsCalendarWritable, getIsSubscribedCalendar, getShowDuration } from 
 import { MAX_CHARS_API, MAX_DEFAULT_NOTIFICATIONS } from '@proton/shared/lib/calendar/constants';
 import { getCalendarEventDefaultDuration } from '@proton/shared/lib/calendar/eventDefaults';
 import { getSharedCalendarSubHeaderText } from '@proton/shared/lib/calendar/sharing/shareProton/shareProton';
-import type { Nullable } from '@proton/shared/lib/interfaces';
-import type { NotificationModel, SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
+import type { NotificationModel } from '@proton/shared/lib/interfaces/calendar/Notification';
+import type { SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar/Subscription';
+import type { Nullable } from '@proton/shared/lib/interfaces/utils';
 
 import Form from '../../../../components/form/Form';
 import ColorPicker from '../../../../components/input/ColorPicker';

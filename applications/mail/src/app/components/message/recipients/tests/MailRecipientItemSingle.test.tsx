@@ -1,6 +1,6 @@
 import { fireEvent, screen } from '@testing-library/react';
 
-import type { Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 
 import type { GeneratedKey } from '../../../../helpers/tests/crypto';
 import { generateKeys, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/tests/crypto';

@@ -1,5 +1,6 @@
 import { DEFAULT_LOCALE } from '../../constants';
-import type { MailSettings, UserSettings } from '../../interfaces';
+import type { MailSettings } from '../../interfaces/MailSettings';
+import type { UserSettings } from '../../interfaces/UserSettings';
 import { AUTO_SAVE_CONTACTS, DEFAULT_MAIL_SETTINGS, IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '../mailSettings';
 
 export const EO_DEFAULT_USER_SETTINGS = {

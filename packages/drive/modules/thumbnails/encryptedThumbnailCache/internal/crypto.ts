@@ -1,7 +1,7 @@
 import { CryptoProxy } from '@protontech/crypto';
 import { decryptData, encryptData, generateKey, importKey } from '@protontech/crypto/subtle/aesGcm.ts';
 
-import type { DecryptedKey } from '@proton/shared/lib/interfaces';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 
 import { sendErrorReport } from '../../../../legacy/errorHandling';
 import type { ThumbnailCacheDb } from './thumbnailCacheDb';

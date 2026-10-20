@@ -8,7 +8,7 @@ import { useContacts } from '@proton/mail/store/contacts/hooks';
 import { clearContacts, deleteContacts } from '@proton/shared/lib/api/contacts';
 import { allSucceded } from '@proton/shared/lib/api/helpers/response';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import type { Contact } from '@proton/shared/lib/interfaces/contacts';
+import type { Contact } from '@proton/shared/lib/interfaces/contacts/Contact';
 
 import Alert from '../../../components/alert/Alert';
 import type { ModalProps } from '../../../components/modalTwo/Modal';

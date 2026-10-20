@@ -5,7 +5,7 @@ import { mockUseUser } from '@proton/account/testing/mockUseUser';
 import { mockUseApi } from '@proton/app-context/testing/mockUseApi';
 import { mockUseHistory } from '@proton/components/testing/mockUseHistory';
 import { DENSITY, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { UserSettings } from '@proton/shared/lib/interfaces';
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 
 import { mockUseEncryptedSearchContext } from '../../helpers/tests/mockUseEncryptedSearchContext';
 import { mailTestRender } from '../../helpers/tests/render';

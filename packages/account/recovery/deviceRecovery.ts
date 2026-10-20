@@ -4,7 +4,7 @@ import type { ProtonThunkArguments, SharedStartListening } from '@proton/redux-s
 import { CacheType } from '@proton/redux-utilities/interface';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { updateDeviceRecovery } from '@proton/shared/lib/api/settingsRecovery';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import { syncDeviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecovery';
 import noop from '@proton/utils/noop';
 

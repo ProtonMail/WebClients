@@ -1,6 +1,6 @@
 import { toVCardContacts } from '../../lib/contacts/helpers/csv';
 import { fromVCardProperties, getVCardProperties } from '../../lib/contacts/properties';
-import type { PreVcardProperty, PreVcardsContact } from '../../lib/interfaces/contacts';
+import type { PreVcardProperty, PreVcardsContact } from '../../lib/interfaces/contacts/Import';
 import type { VCardContact, VCardProperty } from '../../lib/interfaces/contacts/VCard';
 
 const excludeFieldsForVerification = (contacts: VCardContact[]) => {

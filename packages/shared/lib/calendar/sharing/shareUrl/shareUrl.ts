@@ -3,15 +3,15 @@ import { CryptoProxy } from '@protontech/crypto';
 
 import { AES256, EVENT_ACTIONS } from '../../../constants';
 import { generateRandomBytes, getSHA256Base64String, xorEncryptDecrypt } from '../../../helpers/crypto';
-import type { Nullable } from '../../../interfaces';
-import type { CalendarLink, CalendarUrl } from '../../../interfaces/calendar';
-import { ACCESS_LEVEL } from '../../../interfaces/calendar';
 import type {
     CalendarUrlEventManager,
     CalendarUrlEventManagerCreate,
     CalendarUrlEventManagerDelete,
     CalendarUrlEventManagerUpdate,
 } from '../../../interfaces/calendar/EventManager';
+import type { CalendarLink, CalendarUrl } from '../../../interfaces/calendar/Link';
+import { ACCESS_LEVEL } from '../../../interfaces/calendar/Link';
+import type { Nullable } from '../../../interfaces/utils';
 
 export const getIsCalendarUrlEventManagerDelete = (
     event: CalendarUrlEventManager

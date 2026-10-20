@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { isModalOpen } from '@proton/shared/lib/busy';
+import { isModalOpen } from '@proton/shared/lib/busy/busy';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 

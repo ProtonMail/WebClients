@@ -4,7 +4,7 @@ import { getApiError, getIsOfflineError } from '@proton/shared/lib/api/helpers/a
 import { getAuthAPI } from '@proton/shared/lib/api/helpers/customConfig';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
-import { persistForkedSession, resolveForkPasswords } from '@proton/shared/lib/authentication/fork';
+import { persistForkedSession, resolveForkPasswords } from '@proton/shared/lib/authentication/fork/consume';
 import { getUser } from '@proton/shared/lib/authentication/getUser';
 import type { PullForkResponse } from '@proton/shared/lib/authentication/interface';
 import {
@@ -14,7 +14,8 @@ import {
 import { type APP_NAMES, HTTP_STATUS_CODE, MINUTE, SECOND } from '@proton/shared/lib/constants';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/sessionStorage';
-import type { Api, KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys/getDecryptedUserKeys';
 import { deviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecoveryHelper';
 import noop from '@proton/utils/noop';

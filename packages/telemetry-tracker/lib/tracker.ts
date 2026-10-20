@@ -1,7 +1,7 @@
 import type { TelemetryReport } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import { telemetry } from '@proton/shared/lib/telemetry';
 
 import type { EmitArgs, EventDefinition } from './defineEvent';

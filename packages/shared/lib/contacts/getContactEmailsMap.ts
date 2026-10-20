@@ -1,6 +1,6 @@
 import { canonicalizeEmail } from '../helpers/email';
-import type { SimpleMap } from '../interfaces';
-import type { ContactEmail } from '../interfaces/contacts';
+import type { ContactEmail } from '../interfaces/contacts/Contact';
+import type { SimpleMap } from '../interfaces/utils';
 
 export const getContactEmailKey = (value: string) => {
     return canonicalizeEmail(value);

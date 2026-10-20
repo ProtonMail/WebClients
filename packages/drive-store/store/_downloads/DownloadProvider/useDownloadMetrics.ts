@@ -8,7 +8,7 @@ import {
     getIsTimeoutError,
     getIsUnreachableError,
 } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import type { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import { TransferState } from '../../../components/TransferManager/transfer';
 import { isAbortError, isIgnoredErrorForReporting, sendErrorReport } from '../../../utils/errorHandling';

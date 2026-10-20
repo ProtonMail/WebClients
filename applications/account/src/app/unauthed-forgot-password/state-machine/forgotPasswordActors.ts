@@ -8,7 +8,8 @@ import { fromPromise } from 'xstate';
 import type { AutoResetTokenPayload, RecoveryMethod, ValidateResetTokenResponse } from '@proton/shared/lib/api/reset';
 import { requestLoginResetToken, validateResetToken } from '@proton/shared/lib/api/reset';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
-import type { Api, KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
 
 import type { OnLoginCallback } from '../../content/authSession';
 import type { useResetPasswordTelemetry } from '../../reset/resetPasswordTelemetry';

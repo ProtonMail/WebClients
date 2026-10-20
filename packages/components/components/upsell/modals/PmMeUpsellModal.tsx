@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
-import type { Optional } from '@proton/shared/lib/interfaces';
+import type { Optional } from '@proton/shared/lib/interfaces/utils';
 import pmMeImg from '@proton/styles/assets/img/illustrations/new-upsells-img/pm-me.svg';
 
 import type { ModalStateProps } from '../../modalTwo/useModalState';

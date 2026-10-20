@@ -22,7 +22,8 @@ import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 import { IcVideoCamera } from '@proton/icons/icons/IcVideoCamera';
 import { useHasMeetProductAccess } from '@proton/meet/hooks/useHasMeetProductAccess';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
-import { type EventModel, VIDEO_CONFERENCE_PROVIDER } from '@proton/shared/lib/interfaces/calendar';
+import { VIDEO_CONFERENCE_PROVIDER } from '@proton/shared/lib/interfaces/calendar/Api';
+import type { EventModel } from '@proton/shared/lib/interfaces/calendar/Event';
 import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 

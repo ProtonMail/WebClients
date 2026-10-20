@@ -1,6 +1,6 @@
 import { put, select, takeLeading } from 'redux-saga/effects';
 
-import type { User } from '@proton/shared/lib/interfaces';
+import type { User } from '@proton/shared/lib/interfaces/User';
 
 import { hasAttachments } from '../../../lib/items/item.predicates';
 import { SYNC_STRATEGY } from '../../../lib/sync/global';

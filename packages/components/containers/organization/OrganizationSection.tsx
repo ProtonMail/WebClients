@@ -14,7 +14,7 @@ import { IcPen } from '@proton/icons/icons/IcPen';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
-import type { Organization } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 
 import { ButtonGroup } from '../../components/button/ButtonGroup';

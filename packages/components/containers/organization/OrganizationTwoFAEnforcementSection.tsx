@@ -10,7 +10,7 @@ import { queryEnforceTwoFA, queryRemoveTwoFA } from '@proton/shared/lib/api/orga
 import { APPS, ORGANIZATION_TWOFA_SETTING } from '@proton/shared/lib/constants';
 import { hasTwoFARequiredForAdminOnly, hasTwoFARequiredForAll } from '@proton/shared/lib/helpers/organization';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { Organization } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 
 import Info from '../../components/link/Info';

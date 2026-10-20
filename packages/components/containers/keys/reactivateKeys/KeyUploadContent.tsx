@@ -7,7 +7,7 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import type { ButtonProps } from '@proton/atoms/Button/Button';
 import { Button } from '@proton/atoms/Button/Button';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
-import type { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
+import type { ArmoredKeyWithInfo } from '@proton/shared/lib/keys/keyImport';
 import removeItem from '@proton/utils/removeIndex';
 import uniqueBy from '@proton/utils/uniqueBy';
 

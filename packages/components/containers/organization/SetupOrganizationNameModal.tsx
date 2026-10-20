@@ -9,7 +9,7 @@ import { PLAN_NAMES } from '@proton/payments/core/constants';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import type { Organization } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import welcomeImg from '@proton/styles/assets/img/onboarding/b2b/welcome-b2b.svg';
 
 import Form from '../../components/form/Form';

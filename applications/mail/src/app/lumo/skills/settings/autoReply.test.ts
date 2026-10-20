@@ -1,6 +1,6 @@
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import { AutoReplyDuration } from '@proton/shared/lib/constants';
-import type { AutoResponder } from '@proton/shared/lib/interfaces';
+import type { AutoResponder } from '@proton/shared/lib/interfaces/MailSettings';
 
 import { formatLocalDateTime } from '../../helpers/formatting';
 import type { MailToolDeps } from '../../toolModule';

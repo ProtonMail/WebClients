@@ -2,8 +2,8 @@ import { CryptoProxy } from '@protontech/crypto';
 
 import { prepareCardsFromVCard } from '@proton/shared/lib/contacts/encrypt';
 import { createContactPropertyUid, fromVCardProperties } from '@proton/shared/lib/contacts/properties';
-import type { Recipient } from '@proton/shared/lib/interfaces';
-import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 

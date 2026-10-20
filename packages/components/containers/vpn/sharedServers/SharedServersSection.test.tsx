@@ -6,7 +6,7 @@ import { getModelState } from '@proton/account/tests';
 import { getOrgPermissions } from '@proton/account/userPermissions';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getSubscriptionState } from '@proton/payments/testing/redux-state';
-import type { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import { renderWithProviders } from '../../contacts/tests/render';
 import { organization } from '../../payments/subscription/__mocks__/data';

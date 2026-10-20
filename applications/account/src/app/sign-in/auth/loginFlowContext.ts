@@ -1,12 +1,12 @@
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { AuthResponse, AuthVersion } from '@proton/shared/lib/authentication/interface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type {
-    Api,
     KeyMigrationKTVerifier,
     KeyTransparencyActivation,
     PreAuthKTVerifier,
-} from '@proton/shared/lib/interfaces';
+} from '@proton/shared/lib/interfaces/KeyTransparency';
 
 /**
  * What the sign-in steps need besides account data: the first authentication and the app's services.

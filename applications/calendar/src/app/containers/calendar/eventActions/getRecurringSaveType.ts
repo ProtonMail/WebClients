@@ -1,6 +1,7 @@
 import { RECURRING_TYPES, SAVE_CONFIRMATION_TYPES } from '@proton/shared/lib/calendar/constants';
 import { getMustResetPartstat } from '@proton/shared/lib/calendar/mailIntegration/invite';
-import type { CalendarEvent, VcalDateOrDateTimeProperty } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar/Event';
+import type { VcalDateOrDateTimeProperty } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
 import type { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 import type { EventOldData } from '../../../interfaces/EventData';

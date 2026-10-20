@@ -59,34 +59,33 @@ import {
 } from '@proton/shared/lib/calendar/veventHelper';
 import { API_CODES } from '@proton/shared/lib/constants';
 import { omit, pick } from '@proton/shared/lib/helpers/object';
-import type { Address, Api } from '@proton/shared/lib/interfaces';
-import type {
-    CalendarEvent,
-    CalendarEventEncryptionData,
-    CalendarWidgetData,
-    Participant,
-    PmInviteData,
-    SyncMultipleApiResponse,
-    UpdateEventPartApiResponse,
-    VcalAttendeeProperty,
-    VcalDateOrDateTimeProperty,
-    VcalVeventComponent,
-    VisualCalendar,
-} from '@proton/shared/lib/interfaces/calendar';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type {
     CreateCalendarEventSyncData,
     CreateLinkedCalendarEventsSyncData,
     CreateSinglePersonalEventData,
     DeleteCalendarEventSyncData,
+    SyncMultipleApiResponse,
     UpdateCalendarEventSyncData,
+    UpdateEventPartApiResponse,
 } from '@proton/shared/lib/interfaces/calendar/Api';
-import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
+import type { CalendarEventEncryptionData } from '@proton/shared/lib/interfaces/calendar/Decrypt';
+import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar/Event';
+import type { CalendarWidgetData, Participant, PmInviteData } from '@proton/shared/lib/interfaces/calendar/Invite';
+import type {
+    VcalAttendeeProperty,
+    VcalDateOrDateTimeProperty,
+    VcalVeventComponent,
+} from '@proton/shared/lib/interfaces/calendar/VcalModel';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
 import type { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
 import type { GetCalendarInfo } from '@proton/shared/lib/interfaces/hooks/GetCalendarInfo';
 import type { GetCanonicalEmailsMap } from '@proton/shared/lib/interfaces/hooks/GetCanonicalEmailsMap';
 import type { RequireSome, Unwrap } from '@proton/shared/lib/interfaces/utils';
-import { getPrimaryKey } from '@proton/shared/lib/keys';
+import { getPrimaryKey } from '@proton/shared/lib/keys/getPrimaryKey';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 

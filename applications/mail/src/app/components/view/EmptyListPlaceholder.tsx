@@ -1,9 +1,8 @@
-import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
-
-import { taskRunningInLabel } from '../../store/elements/elementsSelectors';
-import { useMailSelector } from '../../store/hooks';
+import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces/Checklist';
 
 import { useGetStartedChecklist } from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
+import { taskRunningInLabel } from '../../store/elements/elementsSelectors';
+import { useMailSelector } from '../../store/hooks';
 import UserOnboardingMessageListPlaceholder from '../onboarding/checklist/messageListPlaceholder/UserOnboardingMessageListPlaceholder';
 import EmptyView from './EmptyView/EmptyView';
 

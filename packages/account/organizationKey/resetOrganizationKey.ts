@@ -5,13 +5,13 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { MEMBER_ROLE } from '@proton/shared/lib/constants';
-import type { EnhancedMember, Member } from '@proton/shared/lib/interfaces';
-import type { KeyReactivationRequest } from '@proton/shared/lib/keys';
+import type { EnhancedMember, Member } from '@proton/shared/lib/interfaces/Member';
 import {
     getIsMemberPendingOrgKeyResetUnprivatization,
     getIsNonPrivateMemberSetup,
     getMemberHasOrgKeyResetPrivatization,
 } from '@proton/shared/lib/keys/memberHelper';
+import type { KeyReactivationRequest } from '@proton/shared/lib/keys/reactivation/interface';
 import { getMemberHasAccessToOrgKey } from '@proton/shared/lib/organization/helper';
 
 import { selectKeyReactivationRequests } from '../inactiveKeys';

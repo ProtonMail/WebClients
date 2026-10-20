@@ -1,7 +1,10 @@
 import type { KTVerifier } from '@proton/key-transparency/helpers';
 import { KEYGEN_CONFIGS, KEYGEN_TYPES } from '@proton/shared/lib/constants';
-import type { Address, Api, DecryptedAddressKey, DecryptedKey, UserModel } from '@proton/shared/lib/interfaces';
-import { addAddressKeysProcess } from '@proton/shared/lib/keys';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { DecryptedAddressKey, DecryptedKey } from '@proton/shared/lib/interfaces/Key';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import { addAddressKeysProcess } from '@proton/shared/lib/keys/add/addKeysProcess';
 
 export const generateNewE2EEForwardingCompatibleAddressKey = async ({
     api,

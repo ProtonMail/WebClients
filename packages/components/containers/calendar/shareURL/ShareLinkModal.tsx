@@ -14,9 +14,9 @@ import {
     getCreatePublicLinkPayload,
     transformLinksFromAPI,
 } from '@proton/shared/lib/calendar/sharing/shareUrl/shareUrl';
-import type { CalendarLink, CalendarUrlResponse } from '@proton/shared/lib/interfaces/calendar';
-import { ACCESS_LEVEL } from '@proton/shared/lib/interfaces/calendar';
-import { splitKeys } from '@proton/shared/lib/keys';
+import type { CalendarLink, CalendarUrlResponse } from '@proton/shared/lib/interfaces/calendar/Link';
+import { ACCESS_LEVEL } from '@proton/shared/lib/interfaces/calendar/Link';
+import { splitKeys } from '@proton/shared/lib/keys/keys';
 
 import Form from '../../../components/form/Form';
 import type { BasicModalProps } from '../../../components/modalTwo/BasicModal';

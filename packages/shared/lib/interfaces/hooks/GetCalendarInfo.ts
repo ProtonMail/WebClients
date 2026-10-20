@@ -1,5 +1,6 @@
 import type { DecryptedKey } from '../Key';
-import type { CalendarSettings, DecryptedCalendarKey } from '../calendar';
+import type { CalendarSettings } from '../calendar/Calendar';
+import type { DecryptedCalendarKey } from '../calendar/CalendarKey';
 
 export type GetCalendarInfo = (ID: string) => Promise<{
     memberID: string;

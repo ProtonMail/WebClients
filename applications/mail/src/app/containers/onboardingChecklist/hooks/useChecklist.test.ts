@@ -1,5 +1,5 @@
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { ChecklistType } from '@proton/shared/lib/interfaces';
+import { ChecklistType } from '@proton/shared/lib/interfaces/Checklist';
 
 import { addApiMock } from '../../../helpers/tests/api';
 import { renderHook } from '../../../helpers/tests/render';

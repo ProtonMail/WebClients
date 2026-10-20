@@ -10,7 +10,8 @@ import type { FreePlanDefault, Plan, PlansMap, SubscriptionPlan } from '@proton/
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import type { ExtensionApp } from '@proton/shared/lib/browser/extension';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import type { Audience, HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
+import type { HumanVerificationMethodType } from '@proton/shared/lib/interfaces/HumanVerification';
+import type { Audience } from '@proton/shared/lib/interfaces/Subscription';
 
 import type {
     InviteData,

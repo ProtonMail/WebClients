@@ -10,17 +10,18 @@ import { DAY, SECOND } from '@proton/shared/lib/constants';
 import {
     addDays as addUTCDays,
     addYears as addUTCYears,
-    endOfDay as endOfUTCDay,
-    format as formatUTC,
     isSameDay as isSameUTCDay,
-    startOfDay as startOfUTCDay,
 } from '@proton/shared/lib/date-fns-utc';
+import endOfUTCDay from '@proton/shared/lib/date-fns-utc/endOfDay';
+import formatUTC from '@proton/shared/lib/date-fns-utc/format';
+import startOfUTCDay from '@proton/shared/lib/date-fns-utc/startOfDay';
 import { formatIntlUTCDate } from '@proton/shared/lib/date-utc/formatIntlUTCDate';
 import { convertTimestampToTimezone, toUTCDate } from '@proton/shared/lib/date/timezone';
 import { pick } from '@proton/shared/lib/helpers/object';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import type { MaybeArray, SimpleMap, UserSettings } from '@proton/shared/lib/interfaces';
-import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
+import type { MaybeArray, SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import groupWith from '@proton/utils/groupWith';
 import isTruthy from '@proton/utils/isTruthy';
 

@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom'
 import { ServerTime } from '@proton/docs-shared'
 import { RecentDocumentsItem } from '@proton/docs-core'
-import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts'
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact'
 import { getOwnerName } from './get-owner-name'
 
 jest.mock('@proton/shared/lib/i18n', () => ({ dateLocale: { code: 'us' } }))

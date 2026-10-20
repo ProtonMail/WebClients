@@ -1,6 +1,7 @@
 import { CryptoProxy } from '@protontech/crypto';
 
-import type { CachedOrganizationKey, DecryptedKey, KeyPair, OrganizationKey } from '../interfaces';
+import type { DecryptedKey, KeyPair } from '../interfaces/Key';
+import type { CachedOrganizationKey, OrganizationKey } from '../interfaces/OrganizationKey';
 import { decryptAddressKeyToken } from './addressKeys';
 import { splitKeys } from './keys';
 import { ORGANIZATION_SIGNATURE_CONTEXT, getIsPasswordless } from './organizationKeys';

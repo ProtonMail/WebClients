@@ -1,4 +1,4 @@
-import { format } from '@proton/shared/lib/date-fns-utc';
+import format from '@proton/shared/lib/date-fns-utc/format';
 import {
     convertUTCDateTimeToZone,
     convertZonedDateTimeToUTC,
@@ -6,7 +6,7 @@ import {
     toUTCDate,
 } from '@proton/shared/lib/date/timezone';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import { SETTINGS_TIME_FORMAT, type UserSettings } from '@proton/shared/lib/interfaces';
+import { SETTINGS_TIME_FORMAT, type UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 
 /**
  * Given a date, if we are to display a single time zone offset for the whole day,

@@ -1,4 +1,4 @@
-import type { SafeLabelCount } from '@proton/shared/lib/interfaces';
+import type { SafeLabelCount } from '@proton/shared/lib/interfaces/Label';
 
 export type LocationCountMap = Partial<Record<string, SafeLabelCount>>;
 

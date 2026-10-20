@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import type { KeyMetadata } from '@proton/account/addressKeys/getKeyMetadata';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
-import type { Key } from '@proton/shared/lib/interfaces';
+import type { Key } from '@proton/shared/lib/interfaces/Key';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { Badge } from '../../components/badge/Badge';

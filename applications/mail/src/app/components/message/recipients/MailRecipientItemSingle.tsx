@@ -21,8 +21,8 @@ import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { createContactPropertyUid } from '@proton/shared/lib/contacts/properties';
 import { changeSearchParams } from '@proton/shared/lib/helpers/url';
-import type { Recipient } from '@proton/shared/lib/interfaces';
-import type { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
+import type { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts/Contact';
 import { ALMOST_ALL_MAIL } from '@proton/shared/lib/mail/mailSettings';
 
 import { useOnCompose } from '../../../containers/ComposeProvider';

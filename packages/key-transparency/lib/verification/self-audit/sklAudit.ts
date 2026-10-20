@@ -1,6 +1,6 @@
 import type { PublicKeyReference } from '@protontech/crypto';
 
-import type { FetchedSignedKeyList } from '@proton/shared/lib/interfaces';
+import type { FetchedSignedKeyList } from '@proton/shared/lib/interfaces/SignedKeyList';
 
 import type { Epoch, Proof } from '../../interfaces';
 import { verifySKLSignature } from '../verifyKeys';

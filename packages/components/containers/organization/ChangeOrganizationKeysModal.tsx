@@ -12,7 +12,7 @@ import {
     passwordLengthValidator,
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
-import type { CachedOrganizationKey } from '@proton/shared/lib/interfaces';
+import type { CachedOrganizationKey } from '@proton/shared/lib/interfaces/OrganizationKey';
 import noop from '@proton/utils/noop';
 
 import Alert from '../../components/alert/Alert';

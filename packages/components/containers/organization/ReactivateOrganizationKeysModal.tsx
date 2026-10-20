@@ -15,7 +15,7 @@ import { CacheType } from '@proton/redux-utilities/interface';
 import { activateOrganizationKey, getOrganizationBackupKeys } from '@proton/shared/lib/api/organization';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { decryptPrivateKeyWithSalt } from '@proton/shared/lib/keys';
+import { decryptPrivateKeyWithSalt } from '@proton/shared/lib/keys/keys';
 import noop from '@proton/utils/noop';
 
 import Alert from '../../components/alert/Alert';

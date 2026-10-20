@@ -1,4 +1,7 @@
-import type { Address, DecryptedAddressKey, DecryptedKey, OrganizationKey, User } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { DecryptedAddressKey, DecryptedKey } from '@proton/shared/lib/interfaces/Key';
+import type { OrganizationKey } from '@proton/shared/lib/interfaces/OrganizationKey';
+import type { User } from '@proton/shared/lib/interfaces/User';
 
 import type { CreateSecureLinkData, FileDescriptorProcessResult } from '../../lib/crypto/processes';
 import type { DecryptedActionPayload } from '../../lib/crypto/processes/access-token/open-action-payload';

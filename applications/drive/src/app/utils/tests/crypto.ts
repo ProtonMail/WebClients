@@ -1,6 +1,7 @@
 import { CryptoProxy } from '@protontech/crypto';
 
-import type { Address, Key } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { Key } from '@proton/shared/lib/interfaces/Key';
 
 export async function generateKeys(name = 'name', email = 'name@example.com') {
     const privateKey = await CryptoProxy.generateKey({

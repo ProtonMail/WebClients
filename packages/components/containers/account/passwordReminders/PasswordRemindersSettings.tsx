@@ -14,7 +14,7 @@ import { IcBell } from '@proton/icons/icons/IcBell';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { PASSWORD_REMINDERS_VALUE } from '@proton/shared/lib/interfaces';
+import { PASSWORD_REMINDERS_VALUE } from '@proton/shared/lib/interfaces/UserSettings';
 
 import useModalState from '../../../components/modalTwo/useModalState';
 import { EnforcedByOrganization } from '../../organization/EnforcedByOrganization';

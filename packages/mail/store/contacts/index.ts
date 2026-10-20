@@ -16,8 +16,8 @@ import type { UpdateCollectionV6 } from '@proton/shared/lib/eventManager/updateC
 import { updateCollectionV6 } from '@proton/shared/lib/eventManager/updateCollectionV6';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
-import type { Api } from '@proton/shared/lib/interfaces';
-import type { Contact } from '@proton/shared/lib/interfaces/contacts';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { Contact } from '@proton/shared/lib/interfaces/contacts/Contact';
 
 import { getContact } from './getContact';
 

@@ -22,8 +22,11 @@ import { API_CODES } from '../constants';
 import { HTTP_ERROR_CODES } from '../errors';
 import { getBrowser, getOs } from '../helpers/browser';
 import { getItem, removeItem, setItem } from '../helpers/storage';
-import type { Address, AddressKey, Api, User, User as tsUser } from '../interfaces';
-import { getIsGlobalSSOAccount } from './setupAddress';
+import type { Address } from '../interfaces/Address';
+import type { Api } from '../interfaces/Api';
+import type { AddressKey } from '../interfaces/Key';
+import type { User, User as tsUser } from '../interfaces/User';
+import { getIsGlobalSSOAccount } from './accountType';
 
 const AesContext = {
     deviceSecret: 'account.device-secret',

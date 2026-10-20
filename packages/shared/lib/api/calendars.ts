@@ -1,10 +1,4 @@
 import { CALENDAR_VALIDATION_MODE } from '../calendar/constants';
-import type {
-    Attendee,
-    CalendarNotificationSettings,
-    CalendarSettings,
-    CalendarUserSettings,
-} from '../interfaces/calendar';
 import {
     CALENDAR_ORDER_BY,
     CALENDAR_RETURN_FLAGS,
@@ -26,6 +20,12 @@ import {
     type UpdateCalendarMemberData,
     VIDEO_CONFERENCE_PROVIDER,
 } from '../interfaces/calendar/Api';
+import type {
+    CalendarNotificationSettings,
+    CalendarSettings,
+    CalendarUserSettings,
+} from '../interfaces/calendar/Calendar';
+import type { Attendee } from '../interfaces/calendar/Event';
 import type { Nullable, RequireOnly } from '../interfaces/utils';
 import type { PaginationParams } from './interface';
 

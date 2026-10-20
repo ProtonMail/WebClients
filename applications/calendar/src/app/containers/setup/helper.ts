@@ -2,7 +2,7 @@ import type { selectCalendarsBootstrap } from '@proton/calendar/calendarBootstra
 import { getPersonalCalendars } from '@proton/shared/lib/calendar/calendar';
 import { CALENDAR_FLAGS } from '@proton/shared/lib/calendar/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 
 const getPersonalCalendarsLength = (calendars: VisualCalendar[]) => {
     return getPersonalCalendars(calendars).length;

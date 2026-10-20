@@ -1,15 +1,13 @@
 import { serverTime } from '@protontech/crypto';
-import type {
-    Address,
-    Api,
-    DecryptedKey,
-    KeyTransparencyCommit,
-    KeyTransparencyVerify,
-    ProtonConfig,
-    SignedKeyList,
-    User,
-} from '@proton/shared/lib/interfaces';
-import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
+
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
+import type { KeyTransparencyCommit, KeyTransparencyVerify } from '@proton/shared/lib/interfaces/KeyTransparency';
+import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
+import type { SignedKeyList } from '@proton/shared/lib/interfaces/SignedKeyList';
+import type { User } from '@proton/shared/lib/interfaces/User';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 
 import { getKTLocalStorage } from '../storage/ktStorageAPI';
 import { commitSKLToLS } from '../storage/storageHelpers';

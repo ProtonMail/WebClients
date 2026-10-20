@@ -1,7 +1,9 @@
 import { CryptoProxy } from '@protontech/crypto';
+
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
-import type { Address, AddressKey, DecryptedAddressKey, DecryptedKey } from '@proton/shared/lib/interfaces';
-import { getDecryptedAddressKey } from '@proton/shared/lib/keys';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { AddressKey, DecryptedAddressKey, DecryptedKey } from '@proton/shared/lib/interfaces/Key';
+import { getDecryptedAddressKey } from '@proton/shared/lib/keys/addressKeys';
 
 import { addressPgpPrvKey } from '../fixtures/keys';
 

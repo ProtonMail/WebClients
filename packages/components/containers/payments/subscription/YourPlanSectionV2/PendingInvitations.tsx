@@ -8,7 +8,7 @@ import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard
 import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
 import { IcChevronUpFilled } from '@proton/icons/icons/IcChevronUpFilled';
-import type { PendingInvitation } from '@proton/shared/lib/interfaces';
+import type { PendingInvitation } from '@proton/shared/lib/interfaces/PendingInvitation';
 
 import useModalState from '../../../../components/modalTwo/useModalState';
 import getBoldFormattedText from '../../../../helpers/getBoldFormattedText';

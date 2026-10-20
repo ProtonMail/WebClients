@@ -1,5 +1,5 @@
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import { queryAlwaysOnPolicy, updateAlwaysOnPolicy } from '../apis/alwaysOn';
 import type { AlwaysOnPolicy, AlwaysOnPolicyResponse, UpdateAlwaysOnPolicyData } from '../types/AlwaysOn';

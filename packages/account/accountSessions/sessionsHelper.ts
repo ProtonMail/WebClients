@@ -1,6 +1,7 @@
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
-import { ForkType, requestFork } from '@proton/shared/lib/authentication/fork';
+import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
+import { requestFork } from '@proton/shared/lib/authentication/fork/consume';
 import type { ExtraSessionForkData } from '@proton/shared/lib/authentication/interface';
 import { APPS, type APP_NAMES, SSO_PATHS } from '@proton/shared/lib/constants';
 

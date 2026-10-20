@@ -5,8 +5,10 @@ import { createSelector } from '@reduxjs/toolkit';
 import { baseUseSelector } from '@proton/react-redux-store/ProtonStoreContext';
 import { createHooks } from '@proton/redux-utilities/hooks';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
-import type { Category, Folder, Label } from '@proton/shared/lib/interfaces';
-import type { ContactGroup } from '@proton/shared/lib/interfaces/contacts';
+import type { Category } from '@proton/shared/lib/interfaces/Category';
+import type { Folder } from '@proton/shared/lib/interfaces/Folder';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
+import type { ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 import noop from '@proton/utils/noop';
 
 import { type CategoriesState, categoriesThunk, selectCategories } from './index';

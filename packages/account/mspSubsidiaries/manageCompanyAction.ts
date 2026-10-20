@@ -7,19 +7,20 @@ import { getAuthAPI, getSilentApi } from '@proton/shared/lib/api/helpers/customC
 import { assignMspSubsidiaryManager } from '@proton/shared/lib/api/msp';
 import { getAppHref, getClientID } from '@proton/shared/lib/apps/helper';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
-import { persistForkedSession } from '@proton/shared/lib/authentication/fork';
+import { persistForkedSession } from '@proton/shared/lib/authentication/fork/consume';
 import { getUser } from '@proton/shared/lib/authentication/getUser';
 import type { PullForkResponse, PushForkResponse } from '@proton/shared/lib/authentication/interface';
 import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { APPS, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import type { Api, Member } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { Member } from '@proton/shared/lib/interfaces/Member';
+import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys/getDecryptedUserKeys';
+import { getPrimaryKey } from '@proton/shared/lib/keys/getPrimaryKey';
 import {
     generatePublicMemberActivation,
     getDecryptedOrganizationKeyTokenData,
-    getDecryptedUserKeysHelper,
-    getPrimaryKey,
-} from '@proton/shared/lib/keys';
+} from '@proton/shared/lib/keys/organizationKeys';
 
 import { addressesThunk } from '../addresses';
 import type { KtState } from '../kt';

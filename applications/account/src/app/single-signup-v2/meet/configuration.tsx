@@ -33,7 +33,7 @@ import type { Plan, PlansMap } from '@proton/payments/core/plan/interface';
 import { APPS, MEET_APP_NAME, MEET_SHORT_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { everythingInPlanOrAppNamePlusText } from '@proton/shared/lib/i18n/ttag';
-import { Audience } from '@proton/shared/lib/interfaces';
+import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 

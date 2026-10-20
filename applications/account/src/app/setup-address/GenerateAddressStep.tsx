@@ -12,9 +12,9 @@ import { queryCheckUsernameAvailability, queryUnlock } from '@proton/shared/lib/
 import { APPS, APPS_CONFIGURATION, BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import type { Api } from '@proton/shared/lib/interfaces';
-import type { AddressGenerationPayload } from '@proton/shared/lib/keys';
-import { ClaimableAddressType } from '@proton/shared/lib/keys';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { AddressGenerationPayload } from '@proton/shared/lib/keys/setupAddress';
+import { ClaimableAddressType } from '@proton/shared/lib/keys/setupAddress';
 import noop from '@proton/utils/noop';
 
 import Content from '../public/Content';

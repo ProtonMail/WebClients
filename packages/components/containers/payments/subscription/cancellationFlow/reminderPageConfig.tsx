@@ -1,5 +1,6 @@
 import { PLANS } from '@proton/payments/core/constants';
 import { type MaybeFreeSubscription, getPlan } from '@proton/payments/core/subscription/helpers';
+import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import { getBundleConfig } from './config/bundle';
@@ -25,7 +26,7 @@ export const getReminderPageConfig = ({
 }): PlanConfig | null => {
     const plan = getPlan(subscription);
 
-    if (!plan || !subscription) {
+    if (!plan || !isPaidSubscription(subscription)) {
         return null;
     }
 

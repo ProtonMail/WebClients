@@ -1,6 +1,7 @@
 import type { CONTACT_MIME_TYPES } from '../../constants';
 import { MIME_TYPES, PGP_SCHEMES } from '../../constants';
-import type { ContactPublicKeyModel, MailSettings } from '../../interfaces';
+import type { ContactPublicKeyModel } from '../../interfaces/EncryptionPreferences';
+import type { MailSettings } from '../../interfaces/MailSettings';
 import { PACKAGE_TYPE, SIGN } from '../../mail/mailSettings';
 
 /**

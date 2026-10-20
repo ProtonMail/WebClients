@@ -2,7 +2,9 @@ import { c } from 'ttag';
 
 import { activateAuthDeviceConfig } from '../api/authDevice';
 import { getApiError } from '../api/helpers/apiErrorHelper';
-import type { Address, Api, DecryptedKey } from '../interfaces';
+import type { Address } from '../interfaces/Address';
+import type { Api } from '../interfaces/Api';
+import type { DecryptedKey } from '../interfaces/Key';
 import {
     type AuthDeviceOutput,
     type DeviceSecretData,

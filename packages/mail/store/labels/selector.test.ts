@@ -1,5 +1,6 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { Category, Label } from '@proton/shared/lib/interfaces';
+import type { Category } from '@proton/shared/lib/interfaces/Category';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
 
 import type { CategoriesState } from './index';
 import { selectHasDefaultB2CCategoryConfiguration } from './selector';

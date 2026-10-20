@@ -8,14 +8,12 @@ import {
 } from '@proton/shared/lib/calendar/constants';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
-import type { Address, AddressKey } from '@proton/shared/lib/interfaces';
-import type {
-    CalendarEvent,
-    CalendarUserSettings,
-    VcalVeventComponent,
-    VisualCalendar,
-} from '@proton/shared/lib/interfaces/calendar';
-import { CALENDAR_SUBSCRIPTION_STATUS } from '@proton/shared/lib/interfaces/calendar';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { AddressKey } from '@proton/shared/lib/interfaces/Key';
+import type { CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
+import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar/Event';
+import { CALENDAR_SUBSCRIPTION_STATUS } from '@proton/shared/lib/interfaces/calendar/Subscription';
+import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 export const messageBuilder = build<Pick<Message, 'ID' | 'ParsedHeaders'>>('Message', {

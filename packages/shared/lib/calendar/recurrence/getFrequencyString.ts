@@ -3,7 +3,7 @@ import { c, msgid } from 'ttag';
 import mod from '@proton/utils/mod';
 import unique from '@proton/utils/unique';
 
-import { format } from '../../date-fns-utc';
+import format from '../../date-fns-utc/format';
 import type { WeekStartsOn } from '../../date-fns-utc/interface';
 import { getShortenDayFormat } from '../../date/date';
 import type {

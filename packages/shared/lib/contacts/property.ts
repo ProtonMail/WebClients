@@ -1,6 +1,6 @@
 import { isValid, parseISO } from 'date-fns';
 
-import type { ContactValue } from '../interfaces/contacts';
+import type { ContactValue } from '../interfaces/contacts/Contact';
 import type { VCardDateOrText, VCardProperty } from '../interfaces/contacts/VCard';
 import { CONTACT_FIRST_LAST_NAME_MAX_LENGTH, CONTACT_NAME_MAX_LENGTH } from './constants';
 import { isDateTextValue, isValidDateValue } from './vcardProperties';

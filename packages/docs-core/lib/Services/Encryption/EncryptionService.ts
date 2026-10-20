@@ -19,7 +19,7 @@ import { deriveGcmKey } from '../../Crypto/deriveGcmKey'
 import { HKDF_SALT_SIZE } from '../../Crypto/Constants'
 import { Result } from '@proton/docs-shared'
 import type { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
-import type { Api } from '@proton/shared/lib/interfaces'
+import type { Api } from '@proton/shared/lib/interfaces/Api'
 import { getPublicKeysForEmail } from '../../Crypto/getPublicKeysForEmail'
 
 type EncryptionServiceOptions = {

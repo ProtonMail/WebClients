@@ -1,4 +1,4 @@
-import type { PasswordPolicyName } from '@proton/shared/lib/interfaces';
+import type { PasswordPolicyName } from '@proton/shared/lib/interfaces/PasswordPolicy';
 
 export type PasswordPolicyValidationResult = {
     policy: PasswordPolicyName;

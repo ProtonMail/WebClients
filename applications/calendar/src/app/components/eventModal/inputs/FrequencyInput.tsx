@@ -14,7 +14,7 @@ import { END_TYPE, FREQUENCY, type MONTHLY_TYPE, WEEKLY_TYPE } from '@proton/sha
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { getFormattedWeekdays, getWeekday, isWeekday } from '@proton/shared/lib/date/date';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import type { DateTimeModel, FrequencyModel } from '@proton/shared/lib/interfaces/calendar';
+import type { DateTimeModel, FrequencyModel } from '@proton/shared/lib/interfaces/calendar/Event';
 import clsx from '@proton/utils/clsx';
 
 import useMonthlyOptions from './useMonthlyOptions';

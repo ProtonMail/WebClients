@@ -7,8 +7,9 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { consumeSessionRecovery } from '@proton/shared/lib/api/sessionRecovery';
 import { lockSensitiveSettings } from '@proton/shared/lib/api/user';
 import mutatePassword from '@proton/shared/lib/authentication/mutate';
-import { generateKeySaltAndPassphrase, getHasMigratedAddressKeys } from '@proton/shared/lib/keys';
 import { getArmoredPrivateUserKeys, getEncryptedArmoredOrganizationKey } from '@proton/shared/lib/keys/changePassword';
+import { getHasMigratedAddressKeys } from '@proton/shared/lib/keys/keyMigration';
+import { generateKeySaltAndPassphrase } from '@proton/shared/lib/keys/keys';
 import { srpVerify } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 

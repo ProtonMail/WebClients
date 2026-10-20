@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import type { WasmApiWallet, WasmApiWalletAccount } from '@proton/andromeda';
-import type { DecryptedKey } from '@proton/shared/lib/interfaces';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 
 import type { IWasmApiWalletData } from '../types';
 import { decryptMnemonicWithUserKey, decryptWalletData, decryptWalletKey } from './crypto';

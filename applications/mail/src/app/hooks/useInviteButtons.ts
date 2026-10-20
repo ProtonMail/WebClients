@@ -25,15 +25,15 @@ import { withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
 import { SECOND } from '@proton/shared/lib/constants';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { wait } from '@proton/shared/lib/helpers/promise';
+import type { CalendarEventEncryptionData } from '@proton/shared/lib/interfaces/calendar/Decrypt';
+import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar/Event';
 import type {
-    CalendarEvent,
-    CalendarEventEncryptionData,
     CalendarWidgetData,
     Participant,
     PartstatActions,
     PmInviteData,
     SavedInviteData,
-} from '@proton/shared/lib/interfaces/calendar';
+} from '@proton/shared/lib/interfaces/calendar/Invite';
 import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
 import { getHasFullCalendarData } from '../helpers/calendar/invite';

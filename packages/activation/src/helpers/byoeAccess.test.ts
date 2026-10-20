@@ -1,7 +1,8 @@
 import { PLANS } from '@proton/payments/core/constants';
 import { USER_ROLES } from '@proton/shared/lib/constants';
-import type { Organization, UserModel } from '@proton/shared/lib/interfaces';
-import { UserType } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import { UserType } from '@proton/shared/lib/interfaces/User';
 
 import { getCanSeeBYOE } from './byoeAccess';
 

@@ -7,7 +7,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import useLoading from '@proton/hooks/useLoading';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { removeSAMLConfig } from '@proton/shared/lib/api/samlSSO';
-import type { SSO } from '@proton/shared/lib/interfaces';
+import type { SSO } from '@proton/shared/lib/interfaces/SSO';
 import errorImg from '@proton/styles/assets/img/errors/error-generic-triangle.svg';
 
 import type { ModalProps } from '../../../components/modalTwo/Modal';

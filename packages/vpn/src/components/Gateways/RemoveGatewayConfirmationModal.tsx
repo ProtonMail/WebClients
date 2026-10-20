@@ -13,7 +13,7 @@ import type { ModalStateProps } from '@proton/components/components/modalTwo/use
 import { CountryFlagAndName } from '@proton/components/containers/vpn/gateways/CountryFlagAndName';
 import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
 import { type CountryOptions, getLocalizedCountryByAbbr } from '@proton/payments/core/countries';
-import type { Either } from '@proton/shared/lib/interfaces';
+import type { Either } from '@proton/shared/lib/interfaces/either';
 
 import type { Gateway } from '../../types/Gateway';
 

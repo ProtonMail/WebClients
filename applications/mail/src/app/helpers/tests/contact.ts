@@ -1,7 +1,7 @@
 import { prepareCardsFromVCard } from '@proton/shared/lib/contacts/encrypt';
 import { toKeyProperty } from '@proton/shared/lib/contacts/keyProperties';
 import { createContactPropertyUid, fromVCardProperties } from '@proton/shared/lib/contacts/properties';
-import type { Contact, ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { Contact, ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 
 import { addApiMock } from './api';

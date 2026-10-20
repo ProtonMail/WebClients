@@ -10,7 +10,7 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { GroupWithContacts } from '@proton/components/containers/contacts/ContactEmailsProvider';
-import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import { contactToInput } from '@proton/shared/lib/mail/recipient';
 import generateUID from '@proton/utils/generateUID';
 

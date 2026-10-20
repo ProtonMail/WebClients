@@ -4,7 +4,7 @@ import type { HotkeyTuple } from '@proton/components/hooks/useHotkeys';
 import { useHotkeys } from '@proton/components/hooks/useHotkeys';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import { KeyboardKey } from '@proton/shared/lib/interfaces';
+import { KeyboardKey } from '@proton/shared/lib/interfaces/Hotkeys';
 import { isBusy } from '@proton/shared/lib/shortcuts/helpers';
 
 import { useOnCompose } from '../../containers/ComposeProvider';

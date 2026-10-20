@@ -6,7 +6,7 @@ import { DEFAULT_LOCALE } from '../../lib/constants';
 import { getDateFnLocaleWithTimeFormat } from '../../lib/i18n/dateFnLocale';
 import { getClosestLocaleMatch, getIntlLocale, getLanguageCode, getNaiveCountryCode } from '../../lib/i18n/helper';
 import { loadDateLocale, loadLocale } from '../../lib/i18n/loadLocale';
-import { SETTINGS_TIME_FORMAT } from '../../lib/interfaces';
+import { SETTINGS_TIME_FORMAT } from '../../lib/interfaces/UserSettings';
 
 describe('helper', () => {
     it('should get the closest locale', () => {

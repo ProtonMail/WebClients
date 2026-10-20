@@ -18,7 +18,10 @@ import {
 import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
 import { type UpdateCollectionV6, updateCollectionV6 } from '@proton/shared/lib/eventManager/updateCollectionV6';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
-import type { Address, Api, EnhancedMember, Member, RoleAssignment } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { EnhancedMember, Member } from '@proton/shared/lib/interfaces/Member';
+import type { RoleAssignment } from '@proton/shared/lib/interfaces/OrganizationRole';
 import { sortAddresses } from '@proton/shared/lib/mail/addresses';
 import chunk from '@proton/utils/chunk';
 import noop from '@proton/utils/noop';

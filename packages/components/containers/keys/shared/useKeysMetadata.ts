@@ -7,7 +7,9 @@ import {
     getUserKeysMetadata,
 } from '@proton/account/addressKeys/getKeyMetadata';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import type { Address, DecryptedAddressKey, DecryptedKey, UserModel } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { DecryptedAddressKey, DecryptedKey } from '@proton/shared/lib/interfaces/Key';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import { getDisplayKey } from './getDisplayKey';
 

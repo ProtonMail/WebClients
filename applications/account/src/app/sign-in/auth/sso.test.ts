@@ -1,7 +1,8 @@
 import { BackupPasswordError, ConversionPasswordError } from '@proton/shared/lib/authentication/error';
 import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import { handleUnlockKey } from '@proton/shared/lib/authentication/unlockKey';
-import type { Address, User } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { User } from '@proton/shared/lib/interfaces/User';
 import {
     AuthDeviceInactiveError,
     AuthDeviceInvalidError,

@@ -1,7 +1,10 @@
 import { CryptoProxy } from '@protontech/crypto';
 
-import type { Address as tsAddress, User as tsUser } from '../../lib/interfaces';
-import { getDecryptedUserKeysHelper, getReplacedAddressKeyTokens, splitKeys } from '../../lib/keys';
+import type { Address as tsAddress } from '../../lib/interfaces/Address';
+import type { User as tsUser } from '../../lib/interfaces/User';
+import { getReplacedAddressKeyTokens } from '../../lib/keys/addressKeys';
+import { getDecryptedUserKeysHelper } from '../../lib/keys/getDecryptedUserKeys';
+import { splitKeys } from '../../lib/keys/keys';
 import { getAddressKey, getUserKey } from './keyDataHelper';
 
 const getSetup = async (forceSameUserKey = false) => {

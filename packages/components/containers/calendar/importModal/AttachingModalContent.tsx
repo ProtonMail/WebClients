@@ -10,7 +10,7 @@ import {
     MAX_IMPORT_FILE_SIZE_STRING,
 } from '@proton/shared/lib/calendar/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import type { ImportCalendarModel } from '@proton/shared/lib/interfaces/calendar/Import';
 
 import Alert from '../../../components/alert/Alert';

@@ -1,10 +1,7 @@
 import { PLANS } from '@proton/payments/core/constants';
-import {
-    type OrganizationExtended,
-    PASSWORD_REMINDERS_VALUE,
-    type UserModel,
-    type UserSettings,
-} from '@proton/shared/lib/interfaces';
+import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import { PASSWORD_REMINDERS_VALUE, type UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 
 import { getShowPasswordReminders } from './getShowPasswordReminders';
 

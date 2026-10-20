@@ -2,12 +2,9 @@ import { CryptoProxy } from '@protontech/crypto';
 import { c } from 'ttag';
 
 import { API_CODES } from '../constants';
-import type {
-    SyncMultipleApiResponses,
-    SyncMultipleApiSuccessResponses,
-    VcalDateOrDateTimeProperty,
-    VcalDateTimeProperty,
-} from '../interfaces/calendar';
+import type { SyncMultipleApiResponses } from '../interfaces/calendar/Api';
+import type { SyncMultipleApiSuccessResponses } from '../interfaces/calendar/Event';
+import type { VcalDateOrDateTimeProperty, VcalDateTimeProperty } from '../interfaces/calendar/VcalModel';
 import { ACTION_VIEWS, MAXIMUM_DATE_UTC, MAX_CHARS_API, MINIMUM_DATE_UTC } from './constants';
 import { propertyToUTCDate } from './vcalConverter';
 import { getIsPropertyAllDay } from './vcalHelper';

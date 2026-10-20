@@ -1,4 +1,4 @@
-import type { RequireSome } from '@proton/shared/lib/interfaces';
+import type { RequireSome } from '@proton/shared/lib/interfaces/utils';
 
 import type { ApiStartImportParams } from '../../../../../api/api.interface';
 import { GMAIL_CATEGORIES, MAX_FOLDERS_DEPTH } from '../../../../../constants';

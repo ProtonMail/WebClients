@@ -1,6 +1,7 @@
 import { getRecurrenceIdDate } from '@proton/shared/lib/calendar/veventHelper';
-import type { Address } from '@proton/shared/lib/interfaces';
-import type { CalendarEvent, CalendarMember } from '@proton/shared/lib/interfaces/calendar';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { CalendarMember } from '@proton/shared/lib/interfaces/calendar/CalendarMember';
+import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar/Event';
 
 import type { DecryptedEventTupleResult } from '../eventStore/interface';
 import parseMainEventData from './parseMainEventData';

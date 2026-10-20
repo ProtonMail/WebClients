@@ -1,4 +1,5 @@
 import type { PublicKeyReference } from '@protontech/crypto';
+
 import type { Preparation } from '@proton/mail-renderer/helpers/transforms/transforms';
 import type {
     MessageErrors,
@@ -8,7 +9,8 @@ import type {
     MessageVerification,
 } from '@proton/mail/store/messages/messagesTypes';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
-import type { Api, Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import type { DecryptMessageResult } from '../../helpers/message/messageDecrypt';

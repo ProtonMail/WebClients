@@ -1,7 +1,7 @@
 import { createContext, useContext } from 'react';
 
 import type { WasmApiWallet, WasmApiWalletAccount, WasmApiWalletBitcoinAddress, WasmNetwork } from '@proton/andromeda';
-import type { SimpleMap } from '@proton/shared/lib/interfaces';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import type { IWasmApiWalletData } from '@proton/wallet/types';
 
 import type {

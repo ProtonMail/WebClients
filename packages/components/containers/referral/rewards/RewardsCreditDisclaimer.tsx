@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Href } from '@proton/atoms/Href/Href';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { Referral } from '@proton/shared/lib/interfaces';
+import type { Referral } from '@proton/shared/lib/interfaces/Referrals';
 
 import { getHasCompletedReferral } from './helpers';
 

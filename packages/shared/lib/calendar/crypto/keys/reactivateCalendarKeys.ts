@@ -1,16 +1,14 @@
 import { CryptoProxy } from '@protontech/crypto';
 
 import { getAllCalendarKeys, getPassphrases, queryMembers, reactivateCalendarKey } from '../../../api/calendars';
-import type { Address, Api } from '../../../interfaces';
-import type {
-    Calendar,
-    CalendarKey,
-    CalendarMember,
-    Passphrase,
-    ReenableKeyResponse,
-} from '../../../interfaces/calendar';
+import type { Address } from '../../../interfaces/Address';
+import type { Api } from '../../../interfaces/Api';
+import type { Calendar } from '../../../interfaces/calendar/Calendar';
+import type { CalendarKey, ReenableKeyResponse } from '../../../interfaces/calendar/CalendarKey';
+import type { CalendarMember } from '../../../interfaces/calendar/CalendarMember';
+import type { Passphrase } from '../../../interfaces/calendar/Passphrase';
 import type { GetAddressKeys } from '../../../interfaces/hooks/GetAddressKeys';
-import { splitKeys } from '../../../keys';
+import { splitKeys } from '../../../keys/keys';
 import { getMemberAddressWithAdminPermissions } from '../../getMemberWithAdmin';
 import { decryptPassphrase } from './calendarKeys';
 

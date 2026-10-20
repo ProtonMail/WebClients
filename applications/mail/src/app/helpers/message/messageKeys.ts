@@ -1,8 +1,9 @@
 import { CryptoProxy, KeyCompatibilityLevel } from '@protontech/crypto';
 import { uint8ArrayToBinaryString } from '@protontech/crypto/utils';
+
 import type { MessageKeys } from '@proton/mail/store/messages/messagesTypes';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getParsedAutocryptHeader } from '@proton/shared/lib/mail/autocrypt';
 import isTruthy from '@proton/utils/isTruthy';

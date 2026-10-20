@@ -1,10 +1,9 @@
 import type { Cancellable } from '@proton/components/hooks/useHandler';
-import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
+import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces/Checklist';
 
 import TipBox from '../../components/list/tip/TipBox';
 import useTips from '../../components/list/tip/useTips';
 import UserOnboardingMessageListPlaceholder from '../../components/onboarding/checklist/messageListPlaceholder/UserOnboardingMessageListPlaceholder';
-
 import PlaceholderView from '../../components/view/PlaceholderView';
 import { useGetStartedChecklist } from '../onboardingChecklist/provider/GetStartedChecklistProvider';
 

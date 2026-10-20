@@ -11,15 +11,13 @@ import type { CoreEventV6Response } from '@proton/shared/lib/api/events';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
 import { getPrimaryAddress } from '@proton/shared/lib/helpers/address';
-import {
-    type Address,
-    type Api,
-    type DecryptedKey,
-    type FetchedSignedKeyList,
-    KT_VERIFICATION_STATUS,
-} from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { DelegatedAccessTypeEnum } from '@proton/shared/lib/interfaces/DelegatedAccess';
-import type { ReactivateKeysResult } from '@proton/shared/lib/keys';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
+import { KT_VERIFICATION_STATUS } from '@proton/shared/lib/interfaces/KeyTransparency';
+import type { FetchedSignedKeyList } from '@proton/shared/lib/interfaces/SignedKeyList';
+import type { ReactivateKeysResult } from '@proton/shared/lib/keys/reactivation/interface';
 import noop from '@proton/utils/noop';
 
 import { addressKeysThunk } from '../addressKeys';

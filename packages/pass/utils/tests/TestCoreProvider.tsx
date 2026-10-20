@@ -1,6 +1,6 @@
 import type { FC, PropsWithChildren } from 'react';
 
-import { getProtonConfig } from '@proton/shared/lib/interfaces';
+import { getProtonConfig } from '@proton/shared/lib/interfaces/config';
 import noop from '@proton/utils/noop';
 
 import type { PassCoreProviderProps } from '../../components/Core/PassCoreContext';

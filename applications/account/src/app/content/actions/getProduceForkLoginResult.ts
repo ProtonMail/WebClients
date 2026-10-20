@@ -7,20 +7,16 @@ import { type OAuthLastAccess, getOAuthLastAccess } from '@proton/shared/lib/api
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getClientID, getProduct, isExtension } from '@proton/shared/lib/apps/helper';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
-import {
-    getProduceForkUrl,
-    getShouldReAuth,
-    produceExtensionFork,
-    produceFork,
-    produceOAuthFork,
-} from '@proton/shared/lib/authentication/fork';
+import { produceExtensionFork } from '@proton/shared/lib/authentication/fork/extension';
 import { getValidatedProtonProtocol } from '@proton/shared/lib/authentication/fork/getValidatedProtonProtocol';
 import { getIsLocalhostRedirectUrl } from '@proton/shared/lib/authentication/fork/getValidatedRedirectUrl';
+import { produceOAuthFork } from '@proton/shared/lib/authentication/fork/oauth';
+import { getProduceForkUrl, getShouldReAuth, produceFork } from '@proton/shared/lib/authentication/fork/produce';
 import type { PushForkResponse } from '@proton/shared/lib/authentication/interface';
 import { APPS, type APP_NAMES, SSO_PATHS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import { getRequiresAddressSetup } from '@proton/shared/lib/keys/setupAddress';
 
 import type { AuthDesktopState } from '../../public/AuthDesktop';

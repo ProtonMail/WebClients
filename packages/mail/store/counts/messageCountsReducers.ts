@@ -4,7 +4,8 @@ import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities/he
 import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
-import type { Folder, Label, LabelCount } from '@proton/shared/lib/interfaces';
+import type { Folder } from '@proton/shared/lib/interfaces/Folder';
+import type { Label, LabelCount } from '@proton/shared/lib/interfaces/Label';
 import type { Conversation } from '@proton/shared/lib/interfaces/mail/Conversation';
 import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 

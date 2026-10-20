@@ -1,5 +1,5 @@
-import type { ProduceForkParameters } from '@proton/shared/lib/authentication/fork';
-import { getIsGlobalSSOAccount } from '@proton/shared/lib/keys';
+import type { ProduceForkParameters } from '@proton/shared/lib/authentication/fork/produce';
+import { getIsGlobalSSOAccount } from '@proton/shared/lib/keys/accountType';
 
 import type { AuthSession } from '../content/authSession';
 

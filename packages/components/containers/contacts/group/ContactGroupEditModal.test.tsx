@@ -4,8 +4,8 @@ import { fireEvent, getByDisplayValue, screen, waitFor } from '@testing-library/
 import { getModelState } from '@proton/account/tests';
 import { ACCENT_COLORS } from '@proton/shared/lib/colors';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
-import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
+import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 import { MAX_RECIPIENTS } from '@proton/shared/lib/mail/mailSettings';
 import { addApiMock } from '@proton/test-api/api';
 

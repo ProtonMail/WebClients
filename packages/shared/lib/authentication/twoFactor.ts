@@ -1,7 +1,7 @@
 import type { APP_NAMES } from '../constants';
 import { APPS, PASSWORD_MODE } from '../constants';
 import { hasBit } from '../helpers/bitset';
-import { SETTINGS_2FA_ENABLED } from '../interfaces';
+import { SETTINGS_2FA_ENABLED } from '../interfaces/UserSettings';
 import { getHasWebAuthnSupport } from '../webauthn/helper';
 import type { AuthResponse } from './interface';
 

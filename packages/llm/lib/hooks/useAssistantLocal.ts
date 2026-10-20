@@ -7,8 +7,8 @@ import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import useStateRef from '@proton/hooks/useStateRef';
-import { ASSISTANT_TYPE, ERROR_TYPE, GENERATION_SELECTION_TYPE } from '@proton/shared/lib/assistant';
-import { domIsBusy } from '@proton/shared/lib/busy';
+import { ASSISTANT_TYPE, ERROR_TYPE, GENERATION_SELECTION_TYPE } from '@proton/shared/lib/assistant/types';
+import { domIsBusy } from '@proton/shared/lib/busy/busy';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
 import { GpuLlmManager } from '../actions';

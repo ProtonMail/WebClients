@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
 import { IcLink } from '@proton/icons/icons/IcLink';
-import type { Referral } from '@proton/shared/lib/interfaces';
+import type { Referral } from '@proton/shared/lib/interfaces/Referrals';
 import clsx from '@proton/utils/clsx';
 
 interface Props {

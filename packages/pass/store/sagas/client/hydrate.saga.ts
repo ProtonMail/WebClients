@@ -1,6 +1,6 @@
 import { call, put, select } from 'redux-saga/effects';
 
-import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
+import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces/UserSettings';
 import identity from '@proton/utils/identity';
 import noop from '@proton/utils/noop';
 

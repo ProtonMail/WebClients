@@ -1,12 +1,13 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
-import { resignSKLWithPrimaryKey } from '@proton/key-transparency/shared';
 import { createKTVerifier } from '@proton/key-transparency/helpers';
+import { resignSKLWithPrimaryKey } from '@proton/key-transparency/shared';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import type { Address } from '@proton/shared/lib/interfaces';
-import { getPrimaryAddressKeysForSigning, setPrimaryAddressKey } from '@proton/shared/lib/keys';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import { setPrimaryAddressKey } from '@proton/shared/lib/keys/addressKeyActions';
+import { getPrimaryAddressKeysForSigning } from '@proton/shared/lib/keys/getPrimaryKey';
 
 import { type AddressKeysState, addressKeysThunk } from '../addressKeys';
 import { addressThunk } from '../addresses';

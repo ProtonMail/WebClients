@@ -18,7 +18,9 @@ import { getFeatureFlagsState } from '@proton/features/testing/features';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import createApi from '@proton/shared/lib/api/createApi';
 import { APPS } from '@proton/shared/lib/constants';
-import type { MailSettings, ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 
 import EasySwitchStoreProvider from '../logic/StoreProvider';
 import fakeCache from './fakeCache';

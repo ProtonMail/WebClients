@@ -1,5 +1,5 @@
 import { MEMBER_PRIVATE, MEMBER_ROLE } from '@proton/shared/lib/constants';
-import type { EnhancedMember, Member } from '@proton/shared/lib/interfaces';
+import type { EnhancedMember, Member } from '@proton/shared/lib/interfaces/Member';
 import { getIsMemberSetup } from '@proton/shared/lib/keys/memberHelper';
 
 import { getMemberUnprivatizationMode } from '../members/memberUnprivatization';

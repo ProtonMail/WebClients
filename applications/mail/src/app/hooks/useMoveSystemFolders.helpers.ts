@@ -14,7 +14,7 @@ import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { IcTrashClock } from '@proton/icons/icons/IcTrashClock';
 import { ACCENT_COLORS } from '@proton/shared/lib/colors';
 import { LINKED_LABEL_IDS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 import move from '@proton/utils/move';

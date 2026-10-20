@@ -2,7 +2,7 @@ import type { DriveEvent, MaybeMissingNode, NodeEntity, NodeType } from '@proton
 
 import { ValidationError } from '@proton/drive';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import type { DecryptedKey } from '@proton/shared/lib/interfaces';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 
 import { Logger } from '../shared/Logger';
 import { type SearchMetrics, searchMetrics } from '../shared/searchMetrics';

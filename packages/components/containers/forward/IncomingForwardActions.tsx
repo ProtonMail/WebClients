@@ -8,8 +8,9 @@ import {
     deleteForwarding,
 } from '@proton/mail/store/forwarding/incomingForwardingActions';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import type { Address, IncomingAddressForwarding } from '@proton/shared/lib/interfaces';
-import { ForwardingState } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { IncomingAddressForwarding } from '@proton/shared/lib/interfaces/AddressForwarding';
+import { ForwardingState } from '@proton/shared/lib/interfaces/AddressForwarding';
 import isTruthy from '@proton/utils/isTruthy';
 
 import DropdownActions from '../../components/dropdown/DropdownActions';

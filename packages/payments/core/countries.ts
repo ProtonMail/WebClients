@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { UserSettings } from '@proton/shared/lib/interfaces';
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 
 // It has to be wrapped in a function because otherwise the tranlsations will not be available at the time when
 // the expression is evaluated

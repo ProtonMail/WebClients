@@ -1,5 +1,5 @@
 import { EVENT_ACTIONS } from '../../constants';
-import type { CalendarWithOwnMembers } from '../../interfaces/calendar';
+import type { CalendarWithOwnMembers } from '../../interfaces/calendar/Calendar';
 import type {
     CalendarEventManager,
     CalendarEventManagerCreate,

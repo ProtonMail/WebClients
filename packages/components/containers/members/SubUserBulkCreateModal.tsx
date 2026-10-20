@@ -5,7 +5,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import type { CreateMemberMode, Domain, EnhancedMember } from '@proton/shared/lib/interfaces';
+import type { Domain } from '@proton/shared/lib/interfaces/Domain';
+import type { CreateMemberMode, EnhancedMember } from '@proton/shared/lib/interfaces/Member';
 
 import type { ModalProps } from '../../components/modalTwo/Modal';
 import Modal from '../../components/modalTwo/Modal';

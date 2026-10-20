@@ -8,9 +8,9 @@ import type { ButtonProps } from '@proton/atoms/Button/Button';
 import { useCombinedRefs } from '@proton/hooks';
 import { KEY_FILE_EXTENSION } from '@proton/shared/lib/constants';
 import { readFileAsString } from '@proton/shared/lib/helpers/file';
-import type { KeyWithRecoverySecret } from '@proton/shared/lib/interfaces';
-import type { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
-import { parseKeys } from '@proton/shared/lib/keys';
+import type { KeyWithRecoverySecret } from '@proton/shared/lib/interfaces/Key';
+import type { ArmoredKeyWithInfo } from '@proton/shared/lib/keys/keyImport';
+import { parseKeys } from '@proton/shared/lib/keys/keyImport';
 import { parseRecoveryFiles } from '@proton/shared/lib/recoveryFile/recoveryFile';
 
 import FileInput from '../../../components/input/FileInput';

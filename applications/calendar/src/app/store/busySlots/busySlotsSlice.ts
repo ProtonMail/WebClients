@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import type { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
-import type { GetBusySlotsResponse } from '@proton/shared/lib/interfaces/calendar';
+import type { GetBusySlotsResponse } from '@proton/shared/lib/interfaces/calendar/Api';
 import diff from '@proton/utils/diff';
 
 /** Attendee email */

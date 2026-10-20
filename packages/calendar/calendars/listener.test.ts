@@ -9,16 +9,16 @@ import { userReducer } from '@proton/account/user';
 import { userKeysReducer } from '@proton/account/userKeys';
 import { CALENDAR_SHARE_BUSY_TIME_SLOTS, CALENDAR_TYPE } from '@proton/shared/lib/calendar/constants';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
-import type { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import type {
     Calendar,
     CalendarBootstrap,
-    CalendarKey,
-    CalendarMember,
     CalendarSettings,
     CalendarWithOwnMembers,
-} from '@proton/shared/lib/interfaces/calendar';
-import { CalendarKeyFlags } from '@proton/shared/lib/interfaces/calendar';
+} from '@proton/shared/lib/interfaces/calendar/Calendar';
+import type { CalendarKey } from '@proton/shared/lib/interfaces/calendar/CalendarKey';
+import { CalendarKeyFlags } from '@proton/shared/lib/interfaces/calendar/CalendarKey';
+import type { CalendarMember } from '@proton/shared/lib/interfaces/calendar/CalendarMember';
 
 import { calendarsBootstrapReducer } from '../calendarBootstrap';
 import { createCalendarModelEventManager } from '../calendarModelEventManager';

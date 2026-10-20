@@ -1,5 +1,5 @@
 import type { GroupsWithContactsMap } from '@proton/components';
-import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 
 /**
  * Creates a mapping of contact groups to their associated contacts based on label IDs

@@ -12,8 +12,9 @@ import useElementRect from '@proton/components/hooks/useElementRect';
 import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
-import { addDays, eachDayOfInterval, format, isSameDay } from '@proton/shared/lib/date-fns-utc';
-import formatUTC from '@proton/shared/lib/date-fns-utc/format';
+import { addDays, isSameDay } from '@proton/shared/lib/date-fns-utc';
+import eachDayOfInterval from '@proton/shared/lib/date-fns-utc/eachDayOfInterval';
+import format from '@proton/shared/lib/date-fns-utc/format';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
 
@@ -484,7 +485,7 @@ const TimeGrid = ({
                             {days.map((day, dayIndex) => {
                                 const key = getKey(day);
                                 const isActiveDay = isSameDay(day, date);
-                                const dayFullDetail = formatUTC(day, 'PPPP', { locale: dateLocale });
+                                const dayFullDetail = format(day, 'PPPP', { locale: dateLocale });
                                 if (viewportWidth['<=small'] && !isActiveDay) {
                                     return null;
                                 }

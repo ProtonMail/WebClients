@@ -23,7 +23,7 @@ import {
 import type { TwoFactorCredentials } from '@proton/shared/lib/api/auth';
 import { PasswordError, TOTPError } from '@proton/shared/lib/authentication/error';
 import type { AuthTypes } from '@proton/shared/lib/authentication/twoFactor';
-import { getRequiresPasswordSetup } from '@proton/shared/lib/keys';
+import { getRequiresPasswordSetup } from '@proton/shared/lib/keys/accountType';
 import { ClaimableAddressType } from '@proton/shared/lib/keys/setupAddress';
 import type { OrganizationData } from '@proton/shared/lib/keys/unprivatization/helper';
 

@@ -7,7 +7,8 @@ import { IcInbox } from '@proton/icons/icons/IcInbox';
 import { IcPaperPlane } from '@proton/icons/icons/IcPaperPlane';
 import { IcStar } from '@proton/icons/icons/IcStar';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
-import type { Address, Label } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
 
 import type { MailImportFolder } from '../../../helpers/MailImportFoldersParser/MailImportFoldersParser';
 import type { MailImportPayloadError, TIME_PERIOD } from '../../../interface';

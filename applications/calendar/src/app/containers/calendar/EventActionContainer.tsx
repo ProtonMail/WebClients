@@ -10,8 +10,9 @@ import type { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { ACTION_VIEWS } from '@proton/shared/lib/calendar/constants';
 import { getDateOrDateTimeProperty, propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
 import { fromUTCDateToTimezone } from '@proton/shared/lib/date/timezone';
-import type { Address } from '@proton/shared/lib/interfaces';
-import type { CalendarEvent, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
+import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar/Event';
 import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
 import { generateEventUniqueId } from '../../helpers/event';

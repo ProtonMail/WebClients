@@ -1,6 +1,6 @@
 import { CryptoProxy, type PrivateKeyReference, VERIFICATION_STATUS } from '@protontech/crypto';
 
-import type { DecryptedKey } from '@proton/shared/lib/interfaces';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 
 import type { NativeMessageData } from '../../../../types';
 import { PassSignatureContext } from '../../../../types';

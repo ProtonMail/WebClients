@@ -3,7 +3,7 @@ import loudRejection from 'loud-rejection';
 
 import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { SafeLabelCount } from '@proton/shared/lib/interfaces';
+import type { SafeLabelCount } from '@proton/shared/lib/interfaces/Label';
 
 import { clearAll } from '../../helpers/tests/helper';
 import { mockUseScheduleSendFeature } from '../../helpers/tests/mockUseScheduleSendFeature';

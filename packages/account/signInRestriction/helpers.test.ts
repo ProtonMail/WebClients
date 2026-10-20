@@ -1,4 +1,8 @@
-import { LOGIN_IDENTIFIER_POLICY, RESTRICTED_LOGIN_IDENTIFIER_POLICY, UserType } from '@proton/shared/lib/interfaces';
+import { UserType } from '@proton/shared/lib/interfaces/User';
+import {
+    LOGIN_IDENTIFIER_POLICY,
+    RESTRICTED_LOGIN_IDENTIFIER_POLICY,
+} from '@proton/shared/lib/interfaces/UserSettings';
 
 import { buildAddress } from '../testing/buildAddress';
 import { buildUser } from '../testing/buildUser';

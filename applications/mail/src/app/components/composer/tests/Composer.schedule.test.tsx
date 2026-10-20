@@ -18,7 +18,9 @@ import type { MessageStateWithData } from '@proton/mail/store/messages/messagesT
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { addDays, addMinutes } from '@proton/shared/lib/date-fns-utc';
-import type { MailSettings, Recipient, UserModel } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
 import { getMinScheduleTime } from '../../../helpers/schedule';

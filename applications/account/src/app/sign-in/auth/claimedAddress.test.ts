@@ -1,7 +1,9 @@
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { type Address, type Api, type User, UserType } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import { type User, UserType } from '@proton/shared/lib/interfaces/User';
 import { handleCreateAddressAndKey } from '@proton/shared/lib/keys/setupAddress';
 
 import { UnavailableUsernameError, createClaimedAddressAndFinalize, loadClaimedAddressSetup } from './claimedAddress';

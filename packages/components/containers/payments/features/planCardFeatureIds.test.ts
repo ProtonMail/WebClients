@@ -2,7 +2,7 @@ import { PLANS } from '@proton/payments/core/constants';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { getTestPlans } from '@proton/payments/testing/data-plans';
-import { Audience } from '@proton/shared/lib/interfaces';
+import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 
 import { getAllFeatures, getFeatureDefinitions } from './index';
 import { getShortPlan } from './plan';

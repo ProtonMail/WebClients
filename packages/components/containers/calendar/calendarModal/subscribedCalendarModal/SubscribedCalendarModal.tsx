@@ -13,8 +13,8 @@ import { getCalendarStatusInfo } from '@proton/shared/lib/calendar/subscribe/hel
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { truncateMore } from '@proton/shared/lib/helpers/string';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-import { CALENDAR_SUBSCRIPTION_STATUS } from '@proton/shared/lib/interfaces/calendar';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
+import { CALENDAR_SUBSCRIPTION_STATUS } from '@proton/shared/lib/interfaces/calendar/Subscription';
 
 import Form from '../../../../components/form/Form';
 import Loader from '../../../../components/loader/Loader';

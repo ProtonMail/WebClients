@@ -4,7 +4,7 @@ import { getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { PullForkResponse, PushForkResponse } from '@proton/shared/lib/authentication/interface';
 import { resumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { getPersistedSessions } from '@proton/shared/lib/authentication/persistedSessionStorage';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import { getNativeAppInfo } from '../util/userAgent';
 import type { ExternalSessionPayload } from './nativeAuthBridge';

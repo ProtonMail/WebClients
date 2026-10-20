@@ -3,7 +3,7 @@ import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { updateSessionAccountRecovery } from '@proton/shared/lib/api/sessionRecovery';
 import { updateFlags } from '@proton/shared/lib/api/settings';
-import type { UserSettings } from '@proton/shared/lib/interfaces';
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 
 import { type UserSettingsState, userSettingsActions } from '../userSettings';
 

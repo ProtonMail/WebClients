@@ -1,7 +1,7 @@
 import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto';
 import { CryptoProxy } from '@protontech/crypto';
 
-import type { DecryptedKey } from '@proton/shared/lib/interfaces';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 
 import type { KeyRotationKeyPair } from '../../../../types';
 import { openInviteKey } from './open-invite-key';

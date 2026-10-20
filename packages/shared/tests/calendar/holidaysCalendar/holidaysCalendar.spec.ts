@@ -4,7 +4,7 @@ import {
     getHolidaysCalendarsFromTimeZone,
     getSuggestedHolidaysCalendar,
 } from '../../../lib/calendar/holidaysCalendar/holidaysCalendar';
-import type { HolidaysDirectoryCalendar } from '../../../lib/interfaces/calendar';
+import type { HolidaysDirectoryCalendar } from '../../../lib/interfaces/calendar/Calendar';
 
 const frCalendar = {
     CalendarID: 'calendarID1',

@@ -57,13 +57,13 @@ import { canonicalizeEmailByGuess, canonicalizeInternalEmail } from '@proton/sha
 import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { omit } from '@proton/shared/lib/helpers/object';
-import type { Address, Api, SimpleMap } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
+import type { CalendarEventEncryptionData } from '@proton/shared/lib/interfaces/calendar/Decrypt';
+import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar/Event';
+import type { CalendarWidgetData, Participant, PmInviteData } from '@proton/shared/lib/interfaces/calendar/Invite';
 import type {
-    CalendarEvent,
-    CalendarEventEncryptionData,
-    CalendarWidgetData,
-    Participant,
-    PmInviteData,
     VcalDateOrDateTimeProperty,
     VcalNumberProperty,
     VcalStringProperty,
@@ -71,11 +71,10 @@ import type {
     VcalVeventComponent,
     VcalVtimezoneComponent,
     VcalXOrIanaComponent,
-    VisualCalendar,
-} from '@proton/shared/lib/interfaces/calendar';
-import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+} from '@proton/shared/lib/interfaces/calendar/VcalModel';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
-import type { RequireSome, Unwrap } from '@proton/shared/lib/interfaces/utils';
+import type { RequireSome, SimpleMap, Unwrap } from '@proton/shared/lib/interfaces/utils';
 import { getOriginalTo, hasSimpleLoginSender } from '@proton/shared/lib/mail/messages';
 import unary from '@proton/utils/unary';
 

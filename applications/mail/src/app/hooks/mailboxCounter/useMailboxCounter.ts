@@ -9,7 +9,7 @@ import { useFolders, useLabels, useSystemFolders } from '@proton/mail/store/labe
 import { selectDisabledCategoriesIDs } from '@proton/mail/store/labels/selector';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { SafeLabelCount } from '@proton/shared/lib/interfaces';
+import type { SafeLabelCount } from '@proton/shared/lib/interfaces/Label';
 import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 
 import { useCategoriesView } from '../../components/categoryView/useCategoriesView';

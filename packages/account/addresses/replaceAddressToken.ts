@@ -4,13 +4,13 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { replaceAddressTokens } from '@proton/shared/lib/api/keys';
-import type { Address, DecryptedKey, Member } from '@proton/shared/lib/interfaces';
-import {
-    getHasMigratedAddressKeys,
-    getMemberKeys,
-    getReplacedAddressKeyTokens,
-    splitKeys,
-} from '@proton/shared/lib/keys';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
+import type { Member } from '@proton/shared/lib/interfaces/Member';
+import { getReplacedAddressKeyTokens } from '@proton/shared/lib/keys/addressKeys';
+import { getHasMigratedAddressKeys } from '@proton/shared/lib/keys/keyMigration';
+import { splitKeys } from '@proton/shared/lib/keys/keys';
+import { getMemberKeys } from '@proton/shared/lib/keys/memberKeys';
 
 import { getMemberAddresses } from '../members';
 import { type OrganizationKeyState, organizationKeyThunk } from '../organizationKey';

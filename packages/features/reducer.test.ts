@@ -1,5 +1,5 @@
 import { DAY } from '@proton/shared/lib/constants';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import { type Feature, FeatureCode } from './interface';
 import { type FeaturesResponse, fetchFeatures } from './reducer';

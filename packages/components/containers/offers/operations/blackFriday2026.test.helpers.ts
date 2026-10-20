@@ -5,7 +5,8 @@ import { CYCLE, PLANS, PLAN_TYPES } from '@proton/payments/core/constants';
 import type { Currency } from '@proton/payments/core/interface';
 import type { SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
-import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 
 export const mailAppConfig = {
     APP_NAME: 'proton-mail',

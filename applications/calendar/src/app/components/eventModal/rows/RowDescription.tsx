@@ -5,7 +5,7 @@ import IconRow from '@proton/components/components/iconRow/IconRow';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 import { IcTextAlignLeft } from '@proton/icons/icons/IcTextAlignLeft';
 import { DESCRIPTION_INPUT_ID, MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
-import type { EventModel } from '@proton/shared/lib/interfaces/calendar';
+import type { EventModel } from '@proton/shared/lib/interfaces/calendar/Event';
 
 import createHandlers from '../eventForm/createPropFactory';
 

@@ -2,7 +2,8 @@ import { render, screen } from '@testing-library/react';
 
 import { calendarEventBuilder, veventBuilder } from '@proton/calendar/testing/builders';
 import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
-import type { Participant, VcalDateProperty, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import type { Participant } from '@proton/shared/lib/interfaces/calendar/Invite';
+import type { VcalDateProperty, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
 import type { InvitationModel } from '../../../../../helpers/calendar/invite';
 import { EVENT_TIME_STATUS, UPDATE_ACTION } from '../../../../../helpers/calendar/invite';

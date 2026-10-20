@@ -1,5 +1,5 @@
-import type { Address as AddressInterface } from '../interfaces';
-import type { CalendarMember as MemberInterface } from '../interfaces/calendar';
+import type { Address as AddressInterface } from '../interfaces/Address';
+import type { CalendarMember as MemberInterface } from '../interfaces/calendar/CalendarMember';
 
 export const getMemberAndAddress = (
     Addresses: AddressInterface[] = [],

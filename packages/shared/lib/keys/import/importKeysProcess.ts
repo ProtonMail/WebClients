@@ -1,4 +1,6 @@
-import type { Address, DecryptedKey, KeyTransparencyVerify } from '../../interfaces';
+import type { Address } from '../../interfaces/Address';
+import type { DecryptedKey } from '../../interfaces/Key';
+import type { KeyTransparencyVerify } from '../../interfaces/KeyTransparency';
 import { getPrimaryKey } from '../getPrimaryKey';
 import { getHasMigratedAddressKeys } from '../keyMigration';
 import type { ImportKeysProcessV2Arguments } from './importKeysProcessV2';

@@ -1,8 +1,11 @@
 import { RECIPIENT_TYPES } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import type { Api, ApiKeysConfig, KTUserContext } from '@proton/shared/lib/interfaces';
-import { KT_VERIFICATION_STATUS } from '@proton/shared/lib/interfaces';
-import { getExternalKeys, getInternalKeys, getMailCapableKeys, supportsMail } from '@proton/shared/lib/keys';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { ApiKeysConfig } from '@proton/shared/lib/interfaces/EncryptionPreferences';
+import type { KTUserContext } from '@proton/shared/lib/interfaces/KeyTransparency';
+import { KT_VERIFICATION_STATUS } from '@proton/shared/lib/interfaces/KeyTransparency';
+import { getMailCapableKeys, supportsMail } from '@proton/shared/lib/keys/keyFlags';
+import { getExternalKeys, getInternalKeys } from '@proton/shared/lib/keys/keySource';
 
 import { getAndVerifyApiKeys } from './getAndVerifyApiKeys';
 

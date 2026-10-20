@@ -16,7 +16,8 @@ import {
     type NewsletterSubscriptionUpdateData,
 } from '@proton/shared/lib/helpers/newsletter';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import type { UserModel, UserSettings } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import isTruthy from '@proton/utils/isTruthy';
 
 export interface EmailSubscription {

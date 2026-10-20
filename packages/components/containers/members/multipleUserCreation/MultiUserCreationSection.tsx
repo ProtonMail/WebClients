@@ -7,7 +7,7 @@ import { useMembers } from '@proton/account/members/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { CreateMemberMode } from '@proton/shared/lib/interfaces';
+import { CreateMemberMode } from '@proton/shared/lib/interfaces/Member';
 import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
 
 import useModalState from '../../../components/modalTwo/useModalState';

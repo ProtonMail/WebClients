@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { useGetUser } from '@proton/account/user/hooks';
 import { useAuthentication } from '@proton/components';
-import type { User } from '@proton/shared/lib/interfaces';
+import type { User } from '@proton/shared/lib/interfaces/User';
 
 import { sendErrorReport } from '../../utils/errorHandling';
 import { getIsPublicContext } from '../../utils/getIsPublicContext';
