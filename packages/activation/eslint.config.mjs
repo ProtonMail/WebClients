@@ -1,11 +1,7 @@
 import { defineConfig } from 'eslint/config';
 
 import defaultConfig from '@proton/eslint-config-proton/all';
-import { componentsPackage, createBarrelIndexPaths, createBarrelPaths } from '@proton/eslint-config-proton/barrel';
-import { iconRestrictedImports } from '@proton/eslint-config-proton/icon';
-import { createRestrictedImportRule } from '@proton/eslint-config-proton/restrictedImports';
-
-const barrelPaths = createBarrelPaths([componentsPackage]);
+import { createRestrictedImportsConfig } from '@proton/eslint-config-proton/restrictedImports';
 
 /**
  * Files still importing the bare `@proton/components` barrel. Only its `/index` specifiers are banned for them.
@@ -74,36 +70,13 @@ const legacyBarrelImporters = [
     'src/components/SettingsArea/SettingsArea.tsx',
     'src/tests/render.tsx',
 ];
-const legacyBarrelPaths = createBarrelIndexPaths([componentsPackage]);
 
 export default defineConfig([
     defaultConfig,
-    {
-        name: 'barrel-import-rules',
-        rules: {
-            'no-restricted-imports': createRestrictedImportRule({ paths: barrelPaths }),
-            '@typescript-eslint/no-restricted-imports': ['error', { paths: iconRestrictedImports }],
-        },
-    },
-    {
-        name: 'barrel-import-rules-tsx',
-        files: ['**/*.tsx', '**/*.jsx'],
-        rules: {
-            'no-restricted-imports': createRestrictedImportRule({ paths: barrelPaths, tsx: true }),
-        },
-    },
-    {
-        name: 'barrel-import-rules-legacy',
-        files: legacyBarrelImporters.filter((file) => !/\.[jt]sx$/.test(file)),
-        rules: {
-            'no-restricted-imports': createRestrictedImportRule({ paths: legacyBarrelPaths }),
-        },
-    },
-    {
-        name: 'barrel-import-rules-legacy-tsx',
-        files: legacyBarrelImporters.filter((file) => /\.[jt]sx$/.test(file)),
-        rules: {
-            'no-restricted-imports': createRestrictedImportRule({ paths: legacyBarrelPaths, tsx: true }),
-        },
-    },
+    createRestrictedImportsConfig({ rollout: ['components-barrel', 'icon-component'] }),
+    // A second call for some `files` replaces the first call's options for those files, so repeat the rollout ids.
+    createRestrictedImportsConfig({
+        rollout: ['components-barrel-index', 'icon-component'],
+        files: legacyBarrelImporters,
+    }),
 ]);

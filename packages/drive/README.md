@@ -81,7 +81,7 @@ The package exposes exactly two entry points to the rest of the monorepo:
 
 Everything else (`modules/`, `components/`, `internal/`) is private and off-limits to external apps.
 
-These import boundaries are enforced by ESLint `no-restricted-imports` in the global `packages/eslint-config-proton/restrictedImports.js`.
+These import boundaries are enforced by the ESLint rule `proton/restricted-imports`, configured in `packages/eslint-config-proton/restrictedImports.js`.
 
 The Drive team is responsbile to provide stable interfaces for the Drive SDK and modules built on top of it. Any changes to the interfaces will be announced, documented, and provided with a migration support.
 
