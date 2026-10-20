@@ -20,17 +20,24 @@ import { getSlugFromApp, stripSlugFromPathname } from '@proton/shared/lib/apps/s
 import { getToAppName } from '@proton/shared/lib/authentication/apps';
 import { getValidatedApp } from '@proton/shared/lib/authentication/fork/validation';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, MAIL_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import type { User } from '@proton/shared/lib/interfaces/User';
-import { getDecryptedSetupBlob, getRequiresAddressSetup } from '@proton/shared/lib/keys/setupAddress';
+import {
+    getDecryptedSetupBlob,
+    getRequiresAddressSetup,
+    getRequiresProtonAddressFromAdmin,
+} from '@proton/shared/lib/keys/setupAddress';
 import noop from '@proton/utils/noop';
 
 import AccountLoaderPage from '../content/AccountLoaderPage';
+import Content from '../public/Content';
 import Footer from '../public/Footer';
+import Header from '../public/Header';
 import Layout from '../public/Layout';
 import Main from '../public/Main';
 import SupportDropdown from '../public/SupportDropdown';
+import Text from '../public/Text';
 import GenerateAddressStep from './GenerateAddressStep';
 import { type AddressGeneration, getAddressGenerationSetup } from './addressGeneration';
 
@@ -116,6 +123,7 @@ const SetupAddressContainer = () => {
     const location = useLocation();
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<{ message?: string } | null>(null);
+    const [requiresAdmin, setRequiresAdmin] = useState(false);
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const errorHandler = useErrorHandler();
@@ -188,6 +196,12 @@ const SetupAddressContainer = () => {
                 path: searchParams.get('to-path') || '',
             });
 
+            // Before the check below, which doesn't cover them, so that they don't go back to the app and here again
+            if (getRequiresProtonAddressFromAdmin(validatedToApp, user)) {
+                setRequiresAdmin(true);
+                return;
+            }
+
             if (!getRequiresAddressSetup(validatedToApp, user)) {
                 handleToApp();
                 return new Promise(noop);
@@ -238,7 +252,7 @@ const SetupAddressContainer = () => {
 
     const generateAddress = generateAddressRef.current;
 
-    if (!generateAddress) {
+    if (!generateAddress && !requiresAdmin) {
         const error: any = new Error('Missing dependencies');
         error.trace = false;
         throw error;
@@ -247,24 +261,38 @@ const SetupAddressContainer = () => {
     return (
         <Layout onBack={handleBack} hasDecoration={false} hasThemeToggle={false} toApp={toApp}>
             <Main>
-                <GenerateAddressStep
-                    onBack={handleBack}
-                    api={silentApi}
-                    toAppName={toAppName}
-                    data={generateAddress}
-                    onSubmit={async (payload) => {
-                        try {
-                            await dispatch(setupExternalUserForProton({ payload, app: toApp }));
-                            handleToApp();
-                        } catch (e: any) {
-                            errorHandler(e);
-                            handleBack();
-                        }
-                    }}
-                />
-                <Footer>
-                    <SetupSupportDropdown />
-                </Footer>
+                {requiresAdmin || !generateAddress ? (
+                    <>
+                        <Header title={c('Title').t`You need a ${BRAND_NAME} address`} onBack={handleBack} />
+                        <Content>
+                            <Text>
+                                {c('Info')
+                                    .t`To use ${toAppName}, you need a ${MAIL_APP_NAME} address. An administrator of your organization can create one for you.`}
+                            </Text>
+                        </Content>
+                    </>
+                ) : (
+                    <>
+                        <GenerateAddressStep
+                            onBack={handleBack}
+                            api={silentApi}
+                            toAppName={toAppName}
+                            data={generateAddress}
+                            onSubmit={async (payload) => {
+                                try {
+                                    await dispatch(setupExternalUserForProton({ payload, app: toApp }));
+                                    handleToApp();
+                                } catch (e: any) {
+                                    errorHandler(e);
+                                    handleBack();
+                                }
+                            }}
+                        />
+                        <Footer>
+                            <SetupSupportDropdown />
+                        </Footer>
+                    </>
+                )}
             </Main>
         </Layout>
     );
