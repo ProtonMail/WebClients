@@ -45,7 +45,7 @@ const SharedWithMeToolbar = ({ uids }: SharedWithMeToolbarProps) => {
 
     const { copyModal, showCopyItemsModal } = useCopyItemsModal();
     function convertDataShowModal(items: DirectShareItem[]) {
-        showCopyItemsModal(items.map((item) => ({ uid: item.nodeUid, name: item.name })));
+        showCopyItemsModal(items.map((item) => ({ uid: item.nodeUid, name: item.name, type: item.type })));
     }
 
     return (

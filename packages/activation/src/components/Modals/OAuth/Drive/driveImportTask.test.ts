@@ -109,7 +109,7 @@ describe('startDriveImportTask', () => {
         expect(api).toHaveBeenCalledTimes(2);
         // The expected conflict must not surface to the user.
         expect(api.mock.calls[0][0].silence).toEqual([IMPORT_ERROR.ALREADY_EXISTS]);
-        expect(drive.getAvailableName).toHaveBeenCalledWith({ uid: 'vol-1~node-1' }, 'google-drive-me');
+        expect(drive.getAvailableName).toHaveBeenCalledWith({ uid: 'vol-1~node-1' }, 'google-drive-me', 'folder');
         expect(drive.experimental.prepareImportFolder).toHaveBeenLastCalledWith('google-drive-me (1)');
     });
 

@@ -26,7 +26,7 @@
         "@proton/unleash": "workspace:^",
         "@proton/utils": "workspace:^",
         "@protontech/crypto": "*",
-        "@protontech/drive-sdk": "^0.22.2",
+        "@protontech/drive-sdk": "catalog:",
         "@sentry/types": "^7.120.4",
         "@types/node": "catalog:",
         "@xmldom/xmldom": "^0.9.12",

@@ -56,7 +56,7 @@
         "@proton/unleash": "workspace:^",
         "@proton/utils": "workspace:^",
         "@protontech/crypto": "*",
-        "@protontech/drive-sdk": "^0.22.2",
+        "@protontech/drive-sdk": "catalog:",
         "@reduxjs/toolkit": "^2.13.0",
         "@sentry/types": "^7.120.4",
         "@tanstack/react-virtual": "^3.14.13",
