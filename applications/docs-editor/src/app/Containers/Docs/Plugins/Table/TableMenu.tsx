@@ -1,15 +1,16 @@
-import { DropdownMenu, DropdownMenuButton, SimpleDropdown } from '../../Components/Dropdown'
+import { DropdownMenu, DropdownMenuButton, DropdownMenuCheckboxButton, SimpleDropdown } from '../../Components/Dropdown'
 import { $generateJSONFromSelectedNodes, $generateNodesFromSerializedNodes } from '@lexical/clipboard'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
 import type { TableCellNode, TableNode, TableRowNode } from '@lexical/table'
 import { $createTableSelection, $isTableNode, $isTableSelection } from '@lexical/table'
 import { $findMatchingParent, $insertNodeToNearestRoot, mergeRegister } from '@lexical/utils'
-import { Button } from '@proton/atoms/Button/Button'
-import { ButtonGroup } from '@proton/components/components/button/ButtonGroup'
-import Toggle from '@proton/components/components/toggle/Toggle'
+import * as Ariakit from '@ariakit/react'
+import { clsx } from 'clsx'
+import { Button } from '../../Components/ui'
 import { Icon } from '../../Components/Icon'
 import * as Icons from '../../Components/icons'
+import type { EditorState } from 'lexical'
 import { $getSelection, $isRangeSelection, COMMAND_PRIORITY_EDITOR, SELECTION_CHANGE_COMMAND } from 'lexical'
 import debounce from 'lodash/debounce'
 import { useEffect, useRef, useState } from 'react'
@@ -27,6 +28,19 @@ import { $fitTableToPageWidth } from './TableUtils/fitTableToPageWidth'
 type MenuPosition = {
   x: number
   y: number
+}
+
+const toolbarItemClassName =
+  'rounded-[--border-radius-sm] bg-[--background-norm] hover:bg-[--interaction-weak-minor-2] active:bg-[--interaction-weak-minor-1]'
+const toolbarIconItemClassName = clsx(toolbarItemClassName, 'p-[calc(6em/14)]')
+
+function TableMenuSeparator() {
+  return (
+    <Ariakit.ToolbarSeparator
+      render={<div />}
+      className="mx-[calc(3em/14)] my-[calc(2em/14)] w-px shrink-0 self-stretch bg-[--interaction-weak-major-1]"
+    />
+  )
 }
 
 export function TableMenu() {
@@ -118,7 +132,7 @@ export function TableMenu() {
       return
     }
 
-    return editor.registerUpdateListener(({ editorState }) => {
+    const syncHeaderState = (editorState: EditorState) => {
       editorState.read(() => {
         const table = getNodeLatestSafe(tableNode)
         if (!table) {
@@ -141,7 +155,12 @@ export function TableMenu() {
         setTableHasHeaderRow(tableHasHeaderRow)
         setTableHasHeaderColumn(tableHasHeaderColumn)
       })
-    })
+    }
+
+    // The menu opens without an editor update behind it, so read the state the items announce right away.
+    syncHeaderState(editor.getEditorState())
+
+    return editor.registerUpdateListener(({ editorState }) => syncHeaderState(editorState))
   }, [editor, tableNode])
 
   const fitTableToPageWidth = () => {
@@ -155,6 +174,15 @@ export function TableMenu() {
         return
       }
       $fitTableToPageWidth(table, rootElement)
+    })
+  }
+
+  const toggleTableHeader = ($toggleHeader: (table: TableNode) => void) => {
+    editor.update(() => {
+      if (!tableNode) {
+        return
+      }
+      $toggleHeader(tableNode)
     })
   }
 
@@ -200,13 +228,11 @@ export function TableMenu() {
   }
 
   return (
-    <ButtonGroup
+    <Ariakit.Toolbar
       ref={menuRef}
-      className="shadow-norm"
+      aria-label={c('Label').t`Table`}
+      className="absolute left-0 top-0 inline-flex items-stretch rounded-[--border-radius-md] bg-[--background-norm] p-[calc(3em/14)] shadow-[var(--shadow-norm)] [border:1px_solid_var(--interaction-weak-major-1)]"
       style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
         visibility: !tableNode ? 'hidden' : 'visible',
         opacity: !tableNode ? 0 : 1,
         transform: `translate3d(${position.x}px, ${position.y}px, 0)`,
@@ -214,66 +240,56 @@ export function TableMenu() {
       data-testid="table-button-group"
     >
       {!isSuggestionMode && (
-        <Button icon shape="ghost" size="small" onClick={fitTableToPageWidth} disabled={isSuggestionMode}>
-          <span className="sr-only">{c('Action').t`Fit table to page width`}</span>
-          <Icon data={Icons.arrowsFromCenterHorizontal} />
-        </Button>
-      )}
-      {!isSuggestionMode && (
-        <SimpleDropdown
-          as={Button}
-          shape="ghost"
-          size="small"
-          className="px-2 text-sm"
-          // translator: Table header options
-          content={c('Action').t`Options`}
-          disabled={isSuggestionMode}
-        >
-          <DropdownMenu>
-            <DropdownMenuButton
-              className="flex items-center gap-2.5 text-sm"
-              onClick={() => {
-                editor.update(() => {
-                  if (!tableNode) {
-                    return
-                  }
-                  $toggleTableHeaderRow(tableNode)
-                })
-              }}
-            >
-              <Icon data={Icons.palette} />
-              <span className="mr-1">Header row</span>
-              <Toggle className="pointer-events-none ml-auto" checked={tableHasHeaderRow} />
-            </DropdownMenuButton>
-            <DropdownMenuButton
-              className="flex items-center gap-2.5 text-sm"
-              onClick={() => {
-                editor.update(() => {
-                  if (!tableNode) {
-                    return
-                  }
-                  $toggleTableHeaderColumn(tableNode)
-                })
-              }}
-            >
-              <Icon data={Icons.palette} />
-              <span className="mr-1">Header column</span>
-              <Toggle className="pointer-events-none ml-auto" checked={tableHasHeaderColumn} />
-            </DropdownMenuButton>
-          </DropdownMenu>
-        </SimpleDropdown>
+        <>
+          <Ariakit.ToolbarItem
+            render={
+              <Button
+                icon
+                className={toolbarIconItemClassName}
+                aria-label={c('Action').t`Fit table to page width`}
+                onClick={fitTableToPageWidth}
+              />
+            }
+          >
+            <Icon data={Icons.arrowsFromCenterHorizontal} />
+          </Ariakit.ToolbarItem>
+          <TableMenuSeparator />
+          <SimpleDropdown
+            render={<Ariakit.ToolbarItem />}
+            className={clsx(toolbarItemClassName, 'px-[calc(8em/14)] py-[calc(3em/14)] text-sm')}
+            // translator: Table header options
+            content={c('Action').t`Options`}
+          >
+            <DropdownMenu>
+              <DropdownMenuCheckboxButton
+                name="header-row"
+                className="gap-2.5 text-sm"
+                checked={tableHasHeaderRow}
+                onClick={() => toggleTableHeader($toggleTableHeaderRow)}
+              >
+                <Icon data={Icons.palette} />
+                <span className="mr-1">{c('Action').t`Header row`}</span>
+              </DropdownMenuCheckboxButton>
+              <DropdownMenuCheckboxButton
+                name="header-column"
+                className="gap-2.5 text-sm"
+                checked={tableHasHeaderColumn}
+                onClick={() => toggleTableHeader($toggleTableHeaderColumn)}
+              >
+                <Icon data={Icons.palette} />
+                <span className="mr-1">{c('Action').t`Header column`}</span>
+              </DropdownMenuCheckboxButton>
+            </DropdownMenu>
+          </SimpleDropdown>
+          <TableMenuSeparator />
+        </>
       )}
       <SimpleDropdown
-        as={Button}
+        render={<Ariakit.ToolbarItem />}
         icon
-        shape="ghost"
-        size="small"
-        content={
-          <>
-            <span className="sr-only">{c('Action').t`Table options`}</span>
-            <Icon data={Icons.threeDotsHorizontal} />
-          </>
-        }
+        className={toolbarIconItemClassName}
+        aria-label={c('Action').t`Table options`}
+        content={<Icon data={Icons.threeDotsHorizontal} />}
         hasCaret={false}
       >
         <DropdownMenu>
@@ -289,6 +305,6 @@ export function TableMenu() {
           </DropdownMenuButton>
         </DropdownMenu>
       </SimpleDropdown>
-    </ButtonGroup>
+    </Ariakit.Toolbar>
   )
 }
