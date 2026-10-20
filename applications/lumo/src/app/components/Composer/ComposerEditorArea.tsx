@@ -74,6 +74,7 @@ export const ComposerEditorArea = ({
                         id: node.nodeUid,
                         name: node.name,
                         type: node.type,
+                        mediaType: node.mediaType,
                     }));
                 },
                 downloadFile,

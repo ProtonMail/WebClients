@@ -286,6 +286,19 @@ describe('isMentionableFile', () => {
         expect(isMentionableFile('SAX.AI')).toBe(false);
     });
 
+    it('rejects file types that are not supported', () => {
+        expect(isMentionableFile('Presentations/ML OKR Summary.key')).toBe(false);
+        expect(isMentionableFile('Vision.key', 'application/vnd.apple.keynote')).toBe(false);
+    });
+
+    it('accepts a supported mime type even when the extension is unknown', () => {
+        expect(isMentionableFile('scan.unknownext', 'application/pdf')).toBe(true);
+    });
+
+    it('rejects Proton native documents', () => {
+        expect(isMentionableFile('Notes.md', 'application/vnd.proton.doc')).toBe(false);
+    });
+
     it('does not mistake a dotted folder for a hidden file', () => {
         expect(isMentionableFile('.config/notes.md')).toBe(true);
     });

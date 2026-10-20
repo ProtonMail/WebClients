@@ -609,6 +609,16 @@ export function isFileTypeSupported(fileName: string, mimeType?: string): boolea
     return false;
 }
 
+/** Proton Docs, Sheets, etc. are Drive-native formats that cannot be read as plain files yet. */
+export function isProtonNativeMediaType(mediaType?: string): boolean {
+    return !!mediaType?.startsWith('application/vnd.proton');
+}
+
+/** Whether a Drive file can be listed, downloaded and read by Lumo. */
+export function isDriveFileSupported(fileName: string, mediaType?: string): boolean {
+    return !isProtonNativeMediaType(mediaType) && isFileTypeSupported(fileName, mediaType);
+}
+
 // Legacy compatibility function
 export function mimeToHuman({ mimeType, filename }: { mimeType?: string; filename: string }): string {
     return getFileTypeDescription(filename, mimeType);
