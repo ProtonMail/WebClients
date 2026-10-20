@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
@@ -163,7 +163,16 @@ export const DriveFileItemCard: React.FC<FileItemCardProps> = ({
                     {file.size && <span className={`color-weak shrink-0 text-xs`}>{formatFileSize(file.size)}</span>}
 
                     {file.tokenCount && (
-                        <span className="text-xs font-semibold color-info shrink-0">{file.tokenCount} tokens</span>
+                        <span className="text-xs font-semibold color-info shrink-0">
+                            {
+                                // translator: Technical token-count label. ${file.tokenCount} is the number of AI text-processing tokens in the file.
+                                c('collider_2025:Label').ngettext(
+                                    msgid`${file.tokenCount} token`,
+                                    `${file.tokenCount} tokens`,
+                                    file.tokenCount
+                                )
+                            }
+                        </span>
                     )}
                 </div>
             </div>

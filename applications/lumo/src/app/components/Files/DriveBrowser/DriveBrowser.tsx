@@ -143,7 +143,10 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
                 }
             } catch (error) {
                 console.error('Failed to refresh folder:', error);
-                onError?.(error instanceof Error ? error : new Error('Failed to refresh folder'));
+                // translator: Error notification about refreshing a folder in Proton Drive.
+                onError?.(
+                    error instanceof Error ? error : new Error(c('collider_2025:Error').t`Failed to refresh folder`)
+                );
             } finally {
                 setIsRefreshing(false);
             }
@@ -223,10 +226,20 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
                         'Setting localError to:',
                         err instanceof Error ? err.message : 'Failed to initialize Drive browser'
                     );
-                    setLocalError(err instanceof Error ? err.message : 'Failed to initialize Drive browser');
+                    // translator: Error notification about accessing files in Proton Drive.
+                    setLocalError(
+                        err instanceof Error
+                            ? err.message
+                            : c('collider_2025:Error').t`Failed to initialize Drive browser`
+                    );
                 }
 
-                onError?.(err instanceof Error ? err : new Error('Failed to initialize Drive browser'));
+                onError?.(
+                    err instanceof Error
+                        ? err
+                        : // translator: Error notification about accessing files in Proton Drive.
+                          new Error(c('collider_2025:Error').t`Failed to initialize Drive browser`)
+                );
             } finally {
                 setLoading(false);
             }
@@ -276,7 +289,11 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
                     }
                 } catch (error) {
                     console.error('Failed to browse folder:', error);
-                    onError?.(error instanceof Error ? error : new Error('Failed to browse folder'));
+
+                    // translator: Error notification about accessing files in Proton Drive.
+                    onError?.(
+                        error instanceof Error ? error : new Error(c('collider_2025:Error').t`Failed to browse folder`)
+                    );
                 } finally {
                     setLoading(false);
                 }
@@ -341,7 +358,10 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
                     onFileSelect(file, new Uint8Array(data));
                 } catch (error) {
                     console.error('Failed to download file:', error);
-                    onError?.(error instanceof Error ? error : new Error('Failed to download file'));
+                    // translator: Error notification about accessing files in Proton Drive.
+                    onError?.(
+                        error instanceof Error ? error : new Error(c('collider_2025:Error').t`Failed to download file`)
+                    );
                 } finally {
                     setDownloadingFile(null);
                     setDownloadProgress(null);
@@ -536,7 +556,12 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
                         }
                     } catch (error) {
                         console.error(`Failed to upload ${file.name}:`, error);
-                        onError?.(error instanceof Error ? error : new Error(`Failed to upload ${file.name}`));
+                        // translator: Upload error notification. ${file.name} is the name of the computer file being uploaded.
+                        onError?.(
+                            error instanceof Error
+                                ? error
+                                : new Error(c('collider_2025:Error').t`Failed to upload ${file.name}`)
+                        );
                     }
                 }
 
@@ -641,7 +666,12 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
                     onBreadcrumbsChange?.(updatedBreadcrumbs);
                 } catch (error) {
                     console.error('Failed to navigate to folder:', error);
-                    onError?.(error instanceof Error ? error : new Error('Failed to navigate to folder'));
+                    // translator: Error notification about opening a folder in Proton Drive.
+                    onError?.(
+                        error instanceof Error
+                            ? error
+                            : new Error(c('collider_2025:Error').t`Failed to navigate to folder`)
+                    );
                 } finally {
                     setLoading(false);
                 }
@@ -757,7 +787,11 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
                     <div className="flex items-center justify-center p-8 h-full">
                         <div className="text-center">
                             <Loader size={'medium'} />
-                            <p>Initializing Drive...</p>
+                            <p>{
+                                // translator: Connection status for Proton Drive.
+
+                                c('collider_2025:Label').t`Initializing Drive...`
+                            }</p>
                         </div>
                     </div>
                 )}

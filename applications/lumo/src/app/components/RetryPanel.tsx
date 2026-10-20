@@ -14,7 +14,7 @@ type RetryOption = {
     description: string;
 };
 
-const RETRY_OPTIONS: RetryOption[] = [
+const getRetryOptions = (): RetryOption[] => [
     {
         strategy: 'try_again',
         label: c('collider_2025:Action').t`Try again`,
@@ -131,7 +131,7 @@ export const RetryPanel: React.FC<RetryPanelProps> = ({ onRetry, disabled = fals
 
             {/* Quick retry options in 2x2 grid - AT THE BOTTOM */}
             <div className="grid grid-cols-2 gap-2">
-                {RETRY_OPTIONS.map((option) => (
+                {getRetryOptions().map((option) => (
                     <button
                         key={option.strategy}
                         className="flex items-center gap-2 px-3 py-2 text-left hover:bg-weak rounded-md transition-colors"
