@@ -19,12 +19,7 @@ import windowsAppImg2x from '@proton/styles/assets/img/onboarding/mail_onboardin
 import clsx from '@proton/utils/clsx';
 
 import { TrackOnboardingStepLoad } from '../../../../telemetry/TrackOnboardingStepLoad';
-import {
-    ONBOARDING_ACTIONS,
-    ONBOARDING_STEPS,
-    trackStepCompleted,
-    trackStepInteracted,
-} from '../../../../telemetry/onboardingEvents';
+import { ONBOARDING_ACTIONS, ONBOARDING_STEPS, useOnboardingTracking } from '../../../../telemetry/onboardingEvents';
 import { useMailOnboardingTelemetry } from '../../useMailOnboardingTelemetry';
 import type { OnboardingStepEligibleCallback } from '../interface';
 import OnboardingContent from '../layout/OnboardingContent';
@@ -50,6 +45,7 @@ export const isGetDesktopAppStepEligible: OnboardingStepEligibleCallback = async
 };
 
 const GetDesktopAppStep = ({ onNext }: OnboardingStepRenderCallback) => {
+    const { trackStepInteracted, trackStepCompleted } = useOnboardingTracking();
     const { viewportWidth } = useActiveBreakpoint();
     const sendMailOnboardingTelemetry = useMailOnboardingTelemetry();
 

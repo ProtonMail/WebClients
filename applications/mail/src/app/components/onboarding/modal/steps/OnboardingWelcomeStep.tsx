@@ -19,7 +19,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { useGetStartedChecklist } from '../../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import { TrackOnboardingStepLoad } from '../../../../telemetry/TrackOnboardingStepLoad';
-import { ONBOARDING_STEPS, trackStepCompleted } from '../../../../telemetry/onboardingEvents';
+import { ONBOARDING_STEPS, useOnboardingTracking } from '../../../../telemetry/onboardingEvents';
 import type { OnboardingStepEligibleCallback } from '../interface';
 import OnboardingContent from '../layout/OnboardingContent';
 
@@ -104,6 +104,7 @@ const PrivacyFeature = ({ description, imgSrc }: { imgSrc: string; description: 
 };
 
 const OnboardingWelcomeStep = ({ onNext }: OnboardingStepRenderCallback) => {
+    const { trackStepCompleted } = useOnboardingTracking();
     const { markItemsAsDone } = useGetStartedChecklist();
     const [user] = useUser();
     const privacyFeature = getPrivacyFeatures(user);

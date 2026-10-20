@@ -1,9 +1,12 @@
+import { useState } from 'react';
+
+import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import { ONBOARDING_THEMES } from '@proton/components/containers/onboarding/constants';
 import { TelemetryMailOnboardingEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { allowed, defineEvent, defineTimer, duration, number } from '@proton/telemetry-tracker/events';
 import { tracker } from '@proton/telemetry-tracker/tracker';
 
-// TODO remove the delay false
+type OnboardingThemeLabel = (typeof ONBOARDING_THEMES)[number]['label'];
 
 export enum ONBOARDING_STEPS {
     welcome = 'welcome',
@@ -36,7 +39,6 @@ const baseEvent = {
     target: 'telemetry',
     group: TelemetryMeasurementGroups.mailOnboarding,
     values: baseValues,
-    delay: false,
 } as const;
 
 const stepLoad = defineEvent({
@@ -72,19 +74,19 @@ const withTiming = () => {
 
 const timing = { durationFrom: onboardingTimer };
 
-export const trackStepLoaded = (step: ONBOARDING_STEPS) => {
+const trackStepLoaded = (step: ONBOARDING_STEPS) => {
     tracker.emit(stepLoad, { dimensions: { flow: 'onboarding', step }, ...withTiming() }, timing);
 };
 
-export const trackStepInteracted = (step: ONBOARDING_STEPS, action: ONBOARDING_ACTIONS) => {
+const trackStepInteracted = (step: ONBOARDING_STEPS, action: ONBOARDING_ACTIONS) => {
     tracker.emit(stepInteracted, { dimensions: { flow: 'onboarding', step, action }, ...withTiming() }, timing);
 };
 
-export const trackStepCompleted = (step: ONBOARDING_STEPS) => {
+const trackStepCompleted = (step: ONBOARDING_STEPS) => {
     tracker.emit(stepCompleted, { dimensions: { flow: 'onboarding', step }, ...withTiming() }, timing);
 };
 
-export const trackThemeStepCompleted = (theme: (typeof ONBOARDING_THEMES)[number]['label']) => {
+const trackThemeStepCompleted = (theme: OnboardingThemeLabel) => {
     tracker.emit(
         themeStepCompleted,
         {
@@ -93,4 +95,34 @@ export const trackThemeStepCompleted = (theme: (typeof ONBOARDING_THEMES)[number
         },
         timing
     );
+};
+
+/** Replays of the onboarding are not tracked, the funnel only measures first-time users */
+export const useOnboardingTracking = () => {
+    const { welcomeFlags } = useWelcomeFlags();
+    // Only read once: the flag flips back when the modal closes, the last events must still follow the opening state
+    const [isReplay] = useState(welcomeFlags.isReplay);
+
+    return {
+        trackStepLoaded: (step: ONBOARDING_STEPS) => {
+            if (!isReplay) {
+                trackStepLoaded(step);
+            }
+        },
+        trackStepInteracted: (step: ONBOARDING_STEPS, action: ONBOARDING_ACTIONS) => {
+            if (!isReplay) {
+                trackStepInteracted(step, action);
+            }
+        },
+        trackStepCompleted: (step: ONBOARDING_STEPS) => {
+            if (!isReplay) {
+                trackStepCompleted(step);
+            }
+        },
+        trackThemeStepCompleted: (theme: OnboardingThemeLabel) => {
+            if (!isReplay) {
+                trackThemeStepCompleted(theme);
+            }
+        },
+    };
 };
