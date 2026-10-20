@@ -169,6 +169,52 @@ describe('LumoFloatingPanelProvider', () => {
         expect(result.current.shownSide).toBe(PanelSide.RIGHT);
     });
 
+    it('closes the panel and hides the cat on hide, and shows it again on reveal', () => {
+        const { result } = renderDetached();
+        expect(result.current.isCatHidden).toBe(false);
+
+        act(() => result.current.hideCat());
+        expect(result.current.isPanelOpen).toBe(false);
+        expect(result.current.isCatHidden).toBe(true);
+
+        act(() => result.current.revealCat());
+        expect(result.current.isCatHidden).toBe(false);
+        expect(result.current.isPanelOpen).toBe(false);
+    });
+
+    it('opens the panel and reveals the hidden cat on toggle while detached', () => {
+        const { result } = renderDetached();
+        act(() => result.current.hideCat());
+
+        act(() => result.current.toggleLumo());
+
+        expect(result.current.isPanelOpen).toBe(true);
+        expect(result.current.isCatHidden).toBe(false);
+    });
+
+    it('reveals the hidden cat when the hotkey opens the panel', () => {
+        const { result } = renderDetached();
+        act(() => result.current.hideCat());
+
+        const { openLumo } = jest.mocked(useLumoHotkey).mock.lastCall![0];
+        act(() => openLumo());
+
+        expect(result.current.isPanelOpen).toBe(true);
+        expect(result.current.isCatHidden).toBe(false);
+    });
+
+    it('reveals the hidden cat on a fresh detach after a dock', () => {
+        const { result } = renderDetached();
+        act(() => result.current.hideCat());
+        act(() => result.current.dock());
+        expect(result.current.isCatHidden).toBe(true);
+
+        act(() => result.current.detach());
+
+        expect(result.current.isDetached).toBe(true);
+        expect(result.current.isCatHidden).toBe(false);
+    });
+
     it('switches sides on request', () => {
         const { result } = renderPanel();
 

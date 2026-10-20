@@ -14,6 +14,7 @@ jest.mock('@proton/icons/icons/IcArrowRight', () => ({
 
 const onMove = jest.fn();
 const onDock = jest.fn();
+const onHide = jest.fn();
 const clear = jest.fn();
 const openDebugReport = jest.fn();
 
@@ -23,6 +24,7 @@ const renderMenu = (side: PanelSide, hasConversation: boolean) => {
             side={side}
             onMove={onMove}
             onDock={onDock}
+            onHide={onHide}
             conversationActions={getConversationActions({ hasConversation, clear, openDebugReport })}
         />
     );
@@ -34,10 +36,18 @@ beforeEach(() => jest.clearAllMocks());
 
 describe('LumoPetMenu', () => {
     it.each([
-        [PanelSide.RIGHT, false, ['Move Lumo to the left', 'Dock to side panel']],
-        [PanelSide.LEFT, false, ['Move Lumo to the right', 'Dock to side panel']],
-        [PanelSide.RIGHT, true, ['Move Lumo to the left', 'Dock to side panel', 'New chat', 'Report a problem']],
-        [PanelSide.LEFT, true, ['Move Lumo to the right', 'Dock to side panel', 'New chat', 'Report a problem']],
+        [PanelSide.RIGHT, false, ['Move Lumo to the left', 'Hide Lumo', 'Dock to side panel']],
+        [PanelSide.LEFT, false, ['Move Lumo to the right', 'Hide Lumo', 'Dock to side panel']],
+        [
+            PanelSide.RIGHT,
+            true,
+            ['Move Lumo to the left', 'Hide Lumo', 'Dock to side panel', 'New chat', 'Report a problem'],
+        ],
+        [
+            PanelSide.LEFT,
+            true,
+            ['Move Lumo to the right', 'Hide Lumo', 'Dock to side panel', 'New chat', 'Report a problem'],
+        ],
     ])(
         'stacks the buttons from the head upwards in the same order with the cat on the %s, conversation %s',
         (side, hasConversation, labels) => {
@@ -53,11 +63,12 @@ describe('LumoPetMenu', () => {
                 side={PanelSide.RIGHT}
                 onMove={onMove}
                 onDock={onDock}
+                onHide={onHide}
                 conversationActions={getConversationActions({ hasConversation: true, clear })}
             />
         );
 
-        expect(buttonLabels()).toEqual(['Move Lumo to the left', 'Dock to side panel', 'New chat']);
+        expect(buttonLabels()).toEqual(['Move Lumo to the left', 'Hide Lumo', 'Dock to side panel', 'New chat']);
     });
 
     it.each([
@@ -76,9 +87,11 @@ describe('LumoPetMenu', () => {
         fireEvent.click(screen.getByRole('button', { name: 'Dock to side panel' }));
         fireEvent.click(screen.getByRole('button', { name: 'New chat' }));
         fireEvent.click(screen.getByRole('button', { name: 'Report a problem' }));
+        fireEvent.click(screen.getByRole('button', { name: 'Hide Lumo' }));
 
         expect(onMove).toHaveBeenCalledTimes(1);
         expect(onDock).toHaveBeenCalledTimes(1);
+        expect(onHide).toHaveBeenCalledTimes(1);
         expect(clear).toHaveBeenCalledTimes(1);
         expect(openDebugReport).toHaveBeenCalledTimes(1);
     });

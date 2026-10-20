@@ -5,7 +5,7 @@ import { useLumoAgentDrawer } from '@proton/llm/lib/lumoAgent/ui/lumoAgentDrawer
 import { PanelSide } from '../floating/panelSide';
 import CatSprite from './CatSprite';
 import LumoPet from './LumoPet';
-import { CatPose } from './catPose';
+import { CatJump, CatPose, CatRun } from './catPose';
 
 jest.mock('@proton/llm/lib/lumoAgent/ui/lumoAgentDrawerContext', () => ({ useLumoAgentDrawer: jest.fn() }));
 jest.mock('./CatSprite', () => ({ __esModule: true, default: jest.fn(() => null) }));
@@ -14,21 +14,33 @@ const onToggle = jest.fn();
 const onMove = jest.fn();
 const onDock = jest.fn();
 const onNewChat = jest.fn();
+const onHide = jest.fn();
+const onReveal = jest.fn();
+const onJumpEnd = jest.fn();
 const openDebugReport = jest.fn();
 
 interface Setup {
     isPanelOpen?: boolean;
     side?: PanelSide;
+    run?: CatRun | null;
+    jump?: CatJump | null;
+    isHidden?: boolean;
 }
 
-const pet = ({ isPanelOpen = false, side = PanelSide.RIGHT }: Setup) => {
+const pet = ({ isPanelOpen = false, side = PanelSide.RIGHT, run = null, jump = null, isHidden = false }: Setup) => {
     jest.mocked(useLumoAgentDrawer).mockReturnValue({
         hasConversation: true,
         openDebugReport,
     } as unknown as ReturnType<typeof useLumoAgentDrawer>);
     return (
         <>
-            <LumoPet side={side} isPanelOpen={isPanelOpen} actions={{ onToggle, onMove, onDock, onNewChat }} />
+            <LumoPet
+                side={side}
+                isPanelOpen={isPanelOpen}
+                motion={{ run, jump, isHidden }}
+                actions={{ onToggle, onMove, onDock, onNewChat, onHide, onReveal }}
+                onJumpEnd={onJumpEnd}
+            />
             <button type="button">Elsewhere</button>
         </>
     );
@@ -41,6 +53,8 @@ const renderPet = (setup: Setup = {}) => {
 
 const catButton = () => screen.getByRole('button', { name: 'Toggle Lumo' });
 const dock = (container: HTMLElement) => container.querySelector('.lumo-pet-dock');
+const catSlot = (container: HTMLElement) => container.querySelector('.lumo-pet-cat-slot')!;
+const menu = (container: HTMLElement) => container.querySelector('.lumo-pet-menu');
 const shownSprite = () => jest.mocked(CatSprite).mock.lastCall![0];
 const shownPose = () => shownSprite().pose;
 
@@ -172,5 +186,62 @@ describe('LumoPet', () => {
         expect(handler).toHaveBeenCalledTimes(1);
         expect(shownPose()).toBe(CatPose.SIT);
         expect(dock(container)).not.toHaveClass('lumo-pet-dock--menu-open');
+    });
+
+    it('drops the hover and shuts the menu when the cat hides from the pointer', () => {
+        const { container } = renderPet();
+        fireEvent.pointerEnter(dock(container)!);
+
+        fireEvent.click(screen.getByRole('button', { name: 'Hide Lumo' }));
+
+        expect(onHide).toHaveBeenCalledTimes(1);
+        expect(shownPose()).toBe(CatPose.SIT);
+        expect(dock(container)).not.toHaveClass('lumo-pet-dock--menu-open');
+    });
+
+    it('shows only the ears while hidden, and reveals itself on a click without the menu', () => {
+        const { container } = renderPet({ isHidden: true });
+
+        fireEvent.click(screen.getByRole('button', { name: 'Show Lumo' }));
+
+        expect(onReveal).toHaveBeenCalledTimes(1);
+        expect(onToggle).not.toHaveBeenCalled();
+        expect(catSlot(container)).toHaveClass('lumo-pet-cat-slot--hidden');
+        expect(menu(container)).not.toBeInTheDocument();
+    });
+
+    it.each<[string, Setup]>([
+        ['hidden', { isHidden: true }],
+        ['running', { run: CatRun.GALLOP }],
+        ['jumping', { jump: CatJump.IN }],
+    ])('leaves the menu out while %s, keeping the empty box click-through under the pointer', (_, setup) => {
+        const { container } = renderPet(setup);
+
+        fireEvent.pointerEnter(dock(container)!);
+
+        expect(menu(container)).not.toBeInTheDocument();
+        expect(dock(container)).not.toHaveClass('lumo-pet-dock--menu-open');
+    });
+
+    it.each([
+        [PanelSide.LEFT, CatRun.GALLOP, true],
+        [PanelSide.LEFT, null, false],
+        [PanelSide.RIGHT, CatRun.GALLOP, false],
+    ])('on the %s with run %s, mirrors the cat: %s', (side, run, isMirrored) => {
+        renderPet({ side, run });
+
+        expect(shownSprite().isMirrored).toBe(isMirrored);
+    });
+
+    it('plays the jump on its slot and reports only the slot animation ending', () => {
+        const { container } = renderPet({ jump: CatJump.OUT });
+        expect(shownPose()).toBe(CatPose.JUMP_OUT);
+        expect(catSlot(container)).toHaveClass('lumo-pet-cat-slot--jump-out');
+
+        fireEvent.animationEnd(catButton());
+        expect(onJumpEnd).not.toHaveBeenCalled();
+
+        fireEvent.animationEnd(catSlot(container));
+        expect(onJumpEnd).toHaveBeenCalledTimes(1);
     });
 });
