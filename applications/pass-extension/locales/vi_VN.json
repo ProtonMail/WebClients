@@ -25,12 +25,6 @@
       ]
     },
     "Action": {
-      "${ PASS_SHORT_APP_NAME } for Android": [
-        "${ PASS_SHORT_APP_NAME } cho Android"
-      ],
-      "${ PASS_SHORT_APP_NAME } for iOS": [
-        "${ PASS_SHORT_APP_NAME } cho iOS"
-      ],
       "Accept": [
         "Chấp nhận"
       ],
@@ -327,6 +321,12 @@
       ],
       "Do not suggest on this website": [
         "Đừng đề xuất trên trang web này"
+      ],
+      "Download for macOS": [
+        "Tải xuống cho macOS"
+      ],
+      "Download for Windows": [
+        "Tải xuống cho Windows"
       ],
       "Download this CSV template": [
         "Tải xuống mẫu CSV"
@@ -824,6 +824,11 @@
       ],
       "Vault": [
         "Kho"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } kết quả khác không hiển thị"
       ]
     },
     "Button": {
@@ -1568,6 +1573,14 @@
         "Tên người dùng"
       ]
     },
+    "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Đã tìm thấy ${ itemsCount } gợi ý, sử dụng bàn phím để điều hướng."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Dùng các phím Up và Down để truy cập và tìm kiếm các gợi ý sau khi nhập đầu vào. Nhấn Enter để xác nhận lựa chọn, hoặc Escape để đóng hộp các gợi ý."
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "Đã bỏ qua mục \"${ payload.itemName }\""
@@ -2221,7 +2234,7 @@
         "Đang chuyển tất cả mục từ \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Việc chuyển các mục sang kho khác sẽ xóa các liên kết bảo mật của chúng."
+        "Việc chuyển một mục sang kho khác sẽ xóa các liên kết bảo mật của mục đó."
       ],
       "Moving items": [
         "Đang chuyển mục"
@@ -4864,6 +4877,9 @@
       "Excluded items": [
         "Các mục bị bỏ qua"
       ],
+      "Export": [
+        "Xuất"
+      ],
       "Fill & copy password": [
         "Điền và sao chép mật khẩu"
       ],
@@ -4899,6 +4915,9 @@
       ],
       "Import - ${ date }": [
         "Nhập - ${ date }"
+      ],
+      "Import failed": [
+        "Không nhập được"
       ],
       "Import to vault(s)": [
         "Nhập vào (các) kho"

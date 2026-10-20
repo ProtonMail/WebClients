@@ -25,12 +25,6 @@
       ]
     },
     "Action": {
-      "${ PASS_SHORT_APP_NAME } for Android": [
-        "${ PASS_SHORT_APP_NAME } para Android"
-      ],
-      "${ PASS_SHORT_APP_NAME } for iOS": [
-        "${ PASS_SHORT_APP_NAME } para iOS"
-      ],
       "Accept": [
         "Aceptar"
       ],
@@ -327,6 +321,12 @@
       ],
       "Do not suggest on this website": [
         "No sugerir en este sitio web"
+      ],
+      "Download for macOS": [
+        "Descargar para macOS"
+      ],
+      "Download for Windows": [
+        "Descargar para Windows"
       ],
       "Download this CSV template": [
         "Descargar esta plantilla CSV"
@@ -826,6 +826,12 @@
       ],
       "Vault": [
         "Caja fuerte"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } resultado más no mostrado",
+        "${ hiddenResultsCount } más resultados no mostrados"
       ]
     },
     "Button": {
@@ -1585,6 +1591,15 @@
         "Nombre de usuario"
       ]
     },
+    "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Se ha encontrado ${ itemsCount } sugerencia. Usa el teclado para navegar.",
+        "Se han encontrado ${ itemsCount } sugerencias. Usa el teclado para navegar."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Utiliza las teclas Arriba y Abajo para acceder y navegar por las sugerencias después de la entrada. Pulsa Entrar para confirmar tu elección o Escape para cerrar el cuadro de sugerencias."
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "Se ha descartado el elemento \"${ payload.itemName }\"."
@@ -2254,8 +2269,7 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros.",
-        "Mover elementos a otra caja fuerte eliminará sus enlaces seguros."
+        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo elementos"
@@ -4927,6 +4941,9 @@
       "Excluded items": [
         "Elementos excluidos"
       ],
+      "Export": [
+        "Exportar"
+      ],
       "Fill & copy password": [
         "Rellenar y copiar la contraseña"
       ],
@@ -4962,6 +4979,9 @@
       ],
       "Import - ${ date }": [
         "Importación - ${ date }"
+      ],
+      "Import failed": [
+        "Error en la importación"
       ],
       "Import to vault(s)": [
         "Importar a las cajas fuertes"

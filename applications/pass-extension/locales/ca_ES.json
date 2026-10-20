@@ -25,12 +25,6 @@
       ]
     },
     "Action": {
-      "${ PASS_SHORT_APP_NAME } for Android": [
-        "${ PASS_SHORT_APP_NAME } per Android"
-      ],
-      "${ PASS_SHORT_APP_NAME } for iOS": [
-        "${ PASS_SHORT_APP_NAME } per iOS"
-      ],
       "Accept": [
         "Accepta"
       ],
@@ -38,7 +32,7 @@
         "Accepta i mostra l'element"
       ],
       "Accept invitation": [
-        "Accepta invitació"
+        "Accepta la invitació"
       ],
       "Account": [
         "Compte"
@@ -238,6 +232,9 @@
       "Create a ${ BRAND_NAME } account": [
         "Crear un compte de ${ BRAND_NAME }"
       ],
+      "Create a login": [
+        "Creeu un inici de sessió"
+      ],
       "Create a new vault": [
         "Crea una caixa forta nova"
       ],
@@ -339,6 +336,15 @@
       ],
       "Do not suggest on this website": [
         "No facis suggeriments en aquest lloc web"
+      ],
+      "Download for Linux": [
+        "Descarregar-ho per a Linux"
+      ],
+      "Download for macOS": [
+        "Descarrega per a macOS"
+      ],
+      "Download for Windows": [
+        "Descarrega per a Windows"
       ],
       "Download this CSV template": [
         "Descarrega aquesta plantilla CSV"
@@ -493,6 +499,9 @@
       "Maximum views": [
         "Màxim de visualitzacions"
       ],
+      "More details about how to export": [
+        "Més detalls sobre com exportar"
+      ],
       "More info": [
         "Més informació"
       ],
@@ -540,6 +549,9 @@
       ],
       "Open navigation": [
         "Obre la navegació"
+      ],
+      "Open platform selection dropdown": [
+        "Obriu el menú desplegable de selecció de plataformes"
       ],
       "Organize vaults": [
         "Organitza les caixes fortes"
@@ -715,6 +727,9 @@
       "Sign out": [
         "Tanca la sessió"
       ],
+      "Skip for now": [
+        "Ometeu-ho per ara"
+      ],
       "Start from scratch": [
         "Comença des de zero"
       ],
@@ -847,6 +862,12 @@
       ],
       "Vault": [
         "Caixa forta"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } resultat més no mostrat",
+        "${ hiddenResultsCount } resultats més no mostrats"
       ]
     },
     "Browser": {
@@ -1030,6 +1051,9 @@
       ],
       "Authentication failure: ${ message }": [
         "S'ha produït un error d'autenticació: ${ message }"
+      ],
+      "Biometric authentication cancelled.": [
+        "S'ha cancel·lat l'autenticació biomètrica."
       ],
       "Biometric authentication failed.": [
         "L'autenticació biomètrica ha fallat."
@@ -1639,6 +1663,182 @@
         "Nom d'usuari"
       ]
     },
+    "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "S'ha trobat ${ itemsCount } suggeriment. Utilitzeu el teclat per a navegar.",
+        "S'han trobat ${ itemsCount } suggeriments. Utilitzeu el teclat per a navegar."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Utilitzeu les tecles de fletxa amunt i fletxa avall per accedir i navegar pels suggeriments després de l'entrada. Premeu Retorn per confirmar la vostra elecció, o Esc per tancar el quadre de suggeriments."
+      ]
+    },
+    "Import Tutorial": {
+      "${ name } saves your passwords in the ${ passwords } app. Open it and go to ${ file } → ${ exportAll }.": [
+        "${ name } desa les vostres contrasenyes a l'aplicació ${ passwords }. Obriu-la i aneu a ${ file } → ${ exportAll }."
+      ],
+      "Account & Data": [
+        "Compte i dades"
+      ],
+      "Advanced Options": [
+        "Opcions avançades"
+      ],
+      "As a security measure, LastPass will email you to confirm the request. Open the email and click ${ continueExport }.": [
+        "Com a mesura de seguretat, LastPass us enviarà un correu electrònic per confirmar la sol·licitud. Obriu el correu i cliqueu ${ continueExport }."
+      ],
+      "At the confirmation screen, log back into your ${ name } Vault and to ${ advancedOptions } → ${ manageYourVault } → ${ exportLabel } again.": [
+        "A la pantalla de confirmació, torneu a iniciar sessió a la vostra caixa forta de ${ name } i torneu a anar a ${ advancedOptions } → ${ manageYourVault } →${ exportLabel }."
+      ],
+      "Autofill and passwords": [
+        "Emplenament automàtic i contrasenyes"
+      ],
+      "Choose ${ formatJson } as the file format, click ${ exportLabel } and confirm with your master password.": [
+        "Trieu ${ formatJson } com a format del fitxer, cliqueu ${ exportLabel } i confirmeu-ho amb la vostra contrasenya mestra."
+      ],
+      "Choose JSON downloads": [
+        "Trieu les descàrregues en JSON"
+      ],
+      "Choose the file format → Select ${ exportLabel }.": [
+        "Trieu el format del fitxer → Seleccioneu ${ exportLabel }."
+      ],
+      "Continue export": [
+        "Continua l'exportació"
+      ],
+      "Download file": [
+        "Descarregar el fitxer"
+      ],
+      "Enter your 1Password master password, ensure ${ format1pux } is selected, and click ${ exportData }.": [
+        "Introduïu la vostra contrasenya mestra de 1Password, assegureu-vos que ${ format1pux } estigui seleccionat i cliqueu ${ exportData }."
+      ],
+      "Export": [
+        "Exportar-ho"
+      ],
+      "Export All Passwords to File": [
+        "Exportar totes les contrasenyes a un fitxer"
+      ],
+      "Export Data": [
+        "Exporta les dades"
+      ],
+      "Export data": [
+        "Exportar les dades"
+      ],
+      "Export file format: 1PUX": [
+        "Format del fitxer d'exportació: 1PUX"
+      ],
+      "Export items": [
+        "Exporta els elements"
+      ],
+      "Export passwords": [
+        "Exportar les contrasenyes"
+      ],
+      "Export to CSV": [
+        "Exportar-ho a CSV"
+      ],
+      "Export to TXT": [
+        "Exportar-ho a TXT"
+      ],
+      "File": [
+        "Fitxer"
+      ],
+      "Go to ${ exportPasswords } and select ${ downloadFile }.": [
+        "Aneu a ${ exportPasswords } i seleccioneu ${ downloadFile }."
+      ],
+      "Go to ${ passwords }.": [
+        "Aneu a ${ passwords }."
+      ],
+      "Go to the settings to locate the export action.": [
+        "Aneu a les preferències per trobar l'acció d'exportació."
+      ],
+      "Go to ☰ → ⚙ ${ settings } → Click ${ downloadFile }.": [
+        "Aneu a ☰ → ⚙ ${ settings } → Cliqueu ${ downloadFile }."
+      ],
+      "Google Password Manager": [
+        "Gestor de contrasenyes de Google"
+      ],
+      "Identify your password manager.": [
+        "Identifiqueu el vostre gestor de contrasenyes."
+      ],
+      "Manage your vault": [
+        "Gestioneu la vostra caixa forta"
+      ],
+      "Microsoft password manager": [
+        "Gestor de contrasenyes de Microsoft"
+      ],
+      "More actions": [
+        "Més accions"
+      ],
+      "Navigate to ${ settings } tab.": [
+        "Navegueu a la pestanya ${ settings }."
+      ],
+      "Open ${ name } and go to ${ advancedOptions } → ${ manageYourVault } → ${ exportLabel }.": [
+        "Obriu ${ name } i aneu a ${ advancedOptions } → ${ manageYourVault } → ${ exportLabel }."
+      ],
+      "Open ${ name } and go to ${ file } → ${ exportLabel } → your 1Password username.": [
+        "Obriu ${ name } i aneu a ${ file } → ${ exportLabel } → el vostre nom d'usuari de 1Password."
+      ],
+      "Open ${ name } and go to ${ menu } → ${ option }.": [
+        "Obriu ${ name } i aneu a ${ menu } → ${ option }."
+      ],
+      "Open ${ name } and go to ⋮ → ${ passwordsAndAutofill } → ${ googlePasswordManager }.": [
+        "Obriu ${ name } i aneu a: → ${ passwordsAndAutofill } → ${ googlePasswordManager }."
+      ],
+      "Open ${ name } and go to ☰ → ${ settings } → ${ autoFill }.": [
+        "Obriu ${ name } i aneu a ☰ → ${ settings } → ${ autoFill }."
+      ],
+      "Open ${ name } and select ${ menu } → ${ option }.": [
+        "Obriu ${ name } i seleccioneu ${ menu } → ${ option }."
+      ],
+      "Open ${ name } and select ${ settings }.": [
+        "Obriu ${ name } i seleccioneu ${ settings }."
+      ],
+      "Open ${ name } and select ⋯.": [
+        "Obriu ${ name } i seleccioneu ⋯."
+      ],
+      "Open ${ name } and select ☰ → ${ passwords }.": [
+        "Obriu ${ name } i seleccioneu ☰ → ${ passwords }."
+      ],
+      "Passwords": [
+        "Contrasenyes"
+      ],
+      "Passwords and Autofill": [
+        "Contrasenyes i emplenament automàtic"
+      ],
+      "Passwords and autofill": [
+        "Contrasenyes i emplenament automàtic"
+      ],
+      "Select ${ exportLabel } → ${ chooseJson } → ${ exportAgain }.": [
+        "Seleccioneu ${ exportLabel } → ${ chooseJson } → ${ exportAgain }."
+      ],
+      "Select ${ menu } → ${ option }.": [
+        "Seleccioneu ${ menu } → ${ option }."
+      ],
+      "Select ${ option }.": [
+        "Seleccioneu ${ option }."
+      ],
+      "Select the export format CSV.": [
+        "Seleccioneu el format d'exportació CSV."
+      ],
+      "Select ⋯ → ${ exportPasswords }.": [
+        "Seleccioneu ⋯ → ${ exportPasswords }."
+      ],
+      "Settings": [
+        "Preferències"
+      ],
+      "Submit": [
+        "Enviar-ho"
+      ],
+      "This time, you’ll be asked to re-confirm your ${ name } username and password. Click ${ submit }.": [
+        "En aquesta ocasió, se us demanarà que torneu a confirmar el vostre nom d'usuari i contrasenya de ${ name }. Cliqueu ${ submit }."
+      ],
+      "Vault": [
+        "Caixa Forta"
+      ],
+      "Vault options": [
+        "Opcions de la caixa forta"
+      ],
+      "your username": [
+        "el vostre nom d'usuari"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "S'ha descartat l'element de «${ payload.itemName }»"
@@ -1665,6 +1865,9 @@
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } reenviat",
         "${ forwardedEmailsCount } reenviats"
+      ],
+      "${ imported } of ${ total } (${ percentage }%)": [
+        "${ imported } de ${ total } (${ percentage }%)"
       ],
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } vol compartir un element amb un grup que administreu."
@@ -2033,6 +2236,9 @@
       "Domain: ${ domainPath } or @": [
         "Domini: ${ domainPath } o @"
       ],
+      "Don’t close this tab": [
+        "No tanqueu aquesta pestanya"
+      ],
       "Download pass-cli from ${ passCliLink }.": [
         "Descarregueu-vos pass-cli des de ${ passCliLink }."
       ],
@@ -2230,6 +2436,9 @@
       "invites you to access items in": [
         "us convida a accedir a elements a"
       ],
+      "iOS and Android Apps": [
+        "Aplicacions per iOS i Android"
+      ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Sembla que ja heu iniciat sessió a ${ PASS_APP_NAME }. Si esteu intentant iniciar sessió amb un altre compte, tanqueu primer la sessió de l'extensió."
       ],
@@ -2329,8 +2538,7 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -2370,6 +2578,9 @@
       ],
       "No login found": [
         "No s'ha trobat cap inici de sessió."
+      ],
+      "No matching service. Try a different name.": [
+        "No s'ha trobat cap servei coincident. Proveu amb un nom diferent."
       ],
       "No network connection": [
         "No hi ha connexió de xarxa."
@@ -2417,6 +2628,12 @@
       ],
       "Open the ${ PASS_APP_NAME } popup": [
         "Obriu la finestra emergent de ${ PASS_APP_NAME }"
+      ],
+      "Open the extension here.": [
+        "Obriu l'extensió aquí."
+      ],
+      "Open the extension to unlock it": [
+        "Obriu l'extensió per desbloquejar-la"
       ],
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Obriu la configuració de Safari, busqueu ${ PASS_APP_NAME }, aneu a \"Permisos\" i activeu-hi els corresponents al lloc."
@@ -2664,6 +2881,12 @@
       ],
       "Save passkey": [
         "Desa la clau d'accés"
+      ],
+      "Scan to download": [
+        "Escanegeu-lo per descarregar-lo"
+      ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "Escaneja per descarregar ${ PASS_APP_NAME } per a iOS i Android"
       ],
       "Secure links": [
         "Enllaços segurs"
@@ -3762,6 +3985,9 @@
       "LinkedIn account": [
         "Compte de LinkedIn"
       ],
+      "Linux": [
+        "Linux"
+      ],
       "Login": [
         "Inici de sessió"
       ],
@@ -3770,6 +3996,9 @@
       ],
       "Logins": [
         "Inicis de sessió"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Mailboxes": [
         "Bústies de correu"
@@ -4086,6 +4315,9 @@
       "Server": [
         "Servidor"
       ],
+      "Service": [
+        "Servei"
+      ],
       "Settings": [
         "Preferències"
       ],
@@ -4304,6 +4536,9 @@
       ],
       "WiFi network": [
         "Xarxa wifi"
+      ],
+      "Windows": [
+        "Windows"
       ],
       "Work details": [
         "Detalls de la feina"
@@ -4597,6 +4832,9 @@
       ],
       "E.g., ": [
         "Ex., "
+      ],
+      "E.g.: Google": [
+        "per exemple: Google"
       ],
       "Email address": [
         "Adreça de correu electrònic"
@@ -4901,6 +5139,9 @@
       "Add mailbox": [
         "Afegeix una bústia de correu"
       ],
+      "Add one account": [
+        "Afegeix un compte"
+      ],
       "Adjust autofill behaviors to change where logins are suggested.": [
         "Ajusta els comportaments de l'emplenament automàtic per canviar on se suggereixen els inicis de sessió."
       ],
@@ -4936,6 +5177,9 @@
       ],
       "Browser permission required": [
         "Es requereix permís del navegador"
+      ],
+      "Browsers": [
+        "Navegadors"
       ],
       "Cancel changing your email?": [
         "Voleu cancel·lar el canvi de correu electrònic?"
@@ -4984,6 +5228,9 @@
       ],
       "Create subfolder in \"${ folderName }\"": [
         "Crear una subcarpeta a «${ folderName }»"
+      ],
+      "Create your first login": [
+        "Creeu el vostre primer inici de sessió"
       ],
       "Created": [
         "Creat"
@@ -5082,14 +5329,35 @@
       "Excluded items": [
         "Elements exclosos"
       ],
+      "Export": [
+        "Exporta"
+      ],
+      "Export from ${ provider.title }": [
+        "Exportar de ${ provider.title }"
+      ],
       "Fill & copy password": [
         "Emplena i copia la contrasenya"
+      ],
+      "Fill in your details": [
+        "Empleneu les vostres dades"
       ],
       "Fill password": [
         "Emplena la contrasenya"
       ],
+      "First login created": [
+        "S'ha creat el primer inici de sessió"
+      ],
       "Folder options": [
         "Opcions de carpeta"
+      ],
+      "For security purposes, delete your exported file.": [
+        "Per motius de seguretat, elimineu el fitxer exportat."
+      ],
+      "Get mobile and desktop apps": [
+        "Obtingueu les aplicacions per mòbil i escriptori"
+      ],
+      "Get mobile apps": [
+        "Obtingueu aplicacions mòbils"
       ],
       "Get Started": [
         "Comenceu"
@@ -5118,8 +5386,29 @@
       "Import - ${ date }": [
         "Importació - ${ date }"
       ],
+      "Import completed with warnings": [
+        "S'ha completat la importació amb advertències"
+      ],
+      "Import failed": [
+        "Error en la importació"
+      ],
+      "Import successful": [
+        "S'ha importat correctament"
+      ],
       "Import to vault(s)": [
         "Importa a les caixes fortes"
+      ],
+      "Import your passwords in less than a minute": [
+        "Importeu les vostres contrasenyes en menys d'un minut"
+      ],
+      "Important: Once your data has been imported, delete the exported file.": [
+        "Important: Un cop hàgiu importat les vostres dades, elimineu el fitxer exportat."
+      ],
+      "Imported from:": [
+        "Importat des de:"
+      ],
+      "Imported items:": [
+        "Elements importats:"
       ],
       "Importing your data": [
         "Importació de les vostres dades"
@@ -5195,6 +5484,9 @@
       "Move all items?": [
         "Voleu moure tots els elements?"
       ],
+      "Move everything at once": [
+        "Moveu-ho tot de cop"
+      ],
       "Move item to \"${ target }\"": [
         "Moure l'element a «${ target }»"
       ],
@@ -5231,6 +5523,9 @@
       "No shared secure links": [
         "Sense enllaços segurs compartits"
       ],
+      "None of your items could be imported. See the details below.": [
+        "No s'ha pogut importar cap element vostre. Consulteu els detalls a continuació."
+      ],
       "Open pagination": [
         "Obrir paginació"
       ],
@@ -5248,6 +5543,9 @@
       ],
       "Password Health": [
         "Salut de les contrasenyes"
+      ],
+      "Password managers": [
+        "Gestors de contrasenyes"
       ],
       "Pause monitoring?": [
         "Voleu posar en pausa el monitoratge?"
@@ -5323,6 +5621,9 @@
       "Select the default domain for aliases": [
         "Selecciona el domini predeterminat per als àlies"
       ],
+      "Select your password manager": [
+        "Seleccioneu el gestor de contrasenyes"
+      ],
       "Set access level": [
         "Estableix el nivell d`accés"
       ],
@@ -5347,8 +5648,14 @@
       "Shared via": [
         "Compartit mitjançant"
       ],
+      "Some of your items could not be imported. See the details below.": [
+        "No s'ha pogut importar alguns dels vostres elements. Consulteu els detalls a continuació."
+      ],
       "SPF (Optional)": [
         "SPF (opcional)"
+      ],
+      "Starting the extension": [
+        "S'està iniciant l'extensió"
       ],
       "Status": [
         "Estat"
@@ -5395,6 +5702,12 @@
       "Upgrade to check for compromised passwords": [
         "Milloreu el pla per comprovar les contrasenyes en risc"
       ],
+      "Upload": [
+        "Carrega"
+      ],
+      "Upload your data": [
+        "Carregueu les vostres dades"
+      ],
       "URL matching": [
         "Coincidència d'URL"
       ],
@@ -5416,6 +5729,9 @@
       "Want to learn more?": [
         "Voleu saber-ne més?"
       ],
+      "We'll guide you through the process. First choose where you currently store your passwords.": [
+        "Us guiarem a través del procés. Primer trieu on emmagatzemeu actualment les vostres contrasenyes."
+      ],
       "Weak password": [
         "Contrasenya feble"
       ],
@@ -5433,6 +5749,12 @@
       ],
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Quina diferència hi ha entre una nota de ${ PASS_SHORT_APP_NAME } i una nota de SimpleLogin?"
+      ],
+      "Which service do you want to create the login for?": [
+        "Per a quin servei voleu crear el compte d'accés?"
+      ],
+      "You are ready to get the most out of ${ PASS_APP_NAME }.": [
+        "Ja ho teniu tot a punt per treure el màxim profit de ${ PASS_APP_NAME }."
       ],
       "You don't have any vaults": [
         "No teniu cap caixa forta."
@@ -5454,6 +5776,9 @@
       ],
       "Your welcome gift": [
         "El vostre regal de benvinguda"
+      ],
+      "You’re a step away from autofill magic!": [
+        "Esteu a un pas de la màgia de l'emplenament automàtic!"
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Esteu a punt de suprimir permanentment ${ aliasCount } àlies.",
