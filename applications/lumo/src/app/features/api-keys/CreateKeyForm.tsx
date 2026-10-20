@@ -8,7 +8,7 @@ import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { InputFieldTwo, Select } from '@proton/components/index';
-import { getPrimaryKey } from '@proton/shared/lib/keys';
+import { getPrimaryKey } from '@proton/shared/lib/keys/getPrimaryKey';
 
 import {
     type CreatePersonalAccessTokenResponse,

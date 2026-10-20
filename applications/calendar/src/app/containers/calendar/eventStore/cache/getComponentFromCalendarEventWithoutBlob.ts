@@ -5,9 +5,9 @@ import getRecurrenceIdValueFromTimestamp from '@proton/shared/lib/calendar/recur
 import { fromRruleString } from '@proton/shared/lib/calendar/vcal';
 import { getDateProperty, getDateTimeProperty } from '@proton/shared/lib/calendar/vcalConverter';
 import { convertTimestampToTimezone, fromUTCDate } from '@proton/shared/lib/date/timezone';
-import type { Nullable } from '@proton/shared/lib/interfaces';
-import type { CalendarEventWithoutBlob } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarEventWithoutBlob } from '@proton/shared/lib/interfaces/calendar/Event';
 import type { VcalRrulePropertyValue } from '@proton/shared/lib/interfaces/calendar/VcalModel';
+import type { Nullable } from '@proton/shared/lib/interfaces/utils';
 
 import type { MetadataVcalVeventComponent } from '../interface';
 

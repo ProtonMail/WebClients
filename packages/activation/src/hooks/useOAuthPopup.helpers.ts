@@ -1,6 +1,6 @@
 import { GOOGLE_OAUTH_PATH } from '@proton/shared/lib/api/activation';
 import { createUrl } from '@proton/shared/lib/fetch/helpers';
-import type { ApiEnvironmentConfig } from '@proton/shared/lib/interfaces';
+import type { ApiEnvironmentConfig } from '@proton/shared/lib/interfaces/ApiEnvironmentConfig';
 
 import { EASY_SWITCH_FEATURES, ImportProvider, ImportType, OAUTH_PROVIDER } from '../interface';
 import { G_OAUTH_REDIRECT_PATH, M_OAUTH_REDIRECT_PATH, O_OAUTH_REDIRECT_PATH, Z_OAUTH_REDIRECT_PATH } from '../path';

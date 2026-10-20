@@ -2,7 +2,7 @@ import { type DependencyList, useRef } from 'react';
 
 import { type HotkeyTuple, useHotkeys } from '@proton/components';
 import { isMac } from '@proton/shared/lib/helpers/browser';
-import { KeyboardKey } from '@proton/shared/lib/interfaces';
+import { KeyboardKey } from '@proton/shared/lib/interfaces/Hotkeys';
 
 import { CAMERA_SHORTCUT_KEY, MICROPHONE_SHORTCUT_KEY } from '../utils/mediaShortcuts';
 

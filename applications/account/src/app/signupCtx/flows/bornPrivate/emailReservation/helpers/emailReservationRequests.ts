@@ -9,7 +9,7 @@ import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import { APPS, CLIENT_TYPES } from '@proton/shared/lib/constants';
 import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import { srpAuth, srpVerify } from '@proton/shared/lib/srp';
 
 import type { ReservedAccount } from '../../emailReservation/interface';

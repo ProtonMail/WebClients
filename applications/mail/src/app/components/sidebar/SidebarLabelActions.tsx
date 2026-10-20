@@ -7,7 +7,8 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import LabelsUpsellModal from '@proton/components/components/upsell/modals/LabelsUpsellModal';
 import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
 import { MAIL_UPSELL_PATHS, MAX_FOLDER_NESTING_LEVEL } from '@proton/shared/lib/constants';
-import type { Folder, Label } from '@proton/shared/lib/interfaces';
+import type { Folder } from '@proton/shared/lib/interfaces/Folder';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
 
 import CreateFolderButton from './CreateFolderButton';
 import { useLabelActionsContext } from './EditLabelContext';

@@ -7,8 +7,8 @@ import { useLoading } from '@proton/hooks';
 import { getChecklist } from '@proton/shared/lib/api/checklist';
 import { APPS } from '@proton/shared/lib/constants';
 import { getMailChecklistType } from '@proton/shared/lib/helpers/checklist';
-import type { ChecklistApiResponse, ChecklistKey } from '@proton/shared/lib/interfaces';
-import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
+import type { ChecklistApiResponse, ChecklistKey } from '@proton/shared/lib/interfaces/Checklist';
+import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces/Checklist';
 
 import type { Event } from '../../../models/event';
 

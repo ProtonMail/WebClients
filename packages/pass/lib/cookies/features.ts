@@ -1,4 +1,5 @@
-import { addDays, endOfDay } from '@proton/shared/lib/date-fns-utc';
+import { addDays } from '@proton/shared/lib/date-fns-utc';
+import endOfDay from '@proton/shared/lib/date-fns-utc/endOfDay';
 
 import type { PassFeature } from '../../types/api/features';
 import { getPassCookie, setPassCookie } from './cookies';

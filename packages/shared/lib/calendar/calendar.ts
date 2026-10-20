@@ -3,8 +3,8 @@ import unary from '@proton/utils/unary';
 
 import { updateCalendarSettings, updateMember } from '../api/calendars';
 import { hasBit, toggleBit } from '../helpers/bitset';
-import type { Api } from '../interfaces';
 import type { Address } from '../interfaces/Address';
+import type { Api } from '../interfaces/Api';
 import type { CalendarCreateData } from '../interfaces/calendar/Api';
 import type {
     Calendar,

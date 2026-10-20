@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from 'react';
 
-import type { CalendarSelectOption } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarSelectOption } from '@proton/shared/lib/interfaces/calendar/Calendar';
 
 import Option from '../option/Option';
 import SelectTwo from '../selectTwo/SelectTwo';

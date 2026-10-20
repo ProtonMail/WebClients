@@ -9,7 +9,7 @@ import { CacheType } from '@proton/redux-utilities/interface';
 import { cacheHelper, createPromiseMapStore } from '@proton/redux-utilities/promiseStore';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { SECOND } from '@proton/shared/lib/constants';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { MeetingInfoResponse } from '@proton/shared/lib/interfaces/Meet';
 
 import { INVALID_SRP_PARAMS_ERROR_CODE } from '../../api/constants';

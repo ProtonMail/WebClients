@@ -21,7 +21,7 @@ import type {
 import { isCurrencySupportedByMethod } from '@proton/payments/core/payment-methods/currencyOverride';
 import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 const ACCOUNT_HOLDER_NAME_DEBOUNCE_MS = 250;
 

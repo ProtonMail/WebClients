@@ -2,18 +2,17 @@ import { toPublicKeyReference } from '@protontech/crypto';
 
 import { createAddressKeyRoute, createAddressKeyRouteV2 } from '../../api/keys';
 import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '../../constants';
+import type { Address } from '../../interfaces/Address';
+import type { Api } from '../../interfaces/Api';
 import {
     type ActiveAddressKeysByVersion,
     type ActiveKey,
     type ActiveKeyWithVersion,
-    type Address,
-    type Api,
-    type KeyGenConfig,
-    type KeyGenConfigV6,
     type KeyPair,
-    type KeyTransparencyVerify,
     isActiveKeyV6,
-} from '../../interfaces';
+} from '../../interfaces/Key';
+import type { KeyGenConfig, KeyGenConfigV6 } from '../../interfaces/KeyGenConfig';
+import type { KeyTransparencyVerify } from '../../interfaces/KeyTransparency';
 import { generateAddressKey, getNewAddressKeyToken } from '../addressKeys';
 import { getActiveKeyObject, getNormalizedActiveAddressKeys } from '../getActiveKeys';
 import { getDefaultKeyFlags } from '../keyFlags';

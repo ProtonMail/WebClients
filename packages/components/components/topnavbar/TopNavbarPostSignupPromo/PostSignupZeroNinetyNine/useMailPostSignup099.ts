@@ -5,7 +5,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import { FeatureCode, useFeature } from '@proton/features';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
-import { domIsBusy } from '@proton/shared/lib/busy';
+import { domIsBusy } from '@proton/shared/lib/busy/busy';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import type { OfferHookReturnValue } from '../common/helpers/interface';

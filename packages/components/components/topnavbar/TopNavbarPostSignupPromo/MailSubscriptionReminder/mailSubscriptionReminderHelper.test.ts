@@ -1,7 +1,8 @@
 import { subDays } from 'date-fns';
 
 import { APPS } from '@proton/shared/lib/constants';
-import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 
 import { AUTOMATIC_OFFER_STATE } from '../PostSignupOneDollar/interface';
 import { getIsUserEligibleForSubscriptionReminder } from './mailSubscriptionReminderHelper';

@@ -9,7 +9,7 @@ import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButto
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { MX_STATE } from '@proton/shared/lib/interfaces';
+import { MX_STATE } from '@proton/shared/lib/interfaces/Domain';
 
 import type { ApiImporterOrganizationUser } from '../../../api/api.interface';
 import { ApiImporterOrganizationState, type ApiImporterProduct } from '../../../api/api.interface';

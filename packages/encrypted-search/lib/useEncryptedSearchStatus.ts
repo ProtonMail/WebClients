@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { SentryCommonInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
-import type { DecryptedKey } from '@proton/shared/lib/interfaces';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 
 import { INDEXING_STATUS, defaultESStatus } from './constants';
 import { getIndexKey } from './esHelpers';

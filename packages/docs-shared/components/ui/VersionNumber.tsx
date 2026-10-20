@@ -1,4 +1,4 @@
-import type { Environment } from '@proton/shared/lib/interfaces'
+import type { Environment } from '@proton/shared/lib/interfaces/Environment'
 import type { ComponentPropsWithoutRef } from 'react'
 
 const envMap = {

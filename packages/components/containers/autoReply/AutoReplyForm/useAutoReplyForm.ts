@@ -14,7 +14,7 @@ import {
     toLocalDate,
     toUTCDate,
 } from '@proton/shared/lib/date/timezone';
-import type { AutoResponder as tsAutoResponder } from '@proton/shared/lib/interfaces';
+import type { AutoResponder as tsAutoResponder } from '@proton/shared/lib/interfaces/MailSettings';
 
 import { getDurationOptions, getMatchingTimezone } from '../utils';
 import type { AutoReplyFormDate, AutoReplyFormModel } from './interfaces';

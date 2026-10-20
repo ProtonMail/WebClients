@@ -1,4 +1,4 @@
-import type { User } from '@proton/shared/lib/interfaces';
+import type { User } from '@proton/shared/lib/interfaces/User';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 
 import { DrivePerformanceMetrics } from './drivePerformanceMetrics';

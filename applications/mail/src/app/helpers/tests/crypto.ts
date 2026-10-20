@@ -5,8 +5,9 @@ import { getModelState } from '@proton/account/tests';
 import type { MessageKeys } from '@proton/mail/store/messages/messagesTypes';
 import { generatePassphrase } from '@proton/shared/lib/calendar/crypto/keys/calendarKeys';
 import { KEYGEN_CONFIGS, KEYGEN_TYPES, KEY_FLAG } from '@proton/shared/lib/constants';
-import type { Address, DecryptedAddressKey, DecryptedKey } from '@proton/shared/lib/interfaces';
-import { getDefaultKeyFlags } from '@proton/shared/lib/keys';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { DecryptedAddressKey, DecryptedKey } from '@proton/shared/lib/interfaces/Key';
+import { getDefaultKeyFlags } from '@proton/shared/lib/keys/keyFlags';
 
 import { addApiMock } from './api';
 

@@ -9,7 +9,8 @@ import { baseUseDispatch } from '@proton/react-redux-store/ProtonStoreContext';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { updateCatchAll } from '@proton/shared/lib/api/domains';
-import type { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
+import type { DomainAddress } from '@proton/shared/lib/interfaces/Address';
+import type { Domain } from '@proton/shared/lib/interfaces/Domain';
 import noop from '@proton/utils/noop';
 
 import Checkbox from '../../components/input/Checkbox';

@@ -10,7 +10,7 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateAIAssistant } from '@proton/shared/lib/api/settings';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { AI_ASSISTANT_ACCESS, type UserSettings } from '@proton/shared/lib/interfaces';
+import { AI_ASSISTANT_ACCESS, type UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 
 import type { ModalProps } from '../../../../components/modalTwo/Modal';
 import Prompt from '../../../../components/prompt/Prompt';

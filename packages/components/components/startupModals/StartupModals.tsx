@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { domIsBusy } from '@proton/shared/lib/busy';
+import { domIsBusy } from '@proton/shared/lib/busy/busy';
 import { SECOND } from '@proton/shared/lib/constants';
 
 import type { StartupModal } from './types';

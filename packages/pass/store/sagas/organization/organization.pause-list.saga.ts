@@ -1,6 +1,6 @@
 import { call, select } from 'redux-saga/effects';
 
-import type { Organization } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 
 import { getUrlPauseList } from '../../../lib/organization/organization.requests';
 import { intoPauseCriterias } from '../../../lib/settings/pause-list';

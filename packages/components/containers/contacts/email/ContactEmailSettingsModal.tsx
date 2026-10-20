@@ -22,7 +22,7 @@ import {
     fromVCardProperties,
     getVCardProperties,
 } from '@proton/shared/lib/contacts/properties';
-import type { ContactPublicKeyModelWithApiKeySource } from '@proton/shared/lib/interfaces';
+import type { ContactPublicKeyModelWithApiKeySource } from '@proton/shared/lib/interfaces/EncryptionPreferences';
 import type { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 import {
     getContactPublicKeyModel,

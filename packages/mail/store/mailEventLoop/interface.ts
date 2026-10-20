@@ -1,6 +1,6 @@
 import type { ProtonDispatch } from '@proton/redux-shared-store-types';
 import type { MailEventV6Response } from '@proton/shared/lib/api/events';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import type { MailFiltersState } from '../filters';
 import type { IncomingAddressForwardingState, OutgoingAddressForwardingState } from '../forwarding';

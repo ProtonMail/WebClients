@@ -3,7 +3,7 @@ import type { FC } from 'react';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
-import type { Domain } from '@proton/shared/lib/interfaces';
+import type { Domain } from '@proton/shared/lib/interfaces/Domain';
 
 import getBoldFormattedText from '../../../helpers/getBoldFormattedText';
 import ReadonlyFieldWithCopy from './ReadonlyFieldWithCopy';

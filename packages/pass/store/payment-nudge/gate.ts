@@ -1,6 +1,6 @@
 import type { PLANS } from '@proton/payments/core/constants';
 import type { SavedPaymentMethod } from '@proton/payments/core/interface';
-import type { User } from '@proton/shared/lib/interfaces';
+import type { User } from '@proton/shared/lib/interfaces/User';
 import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/payments/plan/helpers';
 import { isAdmin, isPaid } from '@proton/shared/lib/user/helpers';
 

@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 
 import { DEFAULT_USER_SETTINGS } from '@proton/shared/lib/drive/constants';
-import type { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import type {
     LayoutSetting,
     SortSetting,

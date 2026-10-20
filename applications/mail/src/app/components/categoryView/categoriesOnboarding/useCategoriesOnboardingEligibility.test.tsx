@@ -12,8 +12,8 @@ import {
 } from '@proton/mail/features/categoriesView/categoriesOnboarding';
 import { mockUseMailSettings } from '@proton/mail/testing/mockUseMailSettings';
 import { PLANS } from '@proton/payments/core/constants';
-import type { OrganizationSettings } from '@proton/shared/lib/interfaces';
-import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
+import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces/Checklist';
+import type { OrganizationSettings } from '@proton/shared/lib/interfaces/Organization';
 
 import { useGetStartedChecklist } from '../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import { useMailboxCounter } from '../../../hooks/mailboxCounter/useMailboxCounter';

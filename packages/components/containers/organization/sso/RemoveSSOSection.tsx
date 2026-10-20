@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import type { Domain, SSO } from '@proton/shared/lib/interfaces';
+import type { Domain } from '@proton/shared/lib/interfaces/Domain';
+import type { SSO } from '@proton/shared/lib/interfaces/SSO';
 
 import useModalState from '../../../components/modalTwo/useModalState';
 import SettingsParagraph from '../../account/SettingsParagraph';

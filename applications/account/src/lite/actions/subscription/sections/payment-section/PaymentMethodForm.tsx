@@ -35,7 +35,7 @@ import { usePayments } from '@proton/payments-ui/ui/context/PaymentContext';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import { savedMethodRequires3DS } from '@proton/payments/core/createPaymentToken';
 import type { Currency } from '@proton/payments/core/interface';
-import { isBilledUser } from '@proton/shared/lib/interfaces';
+import { isBilledUser } from '@proton/shared/lib/interfaces/User';
 
 interface AmountProps {
     amount: number | undefined;

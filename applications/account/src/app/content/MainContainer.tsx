@@ -73,8 +73,8 @@ import { getIsAccountRecoveryAvailable } from '@proton/shared/lib/helpers/recove
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 import { getPathFromLocation } from '@proton/shared/lib/helpers/url';
 import { localeCode } from '@proton/shared/lib/i18n';
-import type { UserModel } from '@proton/shared/lib/interfaces';
-import { getRequiresAddressSetup } from '@proton/shared/lib/keys';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import { getRequiresAddressSetup } from '@proton/shared/lib/keys/setupAddress';
 import { hasPaidPass } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
 import { GetStartedOnboarding } from '@proton/vpn/components/Onboarding';

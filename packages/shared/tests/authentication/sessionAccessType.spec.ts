@@ -4,7 +4,7 @@ import {
     getAccessTypeFromMask,
     getSessionAccessTypeMask,
 } from '../../lib/authentication/sessionAccessType';
-import type { User } from '../../lib/interfaces';
+import type { User } from '../../lib/interfaces/User';
 
 const getUser = ({
     OrganizationPrivateKey,

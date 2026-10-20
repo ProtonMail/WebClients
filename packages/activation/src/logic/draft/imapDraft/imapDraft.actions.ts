@@ -1,6 +1,6 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 
-import type { ApiResponse } from '@proton/shared/lib/interfaces';
+import type { ApiResponse } from '@proton/shared/lib/interfaces/Api';
 
 import { createImport, getImport, getMailImportData, resumeImport, startImportTask } from '../../../api';
 import type {

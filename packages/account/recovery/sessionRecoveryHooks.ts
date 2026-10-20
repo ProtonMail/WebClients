@@ -5,7 +5,7 @@ import { differenceInMilliseconds } from 'date-fns';
 import { useInterval } from '@proton/hooks';
 import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { DAY, HOUR, MINUTE, SECOND } from '@proton/shared/lib/constants';
-import { SessionRecoveryState } from '@proton/shared/lib/interfaces';
+import { SessionRecoveryState } from '@proton/shared/lib/interfaces/User';
 
 import { useUser } from '../user/hooks';
 import { sessionRecoverySlice } from './sessionRecovery';

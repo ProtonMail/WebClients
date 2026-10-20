@@ -16,8 +16,9 @@ import {
 import { type ScimProgress, approveScimChanges } from '@proton/account/scimSetup/actions';
 import { useApi } from '@proton/app-context/useApi';
 import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
-import type { Group, MemberReadyForManualUnprivatization } from '@proton/shared/lib/interfaces';
+import type { Group } from '@proton/shared/lib/interfaces/Group';
 import type { GroupMember } from '@proton/shared/lib/interfaces/GroupMember';
+import type { MemberReadyForManualUnprivatization } from '@proton/shared/lib/interfaces/Member';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import useErrorHandler from '../../hooks/useErrorHandler';

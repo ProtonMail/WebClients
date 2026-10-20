@@ -1,5 +1,5 @@
 import type { EVENT_ACTIONS } from '@proton/shared/lib/constants';
-import type { ApiResponse } from '@proton/shared/lib/interfaces';
+import type { ApiResponse } from '@proton/shared/lib/interfaces/Api';
 
 import type {
     AuthenticationMethod,

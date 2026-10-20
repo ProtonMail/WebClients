@@ -1,7 +1,7 @@
 import { TelemetryDesktopEvents, TelemetryMeasurementGroups } from '../api/telemetry';
 import { DESKTOP_PLATFORMS } from '../constants';
 import { sendTelemetryReport } from '../helpers/metrics';
-import type { Api } from '../interfaces';
+import type { Api } from '../interfaces/Api';
 
 export async function reportClientLaunch(installSource: string | null, product: 'mail' | 'pass', api: Api) {
     if (typeof installSource !== 'string') {

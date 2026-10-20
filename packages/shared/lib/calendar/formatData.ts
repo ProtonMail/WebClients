@@ -1,14 +1,12 @@
 import isTruthy from '@proton/utils/isTruthy';
 
-import type { SimpleMap } from '../interfaces';
-import type {
-    AttendeeComment,
-    CalendarNotificationSettings,
-    CreateOrUpdateCalendarEventData,
-    VcalVeventComponent,
-} from '../interfaces/calendar';
+import type { CreateOrUpdateCalendarEventData } from '../interfaces/calendar/Api';
 import type { AttendeeClearPartResult } from '../interfaces/calendar/Attendee';
+import type { CalendarNotificationSettings } from '../interfaces/calendar/Calendar';
+import type { AttendeeComment } from '../interfaces/calendar/Event';
 import type { EncryptPartResult, SignPartResult } from '../interfaces/calendar/PartResult';
+import type { VcalVeventComponent } from '../interfaces/calendar/VcalModel';
+import type { SimpleMap } from '../interfaces/utils';
 import { CALENDAR_CARD_TYPE } from './constants';
 
 const { ENCRYPTED_AND_SIGNED, SIGNED } = CALENDAR_CARD_TYPE;

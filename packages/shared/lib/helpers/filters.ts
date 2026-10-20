@@ -1,7 +1,7 @@
 import type { Filter } from '@proton/sieve/filterModel';
 
 import { FILTER_STATUS, FREE_USER_ACTIVE_FILTERS_LIMIT } from '../constants';
-import type { UserModel } from '../interfaces';
+import type { UserModel } from '../interfaces/User';
 
 export const hasReachedFiltersLimit = (user: UserModel, userFilters: Filter[]) => {
     const enabledFiltersLength = userFilters.filter((filter) => filter.Status === FILTER_STATUS.ENABLED).length;

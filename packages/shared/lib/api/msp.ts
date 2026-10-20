@@ -1,4 +1,4 @@
-import type { Api } from '../interfaces';
+import type { Api } from '../interfaces/Api';
 import type { MspSubsidiary } from '../interfaces/Msp';
 import queryPages from './helpers/queryPages';
 import type { PaginationParams } from './interface';

@@ -1,5 +1,5 @@
 import { useUser } from '@proton/account/user/hooks';
-import { getIsSSOAccount } from '@proton/shared/lib/keys';
+import { getIsSSOAccount } from '@proton/shared/lib/keys/accountType';
 
 import DetermineAuthModal from './DetermineAuthModal';
 import SSOAuthModal from './SSOAuthModal';

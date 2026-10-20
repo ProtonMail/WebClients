@@ -19,7 +19,7 @@ import type {
     RemoveEventListener,
 } from '@proton/payments/core/interface';
 import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 type ApplePayModalHandles = {
     onAuthorize: () => void;

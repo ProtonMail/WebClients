@@ -1,4 +1,4 @@
-import type { DecryptedKey } from '@proton/shared/lib/interfaces';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 
 import { verifySignedData } from '../../utils/crypto';
 

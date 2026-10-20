@@ -1,4 +1,4 @@
-import type { ActiveKey, InactiveKey } from '../../interfaces';
+import type { ActiveKey, InactiveKey } from '../../interfaces/Key';
 import type { KeyReactivationData } from '../reactivation/interface';
 import type { ImportKeyData } from './interface';
 

@@ -11,7 +11,7 @@ import type {
     VcalValarmComponent,
     VcalVcalendarWithMaybeErrors,
     VcalVeventComponent,
-} from '../../lib/interfaces/calendar';
+} from '../../lib/interfaces/calendar/VcalModel';
 
 const vevent = `BEGIN:VEVENT
 DTSTAMP:20190719T130854Z

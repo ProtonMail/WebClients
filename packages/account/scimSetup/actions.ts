@@ -3,8 +3,10 @@ import type { ThunkDispatch, UnknownAction } from '@reduxjs/toolkit';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { ADDRESS_FLAGS } from '@proton/shared/lib/constants';
-import type { Api, Group, MemberReadyForManualUnprivatization } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { Group } from '@proton/shared/lib/interfaces/Group';
 import type { GroupMember } from '@proton/shared/lib/interfaces/GroupMember';
+import type { MemberReadyForManualUnprivatization } from '@proton/shared/lib/interfaces/Member';
 
 import { type GroupMembersState, groupMembersThunk } from '../groupMembers';
 import { type GroupsState, updateGroup } from '../groups';

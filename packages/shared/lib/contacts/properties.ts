@@ -1,6 +1,6 @@
 import generateUID from '@proton/utils/generateUID';
 
-import type { ContactValue } from '../interfaces/contacts';
+import type { ContactValue } from '../interfaces/contacts/Contact';
 import type { VCardContact, VCardProperty } from '../interfaces/contacts/VCard';
 import { UID_PREFIX } from './constants';
 import { getVCardValueShape, isMultiValue } from './vcardProperties';

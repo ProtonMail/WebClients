@@ -1,5 +1,5 @@
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
-import { format } from '@proton/shared/lib/date-fns-utc';
+import format from '@proton/shared/lib/date-fns-utc/format';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 const getTitleDateString = (view: VIEWS, range: number | undefined, utcDateRange: Date[], utcDate: Date) => {

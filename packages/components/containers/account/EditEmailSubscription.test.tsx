@@ -7,7 +7,7 @@ import { mockUseConfig } from '@proton/app-context/testing/mockUseConfig';
 import { useApi } from '@proton/app-context/useApi';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter';
-import type { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import EditEmailSubscription from './EditEmailSubscription';
 

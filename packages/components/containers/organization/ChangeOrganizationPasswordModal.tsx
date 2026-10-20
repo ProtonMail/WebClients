@@ -15,7 +15,7 @@ import {
     passwordLengthValidator,
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
-import { getBackupKeyData } from '@proton/shared/lib/keys';
+import { getBackupKeyData } from '@proton/shared/lib/keys/organizationKeys';
 import noop from '@proton/utils/noop';
 
 import Alert from '../../components/alert/Alert';

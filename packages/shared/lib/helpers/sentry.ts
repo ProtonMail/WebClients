@@ -18,7 +18,7 @@ import { getApiError, getIsConnectionIssue } from '../api/helpers/apiErrorHelper
 import { VPN_HOSTNAME } from '../constants';
 import { ApiError } from '../fetch/ApiError';
 import { getUIDHeaders } from '../fetch/headers';
-import type { ProtonConfig } from '../interfaces';
+import type { ProtonConfig } from '../interfaces/config';
 import { isElectronApp } from './desktop';
 
 type SentryContext = {

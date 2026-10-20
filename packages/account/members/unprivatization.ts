@@ -5,19 +5,19 @@ import { c } from 'ttag';
 import { fetchSignedKeyLists } from '@proton/key-transparency/helpers/apiHelpers';
 import { getAndVerifyApiKeys, getVerifiedPublicKeys } from '@proton/key-transparency/keys';
 import { setupKeys } from '@proton/shared/lib/api/keys';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
+import type { KTUserContext } from '@proton/shared/lib/interfaces/KeyTransparency';
 import type {
-    Address,
-    Api,
-    CachedOrganizationKey,
-    DecryptedKey,
-    KTUserContext,
     MemberInvitationData,
     MemberReadyForAutomaticUnprivatization,
     MemberUnprivatizationOutput,
     PrivateMemberUnprivatizationOutput,
     PublicMemberUnprivatizationOutput,
-    Unwrap,
-} from '@proton/shared/lib/interfaces';
+} from '@proton/shared/lib/interfaces/Member';
+import type { CachedOrganizationKey } from '@proton/shared/lib/interfaces/OrganizationKey';
+import type { Unwrap } from '@proton/shared/lib/interfaces/utils';
 import { decryptKeyPacket, encryptAndSignKeyPacket } from '@proton/shared/lib/keys/keypacket';
 import { encryptMemberToken } from '@proton/shared/lib/keys/memberToken';
 import type { OrganizationKeyActivation } from '@proton/shared/lib/keys/organizationKeyDto';

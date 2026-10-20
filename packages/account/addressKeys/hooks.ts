@@ -4,7 +4,8 @@ import { type Action, type ThunkDispatch, createSelector } from '@reduxjs/toolki
 
 import { baseUseDispatch, baseUseSelector } from '@proton/react-redux-store/ProtonStoreContext';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import type { Address, DecryptedAddressKey } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces/Key';
 
 import { selectAddresses } from '../addresses';
 import { type AddressKeysState, addressKeysThunk, getAllAddressKeysAction, selectAddressKeys } from './index';

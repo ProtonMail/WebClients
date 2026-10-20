@@ -21,7 +21,7 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateAIAssistant } from '@proton/shared/lib/api/settings';
 import { BRAND_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
-import { AI_ASSISTANT_ACCESS, type UserSettings } from '@proton/shared/lib/interfaces';
+import { AI_ASSISTANT_ACCESS, type UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import desktopImg from '@proton/styles/assets/img/illustrations/desktop-screen.svg';
 import serverImg from '@proton/styles/assets/img/illustrations/servers.svg';
 import { useFlag } from '@proton/unleash/useFlag';

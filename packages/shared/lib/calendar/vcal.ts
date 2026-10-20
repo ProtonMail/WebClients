@@ -13,7 +13,7 @@ import type {
     VcalVcalendarWithMaybeErrors,
     VcalVeventComponent,
     VcalVeventComponentWithMaybeErrors,
-} from '../interfaces/calendar';
+} from '../interfaces/calendar/VcalModel';
 import { getIsVcalErrorComponent } from './vcalHelper';
 import { fromIcalProperties, getInternalDurationValue, getInternalRecur } from './vcalParse';
 import { parseWithRecovery } from './vcalRecovery';

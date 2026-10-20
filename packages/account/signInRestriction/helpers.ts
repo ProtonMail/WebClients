@@ -1,7 +1,9 @@
 import type { EntitlementChecksForOrgAndUser } from '@proton/payments/core/entitlements/interface';
 import { getPrimaryAddress } from '@proton/shared/lib/helpers/address';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { type Address, LOGIN_IDENTIFIER_POLICY, type User, UserType } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import { type User, UserType } from '@proton/shared/lib/interfaces/User';
+import { LOGIN_IDENTIFIER_POLICY } from '@proton/shared/lib/interfaces/UserSettings';
 
 export const getSignInIdentifiers = (user: User, addresses: Address[] = []) => {
     return {

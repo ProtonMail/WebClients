@@ -7,7 +7,9 @@ import { getInitialModelState } from '@proton/redux-utilities/initialModelState'
 import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { getSAMLConfigs, getSAMLStaticInfo, getSCIMInfo } from '@proton/shared/lib/api/samlSSO';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
-import type { Organization, SSO, User } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
+import type { SSO } from '@proton/shared/lib/interfaces/SSO';
+import type { User } from '@proton/shared/lib/interfaces/User';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 
 import { serverEvent } from '../eventLoop';

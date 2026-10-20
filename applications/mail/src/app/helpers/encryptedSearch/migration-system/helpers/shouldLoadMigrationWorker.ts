@@ -1,7 +1,7 @@
 import { hasESDB, openESDB } from '@proton/encrypted-search/esIDB';
 import { detectStorageCapabilities } from '@proton/shared/lib/helpers/browser';
 import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
-import type { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import { isAllContentUpToDate } from './contentVersionHelpers';
 

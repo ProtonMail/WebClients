@@ -1,6 +1,6 @@
 import { APPS, PRODUCT_BIT } from '@proton/shared/lib/constants';
-import type { User } from '@proton/shared/lib/interfaces';
-import { UserType } from '@proton/shared/lib/interfaces';
+import type { User } from '@proton/shared/lib/interfaces/User';
+import { UserType } from '@proton/shared/lib/interfaces/User';
 
 import { getExploreApps } from './ExploreAppsListV2';
 

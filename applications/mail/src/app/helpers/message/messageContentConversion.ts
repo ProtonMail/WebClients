@@ -1,4 +1,6 @@
-import type { Address, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { findSender } from '../message/messageRecipients';

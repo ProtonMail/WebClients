@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 
 import useLoading from '@proton/hooks/useLoading';
-import type { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import { useBookmarks } from '../../store/_bookmarks/useBookmarks';
 import { usePublicSessionUser } from '../../store/_user';

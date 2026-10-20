@@ -12,7 +12,7 @@ import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import PassAliasesContainer from '@proton/pass/components/Drawer/PassAliases/PassAliasesContainer';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
-import type { Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 
 import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT } from '../../constants';
 import { useOnCompose, useOnMailTo } from '../../containers/ComposeProvider';

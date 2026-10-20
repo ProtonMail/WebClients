@@ -4,8 +4,9 @@ import type { MessageStateWithData, PartialMessageState } from '@proton/mail/sto
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
-import type { Address, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
-import type { Recipient } from '@proton/shared/lib/interfaces/Address';
+import type { Address, Recipient } from '@proton/shared/lib/interfaces/Address';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import {
     DRAFT_ID_PREFIX,

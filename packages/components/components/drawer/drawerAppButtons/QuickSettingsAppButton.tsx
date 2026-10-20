@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { ThemeColor } from '@proton/colors/types';
 import { IcCogDrawer } from '@proton/icons/icons/IcCogDrawer';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
-import type { Optional } from '@proton/shared/lib/interfaces';
+import type { Optional } from '@proton/shared/lib/interfaces/utils';
 
 import useDrawer from '../../../hooks/drawer/useDrawer';
 import useQuickSettingsReminders from '../../../hooks/drawer/useQuickSettingsReminders';

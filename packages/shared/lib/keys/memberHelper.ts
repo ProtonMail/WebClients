@@ -1,7 +1,7 @@
 import { ADDRESS_STATUS, MEMBER_PRIVATE } from '../constants';
 import { hasBit } from '../helpers/bitset';
 import { canonicalizeInternalEmail } from '../helpers/email';
-import { type EnhancedMember, MEMBER_FLAGS, MEMBER_STATE, type Member } from '../interfaces';
+import { type EnhancedMember, MEMBER_FLAGS, MEMBER_STATE, type Member } from '../interfaces/Member';
 
 export const getIsMemberSetup = (member?: Member) => {
     return Boolean(member?.PublicKey);

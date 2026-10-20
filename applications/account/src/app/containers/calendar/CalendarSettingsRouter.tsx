@@ -35,7 +35,7 @@ import {
     sortCalendars,
 } from '@proton/shared/lib/calendar/calendar';
 import { locales } from '@proton/shared/lib/i18n/locales';
-import type { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import noop from '@proton/utils/noop';
 
 import type { getCalendarAppRoutes } from './routes';

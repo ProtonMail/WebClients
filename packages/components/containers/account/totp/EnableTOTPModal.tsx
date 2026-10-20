@@ -17,7 +17,7 @@ import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { TWO_FA_RECOVERY_CODES_FILE_NAME } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import type { UserSettings } from '@proton/shared/lib/interfaces';
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import { getTOTPData } from '@proton/shared/lib/settings/twoFactor';
 import noop from '@proton/utils/noop';
 

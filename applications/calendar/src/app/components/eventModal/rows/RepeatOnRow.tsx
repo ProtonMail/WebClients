@@ -6,7 +6,7 @@ import { WEEKLY_TYPE } from '@proton/shared/lib/calendar/constants';
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { getFormattedWeekdays } from '@proton/shared/lib/date/date';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import type { DateTimeModel, FrequencyModel } from '@proton/shared/lib/interfaces/calendar';
+import type { DateTimeModel, FrequencyModel } from '@proton/shared/lib/interfaces/calendar/Event';
 import clsx from '@proton/utils/clsx';
 
 import DayCheckbox from '../inputs/DayCheckbox';

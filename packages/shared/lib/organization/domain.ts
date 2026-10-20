@@ -1,5 +1,5 @@
-import type { Domain } from '../interfaces';
-import { DOMAIN_STATE } from '../interfaces';
+import type { Domain } from '../interfaces/Domain';
+import { DOMAIN_STATE } from '../interfaces/Domain';
 
 // Active domains is one that's verified or in warning state, but it can be used to create addresses to
 export const getIsDomainActive = (domain: Domain) => {

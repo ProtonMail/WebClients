@@ -1,7 +1,9 @@
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { getTestStore } from '@proton/redux-shared-store/test';
 import { EVENT_ACTIONS, PRODUCT_BIT, USER_ROLES } from '@proton/shared/lib/constants';
-import type { Domain, UserModel, UserPermission } from '@proton/shared/lib/interfaces';
+import type { Domain } from '@proton/shared/lib/interfaces/Domain';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import type { UserPermission } from '@proton/shared/lib/interfaces/UserPermission';
 import { formatUser } from '@proton/shared/lib/user/helpers';
 
 import { getModelState } from '../tests';

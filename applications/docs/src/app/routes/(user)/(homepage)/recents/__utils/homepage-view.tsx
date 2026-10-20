@@ -11,7 +11,7 @@ import { useApplication } from '~/utils/application-context'
 import { useEvent, useSubscribe } from '~/utils/misc'
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks'
 import { VolumeTypeForEvents } from '@proton/drive-store/store/_volumes'
-import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts'
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact'
 import { getOwnerName } from './get-owner-name'
 import {
   isProtonDocsDocument,
@@ -19,7 +19,7 @@ import {
   type ProtonDocumentType,
 } from '@proton/shared/lib/helpers/mimetype'
 import { useAddresses } from '@proton/account/addresses/hooks'
-import type { Address } from '@proton/shared/lib/interfaces'
+import type { Address } from '@proton/shared/lib/interfaces/Address'
 import { isMyDocument } from './is-my-document'
 
 // constants

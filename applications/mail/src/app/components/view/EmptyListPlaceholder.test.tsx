@@ -2,13 +2,12 @@ import { render, screen } from '@testing-library/react';
 import { addDays } from 'date-fns';
 
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
+import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces/Checklist';
 import { DEFAULT_MAIL_SETTINGS } from '@proton/shared/lib/mail/mailSettings';
-
-import { useMailSelector } from '../../store/hooks';
 
 import type { OnboardingChecklistContext } from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import { useGetStartedChecklist } from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
+import { useMailSelector } from '../../store/hooks';
 import EmptyListPlaceholder from './EmptyListPlaceholder';
 
 jest.mock('../../containers/onboardingChecklist/provider/GetStartedChecklistProvider', () => ({

@@ -20,7 +20,7 @@ import { useLoadingByKey } from '@proton/hooks/useLoading';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { MEMBER_PRIVATE } from '@proton/shared/lib/constants';
 import { getInitials } from '@proton/shared/lib/helpers/string';
-import type { Member } from '@proton/shared/lib/interfaces';
+import type { Member } from '@proton/shared/lib/interfaces/Member';
 
 import type { MspCompany } from '../types';
 import { useAdminPublicKeys } from '../useAdminPublicKeys';

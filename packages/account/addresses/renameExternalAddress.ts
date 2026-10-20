@@ -5,8 +5,8 @@ import { CacheType } from '@proton/redux-utilities/interface';
 import { renameExternalAddress } from '@proton/shared/lib/api/addresses';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
-import type { Address } from '@proton/shared/lib/interfaces';
-import { getRenamedAddressKeys } from '@proton/shared/lib/keys';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import { getRenamedAddressKeys } from '@proton/shared/lib/keys/addressKeys';
 
 import { type OrganizationKeyState, organizationKeyThunk } from '../organizationKey';
 import { userThunk } from '../user';

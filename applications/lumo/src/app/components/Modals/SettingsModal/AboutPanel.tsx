@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { useConfig } from '@proton/app-context/useConfig';
 import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-import { format } from '@proton/shared/lib/date-fns-utc';
+import format from '@proton/shared/lib/date-fns-utc/format';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { dateLocale } from '@proton/shared/lib/i18n';
 

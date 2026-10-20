@@ -2,8 +2,13 @@ import { SessionAccessTypeFlag, getSessionAccessTypeMask } from '../authenticati
 import { APPS, type APP_NAMES, USER_ROLES } from '../constants';
 import { hasBit } from '../helpers/bitset';
 import { isElectronMail } from '../helpers/desktop';
-import type { OrganizationExtended, User } from '../interfaces';
-import { getIsExternalUserWithoutProtonAddressCreation, getIsGlobalSSOAccount, getIsSSOVPNOnlyAccount } from '../keys';
+import type { OrganizationExtended } from '../interfaces/Organization';
+import type { User } from '../interfaces/User';
+import {
+    getIsExternalUserWithoutProtonAddressCreation,
+    getIsGlobalSSOAccount,
+    getIsSSOVPNOnlyAccount,
+} from '../keys/accountType';
 import {
     deserializeAllowedProducts,
     getAppNameSetFromProductSet,

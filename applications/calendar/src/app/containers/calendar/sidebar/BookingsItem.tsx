@@ -25,7 +25,7 @@ import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
 import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
-import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import clsx from '@proton/utils/clsx';
 
 import { useCalendarDispatch } from '../../../store/hooks';

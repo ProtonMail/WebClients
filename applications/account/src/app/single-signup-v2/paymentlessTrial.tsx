@@ -7,7 +7,7 @@ import { ProtonPlanCustomizer } from '@proton/components/containers/payments/pla
 import { ADDON_PREFIXES, PLANS, TRIAL_DURATION_DAYS, TRIAL_MAX_USERS } from '@proton/payments/core/constants';
 import type { PlanIDs } from '@proton/payments/core/interface';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
-import { Audience } from '@proton/shared/lib/interfaces';
+import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 
 import RightSummary from './RightSummary';
 import type { OptimisticOptions, SignupModelV2 } from './interface';

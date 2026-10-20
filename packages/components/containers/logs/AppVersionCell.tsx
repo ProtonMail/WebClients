@@ -1,4 +1,4 @@
-import type { AuthLog } from '@proton/shared/lib/authlog';
+import type { AuthLog } from '@proton/shared/lib/authlog/AuthLog';
 
 interface Props {
     appVersion: AuthLog['AppVersion'];

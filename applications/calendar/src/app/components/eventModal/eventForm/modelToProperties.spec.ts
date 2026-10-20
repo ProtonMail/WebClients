@@ -1,7 +1,7 @@
 import { SEPARATOR_PROTON_EVENTS } from '@proton/calendar-video-conferencing/videoConferencing/constants';
 import { NOTIFICATION_TYPE_API, NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '@proton/shared/lib/calendar/constants';
-import type { EventModel } from '@proton/shared/lib/interfaces/calendar';
 import { VIDEO_CONFERENCE_PROVIDER } from '@proton/shared/lib/interfaces/calendar/Api';
+import type { EventModel } from '@proton/shared/lib/interfaces/calendar/Event';
 
 import { modelToDescriptionProperties, modelToValarmComponents } from './modelToProperties';
 

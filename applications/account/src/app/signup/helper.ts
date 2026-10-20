@@ -11,7 +11,7 @@ import type { Subscription, SubscriptionEstimation } from '@proton/payments/core
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 import { getCroHeaders, getOwnershipVerificationHeaders } from '@proton/shared/lib/fetch/headers';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
-import type { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
+import type { HumanVerificationMethodType } from '@proton/shared/lib/interfaces/HumanVerification';
 
 import { SignupHumanVerification } from './interfaces';
 

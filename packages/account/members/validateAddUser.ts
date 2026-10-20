@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import type { Domain, Organization } from '@proton/shared/lib/interfaces';
+import type { Domain } from '@proton/shared/lib/interfaces/Domain';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import { type OrganizationKeyInfo, validateOrganizationKey } from '@proton/shared/lib/organization/helper';
 
 export const getDomainError = () => {

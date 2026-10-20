@@ -3,7 +3,7 @@ import { getSelfAddressData } from '../../lib/calendar/deserialize';
 import { buildVcalOrganizer } from '../../lib/calendar/vcalConverter';
 import { ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS, ADDRESS_TYPE } from '../../lib/constants';
 import { buildMailTo } from '../../lib/helpers/email';
-import type { Address } from '../../lib/interfaces';
+import type { Address } from '../../lib/interfaces/Address';
 
 const buildVcalAttendee = ({
     email,

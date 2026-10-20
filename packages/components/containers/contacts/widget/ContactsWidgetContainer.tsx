@@ -11,8 +11,8 @@ import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { exportContacts } from '@proton/shared/lib/contacts/helpers/export';
 import { extractMergeable } from '@proton/shared/lib/contacts/helpers/merge';
-import type { Recipient } from '@proton/shared/lib/interfaces';
-import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import { ATTACHMENT_MAX_COUNT } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 

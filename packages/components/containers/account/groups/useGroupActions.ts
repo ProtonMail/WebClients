@@ -4,7 +4,7 @@ import { acceptGroupInvitation } from '@proton/account/groups/acceptGroupInvitat
 import { declineGroupInvitation } from '@proton/account/groups/declineGroupInvitation';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import type { GroupMembership } from '@proton/shared/lib/interfaces';
+import type { GroupMembership } from '@proton/shared/lib/interfaces/GroupMember';
 
 import useErrorHandler from '../../../hooks/useErrorHandler';
 

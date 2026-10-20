@@ -1,7 +1,7 @@
 import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS } from '@proton/shared/lib/calendar/constants';
 import { getSelfAddressData } from '@proton/shared/lib/calendar/deserialize';
 import { getVeventStatus } from '@proton/shared/lib/calendar/vcalHelper';
-import type { Address } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
 
 import type { VisualSearchItem } from './interface';
 

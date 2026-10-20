@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { getInitials } from '@proton/shared/lib/helpers/string';
-import type { Member } from '@proton/shared/lib/interfaces';
+import type { Member } from '@proton/shared/lib/interfaces/Member';
 import { getMemberEmailOrName } from '@proton/shared/lib/keys/memberHelper';
 import clamp from '@proton/utils/clamp';
 

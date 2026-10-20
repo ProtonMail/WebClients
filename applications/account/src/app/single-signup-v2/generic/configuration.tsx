@@ -1,7 +1,7 @@
 import ProtonLogo from '@proton/components/components/logo/ProtonLogo';
 import type { FreePlanDefault, Plan, PlansMap } from '@proton/payments/core/plan/interface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import type { Audience } from '@proton/shared/lib/interfaces';
+import type { Audience } from '@proton/shared/lib/interfaces/Subscription';
 
 import { SignupType } from '../../signup/interfaces';
 import type { SignupV2Theme } from '../SignupV2ThemeProvider';

@@ -6,7 +6,7 @@ import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updatePageSize } from '@proton/shared/lib/api/mailSettings';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 
 import type { DropdownProps } from '../../components/dropdown/Dropdown';

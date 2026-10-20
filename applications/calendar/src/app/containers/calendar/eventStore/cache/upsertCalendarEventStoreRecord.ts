@@ -1,6 +1,6 @@
 import { getIsRecurring, getRecurrenceIdDate, getUidValue } from '@proton/shared/lib/calendar/veventHelper';
-import type { RequireSome, SimpleMap } from '@proton/shared/lib/interfaces';
-import type { Attendee, CalendarEvent, CalendarEventSharedData } from '@proton/shared/lib/interfaces/calendar';
+import type { Attendee, CalendarEvent, CalendarEventSharedData } from '@proton/shared/lib/interfaces/calendar/Event';
+import type { RequireSome, SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 import { getViewEventDateProperties } from '../../eventHelper';
 import type { CalendarEventStoreRecord, CalendarEventsCache, SharedVcalVeventComponent } from '../interface';

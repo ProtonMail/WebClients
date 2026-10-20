@@ -1,5 +1,7 @@
 import { updatePrivateKeyRoute } from '../api/keys';
-import type { Api, DecryptedKey, User } from '../interfaces';
+import type { Api } from '../interfaces/Api';
+import type { DecryptedKey } from '../interfaces/Key';
+import type { User } from '../interfaces/User';
 import { srpVerify } from '../srp';
 import { getUpdateKeysPayload } from './changePassword';
 import type { DeviceSecretData } from './device';

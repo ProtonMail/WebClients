@@ -1,7 +1,7 @@
 import type { ErrorEvent, EventHint } from '@sentry/types/types/event';
 
 import { VPN_HOSTNAME } from '../../lib/constants';
-import type { ProtonConfig } from '../../lib/interfaces';
+import type { ProtonConfig } from '../../lib/interfaces/config';
 
 vi.mock('@sentry/browser', () => ({
     Integrations: { Breadcrumbs: vi.fn() },

@@ -27,7 +27,7 @@ import {
     useLeftSidebarButton,
 } from '@proton/shared/lib/helpers/collapsibleSidebar';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
-import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import clsx from '@proton/utils/clsx';
 
 import { useBookingsAvailability } from '../bookings/useBookingsAvailability';

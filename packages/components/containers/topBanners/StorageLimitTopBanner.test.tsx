@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
-import { UserLockedFlags, type UserModel } from '@proton/shared/lib/interfaces';
+import { UserLockedFlags, type UserModel } from '@proton/shared/lib/interfaces/User';
 
 import StorageLimitTopBanner from './StorageLimitTopBanner';
 

@@ -1,5 +1,6 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { Folder, Label, LabelCount } from '@proton/shared/lib/interfaces';
+import type { Folder } from '@proton/shared/lib/interfaces/Folder';
+import type { Label, LabelCount } from '@proton/shared/lib/interfaces/Label';
 
 export const CUSTOM_LABEL_ID1 = 'custom-label-1';
 export const CUSTOM_LABEL_ID2 = 'custom-label-2';

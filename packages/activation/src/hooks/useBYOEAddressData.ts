@@ -9,7 +9,7 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
-import { type ClaimableAddress, getClaimableAddress } from '@proton/shared/lib/keys';
+import { type ClaimableAddress, getClaimableAddress } from '@proton/shared/lib/keys/setupAddress';
 import noop from '@proton/utils/noop';
 
 type AddressData = {

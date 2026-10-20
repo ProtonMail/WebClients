@@ -8,7 +8,7 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateOrganizationSettings } from '@proton/shared/lib/api/organization';
 import { INVOICE_EMAIL_STATE } from '@proton/shared/lib/constants';
-import type { InvoiceEmailSettings } from '@proton/shared/lib/interfaces';
+import type { InvoiceEmailSettings } from '@proton/shared/lib/interfaces/Organization';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import useModalState from '../../../components/modalTwo/useModalState';

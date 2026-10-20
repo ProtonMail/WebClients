@@ -1,16 +1,16 @@
 import { deserializeQrCodePayload } from '@proton/account/signInWithAnotherDevice/qrCodePayload';
+import { getValidatedProtonProtocol } from '@proton/shared/lib/authentication/fork/getValidatedProtonProtocol';
 import {
     type ProduceForkParametersFull,
     getProduceForkParameters,
-    getValidatedApp,
-} from '@proton/shared/lib/authentication/fork';
-import { getValidatedProtonProtocol } from '@proton/shared/lib/authentication/fork/getValidatedProtonProtocol';
+} from '@proton/shared/lib/authentication/fork/produce';
+import { getValidatedApp } from '@proton/shared/lib/authentication/fork/validation';
 import {
     GetActiveSessionType,
     type GetActiveSessionsResult,
     getActiveSessions,
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import type { ProduceDesktopForkParameters } from '../actions/desktopForkInterface';
 import { type ProtonForkData, SSOType } from '../actions/forkInterface';

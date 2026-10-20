@@ -1,7 +1,7 @@
 import { InactiveSessionError } from '@proton/shared/lib/api/helpers/errors';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { ApiError } from '@proton/shared/lib/fetch/ApiError';
-import type { ProtonConfig } from '@proton/shared/lib/interfaces';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 
 import { type ApiAuth, AuthMode, type Maybe } from '../../types';
 import { TEST_SERVER_TIME, mockAPIResponse } from '../../utils/tests/fixtures/api';

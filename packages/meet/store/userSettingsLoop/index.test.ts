@@ -2,7 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { describe, expect, it, vi } from 'vitest';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { MeetEventResponse, UserSettings } from '@proton/shared/lib/interfaces/Meet';
 
 import type { MeetEventLoopRequiredState } from '../meetEventLoop/interface';

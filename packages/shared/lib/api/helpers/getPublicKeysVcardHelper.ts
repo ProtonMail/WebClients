@@ -6,8 +6,9 @@ import { readSigned } from '../../contacts/decrypt';
 import { getKeyInfoFromProperties } from '../../contacts/keyProperties';
 import { parseToVCard } from '../../contacts/vcard';
 import { CANONICALIZE_SCHEME, canonicalizeEmail } from '../../helpers/email';
-import type { Api, PinnedKeysConfig } from '../../interfaces';
-import type { ContactEmail, Contact as tsContact } from '../../interfaces/contacts';
+import type { Api } from '../../interfaces/Api';
+import type { PinnedKeysConfig } from '../../interfaces/EncryptionPreferences';
+import type { ContactEmail, Contact as tsContact } from '../../interfaces/contacts/Contact';
 import { getContact, queryContactEmails } from '../contacts';
 
 const getContactEmail = async (

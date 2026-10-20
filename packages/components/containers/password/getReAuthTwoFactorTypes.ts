@@ -1,7 +1,7 @@
 import type { InfoAuthedResponse } from '@proton/shared/lib/authentication/interface';
 import { getTwoFactorTypes } from '@proton/shared/lib/authentication/twoFactor';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import type { UserSettings } from '@proton/shared/lib/interfaces';
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 
 /**
  * Get two-factor types based on scope and infoResult for a signed-in user.

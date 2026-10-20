@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import type { CONTACT_PGP_SCHEMES } from '@proton/shared/lib/constants';
 import { PGP_SCHEMES, PGP_SCHEMES_MORE } from '@proton/shared/lib/constants';
 import { PGP_SCHEME_TEXT } from '@proton/shared/lib/contacts/constants';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
 
 import Option from '../../../components/option/Option';

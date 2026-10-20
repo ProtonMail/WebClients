@@ -1,4 +1,5 @@
-import type { DecryptedKey, UserModel } from '@proton/shared/lib/interfaces';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import type { ESMessage } from '../models/encryptedSearch';
 import { getIndexKey } from './crypto/indexKey';

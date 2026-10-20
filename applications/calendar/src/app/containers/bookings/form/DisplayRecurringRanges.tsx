@@ -3,7 +3,7 @@ import { Fragment } from 'react';
 import { c } from 'ttag';
 
 import { dateLocale } from '@proton/shared/lib/i18n';
-import type { UserSettings } from '@proton/shared/lib/interfaces';
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 

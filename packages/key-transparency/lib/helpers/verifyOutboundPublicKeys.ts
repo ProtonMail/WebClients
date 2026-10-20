@@ -1,4 +1,7 @@
-import { KeyTransparencyActivation, type VerifyOutboundPublicKeys } from '@proton/shared/lib/interfaces';
+import {
+    KeyTransparencyActivation,
+    type VerifyOutboundPublicKeys,
+} from '@proton/shared/lib/interfaces/KeyTransparency';
 
 import { verifyPublicKeysAddressAndCatchall } from '../verification/verifyKeys';
 import { getLatestEpoch } from './getLatestEpoch';

@@ -12,7 +12,7 @@ import metrics from '@proton/metrics/metricsInstance';
 import observeApiError from '@proton/metrics/observeApiError';
 import type { LocalSessionResponse } from '@proton/shared/lib/authentication/interface';
 import type { ActiveSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import type { User } from '@proton/shared/lib/interfaces';
+import type { User } from '@proton/shared/lib/interfaces/User';
 
 import AccountSwitcherItem from './AccountSwitcherItem';
 

@@ -1,6 +1,6 @@
 import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
-import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 
 export const getContactNameAndEmail = (email: string, contactEmails?: ContactEmail[]) => {
     const canonicalizedEmail = canonicalizeEmailByGuess(email);

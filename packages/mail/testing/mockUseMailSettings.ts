@@ -1,5 +1,5 @@
 import { MIME_TYPES } from '@proton/shared/lib/constants';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { DEFAULT_MAIL_SETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
 import * as useMailSettingsModule from '../store/mailSettings/hooks';

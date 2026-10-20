@@ -3,7 +3,7 @@ import { APPS, type APP_NAMES } from '../../constants';
 import type {
     OrganizationSettingsAllowedProduct,
     SerializedOrganizationSettingsAllowedProduct,
-} from '../../interfaces';
+} from '../../interfaces/Organization';
 
 // A mapping of what the API returns in OrganizationSettingsAllowedProduct to app names
 const productsToApps: Record<OrganizationSettingsAllowedProduct, APP_NAMES[]> = {

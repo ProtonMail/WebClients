@@ -1,12 +1,9 @@
 import { getAllMembers, getCalendarInvitations, getPublicLinks } from '../../api/calendars';
 import { getApiWithAbort } from '../../api/helpers/customConfig';
-import type { Api } from '../../interfaces';
-import type {
-    CalendarUrlsResponse,
-    CalendarWithOwnMembers,
-    GetAllMembersApiResponse,
-    GetCalendarInvitationsResponse,
-} from '../../interfaces/calendar';
+import type { Api } from '../../interfaces/Api';
+import type { GetAllMembersApiResponse, GetCalendarInvitationsResponse } from '../../interfaces/calendar/Api';
+import type { CalendarWithOwnMembers } from '../../interfaces/calendar/Calendar';
+import type { CalendarUrlsResponse } from '../../interfaces/calendar/Link';
 import { getIsOwnedCalendar } from '../calendar';
 import { filterOutDeclinedInvitations } from './shareProton/shareProton';
 

@@ -1,6 +1,6 @@
 import type { Filter } from '@proton/sieve/filterModel';
 
-import type { Nullable } from '../interfaces';
+import type { Nullable } from '../interfaces/utils';
 import type { MailSearchContext } from './messages';
 
 export const addTreeFilter = (

@@ -31,13 +31,10 @@ import type { AuthenticationStore } from '@proton/shared/lib/authentication/crea
 import createAuthenticationStore from '@proton/shared/lib/authentication/createAuthenticationStore';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
-import {
-    consumeFork,
-    getConsumeForkParameters,
-    getEmailSessionForkSearchParameter,
-    removeHashParameters,
-} from '@proton/shared/lib/authentication/fork';
+import { consumeFork, removeHashParameters } from '@proton/shared/lib/authentication/fork/consume';
 import { getParsedCurrentUrl } from '@proton/shared/lib/authentication/fork/forkState';
+import { getConsumeForkParameters } from '@proton/shared/lib/authentication/fork/getConsumeForkParameters';
+import { getEmailSessionForkSearchParameter } from '@proton/shared/lib/authentication/fork/validation';
 import type { ExtraSessionForkData } from '@proton/shared/lib/authentication/interface';
 import { handleInvalidSession } from '@proton/shared/lib/authentication/logout';
 import {
@@ -47,7 +44,7 @@ import {
 import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { resumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { getReturnUrlParameter } from '@proton/shared/lib/authentication/returnUrl';
-import { newVersionUpdater } from '@proton/shared/lib/busy';
+import { newVersionUpdater } from '@proton/shared/lib/busy/busy';
 import { getProdId, setVcalProdId } from '@proton/shared/lib/calendar/vcalConfig';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
@@ -65,10 +62,14 @@ import { getPathFromLocation } from '@proton/shared/lib/helpers/url';
 import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
 import { loadLocales as loadLocalesI18n } from '@proton/shared/lib/i18n/loadLocale';
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
-import type { Api, Environment, ProtonConfig, Unwrap, UserSettings } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { Environment } from '@proton/shared/lib/interfaces/Environment';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import type { LumoEventResponse } from '@proton/shared/lib/interfaces/Lumo';
 import type { MeetEventResponse } from '@proton/shared/lib/interfaces/Meet';
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
+import type { Unwrap } from '@proton/shared/lib/interfaces/utils';
 import initLogicalProperties from '@proton/shared/lib/logical/logical';
 import { telemetry } from '@proton/shared/lib/telemetry';
 import { createUnauthenticatedApi as createSharedUnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';

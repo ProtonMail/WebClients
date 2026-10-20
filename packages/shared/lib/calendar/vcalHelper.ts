@@ -18,7 +18,7 @@ import type {
     VcalVjournalComponentWithMaybeErrors,
     VcalVtimezoneComponent,
     VcalVtodoComponentWithMaybeErrors,
-} from '../interfaces/calendar';
+} from '../interfaces/calendar/VcalModel';
 import {
     ICAL_ATTENDEE_ROLE,
     ICAL_ATTENDEE_STATUS,

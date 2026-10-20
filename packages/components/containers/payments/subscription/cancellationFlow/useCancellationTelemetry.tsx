@@ -2,7 +2,7 @@ import { useApi } from '@proton/app-context/useApi';
 import type { TelemetryEvents } from '@proton/shared/lib/api/telemetry';
 import { TelemetryAccountCancellationEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import type { SimpleMap } from '@proton/shared/lib/interfaces';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 export enum REACTIVATE_SOURCE {
     default = 'default',

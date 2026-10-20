@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcCrossSmall } from '@proton/icons/icons/IcCrossSmall';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
-import type { Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import clsx from '@proton/utils/clsx';
 
 import { isProtonAddress } from './helpers';

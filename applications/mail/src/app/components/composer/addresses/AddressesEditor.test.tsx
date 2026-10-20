@@ -4,7 +4,7 @@ import { fireEvent, getByText, screen } from '@testing-library/react';
 
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { pick } from '@proton/shared/lib/helpers/object';
-import type { Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { addApiMock } from '../../../helpers/tests/api';

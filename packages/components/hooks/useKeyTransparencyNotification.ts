@@ -4,7 +4,7 @@ import {
     AddressAuditWarningReason,
     type SelfAuditResult,
 } from '@proton/key-transparency/interfaces';
-import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
+import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
 
 import { useKeyTransparencyContext } from '../containers/keyTransparency/useKeyTransparencyContext';
 

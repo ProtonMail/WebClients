@@ -4,7 +4,7 @@ import type { PreviousSubscription } from '@proton/payments/core/interface';
 import { SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { getTestStore } from '@proton/redux-shared-store/test';
-import type { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import { getModelState } from '../tests';
 import { userReducer } from '../user';

@@ -1,6 +1,6 @@
 import { useCallback, useRef, useState } from 'react';
 
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import { LumoApiClient } from '../core/client';
 import { type AssistantCallOptions, type LumoApiClientConfig, Role } from '../core/types';

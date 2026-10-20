@@ -5,7 +5,7 @@ import { ICAL_ATTENDEE_ROLE, ICAL_METHOD } from '@proton/shared/lib/calendar/con
 import { getDisplayTitle } from '@proton/shared/lib/calendar/helper';
 import { getDtendProperty, propertyToLocalDate } from '@proton/shared/lib/calendar/vcalConverter';
 import { getIsPropertyAllDay } from '@proton/shared/lib/calendar/vcalHelper';
-import type { RequireSome } from '@proton/shared/lib/interfaces';
+import type { RequireSome } from '@proton/shared/lib/interfaces/utils';
 
 import type { InvitationModel } from '../../../../../helpers/calendar/invite';
 

@@ -12,8 +12,8 @@ import type { ContactGroupEditProps } from '@proton/components/containers/contac
 import { APPS } from '@proton/shared/lib/constants';
 import { prepareVCardContact } from '@proton/shared/lib/contacts/decrypt';
 import { getSearchParams } from '@proton/shared/lib/helpers/url';
-import type { DecryptedKey } from '@proton/shared/lib/interfaces';
-import { splitKeys } from '@proton/shared/lib/keys';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
+import { splitKeys } from '@proton/shared/lib/keys/keys';
 
 import { useGetContact } from '../../store/contacts/contactHooks';
 import { CONTACT_SEARCH_PARAMS, isContactSearchParams } from './helper';

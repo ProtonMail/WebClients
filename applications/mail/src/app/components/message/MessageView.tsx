@@ -5,8 +5,8 @@ import { useKeyTransparencyContext } from '@proton/components/containers/keyTran
 import type { MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import createScrollIntoView from '@proton/shared/lib/helpers/createScrollIntoView';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { hasAttachments, isDraft, isOutbox, isSent } from '@proton/shared/lib/mail/messages';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -344,11 +344,7 @@ const MessageView = (
         }
     }, [hasProcessingErrors]);
 
-    const {
-        labelDropdownToggleRef,
-        moveDropdownToggleRef,
-        filterDropdownToggleRef,
-    } = useMessageHotkeys(
+    const { labelDropdownToggleRef, moveDropdownToggleRef, filterDropdownToggleRef } = useMessageHotkeys(
         elementRef,
         {
             labelID,

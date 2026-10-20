@@ -1,5 +1,5 @@
 import type { LumoApiClientConfig } from '@proton/lumo-api-client/core/types';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import { generateSpaceKeyBase64 } from '../../crypto';
 import { findAgentById } from '../../features/agents/registry';

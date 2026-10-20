@@ -2,14 +2,12 @@ import type { ThemeColor } from '@proton/colors/types';
 import type { EntitlementChecksForOrgAndUser } from '@proton/payments/core/entitlements/interface';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import type {
-    Address,
-    Group,
-    GroupMembershipReturn,
-    OrgPermissions,
-    OrganizationExtended,
-    UserModel,
-} from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { Group } from '@proton/shared/lib/interfaces/Group';
+import type { GroupMembershipReturn } from '@proton/shared/lib/interfaces/GroupMember';
+import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import type { OrgPermissions } from '@proton/shared/lib/interfaces/UserPermission';
 import type { DriveDashboardVariant, VPNDashboardVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
 
 export type AccountRecoveryRouterFlags = {

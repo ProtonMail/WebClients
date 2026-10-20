@@ -1,7 +1,8 @@
 import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@protontech/crypto';
 
-import type { SimpleMap } from '../interfaces';
-import type { AttendeeComment, VcalVeventComponent } from '../interfaces/calendar';
+import type { AttendeeComment } from '../interfaces/calendar/Event';
+import type { VcalVeventComponent } from '../interfaces/calendar/VcalModel';
+import type { SimpleMap } from '../interfaces/utils';
 import { CALENDAR_CARD_TYPE } from './constants';
 import {
     createSessionKey,

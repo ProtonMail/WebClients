@@ -22,20 +22,19 @@ import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { getIsAssistantOpened, useAssistant } from '@proton/llm/lib';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { clearBit } from '@proton/shared/lib/helpers/bitset';
-import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
+import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces/UserSettings';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { hasFlag } from '@proton/shared/lib/mail/messages';
 import lumoIcon from '@proton/styles/assets/img/lumo/lumo-cat-icon.svg';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
+import { getAttachmentCounts } from '../../../../helpers/message/messages';
+import { useMailDispatch } from '../../../../store/hooks';
+import { updateExpires } from '../../../../store/messages/draft/messagesDraftActions';
 import { useComposerAssistantProvider } from '../../../assistant/provider/ComposerAssistantProvider';
 import ComposerAssistantSpotlight from '../../../assistant/spotlights/ComposerAssistantSpotlight';
 import AttachmentsButton from '../../../message/extrasFooter/attachment/AttachmentsButton';
-import { useMailDispatch } from '../../../../store/hooks';
-import { updateExpires } from '../../../../store/messages/draft/messagesDraftActions';
-
-import { getAttachmentCounts } from '../../../../helpers/message/messages';
 import type { MessageChange, MessageChangeFlag } from '../../Composer';
 import type { ExternalEditorActions } from '../../editor/EditorWrapper';
 import ComposerMoreActions from '../ComposerMoreActions';

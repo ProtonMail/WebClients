@@ -4,7 +4,8 @@ import type { PublicKeyReference } from '@protontech/crypto';
 import omit from 'lodash/omit';
 
 import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
-import type { Recipient, SimpleMap } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 export enum InvalidRecipientErrorCode {
     NoAddressSetOnBitcoinAddress = 0,

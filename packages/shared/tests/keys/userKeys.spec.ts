@@ -1,4 +1,4 @@
-import { generateUserKey } from '../../lib/keys';
+import { generateUserKey } from '../../lib/keys/userKeys';
 
 describe('user keys', () => {
     it('should throw if generated key cannot decrypt', async () => {

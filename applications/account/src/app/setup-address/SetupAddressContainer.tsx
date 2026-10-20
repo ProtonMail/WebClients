@@ -22,8 +22,8 @@ import { getValidatedApp } from '@proton/shared/lib/authentication/fork/validati
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
-import type { User } from '@proton/shared/lib/interfaces';
-import { getDecryptedSetupBlob, getRequiresAddressSetup } from '@proton/shared/lib/keys';
+import type { User } from '@proton/shared/lib/interfaces/User';
+import { getDecryptedSetupBlob, getRequiresAddressSetup } from '@proton/shared/lib/keys/setupAddress';
 import noop from '@proton/utils/noop';
 
 import AccountLoaderPage from '../content/AccountLoaderPage';

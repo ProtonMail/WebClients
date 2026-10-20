@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { SimpleMap } from '@proton/shared/lib/interfaces';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 export interface CountryOption {
     countryCode: string;

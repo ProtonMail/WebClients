@@ -5,7 +5,7 @@ import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssista
 import useStateRef from '@proton/hooks/useStateRef';
 import { LumoApiClient, Role } from '@proton/lumo-api-client';
 import type { Turn } from '@proton/lumo-api-client/core/types';
-import { ASSISTANT_TYPE, ERROR_TYPE, GENERATION_SELECTION_TYPE } from '@proton/shared/lib/assistant';
+import { ASSISTANT_TYPE, ERROR_TYPE, GENERATION_SELECTION_TYPE } from '@proton/shared/lib/assistant/types';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';

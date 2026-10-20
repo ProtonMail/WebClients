@@ -2,7 +2,8 @@ import { FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
-import type { Organization, UserModel } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import { isUserOLESEligible as isOLESEligible } from './eligibility';
 

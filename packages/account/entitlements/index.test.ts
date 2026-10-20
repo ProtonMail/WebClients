@@ -3,7 +3,7 @@ import { EntitlementScope, EntitlementType, type Entitlements } from '@proton/pa
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { getTestStore } from '@proton/redux-shared-store/test';
 import { CacheType } from '@proton/redux-utilities/interface';
-import type { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import { getModelState } from '../tests';
 import { userFulfilled, userReducer } from '../user';

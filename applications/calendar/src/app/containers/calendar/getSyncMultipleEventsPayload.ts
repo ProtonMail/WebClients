@@ -9,8 +9,6 @@ import { getCreationKeys } from '@proton/shared/lib/calendar/crypto/keys/helpers
 import { createCalendarEvent } from '@proton/shared/lib/calendar/serialize';
 import { getVeventColorValue, withoutRedundantDtEnd } from '@proton/shared/lib/calendar/veventHelper';
 import { booleanToNumber } from '@proton/shared/lib/helpers/boolean';
-import type { SimpleMap } from '@proton/shared/lib/interfaces';
-import type { AttendeeComment, CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
 import type {
     CreateCalendarEventSyncData,
     CreateLinkedCalendarEventsSyncData,
@@ -18,7 +16,9 @@ import type {
     UpdateCalendarEventSyncData,
 } from '@proton/shared/lib/interfaces/calendar/Api';
 import { DELETION_REASON } from '@proton/shared/lib/interfaces/calendar/Api';
+import type { AttendeeComment, CalendarEvent } from '@proton/shared/lib/interfaces/calendar/Event';
 import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 export enum SyncOperationTypes {
     DELETE = 0,

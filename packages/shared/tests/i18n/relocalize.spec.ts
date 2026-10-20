@@ -7,7 +7,7 @@ import { dateLocale } from '../../lib/i18n';
 import { loadDateLocale, loadLocale } from '../../lib/i18n/loadLocale';
 import { setTtagLocales } from '../../lib/i18n/locales';
 import { relocalizeText } from '../../lib/i18n/relocalize';
-import type { UserSettings } from '../../lib/interfaces';
+import type { UserSettings } from '../../lib/interfaces/UserSettings';
 
 const dummyUserSettings: Pick<UserSettings, 'TimeFormat' | 'DateFormat' | 'WeekStart'> = {
     WeekStart: 1,

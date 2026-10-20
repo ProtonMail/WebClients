@@ -8,8 +8,9 @@ import { Input } from '@proton/atoms/Input/Input';
 import { FORBIDDEN_LABEL_NAMES } from '@proton/shared/lib/constants';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { normalize } from '@proton/shared/lib/helpers/string';
-import type { ContactGroup, ImportContactsModel } from '@proton/shared/lib/interfaces/contacts';
-import { IMPORT_GROUPS_ACTION } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
+import type { ImportContactsModel } from '@proton/shared/lib/interfaces/contacts/Import';
+import { IMPORT_GROUPS_ACTION } from '@proton/shared/lib/interfaces/contacts/Import';
 import isTruthy from '@proton/utils/isTruthy';
 
 import Alert from '../../../../components/alert/Alert';

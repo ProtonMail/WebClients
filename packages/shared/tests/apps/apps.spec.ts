@@ -3,12 +3,8 @@ import merge from 'lodash/merge';
 import { Product } from '../../lib/ProductEnum';
 import { appSupportsSSO, getAvailableApps } from '../../lib/apps/apps';
 import { APPS, type APP_NAMES, USER_ROLES } from '../../lib/constants';
-import {
-    type OrganizationExtended,
-    type OrganizationSettingsAllowedProduct,
-    type User,
-    UserType,
-} from '../../lib/interfaces';
+import type { OrganizationExtended, OrganizationSettingsAllowedProduct } from '../../lib/interfaces/Organization';
+import { type User, UserType } from '../../lib/interfaces/User';
 import { allAllowedProducts } from '../../lib/organization/accessControl/serialization';
 
 const getDefaultUser = (): User => {

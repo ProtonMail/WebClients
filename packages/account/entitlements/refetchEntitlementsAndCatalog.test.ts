@@ -1,5 +1,5 @@
 import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import { entitlementCatalogThunk } from '../entitlementCatalog';
 import { entitlementsThunk } from './index';

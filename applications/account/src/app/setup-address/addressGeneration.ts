@@ -1,7 +1,9 @@
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
-import type { Address, Api, User as tsUser } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { User as tsUser } from '@proton/shared/lib/interfaces/User';
 import {
     type AddressGenerationSetup,
     type ClaimableAddress,

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { GroupMembership } from '@proton/shared/lib/interfaces';
+import type { GroupMembership } from '@proton/shared/lib/interfaces/GroupMember';
 
 import { Badge } from '../../../components/badge/Badge';
 

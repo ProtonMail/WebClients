@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import type { Organization } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 
 import type { UserTemplate } from './importUsers';
 

@@ -2,8 +2,8 @@ import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proto
 import { CryptoProxy } from '@protontech/crypto';
 import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 
-import type { SimpleMap } from '../../interfaces';
-import type { EncryptPartResult, SignPartResult } from '../../interfaces/calendar';
+import type { EncryptPartResult, SignPartResult } from '../../interfaces/calendar/PartResult';
+import type { SimpleMap } from '../../interfaces/utils';
 
 export function signPart(dataToSign: string, signingKey: PrivateKeyReference): Promise<SignPartResult>;
 export function signPart(

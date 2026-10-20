@@ -30,8 +30,8 @@ import {
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
-import type { Optional, ReferralData } from '@proton/shared/lib/interfaces';
-import type { Unwrap } from '@proton/shared/lib/interfaces/utils';
+import type { ReferralData } from '@proton/shared/lib/interfaces/referral';
+import type { Optional, Unwrap } from '@proton/shared/lib/interfaces/utils';
 import noop from '@proton/utils/noop';
 
 import sendRecoveryPhrasePayloadHelper from '../../containers/recoveryPhrase/sendRecoveryPhrasePayload';

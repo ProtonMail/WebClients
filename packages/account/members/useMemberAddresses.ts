@@ -4,7 +4,8 @@ import { type Action, type ThunkDispatch, createSelector } from '@reduxjs/toolki
 
 import { baseUseDispatch, baseUseSelector } from '@proton/react-redux-store/ProtonStoreContext';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import type { Address, EnhancedMember, PartialMemberAddress } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { EnhancedMember, PartialMemberAddress } from '@proton/shared/lib/interfaces/Member';
 import noop from '@proton/utils/noop';
 
 import { type AddressesState, selectAddresses } from '../addresses';

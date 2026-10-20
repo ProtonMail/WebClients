@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { Organization } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 
 export const getPrivateLabel = () => {
     return c('unprivatization').t`Private user`;

@@ -34,9 +34,9 @@ import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { sizeUnits } from '@proton/shared/lib/helpers/size';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { EnhancedMember, Member } from '@proton/shared/lib/interfaces';
-import { getIsPasswordless } from '@proton/shared/lib/keys';
+import type { EnhancedMember, Member } from '@proton/shared/lib/interfaces/Member';
 import { getIsMemberSetup } from '@proton/shared/lib/keys/memberHelper';
+import { getIsPasswordless } from '@proton/shared/lib/keys/organizationKeys';
 import noop from '@proton/utils/noop';
 
 import type { ModalProps } from '../../components/modalTwo/Modal';

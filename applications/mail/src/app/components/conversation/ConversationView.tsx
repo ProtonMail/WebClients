@@ -2,19 +2,15 @@ import type { RefObject } from 'react';
 import { memo, useEffect, useRef } from 'react';
 
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
-import useToggle from '@proton/hooks/useToggle'
+import useToggle from '@proton/hooks/useToggle';
 import { useLabels } from '@proton/mail/store/labels/hooks';
-import { isEditing } from '@proton/shared/lib/busy';
+import { isEditing } from '@proton/shared/lib/busy/busy';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { isDraft } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
-
-import useUnreadNotifications from '../../hooks/useUnreadNotifications';
-import { selectComposersCount } from '../../store/composers/composerSelectors';
-import { useMailSelector } from '../../store/hooks';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { hasLabel } from '../../helpers/elements';
@@ -25,6 +21,9 @@ import { useConversation } from '../../hooks/conversation/useConversation';
 import { useConversationFocus } from '../../hooks/conversation/useConversationFocus';
 import { useConversationHotkeys } from '../../hooks/conversation/useConversationHotkeys';
 import { usePlaceholders } from '../../hooks/usePlaceholders';
+import useUnreadNotifications from '../../hooks/useUnreadNotifications';
+import { selectComposersCount } from '../../store/composers/composerSelectors';
+import { useMailSelector } from '../../store/hooks';
 import { SOURCE_ACTION } from '../list/list-telemetry/useListTelemetry';
 import type { MessageViewRef } from '../message/MessageView';
 import MessageView from '../message/MessageView';

@@ -9,7 +9,8 @@ import {
     maybeResumeSessionByUser,
     persistSession,
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import type { Address, User } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { User } from '@proton/shared/lib/interfaces/User';
 import { deviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecoveryHelper';
 import { srpVerify } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';

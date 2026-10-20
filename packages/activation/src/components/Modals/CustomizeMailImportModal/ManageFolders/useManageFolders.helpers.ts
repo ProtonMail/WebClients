@@ -1,6 +1,6 @@
 import { omit } from '@proton/shared/lib/helpers/object';
-import type { Label } from '@proton/shared/lib/interfaces';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
 
 import type { MailImportFolder } from '../../../../helpers/MailImportFoldersParser/MailImportFoldersParser';
 import { getMailMappingError } from '../../../../helpers/getMailMappingErrors';

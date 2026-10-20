@@ -2,7 +2,7 @@ import { getRandomSrpVerifier, getSrp } from '@protontech/crypto/srp';
 
 import { getInfo, getModulus } from './api/auth';
 import type { Fido2Data, InfoResponse, ModulusResponse } from './authentication/interface';
-import type { Api } from './interfaces';
+import type { Api } from './interfaces/Api';
 
 interface AuthCredentials {
     username?: string;

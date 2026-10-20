@@ -19,7 +19,7 @@ import type { PaymentProcessorHook } from '@proton/payments/core/payment-process
 import { getIsB2BAudienceFromPlan, getPlanFromPlanIDs } from '@proton/payments/core/plan/helpers';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
 import { APPS } from '@proton/shared/lib/constants';
-import { Audience } from '@proton/shared/lib/interfaces';
+import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import noop from '@proton/utils/noop';
 
 import Terms from '../../../components/Terms';

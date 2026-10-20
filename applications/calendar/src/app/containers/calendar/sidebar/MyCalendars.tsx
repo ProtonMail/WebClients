@@ -25,7 +25,7 @@ import { DEFAULT_CALENDAR_USER_SETTINGS } from '@proton/shared/lib/calendar/cale
 import { getHasUserReachedCalendarsLimit } from '@proton/shared/lib/calendar/calendarLimits';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { APPS } from '@proton/shared/lib/constants';
-import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import noop from '@proton/utils/noop';
 
 import { useCalendarDispatch } from '../../../store/hooks';

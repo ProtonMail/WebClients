@@ -14,8 +14,9 @@ import { conversationCountsActions } from '@proton/mail/store/counts/conversatio
 import { SessionAccessTypeFlag } from '@proton/shared/lib/authentication/sessionAccessType';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { removeItem, setItem } from '@proton/shared/lib/helpers/storage';
-import { CHECKLIST_DISPLAY_TYPE, ChecklistKey, type Label } from '@proton/shared/lib/interfaces';
+import { CHECKLIST_DISPLAY_TYPE, ChecklistKey } from '@proton/shared/lib/interfaces/Checklist';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
 import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 import range from '@proton/utils/range';

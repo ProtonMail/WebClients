@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { ACCESS_LEVEL } from '@proton/shared/lib/interfaces/calendar';
+import { ACCESS_LEVEL } from '@proton/shared/lib/interfaces/calendar/Link';
 
 import BasicModal from '../../../components/modalTwo/BasicModal';
 

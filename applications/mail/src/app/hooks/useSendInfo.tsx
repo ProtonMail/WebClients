@@ -1,13 +1,13 @@
 import type { Dispatch, SetStateAction } from 'react';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
+import type { PublicKeyReference } from '@protontech/crypto';
 import { c, msgid } from 'ttag';
 
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { useKeyTransparencyContext } from '@proton/components/containers/keyTransparency/useKeyTransparencyContext';
 import useGetEncryptionPreferences from '@proton/components/hooks/useGetEncryptionPreferences';
-import type { PublicKeyReference } from '@protontech/crypto';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
@@ -15,17 +15,16 @@ import { getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { omit } from '@proton/shared/lib/helpers/object';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
-import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import { ENCRYPTION_PREFERENCES_ERROR_TYPES } from '@proton/shared/lib/mail/encryptionPreferences';
 import { getRecipientsAddresses } from '@proton/shared/lib/mail/messages';
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import { getAddressFromEmail } from '../helpers/addresses';
-
 import AskForKeyPinningModal from '../components/composer/addresses/AskForKeyPinningModal';
 import ContactResignModal from '../components/message/modals/ContactResignModal';
+import { getAddressFromEmail } from '../helpers/addresses';
 import { getSendStatusIcon } from '../helpers/message/icon';
 import type { MapSendInfo } from '../models/crypto';
 import { STATUS_ICONS_FILLS } from '../models/crypto';

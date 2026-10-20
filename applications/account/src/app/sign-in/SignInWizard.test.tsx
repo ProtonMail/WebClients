@@ -11,7 +11,8 @@ import {
     TOTPError,
 } from '@proton/shared/lib/authentication/error';
 import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
-import type { KeySalt, User } from '@proton/shared/lib/interfaces';
+import type { KeySalt } from '@proton/shared/lib/interfaces/KeySalt';
+import type { User } from '@proton/shared/lib/interfaces/User';
 
 import type { AuthSession } from '../content/authSession';
 import type { Paths } from '../content/helper';
@@ -57,8 +58,8 @@ jest.mock('@proton/account/safetyReview/verification/verification', () => ({
 }));
 
 // The recovery phrase form checks the words against the wordlist; the tests leave refusing a phrase to the API
-jest.mock('@proton/shared/lib/mnemonic', () => ({
-    ...jest.requireActual('@proton/shared/lib/mnemonic'),
+jest.mock('@proton/shared/lib/mnemonic/bip39Wrapper', () => ({
+    ...jest.requireActual('@proton/shared/lib/mnemonic/bip39Wrapper'),
     validateMnemonic: () => Promise.resolve(true),
 }));
 

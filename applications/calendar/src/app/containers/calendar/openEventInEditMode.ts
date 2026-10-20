@@ -3,8 +3,9 @@ import type { SetStateAction } from 'react';
 import { getOccurrences } from '@proton/shared/lib/calendar/recurrence/recurring';
 import { getRecurrenceId } from '@proton/shared/lib/calendar/veventHelper';
 import { fromUTCDateToLocalFakeUTCDate } from '@proton/shared/lib/date/timezone';
-import type { Api } from '@proton/shared/lib/interfaces';
-import type { CalendarEvent, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
+import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar/Event';
 
 import { TYPE } from '../../components/calendar/interactions/constants';
 import { generateEventUniqueId } from '../../helpers/event';

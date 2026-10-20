@@ -2,7 +2,7 @@ import { versionCookieAtLoad } from '@proton/components/helpers/versionCookie'
 import type { DocumentRoleType } from '@proton/docs-shared'
 import { DocumentRole, InternalEventBus, SyncedEditorState } from '@proton/docs-shared'
 import { dateLocale as hostDateLocale } from '@proton/shared/lib/i18n'
-import type { Environment } from '@proton/shared/lib/interfaces'
+import type { Environment } from '@proton/shared/lib/interfaces/Environment'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 import { Logger } from '@proton/shared/lib/logs'
 

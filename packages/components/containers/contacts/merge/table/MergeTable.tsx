@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import type { ContactFormatted } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactFormatted } from '@proton/shared/lib/interfaces/contacts/Contact';
 
 import Table from '../../../../components/table/Table';
 import TableCell from '../../../../components/table/TableCell';

@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
+import { setDateLocales } from '@proton/shared/lib/i18n';
 import { enGBLocale, enUSLocale } from '@proton/shared/lib/i18n/dateFnLocales';
-import { setDateLocales } from '@proton/shared/lib/i18n/index';
 
 import { LastChanged } from './LastChanged';
 

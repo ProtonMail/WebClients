@@ -8,7 +8,8 @@ import * as bootstrap from '@proton/account/bootstrap';
 import { createUnleash } from '@proton/account/bootstrap';
 import createApi from '@proton/shared/lib/api/createApi';
 import type { EventManager } from '@proton/shared/lib/eventManager/eventManager';
-import type { ProtonConfig, User } from '@proton/shared/lib/interfaces';
+import type { User } from '@proton/shared/lib/interfaces/User';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 
 import { base64ToMasterKey, generateMasterKeyBase64, generateSpaceKeyBase64 } from '../../crypto';
 import type { AesKwCryptoKey } from '../../crypto/types';

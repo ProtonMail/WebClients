@@ -1,13 +1,13 @@
 import { type PrivateKeyReferenceV4, toPublicKeyReference } from '@protontech/crypto';
 
 import { createAddressKeyRouteV2 } from '../../api/keys';
-import type { ActiveAddressKeysByVersion, Address, Api, KeyTransparencyVerify } from '../../interfaces';
-import {
-    getActiveKeyObject,
-    getDefaultKeyFlags,
-    getNormalizedActiveAddressKeys,
-    getSignedKeyListWithDeferredPublish,
-} from '../../keys';
+import type { Address } from '../../interfaces/Address';
+import type { Api } from '../../interfaces/Api';
+import type { ActiveAddressKeysByVersion } from '../../interfaces/Key';
+import type { KeyTransparencyVerify } from '../../interfaces/KeyTransparency';
+import { getActiveKeyObject, getNormalizedActiveAddressKeys } from '../getActiveKeys';
+import { getDefaultKeyFlags } from '../keyFlags';
+import { getSignedKeyListWithDeferredPublish } from '../signedKeyList';
 
 export interface ForwardingAddressKeyParameters {
     api: Api;

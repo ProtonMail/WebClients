@@ -2,8 +2,9 @@ import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 
 import { getContact, updateContact } from '../api/contacts';
 import { CONTACT_CARD_TYPE } from '../constants';
-import type { Api, DecryptedKey, Key } from '../interfaces';
-import type { Contact } from '../interfaces/contacts';
+import type { Api } from '../interfaces/Api';
+import type { DecryptedKey, Key } from '../interfaces/Key';
+import type { Contact } from '../interfaces/contacts/Contact';
 import { splitKeys } from '../keys/keys';
 import { getKeyUsedForContact } from './keyVerifications';
 import { resignCards } from './resign';

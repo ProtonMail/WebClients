@@ -1,4 +1,5 @@
-import type { Api, User } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { User } from '@proton/shared/lib/interfaces/User';
 import { isAdmin, isPaid } from '@proton/shared/lib/user/helpers';
 
 import type { BillingAddressExtended } from '../billing-address/billing-address';

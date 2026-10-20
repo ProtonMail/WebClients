@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import type { DecryptedKey } from '@proton/shared/lib/interfaces';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 
 import { initEncryptedThumbnailCache } from './encryptedThumbnailCache';
 

@@ -11,19 +11,19 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { MEMBER_PRIVATE, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
 import { getIsEncryptionDisabled } from '@proton/shared/lib/helpers/address';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
-import type {
-    Address,
-    ApiKeysConfig,
-    CachedOrganizationKey,
-    DecryptedAddressKey,
-    EnhancedMember,
-} from '@proton/shared/lib/interfaces';
-import { GroupMemberType } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { ApiKeysConfig } from '@proton/shared/lib/interfaces/EncryptionPreferences';
+import { GroupMemberType } from '@proton/shared/lib/interfaces/Group';
 import { GROUP_MEMBER_TYPE } from '@proton/shared/lib/interfaces/GroupMember';
 import type { GroupMember } from '@proton/shared/lib/interfaces/GroupMember';
-import { getAddressKeyToken, getDecryptedUserKeys, getEmailFromKey, splitKeys } from '@proton/shared/lib/keys';
+import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces/Key';
+import type { EnhancedMember } from '@proton/shared/lib/interfaces/Member';
+import type { CachedOrganizationKey } from '@proton/shared/lib/interfaces/OrganizationKey';
+import { getAddressKeyToken } from '@proton/shared/lib/keys/addressKeys';
 import { getInternalParameters, getInternalParametersPrivate } from '@proton/shared/lib/keys/forward/forward';
+import { getDecryptedUserKeys } from '@proton/shared/lib/keys/getDecryptedUserKeys';
 import { getGroupMemberPublicKeys } from '@proton/shared/lib/keys/groupKeys';
+import { getEmailFromKey, splitKeys } from '@proton/shared/lib/keys/keys';
 import { getMemberByEmail } from '@proton/shared/lib/keys/memberHelper';
 
 import type { AddressesState } from '../addresses';

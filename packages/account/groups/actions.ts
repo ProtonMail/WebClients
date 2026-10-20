@@ -9,7 +9,9 @@ import {
     editGroup as editGroupCall,
 } from '@proton/shared/lib/api/groups';
 import { USER_ROLES } from '@proton/shared/lib/constants';
-import type { Api, Domain, EnhancedGroup, Group, GroupFlags, GroupPermissions } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { Domain } from '@proton/shared/lib/interfaces/Domain';
+import type { EnhancedGroup, Group, GroupFlags, GroupPermissions } from '@proton/shared/lib/interfaces/Group';
 import { createGroupAddressKey } from '@proton/shared/lib/keys/groupKeys';
 
 import { domainsThunk } from '../domains';

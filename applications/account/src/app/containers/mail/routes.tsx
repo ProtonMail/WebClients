@@ -18,8 +18,9 @@ import { ADDRESS_TYPE, APPS, MAIL_APP_NAME, PASS_APP_NAME } from '@proton/shared
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { Address, UserModel } from '@proton/shared/lib/interfaces';
-import { getIsExternalAccount } from '@proton/shared/lib/keys';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import { getIsExternalAccount } from '@proton/shared/lib/keys/accountType';
 
 import type { OrganizationRouterParams } from '../../content/router-params';
 
