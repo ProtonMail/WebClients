@@ -11,6 +11,9 @@ import testingLibrary from 'eslint-plugin-testing-library';
 import { defineConfig, globalIgnores } from 'eslint/config';
 import { configs, parser, plugin } from 'typescript-eslint';
 
+import { brandNameSelectors } from '@proton/oxlint-config/brandNames';
+import { namingConventionOptions } from '@proton/oxlint-config/namingConvention';
+
 import { createExtraneousDependenciesRule } from './extraneousDependencies.js';
 import { allExtensions, allGlobs, typescriptGlobs } from './globs.js';
 import { restrictedImportsPlugin } from './restrictedImports.js';
@@ -94,13 +97,7 @@ export default defineConfig(
 
             '@typescript-eslint/no-misused-promises': ['error', { checksVoidReturn: false }],
 
-            '@typescript-eslint/naming-convention': [
-                'error',
-                { selector: 'variable', format: ['camelCase', 'PascalCase', 'UPPER_CASE'] },
-                { selector: 'function', format: ['camelCase', 'PascalCase'] },
-                { selector: 'typeLike', format: ['PascalCase', 'UPPER_CASE'] },
-                { selector: 'enum', format: ['PascalCase', 'UPPER_CASE'] },
-            ],
+            '@typescript-eslint/naming-convention': ['error', ...namingConventionOptions],
 
             'dot-notation': 'off',
             '@typescript-eslint/dot-notation': ['error', { allowKeywords: true }],
@@ -190,70 +187,7 @@ export default defineConfig(
             'no-param-reassign': 'off',
             'no-plusplus': 'off',
 
-            'no-restricted-syntax': [
-                'error',
-                {
-                    selector:
-                        'TaggedTemplateExpression > TemplateLiteral > TemplateElement.quasis[value.raw=/\\bProton\\b(?!\\s+(Account|Mail|Drive|Calendar|VPN|Verify|Sentinel))/i]',
-                    message: 'Use `BRAND_NAME` instead to avoid possible translation.',
-                },
-                {
-                    selector:
-                        'TaggedTemplateExpression > TemplateLiteral > TemplateElement.quasis[value.raw=/\\bProton Account\\b/i]',
-                    message: 'Use `${BRAND_NAME} Account` instead to allow translation of `Account`.',
-                },
-                {
-                    selector:
-                        'TaggedTemplateExpression > TemplateLiteral > TemplateElement.quasis[value.raw=/\\bProton Mail\\b/i]',
-                    message: 'Use `MAIL_APP_NAME` instead to avoid possible translation.',
-                },
-                {
-                    selector:
-                        'TaggedTemplateExpression > TemplateLiteral > TemplateElement.quasis[value.raw=/\\bProton Drive\\b/i]',
-                    message: 'Use `DRIVE_APP_NAME` instead to avoid possible translation.',
-                },
-                {
-                    selector:
-                        'TaggedTemplateExpression > TemplateLiteral > TemplateElement.quasis[value.raw=/\\bProton Calendar\\b/i]',
-                    message: 'Use `CALENDAR_APP_NAME` instead to avoid possible translation.',
-                },
-                {
-                    selector:
-                        'TaggedTemplateExpression > TemplateLiteral > TemplateElement.quasis[value.raw=/\\bProton VPN\\b/i]',
-                    message: 'Use `VPN_APP_NAME` instead to avoid possible translation.',
-                },
-                {
-                    selector:
-                        'TaggedTemplateExpression > TemplateLiteral > TemplateElement.quasis[value.raw=/\\bProton Verify\\b/i]',
-                    message: 'Use `VERIFY_APP_NAME` instead to avoid possible translation.',
-                },
-                {
-                    selector:
-                        'TaggedTemplateExpression > TemplateLiteral > TemplateElement.quasis[value.raw=/\\bDark Web Monitoring\\b/i]',
-                    message: 'Use `DARK_WEB_MONITORING_NAME` instead to avoid possible translation.',
-                },
-                {
-                    selector:
-                        'TaggedTemplateExpression > TemplateLiteral > TemplateElement.quasis[value.raw=/\\bProton Sentinel\\b/i]',
-                    message: 'Use `PROTON_SENTINEL_NAME` instead to avoid possible translation.',
-                },
-                {
-                    selector:
-                        'TaggedTemplateExpression > TemplateLiteral > TemplateElement.quasis[value.raw=/\\bLumo\\b/i]',
-                    message: 'Use `LUMO_SHORT_APP_NAME` instead to avoid possible translation.',
-                },
-                {
-                    // Case-sensitive on purpose: only the brand `iDEAL`, never the word `ideal`.
-                    selector:
-                        'TaggedTemplateExpression > TemplateLiteral > TemplateElement.quasis[value.raw=/\\biDEAL\\b/]',
-                    message: 'Use `IDEAL_BRAND_NAME` instead to avoid possible translation.',
-                },
-                {
-                    selector:
-                        'TaggedTemplateExpression > TemplateLiteral > TemplateElement.quasis[value.raw=/\\bWero\\b/i]',
-                    message: 'Use `WERO_BRAND_NAME` instead to avoid possible translation.',
-                },
-            ],
+            'no-restricted-syntax': ['error', ...brandNameSelectors],
 
             'no-restricted-properties': [
                 'error',
