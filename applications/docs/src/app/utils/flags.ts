@@ -10,6 +10,9 @@ SDK switch flags:
 - DocsMoveModalDriveSDK - no dependencies
 - DocsInvitationsDriveSDK - no dependencies
 - DocsDriveCompatSDK - no dependencies
+
+Other flags:
+- DocsHomepageBulkTrash - requires DocsTrashWithDriveSDK
 */
 
 export function useLoadRecentsWithSdkEnabled() {
@@ -37,6 +40,12 @@ export function useDriveCompatSDK() {
 }
 
 // Other flags
+
+export function useBulkTrashEnabled() {
+  const bulk = useFlag('DocsHomepageBulkTrash')
+  const trashWithSDK = useTrashWithSDK()
+  return bulk && trashWithSDK
+}
 
 export function useIsOpenTracerEnabled() {
   return useFlag('DocsOpenTracer')
