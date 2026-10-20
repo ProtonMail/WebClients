@@ -816,6 +816,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Trình quản lý mật khẩu không có ở đây? Hãy yêu cầu."
+      ],
+      "Download for macOS": [
+        "Tải xuống cho macOS"
+      ],
+      "Download for Windows": [
+        "Tải xuống cho Windows"
       ]
     },
     "Activity": {
@@ -2197,7 +2203,7 @@
         "Đang chuyển tất cả mục từ \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Việc chuyển một mục sang kho khác sẽ xóa các liên kết bảo mật của mục đó."
+        "Việc chuyển các mục sang kho khác sẽ xóa các liên kết bảo mật của chúng."
       ],
       "Moving items": [
         "Đang chuyển mục"
