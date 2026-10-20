@@ -32,3 +32,16 @@ describe('blocked file extensions', () => {
         expect(getProcessingCategory('application/pdf', 'report.pdf')).toBe('pdf');
     });
 });
+
+describe('GPX route files', () => {
+    it('accepts .gpx by extension and standard MIME type', () => {
+        expect(isFileTypeSupported('San Valentino.gpx')).toBe(true);
+        expect(isFileTypeSupported('route.gpx', 'application/gpx+xml')).toBe(true);
+        expect(getProcessingCategory('application/gpx+xml', 'route.gpx')).toBe('text');
+        expect(getProcessingCategory('application/octet-stream', 'route.gpx')).toBe('text');
+    });
+
+    it('includes .gpx in the file picker accept list', () => {
+        expect(getAcceptAttributeString().split(',')).toContain('.gpx');
+    });
+});
