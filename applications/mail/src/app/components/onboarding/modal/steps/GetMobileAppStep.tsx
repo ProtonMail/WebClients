@@ -15,12 +15,7 @@ import mobileAppImg2x from '@proton/styles/assets/img/onboarding/mail_onboarding
 import clsx from '@proton/utils/clsx';
 
 import { TrackOnboardingStepLoad } from '../../../../telemetry/TrackOnboardingStepLoad';
-import {
-    ONBOARDING_ACTIONS,
-    ONBOARDING_STEPS,
-    trackStepCompleted,
-    trackStepInteracted,
-} from '../../../../telemetry/onboardingEvents';
+import { ONBOARDING_ACTIONS, ONBOARDING_STEPS, useOnboardingTracking } from '../../../../telemetry/onboardingEvents';
 import type { OnboardingStepEligibleCallback } from '../interface';
 import OnboardingContent from '../layout/OnboardingContent';
 
@@ -32,6 +27,7 @@ export const isGetMobileAppStepEligible: OnboardingStepEligibleCallback = async 
 };
 
 const GetMobileAppStep = ({ onNext }: OnboardingStepRenderCallback) => {
+    const { trackStepInteracted, trackStepCompleted } = useOnboardingTracking();
     const { viewportWidth } = useActiveBreakpoint();
 
     const handleNext = () => {

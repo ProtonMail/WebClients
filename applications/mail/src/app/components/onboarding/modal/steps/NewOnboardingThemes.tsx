@@ -13,12 +13,7 @@ import type { ThemeTypes } from '@proton/shared/lib/themes/constants';
 import clsx from '@proton/utils/clsx';
 
 import { TrackOnboardingStepLoad } from '../../../../telemetry/TrackOnboardingStepLoad';
-import {
-    ONBOARDING_ACTIONS,
-    ONBOARDING_STEPS,
-    trackStepInteracted,
-    trackThemeStepCompleted,
-} from '../../../../telemetry/onboardingEvents';
+import { ONBOARDING_ACTIONS, ONBOARDING_STEPS, useOnboardingTracking } from '../../../../telemetry/onboardingEvents';
 import { useMailOnboardingTelemetry } from '../../useMailOnboardingTelemetry';
 import type { OnboardingStepEligibleCallback } from '../interface';
 import OnboardingContent from '../layout/OnboardingContent';
@@ -28,6 +23,7 @@ export const isNewOnboardingThemesStepEligible: OnboardingStepEligibleCallback =
 });
 
 const NewOnboardingThemes = ({ onNext }: OnboardingStepRenderCallback) => {
+    const { trackStepInteracted, trackThemeStepCompleted } = useOnboardingTracking();
     const sendMailOnboardingTelemetry = useMailOnboardingTelemetry();
     const mobile = isMobile();
     const theme = useTheme();
