@@ -662,6 +662,14 @@
         "Da"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "Še ${ hiddenResultsCount } zadetek, ki ni prikazan",
+        "Še ${ hiddenResultsCount } zadetka, ki nista prikazana",
+        "Še ${ hiddenResultsCount } zadetki, ki niso prikazani",
+        "Še ${ hiddenResultsCount } zadetkov, ki niso prikazani"
+      ]
+    },
     "Browser": {
       "${ appName } Desktop application": [
         "${ appName } Namizna aplikacija"
@@ -1204,6 +1212,17 @@
         "Uporabniško ime"
       ]
     },
+    "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Najden ${ itemsCount } predlog, za krmarjenje uporabite tipkovnico.",
+        "Najdena ${ itemsCount } predloga, za krmarjenje uporabite tipkovnico.",
+        "Najdeni ${ itemsCount } predlogi, za krmarjenje uporabite tipkovnico.",
+        "Najdenih ${ itemsCount } predlogov, za krmarjenje uporabite tipkovnico."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "S smernimi tipkama gor in dol si oglejte in izberite predloge. Za potrditev izbire pritisnite Enter, za preklic in zapiranje polja s predlogi pritisnite Esc."
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "Predmet »${ payload.itemName }« je bil opuščen"
@@ -1513,6 +1532,9 @@
       ],
       "invites you to access items in": [
         "vas vabi k dostopu do predmetov v"
+      ],
+      "iOS and Android Apps": [
+        "Aplikacije za iOS in Android"
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Videti je, da ste že prijavljeni v ${ PASS_APP_NAME }. Če se poskušate prijaviti z drugim računom, se najprej odjavite iz razširitve."
@@ -3352,6 +3374,9 @@
       "Excluded items": [
         "Izključeni predmeti"
       ],
+      "Export": [
+        "Izvoz"
+      ],
       "Fill & copy password": [
         "Izpolni in kopiraj geslo"
       ],
@@ -3360,6 +3385,9 @@
       ],
       "Folder options": [
         "Možnosti mape"
+      ],
+      "Get mobile and desktop apps": [
+        "Prenesite mobilne in namizne aplikacije"
       ],
       "Get Started": [
         "Začnite"
@@ -3384,6 +3412,9 @@
       ],
       "Import - ${ date }": [
         "Uvoz - ${ date }"
+      ],
+      "Import failed": [
+        "Uvoz ni uspel"
       ],
       "Import to vault(s)": [
         "Uvozi v trezor(je)"
