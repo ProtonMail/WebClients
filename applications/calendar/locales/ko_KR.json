@@ -1039,6 +1039,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "회원님의 데스크톱 앱 무료 체험 기간이 ${ formattedEndDate }에 종료됩니다. ${ upgradeButton }"
+      ],
+      "Subscribe": [
+        "구독"
       ]
     },
     "action": {
@@ -7517,6 +7520,15 @@
       ],
       "Why would you like to cancel?": [
         "취소하려는 이유가 무엇인가요?"
+      ],
+      "Amount": [
+        "금액"
+      ],
+      "Amount due": [
+        "지불할 금액"
+      ],
+      "Credits used": [
+        "사용된 크레딧"
       ]
     },
     "label": {
@@ -11532,6 +11544,9 @@
       ],
       "You have successfully unsubscribed": [
         "성공적으로 구독 취소했습니다."
+      ],
+      "Invoice paid": [
+        "미납 청구서 결제 완료"
       ]
     },
     "Suffix": {
@@ -12488,6 +12503,9 @@
       ],
       "Request sent": [
         "요청 발송완료"
+      ],
+      "Pay invoice": [
+        "청구서 지불"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13113,6 +13131,100 @@
       ],
       "Other": [
         "기타"
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "블랙프라이데이"
+      ],
+      "Get the deal": [
+        "혜택 받기"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/월"
+      ],
+      "15 GB storage": [
+        "15GB 저장공간"
+      ],
+      "2 individual accounts": [
+        "개별 계정 2개"
+      ],
+      "2 TB of secure storage": [
+        "2TB 보안 저장공간"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200GB 저장공간: 현재 요금제의 40배"
+      ],
+      "3 TB of secure storage": [
+        "3TB 보안 저장공간"
+      ],
+      "500 GB of secure storage": [
+        "500GB 보안 저장공간"
+      ],
+      "6 individual accounts": [
+        "개별 계정 6개"
+      ],
+      "Built-in 2FA authenticator": [
+        "내장형 2단계 인증 기능"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "할인율은 정상 월 요금 기준입니다. 청구 주기가 종료되면 정상 연간 요금으로 갱신됩니다."
+      ],
+      "Online document editor": [
+        "온라인 문서 편집기"
+      ],
+      "Recover previous file versions": [
+        "이전 파일 버전 복구"
+      ],
+      "Stronger protection against cyber threats": [
+        "사이버 위협 차단 및 보안 강화"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "무제한 폴더, 라벨 및 필터"
+      ],
+      "Use your own email domain": [
+        "자체 이메일 도메인 사용"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "프리미엄 ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "프리미엄 ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "프리미엄 ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "프리미엄 ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "프리미엄 ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "연중 최대 세일"
+      ],
+      "Black Friday": [
+        "블랙프라이데이"
+      ],
+      "for 12 months": [
+        "12개월"
+      ],
+      "Last chance to save big": [
+        "마지막 역대급 할인 기회"
       ]
     }
   }
