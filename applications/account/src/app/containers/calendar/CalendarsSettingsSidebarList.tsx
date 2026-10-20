@@ -172,10 +172,10 @@ const CalendarsSettingsSidebarList = ({ prefix, calendarsSection }: Props) => {
                         {calendarsSettingsHeaderContent}
                     </SidebarListItemContent>
                 </SidebarListItemLink>
-                {/* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */}
                 <ul
                     className="unstyled"
                     id={contentId}
+                    // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
                     role="region"
                     aria-labelledby={headerId}
                     hidden={!isExpanded}

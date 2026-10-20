@@ -36,6 +36,8 @@
                 "stylelint-config-standard-scss",
                 "stylelint-use-logical-spec",
                 "@typescript/native",
+                "oxlint",
+                "oxlint-tsgolint",
                 "^@proton/(account|activation|calendar|components|docs-core|mail-renderer|nav|payments|payments-ui|redux-shared-store|shared|types)$|^@types/global-types-monorepo$"
             ]
         },
