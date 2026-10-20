@@ -14,7 +14,13 @@ jest.mock("../../store/urlStore", () => ({
 }));
 jest.mock("../log", () => {
     const logger = { info: jest.fn(), debug: jest.fn(), warn: jest.fn(), error: jest.fn() };
-    return { mainLogger: logger, viewLogger: () => logger, rendererLogger: () => logger, ipcLogger: logger };
+    return {
+        mainLogger: logger,
+        viewLogger: () => logger,
+        rendererLogger: () => logger,
+        ipcLogger: logger,
+        urlRedirectsLogger: logger,
+    };
 });
 jest.mock("./viewManagement", () => ({
     getCurrentView: jest.fn(() => null),

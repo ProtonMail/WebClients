@@ -4,7 +4,9 @@ import { urlRule } from '../../lib/desktop/urls/builder';
 import { matchUrlRules } from '../../lib/desktop/urls/matcher';
 import { URL_RULES } from '../../lib/desktop/urls/rules';
 
-const match = (url: string): boolean => matchUrlRules(url, URL_RULES);
+const noopLogger = { info: () => {}, warn: () => {} };
+
+const match = (url: string): boolean => matchUrlRules(url, URL_RULES, noopLogger);
 
 describe('desktop url rules', () => {
     it('URL rules can be built', () => {
