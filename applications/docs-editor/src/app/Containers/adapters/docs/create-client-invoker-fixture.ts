@@ -4,7 +4,7 @@ import { createStandaloneDocClient } from '../../../../standalone-doc/client'
 /** The shell adapter still accepts the shared host bridge; the editor does not. */
 export function createClientInvokerFixture(): EditorRequiresClientMethods {
   return {
-    ...createStandaloneDocClient(jest.fn(), () => () => {}),
+    ...createStandaloneDocClient('local@example.test', () => () => {}),
     // The standalone client answers in the editor's own comment contract, which the host's is wider than.
     getAllThreads: jest.fn(async () => []),
     createComment: jest.fn(async () => undefined),
