@@ -2317,6 +2317,24 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Cancel import": [
+        "Anulare importare"
+      ],
+      "Create a ${ ACCOUNT_APP_NAME }": [
+        "Creați un ${ ACCOUNT_APP_NAME }"
+      ],
+      "Import actions": [
+        "Acțiuni importare"
+      ],
+      "Remove from the list": [
+        "Eliminare din listă"
+      ],
+      "Sign in to ${ PASS_APP_NAME }": [
+        "Conectare în ${ PASS_APP_NAME }"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Începeți să utilizați ${ PASS_APP_NAME }"
       ]
     },
     "action": {
@@ -2910,10 +2928,10 @@
     },
     "bf2023: header": {
       "Save with Black Friday deals on a high-speed Swiss VPN": [
-        "Economisiți cu ofertele de Vinerea Neagră pentru un VPN elvețian de mare viteză"
+        "Economisiți cu ofertele de Black Friday pentru un VPN elvețian de mare viteză"
       ],
       "Select your Black Friday offer": [
-        "Selectați oferta de Vinerea Neagră"
+        "Selectați oferta de Black Friday"
       ]
     },
     "bf2023: Info": {
@@ -5775,6 +5793,15 @@
         "Planul actual permite maxim ${ MAX_SYNC_PAID_USER } adresă Gmail",
         "Planul actual permite maxim ${ MAX_SYNC_PAID_USER } adrese Gmail",
         "Planul actual permite maxim ${ MAX_SYNC_PAID_USER } de adrese Gmail"
+      ],
+      "Access your passwords on all your devices": [
+        "Accesați-vă parolele pe toate dispozitivele"
+      ],
+      "Autofill logins instantly on any site": [
+        "Completați automat datele de autentificare pe orice site"
+      ],
+      "Create strong password with one click": [
+        "Creeați o parolă puternică printr-un singur clic"
       ]
     },
     "description": {
@@ -6230,6 +6257,9 @@
       ],
       "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
         "Transferați mesajele de la un cont extern către ${ MAIL_APP_NAME }."
+      ],
+      "Sign in to ${ providerName }": [
+        "Conectare în ${ providerName }"
       ]
     },
     "Edit billing address form note": {
@@ -8288,6 +8318,9 @@
       ],
       "Zero keys reactivated": [
         "Zero taste reactivate."
+      ],
+      "Couldn't load your connections": [
+        "Conexiunile nu vi s-au putut încărca."
       ]
     },
     "error": {
@@ -10284,6 +10317,9 @@
       ],
       "Undo in progress": [
         "Anulare în desfășurare"
+      ],
+      "Queued": [
+        "În așteptare"
       ]
     },
     "Import type": {
@@ -14725,6 +14761,9 @@
       ],
       "Zoom meeting": [
         "o întâlnire pe Zoom"
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "Perioada de probare gratuită s-a încheiat. Abonați-vă acum pentru a asigura accesul neîntrerupt al echipei proprii și securitatea conturilor."
       ]
     },
     "info": {
@@ -17104,6 +17143,12 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Item": [
+        "Articol"
+      ],
+      "Vault": [
+        "Seif"
       ]
     },
     "label": {
@@ -21428,6 +21473,9 @@
     "Payments.iDEAL": {
       "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
         "Prin confirmare, autorizați ${ BRAND_NAME } și Stripe, furnizorul nostru de servicii de plată, să colecteze plățile viitoare pentru abonament din acest cont bancar prin Debit Direct SEPA, iar banca să vă debiteze aceste plăți. Prima plată este efectuată acum de către ${ IDEAL_WERO_BRAND_NAME }. Planul se reînnoiește automat până la anularea acestuia; vă vom notifica înainte de fiecare colectare. Pentru colectările prin debit direct, puteți solicita o rambursare de la banca proprie în termen de 8 săptămâni de la data debitării, în conformitate cu termenii acordului cu banca. Aceasta nu se aplică plății ${ IDEAL_WERO_BRAND_NAME } pe care o efectuați acum."
+      ],
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Prin confirmare, autorizați ${ BRAND_NAME } și Stripe, furnizorul nostru de servicii de plată, să încaseze plățile viitoare pentru abonament din acest cont bancar prin debitare directă SEPA, iar banca să vă efectueze aceste plăți. Prima plată este efectuată acum prin ${ IDEAL_WERO_BRAND_NAME }. Abonamentul se reînnoiește automat până în momentul în care îl anulați; vă vom notifica înainte de fiecare încasare. În cazul plăților prin debitare directă, puteți solicita băncii rambursarea sumei în termen de 8 săptămâni de la data debitării, conform termenilor contractului încheiat cu banca. Această prevedere nu se aplică plății prin ${ IDEAL_WERO_BRAND_NAME } pe care o efectuați în acest moment."
       ]
     },
     "Payments.info": {
@@ -28428,6 +28476,39 @@
       ],
       "Your subscriptions": [
         "Abonamente personale"
+      ],
+      "${ PASS_APP_NAME }: Welcome": [
+        "${ PASS_APP_NAME }: Bun venit"
+      ],
+      "Add ${ PASS_APP_NAME } to ${ browserName }": [
+        "Adăugați ${ PASS_APP_NAME } în ${ browserName }"
+      ],
+      "Add ${ PASS_APP_NAME } to your browser": [
+        "Adăugați ${ PASS_APP_NAME } la navigatorul web"
+      ],
+      "Connect your ${ ACCOUNT_APP_NAME }": [
+        "Conectați-vă contul ${ ACCOUNT_APP_NAME }"
+      ],
+      "Over 95% of users love our extension": [
+        "Peste 95% dintre utilizatori apreciază extensia noastră"
+      ],
+      "Save time:": [
+        "Câștigați timp:"
+      ],
+      "Skip for now": [
+        "Ignorare momentan"
+      ],
+      "Stay connected:": [
+        "Păstrați-vă conexiunea:"
+      ],
+      "Stay safe:": [
+        "Rămâneți în siguranță:"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "Abonare la ${ planTitle }"
+      ],
+      "Unlock the power of autofill with ${ PASS_APP_NAME } in your browser": [
+        "Deblocați puterea completării automate cu ${ PASS_APP_NAME } în navigatorul web"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -30159,6 +30240,19 @@
       ],
       "Yearly, ${ untilString }": [
         "Anual, ${ untilString }"
+      ]
+    },
+    "Rollback state": {
+      "Undo finished": [
+        "Anulare finalizată"
+      ],
+      "Undo in progress": [
+        "Anulare în desfășurare"
+      ]
+    },
+    "Sign out": {
+      "Sign in to ${ providerName }": [
+        "Conectare în ${ providerName }"
       ]
     }
   }

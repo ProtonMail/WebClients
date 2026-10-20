@@ -2314,6 +2314,18 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Connect Gmail": [
+        "Conectar Gmail"
+      ],
+      "Sign in to ${ PASS_APP_NAME }": [
+        "Iniciar sesión en ${ PASS_APP_NAME }"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Comenzar con ${ PASS_APP_NAME }"
+      ],
+      "Upgrade to connect": [
+        "Actualice para conectar"
       ]
     },
     "action": {
@@ -2913,6 +2925,9 @@
       ],
       "Premium versions of all ${ BRAND_NAME } services": [
         "Versiones premium de todos los servicios de ${ BRAND_NAME }"
+      ],
+      "The ${ planName } plan is back for a limited time only": [
+        "El plan ${ planName } está disponible de nuevo por tiempo limitado"
       ]
     },
     "bf2023: info": {
@@ -3782,6 +3797,15 @@
       ],
       "Your previous username, ${ boldClaimedEmail }, can no longer be used to sign in to this account.": [
         "Su nombre de usuario anterior, ${ boldClaimedEmail }, ya no puede usarse para iniciar sesión en esta cuenta."
+      ],
+      "The address ${ boldClaimedEmail } has been claimed by another organization and can no longer be used for this account. Your data is safe and remains private.": [
+        "La dirección ${ boldClaimedEmail } ha sido reclamada por otra organización y ya no puede usarse para esta cuenta. Sus datos están seguros y permanecen privados."
+      ],
+      "Your address has been claimed": [
+        "Su dirección fue reclamada"
+      ],
+      "Your administrator can give you a new address.": [
+        "Su administrador puede darle una dirección nueva."
       ]
     },
     "Collapsible tooltip": {
@@ -6074,6 +6098,9 @@
       ],
       "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
         "Está reenviando correos electrónicos desde una cuenta externa a ${ MAIL_APP_NAME }."
+      ],
+      "Sign in to ${ providerName }": [
+        "Iniciar sesión en ${ providerName }"
       ]
     },
     "Edit billing address form note": {
@@ -10071,6 +10098,9 @@
       ],
       "Undo in progress": [
         "Revirtiendo..."
+      ],
+      "Queued": [
+        "En espera"
       ]
     },
     "Import type": {
@@ -14389,6 +14419,48 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
+      ],
+      "${ emailAddress } is used to sign in to another ${ BRAND_NAME } account. We are making the connection seamless, but for now you will need to take a few steps.": [
+        "${ emailAddress } se usa para iniciar sesión en otra cuenta de ${ BRAND_NAME }. Estamos facilitando la conexión, pero por ahora tendrá que seguir algunos pasos."
+      ],
+      "${ reason.email } is used to sign in to another ${ BRAND_NAME } account. You'll pick a new username for that account next time you sign in. Nothing else changes.": [
+        "${ reason.email } se usa para iniciar sesión en otra cuenta de ${ BRAND_NAME }. Debe elegir otro nombre de usuario para esa cuenta la próxima vez que inicie sesión. Nada más cambiará."
+      ],
+      "**We're changing the ${ BRAND_NAME } sign-in page.** Your account and password stay the same.": [
+        "**Estamos cambiando la página de inicio de sesión de ${ BRAND_NAME }.** Su cuenta y contraseña permanecen igual."
+      ],
+      "Connected": [
+        "Conectado"
+      ],
+      "Disconnected": [
+        "Desconectada"
+      ],
+      "Import show one-time transfers of email, calendars, contacts, or files into your ${ BRAND_NAME } account.": [
+        "Las importaciones muestran transferencias únicas de correos, calendarios, contactos o archivos a su cuenta de ${ BRAND_NAME }."
+      ],
+      "More cards": [
+        "Más tarjetas"
+      ],
+      "This Gmail is already connected to your ${ BRAND_NAME } account. There's nothing else you need to do.": [
+        "Este Gmail ya está conectado a su cuenta de ${ BRAND_NAME }. No hay nada más que deba hacer."
+      ],
+      "We couldn't connect ${ emailAddress }. Try again and select all the boxes when Google asks for access. ${ BRAND_NAME } only uses this access to connect your Gmail.": [
+        "No pudimos conectar ${ emailAddress }. Intente de nuevo y seleccione todas las casillas cuando Google le pida acceso. ${ BRAND_NAME } solo usa este acceso para conectar su cuenta de Gmail."
+      ],
+      "We couldn't connect your Gmail right now. Please try again in a few minutes.": [
+        "No pudimos conectar Gmail ahora. Intente de nuevo en unos minutos."
+      ],
+      "We couldn't connect your Gmail. Try again and select all the boxes when Google asks for access. ${ BRAND_NAME } only uses this access to connect your Gmail.": [
+        "No pudimos conectar su cuenta de Gmail. Intente de nuevo y seleccione todas las casillas cuando Google le pida acceso. ${ BRAND_NAME } solo usa este acceso para conectar su cuenta de Gmail."
+      ],
+      "When sign-in is restricted, only ${ primaryEmailElement } and your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Cuando el inicio de sesión está restringido, solo se pueden usar ${ primaryEmailElement } y su nombre de usuario ${ usernameElement } para iniciar sesión. Sus otras direcciones no se pueden vincular a tSu cuenta, incluso si alguien las conoce."
+      ],
+      "Your address was connected. We're importing your emails.": [
+        "Su dirección fue conectada. Estamos importando sus correos."
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "Finalizó su prueba gratuita. Suscríbase ahora para mantener el acceso de su equipo ininterrumpido y las cuentas seguras."
       ]
     },
     "info": {
@@ -16747,6 +16819,12 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Start with your most recent": [
+        "Comience con sus más recientes"
+      ],
+      "Vault": [
+        "Bóveda"
       ]
     },
     "label": {
@@ -20954,6 +21032,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Su suscripción actualmente tiene un descuento. Cambiar a esta promoción nueva significa que el descuento existente ya no se aplicará."
+      ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Cambiar de plan es incompatible por los siguientes motivos:"
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Las licencias de Proton Meet deben coincidir con el número de miembros."
+      ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Este plan no admite las funciones gestionadas en su cuenta."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Esta suscripción no se puede completar ahora. Intente de nuevo."
       ]
     },
     "Payments.Error": {
@@ -20989,6 +21079,9 @@
     },
     "Payments.iDEAL": {
       "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Al confirmar, autoriza a ${ BRAND_NAME } y a Stripe, nuestro proveedor de servicios de pago, a cobrar los pagos futuros de su suscripción de esta cuenta bancaria mediante débito directo SEPA y a su banco a debitar esos pagos. Su primer pago se realiza ahora por ${ IDEAL_WERO_BRAND_NAME }. Su plan se renueva automáticamente hasta que lo cancele; le notificaremos antes de cada cobro. Para los cobros por débito directo, puede solicitar un reembolso a su banco dentro de las 8 semanas posteriores a la fecha del débito, bajo los términos de su acuerdo con su banco. Esto no aplica al pago de ${ IDEAL_WERO_BRAND_NAME } que está haciendo ahora."
+      ],
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
         "Al confirmar, autoriza a ${ BRAND_NAME } y a Stripe, nuestro proveedor de servicios de pago, a cobrar los pagos futuros de su suscripción de esta cuenta bancaria mediante débito directo SEPA y a su banco a debitar esos pagos. Su primer pago se realiza ahora por ${ IDEAL_WERO_BRAND_NAME }. Su plan se renueva automáticamente hasta que lo cancele; le notificaremos antes de cada cobro. Para los cobros por débito directo, puede solicitar un reembolso a su banco dentro de las 8 semanas posteriores a la fecha del débito, bajo los términos de su acuerdo con su banco. Esto no aplica al pago de ${ IDEAL_WERO_BRAND_NAME } que está haciendo ahora."
       ]
     },
@@ -24243,6 +24336,12 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Se eliminará su configuración de SSO."
+      ],
+      "Enter your password": [
+        "Ingrese la contraseña"
+      ],
+      "Your old password will become your **backup password**. You will be able to use it to authorize single sign-on (SSO) on new devices in the future.": [
+        "Su contraseña anterior se convertirá en la **contraseña de respaldo**. Podrá usarla para autorizar inicios de sesión únicos (SSO) en dispositivos nuevos en el futuro."
       ]
     },
     "sso: auth device state": {
@@ -27854,6 +27953,39 @@
       ],
       "Your subscriptions": [
         "Sus suscripciones"
+      ],
+      "${ PASS_APP_NAME }: Welcome": [
+        "${ PASS_APP_NAME }: Damos la bienvenida"
+      ],
+      "Add ${ PASS_APP_NAME } to ${ browserName }": [
+        "Añada ${ PASS_APP_NAME } a ${ browserName }"
+      ],
+      "Add ${ PASS_APP_NAME } to your browser": [
+        "Añada ${ PASS_APP_NAME } a su navegador"
+      ],
+      "Allow access to connect your Gmail": [
+        "Permitir acceso para conectar Gmail"
+      ],
+      "Connect your ${ ACCOUNT_APP_NAME }": [
+        "Conecte su ${ ACCOUNT_APP_NAME }"
+      ],
+      "Disconnect this address?": [
+        "¿Desconectar esta dirección?"
+      ],
+      "Save time:": [
+        "Ahorre tiempo:"
+      ],
+      "Skip for now": [
+        "Omitir por ahora"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "Suscribirse a ${ planTitle }"
+      ],
+      "This Gmail is linked to another ${ BRAND_NAME } account": [
+        "Este Gmail está enlazado a otra cuenta de ${ BRAND_NAME }"
+      ],
+      "Wrong Gmail account": [
+        "Cuenta de Gmail equivocada"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -28363,6 +28495,9 @@
       ],
       "Waiting for user to accept the invitation": [
         "Se está esperando que el usuario acepte la invitación."
+      ],
+      "Assigned by a group. Remove the user from the group to change this role": [
+        "Asignado por un grupo. Elimine el usuario desde el grupo para cambiar este rol"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -29534,6 +29669,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Cada año hasta ${ untilString }"
+      ]
+    },
+    "Rollback state": {
+      "Undo in progress": [
+        "Revirtiendo..."
       ]
     }
   }

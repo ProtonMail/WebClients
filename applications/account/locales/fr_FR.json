@@ -2116,6 +2116,18 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Cancel import": [
+        "Annuler l'importation"
+      ],
+      "Import actions": [
+        "Actions sur l'import"
+      ],
+      "Remove from the list": [
+        "Retirer de la liste "
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Commencer à utiliser ${ PASS_APP_NAME }"
       ]
     },
     "action": {
@@ -7890,6 +7902,9 @@
       ],
       "Zero keys reactivated": [
         "Aucune clé n'est réactivée."
+      ],
+      "Couldn't load your connections": [
+        "Impossible de charger vos connexions"
       ]
     },
     "error": {
@@ -9810,6 +9825,9 @@
       ],
       "Undo in progress": [
         "Annulation de l'importation en cours"
+      ],
+      "Queued": [
+        "En file d'attente"
       ]
     },
     "Import type": {
@@ -14031,6 +14049,12 @@
       ],
       "Zoom meeting": [
         "réunion Zoom"
+      ],
+      "SEPA Bank transfer": [
+        "Virement bancaire SEPA"
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "Votre période d’essai gratuite est terminée. Abonnez-vous dès maintenant pour maintenir l’accès de votre équipe sans interruption et assurer la sécurité de vos comptes."
       ]
     },
     "info": {
@@ -16363,6 +16387,12 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Item": [
+        "Élément"
+      ],
+      "Vault": [
+        "Coffre-fort"
       ]
     },
     "label": {
@@ -20499,6 +20529,9 @@
     },
     "Payments.iDEAL": {
       "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "En confirmant, vous autorisez ${ BRAND_NAME } et Stripe, notre prestataire de services de paiement, à prélever les futurs paiements liés à votre abonnement sur ce compte bancaire par prélèvement SEPA, et votre banque à débiter ces montants. Votre premier paiement est effectué dès maintenant par ${ IDEAL_WERO_BRAND_NAME }. Votre abonnement est renouvelé automatiquement jusqu’à ce que vous le résiliiez ; nous vous en informerons avant chaque prélèvement. Pour les prélèvements automatiques, vous pouvez demander un remboursement à votre banque dans un délai de 8 semaines à compter de la date de prélèvement, conformément aux conditions de votre contrat bancaire. Cela ne s'applique pas au paiement ${ IDEAL_WERO_BRAND_NAME } que vous effectuez actuellement."
+      ],
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
         "En confirmant, vous autorisez ${ BRAND_NAME } et Stripe, notre prestataire de services de paiement, à prélever les futurs paiements liés à votre abonnement sur ce compte bancaire par prélèvement SEPA, et votre banque à débiter ces montants. Votre premier paiement est effectué dès maintenant par ${ IDEAL_WERO_BRAND_NAME }. Votre abonnement est renouvelé automatiquement jusqu’à ce que vous le résiliiez ; nous vous en informerons avant chaque prélèvement. Pour les prélèvements automatiques, vous pouvez demander un remboursement à votre banque dans un délai de 8 semaines à compter de la date de prélèvement, conformément aux conditions de votre contrat bancaire. Cela ne s'applique pas au paiement ${ IDEAL_WERO_BRAND_NAME } que vous effectuez actuellement."
       ]
     },
@@ -27277,6 +27310,24 @@
       ],
       "Your subscriptions": [
         "Vos abonnements"
+      ],
+      "${ PASS_APP_NAME }: Welcome": [
+        "${ PASS_APP_NAME } : Bienvenue"
+      ],
+      "Save time:": [
+        "Gagnez du temps :"
+      ],
+      "Skip for now": [
+        "Ignorer pour le moment"
+      ],
+      "Stay connected:": [
+        "Rester connecté :"
+      ],
+      "Stay safe:": [
+        "Restez en sécurité :"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "S’abonner à ${ planTitle }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -28919,6 +28970,14 @@
       ],
       "Yearly, ${ untilString }": [
         "Chaque année, ${ untilString }"
+      ]
+    },
+    "Rollback state": {
+      "Undo finished": [
+        "Annulation terminée"
+      ],
+      "Undo in progress": [
+        "Annulation en cours"
       ]
     }
   }
