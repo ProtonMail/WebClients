@@ -1,4 +1,3 @@
-import { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal'
 import type { NodeKey, RangeSelection } from 'lexical'
 import {
   $createCommentThreadMarkNode,
@@ -30,6 +29,8 @@ import { TYPING_STATUS_CHANGE_EVENT_COMMAND } from './CommentsPanelListThread'
 import { registerCommentCutMove } from './registerCommentCutMove'
 import { useRightPanelContext } from '../../../DocsLayout'
 import { useDocsDependencies } from '../../DocsDependenciesProvider'
+import type { DeleteCommentDialogOptions } from './DeleteCommentDialog'
+import { DeleteCommentDialog } from './DeleteCommentDialog'
 
 export default function CommentPlugin({
   userAddress,
@@ -378,7 +379,7 @@ export default function CommentPlugin({
 
   const layoutContainerElement = editor.getRootElement()?.closest('.docs-layout-container')
 
-  const [confirmModal, showConfirmModal] = useConfirmActionModal()
+  const [deleteDialogOptions, setDeleteDialogOptions] = useState<DeleteCommentDialogOptions | null>(null)
 
   return (
     <CommentsProvider
@@ -391,7 +392,7 @@ export default function CommentPlugin({
         setThreadToFocus,
         awarenessStates,
         getMarkNodes,
-        showConfirmModal,
+        showDeleteDialog: setDeleteDialogOptions,
         commentInputSelection,
         cancelAddComment,
         setCurrentCommentDraft,
@@ -418,7 +419,9 @@ export default function CommentPlugin({
         createComment: controller.createComment.bind(controller),
       }}
     >
-      {confirmModal}
+      {deleteDialogOptions && (
+        <DeleteCommentDialog {...deleteDialogOptions} onClose={() => setDeleteDialogOptions(null)} />
+      )}
       {activeAnchorKey !== null &&
         activeAnchorKey !== undefined &&
         commentInputSelection === undefined &&
