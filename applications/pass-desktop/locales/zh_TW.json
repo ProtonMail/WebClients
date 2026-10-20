@@ -25,12 +25,6 @@
       ]
     },
     "Action": {
-      "${ PASS_SHORT_APP_NAME } for Android": [
-        "Android 版 ${ PASS_SHORT_APP_NAME }"
-      ],
-      "${ PASS_SHORT_APP_NAME } for iOS": [
-        "iOS 版 ${ PASS_SHORT_APP_NAME }"
-      ],
       "Accept": [
         "接受"
       ],
@@ -333,6 +327,12 @@
       ],
       "Done": [
         "完成"
+      ],
+      "Download for macOS": [
+        "下載 macOS 版"
+      ],
+      "Download for Windows": [
+        "下載 Windows 版"
       ],
       "Download this CSV template": [
         "下載此CSV模板"
@@ -2195,9 +2195,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "移動全部於\"${ payload.content.name }\"的項目"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "將項目移至另一個保管庫將會清除其安全連結。"
       ],
       "Moving items": [
         "正在移動檔案"

@@ -25,12 +25,6 @@
       ]
     },
     "Action": {
-      "${ PASS_SHORT_APP_NAME } for Android": [
-        "${ PASS_SHORT_APP_NAME } для Android"
-      ],
-      "${ PASS_SHORT_APP_NAME } for iOS": [
-        "${ PASS_SHORT_APP_NAME } для iOS"
-      ],
       "Accept": [
         "Прыняць"
       ],
@@ -345,6 +339,15 @@
       ],
       "Done": [
         "Гатова"
+      ],
+      "Download for Linux": [
+        "Спампаваць для Linux"
+      ],
+      "Download for macOS": [
+        "Спампаваць для macOS"
+      ],
+      "Download for Windows": [
+        "Спампаваць для Windows"
       ],
       "Download this CSV template": [
         "Спампаваць гэты шаблон CSV"
@@ -2237,6 +2240,9 @@
       "invites you to access items in": [
         "запрасіў вас атрымаць доступ да элементаў у"
       ],
+      "iOS and Android Apps": [
+        "Праграмы для iOS і Android"
+      ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Здаецца, што вы ўжо ўвайшлі ў ${ PASS_APP_NAME }. Спачатку выйдзіце з уліковага запісу ў пашырэнні, калі вы спрабуеце ўвайсці з іншым уліковым запісам, спачатку выйдзіце з уліковага запісу ў пашырэнні."
       ],
@@ -2343,7 +2349,10 @@
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Перамяшчэнне элемента ў іншае сховішча прывядзе да выдалення яго бяспечных спасылак."
+        "Перамяшчэнне элемента ў іншае сховішча прывядзе да сцірання яго бяспечных спасылак",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
       ],
       "Moving items": [
         "Перамяшчэнне элементаў"
@@ -2632,6 +2641,9 @@
       ],
       "Restoring trashed items...": [
         "Аднаўленне выдаленых элементаў..."
+      ],
+      "Scan to download": [
+        "Сканіраваць і спампаваць"
       ],
       "Secure links": [
         "Бяспечныя спасылкі"
@@ -3786,11 +3798,17 @@
       "LinkedIn account": [
         "Уліковы запіс LinkedIn"
       ],
+      "Linux": [
+        "Linux"
+      ],
       "Login": [
         "Запіс уваходу"
       ],
       "Logins": [
         "Запісы ўваходу"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Mailboxes": [
         "Паштовыя скрыні"
@@ -4379,6 +4397,9 @@
       ],
       "WiFi network": [
         "Сетка Wi-Fi"
+      ],
+      "Windows": [
+        "Windows"
       ],
       "Work details": [
         "Звесткі аб працы"
@@ -5190,6 +5211,9 @@
       ],
       "Folder options": [
         "Параметры папкі"
+      ],
+      "Get mobile and desktop apps": [
+        "Атрымаць мабільныя праграмы і праграмы для камп'ютара"
       ],
       "Get Started": [
         "Пачаць працу"

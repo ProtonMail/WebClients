@@ -25,12 +25,6 @@
       ]
     },
     "Action": {
-      "${ PASS_SHORT_APP_NAME } for Android": [
-        "${ PASS_SHORT_APP_NAME } cho Android"
-      ],
-      "${ PASS_SHORT_APP_NAME } for iOS": [
-        "${ PASS_SHORT_APP_NAME } cho iOS"
-      ],
       "Accept": [
         "Chấp nhận"
       ],
@@ -333,6 +327,12 @@
       ],
       "Done": [
         "Xong"
+      ],
+      "Download for macOS": [
+        "Tải xuống cho macOS"
+      ],
+      "Download for Windows": [
+        "Tải xuống cho Windows"
       ],
       "Download this CSV template": [
         "Tải xuống mẫu CSV"
@@ -2195,9 +2195,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Đang chuyển tất cả mục từ \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Việc chuyển một mục sang kho khác sẽ xóa các liên kết bảo mật của mục đó."
       ],
       "Moving items": [
         "Đang chuyển mục"
