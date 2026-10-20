@@ -19,11 +19,13 @@ export const useUploadDragDropOverlay = (enabled: boolean) => {
 
         window.addEventListener('dragstart', handleDragStart, true);
         window.addEventListener('dragend', handleDragEnd, true);
-        window.addEventListener('drop', handleDragEnd, true);
+        // Bubble phase on purpose: hiding the overlay in the capture phase unmounts it before React sees the drop
+        // --> the overlay onDrop never runs --> the browser opens the file
+        window.addEventListener('drop', handleDragEnd);
         return () => {
             window.removeEventListener('dragstart', handleDragStart, true);
             window.removeEventListener('dragend', handleDragEnd, true);
-            window.removeEventListener('drop', handleDragEnd, true);
+            window.removeEventListener('drop', handleDragEnd);
         };
     }, []);
 
