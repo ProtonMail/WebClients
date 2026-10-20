@@ -34,7 +34,7 @@ export interface DriveSDKFunctions {
     browseFolderChildren: (
         folderId?: string,
         forceRefresh?: boolean
-    ) => Promise<{ id: string; name: string; type: string }[]>;
+    ) => Promise<{ id: string; name: string; type: string; mediaType?: string }[]>;
     downloadFile: (nodeId: string) => Promise<ArrayBuffer>;
 }
 
