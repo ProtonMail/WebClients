@@ -129,7 +129,7 @@ export enum TelemetryEasySwitchEvents {
 }
 
 export enum TelemetryMailOnboardingEvents {
-    stepViewed = 'step_viewed',
+    stepLoad = 'step_load',
     stepCompleted = 'step_completed',
     stepInteracted = 'step_interacted',
 }
