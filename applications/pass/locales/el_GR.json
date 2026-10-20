@@ -809,6 +809,18 @@
       ],
       "Your password manager is not here? Request it.": [
         "Ο διαχειριστής κωδικών πρόσβασης σας δεν είναι εδώ; Ζητήστε τον."
+      ],
+      "Download for Linux": [
+        "Λήψη για Linux"
+      ],
+      "Download for macOS": [
+        "Λήψη για MacOS"
+      ],
+      "Download for Windows": [
+        "Λήψη για Windows"
+      ],
+      "Open platform selection dropdown": [
+        "Άνοιγμα αναπτυσσόμενου μενού επιλογής πλατφόρμας"
       ]
     },
     "Activity": {
@@ -1516,6 +1528,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Ο κωδικός PIN σας καταργήθηκε από μία άλλη ${ PASS_APP_NAME } εφαρμογή"
+      ],
+      "Biometric authentication cancelled.": [
+        "Η βιομετρική ταυτοποίηση ακυρώθηκε."
       ]
     },
     "Error message": {
@@ -2217,7 +2232,8 @@
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του."
+        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του.",
+        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους των."
       ],
       "Moving items": [
         "Μετακίνηση στοιχείων"
@@ -2916,6 +2932,15 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ο οργανισμός σας απαιτεί να εξασφαλίσετε την πρόσβασή σας στο ${ PASS_APP_NAME }"
+      ],
+      "iOS and Android Apps": [
+        "Εφαρμογές για iOS και Android"
+      ],
+      "Scan to download": [
+        "Σαρώστε για λήψη"
+      ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "Σκανάρετε για να κατεβάσετε το ${ PASS_APP_NAME } για iOS και Android"
       ]
     },
     "Keyboard key": {
@@ -4176,6 +4201,15 @@
       ],
       "ZIP or Postal code": [
         "Τ.Κ. / Ταχυδρομικός κώδικας"
+      ],
+      "Linux": [
+        "Linux"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Link": {
@@ -5284,6 +5318,12 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Πρόκειται να διαγράψετε οριστικά ${ aliasCount } ψευδώνυμο.",
         "Πρόκειται να διαγράψετε οριστικά ${ aliasCount } ψευδώνυμα."
+      ],
+      "Get mobile and desktop apps": [
+        "Αποκτήστε τις εφαρμογές για κινητά και υπολογιστές"
+      ],
+      "Get mobile apps": [
+        "Αποκτήστε εφαρμογές κινητών"
       ]
     },
     "Title_cloned_item": {

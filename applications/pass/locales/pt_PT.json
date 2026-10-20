@@ -788,6 +788,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "O seu gestor de palavras-passe não está aqui? Solicite-o."
+      ],
+      "Download for macOS": [
+        "Transferir para macOS"
+      ],
+      "Download for Windows": [
+        "Transferir para Windows"
       ]
     },
     "Activity": {
@@ -2133,7 +2139,8 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover um item para outro cofre apagará as suas ligações seguras."
+        "Mover um item para outro cofre apagará as suas ligações seguras.",
+        "Mover itens para outro cofre apagará as suas ligações seguras."
       ],
       "Moving items": [
         "A mover itens"

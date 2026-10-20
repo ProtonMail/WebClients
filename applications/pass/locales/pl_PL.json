@@ -792,6 +792,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Nie ma Twojego menadżera haseł? Zgłoś to."
+      ],
+      "Download for macOS": [
+        "Pobierz dla systemu macOS"
+      ],
+      "Download for Windows": [
+        "Pobierz dla systemu Windows"
       ]
     },
     "Activity": {
@@ -2185,7 +2191,10 @@
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków."
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków."
       ],
       "Moving items": [
         "Przenoszenie elementów"
