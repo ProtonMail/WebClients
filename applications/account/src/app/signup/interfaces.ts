@@ -164,6 +164,8 @@ export interface SignupCacheResult {
     appName: APP_NAMES;
     inviteData: InviteData | undefined;
     referralData: ReferralData | undefined;
+    /** Sales-provisioned signup: sent with the subscription call, which redeems the link. */
+    provisioningToken?: string;
     addressGeneration?: AddressGeneration;
     persistent: boolean;
     trusted: boolean;

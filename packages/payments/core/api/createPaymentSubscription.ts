@@ -47,6 +47,11 @@ type CommonSubscribeData = {
     Codes?: string[];
     StartTrial?: boolean;
     VatId?: string;
+    /**
+     * Sales-provisioned signup link token. When present, the backend redeems the provisioning
+     * record in the same request and creates the subscription from its negotiated terms.
+     */
+    ProvisioningToken?: string;
 } & AmountAndCurrency;
 
 type SubscribeDataV4 = CommonSubscribeData & TokenPaymentMethod & BillingAddressProperty;
@@ -67,6 +72,7 @@ function prepareSubscribeDataPayload(data: SubscribeData): SubscribeData {
         'BillingAddress',
         'StartTrial',
         'VatId',
+        'ProvisioningToken',
     ];
     const payload: any = {};
     Object.keys(data).forEach((key: any) => {
