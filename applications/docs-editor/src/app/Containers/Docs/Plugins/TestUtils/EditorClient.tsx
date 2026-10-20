@@ -11,28 +11,44 @@ import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
 import * as ReactTestUtils from './react-test-utils'
 import { YjsReadonlyPlugin } from '../YjsReadonly/YjsReadonlyPlugin'
 import type { Provider } from '@lexical/yjs'
-import { DocProvider, DocState, DocWillInitializeWithEmptyNodeEvent } from '@proton/docs-shared'
-import type { DocStateCallbacks } from '@proton/docs-shared/lib/Doc/DocStateCallbacks'
-import type { RtsMessagePayload, YDocMap } from '@proton/docs-shared'
 import { CollaborationContext } from '@lexical/react/LexicalCollaborationContext'
+import { applyUpdate, Doc } from 'yjs'
+import { Awareness } from 'y-protocols/awareness'
+import type { DocsDocumentAdapter } from '../../contract/DocsDocumentAdapter'
+import { DocsDocProvider } from '../Collaboration/DocsDocProvider'
 
 const logger = {
   info: jest.fn(),
   warn: jest.fn(),
   error: jest.fn(),
-  debug: jest.fn(),
-  getLogs: jest.fn(() => ''),
-  downloadLogs: jest.fn(),
-  clearLogs: jest.fn(),
-  setEnabled: jest.fn(),
+}
+
+export type YjsUpdate = Uint8Array<ArrayBuffer>
+
+/** Stands in for the host's document state. */
+class FakeDocState implements DocsDocumentAdapter {
+  readonly doc = new Doc()
+  readonly awareness = new Awareness(this.doc)
+
+  constructor(onLocalUpdate: (update: YjsUpdate) => void) {
+    this.doc.on('update', (update, origin) => {
+      if (origin !== this) {
+        onLocalUpdate(update as YjsUpdate)
+      }
+    })
+  }
+
+  receiveUpdate(update: YjsUpdate) {
+    applyUpdate(this.doc, update, this)
+  }
 }
 
 export class EditorClient {
   editor: LexicalEditor
-  state: DocState
+  state: FakeDocState
   provider: () => Provider
-  docMap: YDocMap
-  propagatedMessages: RtsMessagePayload[]
+  docMap: Map<string, Doc>
+  propagatedUpdates: YjsUpdate[]
   container: HTMLElement
   reactRoot: Root
   private safeMode: boolean = false
@@ -40,10 +56,10 @@ export class EditorClient {
 
   constructor(
     editor: LexicalEditor,
-    state: DocState,
+    state: FakeDocState,
     provider: () => Provider,
-    docMap: YDocMap,
-    propagatedMessages: RtsMessagePayload[],
+    docMap: Map<string, Doc>,
+    propagatedUpdates: YjsUpdate[],
     container: HTMLElement,
     reactRoot: Root,
   ) {
@@ -51,7 +67,7 @@ export class EditorClient {
     this.state = state
     this.provider = provider
     this.docMap = docMap
-    this.propagatedMessages = propagatedMessages
+    this.propagatedUpdates = propagatedUpdates
     this.container = container
     this.reactRoot = reactRoot
     this.safeMode = false
@@ -78,9 +94,9 @@ export class EditorClient {
         <CollaborationContext.Provider
           value={{
             yjsDocMap: this.docMap,
-            name: `name-${this.state.getClientId()}`,
+            name: `name-${this.state.doc.clientID}`,
             color: 'color-123',
-            clientID: this.state.getClientId(),
+            clientID: this.state.doc.clientID,
             isCollabActive: false,
           }}
         >
@@ -120,8 +136,6 @@ export class EditorClient {
   }
 
   async bootstrapWithEmptyParagraph() {
-    this.state.doc.emit(DocWillInitializeWithEmptyNodeEvent, [true, this.state.doc])
-
     await this.updateEditor(() => {
       this.editor.update(
         () => {
@@ -160,7 +174,7 @@ export class EditorClient {
   }
 
   async cleanup() {
-    this.state.destroy()
+    this.state.awareness.destroy()
     await ReactTestUtils.act(async () => {
       this.reactRoot.unmount()
       await Promise.resolve().then()
@@ -175,25 +189,13 @@ export async function createEditorClient(): Promise<EditorClient> {
   const reactRoot = createRoot(container)
   let editor: LexicalEditor | null = null
 
-  const docMap = new Map()
-  const propagatedMessages: RtsMessagePayload[] = []
+  const docMap = new Map<string, Doc>()
+  const propagatedUpdates: YjsUpdate[] = []
 
-  const state = new DocState(
-    {
-      handleAwarenessStateUpdate: jest.fn(),
-      docStateRequestsPropagationOfUpdate: (update: RtsMessagePayload) => {
-        if (update.type.wrapper === 'du') {
-          propagatedMessages.push(update)
-        }
-      },
-    } as unknown as DocStateCallbacks,
-    logger,
-  )
-
-  state.onEditorReadyToReceiveUpdates()
+  const state = new FakeDocState((update) => propagatedUpdates.push(update))
 
   const provider = (): Provider => {
-    return new DocProvider(state)
+    return new DocsDocProvider(state.awareness)
   }
 
   let client: EditorClient
@@ -206,8 +208,8 @@ export async function createEditorClient(): Promise<EditorClient> {
       return client.createTestBase()
     }
 
-    client = new EditorClient(editor!, state, provider, docMap, propagatedMessages, container, reactRoot)
-    docMap.set(client.docId, state.getDoc())
+    client = new EditorClient(editor!, state, provider, docMap, propagatedUpdates, container, reactRoot)
+    docMap.set(client.docId, state.doc)
 
     reactRoot.render(
       <LexicalComposer
