@@ -1,5 +1,6 @@
+import { c } from 'ttag';
+
 import './WeatherToolResult.scss';
-import {c} from "ttag";
 
 export interface WeatherData {
     type: 'Weather' | string;
@@ -41,7 +42,40 @@ const getWeatherEmoji = (description?: string): string => {
 };
 
 const degreesToCompass = (degrees: number): string => {
-    const dirs = ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW'];
+    const dirs = Object.values({
+        // translator: Standard weather abbreviation for north.
+        N: c('collider_2025:Label').t`N`,
+        // translator: Standard weather abbreviation for north-northeast.
+        NNE: c('collider_2025:Label').t`NNE`,
+        // translator: Standard weather abbreviation for northeast.
+        NE: c('collider_2025:Label').t`NE`,
+        // translator: Standard weather abbreviation for east-northeast.
+        ENE: c('collider_2025:Label').t`ENE`,
+        // translator: Standard weather abbreviation for east.
+        E: c('collider_2025:Label').t`E`,
+        // translator: Standard weather abbreviation for east-southeast.
+        ESE: c('collider_2025:Label').t`ESE`,
+        // translator: Standard weather abbreviation for southeast.
+        SE: c('collider_2025:Label').t`SE`,
+        // translator: Standard weather abbreviation for south-southeast.
+        SSE: c('collider_2025:Label').t`SSE`,
+        // translator: Standard weather abbreviation for south.
+        S: c('collider_2025:Label').t`S`,
+        // translator: Standard weather abbreviation for south-southwest.
+        SSW: c('collider_2025:Label').t`SSW`,
+        // translator: Standard weather abbreviation for southwest.
+        SW: c('collider_2025:Label').t`SW`,
+        // translator: Standard weather abbreviation for west-southwest.
+        WSW: c('collider_2025:Label').t`WSW`,
+        // translator: Standard weather abbreviation for west.
+        W: c('collider_2025:Label').t`W`,
+        // translator: Standard weather abbreviation for west-northwest.
+        WNW: c('collider_2025:Label').t`WNW`,
+        // translator: Standard weather abbreviation for northwest.
+        NW: c('collider_2025:Label').t`NW`,
+        // translator: Standard weather abbreviation for north-northwest.
+        NNW: c('collider_2025:Label').t`NNW`,
+    });
     const index = Math.round(degrees / 22.5) % 16;
     return dirs[index];
 };
@@ -69,43 +103,78 @@ export const WeatherToolResult = ({ data }: { data: WeatherData }) => {
     const emoji = getWeatherEmoji(data.weather_description);
     const locationLabel = data.country ? `${data.location_name}, ${data.country}` : data.location_name;
 
+    const updatedTime = data.timestamp ? formatTime(data.timestamp) : '';
     const stats: { label: string; value: string }[] = [];
 
     if (data.feels_like !== undefined) {
-        stats.push({ label: 'Feels Like', value: formatTemp(data.feels_like) });
+        stats.push({
+            // translator: Weather label for the temperature perceived by a person.
+            label: c('collider_2025:Label').t`Feels Like`,
+            value: formatTemp(data.feels_like),
+        });
     }
     if (data.humidity !== undefined) {
-        stats.push({ label: 'Humidity', value: `${data.humidity}%` });
+        stats.push({
+            // translator: Weather label for relative humidity.
+            label: c('collider_2025:Label').t`Humidity`,
+            value: `${data.humidity}%`,
+        });
     }
     if (data.wind_speed !== undefined) {
-        const windStr = data.wind_direction !== undefined
-            ? `${data.wind_speed} m/s ${degreesToCompass(data.wind_direction)}`
-            : `${data.wind_speed} m/s`;
-        stats.push({ label: 'Wind', value: windStr });
+        let windStr: string;
+        if (data.wind_direction !== undefined) {
+            const direction = degreesToCompass(data.wind_direction);
+            // translator: Standard weather notation. ${data.wind_speed} is wind speed in meters per second; ${direction} is the localized compass abbreviation.
+            windStr = c('collider_2025:Label').t`${data.wind_speed} m/s ${direction}`;
+        } else {
+            // translator: Standard weather notation. ${data.wind_speed} is wind speed; m/s means meters per second.
+            windStr = c('collider_2025:Label').t`${data.wind_speed} m/s`;
+        }
+        stats.push({
+            // translator: Weather label for wind speed and direction.
+            label: c('collider_2025:Label').t`Wind`,
+            value: windStr,
+        });
     }
     if (data.pressure !== undefined) {
-        stats.push({ label: 'Pressure', value: `${data.pressure} hPa` });
+        stats.push({
+            // translator: Weather label for atmospheric pressure.
+            label: c('collider_2025:Label').t`Pressure`,
+            // translator: Standard weather notation. ${data.pressure} is atmospheric pressure; hPa means hectopascals.
+            value: c('collider_2025:Label').t`${data.pressure} hPa`,
+        });
     }
     if (data.clouds !== undefined) {
-        stats.push({ label: 'Cloud Cover', value: `${data.clouds}%` });
+        stats.push({
+            // translator: Weather label for the amount of sky covered by clouds.
+            label: c('collider_2025:Label').t`Cloud Cover`,
+            value: `${data.clouds}%`,
+        });
     }
 
     return (
         <div className="weather-card mb-2">
             <div className="flex items-center justify-space-between gap-2 py-3 px-4">
                 <div className="flex items-center gap-1.5">
-                    <span className="weather-card__location-icon" aria-hidden="true">☁</span>
+                    <span className="weather-card__location-icon" aria-hidden="true">
+                        ☁
+                    </span>
                     <span className="weather-card__location-name">{locationLabel}</span>
                 </div>
                 {data.timestamp && (
                     <span className="weather-card__last-updated shrink-0">
-                        {c('collider_2025:Reasoning').t`Last updated: ` + formatTime(data.timestamp)}
+                        {
+                            // translator: Weather-update label. ${updatedTime} is the formatted time of the latest weather data.
+                            c('collider_2025:Reasoning').t`Last updated: ${updatedTime}`
+                        }
                     </span>
                 )}
             </div>
 
             <div className="flex items-center gap-4 pt-2 pb-4 px-4">
-                <div className="weather-card__condition-icon shrink-0" aria-hidden="true">{emoji}</div>
+                <div className="weather-card__condition-icon shrink-0" aria-hidden="true">
+                    {emoji}
+                </div>
                 <div className="flex flex-column gap-0.5">
                     <span className="weather-card__temperature">{formatTemp(data.temperature)}</span>
                     {data.weather_description && (

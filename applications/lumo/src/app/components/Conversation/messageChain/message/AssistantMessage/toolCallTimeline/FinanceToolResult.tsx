@@ -34,7 +34,15 @@ const CustomTooltip = ({ active, payload, label }: CustomTooltipProps) => {
         <div className="finance-chart-tooltip">
             <p className="finance-chart-tooltip__date">{label}</p>
             {priceEntry && <p className="finance-chart-tooltip__price">{formatPrice(priceEntry.value)}</p>}
-            {volumeEntry && <p className="finance-chart-tooltip__volume">Vol: {formatVolume(volumeEntry.value)}</p>}
+            {volumeEntry && (
+                <p className="finance-chart-tooltip__volume">
+                    {
+                        // translator: Chart-tooltip label. Vol means trading volume: the number of shares traded.
+                        c('collider_2025:Label').t`Vol: `
+                    }
+                    {formatVolume(volumeEntry.value)}
+                </p>
+            )}
         </div>
     );
 };

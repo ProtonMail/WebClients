@@ -19,25 +19,34 @@ export type { FinanceComparisonItem };
 
 const LINE_COLORS = ['#6d4aff', '#1ea885', '#239ece', '#ff9900', '#dc3251', '#4c34b3'];
 
-const STAT_ROWS: { label: string; getValue: (d: FinanceData) => string }[] = [
-    { label: c('collider_2025:Reasoning').t`Price`, getValue: (d) => formatPrice(d.current_price) },
+const getStatRows = (): { label: string; getValue: (d: FinanceData) => string }[] => [
     {
+        // translator: Technical stock-comparison table header. Current trading price per share.
+        label: c('collider_2025:Reasoning').t`Price`,
+        getValue: (d) => formatPrice(d.current_price),
+    },
+    {
+        // translator: Technical stock-comparison table header. Market capitalization (total market value of outstanding shares).
         label: c('collider_2025:Reasoning').t`Market Cap`,
         getValue: (d) => (d.company_info?.market_cap ? formatCurrency(d.company_info.market_cap) : '—'),
     },
     {
+        // translator: Technical stock-comparison table header. Price-to-earnings ratio.
         label: c('collider_2025:Reasoning').t`P/E Ratio`,
         getValue: (d) => (d.company_info?.pe_ratio != null ? d.company_info.pe_ratio.toFixed(2) : '—'),
     },
     {
+        // translator: Technical stock-comparison table header. Net profit as a percentage of revenue.
         label: c('collider_2025:Reasoning').t`Profit Margin`,
         getValue: (d) => (d.company_info?.profit_margin != null ? formatPercent(d.company_info.profit_margin) : '—'),
     },
     {
+        // translator: Technical stock-comparison table header. Revenue for the trailing twelve months; "TTM" is a standard finance abbreviation.
         label: c('collider_2025:Reasoning').t`Revenue TTM`,
         getValue: (d) => (d.company_info?.revenue_ttm ? formatCurrency(d.company_info.revenue_ttm) : '—'),
     },
     {
+        // translator: Technical stock-comparison table header. Annual dividend as a percentage of the share price.
         label: c('collider_2025:Reasoning').t`Dividend Yield`,
         getValue: (d) => (d.company_info?.dividend_yield != null ? formatPercent(d.company_info.dividend_yield) : '—'),
     },
@@ -225,16 +234,18 @@ export const FinanceComparisonResult = ({ items, onReady }: FinanceComparisonRes
                     </tr>
                 </thead>
                 <tbody>
-                    {STAT_ROWS.filter((row) => items.some((item) => row.getValue(item.data) !== '—')).map((row) => (
-                        <tr key={row.label} className="finance-comparison__table-row">
-                            <td className="finance-comparison__table-label py-2 px-4">{row.label}</td>
-                            {items.map((item, i) => (
-                                <td key={i} className="finance-comparison__table-value py-2 px-4 text-right">
-                                    {row.getValue(item.data)}
-                                </td>
-                            ))}
-                        </tr>
-                    ))}
+                    {getStatRows()
+                        .filter((row) => items.some((item) => row.getValue(item.data) !== '—'))
+                        .map((row) => (
+                            <tr key={row.label} className="finance-comparison__table-row">
+                                <td className="finance-comparison__table-label py-2 px-4">{row.label}</td>
+                                {items.map((item, i) => (
+                                    <td key={i} className="finance-comparison__table-value py-2 px-4 text-right">
+                                        {row.getValue(item.data)}
+                                    </td>
+                                ))}
+                            </tr>
+                        ))}
                 </tbody>
             </table>
         </div>

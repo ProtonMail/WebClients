@@ -99,7 +99,9 @@ export function useDriveFileAttachment(
                     upsertAttachment({
                         ...provisionalBase,
                         error: true,
-                        errorMessage: error instanceof Error ? error.message : 'Failed to process file',
+                        // translator: Error message about processing a computer file.
+                        errorMessage:
+                            error instanceof Error ? error.message : c('collider_2025:Error').t`Failed to process file`,
                         processing: false,
                     })
                 );

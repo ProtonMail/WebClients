@@ -56,11 +56,7 @@ export const ContextUsageBreakdown: React.FC<ContextUsageBreakdownProps> = ({
 }) => {
     const { limits, proactiveCompactionThresholdTokens } = useContextWindowConfig();
     const { conversationTokens, toolCallTokens, fileTokens, hasCompaction, droppedForBudget } =
-        useEffectiveContextUsageWithFilters(
-        messageChain,
-        contextFilters,
-        currentAttachments
-        );
+        useEffectiveContextUsageWithFilters(messageChain, contextFilters, currentAttachments);
 
     const breakdown = React.useMemo(
         () =>
@@ -76,8 +72,11 @@ export const ContextUsageBreakdown: React.FC<ContextUsageBreakdownProps> = ({
 
     const { segments, usedTokens, maxTokens, percentageUsed, overCapacity } = breakdown;
 
-    // translator: e.g. "101.0K / 128.0K tokens (79%)"
-    const usageLabel = `${shortTokens(usedTokens)} / ${shortTokens(maxTokens)} ${c('collider_2025: Info').t`tokens`} (${percentageUsed}%)`;
+    const used = shortTokens(usedTokens);
+    const maximum = shortTokens(maxTokens);
+
+    // translator: Technical context-usage label. ${used} is the token usage and ${maximum} is the token limit, both abbreviated counts such as 101.0K; ${percentageUsed} is the percentage of the limit used.
+    const usageLabel = c('collider_2025: Info').t`${used} / ${maximum} tokens (${percentageUsed}%)`;
 
     return (
         <div className="context-usage w-full">
@@ -90,7 +89,7 @@ export const ContextUsageBreakdown: React.FC<ContextUsageBreakdownProps> = ({
                 )}
             </div>
 
-            <div className="context-usage-bar w-full rounded-full" role="presentation">
+            <div className="context-usage-bar w-full rounded-full">
                 {segments
                     .filter((segment) => segment.percentage > 0)
                     .map((segment) => (
@@ -105,19 +104,14 @@ export const ContextUsageBreakdown: React.FC<ContextUsageBreakdownProps> = ({
             {showDetails && (
                 <ul className="context-usage-legend unstyled m-0 mt-2 flex flex-column gap-1">
                     {segments
-                        .filter(
-                            (segment) =>
-                                segment.id === 'buffer' ||
-                                segment.id === 'free' ||
-                                segment.tokens > 0
-                        )
+                        .filter((segment) => segment.id === 'buffer' || segment.id === 'free' || segment.tokens > 0)
                         .map((segment) => (
-                        <li key={segment.id} className="context-usage-legend-row flex items-center gap-2 text-xs">
-                            <span className={`context-usage-dot context-usage-seg--${segment.id} shrink-0`} />
-                            <span className="flex-1 color-weak">{segmentLabel(segment.id)}</span>
-                            <span className="color-weak">{shortTokens(segment.tokens)}</span>
-                        </li>
-                    ))}
+                            <li key={segment.id} className="context-usage-legend-row flex items-center gap-2 text-xs">
+                                <span className={`context-usage-dot context-usage-seg--${segment.id} shrink-0`} />
+                                <span className="flex-1 color-weak">{segmentLabel(segment.id)}</span>
+                                <span className="color-weak">{shortTokens(segment.tokens)}</span>
+                            </li>
+                        ))}
                 </ul>
             )}
 
@@ -140,4 +134,3 @@ export const ContextUsageBreakdown: React.FC<ContextUsageBreakdownProps> = ({
         </div>
     );
 };
-
