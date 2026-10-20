@@ -4,6 +4,7 @@ import Markdown from 'react-markdown';
 import rehypeKatex from 'rehype-katex';
 import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
+import { c } from 'ttag';
 import { visit } from 'unist-util-visit';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
@@ -545,7 +546,10 @@ const ProgressiveMarkdownRenderer: React.FC<ProgressiveMarkdownProps> = React.me
                                 <div className="lumo-insight-card-block w-full my-2 mb-3">
                                     <div className={`${LUMO_MARKDOWN_CARD_SHELL_CLASS} lumo-insight-card p-4`}>
                                         <div className="lumo-insight-card__label">
-                                            <span>Loading card…</span>
+                                            <span>{
+                                                // translator: Status while an information card is loading.
+                                                c('collider_2025:Label').t`Loading card...`
+                                            }</span>
                                         </div>
                                     </div>
                                 </div>
@@ -720,8 +724,7 @@ const ProgressiveMarkdownRenderer: React.FC<ProgressiveMarkdownProps> = React.me
         // Only re-render if content changed or streaming state changed
         const contentEqual = prevProps.content === nextProps.content;
         const streamingEqual = prevProps.isStreaming === nextProps.isStreaming;
-        const vegaChartsEqual =
-            (prevProps.enableVegaCharts ?? true) === (nextProps.enableVegaCharts ?? true);
+        const vegaChartsEqual = (prevProps.enableVegaCharts ?? true) === (nextProps.enableVegaCharts ?? true);
 
         return contentEqual && streamingEqual && vegaChartsEqual;
     }

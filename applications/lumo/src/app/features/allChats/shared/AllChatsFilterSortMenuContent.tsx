@@ -7,7 +7,7 @@ import { LumoIcon } from '../../../components/LumoIcon/LumoIcon';
 import type { IconName } from '../../../components/LumoIcon/LumoIcon';
 import type { ChatHistoryDateField } from '../../../redux/slices/lumoUserSettings';
 import type { AllChatsFilterValue } from '../filterAllChatsConversations';
-import { allChatsMenuFilterOptions, allChatsSortOptions } from './allChatsHeaderOptions';
+import { getAllChatsMenuFilterOptions, getAllChatsSortOptions } from './allChatsHeaderOptions';
 
 const MenuCheckmark = ({ visible }: { visible: boolean }) => {
     return (
@@ -89,7 +89,7 @@ export const AllChatsFilterSortMenuContent = ({
     return (
         <>
             <div className="px-4 py-2 color-weak text-semibold">{c('collider_2025:Title').t`Filters`}</div>
-            {allChatsMenuFilterOptions.map((option) => {
+            {getAllChatsMenuFilterOptions().map((option) => {
                 return (
                     <FilterMenuItem
                         key={option.value}
@@ -105,7 +105,7 @@ export const AllChatsFilterSortMenuContent = ({
             })}
             <hr className="border-weak mx-2 my-1" />
             <div className="px-4 py-2 color-weak text-semibold">{c('collider_2025:Title').t`Sort by`}</div>
-            {allChatsSortOptions.map((option) => {
+            {getAllChatsSortOptions().map((option) => {
                 return (
                     <SortMenuItem
                         key={option.value}
