@@ -626,7 +626,6 @@ export const getAccountAppRoutes = ({
                     {
                         id: 'assistant-toggle',
                         available: !assistantKillSwitch,
-                        variant: SettingsLayoutVariant.Card,
                         keywords: [
                             c('Info').t`${BRAND_NAME} Scribe writing assistant`,
                             c('account_search_index').t`Writing assistant`,
