@@ -6,7 +6,7 @@ import Loader from '@proton/components/components/loader/Loader';
 import { NodeType } from '@proton/drive';
 
 import type { DriveNode } from '../../../hooks/useDriveSDK';
-import { isFileTypeSupported } from '../../../util/filetypes';
+import { isDriveFileSupported, isFileTypeSupported, isProtonNativeMediaType } from '../../../util/filetypes';
 import type { BreadcrumbItem } from './DriveBreadcrumbs';
 import { DriveBreadcrumbs } from './DriveBreadcrumbs';
 import { DriveEmptyState } from './DriveEmptyState';
@@ -61,20 +61,17 @@ export const DriveContent: React.FC<DriveContentProps> = ({
         );
     }
 
-    const filteredChildren = children.filter((child) => {
-        if (child.type === NodeType.Folder) return true;
-        if (child.type === NodeType.File && child.mediaType?.startsWith('application/vnd.proton')) return false;
-        if (!isFileTypeSupported(child.name, child.mediaType)) return false;
-        return true;
-    });
+    const filteredChildren = children.filter(
+        (child) => child.type === NodeType.Folder || isDriveFileSupported(child.name, child.mediaType)
+    );
 
     const hiddenProtonDocsCount = children.filter(
-        (child) => child.type === NodeType.File && child.mediaType?.startsWith('application/vnd.proton')
+        (child) => child.type === NodeType.File && isProtonNativeMediaType(child.mediaType)
     ).length;
     const hiddenUnsupportedCount = children.filter(
         (child) =>
             child.type === NodeType.File &&
-            !child.mediaType?.startsWith('application/vnd.proton') &&
+            !isProtonNativeMediaType(child.mediaType) &&
             !isFileTypeSupported(child.name, child.mediaType)
     ).length;
 

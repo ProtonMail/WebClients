@@ -4,7 +4,7 @@
  * the full React / component tree.
  */
 import type { Attachment } from '../../../types';
-import { isBlockedFileExtension } from '../../../util/filetypes';
+import { isDriveFileSupported } from '../../../util/filetypes';
 
 export type FileItem = {
     id: string;
@@ -36,7 +36,7 @@ const OS_METADATA_FILENAMES = new Set(['thumbs.db', 'desktop.ini']);
  * Offering those is a dead end: the user picks the file and the model receives nothing, so
  * they are hidden from the picker rather than shown and silently dropped later.
  */
-export function isMentionableFile(name: string): boolean {
+export function isMentionableFile(name: string, mimeType?: string): boolean {
     const basename = basenameOf(name).toLowerCase();
 
     if (basename.length === 0 || basename.startsWith('.')) {
@@ -45,7 +45,7 @@ export function isMentionableFile(name: string): boolean {
     if (OS_METADATA_FILENAMES.has(basename)) {
         return false;
     }
-    return !isBlockedFileExtension(basename);
+    return isDriveFileSupported(basename, mimeType);
 }
 
 /** Match strength, best first. `NO_MATCH` excludes the file. */
