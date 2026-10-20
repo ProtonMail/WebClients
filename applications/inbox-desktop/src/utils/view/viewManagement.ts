@@ -21,6 +21,7 @@ import { setApplicationMenu } from "../menus/menuApplication";
 import { createContextMenu } from "../menus/menuContext";
 import metrics from "../metrics";
 import { isUserNetworkErrorCode, NET_ERROR_CODE } from "../netErrors";
+import { logNetworkDiagnostics } from "../networkDiagnostics";
 import { profiler } from "../profiler/profiler";
 import { readAndClearOpenCalendarArgs, readAndClearOpenMailArgs, urlHasOpenMailParams } from "../protocol/deep_links";
 import { readAndClearMailtoArgs, urlHasMailto } from "../protocol/mailto";
@@ -607,6 +608,8 @@ export async function showNetworkErrorPage(viewID: ViewID): Promise<void> {
         viewLogger(viewID).warn("cannot show error page, view is null");
         return;
     }
+
+    void logNetworkDiagnostics();
 
     const filePath = getFileResourcePath("error-network.html");
 
