@@ -1,7 +1,5 @@
-import clsx from '@proton/utils/clsx';
-
 import { ResizeHandle } from '../../components/list/ResizeHandle';
-import { getResizeGrip, useCardResize } from './cardResize';
+import { getResizeGripPosition, useCardResize } from './cardResize';
 import type { PanelSide } from './panelSide';
 
 interface Props {
@@ -12,22 +10,17 @@ interface Props {
 }
 
 const LumoFloatingPanelResizeEdge = ({ side, cardWidth, onResize, onReset }: Props) => {
-    const resizeGrip = getResizeGrip(side);
-    const startResize = useCardResize({ startWidth: cardWidth, handlePosition: resizeGrip.position, onResize });
+    const gripPosition = getResizeGripPosition(side);
+    const startResize = useCardResize({ startWidth: cardWidth, handlePosition: gripPosition, onResize });
 
     return (
-        <div
-            className={clsx(
-                'lumo-floating-panel-resize-edge',
-                !resizeGrip.spansPrompt && 'lumo-floating-panel-resize-edge--card-only'
-            )}
-        >
+        <div className="lumo-floating-panel-resize-edge">
             <ResizeHandle
                 resizeAreaRef={null}
                 enableResize={startResize}
                 resetWidth={onReset}
                 scrollBarWidth={0}
-                position={resizeGrip.position}
+                position={gripPosition}
             />
         </div>
     );
