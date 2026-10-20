@@ -1,6 +1,7 @@
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import type { ChatCompletionsRequest } from '../types-api';
+import { LumoClientType } from '../types-api';
 import { LumoApiClient, MAX_CLIENT_TOOL_ROUNDS } from './client';
 import type { ClientToolExecutor, ClientToolResult } from './client-tools';
 import { encryptTurns } from './encryption';
@@ -97,6 +98,38 @@ beforeEach(() => {
     mockedCallChatEndpoint.mockReset();
     mockedCreateEncryption.mockResolvedValue(null);
     mockedEncryptTurns.mockImplementation(async (turns) => turns as EncryptedTurn[]);
+});
+
+describe('callAssistant client type', () => {
+    it('identifies the caller on every request it sends, tool rounds, title and suggestions included', async () => {
+        let messageRounds = 0;
+        mockedCallChatEndpoint.mockImplementation(async (_api, payload) => {
+            const isMessage = (payload as ChatCompletionsRequest).lumo?.target === 'message';
+            return isMessage && messageRounds++ === 0 ? toolCallResponse('search') : proseResponse('Here it is.');
+        });
+        const recordRequestCallback = jest.fn();
+
+        await newClient().callAssistant(api, userTurns, {
+            clientToolExecutor: executor,
+            clientTools: [searchTool],
+            generateTitle: true,
+            enableSuggestedQuestions: true,
+            recordRequestCallback,
+            clientType: LumoClientType.LumoMail,
+        });
+
+        expect(sentRequests().map((request) => request.lumo?.target)).toEqual(
+            expect.arrayContaining(['title', 'suggested_questions', 'message'])
+        );
+        expect(sentRequests()).toHaveLength(4);
+        expect(sentRequests().map((request) => request.lumo?.client_type)).toEqual(
+            Array(4).fill(LumoClientType.LumoMail)
+        );
+        expect(recordRequestCallback.mock.calls.map(([request]) => request.lumo?.client_type)).toEqual([
+            LumoClientType.LumoMail,
+            LumoClientType.LumoMail,
+        ]);
+    });
 });
 
 describe('callAssistant client tool rounds', () => {
