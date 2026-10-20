@@ -1,6 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 
 import { useLumoAgentDrawer } from '@proton/llm/lib/lumoAgent/ui/lumoAgentDrawerContext';
+import { type LumoAgentItem, LumoChainEnd } from '@proton/llm/lib/lumoAgent/ui/types';
 
 import { PanelSide } from '../floating/panelSide';
 import CatSprite from './CatSprite';
@@ -25,10 +26,27 @@ interface Setup {
     run?: CatRun | null;
     jump?: CatJump | null;
     isHidden?: boolean;
+    isTyping?: boolean;
+    items?: LumoAgentItem[];
+    isBusy?: boolean;
+    lastChainEnd?: LumoChainEnd | null;
 }
 
-const pet = ({ isPanelOpen = false, side = PanelSide.RIGHT, run = null, jump = null, isHidden = false }: Setup) => {
+const pet = ({
+    isPanelOpen = false,
+    side = PanelSide.RIGHT,
+    run = null,
+    jump = null,
+    isHidden = false,
+    isTyping = false,
+    items = [],
+    isBusy = false,
+    lastChainEnd = null,
+}: Setup) => {
     jest.mocked(useLumoAgentDrawer).mockReturnValue({
+        items,
+        isBusy,
+        lastChainEnd,
         hasConversation: true,
         openDebugReport,
     } as unknown as ReturnType<typeof useLumoAgentDrawer>);
@@ -37,6 +55,7 @@ const pet = ({ isPanelOpen = false, side = PanelSide.RIGHT, run = null, jump = n
             <LumoPet
                 side={side}
                 isPanelOpen={isPanelOpen}
+                isTyping={isTyping}
                 motion={{ run, jump, isHidden }}
                 actions={{ onToggle, onMove, onDock, onNewChat, onHide, onReveal }}
                 onJumpEnd={onJumpEnd}
@@ -50,6 +69,8 @@ const renderPet = (setup: Setup = {}) => {
     const rendered = render(pet(setup));
     return { ...rendered, rerenderPet: (nextSetup: Setup) => rendered.rerender(pet({ ...setup, ...nextSetup })) };
 };
+
+const searchChip: LumoAgentItem = { id: 1, kind: 'chip', tool: 'search', label: 'Searched', payload: '' };
 
 const catButton = () => screen.getByRole('button', { name: 'Toggle Lumo' });
 const dock = (container: HTMLElement) => container.querySelector('.lumo-pet-dock');
@@ -243,5 +264,34 @@ describe('LumoPet', () => {
 
         fireEvent.animationEnd(catSlot(container));
         expect(onJumpEnd).toHaveBeenCalledTimes(1);
+    });
+
+    it.each([
+        ['thinks beside the open card', true, CatPose.THINK],
+        ['sits while the card is closed', false, CatPose.SIT],
+    ])('while Lumo generates, %s', (_, isPanelOpen, pose) => {
+        renderPet({ isPanelOpen, isBusy: true });
+
+        expect(shownPose()).toBe(pose);
+    });
+
+    it('acts out the read Lumo is carrying on from', () => {
+        renderPet({ isPanelOpen: true, isBusy: true, items: [searchChip] });
+
+        expect(shownPose()).toBe(CatPose.SEARCH);
+    });
+
+    it('is happy once Lumo finishes', () => {
+        const { rerenderPet } = renderPet({ isPanelOpen: true, isBusy: true });
+
+        rerenderPet({ isBusy: false, lastChainEnd: LumoChainEnd.SUCCEEDED });
+
+        expect(shownPose()).toBe(CatPose.HAPPY);
+    });
+
+    it('watches the prompt beside it while the user types', () => {
+        renderPet({ isPanelOpen: true, side: PanelSide.LEFT, isTyping: true });
+
+        expect(shownPose()).toBe(CatPose.WATCH_RIGHT);
     });
 });

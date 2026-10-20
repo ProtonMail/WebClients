@@ -116,6 +116,13 @@ describe('LumoAgentPanel', () => {
         expect(idleMark(container)).toBeNull();
     });
 
+    it('leaves the activity indicator out for a host that shows its own', () => {
+        const { container } = renderPanel({ items: [userTurn], isBusy: true, showThinking: false });
+
+        expect(thinkingIndicator()).toBeNull();
+        expect(idleMark(container)).toBeNull();
+    });
+
     it('stops claiming to think while a confirm card is waiting on the user', () => {
         const { container } = renderPanel({ items: [userTurn, pendingConfirm], isBusy: true });
 

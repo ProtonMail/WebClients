@@ -8,9 +8,10 @@ import './lumoAgent.scss';
 interface Props {
     onClose: () => void;
     showPromptInput?: boolean;
+    showThinking?: boolean;
 }
 
-const ConnectedLumoAgentPanel = ({ onClose, showPromptInput }: Props) => {
+const ConnectedLumoAgentPanel = ({ onClose, showPromptInput, showThinking }: Props) => {
     const {
         items,
         isBusy,
@@ -36,6 +37,7 @@ const ConnectedLumoAgentPanel = ({ onClose, showPromptInput }: Props) => {
             serverToolMeta={serverToolMeta}
             suggestions={suggestions}
             showPromptInput={showPromptInput}
+            showThinking={showThinking}
             onSend={send}
             onSuggestionPicked={onSuggestionPicked}
             onStop={stop}

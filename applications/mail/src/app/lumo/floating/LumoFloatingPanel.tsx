@@ -9,6 +9,7 @@ import clsx from '@proton/utils/clsx';
 
 import LumoPet from '../pet/LumoPet';
 import { useCatMotion } from '../pet/useCatMotion';
+import { useTypingActivity } from '../pet/useTypingActivity';
 import { useLumoFloatingPanel } from './LumoFloatingPanelProvider';
 import LumoFloatingPanelResizeEdge from './LumoFloatingPanelResizeEdge';
 import { CARD_MIN_WIDTH, clampCardWidth } from './cardResize';
@@ -57,6 +58,7 @@ const LumoFloatingPanel = ({ mainAreaRef, hasFloatingDrawerButton }: Props) => {
     const bounds = useMailboxBounds(mainAreaRef);
     const { viewportWidth } = useActiveBreakpoint();
     const isReducedMotion = useReducedMotion();
+    const { isTyping, noteKeystroke } = useTypingActivity();
     const isHiddenByLayout = !isDetached || viewportWidth['<=small'] || !bounds;
     // Off screen nobody sees a run or a jump, so the cat comes back sitting
     const canJump = !isReducedMotion && !isHiddenByLayout;
@@ -121,7 +123,7 @@ const LumoFloatingPanel = ({ mainAreaRef, hasFloatingDrawerButton }: Props) => {
                     </div>
                     <div className="lumo-floating-panel-prompt-slot">
                         <Suspense fallback={<div className="lumo-floating-panel-prompt-placeholder" />}>
-                            <LazyConnectedLumoPromptBar onClose={closePanel} />
+                            <LazyConnectedLumoPromptBar onClose={closePanel} onDraftChange={noteKeystroke} />
                         </Suspense>
                     </div>
                     <LumoFloatingPanelResizeEdge
@@ -136,6 +138,7 @@ const LumoFloatingPanel = ({ mainAreaRef, hasFloatingDrawerButton }: Props) => {
                 <LumoPet
                     side={runShownSide}
                     isPanelOpen={isPanelOpen}
+                    isTyping={isTyping}
                     motion={motion}
                     actions={{
                         onToggle: toggleLumo,
