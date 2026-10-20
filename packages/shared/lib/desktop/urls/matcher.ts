@@ -1,7 +1,8 @@
 import { uint8ArrayToUtf8String } from '@protontech/crypto/utils';
-import { logger } from '@protontech/logger';
 
 import type { SerializedUrlRule } from './builder';
+
+type UrlRuleMatchLogger = Pick<Console, 'info' | 'warn'>;
 
 /**
  * Evaluates if the given url string matches the rules.
@@ -11,12 +12,12 @@ import type { SerializedUrlRule } from './builder';
  * Patterns are matched against `${url.origin}${url.pathname}` (query string and fragment are
  * excluded); query params and hash params are handled separately via `searchParamsAnyOf` and `hashParamsAnyOf`.
  */
-export const matchUrlRules = (urlString: string, rules: SerializedUrlRule[]): boolean => {
+export const matchUrlRules = (urlString: string, rules: SerializedUrlRule[], logger: UrlRuleMatchLogger): boolean => {
     let url: URL;
     try {
         url = new URL(urlString);
     } catch {
-        logger.warn('Failed to parse URL', { url: urlString });
+        logger.warn('Failed to parse URL');
         return false;
     }
 
@@ -46,7 +47,7 @@ export const matchUrlRules = (urlString: string, rules: SerializedUrlRule[]): bo
             continue;
         }
 
-        logger.info('URL rule matches', { url: urlString, rule: rule.id });
+        logger.info('URL rule matches', rule.id, target);
         return true;
     }
 
