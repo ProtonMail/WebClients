@@ -15,7 +15,11 @@ const appReady = createAction('test app ready');
 const rawCampaign = () => ({
     CampaignKey: 'campaign-1',
     MessageKey: 'message-1',
-    Cta: { Type: CampaignCtaType.INTERNAL_GO_TO, Ref: 'GoToUpsell' },
+    Cta: {
+        Type: CampaignCtaType.INTERNAL_GO_TO,
+        InternalGoTo: { Destination: 'GoToUpsell', GoToUpsell: null },
+        ExternalGoTo: null,
+    },
     MessageBody: {
         Banner: { Title: 'Title', Body: 'Body', CtaText: 'Go', Images: null },
         Modal: null,

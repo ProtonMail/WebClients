@@ -1,8 +1,9 @@
 import { API_CODES } from '@proton/shared/lib/constants';
+import type { CYCLE, PLANS } from '@proton/shared/lib/payments/constants';
 
+import type { CampaignCtaType } from '../interface';
 import {
     type Campaign,
-    type CampaignCtaType,
     type CampaignEventDTO,
     type CampaignMessage,
     CampaignVariant,
@@ -37,9 +38,30 @@ export const offersRoutes: OffersRoutes = {
     }),
 };
 
-type RawCta = {
+/** `Product`, `TrackingReference` and `FallbackUrl` are sent but not consumed yet. */
+export type RawGoToUpsell = {
+    Plan: MaybeNull<PLANS>;
+    Coupon: MaybeNull<string>;
+    Cycle: MaybeNull<CYCLE>;
+    DisableCycleSelector: boolean;
+    DisablePlanSelector: boolean;
+};
+
+/** Only the branch named by `Destination` is non-null. */
+type RawInternalGoTo = {
+    Destination: string;
+    GoToUpsell?: MaybeNull<RawGoToUpsell>;
+};
+
+type RawExternalGoTo = {
+    Url: string;
+};
+
+/** Only the branch named by `Type` is non-null. */
+export type RawCta = {
     Type: CampaignCtaType;
-    Ref: string;
+    InternalGoTo?: MaybeNull<RawInternalGoTo>;
+    ExternalGoTo?: MaybeNull<RawExternalGoTo>;
 };
 
 /** The gateway sends image objects, not URL strings. */
@@ -144,7 +166,7 @@ const intoCampaign = (raw: RawCampaign): MaybeNull<Campaign> => {
         startTime: raw.StartTime,
         endTime: typeof raw.EndTime === 'number' ? raw.EndTime : null,
         variant: raw.MessageBody.Variant,
-        cta: raw.Cta ? resolveCta(raw.Cta.Type, raw.Cta.Ref) : null,
+        cta: raw.Cta ? resolveCta(raw.Cta) : null,
         message,
     };
 };
