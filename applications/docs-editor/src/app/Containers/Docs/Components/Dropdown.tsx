@@ -1,6 +1,6 @@
 import * as Ariakit from '@ariakit/react'
 import { clsx } from 'clsx'
-import type { ComponentPropsWithoutRef, ElementType, HTMLAttributes, ReactNode, RefObject } from 'react'
+import type { ComponentPropsWithoutRef, ElementType, HTMLAttributes, ReactElement, ReactNode, RefObject } from 'react'
 import { createContext, forwardRef, useContext, useEffect, useRef } from 'react'
 import type { ButtonOptions } from './atoms'
 import { Icon } from './Icon'
@@ -90,7 +90,11 @@ function DropdownContent({
           // Menu items manage closing (including their parent menus) through Ariakit.
           // Custom controls such as the colour palette also close on pointer selection,
           // while keyboard navigation between radio colours leaves the palette open.
-          if (target.closest('[role="menuitem"], [aria-haspopup="menu"]')) {
+          if (
+            target.closest(
+              '[role="menuitem"], [role="menuitemcheckbox"], [role="menuitemradio"], [aria-haspopup="menu"]',
+            )
+          ) {
             return
           }
           if (target instanceof HTMLInputElement && target.type === 'radio' && !event.clientX && !event.clientY) {
@@ -144,6 +148,8 @@ export interface DropdownButtonProps extends Omit<ComponentPropsWithoutRef<'butt
   caretClassName?: string
   active?: boolean
   label?: ReactNode
+  /** Composes the trigger with another Ariakit component, such as an `Ariakit.ToolbarItem`. */
+  render?: ReactElement
 }
 
 export const DropdownButton = forwardRef<HTMLButtonElement, DropdownButtonProps>(function DropdownButton(
@@ -175,6 +181,9 @@ export function DropdownMenu({ children, className, ...props }: ComponentPropsWi
   )
 }
 
+const menuItemClassName =
+  'flex min-h-9 w-full select-none items-center gap-2 px-4 py-2 text-left text-[.875rem] text-[--text-norm] hover:bg-[--interaction-weak-minor-2] focus:outline-none disabled:text-[--text-hint] aria-disabled:text-[--text-hint] data-[active-item]:bg-[--interaction-weak-minor-2] data-[focus-visible]:bg-[--interaction-weak-minor-2]'
+
 export interface DropdownMenuButtonProps extends Ariakit.MenuItemProps {
   isSelected?: boolean
   actionType?: 'delete'
@@ -195,7 +204,7 @@ export const DropdownMenuButton = forwardRef<HTMLButtonElement, DropdownMenuButt
       hideOnClick={hideOnClick ?? autoClose}
       {...props}
       className={clsx(
-        'flex min-h-9 w-full select-none items-center gap-2 px-4 py-2 text-left text-[.875rem] text-[--text-norm] hover:bg-[--interaction-weak-minor-2] focus:outline-none disabled:text-[--text-hint] aria-disabled:text-[--text-hint] data-[active-item]:bg-[--interaction-weak-minor-2] data-[focus-visible]:bg-[--interaction-weak-minor-2]',
+        menuItemClassName,
         isSelected && 'active font-bold',
         actionType === 'delete' && 'text-[--signal-danger]',
         className,
@@ -203,6 +212,40 @@ export const DropdownMenuButton = forwardRef<HTMLButtonElement, DropdownMenuButt
     />
   )
 })
+
+export interface DropdownMenuCheckboxButtonProps extends Ariakit.MenuItemCheckboxProps {
+  /** Ariakit's key for this item in the menu store. The owner's `checked` is what the item announces. */
+  name: string
+  /** The state the item announces, and which its trailing switch shows. */
+  checked: boolean
+}
+
+/** A `DropdownMenuButton` that announces a checked state, for a menu entry that toggles a setting. */
+export const DropdownMenuCheckboxButton = forwardRef<HTMLButtonElement, DropdownMenuCheckboxButtonProps>(
+  function DropdownMenuCheckboxButton({ className, children, hideOnClick, ...props }, ref) {
+    const autoClose = useContext(AutoCloseContext)
+    return (
+      <Ariakit.MenuItemCheckbox
+        render={
+          <button ref={ref} type="button">
+            {children}
+            <span
+              aria-hidden="true"
+              className="relative ml-auto h-[calc(24em/14)] w-[calc(40em/14)] shrink-0 rounded-full bg-[--background-norm] shadow-[inset_0_0_0_1px_var(--field-norm)]"
+            >
+              <span className="absolute inset-y-0 start-0 flex w-[calc(24em/14)] items-center justify-center rounded-full bg-[--field-norm] text-[--interaction-norm-contrast] group-aria-checked:translate-x-[calc(16em/14)] group-aria-checked:bg-[--interaction-norm] rtl:group-aria-checked:-translate-x-[calc(16em/14)]">
+                <Icon data={Icons.checkmark} className="[visibility:hidden] group-aria-checked:[visibility:visible]" />
+              </span>
+            </span>
+          </button>
+        }
+        hideOnClick={hideOnClick ?? autoClose}
+        {...props}
+        className={clsx(menuItemClassName, 'group', className)}
+      />
+    )
+  },
+)
 
 export interface SimpleDropdownProps extends Omit<DropdownButtonProps, 'content'> {
   content?: ReactNode

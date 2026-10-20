@@ -1,5 +1,4 @@
 import { Dropdown, DropdownButton, DropdownMenu, DropdownMenuButton, SimpleDropdown } from '../../Components/Dropdown'
-import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import type { TableNode } from '@lexical/table'
 import { $isTableCellNode, $isTableRowNode } from '@lexical/table'
@@ -25,7 +24,6 @@ import {
   INSERT_TABLE_COLUMN_COMMAND,
   INSERT_TABLE_ROW_COMMAND,
 } from './Commands'
-import { useCombinedRefs } from '@proton/hooks'
 import { useDocsUserMode } from '../../DocsPresentationProvider'
 import { EditorUserMode } from '../../contract/EditorUserMode'
 
@@ -63,12 +61,9 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
 
   const rowMenuButtonRef = useRef<HTMLButtonElement>(null)
   const [tableRowElement, setTableRowElement] = useState<HTMLTableRowElement | null>(null)
-  const {
-    anchorRef: rowMenuAnchorRef,
-    isOpen: isRowMenuOpen,
-    toggle: toggleRowMenu,
-    close: closeRowMenu,
-  } = usePopperAnchor<HTMLButtonElement>()
+  const [isRowMenuOpen, setIsRowMenuOpen] = useState(false)
+  const toggleRowMenu = () => setIsRowMenuOpen((isOpen) => !isOpen)
+  const closeRowMenu = () => setIsRowMenuOpen(false)
   useEffect(
     function selectRowIfMenuIsOpen() {
       if (!isRowMenuOpen) {
@@ -85,12 +80,9 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
 
   const columnMenuButtonRef = useRef<HTMLButtonElement>(null)
   const [tableCellElement, setTableCellElement] = useState<HTMLTableCellElement | null>(null)
-  const {
-    anchorRef: columnMenuAnchorRef,
-    isOpen: isColumnMenuOpen,
-    toggle: toggleColumnMenu,
-    close: closeColumnMenu,
-  } = usePopperAnchor<HTMLButtonElement>()
+  const [isColumnMenuOpen, setIsColumnMenuOpen] = useState(false)
+  const toggleColumnMenu = () => setIsColumnMenuOpen((isOpen) => !isOpen)
+  const closeColumnMenu = () => setIsColumnMenuOpen(false)
   useEffect(
     function selectColumnIfMenuIsOpen() {
       if (!isColumnMenuOpen) {
@@ -231,13 +223,13 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
     <>
       <DropdownButton
         as="button"
-        className="bg-norm border-weak absolute left-0 top-0 z-0 flex items-center justify-center rounded border py-0.5 [opacity:0] hover:bg-[--background-weak] hover:opacity-100"
+        className="bg-norm border-weak absolute left-0 top-0 z-0 flex items-center justify-center rounded border py-0.5 [opacity:0] hover:bg-[--background-weak] hover:opacity-100 focus-visible:opacity-100"
         style={{
           transform: `translate3d(var(--x), var(--y), 0)`,
           opacity: isRowMenuOpen || !!tableRowElement ? 1 : undefined,
           backgroundColor: isRowMenuOpen ? 'var(--background-weak)' : undefined,
         }}
-        ref={useCombinedRefs(rowMenuButtonRef, rowMenuAnchorRef)}
+        ref={rowMenuButtonRef}
         onClick={toggleRowMenu}
         hasCaret={false}
       >
@@ -358,16 +350,14 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
       </Dropdown>
       <DropdownButton
         as="button"
-        className="bg-norm border-weak absolute left-0 top-0 z-0 flex items-center justify-center rounded border py-0.5 [opacity:0] hover:bg-[--background-weak] hover:opacity-100"
+        className="bg-norm border-weak absolute left-0 top-0 z-0 flex items-center justify-center rounded border py-0.5 [opacity:0] hover:bg-[--background-weak] hover:opacity-100 focus-visible:opacity-100"
         style={{
           transform: `translate3d(var(--x), var(--y), 0) rotate(90deg)`,
           opacity: isColumnMenuOpen || !!tableCellElement ? 1 : undefined,
           backgroundColor: isColumnMenuOpen ? 'var(--background-weak)' : undefined,
         }}
-        ref={useCombinedRefs(columnMenuButtonRef, columnMenuAnchorRef)}
-        onClick={() => {
-          toggleColumnMenu()
-        }}
+        ref={columnMenuButtonRef}
+        onClick={toggleColumnMenu}
         hasCaret={false}
       >
         <Icon data={Icons.dots} />
