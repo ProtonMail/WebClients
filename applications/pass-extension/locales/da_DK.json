@@ -827,6 +827,27 @@
       ],
       "Your password manager is not here? Request it.": [
         "Er din adgangskodeadministrator her ikke? Anmod om den."
+      ],
+      "Create a login": [
+        "Opret et login"
+      ],
+      "Download for Linux": [
+        "Download til Linux"
+      ],
+      "Download for macOS": [
+        "Download til macOS"
+      ],
+      "Download for Windows": [
+        "Download til Windows"
+      ],
+      "More details about how to export": [
+        "Flere oplysninger om hvordan man eksporterer"
+      ],
+      "Open platform selection dropdown": [
+        "Åbn platform-vælgeren"
+      ],
+      "Skip for now": [
+        "Spring over for nu"
       ]
     },
     "Activity": {
@@ -1567,6 +1588,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Din pinkode blev fjernet af en anden ${ PASS_APP_NAME }-klient"
+      ],
+      "Biometric authentication cancelled.": [
+        "Biometrisk godkendelse annulleret."
       ]
     },
     "Error message": {
@@ -3100,6 +3124,30 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Din organisation kræver, at du sikrer din adgang til ${ PASS_APP_NAME }"
+      ],
+      "${ imported } of ${ total } (${ percentage }%)": [
+        "${ imported } ud af ${ total } (${ percentage }%)"
+      ],
+      "Don’t close this tab": [
+        "Luk ikke denne fane"
+      ],
+      "iOS and Android Apps": [
+        "iOS- og Android-apps"
+      ],
+      "No matching service. Try a different name.": [
+        "Ingen tjeneste fundet. Prøv et andet navn."
+      ],
+      "Open the extension here.": [
+        "Åbn udvidelsen her."
+      ],
+      "Open the extension to unlock it": [
+        "Åbn udvidelsen for at låse op for den"
+      ],
+      "Scan to download": [
+        "Skan for at downloade"
+      ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "Scan for at downloade ${ PASS_APP_NAME } til iOS og Android"
       ]
     },
     "Keyboard key": {
@@ -4333,6 +4381,18 @@
       ],
       "ZIP or Postal code": [
         "Postnummer"
+      ],
+      "Linux": [
+        "Linux"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Service": [
+        "Tjeneste"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Link": {
@@ -4677,6 +4737,9 @@
       ],
       "Used on ${ url }": [
         "Brugt på ${ url }"
+      ],
+      "E.g.: Google": [
+        "F.eks. Google"
       ]
     },
     "Result": {
@@ -5457,6 +5520,93 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Du er ved at slette ${ aliasCount } alias permanent.",
         "Du er ved at slette ${ aliasCount } aliasser permanent."
+      ],
+      "Add one account": [
+        "Tilføj én konto"
+      ],
+      "Browsers": [
+        "Browsere"
+      ],
+      "Create your first login": [
+        "Opret dit første login"
+      ],
+      "Export": [
+        "Exportér"
+      ],
+      "Export from ${ provider.title }": [
+        "Eksportér fra ${ provider.title }"
+      ],
+      "Fill in your details": [
+        "Udfyld dine oplysninger"
+      ],
+      "First login created": [
+        "Første log-ind oprettet"
+      ],
+      "For security purposes, delete your exported file.": [
+        "Af sikkerhedsmæssige årsager, så slet den eksporterede fil."
+      ],
+      "Get mobile and desktop apps": [
+        "Få mobil- og desktop-apps"
+      ],
+      "Get mobile apps": [
+        "Hent mobilapps"
+      ],
+      "Import completed with warnings": [
+        "Importen blev gennemført med advarsler"
+      ],
+      "Import failed": [
+        "Import mislykkedes"
+      ],
+      "Import successful": [
+        "Importen lykkedes"
+      ],
+      "Import your passwords in less than a minute": [
+        "Importér dine adgangskoder på mindre end et minut"
+      ],
+      "Important: Once your data has been imported, delete the exported file.": [
+        "OBS: slet den eksporterede fil så snart din data er blevet importeret."
+      ],
+      "Imported from:": [
+        "Importeret fra:"
+      ],
+      "Imported items:": [
+        "Importerede elementer:"
+      ],
+      "Move everything at once": [
+        "Flyt alting på én gang"
+      ],
+      "None of your items could be imported. See the details below.": [
+        "Ingen af dine elementer kunne importeres. Se detaljerne nedenfor."
+      ],
+      "Password managers": [
+        "Adgangskodeadministratorer"
+      ],
+      "Select your password manager": [
+        "Vælg din adgangskodeadministrator"
+      ],
+      "Some of your items could not be imported. See the details below.": [
+        "Nogle af dine elementer kunne ikke importeres. Se detaljerne nedenfor."
+      ],
+      "Starting the extension": [
+        "Starter udvidelsen"
+      ],
+      "Upload": [
+        "Upload"
+      ],
+      "Upload your data": [
+        "Upload din data"
+      ],
+      "We'll guide you through the process. First choose where you currently store your passwords.": [
+        "Vi vejleder dig igennem processen. Vælg først hvor du opbevarer dine adgangskoder på nuværende tidspunkt."
+      ],
+      "Which service do you want to create the login for?": [
+        "Hvilken tjeneste vil du oprette dette login til?"
+      ],
+      "You are ready to get the most out of ${ PASS_APP_NAME }.": [
+        "Du er klar til at få mest muligt ud af ${ PASS_APP_NAME }."
+      ],
+      "You’re a step away from autofill magic!": [
+        "Du er ét skridt væk fra autofyld-magi!"
       ]
     },
     "Title_cloned_item": {
@@ -5851,6 +6001,188 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Dit abonnement giver dig ikke mulighed for at oprette flere bokse. Alle elementer vil blive importeret til din første boks. For at importere til flere bokse skal du opgradere dit abonnement."
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } til resultat ikke vist",
+        "${ hiddenResultsCount } flere resultater ikke vist"
+      ]
+    },
+    "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Fandt ${ itemsCount } forslag, brug tastaturet til at navigere.",
+        "Fandt ${ itemsCount } forslag, brug tastaturet til at navigere."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Brug op- og ned-tasterne til at få adgang til og gennemse forslag efter input. Tryk på Enter for at bekræfte dit valg eller Escape for at lukke forslagsfeltet."
+      ]
+    },
+    "Import Tutorial": {
+      "${ name } saves your passwords in the ${ passwords } app. Open it and go to ${ file } → ${ exportAll }.": [
+        "${ name } gemmer dine adgangskoder i ${ passwords }-appen. Åbn den og gå til ${ file } → ${ exportAll }."
+      ],
+      "Account & Data": [
+        "Konto og data"
+      ],
+      "Advanced Options": [
+        "Avancerede indstillinger"
+      ],
+      "As a security measure, LastPass will email you to confirm the request. Open the email and click ${ continueExport }.": [
+        "LastPass sender dig en e-mail for at bekræfte anmodningen, som en sikkerhedsforanstaltning. Åbn e-mailen og klik ${ continueExport }."
+      ],
+      "At the confirmation screen, log back into your ${ name } Vault and to ${ advancedOptions } → ${ manageYourVault } → ${ exportLabel } again.": [
+        "På bekræftelsessiden, log ind på din ${ name }-boks igen, og gå til ${ advancedOptions } → ${ manageYourVault } → ${ exportLabel } igen."
+      ],
+      "Autofill and passwords": [
+        "Autofyld og adgangskoder"
+      ],
+      "Choose ${ formatJson } as the file format, click ${ exportLabel } and confirm with your master password.": [
+        "Vælg ${ formatJson } som filformat, klik ${ exportLabel } og bekræft med din hovedadgangskode."
+      ],
+      "Choose JSON downloads": [
+        "Vælg JSON-download"
+      ],
+      "Choose the file format → Select ${ exportLabel }.": [
+        "Vælg filformattet → Vælg ${ exportLabel }."
+      ],
+      "Continue export": [
+        "Fortsæt eksport"
+      ],
+      "Download file": [
+        "Download fil"
+      ],
+      "Enter your 1Password master password, ensure ${ format1pux } is selected, and click ${ exportData }.": [
+        "Indtast din hovedadgangskode til 1Password, sørg for at ${ format1pux } er valgt, og klik ${ exportData }."
+      ],
+      "Export": [
+        "Eksportér"
+      ],
+      "Export All Passwords to File": [
+        "Eksportér alle adgangskoder til en fil"
+      ],
+      "Export Data": [
+        "Eksportér Data"
+      ],
+      "Export data": [
+        "Eksportér data"
+      ],
+      "Export file format: 1PUX": [
+        "Filformat for eksport: 1PUX"
+      ],
+      "Export items": [
+        "Eksportér elementer"
+      ],
+      "Export passwords": [
+        "Eksportér adgangskoder"
+      ],
+      "Export to CSV": [
+        "Eksportér til CSV"
+      ],
+      "Export to TXT": [
+        "Eksportér til TXT"
+      ],
+      "File": [
+        "Fil"
+      ],
+      "Go to ${ exportPasswords } and select ${ downloadFile }.": [
+        "Gå til ${ exportPasswords } og vælg ${ downloadFile }."
+      ],
+      "Go to ${ passwords }.": [
+        "Gå til ${ passwords }."
+      ],
+      "Go to the settings to locate the export action.": [
+        "Gå til indstillinger og find eksportér."
+      ],
+      "Go to ☰ → ⚙ ${ settings } → Click ${ downloadFile }.": [
+        "Gå til ☰ → ⚙ ${ settings } → Klik ${ downloadFile }."
+      ],
+      "Google Password Manager": [
+        "Google Password Manager"
+      ],
+      "Identify your password manager.": [
+        "Identificer din adgangskodeadministrator."
+      ],
+      "Manage your vault": [
+        "Administrerér din boks"
+      ],
+      "Microsoft password manager": [
+        "Microsoft password manager"
+      ],
+      "More actions": [
+        "Flere handlinger"
+      ],
+      "Navigate to ${ settings } tab.": [
+        "Gå til fanen ${ settings }."
+      ],
+      "Open ${ name } and go to ${ advancedOptions } → ${ manageYourVault } → ${ exportLabel }.": [
+        "Åbn ${ name } og gå til ${ advancedOptions } → ${ manageYourVault } → ${ exportLabel }."
+      ],
+      "Open ${ name } and go to ${ file } → ${ exportLabel } → your 1Password username.": [
+        "Åbn ${ name } og gå til ${ file } → ${ exportLabel } → dit 1Password-brugernavn."
+      ],
+      "Open ${ name } and go to ${ menu } → ${ option }.": [
+        "Åbn ${ name } og gå til ${ menu } → ${ option }."
+      ],
+      "Open ${ name } and go to ⋮ → ${ passwordsAndAutofill } → ${ googlePasswordManager }.": [
+        "Åbn ${ name } og gå til : → ${ passwordsAndAutofill } → ${ googlePasswordManager }"
+      ],
+      "Open ${ name } and go to ☰ → ${ settings } → ${ autoFill }.": [
+        "Åbn ${ name } og gå til ☰ → ${ settings } → ${ autoFill }"
+      ],
+      "Open ${ name } and select ${ menu } → ${ option }.": [
+        "Åbn ${ name } og vælg ${ menu } → ${ option }."
+      ],
+      "Open ${ name } and select ${ settings }.": [
+        "Åbn ${ name } og vælg ${ settings }."
+      ],
+      "Open ${ name } and select ⋯.": [
+        "Åbn ${ name } og vælg ⋯."
+      ],
+      "Open ${ name } and select ☰ → ${ passwords }.": [
+        "Åbn ${ name } og vælg ☰ → ${ passwords }."
+      ],
+      "Passwords": [
+        "Adgangskoder"
+      ],
+      "Passwords and Autofill": [
+        "Adgangskoder og autofyld"
+      ],
+      "Passwords and autofill": [
+        "Adgangskoder og autofyld"
+      ],
+      "Select ${ exportLabel } → ${ chooseJson } → ${ exportAgain }.": [
+        "Vælg ${ exportLabel } → ${ chooseJson } → ${ exportAgain }."
+      ],
+      "Select ${ menu } → ${ option }.": [
+        "Vælg ${ menu } → ${ option }."
+      ],
+      "Select ${ option }.": [
+        "Vælg ${ option }."
+      ],
+      "Select the export format CSV.": [
+        "Vælg eksportformattet CSV."
+      ],
+      "Select ⋯ → ${ exportPasswords }.": [
+        "Vølg ⋯ → ${ exportPasswords }."
+      ],
+      "Settings": [
+        "Indstillinger"
+      ],
+      "Submit": [
+        "Indsend"
+      ],
+      "This time, you’ll be asked to re-confirm your ${ name } username and password. Click ${ submit }.": [
+        "Denne gang vil du blive bedt om at bekræfte dit ${ name }-brugernavn og din adgangskode igen. Klik ${ submit }."
+      ],
+      "Vault": [
+        "Boks"
+      ],
+      "Vault options": [
+        "Boksindstillinger"
+      ],
+      "your username": [
+        "dit brugernavn"
       ]
     }
   }

@@ -810,6 +810,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Váš správce hesel zde není? Požádejte o něj."
+      ],
+      "Download for macOS": [
+        "Stáhnout pro macOS"
+      ],
+      "Download for Windows": [
+        "Stáhnout pro Windows"
       ]
     },
     "Activity": {
@@ -5385,6 +5391,12 @@
         "Chystáte se trvale smazat ${ aliasCount } aliasy.",
         "Chystáte se trvale smazat ${ aliasCount } aliasů.",
         "Chystáte se trvale smazat ${ aliasCount } aliasů."
+      ],
+      "Export": [
+        "Exportovat"
+      ],
+      "Import failed": [
+        "Import selhal"
       ]
     },
     "Title_cloned_item": {
@@ -5757,6 +5769,25 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Vaše předplatné neumožňuje vytvořit více trezorů. Všechny položky budou importovány do vašeho prvního trezoru. Chcete-li importovat do více trezorů, navyšte své předplatné."
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } další výsledek není zobrazen",
+        "${ hiddenResultsCount } další výsledky nejsou zobrazeny",
+        "${ hiddenResultsCount } dalších výsledků není zobrazeno",
+        "${ hiddenResultsCount } dalších výsledků není zobrazeno"
+      ]
+    },
+    "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Nalezen ${ itemsCount } návrh, použijte klávesnice pro navigaci.",
+        "Nalezeny ${ itemsCount } návrhy, použijte klávesnice pro navigaci.",
+        "Nalezeno ${ itemsCount } návrhů, použijte klávesnice pro navigaci.",
+        "Nalezeno ${ itemsCount } návrhů, použijte klávesnice pro navigaci."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Použijte klávesy nahoru a dolů pro procházení návrhů po zadání. Stiskněte tlačítko Enter pro potvrzení vaší volby, nebo tlačítko Esc pro zavření návrhů."
       ]
     }
   }

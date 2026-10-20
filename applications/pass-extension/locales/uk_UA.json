@@ -810,6 +810,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Немає вашого менеджера паролів? Попросіть його."
+      ],
+      "Download for macOS": [
+        "Завантажити для macOS"
+      ],
+      "Download for Windows": [
+        "Завантажити для Windows"
       ]
     },
     "Activity": {
@@ -5385,6 +5391,12 @@
         "Ви збираєтеся назавжди видалити псевдоніми ${ aliasCount }.",
         "Ви збираєтеся назавжди видалити псевдонімів ${ aliasCount }.",
         "Ви збираєтеся назавжди видалити псевдоніми ${ aliasCount }."
+      ],
+      "Export": [
+        "Експорт"
+      ],
+      "Import failed": [
+        "Не вдалося імпортувати"
       ]
     },
     "Title_cloned_item": {
@@ -5757,6 +5769,25 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Ваша передплата не дозволяє створювати кілька сховищ. Всі елементи будуть імпортовані до вашого першого сховища. Щоб імпортувати дані до кількох сховищ, передплатіть тарифний план вищого рівня."
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "Ще ${ hiddenResultsCount } результат не показано",
+        "Ще ${ hiddenResultsCount } результати не показано",
+        "Ще ${ hiddenResultsCount } результатів не показано",
+        "Ще ${ hiddenResultsCount } результату не показано"
+      ]
+    },
+    "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Знайдено ${ itemsCount } пропозицію. Використовуйте клавіатуру для навігації.",
+        "Знайдено ${ itemsCount } пропозиції. Використовуйте клавіатуру для навігації.",
+        "Знайдено ${ itemsCount } пропозицій. Використовуйте клавіатуру для навігації.",
+        "Знайдено ${ itemsCount } пропозицій. Використовуйте клавіатуру для навігації."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Використовуйте клавіші Вгору і Вниз для доступу до пропозицій перегляду після введення. Натисніть Enter для підтвердження свого вибору, або Escape для закриття пропозицій."
       ]
     }
   }

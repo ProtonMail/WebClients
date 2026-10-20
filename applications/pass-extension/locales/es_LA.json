@@ -827,6 +827,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "¿No aparece su gestor de contraseñas? Solicítelo."
+      ],
+      "Download for macOS": [
+        "Descargar para macOS"
+      ],
+      "Download for Windows": [
+        "Descargar para Windows"
       ]
     },
     "Activity": {
@@ -3100,6 +3106,21 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Su organización requiere que asegure su acceso a ${ PASS_APP_NAME }"
+      ],
+      "${ imported } of ${ total } (${ percentage }%)": [
+        "${ imported } de ${ total } (${ percentage }%)"
+      ],
+      "Don’t close this tab": [
+        "No cierre esta pestaña"
+      ],
+      "iOS and Android Apps": [
+        "Aplicaciones para iOS y Android"
+      ],
+      "No matching service. Try a different name.": [
+        "Ningún servicio coincidente. Pruebe con otro nombre."
+      ],
+      "Scan to download": [
+        "Escanear para descargar"
       ]
     },
     "Keyboard key": {
@@ -4333,6 +4354,9 @@
       ],
       "ZIP or Postal code": [
         "Código postal"
+      ],
+      "Service": [
+        "Servicio"
       ]
     },
     "Link": {
@@ -4677,6 +4701,9 @@
       ],
       "Used on ${ url }": [
         "Usado en ${ url }"
+      ],
+      "E.g.: Google": [
+        "P.ej.: Google"
       ]
     },
     "Result": {
@@ -5457,6 +5484,54 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Está a punto de eliminar definitivamente ${ aliasCount } alias.",
         "Está a punto de eliminar definitivamente ${ aliasCount } alias."
+      ],
+      "Add one account": [
+        "Añadir una cuenta"
+      ],
+      "Browsers": [
+        "Navegadores"
+      ],
+      "Create your first login": [
+        "Cree su primer inicio de sesión"
+      ],
+      "Export": [
+        "Exportar"
+      ],
+      "Export from ${ provider.title }": [
+        "Exportar de ${ provider.title }"
+      ],
+      "Fill in your details": [
+        "Complete sus detalles"
+      ],
+      "Get mobile and desktop apps": [
+        "Obtenga aplicaciones móviles y de escritorio"
+      ],
+      "Import failed": [
+        "Error en la importación"
+      ],
+      "Imported from:": [
+        "Importado desde:"
+      ],
+      "Imported items:": [
+        "Elementos importados:"
+      ],
+      "Move everything at once": [
+        "Mueva todo al mismo tiempo"
+      ],
+      "None of your items could be imported. See the details below.": [
+        "No se pudo importar ninguno de sus elementos. Vea los detalles a continuación."
+      ],
+      "Password managers": [
+        "Gestores de contraseñas"
+      ],
+      "Some of your items could not be imported. See the details below.": [
+        "No se pudieron importar algunos de sus elementos. Vea los detalles a continuación."
+      ],
+      "Starting the extension": [
+        "Iniciando la extensión"
+      ],
+      "You’re a step away from autofill magic!": [
+        "¡Está a un paso de la magia del completado automático!"
       ]
     },
     "Title_cloned_item": {
@@ -5851,6 +5926,119 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "La suscripción no le permite crear varias bóvedas. Todos los elementos serán importados a la primera bóveda. Para importar a varias bóvedas mejore la suscripción."
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } resultado más no se muestra",
+        "${ hiddenResultsCount } más resultados no mostrados"
+      ]
+    },
+    "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Se encontró ${ itemsCount } sugerencia. Use el teclado para navegar.",
+        "Se encontraron ${ itemsCount } sugerencias. Use el teclado para navegar."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Use las teclas Arriba y Abajo para acceder y navegar por las sugerencias después de la entrada. Pulse Enter para confirmar su elección, o Escape para cerrar el cuadro de sugerencias."
+      ]
+    },
+    "Import Tutorial": {
+      "${ name } saves your passwords in the ${ passwords } app. Open it and go to ${ file } → ${ exportAll }.": [
+        "${ name } guarda sus contraseñas en la aplicación ${ passwords }. Ábrala y vaya a ${ file } → ${ exportAll }."
+      ],
+      "Account & Data": [
+        "Cuenta y Datos"
+      ],
+      "Advanced Options": [
+        "Opciones avanzadas"
+      ],
+      "Autofill and passwords": [
+        "Completado automático y contraseñas"
+      ],
+      "Choose JSON downloads": [
+        "Elija descargas JSON"
+      ],
+      "Continue export": [
+        "Continuar la exportación"
+      ],
+      "Export Data": [
+        "Exportar datos"
+      ],
+      "Export file format: 1PUX": [
+        "Formato de archivo de exportación: 1PUX"
+      ],
+      "Export items": [
+        "Exporte elementos"
+      ],
+      "Export passwords": [
+        "Exportar contraseñas"
+      ],
+      "Export to TXT": [
+        "Exportar a TXT"
+      ],
+      "Go to ${ passwords }.": [
+        "Vaya a ${ passwords }."
+      ],
+      "Go to the settings to locate the export action.": [
+        "Vaya a los ajustes para ubicar la acción de exportar."
+      ],
+      "Go to ☰ → ⚙ ${ settings } → Click ${ downloadFile }.": [
+        "Vaya a ☰ → ⚙ ${ settings } → Pulse ${ downloadFile }."
+      ],
+      "Google Password Manager": [
+        "Administrador de Contraseñas de Google"
+      ],
+      "Identify your password manager.": [
+        "Identifique su gestor de contraseña."
+      ],
+      "Manage your vault": [
+        "Gestione su bóveda"
+      ],
+      "More actions": [
+        "Más acciones"
+      ],
+      "Open ${ name } and go to ${ file } → ${ exportLabel } → your 1Password username.": [
+        "Abra ${ name } y vaya a ${ file } → ${ exportLabel } → su usuario de 1Password."
+      ],
+      "Open ${ name } and go to ${ menu } → ${ option }.": [
+        "Abra ${ name } y vaya a ${ menu } → ${ option }."
+      ],
+      "Open ${ name } and go to ☰ → ${ settings } → ${ autoFill }.": [
+        "Abra ${ name } y vaya a ☰ → ${ settings } → ${ autoFill }."
+      ],
+      "Open ${ name } and select ${ menu } → ${ option }.": [
+        "Abra ${ name } y seleccione ${ menu } → ${ option }."
+      ],
+      "Open ${ name } and select ⋯.": [
+        "Abra ${ name } y seleccione ⋯."
+      ],
+      "Open ${ name } and select ☰ → ${ passwords }.": [
+        "Abra ${ name } y seleccione ☰ → ${ passwords }."
+      ],
+      "Passwords and Autofill": [
+        "Contraseñas y Completado automático"
+      ],
+      "Select ${ menu } → ${ option }.": [
+        "Seleccione ${ menu } → ${ option }."
+      ],
+      "Select ${ option }.": [
+        "Seleccione ${ option }."
+      ],
+      "Select the export format CSV.": [
+        "Seleccione el formato de exportación CSV."
+      ],
+      "Select ⋯ → ${ exportPasswords }.": [
+        "Seleccione ⋯ → ${ exportPasswords }."
+      ],
+      "Settings": [
+        "Ajustes"
+      ],
+      "Submit": [
+        "Enviar"
+      ],
+      "This time, you’ll be asked to re-confirm your ${ name } username and password. Click ${ submit }.": [
+        "Esta vez, se le pedirá que vuelva a confirmar su usuario y contraseña de ${ name }. Pulse ${ submit }."
       ]
     }
   }

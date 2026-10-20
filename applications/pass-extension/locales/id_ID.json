@@ -804,6 +804,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Pengelola kata sandi Anda belum tersedia? Minta sekarang."
+      ],
+      "Download for macOS": [
+        "Unduh untuk macOS"
+      ],
+      "Download for Windows": [
+        "Unduh untuk Windows"
       ]
     },
     "Activity": {
@@ -5217,6 +5223,12 @@
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Anda akan menghapus ${ aliasCount } alias secara permanen."
+      ],
+      "Export": [
+        "Ekspor"
+      ],
+      "Import failed": [
+        "Impor gagal"
       ]
     },
     "Title_cloned_item": {
@@ -5571,6 +5583,19 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Langganan Anda tidak mengizinkan Anda untuk membuat beberapa brankas. Semua item akan diimpor ke brankas pertama Anda. Untuk mengimpor ke beberapa brankas, tingkatkan langganan Anda."
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } hasil lainnya tidak ditampilkan"
+      ]
+    },
+    "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "${ itemsCount } saran ditemukan, gunakan papan tik Anda untuk navigasi."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Gunakan tombol Atas dan Bawah untuk mengakses dan menelusuri saran setelah input. Tekan Enter untuk mengonfirmasi pilihan Anda, atau Escape untuk menutup kotak saran."
       ]
     }
   }
