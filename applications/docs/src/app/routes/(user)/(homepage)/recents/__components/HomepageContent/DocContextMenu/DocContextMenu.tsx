@@ -30,7 +30,7 @@ export type DocContextMenuProps = Omit<ContextMenuProps, 'children'> & {
 
 export function DocContextMenu({ anchorRef, isOpen, position, open, close, currentDocument }: DocContextMenuProps) {
   const canShare = useCanShare(currentDocument)
-  const canTrash = useCanTrash(currentDocument)
+  const canTrash = useCanTrash()
 
   // NOTE: this effect was copied from packages/drive-store/components/sections/ContextMenu/ItemContextMenu.tsx
   // I'm not actually sure it's necessary here, but I'm leaving it in for now just in case.
@@ -97,7 +97,7 @@ export function DocContextMenu({ anchorRef, isOpen, position, open, close, curre
             <MoveButton currentDocument={currentDocument} close={close} />
             <OpenFolderButton currentDocument={currentDocument} close={close} />
             <RenameButton currentDocument={currentDocument} close={close} />
-            {canTrash ? (
+            {canTrash(currentDocument) ? (
               <>
                 {separator}
                 <MoveToTrashButton currentDocument={currentDocument} />
@@ -131,16 +131,11 @@ function useCanShare(currentDocument: RecentDocumentsItem | undefined) {
   return !currentDocument.isSharedWithMe
 }
 
-function useCanTrash(currentDocument: RecentDocumentsItem | undefined) {
+export function useCanTrash() {
   const trashWithSDK = useTrashWithSDK()
   const loadRecentsWithSdkEnabled = useLoadRecentsWithSdkEnabled()
+  const checkRole = trashWithSDK && loadRecentsWithSdkEnabled
 
-  if (!currentDocument) {
-    return false
-  }
-
-  if (trashWithSDK && loadRecentsWithSdkEnabled) {
-    return currentDocument.effectiveRole === MemberRole.Admin
-  }
-  return !currentDocument.isSharedWithMe
+  return (document: RecentDocumentsItem) =>
+    checkRole ? document.effectiveRole === MemberRole.Admin : !document.isSharedWithMe
 }
