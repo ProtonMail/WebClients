@@ -424,9 +424,6 @@
       "Done": [
         "Selesai"
       ],
-      "Downgrade": [
-        "Turunkan"
-      ],
       "Download": [
         "Unduh"
       ],
@@ -879,9 +876,6 @@
       ],
       "Remove all other devices": [
         "Hapus seluruh perangkat lainnya"
-      ],
-      "Remove bonuses": [
-        "Hapus bonus"
       ],
       "Remove button": [
         "Hapus tombol"
@@ -1762,11 +1756,6 @@
     "bf2023: info": {
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini. Meskipun demikian, Anda dapat memperoleh diskon ${ discountPercentage } untuk ${ plan.Title } pada saat Anda berlangganan selama ${ cycle } bulan."
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "Jaminan uang kembali dalam 30 hari"
       ]
     },
     "bf2023: Title": {
@@ -5288,14 +5277,6 @@
         "Tampilkan undangan"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "Grup keluarga tidak dikenal. Silakan coba lagi."
-      ],
-      "Organization not recognized. Try again.": [
-        "Organisasi tidak dikenal. Coba lagi."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "Grup ${ BRAND_NAME }"
@@ -5435,22 +5416,8 @@
       ]
     },
     "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "Masukkan nama grup keluarga untuk mengonfirmasi"
-      ],
-      "Enter organization name to confirm": [
-        "Masukkan nama organisasi untuk mengonfirmasi"
-      ],
       "Family name": [
         "Nama keluarga"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Ini akan menghapus semua subpengguna, akun, dan data yang terkait dengan organisasi Anda."
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Ini akan menghapus semua fitur ${ BRAND_NAME } premium untuk setiap anggota keluarga."
       ]
     },
     "familyOffer_2023:Settings section title": {
@@ -5478,12 +5445,6 @@
       ],
       "Change family name": [
         "Ubah nama keluarga"
-      ],
-      "Delete family group?": [
-        "Hapus grup keluarga?"
-      ],
-      "Delete organization?": [
-        "Hapus organisasi?"
       ],
       "Edit user storage": [
         "Edit penyimpanan pengguna"
@@ -6586,18 +6547,6 @@
       "${ total } user found": [
         "${ total } pengguna ditemukan"
       ],
-      "${ vaultLink } created": [
-        "${ vaultLink } dibuat"
-      ],
-      "${ vaultLink } deleted": [
-        "${ vaultLink } dihapus"
-      ],
-      "${ vaultLink } shared with email": [
-        "${ vaultLink } dibagikan dengan email"
-      ],
-      "${ vaultLink } updated": [
-        "${ vaultLink } diperbarui"
-      ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
         "${ VPN_SHORT_APP_NAME } menyembunyikan lalu lintas Anda. ${ PASS_SHORT_APP_NAME } menyembunyikan identitas Anda\n— **hide-my-email alias** tanpa batas dan **peringatan dark-web** jika data Anda pernah bocor."
       ],
@@ -6664,20 +6613,11 @@
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } Lainnya"
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } ruang penyimpanan tambahan"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } koneksi untuk ${ VPN_APP_NAME } (memungkinkan Anda untuk menyambungkan lebih banyak perangkat ke VPN)"
-      ],
       "2FA disabled": [
         "2FA dinonaktifkan"
       ],
       "30-day money-back guarantee": [
         "Jaminan uang kembali dalam 30 hari"
-      ],
-      "30-day money-back guarantee.": [
-        "Jaminan 30 hari uang kembali."
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ protonSubdomain } di-host oleh ${ BRAND_NAME }, yang memungkinkan Anda untuk mengatur subdomain secara cepat. ${ learnMoreLink }"
@@ -6928,9 +6868,6 @@
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "Dengan menonaktifkan monitor akun, seluruh riwayat juga akan dibersihkan. Apakah Anda yakin ingin menonaktifkan ini?"
       ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Dengan menurunkan paket ke Gratis, Anda akan kehilangan manfaat ini secara permanen, meskipun Anda meningkatkan paket lagi di masa mendatang."
-      ],
       "By leaving now, changes may not be saved": [
         "Dengan keluar sekarang, perubahan mungkin tidak tersimpan"
       ],
@@ -7173,9 +7110,6 @@
       ],
       "Downgrade": [
         "Turunkan"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Menurunkan akun akan memutus seluruh koneksi ke server ${ VPN_APP_NAME } berbayar."
       ],
       "Download ${ VPN_APP_NAME }": [
         "Unduh ${ VPN_APP_NAME }"
@@ -7489,15 +7423,6 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Apabila Anda kehilangan perangkat yang Anda gunakan untuk proses autentikasi dua faktor, kode berikut akan dapat digunakan sebagai pengganti kode autentikasi dua faktor agar Anda dapat masuk ke akun Anda. Masing-masing kode hanya dapat digunakan sekali."
       ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Apabila Anda lanjut menurunkan akun, Anda akan kehilangan akses ke berbagai fitur berbayar ${ MAIL_APP_NAME } dan ${ VPN_APP_NAME }."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Jika Anda melanjutkan penurunan paket, Anda akan kehilangan akses ke fitur berbayar ${ MAIL_APP_NAME }, termasuk penyimpanan tambahan dan filter."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Apabila Anda lanjut menurunkan akun, Anda akan kehilangan akses ke berbagai fitur berbayar ${ VPN_APP_NAME }."
-      ],
       "If you recently reset your password, you can ${ recoveryMethodLink } to unlock your data. If this is due to an old password reset, you can stop the message from showing again.": [
         "Jika baru-baru ini mengatur ulang kata sandi, Anda dapat ${ recoveryMethodLink } untuk membuka kunci data. Jika ini disebabkan oleh atur ulang kata sandi lama, Anda dapat menghentikan pesan ini agar tidak ditampilkan lagi."
       ],
@@ -7576,21 +7501,6 @@
       "Invalid code. ${ RequestNewCodeLink } and try again.": [
         "Kode tidak valid. ${ RequestNewCodeLink } dan coba lagi."
       ],
-      "Invite deleted": [
-        "Undangan dihapus"
-      ],
-      "Invite for new user deleted": [
-        "Undangan untuk pengguna baru dihapus"
-      ],
-      "Invite for organization accepted": [
-        "Undangan untuk organisasi disetujui"
-      ],
-      "Invite for organization created": [
-        "Undangan untuk organisasi dibuat"
-      ],
-      "Invite rejected": [
-        "Undangan ditolak"
-      ],
       "Invite successfully sent": [
         "Undangan berhasil dikirim"
       ],
@@ -7605,54 +7515,6 @@
       ],
       "It's better to have:": [
         "Kata sandi Anda sebaiknya mengandung:"
-      ],
-      "Item autofilled in ${ vaultLink }": [
-        "Item diisi otomatis dalam ${ vaultLink }"
-      ],
-      "Item autofilled in vault": [
-        "Item diisi secara otomatis dalam brankas"
-      ],
-      "Item created in ${ vaultLink }": [
-        "Item dibuat dalam ${ vaultLink }"
-      ],
-      "Item created in vault": [
-        "Item dibuat dalam brankas"
-      ],
-      "Item deleted from ${ vaultLink }": [
-        "Item dihapus dari ${ vaultLink }"
-      ],
-      "Item deleted from vault": [
-        "Item dihapus dari brankas"
-      ],
-      "Item flags changed in ${ vaultLink }": [
-        "Tanda item diubah dalam ${ vaultLink }"
-      ],
-      "Item flags changed in vault": [
-        "Tanda item diubah dalam brankas"
-      ],
-      "Item in ${ vaultLink } trashed": [
-        "Item dalam ${ vaultLink } dibuang"
-      ],
-      "Item in ${ vaultLink } untrashed": [
-        "Item dalam ${ vaultLink } dipulihkan"
-      ],
-      "Item in vault trashed": [
-        "Item dalam brankas dihapus"
-      ],
-      "Item in vault untrashed": [
-        "Item dalam brankas dipulihkan dari sampah"
-      ],
-      "Item read in ${ vaultLink }": [
-        "Item dibaca di ${ vaultLink }"
-      ],
-      "Item read in vault": [
-        "Item dibaca dalam brankas"
-      ],
-      "Item updated in ${ vaultLink }": [
-        "Item diperbarui dalam ${ vaultLink }"
-      ],
-      "Item updated in vault": [
-        "Item diperbarui dalam brankas"
       ],
       "It’s often the easiest way to recover your account if you’re signed in.": [
         "Ini sering kali menjadi cara termudah untuk memulihkan akun Anda jika Anda sudah masuk."
@@ -7804,9 +7666,6 @@
       "New group created via your identity provider and pending review.": [
         "Grup baru dibuat melalui penyedia identitas Anda dan menunggu peninjauan."
       ],
-      "New user invited to organization": [
-        "Pengguna baru diundang ke organisasi"
-      ],
       "New VPN connection data will stop being collected and shown.": [
         "Data koneksi VPN tidak akan disimpan dan ditampilkan."
       ],
@@ -7914,15 +7773,6 @@
       ],
       "Paid for a plan": [
         "Dibayar untuk paket"
-      ],
-      "Pass Monitor - custom email confirmed": [
-        "Pass Monitor - email khusus dikonfirmasi"
-      ],
-      "Pass Monitor - custom email created": [
-        "Pass Monitor - email khusus dibuat"
-      ],
-      "Pass Monitor - custom email deleted": [
-        "Pass Monitor - email khusus dihapus"
       ],
       "Pass usage logs": [
         "Log penggunaan Pass"
@@ -8203,20 +8053,8 @@
       "Setting up your organization": [
         "Menyiapkan organisasi Anda"
       ],
-      "Shared ${ vaultLink } deleted": [
-        "${ vaultLink } terbagi telah dihapus"
-      ],
-      "Shared ${ vaultLink } updated": [
-        "${ vaultLink } bersama diperbarui"
-      ],
       "Shared server country (${ countriesCount })": [
         "Negara server terbagi (${ countriesCount })"
-      ],
-      "Shared vault deleted": [
-        "Brankas yang dibagikan dihapus"
-      ],
-      "Shared vault updated": [
-        "Brankas terbagi diperbarui"
       ],
       "Sign in only": [
         "Hanya masuk"
@@ -8229,9 +8067,6 @@
       ],
       "Signed up": [
         "Terdaftar"
-      ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Berhubung Anda telah menjadi pengguna yang setia, akun Anda akan memiliki berbagai fitur tambahan yang dapat Anda gunakan."
       ],
       "Smart Routed through a different country.": [
         "Diarahkan melalui Rute Pintar melalui negara yang berbeda."
@@ -8602,9 +8437,6 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "ID unik yang dibuat oleh penyedia identitas Anda, biasanya berupa URL yang memuat nama penyedia identitas di dalamnya (misalnya https://idp.example.com/XXXXX\n)."
       ],
-      "Unknown event type": [
-        "Jenis peristiwa tidak diketahui"
-      ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Selama Anda tidak keluar dari akun atau mengubah kata sandi Anda, sesi Anda akan tetap aktif. Seluruh sesi akan berakhir setelah 60 hari tidak aktif."
       ],
@@ -8676,21 +8508,6 @@
       ],
       "Users": [
         "Pengguna"
-      ],
-      "Vault created": [
-        "Brankas dibuat"
-      ],
-      "Vault deleted": [
-        "Brankas dihapus"
-      ],
-      "Vault either deleted or requires access permissions": [
-        "Brankas telah dihapus atau memerlukan izin akses"
-      ],
-      "Vault shared with email": [
-        "Brankas dibagikan dengan email"
-      ],
-      "Vault updated": [
-        "Brankas diperbarui"
       ],
       "Verification code sent.": [
         "Kode verifikasi telah dikirim."
@@ -8811,9 +8628,6 @@
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Pada saat mengaktifkan SAML untuk ${ appName } di layanan penyedia identitas Anda, Anda mungkin akan diminta untuk menggunakan URL Callback (ACS) dan Issuer ID. Cukup salin dan tempel data di bawah ini ke kolom yang disediakan oleh penyedia identitas Anda."
-      ],
-      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
-        "Pada saat Anda membatalkan langganan berbayar Anda saat ini, biaya langganan Anda akan dikembalikan dalam bentuk kredit akun dan Anda akan diturunkan ke paket ${ BRAND_NAME }${ PLANS.FREE }."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Saat Anda membatalkan, langganan Anda tidak akan diperpanjang, tetapi Anda masih dapat menikmati manfaat paket hingga akhir periode langganan. Setelah itu, Anda akan diturunkan ke paket ${ BRAND_NAME } Gratis."
@@ -8994,9 +8808,6 @@
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "Anda harus mengaktifkan kunci pribadi organisasi Anda dengan kata sandi kunci organisasi cadangan yang diberikan kepada Anda oleh administrator organisasi Anda."
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Anda harus terlebih dahulu menonaktifkan atau menghapus seluruh pengguna, alamat, dan domain khusus tambahan yang terdapat pada ${ MAIL_APP_NAME } sebelum Anda dapat menurunkan jenis akun Anda."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Anda harus memiliki kartu kredit atau akun bank yang terhubung dengan akun PayPal Anda untuk menambahkan layanan ini sebagai metode pembayaran."
@@ -10617,9 +10428,6 @@
       "use a data recovery method": [
         "gunakan metode pemulihan data"
       ],
-      "Vault": [
-        "Brankas"
-      ],
       "View guide": [
         "Lihat panduan"
       ],
@@ -11188,9 +10996,6 @@
       ]
     },
     "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Turunkan ke ${ downgradedPlanName }"
-      ],
       "Explore all ${ BRAND_NAME } plans": [
         "Telusuri seluruh paket ${ BRAND_NAME }"
       ],
@@ -15516,9 +15321,6 @@
       "upgrade for more storage": [
         "tingkatkan akun Anda untuk memperoleh lebih banyak ruang penyimpanan"
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Kami akan menambahkan kredit untuk sisa waktu ke Akun ${ BRAND_NAME } Anda."
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "Anda masih memiliki **${ daysRemaining }** hari tersisa pada paket **${ currentPlanName }** Anda."
       ],
@@ -16239,9 +16041,6 @@
       "You have successfully canceled your subscription.": [
         "Anda telah berhasil membatalkan langganan Anda."
       ],
-      "You have successfully unsubscribed": [
-        "Anda berhasil berhenti berlangganan"
-      ],
       "You will receive your username via email within a minute if you entered a valid recovery email address.": [
         "Apabila Anda memasukkan email pemulihan yang valid, Anda akan menerima nama pengguna Anda via email dalam rentang waktu satu menit."
       ],
@@ -16773,12 +16572,6 @@
       "Confirm": [
         "Konfirmasi"
       ],
-      "Confirm downgrade": [
-        "Konfirmasi penurunan akun"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Konfirmasi hilangnya bonus ${ BRAND_NAME }"
-      ],
       "Connect a Gmail address": [
         "Hubungkan alamat Gmail"
       ],
@@ -16991,9 +16784,6 @@
       ],
       "Downgrade account": [
         "Turunkan jenis akun"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "Turunkan ke ${ downgradedPlanName }?"
       ],
       "Download ${ app }": [
         "Unduh ${ app }"

@@ -410,9 +410,6 @@
       "Done": [
         "تم"
       ],
-      "Downgrade": [
-        "تخفيض"
-      ],
       "Download": [
         "تنزيل"
       ],
@@ -871,9 +868,6 @@
       ],
       "Remove all other devices": [
         "إزالة كل الأجهزة الأخرى"
-      ],
-      "Remove bonuses": [
-        "إزالة المكافآت"
       ],
       "Remove button": [
         "إزالة الزر"
@@ -1835,11 +1829,6 @@
         "عذرًا، هذا العرض غير متوفر مع باقتك الحالية. لكن يمكنك الحصول على خصم ${ discountPercentage } على ${ plan.Title } عند الاشتراك لمدة ${ cycle } أشهر.",
         "عذرًا، هذا العرض غير متوفر مع باقتك الحالية. لكن يمكنك الحصول على خصم ${ discountPercentage } على ${ plan.Title } عند الاشتراك لمدة ${ cycle } شهرًا.",
         "عذرًا، هذا العرض غير متوفر مع باقتك الحالية. لكن يمكنك الحصول على خصم ${ discountPercentage } على ${ plan.Title } عند الاشتراك لمدة ${ cycle } شهر."
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "ضمان لاسترداد أموالك خلال 30 يوما"
       ]
     },
     "bf2023: Title": {
@@ -5561,14 +5550,6 @@
         "عرض الدعوة"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "لم يتم التعرف على مجموعة العائلة. حاول مرة أخرى."
-      ],
-      "Organization not recognized. Try again.": [
-        "لم يتم التعرف على المؤسسة. حاول مرة أخرى."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "مجموعات ${ BRAND_NAME }"
@@ -5733,22 +5714,8 @@
       ]
     },
     "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "أدخل اسم مجموعة العائلة للتأكيد"
-      ],
-      "Enter organization name to confirm": [
-        "أدخل اسم المؤسسة للتأكيد"
-      ],
       "Family name": [
         "اسم العائلة"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "سيؤدي هذا إلى حذف جميع المستخدمين الفرعيين والحسابات والبيانات المرتبطة بمؤسستك بشكل دائم."
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "سيؤدي هذا إلى إزالة جميع الميزات المميزة لـ ${ BRAND_NAME } لكل فرد من أفراد العائلة."
       ]
     },
     "familyOffer_2023:Settings section title": {
@@ -5776,12 +5743,6 @@
       ],
       "Change family name": [
         "تغيير اسم العائلة"
-      ],
-      "Delete family group?": [
-        "هل تريد حذف مجموعة العائلة؟"
-      ],
-      "Delete organization?": [
-        "هل تريد حذف المؤسسة؟"
       ],
       "Edit user storage": [
         "تعديل مساحة تخزين المستخدم"
@@ -7130,18 +7091,6 @@
         "تم العثور على ${ total } مستخدمًا",
         "تم العثور على ${ total } مستخدم."
       ],
-      "${ vaultLink } created": [
-        "تم إنشاء ${ vaultLink }"
-      ],
-      "${ vaultLink } deleted": [
-        "تم حذف ${ vaultLink }"
-      ],
-      "${ vaultLink } shared with email": [
-        "تمت مشاركة ${ vaultLink } مع البريد الإلكتروني"
-      ],
-      "${ vaultLink } updated": [
-        "تم تحديث ${ vaultLink }"
-      ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
         "يُخفي ${ VPN_SHORT_APP_NAME } حركة المرور الخاصة بك. ويُخفي ${ PASS_SHORT_APP_NAME } هويتك\n— مع عناوين **hide-my-email** غير محدودة و**تنبيهات الويب المظلم** إذا تم تسريب بياناتك في أي وقت."
       ],
@@ -7221,25 +7170,11 @@
         "المزيد من المشتركين ${ invisibleCount }",
         "المزيد من المشتركين ${ invisibleCount }"
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } تخزين إضافي"
-      ],
-      "+${ organization.BonusVPN } connections for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } اتصالات لـ ${ VPN_APP_NAME } (يسمح لك بتوصيل المزيد من الأجهزة بـ VPN)",
-        "+ اتصال${ organization.BonusVPN } لـ${ VPN_APP_NAME } (يسمح لك بتوصيل المزيد من الأجهزة بـ VPN)",
-        "+${ organization.BonusVPN } اتصالان لـ ${ VPN_APP_NAME } (يسمح لك بتوصيل المزيد من الأجهزة بـ VPN)",
-        "+${ organization.BonusVPN } اتصالات لـ ${ VPN_APP_NAME } (يسمح لك بتوصيل المزيد من الأجهزة بـ VPN)",
-        "+${ organization.BonusVPN } اتصالًا لـ ${ VPN_APP_NAME } (يسمح لك بتوصيل المزيد من الأجهزة بـ VPN)",
-        "+ اتصالات${ organization.BonusVPN } لـ ${ VPN_APP_NAME } (يسمح لك بتوصيل المزيد من الأجهزة بـ VPN)"
-      ],
       "2FA disabled": [
         "تم تعطيل المصادقة الثنائية (2FA)"
       ],
       "30-day money-back guarantee": [
         "ضمان لاسترداد أموالك خلال 30 يوما"
-      ],
-      "30-day money-back guarantee.": [
-        "ضمان لاسترداد المال خلال 30 يوماً."
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "النطاق الفرعي ${ protonSubdomain } مستضاف بواسطة ${ BRAND_NAME }، مما يسمح لك بإعداد نطاق فرعي بسرعة. ${ learnMoreLink }"
@@ -7525,9 +7460,6 @@
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "من خلال تعطيل مراقب الحساب، ستقوم أيضا بمسح سجلك بالكامل. هل أنت متأكد من أنك تريد تعطيل هذا؟"
       ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "اذا قمت بتخفيض الباقة إلى الباقة المجانية، ستفقد هذه المزايا بشكل دائم، حتى إذا قمت بالترقية مرة أخرى في المستقبل"
-      ],
       "By leaving now, changes may not be saved": [
         "عند الخروج الآن، لا يمكن حفظ التغييرات"
       ],
@@ -7800,9 +7732,6 @@
       ],
       "Downgrade": [
         "تخفيض"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "سيؤدي تخفيض الخطة إلى إنهاء أي اتصالات بخوادم ${ VPN_APP_NAME } المدفوعة."
       ],
       "Download ${ VPN_APP_NAME }": [
         "تنزيل ${ VPN_APP_NAME }"
@@ -8122,15 +8051,6 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "إذا فقدت الوصول إلى جهاز المصادقة الثنائية، يمكنك استخدام الرموز الاحتياطية لتسجيل الدخول إلى حسابك. يستخدم الرمز الاحتياطي مرة واحدة فقط."
       ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "إذا تابعت عملية التخفيض، فستفقد الوصول إلى الميزات المدفوعة في ${ MAIL_APP_NAME } و${ VPN_APP_NAME }."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "إذا تابعت التخفيض، فستفقد الوصول إلى الميزات المدفوعة ${ MAIL_APP_NAME }، بما في ذلك التخزين والتصفيات الإضافية."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "إذا تابعت عملية التخفيض، فستفقد الوصول إلى الميزات المدفوعة في ${ VPN_APP_NAME }."
-      ],
       "If you recently reset your password, you can ${ recoveryMethodLink } to unlock your data. If this is due to an old password reset, you can stop the message from showing again.": [
         "في حال إعادة تعيين كلمة المرور مؤخرًا، يمكن ${ recoveryMethodLink } لإلغاء قفل البيانات. إذا كان هذا بسبب إعادة تعيين قديمة لكلمة المرور، يمكن إيقاف ظهور الرسالة مجددًا."
       ],
@@ -8214,21 +8134,6 @@
       "Invalid code. ${ RequestNewCodeLink } and try again.": [
         "الرمز غير صالح. يرجى ${ RequestNewCodeLink } والمحاولة مرة أخرى."
       ],
-      "Invite deleted": [
-        "تم حذف الدعوة"
-      ],
-      "Invite for new user deleted": [
-        "تم حذف دعوة المستخدم الجديد"
-      ],
-      "Invite for organization accepted": [
-        "تم قبول دعوة الانضمام إلى المؤسسة"
-      ],
-      "Invite for organization created": [
-        "تم إنشاء دعوة للمؤسسة"
-      ],
-      "Invite rejected": [
-        "تم رفض الدعوة"
-      ],
       "Invited": [
         "مدعو"
       ],
@@ -8248,54 +8153,6 @@
       ],
       "It's better to have:": [
         "من الأفضل أن تحتوي على:"
-      ],
-      "Item autofilled in ${ vaultLink }": [
-        "تم ملء العنصر تلقائيًا من ${ vaultLink }"
-      ],
-      "Item autofilled in vault": [
-        "تم ملء العنصر تلقائيًا في الخزنة"
-      ],
-      "Item created in ${ vaultLink }": [
-        "تم إنشاء العنصر في ${ vaultLink }"
-      ],
-      "Item created in vault": [
-        "تم إنشاء العنصر في الخزنة"
-      ],
-      "Item deleted from ${ vaultLink }": [
-        "تم حذف العنصر من ${ vaultLink }"
-      ],
-      "Item deleted from vault": [
-        "تم حذف العنصر من الخزنة"
-      ],
-      "Item flags changed in ${ vaultLink }": [
-        "تم تغيير علامات العنصر في ${ vaultLink }"
-      ],
-      "Item flags changed in vault": [
-        "تم تغيير علامات العنصر في الخزنة"
-      ],
-      "Item in ${ vaultLink } trashed": [
-        "تم نقل العنصر في ${ vaultLink } إلى المهملات"
-      ],
-      "Item in ${ vaultLink } untrashed": [
-        "تمت استعادة العنصر في ${ vaultLink } من المهملات"
-      ],
-      "Item in vault trashed": [
-        "تم نقل العنصر في الخزنة إلى المهملات"
-      ],
-      "Item in vault untrashed": [
-        "تمت استعادة العنصر في الخزنة من المهملات"
-      ],
-      "Item read in ${ vaultLink }": [
-        "تمت قراءة العنصر في ${ vaultLink }"
-      ],
-      "Item read in vault": [
-        "تمت قراءة العنصر في الخزنة"
-      ],
-      "Item updated in ${ vaultLink }": [
-        "تم تحديث العنصر في ${ vaultLink }"
-      ],
-      "Item updated in vault": [
-        "تم تحديث العنصر في الخزنة"
       ],
       "It’s often the easiest way to recover your account if you’re signed in.": [
         "غالبًا ما تكون هذه أسهل طريقة لاسترداد الحساب في حال تسجيل الدخول."
@@ -8447,9 +8304,6 @@
       "New group created via your identity provider and pending review.": [
         "تم إنشاء مجموعة جديدة عبر موفر الهوية الخاص بك وهي قيد المراجعة."
       ],
-      "New user invited to organization": [
-        "تمت دعوة مستخدم جديد إلى المؤسسة"
-      ],
       "New VPN connection data will stop being collected and shown.": [
         "سيتوقف جمع وعرض بيانات اتصال VPN الجديدة."
       ],
@@ -8579,15 +8433,6 @@
       ],
       "Paid for a plan": [
         "دَفع مقابل خطة"
-      ],
-      "Pass Monitor - custom email confirmed": [
-        "Pass Monitor - تم تأكيد البريد الإلكتروني المخصص"
-      ],
-      "Pass Monitor - custom email created": [
-        "Pass Monitor - تم إنشاء بريد إلكتروني مخصص"
-      ],
-      "Pass Monitor - custom email deleted": [
-        "Pass Monitor - تم حذف البريد الإلكتروني المخصص"
       ],
       "Pass usage logs": [
         "سجلات استخدام Pass"
@@ -8884,12 +8729,6 @@
       "Setting up your organization": [
         "جارٍ إعداد مؤسستك"
       ],
-      "Shared ${ vaultLink } deleted": [
-        "تم حذف ${ vaultLink } المشتركة"
-      ],
-      "Shared ${ vaultLink } updated": [
-        "تم تحديث ${ vaultLink } المشتركة"
-      ],
       "Shared server countries (${ countriesCount })": [
         "دولة الخادم المشترك (${ countriesCount })",
         "دولة الخادم المشترك (${ countriesCount })",
@@ -8897,12 +8736,6 @@
         "دول الخادم المشترك (${ countriesCount })",
         "دول الخادم المشترك (${ countriesCount })",
         "دول الخادم المشترك (${ countriesCount })"
-      ],
-      "Shared vault deleted": [
-        "تم حذف الخزنة المشتركة"
-      ],
-      "Shared vault updated": [
-        "تم تحديث الخزنة المشتركة"
       ],
       "Sign in only": [
         "تسجيل الدخول فقط"
@@ -8915,9 +8748,6 @@
       ],
       "Signed up": [
         "تم التسجيل"
-      ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "نظرًا لأنك مستخدم مخلص، فإن حسابك يحتوي على ميزات إضافية مفعلة."
       ],
       "Smart Routed through a different country.": [
         "موجَّه ذكيًا عبر دولة مختلفة."
@@ -9320,9 +9150,6 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "المعرف الفريد الذي أنشأه موفر هويتك، يكون عادةً في شكل عنوان URL يحتوي على اسم موفر الهوية داخله (على سبيل المثال، https://idp.example.com/XXXXX)."
       ],
-      "Unknown event type": [
-        "حدث غير معروف"
-      ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "ستظل جلستك نشطة إن لن تقوم بتسجيل الخروج من حسابك أو تغيير كلمة المرورك. تنتهي صلاحية الجلسات بعد 60 يومًا من عدم النشاط."
       ],
@@ -9394,21 +9221,6 @@
       ],
       "Users": [
         "المستخدمين"
-      ],
-      "Vault created": [
-        "تم إنشاء المخزن"
-      ],
-      "Vault deleted": [
-        "تم حذف الخزنة"
-      ],
-      "Vault either deleted or requires access permissions": [
-        "إما أن الخزنة محذوفة أو تتطلب أذونات وصول"
-      ],
-      "Vault shared with email": [
-        "تمت مشاركة الخزنة مع البريد الإلكتروني"
-      ],
-      "Vault updated": [
-        "تم تحديث المخزن"
       ],
       "Verification code sent.": [
         "أُرسل رمز التحقق."
@@ -9532,9 +9344,6 @@
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "عند تفعيل نظام SAML لتطبيق ${ appName } في مزود هويتك الشخصية، قد يطلب منك استخدام عنوان URL (ACS) و معرف المصدر. فقط قم بنسخ ولصق البيانات أدناه في حقول موفّر الهوية الخاص بك."
-      ],
-      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
-        "عند إلغاء اشتراكك المدفوع الحالي، سيُعاد رصيد اشتراكك كرصيد في الحساب وسيُخفَّض اشتراكك إلى خطة ${ BRAND_NAME } ${ PLANS.FREE }."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "عند الإلغاء، لن يُجدد اشتراكك، ولكن سيظل بإمكانك الاستمتاع بمزايا الخطة حتى نهاية فترة الاشتراك. بعد ذلك، سيُخفَّض اشتراكك إلى خطة ${ BRAND_NAME } Free."
@@ -9760,9 +9569,6 @@
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "يجب عليك تنشيط المفتاح الخاص لمؤسستك باستخدام كلمة مرور مفتاح المؤسسة الاحتياطية التي قدمها لك مسؤول مؤسستك."
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "يجب عليك تعطيل أو إزالة أي مستخدمين أو عناوين أو نطاقات مخصصة إضافية في ${ MAIL_APP_NAME } قبل أن تتمكن من تخفيض الخطة."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "يجب أن يكون لديك بطاقة ائتمان أو حساب مصرفي مرتبط بحسابك على PayPal لإضافته كوسيلة دفع."
@@ -11443,9 +11249,6 @@
       "use a data recovery method": [
         "استخدام طريقة لاسترداد البيانات"
       ],
-      "Vault": [
-        "الخزانة"
-      ],
       "View guide": [
         "عرض الدليل"
       ],
@@ -12074,9 +11877,6 @@
       ]
     },
     "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "تخفيض إلى ${ downgradedPlanName }"
-      ],
       "Explore all ${ BRAND_NAME } plans": [
         "استكشف كل خطط ${ BRAND_NAME }"
       ],
@@ -16792,9 +16592,6 @@
       "upgrade for more storage": [
         "الترقية لمزيد من مساحة التخزين"
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "سنضيف الأرصدة الخاصة بالوقت المتبقي إلى حسابك على ${ BRAND_NAME }."
-      ],
       "You still have **${ daysRemaining }** days left on your **${ currentPlanName }** plan.": [
         "تَبقّت **${ daysRemaining }** أيام في باقتك**${ currentPlanName }**.",
         "أمامك يوم واحد (**${ daysRemaining }**) متبقٍ في باقة **${ currentPlanName }**.",
@@ -17630,9 +17427,6 @@
       "You have successfully canceled your subscription.": [
         "لقد ألغيت اشتراكك بنجاح."
       ],
-      "You have successfully unsubscribed": [
-        "لقد قمت بإلغاء اشتراكك بنجاح"
-      ],
       "You will receive your username via email within a minute if you entered a valid recovery email address.": [
         "ستتلقى اسم المستخدم عبر البريد الإلكتروني في غضون دقيقة إذا أدخلت عنوان بريد إلكتروني صالح."
       ],
@@ -18211,12 +18005,6 @@
       "Confirm": [
         "تأكيد"
       ],
-      "Confirm downgrade": [
-        "تأكيد التخفيض"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "تأكيد فقدان مكافآت ${ BRAND_NAME }"
-      ],
       "Connect a Gmail address": [
         "ربط عنوان Gmail"
       ],
@@ -18439,9 +18227,6 @@
       ],
       "Downgrade account": [
         "تقليل باقة الحساب"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "تخفيض الخطة إلى ${ downgradedPlanName }؟"
       ],
       "Download ${ app }": [
         "تنزيل ${ app }"
