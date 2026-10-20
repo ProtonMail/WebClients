@@ -1,7 +1,8 @@
-import { type ADDON_NAMES, PAYMENT_METHOD_TYPES, PLANS } from './constants';
+import { type ADDON_NAMES, CYCLE, PAYMENT_METHOD_TYPES, PLANS } from './constants';
 import type {
     ChargeablePaymentParameters,
     CreateCardDetailsBackend,
+    Cycle,
     ExistingPaymentMethod,
     ExtendedTokenPayment,
     PayPalDetails,
@@ -107,6 +108,9 @@ export function isV5PaymentToken(
 
 export const isValidPlanName = (value: string | PLANS | ADDON_NAMES): value is PLANS =>
     Object.values(PLANS).includes(value as PLANS);
+
+export const isValidCycle = (value: number | Cycle | undefined): value is Cycle =>
+    typeof value === 'number' && Object.values(CYCLE).includes(value as Cycle);
 
 export function isSepaDetails(obj: any): obj is SepaDetails {
     if (!obj) {
