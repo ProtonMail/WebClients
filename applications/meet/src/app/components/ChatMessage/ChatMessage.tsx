@@ -30,6 +30,7 @@ import {
 import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { splitMessageIntoMentionSegments } from '@proton/meet/utils/mentions/mentionToken';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { CHAT_MESSAGE_MAX_LENGTH } from '../../constants';
@@ -61,10 +62,11 @@ const EmojiPicker = ({
     perLine: number;
 }) => {
     const ref = useRef<HTMLDivElement>(null);
+    const isLumoEmojisEnabled = useFlag('MeetChatLumoEmojis');
 
     useEffect(() => {
         const picker = new Picker({
-            ...getLumoEmojiPickerOptions(onEmojiSelect),
+            ...getLumoEmojiPickerOptions(onEmojiSelect, isLumoEmojisEnabled),
             autoFocus,
             set,
             skinTonePosition,
@@ -78,7 +80,7 @@ const EmojiPicker = ({
         const style = document.createElement('style');
         style.textContent = emojiPickerStyles;
         picker.shadowRoot?.appendChild(style);
-    }, [autoFocus, onEmojiSelect, perLine, previewPosition, set, skinTonePosition]);
+    }, [autoFocus, isLumoEmojisEnabled, onEmojiSelect, perLine, previewPosition, set, skinTonePosition]);
 
     return <div ref={ref} />;
 };
