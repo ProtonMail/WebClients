@@ -51,6 +51,7 @@ export enum TelemetryMeasurementGroups {
     mailPagingControls = 'mail.web.paging_controls',
     mailExpandBlockquotes = 'mail.web.expand_blockquotes',
     categoriesView = 'mail.any.categories_view',
+    mailOnboarding = 'mail.any.signup_onboarding',
     passNudge = 'mail.web.pass_nudge',
     /** Shared with mobile clients: compares Encrypted Search (searchVersion 'v1') against Content Search (searchVersion 'v2') */
     contentSearch = 'mail.any.search',
@@ -125,6 +126,12 @@ export enum TelemetryEasySwitchEvents {
     byoeClaimableAddressModalAction = 'byoe_claimable_address_modal_action',
     byoeAddressLinkedModalShown = 'byoe_address_linked_modal_shown',
     byoeAddressLinkedModalAction = 'byoe_address_linked_modal_action',
+}
+
+export enum TelemetryMailOnboardingEvents {
+    stepViewed = 'step_viewed',
+    stepCompleted = 'step_completed',
+    stepInteracted = 'step_interacted',
 }
 
 export enum TelemetryEasySwitchCreationFunnelEvents {
@@ -800,7 +807,8 @@ export type TelemetryEvents =
     | TelemetryMeetDashboardEvents
     | TelemetryMeetPerformanceEvents
     | TelemetryEasySwitchEvents
-    | TelemetryEasySwitchCreationFunnelEvents;
+    | TelemetryEasySwitchCreationFunnelEvents
+    | TelemetryMailOnboardingEvents;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;
