@@ -17,14 +17,12 @@ const SidebarAppsList = () => {
     const [organization] = useOrganization();
     const { getLocalID } = useAuthentication();
     const localId = getLocalID();
-    const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
     const isSpacesAvailable = useFlag('SpacesAvailable');
 
     const availableApps = getAvailableApps({
         context: 'dropdown',
         user,
         organization,
-        isAuthenticatorAvailable,
         isSpacesAvailable,
     });
 

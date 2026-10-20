@@ -57,7 +57,6 @@ const allApps = new Set([
     APPS.PROTONWALLET,
     APPS.PROTONLUMO,
     APPS.PROTONMEET,
-    APPS.PROTONAUTHENTICATOR,
     APPS.PROTONSPACES,
 ]);
 
@@ -80,7 +79,6 @@ const getAllowedProducts = (products: OrganizationSettingsAllowedProduct[]) => {
 
 const defaultOptions: Parameters<typeof getAvailableApps>[0] = {
     user: getProtonUser(),
-    isAuthenticatorAvailable: true,
     isSpacesAvailable: true,
     context: 'app',
 };
@@ -225,7 +223,6 @@ describe('available apps', () => {
                     user: getNonPrivateExternalUser(),
                 }),
                 [
-                    APPS.PROTONAUTHENTICATOR,
                     APPS.PROTONMEET,
                     APPS.PROTONPASS,
                     APPS.PROTONDRIVE,
@@ -361,7 +358,6 @@ describe('available apps', () => {
                     organization: getAllowedProducts([]),
                 }),
                 [
-                    APPS.PROTONAUTHENTICATOR,
                     APPS.PROTONMEET,
                     APPS.PROTONPASS,
                     APPS.PROTONDRIVE,

@@ -42,14 +42,12 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
         ref: ForwardedRef<HTMLButtonElement>
     ) => {
         const { APP_NAME } = useConfig();
-        const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
         const isSpacesAvailable = useFlag('SpacesAvailable');
 
         const availableApps = getAvailableApps({
             context: 'dropdown',
             user,
             organization,
-            isAuthenticatorAvailable,
             isSpacesAvailable,
         });
 
