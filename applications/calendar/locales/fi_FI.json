@@ -1031,6 +1031,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Ilmainen työpöytäsovelluksen kokeilujaksosi päättyy ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Subscribe": [
+        "Tilaa"
       ]
     },
     "action": {
@@ -7252,6 +7255,15 @@
       ],
       "Why would you like to cancel?": [
         "Miksi haluat perua tilauksen?"
+      ],
+      "Amount": [
+        "Summa"
+      ],
+      "Amount due": [
+        "Erääntyvä summa"
+      ],
+      "Credits used": [
+        "Krediittejä käytetty"
       ]
     },
     "label": {
@@ -11240,6 +11252,9 @@
       ],
       "You have successfully unsubscribed": [
         "Tilauksesi on lopetettu"
+      ],
+      "Invoice paid": [
+        "Lasku on maksettu"
       ]
     },
     "Suffix": {
@@ -12196,6 +12211,9 @@
       ],
       "Request sent": [
         "Pyyntö lähetetty"
+      ],
+      "Pay invoice": [
+        "Maksa lasku"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12856,6 +12874,100 @@
       ],
       "Other": [
         "Muu"
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Hanki tarjous"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/kuukausi"
+      ],
+      "15 GB storage": [
+        "15 Gt tallennustilaa"
+      ],
+      "2 individual accounts": [
+        "2 erillistä tiliä"
+      ],
+      "2 TB of secure storage": [
+        "2 Tt suojattua tallennustilaa"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 Gt tallennustilaa: 40x nykyinen tilauksesi"
+      ],
+      "3 TB of secure storage": [
+        "3 Tt suojattua tallennustilaa"
+      ],
+      "500 GB of secure storage": [
+        "500 Gt suojattua tallennustilaa"
+      ],
+      "6 individual accounts": [
+        "6 erillistä tiliä"
+      ],
+      "Built-in 2FA authenticator": [
+        "Sisäänrakennettu kaksivaiheinen todentaja"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Alennukset perustuvat normaaliin kuukausihintaan. Tilauksesi uusiutuu normaaliin vuosihintaan, kun laskutusjakso päättyy."
+      ],
+      "Online document editor": [
+        "Dokumenttieditori verkossa"
+      ],
+      "Recover previous file versions": [
+        "Palauta aiempia tiedostoversioita"
+      ],
+      "Stronger protection against cyber threats": [
+        "Vahvempi suoja kyberuhkia vastaan"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Rajattomasti kansioita, tunnisteita ja suodattimia"
+      ],
+      "Use your own email domain": [
+        "Käytä omaa sähköpostin verkkotunnusta"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ja ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ja ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ja ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Vuoden muhkeimmat alennukset"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "12 kuukaudeksi"
+      ],
+      "Last chance to save big": [
+        "Viimeinen mahdollisuus säästää isosti"
       ]
     }
   }
