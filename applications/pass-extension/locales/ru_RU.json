@@ -810,6 +810,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Вашего менеджера паролей здесь нет? Запросите его."
+      ],
+      "Download for macOS": [
+        "Скачать для macOS"
+      ],
+      "Download for Windows": [
+        "Скачать для Windows"
       ]
     },
     "Activity": {
@@ -5385,6 +5391,12 @@
         "Вы собираетесь навсегда удалить ${ aliasCount } псевдонима.",
         "Вы собираетесь навсегда удалить ${ aliasCount } псевдонимов.",
         "Вы собираетесь навсегда удалить ${ aliasCount } псевдонимов."
+      ],
+      "Export": [
+        "Экспорт"
+      ],
+      "Import failed": [
+        "Импорт не удался"
       ]
     },
     "Title_cloned_item": {
@@ -5757,6 +5769,25 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Ваша подписка не позволяет создавать несколько хранилищ. Все элементы будут импортированы в ваше первое хранилище. Для импорта в несколько хранилищ обновите подписку."
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } результат не показан",
+        "${ hiddenResultsCount } результата не показано",
+        "${ hiddenResultsCount } результатов не показано",
+        "${ hiddenResultsCount } результатов не показано"
+      ]
+    },
+    "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Найдено ${ itemsCount } предложение, используйте клавиатуру для навигации.",
+        "Найдено ${ itemsCount } предложения, используйте клавиатуру для навигации.",
+        "Найдено ${ itemsCount } предложений, используйте клавиатуру для навигации.",
+        "Найдено предложений: ${ itemsCount }, используйте клавиатуру для навигации."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Используйте клавиши Вверх и Вниз, чтобы получить доступ и просмотреть предложения после ввода. Нажмите Enter для подтверждения выбора, или Escape для закрытия окна предложений."
       ]
     }
   }

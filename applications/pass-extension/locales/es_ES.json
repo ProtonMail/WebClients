@@ -806,6 +806,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "¿No aparece tu gestor de contraseñas? Solicítalo."
+      ],
+      "Download for macOS": [
+        "Descargar para macOS"
+      ],
+      "Download for Windows": [
+        "Descargar para Windows"
       ]
     },
     "Activity": {
@@ -5277,6 +5283,12 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Estás a punto de eliminar definitivamente ${ aliasCount } alias.",
         "Estás a punto de eliminar definitivamente ${ aliasCount } alias."
+      ],
+      "Export": [
+        "Exportar"
+      ],
+      "Import failed": [
+        "Error en la importación"
       ]
     },
     "Title_cloned_item": {
@@ -5637,6 +5649,21 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Tu suscripción no te permite crear varias cajas fuertes. Todos los elementos serán importados atsu primera caja fuerte. Para importar a varias cajas fuertes mejora tu suscripción."
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } resultado más no mostrado",
+        "${ hiddenResultsCount } más resultados no mostrados"
+      ]
+    },
+    "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Se ha encontrado ${ itemsCount } sugerencia. Usa el teclado para navegar.",
+        "Se han encontrado ${ itemsCount } sugerencias. Usa el teclado para navegar."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Utiliza las teclas Arriba y Abajo para acceder y navegar por las sugerencias después de la entrada. Pulsa Entrar para confirmar tu elección o Escape para cerrar el cuadro de sugerencias."
       ]
     }
   }

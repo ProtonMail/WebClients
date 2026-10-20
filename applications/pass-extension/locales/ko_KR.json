@@ -822,6 +822,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "사용중이신 비밀번호 관리자가 여기 없나요? 추가하도록 요청하세요."
+      ],
+      "Download for macOS": [
+        "macOS용 다운로드"
+      ],
+      "Download for Windows": [
+        "Windows용 다운로드"
       ]
     },
     "Activity": {
@@ -3053,6 +3059,12 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "조직에서 ${ PASS_APP_NAME }에 대한 액세스 권한을 보호해야 합니다"
+      ],
+      "iOS and Android Apps": [
+        "iOS 및 Android 앱"
+      ],
+      "Scan to download": [
+        "스캔하여 다운로드"
       ]
     },
     "Keyboard key": {
@@ -5385,6 +5397,15 @@
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "별칭 ${ aliasCount }개를 영구적으로 삭제하게 됩니다."
+      ],
+      "Export": [
+        "내보내기"
+      ],
+      "Get mobile and desktop apps": [
+        "모바일 및 데스크톱 앱 다운로드"
+      ],
+      "Import failed": [
+        "불러오기 실패함"
       ]
     },
     "Title_cloned_item": {
@@ -5754,6 +5775,19 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "현재 구독에서 다중 금고 생성을 지원하지 않습니다. 모든 항목이 처음 금고에 저장됩니다. 여러 개의 금고를 생성하려면 구독을 업그레이드 하세요."
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount }개의 추가 항목이 표시되지 않습니다"
+      ]
+    },
+    "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "${ itemsCount }개 제안 찾음, 탐색하려면 키보드를 사용하세요."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "위 아래 키를 사용하여 입력 뒤의 브라우저 제안에 접근하세요. 엔터를 눌러 선택을 확인하거나, Esc키를 눌러 제안 창을 닫으세요."
       ]
     }
   }

@@ -806,6 +806,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "თქვენი პაროლების მმართველი აქ არაა? მოითხოვეთ ის."
+      ],
+      "Download for macOS": [
+        "გადმოწერა macOS-სთვის"
+      ],
+      "Download for Windows": [
+        "გადმოწერა Windows-სთვის"
       ]
     },
     "Activity": {
@@ -5271,6 +5277,12 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "აპირებთ, სამუდამოდ წაშალოთ ${ aliasCount } ფსევდონიმი.",
         "აპირებთ, სამუდამოდ წაშალოთ ${ aliasCount } ფსევდონიმი."
+      ],
+      "Export": [
+        "გატანა"
+      ],
+      "Import failed": [
+        "შემოტანის შეცდომა"
       ]
     },
     "Title_cloned_item": {
@@ -5631,6 +5643,21 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "თქვენი სატარიფო გეგმა ერთზე მეტი საცავის შექმნის უფლებას არ გაძლევთ. ყველა ელემენტი პირველ საცავში იქნება შემოტანილი. ერთზე მეტი საცავში შემოსატანად ასწიეთ თქვენი სატარიფო გეგმა."
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "ნაჩვენები არაა კიდევ ${ hiddenResultsCount } შედეგი",
+        "ნაჩვენები არაა კიდევ ${ hiddenResultsCount } შედეგი"
+      ]
+    },
+    "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "ნაპოვნია ${ itemsCount } მინიშნება. აირჩიეთ კლავიატურით.",
+        "ნაპოვნია ${ itemsCount } მინიშნება. აირჩიეთ კლავიატურით."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "გამოიყენეთ ზევით და ქვევით კლავიშები შემოთავაზებების შეყვანის შემდეგ წვდომისთვის და დასათვალიერებლად. დააჭირეთ Enter თქვენი არჩევანის დასადასტურებლად, ან Escape შემოთავაზებების ველის დასახურავად."
       ]
     }
   }

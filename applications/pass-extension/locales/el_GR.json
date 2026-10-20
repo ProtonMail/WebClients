@@ -827,6 +827,27 @@
       ],
       "Your password manager is not here? Request it.": [
         "Ο διαχειριστής κωδικών πρόσβασης σας δεν είναι εδώ; Ζητήστε τον."
+      ],
+      "Create a login": [
+        "Δημιουργία σύνδεσης"
+      ],
+      "Download for Linux": [
+        "Λήψη για Linux"
+      ],
+      "Download for macOS": [
+        "Λήψη για MacOS"
+      ],
+      "Download for Windows": [
+        "Λήψη για Windows"
+      ],
+      "More details about how to export": [
+        "Περισσότερες λεπτομέρειες σχετικά με τον τρόπο εξαγωγής"
+      ],
+      "Open platform selection dropdown": [
+        "Άνοιγμα αναπτυσσόμενου μενού επιλογής πλατφόρμας"
+      ],
+      "Skip for now": [
+        "Αγνοήστε για τώρα"
       ]
     },
     "Activity": {
@@ -1567,6 +1588,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Ο κωδικός PIN σας καταργήθηκε από μία άλλη ${ PASS_APP_NAME } εφαρμογή"
+      ],
+      "Biometric authentication cancelled.": [
+        "Η βιομετρική ταυτοποίηση ακυρώθηκε."
       ]
     },
     "Error message": {
@@ -3100,6 +3124,30 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ο οργανισμός σας απαιτεί να εξασφαλίσετε την πρόσβασή σας στο ${ PASS_APP_NAME }"
+      ],
+      "${ imported } of ${ total } (${ percentage }%)": [
+        "${ imported } από ${ total } (${ percentage }%)"
+      ],
+      "Don’t close this tab": [
+        "Μη κλείσετε αυτήν την καρτέλα"
+      ],
+      "iOS and Android Apps": [
+        "Εφαρμογές για iOS και Android"
+      ],
+      "No matching service. Try a different name.": [
+        "Δεν βρέθηκε αντίστοιχη υπηρεσία. Δοκιμάστε διαφορετικό όνομα."
+      ],
+      "Open the extension here.": [
+        "Ανοίξτε την προέκταση εδώ."
+      ],
+      "Open the extension to unlock it": [
+        "Ανοίξτε την προέκταση για να την ξεκλειδώσετε"
+      ],
+      "Scan to download": [
+        "Σαρώστε για λήψη"
+      ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "Σκανάρετε για να κατεβάσετε το ${ PASS_APP_NAME } για iOS και Android"
       ]
     },
     "Keyboard key": {
@@ -4333,6 +4381,18 @@
       ],
       "ZIP or Postal code": [
         "Τ.Κ. / Ταχυδρομικός κώδικας"
+      ],
+      "Linux": [
+        "Linux"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Service": [
+        "Υπηρεσία"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Link": {
@@ -4677,6 +4737,9 @@
       ],
       "Used on ${ url }": [
         "Χρησιμοποιείται στο ${ url }"
+      ],
+      "E.g.: Google": [
+        "Π.χ.: Google"
       ]
     },
     "Result": {
@@ -5457,6 +5520,93 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Πρόκειται να διαγράψετε οριστικά ${ aliasCount } ψευδώνυμο.",
         "Πρόκειται να διαγράψετε οριστικά ${ aliasCount } ψευδώνυμα."
+      ],
+      "Add one account": [
+        "Προσθήκη ενός λογαριασμού"
+      ],
+      "Browsers": [
+        "Προγράμματα περιήγησης"
+      ],
+      "Create your first login": [
+        "Δημιουργήστε την πρώτη σας σύνδεση"
+      ],
+      "Export": [
+        "Εξαγωγή"
+      ],
+      "Export from ${ provider.title }": [
+        "Εξαγωγή από ${ provider.title }"
+      ],
+      "Fill in your details": [
+        "Συμπληρώστε τα στοιχεία σας"
+      ],
+      "First login created": [
+        "Δημιουργήθηκε η πρώτη σύνδεση"
+      ],
+      "For security purposes, delete your exported file.": [
+        "Για λόγους ασφαλείας, διαγράψτε το εξαχθέν αρχείο σας."
+      ],
+      "Get mobile and desktop apps": [
+        "Αποκτήστε τις εφαρμογές για κινητά και υπολογιστές"
+      ],
+      "Get mobile apps": [
+        "Αποκτήστε εφαρμογές κινητών"
+      ],
+      "Import completed with warnings": [
+        "Η εισαγωγή ολοκληρώθηκε με προειδοποιήσεις"
+      ],
+      "Import failed": [
+        "Αποτυχία εισαγωγής"
+      ],
+      "Import successful": [
+        "Επιτυχημένη εισαγωγή"
+      ],
+      "Import your passwords in less than a minute": [
+        "Εισαγάγετε τους κωδικούς πρόσβασής σας σε λιγότερο από ένα λεπτό"
+      ],
+      "Important: Once your data has been imported, delete the exported file.": [
+        "Σημαντικό: Μόλις εισαχθούν τα δεδομένα σας, διαγράψτε το εξαχθέν αρχείο."
+      ],
+      "Imported from:": [
+        "Εισαγωγή από:"
+      ],
+      "Imported items:": [
+        "Εισαγόμενα στοιχεία:"
+      ],
+      "Move everything at once": [
+        "Μετακίνησε τα όλα ταυτόχρονα"
+      ],
+      "None of your items could be imported. See the details below.": [
+        "Δεν ήταν δυνατή η εισαγωγή κανενός από τα στοιχεία σας. Δείτε τις λεπτομέρειες παρακάτω."
+      ],
+      "Password managers": [
+        "Διαχειριστές κωδικών πρόσβασης"
+      ],
+      "Select your password manager": [
+        "Επιλέξτε τον διαχειριστή κωδικών πρόσβασης"
+      ],
+      "Some of your items could not be imported. See the details below.": [
+        "Ορισμένα από τα στοιχεία σας δεν ήταν δυνατό να εισαχθούν. Δείτε τις λεπτομέρειες παρακάτω."
+      ],
+      "Starting the extension": [
+        "Εκκίνηση της προέκτασης"
+      ],
+      "Upload": [
+        "Ανέβασμα"
+      ],
+      "Upload your data": [
+        "Ανεβάστε τα δεδομένα σας"
+      ],
+      "We'll guide you through the process. First choose where you currently store your passwords.": [
+        "Θα σας καθοδηγήσουμε στη διαδικασία. Αρχικά, επιλέξτε πού αποθηκεύετε αυτήν τη στιγμή τους κωδικούς πρόσβασής σας."
+      ],
+      "Which service do you want to create the login for?": [
+        "Για ποια υπηρεσία θέλετε να δημιουργήσετε τα στοιχεία σύνδεσης;"
+      ],
+      "You are ready to get the most out of ${ PASS_APP_NAME }.": [
+        "Είστε έτοιμοι να αξιοποιήσετε στο έπακρο το ${ PASS_APP_NAME }."
+      ],
+      "You’re a step away from autofill magic!": [
+        "Είσαι ένα βήμα μακριά από τη μαγεία της αυτόματης συμπλήρωσης!"
       ]
     },
     "Title_cloned_item": {
@@ -5851,6 +6001,188 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Η συνδρομή σας δε σας επιτρέπει να δημιουργήσετε πολλαπλές κρύπτες. Όλα τα στοιχεία θα εισαχθούν στην πρώτη κρύπτη σας. Για να κάνετε εισαγωγή σε πολλαπλές κρύπτες, αναβαθμίστε τη συνδρομή σας."
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } ακόμη αποτέλεσμα δεν εμφανίζεται",
+        "${ hiddenResultsCount } ακόμη αποτελέσματα δεν εμφανίζονται"
+      ]
+    },
+    "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Βρέθηκε ${ itemsCount } υπόδειξη, χρησιμοποιήστε το πληκτρολόγιο για πλοήγηση.",
+        "Βρέθηκαν ${ itemsCount } υποδείξεις, χρησιμοποιήστε το πληκτρολόγιο για πλοήγηση."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Χρησιμοποιήστε τα πλήκτρα Up και Down για πρόσβαση και περιήγηση στις προτάσεις μετά την εισαγωγή. Πατήστε Enter για να επιβεβαιώσετε την επιλογή σας, ή διαφυγής για να κλείσετε το πλαίσιο προτάσεων."
+      ]
+    },
+    "Import Tutorial": {
+      "${ name } saves your passwords in the ${ passwords } app. Open it and go to ${ file } → ${ exportAll }.": [
+        "Το ${ name } αποθηκεύει τους κωδικούς πρόσβασής σας στην εφαρμογή ${ passwords }. Ανοίξτε την και μεταβείτε στο ${ file } → ${ exportAll }."
+      ],
+      "Account & Data": [
+        "Λογαριασμός & Δεδομένα"
+      ],
+      "Advanced Options": [
+        "Προηγμένες Επιλογές"
+      ],
+      "As a security measure, LastPass will email you to confirm the request. Open the email and click ${ continueExport }.": [
+        "Ως μέτρο ασφαλείας, το LastPass θα σας στείλει μήνυμα ηλεκτρονικού ταχυδρομείου για να επιβεβαιώσετε το αίτημα. Ανοίξτε το ηλεκτρονικό μήνυμα και κάντε κλικ στο ${ continueExport }."
+      ],
+      "At the confirmation screen, log back into your ${ name } Vault and to ${ advancedOptions } → ${ manageYourVault } → ${ exportLabel } again.": [
+        "Στην οθόνη επιβεβαίωσης, συνδεθείτε ξανά στη ${ name } Κρύπτη σας και μεταβείτε στις ${ advancedOptions } → ${ manageYourVault } → ${ exportLabel }."
+      ],
+      "Autofill and passwords": [
+        "Αυτόματη συμπλήρωση και κωδικοί πρόσβασης"
+      ],
+      "Choose ${ formatJson } as the file format, click ${ exportLabel } and confirm with your master password.": [
+        "Επιλέξτε ${ formatJson } ως μορφή αρχείου, κάντε κλικ στο ${ exportLabel } και επιβεβαιώστε με τον κύριο κωδικό πρόσβασής σας."
+      ],
+      "Choose JSON downloads": [
+        "Επιλογή λήψεων JSON"
+      ],
+      "Choose the file format → Select ${ exportLabel }.": [
+        "Επιλέξτε τη μορφή αρχείου → Επιλέξτε ${ exportLabel }."
+      ],
+      "Continue export": [
+        "Συνέχιση εξαγωγής"
+      ],
+      "Download file": [
+        "Λήψη αρχείου"
+      ],
+      "Enter your 1Password master password, ensure ${ format1pux } is selected, and click ${ exportData }.": [
+        "Εισαγάγετε τον κύριο κωδικό πρόσβασης του 1Password, βεβαιωθείτε ότι είναι επιλεγμένο το ${ format1pux } και κάντε κλικ στο ${ exportData }."
+      ],
+      "Export": [
+        "Εξαγωγή"
+      ],
+      "Export All Passwords to File": [
+        "Εξαγωγή Όλων των Κωδικών Πρόσβασης σε Αρχείο"
+      ],
+      "Export Data": [
+        "Εξαγωγή Δεδομένων"
+      ],
+      "Export data": [
+        "Εξαγωγή δεδομένων"
+      ],
+      "Export file format: 1PUX": [
+        "Μορφή αρχείου εξαγωγής: 1PUX"
+      ],
+      "Export items": [
+        "Εξαγωγή στοιχείων"
+      ],
+      "Export passwords": [
+        "Εξαγωγή κωδικών πρόσβασης"
+      ],
+      "Export to CSV": [
+        "Εξαγωγή σε CSV"
+      ],
+      "Export to TXT": [
+        "Εξαγωγή σε TXT"
+      ],
+      "File": [
+        "Αρχείο"
+      ],
+      "Go to ${ exportPasswords } and select ${ downloadFile }.": [
+        "Μεταβείτε στο ${ exportPasswords } και επιλέξτε ${ downloadFile }."
+      ],
+      "Go to ${ passwords }.": [
+        "Πηγαίνετε στο ${ passwords }."
+      ],
+      "Go to the settings to locate the export action.": [
+        "Μεταβείτε στις ρυθμίσεις για να εντοπίσετε την ενέργεια εξαγωγής."
+      ],
+      "Go to ☰ → ⚙ ${ settings } → Click ${ downloadFile }.": [
+        "Μετάβαση στο ☰ → ⚙ ${ settings } → Κλικ στο ${ downloadFile }."
+      ],
+      "Google Password Manager": [
+        "Διαχειριστής Κωδικών Πρόσβασης Google"
+      ],
+      "Identify your password manager.": [
+        "Προσδιορίστε τον διαχειριστή κωδικών πρόσβασης."
+      ],
+      "Manage your vault": [
+        "Διαχειριστείτε την κρύπτη σας"
+      ],
+      "Microsoft password manager": [
+        "Διαχειριστής κωδικών πρόσβασης Microsoft"
+      ],
+      "More actions": [
+        "Περισσότερες ενέργειες"
+      ],
+      "Navigate to ${ settings } tab.": [
+        "Μεταβείτε στην καρτέλα ${ settings }."
+      ],
+      "Open ${ name } and go to ${ advancedOptions } → ${ manageYourVault } → ${ exportLabel }.": [
+        "Ανοίξτε το ${ name } και μεταβείτε στο ${ advancedOptions } → ${ manageYourVault } → ${ exportLabel }."
+      ],
+      "Open ${ name } and go to ${ file } → ${ exportLabel } → your 1Password username.": [
+        "Ανοίξτε το ${ name } και μεταβείτε στο ${ file } → ${ exportLabel } → το όνομα χρήστη σας στο 1Password."
+      ],
+      "Open ${ name } and go to ${ menu } → ${ option }.": [
+        "Ανοίξτε το ${ name } και μεταβείτε στο ${ menu } → ${ option }."
+      ],
+      "Open ${ name } and go to ⋮ → ${ passwordsAndAutofill } → ${ googlePasswordManager }.": [
+        "Ανοίξτε το ${ name } και μεταβείτε στο ⋮ → ${ passwordsAndAutofill } → ${ googlePasswordManager }."
+      ],
+      "Open ${ name } and go to ☰ → ${ settings } → ${ autoFill }.": [
+        "Ανοίξτε το ${ name } και μεταβείτε στο ☰ → ${ settings } → ${ autoFill }."
+      ],
+      "Open ${ name } and select ${ menu } → ${ option }.": [
+        "Ανοίξτε το ${ name } και επιλέξτε ${ menu } → ${ option }."
+      ],
+      "Open ${ name } and select ${ settings }.": [
+        "Ανοίξτε το ${ name } και επιλέξτε ${ settings }."
+      ],
+      "Open ${ name } and select ⋯.": [
+        "Ανοίξτε το ${ name } και επιλέξτε ⋯."
+      ],
+      "Open ${ name } and select ☰ → ${ passwords }.": [
+        "Ανοίξτε το ${ name } και επιλέξτε ☰ → ${ passwords }."
+      ],
+      "Passwords": [
+        "Κωδικοί πρόσβασης"
+      ],
+      "Passwords and Autofill": [
+        "Κωδικοί Πρόσβασης και Αυτόματη Συμπλήρωση"
+      ],
+      "Passwords and autofill": [
+        "Κωδικοί Πρόσβασης και αυτόματη συμπλήρωση"
+      ],
+      "Select ${ exportLabel } → ${ chooseJson } → ${ exportAgain }.": [
+        "Επιλέξτε ${ exportLabel } → ${ chooseJson } → ${ exportAgain }."
+      ],
+      "Select ${ menu } → ${ option }.": [
+        "Επιλέξτε ${ menu } → ${ option }."
+      ],
+      "Select ${ option }.": [
+        "Επιλέξτε ${ option }."
+      ],
+      "Select the export format CSV.": [
+        "Επιλέξτε τη μορφή εξαγωγής CSV."
+      ],
+      "Select ⋯ → ${ exportPasswords }.": [
+        "Επιλέξτε ⋯ → ${ exportPasswords }."
+      ],
+      "Settings": [
+        "Ρυθμίσεις"
+      ],
+      "Submit": [
+        "Υποβολή"
+      ],
+      "This time, you’ll be asked to re-confirm your ${ name } username and password. Click ${ submit }.": [
+        "Αυτή τη φορά, θα σας ζητηθεί να επιβεβαιώσετε ξανά το όνομα χρήστη και τον κωδικό πρόσβασής σας για το ${ name }. Κάντε κλικ στο ${ submit }."
+      ],
+      "Vault": [
+        "Κρύπτη"
+      ],
+      "Vault options": [
+        "Επιλογές κρύπτης"
+      ],
+      "your username": [
+        "tο όνομα χρήστη σας"
       ]
     }
   }

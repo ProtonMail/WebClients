@@ -821,6 +821,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Eikö salasanahallintaasi ole listattu? Pyydä sitä."
+      ],
+      "Download for macOS": [
+        "Lataa macOS:lle"
+      ],
+      "Download for Windows": [
+        "Lataa Windowsille"
       ]
     },
     "Activity": {
@@ -5304,6 +5310,12 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Olet poistamassa ${ aliasCount } aliaksen pysyvästi.",
         "Olet poistamassa ${ aliasCount } aliasta pysyvästi."
+      ],
+      "Export": [
+        "Vienti"
+      ],
+      "Import failed": [
+        "Tuonti epäonnistui"
       ]
     },
     "Title_cloned_item": {
@@ -5664,6 +5676,21 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Tilauksesi ei salli useiden holvien luontia, joten kaikki kohteet tuodaan ensimmäiseen holviisi. Tuo useisiin holveihin päivittämällä tilauksesi."
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "Näytä ${ hiddenResultsCount } piilotettu tulos",
+        "Näytä ${ hiddenResultsCount } piilotettua tulosta"
+      ]
+    },
+    "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Löydettiin ${ itemsCount } ehdotus, käytä siirtymiseen näppäimistöä.",
+        "Löydettiin ${ itemsCount } ehdotusta, käytä siirtymiseen näppäimistöä."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Selaa kirjoituksen jälkeen näytettäviä ehdotuksia Ylös- ja Alas-näppäimillä, ja vahvista valinta Enter-näppäimellä tai sulje ehdotukset Esc-näppäimellä."
       ]
     }
   }

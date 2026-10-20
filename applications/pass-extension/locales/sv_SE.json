@@ -821,6 +821,21 @@
       ],
       "Your password manager is not here? Request it.": [
         "Är din lösenordshanterare inte här? Begär den."
+      ],
+      "Create a login": [
+        "Skapa en inloggning"
+      ],
+      "Download for Linux": [
+        "Ladda ner för Linux"
+      ],
+      "Download for macOS": [
+        "Ladda ner för macOS"
+      ],
+      "Download for Windows": [
+        "Ladda ner för Windows"
+      ],
+      "Skip for now": [
+        "Hoppa över just nu"
       ]
     },
     "Activity": {
@@ -3062,6 +3077,18 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Din organisation kräver att du säkrar din åtkomst till ${ PASS_APP_NAME }"
+      ],
+      "${ imported } of ${ total } (${ percentage }%)": [
+        "${ imported } av ${ total } (${ percentage } %)"
+      ],
+      "Don’t close this tab": [
+        "Stäng inte denna flik"
+      ],
+      "iOS and Android Apps": [
+        "Appar för iOS och Android"
+      ],
+      "Scan to download": [
+        "Skanna för att ladda ner"
       ]
     },
     "Keyboard key": {
@@ -4295,6 +4322,18 @@
       ],
       "ZIP or Postal code": [
         "Postnummer"
+      ],
+      "Linux": [
+        "Linux"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Service": [
+        "Tjänst"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Link": {
@@ -4636,6 +4675,9 @@
       ],
       "Used on ${ url }": [
         "Används på ${ url }"
+      ],
+      "E.g.: Google": [
+        "T.ex.: Google"
       ]
     },
     "Result": {
@@ -5413,6 +5455,51 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Du håller på att ta bort ${ aliasCount } alias permanent.",
         "Du håller på att ta bort ${ aliasCount } alias permanent."
+      ],
+      "Add one account": [
+        "Lägg till ett konto"
+      ],
+      "Browsers": [
+        "Webbläsare"
+      ],
+      "Create your first login": [
+        "Skapa din första inloggning"
+      ],
+      "Export": [
+        "Exportera"
+      ],
+      "Export from ${ provider.title }": [
+        "Exportera från ${ provider.title }"
+      ],
+      "Fill in your details": [
+        "Fyll i dina detaljer"
+      ],
+      "First login created": [
+        "Första inloggning skapad"
+      ],
+      "Get mobile and desktop apps": [
+        "Skaffa appar för mobil och stationär dator"
+      ],
+      "Get mobile apps": [
+        "Skaffa mobilappar"
+      ],
+      "Import failed": [
+        "Import misslyckades"
+      ],
+      "Imported from:": [
+        "Importerad från:"
+      ],
+      "Password managers": [
+        "Lösenordshanterare"
+      ],
+      "Select your password manager": [
+        "Välj din lösenordshanterare"
+      ],
+      "Upload": [
+        "Ladda upp"
+      ],
+      "Upload your data": [
+        "Ladda upp dina data"
       ]
     },
     "Title_cloned_item": {
@@ -5779,6 +5866,134 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Din prenumeration tillåter inte att du skapar flera valv. Alla objekt kommer att importeras till ditt första valv. För att importera till flera valv, uppgradera din prenumeration."
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } fler resultat visas inte",
+        "${ hiddenResultsCount } fler resultat visas inte"
+      ]
+    },
+    "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Hittade ${ itemsCount } förslag, använd tangentbord för att navigera.",
+        "Hittade ${ itemsCount } förslag, använd tangentbord för att navigera."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Använd upp och ner tangenterna för att komma åt och bläddra genom förslag efter inmatning. Tryck på Enter för att bekräfta ditt val, eller Esc för att stänga förslagsrutan."
+      ]
+    },
+    "Import Tutorial": {
+      "Account & Data": [
+        "Konto och data"
+      ],
+      "Advanced Options": [
+        "Avancerade alternativ"
+      ],
+      "Autofill and passwords": [
+        "Automatisk ifyllnad och lösenord"
+      ],
+      "Continue export": [
+        "Fortsätt export"
+      ],
+      "Download file": [
+        "Ladda ner fil"
+      ],
+      "Export": [
+        "Exportera"
+      ],
+      "Export Data": [
+        "Exportera data"
+      ],
+      "Export data": [
+        "Exportera data"
+      ],
+      "Export items": [
+        "Exportera objekt"
+      ],
+      "Export passwords": [
+        "Exportera lösenord"
+      ],
+      "Export to CSV": [
+        "Exportera till CSV"
+      ],
+      "File": [
+        "Fil"
+      ],
+      "Go to ${ exportPasswords } and select ${ downloadFile }.": [
+        "Gå till ${ exportPasswords } och välj ${ downloadFile }."
+      ],
+      "Go to ${ passwords }.": [
+        "Gå till ${ passwords }."
+      ],
+      "Go to ☰ → ⚙ ${ settings } → Click ${ downloadFile }.": [
+        "Gå till ☰ → ⚙ ${ settings } → Klicka ${ downloadFile }."
+      ],
+      "Identify your password manager.": [
+        "Identifiera din lösenordshanterare."
+      ],
+      "Manage your vault": [
+        "Hantera ditt valv"
+      ],
+      "More actions": [
+        "Fler åtgärder"
+      ],
+      "Open ${ name } and go to ${ advancedOptions } → ${ manageYourVault } → ${ exportLabel }.": [
+        "Öppna ${ name } och gå till ${ advancedOptions } → ${ manageYourVault } → ${ exportLabel }."
+      ],
+      "Open ${ name } and go to ${ menu } → ${ option }.": [
+        "Öppna ${ name } och gå till ${ menu } → ${ option }."
+      ],
+      "Open ${ name } and go to ⋮ → ${ passwordsAndAutofill } → ${ googlePasswordManager }.": [
+        "Öppna ${ name } och gå till⋮ → ${ passwordsAndAutofill } → ${ googlePasswordManager }."
+      ],
+      "Open ${ name } and go to ☰ → ${ settings } → ${ autoFill }.": [
+        "Öppna ${ name } och gå till ☰ → ${ settings } → ${ autoFill }."
+      ],
+      "Open ${ name } and select ${ menu } → ${ option }.": [
+        "Öppna ${ name } och välj ${ menu } → ${ option }."
+      ],
+      "Open ${ name } and select ${ settings }.": [
+        "Öppna ${ name } och välj ${ settings }."
+      ],
+      "Open ${ name } and select ⋯.": [
+        "Öppna ${ name } och välj ⋯."
+      ],
+      "Open ${ name } and select ☰ → ${ passwords }.": [
+        "Öppna ${ name } och välj ☰ → ${ passwords }."
+      ],
+      "Passwords": [
+        "Lösenord"
+      ],
+      "Passwords and Autofill": [
+        "Lösenord och automatisk ifyllning"
+      ],
+      "Passwords and autofill": [
+        "Lösenord och automatisk ifyllning"
+      ],
+      "Select ${ exportLabel } → ${ chooseJson } → ${ exportAgain }.": [
+        "Välj ${ exportLabel } → ${ chooseJson } → ${ exportAgain }."
+      ],
+      "Select ${ menu } → ${ option }.": [
+        "Välj ${ menu } → ${ option }."
+      ],
+      "Select ${ option }.": [
+        "Välj ${ option }."
+      ],
+      "Select ⋯ → ${ exportPasswords }.": [
+        "Välj ⋯ → ${ exportPasswords }."
+      ],
+      "Settings": [
+        "Inställningar"
+      ],
+      "Submit": [
+        "Skicka"
+      ],
+      "Vault": [
+        "Valv"
+      ],
+      "your username": [
+        "ditt användarnamn"
       ]
     }
   }
