@@ -1,4 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
+
+import { c } from 'ttag';
+
 import type { Stroke } from '../types';
 import { clearCanvas, drawImage, drawStroke, loadImage } from '../utils/rendering';
 
@@ -59,7 +62,8 @@ export const useCanvasRenderer = ({ width, height, baseImage, strokes }: UseCanv
             .catch((err) => {
                 if (cancelled) return;
                 console.error('Failed to load base image:', err);
-                setError('Failed to load image');
+                // translator: Error when an image cannot be loaded into the drawing canvas.
+                setError(c('collider_2025:Error').t`Failed to load image`);
                 setIsLoading(false);
             });
 

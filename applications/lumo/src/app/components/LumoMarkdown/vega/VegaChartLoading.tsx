@@ -1,29 +1,26 @@
-import clsx from 'clsx';
 import { useEffect, useState } from 'react';
 
-import { useEncryptedTextAnimation } from '../../../hooks/useEncryptedTextAnimation';
-import { LumoIcon, type IconName } from '../../LumoIcon/LumoIcon';
+import { clsx } from 'clsx';
+import { c } from 'ttag';
 
+import { useEncryptedTextAnimation } from '../../../hooks/useEncryptedTextAnimation';
+import { type IconName, LumoIcon } from '../../LumoIcon/LumoIcon';
 import { LUMO_VEGA_CHART_SHELL_CLASS } from '../lumoMarkdownCardShell';
 
 import './VegaLiteChart.scss';
 
-const CHART_ICONS: IconName[] = [
-    'ChartNoAxesCombined',
-    'ChartCandlestick',
-    'ChartPie',
-    'ChartLine',
-    'ChartBar',
-];
+const CHART_ICONS: IconName[] = ['ChartNoAxesCombined', 'ChartCandlestick', 'ChartPie', 'ChartLine', 'ChartBar'];
 
-const LOADING_MESSAGES = [
-    'Generating chart…',
-    'Plotting purr-fect data…',
-    'Crunching the cat-able numbers…',
-    'Drawing whisker plots…',
-    'Sifting through the meow-trics…',
-    'Claw-culating trends…',
-] as const;
+// translator: Playful rotating loading status while a chart is generated; retain a cat-themed tone where possible.
+const getLoadingMessages = () =>
+    [
+        c('collider_2025:Label').t`Generating chart…`,
+        c('collider_2025:Label').t`Plotting purr-fect data…`,
+        c('collider_2025:Label').t`Crunching the cat-able numbers…`,
+        c('collider_2025:Label').t`Drawing whisker plots…`,
+        c('collider_2025:Label').t`Sifting through the meow-trics…`,
+        c('collider_2025:Label').t`Claw-culating trends…`,
+    ] as const;
 
 const ICON_CYCLE_MS = 4000;
 const MESSAGE_CYCLE_MS = 4000;
@@ -31,7 +28,8 @@ const MESSAGE_CYCLE_MS = 4000;
 const VegaChartLoadingContent = () => {
     const [iconIndex, setIconIndex] = useState(0);
     const [messageIndex, setMessageIndex] = useState(0);
-    const message = LOADING_MESSAGES[messageIndex] ?? LOADING_MESSAGES[0];
+    const messages = getLoadingMessages();
+    const message = messages[messageIndex] ?? messages[0];
     const { displayText } = useEncryptedTextAnimation(message, { animateOnChange: true, duration: 520 });
 
     useEffect(() => {
@@ -40,14 +38,14 @@ const VegaChartLoadingContent = () => {
         }, ICON_CYCLE_MS);
 
         const messageTimer = window.setInterval(() => {
-            setMessageIndex((current) => (current + 1) % LOADING_MESSAGES.length);
+            setMessageIndex((current) => (current + 1) % messages.length);
         }, MESSAGE_CYCLE_MS);
 
         return () => {
             window.clearInterval(iconTimer);
             window.clearInterval(messageTimer);
         };
-    }, []);
+    }, [messages.length]);
 
     return (
         <div className="vega-lite-chart__loading-content relative flex flex-column items-center gap-3">

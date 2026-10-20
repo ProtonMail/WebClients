@@ -1,4 +1,5 @@
 import JSZip from 'jszip';
+import { c } from 'ttag';
 
 import { PaperTrailParseError } from './types';
 
@@ -33,10 +34,14 @@ export const mergeConversationJsonTexts = (jsonTexts: string[]): string => {
         try {
             data = JSON.parse(text);
         } catch {
-            throw new PaperTrailParseError('The uploaded file is not valid JSON.');
+            // translator: Error shown when reading an uploaded conversation export or starting its analysis.
+            throw new PaperTrailParseError(c('collider_2025:Error').t`The uploaded file is not valid JSON.`);
         }
         if (!Array.isArray(data)) {
-            throw new PaperTrailParseError('Conversation export files must contain a JSON array.');
+            // translator: Error shown when reading an uploaded conversation export or starting its analysis.
+            throw new PaperTrailParseError(
+                c('collider_2025:Error').t`Conversation export files must contain a JSON array.`
+            );
         }
         merged.push(...data);
     }
@@ -45,7 +50,9 @@ export const mergeConversationJsonTexts = (jsonTexts: string[]): string => {
 };
 
 const listNestedZipPaths = (zip: JSZip): string[] => {
-    const zipPaths = Object.keys(zip.files).filter((path) => !zip.files[path].dir && path.toLowerCase().endsWith('.zip'));
+    const zipPaths = Object.keys(zip.files).filter(
+        (path) => !zip.files[path].dir && path.toLowerCase().endsWith('.zip')
+    );
     const preferred = zipPaths.filter((path) => NESTED_CONVERSATIONS_ZIP.test(getConversationJsonBasename(path)));
 
     return (preferred.length > 0 ? preferred : zipPaths).sort((a, b) =>
@@ -77,10 +84,12 @@ const readConversationJsonFromZipArchive = async (zip: JSZip): Promise<string> =
         }
     }
 
+    // translator: Upload error. ${CONVERSATIONS_JSON} is the required filename conversations.json; conversations-*.json is a filename pattern. Keep both unchanged.
     throw (
         lastError ??
         new PaperTrailParseError(
-            `Could not find ${CONVERSATIONS_JSON} or conversations-*.json inside the uploaded archive.`
+            c('collider_2025:Error')
+                .t`Could not find ${CONVERSATIONS_JSON} or conversations-*.json inside the uploaded archive.`
         )
     );
 };

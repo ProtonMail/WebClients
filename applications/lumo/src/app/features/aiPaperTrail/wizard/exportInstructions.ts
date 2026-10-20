@@ -13,7 +13,7 @@ export interface PlatformExportGuide {
     steps: string[];
 }
 
-export const EXPORT_PLATFORMS: PlatformExportGuide[] = [
+export const getExportPlatforms = (): PlatformExportGuide[] => [
     {
         id: 'chatgpt',
         name: 'ChatGPT',
