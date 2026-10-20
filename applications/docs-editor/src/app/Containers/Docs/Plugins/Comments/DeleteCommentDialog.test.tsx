@@ -59,6 +59,13 @@ it('opens a modal dialog named by its title and described by its message', async
   )
 })
 
+it('draws no backdrop, which could not cover the header outside the editor iframe', async () => {
+  renderDialog()
+
+  const dialog = await screen.findByRole('dialog', { name: 'Delete thread' })
+  expect(document.querySelector(`[data-backdrop="${dialog.id}"]`)).not.toBeInTheDocument()
+})
+
 it('moves focus to Cancel, so Enter cannot delete by accident', async () => {
   renderDialog()
 

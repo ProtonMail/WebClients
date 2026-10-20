@@ -3,9 +3,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { clsx } from 'clsx'
 import { CommentsPanelListComment } from './CommentsPanelListComment'
 import { CommentsComposer } from './CommentsComposer'
-import { Icon } from '../../Components/Icon'
-import * as Icons from '../../Components/icons'
-import { IconButton } from '../../Components/ui'
+import { CommentSendButton } from './CommentSendButton'
 import type { DocsComment, DocsCommentThread } from '../../contract/DocsCommentThread'
 import { CommentThreadStates, CommentThreadTypes, CommentTypes } from '../../contract/DocsCommentThread'
 import { c, msgid } from 'ttag'
@@ -296,16 +294,12 @@ export function CommentsPanelListThread({ thread, className }: { thread: DocsCom
                 return null
               }
               return (
-                <IconButton
+                <CommentSendButton
                   label={c('Action').t`Reply`}
-                  color="norm"
-                  pill
                   disabled={!canSubmit}
                   onClick={submitComment}
                   data-testid="reply-in-send-button"
-                >
-                  <Icon data={Icons.arrowUp} size={3.5} />
-                </IconButton>
+                />
               )
             }}
           />

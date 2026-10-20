@@ -87,6 +87,23 @@ it('fills a solid norm button with the primary colour', () => {
   )
 })
 
+it('keeps the contrast icon colour on a disabled primary button, so it stays visible on the fill', () => {
+  render(
+    <>
+      <IconButton label="Add comment" color="norm" pill disabled>
+        <svg aria-hidden="true" />
+      </IconButton>
+      <Button disabled>Clear</Button>
+    </>,
+  )
+
+  const sendButton = screen.getByRole('button', { name: 'Add comment' })
+  expect(sendButton).toBeDisabled()
+  expect(sendButton).toHaveClass('text-[--interaction-norm-contrast]', 'disabled:opacity-50')
+  expect(sendButton).not.toHaveClass('disabled:text-[--text-weak]')
+  expect(screen.getByRole('button', { name: 'Clear' })).toHaveClass('disabled:text-[--text-weak]')
+})
+
 it('uses square padding for icon buttons and a pill radius when asked', () => {
   render(
     <>

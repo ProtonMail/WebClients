@@ -46,7 +46,8 @@ export function DeleteCommentDialog({ title, message, onDelete, finalFocus, onCl
       unmountOnHide
       aria-busy={isDeleting}
       render={<form onSubmit={onSubmit} />}
-      backdrop={<div className="bg-[--backdrop-norm]" />}
+      // A backdrop can't cover the Docs header, which is outside the editor iframe.
+      backdrop={false}
       className="fixed inset-0 z-50 m-auto h-fit w-[calc(100%-2rem)] max-w-[37.5rem] rounded-[--border-radius-lg] border border-[--border-weak] bg-[--background-norm] p-6 text-[--text-norm] shadow-[0px_8px_24px_0px_rgba(0,0,0,0.16)] outline-none"
     >
       <Ariakit.DialogHeading className="mb-4 text-xl font-bold">{title}</Ariakit.DialogHeading>
