@@ -3,7 +3,8 @@ import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest';
 import { ADDON_NAMES, FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { ORGANIZATION_FLAGS, PRODUCT_BIT, USER_ROLES } from '@proton/shared/lib/constants';
-import type { Organization, User, UserModel } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
+import type { User, UserModel } from '@proton/shared/lib/interfaces/User';
 import { formatUser } from '@proton/shared/lib/user/helpers';
 
 import type { MeetState } from '../rootReducer';

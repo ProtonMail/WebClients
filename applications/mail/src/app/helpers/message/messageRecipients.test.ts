@@ -1,14 +1,14 @@
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { INCOMING_DEFAULTS_LOCATION } from '@proton/shared/lib/constants';
-import type { Address, IncomingDefault, SimpleMap } from '@proton/shared/lib/interfaces';
-import type { Recipient } from '@proton/shared/lib/interfaces/Address';
-import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
+import type { Address, Recipient } from '@proton/shared/lib/interfaces/Address';
+import type { IncomingDefault } from '@proton/shared/lib/interfaces/IncomingDefault';
+import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 
 import { fromFields, recipients } from '../../components/composer/tests/Composer.test.data';
-
 import type { Conversation } from '../../models/conversation';
 import type { Element } from '../../models/element';
 import {

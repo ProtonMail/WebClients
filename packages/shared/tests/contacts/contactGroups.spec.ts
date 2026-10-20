@@ -1,6 +1,6 @@
 import { getContactGroupsDelayedSaveChanges } from '../../lib/contacts/helpers/contactGroup';
-import type { MailSettings } from '../../lib/interfaces';
-import type { ContactEmail } from '../../lib/interfaces/contacts';
+import type { MailSettings } from '../../lib/interfaces/MailSettings';
+import type { ContactEmail } from '../../lib/interfaces/contacts/Contact';
 import { MAX_RECIPIENTS } from '../../lib/mail/mailSettings';
 
 const group1 = 'group1';

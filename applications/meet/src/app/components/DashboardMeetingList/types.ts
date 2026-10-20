@@ -1,5 +1,5 @@
-import type { SETTINGS_DATE_FORMAT } from '@proton/shared/lib/interfaces';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
+import type { SETTINGS_DATE_FORMAT } from '@proton/shared/lib/interfaces/UserSettings';
 
 export enum DashboardMeetingListTab {
     TimeBased = 'timeBased',

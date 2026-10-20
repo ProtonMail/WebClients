@@ -4,7 +4,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { TableCell, TableRow } from '@proton/components';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import { APPS } from '@proton/shared/lib/constants';
-import type { Address } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
 
 import { ApiImportProvider, ApiSyncState } from '../../../api/api.interface';
 import { ImportType } from '../../../interface';

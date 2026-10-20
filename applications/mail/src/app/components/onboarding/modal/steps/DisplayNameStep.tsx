@@ -13,8 +13,8 @@ import type { OnboardingStepRenderCallback } from '@proton/components/containers
 import useLoading from '@proton/hooks/useLoading';
 import { updateAddress } from '@proton/shared/lib/api/addresses';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import type { Address } from '@proton/shared/lib/interfaces';
-import { getLocalPart } from '@proton/shared/lib/keys';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import { getLocalPart } from '@proton/shared/lib/keys/setupAddress';
 import displayNameImage from '@proton/styles/assets/img/onboarding/img-display-name.svg';
 
 import type { OnboardingStepEligibleCallback } from '../interface';

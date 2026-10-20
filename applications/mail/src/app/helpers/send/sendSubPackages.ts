@@ -1,6 +1,7 @@
 import { CryptoProxy } from '@protontech/crypto';
+
 import { AES256, MIME_TYPES, PACKAGE_SIGNATURES_MODE } from '@proton/shared/lib/constants';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import type { Package, Packages, SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';

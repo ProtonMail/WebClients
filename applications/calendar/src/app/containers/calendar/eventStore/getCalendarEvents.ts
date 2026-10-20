@@ -4,7 +4,7 @@ import { getIsAutoAddedInvite } from '@proton/shared/lib/calendar/apiModels';
 import { getIsOwnedCalendar } from '@proton/shared/lib/calendar/calendar';
 import { DAY } from '@proton/shared/lib/constants';
 import { fromUTCDateToLocalFakeUTCDate } from '@proton/shared/lib/date/timezone';
-import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { generateEventUniqueId } from '../../../helpers/event';

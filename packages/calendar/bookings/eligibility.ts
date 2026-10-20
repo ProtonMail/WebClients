@@ -1,6 +1,7 @@
 import { ADDON_NAMES, PLANS } from '@proton/payments/core/constants';
 import type { SubscriptionPlan } from '@proton/payments/core/plan/interface';
-import type { OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
+import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 export const MAX_BOOKING_PAGE_MAIL_FREE = 0 as const;
 export const MAX_BOOKING_PAGE_MAIL_PAID = 1 as const;

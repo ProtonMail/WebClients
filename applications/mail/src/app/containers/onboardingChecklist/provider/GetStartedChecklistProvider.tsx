@@ -15,7 +15,7 @@ import {
     ChecklistKey,
     type ChecklistKeyType,
     ChecklistType,
-} from '@proton/shared/lib/interfaces';
+} from '@proton/shared/lib/interfaces/Checklist';
 
 import type { GetStartedChecklistApiResponse } from '../hooks/useChecklist';
 import useChecklist from '../hooks/useChecklist';

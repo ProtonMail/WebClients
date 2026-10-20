@@ -6,7 +6,7 @@ import { useContactEmailsCache } from '@proton/components/containers/contacts/Co
 import useLoading from '@proton/hooks/useLoading';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
-import type { Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { useBitcoinNetwork } from '@proton/wallet/store/hooks';
 import { WalletThemeOption } from '@proton/wallet/utils/theme';
 

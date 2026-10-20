@@ -4,7 +4,7 @@ import { createContext, useContext, useMemo } from 'react';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { useContactGroups } from '@proton/mail/store/labels/hooks';
 import { getContactEmailsMapWithDuplicates } from '@proton/shared/lib/contacts/getContactEmailsMap';
-import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 export type GroupWithContacts = { group: ContactGroup; contacts: ContactEmail[] };

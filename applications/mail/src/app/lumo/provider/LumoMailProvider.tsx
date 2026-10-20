@@ -36,7 +36,9 @@ import { updateAutoresponder, updateViewLayout, updateViewMode } from '@proton/s
 import { getMessage } from '@proton/shared/lib/api/messages';
 import { updateDensity } from '@proton/shared/lib/api/settings';
 import { prepareVCardContact } from '@proton/shared/lib/contacts/decrypt';
-import type { MailSettings, Recipient, UserSettings } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import type { Contact } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { splitKeys } from '@proton/shared/lib/keys/keys';

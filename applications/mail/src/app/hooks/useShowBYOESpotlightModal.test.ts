@@ -4,7 +4,7 @@ import { sub } from 'date-fns';
 import { ApiSyncState } from '@proton/activation/src/api/api.interface';
 import { ImportType } from '@proton/activation/src/interface';
 import { ADDRESS_FLAGS, ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS } from '@proton/shared/lib/constants';
-import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter.ts';
+import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 
 import useShowBYOESpotlightModal from './useShowBYOESpotlightModal';

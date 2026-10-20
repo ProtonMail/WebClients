@@ -1,6 +1,6 @@
 import { toApiNotifications } from '@proton/shared/lib/calendar/veventHelper';
-import type { Nullable } from '@proton/shared/lib/interfaces';
-import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
+import type { Nullable } from '@proton/shared/lib/interfaces/utils';
 
 interface UpdatePersonalEventPayloadArguments {
     eventComponent?: VcalVeventComponent;

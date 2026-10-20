@@ -1,4 +1,4 @@
-import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
+import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';
 
 import type { OrganizationState } from '../organization';
 

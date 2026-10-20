@@ -30,8 +30,12 @@ import loginWithFallback from '@proton/shared/lib/authentication/loginWithFallba
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { APPS, type APP_NAMES, BRAND_NAME, HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import type { Address, Api, KeyTransparencyActivation, User } from '@proton/shared/lib/interfaces';
-import { generateKeySaltAndPassphrase, getResetAddressesKeysV2 } from '@proton/shared/lib/keys';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
+import type { User } from '@proton/shared/lib/interfaces/User';
+import { generateKeySaltAndPassphrase } from '@proton/shared/lib/keys/keys';
+import { getResetAddressesKeysV2 } from '@proton/shared/lib/keys/resetKeys';
 import type { OrganizationData } from '@proton/shared/lib/keys/unprivatization/helper';
 import { getUnprivatizationContextData } from '@proton/shared/lib/keys/unprivatization/helper';
 import type { UnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';

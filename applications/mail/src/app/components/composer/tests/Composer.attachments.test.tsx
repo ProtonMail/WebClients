@@ -5,7 +5,7 @@ import loudRejection from 'loud-rejection';
 import { getModelState } from '@proton/account/tests';
 import { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
-import type { AddressKey } from '@proton/shared/lib/interfaces';
+import type { AddressKey } from '@proton/shared/lib/interfaces/Key';
 import type { AttachmentFullMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { addApiMock, addApiResolver, parseFormData } from '../../../helpers/tests/api';

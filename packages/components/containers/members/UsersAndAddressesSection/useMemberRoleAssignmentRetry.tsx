@@ -4,7 +4,7 @@ import { resumeMemberRoleAssignment } from '@proton/account/members/actions';
 import { useMembers } from '@proton/account/members/hooks';
 import { selectMembersWithPausedRoleAssignment } from '@proton/account/members/selectors';
 import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
-import type { EnhancedMember } from '@proton/shared/lib/interfaces';
+import type { EnhancedMember } from '@proton/shared/lib/interfaces/Member';
 
 import { useSilentApi } from '../../../hooks/useSilentApi';
 import { useResumeRoleAssignment } from '../rolesAndPermissions/useResumeRoleAssignment';

@@ -3,7 +3,8 @@ import { fireEvent, render } from '@testing-library/react';
 import { mockUseOrganization } from '@proton/account/testing/mockUseOrganization';
 import { useUser } from '@proton/account/user/hooks';
 import { APPS, INVOICE_EMAIL_STATE } from '@proton/shared/lib/constants';
-import type { InvoiceEmailSettings, OrganizationSettings, UserModel } from '@proton/shared/lib/interfaces';
+import type { InvoiceEmailSettings, OrganizationSettings } from '@proton/shared/lib/interfaces/Organization';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import useApiResult from '../../hooks/useApiResult';
 import useEventManager from '../../hooks/useEventManager';

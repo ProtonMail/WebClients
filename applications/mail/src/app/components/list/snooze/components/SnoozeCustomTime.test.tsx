@@ -5,10 +5,9 @@ import { enUS } from 'date-fns/locale';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { enUSLocale } from '@proton/shared/lib/i18n/dateFnLocales';
-import { SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces';
+import { SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces/UserSettings';
 
 import type { Element } from '../../../../models/element';
-
 import SnoozeCustomTime from './SnoozeCustomTime';
 
 jest.mock('@proton/account/userSettings/hooks');

@@ -12,7 +12,7 @@ import {
 } from '@proton/shared/lib/calendar/constants';
 import { CALENDAR_APP_NAME, DUO_MAX_USERS, FAMILY_MAX_USERS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { Audience } from '@proton/shared/lib/interfaces';
+import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 
 import type { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 

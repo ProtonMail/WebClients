@@ -13,8 +13,8 @@ import { defaultLongExpiry, getFetchedAt, getFetchedEphemeral } from '@proton/re
 import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import type { CacheType } from '@proton/redux-utilities/interface';
 import { cacheHelper, createPromiseMapStore } from '@proton/redux-utilities/promiseStore';
-import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces';
-import { getDecryptedAddressKeysHelper } from '@proton/shared/lib/keys';
+import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces/Key';
+import { getDecryptedAddressKeysHelper } from '@proton/shared/lib/keys/getDecryptedAddressKeys';
 import { getInactiveKeys } from '@proton/shared/lib/keys/getInactiveKeys';
 
 import { type AddressesState, addressesThunk } from '../addresses';

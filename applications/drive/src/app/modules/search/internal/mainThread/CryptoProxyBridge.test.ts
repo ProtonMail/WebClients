@@ -1,4 +1,4 @@
-import type { DecryptedKey } from '@proton/shared/lib/interfaces';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 
 import { generateKeys, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../utils/tests/crypto';
 import { CryptoProxyBridge } from './CryptoProxyBridge';

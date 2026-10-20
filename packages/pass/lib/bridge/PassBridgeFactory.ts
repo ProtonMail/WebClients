@@ -1,4 +1,4 @@
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import type { ItemRevision, Api as PassApi, Share, ShareType } from '../../types';
 import { first } from '../../utils/array/first';

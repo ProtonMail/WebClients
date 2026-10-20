@@ -4,7 +4,8 @@ import { type Action, type ThunkDispatch, createSelector } from '@reduxjs/toolki
 
 import { baseUseDispatch, baseUseSelector } from '@proton/react-redux-store/ProtonStoreContext';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import type { EnhancedMember, RoleAssignment } from '@proton/shared/lib/interfaces';
+import type { EnhancedMember } from '@proton/shared/lib/interfaces/Member';
+import type { RoleAssignment } from '@proton/shared/lib/interfaces/OrganizationRole';
 
 import { AdminRolesUIState, useAdminRolesUI } from '../userPermissions/hooks';
 import { type MembersState, getMemberRolesBatch, selectMembers } from './index';

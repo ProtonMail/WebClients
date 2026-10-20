@@ -1,7 +1,7 @@
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { IcCrossCircleFilled } from '@proton/icons/icons/IcCrossCircleFilled';
-import type { Domain } from '@proton/shared/lib/interfaces';
-import { DOMAIN_STATE } from '@proton/shared/lib/interfaces';
+import type { Domain } from '@proton/shared/lib/interfaces/Domain';
+import { DOMAIN_STATE } from '@proton/shared/lib/interfaces/Domain';
 
 const { DOMAIN_STATE_DEFAULT, DOMAIN_STATE_VERIFIED, DOMAIN_STATE_WARN } = DOMAIN_STATE;
 

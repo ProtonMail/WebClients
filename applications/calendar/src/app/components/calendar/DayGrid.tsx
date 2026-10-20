@@ -3,7 +3,8 @@ import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 
 import { getISOWeek } from 'date-fns';
 
-import { eachDayOfInterval, isSameMonth } from '@proton/shared/lib/date-fns-utc';
+import { isSameMonth } from '@proton/shared/lib/date-fns-utc';
+import eachDayOfInterval from '@proton/shared/lib/date-fns-utc/eachDayOfInterval';
 import chunk from '@proton/utils/chunk';
 
 import type { CalendarViewEvent, TargetEventData, TargetMoreData } from '../../containers/calendar/interface';

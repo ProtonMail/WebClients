@@ -1,9 +1,13 @@
 import type { KeyMetadata } from '@proton/account/addressKeys/getKeyMetadata';
 import { KEY_FLAG } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import type { Address, Key, SignedKeyListItem, UserModel } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { Key } from '@proton/shared/lib/interfaces/Key';
+import type { SignedKeyListItem } from '@proton/shared/lib/interfaces/SignedKeyList';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
-import { getDefaultKeyFlags, getFormattedAlgorithmNames } from '@proton/shared/lib/keys';
+import { getFormattedAlgorithmNames } from '@proton/shared/lib/keys/keyAlgorithm';
+import { getDefaultKeyFlags } from '@proton/shared/lib/keys/keyFlags';
 
 import getPermissions from './getPermissions';
 import type { KeyDisplay, KeyStatus } from './interface';

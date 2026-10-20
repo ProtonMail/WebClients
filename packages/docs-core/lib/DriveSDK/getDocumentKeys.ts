@@ -3,7 +3,7 @@ import { generateNodeUid, getDrive } from '@proton/drive'
 import type { SessionKey } from '@protontech/crypto'
 import { traceErrorSDK } from './traceErrorSDK'
 import { getPublicDrive, getPublicLinkInfo } from './getPublicDrive'
-import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces'
+import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces/Key'
 
 export type PrimaryAddressKeys = { keys: DecryptedAddressKey[]; address: string }
 

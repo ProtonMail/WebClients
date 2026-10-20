@@ -1,4 +1,5 @@
-import type { Optional, Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
+import type { Optional } from '@proton/shared/lib/interfaces/utils';
 
 import type { RecipientType } from '../../models/address';
 

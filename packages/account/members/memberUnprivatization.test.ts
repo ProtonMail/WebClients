@@ -1,6 +1,6 @@
 import { MEMBER_ROLE } from '@proton/shared/lib/constants';
-import type { EnhancedMember, MemberUnprivatization } from '@proton/shared/lib/interfaces';
-import { MEMBER_ORG_KEY_STATE, MemberUnprivatizationState } from '@proton/shared/lib/interfaces';
+import type { EnhancedMember, MemberUnprivatization } from '@proton/shared/lib/interfaces/Member';
+import { MEMBER_ORG_KEY_STATE, MemberUnprivatizationState } from '@proton/shared/lib/interfaces/Member';
 
 import { getHasPausedMemberRoleAssignment } from './memberUnprivatization';
 

@@ -1,6 +1,6 @@
 import { ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS, ADDRESS_TYPE } from '../constants';
 import { addPlusAlias, canonicalizeInternalEmail } from '../helpers/email';
-import type { Address } from '../interfaces';
+import type { Address } from '../interfaces/Address';
 
 /**
  * Get address from email

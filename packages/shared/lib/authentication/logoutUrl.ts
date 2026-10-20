@@ -7,7 +7,7 @@ import { getAppFromPathnameSafe, getSlugFromApp } from '../apps/slugHelper';
 import type { APP_NAMES } from '../constants';
 import { APPS, SSO_PATHS } from '../constants';
 import { AccessType } from './accessType';
-import { ForkSearchParameters } from './fork';
+import { ForkSearchParameters } from './fork/constants';
 import type { ExtraSessionForkData } from './interface';
 import type {
     LegacySerializedSignoutUserData,

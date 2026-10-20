@@ -12,8 +12,8 @@ import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS } from '@proton/shared/lib/cale
 import { getDisplayTitle } from '@proton/shared/lib/calendar/helper';
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
-import type { Address } from '@proton/shared/lib/interfaces';
-import type { EventModel } from '@proton/shared/lib/interfaces/calendar';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { EventModel } from '@proton/shared/lib/interfaces/calendar/Event';
 import noop from '@proton/utils/noop';
 
 import { getCanDeleteEvent, getCanEditSharedEventData, getCannotSaveEvent } from '../../helpers/event';

@@ -1,4 +1,4 @@
-import type { SignedKeyListItem } from '../interfaces';
+import type { SignedKeyListItem } from '../interfaces/SignedKeyList';
 import type { SimpleMap } from '../interfaces/utils';
 
 const signedKeyListItemParser = ({ Primary, Flags, Fingerprint, SHA256Fingerprints }: any) =>

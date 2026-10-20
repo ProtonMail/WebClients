@@ -4,7 +4,9 @@ import cloneDeep from 'lodash/cloneDeep';
 import isDeepEqual from 'lodash/isEqual';
 
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
-import type { Address, Label, UserModel } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import { GMAIL_CATEGORIES, IMAPS } from '../../../../../constants';
 import type { MailImportFolder } from '../../../../../helpers/MailImportFoldersParser/MailImportFoldersParser';

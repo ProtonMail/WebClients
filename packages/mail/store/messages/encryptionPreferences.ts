@@ -10,14 +10,15 @@ import getPublicKeysVcardHelper from '@proton/shared/lib/api/helpers/getPublicKe
 import { MINUTE, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
 import { getSelfSendAddresses } from '@proton/shared/lib/helpers/address';
 import { canonicalizeEmail, canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
-import type { ApiKeysConfig, PinnedKeysConfig, SelfSend } from '@proton/shared/lib/interfaces';
-import { KT_VERIFICATION_STATUS } from '@proton/shared/lib/interfaces';
+import type { ApiKeysConfig, PinnedKeysConfig, SelfSend } from '@proton/shared/lib/interfaces/EncryptionPreferences';
+import { KT_VERIFICATION_STATUS } from '@proton/shared/lib/interfaces/KeyTransparency';
 import type {
     GetEncryptionPreferencesArguments,
     GetEncryptionPreferencesResult,
 } from '@proton/shared/lib/interfaces/hooks/GetEncryptionPreferences';
-import { getKeyHasFlagsToEncrypt, getPrimaryActiveAddressKeyForEncryption } from '@proton/shared/lib/keys';
 import { getActiveAddressKeys } from '@proton/shared/lib/keys/getActiveKeys';
+import { getPrimaryActiveAddressKeyForEncryption } from '@proton/shared/lib/keys/getPrimaryKey';
+import { getKeyHasFlagsToEncrypt } from '@proton/shared/lib/keys/keyFlags';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 import { getContactPublicKeyModel, getKeyEncryptionCapableStatus } from '@proton/shared/lib/keys/publicKeys';
 import extractEncryptionPreferences, {

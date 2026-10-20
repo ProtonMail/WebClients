@@ -1,4 +1,4 @@
-import { format } from '../../lib/date-fns-utc';
+import format from '../../lib/date-fns-utc/format';
 
 describe('date-fn utc', () => {
     // this test is designed for Central European Time

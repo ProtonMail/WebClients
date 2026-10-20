@@ -4,8 +4,8 @@ import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/refere
 import { buildFolder } from '@proton/mail/testing/buildFolder';
 import { buildLabel } from '@proton/mail/testing/buildLabel';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
-import type { Label } from '@proton/shared/lib/interfaces';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
 
 import type { MailToolDeps } from '../../toolModule';
 import type { CreatedEntityResult } from './createEntity';

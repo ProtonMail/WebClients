@@ -15,7 +15,8 @@ import { IcTextQuote } from '@proton/icons/icons/IcTextQuote';
 import { IcTextStrikethrough } from '@proton/icons/icons/IcTextStrikethrough';
 import { IcTextUnderline } from '@proton/icons/icons/IcTextUnderline';
 import { COMPOSER_TOOLBAR_ICON_SIZE } from '@proton/shared/lib/constants';
-import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import clsx from '@proton/utils/clsx';
 
 import ErrorBoundary from '../../../containers/app/ErrorBoundary';

@@ -7,7 +7,7 @@ import { useApi } from '@proton/app-context/useApi';
 import { useCreateMeeting } from '@proton/meet/hooks/useCreateMeeting';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
-import { VIDEO_CONFERENCE_PROVIDER } from '@proton/shared/lib/interfaces/calendar';
+import { VIDEO_CONFERENCE_PROVIDER } from '@proton/shared/lib/interfaces/calendar/Api';
 import type { EventModel } from '@proton/shared/lib/interfaces/calendar/Event';
 
 import { useProtonMeetIntegration } from './useProtonMeetIntegration';

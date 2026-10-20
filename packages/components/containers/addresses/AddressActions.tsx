@@ -15,7 +15,9 @@ import type { WithLoading } from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { MEMBER_PRIVATE } from '@proton/shared/lib/constants';
 import { getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
-import type { Address, Member, UserModel } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { Member } from '@proton/shared/lib/interfaces/Member';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import isTruthy from '@proton/utils/isTruthy';
 
 import type { DropdownActionProps } from '../../components/dropdown/DropdownActions';

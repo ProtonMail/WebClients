@@ -1,6 +1,6 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
-import type { Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getRecipients as getMessageRecipients, getSender, isDraft, isSent } from '@proton/shared/lib/mail/messages';
 import uniqueBy from '@proton/utils/uniqueBy';

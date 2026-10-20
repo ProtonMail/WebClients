@@ -20,8 +20,8 @@ import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { shiftKey } from '@proton/shared/lib/helpers/browser';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import {
     getHasOnlyIcsAttachments,

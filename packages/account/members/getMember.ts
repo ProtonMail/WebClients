@@ -1,5 +1,6 @@
 import { getMember as getMemberConfig } from '@proton/shared/lib/api/members';
-import type { Api, Member } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { Member } from '@proton/shared/lib/interfaces/Member';
 
 export const getMember = (api: Api, memberID: string) =>
     api<{

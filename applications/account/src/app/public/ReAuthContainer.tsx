@@ -28,9 +28,10 @@ import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { getInitials } from '@proton/shared/lib/helpers/string';
-import type { UserSettings, KeySalt as tsKeySalt } from '@proton/shared/lib/interfaces';
-import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
-import { getIsGlobalSSOAccount, getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
+import type { KeySalt as tsKeySalt } from '@proton/shared/lib/interfaces/KeySalt';
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
+import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces/UserSettings';
+import { getIsGlobalSSOAccount, getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys/accountType';
 import { srpAuth } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 

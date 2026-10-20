@@ -1,5 +1,6 @@
 import { getVeventColorValue } from '@proton/shared/lib/calendar/veventHelper';
-import type { CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar/Event';
+import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
 import type { InviteActions, ReencryptInviteActionData } from '../../../interfaces/Invite';
 

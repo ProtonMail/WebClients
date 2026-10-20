@@ -5,8 +5,8 @@ import { c } from 'ttag';
 import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { IcCircleRadioEmpty } from '@proton/icons/icons/IcCircleRadioEmpty';
-import type { Referral } from '@proton/shared/lib/interfaces';
-import { ReferralState } from '@proton/shared/lib/interfaces';
+import type { Referral } from '@proton/shared/lib/interfaces/Referrals';
+import { ReferralState } from '@proton/shared/lib/interfaces/Referrals';
 
 type TickLevel = 'empty' | 'partial' | 'complete';
 

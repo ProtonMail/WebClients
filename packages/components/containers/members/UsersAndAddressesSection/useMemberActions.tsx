@@ -43,7 +43,8 @@ import { resendUnprivatizationLink } from '@proton/shared/lib/api/members';
 import { APPS, type APP_NAMES, MEMBER_PRIVATE, MEMBER_TYPE, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
 import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
-import { type Address, type EnhancedMember, MEMBER_STATE, type Member } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import { type EnhancedMember, MEMBER_STATE, type Member } from '@proton/shared/lib/interfaces/Member';
 import {
     getIsDomainActive,
     getOrganizationDenomination,

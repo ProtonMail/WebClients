@@ -11,7 +11,7 @@ import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { getStatus } from '@proton/components/containers/addresses/helper';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import type { Address } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
 import { getIsNonDefault, sortAddresses } from '@proton/shared/lib/mail/addresses';
 import { isMailVersionOlderThan } from '@proton/shared/lib/mobile/isMailVersionOlderThan';
 import clsx from '@proton/utils/clsx';

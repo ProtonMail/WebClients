@@ -1,6 +1,6 @@
 import type { PrivateKeyReferenceV4, PrivateKeyReferenceV6 } from '@protontech/crypto';
 
-import type { ActiveAddressKeysByVersion, ActiveKey, KeyPair } from '../interfaces';
+import type { ActiveAddressKeysByVersion, ActiveKey, KeyPair } from '../interfaces/Key';
 
 export const getPrimaryKey = <T extends KeyPair>(keys: T[] = []): T | undefined => {
     return keys[0];

@@ -15,7 +15,7 @@ import {
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
-import type { Address } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
 
 import { getNativeUpsellUrl } from '../redirectToNative';
 import { type BYOEMobileStatus, REDIRECT_PATH } from './interface';

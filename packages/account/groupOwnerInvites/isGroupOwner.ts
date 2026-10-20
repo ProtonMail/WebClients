@@ -1,4 +1,5 @@
-import { GROUP_MEMBER_PERMISSIONS, type Group, type GroupMembershipReturn } from '@proton/shared/lib/interfaces';
+import type { Group } from '@proton/shared/lib/interfaces/Group';
+import { GROUP_MEMBER_PERMISSIONS, type GroupMembershipReturn } from '@proton/shared/lib/interfaces/GroupMember';
 
 /**
  * Check if user is a group owner by finding groups that exist in both

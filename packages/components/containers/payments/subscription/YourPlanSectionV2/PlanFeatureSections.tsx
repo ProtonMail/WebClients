@@ -19,7 +19,8 @@ import { getRenewalTime, subscriptionExpires } from '@proton/payments/core/subsc
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, FREE_VPN_CONNECTIONS } from '@proton/shared/lib/constants';
-import type { Organization, UserModel } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
 import { getAutoSelectFromCountries, getCountriesWithoutPlus, getVpnDevices } from '@proton/shared/lib/vpn/features';
 import { VPN_SERVERS } from '@proton/shared/lib/vpn/vpnServers';

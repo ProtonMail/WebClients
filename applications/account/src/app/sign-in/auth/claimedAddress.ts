@@ -8,7 +8,9 @@ import { getUser } from '@proton/shared/lib/authentication/getUser';
 import type { ClaimedAddressID } from '@proton/shared/lib/authentication/interface';
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { type Address, type Api, type User, UserType } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import { type User, UserType } from '@proton/shared/lib/interfaces/User';
 import {
     type ClaimableAddress,
     getClaimableAddress,

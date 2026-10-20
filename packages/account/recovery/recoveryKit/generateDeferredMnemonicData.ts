@@ -1,8 +1,9 @@
 import type { PrivateKeyReference } from '@protontech/crypto';
 
 import type { SetMnemonicPhrasePayload } from '@proton/shared/lib/api/settingsMnemonic';
-import type { Api, DecryptedKey } from '@proton/shared/lib/interfaces';
-import { generateMnemonicPayload, generateMnemonicWithSalt } from '@proton/shared/lib/mnemonic';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
+import { generateMnemonicPayload, generateMnemonicWithSalt } from '@proton/shared/lib/mnemonic/helpers';
 
 import { type RecoveryKitBlob, generateRecoveryKitBlob } from './generateRecoveryKitBlob';
 import { type RecoveryKitSaveReturnValue, getRecoveryKitSaveData } from './getRecoveryKitSaveData';

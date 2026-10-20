@@ -8,7 +8,8 @@ import {
 } from '@protontech/crypto/subtle/aesGcm.ts';
 import { signData as computeHmacSignature, importKey as importHmacKey } from '@protontech/crypto/subtle/hmac.ts';
 import { utf8StringToUint8Array } from '@protontech/crypto/utils';
-import type { DecryptedKey } from '@proton/shared/lib/interfaces';
+
+import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 
 export enum WalletSignatureContextEnum {
     WALLET_KEY = 'wallet.key',

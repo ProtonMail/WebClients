@@ -28,7 +28,7 @@ import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import { APPS, BRAND_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { ChecklistKey } from '@proton/shared/lib/interfaces';
+import { ChecklistKey } from '@proton/shared/lib/interfaces/Checklist';
 import spotlightIcon from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
 import clsx from '@proton/utils/clsx';
 

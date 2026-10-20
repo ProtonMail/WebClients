@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useGroups } from '@proton/account/groups/hooks';
 import { useMembers } from '@proton/account/members/hooks';
-import { MEMBER_STATE } from '@proton/shared/lib/interfaces';
+import { MEMBER_STATE } from '@proton/shared/lib/interfaces/Member';
 import { type RetentionRuleScope, RetentionRuleScopeType } from '@proton/shared/lib/interfaces/RetentionRule';
 
 import type { RetentionRuleScopeFormData } from './types';

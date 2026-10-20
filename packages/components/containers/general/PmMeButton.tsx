@@ -9,7 +9,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { queryUnlock } from '@proton/shared/lib/api/user';
-import type { User } from '@proton/shared/lib/interfaces';
+import type { User } from '@proton/shared/lib/interfaces/User';
 
 import { useModalTwoPromise } from '../../components/modalTwo/useModalTwo';
 import useErrorHandler from '../../hooks/useErrorHandler';

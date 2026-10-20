@@ -8,7 +8,7 @@ import { getInitialModelState } from '@proton/redux-utilities/initialModelState'
 import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { getCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import updateObject from '@proton/shared/lib/helpers/updateObject';
-import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar/Calendar';
 
 const name = 'calendarUserSettings' as const;
 interface CalendarSettingState {

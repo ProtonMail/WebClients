@@ -21,8 +21,10 @@ import {
     updateGroupMember,
 } from '@proton/shared/lib/api/groups';
 import { clearBit, hasBit, setBit } from '@proton/shared/lib/helpers/bitset';
-import type { EnhancedMember, Group, GroupMember } from '@proton/shared/lib/interfaces';
-import { GROUP_MEMBER_PERMISSIONS, GROUP_MEMBER_STATE } from '@proton/shared/lib/interfaces';
+import type { Group } from '@proton/shared/lib/interfaces/Group';
+import type { GroupMember } from '@proton/shared/lib/interfaces/GroupMember';
+import { GROUP_MEMBER_PERMISSIONS, GROUP_MEMBER_STATE } from '@proton/shared/lib/interfaces/GroupMember';
+import type { EnhancedMember } from '@proton/shared/lib/interfaces/Member';
 import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 

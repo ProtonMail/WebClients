@@ -5,7 +5,7 @@ import { useCache } from '@proton/app-context/useCache';
 import { getVtimezones } from '@proton/shared/lib/api/calendars';
 import { parse } from '@proton/shared/lib/calendar/vcal';
 import { GET_VTIMEZONES_API_LIMIT } from '@proton/shared/lib/constants';
-import type { VcalVtimezoneComponent } from '@proton/shared/lib/interfaces/calendar';
+import type { VcalVtimezoneComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import type { GetVTimezonesMap, VTimezoneObject } from '@proton/shared/lib/interfaces/hooks/GetVTimezonesMap';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { getIsRecordInvalid, getPromiseValue } from '@proton/shared/lib/models/cache';

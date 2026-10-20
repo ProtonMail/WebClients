@@ -1,6 +1,6 @@
 import { put, select } from 'redux-saga/effects';
 
-import type { User } from '@proton/shared/lib/interfaces';
+import type { User } from '@proton/shared/lib/interfaces/User';
 
 import { redeemCouponApi } from '../../../lib/user/user.requests';
 import { getUserAccessIntent, redeemCoupon } from '../../actions';

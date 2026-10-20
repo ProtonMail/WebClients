@@ -8,7 +8,7 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { MnemonicKeyResponse } from '@proton/shared/lib/api/settingsMnemonic';
 import { getMnemonicUserKeys } from '@proton/shared/lib/api/settingsMnemonic';
 import type { InfoResponse } from '@proton/shared/lib/authentication/interface';
-import { mnemonicToBase64RandomBytes } from '@proton/shared/lib/mnemonic';
+import { mnemonicToBase64RandomBytes } from '@proton/shared/lib/mnemonic/bip39Wrapper';
 import { srpAuth } from '@proton/shared/lib/srp';
 
 import { type UserState, userThunk } from '../user';

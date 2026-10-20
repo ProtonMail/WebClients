@@ -6,7 +6,7 @@ import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import RecipientDropdownItem from '@proton/components/containers/contacts/view/RecipientDropdownItem';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
-import type { Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import generateUID from '@proton/utils/generateUID';
 
 import type { MapStatusIcons, StatusIcon } from '../../../models/crypto';

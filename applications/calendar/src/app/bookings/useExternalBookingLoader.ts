@@ -15,7 +15,8 @@ import { getNextAvailableSlot, queryPublicBookingPage } from '@proton/shared/lib
 import { getWeekStartsOn } from '@proton/shared/lib/date/date';
 import { SentryCalendarInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import type { Api, User } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { User } from '@proton/shared/lib/interfaces/User';
 import type {
     ExternalBookingPagePayload,
     ExternalBookingPageSlotsPayload,

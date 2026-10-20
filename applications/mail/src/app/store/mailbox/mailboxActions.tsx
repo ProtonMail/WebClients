@@ -17,7 +17,8 @@ import {
     unlabelMessages as unlabelMessagesApi,
 } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { Folder, Label } from '@proton/shared/lib/interfaces';
+import type { Folder } from '@proton/shared/lib/interfaces/Folder';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
 import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import type { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
@@ -28,7 +29,6 @@ import { getFilteredUndoTokens, runParallelChunkedActions } from '../../helpers/
 import { hasLabel } from '../../helpers/elements';
 import type { Conversation } from '../../models/conversation';
 import type { Element } from '../../models/element';
-
 import type { MailThunkExtra } from '../store';
 import type { MailThunkArguments } from '../thunk';
 import { hasSentOrDraftMessages } from './locationHelpers';

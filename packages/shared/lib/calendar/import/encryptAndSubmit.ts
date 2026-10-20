@@ -4,16 +4,16 @@ import { syncMultipleEvents } from '../../api/calendars';
 import { HOUR, SECOND } from '../../constants';
 import { HTTP_ERROR_CODES } from '../../errors';
 import { wait } from '../../helpers/promise';
-import type { Api, DecryptedKey } from '../../interfaces';
+import type { Api } from '../../interfaces/Api';
+import type { DecryptedKey } from '../../interfaces/Key';
 import type {
-    DecryptedCalendarKey,
-    EncryptedEvent,
-    ImportedEvent,
+    CreateCalendarEventSyncData,
     SyncMultipleApiResponse,
     SyncMultipleApiResponses,
-    VcalVeventComponent,
-} from '../../interfaces/calendar';
-import type { CreateCalendarEventSyncData } from '../../interfaces/calendar/Api';
+} from '../../interfaces/calendar/Api';
+import type { DecryptedCalendarKey } from '../../interfaces/calendar/CalendarKey';
+import type { EncryptedEvent, ImportedEvent } from '../../interfaces/calendar/Import';
+import type { VcalVeventComponent } from '../../interfaces/calendar/VcalModel';
 import { getHasSharedEventContent, getHasSharedKeyPacket } from '../apiModels';
 import { DEFAULT_ATTENDEE_PERMISSIONS } from '../constants';
 import { getCreationKeys } from '../crypto/keys/helpers';

@@ -1,5 +1,5 @@
 import { Checkbox, Label } from '@proton/components';
-import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import clsx from '@proton/utils/clsx';
 
 import type { ImporterCalendar } from '../../../../../logic/draft/oauthDraft/oauthDraft.interface';

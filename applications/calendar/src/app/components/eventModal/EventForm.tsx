@@ -21,8 +21,9 @@ import {
     NOTIFICATION_INPUT_ID,
 } from '@proton/shared/lib/calendar/constants';
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
-import type { Address } from '@proton/shared/lib/interfaces';
-import type { EventModel, EventModelErrors, NotificationModel } from '@proton/shared/lib/interfaces/calendar';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { EventModel, EventModelErrors } from '@proton/shared/lib/interfaces/calendar/Event';
+import type { NotificationModel } from '@proton/shared/lib/interfaces/calendar/Notification';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 

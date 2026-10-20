@@ -2,7 +2,7 @@ import { isBefore } from 'date-fns';
 
 import { MONTHLY_TYPE, WEEKLY_TYPE } from '@proton/shared/lib/calendar/constants';
 import { getNegativeSetpos, getPositiveSetpos } from '@proton/shared/lib/calendar/recurrence/rrule';
-import type { DateTimeModel, FrequencyModel } from '@proton/shared/lib/interfaces/calendar';
+import type { DateTimeModel, FrequencyModel } from '@proton/shared/lib/interfaces/calendar/Event';
 import replace from '@proton/utils/replace';
 
 const getFrequencyModelChange = (

@@ -10,7 +10,7 @@ import { getInitialModelState } from '@proton/redux-utilities/initialModelState'
 import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import type { CacheType } from '@proton/redux-utilities/interface';
 import { cacheHelper, createPromiseStore } from '@proton/redux-utilities/promiseStore';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 const name = 'entitlements' as const;
 

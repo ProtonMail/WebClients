@@ -1,4 +1,6 @@
-import type { Address, Api, SignedKeyList } from '../interfaces';
+import type { Address } from '../interfaces/Address';
+import type { Api } from '../interfaces/Api';
+import type { SignedKeyList } from '../interfaces/SignedKeyList';
 import queryPages from './helpers/queryPages';
 import type { PaginationParams } from './interface';
 

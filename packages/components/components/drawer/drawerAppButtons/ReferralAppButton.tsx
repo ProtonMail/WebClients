@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
-import type { Optional } from '@proton/shared/lib/interfaces';
+import type { Optional } from '@proton/shared/lib/interfaces/utils';
 
 import { useReferralDiscover } from '../../../containers/referral/hooks/useReferralDiscover';
 import useDrawer from '../../../hooks/drawer/useDrawer';

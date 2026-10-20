@@ -7,7 +7,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { create, createElectronNotification } from '@proton/shared/lib/helpers/desktopNotification';
 import { lowercaseEmailDomain } from '@proton/shared/lib/helpers/email';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import generateUID from '@proton/utils/generateUID';

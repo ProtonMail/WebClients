@@ -1,4 +1,4 @@
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { LumoEventResponse } from '@proton/shared/lib/interfaces/Lumo';
 
 import type { LumoDispatch, LumoState } from '../store';

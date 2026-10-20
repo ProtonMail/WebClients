@@ -2,8 +2,8 @@ import type { ContentSearchEventStatus, ContentSearchIndexErrorKind } from '@pro
 import type { TelemetryReport } from '@proton/shared/lib/api/telemetry';
 import { getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import type { Api } from '@proton/shared/lib/interfaces';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import type { Logger } from '../utils/logger';
 import type {

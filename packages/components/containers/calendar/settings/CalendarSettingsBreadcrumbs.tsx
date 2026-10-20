@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { getCalendarSubpagePath, getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
-import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 
 import CalendarSelectIcon from '../../../components/calendarSelect/CalendarSelectIcon';
 import CollapsingBreadcrumbs from '../../../components/collapsingBreadcrumbs/CollapsingBreadcrumbs';

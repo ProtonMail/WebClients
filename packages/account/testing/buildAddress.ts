@@ -1,4 +1,5 @@
-import type { Address, AddressKey } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { AddressKey } from '@proton/shared/lib/interfaces/Key';
 
 export const buildAddress = (value?: Partial<Address>): Address => {
     return {

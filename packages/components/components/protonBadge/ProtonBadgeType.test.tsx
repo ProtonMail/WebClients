@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
-import type { Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 
 import ProtonBadgeType from './ProtonBadgeType';
 

@@ -1,6 +1,6 @@
 import { TelemetryContentSearchEvents } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import { LoggerProxy } from '../utils/logger';
 import { MetricService } from './MetricService';

@@ -6,7 +6,8 @@ import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
-import type { Address, UserModel } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import truncate from '@proton/utils/truncate';
 
 import {

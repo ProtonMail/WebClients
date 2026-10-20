@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import busy from '@proton/shared/lib/busy';
+import busy from '@proton/shared/lib/busy/busy';
 
 const useBeforeUnload = (message?: string | boolean) => {
     useEffect(() => {

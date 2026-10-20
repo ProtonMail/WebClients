@@ -3,7 +3,7 @@ import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '../../errors';
 import type { ApiError } from '../../fetch/ApiError';
 import { getUIDHeaderValue, withUIDHeaders } from '../../fetch/headers';
 import { wait } from '../../helpers/promise';
-import type { HumanVerificationMethodType } from '../../interfaces';
+import type { HumanVerificationMethodType } from '../../interfaces/HumanVerification';
 import { setRefreshCookies } from '../auth';
 import { getApiError, getApiErrorMessage } from './apiErrorHelper';
 import { AppVersionBadError, InactiveSessionError } from './errors';

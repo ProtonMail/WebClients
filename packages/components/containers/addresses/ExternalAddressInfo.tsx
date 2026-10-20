@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { ADDRESS_STATUS, ADDRESS_TYPE, BRAND_NAME } from '@proton/shared/lib/constants';
 import { getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
-import type { Address } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
 
 import Info from '../../components/link/Info';
 

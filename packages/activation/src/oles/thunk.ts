@@ -39,15 +39,12 @@ import { setupCalendarKey } from '@proton/shared/lib/calendar/crypto/keys/setupC
 import { ADDRESS_FLAGS, MEMBER_PRIVATE, MEMBER_ROLE } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
-import {
-    type Address,
-    type Api,
-    CreateMemberMode,
-    type Domain,
-    type KeyPair,
-    type KeyTransparencyVerify,
-    type Member,
-} from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { Domain } from '@proton/shared/lib/interfaces/Domain';
+import type { KeyPair } from '@proton/shared/lib/interfaces/Key';
+import type { KeyTransparencyVerify } from '@proton/shared/lib/interfaces/KeyTransparency';
+import { CreateMemberMode, type Member } from '@proton/shared/lib/interfaces/Member';
 import type { Calendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import { setAddressFlagsHelper } from '@proton/shared/lib/keys/addressFlagsHelper';
 import { getDecryptedAddressKeys } from '@proton/shared/lib/keys/getDecryptedAddressKeys';

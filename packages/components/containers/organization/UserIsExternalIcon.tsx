@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
-import { GROUP_MEMBER_TYPE } from '@proton/shared/lib/interfaces';
+import { GROUP_MEMBER_TYPE } from '@proton/shared/lib/interfaces/GroupMember';
 
 interface Props {
     groupMemberType: GROUP_MEMBER_TYPE;

@@ -1,8 +1,9 @@
 import { useAddressesKeys } from '@proton/account/addressKeys/hooks';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { mockUseUser } from '@proton/account/testing/mockUseUser';
-import type { Address, UserModel } from '@proton/shared/lib/interfaces';
-import { ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import { ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces/AddressForwarding';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import { applyHOCs } from '../../testing/hocs/helpers';
 import { withApi } from '../../testing/hocs/with-api';

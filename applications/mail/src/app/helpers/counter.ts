@@ -1,6 +1,6 @@
 import { isAutoRead } from '@proton/mail/helpers/location';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import type { LabelCount } from '@proton/shared/lib/interfaces';
+import type { LabelCount } from '@proton/shared/lib/interfaces/Label';
 
 import type { Element } from '../models/element';
 import { hasLabel, isUnread as testIsUnread } from './elements';

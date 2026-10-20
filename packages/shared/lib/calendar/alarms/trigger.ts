@@ -7,7 +7,7 @@ import type {
     VcalDateTimeProperty,
     VcalDurationValue,
     VcalTriggerProperty,
-} from '../../interfaces/calendar';
+} from '../../interfaces/calendar/VcalModel';
 import { propertyToUTCDate } from '../vcalConverter';
 import { getIsPropertyAllDay } from '../vcalHelper';
 

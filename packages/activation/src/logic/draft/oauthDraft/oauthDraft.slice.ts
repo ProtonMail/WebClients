@@ -1,7 +1,7 @@
 import type { Action } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 
-import type { RequireSome } from '@proton/shared/lib/interfaces';
+import type { RequireSome } from '@proton/shared/lib/interfaces/utils';
 
 import { createImporterThunk } from './createImporter.action';
 import * as actions from './oauthDraft.actions';

@@ -1,4 +1,5 @@
-import type { Domain, SSO } from '@proton/shared/lib/interfaces';
+import type { Domain } from '@proton/shared/lib/interfaces/Domain';
+import type { SSO } from '@proton/shared/lib/interfaces/SSO';
 
 export const getSSODomainsSet = ({ domains, ssoConfigs }: { domains?: Domain[]; ssoConfigs?: SSO[] }) => {
     const domainsMap = (domains || []).reduce<{ [key: string]: Domain }>((acc, domain) => {

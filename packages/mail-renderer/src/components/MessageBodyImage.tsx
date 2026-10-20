@@ -9,7 +9,7 @@ import { IcFileImage } from '@proton/icons/icons/IcFileImage';
 import { IcFileSlash } from '@proton/icons/icons/IcFileSlash';
 import { getAnchor } from '@proton/mail/helpers/message/messageImages/getAnchor';
 import type { MessageImage, OnMessageImageLoadError } from '@proton/mail/store/messages/messagesTypes';
-import type { SimpleMap } from '@proton/shared/lib/interfaces';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import clsx from '@proton/utils/clsx';
 
 import { getIframeDocument } from '../helpers/getIframeDocument';

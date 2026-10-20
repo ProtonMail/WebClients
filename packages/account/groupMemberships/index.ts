@@ -12,7 +12,7 @@ import {
     type GroupMember,
     type GroupMembership,
     type GroupMembershipReturn,
-} from '@proton/shared/lib/interfaces';
+} from '@proton/shared/lib/interfaces/GroupMember';
 
 const name = 'groupMemberships';
 

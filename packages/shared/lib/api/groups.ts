@@ -1,4 +1,4 @@
-import type { GroupFlags, GroupMemberType, GroupPermissions, ProxyInstances } from '../interfaces';
+import type { GroupFlags, GroupMemberType, GroupPermissions, ProxyInstances } from '../interfaces/Group';
 
 interface GroupParameters {
     Name: string;

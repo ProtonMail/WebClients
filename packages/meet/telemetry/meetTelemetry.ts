@@ -9,7 +9,8 @@ import {
 import { getDevice, isIpad } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { getBaseTelemetryDimensions, sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import type { Api, SimpleMap } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 import { selectLocalParticipantIdentity, selectParticipantsMap } from '../store/slices/participants/participantsSlice';
 import { selectIsGuest } from '../store/slices/userSlice';

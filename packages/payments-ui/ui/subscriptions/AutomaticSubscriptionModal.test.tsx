@@ -36,7 +36,7 @@ import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getLongTestPlans } from '@proton/payments/testing/data-plans';
 import { getUserMock } from '@proton/payments/testing/data-user';
 import { getPaymentStatusState, getSubscriptionState } from '@proton/payments/testing/redux-state';
-import type { UserSettings } from '@proton/shared/lib/interfaces';
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import { addApiMock, apiMock } from '@proton/test-api/api';
 import type { FeatureFlag } from '@proton/unleash/Flags';
 

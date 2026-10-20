@@ -1,5 +1,5 @@
-import type { GenericErrorPayload } from '@proton/shared/lib/broadcast';
-import genericBroadcast from '@proton/shared/lib/broadcast';
+import genericBroadcast from '@proton/shared/lib/broadcast/broadcast';
+import type { GenericErrorPayload } from '@proton/shared/lib/broadcast/interface';
 
 export enum MessageType {
     SUCCESS = 'SUCCESS',

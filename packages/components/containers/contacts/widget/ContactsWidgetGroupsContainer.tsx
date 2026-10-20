@@ -10,8 +10,8 @@ import { useContactGroups } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { orderContactGroups } from '@proton/shared/lib/helpers/contactGroups';
 import { normalize } from '@proton/shared/lib/helpers/string';
-import type { Recipient } from '@proton/shared/lib/interfaces';
-import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 
 import SearchInput from '../../../components/input/SearchInput';
 import useItemsSelection from '../../items/useItemsSelection';

@@ -14,7 +14,7 @@ import {
     createMockSignupConfiguration,
     createMockSignupParameters,
 } from '@proton/payments/testing/signup';
-import { Audience } from '@proton/shared/lib/interfaces';
+import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 
 import Step1 from './Step1';
 import { SignupMode, UpsellTypes } from './interface';

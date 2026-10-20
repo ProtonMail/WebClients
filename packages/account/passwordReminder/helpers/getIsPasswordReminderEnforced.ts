@@ -1,4 +1,4 @@
-import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
+import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';
 
 /**
  * Whether the user's organisation enforces password check-ins.

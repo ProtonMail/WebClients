@@ -4,7 +4,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useRef } fr
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { CategoriesOnboardingFlags } from '@proton/mail/features/categoriesView/categoriesOnboarding';
-import { domIsBusy } from '@proton/shared/lib/busy';
+import { domIsBusy } from '@proton/shared/lib/busy/busy';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -188,14 +188,7 @@ export const CategoriesOnboardingProvider = ({ children }: PropsWithChildren) =>
             handleSkip,
             completeCurrentStep,
         }),
-        [
-            activeStep,
-            tabSpotlightStep,
-            listSpotlightStep,
-            userIsInB2COnboardingFlow,
-            handleSkip,
-            completeCurrentStep,
-        ]
+        [activeStep, tabSpotlightStep, listSpotlightStep, userIsInB2COnboardingFlow, handleSkip, completeCurrentStep]
     );
 
     return <CategoriesOnboardingContext.Provider value={value}>{children}</CategoriesOnboardingContext.Provider>;

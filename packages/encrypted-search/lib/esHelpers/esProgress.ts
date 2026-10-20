@@ -1,5 +1,5 @@
 import { MINUTE, SECOND } from '@proton/shared/lib/constants';
-import type { Unwrap } from '@proton/shared/lib/interfaces';
+import type { Unwrap } from '@proton/shared/lib/interfaces/utils';
 
 import { readSize } from '../esIDB/configObjectStore';
 import type { IndexedDBRow } from '../esIDB/indexingProgress';

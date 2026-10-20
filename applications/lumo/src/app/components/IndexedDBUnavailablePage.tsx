@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import useDocumentTitle from '@proton/components/hooks/useDocumentTitle';
-import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants.ts';
+import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { ThemeTypes } from '@proton/shared/lib/themes/constants';
 import lumoCatAlert from '@proton/styles/assets/img/lumo/lumo-cat-alert.svg';
 

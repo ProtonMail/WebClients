@@ -1,6 +1,8 @@
 import type { PASSWORD_MODE } from '../constants';
-import type { Address, KeyWithRecoverySecret, PasswordPolicies } from '../interfaces';
+import type { Address } from '../interfaces/Address';
 import type { DelegatedAccessStateEnum, DelegatedAccessTypeEnum } from '../interfaces/DelegatedAccess';
+import type { KeyWithRecoverySecret } from '../interfaces/Key';
+import type { PasswordPolicies } from '../interfaces/PasswordPolicy';
 
 type RequestUsernamePayload =
     | {

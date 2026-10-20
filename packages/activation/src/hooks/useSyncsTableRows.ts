@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
-import type { Address } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
 
 import { useEasySwitchSelector } from '../logic/store';
 import type { Sync } from '../logic/sync/sync.interface';

@@ -2,7 +2,7 @@ import { add, addDays, differenceInMinutes, getUnixTime, sub } from 'date-fns';
 
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import { canSetExpiration, getExpirationTime, getMinExpirationTime, isExpired } from './expiration';
 

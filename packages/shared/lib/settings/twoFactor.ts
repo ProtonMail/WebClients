@@ -1,5 +1,5 @@
 import { getHasFIDO2Enabled, getHasTOTPEnabled } from '../authentication/twoFactor';
-import type { UserSettings } from '../interfaces';
+import type { UserSettings } from '../interfaces/UserSettings';
 
 const TOTP_CONFIG = {
     PERIOD: 30,

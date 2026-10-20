@@ -9,7 +9,7 @@ import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import AccountSessionsSwitcher from '@proton/components/containers/heading/AccountSessionsSwitcher';
 import { UserDropdownContext } from '@proton/components/containers/heading/UserDropdownContext';
 import { useActiveBreakpoint, useModalStateObject } from '@proton/components/index';
-import { ForkType } from '@proton/shared/lib/authentication/fork';
+import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 

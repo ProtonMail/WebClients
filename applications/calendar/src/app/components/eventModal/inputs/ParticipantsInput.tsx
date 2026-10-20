@@ -21,8 +21,8 @@ import {
     canonicalizeInternalEmail,
     validateEmailAddress,
 } from '@proton/shared/lib/helpers/email';
-import type { Address, Recipient } from '@proton/shared/lib/interfaces';
-import type { AttendeeModel, OrganizerModel } from '@proton/shared/lib/interfaces/calendar';
+import type { Address, Recipient } from '@proton/shared/lib/interfaces/Address';
+import type { AttendeeModel, OrganizerModel } from '@proton/shared/lib/interfaces/calendar/Event';
 import { inputToRecipient } from '@proton/shared/lib/mail/recipient';
 import uniqueBy from '@proton/utils/uniqueBy';
 

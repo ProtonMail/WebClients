@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { getBrowser, isChrome, isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 import { Version } from '@proton/shared/lib/helpers/version';
-import type { DecryptedKey } from '@proton/shared/lib/interfaces';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 
 import { Logger } from '../shared/Logger';
 import { PersistentLatestEventIdProvider } from '../shared/PersistentLatestEventIdProvider';

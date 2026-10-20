@@ -11,7 +11,7 @@ import useLoading from '@proton/hooks/useLoading';
 import { setProductDisabled } from '@proton/shared/lib/api/settings';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, PRODUCT } from '@proton/shared/lib/constants';
-import type { UserSettings } from '@proton/shared/lib/interfaces';
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 
 import { useAccountDispatch } from '../../store/hooks';
 

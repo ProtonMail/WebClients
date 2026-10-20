@@ -24,7 +24,7 @@ import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { clearBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
+import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces/UserSettings';
 import { getPublicRecipients, getRecipients, getSender } from '@proton/shared/lib/mail/messages';
 import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';

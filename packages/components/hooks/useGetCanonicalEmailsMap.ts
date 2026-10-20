@@ -4,7 +4,7 @@ import { useApi } from '@proton/app-context/useApi';
 import { useCache } from '@proton/app-context/useCache';
 import { getCanonicalAddresses } from '@proton/shared/lib/api/addresses';
 import { API_CODES, GET_CANONICAL_EMAILS_API_LIMIT } from '@proton/shared/lib/constants';
-import type { GetCanonicalAddressesApiResponse } from '@proton/shared/lib/interfaces/calendar';
+import type { GetCanonicalAddressesApiResponse } from '@proton/shared/lib/interfaces/calendar/Api';
 import type { GetCanonicalEmailsMap } from '@proton/shared/lib/interfaces/hooks/GetCanonicalEmailsMap';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { getIsRecordInvalid, getPromiseValue } from '@proton/shared/lib/models/cache';

@@ -6,7 +6,7 @@ import type {
     PaymentIntent,
 } from '@proton/chargebee/lib/types';
 import { isProduction } from '@proton/shared/lib/helpers/sentry';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import { capturePaymentMessage } from '../sentry/capture';
 import {

@@ -2,7 +2,7 @@ import noop from '@proton/utils/noop';
 
 import { isElectronApp } from '../helpers/desktop';
 import { traceError } from '../helpers/sentry';
-import type { ProtonConfig } from '../interfaces';
+import type { ProtonConfig } from '../interfaces/config';
 
 let uid = 0;
 let busies = [] as number[];

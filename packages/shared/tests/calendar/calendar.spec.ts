@@ -1,6 +1,6 @@
 import { sortCalendars } from '../../lib/calendar/calendar';
 import { CALENDAR_TYPE } from '../../lib/calendar/constants';
-import type { VisualCalendar } from '../../lib/interfaces/calendar';
+import type { VisualCalendar } from '../../lib/interfaces/calendar/Calendar';
 
 describe('sortCalendars', () => {
     const holidaysCalendar = {

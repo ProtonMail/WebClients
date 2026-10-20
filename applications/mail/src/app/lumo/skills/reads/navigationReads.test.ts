@@ -9,13 +9,13 @@ import { formatISO } from 'date-fns';
 import type { ESStatusBooleans } from '@proton/encrypted-search/models';
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { Folder, Label } from '@proton/shared/lib/interfaces';
+import type { Folder } from '@proton/shared/lib/interfaces/Folder';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
 import { HUMAN_TO_LABEL_IDS } from '@proton/shared/lib/mail/constants';
 import { ALMOST_ALL_MAIL, SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 
 import { getParamsFromPathname } from '../../../helpers/mailboxUrl';
 import type { Element } from '../../../models/element';
-
 import { fakeStore, indexedESStatus, settledView } from '../../helpers/navigation.test.helpers';
 import type { MailToolDeps } from '../../toolModule';
 import { createOpenFolderHandler } from './openFolder';

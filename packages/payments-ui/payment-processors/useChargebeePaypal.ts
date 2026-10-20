@@ -4,7 +4,7 @@ import type {
     ChargebeeIframeEvents,
     ChargebeeIframeHandles,
 } from '@proton/payments/core/interface';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import { type WalletProcessorHook, useChargebeeWallet } from './useChargebeeWallet';
 import { paypalWalletConfig } from './walletConfigs';

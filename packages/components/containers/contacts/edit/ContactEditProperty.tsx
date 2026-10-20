@@ -8,7 +8,7 @@ import { IcTextAlignJustify } from '@proton/icons/icons/IcTextAlignJustify';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import type { ContactEmail, ContactEmailModel } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactEmail, ContactEmailModel } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 import clsx from '@proton/utils/clsx';
 

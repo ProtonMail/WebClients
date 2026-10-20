@@ -5,12 +5,10 @@ import { c } from 'ttag';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { KEYGEN_CONFIGS, KEYGEN_TYPES } from '../../../constants';
-import type { KeyGenConfig, SimpleMap } from '../../../interfaces';
-import type {
-    CreateOrResetCalendarPayload,
-    DecryptedCalendarKey,
-    CalendarKey as tsKey,
-} from '../../../interfaces/calendar';
+import type { KeyGenConfig } from '../../../interfaces/KeyGenConfig';
+import type { CreateOrResetCalendarPayload } from '../../../interfaces/calendar/Api';
+import type { DecryptedCalendarKey, CalendarKey as tsKey } from '../../../interfaces/calendar/CalendarKey';
+import type { SimpleMap } from '../../../interfaces/utils';
 import { getEncryptedSessionKey } from '../encrypt';
 import { getSignatureContext } from '../helpers';
 

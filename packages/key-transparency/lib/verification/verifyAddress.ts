@@ -1,4 +1,5 @@
-import type { Api, FetchedSignedKeyList } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { FetchedSignedKeyList } from '@proton/shared/lib/interfaces/SignedKeyList';
 
 import { fetchProof } from '../helpers/apiHelpers';
 import { KT_ERROR_TYPE, throwKTError } from '../helpers/utils';

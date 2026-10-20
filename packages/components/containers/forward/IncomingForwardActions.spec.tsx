@@ -6,8 +6,9 @@ import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useGetMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import type { Address, IncomingAddressForwarding } from '@proton/shared/lib/interfaces';
-import { ForwardingState } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { IncomingAddressForwarding } from '@proton/shared/lib/interfaces/AddressForwarding';
+import { ForwardingState } from '@proton/shared/lib/interfaces/AddressForwarding';
 
 import { applyHOCs } from '../../testing/hocs/helpers';
 import { withApi } from '../../testing/hocs/with-api';

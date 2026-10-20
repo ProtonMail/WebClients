@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 
-import type { ContactFormatted } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactFormatted } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 
 import { SortableList } from '../../../../components/dnd/SortableList';

@@ -3,7 +3,7 @@ import type { Dispatch, SetStateAction } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import type { ContactFormatted, ContactMergeModel } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactFormatted, ContactMergeModel } from '@proton/shared/lib/interfaces/contacts/Contact';
 import move from '@proton/utils/move';
 
 import Alert from '../../../components/alert/Alert';

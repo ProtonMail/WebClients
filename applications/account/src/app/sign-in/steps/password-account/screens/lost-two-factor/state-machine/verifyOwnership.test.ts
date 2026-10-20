@@ -2,7 +2,7 @@ import { type ActorRefFrom, createActor, fromPromise, setup, waitFor } from 'xst
 
 import { InvalidCodeError, InvalidRecoveryPhraseError } from '@proton/shared/lib/authentication/error';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import {
     type Lost2FAParentEvent,
@@ -20,7 +20,7 @@ const verificationResult = {
 } as unknown as VerificationResult;
 
 // The recovery phrase check's crypto; these tests only look at its requests
-jest.mock('@proton/shared/lib/mnemonic', () => ({
+jest.mock('@proton/shared/lib/mnemonic/bip39Wrapper', () => ({
     mnemonicToBase64RandomBytes: () => Promise.resolve('random-bytes'),
 }));
 jest.mock('@proton/shared/lib/srp', () => ({

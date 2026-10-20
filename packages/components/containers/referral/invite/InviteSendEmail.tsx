@@ -12,7 +12,8 @@ import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { sendEmailInvitation } from '@proton/shared/lib/api/core/referrals';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { PROTONMAIL_DOMAINS, getEmailParts } from '@proton/shared/lib/helpers/email';
-import type { Recipient, Referral } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
+import type { Referral } from '@proton/shared/lib/interfaces/Referrals';
 import clsx from '@proton/utils/clsx';
 
 import AddressesAutocomplete from '../../../components/addressesAutocomplete/AddressesAutocomplete';

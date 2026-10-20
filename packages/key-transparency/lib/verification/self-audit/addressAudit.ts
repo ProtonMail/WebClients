@@ -1,17 +1,14 @@
 import type { PrivateKeyReference, PrivateKeyReferenceV4 } from '@protontech/crypto';
 import { CryptoProxy } from '@protontech/crypto';
+
 import { KEY_FLAG } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import type {
-    ActiveSignedKeyList,
-    Address,
-    Api,
-    DecryptedAddressKey,
-    FetchedSignedKeyList,
-    KTUserContext,
-    KeyPair,
-} from '@proton/shared/lib/interfaces';
-import { getSignedKeyListSignature } from '@proton/shared/lib/keys';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { DecryptedAddressKey, KeyPair } from '@proton/shared/lib/interfaces/Key';
+import type { KTUserContext } from '@proton/shared/lib/interfaces/KeyTransparency';
+import type { ActiveSignedKeyList, FetchedSignedKeyList } from '@proton/shared/lib/interfaces/SignedKeyList';
+import { getSignedKeyListSignature } from '@proton/shared/lib/keys/signedKeyList';
 import isTruthy from '@proton/utils/isTruthy';
 
 import {
@@ -21,7 +18,7 @@ import {
     updateSignedKeyListSignature,
     uploadVerifiedEpoch,
 } from '../../helpers/apiHelpers';
-import { KeyTransparencyError, KT_ERROR_TYPE, throwKTError } from '../../helpers/utils';
+import { KT_ERROR_TYPE, KeyTransparencyError, throwKTError } from '../../helpers/utils';
 import type { AddressAuditResult, Epoch, VerifiedEpoch } from '../../interfaces';
 import { AddressAuditStatus, AddressAuditWarningReason } from '../../interfaces';
 import { saveSKLToLS } from '../../storage/saveSKLToLS';
@@ -166,7 +163,10 @@ const checkAndFixSKLInTheFuture = async (address: Address, primaryAddressKey: Pr
             return;
         }
     }
-    return throwKTError('Input SKL signature was not verified', KT_ERROR_TYPE.LOCAL, { email: Email, inputSKL: SignedKeyList });
+    return throwKTError('Input SKL signature was not verified', KT_ERROR_TYPE.LOCAL, {
+        email: Email,
+        inputSKL: SignedKeyList,
+    });
 };
 
 /**
@@ -347,7 +347,10 @@ const auditAddressImplementation = async ({
         }
         const expectedMinEpochID = inputSKL.MinEpochID ?? inputSKL.ExpectedMinEpochID;
         if (!expectedMinEpochID) {
-            return throwKTError('Input SKL has not minEpochID or expectedMinEpochID', KT_ERROR_TYPE.LOCAL, { email, inputSKL });
+            return throwKTError('Input SKL has not minEpochID or expectedMinEpochID', KT_ERROR_TYPE.LOCAL, {
+                email,
+                inputSKL,
+            });
         }
         await saveSKLToLS({
             ktUserContext,

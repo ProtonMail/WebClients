@@ -5,7 +5,8 @@ import isTruthy from '@proton/utils/isTruthy';
 import unary from '@proton/utils/unary';
 
 import { MIME_TYPES } from '../../constants';
-import { addDays, format as formatUTC } from '../../date-fns-utc';
+import { addDays } from '../../date-fns-utc';
+import formatUTC from '../../date-fns-utc/format';
 import type { Options } from '../../date-fns-utc/format';
 import { formatTimezoneOffset, getTimezoneOffset, toUTCDate } from '../../date/timezone';
 import { getIsAddressExternal, getIsBYOEAddress } from '../../helpers/address';
@@ -18,12 +19,11 @@ import {
 import { omit, pick } from '../../helpers/object';
 import { getCurrentUnixTimestamp } from '../../helpers/time';
 import { dateLocale } from '../../i18n';
-import type { Address } from '../../interfaces';
+import type { Address } from '../../interfaces/Address';
+import type { CalendarSettings } from '../../interfaces/calendar/Calendar';
+import type { Attendee, CalendarEvent } from '../../interfaces/calendar/Event';
+import type { Participant } from '../../interfaces/calendar/Invite';
 import type {
-    Attendee,
-    CalendarEvent,
-    CalendarSettings,
-    Participant,
     VcalAttendeeProperty,
     VcalComponentKeys,
     VcalOrganizerProperty,
@@ -32,8 +32,8 @@ import type {
     VcalVcalendar,
     VcalVeventComponent,
     VcalVtimezoneComponent,
-} from '../../interfaces/calendar';
-import type { ContactEmail } from '../../interfaces/contacts';
+} from '../../interfaces/calendar/VcalModel';
+import type { ContactEmail } from '../../interfaces/contacts/Contact';
 import type { GetVTimezonesMap } from '../../interfaces/hooks/GetVTimezonesMap';
 import type { RequireSome } from '../../interfaces/utils';
 import { getSupportedPlusAlias } from '../../mail/addresses';

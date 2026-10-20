@@ -18,7 +18,7 @@ import type { ModelState } from '@proton/redux-utilities/initialModelState/inter
 import type { CacheType } from '@proton/redux-utilities/interface';
 import { cacheHelper, createPromiseStore } from '@proton/redux-utilities/promiseStore';
 import updateObject from '@proton/shared/lib/helpers/updateObject';
-import type { User } from '@proton/shared/lib/interfaces';
+import type { User } from '@proton/shared/lib/interfaces/User';
 import { isAdmin, isPaid } from '@proton/shared/lib/user/helpers';
 
 import { serverEvent } from '../eventLoop';

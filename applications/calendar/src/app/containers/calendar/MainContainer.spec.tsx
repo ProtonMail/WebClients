@@ -17,7 +17,7 @@ import {
     TMP_UNIQUE_ID,
 } from '@proton/shared/lib/calendar/constants';
 import createCache from '@proton/shared/lib/helpers/cache';
-import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 
 import MainContainer from './MainContainer';
 import getSaveEventActions from './eventActions/getSaveEventActions';

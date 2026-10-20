@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 
-import type { OutgoingAddressForwarding } from '@proton/shared/lib/interfaces';
-import { ForwardingState } from '@proton/shared/lib/interfaces';
+import type { OutgoingAddressForwarding } from '@proton/shared/lib/interfaces/AddressForwarding';
+import { ForwardingState } from '@proton/shared/lib/interfaces/AddressForwarding';
 
 import ForwardStatus from './ForwardStatus';
 

@@ -1,6 +1,6 @@
 import { call, put, select, takeLeading } from 'redux-saga/effects';
 
-import type { Organization } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 
 import { PassCrypto } from '../../../lib/crypto';
 import { getGroups as fetchGroups } from '../../../lib/groups/groups.requests';

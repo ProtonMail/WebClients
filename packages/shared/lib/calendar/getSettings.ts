@@ -1,4 +1,4 @@
-import type { CalendarUserSettings } from '../interfaces/calendar';
+import type { CalendarUserSettings } from '../interfaces/calendar/Calendar';
 import { SETTINGS_VIEW, VIEWS } from './constants';
 
 export const getAutoDetectPrimaryTimezone = (calendarUserSettings: CalendarUserSettings) => {

@@ -1,6 +1,6 @@
 import { TelemetryInboxDestkopEvents, TelemetryMeasurementGroups } from '../api/telemetry';
 import { sendTelemetryReport } from '../helpers/metrics';
-import type { Api } from '../interfaces';
+import type { Api } from '../interfaces/Api';
 import type { DailyStatsReport } from './DailyStats';
 import type { DefaultProtocol } from './DefaultProtocol';
 import { getInboxDesktopInfo, invokeInboxDesktopIPC } from './ipcHelpers';

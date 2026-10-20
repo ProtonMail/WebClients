@@ -15,8 +15,9 @@ import type { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { getDefaultTzid } from '@proton/shared/lib/calendar/getSettings';
 import { getTimezone } from '@proton/shared/lib/date/timezone';
 import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
-import type { Address, UserModel } from '@proton/shared/lib/interfaces';
-import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 
 import { useGetOpenedMailEvents } from '../../hooks/useGetOpenedMailEvents';
 import EncryptedSearchLibraryProvider from '../EncryptedSearchLibraryProvider';

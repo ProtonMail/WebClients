@@ -1,4 +1,4 @@
-import type { ReferralData } from '../../interfaces';
+import type { ReferralData } from '../../interfaces/referral';
 import type { BillingAddress } from '../../payments/billing-address';
 import type { CYCLE, PLANS } from '../../payments/constants';
 import type { Currency } from '../../payments/interface';

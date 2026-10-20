@@ -11,17 +11,16 @@ import { getAllMembers, getCalendarInvitations } from '@proton/shared/lib/api/ca
 import { getIsOwnedCalendar, getIsPersonalCalendar } from '@proton/shared/lib/calendar/calendar';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
-import type { Address, UserModel } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import type {
-    CalendarBootstrap,
-    CalendarMember,
-    CalendarMemberInvitation,
     GetAllMembersApiResponse,
     GetCalendarInvitationsResponse,
-    SubscribedCalendar,
-    VisualCalendar,
-} from '@proton/shared/lib/interfaces/calendar';
-import { MEMBER_INVITATION_STATUS } from '@proton/shared/lib/interfaces/calendar';
+} from '@proton/shared/lib/interfaces/calendar/Api';
+import type { CalendarBootstrap, VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
+import type { CalendarMember, CalendarMemberInvitation } from '@proton/shared/lib/interfaces/calendar/CalendarMember';
+import { MEMBER_INVITATION_STATUS } from '@proton/shared/lib/interfaces/calendar/CalendarMember';
+import type { SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar/Subscription';
 
 import SettingsPageTitle from '../../account/SettingsPageTitle';
 import SettingsParagraph from '../../account/SettingsParagraph';

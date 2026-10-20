@@ -27,7 +27,7 @@ import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { hasMailProduct } from '@proton/shared/lib/helpers/organization';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { EnhancedMember } from '@proton/shared/lib/interfaces';
+import type { EnhancedMember } from '@proton/shared/lib/interfaces/Member';
 import { getIsMemberDisabled, getIsMemberInvited } from '@proton/shared/lib/keys/memberHelper';
 import clsx from '@proton/utils/clsx';
 

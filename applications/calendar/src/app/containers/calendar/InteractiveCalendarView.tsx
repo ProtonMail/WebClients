@@ -81,7 +81,8 @@ import { getProdId } from '@proton/shared/lib/calendar/vcalConfig';
 import { buildVcalOrganizer, propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
 import { withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
 import { API_CODES, SECOND } from '@proton/shared/lib/constants';
-import { format, isSameDay } from '@proton/shared/lib/date-fns-utc';
+import { isSameDay } from '@proton/shared/lib/date-fns-utc';
+import format from '@proton/shared/lib/date-fns-utc/format';
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { getFormattedWeekdays } from '@proton/shared/lib/date/date';
 import { convertUTCDateTimeToZone, fromUTCDate, toLocalDate, toUTCDate } from '@proton/shared/lib/date/timezone';
@@ -91,22 +92,23 @@ import { omit, pick } from '@proton/shared/lib/helpers/object';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { SentryCalendarInitiatives, traceError, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import type { Address } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
 import type {
-    AttendeeComment,
     AttendeeDeleteSingleEditResponse,
+    SyncMultipleApiResponse,
+    UpdateEventPartApiResponse,
+} from '@proton/shared/lib/interfaces/calendar/Api';
+import type { CalendarBootstrap, VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
+import type {
+    AttendeeComment,
     AttendeeModel,
-    CalendarBootstrap,
     CalendarEvent,
     CalendarEventSharedData,
     DateTimeModel,
     EventModel,
-    SyncMultipleApiResponse,
-    UpdateEventPartApiResponse,
-    VcalVeventComponent,
-    VisualCalendar,
-} from '@proton/shared/lib/interfaces/calendar';
+} from '@proton/shared/lib/interfaces/calendar/Event';
+import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import type { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';

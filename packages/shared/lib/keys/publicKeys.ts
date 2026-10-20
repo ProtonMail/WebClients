@@ -6,7 +6,12 @@ import { KEY_FLAG, MIME_TYPES_MORE, PGP_SCHEMES_MORE, RECIPIENT_TYPES } from '..
 import { hasBit } from '../helpers/bitset';
 import { canonicalizeEmailByGuess, canonicalizeInternalEmail, extractEmailFromUserID } from '../helpers/email';
 import { toBitMap } from '../helpers/object';
-import type { ApiKeysConfig, ContactPublicKeyModel, PublicKeyConfigs, PublicKeyModel } from '../interfaces';
+import type {
+    ApiKeysConfig,
+    ContactPublicKeyModel,
+    PublicKeyConfigs,
+    PublicKeyModel,
+} from '../interfaces/EncryptionPreferences';
 import { getKeyHasFlagsToEncrypt } from './keyFlags';
 
 const { TYPE_INTERNAL } = RECIPIENT_TYPES;

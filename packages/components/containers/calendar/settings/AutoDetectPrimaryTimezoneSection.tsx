@@ -6,7 +6,7 @@ import { calendarSettingsActions } from '@proton/calendar/calendarUserSettings';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
-import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar/Calendar';
 
 import Info from '../../../components/link/Info';
 import Toggle from '../../../components/toggle/Toggle';

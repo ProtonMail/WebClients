@@ -2,7 +2,7 @@ import type { ProductParam } from '../apps/product';
 import { getProductHeaders } from '../apps/product';
 import type { CLIENT_TYPES } from '../constants';
 import type { FetchConfig } from '../fetch/interface';
-import type { HumanVerificationMethodType } from '../interfaces';
+import type { HumanVerificationMethodType } from '../interfaces/HumanVerification';
 
 export const getUser = () => ({
     url: 'core/v4/users',
@@ -99,13 +99,13 @@ export const queryVerificationCode = (
     Type: 'email' | 'sms',
     Destination:
         | {
-            Address: string;
-            Phone?: never;
-        }
+              Address: string;
+              Phone?: never;
+          }
         | {
-            Address?: never;
-            Phone: string;
-        }
+              Address?: never;
+              Phone: string;
+          }
 ) => ({
     url: 'core/v4/users/code',
     method: 'post',

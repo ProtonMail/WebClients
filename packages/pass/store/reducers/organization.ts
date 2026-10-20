@@ -1,6 +1,6 @@
 import type { Reducer } from 'redux';
 
-import type { Organization } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 
 import { isPassB2BPlan } from '../../lib/b2b/b2b.utils';
 import {

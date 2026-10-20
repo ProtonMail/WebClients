@@ -6,14 +6,11 @@ import { c } from 'ttag';
 import isTruthy from '@proton/utils/isTruthy';
 
 import type { UpdateOrganizationKeysPayloadLegacy, UpdateOrganizationKeysPayloadV2 } from '../api/organization';
-import type {
-    Address,
-    KeyGenConfig,
-    KeyPair,
-    Member,
-    OrganizationKey,
-    PasswordlessOrganizationKey,
-} from '../interfaces';
+import type { Address } from '../interfaces/Address';
+import type { KeyPair } from '../interfaces/Key';
+import type { KeyGenConfig } from '../interfaces/KeyGenConfig';
+import type { Member } from '../interfaces/Member';
+import type { OrganizationKey, PasswordlessOrganizationKey } from '../interfaces/OrganizationKey';
 import { encryptAddressKeyToken, generateAddressKey, getAddressKeyToken } from './addressKeys';
 import { getPrimaryKey } from './getPrimaryKey';
 import { decryptKeyPacket, encryptAndSignKeyPacket } from './keypacket';

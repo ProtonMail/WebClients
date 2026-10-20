@@ -1,9 +1,9 @@
 import { isCustomFolder, isCustomLabel } from '@proton/mail/helpers/location';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { Folder, Label } from '@proton/shared/lib/interfaces';
+import type { Folder } from '@proton/shared/lib/interfaces/Folder';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
 
 import type { Element } from '../../../models/element';
-
 import type { MoveEngineCanMoveResult, MoveEngineError, MoveEngineRule } from './moveEngineInterface';
 import { CUSTOM_FOLDER_KEY, CUSTOM_LABEL_KEY, MoveEngineRuleResult } from './moveEngineInterface';
 

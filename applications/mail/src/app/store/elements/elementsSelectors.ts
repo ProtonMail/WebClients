@@ -5,7 +5,7 @@ import type { ESStatus, NormalizedSearchParams } from '@proton/encrypted-search/
 import type { MailSettingState } from '@proton/mail/store/mailSettings';
 import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { LabelCount } from '@proton/shared/lib/interfaces';
+import type { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 import type { SearchParameters } from '@proton/shared/lib/mail/search';

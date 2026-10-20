@@ -32,7 +32,7 @@ import {
     WALLET_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { hasMailProduct } from '@proton/shared/lib/helpers/organization';
-import type { OrganizationSettingsAllowedProduct } from '@proton/shared/lib/interfaces';
+import type { OrganizationSettingsAllowedProduct } from '@proton/shared/lib/interfaces/Organization';
 import {
     deserializeAllowedProducts,
     serializeAllowedProducts,

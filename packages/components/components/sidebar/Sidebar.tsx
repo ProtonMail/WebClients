@@ -20,7 +20,7 @@ import {
 } from '@proton/shared/lib/helpers/desktop';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
-import type { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { getAppSpace, getCanAddStorage, getSpace } from '@proton/shared/lib/user/storage';
 import clsx from '@proton/utils/clsx';
 import percentage from '@proton/utils/percentage';

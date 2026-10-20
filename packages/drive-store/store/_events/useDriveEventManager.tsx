@@ -8,7 +8,7 @@ import { queryLatestVolumeEvent, queryVolumeEvents } from '@proton/shared/lib/ap
 import type { EventManager } from '@proton/shared/lib/eventManager/eventManager';
 import createEventManager from '@proton/shared/lib/eventManager/eventManager';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
 import generateUID from '@proton/utils/generateUID';
 

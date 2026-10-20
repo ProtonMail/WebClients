@@ -12,7 +12,10 @@ import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateSignInRestriction } from '@proton/shared/lib/api/settings';
-import { LOGIN_IDENTIFIER_POLICY, RESTRICTED_LOGIN_IDENTIFIER_POLICY } from '@proton/shared/lib/interfaces';
+import {
+    LOGIN_IDENTIFIER_POLICY,
+    RESTRICTED_LOGIN_IDENTIFIER_POLICY,
+} from '@proton/shared/lib/interfaces/UserSettings';
 
 import { useAddresses } from '../addresses/hooks';
 import { useUser } from '../user/hooks';

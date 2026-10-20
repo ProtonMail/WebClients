@@ -4,18 +4,17 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import { hasBit } from '../../../helpers/bitset';
-import type { Address, DecryptedKey } from '../../../interfaces';
-import type {
-    CalendarEvent,
-    CalendarMember,
-    CalendarSetupData,
-    CreateOrResetCalendarPayload,
-    DecryptedCalendarKey,
-} from '../../../interfaces/calendar';
-import { CalendarKeyFlags } from '../../../interfaces/calendar';
+import type { Address } from '../../../interfaces/Address';
+import type { DecryptedKey } from '../../../interfaces/Key';
+import type { CalendarSetupData, CreateOrResetCalendarPayload } from '../../../interfaces/calendar/Api';
+import type { DecryptedCalendarKey } from '../../../interfaces/calendar/CalendarKey';
+import { CalendarKeyFlags } from '../../../interfaces/calendar/CalendarKey';
+import type { CalendarMember } from '../../../interfaces/calendar/CalendarMember';
+import type { CalendarEvent } from '../../../interfaces/calendar/Event';
 import type { GetAddressKeys } from '../../../interfaces/hooks/GetAddressKeys';
 import type { GetCalendarKeys } from '../../../interfaces/hooks/GetCalendarKeys';
-import { getPrimaryKey, splitKeys } from '../../../keys';
+import { getPrimaryKey } from '../../../keys/getPrimaryKey';
+import { splitKeys } from '../../../keys/keys';
 import { toSessionKey } from '../../../keys/sessionKey';
 import { getIsAutoAddedInvite } from '../../apiModels';
 import { readSessionKeys } from '../../deserialize';

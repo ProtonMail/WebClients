@@ -2,14 +2,11 @@ import { getAllAddresses } from '../../api/addresses';
 import { queryMemberUnprivatizationInfo } from '../../api/members';
 import { getOrganizationIdentity, getOrganizationLogo } from '../../api/organization';
 import { getPasswordPolicies } from '../../api/passwordPolicies';
-import type {
-    Address,
-    Api,
-    MemberUnprivatizationOutput,
-    Organization,
-    OrganizationIdentityOutput,
-    PasswordPolicies,
-} from '../../interfaces';
+import type { Address } from '../../interfaces/Address';
+import type { Api } from '../../interfaces/Api';
+import type { MemberUnprivatizationOutput } from '../../interfaces/Member';
+import type { Organization, OrganizationIdentityOutput } from '../../interfaces/Organization';
+import type { PasswordPolicies } from '../../interfaces/PasswordPolicy';
 import { getOrganization, getOrganizationSettings } from '../../organization/api';
 
 export interface OrganizationData {

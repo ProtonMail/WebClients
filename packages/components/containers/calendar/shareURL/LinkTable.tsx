@@ -5,8 +5,8 @@ import { c } from 'ttag';
 
 import { IcLink } from '@proton/icons/icons/IcLink';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import type { CalendarLink } from '@proton/shared/lib/interfaces/calendar';
-import { ACCESS_LEVEL } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarLink } from '@proton/shared/lib/interfaces/calendar/Link';
+import { ACCESS_LEVEL } from '@proton/shared/lib/interfaces/calendar/Link';
 import type { Nullable, SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';

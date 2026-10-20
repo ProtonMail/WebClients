@@ -1,6 +1,6 @@
 import { call, put, select, takeLeading } from 'redux-saga/effects';
 
-import type { Organization } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 
 import { getOrganizationSettings as fetchOrganizationSettings } from '../../../lib/organization/organization.requests';
 import { onOrganizationSettingsUpdated } from '../../../lib/sync/common/organization';

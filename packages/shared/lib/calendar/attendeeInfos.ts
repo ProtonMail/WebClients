@@ -1,6 +1,6 @@
 import { getPaginatedAttendeesInfo } from '../api/calendars';
-import type { Api } from '../interfaces';
-import type { CalendarEvent } from '../interfaces/calendar';
+import type { Api } from '../interfaces/Api';
+import type { CalendarEvent } from '../interfaces/calendar/Event';
 import { ATTENDEE_MORE_ATTENDEES } from './constants';
 
 /**

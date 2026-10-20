@@ -9,7 +9,7 @@ import type {
     CalendarBootstrap,
     HolidaysDirectoryCalendar,
     VisualCalendar,
-} from '@proton/shared/lib/interfaces/calendar';
+} from '@proton/shared/lib/interfaces/calendar/Calendar';
 
 import Form from '../../../../components/form/Form';
 import Loader from '../../../../components/loader/Loader';

@@ -1,6 +1,6 @@
 import type { FreeSubscription } from '@proton/payments/core/interface';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
-import type { User } from '@proton/shared/lib/interfaces';
+import type { User } from '@proton/shared/lib/interfaces/User';
 import noop from '@proton/utils/noop';
 
 import { useEditBillingAddressModal } from '../containers/useEditBillingAddressModal';

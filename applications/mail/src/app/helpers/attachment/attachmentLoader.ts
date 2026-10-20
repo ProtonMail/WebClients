@@ -5,7 +5,7 @@ import type { MessageKeys, MessageVerification } from '@proton/mail/store/messag
 import { getAttachment } from '@proton/shared/lib/api/attachments';
 import { getEOAttachment } from '@proton/shared/lib/api/eo';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { getEOSessionKey, getSessionKey } from '@proton/shared/lib/mail/send/attachments';

@@ -8,7 +8,7 @@ import ConfigProvider from '@proton/components/containers/config/Provider';
 import { FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { APPS } from '@proton/shared/lib/constants';
-import type { ProtonConfig } from '@proton/shared/lib/interfaces';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 
 import { TransferManagerBannerType } from '../transferManager.store';
 import { TransferManagerBanner } from './TransferManagerBanner';

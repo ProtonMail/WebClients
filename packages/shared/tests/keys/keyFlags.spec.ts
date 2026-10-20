@@ -1,6 +1,6 @@
 import { ADDRESS_FLAGS, ADDRESS_TYPE, KEY_FLAG } from '../../lib/constants';
 import { hasBit } from '../../lib/helpers/bitset';
-import type { Address } from '../../lib/interfaces';
+import type { Address } from '../../lib/interfaces/Address';
 import { getDefaultKeyFlags } from '../../lib/keys/keyFlags';
 
 describe('getDefaultKeyFlags', () => {

@@ -1,7 +1,7 @@
 import { isCustomLabelOrFolder, isStringHumanLabelID } from '@proton/mail/helpers/location';
 import type { EmailListDisplayTime } from '@proton/metrics/types/web_mail_performance_email_list_display_time_histogram_v1.schema';
 import type { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 
 export type LabelType = EmailListDisplayTime['Labels']['loaded'];

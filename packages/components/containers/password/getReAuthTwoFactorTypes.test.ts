@@ -1,6 +1,6 @@
 import type { InfoAuthedResponse } from '@proton/shared/lib/authentication/interface';
 import { APPS } from '@proton/shared/lib/constants';
-import type { UserSettings } from '@proton/shared/lib/interfaces';
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 
 import { getReAuthTwoFactorTypes } from './getReAuthTwoFactorTypes';
 

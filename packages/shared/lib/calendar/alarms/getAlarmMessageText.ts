@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { MINUTE } from '../../constants';
-import { format as formatUTC, isNextDay, isSameDay, isSameMonth, isSameYear } from '../../date-fns-utc';
+import { isNextDay, isSameDay, isSameMonth, isSameYear } from '../../date-fns-utc';
+import formatUTC from '../../date-fns-utc/format';
 
 const getStartsTodayText = (title: string) => {
     return c('Alarm notification').t`${title} starts today`;

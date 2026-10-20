@@ -3,7 +3,7 @@ import PrivateMainSettingsArea, {
     PrivateMainSettingsAreaBase,
 } from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import type { SectionConfig } from '@proton/components/containers/layout/interface';
-import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
+import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';
 
 import { GatewaysSection } from '../../components/Gateways/GatewaysSection';
 import { NavSections } from '../../components/NavSections';

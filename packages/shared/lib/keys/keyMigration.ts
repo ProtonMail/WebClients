@@ -9,19 +9,15 @@ import { migrateMembersAddressKeysRoute } from '../api/memberKeys';
 import { getAllMemberAddresses, getAllMembers, getMember } from '../api/members';
 import { getOrganizationKeys } from '../api/organization';
 import { MEMBER_PRIVATE, USER_ROLES } from '../constants';
-import type {
-    Address,
-    Api,
-    DecryptedAddressKey,
-    KeyMigrationKTVerifier,
-    KeyTransparencyVerify,
-    Member,
-    Organization,
-    OrganizationKey,
-    PreAuthKTVerify,
-    SignedKeyList,
-    User,
-} from '../interfaces';
+import type { Address } from '../interfaces/Address';
+import type { Api } from '../interfaces/Api';
+import type { DecryptedAddressKey } from '../interfaces/Key';
+import type { KeyMigrationKTVerifier, KeyTransparencyVerify, PreAuthKTVerify } from '../interfaces/KeyTransparency';
+import type { Member } from '../interfaces/Member';
+import type { Organization } from '../interfaces/Organization';
+import type { OrganizationKey } from '../interfaces/OrganizationKey';
+import type { SignedKeyList } from '../interfaces/SignedKeyList';
+import type { User } from '../interfaces/User';
 import { generateAddressKeyTokens } from './addressKeys';
 import { getDecryptedAddressKeysHelper } from './getDecryptedAddressKeys';
 import { getDecryptedOrganizationKeyHelper } from './getDecryptedOrganizationKey';

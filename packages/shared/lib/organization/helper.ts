@@ -1,8 +1,11 @@
 import { c } from 'ttag';
 
 import { MEMBER_ROLE, MEMBER_SUBSCRIBER } from '../constants';
-import type { Address, CachedOrganizationKey, EnhancedMember, Member, Organization } from '../interfaces';
-import { MEMBER_ORG_KEY_STATE } from '../interfaces';
+import type { Address } from '../interfaces/Address';
+import type { EnhancedMember, Member } from '../interfaces/Member';
+import { MEMBER_ORG_KEY_STATE } from '../interfaces/Member';
+import type { Organization } from '../interfaces/Organization';
+import type { CachedOrganizationKey } from '../interfaces/OrganizationKey';
 import { getIsPasswordless } from '../keys/organizationKeys';
 import { PLANS } from '../payments/constants';
 import { getIsB2BAudienceFromPlan } from '../payments/plan/helpers';

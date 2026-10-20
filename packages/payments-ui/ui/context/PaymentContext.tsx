@@ -52,7 +52,7 @@ import type { EstimationChangeAction } from '@proton/payments/telemetry/shared-c
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import noop from '@proton/utils/noop';
 
 import { useCurrencies } from '../../client-extensions/useCurrencies';

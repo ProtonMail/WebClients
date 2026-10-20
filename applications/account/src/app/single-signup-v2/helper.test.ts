@@ -7,8 +7,9 @@ import type { Subscription, SubscriptionEstimation } from '@proton/payments/core
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getLongTestPlans, getTestPlansMap } from '@proton/payments/testing/data-plans';
 import { USER_ROLES } from '@proton/shared/lib/constants';
-import type { Api, User } from '@proton/shared/lib/interfaces';
-import { Audience } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import { Audience } from '@proton/shared/lib/interfaces/Subscription';
+import type { User } from '@proton/shared/lib/interfaces/User';
 
 import { getAccessiblePlans, getSessionCycle, getSubscriptionData, getUserInfo } from './helper';
 import type { PlanCard, SignupParameters2 } from './interface';

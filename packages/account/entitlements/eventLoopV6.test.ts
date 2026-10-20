@@ -1,5 +1,5 @@
 import type { CoreEventV6Response } from '@proton/shared/lib/api/events';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import type { CoreEventLoopV6RequiredState } from '../coreEventLoop/interface';
 import { entitlementsLoop } from './eventLoopV6';

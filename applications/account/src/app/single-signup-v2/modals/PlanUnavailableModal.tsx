@@ -8,7 +8,7 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import useLoading from '@proton/hooks/useLoading';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, DRIVE_APP_NAME, MAIL_APP_NAME, PASS_APP_NAME, WALLET_APP_NAME } from '@proton/shared/lib/constants';
-import type { User } from '@proton/shared/lib/interfaces';
+import type { User } from '@proton/shared/lib/interfaces/User';
 
 interface Props extends ModalProps {
     onContinue: () => void;

@@ -1,14 +1,9 @@
 import type { useFormik } from 'formik';
 
-import type {
-    EnhancedGroup,
-    EnhancedMember,
-    Group,
-    GroupFlags,
-    GroupMember,
-    GroupPermissions,
-    RoleAssignment,
-} from '@proton/shared/lib/interfaces';
+import type { EnhancedGroup, Group, GroupFlags, GroupPermissions } from '@proton/shared/lib/interfaces/Group';
+import type { GroupMember } from '@proton/shared/lib/interfaces/GroupMember';
+import type { EnhancedMember } from '@proton/shared/lib/interfaces/Member';
+import type { RoleAssignment } from '@proton/shared/lib/interfaces/OrganizationRole';
 
 export const PANEL_HEADER_HEIGHT = '5rem';
 

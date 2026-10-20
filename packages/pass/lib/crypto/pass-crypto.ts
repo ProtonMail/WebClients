@@ -1,12 +1,11 @@
 import { CryptoProxy } from '@protontech/crypto';
 import type { Store } from 'redux';
 
-import type { DecryptedAddressKey, OrganizationKey } from '@proton/shared/lib/interfaces';
-import {
-    getDecryptedAddressKeysHelper,
-    getDecryptedOrganizationKeyHelper,
-    getDecryptedUserKeysHelper,
-} from '@proton/shared/lib/keys';
+import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces/Key';
+import type { OrganizationKey } from '@proton/shared/lib/interfaces/OrganizationKey';
+import { getDecryptedAddressKeysHelper } from '@proton/shared/lib/keys/getDecryptedAddressKeys';
+import { getDecryptedOrganizationKeyHelper } from '@proton/shared/lib/keys/getDecryptedOrganizationKey';
+import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys/getDecryptedUserKeys';
 import { getDecryptedGroupAddressKey } from '@proton/shared/lib/keys/groupKeys';
 
 import { FILE_PENDING_SHARE, FILE_PUBLIC_SHARE } from '../../constants';

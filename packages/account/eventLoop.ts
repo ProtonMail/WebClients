@@ -5,36 +5,34 @@ import type { Invoice, SavedPaymentMethod } from '@proton/payments/core/interfac
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import type { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import type { EventItemUpdate } from '@proton/shared/lib/helpers/updateCollection';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type {
-    Address,
-    ApiEnvironmentConfig,
-    BreachAlertUpdateEvent,
-    Domain,
-    Group,
-    GroupMember,
-    GroupMembership,
     IncomingAddressForwarding,
-    IncomingDefault,
-    LabelCount,
-    MailSettings,
-    Member,
-    Organization,
-    OrganizationSettings,
     OutgoingAddressForwarding,
-    PendingInvitation,
-    SSO,
-    User,
-    UserSettings,
-} from '@proton/shared/lib/interfaces';
+} from '@proton/shared/lib/interfaces/AddressForwarding';
+import type { ApiEnvironmentConfig } from '@proton/shared/lib/interfaces/ApiEnvironmentConfig';
+import type { BreachAlertUpdateEvent } from '@proton/shared/lib/interfaces/BreachesCount';
 import type { Category } from '@proton/shared/lib/interfaces/Category';
+import type { Domain } from '@proton/shared/lib/interfaces/Domain';
+import type { Group } from '@proton/shared/lib/interfaces/Group';
+import type { GroupMember, GroupMembership } from '@proton/shared/lib/interfaces/GroupMember';
+import type { IncomingDefault } from '@proton/shared/lib/interfaces/IncomingDefault';
+import type { LabelCount } from '@proton/shared/lib/interfaces/Label';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
+import type { Member } from '@proton/shared/lib/interfaces/Member';
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
+import type { Organization, OrganizationSettings } from '@proton/shared/lib/interfaces/Organization';
+import type { PendingInvitation } from '@proton/shared/lib/interfaces/PendingInvitation';
 import type { RetentionRule } from '@proton/shared/lib/interfaces/RetentionRule';
-import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
+import type { SSO } from '@proton/shared/lib/interfaces/SSO';
+import type { User } from '@proton/shared/lib/interfaces/User';
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
+import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import type {
     CalendarEventManager,
     CalendarMemberEventManager,
 } from '@proton/shared/lib/interfaces/calendar/EventManager';
-import type { Contact, ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { Contact, ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { AuthDeviceOutput, MemberAuthDeviceOutput } from '@proton/shared/lib/keys/device';
 import type { Filter } from '@proton/sieve/filterModel';
 

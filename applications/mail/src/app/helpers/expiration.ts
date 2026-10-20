@@ -1,8 +1,8 @@
+import { serverTime } from '@protontech/crypto';
 import { addMinutes, differenceInMinutes, fromUnixTime, getUnixTime, isToday } from 'date-fns';
 
-import { serverTime } from '@protontech/crypto';
 import type { MessageState, MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
-import type { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { isFrozenExpiration } from '@proton/shared/lib/mail/messages';
 
 import { isAllowedAutoDeleteLabelID } from './autoDelete';

@@ -1,4 +1,6 @@
-import type { Api, PasswordPolicies, User } from '../interfaces';
+import type { Api } from '../interfaces/Api';
+import type { PasswordPolicies } from '../interfaces/PasswordPolicy';
+import type { User } from '../interfaces/User';
 import { isPaid } from '../user/helpers';
 
 // Only doing password policies for users in an org as of 25.04.2025

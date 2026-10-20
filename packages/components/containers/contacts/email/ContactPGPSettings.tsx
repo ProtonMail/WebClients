@@ -8,8 +8,9 @@ import { Href } from '@proton/atoms/Href/Href';
 import type { CONTACT_PGP_SCHEMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { ContactPublicKeyModelWithApiKeySource, MailSettings } from '@proton/shared/lib/interfaces';
-import type { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
+import type { ContactPublicKeyModelWithApiKeySource } from '@proton/shared/lib/interfaces/EncryptionPreferences';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
+import type { ArmoredKeyWithInfo } from '@proton/shared/lib/keys/keyImport';
 import { getIsValidForSending, getKeyEncryptionCapableStatus } from '@proton/shared/lib/keys/publicKeys';
 
 import Alert from '../../../components/alert/Alert';

@@ -2,7 +2,7 @@ import type { AuthenticationStore } from '@proton/shared/lib/authentication/crea
 import { clearSession } from '@proton/shared/lib/authentication/handleLogoutFromURL';
 import { getPersistedSessions } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import { buildExternalSessionsViaFork } from '../remote/externalSession';
 import { sendSessionMigrationToNative } from '../remote/nativeAuthBridge';

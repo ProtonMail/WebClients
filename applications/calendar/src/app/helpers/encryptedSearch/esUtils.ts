@@ -17,19 +17,16 @@ import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import { getHashCode } from '@proton/shared/lib/helpers/string';
 import { getSearchParams as getSearchParamsFromURL, stringifySearchParams } from '@proton/shared/lib/helpers/url';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
-import type { Api, SimpleMap } from '@proton/shared/lib/interfaces';
-import type {
-    CalendarEvent,
-    CalendarEventWithoutBlob,
-    CalendarEventsIDsQuery,
-    VcalAttendeeProperty,
-    VcalOrganizerProperty,
-} from '@proton/shared/lib/interfaces/calendar';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { CalendarEventsIDsQuery } from '@proton/shared/lib/interfaces/calendar/Api';
+import type { CalendarEvent, CalendarEventWithoutBlob } from '@proton/shared/lib/interfaces/calendar/Event';
 import type {
     CalendarEventManager,
     CalendarEventsEventManager,
 } from '@proton/shared/lib/interfaces/calendar/EventManager';
+import type { VcalAttendeeProperty, VcalOrganizerProperty } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import type { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import unique from '@proton/utils/unique';
 
 import { propertiesToAttendeeModel } from '../../components/eventModal/eventForm/propertiesToAttendeeModel';
@@ -208,11 +205,7 @@ export const getESEvent = async (
     };
 };
 
-const getAllESEventsFromCalendar = async (
-    calendarID: string,
-    api: Api,
-    getCalendarEventRaw: GetCalendarEventRaw
-) => {
+const getAllESEventsFromCalendar = async (calendarID: string, api: Api, getCalendarEventRaw: GetCalendarEventRaw) => {
     const eventIDs = await getAllEventsIDs(calendarID, api, 1000);
     return runInQueue(
         eventIDs.map((eventID) => () => getESEvent(eventID, calendarID, api, getCalendarEventRaw)),

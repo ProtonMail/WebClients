@@ -1,5 +1,5 @@
-import type { UserModel } from '../interfaces';
-import { getIsSSOVPNOnlyAccount } from '../keys';
+import type { UserModel } from '../interfaces/User';
+import { getIsSSOVPNOnlyAccount } from '../keys/accountType';
 
 export const getIsAccountRecoveryAvailable = (user: UserModel | undefined) => {
     if (!user) {

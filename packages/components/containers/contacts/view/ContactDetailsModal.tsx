@@ -19,7 +19,7 @@ import { CRYPTO_PROCESSING_TYPES } from '@proton/shared/lib/contacts/constants';
 import { singleExport } from '@proton/shared/lib/contacts/helpers/export';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 
 import Loader from '../../../components/loader/Loader';

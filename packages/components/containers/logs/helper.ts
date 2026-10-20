@@ -1,7 +1,7 @@
 import queryPages from '@proton/shared/lib/api/helpers/queryPages';
 import { queryLogs } from '@proton/shared/lib/api/logs';
-import type { AuthLog } from '@proton/shared/lib/authlog';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { AuthLog } from '@proton/shared/lib/authlog/AuthLog';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 export const getAllAuthenticationLogs = (api: Api) => {
     return queryPages(

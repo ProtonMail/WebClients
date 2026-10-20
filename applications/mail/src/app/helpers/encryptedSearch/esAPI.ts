@@ -3,7 +3,7 @@ import { getConversation } from '@proton/shared/lib/api/conversations';
 import { getEvents, getLatestID } from '@proton/shared/lib/api/events';
 import { getMessage } from '@proton/shared/lib/api/messages';
 import { getEventLoopParams } from '@proton/shared/lib/eventManager/eventLoopParams';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { Message, MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
 import type { Event } from '../../models/event';

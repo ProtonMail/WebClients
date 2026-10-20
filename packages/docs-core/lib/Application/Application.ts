@@ -1,4 +1,4 @@
-import type { Api } from '@proton/shared/lib/interfaces'
+import type { Api } from '@proton/shared/lib/interfaces/Api'
 import { App_TYPES } from './Dependencies/Types'
 import { AppDependencies, type AppDependenciesOptions } from './Dependencies/AppDependencies'
 import type { CreateEmptyDocumentForConversion } from '../UseCase/CreateEmptyDocumentForConversion'

@@ -12,7 +12,7 @@ import useLoading from '@proton/hooks/useLoading';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { updateRemoveImageMetadata } from '@proton/shared/lib/api/mailSettings';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 
 import { useAccountDispatch } from '../../app/store/hooks';
 import MobileSection from '../components/MobileSection';

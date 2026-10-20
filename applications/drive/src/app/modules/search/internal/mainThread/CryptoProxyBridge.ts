@@ -1,6 +1,7 @@
 import { CryptoProxy } from '@protontech/crypto';
+
 import { DRIVE_SIGNATURE_CONTEXT } from '@proton/shared/lib/drive/constants';
-import type { DecryptedKey } from '@proton/shared/lib/interfaces';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 
 import { MissingUserKeyEncryptionError } from '../shared/errors';
 

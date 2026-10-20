@@ -1,4 +1,4 @@
-import type { VcalVtimezoneComponent } from '../calendar';
+import type { VcalVtimezoneComponent } from '../calendar/VcalModel';
 import type { SimpleMap } from '../utils';
 
 export interface VTimezoneObject {

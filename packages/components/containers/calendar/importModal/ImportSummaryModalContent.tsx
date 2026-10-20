@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import { extractTotals } from '@proton/shared/lib/calendar/import/import';
-import type { ImportCalendarModel } from '@proton/shared/lib/interfaces/calendar';
+import type { ImportCalendarModel } from '@proton/shared/lib/interfaces/calendar/Import';
 
 import Alert from '../../../components/alert/Alert';
 import DynamicProgress from '../../../components/progress/DynamicProgress';

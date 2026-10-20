@@ -1,8 +1,8 @@
 import type { WeekStartsOn } from '../date-fns-utc/interface';
 import { browserDateLocale } from '../i18n';
 import { getIsLocaleAMPM } from '../i18n/dateFnLocale';
-import type { UserSettings } from '../interfaces';
-import { SETTINGS_TIME_FORMAT, SETTINGS_WEEK_START } from '../interfaces';
+import type { UserSettings } from '../interfaces/UserSettings';
+import { SETTINGS_TIME_FORMAT, SETTINGS_WEEK_START } from '../interfaces/UserSettings';
 
 export const getDefaultDateFormat = () => {
     return browserDateLocale.formatLong?.date({ width: 'short' });

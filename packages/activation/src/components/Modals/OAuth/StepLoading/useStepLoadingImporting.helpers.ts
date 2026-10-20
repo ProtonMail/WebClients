@@ -7,10 +7,11 @@ import { setupCalendarKey } from '@proton/shared/lib/calendar/crypto/keys/setupC
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import { getTimezone } from '@proton/shared/lib/date/timezone';
 import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
-import type { Address, Api } from '@proton/shared/lib/interfaces';
-import type { Calendar } from '@proton/shared/lib/interfaces/calendar';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { Calendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import type { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
-import { getPrimaryKey } from '@proton/shared/lib/keys';
+import { getPrimaryKey } from '@proton/shared/lib/keys/getPrimaryKey';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { startImportTask } from '../../../../api';

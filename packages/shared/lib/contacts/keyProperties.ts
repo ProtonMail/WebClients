@@ -1,9 +1,10 @@
 import type { PublicKeyReference } from '@protontech/crypto';
 import { CryptoProxy } from '@protontech/crypto';
+
 import isTruthy from '@proton/utils/isTruthy';
 
 import { MIME_TYPES, PGP_SCHEMES } from '../constants';
-import type { MimeTypeVcard, PinnedKeysConfig } from '../interfaces';
+import type { MimeTypeVcard, PinnedKeysConfig } from '../interfaces/EncryptionPreferences';
 import type { VCardContact, VCardProperty } from '../interfaces/contacts/VCard';
 import { compareVCardPropertyByPref, createContactPropertyUid } from './properties';
 

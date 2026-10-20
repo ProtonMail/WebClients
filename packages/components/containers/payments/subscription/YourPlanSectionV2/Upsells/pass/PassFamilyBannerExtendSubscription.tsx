@@ -9,7 +9,7 @@ import { getPlanIDs } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { DASHBOARD_UPSELL_PATHS } from '@proton/shared/lib/constants';
-import { Audience } from '@proton/shared/lib/interfaces';
+import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { getSimplePriceString } from '../../../../../../components/price/helper';

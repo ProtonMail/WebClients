@@ -1,6 +1,6 @@
 import { ACCENT_COLORS } from '../colors';
 import { BASE_SIZE } from '../helpers/size';
-import { VIDEO_CONFERENCE_PROVIDER } from '../interfaces/calendar';
+import { VIDEO_CONFERENCE_PROVIDER } from '../interfaces/calendar/Api';
 
 export const MAX_CALENDARS_FREE = 3;
 export const MAX_CALENDARS_PAID = 25; // Only paid mail

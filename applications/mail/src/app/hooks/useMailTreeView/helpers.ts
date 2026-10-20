@@ -1,7 +1,7 @@
 import { IcFolder } from '@proton/icons/icons/IcFolder';
 import { IcFolders } from '@proton/icons/icons/IcFolders';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import type { FolderWithSubFolders } from '@proton/shared/lib/interfaces';
+import type { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 
 import type { FolderColorProps, FolderItem, FolderReducerProps } from './interface';
 

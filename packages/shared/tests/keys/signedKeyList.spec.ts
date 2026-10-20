@@ -1,7 +1,7 @@
 import { ADDRESS_TYPE, KEYGEN_CONFIGS, KEYGEN_TYPES } from '../../lib/constants';
-import type { Address } from '../../lib/interfaces';
-import { getSignedKeyList } from '../../lib/keys';
+import type { Address } from '../../lib/interfaces/Address';
 import { getActiveAddressKeys, getActiveKeyObject } from '../../lib/keys/getActiveKeys';
+import { getSignedKeyList } from '../../lib/keys/signedKeyList';
 import { getAddressKey, getAddressKeyForE2EEForwarding, getAddressKeyHelper, getUserKey } from './keyDataHelper';
 
 describe('active keys', () => {

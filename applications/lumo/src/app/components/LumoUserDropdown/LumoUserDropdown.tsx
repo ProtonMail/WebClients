@@ -9,7 +9,7 @@ import { UserDropdownContext, type UserDropdownValue } from '@proton/components/
 import { useUserDropdownInfo } from '@proton/components/containers/heading/useUserDropdownInfo';
 import AuthenticatedBugModal from '@proton/components/containers/support/AuthenticatedBugModal';
 import HelpModal from '@proton/components/containers/support/HelpModal';
-import type { ForkType } from '@proton/shared/lib/authentication/fork';
+import type { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import { useLumoAuthAction } from '../../hooks/useLumoAuthAction';

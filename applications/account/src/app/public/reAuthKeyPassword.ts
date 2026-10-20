@@ -2,7 +2,9 @@ import { SessionSource } from '@proton/shared/lib/authentication/SessionInterfac
 import { BackupPasswordError, SecondPasswordError } from '@proton/shared/lib/authentication/error';
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { handleUnlockKey } from '@proton/shared/lib/authentication/unlockKey';
-import type { Api, KeySalt as tsKeySalt, User as tsUser } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { KeySalt as tsKeySalt } from '@proton/shared/lib/interfaces/KeySalt';
+import type { User as tsUser } from '@proton/shared/lib/interfaces/User';
 
 import type { AuthSession } from '../content/authSession';
 

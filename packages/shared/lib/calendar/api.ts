@@ -1,6 +1,7 @@
 import { getEventByUID } from '../api/calendars';
-import type { Api } from '../interfaces';
-import type { CalendarEvent, GetEventByUIDArguments } from '../interfaces/calendar';
+import type { Api } from '../interfaces/Api';
+import type { GetEventByUIDArguments } from '../interfaces/calendar/Api';
+import type { CalendarEvent } from '../interfaces/calendar/Event';
 import { fetchPaginatedAttendeesInfo } from './attendeeInfos';
 import { ATTENDEE_MORE_ATTENDEES, type CALENDAR_TYPE } from './constants';
 

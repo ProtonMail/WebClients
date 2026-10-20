@@ -1,11 +1,12 @@
 import { CryptoProxy } from '@protontech/crypto';
 import { binaryStringToUint8Array } from '@protontech/crypto/utils';
+
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
-import type { FetchedSignedKeyList } from '@proton/shared/lib/interfaces';
+import type { FetchedSignedKeyList } from '@proton/shared/lib/interfaces/SignedKeyList';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import { KT_DOMAINS, KT_LEN, LEFT_N, vrfHexKeyDev, vrfHexKeyProd } from '../constants/constants';
-import { getBaseDomain, KT_ERROR_TYPE, throwKTError } from '../helpers/utils';
+import { KT_ERROR_TYPE, getBaseDomain, throwKTError } from '../helpers/utils';
 import type { Proof } from '../interfaces';
 import { KTPROOF_TYPE } from '../interfaces';
 import { vrfVerify } from './vrf';
@@ -31,7 +32,11 @@ const verifyVRFProof = async (proof: Proof, email: string) => {
         if (isProxyError) {
             throw error;
         }
-        return throwKTError('VRF proof verification failed', KT_ERROR_TYPE.LOCAL, { email, verifier: proof.Verifier, cause: error });
+        return throwKTError('VRF proof verification failed', KT_ERROR_TYPE.LOCAL, {
+            email,
+            verifier: proof.Verifier,
+            cause: error,
+        });
     }
 };
 

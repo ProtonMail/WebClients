@@ -5,8 +5,8 @@ import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@prot
 import { defaultLongExpiry } from '@proton/redux-utilities/fetchedAt';
 import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
 import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
-import type { DecryptedKey } from '@proton/shared/lib/interfaces';
-import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
+import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys/getDecryptedUserKeys';
 import { getInactiveKeys } from '@proton/shared/lib/keys/getInactiveKeys';
 
 import { signoutAction } from '../authenticationService';

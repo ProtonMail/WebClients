@@ -5,7 +5,7 @@ import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@prot
 import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
 import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { queryAvailableDomains, queryPremiumDomains } from '@proton/shared/lib/api/domains';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 const name = 'protonDomains' as const;
 

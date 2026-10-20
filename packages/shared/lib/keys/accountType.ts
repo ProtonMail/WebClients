@@ -1,7 +1,7 @@
 import { PRODUCT_BIT } from '../constants';
 import { hasBit } from '../helpers/bitset';
-import type { User as tsUser } from '../interfaces';
-import { UserType } from '../interfaces';
+import type { User as tsUser } from '../interfaces/User';
+import { UserType } from '../interfaces/User';
 import { isAdmin, isPrivate, isSelf } from '../user/helpers';
 
 export const getRequiresMailKeySetup = (user: tsUser | undefined) => {

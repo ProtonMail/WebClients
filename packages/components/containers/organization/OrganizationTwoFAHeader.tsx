@@ -2,7 +2,7 @@ import { c, msgid } from 'ttag';
 
 import { useMembers } from '@proton/account/members/hooks';
 import { Card } from '@proton/atoms/Card/Card';
-import type { Organization } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 
 import Loader from '../../components/loader/Loader';

@@ -1,4 +1,5 @@
-import type { Address, AddressKey, DecryptedKey } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { AddressKey, DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 
 import { exposePassCrypto } from '../..';
 import type {

@@ -7,7 +7,8 @@ import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@prot
 import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
 import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { getReferralsStatus } from '@proton/shared/lib/api/core/referrals';
-import type { Api, Referral, ReferralStatus } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { Referral, ReferralStatus } from '@proton/shared/lib/interfaces/Referrals';
 
 import fetchAllReferralsByOffset from './helpers/fetchAllReferralsByOffset';
 import { getDeduplicatedReferrals } from './helpers/getDeduplicatedReferrals';

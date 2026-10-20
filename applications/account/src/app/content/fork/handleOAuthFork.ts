@@ -1,12 +1,12 @@
 import type { OAuthClientInfo } from '@proton/shared/lib/api/oauth';
 import { getOAuthClientInfo } from '@proton/shared/lib/api/oauth';
-import { getEmailSessionForkSearchParameter } from '@proton/shared/lib/authentication/fork';
+import { getEmailSessionForkSearchParameter } from '@proton/shared/lib/authentication/fork/validation';
 import {
     GetActiveSessionType,
     type GetActiveSessionsResult,
     getActiveSessions,
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import { type OAuthData, type OAuthForkData, SSOType } from '../actions/forkInterface';
 import { getProduceForkLoginResult } from '../actions/getProduceForkLoginResult';

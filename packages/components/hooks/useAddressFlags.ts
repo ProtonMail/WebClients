@@ -6,7 +6,8 @@ import { setAddressFlags } from '@proton/account/addressKeys/actions';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { getAddressFlagsData } from '@proton/shared/lib/helpers/address';
-import type { Address, UserModel } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import useErrorHandler from './useErrorHandler';
 

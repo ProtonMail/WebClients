@@ -36,13 +36,13 @@ import {
 } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { hasNoOrgPermissions } from '@proton/shared/lib/helpers/orgPermissions';
-import { UserType } from '@proton/shared/lib/interfaces';
+import { UserType } from '@proton/shared/lib/interfaces/User';
 import {
     getIsBYOEAccount,
     getIsExternalAccount,
     getIsGlobalSSOAccount,
     getIsSSOVPNOnlyAccount,
-} from '@proton/shared/lib/keys';
+} from '@proton/shared/lib/keys/accountType';
 import { getOrganizationDenomination, isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
 import { isSubscriptionRenewEnabled } from '@proton/shared/lib/payments/subscription/helpers/renew';
 import { getHasStorageSplit } from '@proton/shared/lib/user/storage';

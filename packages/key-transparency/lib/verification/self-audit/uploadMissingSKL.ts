@@ -1,5 +1,5 @@
-import { getSignedKeyList } from '@proton/shared/lib/keys';
 import { getActiveAddressKeys, getNormalizedActiveAddressKeys } from '@proton/shared/lib/keys/getActiveKeys';
+import { getSignedKeyList } from '@proton/shared/lib/keys/signedKeyList';
 
 import { fetchProof, updateSignedKeyList } from '../../helpers/apiHelpers';
 import { KT_ERROR_TYPE, throwKTError } from '../../helpers/utils';

@@ -5,14 +5,11 @@ import type { Subscription } from '@proton/payments/core/subscription/interface'
  * specifies the keys we're consuming
  * in the extension sagas for now */
 import type { EventItemUpdate } from '@proton/shared/lib/helpers/updateCollection';
-import type {
-    Address,
-    GroupMember,
-    GroupMembershipReturn,
-    Organization,
-    User,
-    UserSettings,
-} from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { GroupMember, GroupMembershipReturn } from '@proton/shared/lib/interfaces/GroupMember';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
+import type { User } from '@proton/shared/lib/interfaces/User';
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import type { AuthDeviceOutput } from '@proton/shared/lib/keys/device';
 
 export enum EventActions {

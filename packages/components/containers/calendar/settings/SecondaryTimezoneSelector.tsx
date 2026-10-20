@@ -8,7 +8,7 @@ import { useLoading } from '@proton/hooks';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import type { AbbreviatedTimezone } from '@proton/shared/lib/date/timezone';
 import { getTimezone } from '@proton/shared/lib/date/timezone';
-import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar/Calendar';
 
 import type { DropdownSizeUnit, Unit } from '../../../components/dropdown/utils';
 import { TimeZoneSelector } from '../../../components/timezoneSelector/TimeZoneSelector';

@@ -37,8 +37,8 @@ jest.mock('../reset/resetPasswordTelemetry', () => ({
 jest.mock('../locales', () => jest.requireActual('../locales'));
 
 // The phrase's checksum isn't what these tests are about
-jest.mock('@proton/shared/lib/mnemonic', () => ({
-    ...jest.requireActual('@proton/shared/lib/mnemonic'),
+jest.mock('@proton/shared/lib/mnemonic/bip39Wrapper', () => ({
+    ...jest.requireActual('@proton/shared/lib/mnemonic/bip39Wrapper'),
     validateMnemonic: () => Promise.resolve(true),
 }));
 

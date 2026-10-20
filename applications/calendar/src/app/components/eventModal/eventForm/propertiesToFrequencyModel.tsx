@@ -7,7 +7,7 @@ import {
     getWeeklyDays,
 } from '@proton/shared/lib/calendar/recurrence/rruleProperties';
 import { fromUTCDate, toLocalDate } from '@proton/shared/lib/date/timezone';
-import type { DateTimeModel, FrequencyModel } from '@proton/shared/lib/interfaces/calendar';
+import type { DateTimeModel, FrequencyModel } from '@proton/shared/lib/interfaces/calendar/Event';
 import type { VcalRruleFreqValue, VcalRruleProperty } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import unique from '@proton/utils/unique';
 

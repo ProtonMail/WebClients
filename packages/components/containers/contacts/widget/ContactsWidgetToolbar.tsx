@@ -13,7 +13,7 @@ import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { IcUsersMerge } from '@proton/icons/icons/IcUsersMerge';
-import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import isTruthy from '@proton/utils/isTruthy';
 
 import Dropdown from '../../../components/dropdown/Dropdown';

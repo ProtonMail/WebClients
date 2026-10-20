@@ -9,7 +9,7 @@ import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateOrganizationSettings } from '@proton/shared/lib/api/organization';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import type { OrganizationSettings } from '@proton/shared/lib/interfaces';
+import type { OrganizationSettings } from '@proton/shared/lib/interfaces/Organization';
 
 import { PermissionTooltip } from '../../../components/orgPermissions/index';
 import Toggle from '../../../components/toggle/Toggle';

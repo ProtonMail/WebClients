@@ -3,8 +3,9 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { TelemetryReport } from '@proton/shared/lib/api/telemetry';
 import { TelemetryKeyTransparencyErrorEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendMultipleTelemetryReports } from '@proton/shared/lib/helpers/metrics';
-import type { Api, SimpleMap } from '@proton/shared/lib/interfaces';
-import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 import { KT_ERROR_TYPE, ktSentryReport } from '../helpers/utils';
 import { AddressAuditStatus, type SelfAuditResult } from '../interfaces';

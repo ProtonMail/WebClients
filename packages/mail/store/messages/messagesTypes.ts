@@ -5,10 +5,15 @@ import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto
 import type { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import type { Preparation } from '@proton/mail-renderer/helpers/transforms/transforms';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
-import type { Api, KeyTransparencyVerificationResult, RequireSome, SimpleMap } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { KeyTransparencyVerificationResult } from '@proton/shared/lib/interfaces/KeyTransparency';
 import type { VerificationPreferences } from '@proton/shared/lib/interfaces/VerificationPreferences';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
-import type { PrimaryAddressKeyForEncryption, PrimaryAddressKeysForSigning } from '@proton/shared/lib/keys';
+import type { RequireSome, SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import type {
+    PrimaryAddressKeyForEncryption,
+    PrimaryAddressKeysForSigning,
+} from '@proton/shared/lib/keys/getPrimaryKey';
 import type { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 

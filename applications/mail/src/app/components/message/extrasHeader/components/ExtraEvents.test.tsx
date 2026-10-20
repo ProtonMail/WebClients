@@ -19,13 +19,10 @@ import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
 import { ACCENT_COLORS } from '@proton/shared/lib/colors';
 import { ADDRESS_STATUS, API_CODES, APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
-import { SETTINGS_WEEK_START } from '@proton/shared/lib/interfaces';
-import type {
-    CalendarUserSettings,
-    CalendarWithOwnMembers,
-    VcalVeventComponent,
-} from '@proton/shared/lib/interfaces/calendar';
-import { CalendarKeyFlags } from '@proton/shared/lib/interfaces/calendar';
+import { SETTINGS_WEEK_START } from '@proton/shared/lib/interfaces/UserSettings';
+import type { CalendarUserSettings, CalendarWithOwnMembers } from '@proton/shared/lib/interfaces/calendar/Calendar';
+import { CalendarKeyFlags } from '@proton/shared/lib/interfaces/calendar/CalendarKey';
+import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import { encryptAttachment } from '@proton/shared/lib/mail/send/attachments';
 
 import * as inviteApi from '../../../../helpers/calendar/inviteApi';

@@ -1,5 +1,5 @@
 import { queryVerificationCode } from '@proton/shared/lib/api/user';
-import type { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
+import type { HumanVerificationMethodType } from '@proton/shared/lib/interfaces/HumanVerification';
 
 import type { VerificationModel } from './interface';
 

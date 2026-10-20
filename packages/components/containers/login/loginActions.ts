@@ -19,8 +19,10 @@ import { handleUnlockKey } from '@proton/shared/lib/authentication/unlockKey';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import type { Api, KeySalt as tsKeySalt, User as tsUser } from '@proton/shared/lib/interfaces';
-import { getRequiresPasswordSetup } from '@proton/shared/lib/keys';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { KeySalt as tsKeySalt } from '@proton/shared/lib/interfaces/KeySalt';
+import type { User as tsUser } from '@proton/shared/lib/interfaces/User';
+import { getRequiresPasswordSetup } from '@proton/shared/lib/keys/accountType';
 import { handleSetupAddressKeys } from '@proton/shared/lib/keys/setupAddressKeys';
 import { srpVerify } from '@proton/shared/lib/srp';
 

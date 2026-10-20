@@ -3,7 +3,8 @@ import { c, msgid } from 'ttag';
 import { IcBrandProtonVpn } from '@proton/icons/icons/IcBrandProtonVpn';
 import { IcFilingCabinet } from '@proton/icons/icons/IcFilingCabinet';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import type { Member, Organization } from '@proton/shared/lib/interfaces';
+import type { Member } from '@proton/shared/lib/interfaces/Member';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 
 interface Props {
     member: Member;

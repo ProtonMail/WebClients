@@ -5,7 +5,7 @@ import loudRejection from 'loud-rejection';
 
 import { MESSAGE_IFRAME_ROOT_ID } from '@proton/mail-renderer/constants';
 import type { MessageState, PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import noop from '@proton/utils/noop';
 

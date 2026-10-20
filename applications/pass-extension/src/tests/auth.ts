@@ -11,7 +11,7 @@ import { createMemoryStore } from '@proton/pass/utils/store';
 import { TEST_API_URL } from '@proton/pass/utils/tests/backend';
 import type { TestPersistedSession } from '@proton/pass/utils/tests/fixtures/session';
 import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
-import type { ProtonConfig } from '@proton/shared/lib/interfaces';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 import noop from '@proton/utils/noop';
 
 import { clearBrowserMocks } from '../__mocks__/webextension-polyfill';

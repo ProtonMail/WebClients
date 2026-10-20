@@ -3,7 +3,7 @@ import { nextFriday, nextMonday, nextSaturday, nextSunday, nextThursday, nextTue
 
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { SETTINGS_WEEK_START } from '@proton/shared/lib/interfaces';
+import { SETTINGS_WEEK_START } from '@proton/shared/lib/interfaces/UserSettings';
 
 import SnoozeDurationSelection from './SnoozeDurationSelection';
 

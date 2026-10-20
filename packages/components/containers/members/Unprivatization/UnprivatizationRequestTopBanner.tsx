@@ -7,7 +7,7 @@ import { getPendingUnprivatizationRequest } from '@proton/account/member/actions
 import type { ParsedUnprivatizationData } from '@proton/account/members/unprivatization';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import type { Member } from '@proton/shared/lib/interfaces';
+import type { Member } from '@proton/shared/lib/interfaces/Member';
 import noop from '@proton/utils/noop';
 
 import useModalState from '../../../components/modalTwo/useModalState';

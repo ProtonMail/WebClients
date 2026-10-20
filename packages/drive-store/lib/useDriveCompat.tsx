@@ -5,7 +5,7 @@ import type { PublicKeyReference, SessionKey } from '@protontech/crypto';
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useAuthentication } from '@proton/components';
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
-import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces';
+import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces/Key';
 
 import { useMoveToFolderModal } from '../components/modals/MoveToFolderModal/MoveToFolderModal';
 import useDriveCrypto from '../store/_crypto/useDriveCrypto';

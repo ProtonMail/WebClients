@@ -12,7 +12,7 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { Slider, SliderSizeEnum } from '@proton/atoms/Slider/Slider';
 import type { ModalStateProps } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
-import type { Address } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
 import walletClockDark from '@proton/styles/assets/img/wallet/wallet-clock-dark.jpg';
 import walletClock from '@proton/styles/assets/img/wallet/wallet-clock.jpg';
 import clsx from '@proton/utils/clsx';

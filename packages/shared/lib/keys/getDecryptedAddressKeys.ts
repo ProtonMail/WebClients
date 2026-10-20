@@ -2,7 +2,8 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import { captureMessage } from '../helpers/sentry';
-import type { DecryptedAddressKey, KeyPair, User, AddressKey as tsAddressKey } from '../interfaces';
+import type { DecryptedAddressKey, KeyPair, AddressKey as tsAddressKey } from '../interfaces/Key';
+import type { User } from '../interfaces/User';
 import { getAddressKeyPassword, getDecryptedAddressKey } from './addressKeys';
 import { getDecryptedOrganizationKey } from './getDecryptedOrganizationKey';
 import { splitKeys } from './keys';

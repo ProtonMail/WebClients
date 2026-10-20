@@ -18,7 +18,7 @@ import {
     getIsCalendarMemberEventManagerDelete,
     getIsCalendarMemberEventManagerUpdate,
 } from '@proton/shared/lib/eventManager/calendar/helpers';
-import type { CalendarBootstrap } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarBootstrap } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import type { CalendarMemberEventManager } from '@proton/shared/lib/interfaces/calendar/EventManager';
 
 import { calendarServerEvent } from '../calendarServerEvent';

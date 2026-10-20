@@ -1,6 +1,7 @@
 import { APPS } from '../../lib/constants';
 import { getChecklistTypeFromID, getMailChecklistType } from '../../lib/helpers/checklist';
-import { ChecklistType, type UserSettings } from '../../lib/interfaces';
+import { ChecklistType } from '../../lib/interfaces/Checklist';
+import type { UserSettings } from '../../lib/interfaces/UserSettings';
 
 describe('Checklist helpers', () => {
     describe('getChecklistTypeFromID', () => {

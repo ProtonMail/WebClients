@@ -5,17 +5,13 @@ import noop from '@proton/utils/noop';
 import { createUserKeyRoute, replaceAddressTokens } from '../../api/keys';
 import { activatePasswordlessKey } from '../../api/members';
 import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '../../constants';
-import type {
-    Address,
-    Api,
-    CachedOrganizationKey,
-    DecryptedAddressKey,
-    DecryptedKey,
-    KeyGenConfig,
-    KeyGenConfigV6,
-    KeyTransparencyVerify,
-    UserModel,
-} from '../../interfaces';
+import type { Address } from '../../interfaces/Address';
+import type { Api } from '../../interfaces/Api';
+import type { DecryptedAddressKey, DecryptedKey } from '../../interfaces/Key';
+import type { KeyGenConfig, KeyGenConfigV6 } from '../../interfaces/KeyGenConfig';
+import type { KeyTransparencyVerify } from '../../interfaces/KeyTransparency';
+import type { CachedOrganizationKey } from '../../interfaces/OrganizationKey';
+import type { UserModel } from '../../interfaces/User';
 import { storeDeviceRecovery } from '../../recoveryFile/deviceRecovery';
 import { getReplacedAddressKeyTokens } from '../addressKeys';
 import { getActiveAddressKeys } from '../getActiveKeys';

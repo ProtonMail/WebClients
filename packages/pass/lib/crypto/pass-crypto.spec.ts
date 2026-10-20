@@ -1,7 +1,8 @@
 import { CryptoProxy } from '@protontech/crypto';
 
 import { ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS } from '@proton/shared/lib/constants';
-import type { DecryptedKey, Key, User } from '@proton/shared/lib/interfaces';
+import type { DecryptedKey, Key } from '@proton/shared/lib/interfaces/Key';
+import type { User } from '@proton/shared/lib/interfaces/User';
 
 import type { ItemRevisionContentsResponse, ShareGetResponse, ShareKeyResponse } from '../../types';
 import { ContentFormatVersion, ItemState, PassEncryptionTag, ShareRole, ShareType } from '../../types';

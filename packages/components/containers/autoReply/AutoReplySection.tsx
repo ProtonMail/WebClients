@@ -21,7 +21,7 @@ import {
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 
 import Editor from '../../components/editor/Editor';
 import { useToolbar } from '../../components/editor/hooks/useToolbar';

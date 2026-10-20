@@ -4,7 +4,7 @@ import type { NodeEntity } from '@proton/drive'
 import { getDrive } from '@proton/drive'
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks'
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
-import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts'
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useRouteMatch } from 'react-router'
 import { HOMEPAGE_TRASH_PATH } from '../../../__utils/homepage-paths'
@@ -32,7 +32,7 @@ import { getEventSubscriber } from '~/drive-sdk/event-subscriber'
 import { getCoreEventSubscriber } from '~/drive-sdk/core-event-subscriber'
 import { traceRecentsError } from './traceRecentsError'
 import { useAddresses } from '@proton/account/addresses/hooks'
-import type { Address } from '@proton/shared/lib/interfaces'
+import type { Address } from '@proton/shared/lib/interfaces/Address'
 
 export function HomepageViewProviderSDK({ children }: HomepageViewProviderProps) {
   const drive = getDrive()

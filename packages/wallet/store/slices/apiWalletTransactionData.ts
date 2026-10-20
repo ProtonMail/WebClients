@@ -7,7 +7,7 @@ import { dispatchGetAllAddressesKeys, userKeysThunk } from '@proton/account';
 import { createAsyncModelThunk, handleAsyncModel } from '@proton/redux-utilities/creator';
 import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
 import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
-import type { SimpleMap } from '@proton/shared/lib/interfaces';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import isTruthy from '@proton/utils/isTruthy';
 
 import type {

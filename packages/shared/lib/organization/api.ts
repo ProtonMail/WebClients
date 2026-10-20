@@ -3,7 +3,8 @@ import {
     getOrganizationSettings as getOrganizationSettingsConfig,
 } from '../api/organization';
 import { INVOICE_EMAIL_STATE } from '../constants';
-import type { Api, Organization, OrganizationExtended, OrganizationSettings } from '../interfaces';
+import type { Api } from '../interfaces/Api';
+import type { Organization, OrganizationExtended, OrganizationSettings } from '../interfaces/Organization';
 
 export const getOrganization = ({ api }: { api: Api }) => {
     return api<{

@@ -1,6 +1,6 @@
 import { ADDRESS_FLAGS } from '../../lib/constants';
 import { getIsBYOEOnlyAccount } from '../../lib/helpers/address';
-import type { Address } from '../../lib/interfaces';
+import type { Address } from '../../lib/interfaces/Address';
 
 const BYOEAddress = {
     ID: 'byoe-address',

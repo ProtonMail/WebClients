@@ -1,5 +1,5 @@
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import type {
     DownloadCallbacks,

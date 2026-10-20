@@ -7,7 +7,7 @@ import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateAIAssistant } from '@proton/shared/lib/api/settings';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { AI_ASSISTANT_ACCESS, type UserSettings } from '@proton/shared/lib/interfaces';
+import { AI_ASSISTANT_ACCESS, type UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 
 import RadioGroup from '../../../components/input/RadioGroup';
 import Info from '../../../components/link/Info';

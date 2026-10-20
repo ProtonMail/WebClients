@@ -1,7 +1,7 @@
 import * as Comlink from 'comlink';
 
 import type { NormalizedSearchParams } from '@proton/encrypted-search/models';
-import type { DecryptedKey } from '@proton/shared/lib/interfaces';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 
 import { getIndexKey } from '../crypto/indexKey';
 import type { DatabaseLock } from '../db/DatabaseLock';

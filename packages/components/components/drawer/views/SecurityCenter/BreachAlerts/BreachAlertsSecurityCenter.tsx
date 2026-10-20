@@ -22,7 +22,7 @@ import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { enableBreachAlert } from '@proton/shared/lib/api/settings';
 import { APP_UPSELL_REF_PATH, DARK_WEB_MONITORING_NAME, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { DARK_WEB_MONITORING_STATE } from '@proton/shared/lib/interfaces';
+import { DARK_WEB_MONITORING_STATE } from '@proton/shared/lib/interfaces/UserSettings';
 import ProtonSentinelPlusLogo from '@proton/styles/assets/img/illustrations/sentinel-shield-bolt-breach-alert.svg';
 import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';

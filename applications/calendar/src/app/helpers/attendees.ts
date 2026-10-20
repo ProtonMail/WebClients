@@ -4,8 +4,9 @@ import { apiNotificationsToModel } from '@proton/shared/lib/calendar/alarms/noti
 import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { canonicalizeEmail, canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import { getInitials } from '@proton/shared/lib/helpers/string';
-import type { CalendarSettings, EventModel } from '@proton/shared/lib/interfaces/calendar';
-import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { CalendarSettings } from '@proton/shared/lib/interfaces/calendar/Calendar';
+import type { EventModel } from '@proton/shared/lib/interfaces/calendar/Event';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { RequireOnly, SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 import type { DisplayNameEmail } from '../containers/calendar/interface';

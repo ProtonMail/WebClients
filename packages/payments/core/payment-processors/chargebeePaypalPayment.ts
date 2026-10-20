@@ -3,7 +3,7 @@ import {
     chargebeeValidationErrorName,
     isMessageBusResponseFailure,
 } from '@proton/chargebee/lib/types';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import noop from '@proton/utils/noop';
 
 import { getTokenStatusV5 } from '../api/api';

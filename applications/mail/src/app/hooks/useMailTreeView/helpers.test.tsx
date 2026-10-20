@@ -1,4 +1,5 @@
-import type { FolderWithSubFolders, MailSettings } from '@proton/shared/lib/interfaces';
+import type { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { FOLDER_COLOR, INHERIT_PARENT_FOLDER_COLOR } from '@proton/shared/lib/mail/mailSettings';
 
 import { getParentFolderColor } from './helpers';

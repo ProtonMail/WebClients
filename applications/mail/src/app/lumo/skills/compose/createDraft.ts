@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
 import type { PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
-import type { Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 
 import { selectParams } from '../../../store/elements/elementsSelectors';
 import { DraftKind, MESSAGE_ACTION_FOR } from '../../helpers/draftKind';

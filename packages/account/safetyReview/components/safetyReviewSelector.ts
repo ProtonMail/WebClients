@@ -1,6 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
+import { getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys/accountType';
 
 import { selectUser } from '../../user';
 import { selectUserSettings } from '../../userSettings';

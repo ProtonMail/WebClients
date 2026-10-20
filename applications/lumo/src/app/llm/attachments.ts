@@ -1,13 +1,12 @@
 import partition from 'lodash/partition';
 
-import type { User } from '@proton/shared/lib/interfaces';
+import type { User } from '@proton/shared/lib/interfaces/User';
 
 import type { AesGcmCryptoKey } from '../crypto/types';
 import { DbApi } from '../indexedDb/db';
 import type { AttachmentMap } from '../redux/slices/core/attachments';
-import { SearchService } from '../services/search/searchService';
 import { deserializeAttachment } from '../serialization';
-import { refreshAttachmentFromSearchIndex } from '../util/resolveProjectFiles';
+import { SearchService } from '../services/search/searchService';
 import {
     type Attachment,
     type AttachmentId,
@@ -15,6 +14,7 @@ import {
     type ShallowAttachment,
     isShallowAttachment,
 } from '../types';
+import { refreshAttachmentFromSearchIndex } from '../util/resolveProjectFiles';
 import { collapseCompactedChain } from './compaction/collapse';
 
 // Maximum number of images sent to the backend per request. When a conversation

@@ -1,6 +1,6 @@
 import { isGuestBackgroundNamespace } from '@proton/meet/utils/customBackgrounds';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import type { DecryptedKey } from '@proton/shared/lib/interfaces';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 
 import type { BackgroundRecord, CachedBackground } from '../types';
 import { BackgroundCacheDb } from './backgroundCacheDb';

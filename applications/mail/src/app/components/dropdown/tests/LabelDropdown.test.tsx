@@ -4,7 +4,7 @@ import { getModelState } from '@proton/account/tests';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { ACCENT_COLORS } from '@proton/shared/lib/colors';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { Label } from '@proton/shared/lib/interfaces';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { addApiMock } from '../../../helpers/tests/api';

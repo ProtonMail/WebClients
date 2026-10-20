@@ -12,7 +12,7 @@ import { IcPenSparks } from '@proton/icons/icons/IcPenSparks';
 import { IcShield } from '@proton/icons/icons/IcShield';
 import { IcSliders } from '@proton/icons/icons/IcSliders';
 import { BRAND_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-import { Audience } from '@proton/shared/lib/interfaces';
+import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { getStandaloneUnleashClient } from '@proton/unleash/standaloneClient';
 

@@ -9,7 +9,7 @@ import { TelemetryCalendarEvents, TelemetryMeasurementGroups } from '@proton/sha
 import type { AbbreviatedTimezone } from '@proton/shared/lib/date/timezone';
 import { getAbbreviatedTimezoneName, getTimeZoneOptions, getTimezoneAndOffset } from '@proton/shared/lib/date/timezone';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import type { SimpleMap } from '@proton/shared/lib/interfaces';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 import type { Unit } from '../dropdown/utils';
 import { DropdownSizeUnit } from '../dropdown/utils';

@@ -1,4 +1,4 @@
-import type { MNEMONIC_STATUS } from '../interfaces';
+import type { MNEMONIC_STATUS } from '../interfaces/User';
 
 export interface MnemonicKeyResponse {
     ID: string;

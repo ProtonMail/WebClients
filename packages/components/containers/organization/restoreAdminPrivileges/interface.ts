@@ -1,4 +1,4 @@
-import type { Member } from '@proton/shared/lib/interfaces';
+import type { Member } from '@proton/shared/lib/interfaces/Member';
 
 export type RestoreAdminPrivilegesStep =
     /** Attempt a data recovery method, which restores access to the organization key on its own. */

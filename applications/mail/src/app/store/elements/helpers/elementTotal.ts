@@ -1,6 +1,6 @@
 import { isCategoryLabel } from '@proton/mail/helpers/location';
 import { type CategoryLabelID, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { LabelCount } from '@proton/shared/lib/interfaces';
+import type { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import type { Filter } from '@proton/shared/lib/mail/search';
 
 interface GetTotalArgs {

@@ -5,19 +5,15 @@ import noop from '@proton/utils/noop';
 
 import { createGroupAddressKeyRoute, getAllPublicKeys } from '../api/keys';
 import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '../constants';
-import type {
-    Address,
-    Api,
-    ApiKeysConfig,
-    CachedOrganizationKey,
-    DecryptedAddressKey,
-    GetAllPublicKeysResponse,
-    Group,
-    Key,
-    KeyGenConfig,
-    KeyTransparencyVerify,
-    RequireSome,
-} from '../interfaces';
+import type { Address } from '../interfaces/Address';
+import type { Api } from '../interfaces/Api';
+import type { ApiKeysConfig, GetAllPublicKeysResponse } from '../interfaces/EncryptionPreferences';
+import type { Group } from '../interfaces/Group';
+import type { DecryptedAddressKey, Key } from '../interfaces/Key';
+import type { KeyGenConfig } from '../interfaces/KeyGenConfig';
+import type { KeyTransparencyVerify } from '../interfaces/KeyTransparency';
+import type { CachedOrganizationKey } from '../interfaces/OrganizationKey';
+import type { RequireSome } from '../interfaces/utils';
 import {
     decryptAddressKeyUsingOrgKeyToken,
     generateAddressKey,

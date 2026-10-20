@@ -21,9 +21,9 @@ import {
     getVCardProperties,
 } from '@proton/shared/lib/contacts/properties';
 import { EXACTLY_ONE_MAY_BE_PRESENT, PROPERTIES } from '@proton/shared/lib/contacts/vcard';
-import type { SimpleMap } from '@proton/shared/lib/interfaces';
-import type { ContactEmailModel } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactEmailModel } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import isTruthy from '@proton/utils/isTruthy';
 import move from '@proton/utils/move';
 

@@ -12,22 +12,21 @@ import useAssistantSubscriptionStatus from '@proton/components/hooks/assistant/u
 import { ASSISTANT_SERVER_THROTTLE_TIMEOUT, getHasAssistantStatus, useAssistant } from '@proton/llm/lib';
 import { OpenedAssistantStatus } from '@proton/llm/lib/types';
 import { removeLineBreaks } from '@proton/mail/helpers/string';
-import { ERROR_TYPE } from '@proton/shared/lib/assistant';
+import { ERROR_TYPE } from '@proton/shared/lib/assistant/types';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import type { Recipient } from '@proton/shared/lib/interfaces';
-import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
+import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces/UserSettings';
 import clsx from '@proton/utils/clsx';
 
-import ComposerAssistantExpanded from './ComposerAssistantExpanded';
-import ResumeDownloadingModal from './modals/ResumeDownloadingModal';
-import ComposerAssistantToolbar from './toolbar/ComposerAssistantToolbar';
 import type { ComposerReturnType } from '../../helpers/composer/contentFromComposerMessage';
 import useComposerAssistantGenerate from '../../hooks/assistant/useComposerAssistantGenerate';
 import useComposerAssistantScrollButton from '../../hooks/assistant/useComposerAssistantScrollButton';
 import useComposerAssistantSelectedText from '../../hooks/assistant/useComposerAssistantSelectedText';
 import { ComposerInnerModalStates } from '../../hooks/composer/useComposerInnerModals';
-
+import ComposerAssistantExpanded from './ComposerAssistantExpanded';
+import ResumeDownloadingModal from './modals/ResumeDownloadingModal';
 import { useComposerAssistantProvider } from './provider/ComposerAssistantProvider';
+import ComposerAssistantToolbar from './toolbar/ComposerAssistantToolbar';
 
 import './ComposerAssistant.scss';
 

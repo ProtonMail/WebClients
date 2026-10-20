@@ -4,7 +4,8 @@ import type { Draft } from 'immer';
 import { isCategoryLabel } from '@proton/mail/helpers/location';
 import type { MessagesState } from '@proton/mail/store/messages/messagesTypes';
 import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
-import type { Folder, Label } from '@proton/shared/lib/interfaces';
+import type { Folder } from '@proton/shared/lib/interfaces/Folder';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
 import type { Message, MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { isDraft } from '@proton/shared/lib/mail/messages';
 

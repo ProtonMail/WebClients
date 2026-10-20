@@ -1,7 +1,7 @@
 import generateUID from '@proton/utils/generateUID';
 
-import type { Nullable } from '../../interfaces';
-import type { CalendarNotificationSettings, CalendarSettings } from '../../interfaces/calendar';
+import type { CalendarNotificationSettings, CalendarSettings } from '../../interfaces/calendar/Calendar';
+import type { Nullable } from '../../interfaces/utils';
 import { filterFutureNotifications } from '../alarms';
 import { fromTriggerString } from '../vcal';
 import { triggerToModel } from './notificationModel';

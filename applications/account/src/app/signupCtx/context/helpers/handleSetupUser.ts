@@ -18,8 +18,12 @@ import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { localeCode } from '@proton/shared/lib/i18n';
-import type { Api, KeyTransparencyActivation, ReferralData, User } from '@proton/shared/lib/interfaces';
-import { getDecryptedUserKeysHelper, handleSetupKeys } from '@proton/shared/lib/keys';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
+import type { User } from '@proton/shared/lib/interfaces/User';
+import type { ReferralData } from '@proton/shared/lib/interfaces/referral';
+import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys/getDecryptedUserKeys';
+import { handleSetupKeys } from '@proton/shared/lib/keys/setupKeys';
 import { srpAuth } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 

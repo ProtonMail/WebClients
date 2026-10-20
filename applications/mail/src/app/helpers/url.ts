@@ -1,7 +1,7 @@
 import type { PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
 import { unescapeFromString } from '@proton/sanitize/escape';
 import { protonizer, sanitizeString } from '@proton/sanitize/purify';
-import type { Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { MAILTO_PROTOCOL_HANDLER_PATH } from '../constants';

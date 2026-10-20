@@ -1,12 +1,10 @@
 import { serverTime } from '@protontech/crypto';
-import type {
-    Address,
-    DecryptedKey,
-    PreAuthKTVerifier,
-    PreAuthKTVerify,
-    SignedKeyList,
-} from '@proton/shared/lib/interfaces';
-import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
+
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
+import type { PreAuthKTVerifier, PreAuthKTVerify } from '@proton/shared/lib/interfaces/KeyTransparency';
+import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
+import type { SignedKeyList } from '@proton/shared/lib/interfaces/SignedKeyList';
 
 import { fetchSignedKeyLists } from '../helpers/apiHelpers';
 import { KT_ERROR_TYPE, ktSentryReport, ktSentryReportError } from '../helpers/utils';

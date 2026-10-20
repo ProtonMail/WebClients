@@ -3,8 +3,8 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { canonicalizeInternalEmail, getEmailParts, validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import type { Address } from '@proton/shared/lib/interfaces';
-import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import { contactToInput } from '@proton/shared/lib/mail/recipient';
 
 import ContactEmailInputAutocomplete, {

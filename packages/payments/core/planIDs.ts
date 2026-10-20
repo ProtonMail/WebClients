@@ -1,4 +1,5 @@
-import type { EitherOr, Organization } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
+import type { EitherOr } from '@proton/shared/lib/interfaces/utils';
 
 import { ALL_ADDON_PREFIXES, getAddonConfigByName, getTransferOrder } from './addon/addons';
 import type { AddonTransferStrategy } from './addon/interfaces';

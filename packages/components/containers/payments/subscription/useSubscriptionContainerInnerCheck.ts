@@ -27,7 +27,7 @@ import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers
 import { getApiErrorMessage, getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import type { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { forceAddonsMinMaxConstraints } from '../planCustomizer/helpers';

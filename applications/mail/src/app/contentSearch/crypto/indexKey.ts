@@ -3,7 +3,7 @@ import type { AesGcmCryptoKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { generateKey as generateAESKey, importKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import type { IDBPDatabase } from 'idb';
 
-import type { DecryptedKey } from '@proton/shared/lib/interfaces';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 
 import type { Database } from '../db/schema';
 
@@ -80,7 +80,10 @@ async function readKey(db: IDBPDatabase<Database>, userKeys: DecryptedKey[]): Pr
     return decryptAndImportKey(keyString, userKeys);
 }
 
-export async function getOrGenerateIndexKey(db: IDBPDatabase<Database>, userKeys: DecryptedKey[]): Promise<AesGcmCryptoKey> {
+export async function getOrGenerateIndexKey(
+    db: IDBPDatabase<Database>,
+    userKeys: DecryptedKey[]
+): Promise<AesGcmCryptoKey> {
     let key = await readKey(db, userKeys);
     if (!key) {
         key = await generateKey(db, userKeys);

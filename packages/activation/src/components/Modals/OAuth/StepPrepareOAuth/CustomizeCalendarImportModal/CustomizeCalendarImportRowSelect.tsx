@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { LabelStack, Option, SelectTwo } from '@proton/components';
-import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import clsx from '@proton/utils/clsx';
 
 import { CALENDAR_TO_BE_CREATED_PREFIX } from '../../../../../constants';

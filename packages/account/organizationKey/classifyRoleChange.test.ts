@@ -1,6 +1,6 @@
 import { MEMBER_ROLE } from '@proton/shared/lib/constants';
-import type { EnhancedMember } from '@proton/shared/lib/interfaces';
-import { MemberUnprivatizationState } from '@proton/shared/lib/interfaces';
+import type { EnhancedMember } from '@proton/shared/lib/interfaces/Member';
+import { MemberUnprivatizationState } from '@proton/shared/lib/interfaces/Member';
 
 import { classifyRoleChange, getIsMemberAdminOrPendingAdmin } from './classifyRoleChange';
 

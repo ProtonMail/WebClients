@@ -2,13 +2,10 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 
 import { assignMemberRoles } from '@proton/account';
 import { MEMBER_PRIVATE, MEMBER_ROLE } from '@proton/shared/lib/constants';
-import type {
-    CachedOrganizationKey,
-    EnhancedMember,
-    MemberUnprivatization,
-    Organization,
-} from '@proton/shared/lib/interfaces';
-import { MemberUnprivatizationState } from '@proton/shared/lib/interfaces';
+import type { EnhancedMember, MemberUnprivatization } from '@proton/shared/lib/interfaces/Member';
+import { MemberUnprivatizationState } from '@proton/shared/lib/interfaces/Member';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
+import type { CachedOrganizationKey } from '@proton/shared/lib/interfaces/OrganizationKey';
 import type { OrganizationRole, RoleAssignment } from '@proton/shared/lib/interfaces/OrganizationRole';
 import { PREDEFINED_ROLE_NAME, ROLE_SOURCE } from '@proton/shared/lib/interfaces/OrganizationRole';
 

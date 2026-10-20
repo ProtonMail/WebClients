@@ -9,7 +9,7 @@ import { IcDrawerDividers } from '@proton/icons/icons/IcDrawerDividers';
 import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateOrganizationSettings } from '@proton/shared/lib/api/organization';
-import type { OrganizationSettings } from '@proton/shared/lib/interfaces';
+import type { OrganizationSettings } from '@proton/shared/lib/interfaces/Organization';
 
 import { AccessToggle } from './AccessToggle';
 

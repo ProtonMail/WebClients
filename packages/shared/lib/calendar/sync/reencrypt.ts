@@ -1,8 +1,9 @@
 import type { SessionKey } from '@protontech/crypto';
 
 import { upgradeP2PInvite } from '../../api/calendars';
-import type { Api } from '../../interfaces';
-import type { CalendarEvent, DecryptedCalendarKey } from '../../interfaces/calendar';
+import type { Api } from '../../interfaces/Api';
+import type { DecryptedCalendarKey } from '../../interfaces/calendar/CalendarKey';
+import type { CalendarEvent } from '../../interfaces/calendar/Event';
 import { getEncryptedSessionKey } from '../crypto/encrypt';
 import { getPrimaryCalendarKey } from '../crypto/keys/helpers';
 

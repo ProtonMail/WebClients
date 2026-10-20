@@ -1,6 +1,6 @@
 import { getDateFnLocaleWithSettings } from '@proton/shared/lib/i18n/dateFnLocale'
 import { enGBLocale, enUSLocale } from '@proton/shared/lib/i18n/dateFnLocales'
-import { SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces'
+import { SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces/UserSettings'
 import { toDocsDateFormat } from './toDocsDateFormat'
 
 describe('toDocsDateFormat', () => {

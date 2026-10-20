@@ -12,8 +12,8 @@ import {
     set,
 } from 'date-fns';
 
-import type { UserSettings } from '@proton/shared/lib/interfaces';
-import { SETTINGS_WEEK_START } from '@proton/shared/lib/interfaces';
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
+import { SETTINGS_WEEK_START } from '@proton/shared/lib/interfaces/UserSettings';
 
 import { type BookingRange, BookingRangeError, DEFAULT_RANGE_START_HOUR } from '../../interface';
 import {

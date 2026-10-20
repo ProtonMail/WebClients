@@ -1,4 +1,4 @@
-import { KeyboardKey } from '../../lib/interfaces';
+import { KeyboardKey } from '../../lib/interfaces/Hotkeys';
 import { isValidShortcut } from '../../lib/shortcuts/helpers';
 
 describe('isValidShortcut - Validate keyboard shortcut', () => {

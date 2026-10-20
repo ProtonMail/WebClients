@@ -4,7 +4,7 @@ import type { PublicKeyReference } from '@protontech/crypto';
 import { fireEvent, render, screen } from '@testing-library/react';
 
 import type { MessageVerification } from '@proton/mail/store/messages/messagesTypes';
-import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 
 import { message } from '../../../../helpers/tests/pinKeys';
 import { tick } from '../../../../helpers/tests/render';

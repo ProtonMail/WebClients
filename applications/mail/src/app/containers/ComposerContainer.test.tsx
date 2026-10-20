@@ -7,7 +7,7 @@ import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
-import type { Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { FORWARDED_MESSAGE } from '@proton/shared/lib/mail/messages';
 

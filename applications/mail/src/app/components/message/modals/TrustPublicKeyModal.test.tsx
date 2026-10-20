@@ -2,7 +2,7 @@ import type { PublicKeyReference } from '@protontech/crypto';
 import { fireEvent, screen, waitFor } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/tests';
-import type { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts/Contact';
 
 import { addApiMock } from '../../../helpers/tests/api';
 import type { GeneratedKey } from '../../../helpers/tests/crypto';

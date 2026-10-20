@@ -1,4 +1,4 @@
-import type { User } from '@proton/shared/lib/interfaces';
+import type { User } from '@proton/shared/lib/interfaces/User';
 
 import { CollapsedTaxCountrySelector } from './CollapsedTaxCountrySelector';
 import { InlineTaxCountrySelector, type InlineTaxCountrySelectorProps } from './InlineTaxCountrySelector';

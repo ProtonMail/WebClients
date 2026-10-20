@@ -13,7 +13,8 @@ import { useUserKeys } from '@proton/account/userKeys/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { useOutgoingAddressForwardings } from '@proton/mail/store/forwarding/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { type Address, ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import { ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces/AddressForwarding';
 import { FlagAction } from '@proton/shared/lib/keys/getNewAddressKeyFlags';
 
 import Loader from '../../components/loader/Loader';

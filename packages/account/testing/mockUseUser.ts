@@ -1,4 +1,4 @@
-import type { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import * as useUserModule from '../user/hooks';
 import { buildUser } from './buildUser';

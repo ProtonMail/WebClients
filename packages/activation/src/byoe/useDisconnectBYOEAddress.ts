@@ -4,7 +4,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
-import type { Address } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
 import { tracker } from '@proton/telemetry-tracker/tracker';
 

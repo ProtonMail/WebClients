@@ -3,7 +3,7 @@ import type { Draft } from 'immer';
 
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 
 import { mailContactsInitialState } from './contactsInitialState';
 import type { ContactsMap, ContactsMapWithDuplicates, ContactsState, GroupsWithContactsMap } from './contactsTypes';

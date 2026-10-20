@@ -5,7 +5,7 @@ import { POSTED_INVOICE_BANNER_STORAGE_KEY, type PaymentsInitData } from '@proto
 import { getModelState } from '@proton/account/testing/getModelState';
 import { DAY } from '@proton/shared/lib/constants';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import type { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { addApiMock, apiMock, clearApiMocks } from '@proton/test-api/api';
 
 import { getStoreWrapper, renderWithProviders } from '../../testing/renderWithProviders';

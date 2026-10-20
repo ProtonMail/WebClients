@@ -17,7 +17,7 @@ import type {
 } from '@proton/mail/store/messages/messagesTypes';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { KT_VERIFICATION_STATUS, KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
+import { KT_VERIFICATION_STATUS, KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
 import type { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import { MAIL_VERIFICATION_STATUS, SIGNATURE_START } from '@proton/shared/lib/mail/constants';
 import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';

@@ -4,7 +4,7 @@ import { isPast } from 'date-fns';
 import { c } from 'ttag';
 
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
-import type { EnvironmentExtended } from '@proton/shared/lib/interfaces';
+import type { EnvironmentExtended } from '@proton/shared/lib/interfaces/Environment';
 import clsx from '@proton/utils/clsx';
 
 import { versionCookieAtLoad } from '../../helpers/versionCookie';

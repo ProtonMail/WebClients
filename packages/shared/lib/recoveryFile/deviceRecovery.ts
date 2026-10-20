@@ -8,17 +8,12 @@ import uniqueBy from '@proton/utils/uniqueBy';
 
 import { setNewRecoverySecret } from '../api/settingsRecovery';
 import type { AuthenticationStore } from '../authentication/createAuthenticationStore';
-import type {
-    Address,
-    Api,
-    DecryptedKey,
-    InactiveKey,
-    Key,
-    KeyPair,
-    PreAuthKTVerify,
-    User,
-    UserSettings,
-} from '../interfaces';
+import type { Address } from '../interfaces/Address';
+import type { Api } from '../interfaces/Api';
+import type { DecryptedKey, InactiveKey, Key, KeyPair } from '../interfaces/Key';
+import type { PreAuthKTVerify } from '../interfaces/KeyTransparency';
+import type { User } from '../interfaces/User';
+import type { UserSettings } from '../interfaces/UserSettings';
 import { getDecryptedAddressKeysHelper } from '../keys/getDecryptedAddressKeys';
 import { getDecryptedUserKeysHelper } from '../keys/getDecryptedUserKeys';
 import {

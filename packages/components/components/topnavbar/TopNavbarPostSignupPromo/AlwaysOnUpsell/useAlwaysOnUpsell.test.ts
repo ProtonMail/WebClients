@@ -2,7 +2,8 @@ import { renderHook } from '@testing-library/react';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
-import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { getIsUserEligible, useAlwaysOnUpsell } from './useAlwaysOnUpsell';

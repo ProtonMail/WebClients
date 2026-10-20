@@ -28,11 +28,8 @@ import { getTimezonedFrequencyString } from '@proton/shared/lib/calendar/recurre
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import type {
-    CalendarEventSharedData,
-    PartstatData,
-    VcalVeventComponent,
-} from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarEventSharedData, PartstatData } from '@proton/shared/lib/interfaces/calendar/Event';
+import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';

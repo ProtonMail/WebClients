@@ -1,4 +1,4 @@
-import { type ProtonConfig, getProtonConfig } from '@proton/shared/lib/interfaces'
+import { type ProtonConfig, getProtonConfig } from '@proton/shared/lib/interfaces/config'
 
 const getFromDom = (): Partial<ProtonConfig> => {
   const scriptTag = document.getElementById('configData')

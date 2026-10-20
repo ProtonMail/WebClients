@@ -1,4 +1,4 @@
-import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
 
 import { extractContentFromPtag, textToHtml } from './textToHtml';

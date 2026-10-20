@@ -1,4 +1,4 @@
-import type { DecryptedKey } from '@proton/shared/lib/interfaces';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
 
 import { PASSWORD_SEPARATOR, decryptMeetingPassword } from './cryptoUtils';

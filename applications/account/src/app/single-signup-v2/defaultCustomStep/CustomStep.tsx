@@ -10,7 +10,7 @@ import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { getLocalPart } from '@proton/shared/lib/keys';
+import { getLocalPart } from '@proton/shared/lib/keys/setupAddress';
 import onboardingFamilyPlan from '@proton/styles/assets/img/onboarding/familyPlan.svg';
 
 import type { SignupCacheResult } from '../../signup/interfaces';

@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 
 import { useApi } from '@proton/app-context/useApi';
 import type { MessageRemoteImage, MessageState } from '@proton/mail/store/messages/messagesTypes';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { EO_DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/eo/constants';
 

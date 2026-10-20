@@ -1,4 +1,5 @@
-import type { Api, User } from '../interfaces';
+import type { Api } from '../interfaces/Api';
+import type { User } from '../interfaces/User';
 import { isSelf } from '../user/helpers';
 import { SessionSource } from './SessionInterface';
 import type { AuthenticationStore } from './createAuthenticationStore';

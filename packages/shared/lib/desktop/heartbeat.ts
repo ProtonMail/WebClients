@@ -1,6 +1,6 @@
 import { differenceInDays, getUnixTime } from 'date-fns';
 
-import type { Api } from '../interfaces';
+import type { Api } from '../interfaces/Api';
 import type { IPCInboxHostUpdateListenerRemover } from './desktopTypes';
 import { addIPCHostUpdateListener, emptyListener, hasInboxDesktopFeature } from './ipcHelpers';
 import {

@@ -2,7 +2,9 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { getTestStore } from '@proton/redux-shared-store/test';
 import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
 import { ActionEventV6, type CoreEventV6Response } from '@proton/shared/lib/api/events';
-import type { Api, Domain, UserModel } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { Domain } from '@proton/shared/lib/interfaces/Domain';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import type { AuthDeviceOutput, MemberAuthDeviceOutput } from '@proton/shared/lib/keys/device';
 
 import type { CoreEventLoopV6RequiredState } from '../coreEventLoop/interface';

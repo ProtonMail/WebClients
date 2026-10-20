@@ -1,4 +1,4 @@
-import type { Organization } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 
 import { buildSubscription } from '../testing/buildSubscription';
 import { PLANS_MAP, getLongTestPlans } from '../testing/data-plans';

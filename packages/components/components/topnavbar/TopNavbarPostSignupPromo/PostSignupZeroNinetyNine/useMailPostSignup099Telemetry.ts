@@ -10,7 +10,7 @@ import {
     sendTelemetryData,
 } from '@proton/shared/lib/api/telemetry';
 import { getBaseTelemetryDimensions } from '@proton/shared/lib/helpers/metrics';
-import type { SimpleMap } from '@proton/shared/lib/interfaces';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 import { getZeroNinetyNineOfferAgeCategory } from './zeroNinetyNineOfferState';
 

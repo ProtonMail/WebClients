@@ -5,7 +5,7 @@ import type { LocalSessionResponse } from '@proton/shared/lib/authentication/int
 import { getPersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 const storageKey = 'revoked-sessions';
 

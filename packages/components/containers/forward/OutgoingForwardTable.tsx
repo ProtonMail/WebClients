@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
-import type { Address, OutgoingAddressForwarding, UserModel } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { OutgoingAddressForwarding } from '@proton/shared/lib/interfaces/AddressForwarding';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import Table from '../../components/table/Table';
 import TableBody from '../../components/table/TableBody';

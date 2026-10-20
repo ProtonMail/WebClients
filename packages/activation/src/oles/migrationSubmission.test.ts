@@ -1,4 +1,5 @@
-import type { Address, Api } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import type { ApiImporterOrganizationUser } from '../api/api.interface';
 import {

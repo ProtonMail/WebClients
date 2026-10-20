@@ -10,7 +10,7 @@ import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import type { EventManager } from '@proton/shared/lib/eventManager/eventManager';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import byoeFlow from './byoeFlow/byoeFlow.slice';
 import imapDraft from './draft/imapDraft/imapDraft.slice';

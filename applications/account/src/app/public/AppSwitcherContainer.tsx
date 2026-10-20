@@ -18,7 +18,7 @@ import { SessionSource } from '@proton/shared/lib/authentication/SessionInterfac
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
+import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import ExploreAppsListV2, {

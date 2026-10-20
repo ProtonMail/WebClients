@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
-import type { Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 
 import type { RecipientType } from '../../../models/address';
 import { resolveTypedId } from '../../helpers/references';

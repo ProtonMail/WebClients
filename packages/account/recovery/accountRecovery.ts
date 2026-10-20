@@ -2,7 +2,7 @@ import { createSelector } from '@reduxjs/toolkit';
 import { isValid, parseISO } from 'date-fns';
 
 import { getIsAccountRecoveryAvailable } from '@proton/shared/lib/helpers/recovery';
-import { SETTINGS_STATUS } from '@proton/shared/lib/interfaces';
+import { SETTINGS_STATUS } from '@proton/shared/lib/interfaces/UserSettings';
 
 import { getCanDisableRecovery } from '../delegatedAccess/recoveryContact/getCanDisableRecovery';
 import { selectEnrichedOutgoingDelegatedAccess } from '../delegatedAccess/shared/outgoing/selector';

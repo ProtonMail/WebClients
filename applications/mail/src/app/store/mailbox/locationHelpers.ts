@@ -14,7 +14,8 @@ import {
 } from '@proton/mail/helpers/location';
 import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities/helpers/safeCount';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { Folder, Label } from '@proton/shared/lib/interfaces';
+import type { Folder } from '@proton/shared/lib/interfaces/Folder';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
 import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { isDraft, isReceived, isSent } from '@proton/shared/lib/mail/messages';
 

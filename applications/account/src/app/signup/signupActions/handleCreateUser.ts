@@ -4,7 +4,8 @@ import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { queryCreateUser, queryCreateUserExternal } from '@proton/shared/lib/api/user';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { mergeHeaders, withVerificationHeaders } from '@proton/shared/lib/fetch/headers';
-import type { Api, User } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { User } from '@proton/shared/lib/interfaces/User';
 import { srpVerify } from '@proton/shared/lib/srp';
 
 import { getHVHeadersBasedOnSignupMode, getPaymentTokenForExternalUsers } from '../helper';

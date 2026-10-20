@@ -1,4 +1,4 @@
-import type { User } from '@proton/shared/lib/interfaces';
+import type { User } from '@proton/shared/lib/interfaces/User';
 import { isDelinquent } from '@proton/shared/lib/user/helpers';
 
 import {

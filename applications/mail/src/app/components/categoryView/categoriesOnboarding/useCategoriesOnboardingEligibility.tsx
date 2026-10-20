@@ -10,7 +10,7 @@ import { selectHasDefaultB2CCategoryConfiguration } from '@proton/mail/store/lab
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
+import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces/Checklist';
 
 import { useGetStartedChecklist } from '../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import { useMailboxCounter } from '../../../hooks/mailboxCounter/useMailboxCounter';

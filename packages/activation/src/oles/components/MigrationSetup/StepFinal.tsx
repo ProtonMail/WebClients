@@ -17,7 +17,7 @@ import useLoading from '@proton/hooks/useLoading';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { MX_STATE } from '@proton/shared/lib/interfaces';
+import { MX_STATE } from '@proton/shared/lib/interfaces/Domain';
 
 import { ApiImporterOrganizationState } from '../../../api/api.interface';
 import { useErrorHandler } from '../../errors';

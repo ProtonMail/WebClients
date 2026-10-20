@@ -2,7 +2,8 @@ import type { ValidateResetTokenResponse } from '@proton/shared/lib/api/reset';
 import { getUser } from '@proton/shared/lib/authentication/getUser';
 import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
-import { type Api, KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
 import { srpAuth, srpVerify } from '@proton/shared/lib/srp';
 
 import { authMnemonicAndGetKeys, performPasswordChangeViaMnemonic, performPasswordReset } from './actions';

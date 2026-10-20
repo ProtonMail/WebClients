@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { isDialogOpen, isDropdownOpen, isModalOpen } from '../busy';
+import { isDialogOpen, isDropdownOpen, isModalOpen } from '../busy/busy';
 import { metaKey } from '../helpers/browser';
 
 export const getShortcuts = () => {

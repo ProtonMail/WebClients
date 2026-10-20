@@ -2,13 +2,13 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { DAY_IN_SECONDS } from '../../constants';
 import { normalize } from '../../helpers/string';
+import type { DateTimeValue } from '../../interfaces/calendar/DateTime';
 import type {
-    DateTimeValue,
     VcalDateOrDateTimeProperty,
     VcalStringProperty,
     VcalValarmComponent,
     VcalValarmRelativeComponent,
-} from '../../interfaces/calendar';
+} from '../../interfaces/calendar/VcalModel';
 import { getIsAbsoluteTrigger, normalizeDurationToUnit, normalizeTrigger } from '../alarms/trigger';
 import { ICAL_ALARM_ACTION, MAX_NOTIFICATIONS, NOTIFICATION_UNITS, NOTIFICATION_UNITS_MAX } from '../constants';
 import { getIsDateTimeValue, getIsPropertyAllDay } from '../vcalHelper';

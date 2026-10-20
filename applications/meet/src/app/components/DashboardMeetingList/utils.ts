@@ -3,8 +3,8 @@ import { formatInTimeZone, utcToZonedTime } from 'date-fns-tz';
 import { c } from 'ttag';
 
 import { dateLocale } from '@proton/shared/lib/i18n';
-import { SETTINGS_DATE_FORMAT } from '@proton/shared/lib/interfaces';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
+import { SETTINGS_DATE_FORMAT } from '@proton/shared/lib/interfaces/UserSettings';
 
 export interface MeetingsByDay {
     [date: string]: Meeting[];

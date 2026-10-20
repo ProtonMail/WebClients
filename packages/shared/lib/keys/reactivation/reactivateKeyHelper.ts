@@ -1,18 +1,14 @@
 import type { PrivateKeyReference } from '@protontech/crypto';
 import { CryptoProxy, canKeyEncryptAndDecrypt } from '@protontech/crypto';
+
 import isTruthy from '@proton/utils/isTruthy';
 import unique from '@proton/utils/unique';
 
-import type {
-    ActiveKeyWithVersion,
-    DecryptedKey,
-    Key,
-    KeyPair,
-    KeyTransparencyVerify,
-    SignedKeyList,
-    Address as tsAddress,
-    User as tsUser,
-} from '../../interfaces';
+import type { Address as tsAddress } from '../../interfaces/Address';
+import type { ActiveKeyWithVersion, DecryptedKey, Key, KeyPair } from '../../interfaces/Key';
+import type { KeyTransparencyVerify } from '../../interfaces/KeyTransparency';
+import type { SignedKeyList } from '../../interfaces/SignedKeyList';
+import type { User as tsUser } from '../../interfaces/User';
 import { getActiveAddressKeys, getNormalizedActiveAddressKeys, getReactivatedKeyFlag } from '../getActiveKeys';
 import { getDecryptedAddressKeysHelper } from '../getDecryptedAddressKeys';
 import type { OnSKLPublishSuccess } from '../signedKeyList';

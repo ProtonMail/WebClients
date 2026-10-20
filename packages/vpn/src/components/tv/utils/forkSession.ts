@@ -1,5 +1,5 @@
 import { pushForkSession } from '@proton/shared/lib/api/auth';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 export async function forkSession({
     api,

@@ -32,7 +32,7 @@ import {
     usernameStartCharacterValidator,
 } from '@proton/shared/lib/helpers/formValidators';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import type { CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import claimProtonAddressImg from '@proton/styles/assets/img/illustrations/claim-proton-address.svg';
 
 import type { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '../../../constants';

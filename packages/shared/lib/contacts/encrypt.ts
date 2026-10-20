@@ -2,7 +2,7 @@ import { CryptoProxy } from '@protontech/crypto';
 
 import { CONTACT_CARD_TYPE } from '../constants';
 import { generateProtonWebUID } from '../helpers/uid';
-import type { KeyPair } from '../interfaces';
+import type { KeyPair } from '../interfaces/Key';
 import type { Contact, ContactCard } from '../interfaces/contacts/Contact';
 import type { VCardContact, VCardProperty } from '../interfaces/contacts/VCard';
 import { CLEAR_FIELDS, SIGNED_FIELDS } from './constants';

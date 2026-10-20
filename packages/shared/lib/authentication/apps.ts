@@ -1,7 +1,7 @@
 import { DEFAULT_APP } from '../apps/slugHelper';
 import type { APP_NAMES } from '../constants';
 import { APPS, APPS_CONFIGURATION, CLIENT_TYPES, PRODUCT_BIT } from '../constants';
-import type { User } from '../interfaces';
+import type { User } from '../interfaces/User';
 import { getIsExternalAccount, getIsSSOVPNOnlyAccount, getIsVPNOnlyAccount } from '../keys/accountType';
 
 export const getToAppName = (toApp?: APP_NAMES) => {

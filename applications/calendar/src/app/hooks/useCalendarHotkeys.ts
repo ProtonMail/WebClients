@@ -3,7 +3,7 @@ import { type RefObject, useMemo } from 'react';
 import type { HotkeyTuple } from '@proton/components/hooks/useHotkeys';
 import { useHotkeys } from '@proton/components/hooks/useHotkeys';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import { KeyboardKey } from '@proton/shared/lib/interfaces';
+import { KeyboardKey } from '@proton/shared/lib/interfaces/Hotkeys';
 import { isBusy } from '@proton/shared/lib/shortcuts/calendar';
 
 import { useBookings } from '../containers/bookings/bookingsProvider/BookingsProvider';

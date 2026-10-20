@@ -4,8 +4,11 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { renameInternalAddress, updateAddress } from '@proton/shared/lib/api/addresses';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import type { Address, DecryptedKey, KeyPair, Member } from '@proton/shared/lib/interfaces';
-import { getMemberKeys, getRenamedAddressKeys } from '@proton/shared/lib/keys';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { DecryptedKey, KeyPair } from '@proton/shared/lib/interfaces/Key';
+import type { Member } from '@proton/shared/lib/interfaces/Member';
+import { getRenamedAddressKeys } from '@proton/shared/lib/keys/addressKeys';
+import { getMemberKeys } from '@proton/shared/lib/keys/memberKeys';
 import noop from '@proton/utils/noop';
 
 import { type MemberState, memberThunk } from '../member';

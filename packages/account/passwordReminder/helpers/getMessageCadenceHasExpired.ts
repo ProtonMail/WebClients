@@ -1,6 +1,6 @@
 import { isBefore } from 'date-fns';
 
-import type { UserSettings } from '@proton/shared/lib/interfaces';
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 
 export const getMessageCadenceHasExpired = ({ userSettings }: { userSettings: UserSettings }) => {
     if (!userSettings.NextPasswordReminderTime) {

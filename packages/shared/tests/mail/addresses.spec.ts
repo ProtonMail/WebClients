@@ -1,5 +1,5 @@
 import { ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS, ADDRESS_TYPE } from '../../lib/constants';
-import type { Address } from '../../lib/interfaces';
+import type { Address } from '../../lib/interfaces/Address';
 import {
     getAddressFromPlusAlias,
     getByEmail,

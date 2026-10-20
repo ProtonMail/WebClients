@@ -1,5 +1,5 @@
 import type { KeyMetadata } from '@proton/account/addressKeys/getKeyMetadata';
-import type { Key } from '@proton/shared/lib/interfaces';
+import type { Key } from '@proton/shared/lib/interfaces/Key';
 
 interface KeyPermissions {
     canExportPublicKey: boolean;

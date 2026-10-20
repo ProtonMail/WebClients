@@ -3,7 +3,7 @@ import cloneDeep from 'lodash/cloneDeep';
 
 import { ICAL_ATTENDEE_STATUS, RECURRING_TYPES, TMP_UID, TMP_UNIQUE_ID } from '@proton/shared/lib/calendar/constants';
 import { getHasRecurrenceId } from '@proton/shared/lib/calendar/vcalHelper';
-import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar/Event';
 
 import type { CalendarViewEvent } from '../../containers/calendar/interface';
 import { getEventReadResult, setEventReadResult, setPartstat } from './eventsCache';

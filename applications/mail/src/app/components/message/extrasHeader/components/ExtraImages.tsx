@@ -7,7 +7,7 @@ import LoadRemoteImageBanner from '@proton/components/containers/banner/LoadRemo
 import { IcFileImage } from '@proton/icons/icons/IcFileImage';
 import type { MessageImages } from '@proton/mail/store/messages/messagesTypes';
 import { shiftKey } from '@proton/shared/lib/helpers/browser';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { hasShowEmbedded, hasShowRemote } from '@proton/shared/lib/mail/images';
 
 import { hasToSkipProxy } from '../../../../helpers/message/messageRemotes';

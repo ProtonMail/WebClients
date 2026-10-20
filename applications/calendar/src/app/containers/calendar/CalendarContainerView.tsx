@@ -58,8 +58,9 @@ import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { canonicalizeInternalEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import type { Address } from '@proton/shared/lib/interfaces';
-import type { AttendeeModel, CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
+import type { AttendeeModel } from '@proton/shared/lib/interfaces/calendar/Event';
 import isTruthy from '@proton/utils/isTruthy';
 import uniqueBy from '@proton/utils/uniqueBy';
 

@@ -19,7 +19,7 @@ import { useLoading } from '@proton/hooks';
 import { getContact, updateContact } from '@proton/shared/lib/api/contacts';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import { resignCards } from '@proton/shared/lib/contacts/resign';
-import type { ContactCard, ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactCard, ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { LoadingMap } from '@proton/shared/lib/interfaces/utils';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 

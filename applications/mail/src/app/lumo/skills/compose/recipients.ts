@@ -1,7 +1,7 @@
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import type { ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import type { Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 
 import { resolveTypedId } from '../../helpers/references';
 import type { MailToolDeps } from '../../toolModule';

@@ -1,5 +1,5 @@
 import { PROXY_IMG_URL } from '../api/images';
-import type { MailSettings } from '../interfaces';
+import type { MailSettings } from '../interfaces/MailSettings';
 import { SHOW_IMAGES } from './mailSettings';
 
 export const hasShowEmbedded = ({ HideEmbeddedImages }: Partial<MailSettings> = {}) =>

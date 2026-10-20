@@ -4,8 +4,8 @@ import { useUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import type { WithLoading } from '@proton/hooks/useLoading';
-import type { Address } from '@proton/shared/lib/interfaces';
-import { getIsBYOEAccount } from '@proton/shared/lib/keys';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import { getIsBYOEAccount } from '@proton/shared/lib/keys/accountType';
 
 import { getTokensByFeature } from '../api';
 import type { ReconnectBYOEAddressResult } from '../byoe/reconnectBYOEAddress.interface';

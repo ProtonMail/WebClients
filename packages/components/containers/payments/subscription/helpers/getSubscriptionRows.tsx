@@ -20,7 +20,7 @@ import type { Subscription } from '@proton/payments/core/subscription/interface'
 import { getTrialInfoForSingleSubscription } from '@proton/payments/core/trials';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import type { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import type { BadgeType } from '../../../../components/badge/Badge';
 import Info from '../../../../components/link/Info';

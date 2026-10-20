@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
 import { IcUsers } from '@proton/icons/icons/IcUsers';
-import type { Organization } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import clsx from '@proton/utils/clsx';
 
 import { AccountPath } from '../../../constants';

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { SIGN } from '@proton/shared/lib/mail/mailSettings';
 
 import Option from '../../../components/option/Option';

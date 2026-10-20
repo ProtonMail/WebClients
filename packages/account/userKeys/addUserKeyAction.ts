@@ -4,9 +4,9 @@ import { c } from 'ttag';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import type { KeyGenConfig, KeyGenConfigV6 } from '@proton/shared/lib/interfaces';
 import { DelegatedAccessStateEnum } from '@proton/shared/lib/interfaces/DelegatedAccess';
-import { addUserKeysProcess } from '@proton/shared/lib/keys';
+import type { KeyGenConfig, KeyGenConfigV6 } from '@proton/shared/lib/interfaces/KeyGenConfig';
+import { addUserKeysProcess } from '@proton/shared/lib/keys/add/addKeysProcess';
 import { getIsDeviceRecoveryEnabled } from '@proton/shared/lib/recoveryFile/deviceRecovery';
 import { getIsRecoveryFileAvailable } from '@proton/shared/lib/recoveryFile/recoveryFile';
 

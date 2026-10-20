@@ -15,7 +15,8 @@ import {
 } from '@proton/andromeda';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { SECOND } from '@proton/shared/lib/constants';
-import type { DecryptedAddressKey, SimpleMap } from '@proton/shared/lib/interfaces';
+import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces/Key';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { useWalletApiClients } from '@proton/wallet/contexts';
 import {
     useGetBitcoinAddressPool,

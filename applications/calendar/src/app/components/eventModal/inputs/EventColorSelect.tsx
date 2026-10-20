@@ -15,7 +15,7 @@ import { FeatureCode } from '@proton/features';
 import { APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getIsIframe } from '@proton/shared/lib/helpers/browser';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
-import type { EventModel } from '@proton/shared/lib/interfaces/calendar';
+import type { EventModel } from '@proton/shared/lib/interfaces/calendar/Event';
 import paintImg from '@proton/styles/assets/img/illustrations/new-upsells-img/paint.svg';
 
 interface Props {

@@ -1,7 +1,7 @@
-import { hasUnseenTracking } from '../../lib/interfaces';
+import { hasUnseenTracking } from '../../lib/interfaces/Category';
 import type { Folder } from '../../lib/interfaces/Folder';
 import type { Label } from '../../lib/interfaces/Label';
-import type { ContactGroup } from '../../lib/interfaces/contacts';
+import type { ContactGroup } from '../../lib/interfaces/contacts/Contact';
 
 describe('hasUnseenTracking', () => {
     it('returns true for folders', () => {

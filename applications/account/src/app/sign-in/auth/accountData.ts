@@ -1,6 +1,8 @@
 import { getKeySalts } from '@proton/shared/lib/api/keys';
 import { getPasswordPolicies, getShouldUsePasswordPolicies } from '@proton/shared/lib/api/passwordPolicies';
-import type { Api, KeySalt, User } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { KeySalt } from '@proton/shared/lib/interfaces/KeySalt';
+import type { User } from '@proton/shared/lib/interfaces/User';
 
 export const getAccountKeySalts = (api: Api) =>
     api<{ KeySalts: KeySalt[] }>(getKeySalts()).then(({ KeySalts }) => KeySalts);

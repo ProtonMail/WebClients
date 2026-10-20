@@ -2,8 +2,9 @@ import { c } from 'ttag';
 
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import type { PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
-import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { FORWARDED_MESSAGE, isPlainText } from '@proton/shared/lib/mail/messages';
 

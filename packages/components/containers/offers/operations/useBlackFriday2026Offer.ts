@@ -8,7 +8,8 @@ import { useAutomaticCurrency } from '@proton/payments-ui/client-extensions/useA
 import type { Currency } from '@proton/payments/core/interface';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
-import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 
 import OfferSubscription from '../helpers/offerSubscription';
 import { withResolvedRefs } from '../helpers/withResolvedRefs';

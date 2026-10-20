@@ -10,7 +10,8 @@ import { cacheHelper, createPromiseStore } from '@proton/redux-utilities/promise
 import { getIsMissingScopeError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import updateObject from '@proton/shared/lib/helpers/updateObject';
-import type { OrganizationExtended, User } from '@proton/shared/lib/interfaces';
+import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';
+import type { User } from '@proton/shared/lib/interfaces/User';
 import {
     getDefaultOrganizationSettings,
     getOrganization,

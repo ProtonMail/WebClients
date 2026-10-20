@@ -2,7 +2,8 @@ import { useMemo } from 'react';
 
 import { useCustomDomains } from '@proton/account/domains/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
-import type { Domain, Organization } from '@proton/shared/lib/interfaces';
+import type { Domain } from '@proton/shared/lib/interfaces/Domain';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
 
 import shouldShowMail from '../shouldShowMail';

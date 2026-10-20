@@ -12,7 +12,8 @@ import type { EstimationChangePayload } from '@proton/payments/telemetry/shared-
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import type { RequireOnly, UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import type { RequireOnly } from '@proton/shared/lib/interfaces/utils';
 
 import type { Model } from '../SubscriptionContainer';
 import { SUBSCRIPTION_STEPS } from '../constants';

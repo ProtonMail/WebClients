@@ -10,7 +10,7 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import { END_TYPE, FREQUENCY, type VIEWS } from '@proton/shared/lib/calendar/constants';
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
-import type { DateTimeModel, FrequencyModel } from '@proton/shared/lib/interfaces/calendar';
+import type { DateTimeModel, FrequencyModel } from '@proton/shared/lib/interfaces/calendar/Event';
 
 import { getIsCalendarAppInDrawer } from '../../../helpers/views';
 import CustomFrequencySelector from './CustomFrequencySelector';

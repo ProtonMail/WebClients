@@ -1,6 +1,7 @@
 import { createAction } from '@reduxjs/toolkit';
 
-import type { CalendarKey, CalendarSettings as tsCalendarSettings } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarSettings as tsCalendarSettings } from '@proton/shared/lib/interfaces/calendar/Calendar';
+import type { CalendarKey } from '@proton/shared/lib/interfaces/calendar/CalendarKey';
 import type {
     CalendarAlarmEventManager,
     CalendarEventsEventManager,

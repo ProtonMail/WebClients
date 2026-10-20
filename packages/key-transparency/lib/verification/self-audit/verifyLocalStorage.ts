@@ -1,7 +1,8 @@
 import type { PrivateKeyReference } from '@protontech/crypto';
 
-import type { Api, KTLocalStorageAPI } from '@proton/shared/lib/interfaces';
-import { ParsedSignedKeyList } from '@proton/shared/lib/keys';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { KTLocalStorageAPI } from '@proton/shared/lib/interfaces/KeyTransparency';
+import { ParsedSignedKeyList } from '@proton/shared/lib/keys/parsedSignedKeyList';
 
 import { fetchProof, fetchSignedKeyList } from '../../helpers/apiHelpers';
 import {

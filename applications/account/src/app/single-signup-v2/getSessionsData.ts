@@ -4,7 +4,7 @@ import type {
     ResumedSessionResult,
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { GetActiveSessionType, resumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import noop from '@proton/utils/noop';
 
 import type { SignupParameters2 } from './interface';

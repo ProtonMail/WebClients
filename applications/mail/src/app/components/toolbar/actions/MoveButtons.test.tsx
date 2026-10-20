@@ -3,11 +3,10 @@ import { render, screen } from '@testing-library/react';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { Label } from '@proton/shared/lib/interfaces';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
 import { DEFAULT_MAIL_SETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
 import { useMailSelector } from '../../../store/hooks';
-
 import MoveButtons from './MoveButtons';
 
 const labelID = 'labelID';

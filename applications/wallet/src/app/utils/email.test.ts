@@ -1,5 +1,5 @@
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
-import type { Address } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
 
 import { getBitcoinViaEmailAddresses } from './email';
 

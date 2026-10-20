@@ -1,4 +1,4 @@
-import type { EnvironmentExtended } from '../interfaces';
+import type { EnvironmentExtended } from '../interfaces/Environment';
 import type { SpotlightDate } from './interface';
 
 export const getEnvironmentDate = (

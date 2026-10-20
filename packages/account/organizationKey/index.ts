@@ -7,8 +7,10 @@ import { getInitialModelState } from '@proton/redux-utilities/initialModelState'
 import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { getIsMissingScopeError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getOrganizationKeys } from '@proton/shared/lib/api/organization';
-import type { CachedOrganizationKey, Organization, OrganizationKey, UserModel } from '@proton/shared/lib/interfaces';
-import { getCachedOrganizationKey } from '@proton/shared/lib/keys';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
+import type { CachedOrganizationKey, OrganizationKey } from '@proton/shared/lib/interfaces/OrganizationKey';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import { getCachedOrganizationKey } from '@proton/shared/lib/keys/getDecryptedOrganizationKey';
 
 import type { AddressKeysState } from '../addressKeys';
 import type { AddressesState } from '../addresses';

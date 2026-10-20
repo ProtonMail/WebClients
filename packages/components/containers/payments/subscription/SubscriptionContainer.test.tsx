@@ -14,8 +14,8 @@ import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitleme
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getLongTestPlans } from '@proton/payments/testing/data-plans';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import type { Organization } from '@proton/shared/lib/interfaces';
-import { Audience } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
+import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import { addApiMock, apiMock } from '@proton/test-api/api';
 
 import {

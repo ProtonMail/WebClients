@@ -13,9 +13,9 @@ import { getUser } from '@proton/shared/lib/authentication/getUser';
 import { maybeResumeSessionByUser, persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { DelegatedAccessTypeEnum } from '@proton/shared/lib/interfaces/DelegatedAccess';
-import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
+import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys/getDecryptedUserKeys';
 import noop from '@proton/utils/noop';
 
 import { addressKeysThunk } from '../addressKeys';

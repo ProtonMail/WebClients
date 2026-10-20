@@ -1,8 +1,8 @@
 import { resetCalendars } from '../../../api/calendars';
-import type { Api } from '../../../interfaces';
-import type { VisualCalendar } from '../../../interfaces/calendar';
+import type { Api } from '../../../interfaces/Api';
+import type { VisualCalendar } from '../../../interfaces/calendar/Calendar';
 import type { GetAddressKeys } from '../../../interfaces/hooks/GetAddressKeys';
-import { getPrimaryKey } from '../../../keys';
+import { getPrimaryKey } from '../../../keys/getPrimaryKey';
 import { generateCalendarKeyPayload } from './calendarKeys';
 
 interface ResetCalendarKeysArguments {

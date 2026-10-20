@@ -15,8 +15,8 @@ import { APPS, BRAND_NAME, DRIVE_SHORT_APP_NAME, MAIL_SHORT_APP_NAME } from '@pr
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { UserModel } from '@proton/shared/lib/interfaces';
-import { UserLockedFlags } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import { UserLockedFlags } from '@proton/shared/lib/interfaces/User';
 import { getAppStorage } from '@proton/shared/lib/user/storage';
 import noop from '@proton/utils/noop';
 

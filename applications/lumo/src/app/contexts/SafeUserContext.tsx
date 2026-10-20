@@ -1,9 +1,9 @@
-import {createContext, type ReactNode, useContext} from 'react';
+import { type ReactNode, createContext, useContext } from 'react';
 
-import {useUser} from '@proton/account/user/hooks';
-import type {User} from '@proton/shared/lib/interfaces';
+import { useUser } from '@proton/account/user/hooks';
+import type { User } from '@proton/shared/lib/interfaces/User';
 
-import {useIsGuest} from '../providers/IsGuestProvider';
+import { useIsGuest } from '../providers/IsGuestProvider';
 
 const SafeUserContext = createContext<User | undefined>(undefined);
 

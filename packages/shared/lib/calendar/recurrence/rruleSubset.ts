@@ -1,5 +1,5 @@
 import { convertZonedDateTimeToUTC, fromUTCDate, toUTCDate } from '../../date/timezone';
-import type { VcalVeventComponent } from '../../interfaces/calendar';
+import type { VcalVeventComponent } from '../../interfaces/calendar/VcalModel';
 import { propertyToUTCDate } from '../vcalConverter';
 import { getPropertyTzid } from '../vcalHelper';
 import { getIsAllDay } from '../veventHelper';

@@ -2,12 +2,12 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 import type { ThunkAction } from 'redux-thunk';
 
-import { CacheType } from '@proton/redux-utilities/interface';
 import { defaultExpiry, getFetchedAt, isExpired } from '@proton/redux-utilities/fetchedAt';
+import { CacheType } from '@proton/redux-utilities/interface';
 import { getFeatures, updateFeatureValue } from '@proton/shared/lib/api/features';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { DAY } from '@proton/shared/lib/constants';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import type { Feature, FeatureCode } from './interface';
 

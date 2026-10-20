@@ -8,7 +8,7 @@ import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { AutoAddVideoConferenceLinkProvider } from '@proton/shared/lib/calendar/constants';
 import { getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
-import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import Info from '../../../components/link/Info';

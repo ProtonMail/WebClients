@@ -1,8 +1,8 @@
 import { c, msgid } from 'ttag';
 
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
-import type { SimpleMap } from '@proton/shared/lib/interfaces';
-import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { contactToInput, contactToRecipient, majorToRecipient } from '@proton/shared/lib/mail/recipient';
 
 export type AddressesAutocompleteItem =

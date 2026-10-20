@@ -5,7 +5,7 @@ import BYOEClaimProtonAddressModal from '@proton/activation/src/components/Modal
 import { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '@proton/activation/src/constants';
 import { APPS, BRAND_NAME, CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
-import type { Optional } from '@proton/shared/lib/interfaces';
+import type { Optional } from '@proton/shared/lib/interfaces/utils';
 
 import useDrawer from '../../../hooks/drawer/useDrawer';
 import useDynamicMonthDay from '../../../hooks/useDynamicMonthDay';

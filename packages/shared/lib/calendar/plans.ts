@@ -1,8 +1,9 @@
 import noop from '@proton/utils/noop';
 
 import { hasBit } from '../helpers/bitset';
-import type { Api, UserModel } from '../interfaces';
-import type { CalendarWithOwnMembers } from '../interfaces/calendar';
+import type { Api } from '../interfaces/Api';
+import type { UserModel } from '../interfaces/User';
+import type { CalendarWithOwnMembers } from '../interfaces/calendar/Calendar';
 import { PLANS, PLAN_SERVICES, PLAN_TYPES } from '../payments/constants';
 import type { PlanIDs } from '../payments/interface';
 import type { Plan } from '../payments/plan/interface';

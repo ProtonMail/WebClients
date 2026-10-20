@@ -8,7 +8,7 @@ import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import useLoading from '@proton/hooks/useLoading';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
-import type { Address } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
 import { sortAddresses } from '@proton/shared/lib/mail/addresses';
 
 import MobileEditAddressSection from '../components/MobileEditAddressSection';

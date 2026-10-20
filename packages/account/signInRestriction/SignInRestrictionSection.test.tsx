@@ -7,7 +7,10 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import { getTestStore } from '@proton/redux-shared-store/test';
 import { updateSignInRestriction } from '@proton/shared/lib/api/settings';
-import { LOGIN_IDENTIFIER_POLICY, RESTRICTED_LOGIN_IDENTIFIER_POLICY } from '@proton/shared/lib/interfaces';
+import {
+    LOGIN_IDENTIFIER_POLICY,
+    RESTRICTED_LOGIN_IDENTIFIER_POLICY,
+} from '@proton/shared/lib/interfaces/UserSettings';
 
 import { buildAddress } from '../testing/buildAddress';
 import { mockUseAddresses } from '../testing/mockUseAddresses';

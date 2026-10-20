@@ -15,7 +15,7 @@ import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { useRerender } from '@proton/pass/hooks/useRerender';
-import { ForkType } from '@proton/shared/lib/authentication/fork';
+import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { APPS } from '@proton/shared/lib/constants';
 
 type PopperProps = ReturnType<typeof usePopperAnchor<HTMLButtonElement>>;

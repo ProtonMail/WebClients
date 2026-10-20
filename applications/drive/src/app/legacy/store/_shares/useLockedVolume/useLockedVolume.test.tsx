@@ -1,9 +1,9 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
-import type { User } from '@proton/shared/lib/interfaces';
+import type { User } from '@proton/shared/lib/interfaces/User';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
-import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
+import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys/getDecryptedUserKeys';
 import { getUserKey } from '@proton/shared/tests/keys/keyDataHelper';
 
 import { useSharesStore } from '../../../../legacy/zustand/share/shares.store';

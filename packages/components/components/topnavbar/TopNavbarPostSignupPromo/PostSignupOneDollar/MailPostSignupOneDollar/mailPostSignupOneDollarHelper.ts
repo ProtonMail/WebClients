@@ -1,7 +1,8 @@
 import { differenceInDays, differenceInHours, fromUnixTime } from 'date-fns';
 
 import { APPS } from '@proton/shared/lib/constants';
-import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
 
 import {
