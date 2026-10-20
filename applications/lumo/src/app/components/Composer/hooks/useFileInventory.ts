@@ -5,13 +5,14 @@ import { useLumoSelector } from '../../../redux/hooks';
 import { selectAttachments, selectAttachmentsBySpaceId, selectProvisionalAttachments } from '../../../redux/selectors';
 import type { Attachment, SpaceId } from '../../../types';
 import { filterStaleDriveAttachments, isMentionableFile } from './fileMentionHelpers';
+import type { DriveFileEntry } from './useDriveFileLoader';
 import type { FileItem } from './useFileMentionAutocomplete';
 
 export const EMPTY_FILES: FileItem[] = [];
 
 function computeFileList(
     spaceAttachments: Record<string, any>,
-    driveFiles: { id: string; name: string }[],
+    driveFiles: DriveFileEntry[],
     allAttachments: Record<string, Attachment>,
     provisionalAttachments: Attachment[]
 ): FileItem[] {
@@ -45,14 +46,14 @@ function computeFileList(
         id: file.id,
         name: file.name,
         source: 'drive' as const,
-        mimeType: undefined,
+        mimeType: file.mediaType,
     }));
 
     const allFilesCombined = [...provisionalFiles, ...spaceFiles, ...driveFilesList];
 
     const seen = new Set<string>();
     return allFilesCombined.filter((file) => {
-        if (!isMentionableFile(file.name)) {
+        if (!isMentionableFile(file.name, file.mimeType)) {
             return false;
         }
         const key = file.name.toLowerCase();
@@ -66,7 +67,7 @@ function computeFileList(
 
 export function useFileInventory(
     spaceId: SpaceId | undefined,
-    driveFiles: { id: string; name: string }[],
+    driveFiles: DriveFileEntry[],
     isDriveLinkedProject: boolean = false
 ): FileItem[] {
     const allAttachments = useLumoSelector(selectAttachments);

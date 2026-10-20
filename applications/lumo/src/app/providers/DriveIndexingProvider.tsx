@@ -10,7 +10,7 @@ import { registerDriveIndexingCancelHandler } from '../services/driveFolderIndex
 import { SearchService } from '../services/search/searchService';
 import type { DriveDocument } from '../types/documents';
 import { collectDriveFolderFiles } from '../util/collectDriveFolderFiles';
-import { getMimeTypeFromExtension } from '../util/filetypes';
+import { getMimeTypeFromExtension, isDriveFileSupported } from '../util/filetypes';
 import { useIsGuest } from './IsGuestProvider';
 
 // Debounce time for processing events (ms)
@@ -183,8 +183,12 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
                             browseFolderChildren
                         );
 
+                        const supportedFiles = allFiles.filter((file) =>
+                            isDriveFileSupported(file.name, file.mediaType)
+                        );
+
                         let rehydratedCount = 0;
-                        for (const file of allFiles) {
+                        for (const file of supportedFiles) {
                             try {
                                 const fileContent = await downloadFile(file.nodeUid);
                                 const fileData = new Uint8Array(fileContent);
@@ -284,16 +288,18 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
             parentNodeUid: string | undefined,
             matchingFolders: IndexedDriveFolder[],
             searchService: SearchService
-        ): Promise<{ folder: IndexedDriveFolder; fileName?: string } | null> => {
+        ): Promise<{ folder: IndexedDriveFolder; fileName?: string; mediaType?: string } | null> => {
             const existingDoc = searchService.getDocumentById(nodeUid);
             let parentUid = parentNodeUid ?? existingDoc?.folderId;
             let fileName = existingDoc?.name;
+            let mediaType: string | undefined;
 
             if (!parentUid) {
                 try {
                     const node = await getNode(nodeUid);
                     parentUid = node.parentUid;
                     fileName = node.name;
+                    mediaType = node.mediaType;
                 } catch (error) {
                     console.warn('[DriveIndexingProvider] Failed to load node for event:', error);
                     return null;
@@ -305,14 +311,25 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
             }
 
             const folder = await findIndexedAncestor(parentUid, matchingFolders);
-            return folder ? { folder, fileName } : null;
+            return folder ? { folder, fileName, mediaType } : null;
         },
         [getNode, findIndexedAncestor]
     );
 
     // Index a single file (handles both new files and updates)
     const indexSingleFile = useCallback(
-        async (folder: IndexedDriveFolder, fileNodeUid: string, fileName: string, isUpdate: boolean = false) => {
+        async (
+            folder: IndexedDriveFolder,
+            fileNodeUid: string,
+            fileName: string,
+            isUpdate: boolean = false,
+            mediaType?: string
+        ) => {
+            if (!isDriveFileSupported(fileName, mediaType)) {
+                console.log('[DriveIndexingProvider] Skipping unsupported file type:', fileName);
+                return;
+            }
+
             const stillIndexed = indexedFoldersRef.current.some(
                 (indexedFolder) => indexedFolder.isActive !== false && indexedFolder.nodeUid === folder.nodeUid
             );
@@ -466,7 +483,7 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
             try {
                 const { files: allFiles } = await collectDriveFolderFiles(folder.nodeUid, browseFolderChildren);
                 for (const file of allFiles) {
-                    await indexSingleFile(folder, file.nodeUid, file.name, true);
+                    await indexSingleFile(folder, file.nodeUid, file.name, true, file.mediaType);
                 }
             } catch (error) {
                 console.error('[DriveIndexingProvider] Failed to re-sync folder:', folder.name, error);
@@ -598,11 +615,13 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
 
                         console.log('[DriveIndexingProvider] File is in indexed folder:', resolved.folder.name);
 
-                        const finalFileName =
-                            fileName || resolved.fileName || (await getNode(nodeUid).catch(() => undefined))?.name;
+                        const node =
+                            resolved.mediaType === undefined ? await getNode(nodeUid).catch(() => undefined) : undefined;
+                        const finalFileName = fileName || resolved.fileName || node?.name;
+                        const mediaType = resolved.mediaType ?? node?.mediaType;
                         if (finalFileName) {
                             const isUpdate = eventType === DriveEventType.NodeUpdated;
-                            await indexSingleFile(resolved.folder, nodeUid, finalFileName, isUpdate);
+                            await indexSingleFile(resolved.folder, nodeUid, finalFileName, isUpdate, mediaType);
                         } else {
                             console.log('[DriveIndexingProvider] Could not determine file name for nodeUid:', nodeUid);
                         }
