@@ -1,6 +1,10 @@
 import { defineConfig } from 'eslint/config'
 import { atomsPackage, componentsPackage, createBarrelConfig, iconsPackage } from '@proton/eslint-config-proton/barrel'
 import defaultConfig from '@proton/eslint-config-proton/all'
+import {
+  createExtraneousDependenciesRule,
+  extraneousDependenciesDevDependencies,
+} from '@proton/eslint-config-proton/extraneousDependencies'
 
 const isFixMode = process.argv.includes('--fix')
 
@@ -52,6 +56,14 @@ export default defineConfig([
     rules: {
       'max-classes-per-file': 'off',
       'class-methods-use-this': 'off',
+    },
+  },
+  {
+    files: ['**/TestUtils/**'],
+    rules: {
+      'import/no-extraneous-dependencies': createExtraneousDependenciesRule({
+        devDependencies: [...extraneousDependenciesDevDependencies, '**/TestUtils/**'],
+      }),
     },
   },
   {
