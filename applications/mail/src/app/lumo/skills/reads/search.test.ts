@@ -208,6 +208,6 @@ describe('searchDefinition', () => {
 
     it('leaves the parameters to the guide, so its description stays short', () => {
         expect(searchDefinition.toolDescription).toContain('load_guide');
-        expect(searchDefinition.toolDescription.length).toBeLessThan(500);
+        expect(searchDefinition.toolDescription!.length).toBeLessThan(500);
     });
 });

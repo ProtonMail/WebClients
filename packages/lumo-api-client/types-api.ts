@@ -179,8 +179,14 @@ export type LumoCompletionTarget = 'message' | 'title' | 'suggested_questions';
 /** Unleash Lumo toggles for observability (`flag name` → serialized value). */
 export type ChatCompletionsFeatureFlags = Record<string, string>;
 
+/** Which Lumo client is calling. `LumoMail` sends its own whole system prompt, so the backend adds none. */
+export enum LumoClientType {
+    Frontend = 'frontend',
+    LumoMail = 'lumo_mail',
+}
+
 export type ChatCompletionsLumoExtension = {
-    client_type: 'frontend';
+    client_type: LumoClientType;
     target?: LumoCompletionTarget;
     request_key?: string;
     request_id?: string;

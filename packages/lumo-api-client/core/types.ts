@@ -36,6 +36,7 @@ import {
     type ImageDataMessage,
     type IngestingMessage,
     type LumoApiGenerationRequest,
+    type LumoClientType,
     type LumoCompletionTarget,
     type ModelMessage,
     type QueuedMessage,
@@ -225,6 +226,8 @@ export interface AssistantCallOptions {
     recordRequestCallback?: RecordRequestCallback;
     /** Lumo Unleash toggles; forwarded on the wire as `lumo.feature_flags`. */
     featureFlags?: ChatCompletionsFeatureFlags;
+    /** Sent as `lumo.client_type` on every generation of the call. Defaults to `Frontend`. */
+    clientType?: LumoClientType;
 }
 
 export interface AssistantCallResult {

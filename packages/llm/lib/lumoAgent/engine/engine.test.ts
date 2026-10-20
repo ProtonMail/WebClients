@@ -642,6 +642,93 @@ describe('createClientToolExecutor', () => {
             ]);
         });
     });
+
+    describe('in standalone-prompt mode', () => {
+        const standalone = (overrides: Partial<Parameters<typeof createClientToolExecutor>[0]> = {}) =>
+            setup({ standalonePrompt: true, ...overrides });
+
+        it('advertises every tool from the first round, guided ones included', async () => {
+            const { executor } = standalone();
+
+            const names = (await executor.getClientTools!()).map((tool) => tool.function.name);
+
+            expect(names).toEqual(DEFINITIONS.map((definition) => definition.name));
+        });
+
+        it('returns the guide body and counts the guide as loaded', async () => {
+            const { executor } = standalone();
+
+            const [result] = await executor.execute([call('load_guide', { guide: 'make_filter' })]);
+
+            expect(result.is_error).toBeUndefined();
+            expect(result.content).toContain('THE GUIDE');
+            expect(executor.getLoadedGuides()).toEqual(['make_filter']);
+        });
+
+        it('says a guide already went out, without re-emitting its body', async () => {
+            const { executor } = standalone();
+
+            await executor.execute([call('load_guide', { guide: 'make_filter' })]);
+            const [second] = await executor.execute([call('load_guide', { guide: 'make_filter' })]);
+
+            expect(second.is_error).toBeUndefined();
+            expect(second.content).not.toContain('THE GUIDE');
+        });
+
+        it('reports a tool with no guide as fine, not as an error', async () => {
+            const { executor } = standalone();
+
+            const [result] = await executor.execute([call('load_guide', { guide: 'view_items' })]);
+
+            expect(result.is_error).toBeUndefined();
+            expect(executor.getLoadedGuides()).toEqual([]);
+        });
+
+        it('reports a tool name that does not exist as an error', async () => {
+            const { executor } = standalone();
+
+            const [result] = await executor.execute([call('load_guide', { guide: 'invented_tool' })]);
+
+            expect(result.is_error).toBe(true);
+            expect(executor.getLoadedGuides()).toEqual([]);
+        });
+
+        it.each([
+            ['yields no body', () => ''],
+            [
+                'throws',
+                () => {
+                    throw new Error('deps not ready');
+                },
+            ],
+        ])('reports no guide, without loading one, when a thunk guide %s', async (_case, guide) => {
+            const { executor } = standalone({ definitions: [...DEFINITIONS, def('empty_filter', { guide })] });
+
+            const [result] = await executor.execute([call('load_guide', { guide: 'empty_filter' })]);
+
+            expect(result.is_error).toBeUndefined();
+            expect(executor.getLoadedGuides()).toEqual([]);
+        });
+
+        it('loads a guide again once the caller says the turns no longer carry it', async () => {
+            const { executor } = standalone();
+            await executor.execute([call('load_guide', { guide: 'make_filter' })]);
+
+            executor.setLoadedGuides([]);
+            const [reloaded] = await executor.execute([call('load_guide', { guide: 'make_filter' })]);
+
+            expect(reloaded.content).toContain('THE GUIDE');
+        });
+
+        it('treats a guide the caller says the turns carry as already loaded', async () => {
+            const { executor } = standalone();
+
+            executor.setLoadedGuides(['make_filter']);
+            const [result] = await executor.execute([call('load_guide', { guide: 'make_filter' })]);
+
+            expect(result.content).not.toContain('THE GUIDE');
+        });
+    });
 });
 
 // Framework and transport both export `ToolName`; a consumer importing both must alias one.
