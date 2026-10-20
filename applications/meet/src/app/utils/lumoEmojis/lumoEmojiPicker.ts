@@ -20,7 +20,6 @@ const LUMO_CATEGORY_ID = 'lumo';
 
 const PICKER_CATEGORY_IDS = [
     'frequent',
-    LUMO_CATEGORY_ID,
     'people',
     'nature',
     'foods',
@@ -29,6 +28,7 @@ const PICKER_CATEGORY_IDS = [
     'objects',
     'symbols',
     'flags',
+    LUMO_CATEGORY_ID,
 ];
 
 const getPickerEmojiId = (id: LumoEmojiId) => `lumo-${id}`;
