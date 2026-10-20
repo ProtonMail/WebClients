@@ -1,4 +1,5 @@
 import type { Api } from '@proton/shared/lib/interfaces/Api';
+import noop from '@proton/utils/noop';
 
 import type { ItemRevision, Api as PassApi, Share, ShareType } from '../../types';
 import { first } from '../../utils/array/first';
@@ -8,6 +9,7 @@ import { pipe } from '../../utils/fp/pipe';
 import { and, truthy } from '../../utils/fp/predicates';
 import { sortOn } from '../../utils/fp/sort';
 import { waitUntil } from '../../utils/fp/wait-until';
+import { logId, logger } from '../../utils/logger';
 import { obfuscate } from '../../utils/obfuscate/xor';
 import { uniqueId } from '../../utils/string/unique-id';
 import { UNIX_DAY, UNIX_MINUTE } from '../../utils/time/constants';
@@ -16,6 +18,7 @@ import { getAliasOptions } from '../alias/alias.requests';
 import { exposeApi } from '../api/api';
 import { exposePassCrypto } from '../crypto';
 import { createPassCrypto } from '../crypto/pass-crypto';
+import { requestFoldersForShareId } from '../folders/folders.requests';
 import { parseItemRevision } from '../items/item.parser';
 import { createAlias, requestAllItemsForShareId } from '../items/item.requests';
 import {
@@ -116,11 +119,19 @@ export const createPassBridge = (api: Api): PassBridge => {
                     getAliasOptions,
                     getAllByShareId: maxAgeMemoize(
                         async (shareId) => {
-                            const aliases = (await Promise.all(
-                                (await requestAllItemsForShareId({ shareId, OnlyAlias: true }))
-                                    .filter(pipe(prop('AliasEmail'), truthy))
-                                    .map((item) => parseItemRevision(shareId, item))
-                            )) as ItemRevision<'alias'>[];
+                            /** Registers the folder keys needed to decrypt aliases stored in folders */
+                            await requestFoldersForShareId(shareId).catch((error) =>
+                                logger.warn(`[PassBridge] Failed to load folders for share ${logId(shareId)}`, error)
+                            );
+
+                            /** Skip aliases that fail to decrypt so the others still load */
+                            const aliases = (
+                                await Promise.all(
+                                    (await requestAllItemsForShareId({ shareId, OnlyAlias: true }))
+                                        .filter(pipe(prop('AliasEmail'), truthy))
+                                        .map((item) => parseItemRevision(shareId, item).catch(noop))
+                                )
+                            ).filter(truthy) as ItemRevision<'alias'>[];
 
                             return aliases.map((item): PassBridgeAliasItem => ({ item }));
                         },
