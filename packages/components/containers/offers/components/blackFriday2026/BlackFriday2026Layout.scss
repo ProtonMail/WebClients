@@ -219,6 +219,13 @@ html:is(
 		overflow-y: scroll;
 	}
 
+	// Safari and Firefox bounce the scroll area past its edges, dragging the header image down and showing
+	// the modal background above it. "contain" from ModalContent still allows that bounce, "none" stops it.
+	.scroll-inner,
+	.scroll-child {
+		overscroll-behavior-y: none;
+	}
+
 	&.offer-modal--one-deal {
 		&#{&} {
 			.scroll-outer-vertical .scroll-inner,
