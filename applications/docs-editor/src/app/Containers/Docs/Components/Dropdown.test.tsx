@@ -1,6 +1,6 @@
 import { act, fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { useRef, useState } from 'react'
-import { Dropdown, DropdownMenu, DropdownMenuButton, SimpleDropdown } from './Dropdown'
+import { Dropdown, DropdownMenu, DropdownMenuButton, DropdownMenuCheckboxButton, SimpleDropdown } from './Dropdown'
 
 it('renders its trigger with the Docs button by default, styled by the forwarded presentation props', () => {
   render(
@@ -213,6 +213,63 @@ it.each([false, true])(
     await waitFor(() => expect(trigger).toHaveFocus())
   },
 )
+
+it('toggles a checkbox item with Enter, announcing the state its owner reports', async () => {
+  function HeaderRowMenu() {
+    const [checked, setChecked] = useState(false)
+    return (
+      <SimpleDropdown as="button" content="Options">
+        <DropdownMenuCheckboxButton name="header-row" checked={checked} onClick={() => setChecked(!checked)}>
+          Header row
+        </DropdownMenuCheckboxButton>
+      </SimpleDropdown>
+    )
+  }
+  render(<HeaderRowMenu />)
+
+  const trigger = screen.getByRole('button', { name: 'Options' })
+  // JSDOM has no layout; Ariakit checks visibility before restoring focus.
+  Object.defineProperty(trigger, 'offsetWidth', { value: 1 })
+  act(() => trigger.focus())
+  fireEvent.keyDown(trigger, { key: 'ArrowDown' })
+  const item = await screen.findByRole('menuitemcheckbox', { name: 'Header row' })
+  expect(item).not.toBeChecked()
+  await waitFor(() => expect(item).toHaveFocus())
+
+  fireEvent.keyDown(item, { key: 'Enter' })
+  await waitFor(() => expect(screen.queryByRole('menu')).not.toBeInTheDocument())
+  await waitFor(() => expect(trigger).toHaveFocus())
+
+  fireEvent.keyDown(trigger, { key: 'ArrowDown' })
+  expect(await screen.findByRole('menuitemcheckbox', { name: 'Header row' })).toBeChecked()
+})
+
+it('keeps the menu open when a checkbox item with hideOnClick disabled is clicked', async () => {
+  function HeaderRowMenu() {
+    const [checked, setChecked] = useState(false)
+    return (
+      <SimpleDropdown as="button" content="Options">
+        <DropdownMenuCheckboxButton
+          name="header-row"
+          checked={checked}
+          hideOnClick={false}
+          onClick={() => setChecked(!checked)}
+        >
+          Header row
+        </DropdownMenuCheckboxButton>
+      </SimpleDropdown>
+    )
+  }
+  render(<HeaderRowMenu />)
+
+  fireEvent.click(screen.getByRole('button', { name: 'Options' }))
+  fireEvent.click(await screen.findByRole('menuitemcheckbox', { name: 'Header row' }))
+  // Ariakit unmounts a hidden menu after the click returns, so give it time to close before asserting it stayed open.
+  await act(() => new Promise((resolve) => setTimeout(resolve, 50)))
+
+  expect(screen.getByRole('menu')).toBeVisible()
+  expect(screen.getByRole('menuitemcheckbox', { name: 'Header row' })).toBeChecked()
+})
 
 it('returns focus to a top-level menu button after Escape', async () => {
   render(

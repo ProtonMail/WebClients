@@ -29,7 +29,10 @@ export const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(function Tooltip
 })
 
 export type ButtonOptions = {
-  /** @default 'solid' */
+  /**
+   * A `bg-[--…]` class from the caller replaces the shape's background and its hover and active states.
+   * @default 'solid'
+   */
   shape?: 'solid' | 'ghost'
   /**
    * `norm` fills a solid button with the primary colour, and colours a ghost button's text with it.
@@ -115,7 +118,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
       {...props}
       className={clsx(
         buttonBaseClassName,
-        buttonBackgroundClassNames[shape][color],
+        !classNameSetsUtility(className, ['bg-[--']) && buttonBackgroundClassNames[shape][color],
         isGhostNorm && ghostNormStateTextClassName,
         // shortcut: only `text-[--…]` counts as a caller text colour; widen the prefixes if callers use others.
         !classNameSetsUtility(className, ['text-[--']) && buttonTextClassNames[shape][color],
