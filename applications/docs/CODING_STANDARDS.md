@@ -66,10 +66,12 @@ These packages are being phased out; development happens inside the two apps.
 
 - Name new tests `*.test.ts(x)` and place them next to the file under test. Older editor tests use `*.spec.ts`; leave them as they are.
 - Use `@testing-library/react` (`render`, `renderHook`, `waitFor`). Provide contexts with a `wrapper` component; reset zustand stores with `setState` in `afterEach`. Model: `applications/docs/src/app/drive-sdk/useDocInvites.test.tsx`.
+- Avoid mocking what can be used directly
 
 ### General
 
-- Full, descriptive names. Simple, flat, idiomatic modern TypeScript over clever abstractions.
+- Simple, flat, idiomatic modern TypeScript over clever abstractions.
+- Full, descriptive, but not too long names.
 - Names say _what_ code does; comments carry only what the name can't: the _why_, a constraint, a gotcha. A comment that restates or paraphrases the name (`// Adds two numbers` above `addNumbers`) gets deleted, and a function needing a comment to explain what it does gets a better name instead.
 
   A comment worth keeping, from `applications/docs-editor/src/app/Containers/App.tsx`:
@@ -197,3 +199,13 @@ Rules that follow:
 
 - Host shell: log with the editor `Application`'s `logger`. Standalone editors: use the injected `logger` and `reportError` from their dependencies.
 - Combine classes with bare `clsx` inside the standalone editors, `@proton/utils/clsx` elsewhere.
+
+## Drive SDK
+
+- We are not allowed to import "private" code from @proton/drive e.g. @proton/drive/modules - use only what's exported for public
+
+## Documentation
+
+- Proton Drive: https://drive.gitlab-pages.protontech.ch/documentation/
+- Drive SDK: https://drive.gitlab-pages.protontech.ch/sdk/
+- REST API: https://protonmail.gitlab-pages.protontech.ch/Slim-API/
