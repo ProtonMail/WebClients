@@ -14,7 +14,7 @@ import { SearchService } from '../services/search/searchService';
 import type { SpaceId } from '../types';
 import type { DriveDocument, FolderIndexingStatus } from '../types/documents';
 import { collectDriveFolderFiles, type DriveFileWithPath } from '../util/collectDriveFolderFiles';
-import { getMimeTypeFromExtension, isFileTypeSupported } from '../util/filetypes';
+import { getMimeTypeFromExtension, isDriveFileSupported } from '../util/filetypes';
 import { useDriveSDK } from './useDriveSDK';
 import { useFileProcessing } from './useFileProcessing';
 import { useLumoUserSettings } from './useLumoUserSettings';
@@ -193,10 +193,7 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
                     console.log('[DriveIndexing] Captured treeEventScopeId:', treeEventScopeId);
                 }
 
-                const indexableFiles = allFiles.filter((file) => {
-                    const mimeType = file.mediaType || getMimeTypeFromExtension(file.name);
-                    return isFileTypeSupported(file.name, mimeType);
-                });
+                const indexableFiles = allFiles.filter((file) => isDriveFileSupported(file.name, file.mediaType));
 
                 console.log(
                     '[DriveIndexing] Found',
