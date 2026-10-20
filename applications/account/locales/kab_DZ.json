@@ -228,9 +228,6 @@
       "Create": [
         "Asnulfu"
       ],
-      "Create an account": [
-        "Rnu amiḍan"
-      ],
       "Create calendar": [
         "Snulfu-d awitay"
       ],
@@ -341,9 +338,6 @@
       ],
       "Done": [
         "Immed"
-      ],
-      "Downgrade": [
-        "Ṣub aleqqem"
       ],
       "Download": [
         "Sader"
@@ -701,9 +695,6 @@
       ],
       "Remove": [
         "Kkes"
-      ],
-      "Remove bonuses": [
-        "Kkes ibunusen"
       ],
       "Remove gift code": [
         "Kkes tangalt n usefk"
@@ -1253,11 +1244,6 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Amsefrak n wawal uffir premium"
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "Aɣram ɣef 30 n wussan yettwaḍmen"
       ]
     },
     "BF2024: Deal details": {
@@ -3557,11 +3543,6 @@
         "Sken tinnubga"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Organization not recognized. Try again.": [
-        "Tuddsa ur tettwaɛqal ara. Eɛreḍ tikkelt-nniḍen."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "Igrawen n ${ BRAND_NAME }"
@@ -3600,9 +3581,6 @@
       ]
     },
     "familyOffer_2023:Label": {
-      "Enter organization name to confirm": [
-        "Sekcem isem n tuddsa akken ad tsentmeḍ"
-      ],
       "Family name": [
         "Isem n twacult"
       ]
@@ -3629,12 +3607,6 @@
       ],
       "Change family name": [
         "Senfel isem n twacult"
-      ],
-      "Delete family group?": [
-        "Kkes agraw n twacult?"
-      ],
-      "Delete organization?": [
-        "Kkes tuddsa?"
       ],
       "Edit user storage": [
         "Ẓreg aḥraz n useqdac"
@@ -4466,12 +4438,6 @@
       "${ storage } storage": [
         "${ storage } n uḥraz"
       ],
-      "${ vaultLink } created": [
-        "${ vaultLink } yettusnulfa-d"
-      ],
-      "${ vaultLink } updated": [
-        "${ vaultLink } yettwaleqqem"
-      ],
       "${ vpnPlus } required for Secure Core feature.": [
         "${ vpnPlus } yesra tamahilt Secure Core."
       ],
@@ -4492,18 +4458,8 @@
         "+ ${ invisibleCount } D wugar",
         "+ ${ invisibleCount } D wugar"
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } n usekles n ubunus"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } tuqqna i ${ VPN_APP_NAME } (aya ad ak.akem-yeǧǧ ad teqqneḍ ugar n yibenkan ɣer VPN)",
-        "+${ organization.BonusVPN } tuqqniwin i ${ VPN_APP_NAME } (aya ad ak.akem-yeǧǧ ad teqqneḍ ugar n yibenkan ɣer VPN)"
-      ],
       "30-day money-back guarantee": [
         "Aɣram ɣef 30 n wussan yettwaḍmen"
-      ],
-      "30-day money-back guarantee.": [
-        "Aɣram ɣef 30 n wussan yettwaḍmen."
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Uṭṭun n tiliɣri yezmer ad yettuseqdec i usenqed yiwen kan n umiḍan ${ BRAND_NAME }"
@@ -4618,9 +4574,6 @@
       "Blocks senders from seeing if and when you opened a message.": [
         "Yessewḥal imazanen ɣef tmeẓriwt ma teldiḍ izen neɣ melmi t-teldiḍ."
       ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Ma teṣṣubeḍ-d ɣer lqem n baṭṭel, ad teṣruḥed i lebda akk ayen d-ḥellaḍ, ɣas ma yella tleqmeḍ tikkeld nniḍen sya ɣer zdat."
-      ],
       "By leaving now, changes may not be saved": [
         "Ma teffɣeḍ tura, isenfal yezmer ur ttuseklasen ara"
       ],
@@ -4721,9 +4674,6 @@
       ],
       "Downgrade": [
         "Ṣub aleqqem"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Asader deg lqem ad iseḥbes akk tuqqniwin ɣer yiqeddacen s lexlaṣ n ${ VPN_APP_NAME }."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Sader asnas i tḥemmleḍ ass-a tawiḍ tabaḍnit anda tebɣuḍ tiliḍ."
@@ -4851,15 +4801,6 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Ma tesruḥeḍ ibenk-ik n usesteb s snat n tarrayin, tingalin-agi zemren-t ad ttwasqedcent i tuqqna ar ulmiḍan-ik deg umdiq n tingalin n 6 n iwzilen. Yal tangalt ad tettwaseqdec kan yiwet n tikkelt."
       ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Ma tkemmleḍ deg usader deg lqem, ad tesruḥeḍ anekcum ɣer tmahilin s lexlaṣ n ${ MAIL_APP_NAME } d ${ VPN_APP_NAME }."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Ma tkemmleḍ deg usader n lqem, ad tesruḥeḍ anekcum ɣer tmahilin s lexlaṣ n ${ MAIL_APP_NAME }, ula d aklas d yimsizdigen imernan."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Ma tkemmleḍ deg usader deg lqem, ad tesruḥeḍ anekcum ɣer tmahilin s lexlaṣ n ${ VPN_APP_NAME }."
-      ],
       "Image description": [
         "Aglam n tugna"
       ],
@@ -4920,9 +4861,6 @@
       ],
       "Internet connection restored.": [
         "Tuqqna internet tuɣal-d."
-      ],
-      "Invite rejected": [
-        "Ancad yettwagi"
       ],
       "Invite successfully sent": [
         "Tinubga tettwazen akken iwata",
@@ -5212,14 +5150,8 @@
       "Sign in": [
         "Kcem"
       ],
-      "Sign in or create an account to continue.": [
-        "Qqen neɣ rnu amiḍan i wakken ad tkemmleḍ."
-      ],
       "Signed up": [
         "Ijerred"
-      ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Segmi telliḍ d aseqdac imekdi, amiḍan-inek• inem yesɛa tiwuriwin n zzyada iremden."
       ],
       "Smart Routed through a different country.": [
         "Yettwaweḥḥed s tbridt tusmigt deg tamurt nniḍen."
@@ -5399,15 +5331,6 @@
       "Users": [
         "Iseqdacen"
       ],
-      "Vault created": [
-        "Asenduq yettwarna"
-      ],
-      "Vault deleted": [
-        "Asenduq yettwakkes"
-      ],
-      "Vault updated": [
-        "Asenduq yettwaleqqem"
-      ],
       "Verification may take a few minutes.": [
         "Asenqed yezmer ad yeṭṭef kra n tesdatin."
       ],
@@ -5522,9 +5445,6 @@
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "Yessefk ad tremdeḍ tasarut-ik tusligt n tuddsa s wawal uffir n tsarut n tuddsa n usḥraz i d-yefka unedbal n tuddsa-ik."
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Yessefk ad tessenseḍ neɣ ad tekkseḍ akk iseqdacen imernan n ${ MAIL_APP_NAME }, tansiwin, d taɣulin tudmawanin send ad tessadreḍ deg lqem."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Yessefk ad tesɛuḍ takarḍa n usmad neɣ amiḍan n tbanka yeqqnen akked umiḍan-inek/m PayPal akken ad ternuḍ tarrayt n uxelleṣ."
@@ -6937,9 +6857,6 @@
       "Upgrade your plan": [
         "Sali aɣawas-ik"
       ],
-      "Vault": [
-        "Asenduq"
-      ],
       "View guide": [
         "Wali amnir"
       ],
@@ -7383,9 +7300,6 @@
       ]
     },
     "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Sader aswir ɣer ${ downgradedPlanName }"
-      ],
       "Explore all ${ BRAND_NAME } plans": [
         "Smiren akk iɣawasen ${ BRAND_NAME }"
       ],
@@ -9359,9 +9273,6 @@
       "Verification successful": [
         "Asenqed yedda akken iwata"
       ],
-      "You have successfully unsubscribed": [
-        "Teffɣeḍ seg ujerred akken iwata"
-      ],
       "Your address has been activated": [
         "Tansa-k·m tersmed"
       ]
@@ -9737,12 +9648,6 @@
       "Confirm": [
         "Sentem"
       ],
-      "Confirm downgrade": [
-        "Sentem abeddel n tikci"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Sentem rrwaḥ n yibunusen n ${ BRAND_NAME }"
-      ],
       "Connect ${ name }": [
         "Qqen ɣer ${ name }"
       ],
@@ -9884,9 +9789,6 @@
       ],
       "Downgrade account": [
         "Sider aswir n umiḍan"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "Sader aswir ɣer ${ downgradedPlanName }?"
       ],
       "Downloads": [
         "Isadaren"

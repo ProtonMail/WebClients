@@ -130,9 +130,6 @@
       "Desktop and mobile apps": [
         "Appar för stationär dator och mobil"
       ],
-      "Downgrade plan": [
-        "Nedgradera paket"
-      ],
       "Downgrade to Free": [
         "Nedgradera till Free"
       ],
@@ -506,6 +503,9 @@
       "Cancel": [
         "Avbryt"
       ],
+      "Cancel import": [
+        "Avbryt import"
+      ],
       "Cancel request": [
         "Avbryt begäran"
       ],
@@ -620,14 +620,14 @@
       "Connect apps and devices": [
         "Anslut appar och enheter"
       ],
+      "Connect Gmail": [
+        "Anslut Gmail"
+      ],
       "Connect Gmail address": [
         "Anslut Gmail-adress"
       ],
       "Connect to video conferencing": [
         "Anslut till videokonferens"
-      ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Anslut ditt ${ BRAND_NAME }-konto"
       ],
       "Connect your email": [
         "Anslut din e-post"
@@ -710,14 +710,8 @@
       "Create": [
         "Skapa"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Skapa ett ${ BRAND_NAME }-konto"
-      ],
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "Skapa en länk att dela med alla utanför ${ BRAND_NAME }"
-      ],
-      "Create an account": [
-        "Skapa ett konto"
       ],
       "Create calendar": [
         "Skapa kalender"
@@ -901,9 +895,6 @@
       ],
       "Done": [
         "Klar"
-      ],
-      "Downgrade": [
-        "Nedgradera"
       ],
       "Download": [
         "Ladda ner"
@@ -1592,6 +1583,9 @@
       "Recover data": [
         "Återställ data"
       ],
+      "Recover previous account": [
+        "Återställ tidigare konto"
+      ],
       "Refer a friend": [
         "Hänvisa en vän"
       ],
@@ -1613,17 +1607,11 @@
       "Reload": [
         "Ladda om"
       ],
-      "Reload page": [
-        "Ladda om sida"
-      ],
       "Remove": [
         "Ta bort"
       ],
       "Remove all other devices": [
         "Ta bort alla andra enheter"
-      ],
-      "Remove bonuses": [
-        "Ta bort bonusar"
       ],
       "Remove button": [
         "Ta bort knapp"
@@ -1639,6 +1627,9 @@
       ],
       "Remove from favorites": [
         "Ta bort från favoriter"
+      ],
+      "Remove from the list": [
+        "Ta bort från listan"
       ],
       "Remove gift code": [
         "Ta bort presentkod"
@@ -1925,8 +1916,8 @@
       "Sign in": [
         "Logga in"
       ],
-      "Sign in to ${ providerName }": [
-        "Loggar in på ${ providerName }"
+      "Sign in to ${ PASS_APP_NAME }": [
+        "Logga in på ${ PASS_APP_NAME }"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Logga in med ${ BRAND_NAME }"
@@ -2024,6 +2015,9 @@
       "Take a tour": [
         "Ta en rundtur"
       ],
+      "Take the survey": [
+        "Gör undersökningen"
+      ],
       "Template with invite links": [
         "Mall med inbjudningslänkar"
       ],
@@ -2107,6 +2101,9 @@
       ],
       "Upgrade to Business": [
         "Uppgradera till Business"
+      ],
+      "Upgrade to connect": [
+        "Uppgradera för att ansluta"
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Uppgradera för att aktivera ${ PROTON_SENTINEL_NAME }"
@@ -2829,11 +2826,6 @@
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få ${ discountPercentage } rabatt på ${ plan.Title } när du prenumererar för ${ cycle } månad.",
         "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få ${ discountPercentage } rabatt på ${ plan.Title } när du prenumererar för ${ cycle } månader."
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "30-dagars pengarna tillbaka-garanti"
       ]
     },
     "bf2023: Title": {
@@ -3702,6 +3694,9 @@
       ]
     },
     "claimed address": {
+      "Sign in with your organization?": [
+        "Logga in med din organisation?"
+      ],
       "Verify it's you": [
         "Verifiera att det är du"
       ],
@@ -5246,6 +5241,9 @@
       "A checked box means the feature is disabled.": [
         "En ikryssad ruta betyder att funktionen är inaktiverad."
       ],
+      "Access your passwords on all your devices": [
+        "Kom åt dina lösenord på alla dina enheter"
+      ],
       "Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.": [
         "Lägg till extra adresser på ditt konto eller använd Hide My Email-alias för att hålla din inkorg privat."
       ],
@@ -5296,6 +5294,9 @@
       ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Skapa policyer för att bestämma vem som kan ansluta till delade servrar i varje land."
+      ],
+      "Create strong password with one click": [
+        "Skapa starkt lösenord med ett klick"
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Enkel åtkomst till din e-post och kalender på stationär dator och mobil."
@@ -5979,6 +5980,9 @@
       ]
     },
     "Easy switch": {
+      "Sign in to ${ providerName }": [
+        "Logga in på ${ providerName }"
+      ],
       "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
         "För att vidarebefordra e-post från upp till ${ MAX_SYNC_PAID_USER } konton, uppgradera till ${ planName }."
       ],
@@ -6614,6 +6618,9 @@
       "Add 1 more": [
         "Lägg till 1 till"
       ],
+      "Add contact": [
+        "Lägg till kontakt"
+      ],
       "Add emergency contact": [
         "Lägg till nödkontakt"
       ],
@@ -7146,6 +7153,9 @@
       ],
       "Couldn't load transactions. Please try again later.": [
         "Kunde inte ladda transaktioner. Försök igen senare."
+      ],
+      "Couldn't load your connections": [
+        "Kunde inte ladda dina anslutningar"
       ],
       "Creating files in non-folders is not allowed": [
         "Upprättande av mappar utanför mappar är inte tillåtet"
@@ -7894,6 +7904,9 @@
       "Verification keys for ${ signatureType } are not available": [
         "Verifieringsnycklar för ${ signatureType } är inte tillgängliga"
       ],
+      "We couldn't reconnect this address.": [
+        "Vi kunde inte ansluta denna adress igen."
+      ],
       "We couldn't sign you in": [
         "Vi kunde inte logga in dig"
       ],
@@ -8355,14 +8368,6 @@
         "Visa inbjudan"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "Familjegrupp känns inte igen. Försök igen."
-      ],
-      "Organization not recognized. Try again.": [
-        "Organisation känns inte igen. Försök igen."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-grupper"
@@ -8543,22 +8548,8 @@
       ]
     },
     "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "Ange familjegruppens namn för att bekräfta"
-      ],
-      "Enter organization name to confirm": [
-        "Ange organisationsnamn för att bekräfta"
-      ],
       "Family name": [
         "Familjenamn"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Detta kommer permanent ta bort alla underanvändare, konton och data som är associerade med din organisation."
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Detta kommer ta bort alla ${ BRAND_NAME } premiumfunktioner för varje familjemedlem."
       ]
     },
     "familyOffer_2023:Settings section title": {
@@ -8586,12 +8577,6 @@
       ],
       "Change family name": [
         "Ändra familjenamn"
-      ],
-      "Delete family group?": [
-        "Ta bort familjegrupp?"
-      ],
-      "Delete organization?": [
-        "Ta bort organisation?"
       ],
       "Edit user storage": [
         "Redigera användares lagringsutrymme"
@@ -9901,15 +9886,12 @@
       "Pending": [
         "Väntar"
       ],
+      "Queued": [
+        "I kö"
+      ],
       "Skipped ${ count } event due to incompatibilities": [
         "Hoppade över ${ count } händelse på grund av inkompatibiliteter",
         "Hoppade över ${ count } händelser på grund av inkompatibiliteter"
-      ],
-      "Undo finished": [
-        "Ångra klar"
-      ],
-      "Undo in progress": [
-        "Ångra pågår"
       ]
     },
     "Import type": {
@@ -10219,18 +10201,6 @@
       "${ url } deleted.": [
         "${ url } borttagen."
       ],
-      "${ vaultLink } created": [
-        "${ vaultLink } skapad"
-      ],
-      "${ vaultLink } deleted": [
-        "${ vaultLink } uppdaterad"
-      ],
-      "${ vaultLink } shared with email": [
-        "${ vaultLink } delad med e-post"
-      ],
-      "${ vaultLink } updated": [
-        "${ vaultLink } uppdaterad"
-      ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
         "${ VPN_SHORT_APP_NAME } döljer din trafik. ${ PASS_SHORT_APP_NAME } döljer din identitet\n— obegränsade **hide-my-email-alias** och **varningar om dark web** om dina uppgifter någonsin läcker."
       ],
@@ -10320,13 +10290,6 @@
         "+ ${ invisibleCount } Mer",
         "+ ${ invisibleCount } Mer"
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } bonuslagring"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } anslutning för ${ VPN_APP_NAME } (låter dig ansluta fler enheter till VPN)",
-        "+${ organization.BonusVPN } anslutningar för ${ VPN_APP_NAME } (låter dig ansluta fler enheter till VPN)"
-      ],
       "1 device per user": [
         "1 enhet per användare"
       ],
@@ -10338,9 +10301,6 @@
       ],
       "30-day money-back guarantee": [
         "30 dagars pengarna-tillbaka-garanti"
-      ],
-      "30-day money-back guarantee.": [
-        "30 dagars pengarna-tillbaka-garanti."
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ BRAND_NAME } är värd för en ${ protonSubdomain }, vilket låter dig snabbt konfigurera en underdomän. ${ learnMoreLink }"
@@ -10776,9 +10736,6 @@
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "Genom att inaktivera kontoövervakning kommer du också rensa hela din historik. Är du säker på att du vill inaktivera detta?"
       ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Genom att nedgradera till ett gratiskonto kommer du permanent att förlora dessa fördelar, även om du uppgraderar igen i framtiden."
-      ],
       "By leaving now, changes may not be saved": [
         "Genom att lämna nu kan ändringar inte sparas"
       ],
@@ -10868,6 +10825,9 @@
       ],
       "Connect and manage your external mailboxes in ${ MAIL_APP_NAME }.": [
         "Anslut och hantera dina externa brevlådor i ${ MAIL_APP_NAME }."
+      ],
+      "Connected": [
+        "Ansluten"
       ],
       "Connecting to Google Drive and preparing your import.": [
         "Ansluter till Google Drive och förbereder din import."
@@ -11063,6 +11023,9 @@
       "Disabling the data backup on this device will prevent you from automatically unlocking your encrypted data after a password reset.": [
         "Att inaktivera säkerhetskopieringen på denna enhet förhindrar dig från att automatiskt låsa upp dina krypterade data efter en lösenordsåterställning."
       ],
+      "Disconnected": [
+        "Frånkopplad"
+      ],
       "Discount": [
         "Rabatt"
       ],
@@ -11126,9 +11089,6 @@
       ],
       "Downgrade": [
         "Nedgradera"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Nedgradering kommer att avsluta alla anslutningar till betalda ${ VPN_APP_NAME }-servrar."
       ],
       "Download ${ mobileConfigArtifact } and open it on each Mac to install the profile, then approve it in System Settings.": [
         "Ladda ner ${ mobileConfigArtifact } och öppna den på varje Mac för att installera profilen. Godkänn den sedan i systeminställningarna."
@@ -11631,15 +11591,6 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Om du förlorar din tvåfaktorsaktiverade enhet kan dessa koder användas istället för den 6-siffriga tvåfaktorsautentiseringskoden för att logga in på ditt konto. Varje kod kan bara användas en gång."
       ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Om du fortsätter med nedgraderingen förlorar du åtkomst till betalfunktioner för ${ MAIL_APP_NAME } och ${ VPN_APP_NAME }."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Om du fortsätter med nedgraderingen förlorar du åtkomst till betalfunktioner i ${ MAIL_APP_NAME }, inklusive ytterligare lagring och filter."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Om du fortsätter med nedgraderingen förlorar du åtkomst till betalda funktioner i ${ VPN_APP_NAME }."
-      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Om du har köpt en presentkod eller fått en från vårt supportteam kan du ange den här."
       ],
@@ -11756,23 +11707,8 @@
       "Invitation link used": [
         "Inbjudningslänk använd"
       ],
-      "Invite deleted": [
-        "Inbjudan borttagen"
-      ],
       "Invite family members and get everything up and running.": [
         "Bjud in familjemedlemmar och få igång allt."
-      ],
-      "Invite for new user deleted": [
-        "Inbjudan för ny användare borttagen"
-      ],
-      "Invite for organization accepted": [
-        "Inbjudan för organisation accepterad"
-      ],
-      "Invite for organization created": [
-        "Inbjudan för organisation skapad"
-      ],
-      "Invite rejected": [
-        "Inbjudan avvisad"
       ],
       "Invite successfully sent": [
         "Inbjudan skickad",
@@ -11792,54 +11728,6 @@
       ],
       "It's better to have:": [
         "Det är bättre att ha:"
-      ],
-      "Item autofilled in ${ vaultLink }": [
-        "Objekt automatiskt ifyllt i ${ vaultLink }"
-      ],
-      "Item autofilled in vault": [
-        "Objekt automatiskt ifyllt i valv"
-      ],
-      "Item created in ${ vaultLink }": [
-        "Objekt skapat i ${ vaultLink }"
-      ],
-      "Item created in vault": [
-        "Objekt skapat i valv"
-      ],
-      "Item deleted from ${ vaultLink }": [
-        "Objekt borttaget från ${ vaultLink }"
-      ],
-      "Item deleted from vault": [
-        "Objekt borttaget från valv"
-      ],
-      "Item flags changed in ${ vaultLink }": [
-        "Objektflaggor ändrade i ${ vaultLink }"
-      ],
-      "Item flags changed in vault": [
-        "Objektflaggor ändrade i valv"
-      ],
-      "Item in ${ vaultLink } trashed": [
-        "Objekt i ${ vaultLink } kastat"
-      ],
-      "Item in ${ vaultLink } untrashed": [
-        "Objekt i ${ vaultLink } avkastat"
-      ],
-      "Item in vault trashed": [
-        "Objekt i valv kastat"
-      ],
-      "Item in vault untrashed": [
-        "Objekt i valv avkastat"
-      ],
-      "Item read in ${ vaultLink }": [
-        "Objekt läst i ${ vaultLink }"
-      ],
-      "Item read in vault": [
-        "Objekt läst i valv"
-      ],
-      "Item updated in ${ vaultLink }": [
-        "Objekt uppdaterat i ${ vaultLink }"
-      ],
-      "Item updated in vault": [
-        "Objekt uppdaterat i valv"
       ],
       "It’s often the easiest way to recover your account if you’re signed in.": [
         "Det är ofta det enklaste sättet att återställa ditt konto om du är inloggad."
@@ -12021,6 +11909,9 @@
       "Monthly ${ onDayString }": [
         "En gång i månaden ${ onDayString }"
       ],
+      "More cards": [
+        "Fler kort"
+      ],
       "Multi-user support not enabled.": [
         "Stöd för flera användare är inte aktiverat."
       ],
@@ -12050,9 +11941,6 @@
       ],
       "New group created via your identity provider and pending review.": [
         "Ny grupp skapad via din identitetsleverantör och väntar på granskning."
-      ],
-      "New user invited to organization": [
-        "Ny användare inbjuden till organisation"
       ],
       "New VPN connection data will stop being collected and shown.": [
         "Ny VPN-anslutningsdata kommer att sluta samlas in och visas."
@@ -12239,15 +12127,6 @@
       "Paid for a plan": [
         "Betalat för ett paket"
       ],
-      "Pass Monitor - custom email confirmed": [
-        "Pass Monitor - anpassad e-post bekräftad"
-      ],
-      "Pass Monitor - custom email created": [
-        "Pass Monitor - anpassad e-post skapad"
-      ],
-      "Pass Monitor - custom email deleted": [
-        "Pass Monitor - anpassad e-post borttagen"
-      ],
       "Pass usage logs": [
         "Användningsloggar för Pass"
       ],
@@ -12328,9 +12207,6 @@
       "Please open the document to view it.": [
         "Öppna dokumentet för att visa det."
       ],
-      "Please open your browser extension settings and allow ${ PASS_APP_NAME } extension to access website data. Then, reload this page.": [
-        "Öppna inställningarna för ditt webbläsartillägg och tillåt tillägget ${ PASS_APP_NAME } att få åtkomst till webbplatsdata. Ladda sedan om den här sidan."
-      ],
       "Please reconnect to continue.": [
         "Anslut igen för att fortsätta."
       ],
@@ -12342,6 +12218,9 @@
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Välj den typ av länk du vill infoga och fyll i alla fält."
+      ],
+      "Please sign in with ${ emailAddress } to continue.": [
+        "Logga in med ${ emailAddress } för att fortsätta."
       ],
       "Please specify...": [
         "Specificera …"
@@ -12432,6 +12311,9 @@
       ],
       "RECOMMENDED": [
         "REKOMMENDERAT"
+      ],
+      "Recommended on trusted devices. ${ learnMoreLink }": [
+        "Rekommenderas på betrodda enheter. ${ learnMoreLink }"
       ],
       "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
         "Återställning med e-post är inte tillgängligt medan ${ PROTON_SENTINEL_NAME } är aktiverat."
@@ -12580,6 +12462,9 @@
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Skickat med <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> säker e-post."
       ],
+      "SEPA Bank transfer": [
+        "SEPA banköverföring"
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "SEPA-betalningar är inte tillgängliga just nu. Försök igen senare."
       ],
@@ -12622,21 +12507,9 @@
       "Settings updated": [
         "Inställningar uppdaterade"
       ],
-      "Shared ${ vaultLink } deleted": [
-        "Delad ${ vaultLink } borttagen"
-      ],
-      "Shared ${ vaultLink } updated": [
-        "Delad ${ vaultLink } uppdaterad"
-      ],
       "Shared server country (${ countriesCount })": [
         "Delat serverland (${ countriesCount })",
         "Delade serverländer (${ countriesCount })"
-      ],
-      "Shared vault deleted": [
-        "Delat valv borttaget"
-      ],
-      "Shared vault updated": [
-        "Delat valv uppdaterat"
       ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Visa varje avsändares bild i meddelandelistan. Avsändarens initialer kommer att visas om ett foto inte är tillgängligt."
@@ -12656,9 +12529,6 @@
       "Sign in only": [
         "Endast inloggning"
       ],
-      "Sign in or create an account to continue.": [
-        "Logga in eller skapa ett konto för att fortsätta."
-      ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Logga in på ${ MAIL_APP_NAME } för att aktivera din adress"
       ],
@@ -12667,9 +12537,6 @@
       ],
       "Signed up": [
         "Registrerade sig"
-      ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Eftersom du är en lojal användare har ditt konto ytterligare funktioner aktiverade."
       ],
       "Smart Routed through a different country.": [
         "Smart-dirigerad via ett annat land."
@@ -12716,12 +12583,6 @@
       ],
       "Step ${ step }/${ totalSteps }": [
         "Steg ${ step }/${ totalSteps }"
-      ],
-      "Step 1 of 2": [
-        "Steg 1 av 2"
-      ],
-      "Step 2 of 2": [
-        "Steg 2 av 2"
       ],
       "Storage allocated to other users in this organisation": [
         "Lagringsutrymme tilldelad andra användare i denna organisation"
@@ -13207,9 +13068,6 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Unikt ID genererat av din identitetsleverantör, vanligtvis i form av en URL som innehåller identitetsleverantörens namn (t.ex. https://idp.exempel.se/XXXXX)."
       ],
-      "Unknown event type": [
-        "Okänd händelsetyp"
-      ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Om du inte loggar ut från ditt konto eller ändrar ditt lösenord kommer din session att förbli aktiv. Sessioner löper ut efter 60 dagars inaktivitet."
       ],
@@ -13324,21 +13182,6 @@
       "Users": [
         "Användare"
       ],
-      "Vault created": [
-        "Valv skapat"
-      ],
-      "Vault deleted": [
-        "Valv borttaget"
-      ],
-      "Vault either deleted or requires access permissions": [
-        "Valv antingen borttaget eller kräver åtkomstbehörigheter"
-      ],
-      "Vault shared with email": [
-        "Valv delad med e-post"
-      ],
-      "Vault updated": [
-        "Valv uppdaterat"
-      ],
       "Verification code sent.": [
         "Verifieringskod skickad."
       ],
@@ -13359,9 +13202,6 @@
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Bekräfta din identitet med ett tidsbaserat engångslösenord från en autentiseringsapp"
-      ],
-      "Verifying ${ PASS_APP_NAME } browser extension...": [
-        "Verifierar webbläsartillägget ${ PASS_APP_NAME } …"
       ],
       "Verifying your payment": [
         "Verifierar din betalning"
@@ -13506,9 +13346,6 @@
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "När aviseringar är aktiverade skickar vi en notis till din e-postadress för återställning om du har nya meddelanden i ditt ${ MAIL_APP_NAME }-konto."
-      ],
-      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
-        "När du avbryter din nuvarande betalda prenumeration kommer saldot av din prenumeration att returneras som kontokrediter och du kommer att nedgraderas till ${ BRAND_NAME } ${ PLANS.FREE }-paketet."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "När du avbryter kommer din prenumeration inte att förnyas, men du kan fortfarande dra nytta av paketförmåner fram till slutet av prenumerationsperioden. Efter det kommer du att nedgraderas till ${ BRAND_NAME } Free-paketet."
@@ -13758,9 +13595,6 @@
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "Du måste aktivera din organisations privat nyckel med organisationens backup-nyckels lösenord som tillhandahållits dig av organisationens administratör."
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Du måste inaktivera eller ta bort eventuella ytterligare ${ MAIL_APP_NAME }-användare, adresser och anpassade domäner innan du kan nedgradera."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Du måste ha ett kreditkort eller ett bankkonto kopplat till ditt PayPal-konto för att kunna lägga till det som en betalningsmetod."
@@ -15481,6 +15315,9 @@
       "Issuer ID": [
         "Utfärdar-ID"
       ],
+      "Item": [
+        "Objekt"
+      ],
       "Keep emails in Sent/Drafts": [
         "Behåll e-post i skickat/utkast"
       ],
@@ -15912,6 +15749,9 @@
       ],
       "Reserved email address": [
         "Reserverad e-postadress"
+      ],
+      "Restrict sign-in to username": [
+        "Begränsa inloggning till användarnamn"
       ],
       "Reveal password": [
         "Visa lösenord"
@@ -16568,6 +16408,9 @@
       "Create an alias": [
         "Skapa ett alias"
       ],
+      "Customer Support": [
+        "Kundtjänst"
+      ],
       "data recovery option": [
         "alternativ för dataåterställning"
       ],
@@ -16747,9 +16590,6 @@
       ],
       "use a data recovery method": [
         "använd en dataåterställningsmetod"
-      ],
-      "Vault": [
-        "Valv"
       ],
       "View guide": [
         "Visa guide"
@@ -17732,9 +17572,6 @@
       ]
     },
     "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradera till ${ downgradedPlanName }"
-      ],
       "Explore all ${ BRAND_NAME } plans": [
         "Utforska alla ${ BRAND_NAME }-paket"
       ],
@@ -21615,6 +21452,14 @@
         "Användaradministratör"
       ]
     },
+    "Rollback state": {
+      "Undo finished": [
+        "Ångra klar"
+      ],
+      "Undo in progress": [
+        "Ångra pågår"
+      ]
+    },
     "Safety review": {
       "Code sent to ${ boldValue }": [
         "Kod skickad till ${ boldValue }"
@@ -22619,6 +22464,11 @@
       ],
       "Open in ${ appName } (Beta)": [
         "Öppna i ${ appName } (beta)"
+      ]
+    },
+    "Sign out": {
+      "Sign in to ${ providerName }": [
+        "Logga in på ${ providerName }"
       ]
     },
     "Signature verification error when joining calendar": {
@@ -23889,9 +23739,6 @@
       "Upgrade your plan to increase your storage.": [
         "Uppgradera ditt paket för att öka ditt lagringsutrymme."
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Vi lägger till krediterna för den återstående tiden till ditt ${ BRAND_NAME }-konto."
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "Du har fortfarande **${ daysRemaining }** dag kvar på ditt **${ currentPlanName }**-paket.",
         "Du har fortfarande **${ daysRemaining }** dagar kvar på ditt **${ currentPlanName }**-paket."
@@ -24792,9 +24639,6 @@
       "You have successfully canceled your subscription.": [
         "Du har avbrutit din prenumeration."
       ],
-      "You have successfully unsubscribed": [
-        "Du har avslutat din prenumeration"
-      ],
       "You will receive your username via email within a minute if you entered a valid recovery email address.": [
         "Du kommer få ditt användarnamn via e-post inom en minut om du har angett en giltig e-postadress för återställning."
       ],
@@ -25153,9 +24997,6 @@
       "${ MAIL_APP_NAME } Export Tool": [
         "Exportverktyg för ${ MAIL_APP_NAME }"
       ],
-      "${ PASS_APP_NAME } is missing permissions": [
-        "${ PASS_APP_NAME } saknar behörigheter"
-      ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "${ PASS_SHORT_APP_NAME } Monitor-rapport"
       ],
@@ -25248,6 +25089,9 @@
       ],
       "Activity monitor": [
         "Aktivitetsövervakare"
+      ],
+      "Add ${ PASS_APP_NAME } to your browser": [
+        "Lägg till ${ PASS_APP_NAME } i din webbläsare"
       ],
       "Add ${ totalServerCount } server?": [
         "Lägg till ${ totalServerCount } server?",
@@ -25538,12 +25382,6 @@
       "Confirm": [
         "Bekräfta"
       ],
-      "Confirm downgrade": [
-        "Bekräfta nedgradering"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Bekräfta förlust av ${ BRAND_NAME }-bonusar"
-      ],
       "Confirm where to sign in": [
         "Bekräfta var du vill logga in"
       ],
@@ -25565,11 +25403,11 @@
       "Connect to video conferencing": [
         "Anslut till videokonferens"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Anslut ditt ${ BRAND_NAME }-konto"
-      ],
       "Connect your custom domain": [
         "Anslut din anpassad domän"
+      ],
+      "Connect your Gmail": [
+        "Anslut din Gmail"
       ],
       "Connected emails": [
         "Ansluten e-post"
@@ -25834,6 +25672,9 @@
       "Discard changes?": [
         "Ignorera ändringar?"
       ],
+      "Disconnect this address?": [
+        "Koppla från denna adress?"
+      ],
       "Disconnected from Gmail": [
         "Koppla från Gmail"
       ],
@@ -25854,9 +25695,6 @@
       ],
       "Downgrade account": [
         "Nedgradera konto"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "Nedgradera till ${ downgradedPlanName }?"
       ],
       "Download ${ app }": [
         "Ladda ner ${ app }"
@@ -26149,6 +25987,9 @@
       ],
       "Going private": [
         "Blir privat"
+      ],
+      "Good to know before you connect": [
+        "Bra att veta innan du ansluter"
       ],
       "Grant access": [
         "Bevilja åtkomst"
@@ -26670,6 +26511,9 @@
       "SAML authentication": [
         "SAML-autentisering"
       ],
+      "Save time:": [
+        "Spara tid:"
+      ],
       "Schedule meetings in one click": [
         "Schemalägg möten med ett klick"
       ],
@@ -26814,6 +26658,9 @@
       "Sign out on all devices?": [
         "Logga ut på alla enheter?"
       ],
+      "Sign-in protection": [
+        "Inloggningsskydd"
+      ],
       "Signed in successfully!": [
         "Inloggning lyckades!"
       ],
@@ -26834,6 +26681,9 @@
       ],
       "Single sign-on": [
         "Enkel inloggning"
+      ],
+      "Skip for now": [
+        "Hoppa över just nu"
       ],
       "SMS verification": [
         "SMS-verifiering"
@@ -26876,6 +26726,9 @@
       ],
       "Status": [
         "Status"
+      ],
+      "Stay connected:": [
+        "Förbli ansluten:"
       ],
       "Stay secure and connected anywhere": [
         "Håll dig säker och ansluten var som helst"
@@ -27112,9 +26965,6 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Välkommen till ${ BRAND_NAME } för Business"
       ],
-      "Welcome to your new password manager!": [
-        "Välkommen till din nya lösenordshanterare!"
-      ],
       "What are you migrating?": [
         "Vad migrerar du?"
       ],
@@ -27141,6 +26991,9 @@
       ],
       "With your ${ BRAND_NAME } Account, you get access to all ${ BRAND_NAME } apps": [
         "Med ditt ${ BRAND_NAME }-konto får du tillgång till alla ${ BRAND_NAME }-appar"
+      ],
+      "Wrong Gmail account": [
+        "Fel Gmail-konto"
       ],
       "You are all set": [
         "Du är klar"
@@ -28502,12 +28355,6 @@
       ],
       "By removing this phone number, you will no longer be able to recover your account.": [
         "Genom att ta bort detta telefonnummer kommer du inte längre att kunna återställa ditt konto."
-      ],
-      "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
-        "Kunde inte logga in. Öppna webbläsartillägget ${ PASS_APP_NAME } och logga in därifrån."
-      ],
-      "Could not sign up. Please open ${ PASS_APP_NAME } browser extension and sign up from there.": [
-        "Kunde inte registrera. Öppna webbläsartillägget ${ PASS_APP_NAME } och registrera dig därifrån."
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Om du avbryter denna import kommer du inte att kunna återuppta den. ${ BRAND_NAME } sparade alla framsteg på ditt konto. Avbryt ändå?"

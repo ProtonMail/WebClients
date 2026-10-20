@@ -348,9 +348,6 @@
       "Connect to video conferencing": [
         "Połącz się z wideokonferencją"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Połącz konto ${ BRAND_NAME }"
-      ],
       "Connect your email": [
         "Połącz adres e-mail"
       ],
@@ -429,14 +426,8 @@
       "Create": [
         "Utwórz"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Utwórz konto ${ BRAND_NAME }"
-      ],
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "Utwórz link, aby udostępnić go dowolnej osobie spoza usługi ${ BRAND_NAME }"
-      ],
-      "Create an account": [
-        "Utwórz konto"
       ],
       "Create calendar": [
         "Utwórz kalendarz"
@@ -611,9 +602,6 @@
       ],
       "Done": [
         "Gotowe"
-      ],
-      "Downgrade": [
-        "Obniż plan"
       ],
       "Download": [
         "Pobierz"
@@ -1275,17 +1263,11 @@
       "Reload": [
         "Odśwież"
       ],
-      "Reload page": [
-        "Odśwież stronę"
-      ],
       "Remove": [
         "Usuń"
       ],
       "Remove all other devices": [
         "Usuń inne urządzenia"
-      ],
-      "Remove bonuses": [
-        "Zrezygnuj z bonusów"
       ],
       "Remove button": [
         "Usuń przycisk"
@@ -2449,11 +2431,6 @@
         "Oferta nie jest dostępna w obecnym planie. Możesz jednak uzyskać ${ discountPercentage } zniżki na plan ${ plan.Title } przy subskrypcji na ${ cycle } miesiące.",
         "Oferta nie jest dostępna w obecnym planie. Możesz jednak uzyskać ${ discountPercentage } zniżki na plan ${ plan.Title } przy subskrypcji na ${ cycle } miesięcy.",
         "Oferta nie jest dostępna w obecnym planie. Możesz jednak uzyskać ${ discountPercentage } zniżki na plan ${ plan.Title } przy subskrypcji na ${ cycle } miesiąca."
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "30-dniowa gwarancja zwrotu pieniędzy"
       ]
     },
     "bf2023: Title": {
@@ -7625,14 +7602,6 @@
         "Wyświetl zaproszenie"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "Grupa rodziny nie została rozpoznana. Spróbuj ponownie."
-      ],
-      "Organization not recognized. Try again.": [
-        "Organizacja nie została rozpoznana. Spróbuj ponownie."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "Grupy ${ BRAND_NAME }"
@@ -7820,22 +7789,8 @@
       ]
     },
     "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "Wpisz nazwę grupy rodzinnej, aby potwierdzić"
-      ],
-      "Enter organization name to confirm": [
-        "Wpisz nazwę organizacji, aby potwierdzić"
-      ],
       "Family name": [
         "Nazwa rodziny"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "To spowoduje trwałe usunięcie wszystkich użytkowników, kont i danych powiązanych z organizacją."
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Spowoduje to usunięcie wszystkich funkcji premium każdego użytkownika rodziny ${ BRAND_NAME }."
       ]
     },
     "familyOffer_2023:Settings section title": {
@@ -7863,12 +7818,6 @@
       ],
       "Change family name": [
         "Zmień nazwę rodziny"
-      ],
-      "Delete family group?": [
-        "Usunąć grupę rodzinną?"
-      ],
-      "Delete organization?": [
-        "Usunąć organizację?"
       ],
       "Edit user storage": [
         "Edytuj przestrzeń dyskową użytkownika"
@@ -9132,12 +9081,6 @@
       ],
       "Paused": [
         "Wstrzymano"
-      ],
-      "Undo finished": [
-        "Cofanie zakończone"
-      ],
-      "Undo in progress": [
-        "Cofanie w toku"
       ]
     },
     "Import type": {
@@ -9477,18 +9420,6 @@
       "${ url } deleted.": [
         "Usunięto adres ${ url }."
       ],
-      "${ vaultLink } created": [
-        "Utworzenie sejfu ${ vaultLink }"
-      ],
-      "${ vaultLink } deleted": [
-        "Usunięcie sejfu ${ vaultLink }"
-      ],
-      "${ vaultLink } shared with email": [
-        "Udostępnienie sejfu ${ vaultLink } za pomocą adresu e-mail"
-      ],
-      "${ vaultLink } updated": [
-        "Zaktualizowanie sejfu ${ vaultLink }"
-      ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
         "${ VPN_SHORT_APP_NAME } ukrywa Twój ruch sieciowy. ${ PASS_SHORT_APP_NAME } ukrywa Twoją tożsamość\n— nielimitowane **aliasy hide-my-email** oraz **powiadomienia o wyciekach** w razie wycieku Twoich danych."
       ],
@@ -9579,23 +9510,11 @@
         "+ ${ invisibleCount } więcej",
         "+ ${ invisibleCount } więcej"
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } bonusowej przestrzeni dyskowej"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } połączenie ${ VPN_APP_NAME } (pozwala na podłączenie dodatkowych urządzeń do sieci VPN)",
-        "+${ organization.BonusVPN } połączenia ${ VPN_APP_NAME } (pozwalają na podłączenie dodatkowych urządzeń do sieci VPN)",
-        "+${ organization.BonusVPN } połączeń ${ VPN_APP_NAME } (pozwalają na podłączenie dodatkowych urządzeń do sieci VPN)",
-        "+${ organization.BonusVPN } połączeń ${ VPN_APP_NAME } (pozwalają na podłączenie dodatkowych urządzeń do sieci VPN)"
-      ],
       "2FA disabled": [
         "Uwierzytelnianie dwustopniowe jest wyłączone"
       ],
       "30-day money-back guarantee": [
         "30-dniowa gwarancja zwrotu pieniędzy"
-      ],
-      "30-day money-back guarantee.": [
-        "30-dniowa gwarancja zwrotu pieniędzy."
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Subdomena ${ protonSubdomain } jest hostowana przez ${ BRAND_NAME }, co pozwala szybko ją skonfigurować. ${ learnMoreLink }"
@@ -10002,9 +9921,6 @@
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "Wyłączenie monitora konta spowoduje również wyczyszczenie całej historii. Czy na pewno chcesz to wyłączyć?"
       ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Obniżając plan do wersji Free, utracisz te bonusy na zawsze, nawet jeśli w przyszłości ponownie ulepszysz swoje konto."
-      ],
       "By leaving now, changes may not be saved": [
         "Jeśli wyjdziesz teraz, zmiany nie zostaną zapisane"
       ],
@@ -10331,9 +10247,6 @@
       ],
       "Downgrade": [
         "Obniż plan"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Obniżenie planu spowoduje zakończenie wszystkich połączeń z płatnymi serwerami ${ VPN_APP_NAME }."
       ],
       "Download ${ VPN_APP_NAME }": [
         "Pobierz ${ VPN_APP_NAME }"
@@ -10788,15 +10701,6 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Jeśli zgubisz urządzenie z przypisanym uwierzytelnianiem dwustopniowym, możesz użyć poniższych kodów zapasowych, zamiast 6-cyfrowego kodu uwierzytelniającego, aby zalogować się na swoje konto. Każdy kod może zostać użyty tylko jeden raz."
       ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Po obniżeniu planu stracisz dostęp do płatnych funkcji poczty ${ MAIL_APP_NAME } i usługi ${ VPN_APP_NAME }."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Po obniżeniu planu stracisz dostęp do płatnych funkcji poczty ${ MAIL_APP_NAME }, takich jak dodatkowa przestrzeń dyskowa i filtry."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Po obniżeniu planu stracisz dostęp do płatnych funkcji usługi ${ VPN_APP_NAME }."
-      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Jeśli masz kupiony kod podarunkowy lub otrzymany od naszego działu wsparcia, możesz go wpisać tutaj."
       ],
@@ -10914,23 +10818,8 @@
       "Invitation link used": [
         "Zaproszenie zostało wykorzystane"
       ],
-      "Invite deleted": [
-        "Usunięcie zaproszenia"
-      ],
       "Invite family members and get everything up and running.": [
         "Zaproś użytkowników rodziny i rozpocznij."
-      ],
-      "Invite for new user deleted": [
-        "Usunięcie zaproszenia dla nowego użytkownika"
-      ],
-      "Invite for organization accepted": [
-        "Zaakceptowanie zaproszenia do organizacji"
-      ],
-      "Invite for organization created": [
-        "Utworzenie zaproszenia do organizacji"
-      ],
-      "Invite rejected": [
-        "Odrzucenie zaproszenia"
       ],
       "Invite successfully sent": [
         "Zaproszenie zostało wysłane",
@@ -10952,54 +10841,6 @@
       ],
       "It's better to have:": [
         "Lepiej mieć:"
-      ],
-      "Item autofilled in ${ vaultLink }": [
-        "Autouzupełnienie elementu w sejfie ${ vaultLink }"
-      ],
-      "Item autofilled in vault": [
-        "Autouzupełnienie elementu w sejfie"
-      ],
-      "Item created in ${ vaultLink }": [
-        "Utworzenie elementu w sejfie ${ vaultLink }"
-      ],
-      "Item created in vault": [
-        "Utworzenie elementu w sejfie"
-      ],
-      "Item deleted from ${ vaultLink }": [
-        "Usunięcie elementu z sejfu ${ vaultLink }"
-      ],
-      "Item deleted from vault": [
-        "Usunięcie elementu z sejfu"
-      ],
-      "Item flags changed in ${ vaultLink }": [
-        "Zmiana flag elementu w sejfie ${ vaultLink }"
-      ],
-      "Item flags changed in vault": [
-        "Zmiana flag elementu w sejfie"
-      ],
-      "Item in ${ vaultLink } trashed": [
-        "Przeniesienie elementu do kosza sejfu ${ vaultLink }"
-      ],
-      "Item in ${ vaultLink } untrashed": [
-        "Przywrócenie elementu z kosza sejfu ${ vaultLink }"
-      ],
-      "Item in vault trashed": [
-        "Przeniesienie elementu do kosza sejfu"
-      ],
-      "Item in vault untrashed": [
-        "Przywrócenie elementu z kosza sejfu"
-      ],
-      "Item read in ${ vaultLink }": [
-        "Odczytanie elementu w sejfie ${ vaultLink }"
-      ],
-      "Item read in vault": [
-        "Odczytanie elementu w sejfie"
-      ],
-      "Item updated in ${ vaultLink }": [
-        "Zaktualizowanie elementu w sejfie ${ vaultLink }"
-      ],
-      "Item updated in vault": [
-        "Zaktualizowanie elementu w sejfie"
       ],
       "It’s often the easiest way to recover your account if you’re signed in.": [
         "Często jest to najprostszy sposób na odzyskanie konta, jeśli jesteś zalogowany."
@@ -11196,9 +11037,6 @@
       "New group created via your identity provider and pending review.": [
         "Nowa grupa została utworzona za pośrednictwem Twojego dostawcy tożsamości i oczekuje na weryfikację."
       ],
-      "New user invited to organization": [
-        "Zaproszenie nowego użytkownika do organizacji"
-      ],
       "New VPN connection data will stop being collected and shown.": [
         "Dane o nowych połączeniach VPN przestaną być przechowywane i wyświetlane."
       ],
@@ -11367,15 +11205,6 @@
       "Paid for a plan": [
         "Zapłacono za plan"
       ],
-      "Pass Monitor - custom email confirmed": [
-        "Pass Monitor — potwierdzenie niestandardowego adresu e-mail"
-      ],
-      "Pass Monitor - custom email created": [
-        "Pass Monitor — utworzenie niestandardowego adresu e-mail"
-      ],
-      "Pass Monitor - custom email deleted": [
-        "Pass Monitor — usunięcie niestandardowego adresu e-mail"
-      ],
       "Pass usage logs": [
         "Logi użycia Pass"
       ],
@@ -11459,9 +11288,6 @@
       ],
       "Please open the document to view it.": [
         "Otwórz dokument, aby go zobaczyć."
-      ],
-      "Please open your browser extension settings and allow ${ PASS_APP_NAME } extension to access website data. Then, reload this page.": [
-        "Otwórz ustawienia rozszerzenia przeglądarki i zezwól rozszerzeniu ${ PASS_APP_NAME } na dostęp do danych witryny. Następnie odśwież tę stronę."
       ],
       "Please reconnect to continue.": [
         "Połącz się ponownie, aby kontynuować."
@@ -11736,23 +11562,11 @@
       "Settings updated": [
         "Ustawienia zostały zaktualizowane"
       ],
-      "Shared ${ vaultLink } deleted": [
-        "Usunięcie udostępniania sejfu ${ vaultLink }"
-      ],
-      "Shared ${ vaultLink } updated": [
-        "Zaktualizowanie udostępniania sejfu ${ vaultLink }"
-      ],
       "Shared server country (${ countriesCount })": [
         "Kraj udostępnionego serwera (${ countriesCount })",
         "Kraje udostępnionych serwerów (${ countriesCount })",
         "Kraje udostępnionych serwerów (${ countriesCount })",
         "Kraje udostępnionych serwerów (${ countriesCount })"
-      ],
-      "Shared vault deleted": [
-        "Usunięcie udostępnionego sejfu"
-      ],
-      "Shared vault updated": [
-        "Zaktualizowanie udostępnionego sejfu"
       ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Pokazuje zdjęcie każdego nadawcy na liście wiadomości. Jeśli zdjęcie nie jest dostępne, zostaną wyświetlone inicjały nadawcy."
@@ -11772,9 +11586,6 @@
       "Sign in only": [
         "Tylko do logowania"
       ],
-      "Sign in or create an account to continue.": [
-        "Zaloguj się lub utwórz konto, aby kontynuować."
-      ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Aby aktywować adres, zaloguj się do poczty ${ MAIL_APP_NAME }"
       ],
@@ -11783,9 +11594,6 @@
       ],
       "Signed up": [
         "Zarejestrowany"
-      ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Dzięki temu, że od dawna jesteś użytkownikiem, Twoje konto posiada dodatkowe funkcje."
       ],
       "Smart Routed through a different country.": [
         "Przekierowano za pomocą Smart Routing przez inny kraj."
@@ -11834,12 +11642,6 @@
       ],
       "Step ${ step }/${ totalSteps }": [
         "Krok ${ step }/${ totalSteps }"
-      ],
-      "Step 1 of 2": [
-        "Krok 1 z 2"
-      ],
-      "Step 2 of 2": [
-        "Krok 2 z 2"
       ],
       "Storage allocated to other users in this organisation": [
         "Przestrzeń dyskowa przydzielona do innych użytkowników organizacji"
@@ -12300,9 +12102,6 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Unikalny identyfikator wygenerowany przez dostawcę tożsamości zazwyczaj w formie adresu URL zawierającego nazwę dostawcy tożsamości (np. https://idp.przyklad.pl/XXXXX)."
       ],
-      "Unknown event type": [
-        "Nieznany typ zdarzenia"
-      ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Jeśli nie wylogujesz się lub nie zmienisz hasła, sesje pozostaną aktywne i wygasną po 60 dniach nieaktywności."
       ],
@@ -12396,21 +12195,6 @@
       "Users": [
         "Użytkownicy"
       ],
-      "Vault created": [
-        "Utworzenie sejfu"
-      ],
-      "Vault deleted": [
-        "Usunięcie sejfu"
-      ],
-      "Vault either deleted or requires access permissions": [
-        "Sejf został usunięty lub wymaga uprawnień dostępu"
-      ],
-      "Vault shared with email": [
-        "Udostępnienie sejfu za pomocą adresu e-mail"
-      ],
-      "Vault updated": [
-        "Zaktualizowanie sejfu"
-      ],
       "Verification code sent.": [
         "Kod weryfikacyjny został wysłany."
       ],
@@ -12428,9 +12212,6 @@
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Zweryfikuj swoją tożsamość za pomocą kodu z aplikacji uwierzytelniającej"
-      ],
-      "Verifying ${ PASS_APP_NAME } browser extension...": [
-        "Weryfikowanie rozszerzenia przeglądarki ${ PASS_APP_NAME }..."
       ],
       "Verifying your payment": [
         "Weryfikowanie płatności"
@@ -12566,9 +12347,6 @@
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Gdy powiadomienia są włączone, wyślemy ostrzeżenie na Twój pomocniczy adres e-mail, jeśli otrzymasz nowe wiadomości na swoim koncie ${ MAIL_APP_NAME }."
-      ],
-      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
-        "Po anulowaniu obecnej płatnej subskrypcji niewykorzystane koszty subskrypcji zostaną zwrócone na Twoje konto w postaci środków, a Twoje konto zostanie obniżone do planu ${ BRAND_NAME } ${ PLANS.FREE }."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Jeśli anulujesz subskrypcję, nie zostanie ona odnowiona, ale do końca jej okresu możesz z niej korzystać. Po tym czasie Twój plan zostanie obniżony do wersji ${ BRAND_NAME } Free."
@@ -12830,9 +12608,6 @@
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "Musisz aktywować klucz prywatny organizacji, używając hasła zapasowego klucza organizacji, otrzymanego od administratora organizacji."
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Przed obniżeniem planu musisz wyłączyć lub usunąć dodatkowych użytkowników ${ MAIL_APP_NAME }, adresy i niestandardowe domeny."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Twoje konto PayPal musi być powiązane z kartą płatniczą lub kontem bankowym, aby dodać je jako metodę płatności."
@@ -15720,9 +15495,6 @@
       "use a data recovery method": [
         "użyj metody odzyskiwania danych"
       ],
-      "Vault": [
-        "Sejf"
-      ],
       "View guide": [
         "Pokaż przewodnik"
       ],
@@ -16705,9 +16477,6 @@
       ]
     },
     "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Obniż plan do wersji ${ downgradedPlanName }"
-      ],
       "Explore all ${ BRAND_NAME } plans": [
         "Pokaż wszystkie plany ${ BRAND_NAME }"
       ],
@@ -22804,9 +22573,6 @@
       "Upgrade your plan to increase your storage.": [
         "Ulepsz plan, aby zwiększyć przestrzeń dyskową."
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Za pozostały czas otrzymasz środki na konto ${ BRAND_NAME }."
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "Pozostał **${ daysRemaining }** dzień korzystania z planu **${ currentPlanName }**.",
         "Pozostały **${ daysRemaining }** dni korzystania z planu **${ currentPlanName }**.",
@@ -23727,9 +23493,6 @@
       "You have successfully canceled your subscription.": [
         "Subskrypcja została anulowana."
       ],
-      "You have successfully unsubscribed": [
-        "Subskrypcja została anulowana"
-      ],
       "You will receive your username via email within a minute if you entered a valid recovery email address.": [
         "Jeśli adres odzyskiwania jest prawidłowy, otrzymasz wiadomość ze swoją nazwą użytkownika."
       ],
@@ -24097,9 +23860,6 @@
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
       ],
-      "${ PASS_APP_NAME } is missing permissions": [
-        "Brak wymaganych uprawnień dla ${ PASS_APP_NAME }"
-      ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "Raport ${ PASS_SHORT_APP_NAME } Monitor"
       ],
@@ -24460,12 +24220,6 @@
       "Confirm": [
         "Potwierdź"
       ],
-      "Confirm downgrade": [
-        "Potwierdź obniżenie planu"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Potwierdź utratę ${ BRAND_NAME } bonusów"
-      ],
       "Connect ${ name }": [
         "Połącz ${ name }"
       ],
@@ -24483,9 +24237,6 @@
       ],
       "Connect to video conferencing": [
         "Połącz się z wideokonferencją"
-      ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Połącz konto ${ BRAND_NAME }"
       ],
       "Connect your custom domain": [
         "Połącz niestandardową domenę"
@@ -24747,9 +24498,6 @@
       ],
       "Downgrade account": [
         "Obniż plan"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "Obniżyć plan do wersji ${ downgradedPlanName }?"
       ],
       "Download ${ app }": [
         "Pobierz ${ app }"
@@ -25917,9 +25665,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Witaj w planie ${ BRAND_NAME } for Business"
-      ],
-      "Welcome to your new password manager!": [
-        "Witaj w nowym menadżerze haseł!"
       ],
       "What changes if you switch to the Free plan": [
         "Co się zmieni, jeśli przełączysz się na darmowy plan"
@@ -27262,12 +27007,6 @@
       ],
       "By removing this phone number, you will no longer be able to recover your account.": [
         "Po usunięciu tego numeru telefonu nie będziesz już mieć możliwości odzyskania swojego konta."
-      ],
-      "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
-        "Logowanie nie powiodło się. Otwórz rozszerzenie przeglądarki ${ PASS_APP_NAME } i zaloguj się z jego poziomu."
-      ],
-      "Could not sign up. Please open ${ PASS_APP_NAME } browser extension and sign up from there.": [
-        "Rejestracja nie powiodła się. Otwórz rozszerzenie przeglądarki ${ PASS_APP_NAME } i zarejestruj się z jego poziomu."
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Jeśli anulujesz proces importowania, nie będziesz mógł go wznowić. ${ BRAND_NAME } zapisał cały postęp na Twoim koncie. Czy chcesz anulować mimo to?"

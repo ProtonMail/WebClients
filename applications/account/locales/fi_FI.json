@@ -410,9 +410,6 @@
       "Connect to video conferencing": [
         "Yhdistä videoneuvotteluun"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Yhdistä ${ BRAND_NAME }-tilisi"
-      ],
       "Connect your email": [
         "Yhdistä sähköpostinne"
       ],
@@ -491,14 +488,8 @@
       "Create": [
         "Luo"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Luo ${ BRAND_NAME }-tili"
-      ],
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "Luokaa linkki jaettavaksi kenen tahansa ${ BRAND_NAME } -palvelun ulkopuolisen kanssa"
-      ],
-      "Create an account": [
-        "Luo tili"
       ],
       "Create calendar": [
         "Luo kalenteri"
@@ -676,9 +667,6 @@
       ],
       "Done": [
         "Valmis"
-      ],
-      "Downgrade": [
-        "Alenna"
       ],
       "Download": [
         "Lataa"
@@ -1349,17 +1337,11 @@
       "Reload": [
         "Päivitä"
       ],
-      "Reload page": [
-        "Päivitä sivu"
-      ],
       "Remove": [
         "Poista"
       ],
       "Remove all other devices": [
         "Poista kaikki muut laitteet"
-      ],
-      "Remove bonuses": [
-        "Poista edut"
       ],
       "Remove button": [
         "Poista-painike"
@@ -2517,11 +2499,6 @@
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Valitettavasti tätä tarjousta ei ole saatavilla nykyisellä tilauksellasi. Voit kuitenkin saada ${ discountPercentage } alennuksen ${ plan.Title } -tilauksesta ${ cycle } kuukaudeksi.",
         "Valitettavasti tätä tarjousta ei ole saatavilla nykyisellä tilauksellasi. Voit kuitenkin saada ${ discountPercentage } alennuksen ${ plan.Title } -tilauksesta ${ cycle } kuukaudeksi."
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "30 päivän rahat takaisin -takuu"
       ]
     },
     "bf2023: Title": {
@@ -7656,14 +7633,6 @@
         "Näytä kutsu"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "Perheryhmää ei tunnistettu. Yritä uudelleen."
-      ],
-      "Organization not recognized. Try again.": [
-        "Organisaatiota ei tunnistettu. Yritä uudelleen."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-ryhmää"
@@ -7841,22 +7810,8 @@
       ]
     },
     "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "Vahvista syöttämällä perheryhmän nimi"
-      ],
-      "Enter organization name to confirm": [
-        "Vahvista syöttämällä organisaation nimi"
-      ],
       "Family name": [
         "Perheen nimi"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Tämä poistaa kaikki organisaatioosi liittyvät alikäyttäjät, tilit ja tiedot pysyvästi."
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Tämä poistaa kaikki ${ BRAND_NAME }in premium-ominaisuudet kaikilta perheenjäseniltä."
       ]
     },
     "familyOffer_2023:Settings section title": {
@@ -7884,12 +7839,6 @@
       ],
       "Change family name": [
         "Muuta perheen nimeä"
-      ],
-      "Delete family group?": [
-        "Poistetaanko perheryhmä?"
-      ],
-      "Delete organization?": [
-        "Poistetaanko organisaatio?"
       ],
       "Edit user storage": [
         "Muokkaa käyttäjän tallennustilaa"
@@ -9145,12 +9094,6 @@
       ],
       "Paused": [
         "Keskeytetty"
-      ],
-      "Undo finished": [
-        "Kumottu"
-      ],
-      "Undo in progress": [
-        "Kumoaminen käynnissä"
       ]
     },
     "Import type": {
@@ -9443,18 +9386,6 @@
       "${ url } deleted.": [
         "${ url } poistettiin."
       ],
-      "${ vaultLink } created": [
-        "${ vaultLink } luotiin"
-      ],
-      "${ vaultLink } deleted": [
-        "${ vaultLink } poistettiin"
-      ],
-      "${ vaultLink } shared with email": [
-        "${ vaultLink } jaettiin sähköpostitse"
-      ],
-      "${ vaultLink } updated": [
-        "${ vaultLink } päivitettiin"
-      ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
         "${ VPN_SHORT_APP_NAME } piilottaa tietoliikenteesi, ${ PASS_SHORT_APP_NAME } henkilöllisyytesi\n— Rajattomasti **hide-my-email-aliaksia** ja **pimeän verkon hälytykset**, jos tietosi vuotavat."
       ],
@@ -9541,21 +9472,11 @@
         "+ ${ invisibleCount } Lisää",
         "+ ${ invisibleCount } Lisää"
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } lisätallennustilaa"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } ${ VPN_APP_NAME } -yhteys (mahdollistaa VPN-yhteyden useammalla laitteella)",
-        "+${ organization.BonusVPN } ${ VPN_APP_NAME } -yhteyttä (mahdollistaa VPN-yhteyden useammalla laitteella)"
-      ],
       "2FA disabled": [
         "2FA poistettu käytöstä"
       ],
       "30-day money-back guarantee": [
         "30 päivän rahat takaisin -takuu"
-      ],
-      "30-day money-back guarantee.": [
-        "30 päivän rahat takaisin -takuu."
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ protonSubdomain } on ${ BRAND_NAME }in isännöimä, jonka ansiosta voit määrittä aliverkkotunnuksen nopeasti. ${ learnMoreLink }"
@@ -9954,9 +9875,6 @@
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "Tilinvalvonnan käytöstä poistaminen tyhjentää myös koko historiasi. Haluatko varmasti poistaa tämän käytöstä?"
       ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Alentamalla ilmaiseen palveluun, menetät nämä edut pysyvästi, vaikka päivittäisit tilauksesi tulevaisuudessa uudelleen."
-      ],
       "By leaving now, changes may not be saved": [
         "Jos poistut nyt, muutoksia ei tallenneta"
       ],
@@ -10283,9 +10201,6 @@
       ],
       "Downgrade": [
         "Alenna"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Tilin alennus katkaisee kaikki yhteydet maksullisiin ${ VPN_APP_NAME } -palvelimiin."
       ],
       "Download ${ VPN_APP_NAME }": [
         "Lataa ${ VPN_APP_NAME }"
@@ -10746,15 +10661,6 @@
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "Jos et voi käyttää tunnistautumissovellustasi, voit käyttää yhtä kuudestatoista varakoodistasi, jotka sait määrittäessäsi kaksivaiheisen tunnistautumisen. ${ learnMoreLink }"
       ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Jos jatkat alennusta, menetät maksullisten ${ MAIL_APP_NAME } ja ${ VPN_APP_NAME } -ominaisuuksien käyttöoikeuden."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Jos jatkat alennusta, menetät maksullisten suuremman tallennuskapasiteetin ja suodattimien kaltaisten maksullisten ${ MAIL_APP_NAME }-ominaisuuksien käyttöoikeuden."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Jos jatkat alennusta, menetät maksullisten ${ VPN_APP_NAME } -ominaisuuksien käyttöoikeuden."
-      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Mikäli ostit lahjakoodin tai sait sellaisen asiakaspalvelustamme, voit syöttää sen tähän."
       ],
@@ -10868,23 +10774,8 @@
       "Invitation link used": [
         "Kutsulinkki on käytetty"
       ],
-      "Invite deleted": [
-        "Kutsu poistettiin"
-      ],
       "Invite family members and get everything up and running.": [
         "Kutsu perheenjäseniä ja aloita käyttö."
-      ],
-      "Invite for new user deleted": [
-        "Uuden käyttäjän kutsu poistettiin"
-      ],
-      "Invite for organization accepted": [
-        "Kutsu organisaatioon hyväksyttiin"
-      ],
-      "Invite for organization created": [
-        "Kutsu organisaatioon luotiin"
-      ],
-      "Invite rejected": [
-        "Kutsusta kieltäydyttiin"
       ],
       "Invite successfully sent": [
         "Kutsu lähetettiin",
@@ -10904,54 +10795,6 @@
       ],
       "It's better to have:": [
         "On parempi olla:"
-      ],
-      "Item autofilled in ${ vaultLink }": [
-        "Kohde automaattitäytettiin holvista ${ vaultLink }"
-      ],
-      "Item autofilled in vault": [
-        "Kohde automaattitäytettiin holvista"
-      ],
-      "Item created in ${ vaultLink }": [
-        "Kohde luotiin holviin ${ vaultLink }"
-      ],
-      "Item created in vault": [
-        "Holviin luotiin kohde"
-      ],
-      "Item deleted from ${ vaultLink }": [
-        "Kohde poistettiin holvista ${ vaultLink }"
-      ],
-      "Item deleted from vault": [
-        "Kohde poistettiin holvista"
-      ],
-      "Item flags changed in ${ vaultLink }": [
-        "Holvin ${ vaultLink } kohteen liput muuttuivat"
-      ],
-      "Item flags changed in vault": [
-        "Holvin kohteen liput muuttuivat"
-      ],
-      "Item in ${ vaultLink } trashed": [
-        "Kohde siirrettiin holvista ${ vaultLink } roskakoriin"
-      ],
-      "Item in ${ vaultLink } untrashed": [
-        "Kohde palautettiin roskakorista holviin ${ vaultLink }"
-      ],
-      "Item in vault trashed": [
-        "Kohde siirrettiin holvista roskakoriin"
-      ],
-      "Item in vault untrashed": [
-        "Holvin kohde palautettiin roskakorista"
-      ],
-      "Item read in ${ vaultLink }": [
-        "Kohde luettiin holvissa ${ vaultLink }"
-      ],
-      "Item read in vault": [
-        "Holvin kohdetta tarkasteltiin"
-      ],
-      "Item updated in ${ vaultLink }": [
-        "Kohde päivitettiin holvissa ${ vaultLink }"
-      ],
-      "Item updated in vault": [
-        "Holvin kohdetta muokattiin"
       ],
       "It’s often the easiest way to recover your account if you’re signed in.": [
         "Se on usein helpoin tapa palauttaa tilinne, jos olette kirjautuneena sisään."
@@ -11154,9 +10997,6 @@
       "New group created via your identity provider and pending review.": [
         "Uusi ryhmä on luotu identiteetin tarjoajan kautta ja odottaa tarkastusta."
       ],
-      "New user invited to organization": [
-        "Uusi käyttäjä kutsuttiin organisaatioon"
-      ],
       "New VPN connection data will stop being collected and shown.": [
         "Jatkossa VPN-yhteyksistä ei enää kerätä tietoja, eikä niitä näytetä."
       ],
@@ -11333,15 +11173,6 @@
       "Paid for a plan": [
         "Maksettu tilaukselle"
       ],
-      "Pass Monitor - custom email confirmed": [
-        "Pass Monitor - oma sähköposti vahvistettiin"
-      ],
-      "Pass Monitor - custom email created": [
-        "Pass Monitor - oma sähköposti luotiin"
-      ],
-      "Pass Monitor - custom email deleted": [
-        "Pass Monitor - oma sähköposti poistettiin"
-      ],
       "Pass usage logs": [
         "Pass-käyttölokit"
       ],
@@ -11421,9 +11252,6 @@
       ],
       "Please open the document to view it.": [
         "Avaa dokumentti tarkastellaksesi sitä."
-      ],
-      "Please open your browser extension settings and allow ${ PASS_APP_NAME } extension to access website data. Then, reload this page.": [
-        "Avaa selaimesi laajennusasetukset ja salli ${ PASS_APP_NAME } -laajennuksen käyttää verkkosivustojen tietoja. Lataa sitten sivu uudelleen."
       ],
       "Please reconnect to continue.": [
         "Yhdistä uudelleen jatkaaksesi."
@@ -11701,21 +11529,9 @@
       "Settings updated": [
         "Asetukset on muutettu"
       ],
-      "Shared ${ vaultLink } deleted": [
-        "Jaettu ${ vaultLink } poistettiin"
-      ],
-      "Shared ${ vaultLink } updated": [
-        "Jaettu ${ vaultLink } päivitettiin"
-      ],
       "Shared server country (${ countriesCount })": [
         "Jaettujen palvelimien maa (${ countriesCount })",
         "Jaettujen palvelimien maat (${ countriesCount })"
-      ],
-      "Shared vault deleted": [
-        "Jaettu holvi poistettiin"
-      ],
-      "Shared vault updated": [
-        "Jaettua holvia muokattiin"
       ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Näytä viestilistauksessa jokaisen lähettäjän kuva. Jos kuvaa ei ole saatavilla, näytetään lähettäjän nimen alkukirjain."
@@ -11735,9 +11551,6 @@
       "Sign in only": [
         "Vain sisäänkirjautuminen"
       ],
-      "Sign in or create an account to continue.": [
-        "Jatka kirjautumalla tai luomalla tili."
-      ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Aktivoi osoitteesi kirjautumalla ${ MAIL_APP_NAME }iin"
       ],
@@ -11746,9 +11559,6 @@
       ],
       "Signed up": [
         "Rekisteröityi"
-      ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Koska olet uskollinen käyttäjä, tililläsi on lisäominaisuuksia."
       ],
       "Smart Routed through a different country.": [
         "Älykäs reititys eri maan kautta."
@@ -11798,12 +11608,6 @@
       ],
       "Step ${ step }/${ totalSteps }": [
         "Vaihe ${ step }/${ totalSteps }"
-      ],
-      "Step 1 of 2": [
-        "Vaihe 1/2"
-      ],
-      "Step 2 of 2": [
-        "Vaihe 2 / 2"
       ],
       "Storage allocated to other users in this organisation": [
         "Organisaation käyttäjille varattu tallennustila"
@@ -12259,9 +12063,6 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Identiteetintarjoajasi luoma yksilöllinen tunnistetieto, yleensä identiteetintarjoajan nimen sisältävän URL-osoitteen muodossa (esim. https://idp.esimerkki.fi/XXXXX)."
       ],
-      "Unknown event type": [
-        "Tuntematon tapahtumatyyppi"
-      ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Jollet kirjaudu tililtäsi ulos tai vaihda salasanaasi, istuntosi pysyy aktiivisena. Istunnot erääntyvät niiden oltua toimettomana 60 päivää."
       ],
@@ -12367,21 +12168,6 @@
       "Users": [
         "Käyttäjät"
       ],
-      "Vault created": [
-        "Holvi luotiin"
-      ],
-      "Vault deleted": [
-        "Holvi poistettiin"
-      ],
-      "Vault either deleted or requires access permissions": [
-        "Holvi on joko poistettu tai vaatii käyttöoikeuksia"
-      ],
-      "Vault shared with email": [
-        "Holvi jaettiin sähköpostitse"
-      ],
-      "Vault updated": [
-        "Holvia muokattiin"
-      ],
       "Verification code sent.": [
         "Vahvistuskoodi lähetettiin."
       ],
@@ -12402,9 +12188,6 @@
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Tunnistaudu todennussovelluksen näyttämällä, aikaan perustuvalla kertakäyttökoodilla"
-      ],
-      "Verifying ${ PASS_APP_NAME } browser extension...": [
-        "Varmennetaan ${ PASS_APP_NAME } selainlaajennusta..."
       ],
       "Verifying your payment": [
         "Vahvistetaan maksua"
@@ -12543,9 +12326,6 @@
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Kun ilmoitukset ovat käytössä, lähetämme hälytyksen palautussähköpostiosoitteeseenne, jos teillä on uusia viestejä ${ MAIL_APP_NAME } -tilillänne."
-      ],
-      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
-        "Kun peruutat nykyisen maksullisen tilauksesi, tilauksesi saldo palautetaan tilikrediitteinä ja sinut alennetaan ${ BRAND_NAME } ${ PLANS.FREE } -tilaukseen."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Kun peruutat tilauksesi, sitä ei uusita, mutta voit silti nauttia tilauksen eduista tilausjakson loppuun asti. Sen jälkeen sinut alennetaan ${ BRAND_NAME } Free -tilaukseen."
@@ -12798,9 +12578,6 @@
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "Sinun on aktivoitava yksityinen organisaatioavaimesi organisaatiosi ylläpidon ilmoittamalla organisaatioavaimen varmistussalasanalla."
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Kaikki laajemmat ${ MAIL_APP_NAME } -määritykset, kuten käyttäjät, osoitteet ja omat verkkotunnukset on poistettava käytöstä tai poistettava ennen tilauksen alennusta."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "PayPal-tililläsi on oltava maksukortti tai pankkitili, jotta voit lisätä sen maksutavaksi."
@@ -15707,9 +15484,6 @@
       "use a data recovery method": [
         "käytä tietojen palautusmenetelmää"
       ],
-      "Vault": [
-        "Holvi"
-      ],
       "View guide": [
         "Näytä opas"
       ],
@@ -16667,9 +16441,6 @@
       ]
     },
     "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Alenna tilaukseen ${ downgradedPlanName }"
-      ],
       "Explore all ${ BRAND_NAME } plans": [
         "Tutustu kaikkiin ${ BRAND_NAME }-tilauksiin"
       ],
@@ -22621,9 +22392,6 @@
       "Upgrade your plan to increase your storage.": [
         "Kasvata tallennustilaasi päivittämällä tilauksesi."
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Hyvitämme jäljellä olevan ajan krediitteinä ${ BRAND_NAME }-tilillesi."
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "**${ currentPlanName }**-tilisi on voimassa vielä **${ daysRemaining }** päivän.",
         "**${ currentPlanName }**-tilisi on voimassa vielä **${ daysRemaining }** päivää."
@@ -23504,9 +23272,6 @@
       "You have successfully canceled your subscription.": [
         "Olet perunut tilauksesi."
       ],
-      "You have successfully unsubscribed": [
-        "Tilauksesi on lopetettu"
-      ],
       "You will receive your username via email within a minute if you entered a valid recovery email address.": [
         "Saat käyttäjätunnuksesi sähköpostitse minuutin kuluessa, jos syötit kelvollisen palautussähköpostiosoitteen."
       ],
@@ -23855,9 +23620,6 @@
       ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
-      ],
-      "${ PASS_APP_NAME } is missing permissions": [
-        "${ PASS_APP_NAME } -sovellukselta puuttuu käyttöoikeuksia"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "${ PASS_SHORT_APP_NAME } Monitor -raportti"
@@ -24223,12 +23985,6 @@
       "Confirm": [
         "Vahvista"
       ],
-      "Confirm downgrade": [
-        "Vahvista alennus"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Vahvista ${ BRAND_NAME }-bonusten menetys"
-      ],
       "Connect ${ name }": [
         "Yhdistä palveluun ${ name }"
       ],
@@ -24246,9 +24002,6 @@
       ],
       "Connect to video conferencing": [
         "Yhdistä videoneuvotteluun"
-      ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Yhdistä ${ BRAND_NAME }-tilisi"
       ],
       "Connect your custom domain": [
         "Yhdistä oma verkkotunnuksesi"
@@ -24518,9 +24271,6 @@
       ],
       "Downgrade account": [
         "Alenna tili"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "Alennetaanko tilaukseen ${ downgradedPlanName }?"
       ],
       "Download ${ app }": [
         "Lataa ${ app }"
@@ -25709,9 +25459,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Tervetuloa ${ BRAND_NAME } for Businessiin"
-      ],
-      "Welcome to your new password manager!": [
-        "Tervetuloa uuteen salasanahallintaasi!"
       ],
       "What changes if you switch to the Free plan": [
         "Mikä muuttuu, jos vaihdatte Free-tilaukseen"
@@ -27053,12 +26800,6 @@
       ],
       "By removing this phone number, you will no longer be able to recover your account.": [
         "Jos poistatte tämän puhelinnumeron, ette voi enää palauttaa tiliänne."
-      ],
-      "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
-        "Kirjautuminen epäonnistui. Avaa ${ PASS_APP_NAME }-selainlaajennus ja kirjaudu sisään sieltä."
-      ],
-      "Could not sign up. Please open ${ PASS_APP_NAME } browser extension and sign up from there.": [
-        "Rekisteröityminen epäonnistui. Avaa ${ PASS_APP_NAME }-selainlaajennus ja rekisteröidy sieltä."
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Jos perut tuonnin, et voi jatkaa sitä. ${ BRAND_NAME } tallensi tilanteen tilillesi. Perutaanko tuonti silti?"
