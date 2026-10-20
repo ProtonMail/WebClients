@@ -1,5 +1,4 @@
 import { getAccountAppRoutes } from '../containers/account/routes';
-import { getAuthenticatorAppRoutes } from '../containers/authenticator/routes';
 import { getCalendarAppRoutes } from '../containers/calendar/routes';
 import { getDocsAppRoutes } from '../containers/docs/routes';
 import { getDriveAppRoutes } from '../containers/drive/routes';
@@ -33,7 +32,6 @@ export const getRoutes = (params: AllRouterParams) => {
         msp: getMspAppRoutes(organizationParams),
         vpn: getVpnAppRoutes(sharedSettings),
         wallet: getWalletAppRoutes(sharedSettings),
-        authenticator: getAuthenticatorAppRoutes(sharedSettings),
     };
 };
 

@@ -50,7 +50,6 @@ export type Flags = {
     isCryptoPostQuantumOptInEnabled: boolean;
     isSsoForPbsEnabled: boolean;
     isRetentionPoliciesEnabled: boolean;
-    isAuthenticatorAvailable: boolean;
     isCategoryViewEnabled: boolean;
     isReferralProgramEnabled: boolean;
     isDriveEasySwitchNewUIEnabled: boolean;

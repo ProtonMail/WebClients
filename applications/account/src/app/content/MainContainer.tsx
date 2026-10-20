@@ -122,13 +122,6 @@ const WalletSettingsRouter = lazy(
     () => import(/* webpackChunkName: "routers/WalletSettingsRouter" */ '../containers/wallet/WalletSettingsRouter')
 );
 
-const AuthenticatorSettingsRouter = lazy(
-    () =>
-        import(
-            /* webpackChunkName: "routers/AuthenticatorSettingsRouter" */ '../containers/authenticator/AuthenticatorSettingsRouter'
-        )
-);
-
 const mailSlug = getSlugFromApp(APPS.PROTONMAIL);
 const calendarSlug = getSlugFromApp(APPS.PROTONCALENDAR);
 const vpnSlug = getSlugFromApp(APPS.PROTONVPN_SETTINGS);
@@ -136,7 +129,6 @@ const driveSlug = getSlugFromApp(APPS.PROTONDRIVE);
 const docsSlug = getSlugFromApp(APPS.PROTONDOCS);
 const walletSlug = getSlugFromApp(APPS.PROTONWALLET);
 const passSlug = getSlugFromApp(APPS.PROTONPASS);
-const authenticatorSlug = getSlugFromApp(APPS.PROTONAUTHENTICATOR);
 
 const getDefaultPassRedirect = (
     user: UserModel,
@@ -147,10 +139,6 @@ const getDefaultPassRedirect = (
         return passRoutes.routes.downloads.to;
     }
     return accountRoutes.routes.dashboard.to;
-};
-
-const getDefaultAuthenticatorRedirect = (authenticatorRoutes: ReturnType<typeof getRoutes>['authenticator']) => {
-    return authenticatorRoutes.routes.downloads.to;
 };
 
 const getDefaultMspRedirect = (organizationRoutes: ReturnType<typeof getRoutes>['organization']) => {
@@ -218,7 +206,6 @@ const MainContainer = () => {
     const isSsoForPbsEnabled = useFlag('SsoForPbs');
     const showSignInRestrictionToggle = useFlag('ShowSignInRestrictionToggle');
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
-    const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
     const isSpacesAvailable = useFlag('SpacesAvailable');
     const isDriveEasySwitchEnabled = useFlag('EasySwitchB2CForDriveWeb');
     const isDriveEasySwitchNewUIEnabled = useFlag('EasySwitchB2CForDriveWebNewUI') && isDriveEasySwitchEnabled;
@@ -310,7 +297,6 @@ const MainContainer = () => {
         isCryptoPostQuantumOptInEnabled,
         isSsoForPbsEnabled,
         isRetentionPoliciesEnabled,
-        isAuthenticatorAvailable,
         isCategoryViewEnabled: canUseCategoryView,
         isReferralProgramEnabled,
         isDriveEasySwitchNewUIEnabled,
@@ -457,9 +443,6 @@ const MainContainer = () => {
             if (app === APPS.PROTONPASS) {
                 return getDefaultPassRedirect(user, routes.account, routes.pass);
             }
-            if (app === APPS.PROTONAUTHENTICATOR) {
-                return getDefaultAuthenticatorRedirect(routes.authenticator);
-            }
             return getDefaultRedirect(routes.account);
         })();
 
@@ -588,14 +571,6 @@ const MainContainer = () => {
                         <Route path={`/${passSlug}`}>
                             <Suspense fallback={<PrivateMainAreaLoading />}>
                                 <PassSettingsRouter passAppRoutes={routes.pass} redirect={redirect} />
-                            </Suspense>
-                        </Route>
-                        <Route path={`/${authenticatorSlug}`}>
-                            <Suspense fallback={<PrivateMainAreaLoading />}>
-                                <AuthenticatorSettingsRouter
-                                    authenticatorAppRoutes={routes.authenticator}
-                                    redirect={redirect}
-                                />
                             </Suspense>
                         </Route>
                         {redirect}
