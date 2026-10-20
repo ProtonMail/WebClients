@@ -36,7 +36,7 @@ const FOLDER_TREE_ID = 'null___folder-uid';
 const FOLDER_UID = 'folder-uid';
 
 const defaultProps = {
-    itemsToCopy: [{ uid: 'item-1', name: 'File 1' }],
+    itemsToCopy: [{ uid: 'item-1', name: 'File 1', type: NodeType.File }],
     onClose: jest.fn(),
     onExit: jest.fn(),
     open: true,

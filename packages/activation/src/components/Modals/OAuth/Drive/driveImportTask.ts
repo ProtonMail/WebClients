@@ -1,4 +1,4 @@
-import type { ProtonDriveClient } from '@protontech/drive-sdk';
+import type { NodeType, ProtonDriveClient } from '@protontech/drive-sdk';
 
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
@@ -28,7 +28,10 @@ const prepareDriveImportFolder = async (
     // getMyFilesRootFolder creates the main volume if none exists yet (new accounts).
     const rootFolder = await drive.getMyFilesRootFolder();
     const [volumeId, nodeId] = rootFolder.uid.split('~');
-    const name = useAvailableName ? await drive.getAvailableName(rootFolder, folderName) : folderName;
+    // Literal instead of the enum: @proton/components pulls activation into every app, so it only imports SDK types.
+    const name = useAvailableName
+        ? await drive.getAvailableName(rootFolder, folderName, 'folder' as NodeType.Folder)
+        : folderName;
     const folder = await drive.experimental.prepareImportFolder(name);
 
     return {
