@@ -1,11 +1,9 @@
 import { signInWithAnotherDevicePush } from '@proton/account/signInWithAnotherDevice/signInWithAnotherDevicePush';
-import { Product } from '@proton/shared/lib/ProductEnum';
 import { pushForkSession } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { type OAuthLastAccess, getOAuthLastAccess } from '@proton/shared/lib/api/oauth';
-import { getAvailableApps } from '@proton/shared/lib/apps/apps';
-import { getClientID, getProduct, isExtension } from '@proton/shared/lib/apps/helper';
+import { getClientID, isExtension } from '@proton/shared/lib/apps/helper';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import { produceExtensionFork } from '@proton/shared/lib/authentication/fork/extension';
 import { getValidatedProtonProtocol } from '@proton/shared/lib/authentication/fork/getValidatedProtonProtocol';
@@ -13,11 +11,11 @@ import { getIsLocalhostRedirectUrl } from '@proton/shared/lib/authentication/for
 import { produceOAuthFork } from '@proton/shared/lib/authentication/fork/oauth';
 import { getProduceForkUrl, getShouldReAuth, produceFork } from '@proton/shared/lib/authentication/fork/produce';
 import type { PushForkResponse } from '@proton/shared/lib/authentication/interface';
-import { APPS, type APP_NAMES, SSO_PATHS } from '@proton/shared/lib/constants';
+import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
-import { getRequiresAddressSetup } from '@proton/shared/lib/keys/setupAddress';
+import { getRequiresAddressSetup, getRequiresProtonAddressFromAdmin } from '@proton/shared/lib/keys/setupAddress';
 
 import type { AuthDesktopState } from '../../public/AuthDesktop';
 import type { AuthExtensionState } from '../../public/AuthExtension';
@@ -30,29 +28,6 @@ import { getDeepLinkLoginResult } from './getDeepLinkLoginResult';
 import { getProductDisabledLoginResult } from './getProductDisabledResult';
 import { getSetupAddressLoginResult } from './getSetupAddressLoginResult';
 import type { LoginResult } from './interface';
-
-// A set of products for which availability (access control) should be ignored and instead always allowed.
-// This may be for apps which will never have a web app but for which forking should still be allowed and access control ignored.
-// TODO: Remove Product.Console once it's ready for the product access control.
-const allowSet = new Set<Product>([Product.Authenticator, Product.Console]);
-
-/**
- * Checks if the app is available to this user. It only does it based on the user's access control. Not based on the organization's access control
- * because we don't have the organization, and it's anyway done by the API later.
- */
-const getIsAppAvailable = (app: APP_NAMES, session: AuthSession) => {
-    // Convert the app into a product, because the app may be an app, extension, or desktop app etc. and available products are only apps.
-    const product = getProduct(app);
-    return (
-        allowSet.has(product) ||
-        getAvailableApps({
-            user: session.data.User,
-            context: 'app',
-            isAuthenticatorAvailable: true,
-            isSpacesAvailable: true,
-        }).some((availableApp) => product === getProduct(availableApp))
-    );
-};
 
 const getIsProductDisabledResult = (code: number) => {
     return [
@@ -103,12 +78,12 @@ export const getProduceForkLoginResult = async ({
             return getProductDisabledLoginResult({ api, app, paths, session });
         }
 
-        if (getRequiresAddressSetup(app, session.data.User)) {
+        if (
+            getRequiresAddressSetup(app, session.data.User) ||
+            // Where they're told to ask their administrator
+            getRequiresProtonAddressFromAdmin(app, session.data.User)
+        ) {
             return getSetupAddressLoginResult({ session, app });
-        }
-
-        if (!getIsAppAvailable(app, session)) {
-            return getProductDisabledLoginResult({ api, app, paths, session });
         }
 
         try {
