@@ -2015,6 +2015,9 @@
       "Username must end with a letter or digit": [
         "使用者名稱的結尾必須為字母或數字"
       ],
+      "Verification keys for ${ signatureType } are not available": [
+        "無可用於 ${ signatureType } 種類的金鑰驗證"
+      ],
       "We couldn’t send a verification code using this method.": [
         "我們無法使用此方法傳送驗證碼。"
       ],

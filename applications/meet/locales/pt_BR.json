@@ -2287,6 +2287,9 @@
       "Screen share is not supported on mobile browsers": [
         "O compartilhamento de tela não tem suporte em navegadores para dispositivos móveis"
       ],
+      "Screen share is not supported on your device": [
+        "O compartilhamento de tela não tem suporte no seu dispositivo"
+      ],
       "Signature is missing": [
         "Assinatura ausente"
       ],
@@ -2340,6 +2343,9 @@
       ],
       "The uploaded file does not match the original. Please try again.": [
         "O arquivo enviado não corresponde ao original. Por favor, tente novamente."
+      ],
+      "This background could not be saved in this browser.": [
+        "Este plano de fundo não pode ser salvo nesse navegador."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Este campo excede o máximo de ${ maximumLength } caracteres."
@@ -2640,6 +2646,9 @@
       ],
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "O ${ MEET_APP_NAME } precisa do WebRTC para funcionar. Atualize seu navegador ou dispositivo para uma versão que tenha suporte para WebRTC, tente usar outro navegador ou desative todas as extensões que possam estar bloqueando-o."
+      ],
+      "${ meetingName } has ended": [
+        "${ meetingName } terminou"
       ],
       "${ mlsMemberCount } member": [
         "${ mlsMemberCount } membro",
@@ -3464,11 +3473,17 @@
       "You can still turn off your microphone and camera anytime in the meeting": [
         "Você ainda pode desligar seu microfone e câmera a qualquer momento na reunião."
       ],
+      "You left ${ meetingName }": [
+        "Você saiu de ${ meetingName }"
+      ],
       "You left the meeting": [
         "Você saiu da reunião"
       ],
       "You need a paid ${ MEET_SHORT_APP_NAME } or Workspace plan for this feature. Contact your organization admin to upgrade.": [
         "Você precisa de um plano pago do ${ MEET_SHORT_APP_NAME } ou do Workspace para este recurso. Entre em contato com o administrador da sua organização para fazer o upgrade."
+      ],
+      "You were removed from ${ meetingName }": [
+        "Você foi removido de ${ meetingName }"
       ],
       "You were removed from the meeting": [
         "Você foi removido da reunião"
