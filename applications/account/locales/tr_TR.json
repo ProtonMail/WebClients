@@ -1719,7 +1719,7 @@
         "Yeniden adlandır"
       ],
       "Report a problem": [
-        "Sorun bildirin"
+        "Sorun bildireceğim"
       ],
       "Request a call": [
         "Arama isteği gönder"
@@ -2317,6 +2317,27 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Cancel import": [
+        "İçe aktarmayı iptal et"
+      ],
+      "Create a ${ ACCOUNT_APP_NAME }": [
+        "Bir ${ ACCOUNT_APP_NAME } oluşturun"
+      ],
+      "Import actions": [
+        "İçe aktarma işlemleri"
+      ],
+      "Remove from the list": [
+        "Listeden kaldır"
+      ],
+      "Sign in to ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } oturumu açın"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } kullanmaya başlayın"
+      ],
+      "Upgrade to connect": [
+        "Bağlantı kurmak için tarifenizi yükseltin"
       ]
     },
     "action": {
@@ -2930,6 +2951,9 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30 gün içinde ücreti geri ödeme garantisi"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30 gün içinde iptal edin ve geri ödeme almak için ${ customerSupportLink } ile görüşün."
       ]
     },
     "bf2023: Title": {
@@ -5737,6 +5761,15 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Tarifenizde toplam ${ MAX_SYNC_PAID_USER } Gmail adresi destekleniyor",
         "Tarifenizde toplam ${ MAX_SYNC_PAID_USER } Gmail adresi destekleniyor"
+      ],
+      "Access your passwords on all your devices": [
+        "Parolalarınıza tüm aygıtlarınızdan erişin"
+      ],
+      "Autofill logins instantly on any site": [
+        "Herhangi bir sitede anında otomatik olarak oturum açın"
+      ],
+      "Create strong password with one click": [
+        "Tek tıklamayla güçlü bir parola oluşturun"
       ]
     },
     "description": {
@@ -6192,6 +6225,9 @@
       ],
       "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
         "E-postaları bir dış hesaptan ${ MAIL_APP_NAME } üzerine iletiyorsunuz."
+      ],
+      "Sign in to ${ providerName }": [
+        "${ providerName } oturumu açın"
       ]
     },
     "Edit billing address form note": {
@@ -8233,6 +8269,9 @@
       ],
       "Zero keys reactivated": [
         "Hiç bir anahtar yeniden kullanıma alınmadı"
+      ],
+      "Couldn't load your connections": [
+        "Bağlantılarınız yüklenemedi"
       ]
     },
     "error": {
@@ -10201,6 +10240,9 @@
       ],
       "Undo in progress": [
         "Geri alma işlemi sürüyor"
+      ],
+      "Queued": [
+        "Sıraya alındı"
       ]
     },
     "Import type": {
@@ -14576,6 +14618,27 @@
       ],
       "Zoom meeting": [
         "Zoom görüşmesi"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30 gün içinde iptal edin ve geri ödeme almak için ${ customerSupportLink } ile görüşün."
+      ],
+      "Cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Satın aldıktan sonraki 30 gün içinde iptal edin ve geri ödeme almak için ${ customerSupportLink } ile görüşün."
+      ],
+      "More cards": [
+        "Diğer kartlar"
+      ],
+      "SEPA Bank transfer": [
+        "SEPA banka havalesi"
+      ],
+      "UnionPay logo": [
+        "UnionPay logosu"
+      ],
+      "Your address was connected. We're importing your emails.": [
+        "Adresiniz ile bağlantı kuruldu. E-postalarınız içe aktarılıyor."
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "Ücretsiz deneme süreniz sona erdi. Ekibinizin erişimini sürdürmek ve hesaplarını güvende tutmak için şimdi abone olun."
       ]
     },
     "info": {
@@ -16946,6 +17009,12 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Item": [
+        "Öge"
+      ],
+      "Vault": [
+        "Kasa"
       ]
     },
     "label": {
@@ -17381,6 +17450,9 @@
       ],
       "What’s this?": [
         "Bu nedir?"
+      ],
+      "Customer Support": [
+        "Müşteri desteği"
       ]
     },
     "Link (Scribe)": {
@@ -21200,6 +21272,9 @@
     },
     "Payments.iDEAL": {
       "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Kabul ederek, ödeme hizmeti sağlayıcımız olan ${ BRAND_NAME } ve Stripe kuruluşlarına, aboneliğiniz için gelecekteki ödemeleri bu banka hesabından SEPA otomatik ödemesi ile alma ve bankanıza bu ödemeleri borçlandırma yetkisi vermiş olursunuz. İlk ödemeniz şimdi ${ IDEAL_WERO_BRAND_NAME } tarafından yapıldı. Siz iptal edene kadar tarifeniz otomatik olarak yenilenecek. Her ödemeden önce sizi bilgilendireceğiz. Otomatik ödemeler için, bankanızla olan anlaşmanızın şartlarına göre, borç tarihinden itibaren 8 hafta içinde bankanızdan geri ödeme isteğinde bulunabilirsiniz. Bu durum, şu anda yaptığınız ${ IDEAL_WERO_BRAND_NAME } ödemesi için geçerli değildir."
+      ],
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
         "Kabul ederek, ödeme hizmeti sağlayıcımız olan ${ BRAND_NAME } ve Stripe kuruluşlarına, aboneliğiniz için gelecekteki ödemeleri bu banka hesabından SEPA otomatik ödemesi ile alma ve bankanıza bu ödemeleri borçlandırma yetkisi vermiş olursunuz. İlk ödemeniz şimdi ${ IDEAL_WERO_BRAND_NAME } tarafından yapıldı. Siz iptal edene kadar tarifeniz otomatik olarak yenilenecek. Her ödemeden önce sizi bilgilendireceğiz. Otomatik ödemeler için, bankanızla olan anlaşmanızın şartlarına göre, borç tarihinden itibaren 8 hafta içinde bankanızdan geri ödeme isteğinde bulunabilirsiniz. Bu durum, şu anda yaptığınız ${ IDEAL_WERO_BRAND_NAME } ödemesi için geçerli değildir."
       ]
     },
@@ -27496,7 +27571,7 @@
         "Ağ geçidini yeniden adlandır"
       ],
       "Report a problem": [
-        "Sorun bildirin"
+        "Sorun bildireceğim"
       ],
       "Reports": [
         "Raporlar"
@@ -28101,6 +28176,39 @@
       ],
       "Your subscriptions": [
         "Abonelikleriniz"
+      ],
+      "${ PASS_APP_NAME }: Welcome": [
+        "${ PASS_APP_NAME }: Hoş geldiniz"
+      ],
+      "Add ${ PASS_APP_NAME } to ${ browserName }": [
+        "${ browserName } üzerine ${ PASS_APP_NAME } ekleyin"
+      ],
+      "Add ${ PASS_APP_NAME } to your browser": [
+        "Tarayıcınıza ${ PASS_APP_NAME } ekleyin"
+      ],
+      "Connect your ${ ACCOUNT_APP_NAME }": [
+        "${ ACCOUNT_APP_NAME } hesabınızı bağlayın"
+      ],
+      "Over 95% of users love our extension": [
+        "Kullanıcılar %95 oranında eklentimizi seviyor"
+      ],
+      "Save time:": [
+        "Zaman kazanın:"
+      ],
+      "Skip for now": [
+        "Şimdilik atla"
+      ],
+      "Stay connected:": [
+        "Bağlı kalın:"
+      ],
+      "Stay safe:": [
+        "Güvende kalın:"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "${ planTitle } tarifesine abone olun"
+      ],
+      "Unlock the power of autofill with ${ PASS_APP_NAME } in your browser": [
+        "${ PASS_APP_NAME } ile tarayıcınızda otomatik doldurma gücü kazanın"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -29784,6 +29892,19 @@
       ],
       "Yearly, ${ untilString }": [
         "Yılda bir, ${ untilString }"
+      ]
+    },
+    "Rollback state": {
+      "Undo finished": [
+        "Geri alma tamamlandı"
+      ],
+      "Undo in progress": [
+        "Geri alma işlemi sürüyor"
+      ]
+    },
+    "Sign out": {
+      "Sign in to ${ providerName }": [
+        "${ providerName } oturumu açın"
       ]
     }
   }

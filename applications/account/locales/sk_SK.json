@@ -2305,6 +2305,39 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "Cancel import": [
+        "Zrušiť import"
+      ],
+      "Connect Gmail": [
+        "Pripojiť Gmail"
+      ],
+      "Continue with single sign-on": [
+        "Pokračovať pomocou jednotného prihlásenia"
+      ],
+      "Create a ${ ACCOUNT_APP_NAME }": [
+        "Vytvorte ${ ACCOUNT_APP_NAME }"
+      ],
+      "Import actions": [
+        "Akcie importu"
+      ],
+      "Recover previous account": [
+        "Obnoviť predchádzajúci účet"
+      ],
+      "Remove from the list": [
+        "Odstrániť zo zoznamu"
+      ],
+      "Sign in to ${ PASS_APP_NAME }": [
+        "Prihlásenie do ${ PASS_APP_NAME }"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Začnite používať ${ PASS_APP_NAME }"
+      ],
+      "Take the survey": [
+        "Vyplňte prieskum"
+      ],
+      "Upgrade to connect": [
+        "Pre pripojenie navýšte úroveň"
       ]
     },
     "action": {
@@ -2928,6 +2961,9 @@
       ],
       "Premium versions of all ${ BRAND_NAME } services": [
         "Prémiové verzie všetkých ${ BRAND_NAME } služieb"
+      ],
+      "The ${ planName } plan is back for a limited time only": [
+        "Plán ${ planName } je späť len na obmedzený čas"
       ]
     },
     "bf2023: info": {
@@ -2941,6 +2977,9 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30-dňová záruka vrátenia peňazí"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30-dňová záruka vrátenia peňazí: ak chcete zrušiť objednávku do 30 dní od nákupu, kontaktujte našu zákaznícku podporu ${ customerSupportLink } a požiadajte o vrátenie peňazí."
       ]
     },
     "bf2023: Title": {
@@ -5651,6 +5690,18 @@
         "Váš plán podporuje celkom ${ MAX_SYNC_PAID_USER } Gmailové adresy",
         "Váš plán podporuje celkom ${ MAX_SYNC_PAID_USER } Gmailových adries",
         "Váš plán podporuje celkom ${ MAX_SYNC_PAID_USER } Gmailových adries"
+      ],
+      "Access your passwords on all your devices": [
+        "Získajte prístup k svojim heslám na všetkých svojich zariadeniach"
+      ],
+      "Autofill logins instantly on any site": [
+        "Okamžité automatické vyplňovanie prihlasovacích údajov na akejkoľvek stránke"
+      ],
+      "Create strong password with one click": [
+        "Vytvorte silné heslo jedným kliknutím"
+      ],
+      "No ads, no tracking. Use your Gmail in ${ BRAND_NAME }. Nothing there gets edited or deleted.": [
+        "Žiadne reklamy, žiadne sledovanie. Používajte Gmail v ${ BRAND_NAME }. Nič sa tam neupravuje ani nemaže."
       ]
     },
     "description": {
@@ -6106,6 +6157,9 @@
       ],
       "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
         "Preposielate emaily z jedného externého účtu do ${ MAIL_APP_NAME }."
+      ],
+      "Sign in to ${ providerName }": [
+        "Prihlásiť do ${ providerName }"
       ]
     },
     "Edit billing address form note": {
@@ -7121,6 +7175,15 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "Vaše kontakty na obnovenie účtu by mali byť ľudia, ktorých poznáte a ktorých môžete ľahko kontaktovať."
+      ],
+      "Add contact": [
+        "Pridať kontakt"
+      ],
+      "Recover your data before adding a new contact.": [
+        "Pred pridaním nového kontaktu si obnovte svoje údaje."
+      ],
+      "Your data is still locked from a password reset. A contact added now won't be able to restore it.": [
+        "Vaše údaje sú stále uzamknuté v dôsledku obnovenia hesla. Kontakt, ktorý teraz pridáte, nebude môcť vaše údaje obnoviť."
       ]
     },
     "Empty group name": {
@@ -8157,6 +8220,24 @@
       ],
       "Zero keys reactivated": [
         "Žiadne kľúče neboli znovu aktivované"
+      ],
+      "Couldn't load your connections": [
+        "Nepodarilo sa načítať vaše pripojenia"
+      ],
+      "This code or link is no longer valid. Please try again.": [
+        "Tento kód alebo odkaz už nie je platný. Skúste to znova, prosím."
+      ],
+      "We couldn't disconnect this address. Please try again.": [
+        "Túto adresu sa nám nepodarilo odpojiť. Skúste to znovu, prosím."
+      ],
+      "We couldn't reconnect this address.": [
+        "Túto adresu sa nám nepodarilo opäť pripojiť."
+      ],
+      "You reached the maximum number of connected addresses": [
+        "Dosiahli ste maximálny počet pripojených adries"
+      ],
+      "Your password couldn't be reset. Please try again.": [
+        "Vaše heslo sa nepodarilo resetovať. Skúste to znovu, prosím."
       ]
     },
     "error": {
@@ -10181,6 +10262,9 @@
       ],
       "Undo in progress": [
         "Vrátenie prebieha"
+      ],
+      "Queued": [
+        "V poradí"
       ]
     },
     "Import type": {
@@ -14623,6 +14707,102 @@
       ],
       "Zoom meeting": [
         "Zoom míting"
+      ],
+      "${ emailAddress } is used to sign in to another ${ BRAND_NAME } account. We are making the connection seamless, but for now you will need to take a few steps.": [
+        "${ emailAddress } sa používa na prihlásenie do iného ${ BRAND_NAME } účtu. Pracujeme na tom, aby bolo prepojenie plynulé, zatiaľ však budete musieť vykonať niekoľko krokov."
+      ],
+      "${ reason.email } is used to sign in to another ${ BRAND_NAME } account. You'll pick a new username for that account next time you sign in. Nothing else changes.": [
+        "Adresa ${ reason.email } sa používa na prihlásenie do iného ${ BRAND_NAME } účtu. Pri nasledujúcom prihlásení si pre tento účet zvolíte nové používateľské meno. Všetko ostatné zostane bez zmeny."
+      ],
+      "**We're changing the ${ BRAND_NAME } sign-in page.** Your account and password stay the same.": [
+        "**Meníme prihlasovaciu stránku ${ BRAND_NAME }.** Váš účet a heslo zostávajú nezmenené."
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30-dňová záruka vrátenia peňazí: ak chcete zrušiť objednávku do 30 dní od nákupu, kontaktujte našu zákaznícku podporu ${ customerSupportLink } a požiadajte o vrátenie peňazí."
+      ],
+      "Cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Ak chcete zrušiť objednávku do 30 dní od nákupu, kontaktujte našu zákaznícku podporu ${ customerSupportLink } a požiadajte o vrátenie peňazí."
+      ],
+      "Connected": [
+        "Pripojené"
+      ],
+      "Disconnected": [
+        "Odpojené"
+      ],
+      "Enter your old password for ${ boldEmail }.": [
+        "Zadajte vaše staré heslo pre ${ boldEmail }"
+      ],
+      "For security, business accounts sign in with a code instead. On your TV, select 'Trouble signing in?' and follow the steps.": [
+        "Z bezpečnostných dôvodov sa firemné účty prihlasujú pomocou kódu. Na televízore vyberte možnosť „Problémy s prihlásením?“ a postupujte podľa pokynov."
+      ],
+      "If you previously had a personal ${ BRAND_NAME } account with this address, you can recover your data separately.": [
+        "Ak ste v minulosti mali osobný ${ BRAND_NAME } účet s touto adresou, môžete si svoje údaje obnoviť samostatne."
+      ],
+      "Import show one-time transfers of email, calendars, contacts, or files into your ${ BRAND_NAME } account.": [
+        "Funkcia „Importovať“ umožňuje jednorazový prenos emailov, kalendárov, kontaktov alebo súborov do vášho ${ BRAND_NAME } účtu."
+      ],
+      "Messages from other ${ BRAND_NAME } users also lose end-to-end encryption.": [
+        "Správy od ostatných používateľov ${ BRAND_NAME } tiež strácajú end-to-end šifrovanie."
+      ],
+      "More cards": [
+        "Viac kariet"
+      ],
+      "Please sign in with ${ emailAddress } to continue.": [
+        "Ak chcete pokračovať, prihláste sa, prosím, pomocou ${ emailAddress }."
+      ],
+      "Please sign in with the Gmail account you want to connect to continue.": [
+        "Ak chcete pokračovať, prihláste sa, prosím, pomocou Gmail účtu, ktorý chcete prepojiť."
+      ],
+      "SEPA Bank transfer": [
+        "SEPA bankovým prevodom"
+      ],
+      "Soon, you'll enter your email address (or username) and password in 2 separate steps instead of on 1 page.": [
+        "Čoskoro budete zadávať svoju emailovú adresu (alebo používateľské meno) a heslo v dvoch samostatných krokoch namiesto toho, aby ste to robili na jednej stránke."
+      ],
+      "This address now signs in through your organization's identity provider.": [
+        "Táto adresa sa teraz prihlasuje prostredníctvom poskytovateľa identít vašej organizácie."
+      ],
+      "This Gmail is already connected to your ${ BRAND_NAME } account. There's nothing else you need to do.": [
+        "Tento Gmail už je prepojený s vaším ${ BRAND_NAME } účtom. Nemusíte robiť nič ďalšie."
+      ],
+      "This Gmail is used to sign in to another ${ BRAND_NAME } account. We are making the connection seamless, but for now you will need to take a few steps.": [
+        "Tento Gmail účet sa používa na prihlásenie do iného ${ BRAND_NAME } účtu. Pracujeme na tom, aby bolo prepojenie plynulé, zatiaľ však budete musieť vykonať niekoľko krokov."
+      ],
+      "UnionPay logo": [
+        "Logo UnionPay"
+      ],
+      "We couldn't connect ${ emailAddress }. Try again and select all the boxes when Google asks for access. ${ BRAND_NAME } only uses this access to connect your Gmail.": [
+        "Nepodarilo sa nám pripojiť váš účet ${ emailAddress }. Skúste to znovu a zaškrtnite všetky políčka, keď vás Google požiada o prístup. ${ BRAND_NAME } využíva tento prístup výlučne na pripojenie vášho Gmailového účtu."
+      ],
+      "We couldn't connect your Gmail right now. Please try again in a few minutes.": [
+        "V súčasnosti sa nám nepodarilo pripojiť váš Gmail účet. Skúste to o pár minút neskôr, prosím."
+      ],
+      "We couldn't connect your Gmail. Try again and select all the boxes when Google asks for access. ${ BRAND_NAME } only uses this access to connect your Gmail.": [
+        "Nepodarilo sa nám pripojiť váš účet Gmail. Skúste to znovu a zaškrtnite všetky políčka, keď vás Google požiada o prístup. ${ BRAND_NAME } využíva tento prístup výlučne na pripojenie vášho účtu Gmail."
+      ],
+      "We're building a new way for you to manage your organization, and we're looking for specific users to join a video call and try an early version. Curious if you'd be a good match? Answer a few quick questions to see if you can participate.": [
+        "Pripravujeme pre vás nový spôsob riadenia vašej organizácie a hľadáme konkrétnych používateľov, ktorí by sa zapojili do videohovoru a vyskúšali si predbežnú verziu. Zaujíma vás, či by ste sa na to hodili? Odpovedzte na niekoľko rýchlych otázok a zistite, či sa môžete zapojiť."
+      ],
+      "When sign-in is restricted, only ${ primaryEmailElement } and your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Ak je prihlásenie obmedzené, na prihlásenie je možné použiť iba ${ primaryEmailElement } a vaše používateľské meno ${ usernameElement }. Vaše ostatné emailové adresy nie je možné prepojiť s vaším účtom, ani keby ich niekto poznal."
+      ],
+      "When sign-in is restricted, only your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Ak je prihlásenie obmedzené, na prihlásenie je možné použiť iba vaše používateľské meno ${ usernameElement }. Vaše ostatné emailové adresy nie je možné prepojiť s vaším účtom, ani keby ich niekto poznal."
+      ],
+      "You won't be able to send or receive as ${ email } in ${ BRAND_NAME } anymore.": [
+        "Už nebudete môcť posielať ani prijímať emaily ako ${ email } v rámci služby ${ BRAND_NAME }."
+      ],
+      "Your account and password stay the same.": [
+        "Váš účet a heslo zostávajú nezmenené."
+      ],
+      "Your address was connected": [
+        "Vaša adresa bola pripojená"
+      ],
+      "Your address was connected. We're importing your emails.": [
+        "Vaša adresa bola prepojená. Práve importujeme vaše emaily."
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "Vaša bezplatná skúšobná verzia vypršala. Predplaťte si službu hneď teraz, aby mal váš tím nepretržitý prístup a aby boli účty v bezpečí."
       ]
     },
     "info": {
@@ -16996,6 +17176,24 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Auto-delete trash and spam": [
+        "Automatické mazanie obsahu koša a spamu"
+      ],
+      "Item": [
+        "Položka"
+      ],
+      "Restrict sign-in to primary email address": [
+        "Obmedziť prihlásenie na primárnu emailovú adresu"
+      ],
+      "Restrict sign-in to username": [
+        "Obmedziť prihlásenie na používateľské meno"
+      ],
+      "Start with your most recent": [
+        "Začnite s tým najnovším"
+      ],
+      "Vault": [
+        "Trezor"
       ]
     },
     "label": {
@@ -17433,6 +17631,9 @@
       ],
       "What’s this?": [
         "Čo je to?"
+      ],
+      "Customer Support": [
+        "Zákaznícka podpora"
       ]
     },
     "Link (Scribe)": {
@@ -21341,6 +21542,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Vaše predplatné má v súčasnosti platnú zľavu. Prechodom na túto novú akciu sa existujúca zľava prestane uplatňovať."
+      ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Zmena tarifného plánu nie je možná z nasledujúcich dôvodov:"
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Počet miest Proton Meet sa musí zhodovať s počtom členov."
+      ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Tento plán nepodporuje spravované funkcie vo vašom účte."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Toto predplatné momentálne nie je možné dokončiť. Skúste to neskôr, prosím."
       ]
     },
     "Payments.Error": {
@@ -21377,6 +21590,9 @@
     "Payments.iDEAL": {
       "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
         "Potvrdením oprávňujete spoločnosť ${ BRAND_NAME } a Stripe, nášho poskytovateľa platobných služieb, aby z tohto bankového účtu prostredníctvom priameho inkasa SEPA inkasovali budúce platby za vaše predplatné, a vašu banku, aby tieto platby strhla. Vaša prvá platba je realizovaná teraz spoločnosťou ${ IDEAL_WERO_BRAND_NAME }. Váš balík sa automaticky obnovuje, kým ho nezrušíte; pred každým inkasom vás budeme informovať. V prípade inkás prostredníctvom priameho inkasa môžete požiadať svoju banku o vrátenie platby do 8 týždňov od dátumu inkasa v súlade s podmienkami vašej zmluvy s bankou. Toto sa nevzťahuje na platbu spoločnosti ${ IDEAL_WERO_BRAND_NAME }, ktorú práve uskutočňujete."
+      ],
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Potvrdením oprávňujete spoločnosť ${ BRAND_NAME } a Stripe, nášho poskytovateľa platobných služieb, aby z tohto bankového účtu prostredníctvom priameho inkasa SEPA inkasovali budúce platby za vaše predplatné, a vašu banku, aby tieto platby strhla. Vaša prvá platba sa uskutoční teraz prostredníctvom spoločnosti ${ IDEAL_WERO_BRAND_NAME }. Váš balík sa automaticky obnovuje, kým ho nezrušíte; pred každým inkasom vás budeme informovať. V prípade inkás prostredníctvom priameho inkasa môžete požiadať svoju banku o vrátenie platby do 8 týždňov od dátumu inkasa v súlade s podmienkami vašej zmluvy s bankou. Toto sa nevzťahuje na platbu spoločnosti ${ IDEAL_WERO_BRAND_NAME }, ktorú práve uskutočňujete."
       ]
     },
     "Payments.info": {
@@ -24742,6 +24958,15 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Vaše nastavenie SSO bude vymazané."
+      ],
+      "Enter your password": [
+        "Zadajte vaše heslo"
+      ],
+      "To make sure it's really you trying to sign-in, please enter your password.": [
+        "Aby sme sa uistili, že sa pokúšate prihlásiť naozaj vy, zadajte vaše heslo, prosím."
+      ],
+      "Your old password will become your **backup password**. You will be able to use it to authorize single sign-on (SSO) on new devices in the future.": [
+        "Vaše staré heslo sa stane vaším **záložným heslom**. V budúcnosti ho budete môcť použiť na autorizáciu jednotného prihlásenia (SSO) na nových zariadeniach."
       ]
     },
     "sso: auth device state": {
@@ -28429,6 +28654,78 @@
       ],
       "Your subscriptions": [
         "Vaše predplatné"
+      ],
+      "${ PASS_APP_NAME }: Welcome": [
+        "${ PASS_APP_NAME }: Vitajte"
+      ],
+      "Add ${ PASS_APP_NAME } to ${ browserName }": [
+        "Pridajte ${ PASS_APP_NAME } do ${ browserName }"
+      ],
+      "Add ${ PASS_APP_NAME } to your browser": [
+        "Pridajte ${ PASS_APP_NAME } do svojho prehliadača"
+      ],
+      "Allow access to connect your Gmail": [
+        "Povoľte prístup na prepojenie vášho Gmailu"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Connect your ${ ACCOUNT_APP_NAME }": [
+        "Pripojte váš ${ ACCOUNT_APP_NAME }"
+      ],
+      "Connect your Gmail": [
+        "Pripojte svoj Gmail"
+      ],
+      "Connecting...": [
+        "Pripájanie..."
+      ],
+      "Disconnect this address?": [
+        "Odpojiť túto adresu?"
+      ],
+      "Good to know before you connect": [
+        "Čo je dobré vedieť pred pripojením"
+      ],
+      "Help shape ${ BRAND_NAME }'s admin experience": [
+        "Pomôžte nám vylepšiť používateľské prostredie pre správcov v ${ BRAND_NAME }"
+      ],
+      "Over 95% of users love our extension": [
+        "Viac ako 95 % používateľov si naše rozšírenie obľúbilo"
+      ],
+      "QR sign-in isn't available for business accounts": [
+        "Prihlásenie pomocou QR kódu nie je k dispozícii pre firemné účty"
+      ],
+      "Save time:": [
+        "Ušetrite čas:"
+      ],
+      "Sign-in protection": [
+        "Ochrana prihlasovania"
+      ],
+      "Signing in is changing": [
+        "Prihlásovanie sa mení"
+      ],
+      "Skip for now": [
+        "Nateraz preskočiť"
+      ],
+      "Stay connected:": [
+        "Zostaňte pripojení:"
+      ],
+      "Stay safe:": [
+        "Zostaňte v bezpečí:"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "Odoberať ${ planTitle }"
+      ],
+      "This Gmail is already connected": [
+        "Tento účet Gmail už je pripojený"
+      ],
+      "This Gmail is linked to another ${ BRAND_NAME } account": [
+        "Tento Gmail účet je prepojený s iným ${ BRAND_NAME } účtom"
+      ],
+      "Unlock the power of autofill with ${ PASS_APP_NAME } in your browser": [
+        "Využite možnosti automatického vypĺňania pomocou ${ PASS_APP_NAME } vo vašom prehliadači"
+      ],
+      "Wrong Gmail account": [
+        "Nesprávny Gmail účet"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -28938,6 +29235,9 @@
       ],
       "Waiting for user to accept the invitation": [
         "Čakanie na prijatie pozvania zo strany používateľa"
+      ],
+      "Assigned by a group. Remove the user from the group to change this role": [
+        "Priradené skupinou. Ak chcete túto úlohu zmeniť, odstráňte používateľa zo skupiny."
       ]
     },
     "Tooltip automatically attach public key": {
@@ -30205,6 +30505,63 @@
       ],
       "Yearly, ${ untilString }": [
         "Ročne, ${ untilString }"
+      ]
+    },
+    "claimed address": {
+      "Sign in with your organization?": [
+        "Prihlasujete sa prostredníctvom vašej organizácie?"
+      ],
+      "The address ${ boldClaimedEmail } has been claimed and can no longer be used for this account. Your data is safe and hasn't been shared with anyone. To migrate it to a new account, create a new ${ BRAND_NAME } email address.": [
+        "Adresa ${ boldClaimedEmail } už bola priradená a na tomto účte ju už nemožno používať. Vaše údaje sú v bezpečí a neboli poskytnuté nikomu. Ak ich chcete preniesť na nový účet, vytvorte si novú emailovú adresu ${ BRAND_NAME }."
+      ],
+      "The address ${ boldClaimedEmail } has been claimed and can no longer be used for this account. Your data was migrated to the address below and remains private.": [
+        "Adresa ${ boldClaimedEmail } bola priradená a už ju nie je možné používať pre tento účet. Vaše údaje boli presunuté na nižšie uvedenú adresu a zostávajú súkromné."
+      ],
+      "The address ${ boldClaimedEmail } has been claimed by another organization and can no longer be used for this account. Your data is safe and remains private.": [
+        "Adresa ${ boldClaimedEmail } už bola priradená inej organizácii a na tento účet ju už nie je možné použiť. Vaše údaje sú v bezpečí a zostávajú súkromné."
+      ],
+      "Verify it's you": [
+        "Overte, že ste to vy"
+      ],
+      "You're all set": [
+        "Všetko je pripravené"
+      ],
+      "Your address": [
+        "Vaša adresa"
+      ],
+      "Your address has been claimed": [
+        "Vaša adresa bola zaregistrovaná"
+      ],
+      "Your address has changed": [
+        "Vaša adresa sa zmenila"
+      ],
+      "Your administrator can give you a new address.": [
+        "Váš správca vám môže prideliť novú adresu."
+      ],
+      "Your data was migrated to the address below and remains private.": [
+        "Vaše údaje boli presunuté na nižšie uvedenú adresu a naďalej zostávajú súkromné."
+      ],
+      "Your new address": [
+        "Vaša nová adresa"
+      ],
+      "Your password remains the same.": [
+        "Vaše heslo zostáva rovnaké"
+      ],
+      "Your previous username, ${ boldClaimedEmail }, can no longer be used to sign in to this account.": [
+        "Vaše predchádzajúce používateľské meno, ${ boldClaimedEmail }, už nie je možné použiť na prihlásenie sa do tohto účtu."
+      ]
+    },
+    "Rollback state": {
+      "Undo finished": [
+        "Vrátiť späť dokončené"
+      ],
+      "Undo in progress": [
+        "Vrátenie kroku prebieha"
+      ]
+    },
+    "Sign out": {
+      "Sign in to ${ providerName }": [
+        "Prihlásiť do ${ providerName }"
       ]
     }
   }

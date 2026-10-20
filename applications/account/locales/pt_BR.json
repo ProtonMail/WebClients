@@ -2305,6 +2305,18 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
+      ],
+      "Cancel import": [
+        "Cancelar importação"
+      ],
+      "Connect Gmail": [
+        "Conectar ao Gmail"
+      ],
+      "Sign in to ${ PASS_APP_NAME }": [
+        "Iniciando sessão em ${ PASS_APP_NAME }"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Comece a usar o ${ PASS_APP_NAME }"
       ]
     },
     "action": {
@@ -8121,6 +8133,9 @@
       ],
       "Zero keys reactivated": [
         "Zero chaves reativadas"
+      ],
+      "Something went wrong, please try again": [
+        "Ocorreu um erro. Tente novamente mais tarde"
       ]
     },
     "error": {
@@ -10074,6 +10089,9 @@
       ],
       "Undo in progress": [
         "Desfazendo"
+      ],
+      "Queued": [
+        "Na fila"
       ]
     },
     "Import type": {
@@ -14287,6 +14305,9 @@
       ],
       "Zoom meeting": [
         "Reunião no Zoom"
+      ],
+      "UnionPay logo": [
+        "Logotipo da UnionPay"
       ]
     },
     "info": {
@@ -16648,6 +16669,12 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Item": [
+        "Item"
+      ],
+      "Vault": [
+        "Cofre"
       ]
     },
     "label": {
@@ -20848,6 +20875,9 @@
     "Payments.iDEAL": {
       "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
         "Ao confirmar, você autoriza a ${ BRAND_NAME } e a Stripe, nossa provedora de serviços de pagamento, a realizar cobranças futuras da sua assinatura nesta conta bancária via Débito Direto, e autoriza seu banco a debitar esses valores. Seu primeiro pagamento é realizado agora via ${ IDEAL_WERO_BRAND_NAME }. Seu plano é renovado automaticamente até que você o cancele; notificaremos você antes de cada cobrança. Para cobranças via débito direto, você pode solicitar um reembolso ao seu banco em até 8 semanas após a data do débito, conforme os termos do seu contrato com o banco. Isso não se aplica ao pagamento via ${ IDEAL_WERO_BRAND_NAME } que você está realizando agora."
+      ],
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Ao confirmar, você autoriza a ${ BRAND_NAME } e a Stripe, a realizar cobranças futuras da sua assinatura nesta conta bancária via Débito Direto, e autoriza seu banco a debitar esses valores. Seu primeiro pagamento é realizado agora via ${ IDEAL_WERO_BRAND_NAME }. Seu plano é renovado automaticamente até que você o cancele; notificaremos você antes de cada cobrança. Para cobranças via débito direto, você pode solicitar um reembolso ao seu banco em até 8 semanas após a data do débito, conforme os termos do seu contrato com o banco. Isso não se aplica ao pagamento via ${ IDEAL_WERO_BRAND_NAME } que você está realizando agora."
       ]
     },
     "Payments.info": {
@@ -27680,6 +27710,18 @@
       ],
       "Your subscriptions": [
         "Suas assinaturas"
+      ],
+      "Add ${ PASS_APP_NAME } to your browser": [
+        "Adicionar o ${ PASS_APP_NAME } para seu navegador"
+      ],
+      "Disconnect this address?": [
+        "Desconectar este endereço?"
+      ],
+      "Skip for now": [
+        "Pular por enquanto"
+      ],
+      "This Gmail is already connected": [
+        "Este Gmail já está conectado"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

@@ -2314,6 +2314,18 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Cancel import": [
+        "Скасаваць імпартаванне"
+      ],
+      "Connect Gmail": [
+        "Падключыць Gmail"
+      ],
+      "Import actions": [
+        "Дзеянні імпарту"
+      ],
+      "Remove from the list": [
+        "Выдаліць са спіса"
       ]
     },
     "action": {
@@ -2467,6 +2479,9 @@
       ],
       "Writing assistant seats": [
         "Ліцэнзій памочніка ў напісанні"
+      ],
+      "Managed Service Provider": [
+        "Пастаўшчык кіраваных паслуг"
       ]
     },
     "Address action": {
@@ -7133,6 +7148,9 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "Вашы кантакты для аднаўлення павінны быць людзьмі, якіх вы ведаеце і з якімі вы зможаце лёгка звязацца."
+      ],
+      "Add contact": [
+        "Дадаць кантакт"
       ]
     },
     "Empty group name": {
@@ -10181,6 +10199,9 @@
       ],
       "Undo in progress": [
         "Выконваецца адрабленне"
+      ],
+      "Queued": [
+        "У чарзе"
       ]
     },
     "Import type": {
@@ -14521,6 +14542,12 @@
       ],
       "Zoom meeting": [
         "сустрэчу па Zoom"
+      ],
+      "Disconnected": [
+        "Адключана"
+      ],
+      "UnionPay logo": [
+        "Лагатып UnionPay"
       ]
     },
     "info": {
@@ -16897,6 +16924,12 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Item": [
+        "Элемент"
+      ],
+      "Vault": [
+        "Сховішча"
       ]
     },
     "label": {
@@ -24587,6 +24620,9 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Ваша канфігурацыя SSO будзе выдалена."
+      ],
+      "Enter your password": [
+        "Увядзіце свой пароль"
       ]
     },
     "sso: auth device state": {
@@ -27463,7 +27499,7 @@
         "Адкрыць"
       ],
       "Open actions dropdown": [
-        "Адкрыць спіс даступных дзеянняў"
+        "Адкрыць выпадное меню даступных дзеянняў"
       ],
       "Open pagination": [
         "Паказваць нумарацыю старонак"
@@ -28280,6 +28316,27 @@
       ],
       "Your subscriptions": [
         "Вашы падпіскі"
+      ],
+      "Connect your Gmail": [
+        "Падключыць свой Gmail"
+      ],
+      "Disconnect this address?": [
+        "Адключыць гэты адрас?"
+      ],
+      "Save time:": [
+        "Ашчаджала часу:"
+      ],
+      "Sign-in protection": [
+        "Абарона пры ўваходзе"
+      ],
+      "Skip for now": [
+        "Пакуль прапусціць"
+      ],
+      "Stay safe:": [
+        "Пакінута ў бяспецы:"
+      ],
+      "Wrong Gmail account": [
+        "Няправільны ўліковы запіс Gmail"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -30026,6 +30083,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Штогод, ${ untilString }"
+      ]
+    },
+    "Rollback state": {
+      "Undo finished": [
+        "Адрабленне завершана"
       ]
     }
   }

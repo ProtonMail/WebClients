@@ -2317,6 +2317,27 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ],
+      "Cancel import": [
+        "Ακύρωση εισαγωγής"
+      ],
+      "Create a ${ ACCOUNT_APP_NAME }": [
+        "Δημιουργήστε ένα ${ ACCOUNT_APP_NAME }"
+      ],
+      "Import actions": [
+        "Ενέργειες εισαγωγής"
+      ],
+      "Remove from the list": [
+        "Κατάργηση από τη λίστα"
+      ],
+      "Sign in to ${ PASS_APP_NAME }": [
+        "Συνδεθείτε στο ${ PASS_APP_NAME }"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Αρχίστε να χρησιμοποιείτε το ${ PASS_APP_NAME }"
+      ],
+      "Upgrade to connect": [
+        "Αναβαθμίστε για να συνδεθείτε"
       ]
     },
     "action": {
@@ -5737,6 +5758,15 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Το πλάνο σας υποστηρίζει συνολικά ${ MAX_SYNC_PAID_USER } διεύθυνση Gmail",
         "Το πλάνο σας υποστηρίζει συνολικά ${ MAX_SYNC_PAID_USER } διευθύνσεις Gmail"
+      ],
+      "Access your passwords on all your devices": [
+        "Αποκτήστε πρόσβαση στους κωδικούς πρόσβασής σας σε όλες τις συσκευές σας"
+      ],
+      "Autofill logins instantly on any site": [
+        "Αυτόματη συμπλήρωση στοιχείων σύνδεσης ακαριαία σε οποιονδήποτε ιστότοπο"
+      ],
+      "Create strong password with one click": [
+        "Δημιουργήστε ισχυρό κωδικό πρόσβασης με ένα κλικ"
       ]
     },
     "description": {
@@ -6192,6 +6222,9 @@
       ],
       "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
         "Προωθείτε μηνύματα ηλεκτρονικού ταχυδρομείου από ένα εξωτερικό λογαριασμό στο ${ MAIL_APP_NAME }."
+      ],
+      "Sign in to ${ providerName }": [
+        "Συνδεθείτε στο ${ providerName }"
       ]
     },
     "Edit billing address form note": {
@@ -8227,6 +8260,15 @@
       ],
       "Zero keys reactivated": [
         "Τα Μηδενικά κλειδιά ενεργοποιήθηκαν ξανά"
+      ],
+      "Couldn't load your connections": [
+        "Δεν ήταν δυνατή η φόρτωση των συνδέσεών σας"
+      ],
+      "We couldn't disconnect this address. Please try again.": [
+        "Δεν μπορέσαμε να αποσυνδέσουμε αυτή τη διεύθυνση. Παρακαλούμε δοκιμάστε ξανά."
+      ],
+      "We couldn't reconnect this address.": [
+        "Δεν μπορέσαμε να επανασυνδέσουμε αυτή τη διεύθυνση."
       ]
     },
     "error": {
@@ -10195,6 +10237,9 @@
       ],
       "Undo in progress": [
         "Αναίρεση σε εξέλιξη"
+      ],
+      "Queued": [
+        "Σε αναμονή"
       ]
     },
     "Import type": {
@@ -14552,6 +14597,36 @@
       ],
       "Zoom meeting": [
         "Σύσκεψη Zoom"
+      ],
+      "Connected": [
+        "Συνδεδεμένο"
+      ],
+      "Disconnected": [
+        "Αποσυνδεδεμένο"
+      ],
+      "Messages from other ${ BRAND_NAME } users also lose end-to-end encryption.": [
+        "Τα μηνύματα από άλλους χρήστες του ${ BRAND_NAME } χάνουν επίσης τη διατερματική κρυπτογράφηση."
+      ],
+      "More cards": [
+        "Περισσότερες κάρτες"
+      ],
+      "SEPA Bank transfer": [
+        "Τραπεζική μεταφορά SEPA"
+      ],
+      "When sign-in is restricted, only ${ primaryEmailElement } and your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Όταν η είσοδος είναι περιορισμένη, μόνο το ${ primaryEmailElement } και το όνομα χρήστη σας ${ usernameElement } μπορούν να χρησιμοποιηθούν για την είσοδο. Οι άλλες διευθύνσεις σας δεν μπορούν να συνδεθούν με τον λογαριασμό σας, ακόμα κι αν κάποιος τις γνωρίζει."
+      ],
+      "When sign-in is restricted, only your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Όταν η είσοδος είναι περιορισμένη, μόνο το όνομα χρήστη σας ${ usernameElement } μπορεί να χρησιμοποιηθεί για την είσοδο. Οι άλλες διευθύνσεις σας δεν μπορούν να συνδεθούν με τον λογαριασμό σας, ακόμα κι αν κάποιος τις γνωρίζει."
+      ],
+      "You won't be able to send or receive as ${ email } in ${ BRAND_NAME } anymore.": [
+        "Δε θα μπορείτε πλέον να στέλνετε ή να λαμβάνετε μηνύματα ως ${ email } στο ${ BRAND_NAME }."
+      ],
+      "Your address was connected. We're importing your emails.": [
+        "Η διεύθυνσή σας συνδέθηκε. Εισάγουμε τα ηλεκτρονικά μηνύματά σας."
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "Η δωρεάν δοκιμή σας έληξε. Κάντε εγγραφή τώρα για να διασφαλίσετε την αδιάλειπτη πρόσβαση της ομάδας σας και την ασφάλεια των λογαριασμών."
       ]
     },
     "info": {
@@ -16910,6 +16985,21 @@
       ],
       "ZIP code": [
         "Τ.Κ."
+      ],
+      "Item": [
+        "Στοιχείο"
+      ],
+      "Restrict sign-in to primary email address": [
+        "Περιορισμός της σύνδεσης στην κύρια διεύθυνση ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Restrict sign-in to username": [
+        "Περιορισμός της σύνδεσης σε όνομα χρήστη"
+      ],
+      "Start with your most recent": [
+        "Ξεκινήστε με το πιο πρόσφατο"
+      ],
+      "Vault": [
+        "Κρύπτη"
       ]
     },
     "label": {
@@ -21165,6 +21255,9 @@
     "Payments.iDEAL": {
       "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
         "Με την επιβεβαίωση, εξουσιοδοτείτε την ${ BRAND_NAME } και την Stripe, τον πάροχο υπηρεσιών πληρωμών μας, να εισπράττουν μελλοντικές πληρωμές για τη συνδρομή σας από αυτόν τον τραπεζικό λογαριασμό μέσω Άμεσης Χρέωσης SEPA και την τράπεζά σας να χρεώνει αυτές τις πληρωμές. Η πρώτη σας πληρωμή πραγματοποιείται τώρα από την ${ IDEAL_WERO_BRAND_NAME }. Το πλάνο σας ανανεώνεται αυτόματα μέχρι να ακυρώσετε. Θα σας ειδοποιούμε πριν από κάθε είσπραξη. Για εισπράξεις με άμεση χρέωση, μπορείτε να ζητήσετε επιστροφή χρημάτων από την τράπεζά σας εντός 8 εβδομάδων από την ημερομηνία χρέωσης, σύμφωνα με τους όρους της συμφωνίας σας με την τράπεζά σας. Αυτό δεν ισχύει για την πληρωμή ${ IDEAL_WERO_BRAND_NAME } που πραγματοποιείτε τώρα."
+      ],
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Με την επιβεβαίωση, εξουσιοδοτείτε την ${ BRAND_NAME } και τη Stripe, τον πάροχο υπηρεσιών πληρωμών μας, να εισπράττουν μελλοντικές πληρωμές για τη συνδρομή σας από αυτόν τον τραπεζικό λογαριασμό μέσω άμεσης χρέωσης SEPA (SEPA Direct Debit), καθώς και την τράπεζά σας να εκτελεί αυτές τις χρεώσεις. Η πρώτη σας πληρωμή πραγματοποιείται τώρα μέσω της ${ IDEAL_WERO_BRAND_NAME }. Το πρόγραμμά σας ανανεώνεται αυτόματα, εκτός εάν το ακυρώσετε· θα σας ειδοποιούμε πριν από κάθε είσπραξη. Για τις πληρωμές μέσω άμεσης χρέωσης, μπορείτε να ζητήσετε επιστροφή χρημάτων από την τράπεζά σας εντός 8 εβδομάδων από την ημερομηνία χρέωσης, σύμφωνα με τους όρους της συμφωνίας σας με την τράπεζα. Αυτό δεν ισχύει για την πληρωμή μέσω ${ IDEAL_WERO_BRAND_NAME } που πραγματοποιείτε αυτή τη στιγμή."
       ]
     },
     "Payments.info": {
@@ -28056,6 +28149,48 @@
       ],
       "Your subscriptions": [
         "Οι συνδρομές σας"
+      ],
+      "${ PASS_APP_NAME }: Welcome": [
+        "${ PASS_APP_NAME }: Καλώς ήρθατε"
+      ],
+      "Add ${ PASS_APP_NAME } to ${ browserName }": [
+        "Προσθήκη του ${ PASS_APP_NAME } στο ${ browserName }"
+      ],
+      "Add ${ PASS_APP_NAME } to your browser": [
+        "Προσθέστε το ${ PASS_APP_NAME } στο πρόγραμμα περιήγησής σας"
+      ],
+      "Connect your ${ ACCOUNT_APP_NAME }": [
+        "Συνδέστε το ${ ACCOUNT_APP_NAME } σας"
+      ],
+      "Connect your Gmail": [
+        "Συνδέστε το Gmail σας"
+      ],
+      "Disconnect this address?": [
+        "Αποσύνδεση αυτής της διεύθυνσης;"
+      ],
+      "Over 95% of users love our extension": [
+        "Πάνω από το 95% των χρηστών λατρεύουν την επέκτασή μας"
+      ],
+      "Save time:": [
+        "Εξοικονομήστε χρόνο:"
+      ],
+      "Sign-in protection": [
+        "Προστασία σύνδεσης"
+      ],
+      "Skip for now": [
+        "Αγνοήστε για τώρα"
+      ],
+      "Stay connected:": [
+        "Μείνε συνδεδεμένοι:"
+      ],
+      "Stay safe:": [
+        "Παραμείνετε ασφαλείς:"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "Εγγραφείτε στο ${ planTitle }"
+      ],
+      "Unlock the power of autofill with ${ PASS_APP_NAME } in your browser": [
+        "Ξεκλειδώστε τη δύναμη της αυτόματης συμπλήρωσης με το ${ PASS_APP_NAME } στο πρόγραμμα περιήγησής σας"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -29739,6 +29874,19 @@
       ],
       "Yearly, ${ untilString }": [
         "Ετησίως, ${ untilString }"
+      ]
+    },
+    "Rollback state": {
+      "Undo finished": [
+        "Η αναίρεση ολοκληρώθηκε"
+      ],
+      "Undo in progress": [
+        "Αναίρεση σε εξέλιξη"
+      ]
+    },
+    "Sign out": {
+      "Sign in to ${ providerName }": [
+        "Συνδεθείτε στο ${ providerName }"
       ]
     }
   }

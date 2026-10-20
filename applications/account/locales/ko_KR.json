@@ -2900,6 +2900,9 @@
       ],
       "Will be replaced by your upcoming subscription on ${ replacementDate }": [
         "${ replacementDate }에 차후 변경될 구독 플랜으로 대체됩니다"
+      ],
+      "Renews automatically at ${ price }, for ${ cycle } month": [
+        "${ cycle }개월간 자동으로 ${ price }에 갱신됩니다"
       ]
     },
     "Billing cycle option": {
@@ -14033,6 +14036,15 @@
       ],
       "Zoom meeting": [
         "Zoom 미팅"
+      ],
+      "**We're changing the ${ BRAND_NAME } sign-in page.** Your account and password stay the same.": [
+        "**${ BRAND_NAME } 로그인 페이지가 변경됩니다.** 계정과 비밀번호는 동일하게 유지됩니다."
+      ],
+      "Soon, you'll enter your email address (or username) and password in 2 separate steps instead of on 1 page.": [
+        "곧, 하나의 페이지가 아닌 두 단계로 나뉘어 이메일 주소(및 사용자 이름)와 비밀번호를 입력하도록 방식이 변경됩니다."
+      ],
+      "Your account and password stay the same.": [
+        "계정 및 비밀번호는 동일하게 유지됩니다."
       ]
     },
     "info": {
@@ -19984,7 +19996,7 @@
         "오픈 소스이며 외부 감사를 받았음"
       ],
       "Passkeys supported on all devices": [
-        "모든 기기에서 패스키를 지원합니다"
+        "모든 기기에서 패스키 지원"
       ],
       "per month": [
         "매월"
@@ -23186,7 +23198,7 @@
         "유일한 비즈니스 솔루션입니다:"
       ],
       "The only email service with:": [
-        "이메일"
+        "아래 기능이 모두 포함된 단 하나의 유일한 이메일 서비스:"
       ],
       "The only password manager with:": [
         "다음을 갖춘 유일한 비밀번호 관리자:"
@@ -27233,6 +27245,9 @@
       ],
       "Your subscriptions": [
         "구독"
+      ],
+      "Signing in is changing": [
+        "로그인 페이지가 변경됩니다"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

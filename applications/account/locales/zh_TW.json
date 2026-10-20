@@ -7270,6 +7270,12 @@
       ],
       "Zero keys reactivated": [
         "重新啟動 0 把金鑰"
+      ],
+      "Organization does not have enough seats available": [
+        "組織沒有足夠的可用座席"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "無可用於 ${ signatureType } 種類的金鑰驗證"
       ]
     },
     "error": {
@@ -9125,6 +9131,9 @@
       ],
       "Undo in progress": [
         "正在撤銷"
+      ],
+      "Has errors": [
+        "有錯誤"
       ]
     },
     "Import type": {
@@ -12886,6 +12895,12 @@
       ],
       "Zoom meeting": [
         "Zoom 會議"
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } 包含撰稿助理"
+      ],
+      "1 device per user": [
+        "1 台裝置每位使用者"
       ]
     },
     "info": {
@@ -13340,6 +13355,9 @@
       ],
       "Week view": [
         "週檢視"
+      ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "關閉 ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Keyboard shortcut name, switch to Calendar": {
@@ -19087,6 +19105,9 @@
     "Payments.Saved payment method details": {
       "Google Pay - card ending in ${ Last4 }": [
         "Google Pay - 卡片於 ${ Last4 } 結束"
+      ],
+      "Bank transfer - ${ iban }": [
+        "匯款 - ${ iban }"
       ]
     },
     "Payments.Sepa": {
@@ -25430,6 +25451,9 @@
       ],
       "Your subscriptions": [
         "您的訂購授權"
+      ],
+      "Black Friday": [
+        "黑色星期五"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

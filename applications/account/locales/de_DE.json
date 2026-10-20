@@ -2317,6 +2317,27 @@
       ],
       "Zoom out": [
         "Verkleinern"
+      ],
+      "Cancel import": [
+        "Import abbrechen"
+      ],
+      "Create a ${ ACCOUNT_APP_NAME }": [
+        "Erstelle ein ${ ACCOUNT_APP_NAME }"
+      ],
+      "Import actions": [
+        "Aktionen importieren"
+      ],
+      "Remove from the list": [
+        "Aus Liste entfernen"
+      ],
+      "Sign in to ${ PASS_APP_NAME }": [
+        "Bei ${ PASS_APP_NAME } anmelden"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Beginne ${ PASS_APP_NAME } zu nutzen"
+      ],
+      "Upgrade to connect": [
+        "Zum Verbinden upgraden"
       ]
     },
     "action": {
@@ -2918,7 +2939,7 @@
         "Premium-Versionen aller Dienste von ${ BRAND_NAME }"
       ],
       "The ${ planName } plan is back for a limited time only": [
-        "Der ${ planName }-Tarif ist nur für begrenzte Zeit wieder verfügbar"
+        "Das ${ planName }-Abonnement ist nur für eine begrenzte Zeit wieder verfügbar"
       ]
     },
     "bf2023: info": {
@@ -5737,6 +5758,15 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Dein Abonnement unterstützt insgesamt ${ MAX_SYNC_PAID_USER } Gmail-Adresse",
         "Dein Abonnement unterstützt insgesamt ${ MAX_SYNC_PAID_USER } Gmail-Adressen"
+      ],
+      "Access your passwords on all your devices": [
+        "Auf deine Passwörter auf allen deinen Geräten zugreifen"
+      ],
+      "Autofill logins instantly on any site": [
+        "Anmeldedaten auf jeder Website sofort automatisch ausfüllen"
+      ],
+      "Create strong password with one click": [
+        "Erstelle mit einem Klick ein sicheres Passwort"
       ]
     },
     "description": {
@@ -6192,6 +6222,9 @@
       ],
       "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
         "Du leitest E-Mails von einem externen Konto an ${ MAIL_APP_NAME } weiter."
+      ],
+      "Sign in to ${ providerName }": [
+        "Bei ${ providerName } anmelden"
       ]
     },
     "Edit billing address form note": {
@@ -8233,6 +8266,9 @@
       ],
       "Zero keys reactivated": [
         "Kein Schüssel wiederhergestellt"
+      ],
+      "Couldn't load your connections": [
+        "Deine Verbindungen konnten nicht geladen werden"
       ]
     },
     "error": {
@@ -10201,6 +10237,9 @@
       ],
       "Undo in progress": [
         "Rückgängigmachen wird ausgeführt"
+      ],
+      "Queued": [
+        "In Warteschlange"
       ]
     },
     "Import type": {
@@ -14576,6 +14615,21 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
+      ],
+      "Cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Kündige innerhalb von 30 Tagen nach dem Kauf und wende dich an unseren ${ customerSupportLink }, um eine Rückerstattung zu erhalten."
+      ],
+      "More cards": [
+        "Weitere Karten"
+      ],
+      "SEPA Bank transfer": [
+        "SEPA-Banküberweisung"
+      ],
+      "Your address was connected. We're importing your emails.": [
+        "Deine Adresse wurde verbunden. Wir importieren gerade deine E-Mails."
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "Deine kostenlose Testphase ist abgelaufen. Abonniere jetzt, damit dein Team weiterhin uneingeschränkten Zugriff hat und die Konten geschützt bleiben."
       ]
     },
     "info": {
@@ -16946,6 +17000,12 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Item": [
+        "Element"
+      ],
+      "Vault": [
+        "Tresor"
       ]
     },
     "label": {
@@ -17381,6 +17441,9 @@
       ],
       "What’s this?": [
         "Was ist das?"
+      ],
+      "Customer Support": [
+        "Kundensupport"
       ]
     },
     "Link (Scribe)": {
@@ -21201,6 +21264,9 @@
     "Payments.iDEAL": {
       "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
         "Mit der Bestätigung ermächtigst du ${ BRAND_NAME } und Stripe, unseren Zahlungsdienstleister, zukünftige Zahlungen für dein Abonnement per SEPA-Lastschrift von diesem Bankkonto einzuziehen, und deiner Bank, diese Zahlungen abzubuchen. Deine erste Zahlung erfolgt jetzt durch ${ IDEAL_WERO_BRAND_NAME }. Dein Abonnement verlängert sich automatisch, bis du es kündigst; wir werden dich vor jeder Abbuchung benachrichtigen. Bei Einzügen per Lastschrift kannst du gemäß den Bedingungen deiner Vereinbarung mit Ihrer Bank innerhalb von 8 Wochen nach dem Abbuchungsdatum eine Rückerstattung bei deiner Bank beantragen. Dies gilt nicht für die Zahlung an ${ IDEAL_WERO_BRAND_NAME }, die du gerade vornimmst."
+      ],
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Mit deiner Bestätigung ermächtigst du ${ BRAND_NAME } und Stripe (unserem Zahlungsdienstleister), zukünftige Zahlungen für dein Abonnement per SEPA-Lastschrift von diesem Bankkonto einzuziehen, und deine Bank, diese Zahlungen abzubuchen. Deine erste Zahlung wird jetzt von ${ IDEAL_WERO_BRAND_NAME } vorgenommen. Dein Abonnement verlängert sich automatisch, bis du es kündigst; Du wirst vor jeder Abbuchung benachrichtigt. Bei Lastschriften können Sie gemäß den Bedingungen Ihrer Vereinbarung mit Ihrer Bank innerhalb von 8 Wochen nach dem Abbuchungsdatum eine Rückerstattung bei Ihrer Bank beantragen. Dies gilt nicht für die Zahlung an ${ IDEAL_WERO_BRAND_NAME }, die Sie gerade vornehmen."
       ]
     },
     "Payments.info": {
@@ -28101,6 +28167,39 @@
       ],
       "Your subscriptions": [
         "Deine Abonnements"
+      ],
+      "${ PASS_APP_NAME }: Welcome": [
+        "${ PASS_APP_NAME }: Willkommen"
+      ],
+      "Add ${ PASS_APP_NAME } to ${ browserName }": [
+        "${ PASS_APP_NAME } zu ${ browserName } hinzufügen"
+      ],
+      "Add ${ PASS_APP_NAME } to your browser": [
+        "Füge ${ PASS_APP_NAME } zu deinem Browser hinzu"
+      ],
+      "Connect your ${ ACCOUNT_APP_NAME }": [
+        "Verbinde dein ${ ACCOUNT_APP_NAME }"
+      ],
+      "Over 95% of users love our extension": [
+        "Über 95 % der Nutzer sind von unserer Erweiterung begeistert"
+      ],
+      "Save time:": [
+        "Spare Zeit:"
+      ],
+      "Skip for now": [
+        "Vorerst überspringen"
+      ],
+      "Stay connected:": [
+        "Bleib verbunden:"
+      ],
+      "Stay safe:": [
+        "Pass auf dich auf:"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "${ planTitle } abonnieren"
+      ],
+      "Unlock the power of autofill with ${ PASS_APP_NAME } in your browser": [
+        "Nutze die Vorteile der automatischen Ausfüllfunktion mit ${ PASS_APP_NAME } in deinem Browser"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -29784,6 +29883,19 @@
       ],
       "Yearly, ${ untilString }": [
         "Jährlich, ${ untilString }"
+      ]
+    },
+    "Rollback state": {
+      "Undo finished": [
+        "Widerrufen abgeschlossen"
+      ],
+      "Undo in progress": [
+        "Wird widerrufen"
+      ]
+    },
+    "Sign out": {
+      "Sign in to ${ providerName }": [
+        "Bei ${ providerName } anmelden"
       ]
     }
   }

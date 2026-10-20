@@ -2317,6 +2317,24 @@
       ],
       "Zoom out": [
         "缩小"
+      ],
+      "Cancel import": [
+        "取消导入"
+      ],
+      "Create a ${ ACCOUNT_APP_NAME }": [
+        "创建 ${ ACCOUNT_APP_NAME }"
+      ],
+      "Import actions": [
+        "导入操作"
+      ],
+      "Remove from the list": [
+        "从列表中移除"
+      ],
+      "Sign in to ${ PASS_APP_NAME }": [
+        "登录 ${ PASS_APP_NAME }"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "开始使用 ${ PASS_APP_NAME }"
       ]
     },
     "action": {
@@ -5699,6 +5717,15 @@
       ],
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "您的套餐总共支持 ${ MAX_SYNC_PAID_USER } 个 Gmail 地址"
+      ],
+      "Access your passwords on all your devices": [
+        "在所有设备上访问您的密码"
+      ],
+      "Autofill logins instantly on any site": [
+        "在任何网站上即时自动填充登录信息"
+      ],
+      "Create strong password with one click": [
+        "一键创建强密码"
       ]
     },
     "description": {
@@ -6154,6 +6181,9 @@
       ],
       "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
         "您正在将邮件从一个外部账户转发至 ${ MAIL_APP_NAME }。"
+      ],
+      "Sign in to ${ providerName }": [
+        "登录 ${ providerName }"
       ]
     },
     "Edit billing address form note": {
@@ -8178,6 +8208,9 @@
       ],
       "Zero keys reactivated": [
         "未重新激活任何密钥"
+      ],
+      "Couldn't load your connections": [
+        "无法加载您的连接"
       ]
     },
     "error": {
@@ -10118,6 +10151,9 @@
       ],
       "Undo in progress": [
         "正在撤销"
+      ],
+      "Queued": [
+        "队列中"
       ]
     },
     "Import type": {
@@ -14422,6 +14458,9 @@
       ],
       "Zoom meeting": [
         "Zoom 会议"
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "您的免费试用已结束。立即订阅，以保持团队访问不中断并确保账户安全。"
       ]
     },
     "info": {
@@ -16783,6 +16822,12 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "Item": [
+        "条目"
+      ],
+      "Vault": [
+        "保险库"
       ]
     },
     "label": {
@@ -20968,6 +21013,9 @@
     },
     "Payments.iDEAL": {
       "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "确认即表示您授权 ${ BRAND_NAME } 及我们的支付服务商 Stripe 通过 SEPA 直接借记从该银行账户收取您订阅的未来款项，并授权您的银行执行这些扣款。您的首笔付款现通过 ${ IDEAL_WERO_BRAND_NAME } 完成。您的套餐将自动续订，直至您取消；我们会在每次扣款前通知您。对于直接借记扣款，根据您与银行达成的协议条款，您可在扣款日起 8 周内向银行申请退款。此规定不适用于您当前正在进行的 ${ IDEAL_WERO_BRAND_NAME } 付款。"
+      ],
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
         "确认即表示您授权 ${ BRAND_NAME } 及我们的支付服务商 Stripe 通过 SEPA 直接借记从该银行账户收取您订阅的未来款项，并授权您的银行执行这些扣款。您的首笔付款现通过 ${ IDEAL_WERO_BRAND_NAME } 完成。您的套餐将自动续订，直至您取消；我们会在每次扣款前通知您。对于直接借记扣款，根据您与银行达成的协议条款，您可在扣款日起 8 周内向银行申请退款。此规定不适用于您当前正在进行的 ${ IDEAL_WERO_BRAND_NAME } 付款。"
       ]
     },
@@ -27769,6 +27817,39 @@
       ],
       "Your subscriptions": [
         "您的账户等级"
+      ],
+      "${ PASS_APP_NAME }: Welcome": [
+        "${ PASS_APP_NAME }：欢迎"
+      ],
+      "Add ${ PASS_APP_NAME } to ${ browserName }": [
+        "将 ${ PASS_APP_NAME } 添加到 ${ browserName }"
+      ],
+      "Add ${ PASS_APP_NAME } to your browser": [
+        "将 ${ PASS_APP_NAME } 添加到您的浏览器"
+      ],
+      "Connect your ${ ACCOUNT_APP_NAME }": [
+        "关联您的 ${ ACCOUNT_APP_NAME }"
+      ],
+      "Over 95% of users love our extension": [
+        "超过 95% 的用户喜爱我们的扩展"
+      ],
+      "Save time:": [
+        "保存时间："
+      ],
+      "Skip for now": [
+        "暂时跳过"
+      ],
+      "Stay connected:": [
+        "保持连接："
+      ],
+      "Stay safe:": [
+        "保持安全："
+      ],
+      "Subscribe to ${ planTitle }": [
+        "订阅 ${ planTitle }"
+      ],
+      "Unlock the power of autofill with ${ PASS_APP_NAME } in your browser": [
+        "在浏览器中使用 ${ PASS_APP_NAME } 解锁自动填充的强大功能"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -29401,6 +29482,19 @@
       ],
       "Yearly, ${ untilString }": [
         "每一年，${ untilString }"
+      ]
+    },
+    "Rollback state": {
+      "Undo finished": [
+        "撤销完成"
+      ],
+      "Undo in progress": [
+        "正在撤销"
+      ]
+    },
+    "Sign out": {
+      "Sign in to ${ providerName }": [
+        "登录 ${ providerName }"
       ]
     }
   }

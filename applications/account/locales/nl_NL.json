@@ -1916,6 +1916,18 @@
       ],
       "Zoom out": [
         "Zoom uit"
+      ],
+      "Cancel import": [
+        "Import annuleren"
+      ],
+      "Import actions": [
+        "Acties importeren"
+      ],
+      "Remove from the list": [
+        "Verwijderen uit de lijst"
+      ],
+      "Upgrade to connect": [
+        "Upgrade om verbinding te maken"
       ]
     },
     "action": {
@@ -2494,6 +2506,9 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30 dagen geld-terug-garantie"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30 dagen geld-terug-garantie: annuleer binnen 30 dagen na uw aankoop en neem contact op met onze ${ customerSupportLink } om uw geld terug te krijgen."
       ]
     },
     "bf2023: Title": {
@@ -7549,6 +7564,9 @@
       ],
       "Zero keys reactivated": [
         "Nul sleutels gereactiveerd"
+      ],
+      "Couldn't load your connections": [
+        "Kan je verbindingen niet laden"
       ]
     },
     "error": {
@@ -9453,6 +9471,9 @@
       ],
       "Undo in progress": [
         "Bezig met ongedaan maken"
+      ],
+      "Queued": [
+        "In wachtrij"
       ]
     },
     "Import type": {
@@ -13492,6 +13513,24 @@
       ],
       "Zoom meeting": [
         "Zoom meeting"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30 dagen geld-terug-garantie: annuleer binnen 30 dagen na uw aankoop en neem contact op met onze ${ customerSupportLink } om uw geld terug te krijgen."
+      ],
+      "Cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Annuleer binnen 30 dagen na uw aankoop en neem contact op met onze ${ customerSupportLink } om uw geld terug te krijgen."
+      ],
+      "More cards": [
+        "Meer kaarten"
+      ],
+      "SEPA Bank transfer": [
+        "SEPA bankoverschrijving"
+      ],
+      "UnionPay logo": [
+        "Union Pay-logo"
+      ],
+      "Your address was connected. We're importing your emails.": [
+        "Uw adres is gekoppeld. We importeren uw e-mails."
       ]
     },
     "info": {
@@ -15773,6 +15812,12 @@
       ],
       "ZIP code": [
         "Postcode"
+      ],
+      "Item": [
+        "Item"
+      ],
+      "Vault": [
+        "Kluis"
       ]
     },
     "label": {
@@ -16199,6 +16244,9 @@
       ],
       "What’s this?": [
         "Wat is dit?"
+      ],
+      "Customer Support": [
+        "Klantendienst"
       ]
     },
     "Link (Scribe)": {
@@ -19753,6 +19801,9 @@
     "Payments.iDEAL": {
       "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
         "Door te bevestigen geeft u toestemming aan ${ BRAND_NAME } en Stripe, onze betalingsdienstaanbieder, onze betalingsdienstaanbieder, om toekomstige betalingen voor uw abonnement van deze bankrekening te innen via SEPA Direct Debit, en uw bank om deze betalingen af ​​te schrijven. Uw eerste betaling wordt nu uitgevoerd door ${ IDEAL_WERO_BRAND_NAME }. Uw abonnement wordt automatisch verlengd, totdat u opzegt; wij zullen u vóór elke ophaling op de hoogte stellen. Bij automatische incasso kunt u binnen 8 weken na de incassodatum een ​​teruggave aanvragen bij uw bank, conform de voorwaarden die u met uw bank heeft afgesproken. Dit is niet van toepassing op de betaling van ${ IDEAL_WERO_BRAND_NAME } die u nu doet."
+      ],
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Door te bevestigen geeft u ${ BRAND_NAME } en Stripe, onze betalingsdienstaanbieder, toestemming om toekomstige betalingen voor uw abonnement van deze bankrekening te innen via SEPA automatische incasso, en uw bank om deze betalingen af ​​te schrijven. Uw eerste betaling wordt nu uitgevoerd door ${ IDEAL_WERO_BRAND_NAME }. Uw abonnement wordt automatisch verlengd, totdat u opzegt; wij zullen u vóór elke ophaling op de hoogte stellen. Bij automatische incasso kunt u binnen 8 weken na de incassodatum een ​​teruggave aanvragen bij uw bank, conform de voorwaarden die u met uw bank heeft afgesproken. Dit is niet van toepassing op de betaling van ${ IDEAL_WERO_BRAND_NAME } die u nu doet."
       ]
     },
     "Payments.info": {
@@ -27984,6 +28035,14 @@
       ],
       "Yearly, ${ untilString }": [
         "Jaarlijks ${ untilString }"
+      ]
+    },
+    "Rollback state": {
+      "Undo finished": [
+        "Ongedaan maken voltooid"
+      ],
+      "Undo in progress": [
+        "Bezig met ongedaan maken"
       ]
     }
   }
