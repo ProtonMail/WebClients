@@ -72,7 +72,7 @@ const withTiming = () => {
 
 const timing = { durationFrom: onboardingTimer };
 
-export const trackStepViewed = (step: ONBOARDING_STEPS) => {
+export const trackStepLoaded = (step: ONBOARDING_STEPS) => {
     tracker.emit(stepLoad, { dimensions: { flow: 'onboarding', step }, ...withTiming() }, timing);
 };
 
