@@ -1,10 +1,20 @@
 import { defineConfig, globalIgnores } from 'eslint/config'
 import defaultConfig from '@proton/eslint-config-proton/all'
+import { createRestrictedImportsConfig } from '@proton/eslint-config-proton/restrictedImports'
 
 const isFixMode = process.argv.includes('--fix')
 
 export default defineConfig(
   defaultConfig,
+  createRestrictedImportsConfig({
+    patterns: [
+      {
+        group: ['@proton/drive-store*'],
+        message:
+          'docs-shared should not import from drive-store. Use docs-shared/lib/CryptoTypes or docs-shared/lib/BasicTypes instead.',
+      },
+    ],
+  }),
   {
     rules: {
       'react/prop-types': 'off',
@@ -25,18 +35,6 @@ export default defineConfig(
         },
       ],
       'max-classes-per-file': 'off',
-      'no-restricted-imports': [
-        'error',
-        {
-          patterns: [
-            {
-              group: ['@proton/drive-store*'],
-              message:
-                'docs-shared should not import from drive-store. Use docs-shared/lib/CryptoTypes or docs-shared/lib/BasicTypes instead.',
-            },
-          ],
-        },
-      ],
     },
   },
   {

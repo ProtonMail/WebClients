@@ -13,7 +13,7 @@ import { configs, parser, plugin } from 'typescript-eslint';
 
 import { createExtraneousDependenciesRule } from './extraneousDependencies.js';
 import { allExtensions, allGlobs, typescriptGlobs } from './globs.js';
-import { createRestrictedImportRule } from './restrictedImports.js';
+import { restrictedImportsPlugin } from './restrictedImports.js';
 
 export default defineConfig(
     {
@@ -21,6 +21,7 @@ export default defineConfig(
         plugins: {
             '@typescript-eslint': plugin,
             'custom-rules': customRules,
+            proton: restrictedImportsPlugin,
             // import-x registered under the `import` name so rule names stay `import/*`; its settings still use `import-x/*`
             import: importX,
             // monorepo-cop is legacy typed, so we need to cast it to the correct type
@@ -328,7 +329,8 @@ export default defineConfig(
              */
             'no-duplicate-imports': ['warn', { allowSeparateTypeImports: true }],
 
-            'no-restricted-imports': createRestrictedImportRule(),
+            // Base restrictions only, clients add their own with `createRestrictedImportsConfig` (restrictedImports.js)
+            'proton/restricted-imports': 'error',
         },
         settings: {
             'import-x/extensions': allExtensions,
@@ -359,13 +361,6 @@ export default defineConfig(
         rules: {
             'custom-rules/no-single-entitlement-condition': 'error',
             'custom-rules/no-boolean-entitlement-composition': 'error',
-        },
-    },
-    {
-        name: 'tsx-restricted-imports',
-        files: ['**/*.tsx', '**/*.jsx'],
-        rules: {
-            'no-restricted-imports': createRestrictedImportRule({ tsx: true }),
         },
     },
     {

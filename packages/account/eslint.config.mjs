@@ -1,18 +1,12 @@
 import { defineConfig } from 'eslint/config';
 
 import defaultConfig from '@proton/eslint-config-proton/all';
-import { createBarrelConfig } from '@proton/eslint-config-proton/barrel';
 import { extraneousDependenciesDevDependencies } from '@proton/eslint-config-proton/extraneousDependencies';
-import { iconRestrictedImports } from '@proton/eslint-config-proton/icon';
+import { createRestrictedImportsConfig } from '@proton/eslint-config-proton/restrictedImports';
 
 export default defineConfig([
     defaultConfig,
-    createBarrelConfig(),
-    {
-        rules: {
-            '@typescript-eslint/no-restricted-imports': ['error', { paths: iconRestrictedImports }],
-        },
-    },
+    createRestrictedImportsConfig({ rollout: ['components-barrel', 'icon-component'] }),
     {
         ignores: ['testing/vitest/**'],
     },
