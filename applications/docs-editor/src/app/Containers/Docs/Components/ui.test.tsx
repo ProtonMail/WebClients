@@ -126,6 +126,22 @@ it('drops a default the caller overrides, so the caller class always wins', () =
   expect(mode).not.toHaveClass('rounded-[--border-radius-md]', 'py-[calc(7em/14)]')
 })
 
+it('drops the shape background and its states when the caller sets a background', () => {
+  render(
+    <Button className="bg-[--background-norm] hover:bg-[--interaction-weak-minor-2]" shape="ghost">
+      Options
+    </Button>,
+  )
+
+  const options = screen.getByRole('button', { name: 'Options' })
+  expect(options).toHaveClass('bg-[--background-norm]', 'hover:bg-[--interaction-weak-minor-2]')
+  expect(options).not.toHaveClass(
+    'bg-[--interaction-default]',
+    'hover:bg-[--interaction-default-hover]',
+    'active:bg-[--interaction-default-active]',
+  )
+})
+
 it('names an icon button by its label and shows the label as a tooltip on focus', async () => {
   const onClick = jest.fn()
   render(
