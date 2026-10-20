@@ -30,10 +30,9 @@ export const IcPlusCircle = ({ alt, title, size = 4, className = '', viewBox = '
             >
                 {title ? <title>{title}</title> : null}
 
-                <path d="M9 5.5a.5.5 0 0 0-1 0V8H5.5a.5.5 0 0 0 0 1H8v2.5a.5.5 0 0 0 1 0V9h2.5a.5.5 0 0 0 0-1H9V5.5Z"></path>
                 <path
                     fillRule="evenodd"
-                    d="M8.5 1a7.5 7.5 0 1 0 0 15 7.5 7.5 0 0 0 0-15ZM2 8.5a6.5 6.5 0 1 1 13 0 6.5 6.5 0 0 1-13 0Z"
+                    d="M12.035 8a.5.5 0 0 1-.5.5H8.5v3.036a.5.5 0 1 1-1 0V8.5H4.464a.5.5 0 0 1 0-1H7.5V4.465a.5.5 0 1 1 1 0V7.5h3.035a.5.5 0 0 1 .5.5M8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12m0 1A7 7 0 1 0 8 1a7 7 0 0 0 0 14"
                 ></path>
             </svg>
             {alt ? <span className="sr-only">{alt}</span> : null}

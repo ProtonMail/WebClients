@@ -39,7 +39,7 @@ export const IcPlusCircleFilled = ({
 
                 <path
                     fillRule="evenodd"
-                    d="M8.5 16a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15ZM9 5.5a.5.5 0 0 0-1 0V8H5.5a.5.5 0 0 0 0 1H8v2.5a.5.5 0 0 0 1 0V9h2.5a.5.5 0 0 0 0-1H9V5.5Z"
+                    d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14m.5-10.535a.5.5 0 1 0-1 0V7.5H4.464a.5.5 0 1 0 0 1H7.5v3.036a.5.5 0 1 0 1 0V8.5h3.035a.5.5 0 0 0 0-1H8.5z"
                 ></path>
             </svg>
             {alt ? <span className="sr-only">{alt}</span> : null}
