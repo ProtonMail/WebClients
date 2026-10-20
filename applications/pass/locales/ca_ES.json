@@ -25,12 +25,6 @@
       ]
     },
     "Action": {
-      "${ PASS_SHORT_APP_NAME } for Android": [
-        "${ PASS_SHORT_APP_NAME } per Android"
-      ],
-      "${ PASS_SHORT_APP_NAME } for iOS": [
-        "${ PASS_SHORT_APP_NAME } per iOS"
-      ],
       "Accept": [
         "Accepta"
       ],
@@ -38,7 +32,7 @@
         "Accepta i mostra l'element"
       ],
       "Accept invitation": [
-        "Accepta invitació"
+        "Accepta la invitació"
       ],
       "Account": [
         "Compte"
@@ -328,6 +322,15 @@
       "Don't show this again": [
         "No m'ho torneu a mostrar"
       ],
+      "Download for Linux": [
+        "Descarregar-ho per a Linux"
+      ],
+      "Download for macOS": [
+        "Descarrega per a macOS"
+      ],
+      "Download for Windows": [
+        "Descarrega per a Windows"
+      ],
       "Download this CSV template": [
         "Descarrega aquesta plantilla CSV"
       ],
@@ -531,6 +534,9 @@
       ],
       "Open navigation": [
         "Obre la navegació"
+      ],
+      "Open platform selection dropdown": [
+        "Obriu el menú desplegable de selecció de plataformes"
       ],
       "Organize vaults": [
         "Organitza les caixes fortes"
@@ -1006,6 +1012,9 @@
       ],
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "S'ha produït un error amb l'autenticació. Confirmeu la segona contrasenya per continuar amb l'exportació."
+      ],
+      "Biometric authentication cancelled.": [
+        "S'ha cancel·lat l'autenticació biomètrica."
       ],
       "Biometric authentication failed.": [
         "L'autenticació biomètrica ha fallat."
@@ -2121,6 +2130,9 @@
       "invites you to access items in": [
         "us convida a accedir a elements a"
       ],
+      "iOS and Android Apps": [
+        "Aplicacions per iOS i Android"
+      ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Sembla que ja heu iniciat sessió a ${ PASS_APP_NAME }. Si esteu intentant iniciar sessió amb un altre compte, tanqueu primer la sessió de l'extensió."
       ],
@@ -2497,6 +2509,12 @@
       ],
       "Restoring trashed items...": [
         "S'estan restaurant els elements de la paperera..."
+      ],
+      "Scan to download": [
+        "Escanegeu-lo per descarregar-lo"
+      ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "Escaneja per descarregar ${ PASS_APP_NAME } per a iOS i Android"
       ],
       "Secure links": [
         "Enllaços segurs"
@@ -3580,11 +3598,17 @@
       "LinkedIn account": [
         "Compte de LinkedIn"
       ],
+      "Linux": [
+        "Linux"
+      ],
       "Login": [
         "Inici de sessió"
       ],
       "Logins": [
         "Inicis de sessió"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Mailboxes": [
         "Bústies de correu"
@@ -4143,6 +4167,9 @@
       ],
       "WiFi network": [
         "Xarxa wifi"
+      ],
+      "Windows": [
+        "Windows"
       ],
       "Work details": [
         "Detalls de la feina"
@@ -4928,6 +4955,12 @@
       ],
       "Folder options": [
         "Opcions de carpeta"
+      ],
+      "Get mobile and desktop apps": [
+        "Obtingueu les aplicacions per mòbil i escriptori"
+      ],
+      "Get mobile apps": [
+        "Obtingueu aplicacions mòbils"
       ],
       "Get Started": [
         "Comenceu"

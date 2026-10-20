@@ -25,12 +25,6 @@
       ]
     },
     "Action": {
-      "${ PASS_SHORT_APP_NAME } for Android": [
-        "${ PASS_SHORT_APP_NAME } pentru Android"
-      ],
-      "${ PASS_SHORT_APP_NAME } for iOS": [
-        "${ PASS_SHORT_APP_NAME } pentru iOS"
-      ],
       "Accept": [
         "Acceptare"
       ],
@@ -328,6 +322,15 @@
       "Don't show this again": [
         "Nu mai afișa asta"
       ],
+      "Download for Linux": [
+        "Descărcare pentru Windows"
+      ],
+      "Download for macOS": [
+        "Descărcare pentru macOS"
+      ],
+      "Download for Windows": [
+        "Descărcare pentru Windows"
+      ],
       "Download this CSV template": [
         "Descărcați acest șablon de fișier CSV"
       ],
@@ -531,6 +534,9 @@
       ],
       "Open navigation": [
         "Deschidere navigare"
+      ],
+      "Open platform selection dropdown": [
+        "Deschide meniul derulant pentru selectarea platformei"
       ],
       "Organize vaults": [
         "Organizare seifuri"
@@ -1009,6 +1015,9 @@
       ],
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Autentificare eșuată. Confirmați parola secundară pentru continuare exportare."
+      ],
+      "Biometric authentication cancelled.": [
+        "Autentificarea biometrică a fost anulată."
       ],
       "Biometric authentication failed.": [
         "Autentificarea biometrică a eșuat."
@@ -2146,6 +2155,9 @@
       "invites you to access items in": [
         "vă invită să accesați articolele din"
       ],
+      "iOS and Android Apps": [
+        "Aplicații iOS și Android"
+      ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Se pare că deja v-ați conectat la ${ PASS_APP_NAME }. Dacă încercați să vă autentificați cu un alt cont, deconectați-vă mai întâi de la extensie."
       ],
@@ -2527,6 +2539,12 @@
       ],
       "Restoring trashed items...": [
         "Se restaurează articolele din gunoi..."
+      ],
+      "Scan to download": [
+        "Scanați pentru descărcare"
+      ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "Scanați pentru a descărca ${ PASS_APP_NAME } pentru iOS și Android"
       ],
       "Secure links": [
         "Legături web securizate"
@@ -3629,11 +3647,17 @@
       "LinkedIn account": [
         "Cont LinkdIn"
       ],
+      "Linux": [
+        "Linux"
+      ],
       "Login": [
         "Conectare"
       ],
       "Logins": [
         "Conectări"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Mailboxes": [
         "Conturi de e-mail"
@@ -4192,6 +4216,9 @@
       ],
       "WiFi network": [
         "Rețea Wi-Fi"
+      ],
+      "Windows": [
+        "Windows"
       ],
       "Work details": [
         "Detalii loc de muncă"
@@ -4983,6 +5010,12 @@
       ],
       "Folder options": [
         "Opțiuni foldere"
+      ],
+      "Get mobile and desktop apps": [
+        "Luați aplicațiile pentru mobile și desktop"
+      ],
+      "Get mobile apps": [
+        "Luați aplicații mobile"
       ],
       "Get Started": [
         "Începeți"
