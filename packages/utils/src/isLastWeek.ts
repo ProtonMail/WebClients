@@ -46,8 +46,7 @@ export default function isLastWeek(
     const dateStartOfWeek = startOfWeek(currentDate, options);
 
     const lastWeekStart = subDays(dateStartOfWeek, 7);
-    const lastWeekEnd = subDays(lastWeekStart, -6);
 
     const dateToCheck = new Date(dirtyDate);
-    return dateToCheck >= lastWeekStart && dateToCheck <= lastWeekEnd;
+    return dateToCheck >= lastWeekStart && dateToCheck < dateStartOfWeek;
 }
