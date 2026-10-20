@@ -1,10 +1,12 @@
 import { PanelSide } from '../floating/panelSide';
-import { CatActivity, CatJump, CatPose, CatRun, selectCatPose } from './catPose';
+import { CatActivity, CatJump, CatPose, CatRun, CatTrick, selectCatPose } from './catPose';
 
 const idle = {
     jump: null,
     isHidden: false,
     run: null,
+    trick: null,
+    isSweeping: false,
     isHovered: false,
     isChatOpen: true,
     activity: null,
@@ -49,9 +51,11 @@ describe('selectCatPose', () => {
         expect(selectCatPose({ ...busyCat, isChatOpen: false })).toBe(CatPose.SIT);
     });
 
-    it('still celebrates while the chat is closed', () => {
+    it('still sweeps, plays tricks and celebrates while the chat is closed', () => {
         const closedChat = { ...idle, isChatOpen: false };
 
+        expect(selectCatPose({ ...closedChat, isSweeping: true })).toBe(CatPose.SWEEP);
+        expect(selectCatPose({ ...closedChat, trick: CatTrick.ENCRYPT })).toBe(CatPose.ENCRYPT);
         expect(selectCatPose({ ...closedChat, isCelebrating: true })).toBe(CatPose.HAPPY);
     });
 
@@ -71,8 +75,39 @@ describe('selectCatPose', () => {
         ).toBe(CatPose.PERK);
     });
 
-    it('plays each run phase over hovering, celebrating and thinking', () => {
-        const busyCat = { ...idle, isHovered: true, isThinking: true, isCelebrating: true };
+    it('sweeps the envelopes over hovering and everything below it', () => {
+        expect(
+            selectCatPose({
+                ...idle,
+                isSweeping: true,
+                isHovered: true,
+                activity: CatActivity.SEARCH,
+                isThinking: true,
+            })
+        ).toBe(CatPose.SWEEP);
+    });
+
+    it('plays each trick over sweeping and everything below it', () => {
+        const busyCat = { ...idle, isSweeping: true, isHovered: true, isThinking: true, isTyping: true };
+
+        expect(selectCatPose({ ...busyCat, trick: CatTrick.SCHRODINGER_IN_BOX })).toBe(CatPose.SCHRODINGER_IN_BOX);
+        expect(selectCatPose({ ...busyCat, trick: CatTrick.SCHRODINGER_OUT_OF_BOX })).toBe(
+            CatPose.SCHRODINGER_OUT_OF_BOX
+        );
+        expect(selectCatPose({ ...busyCat, trick: CatTrick.NINE_LIVES })).toBe(CatPose.NINE_LIVES);
+        expect(selectCatPose({ ...busyCat, trick: CatTrick.ENCRYPT })).toBe(CatPose.ENCRYPT);
+    });
+
+    it('runs, hides and jumps over a trick', () => {
+        const trickingCat = { ...idle, trick: CatTrick.NINE_LIVES };
+
+        expect(selectCatPose({ ...trickingCat, run: CatRun.GALLOP })).toBe(CatPose.RUN);
+        expect(selectCatPose({ ...trickingCat, isHidden: true })).toBe(CatPose.SIT);
+        expect(selectCatPose({ ...trickingCat, jump: CatJump.OUT })).toBe(CatPose.JUMP_OUT);
+    });
+
+    it('plays each run phase over sweeping, hovering, celebrating and thinking', () => {
+        const busyCat = { ...idle, isSweeping: true, isHovered: true, isThinking: true, isCelebrating: true };
 
         expect(selectCatPose({ ...busyCat, run: CatRun.GALLOP })).toBe(CatPose.RUN);
         expect(selectCatPose({ ...busyCat, run: CatRun.SKID })).toBe(CatPose.SKID);
@@ -83,6 +118,7 @@ describe('selectCatPose', () => {
             selectCatPose({
                 ...idle,
                 isHidden: true,
+                isSweeping: true,
                 isHovered: true,
                 activity: CatActivity.SEARCH,
                 isThinking: true,

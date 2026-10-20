@@ -1,12 +1,13 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 
 import { useLumoAgentDrawer } from '@proton/llm/lib/lumoAgent/ui/lumoAgentDrawerContext';
-import { type LumoAgentItem, LumoChainEnd } from '@proton/llm/lib/lumoAgent/ui/types';
+import type { LumoAgentItem } from '@proton/llm/lib/lumoAgent/ui/types';
+import { ConfirmStatus, LumoChainEnd } from '@proton/llm/lib/lumoAgent/ui/types';
 
 import { PanelSide } from '../floating/panelSide';
 import CatSprite from './CatSprite';
 import LumoPet from './LumoPet';
-import { CatJump, CatPose, CatRun } from './catPose';
+import { CatJump, CatPose, CatRun, CatTrick } from './catPose';
 
 jest.mock('@proton/llm/lib/lumoAgent/ui/lumoAgentDrawerContext', () => ({ useLumoAgentDrawer: jest.fn() }));
 jest.mock('./CatSprite', () => ({ __esModule: true, default: jest.fn(() => null) }));
@@ -25,6 +26,7 @@ interface Setup {
     side?: PanelSide;
     run?: CatRun | null;
     jump?: CatJump | null;
+    trick?: CatTrick | null;
     isHidden?: boolean;
     isTyping?: boolean;
     items?: LumoAgentItem[];
@@ -37,6 +39,7 @@ const pet = ({
     side = PanelSide.RIGHT,
     run = null,
     jump = null,
+    trick = null,
     isHidden = false,
     isTyping = false,
     items = [],
@@ -56,7 +59,7 @@ const pet = ({
                 side={side}
                 isPanelOpen={isPanelOpen}
                 isTyping={isTyping}
-                motion={{ run, jump, isHidden }}
+                motion={{ run, jump, trick, isHidden }}
                 actions={{ onToggle, onMove, onDock, onNewChat, onHide, onReveal }}
                 onJumpEnd={onJumpEnd}
             />
@@ -71,6 +74,13 @@ const renderPet = (setup: Setup = {}) => {
 };
 
 const searchChip: LumoAgentItem = { id: 1, kind: 'chip', tool: 'search', label: 'Searched', payload: '' };
+const appliedTrash: LumoAgentItem = {
+    id: 2,
+    kind: 'confirm',
+    action: { type: 'move_emails', ids: ['email-a1b2c3'], folder: null, location: 'trash' },
+    labels: {},
+    status: ConfirmStatus.APPLIED,
+};
 
 const catButton = () => screen.getByRole('button', { name: 'Toggle Lumo' });
 const dock = (container: HTMLElement) => container.querySelector('.lumo-pet-dock');
@@ -293,5 +303,27 @@ describe('LumoPet', () => {
         renderPet({ isPanelOpen: true, side: PanelSide.LEFT, isTyping: true });
 
         expect(shownPose()).toBe(CatPose.WATCH_RIGHT);
+    });
+
+    it.each([
+        [PanelSide.RIGHT, false],
+        [PanelSide.LEFT, true],
+    ])('on the %s, sweeps once a trash is applied after it mounted, mirrored: %s', (side, isMirrored) => {
+        const { rerenderPet } = renderPet({ side });
+
+        rerenderPet({ items: [appliedTrash] });
+
+        expect(shownPose()).toBe(CatPose.SWEEP);
+        expect(shownSprite().isMirrored).toBe(isMirrored);
+    });
+
+    it.each([
+        [CatTrick.NINE_LIVES, CatPose.NINE_LIVES, true],
+        [CatTrick.ENCRYPT, CatPose.ENCRYPT, false],
+    ])('on the left, plays %s mirrored only if the pose faces a side: %s', (trick, pose, isMirrored) => {
+        renderPet({ side: PanelSide.LEFT, trick });
+
+        expect(shownPose()).toBe(pose);
+        expect(shownSprite().isMirrored).toBe(isMirrored);
     });
 });

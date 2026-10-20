@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react';
 
 import type { PanelSide } from '../floating/panelSide';
-import type { CatRun } from './catPose';
+import type { CatRun, CatTrick } from './catPose';
 import { CatJump } from './catPose';
 import { useCatRun } from './useCatRun';
+import { useCatTrick } from './useCatTrick';
 
 export interface CatMotion {
     run: CatRun | null;
     jump: CatJump | null;
+    trick: CatTrick | null;
     isHidden: boolean;
 }
 
@@ -33,10 +35,12 @@ export const useCatMotion = ({ side, isCatHidden, canJump, runMs }: Options) => 
         setJump(canJump ? (isCatHidden ? CatJump.OUT : CatJump.IN) : null);
     }, [isCatHidden, isHidden, canJump]);
 
+    const { trick, playTrick } = useCatTrick(canRun && !run && !jump);
+
     const endJump = () => {
         setJump(null);
     };
 
-    const motion: CatMotion = { run, jump, isHidden };
-    return { shownSide, motion, endGlide, endJump };
+    const motion: CatMotion = { run, jump, trick, isHidden };
+    return { shownSide, motion, endGlide, endJump, playTrick };
 };
