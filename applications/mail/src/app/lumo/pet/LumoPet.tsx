@@ -1,4 +1,4 @@
-import type { FocusEvent, KeyboardEvent } from 'react';
+import type { AnimationEvent, FocusEvent, KeyboardEvent } from 'react';
 import { useState } from 'react';
 
 import { c } from 'ttag';
@@ -9,10 +9,11 @@ import { useLumoAgentDrawer } from '@proton/llm/lib/lumoAgent/ui/lumoAgentDrawer
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
-import type { PanelSide } from '../floating/panelSide';
+import { PanelSide } from '../floating/panelSide';
 import CatSprite from './CatSprite';
 import LumoPetMenu from './LumoPetMenu';
 import { selectCatPose } from './catPose';
+import type { CatMotion } from './useCatMotion';
 
 import './LumoPet.scss';
 
@@ -21,16 +22,21 @@ interface CatActions {
     onMove: () => void;
     onDock: () => void;
     onNewChat: () => void;
+    onHide: () => void;
+    onReveal: () => void;
 }
 
 interface Props {
     side: PanelSide;
     isPanelOpen: boolean;
+    motion: CatMotion;
     actions: CatActions;
+    onJumpEnd: () => void;
 }
 
-const LumoPet = ({ side, isPanelOpen, actions }: Props) => {
-    const { onToggle, onMove, onDock, onNewChat } = actions;
+const LumoPet = ({ side, isPanelOpen, motion, actions, onJumpEnd }: Props) => {
+    const { run, jump, isHidden } = motion;
+    const { onToggle, onMove, onDock, onNewChat, onHide, onReveal } = actions;
     const { hasConversation, openDebugReport } = useLumoAgentDrawer();
     const [isHovered, setIsHovered] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -70,44 +76,66 @@ const LumoPet = ({ side, isPanelOpen, actions }: Props) => {
         event.stopPropagation();
         setIsMenuOpen(false);
     };
+    const handleJumpEnd = (event: AnimationEvent) => {
+        if (event.target === event.currentTarget) {
+            onJumpEnd();
+        }
+    };
 
+    // Named to share the composer's "Show ${title}" msgid: the i18n validator rejects one string with two variable names
+    const title = LUMO_SHORT_APP_NAME;
+    const canShowMenu = !isHidden && !run && !jump;
+    const hasSidedPose = Boolean(run);
     const pose = selectCatPose({
+        jump,
+        isHidden,
+        run,
         isHovered,
     });
 
     return (
         // eslint-disable-next-line jsx-a11y/no-static-element-interactions
         <div
-            className={clsx('lumo-pet-dock relative', isMenuOpen && 'lumo-pet-dock--menu-open')}
+            className={clsx('lumo-pet-dock relative', canShowMenu && isMenuOpen && 'lumo-pet-dock--menu-open')}
             onPointerEnter={enterPointer}
             onPointerLeave={leavePointer}
             onFocus={openOnKeyboardFocus}
             onBlur={closeOnFocusLeaving}
             onKeyDown={closeOnEscape}
         >
-            <div className="lumo-pet-cat-slot pointer-events-none">
+            <div
+                className={clsx(
+                    'lumo-pet-cat-slot pointer-events-none',
+                    isHidden && 'lumo-pet-cat-slot--hidden',
+                    jump && `lumo-pet-cat-slot--jump-${jump}`
+                )}
+                onAnimationEnd={handleJumpEnd}
+            >
                 <Button
                     shape="ghost"
                     icon
-                    className="lumo-pet-cat-button p-0"
-                    onClick={onToggle}
-                    aria-label={c('Action').t`Toggle ${LUMO_SHORT_APP_NAME}`}
+                    className="lumo-pet-cat-button"
+                    onClick={isHidden ? onReveal : onToggle}
+                    aria-label={isHidden ? c('Action').t`Show ${title}` : c('Action').t`Toggle ${LUMO_SHORT_APP_NAME}`}
                     aria-controls="drawer-app-lumo"
                     aria-expanded={isPanelOpen}
                 >
-                    <CatSprite pose={pose} isMirrored={false} />
+                    <CatSprite pose={pose} isMirrored={hasSidedPose && side === PanelSide.LEFT} />
                 </Button>
             </div>
-            <LumoPetMenu
-                side={side}
-                onMove={leavePointerThen(onMove)}
-                onDock={onDock}
-                conversationActions={getConversationActions({
-                    hasConversation,
-                    clear: leavePointerThen(onNewChat),
-                    openDebugReport: openDebugReport && leavePointerThen(openDebugReport),
-                })}
-            />
+            {canShowMenu && (
+                <LumoPetMenu
+                    side={side}
+                    onMove={leavePointerThen(onMove)}
+                    onDock={onDock}
+                    onHide={leavePointerThen(onHide)}
+                    conversationActions={getConversationActions({
+                        hasConversation,
+                        clear: leavePointerThen(onNewChat),
+                        openDebugReport: openDebugReport && leavePointerThen(openDebugReport),
+                    })}
+                />
+            )}
         </div>
     );
 };
