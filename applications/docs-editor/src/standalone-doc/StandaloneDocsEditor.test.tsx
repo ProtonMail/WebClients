@@ -223,11 +223,61 @@ describe('standalone Docs runtime', () => {
         expect(screen.getByTestId('preview-mode-editor')).toHaveTextContent('This document lives in memory'),
       )
       expect(screen.getByTestId('preview-mode-editor')).toHaveAttribute('contenteditable', 'false')
+      expect(screen.getByTestId('preview-mode-editor').closest('.docs-editor-root')).not.toBeNull()
       expect(screen.getByTestId('table-of-contents')).toHaveTextContent('Standalone Docs')
       jest.mocked(dependencies.reportToolbarInteraction).mockClear()
       fireEvent.click(within(preview.container).getByTestId('preview-mode-toolbar'))
       expect(dependencies.reportToolbarInteraction).not.toHaveBeenCalled()
       preview.unmount()
+      expect(reportError).not.toHaveBeenCalled()
+    } finally {
+      view.unmount()
+      session.destroy()
+    }
+  })
+
+  it('renders the editor, its menus and its comments panel inside the Docs style scope', async () => {
+    const reportError = jest.fn()
+    const session = createStandaloneDocSession(jest.fn(), reportError)
+    const comments = createStandaloneDocClient('local@example.test', session.subscribeToAwarenessStates)
+    comments.getAllThreads = jest.fn(async () => [createThread()])
+    let editor: LexicalEditor | null = null
+    const view = render(
+      <DocsDependenciesProvider dependencies={createDependencies(comments, reportError)}>
+        <DocsLayout.Container isSuggestionMode={false}>
+          <StandaloneDocsEditor
+            docMap={session.docMap}
+            docState={session.docState}
+            documentId={session.documentId}
+            editingLocked={false}
+            onEditorError={reportError}
+            hidden={false}
+            editorInitializationConfig={session.initialization}
+            systemMode={EditorSystemMode.Edit}
+            userMode={EditorUserMode.Edit}
+            onEditorReadyToReceiveUpdates={() => session.editorLoaded()}
+            onEditorLoadError={reportError}
+            onUserModeChange={jest.fn()}
+            setEditorRef={(instance) => {
+              editor = instance
+            }}
+            userAddress="local@example.test"
+            isSuggestionsFeatureEnabled={false}
+            showTreeView={false}
+            tableOfContentsVisible={false}
+          />
+        </DocsLayout.Container>
+      </DocsDependenciesProvider>,
+    )
+    try {
+      const mainEditor = await screen.findByTestId('main-editor')
+      expect(mainEditor.closest('.docs-editor-root')).not.toBeNull()
+
+      fireEvent.click(screen.getByTestId('user-mode-dropdown'))
+      expect((await screen.findByRole('menu')).closest('.docs-editor-portal-root')).not.toBeNull()
+
+      await act(() => editor!.dispatchCommand(SHOW_ALL_COMMENTS_COMMAND, undefined))
+      expect((await screen.findByText('A loaded comment')).closest('.docs-editor-root')).not.toBeNull()
       expect(reportError).not.toHaveBeenCalled()
     } finally {
       view.unmount()
