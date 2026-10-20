@@ -7,7 +7,7 @@ import { getPropertyTzid } from '@proton/shared/lib/calendar/vcalHelper';
 import { getIsAllDay, getRecurrenceId } from '@proton/shared/lib/calendar/veventHelper';
 import { fromUTCDate, toUTCDate } from '@proton/shared/lib/date/timezone';
 import { omit } from '@proton/shared/lib/helpers/object';
-import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar/Event';
 import type { VcalDateOrDateTimeProperty, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
 import type { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';

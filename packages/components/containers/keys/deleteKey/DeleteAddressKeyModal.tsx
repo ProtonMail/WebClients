@@ -8,7 +8,8 @@ import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import type { Address, AddressKey, DecryptedAddressKey } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { AddressKey, DecryptedAddressKey } from '@proton/shared/lib/interfaces/Key';
 import noop from '@proton/utils/noop';
 
 import { useModalTwoPromise } from '../../../components/modalTwo/useModalTwo';

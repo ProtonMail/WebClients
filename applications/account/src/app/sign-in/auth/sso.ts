@@ -13,12 +13,10 @@ import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import { handleUnlockKey } from '@proton/shared/lib/authentication/unlockKey';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import type { Address, Api, KeySalt, User } from '@proton/shared/lib/interfaces';
-import {
-    generateKeySaltAndPassphrase,
-    getDecryptedUserKeysHelper,
-    getResetAddressesKeysV2,
-} from '@proton/shared/lib/keys';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { KeySalt } from '@proton/shared/lib/interfaces/KeySalt';
+import type { User } from '@proton/shared/lib/interfaces/User';
 import type {
     AuthDeviceOutput,
     DeviceDataSerialized,
@@ -38,7 +36,10 @@ import {
     getAuthDeviceDataByUser,
     setPersistedAuthDeviceDataByUser,
 } from '@proton/shared/lib/keys/device';
+import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys/getDecryptedUserKeys';
+import { generateKeySaltAndPassphrase } from '@proton/shared/lib/keys/keys';
 import { changeSSOUserKeysPasswordHelper } from '@proton/shared/lib/keys/password';
+import { getResetAddressesKeysV2 } from '@proton/shared/lib/keys/resetKeys';
 import { getOrganizationData, getUnprivatizationContextData } from '@proton/shared/lib/keys/unprivatization/helper';
 import getRandomString from '@proton/utils/getRandomString';
 import noop from '@proton/utils/noop';

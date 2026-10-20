@@ -5,7 +5,7 @@ import { markPaymentMethodAsDefault } from '@proton/payments/core/api/api';
 import type { PaymentMethodType, SavedPaymentMethod } from '@proton/payments/core/interface';
 import { isSavablePaymentMethod } from '@proton/payments/core/payment-methods/helpers';
 import { isExistingPaymentMethod } from '@proton/payments/core/type-guards';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 function backendWillChangeDefaultPaymentMethod(selectedPaymentMethod: PaymentMethodType): boolean {
     return !isExistingPaymentMethod(selectedPaymentMethod) && isSavablePaymentMethod(selectedPaymentMethod);

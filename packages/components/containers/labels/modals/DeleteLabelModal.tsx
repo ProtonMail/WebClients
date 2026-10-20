@@ -6,7 +6,7 @@ import useLoading from '@proton/hooks/useLoading';
 import { deleteLabel } from '@proton/mail/store/labels/actions';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
-import type { Label } from '@proton/shared/lib/interfaces';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
 
 import type { ModalProps } from '../../../components/modalTwo/Modal';
 import Prompt from '../../../components/prompt/Prompt';

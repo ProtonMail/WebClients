@@ -1,4 +1,4 @@
-import type { HumanVerificationMethodType } from '../interfaces';
+import type { HumanVerificationMethodType } from '../interfaces/HumanVerification';
 
 interface Headers {
     [key: string]: any;

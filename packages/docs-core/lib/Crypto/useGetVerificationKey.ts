@@ -6,9 +6,10 @@ import { useGetAddressKeys } from '@proton/account/addressKeys/hooks'
 import { useAuthentication } from '@proton/components'
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants'
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email'
-import type { Address, Api } from '@proton/shared/lib/interfaces'
+import type { Address } from '@proton/shared/lib/interfaces/Address'
+import type { Api } from '@proton/shared/lib/interfaces/Api'
 import type { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys'
-import { splitKeys } from '@proton/shared/lib/keys'
+import { splitKeys } from '@proton/shared/lib/keys/keys'
 import { getPublicKeysForEmail } from './getPublicKeysForEmail'
 
 type VerificationKeysCallback = () => Promise<PublicKeyReference[]>

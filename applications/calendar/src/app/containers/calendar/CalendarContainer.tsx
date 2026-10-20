@@ -38,14 +38,13 @@ import {
 } from '@proton/shared/lib/date/timezone';
 import { getIsIframe } from '@proton/shared/lib/helpers/browser';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import type { Address, UserModel, UserSettings } from '@proton/shared/lib/interfaces';
-import type {
-    AttendeeModel,
-    CalendarMemberInvitation,
-    CalendarUserSettings,
-    VisualCalendar,
-} from '@proton/shared/lib/interfaces/calendar';
-import { MEMBER_INVITATION_STATUS } from '@proton/shared/lib/interfaces/calendar';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
+import type { CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
+import type { CalendarMemberInvitation } from '@proton/shared/lib/interfaces/calendar/CalendarMember';
+import { MEMBER_INVITATION_STATUS } from '@proton/shared/lib/interfaces/calendar/CalendarMember';
+import type { AttendeeModel } from '@proton/shared/lib/interfaces/calendar/Event';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 import unary from '@proton/utils/unary';
 

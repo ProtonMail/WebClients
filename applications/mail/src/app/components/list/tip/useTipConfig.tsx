@@ -24,7 +24,7 @@ import {
     ROOT_FOLDER,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
 
 import { useOnCompose } from '../../../containers/ComposeProvider';

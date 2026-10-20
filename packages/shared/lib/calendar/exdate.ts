@@ -1,5 +1,5 @@
 import { toUTCDate } from '../date/timezone';
-import type { DateTimeValue } from '../interfaces/calendar';
+import type { DateTimeValue } from '../interfaces/calendar/DateTime';
 import type { VcalDateOrDateTimeProperty } from '../interfaces/calendar/VcalModel';
 import { getDateProperty, getDateTimeProperty } from './vcalConverter';
 

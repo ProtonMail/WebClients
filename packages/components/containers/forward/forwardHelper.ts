@@ -1,7 +1,11 @@
 import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import type { Address, IncomingAddressForwarding, OutgoingAddressForwarding } from '@proton/shared/lib/interfaces';
-import { ForwardingType } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type {
+    IncomingAddressForwarding,
+    OutgoingAddressForwarding,
+} from '@proton/shared/lib/interfaces/AddressForwarding';
+import { ForwardingType } from '@proton/shared/lib/interfaces/AddressForwarding';
 
 export const getChainedForwardingEmails = (
     incoming: IncomingAddressForwarding[],

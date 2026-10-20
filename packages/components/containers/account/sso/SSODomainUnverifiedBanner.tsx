@@ -4,7 +4,7 @@ import { useCustomDomains } from '@proton/account/domains/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { DOMAIN_STATE } from '@proton/shared/lib/interfaces';
+import { DOMAIN_STATE } from '@proton/shared/lib/interfaces/Domain';
 
 import useModalState from '../../../components/modalTwo/useModalState';
 import TXTRecordModal from '../../organization/sso/TXTRecordModal';

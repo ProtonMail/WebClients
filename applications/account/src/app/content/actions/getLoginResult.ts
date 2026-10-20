@@ -8,8 +8,8 @@ import { getReturnUrl } from '@proton/shared/lib/authentication/returnUrl';
 import { APPS, type APP_NAMES, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { joinPaths } from '@proton/shared/lib/helpers/url';
-import type { Api } from '@proton/shared/lib/interfaces';
-import { getEncryptedSetupBlob, getRequiresAddressSetup } from '@proton/shared/lib/keys';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import { getEncryptedSetupBlob, getRequiresAddressSetup } from '@proton/shared/lib/keys/setupAddress';
 import noop from '@proton/utils/noop';
 
 import type { AppSwitcherState } from '../../public/AppSwitcherContainer';

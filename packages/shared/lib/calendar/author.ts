@@ -5,8 +5,8 @@ import unique from '@proton/utils/unique';
 
 import { canonicalizeInternalEmail } from '../helpers/email';
 import { captureMessage } from '../helpers/sentry';
-import type { CalendarEvent, CalendarEventData } from '../interfaces/calendar';
-import type { ContactEmail } from '../interfaces/contacts';
+import type { CalendarEvent, CalendarEventData } from '../interfaces/calendar/Event';
+import type { ContactEmail } from '../interfaces/contacts/Contact';
 import type { GetVerificationPreferences } from '../interfaces/hooks/GetVerificationPreferences';
 import type { SimpleMap } from '../interfaces/utils';
 import { CALENDAR_CARD_TYPE } from './constants';

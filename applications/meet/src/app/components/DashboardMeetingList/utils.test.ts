@@ -1,6 +1,6 @@
 import { enUS } from 'date-fns/locale';
 
-import { SETTINGS_DATE_FORMAT } from '@proton/shared/lib/interfaces';
+import { SETTINGS_DATE_FORMAT } from '@proton/shared/lib/interfaces/UserSettings';
 
 import { formatMeetingDate } from './utils';
 

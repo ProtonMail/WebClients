@@ -1,25 +1,21 @@
 import { CryptoProxy, type PrivateKeyReferenceV4 } from '@protontech/crypto';
 
 import { getAndVerifyApiKeys } from '@proton/key-transparency/keys';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { IncomingAddressForwarding } from '@proton/shared/lib/interfaces/AddressForwarding';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { DecryptedAddressKey, DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 import type {
-    Address,
-    Api,
-    DecryptedAddressKey,
-    DecryptedKey,
-    IncomingAddressForwarding,
     KTUserContext,
     KeyTransparencyCommit,
     KeyTransparencyVerify,
-    UserModel,
-} from '@proton/shared/lib/interfaces';
-import {
-    decryptMemberToken,
-    getActiveAddressKeys,
-    getAddressKeyToken,
-    getEmailFromKey,
-    splitKeys,
-} from '@proton/shared/lib/keys';
+} from '@proton/shared/lib/interfaces/KeyTransparency';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import { getAddressKeyToken } from '@proton/shared/lib/keys/addressKeys';
 import { generateForwardingAddressKey } from '@proton/shared/lib/keys/forward/generateForwardingAddressKey';
+import { getActiveAddressKeys } from '@proton/shared/lib/keys/getActiveKeys';
+import { getEmailFromKey, splitKeys } from '@proton/shared/lib/keys/keys';
+import { decryptMemberToken } from '@proton/shared/lib/keys/memberToken';
 
 interface AcceptIncomingForwardingParameters {
     api: Api;

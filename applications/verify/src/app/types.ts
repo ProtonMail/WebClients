@@ -1,4 +1,4 @@
-import type { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
+import type { HumanVerificationMethodType } from '@proton/shared/lib/interfaces/HumanVerification';
 
 export interface VerificationSearchParameters {
     /*

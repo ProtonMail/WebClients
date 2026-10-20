@@ -1,6 +1,6 @@
 import { shell } from 'electron';
 
-import { ForkSearchParameters, ForkType } from '@proton/shared/lib/authentication/fork';
+import { ForkSearchParameters, ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { getAppUrlFromApiUrl } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';

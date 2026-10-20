@@ -1,5 +1,6 @@
 import type { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
-import type { Address, User } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { User } from '@proton/shared/lib/interfaces/User';
 
 import type { HydratedAccessState } from '../../store/reducers';
 import type {

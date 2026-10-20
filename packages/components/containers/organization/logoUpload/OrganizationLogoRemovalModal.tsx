@@ -11,7 +11,7 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { deleteOrganizationLogo, updateOrganizationSettings } from '@proton/shared/lib/api/organization';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import type { Organization } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import noop from '@proton/utils/noop';
 
 import Form from '../../../components/form/Form';

@@ -9,8 +9,9 @@ import { EVENT_INVITATION_ERROR_TYPE } from '@proton/shared/lib/calendar/icsSurg
 import { getIsRruleSupported } from '@proton/shared/lib/calendar/recurrence/rrule';
 import { parse } from '@proton/shared/lib/calendar/vcal';
 import { getIsTimezoneComponent } from '@proton/shared/lib/calendar/vcalHelper';
-import type { Recipient } from '@proton/shared/lib/interfaces';
-import type { Attendee, CalendarEvent, Participant } from '@proton/shared/lib/interfaces/calendar';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
+import type { Attendee, CalendarEvent } from '@proton/shared/lib/interfaces/calendar/Event';
+import type { Participant } from '@proton/shared/lib/interfaces/calendar/Invite';
 import type { VcalVcalendar, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import type { RequireSome } from '@proton/shared/lib/interfaces/utils';

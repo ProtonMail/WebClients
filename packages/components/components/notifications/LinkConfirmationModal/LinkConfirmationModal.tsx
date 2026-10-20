@@ -9,7 +9,7 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateConfirmLink } from '@proton/shared/lib/api/mailSettings';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import { rtlSanitize } from '@proton/shared/lib/helpers/string';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { CONFIRM_LINK } from '@proton/shared/lib/mail/mailSettings';
 
 import Checkbox from '../../input/Checkbox';

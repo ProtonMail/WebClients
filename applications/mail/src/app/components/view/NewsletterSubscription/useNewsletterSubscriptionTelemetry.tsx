@@ -10,7 +10,7 @@ import {
     TelemetryMeasurementGroups,
 } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReportWithBaseDimensions } from '@proton/shared/lib/helpers/metrics';
-import type { SimpleMap } from '@proton/shared/lib/interfaces';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 import { useMailSelector } from '../../../store/hooks';
 import type { SortSubscriptionsValue } from '../../../store/newsletterSubscriptions/interface';

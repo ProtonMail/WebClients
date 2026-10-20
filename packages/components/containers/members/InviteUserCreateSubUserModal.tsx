@@ -6,7 +6,9 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { PLAN_NAMES } from '@proton/payments/core/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import type { Domain, EnhancedMember, Organization } from '@proton/shared/lib/interfaces';
+import type { Domain } from '@proton/shared/lib/interfaces/Domain';
+import type { EnhancedMember } from '@proton/shared/lib/interfaces/Member';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import {
     getIsDomainActive,
     isOrganizationFamily,

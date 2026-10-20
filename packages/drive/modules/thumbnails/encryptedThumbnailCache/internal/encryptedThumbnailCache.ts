@@ -1,5 +1,5 @@
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import type { DecryptedKey } from '@proton/shared/lib/interfaces';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 
 import { sendErrorReport } from '../../../../legacy/errorHandling';
 import { decryptThumbnail, encryptThumbnail, resolveThumbnailEncryptionKey } from './crypto';

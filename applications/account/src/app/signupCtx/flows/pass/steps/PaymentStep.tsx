@@ -18,7 +18,7 @@ import { ADDON_PREFIXES, PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/co
 import { getPlanFromPlanIDs } from '@proton/payments/core/plan/helpers';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
 import { APPS, PASS_APP_NAME } from '@proton/shared/lib/constants';
-import { Audience } from '@proton/shared/lib/interfaces';
+import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 
 import { useSignup } from '../../../context/SignupContext';
 import { Layout } from '../components/Layout';

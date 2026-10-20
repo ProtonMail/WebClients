@@ -1,6 +1,6 @@
 import type { OAuthForkResponse } from '../../api/oauth';
 import { postOAuthFork } from '../../api/oauth';
-import type { Api } from '../../interfaces';
+import type { Api } from '../../interfaces/Api';
 
 export interface OAuthProduceForkParameters {
     clientID: string;

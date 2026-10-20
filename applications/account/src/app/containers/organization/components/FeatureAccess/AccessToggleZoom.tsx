@@ -8,7 +8,7 @@ import { useVideoConfTelemetry } from '@proton/calendar-video-conferencing/video
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateOrganizationSettings } from '@proton/shared/lib/api/organization';
-import type { OrganizationSettings } from '@proton/shared/lib/interfaces';
+import type { OrganizationSettings } from '@proton/shared/lib/interfaces/Organization';
 import ZoomLogo from '@proton/styles/assets/img/brand/zoom.svg';
 import { useFlag } from '@proton/unleash/useFlag';
 

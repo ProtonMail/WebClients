@@ -4,8 +4,10 @@ import { createKTVerifier } from '@proton/key-transparency/helpers';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import type { Address } from '@proton/shared/lib/interfaces';
-import { type ImportKeyData, type ReactivateKeysResult, importKeysProcess } from '@proton/shared/lib/keys';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import { importKeysProcess } from '@proton/shared/lib/keys/import/importKeysProcess';
+import type { ImportKeyData } from '@proton/shared/lib/keys/import/interface';
+import type { ReactivateKeysResult } from '@proton/shared/lib/keys/reactivation/interface';
 
 import { type AddressKeysState, addressKeysThunk } from '../addressKeys/index';
 import { addressThunk, addressesThunk } from '../addresses';

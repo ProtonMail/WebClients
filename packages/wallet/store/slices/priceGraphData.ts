@@ -4,7 +4,7 @@ import type { WasmFiatCurrencySymbol, WasmPriceGraph, WasmTimeframe } from '@pro
 import { createAsyncModelThunk, handleAsyncModel } from '@proton/redux-utilities/creator';
 import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
 import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
-import type { SimpleMap } from '@proton/shared/lib/interfaces';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 import type { WalletThunkArguments } from '../thunk';
 

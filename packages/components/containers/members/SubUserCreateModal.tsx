@@ -40,9 +40,11 @@ import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { sizeUnits } from '@proton/shared/lib/helpers/size';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { Domain, EnhancedMember, Organization } from '@proton/shared/lib/interfaces';
-import { CreateMemberMode } from '@proton/shared/lib/interfaces';
-import { getIsPasswordless } from '@proton/shared/lib/keys';
+import type { Domain } from '@proton/shared/lib/interfaces/Domain';
+import type { EnhancedMember } from '@proton/shared/lib/interfaces/Member';
+import { CreateMemberMode } from '@proton/shared/lib/interfaces/Member';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
+import { getIsPasswordless } from '@proton/shared/lib/keys/organizationKeys';
 import clamp from '@proton/utils/clamp';
 import isTruthy from '@proton/utils/isTruthy';
 

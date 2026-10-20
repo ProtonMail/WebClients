@@ -1,7 +1,7 @@
 import type { ReactElement, ReactNode } from 'react';
 import React, { cloneElement, useContext } from 'react';
 
-import { KeyboardKey } from '@proton/shared/lib/interfaces';
+import { KeyboardKey } from '@proton/shared/lib/interfaces/Hotkeys';
 import clsx from '@proton/utils/clsx';
 
 import type { HotkeyTuple } from '../../hooks/useHotkeys';

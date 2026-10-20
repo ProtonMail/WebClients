@@ -9,8 +9,10 @@ import {
     toggleForwardingInvitation,
 } from '@proton/mail/store/forwarding/outgoingForwardingActions';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import type { Address, OutgoingAddressForwarding, UserModel } from '@proton/shared/lib/interfaces';
-import { ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { OutgoingAddressForwarding } from '@proton/shared/lib/interfaces/AddressForwarding';
+import { ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces/AddressForwarding';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import isTruthy from '@proton/utils/isTruthy';
 
 import DropdownActions from '../../components/dropdown/DropdownActions';

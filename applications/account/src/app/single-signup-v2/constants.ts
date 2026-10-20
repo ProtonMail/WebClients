@@ -3,7 +3,7 @@ import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { getDefaultMainCurrency } from '@proton/payments/core/currencies';
 import type { Cycle, PaymentStatus } from '@proton/payments/core/interface';
 import { FREE_PLAN, getFreeCheckResult } from '@proton/payments/core/subscription/freePlans';
-import { Audience } from '@proton/shared/lib/interfaces';
+import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 
 import type { SubscriptionData } from '../signup/interfaces';
 import { type SignupModelV2, Steps, type Upsell, UpsellTypes } from './interface';

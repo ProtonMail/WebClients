@@ -5,7 +5,7 @@ import type { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/teleme
 import { TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 
 export const getNotificationTextUnauthorized = (folderID?: string, fromLabelID?: string) => {

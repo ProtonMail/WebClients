@@ -9,7 +9,8 @@ import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { KEY_FLAG } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import type { Address, Group } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { Group } from '@proton/shared/lib/interfaces/Group';
 
 import Toggle from '../../../../components/toggle/Toggle';
 import useErrorHandler from '../../../../hooks/useErrorHandler';

@@ -2,7 +2,7 @@ import type { ElementType, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { CreateMemberMode } from '@proton/shared/lib/interfaces';
+import { CreateMemberMode } from '@proton/shared/lib/interfaces/Member';
 
 import DropdownMenu from '../../../components/dropdown/DropdownMenu';
 import DropdownMenuButton from '../../../components/dropdown/DropdownMenuButton';

@@ -1,7 +1,7 @@
 import type { Dispatch, SetStateAction } from 'react';
 import { createContext, useContext, useState } from 'react';
 
-import type { Referral } from '@proton/shared/lib/interfaces';
+import type { Referral } from '@proton/shared/lib/interfaces/Referrals';
 
 import type { UseReferralStatusReducerState } from './hooks/useReferralRewardStatus';
 import useReferralRewardStatus from './hooks/useReferralRewardStatus';

@@ -1,5 +1,5 @@
 import { ORGANIZATION_FLAGS, ORGANIZATION_TWOFA_SETTING, OrganizationPlanFlag } from '../constants';
-import type { Organization } from '../interfaces';
+import type { Organization } from '../interfaces/Organization';
 import { hasBit } from './bitset';
 
 export const isLoyal = (organization: Partial<Organization> = {}) => {

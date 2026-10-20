@@ -1,4 +1,5 @@
-import type { Api, KTUserContext } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { KTUserContext } from '@proton/shared/lib/interfaces/KeyTransparency';
 
 import { getAndVerifyApiKeys } from './getAndVerifyApiKeys';
 

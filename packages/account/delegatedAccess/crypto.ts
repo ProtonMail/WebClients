@@ -1,7 +1,12 @@
+import {
+    CryptoProxy,
+    type PrivateKeyReference,
+    type PublicKeyReference,
+    VERIFICATION_STATUS,
+} from '@protontech/crypto';
 import { c } from 'ttag';
 
-import { CryptoProxy, type PrivateKeyReference, type PublicKeyReference, VERIFICATION_STATUS } from '@protontech/crypto';
-import type { DecryptedKey } from '@proton/shared/lib/interfaces';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 import type { User } from '@proton/shared/lib/interfaces/User';
 import isTruthy from '@proton/utils/isTruthy';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';

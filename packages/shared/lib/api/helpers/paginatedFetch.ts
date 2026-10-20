@@ -1,4 +1,4 @@
-import type { Api } from '../../interfaces';
+import type { Api } from '../../interfaces/Api';
 
 const MAX_ITERATIONS = 100;
 

@@ -11,7 +11,7 @@ import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { getLinkToCalendarEvent } from '@proton/shared/lib/calendar/helper';
 import { fromUTCDate, toLocalDate } from '@proton/shared/lib/date/timezone';
-import type { CalendarEvent, CalendarEventSharedData } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarEvent, CalendarEventSharedData } from '@proton/shared/lib/interfaces/calendar/Event';
 import noop from '@proton/utils/noop';
 
 interface BaseProps {

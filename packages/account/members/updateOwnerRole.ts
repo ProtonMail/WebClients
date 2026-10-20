@@ -1,7 +1,8 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import type { Api, Member } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { Member } from '@proton/shared/lib/interfaces/Member';
 
 import { type OrganizationRolesState, organizationRolesThunk } from '../organizationRoles';
 import { isOwnerRole, isOwnerRoleSyncEnabled } from '../organizationRoles/helpers';

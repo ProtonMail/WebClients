@@ -6,7 +6,8 @@ import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities/he
 import { isNotExistError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
-import type { Folder, Label } from '@proton/shared/lib/interfaces';
+import type { Folder } from '@proton/shared/lib/interfaces/Folder';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
 import type { Message, MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { isDraft } from '@proton/shared/lib/mail/messages';
 import isTruthy from '@proton/utils/isTruthy';

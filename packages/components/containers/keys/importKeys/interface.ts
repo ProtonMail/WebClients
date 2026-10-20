@@ -1,4 +1,4 @@
-import type { ImportKeyData } from '@proton/shared/lib/keys';
+import type { ImportKeyData } from '@proton/shared/lib/keys/import/interface';
 
 export enum Status {
     SUCCESS = 1,

@@ -5,7 +5,7 @@ import { useApi } from '@proton/app-context/useApi';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { DAY, MINUTE } from '@proton/shared/lib/constants';
 import { addMilliseconds } from '@proton/shared/lib/date-fns-utc';
-import type { Calendar as tsCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { Calendar as tsCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import noop from '@proton/utils/noop';
 
 import type { CalendarsAlarmsCache } from './CacheInterface';

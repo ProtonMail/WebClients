@@ -4,7 +4,7 @@ import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
 import { getCountryOptions, getLocalizedCountryByAbbr } from '@proton/payments/core/countries';
 import type { ConnectionInformationResult } from '@proton/shared/lib/api/core/connection-information';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
-import type { UserSettings } from '@proton/shared/lib/interfaces';
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 
 import Info from '../../../link/Info';
 import DrawerAppSection from '../shared/DrawerAppSection';

@@ -11,7 +11,9 @@ import {
     fromUTCDateToLocalFakeUTCDate,
     toUTCDate,
 } from '@proton/shared/lib/date/timezone';
-import type { EventModel, VcalVeventComponent, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
+import type { EventModel } from '@proton/shared/lib/interfaces/calendar/Event';
+import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import generateUID from '@proton/utils/generateUID';
 
 import getFrequencyModelChange from '../../components/eventModal/eventForm/getFrequencyModelChange';

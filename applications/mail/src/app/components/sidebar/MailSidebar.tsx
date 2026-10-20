@@ -28,7 +28,7 @@ import {
     useLeftSidebarButton,
 } from '@proton/shared/lib/helpers/collapsibleSidebar';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
-import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
+import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces/Checklist';
 import clsx from '@proton/utils/clsx';
 
 import { useOnCompose } from '../../containers/ComposeProvider';

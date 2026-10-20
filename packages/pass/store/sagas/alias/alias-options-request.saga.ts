@@ -1,7 +1,7 @@
 import { select } from 'redux-saga/effects';
 
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { UserType } from '@proton/shared/lib/interfaces';
+import { UserType } from '@proton/shared/lib/interfaces/User';
 
 import { getAliasOptions } from '../../../lib/alias/alias.requests';
 import { PassErrorCode, UnverifiedUserError } from '../../../lib/api/errors';

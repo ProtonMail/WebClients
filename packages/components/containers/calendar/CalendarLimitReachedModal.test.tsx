@@ -2,7 +2,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { mockUseConfig } from '@proton/app-context/testing/mockUseConfig';
-import type { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import { mockUseAuthentication } from '../../testing/mockUseAuthentication';
 import { mockUseLocation } from '../../testing/mockUseLocation';

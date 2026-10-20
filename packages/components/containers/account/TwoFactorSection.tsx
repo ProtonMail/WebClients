@@ -25,7 +25,7 @@ import { getHasFIDO2Support } from '@proton/shared/lib/authentication/twoFactor'
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { FIDO2_CREDENTIALS_PIN_VALUE } from '@proton/shared/lib/interfaces';
+import { FIDO2_CREDENTIALS_PIN_VALUE } from '@proton/shared/lib/interfaces/UserSettings';
 import { getHasFIDO2SettingEnabled, getHasTOTPSettingEnabled } from '@proton/shared/lib/settings/twoFactor';
 import { getHasWebAuthnSupport } from '@proton/shared/lib/webauthn/helper';
 import { getId } from '@proton/shared/lib/webauthn/id';

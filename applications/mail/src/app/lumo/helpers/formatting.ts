@@ -1,6 +1,6 @@
 import { fromUnixTime, lightFormat } from 'date-fns';
 
-import type { Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 
 /** Local parts, not UTC: a UTC serialisation shifts the day either side of midnight. */
 export const formatLocalDate = (date: Date): string => {

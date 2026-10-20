@@ -12,7 +12,7 @@ import { ignoredActions, ignoredPaths } from '@proton/redux-shared-store/sharedS
 import createApi from '@proton/shared/lib/api/createApi';
 import { APPS } from '@proton/shared/lib/constants';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
-import type { ProtonConfig } from '@proton/shared/lib/interfaces';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 import { FlagProvider } from '@proton/unleash/proxy';
 import noop from '@proton/utils/noop';
 

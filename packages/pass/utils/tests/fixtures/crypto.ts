@@ -2,8 +2,9 @@ import type { PrivateKeyReference } from '@protontech/crypto';
 import { CryptoProxy } from '@protontech/crypto';
 
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
-import type { AddressKey, Group } from '@proton/shared/lib/interfaces';
-import { type Address, AddressConfirmationState, type DecryptedKey } from '@proton/shared/lib/interfaces';
+import { type Address, AddressConfirmationState } from '@proton/shared/lib/interfaces/Address';
+import type { Group } from '@proton/shared/lib/interfaces/Group';
+import type { AddressKey, DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 
 import { createVault } from '../../../lib/crypto/processes/vault/create-vault';
 import { generateKey, importSymmetricKey } from '../../../lib/crypto/utils/crypto-helpers';

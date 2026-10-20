@@ -35,7 +35,8 @@ import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronC
 import { captureMessage, isProduction, traceError } from '@proton/shared/lib/helpers/sentry';
 import { getBrowserLocale } from '@proton/shared/lib/i18n/helper';
 import { loadLocales } from '@proton/shared/lib/i18n/loadLocale';
-import type { ProtonConfig, Unwrap } from '@proton/shared/lib/interfaces';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
+import type { Unwrap } from '@proton/shared/lib/interfaces/utils';
 import { telemetry } from '@proton/shared/lib/telemetry';
 import { appMode } from '@proton/shared/lib/webpack.constants';
 import noop from '@proton/utils/noop';

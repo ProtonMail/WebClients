@@ -5,11 +5,12 @@ import { IcEnvelopeOpen } from '@proton/icons/icons/IcEnvelopeOpen';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { FILTER_STATUS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasReachedFiltersLimit } from '@proton/shared/lib/helpers/filters';
-import type { Folder, UserModel } from '@proton/shared/lib/interfaces';
+import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import type {
     ApplyNewsletterSubscriptionsFilter,
     NewsletterSubscription,
 } from '@proton/shared/lib/interfaces/NewsletterSubscription';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import type { Filter } from '@proton/sieve/filterModel';
 
 import { getStandardFolders } from '../../../helpers/labels';

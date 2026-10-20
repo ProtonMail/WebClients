@@ -1,5 +1,6 @@
 import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto';
 import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
+
 import {
     getSignedKeyListRoute,
     getSignedKeyListsRoute,
@@ -8,13 +9,27 @@ import {
 } from '@proton/shared/lib/api/keys';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
-import type { Address, Api, FetchedSignedKeyList, SignedKeyList } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { FetchedSignedKeyList, SignedKeyList } from '@proton/shared/lib/interfaces/SignedKeyList';
 
 import { KT_VE_SIGNING_CONTEXT, KT_VE_VERIFICATION_CONTEXT } from '../constants/constants';
 import type { Epoch, Proof, VerifiedEpoch } from '../interfaces';
 import { verifyEpoch } from '../verification/verifyEpochs';
-import { getEpochsRoute, getLatestVerifiedEpochRoute, getProofRoute, getSingleEpochRoute, uploadVerifiedEpochRoute } from './api';
-import { StaleEpochError, isTimestampOlderThanThreshold, isTimestampTooOld, throwKTError, KT_ERROR_TYPE } from './utils';
+import {
+    getEpochsRoute,
+    getLatestVerifiedEpochRoute,
+    getProofRoute,
+    getSingleEpochRoute,
+    uploadVerifiedEpochRoute,
+} from './api';
+import {
+    KT_ERROR_TYPE,
+    StaleEpochError,
+    isTimestampOlderThanThreshold,
+    isTimestampTooOld,
+    throwKTError,
+} from './utils';
 
 /**
  * Fetch the latest issued epoch. Note that there is no guarantee that the

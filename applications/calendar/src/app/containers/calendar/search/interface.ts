@@ -1,4 +1,4 @@
-import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 
 import type { ESCalendarMetadata } from '../../../interfaces/encryptedSearch';
 

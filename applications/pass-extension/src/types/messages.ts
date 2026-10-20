@@ -47,7 +47,7 @@ import type {
     ExtensionForkResultPayload,
 } from '@proton/shared/lib/authentication/fork/extension';
 import type { PullForkResponse } from '@proton/shared/lib/authentication/interface';
-import type { User } from '@proton/shared/lib/interfaces';
+import type { User } from '@proton/shared/lib/interfaces/User';
 
 import type { NotificationRequest } from '../app/content/services/inline/notification/notification.app';
 import type { ClusterFrame } from '../app/worker/services/autofill.cc';

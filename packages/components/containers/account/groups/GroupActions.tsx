@@ -4,7 +4,11 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import useLoading from '@proton/hooks/useLoading';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { GROUP_MEMBERSHIP_STATUS, GROUP_MEMBER_PERMISSIONS, type GroupMembership } from '@proton/shared/lib/interfaces';
+import {
+    GROUP_MEMBERSHIP_STATUS,
+    GROUP_MEMBER_PERMISSIONS,
+    type GroupMembership,
+} from '@proton/shared/lib/interfaces/GroupMember';
 import isTruthy from '@proton/utils/isTruthy';
 
 import DropdownActions from '../../../components/dropdown/DropdownActions';

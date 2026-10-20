@@ -1,5 +1,5 @@
 import { SETTINGS_VIEW } from '@proton/shared/lib/calendar/constants';
-import { SETTINGS_WEEK_START } from '@proton/shared/lib/interfaces';
+import { SETTINGS_WEEK_START } from '@proton/shared/lib/interfaces/UserSettings';
 
 export const getCalendarArrayLength = (arr?: any[]) => {
     if (!arr) {

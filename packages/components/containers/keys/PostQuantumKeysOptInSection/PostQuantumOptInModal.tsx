@@ -17,7 +17,7 @@ import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvi
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces';
+import { ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces/AddressForwarding';
 import noop from '@proton/utils/noop';
 
 import Checkbox from '../../../components/input/Checkbox';

@@ -14,8 +14,8 @@ import {
 import { useAutocompleteFilter } from '@proton/components/components/autocomplete/useAutocomplete';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { canonicalizeEmail, canonicalizeEmailByGuess, validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import type { Address, Recipient } from '@proton/shared/lib/interfaces';
-import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { Address, Recipient } from '@proton/shared/lib/interfaces/Address';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import { inputToRecipient, splitBySeparator } from '@proton/shared/lib/mail/recipient';
 
 import { isValidBitcoinAddress } from '../../utils';

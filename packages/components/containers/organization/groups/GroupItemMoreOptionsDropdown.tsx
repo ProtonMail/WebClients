@@ -5,7 +5,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
-import type { Group } from '@proton/shared/lib/interfaces';
+import type { Group } from '@proton/shared/lib/interfaces/Group';
 
 import Dropdown from '../../../components/dropdown/Dropdown';
 import DropdownMenu from '../../../components/dropdown/DropdownMenu';

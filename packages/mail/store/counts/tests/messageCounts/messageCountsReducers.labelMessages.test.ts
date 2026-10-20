@@ -2,7 +2,7 @@ import type { Draft } from '@reduxjs/toolkit';
 
 import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { LabelCount } from '@proton/shared/lib/interfaces';
+import type { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { labelMessages } from '../../messageCountsReducers';

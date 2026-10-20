@@ -2,7 +2,7 @@ import { normalizeKeyword } from '@proton/encrypted-search/esHelpers';
 import type { NormalizedSearchParams } from '@proton/encrypted-search/models';
 import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { CATEGORY_LABEL_IDS_SET } from '@proton/shared/lib/constants';
-import type { Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';
 
 import type { ESMessage } from '../../models/encryptedSearch';

@@ -10,18 +10,17 @@ import { c } from 'ttag';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '../constants';
+import type { Address } from '../interfaces/Address';
 import type {
-    Address,
     AddressKey,
-    CachedOrganizationKey,
     DecryptedAddressKey,
     DecryptedKey,
-    KeyGenConfig,
-    KeyGenConfigV6,
     KeyPair,
     KeysPair,
     AddressKey as tsAddressKey,
-} from '../interfaces';
+} from '../interfaces/Key';
+import type { KeyGenConfig, KeyGenConfigV6 } from '../interfaces/KeyGenConfig';
+import type { CachedOrganizationKey } from '../interfaces/OrganizationKey';
 import { getPrimaryKey } from './getPrimaryKey';
 import { decryptKeyPacket, encryptAndSignKeyPacket } from './keypacket';
 import { splitKeys } from './keys';
@@ -52,12 +51,12 @@ export const encryptAddressKeyToken = async ({
         }),
         organizationKey
             ? CryptoProxy.signMessage({
-                textData, // stripTrailingSpaces: false,
-                date,
-                signingKeys: [organizationKey],
-                detached: true,
-                signatureContext,
-            })
+                  textData, // stripTrailingSpaces: false,
+                  date,
+                  signingKeys: [organizationKey],
+                  detached: true,
+                  signatureContext,
+              })
             : undefined,
     ]);
 

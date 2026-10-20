@@ -4,17 +4,12 @@ import { CryptoProxy, canKeyEncryptAndDecrypt } from '@protontech/crypto';
 import { getApiError } from '../../api/helpers/apiErrorHelper';
 import { reactivateUserKeyRouteV2, reactiveLegacyAddressKeyRouteV2 } from '../../api/keys';
 import { HTTP_STATUS_CODE } from '../../constants';
-import type { ActiveAddressKeysByVersion, ActiveKeyWithVersion } from '../../interfaces';
-import {
-    type ActiveKey,
-    type Address,
-    type Api,
-    type DecryptedKey,
-    type KeyTransparencyVerify,
-    isActiveKeyV6,
-    type Address as tsAddress,
-    type User as tsUser,
-} from '../../interfaces';
+import type { Address, Address as tsAddress } from '../../interfaces/Address';
+import type { Api } from '../../interfaces/Api';
+import type { ActiveAddressKeysByVersion, ActiveKeyWithVersion } from '../../interfaces/Key';
+import { type ActiveKey, type DecryptedKey, isActiveKeyV6 } from '../../interfaces/Key';
+import type { KeyTransparencyVerify } from '../../interfaces/KeyTransparency';
+import type { User as tsUser } from '../../interfaces/User';
 import type { SimpleMap } from '../../interfaces/utils';
 import { generateAddressKeyTokens } from '../addressKeys';
 import {

@@ -6,7 +6,7 @@ import type { ModalStateReturnObj } from '@proton/components';
 import { IconRow } from '@proton/components';
 import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 import { IcVideoCamera } from '@proton/icons/icons/IcVideoCamera';
-import type { EventModel } from '@proton/shared/lib/interfaces/calendar';
+import type { EventModel } from '@proton/shared/lib/interfaces/calendar/Event';
 import clsx from '@proton/utils/clsx';
 
 import { VideoConferencingWidget } from '../videoConferencing/VideoConferencingWidget';

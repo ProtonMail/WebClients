@@ -1,4 +1,4 @@
-import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
+import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';
 
 import * as useOrganizationModule from '../../organization/hooks';
 

@@ -6,7 +6,7 @@ import {
     LOGIN_IDENTIFIER_POLICY,
     PASSWORD_REMINDERS_VALUE,
     type UserSettings,
-} from '@proton/shared/lib/interfaces';
+} from '@proton/shared/lib/interfaces/UserSettings';
 
 const defaultUserSettings: UserSettings = {
     '2FA': { Enabled: 0, Allowed: 0, ExpirationTime: null, RegisteredKeys: [] },

@@ -35,7 +35,7 @@ import { APPS, DRIVE_APP_NAME, DRIVE_SHORT_APP_NAME } from '@proton/shared/lib/c
 import { openNewTab } from '@proton/shared/lib/helpers/browser'
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import { getInitials } from '@proton/shared/lib/helpers/string'
-import type { UserModel } from '@proton/shared/lib/interfaces'
+import type { UserModel } from '@proton/shared/lib/interfaces/User'
 import { useCallback, useEffect, useState } from 'react'
 import { c } from 'ttag'
 import { useApplication } from '~/utils/application-context'

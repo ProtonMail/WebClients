@@ -1,5 +1,5 @@
 import { APPS } from '@proton/shared/lib/constants';
-import type { ProtonConfig } from '@proton/shared/lib/interfaces';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 
 import { getCampaignScope, isCampaignApp } from './isCampaignApp';
 

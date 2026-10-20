@@ -1,4 +1,4 @@
-import { getFormattedAlgorithmNames } from '../../lib/keys';
+import { getFormattedAlgorithmNames } from '../../lib/keys/keyAlgorithm';
 
 describe('key algorithm', () => {
     it('should aggregate same key types and sizes', async () => {

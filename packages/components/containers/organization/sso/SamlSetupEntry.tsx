@@ -6,7 +6,7 @@ import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
-import { IDP_TYPE } from '@proton/shared/lib/interfaces';
+import { IDP_TYPE } from '@proton/shared/lib/interfaces/SSO';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import edugain from './idp-logos/edugain.svg';

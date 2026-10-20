@@ -6,7 +6,7 @@ import {
 } from '@proton/shared/lib/api/meet';
 import type { AuthVersion } from '@proton/shared/lib/authentication/interface';
 import { getUIDHeaders } from '@proton/shared/lib/fetch/headers';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { AccessTokenResponse, MeetingInfoResponse } from '@proton/shared/lib/interfaces/Meet';
 import { srpAuth } from '@proton/shared/lib/srp';
 

@@ -4,8 +4,14 @@ import { combineReducers } from '@reduxjs/toolkit';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { getTestStore } from '@proton/redux-shared-store/test';
 import { MEMBER_PRIVATE, USER_ROLES } from '@proton/shared/lib/constants';
-import type { Address, CachedOrganizationKey, Member, UserModel, UserSettings } from '@proton/shared/lib/interfaces';
-import { missingKeysMemberProcess, missingKeysSelfProcess, setupMemberKeys } from '@proton/shared/lib/keys';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { Member } from '@proton/shared/lib/interfaces/Member';
+import type { CachedOrganizationKey } from '@proton/shared/lib/interfaces/OrganizationKey';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
+import { setupMemberKeys } from '@proton/shared/lib/keys/memberKeys';
+import { missingKeysMemberProcess } from '@proton/shared/lib/keys/missingKeysMemberProcess';
+import { missingKeysSelfProcess } from '@proton/shared/lib/keys/missingKeysSelfProcess';
 import { validateOrganizationKey } from '@proton/shared/lib/organization/helper';
 
 import { addressesReducer } from '../addresses';
@@ -25,7 +31,7 @@ import { addressKeysReducer } from './index';
 
 // The heavy crypto/network processes are the leaves we assert against - the thunk's job is to pick
 // the right one based on the user/member/organization-key state, not to actually generate keys.
-jest.mock('@proton/shared/lib/keys', () => {
+jest.mock('@proton/shared/lib/keys/memberKeys', () => {
     const { MEMBER_PRIVATE: MOCK_MEMBER_PRIVATE } = require('@proton/shared/lib/constants');
 
     // Mirrors packages/shared/lib/keys/memberKeys.ts so the real branching logic is exercised
@@ -41,11 +47,15 @@ jest.mock('@proton/shared/lib/keys', () => {
     return {
         getCanGenerateMemberKeys,
         getShouldSetupMemberKeys,
-        missingKeysSelfProcess: jest.fn(async () => []),
-        missingKeysMemberProcess: jest.fn(async () => []),
         setupMemberKeys: jest.fn(async () => ({})),
     };
 });
+jest.mock('@proton/shared/lib/keys/missingKeysSelfProcess', () => ({
+    missingKeysSelfProcess: jest.fn(async () => []),
+}));
+jest.mock('@proton/shared/lib/keys/missingKeysMemberProcess', () => ({
+    missingKeysMemberProcess: jest.fn(async () => []),
+}));
 
 jest.mock('@proton/shared/lib/organization/helper', () => {
     return {

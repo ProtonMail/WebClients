@@ -1,4 +1,4 @@
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import type { CalendarAlarmCache } from './CacheInterface';
 import getPaginatedAlarms from './getPaginatedAlarms';

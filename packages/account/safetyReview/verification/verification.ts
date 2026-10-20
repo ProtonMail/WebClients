@@ -12,7 +12,7 @@ import {
 import { postVerifyEmail, postVerifyPhone } from '@proton/shared/lib/api/verify';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { withVerificationHeaders } from '@proton/shared/lib/fetch/headers';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 export type VerificationMethod = 'email' | 'phone';
 

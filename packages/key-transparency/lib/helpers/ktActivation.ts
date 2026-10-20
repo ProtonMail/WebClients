@@ -1,6 +1,6 @@
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
-import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
+import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { KEY_TRANSPARENCY_SETTING } from '@proton/shared/lib/mail/mailSettings';
 
 import { KtFeatureEnum, isKTActive } from '../shared/ktStatus';

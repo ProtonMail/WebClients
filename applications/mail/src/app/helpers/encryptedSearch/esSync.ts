@@ -3,7 +3,7 @@ import { hasReactivatedKey } from '@proton/encrypted-search/esHelpers';
 import { openESDB } from '@proton/encrypted-search/esIDB';
 import type { ESEvent, ESTimepoint, EventsObject } from '@proton/encrypted-search/models';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
-import type { LabelCount } from '@proton/shared/lib/interfaces';
+import type { LabelCount } from '@proton/shared/lib/interfaces/Label';
 
 import { MAIL_EVENTLOOP_NAME } from '../../constants';
 import type { ESBaseMessage } from '../../models/encryptedSearch';

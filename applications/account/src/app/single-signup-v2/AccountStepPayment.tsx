@@ -35,8 +35,9 @@ import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
-import type { Api } from '@proton/shared/lib/interfaces';
-import { Audience, isBilledUser } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import { Audience } from '@proton/shared/lib/interfaces/Subscription';
+import { isBilledUser } from '@proton/shared/lib/interfaces/User';
 import noop from '@proton/utils/noop';
 
 import AccountStepPaymentSummary from './AccountStepPaymentSummary';

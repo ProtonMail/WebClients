@@ -9,7 +9,7 @@ import { useLoading } from '@proton/hooks';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
 import { getInitials } from '@proton/shared/lib/helpers/string';
-import { MEMBER_INVITATION_STATUS } from '@proton/shared/lib/interfaces/calendar';
+import { MEMBER_INVITATION_STATUS } from '@proton/shared/lib/interfaces/calendar/CalendarMember';
 
 import Option from '../../../components/option/Option';
 import SelectTwo from '../../../components/selectTwo/SelectTwo';

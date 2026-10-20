@@ -1,10 +1,6 @@
 import { isSameDay } from '@proton/shared/lib/date-fns-utc';
-import type {
-    AttendeeModel,
-    DateTimeModel,
-    EventModel,
-    NotificationModel,
-} from '@proton/shared/lib/interfaces/calendar';
+import type { AttendeeModel, DateTimeModel, EventModel } from '@proton/shared/lib/interfaces/calendar/Event';
+import type { NotificationModel } from '@proton/shared/lib/interfaces/calendar/Notification';
 
 const keys = [
     'title',
@@ -31,10 +27,7 @@ const getHasEditedTimezone = ({ tzid }: DateTimeModel, { tzid: otherTzid }: Date
 const getHasEditedHourMinutes = (a: Date, b: Date) =>
     a.getHours() !== b.getHours() || a.getMinutes() !== b.getMinutes();
 
-const getHasEditedDateTime = (
-    { time, date }: DateTimeModel,
-    { time: otherTime, date: otherDate }: DateTimeModel
-) => {
+const getHasEditedDateTime = ({ time, date }: DateTimeModel, { time: otherTime, date: otherDate }: DateTimeModel) => {
     return getHasEditedHourMinutes(time, otherTime) || !isSameDay(date, otherDate);
 };
 
@@ -60,10 +53,7 @@ const getHasEditedAttendees = (attendees: AttendeeModel[], otherAttendees: Atten
     });
 };
 
-const getHasEditedNotifications = (
-    notifications: NotificationModel[],
-    otherNotifications: NotificationModel[]
-) => {
+const getHasEditedNotifications = (notifications: NotificationModel[], otherNotifications: NotificationModel[]) => {
     return (
         notifications.length !== otherNotifications.length ||
         notifications.some((notification, i) => getHasEditedNotification(notification, otherNotifications[i]))

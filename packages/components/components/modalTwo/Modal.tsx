@@ -4,7 +4,7 @@ import { Portal } from '@proton/atoms/Portal/Portal';
 import useInstance from '@proton/hooks/useInstance';
 import usePrevious from '@proton/hooks/usePrevious';
 import type { PolymorphicPropsWithoutRef } from '@proton/react-polymorphic-types';
-import { modalTwoRootClassName } from '@proton/shared/lib/busy';
+import { modalTwoRootClassName } from '@proton/shared/lib/busy/busy';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 

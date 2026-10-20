@@ -3,7 +3,10 @@ import type { Reducer } from 'redux';
 
 import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/constants';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
-import type { Address, DateFormatOptions, SETTINGS_PASSWORD_MODE, SETTINGS_STATUS, User } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { DateFormatOptions } from '@proton/shared/lib/interfaces/Locale';
+import type { User } from '@proton/shared/lib/interfaces/User';
+import type { SETTINGS_PASSWORD_MODE, SETTINGS_STATUS } from '@proton/shared/lib/interfaces/UserSettings';
 import type { AuthDeviceOutput } from '@proton/shared/lib/keys/device';
 
 import type { BitField, Id, MaybeNull, PassPlanResponse, RequiredNonNull, UserMonitorStatusResponse } from '../../types';

@@ -16,7 +16,7 @@ import {
 import usePrevious from '@proton/hooks/usePrevious';
 import { MINUTE } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import type { SimpleMap } from '@proton/shared/lib/interfaces';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { useFlag } from '@proton/unleash/useFlag';
 import generateUID from '@proton/utils/generateUID';
 import { SYNCING_MINIMUM_COOLDOWN_MINUTES } from '@proton/wallet/constants/wallet';

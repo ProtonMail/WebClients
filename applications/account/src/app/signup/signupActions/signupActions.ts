@@ -29,12 +29,12 @@ import { APPS, CLIENT_TYPES, KEYGEN_CONFIGS, KEYGEN_TYPES, VPN_CONNECTIONS } fro
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { isElectronMail, isElectronMeet } from '@proton/shared/lib/helpers/desktop';
 import { localeCode } from '@proton/shared/lib/i18n';
-import type { Api, KeyTransparencyActivation, User } from '@proton/shared/lib/interfaces';
-import {
-    generatePasswordlessOrganizationKey,
-    getDecryptedUserKeysHelper,
-    handleSetupKeys,
-} from '@proton/shared/lib/keys';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
+import type { User } from '@proton/shared/lib/interfaces/User';
+import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys/getDecryptedUserKeys';
+import { generatePasswordlessOrganizationKey } from '@proton/shared/lib/keys/organizationKeys';
+import { handleSetupKeys } from '@proton/shared/lib/keys/setupKeys';
 import { srpAuth } from '@proton/shared/lib/srp';
 import { hasPaidVpn } from '@proton/shared/lib/user/helpers';
 import noop from '@proton/utils/noop';

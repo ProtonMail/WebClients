@@ -1,6 +1,6 @@
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
-import type { User } from '@proton/shared/lib/interfaces';
+import type { User } from '@proton/shared/lib/interfaces/User';
 import { isAdmin, isPrivate, isSelf } from '@proton/shared/lib/user/helpers';
 
 /**

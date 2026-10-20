@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react';
 
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import { getOptimisticDomains } from '../../../signup/helper';
 

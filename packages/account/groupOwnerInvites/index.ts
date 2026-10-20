@@ -13,7 +13,7 @@ import { CacheType } from '@proton/redux-utilities/interface';
 import { cacheHelper, createPromiseMapStore } from '@proton/redux-utilities/promiseStore';
 import type { CoreEventV6Response } from '@proton/shared/lib/api/events';
 import { getGroupOwnerInvites } from '@proton/shared/lib/api/groups';
-import type { GroupOwnerInvite } from '@proton/shared/lib/interfaces';
+import type { GroupOwnerInvite } from '@proton/shared/lib/interfaces/GroupMember';
 
 import type { UserState } from '../user';
 

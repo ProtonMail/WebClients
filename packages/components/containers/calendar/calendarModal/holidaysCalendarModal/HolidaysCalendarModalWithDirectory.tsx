@@ -30,13 +30,13 @@ import {
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import { languageCode } from '@proton/shared/lib/i18n';
 import { getBrowserLanguageTags } from '@proton/shared/lib/i18n/helper';
+import type { CalendarCreateData } from '@proton/shared/lib/interfaces/calendar/Api';
 import type {
     CalendarBootstrap,
-    CalendarCreateData,
     HolidaysDirectoryCalendar,
-    NotificationModel,
     VisualCalendar,
-} from '@proton/shared/lib/interfaces/calendar';
+} from '@proton/shared/lib/interfaces/calendar/Calendar';
+import type { NotificationModel } from '@proton/shared/lib/interfaces/calendar/Notification';
 import uniqueBy from '@proton/utils/uniqueBy';
 
 import CountrySelect from '../../../../components/country/CountrySelect';

@@ -4,7 +4,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { LUMO_SHORT_APP_NAME } from '../constants';
 import { altKey, isSafari as checkIsSafari, metaKey, shiftKey } from '../helpers/browser';
-import type { KeyboardKeyType } from '../interfaces';
+import type { KeyboardKeyType } from '../interfaces/Hotkeys';
 
 export const editorShortcuts: Record<string, KeyboardKeyType[]> = {
     addAttachment: ['Meta', 'Shift', 'A'],

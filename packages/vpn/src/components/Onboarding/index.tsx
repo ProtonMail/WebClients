@@ -6,7 +6,7 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import { GetStartedButton } from '@proton/components/components/topnavbar/GetStartedButton';
 import { SetupOrganizationNameModal } from '@proton/components/containers/organization/SetupOrganizationNameModal';
-import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
+import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';
 
 import { useOnOrganizationNameSetup } from '../../hooks/useOnOrganizationNameSetup';
 import { useOnboarding } from '../../hooks/useOnboarding';

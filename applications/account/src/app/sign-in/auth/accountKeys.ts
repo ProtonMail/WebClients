@@ -7,8 +7,10 @@ import { getUser } from '@proton/shared/lib/authentication/getUser';
 import { handleUnlockKey } from '@proton/shared/lib/authentication/unlockKey';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage, getSentryError } from '@proton/shared/lib/helpers/sentry';
-import type { Address, KeySalt as tsKeySalt, User as tsUser } from '@proton/shared/lib/interfaces';
-import { migrateUser } from '@proton/shared/lib/keys';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { KeySalt as tsKeySalt } from '@proton/shared/lib/interfaces/KeySalt';
+import type { User as tsUser } from '@proton/shared/lib/interfaces/User';
+import { migrateUser } from '@proton/shared/lib/keys/keyMigration';
 import { handleSetupAddressKeys } from '@proton/shared/lib/keys/setupAddressKeys';
 import { getHasV2KeysToUpgrade, upgradeV2KeysHelper } from '@proton/shared/lib/keys/upgradeKeysV2';
 

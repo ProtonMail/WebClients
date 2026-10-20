@@ -1,7 +1,7 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { MNEMONIC_STATUS, SessionRecoveryState } from '@proton/shared/lib/interfaces';
-import { getHasMigratedAddressKeys } from '@proton/shared/lib/keys';
+import { MNEMONIC_STATUS, SessionRecoveryState } from '@proton/shared/lib/interfaces/User';
+import { getHasMigratedAddressKeys } from '@proton/shared/lib/keys/keyMigration';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { selectAddresses } from '../addresses';

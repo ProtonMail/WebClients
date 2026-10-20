@@ -7,16 +7,12 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, MEMBER_PRIVATE, MEMBER_ROLE, MEMBER_TYPE, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
-import type {
-    CachedOrganizationKey,
-    EnhancedMember,
-    Member,
-    OrgPermissions,
-    Organization,
-    PartialMemberAddress,
-    UserModel,
-} from '@proton/shared/lib/interfaces';
-import { MEMBER_STATE, MemberUnprivatizationState } from '@proton/shared/lib/interfaces';
+import type { EnhancedMember, Member, PartialMemberAddress } from '@proton/shared/lib/interfaces/Member';
+import { MEMBER_STATE, MemberUnprivatizationState } from '@proton/shared/lib/interfaces/Member';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
+import type { CachedOrganizationKey } from '@proton/shared/lib/interfaces/OrganizationKey';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import type { OrgPermissions } from '@proton/shared/lib/interfaces/UserPermission';
 import { getIsMemberDisabled, getIsMemberEnabled, getIsMemberSetup } from '@proton/shared/lib/keys/memberHelper';
 import { getCanGenerateMemberKeysPermissions, getShouldSetupMemberKeys } from '@proton/shared/lib/keys/memberKeys';
 import { useFlag } from '@proton/unleash/useFlag';

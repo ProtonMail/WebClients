@@ -4,7 +4,7 @@ import { Input } from '@proton/atoms/Input/Input';
 import IconRow from '@proton/components/components/iconRow/IconRow';
 import { IcMapPin } from '@proton/icons/icons/IcMapPin';
 import { LOCATION_INPUT_ID, MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
-import type { EventModel } from '@proton/shared/lib/interfaces/calendar';
+import type { EventModel } from '@proton/shared/lib/interfaces/calendar/Event';
 
 import createHandlers from '../eventForm/createPropFactory';
 

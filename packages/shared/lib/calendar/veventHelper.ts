@@ -3,14 +3,13 @@ import { serverTime } from '@protontech/crypto';
 import { DAY } from '../constants';
 import { fromUTCDate, toUTCDate } from '../date/timezone';
 import { omit, pick } from '../helpers/object';
+import type { AttendeeClearPartResult, AttendeePart } from '../interfaces/calendar/Attendee';
+import type { CalendarEventData } from '../interfaces/calendar/Event';
 import type {
-    AttendeeClearPartResult,
-    AttendeePart,
-    CalendarEventData,
     VcalDateOrDateTimeProperty,
     VcalValarmComponent,
     VcalVeventComponent,
-} from '../interfaces/calendar';
+} from '../interfaces/calendar/VcalModel';
 import type { RequireOnly } from '../interfaces/utils';
 import { absoluteToRelativeTrigger, getIsAbsoluteTrigger } from './alarms/trigger';
 import { fromInternalAttendee } from './attendees';

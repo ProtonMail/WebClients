@@ -1,5 +1,5 @@
 import { LabelStack } from '@proton/components';
-import type { Label } from '@proton/shared/lib/interfaces';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
 
 import type { MailImportPayloadError } from '../../../../interface';
 import StepPrepareEmailsSummaryError from './StepPrepareOAuthEmailsSummaryError';

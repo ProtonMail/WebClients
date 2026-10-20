@@ -5,9 +5,10 @@ import { getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_METHOD, SAVE_CONFIRMATION_TYPES } from '@proton/shared/lib/calendar/constants';
 import { getInviteVeventWithUpdatedParstats } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { getHasStartChanged } from '@proton/shared/lib/calendar/vcalConverter';
-import type { SimpleMap } from '@proton/shared/lib/interfaces';
-import type { SyncMultipleApiResponse, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import type { SyncMultipleApiResponse } from '@proton/shared/lib/interfaces/calendar/Api';
+import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import type { GetCalendarKeys } from '@proton/shared/lib/interfaces/hooks/GetCalendarKeys';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import unary from '@proton/utils/unary';
 
 import type { EventNewData, EventOldData } from '../../../interfaces/EventData';

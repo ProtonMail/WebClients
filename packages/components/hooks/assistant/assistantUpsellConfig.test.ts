@@ -2,7 +2,7 @@ import { ADDON_NAMES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import { PLANS_MAP } from '@proton/payments/testing/data-plans';
 import { SessionAccessTypeFlag, selfAccessTypeMask } from '@proton/shared/lib/authentication/sessionAccessType';
-import type { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import { getAssistantUpsellConfigPlanAndCycle } from './assistantUpsellConfig';
 

@@ -13,8 +13,9 @@ import observeApiError from '@proton/metrics/observeApiError';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { updateSAMLConfig } from '@proton/shared/lib/api/samlSSO';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import type { Domain, EdugainAffiliations, SSO } from '@proton/shared/lib/interfaces';
-import { IDP_TYPE } from '@proton/shared/lib/interfaces';
+import type { Domain } from '@proton/shared/lib/interfaces/Domain';
+import type { EdugainAffiliations, SSO } from '@proton/shared/lib/interfaces/SSO';
+import { IDP_TYPE } from '@proton/shared/lib/interfaces/SSO';
 
 import Info from '../../../components/link/Info';
 import { InputField as InputFieldTwo } from '../../../components/v2/field/InputField';

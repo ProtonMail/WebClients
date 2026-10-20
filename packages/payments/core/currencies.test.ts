@@ -1,4 +1,4 @@
-import type { User, UserModel } from '@proton/shared/lib/interfaces';
+import type { User, UserModel } from '@proton/shared/lib/interfaces/User';
 
 import { getTestPlans } from '../testing/data-plans';
 import { DEFAULT_PAYMENT_VENDOR_STATES, FREE_SUBSCRIPTION, PLANS } from './constants';

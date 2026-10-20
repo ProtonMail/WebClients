@@ -1,8 +1,9 @@
 import type { ProtonDriveClient } from '@protontech/drive-sdk';
 
 import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
-import type { Address, Api } from '@proton/shared/lib/interfaces';
-import type { Calendar } from '@proton/shared/lib/interfaces/calendar';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { Calendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import type { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
 import { mockTracker } from '@proton/telemetry-tracker/testing';
 import { tracker } from '@proton/telemetry-tracker/tracker';

@@ -1,6 +1,6 @@
 import metrics from '@proton/metrics/metricsInstance'
 import { MetricService } from './MetricService'
-import type { Api } from '@proton/shared/lib/interfaces'
+import type { Api } from '@proton/shared/lib/interfaces/Api'
 
 jest.mock('@proton/metrics/metricsInstance')
 

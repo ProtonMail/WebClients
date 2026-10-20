@@ -4,13 +4,9 @@ import { c } from 'ttag';
 import { extractDraftMIMEType, extractScheme, extractSign } from '../api/helpers/mailSettings';
 import type { CONTACT_MIME_TYPES, PGP_SCHEMES } from '../constants';
 import { BRAND_NAME } from '../constants';
-import type {
-    ContactPublicKeyModel,
-    KeyTransparencyVerificationResult,
-    MailSettings,
-    PublicKeyModel,
-    SelfSend,
-} from '../interfaces';
+import type { ContactPublicKeyModel, PublicKeyModel, SelfSend } from '../interfaces/EncryptionPreferences';
+import type { KeyTransparencyVerificationResult } from '../interfaces/KeyTransparency';
+import type { MailSettings } from '../interfaces/MailSettings';
 import { getEmailMismatchWarning, getIsValidForSending } from '../keys/publicKeys';
 
 export enum ENCRYPTION_PREFERENCES_ERROR_TYPES {

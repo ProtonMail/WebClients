@@ -1,4 +1,4 @@
-import type { CalendarEvent, CalendarEventSharedData } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarEvent, CalendarEventSharedData } from '@proton/shared/lib/interfaces/calendar/Event';
 
 export const getIsCalendarEvent = (
     event: CalendarEvent | CalendarEventSharedData | undefined

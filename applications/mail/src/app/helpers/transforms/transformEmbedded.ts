@@ -4,7 +4,7 @@ import type {
     MessageState,
 } from '@proton/mail/store/messages/messagesTypes';
 import { couldPotentiallyBeRenderedAsSVG, isSupportedImage } from '@proton/shared/lib/helpers/mimetype';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { hasShowEmbedded } from '@proton/shared/lib/mail/images';
 import { getAttachments, hasProtonSender, isDraft } from '@proton/shared/lib/mail/messages';

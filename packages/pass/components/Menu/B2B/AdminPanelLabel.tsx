@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import type { Organization } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import capitalize from '@proton/utils/capitalize';
 
 export const AdminPanelLabel: FC<Pick<Organization, 'Name' | 'UsedMembers' | 'MaxMembers'>> = ({

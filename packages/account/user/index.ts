@@ -14,7 +14,7 @@ import type { ModelState } from '@proton/redux-utilities/initialModelState/inter
 import type { CacheType } from '@proton/redux-utilities/interface';
 import { cacheHelper, createPromiseStore } from '@proton/redux-utilities/promiseStore';
 import { getUser } from '@proton/shared/lib/api/user';
-import type { User, UserModel } from '@proton/shared/lib/interfaces';
+import type { User, UserModel } from '@proton/shared/lib/interfaces/User';
 import { formatUser } from '@proton/shared/lib/user/helpers';
 
 import { serverEvent } from '../eventLoop';

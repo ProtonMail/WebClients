@@ -4,7 +4,7 @@ import { type TwoFactorCredentials, auth2FA } from '@proton/shared/lib/api/auth'
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { TOTPError } from '@proton/shared/lib/authentication/error';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 /**
  * Verifies the second factor for the session.

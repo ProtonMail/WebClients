@@ -1,6 +1,6 @@
 import type { MessageState, MessageStateWithDataFull } from '@proton/mail/store/messages/messagesTypes';
 import { getMessage } from '@proton/shared/lib/api/messages';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { GetMessageResponse } from '@proton/shared/lib/interfaces/mail/Message';
 
 export const loadMessage = async (message: MessageState, api: Api): Promise<MessageStateWithDataFull> => {

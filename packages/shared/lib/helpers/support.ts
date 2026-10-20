@@ -1,4 +1,5 @@
-import type { Organization, User, UserModel } from '../interfaces';
+import type { Organization } from '../interfaces/Organization';
+import type { User, UserModel } from '../interfaces/User';
 import { openNewTab } from './browser';
 import { hasPhoneSupport } from './organization';
 

@@ -2,7 +2,7 @@ import { ICAL_ATTENDEE_RSVP } from '@proton/shared/lib/calendar/constants';
 import { extractEmailAddress } from '@proton/shared/lib/calendar/vcalConverter';
 import { getAttendeePartstat, getAttendeeRole } from '@proton/shared/lib/calendar/vcalHelper';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import type { AttendeeModel } from '@proton/shared/lib/interfaces/calendar';
+import type { AttendeeModel } from '@proton/shared/lib/interfaces/calendar/Event';
 import type { VcalAttendeeProperty } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
 export const propertiesToAttendeeModel = (attendee?: VcalAttendeeProperty[]): AttendeeModel[] => {

@@ -9,7 +9,7 @@ import {
 } from '@proton/shared/lib/calendar/calendar';
 import { willUserReachCalendarsLimit } from '@proton/shared/lib/calendar/calendarLimits';
 import { MAX_CALENDARS_FREE, MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
-import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 
 import type { ImporterCalendar } from '../../../../../logic/draft/oauthDraft/oauthDraft.interface';
 import { selectOauthImportStateImporterData } from '../../../../../logic/draft/oauthDraft/oauthDraft.selector';

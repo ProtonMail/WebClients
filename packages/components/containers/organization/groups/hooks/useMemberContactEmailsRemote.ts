@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { useApi } from '@proton/app-context/useApi';
 import { searchMembersSummary } from '@proton/shared/lib/api/members';
-import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 
 import useDebounceInput from '../../../../components/input/useDebounceInput';
 

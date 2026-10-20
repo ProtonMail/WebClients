@@ -1,4 +1,4 @@
-import type { SignedKeyList } from '@proton/shared/lib/interfaces';
+import type { SignedKeyList } from '@proton/shared/lib/interfaces/SignedKeyList';
 
 import type {
     CreateImportPayload,

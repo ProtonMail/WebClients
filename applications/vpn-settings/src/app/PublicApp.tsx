@@ -29,7 +29,7 @@ import { getToAppName } from '@proton/shared/lib/authentication/apps';
 import { APPS, CLIENT_TYPES, SSO_PATHS, VPN_TV_PATHS, VPN_TV_SIGNUP_REDIRECT } from '@proton/shared/lib/constants';
 import { getItem, setItem } from '@proton/shared/lib/helpers/sessionStorage';
 import { localeCode } from '@proton/shared/lib/i18n';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import { isMember } from '@proton/shared/lib/user/helpers';
 import { UnleashFlagProviderWithToolbar } from '@proton/unleash/UnleashFlagProviderWithToolbar';

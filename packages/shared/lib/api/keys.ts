@@ -1,6 +1,7 @@
 import type { ProductParam } from '../apps/product';
 import { getProductHeaders } from '../apps/product';
-import type { AddressKeyPayload, AddressKeyPayloadV2, SignedKeyList } from '../interfaces';
+import type { AddressKeyPayload, AddressKeyPayloadV2 } from '../interfaces/Address';
+import type { SignedKeyList } from '../interfaces/SignedKeyList';
 
 interface GetAllPublicKeysParams {
     Email: string;

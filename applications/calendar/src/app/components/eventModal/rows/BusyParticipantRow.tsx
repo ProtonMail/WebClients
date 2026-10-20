@@ -10,8 +10,8 @@ import { IcUserFilled } from '@proton/icons/icons/IcUserFilled';
 import { ICAL_ATTENDEE_ROLE } from '@proton/shared/lib/calendar/constants';
 import { getContactDisplayNameEmail } from '@proton/shared/lib/contacts/contactEmail';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
-import type { AttendeeModel } from '@proton/shared/lib/interfaces/calendar';
-import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { AttendeeModel } from '@proton/shared/lib/interfaces/calendar/Event';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import clsx from '@proton/utils/clsx';
 

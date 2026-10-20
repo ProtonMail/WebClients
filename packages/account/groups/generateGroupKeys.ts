@@ -3,7 +3,7 @@ import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { createKTVerifier } from '@proton/key-transparency/helpers';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import type { EnhancedGroup, Group } from '@proton/shared/lib/interfaces';
+import type { EnhancedGroup, Group } from '@proton/shared/lib/interfaces/Group';
 import { createGroupAddressKey } from '@proton/shared/lib/keys/groupKeys';
 import isTruthy from '@proton/utils/isTruthy';
 

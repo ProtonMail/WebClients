@@ -7,9 +7,10 @@ import { getInviteVeventWithUpdatedParstats } from '@proton/shared/lib/calendar/
 import { getPropertyTzid } from '@proton/shared/lib/calendar/vcalHelper';
 import { getIsAllDay } from '@proton/shared/lib/calendar/veventHelper';
 import { omit } from '@proton/shared/lib/helpers/object';
-import type { RequireSome } from '@proton/shared/lib/interfaces';
-import type { SyncMultipleApiResponse, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import type { SyncMultipleApiResponse } from '@proton/shared/lib/interfaces/calendar/Api';
+import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import type { GetCalendarKeys } from '@proton/shared/lib/interfaces/hooks/GetCalendarKeys';
+import type { RequireSome } from '@proton/shared/lib/interfaces/utils';
 
 import type { EventOldData } from '../../../interfaces/EventData';
 import type {

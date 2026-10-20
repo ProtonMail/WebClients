@@ -10,7 +10,8 @@ import { isSubscriptionCheckForbidden } from '@proton/payments/core/subscription
 import type { Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import type { PlanToCheck } from '@proton/payments/core/subscription/plan-to-check';
 import { getPlanToCheck } from '@proton/payments/core/subscription/plan-to-check';
-import type { OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
+import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import isTruthy from '@proton/utils/isTruthy';
 
 const getMonthsText = (n: number) => {

@@ -8,7 +8,7 @@ import { IcFolders } from '@proton/icons/icons/IcFolders';
 import { IcInbox } from '@proton/icons/icons/IcInbox';
 import { IcTag } from '@proton/icons/icons/IcTag';
 import { IcTags } from '@proton/icons/icons/IcTags';
-import type { Label } from '@proton/shared/lib/interfaces';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
 
 import { getTimeUnitLabels } from '../../../../../constants';
 import { EasyTrans } from '../../../../../helpers/easyTrans';

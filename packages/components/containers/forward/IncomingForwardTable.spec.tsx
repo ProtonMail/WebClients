@@ -1,6 +1,6 @@
 import { useUser } from '@proton/account/user/hooks';
-import type { Address } from '@proton/shared/lib/interfaces';
-import { ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import { ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces/AddressForwarding';
 
 import { applyHOCs } from '../../testing/hocs/helpers';
 import { withApi } from '../../testing/hocs/with-api';

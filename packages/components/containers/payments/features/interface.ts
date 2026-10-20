@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 
 import type { IconComponent } from '@proton/icons/component';
 import type { PLANS } from '@proton/payments/core/constants';
-import type { Audience } from '@proton/shared/lib/interfaces';
+import type { Audience } from '@proton/shared/lib/interfaces/Subscription';
 
 export type PlanCardFeatureIcon = IconComponent;
 

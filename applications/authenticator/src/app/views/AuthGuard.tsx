@@ -5,7 +5,7 @@ import { listen } from '@tauri-apps/api/event';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { prop } from '@proton/pass/utils/fp/lens';
-import { getConsumeForkParameters } from '@proton/shared/lib/authentication/fork';
+import { getConsumeForkParameters } from '@proton/shared/lib/authentication/fork/getConsumeForkParameters';
 import noop from '@proton/utils/noop';
 
 import { apiEvents } from '../../lib/api';

@@ -10,9 +10,10 @@ import { INVITATION_ERROR_TYPE } from '@proton/shared/lib/calendar/icsSurgery/er
 import { APPS } from '@proton/shared/lib/constants';
 import { postMessageToIframe } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
-import type { Address, UserSettings } from '@proton/shared/lib/interfaces';
-import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
 import type { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
 import type { GetCalendarInfo } from '@proton/shared/lib/interfaces/hooks/GetCalendarInfo';

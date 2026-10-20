@@ -21,7 +21,7 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, MAIL_APP_NAME, PASS_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { withAuthHeaders, withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';
-import type { User } from '@proton/shared/lib/interfaces';
+import type { User } from '@proton/shared/lib/interfaces/User';
 import getRandomString from '@proton/utils/getRandomString';
 
 import type { Maybe, TabId } from '../../types';

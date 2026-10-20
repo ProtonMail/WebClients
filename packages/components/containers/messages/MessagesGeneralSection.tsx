@@ -16,7 +16,7 @@ import {
     getUpdatedNewsBitmap,
 } from '@proton/shared/lib/helpers/newsletter';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
-import { SETTINGS_STATUS } from '@proton/shared/lib/interfaces';
+import { SETTINGS_STATUS } from '@proton/shared/lib/interfaces/UserSettings';
 
 import Info from '../../components/link/Info';
 import SettingsLink from '../../components/link/SettingsLink';

@@ -1,8 +1,10 @@
 import type { PrivateKeyReference } from '@protontech/crypto';
 import { CryptoProxy } from '@protontech/crypto';
 
-import type { Address as tsAddress, User as tsUser } from '../../lib/interfaces';
-import { getDecryptedAddressKeysHelper, getDecryptedUserKeysHelper } from '../../lib/keys';
+import type { Address as tsAddress } from '../../lib/interfaces/Address';
+import type { User as tsUser } from '../../lib/interfaces/User';
+import { getDecryptedAddressKeysHelper } from '../../lib/keys/getDecryptedAddressKeys';
+import { getDecryptedUserKeysHelper } from '../../lib/keys/getDecryptedUserKeys';
 import { upgradeV2KeysHelper } from '../../lib/keys/upgradeKeysV2';
 import { Modulus } from '../authentication/login.data';
 import { getAddressKey, getUserKey } from './keyDataHelper';

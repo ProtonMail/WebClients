@@ -5,7 +5,7 @@ import useDebounceInput from '@proton/components/components/input/useDebounceInp
 import usePreviousDistinct from '@proton/hooks/usePreviousDistinct';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { queryMembers, searchMembers as searchMembersAPI } from '@proton/shared/lib/api/members';
-import type { Member } from '@proton/shared/lib/interfaces';
+import type { Member } from '@proton/shared/lib/interfaces/Member';
 
 interface UseMembersAdvancedParams {
     page?: number;

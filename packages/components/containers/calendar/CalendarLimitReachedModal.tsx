@@ -7,7 +7,7 @@ import { getCalendarsLimitReachedText } from '@proton/shared/lib/calendar/calend
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
-import type { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import SettingsLink from '../../components/link/SettingsLink';
 import Prompt from '../../components/prompt/Prompt';

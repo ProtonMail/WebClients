@@ -11,13 +11,10 @@ import { createExportIcs } from '@proton/shared/lib/calendar/export/createExport
 import { getProdIdFromNameAndVersion } from '@proton/shared/lib/calendar/vcalConfig';
 import { getUniqueVtimezones } from '@proton/shared/lib/calendar/vtimezoneHelper';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
-import type {
-    ExportCalendarModel,
-    ExportError,
-    VcalVeventComponent,
-    VisualCalendar,
-} from '@proton/shared/lib/interfaces/calendar';
-import { EXPORT_ERRORS, EXPORT_STEPS } from '@proton/shared/lib/interfaces/calendar';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
+import type { ExportCalendarModel, ExportError } from '@proton/shared/lib/interfaces/calendar/Export';
+import { EXPORT_ERRORS, EXPORT_STEPS } from '@proton/shared/lib/interfaces/calendar/Export';
+import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 
 import BasicModal from '../../../components/modalTwo/BasicModal';

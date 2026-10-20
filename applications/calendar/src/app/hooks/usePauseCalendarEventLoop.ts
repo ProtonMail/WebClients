@@ -1,7 +1,7 @@
 import { useEffect, useMemo } from 'react';
 
 import { useCalendarModelEventManager } from '@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider';
-import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 
 const usePauseCalendarEventLoop = (activeCalendars: VisualCalendar[], condition: boolean) => {
     const { start, stop } = useCalendarModelEventManager();

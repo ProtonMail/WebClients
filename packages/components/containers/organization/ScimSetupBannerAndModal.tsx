@@ -1,7 +1,8 @@
 import { useState } from 'react';
 
-import type { Group, MemberReadyForManualUnprivatization } from '@proton/shared/lib/interfaces';
+import type { Group } from '@proton/shared/lib/interfaces/Group';
 import type { GroupMember } from '@proton/shared/lib/interfaces/GroupMember';
+import type { MemberReadyForManualUnprivatization } from '@proton/shared/lib/interfaces/Member';
 
 import useModalState from '../../components/modalTwo/useModalState';
 import ScimSetupBanner from './ScimSetupBanner';

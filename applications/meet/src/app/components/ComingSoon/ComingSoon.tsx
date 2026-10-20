@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { ForkType, requestFork } from '@proton/shared/lib/authentication/fork';
+import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
+import { requestFork } from '@proton/shared/lib/authentication/fork/consume';
 import { APPS } from '@proton/shared/lib/constants';
 import logo from '@proton/styles/assets/img/meet/meet-main-logo.png';
 

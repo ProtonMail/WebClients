@@ -1,7 +1,8 @@
 import { eventLoopTimingTracker } from '@proton/metrics/eventLoopMetrics';
 import { queryLatestModelEventID, queryModelEvents } from '@proton/shared/lib/api/calendars';
 import createEventManager, { type EventManager } from '@proton/shared/lib/eventManager/eventManager';
-import type { Api, SimpleMap } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 import type { CalendarEventLoop } from '../calendarServerEvent';
 

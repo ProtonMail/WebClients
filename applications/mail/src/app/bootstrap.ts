@@ -32,7 +32,7 @@ import { isChromiumBased } from '@proton/shared/lib/helpers/browser';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import { isProduction } from '@proton/shared/lib/helpers/sentry';
-import type { ProtonConfig } from '@proton/shared/lib/interfaces';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 import { startMailForegroundTelemetry } from '@proton/shared/lib/telemetry/mailForegroundTelemetry';
 import { appMode } from '@proton/shared/lib/webpack.constants';
 import { initTracker } from '@proton/telemetry-tracker/tracker';

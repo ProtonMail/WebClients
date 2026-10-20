@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 import type { ESCalendarSearchParams, ESItem } from '@proton/encrypted-search/models';
 import { useLoading } from '@proton/hooks';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
-import type { SimpleMap } from '@proton/shared/lib/interfaces';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import noop from '@proton/utils/noop';
 
 import { extractSearchParameters, generatePathnameWithSearchParams } from '../../../helpers/encryptedSearch/esUtils';

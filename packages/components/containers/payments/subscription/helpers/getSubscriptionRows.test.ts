@@ -4,7 +4,7 @@ import { Renew, SubscriptionPlatform } from '@proton/payments/core/subscription/
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
-import type { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import { getSubscriptionRenewData, getSubscriptionRows } from './getSubscriptionRows';
 

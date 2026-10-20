@@ -23,7 +23,7 @@ import {
     DARK_WEB_MONITORING_ELIGIBILITY_STATE,
     DARK_WEB_MONITORING_EMAILS_STATE,
     DARK_WEB_MONITORING_STATE,
-} from '@proton/shared/lib/interfaces';
+} from '@proton/shared/lib/interfaces/UserSettings';
 import freeUserBreachImg from '@proton/styles/assets/img/breach-alert/img-breaches-found.svg';
 import freeUserNoBreachImg from '@proton/styles/assets/img/breach-alert/img-no-breaches-found-inactive.svg';
 import { useFlag } from '@proton/unleash/useFlag';

@@ -6,7 +6,7 @@ import {
     isMessageBusResponseFailure,
     paymentAttemptRefusedChargebeeErrorName,
 } from '@proton/chargebee/lib/types';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import { PAYMENT_METHOD_TYPES } from '../constants';
 import { isAllowedCountry, isCountryWithRequiredPostalCode } from '../countries';

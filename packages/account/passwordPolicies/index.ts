@@ -7,7 +7,7 @@ import type { ModelState } from '@proton/redux-utilities/initialModelState/inter
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getPasswordPolicies, getShouldUsePasswordPolicies } from '@proton/shared/lib/api/passwordPolicies';
 import { DAY } from '@proton/shared/lib/constants';
-import type { PasswordPolicies } from '@proton/shared/lib/interfaces';
+import type { PasswordPolicies } from '@proton/shared/lib/interfaces/PasswordPolicy';
 
 import { type UserState, userThunk } from '../user';
 

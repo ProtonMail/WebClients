@@ -4,8 +4,8 @@ import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
 import { getAppStaticUrl } from '@proton/shared/lib/helpers/url';
-import type { UserModel } from '@proton/shared/lib/interfaces';
-import { getRequiresAddressSetup } from '@proton/shared/lib/keys';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import { getRequiresAddressSetup } from '@proton/shared/lib/keys/setupAddress';
 
 import type { AppLinkProps } from '../../components/link/AppLink';
 import AppLink from '../../components/link/AppLink';

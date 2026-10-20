@@ -44,7 +44,7 @@ import type { SubscriptionEstimation } from '@proton/payments/core/subscription/
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { useStore } from '@proton/redux-shared-store/sharedProvider';
 import { APPS } from '@proton/shared/lib/constants';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { usePreferredPlansMap } from '../ui/hooks/usePreferredPlansMap';

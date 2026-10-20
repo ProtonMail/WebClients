@@ -9,7 +9,7 @@ import { truthy } from '@proton/pass/utils/fp/predicates';
 import { seq } from '@proton/pass/utils/fp/promises';
 import { sortOn } from '@proton/pass/utils/fp/sort';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import type { DecryptedKey } from '@proton/shared/lib/interfaces';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 import chunk from '@proton/utils/chunk';
 import noop from '@proton/utils/noop';
 

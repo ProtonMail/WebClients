@@ -8,7 +8,7 @@ import IntegerInput from '@proton/components/components/input/IntegerInput';
 import RadioGroup from '@proton/components/components/input/RadioGroup';
 import { END_TYPE, FREQUENCY_COUNT_MAX, MAXIMUM_DATE } from '@proton/shared/lib/calendar/constants';
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
-import type { DateTimeModel, EventModelErrors, FrequencyModel } from '@proton/shared/lib/interfaces/calendar';
+import type { DateTimeModel, EventModelErrors, FrequencyModel } from '@proton/shared/lib/interfaces/calendar/Event';
 import clsx from '@proton/utils/clsx';
 
 import './EndsRow.scss';

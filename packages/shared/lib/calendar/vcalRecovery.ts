@@ -1,5 +1,5 @@
 import { captureMessage } from '../helpers/sentry';
-import type { VcalCalendarComponent } from '../interfaces/calendar';
+import type { VcalCalendarComponent } from '../interfaces/calendar/VcalModel';
 import {
     getTriggerValue,
     isValidTriggerDuration,

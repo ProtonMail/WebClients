@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import useAssistantSubscriptionStatus from '@proton/components/hooks/assistant/useAssistantSubscriptionStatus';
-import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
+import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces/UserSettings';
 
 import { getAssistantHasCompatibleBrowser, getAssistantHasCompatibleHardware } from '../helpers';
 import type { AssistantCommonProps } from './useAssistant';

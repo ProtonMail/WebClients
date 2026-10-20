@@ -3,7 +3,9 @@ import type { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { toText } from '@proton/mail/helpers/parserHtml';
 import type { MessageState, PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
 import { unescape } from '@proton/sanitize/escape';
-import type { Address, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
 
 import { parseModelResult } from '../assistant/result';

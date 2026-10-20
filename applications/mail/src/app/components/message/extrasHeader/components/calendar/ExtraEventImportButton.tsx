@@ -13,8 +13,8 @@ import { APPS, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { postMessageToIframe } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 import { omit } from '@proton/shared/lib/helpers/object';
-import type { RequireSome } from '@proton/shared/lib/interfaces';
-import type { ImportedEvent } from '@proton/shared/lib/interfaces/calendar';
+import type { ImportedEvent } from '@proton/shared/lib/interfaces/calendar/Import';
+import type { RequireSome } from '@proton/shared/lib/interfaces/utils';
 import noop from '@proton/utils/noop';
 
 import type { InvitationModel } from '../../../../../helpers/calendar/invite';

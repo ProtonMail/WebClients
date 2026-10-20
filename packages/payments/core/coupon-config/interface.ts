@@ -1,4 +1,4 @@
-import type { StrictRequired } from '@proton/shared/lib/interfaces';
+import type { StrictRequired } from '@proton/shared/lib/interfaces/utils';
 
 import type { CouponHideFlag } from '../addon/interfaces';
 import type { CYCLE, PLANS } from '../constants';

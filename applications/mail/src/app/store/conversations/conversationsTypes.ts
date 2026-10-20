@@ -1,5 +1,5 @@
-import type { SimpleMap } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 import type { Conversation } from '../../models/conversation';
 

@@ -17,7 +17,7 @@ import useLoading from '@proton/hooks/useLoading';
 import { ICAL_ATTENDEE_STATUS, VIEWS } from '@proton/shared/lib/calendar/constants';
 import { stripAllTags } from '@proton/shared/lib/calendar/sanitize';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import type { PartstatData } from '@proton/shared/lib/interfaces/calendar';
+import type { PartstatData } from '@proton/shared/lib/interfaces/calendar/Event';
 import clsx from '@proton/utils/clsx';
 
 import { getIsCalendarAppInDrawer } from '../../helpers/views';

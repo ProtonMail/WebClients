@@ -5,8 +5,9 @@ import { hookWrapper } from '@proton/components/testing/hocs/helpers';
 import { withApi } from '@proton/components/testing/hocs/with-api';
 import { ADDRESS_FLAGS, ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import type { Address, User } from '@proton/shared/lib/interfaces';
-import { ClaimableAddressType } from '@proton/shared/lib/keys';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { User } from '@proton/shared/lib/interfaces/User';
+import { ClaimableAddressType } from '@proton/shared/lib/keys/setupAddress';
 import { addApiMock } from '@proton/test-api/api';
 
 import useBYOEAddressData from './useBYOEAddressData';

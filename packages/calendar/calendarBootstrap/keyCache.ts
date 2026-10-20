@@ -1,6 +1,6 @@
 import type { SessionKey } from '@protontech/crypto';
 
-import type { DecryptedCalendarKey } from '@proton/shared/lib/interfaces/calendar';
+import type { DecryptedCalendarKey } from '@proton/shared/lib/interfaces/calendar/CalendarKey';
 
 export interface DecryptedPassphraseAndCalendarKeysResult {
     decryptedCalendarKeys: DecryptedCalendarKey[];

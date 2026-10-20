@@ -1,7 +1,7 @@
 import { type SetMnemonicPhrasePayload, reactivateMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
 import { queryUnlock } from '@proton/shared/lib/api/user';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import { srpAuth } from '@proton/shared/lib/srp';
 
 const sendRecoveryPhrasePayload = async ({

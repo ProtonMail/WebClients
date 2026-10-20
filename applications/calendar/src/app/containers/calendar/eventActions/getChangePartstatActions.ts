@@ -1,10 +1,11 @@
+import { serverTime } from '@protontech/crypto';
 import { getUnixTime } from 'date-fns';
 
-import { serverTime } from '@protontech/crypto';
 import { toIcsPartstat } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { getAttendeeToken, getHasAttendees } from '@proton/shared/lib/calendar/vcalHelper';
-import type { CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar/Event';
+import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import isTruthy from '@proton/utils/isTruthy';
 
 import type {

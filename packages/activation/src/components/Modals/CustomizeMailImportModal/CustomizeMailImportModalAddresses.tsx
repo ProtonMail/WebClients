@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Field, Label, Option, Row, SelectTwo } from '@proton/components';
-import type { Address } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
 
 import useAvailableAddresses from '../../../hooks/useAvailableAddresses';
 

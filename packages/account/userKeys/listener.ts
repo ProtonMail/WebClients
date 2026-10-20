@@ -1,7 +1,8 @@
 import { CryptoProxy } from '@protontech/crypto';
+
 import type { SharedStartListening } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
-import type { Key } from '@proton/shared/lib/interfaces';
+import type { Key } from '@proton/shared/lib/interfaces/Key';
 import noop from '@proton/utils/noop';
 
 import { selectUser } from '../user';
@@ -19,8 +20,8 @@ export const userKeysListener = (startListening: SharedStartListening<UserKeysSt
             const previousKeys = selectUserKeys(previousState).value;
             return Boolean(
                 previousKeys &&
-                    previousUser !== currentUser &&
-                    !keyEqualityComparator(currentUser.value?.Keys, previousUser.value?.Keys)
+                previousUser !== currentUser &&
+                !keyEqualityComparator(currentUser.value?.Keys, previousUser.value?.Keys)
             );
         },
         effect: (action, listenerApi) => {

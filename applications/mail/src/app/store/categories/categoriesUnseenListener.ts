@@ -4,7 +4,8 @@ import { updateLastSeenEventId } from '@proton/mail/store/labels/actions';
 import { selectActiveCategoriesTabs, selectDisabledCategoriesIDs } from '@proton/mail/store/labels/selector';
 import { selectMailSettings } from '@proton/mail/store/mailSettings';
 import { type CategoryLabelID, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { LabelCount, MailSettings } from '@proton/shared/lib/interfaces';
+import type { LabelCount } from '@proton/shared/lib/interfaces/Label';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 
 import { isConversationMode } from '../../helpers/mailSettings';
 import type { AppStartListening, MailState } from '../store';

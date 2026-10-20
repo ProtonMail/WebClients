@@ -4,7 +4,7 @@ import { useSessionRecoveryGracePeriodHoursRemaining } from '@proton/account/rec
 import { selectSessionRecoveryData } from '@proton/account/recovery/sessionRecoverySelectors';
 import { Button } from '@proton/atoms/Button/Button';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
-import { SessionRecoveryState } from '@proton/shared/lib/interfaces';
+import { SessionRecoveryState } from '@proton/shared/lib/interfaces/User';
 
 import SettingsLink from '../../../components/link/SettingsLink';
 import Prompt from '../../../components/prompt/Prompt';

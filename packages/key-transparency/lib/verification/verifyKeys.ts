@@ -3,15 +3,11 @@ import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 
 import { KEY_FLAG } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import type {
-    Api,
-    FetchedSignedKeyList,
-    KTUserContext,
-    KeyTransparencyVerificationResult,
-    ProcessedApiKey,
-    SignedKeyListItem,
-} from '@proton/shared/lib/interfaces';
-import { KT_VERIFICATION_STATUS } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { ProcessedApiKey } from '@proton/shared/lib/interfaces/EncryptionPreferences';
+import type { KTUserContext, KeyTransparencyVerificationResult } from '@proton/shared/lib/interfaces/KeyTransparency';
+import { KT_VERIFICATION_STATUS } from '@proton/shared/lib/interfaces/KeyTransparency';
+import type { FetchedSignedKeyList, SignedKeyListItem } from '@proton/shared/lib/interfaces/SignedKeyList';
 import { ParsedSignedKeyList } from '@proton/shared/lib/keys/parsedSignedKeyList';
 import { KT_SKL_VERIFICATION_CONTEXT } from '@proton/shared/lib/keys/signedKeyListContext';
 

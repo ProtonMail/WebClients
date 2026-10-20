@@ -23,7 +23,7 @@ import { coalesce } from '@proton/pass/utils/fp/control';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { logger } from '@proton/pass/utils/logger';
 import { createMemoryStore } from '@proton/pass/utils/store';
-import type { ProtonConfig } from '@proton/shared/lib/interfaces';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 import noop from '@proton/utils/noop';
 
 import { backgroundMessage } from '../../../lib/message/send-message';

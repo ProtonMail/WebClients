@@ -1,10 +1,10 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { Folder, Label } from '@proton/shared/lib/interfaces';
+import type { Folder } from '@proton/shared/lib/interfaces/Folder';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import type { Element } from '../../../models/element';
 import type { ConversationState } from '../../../store/conversations/conversationsTypes';
-
 import {
     getOpenedElementUpdated,
     hasReadItemsAfterAction,

@@ -1,4 +1,5 @@
-import { type EventModel, VIDEO_CONFERENCE_PROVIDER } from '@proton/shared/lib/interfaces/calendar';
+import { VIDEO_CONFERENCE_PROVIDER } from '@proton/shared/lib/interfaces/calendar/Api';
+import type { EventModel } from '@proton/shared/lib/interfaces/calendar/Event';
 
 import { hasValidVideoConferenceInData } from '../videoConferencing/hasValidVideoConferenceInData';
 

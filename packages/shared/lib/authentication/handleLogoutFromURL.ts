@@ -2,7 +2,7 @@ import noop from '@proton/utils/noop';
 
 import { revoke } from '../api/auth';
 import { getSilentApi, getUIDApi } from '../api/helpers/customConfig';
-import type { Api } from '../interfaces';
+import type { Api } from '../interfaces/Api';
 import { removeDeviceRecovery } from '../recoveryFile/storage';
 import { type PersistedSession, SessionSource } from './SessionInterface';
 import { parseLogoutURL } from './logoutUrl';

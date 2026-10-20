@@ -1,10 +1,9 @@
+import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 import { c } from 'ttag';
 
-import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
-
 import { CONTACT_CARD_TYPE } from '../constants';
-import type { KeysPair } from '../interfaces';
-import type { Contact, ContactCard } from '../interfaces/contacts';
+import type { KeysPair } from '../interfaces/Key';
+import type { Contact, ContactCard } from '../interfaces/contacts/Contact';
 import type { VCardContact } from '../interfaces/contacts/VCard';
 import { CRYPTO_PROCESSING_TYPES } from './constants';
 import { mergeVCard } from './properties';

@@ -5,7 +5,8 @@ import { decryptData, deriveKey, encryptData } from '@protontech/crypto/subtle/a
 import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
 import { c } from 'ttag';
 
-import type { Api, DecryptedKey } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 import { BASE_PASSWORD_LENGTH } from '@proton/shared/lib/meet/parseMeetingLink';
 import { srpGetVerify } from '@proton/shared/lib/srp';
 import getRandomString from '@proton/utils/getRandomString';

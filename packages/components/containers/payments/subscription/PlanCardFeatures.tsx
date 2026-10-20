@@ -11,7 +11,7 @@ import type { IconSize } from '@proton/icons/types';
 import { PLANS } from '@proton/payments/core/constants';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS } from '@proton/shared/lib/constants';
-import { Audience } from '@proton/shared/lib/interfaces';
+import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import clsx from '@proton/utils/clsx';
 
 import Info from '../../../components/link/Info';

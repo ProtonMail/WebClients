@@ -35,11 +35,11 @@ import {
 import { getIsVcalErrorComponent, getVcalendarHasNoErrorComponents } from '@proton/shared/lib/calendar/vcalHelper';
 import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import type {
     VcalErrorComponent,
     VcalVcalendarWithMaybeErrors,
-    VisualCalendar,
-} from '@proton/shared/lib/interfaces/calendar';
+} from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAttachments, isBounced } from '@proton/shared/lib/mail/messages';
 import { useFlag } from '@proton/unleash/useFlag';

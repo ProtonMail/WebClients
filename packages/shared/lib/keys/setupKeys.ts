@@ -1,7 +1,10 @@
 import { setupKeys } from '../api/keys';
 import { getUser } from '../api/user';
 import type { ProductParam } from '../apps/product';
-import type { Address, Api, PreAuthKTVerify, User } from '../interfaces';
+import type { Address } from '../interfaces/Address';
+import type { Api } from '../interfaces/Api';
+import type { PreAuthKTVerify } from '../interfaces/KeyTransparency';
+import type { User } from '../interfaces/User';
 import { srpVerify } from '../srp';
 import { getDecryptedUserKeysHelper } from './getDecryptedUserKeys';
 import { generateKeySaltAndPassphrase } from './keys';

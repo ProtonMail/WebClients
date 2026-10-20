@@ -1,7 +1,7 @@
 import { call, put, race, select, take } from 'redux-saga/effects';
 
 import { wait } from '@proton/shared/lib/helpers/promise';
-import type { User } from '@proton/shared/lib/interfaces';
+import type { User } from '@proton/shared/lib/interfaces/User';
 
 import { sync } from '../../../lib/sync/sync';
 import { SyncStrategy } from '../../../lib/sync/types';

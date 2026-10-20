@@ -21,8 +21,8 @@ import { getPersistedSession, getPersistedSessions } from '@proton/shared/lib/au
 import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
-import type { ProtonConfig } from '@proton/shared/lib/interfaces';
-import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
+import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces/UserSettings';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 import { telemetry } from '@proton/shared/lib/telemetry';
 import { formatUser } from '@proton/shared/lib/user/helpers';
 import noop from '@proton/utils/noop';

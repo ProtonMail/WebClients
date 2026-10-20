@@ -1,4 +1,6 @@
-import type { OrganizationExtended, UserModel, UserSettings } from '@proton/shared/lib/interfaces';
+import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 
 import { getIsPasswordReminderAvailable } from './getIsPasswordReminderAvailable';
 import { getIsPasswordReminderEnabled } from './getIsPasswordReminderEnabled';

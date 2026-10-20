@@ -7,7 +7,7 @@ import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { useContacts } from '@proton/mail/store/contacts/hooks';
 import { dropDataEncryptedWithAKey } from '@proton/shared/lib/contacts/globalOperations';
-import type { Key } from '@proton/shared/lib/interfaces';
+import type { Key } from '@proton/shared/lib/interfaces/Key';
 
 import Alert from '../../../components/alert/Alert';
 import type { ModalProps } from '../../../components/modalTwo/Modal';

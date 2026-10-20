@@ -15,7 +15,7 @@ import { IcCalendarWeek } from '@proton/icons/icons/IcCalendarWeek';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { IcPlusCircle } from '@proton/icons/icons/IcPlusCircle';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
-import type { AttendeeModel } from '@proton/shared/lib/interfaces/calendar';
+import type { AttendeeModel } from '@proton/shared/lib/interfaces/calendar/Event';
 import isTruthy from '@proton/utils/isTruthy';
 
 import useCalendarHotkeys from '../../hooks/useCalendarHotkeys';

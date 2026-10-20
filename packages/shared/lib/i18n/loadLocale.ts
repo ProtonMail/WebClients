@@ -3,11 +3,11 @@ import { addLocale as ttagAddLocale, useLocale as ttagUseLocale } from 'ttag';
 
 import { DEFAULT_LOCALE } from '../constants';
 import { pick } from '../helpers/object';
+import { browserLocaleCode, dateFormatOptions, dateLocaleCode, localeCode, setDateLocales, setLocales } from '../i18n';
 import type { DateFormatOptions, TtagLocaleMap } from '../interfaces/Locale';
 import { getDateFnLocaleWithLongFormat, getDateFnLocaleWithSettings } from './dateFnLocale';
 import dateFnLocales, { getDateFnLocale } from './dateFnLocales';
 import { getBrowserLocale, getClosestLocaleCode, getLangAttribute, getLanguageCode } from './helper';
-import { browserLocaleCode, dateFormatOptions, dateLocaleCode, localeCode, setDateLocales, setLocales } from './index';
 
 export const willLoadLocale = (localeCode: string) => {
     return localeCode !== DEFAULT_LOCALE;

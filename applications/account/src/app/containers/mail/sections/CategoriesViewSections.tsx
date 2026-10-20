@@ -10,7 +10,7 @@ import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/use
 import { updateLabel } from '@proton/mail/store/labels/actions';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import type { Label } from '@proton/shared/lib/interfaces';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
 import clsx from '@proton/utils/clsx';
 
 import { CategoriesUnreadCountToggle } from './CategoriesUnreadCountToggle';

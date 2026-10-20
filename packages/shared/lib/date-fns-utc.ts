@@ -1,14 +1,6 @@
 /**
  * Pending date-fn to implement UTC functions https://github.com/date-fns/date-fns/issues/376
  */
-export { default as eachDayOfInterval } from './eachDayOfInterval';
-export { default as startOfDay } from './startOfDay';
-export { default as endOfDay } from './endOfDay';
-export { default as startOfWeek } from './startOfWeek';
-export { default as endOfWeek } from './endOfWeek';
-export { default as differenceInCalendarDays } from './differenceInCalendarDays';
-export { default as differenceInCalendarWeeks } from './differenceInCalendarWeeks';
-export { default as differenceInCalendarYears } from './differenceInCalendarYears';
 
 export const startOfYear = (date: Date) => {
     return new Date(Date.UTC(date.getUTCFullYear(), 0, 1));
@@ -100,5 +92,3 @@ export const isNextDay = (dateLeft: Date, dateRight: Date) => {
     const tomorrow = new Date(Date.UTC(dateLeft.getUTCFullYear(), dateLeft.getUTCMonth(), dateLeft.getUTCDate() + 1));
     return isSameDay(tomorrow, dateRight);
 };
-
-export { default as format } from './format';

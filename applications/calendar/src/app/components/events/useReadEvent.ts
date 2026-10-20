@@ -15,12 +15,8 @@ import {
 import { getCalendarEventDecryptionKeys } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import { readSessionKeys } from '@proton/shared/lib/calendar/deserialize';
 import { getIsAllDay } from '@proton/shared/lib/calendar/veventHelper';
-import type {
-    AttendeeModel,
-    CalendarEvent,
-    CalendarSettings,
-    EventModelReadView,
-} from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarSettings } from '@proton/shared/lib/interfaces/calendar/Calendar';
+import type { AttendeeModel, CalendarEvent, EventModelReadView } from '@proton/shared/lib/interfaces/calendar/Event';
 import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
 import type { CalendarViewEventData } from '../../containers/calendar/interface';

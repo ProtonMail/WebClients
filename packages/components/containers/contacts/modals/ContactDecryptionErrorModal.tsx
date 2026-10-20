@@ -8,8 +8,8 @@ import { Button } from '@proton/atoms/Button/Button';
 import { useContact } from '@proton/mail/store/contacts/contactHooks';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKeyUsedForContact } from '@proton/shared/lib/contacts/keyVerifications';
-import type { Key } from '@proton/shared/lib/interfaces';
-import type { Contact } from '@proton/shared/lib/interfaces/contacts';
+import type { Key } from '@proton/shared/lib/interfaces/Key';
+import type { Contact } from '@proton/shared/lib/interfaces/contacts/Contact';
 
 import Alert from '../../../components/alert/Alert';
 import Copy from '../../../components/button/Copy';

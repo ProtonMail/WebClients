@@ -14,7 +14,8 @@ import { cacheHelper, createPromiseMapStore } from '@proton/redux-utilities/prom
 import { queryDomainAddresses } from '@proton/shared/lib/api/domains';
 import queryPages from '@proton/shared/lib/api/helpers/queryPages';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
-import type { Api, DomainAddress } from '@proton/shared/lib/interfaces';
+import type { DomainAddress } from '@proton/shared/lib/interfaces/Address';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import { serverEvent } from '../eventLoop';
 

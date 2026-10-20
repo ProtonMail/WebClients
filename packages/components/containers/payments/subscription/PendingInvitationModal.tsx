@@ -7,7 +7,7 @@ import { useLoading } from '@proton/hooks';
 import { acceptInvitation, rejectInvitation } from '@proton/shared/lib/api/user';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import type { PendingInvitation } from '@proton/shared/lib/interfaces';
+import type { PendingInvitation } from '@proton/shared/lib/interfaces/PendingInvitation';
 
 import ModalTwo from '../../../components/modalTwo/Modal';
 import ModalTwoContent from '../../../components/modalTwo/ModalContent';

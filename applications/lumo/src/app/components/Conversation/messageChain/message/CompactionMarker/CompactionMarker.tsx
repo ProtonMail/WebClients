@@ -3,7 +3,7 @@ import { type CSSProperties, memo, useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants.ts';
+import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { deriveCompactionAudit } from '../../../../../llm/compaction/audit';
 import { formatTokenCount } from '../../../../../llm/utils';
@@ -188,8 +188,7 @@ const CompactionMarkerComponent = ({ message }: CompactionMarkerProps) => {
     );
     const reassurance = c('collider_2025: Compaction')
         .t`Your chat history above is unchanged. ${LUMO_SHORT_APP_NAME} uses the summary below when replying — scroll up anytime to read the original messages.`;
-    const summaryHeading = c('collider_2025: Compaction')
-        .t`Summary ${LUMO_SHORT_APP_NAME} uses for new replies`;
+    const summaryHeading = c('collider_2025: Compaction').t`Summary ${LUMO_SHORT_APP_NAME} uses for new replies`;
 
     return (
         <div className="compaction-marker flex-1 w-full min-w-0 my-4" data-testid="compaction-marker">

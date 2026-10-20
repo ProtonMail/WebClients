@@ -12,8 +12,9 @@ import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { IcKey } from '@proton/icons/icons/IcKey';
 import { BRAND_NAME, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
 import { getInitials } from '@proton/shared/lib/helpers/string';
-import type { Group, MemberReadyForManualUnprivatization } from '@proton/shared/lib/interfaces';
+import type { Group } from '@proton/shared/lib/interfaces/Group';
 import type { GroupMember } from '@proton/shared/lib/interfaces/GroupMember';
+import type { MemberReadyForManualUnprivatization } from '@proton/shared/lib/interfaces/Member';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import type { ModalProps } from '../../components/modalTwo/Modal';

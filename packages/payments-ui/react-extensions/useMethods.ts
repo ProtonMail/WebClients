@@ -27,7 +27,8 @@ import {
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { isExistingPaymentMethod } from '@proton/payments/core/type-guards';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
-import type { Api, User } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { User } from '@proton/shared/lib/interfaces/User';
 
 export type OnMethodChangedHandler = (method: AvailablePaymentMethod) => void;
 

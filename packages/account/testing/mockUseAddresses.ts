@@ -1,4 +1,4 @@
-import type { Address } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
 
 import * as useAddressesModule from '../addresses/hooks';
 import { buildAddress } from './buildAddress';

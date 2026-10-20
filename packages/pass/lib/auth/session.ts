@@ -8,7 +8,7 @@ import { getClientKey } from '@proton/shared/lib/authentication/clientKey';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import type { LocalKeyResponse, LocalSessionResponse } from '@proton/shared/lib/authentication/interface';
 import { getDecryptedBlob, getEncryptedBlob } from '@proton/shared/lib/authentication/sessionBlobCryptoHelper';
-import type { User as UserType } from '@proton/shared/lib/interfaces';
+import type { User as UserType } from '@proton/shared/lib/interfaces/User';
 import getRandomString from '@proton/utils/getRandomString';
 
 import type { Api, Maybe, MaybeNull } from '../../types';

@@ -2,7 +2,7 @@ import { FILTER_VERSION } from '@proton/components/containers/filters/constants'
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
 import { FILTER_STATUS } from '@proton/shared/lib/constants';
-import type { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import type { Filter } from '@proton/sieve/filterModel';
 
 import type { MailToolDeps } from '../../toolModule';

@@ -5,8 +5,8 @@ import {
     ADDRESS_STATUS,
     PRODUCT_BIT,
 } from '@proton/shared/lib/constants';
-import type { User } from '@proton/shared/lib/interfaces';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { User } from '@proton/shared/lib/interfaces/User';
 
 import { ApiSyncState } from '../api/api.interface';
 import { MAX_SYNC_FREE_USER, MAX_SYNC_PAID_USER } from '../constants';
