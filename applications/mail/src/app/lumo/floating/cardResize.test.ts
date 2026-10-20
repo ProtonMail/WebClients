@@ -3,7 +3,13 @@ import type { MouseEvent as ReactMouseEvent } from 'react';
 import { renderHook } from '@testing-library/react';
 
 import { ResizeHandlePosition } from '../../components/list/ResizeHandle';
-import { CARD_MIN_WIDTH, CARD_RESIZING_CLASS, clampCardWidth, getResizeGrip, useCardResize } from './cardResize';
+import {
+    CARD_MIN_WIDTH,
+    CARD_RESIZING_CLASS,
+    clampCardWidth,
+    getResizeGripPosition,
+    useCardResize,
+} from './cardResize';
 import { PanelSide } from './panelSide';
 
 describe('clampCardWidth', () => {
@@ -24,13 +30,12 @@ describe('clampCardWidth', () => {
     });
 });
 
-describe('getResizeGrip', () => {
-    it('grips the shared outer edge of card and prompt on the right side', () => {
-        expect(getResizeGrip(PanelSide.RIGHT)).toEqual({ position: ResizeHandlePosition.LEFT, spansPrompt: true });
-    });
-
-    it('grips only the card inner edge on the left side', () => {
-        expect(getResizeGrip(PanelSide.LEFT)).toEqual({ position: ResizeHandlePosition.RIGHT, spansPrompt: false });
+describe('getResizeGripPosition', () => {
+    it.each([
+        [PanelSide.RIGHT, ResizeHandlePosition.LEFT],
+        [PanelSide.LEFT, ResizeHandlePosition.RIGHT],
+    ])('grips the inner edge when the panel is on the %s', (side, position) => {
+        expect(getResizeGripPosition(side)).toBe(position);
     });
 });
 
