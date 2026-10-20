@@ -28,6 +28,7 @@
     "dependencies": {
         "@eslint/compat": "^2.1.1",
         "@eslint/json": "^2.1.1",
+        "@proton/oxlint-config": "workspace:^",
         "@protontech/eslint-plugin-enforce-uint8array-arraybuffer": "^3.0.2",
         "@types/eslint-plugin-jsx-a11y": "^6.10.1",
         "eslint": "^10.12.0",
