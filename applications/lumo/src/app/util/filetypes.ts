@@ -187,6 +187,13 @@ const FILE_TYPE_CONFIGS: Record<string, FileTypeConfig> = {
         category: 'config',
         // No pandocFormat - processed as plain text
     },
+    gpx: {
+        extensions: ['gpx'],
+        mimeTypes: ['application/gpx+xml', 'application/xml', 'text/xml'],
+        description: 'GPX Route File',
+        category: 'config',
+        // No pandocFormat - GPX is XML; processed as plain text
+    },
 
     // Configuration files
     yaml: {
@@ -728,6 +735,7 @@ export function getMimeTypeFromName(filename: string): string {
         json: 'application/json',
         html: 'text/html',
         xml: 'application/xml',
+        gpx: 'application/gpx+xml',
     };
     return mimeTypes[ext] || 'application/octet-stream';
 }
