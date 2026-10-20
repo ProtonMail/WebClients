@@ -3,6 +3,7 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import Markdown, { type ExtraProps } from 'react-markdown';
 
 import remarkGfm from 'remark-gfm';
+import { c } from 'ttag';
 
 import { readChartSpecTitle } from '../../LumoMarkdown/vega/chartSpecTitle';
 import { chartPlaceholderHtml, readArtifactChartFence } from './artifactCharts';
@@ -22,7 +23,8 @@ interface MarkdownToHtmlOptions {
 
 function chartSummaryText(code: string): string {
     const { text, subtitle } = readChartSpecTitle(code);
-    const label = text ? `Chart: ${text}` : 'Chart';
+    // translator: Document heading for a data chart. ${text} is the chart's title.
+    const label = text ? c('collider_2025:Label').t`Chart: ${text}` : c('collider_2025:Label').t`Chart`;
     return subtitle ? `${label} — ${subtitle}` : label;
 }
 
