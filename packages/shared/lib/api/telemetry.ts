@@ -32,7 +32,7 @@ export enum TelemetryMeasurementGroups {
     calendarInvite = 'any.web.calendar_invite',
     keyTransparency = 'any.web.key_transparency',
     subscriptionModal = 'any.web.subscription_modal',
-    mailOnboarding = 'mail.web.onboarding',
+    oldMailOnboarding = 'mail.web.onboarding',
     paidUsersNudge = 'any.web.paid_users_nudge',
     mailPrivacyDropdown = 'mail.web.privacy_dropdown',
     mailSelectAll = 'mail.web.select_all',
@@ -91,7 +91,7 @@ export enum TelemetryMeasurementGroups {
     mailForegroundActivity = 'mail.common.foreground_activity',
 }
 
-export enum TelemetryMailOnboardingEvents {
+export enum OldTelemetryMailOnboardingEvents {
     start_onboarding_modals = 'start_onboarding_modals',
     finish_onboarding_modals = 'finish_onboarding_modals',
     select_theme = 'select_theme',
@@ -743,7 +743,7 @@ export type TelemetryEvents =
     | TelemetryMailSelectAllEvents
     | TelemetryMailComposerAssistantEvents
     | TelemetryMailLumoEvents
-    | TelemetryMailOnboardingEvents
+    | OldTelemetryMailOnboardingEvents
     | TelemetryMailPagingControlsEvents
     | TelemetryMailBlockquotes
     | TelemetryMailForegroundEvents

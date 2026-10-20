@@ -7,7 +7,7 @@ import useInboxDesktopVersion from '@proton/components/containers/desktop/useInb
 import OnboardingStep from '@proton/components/containers/onboarding/OnboardingStep';
 import type { OnboardingStepRenderCallback } from '@proton/components/containers/onboarding/interface';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
+import { OldTelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
 import { isDebianBased, isFedoraOrRedHatBased, isMac, isMobile, isWindows } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import linuxAppImg1x from '@proton/styles/assets/img/onboarding/mail_onboarding_desktop_app_download_linux@1x.webp';
@@ -19,7 +19,6 @@ import windowsAppImg2x from '@proton/styles/assets/img/onboarding/mail_onboardin
 import clsx from '@proton/utils/clsx';
 
 import { useMailOnboardingTelemetry } from '../../useMailOnboardingTelemetry';
-
 import type { OnboardingStepEligibleCallback } from '../interface';
 import OnboardingContent from '../layout/OnboardingContent';
 
@@ -54,7 +53,7 @@ const GetDesktopAppStep = ({ onNext }: OnboardingStepRenderCallback) => {
     };
 
     const handleDesktopAppButtonClick = () => {
-        void sendMailOnboardingTelemetry(TelemetryMailOnboardingEvents.download_desktop_app, {});
+        void sendMailOnboardingTelemetry(OldTelemetryMailOnboardingEvents.download_desktop_app, {});
         handleNext();
     };
 
