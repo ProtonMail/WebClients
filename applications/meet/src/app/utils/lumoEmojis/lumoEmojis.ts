@@ -7,10 +7,14 @@ import browseFoldersGif from '@proton/styles/assets/img/meet/lumo-emojis/browse-
 import browseFoldersPng from '@proton/styles/assets/img/meet/lumo-emojis/browse-folders.png';
 import cashGif from '@proton/styles/assets/img/meet/lumo-emojis/cash.gif';
 import cashPng from '@proton/styles/assets/img/meet/lumo-emojis/cash.png';
+import celebrateGif from '@proton/styles/assets/img/meet/lumo-emojis/celebrate.gif';
+import celebratePng from '@proton/styles/assets/img/meet/lumo-emojis/celebrate.png';
 import cheersGif from '@proton/styles/assets/img/meet/lumo-emojis/cheers.gif';
 import cheersPng from '@proton/styles/assets/img/meet/lumo-emojis/cheers.png';
 import chefsKissGif from '@proton/styles/assets/img/meet/lumo-emojis/chefs-kiss.gif';
 import chefsKissPng from '@proton/styles/assets/img/meet/lumo-emojis/chefs-kiss.png';
+import coffeeGif from '@proton/styles/assets/img/meet/lumo-emojis/coffee.gif';
+import coffeePng from '@proton/styles/assets/img/meet/lumo-emojis/coffee.png';
 import cowboyGif from '@proton/styles/assets/img/meet/lumo-emojis/cowboy.gif';
 import cowboyPng from '@proton/styles/assets/img/meet/lumo-emojis/cowboy.png';
 import encryptGif from '@proton/styles/assets/img/meet/lumo-emojis/encrypt.gif';
@@ -25,16 +29,22 @@ import loveGif from '@proton/styles/assets/img/meet/lumo-emojis/love.gif';
 import lovePng from '@proton/styles/assets/img/meet/lumo-emojis/love.png';
 import mildPanicGif from '@proton/styles/assets/img/meet/lumo-emojis/mild-panic.gif';
 import mildPanicPng from '@proton/styles/assets/img/meet/lumo-emojis/mild-panic.png';
+import mindBlownGif from '@proton/styles/assets/img/meet/lumo-emojis/mind-blown.gif';
+import mindBlownPng from '@proton/styles/assets/img/meet/lumo-emojis/mind-blown.png';
 import nineLivesGif from '@proton/styles/assets/img/meet/lumo-emojis/nine-lives.gif';
 import nineLivesPng from '@proton/styles/assets/img/meet/lumo-emojis/nine-lives.png';
 import partyGif from '@proton/styles/assets/img/meet/lumo-emojis/party.gif';
 import partyPng from '@proton/styles/assets/img/meet/lumo-emojis/party.png';
 import perkGif from '@proton/styles/assets/img/meet/lumo-emojis/perk.gif';
 import perkPng from '@proton/styles/assets/img/meet/lumo-emojis/perk.png';
+import popcornGif from '@proton/styles/assets/img/meet/lumo-emojis/popcorn.gif';
+import popcornPng from '@proton/styles/assets/img/meet/lumo-emojis/popcorn.png';
 import protonGif from '@proton/styles/assets/img/meet/lumo-emojis/proton.gif';
 import protonPng from '@proton/styles/assets/img/meet/lumo-emojis/proton.png';
 import rocketGif from '@proton/styles/assets/img/meet/lumo-emojis/rocket.gif';
 import rocketPng from '@proton/styles/assets/img/meet/lumo-emojis/rocket.png';
+import sadGif from '@proton/styles/assets/img/meet/lumo-emojis/sad.gif';
+import sadPng from '@proton/styles/assets/img/meet/lumo-emojis/sad.png';
 import schrodingerInBoxGif from '@proton/styles/assets/img/meet/lumo-emojis/schrodinger-in-box.gif';
 import schrodingerInBoxPng from '@proton/styles/assets/img/meet/lumo-emojis/schrodinger-in-box.png';
 import schrodingerOutOfBoxGif from '@proton/styles/assets/img/meet/lumo-emojis/schrodinger-out-of-box.gif';
@@ -45,8 +55,12 @@ import sitGif from '@proton/styles/assets/img/meet/lumo-emojis/sit.gif';
 import sitPng from '@proton/styles/assets/img/meet/lumo-emojis/sit.png';
 import slayGif from '@proton/styles/assets/img/meet/lumo-emojis/slay.gif';
 import slayPng from '@proton/styles/assets/img/meet/lumo-emojis/slay.png';
+import sleepyGif from '@proton/styles/assets/img/meet/lumo-emojis/sleepy.gif';
+import sleepyPng from '@proton/styles/assets/img/meet/lumo-emojis/sleepy.png';
 import sweepGif from '@proton/styles/assets/img/meet/lumo-emojis/sweep.gif';
 import sweepPng from '@proton/styles/assets/img/meet/lumo-emojis/sweep.png';
+import thankYouGif from '@proton/styles/assets/img/meet/lumo-emojis/thank-you.gif';
+import thankYouPng from '@proton/styles/assets/img/meet/lumo-emojis/thank-you.png';
 import thinkGif from '@proton/styles/assets/img/meet/lumo-emojis/think.gif';
 import thinkPng from '@proton/styles/assets/img/meet/lumo-emojis/think.png';
 import thisIsFineGif from '@proton/styles/assets/img/meet/lumo-emojis/this-is-fine.gif';
@@ -72,8 +86,10 @@ const LUMO_EMOJI_DEFINITIONS = {
         getName: () => c('Lumo emoji name').t`Browse folders`,
     },
     cash: { src: cashGif, stillSrc: cashPng, getName: () => c('Lumo emoji name').t`Cash` },
+    celebrate: { src: celebrateGif, stillSrc: celebratePng, getName: () => c('Lumo emoji name').t`Celebrate` },
     cheers: { src: cheersGif, stillSrc: cheersPng, getName: () => c('Lumo emoji name').t`Cheers` },
     'chefs-kiss': { src: chefsKissGif, stillSrc: chefsKissPng, getName: () => c('Lumo emoji name').t`Chef's kiss` },
+    coffee: { src: coffeeGif, stillSrc: coffeePng, getName: () => c('Lumo emoji name').t`Coffee` },
     cowboy: { src: cowboyGif, stillSrc: cowboyPng, getName: () => c('Lumo emoji name').t`Cowboy` },
     encrypt: { src: encryptGif, stillSrc: encryptPng, getName: () => c('Lumo emoji name').t`Encrypt` },
     gaming: { src: gamingGif, stillSrc: gamingPng, getName: () => c('Lumo emoji name').t`Gaming` },
@@ -81,11 +97,14 @@ const LUMO_EMOJI_DEFINITIONS = {
     happy: { src: happyGif, stillSrc: happyPng, getName: () => c('Lumo emoji name').t`Happy` },
     love: { src: loveGif, stillSrc: lovePng, getName: () => c('Lumo emoji name').t`Love` },
     'mild-panic': { src: mildPanicGif, stillSrc: mildPanicPng, getName: () => c('Lumo emoji name').t`Mild panic` },
+    'mind-blown': { src: mindBlownGif, stillSrc: mindBlownPng, getName: () => c('Lumo emoji name').t`Mind blown` },
     'nine-lives': { src: nineLivesGif, stillSrc: nineLivesPng, getName: () => c('Lumo emoji name').t`Nine lives` },
     party: { src: partyGif, stillSrc: partyPng, getName: () => c('Lumo emoji name').t`Party` },
     perk: { src: perkGif, stillSrc: perkPng, getName: () => c('Lumo emoji name').t`Perk` },
+    popcorn: { src: popcornGif, stillSrc: popcornPng, getName: () => c('Lumo emoji name').t`Popcorn` },
     proton: { src: protonGif, stillSrc: protonPng, getName: () => BRAND_NAME },
     rocket: { src: rocketGif, stillSrc: rocketPng, getName: () => c('Lumo emoji name').t`Rocket` },
+    sad: { src: sadGif, stillSrc: sadPng, getName: () => c('Lumo emoji name').t`Sad` },
     'schrodinger-in-box': {
         src: schrodingerInBoxGif,
         stillSrc: schrodingerInBoxPng,
@@ -99,7 +118,9 @@ const LUMO_EMOJI_DEFINITIONS = {
     search: { src: searchGif, stillSrc: searchPng, getName: () => c('Lumo emoji name').t`Search` },
     sit: { src: sitGif, stillSrc: sitPng, getName: () => c('Lumo emoji name').t`Sit` },
     slay: { src: slayGif, stillSrc: slayPng, getName: () => c('Lumo emoji name').t`Slay` },
+    sleepy: { src: sleepyGif, stillSrc: sleepyPng, getName: () => c('Lumo emoji name').t`Sleepy` },
     sweep: { src: sweepGif, stillSrc: sweepPng, getName: () => c('Lumo emoji name').t`Sweep` },
+    'thank-you': { src: thankYouGif, stillSrc: thankYouPng, getName: () => c('Lumo emoji name').t`Thank you` },
     think: { src: thinkGif, stillSrc: thinkPng, getName: () => c('Lumo emoji name').t`Think` },
     'this-is-fine': {
         src: thisIsFineGif,
