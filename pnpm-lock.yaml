@@ -305,6 +305,7 @@ overrides:
 packageExtensionsChecksum: sha256-1OxnDB4AOH7PfhLmp48x2LtWyermcwyh8QynApSetqA=
 
 patchedDependencies:
+  '@lexical/table@0.31.2': 3e35bf4fec82c0652d2811d1266298cf3b7ce54a64e8f9099c1a4106cadfd2f9
   '@mlc-ai/web-llm@0.2.32': f2db861fd9b2307065c0dd450cb8471d7a1aff76a29cd7e383fb2555e831b1eb
   '@pdf-lib/standard-fonts@1.0.0': d6f2355d44f27790cc3b1497d17218c245fcceb9d07c5c7f48b7419c6d4b41f6
   eslint-plugin-monorepo-cop@1.0.2: 18331ab9c2752991d3e27795073e268c410a84d3ee4d391a20ec2b629562fe90
@@ -1623,7 +1624,7 @@ importers:
         version: 0.31.2
       '@lexical/table':
         specifier: 0.31.2
-        version: 0.31.2
+        version: 0.31.2(patch_hash=3e35bf4fec82c0652d2811d1266298cf3b7ce54a64e8f9099c1a4106cadfd2f9)
       '@lexical/text':
         specifier: 0.31.2
         version: 0.31.2
@@ -32587,7 +32588,7 @@ snapshots:
       '@lexical/html': 0.31.2
       '@lexical/link': 0.31.2
       '@lexical/mark': 0.31.2
-      '@lexical/table': 0.31.2
+      '@lexical/table': 0.31.2(patch_hash=3e35bf4fec82c0652d2811d1266298cf3b7ce54a64e8f9099c1a4106cadfd2f9)
       '@lexical/utils': 0.31.2
       lexical: 0.31.2
       react: 18.3.1
@@ -32671,7 +32672,7 @@ snapshots:
       '@lexical/overflow': 0.31.2
       '@lexical/plain-text': 0.31.2
       '@lexical/rich-text': 0.31.2
-      '@lexical/table': 0.31.2
+      '@lexical/table': 0.31.2(patch_hash=3e35bf4fec82c0652d2811d1266298cf3b7ce54a64e8f9099c1a4106cadfd2f9)
       '@lexical/text': 0.31.2
       '@lexical/utils': 0.31.2
       '@lexical/yjs': 0.31.2(yjs@13.6.27)
@@ -32693,7 +32694,7 @@ snapshots:
     dependencies:
       lexical: 0.31.2
 
-  '@lexical/table@0.31.2':
+  '@lexical/table@0.31.2(patch_hash=3e35bf4fec82c0652d2811d1266298cf3b7ce54a64e8f9099c1a4106cadfd2f9)':
     dependencies:
       '@lexical/clipboard': 0.31.2
       '@lexical/utils': 0.31.2
@@ -32707,7 +32708,7 @@ snapshots:
     dependencies:
       '@lexical/list': 0.31.2
       '@lexical/selection': 0.31.2
-      '@lexical/table': 0.31.2
+      '@lexical/table': 0.31.2(patch_hash=3e35bf4fec82c0652d2811d1266298cf3b7ce54a64e8f9099c1a4106cadfd2f9)
       lexical: 0.31.2
 
   '@lexical/yjs@0.31.2(yjs@13.6.27)':
