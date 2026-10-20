@@ -330,6 +330,7 @@ export const handleSubscribeUser = async ({
     reportPaymentSuccess,
     reportPaymentFailure,
     telemetryContext,
+    provisioningToken,
 }: {
     api: Api;
     subscriptionData: SubscriptionData;
@@ -337,6 +338,7 @@ export const handleSubscribeUser = async ({
     reportPaymentSuccess: () => void;
     reportPaymentFailure: () => void;
     telemetryContext?: PaymentTelemetryContext;
+    provisioningToken?: string;
 }) => {
     if (!hasPlanIDs(subscriptionData.planIDs)) {
         return;
@@ -360,6 +362,8 @@ export const handleSubscribeUser = async ({
                         ? { Codes: [subscriptionData.checkResult.Coupon.Code] }
                         : undefined),
                     ...(isTrial ? { StartTrial: true } : {}),
+                    // Redeems a sales-provisioned link in the same request.
+                    ...(provisioningToken ? { ProvisioningToken: provisioningToken } : {}),
                 },
             },
             {
@@ -409,6 +413,7 @@ export const handleSetupUser = async ({
         clientType,
         ktActivation,
         productParam,
+        provisioningToken,
     } = cache;
 
     const userEmail = (() => {
@@ -443,6 +448,7 @@ export const handleSetupUser = async ({
             reportPaymentSuccess,
             reportPaymentFailure,
             telemetryContext,
+            provisioningToken,
         });
     }
 
