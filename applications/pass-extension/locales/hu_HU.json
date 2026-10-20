@@ -739,6 +739,12 @@
         "Az Ön jelszómenedzsere nem látható? Kérje."
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } további eredmény nem látható",
+        "${ hiddenResultsCount } további eredmény nem látható"
+      ]
+    },
     "Button": {
       "More info": [
         "További információk"
@@ -1395,6 +1401,15 @@
         "Felhasználónév"
       ]
     },
+    "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Találtunk ${ itemsCount } javaslatot, használd a billentyűzetet a navigáláshoz",
+        "Találtunk ${ itemsCount } javaslatot, használd a billentyűzetet a navigáláshoz"
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Használja a Fel és Le billentyűket a javaslatok eléréséhez és böngészéséhez. Nyomja meg az Enter billentyűt a választásának megerősítéséhez, vagy az Escape billentyűt a javaslatok doboz bezárásához."
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "\"${ payload.itemName }\" elem elvetve"
@@ -1960,10 +1975,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Az összes elem áthelyezése innen: \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Egy elem másik tárolóba történő áthelyezése törli a biztonságos hivatkozásokat.",
-        "Az elemek másik tárolóba történő áthelyezése törli a biztonságos hivatkozásokat."
       ],
       "Moving items": [
         "Elemek áthelyezése"
@@ -4327,6 +4338,9 @@
       "Excluded items": [
         "Kizárt elemek"
       ],
+      "Export": [
+        "Exportálás"
+      ],
       "Fill & copy password": [
         "Jelszó kitöltése és másolása"
       ],
@@ -4359,6 +4373,9 @@
       ],
       "Import - ${ date }": [
         "Importálva - ${ date }"
+      ],
+      "Import failed": [
+        "Importálás sikertelen"
       ],
       "Import to vault(s)": [
         "Importálás a tárolókba"

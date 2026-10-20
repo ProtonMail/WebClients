@@ -25,12 +25,6 @@
       ]
     },
     "Action": {
-      "${ PASS_SHORT_APP_NAME } for Android": [
-        "${ PASS_SHORT_APP_NAME } pentru Android"
-      ],
-      "${ PASS_SHORT_APP_NAME } for iOS": [
-        "${ PASS_SHORT_APP_NAME } pentru iOS"
-      ],
       "Accept": [
         "Acceptare"
       ],
@@ -238,6 +232,9 @@
       "Create a ${ BRAND_NAME } account": [
         "Creare cont ${ BRAND_NAME }"
       ],
+      "Create a login": [
+        "Creați o autentificare"
+      ],
       "Create a new vault": [
         "Creare seif"
       ],
@@ -339,6 +336,15 @@
       ],
       "Do not suggest on this website": [
         "Nu mai sugera pe acest site web"
+      ],
+      "Download for Linux": [
+        "Descărcare pentru Windows"
+      ],
+      "Download for macOS": [
+        "Descărcare pentru macOS"
+      ],
+      "Download for Windows": [
+        "Descărcare pentru Windows"
       ],
       "Download this CSV template": [
         "Descărcați acest șablon de fișier CSV"
@@ -493,6 +499,9 @@
       "Maximum views": [
         "Maxim vizualizări"
       ],
+      "More details about how to export": [
+        "Mai multe detalii despre cum se exportă"
+      ],
       "More info": [
         "Detalii"
       ],
@@ -540,6 +549,9 @@
       ],
       "Open navigation": [
         "Deschidere navigare"
+      ],
+      "Open platform selection dropdown": [
+        "Deschide meniul derulant pentru selectarea platformei"
       ],
       "Organize vaults": [
         "Organizare seifuri"
@@ -715,6 +727,9 @@
       "Sign out": [
         "Deconectare"
       ],
+      "Skip for now": [
+        "Ignorare momentan"
+      ],
       "Start from scratch": [
         "De la început"
       ],
@@ -849,6 +864,13 @@
       ],
       "Vault": [
         "Seif"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "Rezultate neafișate: ${ hiddenResultsCount }",
+        "Rezultate neafișate: ${ hiddenResultsCount }",
+        "Rezultate neafișate: ${ hiddenResultsCount }"
       ]
     },
     "Browser": {
@@ -1033,6 +1055,9 @@
       ],
       "Authentication failure: ${ message }": [
         "Eșuare autentificare: ${ message }"
+      ],
+      "Biometric authentication cancelled.": [
+        "Autentificarea biometrică a fost anulată."
       ],
       "Biometric authentication failed.": [
         "Autentificarea biometrică a eșuat."
@@ -1651,6 +1676,183 @@
         "Nume de utilizator"
       ]
     },
+    "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Sugestii găsite: ${ itemsCount }. Folosiți tastatura pentru a naviga.",
+        "Sugestii găsite: ${ itemsCount }. Folosiți tastatura pentru a naviga.",
+        "Sugestii găsite: ${ itemsCount }. Folosiți tastatura pentru a naviga."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Utilizați tastele sus și jos pentru a accesa și răsfoi sugestiile după introducere. Apăsați «Enter» pentru a confirma alegerea sau «Escape» pentru a închide caseta cu sugestii."
+      ]
+    },
+    "Import Tutorial": {
+      "${ name } saves your passwords in the ${ passwords } app. Open it and go to ${ file } → ${ exportAll }.": [
+        "${ name } vă salvează parolele în aplicația ${ passwords }. Deschideți-o și accesați ${ file } → ${ exportAll }."
+      ],
+      "Account & Data": [
+        "Cont și date"
+      ],
+      "Advanced Options": [
+        "Opțiuni avansate"
+      ],
+      "As a security measure, LastPass will email you to confirm the request. Open the email and click ${ continueExport }.": [
+        "Ca măsură de securitate, LastPass vă va trimite un e-mail pentru a confirma solicitarea. Deschideți-l și apăsați pe ${ continueExport }."
+      ],
+      "At the confirmation screen, log back into your ${ name } Vault and to ${ advancedOptions } → ${ manageYourVault } → ${ exportLabel } again.": [
+        "În ecranul de confirmare, reautentificați-vă în seiful ${ name } și accesați ${ advancedOptions } → ${ manageYourVault } → ${ exportLabel }."
+      ],
+      "Autofill and passwords": [
+        "Autocompletare și parole"
+      ],
+      "Choose ${ formatJson } as the file format, click ${ exportLabel } and confirm with your master password.": [
+        "Alegeți ${ formatJson } ca format de fișier, faceți clic pe ${ exportLabel } și confirmați cu parola principală."
+      ],
+      "Choose JSON downloads": [
+        "Alegeți descărcările JSON"
+      ],
+      "Choose the file format → Select ${ exportLabel }.": [
+        "Alegeți formatul fișierului → Selectați ${ exportLabel }."
+      ],
+      "Continue export": [
+        "Continuare exportare"
+      ],
+      "Download file": [
+        "Descărcare fișier"
+      ],
+      "Enter your 1Password master password, ensure ${ format1pux } is selected, and click ${ exportData }.": [
+        "Introduceți parola principală 1Password, asigurați-vă că ${ format1pux } este selectat și apăsați pe ${ exportData }."
+      ],
+      "Export": [
+        "Exportare"
+      ],
+      "Export All Passwords to File": [
+        "Exportare toate parolele în fișier"
+      ],
+      "Export Data": [
+        "Exportare date"
+      ],
+      "Export data": [
+        "Exportare date"
+      ],
+      "Export file format: 1PUX": [
+        "Format fișier de exportare: 1PUX"
+      ],
+      "Export items": [
+        "Exportare articole"
+      ],
+      "Export passwords": [
+        "Exportare parole"
+      ],
+      "Export to CSV": [
+        "Exportare în fișier CSV"
+      ],
+      "Export to TXT": [
+        "Exportare în TXT"
+      ],
+      "File": [
+        "Fișier"
+      ],
+      "Go to ${ exportPasswords } and select ${ downloadFile }.": [
+        "Accesați ${ exportPasswords } și selectați ${ downloadFile }."
+      ],
+      "Go to ${ passwords }.": [
+        "Accesare ${ passwords }."
+      ],
+      "Go to the settings to locate the export action.": [
+        "Accesați setări pentru a găsi acțiunea de exportare."
+      ],
+      "Go to ☰ → ⚙ ${ settings } → Click ${ downloadFile }.": [
+        "Accesați ☰ → ⚙ ${ settings } → faceți clic pe ${ downloadFile }."
+      ],
+      "Google Password Manager": [
+        "Managerul de parole Google"
+      ],
+      "Identify your password manager.": [
+        "Identificați-vă managerul de parole."
+      ],
+      "Manage your vault": [
+        "Gestionați-vă seiful"
+      ],
+      "Microsoft password manager": [
+        "Manager de parole Microsoft"
+      ],
+      "More actions": [
+        "Mai multe acțiuni"
+      ],
+      "Navigate to ${ settings } tab.": [
+        "Navigați la fila ${ settings }."
+      ],
+      "Open ${ name } and go to ${ advancedOptions } → ${ manageYourVault } → ${ exportLabel }.": [
+        "Deschideți ${ name } și accesați ${ advancedOptions } → ${ manageYourVault } → ${ exportLabel }."
+      ],
+      "Open ${ name } and go to ${ file } → ${ exportLabel } → your 1Password username.": [
+        "Deschideți ${ name } și accesați ${ file } → ${ exportLabel } → numele de utilizator 1Password."
+      ],
+      "Open ${ name } and go to ${ menu } → ${ option }.": [
+        "Deschideți ${ name } și accesați ${ menu } → ${ option }."
+      ],
+      "Open ${ name } and go to ⋮ → ${ passwordsAndAutofill } → ${ googlePasswordManager }.": [
+        "Deschideți ${ name } și accesați ⋮ → ${ passwordsAndAutofill } → ${ googlePasswordManager }."
+      ],
+      "Open ${ name } and go to ☰ → ${ settings } → ${ autoFill }.": [
+        "Deschideți ${ name } și accesați ☰ → ${ settings } → ${ autoFill }."
+      ],
+      "Open ${ name } and select ${ menu } → ${ option }.": [
+        "Deschideți ${ name } și accesați ${ menu } → ${ option }."
+      ],
+      "Open ${ name } and select ${ settings }.": [
+        "Deschideți ${ name } și selectați ${ settings }."
+      ],
+      "Open ${ name } and select ⋯.": [
+        "Deschideți ${ name } și selectați ⋯."
+      ],
+      "Open ${ name } and select ☰ → ${ passwords }.": [
+        "Deschideți ${ name } și selectați ☰ → ${ passwords }."
+      ],
+      "Passwords": [
+        "Parole"
+      ],
+      "Passwords and Autofill": [
+        "Parole și autocompletare"
+      ],
+      "Passwords and autofill": [
+        "Parole și autocompletare"
+      ],
+      "Select ${ exportLabel } → ${ chooseJson } → ${ exportAgain }.": [
+        "Selectați ${ exportLabel } → ${ chooseJson } → ${ exportAgain }."
+      ],
+      "Select ${ menu } → ${ option }.": [
+        "Selectați ${ menu } → ${ option }."
+      ],
+      "Select ${ option }.": [
+        "Selectați ${ option }."
+      ],
+      "Select the export format CSV.": [
+        "Selectați formatul de exportare CSV."
+      ],
+      "Select ⋯ → ${ exportPasswords }.": [
+        "Selectați ⋯ → ${ exportPasswords }."
+      ],
+      "Settings": [
+        "Setări"
+      ],
+      "Submit": [
+        "Trimitere"
+      ],
+      "This time, you’ll be asked to re-confirm your ${ name } username and password. Click ${ submit }.": [
+        "De data aceasta, vi se va cere să reconfirmați numele de utilizator și parola pentru ${ name }. Faceți clic pe ${ submit }."
+      ],
+      "Vault": [
+        "Seif"
+      ],
+      "Vault options": [
+        "Opțiuni seif"
+      ],
+      "your username": [
+        "numele de utilizator"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "Articolul „${ payload.itemName }” a fost respins."
@@ -1682,6 +1884,9 @@
         "Transferate: ${ forwardedEmailsCount }",
         "Transferate: ${ forwardedEmailsCount }",
         "Transferate: ${ forwardedEmailsCount }"
+      ],
+      "${ imported } of ${ total } (${ percentage }%)": [
+        "${ imported } din ${ total } (${ percentage }%)"
       ],
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } dorește să partajeze un articol cu un grup pe care îl administrați."
@@ -2057,6 +2262,9 @@
       "Domain: ${ domainPath } or @": [
         "Domeniu: ${ domainPath } sau @"
       ],
+      "Don’t close this tab": [
+        "Nu închideți fila"
+      ],
       "Download pass-cli from ${ passCliLink }.": [
         "Descărcare pass-cli de la ${ passCliLink }."
       ],
@@ -2256,6 +2464,9 @@
       "invites you to access items in": [
         "vă invită să accesați articolele din"
       ],
+      "iOS and Android Apps": [
+        "Aplicații iOS și Android"
+      ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Se pare că deja v-ați conectat la ${ PASS_APP_NAME }. Dacă încercați să vă autentificați cu un alt cont, deconectați-vă mai întâi de la extensie."
       ],
@@ -2357,9 +2568,7 @@
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
+        "Mutarea unui element într-un alt seif îi va șterge linkurile securizate."
       ],
       "Moving items": [
         "Se mută articolele."
@@ -2399,6 +2608,9 @@
       ],
       "No login found": [
         "Nu există date de autentificare."
+      ],
+      "No matching service. Try a different name.": [
+        "Nu există niciun serviciu corespondent. Încercați un alt nume."
       ],
       "No network connection": [
         "Nu există conexiune la rețea."
@@ -2448,6 +2660,12 @@
       ],
       "Open the ${ PASS_APP_NAME } popup": [
         "Deschidere fereastră flotantă ${ PASS_APP_NAME }"
+      ],
+      "Open the extension here.": [
+        "Deschideți extensia aici."
+      ],
+      "Open the extension to unlock it": [
+        "Deschideți extensia pentru a o debloca"
       ],
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Deschideți setările Safari, găsiți ${ PASS_APP_NAME }, accesați „Permisiuni” și activați permisiunile pentru site."
@@ -2696,6 +2914,12 @@
       ],
       "Save passkey": [
         "Salvare cheie de acces"
+      ],
+      "Scan to download": [
+        "Scanați pentru descărcare"
+      ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "Scanați pentru a descărca ${ PASS_APP_NAME } pentru iOS și Android"
       ],
       "Secure links": [
         "Legături web securizate"
@@ -3813,6 +4037,9 @@
       "LinkedIn account": [
         "Cont LinkdIn"
       ],
+      "Linux": [
+        "Linux"
+      ],
       "Login": [
         "Conectare"
       ],
@@ -3821,6 +4048,9 @@
       ],
       "Logins": [
         "Conectări"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Mailboxes": [
         "Conturi de e-mail"
@@ -4137,6 +4367,9 @@
       "Server": [
         "Server"
       ],
+      "Service": [
+        "Serviciu"
+      ],
       "Settings": [
         "Setări"
       ],
@@ -4355,6 +4588,9 @@
       ],
       "WiFi network": [
         "Rețea Wi-Fi"
+      ],
+      "Windows": [
+        "Windows"
       ],
       "Work details": [
         "Detalii loc de muncă"
@@ -4651,6 +4887,9 @@
       ],
       "E.g., ": [
         "Ex.: "
+      ],
+      "E.g.: Google": [
+        "Ex: Google"
       ],
       "Email address": [
         "Adresă e-mail"
@@ -4957,6 +5196,9 @@
       "Add mailbox": [
         "Adăugare cont de e-mail"
       ],
+      "Add one account": [
+        "Adăugați un cont"
+      ],
       "Adjust autofill behaviors to change where logins are suggested.": [
         "Ajustați comportamentele de completare automată pentru a schimba unde sunt sugerate datele de conectare."
       ],
@@ -4992,6 +5234,9 @@
       ],
       "Browser permission required": [
         "Necesită permisiunea navigatorului web"
+      ],
+      "Browsers": [
+        "Navigatoare web"
       ],
       "Cancel changing your email?": [
         "Anulați modificarea adresei de e-mail?"
@@ -5040,6 +5285,9 @@
       ],
       "Create subfolder in \"${ folderName }\"": [
         "Creare subfolder în „${ folderName }”"
+      ],
+      "Create your first login": [
+        "Creați-vă prima autentificare"
       ],
       "Created": [
         "Creat"
@@ -5139,14 +5387,35 @@
       "Excluded items": [
         "Articole excluse"
       ],
+      "Export": [
+        "Exportare"
+      ],
+      "Export from ${ provider.title }": [
+        "Exportare din ${ provider.title }"
+      ],
       "Fill & copy password": [
         "Completare și copiere parolă"
+      ],
+      "Fill in your details": [
+        "Completați-vă detaliile"
       ],
       "Fill password": [
         "Completare parolă"
       ],
+      "First login created": [
+        "Prima autentificare s-a creat"
+      ],
       "Folder options": [
         "Opțiuni foldere"
+      ],
+      "For security purposes, delete your exported file.": [
+        "Din motive de securitate, ștergeți fișierul exportat."
+      ],
+      "Get mobile and desktop apps": [
+        "Luați aplicațiile pentru mobile și desktop"
+      ],
+      "Get mobile apps": [
+        "Luați aplicații mobile"
       ],
       "Get Started": [
         "Începeți"
@@ -5175,8 +5444,29 @@
       "Import - ${ date }": [
         "Importare - ${ date }"
       ],
+      "Import completed with warnings": [
+        "Importare finalizată cu avertismente"
+      ],
+      "Import failed": [
+        "Importare eșuată"
+      ],
+      "Import successful": [
+        "Importare reușită"
+      ],
       "Import to vault(s)": [
         "Importare în seif(uri)"
+      ],
+      "Import your passwords in less than a minute": [
+        "Importați-vă parolele în mai puțin de un minut"
+      ],
+      "Important: Once your data has been imported, delete the exported file.": [
+        "Important: după ce datele au fost importate, ștergeți fișierul exportat."
+      ],
+      "Imported from:": [
+        "Importat din:"
+      ],
+      "Imported items:": [
+        "Articole importate:"
       ],
       "Importing your data": [
         "Se importă datele"
@@ -5254,6 +5544,9 @@
       "Move all items?": [
         "Mutați toate articolele?"
       ],
+      "Move everything at once": [
+        "Mutare ​​tot deodată"
+      ],
       "Move item to \"${ target }\"": [
         "Mutare articol în „${ target }”"
       ],
@@ -5290,6 +5583,9 @@
       "No shared secure links": [
         "Nu există legături web partajate"
       ],
+      "None of your items could be imported. See the details below.": [
+        "Niciunul dintre articole nu a putut fi importat. Consultați detaliile de mai jos."
+      ],
       "Open pagination": [
         "Deschidere paginare"
       ],
@@ -5307,6 +5603,9 @@
       ],
       "Password Health": [
         "Stare parolă"
+      ],
+      "Password managers": [
+        "Managere de parole"
       ],
       "Pause monitoring?": [
         "Suspendați monitorizarea?"
@@ -5384,6 +5683,9 @@
       "Select the default domain for aliases": [
         "Selectați domeniul implicit pentru aliasuri"
       ],
+      "Select your password manager": [
+        "Selectați managerul de parole"
+      ],
       "Set access level": [
         "Setare nivel de acces"
       ],
@@ -5408,8 +5710,14 @@
       "Shared via": [
         "Partajat prin"
       ],
+      "Some of your items could not be imported. See the details below.": [
+        "Unele articole nu s-au putut importa. Consultați detaliile de mai jos."
+      ],
       "SPF (Optional)": [
         "SPF (Opțional)"
+      ],
+      "Starting the extension": [
+        "Se pornește extensia"
       ],
       "Status": [
         "Stare"
@@ -5456,6 +5764,12 @@
       "Upgrade to check for compromised passwords": [
         "Modificați contul pentru a putea verifica parolele compromise"
       ],
+      "Upload": [
+        "Încărcare"
+      ],
+      "Upload your data": [
+        "Încărcați-vă datele"
+      ],
       "URL matching": [
         "Potrivire URL"
       ],
@@ -5477,6 +5791,9 @@
       "Want to learn more?": [
         "Doriți să aflați mai multe?"
       ],
+      "We'll guide you through the process. First choose where you currently store your passwords.": [
+        "Vă vom ghida prin acest proces. Mai întâi, alegeți locul în care vă stocați în prezent parolele."
+      ],
       "Weak password": [
         "Parolă slabă"
       ],
@@ -5494,6 +5811,12 @@
       ],
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Care este diferența dintre o notiță din ${ PASS_SHORT_APP_NAME } și o notiță din SimpleLogin?"
+      ],
+      "Which service do you want to create the login for?": [
+        "Pentru ce serviciu doriți să creați datele de autentificare?"
+      ],
+      "You are ready to get the most out of ${ PASS_APP_NAME }.": [
+        "Sunteți gata să profitați la maximum de ${ PASS_APP_NAME }."
       ],
       "You don't have any vaults": [
         "Nu aveți seifuri"
@@ -5515,6 +5838,9 @@
       ],
       "Your welcome gift": [
         "Bucurați-vă de versiunea de încercare"
+      ],
+      "You’re a step away from autofill magic!": [
+        "Sunteți la un pas de magia completării automate!"
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Urmează să ștergeți definitiv ${ aliasCount } alias.",

@@ -25,12 +25,6 @@
       ]
     },
     "Action": {
-      "${ PASS_SHORT_APP_NAME } for Android": [
-        "${ PASS_SHORT_APP_NAME } pre Android"
-      ],
-      "${ PASS_SHORT_APP_NAME } for iOS": [
-        "${ PASS_SHORT_APP_NAME } pre iOS"
-      ],
       "Accept": [
         "Prijať"
       ],
@@ -238,6 +232,9 @@
       "Create a ${ BRAND_NAME } account": [
         "Vytvoriť účet ${ BRAND_NAME }"
       ],
+      "Create a login": [
+        "Vytvorte prihlásenie"
+      ],
       "Create a new vault": [
         "Vytvoriť nový trezor"
       ],
@@ -339,6 +336,15 @@
       ],
       "Do not suggest on this website": [
         "Nenavrhovať na tejto webovej stránke"
+      ],
+      "Download for Linux": [
+        "Stiahnuť pre Linux"
+      ],
+      "Download for macOS": [
+        "Stiahnuť pre macOS"
+      ],
+      "Download for Windows": [
+        "Stiahnuť pre Windows"
       ],
       "Download this CSV template": [
         "Stiahnuť si túto CSV šablónu"
@@ -493,6 +499,9 @@
       "Maximum views": [
         "Maximálny počet zobrazení"
       ],
+      "More details about how to export": [
+        "Ďalšie informácie o tom, ako exportovať"
+      ],
       "More info": [
         "Viac informácií"
       ],
@@ -540,6 +549,9 @@
       ],
       "Open navigation": [
         "Otvoriť menu"
+      ],
+      "Open platform selection dropdown": [
+        "Rozbaľovacie menu na výber otvorenej platformy"
       ],
       "Organize vaults": [
         "Usporiadať trezory"
@@ -715,6 +727,9 @@
       "Sign out": [
         "Odhlásiť sa"
       ],
+      "Skip for now": [
+        "Nateraz preskočiť"
+      ],
       "Start from scratch": [
         "Začať úplne od začiatku"
       ],
@@ -851,6 +866,14 @@
       ],
       "Vault": [
         "Trezor"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } ďalší výsledok nebol zobrazený",
+        "${ hiddenResultsCount } ďalšie výsledky nezobrazené",
+        "${ hiddenResultsCount } ďalších výsledkov nezobrazených",
+        "${ hiddenResultsCount } ďalších výsledkov nezobrazených"
       ]
     },
     "Browser": {
@@ -1036,6 +1059,9 @@
       ],
       "Authentication failure: ${ message }": [
         "Zlyhanie overenia: ${ message }"
+      ],
+      "Biometric authentication cancelled.": [
+        "Biometrické overenie zrušené."
       ],
       "Biometric authentication failed.": [
         "Biometrické overenie zlyhalo."
@@ -1663,6 +1689,184 @@
         "Používateľské meno"
       ]
     },
+    "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Našiel sa ${ itemsCount } návrh, na navigáciu použite klávesnicu.",
+        "Našli sa ${ itemsCount } návrhy, na navigáciu použite klávesnicu.",
+        "Našlo sa ${ itemsCount } návrhov, na navigáciu použite klávesnicu.",
+        "Našlo sa ${ itemsCount } návrhov, na navigáciu použite klávesnicu."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Použite klávesy hore a dole pre prechádzanie návrhov po zadaní. Stlačte tlačidlo Enter pre potvrdenie vašej voľby, alebo tlačidlo Esc pre zatvorenie návrhov."
+      ]
+    },
+    "Import Tutorial": {
+      "${ name } saves your passwords in the ${ passwords } app. Open it and go to ${ file } → ${ exportAll }.": [
+        "${ name } ukladá vaše heslá v aplikácii ${ passwords }. Otvorte ju a prejdite na ${ file } → ${ exportAll }."
+      ],
+      "Account & Data": [
+        "Účet a dáta"
+      ],
+      "Advanced Options": [
+        "Pokročilé možnosti"
+      ],
+      "As a security measure, LastPass will email you to confirm the request. Open the email and click ${ continueExport }.": [
+        "Z bezpečnostných dôvodov vám LastPass pošle email s požiadavkou na potvrdenie. Otvorte tento email a kliknite na ${ continueExport }."
+      ],
+      "At the confirmation screen, log back into your ${ name } Vault and to ${ advancedOptions } → ${ manageYourVault } → ${ exportLabel } again.": [
+        "Na potvrdzovacej obrazovke sa znovu prihláste do svojho trezoru ${ name } a prejdite opäť do ${ advancedOptions } → ${ manageYourVault } → ${ exportLabel }."
+      ],
+      "Autofill and passwords": [
+        "Automatické vypĺňanie a heslá"
+      ],
+      "Choose ${ formatJson } as the file format, click ${ exportLabel } and confirm with your master password.": [
+        "Ako formát súboru vyberte ${ formatJson }, kliknite na ${ exportLabel } a potvrďte zadaním hlavného hesla."
+      ],
+      "Choose JSON downloads": [
+        "Vyberte si súbory na stiahnutie vo formáte JSON"
+      ],
+      "Choose the file format → Select ${ exportLabel }.": [
+        "Vyberte formát súboru → Vyberte ${ exportLabel }."
+      ],
+      "Continue export": [
+        "Pokračovať v exporte"
+      ],
+      "Download file": [
+        "Stiahnuť súbor"
+      ],
+      "Enter your 1Password master password, ensure ${ format1pux } is selected, and click ${ exportData }.": [
+        "Zadajte hlavné heslo pre 1Password, uistite sa, že je vybraná možnosť ${ format1pux }, a kliknite na ${ exportData }."
+      ],
+      "Export": [
+        "Exportovať"
+      ],
+      "Export All Passwords to File": [
+        "Exportovať všetky heslá do súboru"
+      ],
+      "Export Data": [
+        "Exportovať údaje"
+      ],
+      "Export data": [
+        "Exportovať údaje"
+      ],
+      "Export file format: 1PUX": [
+        "Formát exportovaného súboru: 1PUX"
+      ],
+      "Export items": [
+        "Exportovať položky"
+      ],
+      "Export passwords": [
+        "Exportovať heslá"
+      ],
+      "Export to CSV": [
+        "Export do CSV"
+      ],
+      "Export to TXT": [
+        "Export do TXT"
+      ],
+      "File": [
+        "Súbor"
+      ],
+      "Go to ${ exportPasswords } and select ${ downloadFile }.": [
+        "Prejdite do ${ exportPasswords } a vyberte ${ downloadFile }."
+      ],
+      "Go to ${ passwords }.": [
+        "Prejdite do ${ passwords }."
+      ],
+      "Go to the settings to locate the export action.": [
+        "Prejdite do nastavení a vyhľadajte akciu exportu."
+      ],
+      "Go to ☰ → ⚙ ${ settings } → Click ${ downloadFile }.": [
+        "Prejdite do ☰ → ⚙ ${ settings } → Kliknite na ${ downloadFile }."
+      ],
+      "Google Password Manager": [
+        "Google Password Manager"
+      ],
+      "Identify your password manager.": [
+        "Určite, akého správcu hesiel používate."
+      ],
+      "Manage your vault": [
+        "Spravujte svoj trezor"
+      ],
+      "Microsoft password manager": [
+        "Správca hesiel od Microsoft"
+      ],
+      "More actions": [
+        "Ďalšie akcie"
+      ],
+      "Navigate to ${ settings } tab.": [
+        "Prejdite na kartu ${ settings }."
+      ],
+      "Open ${ name } and go to ${ advancedOptions } → ${ manageYourVault } → ${ exportLabel }.": [
+        "Otvorte ${ name } a prejdite do ${ advancedOptions } → ${ manageYourVault } → ${ exportLabel }."
+      ],
+      "Open ${ name } and go to ${ file } → ${ exportLabel } → your 1Password username.": [
+        "Otvorte ${ name } a prejdite do ${ file } → ${ exportLabel } → vaše používateľské meno v 1Password."
+      ],
+      "Open ${ name } and go to ${ menu } → ${ option }.": [
+        "Otvorte ${ name } a prejdite do ${ menu } → ${ option }."
+      ],
+      "Open ${ name } and go to ⋮ → ${ passwordsAndAutofill } → ${ googlePasswordManager }.": [
+        "Otvorte ${ name } a prejdite do ⋮ → ${ passwordsAndAutofill } → ${ googlePasswordManager }."
+      ],
+      "Open ${ name } and go to ☰ → ${ settings } → ${ autoFill }.": [
+        "Otvorte ${ name } a prejdite do ☰ → ${ settings } → ${ autoFill }."
+      ],
+      "Open ${ name } and select ${ menu } → ${ option }.": [
+        "Otvorte ${ name } a vyberte ${ menu } → ${ option }."
+      ],
+      "Open ${ name } and select ${ settings }.": [
+        "Otvorte ${ name } a vyberte ${ settings }."
+      ],
+      "Open ${ name } and select ⋯.": [
+        "Otvorte ${ name } a vyberte ⋯."
+      ],
+      "Open ${ name } and select ☰ → ${ passwords }.": [
+        "Otvorte ${ name } a vyberte ☰ → ${ passwords }."
+      ],
+      "Passwords": [
+        "Heslo"
+      ],
+      "Passwords and Autofill": [
+        "Heslá a automatické vypĺňanie"
+      ],
+      "Passwords and autofill": [
+        "Heslá a automatické vypĺňanie"
+      ],
+      "Select ${ exportLabel } → ${ chooseJson } → ${ exportAgain }.": [
+        "Vyberte ${ exportLabel } → ${ chooseJson } → ${ exportAgain }."
+      ],
+      "Select ${ menu } → ${ option }.": [
+        "Vyberte ${ menu } → ${ option }."
+      ],
+      "Select ${ option }.": [
+        "Vyberte ${ option }."
+      ],
+      "Select the export format CSV.": [
+        "Vyberte formát exportu CSV."
+      ],
+      "Select ⋯ → ${ exportPasswords }.": [
+        "Vyberte ⋯ → ${ exportPasswords }."
+      ],
+      "Settings": [
+        "Nastavenia"
+      ],
+      "Submit": [
+        "Odoslať"
+      ],
+      "This time, you’ll be asked to re-confirm your ${ name } username and password. Click ${ submit }.": [
+        "Tentoraz budete požiadaní o opätovné potvrdenie svojho používateľského mena ${ name } a hesla. Kliknite na ${ submit }."
+      ],
+      "Vault": [
+        "Trezor"
+      ],
+      "Vault options": [
+        "Možnosti trezoru"
+      ],
+      "your username": [
+        "vaše používateľské meno"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "Položka \"${ payload.itemName }\" bola zamietnutá"
@@ -1699,6 +1903,9 @@
         "${ forwardedEmailsCount } preposlané",
         "${ forwardedEmailsCount } preposlaných",
         "${ forwardedEmailsCount } preposlaných"
+      ],
+      "${ imported } of ${ total } (${ percentage }%)": [
+        "${ imported } z ${ total } (${ percentage }%)"
       ],
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } chce zdieľať položku so skupinou, ktorú spravujete."
@@ -2081,6 +2288,9 @@
       "Domain: ${ domainPath } or @": [
         "Doména: ${ domainPath } alebo @"
       ],
+      "Don’t close this tab": [
+        "Túto kartu nezatvárajte"
+      ],
       "Download pass-cli from ${ passCliLink }.": [
         "Stiahnuť pass-cli z ${ passCliLink }."
       ],
@@ -2282,6 +2492,9 @@
       "invites you to access items in": [
         "vás pozýva na prístup k položkám v"
       ],
+      "iOS and Android Apps": [
+        "iOS a Android aplikácie"
+      ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Zdá sa, že účet ${ PASS_APP_NAME } už je prihlásený. Ak sa pokúšate prihlásiť pomocou iného účtu, najskôr sa odhláste z rozšírenia, prosím."
       ],
@@ -2385,10 +2598,7 @@
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
+        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy."
       ],
       "Moving items": [
         "Presúvanie položiek"
@@ -2428,6 +2638,9 @@
       ],
       "No login found": [
         "Prihlasovacie údaje nenájdené"
+      ],
+      "No matching service. Try a different name.": [
+        "Nenašla sa žiadna zhoda. Skúste iné meno."
       ],
       "No network connection": [
         "Žiadne sieťové pripojenie"
@@ -2479,6 +2692,12 @@
       ],
       "Open the ${ PASS_APP_NAME } popup": [
         "Otvoriť kontextové okno ${ PASS_APP_NAME }"
+      ],
+      "Open the extension here.": [
+        "Rozšírenie si môžete otvoriť tu."
+      ],
+      "Open the extension to unlock it": [
+        "Otvorte rozšírenie, aby ste ho odomkli"
       ],
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Otvorte nastavenia Safari, nájdite ${ PASS_APP_NAME }, prejdite do časti „Oprávnenia“ a povolte oprávnenia pre webové stránky."
@@ -2729,6 +2948,12 @@
       "Save passkey": [
         "Uložiť prístupový kľúč"
       ],
+      "Scan to download": [
+        "Naskenovaním stiahnite"
+      ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "Naskenujte a stiahnite si aplikáciu ${ PASS_APP_NAME } pre iOS a Android"
+      ],
       "Secure links": [
         "Bezpečné odkazy"
       ],
@@ -2920,6 +3145,9 @@
       ],
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Ak chcete skontrolovať importované údaje, kliknite na ikonu ${ PASS_APP_NAME } v nástrojovom paneli prehliadača."
+      ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission.": [
+        "Na nastavenie odomknutia pomocou biometrických údajov vyžaduje aplikácia ${ PASS_APP_NAME } nové povolenie prehliadača."
       ],
       "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
         "Na nastavenie odomykania pomocou biometrických údajov vyžaduje ${ PASS_APP_NAME } nové povolenie prehliadača. Po ich udelení sa rozšírenie znovu načíta. Následne znovu otvorte túto stránku, prosím."
@@ -3861,6 +4089,9 @@
       "LinkedIn account": [
         "Účet LinkedIn"
       ],
+      "Linux": [
+        "Linux"
+      ],
       "Login": [
         "Prihlásenie"
       ],
@@ -3869,6 +4100,9 @@
       ],
       "Logins": [
         "Prihlásenia"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Mailboxes": [
         "Poštové schránky"
@@ -4185,6 +4419,9 @@
       "Server": [
         "Server"
       ],
+      "Service": [
+        "Služba"
+      ],
       "Settings": [
         "Nastavenia"
       ],
@@ -4403,6 +4640,9 @@
       ],
       "WiFi network": [
         "WiFi sieť"
+      ],
+      "Windows": [
+        "Windows"
       ],
       "Work details": [
         "Podrobnosti o pracovnej činnosti"
@@ -4702,6 +4942,9 @@
       ],
       "E.g., ": [
         "Napr., "
+      ],
+      "E.g.: Google": [
+        "Napr. Google"
       ],
       "Email address": [
         "Emailová adresa"
@@ -5010,6 +5253,9 @@
       "Add mailbox": [
         "Pridať poštovú schránku"
       ],
+      "Add one account": [
+        "Pridajte jeden účet"
+      ],
       "Adjust autofill behaviors to change where logins are suggested.": [
         "Upravte správanie funkcie automatického vypĺňania, aby ste zmenili miesta, kde sa navrhujú prihlasovacie údaje."
       ],
@@ -5045,6 +5291,9 @@
       ],
       "Browser permission required": [
         "Je potrebné povolenie prehliadača"
+      ],
+      "Browsers": [
+        "Prehliadače"
       ],
       "Cancel changing your email?": [
         "Zrušiť zmenu vášho emailu?"
@@ -5093,6 +5342,9 @@
       ],
       "Create subfolder in \"${ folderName }\"": [
         "Vytvoriť podpriečinok v „${ folderName }“"
+      ],
+      "Create your first login": [
+        "Vytvorte vaše prvé prihlásenie"
       ],
       "Created": [
         "Vytvorené"
@@ -5193,14 +5445,35 @@
       "Excluded items": [
         "Vylúčené položky"
       ],
+      "Export": [
+        "Exportovať"
+      ],
+      "Export from ${ provider.title }": [
+        "Export z ${ provider.title }"
+      ],
       "Fill & copy password": [
         "Vyplniť a kopírovať heslo"
+      ],
+      "Fill in your details": [
+        "Vyplňte svoje údaje"
       ],
       "Fill password": [
         "Vyplniť heslo"
       ],
+      "First login created": [
+        "Prvé prihlásenie bolo vytvorené"
+      ],
       "Folder options": [
         "Možnosti priečinka"
+      ],
+      "For security purposes, delete your exported file.": [
+        "Z bezpečnostných dôvodov vymažte exportovaný súbor."
+      ],
+      "Get mobile and desktop apps": [
+        "Získať mobilné a desktopové aplikácie"
+      ],
+      "Get mobile apps": [
+        "Získať mobilné aplikácie"
       ],
       "Get Started": [
         "Začíname"
@@ -5229,8 +5502,29 @@
       "Import - ${ date }": [
         "Importované - ${ date }"
       ],
+      "Import completed with warnings": [
+        "Import bol dokončený s upozorneniami"
+      ],
+      "Import failed": [
+        "Import zlyhal"
+      ],
+      "Import successful": [
+        "Import úspešný"
+      ],
       "Import to vault(s)": [
         "Importovať do trezoru(ov)"
+      ],
+      "Import your passwords in less than a minute": [
+        "Importujte svoje heslá za menej ako minútu"
+      ],
+      "Important: Once your data has been imported, delete the exported file.": [
+        "Dôležité: Po importovaní údajov vymažte exportovaný súbor."
+      ],
+      "Imported from:": [
+        "Importované z:"
+      ],
+      "Imported items:": [
+        "Importované položky:"
       ],
       "Importing your data": [
         "Import vašich údajov"
@@ -5310,6 +5604,9 @@
       "Move all items?": [
         "Presunúť všetky položky?"
       ],
+      "Move everything at once": [
+        "Presuňte všetko naraz"
+      ],
       "Move item to \"${ target }\"": [
         "Presunúť položku do \"${ target }\""
       ],
@@ -5346,6 +5643,9 @@
       "No shared secure links": [
         "Žiadne zdieľané bezpečné odkazy"
       ],
+      "None of your items could be imported. See the details below.": [
+        "Žiadnu z vašich položiek sa nepodarilo naimportovať. Podrobnosti nájdete nižšie."
+      ],
       "Open pagination": [
         "Otvoriť stránkovanie"
       ],
@@ -5363,6 +5663,9 @@
       ],
       "Password Health": [
         "Stav hesla"
+      ],
+      "Password managers": [
+        "Správcovia hesiel"
       ],
       "Pause monitoring?": [
         "Pozastaviť monitorovanie?"
@@ -5442,6 +5745,9 @@
       "Select the default domain for aliases": [
         "Vyberte predvolenú doménu pre aliasy"
       ],
+      "Select your password manager": [
+        "Vyberte vášho správcu hesiel"
+      ],
       "Set access level": [
         "Nastavte úroveň prístupu"
       ],
@@ -5466,8 +5772,14 @@
       "Shared via": [
         "Zdieľané cez"
       ],
+      "Some of your items could not be imported. See the details below.": [
+        "Niektoré z vašich položiek sa nepodarilo importovať. Podrobnosti nájdete nižšie."
+      ],
       "SPF (Optional)": [
         "SPF (nepovinné)"
+      ],
+      "Starting the extension": [
+        "Spúšťanie rozšírenia"
       ],
       "Status": [
         "Stav"
@@ -5514,6 +5826,12 @@
       "Upgrade to check for compromised passwords": [
         "Aktualizujte, aby ste skontrolovali, či nie sú vaše heslá ohrozené"
       ],
+      "Upload": [
+        "Nahrať"
+      ],
+      "Upload your data": [
+        "Nahrajte svoje údaje"
+      ],
       "URL matching": [
         "Zhoda URL"
       ],
@@ -5535,6 +5853,9 @@
       "Want to learn more?": [
         "Chcete sa dozvedieť viac?"
       ],
+      "We'll guide you through the process. First choose where you currently store your passwords.": [
+        "Prevedieme vás týmto procesom. Najskôr si vyberte, kde momentálne ukladáte svoje heslá."
+      ],
       "Weak password": [
         "Slabé heslo"
       ],
@@ -5552,6 +5873,12 @@
       ],
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Aký je rozdiel medzi poznámkou v ${ PASS_SHORT_APP_NAME } a poznámkou v SimpleLogin?"
+      ],
+      "Which service do you want to create the login for?": [
+        "Pre ktorú službu chcete vytvoriť prihlasovacie údaje?"
+      ],
+      "You are ready to get the most out of ${ PASS_APP_NAME }.": [
+        "Ste pripravení využiť ${ PASS_APP_NAME } na maximum."
       ],
       "You don't have any vaults": [
         "Nemáte žiadne trezory"
@@ -5573,6 +5900,9 @@
       ],
       "Your welcome gift": [
         "Váš darček na privítanie"
+      ],
+      "You’re a step away from autofill magic!": [
+        "Ste už len krok od zázraku automatického vypĺňania!"
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Chystáte sa natrvalo vymazať ${ aliasCount } alias.",
