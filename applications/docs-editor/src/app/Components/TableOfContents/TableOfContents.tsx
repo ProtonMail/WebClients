@@ -270,7 +270,7 @@ function TableOfContentsRenderer({ tableOfContents, reportTelemetry, editorHidde
           }}
         />
 
-        <ul className="toc-list flex min-w-0 flex-1 flex-col overflow-y-auto">
+        <ul className="toc-list flex min-w-0 flex-1 flex-col flex-nowrap overflow-y-auto">
           {tableOfContents.map(([key, text, tag]) => (
             <ContentItem key={key} nodeKey={key} text={text} tag={tag} scrollToNode={handleHeadingClick} />
           ))}
