@@ -1,4 +1,4 @@
-import type { CatPose } from './catPose';
+import { CatPose, CatTrick } from './catPose';
 import catSpriteManifestJson from './catSpriteManifest.json';
 
 interface CatSpriteStep {
@@ -26,8 +26,23 @@ export interface CatSpriteManifest {
 
 export const CAT_SPRITE_MANIFEST: CatSpriteManifest = catSpriteManifestJson;
 
+const SWEEP_LINGER_MS = 1250;
+
 const sumStepMs = (steps: CatSpriteStep[]) => {
     return steps.reduce((total, step) => total + step.ms, 0);
+};
+
+const playOnceMs = (pose: CatPose, lingerMs: number) => {
+    return sumStepMs(CAT_SPRITE_MANIFEST.poses[pose].steps.slice(0, -1)) + lingerMs;
+};
+
+export const SWEEP_MS = playOnceMs(CatPose.SWEEP, SWEEP_LINGER_MS);
+
+export const CAT_TRICK_MS: Record<CatTrick, number> = {
+    [CatTrick.SCHRODINGER_IN_BOX]: playOnceMs(CatPose.SCHRODINGER_IN_BOX, 800),
+    [CatTrick.SCHRODINGER_OUT_OF_BOX]: playOnceMs(CatPose.SCHRODINGER_OUT_OF_BOX, 600),
+    [CatTrick.NINE_LIVES]: playOnceMs(CatPose.NINE_LIVES, 400),
+    [CatTrick.ENCRYPT]: playOnceMs(CatPose.ENCRYPT, 1000),
 };
 
 export const getBackgroundPosition = ({ y, width }: CatSpritePose, cell: number, pixelRem: number) => {

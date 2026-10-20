@@ -12,6 +12,8 @@ const READ_ACTIVITIES = new Map<string, CatActivity>([
     ['find_contacts', CatActivity.SEARCH],
 ]);
 const DRAFT_TOOLS = new Set(['create_draft', 'revise_draft']);
+const MOVE_TOOL = 'move_emails';
+const TRASH_LOCATION = 'trash';
 
 /** A read's chip lands once the read is done, so its activity lasts until Lumo's next step or reply. */
 export const selectCatActivity = (items: LumoAgentItem[], isBusy: boolean): CatActivity | null => {
@@ -30,4 +32,17 @@ export const selectCatActivity = (items: LumoAgentItem[], isBusy: boolean): CatA
         return CatActivity.WRITE;
     }
     return null;
+};
+
+const isAppliedTrash = (item: LumoAgentItem) => {
+    return (
+        item.kind === 'confirm' &&
+        item.status === ConfirmStatus.APPLIED &&
+        item.action.type === MOVE_TOOL &&
+        item.action.location === TRASH_LOCATION
+    );
+};
+
+export const findLastAppliedTrashId = (items: LumoAgentItem[]): number | undefined => {
+    return items.filter(isAppliedTrash).at(-1)?.id;
 };

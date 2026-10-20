@@ -273,6 +273,33 @@ describe('LumoFloatingPanel', () => {
         expect(shownSprite().pose).toBe(CatPose.WATCH_LEFT);
     });
 
+    it('plays a trick phrase instead of sending it, mirrored to face the card on the left', async () => {
+        await renderPanel({ shownSide: PanelSide.LEFT });
+        const { interceptSend } = jest.mocked(ConnectedLumoPromptBar).mock.lastCall![0];
+
+        let isIntercepted = false;
+        act(() => {
+            isIntercepted = interceptSend!('Nine lives!');
+        });
+
+        expect(isIntercepted).toBe(true);
+        expect(shownSprite().pose).toBe(CatPose.NINE_LIVES);
+        expect(isCatMirrored()).toBe(true);
+    });
+
+    it('lets any other message through to Lumo', async () => {
+        await renderPanel();
+        const { interceptSend } = jest.mocked(ConnectedLumoPromptBar).mock.lastCall![0];
+
+        let isIntercepted = true;
+        act(() => {
+            isIntercepted = interceptSend!('archive the invoices');
+        });
+
+        expect(isIntercepted).toBe(false);
+        expect(shownSprite().pose).toBe(CatPose.SIT);
+    });
+
     it.each([
         ['opens the closed card', false, 1],
         ['keeps the open card as it is', true, 0],
