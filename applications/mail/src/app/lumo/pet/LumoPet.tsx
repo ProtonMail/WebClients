@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { getConversationActions } from '@proton/llm/lib/lumoAgent/ui/LumoConversationHeaderActions';
 import { useLumoAgentDrawer } from '@proton/llm/lib/lumoAgent/ui/lumoAgentDrawerContext';
+import { isAgentGenerating } from '@proton/llm/lib/lumoAgent/ui/pendingConfirm';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -13,7 +14,9 @@ import { PanelSide } from '../floating/panelSide';
 import CatSprite from './CatSprite';
 import LumoPetMenu from './LumoPetMenu';
 import { selectCatPose } from './catPose';
+import { useCatActivity } from './useCatActivity';
 import type { CatMotion } from './useCatMotion';
+import { useCelebration } from './useCelebration';
 
 import './LumoPet.scss';
 
@@ -29,15 +32,18 @@ interface CatActions {
 interface Props {
     side: PanelSide;
     isPanelOpen: boolean;
+    isTyping: boolean;
     motion: CatMotion;
     actions: CatActions;
     onJumpEnd: () => void;
 }
 
-const LumoPet = ({ side, isPanelOpen, motion, actions, onJumpEnd }: Props) => {
+const LumoPet = ({ side, isPanelOpen, isTyping, motion, actions, onJumpEnd }: Props) => {
     const { run, jump, isHidden } = motion;
     const { onToggle, onMove, onDock, onNewChat, onHide, onReveal } = actions;
-    const { hasConversation, openDebugReport } = useLumoAgentDrawer();
+    const { items, isBusy, lastChainEnd, hasConversation, openDebugReport } = useLumoAgentDrawer();
+    const isCelebrating = useCelebration(isBusy, lastChainEnd);
+    const activity = useCatActivity(items, isBusy);
     const [isHovered, setIsHovered] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -91,6 +97,12 @@ const LumoPet = ({ side, isPanelOpen, motion, actions, onJumpEnd }: Props) => {
         isHidden,
         run,
         isHovered,
+        isChatOpen: isPanelOpen,
+        activity,
+        isThinking: isAgentGenerating(items, isBusy),
+        isCelebrating,
+        isTyping,
+        side,
     });
 
     return (
