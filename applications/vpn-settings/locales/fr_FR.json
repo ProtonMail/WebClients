@@ -541,9 +541,6 @@
       "Done": [
         "Terminé"
       ],
-      "Downgrade": [
-        "Passer à un abonnement inférieur"
-      ],
       "Download": [
         "Télécharger"
       ],
@@ -1017,9 +1014,6 @@
       ],
       "Remove all other devices": [
         "Retirer tous les autres appareils"
-      ],
-      "Remove bonuses": [
-        "Retirer les bonus"
       ],
       "Remove button": [
         "Retirer le bouton"
@@ -1973,11 +1967,6 @@
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Cette offre n'est malheureusement pas disponible avec votre abonnement actuel. Mais vous pouvez profiter de ${ discountPercentage } de réduction sur ${ plan.Title } en vous abonnant pour ${ cycle } mois.",
         "Cette offre n'est malheureusement pas disponible avec votre abonnement actuel. Mais vous pouvez profiter de ${ discountPercentage } de réduction sur ${ plan.Title } en vous abonnant pour ${ cycle } mois."
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "Garantie satisfait ou remboursé pendant 30 jours"
       ]
     },
     "bf2023: Title": {
@@ -5920,14 +5909,6 @@
         "Voir l'invitation"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "Le groupe familial n'est pas reconnu. Nous vous invitons à réessayer."
-      ],
-      "Organization not recognized. Try again.": [
-        "L'organisation n'est pas reconnue. Nous vous invitons à réessayer."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "Groupes ${ BRAND_NAME }"
@@ -6075,22 +6056,8 @@
       ]
     },
     "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "Saisissez le nom du groupe familial pour confirmer"
-      ],
-      "Enter organization name to confirm": [
-        "Saisissez le nom de l'organisation pour confirmer"
-      ],
       "Family name": [
         "Nom de la famille"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Ceci supprimera définitivement tous les sous-utilisateurs, comptes et données associés à votre organisation."
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Cela retirera toutes les fonctionnalités premium de ${ BRAND_NAME } pour chaque membre de la famille."
       ]
     },
     "familyOffer_2023:Settings section title": {
@@ -6118,12 +6085,6 @@
       ],
       "Change family name": [
         "Modifier le nom de la famille"
-      ],
-      "Delete family group?": [
-        "Supprimer le groupe familial ?"
-      ],
-      "Delete organization?": [
-        "Supprimer l'organisation ?"
       ],
       "Edit user storage": [
         "Modifiez l'espace de stockage de l'utilisateur"
@@ -7328,18 +7289,6 @@
         "${ total } utilisateur trouvé",
         "${ total } utilisateurs trouvés"
       ],
-      "${ vaultLink } created": [
-        "${ vaultLink } a été créé."
-      ],
-      "${ vaultLink } deleted": [
-        "${ vaultLink } a été supprimé."
-      ],
-      "${ vaultLink } shared with email": [
-        "${ vaultLink } a été partagé par e-mail."
-      ],
-      "${ vaultLink } updated": [
-        "${ vaultLink } a été mis à jour."
-      ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
         "${ VPN_SHORT_APP_NAME } cache votre trafic. ${ PASS_SHORT_APP_NAME } cache votre identité : alias de messagerie **hide-my-email** illimités et **alertes dark web** en cas de fuite de vos données."
       ],
@@ -7411,13 +7360,6 @@
         "${ invisibleCount } de plus",
         "${ invisibleCount } de plus"
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } d'espace de stockage supplémentaire"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } connexion pour ${ VPN_APP_NAME } (vous pouvez connecter plus d'appareils au VPN)",
-        "+${ organization.BonusVPN } connexions pour ${ VPN_APP_NAME } (vous pouvez connecter plus d'appareils au VPN)"
-      ],
       "1 device per user": [
         "1 appareil par utilisateur"
       ],
@@ -7428,9 +7370,6 @@
         "2FA désactivée"
       ],
       "30-day money-back guarantee": [
-        "Garantie satisfait ou remboursé pendant 30 jours"
-      ],
-      "30-day money-back guarantee.": [
         "Garantie satisfait ou remboursé pendant 30 jours"
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
@@ -7713,9 +7652,6 @@
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "En désactivant la surveillance de compte, vous effacerez aussi l'ensemble de votre historique. Voulez-vous vraiment la désactiver ?"
       ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "En passant à l'abonnement Free, vous perdrez définitivement ces avantages, même si vous repassez par la suite à un abonnement supérieur."
-      ],
       "By leaving now, changes may not be saved": [
         "En quittant maintenant, les modifications ne seront peut-être pas sauvegardées."
       ],
@@ -7991,9 +7927,6 @@
       ],
       "Downgrade": [
         "Passer à un abonnement inférieur"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Passer à un abonnement inférieur mettra fin à toutes les connexions vers les serveurs payants ${ VPN_APP_NAME }."
       ],
       "Download ${ mobileConfigArtifact } and open it on each Mac to install the profile, then approve it in System Settings.": [
         "Téléchargez ${ mobileConfigArtifact } et ouvrez-le sur chaque Mac pour installer le profil, puis validez-le dans les réglages système."
@@ -8352,15 +8285,6 @@
       "If you previously had a personal ${ BRAND_NAME } account with this address, you can recover your data separately.": [
         "Si vous aviez précédemment un compte ${ BRAND_NAME } personnel avec cette adresse, vous pouvez récupérer vos données séparément."
       ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "En passant à un abonnement inférieur, vous perdrez l'accès aux fonctionnalités payantes de ${ MAIL_APP_NAME } et ${ VPN_APP_NAME }."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "En passant à un abonnement inférieur, vous perdrez l'accès aux fonctionnalités payantes de ${ MAIL_APP_NAME }, dont l'espace de stockage et les filtres supplémentaires."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "En passant à un abonnement inférieur, vous perdrez l'accès aux fonctionnalités payantes de ${ VPN_APP_NAME }."
-      ],
       "If you recently reset your password, you can ${ recoveryMethodLink } to unlock your data. If this is due to an old password reset, you can stop the message from showing again.": [
         "Si vous avez récemment réinitialisé votre mot de passe, vous pouvez ${ recoveryMethodLink } pour déverrouiller vos données. Si cela est dû à une ancienne réinitialisation de mot de passe, vous pouvez empêcher le message d'apparaître."
       ],
@@ -8440,21 +8364,6 @@
       "Invalid code. ${ RequestNewCodeLink } and try again.": [
         "Le code n'est pas valide. ${ RequestNewCodeLink } et réessayez."
       ],
-      "Invite deleted": [
-        "L'invitation a été supprimée."
-      ],
-      "Invite for new user deleted": [
-        "L'invitation pour le nouvel utilisateur a été supprimée."
-      ],
-      "Invite for organization accepted": [
-        "L'invitation pour l'organisation a été acceptée."
-      ],
-      "Invite for organization created": [
-        "L'invitation pour l'organisation a été créée."
-      ],
-      "Invite rejected": [
-        "L'invitation a été refusée."
-      ],
       "Invite successfully sent": [
         "L'invitation a été envoyée.",
         "Les invitations ont été envoyées."
@@ -8470,54 +8379,6 @@
       ],
       "It's better to have:": [
         "Il est préférable d'avoir :"
-      ],
-      "Item autofilled in ${ vaultLink }": [
-        "L'élément a été rempli automatiquement dans ${ vaultLink }."
-      ],
-      "Item autofilled in vault": [
-        "L'élément dans le coffre-fort a été rempli automatiquement."
-      ],
-      "Item created in ${ vaultLink }": [
-        "L'élément a été créé dans ${ vaultLink }."
-      ],
-      "Item created in vault": [
-        "L'élément dans le coffre-fort a été créé."
-      ],
-      "Item deleted from ${ vaultLink }": [
-        "L'élément a été supprimé de ${ vaultLink }."
-      ],
-      "Item deleted from vault": [
-        "L'élément a été supprimé du coffre-fort."
-      ],
-      "Item flags changed in ${ vaultLink }": [
-        "Les indicateurs d'élément ont été modifiés dans ${ vaultLink }."
-      ],
-      "Item flags changed in vault": [
-        "Les indicateurs de l'élément ont été modifiés dans le coffre-fort."
-      ],
-      "Item in ${ vaultLink } trashed": [
-        "L'élément dans ${ vaultLink } a été déplacé dans la corbeille."
-      ],
-      "Item in ${ vaultLink } untrashed": [
-        "L'élément dans ${ vaultLink } a été retiré de la corbeille."
-      ],
-      "Item in vault trashed": [
-        "L'élément dans le coffre-fort a été envoyé dans la corbeille."
-      ],
-      "Item in vault untrashed": [
-        "L'élément dans le coffre-fort a été retiré de la corbeille."
-      ],
-      "Item read in ${ vaultLink }": [
-        "L'élément a été lu dans ${ vaultLink }."
-      ],
-      "Item read in vault": [
-        "L'élément dans le coffre-fort a été lu."
-      ],
-      "Item updated in ${ vaultLink }": [
-        "L'élément a été mis à jour dans ${ vaultLink }."
-      ],
-      "Item updated in vault": [
-        "L'élément dans le coffre-fort a été mis à jour."
       ],
       "It’s often the easiest way to recover your account if you’re signed in.": [
         "Il s'agit généralement de la manière la plus simple de récupérer votre compte si vous êtes connecté."
@@ -8681,9 +8542,6 @@
       "New group created via your identity provider and pending review.": [
         "Nouveau groupe ajouté via votre fournisseur d'identité et en attente d'examen."
       ],
-      "New user invited to organization": [
-        "Le nouvel utilisateur a été invité à rejoindre l'organisation."
-      ],
       "New VPN connection data will stop being collected and shown.": [
         "Les nouvelles données de connexion du VPN ne seront plus collectées ni affichées."
       ],
@@ -8814,15 +8672,6 @@
       ],
       "Paid for a plan": [
         "Vous avez payé pour un abonnement."
-      ],
-      "Pass Monitor - custom email confirmed": [
-        "Pass Monitor - l'e-mail personnalisé a été confirmé."
-      ],
-      "Pass Monitor - custom email created": [
-        "Pass Monitor - l'e-mail personnalisé a été créé."
-      ],
-      "Pass Monitor - custom email deleted": [
-        "Pass Monitor - l'e-mail personnalisé a été supprimé."
       ],
       "Pass usage logs": [
         "Journaux d'utilisation de Pass"
@@ -9123,21 +8972,9 @@
       "Setting up your organization": [
         "Configuration de votre organisation"
       ],
-      "Shared ${ vaultLink } deleted": [
-        "Le lien partagé ${ vaultLink } a été supprimé."
-      ],
-      "Shared ${ vaultLink } updated": [
-        "Le partage ${ vaultLink } a été mis à jour."
-      ],
       "Shared server country (${ countriesCount })": [
         "Pays avec serveur partagé (${ countriesCount })",
         "Pays avec serveur partagé (${ countriesCount })"
-      ],
-      "Shared vault deleted": [
-        "Le coffre-fort partagé a été supprimé."
-      ],
-      "Shared vault updated": [
-        "Le coffre-fort partagé a été mis à jour."
       ],
       "Sign in only": [
         "Connexion uniquement"
@@ -9150,9 +8987,6 @@
       ],
       "Signed up": [
         "Inscrit"
-      ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Votre compte bénéficie de fonctionnalités supplémentaires parce que vous êtes un utilisateur fidèle."
       ],
       "Smart Routed through a different country.": [
         "Routé via Smart Routing à travers un autre pays."
@@ -9573,9 +9407,6 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "ID unique généré par votre fournisseur d'identité. Il s'agit généralement d'une URL qui comporte le nom de votre fournisseur d'identité (par ex. https://idp.exemple.fr/XXXXX)."
       ],
-      "Unknown event type": [
-        "Type d'événement inconnu"
-      ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Si vous ne vous déconnectez pas de votre compte ou ne changez pas votre mot de passe, votre session restera active. Les sessions expirent après 60 jours d'inactivité."
       ],
@@ -9665,21 +9496,6 @@
       ],
       "Using a different MDM? Any MDM that supports deploying a configuration profile will work. Refer to your MDM's documentation on how to upload and assign it to your device fleet.": [
         "Vous utilisez une autre solution MDM ? Toute solution MDM prenant en charge le déploiement d'un profil de configuration fera l'affaire. Reportez-vous à la documentation de votre solution MDM pour savoir comment le télécharger et l'attribuer à votre parc d'appareils."
-      ],
-      "Vault created": [
-        "Le coffre-fort a été créé."
-      ],
-      "Vault deleted": [
-        "Le coffre-fort a été supprimé."
-      ],
-      "Vault either deleted or requires access permissions": [
-        "Le coffre-fort est supprimé ou nécessite des autorisations d'accès."
-      ],
-      "Vault shared with email": [
-        "Coffre-fort partagé par e-mail"
-      ],
-      "Vault updated": [
-        "Le coffre-fort a été mis à jour."
       ],
       "Verification code sent.": [
         "Le code de vérification a été envoyé."
@@ -9809,9 +9625,6 @@
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Quand vous activez SAML pour ${ appName } dans votre fournisseur d'identité, vous pouvez être invité à utiliser l'URL de rappel (ACS) et l'ID de l'émetteur. Il vous suffit de copier-coller les données ci-dessous dans les champs de votre fournisseur d'identité."
-      ],
-      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
-        "Quand vous annulez votre abonnement payant en cours, le solde de votre abonnement vous est restitué sous forme de crédits de compte et vous passez à l'abonnement ${ BRAND_NAME } ${ PLANS.FREE }."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Lorsque vous annulez votre abonnement, ce dernier ne sera pas renouvelé. Toutefois, vous pourrez toujours profiter des avantages jusqu'à la fin de la période. Après cela, vous passerez à un abonnement ${ BRAND_NAME } Free."
@@ -10004,9 +9817,6 @@
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "Vous devez activer votre clé privée d'organisation avec le mot de passe de clé d'organisation de sauvegarde fourni par l'administrateur de votre organisation."
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Vous devez désactiver ou retirer vos autres utilisateurs ${ MAIL_APP_NAME }, adresses et domaines personnalisés avant de pouvoir passer à un abonnement inférieur."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Pour pouvoir ajouter PayPal comme méthode de paiement, vous devez associer une carte de paiement ou un compte bancaire à votre compte PayPal."
@@ -10893,6 +10703,9 @@
       "Issuer ID": [
         "ID de l'émetteur"
       ],
+      "Item": [
+        "Élément"
+      ],
       "Keep me signed in": [
         "Se souvenir de moi"
       ],
@@ -11317,6 +11130,9 @@
       "Value": [
         "Valeur"
       ],
+      "Vault": [
+        "Coffre-fort"
+      ],
       "Verification code": [
         "Code de vérification"
       ],
@@ -11680,9 +11496,6 @@
       ],
       "use a data recovery method": [
         "utilisez une méthode de récupération des données"
-      ],
-      "Vault": [
-        "Coffre-fort"
       ],
       "View guide": [
         "Voir le guide"
@@ -12286,9 +12099,6 @@
       ]
     },
     "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passer à ${ downgradedPlanName }"
-      ],
       "Explore all ${ BRAND_NAME } plans": [
         "Découvrir tous les abonnements ${ BRAND_NAME }"
       ],
@@ -14365,7 +14175,7 @@
       ]
     },
     "Payments.iDEAL": {
-      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
         "En confirmant, vous autorisez ${ BRAND_NAME } et Stripe, notre prestataire de services de paiement, à prélever les futurs paiements liés à votre abonnement sur ce compte bancaire par prélèvement SEPA, et votre banque à débiter ces montants. Votre premier paiement est effectué dès maintenant par ${ IDEAL_WERO_BRAND_NAME }. Votre abonnement est renouvelé automatiquement jusqu’à ce que vous le résiliiez ; nous vous en informerons avant chaque prélèvement. Pour les prélèvements automatiques, vous pouvez demander un remboursement à votre banque dans un délai de 8 semaines à compter de la date de prélèvement, conformément aux conditions de votre contrat bancaire. Cela ne s'applique pas au paiement ${ IDEAL_WERO_BRAND_NAME } que vous effectuez actuellement."
       ]
     },
@@ -16918,9 +16728,6 @@
       "upgrade for more storage": [
         "changer d'abonnement pour augmenter votre espace de stockage"
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Nous ajouterons les crédits restants à votre compte ${ BRAND_NAME }."
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "Il vous reste encore **${ daysRemaining }** jour sur votre compte **${ currentPlanName }**.",
         "Il vous reste encore **${ daysRemaining }** jours sur votre compte **${ currentPlanName }**."
@@ -17677,9 +17484,6 @@
       "You have successfully canceled your subscription.": [
         "Vous avez résilié votre abonnement."
       ],
-      "You have successfully unsubscribed": [
-        "La désinscription a été effectuée."
-      ],
       "You will receive your username via email within a minute if you entered a valid recovery email address.": [
         "Vous recevrez votre nom d’utilisateur par e-mail dans une minute si vous avez saisi une adresse e-mail de récupération valide."
       ],
@@ -18248,12 +18052,6 @@
       "Confirm": [
         "Confirmer"
       ],
-      "Confirm downgrade": [
-        "Confirmer le passage à un abonnement inférieur"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Confirmer la perte des bonus ${ BRAND_NAME }"
-      ],
       "Connect a Gmail address": [
         "Connectez une adresse Gmail"
       ],
@@ -18480,9 +18278,6 @@
       ],
       "Downgrade account": [
         "Passer à un abonnement inférieur"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "Souhaitez-vous passer à ${ downgradedPlanName } ?"
       ],
       "Download ${ app }": [
         "Télécharger ${ app }"

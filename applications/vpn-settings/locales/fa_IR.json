@@ -194,9 +194,6 @@
       "Done": [
         "انجام شد"
       ],
-      "Downgrade": [
-        "تنزل"
-      ],
       "Download": [
         "بارگیری"
       ],
@@ -409,9 +406,6 @@
       ],
       "Remove": [
         "حذف"
-      ],
-      "Remove bonuses": [
-        "حذف پاداش‌ها"
       ],
       "Remove gift code": [
         "حذف کد هدیه"
@@ -806,11 +800,6 @@
       ],
       "Close": [
         "بستن"
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "ضمانت ۳۰ روزهٔ بازگشت پول"
       ]
     },
     "BF2024: Deal details": {
@@ -2618,11 +2607,6 @@
         "متوجه شدم"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Organization not recognized. Try again.": [
-        "شازمان شناسایی نشد. دوباره تلاش کنید."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "customer support": [
         "پشتیبانی مشتری"
@@ -2632,21 +2616,6 @@
       ],
       "Pending": [
         "در انتظار"
-      ]
-    },
-    "familyOffer_2023:Label": {
-      "Enter organization name to confirm": [
-        "جهت تأیید نام سازمان را وارد نمایید"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "این کار بطور دائمی همه کاربران فرعی، حساب ها و داده های مرتبط با سازمان شما را حذف خواهد کرد."
-      ]
-    },
-    "familyOffer_2023:Title": {
-      "Delete organization?": [
-        "سازمان حذف شود؟"
       ]
     },
     "Feature": {
@@ -3191,12 +3160,6 @@
       "${ storage } storage": [
         "${ storage } فضای ذخیره سازی"
       ],
-      "${ vaultLink } created": [
-        "${ vaultLink } ایجاد شد"
-      ],
-      "${ vaultLink } updated": [
-        "${ vaultLink } بروز شد"
-      ],
       "(${ memberCount } member)": [
         "(${ memberCount } عضو)",
         "(${ memberCount } عضو)"
@@ -3208,21 +3171,11 @@
         "+ ${ invisibleCount } دیگر",
         "+ ${ invisibleCount } دیگر"
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } فضای ذخیره‌سازی هدیه"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } اتصال برای ${ VPN_APP_NAME } (به شما اجازه می‌دهد تا دستگاه‌های بیشتری را به VPN متصل کنید)",
-        "+${ organization.BonusVPN } اتصال برای ${ VPN_APP_NAME } (به شما اجازه می‌دهد دستگاه‌های بیشتری را به VPN متصل کنید)"
-      ],
       "1 device per user": [
         "۱ دستگاه برای هر کاربر"
       ],
       "30-day money-back guarantee": [
         "ضمانت ۳۰ روزهٔ بازگشت پول"
-      ],
-      "30-day money-back guarantee.": [
-        "ضمانت ۳۰ روزهٔ بازگشت پول."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "نامی که به شما کمک کند که مشخص کنید کجا از آن استفاده میکنید تا بعدا راحت آنرا لغو یا تمدید کنید."
@@ -3304,9 +3257,6 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "قبل از شروع به ارسال و دریافت رایانامه از نشانی‌های جدید خود، لازم است که کلیدهای رمزنگاری شده برای آنها ایجاد کنید."
       ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "با تنزیل طرح به یک طرح رایگان، شما برای همیشه این مزایا را از دست خواهید داد، حتی اگر دوباره در آینده طرح را ارتقا دهید."
-      ],
       "By leaving now, changes may not be saved": [
         "اگر حال ترک کنید، تغییرات ممکن است ذخیره نشوند"
       ],
@@ -3373,9 +3323,6 @@
       ],
       "Downgrade": [
         "تنزل"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "تنزیل طرح به هر گونه اتصال به سرورهای خریدنی ${ VPN_APP_NAME } پایان می‌دهد."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "برنامه مورد علاقه خود را امروز بارگیری نموده و حریم خصوصی را با خود هر کجا که می‌روید ببرید."
@@ -3466,15 +3413,6 @@
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "اگر کد هدیه دارید، آن را در زیر وارد کنید تا تخفیف شما اعمال شود."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "اگر به تنزیل طرح خود ادامه دهید، دسترسی به ویژگی های خریدنی ${ MAIL_APP_NAME } و ${ VPN_APP_NAME } را از دست خواهید داد."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "اگر به تنزیل طرح خود ادامه دهید، دسترسی به ویژگی های خریدنی ${ MAIL_APP_NAME } ، شامل فضای ذخیره‌سازی و فیلتر های اضافی را از دست خواهید داد."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "اگر به تنزیل طرح خود ادامه دهید، دسترسی به ویژگی های خریدنی ${ VPN_APP_NAME } را از دست خواهید داد."
       ],
       "Import from": [
         "واردسازی از"
@@ -3695,9 +3633,6 @@
       ],
       "Signed up": [
         "ثبت نام انجام شد"
-      ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "از آنجا که شما یک کاربر وفادار هستید، حساب شما امکانات اضافی فعال شده‌ای دارد."
       ],
       "Smart Routed through a different country.": [
         "مسیریابی هوشمند از طریق کشوری دیگر."
@@ -3934,9 +3869,6 @@
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "شما باید کلید خصوصی سازمان خود را با گذرواژه کلید سازمان پشتیبان فعال کنید که توسط مدیر سازمان به شما ارائه شده است."
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "قبل از تنزیل طرح خود باید کاربران ${ MAIL_APP_NAME }، آدرس ها و دامنه های سفارشی اضافی را حذف یا غیرفعال کنید."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "شما باید یک کارت اعتباری یا حساب بانکی متصل به حساب PayPal خود داشته باشید تا بتوان آن را به‌عنوان یک روش پرداخت اضافه کنید."
@@ -4755,9 +4687,6 @@
       "Upgrade your plan": [
         "طرح خود را ارتقا دهید"
       ],
-      "Vault": [
-        "گاوصندوق"
-      ],
       "View guide": [
         "مشاهده راهنما"
       ],
@@ -4975,9 +4904,6 @@
       ]
     },
     "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "تنزل به ${ downgradedPlanName }"
-      ],
       "Explore all ${ BRAND_NAME } plans": [
         "همه طرح های ${ BRAND_NAME } را بررسی کنید"
       ],
@@ -6388,9 +6314,6 @@
       ],
       "Verification successful": [
         "تایید با موفقیت بود"
-      ],
-      "You have successfully unsubscribed": [
-        "شما با موفقیت لغو اشتراک کردید"
       ]
     },
     "Success message": {
@@ -6658,12 +6581,6 @@
       "Confirm": [
         "تایید"
       ],
-      "Confirm downgrade": [
-        "تایید تنزل"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "تایید کاهش پاداش‌های ${ BRAND_NAME }"
-      ],
       "Contact us": [
         "تماس با ما"
       ],
@@ -6750,9 +6667,6 @@
       ],
       "Downgrade account": [
         "تنزیل درجه حساب کاربری"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "تنزل به ${ downgradedPlanName }?"
       ],
       "Downloads": [
         "دانلودها"
