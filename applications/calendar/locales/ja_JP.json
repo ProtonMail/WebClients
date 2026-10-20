@@ -338,9 +338,6 @@
       "Done": [
         "完了"
       ],
-      "Downgrade": [
-        "ダウングレード"
-      ],
       "Download": [
         "ダウンロード"
       ],
@@ -719,9 +716,6 @@
       "Remove": [
         "削除"
       ],
-      "Remove bonuses": [
-        "ボーナスを削除"
-      ],
       "Remove button": [
         "ボタンを削除"
       ],
@@ -889,6 +883,9 @@
       ],
       "Submit": [
         "送信"
+      ],
+      "Subscribe": [
+        "登録"
       ],
       "Subscribe now": [
         "今すぐ登録"
@@ -1280,11 +1277,6 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "プレミアムパスワードマネージャー"
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "30 日間返金保証"
       ]
     },
     "BF2024: Deal details": {
@@ -4318,14 +4310,6 @@
         "プランを変更"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "ファミリーグループが認識されません。再試行してください。"
-      ],
-      "Organization not recognized. Try again.": [
-        "組織が認識されません。再試行してください。"
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } グループ"
@@ -4391,22 +4375,6 @@
         "あなたのアカウントは割り当てられた ${ inviteSpace } を超える ${ usedSpace } のストレージを使用中です。一部のデータを削除するか、プラン管理者にストレージを増やしてもらう必要があります。"
       ]
     },
-    "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "家族グループ名を入力して確認"
-      ],
-      "Enter organization name to confirm": [
-        "組織名を入力して確認する"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "これにより、組織に関連するすべてのサブユーザー、アカウント、およびデータが永久に削除されます。"
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "これにより、家族全員の${ BRAND_NAME }プレミアム機能がすべて削除されます。"
-      ]
-    },
     "familyOffer_2023:Onboarding Proton": {
       "Configure your family account and invite users": [
         "ファミリーアカウントを設定してユーザーを招待する"
@@ -4416,14 +4384,6 @@
       ],
       "Set up your family account": [
         "家族アカウントの設定"
-      ]
-    },
-    "familyOffer_2023:Title": {
-      "Delete family group?": [
-        "家族グループを削除しますか？"
-      ],
-      "Delete organization?": [
-        "組織を削除しますか？"
       ]
     },
     "Feature": {
@@ -5075,17 +5035,8 @@
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "友達が登録するたびに、クレジットとして**${ referrerRewardAmount }**を獲得できます。"
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } ボーナスストレージ"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } 件の ${ VPN_APP_NAME } 接続 (より多くのデバイスを VPN に接続可能)"
-      ],
       "1 vault per user": [
         "一人のユーザーにつき一つの保管庫"
-      ],
-      "30-day money-back guarantee.": [
-        "30日間の返金保証。"
       ],
       "A cancellation email will be sent to removed participants.": [
         "削除を行った参加者にはキャンセルメールが送信されます。"
@@ -5234,9 +5185,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "御社のイメージ力を強め、ユーザーにより一貫したオンラインサービスを提供しましょう。"
       ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "無料プランへダウングレードすると、現在の特典は利用できなくなります。今後アップグレードしても現在の特典は復活しません。"
-      ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "このカレンダーの予定の詳細を共有すると、${ BRAND_NAME } がこのカレンダーの暗号化された情報にアクセスできるようになります。"
       ],
@@ -5381,9 +5329,6 @@
       "Downgrade": [
         "ダウングレード"
       ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "ダウングレードすると、有料の ${ VPN_APP_NAME } サーバーとの接続が終了します。"
-      ],
       "Download current logs": [
         "現在のログをダウンロード"
       ],
@@ -5527,15 +5472,6 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "受信トレイに関連するメッセージを見つけなかった場合、迷惑メールフォルダーを確認してください。"
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "ダウングレードすると ${ MAIL_APP_NAME } と ${ VPN_APP_NAME } の有料機能が使えなくなります。"
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "ダウングレードすると ${ MAIL_APP_NAME } の追加ストレージやフィルターなどの有料機能にアクセスできなくなります。"
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "ダウングレードすると ${ VPN_APP_NAME } の有料機能が使えなくなります。"
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "${ totalCalendarsCount } 件中 ${ calendarCount } 件のカレンダーをインポート"
@@ -5924,9 +5860,6 @@
       "Share this page to let others book time in your calendar. You can find and edit it in the sidebar under Booking pages.": [
         "他のお客様がお客様のカレンダーで時間を予約できるように、このページを共有してください。サイドバーの「予約ページ」で、見つけて編集できます。"
       ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "あなたは忠実なユーザーですので、あなたのアカウントには追加機能が有効になっています。"
-      ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "一部の政府は、特定のウェブサイトへの利用をブロックまたは制限します。VPNは、お客様の活動と個人情報を秘匿し、検閲を回避するのに役立ちます。"
       ],
@@ -6182,6 +6115,9 @@
       "We'll email you once import is complete.": [
         "インポートが完了したらメールでお知らせします。"
       ],
+      "We'll get back to you shortly.": [
+        "すぐにお返事します。"
+      ],
       "We'll notify you when the import is done.": [
         "インポートが完了したら通知します。"
       ],
@@ -6316,9 +6252,6 @@
       ],
       "You may be redirected to your bank’s website.": [
         "銀行のウェブサイトに移動する場合があります。"
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "ダウングレードする前に、追加の ${ MAIL_APP_NAME } のユーザー、アドレス、独自ドメインを削除する必要があります。"
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "一度招待を拒否しているため、主催者からもう一度招待される必要があります。"
@@ -6697,6 +6630,12 @@
       "All-day event notifications": [
         "終日の予定の通知"
       ],
+      "Amount": [
+        "金額"
+      ],
+      "Amount due": [
+        "支払い総額"
+      ],
       "Anderson": [
         "アンダーソン"
       ],
@@ -6801,6 +6740,9 @@
       ],
       "Credits": [
         "クレジット"
+      ],
+      "Credits used": [
+        "使用クレジット"
       ],
       "Date and time": [
         "日付と時刻"
@@ -7036,6 +6978,9 @@
       "Phone number": [
         "電話番号"
       ],
+      "Please share any feedback to help us improve.": [
+        "ご意見、ご感想がありましたら、ぜひお聞かせください。"
+      ],
       "Port": [
         "ポート"
       ],
@@ -7173,6 +7118,9 @@
       ],
       "What happened?": [
         "どのような問題が発生しましたか?"
+      ],
+      "Why would you like to cancel?": [
+        "なぜキャンセルしたいのですか？"
       ],
       "Your calendar URL": [
         "カレンダーのURL"
@@ -7813,31 +7761,11 @@
       ]
     },
     "new_plans: action": {
-      "Delete account": [
-        "アカウントを削除"
-      ],
-      "Downgrade account": [
-        "アカウントをダウングレード"
-      ],
       "Get ${ BRAND_NAME } for free": [
         "無料で ${ BRAND_NAME } を入手"
       ],
       "Get ${ planName }": [
         "${ planName } を入手"
-      ],
-      "Keep ${ plan }": [
-        "${ plan } を使い続ける"
-      ],
-      "Keep account": [
-        "アカウントを削除しない"
-      ],
-      "Switch plan": [
-        "プランを変更"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } へダウングレード"
       ]
     },
     "new_plans: feature": {
@@ -8341,18 +8269,6 @@
       "For next-level password management and identity protection.": [
         "次のレベルのパスワード管理とアイデンティティ保護のために。"
       ],
-      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
-        "アカウントをダウン削除をすると、すべての ${ visionary } プランの特典は失われ、新しいアカウントを作成しても利用できなくなります。"
-      ],
-      "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
-        "アカウントをダウングレードをすると、すべての ${ visionary } プランの特典は失われ、再度登録することはできなくなります。"
-      ],
-      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
-        "ほかのプランに変更するとすべての ${ visionary } プランの特典は失われ、${ visionary } プランに戻ることはできなくなります。"
-      ],
-      "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
-        "${ visionary } プランは、特別な機能と特典を備えた元の ${ BRAND_NAME } ユーザー向けの特別プランであるため、新規加入者は利用できなくなりました。"
-      ],
       "Pay once, secure your passwords and identity forever.": [
         "一度だけの支払いで、パスワードとアイデンティティを永遠に保護します。"
       ],
@@ -8382,12 +8298,6 @@
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
         "2 人までの無制限のプライバシーとより大きなストレージ"
-      ],
-      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
-        "現在ご利用中のプランがキャンペーン価格でご利用いただけます。アカウントを削除すると、キャンペーン価格は適用されなくなります。"
-      ],
-      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
-        "現在ご契約中のプランでは、キャンペーン価格をご利用いただけます。アカウントをダウングレードすると、キャンペーン価格が適用されなくなります。"
       ]
     },
     "new_plans: label": {
@@ -8407,20 +8317,11 @@
       ]
     },
     "new_plans: title": {
-      "Delete account?": [
-        "アカウントの削除しますか?"
-      ],
-      "Downgrade account?": [
-        "アカウントをダウングレードしますか?"
-      ],
       "Review subscription": [
         "サブスクリプションを再検討"
       ],
       "Review subscription and pay": [
         "サブスクリプションを見なおして決済"
-      ],
-      "Switch plans?": [
-        "プランを変更しますか?"
       ]
     },
     "new_plans: tooltip": {
@@ -9636,6 +9537,9 @@
       "Please select a country": [
         "国を選択してください"
       ],
+      "Please select the main reason": [
+        "主な理由をお選びください。"
+      ],
       "Postal code": [
         "郵便番号"
       ],
@@ -10461,9 +10365,6 @@
       "upgrade for more storage": [
         "より大きなストレージへアップグレード"
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "残りの時間分のクレジットが ${ BRAND_NAME } アカウントに追加されます。"
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "お客様の**${ currentPlanName }**プランの有効期限は残り**${ daysRemaining }**日です。"
       ],
@@ -11034,6 +10935,9 @@
       "Invitation sent and participants added to all events": [
         "招待が送信され、参加者がすべての予定に追加されました"
       ],
+      "Invoice paid": [
+        "支払い済み請求書"
+      ],
       "Keyboard shortcuts preferences updated": [
         "キーボードショートカットの設定が更新されました"
       ],
@@ -11078,9 +10982,6 @@
       ],
       "You have successfully canceled your subscription.": [
         "サブスクリプションが正常にキャンセルされました。"
-      ],
-      "You have successfully unsubscribed": [
-        "サブスクリプションをキャンセルしました"
       ]
     },
     "Suffix": {
@@ -11378,12 +11279,6 @@
       "Collaborate on documents": [
         "ドキュメントの共同編集"
       ],
-      "Confirm downgrade": [
-        "ダウングレードの確認"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "${ BRAND_NAME } ボーナスの損失を確認"
-      ],
       "Connect apps and devices": [
         "アプリとデバイスを接続"
       ],
@@ -11398,6 +11293,9 @@
       ],
       "Contact group": [
         "連絡先グループ"
+      ],
+      "Contact us": [
+        "お問い合わせ"
       ],
       "Contacts": [
         "連絡先"
@@ -11482,9 +11380,6 @@
       ],
       "Downgrade account": [
         "アカウントのダウングレード"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "${ downgradedPlanName } にダウングレードしますか？"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } アプリをダウンロード"
@@ -11702,6 +11597,9 @@
       "Participants cannot be notified": [
         "参加者には通知されません"
       ],
+      "Pay invoice": [
+        "請求の支払い"
+      ],
       "Payment failed": [
         "支払いに失敗しました"
       ],
@@ -11758,6 +11656,9 @@
       ],
       "Request new code": [
         "新しいコードを発行"
+      ],
+      "Request sent": [
+        "リクエスト送信"
       ],
       "Reshare your calendars": [
         "カレンダーを再び共有"
@@ -12233,6 +12134,20 @@
       ],
       "Open in a new tab": [
         "新しいタブで開く"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "もっと気に入ったサービスを見つけた"
+      ],
+      "It’s missing a key feature": [
+        "重要な機能が欠けている"
+      ],
+      "It’s too expensive": [
+        "これは高すぎる"
+      ],
+      "Other": [
+        "その他"
       ]
     },
     "VPN Plan Feature": {
