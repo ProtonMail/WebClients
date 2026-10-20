@@ -306,9 +306,6 @@
       "Done": [
         "Gata"
       ],
-      "Downgrade": [
-        "Retrogradare"
-      ],
       "Download": [
         "Descărcare"
       ],
@@ -579,9 +576,6 @@
       "Open": [
         "Deschidere"
       ],
-      "Open ${ CALENDAR_APP_NAME } settings": [
-        "Deschidere setări ${ CALENDAR_APP_NAME }"
-      ],
       "Open ${ DRIVE_APP_NAME }": [
         "Deschidere ${ DRIVE_APP_NAME }"
       ],
@@ -644,9 +638,6 @@
       ],
       "Remove access": [
         "Eliminare acces"
-      ],
-      "Remove bonuses": [
-        "Anulare bonusuri"
       ],
       "Remove button": [
         "Buton eliminare"
@@ -1150,11 +1141,6 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Manager de parole premium"
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "Garanție de returnare a banilor de 30 de zile"
       ]
     },
     "BF2024: Deal details": {
@@ -3887,14 +3873,6 @@
         "Schimbare plan"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "Grup de familie nerecunoscut. Mai încercați."
-      ],
-      "Organization not recognized. Try again.": [
-        "Organizația nu e recunoscută. Mai încercați."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "Grupuri ${ BRAND_NAME }"
@@ -3963,30 +3941,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Contul utilizează ${ usedSpace } de stocare, care depășește cei ${ inviteSpace } care vi s-au alocat. Ștergeți unele date sau cereți administratorului planului să vă crească limita de stocare."
-      ]
-    },
-    "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "Introduceți numele grupului de familie pentru confirmare"
-      ],
-      "Enter organization name to confirm": [
-        "Introduceți numele organizației pentru confirmare"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Aceasta va șterge definitiv toți subutilizatorii, conturile și datele asociate cu organizația personală."
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Aceasta va elimina toate funcțiile ${ BRAND_NAME } premium pentru fiecare membru al familiei."
-      ]
-    },
-    "familyOffer_2023:Title": {
-      "Delete family group?": [
-        "Ștergeți grupul de familie?"
-      ],
-      "Delete organization?": [
-        "Ștergeți organizația?"
       ]
     },
     "Feature": {
@@ -4677,14 +4631,6 @@
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Primiți ${ referrerRewardAmount }** în credite pentru fiecare persoană care se abonează."
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+ ${ bonusSpace } spațiu bonus"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+o conexiune pentru ${ VPN_APP_NAME } (vă permite să conectați mai multe dispozitive la VPN)",
-        "+${ organization.BonusVPN } conexiuni pentru ${ VPN_APP_NAME } (vă permite să conectați mai multe dispozitive la VPN)",
-        "+${ organization.BonusVPN } de conexiuni pentru ${ VPN_APP_NAME } (vă permite să conectați mai multe dispozitive la VPN)"
-      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un număr de telefon poate fi folosit doar pentru verificarea unui cont ${ BRAND_NAME }."
       ],
@@ -4762,9 +4708,6 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Înainte de a solicita un cod nou de verificare, verificați-vă folderul de mesaje nedorite și verificați dacă ${ strong } este adresa corectă."
-      ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Revenind la planul gratuit, veți pierde permanent aceste avantaje, chiar dacă ulterior veți trece la unul cu plată."
       ],
       "Calendar side panel": [
         "Panou lateral calendar"
@@ -4904,9 +4847,6 @@
       ],
       "Downgrade": [
         "Retrogradare"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Retrogradarea va încheia orice conexiune la serverele ${ VPN_APP_NAME } cu plată."
       ],
       "Download current logs": [
         "Descărcare jurnale actuale"
@@ -5048,15 +4988,6 @@
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "Dacă v-ați pierdut accesul la aplicația de autentificare, puteți utiliza unul din cele 16 coduri de recuperare de rezervă furnizate la configurarea autentificării cu doi factori. ${ learnMoreLink }"
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Dacă continuați cu retrogradarea, veți pierde accesul la funcțiile cu plată din ${ MAIL_APP_NAME } și ${ VPN_APP_NAME }."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Dacă veți continua cu retrogradarea, veți pierde accesul la funcțiile cu plată din ${ MAIL_APP_NAME }, inclusiv spațiul și filtrele suplimentare."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Dacă continuați cu retrogradarea, veți pierde accesul la funcțiile cu plată din ${ VPN_APP_NAME }."
       ],
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
         "Dacă vă eliminați accesul, veți pierde accesul la „${ fileName }” și nu veți putea să-l deschideți din nou decât dacă proprietarul vi-l partajează."
@@ -5412,9 +5343,6 @@
       "Show table of contents": [
         "Afișare cuprins"
       ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Deoarece sunteți un utilizator loial, contul are funcții adiționale activate."
-      ],
       "Some edits are taking longer to sync than expected.": [
         "Sincronizarea unor modificări durează mai mult decât ar trebui."
       ],
@@ -5624,6 +5552,9 @@
       "We'll email you once import is complete.": [
         "Vă vom anunța pe e-mail după finalizarea importării."
       ],
+      "We'll get back to you shortly.": [
+        "Vom reveni în curând."
+      ],
       "We'll notify you when the import is done.": [
         "Veți primi o notificare la finalizarea importării."
       ],
@@ -5708,16 +5639,6 @@
       "You can close the tab or browser in the meantime.": [
         "Puteți închide fila sau navigatorul web între timp."
       ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendar. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
-        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
-        "Puteți avea maxim ${ MAX_CALENDARS_FREE } de calendare. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendar. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonarea.",
-        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonarea.",
-        "Puteți avea maxim ${ MAX_CALENDARS_FREE } de calendare. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonarea."
-      ],
       "You can now return to the application to continue": [
         "Puteți reveni la aplicație pentru a continua"
       ],
@@ -5738,9 +5659,6 @@
       ],
       "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
         "S-ar putea să nu aveți permisiunile necesare pentru a-l vizualiza cu contul selectat. Încercați un alt cont sau contactați proprietarul pentru a-l accesa."
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Trebuie să dezactivați sau să eliminați utilizatorii ${ MAIL_APP_NAME } adiționali, adresele și domeniile personale înainte de a putea retrograda."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Veți pierde accesul la funcțiile planului ${ planTitle } la această dată."
@@ -5890,11 +5808,6 @@
         "Etichete selectate: ${ selectedFoldersCount }",
         "Etichete selectate: ${ selectedFoldersCount }",
         "Etichete selectate: ${ selectedFoldersCount }"
-      ]
-    },
-    "Info; access rights for shared calendar": {
-      "View only": [
-        "Numai vizualizare"
       ]
     },
     "Key badge": {
@@ -6236,6 +6149,9 @@
       "Phone number": [
         "Număr de telefon"
       ],
+      "Please share any feedback to help us improve.": [
+        "Vă rugăm să ne spuneți orice pentru a ne ajuta la îmbunătățirea serviciilor."
+      ],
       "Port": [
         "Port"
       ],
@@ -6325,6 +6241,9 @@
       ],
       "What happened?": [
         "Ce s-a întâmplat?"
+      ],
+      "Why would you like to cancel?": [
+        "De ce doriți să anulați?"
       ],
       "Your IP": [
         "IP dispozitiv"
@@ -6725,38 +6644,20 @@
         "Viteză VPN medie"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Ștergere cont"
-      ],
-      "Downgrade account": [
-        "Retrogradare cont"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Luați ${ BRAND_NAME } gratuit"
-      ],
-      "Get ${ planName }": [
-        "Luați ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Păstrare ${ plan }"
-      ],
-      "Keep account": [
-        "Păstrare cont"
-      ],
-      "Switch plan": [
-        "Schimbare plan"
-      ]
-    },
     "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Retrogradare la ${ downgradedPlanName }"
-      ],
       "Plans starting from ${ priceDrivePlus }": [
         "Planuri începând de la ${ priceDrivePlus }"
       ],
       "Upgrade": [
         "Modificare"
+      ]
+    },
+    "new_plans: action": {
+      "Get ${ BRAND_NAME } for free": [
+        "Luați ${ BRAND_NAME } gratuit"
+      ],
+      "Get ${ planName }": [
+        "Luați ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -7314,18 +7215,6 @@
       "For next-level password management and identity protection.": [
         "Pentru gestionarea parolelor și protejării identității la un nivel superior."
       ],
-      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
-        "Dacă vă ștergeți contul, veți pierde toate beneficiile planului ${ visionary } și nu vor mai fi disponibile dacă vă creați un cont nou."
-      ],
-      "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
-        "Dacă retrogradați contul, veți pierde toate beneficiile planului ${ visionary } și nu vor mai fi disponibile dacă încercați să vă reabonați."
-      ],
-      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
-        "Dacă treceți la un alt plan, veți pierde toate beneficiile planului ${ visionary } și nu veți mai putea reveni la el."
-      ],
-      "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
-        "Planul nostru ${ visionary } nu mai este disponibil noilor abonați deoarece un plan special pentru utilizatorii originali ai ${ BRAND_NAME } cu funcții și beneficii speciale."
-      ],
       "Pay once, secure your passwords and identity forever.": [
         "Plătiți o dată, vă securizați parolele și identitatea permanent."
       ],
@@ -7355,12 +7244,6 @@
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
         "Confidențialitate nelimitată și mai mult spațiu de stocare pentru maxim două persoane."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
-        "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă ștergeți contul, veți pierde prețul promoțional și nu va fi disponibil dacă creați un cont nou."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
-        "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
       ]
     },
     "new_plans: Subtext": {
@@ -7372,17 +7255,6 @@
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "Deblocați toate produsele și funcțiile premium din ${ BRAND_NAME } cu doar ${ priceLine }. Anulați oricând."
-      ]
-    },
-    "new_plans: title": {
-      "Delete account?": [
-        "Ștergere cont?"
-      ],
-      "Downgrade account?": [
-        "Retrogradare cont?"
-      ],
-      "Switch plans?": [
-        "Schimbare planuri?"
       ]
     },
     "new_plans: tooltip": {
@@ -7780,9 +7652,6 @@
       ],
       "Failed to load invitation details": [
         "Încărcarea detaliilor invitației a eșuat."
-      ],
-      "Failed to load invitations": [
-        "Încărcarea invitațiilor a eșuat."
       ],
       "Failed to load sharing details": [
         "Încărcarea detaliilor de partajare a eșuat."
@@ -8425,6 +8294,9 @@
       "Please describe the problem and include any error messages": [
         "Descrieți problema incluzând și mesajele de eroare care apar."
       ],
+      "Please select the main reason": [
+        "Selectați motivul principal"
+      ],
       "Search": [
         "Căutare"
       ],
@@ -8939,11 +8811,6 @@
         "Vă deconectați fără a vă reseta parola?"
       ]
     },
-    "Shared calendar; Info about calendar owner": {
-      "Shared by ${ ownerName }": [
-        "Partajat de ${ ownerName }"
-      ]
-    },
     "sheets_2025:Action": {
       "Comma Separated Values (.csv)": [
         "Valori separate prin virgulă (.csv)"
@@ -9302,9 +9169,6 @@
       "upgrade for more storage": [
         "treceți la un plan cu plată pentru mai mult spațiu"
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Vom adăuga creditele pentru timpul rămas în contul ${ BRAND_NAME }."
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "Zile rămase pentru planul **${ currentPlanName }**: **${ daysRemaining }**",
         "Zile rămase pentru planul **${ currentPlanName }**: **${ daysRemaining }**",
@@ -9527,9 +9391,6 @@
       ],
       "You have successfully canceled your subscription.": [
         "V-ați anulat abonamentul."
-      ],
-      "You have successfully unsubscribed": [
-        "V-ați dezabonat cu succes"
       ]
     },
     "Suffix": {
@@ -9696,9 +9557,6 @@
       "Birthday": [
         "Data nașterii"
       ],
-      "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
-        "Anulare abonare ${ MAIL_SHORT_APP_NAME }"
-      ],
       "Cancel subscription?": [
         "Anulare abonament?"
       ],
@@ -9732,12 +9590,6 @@
       "Configure migration": [
         "Configurare migrare"
       ],
-      "Confirm downgrade": [
-        "Confirmare modificare la plan inferior"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Confirmare pierdere bonusuri ${ BRAND_NAME }"
-      ],
       "Connect apps and devices": [
         "Conectați aplicații și dispozitive"
       ],
@@ -9752,6 +9604,9 @@
       ],
       "Contact group": [
         "Grup contacte"
+      ],
+      "Contact us": [
+        "Contactați-ne"
       ],
       "Contacts": [
         "Contacte"
@@ -9846,12 +9701,6 @@
       ],
       "Domain names": [
         "Nume de domenii"
-      ],
-      "Downgrade account": [
-        "Retrogradare cont"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "Retrogradare la ${ downgradedPlanName }?"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Descărcați aplicațiile ${ DRIVE_APP_NAME }"
@@ -10082,6 +9931,9 @@
       ],
       "Request new code": [
         "Solicitare cod nou"
+      ],
+      "Request sent": [
+        "Solicitare trimisă"
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Salvare pentru mai târziu în ${ DRIVE_APP_NAME }"
@@ -10471,6 +10323,20 @@
       ],
       "Replay video": [
         "Redare video"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Am găsit un alt serviciu care îmi place mai mult"
+      ],
+      "It’s missing a key feature": [
+        "Lipsește o funcție importantă"
+      ],
+      "It’s too expensive": [
+        "Este prea scump"
+      ],
+      "Other": [
+        "Altceva"
       ]
     },
     "VPN Plan Feature": {
