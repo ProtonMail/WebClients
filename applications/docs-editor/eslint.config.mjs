@@ -1,5 +1,5 @@
 import { defineConfig } from 'eslint/config'
-import { atomsPackage, componentsPackage, createBarrelConfig, iconsPackage } from '@proton/eslint-config-proton/barrel'
+import { createRestrictedImportsConfig } from '@proton/eslint-config-proton/restrictedImports'
 import defaultConfig from '@proton/eslint-config-proton/all'
 import {
   createExtraneousDependenciesRule,
@@ -10,7 +10,16 @@ const isFixMode = process.argv.includes('--fix')
 
 export default defineConfig([
   defaultConfig,
-  createBarrelConfig({ packages: [atomsPackage, iconsPackage, componentsPackage] }),
+  createRestrictedImportsConfig({
+    rollout: ['components-barrel'],
+    patterns: [
+      {
+        group: ['@proton/drive-store*'],
+        message:
+          'docs-editor should not import from drive-store. Use @proton/docs-shared or @proton/docs-core instead.',
+      },
+    ],
+  }),
   {
     rules: {
       'react/prop-types': 'off',
@@ -37,18 +46,6 @@ export default defineConfig([
       'max-classes-per-file': 'off',
       // TODO: Remove this rule once the compat issue is resolved
       'compat/compat': 'off',
-      'no-restricted-imports': [
-        'error',
-        {
-          patterns: [
-            {
-              group: ['@proton/drive-store*'],
-              message:
-                'docs-editor should not import from drive-store. Use @proton/docs-shared or @proton/docs-core instead.',
-            },
-          ],
-        },
-      ],
     },
   },
   {

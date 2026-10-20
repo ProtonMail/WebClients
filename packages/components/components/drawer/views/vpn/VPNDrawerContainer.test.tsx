@@ -3,6 +3,7 @@ import { render, waitFor } from '@testing-library/react';
 import { useUserSettings } from '@proton/account';
 import useLoading from '@proton/hooks/useLoading';
 import { getConnectionInformation } from '@proton/shared/lib/api/core/connection-information';
+// eslint-disable-next-line proton/restricted-imports
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 
 import VPNDrawerContainer from './VPNDrawerContainer';

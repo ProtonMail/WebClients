@@ -33,7 +33,7 @@ import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrappe
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
-// eslint-disable-next-line no-restricted-imports
+// eslint-disable-next-line proton/restricted-imports
 import { getSilentApi, getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { getUser } from '@proton/shared/lib/api/user';

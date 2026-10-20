@@ -6,6 +6,7 @@ import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+// eslint-disable-next-line proton/restricted-imports
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import noop from '@proton/utils/noop';
 

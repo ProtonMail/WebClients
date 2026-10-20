@@ -7,6 +7,7 @@ import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import { SCOPE_REAUTH_SSO, getInfo } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+// eslint-disable-next-line proton/restricted-imports
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { SSOInfoResponse } from '@proton/shared/lib/authentication/interface';
 import { ExternalSSOError, handleExternalSSOLogin } from '@proton/shared/lib/authentication/ssoExternalLogin';

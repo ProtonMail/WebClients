@@ -2,6 +2,7 @@ import { renderHook } from '@testing-library/react';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+// eslint-disable-next-line proton/restricted-imports
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import {
     TelemetryAccountCancellationFlowFeedbackEvents,

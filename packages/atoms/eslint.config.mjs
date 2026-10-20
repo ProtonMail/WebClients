@@ -2,12 +2,19 @@ import storybookConfig from 'eslint-plugin-storybook';
 import { defineConfig, globalIgnores } from 'eslint/config';
 
 import defaultConfig from '@proton/eslint-config-proton/all';
-import { createBarrelConfig } from '@proton/eslint-config-proton/barrel';
 import { extraneousDependenciesDevDependencies } from '@proton/eslint-config-proton/extraneousDependencies';
+import { createRestrictedImportsConfig } from '@proton/eslint-config-proton/restrictedImports';
 
 export default defineConfig([
     defaultConfig,
-    createBarrelConfig(),
+    createRestrictedImportsConfig({
+        patterns: [
+            {
+                group: ['@proton/components', '@proton/components/*'],
+                message: 'atoms must not depend on @proton/components',
+            },
+        ],
+    }),
     storybookConfig.configs['flat/recommended'],
     // create-atom is a dev-only CLI; allow its devDependencies (commander, prettier, mustache).
     // Flat config replaces rule options per file glob, so we extend the shared allowlist here.
@@ -29,10 +36,6 @@ export default defineConfig([
     {
         rules: {
             'import/no-internal-modules': ['error', { forbid: ['@proton/atoms'] }],
-            'no-restricted-imports': [
-                'error',
-                { patterns: [{ group: ['@proton/components', '@proton/components/*'], message: 'atoms must not depend on @proton/components' }] },
-            ],
         },
     },
     globalIgnores(['.storybook']),
