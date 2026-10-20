@@ -444,9 +444,6 @@
       "Done": [
         "Kész"
       ],
-      "Downgrade": [
-        "Kisebb csomagra váltás"
-      ],
       "Download": [
         "Letöltés"
       ],
@@ -1117,9 +1114,6 @@
       "Remove ${ attachmentName }": [
         "${ attachmentName } eltávolítása"
       ],
-      "Remove bonuses": [
-        "Kedvezmények törlése"
-      ],
       "Remove button": [
         "Gomb eltávolítása"
       ],
@@ -1481,8 +1475,7 @@
         "Megbízható"
       ],
       "Trust key": [
-        "Kulcs megjelölése megbízhatóként",
-        "Kulcsok megjelölése megbízhatóként"
+        "Megbízható kulcs"
       ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
@@ -1925,11 +1918,6 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Prémium jelszókezelő"
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "30 napos pénzvisszatérítési garancia"
       ]
     },
     "BF2024: Deal details": {
@@ -5269,14 +5257,6 @@
         "Csomag váltása"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "A családi csoport nem található. Próbálja meg újra."
-      ],
-      "Organization not recognized. Try again.": [
-        "Nem felismerhető szervezet. Próbálja meg újra."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } csoportok"
@@ -5343,22 +5323,6 @@
         "A fiókja ${ usedSpace } tárhelyet foglal el, ami túllépi az önnek biztosított ${ inviteSpace } helyet. Töröljön adatokat vagy kérje meg a csomag adminisztrátorát, hogy növelje a tárhelyét."
       ]
     },
-    "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "Írja be a családi csoport nevét a megerősítéshez"
-      ],
-      "Enter organization name to confirm": [
-        "Írja be a szervezet nevét a jóváhagyáshoz"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Ez véglegesen törli a szervezetéhez tartozó összes al-felhasználót, fiókot és adatot."
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Ezzel el lesz távolítva minden ${ BRAND_NAME } prémium funkció minden családtag számára."
-      ]
-    },
     "familyOffer_2023:Onboarding Proton": {
       "Configure your family account and invite users": [
         "Állítsa be a Family csomagot és hívja meg a tagokat"
@@ -5371,14 +5335,6 @@
       ],
       "Set up your family account": [
         "Family csomag beállítása"
-      ]
-    },
-    "familyOffer_2023:Title": {
-      "Delete family group?": [
-        "Törli a családi csoportot?"
-      ],
-      "Delete organization?": [
-        "Szervezet törlése?"
       ]
     },
     "Feature": {
@@ -6447,16 +6403,6 @@
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Vészkapcsoló**: Megállítja az adatszivárgást azáltal, hogy blokkolja az internetet, ha a VPN kapcsolat váratlanul megszakad."
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } bónusz tárterület"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } ${ VPN_APP_NAME } kapcsolat (lehetővé teszi több eszköz csatlakoztatását a VPN-hez)",
-        "+${ organization.BonusVPN } ${ VPN_APP_NAME } kapcsolatok (lehetővé teszi több eszköz csatlakoztatását a VPN-hez)"
-      ],
-      "30-day money-back guarantee.": [
-        "30 napos pénz-visszafizetési garancia."
-      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Egy telefonszám csak egy ${ BRAND_NAME } fiók ellenőrzéséhez használható"
       ],
@@ -6688,9 +6634,6 @@
       "Bulk delete": [
         "Tömeges törlés"
       ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Az ingyenes verzióra való váltás során véglegesen elveszti a következő előnyeit, még akkor is, ha később ismét előfizetéses szolgáltatásra vált."
-      ],
       "Calendar side panel": [
         "Naptár oldalsó panel"
       ],
@@ -6873,9 +6816,6 @@
       ],
       "Downgrade": [
         "Váltás kisebb csomagra"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "A lemondás megszünteti a fizetett ${ VPN_APP_NAME } szerverekkel való összes kapcsolatot."
       ],
       "Download application logs for troubleshooting": [
         "Alkalmazásnaplók letöltése hibaelhárításhoz"
@@ -7120,15 +7060,6 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ha nem találja az e-mailt a beérkező leveleknél, ellenőrizze a Levélszemét közt."
       ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Ha folytatja a lemondást, elveszíti a hozzáférést a ${ MAIL_APP_NAME } és ${ VPN_APP_NAME } fizetett szolgáltatásaihoz."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Ha folytatja a lemondást, elveszíti a hozzáférést a ${ MAIL_APP_NAME } fizetett szolgáltatásaihoz, beleértve a megnövelt tárhelyet és a szűrőket."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Ha folytatja a lemondást, elveszíti a hozzáférést a ${ VPN_APP_NAME } fizetett szolgáltatásaihoz."
-      ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "Ha az alternatív címét eladják, kiszivárog vagy rossz kezekbe kerül, egyszerűen kikapcsolhatja, hogy ne érkezzen rá több levélszemét."
       ],
@@ -7188,6 +7119,7 @@
         "Inicializálás…"
       ],
       "Insert image": [
+        "Kép beillesztése",
         "Kép beillesztése"
       ],
       "Insert link": [
@@ -7775,9 +7707,6 @@
       "Show original message": [
         "Eredeti üzenet megjelenítése"
       ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Mivel ön a hűséges felhasználónk, fiókja extra funkciókat tartalmaz."
-      ],
       "Snooze messages for later so they are top of your inbox when you want": [
         "Némítsa el az üzeneteket későbbre, hogy a beérkezett üzenetek tetején legyenek, amikor szeretné"
       ],
@@ -8280,6 +8209,9 @@
       "We'll email you once import is complete.": [
         "Amint az importálás befejeződött, e-mailt küldünk Önnek."
       ],
+      "We'll get back to you shortly.": [
+        "Hamarosan válaszolunk."
+      ],
       "We'll notify you when the import is done.": [
         "Érdesíteni fogjuk az importálás végeztével."
       ],
@@ -8446,9 +8378,6 @@
       ],
       "You may be redirected to your bank’s website.": [
         "Lehetséges, hogy át lesz irányítva az Ön bankja weboldalára."
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "A lemondás előtt le kell tiltani vagy el kell távolítani a ${ MAIL_APP_NAME } további felhasználóit, címeit és a saját domain neveket."
       ],
       "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
         "**${ checked } beszélgetést** választott ki a(z) ${ categoryLabel } kategóriában",
@@ -8953,6 +8882,12 @@
       "Always move sender's emails": [
         "A feladó leveleit mindig helyezze át"
       ],
+      "Amount": [
+        "Összeg"
+      ],
+      "Amount due": [
+        "Esedékes összeg"
+      ],
       "AND": [
         "ÉS"
       ],
@@ -9099,6 +9034,9 @@
       ],
       "Credits": [
         "Kredit"
+      ],
+      "Credits used": [
+        "Felhasznált kredit"
       ],
       "Date": [
         "Dátum"
@@ -9436,6 +9374,9 @@
       "Phone number": [
         "Telefonszám"
       ],
+      "Please share any feedback to help us improve.": [
+        "Kérjük, ossza meg ossza meg velünk visszajelzéseit, hogy segítsen nekünk fejlődni."
+      ],
       "Port": [
         "Port"
       ],
@@ -9633,6 +9574,9 @@
       ],
       "What happened?": [
         "Mi történt?"
+      ],
+      "Why would you like to cancel?": [
+        "Miért szeretne törölni?"
       ],
       "With attachment": [
         "Mellékletet tartalmaz"
@@ -10385,35 +10329,17 @@
         "Közepes VPN sebesség"
       ]
     },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "${ planTitle } beszerzése"
+      ]
+    },
     "new_plans: action": {
-      "Delete account": [
-        "Fiók törlése"
-      ],
-      "Downgrade account": [
-        "Váltás kisebb csomagra"
-      ],
       "Get ${ BRAND_NAME } for free": [
         "Legyen ${ BRAND_NAME }os ingyen"
       ],
       "Get ${ planName }": [
         "${ planName } megszerzése"
-      ],
-      "Keep ${ plan }": [
-        "Maradjon ${ plan }"
-      ],
-      "Keep account": [
-        "Maradjon a fiók"
-      ],
-      "Switch plan": [
-        "Csomag váltása"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "${ planTitle } beszerzése"
       ]
     },
     "new_plans: feature": {
@@ -10910,18 +10836,6 @@
       "For next-level password management and identity protection.": [
         "Új szint a jelszókezelésben és a személyi adatok védelmében."
       ],
-      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
-        "Ha törli a fiókját, elveszíti a ${ visionary } csomag előnyeit és ezt már nem fogja tudni választani, ha újra regisztrál."
-      ],
-      "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
-        "Ha kisebb csomagra vált, elveszíti a ${ visionary } csomag előnyeit és ezt már nem fogja tudni választani, ha újra előfizet."
-      ],
-      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
-        "Ha másik csomagra vált, elveszíti a ${ visionary } csomag előnyeit és nem fog tudni visszaváltani a ${ visionary } csomagra."
-      ],
-      "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
-        "A ${ visionary } csomag már nem érhető el új előfizetéshez, mert ez egy speciális csomag eredeti ${ BRAND_NAME } felhasználók számára, külön lehetőségekkel és előnyökkel."
-      ],
       "Pay once, secure your passwords and identity forever.": [
         "Fizessen egyszer, és védje meg jelszavait és személyazonosságát örökre."
       ],
@@ -10948,12 +10862,6 @@
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
         "Korlátlan adatvédelem és több tárhely akár 2 embernek."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
-        "Önnek kedvezményes ára van a jelenlegi csomagjához, Ha törli a fiókját, elveszíti a kedvezményes árat és ezt nem fogja tudni igénybe venni, ha új fiókot regisztrál."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
-        "Önnek kedvezményes ára van a jelenlegi csomagjához, Ha kisebb csomagra vált, elveszíti a kedvezményes árat és ezt nem fogja tudni igénybe venni, ha újra előfizet."
       ]
     },
     "new_plans: Subtext": {
@@ -10968,17 +10876,8 @@
       ]
     },
     "new_plans: title": {
-      "Delete account?": [
-        "Fiók törlése?"
-      ],
-      "Downgrade account?": [
-        "Váltás kisebb csomagra?"
-      ],
       "Review subscription and pay": [
         "Előfizetés áttekintése és fizetés"
-      ],
-      "Switch plans?": [
-        "Csomag váltása?"
       ]
     },
     "new_plans: tooltip": {
@@ -12060,6 +11959,9 @@
       "Please insert link first": [
         "Kérjük, előbb illessze be a hivatkozást"
       ],
+      "Please select the main reason": [
+        "Válassza ki a fő okot"
+      ],
       "Please share what you expected": [
         "Kérjük, ossza meg mire számított."
       ],
@@ -13108,9 +13010,6 @@
       "upgrade for more storage": [
         "váltson nagyobb csomagra több tárhelyért"
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "A fennmaradó időre járó krediteket hozzáadjuk a ${ BRAND_NAME } fiókjához."
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "Még maradt **${ daysRemaining }** nap a **${ currentPlanName }** előfizetéséből.",
         "Még maradt **${ daysRemaining }** nap a **${ currentPlanName }** előfizetéséből."
@@ -13725,6 +13624,9 @@
       "Invitation rejected": [
         "Meghívás elutasítva"
       ],
+      "Invoice paid": [
+        "Számla fizetve"
+      ],
       "Keyboard shortcuts preferences updated": [
         "Gyorsbillentyű beállítások frissítve"
       ],
@@ -13849,9 +13751,6 @@
       ],
       "You have successfully canceled your subscription.": [
         "Sikeresen lemondta az előfizetését."
-      ],
-      "You have successfully unsubscribed": [
-        "Sikeresen leiratkozott"
       ]
     },
     "Success notification": {
@@ -14213,12 +14112,6 @@
       "Collaborate on documents": [
         "Együttműködés dokumentumokon"
       ],
-      "Confirm downgrade": [
-        "Lemondás megerősítése"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "${ BRAND_NAME } kedvezmények lemondásának megerősítése"
-      ],
       "Confirm recipient address?": [
         "Elfogadja a címzett címét?"
       ],
@@ -14236,6 +14129,9 @@
       ],
       "Contact group": [
         "Névjegy csoport"
+      ],
+      "Contact us": [
+        "Kapcsolatfelvétel"
       ],
       "Contacts": [
         "Névjegyek"
@@ -14355,9 +14251,6 @@
       ],
       "Downgrade account": [
         "Váltás kisebb csomagra"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }?"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } alkalmazások letöltése"
@@ -14724,6 +14617,9 @@
       "Other names": [
         "További nevek"
       ],
+      "Pay invoice": [
+        "Számla kifizetése"
+      ],
       "Payment failed": [
         "Sikertelen fizetés"
       ],
@@ -14804,6 +14700,9 @@
       ],
       "Request new code": [
         "Új kód kérése"
+      ],
+      "Request sent": [
+        "Kérés elküldve"
       ],
       "Same inbox, shorter email address": [
         "Ugyanaz a postafiók, rövidebb e-mail cím"
@@ -15264,6 +15163,20 @@
       ],
       "Replay video": [
         "Videó újrajátszása"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Találtam egy másik szolgáltatást, ami jobban tetszik"
+      ],
+      "It’s missing a key feature": [
+        "Hiányzik belőle egy kulcsfontosságú funkció"
+      ],
+      "It’s too expensive": [
+        "Túl drága"
+      ],
+      "Other": [
+        "Egyéb"
       ]
     },
     "VPN Plan Feature": {

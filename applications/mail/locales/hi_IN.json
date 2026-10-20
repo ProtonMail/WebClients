@@ -474,9 +474,6 @@
       "Done": [
         "हो गया"
       ],
-      "Downgrade": [
-        "डाउनग्रेड करें"
-      ],
       "Download": [
         "डाउनलोड करें"
       ],
@@ -1183,9 +1180,6 @@
       "Remove ${ attachmentName }": [
         "निकालें ${ attachmentName }"
       ],
-      "Remove bonuses": [
-        "बोनस हटाएं"
-      ],
       "Remove button": [
         "बटन हटाएं"
       ],
@@ -1513,6 +1507,9 @@
       "Submit": [
         "जमा करें"
       ],
+      "Subscribe": [
+        "सब्सक्राइब करें"
+      ],
       "Subscribe now": [
         "अभी सब्सक्राइब करें"
       ],
@@ -1568,8 +1565,7 @@
         "भरोसा करें"
       ],
       "Trust key": [
-        "ट्रस्ट की",
-        "ट्रस्ट कीज़"
+        "ट्रस्ट की"
       ],
       "Trust public key": [
         "सार्वजनिक कुंजी पर भरोसा करें"
@@ -2109,11 +2105,6 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "प्रीमियम पासवर्ड मैनेजर"
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "30 दिन की पैसे-वापस गारंटी"
       ]
     },
     "BF2024: Deal details": {
@@ -5858,14 +5849,6 @@
         "प्लान बदलें"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "परिवार ग्रुप नहीं पहचाना गया। फिर से कोशिश करें।"
-      ],
-      "Organization not recognized. Try again.": [
-        "संगठन नहीं पहचाना गया। फिर से कोशिश करें।"
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } ग्रुप"
@@ -5935,22 +5918,6 @@
         "आपका खाता ${ usedSpace } स्टोरेज का उपयोग कर रहा है, जो आपको दिए गए ${ inviteSpace } से अधिक है। कुछ डेटा मिटा दें या प्लान एडमिन से अपना स्टोरेज बढ़ाने के लिए कहें।"
       ]
     },
-    "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "पक्का करने के लिए परिवार ग्रुप नाम दर्ज करें"
-      ],
-      "Enter organization name to confirm": [
-        "पक्का करने के लिए संगठन नाम दर्ज करें"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "यह आपके संगठन से जुड़े सभी उप-यूज़र्स, खातों और डेटा को स्थायी रूप से हटा देगा।"
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "यह प्रत्येक परिवार के सदस्य के लिए सभी ${ BRAND_NAME } प्रीमियम खासियतें हटाएगा।"
-      ]
-    },
     "familyOffer_2023:Onboarding Proton": {
       "Configure your family account and invite users": [
         "अपने पारिवारिक खाता को कॉन्फ़िगर करें और यूज़र्स को आमंत्रित करें"
@@ -5963,14 +5930,6 @@
       ],
       "Set up your family account": [
         "अपना परिवार खाता सेट करें"
-      ]
-    },
-    "familyOffer_2023:Title": {
-      "Delete family group?": [
-        "परिवार ग्रुप मिटाएं?"
-      ],
-      "Delete organization?": [
-        "संगठन मिटाएं?"
       ]
     },
     "Feature": {
@@ -7172,21 +7131,11 @@
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "सदस्यता लेने वाले प्रत्येक मित्र के लिए **आपको ${ referrerRewardAmount }** क्रेडिट के रूप में मिलते हैं।"
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } बोनस स्टोरेज"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "${ VPN_APP_NAME } के लिए +${ organization.BonusVPN } कनेक्शन (आपको VPN से और डिवाइस कनेक्ट करने देता है)",
-        "+${ organization.BonusVPN } और कनेक्शन ${ VPN_APP_NAME } के लिए (आपको VPN से और डिवाइस कनेक्ट करने देता है)"
-      ],
       "1 device per user": [
         "प्रति यूज़र 1 डिवाइस"
       ],
       "1 vault per user": [
         "प्रति यूज़र 1 तिजोरी"
-      ],
-      "30-day money-back guarantee.": [
-        "30-दिन की मनी-बैक गारंटी।"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "एक ${ BRAND_NAME } खाता सत्यापित करने के लिए सिर्फ एक फोन नंबर इस्तेमाल हो सकता है"
@@ -7446,9 +7395,6 @@
       "Bulk delete": [
         "एक साथ मिटा दें"
       ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Free plan में डाउनग्रेड करने से, ये लाभ स्थायी रूप से खत्म हो जाएंगे, भले ही भविष्य में फिर से अपग्रेड किया जाए।"
-      ],
       "Calendar side panel": [
         "कैलेंडर साइड पैनल"
       ],
@@ -7688,9 +7634,6 @@
       ],
       "Downgrade": [
         "डाउनग्रेड करें"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "डाउनग्रेड करने से सशुल्क ${ VPN_APP_NAME } सर्वर से कोई भी कनेक्शन समाप्त हो जाएगा।"
       ],
       "Download application logs for troubleshooting": [
         "समस्या सुलझाने के लिए एप्लीकेशन लॉग डाउनलोड करें"
@@ -8022,15 +7965,6 @@
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "अगर आपके ऑथेंटिकेटर ऐप का एक्सेस खो गया है, तो टू-फैक्टर सत्यापन सेटअप करते समय दिए गए 16 बैकअप रिकवर कोड में से 1 इस्तेमाल किया जा सकता है। ${ learnMoreLink }"
       ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "यदि आप डाउनग्रेड के साथ आगे बढ़ते हैं, तो आप ${ MAIL_APP_NAME } और ${ VPN_APP_NAME } की सशुल्क खासियतों तक पहुंच खो देंगे।"
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "यदि आप डाउनग्रेड के साथ आगे बढ़ते हैं, तो आप अतिरिक्त संग्रहण और फ़िल्टर सहित ${ MAIL_APP_NAME } सशुल्क सुविधाओं तक पहुंच खो देंगे।"
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "यदि आप डाउनग्रेड के साथ आगे बढ़ते हैं, तो आप ${ VPN_APP_NAME } की सशुल्क सुविधाओं तक पहुंच खो देंगे।"
-      ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "अगर आपक नकलीनाम बेचा जाता, लीक होता या उसका दुरुपयोग होता है, तो स्पैम बंद करने को बस उसे अक्षम करें।"
       ],
@@ -8091,9 +8025,6 @@
       ],
       "Initializing…": [
         "शुरू हो रहा है…"
-      ],
-      "Insert image": [
-        "तस्वीर डालें"
       ],
       "Insert link": [
         "लिंक डालें"
@@ -8902,9 +8833,6 @@
       "Show original message": [
         "मूल संदेश दिखाएं"
       ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "चूंकि आप एक वफादार यूज़र हैं, इसलिए आपके खाते में अतिरिक्त सुविधाएं सक्षम हैं।"
-      ],
       "Snooze emails": [
         "ईमेल सूचना बंद करें"
       ],
@@ -9506,6 +9434,9 @@
       "We'll email you once import is complete.": [
         "आयात पूरा होने पर हम आपको ईमेल करेंगे।"
       ],
+      "We'll get back to you shortly.": [
+        "हम शीघ्र ही आपसे संपर्क करेंगे।"
+      ],
       "We'll notify you when the import is done.": [
         "आयात हो जाने पर हम आपको सूचित करेंगे।"
       ],
@@ -9697,9 +9628,6 @@
       ],
       "You may be redirected to your bank’s website.": [
         "आपको अपने बैंक की वेबसाइट पे रीडायरेक्ट किया जा सकता है।"
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "डाउनग्रेड करने से पहले आपको किसी भी अतिरिक्त ${ MAIL_APP_NAME } यूज़र्स, पतों और कस्टम डोमेन को अक्षम या हटाना होगा।"
       ],
       "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
         "आपने अपनी ${ categoryLabel } श्रेणी में **${ checked } बातचीत** चुनी है",
@@ -10270,6 +10198,12 @@
       "Always move sender's emails": [
         "प्रेषक के ईमेल हमेशा ले जाएं"
       ],
+      "Amount": [
+        "रकम"
+      ],
+      "Amount due": [
+        "देय राशि"
+      ],
       "AND": [
         "और"
       ],
@@ -10461,6 +10395,9 @@
       ],
       "Credits": [
         "क्रेडिट"
+      ],
+      "Credits used": [
+        "खर्च किए गए क्रेडिट"
       ],
       "Current context": [
         "वर्तमान संदर्भ"
@@ -10909,6 +10846,9 @@
       "Phone number": [
         "फोन नंबर"
       ],
+      "Please share any feedback to help us improve.": [
+        "हमें बेहतर बनाने में मदद करने के लिए कोई भी सुझाव साझा करें।"
+      ],
       "Port": [
         "पोर्ट"
       ],
@@ -11181,6 +11121,9 @@
       ],
       "What happened?": [
         "क्या हुआ?"
+      ],
+      "Why would you like to cancel?": [
+        "इसे रद्द करने की वजह क्या है?"
       ],
       "With attachment": [
         "अनुलग्नक के साथ"
@@ -12036,35 +11979,17 @@
         "मध्यम VPN रफ्तार"
       ]
     },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "${ planTitle } लें"
+      ]
+    },
     "new_plans: action": {
-      "Delete account": [
-        "खाता मिटा दें"
-      ],
-      "Downgrade account": [
-        "खाते को डाउनग्रेड करें"
-      ],
       "Get ${ BRAND_NAME } for free": [
         "${ BRAND_NAME } पाएं मुफ्त में"
       ],
       "Get ${ planName }": [
         "${ planName } लें"
-      ],
-      "Keep ${ plan }": [
-        "${ plan } रखें"
-      ],
-      "Keep account": [
-        "खाता रखें"
-      ],
-      "Switch plan": [
-        "प्लान बदलें"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } पे डाउनग्रेड करें"
-      ],
-      "Get ${ planTitle }": [
-        "${ planTitle } लें"
       ]
     },
     "new_plans: feature": {
@@ -12565,18 +12490,6 @@
       "For next-level password management and identity protection.": [
         "उच्च स्तर के पासवर्ड प्रबंधन और पहचान सुरक्षा के लिए।"
       ],
-      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
-        "खाता मिटाने पर, ${ visionary } प्लान के सारे फायदे खत्म हो जाएंगे और वापिस खाता बनाने पर ये उपलब्ध नहीं होगा।"
-      ],
-      "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
-        "खाता डाउनग्रेड करने पर, ${ visionary } प्लान के सारे फायदे खत्म हो जाएंगे और वापिस सदस्यता लेने की कोशिश करने पर ये उपलब्ध नहीं होगा।"
-      ],
-      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
-        "प्लान बदलने पर, ${ visionary } प्लान के सारे फायदे खत्म हो जाएंगे और वापिस ${ visionary } पर स्विच नहीं किया जा सकेगा।"
-      ],
-      "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
-        "हमारा ${ visionary } प्लान नए सदस्यों के लिए अब नहीं है क्योंकि वो असली ${ BRAND_NAME } यूज़र के लिए एक खास प्लान है, खास सुविधाओं और फायदों के साथ।"
-      ],
       "Pay once, secure your passwords and identity forever.": [
         "एक बार भुगतान करें, अपने पासवर्ड और पहचान को हमेशा के लिए सुरक्षित करें।"
       ],
@@ -12606,12 +12519,6 @@
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
         "2 लोगों तक के लिए अनलिमिटेड प्राइवेसी और अधिक स्टोरेज।"
-      ],
-      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
-        "आपके अभी चल रहे प्लान पे छूट मिल रही है। खाता मिटाने पर, ये छूट खत्म हो जाएगी और वापिस खाता बनाने पर ये उपलब्ध नहीं होगी।"
-      ],
-      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
-        "आपके अभी चल रहे प्लान पे छूट मिल रही है। डाउनग्रेड करने पर, ये छूट खत्म हो जाएगी और वापिस सदस्यता लेने की कोशिश करने पर ये उपलब्ध नहीं होगी।"
       ]
     },
     "new_plans: label": {
@@ -12631,20 +12538,11 @@
       ]
     },
     "new_plans: title": {
-      "Delete account?": [
-        "खाता मिटाएं?"
-      ],
-      "Downgrade account?": [
-        "खाता डाउनग्रेड करें?"
-      ],
       "Review subscription": [
         "सदस्यता की समीक्षा करें"
       ],
       "Review subscription and pay": [
         "सदस्यता की समीक्षा करें और भुगतान करें"
-      ],
-      "Switch plans?": [
-        "प्लान बदलें?"
       ]
     },
     "new_plans: tooltip": {
@@ -13860,11 +13758,6 @@
         "कुछ गलत हो गया। Google Pay सत्यापन असफल रहा।"
       ]
     },
-    "Payments.iDEAL": {
-      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
-        "पुष्टि करके, ${ BRAND_NAME } और Stripe, हमारे भुगतान सेवा प्रदाता, को आपकी सदस्यता के लिए भविष्य के पेमेंट SEPA Direct Debit के ज़रिए इस बैंक खाते से लेने की और आपके बैंक को वो पेमेंट काटने की अनुमति दी जाती है। आपका पहला पेमेंट अभी ${ IDEAL_WERO_BRAND_NAME } के ज़रिए होगा। आपका प्लान ऑटो-रीन्यू होता रहेगा, जब तक आप रद्द न करें; हर कलेक्शन से पहले हम आपको सूचित करेंगे। डायरेक्ट डेबिट कलेक्शन के लिए, अपने बैंक से किए गए समझौते की शर्तों के तहत डेबिट की तारीख़ से 8 हफ़्तों के भीतर बैंक से रिफ़ंड मांगा जा सकता है। ये अभी किए जा रहे ${ IDEAL_WERO_BRAND_NAME } पेमेंट पर लागू नहीं होता।"
-      ]
-    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "आपके पिछले प्लान की सदस्यता के अप्रयुक्त हिस्से के लिए क्रेडिट"
@@ -14097,6 +13990,9 @@
       ],
       "Please insert link first": [
         "कृपया पहले लिंक डालें"
+      ],
+      "Please select the main reason": [
+        "कृपया मुख्य कारण को चुनें"
       ],
       "Please share what you expected": [
         "कृपया शेयर करें कि आपकी क्या उम्मीद थी"
@@ -15278,9 +15174,6 @@
       "upgrade for more storage": [
         "अधिक स्टोरेज के लिए अपग्रेड करें"
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "हम शेष समय के लिए क्रेडिट आपके ${ BRAND_NAME } खाते में जोड़ देंगे।"
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "आपके **${ currentPlanName }** योजना में अब भी **${ daysRemaining }** दिन शेष है।",
         "आपके **${ currentPlanName }** प्लान में अब भी **${ daysRemaining }** दिन शेष हैं।"
@@ -15886,6 +15779,9 @@
       "Invitation rejected": [
         "निमंत्रण अस्वीकार कर दिया गया"
       ],
+      "Invoice paid": [
+        "रसीद का भुगतान हो गया"
+      ],
       "Keyboard shortcuts preferences updated": [
         "कीबोर्ड शॉर्टकट प्राथमिकताएं अपडेट की गईं"
       ],
@@ -16010,9 +15906,6 @@
       ],
       "You have successfully canceled your subscription.": [
         "आपने अपनी सदस्यता सफलतापूर्वक रद्द कर दी है।"
-      ],
-      "You have successfully unsubscribed": [
-        "आपने अपनी सदस्यता सफलतापूर्वक समाप्त कर दी है।"
       ]
     },
     "Success notification": {
@@ -16401,12 +16294,6 @@
       "Configure migration": [
         "माइग्रेशन कॉन्फ़िगर करें"
       ],
-      "Confirm downgrade": [
-        "डाउनग्रेड की पुष्टि करें"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "${ BRAND_NAME } बोनस का नुकसान मानें"
-      ],
       "Confirm recipient address?": [
         "प्राप्तकर्ता का पता पुष्ट करें?"
       ],
@@ -16427,6 +16314,9 @@
       ],
       "Contact group": [
         "संपर्क समूह"
+      ],
+      "Contact us": [
+        "हमसे संपर्क करें"
       ],
       "Contacts": [
         "संपर्क"
@@ -16552,9 +16442,6 @@
       ],
       "Downgrade account": [
         "खाते को डाउनग्रेड करें"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "${ downgradedPlanName } पे डाउनग्रेड करें?"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } ऐप डाउनलोड करें"
@@ -16944,6 +16831,9 @@
       "Other names": [
         "दूसरे नाम"
       ],
+      "Pay invoice": [
+        "इनवॉइस का भुगतान करें"
+      ],
       "Payment failed": [
         "भुगतान असफल हुआ"
       ],
@@ -17027,6 +16917,9 @@
       ],
       "Request new code": [
         "नए कोड का अनुरोध करें"
+      ],
+      "Request sent": [
+        "अनुरोध भेजा गया"
       ],
       "Reverse charge not supported": [
         "रिवर्स चार्ज समर्थित नहीं है"
@@ -17560,6 +17453,20 @@
       ],
       "Replay video": [
         "वीडियो फिर से चलाएं"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "मुझे एक और सेवा मिली जो मुझे बेहतर लगी"
+      ],
+      "It’s missing a key feature": [
+        "यह एक महत्वपूर्ण खासियत गायब है"
+      ],
+      "It’s too expensive": [
+        "यह बहुत महंगा है"
+      ],
+      "Other": [
+        "दूसरा"
       ]
     },
     "VPN Plan Feature": {
