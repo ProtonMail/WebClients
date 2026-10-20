@@ -9,7 +9,12 @@ $run-spill: math.div($run-grid-width - 32, 2) * $cat-pixel;
 
 // Keep in step with the leap headroom drawn into the cat art
 $leap-headroom: 18 * $cat-pixel;
-$menu-max-buttons: 4;
+$ear-tip-row: 3;
+$visible-ear-rows: 5;
+$hidden-drop: $cat-inset + $cat-size - ($ear-tip-row + $visible-ear-rows) * $cat-pixel;
+$jump-duration: 900ms;
+$jump-height: $cat-size * 0.5;
+$menu-max-buttons: 5;
 $menu-stagger: 40ms;
 
 // Only the cat's body and the shown menu take the pointer, not the empty box around them
@@ -30,6 +35,57 @@ $menu-stagger: 40ms;
 
 .lumo-pet-cat-slot {
 	@include cat-slot-dropped-by(0);
+
+	&--hidden {
+		@include cat-slot-dropped-by($hidden-drop);
+	}
+
+	&--jump-out {
+		animation: lumo-pet-jump-out $jump-duration both;
+	}
+
+	&--jump-in {
+		animation: lumo-pet-jump-in $jump-duration both;
+	}
+}
+
+// Keyframe stops follow the jump-out and jump-in step timings in catSpriteManifest.json
+@keyframes lumo-pet-jump-out {
+	0%,
+	16.67% {
+		@include cat-slot-dropped-by(0);
+
+		animation-timing-function: ease-out;
+	}
+
+	45% {
+		@include cat-slot-dropped-by(-$jump-height);
+
+		animation-timing-function: ease-in;
+	}
+
+	100% {
+		@include cat-slot-dropped-by($hidden-drop);
+	}
+}
+
+@keyframes lumo-pet-jump-in {
+	0% {
+		@include cat-slot-dropped-by($hidden-drop);
+
+		animation-timing-function: ease-out;
+	}
+
+	40% {
+		@include cat-slot-dropped-by(-$jump-height);
+
+		animation-timing-function: ease-in;
+	}
+
+	72%,
+	100% {
+		@include cat-slot-dropped-by(0);
+	}
 }
 
 // The ghost border still draws the focus outline, but takes no room, so the dock stays the cat's size
@@ -37,6 +93,7 @@ $menu-stagger: 40ms;
 	--button-hover-background-color: transparent;
 	--button-active-background-color: transparent;
 
+	padding: 0;
 	margin: -1px;
 }
 

@@ -9,6 +9,9 @@ $card-offset: $cat-inset + $cat-size + $card-gap;
 $card-top-gap: rem(8);
 $prompt-bottom: $cat-inset + ($cat-size - $prompt-height) * 0.5;
 
+// Sets off at full pace and eases to a stop under the skid
+$run-easing: cubic-bezier(0.3, 0.3, 0.45, 1);
+
 .lumo-floating-panel {
 	--lumo-floating-panel-direction: 1;
 	--lumo-floating-panel-inset-end: #{$cat-inset};
@@ -44,6 +47,7 @@ $prompt-bottom: $cat-inset + ($cat-size - $prompt-height) * 0.5;
 	position: absolute;
 	inset-inline-start: 0;
 	transform: translateX(calc(var(--lumo-floating-panel-direction) * var(--lumo-floating-panel-offset)));
+	transition: none;
 
 	// The percentage resolves against each element's own width, where the transform uses it
 	.lumo-floating-panel--right & {
@@ -55,6 +59,10 @@ $prompt-bottom: $cat-inset + ($cat-size - $prompt-height) * 0.5;
 
 	.lumo-floating-panel--left & {
 		--lumo-floating-panel-offset: calc(#{$cat-inset} + var(--lumo-floating-panel-clearance));
+	}
+
+	.lumo-floating-panel--running & {
+		transition: transform var(--lumo-floating-panel-run-ms) $run-easing;
 	}
 }
 

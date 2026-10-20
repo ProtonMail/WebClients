@@ -23,6 +23,9 @@ describe('LumoHeaderButton', () => {
             toggleLumo,
             closePanel: jest.fn(),
             switchSides: jest.fn(),
+            isCatHidden: false,
+            hideCat: jest.fn(),
+            revealCat: jest.fn(),
         });
         render(<LumoHeaderButton />);
         const button = screen.getByTestId('lumo-drawer-app-button:lumo-icon');
