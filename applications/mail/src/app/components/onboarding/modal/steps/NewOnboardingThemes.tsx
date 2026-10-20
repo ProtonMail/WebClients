@@ -7,13 +7,12 @@ import type { OnboardingStepRenderCallback } from '@proton/components/containers
 import ThemeCard from '@proton/components/containers/themes/ThemeCard';
 import { getThemeCardSize } from '@proton/components/containers/themes/ThemeCards';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
-import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
+import { OldTelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import type { ThemeTypes } from '@proton/shared/lib/themes/constants';
 import clsx from '@proton/utils/clsx';
 
 import { useMailOnboardingTelemetry } from '../../useMailOnboardingTelemetry';
-
 import type { OnboardingStepEligibleCallback } from '../interface';
 import OnboardingContent from '../layout/OnboardingContent';
 
@@ -35,7 +34,7 @@ const NewOnboardingThemes = ({ onNext }: OnboardingStepRenderCallback) => {
 
     const handleNext = () => {
         const selectedTheme = theme.information.theme;
-        void sendMailOnboardingTelemetry(TelemetryMailOnboardingEvents.select_theme, {
+        void sendMailOnboardingTelemetry(OldTelemetryMailOnboardingEvents.select_theme, {
             theme: `${selectedTheme}`,
             is_default_theme: selectedTheme === 0 ? 'yes' : 'no',
         });

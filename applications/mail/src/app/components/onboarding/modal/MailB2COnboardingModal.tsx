@@ -4,7 +4,7 @@ import { useWelcomeFlags } from '@proton/account';
 import OnboardingModal from '@proton/components/containers/onboarding/OnboardingModal';
 import type { OnboardingStepComponent } from '@proton/components/containers/onboarding/interface';
 import useEventManager from '@proton/components/hooks/useEventManager';
-import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
+import { OldTelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useMailDispatch } from '../../../store/hooks';
@@ -98,13 +98,13 @@ const MailB2COnboardingModal = (props: MailOnboardingProps) => {
     };
 
     const handleDone = () => {
-        void sendMailOnboardingTelemetry(TelemetryMailOnboardingEvents.finish_onboarding_modals, {});
+        void sendMailOnboardingTelemetry(OldTelemetryMailOnboardingEvents.finish_onboarding_modals, {});
         props.onDone?.();
     };
 
     useEffect(() => {
         // Send telemetry onboarding start event
-        void sendMailOnboardingTelemetry(TelemetryMailOnboardingEvents.start_onboarding_modals, {});
+        void sendMailOnboardingTelemetry(OldTelemetryMailOnboardingEvents.start_onboarding_modals, {});
 
         const init = async () => {
             const toPreload = new Set<string>();
