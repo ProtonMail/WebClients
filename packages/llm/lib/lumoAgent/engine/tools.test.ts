@@ -38,6 +38,18 @@ describe('buildToolDescriptors', () => {
         }
     });
 
+    it('leaves the description out for a tool that has none', () => {
+        const [tool] = buildToolDescriptors([def('bare', { toolDescription: undefined })], []);
+
+        expect(tool.function).not.toHaveProperty('description');
+    });
+
+    it('advertises a guide-gated tool before its guide is loaded when told to advertise all', () => {
+        const names = buildToolDescriptors(TOOLS, [], { advertiseAll: true }).map((tool) => tool.function.name);
+
+        expect(names).toEqual(['view_items', 'needs_guide']);
+    });
+
     it('advertises a guide-gated tool only once its guide is loaded', () => {
         const before = buildToolDescriptors(TOOLS, []).map((tool) => tool.function.name);
         expect(before).not.toContain('needs_guide');
