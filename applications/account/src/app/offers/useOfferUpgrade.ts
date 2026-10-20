@@ -1,12 +1,21 @@
 import { useCallback } from 'react';
-import { useHistory } from 'react-router-dom';
 
-/** Where a `GoToUpsell` CTA takes an account user. Shared by every offer
- * surface in this app so they can't drift apart.
- *
- * TODO: Launch subscription modal directly here instead of redirecting to
- * dashboard. */
+import { useSubscriptionModalRaw } from '@proton/components/containers/payments/subscription/subscriptionModalContext';
+import type { CtaUpgradeParams } from '@proton/offers-delivery/interface';
+import { SUBSCRIPTION_STEPS } from '@proton/payments-ui/ui/subscriptions/constants';
+
 export const useOfferUpgrade = () => {
-    const history = useHistory();
-    return useCallback(() => history.push('/dashboard'), [history]);
+    const openSubscriptionModal = useSubscriptionModalRaw();
+    return useCallback(
+        (cta: CtaUpgradeParams | null) =>
+            openSubscriptionModal({
+                step: cta?.plan ? SUBSCRIPTION_STEPS.CHECKOUT : SUBSCRIPTION_STEPS.PLAN_SELECTION,
+                coupon: cta?.coupon,
+                cycle: cta?.cycle,
+                plan: cta?.plan,
+                disableCycleSelector: cta?.disableCycleSelector,
+                disablePlanSelection: cta?.disablePlanSelector,
+            }),
+        [openSubscriptionModal]
+    );
 };

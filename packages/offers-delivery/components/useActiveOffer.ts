@@ -8,8 +8,9 @@ import { getCurrentUnixTimestamp } from '@proton/shared/lib/helpers/time';
 import { CommonFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import type { CtaUpgradeParams } from '../interface';
 import { CampaignEventAction, type CampaignVariant, type MaybeNull, type PublicCampaign } from '../interface';
-import { performCta, toPublicCta } from '../lib/cta';
+import { toPublicCta } from '../lib/cta';
 import { selectActiveCampaign, sendCampaignEventThunk } from '../store/slice';
 
 export type ActiveOffer = {
@@ -30,7 +31,7 @@ export type UseActiveOfferOptions = {
     /** Invoked for the `GoToUpsell` token, the only internal ref the gateway
      * emits. Required, not defaulted: a call site that forgets it would render
      * a CTA that reports `CtaClicked` and then does nothing. */
-    onUpgrade: (coupon: MaybeNull<string>) => void;
+    onUpgrade: (campaign: CtaUpgradeParams | null) => void;
     /** Override for hosts where `window.open` is unavailable (e.g. extensions). */
     onExternalLink?: (url: string) => void;
     /** Let `seenRef` report on mount. Set `false` to own the timing via
@@ -91,7 +92,7 @@ export const useActiveOffer = (
      * and copy-link still work. */
     const onAction = useCallback(
         (event?: MouseEvent<HTMLElement>) => {
-            if (cta === null) {
+            if (cta === null || campaign === null) {
                 return;
             }
             void dispatch(sendCampaignEventThunk(CampaignEventAction.CTA_CLICKED));
@@ -101,9 +102,13 @@ export const useActiveOffer = (
                 return;
             }
 
-            performCta(cta, { onExternalLink, onUpgrade });
+            if (cta.kind === 'external') {
+                onExternalLink(cta.href);
+            } else if (cta.kind === 'upgrade') {
+                onUpgrade(cta.params);
+            }
         },
-        [cta, dispatch, onExternalLink, onUpgrade]
+        [cta, dispatch, onExternalLink, onUpgrade, campaign]
     );
 
     const onDismiss = useCallback(() => {

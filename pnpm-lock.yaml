@@ -7623,6 +7623,9 @@ importers:
       '@proton/icons':
         specifier: workspace:^
         version: link:../icons
+      '@proton/payments':
+        specifier: workspace:^
+        version: link:../payments
       '@proton/react-redux-store':
         specifier: workspace:^
         version: link:../react-redux-store
