@@ -1,5 +1,5 @@
 import type { ChatCompletionsFunctionTool } from '../types-api';
-import { Role } from '../types-api';
+import { LumoClientType, Role } from '../types-api';
 import {
     APERTUS_15_MODEL,
     DEFAULT_CHAT_MODEL,
@@ -253,6 +253,13 @@ describe('toChatCompletionsBody', () => {
                 },
             },
         ]);
+    });
+
+    it('identifies the caller as the Lumo frontend unless told otherwise', () => {
+        expect(toChatCompletionsBody(baseRequest).lumo?.client_type).toBe(LumoClientType.Frontend);
+        expect(toChatCompletionsBody(baseRequest, { clientType: LumoClientType.LumoMail }).lumo?.client_type).toBe(
+            LumoClientType.LumoMail
+        );
     });
 
     it('maps image aspect ratio into the lumo extension', () => {

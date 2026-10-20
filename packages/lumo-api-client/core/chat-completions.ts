@@ -14,7 +14,7 @@ import type {
     WireImage,
     WireTurn,
 } from '../types-api';
-import { Role } from '../types-api';
+import { LumoClientType, Role } from '../types-api';
 
 export const DEFAULT_CHAT_MODEL = 'lumo-lite';
 export const LUMO_LITE_MODEL = 'lumo-lite';
@@ -44,6 +44,8 @@ export type ToChatCompletionsOptions = {
     serverTools?: ToolName[];
     /** Lumo Unleash toggles attached to `lumo.feature_flags` for observability. */
     featureFlags?: ChatCompletionsFeatureFlags;
+    /** Sent as `lumo.client_type`. Defaults to `Frontend`. */
+    clientType?: LumoClientType;
 };
 
 export function resolveChatModel(modelTier: LumoApiModelTier = 'auto', model?: string): string {
@@ -216,7 +218,7 @@ function buildLumoExtension(
     options: ToChatCompletionsOptions
 ): ChatCompletionsLumoExtension {
     const lumo: ChatCompletionsLumoExtension = {
-        client_type: 'frontend',
+        client_type: options.clientType ?? LumoClientType.Frontend,
     };
 
     if (options.target) {

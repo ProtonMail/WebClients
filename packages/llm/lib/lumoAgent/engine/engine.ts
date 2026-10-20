@@ -85,6 +85,18 @@ export interface ClientToolExecutorConfig {
     onChip?: (chip: ToolChip) => void;
     onTrace?: (error: unknown) => void;
     loadGuideToolName?: ToolName;
+    /**
+     * The product's own system prompt describes every tool: all are advertised from the first round,
+     * and what counts as a loaded guide is set by the caller through `setLoadedGuides`.
+     */
+    standalonePrompt?: boolean;
+}
+
+interface LoadGuideReplies {
+    noGuide: (target: ToolName) => ClientToolResult;
+    alreadyLoaded: (target: ToolName) => ClientToolResult;
+    noBody: (target: ToolName) => ClientToolResult;
+    loaded: (target: ToolName, guide: string) => ClientToolResult;
 }
 
 const okResult = (content: string): ClientToolResult => ({ content });
@@ -99,6 +111,27 @@ const parseArgs = (raw: string): unknown => {
     } catch {
         return raw;
     }
+};
+
+const COMPOSED_LOAD_GUIDE_REPLIES: LoadGuideReplies = {
+    noGuide: () => errorResult('There is no guide for that tool.'),
+    alreadyLoaded: () => okResult('That guide is already loaded. Call the tool now; do not load it again.'),
+    noBody: () => okResult('There is no extra guidance for that tool. It is now available, so call it as described.'),
+    loaded: (target, guide) =>
+        okResult(
+            `Usage guide for ${target} — its tool is now available, and you MUST follow this guide every time you call it. Call it now to continue the work; never reply to the user about this guide.\n\n${guide}`
+        ),
+};
+
+const standaloneNoGuide = (target: ToolName) =>
+    okResult(`${target} has no guide; its description covers everything it needs.`);
+
+const STANDALONE_LOAD_GUIDE_REPLIES: LoadGuideReplies = {
+    noGuide: standaloneNoGuide,
+    alreadyLoaded: (target) => okResult(`The ${target} guide was already loaded earlier in this conversation.`),
+    noBody: standaloneNoGuide,
+    loaded: (target, guide) =>
+        okResult(`The ${target} guide was loaded. It follows below and applies to every ${target} call.\n\n${guide}`),
 };
 
 const unknownReferenceMessage = (reference: string): string =>
@@ -174,6 +207,8 @@ interface ExecuteOptions {
 
 export interface LumoClientToolExecutor extends ClientToolExecutor {
     getLoadedGuides(): ToolName[];
+    /** Standalone-prompt mode: the guides whose bodies the turns about to be sent still carry; anything else loads afresh. */
+    setLoadedGuides(guides: ToolName[]): void;
     execute(calls: PendingClientToolCall[], options?: ExecuteOptions): Promise<ClientToolResult[]>;
 }
 
@@ -187,13 +222,15 @@ export const createClientToolExecutor = (config: ClientToolExecutorConfig): Lumo
         onChip,
         onTrace,
         loadGuideToolName = LOAD_GUIDE_TOOL_NAME,
+        standalonePrompt = false,
     } = config;
 
     const fenceUntrusted = createUntrustedFence();
     const byName = new Map<ToolName, ToolDefinition>(definitions.map((definition) => [definition.name, definition]));
+    const loadGuideReplies = standalonePrompt ? STANDALONE_LOAD_GUIDE_REPLIES : COMPOSED_LOAD_GUIDE_REPLIES;
     // Widens as `load_guide` runs; getClientTools() re-reads it each round so a just-unlocked tool is
     // advertised on the next turn.
-    const loadedGuides = new Set<ToolName>(config.loadedGuides ?? []);
+    let loadedGuides = new Set<ToolName>(config.loadedGuides ?? []);
 
     /**
      * Guard params against hallucinated references, converting the {@link UnknownReferenceError} into a
@@ -272,27 +309,34 @@ export const createClientToolExecutor = (config: ClientToolExecutorConfig): Lumo
     const runLoadGuide = (args: Record<string, any>): ClientToolResult => {
         const target = args.guide as ToolName;
         const targetDefinition = byName.get(target);
-        if (!targetDefinition?.guide) {
-            return errorResult('There is no guide for that tool.');
+        // An invented name is an error in both modes; a polite "no guide" would tell the model the tool exists.
+        if (!targetDefinition) {
+            return errorResult('There is no tool by that name.');
+        }
+        if (!targetDefinition.guide) {
+            return loadGuideReplies.noGuide(target);
         }
         if (loadedGuides.has(target)) {
-            return okResult('That guide is already loaded. Call the tool now; do not load it again.');
+            return loadGuideReplies.alreadyLoaded(target);
         }
 
-        loadedGuides.add(target);
         const guide = resolveGuide(targetDefinition);
         if (!guide) {
-            return okResult('There is no extra guidance for that tool. It is now available, so call it as described.');
+            // Composed mode gates the tool on its guide, so an empty body still unblocks it. Standalone
+            // mode gates nothing, and a guide only counts as loaded once a body went out.
+            if (!standalonePrompt) {
+                loadedGuides.add(target);
+            }
+            return loadGuideReplies.noBody(target);
         }
+        loadedGuides.add(target);
         const loadGuide = byName.get(loadGuideToolName);
         onChip?.({
             tool: loadGuideToolName,
             summary: loadGuide?.summarizeChip(args, undefined as never) ?? { label: `Loaded guide for ${target}` },
             payload: guide,
         });
-        return okResult(
-            `Usage guide for ${target} — its tool is now available, and you MUST follow this guide every time you call it. Call it now to continue the work; never reply to the user about this guide.\n\n${guide}`
-        );
+        return loadGuideReplies.loaded(target, guide);
     };
 
     /**
@@ -375,8 +419,11 @@ export const createClientToolExecutor = (config: ClientToolExecutorConfig): Lumo
 
     return {
         getClientTools: async (): Promise<ChatCompletionsFunctionTool[]> =>
-            buildToolDescriptors(definitions, loadedGuides),
+            buildToolDescriptors(definitions, loadedGuides, { advertiseAll: standalonePrompt }),
         getLoadedGuides: () => [...loadedGuides],
+        setLoadedGuides: (guides) => {
+            loadedGuides = new Set(guides);
+        },
         canExecute: (name) => byName.has(name),
         normalizeCalls: normalizeName
             ? (calls) => calls.map((call) => ({ ...call, name: normalizeName(call.name) }))
