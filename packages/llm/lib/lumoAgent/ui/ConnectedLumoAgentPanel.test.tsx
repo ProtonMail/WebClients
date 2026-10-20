@@ -12,6 +12,7 @@ describe('ConnectedLumoAgentPanel', () => {
         const drawer: LumoAgentDrawerValue = {
             items: [],
             isBusy: true,
+            lastChainEnd: null,
             hasConversation: false,
             draft: 'archive the',
             setDraft: jest.fn(),
@@ -29,7 +30,7 @@ describe('ConnectedLumoAgentPanel', () => {
 
         render(
             <LumoAgentDrawerContext.Provider value={drawer}>
-                <ConnectedLumoAgentPanel onClose={onClose} showPromptInput={false} />
+                <ConnectedLumoAgentPanel onClose={onClose} showPromptInput={false} showThinking={false} />
             </LumoAgentDrawerContext.Provider>
         );
 
@@ -42,6 +43,7 @@ describe('ConnectedLumoAgentPanel', () => {
             serverToolMeta: drawer.serverToolMeta,
             suggestions: drawer.suggestions,
             showPromptInput: false,
+            showThinking: false,
             onSend: drawer.send,
             onSuggestionPicked: drawer.onSuggestionPicked,
             onStop: drawer.stop,
