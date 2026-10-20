@@ -1,4 +1,4 @@
-import { NodeWithSameNameExistsValidationError } from '@protontech/drive-sdk';
+import { type NodeType, NodeWithSameNameExistsValidationError } from '@protontech/drive-sdk';
 import { c } from 'ttag';
 
 import { ProtonDriveError, getDrive, useDrive } from '../../../index';
@@ -9,6 +9,7 @@ import { useCopiedItemsNotification } from './useCopiedItemsNotification';
 interface Item {
     uid: string;
     name: string;
+    type: NodeType;
 }
 
 /**
@@ -29,7 +30,7 @@ export const useCopyItems = () => {
     const { drive } = useDrive();
     const { showCopiedItemsNotifications, showUndoCopyNotification } = useCopiedItemsNotification();
 
-    const undoCopy = async (copies: Item[]) => {
+    const undoCopy = async (copies: Pick<Item, 'uid' | 'name'>[]) => {
         const itemsByUid = Object.fromEntries(copies.map((item) => [item.uid, item]));
         const uidsToDelete = Object.keys(itemsByUid);
         const deleted = [];
@@ -69,7 +70,8 @@ export const useCopyItems = () => {
                         // Try creating file with a different name in case of a conflict
                         const availableName = await drive.getAvailableName(
                             targetFolderUid,
-                            itemsByUid[result.uid].name
+                            itemsByUid[result.uid].name,
+                            itemsByUid[result.uid].type
                         );
                         const { done, value } = await drive
                             .copyNodes([{ uid: result.uid, name: availableName }], targetFolderUid)

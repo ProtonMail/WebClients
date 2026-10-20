@@ -153,7 +153,7 @@ export const uploadDriveBackground = async ({
             throw error;
         }
 
-        return upload(await drive.getAvailableName(folderUid, requestedName));
+        return upload(await drive.getAvailableName(folderUid, requestedName, NodeType.File));
     }
 };
 

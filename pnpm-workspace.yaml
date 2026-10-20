@@ -13,6 +13,8 @@ packages:
 # Each workspace declares the type packages it uses. Most list node, webpack-env and jest in
 # compilerOptions.types through tsconfig.base.json, so these ranges are shared here.
 catalog:
+    # Shared so that every workspace importing the Drive SDK resolves the same version.
+    '@protontech/drive-sdk': ^0.23.0
     '@protontech/logger': ^1.0.0
     '@types/chrome': ^0.3.4
     '@types/history': ^4.7.11
