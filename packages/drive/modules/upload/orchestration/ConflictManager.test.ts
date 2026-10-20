@@ -287,6 +287,7 @@ describe('ConflictManager', () => {
 
             await conflictManager.chooseConflictStrategy('task1', UploadConflictStrategy.Rename);
 
+            expect(mockGetAvailableName).toHaveBeenCalledWith(expect.any(String), expect.any(String), NodeType.File);
             expect(mockUpdateQueueItems).toHaveBeenCalledWith(
                 'task1',
                 expect.objectContaining({
@@ -307,6 +308,7 @@ describe('ConflictManager', () => {
 
             await conflictManager.chooseConflictStrategy('task1', UploadConflictStrategy.Rename);
 
+            expect(mockGetAvailableName).toHaveBeenCalledWith(expect.any(String), expect.any(String), NodeType.Folder);
             expect(mockUpdateQueueItems).toHaveBeenCalledWith(
                 'task1',
                 expect.objectContaining({
