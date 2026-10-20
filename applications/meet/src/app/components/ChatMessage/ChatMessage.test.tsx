@@ -41,6 +41,7 @@ interface EmojiMartSelection {
 
 interface EmojiMartPickerProps {
     onEmojiSelect: (selection: EmojiMartSelection) => void;
+    custom?: { id: string }[];
 }
 
 const emojiMartMocks = vi.hoisted(() => ({ latestPickerProps: null as EmojiMartPickerProps | null }));
@@ -738,6 +739,19 @@ describe('ChatMessage', () => {
             expect(within(getComposer()).getByRole('img', { name: 'Rocket' })).toBeInTheDocument();
             expect(getComposer().textContent).toBe('');
             expect(getValue()).toBe('[lumo_emoji:rocket]');
+        });
+
+        it('opens the picker with the Lumo section only when MeetChatLumoEmojis is on', async () => {
+            renderComposer();
+
+            await openEmojiPicker();
+            expect(emojiMartMocks.latestPickerProps?.custom?.map(({ id }) => id)).toEqual(['lumo']);
+
+            await userEvent.setup().keyboard('{Escape}');
+            unleashMocks.useFlag.mockReturnValue(false);
+
+            await openEmojiPicker();
+            expect(emojiMartMocks.latestPickerProps?.custom).toBeUndefined();
         });
 
         it('mounts a stored draft with its token shown as an image', async () => {

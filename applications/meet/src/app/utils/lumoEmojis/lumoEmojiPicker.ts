@@ -55,9 +55,11 @@ const createLumoCategory = () => {
 
 let lumoCategory: ReturnType<typeof createLumoCategory> | undefined;
 
-export const getLumoEmojiPickerOptions = (onSelectText: (text: string) => void) => ({
-    custom: [(lumoCategory ??= createLumoCategory())],
-    categories: PICKER_CATEGORY_IDS,
+export const getLumoEmojiPickerOptions = (onSelectText: (text: string) => void, showLumoSection: boolean) => ({
+    ...(showLumoSection && {
+        custom: [(lumoCategory ??= createLumoCategory())],
+        categories: PICKER_CATEGORY_IDS,
+    }),
     onEmojiSelect: ({ id, native }: EmojiMartSelection) => {
         const text = native ?? lumoEmojiTokenByPickerEmojiId.get(id);
 

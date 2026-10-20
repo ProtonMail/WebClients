@@ -4,7 +4,7 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import { getLumoEmojiPickerOptions } from './lumoEmojiPicker';
 
-const openPicker = () => init({ data, ...getLumoEmojiPickerOptions(vi.fn()) });
+const openPicker = () => init({ data, ...getLumoEmojiPickerOptions(vi.fn(), true) });
 
 const searchIds = async (query: string) => {
     const results: { id: string }[] = await SearchIndex.search(query);
@@ -16,7 +16,7 @@ describe('getLumoEmojiPickerOptions', () => {
     it('hands the native character of a native emoji to the callback', () => {
         const onSelectText = vi.fn();
 
-        getLumoEmojiPickerOptions(onSelectText).onEmojiSelect({ id: 'rocket', native: '🚀' });
+        getLumoEmojiPickerOptions(onSelectText, true).onEmojiSelect({ id: 'rocket', native: '🚀' });
 
         expect(onSelectText).toHaveBeenCalledWith('🚀');
     });
@@ -24,9 +24,13 @@ describe('getLumoEmojiPickerOptions', () => {
     it('hands the token of a Lumo emoji to the callback', () => {
         const onSelectText = vi.fn();
 
-        getLumoEmojiPickerOptions(onSelectText).onEmojiSelect({ id: 'lumo-rocket' });
+        getLumoEmojiPickerOptions(onSelectText, true).onEmojiSelect({ id: 'lumo-rocket' });
 
         expect(onSelectText).toHaveBeenCalledWith('[lumo_emoji:rocket]');
+    });
+
+    it('leaves the picker without the Lumo section when it is turned off', () => {
+        expect(Object.keys(getLumoEmojiPickerOptions(vi.fn(), false))).toEqual(['onEmojiSelect']);
     });
 
     it('finds Lumo emojis by their English name', async () => {
@@ -63,9 +67,9 @@ describe('Lumo section images', () => {
         vi.resetModules();
 
         const { getLumoEmojiPickerOptions: getFreshLumoEmojiPickerOptions } = await import('./lumoEmojiPicker');
-        const [lumoCategory] = getFreshLumoEmojiPickerOptions(vi.fn()).custom;
+        const [lumoCategory] = getFreshLumoEmojiPickerOptions(vi.fn(), true).custom ?? [];
 
-        return lumoCategory.emojis.find(({ id }) => id === 'lumo-rocket')?.skins;
+        return lumoCategory?.emojis.find(({ id }) => id === 'lumo-rocket')?.skins;
     };
 
     it('shows the animated image by default', async () => {
