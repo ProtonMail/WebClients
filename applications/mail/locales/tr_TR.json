@@ -1229,7 +1229,7 @@
         "Güvenli yanıtla"
       ],
       "Report a problem": [
-        "Sorun bildirin"
+        "Sorun bildireceğim"
       ],
       "Report an issue": [
         "Sorun bildireceğim"
@@ -1577,7 +1577,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven"
+        "Anahtara güven",
+        "Anahtarlara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1780,6 +1781,9 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Subscribe": [
+        "Abone ol"
       ]
     },
     "action": {
@@ -2130,6 +2134,9 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30 gün içinde ücreti geri ödeme garantisi"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30 gün içinde iptal edin ve geri ödeme almak için ${ customerSupportLink } ile görüşün."
       ]
     },
     "BF2024: Deal details": {
@@ -2158,10 +2165,10 @@
     },
     "bfcampaign2026: Action": {
       "Black Friday": [
-        "Muhteşem Cuma"
+        "Efsane Cuma"
       ],
       "Get the deal": [
-        "Tekliften yararlanın"
+        "Fırsatı yakala"
       ]
     },
     "bfcampaign2026: Info": {
@@ -2178,7 +2185,7 @@
         "2 TB güvenli depolama alanı"
       ],
       "200 GB storage: 40x your current plan": [
-        "200 GB depolama alanı: Geçerli tarifenizin 40 katı"
+        "200 GB depolama alanı: Mevcut tarifenizin 40 katı"
       ],
       "3 TB of secure storage": [
         "3 TB güvenli depolama alanı"
@@ -2190,25 +2197,25 @@
         "6 bireysel hesap"
       ],
       "Built-in 2FA authenticator": [
-        "Hazır iki adımlı kimlik doğrulayıcı"
+        "Yerleşik iki faktörlü kimlik doğrulayıcı"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "İndirimler standart aylık fiyatlara göre hesaplanır. Fatura dönemi sona erdiğinde aboneliğiniz standart yıllık ücret ile yenilenir."
+        "İndirimler, standart aylık fiyatlandırmaya göre hesaplanmıştır. Aboneliğiniz, fatura dönemi bittiğinde standart yıllık ücret üzerinden yenilenir."
       ],
       "Online document editor": [
         "Çevrim içi belge düzenleyici"
       ],
       "Recover previous file versions": [
-        "Önceki dosya sürümlerini geri yükleme"
+        "Önceki dosya sürümlerini kurtarın"
       ],
       "Stronger protection against cyber threats": [
         "Siber tehditlere karşı daha güçlü koruma"
       ],
       "Unlimited folders, labels, and filters": [
-        "Sınırsız sayıda klasör, etiket ve süzgeç"
+        "Sınırsız sayıda klasör, etiket ve filtre"
       ],
       "Use your own email domain": [
-        "Kendi e-posta etki alanınızı kullanma"
+        "Kendi e-posta etki alanınızı kullanın"
       ]
     },
     "bfcampaign2026: Info, Drive first": {
@@ -2241,13 +2248,13 @@
         "Yılın en büyük indirimi"
       ],
       "Black Friday": [
-        "Muhteşem Cuma"
+        "Efsane Cuma"
       ],
       "for 12 months": [
         "12 aylık"
       ],
       "Last chance to save big": [
-        "Büyük kazanç için son şans"
+        "Büyük tasarruf için son fırsat"
       ],
       "Protect your entire tribe": [
         "Kabilenizi koruyun"
@@ -4448,6 +4455,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Unlimited tarifesine geçin."
+      ],
+      "Move emails to the right category to improve categorization.": [
+        "Sınıflandırmayı iyileştirmek için e-postaları doğru kategoriye taşıyın."
       ]
     },
     "description": {
@@ -8240,8 +8250,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle",
-        "Görseller ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -10044,6 +10053,15 @@
       ],
       "We'll get back to you shortly.": [
         "Size en kısa sürede geri dönüş yapacağız."
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30 gün içinde iptal edin ve geri ödeme almak için ${ customerSupportLink } ile görüşün."
+      ],
+      "UnionPay logo": [
+        "UnionPay logosu"
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "Ücretsiz deneme süreniz sona erdi. Ekibinizin erişimini sürdürmek ve hesaplarını güvende tutmak için şimdi abone olun."
       ]
     },
     "info": {
@@ -11392,6 +11410,15 @@
       ],
       "Why would you like to cancel?": [
         "Neden iptal etmek istiyorsunuz?"
+      ],
+      "Amount": [
+        "Tutar"
+      ],
+      "Amount due": [
+        "Ödenecek tutar"
+      ],
+      "Credits used": [
+        "Kullanılan kredi"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11748,6 +11775,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Güncellenen daveti görmek için anahtarlarınızı yeniden kullanıma almalısınız"
+      ],
+      "Customer Support": [
+        "Müşteri desteği"
       ]
     },
     "Link to calendar event": {
@@ -14092,6 +14122,9 @@
     "Payments.iDEAL": {
       "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
         "Kabul ederek, ödeme hizmeti sağlayıcımız olan ${ BRAND_NAME } ve Stripe kuruluşlarına, aboneliğiniz için gelecekteki ödemeleri bu banka hesabından SEPA otomatik ödemesi ile alma ve bankanıza bu ödemeleri borçlandırma yetkisi vermiş olursunuz. İlk ödemeniz şimdi ${ IDEAL_WERO_BRAND_NAME } tarafından yapıldı. Siz iptal edene kadar tarifeniz otomatik olarak yenilenecek. Her ödemeden önce sizi bilgilendireceğiz. Otomatik ödemeler için, bankanızla olan anlaşmanızın şartlarına göre, borç tarihinden itibaren 8 hafta içinde bankanızdan geri ödeme isteğinde bulunabilirsiniz. Bu durum, şu anda yaptığınız ${ IDEAL_WERO_BRAND_NAME } ödemesi için geçerli değildir."
+      ],
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Kabul ederek, ödeme hizmeti sağlayıcımız olan ${ BRAND_NAME } ve Stripe kuruluşlarına, aboneliğiniz için gelecekteki ödemeleri bu banka hesabından SEPA otomatik ödemesi ile alma ve bankanıza bu ödemeleri borçlandırma yetkisi vermiş olursunuz. İlk ödemeniz şimdi ${ IDEAL_WERO_BRAND_NAME } tarafından yapıldı. Siz iptal edene kadar tarifeniz otomatik olarak yenilenecek. Her ödemeden önce sizi bilgilendireceğiz. Otomatik ödemeler için, bankanızla olan anlaşmanızın şartlarına göre, borç tarihinden itibaren 8 hafta içinde bankanızdan geri ödeme isteğinde bulunabilirsiniz. Bu durum, şu anda yaptığınız ${ IDEAL_WERO_BRAND_NAME } ödemesi için geçerli değildir."
       ]
     },
     "Payments.info": {
@@ -16273,6 +16306,9 @@
       ],
       "You have successfully unsubscribed": [
         "Aboneliği sonlandırdınız"
+      ],
+      "Invoice paid": [
+        "Fatura ödendi"
       ]
     },
     "Success notification": {
@@ -17290,7 +17326,7 @@
         "Tümünü yanıtla"
       ],
       "Report a problem": [
-        "Sorun bildirin"
+        "Sorun bildireceğim"
       ],
       "Request new code": [
         "Yeni kod iste"
@@ -17599,6 +17635,15 @@
       ],
       "Request sent": [
         "İstek gönderildi"
+      ],
+      "Make Categories work better for you": [
+        "Kategorilerin size düzen getirmesine izin verin"
+      ],
+      "Pay invoice": [
+        "Faturayı öde"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "${ planTitle } tarifesine abone olun"
       ]
     },
     "Title header for keys table": {
@@ -17815,6 +17860,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Kullanıcı daveti kabul ettikten sonra rol atayabileceksiniz."
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "Bu kullanıcı bir sonraki oturum açmasında yönetici yetkilerini alacak."
       ]
     },
     "Validation": {
