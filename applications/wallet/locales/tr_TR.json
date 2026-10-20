@@ -130,9 +130,6 @@
       "Done": [
         "Tamam"
       ],
-      "Downgrade": [
-        "Tarifeyi düşür"
-      ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } uygulamalarını indirin"
       ],
@@ -289,14 +286,11 @@
       "Remove": [
         "Kaldır"
       ],
-      "Remove bonuses": [
-        "Hediyeleri kaldır"
-      ],
       "Remove gift code": [
         "Hediye kodunu kaldır"
       ],
       "Report a problem": [
-        "Sorun bildirin"
+        "Sorun bildireceğim"
       ],
       "Request a call": [
         "Arama isteği gönder"
@@ -2590,38 +2584,6 @@
         "Adresin doğru oluşturulmasını sağlamak için gerekli tüm bilgilerin bulunduğu yukarıdaki tanımlayıcıyı kullanmanızı önemle öneririz. xpub, ypub ve zpub standart bir BIP parçası değildir ve yalnızca dikkatli bir şekilde kullanılmalıdır."
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "Aile grubu belirlenemedi. Yeniden deneyin."
-      ],
-      "Organization not recognized. Try again.": [
-        "Kuruluş belirlenemedi. Yeniden deneyin."
-      ]
-    },
-    "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "Onaylamak için aile grubunun adını yazın"
-      ],
-      "Enter organization name to confirm": [
-        "Onaylamak için kuruluş adını yazın"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Bu işlem, kuruluşunuzla ilgili tüm alt kullanıcıları, hesapları ve verileri kalıcı olarak silecek."
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Bu işlem, her aile üyesi için tüm ${ BRAND_NAME } ücretli özelliklerini kaldıracak."
-      ]
-    },
-    "familyOffer_2023:Title": {
-      "Delete family group?": [
-        "Aile grubu silinsin mi?"
-      ],
-      "Delete organization?": [
-        "Kuruluş silinsin mi?"
-      ]
-    },
     "Feature": {
       "Unlimited hide-my-email aliases": [
         "Sınırsız sayıda hide-my-email takma adı"
@@ -2836,21 +2798,14 @@
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/ay)"
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } ek depolama alanı"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } ${ VPN_APP_NAME } bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)",
-        "+${ organization.BonusVPN } ${ VPN_APP_NAME } bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)"
-      ],
       "1 device per user": [
         "Her kullanıcı için 1 aygıt"
       ],
       "1 vault per user": [
         "Her kullanıcı için 1 kasa"
       ],
-      "30-day money-back guarantee.": [
-        "30 gün içinde ücreti geri ödeme garantisi."
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30 gün içinde iptal edin ve geri ödeme almak için ${ customerSupportLink } ile görüşün."
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Bir telefon numarası yalnızca bir ${ BRAND_NAME } hesabını doğrulamak için kullanılabilir"
@@ -2903,9 +2858,6 @@
       "Bitcoin": [
         "Bitcoin"
       ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Ücretsiz bir tarifeye geçtiğinizde, gelecekte yeniden ücretli tarifeye geçseniz bile bu ek faydaları kalıcı olarak kaybedersiniz."
-      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Yeni bir doğrulama kodunun ${ strong } numarasına gönderilmesi için \"Yeni kod iste\" üzerine tıklayın. Bu telefon numarası yanlışsa düzeltmek için \"Düzenle\" üzerine tıklayın."
       ],
@@ -2948,9 +2900,6 @@
       ],
       "Downgrade": [
         "Tarifeyi düşür"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Tarifenizi düşürdüğünüzde, ücretli ${ VPN_APP_NAME } sunucularına yapılan bağlantılar kesilecek."
       ],
       "Download current logs": [
         "Güncel günlükleri indir"
@@ -3020,15 +2969,6 @@
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "Kimlik doğrulama uygulamanıza erişemiyorsanız iki adımlı doğrulamayı kurarken size verilen 16 yedek kurtarma kodundan birini kullanabilirsiniz. ${ learnMoreLink }"
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Tarifenizi düşürdüğünüzde, ücretli ${ MAIL_APP_NAME } ve ${ VPN_APP_NAME } özelliklerini kullanamayacaksınız."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Tarifenizi düşürdüğünüzde, ek depolama alanı ve süzgeçler gibi ücretli ${ MAIL_APP_NAME } özelliklerini kullanamayacaksınız."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Tarifenizi düşürdüğünüzde, ücretli ${ VPN_APP_NAME } özelliklerini kullanamayacaksınız."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Bir sonraki adımda, bir Bitcoin adresi kullanarak ön ödemenizi yapabilirsiniz."
@@ -3138,9 +3078,6 @@
       "Setting up your new address…": [
         "Yeni adresiniz ayarlanıyor…"
       ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Sadık bir kullanıcı olduğunuz için, hesabınızda yeni özellikler eklendi."
-      ],
       "Start sharing it with contacts and use it for online services.": [
         "Bu adresi kişilerinizle paylaşmaya ve çevrim içi hizmetlerde kullanmaya başlayın."
       ],
@@ -3190,6 +3127,9 @@
       "Total VPN connections": [
         "Toplam VPN bağlantısı"
       ],
+      "UnionPay logo": [
+        "UnionPay logosu"
+      ],
       "Users": [
         "Kullanıcılar"
       ],
@@ -3222,6 +3162,9 @@
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Bu işlemi tamamlamanız için yeni bir tarayıcı sekmesi açarak sizi PayPal sitesine yönlendireceğiz. İşlemi tamamlamak için, varsa açılır pencere engelleyicilerinizi kapatın."
+      ],
+      "We'll get back to you shortly.": [
+        "Size en kısa sürede geri dönüş yapacağız."
       ],
       "We'll send a new verification code to ${ strong }": [
         "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
@@ -3272,9 +3215,6 @@
       ],
       "You may be redirected to your bank’s website.": [
         "Bankanızın sitesine yönlendirilebilirsiniz."
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Tarifenizi düşürmeden önce, ek ${ MAIL_APP_NAME } kullanıcılarını, adreslerini ve özel etki alanlarını kullanımdan kaldırmalı ya da silmelisiniz."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Bu tarihte ${ planTitle } özelliklerine erişiminizi kaybedeceksiniz."
@@ -3527,6 +3467,9 @@
       "Phone number": [
         "Telefon numarası"
       ],
+      "Please share any feedback to help us improve.": [
+        "Hizmetlerimizi geliştirebilmemiz için bizi bilgilendirin."
+      ],
       "Postal code": [
         "Posta kodu"
       ],
@@ -3572,6 +3515,9 @@
       "What happened?": [
         "Ne oldu?"
       ],
+      "Why would you like to cancel?": [
+        "Neden iptal etmek istiyorsunuz?"
+      ],
       "Your password (admin)": [
         "Parolanız (yönetici)"
       ],
@@ -3615,6 +3561,9 @@
       ],
       "clearing your browser cache": [
         "tarayıcınızın ön belleğini temizlemek"
+      ],
+      "Customer Support": [
+        "Müşteri desteği"
       ],
       "Enforcing 2FA for organizations": [
         "Kuruluşlar için iki adımlı doğrulamayı dayatmak"
@@ -3834,31 +3783,11 @@
       ]
     },
     "new_plans: action": {
-      "Delete account": [
-        "Hesabı sil"
-      ],
-      "Downgrade account": [
-        "Hesap tarifesini düşür"
-      ],
       "Get ${ BRAND_NAME } for free": [
         "Ücretsiz ${ BRAND_NAME } edinin"
       ],
       "Get ${ planName }": [
         "${ planName } alın"
-      ],
-      "Keep ${ plan }": [
-        "${ plan } tarifesinde kal"
-      ],
-      "Keep account": [
-        "Hesabı tut"
-      ],
-      "Switch plan": [
-        "Tarifeyi değiştir"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşür"
       ]
     },
     "new_plans: feature": {
@@ -4342,18 +4271,6 @@
       "For next-level password management and identity protection.": [
         "Gelecek nesil parola yönetimi ve kimlik koruması için."
       ],
-      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
-        "Hesabınızı silerseniz tüm ${ visionary } tarifesi ek faydalarını kaybedersiniz ve daha sonra yeni bir hesap açtığınızda yeniden abone olamazsınız."
-      ],
-      "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
-        "Hesap tarifenizi düşürürseniz tüm ${ visionary } tarifesi ek faydalarını kaybedersiniz ve daha sonra yeniden abone olamazsınız."
-      ],
-      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
-        "Farklı bir tarifeye geçerseniz tüm ${ visionary } tarifesi ek faydalarını kaybedersiniz ve daha sonra ${ visionary } tarifesine yeniden abone olamazsınız."
-      ],
-      "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
-        "Özgün ${ BRAND_NAME } kullanıcıları için sunulan bazı özellikler ve ek faydalar bulunduran özel bir tarife olduğundan, artık yeni abonelere ${ visionary } tarifesini sunmuyoruz."
-      ],
       "Pay once, secure your passwords and identity forever.": [
         "Bir kez ödeyin, parolalarınızı ve kimliğinizi sonsuza kadar koruyun."
       ],
@@ -4383,29 +4300,14 @@
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
         "2 kişi için sınırsız gizlilik ve daha fazla depolama alanı."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
-        "Geçerli tarifenizde bir fırsat ücretinden yararlanıyorsunuz. Hesabınızı silerseniz, fırsat ücretinizi kaybedersiniz ve yeni bir hesap açtığınızda bu ücreti kullanamazsınız."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
-        "Geçerli tarifenizde bir fırsat ücretinden yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat ücretinizi kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
       ]
     },
     "new_plans: title": {
-      "Delete account?": [
-        "Hesap silinsin mi?"
-      ],
-      "Downgrade account?": [
-        "Hesap tarifesi düşürülsün mü?"
-      ],
       "Review subscription": [
         "Aboneliği gözden geçirin"
       ],
       "Review subscription and pay": [
         "Aboneliği ve ödemeyi gözden geçirin"
-      ],
-      "Switch plans?": [
-        "Tarifeler değiştirilsin mi?"
       ]
     },
     "new_plans: tooltip": {
@@ -5077,7 +4979,7 @@
       ]
     },
     "Payments.iDEAL": {
-      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
         "Kabul ederek, ödeme hizmeti sağlayıcımız olan ${ BRAND_NAME } ve Stripe kuruluşlarına, aboneliğiniz için gelecekteki ödemeleri bu banka hesabından SEPA otomatik ödemesi ile alma ve bankanıza bu ödemeleri borçlandırma yetkisi vermiş olursunuz. İlk ödemeniz şimdi ${ IDEAL_WERO_BRAND_NAME } tarafından yapıldı. Siz iptal edene kadar tarifeniz otomatik olarak yenilenecek. Her ödemeden önce sizi bilgilendireceğiz. Otomatik ödemeler için, bankanızla olan anlaşmanızın şartlarına göre, borç tarihinden itibaren 8 hafta içinde bankanızdan geri ödeme isteğinde bulunabilirsiniz. Bu durum, şu anda yaptığınız ${ IDEAL_WERO_BRAND_NAME } ödemesi için geçerli değildir."
       ]
     },
@@ -5223,6 +5125,9 @@
       ],
       "Please select a country": [
         "Lütfen bir ülke seçin"
+      ],
+      "Please select the main reason": [
+        "Lütfen temel nedeni seçin"
       ],
       "Postal code": [
         "Posta kodu"
@@ -5538,9 +5443,6 @@
       "Storage used": [
         "Kullanılan depolama alanı"
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Kalan sürenize karşı gelen krediyi ${ BRAND_NAME } hesabınıza ekleyeceğiz."
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "**${ currentPlanName }** tarifenizde hâlâ **${ daysRemaining }** günlük kullanım hakkınız var.",
         "**${ currentPlanName }** tarifenizde hâlâ **${ daysRemaining }** günlük kullanım hakkınız var."
@@ -5710,9 +5612,6 @@
       ],
       "You have successfully canceled your subscription.": [
         "Aboneliğinizi iptal ettiniz."
-      ],
-      "You have successfully unsubscribed": [
-        "Aboneliği sonlandırdınız"
       ]
     },
     "Suffix": {
@@ -5832,12 +5731,6 @@
       "Collaborate on documents": [
         "Belgeler üzerinde işbirliği yapın"
       ],
-      "Confirm downgrade": [
-        "Tarife düşürmeyi onayla"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "${ BRAND_NAME } hediyelerinizi kaybedeceğinizi onaylayın"
-      ],
       "Connect apps and devices": [
         "Uygulamaları ve aygıtları bağlayın"
       ],
@@ -5847,6 +5740,9 @@
       "Connect your custom domain": [
         "Özel etki alanınızı bağlayın"
       ],
+      "Contact us": [
+        "Bize ulaşın"
+      ],
       "Coupon": [
         "Kupon"
       ],
@@ -5855,9 +5751,6 @@
       ],
       "Downgrade account": [
         "Hesap tarifesini düşür"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "${ downgradedPlanName } tarifesine düşürülsün mü?"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } uygulamalarını indirin"
@@ -5923,10 +5816,13 @@
         "Önerilen"
       ],
       "Report a problem": [
-        "Sorun bildirin"
+        "Sorun bildireceğim"
       ],
       "Request new code": [
         "Yeni kod iste"
+      ],
+      "Request sent": [
+        "İstek gönderildi"
       ],
       "Reverse charge not supported": [
         "Tersine KDV uygulaması desteklenmiyor"
@@ -6096,6 +5992,20 @@
       "Try a shorter username (${ n } character max)": [
         "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)",
         "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Daha çok sevdiğim başka bir hizmet buldum"
+      ],
+      "It’s missing a key feature": [
+        "Temel bir özellik eksik"
+      ],
+      "It’s too expensive": [
+        "Çok pahalı"
+      ],
+      "Other": [
+        "Diğer"
       ]
     },
     "VPN Plan Feature": {
