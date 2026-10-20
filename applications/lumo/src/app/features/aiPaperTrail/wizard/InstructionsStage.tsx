@@ -4,7 +4,7 @@ import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { PaperTrailWizardShell } from './PaperTrailWizardShell';
-import { EXPORT_PLATFORMS, type ExportPlatform } from './exportInstructions';
+import { type ExportPlatform, getExportPlatforms } from './exportInstructions';
 
 interface Props {
     onBack: () => void;
@@ -13,7 +13,7 @@ interface Props {
 
 export const InstructionsStage = ({ onBack, onContinue }: Props) => {
     const [platform, setPlatform] = useState<ExportPlatform>('chatgpt');
-    const guide = EXPORT_PLATFORMS.find((entry) => entry.id === platform) ?? EXPORT_PLATFORMS[0];
+    const guide = getExportPlatforms().find((entry) => entry.id === platform) ?? getExportPlatforms()[0];
 
     return (
         <PaperTrailWizardShell
@@ -29,7 +29,7 @@ export const InstructionsStage = ({ onBack, onContinue }: Props) => {
                 role="group"
                 aria-label={c('collider_2025:Label').t`AI platform`}
             >
-                {EXPORT_PLATFORMS.map((entry) => {
+                {getExportPlatforms().map((entry) => {
                     const isSelected = entry.id === platform;
 
                     return (

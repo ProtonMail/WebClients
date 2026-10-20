@@ -2,12 +2,13 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useHistory } from 'react-router-dom';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { IcBrandProtonDriveFilled } from '@proton/icons/icons/IcBrandProtonDriveFilled';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
+import { formatIntlDate } from '@proton/shared/lib/date/formatIntlDate';
 
 import { getProjectCategory } from '../../../features/projects/constants';
 import { useLumoPlan } from '../../../hooks/useLumoPlan';
@@ -46,9 +47,7 @@ const SearchResultItem = ({ result, query, onSelect }: SearchResultItemProps) =>
         // If there's a search query, show relative time
         if (query.trim()) {
             const date = new Date(timestamp);
-            const month = date.toLocaleDateString('en-US', { month: 'short' });
-            const day = date.getDate();
-            return `${month} ${day}`;
+            return formatIntlDate(date, { month: 'short', day: 'numeric' });
         }
 
         // Otherwise show relative time for recent, absolute for older
@@ -61,17 +60,24 @@ const SearchResultItem = ({ result, query, onSelect }: SearchResultItemProps) =>
             const hours = Math.floor(age / (1000 * 60 * 60));
             if (hours < 1) {
                 const minutes = Math.floor(age / (1000 * 60));
-                return minutes <= 1 ? c('Time').t`Just now` : c('Time').t`${minutes} minutes ago`;
+                if (minutes <= 1) {
+                    return c('Time').t`Just now`;
+                }
+                // translator: Relative age of a chat. ${minutes} is elapsed minutes (≥2 here; "Just now" covers 0–1). Singular/plural for locale rules.
+                return c('Time').ngettext(msgid`${minutes} minute ago`, `${minutes} minutes ago`, minutes);
             }
-            return hours === 1 ? c('Time').t`1 hour ago` : c('Time').t`${hours} hours ago`;
+            // translator: Relative age of a chat. ${hours} is the number of elapsed hours.
+            return c('Time').ngettext(msgid`${hours} hour ago`, `${hours} hours ago`, hours);
         } else if (age < oneWeek) {
             const days = Math.floor(age / oneDay);
-            return days === 1 ? c('Time').t`Yesterday` : c('Time').t`${days} days ago`;
+            if (days === 1) {
+                return c('Time').t`Yesterday`;
+            }
+            // translator: Relative age of a chat. ${days} is elapsed days (≥2 here; "Yesterday" covers 1). Singular/plural for locale rules.
+            return c('Time').ngettext(msgid`${days} day ago`, `${days} days ago`, days);
         } else {
             const date = new Date(timestamp);
-            const month = date.toLocaleDateString('en-US', { month: 'short' });
-            const day = date.getDate();
-            return `${month} ${day}`;
+            return formatIntlDate(date, { month: 'short', day: 'numeric' });
         }
     };
 
@@ -236,7 +242,8 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
             setResults(allConversations);
         } catch (err) {
             console.error('[SearchModal] Failed to load conversations:', err);
-            setError(err instanceof Error ? err.message : 'Failed to load conversations');
+            // translator: Error shown when loading or searching chat history.
+            setError(err instanceof Error ? err.message : c('collider_2025:Label').t`Failed to load conversations`);
             setResults([]);
         } finally {
             setIsSearching(false);
@@ -279,7 +286,8 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
                 setResults(searchResults);
             } catch (err) {
                 console.error('[SearchModal] Search failed:', err);
-                setError(err instanceof Error ? err.message : 'Search failed');
+                // translator: Error shown when loading or searching chat history.
+                setError(err instanceof Error ? err.message : c('collider_2025:Label').t`Search failed`);
                 setResults([]);
             } finally {
                 setIsSearching(false);
@@ -346,12 +354,12 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
 
         // Add projects group if there are any
         if (projects.length > 0) {
-            groups.Projects = projects.sort((a, b) => b.timestamp - a.timestamp);
+            groups.projects = projects.sort((a, b) => b.timestamp - a.timestamp);
         }
 
         // Add document group if there are any (only in debug mode)
         if (documents.length > 0 && isDebugMode) {
-            groups['Files in Drive'] = documents.sort((a, b) => b.timestamp - a.timestamp);
+            groups.drive = documents.sort((a, b) => b.timestamp - a.timestamp);
         }
 
         // Group conversations by time with better labels
@@ -364,12 +372,17 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
 
             conversations.forEach((result) => {
                 const age = now - result.timestamp;
-                let group = 'Older';
+                let group = 'older';
 
-                if (age < oneDay) group = 'Today';
-                else if (age < twoDays) group = 'Yesterday';
-                else if (age < oneWeek) group = 'Last 7 Days';
-                else if (age < oneYear) group = 'This Year';
+                if (age < oneDay) {
+                    group = 'today';
+                } else if (age < twoDays) {
+                    group = 'yesterday';
+                } else if (age < oneWeek) {
+                    group = 'lastWeek';
+                } else if (age < oneYear) {
+                    group = 'thisYear';
+                }
 
                 if (!groups[group]) groups[group] = [];
                 groups[group].push(result);
@@ -378,8 +391,23 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
 
         return groups;
     }, [results, isDebugMode]);
-
-    const groupOrder = ['Projects', 'Today', 'Yesterday', 'Last 7 Days', 'This Year', 'Older', 'Files in Drive'];
+    const groupLabels: Record<string, string> = {
+        // translator: Search result group heading for projects.
+        projects: c('collider_2025:Label').t`Projects`,
+        // translator: Search result group heading for today's conversations.
+        today: c('collider_2025:Label').t`Today`,
+        // translator: Search result group heading for yesterday's conversations.
+        yesterday: c('collider_2025:Label').t`Yesterday`,
+        // translator: Search result group heading for conversations from the last week.
+        lastWeek: c('collider_2025:Label').t`Last 7 Days`,
+        // translator: Search result group heading for conversations from this year.
+        thisYear: c('collider_2025:Label').t`This Year`,
+        // translator: Search result group heading for older conversations.
+        older: c('collider_2025:Label').t`Older`,
+        // translator: Search result group heading for Drive files.
+        drive: c('collider_2025:Label').t`Files in Drive`,
+    };
+    const groupOrder = Object.keys(groupLabels);
 
     return (
         // eslint-disable-next-line jsx-a11y/no-static-element-interactions
@@ -433,7 +461,7 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
                         return (
                             <div key={groupName} className="search-modal-section">
                                 <div className="search-modal-section-header">
-                                    <span className="search-modal-section-title">{groupName}</span>
+                                    <span className="search-modal-section-title">{groupLabels[groupName]}</span>
                                 </div>
                                 {groupResults.map((result, index) => {
                                     const key =

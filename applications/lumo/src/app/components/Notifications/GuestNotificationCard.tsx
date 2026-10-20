@@ -2,6 +2,8 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+
 import { useChatLimitGate } from '../../hooks/useChatLimitGate';
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
@@ -15,10 +17,7 @@ import {
     useRemainingLimits,
 } from '../../services/usageLimitsStore';
 import type { ConversationId, Message } from '../../types';
-import {
-    hasDismissedGuestNotification,
-    markGuestNotificationDismissed,
-} from '../../util/guestNotificationStorage';
+import { hasDismissedGuestNotification, markGuestNotificationDismissed } from '../../util/guestNotificationStorage';
 import { sendGuestNotificationCtaClickedEvent, sendGuestNotificationDismissedEvent } from '../../util/telemetry';
 import { CreateFreeAccountButton } from '../Guest/CreateFreeAccountLink/CreateFreeAccountLink';
 import { LumoIcon } from '../LumoIcon/LumoIcon';
@@ -110,7 +109,10 @@ export const GuestNotificationCard = ({
     return (
         <ComposerNotificationCard
             icon={<HeartIcon />}
-            title="Liking Lumo?"
+            title={
+                // translator: Friendly, casual heading encouraging guests to create an account. ${LUMO_SHORT_APP_NAME} is the product name.
+                c('collider_2025:Label').t`Liking ${LUMO_SHORT_APP_NAME}?`
+            }
             description={c('collider_2025: Notification')
                 .t`Create an account or sign in to save your chats and increase limits.`}
             action={

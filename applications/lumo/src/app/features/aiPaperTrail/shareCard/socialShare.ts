@@ -1,9 +1,14 @@
+import { c } from 'ttag';
+
 /** Public landing page the social posts link back to. */
 export const SHARE_URL = 'https://lumo.proton.me';
 
 /** Default caption used for the post text / title. */
-export const SHARE_TEXT =
-    'Big Tech AI built a scarily accurate profile of me from my chat history. See what yours knows about you 👀';
+export const getShareText = () => {
+    // translator: Casual, attention-grabbing social media caption inviting others to examine what their AI chat history reveals.
+    return c('collider_2025:Description')
+        .t`Big Tech AI built a scarily accurate profile of me from my chat history. See what yours knows about you 👀`;
+};
 
 export type SocialPlatform = 'x' | 'facebook' | 'reddit' | 'linkedin';
 
