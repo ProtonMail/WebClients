@@ -19,6 +19,7 @@ const getConflictType = (error: NodeWithSameNameExistsValidationError): UploadCo
 
 const getResolutionData = async (
     name: string,
+    nodeType: NodeType,
     parentUid: string,
     error: NodeWithSameNameExistsValidationError,
     strategy: UploadConflictStrategy
@@ -34,7 +35,7 @@ const getResolutionData = async (
             };
         case UploadConflictStrategy.Rename:
             const drive = UploadDriveClientRegistry.getDriveClient();
-            const availableName = await drive.getAvailableName(parentUid, name);
+            const availableName = await drive.getAvailableName(parentUid, name, nodeType);
             return { action: UploadConflictStrategy.Rename, newName: availableName };
         default:
             throw new Error(c('Error').t`Unknown conflict strategy: ${strategy}`);
@@ -172,7 +173,7 @@ export class ConflictManager {
         const isFolder = item.type === NodeType.Folder;
 
         try {
-            const resolution = await getResolutionData(item.name, item.parentUid, error, strategy);
+            const resolution = await getResolutionData(item.name, item.type, item.parentUid, error, strategy);
             switch (resolution.action) {
                 case UploadConflictStrategy.Skip:
                     queueStore.updateQueueItems(uploadId, {
