@@ -31,9 +31,9 @@ const baseEvent = {
     delay: false,
 } as const;
 
-const stepViewed = defineEvent({
+const stepLoad = defineEvent({
     ...baseEvent,
-    event: TelemetryMailOnboardingEvents.stepViewed,
+    event: TelemetryMailOnboardingEvents.stepLoad,
     dimensions: baseDimensions,
 });
 
@@ -57,7 +57,7 @@ const themeStepCompleted = defineEvent({
 });
 
 export const trackStepViewed = (step: ONBOARDING_STEPS) => {
-    tracker.emit(stepViewed, { dimensions: { flow: 'onboarding', step } });
+    tracker.emit(stepLoad, { dimensions: { flow: 'onboarding', step } });
 };
 
 export const trackStepInteracted = (step: ONBOARDING_STEPS, action: ONBOARDING_ACTIONS) => {
