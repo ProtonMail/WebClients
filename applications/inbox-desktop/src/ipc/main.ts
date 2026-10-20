@@ -38,6 +38,7 @@ import telemetryService from "../utils/telemetry";
 import { getLogs } from "../utils/log/getLogsIPC";
 import { handleLogoutIPC } from "../utils/logout/logout";
 import { profiler } from "../utils/profiler/profiler";
+import { getProfilerReports } from "../utils/profiler/reports";
 import { startOAuthSession, clearOAuthSession } from "../utils/oauthSession";
 import { sentryReport } from "../utils/sentryReport";
 import { openExternalIPC } from "../utils/openExternal/openExternal";
@@ -332,6 +333,14 @@ export const handleIPCCalls = () => {
                         >;
                         const [maxSize] = args as ElectronLogsMessage["args"];
                         return await getLogs(maxSize);
+                    }
+                    case "getProfilerReports": {
+                        type ProfilerReportsMessage = Extract<
+                            IPCInboxClientGetAsyncDataMessage,
+                            { type: "getProfilerReports" }
+                        >;
+                        const [maxSize] = args as ProfilerReportsMessage["args"];
+                        return await getProfilerReports(maxSize);
                     }
                     default:
                         ipcLogger.error(`Invalid getAsyncData message: ${message}`);

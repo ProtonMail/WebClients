@@ -1,5 +1,3 @@
-import { logger } from '@protontech/logger';
-
 import {
     anyPathPattern,
     buildHostnameIncludesPattern,
@@ -97,11 +95,6 @@ class UrlRuleBuilder {
                 ...(this.hashParamsAnyOf ? { hashParamsAnyOf: this.hashParamsAnyOf } : {}),
             };
         } catch (error) {
-            logger.error('Failed to build URL rule', {
-                id: this.id,
-                error: error instanceof Error ? error.message : String(error),
-            });
-
             throw new Error(
                 `Failed to build URL rule ${this.id}: ${error instanceof Error ? error.message : String(error)}`
             );

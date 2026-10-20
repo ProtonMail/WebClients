@@ -21,10 +21,9 @@ export const rules: Required<ModuleOptions>["rules"] = [
     },
     {
         test: /\.tsx?$/,
-        // `@protontech/crypto` and `@protontech/logger` ship TypeScript sources via their
-        // `exports`, so they must be transpiled by `ts-loader` rather than excluded with the rest
-        // of `node_modules`.
-        exclude: /(node_modules\/(?!.*(@protontech\/(crypto|logger)))|\.webpack)/,
+        // `@protontech/crypto` ships TypeScript sources via its `exports`, so it must be
+        // transpiled by `ts-loader` rather than excluded with the rest of `node_modules`.
+        exclude: /(node_modules\/(?!.*(@protontech\/crypto))|\.webpack)/,
         use: {
             loader: "ts-loader",
             options: {

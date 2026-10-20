@@ -23,6 +23,25 @@ export const getInboxDesktopLogsBlob = async (currentAttachmentSize: number): Pr
     }
 };
 
+export const getInboxDesktopProfilerReportBlobs = async (
+    currentAttachmentSize: number
+): Promise<{ [filename: string]: Blob }> => {
+    if (!canGetAsyncInboxDesktopData || !hasInboxDesktopFeature('BugReportProfilerAttachments')) {
+        return {};
+    }
+
+    const availableSize = MAX_REPORT_SIZE - currentAttachmentSize;
+
+    try {
+        const reports = await getInboxDesktopAsyncData('getProfilerReports', availableSize);
+        return Object.fromEntries(
+            reports.map(({ name, data }) => [name, new Blob([new Uint8Array(data)], { type: 'application/json' })])
+        );
+    } catch (_error) {
+        return {};
+    }
+};
+
 export const isInboxDesktopBugReportLogsSupported = (): boolean => {
     if (!canGetAsyncInboxDesktopData || !hasInboxDesktopFeature('BugReportLogAttachments')) {
         return false;
