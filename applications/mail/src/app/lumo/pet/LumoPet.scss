@@ -1,0 +1,103 @@
+@use 'sass:math';
+@use '~@proton/styles/scss/lib/rem' as *;
+@use 'catLayout' as *;
+
+$cat-pixel: math.div($cat-size, 32);
+$cat-headroom: 7 * $cat-pixel;
+$run-grid-width: 54;
+$run-spill: math.div($run-grid-width - 32, 2) * $cat-pixel;
+
+// Keep in step with the leap headroom drawn into the cat art
+$leap-headroom: 18 * $cat-pixel;
+$menu-max-buttons: 4;
+$menu-stagger: 40ms;
+
+// Only the cat's body and the shown menu take the pointer, not the empty box around them
+.lumo-pet-dock {
+	pointer-events: none;
+
+	// Once the menu shows, the whole box holds the hover, so the pointer can cross the headroom to reach it
+	&--menu-open {
+		pointer-events: auto;
+	}
+}
+
+// Bleeding the clip by the inset keeps its bottom edge on the mailbox's bottom edge at any drop
+@mixin cat-slot-dropped-by($drop) {
+	transform: translateY($drop);
+	clip-path: inset(#{-$cat-inset - $leap-headroom} #{-$run-spill} #{$drop - $cat-inset} #{-$run-spill});
+}
+
+.lumo-pet-cat-slot {
+	@include cat-slot-dropped-by(0);
+}
+
+// The ghost border still draws the focus outline, but takes no room, so the dock stays the cat's size
+.lumo-pet-cat-button {
+	--button-hover-background-color: transparent;
+	--button-active-background-color: transparent;
+
+	margin: -1px;
+}
+
+// One column centred over the cat's head, the first button lowest. The whole column stays hit-testable through
+// the delayed hide, so the pointer can climb from the cat's head through the gaps without the menu closing
+.lumo-pet-menu {
+	inset-block-end: calc(100% - #{$cat-headroom});
+	visibility: hidden;
+	pointer-events: auto;
+	transition: visibility 0s 150ms;
+
+	.lumo-pet-dock--menu-open & {
+		visibility: visible;
+		transition-delay: 0s;
+	}
+}
+
+// The ghost hover colour is translucent, so the backing sits under the button
+.lumo-pet-menu-button {
+	opacity: 0;
+	transform: translateY(rem(16)) scale(0.5);
+	transition:
+		opacity 150ms ease-out,
+		transform 150ms ease-out;
+
+	// Pops in from the bottom button upwards
+	@for $index from 2 through $menu-max-buttons {
+		&:nth-child(#{$index}) {
+			transition-delay: ($index - 1) * $menu-stagger;
+		}
+	}
+
+	.lumo-pet-dock--menu-open & {
+		opacity: 1;
+		transform: none;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		transition: none;
+	}
+}
+
+// A frame wider than the grid (the run) spills evenly past both sides, within the slot's clip bleed
+.lumo-pet-cat {
+	inline-size: $cat-size;
+	block-size: $cat-size + $cat-headroom;
+	overflow: visible;
+
+	&--mirrored {
+		transform: scaleX(-1);
+	}
+}
+
+.lumo-pet-cat-sprite {
+	background-repeat: no-repeat;
+	image-rendering: pixelated;
+}
+
+// The sitting body only, so the headroom and the run spill stay click-through
+.lumo-pet-cat-hit {
+	inline-size: $cat-size;
+	block-size: $cat-size;
+	pointer-events: auto;
+}
