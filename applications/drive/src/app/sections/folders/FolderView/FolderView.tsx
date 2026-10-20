@@ -3,15 +3,16 @@ import { useCallback, useEffect } from 'react';
 import { useShallow } from 'zustand/react/shallow';
 
 import { Loader, useAppTitle } from '@proton/components';
-import { splitNodeUid } from '@proton/drive/index';
+import { generateNodeUid, splitNodeUid } from '@proton/drive/index';
 import { type MoveNodesItemMap, useMoveNodes } from '@proton/drive/modules/moveNodes';
+import { uploadManager } from '@proton/drive/modules/upload';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
-import UploadDragDrop from '../../../legacy/components/uploads/UploadDragDrop/UploadDragDrop';
 import { useUserSettings } from '../../../legacy/store';
 import { useDriveDragMove } from '../../../modules/selection/useDriveDragMove';
 import { SortField } from '../../../modules/sorting/types';
 import { SortField as StoredSortField } from '../../../modules/userSettings/type';
+import { UploadDragDrop } from '../../../statelessComponents/UploadDragDrop/UploadDragDrop';
 import { FolderViewBreadcrumbs } from '../FolderViewBreadcrumbs';
 import { getFolderSortConfig } from '../folder.sorting';
 import { useFolder } from '../useFolder';
@@ -106,6 +107,10 @@ export function FolderView({ shareId, nodeUid }: FolderViewProps) {
         return changeSort({ sortField: convertedSortField, sortOrder: direction });
     }
 
+    function handleFilesDrop(dataTransfer: DataTransfer) {
+        void uploadManager.upload(dataTransfer, generateNodeUid(activeFolder.volumeId, activeFolder.linkId));
+    }
+
     const folderBrowser = (
         <FolderBrowser
             activeFolder={activeFolder}
@@ -120,11 +125,9 @@ export function FolderView({ shareId, nodeUid }: FolderViewProps) {
         <>
             {permissions.canEdit ? (
                 <UploadDragDrop
-                    shareId={shareId}
-                    parentLinkId={splitedNodeUid.nodeId}
-                    volumeId={splitedNodeUid.volumeId}
                     className="flex flex-column flex-nowrap flex-1"
                     disabled={!permissions.canEdit}
+                    onDrop={handleFilesDrop}
                 >
                     {folderBrowser}
                 </UploadDragDrop>
