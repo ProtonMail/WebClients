@@ -1,5 +1,5 @@
 import { act, fireEvent, render, screen, waitFor, within } from '@testing-library/react'
-import type { LexicalEditor } from 'lexical'
+import { $getRoot, type LexicalEditor } from 'lexical'
 import {
   CommentThreadStates,
   CommentThreadTypes,
@@ -16,6 +16,7 @@ import { PreviewModeEditor } from '../app/Containers/Docs/PreviewModeEditor'
 import { SHOW_ALL_COMMENTS_COMMAND } from '../app/Containers/Docs/Commands'
 import type { DocsCommentEvent } from '../app/Containers/Docs/contract/DocsComments'
 import DocsLayout from '../app/Containers/DocsLayout'
+import { polyfillSelectionRelatedThingsForTests } from '../app/Containers/Docs/Plugins/Suggestions/TestUtils'
 import { createStandaloneDocClient } from './client'
 import { createStandaloneDocSession } from './session'
 
@@ -83,6 +84,8 @@ describe('standalone Docs runtime', () => {
       unobserve: jest.fn(),
       disconnect: jest.fn(),
     }))
+    // JSDOM ranges have no layout, which Lexical reads to scroll a selection into view.
+    polyfillSelectionRelatedThingsForTests()
   })
   it('mounts the full editing and preview editors with headings and loaded comments without shell providers', async () => {
     const reportError = jest.fn()
@@ -96,7 +99,7 @@ describe('standalone Docs runtime', () => {
     const eventListeners = new Set<(event: DocsCommentEvent) => void>()
     const unsubscribeEvents = jest.fn()
     const unsubscribeAwareness = jest.fn()
-    const comments = createStandaloneDocClient(jest.fn(), session.subscribeToAwarenessStates)
+    const comments = createStandaloneDocClient('local@example.test', session.subscribeToAwarenessStates)
     comments.getAllThreads = jest.fn(async () => [createThread()])
     comments.getTypersExcludingSelf = jest.fn(async () => [])
     comments.subscribeToEvents = jest.fn((callback) => {
@@ -225,6 +228,67 @@ describe('standalone Docs runtime', () => {
       fireEvent.click(within(preview.container).getByTestId('preview-mode-toolbar'))
       expect(dependencies.reportToolbarInteraction).not.toHaveBeenCalled()
       preview.unmount()
+      expect(reportError).not.toHaveBeenCalled()
+    } finally {
+      view.unmount()
+      session.destroy()
+    }
+  })
+
+  it('marks, lists and resolves a comment made through the in-memory comments client', async () => {
+    const reportError = jest.fn()
+    const session = createStandaloneDocSession(jest.fn(), reportError)
+    const comments = createStandaloneDocClient('local@example.test', session.subscribeToAwarenessStates)
+    let editor: LexicalEditor | null = null
+    const view = render(
+      <DocsDependenciesProvider dependencies={createDependencies(comments, reportError)}>
+        <DocsLayout.Container isSuggestionMode={false}>
+          <StandaloneDocsEditor
+            docMap={session.docMap}
+            docState={session.docState}
+            documentId={session.documentId}
+            editingLocked={false}
+            onEditorError={reportError}
+            hidden={false}
+            editorInitializationConfig={session.initialization}
+            systemMode={EditorSystemMode.Edit}
+            userMode={EditorUserMode.Edit}
+            onEditorReadyToReceiveUpdates={() => session.editorLoaded()}
+            onEditorLoadError={reportError}
+            onUserModeChange={jest.fn()}
+            setEditorRef={(instance) => {
+              editor = instance
+            }}
+            userAddress="local@example.test"
+            isSuggestionsFeatureEnabled={false}
+            showTreeView={false}
+            tableOfContentsVisible={false}
+          />
+        </DocsLayout.Container>
+      </DocsDependenciesProvider>,
+    )
+    try {
+      const mainEditor = await screen.findByTestId('main-editor')
+      await waitFor(() => expect(mainEditor).toHaveTextContent('This document lives in memory'))
+      await act(async () => {
+        editor!.update(
+          () =>
+            $getRoot()
+              .getAllTextNodes()
+              .find((text) => text.getTextContent().startsWith('This document'))!
+              .select(0, 'This document'.length),
+          { discrete: true },
+        )
+        await comments.createCommentThread('A new comment')
+      })
+
+      await waitFor(() => expect(mainEditor.querySelector('mark')).toHaveTextContent('This document'))
+      await act(() => editor!.dispatchCommand(SHOW_ALL_COMMENTS_COMMAND, undefined))
+      expect(await screen.findByText('A new comment')).toBeInTheDocument()
+
+      const [thread] = await comments.getAllThreads()
+      await act(() => comments.resolveThread(thread.id))
+      await waitFor(() => expect(mainEditor.querySelector('mark')).toHaveClass('resolved'))
       expect(reportError).not.toHaveBeenCalled()
     } finally {
       view.unmount()

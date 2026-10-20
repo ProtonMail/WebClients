@@ -21,6 +21,8 @@ import './standalone-doc.css'
 
 document.title = 'Standalone Docs'
 
+const userAddress = 'standalone@example.test'
+
 function StandaloneDoc() {
   const { theme, setTheme } = useEditorTheme()
   const [userMode, setUserMode] = useState(EditorUserMode.Edit)
@@ -31,9 +33,6 @@ function StandaloneDoc() {
   const editorRef = useRef<LexicalEditor | null>(null)
   const setEditorRef = useCallback((editor: LexicalEditor | null) => {
     editorRef.current = editor
-  }, [])
-  const reportUnavailable = useCallback((action: string) => {
-    setMessage(`${action} is unavailable in standalone mode.`)
   }, [])
   const reportError = useCallback((error: unknown, lockEditor = false) => {
     console.error(error)
@@ -54,14 +53,11 @@ function StandaloneDoc() {
     ),
   )
   useEffect(() => session.attachPageLifecycle(), [session])
-  const comments = useMemo(
-    () => createStandaloneDocClient(reportUnavailable, session.subscribeToAwarenessStates),
-    [reportUnavailable, session],
-  )
+  const [comments] = useState(() => createStandaloneDocClient(userAddress, session.subscribeToAwarenessStates))
   const dependencies = useMemo<DocsDependencies>(
     () => ({
       userName: 'Standalone developer',
-      suggestionsEnabled: false,
+      suggestionsEnabled: true,
       isAlpha: true,
       canEdit: role.canEdit(),
       canComment: role.canComment(),
@@ -92,16 +88,6 @@ function StandaloneDoc() {
     [comments, role, session, reportError],
   )
   const onEditorReadyToReceiveUpdates = useCallback(() => session.editorLoaded(), [session])
-  const changeMode = useCallback(
-    (mode: EditorUserMode) => {
-      if (mode === EditorUserMode.Suggest) {
-        reportUnavailable('suggestion mode')
-        return
-      }
-      setUserMode(mode)
-    },
-    [reportUnavailable, setUserMode],
-  )
 
   return (
     <>
@@ -110,8 +96,9 @@ function StandaloneDoc() {
         <output>{message}</output>
         <label>
           Mode
-          <select value={userMode} onChange={(event) => changeMode(event.target.value as EditorUserMode)}>
+          <select value={userMode} onChange={(event) => setUserMode(event.target.value as EditorUserMode)}>
             <option value={EditorUserMode.Edit}>Edit</option>
+            <option value={EditorUserMode.Suggest}>Suggest</option>
             <option value={EditorUserMode.Preview}>View</option>
           </select>
         </label>
@@ -125,7 +112,7 @@ function StandaloneDoc() {
       </header>
       <main className="standalone-doc-editor">
         <DocsDependenciesProvider dependencies={dependencies}>
-          <DocsLayout.Container isSuggestionMode={false}>
+          <DocsLayout.Container isSuggestionMode={userMode === EditorUserMode.Suggest}>
             <StandaloneDocsEditor
               docMap={session.docMap}
               docState={session.docState}
@@ -138,10 +125,10 @@ function StandaloneDoc() {
               userMode={userMode}
               onEditorReadyToReceiveUpdates={onEditorReadyToReceiveUpdates}
               onEditorLoadError={onEditorLoadError}
-              onUserModeChange={changeMode}
+              onUserModeChange={setUserMode}
               setEditorRef={setEditorRef}
-              userAddress="standalone@example.test"
-              isSuggestionsFeatureEnabled={false}
+              userAddress={userAddress}
+              isSuggestionsFeatureEnabled
               showTreeView={false}
               tableOfContentsVisible={false}
             />
