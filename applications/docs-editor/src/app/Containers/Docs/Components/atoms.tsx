@@ -53,7 +53,7 @@ const buttonBaseClassName = clsx(
   'cursor-pointer [border:1px_solid_transparent] [outline:none]',
   '[transition:0.15s_cubic-bezier(0.22,1,0.36,1),background-position_0s]',
   'focus-visible:border-[--focus-outline] focus-visible:shadow-[0_0_0_0.1875rem_var(--focus-ring)]',
-  'disabled:pointer-events-none disabled:text-[--text-weak] disabled:opacity-50',
+  'disabled:pointer-events-none disabled:opacity-50',
 )
 
 type ButtonVariantClassNames = Record<
@@ -78,6 +78,14 @@ const buttonBackgroundClassNames: ButtonVariantClassNames = {
 const buttonTextClassNames: ButtonVariantClassNames = {
   solid: { weak: 'text-[--text-norm]', norm: 'text-[--interaction-norm-contrast]' },
   ghost: { weak: 'text-[--text-norm]', norm: 'text-[--interaction-norm-major-1]' },
+}
+
+const disabledWeakTextClassName = 'disabled:text-[--text-weak]'
+
+const buttonDisabledTextClassNames: ButtonVariantClassNames = {
+  // At half opacity the weak text colour is as light as the primary fill, so it would hide the label or icon.
+  solid: { weak: disabledWeakTextClassName, norm: '' },
+  ghost: { weak: disabledWeakTextClassName, norm: disabledWeakTextClassName },
 }
 
 const ghostNormStateTextClassName =
@@ -118,6 +126,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
       {...props}
       className={clsx(
         buttonBaseClassName,
+        buttonDisabledTextClassNames[shape][color],
         !classNameSetsUtility(className, ['bg-[--']) && buttonBackgroundClassNames[shape][color],
         isGhostNorm && ghostNormStateTextClassName,
         // shortcut: only `text-[--…]` counts as a caller text colour; widen the prefixes if callers use others.
