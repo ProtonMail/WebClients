@@ -145,9 +145,6 @@
       "Desktop and mobile apps": [
         "Aplicații pentru desktop și mobile"
       ],
-      "Downgrade plan": [
-        "Retrogradare plan"
-      ],
       "Downgrade to Free": [
         "Retrogradare la gratuit"
       ],
@@ -551,6 +548,9 @@
       "Cancel": [
         "Anulare"
       ],
+      "Cancel import": [
+        "Anulare importare"
+      ],
       "Cancel request": [
         "Anulare solicitare"
       ],
@@ -674,9 +674,6 @@
       "Connect to video conferencing": [
         "Conectați-vă la conferințe video"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Conectați-vă contul ${ BRAND_NAME }"
-      ],
       "Connect your email": [
         "Conectați-vă adresa de e-mail"
       ],
@@ -761,14 +758,11 @@
       "Create": [
         "Creare"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Creați un cont ${ BRAND_NAME }"
+      "Create a ${ ACCOUNT_APP_NAME }": [
+        "Creați un ${ ACCOUNT_APP_NAME }"
       ],
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "Creați o legătură web pentru a partaja cu oricine în afara ${ BRAND_NAME }"
-      ],
-      "Create an account": [
-        "Creare cont"
       ],
       "Create calendar": [
         "Creare calendar"
@@ -952,9 +946,6 @@
       ],
       "Done": [
         "Gata"
-      ],
-      "Downgrade": [
-        "Retrogradare"
       ],
       "Download": [
         "Descărcare"
@@ -1328,6 +1319,9 @@
       "Import": [
         "Importare"
       ],
+      "Import actions": [
+        "Acțiuni importare"
+      ],
       "Import emails, calendars, contacts": [
         "Importați e-mailuri, calendare, contacte"
       ],
@@ -1670,17 +1664,11 @@
       "Reload": [
         "Reîncărcare"
       ],
-      "Reload page": [
-        "Reîncărcare pagină"
-      ],
       "Remove": [
         "Eliminare"
       ],
       "Remove all other devices": [
         "Eliminare celelalte dispozitive"
-      ],
-      "Remove bonuses": [
-        "Anulare bonusuri"
       ],
       "Remove button": [
         "Buton eliminare"
@@ -1696,6 +1684,9 @@
       ],
       "Remove from favorites": [
         "Eliminare din favorite"
+      ],
+      "Remove from the list": [
+        "Eliminare din listă"
       ],
       "Remove gift code": [
         "Eliminare cod cadou"
@@ -1985,8 +1976,8 @@
       "Sign in": [
         "Autentificare"
       ],
-      "Sign in to ${ providerName }": [
-        "Conectare în ${ providerName }"
+      "Sign in to ${ PASS_APP_NAME }": [
+        "Conectare în ${ PASS_APP_NAME }"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Conectare cu ${ BRAND_NAME }"
@@ -2044,6 +2035,9 @@
       ],
       "Start subscription": [
         "Start abonament"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Începeți să utilizați ${ PASS_APP_NAME }"
       ],
       "Start using ${ PASS_APP_NAME } now": [
         "Începeți să utilizați ${ PASS_APP_NAME } acum"
@@ -2910,10 +2904,10 @@
     },
     "bf2023: header": {
       "Save with Black Friday deals on a high-speed Swiss VPN": [
-        "Economisiți cu ofertele de Vinerea Neagră pentru un VPN elvețian de mare viteză"
+        "Economisiți cu ofertele de Black Friday pentru un VPN elvețian de mare viteză"
       ],
       "Select your Black Friday offer": [
-        "Selectați oferta de Vinerea Neagră"
+        "Selectați oferta de Black Friday"
       ]
     },
     "bf2023: Info": {
@@ -2938,11 +2932,6 @@
         "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de ${ discountPercentage } cu planul ${ plan.Title } dacă vă abonați pentru ${ cycle } lună.",
         "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de ${ discountPercentage } cu planul ${ plan.Title } dacă vă abonați pentru ${ cycle } luni.",
         "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de ${ discountPercentage } cu planul ${ plan.Title } dacă vă abonați pentru ${ cycle } luni."
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "Garanție de returnare a banilor de 30 de zile"
       ]
     },
     "bf2023: Title": {
@@ -5463,6 +5452,9 @@
       "A checked box means the feature is disabled.": [
         "O casetă bifată înseamnă că funcția e dezactivată."
       ],
+      "Access your passwords on all your devices": [
+        "Accesați-vă parolele pe toate dispozitivele"
+      ],
       "Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.": [
         "Adăugați adrese suplimentare în contul personal sau utilizați aliasurile „hide my e-mail” pentru a vă păstra contul privat."
       ],
@@ -5471,6 +5463,9 @@
       ],
       "Also included": [
         "De asemenea, inclus"
+      ],
+      "Autofill logins instantly on any site": [
+        "Completați automat datele de autentificare pe orice site"
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Ștergeți automat mesajele mutate în folderul „Gunoi” și „Nedorite” mai vechi de 30 de zile."
@@ -5516,6 +5511,9 @@
       ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Creați reguli pentru a decide cine se poate conecta la serverele partajate din fiecare țară."
+      ],
+      "Create strong password with one click": [
+        "Creeați o parolă puternică printr-un singur clic"
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Accesați-vă cu ușurință adresa de e-mail și calendarul pe desktop și mobil."
@@ -6225,6 +6223,9 @@
       ]
     },
     "Easy switch": {
+      "Sign in to ${ providerName }": [
+        "Conectare în ${ providerName }"
+      ],
       "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
         "Pentru a redirecționa mesajele de la maxim ${ MAX_SYNC_PAID_USER } conturi, treceți la ${ planName }."
       ],
@@ -7421,6 +7422,9 @@
       ],
       "Couldn't load transactions. Please try again later.": [
         "Nu s-au putut încărca tranzacțiile. Reîncercați mai târziu."
+      ],
+      "Couldn't load your connections": [
+        "Conexiunile nu vi s-au putut încărca."
       ],
       "Creating documents in non-folders is not allowed": [
         "Crearea de documente în non-foldere nu este permisă."
@@ -8677,14 +8681,6 @@
         "Afișare invitație"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "Grup de familie nerecunoscut. Mai încercați."
-      ],
-      "Organization not recognized. Try again.": [
-        "Organizația nu e recunoscută. Mai încercați."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "Grupuri ${ BRAND_NAME }"
@@ -8870,22 +8866,8 @@
       ]
     },
     "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "Introduceți numele grupului de familie pentru confirmare"
-      ],
-      "Enter organization name to confirm": [
-        "Introduceți numele organizației pentru confirmare"
-      ],
       "Family name": [
         "Nume familie"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Aceasta va șterge definitiv toți subutilizatorii, conturile și datele asociate cu organizația personală."
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Aceasta va elimina toate funcțiile ${ BRAND_NAME } premium pentru fiecare membru al familiei."
       ]
     },
     "familyOffer_2023:Settings section title": {
@@ -8913,12 +8895,6 @@
       ],
       "Change family name": [
         "Schimbare nume familie"
-      ],
-      "Delete family group?": [
-        "Ștergeți grupul de familie?"
-      ],
-      "Delete organization?": [
-        "Ștergeți organizația?"
       ],
       "Edit user storage": [
         "Editare spațiu utilizator"
@@ -10264,6 +10240,9 @@
       "Pending": [
         "În așteptare"
       ],
+      "Queued": [
+        "În așteptare"
+      ],
       "Skipped ${ count } contact due to incompatibilities": [
         "S-a omis ${ count } contact datorită incompatibilităților.",
         "S-au omis ${ count } contacte datorită incompatibilităților.",
@@ -10278,12 +10257,6 @@
         "S-a omis ${ count } eveniment datorită incompatibilităților.",
         "S-au omis ${ count } evenimente datorită incompatibilităților.",
         "S-au omis ${ count } de evenimente datorită incompatibilităților."
-      ],
-      "Undo finished": [
-        "Anulare finalizată"
-      ],
-      "Undo in progress": [
-        "Anulare în desfășurare"
       ]
     },
     "Import type": {
@@ -10640,18 +10613,6 @@
       "${ url } deleted.": [
         "S-a șters ${ url }."
       ],
-      "${ vaultLink } created": [
-        "${ vaultLink } creată"
-      ],
-      "${ vaultLink } deleted": [
-        "${ vaultLink } șters."
-      ],
-      "${ vaultLink } shared with email": [
-        "${ vaultLink } partajat cu e-mail."
-      ],
-      "${ vaultLink } updated": [
-        "S-a actualizat ${ vaultLink }"
-      ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
         "${ VPN_SHORT_APP_NAME } vă ascunde traficul. ${ PASS_SHORT_APP_NAME } vă ascunde identitatea — **aliasuri de tip „hide-my-email”** nelimitate și **alerte de pe internetul ascuns** în cazul în care datele vă sunt vreodată divulgate."
       ],
@@ -10749,14 +10710,6 @@
         "+ ${ invisibleCount } Mai multe",
         "+ ${ invisibleCount } Mai multe"
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+ ${ bonusSpace } spațiu bonus"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+o conexiune pentru ${ VPN_APP_NAME } (vă permite să conectați mai multe dispozitive la VPN)",
-        "+${ organization.BonusVPN } conexiuni pentru ${ VPN_APP_NAME } (vă permite să conectați mai multe dispozitive la VPN)",
-        "+${ organization.BonusVPN } de conexiuni pentru ${ VPN_APP_NAME } (vă permite să conectați mai multe dispozitive la VPN)"
-      ],
       "1 device per user": [
         "Un dispozitiv per utilizator"
       ],
@@ -10768,9 +10721,6 @@
       ],
       "30-day money-back guarantee": [
         "Garanția returnării banilor în 30 de zile"
-      ],
-      "30-day money-back guarantee.": [
-        "Garanția returnării banilor în 30 de zile."
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Un ${ protonSubdomain } este găzduit de ${ BRAND_NAME }, ceea ce vă permite să configurați rapid un subdomeniu. ${ learnMoreLink }"
@@ -11223,9 +11173,6 @@
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "Prin dezactivarea monitorizării contului, veți șterge și întregul istoric. Sigur doriți să dezactivați acest lucru?"
       ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Revenind la planul gratuit, veți pierde permanent aceste avantaje, chiar dacă ulterior veți trece la unul cu plată."
-      ],
       "By leaving now, changes may not be saved": [
         "Dacă ieșiți acum, este posibil ca schimbările să nu fie salvate."
       ],
@@ -11609,9 +11556,6 @@
       ],
       "Downgrade": [
         "Retrogradare"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Retrogradarea va încheia orice conexiune la serverele ${ VPN_APP_NAME } cu plată."
       ],
       "Download ${ mobileConfigArtifact } and open it on each Mac to install the profile, then approve it in System Settings.": [
         "Descărcați ${ mobileConfigArtifact } și deschideți-l pe fiecare Mac pentru a instala profilul, apoi aprobați-l în setările de sistem."
@@ -12135,15 +12079,6 @@
       "If you previously had a personal ${ BRAND_NAME } account with this address, you can recover your data separately.": [
         "Dacă ați avut anterior un cont personal ${ BRAND_NAME } asociat acestei adrese, vă puteți recupera datele separat."
       ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Dacă continuați cu retrogradarea, veți pierde accesul la funcțiile cu plată din ${ MAIL_APP_NAME } și ${ VPN_APP_NAME }."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Dacă veți continua cu retrogradarea, veți pierde accesul la funcțiile cu plată din ${ MAIL_APP_NAME }, inclusiv spațiul și filtrele suplimentare."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Dacă continuați cu retrogradarea, veți pierde accesul la funcțiile cu plată din ${ VPN_APP_NAME }."
-      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Dacă ați cumpărat un cod cadou sau ați primit unul de la echipa de suport, îl puteți folosi aici."
       ],
@@ -12265,23 +12200,8 @@
       "Invitation link used": [
         "Legătura web a invitației a fost folosită."
       ],
-      "Invite deleted": [
-        "Invitația s-a șters."
-      ],
       "Invite family members and get everything up and running.": [
         "Invitați membri familiei și puneți totul în funcțiune."
-      ],
-      "Invite for new user deleted": [
-        "S-a șters invitația pentru utilizatorul nou."
-      ],
-      "Invite for organization accepted": [
-        "S-a acceptat invitația pentru organizație."
-      ],
-      "Invite for organization created": [
-        "S-a creat invitația pentru organizație."
-      ],
-      "Invite rejected": [
-        "Invitație refuzată"
       ],
       "Invite successfully sent": [
         "Invitație trimisă cu succes",
@@ -12305,54 +12225,6 @@
       ],
       "It's better to have:": [
         "Este bine să aveți:"
-      ],
-      "Item autofilled in ${ vaultLink }": [
-        "Articol autocompletat în ${ vaultLink }."
-      ],
-      "Item autofilled in vault": [
-        "Articol autocompletat în seif."
-      ],
-      "Item created in ${ vaultLink }": [
-        "Articol creat în ${ vaultLink }."
-      ],
-      "Item created in vault": [
-        "Articol creat în seif."
-      ],
-      "Item deleted from ${ vaultLink }": [
-        "Articol șters din ${ vaultLink }."
-      ],
-      "Item deleted from vault": [
-        "Articol șters din seif."
-      ],
-      "Item flags changed in ${ vaultLink }": [
-        "Stare articol modificată în ${ vaultLink }."
-      ],
-      "Item flags changed in vault": [
-        "Stare articol schimbată în seif."
-      ],
-      "Item in ${ vaultLink } trashed": [
-        "Articol din ${ vaultLink } mutat în gunoi."
-      ],
-      "Item in ${ vaultLink } untrashed": [
-        "Articol din ${ vaultLink } scos din gunoi."
-      ],
-      "Item in vault trashed": [
-        "Articol din seif mutat în gunoi."
-      ],
-      "Item in vault untrashed": [
-        "Articol recuperat din coșul de gunoi în seif."
-      ],
-      "Item read in ${ vaultLink }": [
-        "Articol accesat din ${ vaultLink }."
-      ],
-      "Item read in vault": [
-        "Articol citit în seif."
-      ],
-      "Item updated in ${ vaultLink }": [
-        "Articol actualizat în ${ vaultLink }."
-      ],
-      "Item updated in vault": [
-        "Articol actualizat în seif."
       ],
       "It’s often the easiest way to recover your account if you’re signed in.": [
         "De multe ori este cea mai ușoară modalitate de a vă recupera contul dacă aveți o sesiune activă."
@@ -12576,9 +12448,6 @@
       "New group created via your identity provider and pending review.": [
         "Grup nou creat prin intermediul furnizorului de identitate și în așteptarea revizuirii."
       ],
-      "New user invited to organization": [
-        "Utilizator nou invitat în organizație."
-      ],
       "New VPN connection data will stop being collected and shown.": [
         "Noile date de conectare prin VPN vor înceta să fie colectate și afișate."
       ],
@@ -12787,15 +12656,6 @@
       "Paid for a plan": [
         "Plătit pentru un plan"
       ],
-      "Pass Monitor - custom email confirmed": [
-        "Pass Monitor - e-mail personal confirmat"
-      ],
-      "Pass Monitor - custom email created": [
-        "Pass Monitor - e-mail personal creat"
-      ],
-      "Pass Monitor - custom email deleted": [
-        "Pass Monitor - e-mail personal șters"
-      ],
       "Pass usage logs": [
         "Jurnal de utilizare Pass"
       ],
@@ -12880,9 +12740,6 @@
       ],
       "Please open the document to view it.": [
         "Deschideți documentul pentru a-l vedea."
-      ],
-      "Please open your browser extension settings and allow ${ PASS_APP_NAME } extension to access website data. Then, reload this page.": [
-        "Deschideți setările extensiei navigatorului web și permiteți extensiei ${ PASS_APP_NAME } să acceseze datele site-ului web. Apoi, reîncărcați această pagină."
       ],
       "Please reconnect to continue.": [
         "Reconectați-vă pentru a continua."
@@ -13190,22 +13047,10 @@
       "Settings updated": [
         "Setările s-au actualizat."
       ],
-      "Shared ${ vaultLink } deleted": [
-        "${ vaultLink } partajat șters."
-      ],
-      "Shared ${ vaultLink } updated": [
-        "${ vaultLink } partajat actualizat."
-      ],
       "Shared server country (${ countriesCount })": [
         "Țări servere partajate (${ countriesCount })",
         "Țări servere partajate (${ countriesCount })",
         "Țări servere partajate (${ countriesCount })"
-      ],
-      "Shared vault deleted": [
-        "Seif partajat șters."
-      ],
-      "Shared vault updated": [
-        "Seif partajat actualizat."
       ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Se afișează imaginea fiecărui expeditor în lista de mesaje. Dacă nu este disponibilă o imagine, se va afișa inițiala numelui expeditorului."
@@ -13225,9 +13070,6 @@
       "Sign in only": [
         "Doar conectare"
       ],
-      "Sign in or create an account to continue.": [
-        "Conectați-vă sau creați un cont pentru a continua."
-      ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Conectați-vă la ${ MAIL_APP_NAME } pentru a vă activa adresa."
       ],
@@ -13239,9 +13081,6 @@
       ],
       "Signed up": [
         "Înscris"
-      ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Deoarece sunteți un utilizator loial, contul are funcții adiționale activate."
       ],
       "Smart Routed through a different country.": [
         "Direcționare inteligentă printr-o altă țară."
@@ -13298,12 +13137,6 @@
       ],
       "Step ${ step }/${ totalSteps }": [
         "Pasul ${ step }/${ totalSteps }"
-      ],
-      "Step 1 of 2": [
-        "Pasul 1 din 2"
-      ],
-      "Step 2 of 2": [
-        "Pasul 2 din 2"
       ],
       "Storage allocated to other users in this organisation": [
         "Spațiu alocat altor utilizatori din această organizație"
@@ -13826,9 +13659,6 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "ID unic generat de furnizorul de identitate, de obicei sub forma unei adrese URL care conține numele furnizorului de identitate (ex. https://idp.exemplu.com/XXXX)."
       ],
-      "Unknown event type": [
-        "Tipul evenimentului nu este cunoscut."
-      ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Dacă nu vă deconectați din cont sau nu vă schimbați parola, sesiunea curentă va rămâne activă. Sesiunea expiră după 60 de zile de inactivitate."
       ],
@@ -13952,21 +13782,6 @@
       "Using a different MDM? Any MDM that supports deploying a configuration profile will work. Refer to your MDM's documentation on how to upload and assign it to your device fleet.": [
         "Folosiți un alt MDM? Orice MDM care acceptă implementarea unui profil de configurare va funcționa. Consultați documentația MDM-ului pentru a afla cum să îl încărcați și să îl atribuiți flotei de dispozitive deținute."
       ],
-      "Vault created": [
-        "Seiful s-a creat."
-      ],
-      "Vault deleted": [
-        "Seiful s-a șters."
-      ],
-      "Vault either deleted or requires access permissions": [
-        "Seiful fie este șters fie necesită permisiuni de acces."
-      ],
-      "Vault shared with email": [
-        "Seif partajat pe e-mail."
-      ],
-      "Vault updated": [
-        "Seiful a fost actualizat."
-      ],
       "Verification code sent.": [
         "Codul de verificare a fost trimis."
       ],
@@ -13987,9 +13802,6 @@
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Vă verificați identitatea cu o parolă unică temporară, generată de o aplicație de autentificare."
-      ],
-      "Verifying ${ PASS_APP_NAME } browser extension...": [
-        "Se verifică extensia de navigator web ${ PASS_APP_NAME }..."
       ],
       "Verifying your payment": [
         "Verificare plată"
@@ -14176,9 +13988,6 @@
       ],
       "When sign-in is restricted, only your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
         "Când autentificarea este restricționată, doar numele de utilizator ${ usernameElement } poate fi utilizat pentru a vă autentifica. Celelalte adrese nu vă pot fi asociate cu contul, chiar dacă cineva le cunoaște."
-      ],
-      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
-        "Dacă vă anulați abonamentul actual cu plată, soldul abonamentului va fi returnat sub formă de credite de cont și contul va fi retrogradat la planul ${ BRAND_NAME } ${ PLANS.FREE }."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Dacă anulați, abonamentul nu va fi reînnoit, dar vă puteți bucura în continuare de beneficiile planului până la sfârșitul perioadei de abonament. După aceea, contul va fi trecut la planul ${ BRAND_NAME } Free."
@@ -14450,9 +14259,6 @@
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "Trebuie să activați cheia privată a organizației cu parola de rezervă a cheii organizației primită de la administratorul organizației."
       ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Trebuie să dezactivați sau să eliminați utilizatorii ${ MAIL_APP_NAME } adiționali, adresele și domeniile personale înainte de a putea retrograda."
-      ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Trebuie să aveți un card de credit sau un cont bancar asociat cu contul de PayPal pentru a-l adăuga ca metodă de plată."
       ],
@@ -14615,6 +14421,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Fișierele vor fi criptate și apoi salvate."
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "Perioada de probare gratuită s-a încheiat. Abonați-vă acum pentru a asigura accesul neîntrerupt al echipei proprii și securitatea conturilor."
       ],
       "Your free trial includes 1 dedicated server.": [
         "Perioada de evaluare gratuită include un server dedicat."
@@ -15805,9 +15614,6 @@
       "Confirm second password": [
         "Confirmare parolă secundară"
       ],
-      "Connect ${ item.Email }": [
-        "Conectare ${ item.Email }"
-      ],
       "Contacts": [
         "Contacte"
       ],
@@ -16229,6 +16035,9 @@
       ],
       "Issuer ID": [
         "ID emitent"
+      ],
+      "Item": [
+        "Articol"
       ],
       "Keep emails in Sent/Drafts": [
         "Păstrare mesaje din Ciorne/Trimise"
@@ -17000,6 +16809,9 @@
       "Value": [
         "Valoare"
       ],
+      "Vault": [
+        "Seif"
+      ],
       "Vault, item & secure link sharing": [
         "Partajare seif, articole și legături web securizate"
       ],
@@ -17519,9 +17331,6 @@
       ],
       "use a data recovery method": [
         "utilizați o metodă de recuperare a datelor"
-      ],
-      "Vault": [
-        "Seif"
       ],
       "View guide": [
         "Consultare ghid"
@@ -18528,9 +18337,6 @@
       ]
     },
     "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Retrogradare la ${ downgradedPlanName }"
-      ],
       "Explore all ${ BRAND_NAME } plans": [
         "Explorați toate planurile ${ BRAND_NAME }"
       ],
@@ -21426,8 +21232,8 @@
       ]
     },
     "Payments.iDEAL": {
-      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
-        "Prin confirmare, autorizați ${ BRAND_NAME } și Stripe, furnizorul nostru de servicii de plată, să colecteze plățile viitoare pentru abonament din acest cont bancar prin Debit Direct SEPA, iar banca să vă debiteze aceste plăți. Prima plată este efectuată acum de către ${ IDEAL_WERO_BRAND_NAME }. Planul se reînnoiește automat până la anularea acestuia; vă vom notifica înainte de fiecare colectare. Pentru colectările prin debit direct, puteți solicita o rambursare de la banca proprie în termen de 8 săptămâni de la data debitării, în conformitate cu termenii acordului cu banca. Aceasta nu se aplică plății ${ IDEAL_WERO_BRAND_NAME } pe care o efectuați acum."
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Prin confirmare, autorizați ${ BRAND_NAME } și Stripe, furnizorul nostru de servicii de plată, să încaseze plățile viitoare pentru abonament din acest cont bancar prin debitare directă SEPA, iar banca să vă efectueze aceste plăți. Prima plată este efectuată acum prin ${ IDEAL_WERO_BRAND_NAME }. Abonamentul se reînnoiește automat până în momentul în care îl anulați; vă vom notifica înainte de fiecare încasare. În cazul plăților prin debitare directă, puteți solicita băncii rambursarea sumei în termen de 8 săptămâni de la data debitării, conform termenilor contractului încheiat cu banca. Această prevedere nu se aplică plății prin ${ IDEAL_WERO_BRAND_NAME } pe care o efectuați în acest moment."
       ]
     },
     "Payments.info": {
@@ -22639,6 +22445,14 @@
         "Administrare utilizatori"
       ]
     },
+    "Rollback state": {
+      "Undo finished": [
+        "Anulare finalizată"
+      ],
+      "Undo in progress": [
+        "Anulare în desfășurare"
+      ]
+    },
     "Safety review": {
       "Code sent to ${ boldValue }": [
         "Cod trimis către ${ boldValue }"
@@ -23685,6 +23499,11 @@
       ],
       "Open in ${ appName } (Beta)": [
         "Deschidere în ${ appName } (Beta)"
+      ]
+    },
+    "Sign out": {
+      "Sign in to ${ providerName }": [
+        "Conectare în ${ providerName }"
       ]
     },
     "Signature verification error when joining calendar": {
@@ -24992,9 +24811,6 @@
       "Upgrade your plan to increase your storage.": [
         "Treceți la alt tip de plan pentru a vă mări spațiul de stocare."
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Vom adăuga creditele pentru timpul rămas în contul ${ BRAND_NAME }."
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "Zile rămase pentru planul **${ currentPlanName }**: **${ daysRemaining }**",
         "Zile rămase pentru planul **${ currentPlanName }**: **${ daysRemaining }**",
@@ -25923,9 +25739,6 @@
       "You have successfully canceled your subscription.": [
         "V-ați anulat abonamentul."
       ],
-      "You have successfully unsubscribed": [
-        "V-ați dezabonat cu succes"
-      ],
       "You will receive your username via email within a minute if you entered a valid recovery email address.": [
         "Veți primi numele de utilizator prin e-mail într-un minut dacă ați introdus o adresă de e-mail de recuperare validă."
       ],
@@ -26296,8 +26109,8 @@
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
       ],
-      "${ PASS_APP_NAME } is missing permissions": [
-        "${ PASS_APP_NAME } nu are permisiunile necesare"
+      "${ PASS_APP_NAME }: Welcome": [
+        "${ PASS_APP_NAME }: Bun venit"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "Raport monitorizare ${ PASS_SHORT_APP_NAME }"
@@ -26394,6 +26207,12 @@
       ],
       "Activity monitor": [
         "Monitorizare activitate"
+      ],
+      "Add ${ PASS_APP_NAME } to ${ browserName }": [
+        "Adăugați ${ PASS_APP_NAME } în ${ browserName }"
+      ],
+      "Add ${ PASS_APP_NAME } to your browser": [
+        "Adăugați ${ PASS_APP_NAME } la navigatorul web"
       ],
       "Add ${ totalServerCount } server?": [
         "Adăugați ${ totalServerCount } server?",
@@ -26694,12 +26513,6 @@
       "Confirm": [
         "Confirmare"
       ],
-      "Confirm downgrade": [
-        "Confirmare modificare la plan inferior"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Confirmare pierdere bonusuri ${ BRAND_NAME }"
-      ],
       "Confirm where to sign in": [
         "Confirmați unde să vă conectați"
       ],
@@ -26721,8 +26534,8 @@
       "Connect to video conferencing": [
         "Conectați-vă la conferințe video"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Conectați-vă la contul ${ BRAND_NAME }"
+      "Connect your ${ ACCOUNT_APP_NAME }": [
+        "Conectați-vă contul ${ ACCOUNT_APP_NAME }"
       ],
       "Connect your custom domain": [
         "Conectați-vă domeniul personal"
@@ -27018,9 +26831,6 @@
       ],
       "Downgrade account": [
         "Retrogradare cont"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "Retrogradare la ${ downgradedPlanName }?"
       ],
       "Download ${ app }": [
         "Descărcare ${ app }"
@@ -27656,6 +27466,9 @@
       "Our fight against censorship in Russia": [
         "Lupta noastră împotriva cenzurii în Rusia"
       ],
+      "Over 95% of users love our extension": [
+        "Peste 95% dintre utilizatori apreciază extensia noastră"
+      ],
       "Password": [
         "Parola"
       ],
@@ -27863,6 +27676,9 @@
       "SAML authentication": [
         "Autentificare SAML"
       ],
+      "Save time:": [
+        "Câștigați timp:"
+      ],
       "Schedule meetings in one click": [
         "Planificare întâlniri cu un singur clic"
       ],
@@ -28037,6 +27853,9 @@
       "Single sign-on (SSO)": [
         "Autentificare unică (SSO)"
       ],
+      "Skip for now": [
+        "Ignorare momentan"
+      ],
       "SMS verification": [
         "Verificare prin SMS"
       ],
@@ -28082,11 +27901,20 @@
       "Status": [
         "Stare"
       ],
+      "Stay connected:": [
+        "Păstrați-vă conexiunea:"
+      ],
+      "Stay safe:": [
+        "Rămâneți în siguranță:"
+      ],
       "Stay secure and connected anywhere": [
         "Rămâneți în siguranță și vă conectați oriunde"
       ],
       "Strengthen your security on all your devices with ${ passPlusPlanName }. ${ upgradeButton }": [
         "Consolidați-vă securitatea pe toate dispozitivele cu ${ passPlusPlanName }. ${ upgradeButton }"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "Abonare la ${ planTitle }"
       ],
       "Subscription": [
         "Abonament"
@@ -28194,6 +28022,9 @@
       ],
       "Unblocking internet access in Iran": [
         "Deblocarea accesului la internet în Iran"
+      ],
+      "Unlock the power of autofill with ${ PASS_APP_NAME } in your browser": [
+        "Deblocați puterea completării automate cu ${ PASS_APP_NAME } în navigatorul web"
       ],
       "Unlock your data": [
         "Deblocați-vă datele"
@@ -28329,9 +28160,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Bun venit la ${ BRAND_NAME } for Business"
-      ],
-      "Welcome to your new password manager!": [
-        "Bun venit la noul manager de parole!"
       ],
       "What are you migrating?": [
         "Ce migrați?"
@@ -29764,12 +29592,6 @@
       ],
       "By removing this phone number, you will no longer be able to recover your account.": [
         "Eliminând acest număr de telefon, nu veți mai putea să vă recuperați contul."
-      ],
-      "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
-        "Nu s-a putut realiza conectarea. Deschideți extensia de navigator web ${ PASS_APP_NAME } și realizați conectarea de acolo."
-      ],
-      "Could not sign up. Please open ${ PASS_APP_NAME } browser extension and sign up from there.": [
-        "Nu s-a putut crea contul. Deschideți extensia de navigator web ${ PASS_APP_NAME } și creeați de acolo contul."
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Dacă anulați această importare, nu o veți putea relua. ${ BRAND_NAME } a salvat tot progresul în cont. Continuați anularea?"

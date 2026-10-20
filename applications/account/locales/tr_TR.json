@@ -145,9 +145,6 @@
       "Desktop and mobile apps": [
         "Bilgisayar ve mobil uygulamalar"
       ],
-      "Downgrade plan": [
-        "Tarifeyi düşür"
-      ],
       "Downgrade to Free": [
         "Free tarifesine düşür"
       ],
@@ -551,6 +548,9 @@
       "Cancel": [
         "İptal"
       ],
+      "Cancel import": [
+        "İçe aktarmayı iptal et"
+      ],
       "Cancel request": [
         "İsteği iptal et"
       ],
@@ -674,9 +674,6 @@
       "Connect to video conferencing": [
         "Görüntülü görüşmeye bağlanın"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "${ BRAND_NAME } hesabınızı bağlayın"
-      ],
       "Connect your email": [
         "E-postanızı bağlayın"
       ],
@@ -761,14 +758,11 @@
       "Create": [
         "Ekle"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Bir ${ BRAND_NAME } hesabı açın"
+      "Create a ${ ACCOUNT_APP_NAME }": [
+        "Bir ${ ACCOUNT_APP_NAME } oluşturun"
       ],
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "${ BRAND_NAME } kullanmayan kişilerle paylaşmak için bir bağlantı oluştur"
-      ],
-      "Create an account": [
-        "Hesap açın"
       ],
       "Create calendar": [
         "Takvim ekle"
@@ -952,9 +946,6 @@
       ],
       "Done": [
         "Tamam"
-      ],
-      "Downgrade": [
-        "Tarifeyi düşür"
       ],
       "Download": [
         "İndir"
@@ -1328,6 +1319,9 @@
       "Import": [
         "İçe aktar"
       ],
+      "Import actions": [
+        "İçe aktarma işlemleri"
+      ],
       "Import emails, calendars, contacts": [
         "E-postaları, takvimleri, kişileri içe aktarın"
       ],
@@ -1670,17 +1664,11 @@
       "Reload": [
         "Yenile"
       ],
-      "Reload page": [
-        "Sayfayı yeniden yükle"
-      ],
       "Remove": [
         "Kaldır"
       ],
       "Remove all other devices": [
         "Diğer tüm aygıtları kaldır"
-      ],
-      "Remove bonuses": [
-        "Hediyeleri kaldır"
       ],
       "Remove button": [
         "Düğmeyi kaldır"
@@ -1696,6 +1684,9 @@
       ],
       "Remove from favorites": [
         "Beğenilenlerden kaldır"
+      ],
+      "Remove from the list": [
+        "Listeden kaldır"
       ],
       "Remove gift code": [
         "Hediye kodunu kaldır"
@@ -1719,7 +1710,7 @@
         "Yeniden adlandır"
       ],
       "Report a problem": [
-        "Sorun bildirin"
+        "Sorun bildireceğim"
       ],
       "Request a call": [
         "Arama isteği gönder"
@@ -1985,8 +1976,8 @@
       "Sign in": [
         "Oturum aç"
       ],
-      "Sign in to ${ providerName }": [
-        "${ providerName } hesabında oturum aç"
+      "Sign in to ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } oturumu açın"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "${ BRAND_NAME } ile oturum aç"
@@ -2044,6 +2035,9 @@
       ],
       "Start subscription": [
         "Aboneliği başlat"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } kullanmaya başlayın"
       ],
       "Start using ${ PASS_APP_NAME } now": [
         "${ PASS_APP_NAME } kullanmaya başlayın"
@@ -2170,6 +2164,9 @@
       ],
       "Upgrade to Business": [
         "Business tarifesine yükselt"
+      ],
+      "Upgrade to connect": [
+        "Bağlantı kurmak için tarifenizi yükseltin"
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "${ PROTON_SENTINEL_NAME } özelliğini açmak için tarifenizi yükseltin"
@@ -2928,8 +2925,8 @@
       ]
     },
     "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "30 gün içinde ücreti geri ödeme garantisi"
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30 gün içinde iptal edin ve geri ödeme almak için ${ customerSupportLink } ile görüşün."
       ]
     },
     "bf2023: Title": {
@@ -5430,6 +5427,9 @@
       "A checked box means the feature is disabled.": [
         "Seçeneğin işaretlenmesi özelliğin kapatılmasını sağlar."
       ],
+      "Access your passwords on all your devices": [
+        "Parolalarınıza tüm aygıtlarınızdan erişin"
+      ],
       "Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.": [
         "Hesabınıza yeni adresler ekleyin veya gelen kutunuzu gizli tutmak için e-posta takma adları kullanın."
       ],
@@ -5438,6 +5438,9 @@
       ],
       "Also included": [
         "Ayrıca şunlar da bulunur"
+      ],
+      "Autofill logins instantly on any site": [
+        "Herhangi bir sitede anında otomatik olarak oturum açın"
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Çöp ve İstenmeyen kutularındaki 30 günden eski e-postaları otomatik olarak temizleyin."
@@ -5483,6 +5486,9 @@
       ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Her ülkedeki paylaşılan sunuculara kimlerin bağlanabileceğini belirlemek için ilkeler oluşturun."
+      ],
+      "Create strong password with one click": [
+        "Tek tıklamayla güçlü bir parola oluşturun"
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "E-postanıza ve takviminize bilgisayarınızdan ve mobil aygıtınızdan kolayca erişin."
@@ -6187,6 +6193,9 @@
       ]
     },
     "Easy switch": {
+      "Sign in to ${ providerName }": [
+        "${ providerName } oturumu açın"
+      ],
       "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
         "${ MAX_SYNC_PAID_USER } hesaba kadar e-posta iletmek için ${ planName } tarifesine yükseltin."
       ],
@@ -7375,6 +7384,9 @@
       ],
       "Couldn't load transactions. Please try again later.": [
         "Hesap işlemleri yüklenemedi. Lütfen bir süre sonra yeniden deneyin."
+      ],
+      "Couldn't load your connections": [
+        "Bağlantılarınız yüklenemedi"
       ],
       "Creating documents in non-folders is not allowed": [
         "Klasör olmayan ögelerin içinde belge oluşturulamaz"
@@ -8620,14 +8632,6 @@
         "Daveti görüntüle"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "Aile grubu belirlenemedi. Yeniden deneyin."
-      ],
-      "Organization not recognized. Try again.": [
-        "Kuruluş belirlenemedi. Yeniden deneyin."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } grupları"
@@ -8808,22 +8812,8 @@
       ]
     },
     "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "Onaylamak için aile grubunun adını yazın"
-      ],
-      "Enter organization name to confirm": [
-        "Onaylamak için kuruluş adını yazın"
-      ],
       "Family name": [
         "Aile adı"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Bu işlem, kuruluşunuzla ilgili tüm alt kullanıcıları, hesapları ve verileri kalıcı olarak silecek."
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Bu işlem, her aile üyesi için tüm ${ BRAND_NAME } ücretli özelliklerini kaldıracak."
       ]
     },
     "familyOffer_2023:Settings section title": {
@@ -8851,12 +8841,6 @@
       ],
       "Change family name": [
         "Aile adını değiştir"
-      ],
-      "Delete family group?": [
-        "Aile grubu silinsin mi?"
-      ],
-      "Delete organization?": [
-        "Kuruluş silinsin mi?"
       ],
       "Edit user storage": [
         "Kullanıcı depolama alanını düzenle"
@@ -10184,6 +10168,9 @@
       "Pending": [
         "Bekliyor"
       ],
+      "Queued": [
+        "Sıraya alındı"
+      ],
       "Skipped ${ count } contact due to incompatibilities": [
         "Uyumsuzluklar nedeniyle ${ count } kişi atlandı",
         "Uyumsuzluklar nedeniyle ${ count } kişi atlandı"
@@ -10195,12 +10182,6 @@
       "Skipped ${ count } event due to incompatibilities": [
         "Uyumsuzluklar nedeniyle ${ count } etkinlik atlandı",
         "Uyumsuzluklar nedeniyle ${ count } etkinlik atlandı"
-      ],
-      "Undo finished": [
-        "Geri alma tamamlandı"
-      ],
-      "Undo in progress": [
-        "Geri alma işlemi sürüyor"
       ]
     },
     "Import type": {
@@ -10529,18 +10510,6 @@
       "${ url } deleted.": [
         "${ url } silindi."
       ],
-      "${ vaultLink } created": [
-        "${ vaultLink } eklendi"
-      ],
-      "${ vaultLink } deleted": [
-        "${ vaultLink } silindi"
-      ],
-      "${ vaultLink } shared with email": [
-        "${ vaultLink } e-posta ile paylaşıldı"
-      ],
-      "${ vaultLink } updated": [
-        "${ vaultLink } güncellendi"
-      ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
         "${ VPN_SHORT_APP_NAME } trafiğinizi gizler. ${ PASS_SHORT_APP_NAME } kimliğinizi gizler.\nVerileriniz ele geçirilmesine karşı sınırsız **hide-my-email takma adları** ve **karanlık ağ uyarıları**."
       ],
@@ -10636,13 +10605,6 @@
         "+ ${ invisibleCount } diğer",
         "+ ${ invisibleCount } diğer"
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } ek depolama alanı"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } ${ VPN_APP_NAME } bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)",
-        "+${ organization.BonusVPN } ${ VPN_APP_NAME } bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)"
-      ],
       "1 device per user": [
         "Her kullanıcı için 1 aygıt"
       ],
@@ -10655,8 +10617,8 @@
       "30-day money-back guarantee": [
         "30 gün içinde ücreti geri ödeme garantisi"
       ],
-      "30-day money-back guarantee.": [
-        "30 gün içinde ücreti geri ödeme garantisi."
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30 gün içinde iptal edin ve geri ödeme almak için ${ customerSupportLink } ile görüşün."
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ BRAND_NAME } tarafından sunulan bir ${ protonSubdomain }, hızlıca bir alt etki alanı kurmanızı sağlar. ${ learnMoreLink }"
@@ -11101,9 +11063,6 @@
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "Hesap izleyiciyi kapattığınızda tüm geçmişinizi de temizlemiş olacaksınız. Kapatmak istediğinize emin misiniz?"
       ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Ücretsiz bir tarifeye geçtiğinizde, gelecekte yeniden ücretli tarifeye geçseniz bile bu ek faydaları kalıcı olarak kaybedersiniz."
-      ],
       "By leaving now, changes may not be saved": [
         "Şimdi çıkarsanız, değişiklikler kaydedilemeyebilir"
       ],
@@ -11124,6 +11083,9 @@
       ],
       "Cancel anytime": [
         "İstediğiniz zaman iptal edin"
+      ],
+      "Cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Satın aldıktan sonraki 30 gün içinde iptal edin ve geri ödeme almak için ${ customerSupportLink } ile görüşün."
       ],
       "Can’t access your recovery email?": [
         "Kurtarma e-postanıza erişemiyor musunuz?"
@@ -11481,9 +11443,6 @@
       ],
       "Downgrade": [
         "Tarifeyi düşür"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Tarifenizi düşürdüğünüzde, ücretli ${ VPN_APP_NAME } sunucularına yapılan bağlantılar kesilecek."
       ],
       "Download ${ mobileConfigArtifact } and open it on each Mac to install the profile, then approve it in System Settings.": [
         "${ mobileConfigArtifact } dosyasını indirin ve her Mac üzerinde açarak profili kurun. Ardından sistem ayarları bölümünden onaylayın."
@@ -12007,15 +11966,6 @@
       "If you previously had a personal ${ BRAND_NAME } account with this address, you can recover your data separately.": [
         "Daha önce bu adresle kişisel bir ${ BRAND_NAME } hesabınız varsa, verilerinizi ayrı olarak kurtarabilirsiniz."
       ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Tarifenizi düşürdüğünüzde, ücretli ${ MAIL_APP_NAME } ve ${ VPN_APP_NAME } özelliklerini kullanamayacaksınız."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Tarifenizi düşürdüğünüzde, ek depolama alanı ve süzgeçler gibi ücretli ${ MAIL_APP_NAME } özelliklerini kullanamayacaksınız."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Tarifenizi düşürdüğünüzde, ücretli ${ VPN_APP_NAME } özelliklerini kullanamayacaksınız."
-      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Satın aldığınız veya destek ekibimizin verdiği hediye kodunu buraya yazabilirsiniz."
       ],
@@ -12135,23 +12085,8 @@
       "Invitation link used": [
         "Davet bağlantısı kullanıldı"
       ],
-      "Invite deleted": [
-        "Davet silindi"
-      ],
       "Invite family members and get everything up and running.": [
         "Aile üyelerinizi davet edin ve her şeyi kullanılmaya hazır duruma getirin."
-      ],
-      "Invite for new user deleted": [
-        "Yeni kullanıcı daveti silindi"
-      ],
-      "Invite for organization accepted": [
-        "Kuruluş daveti kabul edildi"
-      ],
-      "Invite for organization created": [
-        "Kuruluş daveti oluşturuldu"
-      ],
-      "Invite rejected": [
-        "Davet reddedildi"
       ],
       "Invite successfully sent": [
         "Davet gönderildi",
@@ -12174,54 +12109,6 @@
       ],
       "It's better to have:": [
         "Şöyle olması daha iyidir:"
-      ],
-      "Item autofilled in ${ vaultLink }": [
-        "${ vaultLink } kasasındaki öge otomatik olarak dolduruldu"
-      ],
-      "Item autofilled in vault": [
-        "Kasa ögesi otomatik olarak dolduruldu"
-      ],
-      "Item created in ${ vaultLink }": [
-        "${ vaultLink } kasasına öge eklendi"
-      ],
-      "Item created in vault": [
-        "Kasa ögesi oluşturuldu"
-      ],
-      "Item deleted from ${ vaultLink }": [
-        "${ vaultLink } kasasındaki öge silindi"
-      ],
-      "Item deleted from vault": [
-        "Öge kasadan silindi"
-      ],
-      "Item flags changed in ${ vaultLink }": [
-        "${ vaultLink } kasasındaki öge işaretleri değiştirildi"
-      ],
-      "Item flags changed in vault": [
-        "Kasa ögesi işaretleri değiştirildi"
-      ],
-      "Item in ${ vaultLink } trashed": [
-        "${ vaultLink } kasasındaki öge çöpe atıldı"
-      ],
-      "Item in ${ vaultLink } untrashed": [
-        "${ vaultLink } kasasındaki öge çöpten çıkarıldı"
-      ],
-      "Item in vault trashed": [
-        "Kasadaki öge çöpe atıldı"
-      ],
-      "Item in vault untrashed": [
-        "Kasa ögesi çöpten çıkarıldı"
-      ],
-      "Item read in ${ vaultLink }": [
-        "${ vaultLink } kasasındaki öge okundu"
-      ],
-      "Item read in vault": [
-        "Kasa ögesi okundu"
-      ],
-      "Item updated in ${ vaultLink }": [
-        "${ vaultLink } kasasındaki öge güncellendi"
-      ],
-      "Item updated in vault": [
-        "Kasa ögesi güncellendi"
       ],
       "It’s often the easiest way to recover your account if you’re signed in.": [
         "Oturum açtıysanız, genellikle hesabınızı kurtarmanın en kolay yoludur."
@@ -12415,6 +12302,9 @@
       "Monthly ${ onDayString }": [
         "Ayda bir ${ onDayString }"
       ],
+      "More cards": [
+        "Diğer kartlar"
+      ],
       "Multi-user support not enabled.": [
         "Çok kullanıcı desteği açılmamış."
       ],
@@ -12444,9 +12334,6 @@
       ],
       "New group created via your identity provider and pending review.": [
         "Kimlik hizmeti sağlayıcınız üzerinden yeni bir grup oluşturuldu ve değerlendirilmeyi bekliyor."
-      ],
-      "New user invited to organization": [
-        "Kuruluşa yeni kullanıcı davet edildi"
       ],
       "New VPN connection data will stop being collected and shown.": [
         "Yeni VPN bağlantı verilerinin toplanması ve görüntülenmesi durdurulacak."
@@ -12654,15 +12541,6 @@
       "Paid for a plan": [
         "Bir tarife ödemesi yaptı"
       ],
-      "Pass Monitor - custom email confirmed": [
-        "Pass Monitor - Özel e-posta adresi doğrulandı"
-      ],
-      "Pass Monitor - custom email created": [
-        "Pass Monitor - Özel e-posta adresi oluşturuldu"
-      ],
-      "Pass Monitor - custom email deleted": [
-        "Pass Monitor - Özel e-posta adresi silindi"
-      ],
       "Pass usage logs": [
         "Pass kullanım günlüğü kayıtları"
       ],
@@ -12745,9 +12623,6 @@
       ],
       "Please open the document to view it.": [
         "Görüntülemek için lütfen belgeyi açın."
-      ],
-      "Please open your browser extension settings and allow ${ PASS_APP_NAME } extension to access website data. Then, reload this page.": [
-        "Lütfen tarayıcı eklentisi ayarlarını açın ve ${ PASS_APP_NAME } eklentisine site verilerine erişme izni verin. Ardından bu sayfayı yenileyin."
       ],
       "Please reconnect to continue.": [
         "İlerlemek için lütfen yeniden bağlanın."
@@ -13013,6 +12888,9 @@
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Bu ileti <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> güvenli e-posta hizmetiyle gönderilmiştir."
       ],
+      "SEPA Bank transfer": [
+        "SEPA banka havalesi"
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "Şu anda SEPA ödemeleri yapılamıyor. Lütfen bir süre sonra yeniden deneyin."
       ],
@@ -13055,21 +12933,9 @@
       "Settings updated": [
         "Ayarlar güncellendi"
       ],
-      "Shared ${ vaultLink } deleted": [
-        "Paylaşılan ${ vaultLink } silindi"
-      ],
-      "Shared ${ vaultLink } updated": [
-        "Paylaşılan ${ vaultLink } güncellendi"
-      ],
       "Shared server country (${ countriesCount })": [
         "Paylaşılan sunucu ülkesi (${ countriesCount })",
         "Paylaşılan sunucu ülkeleri (${ countriesCount })"
-      ],
-      "Shared vault deleted": [
-        "Paylaşılmış kasa silindi"
-      ],
-      "Shared vault updated": [
-        "Paylaşılmış kasa güncellendi"
       ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "İleti listesinde her göndericinin görseli görüntülenir. Göndericinin görseli yoksa adı ve soyadının baş harfleri görüntülenir."
@@ -13089,9 +12955,6 @@
       "Sign in only": [
         "Yalnızca oturum açma"
       ],
-      "Sign in or create an account to continue.": [
-        "İlerlemek için oturum ya da hesap açın."
-      ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Adresinizi kullanıma almak için ${ MAIL_APP_NAME } adresinde oturum açın"
       ],
@@ -13103,9 +12966,6 @@
       ],
       "Signed up": [
         "Hesap açtı"
-      ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Sadık bir kullanıcı olduğunuz için, hesabınızda yeni özellikler eklendi."
       ],
       "Smart Routed through a different country.": [
         "Başka bir ülke üzerinden akıllı yönlendirme yapıldı."
@@ -13161,12 +13021,6 @@
       ],
       "Step ${ step }/${ totalSteps }": [
         "${ step }/${ totalSteps }. adım"
-      ],
-      "Step 1 of 2": [
-        "1/2. adım"
-      ],
-      "Step 2 of 2": [
-        "2/2. adım"
       ],
       "Storage allocated to other users in this organisation": [
         "Bu kuruluştaki diğer kullanıcılara ayrılmış depolama alanı"
@@ -13686,11 +13540,11 @@
       "Unfortunately there is no recovery method available for this account.": [
         "Ne yazık ki, bu hesap için herhangi bir kurtarma yöntemi yok."
       ],
+      "UnionPay logo": [
+        "UnionPay logosu"
+      ],
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Kimlik hizmeti sağlayıcınız tarafından oluşturulan, genellikle kimlik hizmeti sağlayıcının adının bulunduğu bir adres biçimindeki benzersiz kimlik (örnek: https://idp.ornek.com/XXXXX)."
-      ],
-      "Unknown event type": [
-        "Etkinlik türü bilinmiyor"
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Hesap oturumunuzu kapatmadığınız ya da parolanızı değiştirmediğiniz sürece oturumunuz açık kalır. 60 gün boyunca herhangi bir etkinlik görülmeyen oturumlar kapatılır."
@@ -13815,21 +13669,6 @@
       "Using a different MDM? Any MDM that supports deploying a configuration profile will work. Refer to your MDM's documentation on how to upload and assign it to your device fleet.": [
         "Farklı bir MDM uygulaması mı kullanıyorsunuz? Yapılandırma profili dağıtma özelliği olan bir MDM iş görür. Aygıtınızı envanterinize yüklemek ve atamak için MDM uygulamanızın belgelerine bakın."
       ],
-      "Vault created": [
-        "Kasa oluşturuldu"
-      ],
-      "Vault deleted": [
-        "Kasa silindi"
-      ],
-      "Vault either deleted or requires access permissions": [
-        "Kasa silinmiş ya da erişim izni gerektiriyor"
-      ],
-      "Vault shared with email": [
-        "Kasa e-posta ile paylaşıldı"
-      ],
-      "Vault updated": [
-        "Kasa güncellendi"
-      ],
       "Verification code sent.": [
         "Doğrulama kodu gönderildi."
       ],
@@ -13850,9 +13689,6 @@
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Kimliğinizi, kimlik doğrulama uygulamasından alacağınız zamana dayalı tek kullanımlık parola ile doğrulayın"
-      ],
-      "Verifying ${ PASS_APP_NAME } browser extension...": [
-        "${ PASS_APP_NAME } tarayıcı eklentisi doğrulanıyor..."
       ],
       "Verifying your payment": [
         "Ödemeniz doğrulanıyor"
@@ -14039,9 +13875,6 @@
       ],
       "When sign-in is restricted, only your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
         "Oturum açma kısıtlandığında, oturum açmak için yalnızca ${ usernameElement } kullanıcı adınız kullanılabilir. Diğer adresleriniz, birileri onları bilse bile hesabınıza bağlanamaz."
-      ],
-      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
-        "Geçerli ücretli aboneliğinizi iptal ettiğinizde, aboneliğinizin bakiyesi hesap kredisi olarak iade edilir ve ${ BRAND_NAME } ${ PLANS.FREE } tarifesine geçersiniz."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "İptal ettiğinizde aboneliğiniz yenilenmez ancak abonelik süresinin sonuna kadar tarifenizin özelliklerinden yararlanmayı sürdürürsünüz. Bundan sonra ${ BRAND_NAME } Free tarifesine geçersiniz."
@@ -14304,9 +14137,6 @@
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "Kuruluşunuzun kişisel anahtarını, kuruluş yöneticiniz tarafından size sağlanan yedek kuruluş anahtarı parolasıyla kullanıma almanız gerekir."
       ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Tarifenizi düşürmeden önce, ek ${ MAIL_APP_NAME } kullanıcılarını, adreslerini ve özel etki alanlarını kullanımdan kaldırmalı ya da silmelisiniz."
-      ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Ödeme yöntemi olarak eklemek için, PayPal hesabınızla bağlantılı bir kredi kartı ya da banka hesabı olmalıdır."
       ],
@@ -14438,6 +14268,9 @@
       "Your address was connected": [
         "Adresiniz bağlandı"
       ],
+      "Your address was connected. We're importing your emails.": [
+        "Adresiniz ile bağlantı kuruldu. E-postalarınız içe aktarılıyor."
+      ],
       "Your Always-on VPN device profile is ready to deploy.": [
         "Her zaman açık VPN aygıt profiliniz dağıtılmaya hazır."
       ],
@@ -14467,6 +14300,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Dosyalarınız şifrelendikten sonra kaydedilir"
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "Ücretsiz deneme süreniz sona erdi. Ekibinizin erişimini sürdürmek ve hesaplarını güvende tutmak için şimdi abone olun."
       ],
       "Your free trial includes 1 dedicated server.": [
         "Ücretsiz denemenizde size ayrılmış 1 sunucu bulunur."
@@ -15649,9 +15485,6 @@
       "Confirm second password": [
         "İkinci parola onayı"
       ],
-      "Connect ${ item.Email }": [
-        "${ item.Email } bağlantısı kur"
-      ],
       "Contacts": [
         "Kişiler"
       ],
@@ -16072,6 +15905,9 @@
       ],
       "Issuer ID": [
         "Yayıncı kimliği"
+      ],
+      "Item": [
+        "Öge"
       ],
       "Keep emails in Sent/Drafts": [
         "İletiler Gönderilmiş/Taslaklar kutusunda tutulsun"
@@ -16842,6 +16678,9 @@
       "Value": [
         "Değer"
       ],
+      "Vault": [
+        "Kasa"
+      ],
       "Vault, item & secure link sharing": [
         "Kasa, öge ve güvenli bağlantı paylaşımı"
       ],
@@ -17178,6 +17017,9 @@
       "Create an alias": [
         "Takma ad oluştur"
       ],
+      "Customer Support": [
+        "Müşteri desteği"
+      ],
       "data recovery option": [
         "verileri kurtarma seçeneği"
       ],
@@ -17360,9 +17202,6 @@
       ],
       "use a data recovery method": [
         "bir veri kurtarma yöntemi kullanın"
-      ],
-      "Vault": [
-        "Kasa"
       ],
       "View guide": [
         "Rehberi görüntüle"
@@ -18351,9 +18190,6 @@
       ]
     },
     "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşür"
-      ],
       "Explore all ${ BRAND_NAME } plans": [
         "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
       ],
@@ -21199,7 +21035,7 @@
       ]
     },
     "Payments.iDEAL": {
-      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
         "Kabul ederek, ödeme hizmeti sağlayıcımız olan ${ BRAND_NAME } ve Stripe kuruluşlarına, aboneliğiniz için gelecekteki ödemeleri bu banka hesabından SEPA otomatik ödemesi ile alma ve bankanıza bu ödemeleri borçlandırma yetkisi vermiş olursunuz. İlk ödemeniz şimdi ${ IDEAL_WERO_BRAND_NAME } tarafından yapıldı. Siz iptal edene kadar tarifeniz otomatik olarak yenilenecek. Her ödemeden önce sizi bilgilendireceğiz. Otomatik ödemeler için, bankanızla olan anlaşmanızın şartlarına göre, borç tarihinden itibaren 8 hafta içinde bankanızdan geri ödeme isteğinde bulunabilirsiniz. Bu durum, şu anda yaptığınız ${ IDEAL_WERO_BRAND_NAME } ödemesi için geçerli değildir."
       ]
     },
@@ -22404,6 +22240,14 @@
         "Kullanıcı yöneticisi"
       ]
     },
+    "Rollback state": {
+      "Undo finished": [
+        "Geri alma tamamlandı"
+      ],
+      "Undo in progress": [
+        "Geri alma işlemi sürüyor"
+      ]
+    },
     "Safety review": {
       "Code sent to ${ boldValue }": [
         "Kod ${ boldValue } alıcısına gönderildi"
@@ -23429,6 +23273,11 @@
       ],
       "Open in ${ appName } (Beta)": [
         "${ appName } (Beta) ile aç"
+      ]
+    },
+    "Sign out": {
+      "Sign in to ${ providerName }": [
+        "${ providerName } oturumu açın"
       ]
     },
     "Signature verification error when joining calendar": {
@@ -24708,9 +24557,6 @@
       "Upgrade your plan to increase your storage.": [
         "Depolama alanınızı arttırmak için tarifenizi yükseltin."
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Kalan sürenize karşı gelen krediyi ${ BRAND_NAME } hesabınıza ekleyeceğiz."
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "**${ currentPlanName }** tarifenizde hâlâ **${ daysRemaining }** günlük kullanım hakkınız var.",
         "**${ currentPlanName }** tarifenizde hâlâ **${ daysRemaining }** günlük kullanım hakkınız var."
@@ -25614,9 +25460,6 @@
       "You have successfully canceled your subscription.": [
         "Aboneliğinizi iptal ettiniz."
       ],
-      "You have successfully unsubscribed": [
-        "Aboneliği sonlandırdınız"
-      ],
       "You will receive your username via email within a minute if you entered a valid recovery email address.": [
         "Geçerli bir kurtarma e-posta adresi yazdıysanız, bir dakika içinde kullanıcı adınızın bulunduğu bir e-posta alacaksınız."
       ],
@@ -25975,8 +25818,8 @@
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
       ],
-      "${ PASS_APP_NAME } is missing permissions": [
-        "${ PASS_APP_NAME } için gerekli izinler eksik"
+      "${ PASS_APP_NAME }: Welcome": [
+        "${ PASS_APP_NAME }: Hoş geldiniz"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "${ PASS_SHORT_APP_NAME } izleme raporu"
@@ -26073,6 +25916,12 @@
       ],
       "Activity monitor": [
         "Etkinlik izleyici"
+      ],
+      "Add ${ PASS_APP_NAME } to ${ browserName }": [
+        "${ browserName } üzerine ${ PASS_APP_NAME } ekleyin"
+      ],
+      "Add ${ PASS_APP_NAME } to your browser": [
+        "Tarayıcınıza ${ PASS_APP_NAME } ekleyin"
       ],
       "Add ${ totalServerCount } server?": [
         "${ totalServerCount } sunucu eklensin mi?",
@@ -26372,12 +26221,6 @@
       "Confirm": [
         "Onayla"
       ],
-      "Confirm downgrade": [
-        "Tarife düşürmeyi onayla"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "${ BRAND_NAME } hediyelerinizi kaybedeceğinizi onaylayın"
-      ],
       "Confirm where to sign in": [
         "Nerede oturum açacağınızı onaylayın"
       ],
@@ -26399,8 +26242,8 @@
       "Connect to video conferencing": [
         "Görüntülü konferansa bağlanın"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "${ BRAND_NAME } hesabınızı bağlayın"
+      "Connect your ${ ACCOUNT_APP_NAME }": [
+        "${ ACCOUNT_APP_NAME } hesabınızı bağlayın"
       ],
       "Connect your custom domain": [
         "Özel etki alanınızı bağlayın"
@@ -26694,9 +26537,6 @@
       ],
       "Downgrade account": [
         "Hesap tarifesini düşür"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "${ downgradedPlanName } tarifesine düşürülsün mü?"
       ],
       "Download ${ app }": [
         "${ app } indir"
@@ -27330,6 +27170,9 @@
       "Our fight against censorship in Russia": [
         "Rusya içindeki sansüre karşı mücadelemiz"
       ],
+      "Over 95% of users love our extension": [
+        "Kullanıcılar %95 oranında eklentimizi seviyor"
+      ],
       "Password": [
         "Parola"
       ],
@@ -27496,7 +27339,7 @@
         "Ağ geçidini yeniden adlandır"
       ],
       "Report a problem": [
-        "Sorun bildirin"
+        "Sorun bildireceğim"
       ],
       "Reports": [
         "Raporlar"
@@ -27536,6 +27379,9 @@
       ],
       "SAML authentication": [
         "SAML kimlik doğrulaması"
+      ],
+      "Save time:": [
+        "Zaman kazanın:"
       ],
       "Schedule meetings in one click": [
         "Tek tıklamayla görüşmeler planlayın"
@@ -27711,6 +27557,9 @@
       "Single sign-on (SSO)": [
         "Tek oturum açma (SSO)"
       ],
+      "Skip for now": [
+        "Şimdilik atla"
+      ],
       "SMS verification": [
         "SMS doğrulaması"
       ],
@@ -27756,11 +27605,20 @@
       "Status": [
         "Durum"
       ],
+      "Stay connected:": [
+        "Bağlı kalın:"
+      ],
+      "Stay safe:": [
+        "Güvende kalın:"
+      ],
       "Stay secure and connected anywhere": [
         "Her yerde güvende ve bağlı kalın"
       ],
       "Strengthen your security on all your devices with ${ passPlusPlanName }. ${ upgradeButton }": [
         "${ passPlusPlanName } ile tüm aygıtlarınızda güvenliğinizi artırın. ${ upgradeButton }"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "${ planTitle } tarifesine abone olun"
       ],
       "Subscription": [
         "Abonelik"
@@ -27867,6 +27725,9 @@
       ],
       "Unblocking internet access in Iran": [
         "İran internet erişiminin engelini kaldırmak"
+      ],
+      "Unlock the power of autofill with ${ PASS_APP_NAME } in your browser": [
+        "${ PASS_APP_NAME } ile tarayıcınızda otomatik doldurma gücü kazanın"
       ],
       "Unlock your data": [
         "Verilerinizin şifresini çözün"
@@ -28002,9 +27863,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "${ BRAND_NAME } for Business uygulamasına hoş geldiniz"
-      ],
-      "Welcome to your new password manager!": [
-        "Yeni parola yöneticinize hoş geldiniz!"
       ],
       "What are you migrating?": [
         "Neyi aktarıyorsunuz?"
@@ -29420,12 +29278,6 @@
       ],
       "By removing this phone number, you will no longer be able to recover your account.": [
         "Bu telefon numarasını kaldırdığınızda artık hesabınızı kurtaramayacaksınız."
-      ],
-      "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
-        "Oturum açılamadı. Lütfen ${ PASS_APP_NAME } tarayıcı eklentisini açın ve oradan oturum açın."
-      ],
-      "Could not sign up. Please open ${ PASS_APP_NAME } browser extension and sign up from there.": [
-        "Hesap açılamadı. Lütfen ${ PASS_APP_NAME } tarayıcı eklentisini açın ve oradan hesap açın."
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Bu içe aktarma işlemini iptal ederseniz, daha sonra sürdüremezsiniz. ${ BRAND_NAME }, tüm ilerlemeyi hesabınıza kaydetti. Yine de işlemi iptal etmek istiyor musunuz?"

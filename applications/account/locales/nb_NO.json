@@ -145,9 +145,6 @@
       "Desktop and mobile apps": [
         "Desktop- og mobilapper"
       ],
-      "Downgrade plan": [
-        "Nedgrader plan"
-      ],
       "Downgrade to Free": [
         "Nedgrader til Free"
       ],
@@ -668,9 +665,6 @@
       "Connect to video conferencing": [
         "Koble til videokonferanser"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Koble til ${ BRAND_NAME }-kontoen din"
-      ],
       "Connect your email": [
         "Koble til e-posten din"
       ],
@@ -752,14 +746,8 @@
       "Create": [
         "Opprett"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Opprett en ${ BRAND_NAME }-konto"
-      ],
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "Opprett en kobling for å dele med andre utenfor ${ BRAND_NAME }"
-      ],
-      "Create an account": [
-        "Opprett en konto"
       ],
       "Create calendar": [
         "Opprett kalender"
@@ -943,9 +931,6 @@
       ],
       "Done": [
         "Utført"
-      ],
-      "Downgrade": [
-        "Nedgrader"
       ],
       "Download": [
         "Last ned"
@@ -1649,17 +1634,11 @@
       "Reload": [
         "Last inn på nytt"
       ],
-      "Reload page": [
-        "Last inn siden på nytt"
-      ],
       "Remove": [
         "Fjern"
       ],
       "Remove all other devices": [
         "Fjern alle andre enheter"
-      ],
-      "Remove bonuses": [
-        "Fjern bonuser"
       ],
       "Remove button": [
         "Fjern knapp"
@@ -1963,9 +1942,6 @@
       ],
       "Sign in": [
         "Logg på"
-      ],
-      "Sign in to ${ providerName }": [
-        "Logg inn på ${ providerName }"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Logg på med ${ BRAND_NAME }"
@@ -2868,11 +2844,6 @@
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan. Men du kan få ${ discountPercentage } av ${ plan.Title } når du abonnerer for ${ cycle } måned.",
         "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan. Men du kan få ${ discountPercentage } av ${ plan.Title } når du abonnerer for ${ cycle } måneder."
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "30 dagers tilbakebetalingsgaranti"
       ]
     },
     "bf2023: Title": {
@@ -8337,14 +8308,6 @@
         "Se invitasjon"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "Familiegruppe ikke gjenkjent. Prøv på nytt."
-      ],
-      "Organization not recognized. Try again.": [
-        "Organisasjon ikke gjenkjent. Prøv på nytt."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-grupper"
@@ -8525,22 +8488,8 @@
       ]
     },
     "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "Angi familiegruppenavnet for å bekrefte"
-      ],
-      "Enter organization name to confirm": [
-        "Angi organisasjonsnavnet for å bekrefte"
-      ],
       "Family name": [
         "Familienavn"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Dette vil permanent slette alle underbrukere, kontoer og data assosiert med organisasjonen din."
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Dette vil fjerne alle ${ BRAND_NAME }-premiumfunksjoner for hvert familiemedlem."
       ]
     },
     "familyOffer_2023:Settings section title": {
@@ -8568,12 +8517,6 @@
       ],
       "Change family name": [
         "Endre familienavn"
-      ],
-      "Delete family group?": [
-        "Slette familiegruppe?"
-      ],
-      "Delete organization?": [
-        "Slett organisasjon?"
       ],
       "Edit user storage": [
         "Redigere brukerlagring"
@@ -9909,12 +9852,6 @@
       "Skipped ${ count } event due to incompatibilities": [
         "Hoppet over ${ count } hendelse på grunn av inkompatibiliteter",
         "Hoppet over ${ count } hendelser på grunn av inkompatibiliteter"
-      ],
-      "Undo finished": [
-        "Angre fullført"
-      ],
-      "Undo in progress": [
-        "Angre pågår"
       ]
     },
     "Import type": {
@@ -10234,18 +10171,6 @@
       "${ url } deleted.": [
         "${ url } slettet."
       ],
-      "${ vaultLink } created": [
-        "${ vaultLink } opprettet"
-      ],
-      "${ vaultLink } deleted": [
-        "${ vaultLink } slettet"
-      ],
-      "${ vaultLink } shared with email": [
-        "${ vaultLink } delt med e-post"
-      ],
-      "${ vaultLink } updated": [
-        "${ vaultLink } oppdatert"
-      ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
         "${ VPN_SHORT_APP_NAME } skjuler trafikken din. ${ PASS_SHORT_APP_NAME } skjule identiteten din\n— ubegrenset antall **hide-my-email-aliaser** og **varsler på det mørke nettet** hvis dataene dine noen gang lekker ut."
       ],
@@ -10335,21 +10260,11 @@
         "+ ${ invisibleCount } til",
         "+ ${ invisibleCount } til"
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } bonuslagring"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } tilkobling for ${ VPN_APP_NAME } (tillater deg å tilkoble flere enheter til VPN)",
-        "+${ organization.BonusVPN } tilkoblinger for ${ VPN_APP_NAME } (tillater deg å tilkoble flere enheter til VPN)"
-      ],
       "2FA disabled": [
         "2FA deaktivert"
       ],
       "30-day money-back guarantee": [
         "30 dagers tilbakebetalingsgaranti"
-      ],
-      "30-day money-back guarantee.": [
-        "30 dagers tilbakebetalingsgaranti."
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Et ${ protonSubdomain } er vertet av ${ BRAND_NAME }, som lar deg raskt sette opp et underdomene. ${ learnMoreLink }."
@@ -10794,9 +10709,6 @@
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "Ved å deaktivere kontoovervåking sletter du også hele historikken din. Er du sikker på at du vil deaktivere dette?"
       ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Ved å nedgradere til en gratis plan, vil du permanent miste disse fordelene, selv om du oppgraderer igjen i fremtiden."
-      ],
       "By leaving now, changes may not be saved": [
         "Ved å forlate nå, kan det hende at endringer ikke lagres"
       ],
@@ -11165,9 +11077,6 @@
       ],
       "Downgrade": [
         "Nedgrader"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Nedgradering vil terminere alle forbindelser til betalte ${ VPN_APP_NAME }-servere."
       ],
       "Download ${ mobileConfigArtifact } and open it on each Mac to install the profile, then approve it in System Settings.": [
         "Last ned ${ mobileConfigArtifact } og åpne den på hver Mac for å installere profilen, og godkjenn den deretter i Systeminnstillinger."
@@ -11679,15 +11588,6 @@
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "Hvis du har mistet tilgangen til autentiseringsappen din, kan du bruke én av de 16 reservekodene for gjenoppretting som du fikk da du konfigurerte tofaktorautentisering. ${ learnMoreLink }"
       ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Hvis du fortsetter med nedgraderingen, vil du miste tilgang til de betalte funksjonene til ${ MAIL_APP_NAME } og ${ VPN_APP_NAME }."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Hvis du går videre med nedgraderingen, vil du miste tilgangen til de betalte funksjonene til ${ MAIL_APP_NAME }, inkludert mer lagringsplass og filtre."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Hvis du fortsetter med nedgraderingen, vil du miste tilgang til de betalte funksjonene til ${ VPN_APP_NAME }."
-      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Hvis du har kjøpt en gavekode eller mottatt en fra vårt kundestøtteteam, kan du skrive den inn her."
       ],
@@ -11801,23 +11701,8 @@
       "Invitation link used": [
         "Invitasjonskobling brukt"
       ],
-      "Invite deleted": [
-        "Invitasjon slettet"
-      ],
       "Invite family members and get everything up and running.": [
         "Inviter familiemedlemmer og få alt i gang."
-      ],
-      "Invite for new user deleted": [
-        "Invitasjon for ny bruker slettet"
-      ],
-      "Invite for organization accepted": [
-        "Invitasjon til organisasjon akseptert"
-      ],
-      "Invite for organization created": [
-        "Invitasjon til organisasjon opprettet"
-      ],
-      "Invite rejected": [
-        "Invitasjon avslått"
       ],
       "Invite successfully sent": [
         "Invitasjon ble sendt",
@@ -11840,54 +11725,6 @@
       ],
       "It's better to have:": [
         "Det er bedre å ha:"
-      ],
-      "Item autofilled in ${ vaultLink }": [
-        "Element automatisk utfylt i ${ vaultLink }"
-      ],
-      "Item autofilled in vault": [
-        "Element automatisk utfylt i hvelv"
-      ],
-      "Item created in ${ vaultLink }": [
-        "Element opprettet i ${ vaultLink }"
-      ],
-      "Item created in vault": [
-        "Element opprettet i hvelv"
-      ],
-      "Item deleted from ${ vaultLink }": [
-        "Element slettet fra ${ vaultLink }"
-      ],
-      "Item deleted from vault": [
-        "Element slettet fra hvelv"
-      ],
-      "Item flags changed in ${ vaultLink }": [
-        "Elementflagg endret i ${ vaultLink }"
-      ],
-      "Item flags changed in vault": [
-        "Elementflagg endret i hvelv"
-      ],
-      "Item in ${ vaultLink } trashed": [
-        "Element i ${ vaultLink } flyttet til papirkurv"
-      ],
-      "Item in ${ vaultLink } untrashed": [
-        "Element i ${ vaultLink } flyttet fra papirkurv"
-      ],
-      "Item in vault trashed": [
-        "Element i hvelv flyttet til papirkurv"
-      ],
-      "Item in vault untrashed": [
-        "Element flyttet fra papirkurv i hvelv"
-      ],
-      "Item read in ${ vaultLink }": [
-        "Element lest i ${ vaultLink }"
-      ],
-      "Item read in vault": [
-        "Element lest i hvelv"
-      ],
-      "Item updated in ${ vaultLink }": [
-        "Element oppdatert i ${ vaultLink }"
-      ],
-      "Item updated in vault": [
-        "Element oppdatert i hvelv"
       ],
       "It’s often the easiest way to recover your account if you’re signed in.": [
         "Det er ofte den enkleste måten å gjenopprette kontoen din på hvis du er logget inn."
@@ -12105,9 +11942,6 @@
       "New group created via your identity provider and pending review.": [
         "Ny gruppe opprettet via identitetsleverandøren din og venter på vurdering."
       ],
-      "New user invited to organization": [
-        "Ny bruker invitert til organisasjon"
-      ],
       "New VPN connection data will stop being collected and shown.": [
         "Nye VPN-tilkoblingsdata vil slutte å bli samlet inn og vist."
       ],
@@ -12302,15 +12136,6 @@
       "Paid for a plan": [
         "Betalt for en plan"
       ],
-      "Pass Monitor - custom email confirmed": [
-        "Pass Monitor - tilpasset e-post bekreftet"
-      ],
-      "Pass Monitor - custom email created": [
-        "Pass Monitor - tilpasset e-post opprettet"
-      ],
-      "Pass Monitor - custom email deleted": [
-        "Pass Monitor - tilpasset e-post slettet"
-      ],
       "Pass usage logs": [
         "Pass-brukslogger"
       ],
@@ -12393,9 +12218,6 @@
       ],
       "Please open the document to view it.": [
         "Åpne dokumentet for å se det."
-      ],
-      "Please open your browser extension settings and allow ${ PASS_APP_NAME } extension to access website data. Then, reload this page.": [
-        "Åpne innstillingene for nettleserutvidelsen din og gi ${ PASS_APP_NAME }-utvidelsen tilgang til nettstedsdata. Last deretter inn denne siden på nytt."
       ],
       "Please reconnect to continue.": [
         "Koble til på nytt for å fortsette."
@@ -12691,21 +12513,9 @@
       "Settings updated": [
         "Innstillinger oppdatert"
       ],
-      "Shared ${ vaultLink } deleted": [
-        "Delt ${ vaultLink } slettet"
-      ],
-      "Shared ${ vaultLink } updated": [
-        "Delt ${ vaultLink } oppdatert"
-      ],
       "Shared server country (${ countriesCount })": [
         "Land for delt server (${ countriesCount })",
         "Land for delte servere (${ countriesCount })"
-      ],
-      "Shared vault deleted": [
-        "Delt hvelv slettet"
-      ],
-      "Shared vault updated": [
-        "Delt hvelv oppdatert"
       ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Vis bildet av hver avsender i meldingslisten. Avsenderens initialer vises hvis et bilde ikke er tilgjengelig."
@@ -12725,9 +12535,6 @@
       "Sign in only": [
         "Kun pålogging"
       ],
-      "Sign in or create an account to continue.": [
-        "Logg på eller opprett en konto for å fortsette."
-      ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Logg på ${ MAIL_APP_NAME } for å aktivere din adresse"
       ],
@@ -12739,9 +12546,6 @@
       ],
       "Signed up": [
         "Registrert"
-      ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Siden du er en lojal bruker, har din konto tilleggsfunksjoner aktivert."
       ],
       "Smart Routed through a different country.": [
         "Smart-rutet gjennom et annet land."
@@ -12794,12 +12598,6 @@
       ],
       "Step ${ step }/${ totalSteps }": [
         "Trinn ${ step }/${ totalSteps }"
-      ],
-      "Step 1 of 2": [
-        "Trinn 1 av 2"
-      ],
-      "Step 2 of 2": [
-        "Trinn 2 av 2"
       ],
       "Storage allocated to other users in this organisation": [
         "Lagringsplass allokert til andre brukere i denne organisasjonen"
@@ -13310,9 +13108,6 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Unik ID generert av identitetsleverandøren din, vanligvis i form av en URL som inneholder identitetsleverandørens navn (f.eks. https://idp.example.com/XXXXX)."
       ],
-      "Unknown event type": [
-        "Ukjent hendelsestype"
-      ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Med mindre du logger av kontoen din eller endrer passordet ditt, vil økten din forbli aktiv. Økter utløper etter 60 dager med inaktivitet."
       ],
@@ -13436,21 +13231,6 @@
       "Using a different MDM? Any MDM that supports deploying a configuration profile will work. Refer to your MDM's documentation on how to upload and assign it to your device fleet.": [
         "Bruker du en annen MDM? Enhver MDM som støtter utrulling av en konfigurasjonsprofil vil fungere. Se dokumentasjonen for MDM-en din for hvordan du laster den opp og tilordner den til enhetsparken din."
       ],
-      "Vault created": [
-        "Hvelv opprettet"
-      ],
-      "Vault deleted": [
-        "Hvelv slettet"
-      ],
-      "Vault either deleted or requires access permissions": [
-        "Hvelvet enten slettet eller krever tilgangstillatelser"
-      ],
-      "Vault shared with email": [
-        "Hvelv delt med e-post"
-      ],
-      "Vault updated": [
-        "Hvelv oppdatert"
-      ],
       "Verification code sent.": [
         "Verifiseringskode sendt."
       ],
@@ -13471,9 +13251,6 @@
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Bekreft identiteten din med et tidsbasert engangspassord fra en autentiseringsapp"
-      ],
-      "Verifying ${ PASS_APP_NAME } browser extension...": [
-        "Verifiserer nettleserutvidelsen ${ PASS_APP_NAME } ..."
       ],
       "Verifying your payment": [
         "Verifiserer betalingen din"
@@ -13633,9 +13410,6 @@
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Når varslinger er aktivert, vil vi sende et varsel til din gjenopprettings-e-postadresse hvis du har nye meldinger i din ${ MAIL_APP_NAME }-konto."
-      ],
-      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
-        "Når du avbryter det gjeldende betalte abonnementet, returneres saldoen på abonnementet som kontokreditt, og du blir nedgradert til ${ BRAND_NAME } ${ PLANS.FREE }-planen."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Når du avbryter, blir ikke abonnementet fornyet, men du kan fortsatt dra nytte av planfordeler til slutten av abonnementsperioden. Etter det blir du nedgradert til ${ BRAND_NAME } Free-plan."
@@ -13891,9 +13665,6 @@
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "Du må aktivere organisasjonens private nøkkel med passordet for reserveorganisasjonsnøkkelen du har fått av organisasjonens systemansvarlige."
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Du må deaktivere og fjerne alle eventuelle ${ MAIL_APP_NAME }-brukere, adresser og egendefinerte domener før du kan nedgradere."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Du må ha et kredittkort eller en bankkonto tilknyttet din PayPal-konto for å kunne legge den til som betalingsmåte."
@@ -16895,9 +16666,6 @@
       "use a data recovery method": [
         "bruk en metode for datagjenoppretting"
       ],
-      "Vault": [
-        "Hvelv"
-      ],
       "View guide": [
         "Vis veiledning"
       ],
@@ -17885,9 +17653,6 @@
       ]
     },
     "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
       "Explore all ${ BRAND_NAME } plans": [
         "Utforsk alle ${ BRAND_NAME }-planer"
       ],
@@ -20613,11 +20378,6 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "Noe gikk galt. Google Pay-verifiseringen mislyktes."
-      ]
-    },
-    "Payments.iDEAL": {
-      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
-        "Ved å bekrefte gir du ${ BRAND_NAME } og Stripe, vår betalingstjenesteleverandør, tillatelse til å innkreve fremtidige betalinger for abonnementet ditt fra denne bankkontoen via SEPA AvtaleGiro, og banken din til å debitere disse betalingene. Første betaling gjøres nå av ${ IDEAL_WERO_BRAND_NAME }. Abonnementet fornyes automatisk inntil du kansellerer. Vi varsler deg før hver innkreving. For innkreving via AvtaleGiro kan du be om refusjon fra banken innen 8 uker etter debiteringsdatoen, i henhold til vilkårene i avtalen med banken din. Dette gjelder ikke for ${ IDEAL_WERO_BRAND_NAME }-betalingen du foretar nå."
       ]
     },
     "Payments.info": {
@@ -24110,9 +23870,6 @@
       "Upgrade your plan to increase your storage.": [
         "Oppgrader planen din for å øke lagringsplassen."
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Vi legger til kredittene for den gjenværende tiden til ${ BRAND_NAME }-kontoen din."
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "Du har fortsatt **${ daysRemaining }** dag igjen på din **${ currentPlanName }**-plan.",
         "Du har fortsatt **${ daysRemaining }** dager igjen på din **${ currentPlanName }**-plan."
@@ -25010,9 +24767,6 @@
       "You have successfully canceled your subscription.": [
         "Du har sagt opp abonnementet."
       ],
-      "You have successfully unsubscribed": [
-        "Du har avsluttet abonnementet"
-      ],
       "You will receive your username via email within a minute if you entered a valid recovery email address.": [
         "Du vil motta brukernavnet ditt via e-post innen et minutt hvis du har oppgitt en gyldig e-postadresse for gjenoppretting."
       ],
@@ -25370,9 +25124,6 @@
       ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
-      ],
-      "${ PASS_APP_NAME } is missing permissions": [
-        "${ PASS_APP_NAME } mangler tillatelser"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "${ PASS_SHORT_APP_NAME } Monitor-rapport"
@@ -25759,12 +25510,6 @@
       "Confirm": [
         "Bekreft"
       ],
-      "Confirm downgrade": [
-        "Bekreft nedgradering"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Bekreft tap av ${ BRAND_NAME }-bonuser"
-      ],
       "Confirm where to sign in": [
         "Bekreft hvor du skal logge på"
       ],
@@ -25785,9 +25530,6 @@
       ],
       "Connect to video conferencing": [
         "Koble til videokonferanser"
-      ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Koble til ${ BRAND_NAME }-kontoen din"
       ],
       "Connect your custom domain": [
         "Koble til ditt egendefinerte domene"
@@ -26072,9 +25814,6 @@
       ],
       "Downgrade account": [
         "Nedgrader kontoen"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "Nedgradere til ${ downgradedPlanName }?"
       ],
       "Download ${ app }": [
         "Last ned ${ app }"
@@ -27347,9 +27086,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Velkommen til ${ BRAND_NAME } for Business"
-      ],
-      "Welcome to your new password manager!": [
-        "Velkommen til din nye passordbehandler!"
       ],
       "What are you migrating?": [
         "Hva migrerer du?"
@@ -28741,12 +28477,6 @@
       ],
       "By removing this phone number, you will no longer be able to recover your account.": [
         "Hvis du fjerner dette telefonnummeret, vil du ikke lenger kunne gjenopprette kontoen din."
-      ],
-      "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
-        "Kunne ikke logge på. Åpne nettleserutvidelsen for ${ PASS_APP_NAME } og logg på derfra."
-      ],
-      "Could not sign up. Please open ${ PASS_APP_NAME } browser extension and sign up from there.": [
-        "Kunne ikke registrere deg. Åpne nettleserutvidelsen ${ PASS_APP_NAME } og registrer deg derfra."
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Dersom du avbryter denne importen, vil du ikke kunne gjenoppta den. ${ BRAND_NAME } lagret all fremgangen på kontoen din. Avbryte likevel?"
