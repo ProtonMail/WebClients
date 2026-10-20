@@ -377,7 +377,8 @@ export default function CommentPlugin({
     editor,
   ])
 
-  const layoutContainerElement = editor.getRootElement()?.closest('.docs-layout-container')
+  // The scope root has `display: contents`, so the panel stays a grid item of the layout container.
+  const styleScopeElement = editor.getRootElement()?.closest('.docs-editor-root')
 
   const [deleteDialogOptions, setDeleteDialogOptions] = useState<DeleteCommentDialogOptions | null>(null)
 
@@ -434,7 +435,7 @@ export default function CommentPlugin({
       {showCommentsPanel &&
         createPortal(
           <CommentsPanel threads={threads} setShowComments={setShowCommentsPanel} />,
-          layoutContainerElement || document.body,
+          styleScopeElement || document.body,
         )}
       {(activeThreads.length > 0 || commentInputSelection !== undefined) &&
         !showCommentsPanel &&

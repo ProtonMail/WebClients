@@ -1,3 +1,4 @@
+import * as Ariakit from '@ariakit/react'
 import { $isCodeNode } from '@lexical/code'
 import { $findMatchingParent } from '@lexical/utils'
 import { $isNonInlineLeafElement } from '../../Utils/isNonInlineLeafElement'
@@ -6,7 +7,7 @@ import { readRecentEmojis, rememberEmoji } from './recentEmojis'
 /* eslint-disable jsx-a11y/prefer-tag-over-role -- Autocomplete keeps focus in the document and exposes a listbox through aria-activedescendant. */
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { $getSelection, $isRangeSelection, $isTextNode, PASTE_TAG, type RangeSelection } from 'lexical'
-import { useEffect, useId, useRef, useState } from 'react'
+import { useContext, useEffect, useId, useRef, useState } from 'react'
 import { clsx } from 'clsx'
 import { createPortal } from 'react-dom'
 import { defaultEmojiMessages, type EmojiMessages } from './emojiMessages'
@@ -70,6 +71,7 @@ export type EmojiAutocompletePluginProps = { messages?: EmojiMessages }
 
 export default function EmojiAutocompletePlugin({ messages = defaultEmojiMessages }: EmojiAutocompletePluginProps) {
   const [editor] = useLexicalComposerContext()
+  const portalRoot = useContext(Ariakit.PortalContext)
   const id = useId()
   const [menu, setMenu] = useState<{ match: Match; results: Emoji[]; left: number; top: number } | null>(null)
   const [active, setActive] = useState(0)
@@ -250,7 +252,7 @@ export default function EmojiAutocompletePlugin({ messages = defaultEmojiMessage
             </button>
           ))}
         </div>,
-        document.body,
+        portalRoot ?? document.body,
       )}
     </>
   )
