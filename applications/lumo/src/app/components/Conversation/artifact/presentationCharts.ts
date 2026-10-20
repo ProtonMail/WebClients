@@ -1,3 +1,5 @@
+import { c } from 'ttag';
+
 import { looksLikeVegaSpec } from '../../LumoMarkdown/vega/detectVegaSpec';
 import { renderVegaSpecToSvg } from '../../LumoMarkdown/vega/renderVegaSpecToSvg';
 import { isVegaLanguage } from '../../LumoMarkdown/vega/vegaLanguages';
@@ -141,7 +143,8 @@ async function replacePlaceholdersWithSvg(doc: Document): Promise<void> {
                 appendRenderedSvg(doc, wrapper, await renderVegaSpecToSvg(node.textContent ?? ''));
             } catch {
                 wrapper.className = 'lumo-chart-error';
-                wrapper.textContent = 'Chart unavailable';
+                // translator: Error text in a slide deck when a data chart cannot be displayed.
+                wrapper.textContent = c('collider_2025:Error').t`Chart unavailable`;
             }
             node.replaceWith(wrapper);
         })

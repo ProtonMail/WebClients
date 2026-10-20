@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 
@@ -25,9 +25,18 @@ export const IndexingStatusBanner: React.FC<IndexingStatusBannerProps> = ({
     const { status, progress } = indexingStatus;
     const percentage = progress.total > 0 ? Math.round((progress.indexed / progress.total) * 100) : 0;
 
-    const progressText = progress.total > 0
-        ? `${progress.indexed}/${progress.total} files (${percentage}%)`
-        : 'Preparing...';
+    let progressText: string;
+    if (progress.total > 0) {
+        // translator: Search-indexing status. ${progress.indexed} is the number of files indexed; ${progress.total} is the total file count; ${percentage} is the completion percentage.
+        progressText = c('collider_2025:Label').ngettext(
+            msgid`${progress.indexed}/${progress.total} file (${percentage}%)`,
+            `${progress.indexed}/${progress.total} files (${percentage}%)`,
+            progress.total
+        );
+    } else {
+        // translator: Status while computer files are prepared for search.
+        progressText = c('collider_2025:Label').t`Preparing...`;
+    }
 
     // Subtle inline style (no background)
     if (inline) {
@@ -43,9 +52,7 @@ export const IndexingStatusBanner: React.FC<IndexingStatusBannerProps> = ({
                                   ? c('collider_2025:Status').t`Complete`
                                   : c('collider_2025:Status').t`Error`}
                         </span>
-                        <span className="text-sm color-hint">
-                            {progressText}
-                        </span>
+                        <span className="text-sm color-hint">{progressText}</span>
                     </div>
                 </div>
             </div>
@@ -65,9 +72,7 @@ export const IndexingStatusBanner: React.FC<IndexingStatusBannerProps> = ({
                               ? c('collider_2025:Status').t`Indexing complete`
                               : c('collider_2025:Status').t`Indexing error`}
                     </span>
-                    <span className="text-sm color-hint">
-                        {progressText}
-                    </span>
+                    <span className="text-sm color-hint">{progressText}</span>
                 </div>
                 <div className="h-0.5 bg-weak rounded-full overflow-hidden mt-1" style={{ maxWidth: '300px' }}>
                     <div

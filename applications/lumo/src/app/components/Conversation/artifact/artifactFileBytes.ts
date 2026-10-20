@@ -1,3 +1,5 @@
+import { c } from 'ttag';
+
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { DOCX_MIME_TYPE, markdownToDocxBlob } from '../../../util/docx/markdownToDocx';
@@ -48,11 +50,15 @@ export async function buildArtifactFileForSave(
     options: { onProgress?: ArtifactFileBytesProgressCallback } = {}
 ): Promise<ArtifactPreparedFile> {
     if (!artifact.content.trim()) {
-        throw new Error('Artifact has no content to save.');
+        // translator: An artifact is a document or other content created by the AI assistant.
+        throw new Error(c('collider_2025:Error').t`Artifact has no content to save.`);
     }
 
     if (!isArtifactSaveFormatSupported(artifact.type, format)) {
-        throw new Error(`Format "${format}" is not supported for ${artifact.type} artifacts.`);
+        // translator: Export error. ${format} is a file-format identifier such as pdf or docx; ${artifact.type} is the content type, such as document or presentation.
+        throw new Error(
+            c('collider_2025:Error').t`Format "${format}" is not supported for ${artifact.type} artifacts.`
+        );
     }
 
     const mimeType = SAVE_FORMAT_MIME_TYPES[format];
@@ -105,7 +111,8 @@ async function buildArtifactPdfFile(
         });
 
         if (slideDocuments.length === 0) {
-            throw new Error('Presentation has no slides to export.');
+            // translator: Error message about exporting a slide deck.
+            throw new Error(c('collider_2025:Error').t`Presentation has no slides to export.`);
         }
 
         await yieldToMainThread();
@@ -123,12 +130,14 @@ async function buildArtifactPdfFile(
     }
 
     if (artifact.type !== 'document') {
-        throw new Error('PDF export is only supported for documents and presentations.');
+        // translator: Export error. PDF is the file format.
+        throw new Error(c('collider_2025:Error').t`PDF export is only supported for documents and presentations.`);
     }
 
     const html = await buildArtifactHtmlDocument(artifact);
     if (!html) {
-        throw new Error('Could not build HTML for PDF export.');
+        // translator: Technical export error. HTML and PDF are file formats.
+        throw new Error(c('collider_2025:Error').t`Could not build HTML for PDF export.`);
     }
 
     const bytes = await htmlDocumentToPdfBytes(html, {
@@ -148,7 +157,8 @@ async function buildArtifactPptxFile(
     onProgress?: ArtifactFileBytesProgressCallback
 ): Promise<ArtifactPreparedFile> {
     if (artifact.type !== 'presentation') {
-        throw new Error('PPTX export is only supported for presentations.');
+        // translator: Export error. PPTX is the PowerPoint file format.
+        throw new Error(c('collider_2025:Error').t`PPTX export is only supported for presentations.`);
     }
 
     onProgress?.(0, 1);
@@ -159,7 +169,8 @@ async function buildArtifactPptxFile(
     });
 
     if (slideDocuments.length === 0) {
-        throw new Error('Presentation has no slides to export.');
+        // translator: Error message about exporting a slide deck.
+        throw new Error(c('collider_2025:Error').t`Presentation has no slides to export.`);
     }
 
     await yieldToMainThread();
