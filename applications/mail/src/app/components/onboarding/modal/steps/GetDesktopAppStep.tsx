@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -18,6 +20,13 @@ import windowsAppImg1x from '@proton/styles/assets/img/onboarding/mail_onboardin
 import windowsAppImg2x from '@proton/styles/assets/img/onboarding/mail_onboarding_desktop_app_download_windows@2x.webp';
 import clsx from '@proton/utils/clsx';
 
+import {
+    ONBOARDING_ACTIONS,
+    ONBOARDING_STEPS,
+    trackStepCompleted,
+    trackStepInteracted,
+    trackStepViewed,
+} from '../../../../telemetry/onboardingEvents';
 import { useMailOnboardingTelemetry } from '../../useMailOnboardingTelemetry';
 import type { OnboardingStepEligibleCallback } from '../interface';
 import OnboardingContent from '../layout/OnboardingContent';
@@ -48,12 +57,18 @@ const GetDesktopAppStep = ({ onNext }: OnboardingStepRenderCallback) => {
 
     const { desktopAppLink } = useInboxDesktopVersion();
 
+    useEffect(() => {
+        trackStepViewed(ONBOARDING_STEPS.desktopApp);
+    }, []);
+
     const handleNext = () => {
+        trackStepCompleted(ONBOARDING_STEPS.desktopApp);
         onNext();
     };
 
     const handleDesktopAppButtonClick = () => {
         void sendMailOnboardingTelemetry(OldTelemetryMailOnboardingEvents.download_desktop_app, {});
+        trackStepInteracted(ONBOARDING_STEPS.desktopApp, ONBOARDING_ACTIONS.downloadApp);
         handleNext();
     };
 

@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -12,6 +14,13 @@ import { isMobile } from '@proton/shared/lib/helpers/browser';
 import type { ThemeTypes } from '@proton/shared/lib/themes/constants';
 import clsx from '@proton/utils/clsx';
 
+import {
+    ONBOARDING_ACTIONS,
+    ONBOARDING_STEPS,
+    trackStepInteracted,
+    trackStepViewed,
+    trackThemeStepCompleted,
+} from '../../../../telemetry/onboardingEvents';
 import { useMailOnboardingTelemetry } from '../../useMailOnboardingTelemetry';
 import type { OnboardingStepEligibleCallback } from '../interface';
 import OnboardingContent from '../layout/OnboardingContent';
@@ -28,8 +37,13 @@ const NewOnboardingThemes = ({ onNext }: OnboardingStepRenderCallback) => {
     const mediumSizeProps = getThemeCardSize('medium');
     const sizeProps = mobile ? mediumSizeProps : largeSizeProps;
 
+    useEffect(() => {
+        trackStepViewed(ONBOARDING_STEPS.themeSelection);
+    }, []);
+
     const handleThemeChange = (newThemeType: ThemeTypes) => {
         theme.setTheme(newThemeType);
+        trackStepInteracted(ONBOARDING_STEPS.themeSelection, ONBOARDING_ACTIONS.selectTheme);
     };
 
     const handleNext = () => {
@@ -38,6 +52,8 @@ const NewOnboardingThemes = ({ onNext }: OnboardingStepRenderCallback) => {
             theme: `${selectedTheme}`,
             is_default_theme: selectedTheme === 0 ? 'yes' : 'no',
         });
+
+        trackThemeStepCompleted(theme.information.label);
 
         onNext();
     };

@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import { type ReactNode, useEffect } from 'react';
 
 import { c } from 'ttag';
 
@@ -18,6 +18,7 @@ import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useGetStartedChecklist } from '../../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
+import { ONBOARDING_STEPS, trackStepCompleted, trackStepViewed } from '../../../../telemetry/onboardingEvents';
 import type { OnboardingStepEligibleCallback } from '../interface';
 import OnboardingContent from '../layout/OnboardingContent';
 
@@ -106,8 +107,13 @@ const OnboardingWelcomeStep = ({ onNext }: OnboardingStepRenderCallback) => {
     const [user] = useUser();
     const privacyFeature = getPrivacyFeatures(user);
 
+    useEffect(() => {
+        trackStepViewed(ONBOARDING_STEPS.welcome);
+    }, []);
+
     const handleNext = () => {
         void markItemsAsDone('ProtectInbox');
+        trackStepCompleted(ONBOARDING_STEPS.welcome);
         onNext();
     };
 
