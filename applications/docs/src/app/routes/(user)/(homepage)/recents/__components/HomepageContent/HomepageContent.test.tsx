@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom'
-import { cleanup, render, screen, within } from '@testing-library/react'
+import { cleanup, render, screen, waitFor, within } from '@testing-library/react'
 import { HomepageContent } from './HomepageContent'
 import { RecentDocumentsItem } from '@proton/docs-core'
 import { DocumentActionsContext } from '../../__utils/document-actions'
@@ -40,6 +40,17 @@ jest.mock('@proton/components/hooks/useAuthentication', () => ({
 jest.mock('@proton/app-context/useNotifications', () => ({
   __esModule: true,
   useNotifications: () => ({ createNotification: jest.fn() }),
+}))
+
+let mockBulkEnabled = false
+jest.mock('~/utils/flags', () => ({
+  ...jest.requireActual('~/utils/flags'),
+  useBulkTrashEnabled: () => mockBulkEnabled,
+}))
+
+const mockBulkTrash = jest.fn()
+jest.mock('../../__utils/useBulkTrash', () => ({
+  useBulkTrash: () => ({ trash: mockBulkTrash, isTrashing: false }),
 }))
 
 function createMockRecentDocument(data: Partial<RecentDocumentsItemValue> = {}): RecentDocumentsItem {
@@ -125,6 +136,120 @@ describe('HomepageContent', () => {
     expect(mockOpen).toHaveBeenCalledWith(expect.objectContaining(MOCK_DATA[0]))
   })
 
+  describe('bulk selection', () => {
+    beforeEach(() => {
+      mockBulkEnabled = true
+      mockBulkTrash.mockReset()
+    })
+
+    afterEach(() => {
+      mockBulkEnabled = false
+    })
+
+    const expectNoSelectionUI = () => {
+      expect(screen.queryByTestId('bulk-select-all')).toBeNull()
+      expect(screen.queryAllByTestId('bulk-row-checkbox')).toHaveLength(0)
+    }
+
+    const selectAll = () => userEvent.click(screen.getByTestId('bulk-select-all'))
+
+    test('does not render selection UI when the flag is off', async () => {
+      mockBulkEnabled = false
+      renderWithProviders(<HomepageContent />)
+      await screen.findByRole('table')
+      expectNoSelectionUI()
+    })
+
+    test('does not render selection UI in the trash view', async () => {
+      renderWithProviders(<HomepageContent />, 'trash')
+      await screen.findByRole('table')
+      expectNoSelectionUI()
+    })
+
+    test('renders a checkbox only for trashable rows', async () => {
+      renderWithProviders(<HomepageContent />)
+      const table = await screen.findByRole('table')
+      expect(screen.getAllByTestId('bulk-row-checkbox')).toHaveLength(2)
+      expect(screen.queryByRole('checkbox', { name: 'Select Test Doc' })).toBeNull()
+      const tbody = within(table).getAllByRole('rowgroup')[1]
+      within(tbody)
+        .getAllByRole('row')
+        .forEach((row, i) => {
+          checkRowContents(row, MOCK_DATA[i].name, MOCK_DATA[i].createdBy ?? '', MOCK_DATA[i].location)
+        })
+    })
+
+    test('select all selects every trashable row, shows the count and hides sort', async () => {
+      renderWithProviders(<HomepageContent />)
+      await screen.findByRole('table')
+      expect(screen.getByRole('button', { name: 'Change sort order' })).toBeInTheDocument()
+
+      await selectAll()
+
+      screen.getAllByTestId('bulk-row-checkbox').forEach((checkbox) => expect(checkbox).toBeChecked())
+      expect(screen.getByTestId('bulk-selected-count')).toHaveTextContent('2 selected')
+      expect(screen.queryByRole('button', { name: 'Change sort order' })).toBeNull()
+    })
+
+    test('select all is indeterminate when some rows are selected', async () => {
+      renderWithProviders(<HomepageContent />)
+      await userEvent.click(await screen.findByRole('checkbox', { name: 'Select Document1' }))
+
+      expect((screen.getByTestId('bulk-select-all') as HTMLInputElement).indeterminate).toBe(true)
+      expect(screen.getByTestId('bulk-selected-count')).toHaveTextContent('1 selected')
+    })
+
+    test('clicking a row checkbox does not open the document', async () => {
+      const { mockOpen } = renderWithProviders(<HomepageContent />)
+      await userEvent.click(await screen.findByRole('checkbox', { name: 'Select Document1' }))
+
+      expect(mockOpen).not.toHaveBeenCalled()
+    })
+
+    test('trash button trashes selected documents and clears the selection', async () => {
+      mockBulkTrash.mockResolvedValue([])
+      renderWithProviders(<HomepageContent />)
+      await screen.findByRole('table')
+      await selectAll()
+
+      await userEvent.click(screen.getByTestId('bulk-trash-button'))
+
+      expect(mockBulkTrash).toHaveBeenCalledWith([
+        expect.objectContaining(MOCK_DATA[0]),
+        expect.objectContaining(MOCK_DATA[1]),
+      ])
+      await waitFor(() => expect(screen.queryByTestId('bulk-selected-count')).toBeNull())
+    })
+
+    test('keeps failed documents selected after a partial failure', async () => {
+      mockBulkTrash.mockResolvedValue([MOCK_DATA[1]])
+      renderWithProviders(<HomepageContent />)
+      await screen.findByRole('table')
+      await selectAll()
+
+      await userEvent.click(screen.getByTestId('bulk-trash-button'))
+
+      await waitFor(() => expect(screen.getByTestId('bulk-selected-count')).toHaveTextContent('1 selected'))
+      expect(screen.getByRole('checkbox', { name: 'Select Test Document' })).toBeChecked()
+      expect(screen.getByRole('checkbox', { name: 'Select Document1' })).not.toBeChecked()
+    })
+
+    test('Escape clears the selection', async () => {
+      renderWithProviders(<HomepageContent />)
+      await screen.findByRole('table')
+      await selectAll()
+      await userEvent.keyboard('{Escape}')
+      expect(screen.queryByTestId('bulk-selected-count')).toBeNull()
+    })
+
+    test('clicking empty space clears the selection', async () => {
+      renderWithProviders(<HomepageContent />)
+      await userEvent.click(await screen.findByRole('checkbox', { name: 'Select Document1' }))
+      await userEvent.click(screen.getByRole('table'))
+      expect(screen.queryByTestId('bulk-selected-count')).toBeNull()
+    })
+  })
+
   function DocumentActionsMockProvider({
     children,
     mockOpen: open = jest.fn(),
@@ -167,13 +292,17 @@ describe('HomepageContent', () => {
     flow,
   }: {
     children: ReactNode
-    flow: 'one_document' | 'empty_recents' | 'delayed'
+    flow: 'one_document' | 'empty_recents' | 'delayed' | 'trash'
   }) {
     const [state, setState] = useState<HomepageViewState>({ view: 'recents-initial' })
 
     useEffect(() => {
       if (flow === 'one_document') {
         setState({ view: 'recents', sort: 'viewed', itemSections: [{ id: 'today', items: MOCK_DATA }] })
+      }
+
+      if (flow === 'trash') {
+        setState({ view: 'trash', itemSections: [{ id: 'today', items: MOCK_DATA }] })
       }
 
       if (flow === 'empty_recents') {
@@ -203,7 +332,10 @@ describe('HomepageContent', () => {
     )
   }
 
-  function renderWithProviders(node: ReactNode, flow: 'one_document' | 'empty_recents' | 'delayed' = 'one_document') {
+  function renderWithProviders(
+    node: ReactNode,
+    flow: 'one_document' | 'empty_recents' | 'delayed' | 'trash' = 'one_document',
+  ) {
     const mockOpen = jest.fn()
     const mockOpenParent = jest.fn()
     const mockTrash = jest.fn()
