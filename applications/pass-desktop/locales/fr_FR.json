@@ -836,6 +836,15 @@
       ],
       "Your password manager is not here? Request it.": [
         "Vous ne trouvez pas votre gestionnaire de mots de passe ? Demandez-le."
+      ],
+      "Download for Linux": [
+        "Télécharger la version pour Linux"
+      ],
+      "Download for macOS": [
+        "Télécharger pour macOS"
+      ],
+      "Download for Windows": [
+        "Télécharger pour Windows"
       ]
     },
     "Activity": {
@@ -1566,6 +1575,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Votre code PIN a été retiré par un autre client de ${ PASS_APP_NAME }."
+      ],
+      "Biometric authentication cancelled.": [
+        "L'Authentification biométrique a été annulée."
       ]
     },
     "Error message": {
@@ -4351,6 +4363,15 @@
       ],
       "ZIP or Postal code": [
         "Code postal"
+      ],
+      "Linux": [
+        "Linux"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Link": {
@@ -5479,6 +5500,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Vous êtes sur le point de supprimer définitivement ${ aliasCount } alias.",
         "Vous êtes sur le point de supprimer définitivement ${ aliasCount } alias."
+      ],
+      "Get mobile apps": [
+        "Télécharger les applications mobiles"
       ]
     },
     "Title_cloned_item": {

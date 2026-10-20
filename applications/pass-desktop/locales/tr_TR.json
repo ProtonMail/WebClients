@@ -839,6 +839,18 @@
       ],
       "Your password manager is not here? Request it.": [
         "Parola yöneticiniz burada yok mu? İstekte bulunun."
+      ],
+      "Download for Linux": [
+        "Linux için indir"
+      ],
+      "Download for macOS": [
+        "macOS için indirin"
+      ],
+      "Download for Windows": [
+        "Windows için indirin"
+      ],
+      "Open platform selection dropdown": [
+        "Platform seçimi listesini aç"
       ]
     },
     "Activity": {
@@ -1569,6 +1581,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "PIN kodunuz başka bir ${ PASS_APP_NAME } istemcisi tarafından kaldırıldı"
+      ],
+      "Biometric authentication cancelled.": [
+        "Biyometrik kimlik doğrulama iptal edildi."
       ]
     },
     "Error message": {
@@ -3034,6 +3049,15 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Kuruluşunuz ${ PASS_APP_NAME } erişiminizi güvence altına almanızı zorunlu kılmış"
+      ],
+      "iOS and Android Apps": [
+        "iOS ve Android uygulamaları"
+      ],
+      "Scan to download": [
+        "İndirmek için tara"
+      ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "iOS ve Android için ${ PASS_APP_NAME } indirmek için tarayın"
       ]
     },
     "Keyboard key": {
@@ -4354,6 +4378,15 @@
       ],
       "ZIP or Postal code": [
         "Posta kodu"
+      ],
+      "Linux": [
+        "Linux"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Link": {
@@ -5482,6 +5515,12 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "${ aliasCount } takma adı kalıcı olarak silmek üzeresiniz.",
         "${ aliasCount } takma adı kalıcı olarak silmek üzeresiniz."
+      ],
+      "Get mobile and desktop apps": [
+        "Mobil ve bilgisayar uygulamalarını edinin"
+      ],
+      "Get mobile apps": [
+        "Mobil uygulamaları edinin"
       ]
     },
     "Title_cloned_item": {
