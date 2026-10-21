@@ -8,8 +8,8 @@ import {
     editMailbox,
     resendVerifyMailbox,
     setDefaultMailbox,
-} from '../../../../store/actions';
-import { selectRequestInFlight } from '../../../../store/selectors';
+} from '../../../../store/actions/creators/alias';
+import { selectRequestInFlight } from '../../../../store/request/selectors';
 
 type Props = { mailboxID: number; children: (loading: boolean) => ReactNode };
 

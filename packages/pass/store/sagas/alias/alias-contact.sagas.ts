@@ -5,7 +5,13 @@ import {
     aliasGetContactInfoApi,
     aliasGetContactsListApi,
 } from '../../../lib/alias/alias.requests';
-import { aliasBlockContact, aliasCreateContact, aliasDeleteContact, aliasGetContactInfo, aliasGetContactsList } from '../../actions';
+import {
+    aliasBlockContact,
+    aliasCreateContact,
+    aliasDeleteContact,
+    aliasGetContactInfo,
+    aliasGetContactsList,
+} from '../../actions/creators/alias';
 import { createRequestSaga } from '../../request/sagas';
 
 const aliasContactListSaga = createRequestSaga({

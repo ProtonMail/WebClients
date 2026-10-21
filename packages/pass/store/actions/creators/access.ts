@@ -3,8 +3,8 @@ import { c } from 'ttag';
 
 import { toShareAccessKey } from '../../../lib/access/access.utils';
 import type { AccessKeys } from '../../../lib/access/types';
-import { ShareType } from '../../../types';
 import type { ShareEditMemberAccessIntent, ShareRemoveMemberAccessIntent } from '../../../types/data/access.dto';
+import { ShareType } from '../../../types/data/shares';
 import { pipe } from '../../../utils/fp/pipe';
 import { UNIX_MINUTE } from '../../../utils/time/constants';
 import type { AccessState } from '../../reducers';

@@ -8,7 +8,7 @@ import { useGetUserInvitations, useUserInvitations } from '@proton/account/userI
 import { useCache } from '@proton/app-context/useCache';
 import { useConfig } from '@proton/app-context/useConfig';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
-import { useFeature } from '@proton/features';
+import useFeature from '@proton/features/useFeature';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
 import { EntitlementType } from '@proton/payments/core/entitlements/interface';

@@ -22,9 +22,10 @@ import clsx from '@proton/utils/clsx';
 
 import { isDisabledAliasItem } from '../../../lib/items/item.predicates';
 import { getFirstUrl } from '../../../lib/urls/utils/autofill';
-import { selectCanLoadDomainImages } from '../../../store/selectors';
-import type { ItemMap, ItemRevision, Maybe, MaybeNull } from '../../../types';
+import { selectCanLoadDomainImages } from '../../../store/selectors/settings';
+import type { ItemMap, ItemRevision } from '../../../types/data/items';
 import { CardType } from '../../../types/protobuf/item-v1.static';
+import type { Maybe, MaybeNull } from '../../../types/utils';
 import { DomainIcon, ImageStatus } from './DomainIcon';
 import { IconBox, getIconSizePx } from './IconBox';
 

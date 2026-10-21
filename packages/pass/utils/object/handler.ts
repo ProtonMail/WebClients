@@ -1,4 +1,4 @@
-import type { Callback } from '../../types';
+import type { Callback } from '../../types/utils';
 import { partialMerge } from './merge';
 
 /** Handles edge-case where object property is a function - in this

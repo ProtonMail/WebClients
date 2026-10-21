@@ -1,4 +1,4 @@
-import type { Maybe } from '../../../types';
+import type { Maybe } from '../../../types/utils';
 import type { OptimisticFailedHistoryItem, WrappedOptimisticState } from '../types';
 import { isOptimisticHistoryItemWithId } from '../utils/assertions';
 

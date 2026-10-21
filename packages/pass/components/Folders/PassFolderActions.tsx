@@ -8,7 +8,7 @@ import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdow
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 
 import { useMemoSelector } from '../../hooks/useMemoSelector';
-import { selectItemsInFolder } from '../../store/selectors';
+import { selectItemsInFolder } from '../../store/selectors/items';
 import { useFolderActions } from './FolderActionsProvider';
 import { useFoldersAccess } from './useFoldersAccess';
 

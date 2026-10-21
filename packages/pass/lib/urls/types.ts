@@ -1,4 +1,5 @@
-import type { ItemRevision, MaybeNull } from '../../types';
+import type { ItemRevision } from '../../types/data/items';
+import type { MaybeNull } from '../../types/utils';
 import type { ItemUrlMatch } from './search/match-url';
 
 export type ParsedUrl = {

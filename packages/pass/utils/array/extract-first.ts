@@ -1,4 +1,4 @@
-import type { MaybeNull } from '../../types';
+import type { MaybeNull } from '../../types/utils';
 
 export const extractFirst = <T, K extends T>(
     arr: T[],

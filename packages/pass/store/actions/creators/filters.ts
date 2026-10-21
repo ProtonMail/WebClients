@@ -1,6 +1,8 @@
 import { createAction } from '@reduxjs/toolkit';
 
-import type { ItemFilters, MaybeNull, TabId } from '../../../types';
+import type { ItemFilters } from '../../../types/data/items';
+import type { MaybeNull } from '../../../types/utils';
+import type { TabId } from '../../../types/worker/runtime';
 import type { TabState } from '../../reducers';
 import { withCache } from '../enhancers/cache';
 

@@ -9,7 +9,7 @@ import noop from '@proton/utils/noop';
 
 import { useBulkEnabled, useBulkSelection } from '../components/Bulk/BulkSelectionState';
 import { fromItemKey, getItemKey } from '../lib/items/item.utils';
-import type { SelectedItem } from '../types';
+import type { SelectedItem } from '../types/data/items';
 import { partialMerge } from '../utils/object/merge';
 import { useStableRef } from './useStableRef';
 

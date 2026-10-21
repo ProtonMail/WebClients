@@ -2,7 +2,7 @@ import { CryptoProxy } from '@protontech/crypto';
 import type { SessionKey } from '@protontech/crypto';
 import type { ThunkAction, ThunkDispatch, UnknownAction } from '@reduxjs/toolkit';
 
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import {
     type InviteGroupOwnerParameters,
     addGroupOwner,

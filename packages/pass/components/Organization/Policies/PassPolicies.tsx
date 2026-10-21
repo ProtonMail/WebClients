@@ -25,9 +25,11 @@ import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import { usePassBridge } from '../../../lib/bridge/PassBridgeProvider';
-import type { OrganizationGetResponse, OrganizationUpdatePasswordPolicyInput } from '../../../types';
-import { BitField, type Maybe, OrganizationVaultCreateMode } from '../../../types';
+import type { OrganizationGetResponse, OrganizationUpdatePasswordPolicyInput } from '../../../types/api/pass';
+import { OrganizationVaultCreateMode } from '../../../types/api/pass';
 import type { OrganizationSettings } from '../../../types/data/organization';
+import { BitField } from '../../../types/forms/fields';
+import type { Maybe } from '../../../types/utils';
 import { PassLockSelector } from './PassLockSelector';
 import { PasswordGeneratorPolicyForm } from './PasswordGeneratorPolicyForm';
 import { PauseList } from './PauseList/PauseListPolicy';

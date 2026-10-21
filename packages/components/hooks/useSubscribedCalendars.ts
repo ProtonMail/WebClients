@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 
 import { useApi } from '@proton/app-context/useApi';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { getSubscriptionParameters } from '@proton/shared/lib/api/calendars';
 import { getIsSubscribedCalendar, getVisualCalendars } from '@proton/shared/lib/calendar/calendar';
 import { getIsCalendarSubscriptionEventManagerUpdate } from '@proton/shared/lib/calendar/subscribe/helpers';

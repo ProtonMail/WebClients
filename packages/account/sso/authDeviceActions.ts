@@ -1,6 +1,6 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { deleteAllOtherAuthDeviceConfig, rejectAuthDeviceConfig } from '@proton/shared/lib/api/authDevice';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { type AuthDeviceOutput, AuthDeviceState, deleteAuthDevice } from '@proton/shared/lib/keys/device';

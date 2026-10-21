@@ -1,5 +1,5 @@
 import { deobfuscate } from '../../../utils/obfuscate/xor';
-import { extraPasswordToggle } from '../../actions';
+import { extraPasswordToggle } from '../../actions/creators/auth';
 import { createRequestSaga } from '../../request/sagas';
 
 export default createRequestSaga({

@@ -4,7 +4,7 @@ import useElementRect from '@proton/components/hooks/useElementRect';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import clsx from '@proton/utils/clsx';
 
-import type { FolderData } from '../../types';
+import type { FolderData } from '../../types/data/folders';
 import type { VaultColor } from '../../types/protobuf/vault-v1.static';
 import { PassFolderIcon } from '../Folders/PassFolderIcon';
 import type { VaultIconValue } from './VaultIcon';

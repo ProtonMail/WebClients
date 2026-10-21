@@ -2,16 +2,13 @@ import { c } from 'ttag';
 
 import { filesFormInitializer } from '../../../lib/file-attachments/helpers';
 import { obfuscateExtraFields } from '../../../lib/items/item.obfuscation';
-import type {
-    CustomItemFormValues,
-    DeobfuscatedItem,
-    ItemCreateIntent,
-    ItemCustomType,
-    ItemEditIntent,
-    MaybeNull,
-    ShareId,
-} from '../../../types';
+import type { ShareId } from '../../../types/crypto/pass-types';
+import type { DeobfuscatedItem } from '../../../types/data/items';
+import type { ItemCreateIntent, ItemEditIntent } from '../../../types/data/items.dto';
+import type { CustomItemFormValues } from '../../../types/forms/item';
+import type { ItemCustomType } from '../../../types/protobuf';
 import { WifiSecurity } from '../../../types/protobuf/item-v1.static';
+import type { MaybeNull } from '../../../types/utils';
 import { obfuscate } from '../../../utils/obfuscate/xor';
 import { uniqueId } from '../../../utils/string/unique-id';
 import { type CustomTemplate, customTemplateToFormFields } from './Custom.templates';

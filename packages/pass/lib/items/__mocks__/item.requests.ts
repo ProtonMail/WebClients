@@ -1,7 +1,10 @@
 /** In-memory stand-in for the item API: `jest.mock('…/lib/items/item.requests')`.
  * Requests resolve with the revision the server would return, without crypto
  * or network. Anything not overridden here keeps its real implementation. */
-import type { Item, ItemCreateIntent, ItemEditIntent, ItemRevision, ItemType, MaybeNull } from '../../../types';
+import type { Item, ItemRevision } from '../../../types/data/items';
+import type { ItemCreateIntent, ItemEditIntent } from '../../../types/data/items.dto';
+import type { ItemType } from '../../../types/protobuf';
+import type { MaybeNull } from '../../../types/utils';
 import { createTestItem } from '../../../utils/tests/fixtures/items';
 
 const intoItemData = <T extends ItemType>({ type, metadata, content, extraFields, platformSpecific }: Item<T, any>) =>

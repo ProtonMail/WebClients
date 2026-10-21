@@ -1,6 +1,7 @@
 import type { Runtime } from 'webextension-polyfill';
 
-import type { AnyStorage, Maybe, StorageData } from '../../types';
+import type { Maybe } from '../../types/utils';
+import type { AnyStorage, StorageData } from '../../types/worker/storage';
 import type { FileStorageGarbageCollector } from './fs.gc';
 
 export type FileBuffer = Blob | Uint8Array<ArrayBuffer>;

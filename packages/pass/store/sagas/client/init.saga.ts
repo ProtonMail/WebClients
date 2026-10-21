@@ -5,14 +5,17 @@ import identity from '@proton/utils/identity';
 import { clientBooted, clientOffline } from '../../../lib/client';
 import { filterDeletedTabIds } from '../../../lib/extension/utils/tabs';
 import { SyncStrategy } from '../../../lib/sync/types';
-import type { TabId } from '../../../types';
-import { clientInit, getUserAccessIntent, secureLinksGet, stateHydrate } from '../../actions';
+import type { TabId } from '../../../types/worker/runtime';
+import { clientInit, stateHydrate } from '../../actions/creators/client';
 import { garbageCollectTabState } from '../../actions/creators/filters';
+import { secureLinksGet } from '../../actions/creators/item';
 import { passwordHistoryGarbageCollect } from '../../actions/creators/password';
 import { forcePollV2 } from '../../actions/creators/polling';
+import { getUserAccessIntent } from '../../actions/creators/user';
 import type { WithReceiverAction } from '../../actions/enhancers/endpoint';
 import { withRevalidate } from '../../request/enhancers';
-import { selectSyncStrategy, selectTabIDs } from '../../selectors';
+import { selectTabIDs } from '../../selectors/filters';
+import { selectSyncStrategy } from '../../selectors/settings';
 import type { RootSagaOptions, State } from '../../types';
 
 function* clientInitWorker(

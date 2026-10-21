@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { Maybe } from '@proton/pass/types';
+import type { Maybe } from '@proton/pass/types/utils';
 
 // Apple's documentation
 // https://developer.apple.com/documentation/localauthentication/laerror-swift.struct/code?language=objc

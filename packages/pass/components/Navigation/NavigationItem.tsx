@@ -2,7 +2,8 @@ import type { PropsWithChildren } from 'react';
 import { type FC, createContext, useContext, useMemo } from 'react';
 import { useRouteMatch } from 'react-router-dom';
 
-import type { Maybe, SelectedItem } from '../../types';
+import type { SelectedItem } from '../../types/data/items';
+import type { Maybe } from '../../types/utils';
 import { getItemRoutes } from './routing';
 
 const NavigationItemContext = createContext<Maybe<SelectedItem>>(undefined);

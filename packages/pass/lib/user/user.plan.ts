@@ -1,7 +1,8 @@
 import { PLANS } from '@proton/payments/core/constants';
 
-import { type MaybeNull, type PassPlanResponse, PlanType } from '../../types';
+import { type PassPlanResponse, PlanType } from '../../types/api/pass';
 import { UserPassPlan } from '../../types/api/plan';
+import type { MaybeNull } from '../../types/utils';
 import { getEpoch } from '../../utils/time/epoch';
 
 export const getPassPlan = (plan?: MaybeNull<PassPlanResponse>): UserPassPlan => {

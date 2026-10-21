@@ -25,7 +25,7 @@ import { logging } from '@proton/drive/modules/logging';
 import { driveMetrics } from '@proton/drive/modules/metrics';
 import { recentlyAccessed } from '@proton/drive/modules/recentlyAccessed';
 import { useInitEncryptedThumbnailCache } from '@proton/drive/modules/thumbnails';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
 

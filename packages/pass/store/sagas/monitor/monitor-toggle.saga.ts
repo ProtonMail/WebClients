@@ -1,8 +1,8 @@
 import { put } from 'redux-saga/effects';
 
 import { setMonitorSettings } from '../../../lib/monitor/monitor.request';
-import type { UpdateUserMonitorStateRequest } from '../../../types';
-import { getBreaches, monitorToggle } from '../../actions';
+import type { UpdateUserMonitorStateRequest } from '../../../types/api/pass';
+import { getBreaches, monitorToggle } from '../../actions/creators/monitor';
 import { withRevalidate } from '../../request/enhancers';
 import { createRequestSaga } from '../../request/sagas';
 

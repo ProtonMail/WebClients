@@ -25,8 +25,9 @@ import useBYOEFeatureStatus from '@proton/activation/src/hooks/useBYOEFeatureSta
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { FeatureCode, useFeature } from '@proton/features';
-import { useLoading } from '@proton/hooks';
+import { FeatureCode } from '@proton/features/interface';
+import useFeature from '@proton/features/useFeature';
+import useLoading from '@proton/hooks/useLoading';
 import { IcInfoCircleFilled } from '@proton/icons/icons/IcInfoCircleFilled';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { LUMO_APP_NAME, MEMBER_PRIVATE, MEMBER_ROLE, NAME_PLACEHOLDER } from '@proton/shared/lib/constants';

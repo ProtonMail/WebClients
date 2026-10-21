@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import type { AuthRouteState } from '../../components/Navigation/routing';
-import type { MaybeNull } from '../../types';
+import type { MaybeNull } from '../../types/utils';
 
 export const useUserInitiatedLock = (onLock: () => void) => {
     const history = useHistory<MaybeNull<AuthRouteState>>();

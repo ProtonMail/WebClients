@@ -13,7 +13,7 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { IcGift } from '@proton/icons/icons/IcGift';
 import { useCurrencies } from '@proton/payments-ui/client-extensions/useCurrencies';
 import { usePaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';

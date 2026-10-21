@@ -2,8 +2,8 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import type { MaybeNull } from '@proton/pass/types';
 import type { ContextMenuItem } from '@proton/pass/types/desktop/context-menu';
+import type { MaybeNull } from '@proton/pass/types/utils';
 import { logger } from '@proton/pass/utils/logger';
 import isTruthy from '@proton/utils/isTruthy';
 

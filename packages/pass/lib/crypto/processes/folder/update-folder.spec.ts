@@ -1,5 +1,5 @@
-import type { FolderKey } from '../../../../types';
-import { ContentFormatVersion, PassEncryptionTag } from '../../../../types';
+import type { FolderKey } from '../../../../types/crypto/pass-types';
+import { ContentFormatVersion, PassEncryptionTag } from '../../../../types/crypto/pass-types';
 import { randomContents } from '../../../../utils/tests/fixtures/crypto';
 import { decryptData, generateKey, importSymmetricKey } from '../../utils/crypto-helpers';
 import { updateFolder } from './update-folder';

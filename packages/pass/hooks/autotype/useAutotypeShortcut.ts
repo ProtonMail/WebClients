@@ -5,10 +5,11 @@ import noop from '@proton/utils/noop';
 
 import { useItemsActions } from '../../components/Item/ItemActionsProvider';
 import { useSpotlightFor } from '../../components/Spotlight/WithSpotlight';
-import { selectPassPlan, selectUserPlan } from '../../store/selectors';
-import { type Item, SpotlightMessage } from '../../types';
+import { selectPassPlan, selectUserPlan } from '../../store/selectors/user';
 import { PassFeature } from '../../types/api/features';
 import { UserPassPlan } from '../../types/api/plan';
+import type { Item } from '../../types/data/items';
+import { SpotlightMessage } from '../../types/worker/spotlight';
 import { useFeatureFlag } from '../useFeatureFlag';
 import { useAutotypeActions } from './useAutotypeActions';
 import { useAutotypeExecute } from './useAutotypeExecute';

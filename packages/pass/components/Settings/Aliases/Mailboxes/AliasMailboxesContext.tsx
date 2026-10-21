@@ -1,7 +1,9 @@
 import { createContext, useMemo } from 'react';
 
 import { createUseContext } from '../../../../hooks/useContextFactory';
-import type { MailboxDeleteDTO, MaybeNull, UserMailboxOutput } from '../../../../types';
+import type { UserMailboxOutput } from '../../../../types/api/pass';
+import type { MailboxDeleteDTO } from '../../../../types/data/alias';
+import type { MaybeNull } from '../../../../types/utils';
 
 export interface AliasMailboxesContextValue {
     action: MaybeNull<AliasMailboxAction>;

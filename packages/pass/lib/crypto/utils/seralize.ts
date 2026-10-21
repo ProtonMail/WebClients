@@ -1,11 +1,14 @@
-import type { FolderId, FolderKey, FolderKeysByShareId, ShareId, ShareManager } from '../../../types';
-import {
-    type OpenedShare,
-    type Rotation,
-    type SerializedCryptoContext,
-    type ShareKey,
-    ShareType,
-} from '../../../types';
+import type { SerializedCryptoContext, ShareManager } from '../../../types/crypto/pass-crypto';
+import type {
+    FolderId,
+    FolderKey,
+    FolderKeysByShareId,
+    OpenedShare,
+    Rotation,
+    ShareId,
+    ShareKey,
+} from '../../../types/crypto/pass-types';
+import { ShareType } from '../../../types/data/shares';
 import { importSymmetricKey } from './crypto-helpers';
 
 export const hydrateShareKeys = async (

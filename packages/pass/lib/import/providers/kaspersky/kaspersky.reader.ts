@@ -1,4 +1,5 @@
-import type { ItemImportIntent, MaybeNull } from '../../../../types';
+import type { ItemImportIntent } from '../../../../types/data/items.dto';
+import type { MaybeNull } from '../../../../types/utils';
 import { logger } from '../../../../utils/logger';
 import { ImportProviderError } from '../../helpers/error';
 import { getEmailOrUsername, getImportedVaultName, importLoginItem, importNoteItem } from '../../helpers/transformers';

@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import type { ShallowAttachment, SpaceId } from '../types';
 
-export { lumoImageMarker } from '@proton/lumo-api-client';
+export { lumoImageMarker } from '@proton/lumo-api-client/utils';
 
 export function isGeneratedImageAttachment(attachment: { role?: 'user' | 'assistant'; mimeType?: string }): boolean {
     return attachment.role === 'assistant' && (attachment.mimeType?.startsWith('image/') ?? false);

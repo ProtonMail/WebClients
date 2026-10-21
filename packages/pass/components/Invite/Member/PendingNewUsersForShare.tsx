@@ -4,9 +4,9 @@ import { c } from 'ttag';
 
 import { useRequest } from '../../../hooks/useRequest';
 import { type AccessItem, AccessTarget } from '../../../lib/access/types';
-import { getShareAccessOptions } from '../../../store/actions';
+import { getShareAccessOptions } from '../../../store/actions/creators/access';
 import type { VaultShareItem } from '../../../store/reducers';
-import { NewUserInviteState } from '../../../types';
+import { NewUserInviteState } from '../../../types/data/invites';
 import { Card } from '../../Layout/Card/Card';
 import { VaultIcon } from '../../Vault/VaultIcon';
 import { PendingNewUser } from './PendingNewUser';

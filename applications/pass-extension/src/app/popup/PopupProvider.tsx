@@ -11,11 +11,11 @@ import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { clientBooted } from '@proton/pass/lib/client';
 import { isEditItemDraft, isNewItemDraft } from '@proton/pass/lib/items/item.predicates';
 import { syncRequest } from '@proton/pass/store/actions/requests';
-import { selectRequestInFlight } from '@proton/pass/store/selectors/../request/selectors';
+import { selectRequestInFlight } from '@proton/pass/store/request/selectors';
 import { selectLatestDraft } from '@proton/pass/store/selectors/items';
 import type { State } from '@proton/pass/store/types';
 import { NO_PAGE_CONTEXT_TELEMETRY_DIMENSIONS, TelemetryEventName } from '@proton/pass/types/data/telemetry';
-import type { MaybeNull } from '@proton/pass/types/utils/index';
+import type { MaybeNull } from '@proton/pass/types/utils';
 import type { PopupInitialState } from '@proton/pass/types/worker/state';
 import { AppStatus } from '@proton/pass/types/worker/state';
 

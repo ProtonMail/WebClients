@@ -6,9 +6,10 @@ import MiddleEllipsis from '@proton/components/components/ellipsis/MiddleEllipsi
 
 import { useMemoSelector } from '../../hooks/useMemoSelector';
 import { useRequest } from '../../hooks/useRequest';
-import { folderCreate } from '../../store/actions';
-import { selectFolder, selectShare } from '../../store/selectors';
-import type { ShareType } from '../../types';
+import { folderCreate } from '../../store/actions/creators/folders';
+import { selectFolder } from '../../store/selectors/folders';
+import { selectShare } from '../../store/selectors/shares';
+import type { ShareType } from '../../types/data/shares';
 import { useSelectFolder } from '../Navigation/NavigationActions';
 import { FolderFormModal } from './FolderFormModal';
 

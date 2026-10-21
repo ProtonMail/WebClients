@@ -15,8 +15,8 @@ import type { BugPayload } from '@proton/shared/lib/api/reports';
 import { maxLengthValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import { useActionRequest } from '../../hooks/useRequest';
-import { reportBugIntent } from '../../store/actions';
-import { selectUser } from '../../store/selectors';
+import { reportBugIntent } from '../../store/actions/creators/report';
+import { selectUser } from '../../store/selectors/user';
 import { isEmptyString } from '../../utils/string/is-empty-string';
 import { usePassCore } from '../Core/PassCoreProvider';
 import { SettingsPanel } from './SettingsPanel';

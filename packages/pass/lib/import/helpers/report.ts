@@ -1,7 +1,10 @@
 import capitalize from '@proton/utils/capitalize';
 
 import { MAX_BATCH_PER_IMPORT_REQUEST } from '../../../constants';
-import type { ItemImportIntent, ItemRevision, LoginItemPreview, MaybeNull } from '../../../types';
+import type { ItemRevision } from '../../../types/data/items';
+import type { ItemImportIntent } from '../../../types/data/items.dto';
+import type { MaybeNull } from '../../../types/utils';
+import type { LoginItemPreview } from '../../../types/worker/data';
 import { intoLoginItemPreview } from '../../items/item.utils';
 import type { ImportPayload, ImportProvider } from '../types';
 

@@ -1,6 +1,6 @@
 import type { Action } from 'redux';
 
-import type { ClientEndpoint, TabId } from '../../../types';
+import type { ClientEndpoint, TabId } from '../../../types/worker/runtime';
 import { type WithMeta, withMetaFactory } from './meta';
 
 export type EndpointOptions = { endpoint?: ClientEndpoint; tabId?: TabId };

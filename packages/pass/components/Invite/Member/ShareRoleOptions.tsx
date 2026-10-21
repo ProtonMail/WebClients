@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { AccessTarget } from '../../../lib/access/types';
-import { ShareRole } from '../../../types';
+import { ShareRole } from '../../../types/data/shares';
 import type { InviteLabels } from '../useInviteLabels';
 
 export const getShareRoleDefinition = (

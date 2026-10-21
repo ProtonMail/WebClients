@@ -8,8 +8,8 @@ import { IcPaperPlane } from '@proton/icons/icons/IcPaperPlane';
 import clsx from '@proton/utils/clsx';
 
 import { useRequest } from '../../../../hooks/useRequest';
-import { aliasBlockContact, aliasDeleteContact } from '../../../../store/actions';
-import type { AliasContactWithStatsGetResponse } from '../../../../types';
+import { aliasBlockContact, aliasDeleteContact } from '../../../../store/actions/creators/alias';
+import type { AliasContactWithStatsGetResponse } from '../../../../types/api/pass';
 import { epochToRelativeDuration } from '../../../../utils/time/format';
 import { usePassCore } from '../../../Core/PassCoreProvider';
 import { FieldBox } from '../../../Form/Field/Layout/FieldBox';

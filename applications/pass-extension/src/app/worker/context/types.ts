@@ -4,7 +4,7 @@ import type { PassCoreProxy } from '@proton/pass/lib/core/core.types';
 import type { MonitorService } from '@proton/pass/lib/monitor/service';
 import type { NativeMessagingService } from '@proton/pass/lib/native-messaging/native-messaging.extension';
 import type { ConnectivityService } from '@proton/pass/lib/network/connectivity.service';
-import type { MaybeNull } from '@proton/pass/types/utils/index';
+import type { MaybeNull } from '@proton/pass/types/utils';
 import type { AppState, AppStatus } from '@proton/pass/types/worker/state';
 
 import type { ActivationService } from '../services/activation';

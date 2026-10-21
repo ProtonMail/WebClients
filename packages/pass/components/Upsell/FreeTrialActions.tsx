@@ -6,7 +6,7 @@ import { c, msgid } from 'ttag';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 
 import { PASS_BLOG_TRIAL_URL } from '../../constants';
-import { selectTrialDaysRemaining } from '../../store/selectors';
+import { selectTrialDaysRemaining } from '../../store/selectors/user';
 import { usePassCore } from '../Core/PassCoreProvider';
 
 export const FreeTrialActions: FC = () => {

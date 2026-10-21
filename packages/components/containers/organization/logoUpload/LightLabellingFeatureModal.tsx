@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { FeatureCode, useFeature } from '@proton/features';
+import { FeatureCode } from '@proton/features/interface';
+import useFeature from '@proton/features/useFeature';
 import illustration from '@proton/styles/assets/img/illustrations/light-labelling-feature-modal.svg';
 
 import SettingsLink from '../../../components/link/SettingsLink';

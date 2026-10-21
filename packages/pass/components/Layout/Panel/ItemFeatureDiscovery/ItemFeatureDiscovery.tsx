@@ -1,6 +1,6 @@
 import { type ComponentType, memo } from 'react';
 
-import type { ItemType } from '../../../../types';
+import type { ItemType } from '../../../../types/protobuf';
 import { FileAttachmentsDiscovery } from './FileAttachmentsDiscovery';
 
 type FeatureDiscovery = { component: ComponentType; types: ItemType[] };

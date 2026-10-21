@@ -1,4 +1,4 @@
-import type { MaybeNull } from '../../types';
+import type { MaybeNull } from '../../types/utils';
 
 const getZIndex = (el: HTMLElement, styles?: CSSStyleDeclaration): number => {
     const { zIndex } = styles ?? getComputedStyle(el);

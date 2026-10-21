@@ -12,7 +12,7 @@ import type {
     PauseListEntryDeleteDTO,
     PauseListEntryUpdateDTO,
 } from '../../../../lib/organization/types';
-import type { OrganizationUrlPauseEntryDto } from '../../../../types';
+import type { OrganizationUrlPauseEntryDto } from '../../../../types/api/pass';
 import { PauseListTable } from './PauseListTable';
 
 export const PauseList: FC<{ upgradeRequired: boolean }> = ({ upgradeRequired }) => {

@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { IcArrowsCross } from '@proton/icons/icons/IcArrowsCross';
 import { IcDots } from '@proton/icons/icons/IcDots';
 import { orderFolders, updateLabel } from '@proton/shared/lib/api/labels';

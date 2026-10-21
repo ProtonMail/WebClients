@@ -1,7 +1,7 @@
 import type { Reducer } from 'redux';
 
 import { MAX_PASSWORD_HISTORY_RETENTION_WEEKS } from '../../constants';
-import type { MaybeNull } from '../../types';
+import type { MaybeNull } from '../../types/utils';
 import { UNIX_WEEK } from '../../utils/time/constants';
 import { getEpoch } from '../../utils/time/epoch';
 import { passwordDelete, passwordHistoryClear, passwordHistoryGarbageCollect, passwordSave } from '../actions/creators/password';

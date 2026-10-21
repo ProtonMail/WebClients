@@ -1,4 +1,4 @@
-import { FeatureCode } from '@proton/features';
+import { FeatureCode } from '@proton/features/interface';
 
 import { getFeatureCode, isAccountOlderThanMinimum } from './helpers';
 import { NPSApplication } from './interface';

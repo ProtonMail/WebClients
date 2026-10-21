@@ -7,7 +7,8 @@ import {
     selectHasSentinelOrTFACardToDisplay,
 } from '@proton/account';
 import { useApi } from '@proton/app-context/useApi';
-import { FeatureCode, useFeature } from '@proton/features';
+import { FeatureCode } from '@proton/features/interface';
+import useFeature from '@proton/features/useFeature';
 import { IcMobile } from '@proton/icons/icons/IcMobile';
 import { IcSpeechBubble } from '@proton/icons/icons/IcSpeechBubble';
 import { IcStorage } from '@proton/icons/icons/IcStorage';

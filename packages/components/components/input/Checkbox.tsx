@@ -1,7 +1,7 @@
 import type { InputHTMLAttributes, LabelHTMLAttributes, Ref } from 'react';
 import { forwardRef, useEffect, useRef } from 'react';
 
-import { useCombinedRefs } from '@proton/hooks';
+import useCombinedRefs from '@proton/hooks/useCombinedRefs';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcMinus } from '@proton/icons/icons/IcMinus';
 import clsx from '@proton/utils/clsx';

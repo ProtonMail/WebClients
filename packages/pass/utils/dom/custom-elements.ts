@@ -1,4 +1,4 @@
-import type { Maybe } from '../../types';
+import type { Maybe } from '../../types/utils';
 import { safeCall } from '../fp/safe-call';
 
 /** Traverses up the DOM to find the nearest slot element

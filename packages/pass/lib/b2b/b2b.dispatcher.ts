@@ -1,5 +1,5 @@
-import type { AnyStorage } from '../../types';
 import type { B2BEvent } from '../../types/data/b2b';
+import type { AnyStorage } from '../../types/worker/storage';
 import type { EventDispatcher } from '../../utils/event/dispatcher';
 import { createEventDispatcher } from '../../utils/event/dispatcher';
 import type { AbstractAlarm } from '../../utils/time/alarm';

@@ -7,7 +7,8 @@ import { IcLock } from '@proton/icons/icons/IcLock';
 import { IcTextAlignLeft } from '@proton/icons/icons/IcTextAlignLeft';
 import noop from '@proton/utils/noop';
 
-import type { DeobfuscatedItemExtraField, ExtraFieldType } from '../../../../types';
+import type { DeobfuscatedItemExtraField } from '../../../../types/data/items';
+import type { ExtraFieldType } from '../../../../types/protobuf';
 
 export const createExtraField = <T extends ExtraFieldType>(type: T): DeobfuscatedItemExtraField => {
     switch (type) {

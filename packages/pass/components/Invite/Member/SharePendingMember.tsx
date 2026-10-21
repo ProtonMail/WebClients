@@ -16,8 +16,8 @@ import {
     inviteResendIntent,
     newUserInvitePromoteIntent,
     newUserInviteRemoveIntent,
-} from '../../../store/actions';
-import { NewUserInviteState } from '../../../types';
+} from '../../../store/actions/creators/invite';
+import { NewUserInviteState } from '../../../types/data/invites';
 import { useMaybeGroup } from '../../Groups/GroupsProvider';
 import { MaybeGroupName } from '../../Groups/MaybeGroupName';
 import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';

@@ -1,6 +1,6 @@
 import { uniqueId } from '../../utils/string/unique-id';
 import { createTestItem } from '../../utils/tests/fixtures/items';
-import { folderDelete } from '../actions';
+import { folderDelete } from '../actions/creators/folders';
 import itemsReducer, { updateItem, updateItems, withOptimisticItemsByShareId } from './items';
 
 const slice = withOptimisticItemsByShareId.reducer(undefined, { type: '__TEST__' });

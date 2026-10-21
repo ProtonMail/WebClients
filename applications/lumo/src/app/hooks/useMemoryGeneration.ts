@@ -1,7 +1,7 @@
 import { useCallback, useMemo, useRef, useState } from 'react';
 
 import { useApi } from '@proton/app-context/useApi';
-import { quickChat } from '@proton/lumo-api-client';
+import { quickChat } from '@proton/lumo-api-client/assistant';
 
 import { useLumoPlan } from '../hooks/useLumoPlan';
 import { useLumoSelector } from '../redux/hooks';

@@ -1,7 +1,8 @@
 import { FormType } from '@protontech/autofill/types';
 
-import type { AutosaveFormEntry, FormCredentials, FormEntry } from '@proton/pass/types';
-import { AutosaveMode, FormEntryStatus } from '@proton/pass/types';
+import { AutosaveMode } from '@proton/pass/types/worker/autosave';
+import type { AutosaveFormEntry, FormCredentials, FormEntry } from '@proton/pass/types/worker/form';
+import { FormEntryStatus } from '@proton/pass/types/worker/form';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
 import { isFormEntryCommitted, isFormEntryPromptable, setFormEntryStatus, validateFormCredentials } from './form-entry';

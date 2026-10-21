@@ -5,7 +5,7 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import useEventManager from '@proton/components/hooks/useEventManager';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { IcBell } from '@proton/icons/icons/IcBell';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import type { MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';

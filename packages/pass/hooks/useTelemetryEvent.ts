@@ -5,7 +5,7 @@ import noop from '@proton/utils/noop';
 
 import { usePassCore } from '../components/Core/PassCoreProvider';
 import { isAutofillTargetMode } from '../lib/urls/utils/autofill';
-import type { Item } from '../types';
+import type { Item } from '../types/data/items';
 import type {
     ExtensionCopiedFromLoginDimensions,
     TelemetryEvent,

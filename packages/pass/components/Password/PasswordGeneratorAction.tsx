@@ -4,7 +4,7 @@ import { type FC, createContext } from 'react';
 import type { UseAsyncModalHandle } from '../../hooks/useAsyncModalHandles';
 import { useAsyncModalHandles } from '../../hooks/useAsyncModalHandles';
 import { createUseContext } from '../../hooks/useContextFactory';
-import type { MaybeNull } from '../../types';
+import type { MaybeNull } from '../../types/utils';
 import type { PasswordGeneratorModalState } from './PasswordGeneratorModal';
 import { PasswordGeneratorModal } from './PasswordGeneratorModal';
 

@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import { fetchPreviousSubscription } from '@proton/payments/core/api/api';
 import type { PreviousSubscription } from '@proton/payments/core/interface';
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
 import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
 import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';

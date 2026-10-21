@@ -1,6 +1,6 @@
 import { parse } from 'tldts';
 
-import type { MaybeNull } from '../../../types';
+import type { MaybeNull } from '../../../types/utils';
 import type { ParsedUrl } from '../types';
 import { sanitizeURL } from './sanitize';
 

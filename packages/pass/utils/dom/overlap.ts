@@ -1,4 +1,4 @@
-import type { MaybeNull } from '../../types';
+import type { MaybeNull } from '../../types/utils';
 import type { Rect, RectOffset } from '../../types/utils/dom';
 
 const rectOffset = (rect: Rect, offset: RectOffset): Rect => ({

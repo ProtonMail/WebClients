@@ -15,8 +15,8 @@ import type { MonitorTableRow } from '../../../../hooks/monitor/useBreachesTable
 import { useRequest } from '../../../../hooks/useRequest';
 import { getAddressId, intoCustomMonitorAddress } from '../../../../lib/monitor/monitor.utils';
 import { AddressType } from '../../../../lib/monitor/types';
-import { addCustomAddress, deleteCustomAddress } from '../../../../store/actions';
-import { selectRequestInFlight } from '../../../../store/selectors';
+import { addCustomAddress, deleteCustomAddress } from '../../../../store/actions/creators/monitor';
+import { selectRequestInFlight } from '../../../../store/request/selectors';
 import { TelemetryEventName } from '../../../../types/data/telemetry';
 import { usePassCore } from '../../../Core/PassCoreProvider';
 import { DropdownMenuButton } from '../../../Layout/Dropdown/DropdownMenuButton';

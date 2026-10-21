@@ -2,10 +2,12 @@ import { put, select, takeEvery } from 'redux-saga/effects';
 
 import { PassCrypto } from '../../../lib/crypto';
 import { deleteVault } from '../../../lib/vaults/vault.requests';
-import type { Maybe } from '../../../types';
-import { getUserAccessIntent, lockShare, unlockShare, vaultDeleteFailure, vaultDeleteIntent, vaultDeleteSuccess } from '../../actions';
+import type { Maybe } from '../../../types/utils';
+import { getUserAccessIntent } from '../../actions/creators/user';
+import { lockShare, unlockShare, vaultDeleteFailure, vaultDeleteIntent, vaultDeleteSuccess } from '../../actions/creators/vault';
 import { withRevalidate } from '../../request/enhancers';
-import { isShareLocked, selectUserDefaultShareID } from '../../selectors';
+import { isShareLocked } from '../../selectors/shares';
+import { selectUserDefaultShareID } from '../../selectors/user';
 import type { RootSagaOptions } from '../../types';
 
 function* deleteVaultWorker(

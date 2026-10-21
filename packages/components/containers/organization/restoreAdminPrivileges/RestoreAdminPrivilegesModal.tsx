@@ -7,7 +7,7 @@ import { OutgoingDelegatedAccessProvider } from '@proton/account/delegatedAccess
 import { selectOrganizationKeyResetState } from '@proton/account/organizationKey/resetOrganizationKey';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { getMemberHasOrgKeyResetPrivatization } from '@proton/shared/lib/keys/memberHelper';
 import noop from '@proton/utils/noop';

@@ -3,7 +3,7 @@ import { type FC, createContext, useMemo } from 'react';
 import { matchPath, useLocation, useRouteMatch } from 'react-router-dom';
 
 import { createUseContext } from '../../hooks/useContextFactory';
-import type { Maybe, MaybeNull } from '../../types';
+import type { Maybe, MaybeNull } from '../../types/utils';
 import type { ItemScope } from './routing';
 import { ItemScopes, getLocalPath } from './routing';
 

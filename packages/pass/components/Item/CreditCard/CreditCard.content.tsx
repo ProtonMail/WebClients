@@ -13,7 +13,7 @@ import { IcUser } from '@proton/icons/icons/IcUser';
 import { UpsellRef } from '../../../constants';
 import { usePartialDeobfuscatedItem } from '../../../hooks/useDeobfuscatedItem';
 import { useFeatureFlag } from '../../../hooks/useFeatureFlag';
-import { selectPassPlan } from '../../../store/selectors';
+import { selectPassPlan } from '../../../store/selectors/user';
 import { PassFeature } from '../../../types/api/features';
 import { UserPassPlan } from '../../../types/api/plan';
 import { deobfuscateCCField } from '../../../utils/obfuscate/xor';

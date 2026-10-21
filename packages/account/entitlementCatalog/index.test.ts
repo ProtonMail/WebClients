@@ -6,7 +6,7 @@ import {
     EntitlementScope,
     EntitlementType,
 } from '@proton/payments/core/entitlements/interface';
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { getTestStore } from '@proton/redux-shared-store/test';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { DAY, HOUR } from '@proton/shared/lib/constants';

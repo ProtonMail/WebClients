@@ -1,15 +1,15 @@
 import type { Runtime } from 'webextension-polyfill';
 
 import { PASS_DESKTOP_NATIVE_MESSAGE_KEY, PASS_DESKTOP_NATIVE_MESSAGE_TIMEOUT } from '../../constants';
-import { NativeMessageErrorType } from '../../types';
+import { NativeMessageErrorType } from '../../types/desktop/extension-unlock-with-desktop';
 import type {
-    MaybeNull,
     NativeMessage,
     NativeMessagePayload,
     NativeMessageRequest,
     NativeMessageResponseForRequest,
     SendNativeMessageRequest,
-} from '../../types';
+} from '../../types/desktop/extension-unlock-with-desktop';
+import type { MaybeNull } from '../../types/utils';
 import { logger } from '../../utils/logger';
 import { uniqueId } from '../../utils/string/unique-id';
 import browser from '../globals/browser';

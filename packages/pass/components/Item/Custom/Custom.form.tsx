@@ -6,7 +6,10 @@ import { c } from 'ttag';
 import { IcNote } from '@proton/icons/icons/IcNote';
 
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../../../constants';
-import type { CustomItemFormValues, ItemRevision, ItemType, MaybeNull } from '../../../types';
+import type { ItemRevision } from '../../../types/data/items';
+import type { CustomItemFormValues } from '../../../types/forms/item';
+import type { ItemType } from '../../../types/protobuf';
+import type { MaybeNull } from '../../../types/utils';
 import { FileAttachmentsField } from '../../FileAttachments/FileAttachmentsField';
 import { FileAttachmentsFieldEdit } from '../../FileAttachments/FileAttachmentsFieldEdit';
 import { ExtraFieldGroup } from '../../Form/Field/ExtraFieldGroup/ExtraFieldGroup';

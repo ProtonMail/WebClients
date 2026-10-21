@@ -5,7 +5,7 @@ import { c, msgid } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import type { ButtonProps } from '@proton/atoms/Button/Button';
-import { useCombinedRefs } from '@proton/hooks';
+import useCombinedRefs from '@proton/hooks/useCombinedRefs';
 import { KEY_FILE_EXTENSION } from '@proton/shared/lib/constants';
 import { readFileAsString } from '@proton/shared/lib/helpers/file';
 import type { KeyWithRecoverySecret } from '@proton/shared/lib/interfaces/Key';

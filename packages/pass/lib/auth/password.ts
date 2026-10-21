@@ -4,7 +4,7 @@ import { queryUnlock } from '@proton/shared/lib/api/user';
 import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { srpAuth, srpGetVerify } from '@proton/shared/lib/srp';
 
-import { PassEncryptionTag } from '../../types';
+import { PassEncryptionTag } from '../../types/crypto/pass-types';
 import type { XorObfuscation } from '../../utils/obfuscate/xor';
 import { api } from '../api/api';
 import { type OfflineComponents, getOfflineKeyDerivation } from '../cache/crypto';

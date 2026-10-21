@@ -13,44 +13,30 @@ import { importItemsBatch } from '../../../lib/items/item.requests';
 import { createTelemetryEvent } from '../../../lib/telemetry/utils';
 import { isAutofillModeDataOfTypeUrl, uniqueAutofillUrls } from '../../../lib/urls/utils/autofill';
 import { isPaidPlan } from '../../../lib/user/user.predicates';
-import type {
-    FolderData,
-    IndexedByShareIdAndItemId,
-    ItemImportIntent,
-    ItemRevision,
-    LoginItemPreview,
-    Maybe,
-    MaybeNull,
-    PassPlanResponse,
-} from '../../../types';
 import { PassFeature } from '../../../types/api/features';
+import type { PassPlanResponse } from '../../../types/api/pass';
 import type { UserPassPlan } from '../../../types/api/plan';
+import type { FolderData } from '../../../types/data/folders';
+import type { IndexedByShareIdAndItemId, ItemRevision } from '../../../types/data/items';
+import type { ItemImportIntent } from '../../../types/data/items.dto';
 import { TelemetryEventName } from '../../../types/data/telemetry';
 import { AutofillMode } from '../../../types/protobuf';
+import type { Maybe, MaybeNull } from '../../../types/utils';
+import type { LoginItemPreview } from '../../../types/worker/data';
 import { groupByKey } from '../../../utils/array/group-by-key';
 import { getErrorMessage } from '../../../utils/errors/get-error-message';
 import { prop } from '../../../utils/fp/lens';
 import { logger } from '../../../utils/logger';
 import { getEpoch } from '../../../utils/time/epoch';
-import {
-    foldersUpdated,
-    importItems,
-    importItemsProgress,
-    notification,
-    startEventPolling,
-    stopEventPolling,
-    vaultCreationIntent,
-} from '../../actions';
+import { startEventPolling, stopEventPolling } from '../../actions/creators/client';
+import { foldersUpdated } from '../../actions/creators/folders';
+import { importItems, importItemsProgress } from '../../actions/creators/import';
+import { notification } from '../../actions/creators/notification';
+import { vaultCreationIntent } from '../../actions/creators/vault';
 import type { WithSenderAction } from '../../actions/enhancers/endpoint';
 import { matchCancel } from '../../request/actions';
-import {
-    selectFeatureFlag,
-    selectFolderLimits,
-    selectPassPlan,
-    selectShareFolders,
-    selectUserFolderAllowed,
-    selectUserPlan,
-} from '../../selectors';
+import { selectFolderLimits, selectShareFolders } from '../../selectors/folders';
+import { selectFeatureFlag, selectPassPlan, selectUserFolderAllowed, selectUserPlan } from '../../selectors/user';
 import type { RootSagaOptions } from '../../types';
 import { createFolderWorker } from '../folders/folders.saga';
 import { createVaultWorker } from '../vaults/vault-creation.saga';

@@ -1,7 +1,7 @@
 import { createSelector } from '@reduxjs/toolkit';
 
 import { sortItems } from '../../lib/items/item.utils';
-import { PlanType } from '../../types';
+import { PlanType } from '../../types/api/pass';
 import { selectAllAliasItems, selectAllLoginItems } from './items';
 import { selectAllVaults } from './shares';
 import { selectUserPlan } from './user';

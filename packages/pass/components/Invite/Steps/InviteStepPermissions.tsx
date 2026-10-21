@@ -4,7 +4,8 @@ import type { List } from 'react-virtualized';
 import { c } from 'ttag';
 
 import type { AccessTarget } from '../../../lib/access/types';
-import type { InviteFormMemberItem, InviteFormStep, ShareRole } from '../../../types';
+import type { ShareRole } from '../../../types/data/shares';
+import type { InviteFormMemberItem, InviteFormStep } from '../../../types/forms/invite';
 import { VirtualList } from '../../Layout/List/VirtualList';
 import { AccessRoleToggle } from '../Access/AccessRoleToggle';
 import { InviteMember } from './InviteMember';

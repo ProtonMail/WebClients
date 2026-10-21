@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
-import type { DeobfuscatedItemExtraField, IdentityFieldName, ItemContent, Maybe } from '../../../../types';
+import type { DeobfuscatedItemExtraField, ItemContent } from '../../../../types/data/items';
+import type { IdentityFieldName } from '../../../../types/forms/item';
+import type { Maybe } from '../../../../types/utils';
 import { truthy } from '../../../../utils/fp/predicates';
 import { itemBuilder } from '../../../items/item.builder';
 import type { LastPassItem } from './lastpass.types';

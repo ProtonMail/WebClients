@@ -17,8 +17,9 @@ import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
 import { IcPassHome } from '@proton/icons/icons/IcPassHome';
 
 import { useRequest } from '../../../../hooks/useRequest';
-import { aliasSyncEnable } from '../../../../store/actions';
-import { selectDefaultVault, selectWritableVaults } from '../../../../store/selectors';
+import { aliasSyncEnable } from '../../../../store/actions/creators/alias';
+import { selectWritableVaults } from '../../../../store/selectors/shares';
+import { selectDefaultVault } from '../../../../store/selectors/vaults';
 import { truthy } from '../../../../utils/fp/predicates';
 import { VAULT_ICON_MAP } from '../../../Vault/constants';
 

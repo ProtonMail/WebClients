@@ -1,4 +1,4 @@
-import type { MaybeNull, Result } from '../../types';
+import type { MaybeNull, Result } from '../../types/utils';
 import { throwError } from '../../utils/fp/throw';
 import { waitUntil } from '../../utils/fp/wait-until';
 import { logger } from '../../utils/logger';

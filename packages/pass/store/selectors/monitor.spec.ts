@@ -3,9 +3,10 @@ import uniqueId from 'lodash/uniqueId';
 import { itemBuilder } from '../../lib/items/item.builder';
 import { getItemKey } from '../../lib/items/item.utils';
 import type { CompromisedPasswordEntry } from '../../lib/monitor/types';
-import type { ItemRevision } from '../../types';
-import { ContentFormatVersion, ItemState } from '../../types';
 import { PassFeature } from '../../types/api/features';
+import { ContentFormatVersion } from '../../types/crypto/pass-types';
+import type { ItemRevision } from '../../types/data/items';
+import { ItemState } from '../../types/data/items';
 import type { State } from '../types';
 import { selectCompromisedPasswordsReportCount } from './monitor';
 

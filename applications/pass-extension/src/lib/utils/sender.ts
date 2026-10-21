@@ -3,7 +3,8 @@ import type { Runtime } from 'webextension-polyfill';
 import browser from '@proton/pass/lib/globals/browser';
 import type { ParsedUrl } from '@proton/pass/lib/urls/types';
 import { parseUrl } from '@proton/pass/lib/urls/utils/parser';
-import type { FrameId, Maybe, RequiredNonNull, TabId } from '@proton/pass/types';
+import type { Maybe, RequiredNonNull } from '@proton/pass/types/utils';
+import type { FrameId, TabId } from '@proton/pass/types/worker/runtime';
 
 export type ParsedSenderUrl = RequiredNonNull<ParsedUrl, 'domain' | 'protocol'>;
 export type ParsedSender = { tabId: TabId; url: ParsedSenderUrl; frameId: FrameId; href: string };

@@ -13,12 +13,9 @@ import { useConfirm } from '../../../hooks/useConfirm';
 import { useActionRequest } from '../../../hooks/useRequest';
 import type { AccessDTO } from '../../../lib/access/types';
 import { AccessTarget } from '../../../lib/access/types';
-import {
-    shareEditMemberAccessIntent,
-    shareRemoveMemberAccessIntent,
-    vaultTransferOwnerIntent,
-} from '../../../store/actions';
-import { ShareRole } from '../../../types';
+import { shareEditMemberAccessIntent, shareRemoveMemberAccessIntent } from '../../../store/actions/creators/access';
+import { vaultTransferOwnerIntent } from '../../../store/actions/creators/vault';
+import { ShareRole } from '../../../types/data/shares';
 import { ConfirmationModal } from '../../Confirmation/ConfirmationModal';
 import { useMaybeGroup } from '../../Groups/GroupsProvider';
 import { MaybeGroupName } from '../../Groups/MaybeGroupName';

@@ -1,7 +1,9 @@
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import noop from '@proton/utils/noop';
 
-import type { ItemRevision, Api as PassApi, Share, ShareType } from '../../types';
+import type { Api as PassApi } from '../../types/api/api';
+import type { ItemRevision } from '../../types/data/items';
+import type { Share, ShareType } from '../../types/data/shares';
 import { first } from '../../utils/array/first';
 import { prop } from '../../utils/fp/lens';
 import { maxAgeMemoize } from '../../utils/fp/memo';

@@ -7,8 +7,11 @@ import noop from '@proton/utils/noop';
 
 import { useMemoSelector } from '../../../hooks/useMemoSelector';
 import { isAliasItem } from '../../../lib/items/item.predicates';
-import { selectFolder, selectItemSecureLinks, selectItemShared } from '../../../store/selectors';
-import type { ItemMoveIntent, ItemRevision } from '../../../types';
+import { selectFolder } from '../../../store/selectors/folders';
+import { selectItemSecureLinks } from '../../../store/selectors/secure-links';
+import { selectItemShared } from '../../../store/selectors/shared';
+import type { ItemRevision } from '../../../types/data/items';
+import type { ItemMoveIntent } from '../../../types/data/items.dto';
 import { ConfirmationPrompt, type ConfirmationPromptHandles } from '../../Confirmation/ConfirmationPrompt';
 import { WithVault } from '../../Vault/WithVault';
 import { ConfirmDeleteAlias } from './ConfirmAliasActions';

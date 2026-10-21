@@ -1,4 +1,4 @@
-import type { Maybe } from '../../types';
+import type { Maybe } from '../../types/utils';
 import { WASM_WORKER_READY_EVENT } from './constants';
 import { wasmWorkerServiceFactory } from './wasm.worker.service';
 

@@ -2,8 +2,9 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/app-context/useApi';
-import { FeatureCode, useFeature } from '@proton/features';
-import { useLoading } from '@proton/hooks';
+import { FeatureCode } from '@proton/features/interface';
+import useFeature from '@proton/features/useFeature';
+import useLoading from '@proton/hooks/useLoading';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';

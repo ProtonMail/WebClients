@@ -1,17 +1,14 @@
 import { omit } from '@proton/shared/lib/helpers/object';
 
-import type {
-    DeobfuscatedItem,
-    DeobfuscatedItemExtraField,
-    ExtraField,
-    Item,
-    ItemRevision,
-    OpenedItem,
-    SafeProtobufExtraField,
-    SafeProtobufItem,
-} from '../../types';
-import { ProtobufItem } from '../../types';
-import { AutofillMode } from '../../types/protobuf';
+import type { OpenedItem } from '../../types/crypto/pass-types';
+import type { DeobfuscatedItem, DeobfuscatedItemExtraField, Item, ItemRevision } from '../../types/data/items';
+import {
+    AutofillMode,
+    type ExtraField,
+    ProtobufItem,
+    type SafeProtobufExtraField,
+    type SafeProtobufItem,
+} from '../../types/protobuf';
 import { Timestamp } from '../../types/protobuf/google/protobuf/timestamp';
 import type {
     CustomSection,

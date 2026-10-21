@@ -1,6 +1,10 @@
 import { serverTime as getServerTime, updateServerTime } from '@protontech/crypto';
 
-import { type NativeMessage, NativeMessageErrorType, type NativeMessagePayload } from '../../types';
+import {
+    type NativeMessage,
+    NativeMessageErrorType,
+    type NativeMessagePayload,
+} from '../../types/desktop/extension-unlock-with-desktop';
 import { PassCrypto } from '../crypto';
 import { NativeMessageError } from './errors';
 

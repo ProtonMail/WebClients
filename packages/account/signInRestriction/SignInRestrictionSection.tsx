@@ -9,7 +9,7 @@ import SettingsLayoutRight from '@proton/components/containers/account/SettingsL
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateSignInRestriction } from '@proton/shared/lib/api/settings';
 import {

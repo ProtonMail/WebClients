@@ -1,5 +1,8 @@
-import type { TabId } from '../../types';
-import { checkCompromisedPasswords, exportData, fileDownload, fileUploadChunk, importItems } from '../actions';
+import type { TabId } from '../../types/worker/runtime';
+import { exportData } from '../actions/creators/export';
+import { fileDownload, fileUploadChunk } from '../actions/creators/files';
+import { importItems } from '../actions/creators/import';
+import { checkCompromisedPasswords } from '../actions/creators/monitor';
 import type { State } from '../types';
 
 const matchesTabRequest =

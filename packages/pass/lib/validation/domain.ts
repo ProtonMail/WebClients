@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import { validateDomain } from '@proton/shared/lib/helpers/email';
 
-import type { DomainFormValues } from '../../types/forms';
+import type { DomainFormValues } from '../../types/forms/item';
 import { isEmptyString } from '../../utils/string/is-empty-string';
 
 export const validateAliasDomain = ({ domain }: DomainFormValues): FormikErrors<DomainFormValues> => {

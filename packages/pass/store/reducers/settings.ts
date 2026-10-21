@@ -9,23 +9,17 @@ import type { OfflinePromptSettings } from '../../lib/settings/offline-prompt';
 import type { DomainCriterias } from '../../lib/settings/pause-list';
 import { toggleCriteria } from '../../lib/settings/pause-list';
 import { SyncStrategy } from '../../lib/sync/types';
-import type { MaybeNull, Unpack } from '../../types';
+import type { MaybeNull, Unpack } from '../../types/utils';
 import type { AutoFillSettings, AutoSaveSettings, AutoSuggestSettings, PasskeySettings } from '../../types/worker/settings';
 import { or } from '../../utils/fp/predicates';
 import { partialMerge } from '../../utils/object/merge';
-import {
-    coreEvent,
-    extraPasswordToggle,
-    itemCreate,
-    lockCreateSuccess,
-    lockSync,
-    offlineSetup,
-    settingsEditSuccess,
-    syncMigration,
-    updatePauseListItem,
-} from '../actions';
+import { coreEvent } from '../actions/creators/api';
+import { extraPasswordToggle, lockCreateSuccess, lockSync } from '../actions/creators/auth';
+import { syncMigration } from '../actions/creators/client';
+import { itemCreate } from '../actions/creators/item';
 import { getOrganizationPauseList } from '../actions/creators/organization';
 import { passwordOptionsEdit } from '../actions/creators/password';
+import { offlineSetup, settingsEditSuccess, updatePauseListItem } from '../actions/creators/settings';
 
 export type SettingsState = {
     aliasTrashAcknowledged?: boolean;

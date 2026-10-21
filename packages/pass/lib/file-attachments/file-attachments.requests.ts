@@ -3,21 +3,15 @@ import chunk from '@proton/utils/chunk';
 import { FILE_DOWNLOAD_TIMEOUT, FILE_UPLOAD_TIMEOUT } from '../../constants';
 import type {
     CreatePendingFileRequest,
-    FileDownloadChunk,
-    FileDownloadPublicChunk,
-    FileID,
-    FileRestoreDTO,
     ItemFileOutput,
-    ItemKey,
-    ItemRevision,
     ItemRevisionContentsResponse,
-    ItemRevisionLinkFiles,
-    ItemType,
     LinkFileToItemInput,
-    SecureLinkItem,
-    SelectedItem,
-    UniqueItem,
-} from '../../types';
+} from '../../types/api/pass';
+import type { ItemKey } from '../../types/crypto/pass-types';
+import type { FileDownloadChunk, FileDownloadPublicChunk, FileID, FileRestoreDTO } from '../../types/data/files';
+import type { ItemRevision, SelectedItem, UniqueItem } from '../../types/data/items';
+import type { ItemRevisionLinkFiles, SecureLinkItem } from '../../types/data/items.dto';
+import type { ItemType } from '../../types/protobuf';
 import { api } from '../api/api';
 import { createPageIterator } from '../api/utils';
 import { PassCrypto } from '../crypto';

@@ -4,15 +4,9 @@ import { toShareAccessKey } from '../../lib/access/access.utils';
 import type { AccessItem } from '../../lib/access/types';
 import type { Maybe } from '../../types/utils';
 import { partialMerge } from '../../utils/object/merge';
-import {
-    getShareAccessOptions,
-    inviteRemoveSuccess,
-    newUserInvitePromoteSuccess,
-    newUserInviteRemoveSuccess,
-    shareEditMemberAccessSuccess,
-    shareRemoveMemberAccessSuccess,
-    vaultTransferOwnershipSuccess,
-} from '../actions';
+import { getShareAccessOptions, shareEditMemberAccessSuccess, shareRemoveMemberAccessSuccess } from '../actions/creators/access';
+import { inviteRemoveSuccess, newUserInvitePromoteSuccess, newUserInviteRemoveSuccess } from '../actions/creators/invite';
+import { vaultTransferOwnershipSuccess } from '../actions/creators/vault';
 
 export type AccessState = { [accessKey: string]: Maybe<AccessItem> };
 

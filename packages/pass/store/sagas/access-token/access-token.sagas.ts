@@ -20,7 +20,8 @@ import type {
 } from '../../../lib/access-token/access-token.types';
 import { buildAccessTokenEnvVar } from '../../../lib/access-token/access-token.utils';
 import { PassCrypto } from '../../../lib/crypto';
-import type { Maybe, PersonalAccessTokenShareResponse } from '../../../types';
+import type { PersonalAccessTokenShareResponse } from '../../../types/api/pass';
+import type { Maybe } from '../../../types/utils';
 import { prop } from '../../../utils/fp/lens';
 import { logger } from '../../../utils/logger';
 import {
@@ -31,7 +32,7 @@ import {
     getAccessTokens,
     getAgentInstructions,
     updateAccessTokenAccess,
-} from '../../actions';
+} from '../../actions/creators/access-token';
 import { createRequestSaga } from '../../request/sagas';
 import { selectAccessTokenById, selectAccessTokenGrants } from '../../selectors/access-token';
 

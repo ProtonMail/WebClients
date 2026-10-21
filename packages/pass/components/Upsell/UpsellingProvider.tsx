@@ -3,7 +3,7 @@ import { createContext, useState } from 'react';
 
 import type { UpsellRef } from '../../constants';
 import { createUseContext } from '../../hooks/useContextFactory';
-import type { MaybeNull } from '../../types';
+import type { MaybeNull } from '../../types/utils';
 import type { UpsellType } from './UpsellingModal';
 import { UpsellingModal } from './UpsellingModal';
 

@@ -12,7 +12,8 @@ import { initEvent, serverEvent, userSettingsThunk, userThunk, welcomeFlagsActio
 import { getDecryptedPersistedState } from '@proton/account/persist/helper';
 import type { NotificationsManager } from '@proton/app-context/notifications/manager';
 import { setupGuestCrossStorage } from '@proton/cross-storage/account/guest';
-import { FeatureCode, fetchFeatures } from '@proton/features/index';
+import { FeatureCode } from '@proton/features/interface';
+import { fetchFeatures } from '@proton/features/reducer';
 import { setMeetCoreErrorResolver } from '@proton/meet/hooks/useMeetErrorReporting';
 import { meetEventLoop } from '@proton/meet/store/meetEventLoop';
 import { userSettingsThunk as meetUserSettingsThunk } from '@proton/meet/store/slices/userSettings';

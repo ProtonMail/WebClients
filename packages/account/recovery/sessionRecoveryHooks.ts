@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { differenceInMilliseconds } from 'date-fns';
 
-import { useInterval } from '@proton/hooks';
+import useInterval from '@proton/hooks/useInterval';
 import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { DAY, HOUR, MINUTE, SECOND } from '@proton/shared/lib/constants';
 import { SessionRecoveryState } from '@proton/shared/lib/interfaces/User';

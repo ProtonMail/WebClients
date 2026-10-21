@@ -1,6 +1,6 @@
 import { put, select, take, takeEvery } from 'redux-saga/effects';
 
-import type { ItemRevision } from '../../../types';
+import type { ItemRevision } from '../../../types/data/items';
 import {
     lockShare,
     unlockShare,
@@ -8,8 +8,9 @@ import {
     vaultMoveAllItemsIntent,
     vaultMoveAllItemsProgress,
     vaultMoveAllItemsSuccess,
-} from '../../actions';
-import { isShareLocked, selectItemsInFolder } from '../../selectors';
+} from '../../actions/creators/vault';
+import { selectItemsInFolder } from '../../selectors/items';
+import { isShareLocked } from '../../selectors/shares';
 import { type BulkMoveItemsChannel, bulkMoveChannel } from '../items/item-bulk-move.saga';
 
 function* moveAllItemsWorker({ payload, meta }: ReturnType<typeof vaultMoveAllItemsIntent>) {

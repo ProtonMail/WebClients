@@ -1,5 +1,6 @@
 import type { InternalBookingPage } from '@proton/calendar/bookings/store/interface';
-import type { BookingLocation, BookingPageEditData, MinimumNoticeMode } from '@proton/calendar/bookings/types';
+import type { BookingLocation, BookingPageEditData } from '@proton/calendar/bookings/types';
+import type { MinimumNoticeMode } from '@proton/shared/lib/interfaces/calendar/Bookings';
 
 import type { LayoutEvent } from '../../components/calendar/layout';
 import type { CalendarViewEvent } from '../calendar/interface';

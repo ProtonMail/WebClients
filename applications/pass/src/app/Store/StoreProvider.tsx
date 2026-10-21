@@ -36,21 +36,18 @@ import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import { createMonitorReport } from '@proton/pass/lib/monitor/monitor.report';
 import { setVersionTag } from '@proton/pass/lib/settings/beta';
 import { createForceSyncStore, getForceSyncStorageKey } from '@proton/pass/lib/sync/force-sync';
-import { startEventPolling, stopEventPolling } from '@proton/pass/store/actions';
+import { startEventPolling, stopEventPolling } from '@proton/pass/store/actions/creators/client';
 import { sagaEvents } from '@proton/pass/store/events';
 import { cacheGuard } from '@proton/pass/store/migrate';
 import { rootSagaFactory } from '@proton/pass/store/sagas';
 import { DESKTOP_SAGAS } from '@proton/pass/store/sagas/desktop';
 import { WEB_SAGAS } from '@proton/pass/store/sagas/web';
-import {
-    selectB2BOnboardingEnabled,
-    selectFeatureFlag,
-    selectFilters,
-    selectLocale,
-    selectUserSettings,
-} from '@proton/pass/store/selectors';
-import { SpotlightMessage } from '@proton/pass/types';
+import { selectFilters } from '@proton/pass/store/selectors/filters';
+import { selectB2BOnboardingEnabled } from '@proton/pass/store/selectors/onboarding';
+import { selectLocale } from '@proton/pass/store/selectors/settings';
+import { selectFeatureFlag, selectUserSettings } from '@proton/pass/store/selectors/user';
 import { PassFeature } from '@proton/pass/types/api/features';
+import { SpotlightMessage } from '@proton/pass/types/worker/spotlight';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import noop from '@proton/utils/noop';
 import { semver } from '@proton/utils/semver';

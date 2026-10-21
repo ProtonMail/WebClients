@@ -1,4 +1,5 @@
-import type { Maybe, MaybeNull, OrganizationUrlPauseEntryDto } from '../../types';
+import type { OrganizationUrlPauseEntryDto } from '../../types/api/pass';
+import type { Maybe, MaybeNull } from '../../types/utils';
 import type { ParsedUrl } from '../urls/types';
 import { intoCleanHostname } from '../urls/utils/utils';
 

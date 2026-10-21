@@ -6,7 +6,7 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { deleteFilter, enableFilter } from '@proton/mail/store/filters/actions';
 import { FILTER_STATUS } from '@proton/shared/lib/constants';
 import { hasReachedFiltersLimit } from '@proton/shared/lib/helpers/filters';

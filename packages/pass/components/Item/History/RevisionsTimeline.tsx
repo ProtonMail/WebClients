@@ -16,8 +16,8 @@ import { IcPencil } from '@proton/icons/icons/IcPencil';
 
 import { useConfirm } from '../../../hooks/useConfirm';
 import { isShareWritable } from '../../../lib/shares/share.predicates';
-import { itemDeleteRevisions } from '../../../store/actions';
-import { selectShare } from '../../../store/selectors';
+import { itemDeleteRevisions } from '../../../store/actions/creators/item';
+import { selectShare } from '../../../store/selectors/shares';
 import { epochToRelativeDaysAgo } from '../../../utils/time/format';
 import { ConfirmationModal } from '../../Confirmation/ConfirmationModal';
 import { Card } from '../../Layout/Card/Card';

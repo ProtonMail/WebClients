@@ -1,7 +1,7 @@
 import { put, takeEvery } from 'redux-saga/effects';
 
 import { unpinItem } from '../../../lib/items/item.requests';
-import { itemUnpinFailure, itemUnpinIntent, itemUnpinSuccess } from '../../actions';
+import { itemUnpinFailure, itemUnpinIntent, itemUnpinSuccess } from '../../actions/creators/item';
 
 function* itemUnpinWorker({ payload, meta: { request } }: ReturnType<typeof itemUnpinIntent>) {
     try {

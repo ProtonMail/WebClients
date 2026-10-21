@@ -8,7 +8,7 @@ import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import { useFeatureFlag } from '../../../hooks/useFeatureFlag';
-import { selectAllVaults } from '../../../store/selectors';
+import { selectAllVaults } from '../../../store/selectors/shares';
 import { PassFeature } from '../../../types/api/features';
 import { pipe } from '../../../utils/fp/pipe';
 import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';

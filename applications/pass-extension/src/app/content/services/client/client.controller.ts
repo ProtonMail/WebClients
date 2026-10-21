@@ -8,8 +8,8 @@
 import type { DebouncedFunc } from 'lodash';
 import debounce from 'lodash/debounce';
 
+import type { Maybe, MaybeNull } from '@proton/pass/types/utils';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
-import type { Maybe, MaybeNull } from '@proton/pass/types/utils/index';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { safeAsyncCall } from '@proton/pass/utils/fp/safe-call';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';

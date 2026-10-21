@@ -1,4 +1,5 @@
-import type { ContextBridgeApi, Maybe } from '@proton/pass/types';
+import type { ContextBridgeApi } from '@proton/pass/types/desktop';
+import type { Maybe } from '@proton/pass/types/utils';
 import noop from '@proton/utils/noop';
 
 /** Every `localStorage` mutation schedules a disk flush (see `storage.flush.ts`). No-op on web. */

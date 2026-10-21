@@ -3,9 +3,10 @@ import { useSelector } from 'react-redux';
 
 import { useActivityProbe } from '../../hooks/useActivityProbe';
 import { useVisibleEffect } from '../../hooks/useVisibleEffect';
-import { offlineResume } from '../../store/actions';
-import { selectLockTTL, selectRequestInFlight } from '../../store/selectors';
-import type { Callback, MaybeNull } from '../../types';
+import { offlineResume } from '../../store/actions/creators/client';
+import { selectRequestInFlight } from '../../store/request/selectors';
+import { selectLockTTL } from '../../store/selectors/settings';
+import type { Callback, MaybeNull } from '../../types/utils';
 import { epochToMs } from '../../utils/time/epoch';
 import type { ActivityProbe } from '../../utils/time/probe';
 import { useOnline } from './ConnectivityProvider';

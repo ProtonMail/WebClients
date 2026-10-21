@@ -1,4 +1,4 @@
-import type { ClientEndpoint } from '@proton/pass/types';
+import type { ClientEndpoint } from '@proton/pass/types/worker/runtime';
 
 import { default as browserAPI } from '../../__mocks__/webextension-polyfill';
 import { assertTabsAPIAvailable } from './tabs';

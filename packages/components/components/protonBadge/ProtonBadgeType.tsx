@@ -1,4 +1,5 @@
-import { FeatureCode, useFeature } from '@proton/features';
+import { FeatureCode } from '@proton/features/interface';
+import useFeature from '@proton/features/useFeature';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 
 import VerifiedBadge from './VerifiedBadge';

@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { DropdownMenuButton, ToolbarButton } from '@proton/components';
 import { getDriveForPhotos } from '@proton/drive/index';
 import { getNodeName, getNodeNameFallback, isMissingNode } from '@proton/drive/modules/nodes';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import clsx from '@proton/utils/clsx';
 

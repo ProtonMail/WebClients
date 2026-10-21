@@ -4,11 +4,11 @@ import { WEBSITE_RULES_URL } from '../../../constants';
 import { fetchIfModified } from '../../../lib/api/utils';
 import { validateRules } from '../../../lib/extension/rules/rules';
 import type { DetectionRules } from '../../../lib/extension/rules/types';
-import type { Maybe } from '../../../types';
+import type { Maybe } from '../../../types/utils';
 import { resolveWebsiteRules } from '../../actions/creators/rules';
 import { createRequestSaga } from '../../request/sagas';
+import { selectRequest } from '../../request/selectors';
 import type { RequestEntry, RequestStatus } from '../../request/types';
-import { selectRequest } from '../../selectors';
 
 declare module '../../events' {
     interface SagaEvents {

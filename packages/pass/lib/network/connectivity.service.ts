@@ -2,7 +2,8 @@ import { ping } from '@proton/shared/lib/api/tests';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 
-import type { Api, ApiSubscriptionEvent, MaybeNull } from '../../types';
+import type { Api, ApiSubscriptionEvent } from '../../types/api/api';
+import type { MaybeNull } from '../../types/utils';
 import { asyncLock, cancelable } from '../../utils/fp/promises';
 import { safeAsyncCall } from '../../utils/fp/safe-call';
 import { createListenerStore } from '../../utils/listener/factory';

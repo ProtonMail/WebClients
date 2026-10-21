@@ -8,9 +8,10 @@ import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useUserInitiatedLock } from '../../../hooks/auth/useUserInitiatedLock';
 import { LockMode } from '../../../lib/auth/lock/types';
-import { offlineResume } from '../../../store/actions';
+import { offlineResume } from '../../../store/actions/creators/client';
 import { lockCreateRequest } from '../../../store/actions/requests';
-import { selectLockMode, selectRequestInFlight } from '../../../store/selectors';
+import { selectRequestInFlight } from '../../../store/request/selectors';
+import { selectLockMode } from '../../../store/selectors/settings';
 import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';
 
 type Props = {

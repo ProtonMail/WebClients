@@ -2,7 +2,7 @@ import { renderHook, waitFor } from '@testing-library/react';
 
 import * as busy from '@proton/shared/lib/busy/busy';
 
-import { InAppNotificationDisplayType, InAppNotificationState } from '../../types';
+import { InAppNotificationDisplayType, InAppNotificationState } from '../../types/api/pass';
 import type { InAppNotification } from '../../types/data/notification';
 import { uniqueId } from '../../utils/string/unique-id';
 import { useInAppNotificationVisibility } from './useInAppNotificationVisibility';

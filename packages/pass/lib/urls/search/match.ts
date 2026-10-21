@@ -1,5 +1,6 @@
-import type { ItemRevision, Maybe } from '../../../types';
+import type { ItemRevision } from '../../../types/data/items';
 import { AutofillMode } from '../../../types/protobuf';
+import type { Maybe } from '../../../types/utils';
 import { prop } from '../../../utils/fp/lens';
 import { isActive, isItemType } from '../../items/item.predicates';
 import type { ItemWithPriority, SearchItemsByDomainOptions, SortOnItems } from '../types';

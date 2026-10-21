@@ -3,8 +3,12 @@ import { c } from 'ttag';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import type { PermissionsContextValue } from '../../../../components/Core/PermissionsProvider';
-import type { MaybeNull } from '../../../../types';
-import { NativeMessageErrorType, type NativeMessageSetupLockSecretRequest, NativeMessageType } from '../../../../types';
+import {
+    NativeMessageErrorType,
+    type NativeMessageSetupLockSecretRequest,
+    NativeMessageType,
+} from '../../../../types/desktop/extension-unlock-with-desktop';
+import type { MaybeNull } from '../../../../types/utils';
 import { logger } from '../../../../utils/logger';
 import { NativeMessageError } from '../../../native-messaging/errors';
 import type { NativeMessagingService } from '../../../native-messaging/native-messaging.extension';

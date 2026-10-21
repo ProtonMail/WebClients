@@ -10,13 +10,13 @@ import { SyncStrategy } from '../../../lib/sync/types';
 import { PassFeature } from '../../../types/api/features';
 import { UNIX_DAY } from '../../../utils/time/constants';
 import { getEpoch } from '../../../utils/time/epoch';
-import { getUserAccessIntent, getUserAccessSuccess, setUserFeatureFlags } from '../../actions';
+import { getUserAccessIntent, getUserAccessSuccess, setUserFeatureFlags } from '../../actions/creators/user';
 import { userAccessRequest } from '../../actions/requests';
 import { getPaymentNudgePaymentMethods } from '../../payment-nudge/actions';
 import type { FeatureFlagState, UserState } from '../../reducers';
 import { requestInvalidate } from '../../request/actions';
 import { withRevalidate } from '../../request/enhancers';
-import { selectFeatureFlags, selectUserState } from '../../selectors';
+import { selectFeatureFlags, selectUserState } from '../../selectors/user';
 import type { RootSagaOptions } from '../../types';
 
 /** Fakes the API responses the payment nudge gate reads, so the spotlight can be

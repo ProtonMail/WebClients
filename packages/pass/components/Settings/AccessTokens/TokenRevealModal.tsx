@@ -12,8 +12,8 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 
 import { AGENT_INSTRUCTIONS_URL } from '../../../constants.runtime';
 import { useRequest } from '../../../hooks/useRequest';
-import { getAgentInstructions } from '../../../store/actions';
-import type { MaybeNull } from '../../../types';
+import { getAgentInstructions } from '../../../store/actions/creators/access-token';
+import type { MaybeNull } from '../../../types/utils';
 import { PassModal } from '../../Layout/Modal/PassModal';
 import { useCopyToClipboard } from '../Clipboard/ClipboardProvider';
 

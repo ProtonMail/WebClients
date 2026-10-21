@@ -17,7 +17,7 @@ import ShareCalendarModal from '@proton/components/containers/calendar/shareProt
 import ShareLinkModal from '@proton/components/containers/calendar/shareURL/ShareLinkModal';
 import ShareLinkSuccessModal from '@proton/components/containers/calendar/shareURL/ShareLinkSuccessModal';
 import { useModalsMap } from '@proton/components/hooks/useModalsMap';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import type { LoadingByKey } from '@proton/hooks/useLoading';
 import { getAllMembers, getCalendarInvitations, getPublicLinks } from '@proton/shared/lib/api/calendars';
 import { getIsHolidaysCalendar, getIsOwnedCalendar } from '@proton/shared/lib/calendar/calendar';

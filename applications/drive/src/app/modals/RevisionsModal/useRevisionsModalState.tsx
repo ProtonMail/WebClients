@@ -12,7 +12,7 @@ import type { ProtonDriveClient, Revision } from '@proton/drive';
 import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { type NormalizedNode, getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { getNodeNameFallback } from '@proton/drive/modules/nodes';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 import { dateLocale } from '@proton/shared/lib/i18n';
 

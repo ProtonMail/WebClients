@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { calendarSettingsActions } from '@proton/calendar/calendarUserSettings';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar/Calendar';

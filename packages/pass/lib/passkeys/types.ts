@@ -3,7 +3,7 @@ import type {
     WasmResolvePasskeyChallengeResponse,
 } from '@protontech/pass-rust-core/worker';
 
-import type { SelectedItem } from '../../types';
+import type { SelectedItem } from '../../types/data/items';
 import type { Passkey } from '../../types/protobuf/item-v1';
 import type { SanitizedBuffers } from '../../utils/buffer/sanitization';
 

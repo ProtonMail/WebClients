@@ -1,7 +1,8 @@
 import type { Action, Reducer } from 'redux';
 
-import type { ShareId } from '../../types';
-import { matchSyncAction, sharesDedupeUpdate } from '../actions';
+import type { ShareId } from '../../types/crypto/pass-types';
+import { matchSyncAction } from '../actions/creators/client';
+import { sharesDedupeUpdate } from '../actions/creators/share';
 
 export type ShareDedupeState = {
     dedupe: ShareId[];

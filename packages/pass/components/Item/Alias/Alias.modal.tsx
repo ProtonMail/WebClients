@@ -12,8 +12,9 @@ import noop from '@proton/utils/noop';
 
 import { UpsellRef } from '../../../constants';
 import type { SanitizedAliasOptions } from '../../../hooks/useAliasOptions';
-import { selectAliasLimits } from '../../../store/selectors';
-import type { AliasFormValues, MaybeNull } from '../../../types';
+import { selectAliasLimits } from '../../../store/selectors/limits';
+import type { AliasFormValues } from '../../../types/forms/item';
+import type { MaybeNull } from '../../../types/utils';
 import { AliasPreview } from '../../Alias/Alias.preview';
 import { Card } from '../../Layout/Card/Card';
 import { SidebarModal } from '../../Layout/Modal/SidebarModal';

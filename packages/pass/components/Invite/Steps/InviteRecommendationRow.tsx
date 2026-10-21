@@ -4,7 +4,7 @@ import type { ListRowProps } from 'react-virtualized';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import clsx from '@proton/utils/clsx';
 
-import type { MaybeNull } from '../../../types';
+import type { MaybeNull } from '../../../types/utils';
 import { useMaybeGroup } from '../../Groups/GroupsProvider';
 import { MaybeGroupName } from '../../Groups/MaybeGroupName';
 import { ShareMemberAvatar } from '../Member/ShareMemberAvatar';

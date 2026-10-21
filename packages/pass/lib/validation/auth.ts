@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
-import type { Maybe } from '../../types';
+import type { Maybe } from '../../types/utils';
 
 const validatePassword =
     (errorMessage: string) =>

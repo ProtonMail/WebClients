@@ -10,8 +10,8 @@ import { PROTON_SENTINEL_NAME, SETTINGS_PROTON_SENTINEL_STATE } from '@proton/sh
 import sentinel from '../../../assets/monitor/sentinel.svg';
 import { useActionRequest } from '../../../hooks/useRequest';
 import { isPaidPlan } from '../../../lib/user/user.predicates';
-import { sentinelToggle } from '../../../store/actions';
-import { selectPassPlan, selectSentinelEligible, selectSentinelEnabled } from '../../../store/selectors';
+import { sentinelToggle } from '../../../store/actions/creators/monitor';
+import { selectPassPlan, selectSentinelEligible, selectSentinelEnabled } from '../../../store/selectors/user';
 import { usePassCore } from '../../Core/PassCoreProvider';
 import { CardContent } from '../../Layout/Card/CardContent';
 

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import type { Transaction } from '@proton/payments/core/interface';
 import isTruthy from '@proton/utils/isTruthy';
 

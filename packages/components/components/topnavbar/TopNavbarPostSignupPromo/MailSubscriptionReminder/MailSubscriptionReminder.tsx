@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 
-import { FeatureCode, useFeature } from '@proton/features';
+import { FeatureCode } from '@proton/features/interface';
+import useFeature from '@proton/features/useFeature';
 import { useTrialInfo } from '@proton/payments-ui/ui/hooks/useTrialInfo';
 import {
     APPS,

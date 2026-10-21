@@ -3,7 +3,7 @@ import { type FC, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { useRequest } from '../../../../hooks/useRequest';
-import { deleteCustomDomain } from '../../../../store/actions';
+import { deleteCustomDomain } from '../../../../store/actions/creators/alias';
 import { pipe } from '../../../../utils/fp/pipe';
 import { ConfirmationModal } from '../../../Confirmation/ConfirmationModal';
 import { useAliasDomains, useCustomDomain } from './AliasDomainsContext';

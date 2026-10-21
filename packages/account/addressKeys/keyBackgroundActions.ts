@@ -1,7 +1,7 @@
 import { serverTime, wasServerTimeEverUpdated } from '@protontech/crypto';
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { APPS } from '@proton/shared/lib/constants';
 import { captureMessage, getSentryError } from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';

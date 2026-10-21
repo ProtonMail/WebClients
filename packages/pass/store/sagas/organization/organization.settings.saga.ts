@@ -4,9 +4,10 @@ import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 
 import { getOrganizationSettings as fetchOrganizationSettings } from '../../../lib/organization/organization.requests';
 import { onOrganizationSettingsUpdated } from '../../../lib/sync/common/organization';
-import type { MaybeNull, OrganizationGetResponse } from '../../../types';
+import type { OrganizationGetResponse } from '../../../types/api/pass';
+import type { MaybeNull } from '../../../types/utils';
 import { getOrganizationSettings } from '../../actions/creators/organization';
-import { selectOrganization } from '../../selectors';
+import { selectOrganization } from '../../selectors/organization';
 import type { RootSagaOptions } from '../../types';
 
 function* getOrganizationSettingsWorker(options: RootSagaOptions, { meta }: ReturnType<typeof getOrganizationSettings.intent>) {

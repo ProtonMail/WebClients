@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { addDays, isBefore, startOfDay } from 'date-fns';
 
-import { FeatureCode, useFeature } from '@proton/features';
+import { FeatureCode } from '@proton/features/interface';
+import useFeature from '@proton/features/useFeature';
 import type {
     InboxDesktopFreeTrialDates,
     InboxDesktopFreeTrialReminders,

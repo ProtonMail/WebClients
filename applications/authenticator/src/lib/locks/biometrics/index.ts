@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { Maybe } from '@proton/pass/types';
+import type { Maybe } from '@proton/pass/types/utils';
 import { isMac, isWindows } from '@proton/shared/lib/helpers/browser';
 
 import { StorageKey } from '../../db/db';

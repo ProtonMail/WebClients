@@ -4,7 +4,7 @@ import ContextMenuButton from '@proton/components/components/contextMenu/Context
 import ContextSeparator from '@proton/components/components/contextMenu/ContextSeparator';
 import { IcPassLock } from '@proton/icons/icons/IcPassLock';
 
-import type { Maybe, MaybeNull, MaybePromise } from '../../types';
+import type { Maybe, MaybeNull, MaybePromise } from '../../types/utils';
 import { useCopyToClipboard } from '../Settings/Clipboard/ClipboardProvider';
 import { useContextMenu } from './ContextMenuProvider';
 

@@ -4,14 +4,14 @@ import type { OrganizationKey } from '@proton/shared/lib/interfaces/Organization
 
 import type { OrganizationState } from '../../store/reducers/organization';
 import type {
-    MaybeNull,
     MemberMonitorReportList,
     OrganizationGetResponse,
     OrganizationUpdatePasswordPolicyInput,
     OrganizationUrlPauseEntryDto,
     PassPlanResponse,
-} from '../../types';
+} from '../../types/api/pass';
 import type { OrganizationSettings } from '../../types/data/organization';
+import type { MaybeNull } from '../../types/utils';
 import { logger } from '../../utils/logger';
 import { api } from '../api/api';
 import { createPageIterator } from '../api/utils';

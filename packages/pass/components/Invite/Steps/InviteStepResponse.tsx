@@ -7,10 +7,16 @@ import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import Progress from '@proton/components/components/progress/Progress';
 
 import { useRequest } from '../../../hooks/useRequest';
-import { groupInviteAccept, groupInviteReject, inviteAccept, inviteReject } from '../../../store/actions';
-import type { ItemInvite, VaultInvite } from '../../../types';
-import { InviteType, ShareType } from '../../../types';
+import {
+    groupInviteAccept,
+    groupInviteReject,
+    inviteAccept,
+    inviteReject,
+} from '../../../store/actions/creators/invite';
+import type { ItemInvite, VaultInvite } from '../../../types/data/invites';
+import { InviteType } from '../../../types/data/invites';
 import type { InviteAcceptSuccess } from '../../../types/data/invites.dto';
+import { ShareType } from '../../../types/data/shares';
 import { useInviteActions } from '../InviteContext';
 
 type Props = {

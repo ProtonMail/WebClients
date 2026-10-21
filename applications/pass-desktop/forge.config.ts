@@ -14,7 +14,7 @@ import fs from 'node:fs/promises';
 import os from 'node:os';
 import path from 'path';
 
-import type { Maybe } from '@proton/pass/types';
+import type { Maybe } from '@proton/pass/types/utils';
 
 import pkg from './package.json';
 import getExtraResource from './src/utils/extra-resource';

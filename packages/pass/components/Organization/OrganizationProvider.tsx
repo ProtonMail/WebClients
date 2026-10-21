@@ -9,9 +9,10 @@ import { isAdmin } from '@proton/shared/lib/user/helpers';
 import { isB2BAdmin } from '../../lib/organization/helpers';
 import { getOrganizationSettings } from '../../store/actions/creators/organization';
 import { withRevalidate } from '../../store/request/enhancers';
-import { selectOrganizationState, selectPassPlan, selectUser, selectUserPlan } from '../../store/selectors';
-import type { MaybeNull } from '../../types';
+import { selectOrganizationState } from '../../store/selectors/organization';
+import { selectPassPlan, selectUser, selectUserPlan } from '../../store/selectors/user';
 import type { OrganizationSettings } from '../../types/data/organization';
+import type { MaybeNull } from '../../types/utils';
 
 type OrganizationContextValue = {
     organization: Organization;

@@ -1,6 +1,6 @@
-import type { FolderKey, OpenedFolder, VaultShareKey } from '../../../../types';
-import { PassEncryptionTag } from '../../../../types';
-import type { FolderDataResponse } from '../../../../types/api';
+import type { FolderDataResponse } from '../../../../types/api/pass';
+import type { FolderKey, OpenedFolder, VaultShareKey } from '../../../../types/crypto/pass-types';
+import { PassEncryptionTag } from '../../../../types/crypto/pass-types';
 import { decryptData, importSymmetricKey } from '../../utils/crypto-helpers';
 
 export type OpenFolderParams = {

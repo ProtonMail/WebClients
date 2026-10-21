@@ -1,7 +1,8 @@
 import type { FC } from 'react';
 import { useSelector } from 'react-redux';
 
-import { selectCanCreateItems, selectUserState } from '../../../../store/selectors';
+import { selectCanCreateItems } from '../../../../store/selectors/shares';
+import { selectUserState } from '../../../../store/selectors/user';
 import { AliasSyncDisabled } from './AliasSyncDisabled';
 import { AliasSyncEnabled } from './AliasSyncEnabled';
 

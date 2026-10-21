@@ -1,4 +1,4 @@
-import type { MaybeNull, Result } from '../../../types';
+import type { MaybeNull, Result } from '../../../types/utils';
 import { isObject } from '../../../utils/object/is-object';
 import { isModelArch } from './model-artifact';
 import type { ModelArtifact } from './model-artifact';

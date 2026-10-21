@@ -1,7 +1,7 @@
 import { put, takeEvery } from 'redux-saga/effects';
 
 import { pinItem } from '../../../lib/items/item.requests';
-import { itemPinFailure, itemPinIntent, itemPinSuccess } from '../../actions';
+import { itemPinFailure, itemPinIntent, itemPinSuccess } from '../../actions/creators/item';
 
 function* itemPinWorker({ payload, meta: { request } }: ReturnType<typeof itemPinIntent>) {
     try {

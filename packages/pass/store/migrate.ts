@@ -1,8 +1,9 @@
 import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 
 import { isB2BAdmin } from '../lib/organization/helpers';
-import type { MaybeNull, PassCryptoSnapshot, SerializedCryptoContext } from '../types';
+import type { PassCryptoSnapshot, SerializedCryptoContext } from '../types/crypto/pass-crypto';
 import { AutofillMode } from '../types/protobuf';
+import type { MaybeNull } from '../types/utils';
 import type { EncryptedPassCache } from '../types/worker/cache';
 import { logId, logger } from '../utils/logger';
 import { type XorObfuscation, obfuscate } from '../utils/obfuscate/xor';
@@ -13,7 +14,8 @@ import { unwrapOptimisticState } from './optimistic/utils/transformers';
 import type { FiltersState } from './reducers';
 import { INITIAL_ORGANIZATION_SETTINGS } from './reducers/organization';
 import { INITIAL_HIGHSECURITY_SETTINGS } from './reducers/user';
-import { selectAllLoginItems, selectPassPlan, selectUser } from './selectors';
+import { selectAllLoginItems } from './selectors/items';
+import { selectPassPlan, selectUser } from './selectors/user';
 import type { State } from './types';
 
 /** Ensures cache compatibility during rollbacks by ignoring cached state

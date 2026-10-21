@@ -1,6 +1,7 @@
 import fs from 'fs';
 
-import type { ItemImportIntent, ItemType } from '../../../../types';
+import type { ItemImportIntent } from '../../../../types/data/items.dto';
+import type { ItemType } from '../../../../types/protobuf';
 import { AutofillMode, WifiSecurity } from '../../../../types/protobuf';
 import * as epochUtils from '../../../../utils/time/epoch';
 import { deobfuscateItem } from '../../../items/item.obfuscation';

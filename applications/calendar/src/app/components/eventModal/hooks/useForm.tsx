@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { NOTIFICATION_ID } from '@proton/components/containers/calendar/notifications/Notifications';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { TITLE_INPUT_ID } from '@proton/shared/lib/calendar/constants';
 import type { EventModelErrors } from '@proton/shared/lib/interfaces/calendar/Event';
 import isTruthy from '@proton/utils/isTruthy';

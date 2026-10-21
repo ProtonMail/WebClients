@@ -2,7 +2,7 @@ import { getItemTOTPUri, intoLoginItemPreview } from '@proton/pass/lib/items/ite
 import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
 import { selectOTPCandidate } from '@proton/pass/store/selectors/autofill';
 import { selectItem } from '@proton/pass/store/selectors/items';
-import type { Maybe } from '@proton/pass/types/utils/index';
+import type { Maybe } from '@proton/pass/types/utils';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 

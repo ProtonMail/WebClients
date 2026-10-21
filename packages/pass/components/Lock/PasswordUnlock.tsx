@@ -10,7 +10,7 @@ import { useRequest } from '../../hooks/useRequest';
 import { useRerender } from '../../hooks/useRerender';
 import { LockMode } from '../../lib/auth/lock/types';
 import { validateCurrentPassword, validateExtraPassword } from '../../lib/validation/auth';
-import { unlock } from '../../store/actions';
+import { unlock } from '../../store/actions/creators/auth';
 import type { XorObfuscation } from '../../utils/obfuscate/xor';
 import { useAuthStore } from '../Core/AuthStoreProvider';
 import { useOffline } from '../Core/ConnectivityProvider';

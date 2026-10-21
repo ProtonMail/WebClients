@@ -1,5 +1,6 @@
-import type { EncodedItemKeyRotation, VaultShareKey } from '../../../../types';
-import { PassEncryptionTag } from '../../../../types';
+import type { EncodedItemKeyRotation } from '../../../../types/api/pass';
+import type { VaultShareKey } from '../../../../types/crypto/pass-types';
+import { PassEncryptionTag } from '../../../../types/crypto/pass-types';
 import { TEST_USER_KEY_ID } from '../../../../utils/tests/fixtures/crypto';
 import { encryptData, generateKey, importSymmetricKey } from '../../utils/crypto-helpers';
 import { openItemKey } from './open-item-key';

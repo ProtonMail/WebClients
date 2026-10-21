@@ -10,7 +10,7 @@ import { IcCross } from '@proton/icons/icons/IcCross';
 import stamp from '../../../../assets/alias/alias-contact-stamp.svg';
 import { UpsellRef } from '../../../../constants';
 import { useItem } from '../../../../hooks/useItem';
-import { selectPassPlan } from '../../../../store/selectors';
+import { selectPassPlan } from '../../../../store/selectors/user';
 import { UserPassPlan } from '../../../../types/api/plan';
 import { SidebarModal } from '../../../Layout/Modal/SidebarModal';
 import { Panel } from '../../../Layout/Panel/Panel';

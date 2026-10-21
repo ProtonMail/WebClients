@@ -9,7 +9,7 @@ import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/h
 import Checkbox from '@proton/components/components/input/Checkbox';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import useEventManager from '@proton/components/hooks/useEventManager';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 
 interface Props {
