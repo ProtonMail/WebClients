@@ -1,3 +1,5 @@
+import { c } from 'ttag';
+
 import { ENABLE_FOUNDATION_SEARCH } from '../../config/search';
 import type { AesGcmCryptoKey } from '../../crypto/types';
 import { DbApi } from '../../indexedDb/db';
@@ -117,10 +119,7 @@ export class SearchService {
                 if (!usedPrimaryMasterKey) {
                     try {
                         const wrappedWithPrimary = await wrapAesKey(unwrappedKey, primaryMasterKeyObj);
-                        await dbApi.saveSearchBlob(
-                            SearchService.SEARCH_INDEX_KEY_BLOB,
-                            wrappedWithPrimary.toBase64()
-                        );
+                        await dbApi.saveSearchBlob(SearchService.SEARCH_INDEX_KEY_BLOB, wrappedWithPrimary.toBase64());
                     } catch (error) {
                         safeLogger.warn('Failed to re-wrap search index key with primary master key:', error);
                     }
@@ -370,7 +369,8 @@ export class SearchService {
             return {
                 type: 'conversation',
                 conversationId: conversation.id,
-                conversationTitle: conversation.title || 'Untitled',
+                // translator: Fallback title for a conversation without a name.
+                conversationTitle: conversation.title || c('collider_2025:Title').t`Untitled`,
                 timestamp,
                 ...projectInfo,
             };
@@ -461,7 +461,8 @@ export class SearchService {
                 results.push({
                     type: 'conversation',
                     conversationId: conversation.id,
-                    conversationTitle: conversation.title || 'Untitled',
+                    // translator: Fallback title for a conversation without a name.
+                    conversationTitle: conversation.title || c('collider_2025:Title').t`Untitled`,
                     timestamp,
                     ...projectInfo,
                 });
@@ -479,7 +480,8 @@ export class SearchService {
                 results.push({
                     type: 'conversation',
                     conversationId: conversation.id,
-                    conversationTitle: conversation.title || 'Untitled',
+                    // translator: Fallback title for a conversation without a name.
+                    conversationTitle: conversation.title || c('collider_2025:Title').t`Untitled`,
                     timestamp,
                     ...projectInfo,
                 });
@@ -501,7 +503,8 @@ export class SearchService {
                 results.push({
                     type: 'project',
                     projectId: space.id,
-                    projectName: space.projectName || 'Untitled Project',
+                    // translator: Fallback title for a project without a name.
+                    projectName: space.projectName || c('collider_2025:Title').t`Untitled Project`,
                     projectIcon: space.projectIcon,
                     projectDescription: space.projectInstructions,
                     timestamp,
@@ -527,7 +530,8 @@ export class SearchService {
                     type: 'message',
                     conversationId: message.conversationId,
                     messageId: message.id,
-                    conversationTitle: conversation.title || 'Untitled',
+                    // translator: Fallback title for a conversation without a name.
+                    conversationTitle: conversation.title || c('collider_2025:Title').t`Untitled`,
                     messagePreview: preview,
                     timestamp,
                     ...projectInfo,

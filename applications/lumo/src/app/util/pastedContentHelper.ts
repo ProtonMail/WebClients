@@ -1,10 +1,15 @@
+import { c, msgid } from 'ttag';
+
+import { localeCode } from '@proton/shared/lib/i18n';
+import { getIntlLocale } from '@proton/shared/lib/i18n/helper';
+
+import { getApproximateTokenCount } from '../llm/tokenizer';
+import { newAttachmentId } from '../redux/slices/core/attachments';
 /**
  * Utility functions for handling pasted content in the composer
  */
 
-import type {Attachment} from '../types';
-import {newAttachmentId} from '../redux/slices/core/attachments';
-import {getApproximateTokenCount} from '../llm/tokenizer';
+import type { Attachment } from '../types';
 
 /**
  * Configuration for paste-to-attachment conversion
@@ -26,14 +31,13 @@ export function shouldConvertPasteToAttachment(content: string): boolean {
     const lineCount = content.split('\n').length;
     const charCount = content.length;
 
-    return lineCount >= PASTE_TO_ATTACHMENT_CONFIG.MIN_LINES ||
-           charCount >= PASTE_TO_ATTACHMENT_CONFIG.MIN_CHARS;
+    return lineCount >= PASTE_TO_ATTACHMENT_CONFIG.MIN_LINES || charCount >= PASTE_TO_ATTACHMENT_CONFIG.MIN_CHARS;
 }
 
 /**
  * Generate a filename for pasted content based on its characteristics
  */
-function generateFilenameForPastedContent(content: string): string {
+function generateFilenameForPastedContent(): string {
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
     return `pasted-content-${timestamp}.txt`;
 }
@@ -44,10 +48,7 @@ function generateFilenameForPastedContent(content: string): string {
  * Pasted content is created via {@link createAttachmentFromPastedContent} which
  * always assigns a `pasted-content-*.txt` filename and `text/plain` mime type.
  */
-export function isPastedContentAttachment(attachment: {
-    filename?: string;
-    mimeType?: string;
-}): boolean {
+export function isPastedContentAttachment(attachment: { filename?: string; mimeType?: string }): boolean {
     if (!attachment?.filename) return false;
     if (attachment.mimeType && attachment.mimeType !== 'text/plain') return false;
     return /^pasted-content[-.]/i.test(attachment.filename);
@@ -81,7 +82,7 @@ export function updatePastedContentAttachment(attachment: Attachment, newContent
  * Create an attachment from pasted content
  */
 export function createAttachmentFromPastedContent(content: string): Attachment {
-    const filename = generateFilenameForPastedContent(content);
+    const filename = generateFilenameForPastedContent();
     const encoder = new TextEncoder();
     const data = encoder.encode(content);
 
@@ -109,7 +110,17 @@ export function createAttachmentFromPastedContent(content: string): Attachment {
 
 export function getPasteConversionMessage(lineCount: number, charCount: number): string {
     if (lineCount >= PASTE_TO_ATTACHMENT_CONFIG.MIN_LINES) {
-        return `Large content (${lineCount} lines) converted to attachment`;
+        // translator: Notification after a long paste is converted to a file attachment. ${lineCount} is the line count (selects singular/plural "line"/"lines").
+        return c('collider_2025:Info').ngettext(
+            msgid`Large content (${lineCount} line) converted to attachment`,
+            `Large content (${lineCount} lines) converted to attachment`,
+            lineCount
+        );
     }
-    return `Large content (${Math.round(charCount / 1000)}K characters) converted to attachment`;
+    const charCountLabel = new Intl.NumberFormat(getIntlLocale(localeCode), {
+        notation: 'compact',
+        maximumFractionDigits: 0,
+    }).format(charCount);
+    // translator: Notification after a long paste is converted to a file attachment. ${charCountLabel} is the compact character count (e.g. 5K); always plural "characters".
+    return c('collider_2025:Info').t`Large content (${charCountLabel} characters) converted to attachment`;
 }

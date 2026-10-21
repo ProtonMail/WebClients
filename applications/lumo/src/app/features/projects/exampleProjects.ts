@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { getPromptSuggestionsForCategory } from './constants';
 import type { Project } from './types';
 
-export const EXAMPLE_PROJECTS: Project[] = [
+export const getExampleProjects = (): Project[] => [
     {
         id: 'example-personal-finance',
         name: c('collider_2025:Project').t`Financial assistant`,
@@ -28,7 +28,8 @@ Key guidelines:
     {
         id: 'example-homework-helper',
         name: c('collider_2025:Project').t`Study companion`,
-        description: c('collider_2025:Project').t`Get help understanding assignments, solving problems, and learning concepts`,
+        description: c('collider_2025:Project')
+            .t`Get help understanding assignments, solving problems, and learning concepts`,
         isExample: true,
         icon: 'pass-atom',
         instructions: `You are a patient and encouraging homework assistant. Help students understand concepts, work through problems, and develop critical thinking skills without simply giving answers.
@@ -49,7 +50,8 @@ Key guidelines:
     {
         id: 'example-language-tutor',
         name: c('collider_2025:Project').t`Learn a language`,
-        description: c('collider_2025:Project').t`Practice conversations, learn grammar, and build vocabulary in your target language`,
+        description: c('collider_2025:Project')
+            .t`Practice conversations, learn grammar, and build vocabulary in your target language`,
         isExample: true,
         icon: 'language',
         instructions: `You are an engaging language tutor helping users learn and practice new languages. Provide conversational practice, grammar explanations, vocabulary building, and cultural insights.
@@ -71,7 +73,8 @@ Key guidelines:
     {
         id: 'example-research-assistant',
         name: c('collider_2025:Project').t`Research & Analysis Partner`,
-        description: c('collider_2025:Project').t`Synthesize sources, analyze data, and develop insights for your research projects`,
+        description: c('collider_2025:Project')
+            .t`Synthesize sources, analyze data, and develop insights for your research projects`,
         isExample: true,
         icon: 'lightbulb',
         instructions: `You are a research assistant helping users conduct thorough, well-organized research. Assist with literature reviews, data analysis, source synthesis, and insight generation.

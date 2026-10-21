@@ -127,13 +127,13 @@ export function getProjectCategory(iconId?: string): ProjectCategory {
 
     return {
         id: 'other',
-        name: 'Other',
+        // translator: Fallback project category label.
+        name: c('collider_2025:Label').t`Other`,
         icon: DEFAULT_PROJECT_ICON,
         lucideIcon: getProjectLucideIcon(DEFAULT_PROJECT_ICON),
         color: DEFAULT_PROJECT_COLOR,
     };
 }
-
 
 // Map direct icon names to prompt categories for suggestions
 const ICON_TO_PROMPT_CATEGORY: Record<string, string> = {

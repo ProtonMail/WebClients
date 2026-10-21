@@ -99,7 +99,8 @@ const ProjectDetailViewInner = () => {
 
     // Project data
     const { project } = getProjectInfo(space);
-    const projectName = project?.projectName || 'Untitled Project';
+    // translator: Fallback title for a project without a name.
+    const projectName = project?.projectName || c('collider_2025:Title').t`Untitled Project`;
     const projectInstructions = project?.projectInstructions || '';
     const category = getProjectCategory(project?.projectIcon);
 
@@ -256,7 +257,14 @@ const ProjectDetailViewInner = () => {
 
         return (
             <div className="project-detail-not-found flex flex-column items-center justify-center">
-                <img src={lumoProjects} alt="Projects" width={200} />
+                <img
+                    src={lumoProjects}
+                    alt={
+                        // translator: Accessible description of the project illustration. Projects organize chats, instructions, and files.
+                        c('collider_2025:Label').t`Projects`
+                    }
+                    width={200}
+                />
                 <h2 className="text-lg">{c('collider_2025:Error').t`Project not found`}</h2>
                 <Button onClick={() => history.push('/projects')}>
                     {c('collider_2025:Button').t`Back to projects`}

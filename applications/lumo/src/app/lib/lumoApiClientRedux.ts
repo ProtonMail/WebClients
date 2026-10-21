@@ -1,3 +1,5 @@
+import { c } from 'ttag';
+
 import { formatRequestedModel, resolveChatModel } from '@proton/lumo-api-client/core/chat-completions';
 import { LumoApiClient } from '@proton/lumo-api-client/core/client';
 import { getDesktopLumoApiClientConfig } from '@proton/lumo-api-client/core/desktop-tools';
@@ -153,7 +155,11 @@ export function sendMessageWithRedux(
                         case 'ingesting':
                             // When we start ingesting the message and we have a title, persist it
                             if (message.target !== 'message' && accumulatedTitle && conversationId && spaceId) {
-                                const processedTitle = postProcessTitle(accumulatedTitle);
+                                // translator: Default chat title when no usable title is available.
+                                const processedTitle = postProcessTitle(
+                                    accumulatedTitle,
+                                    c('collider_2025:Title').t`Untitled conversation`
+                                );
                                 dispatch(
                                     changeConversationTitle({
                                         id: conversationId,
@@ -184,7 +190,11 @@ export function sendMessageWithRedux(
                                             changeConversationTitle({
                                                 id: conversationId,
                                                 spaceId,
-                                                title: postProcessTitle(accumulatedTitle),
+                                                // translator: Default chat title when no usable title is available.
+                                                title: postProcessTitle(
+                                                    accumulatedTitle,
+                                                    c('collider_2025:Title').t`Untitled conversation`
+                                                ),
                                                 persist: false,
                                             })
                                         );
@@ -401,7 +411,11 @@ export function sendMessageWithRedux(
                         dispatch(pushMessageRequest({ id: messageId }));
 
                         // Handle final title processing
-                        const finalTitle = postProcessTitle(accumulatedTitle);
+                        // translator: Default chat title when no usable title is available.
+                        const finalTitle = postProcessTitle(
+                            accumulatedTitle,
+                            c('collider_2025:Title').t`Untitled conversation`
+                        );
                         if (accumulatedTitle) {
                             dispatch(
                                 changeConversationTitle({
