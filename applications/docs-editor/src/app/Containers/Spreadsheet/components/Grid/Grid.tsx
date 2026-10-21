@@ -114,7 +114,7 @@ const exposeCanvasGrid = (
 export function Grid() {
   const spreadsheetColors = useUI((ui) => ui.legacy.spreadsheetColors)
   const isDarkMode = useUI((ui) => ui.legacy.isDarkMode)
-  const { isDevOrBlack } = useSheetsDependencies()
+  const { isDevOrBlack, licenseKey } = useSheetsDependencies()
   const canvasGridRef = useRef<CanvasGridMethods | null>(null)
   const activeSheetId = useUI((ui) => ui.legacy.activeSheetId)
   const activeCell = useUI((ui) => ui.legacy.activeCell)
@@ -309,7 +309,7 @@ export function Grid() {
       onUnProtectRange={useUI((ui) => ui.legacy.onUnProtectRange)}
       onRequestConditionalFormat={useUI((ui) => ui.legacy.onRequestConditionalFormat)}
       namedRanges={useUI((ui) => ui.legacy.namedRanges)}
-      licenseKey={process.env.DOCS_SHEETS_KEY}
+      licenseKey={licenseKey}
       onRequestSearch={useUI((ui) => ui.legacy.searchState.onRequestSearch)}
       onRequestDataValidation={useUI((ui) => ui.legacy.onRequestDataValidation)}
       onRequestFormatCells={useUI((ui) => ui.legacy.onRequestFormatCells)}
