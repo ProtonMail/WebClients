@@ -1784,6 +1784,12 @@
       ],
       "Don't show this offer again": [
         "Больш не паказваць гэту прапанову"
+      ],
+      "Dock to side panel": [
+        "Прыстыкаваць да бакавой панэлі"
+      ],
+      "Subscribe": [
+        "Падпісацца"
       ]
     },
     "action": {
@@ -1961,6 +1967,9 @@
       ],
       "Writing assistant seats": [
         "Ліцэнзій памочніка ў напісанні"
+      ],
+      "Managed Service Provider": [
+        "Пастаўшчык кіраваных паслуг"
       ]
     },
     "Alert": {
@@ -10195,6 +10204,12 @@
       ],
       "You'll use it to sign in from then on. That's the only change.": [
         "З гэтага часу вы будзеце выкарыстоўваць яго для ўваходу. Гэта адзінае змяненне."
+      ],
+      "UnionPay logo": [
+        "Лагатып UnionPay"
+      ],
+      "We'll get back to you shortly.": [
+        "Мы звяжамся з вамі ў самы бліжэйшы час."
       ]
     },
     "info": {
@@ -11553,6 +11568,21 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Amount": [
+        "Сума"
+      ],
+      "Amount due": [
+        "Да аплаты"
+      ],
+      "Credits used": [
+        "Выкарыстана крэдытаў"
+      ],
+      "Please share any feedback to help us improve.": [
+        "Падзяліцеся з намі якім-небудзь водгукам, каб дапамагчы палепшыць наш сэрвіс."
+      ],
+      "Why would you like to cancel?": [
+        "Чаму вы вырашылі скасаваць?"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14645,6 +14675,9 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Please select the main reason": [
+        "Выберыце асноўную прычыну"
       ]
     },
     "Placeholder for contact group name": {
@@ -15733,7 +15766,7 @@
         "Запланаваць адпраўку"
       ],
       "This is now your default address. Open the dropdown to send from a different address. ": [
-        "Цяпер гэта ваш прадвызначаны адрас. Адкрыйце выпадальны спіс, каб адправіць ліст з іншага адраса. "
+        "Цяпер гэта ваш прадвызначаны адрас. Адкрыйце выпадное, каб адправіць ліст з іншага адраса. "
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
         "Уключыце ${ DARK_WEB_MONITORING_NAME }, каб атрымліваць апавяшчэнні пры ўцечцы вашых даных са старонняга сэрвісу."
@@ -16708,6 +16741,9 @@
       ],
       "You have successfully unsubscribed": [
         "Вы паспяхова скасавалі падпіску"
+      ],
+      "Invoice paid": [
+        "Рахунак аплачаны"
       ]
     },
     "Success notification": {
@@ -17665,7 +17701,7 @@
         "Адна электронная пошта, шмат атрымальнікаў"
       ],
       "Open actions dropdown": [
-        "Адкрыць спіс даступных дзеянняў"
+        "Адкрыць выпадное меню даступных дзеянняў"
       ],
       "Open pagination": [
         "Паказваць нумарацыю старонак"
@@ -18077,6 +18113,15 @@
       ],
       "Black Friday": [
         "Чорная Пятніца"
+      ],
+      "Contact us": [
+        "Звязацца з намі"
+      ],
+      "Pay invoice": [
+        "Аплаціць рахунак"
+      ],
+      "Request sent": [
+        "Запыт адпраўлены"
       ]
     },
     "Title header for keys table": {
@@ -18838,7 +18883,7 @@
     },
     "bfcampaign2026: Action": {
       "Black Friday": [
-        "Чорная Пятніца"
+        "Чорная пятніца"
       ],
       "Get the deal": [
         "Скарыстацца прапановай"
@@ -18849,7 +18894,7 @@
         "/месяц"
       ],
       "2 individual accounts": [
-        "2 асабістых уліковых запісы"
+        "2 асабістыя ўліковыя запісы"
       ],
       "2 TB of secure storage": [
         "2 ТБ бяспечнага сховішча"
@@ -18859,6 +18904,36 @@
       ],
       "6 individual accounts": [
         "6 асабістых уліковых запісаў"
+      ],
+      "15 GB storage": [
+        "15 ГБ сховішча"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 ГБ сховішча: у 40 разоў больш за бягучы тарыфны план"
+      ],
+      "500 GB of secure storage": [
+        "500 ГБ бяспечнага сховішча"
+      ],
+      "Built-in 2FA authenticator": [
+        "Убудаваны аўтэнтыфікатар 2ФА"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Скідкі разлічваюцца на падставе стандартнай платы за месяц. Ваша падпіска будзе аўтаматычна падаўжацца па стандартнай гадавой стаўцы пасля заканчэння перыяду аплаты."
+      ],
+      "Online document editor": [
+        "Рэдактар дакументаў у інтэрнэце"
+      ],
+      "Recover previous file versions": [
+        "Аднаўленне папярэдніх версій файла"
+      ],
+      "Stronger protection against cyber threats": [
+        "Больш надзейная абарона супраць кіберпагроз"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Неабмежаваная колькасць папак, метак і фільтраў"
+      ],
+      "Use your own email domain": [
+        "Выкарыстанне ўласнага дамена электроннай пошты"
       ]
     },
     "bfcampaign2026: Title": {
@@ -18866,13 +18941,58 @@
         "Найбуйнейшы распродаж года"
       ],
       "Black Friday": [
-        "Чорная Пятніца"
+        "Чорная пятніца"
       ],
       "for 12 months": [
-        "за 12 месяцаў"
+        "на 12 месяцаў"
       ],
       "Last chance to save big": [
-        "Апошні шанс істотна сэканоміць"
+        "Апошні шанец зэканоміць многа"
+      ],
+      "Protect your entire tribe": [
+        "Абарона ўсёй вашай сям'і"
+      ],
+      "Protection for two in a single plan": [
+        "Абарона для дваіх у адным тарыфным плане"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } і ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } і ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } і ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Я знайшоў больш прывабны сэрвіс"
+      ],
+      "It’s missing a key feature": [
+        "Адсутнічаюць ключавыя функцыі"
+      ],
+      "It’s too expensive": [
+        "Занадта дорага"
+      ],
+      "Other": [
+        "Іншае"
       ]
     }
   }

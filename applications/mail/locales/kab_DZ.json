@@ -6472,6 +6472,21 @@
       ],
       "ZIP code": [
         "Tangalt Zip"
+      ],
+      "Amount": [
+        "Azal"
+      ],
+      "Amount due": [
+        "Tallayt ara txelseḍ"
+      ],
+      "Credits used": [
+        "Asmad yettwasqedcen"
+      ],
+      "Please share any feedback to help us improve.": [
+        "Ttxil-k bḍu kra n tamawt i wakken ad aɣ-talleḍ ad nennerni."
+      ],
+      "Why would you like to cancel?": [
+        "Ayɣer tebɣiḍ ad tesfesxeḍ?"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -7676,6 +7691,9 @@
       ],
       "ZIP code": [
         "Tangalt Zip"
+      ],
+      "Please select the main reason": [
+        "Ttxil-k fren ssebba akk tamezwarut"
       ]
     },
     "Placeholder for contact group name": {
@@ -8554,6 +8572,9 @@
       ],
       "You have successfully unsubscribed": [
         "Teffɣeḍ seg ujerred akken iwata"
+      ],
+      "Invoice paid": [
+        "Tafaturt tettwaxleṣ"
       ]
     },
     "Success notification": {
@@ -9346,6 +9367,15 @@
       ],
       "Your plan": [
         "Aɣawas-ik·im"
+      ],
+      "Contact us": [
+        "Nermes-aɣ-d"
+      ],
+      "Pay invoice": [
+        "Xelleṣ tafaturt"
+      ],
+      "Request sent": [
+        "Tettwaceyyeɛ tsutert"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -9834,6 +9864,117 @@
       ],
       "Yearly, ${ untilString }": [
         "S useggas, ${ untilString }"
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Ass n Black Friday"
+      ],
+      "Get the deal": [
+        "Faṛes tagnit"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/ayyur"
+      ],
+      "15 GB storage": [
+        "15 GB n uklas"
+      ],
+      "2 individual accounts": [
+        "2 imiḍanen udmawanen"
+      ],
+      "2 TB of secure storage": [
+        "2 TAṬ n uklas aɣelban"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB n uklas: 40x aɣawas-ik n tura"
+      ],
+      "3 TB of secure storage": [
+        "3 TAṬ n uklas aɣelban"
+      ],
+      "500 GB of secure storage": [
+        "500 GB n uklas aɣelban"
+      ],
+      "6 individual accounts": [
+        "6 imiḍanen udmawanen"
+      ],
+      "Built-in 2FA authenticator": [
+        "Asenqed 2FA yettwasdukkel"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Isenqas ttwabnan ɣef uẓẓu n wayyur amagnu. Tajerridt-ik ad tettwales s uẓẓu n useggas amagnu mi ara ifak tuzya n tfaturt."
+      ],
+      "Online document editor": [
+        "Ameẓreg n yimesmilen s tuqqna"
+      ],
+      "Recover previous file versions": [
+        "Ssuɣal leqdimen n ifaylen"
+      ],
+      "Stronger protection against cyber threats": [
+        "Taɣelbant tugdant ɣer yiheddiden n internet"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Akaram, tibzimin d ifilṭaṛen war talast"
+      ],
+      "Use your own email domain": [
+        "Seqdec taɣult-ik n yimayl"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } akked ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } akked ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } akked ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Tasewwiqt tameqqrant n useggas"
+      ],
+      "Black Friday": [
+        "Ass n Black Friday"
+      ],
+      "for 12 months": [
+        "i 12 n iyyuren"
+      ],
+      "Last chance to save big": [
+        "Tafsut taneggarut i usekles ameqqran"
+      ],
+      "Protect your entire tribe": [
+        "Mmesten taqbilt-ik meṛṛa"
+      ],
+      "Protection for two in a single plan": [
+        "Amesten i sin deg yiwen n uɣawas"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Ufiɣ ameẓlu-nniḍen i iyi-iεeǧben ugar"
+      ],
+      "It’s too expensive": [
+        "Ɣlay aṭas"
+      ],
+      "Other": [
+        "Wayeḍ"
       ]
     }
   }

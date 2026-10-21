@@ -1775,6 +1775,9 @@
       ],
       "Switch sides": [
         "切换面板"
+      ],
+      "Subscribe": [
+        "订阅"
       ]
     },
     "action": {
@@ -4304,6 +4307,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已创建了 10 个别名。使用 ${ BRAND_NAME }  Unlimited，获得无限别名和 500 GB 的存储空间。"
+      ],
+      "Move emails to the right category to improve categorization.": [
+        "将邮件移至正确的类别以改进分类。"
       ]
     },
     "description": {
@@ -9757,6 +9763,12 @@
       ],
       "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
         "您的 Gmail 关联到此 ${ MAIL_APP_NAME } 地址"
+      ],
+      "We'll get back to you shortly.": [
+        "我们会尽快回复您。"
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "您的免费试用已结束。立即订阅，以保持团队访问不中断并确保账户安全。"
       ]
     },
     "info": {
@@ -11091,6 +11103,21 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "Amount": [
+        "金额"
+      ],
+      "Amount due": [
+        "应付金额"
+      ],
+      "Credits used": [
+        "扣除余额"
+      ],
+      "Please share any feedback to help us improve.": [
+        "请分享任何反馈意见，以帮助我们改进工作。"
+      ],
+      "Why would you like to cancel?": [
+        "您为什么想要取消？"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13741,6 +13768,9 @@
     "Payments.iDEAL": {
       "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
         "确认即表示您授权 ${ BRAND_NAME } 及我们的支付服务商 Stripe 通过 SEPA 直接借记从该银行账户收取您订阅的未来款项，并授权您的银行执行这些扣款。您的首笔付款现通过 ${ IDEAL_WERO_BRAND_NAME } 完成。您的套餐将自动续订，直至您取消；我们会在每次扣款前通知您。对于直接借记扣款，根据您与银行达成的协议条款，您可在扣款日起 8 周内向银行申请退款。此规定不适用于您当前正在进行的 ${ IDEAL_WERO_BRAND_NAME } 付款。"
+      ],
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "确认即表示您授权 ${ BRAND_NAME } 及我们的支付服务商 Stripe 通过 SEPA 直接借记从该银行账户收取您订阅的未来款项，并授权您的银行执行这些扣款。您的首笔付款现通过 ${ IDEAL_WERO_BRAND_NAME } 完成。您的套餐将自动续订，直至您取消；我们会在每次扣款前通知您。对于直接借记扣款，根据您与银行达成的协议条款，您可在扣款日起 8 周内向银行申请退款。此规定不适用于您当前正在进行的 ${ IDEAL_WERO_BRAND_NAME } 付款。"
       ]
     },
     "Payments.info": {
@@ -14071,6 +14101,9 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "Please select the main reason": [
+        "请选择主要原因"
       ]
     },
     "Placeholder for contact group name": {
@@ -15921,6 +15954,9 @@
       ],
       "You have successfully unsubscribed": [
         "您已退订成功"
+      ],
+      "Invoice paid": [
+        "支付完成"
       ]
     },
     "Success notification": {
@@ -17221,6 +17257,21 @@
       ],
       "Black Friday": [
         "黑色星期五"
+      ],
+      "Contact us": [
+        "联系我们"
+      ],
+      "Make Categories work better for you": [
+        "让类别更好地为您服务"
+      ],
+      "Pay invoice": [
+        "支付账单"
+      ],
+      "Request sent": [
+        "请求已发送"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "订阅 ${ planTitle }"
       ]
     },
     "Title header for keys table": {
@@ -17852,7 +17903,7 @@
     },
     "bfcampaign2026: Action": {
       "Black Friday": [
-        "黑色星期五"
+        "黑色星期五特惠活动"
       ],
       "Get the deal": [
         "获取优惠"
@@ -17866,7 +17917,7 @@
         "15 GB 存储空间"
       ],
       "2 individual accounts": [
-        "2 个独立账户"
+        "2 个独立帐户"
       ],
       "2 TB of secure storage": [
         "2 TB 安全存储空间"
@@ -17881,10 +17932,10 @@
         "500 GB 安全存储空间"
       ],
       "6 individual accounts": [
-        "6 个独立账户"
+        "6 个独立帐户"
       ],
       "Built-in 2FA authenticator": [
-        "内置 2FA 验证器"
+        "内置双重验证器"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "折扣基于标准月度价格。结算周期结束时，您的订阅将按标准年度费率续订。"
@@ -17896,13 +17947,13 @@
         "恢复先前的文件版本"
       ],
       "Stronger protection against cyber threats": [
-        "针对网络威胁提供更强有力的保护"
+        "针对网络威胁的更强有力保护"
       ],
       "Unlimited folders, labels, and filters": [
-        "文件夹、标签、筛选规则不限量"
+        "无限文件夹、标签和筛选器"
       ],
       "Use your own email domain": [
-        "使用自有邮箱域名"
+        "使用您专属的电子邮件域名"
       ]
     },
     "bfcampaign2026: Info, Drive first": {
@@ -17932,22 +17983,36 @@
     },
     "bfcampaign2026: Title": {
       "Biggest sale of the year": [
-        "年份最大特卖"
+        "全年力度最大的优惠活动"
       ],
       "Black Friday": [
-        "黑色星期五"
+        "黑色星期五特惠活动"
       ],
       "for 12 months": [
-        "年费"
+        "为期 12 个月"
       ],
       "Last chance to save big": [
-        "最后的促销机会"
+        "限时超值优惠，抓紧最后时机"
       ],
       "Protect your entire tribe": [
         "保护您的整个家庭"
       ],
       "Protection for two in a single plan": [
         "单个套餐为两人提供保护"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "不如别的产品好用"
+      ],
+      "It’s missing a key feature": [
+        "缺少一个关键功能"
+      ],
+      "It’s too expensive": [
+        "价格太贵"
+      ],
+      "Other": [
+        "其它"
       ]
     }
   }

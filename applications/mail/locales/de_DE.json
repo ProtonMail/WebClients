@@ -1781,6 +1781,15 @@
       ],
       "Switch sides": [
         "Seiten wechseln"
+      ],
+      "Move ${ LUMO_SHORT_APP_NAME } to the left": [
+        "${ LUMO_SHORT_APP_NAME } nach links verschieben"
+      ],
+      "Move ${ LUMO_SHORT_APP_NAME } to the right": [
+        "${ LUMO_SHORT_APP_NAME } nach rechts verschieben"
+      ],
+      "Subscribe": [
+        "Abonnieren"
       ]
     },
     "action": {
@@ -2131,6 +2140,9 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30 Tage Geld-zurück-Garantie"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30-Tage-Geld-zurück-Garantie: Kündige innerhalb von 30 Tagen nach dem Kauf und wende dich an unseren ${ customerSupportLink }, um eine Rückerstattung zu erhalten."
       ]
     },
     "BF2024: Deal details": {
@@ -4349,6 +4361,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du hast bereits 10 Aliasnamen erstellt. Erhalte unbegrenzte Aliase und 500 GB Speicherplatz mit ${ BRAND_NAME } Unlimitiert."
+      ],
+      "Move emails to the right category to improve categorization.": [
+        "Verschiebe deine E-Mails in die passende Kategorie, um das Kategorisieren zu verbessern."
       ]
     },
     "description": {
@@ -9941,6 +9956,18 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du bist nur ein paar Klicks von einem aufgeräumten Posteingang entfernt"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30-Tage-Geld-zurück-Garantie: Kündige innerhalb von 30 Tagen nach dem Kauf und wende dich an unseren ${ customerSupportLink }, um eine Rückerstattung zu erhalten."
+      ],
+      "UnionPay logo": [
+        "Union Pay-Logo"
+      ],
+      "We'll get back to you shortly.": [
+        "Wir melden uns in Kürze bei dir."
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "Deine kostenlose Testphase ist abgelaufen. Abonniere jetzt, damit dein Team weiterhin uneingeschränkten Zugriff hat und die Konten geschützt bleiben."
       ]
     },
     "info": {
@@ -11283,6 +11310,21 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Amount": [
+        "Betrag"
+      ],
+      "Amount due": [
+        "Fälliger Betrag"
+      ],
+      "Credits used": [
+        "Guthaben verwendet"
+      ],
+      "Please share any feedback to help us improve.": [
+        "Bitte teile uns dein Feedback mit, damit wir uns verbessern können."
+      ],
+      "Why would you like to cancel?": [
+        "Warum möchtest du stornieren?"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11639,6 +11681,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Du musst deine Schlüssel erneut aktivieren, um die aktualisierte Einladung anzeigen zu können."
+      ],
+      "Customer Support": [
+        "Kundensupport"
       ]
     },
     "Link to calendar event": {
@@ -13983,6 +14028,9 @@
     "Payments.iDEAL": {
       "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
         "Mit der Bestätigung ermächtigst du ${ BRAND_NAME } und Stripe, unseren Zahlungsdienstleister, zukünftige Zahlungen für dein Abonnement per SEPA-Lastschrift von diesem Bankkonto einzuziehen, und deiner Bank, diese Zahlungen abzubuchen. Deine erste Zahlung erfolgt jetzt durch ${ IDEAL_WERO_BRAND_NAME }. Dein Abonnement verlängert sich automatisch, bis du es kündigst; wir werden dich vor jeder Abbuchung benachrichtigen. Bei Einzügen per Lastschrift kannst du gemäß den Bedingungen deiner Vereinbarung mit Ihrer Bank innerhalb von 8 Wochen nach dem Abbuchungsdatum eine Rückerstattung bei deiner Bank beantragen. Dies gilt nicht für die Zahlung an ${ IDEAL_WERO_BRAND_NAME }, die du gerade vornimmst."
+      ],
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Mit deiner Bestätigung ermächtigst du ${ BRAND_NAME } und Stripe (unserem Zahlungsdienstleister), zukünftige Zahlungen für dein Abonnement per SEPA-Lastschrift von diesem Bankkonto einzuziehen, und deine Bank, diese Zahlungen abzubuchen. Deine erste Zahlung wird jetzt von ${ IDEAL_WERO_BRAND_NAME } vorgenommen. Dein Abonnement verlängert sich automatisch, bis du es kündigst; Du wirst vor jeder Abbuchung benachrichtigt. Bei Lastschriften können Sie gemäß den Bedingungen Ihrer Vereinbarung mit Ihrer Bank innerhalb von 8 Wochen nach dem Abbuchungsdatum eine Rückerstattung bei Ihrer Bank beantragen. Dies gilt nicht für die Zahlung an ${ IDEAL_WERO_BRAND_NAME }, die Sie gerade vornehmen."
       ]
     },
     "Payments.info": {
@@ -14313,6 +14361,9 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Please select the main reason": [
+        "Bitte wähle den Hauptgrund"
       ]
     },
     "Placeholder for contact group name": {
@@ -16234,6 +16285,9 @@
       ],
       "You have successfully unsubscribed": [
         "Du hast das Abonnement erfolgreich gekündigt."
+      ],
+      "Invoice paid": [
+        "Rechnung bezahlt"
       ]
     },
     "Success notification": {
@@ -17557,6 +17611,21 @@
       ],
       "Black Friday": [
         "Black Friday"
+      ],
+      "Contact us": [
+        "Kontaktiere uns"
+      ],
+      "Make Categories work better for you": [
+        "So nutzen Sie Kategorien noch effektiver"
+      ],
+      "Pay invoice": [
+        "Rechnung bezahlen"
+      ],
+      "Request sent": [
+        "Anfrage gesendet"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "${ planTitle } abonnieren"
       ]
     },
     "Title header for keys table": {
@@ -17773,6 +17842,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Sobald der Benutzer die Einladung angenommen hat, kannst du ihm Rollen zuweisen."
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "Dieser Nutzer erhält bei seiner nächsten Anmeldung Administratorrechte."
       ]
     },
     "Validation": {
@@ -18226,7 +18298,7 @@
         "Black Friday"
       ],
       "Get the deal": [
-        "Jetzt zugreifen"
+        "Deal sichern"
       ]
     },
     "bfcampaign2026: Info": {
@@ -18234,40 +18306,40 @@
         "/Monat"
       ],
       "15 GB storage": [
-        "15 GB Speicherplatz"
+        "15 GB Speicher"
       ],
       "2 individual accounts": [
-        "2 Einzelkonten"
+        "2 individuelle Konten"
       ],
       "2 TB of secure storage": [
-        "2 TB sicherer Speicherplatz"
+        "2 TB sicherer Speicher"
       ],
       "200 GB storage: 40x your current plan": [
-        "200 GB Speicherplatz: das 40-fache Ihres aktuellen Abonnements"
+        "200 GB Speicher: 40 Mal so viel wie dein aktuelles Abonnement"
       ],
       "3 TB of secure storage": [
-        "3 TB sicherer Speicherplatz"
+        "3 TB sicherer Speicher"
       ],
       "500 GB of secure storage": [
-        "500 GB sicherer Speicherplatz"
+        "500 GB sicherer Speicher"
       ],
       "6 individual accounts": [
-        "6 Einzelkonten"
+        "6 individuelle Konten"
       ],
       "Built-in 2FA authenticator": [
-        "Integrierter 2FA-Authentifikator"
+        "Integrierter 2FA-Authenticator"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Die Rabatte beziehen sich auf die regulären monatlichen Preise. Dein Abonnement verlängert sich nach Ablauf des Abrechnungszeitraums zum regulären Jahrespreis."
+        "Die Rabatte basieren auf dem üblichen Monatspreis. Dein Abonnement verlängert sich nach Ablauf des Abrechnungszeitraums zum Standard-Jahrestarif."
       ],
       "Online document editor": [
-        "Dokumente Online bearbeiten"
+        "Online-Dokumenteneditor"
       ],
       "Recover previous file versions": [
-        "Vorherige Dateiversionen wiederherstellen"
+        "Stelle frühere Dateiversionen wieder her"
       ],
       "Stronger protection against cyber threats": [
-        "Besserer Schutz vor Cyber-Bedrohungen"
+        "Stärkerer Schutz vor Cyberbedrohungen"
       ],
       "Unlimited folders, labels, and filters": [
         "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"
@@ -18278,7 +18350,7 @@
     },
     "bfcampaign2026: Info, Drive first": {
       "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, und ${ VPN_SHORT_APP_NAME }"
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } und ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "bfcampaign2026: Info, Family, Drive first": {
@@ -18293,17 +18365,17 @@
     },
     "bfcampaign2026: Info, Mail first": {
       "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, und ${ VPN_SHORT_APP_NAME }"
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } und ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "bfcampaign2026: Info, Pass first": {
       "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, und ${ VPN_SHORT_APP_NAME }"
+        "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } und ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "bfcampaign2026: Title": {
       "Biggest sale of the year": [
-        "Das größte Sonderangebot des Jahres"
+        "Der größte Sale des Jahres"
       ],
       "Black Friday": [
         "Black Friday"
@@ -18312,7 +18384,7 @@
         "für 12 Monate"
       ],
       "Last chance to save big": [
-        "Letzte Chance, kräftig zu sparen"
+        "Letzte Chance auf satte Ersparnisse"
       ],
       "Protect your entire tribe": [
         "Schütze deine ganze Gemeinschaft"
@@ -18322,6 +18394,20 @@
       ],
       "Save big with a yearly plan": [
         "Spare viel Geld mit einem Jahresabo"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Ich habe einen anderen Dienst gefunden, der mir mehr zusagt"
+      ],
+      "It’s missing a key feature": [
+        "Eine wichtige Funktion fehlt"
+      ],
+      "It’s too expensive": [
+        "Es ist mir zu teuer"
+      ],
+      "Other": [
+        "Anderer Grund"
       ]
     }
   }
