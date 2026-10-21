@@ -1,6 +1,6 @@
 import { isValidElement, useState } from 'react';
 
-import { useWelcomeFlags } from '@proton/account';
+import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import clsx from '@proton/utils/clsx';
 import range from '@proton/utils/range';
 

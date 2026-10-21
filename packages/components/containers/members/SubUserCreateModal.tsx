@@ -7,13 +7,10 @@ import {
     InvalidAddressesError,
     MemberCreationValidationError,
     UnavailableAddressesError,
-    assignMemberRoles,
-    createMember,
-    getPrivateAdminError,
-    getPrivateText,
-    getRolesTabBanner,
-} from '@proton/account';
+} from '@proton/account/members';
+import { assignMemberRoles, createMember } from '@proton/account/members/actions';
 import { getInitialStorage, getStorageRange, getTotalStorage } from '@proton/account/organization/storage';
+import { getPrivateAdminError, getPrivateText, getRolesTabBanner } from '@proton/account/organizationKey/actions';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { usePasswordPolicies } from '@proton/account/passwordPolicies/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';

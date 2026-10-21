@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
-import { useUserSettings, userSettingsActions } from '@proton/account';
 import { featureTourActions } from '@proton/account/featuresTour';
+import { userSettingsActions } from '@proton/account/userSettings';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import useToggle from '@proton/hooks/useToggle';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';

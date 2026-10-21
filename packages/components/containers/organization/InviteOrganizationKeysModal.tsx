@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { type MemberKeyPayload, getMemberKeyPayloads, setAdminRoles } from '@proton/account';
 import { getKTUserContext } from '@proton/account/kt/actions';
+import { type MemberKeyPayload, getMemberKeyPayloads, setAdminRoles } from '@proton/account/organizationKey/actions';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';

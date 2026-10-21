@@ -3,20 +3,18 @@ import { useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import {
-    type MemberKeyPayload,
-    type PromoteGlobalSSOPayload,
-    assignMemberRoles,
-    confirmMemberRoleChange,
-    editMember,
-    getMemberAddresses,
-    getPrivateAdminError,
-    getPrivateText,
-    getRolesTabBanner,
-} from '@proton/account';
+import { getMemberAddresses } from '@proton/account/members';
+import { assignMemberRoles, confirmMemberRoleChange, editMember } from '@proton/account/members/actions';
 import { MemberUnprivatizationMode, getMemberUnprivatizationMode } from '@proton/account/members/memberUnprivatization';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { getStorageRange, getTotalStorage } from '@proton/account/organization/storage';
+import {
+    type MemberKeyPayload,
+    type PromoteGlobalSSOPayload,
+    getPrivateAdminError,
+    getPrivateText,
+    getRolesTabBanner,
+} from '@proton/account/organizationKey/actions';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { isOrgKeyRequired } from '@proton/account/organizationRoles/helpers';
 import { useOrganizationRoles } from '@proton/account/organizationRoles/hooks';

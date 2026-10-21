@@ -28,7 +28,7 @@ jest.mock('../../components/upsell/UpsellModal/UpsellModal', () => {
     return MockUpsellModal;
 });
 
-jest.mock('@proton/account');
+jest.mock('@proton/account/userSettings/hooks');
 jest.mock('@proton/account/user/hooks');
 jest.mock('@proton/mail/store/mailSettings/hooks');
 jest.mock('@proton/account/organization/hooks');

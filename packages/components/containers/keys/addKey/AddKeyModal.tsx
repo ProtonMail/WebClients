@@ -3,9 +3,9 @@ import { useState } from 'react';
 import type { AlgorithmInfo } from '@protontech/crypto';
 import { c } from 'ttag';
 
-import { useUserSettings } from '@proton/account';
 import { addAddressKeyAction } from '@proton/account/addressKeys/addAddressKeyAction';
 import { addUserKeyAction } from '@proton/account/userKeys/addUserKeyAction';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import useLoading from '@proton/hooks/useLoading';

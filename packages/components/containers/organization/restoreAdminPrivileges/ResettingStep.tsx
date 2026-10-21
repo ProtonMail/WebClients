@@ -2,8 +2,11 @@ import type { ReactNode } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import type { ResetOrganizationKeyStep, ResetOrganizationKeyStepStatus } from '@proton/account';
 import lockClock from '@proton/account/organizationKey/lock-clock.svg';
+import type {
+    ResetOrganizationKeyStep,
+    ResetOrganizationKeyStepStatus,
+} from '@proton/account/organizationKey/resetOrganizationKey';
 import { Card } from '@proton/atoms/Card/Card';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';

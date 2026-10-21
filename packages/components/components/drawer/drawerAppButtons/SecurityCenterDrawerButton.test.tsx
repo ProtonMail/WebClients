@@ -5,8 +5,8 @@ import {
     selectAccountSecurityIssuesCount,
     selectCanDisplayAccountSecuritySection,
     selectHasAccountSecurityIssue,
-    selectUnreadBreachesCount,
-} from '@proton/account';
+} from '@proton/account/accountSecurity/accountSecuritySlice';
+import { selectUnreadBreachesCount } from '@proton/account/breaches/breachNotificationsSlice';
 import { ThemeColor } from '@proton/colors/types';
 import { baseUseSelector } from '@proton/react-redux-store/ProtonStoreContext';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -15,8 +15,11 @@ import SecurityCenterDrawerAppButton from '../drawerAppButtons/SecurityCenterDra
 import useSecurityCenter from '../views/SecurityCenter/useSecurityCenter';
 import DrawerAppButton from './DrawerAppButton';
 
-jest.mock('@proton/account', () => ({
+jest.mock('@proton/account/breaches/breachNotificationsSlice', () => ({
     selectUnreadBreachesCount: jest.fn(),
+}));
+
+jest.mock('@proton/account/accountSecurity/accountSecuritySlice', () => ({
     selectHasAccountSecurityIssue: jest.fn(),
     selectAccountSecurityElements: jest.fn(),
     selectAccountSecurityIssuesCount: jest.fn(),

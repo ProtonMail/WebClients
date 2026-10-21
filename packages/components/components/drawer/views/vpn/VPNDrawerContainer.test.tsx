@@ -1,6 +1,6 @@
 import { render, waitFor } from '@testing-library/react';
 
-import { useUserSettings } from '@proton/account';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import { getConnectionInformation } from '@proton/shared/lib/api/core/connection-information';
 // eslint-disable-next-line proton/restricted-imports
@@ -12,7 +12,7 @@ import useVPNDrawerTelemetry from './useVPNDrawerTelemetry';
 // Mock dependencies
 jest.mock('@proton/shared/lib/api/core/connection-information');
 jest.mock('@proton/shared/lib/api/helpers/customConfig');
-jest.mock('@proton/account/index');
+jest.mock('@proton/account/userSettings/hooks');
 jest.mock('@proton/app-context/useApi');
 jest.mock('@proton/hooks/useLoading');
 jest.mock('./useVPNDrawerTelemetry');

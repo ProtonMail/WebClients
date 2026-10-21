@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
-import { useUserSettings } from '@proton/account/index';
 import { useUser } from '@proton/account/user/hooks';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 
 import BreachAlertsSecurityCenter from './BreachAlertsSecurityCenter';
 

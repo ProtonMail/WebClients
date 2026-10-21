@@ -2,9 +2,11 @@ import { useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { resetOrganizationKeyWithPrivatization } from '@proton/account';
 import { OutgoingDelegatedAccessProvider } from '@proton/account/delegatedAccess/shared/OutgoingDelegatedAccessProvider';
-import { selectOrganizationKeyResetState } from '@proton/account/organizationKey/resetOrganizationKey';
+import {
+    resetOrganizationKeyWithPrivatization,
+    selectOrganizationKeyResetState,
+} from '@proton/account/organizationKey/resetOrganizationKey';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import useLoading from '@proton/hooks/useLoading';

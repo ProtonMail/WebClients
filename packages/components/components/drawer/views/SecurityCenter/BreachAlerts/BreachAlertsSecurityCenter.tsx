@@ -7,7 +7,7 @@ import {
     selectShouldBreachAlertsRefresh,
     selectUnreadBreachesCount,
     setUnreadBreachesCount,
-} from '@proton/account';
+} from '@proton/account/breaches/breachNotificationsSlice';
 import { useUser } from '@proton/account/user/hooks';
 import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
