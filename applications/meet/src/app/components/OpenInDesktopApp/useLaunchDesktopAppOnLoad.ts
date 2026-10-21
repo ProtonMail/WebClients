@@ -16,8 +16,7 @@ export const useLaunchDesktopAppOnLoad = () => {
         if (launchedOnLoad) {
             tryOpenInDesktopApp(meetingLink);
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [launchedOnLoad, meetingLink]);
 
     return launchedOnLoad;
 };
