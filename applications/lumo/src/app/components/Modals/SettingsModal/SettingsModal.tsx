@@ -294,8 +294,9 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
             {/* Project conversations in history toggle */}
             <SettingsSectionItem
                 icon="Folder"
-                text={c('collider_2025: Title').t`Show project chats in history`}
-                subtext={c('collider_2025: Description').t`Include project conversations in the main chat history`}
+                text={c('collider_2025: Title').t`Project chats in Recent`}
+                subtext={c('collider_2025: Description')
+                    .t`Show chats from your projects alongside other chats in the Recent section of the sidebar.`}
                 button={
                     <Toggle
                         id="show-project-conversations-toggle"
@@ -314,8 +315,8 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
             {isLumoToolingEnabled && (
                 <SettingsSectionItem
                     icon="Globe"
-                    text={c('collider_2025: Title').t`Automatic web search`}
-                    subtext={c('collider_2025: Description').t`Always enable web search for new conversations`}
+                    text={c('collider_2025: Title').t`Web search`}
+                    subtext={c('collider_2025: Description').t`Enable web search by default in new chats.`}
                     button={
                         <Toggle
                             id="automatic-web-search-toggle"
@@ -334,9 +335,9 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
             {isArtifactsViewEnabled && (
                 <SettingsSectionItem
                     icon="FileText"
-                    text={c('collider_2025: Title').t`Automatic creations`}
+                    text={c('collider_2025: Title').t`Creations`}
                     subtext={c('collider_2025: Description')
-                        .t`Allow ${LUMO_SHORT_APP_NAME} to open longer documents, code, and slides in the canvas when appropriate. This is the default for all chats; you can change it for a single chat from the Tools menu.`}
+                        .t`Let ${LUMO_SHORT_APP_NAME} open documents, code, and web pages in a canvas beside your chat. Change this for individual chats in Tools.`}
                     button={
                         <Toggle
                             id="automatic-artifact-creation-toggle"
@@ -357,8 +358,9 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
             {isVisualizationInstructionsEnabled && (
                 <SettingsSectionItem
                     icon="ChartLine"
-                    text={c('collider_2025: Title').t`Visualization mode`}
-                    subtext={c('collider_2025: Description').t`Let ${LUMO_SHORT_APP_NAME} visualize data with charts`}
+                    text={c('collider_2025: Title').t`Data visualizations`}
+                    subtext={c('collider_2025: Description')
+                        .t`Let ${LUMO_SHORT_APP_NAME} generate charts when they help explain an answer.`}
                     button={
                         <Toggle
                             id="visualization-instructions-toggle"
@@ -377,7 +379,7 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
             <SettingsSectionItem
                 icon="Mic"
                 text={c('collider_2025: Title').t`Dictation language`}
-                subtext={c('collider_2025: Description').t`Language used when transcribing your voice`}
+                subtext={c('collider_2025: Description').t`Choose the language you speak when using dictation.`}
                 button={
                     <div className="min-w-custom" style={{ '--min-w-custom': '10rem' }}>
                         <DictationLanguageSelect
@@ -392,11 +394,11 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
             {/* Search Index Management */}
             <SettingsSectionItem
                 icon="Search"
-                text={c('collider_2025: Title').t`Search Index`}
+                text={c('collider_2025: Title').t`Search index`}
                 subtext={
                     <div className="flex flex-column gap-1">
                         <span className="color-weak">{c('collider_2025: Description')
-                            .t`Encrypted search index for chats and Drive files.`}</span>
+                            .t`Reset the encrypted search index for your chats and Drive files.`}</span>
 
                         {showIndexingProgress && (
                             <IndexingStatusBanner
@@ -415,9 +417,9 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
 
             <SettingsSectionItem
                 icon="MessageSquare"
-                text={c('collider_2025: Title').t`Delete everything`}
+                text={c('collider_2025: Title').t`Delete all data`}
                 subtext={c('collider_2025: Description')
-                    .t`Permanently delete your projects, chats, and saved memories. This is irreversible.`}
+                    .t`Permanently delete your projects, chats, and saved memories. This cannot be undone.`}
                 button={<DeleteAllButton onClose={onClose} />}
             />
         </div>
