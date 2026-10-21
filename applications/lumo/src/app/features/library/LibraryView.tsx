@@ -10,10 +10,12 @@ import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
+import { useIsGuest } from '../../providers/IsGuestProvider';
 import { sendLibraryOpenedEvent } from '../../util/telemetry';
 import { useGeneratedGalleryCreations } from '../creations/hooks/useGeneratedGalleryCreations';
 import { GalleryView } from '../gallery/GalleryView';
 import { LibraryCreationsTab } from './LibraryCreationsTab';
+import { LibraryGuestSignInState } from './LibraryGuestSignInState';
 import type { LibraryCreationFilter } from './libraryCreations';
 import { filterAndSortCreations } from './libraryCreations';
 import { useLibraryCreationEntries } from './useLibraryCreationEntries';
@@ -121,8 +123,9 @@ interface Props {
 export const LibraryView = ({ isProcessingAttachment, prefillQuery }: Props) => {
     const history = useHistory();
     const location = useLocation();
+    const isGuest = useIsGuest();
     const { artifactsView, imageTools } = useLumoFlags();
-    const creations = useGeneratedGalleryCreations({ enabled: artifactsView });
+    const creations = useGeneratedGalleryCreations({ enabled: artifactsView && !isGuest });
     const [searchQuery, setSearchQuery] = useState('');
 
     const requestedTab = new URLSearchParams(location.search).get('tab');
@@ -140,6 +143,14 @@ export const LibraryView = ({ isProcessingAttachment, prefillQuery }: Props) => 
         if (!artifactsView || hasReportedOpenRef.current) {
             return;
         }
+        if (isGuest) {
+            hasReportedOpenRef.current = true;
+            sendLibraryOpenedEvent({
+                tab: activeTab,
+                hasCreations: false,
+            });
+            return;
+        }
         if (creations.status !== 'loaded' && creations.status !== 'error') {
             return;
         }
@@ -148,7 +159,7 @@ export const LibraryView = ({ isProcessingAttachment, prefillQuery }: Props) => 
             tab: activeTab,
             hasCreations: creations.status === 'loaded' ? creations.items.length > 0 : undefined,
         });
-    }, [artifactsView, creations.status, creations.items.length, activeTab]);
+    }, [artifactsView, isGuest, creations.status, creations.items.length, activeTab]);
 
     return (
         <LumoLayoutWithDrawer drawer={{ disabled: true }}>
@@ -162,7 +173,7 @@ export const LibraryView = ({ isProcessingAttachment, prefillQuery }: Props) => 
                                     .t`Creations and images ${LUMO_SHORT_APP_NAME} made in your chats.`}
                             </p>
                         </div>
-                        {activeTab === 'creations' && (
+                        {activeTab === 'creations' && !isGuest && (
                             // Input grows by default (flex-1), so the wrapper sets its width: its
                             // own row on small screens, a fixed width beside the title above that.
                             <div className="w-full md:w-custom" style={{ '--md-w-custom': '12rem' }}>
@@ -198,7 +209,11 @@ export const LibraryView = ({ isProcessingAttachment, prefillQuery }: Props) => 
                         )}
                     </div>
                 </div>
-                {activeTab === 'creations' ? (
+                {isGuest ? (
+                    <div className="flex-1 min-h-0 overflow-auto">
+                        <LibraryGuestSignInState />
+                    </div>
+                ) : activeTab === 'creations' ? (
                     <CreationsContent searchQuery={searchQuery} creations={creations} />
                 ) : (
                     <div className="relative flex flex-column flex-1 min-h-0">
