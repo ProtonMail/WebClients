@@ -1033,6 +1033,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "桌面應用程式免費試用期將會在${ formattedEndDate }.${ upgradeButton }完結"
+      ],
+      "Don't show this offer again": [
+        "不再顯示此優惠"
+      ],
+      "Special Offer": [
+        "特別優惠"
+      ],
+      "Subscribe": [
+        "訂閱"
       ]
     },
     "action": {
@@ -4111,6 +4120,15 @@
       ],
       "Incorrect password. Please try again.": [
         "密碼不正確。請再試一次。"
+      ],
+      "Organization does not have enough seats available": [
+        "組織沒有足夠的可用座席"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "無可用於 ${ signatureType } 種類的金鑰驗證"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "錯誤的恢復短語。重試或使用其它復原方法。"
       ]
     },
     "error": {
@@ -5036,6 +5054,9 @@
       ],
       "Pending": [
         "等待中"
+      ],
+      "Has errors": [
+        "有錯誤"
       ]
     },
     "Import warning": {
@@ -6585,6 +6606,15 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "您已達到預約時段限制 (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } 包含撰稿助理"
+      ],
+      "1 device per user": [
+        "1 台裝置每位使用者"
+      ],
+      "We'll get back to you shortly.": [
+        "我們會盡快回覆您。"
       ]
     },
     "info": {
@@ -7316,6 +7346,21 @@
       ],
       "Zoom meeting": [
         "Zoom 會議"
+      ],
+      "Amount": [
+        "金額"
+      ],
+      "Amount due": [
+        "應付金額"
+      ],
+      "Credits used": [
+        "已使用儲值"
+      ],
+      "Please share any feedback to help us improve.": [
+        "請提供任何意見回饋以協助我們改進。"
+      ],
+      "Why would you like to cancel?": [
+        "為什麼您想要取消呢？"
       ]
     },
     "label": {
@@ -9603,6 +9648,9 @@
     "Payments.Saved payment method details": {
       "Google Pay - card ending in ${ Last4 }": [
         "Google Pay - 卡片於 ${ Last4 } 結束"
+      ],
+      "Bank transfer - ${ iban }": [
+        "匯款 - ${ iban }"
       ]
     },
     "Payments.Sepa": {
@@ -9831,6 +9879,9 @@
       ],
       "ZIP code": [
         "郵遞區號"
+      ],
+      "Please select the main reason": [
+        "請選擇主要原因"
       ]
     },
     "Placeholder for contact group name": {
@@ -11289,6 +11340,9 @@
       ],
       "You have successfully unsubscribed": [
         "您已成功取消訂購"
+      ],
+      "Invoice paid": [
+        "帳單已付"
       ]
     },
     "Suffix": {
@@ -12239,6 +12293,18 @@
       ],
       "Your shorter address is now ready": [
         "您的短地址已完成"
+      ],
+      "Black Friday": [
+        "黑色星期五"
+      ],
+      "Contact us": [
+        "聯絡我們"
+      ],
+      "Pay invoice": [
+        "支付帳單"
+      ],
+      "Request sent": [
+        "已送出需求"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12841,6 +12907,120 @@
       ],
       "Passcode:": [
         "數字密碼:"
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "黑色星期五特惠活動"
+      ],
+      "Get the deal": [
+        "取得優惠"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/月"
+      ],
+      "15 GB storage": [
+        "15 GB 儲存空間"
+      ],
+      "2 individual accounts": [
+        "2 個獨立帳號"
+      ],
+      "2 TB of secure storage": [
+        "2 TB 安全儲存空間"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB 儲存空間：為您目前方案的 40 倍"
+      ],
+      "3 TB of secure storage": [
+        "3 TB 安全儲存空間"
+      ],
+      "500 GB of secure storage": [
+        "500 GB 安全儲存空間"
+      ],
+      "6 individual accounts": [
+        "6 個獨立帳號"
+      ],
+      "Built-in 2FA authenticator": [
+        "內建雙重驗證程式"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "折扣以標準月費為準。您的訂閱將在帳單週期結束時以標準年費續訂。"
+      ],
+      "Online document editor": [
+        "線上文件編輯器"
+      ],
+      "Recover previous file versions": [
+        "復原先前的檔案版本"
+      ],
+      "Stronger protection against cyber threats": [
+        "針對網路威脅的更強大保護"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "資料夾、標籤與篩選器無上限"
+      ],
+      "Use your own email domain": [
+        "使用您專屬的電子郵件網域"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "進階版 ${ DRIVE_SHORT_APP_NAME }、${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME } 和 ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "進階版 ${ DRIVE_SHORT_APP_NAME }、${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "進階版 ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "進階版 ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 和 ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "進階版 ${ PASS_SHORT_APP_NAME }、${ MAIL_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 和 ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "全年力度最大的優惠活動"
+      ],
+      "Black Friday": [
+        "黑色星期五特惠活動"
+      ],
+      "for 12 months": [
+        "為期 12 個月"
+      ],
+      "Last chance to save big": [
+        "把握最後優惠機會"
+      ],
+      "Protect your entire tribe": [
+        "守護你的整個圈子"
+      ],
+      "Protection for two in a single plan": [
+        "一份方案守護兩人"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "我找到了另一個我更喜歡的服務"
+      ],
+      "It’s missing a key feature": [
+        "缺少關鍵功能"
+      ],
+      "It’s too expensive": [
+        "價格太貴了"
+      ],
+      "Other": [
+        "其他"
       ]
     }
   }

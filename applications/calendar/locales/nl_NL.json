@@ -1040,6 +1040,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "De gratis proefperiode van uw desktop programma loopt af op ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Subscribe": [
+        "Abonneren"
       ]
     },
     "action": {
@@ -1316,6 +1319,9 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30 dagen geld-terug-garantie"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30 dagen geld-terug-garantie: annuleer binnen 30 dagen na uw aankoop en neem contact op met onze ${ customerSupportLink } om uw geld terug te krijgen."
       ]
     },
     "BF2024: Deal details": {
@@ -4271,6 +4277,9 @@
       ],
       "Incorrect password. Please try again.": [
         "Onjuist wachtwoord. Probeer het opnieuw."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Verkeerde herstelzijn. Probeer opnieuw of probeer een andere herstelmethode."
       ]
     },
     "error": {
@@ -6851,6 +6860,15 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "U heeft de limiet voor boekingen bereikt (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30 dagen geld-terug-garantie: annuleer binnen 30 dagen na uw aankoop en neem contact op met onze ${ customerSupportLink } om uw geld terug te krijgen."
+      ],
+      "UnionPay logo": [
+        "Union Pay-logo"
+      ],
+      "We'll get back to you shortly.": [
+        "We nemen zo snel mogelijk contact met u op."
       ]
     },
     "info": {
@@ -7597,6 +7615,21 @@
       ],
       "Zoom meeting": [
         "Zoom-vergadering"
+      ],
+      "Amount": [
+        "Bedrag"
+      ],
+      "Amount due": [
+        "Verschuldigd bedrag"
+      ],
+      "Credits used": [
+        "Verbruikt tegoed"
+      ],
+      "Please share any feedback to help us improve.": [
+        "Deel uw feedback en help ons te verbeteren."
+      ],
+      "Why would you like to cancel?": [
+        "Waarom wil u annuleren?"
       ]
     },
     "label": {
@@ -7776,6 +7809,9 @@
       ],
       "What’s this?": [
         "Wat is dit?"
+      ],
+      "Customer Support": [
+        "Klantendienst"
       ]
     },
     "Link label (optional)": {
@@ -9876,6 +9912,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Uw abonnement heeft momenteel een bestaande korting. Overstappen naar deze nieuwe promotie betekent dat de bestaande korting niet langer wordt toegepast."
+      ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Abonnementwisseling is om de volgende redenen niet compatibel:"
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Proton Meet licenties moeten overeenkomen met het aantal leden."
+      ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Dit abonnement ondersteunt de beheerde functies van uw account niet."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Dit abonnement kan momenteel niet worden voltooid. Probeer het opnieuw."
       ]
     },
     "Payments.Error": {
@@ -9912,6 +9960,9 @@
     "Payments.iDEAL": {
       "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
         "Door te bevestigen geeft u toestemming aan ${ BRAND_NAME } en Stripe, onze betalingsdienstaanbieder, onze betalingsdienstaanbieder, om toekomstige betalingen voor uw abonnement van deze bankrekening te innen via SEPA Direct Debit, en uw bank om deze betalingen af ​​te schrijven. Uw eerste betaling wordt nu uitgevoerd door ${ IDEAL_WERO_BRAND_NAME }. Uw abonnement wordt automatisch verlengd, totdat u opzegt; wij zullen u vóór elke ophaling op de hoogte stellen. Bij automatische incasso kunt u binnen 8 weken na de incassodatum een ​​teruggave aanvragen bij uw bank, conform de voorwaarden die u met uw bank heeft afgesproken. Dit is niet van toepassing op de betaling van ${ IDEAL_WERO_BRAND_NAME } die u nu doet."
+      ],
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Door te bevestigen geeft u ${ BRAND_NAME } en Stripe, onze betalingsdienstaanbieder, toestemming om toekomstige betalingen voor uw abonnement van deze bankrekening te innen via SEPA automatische incasso, en uw bank om deze betalingen af ​​te schrijven. Uw eerste betaling wordt nu uitgevoerd door ${ IDEAL_WERO_BRAND_NAME }. Uw abonnement wordt automatisch verlengd, totdat u opzegt; wij zullen u vóór elke ophaling op de hoogte stellen. Bij automatische incasso kunt u binnen 8 weken na de incassodatum een ​​teruggave aanvragen bij uw bank, conform de voorwaarden die u met uw bank heeft afgesproken. Dit is niet van toepassing op de betaling van ${ IDEAL_WERO_BRAND_NAME } die u nu doet."
       ]
     },
     "Payments.info": {
@@ -10189,6 +10240,9 @@
       ],
       "ZIP code": [
         "Postcode"
+      ],
+      "Please select the main reason": [
+        "Selecteer de hoofdreden"
       ]
     },
     "Placeholder for contact group name": {
@@ -11712,6 +11766,9 @@
       ],
       "You have successfully unsubscribed": [
         "U bent succesvol afgemeld"
+      ],
+      "Invoice paid": [
+        "Factuur betaald"
       ]
     },
     "Suffix": {
@@ -12680,6 +12737,15 @@
       ],
       "Your shorter address is now ready": [
         "Uw kortere adres is nu klaar"
+      ],
+      "Contact us": [
+        "Contacteer ons"
+      ],
+      "Pay invoice": [
+        "Factuur betalen"
+      ],
+      "Request sent": [
+        "Verzoek verzonden"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13340,14 +13406,17 @@
     "bfcampaign2026: Action": {
       "Black Friday": [
         "Black Friday"
+      ],
+      "Get the deal": [
+        "Pak deze deal"
       ]
     },
     "bfcampaign2026: Title": {
       "Biggest sale of the year": [
-        "Grootste uitverkoop van het jaar"
+        "Het grootste koopfeest van het jaar"
       ],
       "Black Friday": [
-        "Black friday"
+        "Black Friday"
       ],
       "Last chance to save big": [
         "Laatste kans om flink te besparen"
@@ -13360,6 +13429,95 @@
       ],
       "Save big with a yearly plan": [
         "Bespaar flink met een jaarabonnement"
+      ],
+      "for 12 months": [
+        "voor 12 maanden"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/maand"
+      ],
+      "15 GB storage": [
+        "15 GB opslag"
+      ],
+      "2 individual accounts": [
+        "2 individuele accounts"
+      ],
+      "2 TB of secure storage": [
+        "2 TB veilige opslag"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB opslag: 40x uw huidige abonnement"
+      ],
+      "3 TB of secure storage": [
+        "3 TB veilige opslag"
+      ],
+      "500 GB of secure storage": [
+        "500 GB veilige opslag"
+      ],
+      "6 individual accounts": [
+        "6 individuele accounts"
+      ],
+      "Built-in 2FA authenticator": [
+        "Ingebouwde 2FA-verificatie"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "De kortingen zijn gebaseerd op de standaard maandprijs. Wanneer de factureringsperiode afloopt, wordt uw abonnement verlengd tegen het standaard jaartarief ."
+      ],
+      "Online document editor": [
+        "Online document editor"
+      ],
+      "Recover previous file versions": [
+        "Herstel vorige bestandsversies"
+      ],
+      "Stronger protection against cyber threats": [
+        "Sterkere bescherming tegen cyberdreigingen"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Ongelimiteerde aantallen mappen, labels en filters"
+      ],
+      "Use your own email domain": [
+        "Gebruik uw eigen e-maildomein"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } en ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } en ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } en ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Ik heb een andere service gevonden die mijn voorkeur heeft"
+      ],
+      "It’s missing a key feature": [
+        "Er ontbreekt een sleutel kenmerk"
+      ],
+      "It’s too expensive": [
+        "Het is te duur"
+      ],
+      "Other": [
+        "Overige"
       ]
     }
   }

@@ -1052,6 +1052,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Din desktop app's gratis prøveperiode slutter den ${ upgradeButton }. ${ formattedEndDate }"
+      ],
+      "Subscribe": [
+        "Abonnér"
       ]
     },
     "action": {
@@ -1334,6 +1337,9 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30 dages tilbagebetalingsgaranti"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30-dages fortrydelsesret: annuller indenfor 30 dage af dit køb, og kontakt vores ${ customerSupportLink } for at få en refusion."
       ]
     },
     "BF2024: Deal details": {
@@ -4300,6 +4306,9 @@
       ],
       "Incorrect password. Please try again.": [
         "Forkert adgangskode. Prøv venligst igen."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Forkert gendannelsessætning. Prøv igen eller brug en anden gendannelsesmetode."
       ]
     },
     "error": {
@@ -6904,6 +6913,18 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Du har nået grænsen for reservationspladser (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30-dages fortrydelsesret: annuller indenfor 30 dage af dit køb, og kontakt vores ${ customerSupportLink } for at få en refusion."
+      ],
+      "UnionPay logo": [
+        "UnionPay logo"
+      ],
+      "We'll get back to you shortly.": [
+        "Tak! Vi vender tilbage til dig inden længe."
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "Din gratis prøveperiode er afsluttet. Abonnér nu så dit team beholder adgang, og deres konti forbliver sikre."
       ]
     },
     "info": {
@@ -7653,6 +7674,21 @@
       ],
       "Zoom meeting": [
         "Zoom-møde"
+      ],
+      "Amount": [
+        "Beløb"
+      ],
+      "Amount due": [
+        "Forfaldent beløb"
+      ],
+      "Credits used": [
+        "Kredit forbrugt"
+      ],
+      "Please share any feedback to help us improve.": [
+        "Del gerne feedback, så vi kan forbedre os."
+      ],
+      "Why would you like to cancel?": [
+        "Hvorfor ønsker du at opsige?"
       ]
     },
     "label": {
@@ -7835,6 +7871,9 @@
       ],
       "What’s this?": [
         "Hvad er dette?"
+      ],
+      "Customer Support": [
+        "Kundesupport"
       ]
     },
     "Link label (optional)": {
@@ -10042,6 +10081,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Dit abonnement har i øjeblikket en eksisterende rabat. Ved at skifte til denne nye kampagne vil den eksisterende rabat ikke længere blive anvendt."
+      ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Abonnementskiftet er ikke kompatibelt af følgende årsager:"
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Antallet af pladser i Proton Meet skal matche antallet af medlemmer."
+      ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Dette abonnement understøtter ikke dine administrerede funktioner på din konto."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Abonnementet kan ikke færdiggøres lige nu. Prøv igen."
       ]
     },
     "Payments.Error": {
@@ -10078,6 +10129,9 @@
     "Payments.iDEAL": {
       "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
         "Ved at bekræfte autoriserer du ${ BRAND_NAME } og Stripe, vores betalingstjenesteudbyder, til at hæve fremtidige betalinger for dit abonnement fra denne bankkonto med SEPA Direct Debit, og at banken kan debitere de betalinger. Din første betaling forfalder fra ${ IDEAL_WERO_BRAND_NAME } nu. Dit abonnement fornyes automatisk indtil du opsiger; vi giver dig besked før hver betaling. For Direct Debit-opkrævninger kan du anmode om en refundering fra din bank indenfor 8 uger af debiteringsdatoen efter din og din banks aftalevilkår. Dette gælder ikke for den betaling med ${ IDEAL_WERO_BRAND_NAME }, som du er i gang med nu."
+      ],
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Ved at bekræfte autoriserer du ${ BRAND_NAME } og Stripe, vores betalingstjenesteudbyder, til at hæve fremtidige betalinger for dit abonnement fra denne bankkonto med SEPA Direct Debit, og at banken kan debitere de betalinger. Din første betaling forfalder fra ${ IDEAL_WERO_BRAND_NAME } nu. Dit abonnement fornyes automatisk indtil du opsiger, og vi giver dig besked før hver betaling. For Direct Debit-opkrævninger kan du anmode om en refundering fra din bank indenfor 8 uger af debiteringsdatoen efter din og din banks aftalevilkår. Dette gælder ikke for den betaling med ${ IDEAL_WERO_BRAND_NAME }, som du er i gang med nu."
       ]
     },
     "Payments.info": {
@@ -10366,6 +10420,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Please select the main reason": [
+        "Vælg venligst hovedårsagen"
       ]
     },
     "Placeholder for contact group name": {
@@ -11892,6 +11949,9 @@
       ],
       "You have successfully unsubscribed": [
         "Du har afmeldt dig"
+      ],
+      "Invoice paid": [
+        "Faktura betalt"
       ]
     },
     "Suffix": {
@@ -12863,6 +12923,18 @@
       ],
       "Black Friday": [
         "Black Friday"
+      ],
+      "Contact us": [
+        "Kontakt os"
+      ],
+      "Pay invoice": [
+        "Betal faktura"
+      ],
+      "Request sent": [
+        "Anmodning sendt"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "Abonnér på ${ planTitle }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13074,6 +13146,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Du vil kunne tildele roller når brugeren har accepteret invitationen."
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "Denne bruger får administratorrettigheder næste gang de logger ind."
       ]
     },
     "Validation": {
@@ -13525,7 +13600,7 @@
         "Black Friday"
       ],
       "Get the deal": [
-        "Indløs tilbuddet"
+        "Få tilbuddet"
       ]
     },
     "bfcampaign2026: Info": {
@@ -13548,7 +13623,31 @@
         "6 individuelle konti"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Rabatter beregnes ud fra den normale månedspris. Dit abonnement fornyes til den årlige standardpris når faktureringsperioden udløber."
+        "Rabatterne er baseret på den månedlige standardpris. Dit abonnement fornyes til den årlige standardpris, når faktureringsperioden udløber."
+      ],
+      "15 GB storage": [
+        "15 GB lagerplads"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB lagerplads: 40 gange så meget som i dit nuværende abonnement"
+      ],
+      "Built-in 2FA authenticator": [
+        "Indbygget 2FA-godkendelse"
+      ],
+      "Online document editor": [
+        "Online dokumenteditor"
+      ],
+      "Recover previous file versions": [
+        "Gendan tidligere filversioner"
+      ],
+      "Stronger protection against cyber threats": [
+        "Stærkere beskyttelse mod cybertrusler"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Ubegrænset antal mapper, etiketter og filtre"
+      ],
+      "Use your own email domain": [
+        "Brug dit eget e-mail-domæne"
       ]
     },
     "bfcampaign2026: Info, Family, Drive first": {
@@ -13569,7 +13668,7 @@
         "Black Friday"
       ],
       "for 12 months": [
-        "i 12 måneder"
+        "for 12 måneder"
       ],
       "Last chance to save big": [
         "Sidste chance for at spare stort"
@@ -13582,6 +13681,35 @@
       ],
       "Save big with a yearly plan": [
         "Spar stort med et årligt abonnement"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } og ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Jeg fandt en anden tjeneste, som jeg synes bedre om"
+      ],
+      "It’s missing a key feature": [
+        "Den mangler en nøglefunktion"
+      ],
+      "It’s too expensive": [
+        "Det er for dyrt"
+      ],
+      "Other": [
+        "Andet"
       ]
     }
   }

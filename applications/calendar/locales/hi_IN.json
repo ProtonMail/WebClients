@@ -1048,6 +1048,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "आपका डेस्कटॉप ऐप मुफ्त ट्रायल ${ formattedEndDate } को समाप्त होता है ${ upgradeButton }"
+      ],
+      "Subscribe": [
+        "सब्सक्राइब करें"
       ]
     },
     "action": {
@@ -4281,6 +4284,9 @@
       ],
       "Incorrect password. Please try again.": [
         "गलत पासवर्ड। कृपया वापिस कोशिश करें।"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "गलत रिकवरी फ्रेज़। पुन: प्रयास करें या किसी अन्य पुनर्प्राप्ति विधि का उपयोग करें।"
       ]
     },
     "error": {
@@ -6861,6 +6867,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "आप बुकिंग स्लॉट की सीमा तक पहुँच चुके हैं (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "We'll get back to you shortly.": [
+        "हम शीघ्र ही आपसे संपर्क करेंगे।"
       ]
     },
     "info": {
@@ -7610,6 +7619,21 @@
       ],
       "Zoom meeting": [
         "ज़ूम मीटिंग"
+      ],
+      "Amount": [
+        "रकम"
+      ],
+      "Amount due": [
+        "देय राशि"
+      ],
+      "Credits used": [
+        "खर्च किए गए क्रेडिट"
+      ],
+      "Please share any feedback to help us improve.": [
+        "हमें बेहतर बनाने में मदद करने के लिए कोई भी सुझाव साझा करें।"
+      ],
+      "Why would you like to cancel?": [
+        "इसे रद्द करने की वजह क्या है?"
       ]
     },
     "label": {
@@ -10307,6 +10331,9 @@
       ],
       "ZIP code": [
         "ZIP कोड"
+      ],
+      "Please select the main reason": [
+        "कृपया मुख्य कारण को चुनें"
       ]
     },
     "Placeholder for contact group name": {
@@ -11821,6 +11848,9 @@
       ],
       "You have successfully unsubscribed": [
         "आपने अपनी सदस्यता सफलतापूर्वक समाप्त कर दी है।"
+      ],
+      "Invoice paid": [
+        "रसीद का भुगतान हो गया"
       ]
     },
     "Suffix": {
@@ -12789,6 +12819,15 @@
       ],
       "Your shorter address is now ready": [
         "आपका छोटा पता अब तैयार है"
+      ],
+      "Contact us": [
+        "हमसे संपर्क करें"
+      ],
+      "Pay invoice": [
+        "इनवॉइस का भुगतान करें"
+      ],
+      "Request sent": [
+        "अनुरोध भेजा गया"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13440,6 +13479,120 @@
       ],
       "Passcode:": [
         "पासकोड:"
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "ब्लैक फ्राइडे"
+      ],
+      "Get the deal": [
+        "सौदा पाएं"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/महीना"
+      ],
+      "15 GB storage": [
+        "15 जीबी स्टोरेज"
+      ],
+      "2 individual accounts": [
+        "2 इंडिविजुअल खाते"
+      ],
+      "2 TB of secure storage": [
+        "2 TB सुरक्षित स्टोरेज"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 जीबी स्टोरेज: आपके वर्तमान प्लान का 40 गुना"
+      ],
+      "3 TB of secure storage": [
+        "3 TB सुरक्षित स्टोरेज"
+      ],
+      "500 GB of secure storage": [
+        "500 जीबी सुरक्षित स्टोरेज"
+      ],
+      "6 individual accounts": [
+        "6 इंडिविजुअल खाते"
+      ],
+      "Built-in 2FA authenticator": [
+        "बिल्ट-इन 2FA ऑथेंटिकेटर"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "छूट मानक मासिक कीमतों पर आधारित है। बिल साइकिल खत्म होने पर आपकी सदस्यता मानक वार्षिक दर पर रिन्यू हो जाएगी।"
+      ],
+      "Online document editor": [
+        "ऑनलाइन दस्तावेज़ एडिटर"
+      ],
+      "Recover previous file versions": [
+        "पिछले फाइल संस्करणों को रिकवर करें"
+      ],
+      "Stronger protection against cyber threats": [
+        "साइबर खतरों के खिलाफ मज़बूत सुरक्षा"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "असीमित फोल्डर, लेबल और फिल्टर"
+      ],
+      "Use your own email domain": [
+        "अपने खुद के ईमेल डोमेन का उपयोग करें"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "प्रीमियम ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } और ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "प्रीमियम ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "प्रीमियम ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "प्रीमियम ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } और ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "प्रीमियम ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } और ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "साल का सबसे बड़ा धमाका"
+      ],
+      "Black Friday": [
+        "ब्लैक फ्राइडे"
+      ],
+      "for 12 months": [
+        "12 महीनों के लिए"
+      ],
+      "Last chance to save big": [
+        "बड़ी बचत का आखिरी मौका"
+      ],
+      "Protect your entire tribe": [
+        "अपने पूरे कुनबे को सुरक्षित रखें"
+      ],
+      "Protection for two in a single plan": [
+        "एक ही प्लान में दो लोगों के लिए सुरक्षा"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "मुझे एक और सेवा मिली जो मुझे बेहतर लगी"
+      ],
+      "It’s missing a key feature": [
+        "यह एक महत्वपूर्ण खासियत गायब है"
+      ],
+      "It’s too expensive": [
+        "यह बहुत महंगा है"
+      ],
+      "Other": [
+        "दूसरा"
       ]
     }
   }

@@ -1039,6 +1039,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "회원님의 데스크톱 앱 무료 체험 기간이 ${ formattedEndDate }에 종료됩니다. ${ upgradeButton }"
+      ],
+      "Subscribe": [
+        "구독"
       ]
     },
     "action": {
@@ -1151,6 +1154,9 @@
       ],
       "Writing assistant seats": [
         "글쓰기 도우미 이용 권한"
+      ],
+      "Managed Service Provider": [
+        "관리 중인 서비스 제공자"
       ]
     },
     "Alarm notification": {
@@ -4234,6 +4240,9 @@
       ],
       "Incorrect password. Please try again.": [
         "잘못된 비밀번호입니다. 다시 시도해 주세요."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "잘못된 복구 키입니다. 다시 시도하거나 다른 복구 방법을 사용하세요."
       ]
     },
     "error": {
@@ -6762,6 +6771,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "예약 슬롯 한도에 도달했습니다 (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "할인은 표준 월간 요금을 기준으로 합니다. 결제일이 종료되면 구독은 표준 연간 요금으로 갱신됩니다."
+      ],
+      "We'll get back to you shortly.": [
+        "곧 돌아오겠습니다."
       ]
     },
     "info": {
@@ -7505,6 +7520,21 @@
       ],
       "Zoom meeting": [
         "Zoom 화상 회의"
+      ],
+      "Amount": [
+        "금액"
+      ],
+      "Amount due": [
+        "지불할 금액"
+      ],
+      "Credits used": [
+        "사용된 크레딧"
+      ],
+      "Please share any feedback to help us improve.": [
+        "기능을 향상시키기 위해 피드백을 공유해 주세요."
+      ],
+      "Why would you like to cancel?": [
+        "취소하려는 이유가 무엇인가요?"
       ]
     },
     "label": {
@@ -9780,6 +9810,24 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "구독에 현재 기존 할인이 적용되어 있습니다. 새로운 프로모션으로 변경하면 기존 할인이 더 이상 적용되지 않습니다."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "계속하면, ${ termsLink }에 동의하는 것으로 간주합니다."
+      ],
+      "Plan switch is incompatible for the following reasons:": [
+        "다음 사유로 플랜 변경이 불가합니다:"
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "선택된 플랜은 설정된 주소의 수만큼 지원하지 않습니다."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "선택된 플랜은 조직의 구성원 수만큼 지원하지 않습니다."
+      ],
+      "Trial plans don’t support dedicated IPs.": [
+        "무료 체험에서는 지정 IP 이용 권한을 지원하지 않습니다."
+      ],
+      "Trial plans don’t support this many members.": [
+        "무료 체험 상태에서는 해당 구성원 수만큼을 지원하지 않습니다."
       ]
     },
     "Payments.Error": {
@@ -9815,6 +9863,9 @@
     },
     "Payments.iDEAL": {
       "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "확인을 선택하면 회원님은 ${ BRAND_NAME } 및 당사의 결제 서비스 제공업체인 Stripe이 SEPA 자동이체(Direct Debit)를 통해 본 은행 계좌에서 향후 구독 결제금을 수금하고, 해당 은행이 결제금을 출금하도록 승인하게 됩니다. 첫 결제는 지금 ${ IDEAL_WERO_BRAND_NAME }을(를) 통해 진행됩니다. 구독은 취소할 때까지 자동으로 갱신되며, 결제 전 미리 안내해 드립니다. 자동이체 수금의 경우 은행과의 약관에 따라 출금일로부터 8주 이내에 은행에 환불을 요청할 수 있습니다. 이는 지금 진행 중인 ${ IDEAL_WERO_BRAND_NAME } 결제에는 적용되지 않습니다."
+      ],
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
         "확인을 선택하면 회원님은 ${ BRAND_NAME } 및 당사의 결제 서비스 제공업체인 Stripe이 SEPA 자동이체(Direct Debit)를 통해 본 은행 계좌에서 향후 구독 결제금을 수금하고, 해당 은행이 결제금을 출금하도록 승인하게 됩니다. 첫 결제는 지금 ${ IDEAL_WERO_BRAND_NAME }을(를) 통해 진행됩니다. 구독은 취소할 때까지 자동으로 갱신되며, 결제 전 미리 안내해 드립니다. 자동이체 수금의 경우 은행과의 약관에 따라 출금일로부터 8주 이내에 은행에 환불을 요청할 수 있습니다. 이는 지금 진행 중인 ${ IDEAL_WERO_BRAND_NAME } 결제에는 적용되지 않습니다."
       ]
     },
@@ -10104,6 +10155,9 @@
       ],
       "ZIP code": [
         "우편 번호"
+      ],
+      "Please select the main reason": [
+        "주요 사유를 선택해 주세요."
       ]
     },
     "Placeholder for contact group name": {
@@ -11590,6 +11644,9 @@
       ],
       "You have successfully unsubscribed": [
         "성공적으로 구독 취소했습니다."
+      ],
+      "Invoice paid": [
+        "미납 청구서 결제 완료"
       ]
     },
     "Suffix": {
@@ -12543,6 +12600,21 @@
       ],
       "Your shorter address is now ready": [
         "짧은 주소가 준비되었습니다"
+      ],
+      "Black Friday": [
+        "블랙 프라이데이"
+      ],
+      "Contact us": [
+        "문의"
+      ],
+      "Pay invoice": [
+        "청구서 지불"
+      ],
+      "Request sent": [
+        "요청 발송완료"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "${ planTitle } 구독"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13154,6 +13226,120 @@
       ],
       "Passcode:": [
         "비밀번호:"
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "블랙프라이데이"
+      ],
+      "Get the deal": [
+        "혜택 받기"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/월"
+      ],
+      "15 GB storage": [
+        "15GB 저장공간"
+      ],
+      "2 individual accounts": [
+        "개별 계정 2개"
+      ],
+      "2 TB of secure storage": [
+        "2TB 보안 저장공간"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200GB 저장공간: 현재 요금제의 40배"
+      ],
+      "3 TB of secure storage": [
+        "3TB 보안 저장공간"
+      ],
+      "500 GB of secure storage": [
+        "500GB 보안 저장공간"
+      ],
+      "6 individual accounts": [
+        "개별 계정 6개"
+      ],
+      "Built-in 2FA authenticator": [
+        "내장형 2단계 인증 기능"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "할인율은 정상 월 요금 기준입니다. 청구 주기가 종료되면 정상 연간 요금으로 갱신됩니다."
+      ],
+      "Online document editor": [
+        "온라인 문서 편집기"
+      ],
+      "Recover previous file versions": [
+        "이전 파일 버전 복구"
+      ],
+      "Stronger protection against cyber threats": [
+        "사이버 위협 차단 및 보안 강화"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "무제한 폴더, 라벨 및 필터"
+      ],
+      "Use your own email domain": [
+        "자체 이메일 도메인 사용"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "프리미엄 ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "프리미엄 ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "프리미엄 ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "프리미엄 ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "프리미엄 ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "연중 최대 세일"
+      ],
+      "Black Friday": [
+        "블랙프라이데이"
+      ],
+      "for 12 months": [
+        "12개월"
+      ],
+      "Last chance to save big": [
+        "마지막 역대급 할인 기회"
+      ],
+      "Protect your entire tribe": [
+        "온 가족을 보호하세요"
+      ],
+      "Protection for two in a single plan": [
+        "하나의 요금제로 두 사람 보호"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "더 낫다고 생각되는 서비스를 찾았습니다"
+      ],
+      "It’s missing a key feature": [
+        "핵심 기능이 없습니다"
+      ],
+      "It’s too expensive": [
+        "너무 비쌉니다"
+      ],
+      "Other": [
+        "기타"
       ]
     }
   }

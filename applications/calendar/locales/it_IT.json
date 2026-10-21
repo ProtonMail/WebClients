@@ -1043,6 +1043,9 @@
       ],
       "Switch to ${ planName }": [
         "Passa al piano ${ planName }"
+      ],
+      "Subscribe": [
+        "Abbonati"
       ]
     },
     "action": {
@@ -4121,6 +4124,9 @@
       ],
       "You reached the maximum number of connected addresses": [
         "È stato raggiunto il numero massimo di indirizzi connessi"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Frase di recupero errata. Riprova o usa un altro metodo di recupero."
       ]
     },
     "error": {
@@ -6692,6 +6698,9 @@
       ],
       "Please update ${ MAIL_APP_NAME } to keep using the app. ${ downloadUpdate }": [
         "Aggiorna ${ MAIL_APP_NAME } per continuare a utilizzare l'app. ${ downloadUpdate }"
+      ],
+      "We'll get back to you shortly.": [
+        "Ti risponderemo a breve."
       ]
     },
     "info": {
@@ -7441,6 +7450,21 @@
       ],
       "Zoom meeting": [
         "Riunione Zoom"
+      ],
+      "Amount": [
+        "Importo"
+      ],
+      "Amount due": [
+        "Importo da pagare"
+      ],
+      "Credits used": [
+        "Crediti utilizzati"
+      ],
+      "Please share any feedback to help us improve.": [
+        "Condividi un feedback per aiutarci a migliorare."
+      ],
+      "Why would you like to cancel?": [
+        "Perché vorresti annullare?"
       ]
     },
     "label": {
@@ -10092,6 +10116,9 @@
       ],
       "ZIP code": [
         "Codice postale"
+      ],
+      "Please select the main reason": [
+        "Seleziona il motivo principale"
       ]
     },
     "Placeholder for contact group name": {
@@ -11606,6 +11633,9 @@
       ],
       "You have successfully unsubscribed": [
         "Abbonamento annullato con successo"
+      ],
+      "Invoice paid": [
+        "Fattura pagata"
       ]
     },
     "Suffix": {
@@ -12577,6 +12607,15 @@
       ],
       "Black Friday": [
         "Black Friday"
+      ],
+      "Contact us": [
+        "Contattaci"
+      ],
+      "Pay invoice": [
+        "Pagamento della fattura"
+      ],
+      "Request sent": [
+        "Richiesta inviata"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13247,34 +13286,58 @@
         "2 account individuali"
       ],
       "2 TB of secure storage": [
-        "2 TB di spazio di archiviazione protetto"
+        "2 TB di archiviazione sicura"
       ],
       "3 TB of secure storage": [
-        "3 TB di spazio di archiviazione sicuro"
+        "3 TB di archiviazione sicura"
       ],
       "500 GB of secure storage": [
-        "500 GB di spazio di archiviazione sicuro"
+        "500 GB di archiviazione sicura"
       ],
       "6 individual accounts": [
-        "6 conti individuali"
+        "6 account individuali"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "Gli sconti si basano sui prezzi mensili standard. Il tuo abbonamento si rinnoverà alla tariffa annuale standard al termine del ciclo di fatturazione."
+      ],
+      "15 GB storage": [
+        "15 GB di archiviazione"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB di spazio di archiviazione: 40x rispetto al tuo piano attuale"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autenticazione 2FA integrata"
+      ],
+      "Online document editor": [
+        "Editor di documenti online"
+      ],
+      "Recover previous file versions": [
+        "Recupera le versioni precedenti dei file"
+      ],
+      "Stronger protection against cyber threats": [
+        "Protezione avanzata contro le minacce informatiche"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Cartelle, etichette e filtri illimitati"
+      ],
+      "Use your own email domain": [
+        "Usa il tuo dominio di posta elettronica"
       ]
     },
     "bfcampaign2026: Info, Family, Drive first": {
       "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+        "Versione premium di ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "bfcampaign2026: Info, Family, Mail first": {
       "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+        "Versione premium di ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "bfcampaign2026: Title": {
       "Biggest sale of the year": [
-        "La promozione più grande dell'anno"
+        "L'offerta più grande dell'anno"
       ],
       "Black Friday": [
         "Black Friday"
@@ -13298,6 +13361,35 @@
     "Browser": {
       "${ appName } Desktop application": [
         "${ appName } Applicazione desktop"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Versione premium di ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Versione premium di ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Versione premium di ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Ho trovato un altro servizio che mi piace di più"
+      ],
+      "It’s missing a key feature": [
+        "Manca una caratteristica chiave"
+      ],
+      "It’s too expensive": [
+        "È troppo caro"
+      ],
+      "Other": [
+        "Altro"
       ]
     }
   }
