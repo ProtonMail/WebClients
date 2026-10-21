@@ -369,7 +369,7 @@
             "project": ["**/*.{js,ts,tsx}"]
         },
         "packages/jest-swc-preset": {
-            "entry": ["eslint.config.{js,mjs,ts}"],
+            "entry": [],
             "project": ["**/*.{js,ts,tsx}"]
         },
         "packages/key-transparency": {
