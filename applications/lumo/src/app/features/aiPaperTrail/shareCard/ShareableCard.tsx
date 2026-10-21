@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
@@ -33,6 +34,7 @@ const canvasToBlob = (canvas: HTMLCanvasElement): Promise<Blob | null> =>
     new Promise((resolve) => canvas.toBlob(resolve, 'image/png'));
 
 export const ShareableCard = ({ data, ...modalProps }: Props) => {
+    const { createNotification } = useNotifications();
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const [canShareFiles, setCanShareFiles] = useState(false);
     const [theme, setTheme] = useState<ShareCardTheme>('light');
@@ -52,11 +54,15 @@ export const ShareableCard = ({ data, ...modalProps }: Props) => {
         if (!canvas) {
             return;
         }
-        const blob = await canvasToBlob(canvas);
-        if (!blob) {
-            return;
+        try {
+            const blob = await canvasToBlob(canvas);
+            if (!blob) {
+                throw new Error('Failed to encode image');
+            }
+            await triggerFileDownload(blob, fileNameForTheme(theme), 'image');
+        } catch {
+            createNotification({ type: 'error', text: c('Error').t`Failed to download image. Please try again.` });
         }
-        await triggerFileDownload(blob, fileNameForTheme(theme), 'image');
     };
 
     const handleShare = async () => {
