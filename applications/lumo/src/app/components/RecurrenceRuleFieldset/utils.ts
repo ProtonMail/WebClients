@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { formatTimezoneOffset } from '@proton/shared/lib/date/timezone';
 
-import type { RecurrenceRule, RecurrenceRuleFrequency } from './types';
+import type { RecurrenceRule, RecurrenceRuleFrequency, WeekdayToken } from './types';
 
 /** Maps a timezone-agnostic `YYYY-MM-DD` value to a `DateInput` value. */
 export const onceDateStringToLocalDate = (date: string): Date => {
@@ -84,4 +84,31 @@ export const getIanaTimezones = (): { text: string; value: string; key: string }
         .sort(({ offset: offsetA, value: nameA }, { offset: offsetB, value: nameB }) => {
             return offsetA === offsetB ? nameA.localeCompare(nameB) : offsetB - offsetA;
         });
+};
+
+/** Sunday-first RFC 5545 tokens indexed like `Date#getDay()` (0 = Sunday). */
+export const WEEKDAY_TOKENS_BY_CALENDAR_INDEX = [
+    'SU',
+    'MO',
+    'TU',
+    'WE',
+    'TH',
+    'FR',
+    'SA',
+] as const satisfies readonly WeekdayToken[];
+
+/** Weekday tokens in display order for a given week start (same ordering as WeekDayPicker). */
+export const getWeekdayTokensInDisplayOrder = (weekStartsOn: number): WeekdayToken[] =>
+    Array.from({ length: 7 }, (_, dayIndex) => {
+        const index = (dayIndex + weekStartsOn) % 7;
+        return WEEKDAY_TOKENS_BY_CALENDAR_INDEX[index];
+    });
+
+/** Sorts weekday tokens by display order. */
+export const sortWeekdayTokensByDisplayOrder = (
+    days: readonly WeekdayToken[],
+    weekStartsOn: number
+): WeekdayToken[] => {
+    const order = getWeekdayTokensInDisplayOrder(weekStartsOn);
+    return [...days].sort((a, b) => order.indexOf(a) - order.indexOf(b));
 };

@@ -2,13 +2,13 @@ import type { IconName } from '../../components/LumoIcon/LumoIcon';
 import type { RecurrenceRule } from '../../components/RecurrenceRuleFieldset/types';
 
 /** A connector that can be used during a run. */
-interface ScheduleConnector {
+export interface ScheduleConnector {
     /** The unique identifier for the connector. */
     id: string;
     /** The label to display for the connector. */
     label: string;
-    /** The icon to display for the connector. */
-    icon: string;
+    /** The icon URL returned by the Desktop bridge, when available. */
+    icon?: string;
 }
 
 /** The details of a scheduled task. */
