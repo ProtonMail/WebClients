@@ -1660,9 +1660,6 @@ importers:
       '@proton/atoms':
         specifier: workspace:^
         version: link:../../packages/atoms
-      '@proton/colors':
-        specifier: workspace:^
-        version: link:../../packages/colors
       '@proton/components':
         specifier: workspace:^
         version: link:../../packages/components
