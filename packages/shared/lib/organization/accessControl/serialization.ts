@@ -58,10 +58,6 @@ export const deserializeAllowedProducts = (
     return serializedAllowedProductsSet as Set<OrganizationSettingsAllowedProduct>;
 };
 
-export const getAreAllProductsAllowed = (value: ReturnType<typeof deserializeAllowedProducts>) => {
-    return value === allAllowedProducts || allAllowedProducts.difference(value).size === 0;
-};
-
 /**
  * Converts a set of Product into a set of APP_NAME
  */

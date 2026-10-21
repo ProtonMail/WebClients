@@ -1,104 +1,6 @@
-import { SessionAccessTypeFlag, getSessionAccessTypeMask } from '../authentication/sessionAccessType';
-import { APPS, type APP_NAMES, USER_ROLES } from '../constants';
-import { hasBit } from '../helpers/bitset';
-import { isElectronMail } from '../helpers/desktop';
-import type { OrganizationExtended } from '../interfaces/Organization';
+import { APPS, type APP_NAMES } from '../constants';
 import type { User } from '../interfaces/User';
-import {
-    getIsExternalUserWithoutProtonAddressCreation,
-    getIsGlobalSSOAccount,
-    getIsSSOVPNOnlyAccount,
-} from '../keys/accountType';
-import {
-    deserializeAllowedProducts,
-    getAppNameSetFromProductSet,
-    getAreAllProductsAllowed,
-} from '../organization/accessControl/serialization';
-
-type AppContext = 'dropdown' | 'app';
-
-export interface GetAvailableAppsByUserTypeArguments {
-    user?: User;
-    context: AppContext;
-    isSpacesAvailable: boolean;
-    oauth?: boolean;
-}
-
-type AppSet = Set<APP_NAMES>;
-
-// This variable contains a list of all the apps.
-// It is used in the list of apps, and also in determining if an app is accessible or not.
-// The order is used in the app dropdown list.
-const allApps: APP_NAMES[] = [
-    APPS.PROTONMAIL,
-    APPS.PROTONCALENDAR,
-    APPS.PROTONVPN_SETTINGS,
-    APPS.PROTONDRIVE,
-    APPS.PROTONDOCS,
-    APPS.PROTONSHEETS,
-    APPS.PROTONPASS,
-    APPS.PROTONWALLET,
-    APPS.PROTONLUMO,
-    APPS.PROTONMEET,
-    APPS.PROTONSPACES,
-];
-
-const allAppsSet: Set<APP_NAMES> = new Set(allApps);
-
-interface GetOrganizationAllowedProductsArguments {
-    user?: User;
-    organization?: { Settings: { AllowedProducts: OrganizationExtended['Settings']['AllowedProducts'] } };
-}
-
-const getAvailableAppsByOrganization = ({ user, organization }: GetOrganizationAllowedProductsArguments): AppSet => {
-    // Admins can always access all
-    if (!user || !organization || (user && user.Role === USER_ROLES.ADMIN_ROLE)) {
-        return allAppsSet;
-    }
-    const allowedProducts = deserializeAllowedProducts(organization.Settings?.AllowedProducts);
-    if (getAreAllProductsAllowed(allowedProducts)) {
-        return allAppsSet;
-    }
-    return getAppNameSetFromProductSet(allowedProducts);
-};
-
-const getAvailableAppsByUser = (options: GetAvailableAppsByUserTypeArguments): AppSet => {
-    // Disallow MSP sessions to access any apps. It's only allowed for organization admin management.
-    if (options.user && hasBit(getSessionAccessTypeMask(options.user), SessionAccessTypeFlag.OrgAccess)) {
-        return new Set([]);
-    }
-
-    if (options.oauth || getIsSSOVPNOnlyAccount(options.user)) {
-        return new Set([APPS.PROTONVPN_SETTINGS]);
-    }
-
-    if (getIsGlobalSSOAccount(options.user)) {
-        // Drive is blocked for Global SSO users as of 22.02.2025. Only Pass, VPN and Lumo are allowed for these users.
-        return new Set([APPS.PROTONPASS, APPS.PROTONVPN_SETTINGS, APPS.PROTONLUMO]);
-    }
-
-    if (getIsExternalUserWithoutProtonAddressCreation(options.user)) {
-        // Public users without a proton address can't create a proton address themselves, so only these apps are ok
-        return new Set([
-            APPS.PROTONVPN_SETTINGS,
-            APPS.PROTONPASS,
-            APPS.PROTONDRIVE,
-            APPS.PROTONDOCS,
-            APPS.PROTONSHEETS,
-            APPS.PROTONWALLET,
-            APPS.PROTONLUMO,
-            APPS.PROTONMEET,
-            APPS.PROTONSPACES,
-        ]);
-    }
-
-    if (isElectronMail) {
-        return new Set([APPS.PROTONMAIL, APPS.PROTONCALENDAR]);
-    }
-
-    // Otherwise all apps are ok
-    return allAppsSet;
-};
+import { getAppNameSetFromProductSet } from '../organization/accessControl/serialization';
 
 export const getForbiddenApps = (user?: User): Set<APP_NAMES> => {
     if (!user) {
@@ -106,28 +8,6 @@ export const getForbiddenApps = (user?: User): Set<APP_NAMES> => {
     }
 
     return getAppNameSetFromProductSet(new Set(user.ForbiddenProducts));
-};
-
-export const getAvailableApps = (
-    options: GetAvailableAppsByUserTypeArguments & GetOrganizationAllowedProductsArguments
-) => {
-    const removeApps: AppSet = new Set();
-
-    if (options.context === 'dropdown' && !options.isSpacesAvailable) {
-        removeApps.add(APPS.PROTONSPACES);
-    }
-
-    const availableAppsByUser = getAvailableAppsByUser(options);
-    const availableAppsByOrganization = getAvailableAppsByOrganization(options);
-    const forbiddenApps = getForbiddenApps(options.user);
-    return allApps.filter((app) => {
-        return (
-            !removeApps.has(app) &&
-            availableAppsByUser.has(app) &&
-            availableAppsByOrganization.has(app) &&
-            !forbiddenApps.has(app)
-        );
-    });
 };
 
 export const appSupportsSSO = (appName?: APP_NAMES): boolean => {

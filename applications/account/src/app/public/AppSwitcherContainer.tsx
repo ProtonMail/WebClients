@@ -2,6 +2,7 @@ import type { ReactElement } from 'react';
 
 import { c } from 'ttag';
 
+import type { AvailableApp } from '@proton/account/availableApps/apps';
 import { Button } from '@proton/atoms/Button/Button';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
@@ -18,13 +19,10 @@ import { SessionSource } from '@proton/shared/lib/authentication/SessionInterfac
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';
-import { useFlag } from '@proton/unleash/useFlag';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 
-import ExploreAppsListV2, {
-    getExploreApps,
-    getForbiddenAppConfigs,
-} from '../components/ExploreAppsListV2/ExploreAppsListV2';
+import ExploreAppsListV2 from '../components/ExploreAppsListV2/ExploreAppsListV2';
+import { getExploreApps, getForbiddenAppConfigs } from '../components/ExploreAppsListV2/exploreApps';
 import { useExploreAppsListTelemetry } from '../components/ExploreAppsListV2/exploreAppsListTelemetry';
 import type { OnLoginCallback, OnLoginCallbackArguments } from '../content/authSession';
 import Layout from './Layout';
@@ -32,12 +30,14 @@ import PublicUserItem from './PublicUserItem';
 
 interface EnhancedAuthSession extends OnLoginCallbackArguments {
     data: OnLoginCallbackArguments['data'] & {
-        Organization: OrganizationExtended | undefined;
+        Organization: Organization | undefined;
     };
 }
 
 export type AppSwitcherState = {
     session: EnhancedAuthSession;
+    /** With their tiers, which the explore apps list sorts */
+    availableApps: AvailableApp[];
     error?: {
         type: 'unsupported-app';
         app: APP_NAMES;
@@ -66,7 +66,7 @@ const getUnsupportedAppErrorMessage = ({
     forbiddenApps,
 }: {
     app: APP_NAMES;
-    organization?: OrganizationExtended;
+    organization?: Organization;
     forbiddenApps: Set<APP_NAMES>;
 }) => {
     const appName = getAppName(app);
@@ -87,7 +87,7 @@ const UnsupportedAppError = ({
     forbiddenApps,
 }: {
     app: APP_NAMES;
-    organization?: OrganizationExtended;
+    organization?: Organization;
     forbiddenApps: Set<APP_NAMES>;
 }) => {
     return (
@@ -123,18 +123,17 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
     const error = state.error;
     const { User, Organization, persistedSession } = session.data;
 
-    const isSpacesAvailable = useFlag('SpacesAvailable');
-    const subscribed = User.Subscribed;
     const { sendAppClick } = useExploreAppsListTelemetry();
 
     const forbiddenApps = getForbiddenApps(User);
 
-    const apps = getExploreApps({
-        user: User,
-        organization: Organization,
-        oauth: persistedSession.source === SessionSource.Oauth,
-        isSpacesAvailable,
-    }).concat(getForbiddenAppConfigs({ user: User, forbiddenApps }));
+    // The available apps don't account for OAuth sessions, which only VPN allows
+    const availableApps =
+        persistedSession.source === SessionSource.Oauth
+            ? state.availableApps.filter(({ app }) => app === APPS.PROTONVPN_SETTINGS)
+            : state.availableApps;
+
+    const apps = getExploreApps(availableApps, User).concat(getForbiddenAppConfigs(forbiddenApps));
 
     const goToAccountSettings = (source: 'settings' | 'settings-menu') => async () => {
         sendAppClick({
@@ -201,7 +200,6 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
                 </header>
                 <div>
                     <ExploreAppsListV2
-                        subscription={{ subscribed, plan: Organization?.PlanName }}
                         apps={apps}
                         localID={persistedSession.localID}
                         onExplore={async (app) => {

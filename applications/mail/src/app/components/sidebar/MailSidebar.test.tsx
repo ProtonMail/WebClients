@@ -12,7 +12,7 @@ import { IcFolder } from '@proton/icons/icons/IcFolder';
 import { IcFolders } from '@proton/icons/icons/IcFolders';
 import { conversationCountsActions } from '@proton/mail/store/counts/conversationCountsSlice';
 import { SessionAccessTypeFlag } from '@proton/shared/lib/authentication/sessionAccessType';
-import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { APPS, LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { CHECKLIST_DISPLAY_TYPE, ChecklistKey } from '@proton/shared/lib/interfaces/Checklist';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
@@ -163,7 +163,12 @@ describe('MailSidebar', () => {
     });
 
     it('should open app dropdown', async () => {
-        await setup();
+        setupTest();
+        await mailTestRender(<MailSidebar />, {
+            preloadedState: {
+                availableApps: [APPS.PROTONMAIL, APPS.PROTONCALENDAR, APPS.PROTONVPN_SETTINGS, APPS.PROTONDRIVE],
+            },
+        });
 
         const appsButton = screen.getByTitle('Proton applications');
         fireEvent.click(appsButton);
