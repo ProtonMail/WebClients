@@ -1,6 +1,10 @@
 import { c } from 'ttag';
 
-import type { MemberEditPayload, MemberKeyPayload, PromoteGlobalSSOPayload } from '@proton/account';
+import type {
+    MemberEditPayload,
+    MemberKeyPayload,
+    PromoteGlobalSSOPayload,
+} from '@proton/account/organizationKey/actions';
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
 import { BRAND_NAME, MEMBER_SUBSCRIBER } from '@proton/shared/lib/constants';

@@ -1,6 +1,6 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 
-import { assignMemberRoles } from '@proton/account';
+import { assignMemberRoles } from '@proton/account/members/actions';
 import { MEMBER_PRIVATE, MEMBER_ROLE } from '@proton/shared/lib/constants';
 import type { EnhancedMember, MemberUnprivatization } from '@proton/shared/lib/interfaces/Member';
 import { MemberUnprivatizationState } from '@proton/shared/lib/interfaces/Member';
@@ -13,10 +13,14 @@ import SubUserEditModal from './SubUserEditModal';
 
 jest.mock('@proton/atoms/Portal/Portal');
 
-jest.mock('@proton/account', () => ({
-    ...jest.requireActual('@proton/account'),
+jest.mock('@proton/account/members/actions', () => ({
+    ...jest.requireActual('@proton/account/members/actions'),
     editMember: jest.fn(() => ({ type: 'editMember' })),
     assignMemberRoles: jest.fn(() => ({ type: 'assignMemberRoles' })),
+}));
+
+jest.mock('@proton/account/members', () => ({
+    ...jest.requireActual('@proton/account/members'),
     getMemberAddresses: jest.fn(() => ({ type: 'getMemberAddresses' })),
 }));
 

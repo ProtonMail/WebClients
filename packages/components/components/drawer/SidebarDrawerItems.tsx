@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { selectHasAccountSecurityIssue } from '@proton/account';
+import { selectHasAccountSecurityIssue } from '@proton/account/accountSecurity/accountSecuritySlice';
 import { NotificationDot } from '@proton/atoms/NotificationDot/NotificationDot';
 import { ThemeColor } from '@proton/colors/types';
 import type { IconComponent } from '@proton/icons/component';

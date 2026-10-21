@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { useUserSettings } from '@proton/account';
 import { useAddressesKeys } from '@proton/account/addressKeys/hooks';
 import { getHasAccountKeyChangeBlockingDelegatedAccess } from '@proton/account/delegatedAccess/accountKeyChangeBlocking';
 import { useUserKeys } from '@proton/account/userKeys/hooks';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';

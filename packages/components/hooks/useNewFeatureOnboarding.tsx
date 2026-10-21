@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { isAfter, isBefore } from 'date-fns';
 
-import { useWelcomeFlags } from '@proton/account';
+import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 
 type Props = {
