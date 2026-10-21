@@ -1,3 +1,4 @@
+import { getAvailableAppsForUser } from '@proton/account/availableApps/apps';
 import { buildUser } from '@proton/account/testing/buildUser';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import { type ProduceForkParametersFull, produceFork } from '@proton/shared/lib/authentication/fork/produce';
@@ -10,6 +11,12 @@ import type { AuthSession } from '../authSession';
 import type { Paths } from '../helper';
 import { type ProduceForkData, SSOType } from './forkInterface';
 import { getProduceForkLoginResult } from './getProduceForkLoginResult';
+
+jest.mock('@proton/account/availableApps/apps', () => ({
+    ...jest.requireActual('@proton/account/availableApps/apps'),
+    getAvailableAppsForUser: jest.fn(),
+}));
+const mockGetAvailableAppsForUser = getAvailableAppsForUser as jest.MockedFunction<typeof getAvailableAppsForUser>;
 
 jest.mock('@proton/shared/lib/authentication/fork/produce', () => ({
     ...jest.requireActual('@proton/shared/lib/authentication/fork/produce'),
@@ -80,6 +87,8 @@ const setup = ({
 describe('getProduceForkLoginResult', () => {
     beforeEach(() => {
         jest.clearAllMocks();
+        // For the app switcher shown when a fork is refused
+        mockGetAvailableAppsForUser.mockReturnValue([APPS.PROTONMAIL, APPS.PROTONDRIVE]);
         mockProduceFork.mockResolvedValue({} as Awaited<ReturnType<typeof produceFork>>);
     });
 

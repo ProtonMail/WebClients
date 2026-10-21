@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
+import { useAvailableApps } from '@proton/account/availableApps/hooks';
 import {
     getIsIncomingDelegatedAccessAvailable,
     getIsOutgoingDelegatedAccessAvailable,
@@ -64,7 +65,6 @@ import useShowThemeSelection from '@proton/components/hooks/useShowThemeSelectio
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
 import useToggle from '@proton/hooks/useToggle';
 import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
-import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { getToApp } from '@proton/shared/lib/authentication/apps';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
@@ -192,6 +192,7 @@ const MainContainer = () => {
     const [entitlements, loadingEntitlements] = useEntitlementChecksForOrgAndUser();
     const [{ permissions }] = useUserPermissions();
     const [isOrganizationOwner] = useIsOrganizationOwner();
+    const availableApps = useAvailableApps();
     const location = useLocation();
 
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
@@ -208,7 +209,6 @@ const MainContainer = () => {
     const isSsoForPbsEnabled = useFlag('SsoForPbs');
     const showSignInRestrictionToggle = useFlag('ShowSignInRestrictionToggle');
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
-    const isSpacesAvailable = useFlag('SpacesAvailable');
     const isDriveEasySwitchEnabled = useFlag('EasySwitchB2CForDriveWeb');
     const isDriveEasySwitchNewUIEnabled = useFlag('EasySwitchB2CForDriveWebNewUI') && isDriveEasySwitchEnabled;
 
@@ -476,18 +476,12 @@ const MainContainer = () => {
         return <TVContainer />;
     }
 
-    const availableApps = getAvailableApps({
-        user,
-        context: 'app',
-        organization,
-        isSpacesAvailable,
-    });
-
-    // Should never happen that available apps is empty, but just as a safety mechanism anyway
+    // Redirect away from an app the user can't access, to the first one they can
     if (
+        // The list is empty while it's loading, before it's first computed
+        availableApps.length &&
         !availableApps.includes(app) &&
-        appFromPathname /* wait for app in pathname to ensure replacement works */ &&
-        availableApps.length
+        appFromPathname /* wait for app in pathname to ensure replacement works */
     ) {
         const [firstAvailableApp] = availableApps;
         const locationWithNewApp = getPathFromLocation(location).replace(

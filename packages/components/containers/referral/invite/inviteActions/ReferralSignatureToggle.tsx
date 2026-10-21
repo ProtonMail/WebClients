@@ -2,8 +2,7 @@ import { Fragment } from 'react';
 
 import { c } from 'ttag';
 
-import { useOrganization } from '@proton/account/organization/hooks';
-import { useUser } from '@proton/account/user/hooks';
+import { useAvailableApps } from '@proton/account/availableApps/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import useLoading from '@proton/hooks/useLoading';
@@ -11,32 +10,13 @@ import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updatePMSignatureReferralLink } from '@proton/shared/lib/api/mailSettings';
-import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { PM_SIGNATURE_REFERRAL } from '@proton/shared/lib/mail/mailSettings';
 import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import Info from '../../../../components/link/Info';
 import SkeletonLoader from '../../../../components/skeletonLoader/SkeletonLoader';
 import Toggle from '../../../../components/toggle/Toggle';
-
-const useAvailableApps = () => {
-    const [user] = useUser();
-
-    const [organization] = useOrganization();
-
-    const isSpacesAvailable = useFlag('SpacesAvailable');
-
-    const availableApps = getAvailableApps({
-        user,
-        context: 'app',
-        organization,
-        isSpacesAvailable,
-    });
-
-    return availableApps;
-};
 
 const ReferralSignatureToggle = () => {
     const [mailSettings, loadingMailSettings] = useMailSettings();
