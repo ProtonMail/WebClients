@@ -62,8 +62,11 @@ export const OpenInDesktopApp = () => {
                     />
                     <p className="m-0 text-semibold">{c('Info').t`App didn't open?`}</p>
                     <p className="m-0 mt-2 text-sm color-weak">
-                        {c('Info')
-                            .jt`Please ${downloadLink} and install the app, then click Join in the ${MEET_APP_NAME} app again.`}
+                        {
+                            // translator: full sentence is "Please download and install the app, then click Join in the Proton Meet app again." where "download" is a link to the download page
+                            c('Info')
+                                .jt`Please ${downloadLink} and install the app, then click Join in the ${MEET_APP_NAME} app again.`
+                        }
                     </p>
                 </div>
             )}
