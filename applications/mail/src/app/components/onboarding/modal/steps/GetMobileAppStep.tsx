@@ -14,9 +14,10 @@ import mobileAppImg1x from '@proton/styles/assets/img/onboarding/mail_onboarding
 import mobileAppImg2x from '@proton/styles/assets/img/onboarding/mail_onboarding_mobile_app_download_qr@2x.webp';
 import clsx from '@proton/utils/clsx';
 
-import OnboardingContent from '../layout/OnboardingContent';
-
+import { TrackOnboardingStepLoad } from '../../../../telemetry/TrackOnboardingStepLoad';
+import { ONBOARDING_ACTIONS, ONBOARDING_STEPS, useOnboardingTracking } from '../../../../telemetry/onboardingEvents';
 import type { OnboardingStepEligibleCallback } from '../interface';
+import OnboardingContent from '../layout/OnboardingContent';
 
 export const isGetMobileAppStepEligible: OnboardingStepEligibleCallback = async () => {
     return {
@@ -26,9 +27,11 @@ export const isGetMobileAppStepEligible: OnboardingStepEligibleCallback = async 
 };
 
 const GetMobileAppStep = ({ onNext }: OnboardingStepRenderCallback) => {
+    const { trackStepInteracted, trackStepCompleted } = useOnboardingTracking();
     const { viewportWidth } = useActiveBreakpoint();
 
     const handleNext = () => {
+        trackStepCompleted(ONBOARDING_STEPS.mobileApp);
         onNext();
     };
 
@@ -42,16 +45,25 @@ const GetMobileAppStep = ({ onNext }: OnboardingStepRenderCallback) => {
         utm_campaign: 'webapp-mail-onboarding',
     });
 
+    const handleAppStoreClick = () => trackStepInteracted(ONBOARDING_STEPS.mobileApp, ONBOARDING_ACTIONS.openAppStore);
+    const handlePlayStoreClick = () =>
+        trackStepInteracted(ONBOARDING_STEPS.mobileApp, ONBOARDING_ACTIONS.openPlayStore);
+
     const mobileAppAppStoreLink = (
-        <Href key="appstore" href={appStoreLink} target="_blank">{c('Onboarding modal').t`iOS`}</Href>
+        <Href key="appstore" onClick={handleAppStoreClick} href={appStoreLink} target="_blank">
+            {c('Onboarding modal').t`iOS`}
+        </Href>
     );
 
     const mobileAppGooglePlayLink = (
-        <Href key="googleplay" href={playStoreLink} target="_blank">{c('Onboarding modal').t`Android`}</Href>
+        <Href key="googleplay" onClick={handlePlayStoreClick} href={playStoreLink} target="_blank">
+            {c('Onboarding modal').t`Android`}
+        </Href>
     );
 
     return (
         <OnboardingStep>
+            <TrackOnboardingStepLoad step={ONBOARDING_STEPS.mobileApp} />
             <OnboardingContent
                 title={c('Onboarding modal').t`Anytime, anywhere access`}
                 description={
