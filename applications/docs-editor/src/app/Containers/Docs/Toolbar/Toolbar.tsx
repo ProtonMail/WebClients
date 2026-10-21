@@ -1,4 +1,3 @@
-import { defaultEmojiMessages } from '../Plugins/emoji/emojiMessages'
 import { Dropdown, DropdownButton, DropdownMenu, DropdownMenuButton, SimpleDropdown } from '../Components/Dropdown'
 import { Fragment, lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
@@ -41,13 +40,12 @@ import { Icon } from '../Components/Icon'
 import * as Icons from '../Components/icons'
 import { rootFontSize } from '../Utils/rootFontSize'
 import { clsx } from 'clsx'
-import { c } from 'ttag'
 import { FontColorMenu } from '../Components/ColorMenu'
 import { EDIT_LINK_COMMAND } from '../Plugins/Link/LinkInfoPlugin'
 import { INSERT_PAGE_BREAK_COMMAND } from '../Plugins/PageBreak/PageBreakNode'
 import { INSERT_TABLE_COMMAND } from '../Plugins/Table/Commands'
 import { DefaultFont, FontOptions, FontSizes, getFontFaceIdFromValue, getFontFaceValueFromId } from '../Constants/Fonts'
-import { useDocsDependencies } from '../DocsDependenciesProvider'
+import { useDocsDependencies, useDocsMessages } from '../DocsDependenciesProvider'
 import { getHTMLElementFontSize } from '../Utils/getHTMLElementFontSize'
 import { getSelectedNode } from '../Utils/getSelectedNode'
 import AlignmentMenuOptions, { AlignmentOptions } from './AlignmentMenuOptions'
@@ -116,11 +114,13 @@ export default function DocumentEditorToolbar({
   onInteraction?: () => void
   isEditorHidden?: boolean
 }) {
-  const { reportError, isAlpha, suggestionsEnabled, emojiPickerEnabled, emojiMessages } = useDocsDependencies()
+  const { reportError, isAlpha, suggestionsEnabled, emojiPickerEnabled } = useDocsDependencies()
+  const messages = useDocsMessages()
+  const { toolbar } = messages
   const [editor] = useLexicalComposerContext()
   const [activeEditor, setActiveEditor] = useState(editor)
 
-  const insertEmojiLabel = (emojiMessages ?? defaultEmojiMessages).insert
+  const insertEmojiLabel = messages.emoji.insert
 
   const canShowSuggestionsButton = suggestionsEnabled
 
@@ -560,21 +560,21 @@ export default function DocumentEditorToolbar({
       type: 'check',
       icon: <Icon data={Icons.checkList} viewBox="0 0 33 33" className="h-4 w-4 fill-current" />,
       tooltip: <ShortcutLabel shortcut="CHECK_LIST_SHORTCUT" />,
-      name: c('Action').t`Check List`,
+      name: toolbar['Check List'],
       onClick: formatCheckList,
     },
     {
       type: 'bullet',
       icon: <Icon data={Icons.listBullets} />,
       tooltip: <ShortcutLabel shortcut="BULLET_LIST_SHORTCUT" />,
-      name: c('Action').t`Bulleted List`,
+      name: toolbar['Bulleted List'],
       onClick: formatBulletList,
     },
     {
       type: 'number',
       icon: <Icon data={Icons.listNumbers} />,
       tooltip: <ShortcutLabel shortcut="NUMBERED_LIST_SHORTCUT" />,
-      name: c('Action').t`Numbered List`,
+      name: toolbar['Numbered List'],
       onClick: formatNumberedList,
     },
   ]
@@ -686,7 +686,7 @@ export default function DocumentEditorToolbar({
         {
           id: 'undo-button',
           type: 'button',
-          label: c('Action').t`Undo`,
+          label: toolbar.Undo,
           shortcut: 'UNDO_SHORTCUT',
           onClick: undo,
           disabled: !isEditable || !canUndo,
@@ -695,7 +695,7 @@ export default function DocumentEditorToolbar({
         {
           id: 'redo-button',
           type: 'button',
-          label: c('Action').t`Redo`,
+          label: toolbar.Redo,
           shortcut: 'REDO_SHORTCUT',
           onClick: redo,
           disabled: !isEditable || !canRedo,
@@ -793,9 +793,9 @@ export default function DocumentEditorToolbar({
           disabled: !isEditable,
           tooltip: (
             <ShortcutLabelContainer>
-              <ShortcutLabelText>{c('Action').t`Adjust font size`}</ShortcutLabelText>
+              <ShortcutLabelText>{toolbar['Adjust font size']}</ShortcutLabelText>
               <ModifierKbd /> <ShortcutKbd shortcut="Shift" />
-              <ShortcutKbd shortcut="." /> <ShortcutLabelText>{c('Action').t`and`}</ShortcutLabelText>
+              <ShortcutKbd shortcut="." /> <ShortcutLabelText>{toolbar.and}</ShortcutLabelText>
               <ShortcutKbd shortcut="," />
             </ShortcutLabelContainer>
           ),
@@ -810,7 +810,7 @@ export default function DocumentEditorToolbar({
         {
           id: 'indent-dropdown',
           type: 'button',
-          label: c('Action').t`Indent`,
+          label: toolbar.Indent,
           icon: <Icon data={Icons.indent} viewBox="0 0 33 33" className="h-4 w-4 fill-current" />,
           disabled: !isEditable,
           onClick: () => {
@@ -821,7 +821,7 @@ export default function DocumentEditorToolbar({
         {
           id: 'outdent-dropdown',
           type: 'button',
-          label: c('Action').t`Outdent`,
+          label: toolbar.Outdent,
           icon: <Icon data={Icons.outdent} viewBox="0 0 33 33" className="h-4 w-4 fill-current" />,
           disabled: !isEditable,
           onClick: () => {
@@ -840,7 +840,7 @@ export default function DocumentEditorToolbar({
         {
           id: 'bold-button',
           type: 'button',
-          label: c('Action').t`Bold`,
+          label: toolbar.Bold,
           shortcut: 'BOLD_SHORTCUT',
           onClick: formatBold,
           disabled: !isEditable,
@@ -850,7 +850,7 @@ export default function DocumentEditorToolbar({
         {
           id: 'italic-button',
           type: 'button',
-          label: c('Action').t`Italic`,
+          label: toolbar.Italic,
           shortcut: 'ITALIC_SHORTCUT',
           onClick: formatItalic,
           disabled: !isEditable,
@@ -860,7 +860,7 @@ export default function DocumentEditorToolbar({
         {
           id: 'underline-button',
           type: 'button',
-          label: c('Action').t`Underline`,
+          label: toolbar.Underline,
           shortcut: 'UNDERLINE_SHORTCUT',
           onClick: formatUnderline,
           disabled: !isEditable,
@@ -870,7 +870,7 @@ export default function DocumentEditorToolbar({
         {
           id: 'strikethrough-button',
           type: 'button',
-          label: c('Action').t`Strike-through`,
+          label: toolbar['Strike-through'],
           shortcut: 'STRIKETHROUGH_TOGGLE_SHORTCUT',
           onClick: formatStrikethrough,
           disabled: !isEditable,
@@ -901,7 +901,7 @@ export default function DocumentEditorToolbar({
               >
                 <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">A</span>
               </div>
-              <span className={target === 'toolbar' ? 'sr-only' : 'mr-auto'}>{c('Action').t`Colour`}</span>
+              <span className={target === 'toolbar' ? 'sr-only' : 'mr-auto'}>{toolbar.Colour}</span>
             </div>
           ),
           menu: (
@@ -925,7 +925,7 @@ export default function DocumentEditorToolbar({
         {
           id: 'link-button',
           type: 'button',
-          label: c('Action').t`Insert link`,
+          label: toolbar['Insert link'],
           shortcut: 'EDIT_LINK_SHORTCUT',
           disabled: !isEditable,
           active: isLink,
@@ -935,7 +935,7 @@ export default function DocumentEditorToolbar({
         {
           id: 'image-insert-button',
           type: 'button',
-          label: c('Action').t`Insert image`,
+          label: toolbar['Insert image'],
           disabled: !isEditable,
           onClick: insertImage,
           icon: <Icon data={Icons.image} className="h-4 w-4 fill-current" />,
@@ -943,7 +943,7 @@ export default function DocumentEditorToolbar({
         {
           id: 'table-button',
           type: 'button',
-          label: c('Action').t`Insert table`,
+          label: toolbar['Insert table'],
           shortcut: 'INSERT_TABLE_SHORTCUT',
           disabled: !isEditable,
           onClick: insertTable,
@@ -960,7 +960,7 @@ export default function DocumentEditorToolbar({
                 tooltip: insertEmojiLabel,
                 menu: (
                   <Suspense fallback={null}>
-                    <EmojiPicker messages={emojiMessages} />
+                    <EmojiPicker />
                   </Suspense>
                 ),
                 dropdownProps: {
@@ -982,7 +982,7 @@ export default function DocumentEditorToolbar({
         {
           id: 'comment-button',
           type: 'button',
-          label: c('Action').t`Insert comment`,
+          label: toolbar['Insert comment'],
           shortcut: 'INSERT_COMMENT_SHORTCUT',
           disabled: !isEditable,
           onClick: insertComment,
@@ -996,7 +996,7 @@ export default function DocumentEditorToolbar({
         {
           id: 'divider-dropdown',
           type: 'button',
-          label: c('Action').t`Divider`,
+          label: toolbar.Divider,
           disabled: !isEditable,
           onClick: insertHorizontalRule,
           icon: <Icon data={Icons.divider} className="h-4 w-4 fill-current" />,
@@ -1066,7 +1066,7 @@ export default function DocumentEditorToolbar({
                 content={
                   <>
                     <Icon data={Icons.alphabeticalList} className="color-weak h-4 w-4" />
-                    {c('Action').t`Alphabetical`}
+                    {toolbar.Alphabetical}
                     <Icon data={Icons.chevronRightFilled} className="ml-auto" />
                   </>
                 }
@@ -1086,7 +1086,7 @@ export default function DocumentEditorToolbar({
                       formatCustomList('upper-alpha')
                     }}
                   >
-                    {c('Action').t`A. B. C. D.`}
+                    {toolbar['A. B. C. D.']}
                   </DropdownMenuButton>
                   <DropdownMenuButton
                     className={clsx(
@@ -1097,7 +1097,7 @@ export default function DocumentEditorToolbar({
                       formatCustomList('lower-alpha')
                     }}
                   >
-                    {c('Action').t`a. b. c. d.`}
+                    {toolbar['a. b. c. d.']}
                   </DropdownMenuButton>
                   <DropdownMenuButton
                     className={clsx(
@@ -1108,7 +1108,7 @@ export default function DocumentEditorToolbar({
                       formatCustomList('upper-alpha', 'bracket')
                     }}
                   >
-                    {c('Action').t`A) B) C) D)`}
+                    {toolbar['A) B) C) D)']}
                   </DropdownMenuButton>
                   <DropdownMenuButton
                     className={clsx(
@@ -1119,7 +1119,7 @@ export default function DocumentEditorToolbar({
                       formatCustomList('lower-alpha', 'bracket')
                     }}
                   >
-                    {c('Action').t`a) b) c) d)`}
+                    {toolbar['a) b) c) d)']}
                   </DropdownMenuButton>
                 </DropdownMenu>
               </SimpleDropdown>
@@ -1133,7 +1133,7 @@ export default function DocumentEditorToolbar({
                 disabled={!isEditable}
               >
                 <Icon data={Icons.romanList} className="color-weak h-4 w-4" />
-                {c('Action').t`Roman`}
+                {toolbar.Roman}
               </DropdownMenuButton>
             </DropdownMenu>
           ),
@@ -1148,7 +1148,7 @@ export default function DocumentEditorToolbar({
         {
           id: 'code-block-button',
           type: 'button',
-          label: c('Action').t`Code block`,
+          label: toolbar['Code block'],
           shortcut: 'CODE_BLOCK_TOGGLE_SHORTCUT',
           disabled: !isEditable || isSuggestionMode,
           onClick: formatCode,
@@ -1158,7 +1158,7 @@ export default function DocumentEditorToolbar({
         {
           id: 'quote-button',
           type: 'button',
-          label: c('Action').t`Quote`,
+          label: toolbar.Quote,
           shortcut: 'QUOTE_TOGGLE_SHORTCUT',
           disabled: !isEditable,
           onClick: formatQuote,
@@ -1173,7 +1173,7 @@ export default function DocumentEditorToolbar({
         {
           id: 'clear-formatting-button',
           type: 'button',
-          label: c('Action').t`Clear formatting`,
+          label: toolbar['Clear formatting'],
           disabled: !isEditable,
           onClick: clearFormatting,
           icon: <Icon data={Icons.eraser} />,
@@ -1189,7 +1189,7 @@ export default function DocumentEditorToolbar({
               {
                 id: 'subscript-button',
                 type: 'button' as const,
-                label: `${c('Action').t`Subscript`} (alpha only)`,
+                label: toolbar['Subscript (alpha only)'],
                 onClick: formatSubscript,
                 disabled: !isEditable,
                 active: isSubscript,
@@ -1198,7 +1198,7 @@ export default function DocumentEditorToolbar({
               {
                 id: 'superscript-button',
                 type: 'button' as const,
-                label: `${c('Action').t`Superscript`} (alpha only)`,
+                label: toolbar['Superscript (alpha only)'],
                 onClick: formatSuperscript,
                 disabled: !isEditable,
                 active: isSuperscript,
@@ -1220,9 +1220,9 @@ export default function DocumentEditorToolbar({
           type: 'button',
           label: (
             <span className="inline-flex items-center gap-2">
-              <span>{c('Action').t`Page break`} (alpha only)</span>
+              <span>{toolbar['Page break (alpha only)']}</span>
               <span className="rounded-sm bg-[--signal-info-minor-1] px-1 py-0.5 text-[0.625rem] font-semibold uppercase leading-none text-[--signal-info]">
-                {c('Info').t`New`}
+                {toolbar.New}
               </span>
             </span>
           ),
@@ -1309,7 +1309,7 @@ export default function DocumentEditorToolbar({
           hasCaret={false}
           disabled={!isEditable}
           as={ToolbarButton}
-          label={c('Action').t`More options`}
+          label={toolbar['More options']}
           data-testid="content-properties-button"
           className="flex-shrink-0 text-[--text-norm]"
           onClick={toggleOverflowMenu}
@@ -1357,16 +1357,17 @@ export default function DocumentEditorToolbar({
               <>
                 <div className={clsx('contents *:[grid-row:1]', isEditMode ? '*:opacity-100' : '*:[opacity:0]')}>
                   <Icon data={Icons.pencil} className="flex-shrink-0 [grid-column:1]" />
-                  <span className="flex-shrink-0 [display:none] [grid-column:2] md:block">{c('Info').t`Editing`}</span>
+                  <span className="flex-shrink-0 [display:none] [grid-column:2] md:block">{toolbar.Editing}</span>
                 </div>
                 <div className={clsx('contents *:[grid-row:1]', isSuggestionMode ? '*:opacity-100' : '*:[opacity:0]')}>
                   <Icon data={Icons.speechBubblePen} className="h-4 w-4 flex-shrink-0 [grid-column:1]" />
-                  <span className="flex-shrink-0 [display:none] [grid-column:2] md:block">{c('Info')
-                    .t`Suggesting`}</span>
+                  <span className="flex-shrink-0 [display:none] [grid-column:2] md:block">
+                    {toolbar.Suggesting}
+                  </span>
                 </div>
                 <div className={clsx('contents *:[grid-row:1]', isPreviewMode ? '*:opacity-100' : '*:[opacity:0]')}>
                   <Icon data={Icons.eye} className="flex-shrink-0 [grid-column:1]" />
-                  <span className="flex-shrink-0 [display:none] [grid-column:2] md:block">{c('Info').t`Viewing`}</span>
+                  <span className="flex-shrink-0 [display:none] [grid-column:2] md:block">{toolbar.Viewing}</span>
                 </div>
               </>
             }
@@ -1383,16 +1384,16 @@ export default function DocumentEditorToolbar({
                       onUserModeChange(EditorUserMode.Edit)
                     }}
                     icon={<Icon data={Icons.pencil} size={4} />}
-                    label={c('Info').t`Editing`}
-                    description={c('Description').t`Edit document directly`}
+                    label={toolbar.Editing}
+                    description={toolbar['Edit document directly']}
                     data-testid={`edit-dropdown-button${isPreviewModeToolbar ? '-preview' : ''}`}
                   />
                   {canShowSuggestionsButton && (
                     <InteractionDropdownButton
                       isActive={isSuggestionMode}
                       icon={<Icon data={Icons.speechBubblePen} className="h-4 w-4" />}
-                      label={c('Info').t`Suggesting`}
-                      description={c('Description').t`Edits become suggestions`}
+                      label={toolbar.Suggesting}
+                      description={toolbar['Edits become suggestions']}
                       onClick={() => {
                         onUserModeChange(EditorUserMode.Suggest)
                       }}
@@ -1404,9 +1405,9 @@ export default function DocumentEditorToolbar({
               )}
               <InteractionDropdownButton
                 isActive={isPreviewMode}
-                label={c('Info').t`Viewing`}
+                label={toolbar.Viewing}
                 icon={<Icon data={Icons.eye} size={4} />}
-                description={c('Description').t`Read or print final document`}
+                description={toolbar['Read or print final document']}
                 onClick={() => {
                   onUserModeChange(EditorUserMode.Preview)
                 }}
@@ -1418,4 +1419,48 @@ export default function DocumentEditorToolbar({
       </div>
     </div>
   )
+}
+
+export const toolbarMessages = {
+  toolbar: {
+    Undo: 'Undo',
+    Redo: 'Redo',
+    'Adjust font size': 'Adjust font size',
+    and: 'and',
+    Indent: 'Indent',
+    Outdent: 'Outdent',
+    Bold: 'Bold',
+    Italic: 'Italic',
+    Underline: 'Underline',
+    'Strike-through': 'Strike-through',
+    Colour: 'Colour',
+    'Insert link': 'Insert link',
+    'Insert image': 'Insert image',
+    'Insert table': 'Insert table',
+    'Insert comment': 'Insert comment',
+    Divider: 'Divider',
+    'Check List': 'Check List',
+    'Bulleted List': 'Bulleted List',
+    'Numbered List': 'Numbered List',
+    Alphabetical: 'Alphabetical',
+    'A. B. C. D.': 'A. B. C. D.',
+    'a. b. c. d.': 'a. b. c. d.',
+    'A) B) C) D)': 'A) B) C) D)',
+    'a) b) c) d)': 'a) b) c) d)',
+    Roman: 'Roman',
+    'Code block': 'Code block',
+    Quote: 'Quote',
+    'Clear formatting': 'Clear formatting',
+    'Subscript (alpha only)': 'Subscript (alpha only)',
+    'Superscript (alpha only)': 'Superscript (alpha only)',
+    'Page break (alpha only)': 'Page break (alpha only)',
+    New: 'New',
+    'More options': 'More options',
+    Editing: 'Editing',
+    Suggesting: 'Suggesting',
+    Viewing: 'Viewing',
+    'Edit document directly': 'Edit document directly',
+    'Edits become suggestions': 'Edits become suggestions',
+    'Read or print final document': 'Read or print final document',
+  },
 }

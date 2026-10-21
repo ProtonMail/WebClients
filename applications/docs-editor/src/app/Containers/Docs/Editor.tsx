@@ -108,7 +108,6 @@ export function Editor({
 
   const {
     emojiPickerEnabled,
-    emojiMessages,
     userName,
     isAlpha,
     canEdit,
@@ -256,7 +255,7 @@ export function Editor({
 
         {emojiPickerEnabled && (
           <Suspense fallback={null}>
-            <EmojiAutocompletePlugin messages={emojiMessages} />
+            <EmojiAutocompletePlugin />
           </Suspense>
         )}
         <FixBrokenTabNode />

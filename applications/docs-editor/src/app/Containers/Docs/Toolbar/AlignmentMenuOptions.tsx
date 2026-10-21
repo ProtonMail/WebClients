@@ -1,21 +1,19 @@
 import { DropdownMenuButton } from '../Components/Dropdown'
 import type { LexicalEditor, ElementFormatType } from 'lexical'
 import { FORMAT_ELEMENT_COMMAND } from 'lexical'
-import { c } from 'ttag'
 import { memo } from 'react'
 import { Icon } from '../Components/Icon'
 import * as Icons from '../Components/icons'
 import { clsx } from 'clsx'
 import { ShortcutLabel } from '../Plugins/KeyboardShortcuts/ShortcutLabel'
 import ToolbarTooltip from './ToolbarTooltip'
+import { useDocsMessages } from '../DocsDependenciesProvider'
+import type { DocsMessages } from '../messages/DocsMessages'
 
-/**
- * `name` must be a function since localized strings are not available at compile time.
- */
 export const AlignmentOptions = [
   {
     align: 'left',
-    name: () => c('Action').t`Left align`,
+    name: (messages: DocsMessages) => messages.alignmentMenuOptions['Left align'],
     icon: <Icon data={Icons.textAlignLeft} />,
     label: <ShortcutLabel shortcut="LEFT_ALIGN_SHORTCUT" />,
     onClick: (activeEditor: LexicalEditor) => {
@@ -24,7 +22,7 @@ export const AlignmentOptions = [
   },
   {
     align: 'center',
-    name: () => c('Action').t`Center align`,
+    name: (messages: DocsMessages) => messages.alignmentMenuOptions['Center align'],
     icon: <Icon data={Icons.textAlignCenter} />,
     label: <ShortcutLabel shortcut="CENTER_ALIGN_SHORTCUT" />,
     onClick: (activeEditor: LexicalEditor) => {
@@ -33,7 +31,7 @@ export const AlignmentOptions = [
   },
   {
     align: 'right',
-    name: () => c('Action').t`Right align`,
+    name: (messages: DocsMessages) => messages.alignmentMenuOptions['Right align'],
     icon: <Icon data={Icons.textAlignRight} />,
     label: <ShortcutLabel shortcut="RIGHT_ALIGN_SHORTCUT" />,
     onClick: (activeEditor: LexicalEditor) => {
@@ -42,7 +40,7 @@ export const AlignmentOptions = [
   },
   {
     align: 'justify',
-    name: () => c('Action').t`Justify align`,
+    name: (messages: DocsMessages) => messages.alignmentMenuOptions['Justify align'],
     label: <ShortcutLabel shortcut="JUSTIFY_SHORTCUT" />,
     icon: <Icon data={Icons.textAlignJustify} />,
     onClick: (activeEditor: LexicalEditor) => {
@@ -60,6 +58,7 @@ function AlignmentMenuOptions({
   elementFormat: ElementFormatType
   isEditable: boolean
 }) {
+  const messages = useDocsMessages()
   return AlignmentOptions.map(({ align, label, icon, name, onClick }) => (
     <ToolbarTooltip key={align} title={label} originalPlacement="right">
       <DropdownMenuButton
@@ -68,10 +67,19 @@ function AlignmentMenuOptions({
         disabled={!isEditable}
       >
         {icon}
-        {name()}
+        {name(messages)}
       </DropdownMenuButton>
     </ToolbarTooltip>
   ))
 }
 
 export default memo(AlignmentMenuOptions)
+
+export const alignmentMenuOptionsMessages = {
+  alignmentMenuOptions: {
+    'Left align': 'Left align',
+    'Center align': 'Center align',
+    'Right align': 'Right align',
+    'Justify align': 'Justify align',
+  },
+}
