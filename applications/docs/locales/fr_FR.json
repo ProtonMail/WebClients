@@ -300,9 +300,6 @@
       "Done": [
         "Terminé"
       ],
-      "Downgrade": [
-        "Passer à un abonnement inférieur"
-      ],
       "Download": [
         "Télécharger"
       ],
@@ -576,9 +573,6 @@
       "Open": [
         "Ouvrir"
       ],
-      "Open ${ CALENDAR_APP_NAME } settings": [
-        "Ouvrir les paramètres de ${ CALENDAR_APP_NAME }"
-      ],
       "Open ${ DRIVE_APP_NAME }": [
         "Ouvrir ${ DRIVE_APP_NAME }"
       ],
@@ -638,9 +632,6 @@
       ],
       "Remove access": [
         "Retirer l’accès"
-      ],
-      "Remove bonuses": [
-        "Retirer les bonus"
       ],
       "Remove button": [
         "Retirer le bouton"
@@ -1127,11 +1118,6 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Gestionnaire de mots de passe version premium"
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "Garantie satisfait ou remboursé pendant 30 jours"
       ]
     },
     "BF2024: Deal details": {
@@ -3761,14 +3747,6 @@
         "Changer d'abonnement"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "Le groupe familial n'est pas reconnu. Nous vous invitons à réessayer."
-      ],
-      "Organization not recognized. Try again.": [
-        "L'organisation n'est pas reconnue. Nous vous invitons à réessayer."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "Groupes ${ BRAND_NAME }"
@@ -3836,30 +3814,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Votre compte utilise ${ usedSpace } d'espace de stockage, ce qui dépasse les ${ inviteSpace } dont vous disposez. Supprimez certaines données ou demandez à l'administrateur de l'abonnement d'augmenter votre espace de stockage."
-      ]
-    },
-    "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "Saisissez le nom du groupe familial pour confirmer"
-      ],
-      "Enter organization name to confirm": [
-        "Saisissez le nom de l'organisation pour confirmer"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Ceci supprimera définitivement tous les sous-utilisateurs, comptes et données associés à votre organisation."
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Cela retirera toutes les fonctionnalités premium de ${ BRAND_NAME } pour chaque membre de la famille."
-      ]
-    },
-    "familyOffer_2023:Title": {
-      "Delete family group?": [
-        "Supprimer le groupe familial ?"
-      ],
-      "Delete organization?": [
-        "Supprimer l'organisation ?"
       ]
     },
     "Feature": {
@@ -4506,13 +4460,6 @@
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Vous obtenez ${ referrerRewardAmount }** en crédits pour chaque ami abonné."
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } d'espace de stockage supplémentaire"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } connexion pour ${ VPN_APP_NAME } (vous pouvez connecter plus d'appareils au VPN)",
-        "+${ organization.BonusVPN } connexions pour ${ VPN_APP_NAME } (vous pouvez connecter plus d'appareils au VPN)"
-      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un numéro de téléphone ne peut être utilisé que pour vérifier un seul compte ${ BRAND_NAME }."
       ],
@@ -4587,9 +4534,6 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Avant de demander un nouveau code de vérification, nous vous recommandons de vérifier votre dossier indésirables/spam et de vous assurer que l'adresse ${ strong } est correcte."
-      ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "En passant à l'abonnement Free, vous perdrez définitivement ces avantages, même si vous repassez par la suite à un abonnement supérieur."
       ],
       "Calendar side panel": [
         "Panneau latéral du calendrier"
@@ -4722,9 +4666,6 @@
       "Downgrade": [
         "Passer à un abonnement inférieur"
       ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Passer à un abonnement inférieur mettra fin à toutes les connexions vers les serveurs payants ${ VPN_APP_NAME }."
-      ],
       "Download current logs": [
         "Télécharger les journaux actuels"
       ],
@@ -4853,15 +4794,6 @@
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "Si vous avez perdu l'accès à votre application d'authentification, vous pouvez utiliser 1 des 16 codes de récupération de sauvegarde fournis lors de la configuration de l'authentification à deux facteurs. ${ learnMoreLink }"
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "En passant à un abonnement inférieur, vous perdrez l'accès aux fonctionnalités payantes de ${ MAIL_APP_NAME } et ${ VPN_APP_NAME }."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "En passant à un abonnement inférieur, vous perdrez l'accès aux fonctionnalités payantes de ${ MAIL_APP_NAME }, dont l'espace de stockage et les filtres supplémentaires."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "En passant à un abonnement inférieur, vous perdrez l'accès aux fonctionnalités payantes de ${ VPN_APP_NAME }."
       ],
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
         "Si vous vous retirez, vous perdrez l’accès à « ${ fileName } » et ne pourrez plus l’ouvrir à moins que le propriétaire ne le partage avec vous."
@@ -5205,9 +5137,6 @@
       "Show table of contents": [
         "Afficher la table des matières"
       ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Votre compte bénéficie de fonctionnalités supplémentaires parce que vous êtes un utilisateur fidèle."
-      ],
       "Some edits are taking longer to sync than expected.": [
         "La synchronisation de certaines modifications prend plus de temps que prévu."
       ],
@@ -5401,6 +5330,9 @@
       "We'll email you once import is complete.": [
         "Nous vous enverrons un e-mail une fois l'importation terminée."
       ],
+      "We'll get back to you shortly.": [
+        "Nous vous recontacterons prochainement."
+      ],
       "We'll notify you when the import is done.": [
         "Nous vous informerons dès que l'importation sera terminée."
       ],
@@ -5485,14 +5417,6 @@
       "You can close the tab or browser in the meantime.": [
         "En attendant, vous pouvez fermer l'onglet ou le navigateur."
       ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendrier. Nous vous invitons à retirer les liens du calendrier partagé et tous les utilisateurs de ${ BRAND_NAME } avec lesquels vous avez partagé votre calendrier avant de résilier votre abonnement à ${ MAIL_SHORT_APP_NAME }.",
-        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendriers. Nous vous invitons à retirer les liens des calendriers partagés et tous les utilisateurs de ${ BRAND_NAME } avec lesquels vous avez partagé vos calendriers avant de résilier votre abonnement à ${ MAIL_SHORT_APP_NAME }."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendrier. Nous vous invitons à retirer les liens du calendrier partagé et tous les utilisateurs de ${ BRAND_NAME } avec lesquels vous avez partagé votre calendrier avant de résilier votre abonnement.",
-        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendriers. Nous vous invitons à retirer les liens des calendriers partagés et tous les utilisateurs de ${ BRAND_NAME } avec lesquels vous avez partagé vos calendriers avant de résilier votre abonnement."
-      ],
       "You can now return to the application to continue": [
         "Vous pouvez maintenant revenir à l'application pour continuer."
       ],
@@ -5507,9 +5431,6 @@
       ],
       "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
         "Il se peut que vous n'ayez pas les autorisations nécessaires pour le consulter avec le compte que vous avez sélectionné. Essayez un autre compte ou contactez le propriétaire pour y accéder."
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Vous devez désactiver ou retirer vos autres utilisateurs ${ MAIL_APP_NAME }, adresses et domaines personnalisés avant de pouvoir passer à un abonnement inférieur."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "À cette date, vous n'aurez plus accès aux fonctionnalités de ${ planTitle }."
@@ -5652,11 +5573,6 @@
       "${ selectedFoldersCount } label selected": [
         "${ selectedFoldersCount } label sélectionné",
         "${ selectedFoldersCount } labels sélectionnés"
-      ]
-    },
-    "Info; access rights for shared calendar": {
-      "View only": [
-        "Lecture seule"
       ]
     },
     "Key badge": {
@@ -5989,6 +5905,9 @@
       "Phone number": [
         "Numéro de téléphone"
       ],
+      "Please share any feedback to help us improve.": [
+        "N'hésitez pas à nous faire part de vos commentaires pour nous aider à nous améliorer."
+      ],
       "Port": [
         "Port"
       ],
@@ -6078,6 +5997,9 @@
       ],
       "What happened?": [
         "Que s'est-il passé ?"
+      ],
+      "Why would you like to cancel?": [
+        "Pourquoi voulez-vous annuler votre abonnement ?"
       ],
       "Your IP": [
         "Votre IP"
@@ -6463,38 +6385,20 @@
         "Vitesse VPN moyenne"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Supprimer le compte"
-      ],
-      "Downgrade account": [
-        "Passer à un abonnement inférieur"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Obtenir gratuitement ${ BRAND_NAME }"
-      ],
-      "Get ${ planName }": [
-        "Obtenir ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Conserver ${ plan }"
-      ],
-      "Keep account": [
-        "Conserver le compte"
-      ],
-      "Switch plan": [
-        "Changer d'abonnement"
-      ]
-    },
     "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passer à ${ downgradedPlanName }"
-      ],
       "Plans starting from ${ priceDrivePlus }": [
         "Abonnements à partir de ${ priceDrivePlus }"
       ],
       "Upgrade": [
         "Changer d'abonnement"
+      ]
+    },
+    "new_plans: action": {
+      "Get ${ BRAND_NAME } for free": [
+        "Obtenir gratuitement ${ BRAND_NAME }"
+      ],
+      "Get ${ planName }": [
+        "Obtenir ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -7028,18 +6932,6 @@
       "For next-level password management and identity protection.": [
         "Passez au niveau supérieur pour gérer vos mots de passe et protéger votre identité."
       ],
-      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
-        "Si vous supprimez votre compte, vous perdrez tous les avantages de l'abonnement ${ visionary }, qui ne sera plus disponible si vous créez un nouveau compte."
-      ],
-      "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
-        "Si vous passez à un compte inférieur, vous perdrez tous les avantages de l'abonnement ${ visionary }, qui ne sera plus disponible si vous voulez vous réabonner."
-      ],
-      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
-        "Si vous changez d'abonnement, vous perdrez tous les avantages de l'abonnement ${ visionary } et ne serez plus en mesure de revenir à l'abonnement ${ visionary }."
-      ],
-      "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
-        "Notre abonnement ${ visionary } n'est plus disponible pour les nouveaux abonnés, il s'agit d'un abonnement spécial destiné aux utilisateurs ${ BRAND_NAME } initiaux offrant des caractéristiques et des avantages particuliers."
-      ],
       "Pay once, secure your passwords and identity forever.": [
         "Payez une fois et sécurisez vos mots de passe et votre identité pour toujours."
       ],
@@ -7069,12 +6961,6 @@
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
         "Une confidentialité protégée en toutes circonstances et plus de stockage pour jusqu'à 2 personnes."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
-        "Vous bénéficiez d'un tarif promotionnel sur votre abonnement actuel. En supprimant votre compte, vous perdrez ce tarif promotionnel, qui ne sera plus disponible si vous créez un nouveau compte."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
-        "Vous bénéficiez d'un tarif promotionnel sur votre abonnement actuel. En choisissant un compte avec moins de fonctionnalités, vous perdrez ce tarif et il ne sera plus disponible si vous voulez vous réabonner."
       ]
     },
     "new_plans: Subtext": {
@@ -7086,17 +6972,6 @@
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "Accédez à tous les produits et toutes les fonctions premium de ${ BRAND_NAME } pour seulement ${ priceLine } avec possibilité de résiliation à tout moment."
-      ]
-    },
-    "new_plans: title": {
-      "Delete account?": [
-        "Supprimer le compte ?"
-      ],
-      "Downgrade account?": [
-        "Passer à un abonnement inférieur ?"
-      ],
-      "Switch plans?": [
-        "Changer d'abonnement ?"
       ]
     },
     "new_plans: tooltip": {
@@ -7482,9 +7357,6 @@
       ],
       "Failed to load invitation details": [
         "Le chargement des informations de l'invitation n'a pas abouti."
-      ],
-      "Failed to load invitations": [
-        "Le chargement des invitations n'a pas abouti."
       ],
       "Failed to load sharing details": [
         "Les informations du partage n'ont pas pu être chargés"
@@ -8105,6 +7977,9 @@
       "Please describe the problem and include any error messages": [
         "Décrivez le problème et incluez les éventuels messages d'erreur."
       ],
+      "Please select the main reason": [
+        "Sélectionnez la raison principale."
+      ],
       "Search": [
         "Rechercher"
       ],
@@ -8602,11 +8477,6 @@
         "Se déconnecter sans faire la réinitialisation du mot de passe ?"
       ]
     },
-    "Shared calendar; Info about calendar owner": {
-      "Shared by ${ ownerName }": [
-        "Partagé par ${ ownerName }"
-      ]
-    },
     "sheets_2025:Action": {
       "Comma Separated Values (.csv)": [
         "Valeurs séparées par des virgules (.csv)"
@@ -8957,9 +8827,6 @@
       "upgrade for more storage": [
         "changer d'abonnement pour augmenter votre espace de stockage"
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Nous ajouterons les crédits restants à votre compte ${ BRAND_NAME }."
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "Il vous reste encore **${ daysRemaining }** jour sur votre compte **${ currentPlanName }**.",
         "Il vous reste encore **${ daysRemaining }** jours sur votre compte **${ currentPlanName }**."
@@ -9171,9 +9038,6 @@
       ],
       "You have successfully canceled your subscription.": [
         "Vous avez résilié votre abonnement."
-      ],
-      "You have successfully unsubscribed": [
-        "La désinscription a été effectuée."
       ]
     },
     "Suffix": {
@@ -9331,9 +9195,6 @@
       "Birthday": [
         "Date de naissance"
       ],
-      "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
-        "Annuler l'abonnement ${ MAIL_SHORT_APP_NAME }"
-      ],
       "Cancel subscription?": [
         "Annuler l'abonnement ?"
       ],
@@ -9364,12 +9225,6 @@
       "Computers": [
         "Ordinateurs"
       ],
-      "Confirm downgrade": [
-        "Confirmer le passage à un abonnement inférieur"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Confirmer la perte des bonus ${ BRAND_NAME }"
-      ],
       "Connect apps and devices": [
         "Connecter les applications et les appareils"
       ],
@@ -9384,6 +9239,9 @@
       ],
       "Contact group": [
         "Groupe de contacts"
+      ],
+      "Contact us": [
+        "Nous contacter"
       ],
       "Contacts": [
         "Contacts"
@@ -9476,12 +9334,6 @@
       ],
       "Domain names": [
         "Noms de domaine"
-      ],
-      "Downgrade account": [
-        "Passer à un abonnement inférieur"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "Souhaitez-vous passer à ${ downgradedPlanName } ?"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Télécharger les applications ${ DRIVE_APP_NAME }"
@@ -9708,6 +9560,9 @@
       ],
       "Request new code": [
         "Demander un nouveau code"
+      ],
+      "Request sent": [
+        "La demande a été envoyée."
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "L'enregistrer pour plus tard dans ${ DRIVE_APP_NAME }"
@@ -10085,6 +9940,20 @@
       ],
       "Replay video": [
         "Rejouer la vidéo"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "J'ai trouvé un autre service que je préfère."
+      ],
+      "It’s missing a key feature": [
+        "Il manque une fonction importante."
+      ],
+      "It’s too expensive": [
+        "C'est trop cher."
+      ],
+      "Other": [
+        "Autre"
       ]
     },
     "VPN Plan Feature": {

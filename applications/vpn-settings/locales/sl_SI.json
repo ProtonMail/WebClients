@@ -102,9 +102,6 @@
       "Desktop and mobile apps": [
         "Aplikacije za namizne računalnike in mobilne naprave"
       ],
-      "Downgrade plan": [
-        "Spremeni paket na cenejšega"
-      ],
       "Downgrade to Free": [
         "Preklopite na brezplačni paket"
       ],
@@ -587,9 +584,6 @@
       "Done": [
         "Opravljeno"
       ],
-      "Downgrade": [
-        "Zmanjšaj"
-      ],
       "Download": [
         "Prenesi"
       ],
@@ -973,9 +967,6 @@
       ],
       "Remove all other devices": [
         "Odstrani vse ostale naprave"
-      ],
-      "Remove bonuses": [
-        "Odstrani bonuse"
       ],
       "Remove button": [
         "Odstranite gumb"
@@ -1703,11 +1694,6 @@
         "Ta ponudba žal ni na voljo v vašem paketu. Lahko pa pridobite popusta v višini ${ discountPercentage } za ${ plan.Title }, če se naročite za ${ cycle } meseca.",
         "Ta ponudba žal ni na voljo v vašem paketu. Lahko pa pridobite popusta v višini ${ discountPercentage } za ${ plan.Title }, če se naročite za ${ cycle } mesece.",
         "Ta ponudba žal ni na voljo v vašem paketu. Lahko pa pridobite popusta v višini ${ discountPercentage } za ${ plan.Title }, če se naročite za ${ cycle } mesecev."
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "30-dnevno jamstvo z vračilom denarja"
       ]
     },
     "bf2023: Title": {
@@ -4917,14 +4903,6 @@
         "Ogled povabila"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "Družinska skupina ni prepoznana. Poskusite znova."
-      ],
-      "Organization not recognized. Try again.": [
-        "Organizacija ni prepoznana. Poskusite znova."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "Skupine ${ BRAND_NAME }"
@@ -5064,22 +5042,8 @@
       ]
     },
     "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "Vnesite ime družinske skupine za potrditev."
-      ],
-      "Enter organization name to confirm": [
-        "Vnesite ime organizacije za potrditev."
-      ],
       "Family name": [
         "Družinsko ime"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "To bo trajno izbrisalo vse uporabnike, račune in podatke, povezane z vašo organizacijo."
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "To bo odstranilo vse ${ BRAND_NAME } premijske funkcije za vsakega družinskega člana."
       ]
     },
     "familyOffer_2023:Settings section title": {
@@ -5107,12 +5071,6 @@
       ],
       "Change family name": [
         "Spremenite ime družine"
-      ],
-      "Delete family group?": [
-        "Izbriši družinsko skupino?"
-      ],
-      "Delete organization?": [
-        "Izbriši organizacijo?"
       ],
       "Edit user storage": [
         "Uredi shrambo uporabnika"
@@ -6155,12 +6113,6 @@
         "Najdeni so ${ total } uporabniki.",
         "Najdenih je ${ total } uporabnikov."
       ],
-      "${ vaultLink } created": [
-        "${ vaultLink } ustvarjeno"
-      ],
-      "${ vaultLink } updated": [
-        "${ vaultLink } je posodobljen"
-      ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } potreben za povezavo na ravni države."
       ],
@@ -6212,23 +6164,11 @@
         "+ ${ invisibleCount } Več",
         "+ ${ invisibleCount } Več"
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } dodaten prostor za shranjevanje"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } povezava za ${ VPN_APP_NAME } (omogoča vam povezavo več naprav na VPN).",
-        "+${ organization.BonusVPN } povezavi za ${ VPN_APP_NAME } (omogoča vam povezavo več naprav na VPN).",
-        "+${ organization.BonusVPN } povezave za ${ VPN_APP_NAME } (omogoča vam povezavo več naprav na VPN).",
-        "+${ organization.BonusVPN } povezav za ${ VPN_APP_NAME } (omogoča vam povezavo več naprav na VPN)."
-      ],
       "2FA disabled": [
         "2FA onemogočena"
       ],
       "30-day money-back guarantee": [
         "30-dnevno jamstvo z vračilom denarja"
-      ],
-      "30-day money-back guarantee.": [
-        "30-dnevno jamstvo z vračilom denarja."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Ime, ki vam pomaga prepoznati, kje ga uporabljate, da ga lahko enostavno prekličete ali ga pozneje podaljšate."
@@ -6425,9 +6365,6 @@
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "Z onemogočanjem nadzora nad računom boste izbrisali tudi celotno zgodovino. Ali ste prepričani, da želite to onemogočiti?"
       ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "S prehodom na brezplačni paket boste trajno izgubili te ugodnosti, tudi če v prihodnosti znova nadgradite."
-      ],
       "By leaving now, changes may not be saved": [
         "Če boste sedaj zapustili, se spremembe morda ne bodo shranile."
       ],
@@ -6622,9 +6559,6 @@
       ],
       "Downgrade": [
         "Zmanjšaj"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Zmanjšanje paketa bo prekinila vse povezave do plačljivih ${ VPN_APP_NAME } strežnikov."
       ],
       "Download ${ mobileConfigArtifact } and open it on each Mac to install the profile, then approve it in System Settings.": [
         "Prenesite datoteko ${ mobileConfigArtifact } in jo odprite na vsakem računalniku Mac, namestite profil in ga potrdite v sistemskih nastavitvah."
@@ -6851,15 +6785,6 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Če izgubite svojo napravo z omogočenim dvojnim preverjanjem pristnosti, lahko te kode uporabite namesto 6-mestne kode za dvojno preverjanje pristnosti za prijavo v svoj račun. Vsako kodo lahko uporabite samo enkrat."
       ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Če nadaljujete s podgradnjo, boste izgubili dostop do plačljivih funkcij ${ MAIL_APP_NAME } in ${ VPN_APP_NAME }."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Če nadaljujete s podgradnjo, boste izgubili dostop do plačljivih funkcij ${ MAIL_APP_NAME }, vključno z dodatnim prostorom za shranjevanje in filtri."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Če nadaljujete s podgradnjo, boste izgubili dostop do plačljivih funkcij ${ VPN_APP_NAME }."
-      ],
       "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
         "Če ima vaša organizacija javne osebnosti, obravnava občutljive podatke ali je lahko tarča kibernetskih napadov, vam toplo priporočamo, da za vse v vaši organizaciji omogočite ${ PROTON_SENTINEL_NAME }."
       ],
@@ -6931,12 +6856,6 @@
       ],
       "Internet connection restored.": [
         "Internetna povezava je spet vzpostavljena."
-      ],
-      "Invite deleted": [
-        "Povabilo izbrisano"
-      ],
-      "Invite rejected": [
-        "Povabilo zavrnjeno"
       ],
       "Invite successfully sent": [
         "Vabilo uspešno poslano",
@@ -7168,15 +7087,6 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Naša opozorila dajejo prednost varnosti. Če ne prepoznate nobenih informacij o vdorih, lahko to poročilo varno prezrete."
-      ],
-      "Pass Monitor - custom email confirmed": [
-        "Pass Monitor – potrjen e-poštni naslov po meri"
-      ],
-      "Pass Monitor - custom email created": [
-        "Pass Monitor – ustvarjen e-poštni naslov po meri"
-      ],
-      "Pass Monitor - custom email deleted": [
-        "Pass Monitor – e-poštni naslov po meri izbrisan"
       ],
       "Password copied to clipboard": [
         "Geslo je kopirano v odložišče."
@@ -7432,9 +7342,6 @@
       ],
       "Signed up": [
         "Prijavljen"
-      ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Ker ste zvest uporabnik, smo vašemu računu omogočili dodatne funkcionalnosti."
       ],
       "Smart Routed through a different country.": [
         "Pametno usmerjeno prek druge države."
@@ -7754,9 +7661,6 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Enolični ID, ki ga ustvari vaš ponudnik identitete, običajno v obliki URL-ja, ki vsebuje ime ponudnika identitete (npr. https://idp.example.com/XXXXX)."
       ],
-      "Unknown event type": [
-        "Neznana vrsta dogodka"
-      ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Razen če se odjavite iz vašega računa ali spremenite geslo, bo vaša seja ostala aktivna. Seje potečejo po 60 dneh neaktivnosti."
       ],
@@ -7828,15 +7732,6 @@
       ],
       "Using a different MDM? Any MDM that supports deploying a configuration profile will work. Refer to your MDM's documentation on how to upload and assign it to your device fleet.": [
         "Uporabljate drug sistem za upravljanje mobilnih naprav (MDM)? Primeren je kateri koli sistem MDM, ki podpira namestitev konfiguracijskega profila. V dokumentaciji vašega sistema MDM poiščite navodila, kako ga naložiti in dodeliti vaš inventar naprav."
-      ],
-      "Vault created": [
-        "Trezor ustvarjen"
-      ],
-      "Vault deleted": [
-        "Trezor je izbrisan"
-      ],
-      "Vault updated": [
-        "Trezor posodobljen"
       ],
       "Verification code sent.": [
         "Koda za preverjanje je poslana."
@@ -7936,9 +7831,6 @@
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Ko omogočite SAML za ${ appName } pri vašem ponudniku identitete, boste morda pozvani, da uporabite URL povratnega klica (ACS) in ID izdajatelja. Preprosto kopirajte in prilepite spodnje podatke v polja vašega ponudnika identitete."
-      ],
-      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
-        "Ko prekličete trenutno plačano naročnino, bo preostanek naročnine vrnjen kot dobroimetje na računu, vi pa boste degradirani na ${ BRAND_NAME } ${ PLANS.FREE } paket."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Ko prekličete naročnino, se ta ne podaljša, vendar lahko do konca naročniškega obdobja še vedno koristite ugodnosti paketa. Potem boste prešli na brezplačni paket ${ BRAND_NAME }."
@@ -8107,9 +7999,6 @@
       ],
       "You may be redirected to your bank’s website.": [
         "Lahko vas preusmerijo na spletno stran vaše banke."
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Preden lahko zmanjšate paket, morate onemogočiti ali odstraniti vse dodatne uporabnike, naslove in domene po meri aplikacije ${ MAIL_APP_NAME }."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Da bi jo dodali kot način plačila, morate imeti plačilno kartico ali bančni račun, ki je povezan z vašim PayPal računom."
@@ -9430,9 +9319,6 @@
       "Upgrade your plan": [
         "Nadgradite trenutni paket"
       ],
-      "Vault": [
-        "Trezor"
-      ],
       "View guide": [
         "Ogled vodnika"
       ],
@@ -9865,9 +9751,6 @@
       ]
     },
     "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Zmanjšanje paketa na ${ downgradedPlanName }."
-      ],
       "Explore all ${ BRAND_NAME } plans": [
         "Raziščite vse pakete ${ BRAND_NAME }."
       ],
@@ -13218,9 +13101,6 @@
       "upgrade for more storage": [
         "dokupite prostor za shranjevanje"
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Dobroimetje za preostali čas bomo dodali vašemu ${ BRAND_NAME } računu."
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "Na trenutnem paketu **${ currentPlanName }** vam je preostal še **${ daysRemaining }** dan uporabe.",
         "Na trenutnem paketu **${ currentPlanName }** sta vam preostala še **${ daysRemaining }** dneva uporabe.",
@@ -13916,9 +13796,6 @@
       ],
       "You have successfully canceled your subscription.": [
         "Uspešno ste preklicali naročnino."
-      ],
-      "You have successfully unsubscribed": [
-        "Naročnina je preklicana"
       ]
     },
     "Success message": {
@@ -14354,12 +14231,6 @@
       "Confirm": [
         "Potrdi"
       ],
-      "Confirm downgrade": [
-        "Potrdite zmanjšanje paketa"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Potrdite izgubo bonusov za ${ BRAND_NAME }"
-      ],
       "Connect a Gmail address": [
         "Poveži naslov Gmail"
       ],
@@ -14530,9 +14401,6 @@
       ],
       "Downgrade account": [
         "Zmanjšaj račun"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "Zmanjšaj na paket ${ downgradedPlanName }?"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Prenesite aplikacije ${ DRIVE_APP_NAME }"

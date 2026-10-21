@@ -145,9 +145,6 @@
       "Desktop and mobile apps": [
         "桌面和移动应用"
       ],
-      "Downgrade plan": [
-        "降级套餐"
-      ],
       "Downgrade to Free": [
         "降级至 Free"
       ],
@@ -551,6 +548,9 @@
       "Cancel": [
         "取消"
       ],
+      "Cancel import": [
+        "取消导入"
+      ],
       "Cancel request": [
         "取消请求"
       ],
@@ -674,9 +674,6 @@
       "Connect to video conferencing": [
         "连接至视频会议"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "连接 ${ BRAND_NAME } 账户"
-      ],
       "Connect your email": [
         "关联您的邮箱"
       ],
@@ -761,14 +758,11 @@
       "Create": [
         "创建"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "创建 ${ BRAND_NAME } 账户"
+      "Create a ${ ACCOUNT_APP_NAME }": [
+        "创建 ${ ACCOUNT_APP_NAME }"
       ],
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "创建一个链接，与 ${ BRAND_NAME } 之外的人员共享"
-      ],
-      "Create an account": [
-        "创建账户"
       ],
       "Create calendar": [
         "创建日历"
@@ -952,9 +946,6 @@
       ],
       "Done": [
         "完成"
-      ],
-      "Downgrade": [
-        "降级"
       ],
       "Download": [
         "下载"
@@ -1328,6 +1319,9 @@
       "Import": [
         "导入"
       ],
+      "Import actions": [
+        "导入操作"
+      ],
       "Import emails, calendars, contacts": [
         "导入电子邮件、日历、联系人"
       ],
@@ -1670,17 +1664,11 @@
       "Reload": [
         "刷新"
       ],
-      "Reload page": [
-        "重新加载页面"
-      ],
       "Remove": [
         "移除"
       ],
       "Remove all other devices": [
         "移除所有其他设备"
-      ],
-      "Remove bonuses": [
-        "放弃特权"
       ],
       "Remove button": [
         "移除按钮"
@@ -1696,6 +1684,9 @@
       ],
       "Remove from favorites": [
         "从收藏夹中删除"
+      ],
+      "Remove from the list": [
+        "从列表中移除"
       ],
       "Remove gift code": [
         "移除礼品码"
@@ -1985,8 +1976,8 @@
       "Sign in": [
         "登录"
       ],
-      "Sign in to ${ providerName }": [
-        "登录 ${ providerName }"
+      "Sign in to ${ PASS_APP_NAME }": [
+        "登录 ${ PASS_APP_NAME }"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "使用${ BRAND_NAME }登录"
@@ -2044,6 +2035,9 @@
       ],
       "Start subscription": [
         "开始订阅"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "开始使用 ${ PASS_APP_NAME }"
       ],
       "Start using ${ PASS_APP_NAME } now": [
         "立即开始使用 ${ PASS_APP_NAME }"
@@ -2912,11 +2906,6 @@
     "bf2023: info": {
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "抱歉，此优惠不适用于您当前的套餐。但当您订阅 ${ cycle } 个月的 ${ plan.Title } 时可享受 ${ discountPercentage } 的折扣。"
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "30 天退款保证"
       ]
     },
     "bf2023: Title": {
@@ -5397,6 +5386,9 @@
       "A checked box means the feature is disabled.": [
         "选中复选框表示禁用该功能。"
       ],
+      "Access your passwords on all your devices": [
+        "在所有设备上访问您的密码"
+      ],
       "Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.": [
         "向您的账户添加额外地址或使用“隐藏我的邮箱”别名来保护收件箱隐私！"
       ],
@@ -5405,6 +5397,9 @@
       ],
       "Also included": [
         "还包含"
+      ],
+      "Autofill logins instantly on any site": [
+        "在任何网站上即时自动填充登录信息"
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "自动清除 30 天前移至回收站和垃圾邮件的电子邮件。"
@@ -5450,6 +5445,9 @@
       ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "创建策略，决定谁可以连接到每个国家/地区的共享服务器。"
+      ],
+      "Create strong password with one click": [
+        "一键创建强密码"
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "在电脑和手机上轻松访问电子邮件和日历。"
@@ -6149,6 +6147,9 @@
       ]
     },
     "Easy switch": {
+      "Sign in to ${ providerName }": [
+        "登录 ${ providerName }"
+      ],
       "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
         "如需将最多 ${ MAX_SYNC_PAID_USER } 个账户的邮件进行转发，请升级至 ${ planName }。"
       ],
@@ -7329,6 +7330,9 @@
       ],
       "Couldn't load transactions. Please try again later.": [
         "交易加载失败，请稍后再试。"
+      ],
+      "Couldn't load your connections": [
+        "无法加载您的连接"
       ],
       "Creating documents in non-folders is not allowed": [
         "不允许在非文件夹中创建文档"
@@ -8563,14 +8567,6 @@
         "查看邀请详情"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "无法识别家庭群组。请重试。"
-      ],
-      "Organization not recognized. Try again.": [
-        "无法识别机构，请重试。"
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } 团体账户"
@@ -8746,22 +8742,8 @@
       ]
     },
     "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "输入家庭群组名称以确认"
-      ],
-      "Enter organization name to confirm": [
-        "请输入机构名称进行确认"
-      ],
       "Family name": [
         "家庭名称"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "这将永久删除与您的组织相关的所有子用户、账户和数据。"
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "这将删除每个家庭成员所有的 ${ BRAND_NAME } 高级功能。"
       ]
     },
     "familyOffer_2023:Settings section title": {
@@ -8789,12 +8771,6 @@
       ],
       "Change family name": [
         "更改家庭名称"
-      ],
-      "Delete family group?": [
-        "删除家庭群组？"
-      ],
-      "Delete organization?": [
-        "删除机构?"
       ],
       "Edit user storage": [
         "编辑用户存储空间"
@@ -10104,6 +10080,9 @@
       "Pending": [
         "待处理"
       ],
+      "Queued": [
+        "队列中"
+      ],
       "Skipped ${ count } contact due to incompatibilities": [
         "因不兼容已跳过 ${ count } 个联系人"
       ],
@@ -10112,12 +10091,6 @@
       ],
       "Skipped ${ count } event due to incompatibilities": [
         "因不兼容已跳过 ${ count } 个事件"
-      ],
-      "Undo finished": [
-        "撤销完成"
-      ],
-      "Undo in progress": [
-        "正在撤销"
       ]
     },
     "Import type": {
@@ -10418,18 +10391,6 @@
       "${ url } deleted.": [
         "已删除 ${ url }"
       ],
-      "${ vaultLink } created": [
-        "${ vaultLink } 已创建"
-      ],
-      "${ vaultLink } deleted": [
-        "${ vaultLink } 已删除"
-      ],
-      "${ vaultLink } shared with email": [
-        "通过电子邮件共享 ${ vaultLink }"
-      ],
-      "${ vaultLink } updated": [
-        "${ vaultLink } 标签已更改"
-      ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
         "${ VPN_SHORT_APP_NAME } 隐藏您的流量，${ PASS_SHORT_APP_NAME } 隐藏您的身份\n— 无限制的 **Hide-my-email 别名** 和 **暗网警报**（当您的数据被泄露时）。"
       ],
@@ -10523,12 +10484,6 @@
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } 更多"
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } 特权存储空间"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } ${ VPN_APP_NAME } 连接数（允许您将更多设备连接至VPN）"
-      ],
       "1 device per user": [
         "1 设备/用户"
       ],
@@ -10540,9 +10495,6 @@
       ],
       "30-day money-back guarantee": [
         "30 天内可退款"
-      ],
-      "30-day money-back guarantee.": [
-        "30 天内可退款。"
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ protonSubdomain } 由 ${ BRAND_NAME } 托管，可让您快速建立子域。${ learnMoreLink }"
@@ -10979,9 +10931,6 @@
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "禁用账户监测后，您的所有历史记录也将被清除。您确定要禁用它吗？"
       ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "一旦降级为免费用户，无论今后是否再次付费升级，您都将永远失去这些特权。"
-      ],
       "By leaving now, changes may not be saved": [
         "若现在离开，所作更改将不会被保存"
       ],
@@ -11353,9 +11302,6 @@
       ],
       "Downgrade": [
         "降级"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "降级将导致与 ${ VPN_APP_NAME } 服务器的所有连接中断。"
       ],
       "Download ${ mobileConfigArtifact } and open it on each Mac to install the profile, then approve it in System Settings.": [
         "下载 ${ mobileConfigArtifact } 并在每台 Mac 上打开以安装配置文件，然后在“系统设置”中批准它。"
@@ -11879,15 +11825,6 @@
       "If you previously had a personal ${ BRAND_NAME } account with this address, you can recover your data separately.": [
         "如果您之前使用此地址且拥有个人 ${ BRAND_NAME } 账户，您可以单独恢复您的数据。"
       ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "降级账户后您将不能再使用 ${ MAIL_APP_NAME } 和 ${ VPN_APP_NAME } 的收费功能。"
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "降级账户后您将不能使用 ${ MAIL_APP_NAME } 的收费功能，包括额外的存储空间和筛选规则。"
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "降级账户后您将不能再使用 ${ VPN_APP_NAME } 的收费功能。"
-      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "如果您购买了礼品码或从我们的支持团队收到了礼品码，可以在此处输入。"
       ],
@@ -12005,23 +11942,8 @@
       "Invitation link used": [
         "邀请链接已使用"
       ],
-      "Invite deleted": [
-        "邀请已被删除"
-      ],
       "Invite family members and get everything up and running.": [
         "邀请家庭成员并开始运行一切。"
-      ],
-      "Invite for new user deleted": [
-        "对新用户的邀请已删除"
-      ],
-      "Invite for organization accepted": [
-        "组织邀请已接受"
-      ],
-      "Invite for organization created": [
-        "已创建组织邀请"
-      ],
-      "Invite rejected": [
-        "邀请被拒绝"
       ],
       "Invite successfully sent": [
         "已成功发送邀请"
@@ -12043,54 +11965,6 @@
       ],
       "It's better to have:": [
         "最好是有："
-      ],
-      "Item autofilled in ${ vaultLink }": [
-        "在 ${ vaultLink } 中自动填充项目"
-      ],
-      "Item autofilled in vault": [
-        "密码库中有条目被自动补全"
-      ],
-      "Item created in ${ vaultLink }": [
-        "在 ${ vaultLink } 中创建项目"
-      ],
-      "Item created in vault": [
-        "密码库中有条目被创建"
-      ],
-      "Item deleted from ${ vaultLink }": [
-        "项目已从 ${ vaultLink } 中删除"
-      ],
-      "Item deleted from vault": [
-        "密码库中有条目被删除"
-      ],
-      "Item flags changed in ${ vaultLink }": [
-        "在 ${ vaultLink } 中的项目标记已更改"
-      ],
-      "Item flags changed in vault": [
-        "保险库中的物品标记已更改"
-      ],
-      "Item in ${ vaultLink } trashed": [
-        "在 ${ vaultLink } 中有项目被移至回收站"
-      ],
-      "Item in ${ vaultLink } untrashed": [
-        "在 ${ vaultLink } 中有项目被移除回收站"
-      ],
-      "Item in vault trashed": [
-        "保险库中有项目被移至回收站"
-      ],
-      "Item in vault untrashed": [
-        "保险库中有项目被移出回收站"
-      ],
-      "Item read in ${ vaultLink }": [
-        "在 ${ vaultLink } 中读取项目"
-      ],
-      "Item read in vault": [
-        "密码库中有条目被获取"
-      ],
-      "Item updated in ${ vaultLink }": [
-        "在 ${ vaultLink } 中更新项目"
-      ],
-      "Item updated in vault": [
-        "密码库中有条目被被更新"
       ],
       "It’s often the easiest way to recover your account if you’re signed in.": [
         "当您已登录时，这通常是恢复账户的最简便方式。"
@@ -12314,9 +12188,6 @@
       "New group created via your identity provider and pending review.": [
         "通过身份提供商创建的新群组待审核"
       ],
-      "New user invited to organization": [
-        "新用户被邀请加入组织"
-      ],
       "New VPN connection data will stop being collected and shown.": [
         "将停止收集和显示新的 VPN 连接数据。"
       ],
@@ -12521,15 +12392,6 @@
       "Paid for a plan": [
         "已开通套餐"
       ],
-      "Pass Monitor - custom email confirmed": [
-        "Pass Monitor - 自定义邮件已确认"
-      ],
-      "Pass Monitor - custom email created": [
-        "Pass Monitor - 自定义邮件已创建"
-      ],
-      "Pass Monitor - custom email deleted": [
-        "Pass Monitor - 自定义邮件已删除"
-      ],
       "Pass usage logs": [
         "Pass 使用日志"
       ],
@@ -12610,9 +12472,6 @@
       ],
       "Please open the document to view it.": [
         "请打开文档查看。"
-      ],
-      "Please open your browser extension settings and allow ${ PASS_APP_NAME } extension to access website data. Then, reload this page.": [
-        "请打开您的浏览器扩展程序设置，允许 ${ PASS_APP_NAME } 扩展程序访问网站数据。然后，重新加载此页面。"
       ],
       "Please reconnect to continue.": [
         "请重新连接以继续。"
@@ -12920,20 +12779,8 @@
       "Settings updated": [
         "设置已更新"
       ],
-      "Shared ${ vaultLink } deleted": [
-        "已删除共享的 ${ vaultLink }"
-      ],
-      "Shared ${ vaultLink } updated": [
-        "共享的 ${ vaultLink } 已更新"
-      ],
       "Shared server country (${ countriesCount })": [
         "共享服务器所在的国家/地区（${ countriesCount }）"
-      ],
-      "Shared vault deleted": [
-        "共享密码库已删除"
-      ],
-      "Shared vault updated": [
-        "共享保险库已更新"
       ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "在邮件列表中显示发件人的头像，无头像则显示发件人名称首字母。"
@@ -12953,9 +12800,6 @@
       "Sign in only": [
         "仅用于登录"
       ],
-      "Sign in or create an account to continue.": [
-        "登录或创建账户以继续。"
-      ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "登录 ${ MAIL_APP_NAME } 以激活您的地址"
       ],
@@ -12967,9 +12811,6 @@
       ],
       "Signed up": [
         "已注册"
-      ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "作为 Proton 忠实用户，您拥有以下特权。"
       ],
       "Smart Routed through a different country.": [
         "通过其他国家/地区进行智能路由。"
@@ -13024,12 +12865,6 @@
       ],
       "Step ${ step }/${ totalSteps }": [
         "第 ${ step }/${ totalSteps } 步"
-      ],
-      "Step 1 of 2": [
-        "第 1 步（共 2 步）"
-      ],
-      "Step 2 of 2": [
-        "第 2 步（共 2 步）"
       ],
       "Storage allocated to other users in this organisation": [
         "此组织其他成员的存储空间分配量"
@@ -13547,9 +13382,6 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "由身份供应商生成的唯一 ID，通常采用 URL 的形式，其中包含身份供应商的名称（如 https://idp.example.com/XXXXX）。"
       ],
-      "Unknown event type": [
-        "未知事件类型"
-      ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "除非您手动登出账户或更改密码，账户将保持登录状态，直到 60 天无操作后自动登出。"
       ],
@@ -13673,21 +13505,6 @@
       "Using a different MDM? Any MDM that supports deploying a configuration profile will work. Refer to your MDM's documentation on how to upload and assign it to your device fleet.": [
         "使用其他 MDM？任何支持部署配置文件的 MDM 均可使用。请参阅您的 MDM 文档，了解如何上传并将其分配给您的设备集群。"
       ],
-      "Vault created": [
-        "保险库已创建"
-      ],
-      "Vault deleted": [
-        "保险库已被删除"
-      ],
-      "Vault either deleted or requires access permissions": [
-        "保险库已删除或需要访问权限"
-      ],
-      "Vault shared with email": [
-        "通过电子邮件共享保险库"
-      ],
-      "Vault updated": [
-        "保险库已更新"
-      ],
       "Verification code sent.": [
         "验证码已发送。"
       ],
@@ -13708,9 +13525,6 @@
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "通过应用程序根据时间生成的一次性验证码确认身份"
-      ],
-      "Verifying ${ PASS_APP_NAME } browser extension...": [
-        "正在验证 ${ PASS_APP_NAME } 浏览器扩展程序..."
       ],
       "Verifying your payment": [
         "确认支付"
@@ -13897,9 +13711,6 @@
       ],
       "When sign-in is restricted, only your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
         "当登录受限时，仅可使用您的用户名 ${ usernameElement } 登录。即使他人知晓，您的其他地址也无法关联到您的账户。"
-      ],
-      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
-        "当您取消当前的付费订阅时，套餐余额将以账户积分的形式返还给您，同时您将转为 ${ BRAND_NAME } ${ PLANS.FREE } 套餐。"
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "取消后，您的订阅将不会续订，但您仍可享受套餐优惠，直至订阅期结束。之后，您将降级到 ${ BRAND_NAME } 的免费套餐。"
@@ -14153,9 +13964,6 @@
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "您需要使用机构管理员提供给您的备份机构密码激活您的机构私钥。"
       ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "降级前需要停用或移除所有额外的 ${ MAIL_APP_NAME } 用户、地址和自有域名。"
-      ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "您的 PayPal 账户需要绑定信用卡或银行账户才能作为支付方式。"
       ],
@@ -14314,6 +14122,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "文件会加密保存"
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "您的免费试用已结束。立即订阅，以保持团队访问不中断并确保账户安全。"
       ],
       "Your free trial includes 1 dedicated server.": [
         "您的免费试用包含 1 台专属服务器"
@@ -15488,9 +15299,6 @@
       "Confirm second password": [
         "确认二级密码"
       ],
-      "Connect ${ item.Email }": [
-        "关联 ${ item.Email }"
-      ],
       "Contacts": [
         "通讯录"
       ],
@@ -15910,6 +15718,9 @@
       ],
       "Issuer ID": [
         "颁发者标号"
+      ],
+      "Item": [
+        "条目"
       ],
       "Keep emails in Sent/Drafts": [
         "将电子邮件保存在 发送/草稿 中"
@@ -16679,6 +16490,9 @@
       "Value": [
         "值"
       ],
+      "Vault": [
+        "保险库"
+      ],
       "Vault, item & secure link sharing": [
         "保险库、项目及安全链接共享"
       ],
@@ -17196,9 +17010,6 @@
       ],
       "use a data recovery method": [
         "使用数据恢复方法"
-      ],
-      "Vault": [
-        "保险库"
       ],
       "View guide": [
         "查看指南"
@@ -18169,9 +17980,6 @@
       ]
     },
     "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降级至 ${ downgradedPlanName }"
-      ],
       "Explore all ${ BRAND_NAME } plans": [
         "浏览所有 ${ BRAND_NAME } 账户等级"
       ],
@@ -20967,7 +20775,7 @@
       ]
     },
     "Payments.iDEAL": {
-      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
         "确认即表示您授权 ${ BRAND_NAME } 及我们的支付服务商 Stripe 通过 SEPA 直接借记从该银行账户收取您订阅的未来款项，并授权您的银行执行这些扣款。您的首笔付款现通过 ${ IDEAL_WERO_BRAND_NAME } 完成。您的套餐将自动续订，直至您取消；我们会在每次扣款前通知您。对于直接借记扣款，根据您与银行达成的协议条款，您可在扣款日起 8 周内向银行申请退款。此规定不适用于您当前正在进行的 ${ IDEAL_WERO_BRAND_NAME } 付款。"
       ]
     },
@@ -22164,6 +21972,14 @@
         "用户管理员"
       ]
     },
+    "Rollback state": {
+      "Undo finished": [
+        "撤销完成"
+      ],
+      "Undo in progress": [
+        "正在撤销"
+      ]
+    },
     "Safety review": {
       "Code sent to ${ boldValue }": [
         "验证码已发送到 ${ boldValue }"
@@ -23168,6 +22984,11 @@
       ],
       "Open in ${ appName } (Beta)": [
         "在 ${ appName } (Beta) 中打开"
+      ]
+    },
+    "Sign out": {
+      "Sign in to ${ providerName }": [
+        "登录 ${ providerName }"
       ]
     },
     "Signature verification error when joining calendar": {
@@ -24419,9 +24240,6 @@
       "Upgrade your plan to increase your storage.": [
         "升级账户即可进一步扩大存储空间。"
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "我们会将剩余时间的点数计入您的 ${ BRAND_NAME } 账户。"
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "您的 **${ currentPlanName }** 账户等级还有 **${ daysRemaining }** 天的有效期。"
       ],
@@ -25300,9 +25118,6 @@
       "You have successfully canceled your subscription.": [
         "您已成功取消订阅"
       ],
-      "You have successfully unsubscribed": [
-        "您已退订成功"
-      ],
       "You will receive your username via email within a minute if you entered a valid recovery email address.": [
         "若您的密保邮箱地址无误，您将在一分钟内收到有关您用户名的邮件。"
       ],
@@ -25649,8 +25464,8 @@
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
       ],
-      "${ PASS_APP_NAME } is missing permissions": [
-        "${ PASS_APP_NAME } 缺少权限"
+      "${ PASS_APP_NAME }: Welcome": [
+        "${ PASS_APP_NAME }：欢迎"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "${ PASS_SHORT_APP_NAME } 监测报告"
@@ -25747,6 +25562,12 @@
       ],
       "Activity monitor": [
         "活动监测"
+      ],
+      "Add ${ PASS_APP_NAME } to ${ browserName }": [
+        "将 ${ PASS_APP_NAME } 添加到 ${ browserName }"
+      ],
+      "Add ${ PASS_APP_NAME } to your browser": [
+        "将 ${ PASS_APP_NAME } 添加到您的浏览器"
       ],
       "Add ${ totalServerCount } server?": [
         "添加 ${ totalServerCount } 台服务器？"
@@ -26045,12 +25866,6 @@
       "Confirm": [
         "确认"
       ],
-      "Confirm downgrade": [
-        "确认降级"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "确定放弃 ${ BRAND_NAME } 特权"
-      ],
       "Confirm where to sign in": [
         "确认登录位置"
       ],
@@ -26072,8 +25887,8 @@
       "Connect to video conferencing": [
         "连接至视频会议"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "连接 ${ BRAND_NAME } 账户"
+      "Connect your ${ ACCOUNT_APP_NAME }": [
+        "关联您的 ${ ACCOUNT_APP_NAME }"
       ],
       "Connect your custom domain": [
         "连接您的自定义域名"
@@ -26365,9 +26180,6 @@
       ],
       "Downgrade account": [
         "降级账户"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "降级至 ${ downgradedPlanName }?"
       ],
       "Download ${ app }": [
         "下载 ${ app }"
@@ -26999,6 +26811,9 @@
       "Our fight against censorship in Russia": [
         "我们与俄罗斯的审查制度作斗争"
       ],
+      "Over 95% of users love our extension": [
+        "超过 95% 的用户喜爱我们的扩展"
+      ],
       "Password": [
         "密码"
       ],
@@ -27206,6 +27021,9 @@
       "SAML authentication": [
         "SAML 授权"
       ],
+      "Save time:": [
+        "保存时间："
+      ],
       "Schedule meetings in one click": [
         "一键安排会议"
       ],
@@ -27380,6 +27198,9 @@
       "Single sign-on (SSO)": [
         "单点登录 (SSO)"
       ],
+      "Skip for now": [
+        "暂时跳过"
+      ],
       "SMS verification": [
         "短信验证"
       ],
@@ -27425,11 +27246,20 @@
       "Status": [
         "状态"
       ],
+      "Stay connected:": [
+        "保持连接："
+      ],
+      "Stay safe:": [
+        "保持安全："
+      ],
       "Stay secure and connected anywhere": [
         "随时随地保持安全和连接"
       ],
       "Strengthen your security on all your devices with ${ passPlusPlanName }. ${ upgradeButton }": [
         "使用 ${ passPlusPlanName } 在所有设备上增强安全性。${ upgradeButton }"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "订阅 ${ planTitle }"
       ],
       "Subscription": [
         "订阅"
@@ -27535,6 +27365,9 @@
       ],
       "Unblocking internet access in Iran": [
         "在伊朗解除互联网访问限制"
+      ],
+      "Unlock the power of autofill with ${ PASS_APP_NAME } in your browser": [
+        "在浏览器中使用 ${ PASS_APP_NAME } 解锁自动填充的强大功能"
       ],
       "Unlock your data": [
         "解锁您的数据"
@@ -27670,9 +27503,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "欢迎使用 ${ BRAND_NAME } 商业版"
-      ],
-      "Welcome to your new password manager!": [
-        "欢迎来到您新的密码管理器！"
       ],
       "What are you migrating?": [
         "您需要迁移什么？"
@@ -29068,12 +28898,6 @@
       ],
       "By removing this phone number, you will no longer be able to recover your account.": [
         "移除此号码后，您将无法再找回您的账户。"
-      ],
-      "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
-        "登录失败！请打开 ${ PASS_APP_NAME } 浏览器扩展程序，并在其中登录。"
-      ],
-      "Could not sign up. Please open ${ PASS_APP_NAME } browser extension and sign up from there.": [
-        "注册失败！请打开 ${ PASS_APP_NAME } 浏览器扩展程序，并在其中完成注册。"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "取消导入后您将无法恢复当前进度，但已导入的内容 ${ BRAND_NAME } 会正常保存。确定要取消吗？"

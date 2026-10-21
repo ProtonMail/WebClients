@@ -333,9 +333,6 @@
       "Done": [
         "Gotovo"
       ],
-      "Downgrade": [
-        "Snizi status"
-      ],
       "Download": [
         "Preuzmi"
       ],
@@ -708,9 +705,6 @@
       "Remove access": [
         "Ukloni pristup"
       ],
-      "Remove bonuses": [
-        "Ukloni bonuse"
-      ],
       "Remove button": [
         "Gumb za uklanjanje"
       ],
@@ -917,6 +911,9 @@
       ],
       "Submit report": [
         "Prijavi problem"
+      ],
+      "Subscribe": [
+        "Pretplati se"
       ],
       "Subscribe now": [
         "Pretplatite se sada"
@@ -1261,11 +1258,6 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Premium upravitelj lozinkama"
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "Povrat novca do 30 dana"
       ]
     },
     "BF2024: Deal details": {
@@ -3794,14 +3786,6 @@
         "Promijeni pretplatu"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "Obiteljska grupa nije prepoznata. Pokušajte ponovno."
-      ],
-      "Organization not recognized. Try again.": [
-        "Organizacija nije prepoznata. Pokušajte ponovno."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } grupe"
@@ -3867,30 +3851,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Vaš korisnički račun koristi ${ usedSpace } pohrane, što prelazi ${ inviteSpace } koji vam je dodijeljen. Izbrišite neke podatke ili zatražite od administratora plana da poveća vašu pohranu."
-      ]
-    },
-    "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "Unesite naziv obiteljske grupe za potvrdu"
-      ],
-      "Enter organization name to confirm": [
-        "Unesi naziv organizacije za potvrdu"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Ovo će trajno izbrisati sve podkorisnike, korisničke račune i podatke povezane s Vašom organizacijom."
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Ovo će ukloniti sve ${ BRAND_NAME } premium značajke za svakog člana obitelji."
-      ]
-    },
-    "familyOffer_2023:Title": {
-      "Delete family group?": [
-        "Izbrisati obiteljsku grupu?"
-      ],
-      "Delete organization?": [
-        "Izbrisati organizaciju?"
       ]
     },
     "Feature": {
@@ -4581,17 +4541,6 @@
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Dobivate ${ referrerRewardAmount }** u kreditima za svakog prijatelja koji se pretplati."
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+ ${ bonusSpace } dodatnog prostora za pohranu"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } veza za ${ VPN_APP_NAME } (omogućuje Vam povezivanje više uređaja na VPN)",
-        "+${ organization.BonusVPN } veze za ${ VPN_APP_NAME } (omogućuje ti povezivanje više uređaja na VPN)",
-        "+${ organization.BonusVPN } veze za ${ VPN_APP_NAME } (omogućuju Vam povezivanje više uređaja na VPN)"
-      ],
-      "30-day money-back guarantee.": [
-        "Povrat novca do 30 dana."
-      ],
       "A number will be added to the filename": [
         "Broj će biti dodan nazivu datoteke"
       ],
@@ -4720,9 +4669,6 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Povećajte prepoznatljivost brenda svoje organizacije i stvorite dosljednije iskustvo na mreži za svoje korisnike."
-      ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Prelaskom na Free plan, trajno ćete izgubiti ove prednosti, čak i ako nadogradite plan opet u budućnosti."
       ],
       "Calendar side panel": [
         "Bočna ploča kalendara"
@@ -4861,9 +4807,6 @@
       ],
       "Downgrade": [
         "Snizi status"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Snižavanje statusa prekida sve veze s plaćenim ${ VPN_APP_NAME } poslužiteljima."
       ],
       "Download current logs": [
         "Učitaj trenutne zapisnike"
@@ -5008,15 +4951,6 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ako ne pronađete e-poštu u pristigloj pošti, provjerite svoju mapu neželjene pošte."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Ako nastavite s snižavanjem statusa, izgubit ćete pristup plaćenim ${ MAIL_APP_NAME } i ${ VPN_APP_NAME } značajkama."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Ako nastavite s snižavanjem statusa, izgubiti će te pristup plaćenim značajkama ${ MAIL_APP_NAME }-a, uključujući dodatni prostor za pohranu i filtre."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Ako nastavite sa snižavanjem statusa, izgubit ćete pristup plaćenim ${ VPN_APP_NAME } značajkama."
       ],
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
         "Ako se uklonite, izgubit ćete pristup „${ fileName }” i nećete ga moći ponovno otvoriti osim ako ga vlasnik ne podijeli s Vama."
@@ -5414,9 +5348,6 @@
       "Signature check will be ignored": [
         "Provjera potpisa bit će zanemarena"
       ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Budući da ste odani korisnik, na vašem su računu omogućene dodatne značajke."
-      ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Neke vlade blokiraju ili ograničavaju pristup određenim web stranicama. VPN pomaže zaobići cenzuru, čuvajući vašu aktivnost i identitet privatnima."
       ],
@@ -5703,6 +5634,9 @@
       "We'll email you once import is complete.": [
         "Poslat ćemo vam e-poštu čim uvoz završi."
       ],
+      "We'll get back to you shortly.": [
+        "Javit ćemo vam se uskoro."
+      ],
       "We'll notify you when the import is done.": [
         "Obavijestit ćemo vas kada uvoz bude dovršen."
       ],
@@ -5805,9 +5739,6 @@
       ],
       "You may be redirected to your bank’s website.": [
         "Možda ćete biti preusmjereni na web stranicu svoje banke."
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Morate onemogućiti ili ukloniti sve dodatne korisnike ${ MAIL_APP_NAME }-a, adrese i prilagođene domene prije nego što možete sniziti status."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Izgubit ćete pristup značajkama ${ planTitle } na ovaj datum."
@@ -6062,6 +5993,12 @@
       "Allow editors to change permissions and share": [
         "Dopusti urednicima promjenu dozvola i dijeljenje"
       ],
+      "Amount": [
+        "Iznos"
+      ],
+      "Amount due": [
+        "Dospjeli iznos"
+      ],
       "Anderson": [
         "Andrić"
       ],
@@ -6193,6 +6130,9 @@
       ],
       "Credits": [
         "Kredit"
+      ],
+      "Credits used": [
+        "Iskorišteni kredit"
       ],
       "Delete": [
         "Izbriši"
@@ -6443,6 +6383,9 @@
       "Please provide full details to help us take appropriate action": [
         "Navedite sve pojedinosti kako biste nam pomogli da poduzmemo odgovarajuće mjere"
       ],
+      "Please share any feedback to help us improve.": [
+        "Podijelite povratne informacije kako biste nam pomogli da se poboljšamo."
+      ],
       "Port": [
         "Priključak"
       ],
@@ -6583,6 +6526,9 @@
       ],
       "What happened?": [
         "Što se dogodilo?"
+      ],
+      "Why would you like to cancel?": [
+        "Zašto želite poništiti pretplatu?"
       ],
       "Your IP": [
         "Vaš IP"
@@ -7198,38 +7144,20 @@
         "Srednja brzina VPN-a"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Ukloni račun"
-      ],
-      "Downgrade account": [
-        "Smanji pretplatu računa"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Preuzmite ${ BRAND_NAME } besplatno"
-      ],
-      "Get ${ planName }": [
-        "Nabavite ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Zadrži ${ plan }"
-      ],
-      "Keep account": [
-        "Zadržite račun"
-      ],
-      "Switch plan": [
-        "Promijeni pretplatu"
-      ]
-    },
     "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Unazadi na ${ downgradedPlanName }"
-      ],
       "Plans starting from ${ priceDrivePlus }": [
         "Planovi već od ${ priceDrivePlus }"
       ],
       "Upgrade": [
         "Nadogradnja"
+      ]
+    },
+    "new_plans: action": {
+      "Get ${ BRAND_NAME } for free": [
+        "Preuzmite ${ BRAND_NAME } besplatno"
+      ],
+      "Get ${ planName }": [
+        "Nabavite ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -7778,18 +7706,6 @@
       "For next-level password management and identity protection.": [
         "Za napredno upravljanje lozinkama i zaštitu identiteta."
       ],
-      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
-        "Ako izbrišete svoj korisnički račun, izgubit ćete sve pogodnosti plana ${ visionary } i on neće biti dostupan ako kreirate novi korisnički račun."
-      ],
-      "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
-        "Ako unazadite svoj korisnički račun, izgubit ćete sve pogodnosti plana ${ visionary } i on neće biti dostupan ako se pokušate ponovno pretplatiti."
-      ],
-      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
-        "Ako se prebacite na drugi plan, gubite sve pogodnosti ${ visionary } plana i nećete se moći vratiti na ${ visionary }."
-      ],
-      "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
-        "Naš ${ visionary } plan više nije dostupan novim pretplatnicima jer je to poseban plan za izvorne korisnike ${ BRAND_NAME } s posebnim značajkama i pogodnostima."
-      ],
       "Pay once, secure your passwords and identity forever.": [
         "Platite jednom, zaštitite svoje lozinke i identitet zauvijek."
       ],
@@ -7819,12 +7735,6 @@
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
         "Neograničena privatnost i više pohrane za do 2 osobe."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
-        "Uživate u promotivnoj cijeni na Vašem trenutnom planu. Ako obrišete svoj račun, izgubit ćete svoju promotivnu cijenu i ona neće biti dostupna ako stvorite novi račun."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
-        "Uživate u promotivnoj cijeni na Vašoj trenutnoj pretplati. Ako smanjite svoju pretplatu, izgubit ćete svoju promotivnu cijenu i ona neće biti dostupna, ako se pokušate ponovo pretplatiti."
       ]
     },
     "new_plans: label": {
@@ -7844,20 +7754,11 @@
       ]
     },
     "new_plans: title": {
-      "Delete account?": [
-        "Izbriši račun?"
-      ],
-      "Downgrade account?": [
-        "Smanjiti pretplatu računa?"
-      ],
       "Review subscription": [
         "Pregledaj pretplatu"
       ],
       "Review subscription and pay": [
         "Pregledaj pretplatu i plati"
-      ],
-      "Switch plans?": [
-        "Promijeniti pretplatu?"
       ]
     },
     "new_plans: tooltip": {
@@ -8976,6 +8877,9 @@
       "Please describe the problem and include any error messages": [
         "Molimo opišite problem i pridružite sve poruke o pogreškama"
       ],
+      "Please select the main reason": [
+        "Odaberite glavni razlog"
+      ],
       "Postal code": [
         "Poštanski broj"
       ],
@@ -9775,9 +9679,6 @@
       "upgrade for more storage": [
         "nadogradite za više pohrane"
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Dodat ćemo kredite za preostalo vrijeme na vaš ${ BRAND_NAME } korisnički račun."
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "Preostao Vam je još **${ daysRemaining }** dan u okviru pretplate **${ currentPlanName }**.",
         "Preostala su Vam još **${ daysRemaining }** dana u okviru pretplate **${ currentPlanName }**.",
@@ -10282,6 +10183,9 @@
       "Invitation rejected": [
         "Pozivnica je odbijena"
       ],
+      "Invoice paid": [
+        "Plaćen račun"
+      ],
       "Payment method added": [
         "Način plaćanja dodan"
       ],
@@ -10311,9 +10215,6 @@
       ],
       "You have successfully canceled your subscription.": [
         "Uspješno ste poništili pretplatu."
-      ],
-      "You have successfully unsubscribed": [
-        "Uspješno ste poništili pretplatu"
       ]
     },
     "Suffix": {
@@ -10577,12 +10478,6 @@
       "Computers": [
         "Računala"
       ],
-      "Confirm downgrade": [
-        "Potvrdi snižavanje statusa"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Potvrdi gubitak ${ BRAND_NAME } bonusa"
-      ],
       "Connect apps and devices": [
         "Poveži apl. i uređaje"
       ],
@@ -10597,6 +10492,9 @@
       ],
       "Contact group": [
         "Grupa kontakta"
+      ],
+      "Contact us": [
+        "Kontaktirajte nas"
       ],
       "Contacts": [
         "Kontakti"
@@ -10726,9 +10624,6 @@
       ],
       "Downgrade account": [
         "Smanjite pretplatu računa"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "Unazaditi na ${ downgradedPlanName }?"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Učitaj ${ DRIVE_APP_NAME } apl."
@@ -10969,6 +10864,9 @@
       "Out of storage space": [
         "Ponestalo je prostora za pohranu"
       ],
+      "Pay invoice": [
+        "Plati račun"
+      ],
       "Payment failed": [
         "Neuspješno plaćanje"
       ],
@@ -11037,6 +10935,9 @@
       ],
       "Request new code": [
         "Zatraži novi kôd"
+      ],
+      "Request sent": [
+        "Zahtjev poslan"
       ],
       "Reverse charge not supported": [
         "Prijenos porezne obveze nije podržan"
@@ -11539,6 +11440,20 @@
       ],
       "Replay video": [
         "Ponovi videozapis"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Pronašao/la sam drugu uslugu koja mi se više sviđa"
+      ],
+      "It’s missing a key feature": [
+        "Nedostaje ključna značajka"
+      ],
+      "It’s too expensive": [
+        "Preskupo je"
+      ],
+      "Other": [
+        "Ostalo"
       ]
     },
     "VPN Plan Feature": {

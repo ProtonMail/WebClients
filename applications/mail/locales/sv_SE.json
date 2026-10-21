@@ -471,9 +471,6 @@
       "Done": [
         "Klar"
       ],
-      "Downgrade": [
-        "Nedgradera"
-      ],
       "Download": [
         "Ladda ner"
       ],
@@ -1177,9 +1174,6 @@
       "Remove ${ attachmentName }": [
         "Ta bort ${ attachmentName }"
       ],
-      "Remove bonuses": [
-        "Ta bort bonusar"
-      ],
       "Remove button": [
         "Ta bort knapp"
       ],
@@ -1507,6 +1501,9 @@
       "Submit": [
         "Skicka"
       ],
+      "Subscribe": [
+        "Prenumerera"
+      ],
       "Subscribe now": [
         "Prenumerera nu"
       ],
@@ -1562,8 +1559,7 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
+        "Lita på nyckel"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -2089,11 +2085,6 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Premium lösenordshanterare"
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "30-dagars pengarna tillbaka-garanti"
       ]
     },
     "BF2024: Deal details": {
@@ -5892,14 +5883,6 @@
         "Byt paket"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "Familjegrupp känns inte igen. Försök igen."
-      ],
-      "Organization not recognized. Try again.": [
-        "Organisation känns inte igen. Försök igen."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-grupper"
@@ -5969,22 +5952,6 @@
         "Ditt konto använder ${ usedSpace } lagringsutrymme, vilket överstiger ${ inviteSpace } du tilldelades. Ta bort lite data eller be administratören för paketet att öka ditt lagringsutrymme."
       ]
     },
-    "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "Ange familjegruppens namn för att bekräfta"
-      ],
-      "Enter organization name to confirm": [
-        "Ange organisationsnamn för att bekräfta"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Detta kommer permanent ta bort alla underanvändare, konton och data som är associerade med din organisation."
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Detta kommer ta bort alla ${ BRAND_NAME } premiumfunktioner för varje familjemedlem."
-      ]
-    },
     "familyOffer_2023:Onboarding Proton": {
       "Configure your family account and invite users": [
         "Konfigurera ditt familjekonto och bjud in användare"
@@ -5997,14 +5964,6 @@
       ],
       "Set up your family account": [
         "Ställ in ditt familjekonto"
-      ]
-    },
-    "familyOffer_2023:Title": {
-      "Delete family group?": [
-        "Ta bort familjegrupp?"
-      ],
-      "Delete organization?": [
-        "Ta bort organisation?"
       ]
     },
     "Feature": {
@@ -7209,21 +7168,11 @@
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Du får ${ referrerRewardAmount }** i krediter för varje vän som prenumererar."
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } bonuslagring"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } anslutning för ${ VPN_APP_NAME } (låter dig ansluta fler enheter till VPN)",
-        "+${ organization.BonusVPN } anslutningar för ${ VPN_APP_NAME } (låter dig ansluta fler enheter till VPN)"
-      ],
       "1 device per user": [
         "1 enhet per användare"
       ],
       "1 vault per user": [
         "1 valv per användare"
-      ],
-      "30-day money-back guarantee.": [
-        "30 dagars pengarna-tillbaka-garanti."
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Ett telefonnummer kan endast användas för att verifiera ett ${ BRAND_NAME }-konto"
@@ -7477,9 +7426,6 @@
       "Bulk delete": [
         "Massborttagning"
       ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Genom att nedgradera till ett gratiskonto kommer du permanent att förlora dessa fördelar, även om du uppgraderar igen i framtiden."
-      ],
       "Calendar side panel": [
         "Kalenderns sidopanel"
       ],
@@ -7701,9 +7647,6 @@
       ],
       "Downgrade": [
         "Nedgradera"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Nedgradering kommer att avsluta alla anslutningar till betalda ${ VPN_APP_NAME }-servrar."
       ],
       "Download application logs for troubleshooting": [
         "Ladda ner applikationsloggar för felsökning"
@@ -8005,15 +7948,6 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Om du inte hittar e-postmeddelandet i din inkorg, kontrollera din skräppostmapp."
       ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Om du fortsätter med nedgraderingen förlorar du åtkomst till betalfunktioner för ${ MAIL_APP_NAME } och ${ VPN_APP_NAME }."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Om du fortsätter med nedgraderingen förlorar du åtkomst till betalfunktioner i ${ MAIL_APP_NAME }, inklusive ytterligare lagring och filter."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Om du fortsätter med nedgraderingen förlorar du åtkomst till betalda funktioner i ${ VPN_APP_NAME }."
-      ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "Om ditt alias säljs, läcker eller missbrukas är det bara att inaktivera det för att sluta ta emot skräppost."
       ],
@@ -8076,7 +8010,8 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild"
+        "Infoga bild",
+        "Infoga bilder"
       ],
       "Insert link": [
         "Infoga länk"
@@ -8831,9 +8766,6 @@
       "Show original message": [
         "Visa originalmeddelande"
       ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Eftersom du är en lojal användare har ditt konto ytterligare funktioner aktiverade."
-      ],
       "Snooze emails": [
         "Snooza e-post"
       ],
@@ -9411,6 +9343,9 @@
       "We'll email you once import is complete.": [
         "Vi skickar e-post till dig när importen är klar."
       ],
+      "We'll get back to you shortly.": [
+        "Vi återkommer snart till dig."
+      ],
       "We'll notify you when the import is done.": [
         "Vi aviserar dig när importen är klar."
       ],
@@ -9595,9 +9530,6 @@
       ],
       "You may be redirected to your bank’s website.": [
         "Du kan bli omdirigerad till webbplatsen för din bank."
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Du måste inaktivera eller ta bort eventuella ytterligare ${ MAIL_APP_NAME }-användare, adresser och anpassade domäner innan du kan nedgradera."
       ],
       "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
         "Du valde **${ checked } konversation** i din kategori ${ categoryLabel }",
@@ -10160,6 +10092,12 @@
       "Always move sender's emails": [
         "Flytta alltid avsändarens e-post"
       ],
+      "Amount": [
+        "Belopp"
+      ],
+      "Amount due": [
+        "Att betala"
+      ],
       "AND": [
         "OCH"
       ],
@@ -10345,6 +10283,9 @@
       ],
       "Credits": [
         "Krediter"
+      ],
+      "Credits used": [
+        "Krediter använda"
       ],
       "Current context": [
         "Nuvarande kontext"
@@ -10787,6 +10728,9 @@
       "Phone number": [
         "Telefonnummer"
       ],
+      "Please share any feedback to help us improve.": [
+        "Dela gärna feedback för att hjälpa oss att förbättra."
+      ],
       "Port": [
         "Port"
       ],
@@ -11048,6 +10992,9 @@
       "What happened?": [
         "Vad hände?"
       ],
+      "Why would you like to cancel?": [
+        "Vad vill du avbryta?"
+      ],
       "With attachment": [
         "Med bilaga"
       ],
@@ -11226,6 +11173,9 @@
       ],
       "Create a new calendar to manage your invitations": [
         "Skapa en ny kalender för att hantera dina inbjudningar"
+      ],
+      "Customer Support": [
+        "Kundtjänst"
       ],
       "Deleted": [
         "Borttagen"
@@ -11890,35 +11840,17 @@
         "Medelhög VPN-hastighet"
       ]
     },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "Skaffa ${ planTitle }"
+      ]
+    },
     "new_plans: action": {
-      "Delete account": [
-        "Ta bort konto"
-      ],
-      "Downgrade account": [
-        "Nedgradera konto"
-      ],
       "Get ${ BRAND_NAME } for free": [
         "Skaffa ${ BRAND_NAME } gratis"
       ],
       "Get ${ planName }": [
         "Skaffa ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Behåll ${ plan }"
-      ],
-      "Keep account": [
-        "Behåll konto"
-      ],
-      "Switch plan": [
-        "Byt paket"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradera till ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Skaffa ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -12455,18 +12387,6 @@
       "For next-level password management and identity protection.": [
         "För nästa nivå av lösenordshantering och identitetsskydd."
       ],
-      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
-        "Om du tar bort ditt konto förlorar du alla ${ visionary }-paketets förmåner och det blir inte tillgängligt om du skapar ett nytt konto."
-      ],
-      "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
-        "Om du nedgraderar ditt konto förlorar du alla ${ visionary }-paketets förmåner och det kommer inte vara tillgängligt om du försöker prenumerera igen."
-      ],
-      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
-        "Om du byter till ett annat paket förlorar du alla ${ visionary }-paketets förmåner och kommer inte att kunna byta tillbaka till ${ visionary }."
-      ],
-      "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
-        "Vårt ${ visionary }-paket är inte längre tillgänglig för nya prenumeranter eftersom det är ett specialpaket för ursprungliga ${ BRAND_NAME }-användare med specialfunktioner och fördelar."
-      ],
       "Pay once, secure your passwords and identity forever.": [
         "Betala en gång, säkra dina lösenord och din identitet för alltid."
       ],
@@ -12496,12 +12416,6 @@
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
         "Obegränsad integritet och mer lagringsutrymme för upp till 2 personer."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
-        "Du har ett kampanjpris på ditt nuvarande paket. Om du tar bort ditt konto kommer du förlora ditt kampanjpris och det blir inte tillgängligt om du skapar ett nytt konto."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
-        "Du har ett kampanjpris på ditt nuvarande paket. Om du nedgraderar ditt konto kommer du förlora ditt kampanjpris och det blir inte tillgängligt om du försöker prenumerera igen."
       ]
     },
     "new_plans: label": {
@@ -12521,20 +12435,11 @@
       ]
     },
     "new_plans: title": {
-      "Delete account?": [
-        "Ta bort konto?"
-      ],
-      "Downgrade account?": [
-        "Nedgradera konto?"
-      ],
       "Review subscription": [
         "Granska prenumeration"
       ],
       "Review subscription and pay": [
         "Granska prenumeration och betala"
-      ],
-      "Switch plans?": [
-        "Byt paket?"
       ]
     },
     "new_plans: tooltip": {
@@ -13912,6 +13817,9 @@
       "Please insert link first": [
         "Infoga länk först"
       ],
+      "Please select the main reason": [
+        "Välj huvudorsaken"
+      ],
       "Please share what you expected": [
         "Dela vad du förväntade dig"
       ],
@@ -15090,9 +14998,6 @@
       "upgrade for more storage": [
         "uppgradera för mer lagringsutrymme"
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Vi lägger till krediterna för den återstående tiden till ditt ${ BRAND_NAME }-konto."
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "Du har fortfarande **${ daysRemaining }** dag kvar på ditt **${ currentPlanName }**-paket.",
         "Du har fortfarande **${ daysRemaining }** dagar kvar på ditt **${ currentPlanName }**-paket."
@@ -15722,6 +15627,9 @@
       "Invitation rejected": [
         "Inbjudan avvisad"
       ],
+      "Invoice paid": [
+        "Faktura betald"
+      ],
       "Keyboard shortcuts preferences updated": [
         "Inställningar för tangentbordsgenvägar uppdaterade"
       ],
@@ -15846,9 +15754,6 @@
       ],
       "You have successfully canceled your subscription.": [
         "Du har avbrutit din prenumeration."
-      ],
-      "You have successfully unsubscribed": [
-        "Du har avslutat din prenumeration"
       ]
     },
     "Success notification": {
@@ -16240,12 +16145,6 @@
       "Configure migration": [
         "Konfigurera migrering"
       ],
-      "Confirm downgrade": [
-        "Bekräfta nedgradering"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Bekräfta förlust av ${ BRAND_NAME }-bonusar"
-      ],
       "Confirm recipient address?": [
         "Bekräfta mottagarens adress?"
       ],
@@ -16266,6 +16165,9 @@
       ],
       "Contact group": [
         "Kontaktgrupp"
+      ],
+      "Contact us": [
+        "Kontakta oss"
       ],
       "Contacts": [
         "Kontakter"
@@ -16391,9 +16293,6 @@
       ],
       "Downgrade account": [
         "Nedgradera konto"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "Nedgradera till ${ downgradedPlanName }?"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Ladda ner ${ DRIVE_APP_NAME } appar"
@@ -16787,6 +16686,9 @@
       "Other names": [
         "Andra namn"
       ],
+      "Pay invoice": [
+        "Betala faktura"
+      ],
       "Payment failed": [
         "Betalning misslyckades"
       ],
@@ -16870,6 +16772,9 @@
       ],
       "Request new code": [
         "Begär ny kod"
+      ],
+      "Request sent": [
+        "Begäran skickad"
       ],
       "Reverse charge not supported": [
         "Omvänd skattskyldighet stöds inte"
@@ -17397,6 +17302,20 @@
       ],
       "Replay video": [
         "Spela video igen"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Jag hittade en annan tjänst som jag gillar bättre"
+      ],
+      "It’s missing a key feature": [
+        "Det saknar en nyckelfunktion"
+      ],
+      "It’s too expensive": [
+        "Det är för dyrt"
+      ],
+      "Other": [
+        "Annat"
       ]
     },
     "VPN Plan Feature": {

@@ -468,9 +468,6 @@
       "Done": [
         "Klaar"
       ],
-      "Downgrade": [
-        "Downgraden"
-      ],
       "Download": [
         "Downloaden"
       ],
@@ -1168,9 +1165,6 @@
       "Remove ${ attachmentName }": [
         "Verwijder ${ attachmentName }"
       ],
-      "Remove bonuses": [
-        "Verwijder bonussen"
-      ],
       "Remove button": [
         "Knop verwijderen"
       ],
@@ -1495,6 +1489,9 @@
       "Submit": [
         "Versturen"
       ],
+      "Subscribe": [
+        "Abonneren"
+      ],
       "Subscribe now": [
         "Abonneer nu"
       ],
@@ -1547,8 +1544,7 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Sleutel vertrouwen",
-        "Sleutels vertrouwen"
+        "Vertrouwde sleutel"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -2080,8 +2076,8 @@
       ]
     },
     "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "30 dagen geld-terug-garantie"
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30 dagen geld-terug-garantie: annuleer binnen 30 dagen na uw aankoop en neem contact op met onze ${ customerSupportLink } om uw geld terug te krijgen."
       ]
     },
     "BF2024: Deal details": {
@@ -5851,14 +5847,6 @@
         "Van abonnement wisselen"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "Gezinsgroep niet herkend. Probeer het opnieuw."
-      ],
-      "Organization not recognized. Try again.": [
-        "Organisatie niet herkend. Probeer het opnieuw."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-groepen"
@@ -5928,22 +5916,6 @@
         "Uw account gebruikt ${ usedSpace } aan opslagruimte. Dat is meer dan de ${ inviteSpace } die aan u is toegewezen. Verwijder gegevens of vraag de abonnementsbeheerder uw opslagruimte uit te breiden."
       ]
     },
-    "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "Voer de groepsnaam van het gezin in om te bevestigen"
-      ],
-      "Enter organization name to confirm": [
-        "Voer de organisatienaam in om te bevestigen"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Hiermee worden alle subgebruikers, accounts en gegevens die zijn gekoppeld aan uw organisatie, verwijderd."
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Hiermee worden alle premium functies van ${ BRAND_NAME } verwijderd voor elk gezinslid."
-      ]
-    },
     "familyOffer_2023:Onboarding Proton": {
       "Configure your family account and invite users": [
         "Configureer uw gezinsaccount en nodig gebruikers uit"
@@ -5956,14 +5928,6 @@
       ],
       "Set up your family account": [
         "Stel uw familieaccount in"
-      ]
-    },
-    "familyOffer_2023:Title": {
-      "Delete family group?": [
-        "Gezinsgroep verwijderen?"
-      ],
-      "Delete organization?": [
-        "Organisatie verwijderen?"
       ]
     },
     "Feature": {
@@ -7165,15 +7129,8 @@
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**U krijgt ${ referrerRewardAmount }** aan credits voor elke vriend die zich abonneert."
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } bonus opslag"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } verbinding voor ${ VPN_APP_NAME } (stelt u in staat meer apparaten aan VPN te verbinden)",
-        "+${ organization.BonusVPN } verbindingen voor ${ VPN_APP_NAME } (stelt u in staat meer apparaten aan VPN te verbinden)"
-      ],
-      "30-day money-back guarantee.": [
-        "30-dagen geld terug garantie."
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30 dagen geld-terug-garantie: annuleer binnen 30 dagen na uw aankoop en neem contact op met onze ${ customerSupportLink } om uw geld terug te krijgen."
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Een telefoonnummer kan gebruikt worden ter verificatie van één ${ BRAND_NAME } account"
@@ -7424,9 +7381,6 @@
       "Bulk delete": [
         "Verwijderen in bulk"
       ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Door het downgraden naar een gratis abonnement verliest u deze voordelen, zelfs als u in de toekomst opnieuw upgrade."
-      ],
       "Calendar side panel": [
         "Agenda zijpaneel"
       ],
@@ -7642,9 +7596,6 @@
       ],
       "Downgrade": [
         "Downgraden"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Downgraden zal alle verbindingen naar betaalde ${ VPN_APP_NAME }-servers beëindigen."
       ],
       "Download application logs for troubleshooting": [
         "Applicatie logboeken downloaden voor probleemoplossing"
@@ -7937,15 +7888,6 @@
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "Als u de toegang tot uw authenticator-app bent kwijtgeraakt, kunt u 1 van de 16 back-upherstelcodes gebruiken die u krijgt bij het instellen van tweefactorauthenticatie. ${ learnMoreLink }"
       ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Als u doorgaat met de downgrade, verliest u toegang tot betaalde functies van ${ MAIL_APP_NAME } en ${ VPN_APP_NAME }."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Als u doorgaat met de downgrade, verliest u de toegang tot betaalde functies van ${ MAIL_APP_NAME }, waaronder extra opslag en filters."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Als u doorgaat met de downgrade, verliest u toegang tot betaalde functies van ${ VPN_APP_NAME }."
-      ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "Als uw alias wordt verkocht, gelekt of misbruikt, stop de ontvangst van spam door eenvoudigweg de alias te deactiveren."
       ],
@@ -8008,7 +7950,8 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding invoegen"
+        "Afbeelding toevoegen",
+        "Afbeeldingen toevoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -8709,9 +8652,6 @@
       "Show original message": [
         "Toon origineel bericht"
       ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
-      ],
       "Snooze emails": [
         "E-mails snoozen"
       ],
@@ -9136,6 +9076,9 @@
       "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
         "Kan geen toegang krijgen tot opslagmogelijkheden in deze browser, we hebben deze toegang nodig om het zoeken naar berichteninhoud te activeren."
       ],
+      "UnionPay logo": [
+        "Union Pay-logo"
+      ],
       "Unlock message": [
         "Bericht ontgrendelen"
       ],
@@ -9297,6 +9240,9 @@
       ],
       "We'll email you once import is complete.": [
         "We sturen u een e-mail zodra de import voltooid is."
+      ],
+      "We'll get back to you shortly.": [
+        "We nemen zo snel mogelijk contact met u op."
       ],
       "We'll notify you when the import is done.": [
         "We laten het u weten als de import klaar is."
@@ -9482,9 +9428,6 @@
       ],
       "You may be redirected to your bank’s website.": [
         "U wordt mogelijk doorverwezen naar de website van uw bank."
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "U moet alle extra ${ MAIL_APP_NAME }-gebruikers, adressen en aangepaste domeinen uitschakelen of verwijderen voordat u kunt downgraden."
       ],
       "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
         "U selecteerde **${ checked } gesprek** in uw ${ categoryLabel } categorie",
@@ -10041,6 +9984,12 @@
       "Always move sender's emails": [
         "Verplaats altijd mails van afzenders"
       ],
+      "Amount": [
+        "Bedrag"
+      ],
+      "Amount due": [
+        "Verschuldigd bedrag"
+      ],
       "AND": [
         "EN"
       ],
@@ -10226,6 +10175,9 @@
       ],
       "Credits": [
         "Tegoed"
+      ],
+      "Credits used": [
+        "Verbruikt tegoed"
       ],
       "Current context": [
         "Huidige context"
@@ -10659,6 +10611,9 @@
       "Phone number": [
         "Telefoonnummer"
       ],
+      "Please share any feedback to help us improve.": [
+        "Deel uw feedback en help ons te verbeteren."
+      ],
       "Port": [
         "Poort"
       ],
@@ -10923,6 +10878,9 @@
       "What happened?": [
         "Wat is er gebeurd?"
       ],
+      "Why would you like to cancel?": [
+        "Waarom wil u annuleren?"
+      ],
       "With attachment": [
         "Met bijlage"
       ],
@@ -11098,6 +11056,9 @@
       ],
       "Create a new calendar to manage your invitations": [
         "Maak een nieuwe kalender om uw uitnodigingen te beheren"
+      ],
+      "Customer Support": [
+        "Klantendienst"
       ],
       "Deleted": [
         "Verwijderd"
@@ -11762,35 +11723,17 @@
         "Gemiddelde VPN-snelheid"
       ]
     },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "Neem ${ planTitle }"
+      ]
+    },
     "new_plans: action": {
-      "Delete account": [
-        "Account verwijderen"
-      ],
-      "Downgrade account": [
-        "Account downgraden"
-      ],
       "Get ${ BRAND_NAME } for free": [
         "Gebruik ${ BRAND_NAME } gratis"
       ],
       "Get ${ planName }": [
         "Kies ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "${ plan } behouden"
-      ],
-      "Keep account": [
-        "Account behouden"
-      ],
-      "Switch plan": [
-        "Van abonnement wisselen"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade naar ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "Neem ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -12324,18 +12267,6 @@
       "For next-level password management and identity protection.": [
         "Voor wachtwoordbeheer en identiteitsbescherming op een hoger niveau."
       ],
-      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
-        "Als u uw account verwijdert, raakt u alle voordelen van uw ${ visionary }-abonnement kwijt en kunt u niet meer voor dit abonnement kiezen als u een nieuwe account maakt."
-      ],
-      "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
-        "Als u uw account downgradet, raakt u alle voordelen van uw ${ visionary }-abonnement kwijt en kunt u niet meer voor dit abonnement kiezen."
-      ],
-      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
-        "Als u overstapt op een ander abonnement, raakt u alle voordelen van het ${ visionary }-abonnement kwijt en kunt u niet meer terug naar ${ visionary }."
-      ],
-      "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
-        "Ons ${ visionary }-abonnement is niet meer beschikbaar voor nieuwe gebruikers; dit is een speciaal abonnement voor originele ${ BRAND_NAME }-gebruikers met speciale functies en voordelen."
-      ],
       "Pay once, secure your passwords and identity forever.": [
         "Eenmaal betalen, beveilig uw wachtwoorden en identiteit voor altijd."
       ],
@@ -12365,12 +12296,6 @@
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
         "Onbeperkte privacy en meer opslagruimte voor maximaal 2 personen."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
-        "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account verwijdert, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuwe account maakt."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
-        "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
       ]
     },
     "new_plans: label": {
@@ -12390,20 +12315,11 @@
       ]
     },
     "new_plans: title": {
-      "Delete account?": [
-        "Account verwijderen?"
-      ],
-      "Downgrade account?": [
-        "Account downgraden?"
-      ],
       "Review subscription": [
         "Abonnement controleren"
       ],
       "Review subscription and pay": [
         "Abonnement controleren en betalen"
-      ],
-      "Switch plans?": [
-        "Van abonnement wisselen?"
       ]
     },
     "new_plans: tooltip": {
@@ -13537,8 +13453,8 @@
       ]
     },
     "Payments.iDEAL": {
-      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
-        "Door te bevestigen geeft u toestemming aan ${ BRAND_NAME } en Stripe, onze betalingsdienstaanbieder, onze betalingsdienstaanbieder, om toekomstige betalingen voor uw abonnement van deze bankrekening te innen via SEPA Direct Debit, en uw bank om deze betalingen af ​​te schrijven. Uw eerste betaling wordt nu uitgevoerd door ${ IDEAL_WERO_BRAND_NAME }. Uw abonnement wordt automatisch verlengd, totdat u opzegt; wij zullen u vóór elke ophaling op de hoogte stellen. Bij automatische incasso kunt u binnen 8 weken na de incassodatum een ​​teruggave aanvragen bij uw bank, conform de voorwaarden die u met uw bank heeft afgesproken. Dit is niet van toepassing op de betaling van ${ IDEAL_WERO_BRAND_NAME } die u nu doet."
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Door te bevestigen geeft u ${ BRAND_NAME } en Stripe, onze betalingsdienstaanbieder, toestemming om toekomstige betalingen voor uw abonnement van deze bankrekening te innen via SEPA automatische incasso, en uw bank om deze betalingen af ​​te schrijven. Uw eerste betaling wordt nu uitgevoerd door ${ IDEAL_WERO_BRAND_NAME }. Uw abonnement wordt automatisch verlengd, totdat u opzegt; wij zullen u vóór elke ophaling op de hoogte stellen. Bij automatische incasso kunt u binnen 8 weken na de incassodatum een ​​teruggave aanvragen bij uw bank, conform de voorwaarden die u met uw bank heeft afgesproken. Dit is niet van toepassing op de betaling van ${ IDEAL_WERO_BRAND_NAME } die u nu doet."
       ]
     },
     "Payments.info": {
@@ -13762,6 +13678,9 @@
       ],
       "Please insert link first": [
         "Voeg eerst de koppeling in"
+      ],
+      "Please select the main reason": [
+        "Selecteer de hoofdreden"
       ],
       "Please share what you expected": [
         "Deel wat uw verwachting was"
@@ -14938,9 +14857,6 @@
       "upgrade for more storage": [
         "upgrade voor meer opslag"
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "We zullen de credits voor de resterende tijd toevoegen aan uw ${ BRAND_NAME }-account."
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "U heeft nog **${ daysRemaining }** dag over van uw **${ currentPlanName }** abonnement.",
         "U heeft nog **${ daysRemaining }** dagen over van uw **${ currentPlanName }** abonnement."
@@ -15570,6 +15486,9 @@
       "Invitation rejected": [
         "Uitnodiging afgewezen"
       ],
+      "Invoice paid": [
+        "Factuur betaald"
+      ],
       "Keyboard shortcuts preferences updated": [
         "Sneltoetsvoorkeuren bijgewerkt"
       ],
@@ -15694,9 +15613,6 @@
       ],
       "You have successfully canceled your subscription.": [
         "U heeft uw abonnement succesvol geannuleerd."
-      ],
-      "You have successfully unsubscribed": [
-        "U bent succesvol afgemeld"
       ]
     },
     "Success notification": {
@@ -16085,12 +16001,6 @@
       "Configure migration": [
         "Migratie configureren"
       ],
-      "Confirm downgrade": [
-        "Downgrade bevestigen"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Bevestig verlies van ${ BRAND_NAME }-bonussen"
-      ],
       "Confirm recipient address?": [
         "Adres van ontvanger bevestigen?"
       ],
@@ -16111,6 +16021,9 @@
       ],
       "Contact group": [
         "Contactgroep"
+      ],
+      "Contact us": [
+        "Contacteer ons"
       ],
       "Contacts": [
         "Contacten"
@@ -16236,9 +16149,6 @@
       ],
       "Downgrade account": [
         "Account downgraden"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "Downgrade naar ${ downgradedPlanName }?"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Download ${ DRIVE_APP_NAME } apps"
@@ -16632,6 +16542,9 @@
       "Other names": [
         "Andere namen"
       ],
+      "Pay invoice": [
+        "Factuur betalen"
+      ],
       "Payment failed": [
         "Betaling mislukt"
       ],
@@ -16715,6 +16628,9 @@
       ],
       "Request new code": [
         "Nieuwe code aanvragen"
+      ],
+      "Request sent": [
+        "Verzoek verzonden"
       ],
       "Reverse charge not supported": [
         "Omgekeerde btw niet ondersteund"
@@ -17248,6 +17164,20 @@
       ],
       "Replay video": [
         "Video opnieuw afspelen"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Ik heb een andere service gevonden die mijn voorkeur heeft"
+      ],
+      "It’s missing a key feature": [
+        "Er ontbreekt een sleutel kenmerk"
+      ],
+      "It’s too expensive": [
+        "Het is te duur"
+      ],
+      "Other": [
+        "Overige"
       ]
     },
     "VPN Plan Feature": {

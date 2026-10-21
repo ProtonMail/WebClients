@@ -105,9 +105,6 @@
       "Desktop and mobile apps": [
         "Праграмы для камп'ютараў і мабільных прылад"
       ],
-      "Downgrade plan": [
-        "Панізіць тарыфны план"
-      ],
       "Downgrade to Free": [
         "Панізіць да Free"
       ],
@@ -661,9 +658,6 @@
       "Done": [
         "Гатова"
       ],
-      "Downgrade": [
-        "Панізіць"
-      ],
       "Download": [
         "Спампаваць"
       ],
@@ -1140,9 +1134,6 @@
       ],
       "Remove all other devices": [
         "Выдаліць усе іншыя прылады"
-      ],
-      "Remove bonuses": [
-        "Выдаліць бонусы"
       ],
       "Remove button": [
         "Выдаліць кнопку"
@@ -1762,6 +1753,9 @@
       "Domains": [
         "Дамены"
       ],
+      "Managed Service Provider": [
+        "Пастаўшчык кіраваных паслуг"
+      ],
       "Servers": [
         "Серверы"
       ],
@@ -2107,11 +2101,6 @@
         "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры ${ discountPercentage } на тарыфны план ${ plan.Title } пры падпісцы на ${ cycle } месяцы.",
         "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры ${ discountPercentage } на тарыфны план ${ plan.Title } пры падпісцы на ${ cycle } месяцаў.",
         "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры ${ discountPercentage } на тарыфны план ${ plan.Title } пры падпісцы на ${ cycle } месяцаў."
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "Гарантыя вяртання грашовых сродкаў на працягу 30 дзён"
       ]
     },
     "bf2023: Title": {
@@ -4601,6 +4590,9 @@
       "Add 1 more": [
         "Дадаць яшчэ 1"
       ],
+      "Add contact": [
+        "Дадаць кантакт"
+      ],
       "Add emergency contact": [
         "Дадаць экстранны кантакт"
       ],
@@ -6107,14 +6099,6 @@
         "Паглядзець запрашэнне"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "Сямейная група не распазнана. Паўтарыце спробу."
-      ],
-      "Organization not recognized. Try again.": [
-        "Арганізацыя не распазнана. Паўтарыце спробу."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "Групы ${ BRAND_NAME }"
@@ -6272,22 +6256,8 @@
       ]
     },
     "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "Увядзіце назву сямейнай групы для пацвярджэння"
-      ],
-      "Enter organization name to confirm": [
-        "Увядзіце назву арганізацыі для пацвярджэння"
-      ],
       "Family name": [
         "Назва сям'і"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Гэта незваротна выдаліць усіх падпарадкаваных карыстальнікаў, уліковыя запісы, а таксама даныя, якія звязаны з вашай арганізацыяй."
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Гэта выдаліць усе прэміяльныя функцыі ${ BRAND_NAME } для кожнага ўдзельніка сямейнай групы."
       ]
     },
     "familyOffer_2023:Settings section title": {
@@ -6315,12 +6285,6 @@
       ],
       "Change family name": [
         "Змяніць назву сям'і"
-      ],
-      "Delete family group?": [
-        "Выдаліць сямейную групу?"
-      ],
-      "Delete organization?": [
-        "Выдаліць арганізацыю?"
       ],
       "Edit user storage": [
         "Кіраванне сховішчам карыстальніка"
@@ -7632,18 +7596,6 @@
         "Знойдзена ${ total } карыстальнікаў",
         "Знойдзена ${ total } карыстальнікаў"
       ],
-      "${ vaultLink } created": [
-        "${ vaultLink } створана"
-      ],
-      "${ vaultLink } deleted": [
-        "${ vaultLink } выдалена"
-      ],
-      "${ vaultLink } shared with email": [
-        "${ vaultLink } абагулена з дапамогай электроннай поштай"
-      ],
-      "${ vaultLink } updated": [
-        "${ vaultLink } абноўлена"
-      ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
         "${ VPN_SHORT_APP_NAME } хавае ваш трафік. ${ PASS_SHORT_APP_NAME } хавае вашу ідэнтычнасць\nз дапамогай неабмежаванай колькасці псеўданімаў **hide-my-email** і **абвестак цёмнай сеткі**, калі раптам адбудзецца ўцечка вашых даных."
       ],
@@ -7716,15 +7668,6 @@
         "+ яшчэ ${ invisibleCount }",
         "+ яшчэ ${ invisibleCount }"
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } бонуснага сховішча"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } падключэнне па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)",
-        "+${ organization.BonusVPN } падключэнні па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)",
-        "+${ organization.BonusVPN } падключэнняў па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)",
-        "+${ organization.BonusVPN } падключэнняў па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)"
-      ],
       "1 device per user": [
         "1 прылада на карыстальніка"
       ],
@@ -7736,9 +7679,6 @@
       ],
       "30-day money-back guarantee": [
         "Гарантыя вяртання грашовых сродкаў на працягу 30 дзён"
-      ],
-      "30-day money-back guarantee.": [
-        "Гарантыя вяртання грашовых сродкаў на працягу 30 дзён."
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ protonSubdomain } размешчаны на ${ BRAND_NAME }. Ён дазваляе хутка наладжваць паддамены. ${ learnMoreLink }"
@@ -8031,9 +7971,6 @@
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "Адключыўшы назіранне за ўліковым запісам, вы таксама ачысціце ўсю гісторыю. Вы сапраўды хочаце адключыць гэту функцыю?"
       ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Пры пераходзе на бясплатны тарыфны план вы незваротна страціце гэтыя перавагі, нават калі ў будучыні зноў пяройдзеце на яго."
-      ],
       "By leaving now, changes may not be saved": [
         "Калі выйсці цяпер, змяненні могуць не захавацца"
       ],
@@ -8321,9 +8258,6 @@
       ],
       "Downgrade": [
         "Панізіць"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Паніжэнне тарыфнага плана спыніць усе бягучыя падключэнні да платных сервераў ${ VPN_APP_NAME }."
       ],
       "Download ${ mobileConfigArtifact } and open it on each Mac to install the profile, then approve it in System Settings.": [
         "Спампаваць ${ mobileConfigArtifact } і адкрыць яго на кожным Mac для ўсталявання профілю, а потым ухваліць яго ў сістэмных наладах."
@@ -8682,15 +8616,6 @@
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "Вы можаце выкарыстаць 1 з 16 рэзервовых кодаў аднаўлення, якія вы атрымалі пры наладжванні двухфактарнай аўтэнтыфікацыі, калі вы страцілі доступ да вашай праграмы аўтэнтыфікацыі. ${ learnMoreLink }"
       ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Калі вы працягніце паніжэнне свайго тарыфнага плана, то страціце доступ да платных функцый ${ MAIL_APP_NAME } і ${ VPN_APP_NAME }."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Калі вы працягніце паніжэнне свайго тарыфнага плана, то страціце доступ да платных функцый ${ MAIL_APP_NAME }, уключаючы дадатковае сховішча і фільтры."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Калі вы працягніце паніжэнне свайго тарыфнага плана, то страціце доступ да платных функцый ${ VPN_APP_NAME }."
-      ],
       "If you recently reset your password, you can ${ recoveryMethodLink } to unlock your data. If this is due to an old password reset, you can stop the message from showing again.": [
         "Вы можаце ${ recoveryMethodLink } для разблакіроўкі сваіх даных, калі нядаўна скідалі пароль. Можна спыніць паўторны паказ паведамлення, калі гэта звязана са скіданнем старога пароля."
       ],
@@ -8772,21 +8697,6 @@
       "Invalid code. ${ RequestNewCodeLink } and try again.": [
         "Памылковы код. ${ RequestNewCodeLink } і паўтарыце спробу."
       ],
-      "Invite deleted": [
-        "Запрашэнне выдалена"
-      ],
-      "Invite for new user deleted": [
-        "Запрашэнне для новага карыстальніка выдалена"
-      ],
-      "Invite for organization accepted": [
-        "Запрашэнне для арганізацыі прынята"
-      ],
-      "Invite for organization created": [
-        "Запрашэнне для арганізацыі створана"
-      ],
-      "Invite rejected": [
-        "Запрашэнне адхілена"
-      ],
       "Invite successfully sent": [
         "Запрашэнне паспяхова адпраўлена",
         "Запрашэнні паспяхова адпраўлены",
@@ -8804,54 +8714,6 @@
       ],
       "It's better to have:": [
         "Лепш за ўсё, каб у вас было:"
-      ],
-      "Item autofilled in ${ vaultLink }": [
-        "Элемент аўтазапоўнены ў ${ vaultLink }"
-      ],
-      "Item autofilled in vault": [
-        "Элемент аўтазапоўнены ў сховішчы"
-      ],
-      "Item created in ${ vaultLink }": [
-        "Элемент створаны ў ${ vaultLink }"
-      ],
-      "Item created in vault": [
-        "Элемент створаны ў сховішчы"
-      ],
-      "Item deleted from ${ vaultLink }": [
-        "Элемент выдалены з ${ vaultLink }"
-      ],
-      "Item deleted from vault": [
-        "Элемент выдалены са сховішча"
-      ],
-      "Item flags changed in ${ vaultLink }": [
-        "Сцягі элемента зменены ў ${ vaultLink }"
-      ],
-      "Item flags changed in vault": [
-        "Сцягі элемента зменены ў сховішчы"
-      ],
-      "Item in ${ vaultLink } trashed": [
-        "Элемент у ${ vaultLink } перамешчаны ў сметніцу"
-      ],
-      "Item in ${ vaultLink } untrashed": [
-        "Элемент у ${ vaultLink } перамешчаны ў сховішча"
-      ],
-      "Item in vault trashed": [
-        "Элемент са сховішча перамешчаны ў сметніцу"
-      ],
-      "Item in vault untrashed": [
-        "Элемент са сметніцы перамешчаны ў сховішча"
-      ],
-      "Item read in ${ vaultLink }": [
-        "Элемент прачытаны ў ${ vaultLink }"
-      ],
-      "Item read in vault": [
-        "Элемент прачытаны ў сховішчы"
-      ],
-      "Item updated in ${ vaultLink }": [
-        "Элемент абноўлены ў ${ vaultLink }"
-      ],
-      "Item updated in vault": [
-        "Элемент абноўлены ў сховішчы"
       ],
       "It’s often the easiest way to recover your account if you’re signed in.": [
         "У большасці выпадкаў гэты спосаб з'яўляецца самым простым для аднаўлення вашага ўліковага запісу, калі ў вас ёсць актыўны сеанс."
@@ -9015,9 +8877,6 @@
       "New group created via your identity provider and pending review.": [
         "Новая група створана праз вашага пастаўшчыка пасведчанняў і чакае разгляду."
       ],
-      "New user invited to organization": [
-        "Новы карыстальнік запрошаны ў арганізацыю"
-      ],
       "New VPN connection data will stop being collected and shown.": [
         "Новыя даныя падключэння па VPN перастануць збірацца і паказвацца."
       ],
@@ -9146,15 +9005,6 @@
       ],
       "Paid for a plan": [
         "Аплата тарыфнага плана"
-      ],
-      "Pass Monitor - custom email confirmed": [
-        "Pass Monitor - карыстальніцкая электронная пошта пацверджана"
-      ],
-      "Pass Monitor - custom email created": [
-        "Pass Monitor - карыстальніцкая электронная пошта створана"
-      ],
-      "Pass Monitor - custom email deleted": [
-        "Pass Monitor - карыстальніцкая электронная пошта выдалена"
       ],
       "Pass usage logs": [
         "Журнал выкарыстання Pass"
@@ -9456,23 +9306,11 @@
       "Setting up your organization": [
         "Наладжванне вашай арганізацыі"
       ],
-      "Shared ${ vaultLink } deleted": [
-        "Абагульванне ${ vaultLink } выдалена"
-      ],
-      "Shared ${ vaultLink } updated": [
-        "Абагульванне ${ vaultLink } абноўлена"
-      ],
       "Shared server country (${ countriesCount })": [
         "Абагуленых сервераў краін: ${ countriesCount }",
         "Абагуленых сервераў краін: ${ countriesCount }",
         "Абагуленых сервераў краін: ${ countriesCount }",
         "Абагуленых сервераў краін: ${ countriesCount }"
-      ],
-      "Shared vault deleted": [
-        "Абагуленае сховішча выдалена"
-      ],
-      "Shared vault updated": [
-        "Абагуленае сховішча абноўлена"
       ],
       "Sign in only": [
         "Толькі ўваход"
@@ -9485,9 +9323,6 @@
       ],
       "Signed up": [
         "Зарэгістравалася"
-      ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Паколькі вы з'яўляецеся пастаянным карыстальнікам, мы дадалі ў ваш уліковы запіс дадатковыя функцыі."
       ],
       "Smart Routed through a different country.": [
         "Перанакіравана праз іншую краіну з дапамогай функцыі Smart Routing."
@@ -9918,11 +9753,11 @@
       "Unfortunately there is no recovery method available for this account.": [
         "На жаль, для гэтага ўліковага запісу адсутнічаюць даступныя спосабы аднаўлення."
       ],
+      "UnionPay logo": [
+        "Лагатып UnionPay"
+      ],
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Унікальны ідэнтыфікатар згенерыраваны вашым пастаўшчыком пасведчанняў. Звычайна ён уяўляе сабой URL-адрас, які ўключае назву вашага пастаўшчыка пасведчанняў (напрыклад, https://idp.example.com/XXXXX)."
-      ],
-      "Unknown event type": [
-        "Невядомы тып падзеі"
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Пакуль вы не выйдзеце са свайго ўліковага запісу або не зменіце свой пароль, ваш сеанс будзе актыўным. Сеансы спыняюцца праз 60 дзён бяздзейнасці."
@@ -10010,21 +9845,6 @@
       ],
       "Using a different MDM? Any MDM that supports deploying a configuration profile will work. Refer to your MDM's documentation on how to upload and assign it to your device fleet.": [
         "Выкарыстоўваеце іншы MDM? Любы MDM, які падтрымлівае разгортванне профілю канфігурацыі будзе працаваць. Звярніцеся да дакументацыі MDM, каб атрымаць дадатковую інфармацыю па запампоўцы і прызначэнню яго парку прылад."
-      ],
-      "Vault created": [
-        "Сховішча створана"
-      ],
-      "Vault deleted": [
-        "Сховішча выдалена"
-      ],
-      "Vault either deleted or requires access permissions": [
-        "Сховішча выдалена або патрабуе правы доступу"
-      ],
-      "Vault shared with email": [
-        "Сховішча абагулена з дапамогай электроннай поштай"
-      ],
-      "Vault updated": [
-        "Сховішча абноўлена"
       ],
       "Verification code sent.": [
         "Код спраўджання адпраўлены."
@@ -10154,9 +9974,6 @@
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Пры ўключэнні SAML для ${ appName } у вашым пастаўшчыку пасведчанняў, вам магчыма будзе прапанавана скарыстацца зваротным выклікам URL (ACS) і ідэнтыфікатарам эмітэнта. Проста скапіюйце даныя знізу, а потым устаўце іх у палі вашага пастаўшчыка пасведчанняў."
-      ],
-      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
-        "Рэшта балансу вашай падпіскі вернецца на ваш уліковы запіс у выглядзе крэдытаў і вы будзеце паніжаны да тарыфнага плана ${ BRAND_NAME } ${ PLANS.FREE }, калі вы скасуеце сваю бягучую платную падпіску."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Ваша падпіска не будзе падоўжана пасля скасавання, але вы ўсё яшчэ зможаце атрымліваць асалоду ад пераваг тарыфнага плана пакуль не завершыцца перыяд падпіскі. Пасля гэтага, ваша падпіска будзе паніжана да тарыфнага плана ${ BRAND_NAME } Free"
@@ -10373,9 +10190,6 @@
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "Вы павінны актываваць закрыты ключ арганізацыі з дапамогай рэзервовага пароля ключа арганізацыі, які вам выдаў адміністратар арганізацыі."
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Перад тым, як панізіць свой тарыфны план, вам неабходна адключыць або выдаліць для ${ MAIL_APP_NAME } дадатковых карыстальнікаў, паштовыя адрасы і карыстальніцкія дамены."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Вы павінны прывязаць крэдытную картку або банкаўскі рахунак да вашага ўліковага запісу PayPal, каб выкарыстоўваць яго як спосаб аплаты."
@@ -11279,6 +11093,9 @@
       "Issuer ID": [
         "Ідэнтыфікатар эмітэнта"
       ],
+      "Item": [
+        "Элемент"
+      ],
       "Keep me signed in": [
         "Заставацца ў сістэме"
       ],
@@ -11708,6 +11525,9 @@
       "Value": [
         "Значэнне"
       ],
+      "Vault": [
+        "Сховішча"
+      ],
       "Verification code": [
         "Код спраўджання"
       ],
@@ -12076,9 +11896,6 @@
       ],
       "use a data recovery method": [
         "выкарыстоўваць спосаб аднаўлення даных"
-      ],
-      "Vault": [
-        "Сховішча"
       ],
       "View guide": [
         "Паглядзець дапаможнік"
@@ -12720,9 +12537,6 @@
       ]
     },
     "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Панізіць да ${ downgradedPlanName }"
-      ],
       "Explore all ${ BRAND_NAME } plans": [
         "Даследаваць усе тарыфныя планы ${ BRAND_NAME }"
       ],
@@ -17254,6 +17068,9 @@
       "Enter your backup password": [
         "Увядзіце свой рэзервовы пароль"
       ],
+      "Enter your password": [
+        "Увядзіце свой пароль"
+      ],
       "For your security, you have been signed out of all your other active devices.": [
         "У мэтах вашай бяспекі вы выйшлі з усіх іншых актыўных прылад."
       ],
@@ -17564,9 +17381,6 @@
       ],
       "upgrade for more storage": [
         "палепшыце тарыфны план, каб атрымаць больш сховішча"
-      ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Мы дададзім крэдыты за той час, які застаўся на вашым уліковым запісе ${ BRAND_NAME }."
       ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "У вас яшчэ застаўся **${ daysRemaining }** дзень тарыфнага плана **${ currentPlanName }**.",
@@ -18372,9 +18186,6 @@
       "You have successfully canceled your subscription.": [
         "Вы паспяхова скасавалі сваю падпіску."
       ],
-      "You have successfully unsubscribed": [
-        "Вы паспяхова скасавалі падпіску"
-      ],
       "You will receive your username via email within a minute if you entered a valid recovery email address.": [
         "Вы атрымаеце сваё імя карыстальніка праз электронную пошту на працягу хвіліны, калі вы ўвялі слушны адрас электроннай пошты для аднаўлення доступу."
       ],
@@ -18966,12 +18777,6 @@
       "Confirm": [
         "Пацвердзіць"
       ],
-      "Confirm downgrade": [
-        "Пацвердзіць паніжэнне тарыфнага плана"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Пацвердзіць страту бонусаў ${ BRAND_NAME }"
-      ],
       "Connect a Gmail address": [
         "Падключэнне адраса Gmail"
       ],
@@ -19202,9 +19007,6 @@
       ],
       "Downgrade account": [
         "Панізіць уліковы запіс"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "Панізіць да ${ downgradedPlanName }?"
       ],
       "Download ${ app }": [
         "Спампоўванне ${ app }"
@@ -19516,7 +19318,7 @@
         "Адкрыць"
       ],
       "Open actions dropdown": [
-        "Адкрыць спіс даступных дзеянняў"
+        "Адкрыць выпадное меню даступных дзеянняў"
       ],
       "Open pagination": [
         "Паказваць нумарацыю старонак"
@@ -19802,6 +19604,9 @@
       ],
       "Sign out": [
         "Выйсці"
+      ],
+      "Sign-in protection": [
+        "Абарона пры ўваходзе"
       ],
       "Signed in to another account": [
         "Выкананы ўваход у іншы ўліковы запіс"

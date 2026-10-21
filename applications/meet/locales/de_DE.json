@@ -2680,6 +2680,9 @@
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } benötigt WebRTC, um zu funktionieren. Bitte aktualisiere deinen Browser oder dein Gerät auf eine Version, die WebRTC unterstützt, versuche es mit einem anderen Browser oder deaktiviere alle Erweiterungen, die es möglicherweise blockieren."
       ],
+      "${ meetingName } has ended": [
+        "${ meetingName } ist beendet"
+      ],
       "${ mlsMemberCount } member": [
         "${ mlsMemberCount } Mitglied",
         "${ mlsMemberCount } Mitglieder"
@@ -3429,6 +3432,9 @@
       "This will sign you out of all accounts currently logged in.": [
         "Dadurch wirst du auf allen derzeit angemeldeten Geräten abgemeldet."
       ],
+      "Time is up for ${ meetingName }": [
+        "Die Zeit für ${ meetingName } ist abgelaufen"
+      ],
       "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
         "Um einen Raum zu erstellen, benötigst du **ein kostenloses ${ BRAND_NAME }-Konto**, damit wir den Raum speichern können. Das dauert nur wenige Sekunden."
       ],
@@ -3537,11 +3543,17 @@
       "You have too many meetings in progress": [
         "Es sind zu viele Meetings gleichzeitig aktiv."
       ],
+      "You left ${ meetingName }": [
+        "Du hast ${ meetingName } verlassen"
+      ],
       "You left the meeting": [
         "Du hast das Meeting verlassen"
       ],
       "You need a paid ${ MEET_SHORT_APP_NAME } or Workspace plan for this feature. Contact your organization admin to upgrade.": [
         "Für diese Funktion benötigst du ein kostenpflichtiges ${ MEET_SHORT_APP_NAME }- oder Workspace-Abonnement. Kontaktiere deinen Organisationsadministrator, um ein Upgrade durchzuführen."
+      ],
+      "You were removed from ${ meetingName }": [
+        "Du wurdest aus ${ meetingName } entfernt."
       ],
       "You were removed from the meeting": [
         "Du wurdest aus dem Meeting entfernt"

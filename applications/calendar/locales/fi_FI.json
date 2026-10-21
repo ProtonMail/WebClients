@@ -341,9 +341,6 @@
       "Done": [
         "Valmis"
       ],
-      "Downgrade": [
-        "Alenna"
-      ],
       "Download": [
         "Lataa"
       ],
@@ -722,9 +719,6 @@
       "Remove": [
         "Poista"
       ],
-      "Remove bonuses": [
-        "Poista edut"
-      ],
       "Remove button": [
         "Poista-painike"
       ],
@@ -892,6 +886,9 @@
       ],
       "Submit": [
         "Lähetä"
+      ],
+      "Subscribe": [
+        "Tilaa"
       ],
       "Subscribe now": [
         "Tilaa nyt"
@@ -1292,11 +1289,6 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Premium-salasanahallinta"
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "30 päivän rahat takaisin -takuu"
       ]
     },
     "BF2024: Deal details": {
@@ -4309,14 +4301,6 @@
         "Vaihda tilausta"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "Perheryhmää ei tunnistettu. Yritä uudelleen."
-      ],
-      "Organization not recognized. Try again.": [
-        "Organisaatiota ei tunnistettu. Yritä uudelleen."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-ryhmää"
@@ -4383,22 +4367,6 @@
         "Tilisi käyttää ${ usedSpace } tallennustilaa, mikä ylittää sinulle varatun ${ inviteSpace } määrän. Poista joitakin tietoja tai pyydä tilauksen ylläpitäjää korottamaan tallennustilaasi."
       ]
     },
-    "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "Vahvista syöttämällä perheryhmän nimi"
-      ],
-      "Enter organization name to confirm": [
-        "Vahvista syöttämällä organisaation nimi"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Tämä poistaa kaikki organisaatioosi liittyvät alikäyttäjät, tilit ja tiedot pysyvästi."
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Tämä poistaa kaikki ${ BRAND_NAME }in premium-ominaisuudet kaikilta perheenjäseniltä."
-      ]
-    },
     "familyOffer_2023:Onboarding Proton": {
       "Configure your family account and invite users": [
         "Määritä perhetilisi ja kutsu käyttäjiä"
@@ -4408,14 +4376,6 @@
       ],
       "Set up your family account": [
         "Määritä perhetilisi"
-      ]
-    },
-    "familyOffer_2023:Title": {
-      "Delete family group?": [
-        "Poistetaanko perheryhmä?"
-      ],
-      "Delete organization?": [
-        "Poistetaanko organisaatio?"
       ]
     },
     "Feature": {
@@ -5099,16 +5059,6 @@
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Saat ${ referrerRewardAmount }** krediittiä jokaisesta tilaavasta ystävästä."
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } lisätallennustilaa"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } ${ VPN_APP_NAME } -yhteys (mahdollistaa VPN-yhteyden useammalla laitteella)",
-        "+${ organization.BonusVPN } ${ VPN_APP_NAME } -yhteyttä (mahdollistaa VPN-yhteyden useammalla laitteella)"
-      ],
-      "30-day money-back guarantee.": [
-        "30 päivän rahat takaisin -takuu."
-      ],
       "A cancellation email will be sent to removed participants.": [
         "Poistetuille osallistujille lähetetään perumisilmoitus sähköpostitse."
       ],
@@ -5259,9 +5209,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Tehosta organisaatiosi brändi-identiteettiä ja tee käyttäjiesi verkkokokemuksesta yhtenäisempi."
       ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Alentamalla ilmaiseen palveluun, menetät nämä edut pysyvästi, vaikka päivittäisit tilauksesi tulevaisuudessa uudelleen."
-      ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Jakamalla tämän kalenterin täydet tapahtumatiedot, myönnät ${ BRAND_NAME }ille sen salattujen tietojen käyttöoikeuden."
       ],
@@ -5408,9 +5355,6 @@
       ],
       "Downgrade": [
         "Alenna"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Tilin alennus katkaisee kaikki yhteydet maksullisiin ${ VPN_APP_NAME } -palvelimiin."
       ],
       "Download current logs": [
         "Lataa nykyiset lokitiedot"
@@ -5559,15 +5503,6 @@
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "Jos et voi käyttää tunnistautumissovellustasi, voit käyttää yhtä kuudestatoista varakoodistasi, jotka sait määrittäessäsi kaksivaiheisen tunnistautumisen. ${ learnMoreLink }"
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Jos jatkat alennusta, menetät maksullisten ${ MAIL_APP_NAME } ja ${ VPN_APP_NAME } -ominaisuuksien käyttöoikeuden."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Jos jatkat alennusta, menetät maksullisten suuremman tallennuskapasiteetin ja suodattimien kaltaisten maksullisten ${ MAIL_APP_NAME }-ominaisuuksien käyttöoikeuden."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Jos jatkat alennusta, menetät maksullisten ${ VPN_APP_NAME } -ominaisuuksien käyttöoikeuden."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Tuo ${ calendarCount }/${ totalCalendarsCount } kalenteri",
@@ -5956,9 +5891,6 @@
       "Share this page to let others book time in your calendar. You can find and edit it in the sidebar under Booking pages.": [
         "Jaa tämä sivu ja anna muiden varata aikoja kalenteristasi. Löydät sivun ja sen muokkauksen sivupalkin Varaussivut-kohdasta."
       ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Koska olet uskollinen käyttäjä, tililläsi on lisäominaisuuksia."
-      ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Jotkut viranomaiset estävät tai rajoittavat pääsyä tietyille verkkosivustoille. VPN auttaa ohittamaan sensuurin ja pitämään toimintasi ja identiteettisi yksityisenä."
       ],
@@ -6203,6 +6135,9 @@
       "We'll email you once import is complete.": [
         "Ilmoitamme tuonnin valmistumisesta sähköpostitse."
       ],
+      "We'll get back to you shortly.": [
+        "Palaamme asiaan pian."
+      ],
       "We'll notify you when the import is done.": [
         "Ilmoitamme sinulle kun tuonti on valmis."
       ],
@@ -6342,9 +6277,6 @@
       ],
       "You may be redirected to your bank’s website.": [
         "Sinut voidaan ohjata pankkisi verkkosivuille."
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Kaikki laajemmat ${ MAIL_APP_NAME } -määritykset, kuten käyttäjät, osoitteet ja omat verkkotunnukset on poistettava käytöstä tai poistettava ennen tilauksen alennusta."
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Olet aiemmin kieltäytynyt tästä kutsusta. Pyydä järjestäjää lähettämään uusi kutsu."
@@ -6736,6 +6668,12 @@
       "All-day event notifications": [
         "Kokopäiväisten tapahtumien ilmoitukset"
       ],
+      "Amount": [
+        "Summa"
+      ],
+      "Amount due": [
+        "Erääntyvä summa"
+      ],
       "Anderson": [
         "Virtanen"
       ],
@@ -6846,6 +6784,9 @@
       ],
       "Credits": [
         "Krediitit"
+      ],
+      "Credits used": [
+        "Krediittejä käytetty"
       ],
       "Date and time": [
         "Päiväys ja kellonaika"
@@ -7082,6 +7023,9 @@
       "Phone number": [
         "Puhelinnumero"
       ],
+      "Please share any feedback to help us improve.": [
+        "Kerro mielipiteesi ja auta meitä parantamaan."
+      ],
       "Port": [
         "Portti"
       ],
@@ -7219,6 +7163,9 @@
       ],
       "What happened?": [
         "Mitä tapahtui?"
+      ],
+      "Why would you like to cancel?": [
+        "Miksi haluat perua tilauksen?"
       ],
       "Your calendar URL": [
         "Kalenterisi URL-osoite"
@@ -7869,31 +7816,11 @@
       ]
     },
     "new_plans: action": {
-      "Delete account": [
-        "Poista tili"
-      ],
-      "Downgrade account": [
-        "Alenna tili"
-      ],
       "Get ${ BRAND_NAME } for free": [
         "Hanki ${ BRAND_NAME } ilmaiseksi"
       ],
       "Get ${ planName }": [
         "Hanki ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Säilytä ${ plan }"
-      ],
-      "Keep account": [
-        "Säilytä tili"
-      ],
-      "Switch plan": [
-        "Vaihda tilausta"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Alenna tilaukseen ${ downgradedPlanName }"
       ]
     },
     "new_plans: feature": {
@@ -8418,18 +8345,6 @@
       "For next-level password management and identity protection.": [
         "Edistyneempään salasanojen hallintaan ja identiteetin suojaukseen."
       ],
-      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
-        "Jos poistat tilisi, menetät kaikki ${ visionary }-tilauksen edut, eikä niitä ole enää saatavilla, jos luot uuden tilin."
-      ],
-      "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
-        "Jos alennat tilisi, menetät kaikki ${ visionary }-tilauksen edut, eikä sitä ole enää saatavilla, jos joskus palaat tilaajaksi."
-      ],
-      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
-        "Jos vaihdat eri tilaukseen, menetät kaikki ${ visionary }-tilauksen edut, etkä voi enää vaihtaa takaisin ${ visionary }-tilaukseen."
-      ],
-      "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
-        "${ visionary }-tilaus ei ole enää uusien tilaajien saatavilla, koska se on alkuperäisen ${ BRAND_NAME }-palvelun käyttäjille tarjottu lisäominaisuuksia ja etuja sisältänyt erikoistilaus."
-      ],
       "Pay once, secure your passwords and identity forever.": [
         "Maksa kerran, suojaa salasanasi ja identiteettisi ikuisesti."
       ],
@@ -8459,12 +8374,6 @@
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
         "Rajaton yksityisyys ja lisätallennustilaa enintään kahdelle henkilölle."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
-        "Nautit alennetusta myynninedistämishinnasta nykyisessä tilauksessasi. Jos poistat tilisi, menetät alennetun myynninedistämishinnan, joka ei ole enää käytettävissä, jos luot uuden tilin."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
-        "Nykyisellä tilauksellasi nautit alennetusta etuhinnasta. Jos alennat tilisi, menetät etuhinnan, eikä se ole enää käytettävissä, jos joskus palaat tilaajaksi."
       ]
     },
     "new_plans: label": {
@@ -8484,20 +8393,11 @@
       ]
     },
     "new_plans: title": {
-      "Delete account?": [
-        "Poistetaanko tili?"
-      ],
-      "Downgrade account?": [
-        "Alennetaanko tili?"
-      ],
       "Review subscription": [
         "Tarkastele tilausta"
       ],
       "Review subscription and pay": [
         "Tarkista tilaus ja maksa"
-      ],
-      "Switch plans?": [
-        "Vaihdetaanko tilaus?"
       ]
     },
     "new_plans: tooltip": {
@@ -9740,6 +9640,9 @@
       "Please select a country": [
         "Valitse maa"
       ],
+      "Please select the main reason": [
+        "Valitse ensisijainen syy"
+      ],
       "Postal code": [
         "Postinumero"
       ],
@@ -10592,9 +10495,6 @@
       "upgrade for more storage": [
         "hanki lisää päivittämällä tilauksesi"
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Hyvitämme jäljellä olevan ajan krediitteinä ${ BRAND_NAME }-tilillesi."
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "**${ currentPlanName }**-tilisi on voimassa vielä **${ daysRemaining }** päivän.",
         "**${ currentPlanName }**-tilisi on voimassa vielä **${ daysRemaining }** päivää."
@@ -11181,6 +11081,9 @@
       "Invitation sent and participants added to all events": [
         "Kutsu lähetettiin ja osallistujat lisättiin ketjun kaikkiin tapahtumiin"
       ],
+      "Invoice paid": [
+        "Lasku on maksettu"
+      ],
       "Keyboard shortcuts preferences updated": [
         "Pkanäppäinasetukset päivitettiin"
       ],
@@ -11225,9 +11128,6 @@
       ],
       "You have successfully canceled your subscription.": [
         "Olet perunut tilauksesi."
-      ],
-      "You have successfully unsubscribed": [
-        "Tilauksesi on lopetettu"
       ]
     },
     "Suffix": {
@@ -11543,12 +11443,6 @@
       "Collaborate on documents": [
         "Yhteiskäytä dokumentteja"
       ],
-      "Confirm downgrade": [
-        "Vahvista alennus"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Vahvista ${ BRAND_NAME }-bonusten menetys"
-      ],
       "Connect apps and devices": [
         "Yhdistä sovelluksia ja laitteita"
       ],
@@ -11563,6 +11457,9 @@
       ],
       "Contact group": [
         "Yhteystietoryhmä"
+      ],
+      "Contact us": [
+        "Ota yhteyttä"
       ],
       "Contacts": [
         "Yhteystiedot"
@@ -11649,9 +11546,6 @@
       ],
       "Downgrade account": [
         "Alenna tili"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "Alennetaanko tilaukseen ${ downgradedPlanName }?"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Lataa ${ DRIVE_APP_NAME }-sovellukset"
@@ -11870,6 +11764,9 @@
       "Participants cannot be notified": [
         "Osallistujille ei voida ilmoittaa"
       ],
+      "Pay invoice": [
+        "Maksa lasku"
+      ],
       "Payment failed": [
         "Maksu epäonnistui"
       ],
@@ -11926,6 +11823,9 @@
       ],
       "Request new code": [
         "Pyydä uusi koodi"
+      ],
+      "Request sent": [
+        "Pyyntö lähetetty"
       ],
       "Reshare your calendars": [
         "Jaa kalenterisi uudelleen"
@@ -12406,6 +12306,20 @@
       ],
       "Open in a new tab": [
         "Avaa uudessa välilehdessä"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Löysin toisen palvelun, josta pidän enemmän"
+      ],
+      "It’s missing a key feature": [
+        "Siitä puuttuu olennainen ominaisuus"
+      ],
+      "It’s too expensive": [
+        "Se on liian kallis"
+      ],
+      "Other": [
+        "Muu"
       ]
     },
     "VPN Plan Feature": {

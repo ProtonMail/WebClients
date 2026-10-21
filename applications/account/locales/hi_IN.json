@@ -145,9 +145,6 @@
       "Desktop and mobile apps": [
         "डेस्कटॉप और मोबाइल ऐप"
       ],
-      "Downgrade plan": [
-        "प्लान डाउनग्रेड करें"
-      ],
       "Downgrade to Free": [
         "फ्री पे डाउनग्रेड करें"
       ],
@@ -671,9 +668,6 @@
       "Connect to video conferencing": [
         "वीडियो कॉन्फ्रेंसिंग से कनेक्ट करें"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "अपने ${ BRAND_NAME } खाते को कनेक्ट करें"
-      ],
       "Connect your email": [
         "अपना ईमेल कनेक्ट करें"
       ],
@@ -755,14 +749,8 @@
       "Create": [
         "बनाएँ"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "${ BRAND_NAME } खाता बनाएं"
-      ],
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "${ BRAND_NAME } के बाहर साझा करने के लिए एक लिंक बनाएं"
-      ],
-      "Create an account": [
-        "खाता बनाएं"
       ],
       "Create calendar": [
         "कैलेंडर बनाएँ"
@@ -946,9 +934,6 @@
       ],
       "Done": [
         "हो गया"
-      ],
-      "Downgrade": [
-        "डाउनग्रेड करें"
       ],
       "Download": [
         "डाउनलोड करें"
@@ -1661,17 +1646,11 @@
       "Reload": [
         "रिलोड"
       ],
-      "Reload page": [
-        "पेज पुनः लोड करें"
-      ],
       "Remove": [
         "हटाएं"
       ],
       "Remove all other devices": [
         "अन्य सभी डिवाइस हटाएं"
-      ],
-      "Remove bonuses": [
-        "बोनस हटाएं"
       ],
       "Remove button": [
         "बटन हटाएं"
@@ -1975,9 +1954,6 @@
       ],
       "Sign in": [
         "साइन-इन करें"
-      ],
-      "Sign in to ${ providerName }": [
-        "${ providerName } में साइन-इन करें"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "${ BRAND_NAME } के साथ साइन-इन करें"
@@ -2910,11 +2886,6 @@
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "क्षमा करें, यह ऑफ़र आपके वर्तमान प्लान के साथ उपलब्ध नहीं है। लेकिन ${ cycle } महीने के लिए सब्सक्राइब करने पर आपको ${ plan.Title } पर ${ discountPercentage } की छूट मिल सकती है।",
         "क्षमा करें, यह ऑफ़र आपके वर्तमान प्लान के साथ उपलब्ध नहीं है। लेकिन ${ cycle } महीनों के लिए सब्सक्राइब करने पर आपको ${ plan.Title } पर ${ discountPercentage } की छूट मिल सकती है।"
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "30 दिन की पैसे-वापस गारंटी"
       ]
     },
     "bf2023: Title": {
@@ -8428,14 +8399,6 @@
         "निमंत्रण देखें"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "परिवार ग्रुप नहीं पहचाना गया। फिर से कोशिश करें।"
-      ],
-      "Organization not recognized. Try again.": [
-        "संगठन नहीं पहचाना गया। फिर से कोशिश करें।"
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } ग्रुप"
@@ -8612,22 +8575,8 @@
       ]
     },
     "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "पक्का करने के लिए परिवार ग्रुप नाम दर्ज करें"
-      ],
-      "Enter organization name to confirm": [
-        "पक्का करने के लिए संगठन नाम दर्ज करें"
-      ],
       "Family name": [
         "परिवार नाम"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "यह आपके संगठन से जुड़े सभी उप-यूज़र्स, खातों और डेटा को स्थायी रूप से हटा देगा।"
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "यह प्रत्येक परिवार के सदस्य के लिए सभी ${ BRAND_NAME } प्रीमियम खासियतें हटाएगा।"
       ]
     },
     "familyOffer_2023:Settings section title": {
@@ -8655,12 +8604,6 @@
       ],
       "Change family name": [
         "परिवार नाम बदलें"
-      ],
-      "Delete family group?": [
-        "परिवार ग्रुप मिटाएं?"
-      ],
-      "Delete organization?": [
-        "संगठन मिटाएं?"
       ],
       "Edit user storage": [
         "यूज़र स्टोरेज एडिट करें"
@@ -9994,12 +9937,6 @@
       "Skipped ${ count } event due to incompatibilities": [
         "असंगतियों के कारण ${ count } ईवेंट छोड़ा गया",
         "असंगतियों के कारण ${ count } ईवेंट छोड़े गए"
-      ],
-      "Undo finished": [
-        "अनडू समाप्त"
-      ],
-      "Undo in progress": [
-        "अनडू प्रगति पर है"
       ]
     },
     "Import type": {
@@ -10318,18 +10255,6 @@
       "${ url } deleted.": [
         "${ url } मिटा दिया गया।"
       ],
-      "${ vaultLink } created": [
-        "${ vaultLink } बनाया गया"
-      ],
-      "${ vaultLink } deleted": [
-        "${ vaultLink } मिटा दिया गया"
-      ],
-      "${ vaultLink } shared with email": [
-        "${ vaultLink } ईमेल द्वारा शेयर की गई"
-      ],
-      "${ vaultLink } updated": [
-        "${ vaultLink } अपडेट किया गया"
-      ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
         "${ VPN_SHORT_APP_NAME } आपका ट्रैफिक छुपाता है। ${ PASS_SHORT_APP_NAME } आपकी पहचान छुपाता है\n— असीमित **hide-my-email aliases** और **dark-web alerts** यदि आपका डेटा कभी लीक होता है।"
       ],
@@ -10422,13 +10347,6 @@
         "+ ${ invisibleCount } और",
         "+ ${ invisibleCount } और"
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } बोनस स्टोरेज"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "${ VPN_APP_NAME } के लिए +${ organization.BonusVPN } कनेक्शन (आपको VPN से और डिवाइस कनेक्ट करने देता है)",
-        "+${ organization.BonusVPN } और कनेक्शन ${ VPN_APP_NAME } के लिए (आपको VPN से और डिवाइस कनेक्ट करने देता है)"
-      ],
       "1 device per user": [
         "प्रति यूज़र 1 डिवाइस"
       ],
@@ -10440,9 +10358,6 @@
       ],
       "30-day money-back guarantee": [
         "30 दिन की पैसे-वापस गारंटी"
-      ],
-      "30-day money-back guarantee.": [
-        "30-दिन की मनी-बैक गारंटी।"
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "एक ${ protonSubdomain } की मेजबानी ${ BRAND_NAME } द्वारा की जाती है, जो आपको जल्दी से एक सबडोमेन सेटअप करने की अनुमति देती है। ${ learnMoreLink }"
@@ -10887,9 +10802,6 @@
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "खाता मॉनिटर को अक्षम करने से, आपका संपूर्ण इतिहास भी साफ़ हो जाएगा। क्या वाकई इसे अक्षम करना है?"
       ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Free plan में डाउनग्रेड करने से, ये लाभ स्थायी रूप से खत्म हो जाएंगे, भले ही भविष्य में फिर से अपग्रेड किया जाए।"
-      ],
       "By leaving now, changes may not be saved": [
         "अब छोड़ने से, हो सकता है कि परिवर्तन सहेजे न जाएं"
       ],
@@ -11261,9 +11173,6 @@
       ],
       "Downgrade": [
         "डाउनग्रेड करें"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "डाउनग्रेड करने से सशुल्क ${ VPN_APP_NAME } सर्वर से कोई भी कनेक्शन समाप्त हो जाएगा।"
       ],
       "Download ${ mobileConfigArtifact } and open it on each Mac to install the profile, then approve it in System Settings.": [
         "${ mobileConfigArtifact } डाउनलोड करें और प्रोफ़ाइल इंस्टॉल करने के लिए उसे हर Mac पे खोलें, फिर सिस्टम सेटिंग में उसे अप्रूव करें।"
@@ -11778,15 +11687,6 @@
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "अगर आपके ऑथेंटिकेटर ऐप का एक्सेस खो गया है, तो टू-फैक्टर सत्यापन सेटअप करते समय दिए गए 16 बैकअप रिकवर कोड में से 1 इस्तेमाल किया जा सकता है। ${ learnMoreLink }"
       ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "यदि आप डाउनग्रेड के साथ आगे बढ़ते हैं, तो आप ${ MAIL_APP_NAME } और ${ VPN_APP_NAME } की सशुल्क खासियतों तक पहुंच खो देंगे।"
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "यदि आप डाउनग्रेड के साथ आगे बढ़ते हैं, तो आप अतिरिक्त संग्रहण और फ़िल्टर सहित ${ MAIL_APP_NAME } सशुल्क सुविधाओं तक पहुंच खो देंगे।"
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "यदि आप डाउनग्रेड के साथ आगे बढ़ते हैं, तो आप ${ VPN_APP_NAME } की सशुल्क सुविधाओं तक पहुंच खो देंगे।"
-      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "यदि आपने गिफ्ट कोड खरीदा है या हमारी सहायता टीम से प्राप्त किया है, तो उसे यहां दर्ज करें।"
       ],
@@ -11903,23 +11803,8 @@
       "Invitation link used": [
         "निमंत्रण लिंक का उपयोग किया गया है"
       ],
-      "Invite deleted": [
-        "न्योता मिटाया गया"
-      ],
       "Invite family members and get everything up and running.": [
         "परिवार के सदस्यों को आमंत्रित करें और सब कुछ चालू और सुचारू रूप से चलाएं।"
-      ],
-      "Invite for new user deleted": [
-        "नए यूज़र का आमंत्रण हटाया गया"
-      ],
-      "Invite for organization accepted": [
-        "संगठन हेतु न्योता स्वीकार किया गया"
-      ],
-      "Invite for organization created": [
-        "संगठन हेतु न्योता बनाया गया"
-      ],
-      "Invite rejected": [
-        "न्योता ठुकराया गया"
       ],
       "Invite successfully sent": [
         "न्योता सफलतापूर्वक भेजा गया",
@@ -11942,54 +11827,6 @@
       ],
       "It's better to have:": [
         "यह बेहतर है कि:"
-      ],
-      "Item autofilled in ${ vaultLink }": [
-        "आइटम ${ vaultLink } में स्वतः भर गया"
-      ],
-      "Item autofilled in vault": [
-        "आइटम तिजोरी में स्वतः भर गया"
-      ],
-      "Item created in ${ vaultLink }": [
-        "आइटम ${ vaultLink } में बनाया गया"
-      ],
-      "Item created in vault": [
-        "तिजोरी में बनाया गया आइटम"
-      ],
-      "Item deleted from ${ vaultLink }": [
-        "आइटम ${ vaultLink } से मिटा दिया गया"
-      ],
-      "Item deleted from vault": [
-        "तिजोरी से आइटम मिटा दिया गया"
-      ],
-      "Item flags changed in ${ vaultLink }": [
-        "आइटम के फ्लैग ${ vaultLink } में बदले गए"
-      ],
-      "Item flags changed in vault": [
-        "तिजोरी में आइटम के फ्लैग बदले गए"
-      ],
-      "Item in ${ vaultLink } trashed": [
-        "आइटम ${ vaultLink } में कचरे में डाला गया।"
-      ],
-      "Item in ${ vaultLink } untrashed": [
-        "आइटम ${ vaultLink } में बहाल किया गया"
-      ],
-      "Item in vault trashed": [
-        "तिजोरी में आइटम कचरे में डाला गया"
-      ],
-      "Item in vault untrashed": [
-        "तिजोरी में आइटम कचरा से बहाल कर दिया गया"
-      ],
-      "Item read in ${ vaultLink }": [
-        "आइटम ${ vaultLink } में पढ़ा गया"
-      ],
-      "Item read in vault": [
-        "तिजोरी में पढ़ा गया आइटम"
-      ],
-      "Item updated in ${ vaultLink }": [
-        "आइटम ${ vaultLink } में अपडेट किया गया"
-      ],
-      "Item updated in vault": [
-        "तिजोरी में आइटम अपडेट किया गया"
       ],
       "It’s often the easiest way to recover your account if you’re signed in.": [
         "यदि आप साइन इन हैं तो अपने खाते को रिकवर करने का यह अक्सर सबसे आसान तरीका होता है।"
@@ -12210,9 +12047,6 @@
       "New group created via your identity provider and pending review.": [
         "आपके पहचान प्रदाता के माध्यम से नया ग्रुप बनाया गया और समीक्षा लंबित है।"
       ],
-      "New user invited to organization": [
-        "संगठन में नया यूज़र आमंत्रित किया गया"
-      ],
       "New VPN connection data will stop being collected and shown.": [
         "नया VPN कनेक्शन डेटा अब संग्रहित और प्रदर्शित होना बंद हो जाएगा।"
       ],
@@ -12419,15 +12253,6 @@
       "Paid for a plan": [
         "प्लान के लिए भुगतान किया गया"
       ],
-      "Pass Monitor - custom email confirmed": [
-        "Pass Monitor - कस्टम ईमेल सत्यापित किया गया"
-      ],
-      "Pass Monitor - custom email created": [
-        "Pass Monitor - कस्टम ईमेल बनाया गया"
-      ],
-      "Pass Monitor - custom email deleted": [
-        "Pass Monitor - कस्टम ईमेल हटाया गया"
-      ],
       "Pass usage logs": [
         "पास उपयोग लॉग"
       ],
@@ -12510,9 +12335,6 @@
       ],
       "Please open the document to view it.": [
         "कृपया दस्तावेज़ को देखने के लिए इसे खोलें।"
-      ],
-      "Please open your browser extension settings and allow ${ PASS_APP_NAME } extension to access website data. Then, reload this page.": [
-        "कृपया अपने ब्राउज़र एक्सटेंशन की सेटिंग खोलें और वेबसाइट डेटा तक पहुँचने के लिए ${ PASS_APP_NAME } एक्सटेंशन को अनुमति दें। फिर, इस पृष्ठ को पुनः लोड करें।"
       ],
       "Please reconnect to continue.": [
         "जारी रखने के लिए कृपया पुनः कनेक्ट करें।"
@@ -12814,21 +12636,9 @@
       "Settings updated": [
         "सेटिंग अपडेट किया"
       ],
-      "Shared ${ vaultLink } deleted": [
-        "साझा ${ vaultLink } मिटा दी गई"
-      ],
-      "Shared ${ vaultLink } updated": [
-        "साझा ${ vaultLink } अपडेट किया गया"
-      ],
       "Shared server country (${ countriesCount })": [
         "साझा सर्वर वाला देश (${ countriesCount })",
         "साझा सर्वर वाले देश (${ countriesCount })"
-      ],
-      "Shared vault deleted": [
-        "साझा तिजोरी मिटा दी गई।"
-      ],
-      "Shared vault updated": [
-        "साझी तिजोरी अपडेट हुई।"
       ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "संदेश लिस्ट में भेजने वालो की तस्वीर दिखाएं। अगर तस्वीर नहीं है तो भेजने वालो के नाम का शुरुआती हिस्सा दिखाया जाएगा।"
@@ -12848,9 +12658,6 @@
       "Sign in only": [
         "केवल साइनइन के लिए"
       ],
-      "Sign in or create an account to continue.": [
-        "साइन-इन करें या खाता बनाएं ताकि आप आगे बढ़ सकें।"
-      ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "अपना पता सक्रिय करने के लिए ${ MAIL_APP_NAME } पे साइन-इन करें"
       ],
@@ -12862,9 +12669,6 @@
       ],
       "Signed up": [
         "साइनअप किया"
-      ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "चूंकि आप एक वफादार यूज़र हैं, इसलिए आपके खाते में अतिरिक्त सुविधाएं सक्षम हैं।"
       ],
       "Smart Routed through a different country.": [
         "किसी अन्य देश के माध्यम से Smart Routed।"
@@ -12920,12 +12724,6 @@
       ],
       "Step ${ step }/${ totalSteps }": [
         "चरण ${ step }/${ totalSteps }"
-      ],
-      "Step 1 of 2": [
-        "चरण 1 का 2"
-      ],
-      "Step 2 of 2": [
-        "चरण 2 का 2"
       ],
       "Storage allocated to other users in this organisation": [
         "इस संगठन में अन्य यूज़र्स को आवंटित स्टोरेज"
@@ -13439,9 +13237,6 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "पहचान प्रदाता द्वारा जनरेट की गई विशिष्ट आईडी, आमतौर पर एक URL के रूप में जिसमें पहचान प्रदाता का नाम शामिल होता है (उदा. https://idp.udaaharan.in/XXXXX)।"
       ],
-      "Unknown event type": [
-        "अज्ञात ईवेंट प्रकार"
-      ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "खाते से साइन आउट करने या पासवर्ड बदलने तक आपका सत्र सक्रिय रहेगा। 60 दिनों तक निष्क्रिय रहने पर सत्र की अवधि समाप्त हो जाती है।"
       ],
@@ -13565,21 +13360,6 @@
       "Using a different MDM? Any MDM that supports deploying a configuration profile will work. Refer to your MDM's documentation on how to upload and assign it to your device fleet.": [
         "कोई दूसरा MDM इस्तेमाल कर रहे हैं? कोई भी ऐसा MDM चलेगा जो संरचना प्रोफ़ाइल लागू करने की सुविधा देता है। इसे अपलोड करने और अपनी डिवाइस फ़्लीट में असाइन करने का तरीका अपने MDM के दस्तावेज़ों में देखें।"
       ],
-      "Vault created": [
-        "तिजोरी बनाई गई"
-      ],
-      "Vault deleted": [
-        "तिजोरी मिटाई गई।"
-      ],
-      "Vault either deleted or requires access permissions": [
-        "तिजोरी या तो मिटा दी गई है या पहुँच अनुमतियाँ आवश्यक हैं"
-      ],
-      "Vault shared with email": [
-        "तिजोरी ईमेल द्वारा शेयर की गयी"
-      ],
-      "Vault updated": [
-        "तिजोरी अपडेट हुई"
-      ],
       "Verification code sent.": [
         "सत्यापन कोड भेजा गया।"
       ],
@@ -13600,9 +13380,6 @@
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "ऑथेंटिकेटर ऐप से मिले समय-आधारित वन-टाइम पासवर्ड के साथ अपनी पहचान सत्यापित करें।"
-      ],
-      "Verifying ${ PASS_APP_NAME } browser extension...": [
-        "${ PASS_APP_NAME } ब्राउज़र एक्सटेंशन सत्यापित किया जा रहा है..."
       ],
       "Verifying your payment": [
         "आपका भुगतान सत्यापित कर रहे"
@@ -13771,9 +13548,6 @@
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "जब नोटिफिकेशन सक्षम होते हैं, तो यदि आपके ${ MAIL_APP_NAME } खाते में नए संदेश होते हैं, तो हम आपके रिकवर ईमेल पते पर एक अलर्ट भेजेंगे।"
-      ],
-      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
-        "अपनी वर्तमान भुगतान की गई सदस्यता रद्द करने पर, आपकी सदस्यता का शेष बैलेंस खाता क्रेडिट के रूप में लौटा दिया जाएगा और आपको ${ BRAND_NAME } ${ PLANS.FREE } प्लान में डाउनग्रेड कर दिया जाएगा।"
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "सदस्यता रद्द करने पर आपकी सदस्यता का नवीनीकरण नहीं होगा, लेकिन सदस्यता अवधि के अंत तक योजना के लाभों का आनंद लिया जा सकता है। इसके बाद, आपकी योजना को ${ BRAND_NAME } Free योजना में डाउनग्रेड कर दिया जाएगा।"
@@ -14035,9 +13809,6 @@
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "आपको अपने संगठन व्यवस्थापक द्वारा आपको प्रदान किए गए बैकअप संगठन चाबी पासवर्ड के साथ अपने संगठन की प्राइवेट चाबी को सक्रिय करना होगा।"
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "डाउनग्रेड करने से पहले आपको किसी भी अतिरिक्त ${ MAIL_APP_NAME } यूज़र्स, पतों और कस्टम डोमेन को अक्षम या हटाना होगा।"
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "भुगतान तरीके के रूप में इसे जोड़ने के लिए आपके पास आपके PayPal खाते के साथ एक क्रेडिट कार्ड या बैंक खाता होना चाहिए।"
@@ -17061,9 +16832,6 @@
       "use a data recovery method": [
         "डेटा रिकवरी विधि का उपयोग करें"
       ],
-      "Vault": [
-        "तिजोरी"
-      ],
       "View guide": [
         "गाइड देखें"
       ],
@@ -18051,9 +17819,6 @@
       ]
     },
     "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } पे डाउनग्रेड करें"
-      ],
       "Explore all ${ BRAND_NAME } plans": [
         "सारे ${ BRAND_NAME } प्लान देखें"
       ],
@@ -20856,11 +20621,6 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "कुछ गलत हो गया। Google Pay सत्यापन असफल रहा।"
-      ]
-    },
-    "Payments.iDEAL": {
-      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
-        "पुष्टि करके, ${ BRAND_NAME } और Stripe, हमारे भुगतान सेवा प्रदाता, को आपकी सदस्यता के लिए भविष्य के पेमेंट SEPA Direct Debit के ज़रिए इस बैंक खाते से लेने की और आपके बैंक को वो पेमेंट काटने की अनुमति दी जाती है। आपका पहला पेमेंट अभी ${ IDEAL_WERO_BRAND_NAME } के ज़रिए होगा। आपका प्लान ऑटो-रीन्यू होता रहेगा, जब तक आप रद्द न करें; हर कलेक्शन से पहले हम आपको सूचित करेंगे। डायरेक्ट डेबिट कलेक्शन के लिए, अपने बैंक से किए गए समझौते की शर्तों के तहत डेबिट की तारीख़ से 8 हफ़्तों के भीतर बैंक से रिफ़ंड मांगा जा सकता है। ये अभी किए जा रहे ${ IDEAL_WERO_BRAND_NAME } पेमेंट पर लागू नहीं होता।"
       ]
     },
     "Payments.info": {
@@ -24355,9 +24115,6 @@
       "Upgrade your plan to increase your storage.": [
         "अपना स्टोरेज बढ़ाने के लिए अपनी योजना को अपग्रेड करें।"
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "हम शेष समय के लिए क्रेडिट आपके ${ BRAND_NAME } खाते में जोड़ देंगे।"
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "आपके **${ currentPlanName }** योजना में अब भी **${ daysRemaining }** दिन शेष है।",
         "आपके **${ currentPlanName }** प्लान में अब भी **${ daysRemaining }** दिन शेष हैं।"
@@ -25245,9 +25002,6 @@
       "You have successfully canceled your subscription.": [
         "आपने अपनी सदस्यता सफलतापूर्वक रद्द कर दी है।"
       ],
-      "You have successfully unsubscribed": [
-        "आपने अपनी सदस्यता सफलतापूर्वक समाप्त कर दी है।"
-      ],
       "You will receive your username via email within a minute if you entered a valid recovery email address.": [
         "यदि आपने एक मान्य रिकवर ईमेल पता दर्ज किया है, तो आपको एक मिनट के भीतर आपका यूज़रनेम ईमेल द्वारा प्राप्त होगा।"
       ],
@@ -25605,9 +25359,6 @@
       ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
-      ],
-      "${ PASS_APP_NAME } is missing permissions": [
-        "${ PASS_APP_NAME } में अनुमतियां अनुपस्थित हैं"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "${ PASS_SHORT_APP_NAME } मॉनिटर रिपोर्ट"
@@ -25997,12 +25748,6 @@
       "Confirm": [
         "पुष्टि करें"
       ],
-      "Confirm downgrade": [
-        "डाउनग्रेड की पुष्टि करें"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "${ BRAND_NAME } बोनस का नुकसान मानें"
-      ],
       "Confirm where to sign in": [
         "साइनइन करने की जगह की पुष्टि करें"
       ],
@@ -26023,9 +25768,6 @@
       ],
       "Connect to video conferencing": [
         "वीडियो कॉन्फ्रेंसिंग से कनेक्ट करें"
-      ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "अपने ${ BRAND_NAME } खाते को कनेक्ट करें"
       ],
       "Connect your custom domain": [
         "अपने कस्टम डोमेन को कनेक्ट करें"
@@ -26310,9 +26052,6 @@
       ],
       "Downgrade account": [
         "खाते को डाउनग्रेड करें"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "${ downgradedPlanName } पे डाउनग्रेड करें?"
       ],
       "Download ${ app }": [
         "${ app } डाउनलोड करें"
@@ -27600,9 +27339,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Business के लिए ${ BRAND_NAME } में आपका स्वागत है"
-      ],
-      "Welcome to your new password manager!": [
-        "अपने नए पासवर्ड मैनेजर में आपका स्वागत है!"
       ],
       "What are you migrating?": [
         "क्या माइग्रेट किया जा रहा है?"
@@ -29009,12 +28745,6 @@
       ],
       "By removing this phone number, you will no longer be able to recover your account.": [
         "इस फ़ोन नंबर को हटाने से, आप अब अपना खाता रिकवर नहीं कर पाएंगे।"
-      ],
-      "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
-        "लॉग-इन नहीं किया जा सका। कृपया ${ PASS_APP_NAME } ब्राउज़र एक्सटेंशन खोलें और वहां से लॉग-इन करें।"
-      ],
-      "Could not sign up. Please open ${ PASS_APP_NAME } browser extension and sign up from there.": [
-        "साइन अप नहीं किया जा सका। कृपया ${ PASS_APP_NAME } ब्राउज़र एक्सटेंशन खोलें और वहां से साइन अप करें।"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "इस आयात को रद्द करने पर इसे फिर से शुरू नहीं किया जा सकेगा। ${ BRAND_NAME } ने आपके खाते में सारी प्रगति सेव कर ली है। फिर भी रद्द करें?"

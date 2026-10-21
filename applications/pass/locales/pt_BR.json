@@ -25,12 +25,6 @@
       ]
     },
     "Action": {
-      "${ PASS_SHORT_APP_NAME } for Android": [
-        "${ PASS_SHORT_APP_NAME } para Android"
-      ],
-      "${ PASS_SHORT_APP_NAME } for iOS": [
-        "${ PASS_SHORT_APP_NAME } for iOS"
-      ],
       "Accept": [
         "Aceitar"
       ],
@@ -327,6 +321,15 @@
       ],
       "Don't show this again": [
         "Não mostrar isso novamente"
+      ],
+      "Download for Linux": [
+        "Baixar para Linux"
+      ],
+      "Download for macOS": [
+        "Baixar para macOS"
+      ],
+      "Download for Windows": [
+        "Baixar para Windows"
       ],
       "Download this CSV template": [
         "Baixar esse modelo CSV"
@@ -2106,6 +2109,9 @@
       "invites you to access items in": [
         "convida você a acessar itens em"
       ],
+      "iOS and Android Apps": [
+        "Aplicativos para iOS e Android"
+      ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Parece que você já está logado em ${ PASS_APP_NAME }. Se você estiver tentando fazer login com uma conta diferente, primeiro saia da extensão."
       ],
@@ -2471,6 +2477,9 @@
       ],
       "Restoring trashed items...": [
         "Restaurando os itens da lixeira..."
+      ],
+      "Scan to download": [
+        "Digitalizar para baixar"
       ],
       "Secure links": [
         "Links seguros"
@@ -3545,11 +3554,17 @@
       "LinkedIn account": [
         "Conta do LinkedIn"
       ],
+      "Linux": [
+        "Linux"
+      ],
       "Login": [
         "Início de sessão"
       ],
       "Logins": [
         "Inícios de sessão"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Mailboxes": [
         "Caixas de correio"
@@ -4108,6 +4123,9 @@
       ],
       "WiFi network": [
         "Rede Wi-Fi"
+      ],
+      "Windows": [
+        "Windows"
       ],
       "Work details": [
         "Detalhes do trabalho"
@@ -4893,6 +4911,12 @@
       ],
       "Folder options": [
         "Opções da pasta"
+      ],
+      "Get mobile and desktop apps": [
+        "Obtenha aplicativos móveis e para computador"
+      ],
+      "Get mobile apps": [
+        "Obter aplicativos móveis"
       ],
       "Get Started": [
         "Começar"

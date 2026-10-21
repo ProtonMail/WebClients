@@ -348,9 +348,6 @@
       "Connect to video conferencing": [
         "Kết nối với hội nghị truyền hình"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Kết nối tài khoản ${ BRAND_NAME }"
-      ],
       "Connect your email": [
         "Kết nối email"
       ],
@@ -429,14 +426,8 @@
       "Create": [
         "Tạo"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Tạo tài khoản ${ BRAND_NAME }"
-      ],
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "Tạo liên kết để chia sẻ với bất kỳ ai bên ngoài ${ BRAND_NAME }"
-      ],
-      "Create an account": [
-        "Tạo tài khoản"
       ],
       "Create calendar": [
         "Tạo lịch"
@@ -611,9 +602,6 @@
       ],
       "Done": [
         "Xong"
-      ],
-      "Downgrade": [
-        "Hạ cấp"
       ],
       "Download": [
         "Tải xuống"
@@ -1275,17 +1263,11 @@
       "Reload": [
         "Tải lại"
       ],
-      "Reload page": [
-        "Tải lại trang"
-      ],
       "Remove": [
         "Xóa"
       ],
       "Remove all other devices": [
         "Xóa tất cả các thiết bị khác"
-      ],
-      "Remove bonuses": [
-        "Xóa các phần thưởng"
       ],
       "Remove button": [
         "Nút xóa"
@@ -2413,11 +2395,6 @@
     "bf2023: info": {
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Rất tiếc, ưu đãi này không áp dụng cho gói hiện tại. Nhưng có thể được giảm ${ discountPercentage } cho ${ plan.Title } khi đăng ký liên tục ${ cycle } tháng."
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "Cam kết hoàn tiền trong 30 ngày"
       ]
     },
     "bf2023: Title": {
@@ -7484,14 +7461,6 @@
         "Xem lời mời"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "Không nhận dạng được nhóm gia đình. Hãy thử lại."
-      ],
-      "Organization not recognized. Try again.": [
-        "Không nhận dạng được tổ chức. Hãy thử lại."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "Nhóm ${ BRAND_NAME }"
@@ -7664,22 +7633,8 @@
       ]
     },
     "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "Nhập tên nhóm gia đình để xác nhận"
-      ],
-      "Enter organization name to confirm": [
-        "Nhập tên tổ chức để xác nhận"
-      ],
       "Family name": [
         "Tên gia đình"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Thao tác này sẽ xóa vĩnh viễn tất cả người dùng phụ, tài khoản và dữ liệu liên quan đến tổ chức."
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Thao tác này sẽ xóa tất cả các tính năng ${ BRAND_NAME } cao cấp của mọi thành viên gia đình."
       ]
     },
     "familyOffer_2023:Settings section title": {
@@ -7707,12 +7662,6 @@
       ],
       "Change family name": [
         "Thay đổi tên gia đình"
-      ],
-      "Delete family group?": [
-        "Xóa nhóm gia đình?"
-      ],
-      "Delete organization?": [
-        "Xóa tổ chức?"
       ],
       "Edit user storage": [
         "Chỉnh sửa lưu trữ người dùng"
@@ -8922,12 +8871,6 @@
       ],
       "Paused": [
         "Đã tạm dừng"
-      ],
-      "Undo finished": [
-        "Đã hoàn tác xong"
-      ],
-      "Undo in progress": [
-        "Đang hoàn tác"
       ]
     },
     "Import type": {
@@ -9186,18 +9129,6 @@
       "${ url } deleted.": [
         "Đã xóa ${ url }."
       ],
-      "${ vaultLink } created": [
-        "Đã tạo ${ vaultLink }"
-      ],
-      "${ vaultLink } deleted": [
-        "Đã xóa ${ vaultLink }"
-      ],
-      "${ vaultLink } shared with email": [
-        "Được chia sẻ ${ vaultLink } với email"
-      ],
-      "${ vaultLink } updated": [
-        "Đã cập nhật ${ vaultLink } "
-      ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
         "${ VPN_SHORT_APP_NAME } ẩn lưu lượng. ${ PASS_SHORT_APP_NAME } ẩn danh tính\n— **biệt danh hide-my-email** không giới hạn và **cảnh báo dark-web** nếu dữ liệu bị rò rỉ."
       ],
@@ -9282,20 +9213,11 @@
       "+ ${ invisibleCount } More": [
         "Thêm ${ invisibleCount }"
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } dung lượng lưu trữ thưởng"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } kết nối cho ${ VPN_APP_NAME } (cho phép kết nối nhiều thiết bị hơn đến VPN)"
-      ],
       "2FA disabled": [
         "Đã vô hiệu hóa 2FA"
       ],
       "30-day money-back guarantee": [
         "Cam kết hoàn tiền trong 30 ngày"
-      ],
-      "30-day money-back guarantee.": [
-        "Cam kết hoàn tiền trong 30 ngày."
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Một ${ protonSubdomain } được lưu trữ bởi ${ BRAND_NAME }, cho phép thiết lập nhanh một miền phụ. ${ learnMoreLink }"
@@ -9681,9 +9603,6 @@
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "Nếu vô hiệu hóa giám sát tài khoản, toàn bộ lịch sử cũng sẽ bị xóa. Chắc chắn muốn vô hiệu hóa tính năng này không?"
       ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Nếu hạ cấp xuống miễn phí plan, bạn sẽ mất vĩnh viễn những lợi ích này, cho dù sau này có nâng cấp lại."
-      ],
       "By leaving now, changes may not be saved": [
         "Nếu rời đi ngay bây giờ, các thay đổi có thể không được lưu"
       ],
@@ -9992,9 +9911,6 @@
       ],
       "Downgrade": [
         "Hạ cấp"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Việc hạ cấp sẽ chấm dứt mọi kết nối đến các máy chủ ${ VPN_APP_NAME } trả phí."
       ],
       "Download ${ VPN_APP_NAME }": [
         "Tải xuống ${ VPN_APP_NAME }"
@@ -10449,15 +10365,6 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Nếu mất thiết bị hỗ trợ xác thực hai yếu tố, có thể sử dụng các mã này thay vì mã xác thực hai yếu tố gồm 6 chữ số để đăng nhập vào tài khoản. Mỗi mã chỉ có thể được sử dụng một lần."
       ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Nếu tiến hành hạ cấp, bạn sẽ mất truy cập vào các tính năng trả phí của ${ MAIL_APP_NAME } và ${ VPN_APP_NAME }."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Nếu tiến hành hạ cấp, sẽ mất quyền truy cập vào các tình năng trả phí của ${ MAIL_APP_NAME }, bao gồm dung lượng bổ sung và các bộ lọc."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Nếu tiến hành hạ cấp, bạn sẽ mất truy cập vào các tính năng trả phí của ${ VPN_APP_NAME }."
-      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Nếu bạn đã mua mã quà tặng hoặc nhận được mã từ đội ngũ hỗ trợ của chúng tôi, bạn có thể nhập mã tại đây."
       ],
@@ -10569,23 +10476,8 @@
       "Invitation link used": [
         "Liên kết lời mời đã được sử dụng"
       ],
-      "Invite deleted": [
-        "Đã xóa lời mời"
-      ],
       "Invite family members and get everything up and running.": [
         "Mời các thành viên gia đình và thiết lập mọi thứ để hoạt động."
-      ],
-      "Invite for new user deleted": [
-        "Đã xóa lời mời cho người dùng mới"
-      ],
-      "Invite for organization accepted": [
-        "Lời mời cho tổ chức đã được chấp nhận"
-      ],
-      "Invite for organization created": [
-        "Lời mời cho tổ chức đã được tạo"
-      ],
-      "Invite rejected": [
-        "Đã từ chối lời mời"
       ],
       "Invite successfully sent": [
         "Đã gửi lời mời thành công"
@@ -10604,54 +10496,6 @@
       ],
       "It's better to have:": [
         "Tốt hơn nên có:"
-      ],
-      "Item autofilled in ${ vaultLink }": [
-        "Đã tự động điền mục trong ${ vaultLink }"
-      ],
-      "Item autofilled in vault": [
-        "Đã tự động điền mục trong kho"
-      ],
-      "Item created in ${ vaultLink }": [
-        "Đã tạo mục trong ${ vaultLink }"
-      ],
-      "Item created in vault": [
-        "Mục đã tạo trong kho"
-      ],
-      "Item deleted from ${ vaultLink }": [
-        "Đã xóa mục khỏi ${ vaultLink }"
-      ],
-      "Item deleted from vault": [
-        "Đã xóa mục khỏi kho"
-      ],
-      "Item flags changed in ${ vaultLink }": [
-        "Đã thay đổi cờ của mục trong ${ vaultLink }"
-      ],
-      "Item flags changed in vault": [
-        "Đã thay đổi cờ của mục trong kho"
-      ],
-      "Item in ${ vaultLink } trashed": [
-        "Đã di chuyển mục trong ${ vaultLink } vào thùng rác"
-      ],
-      "Item in ${ vaultLink } untrashed": [
-        "Đã khôi phục mục trong ${ vaultLink } từ thùng rác"
-      ],
-      "Item in vault trashed": [
-        "Đã chuyển mục trong kho vào thùng rác"
-      ],
-      "Item in vault untrashed": [
-        "Đã khôi phục mục kho từ thùng rác"
-      ],
-      "Item read in ${ vaultLink }": [
-        "Đã đọc mục trong ${ vaultLink }"
-      ],
-      "Item read in vault": [
-        "Đã đọc mục trong kho"
-      ],
-      "Item updated in ${ vaultLink }": [
-        "Đã cập nhật mục trong ${ vaultLink }"
-      ],
-      "Item updated in vault": [
-        "Đã cập nhật mục trong kho"
       ],
       "It’s often the easiest way to recover your account if you’re signed in.": [
         "Đây thường là cách dễ nhất để khôi phục tài khoản nếu đã đăng nhập."
@@ -10848,9 +10692,6 @@
       "New group created via your identity provider and pending review.": [
         "Nhóm mới được tạo thông qua nhà cung cấp danh tính và đang chờ xem xét."
       ],
-      "New user invited to organization": [
-        "Người dùng mới đã được mời vào tổ chức"
-      ],
       "New VPN connection data will stop being collected and shown.": [
         "Dữ liệu kết nối VPN mới sẽ ngừng được thu thập và hiển thị."
       ],
@@ -11013,15 +10854,6 @@
       "Paid for a plan": [
         "Đã thanh toán cho một gói"
       ],
-      "Pass Monitor - custom email confirmed": [
-        "Pass Monitor - email tùy chỉnh đã xác nhận"
-      ],
-      "Pass Monitor - custom email created": [
-        "Pass Monitor - email tùy chỉnh đã tạo"
-      ],
-      "Pass Monitor - custom email deleted": [
-        "Pass Monitor - email tùy chỉnh đã xóa"
-      ],
       "Pass usage logs": [
         "Nhật ký sử dụng Pass"
       ],
@@ -11099,9 +10931,6 @@
       ],
       "Please open the document to view it.": [
         "Vui lòng mở tài liệu để xem."
-      ],
-      "Please open your browser extension settings and allow ${ PASS_APP_NAME } extension to access website data. Then, reload this page.": [
-        "Vui lòng mở cài đặt phần mở rộng trình duyệt và cho phép phần mở rộng ${ PASS_APP_NAME } truy cập dữ liệu trang web. Sau đó, tải lại trang này."
       ],
       "Please reconnect to continue.": [
         "Vui lòng kết nối lại để tiếp tục."
@@ -11376,20 +11205,8 @@
       "Settings updated": [
         "Cài đặt đã được cập nhật."
       ],
-      "Shared ${ vaultLink } deleted": [
-        "${ vaultLink } được chia sẻ đã xóa"
-      ],
-      "Shared ${ vaultLink } updated": [
-        "${ vaultLink } được chia sẻ đã cập nhật"
-      ],
       "Shared server country (${ countriesCount })": [
         "Quốc gia có máy chủ chung (${ countriesCount })"
-      ],
-      "Shared vault deleted": [
-        "Kho được chia sẻ đã xóa"
-      ],
-      "Shared vault updated": [
-        "Kho được chia sẻ đã cập nhật"
       ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Hiển thị hình ảnh của mỗi người gửi trong danh sách thư. Tên viết tắt của người gửi sẽ được hiển thị nếu không có ảnh."
@@ -11409,9 +11226,6 @@
       "Sign in only": [
         "Chỉ đăng nhập"
       ],
-      "Sign in or create an account to continue.": [
-        "Đăng nhập hoặc tạo tài khoản để tiếp tục."
-      ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Đăng nhập vào ${ MAIL_APP_NAME } để kích hoạt địa chỉ"
       ],
@@ -11420,9 +11234,6 @@
       ],
       "Signed up": [
         "Đã đăng ký"
-      ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Vì bạn là một người dùng trung thành, tài khoản có thêm các tính năng bổ sung được mở."
       ],
       "Smart Routed through a different country.": [
         "Được định tuyến thông minh qua một quốc gia khác."
@@ -11468,12 +11279,6 @@
       ],
       "Step ${ step }/${ totalSteps }": [
         "Bước ${ step }/${ totalSteps }"
-      ],
-      "Step 1 of 2": [
-        "Bước 1 trên 2"
-      ],
-      "Step 2 of 2": [
-        "Bước 2 trên 2"
       ],
       "Storage allocated to other users in this organisation": [
         "Dung lượng lưu trữ được phân bố cho các người dùng trong tổ chức này"
@@ -11922,9 +11727,6 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "ID duy nhất được tạo bởi nhà cung cấp danh tính, thường ở dạng URL có chứa tên nhà cung cấp danh tính bên trong (ví dụ: https://idp.example.com/XXXXX)."
       ],
-      "Unknown event type": [
-        "Loại sự kiện không xác định"
-      ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Trừ khi bạn đăng xuất tài khoản hoặc thay đổi mật khẩu, phiên sẽ tiếp tục hoạt động. Các phiên sẽ hết hạn sau 60 ngày không hoạt động."
       ],
@@ -12018,21 +11820,6 @@
       "Users": [
         "Người dùng"
       ],
-      "Vault created": [
-        "Đã tạo kho lưu trữ"
-      ],
-      "Vault deleted": [
-        "Đã xóa kho lưu trữ"
-      ],
-      "Vault either deleted or requires access permissions": [
-        "Kho lưu trữ đã xóa hoặc yêu cầu quyền truy cập"
-      ],
-      "Vault shared with email": [
-        "Kho được chia sẻ với email"
-      ],
-      "Vault updated": [
-        "Đã cập nhật kho lưu trữ"
-      ],
       "Verification code sent.": [
         "Mã xác minh đã gửi."
       ],
@@ -12050,9 +11837,6 @@
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Xác minh danh tính bằng mật khẩu một lần theo thời gian từ ứng dụng xác thực"
-      ],
-      "Verifying ${ PASS_APP_NAME } browser extension...": [
-        "Đang xác minh phần mở rộng trình duyệt ${ PASS_APP_NAME }..."
       ],
       "Verifying your payment": [
         "Đang xác minh thanh toán"
@@ -12188,9 +11972,6 @@
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Khi kích hoạt thông báo, một cảnh báo sẽ được gửi đến địa chỉ email khôi phục nếu có thư mới trong tài khoản ${ MAIL_APP_NAME }."
-      ],
-      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
-        "Khi hủy đăng ký trả phí hiện tại, số dư của đăng ký sẽ được hoàn lại dưới dạng tín dụng tài khoản và tài khoản sẽ bị hạ cấp xuống gói ${ BRAND_NAME } ${ PLANS.FREE }."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Khi hủy, đăng ký sẽ không được gia hạn, nhưng vẫn có thể tận hưởng các quyền lợi của gói cho đến cuối kỳ đăng ký. Sau đó, tài khoản sẽ bị hạ cấp xuống gói ${ BRAND_NAME } miễn phí."
@@ -12425,9 +12206,6 @@
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "Phải kích hoạt khóa riêng tư của tổ chức bằng mật khẩu khóa tổ chức dự phòng do quản trị viên tổ chức cung cấp cho bạn."
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Phải vô hiệu hóa hoặc xóa bất kỳ người dùng ${ MAIL_APP_NAME }, địa chỉ và miền tùy chỉnh trước khi có thể hạ cấp."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Phải có thẻ tín dụng hoặc tài khoản ngân hàng được liên kết với tài khoản PayPal để thêm làm phương thức thanh toán."
@@ -15276,9 +15054,6 @@
       "use a data recovery method": [
         "sử dụng phương thức khôi phục dữ liệu"
       ],
-      "Vault": [
-        "Kho lưu trữ"
-      ],
       "View guide": [
         "Xem hướng dẫn"
       ],
@@ -16207,9 +15982,6 @@
       ]
     },
     "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Hạ cấp xuống ${ downgradedPlanName }"
-      ],
       "Explore all ${ BRAND_NAME } plans": [
         "Khám phá tất cả các gói ${ BRAND_NAME }"
       ],
@@ -22003,9 +21775,6 @@
       "Upgrade your plan to increase your storage.": [
         "Nâng cấp gói để tăng dung lượng lưu trữ."
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Chúng tôi sẽ cộng tín dụng cho khoảng thời gian còn lại vào Tài khoản ${ BRAND_NAME }."
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "Vẫn còn **${ daysRemaining }** ngày nữa trong gói **${ currentPlanName }**."
       ],
@@ -22857,9 +22626,6 @@
       "You have successfully canceled your subscription.": [
         "Đã hủy đăng ký thành công."
       ],
-      "You have successfully unsubscribed": [
-        "Gỡ đăng ký thành công"
-      ],
       "You will receive your username via email within a minute if you entered a valid recovery email address.": [
         "Sẽ nhận được tên người dùng qua email trong vòng một phút nếu đã nhập địa chỉ email khôi phục hợp lệ."
       ],
@@ -23190,9 +22956,6 @@
       ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
-      ],
-      "${ PASS_APP_NAME } is missing permissions": [
-        "${ PASS_APP_NAME } thiếu quyền truy cập"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "Báo cáo giám sát ${ PASS_SHORT_APP_NAME }"
@@ -23551,12 +23314,6 @@
       "Confirm": [
         "Xác nhận"
       ],
-      "Confirm downgrade": [
-        "Xác nhận hạ cấp"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Xác nhận mất tiền thưởng ${ BRAND_NAME }"
-      ],
       "Connect ${ name }": [
         "Kết nối ${ name }"
       ],
@@ -23574,9 +23331,6 @@
       ],
       "Connect to video conferencing": [
         "Kết nối với hội nghị truyền hình"
-      ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Kết nối tài khoản ${ BRAND_NAME }"
       ],
       "Connect your custom domain": [
         "Kết nối miền tùy chỉnh"
@@ -23832,9 +23586,6 @@
       ],
       "Downgrade account": [
         "Hạ cấp tài khoản"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "Hạ cấp xuống ${ downgradedPlanName }?"
       ],
       "Download ${ app }": [
         "Tải xuống ${ app }"
@@ -24993,9 +24744,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Chào mừng đến với ${ BRAND_NAME } dành cho Doanh nghiệ"
-      ],
-      "Welcome to your new password manager!": [
-        "Chào mừng đến trình quản lý mật khẩu mới!"
       ],
       "What changes if you switch to the Free plan": [
         "Những thay đổi nếu chuyển sang Free plan"
@@ -26284,12 +26032,6 @@
       ],
       "By removing this phone number, you will no longer be able to recover your account.": [
         "Bằng cách xóa số điện thoại này, sẽ không còn có thể khôi phục tài khoản."
-      ],
-      "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
-        "Không thể đăng nhập. Vui lòng mở phần mở rộng trình duyệt ${ PASS_APP_NAME } và đăng nhập tại đó."
-      ],
-      "Could not sign up. Please open ${ PASS_APP_NAME } browser extension and sign up from there.": [
-        "Không thể đăng ký. Vui lòng mở phần mở rộng trình duyệt ${ PASS_APP_NAME } và đăng ký tại đó."
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Nếu hủy quá trình nhập này, bạn sẽ không thể tiếp tục nó. ${ BRAND_NAME } đã lưu mọi tiến trình trong tài khoản. Vẫn hủy?"

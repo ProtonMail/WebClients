@@ -348,9 +348,6 @@
       "Connect to video conferencing": [
         "Kumonekta sa video conferencing"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "I-konekta ang iyong ${ BRAND_NAME } Account"
-      ],
       "Connect your email": [
         "Kumonekta ng email"
       ],
@@ -429,14 +426,8 @@
       "Create": [
         "Gumawa"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Gumawa ng ${ BRAND_NAME } Account"
-      ],
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "Gumawa ng link na i-share sa sinuman sa labas ng ${ BRAND_NAME }"
-      ],
-      "Create an account": [
-        "Gumawa ng account"
       ],
       "Create calendar": [
         "Gumawa ng kalendaryo"
@@ -611,9 +602,6 @@
       ],
       "Done": [
         "Tapos na"
-      ],
-      "Downgrade": [
-        "I-downgrade"
       ],
       "Download": [
         "I-download"
@@ -1275,17 +1263,11 @@
       "Reload": [
         "I-reload"
       ],
-      "Reload page": [
-        "I-reload ang pahina"
-      ],
       "Remove": [
         "Alisin"
       ],
       "Remove all other devices": [
         "Alisin ang lahat ng ibang device"
-      ],
-      "Remove bonuses": [
-        "Alisin ang mga bonus"
       ],
       "Remove button": [
         "Alisin ang button"
@@ -2425,11 +2407,6 @@
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Pasensya na, hindi available ang alok na ito sa iyong kasalukuyang plano. Ngunit maaari kang makakuha ng ${ discountPercentage } na diskwento sa ${ plan.Title } kapag nag-subscribe ka sa loob ng ${ cycle } buwan.",
         "Pasensya na, hindi available ang alok na ito sa iyong kasalukuyang plano. Ngunit maaari kang makakuha ng ${ discountPercentage } na diskwento sa ${ plan.Title } kapag nag-subscribe ka sa loob ng ${ cycle } na buwan."
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "30-araw na money-back guarantee"
       ]
     },
     "bf2023: Title": {
@@ -7531,14 +7508,6 @@
         "Tingnan ang imbitasyon"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "Hindi nakilala ang pangkat ng pamilya. Subukang muli."
-      ],
-      "Organization not recognized. Try again.": [
-        "Hindi nakilala ang organisasyon. Subukang muli."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "Mga pangkat ng ${ BRAND_NAME }"
@@ -7716,22 +7685,8 @@
       ]
     },
     "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "Ilagay ang pangalan ng pangkat ng pamilya para kumpirmahin"
-      ],
-      "Enter organization name to confirm": [
-        "Ilagay ang pangalan ng organisasyon para kumpirmahin"
-      ],
       "Family name": [
         "Pangalan ng pamilya"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Permanente nitong ide-delete ang lahat ng sub-user, account at data na nauugnay sa iyong organisasyon."
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Aalisin nito ang lahat ng ${ BRAND_NAME } premium feature para sa bawat miyembro ng pamilya."
       ]
     },
     "familyOffer_2023:Settings section title": {
@@ -7759,12 +7714,6 @@
       ],
       "Change family name": [
         "Palitan ang pangalan ng pamilya"
-      ],
-      "Delete family group?": [
-        "I-delete ang pangkat ng pamilya?"
-      ],
-      "Delete organization?": [
-        "I-delete ang organisasyon?"
       ],
       "Edit user storage": [
         "I-edit ang storage ng user"
@@ -8992,12 +8941,6 @@
       ],
       "Paused": [
         "Naka-pause"
-      ],
-      "Undo finished": [
-        "Tapos na ang pag-undo"
-      ],
-      "Undo in progress": [
-        "Isinasagawa ang pag-undo"
       ]
     },
     "Import type": {
@@ -9283,18 +9226,6 @@
       "${ url } deleted.": [
         "Na-delete ang ${ url }."
       ],
-      "${ vaultLink } created": [
-        "Ginawa ang ${ vaultLink }"
-      ],
-      "${ vaultLink } deleted": [
-        "Na-delete ang ${ vaultLink }"
-      ],
-      "${ vaultLink } shared with email": [
-        "${ vaultLink } na nai-share sa email"
-      ],
-      "${ vaultLink } updated": [
-        "Na-update ang ${ vaultLink }"
-      ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
         "Itinatago ng ${ VPN_SHORT_APP_NAME } ang traffic. Itinatago ng ${ PASS_SHORT_APP_NAME } ang pagkakakilanlan\n— unlimited na **hide-my-email aliases** at **dark-web alerts** kung sakaling magkaroon ng leak ang data."
       ],
@@ -9381,20 +9312,10 @@
         "+ ${ invisibleCount } Higit pa",
         "+ ${ invisibleCount } Higit pa"
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } bonus na storage"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } koneksyon para sa ${ VPN_APP_NAME } (nagbibigay-daan sa iyong kumonekta ng higit pang device sa VPN)",
-        "+${ organization.BonusVPN } na koneksyon para sa ${ VPN_APP_NAME } (nagbibigay-daan sa iyong kumonekta ng higit pang device sa VPN)"
-      ],
       "2FA disabled": [
         "Hindi pinagana ang 2FA"
       ],
       "30-day money-back guarantee": [
-        "30-araw na money-back guarantee"
-      ],
-      "30-day money-back guarantee.": [
         "30-araw na money-back guarantee"
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
@@ -9788,9 +9709,6 @@
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "Sa pamamagitan ng pag-disable sa monitor ng account, iki-clear mo rin ang iyong buong kasaysayan. Sigurado ka bang gusto mong huwag paganahin ito?"
       ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Sa pag-downgrade sa Free plan, permanenteng mawawala ang mga benepisyong ito, kahit mag-upgrade ka ulit sa hinaharap."
-      ],
       "By leaving now, changes may not be saved": [
         "Sa pag-alis ngayon, maaaring hindi ma-save ang mga pagbabago"
       ],
@@ -10105,9 +10023,6 @@
       ],
       "Downgrade": [
         "I-downgrade"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Tatapusin ng pag-downgrade ang anumang koneksyon sa mga paid server ng ${ VPN_APP_NAME }."
       ],
       "Download ${ VPN_APP_NAME }": [
         "I-download ang ${ VPN_APP_NAME }"
@@ -10562,15 +10477,6 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Kung mawala mo ang iyong device na naka-enable ang two-factor, magagamit ang mga code na ito sa halip na ang 6-digit na two-factor authentication code upang mag-sign in sa iyong account. Ang bawat code ay magagamit lang nang isang beses."
       ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Kung itutuloy ang pag-downgrade, mawawalan ng access sa mga paid feature ng ${ MAIL_APP_NAME } at ${ VPN_APP_NAME }."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Kung itutuloy ang pag-downgrade, mawawalan ng access sa mga paid feature ng ${ MAIL_APP_NAME }, kasama ang karagdagang storage at mga filter."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Kung magpapatuloy ka sa pag-downgrade, mawawalan ka ng access sa mga paid feature ng ${ VPN_APP_NAME }."
-      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Kung bumili ka ng gift code o nakatanggap ka ng isa mula sa aming team ng suporta, maaari mo itong ilagay dito."
       ],
@@ -10684,23 +10590,8 @@
       "Invitation link used": [
         "Nagamit na ang link ng imbitasyon"
       ],
-      "Invite deleted": [
-        "Na-delete ang imbitasyon"
-      ],
       "Invite family members and get everything up and running.": [
         "Mag-imbita ng mga miyembro ng pamilya at ihanda ang lahat para gumana."
-      ],
-      "Invite for new user deleted": [
-        "Na-delete ang invite para sa bagong user"
-      ],
-      "Invite for organization accepted": [
-        "Tinanggap ang imbitasyon para sa organisasyon"
-      ],
-      "Invite for organization created": [
-        "Ginawa ang imbitasyon para sa organisasyon"
-      ],
-      "Invite rejected": [
-        "Tinanggihan ang imbitasyon"
       ],
       "Invite successfully sent": [
         "Matagumpay na naipadala ang invite",
@@ -10720,54 +10611,6 @@
       ],
       "It's better to have:": [
         "Mas mainam kung mayroong:"
-      ],
-      "Item autofilled in ${ vaultLink }": [
-        "Item na in-autofill sa ${ vaultLink }"
-      ],
-      "Item autofilled in vault": [
-        "Na-autofill ang item sa vault"
-      ],
-      "Item created in ${ vaultLink }": [
-        "Item na ginawa sa ${ vaultLink }"
-      ],
-      "Item created in vault": [
-        "Ginawa ang item sa vault"
-      ],
-      "Item deleted from ${ vaultLink }": [
-        "Item na na-delete mula sa ${ vaultLink }"
-      ],
-      "Item deleted from vault": [
-        "Item na na-delete mula sa vault"
-      ],
-      "Item flags changed in ${ vaultLink }": [
-        "Mga flag ng item na binago sa ${ vaultLink }"
-      ],
-      "Item flags changed in vault": [
-        "Binago ang mga flag ng item sa vault"
-      ],
-      "Item in ${ vaultLink } trashed": [
-        "Item sa ${ vaultLink } na inilagay sa Basura"
-      ],
-      "Item in ${ vaultLink } untrashed": [
-        "Item sa ${ vaultLink } na inalis sa Basura"
-      ],
-      "Item in vault trashed": [
-        "Item sa vault na inilagay sa Basura"
-      ],
-      "Item in vault untrashed": [
-        "Inalis sa trash ang item sa vault"
-      ],
-      "Item read in ${ vaultLink }": [
-        "Item na binasa sa ${ vaultLink }"
-      ],
-      "Item read in vault": [
-        "Binasa ang item sa vault"
-      ],
-      "Item updated in ${ vaultLink }": [
-        "Item na na-update sa ${ vaultLink }"
-      ],
-      "Item updated in vault": [
-        "Na-update ang item sa vault"
       ],
       "It’s often the easiest way to recover your account if you’re signed in.": [
         "Madalas ito ang pinakamadaling paraan upang i-recover ang iyong account kung naka-sign in ka."
@@ -10964,9 +10807,6 @@
       "New group created via your identity provider and pending review.": [
         "Bagong pangkat na ginawa sa pamamagitan ng iyong identity provider at nakabinbin ang pagsusuri."
       ],
-      "New user invited to organization": [
-        "Bagong user na inimbitahan sa organisasyon"
-      ],
       "New VPN connection data will stop being collected and shown.": [
         "Hihinto sa pagkolekta at pagpapakita ng bagong data ng koneksyon sa VPN."
       ],
@@ -11131,15 +10971,6 @@
       "Paid for a plan": [
         "Nagbayad para sa isang plano"
       ],
-      "Pass Monitor - custom email confirmed": [
-        "Pass Monitor - kinumpirma ang custom email"
-      ],
-      "Pass Monitor - custom email created": [
-        "Pass Monitor - ginawa ang custom email"
-      ],
-      "Pass Monitor - custom email deleted": [
-        "Pass Monitor - na-delete ang custom email"
-      ],
       "Pass usage logs": [
         "Mga log ng paggamit ng Pass"
       ],
@@ -11219,9 +11050,6 @@
       ],
       "Please open the document to view it.": [
         "Pakibuksan ang dokumento upang tingnan ito."
-      ],
-      "Please open your browser extension settings and allow ${ PASS_APP_NAME } extension to access website data. Then, reload this page.": [
-        "Pakibuksan ang mga setting ng extension ng iyong browser at payagan ang extension ng ${ PASS_APP_NAME } na i-access ang data ng website. Pagkatapos, i-reload ang pahinang ito."
       ],
       "Please reconnect to continue.": [
         "Pakikumonekta muli upang magpatuloy."
@@ -11496,21 +11324,9 @@
       "Settings updated": [
         "Na-update ang mga setting"
       ],
-      "Shared ${ vaultLink } deleted": [
-        "Na-delete ang nai-share na ${ vaultLink }"
-      ],
-      "Shared ${ vaultLink } updated": [
-        "Na-update ang nai-share na ${ vaultLink }"
-      ],
       "Shared server country (${ countriesCount })": [
         "Bansa ng shared server (${ countriesCount })",
         "Mga bansa ng shared server (${ countriesCount })"
-      ],
-      "Shared vault deleted": [
-        "Na-delete ang na-share na vault"
-      ],
-      "Shared vault updated": [
-        "Na-update ang na-share na vault"
       ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Ipakita ang imahe ng bawat nagpadala sa listahan ng mensahe. Ipakikita ang mga inisyal ng nagpadala kung walang available na larawan."
@@ -11530,9 +11346,6 @@
       "Sign in only": [
         "Sign in lang"
       ],
-      "Sign in or create an account to continue.": [
-        "Mag-sign in o gumawa ng account upang magpatuloy."
-      ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Mag-sign in sa ${ MAIL_APP_NAME } upang i-activate ang iyong address"
       ],
@@ -11541,9 +11354,6 @@
       ],
       "Signed up": [
         "Nag-sign up"
-      ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Dahil isa kang tapat na user, may mga pinaganang karagdagang feature ang account."
       ],
       "Smart Routed through a different country.": [
         "Smart Routed sa pamamagitan ng ibang bansa."
@@ -11590,12 +11400,6 @@
       ],
       "Step ${ step }/${ totalSteps }": [
         "Hakbang ${ step }/${ totalSteps }"
-      ],
-      "Step 1 of 2": [
-        "Hakbang 1 ng 2"
-      ],
-      "Step 2 of 2": [
-        "Hakbang 2 ng 2"
       ],
       "Storage allocated to other users in this organisation": [
         "Storage na inilaan sa ibang mga user sa organisasyong ito"
@@ -12048,9 +11852,6 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Natatanging ID na na-generate ng provider ng pagkakakilanlan, karaniwang nasa anyo ng URL na naglalaman ng pangalan ng provider ng pagkakakilanlan (hal. https://idp.example.com/XXXXX)."
       ],
-      "Unknown event type": [
-        "Hindi kilalang uri ng kaganapan"
-      ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Maliban kung mag-sign out ka sa account o palitan ang password, mananatiling aktibo ang session. Mag-e-expire ang mga session pagkalipas ng 60 araw na walang aktibidad."
       ],
@@ -12144,21 +11945,6 @@
       "Users": [
         "Mga user"
       ],
-      "Vault created": [
-        "Ginawa ang vault"
-      ],
-      "Vault deleted": [
-        "Na-delete ang vault"
-      ],
-      "Vault either deleted or requires access permissions": [
-        "Na-delete ang vault o nangangailangan ng mga pahintulot sa access"
-      ],
-      "Vault shared with email": [
-        "Na-share ang vault sa email"
-      ],
-      "Vault updated": [
-        "Na-update ang vault"
-      ],
       "Verification code sent.": [
         "Naipadala na ang verification code."
       ],
@@ -12176,9 +11962,6 @@
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "I-verify ang pagkakakilanlan gamit ang time-based one-time password mula sa isang authenticator app"
-      ],
-      "Verifying ${ PASS_APP_NAME } browser extension...": [
-        "Bini-verify ang extension ng browser ng ${ PASS_APP_NAME }..."
       ],
       "Verifying your payment": [
         "Vini-verify ang iyong pagbabayad"
@@ -12314,9 +12097,6 @@
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Kapag pinagana ang mga abiso, magpapadala ng alerto sa recovery email address kung may mga bagong mensahe sa ${ MAIL_APP_NAME } account."
-      ],
-      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
-        "Kapag kinansela mo ang kasalukuyang bayad na subscription, ang balanse ng subscription ay ibabalik bilang mga account credit at ikaw ay i-da-downgrade sa ${ BRAND_NAME } ${ PLANS.FREE } na plano."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Kapag nagkansela ka, hindi mare-renew ang subscription, ngunit matatamasa mo pa rin ang mga benepisyo ng plano hanggang sa katapusan ng panahon ng subscription. Pagkatapos niyan, i-da-downgrade ka sa ${ BRAND_NAME } Free plan."
@@ -12560,9 +12340,6 @@
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "Dapat mong i-activate ang pribadong key ng organisasyon gamit ang password ng backup na key ng organisasyon na ibinigay sa iyo ng administrator ng iyong organisasyon."
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Dapat mong huwag paganahin o alisin ang anumang karagdagang user, address, at custom na domain ng ${ MAIL_APP_NAME } bago makapag-downgrade."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Dapat ay may naka-link na credit card o bank account sa PayPal account upang maidagdag ito bilang paraan ng pagbabayad."
@@ -15424,9 +15201,6 @@
       "use a data recovery method": [
         "gumamit ng paraan ng pag-recover ng data"
       ],
-      "Vault": [
-        "Vault"
-      ],
       "View guide": [
         "Tingnan ang gabay"
       ],
@@ -16373,9 +16147,6 @@
       ]
     },
     "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "I-downgrade sa ${ downgradedPlanName }"
-      ],
       "Explore all ${ BRAND_NAME } plans": [
         "I-explore ang lahat ng plano ng ${ BRAND_NAME }"
       ],
@@ -22270,9 +22041,6 @@
       "Upgrade your plan to increase your storage.": [
         "I-upgrade ang plano upang madagdagan ang storage."
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Idaragdag ang mga credit para sa natitirang panahon sa iyong ${ BRAND_NAME } Account."
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "Mayroon ka pang natitirang **${ daysRemaining }** araw sa iyong planong **${ currentPlanName }**.",
         "Mayroon ka pang natitirang **${ daysRemaining }** na araw sa iyong planong **${ currentPlanName }**."
@@ -23147,9 +22915,6 @@
       "You have successfully canceled your subscription.": [
         "Matagumpay na nakansela ang subscription."
       ],
-      "You have successfully unsubscribed": [
-        "Matagumpay kang nag-unsubscribe"
-      ],
       "You will receive your username via email within a minute if you entered a valid recovery email address.": [
         "Matatanggap mo ang iyong username sa pamamagitan ng email sa loob ng isang minuto kung naglagay ka ng valid na recovery email address."
       ],
@@ -23492,9 +23257,6 @@
       ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
-      ],
-      "${ PASS_APP_NAME } is missing permissions": [
-        "Kulang sa mga pahintulot ang ${ PASS_APP_NAME }"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "${ PASS_SHORT_APP_NAME } Monitor Report"
@@ -23854,12 +23616,6 @@
       "Confirm": [
         "Kumpirmahin"
       ],
-      "Confirm downgrade": [
-        "Kumpirmahin ang pag-downgrade"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Kumpirmahin ang pagkawala ng mga bonus sa ${ BRAND_NAME }"
-      ],
       "Connect ${ name }": [
         "Ikonekta ang ${ name }"
       ],
@@ -23877,9 +23633,6 @@
       ],
       "Connect to video conferencing": [
         "Kumonekta sa video conferencing"
-      ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "I-konekta ang iyong ${ BRAND_NAME } Account"
       ],
       "Connect your custom domain": [
         "Ikonekta ang custom na domain"
@@ -24137,9 +23890,6 @@
       ],
       "Downgrade account": [
         "I-downgrade ang account"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "I-downgrade sa ${ downgradedPlanName }?"
       ],
       "Download ${ app }": [
         "I-download ang ${ app }"
@@ -25301,9 +25051,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Maligayang pagdating sa ${ BRAND_NAME } for Business"
-      ],
-      "Welcome to your new password manager!": [
-        "Maligayang pagdating sa iyong bagong tagapamahala ng password!"
       ],
       "What changes if you switch to the Free plan": [
         "Anong mga pagbabago kung lilipat ka sa Free plan"
@@ -26609,12 +26356,6 @@
       ],
       "By removing this phone number, you will no longer be able to recover your account.": [
         "Sa pag-alis ng phone number na ito, hindi mo na mai-recover ang account."
-      ],
-      "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
-        "Hindi makapag-login. Pakibuksan ang extension ng browser ng ${ PASS_APP_NAME } at mag-login mula roon."
-      ],
-      "Could not sign up. Please open ${ PASS_APP_NAME } browser extension and sign up from there.": [
-        "Hindi makapag-sign up. Pakibuksan ang extension ng browser ng ${ PASS_APP_NAME } at mag-sign up mula roon."
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Kung kakanselahin mo ang pag-import na ito, hindi mo na ito maipagpapatuloy. Na-save ng ${ BRAND_NAME } ang lahat ng progreso sa account. Kanselahin pa rin?"

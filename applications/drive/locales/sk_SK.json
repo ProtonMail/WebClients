@@ -396,9 +396,6 @@
       "Done": [
         "Hotovo"
       ],
-      "Downgrade": [
-        "Znížiť"
-      ],
       "Download": [
         "Stiahnuť"
       ],
@@ -611,6 +608,9 @@
       ],
       "Import now": [
         "Importovať teraz"
+      ],
+      "Import paused": [
+        "Import pozastavený"
       ],
       "Importing from Google": [
         "Import z Google"
@@ -854,9 +854,6 @@
       ],
       "Remove access": [
         "Odstrániť prístup"
-      ],
-      "Remove bonuses": [
-        "Odstrániť bonusy"
       ],
       "Remove button": [
         "Odstrániť tlačidlo"
@@ -1127,6 +1124,9 @@
       ],
       "Submit report": [
         "Odoslať hlásenie"
+      ],
+      "Subscribe": [
+        "Predplatiť"
       ],
       "Subscribe now": [
         "Predplaťte si teraz"
@@ -1541,8 +1541,8 @@
       ]
     },
     "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "30-dňová záruka vrátenia peňazí"
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30-dňová záruka vrátenia peňazí: ak chcete zrušiť objednávku do 30 dní od nákupu, kontaktujte našu zákaznícku podporu ${ customerSupportLink } a požiadajte o vrátenie peňazí."
       ]
     },
     "BF2024: Deal details": {
@@ -4203,6 +4203,9 @@
       "You must set a name": [
         "Musíte nastaviť meno"
       ],
+      "You reached the maximum number of connected addresses": [
+        "Dosiahli ste maximálny počet pripojených adries"
+      ],
       "Your import will not be processed.": [
         "Váš import nebude spracovaný."
       ],
@@ -4470,14 +4473,6 @@
         "Zmeniť plán"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "Rodinná skupina nebola rozpoznaná. Skúste to znova."
-      ],
-      "Organization not recognized. Try again.": [
-        "Organizácia nebola rozpoznaná. Skúste to znova."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } skupiny"
@@ -4547,30 +4542,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Váš účet využíva ${ usedSpace } úložiska, čo presahuje pridelený priestor ${ inviteSpace }. Odstráňte niektoré údaje alebo požiadajte správcu plánu o navýšenie úložiska."
-      ]
-    },
-    "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "Zadajte názov rodinnej skupiny na potvrdenie"
-      ],
-      "Enter organization name to confirm": [
-        "Zadajte názov organizácie na potvrdenie"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Týmto natrvalo odstránite všetkých podriadených používateľov, účty a údaje spojené s vašou organizáciou."
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Týmto odstránite pre každého člena rodiny všetky prémiové funkcie ${ BRAND_NAME }."
-      ]
-    },
-    "familyOffer_2023:Title": {
-      "Delete family group?": [
-        "Odstrániť rodinnú skupinu?"
-      ],
-      "Delete organization?": [
-        "Odstrániť organizáciu"
       ]
     },
     "Feature": {
@@ -5442,23 +5413,14 @@
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "Za každého priateľa, ktorý sa prihlási k odberu, získate kredit v hodnote **${ referrerRewardAmount }**."
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } bonusového miesta na disku"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } pripojenie pre ${ VPN_APP_NAME } (umožňuje pripojiť k VPN viac zariadení)",
-        "+${ organization.BonusVPN } pripojenia pre ${ VPN_APP_NAME } (umožňuje pripojiť k VPN viac zariadení)",
-        "+${ organization.BonusVPN } pripojení pre ${ VPN_APP_NAME } (umožňuje pripojiť k VPN viac zariadení)",
-        "+${ organization.BonusVPN } pripojení pre ${ VPN_APP_NAME } (umožňuje pripojiť k VPN viac zariadení)"
-      ],
       "1 device per user": [
         "1 zariadenie na používateľa"
       ],
       "1 vault per user": [
         "1 trezor na používateľa"
       ],
-      "30-day money-back guarantee.": [
-        "30-dňová záruka vrátenia peňazí."
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30-dňová záruka vrátenia peňazí: ak chcete zrušiť objednávku do 30 dní od nákupu, kontaktujte našu zákaznícku podporu ${ customerSupportLink } a požiadajte o vrátenie peňazí."
       ],
       "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
         "K dispozícii je nová verzia aplikácie ${ DRIVE_APP_NAME }. Pre pokračovanie vo vyhľadávaní obnovte stránku, prosím."
@@ -5630,9 +5592,6 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Posilnite identitu značky vašej organizácie a vytvorte konzistentnejší online zážitok pre vašich používateľov."
-      ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Ak prejdete na bezplatnú verziu, natrvalo stratíte súčasné výhody a to i v budúcnosti, ak opäť upgradujte svoj účet na platenú verziu."
       ],
       "Calendar side panel": [
         "Bočný panel kalendára"
@@ -5816,9 +5775,6 @@
       ],
       "Downgrade": [
         "Znížiť"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Prechod na nižšiu verziu ukončí všetky pripojenia k plateným serverom ${ VPN_APP_NAME }."
       ],
       "Download ${ name } app": [
         "Stiahnuť aplikáciu ${ name }"
@@ -6018,17 +5974,11 @@
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "Ak ste stratili prístup k aplikácii na overovanie, môžete použiť jeden zo 16 záložných obnovovacích kódov, ktoré ste dostali pri nastavovaní dvojfaktorovej autentifikácie. ${ learnMoreLink }"
       ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Ak znížite predplatné, stratíte prístup k plateným funkciám ${ MAIL_APP_NAME } a ${ VPN_APP_NAME }."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Ak znížite predplatné, stratíte prístup k ${ MAIL_APP_NAME } plateným funkciám vrátane ďalšieho úložiska a filtrov."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Ak prejdete na nižšie predplatné, stratíte prístup k plateným funkciám ${ VPN_APP_NAME } ."
-      ],
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
         "Ak odstránite seba, stratíte prístup k súboru \"${ fileName }\" a nebudete ho môcť znova otvoriť, pokiaľ vám ho vlastník znovu nesprístupní."
+      ],
+      "If you've already upgraded, you can resume your import in ${ easySwitchSettingsLink }. You can also cancel it there.": [
+        "Ak ste už navýšenie vykonali, môžete import obnoviť v ${ easySwitchSettingsLink }. Tam ho môžete aj zrušiť."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importovať ${ calendarCount } z ${ totalCalendarsCount } kalendára",
@@ -6714,9 +6664,6 @@
       "Signature check will be ignored": [
         "Kontrola podpisu sa nebude brať do úvahy"
       ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Vzhľadom k tomu, že ste verný používateľ, má váš účet povolené ďalšie funkcie."
-      ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Niektoré vlády blokujú alebo obmedzujú prístup na určité webové stránky. VPN pomáha obísť cenzúru a zároveň zachováva súkromie vašich aktivít a identity."
       ],
@@ -6999,6 +6946,9 @@
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Bohužiaľ, zdá sa, že súbor alebo niektoré jeho údaje nemôžu byť dešifrované."
       ],
+      "UnionPay logo": [
+        "Logo UnionPay"
+      ],
       "Unknown date": [
         "Neznámy dátum"
       ],
@@ -7133,6 +7083,9 @@
       ],
       "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
         "Akonáhle sa import dokončí, pošleme vám email. Vaše súbory sa zobrazia v priečinku v ${ DRIVE_APP_NAME }."
+      ],
+      "We'll get back to you shortly.": [
+        "O chvíľu sa vám ozveme."
       ],
       "We'll notify you when the import is done.": [
         "Po dokončení importu Vás budeme informovať."
@@ -7287,9 +7240,6 @@
       "You may be redirected to your bank’s website.": [
         "Môžete byť presmerovaní na webovú stránku vašej banky."
       ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Pred znížením predplatného musíte zakázať alebo odstrániť všetkých ďalších ${ MAIL_APP_NAME } používateľov, adresy a vlastné domény."
-      ],
       "You need access": [
         "Potrebujete prístup"
       ],
@@ -7383,6 +7333,9 @@
       "Your files will be encrypted and then saved.": [
         "Vaše súbory budú zašifrované a následne uložené."
       ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "Vaša bezplatná skúšobná verzia vypršala. Predplaťte si službu hneď teraz, aby mal váš tím nepretržitý prístup a aby boli účty v bezpečí."
+      ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
         "Vaša bezplatná skúšobná verzia bola úspešne konvertovaná na ${ cycle }-mesačné predplatné. Váš dátum obnovenia je ${ nextBillingDate }."
       ],
@@ -7391,6 +7344,9 @@
       ],
       "Your Google Drive may be empty or contain only files that are not supported.": [
         "Váš Google Drive môže byť prázdny alebo môže obsahovať iba súbory, ktoré nie sú podporované."
+      ],
+      "Your import is blocked. Upgrade now to bring the rest of your files over.": [
+        "Váš import je blokovaný. Zvýšte úroveň plánu hneď teraz, aby ste mohli preniesť aj zvyšné súbory."
       ],
       "Your information was found on ${ displayedDate }": [
         "Vaše informácie boli nájdené dňa ${ displayedDate }"
@@ -7610,6 +7566,12 @@
       "Allow editors to change permissions and share.": [
         "Povoliť editorom zmeniť oprávnenia a zdieľať."
       ],
+      "Amount": [
+        "Čiastka"
+      ],
+      "Amount due": [
+        "Čiastka k zaplateniu"
+      ],
       "Anderson": [
         "Anderson"
       ],
@@ -7759,6 +7721,9 @@
       ],
       "Credits": [
         "Kredity"
+      ],
+      "Credits used": [
+        "Použité kredity"
       ],
       "Delete": [
         "Odstrániť"
@@ -8072,6 +8037,9 @@
       "Please provide full details to help us take appropriate action": [
         "Prosím, uveďte všetky detaily, ktoré nám pomôžu prijať príslušné opatrenia"
       ],
+      "Please share any feedback to help us improve.": [
+        "Prosím zdieľajte akúkoľvek spätnú väzbu, aby ste nám pomohli zlepšiť sa."
+      ],
       "Port": [
         "Port"
       ],
@@ -8258,6 +8226,9 @@
       "What happened?": [
         "Čo sa stalo?"
       ],
+      "Why would you like to cancel?": [
+        "Prečo chcete zrušiť?"
+      ],
       "Yes, I want to permanently delete my old files": [
         "Áno, chcem natrvalo zmazať moje staré súbory"
       ],
@@ -8350,6 +8321,9 @@
       ],
       "clearing your browser cache": [
         "vymazanie medzipamäte prehliadača"
+      ],
+      "Customer Support": [
+        "Zákaznícka podpora"
       ],
       "Enforcing 2FA for organizations": [
         "Vynútenie 2FA pre organizácie"
@@ -8912,38 +8886,20 @@
         "Stredná VPN rýchlosť"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Zmazať účet"
-      ],
-      "Downgrade account": [
-        "Znížiť účet"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Získať ${ BRAND_NAME } zadarmo"
-      ],
-      "Get ${ planName }": [
-        "Získať ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Ponechať ${ plan }"
-      ],
-      "Keep account": [
-        "Ponechať účet"
-      ],
-      "Switch plan": [
-        "Zmeniť plán"
-      ]
-    },
     "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Prejsť na nižší plán ${ downgradedPlanName }"
-      ],
       "Plans starting from ${ priceDrivePlus }": [
         "Predplatné začína od ${ priceDrivePlus }"
       ],
       "Upgrade": [
         "Upgradovať"
+      ]
+    },
+    "new_plans: action": {
+      "Get ${ BRAND_NAME } for free": [
+        "Získať ${ BRAND_NAME } zadarmo"
+      ],
+      "Get ${ planName }": [
+        "Získať ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -9528,18 +9484,6 @@
       "For next-level password management and identity protection.": [
         "Pre správu hesiel a ochranu identity ďalšej úrovne."
       ],
-      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
-        "Ak svoj účet odstránite, stratíte všetky výhody plánu ${ visionary } a tie už nebudú k dispozícii po opätovnom vytvorení nového účtu."
-      ],
-      "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
-        "Ak prejdete na nižšiu verziu svojho účtu, stratíte všetky výhody plánu ${ visionary } a ak sa znova pokúsite o predplatné, nebude už k dispozícii."
-      ],
-      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
-        "Ak prejdete na iný plán, stratíte všetky výhody plánu ${ visionary } a na ${ visionary } sa už nebudete môcť vrátiť späť."
-      ],
-      "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
-        "Náš ${ visionary } plán už nie je k dispozícii pre nových predplatiteľov, pretože ide o špeciálny plán pre pôvodných používateľov ${ BRAND_NAME } so špeciálnymi funkciami a výhodami."
-      ],
       "Pay once, secure your passwords and identity forever.": [
         "Zaplaťte raz a zabezpečte navždy svoje heslá a identity."
       ],
@@ -9569,12 +9513,6 @@
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
         "Neobmedzené súkromie a viac úložného priestoru až pre 2 používateľov."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
-        "Využívate propagačnú cenu vášho aktuálneho plánu. Ak svoj účet odstránite, prídete o propagačnú cenu a tá už nebude k dispozícii po opätovnom vytvorení nového účtu."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
-        "Využívate propagačnú cenu vášho aktuálneho plánu. Ak prejdete na nižšiu verziu účtu, prídete o propagačnú cenu a ak sa znova pokúsite o predplatné, nebude už k dispozícii."
       ]
     },
     "new_plans: label": {
@@ -9594,20 +9532,11 @@
       ]
     },
     "new_plans: title": {
-      "Delete account?": [
-        "Vymazať účet?"
-      ],
-      "Downgrade account?": [
-        "Prejsť na nižšiu verziu účtu?"
-      ],
       "Review subscription": [
         "Preskúmať predplatné"
       ],
       "Review subscription and pay": [
         "Skontrolujte predplatné a zaplaťte"
-      ],
-      "Switch plans?": [
-        "Zmeniť plán?"
       ]
     },
     "new_plans: tooltip": {
@@ -10766,6 +10695,9 @@
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Spôsob platby potrebný na aktiváciu predplatného po skončení skúšobnej doby."
       ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Zmena tarifného plánu nie je možná z nasledujúcich dôvodov:"
+      ],
       "Please close extra wallet accounts before changing your plan.": [
         "Pred zmenou tarifného plánu prosím zrušte všetky nadbytočné účty v peňaženke."
       ],
@@ -10774,6 +10706,9 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Najskôr si znovu aktivujte predplatné, aby ste znížili počet doplnkov."
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Počet miest Proton Meet sa musí zhodovať s počtom členov."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Ceny za obnovenie sa môžu zmeniť podľa ${ termsAndConditionsLink }."
@@ -10859,8 +10794,14 @@
       "This payment method will become your new default for all future renewals.": [
         "Tento spôsob platby sa stane vašim novým predvoleným spôsobom platby pre všetky budúce obnovenia."
       ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Tento plán nepodporuje spravované funkcie vo vašom účte."
+      ],
       "This plan doesn’t support the members on your account.": [
         "Tento plán nepodporuje členov vo vašom účte."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Toto predplatné momentálne nie je možné dokončiť. Skúste to neskôr, prosím."
       ],
       "Timeout exceeded": [
         "Prekročený časový limit"
@@ -10952,8 +10893,8 @@
       ]
     },
     "Payments.iDEAL": {
-      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
-        "Potvrdením oprávňujete spoločnosť ${ BRAND_NAME } a Stripe, nášho poskytovateľa platobných služieb, aby z tohto bankového účtu prostredníctvom priameho inkasa SEPA inkasovali budúce platby za vaše predplatné, a vašu banku, aby tieto platby strhla. Vaša prvá platba je realizovaná teraz spoločnosťou ${ IDEAL_WERO_BRAND_NAME }. Váš balík sa automaticky obnovuje, kým ho nezrušíte; pred každým inkasom vás budeme informovať. V prípade inkás prostredníctvom priameho inkasa môžete požiadať svoju banku o vrátenie platby do 8 týždňov od dátumu inkasa v súlade s podmienkami vašej zmluvy s bankou. Toto sa nevzťahuje na platbu spoločnosti ${ IDEAL_WERO_BRAND_NAME }, ktorú práve uskutočňujete."
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Potvrdením oprávňujete spoločnosť ${ BRAND_NAME } a Stripe, nášho poskytovateľa platobných služieb, aby z tohto bankového účtu prostredníctvom priameho inkasa SEPA inkasovali budúce platby za vaše predplatné, a vašu banku, aby tieto platby strhla. Vaša prvá platba sa uskutoční teraz prostredníctvom spoločnosti ${ IDEAL_WERO_BRAND_NAME }. Váš balík sa automaticky obnovuje, kým ho nezrušíte; pred každým inkasom vás budeme informovať. V prípade inkás prostredníctvom priameho inkasa môžete požiadať svoju banku o vrátenie platby do 8 týždňov od dátumu inkasa v súlade s podmienkami vašej zmluvy s bankou. Toto sa nevzťahuje na platbu spoločnosti ${ IDEAL_WERO_BRAND_NAME }, ktorú práve uskutočňujete."
       ]
     },
     "Payments.info": {
@@ -11179,6 +11120,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Opíšte prosím problém a uveďte akékoľvek chybové správy"
+      ],
+      "Please select the main reason": [
+        "Prosím vyberte hlavný dôvod"
       ],
       "Postal code": [
         "PSČ"
@@ -12031,9 +11975,6 @@
       "upgrade for more storage": [
         "upgrajdujte pre väčšie úložisko"
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Kredity za zostávajúci čas pridáme do vášho ${ BRAND_NAME } účtu."
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "Stále vám zostáva **${ daysRemaining }** deň vo vašom pláne **${ currentPlanName }**.",
         "Stále vám zostávajú **${ daysRemaining }** dni vo vašom pláne **${ currentPlanName }**.",
@@ -12599,6 +12540,9 @@
       "Invitation rejected": [
         "Pozvánka odmietnutá"
       ],
+      "Invoice paid": [
+        "Faktúra uhradená"
+      ],
       "Payment method added": [
         "Spôsob platby bol pridaný"
       ],
@@ -12631,9 +12575,6 @@
       ],
       "You have successfully canceled your subscription.": [
         "Úspešne ste zrušili svoje predplatné."
-      ],
-      "You have successfully unsubscribed": [
-        "Predplatné bolo úspešne zrušené"
       ]
     },
     "Suffix": {
@@ -12908,6 +12849,9 @@
       "Birthday": [
         "Narodeniny"
       ],
+      "Black Friday": [
+        "Black Friday"
+      ],
       "Bring your Google Drive files to ${ DRIVE_APP_NAME }": [
         "Preneste si súbory z Google Drive do ${ DRIVE_APP_NAME }"
       ],
@@ -12962,12 +12906,6 @@
       "Configure migration": [
         "Nastaviť migráciu"
       ],
-      "Confirm downgrade": [
-        "Potvrďte zníženie"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Potvrďte stratu bonusov ${ BRAND_NAME }"
-      ],
       "Confirmation required": [
         "Vyžadované potvrdenie"
       ],
@@ -12985,6 +12923,9 @@
       ],
       "Contact group": [
         "Skupina kontaktov"
+      ],
+      "Contact us": [
+        "Kontaktujte nás"
       ],
       "Contacts": [
         "Kontakty"
@@ -13123,9 +13064,6 @@
       ],
       "Downgrade account": [
         "Znížiť úroveň účtu"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "Prejsť na nižší plán ${ downgradedPlanName }?"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Stiahnuť aplikácie ${ DRIVE_APP_NAME }"
@@ -13367,6 +13305,9 @@
       "Modified": [
         "Upravené"
       ],
+      "More storage needed to finish your import": [
+        "Na dokončenie importu je potrebný väčší úložný priestor"
+      ],
       "My files": [
         "Moje súbory"
       ],
@@ -13466,6 +13407,9 @@
       "Out of storage space": [
         "Nedostatok ukladacieho priestoru"
       ],
+      "Pay invoice": [
+        "Zaplatiť faktúru"
+      ],
       "Payment failed": [
         "Platba zlyhala"
       ],
@@ -13549,6 +13493,9 @@
       ],
       "Request new code": [
         "Vyžiadať nový kód"
+      ],
+      "Request sent": [
+        "Požiadavka odoslaná"
       ],
       "Restore your files": [
         "Obnovte svoje súbory"
@@ -13666,6 +13613,9 @@
       ],
       "Stop transfers?": [
         "Zastaviť prenosy?"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "Odoberať ${ planTitle }"
       ],
       "Subscription canceled": [
         "Predplatné bolo zrušené"
@@ -14131,6 +14081,20 @@
       ],
       "Replay video": [
         "Prehrať video"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Našiel som inú službu, ktorá sa mi páči viac"
+      ],
+      "It’s missing a key feature": [
+        "Nemá kľúčovú funkciu"
+      ],
+      "It’s too expensive": [
+        "Je to príliš drahé"
+      ],
+      "Other": [
+        "Iné"
       ]
     },
     "VPN Plan Feature": {

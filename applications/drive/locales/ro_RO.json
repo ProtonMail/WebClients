@@ -391,9 +391,6 @@
       "Done": [
         "Gata"
       ],
-      "Downgrade": [
-        "Retrogradare"
-      ],
       "Download": [
         "Descărcare"
       ],
@@ -853,9 +850,6 @@
       "Remove access": [
         "Eliminare acces"
       ],
-      "Remove bonuses": [
-        "Anulare bonusuri"
-      ],
       "Remove button": [
         "Buton eliminare"
       ],
@@ -1125,6 +1119,9 @@
       ],
       "Submit report": [
         "Trimitere raport"
+      ],
+      "Subscribe": [
+        "Abonare"
       ],
       "Subscribe now": [
         "Abonați-vă acum"
@@ -1523,11 +1520,6 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Manager de parole premium"
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "Garanție de returnare a banilor de 30 de zile"
       ]
     },
     "BF2024: Deal details": {
@@ -4540,14 +4532,6 @@
         "Schimbare plan"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "Grup de familie nerecunoscut. Mai încercați."
-      ],
-      "Organization not recognized. Try again.": [
-        "Organizația nu e recunoscută. Mai încercați."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "Grupuri ${ BRAND_NAME }"
@@ -4616,30 +4600,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Contul utilizează ${ usedSpace } de stocare, care depășește cei ${ inviteSpace } care vi s-au alocat. Ștergeți unele date sau cereți administratorului planului să vă crească limita de stocare."
-      ]
-    },
-    "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "Introduceți numele grupului de familie pentru confirmare"
-      ],
-      "Enter organization name to confirm": [
-        "Introduceți numele organizației pentru confirmare"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Aceasta va șterge definitiv toți subutilizatorii, conturile și datele asociate cu organizația personală."
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Aceasta va elimina toate funcțiile ${ BRAND_NAME } premium pentru fiecare membru al familiei."
-      ]
-    },
-    "familyOffer_2023:Title": {
-      "Delete family group?": [
-        "Ștergeți grupul de familie?"
-      ],
-      "Delete organization?": [
-        "Ștergeți organizația?"
       ]
     },
     "Feature": {
@@ -5470,22 +5430,11 @@
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Primiți ${ referrerRewardAmount }** în credite pentru fiecare persoană care se abonează."
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+ ${ bonusSpace } spațiu bonus"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+o conexiune pentru ${ VPN_APP_NAME } (vă permite să conectați mai multe dispozitive la VPN)",
-        "+${ organization.BonusVPN } conexiuni pentru ${ VPN_APP_NAME } (vă permite să conectați mai multe dispozitive la VPN)",
-        "+${ organization.BonusVPN } de conexiuni pentru ${ VPN_APP_NAME } (vă permite să conectați mai multe dispozitive la VPN)"
-      ],
       "1 device per user": [
         "Un dispozitiv per utilizator"
       ],
       "1 vault per user": [
         "Un seif per utilizator"
-      ],
-      "30-day money-back guarantee.": [
-        "Garanția returnării banilor în 30 de zile."
       ],
       "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
         "Este disponibilă o nouă versiune ${ DRIVE_APP_NAME }. Reîncărcați pentru a continua căutarea."
@@ -5654,9 +5603,6 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Îmbunătățiți-vă identitatea de brand a organizației proprii și creați o experiență online mai consistentă pentru utilizatorii acesteia."
-      ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Revenind la planul gratuit, veți pierde permanent aceste avantaje, chiar dacă ulterior veți trece la unul cu plată."
       ],
       "Calendar side panel": [
         "Panou lateral calendar"
@@ -5836,9 +5782,6 @@
       ],
       "Downgrade": [
         "Retrogradare"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Retrogradarea va încheia orice conexiune la serverele ${ VPN_APP_NAME } cu plată."
       ],
       "Download ${ name } app": [
         "Descărcați aplicația ${ name }"
@@ -6037,15 +5980,6 @@
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "Dacă v-ați pierdut accesul la aplicația de autentificare, puteți utiliza unul din cele 16 coduri de recuperare de rezervă furnizate la configurarea autentificării cu doi factori. ${ learnMoreLink }"
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Dacă continuați cu retrogradarea, veți pierde accesul la funcțiile cu plată din ${ MAIL_APP_NAME } și ${ VPN_APP_NAME }."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Dacă veți continua cu retrogradarea, veți pierde accesul la funcțiile cu plată din ${ MAIL_APP_NAME }, inclusiv spațiul și filtrele suplimentare."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Dacă continuați cu retrogradarea, veți pierde accesul la funcțiile cu plată din ${ VPN_APP_NAME }."
       ],
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
         "Dacă vă eliminați accesul, veți pierde accesul la „${ fileName }” și nu veți putea să-l deschideți din nou decât dacă proprietarul vi-l partajează."
@@ -6730,9 +6664,6 @@
       "Signature check will be ignored": [
         "Verificarea semnăturii va fi ignorată"
       ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Deoarece sunteți un utilizator loial, contul are funcții adiționale activate."
-      ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Unele guverne blochează sau restricționează accesul la anumite site-uri web. Un VPN vă ajută să ocoliți cenzura, păstrându-vă în același timp activitatea și identitatea privată."
       ],
@@ -7145,6 +7076,9 @@
       "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
         "Veți primi un e-mail când s-a finalizat importarea. Fișierele vor apărea într-un folder din ${ DRIVE_APP_NAME }."
       ],
+      "We'll get back to you shortly.": [
+        "Vom reveni în curând."
+      ],
       "We'll notify you when the import is done.": [
         "Veți primi o notificare la finalizarea importării."
       ],
@@ -7294,9 +7228,6 @@
       "You may be redirected to your bank’s website.": [
         "Probabil va trebui să accesați pagina web a băncii."
       ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Trebuie să dezactivați sau să eliminați utilizatorii ${ MAIL_APP_NAME } adiționali, adresele și domeniile personale înainte de a putea retrograda."
-      ],
       "You need access": [
         "Aveți nevoie de acces"
       ],
@@ -7387,6 +7318,9 @@
       ],
       "Your files will be encrypted and then saved.": [
         "Fișierele vor fi criptate și apoi salvate."
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "Perioada de probare gratuită s-a încheiat. Abonați-vă acum pentru a asigura accesul neîntrerupt al echipei proprii și securitatea conturilor."
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
         "Probarea gratuită a fost convertită cu un abonament pe ${ cycle } luni. Data lui de reînnoire este ${ nextBillingDate }."
@@ -7612,6 +7546,12 @@
       "Allow editors to change permissions and share.": [
         "Permitere ca editorii să modifice permisiunile și să partajeze."
       ],
+      "Amount": [
+        "Suma"
+      ],
+      "Amount due": [
+        "Suma datorată"
+      ],
       "Anderson": [
         "Andrei"
       ],
@@ -7761,6 +7701,9 @@
       ],
       "Credits": [
         "Credite"
+      ],
+      "Credits used": [
+        "Credite folosite"
       ],
       "Delete": [
         "Ștergere"
@@ -8073,6 +8016,9 @@
       "Please provide full details to help us take appropriate action": [
         "Furnizați-ne mai multe detalii pentru a ne ajuta să luăm măsurile potrivite."
       ],
+      "Please share any feedback to help us improve.": [
+        "Vă rugăm să ne spuneți orice pentru a ne ajuta la îmbunătățirea serviciilor."
+      ],
       "Port": [
         "Port"
       ],
@@ -8258,6 +8204,9 @@
       ],
       "What happened?": [
         "Ce s-a întâmplat?"
+      ],
+      "Why would you like to cancel?": [
+        "De ce doriți să anulați?"
       ],
       "Yes, I want to permanently delete my old files": [
         "Da, vreau să șterg definitiv fișierele mele vechi."
@@ -8900,38 +8849,20 @@
         "Viteză VPN medie"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Ștergere cont"
-      ],
-      "Downgrade account": [
-        "Retrogradare cont"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Luați ${ BRAND_NAME } gratuit"
-      ],
-      "Get ${ planName }": [
-        "Luați ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Păstrare ${ plan }"
-      ],
-      "Keep account": [
-        "Păstrare cont"
-      ],
-      "Switch plan": [
-        "Schimbare plan"
-      ]
-    },
     "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Retrogradare la ${ downgradedPlanName }"
-      ],
       "Plans starting from ${ priceDrivePlus }": [
         "Planuri începând de la ${ priceDrivePlus }"
       ],
       "Upgrade": [
         "Modificare"
+      ]
+    },
+    "new_plans: action": {
+      "Get ${ BRAND_NAME } for free": [
+        "Luați ${ BRAND_NAME } gratuit"
+      ],
+      "Get ${ planName }": [
+        "Luați ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -9492,18 +9423,6 @@
       "For next-level password management and identity protection.": [
         "Pentru gestionarea parolelor și protejării identității la un nivel superior."
       ],
-      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
-        "Dacă vă ștergeți contul, veți pierde toate beneficiile planului ${ visionary } și nu vor mai fi disponibile dacă vă creați un cont nou."
-      ],
-      "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
-        "Dacă retrogradați contul, veți pierde toate beneficiile planului ${ visionary } și nu vor mai fi disponibile dacă încercați să vă reabonați."
-      ],
-      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
-        "Dacă treceți la un alt plan, veți pierde toate beneficiile planului ${ visionary } și nu veți mai putea reveni la el."
-      ],
-      "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
-        "Planul nostru ${ visionary } nu mai este disponibil noilor abonați deoarece un plan special pentru utilizatorii originali ai ${ BRAND_NAME } cu funcții și beneficii speciale."
-      ],
       "Pay once, secure your passwords and identity forever.": [
         "Plătiți o dată, vă securizați parolele și identitatea permanent."
       ],
@@ -9533,12 +9452,6 @@
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
         "Confidențialitate nelimitată și mai mult spațiu de stocare pentru maxim două persoane."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
-        "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă ștergeți contul, veți pierde prețul promoțional și nu va fi disponibil dacă creați un cont nou."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
-        "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
       ]
     },
     "new_plans: label": {
@@ -9558,20 +9471,11 @@
       ]
     },
     "new_plans: title": {
-      "Delete account?": [
-        "Ștergere cont?"
-      ],
-      "Downgrade account?": [
-        "Retrogradare cont?"
-      ],
       "Review subscription": [
         "Revizuire abonament"
       ],
       "Review subscription and pay": [
         "Revizuire abonament și plată"
-      ],
-      "Switch plans?": [
-        "Schimbare planuri?"
       ]
     },
     "new_plans: tooltip": {
@@ -10899,8 +10803,8 @@
       ]
     },
     "Payments.iDEAL": {
-      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
-        "Prin confirmare, autorizați ${ BRAND_NAME } și Stripe, furnizorul nostru de servicii de plată, să colecteze plățile viitoare pentru abonament din acest cont bancar prin Debit Direct SEPA, iar banca să vă debiteze aceste plăți. Prima plată este efectuată acum de către ${ IDEAL_WERO_BRAND_NAME }. Planul se reînnoiește automat până la anularea acestuia; vă vom notifica înainte de fiecare colectare. Pentru colectările prin debit direct, puteți solicita o rambursare de la banca proprie în termen de 8 săptămâni de la data debitării, în conformitate cu termenii acordului cu banca. Aceasta nu se aplică plății ${ IDEAL_WERO_BRAND_NAME } pe care o efectuați acum."
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Prin confirmare, autorizați ${ BRAND_NAME } și Stripe, furnizorul nostru de servicii de plată, să încaseze plățile viitoare pentru abonament din acest cont bancar prin debitare directă SEPA, iar banca să vă efectueze aceste plăți. Prima plată este efectuată acum prin ${ IDEAL_WERO_BRAND_NAME }. Abonamentul se reînnoiește automat până în momentul în care îl anulați; vă vom notifica înainte de fiecare încasare. În cazul plăților prin debitare directă, puteți solicita băncii rambursarea sumei în termen de 8 săptămâni de la data debitării, conform termenilor contractului încheiat cu banca. Această prevedere nu se aplică plății prin ${ IDEAL_WERO_BRAND_NAME } pe care o efectuați în acest moment."
       ]
     },
     "Payments.info": {
@@ -11126,6 +11030,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Descrieți problema incluzând și mesajele de eroare care apar."
+      ],
+      "Please select the main reason": [
+        "Selectați motivul principal"
       ],
       "Postal code": [
         "Cod poştal"
@@ -11955,9 +11862,6 @@
       "upgrade for more storage": [
         "treceți la un plan cu plată pentru mai mult spațiu"
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Vom adăuga creditele pentru timpul rămas în contul ${ BRAND_NAME }."
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "Zile rămase pentru planul **${ currentPlanName }**: **${ daysRemaining }**",
         "Zile rămase pentru planul **${ currentPlanName }**: **${ daysRemaining }**",
@@ -12506,6 +12410,9 @@
       "Invitation rejected": [
         "Invitație refuzată"
       ],
+      "Invoice paid": [
+        "Factură plătită"
+      ],
       "Payment method added": [
         "Metodă de plată adăugată"
       ],
@@ -12538,9 +12445,6 @@
       ],
       "You have successfully canceled your subscription.": [
         "V-ați anulat abonamentul."
-      ],
-      "You have successfully unsubscribed": [
-        "V-ați dezabonat cu succes"
       ]
     },
     "Suffix": {
@@ -12865,12 +12769,6 @@
       "Configure migration": [
         "Configurare migrare"
       ],
-      "Confirm downgrade": [
-        "Confirmare modificare la plan inferior"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Confirmare pierdere bonusuri ${ BRAND_NAME }"
-      ],
       "Confirmation required": [
         "Confirmare necesară"
       ],
@@ -12888,6 +12786,9 @@
       ],
       "Contact group": [
         "Grup contacte"
+      ],
+      "Contact us": [
+        "Contactați-ne"
       ],
       "Contacts": [
         "Contacte"
@@ -13023,9 +12924,6 @@
       ],
       "Downgrade account": [
         "Retrogradare cont"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "Retrogradare la ${ downgradedPlanName }?"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Descărcați aplicațiile ${ DRIVE_APP_NAME }"
@@ -13367,6 +13265,9 @@
       "Out of storage space": [
         "Spațiu insuficient"
       ],
+      "Pay invoice": [
+        "Plată factură"
+      ],
       "Payment failed": [
         "Plată eșuată"
       ],
@@ -13449,6 +13350,9 @@
       ],
       "Request new code": [
         "Solicitare cod nou"
+      ],
+      "Request sent": [
+        "Solicitare trimisă"
       ],
       "Restore your files": [
         "Restaurare fișiere"
@@ -13566,6 +13470,9 @@
       ],
       "Stop transfers?": [
         "Opriți transferurile?"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "Abonare la ${ planTitle }"
       ],
       "Subscription canceled": [
         "Abonament anulat"
@@ -14028,6 +13935,20 @@
       ],
       "Replay video": [
         "Redare video"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Am găsit un alt serviciu care îmi place mai mult"
+      ],
+      "It’s missing a key feature": [
+        "Lipsește o funcție importantă"
+      ],
+      "It’s too expensive": [
+        "Este prea scump"
+      ],
+      "Other": [
+        "Altceva"
       ]
     },
     "VPN Plan Feature": {

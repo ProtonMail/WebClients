@@ -339,9 +339,6 @@
       "Done": [
         "Kész"
       ],
-      "Downgrade": [
-        "Kisebb csomagra váltás"
-      ],
       "Download": [
         "Letöltés"
       ],
@@ -725,9 +722,6 @@
       ],
       "Remove all other devices": [
         "Távolítsa el az összes többi eszközt"
-      ],
-      "Remove bonuses": [
-        "Kedvezmények törlése"
       ],
       "Remove button": [
         "Gomb eltávolítása"
@@ -1421,11 +1415,6 @@
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Sajnáljuk, ez az ajánlat nem érhető el a jelenlegi csomagjához. De ${ discountPercentage } kedvezményt kaphat a ${ plan.Title } ${ cycle } hónapra történő feliratkozásakor.",
         "Sajnáljuk, ez az ajánlat nem érhető el a jelenlegi csomagjához. De ${ discountPercentage } kedvezményt kaphat a ${ plan.Title } ${ cycle } hónapra történő feliratkozásakor."
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "30 napos pénzvisszatérítési garancia"
       ]
     },
     "bf2023: Title": {
@@ -4270,14 +4259,6 @@
         "Meghívás megjelenítése"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "A családi csoport nem található. Próbálja meg újra."
-      ],
-      "Organization not recognized. Try again.": [
-        "Nem felismerhető szervezet. Próbálja meg újra."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } csoportok"
@@ -4415,22 +4396,8 @@
       ]
     },
     "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "Írja be a családi csoport nevét a megerősítéshez"
-      ],
-      "Enter organization name to confirm": [
-        "Írja be a szervezet nevét a jóváhagyáshoz"
-      ],
       "Family name": [
         "Család neve"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Ez véglegesen törli a szervezetéhez tartozó összes al-felhasználót, fiókot és adatot."
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Ezzel el lesz távolítva minden ${ BRAND_NAME } prémium funkció minden családtag számára."
       ]
     },
     "familyOffer_2023:Settings section title": {
@@ -4458,12 +4425,6 @@
       ],
       "Change family name": [
         "A család nevének megváltoztatása"
-      ],
-      "Delete family group?": [
-        "Törli a családi csoportot?"
-      ],
-      "Delete organization?": [
-        "Szervezet törlése?"
       ],
       "Edit user storage": [
         "Felhasználó tárhelyének szerkesztése"
@@ -5413,18 +5374,6 @@
       "${ storage } storage": [
         "${ storage } tárhely"
       ],
-      "${ vaultLink } created": [
-        "${ vaultLink } létrehozva"
-      ],
-      "${ vaultLink } deleted": [
-        "${ vaultLink } törölve"
-      ],
-      "${ vaultLink } shared with email": [
-        "${ vaultLink } megosztva e-mailben"
-      ],
-      "${ vaultLink } updated": [
-        "${ vaultLink } frissítve"
-      ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } csomag szükséges az ország-szintű kapcsolódáshoz."
       ],
@@ -5448,21 +5397,11 @@
         "+ ${ invisibleCount } További",
         "+ ${ invisibleCount } További"
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } bónusz tárterület"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } ${ VPN_APP_NAME } kapcsolat (lehetővé teszi több eszköz csatlakoztatását a VPN-hez)",
-        "+${ organization.BonusVPN } ${ VPN_APP_NAME } kapcsolatok (lehetővé teszi több eszköz csatlakoztatását a VPN-hez)"
-      ],
       "2FA disabled": [
         "Kétlépcsős hitelesítés kikapcsolva"
       ],
       "30-day money-back guarantee": [
         "30 napos pénz-visszafizetési garancia"
-      ],
-      "30-day money-back guarantee.": [
-        "30 napos pénz-visszafizetési garancia."
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "A(z) ${ protonSubdomain } domain nevet a ${ BRAND_NAME } tárolja, így gyorsan létrehozhat egy aldomain nevet. ${ learnMoreLink }"
@@ -5643,9 +5582,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Számlázási ciklus: ${ text }"
-      ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Az ingyenes verzióra való váltás során véglegesen elveszti a következő előnyeit, még akkor is, ha később ismét előfizetéses szolgáltatásra vált."
       ],
       "By leaving now, changes may not be saved": [
         "Ha most kilép, a módosítások elveszhetnek"
@@ -5844,9 +5780,6 @@
       "Downgrade": [
         "Váltás kisebb csomagra"
       ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "A lemondás megszünteti a fizetett ${ VPN_APP_NAME } szerverekkel való összes kapcsolatot."
-      ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "Töltse le a CSV sablonunkat, töltse ki a felhasználói adatokat, majd töltse fel a kész CSV fájlt a felhasználók fiókjának létrehozásához."
       ],
@@ -6042,15 +5975,6 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Ha elveszti a kétlépcsős hitelesítéshez használt eszközét, ezekkel a kódokkal jelentkezhet be fiókjába a 6 számjegyű kód helyett. Minden kód csak egyszer használható."
       ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Ha folytatja a lemondást, elveszíti a hozzáférést a ${ MAIL_APP_NAME } és ${ VPN_APP_NAME } fizetett szolgáltatásaihoz."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Ha folytatja a lemondást, elveszíti a hozzáférést a ${ MAIL_APP_NAME } fizetett szolgáltatásaihoz, beleértve a megnövelt tárhelyet és a szűrőket."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Ha folytatja a lemondást, elveszíti a hozzáférést a ${ VPN_APP_NAME } fizetett szolgáltatásaihoz."
-      ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Ha problémába ütközött, segítünk. ${ boldPhoneCall } vagy ${ boldZoomMeeting } egy támogatási szakemberünkkel, vagy indítson ${ boldLiveChat } egy segítségnyújtóval."
       ],
@@ -6115,21 +6039,6 @@
       "Internet connection restored.": [
         "Internet kapcsolat helyreállt."
       ],
-      "Invite deleted": [
-        "A meghívó törölve"
-      ],
-      "Invite for new user deleted": [
-        "Új felhasználó meghívója törölve"
-      ],
-      "Invite for organization accepted": [
-        "A szervezeti meghívó elfogadva"
-      ],
-      "Invite for organization created": [
-        "A szervezeti meghívó létrehozva"
-      ],
-      "Invite rejected": [
-        "Meghívás elutasítva"
-      ],
       "Invite successfully sent": [
         "Meghívó sikeresen elküldve",
         "Meghívók sikeresen elküldve"
@@ -6142,54 +6051,6 @@
       ],
       "It's better to have:": [
         "Jobb, ha van:"
-      ],
-      "Item autofilled in ${ vaultLink }": [
-        "Elem automatikusan kitöltve a tárolóból: ${ vaultLink }"
-      ],
-      "Item autofilled in vault": [
-        "Elem automatikusan kitöltve a tárolóban"
-      ],
-      "Item created in ${ vaultLink }": [
-        "Elem létrehozva a tárolóban: ${ vaultLink }"
-      ],
-      "Item created in vault": [
-        "Elem létrehozva a tárolóban"
-      ],
-      "Item deleted from ${ vaultLink }": [
-        "Elem törölve a tárolóból: ${ vaultLink }"
-      ],
-      "Item deleted from vault": [
-        "Elem törölve a tárolóból"
-      ],
-      "Item flags changed in ${ vaultLink }": [
-        "Elem jelzői megváltoztatva a tárolóban: ${ vaultLink }"
-      ],
-      "Item flags changed in vault": [
-        "Elem jelzői megváltoztatva a tárolóban"
-      ],
-      "Item in ${ vaultLink } trashed": [
-        "Elem a(z) ${ vaultLink } tárolóból a lomtárba helyezve"
-      ],
-      "Item in ${ vaultLink } untrashed": [
-        "Elem a(z) ${ vaultLink } tárolóban a lomtárból visszavéve"
-      ],
-      "Item in vault trashed": [
-        "Elem a tárolóból a lomtárba helyezve"
-      ],
-      "Item in vault untrashed": [
-        "Elem a tárolóban a lomtárból visszavéve"
-      ],
-      "Item read in ${ vaultLink }": [
-        "Elem olvasva a tárolóból: ${ vaultLink }"
-      ],
-      "Item read in vault": [
-        "Elem olvasva a tárolóban"
-      ],
-      "Item updated in ${ vaultLink }": [
-        "Elem frissítve a tárolóban: ${ vaultLink }"
-      ],
-      "Item updated in vault": [
-        "Elem frissítve a tárolóban"
       ],
       "JCB logo": [
         "JCB logó"
@@ -6317,9 +6178,6 @@
       "New activity data will stop being collected and shown.": [
         "Az új aktivitási adatainak gyűjtése és megjelenítése leáll."
       ],
-      "New user invited to organization": [
-        "Új felhasználó meghívva a szervezetbe"
-      ],
       "New VPN connection data will stop being collected and shown.": [
         "Az új VPN-kapcsolat adatainak gyűjtése és megjelenítése leáll."
       ],
@@ -6402,15 +6260,6 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Figyelmeztetéseink a biztonságot helyezik előtérbe.Ha nem ismeri fel ezeket a feltört információkat nyugodtan figyelmen kívül hagyhatja ezt."
-      ],
-      "Pass Monitor - custom email confirmed": [
-        "Pass Monitor - egyedi e-mail megerősítve"
-      ],
-      "Pass Monitor - custom email created": [
-        "Pass Monitor - egyedi e-mail létrehozva"
-      ],
-      "Pass Monitor - custom email deleted": [
-        "Pass Monitor - egyedi e-mail törölve"
       ],
       "Password copied to clipboard": [
         "Jelszó a vágólapra másolva"
@@ -6639,30 +6488,15 @@
       "Setting up your organization": [
         "Szervezet beállítása"
       ],
-      "Shared ${ vaultLink } deleted": [
-        "Megosztott ${ vaultLink } törölve"
-      ],
-      "Shared ${ vaultLink } updated": [
-        "Megosztott ${ vaultLink } frissítve"
-      ],
       "Shared server country (${ countriesCount })": [
         "Megosztott szerver országa (${ countriesCount })",
         "Megosztott szerver országok (${ countriesCount })"
-      ],
-      "Shared vault deleted": [
-        "Megosztott tároló törölve"
-      ],
-      "Shared vault updated": [
-        "Megosztott tároló frissítve"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "A címe aktiválásához, jelentkezzen be a ${ MAIL_APP_NAME } fiókjába"
       ],
       "Signed up": [
         "Feliratkozott"
-      ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Mivel ön a hűséges felhasználónk, fiókja extra funkciókat tartalmaz."
       ],
       "Smart Routed through a different country.": [
         "Smart Routing segítségével egy másik országon keresztül átirányítva."
@@ -6977,9 +6811,6 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "A személyazonosság-szolgáltató által generált egyedi azonosító, amely általában egy URL formájában jelenik meg, és amely tartalmazza a személyazonosság-szolgáltató nevét (pl. https://idp.pelda.com/XXXXX)."
       ],
-      "Unknown event type": [
-        "Ismeretlen eseménytípus"
-      ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Ha nem lép ki fiókjából vagy nem változtat jelszót, a munkafolyamat aktív marad. A munkafolyamatok 60 nap inaktivitás után járnak le."
       ],
@@ -7039,21 +6870,6 @@
       ],
       "Users": [
         "Felhasználók"
-      ],
-      "Vault created": [
-        "Tároló létrehozva"
-      ],
-      "Vault deleted": [
-        "Tároló törölve"
-      ],
-      "Vault either deleted or requires access permissions": [
-        "A tároló vagy törlésre került vagy elérési jogosultság szükséges"
-      ],
-      "Vault shared with email": [
-        "Tároló megosztva e-maillel"
-      ],
-      "Vault updated": [
-        "Tároló frissítve"
       ],
       "Verification code sent.": [
         "Ellenőrző kód kiküldve"
@@ -7150,9 +6966,6 @@
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Amikor engedélyezi a SAML-t a ${ appName } szolgáltatáshoz a személyazonosság-szolgáltatójában, a rendszer kérheti a visszahívási (ACS) URL-t és a kiállító azonosítóját. Másolja be az alábbi adatokat a személyazonosság-szolgáltatója mezőibe."
-      ],
-      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
-        "Amikor lemondja a jelenlegi előfizetését, a fennmaradó kifizetett összeg kreditként kerül hozzáadásra a fiókja egyenlegéhez, és előfizetése átvált a ${ BRAND_NAME } ${ PLANS.FREE } csomagra."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Ha lemondja, az elfőzetése nem kerül majd megújításra, de a már befizetett időszak végéig használhatja a csomagban elérhető lehetőségeket. Ennek befejeződésekor a ${ BRAND_NAME } Free csomagra kerül át."
@@ -7300,9 +7113,6 @@
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "Aktiválnia kell a szervezeti titkos kulcsot, a tartalék szervezeti kulcshoz tartozó jelszóval, melyet a szervezeti adminisztrátor adhat meg."
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "A lemondás előtt le kell tiltani vagy el kell távolítani a ${ MAIL_APP_NAME } további felhasználóit, címeit és a saját domain neveket."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Ahhoz, hogy felvehesse fizetési módként, a PayPal számlájához hozzá kell rendelnie egy bankkártyát vagy egy bankszámlát."
@@ -8610,9 +8420,6 @@
       "Upgrade your plan": [
         "Váltson nagyobb csomagra"
       ],
-      "Vault": [
-        "Tároló"
-      ],
       "View guide": [
         "Útmutató megtekintése"
       ],
@@ -8994,9 +8801,6 @@
       ]
     },
     "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }"
-      ],
       "Explore all ${ BRAND_NAME } plans": [
         "További ${ BRAND_NAME } csomagok megismerése"
       ],
@@ -12216,9 +12020,6 @@
       "upgrade for more storage": [
         "váltson nagyobb csomagra több tárhelyért"
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "A fennmaradó időre járó krediteket hozzáadjuk a ${ BRAND_NAME } fiókjához."
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "Még maradt **${ daysRemaining }** nap a **${ currentPlanName }** előfizetéséből.",
         "Még maradt **${ daysRemaining }** nap a **${ currentPlanName }** előfizetéséből."
@@ -12898,9 +12699,6 @@
       "You have successfully canceled your subscription.": [
         "Sikeresen lemondta az előfizetését."
       ],
-      "You have successfully unsubscribed": [
-        "Sikeresen leiratkozott"
-      ],
       "You will receive your username via email within a minute if you entered a valid recovery email address.": [
         "Ha érvényes helyreállítási e-mail címet adott meg, egy percen belül megkapja e-mailben a felhasználónevét."
       ],
@@ -13320,12 +13118,6 @@
       "Confirm": [
         "Jóváhagyás"
       ],
-      "Confirm downgrade": [
-        "Lemondás megerősítése"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "${ BRAND_NAME } kedvezmények lemondásának megerősítése"
-      ],
       "Connect apps and devices": [
         "Alkalmazások és eszközök összekapcsolása"
       ],
@@ -13486,9 +13278,6 @@
       ],
       "Downgrade account": [
         "Váltás kisebb csomagra"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }?"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } alkalmazások letöltése"

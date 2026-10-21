@@ -639,6 +639,9 @@
       "Start meeting": [
         "Starta möte"
       ],
+      "Start meeting in browser": [
+        "Starta möte i webbläsare"
+      ],
       "Start new meeting": [
         "Starta nytt möte"
       ],
@@ -2498,6 +2501,9 @@
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } behöver WebRTC för att köras. Uppdatera din webbläsare eller enhet till en version som stöder WebRTC, prova en annan webbläsare eller inaktivera eventuella tillägg som kan blockera det."
       ],
+      "${ meetingName } has ended": [
+        "${ meetingName } har slutat"
+      ],
       "${ mlsMemberCount } member": [
         "${ mlsMemberCount } medlem",
         "${ mlsMemberCount } medlemmar"
@@ -2693,6 +2699,9 @@
       ],
       "End the meeting for everyone?": [
         "Avsluta mötet för alla?"
+      ],
+      "End to end encrypted chat": [
+        "End-to-end-krypterat chatt"
       ],
       "End-to-end encryption is active for audio and video.": [
         "End-to-end-kryptering är aktiv för ljud och video."
@@ -3069,6 +3078,9 @@
       "Selected camera has disconnected.": [
         "Vald kamera har kopplats från."
       ],
+      "Selected devices have disconnected.": [
+        "Valda enheter har kopplats från."
+      ],
       "Selected microphone has disconnected.": [
         "Vald mikrofon har kopplats från."
       ],
@@ -3152,6 +3164,9 @@
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Detta kommer logga ut dig på alla konton som du för närvarande är inloggad på."
+      ],
+      "Time is up for ${ meetingName }": [
+        "Tid är slut för ${ meetingName }"
       ],
       "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
         "För att skapa ett rum behöver du **ett gratis ${ BRAND_NAME }-konto** så vi kan spara rummet. Detta tar bara några sekunder."
@@ -3251,6 +3266,9 @@
       ],
       "You have too many meetings in progress": [
         "Du har för många pågående möten"
+      ],
+      "You left ${ meetingName }": [
+        "Du lämnade ${ meetingName }"
       ],
       "You left the meeting": [
         "Du lämnade mötet"
@@ -3954,6 +3972,9 @@
       ],
       "Allow microphone": [
         "Tillåt mikrofon"
+      ],
+      "Allow screen recording": [
+        "Tillåt skärminspelning"
       ],
       "Are you sure?": [
         "Är du säker?"

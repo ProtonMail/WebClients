@@ -25,12 +25,6 @@
       ]
     },
     "Action": {
-      "${ PASS_SHORT_APP_NAME } for Android": [
-        "Android 版 ${ PASS_SHORT_APP_NAME }"
-      ],
-      "${ PASS_SHORT_APP_NAME } for iOS": [
-        "iOS 版 ${ PASS_SHORT_APP_NAME }"
-      ],
       "Accept": [
         "接受"
       ],
@@ -327,6 +321,12 @@
       ],
       "Do not suggest on this website": [
         "不要於此網站推薦"
+      ],
+      "Download for macOS": [
+        "下載 macOS 版"
+      ],
+      "Download for Windows": [
+        "下載 Windows 版"
       ],
       "Download this CSV template": [
         "下載此CSV模板"
@@ -824,6 +824,11 @@
       ],
       "Vault": [
         "保管庫"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } 個以上的結果未顯示"
       ]
     },
     "Button": {
@@ -1568,6 +1573,14 @@
         "使用者名稱"
       ]
     },
+    "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "找到${ itemsCount }個推薦，使用鍵盤移動"
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "使用向上、向下方向鍵存取並瀏覽輸入建議。按一下 [Enter] 鍵確認選項，或 [Esc] 鍵關閉建議方塊。"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "忽略${ payload.itemName }項目"
@@ -2221,7 +2234,7 @@
         "移動全部於\"${ payload.content.name }\"的項目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "將項目移動到另一個保管庫會消除其安全連結。"
+        "將項目移至另一個保管庫將會清除其安全連結。"
       ],
       "Moving items": [
         "正在移動檔案"
@@ -4864,6 +4877,9 @@
       "Excluded items": [
         "排除的物品"
       ],
+      "Export": [
+        "匯出"
+      ],
       "Fill & copy password": [
         "填寫並複製密碼"
       ],
@@ -4899,6 +4915,9 @@
       ],
       "Import - ${ date }": [
         "匯入 - ${ date }"
+      ],
+      "Import failed": [
+        "匯入失敗"
       ],
       "Import to vault(s)": [
         "匯入至(多個)保管庫"

@@ -347,9 +347,6 @@
       "Done": [
         "Готово"
       ],
-      "Downgrade": [
-        "Перейти на нижчий тарифний план"
-      ],
       "Download": [
         "Завантажити"
       ],
@@ -731,9 +728,6 @@
       "Remove": [
         "Вилучити"
       ],
-      "Remove bonuses": [
-        "Вилучити бонуси"
-      ],
       "Remove button": [
         "Вилучити кнопку"
       ],
@@ -901,6 +895,9 @@
       ],
       "Submit": [
         "Відправити"
+      ],
+      "Subscribe": [
+        "Підписатися"
       ],
       "Subscribe now": [
         "Підписатися зараз"
@@ -1328,11 +1325,6 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Premium Менеджер паролів"
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "Гарантія повернення коштів протягом 30 днів"
       ]
     },
     "BF2024: Deal details": {
@@ -4611,14 +4603,6 @@
         "Змінити тарифний план"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "Родинну групу не розпізнано. Спробуйте знову."
-      ],
-      "Organization not recognized. Try again.": [
-        "Організацію не розпізнано. Спробуйте знову."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "Групи ${ BRAND_NAME }"
@@ -4687,22 +4671,6 @@
         "Ваш обліковий запис використовує ${ usedSpace } обсягу сховища, що перевищує призначений вам обсяг ${ inviteSpace }. Видаліть деякі дані або попросіть адміністратора плану збільшити обсяг вашого сховища."
       ]
     },
-    "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "Введіть назву родини для підтвердження"
-      ],
-      "Enter organization name to confirm": [
-        "Введіть назву організації для підтвердження"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Ця дія остаточно видалить усіх підлеглих користувачів, облікові записи, а також дані, пов'язані з вашою організацією."
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Це вилучить усі преміумфункції ${ BRAND_NAME } для всіх учасників родини."
-      ]
-    },
     "familyOffer_2023:Onboarding Proton": {
       "Configure your family account and invite users": [
         "Налаштуйте сімейний обліковий запис і запросіть користувачів"
@@ -4712,14 +4680,6 @@
       ],
       "Set up your family account": [
         "Налаштувати родинний обліковий запис"
-      ]
-    },
-    "familyOffer_2023:Title": {
-      "Delete family group?": [
-        "Видалити родинну групу?"
-      ],
-      "Delete organization?": [
-        "Видалити організацію?"
       ]
     },
     "Feature": {
@@ -5491,18 +5451,6 @@
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Ви отримуєте ${ referrerRewardAmount }** як кредит за кожного запрошеного друга, який підпишеться."
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } додаткового сховища"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } з'єднання для ${ VPN_APP_NAME } (дозволяє приєднати більше пристроїв до VPN)",
-        "+${ organization.BonusVPN } з'єднання для ${ VPN_APP_NAME } (дозволяє приєднати більше пристроїв до VPN)",
-        "+${ organization.BonusVPN } з'єднань для ${ VPN_APP_NAME } (дозволяє приєднати більше пристроїв до VPN)",
-        "+${ organization.BonusVPN } з'єднань для ${ VPN_APP_NAME } (дозволяє приєднати більше пристроїв до VPN)"
-      ],
-      "30-day money-back guarantee.": [
-        "Гарантія повернення грошей протягом 30 днів."
-      ],
       "A cancellation email will be sent to removed participants.": [
         "Лист про скасування буде надіслано вилученим учасникам."
       ],
@@ -5662,9 +5610,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Підсильте впізнаваність бренду вашої організації та забезпечте зручнішу роботу онлайн для ваших користувачів."
       ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Повернувшись на безплатний тарифний план, ви остаточно втратите ці переваги, навіть якщо в майбутньому поновите передплату."
-      ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Поширюючи всі подробиці про подію з цього календаря, ви погоджуєтеся надати доступ для ${ BRAND_NAME } до зашифрованої інформації цього календаря."
       ],
@@ -5818,9 +5763,6 @@
       "Downgrade": [
         "Перейти на нижчий тарифний план"
       ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Перехід на тарифний план нижчого рівня розірве всі з'єднання з платними серверами ${ VPN_APP_NAME }."
-      ],
       "Download current logs": [
         "Завантажити поточні журнали"
       ],
@@ -5970,15 +5912,6 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Якщо ви не можете знайти лист у вхідних повідомленнях, перевірте свою теку спаму."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Якщо ви продовжите перехід на нижчий тарифний план, ви втратите доступ до платних функцій ${ MAIL_APP_NAME } та ${ VPN_APP_NAME }."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Якщо ви продовжите перехід на нижчий тарифний план, ви втратите доступ до платних функцій ${ MAIL_APP_NAME }, включно з додатковим сховищем та фільтрами."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Якщо ви продовжите перехід на нижчий тарифний план, ви втратите доступ до платних функцій ${ VPN_APP_NAME }."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календаря",
@@ -6379,9 +6312,6 @@
       "Share this page to let others book time in your calendar. You can find and edit it in the sidebar under Booking pages.": [
         "Поділіться цією сторінкою, щоб дозволити іншим бронювати час у вашому календарі. Ви можете знайти та змінити її на бічній панелі в розділі «Сторінки бронювання»."
       ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Оскільки ви лояльний користувач, ваш обліковий запис має увімкнені додаткові функції."
-      ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Уряди деяких країн блокують або обмежують доступ до певних вебсайтів. VPN допомагає обійти цензуру, зберігаючи приватність ваших дій та особистих даних."
       ],
@@ -6655,6 +6585,9 @@
       "We'll email you once import is complete.": [
         "Ми надішлемо вам електронного листа після завершення імпорту."
       ],
+      "We'll get back to you shortly.": [
+        "Ми незабаром з вами зв'яжемося."
+      ],
       "We'll notify you when the import is done.": [
         "Ми сповістимо вас, коли імпорт буде завершено."
       ],
@@ -6798,9 +6731,6 @@
       ],
       "You may be redirected to your bank’s website.": [
         "Ви можете бути перенаправлені до вебсайту вашого банку."
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Для можливості переходу на тарифний план нижчого рівня ви повинні вилучити будь-яких додаткових користувачів ${ MAIL_APP_NAME }, адреси та власні домени."
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Ви раніше відхилили це запрошення. Зверніться до власника з проханням про повторне запрошення"
@@ -7200,6 +7130,12 @@
       "All-day event notifications": [
         "Сповіщення про події на цілий день"
       ],
+      "Amount": [
+        "Всього"
+      ],
+      "Amount due": [
+        "До сплати"
+      ],
       "Anderson": [
         "Андерсон"
       ],
@@ -7304,6 +7240,9 @@
       ],
       "Credits": [
         "Кредити"
+      ],
+      "Credits used": [
+        "Витрата кредитів"
       ],
       "Date and time": [
         "Дата й час"
@@ -7542,6 +7481,9 @@
       "Phone number": [
         "Номер телефону"
       ],
+      "Please share any feedback to help us improve.": [
+        "Поділіться своїм відгуком, щоб допомогти нам вдосконалюватися."
+      ],
       "Port": [
         "Порт"
       ],
@@ -7679,6 +7621,9 @@
       ],
       "What happened?": [
         "Що сталося?"
+      ],
+      "Why would you like to cancel?": [
+        "Чому ви хочете скасувати?"
       ],
       "Your calendar URL": [
         "URL-адреса вашого календаря"
@@ -8358,31 +8303,11 @@
       ]
     },
     "new_plans: action": {
-      "Delete account": [
-        "Видалити обліковий запис"
-      ],
-      "Downgrade account": [
-        "Понизити обліковий запис"
-      ],
       "Get ${ BRAND_NAME } for free": [
         "Отримати ${ BRAND_NAME } безплатно"
       ],
       "Get ${ planName }": [
         "Отримати ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Залишити ${ plan }"
-      ],
-      "Keep account": [
-        "Залишити обліковий запис"
-      ],
-      "Switch plan": [
-        "Змінити тарифний план"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Понизити до ${ downgradedPlanName }"
       ]
     },
     "new_plans: feature": {
@@ -8958,18 +8883,6 @@
       "For next-level password management and identity protection.": [
         "Для вдосконаленого керування паролями та захисту особистих даних."
       ],
-      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
-        "Якщо ви видалите свій обліковий запис, то втратите всі переваги тарифного плану ${ visionary } та не зможете передплатити його знову після створення нового облікового запису."
-      ],
-      "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
-        "Якщо ви понизите свій обліковий запис, то втратите всі переваги тарифного плану ${ visionary } та більше не зможете повернутися до нього знову."
-      ],
-      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
-        "Якщо ви зміните тарифний план, то втратите всі переваги плану ${ visionary } та не зможете повернутися знову до ${ visionary }."
-      ],
-      "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
-        "Наш тарифний план ${ visionary } більше недоступний новим передплатникам, оскільки це особливий план для користувачів оригінального ${ BRAND_NAME } зі спеціальними функціями та перевагами."
-      ],
       "Pay once, secure your passwords and identity forever.": [
         "Платіть один раз і захистіть свої паролі та особисті дані назавжди."
       ],
@@ -8999,12 +8912,6 @@
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
         "Необмежена конфіденційність і більше пам'яті для 2 осіб."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
-        "Ви користуєтеся спеціальною ціною чинного тарифного плану. Якщо ви видалите свій обліковий запис, то втратите спеціальну ціну передплати й більше не зможете скористатися нею після створення нового облікового запису."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
-        "Ви користуєтеся спеціальною ціною чинного тарифного плану. Якщо ви понизите свій обліковий запис, то втратите спеціальну ціну передплати й більше не зможете скористатися нею, коли вирішите знову його передплатити."
       ]
     },
     "new_plans: label": {
@@ -9024,20 +8931,11 @@
       ]
     },
     "new_plans: title": {
-      "Delete account?": [
-        "Видалити обліковий запис?"
-      ],
-      "Downgrade account?": [
-        "Понизити обліковий запис?"
-      ],
       "Review subscription": [
         "Переглянути передплату"
       ],
       "Review subscription and pay": [
         "Перегляньте передплату й сплатіть"
-      ],
-      "Switch plans?": [
-        "Змінити тарифний план?"
       ]
     },
     "new_plans: tooltip": {
@@ -10347,6 +10245,9 @@
       "Please select a country": [
         "Виберіть країну"
       ],
+      "Please select the main reason": [
+        "Оберіть основну причину"
+      ],
       "Postal code": [
         "Поштовий індекс"
       ],
@@ -11259,9 +11160,6 @@
       "upgrade for more storage": [
         "збільште сховище, передплативши тарифний план"
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Ми додамо невитрачений залишок коштів як кредити до вашого облікового запису ${ BRAND_NAME }."
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "Залишився **${ daysRemaining }** день до завершення дії вашого тарифного плану **${ currentPlanName }**.",
         "Залишилося **${ daysRemaining }** дні до завершення дії вашого тарифного плану **${ currentPlanName }**.",
@@ -11880,6 +11778,9 @@
       "Invitation sent and participants added to all events": [
         "Запрошення надіслано та додано учасників до всіх подій"
       ],
+      "Invoice paid": [
+        "Рахунок сплачено"
+      ],
       "Keyboard shortcuts preferences updated": [
         "Налаштування комбінацій клавіш оновлено"
       ],
@@ -11924,9 +11825,6 @@
       ],
       "You have successfully canceled your subscription.": [
         "Ви успішно скасували передплату."
-      ],
-      "You have successfully unsubscribed": [
-        "Ви успішно скасували передплату"
       ]
     },
     "Suffix": {
@@ -12275,12 +12173,6 @@
       "Configure migration": [
         "Налаштувати міграцію"
       ],
-      "Confirm downgrade": [
-        "Підтвердити перехід"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Підтвердьте втрату бонусів ${ BRAND_NAME }"
-      ],
       "Connect apps and devices": [
         "Підключіть програми та пристрої"
       ],
@@ -12295,6 +12187,9 @@
       ],
       "Contact group": [
         "Група контактів"
+      ],
+      "Contact us": [
+        "Зв'яжіться з нами"
       ],
       "Contacts": [
         "Контакти"
@@ -12385,9 +12280,6 @@
       ],
       "Downgrade account": [
         "Понизити тарифний план"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "Понизити до ${ downgradedPlanName }?"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Завантажте програми ${ DRIVE_APP_NAME }"
@@ -12608,6 +12500,9 @@
       "Participants cannot be notified": [
         "Неможливо сповістити учасників"
       ],
+      "Pay invoice": [
+        "Сплатити рахунок"
+      ],
       "Payment failed": [
         "Не вдалося оплатити"
       ],
@@ -12664,6 +12559,9 @@
       ],
       "Request new code": [
         "Запитати новий код"
+      ],
+      "Request sent": [
+        "Запит надіслано"
       ],
       "Reshare your calendars": [
         "Повторно поділіться своїми календарями"
@@ -13160,6 +13058,20 @@
       ],
       "Open in a new tab": [
         "Відкрити в новій вкладці"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Я використовую інший сервіс, який мені більше подобається"
+      ],
+      "It’s missing a key feature": [
+        "Відсутня важлива функція"
+      ],
+      "It’s too expensive": [
+        "Занадто дорого"
+      ],
+      "Other": [
+        "Інше"
       ]
     },
     "VPN Plan Feature": {

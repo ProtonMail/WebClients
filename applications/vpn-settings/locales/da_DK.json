@@ -105,9 +105,6 @@
       "Desktop and mobile apps": [
         "Desktop- og mobilapps"
       ],
-      "Downgrade plan": [
-        "Nedgrader abonnement"
-      ],
       "Downgrade to Free": [
         "Nedgrader til Free"
       ],
@@ -661,9 +658,6 @@
       "Done": [
         "Udført"
       ],
-      "Downgrade": [
-        "Nedgradér"
-      ],
       "Download": [
         "Download"
       ],
@@ -1140,9 +1134,6 @@
       ],
       "Remove all other devices": [
         "Fjern alle andre enheder"
-      ],
-      "Remove bonuses": [
-        "Fjern bonusser"
       ],
       "Remove button": [
         "Fjern knap"
@@ -2102,8 +2093,8 @@
       ]
     },
     "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "30 dages tilbagebetalingsgaranti"
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30-dages fortrydelsesret: annuller indenfor 30 dage af dit køb, og kontakt vores ${ customerSupportLink } for at få en refusion."
       ]
     },
     "bf2023: Title": {
@@ -6152,14 +6143,6 @@
         "Vis invitation"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "Familiegruppe ikke genkendt. Prøv igen."
-      ],
-      "Organization not recognized. Try again.": [
-        "Organisation ikke genkendt. Prøv igen."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } grupper"
@@ -6307,22 +6290,8 @@
       ]
     },
     "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "Indtast navn på familiegruppe for at bekræfte"
-      ],
-      "Enter organization name to confirm": [
-        "Indtast organisationsnavn for at bekræfte"
-      ],
       "Family name": [
         "Familienavn"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Dette vil permanent slette alle underbrugere, konti og data, der er forbundet med din organisation."
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Dette fjerner alle ${ BRAND_NAME } premium-funktioner for alle familiemedlemmer."
       ]
     },
     "familyOffer_2023:Settings section title": {
@@ -6350,12 +6319,6 @@
       ],
       "Change family name": [
         "Ændr efternavn"
-      ],
-      "Delete family group?": [
-        "Slet familiegruppe?"
-      ],
-      "Delete organization?": [
-        "Slet organisation?"
       ],
       "Edit user storage": [
         "Redigér brugerlager"
@@ -7593,18 +7556,6 @@
         "${ total } bruger fundet",
         "${ total } brugere fundet"
       ],
-      "${ vaultLink } created": [
-        "${ vaultLink } oprettet"
-      ],
-      "${ vaultLink } deleted": [
-        "${ vaultLink } slettet"
-      ],
-      "${ vaultLink } shared with email": [
-        "${ vaultLink } delt med e-mail"
-      ],
-      "${ vaultLink } updated": [
-        "${ vaultLink } opdateret"
-      ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
         "${ VPN_SHORT_APP_NAME } skjuler din internettrafik. ${ PASS_SHORT_APP_NAME } skjuler din identitet – ubegrænsede **hide-my-email-aliasser** og **mørk-net advarsler** hvis dine data lækkes."
       ],
@@ -7679,13 +7630,6 @@
         "+${ invisibleCount } mere",
         "+${ invisibleCount } mere"
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } bonuslagerplads"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN }-forbindelse til ${ VPN_APP_NAME } (tillader dig at forbinde flere enheder til VPN)",
-        "+${ organization.BonusVPN }-forbindelser til ${ VPN_APP_NAME } (tillader dig at forbinde flere enheder til VPN)"
-      ],
       "1 device per user": [
         "1 enhed per bruger"
       ],
@@ -7698,8 +7642,8 @@
       "30-day money-back guarantee": [
         "30 dages tilbagebetalingsgaranti"
       ],
-      "30-day money-back guarantee.": [
-        "30 dages tilbagebetalingsgaranti."
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30-dages fortrydelsesret: annuller indenfor 30 dage af dit køb, og kontakt vores ${ customerSupportLink } for at få en refusion."
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Et ${ protonSubdomain } hostes af ${ BRAND_NAME }, hvor du hurtigt kan oprette et underdomæne. ${ learnMoreLink }"
@@ -7980,9 +7924,6 @@
       ],
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "Ved at deaktivere kontoovervågning sletter du også hele din historik. Er du sikker på, at du vil deaktivere den?"
-      ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Ved at nedgradere til et gratis abonnement mister du disse fordele permanent, selvom du senere opgraderer igen."
       ],
       "By leaving now, changes may not be saved": [
         "Afbryder du nu, gemmes ændringerne måske ikke"
@@ -8265,9 +8206,6 @@
       ],
       "Downgrade": [
         "Nedgrader"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Nedgradering vil afslutte alle forbindelser til betalte ${ VPN_APP_NAME }-servere."
       ],
       "Download ${ mobileConfigArtifact } and open it on each Mac to install the profile, then approve it in System Settings.": [
         "Download ${ mobileConfigArtifact }, og åbn den på hver Mac for at installere profilen og godkend den derefter i Systemindstillinger."
@@ -8629,15 +8567,6 @@
       "If you previously had a personal ${ BRAND_NAME } account with this address, you can recover your data separately.": [
         "Hvis du tidligere havde en personlig ${ BRAND_NAME }-konto med denne adresse, kan du gendanne dine data separat."
       ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Hvis du fortsætter med nedgraderingen, vil du miste adgang til betalte funktioner i ${ MAIL_APP_NAME } og ${ VPN_APP_NAME }."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Hvis du fortsætter med nedgraderingen, vil du miste adgang til betalte funktioner i ${ MAIL_APP_NAME }, herunder ekstra lagerplads og filtre."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Hvis du fortsætter med nedgraderingen, vil du miste adgang til betalte funktioner i ${ VPN_APP_NAME }."
-      ],
       "If you recently reset your password, you can ${ recoveryMethodLink } to unlock your data. If this is due to an old password reset, you can stop the message from showing again.": [
         "Hvis du for nylig nulstillede din adgangskode kan du ${ recoveryMethodLink } for at låse op for dine data. Hvis dette er på grund af en gammel nulstilling af adgangskoden kan du stoppe beskeden fra at vises igen."
       ],
@@ -8717,21 +8646,6 @@
       "Invalid code. ${ RequestNewCodeLink } and try again.": [
         "Ugyldig kode. ${ RequestNewCodeLink } og prøv igen."
       ],
-      "Invite deleted": [
-        "Invitation slettet"
-      ],
-      "Invite for new user deleted": [
-        "Invitation til ny bruger slettet"
-      ],
-      "Invite for organization accepted": [
-        "Invitation til organisation accepteret"
-      ],
-      "Invite for organization created": [
-        "Invitation til organisation oprettet"
-      ],
-      "Invite rejected": [
-        "Invitation afvist"
-      ],
       "Invite successfully sent": [
         "Invitation sendt",
         "Invitationer sendt"
@@ -8747,54 +8661,6 @@
       ],
       "It's better to have:": [
         "Det er bedre at have:"
-      ],
-      "Item autofilled in ${ vaultLink }": [
-        "Element autoudfyldt i ${ vaultLink }"
-      ],
-      "Item autofilled in vault": [
-        "Element autoudfyldt i boks"
-      ],
-      "Item created in ${ vaultLink }": [
-        "Element oprettet i ${ vaultLink }"
-      ],
-      "Item created in vault": [
-        "Element oprettet i boks"
-      ],
-      "Item deleted from ${ vaultLink }": [
-        "Element slettet fra ${ vaultLink }"
-      ],
-      "Item deleted from vault": [
-        "Element slettet fra boks"
-      ],
-      "Item flags changed in ${ vaultLink }": [
-        "Elementflag ændret i ${ vaultLink }"
-      ],
-      "Item flags changed in vault": [
-        "Elementflag ændret i boks"
-      ],
-      "Item in ${ vaultLink } trashed": [
-        "Element i ${ vaultLink } beskadiget"
-      ],
-      "Item in ${ vaultLink } untrashed": [
-        "Element i ${ vaultLink } ubeskadiget"
-      ],
-      "Item in vault trashed": [
-        "Element i boks beskadiget"
-      ],
-      "Item in vault untrashed": [
-        "Element i boks ubeskadiget"
-      ],
-      "Item read in ${ vaultLink }": [
-        "Element læst i ${ vaultLink }"
-      ],
-      "Item read in vault": [
-        "Element læst i boks"
-      ],
-      "Item updated in ${ vaultLink }": [
-        "Element opdateret i ${ vaultLink }"
-      ],
-      "Item updated in vault": [
-        "Element opdateret i boks"
       ],
       "It’s often the easiest way to recover your account if you’re signed in.": [
         "Det er ofte den letteste måde at gendanne din konto hvis du er logget ind."
@@ -8964,9 +8830,6 @@
       "New group created via your identity provider and pending review.": [
         "Ny gruppe oprettet via din identitetsudbyder og afventer gennemgang."
       ],
-      "New user invited to organization": [
-        "Ny bruger inviteret til organisation"
-      ],
       "New VPN connection data will stop being collected and shown.": [
         "Nye VPN-forbindelsesdata vil ophøre med at blive indsamlet og vist."
       ],
@@ -9097,15 +8960,6 @@
       ],
       "Paid for a plan": [
         "Betalt for et abonnement"
-      ],
-      "Pass Monitor - custom email confirmed": [
-        "Pass Monitor - tilpasset e-mail bekræftet"
-      ],
-      "Pass Monitor - custom email created": [
-        "Pass Monitor - tilpasset e-mail oprettet"
-      ],
-      "Pass Monitor - custom email deleted": [
-        "Pass Monitor - tilpasset e-mail slettet"
       ],
       "Pass usage logs": [
         "Pass-brugslogninger"
@@ -9406,21 +9260,9 @@
       "Setting up your organization": [
         "Konfigurerer din organisation"
       ],
-      "Shared ${ vaultLink } deleted": [
-        "Delt ${ vaultLink } slettet"
-      ],
-      "Shared ${ vaultLink } updated": [
-        "Delt ${ vaultLink } opdateret"
-      ],
       "Shared server country (${ countriesCount })": [
         "Delt serverland (${ countriesCount })",
         "Delte serverlande (${ countriesCount })"
-      ],
-      "Shared vault deleted": [
-        "Delt boks slettet"
-      ],
-      "Shared vault updated": [
-        "Delt boks opdateret"
       ],
       "Sign in only": [
         "Log kun ind"
@@ -9433,9 +9275,6 @@
       ],
       "Signed up": [
         "Tilmelde sig"
-      ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Eftersom du er en loyal bruger, har din konto ekstra features aktiveret."
       ],
       "Smart Routed through a different country.": [
         "Smart Routet gennem et andet land."
@@ -9871,11 +9710,11 @@
       "Unfortunately there is no recovery method available for this account.": [
         "Der er desværre ingen tilgængelig gendannelsesmetode for denne konto."
       ],
+      "UnionPay logo": [
+        "UnionPay logo"
+      ],
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Unikt ID genereret af din identitetsudbyder, normalt i form af en URL, der indeholder identitetsudbyderens navn (f.eks. https://idp.example.com/XXXXX)."
-      ],
-      "Unknown event type": [
-        "Ukendt begivenhedstype"
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Medmindre du logger ud eller ændrer din adgangskode, forbliver din session aktiv. Sessioner udløber efter 60 dages inaktivitet."
@@ -9969,21 +9808,6 @@
       ],
       "Using a different MDM? Any MDM that supports deploying a configuration profile will work. Refer to your MDM's documentation on how to upload and assign it to your device fleet.": [
         "Bruger du en anden MDM? Enhver MDM, der understøtter aktivering af en konfigurationsprofil, fungerer. Se dokumentationen for din MDM for hvordan du uploader og tildeler den til dine enheder."
-      ],
-      "Vault created": [
-        "Boks oprettet"
-      ],
-      "Vault deleted": [
-        "Boks slettet"
-      ],
-      "Vault either deleted or requires access permissions": [
-        "Boks enten slettet eller kræver adgangstilladelser"
-      ],
-      "Vault shared with email": [
-        "Boks delt med e-mail"
-      ],
-      "Vault updated": [
-        "Boks opdateret"
       ],
       "Verification code sent.": [
         "Bekræftelseskode sendt."
@@ -10116,9 +9940,6 @@
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Ved aktivering af SAML for ${ appName } i din identitetsudbyder, kan du blive bedt om at bruge callback-URL'en (ACS) og udsteder-ID'et. Kopier og indsæt blot nedenstående data i din identitetsudbyders felter."
-      ],
-      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
-        "Når du opsiger dit nuværende betalte abonnement, returneres restbeløbet af abonnementet som kontokredit, og du nedgraderes til ${ BRAND_NAME }. ${ PLANS.FREE }-abonnementet"
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Ved opsigelsen bliver dit abonnement ikke fornyet, men du kan stadig nyde godt af abonnementets fordele indtil udløb af abonnementsperioden. Herefter nedgraderes du til ${ BRAND_NAME } Free-abonnement."
@@ -10317,9 +10138,6 @@
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "Du skal aktivere din private organisationsnøgle med adgangskoden til backup-organisationsnøglen, som du har fået af din organisationsadministrator."
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Du skal deaktivere eller fjerne eventuelle yderligere ${ MAIL_APP_NAME }-brugere, adresser og brugerdomæner, før du kan nedgradere."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Du skal have et betalingskort eller en bankkonto tilknyttet din PayPal-konto for at tilføje den som en betalingsmetode."
@@ -11209,6 +11027,9 @@
       "Issuer ID": [
         "Udsteder-ID"
       ],
+      "Item": [
+        "Element"
+      ],
       "Keep me signed in": [
         "Hold mig logget ind"
       ],
@@ -11642,6 +11463,9 @@
       "Value": [
         "Værdi"
       ],
+      "Vault": [
+        "Boks"
+      ],
       "Verification code": [
         "Verifikationskode"
       ],
@@ -11856,6 +11680,9 @@
       "Create an alias": [
         "Opret et alias."
       ],
+      "Customer Support": [
+        "Kundesupport"
+      ],
       "data recovery option": [
         "metode til datagendannelse"
       ],
@@ -12008,9 +11835,6 @@
       ],
       "use a data recovery method": [
         "brug en metode til datagendannelse"
-      ],
-      "Vault": [
-        "Boks"
       ],
       "View guide": [
         "Se guide"
@@ -12626,9 +12450,6 @@
       ]
     },
     "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
       "Explore all ${ BRAND_NAME } plans": [
         "Udforsk alle ${ BRAND_NAME }-abonnementer"
       ],
@@ -14805,8 +14626,8 @@
       ]
     },
     "Payments.iDEAL": {
-      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
-        "Ved at bekræfte autoriserer du ${ BRAND_NAME } og Stripe, vores betalingstjenesteudbyder, til at hæve fremtidige betalinger for dit abonnement fra denne bankkonto med SEPA Direct Debit, og at banken kan debitere de betalinger. Din første betaling forfalder fra ${ IDEAL_WERO_BRAND_NAME } nu. Dit abonnement fornyes automatisk indtil du opsiger; vi giver dig besked før hver betaling. For Direct Debit-opkrævninger kan du anmode om en refundering fra din bank indenfor 8 uger af debiteringsdatoen efter din og din banks aftalevilkår. Dette gælder ikke for den betaling med ${ IDEAL_WERO_BRAND_NAME }, som du er i gang med nu."
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Ved at bekræfte autoriserer du ${ BRAND_NAME } og Stripe, vores betalingstjenesteudbyder, til at hæve fremtidige betalinger for dit abonnement fra denne bankkonto med SEPA Direct Debit, og at banken kan debitere de betalinger. Din første betaling forfalder fra ${ IDEAL_WERO_BRAND_NAME } nu. Dit abonnement fornyes automatisk indtil du opsiger, og vi giver dig besked før hver betaling. For Direct Debit-opkrævninger kan du anmode om en refundering fra din bank indenfor 8 uger af debiteringsdatoen efter din og din banks aftalevilkår. Dette gælder ikke for den betaling med ${ IDEAL_WERO_BRAND_NAME }, som du er i gang med nu."
       ]
     },
     "Payments.info": {
@@ -17370,9 +17191,6 @@
       "upgrade for more storage": [
         "opgrader for at få mere lagerplads"
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Vi tilføjer kreditten for den resterende tid til din ${ BRAND_NAME } Konto."
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "Du har stadig **${ daysRemaining }** dag tilbage på dit **${ currentPlanName }**-abonnement.",
         "Du har stadig **${ daysRemaining }** dage tilbage på dit **${ currentPlanName }**-abonnement"
@@ -18129,9 +17947,6 @@
       "You have successfully canceled your subscription.": [
         "Du har nu opsagt dit abonnement."
       ],
-      "You have successfully unsubscribed": [
-        "Du har afmeldt dig"
-      ],
       "You will receive your username via email within a minute if you entered a valid recovery email address.": [
         "Inden for et minut vil du modtage en e-mail med dit brugernavn, forudsat du har indtastet en gyldig e-mailadresse til gendannelse."
       ],
@@ -18709,12 +18524,6 @@
       "Confirm": [
         "Bekræft"
       ],
-      "Confirm downgrade": [
-        "Bekræft nedgradering"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Bekræft tab af ${ BRAND_NAME }-bonusser"
-      ],
       "Connect a Gmail address": [
         "Forbind en Gmail-adresse"
       ],
@@ -18941,9 +18750,6 @@
       ],
       "Downgrade account": [
         "Nedgradér konto"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "Nedgrader til ${ downgradedPlanName }?"
       ],
       "Download ${ app }": [
         "Download ${ app }"

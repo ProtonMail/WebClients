@@ -347,9 +347,6 @@
       "Done": [
         "Готово"
       ],
-      "Downgrade": [
-        "Перейти на более дешевую версию"
-      ],
       "Download": [
         "Скачать"
       ],
@@ -728,9 +725,6 @@
       "Remove": [
         "Удалить"
       ],
-      "Remove bonuses": [
-        "Удалить бонусы"
-      ],
       "Remove button": [
         "Удалить кнопку"
       ],
@@ -898,6 +892,9 @@
       ],
       "Submit": [
         "Отправить"
+      ],
+      "Subscribe": [
+        "Подписаться"
       ],
       "Subscribe now": [
         "Подписаться сейчас"
@@ -1319,11 +1316,6 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Платная версия менеджера паролей"
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "Гарантия возврата средств в течение 30 дней"
       ]
     },
     "BF2024: Deal details": {
@@ -4377,14 +4369,6 @@
         "Сменить тариф"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "Семейная группа не найдена. Попробуйте еще раз."
-      ],
-      "Organization not recognized. Try again.": [
-        "Организация не найдена. Попробуйте еще раз."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "Группы ${ BRAND_NAME }"
@@ -4453,22 +4437,6 @@
         "Ваш аккаунт занимает ${ usedSpace }, что превышает лимит хранилища в ${ inviteSpace }. Удалите некоторые данные или попросите администратора тарифного плана увеличить доступный вам объем."
       ]
     },
-    "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "Для подтверждения введите название семейной группы"
-      ],
-      "Enter organization name to confirm": [
-        "Для подтверждения введите название организации"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Все дополнительные пользователи, аккаунты и данные, связанные с вашей организацией будут удалены. Продолжить?"
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Все члены семьи лишатся доступа к платным функциям ${ BRAND_NAME }. Продолжить?"
-      ]
-    },
     "familyOffer_2023:Onboarding Proton": {
       "Configure your family account and invite users": [
         "Создайте семейный аккаунт и приглашайте пользователей"
@@ -4478,14 +4446,6 @@
       ],
       "Set up your family account": [
         "Настройте семейный аккаунт"
-      ]
-    },
-    "familyOffer_2023:Title": {
-      "Delete family group?": [
-        "Удалить семейную группу?"
-      ],
-      "Delete organization?": [
-        "Удалить организацию?"
       ]
     },
     "Feature": {
@@ -5225,18 +5185,6 @@
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Вы получаете ${ referrerRewardAmount }** в виде остатка на счете за каждого друга, который решит подписаться."
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } бонусного пространства"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } подключение для ${ VPN_APP_NAME } (позволяет подключить больше устройств к VPN)",
-        "+${ organization.BonusVPN } подключения для ${ VPN_APP_NAME } (позволяет подключить больше устройств к VPN)",
-        "+${ organization.BonusVPN } подключений для ${ VPN_APP_NAME } (позволяет подключить больше устройств к VPN)",
-        "+${ organization.BonusVPN } подключений для ${ VPN_APP_NAME } (позволяет подключить больше устройств к VPN)"
-      ],
-      "30-day money-back guarantee.": [
-        "30-дневная гарантия возврата денег."
-      ],
       "A cancellation email will be sent to removed participants.": [
         "Сообщение об отмене будет отправлено удаленным участникам."
       ],
@@ -5393,9 +5341,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Расширьте идентификацию бренда вашей организации и создайте более последовательный опыт работы в Интернете для ваших пользователей."
       ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Перейдя на бесплатный тарифный план, вы навсегда потеряете эти преимущества, даже если в будущем вы снова улучшите его."
-      ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Предоставляя полную информацию о подробностях события из этого календаря, вы соглашаетесь предоставить ${ BRAND_NAME } доступ к зашифрованной информации этого календаря."
       ],
@@ -5549,9 +5494,6 @@
       "Downgrade": [
         "Перейти на более дешёвую версию"
       ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "При переходе на более дешевую версию все подключения к платными серверам ${ VPN_APP_NAME } будут прерваны."
-      ],
       "Download current logs": [
         "Скачать текущие журналы"
       ],
@@ -5698,15 +5640,6 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Если сообщения нет в папке Входящие, проверьте, не попало ли оно в папку Спам."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Если вы продолжите переход на более дешевую версию, то вы потеряете доступ к ${ MAIL_APP_NAME } и платным функциям ${ VPN_APP_NAME }."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Если вы продолжите переход на более дешевую версию, то потеряете доступ к платным функциям ${ MAIL_APP_NAME }, включая дополнительное место в хранилище и фильтры."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Если вы продолжите переход на более дешевую версию, то вы потеряете доступ к платным функциям ${ VPN_APP_NAME }."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Импортировать ${ calendarCount } из ${ totalCalendarsCount } календаря",
@@ -6101,9 +6034,6 @@
       "Share this page to let others book time in your calendar. You can find and edit it in the sidebar under Booking pages.": [
         "Поделитесь этой страницей, чтобы другие могли бронировать время в вашем календаре. Найти и изменить её можно на боковой панели в разделе «Страницы бронирования»."
       ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Так как вы наш постоянный пользователь, для вашего аккаунта появился дополнительный функционал."
-      ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Некоторые правительства блокируют или ограничивают доступ к определенным веб-сайтам. VPN помогает обойти цензуру, при этом сохраняя ваши действия и личные данные конфиденциальными."
       ],
@@ -6350,6 +6280,9 @@
       "We'll email you once import is complete.": [
         "Мы отправим вам электронное письмо после завершения импорта."
       ],
+      "We'll get back to you shortly.": [
+        "Мы свяжемся с Вами в ближайшее время."
+      ],
       "We'll notify you when the import is done.": [
         "Мы уведомим вас, когда импорт будет завершен."
       ],
@@ -6490,9 +6423,6 @@
       ],
       "You may be redirected to your bank’s website.": [
         "Вы можете быть перенаправлены на сайт вашего банка."
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Вы должны отключить или удалить всех дополнительных пользователей ${ MAIL_APP_NAME }, адреса и свои доменты перед переходом на более дешевую версию."
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Вы ранее отклонили это приглашение. Попросите владельца повторно пригласить вас"
@@ -6892,6 +6822,12 @@
       "All-day event notifications": [
         "Уведомления о событии в течение всего дня"
       ],
+      "Amount": [
+        "Сумма"
+      ],
+      "Amount due": [
+        "К оплате"
+      ],
       "Anderson": [
         "Андерсон"
       ],
@@ -6996,6 +6932,9 @@
       ],
       "Credits": [
         "Кредиты"
+      ],
+      "Credits used": [
+        "Кредитов использовано"
       ],
       "Date and time": [
         "Дата и время"
@@ -7234,6 +7173,9 @@
       "Phone number": [
         "Номер телефона"
       ],
+      "Please share any feedback to help us improve.": [
+        "Оставляйте любые отзывы, чтобы помочь нам совершенствоваться."
+      ],
       "Port": [
         "Порт"
       ],
@@ -7371,6 +7313,9 @@
       ],
       "What happened?": [
         "Что случилось?"
+      ],
+      "Why would you like to cancel?": [
+        "Почему вы хотите отменить?"
       ],
       "Your calendar URL": [
         "URL вашего календаря"
@@ -8050,31 +7995,11 @@
       ]
     },
     "new_plans: action": {
-      "Delete account": [
-        "Удалить аккаунт"
-      ],
-      "Downgrade account": [
-        "Перейти на более дешевую версию аккаунта"
-      ],
       "Get ${ BRAND_NAME } for free": [
         "Получить ${ BRAND_NAME } бесплатно"
       ],
       "Get ${ planName }": [
         "Получить ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Сохранить ${ plan }"
-      ],
-      "Keep account": [
-        "Сохранить аккаунт"
-      ],
-      "Switch plan": [
-        "Сменить тариф"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }"
       ]
     },
     "new_plans: feature": {
@@ -8647,18 +8572,6 @@
       "For next-level password management and identity protection.": [
         "Для нового уровня управления паролями и защиты личных данных."
       ],
-      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
-        "Если вы удалите аккаунт, то потеряете все преимущества тарифа ${ visionary } и он не будет доступен, если вы создадите новый аккаунт."
-      ],
-      "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
-        "Если вы перейдете на более дешевую версию аккаунта, то потеряете все преимущества тарифа ${ visionary } и повторно подписаться на него вы не сможете."
-      ],
-      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
-        "Если вы перейдете на другой тариф, то потеряете все преимущества тарифа ${ visionary } и больше не сможете вернуться к ${ visionary }."
-      ],
-      "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
-        "Наш тариф ${ visionary } больше не доступен для новых подписчиков, поскольку это специальный тариф для первоначальных пользователей ${ BRAND_NAME } с особыми возможностями и преимуществами."
-      ],
       "Pay once, secure your passwords and identity forever.": [
         "Заплатите один раз и навсегда защитите свои пароли и личные данные."
       ],
@@ -8688,12 +8601,6 @@
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
         "Неограниченная конфиденциальность и большее хранилище для 2 пользователей."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
-        "Вы пользуетесь акционной ценой на свой текущий тариф. Если вы удалите аккаунт, вы потеряете свою акционную цену, и она не будет доступна, если вы создадите новый аккаунт."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
-        "Вы пользуетесь акционной ценой на свой текущий тариф. Если вы перейдете на более дешевую версию аккаунта, то потеряете возмоножность пользоваться акционной ценой, которая также будет недоступна, если вы попробуете повторно подписаться на тариф."
       ]
     },
     "new_plans: label": {
@@ -8713,20 +8620,11 @@
       ]
     },
     "new_plans: title": {
-      "Delete account?": [
-        "Удалить аккаунт?"
-      ],
-      "Downgrade account?": [
-        "Перейти на более дешевую версию аккаунта?"
-      ],
       "Review subscription": [
         "Проверить подписку"
       ],
       "Review subscription and pay": [
         "Выберите подписку и оплатите"
-      ],
-      "Switch plans?": [
-        "Сменить тариф?"
       ]
     },
     "new_plans: tooltip": {
@@ -10036,6 +9934,9 @@
       "Please select a country": [
         "Выберите страну"
       ],
+      "Please select the main reason": [
+        "Выберите основную причину"
+      ],
       "Postal code": [
         "Почтовый индекс"
       ],
@@ -10928,9 +10829,6 @@
       "upgrade for more storage": [
         "выберите другой тариф для увеличения хранилища"
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Мы зачислим остаток на счете за оставшееся время на ваш аккаунт ${ BRAND_NAME }"
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "У вас еще остался **${ daysRemaining }** день по тарифу **${ currentPlanName }**.",
         "У вас еще остались **${ daysRemaining }** дня по тарифу **${ currentPlanName }**.",
@@ -11549,6 +11447,9 @@
       "Invitation sent and participants added to all events": [
         "Приглашение отправлено и участники добавлены во все события"
       ],
+      "Invoice paid": [
+        "Счёт оплачен"
+      ],
       "Keyboard shortcuts preferences updated": [
         "Настройки сочетаний клавиш обновлены"
       ],
@@ -11593,9 +11494,6 @@
       ],
       "You have successfully canceled your subscription.": [
         "Вы успешно отменили свою подписку"
-      ],
-      "You have successfully unsubscribed": [
-        "Подписка отменена"
       ]
     },
     "Suffix": {
@@ -11929,12 +11827,6 @@
       "Collaborate on documents": [
         "Совместно работайте над документами"
       ],
-      "Confirm downgrade": [
-        "Подтвердите переход на более дешевую версию тарифа"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Подтвердите потерю бонусов ${ BRAND_NAME }"
-      ],
       "Connect apps and devices": [
         "Подключить приложения и устройства"
       ],
@@ -11949,6 +11841,9 @@
       ],
       "Contact group": [
         "Группа контактов"
+      ],
+      "Contact us": [
+        "Свяжитесь с нами"
       ],
       "Contacts": [
         "Контакты"
@@ -12039,9 +11934,6 @@
       ],
       "Downgrade account": [
         "Перейти на более дешевую версию аккаунта"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }?"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Скачать приложения ${ DRIVE_APP_NAME }"
@@ -12262,6 +12154,9 @@
       "Participants cannot be notified": [
         "Участники не могут быть уведомлены"
       ],
+      "Pay invoice": [
+        "Оплатить счёт"
+      ],
       "Payment failed": [
         "Сбой платежа"
       ],
@@ -12318,6 +12213,9 @@
       ],
       "Request new code": [
         "Запросить новый код"
+      ],
+      "Request sent": [
+        "Запрос отправлен"
       ],
       "Reshare your calendars": [
         "Cовместное использование ваших календарей"
@@ -12799,6 +12697,20 @@
       ],
       "Open in a new tab": [
         "Открыть в новой вкладке"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Я нашел другой сервис, который мне больше нравится"
+      ],
+      "It’s missing a key feature": [
+        "Отсутствует ключевая функция"
+      ],
+      "It’s too expensive": [
+        "Слишком дорого"
+      ],
+      "Other": [
+        "Другое"
       ]
     },
     "VPN Plan Feature": {

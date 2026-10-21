@@ -407,9 +407,6 @@
       "Done": [
         "Gotovo"
       ],
-      "Downgrade": [
-        "Snizi status"
-      ],
       "Download": [
         "Preuzmi"
       ],
@@ -859,9 +856,6 @@
       ],
       "Remove all other devices": [
         "Uklanjanje svih ostalih uređaja"
-      ],
-      "Remove bonuses": [
-        "Ukloni bonuse"
       ],
       "Remove button": [
         "Gumb za uklanjanje"
@@ -1763,11 +1757,6 @@
         "Nažalost, ova ponuda nije dostupna u Vašem trenutnom paketu. No možete ostvariti ${ discountPercentage } popusta na ${ plan.Title } ako se pretplatite na ${ cycle } mjesec.",
         "Nažalost, ova ponuda nije dostupna u Vašem trenutnom paketu. No možete ostvariti ${ discountPercentage } popusta na ${ plan.Title } ako se pretplatite na ${ cycle } mjeseca.",
         "Nažalost, ova ponuda nije dostupna u Vašem trenutnom paketu. No možete ostvariti ${ discountPercentage } popusta na ${ plan.Title } ako se pretplatite na ${ cycle } mjeseci."
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "Povrat novca do 30 dana"
       ]
     },
     "bf2023: Title": {
@@ -5330,14 +5319,6 @@
         "Prikaži pozivnicu"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "Obiteljska grupa nije prepoznata. Pokušajte ponovno."
-      ],
-      "Organization not recognized. Try again.": [
-        "Organizacija nije prepoznata. Pokušajte ponovno."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } grupe"
@@ -5487,22 +5468,8 @@
       ]
     },
     "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "Unesite naziv obiteljske grupe za potvrdu"
-      ],
-      "Enter organization name to confirm": [
-        "Unesi naziv organizacije za potvrdu"
-      ],
       "Family name": [
         "Prezime"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Ovo će trajno izbrisati sve podkorisnike, korisničke račune i podatke povezane s Vašom organizacijom."
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Ovo će ukloniti sve ${ BRAND_NAME } premium značajke za svakog člana obitelji."
       ]
     },
     "familyOffer_2023:Settings section title": {
@@ -5530,12 +5497,6 @@
       ],
       "Change family name": [
         "Promjena prezimena"
-      ],
-      "Delete family group?": [
-        "Izbrisati obiteljsku grupu?"
-      ],
-      "Delete organization?": [
-        "Izbrisati organizaciju?"
       ],
       "Edit user storage": [
         "Uredi korisničku pohranu"
@@ -6711,18 +6672,6 @@
         "Pronađena su ${ total } korisnika",
         "Pronađeno je ${ total } korisnika"
       ],
-      "${ vaultLink } created": [
-        "${ vaultLink } stvoreno"
-      ],
-      "${ vaultLink } deleted": [
-        "${ vaultLink } izbrisan"
-      ],
-      "${ vaultLink } shared with email": [
-        "${ vaultLink } je podijeljen putem e-pošte"
-      ],
-      "${ vaultLink } updated": [
-        "${ vaultLink } ažurirano"
-      ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
         "${ VPN_SHORT_APP_NAME } sakriva vaš promet. ${ PASS_SHORT_APP_NAME } sakriva vaš identitet\n— neograničeni **hide-my-email pseudonimi** i **upozorenja o mračnom webu** u slučaju curenja vaših podataka."
       ],
@@ -6793,22 +6742,11 @@
         "+ još ${ invisibleCount }",
         "Još ${ invisibleCount }"
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+ ${ bonusSpace } dodatnog prostora za pohranu"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } veza za ${ VPN_APP_NAME } (omogućuje Vam povezivanje više uređaja na VPN)",
-        "+${ organization.BonusVPN } veze za ${ VPN_APP_NAME } (omogućuje ti povezivanje više uređaja na VPN)",
-        "+${ organization.BonusVPN } veze za ${ VPN_APP_NAME } (omogućuju Vam povezivanje više uređaja na VPN)"
-      ],
       "2FA disabled": [
         "2FA onemogućen"
       ],
       "30-day money-back guarantee": [
         "Povrat novca do 30 dana"
-      ],
-      "30-day money-back guarantee.": [
-        "Povrat novca do 30 dana."
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Poddomena ${ protonSubdomain } je hostirana kod usluge ${ BRAND_NAME }, što vam omogućuje brzo postavljanje poddomene. ${ learnMoreLink }"
@@ -7073,9 +7011,6 @@
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "Onemogućavanjem nadzora korisničkog računa također ćete očistiti cijelu povijest. Jeste li sigurni da to želite onemogućiti?"
       ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Prelaskom na Free plan, trajno ćete izgubiti ove prednosti, čak i ako nadogradite plan opet u budućnosti."
-      ],
       "By leaving now, changes may not be saved": [
         "Ako sada napustite, promjene se možda neće spremiti"
       ],
@@ -7330,9 +7265,6 @@
       ],
       "Downgrade": [
         "Snizi status"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Snižavanje statusa prekida sve veze s plaćenim ${ VPN_APP_NAME } poslužiteljima."
       ],
       "Download ${ VPN_APP_NAME }": [
         "Preuzmite ${ VPN_APP_NAME }"
@@ -7646,15 +7578,6 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Ukoliko izgubite svoj uređaj za dvofaktorsku autentikaciju, ovi kôdovi se mogu upotrijebiti umjesto 6-znamenkastog kôda dvofaktorske autentikacije da bi se prijavili na vaš korisnički račun. Svaki kôd može se upotrijebiti samo jednom."
       ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Ako nastavite s snižavanjem statusa, izgubit ćete pristup plaćenim ${ MAIL_APP_NAME } i ${ VPN_APP_NAME } značajkama."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Ako nastavite s snižavanjem statusa, izgubiti će te pristup plaćenim značajkama ${ MAIL_APP_NAME }-a, uključujući dodatni prostor za pohranu i filtre."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Ako nastavite sa snižavanjem statusa, izgubit ćete pristup plaćenim ${ VPN_APP_NAME } značajkama."
-      ],
       "If you recently reset your password, you can ${ recoveryMethodLink } to unlock your data. If this is due to an old password reset, you can stop the message from showing again.": [
         "Ako ste nedavno ponovno pokrenuli lozinku, možete ${ recoveryMethodLink } kako biste otključali svoje podatke. Ako je to zbog starog ponovnog pokretanja lozinke, možete zaustaviti ponovno prikazivanje ove poruke."
       ],
@@ -7735,21 +7658,6 @@
       "Invalid code. ${ RequestNewCodeLink } and try again.": [
         "Neispravan kôd. ${ RequestNewCodeLink } i pokušajte ponovno."
       ],
-      "Invite deleted": [
-        "Pozivnica izbrisana"
-      ],
-      "Invite for new user deleted": [
-        "Pozivnica za novog korisnika je izbrisana"
-      ],
-      "Invite for organization accepted": [
-        "Pozivnica za organizaciju je prihvaćena"
-      ],
-      "Invite for organization created": [
-        "Pozivnica za organizaciju stvorena"
-      ],
-      "Invite rejected": [
-        "Pozivnica je odbijena"
-      ],
       "Invite successfully sent": [
         "Pozivnica je uspješno poslana",
         "Pozivnice su uspješno poslane",
@@ -7766,54 +7674,6 @@
       ],
       "It's better to have:": [
         "Bolje je imati:"
-      ],
-      "Item autofilled in ${ vaultLink }": [
-        "Stavka automatski popunjena u ${ vaultLink }"
-      ],
-      "Item autofilled in vault": [
-        "Stavka je automatski popunjena u trezoru"
-      ],
-      "Item created in ${ vaultLink }": [
-        "Stavka je stvorena u ${ vaultLink }"
-      ],
-      "Item created in vault": [
-        "Stavka stvorena u trezoru"
-      ],
-      "Item deleted from ${ vaultLink }": [
-        "Stavka je izbrisana iz ${ vaultLink }"
-      ],
-      "Item deleted from vault": [
-        "Stavka je izbrisana iz trezora"
-      ],
-      "Item flags changed in ${ vaultLink }": [
-        "Oznake stavke su promijenjene u ${ vaultLink }"
-      ],
-      "Item flags changed in vault": [
-        "Oznake stavke promijenjene u trezoru"
-      ],
-      "Item in ${ vaultLink } trashed": [
-        "Stavka u ${ vaultLink } je premještena u otpad"
-      ],
-      "Item in ${ vaultLink } untrashed": [
-        "Stavka u ${ vaultLink } je vraćena iz otpada"
-      ],
-      "Item in vault trashed": [
-        "Stavka u trezoru prebačena u otpad"
-      ],
-      "Item in vault untrashed": [
-        "Stavka u trezoru vraćena iz otpada"
-      ],
-      "Item read in ${ vaultLink }": [
-        "Stavka pročitana u ${ vaultLink }"
-      ],
-      "Item read in vault": [
-        "Stavka pročitana u trezoru"
-      ],
-      "Item updated in ${ vaultLink }": [
-        "Stavka je ažurirana u ${ vaultLink }"
-      ],
-      "Item updated in vault": [
-        "Stavka ažurirana u trezoru"
       ],
       "It’s often the easiest way to recover your account if you’re signed in.": [
         "To je često najlakši način za oporavak korisničkog računa ako ste prijavljeni."
@@ -7965,9 +7825,6 @@
       "New group created via your identity provider and pending review.": [
         "Nova grupa stvorena je putem vašeg davatelja identiteta i čeka pregled."
       ],
-      "New user invited to organization": [
-        "Novi korisnik pozvan u organizaciju"
-      ],
       "New VPN connection data will stop being collected and shown.": [
         "Novi podaci o VPN vezi prestat će se prikupljati i prikazivati."
       ],
@@ -8079,15 +7936,6 @@
       ],
       "Paid for a plan": [
         "Plaćeno za pretplatu"
-      ],
-      "Pass Monitor - custom email confirmed": [
-        "Pass Monitor - potvrđena je prilagođena e-pošta"
-      ],
-      "Pass Monitor - custom email created": [
-        "Pass Monitor - stvorena je prilagođena e-pošta"
-      ],
-      "Pass Monitor - custom email deleted": [
-        "Pass Monitor - izbrisana je prilagođena e-pošta"
       ],
       "Pass usage logs": [
         "Zapisnici korištenja Pass-a"
@@ -8372,22 +8220,10 @@
       "Setting up your organization": [
         "Postavljanje vaše organizacije"
       ],
-      "Shared ${ vaultLink } deleted": [
-        "Podijeljeni ${ vaultLink } izbrisan"
-      ],
-      "Shared ${ vaultLink } updated": [
-        "Podijeljeni ${ vaultLink } je ažuriran"
-      ],
       "Shared server country (${ countriesCount })": [
         "Zemlja s dijeljenim poslužiteljem (${ countriesCount })",
         "Države s dijeljenim poslužiteljima (${ countriesCount })",
         "Zemlje s dijeljenim poslužiteljem (${ countriesCount })"
-      ],
-      "Shared vault deleted": [
-        "Podijeljeni trezor je izbrisan"
-      ],
-      "Shared vault updated": [
-        "Dijeljeni trezor je ažuriran"
       ],
       "Sign in only": [
         "Samo prijava"
@@ -8400,9 +8236,6 @@
       ],
       "Signed up": [
         "Registriran/a"
-      ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Budući da ste odani korisnik, na vašem su računu omogućene dodatne značajke."
       ],
       "Smart Routed through a different country.": [
         "Pametno usmjereno kroz drugu državu."
@@ -8781,9 +8614,6 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Jedinstveni ID koji je generirao vaš davatelj identiteta, obično u obliku URL-a koji sadrži naziv davatelja identiteta unutar sebe (npr. https://idp.example.com/XXXXX)."
       ],
-      "Unknown event type": [
-        "Nepoznata vrsta događaja"
-      ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Osim ako se ne odjavite s vašeg računa ili promijenite lozinku, vaše sesije ostaju aktivne. Sesije ističu nakon 60 dana neaktivnosti."
       ],
@@ -8855,21 +8685,6 @@
       ],
       "Users": [
         "Korisnici"
-      ],
-      "Vault created": [
-        "Trezor je stvoren"
-      ],
-      "Vault deleted": [
-        "Trezor izbrisan"
-      ],
-      "Vault either deleted or requires access permissions": [
-        "Trezor je ili izbrisan ili zahtijeva dopuštenja za pristup"
-      ],
-      "Vault shared with email": [
-        "Trezor je podijeljen putem e-pošte"
-      ],
-      "Vault updated": [
-        "Ažuriran trezor"
       ],
       "Verification code sent.": [
         "Kôd za potvrdu je poslan."
@@ -8990,9 +8805,6 @@
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Prilikom omogućavanja SAML-a za aplikaciju ${ appName } kod vašeg davatelja identiteta, možda će se od vas tražiti da upotrijebite URL za povratni poziv (ACS) i ID izdavatelja. Samo kopirajte i zalijepite podatke u nastavku u polja svog davatelja identiteta."
-      ],
-      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
-        "Kada otkažete trenutačnu plaćenu pretplatu, preostali iznos pretplate bit će vam vraćen u obliku kredita na korisničkom računu te ćete biti unazađeni na ${ BRAND_NAME } ${ PLANS.FREE } plan."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Kada otkažete, vaša se pretplata neće obnoviti, ali i dalje možete koristiti pogodnosti plana do kraja pretplatničkog razdoblja. Nakon toga bit ćete unazađeni na besplatni plan usluge ${ BRAND_NAME }."
@@ -9188,9 +9000,6 @@
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "Morate aktivirati privatni ključ organizacije, pomoću rezervne lozinke ključa organizacije koju vam je dao administrator organizacije."
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Morate onemogućiti ili ukloniti sve dodatne korisnike ${ MAIL_APP_NAME }-a, adrese i prilagođene domene prije nego što možete sniziti status."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Morate imati kreditnu karticu ili bankovni račun povezan sa vašim PayPal računom kako biste ga mogli dodati kao način plaćanja."
@@ -10826,9 +10635,6 @@
       "use a data recovery method": [
         "upotrijebi način oporavka podataka"
       ],
-      "Vault": [
-        "Trezor"
-      ],
       "View guide": [
         "Pregledaj upute"
       ],
@@ -11418,9 +11224,6 @@
       ]
     },
     "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Unazadi na ${ downgradedPlanName }"
-      ],
       "Explore all ${ BRAND_NAME } plans": [
         "Istraži sve ${ BRAND_NAME } planove"
       ],
@@ -15867,9 +15670,6 @@
       "upgrade for more storage": [
         "nadogradite za više pohrane"
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Dodat ćemo kredite za preostalo vrijeme na vaš ${ BRAND_NAME } korisnički račun."
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "Preostao Vam je još **${ daysRemaining }** dan u okviru pretplate **${ currentPlanName }**.",
         "Preostala su Vam još **${ daysRemaining }** dana u okviru pretplate **${ currentPlanName }**.",
@@ -16636,9 +16436,6 @@
       "You have successfully canceled your subscription.": [
         "Uspješno ste poništili pretplatu."
       ],
-      "You have successfully unsubscribed": [
-        "Uspješno ste poništili pretplatu"
-      ],
       "You will receive your username via email within a minute if you entered a valid recovery email address.": [
         "Svoje korisničko ime dobit ćete putem e-pošte unutar jedne minute ako ste unijeli ispravnu adresu e-pošte za oporavak."
       ],
@@ -17181,12 +16978,6 @@
       "Confirm": [
         "Potvrdi"
       ],
-      "Confirm downgrade": [
-        "Potvrdi snižavanje statusa"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Potvrdi gubitak ${ BRAND_NAME } bonusa"
-      ],
       "Connect a Gmail address": [
         "Poveži Gmail adresu"
       ],
@@ -17403,9 +17194,6 @@
       ],
       "Downgrade account": [
         "Smanjite pretplatu računa"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "Unazaditi na ${ downgradedPlanName }?"
       ],
       "Download ${ app }": [
         "Preuzmi ${ app }"

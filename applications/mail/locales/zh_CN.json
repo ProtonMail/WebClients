@@ -477,9 +477,6 @@
       "Done": [
         "完成"
       ],
-      "Downgrade": [
-        "降级"
-      ],
       "Download": [
         "下载"
       ],
@@ -1185,9 +1182,6 @@
       "Remove ${ attachmentName }": [
         "移除 ${ attachmentName }"
       ],
-      "Remove bonuses": [
-        "放弃特权"
-      ],
       "Remove button": [
         "移除按钮"
       ],
@@ -1514,6 +1508,9 @@
       ],
       "Submit": [
         "提交"
+      ],
+      "Subscribe": [
+        "订阅"
       ],
       "Subscribe now": [
         "立即订阅"
@@ -2108,11 +2105,6 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "高级密码管理器"
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "30 天退款保证"
       ]
     },
     "BF2024: Deal details": {
@@ -4241,6 +4233,9 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在合并联系人，可能需要几分钟的时间。完成后您就可以关闭此对话框了。"
       ],
+      "Move emails to the right category to improve categorization.": [
+        "将邮件移至正确的类别以改进分类。"
+      ],
       "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
         "来自 ${ senderEmailAddress } 及其他 ${ otherSendersCount } 位发件人的新邮件将被直接删除，不再送达。"
       ],
@@ -5943,14 +5938,6 @@
         "变更账户等级"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "无法识别家庭群组。请重试。"
-      ],
-      "Organization not recognized. Try again.": [
-        "无法识别机构，请重试。"
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } 团体账户"
@@ -6019,22 +6006,6 @@
         "您已使用 ${ usedSpace } 存储空间，超过了账户分配的 ${ inviteSpace } 上限。请清理部分数据或要求账户管理员为您的邮箱扩容。"
       ]
     },
-    "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "输入家庭群组名称以确认"
-      ],
-      "Enter organization name to confirm": [
-        "请输入机构名称进行确认"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "这将永久删除与您的组织相关的所有子用户、账户和数据。"
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "这将删除每个家庭成员所有的 ${ BRAND_NAME } 高级功能。"
-      ]
-    },
     "familyOffer_2023:Onboarding Proton": {
       "Configure your family account and invite users": [
         "配置您的家庭账户并邀请用户"
@@ -6047,14 +6018,6 @@
       ],
       "Set up your family account": [
         "设置您的家庭账户"
-      ]
-    },
-    "familyOffer_2023:Title": {
-      "Delete family group?": [
-        "删除家庭群组？"
-      ],
-      "Delete organization?": [
-        "删除机构?"
       ]
     },
     "Feature": {
@@ -7201,20 +7164,11 @@
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "每位好友订阅后，您可获得 **${ referrerRewardAmount }** 积分！"
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } 特权存储空间"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } ${ VPN_APP_NAME } 连接数（允许您将更多设备连接至VPN）"
-      ],
       "1 device per user": [
         "1 设备/用户"
       ],
       "1 vault per user": [
         "1 保险库/用户"
-      ],
-      "30-day money-back guarantee.": [
-        "30 天内可退款。"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "每个手机号只能用于验证一个 ${ BRAND_NAME } 账户"
@@ -7468,9 +7422,6 @@
       "Bulk delete": [
         "批量删除"
       ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "一旦降级为免费用户，无论今后是否再次付费升级，您都将永远失去这些特权。"
-      ],
       "Calendar side panel": [
         "日历侧边栏"
       ],
@@ -7707,9 +7658,6 @@
       ],
       "Downgrade": [
         "降级"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "降级将导致与 ${ VPN_APP_NAME } 服务器的所有连接中断。"
       ],
       "Download application logs for troubleshooting": [
         "下载应用日志以供故障排查"
@@ -8031,15 +7979,6 @@
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "如果您无法访问验证器应用，可以使用设置 2FA 时提供的 16 个备用恢复码之一。${ learnMoreLink }"
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "降级账户后您将不能再使用 ${ MAIL_APP_NAME } 和 ${ VPN_APP_NAME } 的收费功能。"
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "降级账户后您将不能使用 ${ MAIL_APP_NAME } 的收费功能，包括额外的存储空间和筛选规则。"
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "降级账户后您将不能再使用 ${ VPN_APP_NAME } 的收费功能。"
       ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "如果您的别名被出售、泄露或滥用，只需禁用它即可停止接收垃圾邮件。"
@@ -8902,9 +8841,6 @@
       "Show original message": [
         "显示原始邮件"
       ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "作为 Proton 忠实用户，您拥有以下特权。"
-      ],
       "Snooze emails": [
         "稍后提醒"
       ],
@@ -9502,6 +9438,9 @@
       "We'll email you once import is complete.": [
         "导入完成后，我们会向您发送一封电子邮件。"
       ],
+      "We'll get back to you shortly.": [
+        "我们会尽快回复您。"
+      ],
       "We'll notify you when the import is done.": [
         "当导入完成时我们将通知您"
       ],
@@ -9694,9 +9633,6 @@
       "You may be redirected to your bank’s website.": [
         "您可能将转至银行网站。"
       ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "降级前需要停用或移除所有额外的 ${ MAIL_APP_NAME } 用户、地址和自有域名。"
-      ],
       "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
         "您在 ${ categoryLabel } 分类中已选 **${ checked } 项会话**"
       ],
@@ -9786,6 +9722,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "文件会加密保存"
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "您的免费试用已结束。立即订阅，以保持团队访问不中断并确保账户安全。"
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
         "您的免费试用已成功转换为 ${ cycle } 个月订阅。您的续订日期是 ${ nextBillingDate }。"
@@ -10248,6 +10187,12 @@
       "Always move sender's emails": [
         "始终移动该发件人的邮件"
       ],
+      "Amount": [
+        "金额"
+      ],
+      "Amount due": [
+        "应付金额"
+      ],
       "AND": [
         "且"
       ],
@@ -10439,6 +10384,9 @@
       ],
       "Credits": [
         "余额"
+      ],
+      "Credits used": [
+        "扣除余额"
       ],
       "Current context": [
         "当前上下文"
@@ -10887,6 +10835,9 @@
       "Phone number": [
         "电话号码"
       ],
+      "Please share any feedback to help us improve.": [
+        "请分享任何反馈意见，以帮助我们改进工作。"
+      ],
       "Port": [
         "端口"
       ],
@@ -11159,6 +11110,9 @@
       ],
       "What happened?": [
         "发生了什么？"
+      ],
+      "Why would you like to cancel?": [
+        "您为什么想要取消？"
       ],
       "With attachment": [
         "含有附件"
@@ -11998,35 +11952,17 @@
         "VPN 速度一般"
       ]
     },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "开通 ${ planTitle }"
+      ]
+    },
     "new_plans: action": {
-      "Delete account": [
-        "删除账户"
-      ],
-      "Downgrade account": [
-        "降级账户"
-      ],
       "Get ${ BRAND_NAME } for free": [
         "免费获得 ${ BRAND_NAME }"
       ],
       "Get ${ planName }": [
         "开通 ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "保留 ${ plan }"
-      ],
-      "Keep account": [
-        "保留账户"
-      ],
-      "Switch plan": [
-        "切换套餐"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降级至 ${ downgradedPlanName }"
-      ],
-      "Get ${ planTitle }": [
-        "开通 ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -12539,18 +12475,6 @@
       "For next-level password management and identity protection.": [
         "体验更高等级的密码管理与身份保护。"
       ],
-      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
-        "删除您的账户后，您将失去所有${ visionary } 套餐福利，如果您创建新账户，则无法享受这些福利。"
-      ],
-      "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
-        "降级您的账户后，您将失去所有${ visionary } 套餐福利，如果您再次尝试订阅，则无法享受这些福利。"
-      ],
-      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
-        "如果您切换到其他套餐，您将失去${ visionary } 套餐的所有福利，并且无法切换回${ visionary }。"
-      ],
-      "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
-        "我们的 ${ visionary } 套餐已不再适用于新订阅者，因为它是针对原始 ${ BRAND_NAME } 用户的特殊套餐，具有特殊功能和优势。"
-      ],
       "Pay once, secure your passwords and identity forever.": [
         "仅需一次支付，即可永久保护您的密码和身份。"
       ],
@@ -12580,12 +12504,6 @@
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
         "无限的私密性和更多的存储空间，最多可容纳 2 人。"
-      ],
-      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
-        "您当前套餐享受优惠价格。如果删除账户，您将失去该优惠价格，且创建新账户时无法重新获得。"
-      ],
-      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
-        "您当前套餐享受优惠价格。如果降级账户，您将失去该优惠价格，且再次订阅时无法重新获得。"
       ]
     },
     "new_plans: label": {
@@ -12605,20 +12523,11 @@
       ]
     },
     "new_plans: title": {
-      "Delete account?": [
-        "删除账户？"
-      ],
-      "Downgrade account?": [
-        "降级账户？"
-      ],
       "Review subscription": [
         "查看订阅"
       ],
       "Review subscription and pay": [
         "确认订单并支付"
-      ],
-      "Switch plans?": [
-        "切换套餐？"
       ]
     },
     "new_plans: tooltip": {
@@ -13849,7 +13758,7 @@
       ]
     },
     "Payments.iDEAL": {
-      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
         "确认即表示您授权 ${ BRAND_NAME } 及我们的支付服务商 Stripe 通过 SEPA 直接借记从该银行账户收取您订阅的未来款项，并授权您的银行执行这些扣款。您的首笔付款现通过 ${ IDEAL_WERO_BRAND_NAME } 完成。您的套餐将自动续订，直至您取消；我们会在每次扣款前通知您。对于直接借记扣款，根据您与银行达成的协议条款，您可在扣款日起 8 周内向银行申请退款。此规定不适用于您当前正在进行的 ${ IDEAL_WERO_BRAND_NAME } 付款。"
       ]
     },
@@ -14085,6 +13994,9 @@
       ],
       "Please insert link first": [
         "请先输入链接内容"
+      ],
+      "Please select the main reason": [
+        "请选择主要原因"
       ],
       "Please share what you expected": [
         "请说明您的预期"
@@ -15240,9 +15152,6 @@
       "upgrade for more storage": [
         "付费扩容"
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "我们会将剩余时间的点数计入您的 ${ BRAND_NAME } 账户。"
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "您的 **${ currentPlanName }** 账户等级还有 **${ daysRemaining }** 天的有效期。"
       ],
@@ -15833,6 +15742,9 @@
       "Invitation rejected": [
         "邀请已被拒绝"
       ],
+      "Invoice paid": [
+        "支付完成"
+      ],
       "Keyboard shortcuts preferences updated": [
         "快捷键设置已更改"
       ],
@@ -15955,9 +15867,6 @@
       ],
       "You have successfully canceled your subscription.": [
         "您已成功取消订阅"
-      ],
-      "You have successfully unsubscribed": [
-        "您已退订成功"
       ]
     },
     "Success notification": {
@@ -16335,12 +16244,6 @@
       "Configure migration": [
         "配置迁移"
       ],
-      "Confirm downgrade": [
-        "确认降级"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "确定放弃 ${ BRAND_NAME } 特权"
-      ],
       "Confirm recipient address?": [
         "确认收件人地址？"
       ],
@@ -16361,6 +16264,9 @@
       ],
       "Contact group": [
         "联系人群组"
+      ],
+      "Contact us": [
+        "联系我们"
       ],
       "Contacts": [
         "通讯录"
@@ -16481,9 +16387,6 @@
       ],
       "Downgrade account": [
         "降级账户"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "降级至 ${ downgradedPlanName }?"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "下载 ${ DRIVE_APP_NAME } 应用"
@@ -16689,6 +16592,9 @@
       "Make a secure connection your default": [
         "将安全连接设为默认首选"
       ],
+      "Make Categories work better for you": [
+        "让类别更好地为您服务"
+      ],
       "Make your inbox your own": [
         "自定义您的收件箱"
       ],
@@ -16875,6 +16781,9 @@
       "Other names": [
         "其他名称"
       ],
+      "Pay invoice": [
+        "支付账单"
+      ],
       "Payment failed": [
         "支付失败"
       ],
@@ -16958,6 +16867,9 @@
       ],
       "Request new code": [
         "请求新验证码"
+      ],
+      "Request sent": [
+        "请求已发送"
       ],
       "Reverse charge not supported": [
         "不支持反向收费"
@@ -17087,6 +16999,9 @@
       ],
       "Subject missing": [
         "主题缺失"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "订阅 ${ planTitle }"
       ],
       "Subscription canceled": [
         "订阅已取消"
@@ -17487,6 +17402,20 @@
       ],
       "Replay video": [
         "回放视频"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "不如别的产品好用"
+      ],
+      "It’s missing a key feature": [
+        "缺少一个关键功能"
+      ],
+      "It’s too expensive": [
+        "价格太贵"
+      ],
+      "Other": [
+        "其它"
       ]
     },
     "VPN Plan Feature": {

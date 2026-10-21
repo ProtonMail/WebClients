@@ -25,12 +25,6 @@
       ]
     },
     "Action": {
-      "${ PASS_SHORT_APP_NAME } for Android": [
-        "Android için ${ PASS_SHORT_APP_NAME }"
-      ],
-      "${ PASS_SHORT_APP_NAME } for iOS": [
-        "iOS için ${ PASS_SHORT_APP_NAME }"
-      ],
       "Accept": [
         "Kabul et"
       ],
@@ -328,6 +322,15 @@
       "Don't show this again": [
         "Bunu yeniden gösterme"
       ],
+      "Download for Linux": [
+        "Linux için indir"
+      ],
+      "Download for macOS": [
+        "macOS için indirin"
+      ],
+      "Download for Windows": [
+        "Windows için indirin"
+      ],
       "Download this CSV template": [
         "Bu CSV kalıbını indir"
       ],
@@ -531,6 +534,9 @@
       ],
       "Open navigation": [
         "Gezinmeyi aç"
+      ],
+      "Open platform selection dropdown": [
+        "Platform seçimi listesini aç"
       ],
       "Organize vaults": [
         "Kasaları düzenle"
@@ -1006,6 +1012,9 @@
       ],
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Kimlik doğrulanamadı. Dışa aktarma işlemini yapabilmek için ikinci parolanızı yazın"
+      ],
+      "Biometric authentication cancelled.": [
+        "Biyometrik kimlik doğrulama iptal edildi."
       ],
       "Biometric authentication failed.": [
         "Biyometrik kimlik doğrulanamadı."
@@ -2121,6 +2130,9 @@
       "invites you to access items in": [
         "sizi şu kasadaki ögelere erişmeye davet ediyor:"
       ],
+      "iOS and Android Apps": [
+        "iOS ve Android uygulamaları"
+      ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Görünüşe göre ${ PASS_APP_NAME } uygulamasında zaten oturum açmışsınız. Farklı bir hesapla oturum açmaya çalışıyorsanız, lütfen önce eklentideki oturumunuzu kapatın."
       ],
@@ -2497,6 +2509,12 @@
       ],
       "Restoring trashed items...": [
         "Çöpe atılmış ögeler geri yükleniyor..."
+      ],
+      "Scan to download": [
+        "İndirmek için tara"
+      ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "iOS ve Android için ${ PASS_APP_NAME } indirmek için tarayın"
       ],
       "Secure links": [
         "Güvenli bağlantılar"
@@ -3580,11 +3598,17 @@
       "LinkedIn account": [
         "LinkedIn hesabı"
       ],
+      "Linux": [
+        "Linux"
+      ],
       "Login": [
         "Oturum açma"
       ],
       "Logins": [
         "Oturum açma kayıtları"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Mailboxes": [
         "E-posta kutuları"
@@ -4143,6 +4167,9 @@
       ],
       "WiFi network": [
         "Kablosuz ağ"
+      ],
+      "Windows": [
+        "Windows"
       ],
       "Work details": [
         "İş bilgileri"
@@ -4928,6 +4955,12 @@
       ],
       "Folder options": [
         "Klasör ayarları"
+      ],
+      "Get mobile and desktop apps": [
+        "Mobil ve bilgisayar uygulamalarını edinin"
+      ],
+      "Get mobile apps": [
+        "Mobil uygulamaları edinin"
       ],
       "Get Started": [
         "Başlayalım"

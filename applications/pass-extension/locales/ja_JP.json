@@ -25,12 +25,6 @@
       ]
     },
     "Action": {
-      "${ PASS_SHORT_APP_NAME } for Android": [
-        "Android 向け ${ PASS_SHORT_APP_NAME }"
-      ],
-      "${ PASS_SHORT_APP_NAME } for iOS": [
-        "iOS 向け ${ PASS_SHORT_APP_NAME }"
-      ],
       "Accept": [
         "承認する"
       ],
@@ -327,6 +321,12 @@
       ],
       "Do not suggest on this website": [
         "このウェブサイトでは提案しないでください"
+      ],
+      "Download for macOS": [
+        "macOS 版をダウンロード"
+      ],
+      "Download for Windows": [
+        "Windows 版をダウンロード"
       ],
       "Download this CSV template": [
         "この CSV テンプレートをダウンロード"
@@ -824,6 +824,11 @@
       ],
       "Vault": [
         "保管庫"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } 件の追加の結果は表示されていません"
       ]
     },
     "Button": {
@@ -1568,6 +1573,14 @@
         "ユーザー名"
       ]
     },
+    "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "${ itemsCount } 件の提案が見つかりました。キーボードを使用してナビゲートしてください。"
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "矢印キーで提案を表示し、選択することができます。エンターキーで確定し、エスケープキーで提案を閉じることができます。"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "「${ payload.itemName }」アイテムは無視されました"
@@ -2221,7 +2234,7 @@
         "「${ payload.content.name }」からすべてのアイテムを移動します"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
+        "アイテムを別の保管庫に移動すると、そのアイテムのセキュアリンクはすべて消去されます。"
       ],
       "Moving items": [
         "アイテムの移動"
@@ -4867,6 +4880,9 @@
       "Excluded items": [
         "除外されたアイテム"
       ],
+      "Export": [
+        "エクスポート"
+      ],
       "Fill & copy password": [
         "パスワードを入力してコピー"
       ],
@@ -4902,6 +4918,9 @@
       ],
       "Import - ${ date }": [
         "インポート - ${ date }"
+      ],
+      "Import failed": [
+        "インポートに失敗"
       ],
       "Import to vault(s)": [
         "一つ(複数)のフォルダーへのインポート"
