@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+import { differenceInCalendarDays } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
@@ -17,7 +18,6 @@ import { grantDelegatedAccessThunk, resetDelegatedAccessThunk } from '../../../o
 import { getMetaOutgoingDelegatedAccess } from '../../../shared/outgoing/helper';
 import type { EnrichedOutgoingDelegatedAccess } from '../../../shared/outgoing/interface';
 import { getFormattedAccessibleAtDate } from '../../date';
-import { getDaysFromMilliseconds } from '../../helper';
 import userExclamation from '../user-exclamation.svg';
 
 export interface ViewAccessOutgoingEmergencyContactModalProps extends Omit<
@@ -45,7 +45,9 @@ export const ViewOutgoingEmergencyContactModal = ({
 
     const now = Date.now();
     const meta = getMetaOutgoingDelegatedAccess({ now, value, hasKeysToReactivate });
-    const days = meta.accessibleAtTimeDiff !== null ? getDaysFromMilliseconds(meta.accessibleAtTimeDiff) : 0;
+    const { accessibleAtDate } = value.parsedOutgoingDelegatedAccess;
+    const days = accessibleAtDate ? differenceInCalendarDays(accessibleAtDate, now) : 0;
+    const isToday = meta.accessibleAtTimeDiff === null || meta.accessibleAtTimeDiff <= 0 || days === 0;
 
     const user = (
         <span key="user" className="text-bold text-break">
@@ -66,11 +68,14 @@ export const ViewOutgoingEmergencyContactModal = ({
                 <div>
                     <p className="my-0">
                         {getBoldFormattedText(
-                            c('emergency_access').ngettext(
-                                msgid`They will receive access automatically in **${days} day**, on **${formattedAccessibleAt}**, you can reject their request or give them access immediately at any time.`,
-                                `They will receive access automatically in **${days} days**, on **${formattedAccessibleAt}**, you can reject their request or give them access immediately at any time.`,
-                                days
-                            )
+                            isToday
+                                ? c('emergency_access')
+                                      .t`They will receive access automatically **today**, on **${formattedAccessibleAt}**. You can reject their request or give them access immediately at any time.`
+                                : c('emergency_access').ngettext(
+                                      msgid`They will receive access automatically in **${days} day**, on **${formattedAccessibleAt}**. You can reject their request or give them access immediately at any time.`,
+                                      `They will receive access automatically in **${days} days**, on **${formattedAccessibleAt}**. You can reject their request or give them access immediately at any time.`,
+                                      days
+                                  )
                         )}
                     </p>
                 </div>
