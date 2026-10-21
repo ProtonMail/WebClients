@@ -5,16 +5,16 @@ import { isBefore, set } from 'date-fns';
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/index';
-import { useUser } from '@proton/account/user/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { createNewBookingPage, editBookingPage } from '@proton/calendar/bookings/store/actions';
 import type { InternalBookingPage } from '@proton/calendar/bookings/store/interface';
-import { useBookingUpsell } from '@proton/calendar/bookings/store/useBookingUpsell';
+import { BookingCreateAction, useBookingUpsell } from '@proton/calendar/bookings/store/useBookingUpsell';
 import type { BookingPageEditData } from '@proton/calendar/bookings/types';
 import { useReadCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import { BookingsLimitReached } from '@proton/components/containers/calendar/BookingsLimitReached';
 import { useHasMeetProductAccess } from '@proton/meet/hooks/useHasMeetProductAccess';
 import { getPreferredActiveWritableCalendar } from '@proton/shared/lib/calendar/calendar';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -26,7 +26,6 @@ import { ModalType } from '../../GlobalModals/interface';
 import type { CalendarViewEvent } from '../../calendar/interface';
 import type { BookingFormData, BookingRange, BookingsContextValue, Intersection } from '../interface';
 import { BookingState, DEFAULT_EVENT_DURATION, DEFAULT_RECURRING, type InternalBookingForm } from '../interface';
-import { BookingsLimitReached } from '../upsells/BookingsLimitReached';
 import { UpsellBookings } from '../upsells/UpsellBookings';
 import { BookingErrorMessages } from '../utils/bookingCopy';
 import { serializeFormData } from '../utils/form/formHelpers';
@@ -59,7 +58,6 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     const { notify } = useCalendarGlobalModals();
     const { createNotification } = useNotifications();
 
-    const [user] = useUser();
     const [userSettings] = useUserSettings();
     const [calendarUserSettings] = useCalendarUserSettings();
     const [writeableCalendars = []] = useWriteableCalendars();
@@ -74,7 +72,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     const canUseMeetLocation = isMeetVideoConferenceEnabled && hasMeetProductAccess;
 
     // Upsell modals
-    const { shouldShowLimitModal, loadingLimits } = useBookingUpsell();
+    const { getCreateBookingAction, loadingLimits } = useBookingUpsell();
     const [upsellModalProps, setUpsellModalOpen, renderUpsellModal] = useModalState();
     const [limitModalProps, setLimitModalOpen, renderLimitModal] = useModalState();
 
@@ -318,19 +316,15 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     };
 
     const openBookingSidebarCreation = (currentDate: Date) => {
-        const userReachedBookingLimit = shouldShowLimitModal();
+        const createBookingAction = getCreateBookingAction();
 
-        if (userReachedBookingLimit.bookingPageLimitReached) {
+        if (createBookingAction === BookingCreateAction.LimitReached) {
             setLimitModalOpen(true);
             return;
         }
 
-        if (userReachedBookingLimit.planLimitReached) {
-            if (user.canPay) {
-                setUpsellModalOpen(true);
-            } else {
-                setLimitModalOpen(true);
-            }
+        if (createBookingAction === BookingCreateAction.Upsell) {
+            setUpsellModalOpen(true);
             return;
         }
 

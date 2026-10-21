@@ -7,7 +7,7 @@ import { ADDON_NAMES, PLANS, PLAN_TYPES } from '@proton/payments/core/constants'
 
 import { MAX_BOOKING_PAGES } from '../eligibility';
 import { useInternalBooking } from './hooks';
-import { useBookingUpsell } from './useBookingUpsell';
+import { BookingCreateAction, useBookingUpsell } from './useBookingUpsell';
 
 jest.mock('@proton/account/user/hooks');
 const mockUseUser = jest.mocked(useUser);
@@ -236,6 +236,48 @@ describe('useBookingUpsell', () => {
             const limits = result.current.shouldShowLimitModal();
 
             expect(limits).toEqual({ planLimitReached: true, bookingPageLimitReached: false });
+        });
+    });
+
+    describe('getCreateBookingAction', () => {
+        it('should return Create when the user is below all limits', () => {
+            mockUseUser.mockReturnValue([{ hasPaidMail: true, hasPaidMeet: false, canPay: true }] as any);
+            mockUseOrganization.mockReturnValue([{ PlanName: PLANS.MAIL }, false] as any);
+            mockUseInternalBooking.mockReturnValue([{ bookingPages: [] }] as any);
+
+            const { result } = renderHook(() => useBookingUpsell());
+
+            expect(result.current.getCreateBookingAction()).toBe(BookingCreateAction.Create);
+        });
+
+        it('should return Upsell when a user who can pay reaches their plan limit', () => {
+            mockUseUser.mockReturnValue([{ hasPaidMail: true, hasPaidMeet: false, canPay: true }] as any);
+            mockUseOrganization.mockReturnValue([{ PlanName: PLANS.MAIL }, false] as any);
+            mockUseInternalBooking.mockReturnValue([{ bookingPages: getBookingPagesArray(1) }] as any);
+
+            const { result } = renderHook(() => useBookingUpsell());
+
+            expect(result.current.getCreateBookingAction()).toBe(BookingCreateAction.Upsell);
+        });
+
+        it('should return LimitReached when a user who cannot pay reaches their plan limit', () => {
+            mockUseUser.mockReturnValue([{ isMember: true, hasPaidMeet: false, canPay: false }] as any);
+            mockUseOrganization.mockReturnValue([{ PlanName: PLANS.FAMILY }, false] as any);
+            mockUseInternalBooking.mockReturnValue([{ bookingPages: getBookingPagesArray(1) }] as any);
+
+            const { result } = renderHook(() => useBookingUpsell());
+
+            expect(result.current.getCreateBookingAction()).toBe(BookingCreateAction.LimitReached);
+        });
+
+        it('should return LimitReached at the maximum number of booking pages even for a user who can pay', () => {
+            mockUseUser.mockReturnValue([{ hasPaidMail: true, hasPaidMeet: false, canPay: true }] as any);
+            mockUseOrganization.mockReturnValue([{ PlanName: PLANS.BUNDLE_BIZ_2025 }, false] as any);
+            mockUseInternalBooking.mockReturnValue([{ bookingPages: getBookingPagesArray(MAX_BOOKING_PAGES) }] as any);
+
+            const { result } = renderHook(() => useBookingUpsell());
+
+            expect(result.current.getCreateBookingAction()).toBe(BookingCreateAction.LimitReached);
         });
     });
 });

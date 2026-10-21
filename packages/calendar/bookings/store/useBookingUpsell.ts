@@ -9,6 +9,12 @@ import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import { hasOrgMemberReachedBookingLimit, hasUserReachBookingsLimit, hasUserReachPlanLimit } from '../eligibility';
 import { useInternalBooking } from './hooks';
 
+export enum BookingCreateAction {
+    Create = 'create',
+    Upsell = 'upsell',
+    LimitReached = 'limit-reached',
+}
+
 export const useBookingUpsell = () => {
     const [user, loadingUser] = useUser();
     const [bookings] = useInternalBooking();
@@ -38,8 +44,27 @@ export const useBookingUpsell = () => {
         };
     };
 
+    /**
+     * What creating a booking page should do. Users who can't pay (org members) get the limit modal
+     * rather than an upsell they can't act on.
+     */
+    const getCreateBookingAction = (): BookingCreateAction => {
+        const { bookingPageLimitReached, planLimitReached } = shouldShowLimitModal();
+
+        if (bookingPageLimitReached || (planLimitReached && !user.canPay)) {
+            return BookingCreateAction.LimitReached;
+        }
+
+        if (planLimitReached) {
+            return BookingCreateAction.Upsell;
+        }
+
+        return BookingCreateAction.Create;
+    };
+
     return {
         shouldShowLimitModal,
+        getCreateBookingAction,
         loadingLimits: loadingOrganization || loadingUser || loadingSubscription,
     };
 };
