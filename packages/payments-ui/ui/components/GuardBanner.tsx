@@ -10,7 +10,7 @@ interface Props {
 
 /**
  * Lists every subscription-guard refusal from a `subscription/check` response in one view.
- * Announced via aria-live; the Banner icon pairs with the text so meaning is not
+ * Announced via role="alert"; the Banner icon pairs with the text so meaning is not
  * carried by colour alone. Mapped codes render their localised copy; if no code is mapped, a
  * single generic message is shown instead. Placement is up to the caller — this component never
  * opens a modal.
@@ -28,7 +28,7 @@ export const GuardBanner = ({ errors, className }: Props) => {
         .filter((message): message is () => string => message !== undefined);
 
     return (
-        <Banner aria-live="polite" variant={BannerVariants.WARNING} className={className}>
+        <Banner role="alert" variant={BannerVariants.WARNING} className={className}>
             {errorsMessages.length > 0 && (
                 <span className="mb-1">{c('Payments').t`Plan switch is incompatible for the following reasons:`}</span>
             )}
