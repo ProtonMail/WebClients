@@ -20,7 +20,7 @@
     "@proton/metrics": "workspace:^",
     "@proton/shared": "workspace:^",
     "@proton/utils": "workspace:^",
-    "@protontech/crypto": "*",
+    "@protontech/crypto": "catalog:",
     "date-fns": "^2.30.0",
     "idb": "^8.0.3",
     "lexical": "0.31.2",
