@@ -370,6 +370,9 @@ importers:
       '@proton/nav':
         specifier: workspace:^
         version: link:packages/nav
+      '@proton/oxlint-config':
+        specifier: workspace:^
+        version: link:packages/oxlint-config
       '@proton/payments':
         specifier: workspace:^
         version: link:packages/payments
@@ -5277,15 +5280,15 @@ importers:
         specifier: ^1.8.12
         version: 1.8.12
     devDependencies:
-      '@proton/eslint-config-proton':
-        specifier: workspace:^
-        version: link:../eslint-config-proton
       '@proton/jest-env':
         specifier: workspace:^
         version: link:../jest-env
       '@proton/jest-swc-preset':
         specifier: workspace:^
         version: link:../jest-swc-preset
+      '@proton/oxlint-config':
+        specifier: workspace:^
+        version: link:../oxlint-config
       '@testing-library/jest-dom':
         specifier: ^6.9.1
         version: 6.9.1
@@ -5325,15 +5328,18 @@ importers:
       '@typescript/native':
         specifier: npm:typescript@^7.0.2
         version: typescript@7.0.2
-      eslint:
-        specifier: ^10.12.0
-        version: 10.12.0(jiti@2.7.0)(supports-color@11.0.0)
       history:
         specifier: ^4.10.1
         version: 4.10.1
       jest:
         specifier: ^30.5.2
         version: 30.5.2(@types/node@24.19.0)(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.18(@swc/helpers@0.5.17))(@types/node@24.19.0)(@typescript/typescript6@6.0.2))
+      oxlint:
+        specifier: 1.87.0
+        version: 1.87.0(oxlint-tsgolint@7.0.2004)
+      oxlint-tsgolint:
+        specifier: 7.0.2004
+        version: 7.0.2004
       react-dom:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
@@ -6849,12 +6855,15 @@ importers:
         specifier: ^1.12.0
         version: 1.12.0(@typescript-eslint/types@8.71.2)(encoding@0.1.13)(supports-color@11.0.0)
     devDependencies:
-      '@proton/eslint-config-proton':
+      '@proton/oxlint-config':
         specifier: workspace:^
-        version: link:../eslint-config-proton
-      eslint:
-        specifier: ^10.12.0
-        version: 10.12.0(jiti@2.7.0)(supports-color@11.0.0)
+        version: link:../oxlint-config
+      oxlint:
+        specifier: 1.87.0
+        version: 1.87.0(oxlint-tsgolint@7.0.2004)
+      oxlint-tsgolint:
+        specifier: 7.0.2004
+        version: 7.0.2004
       prettier:
         specifier: ^3.9.10
         version: 3.9.10
@@ -6902,9 +6911,15 @@ importers:
         specifier: ^30.5.2
         version: 30.5.2(supports-color@11.0.0)
     devDependencies:
-      '@proton/eslint-config-proton':
+      '@proton/oxlint-config':
         specifier: workspace:^
-        version: link:../eslint-config-proton
+        version: link:../oxlint-config
+      oxlint:
+        specifier: 1.87.0
+        version: 1.87.0(oxlint-tsgolint@7.0.2004)
+      oxlint-tsgolint:
+        specifier: 7.0.2004
+        version: 7.0.2004
 
   packages/jest-swc-preset:
     dependencies:
@@ -6914,6 +6929,13 @@ importers:
       core-js:
         specifier: ^3.50.0
         version: 3.50.0
+    devDependencies:
+      oxlint:
+        specifier: 1.87.0
+        version: 1.87.0(oxlint-tsgolint@7.0.2004)
+      oxlint-tsgolint:
+        specifier: 7.0.2004
+        version: 7.0.2004
 
   packages/key-transparency:
     dependencies:
@@ -7901,9 +7923,9 @@ importers:
         specifier: ^5.1.0
         version: 5.1.0(html-webpack-plugin@5.6.8(webpack@5.111.1))(webpack@5.111.1)
     devDependencies:
-      '@proton/eslint-config-proton':
+      '@proton/oxlint-config':
         specifier: workspace:^
-        version: link:../eslint-config-proton
+        version: link:../oxlint-config
       '@types/node':
         specifier: 'catalog:'
         version: 24.19.0
@@ -7916,6 +7938,12 @@ importers:
       eslint:
         specifier: ^10.12.0
         version: 10.12.0(jiti@2.7.0)(supports-color@11.0.0)
+      oxlint:
+        specifier: 1.87.0
+        version: 1.87.0(oxlint-tsgolint@7.0.2004)
+      oxlint-tsgolint:
+        specifier: 7.0.2004
+        version: 7.0.2004
       prettier:
         specifier: ^3.9.10
         version: 3.9.10
@@ -8423,9 +8451,6 @@ importers:
 
   packages/polyfill:
     dependencies:
-      '@proton/eslint-config-proton':
-        specifier: workspace:^
-        version: link:../eslint-config-proton
       core-js:
         specifier: ^3.50.0
         version: 3.50.0
@@ -8436,9 +8461,15 @@ importers:
         specifier: ^1.0.4
         version: 1.0.4
     devDependencies:
-      eslint:
-        specifier: ^10.12.0
-        version: 10.12.0(jiti@2.7.0)(supports-color@11.0.0)
+      '@proton/oxlint-config':
+        specifier: workspace:^
+        version: link:../oxlint-config
+      oxlint:
+        specifier: 1.87.0
+        version: 1.87.0(oxlint-tsgolint@7.0.2004)
+      oxlint-tsgolint:
+        specifier: 7.0.2004
+        version: 7.0.2004
 
   packages/prettier-config:
     devDependencies:
