@@ -86,6 +86,7 @@ export const GatewaysSection = ({ organization, showCancelButton = true }: Props
     const [updatedLogicals, setUpdatedLogicals] = useState<Record<string, GatewayLogical>>({});
     const {
         hasGatewaysAccess,
+        planWithIpAddon,
         config: {
             Table: { IPv4, IPv6, Load, Deleted },
             ServerTable: serverTableConfig,
@@ -158,7 +159,7 @@ export const GatewaysSection = ({ organization, showCancelButton = true }: Props
     };
 
     const getCustomizeSubscriptionOpener =
-        (plan = organization.PlanName) =>
+        (plan = planWithIpAddon) =>
         () =>
             openSubscriptionModal({
                 step: SUBSCRIPTION_STEPS.CHECKOUT,

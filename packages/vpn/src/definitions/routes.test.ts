@@ -142,4 +142,34 @@ describe('resolveNavigation', () => {
 
         expect(nav.items.map((item) => item.id)).toEqual(['my-account', 'my-vpn']);
     });
+
+    type NavNode = { id: string; children?: NavNode[] };
+    const collectIds = (nodes: NavNode[]): string[] =>
+        nodes.flatMap((node) => [node.id, ...collectIds(node.children ?? [])]);
+
+    const vpnProEntitlements = createEntitlementResolverForOrgAndUser(
+        buildEntitlementCatalog({ [PLANS.VPN_PRO]: [EntitlementName.Business, EntitlementName.FlagsVpn] }),
+        makeEntitlements([orgSwitch(EntitlementName.Business), orgSwitch(EntitlementName.FlagsVpn)]),
+        [buildSubscription(PLANS.VPN_PRO)]
+    );
+
+    it.each([
+        { name: 'a VPN Business admin', entitlements: b2bEntitlements },
+        { name: 'a VPN Essentials admin, who gets the upgrade banner', entitlements: vpnProEntitlements },
+    ])('shows Gateways to $name with the gateway permission', ({ entitlements }) => {
+        const nav = resolveNavigation(
+            buildArgs(admin, getOrgPermissions(['account.gateway.read'], false), {
+                organization: b2bOrganization,
+                entitlements,
+            })
+        );
+
+        expect(collectIds(nav.items as NavNode[])).toContain('organization.vpn.gateways');
+    });
+
+    it('hides Gateways from a VPN Business admin without the gateway permission', () => {
+        const nav = resolveNavigation(buildArgs(admin, getOrgPermissions(['account.dashboard.read'], false)));
+
+        expect(collectIds(nav.items as NavNode[])).not.toContain('organization.vpn.gateways');
+    });
 });

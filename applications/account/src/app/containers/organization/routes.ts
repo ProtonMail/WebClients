@@ -19,7 +19,7 @@ import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { IcVault } from '@proton/icons/icons/IcVault';
 import { PLANS } from '@proton/payments/core/constants';
 import { organizationOrSubscriptionSupportsSSO, upsellPlanSSO } from '@proton/payments/core/plan/helpers';
-import { getHasVpnGatewaysUpsellPlan, hasMeet, hasMeetBusiness } from '@proton/payments/core/subscription/helpers';
+import { hasMeet, hasMeetBusiness } from '@proton/payments/core/subscription/helpers';
 import { appSupportsSSO } from '@proton/shared/lib/apps/apps';
 import {
     APPS,
@@ -301,9 +301,7 @@ export const getOrganizationAppRoutes = ({
             text: c('Title').t`Gateways`,
             to: '/gateways',
             icon: IcServers,
-            available:
-                permissions['account.gateway.read'] &&
-                (entitlements.hasMaxDedicatedIps || getHasVpnGatewaysUpsellPlan(subscription)),
+            available: permissions['account.gateway.read'] && entitlements.hasDedicatedIpsOrIsVpnB2B,
             subsections: [
                 {
                     id: 'servers',
