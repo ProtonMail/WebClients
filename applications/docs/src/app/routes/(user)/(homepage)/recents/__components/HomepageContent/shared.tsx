@@ -23,6 +23,8 @@ export function ContentSheet({ isBottom, ...props }: ContentSheetProps) {
   )
 }
 
+export const REFRESH_AFTER_NEW_DOCUMENT = 5000 // ms
+
 export const ICON_BY_TYPE = {
   document: IcBrandProtonDocs,
   spreadsheet: IcBrandProtonSheets,

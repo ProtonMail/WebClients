@@ -9,7 +9,7 @@ import { ContextMenuProvider } from './DocContextMenu/context'
 import { c } from 'ttag'
 import { useHomepageView } from '../../__utils/homepage-view'
 import { forwardRef, useEffect } from 'react'
-import { COLOR_BY_TYPE, ContentSheet } from './shared'
+import { COLOR_BY_TYPE, ContentSheet, REFRESH_AFTER_NEW_DOCUMENT } from './shared'
 import emptyStateRecentsImage from './empty-state-recents.svg'
 import emptyStateImage from './empty-state.svg'
 import clsx from '@proton/utils/clsx'
@@ -119,8 +119,6 @@ function getEmptyStateText(props: GetEmptyStateTextProps): string {
   }
 }
 
-const REFRESH_AFTER_NEW_DOCUMENT = 10000 // ms
-
 const HomepageButton = forwardRef<HTMLButtonElement, Ariakit.ButtonProps>(function HomepageButton(props, ref) {
   return (
     <Ariakit.Button
@@ -164,6 +162,7 @@ function RecentsEmptyStateButtons() {
         <HomepageButton
           className="relative"
           render={<Ariakit.Role.a href={getAppHref('/sheet', APPS.PROTONDOCS, getLocalID())} target="_blank" />}
+          onClick={() => setTimeout(updateRecentDocuments, REFRESH_AFTER_NEW_DOCUMENT)}
         >
           <IcBrandProtonSheets
             size={4}
