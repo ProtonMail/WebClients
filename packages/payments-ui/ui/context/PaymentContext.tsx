@@ -41,7 +41,13 @@ import type {
 import { getPlanFromPlanIDs, hasFreePlanIDs } from '@proton/payments/core/plan/helpers';
 import type { FreePlanDefault, Plan, PlansMap } from '@proton/payments/core/plan/interface';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
-import { isSubscriptionCheckForbiddenWithReason, shouldPassIsTrial } from '@proton/payments/core/subscription/helpers';
+import {
+    type SubscriptionSelection,
+    isModifyingPaidSubscriptionSelection,
+    isSubscriptionCheckForbiddenWithReason,
+    isSubscriptionSelectionEqual,
+    shouldPassIsTrial,
+} from '@proton/payments/core/subscription/helpers';
 import { getPlanIDs } from '@proton/payments/core/subscription/helpers/plan-ids';
 import type { FullPlansMap, Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import type { PlanToCheck } from '@proton/payments/core/subscription/plan-to-check';
@@ -162,6 +168,7 @@ interface PaymentsContextProviderProps {
     preload?: boolean;
     authenticated?: boolean;
     cachedPlans?: Plan[];
+    withGuards?: boolean;
 }
 
 interface PaymentsContextProviderState {
@@ -202,6 +209,7 @@ export const PaymentsContextProvider = ({
     preload = true,
     authenticated = true,
     cachedPlans,
+    withGuards = false,
 }: PaymentsContextProviderProps) => {
     const { APP_NAME } = useConfig();
 
@@ -326,6 +334,7 @@ export const PaymentsContextProvider = ({
     };
 
     const abortControllerRef = useRef<AbortController | undefined>(undefined);
+    const guardedSelectionRef = useRef<SubscriptionSelection | undefined>(undefined);
 
     const getLocalizedPlansMap = (params: { paramCurrency?: Currency }) => {
         return getLocalizedPlansMapParametrized({
@@ -400,6 +409,8 @@ export const PaymentsContextProvider = ({
         });
 
         if (paymentForbiddenReason.forbidden) {
+            abortControllerRef.current?.abort();
+            guardedSelectionRef.current = undefined;
             const newCheckResult = getOptimisticCheckResult(newPlanToCheck);
 
             setState({
@@ -424,11 +435,27 @@ export const PaymentsContextProvider = ({
         }
 
         try {
-            setState({ loading: true });
-            if (abortControllerRef.current) {
-                abortControllerRef.current.abort();
-            }
+            abortControllerRef.current?.abort();
             abortControllerRef.current = new AbortController();
+
+            const selection = { planIDs: newPlanToCheck.planIDs, cycle: newPlanToCheck.cycle };
+            const shouldValidateGuards =
+                withGuards &&
+                isModifyingPaidSubscriptionSelection(
+                    stateRef.current.subscription,
+                    selection.planIDs,
+                    selection.cycle
+                ) &&
+                !(guardedSelectionRef.current && isSubscriptionSelectionEqual(guardedSelectionRef.current, selection));
+            const checkResult = stateRef.current.checkResult;
+            const previousGuardResult = checkResult.GuardResult;
+
+            if (shouldValidateGuards) {
+                guardedSelectionRef.current = undefined;
+                setState({ loading: true, checkResult: { ...checkResult, GuardResult: [] } });
+            } else {
+                setState({ loading: true });
+            }
 
             const subscriptionData = getSubscriptionDataFromPlanToCheck({
                 ...newPlanToCheck,
@@ -437,19 +464,31 @@ export const PaymentsContextProvider = ({
                 VatId: newVatNumber,
                 trial: newPlanToCheck.trial || getShouldPassTrial(newPlanToCheck.planIDs, newPlanToCheck.cycle, true),
             });
+            if (shouldValidateGuards) {
+                subscriptionData.ValidateGuards = true;
+            }
 
             const newCheckResult = await paymentsApiRef.current.checkSubscription(subscriptionData, {
                 signal: abortControllerRef.current.signal,
                 previousEstimation: stateRef.current.checkResult,
             });
+            // An optimistic result is built by the frontend after a recoverable error and carries no guard verdict.
+            if (shouldValidateGuards) {
+                guardedSelectionRef.current = newCheckResult.optimistic ? undefined : selection;
+            }
+            const shouldCarryGuardResult = !shouldValidateGuards && !!guardedSelectionRef.current;
+            const displayedCheckResult = shouldCarryGuardResult
+                ? { ...newCheckResult, GuardResult: previousGuardResult }
+                : newCheckResult;
             setState({
                 planToCheck: newPlanToCheck,
                 billingAddress: newBillingAddress,
                 vatNumber: newVatNumber,
-                checkResult: newCheckResult,
+                checkResult: displayedCheckResult,
             });
             paymentsApiRef.current.cacheMultiCheck(subscriptionData, newCheckResult);
-            return newCheckResult;
+
+            return displayedCheckResult;
         } catch (error) {
             throw error;
         } finally {
@@ -520,6 +559,8 @@ export const PaymentsContextProvider = ({
 
         const isFree = hasFreePlanIDs(newPlanToCheck.planIDs);
         if (isFree) {
+            abortControllerRef.current?.abort();
+            guardedSelectionRef.current = undefined;
             const newCheckResult = getOptimisticCheckResult(newPlanToCheck);
             setState({ planToCheck: newPlanToCheck, checkResult: newCheckResult });
             return newCheckResult;

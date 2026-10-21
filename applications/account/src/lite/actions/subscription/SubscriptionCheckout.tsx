@@ -143,7 +143,7 @@ const SubscriptionCheckoutWithPayments = ({
 
 const SubscriptionCheckout = (props: Props) => {
     return (
-        <PaymentsContextProvider>
+        <PaymentsContextProvider withGuards>
             <SubscriptionCheckoutWithPayments {...props} />
         </PaymentsContextProvider>
     );

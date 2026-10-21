@@ -63,7 +63,7 @@ describe('GuardBanner', () => {
         const { container } = render(<GuardBanner errors={[{ Code: 9999999 as GuardError['Code'], Message: 'x' }]} />);
         const status = screen.getByTestId('banner');
 
-        expect(status).toHaveAttribute('aria-live', 'polite');
+        expect(status).toHaveAttribute('role', 'alert');
         expect(container.querySelector('svg')).toBeTruthy();
         expect(status.textContent).toContain('can’t be completed');
     });
