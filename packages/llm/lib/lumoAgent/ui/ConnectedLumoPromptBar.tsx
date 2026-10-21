@@ -13,9 +13,11 @@ interface Props {
     onClose: () => void;
     /** Observes each draft change after the conversation has stored it. */
     onDraftChange?: (draft: string) => void;
+    /** Returns true when the host has handled the message itself, so it never reaches Lumo. */
+    interceptSend?: (message: string) => boolean;
 }
 
-const ConnectedLumoPromptBar = ({ onClose, onDraftChange }: Props) => {
+const ConnectedLumoPromptBar = ({ onClose, onDraftChange, interceptSend }: Props) => {
     const { items, isBusy, draft, setDraft, send, stop } = useLumoAgentDrawer();
 
     useEffect(focusLumoPrompt, []);
@@ -27,12 +29,20 @@ const ConnectedLumoPromptBar = ({ onClose, onDraftChange }: Props) => {
           }
         : setDraft;
 
+    const sendUnlessIntercepted = interceptSend
+        ? (message: string) => {
+              if (!interceptSend(message)) {
+                  send(message);
+              }
+          }
+        : send;
+
     return (
         <LumoAgentPromptBar
             draft={draft}
             onDraftChange={changeDraft}
             isGenerating={isAgentGenerating(items, isBusy)}
-            onSend={send}
+            onSend={sendUnlessIntercepted}
             onStop={stop}
             onClose={onClose}
         />

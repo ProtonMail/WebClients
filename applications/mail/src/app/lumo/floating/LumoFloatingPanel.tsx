@@ -8,6 +8,7 @@ import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import clsx from '@proton/utils/clsx';
 
 import LumoPet from '../pet/LumoPet';
+import { matchCatTrick } from '../pet/catTricks';
 import { useCatMotion } from '../pet/useCatMotion';
 import { useTypingActivity } from '../pet/useTypingActivity';
 import { useLumoFloatingPanel } from './LumoFloatingPanelProvider';
@@ -68,6 +69,7 @@ const LumoFloatingPanel = ({ mainAreaRef, hasFloatingDrawerButton }: Props) => {
         motion,
         endGlide,
         endJump,
+        playTrick,
     } = useCatMotion({ side: shownSide, isCatHidden, canJump, runMs });
 
     if (isHiddenByLayout) {
@@ -86,6 +88,14 @@ const LumoFloatingPanel = ({ mainAreaRef, hasFloatingDrawerButton }: Props) => {
         if (!isPanelOpen) {
             toggleLumo();
         }
+    };
+    const interceptTrickPhrase = (message: string) => {
+        const matchedTrick = matchCatTrick(message);
+        if (!matchedTrick) {
+            return false;
+        }
+        playTrick(matchedTrick);
+        return true;
     };
 
     const handleRunEnd = (event: TransitionEvent) => {
@@ -123,7 +133,11 @@ const LumoFloatingPanel = ({ mainAreaRef, hasFloatingDrawerButton }: Props) => {
                     </div>
                     <div className="lumo-floating-panel-prompt-slot">
                         <Suspense fallback={<div className="lumo-floating-panel-prompt-placeholder" />}>
-                            <LazyConnectedLumoPromptBar onClose={closePanel} onDraftChange={noteKeystroke} />
+                            <LazyConnectedLumoPromptBar
+                                onClose={closePanel}
+                                onDraftChange={noteKeystroke}
+                                interceptSend={interceptTrickPhrase}
+                            />
                         </Suspense>
                     </div>
                     <LumoFloatingPanelResizeEdge
