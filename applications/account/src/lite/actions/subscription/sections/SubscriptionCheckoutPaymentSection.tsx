@@ -13,6 +13,7 @@ import useLoading from '@proton/hooks/useLoading';
 import { IcLock } from '@proton/icons/icons/IcLock';
 import type { usePaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
 import { useBillingAddress } from '@proton/payments-ui/ui/billing-address/hooks/useBillingAddress';
+import { GuardBanner } from '@proton/payments-ui/ui/components/GuardBanner';
 import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/payments-ui/ui/components/RenewalNotice';
 import { usePayments } from '@proton/payments-ui/ui/context/PaymentContext';
 import { DisplayablePaymentError } from '@proton/payments/core/errors';
@@ -62,6 +63,7 @@ const SubscriptionCheckoutPaymentSection = ({
         selectCurrency,
         couponConfig,
     } = usePayments();
+    const guardErrors = checkResult.GuardResult ?? [];
     const { planIDs, cycle, planName, currency } = checkoutUi;
     const { amount, selectedMethodValue, methods, currencyOverride } = paymentFacade;
     const { selectMethod, savedMethods } = methods;
@@ -218,6 +220,7 @@ const SubscriptionCheckoutPaymentSection = ({
                     vatNumber={billingAddressHook.vatNumber}
                     taxCountry={billingAddressHook.taxCountry}
                 >
+                    <GuardBanner errors={guardErrors} className="mb-4" />
                     <SubscriptionConfirmButton
                         onDone={onClose}
                         currency={currency}
@@ -226,7 +229,7 @@ const SubscriptionCheckoutPaymentSection = ({
                         loading={loading || subscribing || paymentFacade.bitcoinChargebee.bitcoinLoading}
                         checkResult={checkResult}
                         className="w-full"
-                        disabled={isFreeUserWithFreePlanSelected}
+                        disabled={isFreeUserWithFreePlanSelected || guardErrors.length > 0}
                         paymentForbiddenReason={paymentForbiddenReason}
                         subscription={subscription}
                         hasPaymentMethod={hasPaymentMethod}
