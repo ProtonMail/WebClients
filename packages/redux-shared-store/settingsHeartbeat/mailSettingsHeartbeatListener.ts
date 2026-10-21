@@ -1,7 +1,10 @@
 import type { TypedStartListening } from '@reduxjs/toolkit';
 
-import { addressesThunk, subscriptionThunk, userSettingsThunk, userThunk } from '@proton/account';
+import { addressesThunk } from '@proton/account/addresses';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
+import { subscriptionThunk } from '@proton/account/subscription';
+import { userThunk } from '@proton/account/user';
+import { userSettingsThunk } from '@proton/account/userSettings';
 import { categoriesThunk } from '@proton/mail/store/labels';
 import { mailSettingsThunk } from '@proton/mail/store/mailSettings';
 import type { ProtonDispatch, ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';

@@ -2,7 +2,8 @@ import { memo } from 'react';
 
 import { c } from 'ttag';
 
-import { TableCell, TableRow } from '@proton/components';
+import TableCell from '@proton/components/components/table/TableCell';
+import TableRow from '@proton/components/components/table/TableRow';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 import type { Report, ReportSummary } from '../../../logic/reports/reports.interface';

@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { changeBillingAddress } from '@proton/account';
+import { changeBillingAddress } from '@proton/account/paymentStatus';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import Form from '@proton/components/components/form/Form';

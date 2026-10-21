@@ -1,6 +1,6 @@
 import type { KeyboardEvent, Ref } from 'react';
 
-import { InputFieldTwo } from '@proton/components';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 
 import { EasyTrans } from '../../../../../helpers/easyTrans';
 import { MailImportPayloadError } from '../../../../../interface';

@@ -1,4 +1,4 @@
-import { Checkbox } from '@proton/components';
+import Checkbox from '@proton/components/components/input/Checkbox';
 
 interface Props {
     id: string;

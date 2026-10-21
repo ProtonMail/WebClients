@@ -2,8 +2,13 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { EditLabelModal, Field, Label, LabelStack, Row, useModalState } from '@proton/components';
-import type { LabelModel } from '@proton/components';
+import Field from '@proton/components/components/container/Field';
+import Row from '@proton/components/components/container/Row';
+import Label from '@proton/components/components/label/Label';
+import LabelStack from '@proton/components/components/labelStack/LabelStack';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
+import type { LabelModel } from '@proton/components/containers/labels/modals/EditLabelModal';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { IcPen } from '@proton/icons/icons/IcPen';
 

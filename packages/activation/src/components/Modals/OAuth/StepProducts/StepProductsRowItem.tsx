@@ -2,7 +2,8 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { Checkbox, Label } from '@proton/components';
+import Checkbox from '@proton/components/components/input/Checkbox';
+import Label from '@proton/components/components/label/Label';
 import clsx from '@proton/utils/clsx';
 
 import StepPrepareDisabledCheckbox from '../StepPrepareOAuth/StepPrepareOAuthDisabledCheckbox';

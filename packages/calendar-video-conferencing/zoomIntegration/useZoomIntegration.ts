@@ -8,7 +8,7 @@ import { OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import { useOAuthToken } from '@proton/activation/src/logic/oauthToken/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { useModalStateObject } from '@proton/components';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import { createZoomMeeting } from '@proton/shared/lib/api/calendars';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
