@@ -1,13 +1,12 @@
 import type { ReactNode } from 'react';
 
-import { useUserSettings } from '@proton/account';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { DENSITY, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
-import { isAllowedAutoDeleteLabelID } from '../../helpers/autoDelete';
-
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
+import { isAllowedAutoDeleteLabelID } from '../../helpers/autoDelete';
 import { isInDeletedFolder } from '../../helpers/elements';
 import useShowUpsellBanner from '../../hooks/useShowUpsellBanner';
 import {

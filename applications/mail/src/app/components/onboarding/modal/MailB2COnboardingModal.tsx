@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { useWelcomeFlags } from '@proton/account';
+import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import OnboardingModal from '@proton/components/containers/onboarding/OnboardingModal';
 import type { OnboardingStepComponent } from '@proton/components/containers/onboarding/interface';
 import useEventManager from '@proton/components/hooks/useEventManager';

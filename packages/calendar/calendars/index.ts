@@ -1,7 +1,7 @@
 import type { PayloadAction, ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 
-import type { AddressesState } from '@proton/account';
+import type { AddressesState } from '@proton/account/addresses';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
 import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
