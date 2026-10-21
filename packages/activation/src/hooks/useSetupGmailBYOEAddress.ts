@@ -12,7 +12,7 @@ import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { checkExternalAddressClaimable, startEasySwitchSignupImportTask } from '../api';
+import { checkExternalAddressClaimable, startEasySwitchSignupImportTask } from '../api/api';
 import { BYOE_QUOTA_THRESHOLD_RATIO } from '../constants';
 import { getStartTimeFromTimePeriod } from '../helpers/getStartTimeFromTimePeriod';
 import {

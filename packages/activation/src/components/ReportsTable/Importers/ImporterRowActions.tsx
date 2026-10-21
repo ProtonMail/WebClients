@@ -7,7 +7,7 @@ import { Prompt, useEventManager, useModalState } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
-import { createToken, getTokensByFeature, resumeImport, updateImport } from '../../../api';
+import { createToken, getTokensByFeature, resumeImport, updateImport } from '../../../api/api';
 import { ApiImporterError, ApiImporterState } from '../../../api/api.interface';
 import { getImportProviderFromApiProvider } from '../../../helpers/getImportProviderFromApiProvider';
 import useOAuthPopup from '../../../hooks/useOAuthPopup';

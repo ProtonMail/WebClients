@@ -2,7 +2,7 @@ import type { RefObject } from 'react';
 
 import { c } from 'ttag';
 
-import { createSignupOAuthToken } from '@proton/activation/src/api';
+import { createSignupOAuthToken } from '@proton/activation/src/api/api';
 import type { CreateSignupOAuthTokenResponse } from '@proton/activation/src/api/api.interface';
 import AddBYOEModal from '@proton/activation/src/components/Modals/AddBYOEModal/AddBYOEModal';
 import { openOAuthPopup } from '@proton/activation/src/helpers/oAuthPopup';

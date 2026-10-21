@@ -7,7 +7,7 @@ import type { WithLoading } from '@proton/hooks/useLoading';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import { getIsBYOEAccount } from '@proton/shared/lib/keys/accountType';
 
-import { getTokensByFeature } from '../api';
+import { getTokensByFeature } from '../api/api';
 import type { ReconnectBYOEAddressResult } from '../byoe/reconnectBYOEAddress.interface';
 import { useReconnectBYOEAddress } from '../byoe/useReconnectBYOEAddress';
 import { getBYOEDisabledNotification } from '../constants';

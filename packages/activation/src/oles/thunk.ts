@@ -52,7 +52,7 @@ import { getDecryptedUserKeys } from '@proton/shared/lib/keys/getDecryptedUserKe
 import getRandomString from '@proton/utils/getRandomString';
 import noop from '@proton/utils/noop';
 
-import { createJoiningLink, createOrganizationImporter, patchOrganizationImporter } from '../api';
+import { createJoiningLink, createOrganizationImporter, patchOrganizationImporter } from '../api/api';
 import {
     type ApiImporterOrganization,
     ApiImporterOrganizationState,

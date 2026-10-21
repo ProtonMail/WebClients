@@ -4,7 +4,15 @@ import { c } from 'ttag';
 import type { CreateNotificationOptions } from '@proton/app-context/notifications/interfaces';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
-import { createImport, createSync, createToken, deleteSync, getSyncList, resumeSync, updateImport } from '../../api';
+import {
+    createImport,
+    createSync,
+    createToken,
+    deleteSync,
+    getSyncList,
+    resumeSync,
+    updateImport,
+} from '../../api/api';
 import type { APIImportSyncListResponse } from '../../api/api.interface';
 import { getEasySwitchFeaturesFromProducts } from '../../hooks/useOAuthPopup.helpers';
 import type { CreateImportPayload, EASY_SWITCH_SOURCES, ImportToken, OAUTH_PROVIDER } from '../../interface';

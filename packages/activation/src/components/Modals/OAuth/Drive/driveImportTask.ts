@@ -3,7 +3,7 @@ import type { NodeType, ProtonDriveClient } from '@protontech/drive-sdk';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 
-import { startImportTask } from '../../../../api';
+import { startImportTask } from '../../../../api/api';
 import type { DriveImportFolder, LaunchImportPayload } from '../../../../interface';
 import { IMPORT_ERROR } from '../../../../interface';
 

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { useOAuthToken } from '@proton/activation';
 import { OAUTH_PROVIDER } from '@proton/activation/src/interface';
+import { useOAuthToken } from '@proton/activation/src/logic/oauthToken/hooks';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';

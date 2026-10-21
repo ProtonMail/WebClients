@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
-import { EasySwitchOauthImportButton, EasySwitchProvider } from '@proton/activation';
+import EasySwitchOauthImportButton from '@proton/activation/src/components/OAuthImportButton/EasySwitchOAuthImportButton';
 import { EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '@proton/activation/src/interface';
+import EasySwitchProvider from '@proton/activation/src/logic/StoreProvider';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { getProbablyActiveCalendars, getWritableCalendars } from '@proton/shared/lib/calendar/calendar';
