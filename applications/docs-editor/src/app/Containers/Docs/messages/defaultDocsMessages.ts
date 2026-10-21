@@ -1,3 +1,4 @@
+import { colorMenuMessages } from '../Components/ColorMenu'
 import { emojiMessages } from '../Plugins/emoji/emojiMessages'
 import { alignmentMenuOptionsMessages } from '../Toolbar/AlignmentMenuOptions'
 import { toolbarMessages } from '../Toolbar/Toolbar'
@@ -7,6 +8,7 @@ function createDefaultDocsMessages() {
     ...emojiMessages,
     ...alignmentMenuOptionsMessages,
     ...toolbarMessages,
+    ...colorMenuMessages,
   }
 }
 
