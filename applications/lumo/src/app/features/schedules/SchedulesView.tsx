@@ -9,8 +9,8 @@ import { ScheduledTaskGrid } from './components/ScheduledTaskGrid';
 import { SchedulesEmptyState } from './components/SchedulesEmptyState';
 import { SchedulesPageHeader } from './components/SchedulesPageHeader';
 import { ScheduledTaskEditorModal } from './components/modals/ScheduledTaskEditorModal';
+import { createScheduleDetailsFrom, getEmptyScheduleDetails } from './components/utils/schedules';
 import type { ScheduleDetails, ScheduleTemplate } from './types';
-import { createScheduleDetailsFrom, getEmptyScheduleDetails } from './utils';
 
 import './SchedulesView.scss';
 

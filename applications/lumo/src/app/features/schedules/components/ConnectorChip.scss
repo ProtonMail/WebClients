@@ -1,0 +1,37 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
+.connector-chip {
+	padding-block: #{rem(5)};
+	font-size: #{rem(13)};
+	line-height: #{rem(16)};
+	background-color: var(--control-fill-mid);
+
+	&--unavailable {
+		--border-norm: color-mix(in srgb, var(--signal-danger) 15%, var(--background-norm));
+
+		background-color: color-mix(in srgb, var(--signal-danger) 5%, var(--background-norm));
+
+		.connector-chip__label {
+			color: var(--signal-danger-major-2);
+		}
+	}
+
+	&--warning {
+		--border-norm: color-mix(in srgb, var(--signal-warning) 20%, var(--background-norm));
+
+		background-color: color-mix(in srgb, var(--signal-warning) 10%, var(--background-norm));
+
+		.connector-chip__label {
+			color: var(--signal-warning-major-2);
+		}
+	}
+
+	&__remove.button {
+		--button-default-text-color: var(--glyph-low);
+		--button-hover-text-color: var(--glyph);
+		--button-active-text-color: var(--glyph);
+
+		inline-size: #{rem(14)};
+		block-size: #{rem(14)};
+	}
+}

@@ -1,4 +1,6 @@
 /// <reference path="./desktop-window.d.ts" />
+import { useEffect, useState } from 'react';
+
 import type { ChatCompletionsFlatFunctionTool, ChatCompletionsFunctionTool } from '../types-api';
 import type { ClientToolExecutor, ClientToolResult, PendingClientToolCall } from './client-tools';
 import type { LumoApiClientConfig } from './types';
@@ -37,8 +39,11 @@ export type DesktopExternalTools = {
 export type DesktopConnector = {
     id: string;
     display_name: string;
-    icon?: string;
-    enabled: boolean;
+    icon?: string | null;
+    /** Defaults to enabled when omitted by a gateway manifest. Only explicit false disables the connector. */
+    enabled?: boolean;
+    readiness?: { state: 'ready' } | { state: 'blocked'; reason: string };
+    status: { state: 'ready' } | { state: 'warning'; error: string } | { state: 'not_ready'; reason: string };
     tools?: { name: string; title?: string; description?: string }[];
 };
 
@@ -151,6 +156,51 @@ export async function setDesktopConnectorEnabled(connectorId: string, enabled: b
 export function subscribeDesktopConnectors(callback: () => void): () => void {
     window.addEventListener('lumo:tools-changed', callback);
     return () => window.removeEventListener('lumo:tools-changed', callback);
+}
+
+/** Loads connector manifests from the desktop bridge and refreshes when connectors change. */
+export function useDesktopManifests(): {
+    manifests: DesktopConnector[];
+    status: 'loading' | 'ready' | 'error';
+} {
+    const [state, setState] = useState<{
+        manifests: DesktopConnector[];
+        status: 'loading' | 'ready' | 'error';
+    }>({ manifests: [], status: 'loading' });
+
+    useEffect(() => {
+        let currentCounter = 0;
+
+        const load = async () => {
+            const requestCounter = ++currentCounter;
+            try {
+                const api = getDesktopConnectorsApi();
+                await api?.ready;
+                const manifests = api?.getManifests?.() ?? [];
+                if (requestCounter === currentCounter) {
+                    setState({ manifests, status: 'ready' });
+                }
+            } catch {
+                if (requestCounter === currentCounter) {
+                    setState((prev) => ({ ...prev, status: 'error' }));
+                }
+            }
+        };
+
+        const unsubscribe = subscribeDesktopConnectors(() => {
+            void load();
+        });
+
+        void load();
+
+        return () => {
+            // Ignore pending loads after unmount, just as we ignore superseded loads.
+            ++currentCounter;
+            unsubscribe();
+        };
+    }, []);
+
+    return state;
 }
 
 export function isDesktopNativeTool(name: string): boolean {
