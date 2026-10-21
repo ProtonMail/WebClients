@@ -2,6 +2,7 @@ import React, { useCallback, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 
@@ -35,6 +36,7 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
     const [overlayOpen, setOverlayOpen] = useState(false);
     const [overlayDefaultMode, setOverlayDefaultMode] = useState<'preview' | 'edit'>('preview');
 
+    const { createNotification } = useNotifications();
     const { handleFilesSelected } = useFileHandling({ messageChain: [] });
 
     // The overlay covers the viewport, so hide the native composer while it's
@@ -66,9 +68,13 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
         async (e?: React.MouseEvent) => {
             e?.stopPropagation();
             if (!attachment || !imageDataUrl) return;
-            await triggerFileDownload(imageDataUrl, attachment.filename, 'image');
+            try {
+                await triggerFileDownload(imageDataUrl, attachment.filename, 'image');
+            } catch {
+                createNotification({ type: 'error', text: c('Error').t`Failed to download image. Please try again.` });
+            }
         },
-        [attachment, imageDataUrl]
+        [attachment, imageDataUrl, createNotification]
     );
 
     const handleSketchExport = useCallback(
