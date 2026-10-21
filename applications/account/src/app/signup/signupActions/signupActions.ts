@@ -3,7 +3,7 @@ import {
     type DeferredMnemonicData,
     generateDeferredMnemonicData,
 } from '@proton/account/recovery/recoveryKit/generateDeferredMnemonicData';
-import { startEasySwitchSignupImportTask } from '@proton/activation/src/api';
+import { startEasySwitchSignupImportTask } from '@proton/activation/src/api/api';
 import { BYOE_QUOTA_THRESHOLD_RATIO } from '@proton/activation/src/constants';
 import { EASY_SWITCH_SOURCES, OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import { createPreAuthKTVerifier } from '@proton/key-transparency/shared';

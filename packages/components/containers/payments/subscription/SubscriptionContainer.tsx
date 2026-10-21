@@ -18,7 +18,7 @@ import { IcGift } from '@proton/icons/icons/IcGift';
 import { useCurrencies } from '@proton/payments-ui/client-extensions/useCurrencies';
 import { usePaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
 import type { TelemetryPaymentFlow } from '@proton/payments-ui/client-extensions/usePaymentsTelemetry';
-import type { Operations, OperationsSubscriptionData } from '@proton/payments-ui/react-extensions/index';
+import type { Operations, OperationsSubscriptionData } from '@proton/payments-ui/react-extensions/usePaymentFacade';
 import { usePaymentsApi } from '@proton/payments-ui/react-extensions/usePaymentsApi';
 import { useSubscriptionModificationChangeStepTelemetry } from '@proton/payments-ui/telemetry/useSubscriptionModificationChangeStepTelemetry';
 import { VatReverseChargeErrorModal } from '@proton/payments-ui/ui/billing-address/containers/VatReverseChargeErrorModal';

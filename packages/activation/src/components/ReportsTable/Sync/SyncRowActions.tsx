@@ -11,7 +11,7 @@ import useLoading from '@proton/hooks/useLoading';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 
-import { getTokensByFeature } from '../../../api';
+import { getTokensByFeature } from '../../../api/api';
 import { ApiSyncState } from '../../../api/api.interface';
 import useOAuthPopup from '../../../hooks/useOAuthPopup';
 import type { ImportToken, OAuthProps } from '../../../interface';

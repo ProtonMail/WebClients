@@ -25,7 +25,7 @@ jest.mock('./useZoomOAuth', () => ({
     })),
 }));
 
-jest.mock('@proton/activation/index', () => ({
+jest.mock('@proton/activation/src/logic/oauthToken/hooks', () => ({
     useOAuthToken: jest.fn(() => [[{ Provider: OAUTH_PROVIDER.ZOOM }], false]),
 }));
 

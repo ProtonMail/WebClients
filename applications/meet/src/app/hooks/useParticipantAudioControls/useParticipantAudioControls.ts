@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useRoomContext } from '@livekit/components-react';
 import type { WebAudioSettings } from 'livekit-client';
 
-import { useMeetErrorReporting } from '@proton/meet';
+import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { SpatialAudioManager } from '../../utils/spatialAudio/SpatialAudioManager';

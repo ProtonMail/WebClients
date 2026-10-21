@@ -2,8 +2,8 @@ import { CryptoProxy } from '@protontech/crypto';
 import type { SessionKey } from '@protontech/crypto';
 import { fromUnixTime } from 'date-fns';
 
-import { getMeetingLink } from '@proton/meet';
 import type { SaveMeetingParams } from '@proton/meet/hooks/useSaveMeeting';
+import { getMeetingLink } from '@proton/meet/utils/getMeetingLink';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { generateAttendeeToken } from '@proton/shared/lib/calendar/attendees';
 import {

@@ -4,7 +4,7 @@ import throttle from 'lodash/throttle';
 
 import { useApi } from '@proton/app-context/useApi';
 
-import { updateImport } from '../../../../../../api';
+import { updateImport } from '../../../../../../api/api';
 import { AuthenticationMethod, IMPORT_ERROR, ImportType } from '../../../../../../interface';
 import { selectImapDraftProduct } from '../../../../../../logic/draft/draft.selector';
 import {

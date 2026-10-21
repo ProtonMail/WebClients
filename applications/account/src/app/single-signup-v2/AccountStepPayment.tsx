@@ -8,7 +8,7 @@ import { changeDefaultPaymentMethodBeforePayment } from '@proton/components/cont
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
 import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';
 import type { WithLoading } from '@proton/hooks/useLoading';
-import { BilledUserInlineMessage } from '@proton/payments-ui/client-extensions/billed-user/index';
+import { BilledUserInlineMessage } from '@proton/payments-ui/client-extensions/billed-user/BilledUserInlineMessage';
 import { usePaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
 import { useBillingAddress } from '@proton/payments-ui/ui/billing-address/hooks/useBillingAddress';
 import { GuardBanner } from '@proton/payments-ui/ui/components/GuardBanner';

@@ -4,8 +4,8 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { useOAuthToken } from '@proton/activation/index';
 import { OAUTH_PROVIDER } from '@proton/activation/src/interface';
+import { useOAuthToken } from '@proton/activation/src/logic/oauthToken/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useModalStateObject } from '@proton/components';

@@ -22,7 +22,6 @@
         "paths": {
             "@proton/atoms/*": ["./packages/atoms/src/*"],
             "@proton/account/*": ["./packages/account/*"],
-            "@proton/activation/*": ["./packages/activation/*"],
             "@proton/andromeda": ["./packages/wasm/andromeda/*"],
             "@proton/components/*": ["./packages/components/*"],
             "@proton/cross-storage/*": ["./packages/cross-storage/*"],
@@ -35,9 +34,7 @@
             "@proton/llm/*": ["./packages/llm/*"],
             "@proton/mail-renderer/*": ["./packages/mail-renderer/src/*"],
             "@proton/pack/*": ["./packages/pack/*"],
-            "@proton/payments-ui/*": ["./packages/payments-ui/*"],
             "@proton/polyfill/*": ["./packages/polyfill/*"],
-            "@proton/redux-shared-store/*": ["./packages/redux-shared-store/*"],
             "@proton/sieve/*": ["./packages/sieve/*"],
             "@proton/types/*": ["./packages/types/*"],
             "@proton/stylelint-config-proton/*": ["./packages/stylelint-config-proton/*"],

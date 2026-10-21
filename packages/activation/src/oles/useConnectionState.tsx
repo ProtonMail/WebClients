@@ -3,7 +3,7 @@ import { type ReactNode, createContext, useCallback, useContext, useEffect, useS
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import noop from '@proton/utils/noop';
 
-import { getConnectionStatus } from '../api';
+import { getConnectionStatus } from '../api/api';
 import type { ApiImporterConnectionStatus } from '../api/api.interface';
 import type { ImportToken } from '../interface';
 import type { OlesProvider } from './providers';

@@ -20,18 +20,16 @@ import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcLink } from '@proton/icons/icons/IcLink';
 import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { IcTextAlignLeft } from '@proton/icons/icons/IcTextAlignLeft';
-import {
-    generateMeetingLinkFromMeeting,
-    useCreateMeeting,
-    useDeleteMeeting,
-    useGetMeetingDependencies,
-} from '@proton/meet';
+import { useCreateMeeting } from '@proton/meet/hooks/useCreateMeeting';
+import { useDeleteMeeting } from '@proton/meet/hooks/useDeleteMeeting';
+import { useGetMeetingDependencies } from '@proton/meet/hooks/useGetMeetingDependencies';
 import { useMeetingUpdates } from '@proton/meet/hooks/useMeetingUpdates';
 import { useUpdateMeetingWaitingRoom } from '@proton/meet/hooks/useUpdateMeetingWaitingRoom';
 import { useIsWaitingRoomCreationEnabled } from '@proton/meet/hooks/useWaitingRoomFlags';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
 import { addMeeting, removeMeeting, updateMeeting } from '@proton/meet/store/slices/meetings';
 import { TelemetryMeetDashboardEvents, sendMeetDashboardEvent } from '@proton/meet/telemetry/meetTelemetry';
+import { generateMeetingLinkFromMeeting } from '@proton/meet/utils/generateMeetingLinkFromMeeting';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { APPS, CALENDAR_APP_NAME, MINUTE } from '@proton/shared/lib/constants';
 import { getTimeZoneOptions, getTimezone } from '@proton/shared/lib/date/timezone';

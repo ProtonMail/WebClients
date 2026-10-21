@@ -14,8 +14,8 @@
         "./eventLoop/coreEventLoopV6": "./eventLoop/coreEventLoopV6.ts",
         "./eventLoop/mailEventLoopV6": "./eventLoop/mailEventLoopV6.ts",
         "./test": "./test.ts",
-        "./mailSettingsHeartbeatListener": "./settingsHeartbeat/mailSettingsHeartbeatListener.ts",
-        "./calendarSettingsHeartbeatListener": "./settingsHeartbeat/calendarSettingsHeartbeatListener.ts"
+        "./settingsHeartbeat/mailSettingsHeartbeatListener": "./settingsHeartbeat/mailSettingsHeartbeatListener.ts",
+        "./settingsHeartbeat/calendarSettingsHeartbeatListener": "./settingsHeartbeat/calendarSettingsHeartbeatListener.ts"
     },
     "scripts": {
         "check:types": "tsc --checkers 1",
