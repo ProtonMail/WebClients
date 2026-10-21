@@ -3,8 +3,15 @@
     "version": "0.1.0",
     "description": "Shared @swc/jest transform preset for Jest configs across the monorepo",
     "main": "jest-preset.js",
+    "scripts": {
+        "lint": "oxlint --quiet"
+    },
     "dependencies": {
         "@swc/jest": "^0.2.39",
         "core-js": "^3.50.0"
+    },
+    "devDependencies": {
+        "oxlint": "1.87.0",
+        "oxlint-tsgolint": "7.0.2004"
     }
 }

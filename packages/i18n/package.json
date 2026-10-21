@@ -9,7 +9,7 @@
         "proton-i18n": "index.js"
     },
     "scripts": {
-        "lint": "eslint --quiet",
+        "lint": "oxlint --quiet",
         "pretty": "prettier --write  $(find lib/ index.js -type f -name '*.js')",
         "test": "./test/test-linter.sh* && ./test/test-validator.sh",
         "test:ci": "pnpm run test"
@@ -21,8 +21,9 @@
         "ttag-cli": "^1.12.0"
     },
     "devDependencies": {
-        "@proton/eslint-config-proton": "workspace:^",
-        "eslint": "^10.12.0",
+        "@proton/oxlint-config": "workspace:^",
+        "oxlint": "1.87.0",
+        "oxlint-tsgolint": "7.0.2004",
         "prettier": "^3.9.10"
     }
 }
