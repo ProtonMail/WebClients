@@ -21,7 +21,7 @@ import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
 import { getIsB2BAudienceFromSubscription, hasVisionary, isTrial } from '@proton/payments/core/subscription/helpers';
 import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';
 import { enableBreachAlert } from '@proton/shared/lib/api/settings';
-import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
+import { OldTelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
 import { BRAND_NAME, DARK_WEB_MONITORING_NAME, MEMBER_SUBSCRIBER } from '@proton/shared/lib/constants';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import { DARK_WEB_MONITORING_STATE } from '@proton/shared/lib/interfaces';
@@ -177,7 +177,7 @@ const ActivatePremiumFeaturesStep = ({ onNext }: OnboardingStepRenderCallback) =
 
     const handleNext = () => {
         const promises: Promise<any>[] = [
-            sendMailOnboardingTelemetry(TelemetryMailOnboardingEvents.premium_features, {
+            sendMailOnboardingTelemetry(OldTelemetryMailOnboardingEvents.premium_features, {
                 feature_auto_delete: checkedFeatures.autoDelete ? 'yes' : 'no',
                 feature_dark_web_monitoring: checkedFeatures.monitoring ? 'yes' : 'no',
                 feature_short_domain: checkedFeatures.aliases ? 'yes' : 'no',
