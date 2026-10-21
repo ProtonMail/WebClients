@@ -156,7 +156,13 @@ export function SheetsAdapter({ children, clientInvoker }: SheetsAdapterProps) {
   )
 
   const dependencies = useMemo<SheetsDependencies>(
-    () => ({ ...shellToEditorActions, ...editorToShellActions, ...session, messages }),
+    () => ({
+      ...shellToEditorActions,
+      ...editorToShellActions,
+      ...session,
+      messages,
+      licenseKey: process.env.DOCS_SHEETS_KEY,
+    }),
     [shellToEditorActions, editorToShellActions, session, messages],
   )
 
