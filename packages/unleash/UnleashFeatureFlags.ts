@@ -213,7 +213,6 @@ enum DriveFeatureFlag {
     DriveSharingDisabled = 'DriveSharingDisabled',
     DriveSharingEditingDisabled = 'DriveSharingEditingDisabled',
     // Rollouts
-    DriveSharingAdminPermissions = 'DriveSharingAdminPermissions',
     DriveWebRecentlyAccessed = 'DriveWebRecentlyAccessed',
     DriveWebSearchFoundation = 'DriveWebSearchFoundation',
     // Offers
@@ -231,8 +230,6 @@ enum DriveFeatureFlag {
     // SDK rollouts — names should match @protontech/drive-sdk FeatureFlags enum, or have a manual mapping
     DriveCryptoEncryptBlocksWithPgpAead = 'DriveCryptoEncryptBlocksWithPgpAead',
     DriveSmallFileUpload = 'DriveSmallFileUpload',
-    // Spotlight
-    DriveWebSharingAdminTooltip = 'DriveWebSharingAdminTooltip',
     // Lumo in Drive
     DriveWebLumo = 'DriveWebLumo',
     DriveWebLumoDestructiveActionsDisabled = 'DriveWebLumoDestructiveActionsDisabled',
