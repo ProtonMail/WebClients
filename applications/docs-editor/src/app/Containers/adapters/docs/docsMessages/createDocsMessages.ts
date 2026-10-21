@@ -1,4 +1,5 @@
 import type { DocsMessages } from '../../../Docs/public'
+import { createColorMenuMessages } from './colorMenu'
 import { createEmojiMessages } from './emoji'
 import { createToolbarMessages } from './toolbar'
 
@@ -7,5 +8,6 @@ export function createDocsMessages(): DocsMessages {
   return {
     ...createEmojiMessages(),
     ...createToolbarMessages(),
+    ...createColorMenuMessages(),
   }
 }
