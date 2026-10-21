@@ -24,6 +24,9 @@ const { getIndexChunks } = require('../webpack/entries');
 
 const { CI, CI_SERVER_HOST } = process.env;
 const isProtonCI = Boolean(CI) && (CI_SERVER_HOST || '').includes('protontech.ch');
+const hasEslintConfig = ['js', 'mjs', 'cjs', 'ts', 'mts', 'cts'].some((extension) =>
+    fs.existsSync(path.resolve(`eslint.config.${extension}`))
+);
 
 module.exports = ({
     isProduction,
@@ -58,6 +61,7 @@ module.exports = ({
                       overlay: false,
                   }),
                   (warningLogs || errorLogs) &&
+                      hasEslintConfig &&
                       new ESLintPlugin({
                           extensions: ['js', 'ts', 'tsx'],
                           eslintPath: require.resolve('eslint'),
