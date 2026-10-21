@@ -1,5 +1,6 @@
 import type { Template } from '@pdfme/common';
 
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import chunk from '@proton/utils/chunk';
 
 import interBold from './fonts/Inter-Bold.ttf';
@@ -173,7 +174,12 @@ export async function generatePDFKit({
     const pdf = (await generate({
         template: getTemplate(`${location.origin}${emptyTemplate}`),
         inputs,
-        options: { font: await getFont() },
+        options: {
+            font: await getFont(),
+            author: BRAND_NAME,
+            creator: BRAND_NAME,
+            producer: BRAND_NAME,
+        },
     })) as Uint8Array<ArrayBuffer>; // TODO: Improve this type
 
     return pdf;
