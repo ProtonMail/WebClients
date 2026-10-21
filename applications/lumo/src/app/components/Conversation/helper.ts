@@ -283,7 +283,8 @@ function sendArtifactTurnTelemetry(
     generationType: ArtifactGenerationType,
     artifactToolMode: ArtifactToolMode,
     chain: Message[],
-    isArtifactsViewFeatureEnabled: boolean | undefined
+    isArtifactsViewFeatureEnabled: boolean | undefined,
+    creationSetting: ArtifactCreationSetting
 ) {
     if (!isArtifactsViewFeatureEnabled) {
         return;
@@ -293,6 +294,7 @@ function sendArtifactTurnTelemetry(
         generationType,
         artifactToolMode,
         hasExistingArtifact: Object.keys(buildArtifactRegistry(chain)).length > 0,
+        creationSetting,
     });
 }
 
@@ -304,12 +306,25 @@ function sendArtifactTurnTelemetry(
  * once it does, the choice has already been stamped onto it (see `initializeNewSpaceAndConversation`).
  */
 export function resolveArtifactCreationEnabled(state: LumoState, conversationId: ConversationId | undefined): boolean {
+    const setting = resolveArtifactCreationSetting(state, conversationId);
+    return setting === 'default-on' || setting === 'chat-on';
+}
+
+/** Whether creation is on, and whether that comes from the Settings default or the chat's own choice. */
+export type ArtifactCreationSetting = 'default-on' | 'default-off' | 'chat-on' | 'chat-off';
+
+/** Same resolution order as `resolveArtifactCreationEnabled`, keeping track of where the value came from. */
+export function resolveArtifactCreationSetting(
+    state: LumoState,
+    conversationId: ConversationId | undefined
+): ArtifactCreationSetting {
     const globalDefault = state.lumoUserSettings?.automaticArtifactCreation ?? true;
     const conversation = conversationId ? state.conversations[conversationId] : undefined;
-    if (conversation) {
-        return conversation.artifactCreation ?? globalDefault;
+    const chatChoice = conversation ? conversation.artifactCreation : state.composerActions?.pendingArtifactCreation;
+    if (chatChoice === undefined || chatChoice === null) {
+        return globalDefault ? 'default-on' : 'default-off';
     }
-    return state.composerActions?.pendingArtifactCreation ?? globalDefault;
+    return chatChoice ? 'chat-on' : 'chat-off';
 }
 
 /**
@@ -643,7 +658,13 @@ export function sendMessage({
                 resolveArtifactCreationEnabled(getState(), conversationId),
                 ui.isFromQueryParam
             );
-            sendArtifactTurnTelemetry('new', artifactToolMode, updatedLinearChain, s.isArtifactsViewFeatureEnabled);
+            sendArtifactTurnTelemetry(
+                'new',
+                artifactToolMode,
+                updatedLinearChain,
+                s.isArtifactsViewFeatureEnabled,
+                resolveArtifactCreationSetting(getState(), conversationId)
+            );
 
             const contextLimits = getContextLimitsForModelTier(ui.modelTier);
             const buildTurns = (chain: Message[]) =>
@@ -842,7 +863,13 @@ export function regenerateMessage({
                 s.isArtifactsViewFeatureEnabled,
                 resolveArtifactCreationEnabled(state, c.conversationId)
             );
-            sendArtifactTurnTelemetry('regenerate', artifactToolMode, c.messageChain, s.isArtifactsViewFeatureEnabled);
+            sendArtifactTurnTelemetry(
+                'regenerate',
+                artifactToolMode,
+                c.messageChain,
+                s.isArtifactsViewFeatureEnabled,
+                resolveArtifactCreationSetting(state, c.conversationId)
+            );
 
             const contextLimits = getContextLimitsForModelTier(ui.modelTier);
             const buildTurns = (chain: Message[]) => {
@@ -1069,7 +1096,13 @@ export function retrySendMessage({
             s.isArtifactsViewFeatureEnabled,
             resolveArtifactCreationEnabled(state, c.conversationId)
         );
-        sendArtifactTurnTelemetry('retry', artifactToolMode, updatedLinearChain, s.isArtifactsViewFeatureEnabled);
+        sendArtifactTurnTelemetry(
+            'retry',
+            artifactToolMode,
+            updatedLinearChain,
+            s.isArtifactsViewFeatureEnabled,
+            resolveArtifactCreationSetting(state, c.conversationId)
+        );
 
         const contextLimits = getContextLimitsForModelTier(ui.modelTier);
         const buildTurns = (chain: Message[]) =>

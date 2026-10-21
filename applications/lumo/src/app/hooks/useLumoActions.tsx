@@ -4,6 +4,7 @@ import { useApi } from '@proton/app-context/useApi';
 import type { User } from '@proton/shared/lib/interfaces/User';
 
 import { buildArtifactActionLlmPrompt } from '../components/Conversation/artifact/artifactActionPrompts';
+import { messageHasCreateArtifactToolCall } from '../components/Conversation/artifact/artifactGenerationState';
 import { markArtifactTelemetryLiveMessage } from '../components/Conversation/artifact/artifactVersionTelemetry';
 import { CREATE_ARTIFACT_TOOL_NAME } from '../components/Conversation/artifact/createArtifactTool';
 import type { ArtifactType } from '../components/Conversation/artifact/parseArtifacts';
@@ -827,7 +828,10 @@ export const useLumoActions = ({
             return;
         }
 
-        sendMessageGenerationAbortedEvent();
+        const lastMessage = messageChain.at(-1);
+        sendMessageGenerationAbortedEvent({
+            artifactInFlight: lastMessage?.role === Role.Assistant && messageHasCreateArtifactToolCall(lastMessage),
+        });
         dispatch((d, getState) => cancelConversationGeneration(d, getState, conversationId));
     };
 
