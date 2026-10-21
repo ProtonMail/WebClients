@@ -1,14 +1,12 @@
 import { c } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
-import {
-    type CreateMeetingParams,
-    getMeetingLink,
-    useGetMeetingDependencies,
-    useMeetErrorReporting,
-} from '@proton/meet';
+import { useGetMeetingDependencies } from '@proton/meet/hooks/useGetMeetingDependencies';
+import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useIsWaitingRoomCreationEnabled } from '@proton/meet/hooks/useWaitingRoomFlags';
+import type { CreateMeetingParams } from '@proton/meet/types/types';
 import { prepareMeetingCryptoData } from '@proton/meet/utils/cryptoUtils';
+import { getMeetingLink } from '@proton/meet/utils/getMeetingLink';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { rotatePersonalMeetingLink } from '@proton/shared/lib/api/meet';
 import type { RotatePersonalMeetingResponse } from '@proton/shared/lib/interfaces/Meet';

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { EasySwitchOauthImportButton } from '@proton/activation/index';
+import EasySwitchOauthImportButton from '@proton/activation/src/components/OAuthImportButton/EasySwitchOAuthImportButton';
 import { EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '@proton/activation/src/interface';
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import { IcCardIdentity } from '@proton/icons/icons/IcCardIdentity';

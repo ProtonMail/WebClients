@@ -6,7 +6,6 @@
       // actually merge them, it overrides them instead which would remove them.
       // If you see import errors, make sure these paths are up to date as it could fix it.
       "@proton/account/*": ["../../packages/account/*"],
-      "@proton/activation/*": ["../../packages/activation/*"],
       "@proton/andromeda": ["../../packages/wasm/andromeda/*"],
       "@proton/atoms/*": ["../../packages/atoms/*"],
       "@proton/components/*": ["../../packages/components/*"],
@@ -18,9 +17,7 @@
       "@proton/key-transparency/*": ["../../packages/key-transparency/*"],
       "@proton/llm/*": ["../../packages/llm/*"],
       "@proton/pack/*": ["../../packages/pack/*"],
-      "@proton/payments-ui/*": ["../../packages/payments-ui/*"],
       "@proton/polyfill/*": ["../../packages/polyfill/*"],
-      "@proton/redux-shared-store/*": ["../../packages/redux-shared-store/*"],
       "@proton/sieve/*": ["../../packages/sieve/*"],
       "@proton/stylelint-config-proton/*": ["../../packages/stylelint-config-proton/*"],
       "@proton/utils/*": ["../../packages/utils/src/*"],

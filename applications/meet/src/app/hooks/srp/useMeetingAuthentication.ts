@@ -1,8 +1,8 @@
 import { useCallback } from 'react';
 
 import { useApi } from '@proton/app-context/useApi';
-import { useMeetErrorReporting } from '@proton/meet';
 import { requestAccessToken, requestHandshakeInfo } from '@proton/meet/api/meetSrpRequests';
+import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 
 import { isExpectedApiFailure } from '../../utils/isExpectedApiFailure';
 

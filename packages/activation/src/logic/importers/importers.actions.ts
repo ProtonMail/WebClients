@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import { cancelImport, getImportsList } from '../../api';
+import { cancelImport, getImportsList } from '../../api/api';
 import type { ApiImportListResponse } from '../../api/api.interface';
 import { getEasySwitchFeaturesFromProducts } from '../../hooks/useOAuthPopup.helpers';
 import type { EasySwitchThunkExtra } from '../store';

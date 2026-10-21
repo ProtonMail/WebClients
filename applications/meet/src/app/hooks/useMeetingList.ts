@@ -4,7 +4,8 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
-import { useCreateMeeting, useGetMeetingDependencies } from '@proton/meet';
+import { useCreateMeeting } from '@proton/meet/hooks/useCreateMeeting';
+import { useGetMeetingDependencies } from '@proton/meet/hooks/useGetMeetingDependencies';
 import { useGetMeetings, useMeetings } from '@proton/meet/store/hooks/useMeetings';
 import { TelemetryMeetDashboardEvents, sendMeetDashboardEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { decryptMeetingName, decryptMeetingPassword } from '@proton/meet/utils/cryptoUtils';

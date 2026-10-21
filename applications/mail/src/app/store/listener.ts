@@ -8,7 +8,7 @@ import { bootstrapEvent } from '@proton/account/bootstrap/action';
 import { startCalendarEventListener } from '@proton/calendar/calendars/listener';
 import { startHolidaysDirectoryListener } from '@proton/calendar/holidaysDirectory/listener';
 import { startOffersDeliveryListener } from '@proton/offers-delivery/store/listener';
-import { mailSettingsHeartbeatListener } from '@proton/redux-shared-store/mailSettingsHeartbeatListener';
+import { mailSettingsHeartbeatListener } from '@proton/redux-shared-store/settingsHeartbeat/mailSettingsHeartbeatListener';
 import { startSharedListening } from '@proton/redux-shared-store/sharedListeners';
 
 import { startCategoriesUnseenListener } from './categories/categoriesUnseenListener';

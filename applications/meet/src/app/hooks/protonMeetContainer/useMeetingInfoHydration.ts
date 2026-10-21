@@ -1,7 +1,7 @@
 import { useLayoutEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { useMeetErrorReporting } from '@proton/meet';
+import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectIsMeetingLoading, setCurrentMeeting, setNavigationSeed } from '@proton/meet/store/slices/currentMeeting';
 import { meetingInfoThunk } from '@proton/meet/store/slices/meetingInfoModel';
