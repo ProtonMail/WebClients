@@ -1,8 +1,11 @@
 import { DocState } from '@proton/docs-shared/lib/Doc/DocState'
 import { Doc, Array as YArray, Map as YMap, encodeStateAsUpdate } from 'yjs'
+import type { SheetsDocumentAdapter } from '../app/Containers/Spreadsheet/public'
 
 const docStateLogger = {
+  // eslint-disable-next-line no-console
   debug: console.debug.bind(console),
+  // eslint-disable-next-line no-console
   info: console.info.bind(console),
   warn: console.warn.bind(console),
   error: console.error.bind(console),
@@ -68,7 +71,7 @@ export function createStandaloneSession(onReady: () => void, onError: (error: un
       handleReceivedEverythingFromRTS: onReady,
     },
     docStateLogger,
-  )
+  ) satisfies SheetsDocumentAdapter
   docState.receiveMessage({ type: { wrapper: 'du' }, content: createFixtureUpdate() })
   return {
     docState,

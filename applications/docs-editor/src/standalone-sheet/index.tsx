@@ -3,6 +3,7 @@ import './standalone-sheet.css'
 import { createRoot } from 'react-dom/client'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import {
+  defaultSheetsMessages,
   SheetsDependenciesProvider,
   StandaloneSheetsEditor,
   type SheetsDependencies,
@@ -10,7 +11,6 @@ import {
 import { EditorThemeProvider, useEditorTheme } from '../app/Theme/EditorThemeProvider'
 import { createStandaloneSession } from './session'
 import { useDemoLocalization } from './messages/useDemoLocalization'
-import { defaultSheetsMessages } from '../app/Containers/Spreadsheet/messages/defaultSheetsMessages'
 
 document.title = 'Standalone Sheet'
 
