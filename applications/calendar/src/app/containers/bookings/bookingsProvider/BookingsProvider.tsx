@@ -4,7 +4,7 @@ import type { ReactNode } from 'react';
 import { isBefore, set } from 'date-fns';
 import { c } from 'ttag';
 
-import { useUserSettings } from '@proton/account/index';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { createNewBookingPage, editBookingPage } from '@proton/calendar/bookings/store/actions';
 import type { InternalBookingPage } from '@proton/calendar/bookings/store/interface';

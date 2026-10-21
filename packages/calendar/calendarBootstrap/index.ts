@@ -6,7 +6,8 @@ import {
     miniSerializeError,
 } from '@reduxjs/toolkit';
 
-import type { AddressKeysState, AddressesState } from '@proton/account';
+import type { AddressKeysState } from '@proton/account/addressKeys';
+import type { AddressesState } from '@proton/account/addresses';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt';
 import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';

@@ -1,4 +1,4 @@
-import { selectUserSettings } from '@proton/account';
+import { selectUserSettings } from '@proton/account/userSettings';
 import type { SharedStartListening } from '@proton/redux-shared-store-types/interface';
 import { CacheType } from '@proton/redux-utilities/interface';
 

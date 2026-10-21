@@ -1,16 +1,14 @@
-import {
-    addressesThunk,
-    initEvent,
-    organizationThunk,
-    startLogoutListener,
-    userSettingsThunk,
-    userThunk,
-    welcomeFlagsActions,
-} from '@proton/account';
+import { addressesThunk } from '@proton/account/addresses';
 import * as bootstrap from '@proton/account/bootstrap';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
 import { serverEvent } from '@proton/account/eventLoop';
+import { initEvent } from '@proton/account/init';
+import { organizationThunk } from '@proton/account/organization';
 import { getDecryptedPersistedState } from '@proton/account/persist/helper';
+import { startLogoutListener } from '@proton/account/persist/listener';
+import { userThunk } from '@proton/account/user';
+import { userSettingsThunk } from '@proton/account/userSettings';
+import { welcomeFlagsActions } from '@proton/account/welcomeFlags';
 import { internalBookingThunk } from '@proton/calendar/bookings/store';
 import { calendarBootstrapThunk } from '@proton/calendar/calendarBootstrap';
 import { createCalendarModelEventManager } from '@proton/calendar/calendarModelEventManager';

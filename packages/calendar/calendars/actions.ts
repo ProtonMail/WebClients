@@ -1,7 +1,9 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
-import type { AddressesState, OrganizationState } from '@proton/account';
-import { addressesThunk, organizationActions } from '@proton/account';
+import type { AddressesState } from '@proton/account/addresses';
+import { addressesThunk } from '@proton/account/addresses';
+import type { OrganizationState } from '@proton/account/organization';
+import { organizationActions } from '@proton/account/organization';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { updateMember } from '@proton/shared/lib/api/calendars';
 import { updateOrganizationSettings } from '@proton/shared/lib/api/organization';

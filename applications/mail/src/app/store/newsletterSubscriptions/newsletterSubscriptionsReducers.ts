@@ -1,6 +1,6 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 
-import type { serverEvent } from '@proton/account';
+import type { serverEvent } from '@proton/account/eventLoop';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import type {
     GetNewsletterSubscriptionsApiResponse,

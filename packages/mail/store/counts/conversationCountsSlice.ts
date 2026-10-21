@@ -1,6 +1,7 @@
 import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-import { type OrganizationState, organizationThunk, serverEvent } from '@proton/account';
+import { serverEvent } from '@proton/account/eventLoop';
+import { type OrganizationState, organizationThunk } from '@proton/account/organization';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
 import { createHooks } from '@proton/redux-utilities/hooks';
