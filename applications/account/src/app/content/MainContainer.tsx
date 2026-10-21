@@ -4,6 +4,7 @@ import { Redirect, Route, Switch, matchPath, useLocation } from 'react-router-do
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
 import {
     getIsIncomingDelegatedAccessAvailable,
     getIsOutgoingDelegatedAccessAvailable,
@@ -89,6 +90,7 @@ import Layout from '../public/Layout';
 import Main from '../public/Main';
 import AccountSidebar from './AccountSidebar';
 import AccountStartupModals from './AccountStartupModals';
+import { getAssistantKillSwitch } from './assistantKillSwitch';
 import SettingsSearch, { AutocompleteSettingsSearch } from './SettingsSearch';
 import type {
     AccountRecoveryRouterFlags,
@@ -229,7 +231,8 @@ const MainContainer = () => {
         entitlements.hasAllCoreProductsB2C ||
         appFromPathname === APPS.PROTONMAIL ||
         appFromPathname === APPS.PROTONCALENDAR;
-    const assistantKillSwitch = isInAllowedApps ? !entitlements.hasScribe : true;
+    const [allSubscriptions = []] = useAllSubscriptions();
+    const assistantKillSwitch = getAssistantKillSwitch({ isInAllowedApps, subscriptions: allSubscriptions });
 
     const organizationTheme = useOrganizationTheme();
     const [memberships, loadingGroupMembership] = useGroupMemberships();
