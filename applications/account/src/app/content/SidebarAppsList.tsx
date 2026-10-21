@@ -1,30 +1,18 @@
 import { c } from 'ttag';
 
-import { useOrganization } from '@proton/account/organization/hooks';
-import { useUser } from '@proton/account/user/hooks';
+import { useAvailableApps } from '@proton/account/availableApps/hooks';
 import Logo from '@proton/components/components/logo/Logo';
 import { Branch } from '@proton/components/components/sidebar/nav/Branch';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
-import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getAppShortName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import { getSettingsHref } from './helper';
 
 const SidebarAppsList = () => {
-    const [user] = useUser();
-    const [organization] = useOrganization();
+    const availableApps = useAvailableApps();
     const { getLocalID } = useAuthentication();
     const localId = getLocalID();
-    const isSpacesAvailable = useFlag('SpacesAvailable');
-
-    const availableApps = getAvailableApps({
-        context: 'dropdown',
-        user,
-        organization,
-        isSpacesAvailable,
-    });
 
     if (!availableApps.length) {
         return null;
