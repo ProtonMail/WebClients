@@ -318,6 +318,7 @@ enum MeetFeatureFlag {
     MeetBackgroundEffectsOnMobileBrowsers = 'MeetBackgroundEffectsOnMobileBrowsers',
     MeetBlurMulticlassPersonConfidenceBoost = 'MeetBlurMulticlassPersonConfidenceBoost',
     MeetBlurPersonConfidenceBoost = 'MeetBlurPersonConfidenceBoost',
+    MeetChatLumoEmojis = 'MeetChatLumoEmojis',
     MeetChatMentions = 'MeetChatMentions',
     MeetChatThreads = 'MeetChatThreads',
     MeetClientMetricsLog = 'MeetClientMetricsLog',

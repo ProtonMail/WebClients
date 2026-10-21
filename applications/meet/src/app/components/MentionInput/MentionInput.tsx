@@ -8,7 +8,7 @@ import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin';
 import { OnChangePlugin } from '@lexical/react/LexicalOnChangePlugin';
 import { PlainTextPlugin } from '@lexical/react/LexicalPlainTextPlugin';
 import type { EditorState } from 'lexical';
-import { $getRoot, $getSelection, $isRangeSelection } from 'lexical';
+import { $getPreviousSelection, $getRoot, $getSelection, $isRangeSelection, $setSelection } from 'lexical';
 import { c, msgid } from 'ttag';
 
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
@@ -18,7 +18,9 @@ import clsx from '@proton/utils/clsx';
 
 import { useMentionLabels } from '../../hooks/useMentionLabels';
 import { $readMentionValue, $writeMentionValue } from '../../utils/mentions/mentionEditorState';
+import { LumoEmojiNode } from './LumoEmojiNode';
 import { MentionNode } from './MentionNode';
+import { LumoEmojiPlugin } from './plugins/LumoEmojiPlugin';
 import { MaxLengthPlugin } from './plugins/MaxLengthPlugin';
 import { MentionLabelSyncPlugin } from './plugins/MentionLabelSyncPlugin';
 import { MentionsTypeaheadPlugin } from './plugins/MentionsTypeaheadPlugin';
@@ -99,7 +101,13 @@ const EditorBridge = ({
             insertText: (text: string) =>
                 editor.update(() => {
                     if (!$isRangeSelection($getSelection())) {
-                        $getRoot().selectEnd();
+                        const previousSelection = $getPreviousSelection();
+
+                        if ($isRangeSelection(previousSelection)) {
+                            $setSelection(previousSelection.clone());
+                        } else {
+                            $getRoot().selectEnd();
+                        }
                     }
 
                     const selection = $getSelection();
@@ -189,7 +197,7 @@ export const MentionInput = ({
             <LexicalComposer
                 initialConfig={{
                     namespace: 'meet-chat-composer',
-                    nodes: [MentionNode],
+                    nodes: [MentionNode, LumoEmojiNode],
                     onError: reportComposerError,
                     theme: { paragraph: 'm-0' },
                 }}
@@ -246,6 +254,7 @@ export const MentionInput = ({
                 <MaxLengthPlugin maxLength={maxLength} />
                 <SubmitOnEnterPlugin onSubmit={onSubmit} />
                 <MentionLabelSyncPlugin />
+                <LumoEmojiPlugin />
                 {isMentionsEnabled && (
                     <MentionsTypeaheadPlugin
                         listId={suggestionListId}

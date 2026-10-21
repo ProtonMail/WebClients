@@ -30,12 +30,14 @@ import {
 import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { splitMessageIntoMentionSegments } from '@proton/meet/utils/mentions/mentionToken';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { CHAT_MESSAGE_MAX_LENGTH } from '../../constants';
 import { useParticipantDisplayColors } from '../../hooks/useParticipantDisplayColors';
 import { useStableCallback } from '../../hooks/useStableCallback';
 import { getParticipantInitials } from '../../utils/getParticipantInitials';
+import { getLumoEmojiPickerOptions } from '../../utils/lumoEmojis/lumoEmojiPicker';
 import { trimMessage } from '../../utils/trim-message';
 import type { MentionInputHandle } from '../MentionInput/MentionInput';
 import { MentionInput } from '../MentionInput/MentionInput';
@@ -53,18 +55,19 @@ const EmojiPicker = ({
     perLine,
 }: {
     autoFocus: boolean;
-    onEmojiSelect: (emoji: { native: string }) => void;
+    onEmojiSelect: (text: string) => void;
     set: string;
     skinTonePosition: string;
     previewPosition: string;
     perLine: number;
 }) => {
     const ref = useRef<HTMLDivElement>(null);
+    const isLumoEmojisEnabled = useFlag('MeetChatLumoEmojis');
 
     useEffect(() => {
         const picker = new Picker({
+            ...getLumoEmojiPickerOptions(onEmojiSelect, isLumoEmojisEnabled),
             autoFocus,
-            onEmojiSelect,
             set,
             skinTonePosition,
             previewPosition,
@@ -77,7 +80,7 @@ const EmojiPicker = ({
         const style = document.createElement('style');
         style.textContent = emojiPickerStyles;
         picker.shadowRoot?.appendChild(style);
-    }, [autoFocus, onEmojiSelect, perLine, previewPosition, set, skinTonePosition]);
+    }, [autoFocus, isLumoEmojisEnabled, onEmojiSelect, perLine, previewPosition, set, skinTonePosition]);
 
     return <div ref={ref} />;
 };
@@ -278,8 +281,18 @@ export const ChatMessage = ({
         });
     });
 
-    const handleEmojiSelect = useStableCallback((emoji: { native: string }) => {
-        composerRef.current?.insertText(emoji.native);
+    const handleEmojiSelect = useStableCallback((text: string) => {
+        if (currentMessage.current.length + text.length > CHAT_MESSAGE_MAX_LENGTH) {
+            createNotification({
+                key: 'chat-emoji-too-long',
+                type: 'error',
+                text: c('Error').t`The emoji could not be added because the message is at its character limit`,
+            });
+            setEmojiPickerOpen(false);
+            return;
+        }
+
+        composerRef.current?.insertText(text);
         setEmojiPickerOpen(false);
         composerRef.current?.focus();
     });

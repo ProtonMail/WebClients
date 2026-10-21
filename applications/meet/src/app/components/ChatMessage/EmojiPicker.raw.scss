@@ -45,6 +45,12 @@
 	.bar {
 		background-color: var(--interaction-norm);
 	}
+
+	img {
+		inline-size: 24px;
+		block-size: 24px;
+		margin: -3px;
+	}
 }
 
 .search {

@@ -12,12 +12,10 @@ import {
     ParticipantEvent,
     type ParticipantEventRecord,
 } from '@proton/meet/types/types';
-import { splitMessageIntoMentionSegments } from '@proton/meet/utils/mentions/mentionToken';
 
 import { CloseButton } from '../../atoms/CloseButton/CloseButton';
-import { addSpecialCharactersForMessageDisplay } from '../../utils/addSpecialCharactersForMessageDisplay';
 import { getAgentDisplayInfo } from '../../utils/getAgentDisplayInfo';
-import { Mention } from '../Mention/Mention';
+import { MessageSegments } from '../MessageSegments/MessageSegments';
 import { MeetingSnackbarCard } from './MeetingSnackbarCard';
 import { MeetingSnackbarContent } from './MeetingSnackbarContent';
 
@@ -49,14 +47,7 @@ export const MeetingUpdateSnackbar = ({ update, onClose, onOpen }: Props) => {
 
     const getBody = () => {
         if (isChatMessage(update)) {
-            return splitMessageIntoMentionSegments(addSpecialCharactersForMessageDisplay(update.message)).map(
-                (segment, index) =>
-                    segment.type === 'mention' ? (
-                        <Mention key={`mention-${index}`} id={segment.id} />
-                    ) : (
-                        <span key={`text-${index}`}>{segment.text}</span>
-                    )
-            );
+            return <MessageSegments message={update.message} />;
         }
 
         if (isParticipantEventRecord(update) && update.eventType === ParticipantEvent.Join) {

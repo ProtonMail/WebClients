@@ -4,3 +4,8 @@ declare module '*.worker.ts' {
     }
     export default WebpackWorker;
 }
+
+declare module '*.gif' {
+    const src: string;
+    export default src;
+}
