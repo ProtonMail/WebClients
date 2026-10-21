@@ -1,6 +1,8 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import type { Mock } from 'vitest';
 
+import { selectMeetingLink } from '@proton/meet/store/slices/currentMeeting';
+import { selectIsGuest, selectUserId } from '@proton/meet/store/slices/userSlice';
 import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -12,7 +14,14 @@ const JOIN_FROM_APP = 'Join from Proton Meet app';
 const HINT_TITLE = "App didn't open?";
 
 vi.mock('@proton/meet/store/hooks', () => ({
-    useMeetSelector: () => MEETING_LINK,
+    useMeetSelector: (selector: unknown) => {
+        const values = new Map<unknown, unknown>([
+            [selectMeetingLink, MEETING_LINK],
+            [selectIsGuest, false],
+            [selectUserId, 'user-1'],
+        ]);
+        return values.get(selector);
+    },
 }));
 
 vi.mock('@proton/meet/telemetry/meetTelemetry', async (importOriginal) => ({
@@ -62,6 +71,7 @@ describe('OpenInDesktopApp', () => {
 
         expect(tryOpenInDesktopApp).toHaveBeenCalledWith(MEETING_LINK);
         expect(saveDesktopAppPreference).toHaveBeenCalledTimes(1);
+        expect(saveDesktopAppPreference).toHaveBeenCalledWith('openInDesktopApp.user.user-1');
         expect(screen.getByText(HINT_TITLE)).toBeInTheDocument();
         expect(sendMeetActionsEvent).toHaveBeenCalledWith(TelemetryMeetActionsEvents.desktop_app_banner_clicked, {
             action: 'open_app',
@@ -106,6 +116,7 @@ describe('OpenInDesktopApp', () => {
 
         render(<OpenInDesktopApp />);
 
+        expect(getDesktopAppPreferenceMock).toHaveBeenCalledWith('openInDesktopApp.user.user-1');
         expect(tryOpenInDesktopApp).toHaveBeenCalledTimes(1);
         expect(tryOpenInDesktopApp).toHaveBeenCalledWith(MEETING_LINK);
         expect(screen.getByText(HINT_TITLE)).toBeInTheDocument();

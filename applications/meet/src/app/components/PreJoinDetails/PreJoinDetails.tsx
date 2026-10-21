@@ -27,6 +27,7 @@ import clsx from '@proton/utils/clsx';
 import { SettingToggle } from '../../atoms/SettingToggle/SettingToggle';
 import { canOpenInDesktopApp, clearDesktopAppPreference } from '../../utils/desktopAppDetector';
 import { OpenInDesktopApp } from '../OpenInDesktopApp/OpenInDesktopApp';
+import { useDesktopAppPreferenceStorageKey } from '../OpenInDesktopApp/useDesktopAppPreferenceStorageKey';
 import { PreJoinDetailsHeader } from './PreJoinDetailsHeader';
 import { WaitingRoomAdmission } from './WaitingRoomAdmission/WaitingRoomAdmission';
 import { WaitingRoomDropdown } from './WaitingRoomDropdown';
@@ -61,6 +62,7 @@ export const PreJoinDetails = ({
     const meetingLink = useMeetSelector(selectMeetingLink);
     const showWaitingRoomAdmission = useMeetSelector(selectIsWaitingRoomAdmissionActive);
     const waitingRoomEnabled = useMeetSelector(selectWaitingRoomSetting);
+    const desktopAppPreferenceStorageKey = useDesktopAppPreferenceStorageKey();
 
     const [keepDisplayNameOnDevice, setKeepDisplayNameOnDevice] = useState(keepDisplayName);
 
@@ -80,7 +82,7 @@ export const PreJoinDetails = ({
 
     const handleJoinMeeting = () => {
         if (showOpenInDesktopApp) {
-            clearDesktopAppPreference();
+            clearDesktopAppPreference(desktopAppPreferenceStorageKey);
         }
         onJoinMeeting(displayName, keepDisplayNameOnDevice);
     };
