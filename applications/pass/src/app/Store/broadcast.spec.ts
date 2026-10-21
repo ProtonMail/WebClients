@@ -1,8 +1,9 @@
 import type { Store } from 'redux';
 
 import { type AuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
-import { cacheConflict, itemsUpdated } from '@proton/pass/store/actions';
-import { AppStatus } from '@proton/pass/types';
+import { cacheConflict } from '@proton/pass/store/actions/creators/client';
+import { itemsUpdated } from '@proton/pass/store/actions/creators/item';
+import { AppStatus } from '@proton/pass/types/worker/state';
 
 import { broadcastMiddleware, resolveBroadcast } from './broadcast';
 

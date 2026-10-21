@@ -1,6 +1,6 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
-import type { ProtonThunkArguments, SharedStartListening } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments, SharedStartListening } from '@proton/redux-shared-store-types/interface';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { updateDeviceRecovery } from '@proton/shared/lib/api/settingsRecovery';

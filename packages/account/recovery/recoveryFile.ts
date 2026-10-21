@@ -1,6 +1,6 @@
 import { type ThunkAction, type UnknownAction, createSelector } from '@reduxjs/toolkit';
 
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { setNewRecoverySecret } from '@proton/shared/lib/api/settingsRecovery';
 import {

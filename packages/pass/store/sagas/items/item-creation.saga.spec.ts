@@ -1,9 +1,9 @@
 import { runSaga } from 'redux-saga';
 
 import { itemBuilder } from '../../../lib/items/item.builder';
-import type { ItemCreateIntent } from '../../../types';
+import type { ItemCreateIntent } from '../../../types/data/items.dto';
 import { sagaSetup } from '../../../utils/tests/saga';
-import { itemCreate } from '../../actions';
+import { itemCreate } from '../../actions/creators/item';
 import { withSender } from '../../actions/enhancers/endpoint';
 import type { RootSagaOptions } from '../../types';
 import watcher from './item-creation.saga';

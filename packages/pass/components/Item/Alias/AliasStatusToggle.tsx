@@ -7,8 +7,8 @@ import Toggle from '@proton/components/components/toggle/Toggle';
 
 import { useRequest } from '../../../hooks/useRequest';
 import { isDisabledAlias } from '../../../lib/items/item.predicates';
-import { aliasSyncStatusToggle } from '../../../store/actions';
-import type { ItemRevision } from '../../../types';
+import { aliasSyncStatusToggle } from '../../../store/actions/creators/alias';
+import type { ItemRevision } from '../../../types/data/items';
 import { not } from '../../../utils/fp/predicates';
 
 type Props = { disabled?: boolean; revision: ItemRevision };

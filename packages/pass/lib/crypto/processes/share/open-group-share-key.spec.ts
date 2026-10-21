@@ -1,4 +1,4 @@
-import { PassEncryptionTag } from '../../../../types';
+import { PassEncryptionTag } from '../../../../types/crypto/pass-types';
 import {
     createRandomGroupKey,
     createRandomKey,

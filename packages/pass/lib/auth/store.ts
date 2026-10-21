@@ -1,4 +1,6 @@
-import { AuthMode, type Maybe, type Store } from '../../types';
+import { AuthMode } from '../../types/api/api';
+import type { Maybe } from '../../types/utils';
+import type { Store } from '../../types/worker/storage';
 import { isObject } from '../../utils/object/is-object';
 import { encodedGetter, encodedSetter } from '../../utils/store';
 import type { OfflineComponents, OfflineConfig } from '../cache/crypto';

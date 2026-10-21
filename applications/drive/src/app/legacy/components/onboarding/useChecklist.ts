@@ -4,7 +4,7 @@ import { differenceInDays, fromUnixTime } from 'date-fns';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/app-context/useApi';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { getDriveChecklist, seenCompletedDriveChecklist } from '@proton/shared/lib/api/checklist';
 import type { ChecklistApiResponse } from '@proton/shared/lib/interfaces/Checklist';
 

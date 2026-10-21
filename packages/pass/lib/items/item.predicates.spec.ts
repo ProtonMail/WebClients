@@ -1,4 +1,4 @@
-import type { ItemRevision, LoginItem } from '../../types';
+import type { ItemRevision, LoginItem } from '../../types/data/items';
 import { AutofillMode } from '../../types/protobuf';
 import { hasDomain, isBreached, isDisabledAlias, isHealthCheckSkipped, isMonitored } from './item.predicates';
 

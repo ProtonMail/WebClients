@@ -3,7 +3,8 @@ import { generateKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { binaryStringToUint8Array, uint8ArrayToBinaryString } from '@proton/shared/lib/helpers/encoding';
 import noop from '@proton/utils/noop';
 
-import { NativeMessageErrorType, PassEncryptionTag } from '../../../../types';
+import { PassEncryptionTag } from '../../../../types/crypto/pass-types';
+import { NativeMessageErrorType } from '../../../../types/desktop/extension-unlock-with-desktop';
 import { asyncLock } from '../../../../utils/fp/promises';
 import { logger } from '../../../../utils/logger';
 import { getEpoch } from '../../../../utils/time/epoch';

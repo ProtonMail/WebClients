@@ -1,5 +1,6 @@
-import type { DeobfuscatedItem, DeobfuscatedItemExtraField, Item, ItemExtraField, ItemType } from '../../types';
+import type { DeobfuscatedItem, DeobfuscatedItemExtraField, Item, ItemExtraField } from '../../types/data/items';
 import type { DeobfuscateMode } from '../../types/data/obfuscation';
+import type { ItemType } from '../../types/protobuf';
 import { deobfuscate, obfuscate } from '../../utils/obfuscate/xor';
 
 export const obfuscateExtraFields = (extraFields?: DeobfuscatedItemExtraField[]): ItemExtraField[] =>

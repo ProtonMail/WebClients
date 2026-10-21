@@ -1,6 +1,6 @@
 import lastItem from '@proton/utils/lastItem';
 
-import { PassEncryptionTag } from '../../../../types';
+import { PassEncryptionTag } from '../../../../types/crypto/pass-types';
 import {
     createRandomKey,
     randomAddress,

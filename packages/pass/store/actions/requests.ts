@@ -1,4 +1,4 @@
-import type { SelectedItem } from '../../types';
+import type { SelectedItem } from '../../types/data/items';
 
 export const withKey = (base: string) => (key: string | number) => `${base}::${key}`;
 export const selectedItemKey = ({ shareId, itemId }: SelectedItem) => `${shareId}::${itemId}`;

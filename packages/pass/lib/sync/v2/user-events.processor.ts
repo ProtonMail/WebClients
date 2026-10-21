@@ -1,7 +1,7 @@
 import { all, call } from 'redux-saga/effects';
 
 import type { RootSagaOptions } from '../../../store/types';
-import type { SyncEventListOutput } from '../../../types';
+import type { SyncEventListOutput } from '../../../types/api/pass';
 import { PendingFileLinkTracker } from '../../file-attachments/file-link.tracker';
 import { getItemKey } from '../../items/item.utils';
 import type { EventProcessor } from '../types';

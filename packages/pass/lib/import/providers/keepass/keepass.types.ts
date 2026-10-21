@@ -1,4 +1,5 @@
-import type { DeobfuscatedItemExtraField, Maybe, MaybeArray } from '../../../../types';
+import type { DeobfuscatedItemExtraField } from '../../../../types/data/items';
+import type { Maybe, MaybeArray } from '../../../../types/utils';
 
 export type KeePassEntryValue = { _ProtectInMemory: string; __text: string } | string;
 

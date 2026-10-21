@@ -1,5 +1,5 @@
 import type { PasskeyCreateBridgeResponse, PasskeyGetResponse } from '@proton/pass/lib/passkeys/types';
-import type { Unpack } from '@proton/pass/types/utils/index';
+import type { Unpack } from '@proton/pass/types/utils';
 
 import type {
     MaybeMessage,

@@ -11,9 +11,11 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 
 import { useMemoSelector } from '../../../hooks/useMemoSelector';
 import { AccessTarget } from '../../../lib/access/types';
-import { newUserInvitePromoteIntent } from '../../../store/actions';
-import { selectAccessForMany, selectVaultsWithNewUserInvites } from '../../../store/selectors';
-import { NewUserInviteState, type ShareId } from '../../../types';
+import { newUserInvitePromoteIntent } from '../../../store/actions/creators/invite';
+import { selectAccessForMany } from '../../../store/selectors/access';
+import { selectVaultsWithNewUserInvites } from '../../../store/selectors/shares';
+import type { ShareId } from '../../../types/crypto/pass-types';
+import { NewUserInviteState } from '../../../types/data/invites';
 import { useOnline } from '../../Core/ConnectivityProvider';
 import { PassModal } from '../../Layout/Modal/PassModal';
 import { PendingNewUsersForShare } from './PendingNewUsersForShare';

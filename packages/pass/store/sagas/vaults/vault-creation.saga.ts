@@ -1,8 +1,9 @@
 import { put, takeEvery } from 'redux-saga/effects';
 
 import { createVault } from '../../../lib/vaults/vault.requests';
-import type { Maybe, Share, ShareType } from '../../../types';
-import { vaultCreationFailure, vaultCreationIntent, vaultCreationSuccess } from '../../actions';
+import type { Share, ShareType } from '../../../types/data/shares';
+import type { Maybe } from '../../../types/utils';
+import { vaultCreationFailure, vaultCreationIntent, vaultCreationSuccess } from '../../actions/creators/vault';
 
 export function* createVaultWorker({ payload, meta }: ReturnType<typeof vaultCreationIntent>): Generator<unknown, Maybe<string>> {
     try {

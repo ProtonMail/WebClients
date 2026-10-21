@@ -1,4 +1,4 @@
-import type { MaybeNull } from '../../types';
+import type { MaybeNull } from '../../types/utils';
 
 export type RafHandle = {
     /** Flag indicating wether the current RAF

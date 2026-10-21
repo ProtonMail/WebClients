@@ -3,13 +3,13 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { getAddressKeysByUsageThunk } from '@proton/account/addressKeys/getAddressKeysByUsage';
 import { getVerificationPreferencesThunk } from '@proton/account/publicKeys/verificationPreferences';
 import { createBookingPage, getBookingPageDetails, updateBookingPage } from '@proton/shared/lib/api/calendarBookings';
+import { MinimumNoticeMode } from '@proton/shared/lib/interfaces/calendar/Bookings';
 
 import { getDecryptedPassphraseAndCalendarKeysThunk } from '../../calendarBootstrap/keys';
 import { decryptAndVerifyBookingPageSecret } from '../crypto/bookingDecryption';
 import { encryptBookingPage, encryptBookingPageEdition } from '../crypto/bookingEncryption';
 import { verifyBookingSlots } from '../crypto/bookingVerification';
 import type { APIBooking, BookingPageEditData, SerializedFormData } from '../types';
-import { MinimumNoticeMode } from '../types';
 import { getBookingsOrigin } from './bookingsOrigin';
 import { getCalendarAndOwner } from './calendarHelper';
 import type {

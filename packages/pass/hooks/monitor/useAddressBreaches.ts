@@ -3,9 +3,9 @@ import { useEffect, useMemo, useState } from 'react';
 import type { FetchedBreaches } from '@proton/components/containers/credentialLeak/models';
 
 import { type AddressBreachDTO, AddressType } from '../../lib/monitor/types';
-import { getAliasBreach, getCustomBreach, getProtonBreach } from '../../store/actions';
-import { selectItemsByUserIdentifier } from '../../store/selectors';
-import type { LoginItem } from '../../types';
+import { getAliasBreach, getCustomBreach, getProtonBreach } from '../../store/actions/creators/monitor';
+import { selectItemsByUserIdentifier } from '../../store/selectors/items';
+import type { LoginItem } from '../../types/data/items';
 import { partition } from '../../utils/array/partition';
 import { useMemoSelector } from '../useMemoSelector';
 import { useRequest } from '../useRequest';

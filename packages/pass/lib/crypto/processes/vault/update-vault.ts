@@ -1,5 +1,6 @@
-import type { VaultShareKey, VaultUpdateRequest } from '../../../../types';
-import { ContentFormatVersion, PassEncryptionTag } from '../../../../types';
+import type { VaultUpdateRequest } from '../../../../types/api/pass';
+import type { VaultShareKey } from '../../../../types/crypto/pass-types';
+import { ContentFormatVersion, PassEncryptionTag } from '../../../../types/crypto/pass-types';
 import { encryptData } from '../../utils/crypto-helpers';
 import { PassCryptoVaultError } from '../../utils/errors';
 

@@ -1,6 +1,7 @@
 import { PassCrypto } from '..';
-import type { ItemKey, MaybeNull } from '../../../types';
-import { ShareType } from '../../../types';
+import type { ItemKey } from '../../../types/crypto/pass-types';
+import { ShareType } from '../../../types/data/shares';
+import type { MaybeNull } from '../../../types/utils';
 import { getLatestItemKey } from '../../items/item.keys';
 
 /** Since we do not currently cache the item keys on the PassCrypto context

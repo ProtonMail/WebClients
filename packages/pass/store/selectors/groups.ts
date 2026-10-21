@@ -3,7 +3,7 @@ import { createSelector } from '@reduxjs/toolkit';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
 import type { Group } from '../../lib/groups/groups.types';
-import type { Maybe } from '../../types';
+import type { Maybe } from '../../types/utils';
 import type { State } from '../types';
 
 export const selectGroups = ({ groups }: State) => groups;

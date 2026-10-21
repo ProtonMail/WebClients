@@ -8,7 +8,7 @@ import { useCountdown } from '../../../hooks/useCountdown';
 import { useRequest } from '../../../hooks/useRequest';
 import { PassErrorCode } from '../../../lib/api/errors';
 import type { AddressType, MonitorAddress } from '../../../lib/monitor/types';
-import { resendVerificationCode, verifyCustomAddress } from '../../../store/actions';
+import { resendVerificationCode, verifyCustomAddress } from '../../../store/actions/creators/monitor';
 import { EmailVerifyModal, SECONDS_BEFORE_RESEND, getInitialCountdown } from '../../Layout/Modal/EmailVerifyModal';
 
 type Props = { onClose: () => void; sentAt?: number } & MonitorAddress<AddressType.CUSTOM>;

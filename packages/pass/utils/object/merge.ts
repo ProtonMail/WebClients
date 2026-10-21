@@ -1,4 +1,4 @@
-import type { RecursivePartial } from '../../types';
+import type { RecursivePartial } from '../../types/utils';
 import { isObject } from './is-object';
 
 type MergeOptions = { excludeEmpty: boolean };

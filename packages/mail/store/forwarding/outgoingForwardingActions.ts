@@ -10,7 +10,7 @@ import type { KtState } from '@proton/account/kt';
 import type { OrganizationKeyState } from '@proton/account/organizationKey';
 import { getPublicKeysForInboxThunk } from '@proton/account/publicKeys/publicKeysForInbox';
 import type { UserKeysState } from '@proton/account/userKeys';
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import {
     type SetupForwardingParameters,
     deleteForwarding as deleteForwardingConfig,

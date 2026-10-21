@@ -48,15 +48,17 @@ import { getOfflineVerifier } from '@proton/pass/lib/cache/crypto';
 import { clientBooted, clientOffline } from '@proton/pass/lib/client';
 import type { ConnectivityService } from '@proton/pass/lib/network/connectivity.service';
 import { ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
+import { lockSync } from '@proton/pass/store/actions/creators/auth';
 import {
     bootIntent,
     cacheCancel,
-    lockSync,
     offlineResume,
     stateDestroy,
     stopEventPolling,
-} from '@proton/pass/store/actions';
-import { AppStatus, AuthMode, type MaybeNull } from '@proton/pass/types';
+} from '@proton/pass/store/actions/creators/client';
+import { AuthMode } from '@proton/pass/types/api/api';
+import type { MaybeNull } from '@proton/pass/types/utils';
+import { AppStatus } from '@proton/pass/types/worker/state';
 import { logger } from '@proton/pass/utils/logger';
 import { objectHandler } from '@proton/pass/utils/object/handler';
 import { getEpoch } from '@proton/pass/utils/time/epoch';

@@ -7,7 +7,7 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Href } from '@proton/atoms/Href/Href';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import {
     getOrganizationEventTypes,
     getOrganizationLogs,

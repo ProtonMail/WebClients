@@ -8,7 +8,7 @@ import {
 } from '@protontech/autofill';
 import debounce from 'lodash/debounce';
 
-import type { MaybeNull } from '@proton/pass/types/utils/index';
+import type { MaybeNull } from '@proton/pass/types/utils';
 import { getActiveElement } from '@proton/pass/utils/dom/active-element';
 import { TopLayerManager } from '@proton/pass/utils/dom/popover';
 import { isHTMLElement, isInputElement } from '@proton/pass/utils/dom/predicates';

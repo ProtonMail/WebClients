@@ -1,12 +1,10 @@
 import { call, put } from 'redux-saga/effects';
 
-import { aliasPendingCreated, itemsUpdated } from '../../../store/actions';
-import type {
-    ItemRevision,
-    MaybeNull,
-    SyncEventChangedWithTokenOutput,
-    SyncEventShareItemOutput,
-} from '../../../types';
+import { aliasPendingCreated } from '../../../store/actions/creators/alias';
+import { itemsUpdated } from '../../../store/actions/creators/item';
+import type { SyncEventChangedWithTokenOutput, SyncEventShareItemOutput } from '../../../types/api/pass';
+import type { ItemRevision } from '../../../types/data/items';
+import type { MaybeNull } from '../../../types/utils';
 import { NoDefaultVaultError } from '../../../utils/errors/errors';
 import { syncPendingAliases } from '../common/alias';
 import type { EventProcessor } from '../types';

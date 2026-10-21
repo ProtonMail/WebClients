@@ -1,7 +1,8 @@
 import type { CSSProperties, HTMLProps, ReactElement, ReactNode, Ref } from 'react';
 import { Children, cloneElement, forwardRef, useCallback, useId, useState } from 'react';
 
-import { useCombinedRefs, useIsMounted } from '@proton/hooks';
+import useCombinedRefs from '@proton/hooks/useCombinedRefs';
+import useIsMounted from '@proton/hooks/useIsMounted';
 // TODO: refactor @proton/utils to have a centralized import path
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { useConfig } from '@proton/app-context/useConfig';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { CONTACT_IMG_SIZE } from '@proton/shared/lib/contacts/constants';
 import { getContactImageSource } from '@proton/shared/lib/helpers/contacts';

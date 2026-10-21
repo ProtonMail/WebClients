@@ -10,7 +10,7 @@ import { IcWindowTerminal } from '@proton/icons/icons/IcWindowTerminal';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { mimetypeForDownload } from '../../lib/file-attachments/helpers';
-import type { Maybe } from '../../types';
+import type { Maybe } from '../../types/utils';
 import { download } from '../../utils/dom/download';
 import { usePassCore } from '../Core/PassCoreProvider';
 import { SettingsPanel } from './SettingsPanel';

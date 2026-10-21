@@ -15,7 +15,7 @@ import FolderIcon from '@proton/components/containers/labels/FolderIcon';
 import type { LabelModel } from '@proton/components/containers/labels/modals/EditLabelModal';
 import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { IcArchiveBox } from '@proton/icons/icons/IcArchiveBox';
 import { IcFire } from '@proton/icons/icons/IcFire';
 import { IcFolder } from '@proton/icons/icons/IcFolder';

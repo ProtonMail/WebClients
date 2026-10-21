@@ -15,7 +15,8 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import Prompt from '@proton/components/components/prompt/Prompt';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useLocalState from '@proton/components/hooks/useLocalState';
-import { FeatureCode, useFeature } from '@proton/features';
+import { FeatureCode } from '@proton/features/interface';
+import useFeature from '@proton/features/useFeature';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcQuestionCircle } from '@proton/icons/icons/IcQuestionCircle';
 import { TelemetryPassNudgeEvents } from '@proton/shared/lib/api/telemetry';

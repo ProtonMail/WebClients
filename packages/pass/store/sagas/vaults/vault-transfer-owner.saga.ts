@@ -1,8 +1,8 @@
 import { put, takeEvery } from 'redux-saga/effects';
 
 import { vaultTransferOwner } from '../../../lib/vaults/vault.requests';
-import { vaultTransferOwnerIntent, vaultTransferOwnershipFailure, vaultTransferOwnershipSuccess } from '../../actions';
 import { syncShare } from '../../actions/creators/polling';
+import { vaultTransferOwnerIntent, vaultTransferOwnershipFailure, vaultTransferOwnershipSuccess } from '../../actions/creators/vault';
 
 function* resendInviteWorker({ payload, meta: { request } }: ReturnType<typeof vaultTransferOwnerIntent>) {
     try {

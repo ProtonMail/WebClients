@@ -4,8 +4,10 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 
 import { getItemEntityID } from '../../lib/items/item.utils';
 import { AddressType } from '../../lib/monitor/types';
-import type { IndexedByShareIdAndItemId, ItemRevision, RequiredProps, UniqueItem } from '../../types';
-import { ContentFormatVersion, ItemFlag, ItemState } from '../../types';
+import { ContentFormatVersion } from '../../types/crypto/pass-types';
+import type { IndexedByShareIdAndItemId, ItemRevision, UniqueItem } from '../../types/data/items';
+import { ItemFlag, ItemState } from '../../types/data/items';
+import type { RequiredProps } from '../../types/utils';
 import { prop } from '../../utils/fp/lens';
 import { notIn, or } from '../../utils/fp/predicates';
 import { objectDelete } from '../../utils/object/delete';
@@ -13,16 +15,14 @@ import { objectFilter } from '../../utils/object/filter';
 import { objectMap } from '../../utils/object/map';
 import { fullMerge, partialMerge } from '../../utils/object/merge';
 import { getEpoch } from '../../utils/time/epoch';
+import { shareLeaveSuccess } from '../actions/creators/access';
+import { aliasPendingCreate, aliasPendingCreated, aliasSyncStatusToggle } from '../actions/creators/alias';
+import { matchSyncAction } from '../actions/creators/client';
+import { fileLinkPending } from '../actions/creators/files';
+import { folderDelete, foldersDeletedEvent } from '../actions/creators/folders';
+import { importItemsProgress } from '../actions/creators/import';
+import { inviteAccept } from '../actions/creators/invite';
 import {
-    aliasPendingCreate,
-    aliasPendingCreated,
-    aliasSyncStatusToggle,
-    emptyTrashProgress,
-    fileLinkPending,
-    folderDelete,
-    foldersDeletedEvent,
-    importItemsProgress,
-    inviteAccept,
     itemAutofilled,
     itemBulkDeleteProgress,
     itemBulkMoveProgress,
@@ -42,17 +42,11 @@ import {
     itemsDeleteEvent,
     itemsUpdated,
     itemsUsedEvent,
-    matchSyncAction,
-    resolveAddressMonitor,
-    restoreTrashProgress,
-    setItemFlags,
-    shareCreated,
-    shareDeleted,
-    shareLeaveSuccess,
-    sharesEventNew,
-    vaultDeleteSuccess,
-    vaultMoveAllItemsProgress,
-} from '../actions';
+} from '../actions/creators/item';
+import { resolveAddressMonitor, setItemFlags } from '../actions/creators/monitor';
+import { shareCreated, shareDeleted, sharesEventNew } from '../actions/creators/share';
+import { emptyTrashProgress, restoreTrashProgress } from '../actions/creators/trash';
+import { vaultDeleteSuccess, vaultMoveAllItemsProgress } from '../actions/creators/vault';
 import { combineOptimisticReducers } from '../optimistic/utils/combine-optimistic-reducers';
 import withOptimistic from '../optimistic/with-optimistic';
 import { draftsReducer } from './drafts';

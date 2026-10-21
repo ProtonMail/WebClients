@@ -2,7 +2,7 @@ import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { createNextState, createSelector } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { unprivatizeMemberKeysRoute } from '@proton/shared/lib/api/members';

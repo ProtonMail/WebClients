@@ -1,7 +1,7 @@
 import type { PassConfig } from '../../hooks/usePassConfig';
 import { readProtonPassJSON } from '../../lib/import/providers/protonpass/protonpass.json.reader';
 import { itemBuilder } from '../../lib/items/item.builder';
-import type { ItemImportIntent } from '../../types';
+import type { ItemImportIntent } from '../../types/data/items.dto';
 import { AutofillMode } from '../../types/protobuf';
 import { createTestItem } from '../../utils/tests/fixtures/items';
 import { createTestShare } from '../../utils/tests/fixtures/shares';

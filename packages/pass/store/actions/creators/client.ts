@@ -6,7 +6,7 @@ import identity from '@proton/utils/identity';
 
 import type { ReauthActionPayload } from '../../../lib/auth/reauth';
 import type { SyncMigration, SyncResult } from '../../../lib/sync/types';
-import type { AppStatus } from '../../../types';
+import type { AppStatus } from '../../../types/worker/state';
 import { pipe } from '../../../utils/fp/pipe';
 import { or } from '../../../utils/fp/predicates';
 import type { Chunk } from '../../../utils/object/chunk';

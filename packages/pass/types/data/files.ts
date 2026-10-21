@@ -1,4 +1,8 @@
-import type { FileMetadata, ItemFileChunkOutput, ItemId, MaybeNull, SelectedItem, SelectedRevision, ShareId } from '..';
+import type { ItemFileChunkOutput } from '../api/pass';
+import type { ItemId, ShareId } from '../crypto/pass-types';
+import type { FileMetadata } from '../protobuf/index';
+import type { MaybeNull } from '../utils/index';
+import type { SelectedItem, SelectedRevision } from './items';
 
 export type FileID = string;
 

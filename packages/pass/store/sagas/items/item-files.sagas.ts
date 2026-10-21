@@ -3,7 +3,8 @@ import { c } from 'ttag';
 import { linkPendingFiles } from '../../../lib/file-attachments/file-attachments.requests';
 import { PendingFileLinkTracker } from '../../../lib/file-attachments/file-link.tracker';
 import { getItemKey } from '../../../lib/items/item.utils';
-import type { FileAttachmentsDTO, ItemRevision } from '../../../types';
+import type { FileAttachmentsDTO } from '../../../types/data/files';
+import type { ItemRevision } from '../../../types/data/items';
 import { getErrorMessage } from '../../../utils/errors/get-error-message';
 import type { RootSagaOptions } from '../../types';
 

@@ -1,6 +1,7 @@
 import noop from '@proton/utils/noop';
 
-import type { MaybeNull, Storage } from '../../types';
+import type { MaybeNull } from '../../types/utils';
+import type { Storage } from '../../types/worker/storage';
 import { logger } from '../../utils/logger';
 import { objectEntries, objectKeys } from '../../utils/object/generic';
 import { createPubSub } from '../../utils/pubsub/factory';

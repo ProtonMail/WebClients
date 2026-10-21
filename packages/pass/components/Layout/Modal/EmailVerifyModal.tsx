@@ -10,7 +10,7 @@ import CollapsibleHeader from '@proton/components/components/collapsible/Collaps
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
 
-import type { Maybe } from '../../../types';
+import type { Maybe } from '../../../types/utils';
 import { getEpoch } from '../../../utils/time/epoch';
 import { Field } from '../../Form/Field/Field';
 import { FieldsetCluster } from '../../Form/Field/Layout/FieldsetCluster';

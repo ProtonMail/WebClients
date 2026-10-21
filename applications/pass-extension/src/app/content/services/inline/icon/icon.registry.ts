@@ -1,4 +1,4 @@
-import type { MaybeNull } from '@proton/pass/types/utils/index';
+import type { MaybeNull } from '@proton/pass/types/utils';
 import { createStyleParser, getOffsetLeft, getOffsetTop } from '@proton/pass/utils/dom/computed-styles';
 import { getNthParent } from '@proton/pass/utils/dom/tree';
 import noop from '@proton/utils/noop';

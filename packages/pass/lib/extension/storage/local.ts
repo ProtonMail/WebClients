@@ -7,7 +7,7 @@ import type {
     SetItem,
     SetItems,
     StorageInterface,
-} from '../../../types';
+} from '../../../types/worker/storage';
 import { notIn } from '../../../utils/fp/predicates';
 import browser from '../../globals/browser';
 

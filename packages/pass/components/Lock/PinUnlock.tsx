@@ -10,7 +10,7 @@ import { useUnlockGuard } from '../../hooks/auth/useUnlockGuard';
 import { useRequest } from '../../hooks/useRequest';
 import { useRerender } from '../../hooks/useRerender';
 import { LockMode } from '../../lib/auth/lock/types';
-import { unlock } from '../../store/actions';
+import { unlock } from '../../store/actions/creators/auth';
 import { useOffline } from '../Core/ConnectivityProvider';
 import { PinCodeInput } from './PinCodeInput';
 

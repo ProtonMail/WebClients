@@ -1,4 +1,4 @@
-import type { ItemType, SafeProtobufItem } from '../../types';
+import type { ItemType, SafeProtobufItem } from '../../types/protobuf';
 import { decodeItemContent, encodeItemContent } from './item-proto.transformer';
 
 function checkAndCast<T extends ItemType>(input: SafeProtobufItem, expectedType: T): SafeProtobufItem<T> {

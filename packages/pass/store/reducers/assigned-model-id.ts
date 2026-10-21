@@ -1,6 +1,6 @@
 import type { Reducer } from 'redux';
 
-import type { MaybeNull } from '../../types';
+import type { MaybeNull } from '../../types/utils';
 import { assignedModelIdUpdated } from '../actions/creators/assigned-model-id';
 
 /** Assigned model ID — distinct from the model actually used for a given page load. */

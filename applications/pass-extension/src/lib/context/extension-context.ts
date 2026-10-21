@@ -2,9 +2,9 @@ import type { Runtime } from 'webextension-polyfill';
 
 import browser from '@proton/pass/lib/globals/browser';
 import type { ParsedUrl } from '@proton/pass/lib/urls/types';
-import type { MaybeNull } from '@proton/pass/types/utils/index';
+import type { MaybeNull } from '@proton/pass/types/utils';
 import type { ClientEndpoint, EndpointContext, FrameId, TabId } from '@proton/pass/types/worker/runtime';
-import { contextHandlerFactory } from '@proton/pass/utils/context';
+import { contextHandlerFactory } from '@proton/pass/utils/context/create-shared-context';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { logger } from '@proton/pass/utils/logger';

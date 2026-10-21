@@ -1,6 +1,7 @@
 import fs from 'fs';
 
-import type { ItemExtraField, ItemImportIntent } from '../../../../types';
+import type { ItemExtraField } from '../../../../types/data/items';
+import type { ItemImportIntent } from '../../../../types/data/items.dto';
 import { AutofillMode } from '../../../../types/protobuf';
 import { deobfuscateItem } from '../../../items/item.obfuscation';
 import type { ImportPayload } from '../../types';

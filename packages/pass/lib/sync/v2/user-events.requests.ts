@@ -1,4 +1,4 @@
-import type { SyncEventListOutput } from '../../../types';
+import type { SyncEventListOutput } from '../../../types/api/pass';
 import { api } from '../../api/api';
 
 /** Retrieves the latest user event ID */

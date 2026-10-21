@@ -1,4 +1,12 @@
-import type { GetItem, GetItems, RemoveItem, RemoveItems, SetItem, SetItems, StorageInterface } from '../../../types';
+import type {
+    GetItem,
+    GetItems,
+    RemoveItem,
+    RemoveItems,
+    SetItem,
+    SetItems,
+    StorageInterface,
+} from '../../../types/worker/storage';
 import browser from '../../globals/browser';
 import { createMemoryStorage } from './memory';
 

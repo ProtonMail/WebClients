@@ -1,7 +1,7 @@
 import { createAction } from '@reduxjs/toolkit';
 
-import type { MaybeNull } from '../../../types';
 import type { InAppNotifications, UpdateInAppNotificationDTO } from '../../../types/data/notification';
+import type { MaybeNull } from '../../../types/utils';
 import { UNIX_HOUR } from '../../../utils/time/constants';
 import { cachedRequest } from '../../request/configs';
 import { requestActionsFactory } from '../../request/flow';

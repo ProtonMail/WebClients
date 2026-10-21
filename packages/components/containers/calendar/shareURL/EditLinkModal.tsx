@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { MAX_CHARS_CLEARTEXT } from '@proton/shared/lib/calendar/constants';
 import type { Nullable } from '@proton/shared/lib/interfaces/utils';
 

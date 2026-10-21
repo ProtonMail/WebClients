@@ -10,7 +10,8 @@ import { IcCross } from '@proton/icons/icons/IcCross';
 import { metaKey } from '@proton/shared/lib/helpers/browser';
 
 import { useSaveShortcut } from '../../../hooks/useSaveShortcut';
-import type { ItemType, MaybeNull } from '../../../types';
+import type { ItemType } from '../../../types/protobuf';
+import type { MaybeNull } from '../../../types/utils';
 import { itemTypeToSubThemeClassName } from '../Theme/types';
 import { DiscardableModalPanel, type DiscardableModalProps } from './DiscardableModalPanel';
 import { ItemFeatureDiscovery } from './ItemFeatureDiscovery/ItemFeatureDiscovery';

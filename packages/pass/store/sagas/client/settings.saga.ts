@@ -3,14 +3,15 @@ import { fork, put, select, takeEvery } from 'redux-saga/effects';
 import { updateLocale } from '@proton/shared/lib/api/settings';
 
 import { api } from '../../../lib/api/api';
-import { AppStatus } from '../../../types';
+import { AppStatus } from '../../../types/worker/state';
 import { merge } from '../../../utils/object/merge';
-import { getInAppNotifications, settingsEditFailure, settingsEditIntent, settingsEditSuccess } from '../../actions';
+import { getInAppNotifications } from '../../actions/creators/notification';
+import { settingsEditFailure, settingsEditIntent, settingsEditSuccess } from '../../actions/creators/settings';
 import type { WithSenderAction } from '../../actions/enhancers/endpoint';
 import { isSettingsAction } from '../../actions/enhancers/settings';
 import type { ProxiedSettings } from '../../reducers/settings';
 import { withRevalidate } from '../../request/enhancers';
-import { selectProxiedSettings } from '../../selectors';
+import { selectProxiedSettings } from '../../selectors/settings';
 import type { RootSagaOptions } from '../../types';
 
 /** NOTE: Update in-app notifications translations. Add timeout so BE can get

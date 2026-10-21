@@ -6,7 +6,7 @@ import {
     setBreachedProtonAddressResolved,
 } from '../../../lib/monitor/monitor.request';
 import { AddressType } from '../../../lib/monitor/types';
-import { getAliasBreach, getCustomBreach, getProtonBreach, resolveAddressMonitor } from '../../actions';
+import { getAliasBreach, getCustomBreach, getProtonBreach, resolveAddressMonitor } from '../../actions/creators/monitor';
 import { createRequestSaga } from '../../request/sagas';
 
 export default createRequestSaga({

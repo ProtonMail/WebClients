@@ -1,7 +1,7 @@
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
+import type { Maybe } from '@proton/pass/types/utils';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
-import type { Maybe } from '@proton/pass/types/utils/index';
 import type { AppState } from '@proton/pass/types/worker/state';
 
 import type { ExtensionContextType } from '../../../lib/context/extension-context';

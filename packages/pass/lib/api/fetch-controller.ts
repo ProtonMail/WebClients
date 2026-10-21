@@ -1,4 +1,4 @@
-import type { Maybe, MaybeNull } from '../../types';
+import type { Maybe, MaybeNull } from '../../types/utils';
 import { uniqueId } from '../../utils/string/unique-id';
 import { PassErrorCode } from './errors';
 

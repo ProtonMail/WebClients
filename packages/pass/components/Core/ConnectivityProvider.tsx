@@ -13,7 +13,8 @@ import type { ConnectivityService } from '../../lib/network/connectivity.service
 import { ConnectivityStatus, getConnectivityWarning } from '../../lib/network/connectivity.utils';
 import { offlineResume } from '../../store/actions/creators/client';
 import { selectRequestInFlight } from '../../store/request/selectors';
-import type { AppStatus, MaybeNull } from '../../types';
+import type { MaybeNull } from '../../types/utils';
+import type { AppStatus } from '../../types/worker/state';
 import type { BottomBarProps } from '../Layout/Bar/BottomBar';
 import { BottomBar } from '../Layout/Bar/BottomBar';
 import { useAppState } from './AppStateProvider';

@@ -1,6 +1,6 @@
 import { getAliasBreaches } from '../../../lib/monitor/monitor.request';
 import { intoFetchedBreach } from '../../../lib/monitor/monitor.utils';
-import { getAliasBreach } from '../../actions';
+import { getAliasBreach } from '../../actions/creators/monitor';
 import { createRequestSaga } from '../../request/sagas';
 
 export default createRequestSaga({

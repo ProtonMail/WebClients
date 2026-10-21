@@ -2,7 +2,7 @@ import { put, takeEvery } from 'redux-saga/effects';
 
 import { PassCrypto } from '../../../lib/crypto';
 import { deleteShare } from '../../../lib/shares/share.requests';
-import { shareLeaveFailure, shareLeaveIntent, shareLeaveSuccess } from '../../actions';
+import { shareLeaveFailure, shareLeaveIntent, shareLeaveSuccess } from '../../actions/creators/access';
 
 function* shareLeaveWorker({ payload, meta: { request } }: ReturnType<typeof shareLeaveIntent>) {
     const { shareId, targetType } = payload;

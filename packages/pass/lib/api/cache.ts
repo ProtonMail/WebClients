@@ -1,7 +1,7 @@
 import noop from '@proton/utils/noop';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
-import type { Maybe, MaybeNull } from '../../types';
+import type { Maybe, MaybeNull } from '../../types/utils';
 import { truthy } from '../../utils/fp/predicates';
 import { logger } from '../../utils/logger';
 

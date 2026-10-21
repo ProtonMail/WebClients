@@ -1,4 +1,4 @@
-import type { MaybeNull } from '../../types';
+import type { MaybeNull } from '../../types/utils';
 
 /** Gets the parent of an element, traversing through Shadow DOM boundaries.
  * Checks: slotted parent → regular parent → shadow host */

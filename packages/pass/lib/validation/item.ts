@@ -2,7 +2,8 @@ import type { FormikErrors } from 'formik';
 import { c, msgid } from 'ttag';
 
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../../constants';
-import type { BaseItemValues, Maybe } from '../../types';
+import type { BaseItemValues } from '../../types/forms/item';
+import type { Maybe } from '../../types/utils';
 import { isEmptyString } from '../../utils/string/is-empty-string';
 import { validateExtraFields } from './extra-field';
 

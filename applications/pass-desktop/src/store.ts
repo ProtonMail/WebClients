@@ -1,6 +1,7 @@
 import Store from 'electron-store';
 
-import type { DesktopTheme, UpdateStore } from '@proton/pass/types';
+import type { DesktopTheme } from '@proton/pass/types/desktop';
+import type { UpdateStore } from '@proton/pass/types/desktop/update';
 
 import config from './app/config';
 import type { StoreInstallProperties } from './lib/install-info';

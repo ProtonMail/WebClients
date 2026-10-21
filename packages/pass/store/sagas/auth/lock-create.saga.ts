@@ -2,7 +2,8 @@ import type { Action } from 'redux';
 import { call, put, race, take, takeLeading } from 'redux-saga/effects';
 
 import { type Lock, LockMode } from '../../../lib/auth/lock/types';
-import { lockCreateFailure, lockCreateIntent, lockCreateSuccess, stateDestroy } from '../../actions';
+import { lockCreateFailure, lockCreateIntent, lockCreateSuccess } from '../../actions/creators/auth';
+import { stateDestroy } from '../../actions/creators/client';
 import { type WithSenderAction, isActionWithSender } from '../../actions/enhancers/endpoint';
 import type { RootSagaOptions } from '../../types';
 

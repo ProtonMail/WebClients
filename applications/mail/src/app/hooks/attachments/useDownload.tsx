@@ -2,7 +2,8 @@ import { useCallback } from 'react';
 
 import { useApi } from '@proton/app-context/useApi';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
-import { FeatureCode, useFeature } from '@proton/features';
+import { FeatureCode } from '@proton/features/interface';
+import useFeature from '@proton/features/useFeature';
 import type { MessageKeys, MessageStateWithData, OutsideKey } from '@proton/mail/store/messages/messagesTypes';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';

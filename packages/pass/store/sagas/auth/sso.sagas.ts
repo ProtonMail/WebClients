@@ -16,10 +16,10 @@ import noop from '@proton/utils/noop';
 
 import { api } from '../../../lib/api/api';
 import { PassCrypto } from '../../../lib/crypto';
-import type { MaybeNull } from '../../../types';
+import type { MaybeNull } from '../../../types/utils';
 import { confirmPendingAuthDevice, getAuthDevices, rejectPendingAuthDevice } from '../../actions/creators/sso';
 import { createRequestSaga } from '../../request/sagas';
-import { selectAllAddresses, selectUser } from '../../selectors';
+import { selectAllAddresses, selectUser } from '../../selectors/user';
 
 const authDevices = createRequestSaga({
     actions: getAuthDevices,

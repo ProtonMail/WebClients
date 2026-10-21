@@ -1,7 +1,7 @@
 import type { FocusEvent, MutableRefObject } from 'react';
 import { useEffect, useRef } from 'react';
 
-import { usePrevious } from '@proton/hooks';
+import usePrevious from '@proton/hooks/usePrevious';
 
 const LONG_TAP_TIMEOUT = 500;
 const OPEN_DELAY_TIMEOUT = 1000;

@@ -1,5 +1,5 @@
 import { SESSION_RESUME_MAX_RETRIES, getAutoResumeDelay } from '@proton/pass/lib/auth/scheduler';
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types/utils';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 
 export interface AuthScheduler {

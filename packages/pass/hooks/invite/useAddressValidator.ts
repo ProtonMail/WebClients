@@ -1,10 +1,13 @@
 import { type MutableRefObject, useMemo, useRef } from 'react';
 
 import { useOrganization } from '../../components/Organization/OrganizationProvider';
-import type { inviteAddressesValidateFailure, inviteAddressesValidateSuccess } from '../../store/actions';
-import { inviteAddressesValidateIntent } from '../../store/actions';
-import type { MaybeNull } from '../../types';
-import { OrganizationShareMode } from '../../types';
+import type {
+    inviteAddressesValidateFailure,
+    inviteAddressesValidateSuccess,
+} from '../../store/actions/creators/invite';
+import { inviteAddressesValidateIntent } from '../../store/actions/creators/invite';
+import { OrganizationShareMode } from '../../types/api/pass';
+import type { MaybeNull } from '../../types/utils';
 import { type Awaiter, awaiter } from '../../utils/fp/promises';
 import { uniqueId } from '../../utils/string/unique-id';
 import { useActionRequest } from '../useRequest';

@@ -1,6 +1,6 @@
 import { type FC, type PropsWithChildren, createContext, useContext, useMemo, useState } from 'react';
 
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types/utils';
 
 import type { ImportProvider } from '../../lib/importers/types';
 import { ImportModal } from '../components/Settings/Import/ImportModal';

@@ -1,12 +1,9 @@
 import { createListenerMiddleware, isAnyOf } from '@reduxjs/toolkit';
 
 import type { SshAgentService } from '@proton/pass/lib/ssh-agent/service';
-import {
-    getUserAccessSuccess,
-    getUserFeaturesSuccess,
-    sharesDedupeUpdate,
-    stateDestroy,
-} from '@proton/pass/store/actions';
+import { stateDestroy } from '@proton/pass/store/actions/creators/client';
+import { sharesDedupeUpdate } from '@proton/pass/store/actions/creators/share';
+import { getUserAccessSuccess, getUserFeaturesSuccess } from '@proton/pass/store/actions/creators/user';
 import { selectFeatureFlag, selectPassPlan } from '@proton/pass/store/selectors/user';
 import type { State } from '@proton/pass/store/types';
 import { PassFeature } from '@proton/pass/types/api/features';

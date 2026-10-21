@@ -1,4 +1,4 @@
-import { PassEncryptionTag } from '../../../../types';
+import { PassEncryptionTag } from '../../../../types/crypto/pass-types';
 import { decryptData, generateKey, importSymmetricKey } from '../../utils/crypto-helpers';
 import { PassCryptoError, PassCryptoFileError } from '../../utils/errors';
 import { createFileDescriptor, getFileMetadataEncryptionTag } from './create-file-descriptor';

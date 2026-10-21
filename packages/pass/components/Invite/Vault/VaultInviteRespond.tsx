@@ -8,10 +8,10 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 
 import { formatItemsCount } from '../../../lib/items/item.utils';
-import { selectVaultLimits } from '../../../store/selectors';
 import { selectInviteByToken } from '../../../store/selectors/invites';
-import type { Invite } from '../../../types';
-import { ShareType } from '../../../types';
+import { selectVaultLimits } from '../../../store/selectors/limits';
+import type { Invite } from '../../../types/data/invites';
+import { ShareType } from '../../../types/data/shares';
 import { useMaybeGroup } from '../../Groups/GroupsProvider';
 import { Card } from '../../Layout/Card/Card';
 import { PassModal } from '../../Layout/Modal/PassModal';

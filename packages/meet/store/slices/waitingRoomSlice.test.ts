@@ -2,7 +2,7 @@ import type { ThunkDispatch, UnknownAction } from '@reduxjs/toolkit';
 import { configureStore } from '@reduxjs/toolkit';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { SECOND } from '@proton/shared/lib/constants';
 
 import type { MeetState } from '../rootReducer';

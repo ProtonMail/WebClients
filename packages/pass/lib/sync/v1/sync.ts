@@ -6,9 +6,11 @@ import { asIfNotOptimistic } from '../../../store/optimistic/selectors/select-is
 import type { VaultShareItem } from '../../../store/reducers';
 import { type FoldersByShareId, type ItemsByShareId, type SharesState, reducerMap } from '../../../store/reducers';
 import type { ShareDedupeState } from '../../../store/reducers/shares-dedupe';
-import { selectAllShares } from '../../../store/selectors';
+import { selectAllShares } from '../../../store/selectors/shares';
 import type { RootSagaOptions, State } from '../../../store/types';
-import type { Maybe, Share, ShareGetResponse } from '../../../types';
+import type { ShareGetResponse } from '../../../types/api/pass';
+import type { Share } from '../../../types/data/shares';
+import type { Maybe } from '../../../types/utils';
 import { partition } from '../../../utils/array/partition';
 import { prop } from '../../../utils/fp/lens';
 import { pipe } from '../../../utils/fp/pipe';

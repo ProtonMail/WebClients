@@ -9,11 +9,14 @@ import {
     removeSecureLink,
 } from '../../../lib/secure-links/secure-links.requests';
 import { createTelemetryEvent } from '../../../lib/telemetry/utils';
-import type { ItemRevision, Maybe, PublicLinkGetResponse, SecureLink } from '../../../types';
+import type { PublicLinkGetResponse } from '../../../types/api/pass';
+import type { ItemRevision } from '../../../types/data/items';
+import type { SecureLink } from '../../../types/data/items.dto';
 import { TelemetryEventName, TelemetryItemType, TelemetryTargetType } from '../../../types/data/telemetry';
-import { secureLinkCreate, secureLinkOpen, secureLinkRemove, secureLinksGet, secureLinksRemoveInactive } from '../../actions';
+import type { Maybe } from '../../../types/utils';
+import { secureLinkCreate, secureLinkOpen, secureLinkRemove, secureLinksGet, secureLinksRemoveInactive } from '../../actions/creators/item';
 import { createRequestSaga } from '../../request/sagas';
-import { selectItem } from '../../selectors';
+import { selectItem } from '../../selectors/items';
 import type { RootSagaOptions, State } from '../../types';
 
 const open = createRequestSaga({ actions: secureLinkOpen, call: openSecureLink });

@@ -14,7 +14,7 @@ import { TwoColumns } from '@proton/pass/components/Onboarding/Layout/TwoColumns
 import { OnboardingButton } from '@proton/pass/components/Onboarding/UI/OnboardingButton';
 import { ProbeState, useExtensionProbe } from '@proton/pass/components/Onboarding/useExtensionProbe';
 import { getBrowserClient } from '@proton/pass/lib/extension/utils/browser';
-import type { Maybe } from '@proton/pass/types';
+import type { Maybe } from '@proton/pass/types/utils';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { PASS_WEB_APP_URL } from '@proton/shared/lib/pass/constants';

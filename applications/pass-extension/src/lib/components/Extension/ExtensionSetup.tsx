@@ -3,7 +3,7 @@ import { createContext, useEffect, useRef, useState } from 'react';
 
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
-import type { MaybeNull } from '@proton/pass/types/utils/index';
+import type { MaybeNull } from '@proton/pass/types/utils';
 import { registerLoggerEffect } from '@proton/pass/utils/logger';
 
 import { WorkerMessageType } from '../../../types/messages';

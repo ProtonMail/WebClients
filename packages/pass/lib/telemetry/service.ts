@@ -1,5 +1,6 @@
-import type { AnyStorage, Maybe } from '../../types';
 import type { TelemetryEvent } from '../../types/data/telemetry';
+import type { Maybe } from '../../types/utils';
+import type { AnyStorage } from '../../types/worker/storage';
 import type { EventDispatcher } from '../../utils/event/dispatcher';
 import { createEventDispatcher } from '../../utils/event/dispatcher';
 import { logger } from '../../utils/logger';

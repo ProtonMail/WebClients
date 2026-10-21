@@ -4,7 +4,7 @@ import { binaryStringToUint8Array, uint8ArrayToBinaryString } from '@proton/shar
 import noop from '@proton/utils/noop';
 
 import type { PassCoreContextValue } from '../../../../components/Core/PassCoreProvider';
-import { PassEncryptionTag } from '../../../../types';
+import { PassEncryptionTag } from '../../../../types/crypto/pass-types';
 import { SilentError } from '../../../../utils/errors/errors';
 import { logger } from '../../../../utils/logger';
 import { deobfuscate } from '../../../../utils/obfuscate/xor';

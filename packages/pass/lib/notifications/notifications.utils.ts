@@ -1,4 +1,4 @@
-import { InAppNotificationDisplayType, InAppNotificationState } from '../../types';
+import { InAppNotificationDisplayType, InAppNotificationState } from '../../types/api/pass';
 import type { InAppNotification } from '../../types/data/notification';
 
 export const isPromoNotification = (notification: InAppNotification) =>

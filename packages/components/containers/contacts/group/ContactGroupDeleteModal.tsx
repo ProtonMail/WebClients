@@ -3,7 +3,7 @@ import { c, msgid } from 'ttag';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { useContactGroups } from '@proton/mail/store/labels/hooks';
 import { allSucceded } from '@proton/shared/lib/api/helpers/response';
 import { deleteLabels } from '@proton/shared/lib/api/labels';

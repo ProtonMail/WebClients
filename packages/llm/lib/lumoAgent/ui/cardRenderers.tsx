@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { IcPencil } from '@proton/icons/icons/IcPencil';
-import { ConfirmCardShell } from '@proton/lumo-ui';
+import ConfirmCardShell from '@proton/lumo-ui/ConfirmCardShell';
 
 import type { ActionRequest, ReferenceLabels } from '../contracts/types';
 import type { CardRenderer } from './types';

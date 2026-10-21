@@ -13,7 +13,7 @@ import { IcPlus } from '@proton/icons/icons/IcPlus';
 import type { ImportVault } from '../../lib/import/types';
 import { formatItemsCount } from '../../lib/items/item.utils';
 import type { VaultShareItem } from '../../store/reducers';
-import type { MaybeNull } from '../../types';
+import type { MaybeNull } from '../../types/utils';
 import { truthy } from '../../utils/fp/predicates';
 import { VAULT_ICON_MAP } from '../Vault/constants';
 

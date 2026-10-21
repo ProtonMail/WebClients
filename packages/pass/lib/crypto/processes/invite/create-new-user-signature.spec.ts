@@ -1,6 +1,6 @@
 import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 
-import { PassSignatureContext } from '../../../../types';
+import { PassSignatureContext } from '../../../../types/crypto/pass-types';
 import {
     createRandomKey,
     createRandomVaultKey,

@@ -6,7 +6,7 @@ import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { IcEye } from '@proton/icons/icons/IcEye';
 import { IcEyeSlash } from '@proton/icons/icons/IcEyeSlash';
 import { resetVPNSettings } from '@proton/shared/lib/api/vpn';

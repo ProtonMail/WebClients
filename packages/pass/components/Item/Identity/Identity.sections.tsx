@@ -9,9 +9,12 @@ import { IcPlus } from '@proton/icons/icons/IcPlus';
 
 import { UpsellRef } from '../../../constants';
 import type { ExtraSectionsError } from '../../../lib/validation/custom-item';
-import { selectPassPlan } from '../../../store/selectors';
-import type { DeobfuscatedItemExtraField, ExtraFieldType, IdentityItemFormValues, Maybe } from '../../../types';
+import { selectPassPlan } from '../../../store/selectors/user';
 import { UserPassPlan } from '../../../types/api/plan';
+import type { DeobfuscatedItemExtraField } from '../../../types/data/items';
+import type { IdentityItemFormValues } from '../../../types/forms/item';
+import type { ExtraFieldType } from '../../../types/protobuf';
+import type { Maybe } from '../../../types/utils';
 import { autofocusInput } from '../../../utils/dom/input';
 import { DeleteButton, ExtraFieldComponent } from '../../Form/Field/ExtraFieldGroup/ExtraField';
 import { createExtraField, getExtraFieldOptions } from '../../Form/Field/ExtraFieldGroup/ExtraField.utils';

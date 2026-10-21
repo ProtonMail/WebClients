@@ -1,4 +1,4 @@
-import type { MaybeNull, MaybePromise } from '..';
+import type { MaybeNull, MaybePromise } from '../utils/index';
 
 type StorageQuery<T, K extends (keyof T)[]> = Partial<Pick<T, K[number]>>;
 export type StorageData = Record<string, any>;

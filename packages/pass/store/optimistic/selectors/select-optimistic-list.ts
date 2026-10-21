@@ -1,4 +1,4 @@
-import type { Unpack } from '../../../types';
+import type { Unpack } from '../../../types/utils';
 import { not } from '../../../utils/fp/predicates';
 import type { OptimisticReducersMapObject, OptimisticSelector, StateFromOptimisticReducersMapObject } from '../types';
 import { asIfNotFailed } from './select-is-failed';

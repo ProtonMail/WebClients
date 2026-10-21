@@ -8,7 +8,8 @@ import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 
 import { useInviteForm } from '../../../hooks/invite/useInviteForm';
 import { AccessTarget } from '../../../lib/access/types';
-import type { ItemInviteFormValues, SelectedItem } from '../../../types';
+import type { SelectedItem } from '../../../types/data/items';
+import type { ItemInviteFormValues } from '../../../types/forms/invite';
 import { SidebarModal } from '../../Layout/Modal/SidebarModal';
 import { Panel } from '../../Layout/Panel/Panel';
 import { PanelHeader } from '../../Layout/Panel/PanelHeader';

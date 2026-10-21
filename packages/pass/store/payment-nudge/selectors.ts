@@ -2,7 +2,7 @@ import { createSelector } from '@reduxjs/toolkit';
 
 import type { SavedPaymentMethod } from '@proton/payments/core/interface';
 
-import type { Maybe } from '../../types';
+import type { Maybe } from '../../types/utils';
 import { selectRequest } from '../request/selectors';
 import { selectUser, selectUserPlan } from '../selectors/user';
 import type { State } from '../types';

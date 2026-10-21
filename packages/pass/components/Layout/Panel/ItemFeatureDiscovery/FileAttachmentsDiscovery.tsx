@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { IcCrossCircleFilled } from '@proton/icons/icons/IcCrossCircleFilled';
 
 import notesImg from '../../../../assets/file-attachments/notes.svg';
-import { SpotlightMessage } from '../../../../types';
+import { SpotlightMessage } from '../../../../types/worker/spotlight';
 import { SpotlightGradient } from '../../../Spotlight/SpotlightGradient';
 import { WithSpotlight } from '../../../Spotlight/WithSpotlight';
 

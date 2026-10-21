@@ -1,6 +1,6 @@
 import noop from '@proton/utils/noop';
 
-import type { AsyncCallback, MaybeNull, MaybePromise } from '../../types';
+import type { AsyncCallback, MaybeNull, MaybePromise } from '../../types/utils';
 
 export type UnwrapPromise<T> = T extends any[]
     ? { [K in keyof T]: UnwrapPromise<T[K]> }

@@ -5,9 +5,9 @@ import { useDispatch } from 'react-redux';
 import { c } from 'ttag';
 
 import { useConfirm } from '../../hooks/useConfirm';
-import { vaultMoveAllItemsIntent } from '../../store/actions';
+import { vaultMoveAllItemsIntent } from '../../store/actions/creators/vault';
 import type { VaultShareItem } from '../../store/reducers';
-import type { MaybeNull } from '../../types';
+import type { MaybeNull } from '../../types/utils';
 import { pipe, tap } from '../../utils/fp/pipe';
 import { ConfirmVaultMove } from './Actions/ConfirmVaultMove';
 import { VaultSelect, VaultSelectMode } from './VaultSelect';

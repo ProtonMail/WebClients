@@ -1,6 +1,6 @@
 import { createNextState } from '@reduxjs/toolkit';
 
-import type { SharedStartListening } from '@proton/redux-shared-store-types';
+import type { SharedStartListening } from '@proton/redux-shared-store-types/interface';
 import { updateFlags, updateWelcomeFlags } from '@proton/shared/lib/api/settings';
 import noop from '@proton/utils/noop';
 

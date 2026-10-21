@@ -1,4 +1,4 @@
-import type { ItemKey } from '../../../../types';
+import type { ItemKey } from '../../../../types/crypto/pass-types';
 import { generateKey, importSymmetricKey } from '../../utils/crypto-helpers';
 import { createSecureLink } from './create-secure-link';
 import { openLinkKey } from './open-link-key';

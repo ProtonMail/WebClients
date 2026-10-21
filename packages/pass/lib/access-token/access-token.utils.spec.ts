@@ -1,5 +1,6 @@
-import type { PatMonitorListEntryOutput } from '../../types';
-import { EventType2, PassEncryptionTag } from '../../types';
+import type { PatMonitorListEntryOutput } from '../../types/api/pass';
+import { EventType2 } from '../../types/api/pass';
+import { PassEncryptionTag } from '../../types/crypto/pass-types';
 import { ActionPayload } from '../../types/protobuf/action-payload-v1';
 import { uniqueId } from '../../utils/string/unique-id';
 import { getEpoch } from '../../utils/time/epoch';

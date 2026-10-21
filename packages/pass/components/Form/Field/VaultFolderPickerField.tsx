@@ -3,8 +3,9 @@ import { useSelector } from 'react-redux';
 
 import { useFormikContext } from 'formik';
 
-import { selectFolders, selectWritableVaults } from '../../../store/selectors';
-import type { BaseItemValues } from '../../../types/forms';
+import { selectFolders } from '../../../store/selectors/folders';
+import { selectWritableVaults } from '../../../store/selectors/shares';
+import type { BaseItemValues } from '../../../types/forms/item';
 import { useFoldersAccess } from '../../Folders/useFoldersAccess';
 import { VaultFolderPickerFieldCore } from './VaultFolderPickerFieldCore';
 

@@ -11,7 +11,7 @@ import { IcEye } from '@proton/icons/icons/IcEye';
 import clsx from '@proton/utils/clsx';
 
 import { getOccurrenceString } from '../../lib/i18n/helpers';
-import type { SecureLink } from '../../types';
+import type { SecureLink } from '../../types/data/items.dto';
 import { epochToRemainingDuration } from '../../utils/time/format';
 import { Card } from '../Layout/Card/Card';
 import { CardContent } from '../Layout/Card/CardContent';

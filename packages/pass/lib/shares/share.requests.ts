@@ -2,15 +2,13 @@ import type { SharesState } from '../../store/reducers';
 import type {
     ActiveShareGetResponse,
     PassEventListResponse,
-    Share,
     ShareGetResponse,
     ShareHideUnhideBatchRequest,
-    ShareId,
-    ShareRole,
-    ShareType,
-} from '../../types';
+} from '../../types/api/pass';
+import type { ShareId } from '../../types/crypto/pass-types';
 import type { ShareEditMemberAccessIntent, ShareRemoveMemberAccessIntent } from '../../types/data/access.dto';
 import type { ShareMember } from '../../types/data/invites';
+import type { Share, ShareRole, ShareType } from '../../types/data/shares';
 import { truthy } from '../../utils/fp/predicates';
 import { api } from '../api/api';
 import { parseShareResponse } from './share.parser';

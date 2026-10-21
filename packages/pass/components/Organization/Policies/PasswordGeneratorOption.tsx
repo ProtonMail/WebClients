@@ -12,7 +12,7 @@ import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLa
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
 import clsx from '@proton/utils/clsx';
 
-import type { OrganizationUpdatePasswordPolicyInput } from '../../../types';
+import type { OrganizationUpdatePasswordPolicyInput } from '../../../types/api/pass';
 import { oneOf } from '../../../utils/fp/predicates';
 import type { PasswordGeneratorOptionValue, PasswordLength } from './PasswordGeneratorPolicyForm';
 

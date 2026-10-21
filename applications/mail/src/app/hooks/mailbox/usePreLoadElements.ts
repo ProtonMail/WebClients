@@ -2,16 +2,16 @@ import { useEffect } from 'react';
 
 import { unwrapResult } from '@reduxjs/toolkit';
 
-import { FeatureCode, useFeature } from '@proton/features';
+import { FeatureCode } from '@proton/features/interface';
+import useFeature from '@proton/features/useFeature';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 
 import { isElementConversation } from '../../helpers/elements';
+import { findMessageToExpand } from '../../helpers/message/messageExpandable';
 import type { Element } from '../../models/element';
+import { load } from '../../store/conversations/conversationsActions';
 import { allConversations } from '../../store/conversations/conversationsSelectors';
 import { useMailDispatch, useMailSelector } from '../../store/hooks';
-
-import { findMessageToExpand } from '../../helpers/message/messageExpandable';
-import { load } from '../../store/conversations/conversationsActions';
 import { initialize } from '../../store/messages/read/messagesReadActions';
 
 interface Props {

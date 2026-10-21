@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { usePlans } from '@proton/account/plans/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { usePaymentsApiWithCheckFallback } from '@proton/payments-ui/react-extensions/usePaymentsApi';
 import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/payments-ui/ui/components/RenewalNotice';
 import type { Currency } from '@proton/payments/core/interface';

@@ -3,8 +3,9 @@ import { binaryStringToUint8Array, uint8ArrayToBinaryString } from '@proton/shar
 import { unwrapOptimisticState } from '../../store/optimistic/utils/transformers';
 import type { ItemsByShareId } from '../../store/reducers';
 import type { State } from '../../store/types';
-import type { Maybe, PassCryptoSnapshot, SerializedCryptoContext } from '../../types';
-import { PassEncryptionTag } from '../../types';
+import type { PassCryptoSnapshot, SerializedCryptoContext } from '../../types/crypto/pass-crypto';
+import { PassEncryptionTag } from '../../types/crypto/pass-types';
+import type { Maybe } from '../../types/utils';
 import type { EncryptedPassCache, PassCache } from '../../types/worker/cache';
 import { logger } from '../../utils/logger';
 import { objectFilter } from '../../utils/object/filter';

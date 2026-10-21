@@ -1,4 +1,5 @@
-import type { ItemContent, ItemExtraField, ItemType, Metadata } from '../../types';
+import type { ItemContent, ItemExtraField } from '../../types/data/items';
+import type { ItemType, Metadata } from '../../types/protobuf';
 
 type Diff<T extends object> = Partial<Record<keyof T, boolean>>;
 

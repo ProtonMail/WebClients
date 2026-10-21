@@ -1,6 +1,6 @@
 import { nativeTheme } from 'electron';
 
-import type { DesktopTheme } from '@proton/pass/types';
+import type { DesktopTheme } from '@proton/pass/types/desktop';
 
 import { store } from '../store';
 import { setupIpcHandler } from './ipc';

@@ -1,12 +1,9 @@
 import { createContext } from 'react';
 
 import { createUseContext } from '../../../../hooks/useContextFactory';
-import type {
-    AliasContactGetResponse,
-    AliasContactWithStatsGetResponse,
-    MaybeNull,
-    SelectedItem,
-} from '../../../../types';
+import type { AliasContactGetResponse, AliasContactWithStatsGetResponse } from '../../../../types/api/pass';
+import type { SelectedItem } from '../../../../types/data/items';
+import type { MaybeNull } from '../../../../types/utils';
 
 export interface AliasContactsContextValue extends SelectedItem {
     contacts: { active: AliasContactWithStatsGetResponse[]; blocked: AliasContactWithStatsGetResponse[] };

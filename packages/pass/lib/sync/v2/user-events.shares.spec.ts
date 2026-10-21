@@ -2,8 +2,10 @@ import { runSaga } from 'redux-saga';
 
 import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 
-import { shareCreated, shareDeleted, shareUpdated } from '../../../store/actions';
-import type { PassCryptoWorker, ShareGetResponse, ShareId, SyncEventShareOutput } from '../../../types';
+import { shareCreated, shareDeleted, shareUpdated } from '../../../store/actions/creators/share';
+import type { ShareGetResponse, SyncEventShareOutput } from '../../../types/api/pass';
+import type { PassCryptoWorker } from '../../../types/crypto/pass-crypto';
+import type { ShareId } from '../../../types/crypto/pass-types';
 import { createTestItem } from '../../../utils/tests/fixtures/items';
 import { createShareRemovedError, createTestShare } from '../../../utils/tests/fixtures/shares';
 import { sagaSetup } from '../../../utils/tests/saga';

@@ -1,4 +1,4 @@
-import type { Identity } from '../../types';
+import type { Identity } from '../../types/utils';
 
 export interface StyleParser {
     <T extends (value: string, node: HTMLElement) => any = Identity<string>>(

@@ -2,7 +2,7 @@ import type { FC, PropsWithChildren, ReactElement, ReactNode } from 'react';
 
 import clsx from '@proton/utils/clsx';
 
-import type { ItemType } from '../../../types';
+import type { ItemType } from '../../../types/protobuf';
 import { itemTypeToSubThemeClassName } from '../Theme/types';
 import { Panel } from './Panel';
 import { PanelHeader } from './PanelHeader';

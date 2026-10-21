@@ -1,7 +1,7 @@
 import { DEFAULT_PAUSE_CRITERIAS, combinePauseCriteria, hasPauseCriteria } from '@proton/pass/lib/settings/pause-list';
 import type { ParsedUrl } from '@proton/pass/lib/urls/types';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import type { MaybeNull } from '@proton/pass/types/utils/index';
+import type { MaybeNull } from '@proton/pass/types/utils';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 
 export type ComputedFeatures = {

@@ -1,6 +1,6 @@
 import { differenceInDays, fromUnixTime } from 'date-fns';
 
-import { FeatureCode } from '@proton/features';
+import { FeatureCode } from '@proton/features/interface';
 
 import { NPSApplication } from './interface';
 

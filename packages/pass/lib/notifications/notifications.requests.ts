@@ -1,7 +1,7 @@
 import noop from '@proton/utils/noop';
 
-import type { MaybeNull } from '../../types';
 import type { InAppNotifications, UpdateInAppNotificationDTO } from '../../types/data/notification';
+import type { MaybeNull } from '../../types/utils';
 import { chainSort, sortOn } from '../../utils/fp/sort';
 import { api } from '../api/api';
 

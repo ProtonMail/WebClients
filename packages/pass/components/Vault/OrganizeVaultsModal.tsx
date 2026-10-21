@@ -14,10 +14,13 @@ import clsx from '@proton/utils/clsx';
 
 import { isShareVisible } from '../../lib/shares/share.predicates';
 import { intoShareVisibilityMap } from '../../lib/shares/share.utils';
-import { sharesVisibilityEdit } from '../../store/actions';
+import { sharesVisibilityEdit } from '../../store/actions/creators/share';
 import type { ShareItem } from '../../store/reducers';
-import { selectDedupedVaults, selectRequestInFlight } from '../../store/selectors';
-import type { ShareId, ShareType, ShareVisibilityMap, VaultsVisibilityDTO } from '../../types';
+import { selectRequestInFlight } from '../../store/request/selectors';
+import { selectDedupedVaults } from '../../store/selectors/shares';
+import type { ShareId } from '../../types/crypto/pass-types';
+import type { ShareType, ShareVisibilityMap } from '../../types/data/shares';
+import type { VaultsVisibilityDTO } from '../../types/data/vault.dto';
 import { partition } from '../../utils/array/partition';
 import { PassModal } from '../Layout/Modal/PassModal';
 import { VaultIcon } from './VaultIcon';

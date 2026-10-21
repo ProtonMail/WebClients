@@ -1,6 +1,6 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { updateFlags } from '@proton/shared/lib/api/settings';
 import type { PASSWORD_REMINDERS_VALUE, UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 

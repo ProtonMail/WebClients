@@ -7,8 +7,10 @@ import noop from '@proton/utils/noop';
 
 import { useMemoSelector } from '../../../hooks/useMemoSelector';
 import { getBulkSelectionCount } from '../../../lib/items/item.utils';
-import { selectBulkHasSecureLinks, selectBulkHasSharedItems, selectFolder } from '../../../store/selectors';
-import type { BulkSelectionDTO, MaybeNull } from '../../../types';
+import { selectBulkHasSecureLinks, selectBulkHasSharedItems } from '../../../store/selectors/bulk';
+import { selectFolder } from '../../../store/selectors/folders';
+import type { BulkSelectionDTO } from '../../../types/data/items.dto';
+import type { MaybeNull } from '../../../types/utils';
 import { useBulkSelectionAliasCount } from '../../Bulk/BulkSelectionState';
 import { ConfirmationPrompt, type ConfirmationPromptHandles } from '../../Confirmation/ConfirmationPrompt';
 import { WithVault } from '../../Vault/WithVault';

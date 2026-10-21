@@ -1,8 +1,8 @@
 import { put, takeEvery } from 'redux-saga/effects';
 
 import { getAliasDetails } from '../../../lib/alias/alias.requests';
-import type { AliasDetails } from '../../../types';
-import { getAliasDetailsFailure, getAliasDetailsIntent, getAliasDetailsSuccess } from '../../actions';
+import type { AliasDetails } from '../../../types/data/alias';
+import { getAliasDetailsFailure, getAliasDetailsIntent, getAliasDetailsSuccess } from '../../actions/creators/alias';
 
 function* requestAliasDetails(action: ReturnType<typeof getAliasDetailsIntent>) {
     const {

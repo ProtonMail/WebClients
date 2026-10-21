@@ -1,4 +1,4 @@
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { MEMBER_ROLE } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { EnhancedMember } from '@proton/shared/lib/interfaces/Member';

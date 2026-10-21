@@ -1,7 +1,7 @@
 import type { FormType } from '@protontech/autofill/types';
 
 import type { AutofillPageTelemetryDimensions } from '@proton/pass/types/data/telemetry';
-import type { MaybeNull, Result } from '@proton/pass/types/utils/index';
+import type { MaybeNull, Result } from '@proton/pass/types/utils';
 
 import type { Coords } from './inline';
 

@@ -10,8 +10,8 @@ import {
     selectB2BOnboardingComplete,
     selectB2BOnboardingEnabled,
     selectB2BOnboardingState,
-} from '../../../store/selectors';
-import { SpotlightMessage } from '../../../types';
+} from '../../../store/selectors/onboarding';
+import { SpotlightMessage } from '../../../types/worker/spotlight';
 import { usePassCore } from '../../Core/PassCoreProvider';
 import { usePassExtensionLink } from '../../Core/PassExtensionLink';
 import { useNavigate } from '../../Navigation/NavigationActions';

@@ -1,7 +1,7 @@
 import { fromUnixTime } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import { useDateCountdown } from '@proton/hooks';
+import useDateCountdown from '@proton/hooks/useDateCountdown';
 
 interface TimeRemainingProps {
     /**

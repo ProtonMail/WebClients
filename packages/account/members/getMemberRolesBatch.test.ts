@@ -1,6 +1,6 @@
 import type { Action, ThunkDispatch } from '@reduxjs/toolkit';
 
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { getTestStore } from '@proton/redux-shared-store/test';
 import { getMembersOrganizationRoles } from '@proton/shared/lib/api/organizationRoles';
 import type { EnhancedMember } from '@proton/shared/lib/interfaces/Member';

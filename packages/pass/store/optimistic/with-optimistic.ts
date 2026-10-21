@@ -1,7 +1,7 @@
 import type { Selector } from '@reduxjs/toolkit';
 import type { Action, Reducer } from 'redux';
 
-import type { MaybeArray } from '../../types';
+import type { MaybeArray } from '../../types/utils';
 import { commitReducer } from './reducers/commit';
 import { failReducer } from './reducers/fail';
 import { initiateReducer } from './reducers/initiate';

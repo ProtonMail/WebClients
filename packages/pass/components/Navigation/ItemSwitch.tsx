@@ -3,7 +3,7 @@ import type { RouteChildrenProps, RouteProps } from 'react-router-dom';
 import { Route, Switch } from 'react-router-dom';
 
 import { useFiles } from '../../hooks/files/useFileResolver';
-import type { SelectedItem } from '../../types';
+import type { SelectedItem } from '../../types/data/items';
 import { useBulkEnabled } from '../Bulk/BulkSelectionState';
 import { BulkView } from '../Bulk/BulkView';
 import { ItemEdit } from '../Item/Containers/ItemEdit';

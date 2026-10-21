@@ -1,4 +1,6 @@
-import type { Maybe, Share, ShareContent, ShareGetResponse, ShareType } from '../../types';
+import type { ShareGetResponse } from '../../types/api/pass';
+import type { Share, ShareContent, ShareType } from '../../types/data/shares';
+import type { Maybe } from '../../types/utils';
 import { logId, logger } from '../../utils/logger';
 import { PassCrypto } from '../crypto';
 import { SYNC_STRATEGY } from '../sync/global';

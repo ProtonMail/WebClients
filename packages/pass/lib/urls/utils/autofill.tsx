@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import uniqueBy from '@proton/utils/uniqueBy';
 
-import type { ItemRevision, UrlItem } from '../../../types';
+import type { ItemRevision } from '../../../types/data/items';
+import type { UrlItem } from '../../../types/forms/fields';
 import { AutofillMode } from '../../../types/protobuf';
 import type { AutofillUrl } from '../../../types/protobuf/item-v1';
 import { deduplicate } from '../../../utils/array/duplicate';

@@ -1,6 +1,10 @@
 import { type ListenerEffectAPI, type PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-import type { ProtonDispatch, ProtonThunkArguments, SharedStartListening } from '@proton/redux-shared-store-types';
+import type {
+    ProtonDispatch,
+    ProtonThunkArguments,
+    SharedStartListening,
+} from '@proton/redux-shared-store-types/interface';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { SessionRecoveryState, type UserModel } from '@proton/shared/lib/interfaces/User';
 

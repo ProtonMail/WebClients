@@ -1,4 +1,4 @@
-import { PassEncryptionTag } from '../../../../types';
+import { PassEncryptionTag } from '../../../../types/crypto/pass-types';
 import { createRandomVaultKey } from '../../../../utils/tests/fixtures/crypto';
 import { decryptData, generateKey, importSymmetricKey } from '../../utils/crypto-helpers';
 import { createAccessTokenShareKeys } from './create-access-token-share-keys';

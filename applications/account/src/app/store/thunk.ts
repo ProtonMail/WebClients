@@ -1,5 +1,5 @@
 import type { CalendarModelEventManager } from '@proton/calendar/calendarModelEventManager';
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import type {
     CalendarEventV6Response,
     ContactEventV6Response,

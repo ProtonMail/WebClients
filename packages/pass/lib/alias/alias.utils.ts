@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { normalize } from '@proton/shared/lib/helpers/string';
 
-import type { UserMailboxOutput } from '../../types';
+import type { UserMailboxOutput } from '../../types/api/pass';
 
 /* Normalize unicode representation of the string
  * Remove diacritics (accents) + 20 max characters length

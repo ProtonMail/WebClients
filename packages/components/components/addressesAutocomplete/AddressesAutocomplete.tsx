@@ -2,7 +2,7 @@ import type { KeyboardEvent, RefObject } from 'react';
 import { forwardRef, useCallback, useMemo, useRef, useState } from 'react';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { useCombinedRefs } from '@proton/hooks';
+import useCombinedRefs from '@proton/hooks/useCombinedRefs';
 import { IcCircleFilled } from '@proton/icons/icons/IcCircleFilled';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';

@@ -8,7 +8,7 @@ import { Card } from '@proton/atoms/Card/Card';
 
 import { useBreachesTable } from '../../../hooks/monitor/useBreachesTable';
 import { AddressType } from '../../../lib/monitor/types';
-import { selectHasCustomDomains } from '../../../store/selectors';
+import { selectHasCustomDomains } from '../../../store/selectors/monitor';
 import { TelemetryEventName } from '../../../types/data/telemetry';
 import { usePassCore } from '../../Core/PassCoreProvider';
 import { SubHeader } from '../../Layout/Section/SubHeader';

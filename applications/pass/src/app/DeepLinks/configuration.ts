@@ -1,4 +1,4 @@
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types/utils';
 
 import type { DeepLinkRoutes } from './types';
 

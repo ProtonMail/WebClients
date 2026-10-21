@@ -5,7 +5,7 @@ import type { PasswordScore } from '@protontech/pass-rust-core/worker';
 import noop from '@proton/utils/noop';
 
 import { usePassCore } from '../../components/Core/PassCoreProvider';
-import type { MaybeNull } from '../../types';
+import type { MaybeNull } from '../../types/utils';
 
 export const usePasswordStrength = (password: string) => {
     const { core } = usePassCore();

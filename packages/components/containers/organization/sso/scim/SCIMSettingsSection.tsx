@@ -16,7 +16,7 @@ import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
 import { IcEyeSlash } from '@proton/icons/icons/IcEyeSlash';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { baseUseDispatch } from '@proton/react-redux-store/ProtonStoreContext';
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { Domain } from '@proton/shared/lib/interfaces/Domain';
 import { DOMAIN_STATE } from '@proton/shared/lib/interfaces/Domain';

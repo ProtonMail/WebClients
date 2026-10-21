@@ -5,8 +5,11 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { useStatefulRef } from '../../hooks/useStatefulRef';
-import { selectHasPendingShareAccess } from '../../store/selectors';
-import { InviteType, type MaybeNull, ShareType, SpotlightMessage } from '../../types';
+import { selectHasPendingShareAccess } from '../../store/selectors/user';
+import { InviteType } from '../../types/data/invites';
+import { ShareType } from '../../types/data/shares';
+import type { MaybeNull } from '../../types/utils';
+import { SpotlightMessage } from '../../types/worker/spotlight';
 import { usePassCore } from '../Core/PassCoreProvider';
 import { useInviteActions, useLatestInvite } from '../Invite/InviteContext';
 import { PendingNewUsersApprovalModal } from '../Invite/Member/PendingNewUsersApprovalModal';

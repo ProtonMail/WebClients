@@ -9,7 +9,7 @@ import { IcCross } from '@proton/icons/icons/IcCross';
 import { useRequest } from '../../../hooks/useRequest';
 import PassUI from '../../../lib/core/ui.proxy';
 import { intoCustomMonitorAddress } from '../../../lib/monitor/monitor.utils';
-import { addCustomAddress } from '../../../store/actions';
+import { addCustomAddress } from '../../../store/actions/creators/monitor';
 import { prop } from '../../../utils/fp/lens';
 import { pipe } from '../../../utils/fp/pipe';
 import { toLowerCase } from '../../../utils/string/to-lower-case';

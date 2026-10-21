@@ -7,7 +7,7 @@ import { c } from 'ttag'
 
 import { Button } from '@proton/atoms/Button/Button'
 import { IcKeySkeleton } from '@proton/icons/icons/IcKeySkeleton'
-import { useLoading } from '@proton/hooks'
+import useLoading from '@proton/hooks/useLoading'
 
 export type PasswordPageProps = {
   submitPassword: (password: string) => Promise<void>

@@ -12,15 +12,12 @@ import { UpsellRef } from '../../../constants';
 import type { IdentityFormSection } from '../../../hooks/identity/useIdentityForm';
 import { usePortal } from '../../../hooks/usePortal';
 import type { ExtraFieldErrors } from '../../../lib/validation/extra-field';
-import { selectPassPlan } from '../../../store/selectors';
-import type {
-    DeobfuscatedItemExtraField,
-    ExtraFieldType,
-    IdentityFieldName,
-    IdentityItemFormValues,
-    Maybe,
-} from '../../../types';
+import { selectPassPlan } from '../../../store/selectors/user';
 import { UserPassPlan } from '../../../types/api/plan';
+import type { DeobfuscatedItemExtraField } from '../../../types/data/items';
+import type { IdentityFieldName, IdentityItemFormValues } from '../../../types/forms/item';
+import type { ExtraFieldType } from '../../../types/protobuf';
+import type { Maybe } from '../../../types/utils';
 import { autofocusInput } from '../../../utils/dom/input';
 import { ExtraFieldComponent } from '../../Form/Field/ExtraFieldGroup/ExtraField';
 import { createExtraField, getExtraFieldOptions } from '../../Form/Field/ExtraFieldGroup/ExtraField.utils';

@@ -12,8 +12,8 @@ import { Layout } from '@proton/pass/components/Onboarding/Layout/Layout';
 import { Card } from '@proton/pass/components/Onboarding/UI/Card';
 import { OnboardingButton } from '@proton/pass/components/Onboarding/UI/OnboardingButton';
 import { useRequest } from '@proton/pass/hooks/useRequest';
-import { itemCreate } from '@proton/pass/store/actions';
-import { selectUser } from '@proton/pass/store/selectors';
+import { itemCreate } from '@proton/pass/store/actions/creators/item';
+import { selectUser } from '@proton/pass/store/selectors/user';
 
 import { useCreateContext } from './CreateProvider';
 import { Header } from './Header';

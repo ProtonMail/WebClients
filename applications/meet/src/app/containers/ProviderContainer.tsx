@@ -11,7 +11,7 @@ import StandardPrivateApp from '@proton/components/containers/app/StandardPrivat
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
 import EventManagerProvider from '@proton/components/containers/eventManager/EventManagerProvider';
 import type { MeetExtraThunkArguments, MeetStore } from '@proton/meet/store/store';
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';

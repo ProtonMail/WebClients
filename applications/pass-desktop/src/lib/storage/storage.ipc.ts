@@ -1,6 +1,6 @@
 import type { Session } from 'electron';
 
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types/utils';
 
 import { setupIpcHandler } from '../ipc';
 import { flushStorageData } from './storage.flush';

@@ -1,6 +1,6 @@
 import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 
-import type { ItemRevisionContentsResponse } from '../../types';
+import type { ItemRevisionContentsResponse } from '../../types/api/pass';
 import { createTestItem } from '../../utils/tests/fixtures/items';
 import { createShareRemovedError } from '../../utils/tests/fixtures/shares';
 import { exposeApi } from '../api/api';

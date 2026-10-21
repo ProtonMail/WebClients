@@ -1,7 +1,9 @@
-import type { FileAttachmentsDTO, FileDescriptor, FolderId, MaybeNull, ShareId, UniqueItem } from '..';
-import type { CustomAliasCreateRequest } from '../api';
+import type { CustomAliasCreateRequest } from '../api/pass';
+import type { FolderId, ShareId } from '../crypto/pass-types';
 import type { ItemType } from '../protobuf';
-import type { IndexedByShareIdAndItemId, Item, ItemRevision, OptimisticItem, SelectedItem } from './items';
+import type { MaybeNull } from '../utils/index';
+import type { FileAttachmentsDTO, FileDescriptor } from './files';
+import type { IndexedByShareIdAndItemId, Item, ItemRevision, OptimisticItem, SelectedItem, UniqueItem } from './items';
 
 type AliasMailbox = { id: number; email: string };
 

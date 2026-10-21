@@ -6,8 +6,8 @@ import { c } from 'ttag';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 
 import { useRequest } from '../../hooks/useRequest';
-import { secureLinksRemoveInactive } from '../../store/actions';
-import { selectInactiveSecureLinksCount } from '../../store/selectors';
+import { secureLinksRemoveInactive } from '../../store/actions/creators/item';
+import { selectInactiveSecureLinksCount } from '../../store/selectors/secure-links';
 import { DropdownMenuButton } from '../Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '../Layout/Dropdown/QuickActionsDropdown';
 

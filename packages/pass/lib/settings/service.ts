@@ -1,7 +1,7 @@
 import cloneDeep from 'lodash/cloneDeep';
 
 import { type ProxiedSettings, getInitialSettings } from '../../store/reducers/settings';
-import type { MaybePromise } from '../../types';
+import type { MaybePromise } from '../../types/utils';
 import { merge } from '../../utils/object/merge';
 
 export interface SettingsServiceOptions {

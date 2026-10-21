@@ -3,7 +3,9 @@ import type { FC } from 'react';
 import { c, msgid } from 'ttag';
 
 import { useMemoSelector } from '../../../hooks/useMemoSelector';
-import { selectItemsInFolder, selectSecureLinksByShareId, selectTopLevelFolders } from '../../../store/selectors';
+import { selectTopLevelFolders } from '../../../store/selectors/folders';
+import { selectItemsInFolder } from '../../../store/selectors/items';
+import { selectSecureLinksByShareId } from '../../../store/selectors/secure-links';
 import { ConfirmationPrompt, type ConfirmationPromptHandles } from '../../Confirmation/ConfirmationPrompt';
 import { WithVault } from '../WithVault';
 

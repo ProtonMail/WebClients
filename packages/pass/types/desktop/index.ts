@@ -1,14 +1,13 @@
+import type { SSHKeyItem } from '../data/items';
+import type { Maybe, MaybeNull } from '../utils/index';
+import type { AppState } from '../worker/state';
+import type { AutotypeProperties } from './autotype';
+import type { ContextMenuItemSerializable } from './context-menu';
 import type {
-    AppState,
-    Maybe,
-    MaybeNull,
     NativeMessagePayload,
     NativeMessageRequest,
     NativeMessageResponse,
-    SSHKeyItem,
-} from '..';
-import type { AutotypeProperties } from './autotype';
-import type { ContextMenuItemSerializable } from './context-menu';
+} from './extension-unlock-with-desktop';
 import type { UpdateStore } from './update';
 
 export * from './autotype';

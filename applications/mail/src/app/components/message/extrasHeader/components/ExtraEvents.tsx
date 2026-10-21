@@ -13,8 +13,8 @@ import useGetCalendarEventRaw from '@proton/components/hooks/useGetCalendarEvent
 import { useGetCalendarInfo } from '@proton/components/hooks/useGetCalendarInfo';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
 import useGetOrCreateCalendarAndSettings from '@proton/components/hooks/useGetOrCreateCalendarAndSettings';
-import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
+import useLoading from '@proton/hooks/useLoading';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import type { MessageErrors, MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import {

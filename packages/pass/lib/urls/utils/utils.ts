@@ -1,6 +1,6 @@
 import safeRegex from 'safe-regex2';
 
-import type { MaybeNull } from '../../../types';
+import type { MaybeNull } from '../../../types/utils';
 import { dynMemo } from '../../../utils/fp/memo';
 import type { ParsedUrl, URLComponents } from '../types';
 import { sanitizeURL } from './sanitize';

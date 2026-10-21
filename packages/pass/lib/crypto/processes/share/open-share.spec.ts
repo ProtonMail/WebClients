@@ -1,4 +1,6 @@
-import { ContentFormatVersion, type ShareGetResponse, ShareRole, ShareType } from '../../../../types';
+import type { ShareGetResponse } from '../../../../types/api/pass';
+import { ContentFormatVersion } from '../../../../types/crypto/pass-types';
+import { ShareRole, ShareType } from '../../../../types/data/shares';
 import { uniqueId } from '../../../../utils/string/unique-id';
 import {
     createRandomKey,

@@ -1,6 +1,6 @@
 import { parseItemRevision } from '../../../lib/items/item.parser';
 import { updateItemFlags } from '../../../lib/items/item.requests';
-import { setItemFlags } from '../../actions';
+import { setItemFlags } from '../../actions/creators/monitor';
 import { createRequestSaga } from '../../request/sagas';
 
 export default createRequestSaga({

@@ -1,7 +1,7 @@
 import type { FormikErrors } from 'formik';
 import { c } from 'ttag';
 
-import type { CustomItemFormValues, ItemSectionFormValues } from '../../types';
+import type { CustomItemFormValues, ItemSectionFormValues } from '../../types/forms/item';
 import { isEmptyString } from '../../utils/string/is-empty-string';
 import type { ExtraFieldErrors } from './extra-field';
 import { validateExtraFieldName } from './extra-field';

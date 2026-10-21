@@ -1,4 +1,6 @@
-import type { Callback, FileID, Maybe, ShareId } from '../../types';
+import type { ShareId } from '../../types/crypto/pass-types';
+import type { FileID } from '../../types/data/files';
+import type { Callback, Maybe } from '../../types/utils';
 import { PassCrypto } from '../crypto';
 
 export const consumeStream = async <T>(

@@ -3,10 +3,10 @@ import { useSelector } from 'react-redux';
 
 import { useMemoSelector } from '../../hooks/useMemoSelector';
 import { hasAttachments } from '../../lib/items/item.predicates';
-import { filesResolve } from '../../store/actions';
-import { selectRequestInFlight } from '../../store/selectors';
+import { filesResolve } from '../../store/actions/creators/files';
+import { selectRequestInFlight } from '../../store/request/selectors';
 import { selectItemFilesForRevision } from '../../store/selectors/files';
-import type { ItemOptimisticState, ItemRevision } from '../../types';
+import type { ItemOptimisticState, ItemRevision } from '../../types/data/items';
 import { FieldsetCluster } from '../Form/Field/Layout/FieldsetCluster';
 import { FileAttachmentsList } from './FileAttachmentsList';
 import { FileAttachmentsSummary } from './FileAttachmentsSummary';

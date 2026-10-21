@@ -4,7 +4,7 @@ import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
-import type { Maybe } from '../../../../types';
+import type { Maybe } from '../../../../types/utils';
 import { NotificationKey } from '../../../../types/worker/notification';
 import { logger } from '../../../../utils/logger';
 import { getEpoch } from '../../../../utils/time/epoch';

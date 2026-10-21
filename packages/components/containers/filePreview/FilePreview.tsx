@@ -5,7 +5,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { useCombinedRefs, useLoading } from '@proton/hooks';
+import useCombinedRefs from '@proton/hooks/useCombinedRefs';
+import useLoading from '@proton/hooks/useLoading';
 import busy from '@proton/shared/lib/busy/busy';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { isMinimumSafariVersion, isMobile, isSafari, isWebglSupported } from '@proton/shared/lib/helpers/browser';

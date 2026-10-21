@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { InputFieldTwo, PasswordInputTwo } from '@proton/components';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { IcKeySkeleton } from '@proton/icons/icons/IcKeySkeleton';
 
 interface PublicPagePasswordProps {

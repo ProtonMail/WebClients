@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import lastItem from '@proton/utils/lastItem';
 
-import type { ItemImportIntent, Maybe } from '../../../../types';
+import type { ItemImportIntent } from '../../../../types/data/items.dto';
+import type { Maybe } from '../../../../types/utils';
 import { logger } from '../../../../utils/logger';
 import { readCSV } from '../../helpers/csv.reader';
 import { ImportProviderError } from '../../helpers/error';

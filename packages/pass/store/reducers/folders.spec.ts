@@ -1,5 +1,6 @@
-import type { FolderData, Share, ShareType } from '../../types';
-import { shareCreated, shareDeleted, sharesEventNew } from '../actions';
+import type { FolderData } from '../../types/data/folders';
+import type { Share, ShareType } from '../../types/data/shares';
+import { shareCreated, shareDeleted, sharesEventNew } from '../actions/creators/share';
 import foldersReducer, { type FoldersByShareId } from './folders';
 
 const shareA = 'share-a';

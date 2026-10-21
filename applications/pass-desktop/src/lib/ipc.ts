@@ -1,6 +1,6 @@
 import { ipcMain } from 'electron';
 
-import type { MaybePromise, Result } from '@proton/pass/types';
+import type { MaybePromise, Result } from '@proton/pass/types/utils';
 
 export type IPCChannel<P extends any[], R extends any> = { args: P; result: R };
 export type IPCChannelResult<T> = Result<{ result: T }>;

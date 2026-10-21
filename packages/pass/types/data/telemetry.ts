@@ -1,5 +1,5 @@
-import type { InAppNotification, PassPlanResponse } from '..';
 import type { ImportEntryPoint, ImportProvider } from '../../lib/import/types';
+import type { InAppNotification, PassPlanResponse } from '../api/pass';
 import type { TelemetryInAppNotificationStatus } from './notification';
 
 export type TelemetryPlatform = 'browser' | 'any';

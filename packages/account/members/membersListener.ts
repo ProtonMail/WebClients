@@ -1,4 +1,4 @@
-import type { SharedStartListening } from '@proton/redux-shared-store-types';
+import type { SharedStartListening } from '@proton/redux-shared-store-types/interface';
 
 import { selectUser } from '../user';
 import { selectUserPermissions } from '../userPermissions';

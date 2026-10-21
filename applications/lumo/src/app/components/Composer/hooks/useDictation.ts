@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-import { DEFAULT_LUMO_PUB_KEY, RequestEncryptionParams } from '@proton/lumo-api-client';
+import { DEFAULT_LUMO_PUB_KEY } from '@proton/lumo-api-client/core/encryption';
+import { RequestEncryptionParams } from '@proton/lumo-api-client/core/encryptionParams';
 
 import { ENABLE_U2L_ENCRYPTION } from '../../../llm/config';
 import { downsampleTo16kHzPCM16, int16ArrayToBase64 } from '../../../util/pcmAudio';

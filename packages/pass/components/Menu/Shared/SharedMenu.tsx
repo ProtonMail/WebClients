@@ -9,14 +9,10 @@ import { IcUserArrowLeft } from '@proton/icons/icons/IcUserArrowLeft';
 import { IcUserArrowRight } from '@proton/icons/icons/IcUserArrowRight';
 
 import { UpsellRef } from '../../../constants';
-import {
-    selectActiveSecureLinksCount,
-    selectPassPlan,
-    selectSharedByMeCount,
-    selectSharedWithMeCount,
-    selectVisibleSecureLinksCount,
-} from '../../../store/selectors';
-import { OrganizationPublicLinkMode } from '../../../types';
+import { selectActiveSecureLinksCount, selectVisibleSecureLinksCount } from '../../../store/selectors/secure-links';
+import { selectSharedByMeCount, selectSharedWithMeCount } from '../../../store/selectors/shared';
+import { selectPassPlan } from '../../../store/selectors/user';
+import { OrganizationPublicLinkMode } from '../../../types/api/pass';
 import { UserPassPlan } from '../../../types/api/plan';
 import { truthy } from '../../../utils/fp/predicates';
 import { useItemScope } from '../../Navigation/NavigationMatches';

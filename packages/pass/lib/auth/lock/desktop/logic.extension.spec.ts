@@ -1,4 +1,4 @@
-import { NativeMessageErrorType, NativeMessageType } from '../../../../types';
+import { NativeMessageErrorType, NativeMessageType } from '../../../../types/desktop/extension-unlock-with-desktop';
 import { NativeMessageError } from '../../../native-messaging/errors';
 import { sendSetupLockSecretMessage, sendUnlockMessage } from './logic.extension';
 

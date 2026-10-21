@@ -10,7 +10,10 @@ import {
     isWritableVault,
 } from '../../lib/vaults/vault.predicates';
 import { sortVaults } from '../../lib/vaults/vault.utils';
-import type { BulkSelectionDTO, Maybe, MaybeNull, ShareId, ShareType } from '../../types';
+import type { ShareId } from '../../types/crypto/pass-types';
+import type { BulkSelectionDTO } from '../../types/data/items.dto';
+import type { ShareType } from '../../types/data/shares';
+import type { Maybe, MaybeNull } from '../../types/utils';
 import { not } from '../../utils/fp/predicates';
 import { logId } from '../../utils/logger';
 import {

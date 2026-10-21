@@ -7,7 +7,7 @@ import {
     compromisedPasswordsBatchUpdate,
     compromisedPasswordsProgress,
     compromisedPasswordsSync,
-} from '../actions';
+} from '../actions/creators/monitor';
 
 type CompromisedPasswordsState = {
     lastSyncedChange: EpochTimeStamp;

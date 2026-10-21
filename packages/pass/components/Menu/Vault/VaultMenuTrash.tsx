@@ -10,8 +10,8 @@ import noop from '@proton/utils/noop';
 
 import { useItemDrop } from '../../../hooks/useItemDrag';
 import { intoBulkSelection } from '../../../lib/items/item.utils';
-import { selectTrashedItems } from '../../../store/selectors';
-import type { UniqueItem } from '../../../types';
+import { selectTrashedItems } from '../../../store/selectors/items';
+import type { UniqueItem } from '../../../types/data/items';
 import { pipe } from '../../../utils/fp/pipe';
 import { useItemsActions } from '../../Item/ItemActionsProvider';
 import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';

@@ -1,7 +1,9 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import type { BatchItemRevisions, ItemRevision, Share, ShareContent, ShareId, ShareType } from '../../../types';
+import type { ShareId } from '../../../types/crypto/pass-types';
+import type { BatchItemRevisions, ItemRevision } from '../../../types/data/items';
+import type { Share, ShareContent, ShareType } from '../../../types/data/shares';
 import type { VaultTransferOwnerIntent } from '../../../types/data/vault.dto';
 import { pipe } from '../../../utils/fp/pipe';
 import { uniqueId } from '../../../utils/string/unique-id';

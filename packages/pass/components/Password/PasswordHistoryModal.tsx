@@ -9,7 +9,7 @@ import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
 import clsx from '@proton/utils/clsx';
 
 import { MAX_PASSWORD_HISTORY_RETENTION_WEEKS } from '../../constants';
-import { selectPasswordHistory } from '../../store/selectors';
+import { selectPasswordHistory } from '../../store/selectors/password';
 import { SidebarModal } from '../Layout/Modal/SidebarModal';
 import { Panel } from '../Layout/Panel/Panel';
 import { PanelHeader } from '../Layout/Panel/PanelHeader';

@@ -1,6 +1,6 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces/Key';
 import { getDecryptedGroupAddressKey } from '@proton/shared/lib/keys/groupKeys';

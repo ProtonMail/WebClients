@@ -4,7 +4,7 @@ import type { OrganizationCapacityError } from '@proton/account/members/validate
 import { ORGANIZATION_CAPACITY_ERROR_TYPE } from '@proton/account/members/validateOrganizationCapacity';
 import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/ref';

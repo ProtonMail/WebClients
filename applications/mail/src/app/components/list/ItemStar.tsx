@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Kbd } from '@proton/atoms/Kbd/Kbd';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { IcStar } from '@proton/icons/icons/IcStar';
 import { IcStarFilled } from '@proton/icons/icons/IcStarFilled';
 import type { IconSize } from '@proton/icons/types';

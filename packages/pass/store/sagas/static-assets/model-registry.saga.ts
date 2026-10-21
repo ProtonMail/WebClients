@@ -4,12 +4,12 @@ import { MODEL_REGISTRY_URL } from '../../../constants';
 import { fetchIfModified } from '../../../lib/api/utils';
 import { validateModelRegistry } from '../../../lib/extension/model-registry/model-registry';
 import type { ModelRegistry } from '../../../lib/extension/model-registry/model-registry';
-import type { Maybe } from '../../../types';
+import type { Maybe } from '../../../types/utils';
 import { logger } from '../../../utils/logger';
 import { resolveModelRegistry } from '../../actions/creators/model-registry';
 import { createRequestSaga } from '../../request/sagas';
+import { selectRequest } from '../../request/selectors';
 import type { RequestEntry, RequestStatus } from '../../request/types';
-import { selectRequest } from '../../selectors';
 
 declare module '../../events' {
     interface SagaEvents {

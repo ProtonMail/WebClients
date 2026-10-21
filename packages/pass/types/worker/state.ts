@@ -1,6 +1,6 @@
 import type { AuthSession } from '../../lib/auth/session';
 import type { QA_STATE_KEY } from '../../lib/qa/service';
-import type { ItemFilters, SelectedItem } from '../data';
+import type { ItemFilters, SelectedItem } from '../data/items';
 import type { Maybe, MaybeNull } from '../utils';
 
 export enum AppStatus {

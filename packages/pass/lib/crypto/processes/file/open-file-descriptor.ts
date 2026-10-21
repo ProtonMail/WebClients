@@ -1,5 +1,5 @@
-import type { RotationKey } from '../../../../types';
-import { PassEncryptionTag } from '../../../../types';
+import type { RotationKey } from '../../../../types/crypto/pass-types';
+import { PassEncryptionTag } from '../../../../types/crypto/pass-types';
 import { decryptData, importSymmetricKey } from '../../utils/crypto-helpers';
 import { PassCryptoFileError } from '../../utils/errors';
 import { type FileDescriptorProcessResult, getFileMetadataEncryptionTag } from './create-file-descriptor';

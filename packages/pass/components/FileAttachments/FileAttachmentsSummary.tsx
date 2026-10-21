@@ -10,7 +10,7 @@ import { IcTrash } from '@proton/icons/icons/IcTrash';
 
 import { UpsellRef } from '../../constants';
 import { useAsyncModalHandles } from '../../hooks/useAsyncModalHandles';
-import { selectUserStorageAllowed } from '../../store/selectors';
+import { selectUserStorageAllowed } from '../../store/selectors/user';
 import { ConfirmationPrompt } from '../Confirmation/ConfirmationPrompt';
 import { PassPlusPromotionButton } from '../Upsell/PassPlusPromotionButton';
 import { UpsellingContext } from '../Upsell/UpsellingProvider';

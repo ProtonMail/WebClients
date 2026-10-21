@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
-import type { Share, ShareContent, ShareType, VaultCreateRequest, VaultTransferOwnerIntent } from '../../types';
+import type { VaultCreateRequest } from '../../types/api/pass';
+import type { Share, ShareContent, ShareType } from '../../types/data/shares';
+import type { VaultTransferOwnerIntent } from '../../types/data/vault.dto';
 import { api } from '../api/api';
 import { PassCrypto } from '../crypto';
 import { parseShareResponse } from '../shares/share.parser';

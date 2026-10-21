@@ -1,6 +1,6 @@
 import type { MiddlewareAPI } from 'redux';
 
-import { actionStream } from '@proton/pass/store/actions';
+import { actionStream } from '@proton/pass/store/actions/creators/client';
 import type { Chunk } from '@proton/pass/utils/object/chunk';
 import * as chunkUtils from '@proton/pass/utils/object/chunk';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';

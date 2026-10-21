@@ -5,7 +5,7 @@ import { getGroup as fetchGroup } from '../../../lib/groups/groups.requests';
 import type { Group } from '../../../lib/groups/groups.types';
 import { PassFeature } from '../../../types/api/features';
 import { getGroup } from '../../actions/creators/groups';
-import { selectFeatureFlag } from '../../selectors';
+import { selectFeatureFlag } from '../../selectors/user';
 
 function* getGroupWorker({ meta, payload }: ReturnType<typeof getGroup.intent>) {
     try {

@@ -4,10 +4,11 @@ import { call, put, select } from 'redux-saga/effects';
 import chunk from '@proton/utils/chunk';
 
 import { MIN_MAX_BATCH_PER_REQUEST } from '../../../constants';
-import { foldersDeletedEvent, foldersUpdated } from '../../../store/actions';
-import { selectShareFolders } from '../../../store/selectors';
-import type { FolderData, ShareId, SyncEventShareFolderOutput } from '../../../types';
-import type { FolderDataResponse } from '../../../types/api';
+import { foldersDeletedEvent, foldersUpdated } from '../../../store/actions/creators/folders';
+import { selectShareFolders } from '../../../store/selectors/folders';
+import type { FolderDataResponse, SyncEventShareFolderOutput } from '../../../types/api/pass';
+import type { ShareId } from '../../../types/crypto/pass-types';
+import type { FolderData } from '../../../types/data/folders';
 import { prop } from '../../../utils/fp/lens';
 import { PassCrypto } from '../../crypto';
 import { getFolderAndDescendantIds } from '../../folders/folder.utils';

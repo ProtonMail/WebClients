@@ -1,7 +1,7 @@
 import type { FormikErrors } from 'formik';
 import { c } from 'ttag';
 
-import type { UrlGroupValues } from '../../types';
+import type { UrlGroupValues } from '../../types/forms/fields';
 import { AutofillMode } from '../../types/protobuf';
 import { duplicates } from '../../utils/array/duplicate';
 import { isEmptyString } from '../../utils/string/is-empty-string';

@@ -1,7 +1,7 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c, msgid } from 'ttag';
 
-import type { InviteFormValues, InviteType } from '../../../types';
+import type { InviteType } from '../../../types/data/invites';
 import type {
     GroupInviteAcceptSuccess,
     InviteAcceptIntent,
@@ -20,6 +20,7 @@ import type {
     NewUserInvitePromoteSuccess,
     NewUserInviteRemoveIntent,
 } from '../../../types/data/invites.dto';
+import type { InviteFormValues } from '../../../types/forms/invite';
 import { prop } from '../../../utils/fp/lens';
 import { pipe } from '../../../utils/fp/pipe';
 import { uniqueId } from '../../../utils/string/unique-id';

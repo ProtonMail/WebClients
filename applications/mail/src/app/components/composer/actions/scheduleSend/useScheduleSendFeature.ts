@@ -1,5 +1,6 @@
 import { useUser } from '@proton/account/user/hooks';
-import { FeatureCode, useFeature } from '@proton/features';
+import { FeatureCode } from '@proton/features/interface';
+import useFeature from '@proton/features/useFeature';
 
 const useScheduleSendFeature = () => {
     const featureFlag = useFeature(FeatureCode.ScheduledSendFreemium);

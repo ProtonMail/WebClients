@@ -34,8 +34,9 @@ import { UpsellingProvider } from '@proton/pass/components/Upsell/UpsellingProvi
 import { FirstChild } from '@proton/pass/components/Utils/FirstChild';
 import { VaultActionsProvider } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
-import { selectIsSSO, selectLockMode, selectLockSetupRequired } from '@proton/pass/store/selectors';
-import { SpotlightMessage } from '@proton/pass/types';
+import { selectLockMode, selectLockSetupRequired } from '@proton/pass/store/selectors/settings';
+import { selectIsSSO } from '@proton/pass/store/selectors/user';
+import { SpotlightMessage } from '@proton/pass/types/worker/spotlight';
 import { APPS } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 

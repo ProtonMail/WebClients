@@ -2,7 +2,8 @@ import type { FormikErrors } from 'formik';
 import isEmpty from 'lodash/isEmpty';
 import { c } from 'ttag';
 
-import type { DeobfuscatedItemExtraField, ExtraFieldGroupValues } from '../../types';
+import type { DeobfuscatedItemExtraField } from '../../types/data/items';
+import type { ExtraFieldGroupValues } from '../../types/forms/fields';
 import { isEmptyString } from '../../utils/string/is-empty-string';
 import { parseOTPValue } from '../otp/otp';
 

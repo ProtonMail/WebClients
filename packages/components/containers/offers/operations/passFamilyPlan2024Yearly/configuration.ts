@@ -1,4 +1,4 @@
-import { FeatureCode } from '@proton/features';
+import { FeatureCode } from '@proton/features/interface';
 import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 
 import Layout from '../../components/passFamilyPlan/Layout';

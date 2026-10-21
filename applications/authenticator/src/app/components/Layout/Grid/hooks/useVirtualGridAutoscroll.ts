@@ -3,7 +3,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import type { Virtualizer } from '@tanstack/react-virtual';
 
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types/utils';
 
 const THRESHOLD = 50;
 const MAX_SPEED = 20;

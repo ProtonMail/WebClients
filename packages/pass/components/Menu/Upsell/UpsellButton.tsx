@@ -5,7 +5,7 @@ import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 import { UpsellRef } from '../../../constants';
 import { useMatchUser } from '../../../hooks/useMatchUser';
 import { useMemoSelector } from '../../../hooks/useMemoSelector';
-import { selectActivePromoNotification } from '../../../store/selectors';
+import { selectActivePromoNotification } from '../../../store/selectors/notification';
 import { getEpoch } from '../../../utils/time/epoch';
 import { InAppNotificationPromoButton } from '../../Notifications/InAppNotificationPromoButton';
 import { UpgradeButton } from '../../Upsell/UpgradeButton';

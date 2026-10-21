@@ -4,8 +4,10 @@ import { ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS } from '@proton/shared/li
 import type { DecryptedKey, Key } from '@proton/shared/lib/interfaces/Key';
 import type { User } from '@proton/shared/lib/interfaces/User';
 
-import type { ItemRevisionContentsResponse, ShareGetResponse, ShareKeyResponse } from '../../types';
-import { ContentFormatVersion, ItemState, PassEncryptionTag, ShareRole, ShareType } from '../../types';
+import type { ItemRevisionContentsResponse, ShareGetResponse, ShareKeyResponse } from '../../types/api/pass';
+import { ContentFormatVersion, PassEncryptionTag } from '../../types/crypto/pass-types';
+import { ItemState } from '../../types/data/items';
+import { ShareRole, ShareType } from '../../types/data/shares';
 import { createMemoryStore } from '../../utils/store';
 import { uniqueId } from '../../utils/string/unique-id';
 import {

@@ -1,6 +1,6 @@
 import noop from '@proton/utils/noop';
 
-import type { MaybeNull } from '../../types';
+import type { MaybeNull } from '../../types/utils';
 import type { AlarmFactory } from '../../utils/time/alarm';
 import { createTimeoutAlarm } from '../../utils/time/alarm';
 import type { ClipboardApi, ClipboardService } from './types';

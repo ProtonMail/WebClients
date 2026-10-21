@@ -13,16 +13,16 @@
  * to handle Firefox specifics when dealing with the session API */
 import noop from '@proton/utils/noop';
 
+import type { Maybe } from '../../../types/utils';
 import type {
     GetItem,
     GetItems,
-    Maybe,
     RemoveItem,
     RemoveItems,
     SetItem,
     SetItems,
     StorageInterface,
-} from '../../../types';
+} from '../../../types/worker/storage';
 import browser from '../../globals/browser';
 
 const MEMORY_STORAGE_EVENT = 'MEMORY_STORAGE_EVENT';

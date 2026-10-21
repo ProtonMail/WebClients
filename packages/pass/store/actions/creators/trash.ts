@@ -1,7 +1,7 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import type { BatchItemRevisionIDs } from '../../../types';
+import type { BatchItemRevisionIDs } from '../../../types/data/items';
 import { pipe } from '../../../utils/fp/pipe';
 import { withRequest, withRequestFailure, withRequestProgress, withRequestSuccess } from '../../request/enhancers';
 import { withCache } from '../enhancers/cache';

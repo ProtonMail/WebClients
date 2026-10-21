@@ -4,7 +4,8 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { UpsellRef } from '../../../../constants';
-import { selectAllVaults, selectOwnReadOnlyVaults, selectVaultLimits } from '../../../../store/selectors';
+import { selectVaultLimits } from '../../../../store/selectors/limits';
+import { selectAllVaults, selectOwnReadOnlyVaults } from '../../../../store/selectors/shares';
 import { prop } from '../../../../utils/fp/lens';
 import { Card } from '../../../Layout/Card/Card';
 import { useNavigationFilters } from '../../../Navigation/NavigationFilters';

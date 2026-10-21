@@ -1,5 +1,5 @@
 import type { ShareItem } from '../../store/reducers/shares';
-import { ShareType } from '../../types';
+import { ShareType } from '../../types/data/shares';
 import type { AccessItem } from './types';
 
 export const isMemberLimitReached = (

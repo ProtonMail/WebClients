@@ -1,4 +1,9 @@
-import type { MinimumNoticeMode } from '@proton/calendar/bookings/types';
+export enum MinimumNoticeMode {
+    OFF = 0,
+    TWO_HOURS = 1,
+    FORTY_EIGHT_HOURS = 2,
+    NOT_SAME_DAY = 3,
+}
 
 export interface BookingPageSlotsPayload {
     StartTime: number;

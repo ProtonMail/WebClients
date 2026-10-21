@@ -3,7 +3,8 @@ import { useMemo, useRef } from 'react';
 import { fromUnixTime, isAfter } from 'date-fns';
 import { c } from 'ttag';
 
-import { FeatureCode, useFeature } from '@proton/features';
+import { FeatureCode } from '@proton/features/interface';
+import useFeature from '@proton/features/useFeature';
 
 import useSpotlightOnFeature from '../../hooks/useSpotlightOnFeature';
 import Spotlight from '../spotlight/Spotlight';

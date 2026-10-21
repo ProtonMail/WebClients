@@ -1,7 +1,7 @@
 import { createSelector } from '@reduxjs/toolkit';
 
 import { isFileForRevision } from '../../lib/file-attachments/helpers';
-import type { FileDescriptor } from '../../types';
+import type { FileDescriptor } from '../../types/data/files';
 import type { State } from '../types';
 
 const selectFiles = (state: State) => state.files;

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import type { getSSODomainsSet } from '@proton/account/samlSSO/helper';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, MEMBER_PRIVATE, MEMBER_ROLE, MEMBER_TYPE, ORGANIZATION_STATE } from '@proton/shared/lib/constants';

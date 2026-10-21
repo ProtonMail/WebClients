@@ -3,7 +3,7 @@ import { createAction } from '@reduxjs/toolkit';
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import identity from '@proton/utils/identity';
 
-import type { MaybeNull } from '../../../types';
+import type { MaybeNull } from '../../../types/utils';
 import { pipe } from '../../../utils/fp/pipe';
 import { UNIX_HOUR } from '../../../utils/time/constants';
 import type { FeatureFlagState, FeatureFlagVariants, HydratedAccessState } from '../../reducers';

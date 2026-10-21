@@ -1,4 +1,4 @@
-import type { MaybeNull } from '../../types';
+import type { MaybeNull } from '../../types/utils';
 import { getParent } from './tree';
 
 /** Resolves the first parent element which can be scrolled vertically.

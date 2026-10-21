@@ -1,5 +1,5 @@
-import type { Maybe } from '../../types';
-import { type AppState, AppStatus } from '../../types';
+import type { Maybe } from '../../types/utils';
+import { type AppState, AppStatus } from '../../types/worker/state';
 import { logger } from '../../utils/logger';
 import { withMerge } from '../../utils/object/merge';
 import type { ObservableState } from '../../utils/pubsub/state';

@@ -6,7 +6,7 @@ import type { Transaction } from 'dexie';
 import { Dexie } from 'dexie';
 import { c } from 'ttag';
 
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types/utils';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 
 import { createBackupFilename } from '../../backup/filename';

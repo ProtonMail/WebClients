@@ -1,12 +1,9 @@
 import { c } from 'ttag';
 
-import type {
-    IdentityExtraFieldsKey,
-    IdentityFieldName,
-    ItemContent,
-    ItemImportIntent,
-    Maybe,
-} from '../../../../types';
+import type { ItemContent } from '../../../../types/data/items';
+import type { ItemImportIntent } from '../../../../types/data/items.dto';
+import type { IdentityExtraFieldsKey, IdentityFieldName } from '../../../../types/forms/item';
+import type { Maybe } from '../../../../types/utils';
 import { truthy } from '../../../../utils/fp/predicates';
 import { itemBuilder } from '../../../items/item.builder';
 import {

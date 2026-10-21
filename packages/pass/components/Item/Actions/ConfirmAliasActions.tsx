@@ -13,9 +13,11 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 
 import { useMemoSelector } from '../../../hooks/useMemoSelector';
 import { isAliasItem, isDisabledAlias } from '../../../lib/items/item.predicates';
-import { aliasSyncStatusToggle, settingsEditIntent } from '../../../store/actions';
-import { selectAliasTrashAcknowledged, selectItemsByEmail } from '../../../store/selectors';
-import type { ItemRevision } from '../../../types';
+import { aliasSyncStatusToggle } from '../../../store/actions/creators/alias';
+import { settingsEditIntent } from '../../../store/actions/creators/settings';
+import { selectItemsByEmail } from '../../../store/selectors/items';
+import { selectAliasTrashAcknowledged } from '../../../store/selectors/settings';
+import type { ItemRevision } from '../../../types/data/items';
 import { pipe } from '../../../utils/fp/pipe';
 import type { ConfirmationPromptHandles } from '../../Confirmation/ConfirmationPrompt';
 import { PassModal } from '../../Layout/Modal/PassModal';

@@ -1,7 +1,7 @@
 import type { Alarms } from 'webextension-polyfill';
 
 import browser from '@proton/pass/lib/globals/browser';
-import type { Maybe } from '@proton/pass/types';
+import type { Maybe } from '@proton/pass/types/utils';
 import { safeAsyncCall } from '@proton/pass/utils/fp/safe-call';
 import { logger } from '@proton/pass/utils/logger';
 import type { AlarmFactory } from '@proton/pass/utils/time/alarm';

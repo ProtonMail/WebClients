@@ -7,7 +7,7 @@ import ProtonBadgeType from '@proton/components/components/protonBadge/ProtonBad
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useHotkeys } from '@proton/components/hooks/useHotkeys';
 import { highlightNode } from '@proton/encrypted-search/esHelpers';
-import { useCombinedRefs } from '@proton/hooks';
+import useCombinedRefs from '@proton/hooks/useCombinedRefs';
 import { KeyboardKey } from '@proton/shared/lib/interfaces/Hotkeys';
 import clsx from '@proton/utils/clsx';
 

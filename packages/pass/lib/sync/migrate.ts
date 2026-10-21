@@ -1,15 +1,17 @@
 import { all, call, put, select } from 'redux-saga/effects';
 
-import { setUserAccess, syncMigration } from '../../store/actions';
+import { syncMigration } from '../../store/actions/creators/client';
 import { setOrganization } from '../../store/actions/creators/organization';
+import { setUserAccess } from '../../store/actions/creators/user';
 import type { HydratedAccessState } from '../../store/reducers';
 import type { OrganizationState } from '../../store/reducers/organization';
 import type { SharesState } from '../../store/reducers/shares';
-import { selectAllShares, selectShareState } from '../../store/selectors';
 import { selectLoadGroupInvites } from '../../store/selectors/invites';
+import { selectAllShares, selectShareState } from '../../store/selectors/shares';
 import type { RootSagaOptions } from '../../store/types';
-import type { InvitesGetResponse, Maybe, MaybeNull, PassEventListResponse, ShareGetResponse } from '../../types';
+import type { InvitesGetResponse, PassEventListResponse, ShareGetResponse } from '../../types/api/pass';
 import type { Share } from '../../types/data/shares';
+import type { Maybe, MaybeNull } from '../../types/utils';
 import { logger } from '../../utils/logger';
 import { isShareRemovedError } from '../api/errors';
 import { getGroupInvites, getUserInvites } from '../invites/invite.requests';

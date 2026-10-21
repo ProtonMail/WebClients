@@ -1,7 +1,7 @@
 import debounce from 'lodash/debounce';
 
 import { clientDisabled, clientLocked } from '@proton/pass/lib/client';
-import type { Callback, MaybeNull } from '@proton/pass/types/utils/index';
+import type { Callback, MaybeNull } from '@proton/pass/types/utils';
 import type { AppStatus } from '@proton/pass/types/worker/state';
 import { animatePositionChange, freezeAnimations, waitForTransitions } from '@proton/pass/utils/dom/animation';
 import { isInputElement } from '@proton/pass/utils/dom/predicates';

@@ -1,4 +1,4 @@
-import type { ItemImportIntent } from '../../../../types';
+import type { ItemImportIntent } from '../../../../types/data/items.dto';
 import { logger } from '../../../../utils/logger';
 import { readCSV } from '../../helpers/csv.reader';
 import { ImportProviderError } from '../../helpers/error';

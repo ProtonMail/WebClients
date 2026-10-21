@@ -1,7 +1,7 @@
 import { createSelector } from '@reduxjs/toolkit';
 
 import type { PersonalAccessToken } from '../../lib/access-token/access-token.types';
-import type { Maybe } from '../../types';
+import type { Maybe } from '../../types/utils';
 import { sortOn } from '../../utils/fp/sort';
 import type { AccessTokenState } from '../reducers/access-tokens';
 import type { State } from '../types';

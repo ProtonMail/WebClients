@@ -4,7 +4,8 @@ import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 
 import { binaryStringToUint8Array, uint8ArrayToBinaryString } from '@proton/shared/lib/helpers/encoding';
 
-import { type Maybe, PassEncryptionTag } from '../../types';
+import { PassEncryptionTag } from '../../types/crypto/pass-types';
+import type { Maybe } from '../../types/utils';
 import { logger } from '../../utils/logger';
 import { encryptData, generateKey, importSymmetricKey } from '../crypto/utils/crypto-helpers';
 import { PassCryptoError } from '../crypto/utils/errors';

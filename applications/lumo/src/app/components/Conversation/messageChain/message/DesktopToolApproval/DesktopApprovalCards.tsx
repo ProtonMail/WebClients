@@ -3,7 +3,8 @@ import { c } from 'ttag';
 import { IcShield } from '@proton/icons/icons/IcShield';
 import ConfirmCard from '@proton/llm/lib/lumoAgent/ui/cardRenderers';
 import type { CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
-import { ToolCallCard, sentenceValue } from '@proton/lumo-ui';
+import ToolCallCard from '@proton/lumo-ui/confirmCards/ToolCallCard';
+import sentenceValue from '@proton/lumo-ui/primitives/sentenceValue';
 
 import ChatContainerItem from '../../../../ChatContainerItem';
 import { useDesktopToolApprovals } from './useDesktopToolApprovals';

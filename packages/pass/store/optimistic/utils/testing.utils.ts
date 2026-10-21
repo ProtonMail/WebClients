@@ -1,7 +1,7 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Action, Reducer } from 'redux';
 
-import type { Maybe } from '../../../types';
+import type { Maybe } from '../../../types/utils';
 import type { DeterministicHistoryItem, OptimisticHistoryItem } from '../types';
 import { HistoryFlag } from '../types';
 

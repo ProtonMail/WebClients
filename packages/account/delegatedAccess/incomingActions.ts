@@ -1,7 +1,7 @@
 import { type ThunkAction, type UnknownAction, miniSerializeError } from '@reduxjs/toolkit';
 
 import { getAndVerifyApiKeys } from '@proton/key-transparency/keys';
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { previousSelector } from '@proton/redux-utilities/creator';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { cacheHelper, createPromiseStore } from '@proton/redux-utilities/promiseStore';

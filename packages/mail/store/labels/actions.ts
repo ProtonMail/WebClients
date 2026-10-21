@@ -4,7 +4,7 @@ import type { AddressesState } from '@proton/account/addresses';
 import type { KtState } from '@proton/account/kt';
 import type { OrganizationKeyState } from '@proton/account/organizationKey';
 import type { UserKeysState } from '@proton/account/userKeys';
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import {
     checkLabelAvailability as checkLabelAvailabilityConfig,
     create as createConfig,

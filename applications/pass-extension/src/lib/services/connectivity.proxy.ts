@@ -1,6 +1,6 @@
 import type { ConnectivityEvent, ConnectivityService } from '@proton/pass/lib/network/connectivity.service';
 import { ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
-import type { ClientEndpoint } from '@proton/pass/types';
+import type { ClientEndpoint } from '@proton/pass/types/worker/runtime';
 import { throwError } from '@proton/pass/utils/fp/throw';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { createPubSub } from '@proton/pass/utils/pubsub/factory';

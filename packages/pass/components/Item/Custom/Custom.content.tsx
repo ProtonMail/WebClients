@@ -5,7 +5,8 @@ import { c } from 'ttag';
 import { IcNote } from '@proton/icons/icons/IcNote';
 
 import { useDeobfuscatedItem, usePartialDeobfuscatedItem } from '../../../hooks/useDeobfuscatedItem';
-import type { ItemCustomType, ItemRevision } from '../../../types';
+import type { ItemRevision } from '../../../types/data/items';
+import type { ItemCustomType } from '../../../types/protobuf';
 import { ExtraFieldsControl } from '../../Form/Field/Control/ExtraFieldsControl';
 import { ValueControl } from '../../Form/Field/Control/ValueControl';
 import { FieldBox } from '../../Form/Field/Layout/FieldBox';

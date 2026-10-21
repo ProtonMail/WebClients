@@ -3,7 +3,7 @@ import type { FC, PropsWithChildren } from 'react';
 import timelineBottom from '../../../assets/history/timeline-bottom.svg';
 import timelineMiddle from '../../../assets/history/timeline-middle.svg';
 import timelineTop from '../../../assets/history/timeline-top.svg';
-import type { Maybe } from '../../../types';
+import type { Maybe } from '../../../types/utils';
 
 type Props = { index: number; total: number };
 

@@ -2,20 +2,20 @@ import type { Store } from 'redux';
 
 import { ITEM_COUNT_RATING_PROMPT } from '../../constants';
 import { selectPaymentNudgeEligible } from '../../store/payment-nudge/selectors';
+import { selectAllAliasItems, selectAllItems } from '../../store/selectors/items';
+import { selectCreatedItemsCount, selectLockEnabled } from '../../store/selectors/settings';
+import { selectCanCreateItems } from '../../store/selectors/shares';
 import {
-    selectAllAliasItems,
-    selectAllItems,
-    selectCanCreateItems,
-    selectCreatedItemsCount,
     selectHasPendingShareAccess,
-    selectLockEnabled,
     selectPassPlan,
     selectUserData,
     selectUserPlan,
-} from '../../store/selectors';
+} from '../../store/selectors/user';
 import type { State } from '../../store/types';
-import { type Maybe, type MaybeNull, PlanType, SpotlightMessage } from '../../types';
+import { PlanType } from '../../types/api/pass';
 import { UserPassPlan } from '../../types/api/plan';
+import type { Maybe, MaybeNull } from '../../types/utils';
+import { SpotlightMessage } from '../../types/worker/spotlight';
 import { or } from '../../utils/fp/predicates';
 import { merge } from '../../utils/object/merge';
 import { UNIX_DAY, UNIX_MONTH, UNIX_WEEK } from '../../utils/time/constants';

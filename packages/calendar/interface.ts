@@ -1,6 +1,6 @@
 import type { TypedStartListening } from '@reduxjs/toolkit';
 
-import type { ProtonDispatch, ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonDispatch, ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 
 import type { CalendarModelEventManager } from './calendarModelEventManager';
 

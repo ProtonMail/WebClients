@@ -3,7 +3,7 @@ import { type FC, useEffect } from 'react';
 import { c } from 'ttag';
 
 import accountImg from '../../../assets/protonpass-account.svg';
-import { SpotlightMessage } from '../../../types';
+import { SpotlightMessage } from '../../../types/worker/spotlight';
 import { usePassCore } from '../../Core/PassCoreProvider';
 import { AdaptiveModal } from '../../Layout/Modal/AdaptiveModal';
 import { useSpotlight } from '../../Spotlight/SpotlightContext';

@@ -1,7 +1,7 @@
 import { isBtnCandidate, kButtonSubmitSelector } from '@protontech/autofill';
 import { FieldType } from '@protontech/autofill/types';
 
-import type { MaybeNull } from '@proton/pass/types/utils/index';
+import type { MaybeNull } from '@proton/pass/types/utils';
 import type { AutosaveFormEntry, FormCredentials } from '@proton/pass/types/worker/form';
 import { first } from '@proton/pass/utils/array/first';
 import { parseFormAction } from '@proton/pass/utils/dom/form';

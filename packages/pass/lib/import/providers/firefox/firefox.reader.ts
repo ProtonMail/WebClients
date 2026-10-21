@@ -1,4 +1,4 @@
-import type { ItemImportIntent } from '../../../../types';
+import type { ItemImportIntent } from '../../../../types/data/items.dto';
 import { logger } from '../../../../utils/logger';
 import { msToEpoch } from '../../../../utils/time/epoch';
 import { readCSV } from '../../helpers/csv.reader';

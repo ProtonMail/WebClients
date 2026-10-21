@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import capitalize from '@proton/utils/capitalize';
 
-import type { ItemImportIntent } from '../../../../types';
+import type { ItemImportIntent } from '../../../../types/data/items.dto';
 import { WifiSecurity } from '../../../../types/protobuf';
 import { logger } from '../../../../utils/logger';
 import { readCSV } from '../../helpers/csv.reader';

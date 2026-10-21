@@ -3,8 +3,10 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { getItemKey } from '../../../lib/items/item.utils';
-import { selectItemWithOptimistic, selectShare } from '../../../store/selectors';
-import type { MaybeNull, UniqueItem } from '../../../types';
+import { selectItemWithOptimistic } from '../../../store/selectors/items';
+import { selectShare } from '../../../store/selectors/shares';
+import type { UniqueItem } from '../../../types/data/items';
+import type { MaybeNull } from '../../../types/utils';
 import { useBulkSelection } from '../../Bulk/BulkSelectionState';
 import { useContextMenu } from '../../ContextMenu/ContextMenuProvider';
 import { BulkItemsContextMenu } from './BulkItemsContextMenu';

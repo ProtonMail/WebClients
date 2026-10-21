@@ -1,6 +1,6 @@
 import { clientHasSession, clientNeedsSession } from '@proton/pass/lib/client';
 import type { SanitizedPublicKeyRequest } from '@proton/pass/lib/passkeys/types';
-import type { MaybeNull, MaybePromise } from '@proton/pass/types/utils/index';
+import type { MaybeNull, MaybePromise } from '@proton/pass/types/utils';
 import type { PasskeySettings } from '@proton/pass/types/worker/settings';
 import { createEventLimiter } from '@proton/pass/utils/event/limiter';
 import { prop } from '@proton/pass/utils/fp/lens';

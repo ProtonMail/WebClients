@@ -1,7 +1,12 @@
 import type { BrowserWindow } from 'electron';
 
-import type { MaybeNull, NativeMessagePayload, NativeMessageRequest, NativeMessageResponse } from '@proton/pass/types';
-import { NativeMessageErrorType } from '@proton/pass/types';
+import type {
+    NativeMessagePayload,
+    NativeMessageRequest,
+    NativeMessageResponse,
+} from '@proton/pass/types/desktop/extension-unlock-with-desktop';
+import { NativeMessageErrorType } from '@proton/pass/types/desktop/extension-unlock-with-desktop';
+import type { MaybeNull } from '@proton/pass/types/utils';
 
 import logger from '../../utils/logger';
 import { isMainWindowEntry } from '../../utils/navigation';

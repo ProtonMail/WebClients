@@ -2,16 +2,12 @@ import { c } from 'ttag';
 
 import lastItem from '@proton/utils/lastItem';
 
-import type {
-    DeobfuscatedItemExtraField,
-    IdentityFieldName,
-    ItemContent,
-    ItemImportIntent,
-    Maybe,
-    MaybeNull,
-} from '../../../../types';
+import type { DeobfuscatedItemExtraField, ItemContent } from '../../../../types/data/items';
+import type { ItemImportIntent } from '../../../../types/data/items.dto';
+import type { IdentityFieldName } from '../../../../types/forms/item';
 import { AutofillMode, WifiSecurity } from '../../../../types/protobuf';
 import type { AutofillUrl } from '../../../../types/protobuf/item-v1';
+import type { Maybe, MaybeNull } from '../../../../types/utils';
 import { prop } from '../../../../utils/fp/lens';
 import { truthy } from '../../../../utils/fp/predicates';
 import { objectKeys } from '../../../../utils/object/generic';

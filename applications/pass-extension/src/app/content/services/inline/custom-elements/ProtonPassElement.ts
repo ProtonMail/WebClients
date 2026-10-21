@@ -1,4 +1,4 @@
-import type { MaybeNull } from '@proton/pass/types/utils/index';
+import type { MaybeNull } from '@proton/pass/types/utils';
 
 export const PASS_ELEMENT_ROLE = 'data-protonpass-role';
 export const PASS_ELEMENT_THEME = 'data-protonpass-theme';

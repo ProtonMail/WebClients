@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Kbd } from '@proton/atoms/Kbd/Kbd';
 import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { metaKey } from '@proton/shared/lib/helpers/browser';

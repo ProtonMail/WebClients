@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useState } from 'react';
 
 import { PassErrorCode } from '../lib/api/errors';
-import { requestAliasOptions } from '../store/actions';
-import type { MaybeNull, MaybePromise, Result } from '../types';
+import { requestAliasOptions } from '../store/actions/creators/alias';
 import type { AliasMailbox } from '../types/data/alias';
+import type { MaybeNull, MaybePromise, Result } from '../types/utils';
 import { useRequest } from './useRequest';
 
 export type SanitizedAliasOptions = {

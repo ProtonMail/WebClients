@@ -7,7 +7,7 @@ import { useItemDraft } from '../../../hooks/useItemDraft';
 import { filesFormInitializer } from '../../../lib/file-attachments/helpers';
 import { itemBuilder } from '../../../lib/items/item.builder';
 import { validateIdentityForm } from '../../../lib/validation/identity';
-import type { IdentityItemFormValues } from '../../../types';
+import type { IdentityItemFormValues } from '../../../types/forms/item';
 import { obfuscate } from '../../../utils/obfuscate/xor';
 import { uniqueId } from '../../../utils/string/unique-id';
 import type { ItemNewViewProps } from '../../Views/types';

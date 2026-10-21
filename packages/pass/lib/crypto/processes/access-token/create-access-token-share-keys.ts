@@ -1,5 +1,6 @@
-import type { KeyRotationKeyPair, ShareKey } from '../../../../types';
-import { PassEncryptionTag } from '../../../../types';
+import type { KeyRotationKeyPair } from '../../../../types/api/pass';
+import type { ShareKey } from '../../../../types/crypto/pass-types';
+import { PassEncryptionTag } from '../../../../types/crypto/pass-types';
 import { encryptData, importSymmetricKey } from '../../utils/crypto-helpers';
 
 /** Wraps every rotation of a vault's share keys with the PAT's raw symmetric

@@ -2,7 +2,7 @@ import type { HttpResponseResolver, RequestHandler } from 'msw';
 import { HttpResponse, delay, http } from 'msw';
 import { setupServer } from 'msw/node';
 
-import type { MaybeNull, MaybePromise } from '../../types';
+import type { MaybeNull, MaybePromise } from '../../types/utils';
 import type { TestPersistedSession } from './fixtures/session';
 
 export const TEST_API_URL = 'https://pass.test/api';

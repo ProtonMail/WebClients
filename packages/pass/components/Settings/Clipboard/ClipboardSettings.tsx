@@ -8,7 +8,7 @@ import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { ClipboardTTL } from '../../../lib/clipboard/types';
-import { selectClipboardTTL } from '../../../store/selectors';
+import { selectClipboardTTL } from '../../../store/selectors/settings';
 import { useSetClipboardTTL } from './ClipboardProvider';
 import { getClipboardTTLOptions } from './ClipboardSettings.utils';
 

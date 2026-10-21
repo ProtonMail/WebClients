@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 
 import { isTrashed } from '../lib/items/item.predicates';
-import { itemDelete, itemMove, itemRestore, itemTrash } from '../store/actions';
+import { itemDelete, itemMove, itemRestore, itemTrash } from '../store/actions/creators/item';
 import {
     itemsBulkDeleteRequest,
     itemsBulkMoveRequest,
@@ -11,8 +11,10 @@ import {
     trashRestoreRequest,
     vaultMoveAllItemsRequest,
 } from '../store/actions/requests';
-import { selectRequestInFlight, selectRequestInFlightData } from '../store/selectors';
-import type { BulkSelectionDTO, ItemRevision, MaybeNull, SelectedItem } from '../types';
+import { selectRequestInFlight, selectRequestInFlightData } from '../store/request/selectors';
+import type { ItemRevision, SelectedItem } from '../types/data/items';
+import type { BulkSelectionDTO } from '../types/data/items.dto';
+import type { MaybeNull } from '../types/utils';
 
 const bulkSelectionContains =
     ({ shareId, itemId }: SelectedItem) =>

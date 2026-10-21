@@ -1,7 +1,8 @@
 import fs from 'fs';
 
-import type { ItemImportIntent, Maybe, MaybeNull } from '../../../../types';
+import type { ItemImportIntent } from '../../../../types/data/items.dto';
 import { AutofillMode } from '../../../../types/protobuf';
+import type { Maybe, MaybeNull } from '../../../../types/utils';
 import * as epochUtils from '../../../../utils/time/epoch';
 import { deobfuscateItem } from '../../../items/item.obfuscation';
 import type { ImportPayload, ImportVault } from '../../types';

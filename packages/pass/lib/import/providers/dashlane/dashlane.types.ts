@@ -1,4 +1,5 @@
-import type { ItemImportIntent, Maybe } from '../../../../types';
+import type { ItemImportIntent } from '../../../../types/data/items.dto';
+import type { Maybe } from '../../../../types/utils';
 
 export enum DashlaneFileKey {
     Login = 'Login',

@@ -1,4 +1,4 @@
-import { type ItemKey, PassEncryptionTag } from '../../../../types';
+import { type ItemKey, PassEncryptionTag } from '../../../../types/crypto/pass-types';
 import { encryptData, generateKey, importSymmetricKey } from '../../utils/crypto-helpers';
 
 type CreateSecureLinkProcessParams = { itemKey: ItemKey };

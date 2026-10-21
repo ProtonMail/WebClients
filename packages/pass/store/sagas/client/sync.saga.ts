@@ -5,27 +5,20 @@ import type { User } from '@proton/shared/lib/interfaces/User';
 
 import { sync } from '../../../lib/sync/sync';
 import { SyncStrategy } from '../../../lib/sync/types';
-import type { MaybeNull } from '../../../types';
+import type { MaybeNull } from '../../../types/utils';
 import { logger } from '../../../utils/logger';
-import {
-    getInAppNotifications,
-    getUserAccessIntent,
-    getUserFeaturesIntent,
-    secureLinksGet,
-    startEventPolling,
-    stateDestroy,
-    stopEventPolling,
-    syncFailure,
-    syncIntent,
-    syncSuccess,
-} from '../../actions';
+import { startEventPolling, stateDestroy, stopEventPolling, syncFailure, syncIntent, syncSuccess } from '../../actions/creators/client';
+import { secureLinksGet } from '../../actions/creators/item';
 import { resolveModelRegistry } from '../../actions/creators/model-registry';
+import { getInAppNotifications } from '../../actions/creators/notification';
 import { getOrganizationPauseList, getOrganizationSettings } from '../../actions/creators/organization';
 import { resolvePrivateDomains } from '../../actions/creators/private-domains';
 import { resolveWebsiteRules } from '../../actions/creators/rules';
 import { getAuthDevices } from '../../actions/creators/sso';
+import { getUserAccessIntent, getUserFeaturesIntent } from '../../actions/creators/user';
 import { withRevalidate } from '../../request/enhancers';
-import { selectSyncStrategy, selectUser } from '../../selectors';
+import { selectSyncStrategy } from '../../selectors/settings';
+import { selectUser } from '../../selectors/user';
 import type { RootSagaOptions, State } from '../../types';
 import { refreshUserData } from '../events/core/channel.core';
 

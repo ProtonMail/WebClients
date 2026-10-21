@@ -1,4 +1,4 @@
-import type { Maybe } from '../../../../types';
+import type { Maybe } from '../../../../types/utils';
 
 export type FirefoxItem = {
     url: Maybe<string>;

@@ -1,4 +1,4 @@
-import { PassEncryptionTag } from '../../../../types';
+import { PassEncryptionTag } from '../../../../types/crypto/pass-types';
 import { ActionPayload } from '../../../../types/protobuf/action-payload-v1';
 import { encryptData, generateKey, importSymmetricKey } from '../../utils/crypto-helpers';
 import { openActionPayload } from './open-action-payload';

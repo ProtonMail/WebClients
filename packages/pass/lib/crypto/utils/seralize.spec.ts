@@ -1,5 +1,6 @@
-import type { FolderKey, FolderKeysByShareId, MaybeNull } from '../../../types';
-import { PassEncryptionTag } from '../../../types';
+import type { FolderKey, FolderKeysByShareId } from '../../../types/crypto/pass-types';
+import { PassEncryptionTag } from '../../../types/crypto/pass-types';
+import type { MaybeNull } from '../../../types/utils';
 import { randomContents } from '../../../utils/tests/fixtures/crypto';
 import { decryptData, encryptData, generateKey, importSymmetricKey } from './crypto-helpers';
 import { hydrateFolderKeys, serializeFolderKeys } from './seralize';

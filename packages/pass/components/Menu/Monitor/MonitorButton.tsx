@@ -7,7 +7,7 @@ import { IcPassShieldMonitoringOk } from '@proton/icons/icons/IcPassShieldMonito
 import { IcPassShieldMonitoringWarning } from '@proton/icons/icons/IcPassShieldMonitoringWarning';
 import clsx from '@proton/utils/clsx';
 
-import { selectTotalBreaches } from '../../../store/selectors';
+import { selectTotalBreaches } from '../../../store/selectors/monitor';
 import { PillBadge } from '../../Layout/Badge/PillBadge';
 import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';
 import { useNavigate } from '../../Navigation/NavigationActions';

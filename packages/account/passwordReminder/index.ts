@@ -1,7 +1,7 @@
 import { getSrp } from '@protontech/crypto/srp';
 import { type PayloadAction, type ThunkAction, type UnknownAction, createSlice } from '@reduxjs/toolkit';
 
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import type { TwoFactorCredentials } from '@proton/shared/lib/api/auth';
 import { type AuthReminderResponse, authReminder, deleteAuthReminder } from '@proton/shared/lib/api/auth';
 import type { InfoAuthedResponse } from '@proton/shared/lib/authentication/interface';

@@ -1,8 +1,8 @@
 import { put, select, take, takeLeading } from 'redux-saga/effects';
 
-import type { ItemRevision } from '../../../types';
-import { restoreTrashFailure, restoreTrashIntent, restoreTrashProgress, restoreTrashSuccess } from '../../actions';
-import { selectTrashedItems } from '../../selectors';
+import type { ItemRevision } from '../../../types/data/items';
+import { restoreTrashFailure, restoreTrashIntent, restoreTrashProgress, restoreTrashSuccess } from '../../actions/creators/trash';
+import { selectTrashedItems } from '../../selectors/items';
 import { type BulkRestoreChannel, bulkRestoreChannel } from '../items/item-bulk-restore.saga';
 
 function* restoreTrash({ meta }: ReturnType<typeof restoreTrashIntent>) {

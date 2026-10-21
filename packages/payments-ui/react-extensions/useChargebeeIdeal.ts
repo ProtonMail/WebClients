@@ -6,7 +6,7 @@ import {
     chargebeeValidationErrorName,
     isMessageBusResponseFailure,
 } from '@proton/chargebee/lib/types';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { getTokenStatusV5 } from '@proton/payments/core/api/api';
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '@proton/payments/core/constants';
 import { createPaymentTokenV5Ideal } from '@proton/payments/core/createPaymentToken';

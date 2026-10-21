@@ -9,7 +9,7 @@ import StandardErrorPage from '@proton/components/containers/app/StandardErrorPa
 import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
 import type { MeetStore } from '@proton/meet/store/store';
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';

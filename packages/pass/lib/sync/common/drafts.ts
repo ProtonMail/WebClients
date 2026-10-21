@@ -1,8 +1,8 @@
 import { all, put, select } from 'redux-saga/effects';
 
-import { draftDiscard } from '../../../store/actions';
+import { draftDiscard } from '../../../store/actions/creators/item';
 import type { Draft } from '../../../store/reducers/drafts';
-import { selectItemDrafts } from '../../../store/selectors';
+import { selectItemDrafts } from '../../../store/selectors/items';
 import { matchDraftsForShare } from '../../items/item.utils';
 
 export function* discardDrafts(shareId: string, itemIds?: string[]) {

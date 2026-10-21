@@ -9,7 +9,7 @@ import TableHeader from '@proton/components/components/table/TableHeader';
 import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
 import TableRow from '@proton/components/components/table/TableRow';
 
-import type { LoginItem } from '../../../../types';
+import type { LoginItem } from '../../../../types/data/items';
 import { BreachUsageRow } from './BreachUsageRow';
 
 type Props = { data: LoginItem[] };

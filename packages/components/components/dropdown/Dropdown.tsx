@@ -14,7 +14,7 @@ import type { PopperPlacement, PopperPosition } from '@proton/atoms/Popper/inter
 import { usePopper } from '@proton/atoms/Popper/usePopper';
 import { allPopperPlacements } from '@proton/atoms/Popper/utils';
 import { Portal } from '@proton/atoms/Portal/Portal';
-import { useCombinedRefs } from '@proton/hooks';
+import useCombinedRefs from '@proton/hooks/useCombinedRefs';
 import { dropdownRootClassName } from '@proton/shared/lib/busy/busy';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';

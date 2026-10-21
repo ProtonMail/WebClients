@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import type { ItemImportIntent, Maybe } from '../../../../types';
+import type { ItemImportIntent } from '../../../../types/data/items.dto';
+import type { Maybe } from '../../../../types/utils';
 import { logger } from '../../../../utils/logger';
 import { ImportProviderError, ImportReaderError } from '../../helpers/error';
 import { attachFilesToItem } from '../../helpers/files';

@@ -14,14 +14,11 @@ import noop from '@proton/utils/noop';
 import { UpsellRef } from '../../constants';
 import { fromFolderKey, getFolderKey } from '../../lib/items/item.utils';
 import type { VaultShareItem, WithItemCount } from '../../store/reducers';
-import {
-    selectFolders,
-    selectVaultLimits,
-    selectWritableSharedVaultsWithCount,
-    selectWritableVaultsWithCount,
-} from '../../store/selectors';
+import { selectFolders } from '../../store/selectors/folders';
+import { selectVaultLimits } from '../../store/selectors/limits';
 import { NOOP_LIST_SELECTOR } from '../../store/selectors/utils';
-import type { MaybeNull } from '../../types';
+import { selectWritableSharedVaultsWithCount, selectWritableVaultsWithCount } from '../../store/selectors/vaults';
+import type { MaybeNull } from '../../types/utils';
 import { PassExpandButton } from '../Folders/PassExpandButton';
 import { PassFolderIcon } from '../Folders/PassFolderIcon';
 import { useFoldersAccess } from '../Folders/useFoldersAccess';

@@ -1,4 +1,5 @@
-import type { InAppNotificationCtaType, InAppNotificationDisplayType, InAppNotificationState, MaybeNull } from '..';
+import type { InAppNotificationCtaType, InAppNotificationDisplayType, InAppNotificationState } from '../api/pass';
+import type { MaybeNull } from '../utils/index';
 
 type MessageCTA = {
     text: string;

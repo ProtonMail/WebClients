@@ -4,8 +4,10 @@ import { Redirect } from 'react-router-dom';
 
 import { useOptimisticItem } from '../../../hooks/useItem';
 import { getItemKey } from '../../../lib/items/item.utils';
-import { selectIsOptimisticId, selectShare } from '../../../store/selectors';
-import type { ItemType, SelectedItem } from '../../../types';
+import { selectIsOptimisticId } from '../../../store/selectors/items';
+import { selectShare } from '../../../store/selectors/shares';
+import type { SelectedItem } from '../../../types/data/items';
+import type { ItemType } from '../../../types/protobuf';
 import { useNavigationActions } from '../../Navigation/NavigationActions';
 import { useItemScope } from '../../Navigation/NavigationMatches';
 import { getItemRoute, getLocalPath } from '../../Navigation/routing';

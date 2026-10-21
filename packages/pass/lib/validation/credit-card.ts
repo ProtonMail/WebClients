@@ -1,7 +1,7 @@
 import type { FormikErrors } from 'formik';
 import { c } from 'ttag';
 
-import type { CreditCardItemFormValues } from '../../types';
+import type { CreditCardItemFormValues } from '../../types/forms/item';
 import { isValidExpirationDate } from '../../utils/time/expiration-date';
 import { validateItemErrors } from './item';
 

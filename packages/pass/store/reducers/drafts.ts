@@ -2,8 +2,8 @@
 import type { Reducer } from 'redux';
 
 import { itemEq } from '../../lib/items/item.predicates';
-import type { ItemType } from '../../types';
-import { draftDiscard, draftSave, draftsGarbageCollect } from '../actions';
+import type { ItemType } from '../../types/protobuf';
+import { draftDiscard, draftSave, draftsGarbageCollect } from '../actions/creators/item';
 
 /** revision number is stored on the `EditDraft` type in order
  * to future-proof drafts v2 : this will allow detecting stale

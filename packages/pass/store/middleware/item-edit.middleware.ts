@@ -1,8 +1,8 @@
 import type { Middleware } from 'redux';
 
-import type { ItemRevision } from '../../types';
-import { itemEdit } from '../actions';
-import { selectItem } from '../selectors';
+import type { ItemRevision } from '../../types/data/items';
+import { itemEdit } from '../actions/creators/item';
+import { selectItem } from '../selectors/items';
 import type { State } from '../types';
 
 export type ItemEditIntentAction = ReturnType<typeof itemEdit.intent> & {

@@ -1,6 +1,10 @@
-import type { Callback, Maybe } from '@proton/pass/types/utils/index';
-import type { ContextHandler, ContextInjector } from '@proton/pass/utils/context';
-import { InjectionMode, contextHandlerFactory, contextInjectorFactory } from '@proton/pass/utils/context';
+import type { Callback, Maybe } from '@proton/pass/types/utils';
+import type { ContextHandler, ContextInjector } from '@proton/pass/utils/context/create-shared-context';
+import {
+    InjectionMode,
+    contextHandlerFactory,
+    contextInjectorFactory,
+} from '@proton/pass/utils/context/create-shared-context';
 
 import type { WorkerContextInterface } from './types';
 

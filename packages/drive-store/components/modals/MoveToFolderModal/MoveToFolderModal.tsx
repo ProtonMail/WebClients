@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { c } from 'ttag';
 
 import { ModalTwo, useActiveBreakpoint, useModalTwoStatic } from '@proton/components';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 
 import type { DecryptedLink } from '../../../store';
 import { useActions, useTreeForModals } from '../../../store';

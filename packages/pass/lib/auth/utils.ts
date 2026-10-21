@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import type { Maybe } from '../../types';
-import { AppStatus } from '../../types';
+import type { Maybe } from '../../types/utils';
+import { AppStatus } from '../../types/worker/state';
 import { LockMode } from './lock/types';
 import type { AuthStore } from './store';
 

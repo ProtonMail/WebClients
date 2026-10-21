@@ -4,7 +4,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 
-import { InAppNotificationState } from '../../types';
+import { InAppNotificationState } from '../../types/api/pass';
 import { PassModal } from '../Layout/Modal/PassModal';
 import { WithInAppNotification } from './WithInAppNotification';
 

@@ -14,7 +14,7 @@ import {
     clientSessionLocked,
 } from '@proton/pass/lib/client';
 import { PassIconStatus } from '@proton/pass/types/data/pass-icon';
-import type { MaybeNull } from '@proton/pass/types/utils/index';
+import type { MaybeNull } from '@proton/pass/types/utils';
 import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { BRAND_NAME, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 

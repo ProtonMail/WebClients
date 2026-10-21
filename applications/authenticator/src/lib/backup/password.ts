@@ -1,7 +1,7 @@
 import { decryptData, encryptData } from '@protontech/crypto/subtle/aesGcm.ts';
 import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
 
-import type { Maybe } from '@proton/pass/types';
+import type { Maybe } from '@proton/pass/types/utils';
 
 import { AuthenticatorEncryptionTag } from '../crypto';
 import { getStorageKey } from '../storage-key/instance';

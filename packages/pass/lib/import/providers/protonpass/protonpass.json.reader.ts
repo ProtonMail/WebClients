@@ -1,7 +1,9 @@
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
-import { type ItemImportIntent, ItemState, type MaybeNull } from '../../../../types';
+import { ItemState } from '../../../../types/data/items';
+import type { ItemImportIntent } from '../../../../types/data/items.dto';
 import { AutofillMode } from '../../../../types/protobuf';
+import type { MaybeNull } from '../../../../types/utils';
 import { partition } from '../../../../utils/array/partition';
 import { prop } from '../../../../utils/fp/lens';
 import { logger } from '../../../../utils/logger';

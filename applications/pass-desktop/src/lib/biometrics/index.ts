@@ -1,6 +1,6 @@
 import { platform } from 'os';
 
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types/utils';
 
 import { setupIpcHandler } from '../ipc';
 import type { BiometricsFactory, BiometricsPlatformHandler } from './types';

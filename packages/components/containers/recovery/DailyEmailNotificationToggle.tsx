@@ -1,4 +1,4 @@
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 
 import Toggle from '../../components/toggle/Toggle';
 

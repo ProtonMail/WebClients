@@ -15,7 +15,7 @@ import type { Fnode } from '@protontech/fathom';
 
 import { createModelProvider } from '@proton/pass/lib/extension/model-artifact/model-artifact';
 import type { DetectionRulesMatch } from '@proton/pass/lib/extension/rules/types';
-import type { Callback, Maybe, MaybeNull } from '@proton/pass/types/utils/index';
+import type { Callback, Maybe, MaybeNull } from '@proton/pass/types/utils';
 import { compareDomNodes } from '@proton/pass/utils/dom/sort';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { truthy } from '@proton/pass/utils/fp/predicates';

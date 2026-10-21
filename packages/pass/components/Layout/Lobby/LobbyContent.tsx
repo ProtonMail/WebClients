@@ -18,7 +18,8 @@ import {
     clientSessionLocked,
     clientStale,
 } from '../../../lib/client';
-import { AppStatus, type Maybe } from '../../../types';
+import type { Maybe } from '../../../types/utils';
+import { AppStatus } from '../../../types/worker/state';
 import { useAuthStore } from '../../Core/AuthStoreProvider';
 import { useOnline } from '../../Core/ConnectivityProvider';
 import { BiometricsUnlock } from '../../Lock/BiometricsUnlock';

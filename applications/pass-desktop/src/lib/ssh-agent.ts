@@ -1,6 +1,7 @@
 import type { BrowserWindow } from 'electron';
 
-import type { ItemRevision, MaybeNull, SSHKeyItem } from '@proton/pass/types';
+import type { ItemRevision, SSHKeyItem } from '@proton/pass/types/data/items';
+import type { MaybeNull } from '@proton/pass/types/utils';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';

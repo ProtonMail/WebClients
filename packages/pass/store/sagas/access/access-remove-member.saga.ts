@@ -1,7 +1,11 @@
 import { put, takeEvery } from 'redux-saga/effects';
 
 import { removeUserAccess } from '../../../lib/shares/share.requests';
-import { shareRemoveMemberAccessFailure, shareRemoveMemberAccessIntent, shareRemoveMemberAccessSuccess } from '../../actions';
+import {
+    shareRemoveMemberAccessFailure,
+    shareRemoveMemberAccessIntent,
+    shareRemoveMemberAccessSuccess,
+} from '../../actions/creators/access';
 import { syncAccess } from '../../actions/creators/polling';
 
 function* removeUserAccessWorker({ payload, meta: { request } }: ReturnType<typeof shareRemoveMemberAccessIntent>) {

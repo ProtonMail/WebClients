@@ -2,7 +2,8 @@ import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getAllPublicKeys } from '@proton/shared/lib/api/keys';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
-import type { GetAllPublicKeysResponse, Maybe } from '../../types';
+import type { GetAllPublicKeysResponse } from '../../types/api/keys';
+import type { Maybe } from '../../types/utils';
 import { api } from '../api/api';
 
 export const getPublicKeysForEmail = async (email: string): Promise<string[]> => {

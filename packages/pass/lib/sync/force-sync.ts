@@ -1,4 +1,4 @@
-import type { AnyStorage } from '../../types';
+import type { AnyStorage } from '../../types/worker/storage';
 import { logger } from '../../utils/logger';
 
 export type ForceSyncEntry = { done: boolean; attempts: number; lastAttemptAt: number };

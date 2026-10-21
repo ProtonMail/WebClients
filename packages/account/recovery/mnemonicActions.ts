@@ -2,7 +2,7 @@ import { CryptoProxy } from '@protontech/crypto';
 import { computeKeyPassword } from '@protontech/crypto/srp';
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { getMnemonicAuthInfo, reauthMnemonic } from '@proton/shared/lib/api/auth';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { MnemonicKeyResponse } from '@proton/shared/lib/api/settingsMnemonic';

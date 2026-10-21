@@ -1,6 +1,6 @@
 import { APPS } from '@proton/shared/lib/constants';
 
-import type { Api } from '../../types';
+import type { Api } from '../../types/api/api';
 import type { ConsumeForkPayload } from './fork';
 import { generateForkSecret, getForkChallenge, pullFork, requestFork } from './fork';
 

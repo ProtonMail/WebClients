@@ -14,7 +14,7 @@ import type { SpotlightMessageDefinition } from '../components/Spotlight/Spotlig
 import { FiveStarIcon, ShieldIcon } from '../components/Spotlight/SpotlightIcon';
 import { useUpselling } from '../components/Upsell/UpsellingProvider';
 import { AccountPath, UpsellRef } from '../constants';
-import { SpotlightMessage } from '../types';
+import { SpotlightMessage } from '../types/worker/spotlight';
 import { useNavigateToAccount } from './useNavigateToAccount';
 
 export const useSpotlightMessages = (extra: SpotlightMessageDefinition[] = []) => {

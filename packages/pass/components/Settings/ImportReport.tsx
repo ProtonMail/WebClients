@@ -8,7 +8,7 @@ import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { PROVIDER_INFO_MAP } from '../../lib/import/types';
 import { formatItemsCount } from '../../lib/items/item.utils';
-import { selectImportReport } from '../../store/selectors';
+import { selectImportReport } from '../../store/selectors/import';
 import { usePassCore } from '../Core/PassCoreProvider';
 import { SettingsPanel } from './SettingsPanel';
 

@@ -4,7 +4,8 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 
 import { useApi } from '@proton/app-context/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
-import { FeatureCode, useFeature } from '@proton/features';
+import { FeatureCode } from '@proton/features/interface';
+import useFeature from '@proton/features/useFeature';
 import type { Preparation } from '@proton/mail-renderer/helpers/transforms/transforms';
 import { prepareHtml, preparePlainText } from '@proton/mail-renderer/helpers/transforms/transforms';
 import { useBase64Cache } from '@proton/mail/hooks/useBase64Cache';
