@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import { selectCanDisplayAccountSecuritySection } from '@proton/account';
+import { selectCanDisplayAccountSecuritySection } from '@proton/account/accountSecurity/accountSecuritySlice';
 import { baseUseSelector } from '@proton/react-redux-store/ProtonStoreContext';
 
 import DrawerAppScrollContainer from '../shared/DrawerAppScrollContainer';

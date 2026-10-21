@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { generatePqcAddressKeys, generatePqcUserKey, optInToPqc } from '@proton/account';
+import { generatePqcAddressKeys, generatePqcUserKey, optInToPqc } from '@proton/account/addressKeys/pqcActions';
 import { selectMnemonicData } from '@proton/account/recovery/mnemonic';
 import { selectRecoveryFileData } from '@proton/account/recovery/recoveryFile';
 import { Button } from '@proton/atoms/Button/Button';

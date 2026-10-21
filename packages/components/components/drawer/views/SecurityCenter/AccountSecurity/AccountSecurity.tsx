@@ -5,7 +5,7 @@ import {
     selectAccountSecurityIssuesCount,
     selectHasAccountSecurityCardToDisplay,
     selectHasSentinelOrTFACardToDisplay,
-} from '@proton/account';
+} from '@proton/account/accountSecurity/accountSecuritySlice';
 import { useApi } from '@proton/app-context/useApi';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';

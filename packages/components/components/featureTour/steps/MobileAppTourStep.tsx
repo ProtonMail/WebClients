@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { userSettingsThunk } from '@proton/account';
+import { userSettingsThunk } from '@proton/account/userSettings';
 import { Href } from '@proton/atoms/Href/Href';
 import { appendUrlSearchParams } from '@proton/shared/lib/helpers/url';
 import { isMailMobileAppUser } from '@proton/shared/lib/helpers/usedClientsFlags';
@@ -9,8 +9,7 @@ import downloadOniOS from '@proton/styles/assets/img/onboarding/feature_tour-app
 import downloadOnGooglePlay from '@proton/styles/assets/img/onboarding/feature_tour-google_play.svg';
 import mobileAppBackground from '@proton/styles/assets/img/onboarding/feature_tour-mobile-app-background.svg';
 
-import type { FeatureTourStepProps } from '../interface';
-import type { ShouldDisplayTourStep } from '../interface';
+import type { FeatureTourStepProps, ShouldDisplayTourStep } from '../interface';
 import FeatureTourStepCTA from './components/FeatureTourStepCTA';
 import FeatureTourStepsContent from './components/FeatureTourStepsContent';
 

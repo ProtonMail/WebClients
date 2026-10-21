@@ -3,7 +3,7 @@ import { Fragment } from 'react';
 
 import { c } from 'ttag';
 
-import { resumeGroupMember as resumeGroupMemberAction, updateOverridePermissions } from '@proton/account';
+import { resumeGroupMember as resumeGroupMemberAction, updateOverridePermissions } from '@proton/account/groupMembers';
 import { addGroupOwnerThunk } from '@proton/account/groups/addGroupOwner';
 import { deleteGroupMemberThunk } from '@proton/account/groups/deleteGroupMember';
 import { getIsScimGroup } from '@proton/account/groups/groupFlags';
