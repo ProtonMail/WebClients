@@ -345,14 +345,7 @@ function $handleInsertInput(
   }
 
   if (data !== null && dataTransfer === null) {
-    return $handleInsertTextData(
-      data,
-      latestSelection,
-      existingParentSuggestion,
-      onSuggestionCreation,
-      suggestionID,
-      logger,
-    )
+    return $handleInsertTextData(data, latestSelection, onSuggestionCreation, suggestionID, logger)
   }
 
   return true
@@ -488,23 +481,9 @@ function $handleInsertParagraphOnEmptyListItem(
   return true
 }
 
-function $canTextDataBeInsertedDirectlyIntoSuggestion(suggestion: ProtonNode | null): boolean {
-  if (!suggestion) {
-    return false
-  }
-
-  const type = suggestion.getSuggestionTypeOrThrow()
-  if (type === 'insert' || type === 'delete') {
-    return true
-  }
-
-  return false
-}
-
 function $handleInsertTextData(
   data: string,
   selection: RangeSelection,
-  existingParentSuggestion: ProtonNode | null,
   onSuggestionCreation: (id: string) => void,
   suggestionID: string,
   logger: DocsLogger,
@@ -512,12 +491,12 @@ function $handleInsertTextData(
   logger.info('suggestion-mode: Inserting text data: ', data)
 
   const focusNode = selection.focus.getNode()
+  const existingParentSuggestion = $findMatchingParent(focusNode, $isSuggestionNode)
+  const isInsideExistingInsertSuggestion = existingParentSuggestion?.getSuggestionTypeOrThrow() === 'insert'
 
   const textNode = $createTextNode(data)
   textNode.setFormat(selection.format)
   textNode.setStyle(selection.style)
-
-  const canInsertTextDataDirectly = $canTextDataBeInsertedDirectlyIntoSuggestion(existingParentSuggestion)
 
   const isExistingSuggestionEmpty =
     existingParentSuggestion &&
@@ -555,7 +534,7 @@ function $handleInsertTextData(
   }
 
   const shouldSplitExistingSuggestionBeforeInserting =
-    existingParentSuggestion && !canInsertTextDataDirectly && !isExistingSuggestionEmpty
+    existingParentSuggestion && !isInsideExistingInsertSuggestion && !isExistingSuggestionEmpty
   if (shouldSplitExistingSuggestionBeforeInserting) {
     logger.info('suggestion-mode: Will split existing non-insert suggestion and insert new insert suggestion')
     const focus = selection.focus
@@ -592,9 +571,6 @@ function $handleInsertTextData(
     return true
   }
 
-  const isInsideExistingInsertSuggestion =
-    existingParentSuggestion && existingParentSuggestion.getSuggestionTypeOrThrow() === 'insert'
-
   const isFocusNodeText = $isTextNode(focusNode)
   const isAtEndOfInlineCode =
     isFocusNodeText && focusNode.hasFormat('code') && selection.focus.offset === focusNode.getTextContentSize()
@@ -609,7 +585,7 @@ function $handleInsertTextData(
     return true
   }
 
-  if (existingParentSuggestion && canInsertTextDataDirectly) {
+  if (isInsideExistingInsertSuggestion) {
     logger.info('suggestion-mode: Will just insert text as already inside insert suggestion')
     if (isFocusNodeText) {
       const latestFocusOffset = selection.focus.offset
