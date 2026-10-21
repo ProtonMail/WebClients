@@ -27,6 +27,7 @@ const prodCatalogGrants = {
     [PLANS.VPN_PRO]: [
         EntitlementName.FlagsVpn,
         EntitlementName.Business,
+        EntitlementName.Groups,
         EntitlementName.MultiUser,
         EntitlementName.ExternalManagedMembers,
     ],
@@ -43,6 +44,7 @@ const prodCatalogGrants = {
     [PLANS.VPN_BUSINESS]: [
         EntitlementName.FlagsVpn,
         EntitlementName.Business,
+        EntitlementName.MaxDedicatedIps,
         EntitlementName.OrganizationPolicy,
         EntitlementName.Groups,
         EntitlementName.MultiUser,

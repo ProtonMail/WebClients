@@ -68,6 +68,10 @@ export const entitlementChecksForSelection = {
 
     hasMaxDedicatedIps: (r) => r.hasEntitlement(EntitlementName.MaxDedicatedIps),
 
+    hasDedicatedIpsOrIsVpnB2B: (r) =>
+        r.hasEntitlement(EntitlementName.MaxDedicatedIps) ||
+        r.hasMatchingSubscription({ includes: [EntitlementName.Business, EntitlementName.FlagsVpn] }),
+
     hasVpnLocationFilter: (r) => r.hasEntitlement(EntitlementName.VpnLocationFilter),
 
     hasGroups: (r) => r.hasEntitlement(EntitlementName.Groups),

@@ -267,3 +267,21 @@ describe('external members', () => {
         expect(getExternalMemberRoutes({ plan: PLANS.MAIL_PRO, organization }).multiUserCreation).toBe(false);
     });
 });
+describe('getOrganizationAppRoutes gateways', () => {
+    const isGatewaysAvailable = (input: OrganizationRoutesInput) =>
+        getOrganizationAppRoutes(buildOrganizationRouterParams(input)).routes.gateways.available;
+
+    it.each([PLANS.VPN_BUSINESS, PLANS.VPN_PRO] as const)('shows Gateways to a %s organization', (plan) => {
+        expect(isGatewaysAvailable({ plan })).toBe(true);
+    });
+
+    it.each([PLANS.PASS_BUSINESS, PLANS.PASS_PRO] as const)('hides Gateways from a %s organization', (plan) => {
+        expect(isGatewaysAvailable({ plan })).toBe(false);
+    });
+
+    it('hides Gateways from a VPN Business admin without the gateway permission', () => {
+        expect(
+            isGatewaysAvailable({ plan: PLANS.VPN_BUSINESS, permissions: permissionsWithout('account.gateway.read') })
+        ).toBe(false);
+    });
+});
