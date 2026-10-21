@@ -5,8 +5,8 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { Badge, type Breakpoints, useContactEmailsCache } from '@proton/components';
 import type { ConfirmActionModalProps } from '@proton/components/components/confirmActionModal/ConfirmActionModal';
-import { MemberRole, NodeType, getDrivePerNodeType } from '@proton/drive';
 import { useThumbnail } from '@proton/drive/modules/thumbnails';
+import { MemberRole, NodeType, getDrivePerNodeType } from '@proton/drive/sdk';
 
 import { NameCell, defaultNameCellConfig } from '../../sections/commonDriveExplorerCells/NameCell';
 import {

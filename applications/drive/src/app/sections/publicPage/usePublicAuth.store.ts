@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-import { MemberRole } from '@proton/drive';
+import { MemberRole } from '@proton/drive/sdk';
 
 import { NODE_EDIT_EXPIRACY } from './constants';
 

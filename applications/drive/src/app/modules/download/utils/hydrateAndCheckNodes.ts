@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import type { NodeEntity } from '@proton/drive/index';
 import { isMissingNode } from '@proton/drive/modules/nodes';
+import type { NodeEntity } from '@proton/drive/sdk';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
 import { DownloadDriveClientRegistry } from '../DownloadDriveClientRegistry';

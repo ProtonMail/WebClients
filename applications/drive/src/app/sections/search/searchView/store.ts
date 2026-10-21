@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 
-import type { NodeType } from '@proton/drive';
 import type { EffectiveRole } from '@proton/drive/modules/nodes';
+import type { NodeType } from '@proton/drive/sdk';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import type { SortField } from '../../../modules/sorting';

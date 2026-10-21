@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { c } from 'ttag'
 
 import { useNotifications } from '@proton/app-context/useNotifications'
-import { ValidationError, getDrive } from '@proton/drive'
+import { ValidationError, getDrive } from '@proton/drive/sdk'
 // eslint-disable-next-line proton/restricted-imports
 import { receiveCustomPasswordFromDriveWindow } from '@proton/drive/modules/publicDocsSharing'
 import { authenticatePublicDrive, loadPublicLinkInfo } from '@proton/docs-core/lib/DriveSDK/authenticatePublicDrive'

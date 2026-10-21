@@ -1,4 +1,4 @@
-import type { NodeEntity } from '@proton/drive';
+import type { NodeEntity } from '@proton/drive/sdk';
 
 import { Logger } from '../../../../shared/Logger';
 import { SEARCH_MAX_INDEXED_DOCUMENTS } from '../../../../shared/config';

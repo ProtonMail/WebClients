@@ -4,7 +4,7 @@ import { NodeType, NodeWithSameNameExistsValidationError } from '@protontech/dri
 
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
-import { generatePhotosExtendedAttributes } from '../../extendedAttributes';
+import { generatePhotosExtendedAttributes } from '../../extendedAttributes/photosExtendedAttributesGenerator';
 import { generateThumbnail } from '../../thumbnails';
 import { UploadDriveClientRegistry } from '../UploadDriveClientRegistry';
 import { useUploadControllerStore } from '../store/uploadController.store';
@@ -13,7 +13,7 @@ import { PhotosUploadExecutor } from './PhotosUploadExecutor';
 
 jest.mock('../UploadDriveClientRegistry');
 jest.mock('../../thumbnails');
-jest.mock('../../extendedAttributes');
+jest.mock('../../extendedAttributes/photosExtendedAttributesGenerator');
 jest.mock('../store/uploadController.store');
 jest.mock('@proton/shared/lib/helpers/sentry', () => ({
     traceError: jest.fn(),

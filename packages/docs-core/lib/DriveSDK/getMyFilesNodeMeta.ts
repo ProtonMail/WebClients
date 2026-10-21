@@ -1,4 +1,4 @@
-import { getDrive, splitNodeUid } from '@proton/drive'
+import { getDrive, splitNodeUid } from '@proton/drive/sdk'
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors'
 import { traceErrorSDK } from './traceErrorSDK'
 

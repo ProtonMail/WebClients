@@ -1,6 +1,6 @@
-import type { NodeEntity } from '@proton/drive/index';
-import { AbortError, NodeType } from '@proton/drive/index';
 import { getNodeName } from '@proton/drive/modules/nodes';
+import type { NodeEntity } from '@proton/drive/sdk';
+import { AbortError, NodeType } from '@proton/drive/sdk';
 
 import { createAsyncQueue } from '../../utils/asyncQueue';
 import { getNodeStorageSize } from '../../utils/sdk/getNodeStorageSize';

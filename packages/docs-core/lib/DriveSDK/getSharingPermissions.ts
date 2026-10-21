@@ -1,5 +1,5 @@
 import type { NodeMeta } from '@proton/docs-shared'
-import { generateNodeUid, getDrive, MemberRole } from '@proton/drive'
+import { generateNodeUid, getDrive, MemberRole } from '@proton/drive/sdk'
 import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions'
 import { getRoleFromHierarchy } from './getRoleFromHierarchy'
 import { traceErrorSDK } from './traceErrorSDK'

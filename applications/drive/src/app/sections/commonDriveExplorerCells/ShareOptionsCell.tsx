@@ -2,8 +2,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import type { ProtonDriveClient, ProtonDrivePhotosClient } from '@proton/drive';
 import { useSharingModal } from '@proton/drive/modals/sharingModal';
+import type { ProtonDriveClient, ProtonDrivePhotosClient } from '@proton/drive/sdk';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 
 import type { CellDefinitionConfig } from '../../statelessComponents/DriveExplorer/types';

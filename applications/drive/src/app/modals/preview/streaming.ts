@@ -1,9 +1,9 @@
 import { type SyntheticEvent, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
-import type { ProtonDriveClient, SeekableReadableStream } from '@proton/drive';
 import { EnrichedError, errorToString, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { logging } from '@proton/drive/modules/logging';
 import { canHtmlVideoPlay } from '@proton/drive/modules/thumbnails';
+import type { ProtonDriveClient, SeekableReadableStream } from '@proton/drive/sdk';
 import metrics from '@proton/metrics/metricsInstance';
 import { isVideo } from '@proton/shared/lib/helpers/mimetype';
 import { traceError } from '@proton/shared/lib/helpers/sentry';

@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
-import { MemberRole, NodeType } from '@proton/drive/index';
-import type { ProtonInvitationWithNode } from '@proton/drive/index';
+import { MemberRole, NodeType } from '@proton/drive/sdk';
+import type { ProtonInvitationWithNode } from '@proton/drive/sdk';
 
 import { loadAlbumInvitations } from '../loaders/loadAlbumInvitations';
 import { useAlbumInvitationsStore } from '../useAlbumInvitations.store';

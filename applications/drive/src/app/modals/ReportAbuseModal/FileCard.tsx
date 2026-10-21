@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { FileIcon } from '@proton/components';
-import { NodeType } from '@proton/drive';
+import { NodeType } from '@proton/drive/sdk';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import clsx from '@proton/utils/clsx';
 

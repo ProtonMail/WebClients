@@ -1,5 +1,5 @@
 import type { NodeMeta } from '@proton/docs-shared/lib/BasicTypes'
-import { NodeType, generateNodeUid, getDrive } from '@proton/drive'
+import { NodeType, generateNodeUid, getDrive } from '@proton/drive/sdk'
 import { traceErrorSDK } from './traceErrorSDK'
 
 export async function findAvailableNodeName(parentMeta: NodeMeta, candidateName: string) {

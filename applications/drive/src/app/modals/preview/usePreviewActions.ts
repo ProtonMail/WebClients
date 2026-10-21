@@ -1,5 +1,5 @@
-import { MemberRole, type NodeEntity } from '@proton/drive';
 import { recentlyAccessed } from '@proton/drive/modules/recentlyAccessed';
+import { MemberRole, type NodeEntity } from '@proton/drive/sdk';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet, isSupportedText } from '@proton/shared/lib/helpers/mimetype';
 import { useFlag } from '@proton/unleash/useFlag';
 

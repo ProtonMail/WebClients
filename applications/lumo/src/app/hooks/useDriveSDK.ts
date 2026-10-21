@@ -3,8 +3,8 @@ import { useCallback, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { NodeType, useDrive } from '@proton/drive';
 import { generateThumbnail } from '@proton/drive/public/thumbnails';
+import { NodeType, useDrive } from '@proton/drive/sdk';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 
 import config from '../config';

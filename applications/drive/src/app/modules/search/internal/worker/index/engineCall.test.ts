@@ -1,4 +1,4 @@
-import { AbortError as SdkAbortError } from '@proton/drive';
+import { AbortError as SdkAbortError } from '@proton/drive/sdk';
 import { Document, Engine, Value } from '@proton/proton-foundation-search';
 
 import { InvalidIndexerState, SearchLibraryError, classifyError, isRepairableError } from '../../shared/errors';

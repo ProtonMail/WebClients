@@ -3,7 +3,7 @@ import React from 'react';
 import { screen } from '@testing-library/react';
 
 import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
-import { NodeType } from '@proton/drive';
+import { NodeType } from '@proton/drive/sdk';
 
 import { GridItemContent } from './GridItemContent';
 

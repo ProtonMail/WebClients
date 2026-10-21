@@ -1,7 +1,7 @@
-import type { ProtonDriveClient } from '@proton/drive';
-import { type NodeEntity, NodeType, splitNodeUid } from '@proton/drive';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { getNodeEffectiveRole } from '@proton/drive/modules/nodes';
+import type { ProtonDriveClient } from '@proton/drive/sdk';
+import { type NodeEntity, NodeType, splitNodeUid } from '@proton/drive/sdk';
 
 import { getNodeDisplaySize } from '../../utils/sdk/getNodeDisplaySize';
 import { getSignatureIssues } from '../../utils/sdk/getSignatureIssues';

@@ -2,8 +2,8 @@ import { act, renderHook, waitFor } from '@testing-library/react';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useAuthentication } from '@proton/components';
-import { NodeType, getDrive } from '@proton/drive';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
+import { NodeType, getDrive } from '@proton/drive/sdk';
 import { isNativeProtonDocsAppFile } from '@proton/shared/lib/helpers/mimetype';
 
 import { setPublicLinkClient } from './publicLinkClient';
@@ -18,7 +18,7 @@ jest.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: jest.fn(),
 }));
 
-jest.mock('@proton/drive', () => ({
+jest.mock('@proton/drive/sdk', () => ({
     getDrive: jest.fn(),
     NodeType: { File: 'file', Folder: 'folder', Photo: 'photo' },
     DecryptionError: class DecryptionError extends Error {},

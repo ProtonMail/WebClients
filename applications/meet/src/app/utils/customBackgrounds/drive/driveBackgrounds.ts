@@ -1,4 +1,4 @@
-import { NodeType, NodeWithSameNameExistsValidationError, ThumbnailType, getDrive } from '@proton/drive';
+import { NodeType, NodeWithSameNameExistsValidationError, ThumbnailType, getDrive } from '@proton/drive/sdk';
 
 import type { PreparedBackground } from '../backgroundPreview';
 import { isAllowedBackgroundMediaType } from '../constants';

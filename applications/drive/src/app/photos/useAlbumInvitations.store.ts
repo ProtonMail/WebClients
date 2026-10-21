@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-import type { ProtonInvitationWithNode } from '@proton/drive/index';
+import type { ProtonInvitationWithNode } from '@proton/drive/sdk';
 
 interface AlbumInvitationsStore {
     invitations: Map<string, ProtonInvitationWithNode>;

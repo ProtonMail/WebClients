@@ -1,4 +1,4 @@
-import type { ProtonDrivePublicLinkClient } from '@proton/drive'
+import type { ProtonDrivePublicLinkClient } from '@proton/drive/sdk'
 import type { SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions'
 
 export type PublicLinkInfo = {

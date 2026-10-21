@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { selectUserKeys } from '@proton/account/userKeys/index';
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { ValidationError } from '@proton/drive';
+import { ValidationError } from '@proton/drive/sdk';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch, useMeetSelector, useMeetStore } from '@proton/meet/store/hooks';
 import {

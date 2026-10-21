@@ -3,9 +3,9 @@ import { useCallback, useEffect } from 'react';
 import { useShallow } from 'zustand/react/shallow';
 
 import { Loader, useAppTitle } from '@proton/components';
-import { generateNodeUid, splitNodeUid } from '@proton/drive/index';
 import { type MoveNodesItemMap, useMoveNodes } from '@proton/drive/modules/moveNodes';
 import { uploadManager } from '@proton/drive/modules/upload';
+import { generateNodeUid, splitNodeUid } from '@proton/drive/sdk';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import { useUserSettings } from '../../../legacy/store';

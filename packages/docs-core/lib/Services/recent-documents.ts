@@ -5,7 +5,7 @@ import type { LoggerInterface } from '@proton/shared/lib/logs'
 import type { RecentDocumentAPIItem } from './../Api/Types/GetRecentsResponse'
 import type { CacheService } from './CacheService'
 import { isProtonDocsDocument, type ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
-import type { MemberRole } from '@proton/drive'
+import type { MemberRole } from '@proton/drive/sdk'
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions'
 
 // Please remember to bump this number if you make changes to the format of

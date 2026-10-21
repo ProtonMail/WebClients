@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { TimeIntl } from '@proton/components';
-import type { Revision } from '@proton/drive';
+import type { Revision } from '@proton/drive/sdk';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 
 import { useContextMenuControls } from '../../../legacy/components/FileBrowser';

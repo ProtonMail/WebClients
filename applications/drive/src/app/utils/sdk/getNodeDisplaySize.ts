@@ -1,4 +1,4 @@
-import type { NodeEntity } from '@proton/drive';
+import type { NodeEntity } from '@proton/drive/sdk';
 
 export function getNodeDisplaySize(node: NodeEntity): number | undefined {
     if (node.activeRevision) {

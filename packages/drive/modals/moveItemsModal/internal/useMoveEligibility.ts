@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { MemberRole, type NodeEntity, type ProtonDriveClient } from '../../../index';
 import { handleSdkError } from '../../../legacy/errorHandling';
 import { getNodeEffectiveRole } from '../../../modules/nodes';
+import { MemberRole, type NodeEntity, type ProtonDriveClient } from '../../../sdk';
 
 type SelectedItemsConfig = {
     nodeUid: string;

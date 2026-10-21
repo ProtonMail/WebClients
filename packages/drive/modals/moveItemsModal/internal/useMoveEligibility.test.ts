@@ -1,10 +1,10 @@
 import { renderHook, waitFor } from '@testing-library/react';
 
-import type { ProtonDriveClient } from '../../../index';
-import { MemberRole, generateNodeUid } from '../../../index';
 import { handleSdkError } from '../../../legacy/errorHandling';
 import { getNodeEffectiveRole } from '../../../modules/nodes';
 import { createMockNodeEntity } from '../../../modules/testing';
+import type { ProtonDriveClient } from '../../../sdk';
+import { MemberRole, generateNodeUid } from '../../../sdk';
 import { useMoveEligibility } from './useMoveEligibility';
 
 jest.mock('../../../legacy/errorHandling', () => ({

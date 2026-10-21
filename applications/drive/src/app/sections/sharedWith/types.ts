@@ -1,4 +1,4 @@
-import type { MemberRole, NodeType } from '@proton/drive';
+import type { MemberRole, NodeType } from '@proton/drive/sdk';
 
 export enum ItemType {
     BOOKMARK = 'bookmark',

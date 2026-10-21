@@ -1,6 +1,6 @@
-import type { NodeEntity } from '../../../../index';
-import { getDrive } from '../../../../index';
 import { sendErrorReport } from '../../../../modules/busDriver';
+import type { NodeEntity } from '../../../../sdk';
+import { getDrive } from '../../../../sdk';
 
 export async function iterateSharedWithMeNodes(abortSignal?: AbortSignal) {
     const result: { node: NodeEntity }[] = [];

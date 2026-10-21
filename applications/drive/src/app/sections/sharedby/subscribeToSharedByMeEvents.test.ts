@@ -1,14 +1,14 @@
-import { type NodeEntity, getDrivePerNodeType } from '@proton/drive';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
 import { getFormattedNodeLocation } from '@proton/drive/modules/nodes';
+import { type NodeEntity, getDrivePerNodeType } from '@proton/drive/sdk';
 
 import { getSignatureIssues } from '../../utils/sdk/getSignatureIssues';
 import { subscribeToSharedByMeEvents } from './subscribeToSharedByMeEvents';
 import { getOldestShareCreationTime } from './utils/getOldestShareCreationTime';
 
-jest.mock('@proton/drive');
+jest.mock('@proton/drive/sdk');
 jest.mock('@proton/drive/modules/busDriver', () => ({
     ...jest.requireActual('@proton/drive/modules/busDriver'),
     getBusDriver: jest.fn(),
