@@ -1,3 +1,9 @@
+### Version 1.43.0
+
+- New download modal with a QR code for mobile apps
+- Support importing folders from LastPass, KeePass, NordPass, Keeper, RoboForm and Proton Pass (gradual rollout)
+- Fix pinned items not opening when outside the selected vault or folder
+
 ### Version 1.42.0
 
 - Support importing folders from Bitwarden (gradual rollout)
