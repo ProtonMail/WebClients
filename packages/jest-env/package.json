@@ -3,10 +3,15 @@
     "version": "0.1.0",
     "description": "",
     "main": "index.js",
+    "scripts": {
+        "lint": "oxlint --quiet"
+    },
     "dependencies": {
         "jest-environment-jsdom": "^30.5.2"
     },
     "devDependencies": {
-        "@proton/eslint-config-proton": "workspace:^"
+        "@proton/oxlint-config": "workspace:^",
+        "oxlint": "1.87.0",
+        "oxlint-tsgolint": "7.0.2004"
     }
 }
