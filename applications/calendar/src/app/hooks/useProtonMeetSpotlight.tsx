@@ -2,8 +2,9 @@ import { useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { useUserSettings, useWelcomeFlags } from '@proton/account';
 import { useUser } from '@proton/account/user/hooks';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import { Button } from '@proton/atoms/Button/Button';
 import { useMeetFunnelTelemetry } from '@proton/calendar-video-conferencing/protonMeetIntegration/meetFunnelTelemetry';
 import useAppLink from '@proton/components/components/link/useAppLink';

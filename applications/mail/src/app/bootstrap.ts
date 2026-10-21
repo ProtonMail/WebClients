@@ -2,20 +2,18 @@ import { logger } from '@protontech/logger';
 import { ALL_CONSOLE_LEVELS } from '@protontech/logger/constants';
 import type { LogLevel } from '@protontech/logger/types';
 
-import {
-    addressesThunk,
-    initEvent,
-    organizationThunk,
-    retentionPoliciesThunk,
-    startLogoutListener,
-    userSettingsThunk,
-    userThunk,
-    welcomeFlagsActions,
-} from '@proton/account';
+import { addressesThunk } from '@proton/account/addresses';
 import * as bootstrap from '@proton/account/bootstrap';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
 import { serverEvent } from '@proton/account/eventLoop';
+import { initEvent } from '@proton/account/init';
+import { organizationThunk } from '@proton/account/organization';
 import { getDecryptedPersistedState } from '@proton/account/persist/helper';
+import { startLogoutListener } from '@proton/account/persist/listener';
+import { retentionPoliciesThunk } from '@proton/account/retentionPolicies';
+import { userThunk } from '@proton/account/user';
+import { userSettingsThunk } from '@proton/account/userSettings';
+import { welcomeFlagsActions } from '@proton/account/welcomeFlags';
 import { createCalendarModelEventManager } from '@proton/calendar/calendarModelEventManager';
 import { setupGuestCrossStorage } from '@proton/cross-storage/account/guest';
 import { FeatureCode } from '@proton/features/interface';

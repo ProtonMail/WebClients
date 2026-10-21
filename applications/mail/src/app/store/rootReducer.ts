@@ -1,11 +1,9 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
-import {
-    breachesCountReducer,
-    protonDomainsReducer,
-    retentionPoliciesReducer,
-    securityCenterReducer,
-} from '@proton/account';
+import { securityCenterReducer } from '@proton/account/accountSecurity/accountSecuritySlice';
+import { breachesCountReducer } from '@proton/account/breaches/breachNotificationsSlice';
+import { protonDomainsReducer } from '@proton/account/protonDomains';
+import { retentionPoliciesReducer } from '@proton/account/retentionPolicies';
 import { calendarsBootstrapReducer } from '@proton/calendar/calendarBootstrap';
 import { calendarSettingsReducer } from '@proton/calendar/calendarUserSettings';
 import { calendarsReducer } from '@proton/calendar/calendars';

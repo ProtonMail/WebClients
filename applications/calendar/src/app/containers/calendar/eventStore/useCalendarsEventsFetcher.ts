@@ -1,7 +1,7 @@
 import type { MutableRefObject } from 'react';
 import { useEffect, useRef } from 'react';
 
-import { useUserSettings } from '@proton/account/index';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import type { DateTuple } from '@proton/components/components/miniCalendar/interface';
 import useLoading from '@proton/hooks/useLoading';
