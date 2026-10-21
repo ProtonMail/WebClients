@@ -10,7 +10,7 @@ import clsx from 'clsx'
 import { useDocsUserMode } from '../../DocsPresentationProvider'
 import { EditorUserMode } from '../../contract/EditorUserMode'
 import { useDocsDependencies } from '../../DocsDependenciesProvider'
-import { useViewportWidth } from '../../../DocsLayout'
+import { useViewportWidth } from '../../Layout/DocsLayout'
 
 // Proton's "small" breakpoint, at a 16px root font size.
 const SMALL_VIEWPORT_MAX_WIDTH = 680

@@ -1,8 +1,14 @@
 import React from 'react'
-import clsx from '@proton/utils/clsx'
+import { clsx } from 'clsx'
 
-interface PanelResizeHandleProps {
+const KEYBOARD_RESIZE_STEP = 10
+
+export interface PanelResizeHandleProps {
   className: string
+  label: string
+  width: number
+  minWidth: number
+  maxWidth: number
   onResizeEnd: () => void
   onResize: (startWidth: number, delta: number) => void
   onReset: () => void
@@ -11,6 +17,10 @@ interface PanelResizeHandleProps {
 
 export function PanelResizeHandle({
   className,
+  label,
+  width,
+  minWidth,
+  maxWidth,
   onResizeEnd,
   onResize,
   onReset,
@@ -65,9 +75,24 @@ export function PanelResizeHandle({
     handle.addEventListener('pointercancel', onPointerUp)
   }
 
+  function handleKeyDown(e: React.KeyboardEvent<HTMLDivElement>) {
+    if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') {
+      return
+    }
+    e.preventDefault()
+    onResize(width, e.key === 'ArrowLeft' ? -KEYBOARD_RESIZE_STEP : KEYBOARD_RESIZE_STEP)
+  }
+
   return (
     <div
+      role="separator"
+      tabIndex={0}
+      aria-label={label}
       aria-orientation="vertical"
+      aria-valuenow={width}
+      aria-valuemin={minWidth}
+      aria-valuemax={maxWidth}
+      onKeyDown={handleKeyDown}
       onPointerDown={handleResize}
       onDoubleClick={onReset}
       className={clsx('absolute bottom-0 top-0 h-full w-3 cursor-col-resize max-[815px]:hidden', className)}
