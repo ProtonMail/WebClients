@@ -93,9 +93,6 @@
       "Desktop and mobile apps": [
         "Appar för stationär dator och mobil"
       ],
-      "Downgrade plan": [
-        "Nedgradera paket"
-      ],
       "Downgrade to Free": [
         "Nedgradera till Free"
       ],
@@ -628,9 +625,6 @@
       "Done": [
         "Klar"
       ],
-      "Downgrade": [
-        "Nedgradera"
-      ],
       "Download": [
         "Ladda ner"
       ],
@@ -1078,6 +1072,9 @@
       "Recover data": [
         "Återställ data"
       ],
+      "Recover previous account": [
+        "Återställ tidigare konto"
+      ],
       "Refer a friend": [
         "Hänvisa en vän"
       ],
@@ -1104,9 +1101,6 @@
       ],
       "Remove all other devices": [
         "Ta bort alla andra enheter"
-      ],
-      "Remove bonuses": [
-        "Ta bort bonusar"
       ],
       "Remove button": [
         "Ta bort knapp"
@@ -1401,6 +1395,9 @@
       ],
       "Take a tour": [
         "Ta en rundtur"
+      ],
+      "Take the survey": [
+        "Gör undersökningen"
       ],
       "Template with invite links": [
         "Mall med inbjudningslänkar"
@@ -2035,11 +2032,6 @@
         "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få ${ discountPercentage } rabatt på ${ plan.Title } när du prenumererar för ${ cycle } månader."
       ]
     },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "30-dagars pengarna tillbaka-garanti"
-      ]
-    },
     "bf2023: Title": {
       "Offer unavailable": [
         "Erbjudande ej tillgängligt"
@@ -2482,6 +2474,9 @@
       ]
     },
     "claimed address": {
+      "Sign in with your organization?": [
+        "Logga in med din organisation?"
+      ],
       "Verify it's you": [
         "Verifiera att det är du"
       ],
@@ -4500,6 +4495,9 @@
       "Add 1 more": [
         "Lägg till 1 till"
       ],
+      "Add contact": [
+        "Lägg till kontakt"
+      ],
       "Add emergency contact": [
         "Lägg till nödkontakt"
       ],
@@ -5947,14 +5945,6 @@
         "Visa inbjudan"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "Familjegrupp känns inte igen. Försök igen."
-      ],
-      "Organization not recognized. Try again.": [
-        "Organisation känns inte igen. Försök igen."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-grupper"
@@ -6102,22 +6092,8 @@
       ]
     },
     "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "Ange familjegruppens namn för att bekräfta"
-      ],
-      "Enter organization name to confirm": [
-        "Ange organisationsnamn för att bekräfta"
-      ],
       "Family name": [
         "Familjenamn"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Detta kommer permanent ta bort alla underanvändare, konton och data som är associerade med din organisation."
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Detta kommer ta bort alla ${ BRAND_NAME } premiumfunktioner för varje familjemedlem."
       ]
     },
     "familyOffer_2023:Settings section title": {
@@ -6145,12 +6121,6 @@
       ],
       "Change family name": [
         "Ändra familjenamn"
-      ],
-      "Delete family group?": [
-        "Ta bort familjegrupp?"
-      ],
-      "Delete organization?": [
-        "Ta bort organisation?"
       ],
       "Edit user storage": [
         "Redigera användares lagringsutrymme"
@@ -7357,18 +7327,6 @@
         "${ total } användare hittades",
         "${ total } användare hittades"
       ],
-      "${ vaultLink } created": [
-        "${ vaultLink } skapad"
-      ],
-      "${ vaultLink } deleted": [
-        "${ vaultLink } uppdaterad"
-      ],
-      "${ vaultLink } shared with email": [
-        "${ vaultLink } delad med e-post"
-      ],
-      "${ vaultLink } updated": [
-        "${ vaultLink } uppdaterad"
-      ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
         "${ VPN_SHORT_APP_NAME } döljer din trafik. ${ PASS_SHORT_APP_NAME } döljer din identitet\n— obegränsade **hide-my-email-alias** och **varningar om dark web** om dina uppgifter någonsin läcker."
       ],
@@ -7437,13 +7395,6 @@
         "+ ${ invisibleCount } Mer",
         "+ ${ invisibleCount } Mer"
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } bonuslagring"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } anslutning för ${ VPN_APP_NAME } (låter dig ansluta fler enheter till VPN)",
-        "+${ organization.BonusVPN } anslutningar för ${ VPN_APP_NAME } (låter dig ansluta fler enheter till VPN)"
-      ],
       "1 device per user": [
         "1 enhet per användare"
       ],
@@ -7455,9 +7406,6 @@
       ],
       "30-day money-back guarantee": [
         "30 dagars pengarna-tillbaka-garanti"
-      ],
-      "30-day money-back guarantee.": [
-        "30 dagars pengarna-tillbaka-garanti."
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ BRAND_NAME } är värd för en ${ protonSubdomain }, vilket låter dig snabbt konfigurera en underdomän. ${ learnMoreLink }"
@@ -7739,9 +7687,6 @@
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "Genom att inaktivera kontoövervakning kommer du också rensa hela din historik. Är du säker på att du vill inaktivera detta?"
       ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Genom att nedgradera till ett gratiskonto kommer du permanent att förlora dessa fördelar, även om du uppgraderar igen i framtiden."
-      ],
       "By leaving now, changes may not be saved": [
         "Genom att lämna nu kan ändringar inte sparas"
       ],
@@ -8014,9 +7959,6 @@
       ],
       "Downgrade": [
         "Nedgradera"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Nedgradering kommer att avsluta alla anslutningar till betalda ${ VPN_APP_NAME }-servrar."
       ],
       "Download ${ mobileConfigArtifact } and open it on each Mac to install the profile, then approve it in System Settings.": [
         "Ladda ner ${ mobileConfigArtifact } och öppna den på varje Mac för att installera profilen. Godkänn den sedan i systeminställningarna."
@@ -8369,15 +8311,6 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Om du förlorar din tvåfaktorsaktiverade enhet kan dessa koder användas istället för den 6-siffriga tvåfaktorsautentiseringskoden för att logga in på ditt konto. Varje kod kan bara användas en gång."
       ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Om du fortsätter med nedgraderingen förlorar du åtkomst till betalfunktioner för ${ MAIL_APP_NAME } och ${ VPN_APP_NAME }."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Om du fortsätter med nedgraderingen förlorar du åtkomst till betalfunktioner i ${ MAIL_APP_NAME }, inklusive ytterligare lagring och filter."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Om du fortsätter med nedgraderingen förlorar du åtkomst till betalda funktioner i ${ VPN_APP_NAME }."
-      ],
       "If you recently reset your password, you can ${ recoveryMethodLink } to unlock your data. If this is due to an old password reset, you can stop the message from showing again.": [
         "Om du nyligen återställde ditt lösenord kan du använda ${ recoveryMethodLink } för att låsa upp dina data. Om detta beror på en gammal lösenordsåterställning kan du stoppa meddelandet från att visas igen."
       ],
@@ -8457,21 +8390,6 @@
       "Invalid code. ${ RequestNewCodeLink } and try again.": [
         "Ogiltig kod. ${ RequestNewCodeLink } och försök igen."
       ],
-      "Invite deleted": [
-        "Inbjudan borttagen"
-      ],
-      "Invite for new user deleted": [
-        "Inbjudan för ny användare borttagen"
-      ],
-      "Invite for organization accepted": [
-        "Inbjudan för organisation accepterad"
-      ],
-      "Invite for organization created": [
-        "Inbjudan för organisation skapad"
-      ],
-      "Invite rejected": [
-        "Inbjudan avvisad"
-      ],
       "Invite successfully sent": [
         "Inbjudan skickad",
         "Inbjudningar skickade"
@@ -8487,54 +8405,6 @@
       ],
       "It's better to have:": [
         "Det är bättre att ha:"
-      ],
-      "Item autofilled in ${ vaultLink }": [
-        "Objekt automatiskt ifyllt i ${ vaultLink }"
-      ],
-      "Item autofilled in vault": [
-        "Objekt automatiskt ifyllt i valv"
-      ],
-      "Item created in ${ vaultLink }": [
-        "Objekt skapat i ${ vaultLink }"
-      ],
-      "Item created in vault": [
-        "Objekt skapat i valv"
-      ],
-      "Item deleted from ${ vaultLink }": [
-        "Objekt borttaget från ${ vaultLink }"
-      ],
-      "Item deleted from vault": [
-        "Objekt borttaget från valv"
-      ],
-      "Item flags changed in ${ vaultLink }": [
-        "Objektflaggor ändrade i ${ vaultLink }"
-      ],
-      "Item flags changed in vault": [
-        "Objektflaggor ändrade i valv"
-      ],
-      "Item in ${ vaultLink } trashed": [
-        "Objekt i ${ vaultLink } kastat"
-      ],
-      "Item in ${ vaultLink } untrashed": [
-        "Objekt i ${ vaultLink } avkastat"
-      ],
-      "Item in vault trashed": [
-        "Objekt i valv kastat"
-      ],
-      "Item in vault untrashed": [
-        "Objekt i valv avkastat"
-      ],
-      "Item read in ${ vaultLink }": [
-        "Objekt läst i ${ vaultLink }"
-      ],
-      "Item read in vault": [
-        "Objekt läst i valv"
-      ],
-      "Item updated in ${ vaultLink }": [
-        "Objekt uppdaterat i ${ vaultLink }"
-      ],
-      "Item updated in vault": [
-        "Objekt uppdaterat i valv"
       ],
       "It’s often the easiest way to recover your account if you’re signed in.": [
         "Det är ofta det enklaste sättet att återställa ditt konto om du är inloggad."
@@ -8698,9 +8568,6 @@
       "New group created via your identity provider and pending review.": [
         "Ny grupp skapad via din identitetsleverantör och väntar på granskning."
       ],
-      "New user invited to organization": [
-        "Ny användare inbjuden till organisation"
-      ],
       "New VPN connection data will stop being collected and shown.": [
         "Ny VPN-anslutningsdata kommer att sluta samlas in och visas."
       ],
@@ -8819,15 +8686,6 @@
       ],
       "Paid for a plan": [
         "Betalat för ett paket"
-      ],
-      "Pass Monitor - custom email confirmed": [
-        "Pass Monitor - anpassad e-post bekräftad"
-      ],
-      "Pass Monitor - custom email created": [
-        "Pass Monitor - anpassad e-post skapad"
-      ],
-      "Pass Monitor - custom email deleted": [
-        "Pass Monitor - anpassad e-post borttagen"
       ],
       "Pass usage logs": [
         "Användningsloggar för Pass"
@@ -8968,6 +8826,9 @@
       ],
       "RECOMMENDED": [
         "REKOMMENDERAT"
+      ],
+      "Recommended on trusted devices. ${ learnMoreLink }": [
+        "Rekommenderas på betrodda enheter. ${ learnMoreLink }"
       ],
       "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
         "Återställning med e-post är inte tillgängligt medan ${ PROTON_SENTINEL_NAME } är aktiverat."
@@ -9119,21 +8980,9 @@
       "Setting up your organization": [
         "Ställer in din organisation"
       ],
-      "Shared ${ vaultLink } deleted": [
-        "Delad ${ vaultLink } borttagen"
-      ],
-      "Shared ${ vaultLink } updated": [
-        "Delad ${ vaultLink } uppdaterad"
-      ],
       "Shared server country (${ countriesCount })": [
         "Delat serverland (${ countriesCount })",
         "Delade serverländer (${ countriesCount })"
-      ],
-      "Shared vault deleted": [
-        "Delat valv borttaget"
-      ],
-      "Shared vault updated": [
-        "Delat valv uppdaterat"
       ],
       "Sign in only": [
         "Endast inloggning"
@@ -9146,9 +8995,6 @@
       ],
       "Signed up": [
         "Registrerade sig"
-      ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Eftersom du är en lojal användare har ditt konto ytterligare funktioner aktiverade."
       ],
       "Smart Routed through a different country.": [
         "Smart-dirigerad via ett annat land."
@@ -9550,9 +9396,6 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Unikt ID genererat av din identitetsleverantör, vanligtvis i form av en URL som innehåller identitetsleverantörens namn (t.ex. https://idp.exempel.se/XXXXX)."
       ],
-      "Unknown event type": [
-        "Okänd händelsetyp"
-      ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Om du inte loggar ut från ditt konto eller ändrar ditt lösenord kommer din session att förbli aktiv. Sessioner löper ut efter 60 dagars inaktivitet."
       ],
@@ -9636,21 +9479,6 @@
       ],
       "Users": [
         "Användare"
-      ],
-      "Vault created": [
-        "Valv skapat"
-      ],
-      "Vault deleted": [
-        "Valv borttaget"
-      ],
-      "Vault either deleted or requires access permissions": [
-        "Valv antingen borttaget eller kräver åtkomstbehörigheter"
-      ],
-      "Vault shared with email": [
-        "Valv delad med e-post"
-      ],
-      "Vault updated": [
-        "Valv uppdaterat"
       ],
       "Verification code sent.": [
         "Verifieringskod skickad."
@@ -9774,9 +9602,6 @@
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Vid aktivering av SAML för ${ appName } hos din identitetsleverantör så kan du bli ombedd att använda callback (ACS) URL och utfärdar-ID. Kopiera och klistra in värdena nedan i fälten hos din identitetsleverantör."
-      ],
-      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
-        "När du avbryter din nuvarande betalda prenumeration kommer saldot av din prenumeration att returneras som kontokrediter och du kommer att nedgraderas till ${ BRAND_NAME } ${ PLANS.FREE }-paketet."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "När du avbryter kommer din prenumeration inte att förnyas, men du kan fortfarande dra nytta av paketförmåner fram till slutet av prenumerationsperioden. Efter det kommer du att nedgraderas till ${ BRAND_NAME } Free-paketet."
@@ -9966,9 +9791,6 @@
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "Du måste aktivera din organisations privat nyckel med organisationens backup-nyckels lösenord som tillhandahållits dig av organisationens administratör."
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Du måste inaktivera eller ta bort eventuella ytterligare ${ MAIL_APP_NAME }-användare, adresser och anpassade domäner innan du kan nedgradera."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Du måste ha ett kreditkort eller ett bankkonto kopplat till ditt PayPal-konto för att kunna lägga till det som en betalningsmetod."
@@ -10854,6 +10676,9 @@
       "Issuer ID": [
         "Utfärdar-ID"
       ],
+      "Item": [
+        "Objekt"
+      ],
       "Keep me signed in": [
         "Håll mig inloggad"
       ],
@@ -11120,6 +10945,9 @@
       ],
       "Require 2FA for everyone": [
         "Kräv 2FA för alla"
+      ],
+      "Restrict sign-in to username": [
+        "Begränsa inloggning till användarnamn"
       ],
       "Reveal password": [
         "Visa lösenord"
@@ -11481,6 +11309,9 @@
       "Create an alias": [
         "Skapa ett alias"
       ],
+      "Customer Support": [
+        "Kundtjänst"
+      ],
       "data recovery option": [
         "alternativ för dataåterställning"
       ],
@@ -11630,9 +11461,6 @@
       ],
       "use a data recovery method": [
         "använd en dataåterställningsmetod"
-      ],
-      "Vault": [
-        "Valv"
       ],
       "View guide": [
         "Visa guide"
@@ -12239,9 +12067,6 @@
       ]
     },
     "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradera till ${ downgradedPlanName }"
-      ],
       "Explore all ${ BRAND_NAME } plans": [
         "Utforska alla ${ BRAND_NAME }-paket"
       ],
@@ -16795,9 +16620,6 @@
       "upgrade for more storage": [
         "uppgradera för mer lagringsutrymme"
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Vi lägger till krediterna för den återstående tiden till ditt ${ BRAND_NAME }-konto."
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "Du har fortfarande **${ daysRemaining }** dag kvar på ditt **${ currentPlanName }**-paket.",
         "Du har fortfarande **${ daysRemaining }** dagar kvar på ditt **${ currentPlanName }**-paket."
@@ -17554,9 +17376,6 @@
       "You have successfully canceled your subscription.": [
         "Du har avbrutit din prenumeration."
       ],
-      "You have successfully unsubscribed": [
-        "Du har avslutat din prenumeration"
-      ],
       "You will receive your username via email within a minute if you entered a valid recovery email address.": [
         "Du kommer få ditt användarnamn via e-post inom en minut om du har angett en giltig e-postadress för återställning."
       ],
@@ -18122,12 +17941,6 @@
       "Confirm": [
         "Bekräfta"
       ],
-      "Confirm downgrade": [
-        "Bekräfta nedgradering"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Bekräfta förlust av ${ BRAND_NAME }-bonusar"
-      ],
       "Connect a Gmail address": [
         "Anslut en Gmail-adress"
       ],
@@ -18354,9 +18167,6 @@
       ],
       "Downgrade account": [
         "Nedgradera konto"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "Nedgradera till ${ downgradedPlanName }?"
       ],
       "Download ${ app }": [
         "Ladda ner ${ app }"
@@ -18944,6 +18754,9 @@
       ],
       "Sign out": [
         "Logga ut"
+      ],
+      "Sign-in protection": [
+        "Inloggningsskydd"
       ],
       "Signed in to another account": [
         "Loggade in på annat konto"

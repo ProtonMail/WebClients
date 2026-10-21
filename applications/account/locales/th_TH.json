@@ -348,9 +348,6 @@
       "Connect to video conferencing": [
         "เชื่อมต่อกับการประชุมทางวิดีโอ"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "เชื่อมต่อบัญชี ${ BRAND_NAME }"
-      ],
       "Connect your email": [
         "เชื่อมต่ออีเมล"
       ],
@@ -429,14 +426,8 @@
       "Create": [
         "สร้าง"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "สร้างบัญชี ${ BRAND_NAME }"
-      ],
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "สร้างลิงก์เพื่อแชร์กับบุคคลภายนอก ${ BRAND_NAME }"
-      ],
-      "Create an account": [
-        "สร้างบัญชีใหม่"
       ],
       "Create calendar": [
         "สร้างปฏิทิน"
@@ -611,9 +602,6 @@
       ],
       "Done": [
         "เสร็จสมบูรณ์"
-      ],
-      "Downgrade": [
-        "ดาวน์เกรด"
       ],
       "Download": [
         "ดาวน์โหลด"
@@ -1275,17 +1263,11 @@
       "Reload": [
         "โหลดใหม่"
       ],
-      "Reload page": [
-        "โหลดหน้าเว็บใหม่"
-      ],
       "Remove": [
         "เอาออก"
       ],
       "Remove all other devices": [
         "ลบอุปกรณ์อื่นทั้งหมดออก"
-      ],
-      "Remove bonuses": [
-        "ลบโบนัสออก"
       ],
       "Remove button": [
         "ลบปุ่มออก"
@@ -2413,11 +2395,6 @@
     "bf2023: info": {
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "ขออภัย ข้อเสนอนี้ไม่พร้อมใช้งานกับแผนปัจจุบัน แต่คุณสามารถรับส่วนลด ${ discountPercentage } สำหรับ ${ plan.Title } เมื่อสมัครสมาชิกเป็นเวลา ${ cycle } เดือน"
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "รับประกันคืนเงินภายใน 30 วัน"
       ]
     },
     "bf2023: Title": {
@@ -7484,14 +7461,6 @@
         "ดูคำเชิญ"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "ไม่รู้จักกลุ่มครอบครัว ลองอีกครั้ง"
-      ],
-      "Organization not recognized. Try again.": [
-        "ไม่รู้จักองค์กร ลองอีกครั้ง"
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "กลุ่ม ${ BRAND_NAME }"
@@ -7664,22 +7633,8 @@
       ]
     },
     "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "ป้อนชื่อกลุ่มครอบครัวเพื่อยืนยัน"
-      ],
-      "Enter organization name to confirm": [
-        "ป้อนชื่อองค์กรเพื่อยืนยัน"
-      ],
       "Family name": [
         "ชื่อครอบครัว"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "การดำเนินการนี้จะลบผู้ใช้ย่อย บัญชี และข้อมูลที่เกี่ยวข้องกับองค์กรของคุณทั้งหมดอย่างถาวร"
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "การดำเนินการนี้จะลบคุณสมบัติพรีเมียมของ ${ BRAND_NAME } ทั้งหมดสำหรับสมาชิกในครอบครัวทุกคนออก"
       ]
     },
     "familyOffer_2023:Settings section title": {
@@ -7707,12 +7662,6 @@
       ],
       "Change family name": [
         "เปลี่ยนชื่อครอบครัว"
-      ],
-      "Delete family group?": [
-        "ลบกลุ่มครอบครัวหรือไม่?"
-      ],
-      "Delete organization?": [
-        "ต้องการลบองค์กรของคุณหรือไม่?"
       ],
       "Edit user storage": [
         "แก้ไขพื้นที่จัดเก็บของผู้ใช้"
@@ -8922,12 +8871,6 @@
       ],
       "Paused": [
         "หยุดชั่วคราว"
-      ],
-      "Undo finished": [
-        "เลิกทำเสร็จสิ้น"
-      ],
-      "Undo in progress": [
-        "กำลังเลิกทำ"
       ]
     },
     "Import type": {
@@ -9186,18 +9129,6 @@
       "${ url } deleted.": [
         "ลบ ${ url } แล้ว"
       ],
-      "${ vaultLink } created": [
-        "อัปเดต ${ vaultLink } แล้ว"
-      ],
-      "${ vaultLink } deleted": [
-        "ลบ ${ vaultLink } แล้ว"
-      ],
-      "${ vaultLink } shared with email": [
-        "แชร์ ${ vaultLink } กับอีเมลแล้ว"
-      ],
-      "${ vaultLink } updated": [
-        "อัปเดต ${ vaultLink } แล้ว"
-      ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
         "${ VPN_SHORT_APP_NAME } ซ่อนทราฟฟิก ${ PASS_SHORT_APP_NAME } ซ่อนข้อมูลระบุตัวตน\n— **นามแฝง hide-my-email** ไม่จำกัด และ **การแจ้งเตือนดาร์กเว็บ** หากมีการรั่วไหลของข้อมูล"
       ],
@@ -9282,19 +9213,10 @@
       "+ ${ invisibleCount } More": [
         "+ อีก ${ invisibleCount } รายการ"
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } โบนัสพื้นที่จัดเก็บ"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN }การเชื่อมต่อของ${ VPN_APP_NAME }(อนุญาตให้คุณเชื่อมต่อหลายอุปกรณ์กับ VPN)"
-      ],
       "2FA disabled": [
         "ปิดใช้งาน 2FA แล้ว"
       ],
       "30-day money-back guarantee": [
-        "รับประกันคืนเงินภายใน 30 วัน"
-      ],
-      "30-day money-back guarantee.": [
         "รับประกันคืนเงินภายใน 30 วัน"
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
@@ -9681,9 +9603,6 @@
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "การปิดใช้งานการตรวจสอบบัญชีจะล้างประวัติทั้งหมดด้วย แน่ใจหรือไม่ว่าต้องการปิดใช้งานสิ่งนี้?"
       ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "หากดำเนินการดาวน์เกรดบัญชีไปแบบบัญชีฟรี คุณจะไม่สามารถเข้าถึงสิทธิพิเศษอื่นๆ แม้ว่าคุณจะกลับมาอัปเกรดบัญชีอีกในอนาคต"
-      ],
       "By leaving now, changes may not be saved": [
         "การปิดหน้านี้จะไม่มีการบันทึกข้อมูลที่ได้เปลี่ยนแปลงต่างๆ"
       ],
@@ -9992,9 +9911,6 @@
       ],
       "Downgrade": [
         "ดาวน์เกรด"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "การดาวน์เกรดจะยุติการเชื่อมต่อกับเซิร์ฟเวอร์ ${ VPN_APP_NAME } ที่ต้องชำระเงิน"
       ],
       "Download ${ VPN_APP_NAME }": [
         "ดาวน์โหลด ${ VPN_APP_NAME }"
@@ -10449,15 +10365,6 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "หากทำอุปกรณ์ที่เปิดใช้งานการยืนยันตัวตนผ่านสองขั้นตอนหาย สามารถใช้รหัสเหล่านี้แทนรหัสการยืนยันตัวตนผ่านสองขั้นตอน 6 หลักเพื่อเข้าสู่ระบบบัญชีได้ แต่ละรหัสสามารถใช้ได้เพียงครั้งเดียวเท่านั้น"
       ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "หากคุณดำเนินการดาวน์เกรดต่อ คุณจะสูญเสียการเข้าถึงคุณสมบัติที่ต้องชำระเงินของ ${ MAIL_APP_NAME } และ ${ VPN_APP_NAME }"
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "หากคุณดำเนินการดาวน์เกรดต่อ คุณจะสูญเสียการเข้าถึงคุณสมบัติที่ต้องชำระเงินของ ${ MAIL_APP_NAME } รวมถึงพื้นที่จัดเก็บเพิ่มเติมและตัวกรอง"
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "หากคุณดำเนินการดาวน์เกรดต่อ คุณจะสูญเสียการเข้าถึงคุณสมบัติที่ต้องชำระเงินของ ${ VPN_APP_NAME }"
-      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "หากซื้อรหัสของขวัญหรือได้รับรหัสจากทีมฝ่ายสนับสนุน สามารถป้อนรหัสได้ที่นี่"
       ],
@@ -10569,23 +10476,8 @@
       "Invitation link used": [
         "ลิงก์คำเชิญถูกใช้แล้ว"
       ],
-      "Invite deleted": [
-        "ลบคำเชิญแล้ว"
-      ],
       "Invite family members and get everything up and running.": [
         "เชิญสมาชิกในครอบครัวและเริ่มต้นใช้งานทุกอย่าง"
-      ],
-      "Invite for new user deleted": [
-        "ลบคำเชิญสำหรับผู้ใช้ใหม่แล้ว"
-      ],
-      "Invite for organization accepted": [
-        "ยอมรับคำเชิญสำหรับองค์กรแล้ว"
-      ],
-      "Invite for organization created": [
-        "สร้างคำเชิญสำหรับองค์กรแล้ว"
-      ],
-      "Invite rejected": [
-        "ปฏิเสธคำเชิญแล้ว"
       ],
       "Invite successfully sent": [
         "ส่งคำเชิญสำเร็จ"
@@ -10604,54 +10496,6 @@
       ],
       "It's better to have:": [
         "ควรมี:"
-      ],
-      "Item autofilled in ${ vaultLink }": [
-        "เติมรายการอัตโนมัติใน ${ vaultLink } แล้ว"
-      ],
-      "Item autofilled in vault": [
-        "เติมรายการอัตโนมัติในห้องนิรภัยแล้ว"
-      ],
-      "Item created in ${ vaultLink }": [
-        "สร้างรายการใน ${ vaultLink } แล้ว"
-      ],
-      "Item created in vault": [
-        "สร้างรายการในห้องนิรภัยแล้ว"
-      ],
-      "Item deleted from ${ vaultLink }": [
-        "ลบรายการออกจาก ${ vaultLink } แล้ว"
-      ],
-      "Item deleted from vault": [
-        "ลบรายการออกจากห้องนิรภัยแล้ว"
-      ],
-      "Item flags changed in ${ vaultLink }": [
-        "เปลี่ยนธงรายการใน ${ vaultLink } แล้ว"
-      ],
-      "Item flags changed in vault": [
-        "เปลี่ยนธงรายการในห้องนิรภัยแล้ว"
-      ],
-      "Item in ${ vaultLink } trashed": [
-        "ย้ายรายการใน ${ vaultLink } ไปที่ถังขยะแล้ว"
-      ],
-      "Item in ${ vaultLink } untrashed": [
-        "กู้คืนรายการใน ${ vaultLink } จากถังขยะแล้ว"
-      ],
-      "Item in vault trashed": [
-        "ย้ายรายการในห้องนิรภัยไปที่ถังขยะแล้ว"
-      ],
-      "Item in vault untrashed": [
-        "กู้คืนรายการในห้องนิรภัยจากถังขยะแล้ว"
-      ],
-      "Item read in ${ vaultLink }": [
-        "อ่านรายการใน ${ vaultLink } แล้ว"
-      ],
-      "Item read in vault": [
-        "อ่านรายการในห้องนิรภัยแล้ว"
-      ],
-      "Item updated in ${ vaultLink }": [
-        "อัปเดตรายการใน ${ vaultLink } แล้ว"
-      ],
-      "Item updated in vault": [
-        "อัปเดตรายการในห้องนิรภัยแล้ว"
       ],
       "It’s often the easiest way to recover your account if you’re signed in.": [
         "มักเป็นวิธีที่ง่ายที่สุดในการกู้คืนบัญชีหากลงชื่อเข้าใช้อยู่"
@@ -10848,9 +10692,6 @@
       "New group created via your identity provider and pending review.": [
         "สร้างกลุ่มใหม่ผ่านผู้ให้บริการข้อมูลระบุตัวตนแล้ว และกำลังรอการตรวจสอบ"
       ],
-      "New user invited to organization": [
-        "เชิญผู้ใช้ใหม่เข้าสู่องค์กรแล้ว"
-      ],
       "New VPN connection data will stop being collected and shown.": [
         "ข้อมูลการเชื่อมต่อ VPN ใหม่จะหยุดรวบรวมและแสดง"
       ],
@@ -11013,15 +10854,6 @@
       "Paid for a plan": [
         "ชำระเงินสำหรับแผนแล้ว"
       ],
-      "Pass Monitor - custom email confirmed": [
-        "Pass Monitor - ยืนยันอีเมลที่กำหนดเองแล้ว"
-      ],
-      "Pass Monitor - custom email created": [
-        "Pass Monitor - สร้างอีเมลที่กำหนดเองแล้ว"
-      ],
-      "Pass Monitor - custom email deleted": [
-        "Pass Monitor - ลบอีเมลที่กำหนดเองแล้ว"
-      ],
       "Pass usage logs": [
         "บันทึกการใช้งาน Pass"
       ],
@@ -11099,9 +10931,6 @@
       ],
       "Please open the document to view it.": [
         "โปรดเปิดเอกสารเพื่อดู"
-      ],
-      "Please open your browser extension settings and allow ${ PASS_APP_NAME } extension to access website data. Then, reload this page.": [
-        "โปรดเปิดการตั้งค่าส่วนขยายเบราว์เซอร์และอนุญาตให้ส่วนขยาย ${ PASS_APP_NAME } เข้าถึงข้อมูลเว็บไซต์ จากนั้นโหลดหน้านี้ใหม่"
       ],
       "Please reconnect to continue.": [
         "โปรดเชื่อมต่อใหม่เพื่อดำเนินการต่อ"
@@ -11376,20 +11205,8 @@
       "Settings updated": [
         "อัปเดตการตั้งค่าแล้ว"
       ],
-      "Shared ${ vaultLink } deleted": [
-        "ลบ ${ vaultLink } ที่แชร์แล้ว"
-      ],
-      "Shared ${ vaultLink } updated": [
-        "อัปเดต ${ vaultLink } ที่แชร์แล้ว"
-      ],
       "Shared server country (${ countriesCount })": [
         "ประเทศของเซิร์ฟเวอร์ที่แชร์ (${ countriesCount })"
-      ],
-      "Shared vault deleted": [
-        "ลบห้องนิรภัยที่แชร์แล้ว"
-      ],
-      "Shared vault updated": [
-        "อัปเดตห้องนิรภัยที่แชร์แล้ว"
       ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "แสดงรูปภาพของผู้ส่งแต่ละรายในรายการข้อความ หากไม่มีรูปภาพ จะแสดงชื่อย่อของผู้ส่งแทน"
@@ -11409,9 +11226,6 @@
       "Sign in only": [
         "เข้าสู่ระบบเท่านั้น"
       ],
-      "Sign in or create an account to continue.": [
-        "เข้าสู่ระบบหรือสร้างบัญชีเพื่อดำเนินการต่อ"
-      ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "เข้าสู่ระบบ ${ MAIL_APP_NAME } เพื่อเปิดใช้งานที่อยู่"
       ],
@@ -11420,9 +11234,6 @@
       ],
       "Signed up": [
         "ลงทะเบียนแล้ว"
-      ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "เราได้เปิดฟีเจอร์เพิ่มให้กับบัญชีของคุณเพราะคุณคือผู้ใช้บริการที่ยึดมั่นในบริการของเรา"
       ],
       "Smart Routed through a different country.": [
         "กำหนดเส้นทางแบบสมาร์ทผ่านประเทศอื่น"
@@ -11468,12 +11279,6 @@
       ],
       "Step ${ step }/${ totalSteps }": [
         "ขั้นตอนที่ ${ step }/${ totalSteps }"
-      ],
-      "Step 1 of 2": [
-        "ขั้นตอนที่ 1 จาก 2"
-      ],
-      "Step 2 of 2": [
-        "ขั้นตอนที่ 2 จาก 2"
       ],
       "Storage allocated to other users in this organisation": [
         "พื้นที่จัดเก็บที่จัดสรรให้กับผู้ใช้อื่นในองค์กรนี้"
@@ -11922,9 +11727,6 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "ID เฉพาะที่สร้างโดยผู้ให้บริการข้อมูลระบุตัวตน มักอยู่ในรูปแบบของ URL ที่มีชื่อของผู้ให้บริการข้อมูลระบุตัวตนอยู่ภายใน (เช่น https://idp.example.com/XXXXX)"
       ],
-      "Unknown event type": [
-        "ประเภทกิจกรรมที่ไม่รู้จัก"
-      ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "เซสชั่นของคุณยังเปิดใช้งานอยู่ ยกเว้นกรณีที่คุณลงชื่อออกหรือเปลี่ยนรหัสผ่าน อนึ่ง เซสชั่นจะหมดอายุหลังจากไม่ได้ใช้งาน 60 วัน"
       ],
@@ -12018,21 +11820,6 @@
       "Users": [
         "ผู้ใช้งาน"
       ],
-      "Vault created": [
-        "สร้างห้องนิรภัยแล้ว"
-      ],
-      "Vault deleted": [
-        "ลบห้องนิรภัยแล้ว"
-      ],
-      "Vault either deleted or requires access permissions": [
-        "ห้องนิรภัยถูกลบหรือต้องการสิทธิ์การเข้าถึง"
-      ],
-      "Vault shared with email": [
-        "แชร์ห้องนิรภัยกับอีเมลแล้ว"
-      ],
-      "Vault updated": [
-        "อัปเดตห้องนิรภัยแล้ว"
-      ],
       "Verification code sent.": [
         "ส่งรหัสยืนยันแล้ว"
       ],
@@ -12050,9 +11837,6 @@
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "ยืนยันตัวตนของคุณด้วยรหัสผ่านแบบใช้ครั้งเดียวตามเวลาจากแอปยืนยันตัวตน"
-      ],
-      "Verifying ${ PASS_APP_NAME } browser extension...": [
-        "กำลังยืนยันส่วนขยายเบราว์เซอร์ ${ PASS_APP_NAME }..."
       ],
       "Verifying your payment": [
         "กำลังยืนยันการชำระเงินของคุณ"
@@ -12188,9 +11972,6 @@
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "เมื่อเปิดใช้งานการแจ้งเตือน ระบบจะส่งการแจ้งเตือนไปยังที่อยู่อีเมลการกู้คืนหากมีข้อความใหม่ในบัญชี ${ MAIL_APP_NAME }"
-      ],
-      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
-        "เมื่อยกเลิกการสมัครสมาชิกแบบชำระเงินปัจจุบัน ยอดคงเหลือของการสมัครสมาชิกจะถูกคืนเป็นเครดิตบัญชี และคุณจะถูกดาวน์เกรดเป็นแผน ${ BRAND_NAME } ${ PLANS.FREE }"
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "เมื่อคุณยกเลิก การสมัครสมาชิกจะไม่ได้รับการต่ออายุ แต่คุณยังคงสามารถใช้สิทธิประโยชน์ของแผนได้จนถึงสิ้นสุดระยะเวลาการสมัครสมาชิก หลังจากนั้น คุณจะถูกดาวน์เกรดเป็น ${ BRAND_NAME } Free plan"
@@ -12425,9 +12206,6 @@
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "จะต้องเปิดใช้งานคีย์ลับขององค์กร ด้วยตัวสำรองของรหัสผ่านคีย์ขององค์กรที่ผู้ดูแลระบบขององค์กรคุณได้ให้มา"
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "คุณต้องปิดใช้งานหรือลบผู้ใช้ ${ MAIL_APP_NAME } เพิ่มเติม ที่อยู่ และโดเมนที่กำหนดเองใดๆ ออกก่อนที่คุณจะสามารถดาวน์เกรดได้"
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "จำเป็นต้องมีบัตรเครดิต หรือบัญชีธนาคารที่เชื่อมต่อกับบัญชี PayPal ของคุณ เพื่อที่จะสามารถเพิ่มบัญชี PayPal นี้ในวิธีการชำระ"
@@ -15276,9 +15054,6 @@
       "use a data recovery method": [
         "ใช้วิธีกู้คืนข้อมูล"
       ],
-      "Vault": [
-        "ห้องนิรภัย"
-      ],
       "View guide": [
         "ดูวิธีการกำหนดค่า"
       ],
@@ -16207,9 +15982,6 @@
       ]
     },
     "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "ดาวน์เกรดเป็น ${ downgradedPlanName }"
-      ],
       "Explore all ${ BRAND_NAME } plans": [
         "สำรวจแผน ${ BRAND_NAME } ทั้งหมด"
       ],
@@ -22003,9 +21775,6 @@
       "Upgrade your plan to increase your storage.": [
         "อัปเกรดแผนของคุณเพื่อเพิ่มพื้นที่จัดเก็บ"
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "เราจะเพิ่มเครดิตสำหรับเวลาที่เหลือไปยังบัญชี ${ BRAND_NAME } ของคุณ"
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "คุณยังเหลือเวลาอีก **${ daysRemaining }** วันในแผน **${ currentPlanName }** ของคุณ"
       ],
@@ -22857,9 +22626,6 @@
       "You have successfully canceled your subscription.": [
         "ยกเลิกการสมัครสมาชิกเรียบร้อยแล้ว"
       ],
-      "You have successfully unsubscribed": [
-        "คุณยกเลิกการเป็นสมาชิกเรียบร้อยแล้ว"
-      ],
       "You will receive your username via email within a minute if you entered a valid recovery email address.": [
         "คุณจะได้รับชื่อผู้ใช้ทางอีเมลภายในหนึ่งนาที หากป้อนที่อยู่อีเมลการกู้คืนที่ถูกต้อง"
       ],
@@ -23190,9 +22956,6 @@
       ],
       "${ MAIL_APP_NAME } Export Tool": [
         "Export Tool ของ ${ MAIL_APP_NAME }"
-      ],
-      "${ PASS_APP_NAME } is missing permissions": [
-        "${ PASS_APP_NAME } ไม่มีสิทธิ์ที่จำเป็น"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "รายงานการตรวจสอบ ${ PASS_SHORT_APP_NAME }"
@@ -23551,12 +23314,6 @@
       "Confirm": [
         "ยืนยัน"
       ],
-      "Confirm downgrade": [
-        "ยืนยันการดาวน์เกรด"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "ยืนยันการสูญเสียโบนัส ${ BRAND_NAME }"
-      ],
       "Connect ${ name }": [
         "เชื่อมต่อ ${ name }"
       ],
@@ -23574,9 +23331,6 @@
       ],
       "Connect to video conferencing": [
         "เชื่อมต่อกับการประชุมทางวิดีโอ"
-      ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "เชื่อมต่อบัญชี ${ BRAND_NAME }"
       ],
       "Connect your custom domain": [
         "เชื่อมต่อโดเมนที่กำหนดเอง"
@@ -23832,9 +23586,6 @@
       ],
       "Downgrade account": [
         "ลดระดับการสมัครสมาชิก"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "ดาวน์เกรดเป็น ${ downgradedPlanName } หรือไม่?"
       ],
       "Download ${ app }": [
         "ดาวน์โหลด ${ app }"
@@ -24993,9 +24744,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "ยินดีต้อนรับสู่ ${ BRAND_NAME } สำหรับธุรกิจ"
-      ],
-      "Welcome to your new password manager!": [
-        "ยินดีต้อนรับสู่โปรแกรมจัดการรหัสผ่านใหม่!"
       ],
       "What changes if you switch to the Free plan": [
         "สิ่งที่จะเปลี่ยนไปเมื่อสลับไปใช้ Free plan"
@@ -26284,12 +26032,6 @@
       ],
       "By removing this phone number, you will no longer be able to recover your account.": [
         "การลบหมายเลขโทรศัพท์นี้ออกจะทำให้ไม่สามารถกู้คืนบัญชีได้อีกต่อไป"
-      ],
-      "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
-        "ไม่สามารถเข้าสู่ระบบได้ โปรดเปิดส่วนขยายเบราว์เซอร์ ${ PASS_APP_NAME } และเข้าสู่ระบบจากที่นั่น"
-      ],
-      "Could not sign up. Please open ${ PASS_APP_NAME } browser extension and sign up from there.": [
-        "ไม่สามารถลงทะเบียนได้ โปรดเปิดส่วนขยายเบราว์เซอร์ ${ PASS_APP_NAME } และลงทะเบียนจากที่นั่น"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "หากคุณยกเลิกการนำเข้านี้ คุณจะไม่สามารถดำเนินการต่อได้ ${ BRAND_NAME } บันทึกความคืบหน้าทั้งหมดไว้ในบัญชีของคุณแล้ว ต้องการยกเลิกหรือไม่?"

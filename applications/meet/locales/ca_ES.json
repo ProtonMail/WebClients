@@ -280,7 +280,7 @@
         "Copia l'enllaç"
       ],
       "Copy link and close": [
-        "Copieu l'enllaç i tanqueu"
+        "Copia l'enllaç i tanca"
       ],
       "Copy meeting link": [
         "Copia l'enllaç de la reunió"
@@ -2506,7 +2506,7 @@
         "Per utilitzar ${ MAIL_APP_NAME } o ${ CALENDAR_APP_NAME }, canvieu a la versió web."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
-        "No hem pogut carregar aquesta pàgina. Refresqueu la pàgina o comproveu la vostra connexió a Internet."
+        "No hem pogut carregar aquesta pàgina. Refresqueu la pàgina o comproveu la connexió a Internet."
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -2516,7 +2516,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Alguna cosa ha anat malament en autenticar-se amb la vostra clau de seguretat. Torneu-ho a provar."
+        "Alguna cosa ha anat malament en autenticar-vos amb la clau de seguretat. Torneu-ho a provar."
       ]
     },
     "fido2: Info": {
@@ -2679,6 +2679,9 @@
       ],
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } necessita WebRTC per funcionar. Actualitzeu el navegador o el dispositiu a una versió que sigui compatible amb WebRTC, proveu un altre navegador o desactiveu qualsevol extensió que l'estigui bloquejant."
+      ],
+      "${ meetingName } has ended": [
+        "${ meetingName } ha finalitzat"
       ],
       "${ mlsMemberCount } member": [
         "${ mlsMemberCount } membre",
@@ -3429,6 +3432,9 @@
       "This will sign you out of all accounts currently logged in.": [
         "Això tancarà la sessió de tots els comptes als quals teniu sessió iniciada actualment"
       ],
+      "Time is up for ${ meetingName }": [
+        "S'ha acabat el temps per a ${ meetingName }"
+      ],
       "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
         "Per crear una sala, necessitareu **un compte gratuït de ${ BRAND_NAME }** perquè puguem desar la sala. Només us portarà uns segons."
       ],
@@ -3537,11 +3543,17 @@
       "You have too many meetings in progress": [
         "Teniu massa reunions en curs"
       ],
+      "You left ${ meetingName }": [
+        "Heu sortit de ${ meetingName }"
+      ],
       "You left the meeting": [
         "Heu sortit de la reunió"
       ],
       "You need a paid ${ MEET_SHORT_APP_NAME } or Workspace plan for this feature. Contact your organization admin to upgrade.": [
         "Necessiteu un pla de pagament de ${ MEET_SHORT_APP_NAME } o Workspace per a aquesta funció. Poseu-vos en contacte amb l'administrador de la vostra organització per millorar-lo."
+      ],
+      "You were removed from ${ meetingName }": [
+        "Us han tret de ${ meetingName }"
       ],
       "You were removed from the meeting": [
         "Us han tret de la reunió"
@@ -4148,7 +4160,7 @@
         "Si tanqueu la sessió abans de restablir la contrasenya, podríeu perdre l'accés al vostre compte."
       ],
       "If you sign out without resetting your password, you could lose access to your account.": [
-        "Si tanqueu la sessió sense restablir la contrasenya, podríeu perdre l'accés al vostre compte."
+        "Si tanqueu la sessió sense restablir la contrasenya, podríeu perdre l'accés al compte."
       ],
       "You will be able to reset your password in ${ boldTimeLeft }.": [
         "Podreu restablir la vostra contrasenya en ${ boldTimeLeft }."

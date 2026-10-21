@@ -300,9 +300,6 @@
       "Done": [
         "完成"
       ],
-      "Downgrade": [
-        "降级"
-      ],
       "Download": [
         "下载"
       ],
@@ -573,9 +570,6 @@
       "Open": [
         "检查"
       ],
-      "Open ${ CALENDAR_APP_NAME } settings": [
-        "打开 ${ CALENDAR_APP_NAME } 设置"
-      ],
       "Open ${ DRIVE_APP_NAME }": [
         "打开 ${ DRIVE_APP_NAME }"
       ],
@@ -638,9 +632,6 @@
       ],
       "Remove access": [
         "移除访问权"
-      ],
-      "Remove bonuses": [
-        "放弃特权"
       ],
       "Remove button": [
         "移除按钮"
@@ -1116,11 +1107,6 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "高级密码管理器"
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "30 天退款保证"
       ]
     },
     "BF2024: Deal details": {
@@ -3827,14 +3813,6 @@
         "变更账户等级"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "无法识别家庭群组。请重试。"
-      ],
-      "Organization not recognized. Try again.": [
-        "无法识别机构，请重试。"
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } 团体账户"
@@ -3901,30 +3879,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "您已使用 ${ usedSpace } 存储空间，超过了账户分配的 ${ inviteSpace } 上限。请清理部分数据或要求账户管理员为您的邮箱扩容。"
-      ]
-    },
-    "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "输入家庭群组名称以确认"
-      ],
-      "Enter organization name to confirm": [
-        "请输入机构名称进行确认"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "这将永久删除与您的组织相关的所有子用户、账户和数据。"
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "这将删除每个家庭成员所有的 ${ BRAND_NAME } 高级功能。"
-      ]
-    },
-    "familyOffer_2023:Title": {
-      "Delete family group?": [
-        "删除家庭群组？"
-      ],
-      "Delete organization?": [
-        "删除机构?"
       ]
     },
     "Feature": {
@@ -4551,12 +4505,6 @@
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "每位好友订阅后，您可获得 **${ referrerRewardAmount }** 积分！"
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } 特权存储空间"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } ${ VPN_APP_NAME } 连接数（允许您将更多设备连接至VPN）"
-      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "每个手机号只能用于验证一个 ${ BRAND_NAME } 账户"
       ],
@@ -4628,9 +4576,6 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "重新接收验证码前，请先检查垃圾邮件文件夹，并确认邮箱地址 ${ strong } 是否正确。"
-      ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "一旦降级为免费用户，无论今后是否再次付费升级，您都将永远失去这些特权。"
       ],
       "Calendar side panel": [
         "日历侧边栏"
@@ -4766,9 +4711,6 @@
       ],
       "Downgrade": [
         "降级"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "降级将导致与 ${ VPN_APP_NAME } 服务器的所有连接中断。"
       ],
       "Download current logs": [
         "下载当前日志"
@@ -4910,15 +4852,6 @@
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "如果您无法访问验证器应用，可以使用设置 2FA 时提供的 16 个备用恢复码之一。${ learnMoreLink }"
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "降级账户后您将不能再使用 ${ MAIL_APP_NAME } 和 ${ VPN_APP_NAME } 的收费功能。"
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "降级账户后您将不能使用 ${ MAIL_APP_NAME } 的收费功能，包括额外的存储空间和筛选规则。"
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "降级账户后您将不能再使用 ${ VPN_APP_NAME } 的收费功能。"
       ],
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
         "如果移除您自己，您将失去对“${ fileName }”的访问权限，除非所有者与您再次分享，否则您将无法再次打开它。"
@@ -5268,9 +5201,6 @@
       "Show table of contents": [
         "显示目录"
       ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "作为 Proton 忠实用户，您拥有以下特权。"
-      ],
       "Some edits are taking longer to sync than expected.": [
         "某些编辑的同步时间比预期的要长。"
       ],
@@ -5478,6 +5408,9 @@
       "We'll email you once import is complete.": [
         "导入完成后，我们会向您发送一封电子邮件。"
       ],
+      "We'll get back to you shortly.": [
+        "我们会尽快回复您。"
+      ],
       "We'll notify you when the import is done.": [
         "当导入完成时我们将通知您"
       ],
@@ -5562,12 +5495,6 @@
       "You can close the tab or browser in the meantime.": [
         "同时，您也可以关闭当前标签页或浏览器。"
       ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "您最多可保留 ${ MAX_CALENDARS_FREE } 份日历。退订 ${ MAIL_SHORT_APP_NAME } 前请删除所有共享日历链接，并移除所有使用您共享的日历的 ${ BRAND_NAME } 用户。"
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "您最多可保留 ${ MAX_CALENDARS_FREE } 份日历。降级前请删除所有共享日历链接，并移除所有使用您共享的日历的 ${ BRAND_NAME } 用户。"
-      ],
       "You can now return to the application to continue": [
         "您现在可以返回到应用程序以继续"
       ],
@@ -5588,9 +5515,6 @@
       ],
       "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
         "根据您的当前账户权限，可能无法查看此内容。请尝试切换其他账户或联系资源所有者申请访问权限。"
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "降级前需要停用或移除所有额外的 ${ MAIL_APP_NAME } 用户、地址和自有域名。"
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "您将在该日期失去对 ${ planTitle } 功能的访问权限。"
@@ -5732,11 +5656,6 @@
       ],
       "${ selectedFoldersCount } label selected": [
         "已选择 ${ selectedFoldersCount } 个标签"
-      ]
-    },
-    "Info; access rights for shared calendar": {
-      "View only": [
-        "仅查看"
       ]
     },
     "Key badge": {
@@ -6078,6 +5997,9 @@
       "Phone number": [
         "电话号码"
       ],
+      "Please share any feedback to help us improve.": [
+        "请分享任何反馈意见，以帮助我们改进工作。"
+      ],
       "Port": [
         "端口"
       ],
@@ -6167,6 +6089,9 @@
       ],
       "What happened?": [
         "发生了什么？"
+      ],
+      "Why would you like to cancel?": [
+        "您为什么想要取消？"
       ],
       "Your IP": [
         "您的 IP 地址"
@@ -6543,38 +6468,20 @@
         "VPN 速度一般"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "删除账户"
-      ],
-      "Downgrade account": [
-        "降级账户"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "免费获得 ${ BRAND_NAME }"
-      ],
-      "Get ${ planName }": [
-        "开通 ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "保留 ${ plan }"
-      ],
-      "Keep account": [
-        "保留账户"
-      ],
-      "Switch plan": [
-        "切换套餐"
-      ]
-    },
     "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降级至 ${ downgradedPlanName }"
-      ],
       "Plans starting from ${ priceDrivePlus }": [
         "以 ${ priceDrivePlus } 价格开始计划"
       ],
       "Upgrade": [
         "升级账户"
+      ]
+    },
+    "new_plans: action": {
+      "Get ${ BRAND_NAME } for free": [
+        "免费获得 ${ BRAND_NAME }"
+      ],
+      "Get ${ planName }": [
+        "开通 ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -7084,18 +6991,6 @@
       "For next-level password management and identity protection.": [
         "体验更高等级的密码管理与身份保护。"
       ],
-      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
-        "删除您的账户后，您将失去所有${ visionary } 套餐福利，如果您创建新账户，则无法享受这些福利。"
-      ],
-      "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
-        "降级您的账户后，您将失去所有${ visionary } 套餐福利，如果您再次尝试订阅，则无法享受这些福利。"
-      ],
-      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
-        "如果您切换到其他套餐，您将失去${ visionary } 套餐的所有福利，并且无法切换回${ visionary }。"
-      ],
-      "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
-        "我们的 ${ visionary } 套餐已不再适用于新订阅者，因为它是针对原始 ${ BRAND_NAME } 用户的特殊套餐，具有特殊功能和优势。"
-      ],
       "Pay once, secure your passwords and identity forever.": [
         "仅需一次支付，即可永久保护您的密码和身份。"
       ],
@@ -7125,12 +7020,6 @@
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
         "无限的私密性和更多的存储空间，最多可容纳 2 人。"
-      ],
-      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
-        "您当前套餐享受优惠价格。如果删除账户，您将失去该优惠价格，且创建新账户时无法重新获得。"
-      ],
-      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
-        "您当前套餐享受优惠价格。如果降级账户，您将失去该优惠价格，且再次订阅时无法重新获得。"
       ]
     },
     "new_plans: Subtext": {
@@ -7142,17 +7031,6 @@
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "只需 ${ priceLine } 即可解锁所有 ${ BRAND_NAME } 高级产品和功能。随时取消。"
-      ]
-    },
-    "new_plans: title": {
-      "Delete account?": [
-        "删除账户？"
-      ],
-      "Downgrade account?": [
-        "降级账户？"
-      ],
-      "Switch plans?": [
-        "切换套餐？"
       ]
     },
     "new_plans: tooltip": {
@@ -7526,9 +7404,6 @@
       ],
       "Failed to load invitation details": [
         "载入邀请信息失败"
-      ],
-      "Failed to load invitations": [
-        "加载邀请失败"
       ],
       "Failed to load sharing details": [
         "加载共享详情失败"
@@ -8151,6 +8026,9 @@
       "Please describe the problem and include any error messages": [
         "请说明您的问题，并附上看到的所有错误提示"
       ],
+      "Please select the main reason": [
+        "请选择主要原因"
+      ],
       "Search": [
         "搜索"
       ],
@@ -8631,11 +8509,6 @@
         "登出而不重置密码？"
       ]
     },
-    "Shared calendar; Info about calendar owner": {
-      "Shared by ${ ownerName }": [
-        "由 ${ ownerName } 共享"
-      ]
-    },
     "sheets_2025:Action": {
       "Comma Separated Values (.csv)": [
         "逗号分隔值 (.csv)"
@@ -8984,9 +8857,6 @@
       "upgrade for more storage": [
         "付费扩容"
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "我们会将剩余时间的点数计入您的 ${ BRAND_NAME } 账户。"
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "您的 **${ currentPlanName }** 账户等级还有 **${ daysRemaining }** 天的有效期。"
       ],
@@ -9187,9 +9057,6 @@
       ],
       "You have successfully canceled your subscription.": [
         "您已成功取消订阅"
-      ],
-      "You have successfully unsubscribed": [
-        "您已退订成功"
       ]
     },
     "Suffix": {
@@ -9344,9 +9211,6 @@
       "Birthday": [
         "生日"
       ],
-      "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
-        "取消 ${ MAIL_SHORT_APP_NAME } 订阅"
-      ],
       "Cancel subscription?": [
         "取消订阅?"
       ],
@@ -9380,12 +9244,6 @@
       "Configure migration": [
         "配置迁移"
       ],
-      "Confirm downgrade": [
-        "确认降级"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "确定放弃 ${ BRAND_NAME } 特权"
-      ],
       "Connect apps and devices": [
         "连接应用和设备"
       ],
@@ -9400,6 +9258,9 @@
       ],
       "Contact group": [
         "联系人群组"
+      ],
+      "Contact us": [
+        "联系我们"
       ],
       "Contacts": [
         "通讯录"
@@ -9490,12 +9351,6 @@
       ],
       "Domain names": [
         "域名"
-      ],
-      "Downgrade account": [
-        "降级账户"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "降级至 ${ downgradedPlanName }?"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "下载 ${ DRIVE_APP_NAME } 应用"
@@ -9724,6 +9579,9 @@
       ],
       "Request new code": [
         "请求新验证码"
+      ],
+      "Request sent": [
+        "请求已发送"
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "稍后保存在 ${ DRIVE_APP_NAME }"
@@ -10107,6 +9965,20 @@
       ],
       "Replay video": [
         "回放视频"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "不如别的产品好用"
+      ],
+      "It’s missing a key feature": [
+        "缺少一个关键功能"
+      ],
+      "It’s too expensive": [
+        "价格太贵"
+      ],
+      "Other": [
+        "其它"
       ]
     },
     "VPN Plan Feature": {

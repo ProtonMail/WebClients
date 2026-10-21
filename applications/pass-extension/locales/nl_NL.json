@@ -25,12 +25,6 @@
       ]
     },
     "Action": {
-      "${ PASS_SHORT_APP_NAME } for Android": [
-        "${ PASS_SHORT_APP_NAME } voor Android"
-      ],
-      "${ PASS_SHORT_APP_NAME } for iOS": [
-        "${ PASS_SHORT_APP_NAME } voor iOS"
-      ],
       "Accept": [
         "Accepteren"
       ],
@@ -336,6 +330,12 @@
       ],
       "Do not suggest on this website": [
         "Niet voorstellen op deze website"
+      ],
+      "Download for macOS": [
+        "Download voor macOS"
+      ],
+      "Download for Windows": [
+        "Download voor Windows"
       ],
       "Download this CSV template": [
         "Download dit CSV-sjabloon"
@@ -841,6 +841,12 @@
       ],
       "Vault": [
         "Kluis"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } resultaat niet getoond",
+        "${ hiddenResultsCount } resultaten worden niet getoond"
       ]
     },
     "Button": {
@@ -1612,6 +1618,15 @@
         "Gebruikersnaam"
       ]
     },
+    "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "${ itemsCount } suggestie gevonden, gebruik het toetsenbord om te navigeren.",
+        "${ itemsCount } suggesties gevonden, gebruik het toetsenbord om te navigeren."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Gebruik omhoog- en omlaagknoppen om suggesties te openen en te bladeren na invoer. Druk op Enter om uw keuze te bevestigen, of op Escape om het suggestievak te sluiten."
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "\"${ payload.itemName }\" item werd afgewezen"
@@ -2281,8 +2296,7 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
-        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -4975,6 +4989,9 @@
       "Excluded items": [
         "Uitgesloten items"
       ],
+      "Export": [
+        "Exporteren"
+      ],
       "Fill & copy password": [
         "Wachtwoord invullen en kopiëren"
       ],
@@ -5010,6 +5027,9 @@
       ],
       "Import - ${ date }": [
         "Importeren - ${ date }"
+      ],
+      "Import failed": [
+        "Import mislukt"
       ],
       "Import to vault(s)": [
         "Importeren naar kluis/kluizen"

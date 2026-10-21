@@ -348,9 +348,6 @@
       "Connect to video conferencing": [
         "Připojit se k videokonferenci"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Připojte váš účet ${ BRAND_NAME }"
-      ],
       "Connect your email": [
         "Připojte svůj e-mail"
       ],
@@ -429,14 +426,8 @@
       "Create": [
         "Vytvořit"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Vytvořte účet ${ BRAND_NAME }"
-      ],
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "Vytvořte odkaz ke sdílení s kýmkoli mimo ${ BRAND_NAME }"
-      ],
-      "Create an account": [
-        "Vytvořit účet"
       ],
       "Create calendar": [
         "Vytvořit kalendář"
@@ -611,9 +602,6 @@
       ],
       "Done": [
         "Hotovo"
-      ],
-      "Downgrade": [
-        "Snížit"
       ],
       "Download": [
         "Stáhnout"
@@ -1275,17 +1263,11 @@
       "Reload": [
         "Znovu načíst"
       ],
-      "Reload page": [
-        "Obnovit stránku"
-      ],
       "Remove": [
         "Odstranit"
       ],
       "Remove all other devices": [
         "Odebrat všechna ostatní zařízení"
-      ],
-      "Remove bonuses": [
-        "Odebrat bonusy"
       ],
       "Remove button": [
         "Odebrat tlačítko"
@@ -2449,11 +2431,6 @@
         "Je nám líto, tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu ${ discountPercentage } na tarif ${ plan.Title } v případě předplacení na ${ cycle } měsíce.",
         "Je nám líto, tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu ${ discountPercentage } na tarif ${ plan.Title } v případě předplacení na ${ cycle } měsíců.",
         "Je nám líto, tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu ${ discountPercentage } na tarif ${ plan.Title } v případě předplacení na ${ cycle } měsíců."
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "30denní záruka vrácení peněz"
       ]
     },
     "bf2023: Title": {
@@ -6101,7 +6078,7 @@
         "**Pokud vás o pomoc nepožádali**, je možné, že se někdo jiný pokouší získat přístup k jejich účtu. V takovém případě tuto žádost ignorujte."
       ],
       "**Protect your legacy.** Upgrade your plan to add emergency contacts.": [
-        "**Chraňte své dědictví.** Upgradujte svůj plán a přidejte nouzové kontakty."
+        "**Chraňte své dědictví.** Navyšte svůj tarif a přidejte nouzové kontakty."
       ],
       "Access account": [
         "Přístup k účtu"
@@ -7625,14 +7602,6 @@
         "Zobrazit pozvánku"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "Rodinná skupina nebyla rozpoznána. Zkuste to znovu."
-      ],
-      "Organization not recognized. Try again.": [
-        "Organizace nebyla rozpoznána. Zkuste to znovu."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } skupiny"
@@ -7820,22 +7789,8 @@
       ]
     },
     "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "Zadejte název rodinné skupiny pro potvrzení"
-      ],
-      "Enter organization name to confirm": [
-        "Zadejte název organizace pro potvrzení"
-      ],
       "Family name": [
         "Jméno rodiny"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Toto trvale smaže všechny svěřené uživatele, účty a data spojená s vaší organizací."
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Toto odebere všechny prémiové funkce ${ BRAND_NAME } všem členům rodiny."
       ]
     },
     "familyOffer_2023:Settings section title": {
@@ -7863,12 +7818,6 @@
       ],
       "Change family name": [
         "Změna jména rodiny"
-      ],
-      "Delete family group?": [
-        "Smazat rodinnou skupinu?"
-      ],
-      "Delete organization?": [
-        "Smazat organizaci?"
       ],
       "Edit user storage": [
         "Upravit uživatelské úložiště"
@@ -9132,12 +9081,6 @@
       ],
       "Paused": [
         "Pozastaveno"
-      ],
-      "Undo finished": [
-        "Vzetí zpět dokončeno"
-      ],
-      "Undo in progress": [
-        "Vzetí zpět probíhá"
       ]
     },
     "Import type": {
@@ -9477,18 +9420,6 @@
       "${ url } deleted.": [
         "Doména ${ url } smazána."
       ],
-      "${ vaultLink } created": [
-        "${ vaultLink } byl vytvořen"
-      ],
-      "${ vaultLink } deleted": [
-        "${ vaultLink } byl smazán"
-      ],
-      "${ vaultLink } shared with email": [
-        "${ vaultLink } sdílený e-mailem"
-      ],
-      "${ vaultLink } updated": [
-        "${ vaultLink } byl aktualizován"
-      ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
         "${ VPN_SHORT_APP_NAME } skrývá váš síťový provoz. ${ PASS_SHORT_APP_NAME } skrývá vaši identitu\n— neomezené **hide-my-email aliasy** a **upozornění na úniky na dark webu**, pokud by došlo k úniku vašich dat."
       ],
@@ -9579,23 +9510,11 @@
         "+ ${ invisibleCount } dalších",
         "+ ${ invisibleCount } dalších"
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } bonusového místa na disku"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } připojení ${ VPN_APP_NAME } (umožňuje připojení dalších zařízení k síti VPN)",
-        "+${ organization.BonusVPN } připojení ${ VPN_APP_NAME } (umožňuje připojení dalších zařízení k síti VPN)",
-        "+${ organization.BonusVPN } připojení ${ VPN_APP_NAME } (umožňuje připojení dalších zařízení k síti VPN)",
-        "+${ organization.BonusVPN } připojení ${ VPN_APP_NAME } (umožňuje připojení dalších zařízení k síti VPN)"
-      ],
       "2FA disabled": [
         "2FA vypnuto"
       ],
       "30-day money-back guarantee": [
         "30denní záruka vrácení peněz"
-      ],
-      "30-day money-back guarantee.": [
-        "30denní záruka vrácení peněz."
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ protonSubdomain } hostuje ${ BRAND_NAME }, což umožňuje rychlé zprovoznění subdomény. ${ learnMoreLink }"
@@ -10002,9 +9921,6 @@
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "Deaktivací monitoru účtu smažete také celou vaší historii. Opravdu chcete pokračovat v deaktivaci?"
       ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Pokud svůj aktuální tarif snížíte na bezplatnou verzi, navždy ztratíte současné výhody, i když v budoucnu svůj účet znovu povýšíte."
-      ],
       "By leaving now, changes may not be saved": [
         "Pokud nyní opustíte stránku, změny nemusí být uloženy"
       ],
@@ -10331,9 +10247,6 @@
       ],
       "Downgrade": [
         "Snížit"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Snížením tarifu ukončíte všechna spojení s placenými ${ VPN_APP_NAME } servery."
       ],
       "Download ${ VPN_APP_NAME }": [
         "Stáhnout ${ VPN_APP_NAME }"
@@ -10788,15 +10701,6 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Ztratíte-li zařízení určené pro dvoufázové ověření, můžete pro přihlášení použít následující kódy místo 6-místného 2FA kódu. Každý kód může být použit pouze jednou."
       ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Pokud budete pokračovat ve snížení úrovně účtu, ztratíte přístup k placeným funkcím ${ MAIL_APP_NAME } a ${ VPN_APP_NAME }."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Pokud budete pokračovat ve snížení úrovně účtu, ztratíte přístup k placeným funkcím ${ MAIL_APP_NAME }, včetně dodatečného úložného prostoru a filtrů."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Pokud budete pokračovat ve snížení úrovně účtu, ztratíte přístup k placeným funkcím ${ VPN_APP_NAME }."
-      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Pokud jste zakoupili dárkový kód nebo jej obdrželi od našeho týmu podpory, můžete jej zadat zde."
       ],
@@ -10914,23 +10818,8 @@
       "Invitation link used": [
         "Odkaz pozvánky použit"
       ],
-      "Invite deleted": [
-        "Pozvánka smazána"
-      ],
       "Invite family members and get everything up and running.": [
         "Pozvěte členy rodiny a vše zprovozněte."
-      ],
-      "Invite for new user deleted": [
-        "Pozvánka pro nového uživatele smazána"
-      ],
-      "Invite for organization accepted": [
-        "Pozvánka pro organizaci přijata"
-      ],
-      "Invite for organization created": [
-        "Pozvánka pro organizaci vytvořena"
-      ],
-      "Invite rejected": [
-        "Pozvánka odmítnuta"
       ],
       "Invite successfully sent": [
         "Pozvánka byla úspěšně odeslána",
@@ -10952,54 +10841,6 @@
       ],
       "It's better to have:": [
         "Je lepší mít:"
-      ],
-      "Item autofilled in ${ vaultLink }": [
-        "Položka automaticky vyplněna v ${ vaultLink }"
-      ],
-      "Item autofilled in vault": [
-        "Položka automaticky vyplněna v trezoru"
-      ],
-      "Item created in ${ vaultLink }": [
-        "Položka vytvořena v ${ vaultLink }"
-      ],
-      "Item created in vault": [
-        "Položka v trezoru vytvořena"
-      ],
-      "Item deleted from ${ vaultLink }": [
-        "Položka smazána z ${ vaultLink }"
-      ],
-      "Item deleted from vault": [
-        "Položka smazána z trezoru"
-      ],
-      "Item flags changed in ${ vaultLink }": [
-        "Příznaky položky změněny v ${ vaultLink }"
-      ],
-      "Item flags changed in vault": [
-        "Příznaky položky změněny v trezoru"
-      ],
-      "Item in ${ vaultLink } trashed": [
-        "Položka v ${ vaultLink } přesunuta do koše"
-      ],
-      "Item in ${ vaultLink } untrashed": [
-        "Položka v ${ vaultLink } přesunuta z koše"
-      ],
-      "Item in vault trashed": [
-        "Položka v trezoru přesunuta do koše"
-      ],
-      "Item in vault untrashed": [
-        "Položka v trezoru přesunuta z koše"
-      ],
-      "Item read in ${ vaultLink }": [
-        "Položka přečtena v ${ vaultLink }"
-      ],
-      "Item read in vault": [
-        "Položka v trezoru přečtena"
-      ],
-      "Item updated in ${ vaultLink }": [
-        "Položka aktualizována v ${ vaultLink }"
-      ],
-      "Item updated in vault": [
-        "Položka v trezoru aktualizována"
       ],
       "It’s often the easiest way to recover your account if you’re signed in.": [
         "Pokud jste přihlášeni, je to často nejjednodušší způsob, jak obnovit přístup k účtu."
@@ -11196,9 +11037,6 @@
       "New group created via your identity provider and pending review.": [
         "Nová skupina vytvořená prostřednictvím vašeho poskytovatele identity čeká na kontrolu."
       ],
-      "New user invited to organization": [
-        "Nový uživatel byl pozván do organizace"
-      ],
       "New VPN connection data will stop being collected and shown.": [
         "Data o nových připojeních VPN se přestanou shromažďovat a zobrazovat."
       ],
@@ -11367,15 +11205,6 @@
       "Paid for a plan": [
         "Zaplaceno za tarif"
       ],
-      "Pass Monitor - custom email confirmed": [
-        "Pass Monitor - potvrzen vlastní e-mail"
-      ],
-      "Pass Monitor - custom email created": [
-        "Pass Monitor - vytvořen vlastní e-mail"
-      ],
-      "Pass Monitor - custom email deleted": [
-        "Pass Monitor - smazán vlastní e-mail"
-      ],
       "Pass usage logs": [
         "Předat logy o používání"
       ],
@@ -11459,9 +11288,6 @@
       ],
       "Please open the document to view it.": [
         "Prosím, otevřete dokument pro jeho zobrazení."
-      ],
-      "Please open your browser extension settings and allow ${ PASS_APP_NAME } extension to access website data. Then, reload this page.": [
-        "Otevřete prosím nastavení rozšíření prohlížeče a povolte rozšíření ${ PASS_APP_NAME } přístup k údajům webových stránek. Poté tuto stránku znovu načtěte."
       ],
       "Please reconnect to continue.": [
         "Pro pokračování se prosím znovu připojte."
@@ -11736,23 +11562,11 @@
       "Settings updated": [
         "Nastavení aktualizováno"
       ],
-      "Shared ${ vaultLink } deleted": [
-        "Sdílený ${ vaultLink } smazán"
-      ],
-      "Shared ${ vaultLink } updated": [
-        "Sdílený ${ vaultLink } aktualizován"
-      ],
       "Shared server country (${ countriesCount })": [
         "Země se sdíleným serverem (${ countriesCount })",
         "Země se sdíleným serverem (${ countriesCount })",
         "Země se sdíleným serverem (${ countriesCount })",
         "Země se sdíleným serverem (${ countriesCount })"
-      ],
-      "Shared vault deleted": [
-        "Sdílený trezor smazán"
-      ],
-      "Shared vault updated": [
-        "Sdílený trezor aktualizován"
       ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Zobrazení obrázku každého odesílatele v seznamu zpráv. Pokud není k dispozici fotka, zobrazí se iniciály odesílatele."
@@ -11772,9 +11586,6 @@
       "Sign in only": [
         "Pouze přihlášení"
       ],
-      "Sign in or create an account to continue.": [
-        "Pro pokračování se přihlaste nebo si vytvořte účet."
-      ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Přihlaste se do ${ MAIL_APP_NAME } pro aktivaci adresy"
       ],
@@ -11783,9 +11594,6 @@
       ],
       "Signed up": [
         "Zaregistrováno"
-      ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Vzhledem k tomu, že jste věrný uživatel, má Váš účet povolené další funkce."
       ],
       "Smart Routed through a different country.": [
         "Chytře směrováno přes jinou zemi."
@@ -11834,12 +11642,6 @@
       ],
       "Step ${ step }/${ totalSteps }": [
         "Krok ${ step }/${ totalSteps }"
-      ],
-      "Step 1 of 2": [
-        "Krok 1 ze 2"
-      ],
-      "Step 2 of 2": [
-        "Krok 2 ze 2"
       ],
       "Storage allocated to other users in this organisation": [
         "Úložný prostor přidělený ostatním uživatelům v této organizaci"
@@ -12300,9 +12102,6 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Unikátní ID vygenerované vyším poskytovatelem identity. Obvykle má podobu URL adresy, která obsahuje jméno vašeho poskytovatele identity (např. https://idp.example.com/XXXXX)."
       ],
-      "Unknown event type": [
-        "Neznámý typ události"
-      ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Pokud se neodhlásíte z účtu nebo nezměníte heslo, Vaše relace zůstane aktivní. Relace vyprší po 60 dnech nečinnosti."
       ],
@@ -12396,21 +12195,6 @@
       "Users": [
         "Uživatelé"
       ],
-      "Vault created": [
-        "Trezor vytvořen"
-      ],
-      "Vault deleted": [
-        "Trezor smazán"
-      ],
-      "Vault either deleted or requires access permissions": [
-        "Trezor je buď odstraněn nebo vyžaduje přístupová oprávnění"
-      ],
-      "Vault shared with email": [
-        "Trezor sdílený e-mailem"
-      ],
-      "Vault updated": [
-        "Trezor aktualizován"
-      ],
       "Verification code sent.": [
         "Ověřovací kód byl odeslán."
       ],
@@ -12428,9 +12212,6 @@
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Ověřte totožnost pomocí časově omezeného jednorázového hesla z autentizační aplikace"
-      ],
-      "Verifying ${ PASS_APP_NAME } browser extension...": [
-        "Ověřování rozšíření prohlížeče ${ PASS_APP_NAME }..."
       ],
       "Verifying your payment": [
         "Ověřování vaší platby"
@@ -12566,9 +12347,6 @@
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Pokud máte zapnuta upozornění a přijdou vám nové zprávy na váš účet ${ MAIL_APP_NAME }, zašleme vám upozornění na vaši e-mailovou adresu určenou pro obnovení."
-      ],
-      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
-        "Když zrušíte své stávající placené předplatné, zůstatek vašeho předplatného bude vrácen jako kredity na účet a tarif se sníží na ${ BRAND_NAME }. ${ PLANS.FREE }."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Když předplatné zrušíte, nebude obnoveno, ale výhody tarifu můžete využívat až do konce předplaceného období. Poté budete převedeni na tarif ${ BRAND_NAME } Free."
@@ -12830,9 +12608,6 @@
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "Musíte aktivovat soukromý klíč organizace pomocí hesla klíče organizace pro zálohování, které vám poskytne správce."
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Než budete moci přejít na nižší verzi, musíte deaktivovat nebo odebrat všechny další uživatele, adresy a vlastní domény účtu ${ MAIL_APP_NAME }."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Abyste mohli přidat PayPal jako platební metodu, musíte jej mít propojený s platební kartou nebo bankovním účtem."
@@ -15720,9 +15495,6 @@
       "use a data recovery method": [
         "použít metodu obnovení dat"
       ],
-      "Vault": [
-        "Trezor"
-      ],
       "View guide": [
         "Zobrazit průvodce"
       ],
@@ -16705,9 +16477,6 @@
       ]
     },
     "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Snížit na ${ downgradedPlanName }"
-      ],
       "Explore all ${ BRAND_NAME } plans": [
         "Objevte všechny ${ BRAND_NAME } tarify"
       ],
@@ -22804,9 +22573,6 @@
       "Upgrade your plan to increase your storage.": [
         "Navyšte svůj tarif, abyste získali více úložného prostoru."
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Nevyužitý kredit přidáme na váš účet ${ BRAND_NAME }."
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "V tarifu **${ currentPlanName }** vám zbývá ještě **${ daysRemaining }** den.",
         "V tarifu **${ currentPlanName }** vám zbývají ještě **${ daysRemaining }** dny.",
@@ -23727,9 +23493,6 @@
       "You have successfully canceled your subscription.": [
         "Úspěšně jste zrušili své předplatné."
       ],
-      "You have successfully unsubscribed": [
-        "Předplatné bylo úspěšně zrušeno"
-      ],
       "You will receive your username via email within a minute if you entered a valid recovery email address.": [
         "Pokud jste zadali platnou e-mailovou adresu pro obnovení, obdržíte své uživatelské jméno do jedné minuty e-mailem."
       ],
@@ -24097,9 +23860,6 @@
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
       ],
-      "${ PASS_APP_NAME } is missing permissions": [
-        "${ PASS_APP_NAME } nemá potřebná oprávnění"
-      ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "${ PASS_SHORT_APP_NAME } Monitor hlášení"
       ],
@@ -24460,12 +24220,6 @@
       "Confirm": [
         "Potvrdit"
       ],
-      "Confirm downgrade": [
-        "Potvrzení snížení"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Potvrdit ztrátu bonusů ${ BRAND_NAME }"
-      ],
       "Connect ${ name }": [
         "Připojit ${ name }"
       ],
@@ -24483,9 +24237,6 @@
       ],
       "Connect to video conferencing": [
         "Připojit se k videokonferenci"
-      ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Připojte váš účet ${ BRAND_NAME }"
       ],
       "Connect your custom domain": [
         "Připojení vlastní domény"
@@ -24747,9 +24498,6 @@
       ],
       "Downgrade account": [
         "Snížit úroveň účtu"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "Snížit na ${ downgradedPlanName }?"
       ],
       "Download ${ app }": [
         "Stáhnout ${ app }"
@@ -25917,9 +25665,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Vítejte v ${ BRAND_NAME } for Business"
-      ],
-      "Welcome to your new password manager!": [
-        "Vítejte ve svém novém správci hesel!"
       ],
       "What changes if you switch to the Free plan": [
         "Co se změní, pokud přejdete na tarif Free"
@@ -27262,12 +27007,6 @@
       ],
       "By removing this phone number, you will no longer be able to recover your account.": [
         "Odebráním telefonního čísla již nikdy nebudete moci obnovit svůj účet."
-      ],
-      "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
-        "Nelze se přihlásit. Otevřete prosím rozšíření prohlížeče ${ PASS_APP_NAME } a přihlaste se odtud."
-      ],
-      "Could not sign up. Please open ${ PASS_APP_NAME } browser extension and sign up from there.": [
-        "Registrace se nezdařila. Otevřete prosím rozšíření prohlížeče ${ PASS_APP_NAME } a zaregistrujte se tam."
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Pokud zrušíte tento import, nebudete jej moci obnovit. ${ BRAND_NAME } uložil veškerý průběh na vašem účtu. Přesto zrušit?"

@@ -25,12 +25,6 @@
       ]
     },
     "Action": {
-      "${ PASS_SHORT_APP_NAME } for Android": [
-        "${ PASS_SHORT_APP_NAME } για Android"
-      ],
-      "${ PASS_SHORT_APP_NAME } for iOS": [
-        "${ PASS_SHORT_APP_NAME } για iOS"
-      ],
       "Accept": [
         "Αποδοχή"
       ],
@@ -346,6 +340,15 @@
       "Done": [
         "Ολοκληρώθηκε"
       ],
+      "Download for Linux": [
+        "Λήψη για Linux"
+      ],
+      "Download for macOS": [
+        "Λήψη για MacOS"
+      ],
+      "Download for Windows": [
+        "Λήψη για Windows"
+      ],
       "Download this CSV template": [
         "Κατεβάστε αυτό το πρότυπο CSV"
       ],
@@ -555,6 +558,9 @@
       ],
       "Open navigation": [
         "Άνοιγμα μενού πλοήγησης"
+      ],
+      "Open platform selection dropdown": [
+        "Άνοιγμα αναπτυσσόμενου μενού επιλογής πλατφόρμας"
       ],
       "Organize vaults": [
         "Οργάνωση κρυπτών"
@@ -1059,6 +1065,9 @@
       ],
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Η ταυτοποίηση απέτυχε. Επιβεβαιώστε τον δεύτερο κωδικό πρόσβασής σας για να συνεχίσετε με την εξαγωγή"
+      ],
+      "Biometric authentication cancelled.": [
+        "Η βιομετρική ταυτοποίηση ακυρώθηκε."
       ],
       "Biometric authentication failed.": [
         "Ο βιομετρικός έλεγχος ταυτότητας απέτυχε."
@@ -2208,6 +2217,9 @@
       "invites you to access items in": [
         "σας προσκαλεί να αποκτήσετε πρόσβαση σε στοιχεία στη"
       ],
+      "iOS and Android Apps": [
+        "Εφαρμογές για iOS και Android"
+      ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Φαίνεται ότι είστε ήδη συνδεδεμένοι στο ${ PASS_APP_NAME }. Εάν προσπαθείτε να συνδεθείτε με διαφορετικό λογαριασμό, αποσυνδεθείτε πρώτα από την προέκταση."
       ],
@@ -2310,7 +2322,8 @@
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του."
+        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του.",
+        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους των."
       ],
       "Moving items": [
         "Μετακίνηση στοιχείων"
@@ -2605,6 +2618,12 @@
       ],
       "Restoring trashed items...": [
         "Επαναφορά διαγραμμένων στοιχείων..."
+      ],
+      "Scan to download": [
+        "Σαρώστε για λήψη"
+      ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "Σκανάρετε για να κατεβάσετε το ${ PASS_APP_NAME } για iOS και Android"
       ],
       "Secure links": [
         "Ασφαλείς σύνδεσμοι"
@@ -3727,11 +3746,17 @@
       "LinkedIn account": [
         "Λογαριασμός LinkedIn"
       ],
+      "Linux": [
+        "Linux"
+      ],
       "Login": [
         "Σύνδεση"
       ],
       "Logins": [
         "Συνδέσεις"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Mailboxes": [
         "Γραμματοκιβώτια"
@@ -4320,6 +4345,9 @@
       ],
       "WiFi network": [
         "Δίκτυο WiFi"
+      ],
+      "Windows": [
+        "Windows"
       ],
       "Work details": [
         "Λεπτομέρειες εργασίας"
@@ -5119,6 +5147,12 @@
       ],
       "Folder options": [
         "Επιλογές φακέλων"
+      ],
+      "Get mobile and desktop apps": [
+        "Αποκτήστε τις εφαρμογές για κινητά και υπολογιστές"
+      ],
+      "Get mobile apps": [
+        "Αποκτήστε εφαρμογές κινητών"
       ],
       "Get Started": [
         "Ξεκινήστε"

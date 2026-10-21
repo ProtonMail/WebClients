@@ -407,9 +407,6 @@
       "Done": [
         "完了"
       ],
-      "Downgrade": [
-        "ダウングレード"
-      ],
       "Download": [
         "ダウンロード"
       ],
@@ -859,9 +856,6 @@
       ],
       "Remove all other devices": [
         "全ての他のデバイスを削除する"
-      ],
-      "Remove bonuses": [
-        "ボーナスを削除"
       ],
       "Remove button": [
         "ボタンを削除"
@@ -1742,11 +1736,6 @@
     "bf2023: info": {
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "申し訳ありませんがこれらの要請は現在のあなたのプランでは許可されていません。${ cycle }ヶ月間のサブスクリプションで${ plan.Title }を${ discountPercentage }割引でご利用いただけます。"
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "30 日間返金保証"
       ]
     },
     "bf2023: Title": {
@@ -5326,14 +5315,6 @@
         "招待状を確認する"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "ファミリーグループが認識されません。再試行してください。"
-      ],
-      "Organization not recognized. Try again.": [
-        "組織が認識されません。再試行してください。"
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } グループ"
@@ -5473,22 +5454,8 @@
       ]
     },
     "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "家族グループ名を入力して確認"
-      ],
-      "Enter organization name to confirm": [
-        "組織名を入力して確認する"
-      ],
       "Family name": [
         "家族名"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "これにより、組織に関連するすべてのサブユーザー、アカウント、およびデータが永久に削除されます。"
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "これにより、家族全員の${ BRAND_NAME }プレミアム機能がすべて削除されます。"
       ]
     },
     "familyOffer_2023:Settings section title": {
@@ -5516,12 +5483,6 @@
       ],
       "Change family name": [
         "家族名の変更"
-      ],
-      "Delete family group?": [
-        "家族グループを削除しますか？"
-      ],
-      "Delete organization?": [
-        "組織を削除しますか？"
       ],
       "Edit user storage": [
         "ユーザーストレージの編集"
@@ -6615,18 +6576,6 @@
       "${ total } user found": [
         "${ total } 人のユーザーが見つかりました"
       ],
-      "${ vaultLink } created": [
-        "${ vaultLink } が作成されました"
-      ],
-      "${ vaultLink } deleted": [
-        "${ vaultLink } が削除されました"
-      ],
-      "${ vaultLink } shared with email": [
-        "${ vaultLink }はメールで共有されました"
-      ],
-      "${ vaultLink } updated": [
-        "${ vaultLink } が更新されました"
-      ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
         "${ VPN_SHORT_APP_NAME }はトラフィックを隠します。${ PASS_SHORT_APP_NAME }はユーザー情報を隠します\n— 無制限の **hide-my-email エイリアス**およびデータ漏洩が発生した場合の**ダークウェブ通知**。"
       ],
@@ -6693,12 +6642,6 @@
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } 個以上"
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } ボーナスストレージ"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } 件の ${ VPN_APP_NAME } 接続 (より多くのデバイスを VPN に接続可能)"
-      ],
       "1 vault per user": [
         "一人のユーザーにつき一つの保管庫"
       ],
@@ -6707,9 +6650,6 @@
       ],
       "30-day money-back guarantee": [
         "30 日間返金保証"
-      ],
-      "30-day money-back guarantee.": [
-        "30日間の返金保証。"
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ protonSubdomain }は${ BRAND_NAME }によってホストされており、迅速にサブドメインの設定ができます。詳しくは${ learnMoreLink }"
@@ -6960,9 +6900,6 @@
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "アカウントモニターを無効にすると、すべての履歴が消去されます。無効にしてよろしいですか？"
       ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "無料プランへダウングレードすると、現在の特典は利用できなくなります。今後アップグレードしても現在の特典は復活しません。"
-      ],
       "By leaving now, changes may not be saved": [
         "今すぐ退出すると、変更が保存されない場合があります"
       ],
@@ -7205,9 +7142,6 @@
       ],
       "Downgrade": [
         "ダウングレード"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "ダウングレードすると、有料の ${ VPN_APP_NAME } サーバーとの接続が終了します。"
       ],
       "Download ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } をダウンロード"
@@ -7521,15 +7455,6 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "2 要素認証デバイスを紛失した場合、6 桁の 2 要素認証パスコード代わりに、以下のコードを使用してアカウントにログインすることができます。各コードは一度しか使用できません。"
       ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "ダウングレードすると ${ MAIL_APP_NAME } と ${ VPN_APP_NAME } の有料機能が使えなくなります。"
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "ダウングレードすると ${ MAIL_APP_NAME } の追加ストレージやフィルターなどの有料機能にアクセスできなくなります。"
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "ダウングレードすると ${ VPN_APP_NAME } の有料機能が使えなくなります。"
-      ],
       "If you recently reset your password, you can ${ recoveryMethodLink } to unlock your data. If this is due to an old password reset, you can stop the message from showing again.": [
         "最近パスワードをリセットした場合は、${ recoveryMethodLink }を行ってデータを解読できます。過去のパスワードリセットが原因である場合は、このメッセージを非表示にすることができます。"
       ],
@@ -7608,21 +7533,6 @@
       "Invalid code. ${ RequestNewCodeLink } and try again.": [
         "無効なコードです。${ RequestNewCodeLink } して、もう一度お試しください。"
       ],
-      "Invite deleted": [
-        "招待が削除されました"
-      ],
-      "Invite for new user deleted": [
-        "新しいユーザーへの招待が削除されました"
-      ],
-      "Invite for organization accepted": [
-        "組織への招待が承諾されました"
-      ],
-      "Invite for organization created": [
-        "組織への招待が作成されました"
-      ],
-      "Invite rejected": [
-        "招待が拒否されました"
-      ],
       "Invite successfully sent": [
         "招待状が正常に送信されました"
       ],
@@ -7637,54 +7547,6 @@
       ],
       "It's better to have:": [
         "以下の方が良いでしょう:"
-      ],
-      "Item autofilled in ${ vaultLink }": [
-        "${ vaultLink }のアイテムが自動入力されました"
-      ],
-      "Item autofilled in vault": [
-        "保管庫のアイテムが自動入力されました"
-      ],
-      "Item created in ${ vaultLink }": [
-        "${ vaultLink }にアイテムが作成されました"
-      ],
-      "Item created in vault": [
-        "保管庫にアイテムが作成されました"
-      ],
-      "Item deleted from ${ vaultLink }": [
-        "${ vaultLink }からアイテムが削除されました"
-      ],
-      "Item deleted from vault": [
-        "保管庫からアイテムが削除されました"
-      ],
-      "Item flags changed in ${ vaultLink }": [
-        "${ vaultLink }のアイテムフラッグが変更されました"
-      ],
-      "Item flags changed in vault": [
-        "保管庫のアイテムフラグが変更されました"
-      ],
-      "Item in ${ vaultLink } trashed": [
-        "${ vaultLink }のアイテムが破棄されました"
-      ],
-      "Item in ${ vaultLink } untrashed": [
-        "${ vaultLink }のアイテムが復元されました"
-      ],
-      "Item in vault trashed": [
-        "保管庫のアイテムは破棄されました"
-      ],
-      "Item in vault untrashed": [
-        "保管庫のアイテムは復元されました"
-      ],
-      "Item read in ${ vaultLink }": [
-        "${ vaultLink }のアイテムが読み込まれました"
-      ],
-      "Item read in vault": [
-        "保管庫のアイテムが読み込まれました"
-      ],
-      "Item updated in ${ vaultLink }": [
-        "${ vaultLink }のアイテムが更新されました"
-      ],
-      "Item updated in vault": [
-        "保管庫のアイテムが更新されました"
       ],
       "It’s often the easiest way to recover your account if you’re signed in.": [
         "サインインしている場合、通常これがアカウントを回復するための最も簡単な方法です。"
@@ -7836,9 +7698,6 @@
       "New group created via your identity provider and pending review.": [
         "アイデンティティプロバイダ経由で新しいグループが作成され、確認を待っています。"
       ],
-      "New user invited to organization": [
-        "新しいユーザーが組織に招待されました"
-      ],
       "New VPN connection data will stop being collected and shown.": [
         "新しいVPN接続データの収集と表示が停止されます"
       ],
@@ -7946,15 +7805,6 @@
       ],
       "Paid for a plan": [
         "支払い済みのプラン"
-      ],
-      "Pass Monitor - custom email confirmed": [
-        "Pass Monitor - カスタムメールが確認されました"
-      ],
-      "Pass Monitor - custom email created": [
-        "Pass Monitor - カスタムメールが作成されました"
-      ],
-      "Pass Monitor - custom email deleted": [
-        "Pass Monitor - カスタムメールが削除されました"
       ],
       "Pass usage logs": [
         "Pass 使用ログ"
@@ -8238,20 +8088,8 @@
       "Setting up your organization": [
         "組織の設定"
       ],
-      "Shared ${ vaultLink } deleted": [
-        "共有 ${ vaultLink } が削除されました"
-      ],
-      "Shared ${ vaultLink } updated": [
-        "共有 ${ vaultLink } が更新されました"
-      ],
       "Shared server country (${ countriesCount })": [
         "共有サーバーの国 (${ countriesCount })"
-      ],
-      "Shared vault deleted": [
-        "共有保管庫が削除されました"
-      ],
-      "Shared vault updated": [
-        "共有保管庫が更新されました"
       ],
       "Sign in only": [
         "サインインのみ"
@@ -8264,9 +8102,6 @@
       ],
       "Signed up": [
         "サインアップ済み"
-      ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "あなたは忠実なユーザーですので、あなたのアカウントには追加機能が有効になっています。"
       ],
       "Smart Routed through a different country.": [
         "別の国を経由してスマートルーティングされています。"
@@ -8649,9 +8484,6 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "ID プロバイダーによって生成される一意の ID。通常は、ID プロバイダーの名前を含む URL の形式になります (例: https://idp.example.com/XXXXX)。"
       ],
-      "Unknown event type": [
-        "不明のイベントタイプ"
-      ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "アカウントからサインアウトするか、パスワードを変更しない限り、セッションはアクティブなままです。セッションは非アクティブになってから 60 日後に期限切れになります。"
       ],
@@ -8723,21 +8555,6 @@
       ],
       "Users": [
         "ユーザー"
-      ],
-      "Vault created": [
-        "保管庫が作成されました"
-      ],
-      "Vault deleted": [
-        "保管庫が削除されました"
-      ],
-      "Vault either deleted or requires access permissions": [
-        "保管庫が削除されたかアクセス権が必要です"
-      ],
-      "Vault shared with email": [
-        "保管庫はメールで共有されました"
-      ],
-      "Vault updated": [
-        "保管庫が更新されました"
       ],
       "Verification code sent.": [
         "確認コードが送信されました。"
@@ -8858,9 +8675,6 @@
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "ID プロバイダーで ${ appName } の SAML を有効にすると、コールバック (ACS) URL と発行者 ID を使用するように求められる場合があります。以下のデータをコピーして ID プロバイダーのフィールドに貼り付けるだけです。"
-      ],
-      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
-        "現在の有料サブスクリプションをキャンセルすると、サブスクリプションの残高はアカウントクレジットとして返却され、${ BRAND_NAME } ${ PLANS.FREE } プランにダウングレードされます。"
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "キャンセルする場合、サブスクリプションは自動更新されませんが、サブスクリプション期間終了まではプランの恩恵を受けることができます。その後、${ BRAND_NAME }の無料プランにダウングレードされます。"
@@ -9038,9 +8852,6 @@
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "バックアップしてある組織用の鍵のパスワードで、組織用の秘密鍵を有効化する必要があります。"
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "ダウングレードする前に、追加の ${ MAIL_APP_NAME } のユーザー、アドレス、独自ドメインを削除する必要があります。"
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "支払い方法として PayPal を追加するには、クレジットカードまたは銀行口座が PayPal アカウントにリンクされている必要があります。"
@@ -10655,9 +10466,6 @@
       "use a data recovery method": [
         "データ回復方法を使用する"
       ],
-      "Vault": [
-        "保管庫"
-      ],
       "View guide": [
         "ガイドを表示"
       ],
@@ -11227,9 +11035,6 @@
       ]
     },
     "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } へダウングレード"
-      ],
       "Explore all ${ BRAND_NAME } plans": [
         "すべての ${ BRAND_NAME } プランを表示"
       ],
@@ -15535,9 +15340,6 @@
       "upgrade for more storage": [
         "より大きなストレージへアップグレード"
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "残りの時間分のクレジットが ${ BRAND_NAME } アカウントに追加されます。"
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "お客様の**${ currentPlanName }**プランの有効期限は残り**${ daysRemaining }**日です。"
       ],
@@ -16258,9 +16060,6 @@
       "You have successfully canceled your subscription.": [
         "サブスクリプションが正常にキャンセルされました。"
       ],
-      "You have successfully unsubscribed": [
-        "サブスクリプションをキャンセルしました"
-      ],
       "You will receive your username via email within a minute if you entered a valid recovery email address.": [
         "有効なリカバリーメールアドレスを入力した場合、数分以内にメールでユーザーネームを受信します。"
       ],
@@ -16789,12 +16588,6 @@
       "Confirm": [
         "確認"
       ],
-      "Confirm downgrade": [
-        "ダウングレードの確認"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "${ BRAND_NAME } ボーナスの損失を確認"
-      ],
       "Connect a Gmail address": [
         "Gmail アドレスを接続する"
       ],
@@ -17007,9 +16800,6 @@
       ],
       "Downgrade account": [
         "アカウントのダウングレード"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "${ downgradedPlanName } にダウングレードしますか？"
       ],
       "Download ${ app }": [
         "${ app } をダウンロード"

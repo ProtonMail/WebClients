@@ -303,9 +303,6 @@
       "Done": [
         "Utført"
       ],
-      "Downgrade": [
-        "Nedgrader"
-      ],
       "Download": [
         "Last ned"
       ],
@@ -573,9 +570,6 @@
       "Open": [
         "Åpne"
       ],
-      "Open ${ CALENDAR_APP_NAME } settings": [
-        "Åpne innstillingene for ${ CALENDAR_APP_NAME }"
-      ],
       "Open ${ DRIVE_APP_NAME }": [
         "Åpne ${ DRIVE_APP_NAME }"
       ],
@@ -638,9 +632,6 @@
       ],
       "Remove access": [
         "Fjern tilgang"
-      ],
-      "Remove bonuses": [
-        "Fjern bonuser"
       ],
       "Remove button": [
         "Fjern knapp"
@@ -1124,11 +1115,6 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Premium passordbehandler"
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "30 dagers tilbakebetalingsgaranti"
       ]
     },
     "BF2024: Deal details": {
@@ -3740,14 +3726,6 @@
         "Bytt plan"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "Familiegruppe ikke gjenkjent. Prøv på nytt."
-      ],
-      "Organization not recognized. Try again.": [
-        "Organisasjon ikke gjenkjent. Prøv på nytt."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-grupper"
@@ -3815,30 +3793,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Kontoen din bruker ${ usedSpace } med lagringsplass som overskrider de ${ inviteSpace } tildelt deg. Slett noen data, eller be planadministratoren om å øke lagringsplassen."
-      ]
-    },
-    "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "Angi familiegruppenavnet for å bekrefte"
-      ],
-      "Enter organization name to confirm": [
-        "Angi organisasjonsnavnet for å bekrefte"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Dette vil permanent slette alle underbrukere, kontoer og data assosiert med organisasjonen din."
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Dette vil fjerne alle ${ BRAND_NAME }-premiumfunksjoner for hvert familiemedlem."
-      ]
-    },
-    "familyOffer_2023:Title": {
-      "Delete family group?": [
-        "Slette familiegruppe?"
-      ],
-      "Delete organization?": [
-        "Slett organisasjon?"
       ]
     },
     "Feature": {
@@ -4497,13 +4451,6 @@
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "** Du får ${ referrerRewardAmount }** i kreditter for hver venn som abonnerer."
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } bonuslagring"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } tilkobling for ${ VPN_APP_NAME } (tillater deg å tilkoble flere enheter til VPN)",
-        "+${ organization.BonusVPN } tilkoblinger for ${ VPN_APP_NAME } (tillater deg å tilkoble flere enheter til VPN)"
-      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Et telefonnummer kan bare brukes til å bekrefte en ${ BRAND_NAME }-konto"
       ],
@@ -4578,9 +4525,6 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Før du ber om en ny verifiseringskode, sjekk søppelpostmappen din og sjekk at ${ strong } er riktig adresse."
-      ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Ved å nedgradere til en gratis plan, vil du permanent miste disse fordelene, selv om du oppgraderer igjen i fremtiden."
       ],
       "Calendar side panel": [
         "Kalender-sidepanel"
@@ -4718,9 +4662,6 @@
       ],
       "Downgrade": [
         "Nedgrader"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Nedgradering vil terminere alle forbindelser til betalte ${ VPN_APP_NAME }-servere."
       ],
       "Download current logs": [
         "Last ned gjeldende logger"
@@ -4862,15 +4803,6 @@
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "Hvis du har mistet tilgangen til autentiseringsappen din, kan du bruke én av de 16 reservekodene for gjenoppretting som du fikk da du konfigurerte tofaktorautentisering. ${ learnMoreLink }"
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Hvis du fortsetter med nedgraderingen, vil du miste tilgang til de betalte funksjonene til ${ MAIL_APP_NAME } og ${ VPN_APP_NAME }."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Hvis du går videre med nedgraderingen, vil du miste tilgangen til de betalte funksjonene til ${ MAIL_APP_NAME }, inkludert mer lagringsplass og filtre."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Hvis du fortsetter med nedgraderingen, vil du miste tilgang til de betalte funksjonene til ${ VPN_APP_NAME }."
       ],
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
         "Hvis du fjerner deg selv, mister du tilgangen til \"${ fileName }\" og kan ikke åpne den igjen med mindre eieren deler den med deg på nytt."
@@ -5223,9 +5155,6 @@
       "Show table of contents": [
         "Vis innholdsfortegnelse"
       ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Siden du er en lojal bruker, har din konto tilleggsfunksjoner aktivert."
-      ],
       "Some edits are taking longer to sync than expected.": [
         "Noen redigeringer tar lengre tid å synkronisere enn forventet."
       ],
@@ -5434,6 +5363,9 @@
       "We'll email you once import is complete.": [
         "Vi sender deg en e-post når importen er fullført."
       ],
+      "We'll get back to you shortly.": [
+        "Vi vil komme tilbake til deg innen kort tid."
+      ],
       "We'll notify you when the import is done.": [
         "Vi varsler deg når importen er ferdig."
       ],
@@ -5518,14 +5450,6 @@
       "You can close the tab or browser in the meantime.": [
         "Du kan lukke fanen eller nettleseren i mellomtiden."
       ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalender. Fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter ditt ${ MAIL_SHORT_APP_NAME }-abonnementet.",
-        "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalendere. Fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter ditt ${ MAIL_SHORT_APP_NAME }-abonnementet."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalender. Fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter abonnementet ditt.",
-        "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalendere. Fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter abonnementet ditt."
-      ],
       "You can now return to the application to continue": [
         "Du kan nå gå tilbake til programmet for å fortsette"
       ],
@@ -5540,9 +5464,6 @@
       ],
       "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
         "Du har kanskje ikke de nødvendige tillatelsene til å se det med den valgte kontoen din. Prøv en annen konto eller kontakt eieren for tilgang."
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Du må deaktivere og fjerne alle eventuelle ${ MAIL_APP_NAME }-brukere, adresser og egendefinerte domener før du kan nedgradere."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Du vil miste tilgang til ${ planTitle }-funksjoner på denne datoen."
@@ -5688,11 +5609,6 @@
       "${ selectedFoldersCount } label selected": [
         "${ selectedFoldersCount } etikett valgt",
         "${ selectedFoldersCount } etiketter valgt"
-      ]
-    },
-    "Info; access rights for shared calendar": {
-      "View only": [
-        "Vis bare"
       ]
     },
     "Key badge": {
@@ -6034,6 +5950,9 @@
       "Phone number": [
         "Telefonnummer"
       ],
+      "Please share any feedback to help us improve.": [
+        "Gjerne del eventuelle tilbakemeldinger for å hjelpe oss med å bli bedre."
+      ],
       "Port": [
         "Port"
       ],
@@ -6123,6 +6042,9 @@
       ],
       "What happened?": [
         "Hva skjedde?"
+      ],
+      "Why would you like to cancel?": [
+        "Hvorfor ønsker du å avbryte?"
       ],
       "Your IP": [
         "IP-en din"
@@ -6508,38 +6430,20 @@
         "Middels VPN-hastighet"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Slett konto"
-      ],
-      "Downgrade account": [
-        "Nedgrader kontoen"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Få ${ BRAND_NAME } gratis"
-      ],
-      "Get ${ planName }": [
-        "Skaff deg ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Behold ${ plan }"
-      ],
-      "Keep account": [
-        "Behold konto"
-      ],
-      "Switch plan": [
-        "Bytt plan"
-      ]
-    },
     "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
       "Plans starting from ${ priceDrivePlus }": [
         "Planer starter fra ${ priceDrivePlus }"
       ],
       "Upgrade": [
         "Oppgrader"
+      ]
+    },
+    "new_plans: action": {
+      "Get ${ BRAND_NAME } for free": [
+        "Få ${ BRAND_NAME } gratis"
+      ],
+      "Get ${ planName }": [
+        "Skaff deg ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -7073,18 +6977,6 @@
       "For next-level password management and identity protection.": [
         "For neste-nivå passordbehandlig og identitetbeskyttelse."
       ],
-      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
-        "Hvis du sletter kontoen din, mister du alle ${ visionary }-plan fordeler og den vil ikke være tilgjengelig hvis du oppretter en ny konto."
-      ],
-      "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
-        "Hvis du nedgraderer kontoen din, mister du alle ${ visionary }-plan fordeler og den vil ikke være tilgjengelig hvis du forsøker å abonnere igjen."
-      ],
-      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
-        "Hvis du bytter til en annen plan mister du alle ${ visionary }-plan fordeler og du vil ikke være i stand til å bytte tilbake til ${ visionary }."
-      ],
-      "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
-        "Vår ${ visionary }-plan er ikke lenger tilgjengelig for nye abonnenter da det er en spesiell plan for originale ${ BRAND_NAME }-brukere med spesielle funksjoner og fordeler."
-      ],
       "Pay once, secure your passwords and identity forever.": [
         "Betal én gang, sikre passordene og identiteten din for alltid."
       ],
@@ -7114,12 +7006,6 @@
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
         "Ubegrenset privatliv og mer lagringsplass for opptil 2 personer."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
-        "Du får en kampanjepris på det nåværende abonnementet ditt. Hvis du sletter kontoen vil du miste kampanjeprisen og den vil ikke være tilgjengelig hvis du oppretter en ny konto."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
-        "Du får en kampanjepris på det nåværende abonnementet ditt. Hvis du nedgraderer kontoen vil du miste kampanjeprisen og den vil ikke være tilgjengelig hvis du forsøker å abonnere igjen."
       ]
     },
     "new_plans: Subtext": {
@@ -7131,17 +7017,6 @@
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "Lås opp alle ${ BRAND_NAME }-premiumprodukter og funksjoner for bare ${ priceLine }. Avslutt når som helst."
-      ]
-    },
-    "new_plans: title": {
-      "Delete account?": [
-        "Slett konto?"
-      ],
-      "Downgrade account?": [
-        "Nedgrader kontoen?"
-      ],
-      "Switch plans?": [
-        "Bytte plan?"
       ]
     },
     "new_plans: tooltip": {
@@ -7524,9 +7399,6 @@
       ],
       "Failed to load invitation details": [
         "Kunne ikke laste inn invitasjonsdetaljer"
-      ],
-      "Failed to load invitations": [
-        "Kunne ikke laste inn invitasjoner"
       ],
       "Failed to load sharing details": [
         "Kunne ikke laste inn delingsdetaljene"
@@ -8048,6 +7920,9 @@
       "Please describe the problem and include any error messages": [
         "Beskriv problemet og inkluder eventuelle feilmeldinger"
       ],
+      "Please select the main reason": [
+        "Velg hovedårsaken"
+      ],
       "Search": [
         "Søk"
       ],
@@ -8545,11 +8420,6 @@
         "Logge av uten tilbakestilling av passord?"
       ]
     },
-    "Shared calendar; Info about calendar owner": {
-      "Shared by ${ ownerName }": [
-        "Delt av ${ ownerName }"
-      ]
-    },
     "sheets_2025:Action": {
       "Comma Separated Values (.csv)": [
         "Kommaseparerte verdier (.csv)"
@@ -8903,9 +8773,6 @@
       "upgrade for more storage": [
         "oppgrader for mer lagringsplass"
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Vi legger til kredittene for den gjenværende tiden til ${ BRAND_NAME }-kontoen din."
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "Du har fortsatt **${ daysRemaining }** dag igjen på din **${ currentPlanName }**-plan.",
         "Du har fortsatt **${ daysRemaining }** dager igjen på din **${ currentPlanName }**-plan."
@@ -9117,9 +8984,6 @@
       ],
       "You have successfully canceled your subscription.": [
         "Du har sagt opp abonnementet."
-      ],
-      "You have successfully unsubscribed": [
-        "Du har avsluttet abonnementet"
       ]
     },
     "Suffix": {
@@ -9280,9 +9144,6 @@
       "Birthday": [
         "Bursdag"
       ],
-      "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
-        "Avbryt ${ MAIL_SHORT_APP_NAME }-abonnement"
-      ],
       "Cancel subscription?": [
         "Avbryte abonnement?"
       ],
@@ -9316,12 +9177,6 @@
       "Configure migration": [
         "Konfigurer migrering"
       ],
-      "Confirm downgrade": [
-        "Bekreft nedgradering"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Bekreft tap av ${ BRAND_NAME }-bonuser"
-      ],
       "Connect apps and devices": [
         "Koble til apper og enheter"
       ],
@@ -9336,6 +9191,9 @@
       ],
       "Contact group": [
         "Kontaktgruppe"
+      ],
+      "Contact us": [
+        "Kontakt oss"
       ],
       "Contacts": [
         "Kontakter"
@@ -9428,12 +9286,6 @@
       ],
       "Domain names": [
         "Domenenavn"
-      ],
-      "Downgrade account": [
-        "Nedgrader kontoen"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "Nedgradere til ${ downgradedPlanName }?"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Last ned ${ DRIVE_APP_NAME }-appen"
@@ -9663,6 +9515,9 @@
       ],
       "Request new code": [
         "Be om en ny kode"
+      ],
+      "Request sent": [
+        "Forespørsel sendt"
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Lagre den til senere i ${ DRIVE_APP_NAME }"
@@ -10046,6 +9901,20 @@
       ],
       "Replay video": [
         "Spill av video på nytt"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Jeg fant en annen tjeneste som jeg liker bedre"
+      ],
+      "It’s missing a key feature": [
+        "Det mangler en nøkkelfunksjon"
+      ],
+      "It’s too expensive": [
+        "Det er for dyrt"
+      ],
+      "Other": [
+        "Annen"
       ]
     },
     "VPN Plan Feature": {

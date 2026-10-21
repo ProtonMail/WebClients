@@ -309,9 +309,6 @@
       "Done": [
         "Гатова"
       ],
-      "Downgrade": [
-        "Панізіць"
-      ],
       "Download": [
         "Спампаваць"
       ],
@@ -585,9 +582,6 @@
       "Open": [
         "Адкрыць"
       ],
-      "Open ${ CALENDAR_APP_NAME } settings": [
-        "Адкрыць налады ${ CALENDAR_APP_NAME }"
-      ],
       "Open ${ DRIVE_APP_NAME }": [
         "Адкрыць ${ DRIVE_APP_NAME }"
       ],
@@ -650,9 +644,6 @@
       ],
       "Remove access": [
         "Выдаліць доступ"
-      ],
-      "Remove bonuses": [
-        "Выдаліць бонусы"
       ],
       "Remove button": [
         "Выдаліць кнопку"
@@ -1060,6 +1051,9 @@
       "Domains": [
         "Дамены"
       ],
+      "Managed Service Provider": [
+        "Пастаўшчык кіраваных паслуг"
+      ],
       "Servers": [
         "Серверы"
       ],
@@ -1164,11 +1158,6 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Прэміяльны менеджар пароляў"
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "Гарантыя вяртання грашовых сродкаў на працягу 30 дзён"
       ]
     },
     "BF2024: Deal details": {
@@ -3847,14 +3836,6 @@
         "Змяніць тарыфны план"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "Сямейная група не распазнана. Паўтарыце спробу."
-      ],
-      "Organization not recognized. Try again.": [
-        "Арганізацыя не распазнана. Паўтарыце спробу."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "Групы ${ BRAND_NAME }"
@@ -3924,30 +3905,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Ваш уліковы запіс выкарыстоўвае ${ usedSpace } сховішча, што перавышае абмежаванне на ${ inviteSpace }. Выдаліце некаторыя даныя або папрасіце адміністратара тарыфнага плана павялічыць даступны аб'ём у сховішчы."
-      ]
-    },
-    "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "Увядзіце назву сямейнай групы для пацвярджэння"
-      ],
-      "Enter organization name to confirm": [
-        "Увядзіце назву арганізацыі для пацвярджэння"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Гэта незваротна выдаліць усіх падпарадкаваных карыстальнікаў, уліковыя запісы, а таксама даныя, якія звязаны з вашай арганізацыяй."
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Гэта выдаліць усе прэміяльныя функцыі ${ BRAND_NAME } для кожнага ўдзельніка сямейнай групы."
-      ]
-    },
-    "familyOffer_2023:Title": {
-      "Delete family group?": [
-        "Выдаліць сямейную групу?"
-      ],
-      "Delete organization?": [
-        "Выдаліць арганізацыю?"
       ]
     },
     "Feature": {
@@ -4664,15 +4621,6 @@
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Вы атрымаеце ${ referrerRewardAmount }** у крэдытах за кожнага сябра, які падпішацца."
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } бонуснага сховішча"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } падключэнне па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)",
-        "+${ organization.BonusVPN } падключэнні па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)",
-        "+${ organization.BonusVPN } падключэнняў па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)",
-        "+${ organization.BonusVPN } падключэнняў па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)"
-      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Нумар тэлефона можа быць выкарыстаны для спраўджання аднаго ўліковага запісу ${ BRAND_NAME }"
       ],
@@ -4753,9 +4701,6 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Перад запытам новага кода спраўджання праверце папку са спамам, а таксама ці правільна ўказаны адрас ${ strong }."
-      ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Пры пераходзе на бясплатны тарыфны план вы незваротна страціце гэтыя перавагі, нават калі ў будучыні зноў пяройдзеце на яго."
       ],
       "Calendar side panel": [
         "Бакавая панэль календара"
@@ -4898,9 +4843,6 @@
       "Downgrade": [
         "Панізіць"
       ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Паніжэнне тарыфнага плана спыніць усе бягучыя падключэнні да платных сервераў ${ VPN_APP_NAME }."
-      ],
       "Download current logs": [
         "Спампоўванне бягучых журналаў"
       ],
@@ -5038,15 +4980,6 @@
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "Вы можаце выкарыстаць 1 з 16 рэзервовых кодаў аднаўлення, якія вы атрымалі пры наладжванні двухфактарнай аўтэнтыфікацыі, калі вы страцілі доступ да вашай праграмы аўтэнтыфікацыі. ${ learnMoreLink }"
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Калі вы працягніце паніжэнне свайго тарыфнага плана, то страціце доступ да платных функцый ${ MAIL_APP_NAME } і ${ VPN_APP_NAME }."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Калі вы працягніце паніжэнне свайго тарыфнага плана, то страціце доступ да платных функцый ${ MAIL_APP_NAME }, уключаючы дадатковае сховішча і фільтры."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Калі вы працягніце паніжэнне свайго тарыфнага плана, то страціце доступ да платных функцый ${ VPN_APP_NAME }."
       ],
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
         "Калі вы выдаліце сябе, то вы страціце доступ да \"${ fileName }\" і не зможаце адкрыць яго зноў. Толькі ўладальнік зможа абагуліць яго з вамі зноў."
@@ -5399,9 +5332,6 @@
       "Show table of contents": [
         "Адлюстраваць змест"
       ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Паколькі вы з'яўляецеся пастаянным карыстальнікам, мы дадалі ў ваш уліковы запіс дадатковыя функцыі."
-      ],
       "Some edits are taking longer to sync than expected.": [
         "Сінхранізацыя некаторых рэдагаванняў займае больш часу, чым чакалася."
       ],
@@ -5606,6 +5536,9 @@
       "We'll email you once import is complete.": [
         "Вам будзе адпраўлены ліст, калі імпартаванне будзе завершана."
       ],
+      "We'll get back to you shortly.": [
+        "Мы звяжамся з вамі ў самы бліжэйшы час."
+      ],
       "We'll notify you when the import is done.": [
         "Вы атрымаеце апавяшчэнне, калі імпартаванне будзе завершана."
       ],
@@ -5690,18 +5623,6 @@
       "You can close the tab or browser in the meantime.": [
         "Тым часам вы можаце закрыць укладку або браўзер."
       ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календара. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }.",
-        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }.",
-        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }.",
-        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календара. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску.",
-        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску.",
-        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску.",
-        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску."
-      ],
       "You can now return to the application to continue": [
         "Цяпер вы можаце вярнуцца да праграмы, каб працягнуць"
       ],
@@ -5722,9 +5643,6 @@
       ],
       "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
         "Магчыма, што ў вас адсутнічаюць неабходныя правы, каб прагледзець яго з дапамогай выбранага ўліковага запісу. Паспрабуйце іншы ўліковы запіс або звярніцеся да ўладальніка для атрымання доступу."
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Перад тым, як панізіць свой тарыфны план, вам неабходна адключыць або выдаліць для ${ MAIL_APP_NAME } дадатковых карыстальнікаў, паштовыя адрасы і карыстальніцкія дамены."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Вы страціце доступ да функцый тарыфнага плана ${ planTitle } пасля гэтай даты."
@@ -5878,11 +5796,6 @@
         "Выбрана ${ selectedFoldersCount } меткі",
         "Выбрана ${ selectedFoldersCount } метак",
         "Выбрана ${ selectedFoldersCount } метак"
-      ]
-    },
-    "Info; access rights for shared calendar": {
-      "View only": [
-        "Толькі прагляд"
       ]
     },
     "Key badge": {
@@ -6224,6 +6137,9 @@
       "Phone number": [
         "Нумар тэлефона"
       ],
+      "Please share any feedback to help us improve.": [
+        "Падзяліцеся з намі якім-небудзь водгукам, каб дапамагчы палепшыць наш сэрвіс."
+      ],
       "Port": [
         "Порт"
       ],
@@ -6313,6 +6229,9 @@
       ],
       "What happened?": [
         "Што здарылася?"
+      ],
+      "Why would you like to cancel?": [
+        "Чаму вы вырашылі скасаваць?"
       ],
       "Your IP": [
         "Ваш IP"
@@ -6725,38 +6644,20 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "Выдаліць уліковы запіс"
-      ],
-      "Downgrade account": [
-        "Панізіць уліковы запіс"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "Атрымаць ${ BRAND_NAME } бясплатна"
-      ],
-      "Get ${ planName }": [
-        "Атрымаць ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Пакінуць ${ plan }"
-      ],
-      "Keep account": [
-        "Пакінуць уліковы запіс"
-      ],
-      "Switch plan": [
-        "Змяніць тарыфны план"
-      ]
-    },
     "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Панізіць да ${ downgradedPlanName }"
-      ],
       "Plans starting from ${ priceDrivePlus }": [
         "Тарыфныя планы, якія пачынаюцца з ${ priceDrivePlus }"
       ],
       "Upgrade": [
         "Палепшыць"
+      ]
+    },
+    "new_plans: action": {
+      "Get ${ BRAND_NAME } for free": [
+        "Атрымаць ${ BRAND_NAME } бясплатна"
+      ],
+      "Get ${ planName }": [
+        "Атрымаць ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -7338,18 +7239,6 @@
       "For next-level password management and identity protection.": [
         "Для больш высокага ўзроўню кіравання паролямі і абароны ідэнтычнасці."
       ],
-      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
-        "Калі вы выдаліце свой уліковы запіс, то згубіце ўсе перавагі тарыфнага плана ${ visionary } і пры гэтым яго нельга будзе выбраць падчас стварэння новага ўліковага запісу."
-      ],
-      "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
-        "Калі вы панізіце свой уліковы запіс, то згубіце ўсе перавагі тарыфнага плана ${ visionary } і пры гэтым паўторна вярнуцца на яго вы больш не зможаце."
-      ],
-      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
-        "Калі вы зменіце свой тарыфны план на іншы, то згубіце ўсе перавагі тарыфнага плана ${ visionary } і больш не зможаце вярнуцца да ${ visionary }."
-      ],
-      "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
-        "Наш тарыфны план ${ visionary } больш недаступны для новых падпісчыкаў і зараз ён з'яўляецца спецыяльным тарыфным планам для карыстальнікаў ${ BRAND_NAME } і прадугледжвае для іх спецыяльныя функцыі і перавагі."
-      ],
       "Pay once, secure your passwords and identity forever.": [
         "Заплаціце адзін раз, каб пастаянна абараняць свае паролі і ідэнтычнасць."
       ],
@@ -7379,12 +7268,6 @@
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
         "Неабмежаваная прыватнасць і больш сховішча. Разлічаны на 1 або 2 карыстальнікі."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
-        "Вы карыстаецеся бягучым тарыфным планам па акцыйным кошце. Калі вы выдаліце свой уліковы запіс, то згубіце гэту перавагу і пры гэтым паўторна вярнуцца на яго вы больш не зможаце, калі паспрабуеце стварыць новы ўліковы запіс."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
-        "Вы карыстаецеся бягучым тарыфным планам па акцыённым кошце. Калі вы панізіце свой уліковы запіс, то згубіце гэту перавагу і больш не зможаце скарыстацца ёй, калі вырашыце падпісацца яшчэ раз."
       ]
     },
     "new_plans: Subtext": {
@@ -7396,17 +7279,6 @@
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "Разблакіраваць усе прэміяльныя прадукты ${ BRAND_NAME } і функцыі ўсяго за ${ priceLine }. Скасаваць можна ў любы момант."
-      ]
-    },
-    "new_plans: title": {
-      "Delete account?": [
-        "Выдаліць уліковы запіс?"
-      ],
-      "Downgrade account?": [
-        "Панізіць уліковы запіс?"
-      ],
-      "Switch plans?": [
-        "Змяніць тарыфны план?"
       ]
     },
     "new_plans: tooltip": {
@@ -7813,9 +7685,6 @@
       ],
       "Failed to load invitation details": [
         "Не ўдалося загрузіць падрабязнасці запрашэння"
-      ],
-      "Failed to load invitations": [
-        "Не ўдалося загрузіць запрашэнні"
       ],
       "Failed to load sharing details": [
         "Не ўдалося загрузіць абагуленыя падрабязнасці"
@@ -8441,6 +8310,9 @@
       "Please describe the problem and include any error messages": [
         "Апішыце праблему і далучыце ўсе паведамленні з памылкамі"
       ],
+      "Please select the main reason": [
+        "Выберыце асноўную прычыну"
+      ],
       "Search": [
         "Пошук"
       ],
@@ -8972,11 +8844,6 @@
         "Выйсці без скідання пароля?"
       ]
     },
-    "Shared calendar; Info about calendar owner": {
-      "Shared by ${ ownerName }": [
-        "Абагулена ${ ownerName }"
-      ]
-    },
     "sheets_2025:Action": {
       "Comma Separated Values (.csv)": [
         "Значэнні, раздзеленыя коскамі (.csv)"
@@ -9337,9 +9204,6 @@
       "upgrade for more storage": [
         "палепшыце тарыфны план, каб атрымаць больш сховішча"
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Мы дададзім крэдыты за той час, які застаўся на вашым уліковым запісе ${ BRAND_NAME }."
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "У вас яшчэ застаўся **${ daysRemaining }** дзень тарыфнага плана **${ currentPlanName }**.",
         "У вас яшчэ засталося **${ daysRemaining }** дні тарыфнага плана **${ currentPlanName }**.",
@@ -9573,9 +9437,6 @@
       ],
       "You have successfully canceled your subscription.": [
         "Вы паспяхова скасавалі сваю падпіску."
-      ],
-      "You have successfully unsubscribed": [
-        "Вы паспяхова скасавалі падпіску"
       ]
     },
     "Suffix": {
@@ -9748,9 +9609,6 @@
       "Birthday": [
         "Дзень нараджэння"
       ],
-      "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
-        "Скасаваць падпіску ${ MAIL_SHORT_APP_NAME }"
-      ],
       "Cancel subscription?": [
         "Скасаваць падпіску?"
       ],
@@ -9784,12 +9642,6 @@
       "Configure migration": [
         "Сканфігурыраваць перанос"
       ],
-      "Confirm downgrade": [
-        "Пацвердзіць паніжэнне тарыфнага плана"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Пацвердзіць страту бонусаў ${ BRAND_NAME }"
-      ],
       "Connect apps and devices": [
         "Падключэнне праграм і прылад"
       ],
@@ -9804,6 +9656,9 @@
       ],
       "Contact group": [
         "Група кантактаў"
+      ],
+      "Contact us": [
+        "Звязацца з намі"
       ],
       "Contacts": [
         "Кантакты"
@@ -9900,12 +9755,6 @@
       ],
       "Domain names": [
         "Даменныя імёны"
-      ],
-      "Downgrade account": [
-        "Панізіць уліковы запіс"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "Панізіць да ${ downgradedPlanName }?"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Спампаваць праграмы ${ DRIVE_APP_NAME }"
@@ -10070,7 +9919,7 @@
         "Адна электронная пошта, шмат атрымальнікаў"
       ],
       "Open actions dropdown": [
-        "Адкрыць спіс даступных дзеянняў"
+        "Адкрыць выпадное меню даступных дзеянняў"
       ],
       "Open pagination": [
         "Паказваць нумарацыю старонак"
@@ -10137,6 +9986,9 @@
       ],
       "Request new code": [
         "Запытайце новы код"
+      ],
+      "Request sent": [
+        "Запыт адпраўлены"
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Захаваць пазней у ${ DRIVE_APP_NAME }"
@@ -10526,6 +10378,20 @@
       ],
       "Replay video": [
         "Прайграць відэа"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Я знайшоў больш прывабны сэрвіс"
+      ],
+      "It’s missing a key feature": [
+        "Адсутнічаюць ключавыя функцыі"
+      ],
+      "It’s too expensive": [
+        "Занадта дорага"
+      ],
+      "Other": [
+        "Іншае"
       ]
     },
     "VPN Plan Feature": {

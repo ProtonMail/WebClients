@@ -330,9 +330,6 @@
       "Done": [
         "მზადაა"
       ],
-      "Downgrade": [
-        "ტარიფის ჩამოწევა"
-      ],
       "Download": [
         "გადმოწერა"
       ],
@@ -705,9 +702,6 @@
       "Remove access": [
         "წვდომის გაუქმება"
       ],
-      "Remove bonuses": [
-        "ბონუსების წაშლა"
-      ],
       "Remove button": [
         "ღილაკის მოცილება"
       ],
@@ -914,6 +908,9 @@
       ],
       "Submit report": [
         "ანგარიშის გადაგზავნა"
+      ],
+      "Subscribe": [
+        "გამოწერა"
       ],
       "Subscribe now": [
         "გამოიწერეთ ახლავე"
@@ -1246,11 +1243,6 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "პაროლების მმართველის ფასიანი ვერსია"
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "30 დღიანი გარანტირებული ფულის დაბრუნება"
       ]
     },
     "BF2024: Deal details": {
@@ -3764,14 +3756,6 @@
         "სატარიფო გეგმის გადართვა"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "საოჯახო ჯგუფი უცნობია. თავიდან სცადეთ."
-      ],
-      "Organization not recognized. Try again.": [
-        "უცნობი ორგანიზაცია. თავიდან სცადეთ."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } ჯგუფები"
@@ -3836,30 +3820,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "თქვენი ანგარიში ${ usedSpace } ადგილს იკავებს, რაც თქვენთვის გამოყოფილ ${ inviteSpace }-ზე მეტია. წაშალეთ ზოგი რამ ან ტარიფის ადმინისტრატორს თქვენი საცავის გაზრდა სთხოვეთ."
-      ]
-    },
-    "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "დასამოწმებლად შეიყვანეთ ოჯახის სახელი"
-      ],
-      "Enter organization name to confirm": [
-        "დასამოწმებლად შეიყვანეთ ორგანიზაციის სახელი"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "თქვენს ორგანიზაციასთან დაკავშირებული ქვემომხმარებლები, ანგარიშები და მონაცემები სამუდამოდ წაიშლება."
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "ეს ოჯახის ყველა წევრს ${ BRAND_NAME }-ის ყველა ფასიან ფუნქციას გაუუქმებს."
-      ]
-    },
-    "familyOffer_2023:Title": {
-      "Delete family group?": [
-        "წავშალო საოჯახო ჯგუფი?"
-      ],
-      "Delete organization?": [
-        "წავშალო ორგანიზაცია?"
       ]
     },
     "Feature": {
@@ -4517,16 +4477,6 @@
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**თქვენ მიიღებთ ${ referrerRewardAmount }** კრედიტს ყოველი მეგობრისთვის, რომელიც გააკეთებს გამოწერას."
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } დამატებითი საცავი"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } შეერთება ${ VPN_APP_NAME }-სთვის (უფლებას გაძლევთ VPN-ს მეტი მოწყობილობით დაუკავშირდეთ )",
-        "+${ organization.BonusVPN } შეერთება ${ VPN_APP_NAME }-სთვის (უფლებას გაძლევთ VPN-ს მეტი მოწყობილობით დაუკავშირდეთ )"
-      ],
-      "30-day money-back guarantee.": [
-        "30 დღიანი გარანტირებული ფულის დაბრუნება."
-      ],
       "A number will be added to the filename": [
         "ფაილის სახელს რიცხვი მიემატება"
       ],
@@ -4652,9 +4602,6 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "გააძლიერეთ თქვენი ორგანიზაციის ბრენდინგი და შეექმენით უფრო ერთგვაროვანი გამოცდილება თქვენი მომხმარებლებისთვის."
-      ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "უფასო გეგმაზე ჩამოწევით ამ ბენეფიტებს სამუდამოდ დაკარგავთ. მაშინაც კი, თუ მომავალში ფასიან ტარიფზე ისევ განახლდებით."
       ],
       "Calendar side panel": [
         "კალენდრის გვერდითი პანელი"
@@ -4790,9 +4737,6 @@
       ],
       "Downgrade": [
         "ტარიფის ჩამოწევა"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "გეგმის ჩამოწევა შეწყვეტს შეერთებას ფასიან ${ VPN_APP_NAME } სერვერებთან."
       ],
       "Download current logs": [
         "მიმდინარე ჟურნალის გადმოწერა"
@@ -4937,15 +4881,6 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "თუ ვერ იპოვეთ ელფოსტა თქვენს საფოსტო ყუთში, გადაამოწმეთ სპამის საქაღალდეც."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "თუ მაინც აპირებთ, ჩამოსწიოთ სატარიფო გეგმა, გაითვალისწინეთ, რომ ${ MAIL_APP_NAME }-ის და ${ VPN_APP_NAME }-ის ფასიან ფუნქციებთან წვდომას დაკარგავთ."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "თუ გააგრძელებთ ჩამოწევას, თქვენ დაკარგავთ წვდომას ${ MAIL_APP_NAME }-ის ფასიან სერვისებთან, დამატებითი საცავისა და ფილტრების ჩათვლით."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "თუ მაინც აპირებთ ჩამოსწიოთ სატარიფო გეგმა, გაითვალისწინეთ, რომ ${ VPN_APP_NAME }-ის ფასიან ფუნქციებთან წვდომას დაკარგავთ."
       ],
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
         "თუ საკუთარ თავს ამოშლით, დაკარგავთ წვდომას ელემენტზე „${ fileName }“ და ვეღარ შეძლებთ მის გახსნას, სანამ მფლობელი მას კვლავ არ გაგიზიარებთ."
@@ -5340,9 +5275,6 @@
       "Signature check will be ignored": [
         "ხელმოწერის შემოწმების გამოტოვება"
       ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "რადგან თქვენ ერთგული მომხმარებელი ბრძანდებით, ანგარიშისთვის დამატებითი თვისებებია ხელმისაწვდომი."
-      ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "ზოგიერთი მთავრობა ბლოკავს ან ზღუდავს წვდომას გარკვეულ ვებსაიტებზე. VPN გეხმარებათ ცენზურის გვერდის ავლით, თანაც ინარჩუნებს თქვენს აქტივობასა და იდენტობას პირადად."
       ],
@@ -5627,6 +5559,9 @@
       "We'll email you once import is complete.": [
         "როცა შემოტანა დასრულდება, ელფოსტაზე მოგწერთ."
       ],
+      "We'll get back to you shortly.": [
+        "მალე დავბრუნდები."
+      ],
       "We'll notify you when the import is done.": [
         "როდესაც შემოტანა დასრულდება, შეგატყობინებთ."
       ],
@@ -5727,9 +5662,6 @@
       ],
       "You may be redirected to your bank’s website.": [
         "შეიძლება, თქვენი ბანკის ვებგვერდზე გადამისამართდეთ."
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "სატარიფო გეგმის ჩამოწევამდე საჭიროა ${ MAIL_APP_NAME }-ის მომხმარებლების, მისამართების და ხელით მითითებული დომენების წაშლა."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "ამ თარიღის მოსვლისას ${ planTitle }-სთან და მის ფუნქციებთან წვდომას დაკარგავთ."
@@ -5977,6 +5909,12 @@
       "Allow editors to change permissions and share": [
         "რედაქტორებისთვის წვდომებისა და გაზიარების შეცვლის უფლების მიცემა"
       ],
+      "Amount": [
+        "რაოდენობა"
+      ],
+      "Amount due": [
+        "გადასახდელი თანხა"
+      ],
       "Anderson": [
         "ღობეგლეჯიაშვილი"
       ],
@@ -6108,6 +6046,9 @@
       ],
       "Credits": [
         "კრედიტები"
+      ],
+      "Credits used": [
+        "გამოყენებული სახსრები"
       ],
       "Delete": [
         "წაშლა"
@@ -6358,6 +6299,9 @@
       "Please provide full details to help us take appropriate action": [
         "გამოგვიგზავნეთ, რაც შეიძლება, მეტი დეტალი, რათა შესაბამისი ზომები მივიღოთ"
       ],
+      "Please share any feedback to help us improve.": [
+        "გაგვიზიარეთ თქვენი აზრი."
+      ],
       "Port": [
         "პორტი"
       ],
@@ -6498,6 +6442,9 @@
       ],
       "What happened?": [
         "რა მოხდა?"
+      ],
+      "Why would you like to cancel?": [
+        "რატომ აუქმებთ?"
       ],
       "Your IP": [
         "თქვენი IP"
@@ -7100,38 +7047,20 @@
         "VPN-ის საშუალო სიჩქარე"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "ანგარიშის წაშლა"
-      ],
-      "Downgrade account": [
-        "ანგარიშის ტარიფის ჩამოწევა"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "მიიღეთ ${ BRAND_NAME } უფასოდ"
-      ],
-      "Get ${ planName }": [
-        "${ planName }-ის მიღება"
-      ],
-      "Keep ${ plan }": [
-        "${ plan }-ის დატოვება"
-      ],
-      "Keep account": [
-        "ანგარიშის დატოვება"
-      ],
-      "Switch plan": [
-        "სატარიფო გეგმის გადართვა"
-      ]
-    },
     "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
-      ],
       "Plans starting from ${ priceDrivePlus }": [
         "${ priceDrivePlus }-დან დაწყებული სატარიფო გეგმები"
       ],
       "Upgrade": [
         "ტარიფის აწევა"
+      ]
+    },
+    "new_plans: action": {
+      "Get ${ BRAND_NAME } for free": [
+        "მიიღეთ ${ BRAND_NAME } უფასოდ"
+      ],
+      "Get ${ planName }": [
+        "${ planName }-ის მიღება"
       ]
     },
     "new_plans: feature": {
@@ -7656,18 +7585,6 @@
       "For next-level password management and identity protection.": [
         "პაროლების მართვისა და პირადი მონაცემების დაცვის შემდეგი დონე."
       ],
-      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
-        "თუ წაშლით თქვენს ანგარიშს, დაკარგავთ ${ visionary } ტარიფის ბენეფიტებს და თუ ახალ ანგარიშს შექმნით, ის მიუწვდომელი იქნება."
-      ],
-      "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
-        "თუ ჩამოწევთ თქვენს ანგარიშს, დაკარგავთ ${ visionary } ტარიფის ბენეფიტებს და თუ ისევ მოინდომებთ აწევას, ის მიუწვდომელი იქნება."
-      ],
-      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
-        "თუ გადაერთვებით სხვა ტარიფზე, ${ visionary } ტარიფის ყველა ბენეფიტს დაკარგავთ და უკან ${ visionary }-ზე ვეღარ დაბრუნდებით."
-      ],
-      "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
-        "ჩვენი სატარიფო გეგმა ${ visionary } ახალი გამომწერებისთვის ხელმისაწვდომი აღარაა, რადგან ის სპეციალური გეგმაა ${ BRAND_NAME }-ის მომხმარებლებისთვის, სპეციალური ფუნქციებით და ბენეფიტებით."
-      ],
       "Pay once, secure your passwords and identity forever.": [
         "გადაიხადეთ ერთხელ და დაიცავით თქვენი მონაცემები და პაროლები სამუდამოდ."
       ],
@@ -7697,12 +7614,6 @@
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
         "უსაზღვრო კონფიდენციალობა და მეტი საცავი 2-მდე პიროვნებისთვის."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
-        "თქვენს მიმდინარე გეგმაში სარეკლამო ფასით სარგებლობთ. ანგარიშის წაშლის შემთხვევაში, დაკარგავთ სარეკლამო ფასს და მაშინაც კი, თუ ანგარიშს თავიდან შექმნით, ის ხელმისაწვდომი აღარ იქნება."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
-        "თქვენს მიმდინარე გეგმაში სარეკლამო ფასით სარგებლობთ. ანგარიშის ტარიფის ჩამოწევის შემთხვევაში თქვენ დაკარგავთ სარეკლამო ფასს და თუ გამოწერას კვლავ შეეცდებით, ის ხელმისაწვდომი აღარ იქნება."
       ]
     },
     "new_plans: label": {
@@ -7722,20 +7633,11 @@
       ]
     },
     "new_plans: title": {
-      "Delete account?": [
-        "წავშალო ანგარიში?"
-      ],
-      "Downgrade account?": [
-        "გნებავთ ანგარიშის გეგმის ჩამოწევა?"
-      ],
       "Review subscription": [
         "გამოწერის გადახედვა"
       ],
       "Review subscription and pay": [
         "გადახედეთ გამოწერას და გადაიხადეთ"
-      ],
-      "Switch plans?": [
-        "გადავრთო სატარიფო გეგმა?"
       ]
     },
     "new_plans: tooltip": {
@@ -8833,6 +8735,9 @@
       "Please describe the problem and include any error messages": [
         "აღწერეთ პრობლემა და დაურთეთ შეცდომის ნებისმიერი შეტყობინება"
       ],
+      "Please select the main reason": [
+        "აირჩიეთ მთავარი მიზეზი"
+      ],
       "Postal code": [
         "საფოსტო კოდი"
       ],
@@ -9609,9 +9514,6 @@
       "upgrade for more storage": [
         "აწიეთ ტარიფი მეტი საცავისთვის"
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "ჩვენ დავამატებთ კრედიტებს დარჩენილი დროისთვის თქვენს ${ BRAND_NAME }-ის ანგარიშს."
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "**${ currentPlanName }**-ის ანგარიშზე **${ daysRemaining }** დაგრჩათ.",
         "**${ currentPlanName }**-ის ანგარიშზე **${ daysRemaining }** დაგრჩათ."
@@ -10100,6 +10002,9 @@
       "Invitation rejected": [
         "მოსაწვევი უარყოფილია"
       ],
+      "Invoice paid": [
+        "ინვოისი გადახდილია"
+      ],
       "Payment method added": [
         "გადახდის მეთოდი დამატებულია"
       ],
@@ -10129,9 +10034,6 @@
       ],
       "You have successfully canceled your subscription.": [
         "ტარიფი წარმატებით გააუქმეთ."
-      ],
-      "You have successfully unsubscribed": [
-        "გამოწერა წარმატებით გაუქმდა"
       ]
     },
     "Suffix": {
@@ -10389,12 +10291,6 @@
       "Computers": [
         "კომპიუტერები"
       ],
-      "Confirm downgrade": [
-        "ტარიფის ჩამოწევის დადასტურება"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "დაადასტურეთ ${ BRAND_NAME } -ის დამატებითი ჯილდოების დაკარგვა"
-      ],
       "Connect apps and devices": [
         "აპებისა და მოწყობილობების დაკავშირება"
       ],
@@ -10409,6 +10305,9 @@
       ],
       "Contact group": [
         "საკონტაქტო ჯგუფი"
+      ],
+      "Contact us": [
+        "დაგვიკავშირდით"
       ],
       "Contacts": [
         "კონტაქტები"
@@ -10535,9 +10434,6 @@
       ],
       "Downgrade account": [
         "ანგარიშის ტარიფის ჩამოწევა"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა?"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME }-ის აპების გადმოწერა"
@@ -10777,6 +10673,9 @@
       "Out of storage space": [
         "საცავის ადგილი ამოიწურა"
       ],
+      "Pay invoice": [
+        "ინვოისის გადახდა"
+      ],
       "Payment failed": [
         "გადახდის შეცდომა"
       ],
@@ -10845,6 +10744,9 @@
       ],
       "Request new code": [
         "ახალი კოდის გამოთხოვა"
+      ],
+      "Request sent": [
+        "მოთხოვნა გაიგზავნა"
       ],
       "Reverse charge not supported": [
         "უკუდაბეგვრა მხარდაუჭერელია"
@@ -11344,6 +11246,20 @@
       ],
       "Replay video": [
         "ვიდეოს თავიდან დაკვრა"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "სხვა სერვისი ვიპოვე, რომელიც უფრო მომწონს"
+      ],
+      "It’s missing a key feature": [
+        "აკლია ძრითადი ფუნქცია"
+      ],
+      "It’s too expensive": [
+        "ძალიან ძვირია"
+      ],
+      "Other": [
+        "სხვა"
       ]
     },
     "VPN Plan Feature": {

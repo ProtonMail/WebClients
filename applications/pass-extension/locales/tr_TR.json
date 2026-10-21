@@ -25,12 +25,6 @@
       ]
     },
     "Action": {
-      "${ PASS_SHORT_APP_NAME } for Android": [
-        "Android için ${ PASS_SHORT_APP_NAME }"
-      ],
-      "${ PASS_SHORT_APP_NAME } for iOS": [
-        "iOS için ${ PASS_SHORT_APP_NAME }"
-      ],
       "Accept": [
         "Kabul et"
       ],
@@ -238,6 +232,9 @@
       "Create a ${ BRAND_NAME } account": [
         "Bir ${ BRAND_NAME } hesabı açın"
       ],
+      "Create a login": [
+        "Oturum açma kaydı oluştur"
+      ],
       "Create a new vault": [
         "Yeni bir kasa oluştur"
       ],
@@ -339,6 +336,15 @@
       ],
       "Do not suggest on this website": [
         "Bu site için öneride bulunulmasın"
+      ],
+      "Download for Linux": [
+        "Linux için indir"
+      ],
+      "Download for macOS": [
+        "macOS için indirin"
+      ],
+      "Download for Windows": [
+        "Windows için indirin"
       ],
       "Download this CSV template": [
         "Bu CSV kalıbını indir"
@@ -493,6 +499,9 @@
       "Maximum views": [
         "En fazla görüntüleme sayısı"
       ],
+      "More details about how to export": [
+        "Nasıl dışa aktarılacağı ile ilgili ayrıntılı bilgi"
+      ],
       "More info": [
         "Diğer bilgiler"
       ],
@@ -540,6 +549,9 @@
       ],
       "Open navigation": [
         "Gezinmeyi aç"
+      ],
+      "Open platform selection dropdown": [
+        "Platform seçimi listesini aç"
       ],
       "Organize vaults": [
         "Kasaları düzenle"
@@ -715,6 +727,9 @@
       "Sign out": [
         "Oturumu kapat"
       ],
+      "Skip for now": [
+        "Şimdilik atla"
+      ],
       "Start from scratch": [
         "Sıfırdan başla"
       ],
@@ -847,6 +862,12 @@
       ],
       "Vault": [
         "Kasa"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "Görüntülenmeyen ${ hiddenResultsCount } sonuç daha var",
+        "Görüntülenmeyen ${ hiddenResultsCount } sonuç daha var"
       ]
     },
     "Browser": {
@@ -1030,6 +1051,9 @@
       ],
       "Authentication failure: ${ message }": [
         "Kimlik doğrulanamadı: ${ message }"
+      ],
+      "Biometric authentication cancelled.": [
+        "Biyometrik kimlik doğrulama iptal edildi."
       ],
       "Biometric authentication failed.": [
         "Biyometrik kimlik doğrulanamadı."
@@ -1639,6 +1663,182 @@
         "Kullanıcı adı"
       ]
     },
+    "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "${ itemsCount } öneri bulundu, gezinmek için klavyeyi kullanın.",
+        "${ itemsCount } öneri bulundu, gezinmek için klavyeyi kullanın."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Girişten sonra önerilere erişmek ve göz atmak için Yukarı ve Aşağı ok tuşlarını kullanın. Seçiminizi onaylamak için Enter tuşuna, öneriler kutusunu kapatmak için Esc tuşuna basın."
+      ]
+    },
+    "Import Tutorial": {
+      "${ name } saves your passwords in the ${ passwords } app. Open it and go to ${ file } → ${ exportAll }.": [
+        "${ name } parolalarınızı ${ passwords } uygulamasına kaydeder. Açın ve ${ file } → ${ exportAll } bölümüne gidin."
+      ],
+      "Account & Data": [
+        "Hesap ve veriler"
+      ],
+      "Advanced Options": [
+        "Gelişmiş seçenekler"
+      ],
+      "As a security measure, LastPass will email you to confirm the request. Open the email and click ${ continueExport }.": [
+        "Güvenlik önlemi olarak, isteği onaylamak için LastPass size bir e-posta gönderecek. E-postayı açın ve ${ continueExport } üzerine tıklayın."
+      ],
+      "At the confirmation screen, log back into your ${ name } Vault and to ${ advancedOptions } → ${ manageYourVault } → ${ exportLabel } again.": [
+        "Onay ekranında, ${ name } kasanızda oturum açın ve yeniden ${ advancedOptions } → ${ manageYourVault } → ${ exportLabel } bölümüne gidin."
+      ],
+      "Autofill and passwords": [
+        "Otomatik doldurma ve parolalar"
+      ],
+      "Choose ${ formatJson } as the file format, click ${ exportLabel } and confirm with your master password.": [
+        "Dosya biçimini ${ formatJson } olarak seçin, ${ exportLabel } üzerine tıklayın ve ana parolanız ile onaylayın."
+      ],
+      "Choose JSON downloads": [
+        "JSON indirmelerini seçin"
+      ],
+      "Choose the file format → Select ${ exportLabel }.": [
+        "Dosya biçimini seçin → ${ exportLabel } seçin."
+      ],
+      "Continue export": [
+        "Dışa aktarmayı sürdür"
+      ],
+      "Download file": [
+        "Dosyayı indir"
+      ],
+      "Enter your 1Password master password, ensure ${ format1pux } is selected, and click ${ exportData }.": [
+        "1Password ana parolanızı yazın, ${ format1pux } olarak seçildiğinden emin olun ve ${ exportData } üzerine tıklayın."
+      ],
+      "Export": [
+        "Dışa aktar"
+      ],
+      "Export All Passwords to File": [
+        "Tüm parolaları dosyaya aktarın"
+      ],
+      "Export Data": [
+        "Verileri dışa aktar"
+      ],
+      "Export data": [
+        "Verileri dışa aktar"
+      ],
+      "Export file format: 1PUX": [
+        "Dışa aktarma dosya biçimi: 1PUX"
+      ],
+      "Export items": [
+        "Ögeleri dışa aktar"
+      ],
+      "Export passwords": [
+        "Parolaları dışa aktar"
+      ],
+      "Export to CSV": [
+        "CSV olarak dışa aktar"
+      ],
+      "Export to TXT": [
+        "TXT olarak dışa aktar"
+      ],
+      "File": [
+        "Dosya"
+      ],
+      "Go to ${ exportPasswords } and select ${ downloadFile }.": [
+        "${ exportPasswords } bölümüne gidin ve ${ downloadFile } ögesini seçin."
+      ],
+      "Go to ${ passwords }.": [
+        "${ passwords } bölümüne gidin."
+      ],
+      "Go to the settings to locate the export action.": [
+        "Dışa aktarma işlemini bulmak için ayarlar bölümüne gidin."
+      ],
+      "Go to ☰ → ⚙ ${ settings } → Click ${ downloadFile }.": [
+        "☰ → ⚙ ${ settings } bölümüne gidin → ${ downloadFile } üzerine tıklayın."
+      ],
+      "Google Password Manager": [
+        "Google Şifre Yöneticisi"
+      ],
+      "Identify your password manager.": [
+        "Parola yöneticinizi belirleyin."
+      ],
+      "Manage your vault": [
+        "Kasanızı yönetin"
+      ],
+      "Microsoft password manager": [
+        "Microsoft parola yöneticisi"
+      ],
+      "More actions": [
+        "Diğer işlemler"
+      ],
+      "Navigate to ${ settings } tab.": [
+        "${ settings } sekmesine gidin."
+      ],
+      "Open ${ name } and go to ${ advancedOptions } → ${ manageYourVault } → ${ exportLabel }.": [
+        "${ name } açın ve ${ advancedOptions } → ${ manageYourVault } → ${ exportLabel } bölümüne gidin."
+      ],
+      "Open ${ name } and go to ${ file } → ${ exportLabel } → your 1Password username.": [
+        "${ name } açın ve ${ file } → ${ exportLabel } → 1Password kullanıcı adınız bölümüne gidin."
+      ],
+      "Open ${ name } and go to ${ menu } → ${ option }.": [
+        "${ name } açın ve ${ menu } → ${ option } bölümüne gidin."
+      ],
+      "Open ${ name } and go to ⋮ → ${ passwordsAndAutofill } → ${ googlePasswordManager }.": [
+        "${ name } açın ve ⋮ → ${ passwordsAndAutofill } → ${ googlePasswordManager } bölümüne gidin."
+      ],
+      "Open ${ name } and go to ☰ → ${ settings } → ${ autoFill }.": [
+        "${ name } açın ☰ → ${ settings } → ${ autoFill } bölümüne gidin."
+      ],
+      "Open ${ name } and select ${ menu } → ${ option }.": [
+        "${ name } açın ${ menu } → ${ option } seçin."
+      ],
+      "Open ${ name } and select ${ settings }.": [
+        "${ name } açın ve ${ settings } seçin."
+      ],
+      "Open ${ name } and select ⋯.": [
+        "${ name } açın ve ⋯ seçin."
+      ],
+      "Open ${ name } and select ☰ → ${ passwords }.": [
+        "${ name } açın ve ☰ → ${ passwords } seçin."
+      ],
+      "Passwords": [
+        "Parolalar"
+      ],
+      "Passwords and Autofill": [
+        "Parolalar ve otomatik doldurma"
+      ],
+      "Passwords and autofill": [
+        "Parolalar ve otomatik doldurma"
+      ],
+      "Select ${ exportLabel } → ${ chooseJson } → ${ exportAgain }.": [
+        "${ exportLabel } → ${ chooseJson } → ${ exportAgain } seçin."
+      ],
+      "Select ${ menu } → ${ option }.": [
+        "${ menu } → ${ option } seçin."
+      ],
+      "Select ${ option }.": [
+        "${ option } seçin."
+      ],
+      "Select the export format CSV.": [
+        "CSV dışa aktarma biçimini seçin."
+      ],
+      "Select ⋯ → ${ exportPasswords }.": [
+        "⋯ → ${ exportPasswords } seçin."
+      ],
+      "Settings": [
+        "Ayarlar"
+      ],
+      "Submit": [
+        "Gönder"
+      ],
+      "This time, you’ll be asked to re-confirm your ${ name } username and password. Click ${ submit }.": [
+        "Bu sefer ${ name } kullanıcı adınızı ve parolanızı yeniden onaylamanız istenecek. ${ submit } üzerine tıklayın."
+      ],
+      "Vault": [
+        "Kasa"
+      ],
+      "Vault options": [
+        "Kasa seçenekleri"
+      ],
+      "your username": [
+        "kullanıcı adınız"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "\"${ payload.itemName }\" ögesi yok sayıldı"
@@ -1665,6 +1865,9 @@
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } iletildi",
         "${ forwardedEmailsCount } iletildi"
+      ],
+      "${ imported } of ${ total } (${ percentage }%)": [
+        "${ imported } / ${ total } (%${ percentage })"
       ],
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail }, bir ögeyi yönettiğiniz bir grupla paylaşmak istiyor."
@@ -2033,6 +2236,9 @@
       "Domain: ${ domainPath } or @": [
         "Etki alanı: ${ domainPath } ya da @"
       ],
+      "Don’t close this tab": [
+        "Bu sekmeyi kapatmayın"
+      ],
       "Download pass-cli from ${ passCliLink }.": [
         "${ passCliLink } bağlantısından pass-cli paketini indirin."
       ],
@@ -2230,6 +2436,9 @@
       "invites you to access items in": [
         "sizi şu kasadaki ögelere erişmeye davet ediyor:"
       ],
+      "iOS and Android Apps": [
+        "iOS ve Android uygulamaları"
+      ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Görünüşe göre ${ PASS_APP_NAME } uygulamasında zaten oturum açmışsınız. Farklı bir hesapla oturum açmaya çalışıyorsanız, lütfen önce eklentideki oturumunuzu kapatın."
       ],
@@ -2329,8 +2538,7 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
-        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
+        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -2370,6 +2578,9 @@
       ],
       "No login found": [
         "Herhangi bir oturum açma kaydı bulunamadı"
+      ],
+      "No matching service. Try a different name.": [
+        "Eşleşen bir hizmet yok. Farklı bir ad deneyin."
       ],
       "No network connection": [
         "Ağ bağlantısı yok"
@@ -2417,6 +2628,12 @@
       ],
       "Open the ${ PASS_APP_NAME } popup": [
         "${ PASS_APP_NAME } açılır penceresini aç"
+      ],
+      "Open the extension here.": [
+        "Eklentiyi buradan açın."
+      ],
+      "Open the extension to unlock it": [
+        "Kilidini açmak için eklentiyi açın"
       ],
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Safari ayarlarını açın, ${ PASS_APP_NAME } uygulamasını bulun. Ardından \"İzinler\" bölümüne gidin ve site izinlerini açın"
@@ -2664,6 +2881,12 @@
       ],
       "Save passkey": [
         "Geçiş anahtarını kaydet"
+      ],
+      "Scan to download": [
+        "İndirmek için tara"
+      ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "iOS ve Android için ${ PASS_APP_NAME } indirmek için tarayın"
       ],
       "Secure links": [
         "Güvenli bağlantılar"
@@ -3762,6 +3985,9 @@
       "LinkedIn account": [
         "LinkedIn hesabı"
       ],
+      "Linux": [
+        "Linux"
+      ],
       "Login": [
         "Oturum açma"
       ],
@@ -3770,6 +3996,9 @@
       ],
       "Logins": [
         "Oturum açma kayıtları"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Mailboxes": [
         "E-posta kutuları"
@@ -4086,6 +4315,9 @@
       "Server": [
         "Sunucu"
       ],
+      "Service": [
+        "Hizmet"
+      ],
       "Settings": [
         "Ayarlar"
       ],
@@ -4304,6 +4536,9 @@
       ],
       "WiFi network": [
         "Kablosuz ağ"
+      ],
+      "Windows": [
+        "Windows"
       ],
       "Work details": [
         "İş bilgileri"
@@ -4597,6 +4832,9 @@
       ],
       "E.g., ": [
         "Örneğin, "
+      ],
+      "E.g.: Google": [
+        "Örnek: Google"
       ],
       "Email address": [
         "E-posta adresi"
@@ -4901,6 +5139,9 @@
       "Add mailbox": [
         "E-posta kutusu ekle"
       ],
+      "Add one account": [
+        "Bir hesap ekleyin"
+      ],
       "Adjust autofill behaviors to change where logins are suggested.": [
         "Otomatik doldurma davranışlarını ayarlayarak oturum açma bilgilerinin önerileceği yerleri değiştirin."
       ],
@@ -4936,6 +5177,9 @@
       ],
       "Browser permission required": [
         "Tarayıcı izni verilmesi gerekiyor"
+      ],
+      "Browsers": [
+        "Tarayıcılar"
       ],
       "Cancel changing your email?": [
         "E-posta adresi değişikliği iptal edilsin mi?"
@@ -4984,6 +5228,9 @@
       ],
       "Create subfolder in \"${ folderName }\"": [
         "\"${ folderName }\" içinde alt klasör oluştur"
+      ],
+      "Create your first login": [
+        "İlk oturum açma kaydınızı oluşturun"
       ],
       "Created": [
         "Oluşturulma"
@@ -5082,14 +5329,35 @@
       "Excluded items": [
         "Katılmayan ögeler"
       ],
+      "Export": [
+        "Dışa aktar"
+      ],
+      "Export from ${ provider.title }": [
+        "${ provider.title } üzerinden dışa aktar"
+      ],
       "Fill & copy password": [
         "Doldur ve parolayı kopyala"
+      ],
+      "Fill in your details": [
+        "Bilgilerinizi yazın"
       ],
       "Fill password": [
         "Parolayı doldur"
       ],
+      "First login created": [
+        "İlk oturum açma kaydı oluşturuldu"
+      ],
       "Folder options": [
         "Klasör ayarları"
+      ],
+      "For security purposes, delete your exported file.": [
+        "Güvenlik amacıyla, dışa aktarılan dosyanızı silin."
+      ],
+      "Get mobile and desktop apps": [
+        "Mobil ve bilgisayar uygulamalarını edinin"
+      ],
+      "Get mobile apps": [
+        "Mobil uygulamaları edinin"
       ],
       "Get Started": [
         "Başlayalım"
@@ -5118,8 +5386,29 @@
       "Import - ${ date }": [
         "İçe aktarma - ${ date }"
       ],
+      "Import completed with warnings": [
+        "İçe aktarma uyarılarla tamamlandı"
+      ],
+      "Import failed": [
+        "İçe aktarılamadı"
+      ],
+      "Import successful": [
+        "İçe aktarma tamamlandı"
+      ],
       "Import to vault(s)": [
         "Kasaların içine aktar"
+      ],
+      "Import your passwords in less than a minute": [
+        "Parolalarınızı bir dakikadan kısa sürede içe aktarın"
+      ],
+      "Important: Once your data has been imported, delete the exported file.": [
+        "Önemli: Verileriniz içe aktarıldıktan sonra dışa aktarılan dosyayı silin."
+      ],
+      "Imported from:": [
+        "Şuradan içe aktarıldı:"
+      ],
+      "Imported items:": [
+        "İçe aktarılmış ögeler:"
       ],
       "Importing your data": [
         "Verileriniz içe aktarılıyor"
@@ -5195,6 +5484,9 @@
       "Move all items?": [
         "Tüm ögeler taşınsın mı?"
       ],
+      "Move everything at once": [
+        "Her şeyi bir seferde taşı"
+      ],
       "Move item to \"${ target }\"": [
         "Ögeyi \"${ target }\" konumuna taşı"
       ],
@@ -5231,6 +5523,9 @@
       "No shared secure links": [
         "Paylaşılan bir güvenli bağlantı yok"
       ],
+      "None of your items could be imported. See the details below.": [
+        "Ögelerinizin hiçbiri içe aktarılamadı. Aşağıdaki ayrıntılara bakın."
+      ],
       "Open pagination": [
         "Sayfalandırmayı aç"
       ],
@@ -5248,6 +5543,9 @@
       ],
       "Password Health": [
         "Parola sağlığı"
+      ],
+      "Password managers": [
+        "Parola yöneticileri"
       ],
       "Pause monitoring?": [
         "İzleme durdurulsun mu?"
@@ -5323,6 +5621,9 @@
       "Select the default domain for aliases": [
         "Takma adlar için varsayılan etki alanını seçin"
       ],
+      "Select your password manager": [
+        "Parola yöneticinizi seçin"
+      ],
       "Set access level": [
         "Erişim düzeyini ayarla"
       ],
@@ -5347,8 +5648,14 @@
       "Shared via": [
         "Şununla paylaşıldı"
       ],
+      "Some of your items could not be imported. See the details below.": [
+        "Bazı ögeleriniz içe aktarılamadı. Aşağıdaki ayrıntılara bakın."
+      ],
       "SPF (Optional)": [
         "SPF (isteğe bağlı)"
+      ],
+      "Starting the extension": [
+        "Eklenti başlatılıyor"
       ],
       "Status": [
         "Durum"
@@ -5395,6 +5702,12 @@
       "Upgrade to check for compromised passwords": [
         "Açığa çıkmış parolaları kontrol etmek için tarifenizi yükseltin"
       ],
+      "Upload": [
+        "Yükle"
+      ],
+      "Upload your data": [
+        "Verilerinizi yükleyin"
+      ],
       "URL matching": [
         "Adres eşleştirme"
       ],
@@ -5416,6 +5729,9 @@
       "Want to learn more?": [
         "Ayrıntılı bilgi almak ister misiniz?"
       ],
+      "We'll guide you through the process. First choose where you currently store your passwords.": [
+        "Süreç boyunca size yol göstereceğiz. Öncelikle parolalarınızı şu anda nerede tuttuğunuzu seçin."
+      ],
       "Weak password": [
         "Parola zayıf"
       ],
@@ -5433,6 +5749,12 @@
       ],
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "${ PASS_SHORT_APP_NAME } notu ile SimpleLogin notu arasındaki fark nedir?"
+      ],
+      "Which service do you want to create the login for?": [
+        "Hangi hizmet için oturum açma kaydı oluşturmak istiyorsunuz?"
+      ],
+      "You are ready to get the most out of ${ PASS_APP_NAME }.": [
+        "${ PASS_APP_NAME } uygulamasından en iyi şekilde yararlanmaya hazırsınız."
       ],
       "You don't have any vaults": [
         "Henüz bir kasanız yok"
@@ -5454,6 +5776,9 @@
       ],
       "Your welcome gift": [
         "Karşılama hediyeniz"
+      ],
+      "You’re a step away from autofill magic!": [
+        "Otomatik doldurma büyüsünden bir adım uzaktasınız!"
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "${ aliasCount } takma adı kalıcı olarak silmek üzeresiniz.",

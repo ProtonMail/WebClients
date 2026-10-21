@@ -25,12 +25,6 @@
       ]
     },
     "Action": {
-      "${ PASS_SHORT_APP_NAME } for Android": [
-        "Android용 ${ PASS_SHORT_APP_NAME }"
-      ],
-      "${ PASS_SHORT_APP_NAME } for iOS": [
-        "iOS용 ${ PASS_SHORT_APP_NAME }"
-      ],
       "Accept": [
         "수락"
       ],
@@ -336,6 +330,12 @@
       ],
       "Do not suggest on this website": [
         "이 웹사이트에서 제안 끔"
+      ],
+      "Download for macOS": [
+        "macOS용 다운로드"
+      ],
+      "Download for Windows": [
+        "Windows용 다운로드"
       ],
       "Download this CSV template": [
         "CSV 양식 다운로드"
@@ -842,6 +842,11 @@
       ],
       "Vault": [
         "금고"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount }개의 추가 항목이 표시되지 않습니다"
       ]
     },
     "Button": {
@@ -1619,6 +1624,14 @@
         "사용자 이름"
       ]
     },
+    "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "${ itemsCount }개 제안 찾음, 탐색하려면 키보드를 사용하세요."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "위 아래 키를 사용하여 입력 뒤의 브라우저 제안에 접근하세요. 엔터를 눌러 선택을 확인하거나, Esc키를 눌러 제안 창을 닫으세요."
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "\"${ payload.itemName }\" 항목이 무시되었습니다."
@@ -2196,6 +2209,9 @@
       "invites you to access items in": [
         "님이 항목 공유를 초대합니다:"
       ],
+      "iOS and Android Apps": [
+        "iOS 및 Android 앱"
+      ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "이미 ${ PASS_APP_NAME }에 로그인 된 것 같습니다. 만약 다른 계정으로 로그인을 시도하는 중이라면, 확장 프로그램에서 로그아웃 하세요."
       ],
@@ -2293,7 +2309,7 @@
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
+        "항목을 다른 금고로 이동시 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
@@ -2624,6 +2640,9 @@
       ],
       "Save passkey": [
         "패스키 저장"
+      ],
+      "Scan to download": [
+        "스캔하여 다운로드"
       ],
       "Secure links": [
         "안전한 링크"
@@ -5014,6 +5033,9 @@
       "Excluded items": [
         "제외된 항목"
       ],
+      "Export": [
+        "내보내기"
+      ],
       "Fill & copy password": [
         "비밀번호 복사 및 채우기"
       ],
@@ -5022,6 +5044,9 @@
       ],
       "Folder options": [
         "폴더 옵션"
+      ],
+      "Get mobile and desktop apps": [
+        "모바일 및 데스크톱 앱 다운로드"
       ],
       "Get Started": [
         "시작하기"
@@ -5049,6 +5074,9 @@
       ],
       "Import - ${ date }": [
         "불러오기 - ${ date }"
+      ],
+      "Import failed": [
+        "불러오기 실패함"
       ],
       "Import to vault(s)": [
         "금고로 가져오기"
