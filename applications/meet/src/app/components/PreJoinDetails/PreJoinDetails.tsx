@@ -26,7 +26,7 @@ import clsx from '@proton/utils/clsx';
 
 import { SettingToggle } from '../../atoms/SettingToggle/SettingToggle';
 import { canOpenInDesktopApp, clearDesktopAppPreference } from '../../utils/desktopAppDetector';
-import { OpenInDesktopAppCard, OpenInDesktopAppLink } from '../OpenInDesktopApp/OpenInDesktopApp';
+import { OpenInDesktopApp } from '../OpenInDesktopApp/OpenInDesktopApp';
 import { PreJoinDetailsHeader } from './PreJoinDetailsHeader';
 import { WaitingRoomAdmission } from './WaitingRoomAdmission/WaitingRoomAdmission';
 import { WaitingRoomDropdown } from './WaitingRoomDropdown';
@@ -63,8 +63,6 @@ export const PreJoinDetails = ({
     const waitingRoomEnabled = useMeetSelector(selectWaitingRoomSetting);
 
     const [keepDisplayNameOnDevice, setKeepDisplayNameOnDevice] = useState(keepDisplayName);
-
-    const [desktopAppLaunchRequested, setDesktopAppLaunchRequested] = useState(false);
 
     const showHostScreen = instantMeeting || isHost;
 
@@ -132,23 +130,13 @@ export const PreJoinDetails = ({
                 >
                     {getActionLabel()}
                 </Button>,
-                ...(showOpenInDesktopApp && !desktopAppLaunchRequested
-                    ? [
-                          <OpenInDesktopAppLink
-                              key="open-in-desktop-app-link"
-                              onOpen={() => setDesktopAppLaunchRequested(true)}
-                          />,
-                      ]
-                    : []),
+                ...(showOpenInDesktopApp ? [<OpenInDesktopApp key="open-in-desktop-app" />] : []),
                 ...(!showHostScreen && waitingRoomEnabled
                     ? [
                           <span key="meeting-with-waiting-room-message" className="color-hint text-sm text-no-bold">{c(
                               'Info'
                           ).t`This meeting has a waiting room`}</span>,
                       ]
-                    : []),
-                ...(showOpenInDesktopApp && desktopAppLaunchRequested
-                    ? [<OpenInDesktopAppCard key="open-in-desktop-app-card" />]
                     : []),
             ]}
             loading={isMeetingLoading}
