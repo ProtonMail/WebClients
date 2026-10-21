@@ -4033,6 +4033,9 @@
       ],
       "Incorrect password. Please try again.": [
         "Napačno geslo. Prosimo, poskusite ponovno."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Napačna obnovitvena fraza. Poskusite znova ali uporabite drug način obnovitve."
       ]
     },
     "error": {
@@ -6484,6 +6487,9 @@
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Prav tako izgubite dostop do ${ boldPlanTitle } možnosti:"
+      ],
+      "We'll get back to you shortly.": [
+        "Kmalu vam bomo odgovorili."
       ]
     },
     "info": {
@@ -7206,6 +7212,21 @@
       ],
       "Zoom meeting": [
         "Sestanek prek Zooma"
+      ],
+      "Amount": [
+        "Znesek"
+      ],
+      "Amount due": [
+        "Zapadli znesek"
+      ],
+      "Credits used": [
+        "Porabljeno dobroimetje"
+      ],
+      "Please share any feedback to help us improve.": [
+        "Prosimo, sporočite nam povratne informacije, da se nam pomagate izboljšati."
+      ],
+      "Why would you like to cancel?": [
+        "Zakaj bi želeli preklicati?"
       ]
     },
     "label": {
@@ -9804,6 +9825,9 @@
       ],
       "ZIP code": [
         "Poštna številka"
+      ],
+      "Please select the main reason": [
+        "Prosimo, izberite glavni razlog."
       ]
     },
     "Placeholder for contact group name": {
@@ -11178,6 +11202,9 @@
       ],
       "You have successfully unsubscribed": [
         "Naročnina je preklicana"
+      ],
+      "Invoice paid": [
+        "Račun plačan"
       ]
     },
     "Suffix": {
@@ -12111,6 +12138,15 @@
       ],
       "Your shorter address is now ready": [
         "Vaš krajši naslov je zdaj pripravljen"
+      ],
+      "Contact us": [
+        "Kontaktirajte nas"
+      ],
+      "Pay invoice": [
+        "Plačilo računa"
+      ],
+      "Request sent": [
+        "Zahteva je poslana"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12811,6 +12847,120 @@
       ],
       "Passcode:": [
         "Koda za dostop:"
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Črni petek"
+      ],
+      "Get the deal": [
+        "Izkoristite ponudbo"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/mesec"
+      ],
+      "15 GB storage": [
+        "15 GB shrambe"
+      ],
+      "2 individual accounts": [
+        "2 individualna računa"
+      ],
+      "2 TB of secure storage": [
+        "2 TB varne shrambe"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB shrambe: 40x vaš trenutni paket"
+      ],
+      "3 TB of secure storage": [
+        "3 TB varne shrambe"
+      ],
+      "500 GB of secure storage": [
+        "500 GB varne shrambe"
+      ],
+      "6 individual accounts": [
+        "6 individualnih računov"
+      ],
+      "Built-in 2FA authenticator": [
+        "Vgrajen overitelj 2FA"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Popusti temeljijo na standardnih mesečnih cenah. Vaša naročnina se bo ob koncu obračunskega obdobja podaljšala po standardni letni ceni."
+      ],
+      "Online document editor": [
+        "Spletni urejevalnik dokumentov"
+      ],
+      "Recover previous file versions": [
+        "Obnovi prejšnje različice datoteke"
+      ],
+      "Stronger protection against cyber threats": [
+        "Močnejša zaščita pred kibernetskimi grožnjami"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Neomejeno število map, oznak in filtrov"
+      ],
+      "Use your own email domain": [
+        "Uporabite svojo e-poštno domeno"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premijski ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } in ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premijski ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premijski ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premijski ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } in ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premijski ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } in ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Največja razprodaja leta"
+      ],
+      "Black Friday": [
+        "Črni petek"
+      ],
+      "for 12 months": [
+        "za 12 mesecev"
+      ],
+      "Last chance to save big": [
+        "Zadnja priložnost za velik prihranek"
+      ],
+      "Protect your entire tribe": [
+        "Zaščitite vaše celotno pleme"
+      ],
+      "Protection for two in a single plan": [
+        "Zaščita za dve osebi v enem paketu"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Našel sem drugo storitev, ki mi je bolj všeč."
+      ],
+      "It’s missing a key feature": [
+        "Manjka bistvena funkcija."
+      ],
+      "It’s too expensive": [
+        "Predrago"
+      ],
+      "Other": [
+        "Drugo"
       ]
     }
   }
