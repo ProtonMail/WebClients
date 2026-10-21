@@ -2325,8 +2325,7 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborraran els enllaços segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -3051,10 +3050,10 @@
         "La vostra organització us demana que assegureu el vostre accés a ${ PASS_APP_NAME }."
       ],
       "iOS and Android Apps": [
-        "Aplicacions per iOS i Android"
+        "Aplicacions per a iOS i Android"
       ],
       "Scan to download": [
-        "Escanegeu-lo per descarregar-lo"
+        "Escanegeu per a descarregar"
       ],
       "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
         "Escaneja per descarregar ${ PASS_APP_NAME } per a iOS i Android"
@@ -5517,7 +5516,7 @@
         "Esteu a punt de suprimir permanentment ${ aliasCount } àlies."
       ],
       "Get mobile and desktop apps": [
-        "Obtingueu les aplicacions per mòbil i escriptori"
+        "Obteniu les aplicacions per a mòbil i per a escriptori"
       ],
       "Get mobile apps": [
         "Obtingueu aplicacions mòbils"
