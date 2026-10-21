@@ -661,7 +661,7 @@
         "Belgeyi yeniden adlandır"
       ],
       "Report a problem": [
-        "Sorun bildirin"
+        "Sorun bildireceğim"
       ],
       "Report issue": [
         "Sorun bildireceğim"
@@ -1138,6 +1138,9 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30 gün içinde ücreti geri ödeme garantisi"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30 gün içinde iptal edin ve geri ödeme almak için ${ customerSupportLink } ile görüşün."
       ]
     },
     "BF2024: Deal details": {
@@ -1166,10 +1169,10 @@
     },
     "bfcampaign2026: Action": {
       "Black Friday": [
-        "Muhteşem Cuma"
+        "Efsane Cuma"
       ],
       "Get the deal": [
-        "Tekliften yararlanın"
+        "Fırsatı yakala"
       ]
     },
     "bfcampaign2026: Info": {
@@ -1186,7 +1189,7 @@
         "2 TB güvenli depolama alanı"
       ],
       "200 GB storage: 40x your current plan": [
-        "200 GB depolama alanı: Geçerli tarifenizin 40 katı"
+        "200 GB depolama alanı: Mevcut tarifenizin 40 katı"
       ],
       "3 TB of secure storage": [
         "3 TB güvenli depolama alanı"
@@ -1198,25 +1201,25 @@
         "6 bireysel hesap"
       ],
       "Built-in 2FA authenticator": [
-        "Hazır iki adımlı kimlik doğrulayıcı"
+        "Yerleşik iki faktörlü kimlik doğrulayıcı"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "İndirimler standart aylık fiyatlara göre hesaplanır. Fatura dönemi sona erdiğinde aboneliğiniz standart yıllık ücret ile yenilenir."
+        "İndirimler, standart aylık fiyatlandırmaya göre hesaplanmıştır. Aboneliğiniz, fatura dönemi bittiğinde standart yıllık ücret üzerinden yenilenir."
       ],
       "Online document editor": [
         "Çevrim içi belge düzenleyici"
       ],
       "Recover previous file versions": [
-        "Önceki dosya sürümlerini geri yükleme"
+        "Önceki dosya sürümlerini kurtarın"
       ],
       "Stronger protection against cyber threats": [
         "Siber tehditlere karşı daha güçlü koruma"
       ],
       "Unlimited folders, labels, and filters": [
-        "Sınırsız sayıda klasör, etiket ve süzgeç"
+        "Sınırsız sayıda klasör, etiket ve filtre"
       ],
       "Use your own email domain": [
-        "Kendi e-posta etki alanınızı kullanma"
+        "Kendi e-posta etki alanınızı kullanın"
       ]
     },
     "bfcampaign2026: Info, Drive first": {
@@ -1249,13 +1252,13 @@
         "Yılın en büyük indirimi"
       ],
       "Black Friday": [
-        "Muhteşem Cuma"
+        "Efsane Cuma"
       ],
       "for 12 months": [
         "12 aylık"
       ],
       "Last chance to save big": [
-        "Büyük kazanç için son şans"
+        "Büyük tasarruf için son fırsat"
       ],
       "Protect your entire tribe": [
         "Kabilenizi koruyun"
@@ -5791,6 +5794,13 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Kendi hesap bilgilerinizi görmeyi sürdürebileceksiniz. Ancak kuruluşunuzun tüm kullanıcı hesapları silinecek."
+      ],
+      "${ selection.selectedIds.length } selected": [
+        "${ selection.selectedIds.length } seçilmiş",
+        "${ selection.selectedIds.length } seçilmiş"
+      ],
+      "We'll get back to you shortly.": [
+        "Size en kısa sürede geri dönüş yapacağız."
       ]
     },
     "info": {
@@ -6264,6 +6274,18 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Şifresi çözülemeyen ad"
+      ],
+      "Please share any feedback to help us improve.": [
+        "Hizmetlerimizi geliştirebilmemiz için bizi bilgilendirin."
+      ],
+      "Select ${ document.name }": [
+        "${ document.name } belgesini seç"
+      ],
+      "Select all": [
+        "Tümünü seç"
+      ],
+      "Why would you like to cancel?": [
+        "Neden iptal etmek istiyorsunuz?"
       ]
     },
     "Label for contact group color": {
@@ -6395,6 +6417,9 @@
       ],
       "What’s this?": [
         "Bu nedir?"
+      ],
+      "Customer Support": [
+        "Müşteri desteği"
       ]
     },
     "List title": {
@@ -7734,6 +7759,10 @@
       ],
       "Your settings have been changed successfully": [
         "Ayarlarınız değiştirildi"
+      ],
+      "${ count } item could not be moved to trash": [
+        "${ count } öge çöpe atılamadı",
+        "${ count } öge çöpe atılamadı"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8317,6 +8346,9 @@
       ],
       "Your organization name": [
         "Kuruluşunuzun adı"
+      ],
+      "Please select the main reason": [
+        "Lütfen temel nedeni seçin"
       ]
     },
     "Placeholder for contact group name": {
@@ -9896,7 +9928,7 @@
         "Erişiminiz kaldırılsın mı?"
       ],
       "Report a problem": [
-        "Sorun bildirin"
+        "Sorun bildireceğim"
       ],
       "Report issue": [
         "Sorun bildireceğim"
@@ -10068,6 +10100,12 @@
       ],
       "Your exposed information": [
         "Sızdırılmış bilgileriniz"
+      ],
+      "Contact us": [
+        "Bize ulaşın"
+      ],
+      "Request sent": [
+        "İstek gönderildi"
       ]
     },
     "Title header for keys table": {
@@ -10259,6 +10297,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Kullanıcı daveti kabul ettikten sonra rol atayabileceksiniz."
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "Bu kullanıcı bir sonraki oturum açmasında yönetici yetkilerini alacak."
       ]
     },
     "Validation": {
@@ -10444,6 +10485,20 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Deneme süreniz ${ textDate } tarihinde sona erecek. ${ textDate } tarihinden önce iptal ederseniz sizden ücret alınmayacak. ${ action }"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Daha çok sevdiğim başka bir hizmet buldum"
+      ],
+      "It’s missing a key feature": [
+        "Temel bir özellik eksik"
+      ],
+      "It’s too expensive": [
+        "Çok pahalı"
+      ],
+      "Other": [
+        "Diğer"
       ]
     }
   }
