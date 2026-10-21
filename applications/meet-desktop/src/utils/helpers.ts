@@ -20,12 +20,15 @@ export const getPlatform = (): DESKTOP_PLATFORMS => {
 };
 
 export const clearStorage = async () => {
-    const { t } = c("Clear application data prompt");
     const { response } = await dialog.showMessageBox({
-        buttons: [t`Clear application data`, t`Cancel`],
+        buttons: [
+            c("Clear application data prompt").t`Clear application data`,
+            c("Clear application data prompt").t`Cancel`,
+        ],
         title: "Proton Meet",
-        message: t`Clear application data`,
-        detail: t`This removes all data associated with this app. The app will close and you will need to sign in again to use the app.`,
+        message: c("Clear application data prompt").t`Clear application data`,
+        detail: c("Clear application data prompt")
+            .t`This removes all data associated with this app. The app will close and you will need to sign in again to use the app.`,
     });
 
     if (response !== 0) {
