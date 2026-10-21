@@ -181,6 +181,7 @@ Rules that follow:
 
 ### Lexical (`Containers/Docs`)
 
+- UI strings live in the typed `DocsMessages` catalogue (`messages/`); components read them with `useDocsMessages()`. To add a string, add its key to the defaults object exported next to the component and spread in `defaultDocsMessages`, and its ttag translation in `Containers/adapters/docs/docsMessages/`. Some `Containers/Docs` files still call ttag directly until they are migrated.
 - A plugin is a function component named `<Feature>Plugin` in `Plugins/<Feature>/`. It gets the editor from `useLexicalComposerContext()`, registers listeners in a `useEffect` that returns the unregister function (combine with `mergeRegister`), and returns `null` unless it renders UI. Mount it in `Containers/Docs/Editor.tsx`. Model: `Plugins/PageBreak/PageBreakPlugin.tsx`.
 - Commands: `export const X_COMMAND = createCommand('X_COMMAND')`, in a `Commands.ts` next to the feature.
 - Nodes: `<Name>Node.ts(x)` with `$create<Name>Node` / `$is<Name>Node`, registered in `Containers/Docs/AllNodes.ts` (the single list used by the editor, exporters and tests).
