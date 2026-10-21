@@ -67,7 +67,7 @@ export function lumoImageMarker(id: string, source: 'user' | 'assistant', name?:
 /**
  * Post-process generated titles (remove quotes, trim, etc.)
  */
-export function postProcessTitle(title: string): string {
+export function postProcessTitle(title: string, fallbackTitle = 'Untitled Conversation'): string {
     // Remove surrounding quotes if present
     let processed = title.replace(/^["']|["']$/g, '');
 
@@ -79,7 +79,7 @@ export function postProcessTitle(title: string): string {
         processed = processed.substring(0, 97) + '...';
     }
 
-    return processed || 'Untitled Conversation';
+    return processed || fallbackTitle;
 }
 
 /**
