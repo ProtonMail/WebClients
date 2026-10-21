@@ -1,8 +1,7 @@
 import { c } from 'ttag';
 
-import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import { useBookingUpsell } from '@proton/calendar/bookings/store/useBookingUpsell';
+import { BookingCreateAction, useBookingUpsell } from '@proton/calendar/bookings/store/useBookingUpsell';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
@@ -21,9 +20,8 @@ interface Props {
 }
 
 export const BookingSidebarAction = ({ onCreateEvent, disabled, utcDate }: Props) => {
-    const [user] = useUser();
-    const { shouldShowLimitModal } = useBookingUpsell();
-    const showUpsellIcon = user.canPay && shouldShowLimitModal().planLimitReached;
+    const { getCreateBookingAction } = useBookingUpsell();
+    const showUpsellIcon = getCreateBookingAction() === BookingCreateAction.Upsell;
     const { openBookingSidebarCreation, canCreateBooking } = useBookings();
 
     const handleBookingPage = () => {
