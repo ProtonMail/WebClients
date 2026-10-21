@@ -3,10 +3,10 @@ import { useHistory } from 'react-router-dom';
 
 import { logger } from '@protontech/logger';
 
-import { useWelcomeFlags } from '@proton/account';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
+import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import { useApi } from '@proton/app-context/useApi';
 import { useSubscribeEventManager } from '@proton/components/hooks/useHandler';
 import { useLocalStateSync } from '@proton/components/hooks/useLocalStateSync';

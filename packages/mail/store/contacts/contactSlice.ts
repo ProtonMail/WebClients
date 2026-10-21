@@ -6,7 +6,7 @@ import {
     miniSerializeError,
 } from '@reduxjs/toolkit';
 
-import { serverEvent } from '@proton/account';
+import { serverEvent } from '@proton/account/eventLoop';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt';
 import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';

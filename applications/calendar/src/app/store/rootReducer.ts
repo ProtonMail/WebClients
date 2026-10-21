@@ -1,6 +1,6 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
-import { breachesCountReducer } from '@proton/account';
+import { breachesCountReducer } from '@proton/account/breaches/breachNotificationsSlice';
 import { oauthTokenReducer } from '@proton/activation/src/logic/oauthToken';
 import { internalBookingReducer } from '@proton/calendar/bookings/store';
 import { calendarsBootstrapReducer } from '@proton/calendar/calendarBootstrap';

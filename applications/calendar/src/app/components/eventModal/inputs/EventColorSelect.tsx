@@ -2,8 +2,8 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { useWelcomeFlags } from '@proton/account';
 import { useUser } from '@proton/account/user/hooks';
+import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import { Badge } from '@proton/components/components/badge/Badge';
 import ColorPicker from '@proton/components/components/input/ColorPicker';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
