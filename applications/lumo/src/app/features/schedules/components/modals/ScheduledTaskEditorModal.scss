@@ -31,6 +31,7 @@
 		padding-block: #{rem(5)};
 		padding-inline: #{rem(8)} #{rem(10)};
 		font-size: #{rem(13)};
+		line-height: #{rem(16)};
 
 		&.border {
 			border-color: var(--border-mid);
@@ -49,10 +50,6 @@
 	&__auto-approve-icon {
 		inline-size: #{rem(40)};
 		block-size: #{rem(40)};
-	}
-
-	&__auto-approve-label {
-		font-size: #{rem(15)};
 	}
 
 	&__footer button {

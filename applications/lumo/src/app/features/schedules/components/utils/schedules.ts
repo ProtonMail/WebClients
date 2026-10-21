@@ -4,8 +4,8 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { convertZonedDateTimeToUTC, toUTCDate } from '@proton/shared/lib/date/timezone';
 
-import { ALWAYS_LOCAL_TIMEZONE_ID } from '../../components/RecurrenceRuleFieldset/types';
-import type { ScheduleDetails, ScheduleTemplate } from './types';
+import { ALWAYS_LOCAL_TIMEZONE_ID } from '../../../../components/RecurrenceRuleFieldset/types';
+import type { ScheduleDetails, ScheduleTemplate } from '../../types';
 
 export type ScheduleDetailsValidationField =
     'name' | 'instructions' | 'time' | 'dateTime' | 'weekDayPicker' | 'monthDayPicker';

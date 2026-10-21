@@ -65,6 +65,7 @@ export {
     isDesktopNativeTool,
     createDesktopClientToolExecutor,
     getDesktopConnectors,
+    useDesktopManifests,
     openDesktopSettings,
     respondDesktopToolApproval,
     subscribeToolApprovals,
