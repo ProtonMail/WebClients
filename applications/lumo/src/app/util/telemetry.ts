@@ -4,7 +4,7 @@ import type { WebpageViewMode } from '../components/Conversation/artifact/Artifa
 import type { ArtifactPanelLayout } from '../components/Conversation/artifact/ArtifactPanel';
 import type { ArtifactSaveFormat } from '../components/Conversation/artifact/artifactSaveFormats';
 import type { ArtifactType } from '../components/Conversation/artifact/parseArtifacts';
-import type { ArtifactToolMode } from '../components/Conversation/helper';
+import type { ArtifactCreationSetting, ArtifactToolMode } from '../components/Conversation/helper';
 import type { ArtifactActionKind } from '../types';
 
 /**
@@ -81,10 +81,27 @@ export const sendWebSearchButtonToggledEvent = (isToggled: boolean) => {
 
 export type ArtifactCreationToggleScope = 'conversation' | 'pending-new-chat';
 
-export const sendArtifactCreationToggledEvent = (isCurrentlyEnabled: boolean, scope: ArtifactCreationToggleScope) => {
+/**
+ * `globalDefault` is the Settings default at the time, so a disable can be told apart from undoing
+ * an earlier per-chat enable. `conversationHasArtifact` separates turning creations off in reaction
+ * to one from turning them off before any appeared.
+ */
+export const sendArtifactCreationToggledEvent = ({
+    isCurrentlyEnabled,
+    scope,
+    globalDefault,
+    conversationHasArtifact,
+}: {
+    isCurrentlyEnabled: boolean;
+    scope: ArtifactCreationToggleScope;
+    globalDefault: boolean;
+    conversationHasArtifact: boolean;
+}) => {
     sendLumoComposerEvent('artifact-creation', {
         action: isCurrentlyEnabled ? 'disable' : 'enable',
         scope,
+        globalDefault,
+        conversationHasArtifact,
     });
 };
 
@@ -162,8 +179,9 @@ export const sendMessageSendEvent = () => {
     sendLumoMessageEvent('send');
 };
 
-export const sendMessageGenerationAbortedEvent = () => {
-    sendLumoMessageEvent('abort');
+/** `artifactInFlight`: the response being stopped had started a create_artifact call. */
+export const sendMessageGenerationAbortedEvent = ({ artifactInFlight }: { artifactInFlight: boolean }) => {
+    sendLumoMessageEvent('abort', { artifactInFlight });
 };
 export const sendMessageEditEvent = () => {
     sendLumoMessageEvent('edit');
@@ -261,8 +279,9 @@ export const sendGhostChatToggledEvent = (enabled: boolean) => {
  */
 
 // Where a panel open came from: auto-opened by a generation, or by the user from a chat chip,
-// the header's artifact switcher, or an "edited artifact" marker in the chat.
-export type ArtifactPanelOpenSource = 'auto' | 'chip' | 'switcher' | 'edit-marker';
+// the header's artifact switcher, an "edited artifact" marker in the chat, a Library card, or the
+// right drawer's file list.
+export type ArtifactPanelOpenSource = 'auto' | 'chip' | 'switcher' | 'edit-marker' | 'library' | 'drawer';
 
 export type ArtifactRevisionSource = 'prompt' | 'inline-edit' | 'manual-edit';
 
@@ -356,6 +375,14 @@ export const capArtifactPosition = (position: number): number => {
     return Math.min(position, MAX_ARTIFACT_POSITION);
 };
 
+// Whether this tab has created or shown an artifact since it loaded, so a change to the Settings
+// default can be read as a reaction to artifacts or as a choice made before seeing any.
+let artifactSeenThisSession = false;
+
+const markArtifactSeenThisSession = () => {
+    artifactSeenThisSession = true;
+};
+
 const sendLumoArtifactEvent = (eventType: string, eventData?: Record<string, unknown>) => {
     sendLumoCustomEvent('lumo-artifact-event', {
         eventType,
@@ -364,7 +391,10 @@ const sendLumoArtifactEvent = (eventType: string, eventData?: Record<string, unk
 };
 
 export const sendArtifactCreationDefaultChangedEvent = (enabled: boolean) => {
-    sendLumoArtifactEvent('artifact-creation-default-changed', { enabled });
+    sendLumoArtifactEvent('artifact-creation-default-changed', {
+        enabled,
+        sawArtifactThisSession: artifactSeenThisSession,
+    });
 };
 
 export type ArtifactGenerationType = 'new' | 'regenerate' | 'retry';
@@ -373,20 +403,27 @@ export type ArtifactGenerationType = 'new' | 'regenerate' | 'retry';
  * One per generation where the artifact feature is available — the denominator for how often the
  * model reaches for `create_artifact` in each mode. Sent from the send paths with the mode the
  * request was actually built with.
+ *
+ * `creationSetting` says whether creation is on or off for this chat and whether that comes from
+ * the Settings default or the chat's own choice: the share of generations running with creation
+ * off, without needing to count users.
  */
 export const sendArtifactTurnContextEvent = ({
     generationType,
     artifactToolMode,
     hasExistingArtifact,
+    creationSetting,
 }: {
     generationType: ArtifactGenerationType;
     artifactToolMode: ArtifactToolMode;
     hasExistingArtifact: boolean;
+    creationSetting: ArtifactCreationSetting;
 }) => {
     sendLumoArtifactEvent('artifact-turn-context', {
         generationType,
         artifactToolMode,
         hasExistingArtifact,
+        creationSetting,
     });
 };
 
@@ -407,6 +444,7 @@ export const sendArtifactCreatedEvent = ({
     contentLengthBucket,
     languageBucket,
 }: ArtifactCreatedEventPayload) => {
+    markArtifactSeenThisSession();
     sendLumoArtifactEvent('artifact-created', {
         artifactType,
         ...(artifactToolMode !== undefined && { artifactToolMode }),
@@ -441,6 +479,7 @@ export const sendArtifactRevisedEvent = ({
     versionNumber,
     viewedOlderVersion,
 }: ArtifactRevisedEventPayload) => {
+    markArtifactSeenThisSession();
     sendLumoArtifactEvent('artifact-revised', {
         artifactType,
         ...(artifactToolMode !== undefined && { artifactToolMode }),
@@ -449,6 +488,42 @@ export const sendArtifactRevisedEvent = ({
         revisionSource,
         versionNumber,
         viewedOlderVersion,
+    });
+};
+
+/**
+ * - `invalid-json`: the create_artifact call's JSON didn't parse.
+ * - `missing-fields`: it parsed, but had no arguments object, title or content.
+ */
+export type ArtifactToolCallInvalidReason = 'invalid-json' | 'missing-fields';
+
+/**
+ * A create_artifact call in a finished response (not stopped, not failed) that produced no
+ * creation. These are dropped silently, so without this event they don't show up anywhere.
+ */
+export interface ArtifactToolCallInvalidEventPayload {
+    reason: ArtifactToolCallInvalidReason;
+    artifactToolMode?: ArtifactToolMode;
+    /** The same response also produced a valid creation, so the user still got one. */
+    recoveredInSameMessage: boolean;
+}
+
+export const sendArtifactToolCallInvalidEvent = ({
+    reason,
+    artifactToolMode,
+    recoveredInSameMessage,
+}: ArtifactToolCallInvalidEventPayload) => {
+    sendLumoArtifactEvent('artifact-tool-call-invalid', {
+        reason,
+        ...(artifactToolMode !== undefined && { artifactToolMode }),
+        recoveredInSameMessage,
+    });
+};
+
+/** The canvas preview crashed and fell back to showing the raw content. */
+export const sendArtifactRenderFailedEvent = ({ artifactType }: { artifactType: ArtifactType }) => {
+    sendLumoArtifactEvent('render-failed', {
+        artifactType,
     });
 };
 
@@ -461,10 +536,18 @@ export const sendArtifactPanelOpenedEvent = ({
     artifactType: ArtifactType;
     artifactPosition: number;
 }) => {
+    markArtifactSeenThisSession();
     sendLumoArtifactEvent('panel-opened', {
         source,
         artifactType,
         artifactPosition,
+    });
+};
+
+/** The user entered or left fullscreen with the canvas's own controls (button or Escape). */
+export const sendArtifactFullscreenToggledEvent = ({ entered }: { entered: boolean }) => {
+    sendLumoArtifactEvent('panel-fullscreen-toggled', {
+        entered,
     });
 };
 
@@ -545,8 +628,12 @@ export const sendArtifactDownloadedEvent = ({
     });
 };
 
-/** The version history list was opened. `versionCount` is how many versions the artifact had. */
-export const sendArtifactVersionHistoryOpenedEvent = ({
+/**
+ * The panel's title menu was opened. It holds the version list and every action on the artifact
+ * (copy, download, Save to Drive, edit), so it is the denominator for those actions.
+ * `versionCount` is how many versions the artifact had.
+ */
+export const sendArtifactTitleMenuOpenedEvent = ({
     artifactType,
     layout,
     versionCount,
@@ -555,7 +642,7 @@ export const sendArtifactVersionHistoryOpenedEvent = ({
     layout: ArtifactPanelLayout;
     versionCount: number;
 }) => {
-    sendLumoArtifactEvent('version-history-opened', {
+    sendLumoArtifactEvent('title-menu-opened', {
         artifactType,
         layout,
         versionCount,
@@ -629,5 +716,19 @@ export const sendArtifactWebpageViewToggledEvent = ({
     sendLumoArtifactEvent('webpage-view-toggled', {
         mode,
         layout,
+    });
+};
+
+export type LibraryTabName = 'creations' | 'images';
+
+/**
+ * The Library page was opened, sent once its creations have loaded. `panel-opened` with
+ * `source: 'library'` counts the cards opened from it. `hasCreations` keeps empty Libraries apart
+ * from visits where nothing was opened; it's absent when the list failed to load.
+ */
+export const sendLibraryOpenedEvent = ({ tab, hasCreations }: { tab: LibraryTabName; hasCreations?: boolean }) => {
+    sendLumoArtifactEvent('library-opened', {
+        tab,
+        ...(hasCreations !== undefined && { hasCreations }),
     });
 };

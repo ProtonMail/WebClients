@@ -1,5 +1,6 @@
 import { memo } from 'react';
 
+import { sendArtifactRenderFailedEvent } from '../../../util/telemetry';
 import { ArtifactPreviewErrorBoundary } from './ArtifactPreviewErrorBoundary';
 import { CodeRenderer } from './artifactRenderers';
 import { ARTIFACT_TYPE_CONFIG } from './artifactTypeConfig';
@@ -29,6 +30,8 @@ const ArtifactRenderer = memo(function ArtifactRenderer({
 
 interface ArtifactContentProps extends ArtifactRendererProps {
     resetKey: string;
+    // Half-written content can crash a renderer; only failures on finished content are reported.
+    isStreaming: boolean;
 }
 
 export const ArtifactContent = memo(function ArtifactContent({
@@ -36,9 +39,18 @@ export const ArtifactContent = memo(function ArtifactContent({
     showLineNumbers,
     webpageViewMode,
     resetKey,
+    isStreaming,
 }: ArtifactContentProps) {
     return (
-        <ArtifactPreviewErrorBoundary resetKey={resetKey} content={artifact.content}>
+        <ArtifactPreviewErrorBoundary
+            resetKey={resetKey}
+            content={artifact.content}
+            onError={() => {
+                if (!isStreaming) {
+                    sendArtifactRenderFailedEvent({ artifactType: artifact.type });
+                }
+            }}
+        >
             <ArtifactRenderer artifact={artifact} showLineNumbers={showLineNumbers} webpageViewMode={webpageViewMode} />
         </ArtifactPreviewErrorBoundary>
     );

@@ -5,6 +5,7 @@ import {
     isArtifactGenerationLoading,
     isArtifactPanelGenerationLoading,
     isArtifactRevisionLoading,
+    messageHasCreateArtifactToolCall,
 } from './artifactGenerationState';
 import type { ArtifactRegistry } from './artifactRegistry';
 import { CREATE_ARTIFACT_TOOL_NAME } from './createArtifactTool';
@@ -39,6 +40,21 @@ const makeAssistantBlocks = (args: Record<string, unknown> | string): ContentBlo
         },
     },
 ];
+
+describe('messageHasCreateArtifactToolCall', () => {
+    it('is true once a create_artifact call is announced, before its content is complete', () => {
+        const message = makeUserMessage({
+            id: 'assistant-1',
+            role: Role.Assistant,
+            blocks: makeAssistantBlocks('{"ti'),
+        });
+        expect(messageHasCreateArtifactToolCall(message)).toBe(true);
+    });
+
+    it('is false for a plain text answer', () => {
+        expect(messageHasCreateArtifactToolCall(makeUserMessage())).toBe(false);
+    });
+});
 
 describe('getToolCallNameFromBlock', () => {
     it('reads the tool name from parsed toolCall data', () => {

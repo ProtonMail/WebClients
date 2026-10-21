@@ -17,7 +17,7 @@ import { useConversationActions } from '../../../providers/ConversationActionsPr
 import { useIsGuest } from '../../../providers/IsGuestProvider';
 import {
     sendArtifactContentCopiedEvent,
-    sendArtifactVersionHistoryOpenedEvent,
+    sendArtifactTitleMenuOpenedEvent,
     sendArtifactVersionSelectedEvent,
     sendArtifactWebpageViewToggledEvent,
 } from '../../../util/telemetry';
@@ -584,8 +584,8 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked', onBackToFiles 
         });
     };
 
-    const handleOpenVersionHistory = () => {
-        sendArtifactVersionHistoryOpenedEvent({
+    const handleOpenTitleMenu = () => {
+        sendArtifactTitleMenuOpenedEvent({
             artifactType: artifact.type,
             layout,
             versionCount: versionCount ?? 1,
@@ -651,7 +651,7 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked', onBackToFiles 
                         onExitFullscreen={isFullscreen ? exitFullscreen : undefined}
                         versionIndex={selectedVersionIndex}
                         versions={versions}
-                        onOpenMenu={handleOpenVersionHistory}
+                        onOpenMenu={handleOpenTitleMenu}
                         onSelectVersion={(index) => {
                             handleSelectVersion(index, 'history');
                         }}
@@ -719,6 +719,7 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked', onBackToFiles 
                             showLineNumbers={false}
                             webpageViewMode={webpageViewMode}
                             resetKey={`${artifact.id}-${selectedVersionIndex}-${webpageViewMode}`}
+                            isStreaming={isSelectedVersionProvisional}
                         />
                         {isArtifactRevisionLoading && <ArtifactPanelRevisionOverlay artifactType={artifact.type} />}
                         {/* Hidden on older versions: the selection would come from this version while the

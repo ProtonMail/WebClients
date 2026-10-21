@@ -1,3 +1,4 @@
+import { markArtifactTelemetryLiveMessageStopped } from '../../components/Conversation/artifact/artifactVersionTelemetry';
 import { selectMessagesByConversationId } from '../../redux/selectors';
 import { updateConversationStatus } from '../../redux/slices/core/conversations';
 import { deleteMessage, finishMessage } from '../../redux/slices/core/messages';
@@ -54,6 +55,7 @@ export function cancelConversationGeneration(
         }
 
         if (message.role === Role.Assistant && message.placeholder) {
+            markArtifactTelemetryLiveMessageStopped(message.id);
             dispatch(
                 finishMessage({
                     messageId: message.id,

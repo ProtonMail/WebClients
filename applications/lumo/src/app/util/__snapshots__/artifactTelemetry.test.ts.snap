@@ -6,8 +6,20 @@ exports[`artifact event payloads matches the agreed payloads 1`] = `
     "lumo-composer-event",
     {
       "action": "disable",
+      "conversationHasArtifact": true,
       "eventType": "artifact-creation",
+      "globalDefault": true,
       "scope": "conversation",
+    },
+  ],
+  [
+    "lumo-composer-event",
+    {
+      "action": "enable",
+      "conversationHasArtifact": false,
+      "eventType": "artifact-creation",
+      "globalDefault": false,
+      "scope": "pending-new-chat",
     },
   ],
   [
@@ -15,15 +27,27 @@ exports[`artifact event payloads matches the agreed payloads 1`] = `
     {
       "enabled": false,
       "eventType": "artifact-creation-default-changed",
+      "sawArtifactThisSession": false,
     },
   ],
   [
     "lumo-artifact-event",
     {
       "artifactToolMode": "auto",
+      "creationSetting": "default-on",
       "eventType": "artifact-turn-context",
       "generationType": "new",
       "hasExistingArtifact": false,
+    },
+  ],
+  [
+    "lumo-artifact-event",
+    {
+      "artifactToolMode": "revise",
+      "creationSetting": "chat-off",
+      "eventType": "artifact-turn-context",
+      "generationType": "regenerate",
+      "hasExistingArtifact": true,
     },
   ],
   [
@@ -75,10 +99,36 @@ exports[`artifact event payloads matches the agreed payloads 1`] = `
   [
     "lumo-artifact-event",
     {
+      "enabled": true,
+      "eventType": "artifact-creation-default-changed",
+      "sawArtifactThisSession": true,
+    },
+  ],
+  [
+    "lumo-artifact-event",
+    {
       "artifactPosition": 1,
       "artifactType": "presentation",
       "eventType": "panel-opened",
       "source": "chip",
+    },
+  ],
+  [
+    "lumo-artifact-event",
+    {
+      "artifactPosition": 2,
+      "artifactType": "document",
+      "eventType": "panel-opened",
+      "source": "library",
+    },
+  ],
+  [
+    "lumo-artifact-event",
+    {
+      "artifactPosition": 3,
+      "artifactType": "code",
+      "eventType": "panel-opened",
+      "source": "drawer",
     },
   ],
   [
@@ -160,7 +210,7 @@ exports[`artifact event payloads matches the agreed payloads 1`] = `
     "lumo-artifact-event",
     {
       "artifactType": "document",
-      "eventType": "version-history-opened",
+      "eventType": "title-menu-opened",
       "layout": "docked",
       "versionCount": 4,
     },
@@ -183,6 +233,73 @@ exports[`artifact event payloads matches the agreed payloads 1`] = `
       "layout": "fullscreen",
       "source": "banner",
       "versionsBehindLatest": 0,
+    },
+  ],
+  [
+    "lumo-message-event",
+    {
+      "artifactInFlight": true,
+      "eventType": "abort",
+    },
+  ],
+  [
+    "lumo-message-event",
+    {
+      "artifactInFlight": false,
+      "eventType": "abort",
+    },
+  ],
+  [
+    "lumo-artifact-event",
+    {
+      "artifactToolMode": "auto",
+      "eventType": "artifact-tool-call-invalid",
+      "reason": "invalid-json",
+      "recoveredInSameMessage": false,
+    },
+  ],
+  [
+    "lumo-artifact-event",
+    {
+      "eventType": "artifact-tool-call-invalid",
+      "reason": "missing-fields",
+      "recoveredInSameMessage": true,
+    },
+  ],
+  [
+    "lumo-artifact-event",
+    {
+      "artifactType": "presentation",
+      "eventType": "render-failed",
+    },
+  ],
+  [
+    "lumo-artifact-event",
+    {
+      "entered": true,
+      "eventType": "panel-fullscreen-toggled",
+    },
+  ],
+  [
+    "lumo-artifact-event",
+    {
+      "entered": false,
+      "eventType": "panel-fullscreen-toggled",
+    },
+  ],
+  [
+    "lumo-artifact-event",
+    {
+      "eventType": "library-opened",
+      "hasCreations": false,
+      "tab": "creations",
+    },
+  ],
+  [
+    "lumo-artifact-event",
+    {
+      "eventType": "library-opened",
+      "tab": "images",
     },
   ],
 ]
