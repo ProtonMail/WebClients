@@ -38,7 +38,9 @@
     "@proton/jest-env": "workspace:^",
     "@proton/jest-swc-preset": "workspace:^",
     "@proton/raw-images": "workspace:^",
+    "@testing-library/dom": "^10.4.2",
     "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.3",
     "@types/jest": "catalog:",
     "@types/node": "catalog:",
     "@types/react": "catalog:",
@@ -52,6 +54,7 @@
     "jest": "^30.5.2",
     "jest-junit": "^16.0.0",
     "prettier": "^3.9.10",
+    "react-dom": "^18.3.1",
     "typescript": "npm:@typescript/typescript6@^6.0.2"
   }
 }

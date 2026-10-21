@@ -6,14 +6,12 @@ import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS } from '@proton/shared/lib/constants'
 import { Menu, MenuItem } from '@proton/docs-shared/components/ui/ui'
 import { c } from 'ttag'
-import { COLOR_BY_TYPE } from './shared'
+import { COLOR_BY_TYPE, REFRESH_AFTER_NEW_DOCUMENT } from './shared'
 import { useApplication } from '~/utils/application-context'
 import { useHomepageView } from '../../__utils/homepage-view'
 import { useIsSheetsEnabled } from '~/utils/flags'
 import clsx from '@proton/utils/clsx'
 import type * as Ariakit from '@ariakit/react'
-
-const REFRESH_AFTER_NEW_DOCUMENT = 10000 // ms
 
 interface Props extends Ariakit.MenuProps {}
 
@@ -54,6 +52,7 @@ export function NewDocumentMenu({ className, ...rest }: Props) {
           }
           // eslint-disable-next-line jsx-a11y/control-has-associated-label, jsx-a11y/anchor-has-content
           render={<a href={getAppHref('/sheet', APPS.PROTONDOCS, getLocalID())} target="_blank" />}
+          onClick={() => setTimeout(updateRecentDocuments, REFRESH_AFTER_NEW_DOCUMENT)}
         >
           {c('sheets_2025:Action').t`New spreadsheet`}
         </MenuItem>
