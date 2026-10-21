@@ -32,7 +32,7 @@ import { createRestrictedImportsConfig } from '@proton/eslint-config-proton/rest
 export default defineConfig([
     defaultConfig,
     createRestrictedImportsConfig({
-        rollout: ['components-barrel', 'icon-component'],
+        rollout: ['components-barrel'],
         patterns: [{ group: ['@proton/foo/*'], message: 'Only the entry point is public.' }],
     }),
 ]);
