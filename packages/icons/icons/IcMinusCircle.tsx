@@ -30,10 +30,9 @@ export const IcMinusCircle = ({ alt, title, size = 4, className = '', viewBox = 
             >
                 {title ? <title>{title}</title> : null}
 
-                <path d="M6 8a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1H6Z"></path>
                 <path
                     fillRule="evenodd"
-                    d="M8.5 1a7.5 7.5 0 1 0 0 15 7.5 7.5 0 0 0 0-15ZM2 8.5a6.5 6.5 0 1 1 13 0 6.5 6.5 0 0 1-13 0Z"
+                    d="M14 8A6 6 0 1 1 2 8a6 6 0 0 1 12 0m1 0A7 7 0 1 1 1 8a7 7 0 0 1 14 0m-4.5-.5h-5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1"
                 ></path>
             </svg>
             {alt ? <span className="sr-only">{alt}</span> : null}

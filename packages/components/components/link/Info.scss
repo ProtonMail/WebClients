@@ -1,7 +1,6 @@
 .info-button.info-button {
 	&::after {
-		inset-inline-start: 1px;
-		inset-block-start: 1px;
+		inset: 1px;
 		border: 0;
 	}
 }
