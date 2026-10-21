@@ -2,17 +2,17 @@ import { act, renderHook, waitFor } from '@testing-library/react';
 import { getUnixTime } from 'date-fns';
 
 import { useGetUser } from '@proton/account/user/hooks';
-import { getDrive } from '@proton/drive';
 import type { BusDriverClient } from '@proton/drive/modules/busDriver';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
+import { getDrive } from '@proton/drive/sdk';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { EasySwitchUserType, NO_USER_INFO } from './getEasySwitchSidebarUserType';
 import { useEasySwitchSidebarUserType } from './useEasySwitchSidebarUserType';
 
-jest.mock('@proton/drive', () => ({
-    ...jest.requireActual('@proton/drive'),
+jest.mock('@proton/drive/sdk', () => ({
+    ...jest.requireActual('@proton/drive/sdk'),
     getDrive: jest.fn(),
 }));
 jest.mock('@proton/account/user/hooks', () => ({ useGetUser: jest.fn() }));

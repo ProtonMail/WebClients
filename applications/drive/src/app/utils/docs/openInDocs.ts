@@ -1,6 +1,6 @@
-import { splitNodeUid } from '@proton/drive';
 import { featureFlagStore } from '@proton/drive/modules/flags';
 import { handleDocsCustomPassword } from '@proton/drive/modules/publicDocsSharing';
+import { splitNodeUid } from '@proton/drive/sdk';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { isDevOrBlack } from '@proton/shared/lib/env';

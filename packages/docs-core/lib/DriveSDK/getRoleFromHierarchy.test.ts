@@ -1,4 +1,4 @@
-import { MemberRole, type NodeEntity } from '@proton/drive'
+import { MemberRole, type NodeEntity } from '@proton/drive/sdk'
 import { getRoleFromHierarchy } from './getRoleFromHierarchy'
 
 describe('getRoleFromHierarchy', () => {

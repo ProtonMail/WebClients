@@ -18,7 +18,7 @@ import { IcFolderPlus } from '@proton/icons/icons/IcFolderPlus';
 
 import type { DirectoryTreeItem } from '../../../components/DirectoryTree/DirectoryTree';
 import { DirectoryTreeRoot } from '../../../components/DirectoryTree/DirectoryTree';
-import { NodeType, getDrive } from '../../../index';
+import { NodeType, getDrive } from '../../../sdk';
 import ModalContentLoader from '../../modalUtils/ModalContentLoader';
 import { getMovedFiles, selectMessageForItemList } from './helpers';
 import { useMoveEligibility } from './useMoveEligibility';

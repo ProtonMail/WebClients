@@ -15,9 +15,9 @@ import {
     ModalTwoHeader,
     Row,
 } from '@proton/components';
-import { NodeType } from '@proton/drive/index';
 import ModalContentLoader from '@proton/drive/modals/modalUtils/ModalContentLoader';
 import { validateNodeName } from '@proton/drive/modules/validation';
+import { NodeType } from '@proton/drive/sdk';
 import useLoading from '@proton/hooks/useLoading';
 import noop from '@proton/utils/noop';
 

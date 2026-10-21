@@ -18,7 +18,7 @@ import { useHomepageView } from '../../../__utils/homepage-view'
 import { RestoreFromTrashButton } from './buttons/RestoreFromTrash'
 import { DeletePermanentlyButton } from './buttons/DeletePermanently'
 import { useLoadRecentsWithSdkEnabled, useTrashWithSDK } from '~/utils/flags'
-import { MemberRole } from '@proton/drive'
+import { MemberRole } from '@proton/drive/sdk'
 
 export type DocContextMenuProps = Omit<ContextMenuProps, 'children'> & {
   currentDocument: RecentDocumentsItem | undefined

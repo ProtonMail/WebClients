@@ -1,6 +1,11 @@
 import { create } from 'zustand';
 
-import type { NodeType, ProtonDriveClient, ProtonDrivePhotosClient, ProtonDrivePublicLinkClient } from '@proton/drive';
+import type {
+    NodeType,
+    ProtonDriveClient,
+    ProtonDrivePhotosClient,
+    ProtonDrivePublicLinkClient,
+} from '@proton/drive/sdk';
 import generateUID from '@proton/utils/generateUID';
 
 // TODO: Maybe find a new home for this const since it's shared between download/upload

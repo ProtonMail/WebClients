@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { getDrive } from '@proton/drive/index';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
+import { getDrive } from '@proton/drive/sdk';
 
 import { getBookmark } from '../../../utils/sdk/getBookmark';
 import { ItemType, useSharedWithMeStore } from '../useSharedWithMe.store';

@@ -1,8 +1,8 @@
-import { ValidationError } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
 import { logging } from '@proton/drive/modules/logging';
 import { getNodeEffectiveRole } from '@proton/drive/modules/nodes';
 import { uploadManager } from '@proton/drive/modules/upload';
+import { ValidationError } from '@proton/drive/sdk';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import { TransferManagerBannerType, useTransferManagerStore } from './transferManager.store';

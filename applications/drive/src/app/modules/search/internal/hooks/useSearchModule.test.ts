@@ -62,8 +62,8 @@ jest.mock('@proton/app-context/useApi', () => ({
     useApi: () => jest.fn(),
 }));
 
-jest.mock('@proton/drive', () => ({
-    ...jest.requireActual('@proton/drive'),
+jest.mock('@proton/drive/sdk', () => ({
+    ...jest.requireActual('@proton/drive/sdk'),
     useDrive: () => ({
         drive: { onMessage: jest.fn().mockReturnValue(jest.fn()) },
         internal: { createSearchDriveInstance: jest.fn().mockReturnValue({}) },

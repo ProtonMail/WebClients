@@ -1,6 +1,6 @@
-import type { Thumbnail } from '@proton/drive';
-import { ThumbnailType } from '@proton/drive';
 import { generateThumbnail } from '@proton/drive/public/thumbnails';
+import type { Thumbnail } from '@proton/drive/sdk';
+import { ThumbnailType } from '@proton/drive/sdk';
 import noop from '@proton/utils/noop';
 
 export interface PreparedBackground {

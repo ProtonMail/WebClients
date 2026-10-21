@@ -1,5 +1,5 @@
-import { MemberRole } from '@proton/drive/index';
 import { UploadStatus } from '@proton/drive/modules/upload';
+import { MemberRole } from '@proton/drive/sdk';
 
 import { BaseTransferStatus } from '../../modules/download/downloadManager.store';
 import { useTransferManagerStore } from './transferManager.store';

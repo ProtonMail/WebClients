@@ -1,6 +1,6 @@
 import type { UnverifiedAuthorError } from '@protontech/drive-sdk';
 
-import { type NodeEntity, NodeType } from '@proton/drive/index';
+import { type NodeEntity, NodeType } from '@proton/drive/sdk';
 
 import { type DownloadItem, DownloadStatus, IssueStatus, useDownloadManagerStore } from '../downloadManager.store';
 import { addAndWaitForManifestIssueDecision, addAndWaitForMetadataIssueDecision } from './signatureIssues';

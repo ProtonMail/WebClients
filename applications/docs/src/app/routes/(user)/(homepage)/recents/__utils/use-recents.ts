@@ -9,7 +9,7 @@ import {
   ProtonDriveError,
   generateNodeUid,
   getDrive,
-} from '@proton/drive'
+} from '@proton/drive/sdk'
 import { useCallback, useState } from 'react'
 import { c } from 'ttag'
 import { useApplication } from '~/utils/application-context'

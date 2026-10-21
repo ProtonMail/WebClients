@@ -1,6 +1,6 @@
 import { useCallback, useRef, useState } from 'react';
 
-import { splitNodeUid } from '@proton/drive/index';
+import { splitNodeUid } from '@proton/drive/sdk';
 import { getBasename, getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 
 import { Preview, type PreviewProps } from './Preview';

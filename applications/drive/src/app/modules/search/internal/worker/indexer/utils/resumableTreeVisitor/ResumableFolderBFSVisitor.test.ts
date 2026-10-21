@@ -1,9 +1,9 @@
 import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
 
-import type { NodeEntity, NodeType } from '@proton/drive';
-import { ValidationError } from '@proton/drive';
 import { createMockNodeEntity } from '@proton/drive/modules/testing';
+import type { NodeEntity, NodeType } from '@proton/drive/sdk';
+import { ValidationError } from '@proton/drive/sdk';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import { SearchDB } from '../../../../shared/SearchDB';

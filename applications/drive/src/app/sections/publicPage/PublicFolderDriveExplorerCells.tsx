@@ -1,8 +1,8 @@
 import { useShallow } from 'zustand/react/shallow';
 
 import type { Breakpoints } from '@proton/components';
-import { MemberRole, NodeType } from '@proton/drive';
 import { useThumbnail } from '@proton/drive/modules/thumbnails';
+import { MemberRole, NodeType } from '@proton/drive/sdk';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
 import { GridItemContent } from '../../statelessComponents/DriveExplorer/cells/gridComponents/GridItemContent';

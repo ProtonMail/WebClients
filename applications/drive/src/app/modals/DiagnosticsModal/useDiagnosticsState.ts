@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom-v5-compat';
 
-import type { NodeEntity } from '@proton/drive';
-import { useDrive } from '@proton/drive';
 import {
     type Diagnostic,
     type DiagnosticResult,
@@ -10,6 +8,8 @@ import {
     useDriveDiagnostics,
 } from '@proton/drive/diagnostic';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
+import type { NodeEntity } from '@proton/drive/sdk';
+import { useDrive } from '@proton/drive/sdk';
 
 import config from '../../config';
 

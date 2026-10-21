@@ -1,5 +1,5 @@
-import type { NodeEntity } from '@proton/drive';
-import { MemberRole, NodeType, RevisionState } from '@proton/drive';
+import type { NodeEntity } from '@proton/drive/sdk';
+import { MemberRole, NodeType, RevisionState } from '@proton/drive/sdk';
 import { isHEICSupported } from '@proton/shared/lib/helpers/mimetype';
 
 import { ContentPreviewMethod, getContentPreviewMethod } from './content';

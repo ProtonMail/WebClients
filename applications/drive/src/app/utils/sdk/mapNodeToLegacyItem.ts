@@ -1,6 +1,13 @@
-import type { ProtonDriveClient } from '@proton/drive';
-import { type NodeEntity, NodeType, RevisionState, getDrive, splitNodeRevisionUid, splitNodeUid } from '@proton/drive';
 import { type NormalizedNode, getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
+import type { ProtonDriveClient } from '@proton/drive/sdk';
+import {
+    type NodeEntity,
+    NodeType,
+    RevisionState,
+    getDrive,
+    splitNodeRevisionUid,
+    splitNodeUid,
+} from '@proton/drive/sdk';
 
 import type { FileBrowserBaseItem } from '../../legacy/components/FileBrowser';
 import type { EncryptedLink, LinkShareUrl } from '../../legacy/store';

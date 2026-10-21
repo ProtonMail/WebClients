@@ -1,4 +1,4 @@
-import { MemberRole, NodeType } from '@proton/drive';
+import { MemberRole, NodeType } from '@proton/drive/sdk';
 
 import { getOpenInDocsInfo } from '../../../../utils/docs/openInDocs';
 import type { SearchResultItemUI } from '../store';

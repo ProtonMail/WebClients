@@ -1,7 +1,7 @@
 import { format } from 'date-fns';
 import { enUS } from 'date-fns/locale';
 
-import type { Revision } from '@proton/drive';
+import type { Revision } from '@proton/drive/sdk';
 
 import { getCategorizedRevisions } from './getCategorizedRevisions';
 

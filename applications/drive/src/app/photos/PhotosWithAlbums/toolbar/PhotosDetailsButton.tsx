@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { DropdownMenuButton, ToolbarButton } from '@proton/components';
-import { getDriveForPhotos } from '@proton/drive';
+import { getDriveForPhotos } from '@proton/drive/sdk';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import clsx from '@proton/utils/clsx';
 

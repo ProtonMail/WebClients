@@ -3,7 +3,7 @@ import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions'
 import { SHARE_MEMBER_STATE } from '@proton/shared/lib/drive/constants'
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link'
 import { PROTON_DOCS_DOCUMENT_MIMETYPE } from '@proton/shared/lib/helpers/mimetype'
-import { MemberRole, splitNodeUid, type ProtonInvitationWithNode } from '@proton/drive'
+import { MemberRole, splitNodeUid, type ProtonInvitationWithNode } from '@proton/drive/sdk'
 import type { ExtendedInvitationDetails } from '@proton/docs-shared'
 import { getNodeName } from '@proton/docs-core/lib/DriveSDK/getNodeName'
 

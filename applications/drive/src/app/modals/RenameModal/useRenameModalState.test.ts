@@ -1,9 +1,9 @@
 import { waitFor } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 
-import type { InvalidNameError } from '@proton/drive/index';
-import { type NodeEntity, NodeType } from '@proton/drive/index';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
+import type { InvalidNameError } from '@proton/drive/sdk';
+import { type NodeEntity, NodeType } from '@proton/drive/sdk';
 import { PROTON_DOCS_DOCUMENT_MIMETYPE, PROTON_DOCS_SPREADSHEET_MIMETYPE } from '@proton/shared/lib/helpers/mimetype';
 
 import type { RenameModalViewProps } from './RenameModalView';

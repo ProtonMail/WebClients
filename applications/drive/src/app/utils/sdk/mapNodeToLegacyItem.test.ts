@@ -1,6 +1,6 @@
-import type { Author, NodeEntity, Revision } from '@proton/drive';
-import { MemberRole, NodeType, RevisionState } from '@proton/drive';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
+import type { Author, NodeEntity, Revision } from '@proton/drive/sdk';
+import { MemberRole, NodeType, RevisionState } from '@proton/drive/sdk';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
 import { ShareState, ShareType, type ShareWithKey } from '../../legacy/store';

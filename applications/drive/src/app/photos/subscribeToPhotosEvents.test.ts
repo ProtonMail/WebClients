@@ -1,14 +1,14 @@
-import { NodeType, type ProtonDrivePhotosClient, getDriveForPhotos } from '@proton/drive';
 import type { BusDriverClient, BusDriverEvent } from '@proton/drive/modules/busDriver';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
+import { NodeType, type ProtonDrivePhotosClient, getDriveForPhotos } from '@proton/drive/sdk';
 
 import { subscribeToPhotosEvents } from './subscribeToPhotosEvents';
 import { useAlbumsStore } from './useAlbums.store';
 import type { PhotoItem } from './usePhotos.store';
 import { usePhotosStore } from './usePhotos.store';
 
-jest.mock('@proton/drive', () => ({
-    ...jest.requireActual('@proton/drive'),
+jest.mock('@proton/drive/sdk', () => ({
+    ...jest.requireActual('@proton/drive/sdk'),
     getDriveForPhotos: jest.fn(),
 }));
 

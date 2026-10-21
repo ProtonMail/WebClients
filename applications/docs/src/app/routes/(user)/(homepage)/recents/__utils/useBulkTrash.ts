@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNotifications } from '@proton/app-context/useNotifications'
 import type { RecentDocumentsItem } from '@proton/docs-core'
-import { generateNodeUid } from '@proton/drive'
+import { generateNodeUid } from '@proton/drive/sdk'
 import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
 import { trashManyAndNotify } from '~/drive-sdk/trash-restore-notify'
 import { useApplication } from '~/utils/application-context'

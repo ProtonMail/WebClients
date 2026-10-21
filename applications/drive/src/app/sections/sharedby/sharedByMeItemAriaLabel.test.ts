@@ -1,4 +1,4 @@
-import { NodeType } from '@proton/drive';
+import { NodeType } from '@proton/drive/sdk';
 
 import { getSharedByMeItemAriaLabel } from './sharedByMeItemAriaLabel';
 import type { SharedByMeItem } from './useSharedByMe.store';

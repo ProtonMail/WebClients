@@ -1,4 +1,4 @@
-import { ValidationError } from '@proton/drive'
+import { ValidationError } from '@proton/drive/sdk'
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors'
 import { getSentryError, SentryRealtimeInitiatives, traceError } from '@proton/shared/lib/helpers/sentry'
 

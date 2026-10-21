@@ -4,10 +4,10 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import type { useConfirmActionModal } from '@proton/components';
-import { NodeType, getDrivePerNodeType } from '@proton/drive';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
+import { NodeType, getDrivePerNodeType } from '@proton/drive/sdk';
 
 import { useSharedWithMeStore } from '../useSharedWithMe.store';
 
