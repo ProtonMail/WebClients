@@ -16,15 +16,8 @@ import {
     type UnsyncedMaps,
 } from '../../indexedDb/db';
 import { SearchService } from '../../services/search/searchService';
-import {
-    type Attachment,
-    type Conversation,
-    type ConversationId,
-    type Message,
-    type Space,
-    type SpaceId,
-    getSpaceDek,
-} from '../../types';
+import type { Attachment, Conversation, ConversationId, Message, Space, SpaceId } from '../../types';
+import { SpaceType, getSpaceDek } from '../../types';
 import { mapEmpty, mapIds, mapLength } from '../../util/collections';
 import { syncArtifactAssetRequest } from '../slices/artifactAssetSync';
 import { reloadReduxRequest, stopRootSaga, unloadReduxRequest } from '../slices/core';
@@ -280,7 +273,7 @@ function* loadReduxFromIdb(): SagaIterator {
             yield put(addSpace(space));
             yield call(migrateSpaceMasterKeyIfNeeded, space, needsMasterKeyMigration);
             spaceStats.loaded++;
-            if (space.isProject) {
+            if (space.type === SpaceType.Project) {
                 spaceStats.projects++;
             }
             if (!spaceDekMap[id]) {

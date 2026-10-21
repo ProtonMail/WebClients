@@ -12,6 +12,7 @@ import type { ResourceLimitError } from '../redux/slices/meta/errors';
 import { dismissResourceLimitError, selectResourceLimitErrors } from '../redux/slices/meta/errors';
 import { limitResourceToErrorType, onComposerError } from '../remote/nativeComposerBridgeHelpers';
 import type { ConversationId, SpaceId } from '../types';
+import { SpaceType } from '../types';
 import { shouldShowResourceLimitError } from './resourceLimitNotificationHelpers';
 
 interface ConversationRouteParams {
@@ -87,7 +88,7 @@ export const useResourceLimitNotifications = () => {
             shown.current.add(error.id);
             const errorSpaceId = error.spaceId ?? activeSpaceId;
             const errorSpace = errorSpaceId ? spaces[errorSpaceId] : undefined;
-            const isProjectSpace = errorSpace ? errorSpace.isProject === true : !errorSpaceId;
+            const isProjectSpace = errorSpace ? errorSpace.type === SpaceType.Project : !errorSpaceId;
             createNotification({
                 type: 'error',
                 text: getLimitErrorText(error, isProjectSpace),

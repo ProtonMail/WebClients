@@ -1,11 +1,8 @@
 import type { Attachment } from '../types';
+import { SpaceType } from '../types';
 import type { DriveDocument } from '../types/documents';
-import {
-    buildProjectKnowledgeSnapshot,
-    findStaleProjectDocumentIds,
-    type Project,
-    type ProjectKnowledgeSnapshot,
-} from './reconcileProjectSearchIndex';
+import type { Project, ProjectKnowledgeSnapshot } from './reconcileProjectSearchIndex';
+import { buildProjectKnowledgeSnapshot, findStaleProjectDocumentIds } from './reconcileProjectSearchIndex';
 
 const createDriveDoc = (overrides: Partial<DriveDocument> & Pick<DriveDocument, 'id' | 'spaceId'>): DriveDocument => ({
     name: 'doc.pdf',
@@ -84,7 +81,7 @@ describe('buildProjectKnowledgeSnapshot', () => {
             createdAt: '2026-01-01T00:00:00.000Z',
             updatedAt: '2026-01-01T00:00:00.000Z',
             spaceKey: 'space-key',
-            isProject: true,
+            type: SpaceType.Project,
             projectName: 'EU RFI',
         } satisfies Project;
 

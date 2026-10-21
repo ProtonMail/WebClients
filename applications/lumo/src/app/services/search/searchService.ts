@@ -7,7 +7,7 @@ import { applyRetentionPolicy } from '../../layouts/sidepanel/helpers';
 import { selectMasterKeysBundle } from '../../redux/selectors';
 import type { SpaceMap } from '../../redux/slices/core/spaces';
 import { getStoreRef } from '../../redux/storeRef';
-import { Role } from '../../types';
+import { Role, SpaceType } from '../../types';
 import type { DriveDocument } from '../../types/documents';
 import { buildMasterKeyContext } from '../../util/masterKeys';
 import { safeLogger } from '../../util/safeLogger';
@@ -30,7 +30,7 @@ const buildSearchableText = (doc: DriveDocument, includeChunkTitle = false): str
 
 const getProjectInfo = (spaceId: string, spaces: SpaceMap): { projectName?: string; projectIcon?: string } => {
     const space = spaces[spaceId];
-    if (space?.isProject) {
+    if (space?.type === SpaceType.Project) {
         return { projectName: space.projectName, projectIcon: space.projectIcon };
     }
     return {};
@@ -490,7 +490,7 @@ export class SearchService {
 
         // Search projects by name and description
         Object.values(spaces).forEach((space) => {
-            if (!space.isProject) {
+            if (space.type !== SpaceType.Project) {
                 return;
             }
 

@@ -1,10 +1,11 @@
-import {createAction, createReducer, createSelector} from '@reduxjs/toolkit';
-import {v4 as uuidv4} from 'uuid';
+import { createAction, createReducer, createSelector } from '@reduxjs/toolkit';
+import { v4 as uuidv4 } from 'uuid';
 
-import type {Priority} from '../../../remote/scheduler';
-import type {GetSpaceRemote, IdMapEntry, ListSpacesRemote, RemoteSpace} from '../../../remote/types';
-import type {SerializedSpace, Space, SpaceId} from '../../../types';
-import type {LumoState} from '../../store';
+import type { Priority } from '../../../remote/scheduler';
+import type { GetSpaceRemote, IdMapEntry, ListSpacesRemote, RemoteSpace } from '../../../remote/types';
+import type { SerializedSpace, Space, SpaceId } from '../../../types';
+import { SpaceType } from '../../../types';
+import type { LumoState } from '../../store';
 
 export type PushSpaceRequest = {
     id: SpaceId;
@@ -58,21 +59,21 @@ const spacesReducer = createReducer<SpaceMap>(EMPTY_SPACE_MAP, (builder) => {
         .addCase(addSpace, (state, action) => {
             const space = action.payload;
             const existing = state[space.id];
-            const existingLinkedFolder = existing?.isProject ? (existing as any).linkedDriveFolder : undefined;
-            const newLinkedFolder = space.isProject ? (space as any).linkedDriveFolder : undefined;
+            const existingLinkedFolder = existing?.type === SpaceType.Project ? existing.linkedDriveFolder : undefined;
+            const newLinkedFolder = space.type === SpaceType.Project ? space.linkedDriveFolder : undefined;
 
             // Warn if we're losing linkedDriveFolder data
             if (existingLinkedFolder && !newLinkedFolder) {
                 console.warn(`[addSpace] WARNING: Overwriting space ${space.id} and LOSING linkedDriveFolder!`, {
                     existingFolderId: existingLinkedFolder?.folderId,
-                    newFolderId: newLinkedFolder?.folderId,
-                    stack: new Error().stack
+                    newFolderId: undefined,
+                    stack: new Error().stack,
                 });
             } else {
                 console.log('Action triggered: addSpace', {
                     id: space.id,
-                    isProject: space.isProject,
-                    hasLinkedFolder: !!newLinkedFolder
+                    type: space.type,
+                    hasLinkedFolder: !!newLinkedFolder,
                 });
             }
 
@@ -158,8 +159,7 @@ const spacesReducer = createReducer<SpaceMap>(EMPTY_SPACE_MAP, (builder) => {
         .addCase(deleteAllSpacesFailure, (state, action) => {
             console.log('Action triggered: deleteAllSpacesFailure', action.payload);
             return state;
-        })
-    ; // prettier-ignore
+        });
 });
 
 export function newSpaceId(): SpaceId {

@@ -42,7 +42,8 @@ import { useLumoDispatch } from '../../redux/hooks';
 import { addConversation } from '../../redux/slices/core/conversations';
 import { addMessage } from '../../redux/slices/core/messages';
 import { addSpace, newSpaceId } from '../../redux/slices/core/spaces';
-import { type ContentBlock, type Conversation, ConversationStatus, type Message, Role, type Space } from '../../types';
+import type { ContentBlock, Conversation, Message, Space } from '../../types';
+import { ConversationStatus, Role, SpaceType } from '../../types';
 
 interface TestRendererModalProps {
     open: boolean;
@@ -465,7 +466,7 @@ export const TestRendererModal = ({ open, onClose }: TestRendererModalProps) => 
                 createdAt: now.toISOString(),
                 updatedAt: now.toISOString(),
                 spaceKey,
-                isProject: false,
+                type: SpaceType.Simple,
             };
 
             dispatch(addSpace(testSpace));

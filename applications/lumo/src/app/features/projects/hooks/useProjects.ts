@@ -6,11 +6,12 @@ import { c } from 'ttag';
 import { useLumoSelector } from '../../../redux/hooks';
 import { selectAttachmentCountsBySpaceId, selectConversationCountsBySpaceId } from '../../../redux/selectors';
 import { selectSpaceMap } from '../../../redux/slices/core/spaces';
+import { SpaceType } from '../../../types';
 import type { Project } from '../types';
 
 /**
  * Hook to get all projects from the spaces in Redux state
- * Projects are spaces with the isProject flag set to true
+ * Projects are spaces with type SpaceType.Project
  */
 export const useProjects = () => {
     const spaces = useLumoSelector(selectSpaceMap);
@@ -21,7 +22,7 @@ export const useProjects = () => {
         const projectList: Project[] = [];
 
         Object.values(spaces).forEach((space) => {
-            if (space.isProject) {
+            if (space.type === SpaceType.Project) {
                 projectList.push({
                     id: space.id,
                     // translator: Fallback title for a project without a name.

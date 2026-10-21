@@ -12,7 +12,7 @@ import {
     pushSpaceRequest,
 } from '../../../redux/slices/core/spaces';
 import type { SpaceId } from '../../../types';
-import { ConversationStatus } from '../../../types';
+import { ConversationStatus, SpaceType } from '../../../types';
 import { getDefaultNewConversationTitle } from '../../../util/conversationTitle';
 import { sendProjectCreateEvent, sendProjectDeleteEvent } from '../../../util/telemetry';
 
@@ -34,7 +34,7 @@ export const useProjectActions = () => {
                     createdAt: now,
                     updatedAt: now,
                     spaceKey: generateSpaceKeyBase64(),
-                    isProject: true,
+                    type: SpaceType.Project,
                     projectName,
                     projectInstructions: projectInstructions || undefined,
                     projectIcon: projectIcon || undefined,

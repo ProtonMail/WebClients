@@ -26,22 +26,18 @@ import { setStoreRef } from '../../redux/storeRef';
 import { LumoApi } from '../../remote/api';
 import type { RemoteId } from '../../remote/types';
 import { serializeSpace } from '../../serialization';
-import type { AttachmentId } from '../../types';
-import {
-    type Base64,
-    type Conversation,
-    type ConversationId,
-    ConversationStatus,
-    type Message,
-    type MessageId,
-    Role,
-    type Space,
-    type SpaceId,
-    type Status,
-    cleanConversation,
-    cleanMessage,
-    cleanSpace,
+import type {
+    AttachmentId,
+    Base64,
+    Conversation,
+    ConversationId,
+    Message,
+    MessageId,
+    Space,
+    SpaceId,
+    Status,
 } from '../../types';
+import { ConversationStatus, Role, SpaceType, cleanConversation, cleanMessage, cleanSpace } from '../../types';
 import { sleep } from '../../util/date';
 import type { MockDatabase, MockDbSpace } from './mock-server';
 
@@ -414,6 +410,7 @@ export async function generateTestSpacesOnMockServer(count: number, masterKey: A
         const spaceId = newSpaceId();
         const timestamp = new Date(now.getTime() - i * 1000).toISOString();
         const space: Space = {
+            type: SpaceType.Simple,
             id: spaceId,
             createdAt: timestamp, // Each space 1 second apart
             updatedAt: timestamp,
@@ -430,6 +427,7 @@ export async function generateTestSpacesOnMockServer(count: number, masterKey: A
         const remoteId = await mockDb.getNextSpaceId();
         const mockSpace: MockDbSpace = {
             ID: remoteId,
+            Type: serializedSpace.type,
             CreateTime: serializedSpace.createdAt,
             UpdateTime: serializedSpace.updatedAt,
             SpaceKey: serializedSpace.wrappedSpaceKey!,
@@ -451,6 +449,7 @@ export function createTestSpace(overrides: Partial<Space> = {}): Space {
         updatedAt: now,
         spaceKey: generateSpaceKeyBase64(),
         ...overrides,
+        type: overrides.type ?? SpaceType.Simple,
     };
 }
 

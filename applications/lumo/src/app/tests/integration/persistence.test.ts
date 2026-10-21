@@ -3,6 +3,7 @@ import { type SetupServer, setupServer } from 'msw/node';
 import { base64ToMasterKey, generateMasterKeyBase64, generateSpaceKeyBase64 } from '../../crypto';
 import type { AesGcmCryptoKey } from '../../crypto/types';
 import { CONVERSATION_STORE, DbApi, MESSAGE_STORE, SPACE_STORE } from '../../indexedDb/db';
+import { requestToPromise } from '../../indexedDb/util';
 import { sendMessageWithRedux } from '../../lib/lumoApiClientRedux';
 import { _getCallbacks } from '../../llm';
 import { setRetryPushEveryMs } from '../../redux/sagas';
@@ -58,20 +59,19 @@ import {
     serializeMessage,
     serializeSpace,
 } from '../../serialization';
-import type { Base64, SpaceId } from '../../types';
-import {
-    type ConversationId,
-    ConversationStatus,
-    type Message,
-    type MessagePub,
-    Role,
-    type SerializedConversation,
-    type SerializedMessage,
-    type SerializedSpace,
-    type Space,
-    type Status,
-    getSpaceDek,
+import type {
+    Base64,
+    ConversationId,
+    Message,
+    MessagePub,
+    SerializedConversation,
+    SerializedMessage,
+    SerializedSpace,
+    Space,
+    SpaceId,
+    Status,
 } from '../../types';
+import { ConversationStatus, Role, SpaceType, getSpaceDek } from '../../types';
 import type { GenerationResponseMessage } from '../../types-api';
 import { clarify } from '../../util/clarify';
 import { listify, mapIds, mapLength, mapify, setify } from '../../util/collections';
@@ -155,6 +155,8 @@ describe('Lumo Persistence Integration Tests', () => {
                 const spaceId = newSpaceId();
                 const now = new Date().toISOString();
                 const testSpace: Space = {
+                    type: SpaceType.Project,
+                    projectName: 'Persistence project',
                     id: spaceId,
                     createdAt: now,
                     updatedAt: now,
@@ -185,8 +187,14 @@ describe('Lumo Persistence Integration Tests', () => {
                 console.log('Verify the space was persisted to IndexedDB correctly');
                 expect(persistedSpace).toBeDefined();
                 expect(persistedSpace.id).toBe(testSpace.id);
+                expect(persistedSpace.type).toBe(SpaceType.Project);
+                expect(persistedSpace).not.toHaveProperty('projectName');
                 expect(persistedSpace.createdAt).toBe(testSpace.createdAt);
                 expect(persistedSpace.wrappedSpaceKey).toBeDefined();
+                await waitForSpaceSyncWithServer(dbApi, testSpace.id);
+                expect(mockDb.listSpaces().find((space) => space.SpaceTag === testSpace.id)?.Type).toBe(
+                    SpaceType.Project
+                );
             } finally {
                 dispatch(stopRootSaga());
             }
@@ -200,6 +208,7 @@ describe('Lumo Persistence Integration Tests', () => {
                 const spaceId = newSpaceId();
                 const now = new Date().toISOString();
                 const space: Space = {
+                    type: SpaceType.Simple,
                     id: spaceId,
                     createdAt: now,
                     updatedAt: now,
@@ -1100,7 +1109,7 @@ describe('Lumo Persistence Integration Tests', () => {
             const fullState = JSON.parse(atob(jsonB64)) as {
                 messages: SerializedMessage[];
                 conversations: SerializedConversation[];
-                spaces: SerializedSpace[];
+                spaces: Omit<SerializedSpace, 'type'>[];
             };
 
             const masterKeyBytes = fixedMasterKeyBytes();
@@ -1115,7 +1124,13 @@ describe('Lumo Persistence Integration Tests', () => {
                 console.log('Restore the state into IDB');
                 fullState.messages.forEach((m) => dbApi.updateMessage(m, { dirty: false }));
                 fullState.conversations.forEach((c) => dbApi.updateConversation(c, { dirty: false }));
-                fullState.spaces.forEach((s) => dbApi.updateSpace(s, { dirty: false }));
+                // Seed legacy storage directly; normal writes require the current public type.
+                const legacySpaceTx = await dbApi.newTransaction([SPACE_STORE], 'readwrite');
+                await Promise.all(
+                    fullState.spaces.map((s) =>
+                        requestToPromise(legacySpaceTx.objectStore(SPACE_STORE).put({ ...s, dirty: false }))
+                    )
+                );
 
                 // Load state into Redux
                 console.log('Load state into Redux');
