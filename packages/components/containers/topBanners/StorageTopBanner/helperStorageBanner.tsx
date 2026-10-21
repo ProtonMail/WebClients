@@ -10,7 +10,7 @@ import {
     SHARED_UPSELL_PATHS,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
-import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/ref';
 import { getAppStorage } from '@proton/shared/lib/user/storage';
 
 const getStorageMessageWithProduct = (percentage: number, productString: ReactNode, cta: ReactNode) => {

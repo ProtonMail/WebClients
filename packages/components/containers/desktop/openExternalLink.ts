@@ -1,20 +1,27 @@
 import type { CYCLE, PLANS } from '@proton/payments/core/constants';
+import { getSubscriptionSearchParamsString } from '@proton/payments/core/subscription/search-params';
+import { getUpgradePath } from '@proton/payments/core/subscription/upsell';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
-import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
 
 export const freeTrialUpgradeClick = (upsellRef: string) => {
     void invokeInboxDesktopIPC({
         type: 'openExternal',
-        payload: getAppHref(addUpsellPath(getUpgradePath({}), upsellRef), APPS.PROTONACCOUNT),
+        payload: getAppHref(getUpgradePath({}, upsellRef), APPS.PROTONACCOUNT),
     });
 };
 
 export const upgradeButtonClick = (cycle: CYCLE, plan?: PLANS) => {
+    const searchParams = getSubscriptionSearchParamsString({
+        plan,
+        cycle,
+        // no canonical
+        step: 1,
+    });
     void invokeInboxDesktopIPC({
         type: 'openExternal',
-        payload: getAppHref(`/dashboard?plan=${plan}&cycle=${cycle}&step=1`, APPS.PROTONACCOUNT),
+        payload: getAppHref(`/dashboard?${searchParams}`, APPS.PROTONACCOUNT),
     });
 };
 

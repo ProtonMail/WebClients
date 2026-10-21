@@ -10,7 +10,7 @@ import { Href } from '@proton/atoms/Href/Href';
 import { IcPenSparks } from '@proton/icons/icons/IcPenSparks';
 import { hasAIAssistant, hasPlanWithAIAssistantIncluded } from '@proton/payments/core/subscription/helpers';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRef } from '@proton/shared/lib/helpers/ref';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import lumoIcon from '@proton/styles/assets/img/lumo/lumo-cat-icon.svg';
 import { MailFeatureFlag } from '@proton/unleash/Flags';

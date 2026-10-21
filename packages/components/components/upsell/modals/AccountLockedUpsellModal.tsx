@@ -14,7 +14,7 @@ import { getPriceStartsFrom } from '@proton/payments/core/price-helpers';
 import { getCanSubscriptionAccessDuoPlan } from '@proton/payments/core/subscription/helpers';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRef } from '@proton/shared/lib/helpers/ref';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { SUBSCRIPTION_STEPS } from '../../../containers/payments/subscription/constants';

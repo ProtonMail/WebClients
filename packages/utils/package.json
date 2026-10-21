@@ -4,6 +4,7 @@
     "description": "Generic business-agnostic utils.",
     "exports": {
         "./addItem": "./src/addItem.ts",
+        "./addRefToUrl": "./src/addRefToUrl.ts",
         "./arraysContainSameElements": "./src/arraysContainSameElements.ts",
         "./availability": "./src/availability.ts",
         "./capitalize": "./src/capitalize.ts",

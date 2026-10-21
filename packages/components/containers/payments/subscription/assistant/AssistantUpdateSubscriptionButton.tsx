@@ -2,8 +2,9 @@ import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { getUpgradePath } from '@proton/payments/core/subscription/upsell';
 import { APPS, APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRef } from '@proton/shared/lib/helpers/ref';
 
 import SettingsLink from '../../../../components/link/SettingsLink';
 
@@ -21,7 +22,7 @@ const AssistantUpdateSubscriptionButton = () => {
         <SettingsLink
             target="_blank"
             app={APPS.PROTONMAIL}
-            path={addUpsellPath(getUpgradePath({ user, subscription, target: 'checkout' }), upsellRef)}
+            path={getUpgradePath({ user, subscription, target: 'checkout' }, upsellRef)}
         >{c('Link').t`Add to your subscription`}</SettingsLink>
     );
 };

@@ -11,7 +11,7 @@ import {
     SHARED_UPSELL_PATHS,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
-import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRef } from '@proton/shared/lib/helpers/ref';
 import noop from '@proton/utils/noop';
 
 import { useOutgoingController } from '../../shared/OutgoingDelegatedAccessProvider';

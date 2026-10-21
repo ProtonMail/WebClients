@@ -11,16 +11,15 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import UpsellModal from '@proton/components/components/upsell/UpsellModal/UpsellModal';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { YEAR_REGEX } from '@proton/shared/lib/date/date';
-import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRef } from '@proton/shared/lib/helpers/ref';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import plusLogo from '@proton/styles/assets/img/illustrations/mail-plus-logo.svg';
 import scheduleSendImg from '@proton/styles/assets/img/illustrations/new-upsells-img/paperplane-clock.svg';
 import clsx from '@proton/utils/clsx';
 
+import { FUTURE_MESSAGES_BUFFER } from '../../../../constants';
 import { selectComposer } from '../../../../store/composers/composerSelectors';
 import { useMailSelector } from '../../../../store/hooks';
-
-import { FUTURE_MESSAGES_BUFFER } from '../../../../constants';
 import { isScheduledDuringNight } from './helpers';
 import useScheduleSendFeature from './useScheduleSendFeature';
 

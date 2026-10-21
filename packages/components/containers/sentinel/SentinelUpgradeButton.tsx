@@ -9,7 +9,7 @@ import {
     SHARED_UPSELL_PATHS,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
-import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/ref';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 
 import { PromotionButton } from '../../components/button/PromotionButton/index';
