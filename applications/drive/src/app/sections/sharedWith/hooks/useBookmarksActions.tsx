@@ -2,9 +2,9 @@ import { c, msgid } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import type { useConfirmActionModal } from '@proton/components';
-import { getDrive, useDrive } from '@proton/drive/index';
 import { handleSdkError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
+import { getDrive, useDrive } from '@proton/drive/sdk';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { PROTON_LOCAL_DOMAIN } from '@proton/shared/lib/localDev';

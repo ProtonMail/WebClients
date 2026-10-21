@@ -17,8 +17,8 @@ import {
     ToolbarButton,
     useActiveBreakpoint,
 } from '@proton/components';
-import { MemberRole, getDriveForPhotos } from '@proton/drive/index';
 import { useSharingModal } from '@proton/drive/modals/sharingModal';
+import { MemberRole, getDriveForPhotos } from '@proton/drive/sdk';
 import useLoading from '@proton/hooks/useLoading';
 import { IcAlbumFolder } from '@proton/icons/icons/IcAlbumFolder';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';

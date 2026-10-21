@@ -37,7 +37,7 @@ import {
   restoreDocument as restoreDocumentSDK,
   trashDocument as trashDocumentSDK,
 } from '../DriveSDK/trash'
-import { generateNodeUid } from '@proton/drive'
+import { generateNodeUid } from '@proton/drive/sdk'
 
 /**
  * Controls the lifecycle of a single document for an authenticated user.

@@ -1,5 +1,5 @@
-import type { Author, NodeEntity, Revision } from '@proton/drive';
-import { MemberRole, NodeType, RevisionState } from '@proton/drive';
+import type { Author, NodeEntity, Revision } from '@proton/drive/sdk';
+import { MemberRole, NodeType, RevisionState } from '@proton/drive/sdk';
 
 import { getNodeDisplaySize } from './getNodeDisplaySize';
 

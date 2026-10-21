@@ -1,5 +1,5 @@
 import { MiddleEllipsis } from '@proton/components';
-import { NodeType } from '@proton/drive';
+import { NodeType } from '@proton/drive/sdk';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { rtlSanitize } from '@proton/shared/lib/helpers/string';
 

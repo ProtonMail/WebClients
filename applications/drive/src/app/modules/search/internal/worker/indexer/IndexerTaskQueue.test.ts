@@ -3,8 +3,8 @@ import type { NodeEntity, NodeType } from '@protontech/drive-sdk';
 import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
 
-import { RateLimitedError as SdkRateLimitedError } from '@proton/drive';
 import { createMockNodeEntity } from '@proton/drive/modules/testing';
+import { RateLimitedError as SdkRateLimitedError } from '@proton/drive/sdk';
 import metrics from '@proton/metrics/metricsInstance';
 
 import { SearchDB } from '../../shared/SearchDB';

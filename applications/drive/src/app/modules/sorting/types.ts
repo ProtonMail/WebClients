@@ -1,4 +1,4 @@
-import type { NodeType } from '@proton/drive';
+import type { NodeType } from '@proton/drive/sdk';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 export enum SortField {

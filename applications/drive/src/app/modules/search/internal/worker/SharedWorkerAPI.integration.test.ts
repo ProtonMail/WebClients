@@ -2,8 +2,8 @@ import type { DriveEvent, NodeType } from '@protontech/drive-sdk';
 import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
 
-import { DriveEventType } from '@proton/drive';
 import { createMockNodeEntity } from '@proton/drive/modules/testing';
+import { DriveEventType } from '@proton/drive/sdk';
 
 import { SearchDB } from '../shared/SearchDB';
 import { SearchLibraryError } from '../shared/errors';

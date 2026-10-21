@@ -1,7 +1,7 @@
-import type { NodeEntity, ProtonDriveClient, ProtonDrivePublicLinkClient } from '@proton/drive';
-import { AbortError, NodeType, SDKEvent } from '@proton/drive';
 import { getNodeName } from '@proton/drive/modules/nodes';
 import { TransferSpeedMetrics } from '@proton/drive/modules/transferPerformance';
+import type { NodeEntity, ProtonDriveClient, ProtonDrivePublicLinkClient } from '@proton/drive/sdk';
+import { AbortError, NodeType, SDKEvent } from '@proton/drive/sdk';
 import metrics from '@proton/metrics/metricsInstance';
 
 import { fileSaver } from '../../modules/fileSaver/fileSaver';

@@ -5,13 +5,13 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { useActiveBreakpoint } from '@proton/components';
-import type { NodeEntity, ProtonDrivePublicLinkClient } from '@proton/drive';
-import { MemberRole, NodeType } from '@proton/drive';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { getNodeAncestry, getNodeName } from '@proton/drive/modules/nodes';
 import { loadThumbnail } from '@proton/drive/modules/thumbnails';
 import { uploadManager } from '@proton/drive/modules/upload';
+import type { NodeEntity, ProtonDrivePublicLinkClient } from '@proton/drive/sdk';
+import { MemberRole, NodeType } from '@proton/drive/sdk';
 import { IcGrid3 } from '@proton/icons/icons/IcGrid3';
 import { IcListBullets } from '@proton/icons/icons/IcListBullets';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';

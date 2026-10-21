@@ -1,4 +1,4 @@
-import { MemberRole, type ShareResult } from '@proton/drive';
+import { MemberRole, type ShareResult } from '@proton/drive/sdk';
 
 import { getOldestShareCreationTime } from './getOldestShareCreationTime';
 

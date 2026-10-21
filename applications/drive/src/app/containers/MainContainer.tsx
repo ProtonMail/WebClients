@@ -18,13 +18,13 @@ import {
     useEventManager,
 } from '@proton/components';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
-import { getDrive, getDriveForPhotos, splitNodeUid, useDrive } from '@proton/drive';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { getBusDriver } from '@proton/drive/modules/busDriver';
 import { logging } from '@proton/drive/modules/logging';
 import { driveMetrics } from '@proton/drive/modules/metrics';
 import { recentlyAccessed } from '@proton/drive/modules/recentlyAccessed';
 import { useInitEncryptedThumbnailCache } from '@proton/drive/modules/thumbnails';
+import { getDrive, getDriveForPhotos, splitNodeUid, useDrive } from '@proton/drive/sdk';
 import useLoading from '@proton/hooks/useLoading';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash/useFlag';

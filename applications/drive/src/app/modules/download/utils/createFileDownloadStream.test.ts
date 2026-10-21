@@ -1,7 +1,7 @@
 import { sha1 } from '@noble/hashes/sha1';
 import { bytesToHex } from '@noble/hashes/utils';
 
-import type { DownloadController, NodeEntity } from '@proton/drive';
+import type { DownloadController, NodeEntity } from '@proton/drive/sdk';
 
 import { useDownloadManagerStore } from '../downloadManager.store';
 import type { MalwareDetection } from '../malwareDetection/malwareDetection';

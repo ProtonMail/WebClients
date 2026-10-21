@@ -7,13 +7,13 @@ import type { ModalStateProps } from '@proton/components';
 import shallowEqual from '@proton/utils/shallowEqual';
 
 import type { DirectoryTreeItem } from '../../../components/DirectoryTree/DirectoryTree';
-import type { NodeEntity, ProtonDriveClient, Result } from '../../../index';
-import { NodeType, getDrive } from '../../../index';
 import { handleSdkError, sendErrorReport } from '../../../legacy/errorHandling';
 import { getNodeEntity } from '../../../legacy/sdkUtils/getNodeEntity';
 import { directoryTreeFactory, getNodeUidFromTreeItemId, makeTreeItemId } from '../../../modules/directoryTree';
 import { type MoveNodesItemMap, useMoveNodes } from '../../../modules/moveNodes';
 import { getMissingUid, isMissingNode } from '../../../modules/nodes';
+import type { NodeEntity, ProtonDriveClient, Result } from '../../../sdk';
+import { NodeType, getDrive } from '../../../sdk';
 import { useCreateFolderModal } from '../../createFolderModal';
 
 export type MoveItemsModalInnerProps = {

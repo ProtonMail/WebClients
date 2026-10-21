@@ -1,7 +1,7 @@
 import type { DriveEvent, NodeEvent } from '@protontech/drive-sdk';
 
-import type { NodeEntity } from '@proton/drive';
-import { NodeType } from '@proton/drive';
+import type { NodeEntity } from '@proton/drive/sdk';
+import { NodeType } from '@proton/drive/sdk';
 import { Expression, Func, TermValue } from '@proton/proton-foundation-search';
 
 import { Logger } from '../../../shared/Logger';

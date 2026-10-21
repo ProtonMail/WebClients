@@ -1,5 +1,5 @@
-import type { Author, NodeEntity } from '@proton/drive';
 import { getNodeName } from '@proton/drive/modules/nodes';
+import type { Author, NodeEntity } from '@proton/drive/sdk';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 
 import { Logger } from '../../shared/Logger';

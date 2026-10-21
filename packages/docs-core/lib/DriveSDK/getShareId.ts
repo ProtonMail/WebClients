@@ -1,5 +1,5 @@
 import type { NodeMeta } from '@proton/docs-shared'
-import { generateNodeUid, getDrive } from '@proton/drive'
+import { generateNodeUid, getDrive } from '@proton/drive/sdk'
 import { traceErrorSDK } from './traceErrorSDK'
 
 export async function getShareId(nodeMeta: NodeMeta): Promise<string> {

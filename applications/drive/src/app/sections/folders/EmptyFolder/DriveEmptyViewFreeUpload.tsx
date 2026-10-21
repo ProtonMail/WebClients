@@ -5,8 +5,8 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { ButtonWithTextAndIcon, useActiveBreakpoint } from '@proton/components';
 import { VintageClock } from '@proton/components/components/vintageClock/VintageClock';
-import { generateNodeUid } from '@proton/drive';
 import { uploadManager } from '@proton/drive/modules/upload';
+import { generateNodeUid } from '@proton/drive/sdk';
 import { IcFileArrowInUp } from '@proton/icons/icons/IcFileArrowInUp';
 import { IcFolderArrowUp } from '@proton/icons/icons/IcFolderArrowUp';
 import { IcLockFilled } from '@proton/icons/icons/IcLockFilled';

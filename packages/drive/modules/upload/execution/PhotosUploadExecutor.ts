@@ -6,8 +6,9 @@ import { getFileExtension, isImage, isRAWExtension, isRAWPhoto, isVideo } from '
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 import { getItem } from '@proton/shared/lib/helpers/storage';
 
-import { NodeWithSameNameExistsValidationError } from '../../../index';
-import { type ExtendedAttributesMetadata, generatePhotosExtendedAttributes } from '../../extendedAttributes';
+import { NodeWithSameNameExistsValidationError } from '../../../sdk';
+import { generatePhotosExtendedAttributes } from '../../extendedAttributes/photosExtendedAttributesGenerator';
+import type { ExtendedAttributesMetadata } from '../../extendedAttributes/types';
 import { generateThumbnail } from '../../thumbnails';
 import { UploadDriveClientRegistry } from '../UploadDriveClientRegistry';
 import { useUploadControllerStore } from '../store/uploadController.store';

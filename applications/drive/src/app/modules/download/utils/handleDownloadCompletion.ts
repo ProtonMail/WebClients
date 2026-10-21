@@ -1,4 +1,4 @@
-import type { DownloadController, NodeEntity } from '@proton/drive';
+import type { DownloadController, NodeEntity } from '@proton/drive/sdk';
 
 import { checkMetadataSignature, handleManifestSignatureError } from './validateSignatures';
 

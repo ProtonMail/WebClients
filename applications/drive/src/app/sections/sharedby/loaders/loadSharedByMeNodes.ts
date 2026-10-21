@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
-import { type ProtonDriveClient, getDrive, getDriveForPhotos } from '@proton/drive';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { driveMetrics } from '@proton/drive/modules/metrics';
 import { getFormattedNodeLocation } from '@proton/drive/modules/nodes';
+import { type ProtonDriveClient, getDrive, getDriveForPhotos } from '@proton/drive/sdk';
 
 import { getSignatureIssues } from '../../../utils/sdk/getSignatureIssues';
 import { useSharedByMeStore } from '../useSharedByMe.store';

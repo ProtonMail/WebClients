@@ -4,8 +4,8 @@ import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 
-import type { ProtonDriveClient } from './index';
-import { useDrive } from './index';
+import type { ProtonDriveClient } from './sdk';
+import { useDrive } from './sdk';
 
 export function LazyDriveProvider({ children }: { children: (drive: ProtonDriveClient | undefined) => ReactNode }) {
     const { APP_NAME, APP_VERSION } = useConfig();

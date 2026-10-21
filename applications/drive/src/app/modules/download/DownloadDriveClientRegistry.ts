@@ -4,7 +4,7 @@ import {
     type ProtonDrivePublicLinkClient,
     getDrive,
     getDriveForPhotos,
-} from '@proton/drive';
+} from '@proton/drive/sdk';
 
 /**
  * Centralized registry for drive client instances used in downloads.

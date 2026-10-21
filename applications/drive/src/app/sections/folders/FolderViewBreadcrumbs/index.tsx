@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { useDrive } from '@proton/drive/index';
+import { useDrive } from '@proton/drive/sdk';
 
 import useDriveNavigation from '../../../legacy/hooks/drive/useNavigate';
 import { Breadcrumbs } from '../../../statelessComponents/Breadcrumbs/Breadcrumbs';

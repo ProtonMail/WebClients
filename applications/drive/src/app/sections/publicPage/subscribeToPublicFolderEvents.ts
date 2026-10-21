@@ -1,7 +1,7 @@
-import { MemberRole } from '@proton/drive';
 import { ComponentTag, EnrichedError, handleSdkError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
+import { MemberRole } from '@proton/drive/sdk';
 
 import { getNodeDisplaySize } from '../../utils/sdk/getNodeDisplaySize';
 import { getSignatureIssues } from '../../utils/sdk/getSignatureIssues';

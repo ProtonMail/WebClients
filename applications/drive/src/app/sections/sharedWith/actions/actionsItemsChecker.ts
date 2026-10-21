@@ -1,4 +1,4 @@
-import { NodeType } from '@proton/drive';
+import { NodeType } from '@proton/drive/sdk';
 
 import { ItemType, type SharedWithMeItem } from '../useSharedWithMe.store';
 

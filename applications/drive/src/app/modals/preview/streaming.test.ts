@@ -1,6 +1,6 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
-import type { DownloadController, ProtonDriveClient, SeekableReadableStream } from '@proton/drive';
+import type { DownloadController, ProtonDriveClient, SeekableReadableStream } from '@proton/drive/sdk';
 
 import { initDownloadSW } from '../../modules/fileSaver/download';
 import { useVideoStreaming } from './streaming';

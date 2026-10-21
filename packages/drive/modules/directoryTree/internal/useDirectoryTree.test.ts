@@ -1,14 +1,14 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
-import { MemberRole, NodeType, getDrive, useDrive } from '../../../index';
 import { handleSdkError, sendErrorReport } from '../../../legacy/errorHandling';
 import { getBusDriver } from '../../../modules/busDriver';
+import { MemberRole, NodeType, getDrive, useDrive } from '../../../sdk';
 import { TreeEventManager } from './events/treeEventManager';
 import { DEVICES_ROOT_ID, SHARED_WITH_ME_ROOT_ID, makeTreeItemId } from './helpers';
 import { DirectoryTreeRootType } from './types';
 
-jest.mock('../../../index', () => ({
-    ...jest.requireActual('../../../index'),
+jest.mock('../../../sdk', () => ({
+    ...jest.requireActual('../../../sdk'),
     useDrive: jest.fn(),
     getDrive: jest.fn(),
 }));

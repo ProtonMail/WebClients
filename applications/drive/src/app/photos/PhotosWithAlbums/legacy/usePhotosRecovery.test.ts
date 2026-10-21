@@ -58,8 +58,8 @@ jest.mock('@proton/app-context/useApi', () => ({
     useApi: jest.fn(),
 }));
 
-jest.mock('@proton/drive', () => ({
-    ...jest.requireActual('@proton/drive'),
+jest.mock('@proton/drive/sdk', () => ({
+    ...jest.requireActual('@proton/drive/sdk'),
     getDriveForPhotos: jest.fn(() => ({
         getMyPhotosRootFolder: jest
             .fn()
