@@ -8543,6 +8543,9 @@ importers:
       '@pdfme/schemas':
         specifier: ^6.1.13
         version: 6.1.13(@pdfme/common@6.1.13)
+      '@proton/shared':
+        specifier: workspace:^
+        version: link:../shared
       '@proton/utils':
         specifier: workspace:^
         version: link:../utils
