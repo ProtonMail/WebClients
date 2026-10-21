@@ -14,7 +14,7 @@ import type { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddr
 import { getPrimaryKey } from '@proton/shared/lib/keys/getPrimaryKey';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { startImportTask } from '../../../../api';
+import { startImportTask } from '../../../../api/api';
 import type { CalendarImportMapping, ImportProvider, LaunchImportPayload } from '../../../../interface';
 import { ImportType, IsCustomCalendarMapping } from '../../../../interface';
 import { changeOAuthStep, resetOauthDraft } from '../../../../logic/draft/oauthDraft/oauthDraft.actions';

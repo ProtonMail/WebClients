@@ -5,7 +5,7 @@ import { useDebounceInput } from '@proton/components';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import noop from '@proton/utils/noop';
 
-import { getAuthenticationMethod } from '../../../../../../api';
+import { getAuthenticationMethod } from '../../../../../../api/api';
 import type { ApiImporterAuthInfoResponse } from '../../../../../../api/api.interface';
 
 /**

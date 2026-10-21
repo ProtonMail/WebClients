@@ -12,7 +12,7 @@ const decryptMessage = vi.fn();
 
 const state = vi.hoisted(() => ({ agentIdentities: [] as string[] }));
 
-vi.mock('@proton/meet', () => ({
+vi.mock('@proton/meet/hooks/useMeetErrorReporting', () => ({
     useMeetErrorReporting: () => ({ reportMeetError }),
 }));
 

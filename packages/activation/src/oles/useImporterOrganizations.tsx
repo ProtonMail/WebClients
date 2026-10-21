@@ -4,7 +4,7 @@ import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import noop from '@proton/utils/noop';
 
-import { getJoiningLink, getOrganizationImporter } from '../api';
+import { getJoiningLink, getOrganizationImporter } from '../api/api';
 import type { ApiImporterOrganization, ApiJoiningLinkData } from '../api/api.interface';
 import { getImportProviderFromApiProvider } from '../helpers/getImportProviderFromApiProvider';
 import { isProviderSupported } from './providers';

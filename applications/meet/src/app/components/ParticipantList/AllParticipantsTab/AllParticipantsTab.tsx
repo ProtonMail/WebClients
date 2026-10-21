@@ -7,7 +7,7 @@ import { useIsWaitingRoomJoinEnabled } from '@proton/meet/hooks/useWaitingRoomFl
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectMeetingLink } from '@proton/meet/store/slices/currentMeeting';
 import { selectParticipantsWithDisabledVideos } from '@proton/meet/store/slices/settings';
-import { selectIsWaitingRoomHost } from '@proton/meet/store/slices/waitingRoomSlice.ts';
+import { selectIsWaitingRoomHost } from '@proton/meet/store/slices/waitingRoomSlice';
 import { TelemetryMeetDashboardEvents, sendMeetDashboardEvent } from '@proton/meet/telemetry/meetTelemetry';
 import clsx from '@proton/utils/clsx';
 
