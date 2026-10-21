@@ -4,7 +4,7 @@ import { runSaga } from 'redux-saga';
 
 import { FREE_USER_CHAT_DELETION_GRACE_DAYS, FREE_USER_CHAT_RETENTION_DAYS } from '../../constants/limits';
 import type { Conversation, Space } from '../../types';
-import { ConversationStatus } from '../../types';
+import { ConversationStatus, SpaceType } from '../../types';
 import { locallyDeleteConversationFromLocalRequest } from '../slices/core/conversations';
 import { locallyDeleteSpaceFromLocalRequest } from '../slices/core/spaces';
 import type { LumoState } from '../store';
@@ -65,7 +65,7 @@ describe('expireConversations saga', () => {
         );
         const state = createState({
             conversations: { [eligible.id]: eligible },
-            spaces: { 'space-1': { id: 'space-1', isProject: false } as Space },
+            spaces: { 'space-1': { id: 'space-1', type: SpaceType.Simple } as Space },
         });
 
         await expect(runExpireConversations(state, true)).resolves.toEqual([]);
@@ -79,7 +79,7 @@ describe('expireConversations saga', () => {
         );
         const state = createState({
             conversations: { [eligible.id]: eligible },
-            spaces: { 'space-1': { id: 'space-1', isProject: false } as Space },
+            spaces: { 'space-1': { id: 'space-1', type: SpaceType.Simple } as Space },
             isGhostChatMode: true,
         });
 
@@ -90,7 +90,7 @@ describe('expireConversations saga', () => {
         const recent = createConversation(3, 'recent', 'space-1');
         const state = createState({
             conversations: { [recent.id]: recent },
-            spaces: { 'space-1': { id: 'space-1', isProject: false } as Space },
+            spaces: { 'space-1': { id: 'space-1', type: SpaceType.Simple } as Space },
         });
 
         await expect(runExpireConversations(state, false)).resolves.toEqual([]);
@@ -104,7 +104,7 @@ describe('expireConversations saga', () => {
         );
         const state = createState({
             conversations: { [eligible.id]: eligible },
-            spaces: { 'project-space': { id: 'project-space', isProject: true } as Space },
+            spaces: { 'project-space': { id: 'project-space', type: SpaceType.Project } as Space },
         });
 
         const dispatched = await runExpireConversations(state, false);
@@ -120,7 +120,7 @@ describe('expireConversations saga', () => {
         );
         const state = createState({
             conversations: { [eligible.id]: eligible },
-            spaces: { 'space-1': { id: 'space-1', isProject: false } as Space },
+            spaces: { 'space-1': { id: 'space-1', type: SpaceType.Simple } as Space },
         });
 
         const dispatched = await runExpireConversations(state, false);
@@ -139,7 +139,7 @@ describe('expireConversations saga', () => {
         };
         const state = createState({
             conversations: { [eligibleGhost.id]: eligibleGhost },
-            spaces: { 'space-1': { id: 'space-1', isProject: false } as Space },
+            spaces: { 'space-1': { id: 'space-1', type: SpaceType.Simple } as Space },
         });
 
         await expect(runExpireConversations(state, false)).resolves.toEqual([]);
@@ -158,8 +158,8 @@ describe('expireConversations saga', () => {
                 [eligible.id]: eligible,
             },
             spaces: {
-                'space-1': { id: 'space-1', isProject: false } as Space,
-                'space-2': { id: 'space-2', isProject: false } as Space,
+                'space-1': { id: 'space-1', type: SpaceType.Simple } as Space,
+                'space-2': { id: 'space-2', type: SpaceType.Simple } as Space,
             },
         });
 

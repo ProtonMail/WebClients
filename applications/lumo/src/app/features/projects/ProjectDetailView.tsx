@@ -40,7 +40,7 @@ import {
     pushConversationRequest,
 } from '../../redux/slices/core/conversations';
 import { addSpace, pullSpaceRequest, pushSpaceRequest } from '../../redux/slices/core/spaces';
-import { ComposerMode, getProjectInfo } from '../../types';
+import { ComposerMode, SpaceType, getProjectInfo } from '../../types';
 import { ProjectFilesPanel } from './ProjectFilesPanel';
 import { ConversationDropdown } from './components/ConversationDropdown';
 import { ProjectEmptyState } from './components/ProjectEmptyState';
@@ -230,7 +230,7 @@ const ProjectDetailViewInner = () => {
 
     const handleSaveTitle = useCallback(
         (newTitle: string) => {
-            if (!space || !space.isProject) return;
+            if (!space || space.type !== SpaceType.Project) return;
             dispatch(addSpace({ ...space, projectName: newTitle }));
             dispatch(pushSpaceRequest({ id: projectId }));
         },
@@ -248,7 +248,7 @@ const ProjectDetailViewInner = () => {
         [dispatch]
     );
 
-    if (!space || !space.isProject) {
+    if (!space || space.type !== SpaceType.Project) {
         if (isDataHydrating) {
             return (
                 <div className="project-detail-not-found flex flex-column items-center justify-center">

@@ -48,6 +48,7 @@ export type Shallow = {
 
 export type SpacePub = {
     id: SpaceId;
+    type: SpaceType;
     createdAt: string; // date
     updatedAt: string; // date - last modification time (for sorting)
 };
@@ -58,8 +59,13 @@ export type LinkedDriveFolder = {
     folderPath: string;
 };
 
-export type ProjectSpace = {
-    isProject: true; // Flag to indicate this space is being used as a project
+export const enum SpaceType {
+    Simple = 'simple',
+    Project = 'project',
+    Schedule = 'schedule',
+}
+
+export type ProjectSpacePriv = {
     // Project metadata (optional - only for spaces used as projects)
     projectName?: string;
     projectInstructions?: string;
@@ -68,11 +74,15 @@ export type ProjectSpace = {
     linkedDriveFolder?: LinkedDriveFolder;
 };
 
-type SimpleSpace = {
-    isProject?: false; // Not a project (false, undefined, or unspecified)
-};
+export type SimpleSpacePriv = {};
 
-export type SpacePriv = ProjectSpace | SimpleSpace;
+export type ScheduleSpacePriv = {};
+
+export type SpacePriv = ProjectSpacePriv | SimpleSpacePriv | ScheduleSpacePriv;
+
+export type ProjectSpace = Omit<SpacePub, 'type'> & { type: SpaceType.Project } & ProjectSpacePriv;
+export type SimpleSpace = Omit<SpacePub, 'type'> & { type: SpaceType.Simple } & SimpleSpacePriv;
+export type ScheduleSpace = Omit<SpacePub, 'type'> & { type: SpaceType.Schedule } & ScheduleSpacePriv;
 
 export type SpaceKeyClear = {
     spaceKey: Base64; // type: HkdfCryptoKey
@@ -89,36 +99,31 @@ type WithoutSpaceKey = { wrappedSpaceKey?: never };
 type MaybeSpaceKey = (NonDeleted & WithSpaceKey) | (Deleted & WithoutSpaceKey);
 type LocalFlagsForSpace = Omit<LocalFlags, 'deleted'>;
 
-export type Space = SpacePub & SpacePriv & SpaceKeyClear;
+export type Space = (ProjectSpace | SimpleSpace | ScheduleSpace) & SpacePriv & SpaceKeyClear;
 export type SerializedSpace = SpacePub & Partial<Encrypted> & MaybeSpaceKey & LocalFlagsForSpace;
 export type SerializedSpaceMap = Record<SpaceId, SerializedSpace>;
 
-export function isSpacePriv(value: any): value is SpacePriv {
-    return isProjectSpace(value) || isSimpleSpace(value);
+export function isSpaceType(value: unknown): value is SpaceType {
+    return value === SpaceType.Simple || value === SpaceType.Project || value === SpaceType.Schedule;
 }
 
-function isProjectSpace(value: any): value is ProjectSpace {
-    return typeof value === 'object' && value !== null && value.isProject === true;
-}
-
-function isSimpleSpace(value: any): value is SimpleSpace {
-    return typeof value === 'object' && value !== null && (value.isProject === false || value.isProject === undefined);
-}
-
-function getSpacePriv(s: SpacePriv): SpacePriv {
-    if (s.isProject) {
-        const { projectName, projectInstructions, isProject, projectIcon, linkedDriveFolder } =
-            s satisfies ProjectSpace;
-        return { projectName, projectInstructions, isProject, projectIcon, linkedDriveFolder };
-    } else {
-        const { isProject } = s;
-        return { isProject };
+function getSpacePriv(s: Space): SpacePriv {
+    switch (s.type) {
+        case SpaceType.Project: {
+            const { projectName, projectInstructions, projectIcon, linkedDriveFolder } = s;
+            return { projectName, projectInstructions, projectIcon, linkedDriveFolder };
+        }
+        case SpaceType.Simple:
+        case SpaceType.Schedule:
+            return {};
+        default:
+            throw new Error('Unsupported space type');
     }
 }
 
 export function getSpacePub(s: SpacePub): SpacePub {
-    const { id, createdAt, updatedAt } = s;
-    return { id, createdAt, updatedAt };
+    const { id, type, createdAt, updatedAt } = s;
+    return { id, type, createdAt, updatedAt };
 }
 
 function getSpaceKeyClear(s: SpaceKeyClear): SpaceKeyClear {
@@ -139,39 +144,8 @@ export function splitSpace(s: Space): {
 }
 
 export function cleanSpace(space: Space): Space {
-    if (space.isProject === true) {
-        const {
-            id,
-            createdAt,
-            updatedAt,
-            spaceKey,
-            projectName,
-            projectInstructions,
-            isProject,
-            projectIcon,
-            linkedDriveFolder,
-        } = space;
-        return {
-            id,
-            createdAt,
-            updatedAt,
-            spaceKey,
-            isProject,
-            ...(projectName !== undefined && { projectName }),
-            ...(projectInstructions !== undefined && { projectInstructions }),
-            ...(projectIcon !== undefined && { projectIcon }),
-            ...(linkedDriveFolder !== undefined && { linkedDriveFolder }),
-        };
-    } else {
-        const { id, createdAt, updatedAt, spaceKey, isProject } = space;
-        return {
-            id,
-            createdAt,
-            updatedAt,
-            spaceKey,
-            ...(isProject !== undefined && { isProject }),
-        };
-    }
+    const { spacePub, spacePriv, spaceKeyClear } = splitSpace(space);
+    return { ...spacePub, ...spacePriv, ...spaceKeyClear };
 }
 
 // Helper to extract project and drive folder information from a space
@@ -192,12 +166,13 @@ type ProjectInfoNotLinked = {
 type ProjectInfo = ProjectInfoLinked | ProjectInfoNotLinked;
 
 export function cleanSerializedSpace(space: SerializedSpace): SerializedSpace {
-    const { id, createdAt, updatedAt, encrypted, wrappedSpaceKey, dirty, deleted } = space;
+    const { id, type, createdAt, updatedAt, encrypted, wrappedSpaceKey, dirty, deleted } = space;
 
     // For deleted spaces, we ensure wrappedSpaceKey is not included
     if (deleted === true) {
         return {
             id,
+            type,
             createdAt,
             updatedAt,
             ...(encrypted && { encrypted }),
@@ -209,6 +184,7 @@ export function cleanSerializedSpace(space: SerializedSpace): SerializedSpace {
     // For active spaces, we require wrappedSpaceKey
     return {
         id,
+        type,
         createdAt,
         updatedAt,
         ...(encrypted && { encrypted }),
@@ -234,7 +210,7 @@ export function getProjectInfo(space: Space | undefined): Partial<ProjectInfo> {
             isLinked: false,
         } satisfies Partial<ProjectInfo>;
     }
-    const project = space.isProject ? (space satisfies ProjectSpace) : undefined;
+    const project = space.type === SpaceType.Project ? (space satisfies ProjectSpace) : undefined;
     const linkedDriveFolder = project?.linkedDriveFolder;
 
     if (project !== undefined && linkedDriveFolder !== undefined) {

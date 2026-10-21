@@ -15,7 +15,8 @@ import { onComposerError } from '../../../remote/nativeComposerBridgeHelpers';
 import { handleFileAsync } from '../../../services/files';
 import { type ExcelSheetInfo, createExcelSheetFile } from '../../../services/files/excelSheets';
 import { SearchService } from '../../../services/search/searchService';
-import { type AttachmentId, LUMO_API_ERRORS, type Message, type ProjectSpace } from '../../../types';
+import type { AttachmentId, Message } from '../../../types';
+import { LUMO_API_ERRORS, SpaceType } from '../../../types';
 import type { DriveDocument } from '../../../types/documents';
 import {
     isExcelFile,
@@ -60,7 +61,7 @@ export const useFileHandling = ({
 
     // Drive-related Redux data lives here — co-located with Drive logic
     const space = useLumoSelector(selectSpaceByIdOptional(spaceId));
-    const linkedDriveFolder = (space as ProjectSpace | undefined)?.linkedDriveFolder;
+    const linkedDriveFolder = space?.type === SpaceType.Project ? space.linkedDriveFolder : undefined;
 
     // Derived from available data — no isGuest context read needed.
     // Absence of uploadToDrive signals a guest session; linkedDriveFolder signals Drive-upload mode.

@@ -26,6 +26,7 @@ import { selectAttachmentsBySpaceId, selectSpaceById } from '../../redux/selecto
 import { locallyDeleteAttachmentFromLocalRequest } from '../../redux/slices/core/attachments';
 import { handleSpaceAttachmentFileAsync } from '../../services/files';
 import type { Attachment, ProjectSpace } from '../../types';
+import { SpaceType } from '../../types';
 import { isSupportedFile } from '../../util/fileTypeHelpers';
 import { getAcceptAttributeString } from '../../util/filetypes';
 import { ProjectKnowledgeSection } from './ProjectKnowledgeSection';
@@ -62,7 +63,7 @@ export const ProjectFilesPanel = ({
     const fileProcessingService = useFileProcessing();
 
     const space = useLumoSelector(selectSpaceById(projectId));
-    const spaceProject = space?.isProject ? (space satisfies ProjectSpace) : undefined;
+    const spaceProject = space?.type === SpaceType.Project ? (space satisfies ProjectSpace) : undefined;
     const linkedDriveFolder = spaceProject?.linkedDriveFolder;
     const isRootFolder = breadcrumbs.length === 1;
 
@@ -176,7 +177,7 @@ export const ProjectFilesPanel = ({
     const handleRemoveFile = (id: string) => {
         dispatch(locallyDeleteAttachmentFromLocalRequest(id));
         if (searchService) {
-            searchService.removeDocument(id);
+            void searchService.removeDocument(id);
         }
         createNotification({
             text: c('collider_2025:Success').t`File removed from project`,
@@ -189,7 +190,7 @@ export const ProjectFilesPanel = ({
             dispatch(locallyDeleteAttachmentFromLocalRequest(file.id));
         }
         if (searchService) {
-            searchService.removeDocumentsBySpace(projectId);
+            void searchService.removeDocumentsBySpace(projectId);
         }
         setRemoveAllModalOpen(false);
         createNotification({

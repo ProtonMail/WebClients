@@ -2,12 +2,13 @@ import { c } from 'ttag';
 
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 
-import DropdownMenu from '../../components/DropdownMenu';
 import type { DropdownOptions } from '../../components/DropdownMenu';
+import DropdownMenu from '../../components/DropdownMenu';
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { useLumoSelector } from '../../redux/hooks';
 import { selectSpaceById } from '../../redux/selectors';
 import type { ProjectSpace } from '../../types';
+import { SpaceType } from '../../types';
 import { useProjectActions } from './hooks/useProjectActions';
 import { DeleteProjectModal } from './modals/DeleteProjectModal';
 import { ProjectEditModal } from './modals/ProjectEditModal';
@@ -19,7 +20,7 @@ interface ProjectActionsDropdownProps {
 
 export const ProjectActionsDropdown = ({ project }: ProjectActionsDropdownProps) => {
     const space = useLumoSelector(selectSpaceById(project.spaceId || ''));
-    const projectSpace = space?.isProject ? (space satisfies ProjectSpace) : undefined;
+    const projectSpace = space?.type === SpaceType.Project ? (space satisfies ProjectSpace) : undefined;
     const { deleteProject } = useProjectActions();
 
     const editModal = useModalStateObject();
