@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
-import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
+import { getUpgradePath } from '@proton/payments/core/subscription/upsell';
 import { getCompleteSpaceDetails, getPlanToUpsell, getSpace } from '@proton/shared/lib/user/storage';
 
 import SettingsLink from '../../../components/link/SettingsLink';
@@ -24,7 +24,7 @@ export const StorageUpgradeCta = () => {
         <SettingsLink
             key="storage-link"
             className="color-inherit"
-            path={addUpsellPath(getUpgradePath({ user, plan, subscription }), upsellRef)}
+            path={getUpgradePath({ user, plan, subscription }, upsellRef)}
         >
             {
                 // Translator: To upload or sync files, free up space or upgrade for more storage

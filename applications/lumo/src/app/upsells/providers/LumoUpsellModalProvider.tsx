@@ -4,7 +4,7 @@ import { useConfig } from '@proton/app-context/useConfig';
 import { useModalStateWithData } from '@proton/components/components/modalTwo/useModalState';
 import type { UPSELL_FEATURE } from '@proton/shared/lib/constants';
 import { UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/ref';
 
 import useGuestSafeOfferConfig from '../hooks/useGuestSafeOfferConfig';
 

@@ -13,6 +13,7 @@ import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 import { IcGlobe } from '@proton/icons/icons/IcGlobe';
 import { PLANS } from '@proton/payments/core/constants';
 import { type CountryOptions, getLocalizedCountryByAbbr } from '@proton/payments/core/countries';
+import { getSubscriptionSearchParamsString } from '@proton/payments/core/subscription/search-params';
 import { getVPNServerConfig } from '@proton/shared/lib/api/vpn';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import type { Logical } from '@proton/shared/lib/vpn/Logical';
@@ -220,7 +221,11 @@ const ConfigsTable = ({
                                                 as={SettingsLink}
                                                 color="norm"
                                                 size="small"
-                                                path={hasPaidVpn ? `/dashboard?plan=${PLANS.VPN2024}` : '/upgrade'}
+                                                path={
+                                                    hasPaidVpn
+                                                        ? `/dashboard?${getSubscriptionSearchParamsString({ plan: PLANS.VPN2024 })}`
+                                                        : '/upgrade'
+                                                }
                                             >{c('Action').t`Upgrade`}</ButtonLike>
                                         </Tooltip>
                                     );

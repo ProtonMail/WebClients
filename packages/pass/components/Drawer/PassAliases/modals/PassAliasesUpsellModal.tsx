@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import UpsellModal from '@proton/components/components/upsell/UpsellModal/UpsellModal';
 import { APP_UPSELL_REF_PATH, BRAND_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRef } from '@proton/shared/lib/helpers/ref';
 import identityImg from '@proton/styles/assets/img/illustrations/new-upsells-img/identity.svg';
 
 interface Props {

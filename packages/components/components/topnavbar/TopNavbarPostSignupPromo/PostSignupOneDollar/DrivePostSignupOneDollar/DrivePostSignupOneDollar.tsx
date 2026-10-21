@@ -9,9 +9,10 @@ import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
+import { getUpgradePath } from '@proton/payments/core/subscription/upsell';
 import { TelemetryMailDrivePostSignupOneDollarEvents } from '@proton/shared/lib/api/telemetry';
 import { APP_UPSELL_REF_PATH, DRIVE_UPSELL_PATHS, SECOND, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRef } from '@proton/shared/lib/helpers/ref';
 import clsx from '@proton/utils/clsx';
 
 import useActiveBreakpoint from '../../../../../hooks/useActiveBreakpoint';
@@ -106,8 +107,8 @@ export const DrivePostSignupOneDollar = () => {
         });
 
         goToSettings(
-            addUpsellPath(
-                getUpgradePath({
+            getUpgradePath(
+                {
                     user,
                     subscription,
                     plan: PLANS.DRIVE,
@@ -115,7 +116,7 @@ export const DrivePostSignupOneDollar = () => {
                     coupon: COUPON_CODES.TRYDRIVEPLUS2024,
                     app: 'proton-drive',
                     target: 'checkout',
-                }),
+                },
                 upsellRef
             )
         );

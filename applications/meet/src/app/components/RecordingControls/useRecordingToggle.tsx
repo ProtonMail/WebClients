@@ -18,6 +18,7 @@ import {
 import { selectSubscriptionStatus } from '@proton/meet/store/slices/userSlice';
 import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { PLANS } from '@proton/payments/core/constants';
+import { getSubscriptionSearchParamsString } from '@proton/payments/core/subscription/search-params';
 import { isFirefox, isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import IcCircleRadioFilled from '@proton/styles/assets/img/meet/ic-circle-radio-filled.svg';
@@ -117,6 +118,8 @@ export const useRecordingToggle = () => {
         setShowRecordingUpsellModal(true);
     };
 
+    const upsellModalParams = getSubscriptionSearchParamsString({ plan: PLANS.MEET_BUSINESS });
+
     const modals = (
         <>
             {showStartRecordingConfirmation && (
@@ -156,7 +159,7 @@ export const useRecordingToggle = () => {
                     onClose={() => setShowRecordingUpsellModal(false)}
                     action={() => {
                         sendMeetActionsEvent(TelemetryMeetActionsEvents.recording_upsell_clicked);
-                        goToSettings(`/dashboard?plan=${PLANS.MEET_BUSINESS}`, undefined, true);
+                        goToSettings(`/dashboard?${upsellModalParams}`, undefined, true);
                     }}
                 />
             )}

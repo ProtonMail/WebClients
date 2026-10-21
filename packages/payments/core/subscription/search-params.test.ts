@@ -39,6 +39,22 @@ describe('extractSubscriptionSearchParams', () => {
         expect(extractSubscriptionSearchParams('?plan=mail2022&totalMember=5').totalMember).toBe(5);
     });
 
+    it('reads totalLumo and totalMeet without plan for subscription expansion', () => {
+        expect(extractSubscriptionSearchParams('?totalLumo=1')).toMatchObject({ totalLumo: 1 });
+        expect(extractSubscriptionSearchParams('?totalMeet=2')).toMatchObject({ totalMeet: 2 });
+        expect(extractSubscriptionSearchParams('?totalLumo=1').plan).toBeFalsy();
+    });
+
+    it('still ignores other total* params without plan', () => {
+        expect(extractSubscriptionSearchParams('?totalMember=5').totalMember).toBeUndefined();
+        expect(extractSubscriptionSearchParams('?totalIp=3').totalIp).toBeUndefined();
+    });
+
+    it('maps deprecated addon=lumo without plan to totalLumo', () => {
+        expect(extractSubscriptionSearchParams('?addon=lumo')).toMatchObject({ totalLumo: 1 });
+        expect(extractSubscriptionSearchParams('?addon=meet')).toMatchObject({ totalMeet: 1 });
+    });
+
     it('ignores target=checkout when plan is missing', () => {
         const result = extractSubscriptionSearchParams('?target=checkout');
 
@@ -129,11 +145,34 @@ describe('getSubscriptionSearchParamsString', () => {
         expect(params.get('fixedCycle')).toBeNull();
     });
 
-    it('maps deprecated addon=lumo without plan', () => {
-        const params = new URLSearchParams(getSubscriptionSearchParamsString({ addon: 'lumo' }));
+    it('emits totalLumo without plan', () => {
+        const params = new URLSearchParams(getSubscriptionSearchParamsString({ totalLumo: 1 }));
 
         expect(params.get('totalLumo')).toBe('1');
         expect(params.get('plan')).toBeNull();
+        expect(params.get('addon')).toBeNull();
+    });
+
+    it('emits totalMeet without plan', () => {
+        const params = new URLSearchParams(getSubscriptionSearchParamsString({ totalMeet: 1 }));
+
+        expect(params.get('totalMeet')).toBe('1');
+        expect(params.get('plan')).toBeNull();
+    });
+
+    it('maps deprecated addon=lumo without plan to totalLumo', () => {
+        const params = new URLSearchParams(getSubscriptionSearchParamsString({ addon: 'lumo' }));
+
+        expect(params.get('totalLumo')).toBe('1');
+        expect(params.get('addon')).toBeNull();
+        expect(params.get('plan')).toBeNull();
+    });
+
+    it('omits non-expansion totals without plan', () => {
+        const params = new URLSearchParams(getSubscriptionSearchParamsString({ totalMember: 3, totalLumo: 1 } as any));
+
+        expect(params.get('totalLumo')).toBe('1');
+        expect(params.get('totalMember')).toBeNull();
     });
 
     it('throws when target=checkout has no plan', () => {
@@ -161,6 +200,13 @@ describe('extractSubscriptionSearchParams and getSubscriptionSearchParamsString'
             fixedCycle: true,
             totalMember: 2,
         });
+        const rebuilt = getSubscriptionSearchParamsString(extractSubscriptionSearchParams(search) as any);
+
+        expect(rebuilt).toBe(search);
+    });
+
+    it('keeps the same query string after build and parse for subscription expansion', () => {
+        const search = getSubscriptionSearchParamsString({ totalLumo: 1 });
         const rebuilt = getSubscriptionSearchParamsString(extractSubscriptionSearchParams(search) as any);
 
         expect(rebuilt).toBe(search);

@@ -9,10 +9,11 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
+import { getUpgradePath } from '@proton/payments/core/subscription/upsell';
 import { TelemetryUnlimitedOffer2025 } from '@proton/shared/lib/api/telemetry';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, APPS_WITH_IN_APP_PAYMENTS, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/ref';
 
 import { useSubscriptionModal } from '../../../../containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../../../../containers/payments/subscription/constants';
@@ -90,14 +91,14 @@ export const GoUnlimited2025 = () => {
 
     const upsellInSettings = () => {
         goToSettings(
-            addUpsellPath(
-                getUpgradePath({
+            getUpgradePath(
+                {
                     user,
                     subscription,
                     app,
                     target: 'checkout',
                     ...defaultOfferUpsellConfig,
-                }),
+                },
                 upsellRef
             )
         );

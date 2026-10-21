@@ -7,7 +7,7 @@ import {
     MAIL_UPSELL_PATHS,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
-import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRef } from '@proton/shared/lib/helpers/ref';
 import driveOfferSpotlight from '@proton/styles/assets/img/permanent-offer/drive_offer_spotlight.svg';
 import mailOfferSpotlight from '@proton/styles/assets/img/permanent-offer/mail_offer_spotlight.svg';
 import type { FeatureFlag } from '@proton/unleash/Flags';
