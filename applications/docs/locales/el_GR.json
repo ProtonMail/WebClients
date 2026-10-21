@@ -1138,6 +1138,9 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "Εγγύηση επιστροφής χρημάτων 30 ημερών"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Εγγύηση επιστροφής χρημάτων 30 ημερών: ακυρώστε εντός 30 ημερών από την αγορά σας και επικοινωνήστε με το ${ customerSupportLink } για να λάβετε επιστροφή χρημάτων."
       ]
     },
     "BF2024: Deal details": {
@@ -1177,7 +1180,7 @@
         "/μήνα"
       ],
       "15 GB storage": [
-        "15 GB αποθηκευτικός χώρος"
+        "15 GB αποθήκευσης"
       ],
       "2 individual accounts": [
         "2 ατομικοί λογαριασμοί"
@@ -1186,7 +1189,7 @@
         "2 TB ασφαλούς αποθήκευσης"
       ],
       "200 GB storage: 40x your current plan": [
-        "Αποθηκευτικός χώρος 200 GB: 40 φορές το τρέχον πλάνο σας"
+        "200 GB αποθήκευσης: 40x το τρέχον πρόγραμμά σας"
       ],
       "3 TB of secure storage": [
         "3 TB ασφαλούς αποθήκευσης"
@@ -1198,7 +1201,7 @@
         "6 ατομικοί λογαριασμοί"
       ],
       "Built-in 2FA authenticator": [
-        "Ενσωματωμένη εφαρμογή ταυτοποίησης 2FA"
+        "Ενσωματωμένη εφαρμογή ταυτοποίησης δύο παραγόντων"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση. Η συνδρομή σας θα ανανεωθεί με την τυπική ετήσια χρέωση όταν λήξει ο κύκλος χρέωσης."
@@ -1213,10 +1216,10 @@
         "Ισχυρότερη προστασία από τις απειλές στον κυβερνοχώρο"
       ],
       "Unlimited folders, labels, and filters": [
-        "Απεριόριστοι φάκελοι, ετικέτες, και φίλτρα"
+        "Απεριόριστοι φάκελοι, ετικέτες και φίλτρα"
       ],
       "Use your own email domain": [
-        "Χρησιμοποιήστε τον δικό σας τομέα ηλεκτρονικού ταχυδρομείου"
+        "Χρησιμοποιήστε τον δικό σας τομέα email"
       ]
     },
     "bfcampaign2026: Info, Drive first": {
@@ -1246,7 +1249,7 @@
     },
     "bfcampaign2026: Title": {
       "Biggest sale of the year": [
-        "Η μεγαλύτερη προσφορά της χρονιάς"
+        "Οι μεγαλύτερες εκπτώσεις της χρονιάς"
       ],
       "Black Friday": [
         "Black Friday"
@@ -1255,10 +1258,10 @@
         "για 12 μήνες"
       ],
       "Last chance to save big": [
-        "Τελευταία ευκαιρία για μεγάλες εξοικονομήσεις"
+        "Τελευταία ευκαιρία για μεγάλη εξοικονόμηση"
       ],
       "Protect your entire tribe": [
-        "Προστάτεψε ολόκληρη τη φυλή σας"
+        "Προστατέψτε ολόκληρη τη φυλή σας"
       ],
       "Protection for two in a single plan": [
         "Προστασία για δύο άτομα σε ένα ενιαίο πλάνο"
@@ -5791,6 +5794,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Θα εξακολουθείτε να μπορείτε να βλέπετε τα δικά σας δεδομένα λογαριασμού, αλλά όλοι οι λογαριασμοί χρηστών θα καταργηθούν από τον οργανισμό σας."
+      ],
+      "We'll get back to you shortly.": [
+        "Θα επικοινωνήσουμε μαζί σας σύντομα."
       ]
     },
     "info": {
@@ -6264,6 +6270,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Μη αποκρυπτογραφήσιμο όνομα"
+      ],
+      "Please share any feedback to help us improve.": [
+        "Μοιραστείτε τυχόν σχόλια για να μας βοηθήσετε να βελτιωθούμε."
+      ],
+      "Why would you like to cancel?": [
+        "Γιατί θέλετε να ακυρώσετε;"
       ]
     },
     "Label for contact group color": {
@@ -6395,6 +6407,9 @@
       ],
       "What’s this?": [
         "Τι είναι αυτό;"
+      ],
+      "Customer Support": [
+        "Υποστήριξη Πελατών"
       ]
     },
     "List title": {
@@ -8317,6 +8332,9 @@
       ],
       "Your organization name": [
         "Το όνομα του οργανισμού σας"
+      ],
+      "Please select the main reason": [
+        "Παρακαλούμε επιλέξτε τον κύριο λόγο"
       ]
     },
     "Placeholder for contact group name": {
@@ -10068,6 +10086,12 @@
       ],
       "Your exposed information": [
         "Οι εκτεθειμένες πληροφορίες σας"
+      ],
+      "Contact us": [
+        "Επικοινωνήστε μαζί μας"
+      ],
+      "Request sent": [
+        "Το αίτημα εστάλη"
       ]
     },
     "Title header for keys table": {
@@ -10444,6 +10468,20 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Η δοκιμαστική περίοδος θα λήξει στις ${ textDate }. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ textDate }. ${ action }"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Βρήκα μια άλλη υπηρεσία που μου αρέσει περισσότερο"
+      ],
+      "It’s missing a key feature": [
+        "Λείπει μια βασική δυνατότητα"
+      ],
+      "It’s too expensive": [
+        "Είναι πολύ ακριβό"
+      ],
+      "Other": [
+        "Άλλο"
       ]
     }
   }

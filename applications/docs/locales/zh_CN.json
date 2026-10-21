@@ -1149,7 +1149,7 @@
     },
     "bfcampaign2026: Action": {
       "Black Friday": [
-        "黑色星期五"
+        "黑色星期五特惠活动"
       ],
       "Get the deal": [
         "获取优惠"
@@ -1163,7 +1163,7 @@
         "15 GB 存储空间"
       ],
       "2 individual accounts": [
-        "2 个独立账户"
+        "2 个独立帐户"
       ],
       "2 TB of secure storage": [
         "2 TB 安全存储空间"
@@ -1178,10 +1178,10 @@
         "500 GB 安全存储空间"
       ],
       "6 individual accounts": [
-        "6 个独立账户"
+        "6 个独立帐户"
       ],
       "Built-in 2FA authenticator": [
-        "内置 2FA 验证器"
+        "内置双重验证器"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "折扣基于标准月度价格。结算周期结束时，您的订阅将按标准年度费率续订。"
@@ -1193,13 +1193,13 @@
         "恢复先前的文件版本"
       ],
       "Stronger protection against cyber threats": [
-        "针对网络威胁提供更强有力的保护"
+        "针对网络威胁的更强有力保护"
       ],
       "Unlimited folders, labels, and filters": [
-        "文件夹、标签、筛选规则不限量"
+        "无限文件夹、标签和筛选器"
       ],
       "Use your own email domain": [
-        "使用自有邮箱域名"
+        "使用您专属的电子邮件域名"
       ]
     },
     "bfcampaign2026: Info, Drive first": {
@@ -1229,16 +1229,16 @@
     },
     "bfcampaign2026: Title": {
       "Biggest sale of the year": [
-        "年份最大特卖"
+        "全年力度最大的优惠活动"
       ],
       "Black Friday": [
-        "黑色星期五"
+        "黑色星期五特惠活动"
       ],
       "for 12 months": [
-        "年费"
+        "为期 12 个月"
       ],
       "Last chance to save big": [
-        "最后的促销机会"
+        "限时超值优惠，抓紧最后时机"
       ],
       "Protect your entire tribe": [
         "保护您的整个家庭"
@@ -5714,6 +5714,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "您仍然可以查看您自己的账户数据，但所有用户账户将从您的组织中移除。"
+      ],
+      "We'll get back to you shortly.": [
+        "我们会尽快回复您。"
       ]
     },
     "info": {
@@ -6185,6 +6188,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ 无法解密的名称"
+      ],
+      "Please share any feedback to help us improve.": [
+        "请分享任何反馈意见，以帮助我们改进工作。"
+      ],
+      "Why would you like to cancel?": [
+        "您为什么想要取消？"
       ]
     },
     "Label for contact group color": {
@@ -8180,6 +8189,9 @@
       ],
       "Your organization name": [
         "您的组织名称"
+      ],
+      "Please select the main reason": [
+        "请选择主要原因"
       ]
     },
     "Placeholder for contact group name": {
@@ -9889,6 +9901,12 @@
       ],
       "Your exposed information": [
         "您的泄露信息"
+      ],
+      "Contact us": [
+        "联系我们"
+      ],
+      "Request sent": [
+        "请求已发送"
       ]
     },
     "Title header for keys table": {
@@ -10250,6 +10268,20 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "您的试用将于 ${ textDate } 结束。若在 ${ textDate } 前取消，则不会向您收费。${ action }"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "不如别的产品好用"
+      ],
+      "It’s missing a key feature": [
+        "缺少一个关键功能"
+      ],
+      "It’s too expensive": [
+        "价格太贵"
+      ],
+      "Other": [
+        "其它"
       ]
     }
   }

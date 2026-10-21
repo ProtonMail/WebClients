@@ -1163,7 +1163,7 @@
         "Black Friday"
       ],
       "Get the deal": [
-        "Profitez de l'offre"
+        "Profitez de l’offre"
       ]
     },
     "bfcampaign2026: Info": {
@@ -1171,22 +1171,22 @@
         "/mois"
       ],
       "15 GB storage": [
-        "15 Go d'espace de stockage"
+        "15 Go de stockage"
       ],
       "2 individual accounts": [
         "2 comptes individuels"
       ],
       "2 TB of secure storage": [
-        "2 To d'espace de stockage sécurisé"
+        "2 To d’espace de stockage sécurisé"
       ],
       "200 GB storage: 40x your current plan": [
-        "200 Go d'espace de stockage : 40x votre abonnement actuel"
+        "200 Go d’espace de stockage : 40 fois votre abonnement actuel"
       ],
       "3 TB of secure storage": [
-        "3 To d'espace de stockage sécurisé"
+        "3 To d’espace de stockage sécurisé"
       ],
       "500 GB of secure storage": [
-        "500 Go d'espace de stockage sécurisé"
+        "500 Go d’espace de stockage sécurisé"
       ],
       "6 individual accounts": [
         "6 comptes individuels"
@@ -1195,19 +1195,19 @@
         "Authentificateur A2F intégré"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Les réductions sont calculées sur la base du tarif mensuel standard. Votre abonnement sera renouvelé au tarif annuel standard à la fin du cycle de facturation."
+        "Les remises sont calculées sur la base du tarif mensuel standard. Votre abonnement se renouvellera au tarif annuel standard à la fin du cycle de facturation."
       ],
       "Online document editor": [
         "Éditeur de documents en ligne"
       ],
       "Recover previous file versions": [
-        "Récupérez les versions précédentes des fichiers"
+        "Récupérez les versions précédentes de vos fichiers"
       ],
       "Stronger protection against cyber threats": [
-        "Une protection renforcée contre les cybermenaces"
+        "Une protection plus forte contre les cybermenaces"
       ],
       "Unlimited folders, labels, and filters": [
-        "Des dossiers, labels et filtres illimités"
+        "Dossiers, libellés et filtres illimités."
       ],
       "Use your own email domain": [
         "Utilisez votre propre domaine de messagerie"
@@ -1215,32 +1215,32 @@
     },
     "bfcampaign2026: Info, Drive first": {
       "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } et ${ VPN_SHORT_APP_NAME } Premium"
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } et ${ VPN_SHORT_APP_NAME } premium"
       ]
     },
     "bfcampaign2026: Info, Family, Drive first": {
       "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } Premium"
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } premium"
       ]
     },
     "bfcampaign2026: Info, Family, Mail first": {
       "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } Premium"
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } premium"
       ]
     },
     "bfcampaign2026: Info, Mail first": {
       "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } et ${ VPN_SHORT_APP_NAME } Premium"
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } et ${ VPN_SHORT_APP_NAME } premium"
       ]
     },
     "bfcampaign2026: Info, Pass first": {
       "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } et ${ VPN_SHORT_APP_NAME } Premium"
+        "${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } et ${ VPN_SHORT_APP_NAME } premium"
       ]
     },
     "bfcampaign2026: Title": {
       "Biggest sale of the year": [
-        "Les plus grosses soldes de l'année"
+        "La plus belle offre de l’année"
       ],
       "Black Friday": [
         "Black Friday"
@@ -1249,7 +1249,7 @@
         "pour 12 mois"
       ],
       "Last chance to save big": [
-        "Dernière chance de faire de grosses économies"
+        "Dernière chance de faire de belles économies"
       ],
       "Protect your entire tribe": [
         "Protégez toute votre tribu"
@@ -5632,6 +5632,13 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Vous pourrez toujours consulter les données de votre propre compte, mais tous les comptes utilisateur seront retirés de votre organisation."
+      ],
+      "${ selection.selectedIds.length } selected": [
+        "${ selection.selectedIds.length } sélectionné",
+        "${ selection.selectedIds.length } sélectionnés"
+      ],
+      "We'll get back to you shortly.": [
+        "Nous vous recontacterons prochainement."
       ]
     },
     "info": {
@@ -6096,6 +6103,18 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nom indéchiffrable"
+      ],
+      "Please share any feedback to help us improve.": [
+        "N'hésitez pas à nous faire part de vos commentaires pour nous aider à nous améliorer."
+      ],
+      "Select ${ document.name }": [
+        "Sélectionner ${ document.name }"
+      ],
+      "Select all": [
+        "Tout sélectionner"
+      ],
+      "Why would you like to cancel?": [
+        "Pourquoi voulez-vous annuler votre abonnement ?"
       ]
     },
     "Label for contact group color": {
@@ -8134,6 +8153,9 @@
       ],
       "Your organization name": [
         "Nom de votre organisation"
+      ],
+      "Please select the main reason": [
+        "Sélectionnez la raison principale."
       ]
     },
     "Placeholder for contact group name": {
@@ -9870,6 +9892,12 @@
       ],
       "Your exposed information": [
         "Vos informations exposées"
+      ],
+      "Contact us": [
+        "Nous contacter"
+      ],
+      "Request sent": [
+        "La demande a été envoyée."
       ]
     },
     "Title header for keys table": {
@@ -10240,6 +10268,20 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Votre version d'essai se terminera le ${ textDate }. Vous ne serez pas facturé si vous annulez avant le ${ textDate }. ${ action }"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "J'ai trouvé un autre service que je préfère."
+      ],
+      "It’s missing a key feature": [
+        "Il manque une fonction importante."
+      ],
+      "It’s too expensive": [
+        "C'est trop cher."
+      ],
+      "Other": [
+        "Autre"
       ]
     }
   }
