@@ -3,8 +3,8 @@ const DOCS_EDITOR_INLINE_PADDING = 8
 const DOCS_EDITOR_COLUMN_MAX_WIDTH = DOCS_EDITOR_MAX_WIDTH + DOCS_EDITOR_INLINE_PADDING * 2
 
 const LEFT_PANEL_DEFAULT_WIDTH = 300
-const LEFT_PANEL_MIN_WIDTH = 200
-const LEFT_PANEL_MAX_WIDTH = 480
+export const LEFT_PANEL_MIN_WIDTH = 200
+export const LEFT_PANEL_MAX_WIDTH = 480
 
 /** Contextual panels can shrink below the `300px` minimum used by comment popovers. */
 const CONTEXTUAL_COMMENTS_MIN_WIDTH = 200

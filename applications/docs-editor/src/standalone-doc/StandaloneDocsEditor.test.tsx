@@ -5,6 +5,7 @@ import {
   CommentThreadTypes,
   CommentTypes,
   DocsDependenciesProvider,
+  DocsLayoutContainer,
   EditorSystemMode,
   EditorUserMode,
   StandaloneDocsEditor,
@@ -15,7 +16,6 @@ import {
 import { PreviewModeEditor } from '../app/Containers/Docs/PreviewModeEditor'
 import { SHOW_ALL_COMMENTS_COMMAND } from '../app/Containers/Docs/Commands'
 import type { DocsCommentEvent } from '../app/Containers/Docs/contract/DocsComments'
-import DocsLayout from '../app/Containers/DocsLayout'
 import { polyfillSelectionRelatedThingsForTests } from '../app/Containers/Docs/Plugins/Suggestions/TestUtils'
 import { createStandaloneDocClient } from './client'
 import { createStandaloneDocSession } from './session'
@@ -139,9 +139,9 @@ describe('standalone Docs runtime', () => {
     function Tree() {
       return (
         <DocsDependenciesProvider dependencies={dependencies}>
-          <DocsLayout.Container isSuggestionMode={false}>
+          <DocsLayoutContainer isSuggestionMode={false}>
             <StandaloneDocsEditor {...props} />
-          </DocsLayout.Container>
+          </DocsLayoutContainer>
         </DocsDependenciesProvider>
       )
     }
@@ -208,7 +208,7 @@ describe('standalone Docs runtime', () => {
 
       const preview = render(
         <DocsDependenciesProvider dependencies={dependencies}>
-          <DocsLayout.Container isSuggestionMode={false}>
+          <DocsLayoutContainer isSuggestionMode={false}>
             <PreviewModeEditor
               clonedEditorState={clonedEditorState}
               onUserModeChange={jest.fn()}
@@ -216,7 +216,7 @@ describe('standalone Docs runtime', () => {
               tableOfContentsVisible
               hidden={false}
             />
-          </DocsLayout.Container>
+          </DocsLayoutContainer>
         </DocsDependenciesProvider>,
       )
       await waitFor(() =>
@@ -244,7 +244,7 @@ describe('standalone Docs runtime', () => {
     let editor: LexicalEditor | null = null
     const view = render(
       <DocsDependenciesProvider dependencies={createDependencies(comments, reportError)}>
-        <DocsLayout.Container isSuggestionMode={false}>
+        <DocsLayoutContainer isSuggestionMode={false}>
           <StandaloneDocsEditor
             docMap={session.docMap}
             docState={session.docState}
@@ -266,7 +266,7 @@ describe('standalone Docs runtime', () => {
             showTreeView={false}
             tableOfContentsVisible={false}
           />
-        </DocsLayout.Container>
+        </DocsLayoutContainer>
       </DocsDependenciesProvider>,
     )
     try {
@@ -292,7 +292,7 @@ describe('standalone Docs runtime', () => {
     let editor: LexicalEditor | null = null
     const view = render(
       <DocsDependenciesProvider dependencies={createDependencies(comments, reportError)}>
-        <DocsLayout.Container isSuggestionMode={false}>
+        <DocsLayoutContainer isSuggestionMode={false}>
           <StandaloneDocsEditor
             docMap={session.docMap}
             docState={session.docState}
@@ -314,7 +314,7 @@ describe('standalone Docs runtime', () => {
             showTreeView={false}
             tableOfContentsVisible={false}
           />
-        </DocsLayout.Container>
+        </DocsLayoutContainer>
       </DocsDependenciesProvider>,
     )
     try {
