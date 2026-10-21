@@ -90,6 +90,11 @@ const DeleteAccountModal = (props: Props) => {
             value={DIFFERENT_ACCOUNT}
             key={DIFFERENT_ACCOUNT}
         />,
+        <Option
+            title={c('Option').t`I'd like to merge this account into another one`}
+            value={MERGE_ACCOUNT}
+            key={MERGE_ACCOUNT}
+        />,
         isAdmin && <Option title={c('Option').t`It's too expensive`} value={TOO_EXPENSIVE} key={TOO_EXPENSIVE} />,
         <Option
             title={c('Option').t`It's missing a key feature that I need`}
@@ -100,11 +105,6 @@ const DeleteAccountModal = (props: Props) => {
             title={c('Option').t`I found another service that I like better`}
             value={USE_OTHER_SERVICE}
             key={USE_OTHER_SERVICE}
-        />,
-        <Option
-            title={c('Option').t`I'd like to merge this account into another one`}
-            value={MERGE_ACCOUNT}
-            key={MERGE_ACCOUNT}
         />,
         <Option title={c('Option').t`My reason isn't listed`} value={OTHER} key={OTHER} />,
     ].filter(isTruthy);
