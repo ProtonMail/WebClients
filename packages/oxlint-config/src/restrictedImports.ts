@@ -122,6 +122,16 @@ const BASE_RESTRICTIONS: BaseRestriction[] = [
         ].flatMap((packageName) => createBarrelRestrictions(packageName).paths),
     },
     {
+        // The generic `<Icon name="..." />` component, replaced by direct imports from @proton/icons.
+        //   bad:  import { Icon } from '@proton/components';
+        //   good: import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
+        name: 'the generic Icon component',
+        paths: [
+            { name: `${COMPONENTS}/components/icon/Icon`, message: iconRestrictedMessage },
+            { name: COMPONENTS, importNames: ['Icon'], message: iconRestrictedMessage },
+        ],
+    },
+    {
         name: 'reselect',
         paths: [
             {
@@ -218,25 +228,13 @@ export const OXLINT_BASE_RESTRICTIONS: Restrictions = {
 //   '<package>-barrel'         bans importing from the package root, so every import uses the full path
 //                                bad:  import { ModalTwo } from '@proton/components';
 //                                good: import ModalTwo from '@proton/components/components/modalTwo/Modal';
-//                              Ids: account-barrel, components-barrel, hooks-barrel
-//   'icon-component'           bans the generic `<Icon name="..." />` component from @proton/components
+//                              Ids: account-barrel, components-barrel
 //   'components-barrel-index'  temporary, packages/activation only, see its entry below
 // ---------------------------------------------------------------------------------------------------------------------
 
 const ROLLOUT_RESTRICTIONS = {
     'account-barrel': createBarrelRestrictions('@proton/account'),
     'components-barrel': createBarrelRestrictions(COMPONENTS),
-    'hooks-barrel': createBarrelRestrictions('@proton/hooks'),
-
-    // The generic `<Icon name="..." />` component, replaced by direct imports from @proton/icons.
-    //   bad:  import { Icon } from '@proton/components';
-    //   good: import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
-    'icon-component': {
-        paths: [
-            { name: `${COMPONENTS}/components/icon/Icon`, message: iconRestrictedMessage },
-            { name: COMPONENTS, importNames: ['Icon'], message: iconRestrictedMessage },
-        ],
-    },
 
     // Temporary, only for packages/activation: it still imports the bare `@proton/components` barrel, so only the
     // `/index` specifiers are banned there. Delete with the activation migration.
