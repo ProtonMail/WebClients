@@ -60,6 +60,7 @@ describe('EditorController', () => {
       getDocumentState: jest.fn(),
       getClientId: jest.fn(),
       replaceEditorState: jest.fn(),
+      getEditorBuildInfo: jest.fn(),
     } as unknown as jest.Mocked<ClientRequiresEditorMethods>
 
     eventBus = {} as InternalEventBusInterface
@@ -502,6 +503,18 @@ describe('EditorController', () => {
 
       const result = await controller.getDocumentState()
       expect(result).toEqual(mockState)
+    })
+
+    it('should handle getEditorBuildInfo', async () => {
+      const buildInfo = { appVersion: '5.0.1', commit: 'editor-commit' }
+      editorInvoker.getEditorBuildInfo.mockResolvedValue(buildInfo)
+
+      await expect(controller.getEditorBuildInfo()).resolves.toEqual(buildInfo)
+    })
+
+    it('should throw when calling getEditorBuildInfo without editor', async () => {
+      const controller = new EditorController(logger, sharedState, eventBus)
+      await expect(controller.getEditorBuildInfo()).rejects.toThrow('Editor invoker not initialized')
     })
   })
 

@@ -21,6 +21,11 @@ export interface ClientRequiresEditorMethods {
   /** Returns the current Y.Doc as JSON */
   getYDocAsJSON(): Promise<unknown>
   /**
+   * Returns the APP_VERSION and COMMIT the editor was built with. The editor can be deployed separately from the
+   * client, so these can differ from the client's own and from the `appVersion` passed to `initializeEditor`.
+   */
+  getEditorBuildInfo(): Promise<{ appVersion: string; commit: string }>
+  /**
    * A destructive operation that replaces the current editor state with the given state,
    * used when restoring a document from history
    */

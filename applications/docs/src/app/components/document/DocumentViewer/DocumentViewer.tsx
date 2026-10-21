@@ -86,6 +86,7 @@ import { useDriftDetectionErrorModal } from './DriftDetectionErrorModal'
 import type { InviteAutoAcceptResult } from './InviteAutoAccepter'
 import { InviteAutoAccepter } from './InviteAutoAccepter'
 import { PrivateDocumentInviteGate } from './PrivateDocumentInviteGate'
+import { getReportMeta } from './reportMeta'
 import { useSignatureCheckFailedModal } from './SignatureCheckFailedModal'
 import { useSheetsDebugArtifacts } from './useSheetsDebugArtifacts'
 
@@ -117,7 +118,7 @@ export function DocumentViewer({
   const { getLocalID } = useAuthentication()
   const getUserSettings = useGetUserSettings()
   const { isDebugMode } = useDebugMode()
-  const { APP_VERSION } = useConfig()
+  const { APP_VERSION, COMMIT } = useConfig()
   const { removeLocalIDFromUrl } = useDocsUrlBar()
 
   const [documentState, setDocumentState] = useState<DocumentState | PublicDocumentState | null>(null)
@@ -350,6 +351,13 @@ export function DocumentViewer({
       }
       const zip = new JSZip()
 
+      try {
+        const reportMeta = await getReportMeta({ appVersion: APP_VERSION, commit: COMMIT }, editorController)
+        zip.file('report-meta.json', JSON.stringify(reportMeta))
+      } catch (error) {
+        console.error('Could not include report meta in debug info', error)
+      }
+
       if (driftLogDetails) {
         try {
           zip.file('drift-log-details.json', JSON.stringify(driftLogDetails))
@@ -417,7 +425,7 @@ export function DocumentViewer({
         console.error('Could not generate zip file', error)
       }
     },
-    [docController, documentType, editorController],
+    [APP_VERSION, COMMIT, docController, documentType, editorController],
   )
 
   useEffect(() => {
