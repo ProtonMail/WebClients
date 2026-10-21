@@ -53,7 +53,6 @@ const getSources = (scaleFactor: number) =>
     });
 
 const toPickerSources = (sources: DesktopCapturerSource[]): ScreenPickerSource[] => {
-    const { t } = c("Screen share picker");
     const displays = screen.getAllDisplays();
     let screenNumber = 0;
 
@@ -67,11 +66,11 @@ const toPickerSources = (sources: DesktopCapturerSource[]): ScreenPickerSource[]
 
         screenNumber += 1;
         const display = displays.find(({ id }) => String(id) === source.display_id);
-        const kind = display?.internal ? t`Built-in` : t`External`;
+        const kind = display?.internal ? c("Screen share picker").t`Built-in` : c("Screen share picker").t`External`;
         return {
             id: source.id,
             type: "screen",
-            name: t`Display ${screenNumber}`,
+            name: c("Screen share picker").t`Display ${screenNumber}`,
             subtitle: display ? `${kind} · ${display.size.width}×${display.size.height}` : undefined,
             thumbnail,
         };
@@ -139,14 +138,14 @@ export const ensureScreenCapturePermission = async () => {
         return false;
     }
 
-    const { t } = c("Screen share permission");
     const options = {
         type: "info" as const,
-        buttons: [t`Open System Settings`, t`Cancel`],
+        buttons: [c("Screen share permission").t`Open System Settings`, c("Screen share permission").t`Cancel`],
         defaultId: 0,
         cancelId: 1,
-        message: t`Allow screen recording`,
-        detail: t`To share your screen, allow Proton Meet in System Settings > Privacy & Security > Screen & System Audio Recording.`,
+        message: c("Screen share permission").t`Allow screen recording`,
+        detail: c("Screen share permission")
+            .t`To share your screen, allow Proton Meet in System Settings > Privacy & Security > Screen & System Audio Recording.`,
     };
     const parent = getParentWindow();
     const { response } = parent ? await dialog.showMessageBox(parent, options) : await dialog.showMessageBox(options);
@@ -158,20 +157,20 @@ export const ensureScreenCapturePermission = async () => {
 };
 
 const getLabels = () => {
-    const { t } = c("Screen share picker");
     return {
-        title: t`Share your screen`,
-        screensTab: t`Whole screen`,
-        windowsTab: t`Just one app`,
-        screensDescription: t`Viewers see your entire screen, including apps and notifications.`,
-        windowsDescription: t`Viewers only see this app, even if you switch windows.`,
-        showAdvanced: t`Show advanced options`,
-        hideAdvanced: t`Hide advanced options`,
-        shareAudio: t`Share system audio`,
-        share: t`Share`,
-        cancel: t`Cancel`,
-        close: t`Close`,
-        noWindows: t`No windows available to share`,
+        title: c("Screen share picker").t`Share your screen`,
+        screensTab: c("Screen share picker").t`Entire screen`,
+        windowsTab: c("Screen share picker").t`Just one app`,
+        screensDescription: c("Screen share picker")
+            .t`Viewers see your entire screen, including apps and notifications.`,
+        windowsDescription: c("Screen share picker").t`Viewers only see this app, even if you switch windows.`,
+        showAdvanced: c("Screen share picker").t`Show advanced options`,
+        hideAdvanced: c("Screen share picker").t`Hide advanced options`,
+        shareAudio: c("Screen share picker").t`Share system audio`,
+        share: c("Screen share picker").t`Share`,
+        cancel: c("Screen share picker").t`Cancel`,
+        close: c("Screen share picker").t`Close`,
+        noWindows: c("Screen share picker").t`No windows available to share`,
     };
 };
 
