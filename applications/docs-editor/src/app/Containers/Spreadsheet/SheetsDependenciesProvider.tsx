@@ -93,6 +93,7 @@ export type SheetsDependencies = SheetsShellToEditorActions &
   SheetsSession & {
     messages?: SheetsMessages
     defaultMessages?: SheetsMessages
+    licenseKey?: string
   }
 
 const SheetsDependenciesContext = createContext<SheetsDependencies | undefined>(undefined)
