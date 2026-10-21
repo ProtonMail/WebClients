@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { useRoomContext } from '@livekit/components-react';
 
-import { useMeetErrorReporting } from '@proton/meet';
+import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 import { useFlag } from '@proton/unleash/useFlag';
 

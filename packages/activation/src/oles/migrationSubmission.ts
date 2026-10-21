@@ -3,7 +3,7 @@ import type { Api } from '@proton/shared/lib/interfaces/Api';
 import chunk from '@proton/utils/chunk';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { createOrganizationImporterMigration } from '../api';
+import { createOrganizationImporterMigration } from '../api/api';
 import type { ApiImporterOrganizationUser } from '../api/api.interface';
 import { areEquivalentEmails } from './helpers';
 

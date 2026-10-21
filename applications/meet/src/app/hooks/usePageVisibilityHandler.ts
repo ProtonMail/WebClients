@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-import { useMeetErrorReporting } from '@proton/meet';
+import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 import { useFlag } from '@proton/unleash/useFlag';
 

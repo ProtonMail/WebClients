@@ -8,7 +8,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import { useCurrencies } from '@proton/payments-ui/client-extensions/useCurrencies';
 import type { PaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
-import type { MethodsHook } from '@proton/payments-ui/react-extensions/index';
+import type { MethodsHook } from '@proton/payments-ui/react-extensions/useMethods';
 import type { TaxCountryHook } from '@proton/payments-ui/ui/billing-address/hooks/useTaxCountry';
 import { GuardBanner } from '@proton/payments-ui/ui/components/GuardBanner';
 import {

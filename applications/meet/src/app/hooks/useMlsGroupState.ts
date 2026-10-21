@@ -1,6 +1,6 @@
 import { type MutableRefObject, useRef } from 'react';
 
-import { useMeetErrorReporting } from '@proton/meet';
+import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
 import { setMlsGroupState } from '@proton/meet/store/slices/currentMeeting';
 import type { MLSGroupState } from '@proton/meet/types/types';

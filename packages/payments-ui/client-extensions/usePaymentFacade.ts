@@ -30,8 +30,9 @@ import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { User } from '@proton/shared/lib/interfaces/User';
 
-import type { OnMethodChangedHandler, Operations, OperationsData } from '../react-extensions';
-import { usePaymentFacade as useInnerPaymentFacade } from '../react-extensions';
+import type { OnMethodChangedHandler } from '../react-extensions/useMethods';
+import type { Operations, OperationsData } from '../react-extensions/usePaymentFacade';
+import { usePaymentFacade as useInnerPaymentFacade } from '../react-extensions/usePaymentFacade';
 import { useCbIframe } from '../ui/components/ChargebeeIframe';
 import type { ThemeCode, ThemeLike } from './helpers';
 import { getThemeCode } from './helpers';

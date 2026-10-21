@@ -18,7 +18,7 @@ vi.mock('@proton/components/hooks/useAuthentication', () => ({
     default: () => ({ hasSession: () => true, getUID: () => 'session-uid' }),
 }));
 
-vi.mock('@proton/meet', () => ({
+vi.mock('@proton/meet/hooks/useMeetErrorReporting', () => ({
     useMeetErrorReporting: () => ({ reportMeetError }),
 }));
 

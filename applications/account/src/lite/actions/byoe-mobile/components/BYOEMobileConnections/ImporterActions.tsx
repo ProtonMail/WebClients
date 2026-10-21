@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { resumeImport } from '@proton/activation/src/api';
+import { resumeImport } from '@proton/activation/src/api/api';
 import { ApiImporterError, ApiImporterState } from '@proton/activation/src/api/api.interface';
 import { getEasySwitchFeaturesFromProducts } from '@proton/activation/src/hooks/useOAuthPopup.helpers';
 import { useTrackImportAction } from '@proton/activation/src/hooks/useTrackImportAction';

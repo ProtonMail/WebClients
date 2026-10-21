@@ -3,9 +3,9 @@ import { fireEvent, screen, waitFor } from '@testing-library/react';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { mockTracker } from '@proton/telemetry-tracker/testing';
 
-import { GmailSyncModal } from '../../../../index';
 import { EASY_SWITCH_SOURCES, TIME_PERIOD } from '../../../interface';
 import { easySwitchRender } from '../../../tests/render';
+import GmailSyncModal from './GmailSyncModal';
 
 jest.mock('@proton/unleash/useFlag', () => ({
     __esModule: true,

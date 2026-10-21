@@ -1,4 +1,4 @@
-import type { MethodsHook } from '@proton/payments-ui/react-extensions/index';
+import type { MethodsHook } from '@proton/payments-ui/react-extensions/useMethods';
 import { PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';
 import type { CouponConfigMetadata } from '@proton/payments/core/coupon-config/interface';
 import type { PlanIDs } from '@proton/payments/core/interface';

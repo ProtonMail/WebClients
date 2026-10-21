@@ -1,6 +1,6 @@
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
-import { BilledUserModal } from '@proton/payments-ui/client-extensions/billed-user/index';
+import { BilledUserModal } from '@proton/payments-ui/client-extensions/billed-user/BilledUserModal';
 import type { BillingAddressExtended } from '@proton/payments/core/billing-address/billing-address';
 import { COUPON_CODES, PLANS } from '@proton/payments/core/constants';
 import type { EntitlementCatalog } from '@proton/payments/core/entitlements/interface';

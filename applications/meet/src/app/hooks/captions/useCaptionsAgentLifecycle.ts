@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { useMeetErrorReporting } from '@proton/meet';
+import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectJoinedRoom } from '@proton/meet/store/slices/connectionSlice';
 import { selectMeetingLinkName } from '@proton/meet/store/slices/currentMeeting';

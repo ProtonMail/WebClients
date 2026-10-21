@@ -14,7 +14,7 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { createToken } from '../../../api';
+import { createToken } from '../../../api/api';
 import useOAuthPopup from '../../../hooks/useOAuthPopup';
 import { EASY_SWITCH_FEATURES, EASY_SWITCH_SOURCES } from '../../../interface';
 import { type OAuthToken, deleteOAuthTokenThunk, oauthTokenActions } from '../../../logic/oauthToken';

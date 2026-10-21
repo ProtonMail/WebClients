@@ -7,7 +7,6 @@ import { useUser } from '@proton/account/user/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useAppLink from '@proton/components/components/link/useAppLink';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import { getMeetingLink } from '@proton/meet';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import {
     selectPreviousMeetingLink,
@@ -15,6 +14,7 @@ import {
     setUpsellModalType,
 } from '@proton/meet/store/slices/meetAppStateSlice';
 import { TelemetryMeetDashboardEvents, sendMeetDashboardEvent } from '@proton/meet/telemetry/meetTelemetry';
+import { getMeetingLink } from '@proton/meet/utils/getMeetingLink';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
 import { useFlag } from '@proton/unleash/useFlag';
