@@ -39,7 +39,7 @@ import { usePlansSectionTelemetry } from './plansSectionTelemetry';
 import PlanSelection from './subscription/PlanSelection';
 import { UpsellModalTelemetryProvider, useSubscriptionModal } from './subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from './subscription/constants';
-import { getDefaultSelectedProductPlans } from './subscription/helpers';
+import { getDefaultSelectedProductPlans } from './subscription/helpers/payment';
 
 const getSearchParams = (search: string) => {
     const params = new URLSearchParams(search);

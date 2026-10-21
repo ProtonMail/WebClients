@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { SettingsLink } from '@proton/components';
-import type { PromotionButtonProps } from '@proton/components/components/button/PromotionButton';
+import type { PromotionButtonProps } from '@proton/components/components/button/PromotionButton/PromotionButton';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
 import clsx from '@proton/utils/clsx';
 
 import { LUMO_UPGRADE_TRIGGER_CLASS } from '../../constants';

@@ -5,7 +5,7 @@ import type { IconComponent } from '@proton/icons/component';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import clsx from '@proton/utils/clsx';
 
-import { PromotionButton } from '../../../button/PromotionButton/index';
+import PromotionButton from '../../../button/PromotionButton/PromotionButton';
 import Spotlight from '../../../spotlight/Spotlight';
 
 interface Props {

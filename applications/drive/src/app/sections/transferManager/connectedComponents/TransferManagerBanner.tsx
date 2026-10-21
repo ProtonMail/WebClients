@@ -3,8 +3,8 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { SUBSCRIPTION_STEPS } from '@proton/components';
 import { useSubscriptionModalRaw } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
+import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { IcStorage } from '@proton/icons/icons/IcStorage';
 import type { FreeSubscription } from '@proton/payments/core/interface';

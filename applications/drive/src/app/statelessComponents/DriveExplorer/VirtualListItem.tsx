@@ -1,6 +1,6 @@
 import type { VirtualItem } from '@tanstack/react-virtual';
 
-import { TableCellBusy } from '@proton/components';
+import TableCellBusy from '@proton/components/components/table/TableCellBusy';
 
 import { DriveExplorerRow } from './DriveExplorerRow';
 import type {

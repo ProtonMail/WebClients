@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import type { Breakpoints } from '@proton/components';
+import type { Breakpoints } from '@proton/components/hooks/useActiveBreakpoint';
 import { MemberRole, NodeType } from '@proton/drive/sdk';
 
 import { getSharedWithMeCells } from './SharedWithMeCells';

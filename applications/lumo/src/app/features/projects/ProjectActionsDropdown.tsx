@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { useModalStateObject } from '@proton/components';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 
 import DropdownMenu from '../../components/DropdownMenu';
 import type { DropdownOptions } from '../../components/DropdownMenu';

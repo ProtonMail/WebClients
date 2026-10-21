@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { DropdownMenuButton } from '@proton/components';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { IcFileArrowInUp } from '@proton/icons/icons/IcFileArrowInUp';
 
 interface Props {

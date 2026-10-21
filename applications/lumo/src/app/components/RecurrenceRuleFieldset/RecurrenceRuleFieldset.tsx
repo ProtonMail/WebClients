@@ -5,7 +5,12 @@ import { startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { DateInput, DropdownSizeUnit, Option, SearchableSelect, SelectTwo, TimeInput } from '@proton/components';
+import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import DateInput from '@proton/components/components/input/DateInput';
+import TimeInput from '@proton/components/components/input/TimeInput';
+import Option from '@proton/components/components/option/Option';
+import SearchableSelect from '@proton/components/components/selectTwo/SearchableSelect';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 
 import { LumoIcon } from '../LumoIcon/LumoIcon';

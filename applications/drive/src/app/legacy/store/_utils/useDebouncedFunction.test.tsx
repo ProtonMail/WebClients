@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { renderHook } from '@testing-library/react-hooks';
 
-import { CacheProvider } from '@proton/components';
+import { CacheProvider } from '@proton/components/containers/cache/Provider';
 import createCache from '@proton/shared/lib/helpers/cache';
 
 import useDebouncedFunction from './useDebouncedFunction';

@@ -1,4 +1,4 @@
-import { useAuthentication } from '@proton/components'
+import useAuthentication from '@proton/components/hooks/useAuthentication'
 import type { NodeMeta, DocumentType } from '../BasicTypes'
 import { getNewWindow } from '@proton/shared/lib/helpers/window'
 import { useCallback } from 'react'

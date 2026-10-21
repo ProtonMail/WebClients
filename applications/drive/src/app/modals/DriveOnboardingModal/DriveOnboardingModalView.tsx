@@ -1,7 +1,10 @@
 import type { ReactNode } from 'react';
 
-import type { ModalStateProps } from '@proton/components';
-import { Loader, ModalTwo, ModalTwoContent, ModalTwoFooter } from '@proton/components';
+import Loader from '@proton/components/components/loader/Loader';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 
 import { Header } from './Header';
 

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText.tsx';
+import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 
 import JoinOrganizationAdminItem from '../../../../public/JoinOrganizationAdminItem';
 import Text from '../../../../public/Text';

@@ -23,7 +23,7 @@ vi.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
 }));
 
 // Globally mocked @proton/components modules
-vi.mock('@proton/components/hooks/useEventManager.ts', () => {
+vi.mock('@proton/components/hooks/useEventManager', () => {
     const subscribe = vi.fn();
     const call = vi.fn();
     const stop = vi.fn();
@@ -58,11 +58,6 @@ vi.mock('@proton/components/components/modalTwo/BackdropContainer', () => ({
 HTMLCanvasElement.prototype.getContext = vi.fn();
 
 vi.mock('@proton/components/components/input/TelInput', () => ({
-    __esModule: true,
-    default: () => null,
-}));
-
-vi.mock('@proton/components/components/modal/PreviewPDFModal', () => ({
     __esModule: true,
     default: () => null,
 }));

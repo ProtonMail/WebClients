@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 
-import { Loader } from '@proton/components';
+import Loader from '@proton/components/components/loader/Loader';
 import type { TreeItemWithChildren } from '@proton/drive/modules/directoryTree';
 import { IcTv } from '@proton/icons/icons/IcTv';
 import clsx from '@proton/utils/clsx';

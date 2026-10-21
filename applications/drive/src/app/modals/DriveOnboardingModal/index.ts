@@ -1,4 +1,4 @@
-import type { ModalStateProps } from '@proton/components';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 
 import { withHoc } from '../modalUtils/withHoc';
 import { DriveOnboardingModalView, type DriveOnboardingModalViewProps } from './DriveOnboardingModalView';

@@ -19,7 +19,7 @@ import useDashboardPaymentFlow from '../../../../../../hooks/useDashboardPayment
 import type { PlanCardFeatureDefinition } from '../../../../features/interface';
 import { useSubscriptionModal } from '../../../SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../../../constants';
-import type { GetPlanUpsellArgs } from '../../../helpers';
+import type { GetPlanUpsellArgs } from '../../../helpers/dashboard-upsells';
 import UpsellPanelsV2 from '../../../panels/UpsellPanelsV2';
 import { PlanIcon } from '../../PlanIcon';
 import PlanIconName from '../../PlanIconName';

@@ -1,15 +1,15 @@
 import { useWelcomeFlags } from '@proton/account';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import StartupModals from '@proton/components/components/startupModals/StartupModals';
 import {
-    StartupModals,
     useCancellationReminderModal,
     useLightLabellingFeatureModal,
-    useModalState,
-    useNewFeatureOnboarding,
+    useNetPromoterScoreModal,
     useTrialEndedModal,
-} from '@proton/components';
-import type { StartupModal } from '@proton/components';
-import { useNetPromoterScoreModal } from '@proton/components/components/startupModals/startupModalHooks';
+} from '@proton/components/components/startupModals/startupModalHooks';
+import type { StartupModal } from '@proton/components/components/startupModals/types';
 import { NPSApplication } from '@proton/components/containers/netPromoterScore/interface';
+import useNewFeatureOnboarding from '@proton/components/hooks/useNewFeatureOnboarding';
 
 import { useDriveDocsFeatureFlag } from '../../../legacy/store/_documents';
 import { DriveOnboardingModal } from '../../../modals/DriveOnboardingModal';

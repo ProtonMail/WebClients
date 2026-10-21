@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
-import type { ModalOwnProps } from '@proton/components';
-import { Prompt } from '@proton/components';
+import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import walletBitcoinDark from '@proton/styles/assets/img/wallet/wallet-bitcoin-dark.jpg';
 import walletBitcoin from '@proton/styles/assets/img/wallet/wallet-bitcoin.jpg';

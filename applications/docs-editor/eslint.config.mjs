@@ -11,7 +11,6 @@ const isFixMode = process.argv.includes('--fix')
 export default defineConfig([
   defaultConfig,
   createRestrictedImportsConfig({
-    rollout: ['components-barrel'],
     patterns: [
       {
         group: ['@proton/drive-store*'],

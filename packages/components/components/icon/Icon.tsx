@@ -3,7 +3,7 @@ import { forwardRef } from 'react';
 import type { IconName, IconSize } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
-export interface IconProps extends Omit<React.SVGProps<SVGSVGElement>, 'ref'> {
+interface IconProps extends Omit<React.SVGProps<SVGSVGElement>, 'ref'> {
     /** Determines which icon to render based on its name */
     name: IconName;
     /** If specified, renders an sr-only element for screenreaders */

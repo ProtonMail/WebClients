@@ -1,4 +1,4 @@
-import { useModalTwoStatic } from '@proton/components';
+import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
 
 import { withHoc } from '../../../internal/withHoc';
 import { SharingModalView, type SharingModalViewProps } from './SharingModalView';

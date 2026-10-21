@@ -14,9 +14,9 @@ import {
     type GetPlanUpsellArgs,
     type MaybeUpsell,
     defaultUpsellCycleB2C,
-    getAllowedCycles,
     getUpsell,
-} from '../../helpers';
+} from '../../helpers/dashboard-upsells';
+import { getAllowedCycles } from '../../helpers/getAllowedCycles';
 
 export const useSubscriptionPriceComparison = (
     app: APP_NAMES,

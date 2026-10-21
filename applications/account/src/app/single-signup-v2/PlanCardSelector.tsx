@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
-import { getPlanTitleWithAddons } from '@proton/components/containers/payments/subscription/helpers';
+import { getPlanTitleWithAddons } from '@proton/components/containers/payments/subscription/helpers/dashboard-upsells';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { getCheckoutUi, getOptimisticCheckout } from '@proton/payments/core/checkout';
 import { CYCLE, ENTERPRISE_PLAN_TITLE, PLANS, TRIAL_DURATION_DAYS } from '@proton/payments/core/constants';

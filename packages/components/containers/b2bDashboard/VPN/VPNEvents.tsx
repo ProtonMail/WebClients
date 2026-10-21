@@ -18,7 +18,8 @@ import type { B2BLogsQuery } from '@proton/shared/lib/interfaces/B2BLogs';
 import noop from '@proton/utils/noop';
 
 import useModalState from '../../../components/modalTwo/useModalState';
-import { Pagination, usePaginationAsync } from '../../../components/pagination/index';
+import Pagination from '../../../components/pagination/Pagination';
+import usePaginationAsync from '../../../components/pagination/usePaginationAsync';
 import TimeIntl from '../../../components/time/TimeIntl';
 import Toggle from '../../../components/toggle/Toggle';
 import useErrorHandler from '../../../hooks/useErrorHandler';

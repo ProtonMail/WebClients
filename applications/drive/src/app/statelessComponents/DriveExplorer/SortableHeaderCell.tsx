@@ -1,4 +1,4 @@
-import { TableHeaderCell } from '@proton/components';
+import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 

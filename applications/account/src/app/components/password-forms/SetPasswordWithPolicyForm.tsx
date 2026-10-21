@@ -3,8 +3,8 @@ import { useState } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
 import type { ThemeColorUnion } from '@proton/colors/types';
-import { usePasswordPolicyValidation } from '@proton/components/components/passwordPolicy';
 import PasswordWithPolicyInputs from '@proton/components/components/passwordPolicy/PasswordWithPolicyInputs';
+import { usePasswordPolicyValidation } from '@proton/components/components/passwordPolicy/usePasswordPolicyValidation';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import type { PasswordPolicies } from '@proton/shared/lib/interfaces/PasswordPolicy';
 

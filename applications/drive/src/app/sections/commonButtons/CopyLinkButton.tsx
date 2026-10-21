@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { ToolbarButton } from '@proton/components';
+import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcLink } from '@proton/icons/icons/IcLink';
 

@@ -1,4 +1,4 @@
-import { TableCell } from '@proton/components';
+import TableCell from '@proton/components/components/table/TableCell';
 import clsx from '@proton/utils/clsx';
 
 export interface EmptyCellProps {

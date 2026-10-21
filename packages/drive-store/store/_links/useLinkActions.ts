@@ -1,6 +1,6 @@
 import { CryptoProxy } from '@protontech/crypto';
 
-import { usePreventLeave } from '@proton/components';
+import usePreventLeave from '@proton/components/hooks/usePreventLeave';
 import { queryCreateFolder } from '@proton/shared/lib/api/drive/folder';
 import { queryRenameLink } from '@proton/shared/lib/api/drive/share';
 import {

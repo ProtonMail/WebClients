@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import type { ModalStateProps } from '@proton/components';
-import { Prompt } from '@proton/components';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
+import Prompt from '@proton/components/components/prompt/Prompt';
 
 interface DiscardScheduledTaskEditsPromptProps extends ModalStateProps {
     onConfirm: () => void;

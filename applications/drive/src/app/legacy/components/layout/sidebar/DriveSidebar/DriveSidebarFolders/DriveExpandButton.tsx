@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { SidebarExpandButton } from '@proton/components';
+import SidebarExpandButton from '@proton/components/components/button/SidebarExpandButton';
 import clsx from '@proton/utils/clsx';
 
 interface Props {

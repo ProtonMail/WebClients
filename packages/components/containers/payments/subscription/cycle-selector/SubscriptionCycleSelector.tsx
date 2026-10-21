@@ -14,7 +14,8 @@ import Option from '../../../../components/option/Option';
 import Price from '../../../../components/price/Price';
 import SelectTwo from '../../../../components/selectTwo/SelectTwo';
 import { InputField } from '../../../../components/v2/field/InputField';
-import { getDiscountPrice, getShortBillingText } from '../helpers';
+import { getDiscountPrice } from '../helpers/getDiscountPrice';
+import { getShortBillingText } from '../helpers/getTotalBillingText';
 import CycleItemView from './CycleItemView';
 
 const CycleItem = ({

@@ -3,9 +3,12 @@ import type { ChangeEvent } from 'react';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
-import type { ModalOwnProps } from '@proton/components';
-import { Collapsible, CollapsibleContent, CollapsibleHeader, CollapsibleHeaderIconButton } from '@proton/components';
+import Collapsible from '@proton/components/components/collapsible/Collapsible';
+import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
+import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
+import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
+import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { IcWallet } from '@proton/icons/icons/IcWallet';
 import type { IWasmApiWalletData } from '@proton/wallet/types';

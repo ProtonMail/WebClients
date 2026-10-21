@@ -88,8 +88,8 @@ import {
     getVaults,
 } from '../../../features/pass';
 import { getNetShield, getVPNConnectionsFeature } from '../../../features/vpn';
-import type { Upsell } from '../../../subscription/helpers';
 import SubscriptionPanelManageUserButton from '../../SubscriptionPanelManageUserButton';
+import type { Upsell } from '../../helpers/dashboard-upsells';
 import { getSubscriptionPanelText, upsellsShowB2BUsersRow } from '../../helpers/subscriptionPanelHelpers';
 import Panel from '../Panel';
 import { ActionButtons } from './ActionButtons';

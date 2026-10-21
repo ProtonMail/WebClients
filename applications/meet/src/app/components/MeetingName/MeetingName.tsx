@@ -3,7 +3,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Dropdown, SettingsLink } from '@proton/components';
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectMeetingName } from '@proton/meet/store/slices/currentMeeting';
 import {

@@ -3,8 +3,11 @@ import { useCallback } from 'react';
 import { c } from 'ttag';
 
 import type { WasmApiEmailAddress, WasmApiWalletAccount } from '@proton/andromeda';
-import { Info, Prompt, Toggle, useModalState } from '@proton/components';
 import InputFieldStacked from '@proton/components/components/inputFieldStacked/InputFieldStacked';
+import Info from '@proton/components/components/link/Info';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import Prompt from '@proton/components/components/prompt/Prompt';
+import Toggle from '@proton/components/components/toggle/Toggle';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { IWasmApiWalletData } from '@proton/wallet/types';
 

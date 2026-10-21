@@ -4,7 +4,8 @@ import { useOutletContext } from 'react-router-dom-v5-compat';
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
-import { Loader, useAppTitle } from '@proton/components';
+import Loader from '@proton/components/components/loader/Loader';
+import useAppTitle from '@proton/components/hooks/useAppTitle';
 import { loadThumbnail } from '@proton/drive/modules/thumbnails';
 import { getDriveForPhotos } from '@proton/drive/sdk';
 import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';

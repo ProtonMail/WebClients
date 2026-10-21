@@ -8,7 +8,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
 import { Pill } from '@proton/atoms/Pill/Pill';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { PromotionButton } from '@proton/components/components/button/PromotionButton';
+import PromotionButton from '@proton/components/components/button/PromotionButton/PromotionButton';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import Info from '@proton/components/components/link/Info';
 import Loader from '@proton/components/components/loader/Loader';

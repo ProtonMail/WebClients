@@ -18,7 +18,7 @@ import ModalTwoContent from '../../components/modalTwo/ModalContent';
 import ModalTwoFooter from '../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../components/modalTwo/ModalHeader';
 import PasswordWithPolicyInputs from '../../components/passwordPolicy/PasswordWithPolicyInputs';
-import { usePasswordPolicyValidation } from '../../components/passwordPolicy/index';
+import { usePasswordPolicyValidation } from '../../components/passwordPolicy/usePasswordPolicyValidation';
 import useFormErrors from '../../components/v2/useFormErrors';
 import useErrorHandler from '../../hooks/useErrorHandler';
 

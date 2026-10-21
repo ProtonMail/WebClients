@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
-import { useTheme } from '@proton/components';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { MemberRole } from '@proton/drive/sdk';
 import folderImagesDark from '@proton/styles/assets/img/drive/empty-image-album-dark.webp';
 import folderImages from '@proton/styles/assets/img/drive/empty-image-album.webp';

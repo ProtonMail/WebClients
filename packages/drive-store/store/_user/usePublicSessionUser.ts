@@ -1,4 +1,4 @@
-import { useAuthentication } from '@proton/components';
+import useAuthentication from '@proton/components/hooks/useAuthentication';
 
 import usePublicSession from '../_api/usePublicSession';
 

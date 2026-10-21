@@ -2,22 +2,20 @@ import { type ReactNode, lazy, useState } from 'react';
 import { useLocation } from 'react-router-dom-v5-compat';
 
 import { useUser } from '@proton/account/user/hooks';
-import {
-    CalendarDrawerAppButton,
-    ContactDrawerAppButton,
-    DrawerSidebar,
-    DrawerVisibilityButton,
-    PrivateAppContainer,
-    PrivateMainArea,
-    QuickSettingsAppButton,
-    ReferralAppButton,
-    TopBanners,
-    useDrawer,
-    useOpenDrawerOnLoad,
-} from '@proton/components';
 import DrawerApp from '@proton/components/components/drawer/DrawerApp';
+import DrawerSidebar from '@proton/components/components/drawer/DrawerSidebar';
+import DrawerVisibilityButton from '@proton/components/components/drawer/DrawerVisibilityButton';
+import CalendarDrawerAppButton from '@proton/components/components/drawer/drawerAppButtons/CalendarDrawerAppButton';
+import ContactDrawerAppButton from '@proton/components/components/drawer/drawerAppButtons/ContactDrawerAppButton';
 import LumoDrawerAppButton from '@proton/components/components/drawer/drawerAppButtons/LumoDrawerAppButton';
+import QuickSettingsAppButton from '@proton/components/components/drawer/drawerAppButtons/QuickSettingsAppButton';
+import ReferralAppButton from '@proton/components/components/drawer/drawerAppButtons/ReferralAppButton';
+import PrivateAppContainer from '@proton/components/containers/app/PrivateAppContainer';
+import PrivateMainArea from '@proton/components/containers/layout/PrivateMainArea';
 import useAllowedProducts from '@proton/components/containers/organization/accessControl/useAllowedProducts';
+import TopBanners from '@proton/components/containers/topBanners/TopBanners';
+import useDrawer from '@proton/components/hooks/drawer/useDrawer';
+import useOpenDrawerOnLoad from '@proton/components/hooks/drawer/useOpenDrawerOnLoad';
 import { useFlagsDriveLumo } from '@proton/drive/modules/flags';
 import useToggle from '@proton/hooks/useToggle';
 import { Product } from '@proton/shared/lib/ProductEnum';

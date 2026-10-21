@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';
 import { ProtonPlanCustomizer } from '@proton/components/containers/payments/planCustomizer/ProtonPlanCustomizer';
+import { getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer/helpers';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import { usePayments } from '@proton/payments-ui/ui/context/PaymentContext';
 import { ADDON_PREFIXES } from '@proton/payments/core/constants';

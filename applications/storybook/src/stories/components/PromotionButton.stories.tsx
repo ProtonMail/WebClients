@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { PromotionButton } from '@proton/components/components/button/PromotionButton';
+import PromotionButton from '@proton/components/components/button/PromotionButton/PromotionButton';
 import { IcBrandProtonMailFilledPlus } from '@proton/icons/icons/IcBrandProtonMailFilledPlus';
 import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 

@@ -6,7 +6,6 @@ import { createRestrictedImportsConfig } from '@proton/eslint-config-proton/rest
 export default defineConfig([
     config,
     createRestrictedImportsConfig({
-        rollout: ['components-barrel'],
         // The design library sits below @proton/components and must never reach up into the
         // framework UI, the engine, or any product code — that is what keeps it pure presentation
         // and reusable by Lumo and any other product (strategy doc §2).

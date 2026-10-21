@@ -1,7 +1,9 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom-v5-compat';
 
-import { useActiveBreakpoint, useAppTitle, useTheme } from '@proton/components';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import useAppTitle from '@proton/components/hooks/useAppTitle';
 import { logging } from '@proton/drive/modules/logging';
 import { getNodeName } from '@proton/drive/modules/nodes';
 import { NodeType, useDrive } from '@proton/drive/sdk';

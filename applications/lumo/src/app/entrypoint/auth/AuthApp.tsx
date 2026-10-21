@@ -1,17 +1,15 @@
 import { Suspense, lazy, useState } from 'react';
 import { Router } from 'react-router-dom';
 
-import {
-    ApiProvider,
-    AuthenticationProvider,
-    DrawerProvider,
-    ErrorBoundary,
-    EventManagerProvider,
-    ProtonApp,
-    StandardErrorPage,
-    StandardLoadErrorPage,
-    StandardPrivateApp,
-} from '@proton/components';
+import ApiProvider from '@proton/components/containers/api/ApiProvider';
+import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
+import ProtonApp from '@proton/components/containers/app/ProtonApp';
+import StandardErrorPage from '@proton/components/containers/app/StandardErrorPage';
+import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
+import StandardPrivateApp from '@proton/components/containers/app/StandardPrivateApp';
+import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
+import EventManagerProvider from '@proton/components/containers/eventManager/EventManagerProvider';
+import { DrawerProvider } from '@proton/components/hooks/drawer/useDrawer';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
 import metrics from '@proton/metrics/metricsInstance';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { useModalStateWithData } from '@proton/components';
+import { useModalStateWithData } from '@proton/components/components/modalTwo/useModalState';
 
 import { useNativeComposerVisibilityApi } from '../../components/Composer/hooks/useNativeComposerVisibilityApi';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';

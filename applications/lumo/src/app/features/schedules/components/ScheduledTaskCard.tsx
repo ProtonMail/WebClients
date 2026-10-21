@@ -4,10 +4,10 @@ import { c } from 'ttag';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { useModalStateObject } from '@proton/components';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 
 import { LumoIcon } from '../../../components/LumoIcon/LumoIcon';

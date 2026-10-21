@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { SettingsLink } from '@proton/components/index';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectSubscriptionStatus } from '@proton/meet/store/slices/userSlice';

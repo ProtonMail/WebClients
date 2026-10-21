@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { ToolbarButton } from '@proton/components';
+import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
 import { IcPlusCircle } from '@proton/icons/icons/IcPlusCircle';
 import clsx from '@proton/utils/clsx';
 

@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { OfferPrice } from '@proton/payments-ui/ui/components/OfferPrice';
 
 import Price from '../../../../../components/price/Price';
-import type { UpsellWithPlan } from '../../helpers/index';
+import type { UpsellWithPlan } from '../../helpers/dashboard-upsells';
 
 const UpsellPrice = ({ upsell }: { upsell: UpsellWithPlan }) => {
     if (!upsell.price) {

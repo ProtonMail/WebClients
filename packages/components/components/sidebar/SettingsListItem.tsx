@@ -8,7 +8,7 @@ import type { ThemeColor } from '@proton/colors/types';
 import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 
 import type { IconComponent } from '../../containers/layout/interface';
-import { PromotionButton } from '../button/PromotionButton';
+import PromotionButton from '../button/PromotionButton/PromotionButton';
 import SidebarListItem from './SidebarListItem';
 import SidebarListItemContent from './SidebarListItemContent';
 import { navigationIconClassName } from './SidebarListItemContentIcon';

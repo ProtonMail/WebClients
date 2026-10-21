@@ -3,7 +3,7 @@ import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
-import { useModalStateObject } from '@proton/components';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useChatLimitGate } from '../../../../../hooks/useChatLimitGate';

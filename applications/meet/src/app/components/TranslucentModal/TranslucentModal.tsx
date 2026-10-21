@@ -1,4 +1,4 @@
-import { ModalTwo } from '@proton/components/index';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import brand from '@proton/styles/assets/img/meet/brand-dual-colors.svg';

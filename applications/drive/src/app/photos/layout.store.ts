@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-import type { ModalStateReturnObj } from '@proton/components';
+import type { ModalStateReturnObj } from '@proton/components/components/modalTwo/useModalState';
 
 import type { DeleteAlbumModalProps } from './PhotosModals/DeleteAlbumModal';
 

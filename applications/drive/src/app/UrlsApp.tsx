@@ -5,17 +5,15 @@ import { CompatRouter } from 'react-router-dom-v5-compat';
 import { createBrowserHistory } from 'history';
 
 import * as bootstrap from '@proton/account/bootstrap';
-import {
-    ApiProvider,
-    AuthenticationProvider,
-    ErrorBoundary,
-    LoaderPage,
-    ModalsChildren,
-    NotificationsChildren,
-    ProtonApp,
-    StandardErrorPage,
-    StandardLoadErrorPage,
-} from '@proton/components';
+import ApiProvider from '@proton/components/containers/api/ApiProvider';
+import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
+import LoaderPage from '@proton/components/containers/app/LoaderPage';
+import ProtonApp from '@proton/components/containers/app/ProtonApp';
+import StandardErrorPage from '@proton/components/containers/app/StandardErrorPage';
+import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
+import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
+import ModalsChildren from '@proton/components/containers/modals/Children';
+import NotificationsChildren from '@proton/components/containers/notifications/Children';
 import { featureFlagStore } from '@proton/drive/modules/flags';
 import { driveMetrics } from '@proton/drive/modules/metrics';
 import useEffectOnce from '@proton/hooks/useEffectOnce';

@@ -7,7 +7,8 @@ import { splitNodeUid } from '@protontech/drive-sdk/dist/internal/uids';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { type ModalStateProps, useFormErrors } from '@proton/components';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
+import useFormErrors from '@proton/components/components/v2/useFormErrors';
 
 import { handleSdkError } from '../../../legacy/errorHandling';
 import { BusDriverEventName, getBusDriver } from '../../../modules/busDriver';

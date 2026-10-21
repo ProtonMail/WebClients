@@ -4,8 +4,8 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import type { ModalProps } from '@proton/components';
-import { Prompt } from '@proton/components';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import { IcExclamationFilled } from '@proton/icons/icons/IcExclamationFilled';
 import { IcShield } from '@proton/icons/icons/IcShield';
 

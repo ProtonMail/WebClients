@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Loader } from '@proton/components';
+import Loader from '@proton/components/components/loader/Loader';
 import type { TreeItemWithChildren } from '@proton/drive/modules/directoryTree';
 import { splitNodeUid } from '@proton/drive/sdk';
 import { IcInbox } from '@proton/icons/icons/IcInbox';

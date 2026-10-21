@@ -1,11 +1,7 @@
 import { CryptoProxy } from '@protontech/crypto';
 
-import { usePreventLeave } from '@proton/components';
-import {
-    queryDeleteTrashedLinks,
-    queryRestoreLinks,
-    queryTrashLinks,
-} from '@proton/shared/lib/api/drive/link';
+import usePreventLeave from '@proton/components/hooks/usePreventLeave';
+import { queryDeleteTrashedLinks, queryRestoreLinks, queryTrashLinks } from '@proton/shared/lib/api/drive/link';
 import { queryMoveLink } from '@proton/shared/lib/api/drive/share';
 import { API_CODES } from '@proton/shared/lib/constants';
 import { MAX_THREADS_PER_REQUEST } from '@proton/shared/lib/drive/constants';

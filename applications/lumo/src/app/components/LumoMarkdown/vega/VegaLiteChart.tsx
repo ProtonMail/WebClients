@@ -5,7 +5,7 @@ import type { VisualizationSpec } from 'vega-embed';
 import embed, { type Result } from 'vega-embed';
 import { expressionInterpreter } from 'vega-interpreter';
 
-import { useTheme } from '@proton/components';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 
 import { useLumoTheme } from '../../../providers';
 import { LUMO_VEGA_CHART_SHELL_CLASS } from '../lumoMarkdownCardShell';

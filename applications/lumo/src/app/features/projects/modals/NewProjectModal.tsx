@@ -3,8 +3,13 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { InputFieldTwo, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, TextAreaTwo } from '@proton/components';
-import type { ModalStateProps } from '@proton/components';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
+import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useUncontrolledField } from '../../../hooks/useUncontrolledField';
@@ -21,12 +26,12 @@ interface NewProjectModalProps extends ModalStateProps {
     initialIcon?: string;
 }
 
-export const NewProjectModal = ({ 
-    onProjectCreated, 
+export const NewProjectModal = ({
+    onProjectCreated,
     initialName,
     initialInstructions,
     initialIcon,
-    ...modalProps 
+    ...modalProps
 }: NewProjectModalProps) => {
     const projectName = useUncontrolledField<HTMLInputElement>(initialName || '');
     const projectInstructions = useUncontrolledField<HTMLTextAreaElement>(initialInstructions || '');
@@ -74,8 +79,12 @@ export const NewProjectModal = ({
     return (
         <>
             <ModalTwo {...modalProps} onClose={handleCancel} size="large" enableCloseWhenClickOutside>
-                <ModalTwoHeader title={c('collider_2025:Title').t`Create new project`} subline={c('collider_2025:Subline').t`Projects help you keep related chats, files, and instructions in one place. They make it easy to stay organized and reuse context across chats.`}/>
-                
+                <ModalTwoHeader
+                    title={c('collider_2025:Title').t`Create new project`}
+                    subline={c('collider_2025:Subline')
+                        .t`Projects help you keep related chats, files, and instructions in one place. They make it easy to stay organized and reuse context across chats.`}
+                />
+
                 <ModalTwoContent>
                     <div className="flex flex-column gap-4">
                         {/* Project name with icon picker */}
@@ -92,16 +101,20 @@ export const NewProjectModal = ({
                                 dense
                             />
                         </div>
-                        
+
                         <div>
-                            <label htmlFor="project-instructions" className="block text-semibold text-sm color-norm mb-2">
+                            <label
+                                htmlFor="project-instructions"
+                                className="block text-semibold text-sm color-norm mb-2"
+                            >
                                 {c('collider_2025:Label').t`Project Instructions (optional)`}
                             </label>
                             <TextAreaTwo
                                 {...projectInstructions.bind}
                                 id="project-instructions"
-                                placeholder={c('collider_2025:Placeholder').t`Add instructions about the tone, style, and persona you want ${LUMO_SHORT_APP_NAME} to adopt.`}
-                                className='border border-weak rounded-lg'
+                                placeholder={c('collider_2025:Placeholder')
+                                    .t`Add instructions about the tone, style, and persona you want ${LUMO_SHORT_APP_NAME} to adopt.`}
+                                className="border border-weak rounded-lg"
                                 rows={5}
                             />
                         </div>
@@ -119,4 +132,3 @@ export const NewProjectModal = ({
         </>
     );
 };
-

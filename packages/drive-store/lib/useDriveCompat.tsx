@@ -3,7 +3,7 @@ import { type ReactNode, useCallback } from 'react';
 import type { PublicKeyReference, SessionKey } from '@protontech/crypto';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
-import { useAuthentication } from '@proton/components';
+import useAuthentication from '@proton/components/hooks/useAuthentication';
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces/Key';
 

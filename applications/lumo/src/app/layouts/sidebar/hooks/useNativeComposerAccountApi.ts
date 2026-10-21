@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { useSettingsLink } from '@proton/components/index';
+import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 
 import { LUMO_SIGNUP_PATH } from '../../../constants';
 import { useLumoPlan } from '../../../providers/LumoPlanProvider';

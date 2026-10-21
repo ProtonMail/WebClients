@@ -4,14 +4,12 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import {
-    ButtonWithTextAndIcon,
-    type ModalStateProps,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-} from '@proton/components';
+import { ButtonWithTextAndIcon } from '@proton/components/components/button/ButtonWithTextAndIcon';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import { IcFolderPlus } from '@proton/icons/icons/IcFolderPlus';
 
 import type { DirectoryTreeItem } from '../../../components/DirectoryTree/DirectoryTree';

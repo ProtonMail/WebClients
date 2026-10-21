@@ -3,7 +3,8 @@ import { useCallback, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { useConfirmActionModal, useModalStateObject } from '@proton/components';
+import { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { useSharingModal } from '@proton/drive/modals/sharingModal';

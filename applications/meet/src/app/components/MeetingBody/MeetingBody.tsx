@@ -3,8 +3,8 @@ import { useEffect, useRef } from 'react';
 import { ConnectionState } from 'livekit-client';
 import { c } from 'ttag';
 
+import TopBanner from '@proton/components/containers/topBanners/TopBanner';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import { TopBanner } from '@proton/components/index';
 import { IcMeetRotateCamera } from '@proton/icons/icons/IcMeetRotateCamera';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectMeetingLink } from '@proton/meet/store/slices/currentMeeting';

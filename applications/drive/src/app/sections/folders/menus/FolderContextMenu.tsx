@@ -3,7 +3,8 @@ import * as React from 'react';
 
 import { useShallow } from 'zustand/react/shallow';
 
-import { ContextMenu, ContextSeparator } from '@proton/components';
+import ContextMenu from '@proton/components/components/contextMenu/ContextMenu';
+import ContextSeparator from '@proton/components/components/contextMenu/ContextSeparator';
 
 import { ShareFileButton, ShareLinkButton } from '../../../legacy/components/sections/ContextMenu';
 import useIsEditEnabled from '../../../legacy/components/sections/useIsEditEnabled';

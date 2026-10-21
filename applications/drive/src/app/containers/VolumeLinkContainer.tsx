@@ -4,7 +4,7 @@ import { useLocation, useParams } from 'react-router-dom-v5-compat';
 
 import { c } from 'ttag';
 
-import { Loader } from '@proton/components';
+import Loader from '@proton/components/components/loader/Loader';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { getNotificationsManager } from '@proton/drive/modules/notifications';

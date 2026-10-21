@@ -3,7 +3,8 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { MimeIcon, useConfirmActionModal } from '@proton/components';
+import { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal';
+import MimeIcon from '@proton/components/components/icon/MimeIcon';
 import useLoading from '@proton/hooks/useLoading';
 
 // TODO: Move that to common place

@@ -4,7 +4,11 @@ import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { InputFieldTwo, ModalTwo, ModalTwoContent, ModalTwoHeader, useModalStateObject } from '@proton/components';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import { BRAND_NAME, LUMO_SHORT_APP_NAME, LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
 
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';

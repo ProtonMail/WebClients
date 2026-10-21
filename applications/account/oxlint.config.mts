@@ -1,5 +1,5 @@
 import { createOxlintConfig } from '@proton/oxlint-config';
 
 export default createOxlintConfig({
-    restrictedImports: { rollout: ['account-barrel', 'components-barrel'] },
+    restrictedImports: { rollout: ['account-barrel'] },
 });

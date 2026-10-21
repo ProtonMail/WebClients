@@ -3,8 +3,9 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
-import { ButtonWithTextAndIcon, useActiveBreakpoint } from '@proton/components';
+import { ButtonWithTextAndIcon } from '@proton/components/components/button/ButtonWithTextAndIcon';
 import { VintageClock } from '@proton/components/components/vintageClock/VintageClock';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { uploadManager } from '@proton/drive/modules/upload';
 import { generateNodeUid } from '@proton/drive/sdk';
 import { IcFileArrowInUp } from '@proton/icons/icons/IcFileArrowInUp';

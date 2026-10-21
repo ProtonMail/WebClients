@@ -4,17 +4,15 @@ import { c } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
-import type { ModalStateProps } from '@proton/components';
-import {
-    DriveLogo,
-    Form,
-    InputFieldTwo,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    useModalTwoStatic,
-} from '@proton/components';
+import Form from '@proton/components/components/form/Form';
+import DriveLogo from '@proton/components/components/logo/DriveLogo';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
+import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import { IcGift } from '@proton/icons/icons/IcGift';
 import { PLANS } from '@proton/payments/core/constants';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';

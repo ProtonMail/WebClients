@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import type { ModalStateProps } from '@proton/components';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import { getDrive } from '@proton/drive/sdk';
 import useLoading from '@proton/hooks/useLoading';
 

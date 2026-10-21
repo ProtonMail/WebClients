@@ -41,7 +41,7 @@ vi.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
 }));
 
 // Globally mocked @proton/components modules
-vi.mock('@proton/components/hooks/useEventManager.ts', () => {
+vi.mock('@proton/components/hooks/useEventManager', () => {
     const subscribe = vi.fn();
     const call = vi.fn();
     const stop = vi.fn();

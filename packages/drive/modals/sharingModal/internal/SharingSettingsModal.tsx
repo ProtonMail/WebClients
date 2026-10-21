@@ -4,9 +4,13 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import type { ModalProps } from '@proton/components';
-import { ModalTwo, ModalTwoContent, Toggle, useConfirmActionModal, useModalTwoStatic } from '@proton/components';
+import { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
+import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
+import Toggle from '@proton/components/components/toggle/Toggle';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 

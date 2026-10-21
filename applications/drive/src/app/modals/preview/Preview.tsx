@@ -1,15 +1,9 @@
-import { useRef } from 'react';
+import { lazy, useRef } from 'react';
 
-import { FilePreview, NavigationControl } from '@proton/components';
+import FilePreview from '@proton/components/containers/filePreview/FilePreview';
+import NavigationControl from '@proton/components/containers/filePreview/NavigationControl';
 import { useSharingModal } from '@proton/drive/modals/sharingModal';
 import { useFlagsDriveLumo, useFlagsDriveSheet } from '@proton/drive/modules/flags';
-import { lazy } from 'react';
-
-const FilePreviewAssistant = lazy(() =>
-    import(/* webpackChunkName: "file-preview-assistant" */ '@proton/llm/lib/lumoAgent/ui/FilePreviewAssistant').then(
-        (module) => ({ default: module.FilePreviewAssistant })
-    )
-);
 
 import { loadPreviewThumbnail } from '../../lumo/loadPreviewThumbnail';
 import type { OpenFile } from '../../lumo/toolModule';
@@ -19,6 +13,12 @@ import type { Drive } from './interface';
 import { isDriveWithSharing } from './interface';
 import { SignatureInformation, SignatureStatus } from './signatures';
 import { usePreviewState } from './usePreviewState';
+
+const FilePreviewAssistant = lazy(() =>
+    import(/* webpackChunkName: "file-preview-assistant" */ '@proton/llm/lib/lumoAgent/ui/FilePreviewAssistant').then(
+        (module) => ({ default: module.FilePreviewAssistant })
+    )
+);
 
 export interface PreviewProps {
     nodeUid: string;

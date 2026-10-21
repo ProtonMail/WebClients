@@ -6,8 +6,9 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import type { WasmApiEmailAddress } from '@proton/andromeda';
 import { Href } from '@proton/atoms/Href/Href';
-import type { ModalOwnProps } from '@proton/components';
-import { Radio, useModalState } from '@proton/components';
+import Radio from '@proton/components/components/input/Radio';
+import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 

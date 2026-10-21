@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { useModalTwoStatic } from '@proton/components';
+import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
 import { IcFire } from '@proton/icons/icons/IcFire';
 
 import { useLockedVolume } from '../../../../legacy/store';

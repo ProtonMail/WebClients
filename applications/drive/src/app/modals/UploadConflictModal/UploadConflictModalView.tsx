@@ -3,8 +3,14 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Checkbox, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Radio, Row } from '@proton/components';
-import type { ModalProps } from '@proton/components';
+import Row from '@proton/components/components/container/Row';
+import Checkbox from '@proton/components/components/input/Checkbox';
+import Radio from '@proton/components/components/input/Radio';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { UploadConflictStrategy, UploadConflictType } from '@proton/drive/modules/upload';
 import { NodeType } from '@proton/drive/sdk';
 

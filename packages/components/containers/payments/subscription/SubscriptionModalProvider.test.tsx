@@ -9,14 +9,11 @@ import { getSubscriptionState } from '@proton/payments/testing/redux-state';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 
-import {
-    mockOrganizationApi,
-    mockPlansApi,
-    mockStatusApi,
-    mockSubscriptionApi,
-    subscriptionDefaultResponse,
-    userDefault,
-} from '../../../hooks/helpers/tests';
+import { mockOrganizationApi } from '../../../hooks/helpers/tests/useOrganization';
+import { mockStatusApi } from '../../../hooks/helpers/tests/usePaymentStatus';
+import { mockPlansApi } from '../../../hooks/helpers/tests/usePlans';
+import { mockSubscriptionApi, subscriptionDefaultResponse } from '../../../hooks/helpers/tests/useSubscription';
+import { userDefault } from '../../../hooks/helpers/tests/useUser';
 import { renderWithProviders } from '../../../testing/renderWithProviders';
 import SubscriptionContainer from './SubscriptionContainer';
 import type { OpenSubscriptionModalCallback } from './SubscriptionModalProvider';

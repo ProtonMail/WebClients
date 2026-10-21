@@ -1,7 +1,8 @@
 import { useShallow } from 'zustand/react/shallow';
 
 import { Vr } from '@proton/atoms/Vr/Vr';
-import { Toolbar, useConfirmActionModal } from '@proton/components';
+import { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal';
+import Toolbar from '@proton/components/components/toolbar/Toolbar';
 import { useCopyItemsModal } from '@proton/drive/modals/copyItemsModal';
 import { useSharingModal } from '@proton/drive/modals/sharingModal';
 import isTruthy from '@proton/utils/isTruthy';

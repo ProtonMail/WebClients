@@ -8,7 +8,7 @@ import { selectOauthImportStateStep } from '@proton/activation/src/logic/draft/o
 import { loadImporters } from '@proton/activation/src/logic/importers/importers.actions';
 import { selectDriveImportStatus } from '@proton/activation/src/logic/importers/importers.selectors';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import { useEventManager } from '@proton/components';
+import useEventManager from '@proton/components/hooks/useEventManager';
 
 import { Actions, countActionWithTelemetry } from '../../utils/telemetry';
 

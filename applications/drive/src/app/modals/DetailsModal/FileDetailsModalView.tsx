@@ -2,14 +2,12 @@ import { c } from 'ttag';
 
 import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
-import {
-    Collapsible,
-    CollapsibleContent,
-    CollapsibleHeader,
-    CollapsibleHeaderIconButton,
-    type ModalStateProps,
-    ModalTwoContent,
-} from '@proton/components';
+import Collapsible from '@proton/components/components/collapsible/Collapsible';
+import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
+import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
+import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import { InfoIconTooltip } from '@proton/drive/components/InfoIconTooltip';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { PRODUCT_NAMES } from '@proton/shared/lib/constants';

@@ -35,10 +35,6 @@ const inviteeExternalNonProton = {
 };
 
 const mockedCreateNotification = jest.fn();
-jest.mock('@proton/components', () => ({
-    useGetEncryptionPreferences: jest.fn(),
-}));
-
 jest.mock('@proton/app-context/useApi', () => ({
     useApi: jest.fn().mockReturnValue(() => new Promise((resolve) => resolve(undefined))),
 }));

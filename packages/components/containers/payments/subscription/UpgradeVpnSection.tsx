@@ -12,8 +12,8 @@ import useDashboardPaymentFlow from '../../../hooks/useDashboardPaymentFlow';
 import useLoad from '../../../hooks/useLoad';
 import SettingsSectionWide from '../../account/SettingsSectionWide';
 import { useSubscriptionModalRaw } from './SubscriptionModalProvider';
-import { useUpsellsToDisplay } from './helpers';
-import { UpsellPanels } from './panels';
+import { useUpsellsToDisplay } from './helpers/dashboard-upsells';
+import UpsellPanels from './panels/UpsellPanels';
 
 import './YourPlanSection.scss';
 

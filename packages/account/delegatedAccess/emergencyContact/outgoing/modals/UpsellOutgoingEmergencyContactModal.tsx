@@ -5,7 +5,7 @@ import ModalTwo, { type ModalProps } from '@proton/components/components/modalTw
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
 import { PromotionBanner } from '@proton/components/containers/banner/PromotionBanner';
-import type { UpsellWithPlan } from '@proton/components/containers/payments/subscription/helpers';
+import type { UpsellWithPlan } from '@proton/components/containers/payments/subscription/helpers/dashboard-upsells';
 import UpsellPriceV1 from '@proton/components/containers/payments/subscription/panels/components/UpsellPriceV1';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 
