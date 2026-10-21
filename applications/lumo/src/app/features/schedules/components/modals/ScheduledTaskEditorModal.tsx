@@ -24,8 +24,9 @@ import { LumoIcon } from '../../../../components/LumoIcon/LumoIcon';
 import { RecurrenceRuleFieldset } from '../../../../components/RecurrenceRuleFieldset/RecurrenceRuleFieldset';
 import type { RecurrenceRule } from '../../../../components/RecurrenceRuleFieldset/types';
 import type { ScheduleDetails } from '../../types';
-import type { ScheduleDetailsValidationField } from '../../utils';
-import { getEmptyScheduleDetails, getScheduleDetailsValidationErrors } from '../../utils';
+import { ScheduleConnectorPicker } from '../ScheduleConnectorPicker';
+import type { ScheduleDetailsValidationField } from '../utils/schedules';
+import { getEmptyScheduleDetails, getScheduleDetailsValidationErrors } from '../utils/schedules';
 import { DeleteScheduledTaskPrompt } from './DeleteScheduledTaskPrompt';
 import { DiscardScheduledTaskEditsPrompt } from './DiscardScheduledTaskEditsPrompt';
 
@@ -122,7 +123,7 @@ export const ScheduledTaskEditorModal = ({
                     titleClassName="scheduled-task-editor-modal__title"
                 />
                 <ModalTwoContent className="m-6 mb-7">
-                    <div className="flex flex-column gap-6">
+                    <div className="flex flex-column flex-nowrap gap-6">
                         {/* Name input field */}
                         <InputFieldTwo
                             assistContainerClassName={fieldErrors.name ? undefined : 'hidden'}
@@ -194,30 +195,10 @@ export const ScheduledTaskEditorModal = ({
                             </p>
                         </section>
 
-                        {/* Connectors fieldset */}
-                        <section className="flex flex-column gap-3">
-                            <span className="m-0 text-rg text-semibold" id={`${formId}-connectors`}>
-                                {
-                                    // translator: Label for the connectors (bridges to external systems/tools) the scheduled task can use.
-                                    c('collider_2025:Label').t`Connectors this task can use`
-                                }
-                            </span>
-                            <fieldset
-                                aria-labelledby={`${formId}-connectors`}
-                                className="flex flex-wrap gap-2 m-0 p-0 border-none"
-                            >
-                                <button
-                                    className="scheduled-task-editor-modal__add-connector-chip button-ghost-norm inline-flex flex-nowrap shrink-0 items-center gap-1.5 border border-dashed rounded color-weak cursor-pointer interactive interactive--no-background"
-                                    type="button"
-                                >
-                                    <LumoIcon aria-hidden className="shrink-0 color-weak" name="Plus" size={14} />
-                                    <span className="color-weak">{
-                                        // translator: Button to add a connector (bridge to external systems/tools) to the scheduled task.
-                                        c('collider_2025:Action').t`Add connector`
-                                    }</span>
-                                </button>
-                            </fieldset>
-                        </section>
+                        <ScheduleConnectorPicker
+                            value={values.connectors}
+                            onChange={(connectors) => updateValues((prev) => ({ ...prev, connectors }))}
+                        />
 
                         {/* Auto-approve toggle */}
                         {values.connectors.length > 0 && (
@@ -226,11 +207,11 @@ export const ScheduledTaskEditorModal = ({
                                     <LumoIcon aria-hidden className="color-weak" name="Clock" size={20} />
                                 </div>
                                 <div className="flex flex-column flex-1 gap-0.5 min-w-0">
-                                    <span className="scheduled-task-editor-modal__auto-approve-label text-semibold">{
+                                    <span className="text-rg text-semibold" id={`${formId}-auto-approve-label`}>{
                                         // translator: Label for the auto-approve toggle to automatically approve the use of connectors (bridges to external systems/tools).
                                         c('collider_2025:Title').t`Auto-approve`
                                     }</span>
-                                    <span className="text-rg color-weak" id={`${formId}-auto-approve-description`}>
+                                    <span className="text-sm color-hint" id={`${formId}-auto-approve-description`}>
                                         {
                                             // translator: Description for the auto-approve toggle to automatically approve the use of connectors (bridges to external systems/tools).
                                             c('collider_2025:Description')
@@ -240,6 +221,7 @@ export const ScheduledTaskEditorModal = ({
                                 </div>
                                 <Toggle
                                     aria-describedby={`${formId}-auto-approve-description`}
+                                    aria-labelledby={`${formId}-auto-approve-label`}
                                     checked={values.autoApprove}
                                     className="shrink-0"
                                     id={`${formId}-auto-approve`}

@@ -11,6 +11,7 @@ import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 
 import { FieldError } from './FieldError';
 import type { WeekdayToken } from './types';
+import { WEEKDAY_TOKENS_BY_CALENDAR_INDEX, getWeekdayTokensInDisplayOrder } from './utils';
 
 import './WeekDayPicker.scss';
 
@@ -31,13 +32,12 @@ export const WeekDayPicker = ({ days, error, onChange }: WeekDayPickerProps) => 
         const weekStartsOn = getWeekStartsOn(userSettings);
         const weekdaysLong = getFormattedWeekdays('cccc', { locale: dateLocale });
         const weekdaysNarrow = getFormattedWeekdays('ccccc', { locale: dateLocale });
-        const orderedTokens = ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA'] satisfies readonly WeekdayToken[];
 
-        return Array.from({ length: 7 }, (_, dayIndex) => {
-            const index = (dayIndex + weekStartsOn) % 7;
+        return getWeekdayTokensInDisplayOrder(weekStartsOn).map((day) => {
+            const index = WEEKDAY_TOKENS_BY_CALENDAR_INDEX.indexOf(day);
 
             return {
-                day: orderedTokens[index],
+                day,
                 displayLabel: weekdaysNarrow[index],
                 ariaLabel: weekdaysLong[index],
             };
