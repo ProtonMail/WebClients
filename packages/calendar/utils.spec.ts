@@ -9,6 +9,7 @@ describe('getQueryParamsStatus', () => {
         expect(result).toEqual({
             isCreateMode: true,
             isEditMode: false,
+            isCreateBookingMode: false,
             calendarIdFromQueryParams: null,
             eventId: null,
         });
@@ -20,6 +21,7 @@ describe('getQueryParamsStatus', () => {
         expect(result).toEqual({
             isCreateMode: false,
             isEditMode: true,
+            isCreateBookingMode: false,
             calendarIdFromQueryParams: '123',
             eventId: '456',
         });
@@ -31,6 +33,19 @@ describe('getQueryParamsStatus', () => {
         expect(result).toEqual({
             isCreateMode: false,
             isEditMode: false,
+            isCreateBookingMode: false,
+            calendarIdFromQueryParams: null,
+            eventId: null,
+        });
+    });
+
+    it('should detect create booking mode', () => {
+        const result = getQueryParamsStatus('?action=create-booking');
+
+        expect(result).toEqual({
+            isCreateMode: false,
+            isEditMode: false,
+            isCreateBookingMode: true,
             calendarIdFromQueryParams: null,
             eventId: null,
         });
@@ -42,6 +57,7 @@ describe('getQueryParamsStatus', () => {
         expect(result).toEqual({
             isCreateMode: false,
             isEditMode: true,
+            isCreateBookingMode: false,
             calendarIdFromQueryParams: '123',
             eventId: null,
         });
