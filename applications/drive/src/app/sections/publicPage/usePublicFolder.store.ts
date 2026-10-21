@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-import type { NodeType } from '@proton/drive';
+import type { NodeType } from '@proton/drive/sdk';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 

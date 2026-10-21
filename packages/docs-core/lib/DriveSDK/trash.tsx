@@ -1,4 +1,4 @@
-import { getDrive } from '@proton/drive'
+import { getDrive } from '@proton/drive/sdk'
 import { traceErrorSDK } from './traceErrorSDK'
 
 export async function trashDocument(nodeUid: string) {

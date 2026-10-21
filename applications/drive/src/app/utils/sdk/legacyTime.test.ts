@@ -1,6 +1,6 @@
-import { MemberRole, NodeType, RevisionState } from '@proton/drive';
-import type { Author, Revision } from '@proton/drive';
 import type { NormalizedNode } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
+import { MemberRole, NodeType, RevisionState } from '@proton/drive/sdk';
+import type { Author, Revision } from '@proton/drive/sdk';
 
 import { dateToLegacyTimestamp, getLegacyModifiedTime, getLegacyTrashedTime } from './legacyTime';
 

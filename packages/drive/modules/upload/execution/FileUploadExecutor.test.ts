@@ -2,7 +2,7 @@ import { NodeType, NodeWithSameNameExistsValidationError } from '@protontech/dri
 
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
-import { generateExtendedAttributes } from '../../extendedAttributes';
+import { generateExtendedAttributes } from '../../extendedAttributes/extendedAttributesGenerator';
 import { generateThumbnail } from '../../thumbnails';
 import { UploadDriveClientRegistry } from '../UploadDriveClientRegistry';
 import { useUploadControllerStore } from '../store/uploadController.store';
@@ -11,7 +11,7 @@ import { FileUploadExecutor } from './FileUploadExecutor';
 
 jest.mock('../UploadDriveClientRegistry');
 jest.mock('../../thumbnails');
-jest.mock('../../extendedAttributes');
+jest.mock('../../extendedAttributes/extendedAttributesGenerator');
 jest.mock('../store/uploadController.store');
 jest.mock('@proton/shared/lib/helpers/sentry', () => ({
     traceError: jest.fn(),

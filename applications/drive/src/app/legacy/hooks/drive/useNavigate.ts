@@ -1,9 +1,9 @@
 import { useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom-v5-compat';
 
-import { type NodeEntity, NodeType, splitNodeUid } from '@proton/drive/index';
 import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { getNodeAncestry } from '@proton/drive/modules/nodes';
+import { type NodeEntity, NodeType, splitNodeUid } from '@proton/drive/sdk';
 import generateUID from '@proton/utils/generateUID';
 
 import { toLinkURLType } from '../../../legacy/components/sections/helpers';

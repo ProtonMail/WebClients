@@ -3,7 +3,7 @@ import { useCallback, useEffect, useRef } from 'react';
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
-import { splitNodeUid } from '@proton/drive/index';
+import { splitNodeUid } from '@proton/drive/sdk';
 
 import EmptyDevices from '../../legacy/components/sections/Devices/EmptyDevices';
 import useDriveNavigation from '../../legacy/hooks/drive/useNavigate';

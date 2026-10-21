@@ -1,5 +1,5 @@
-import type { SeekableReadableStream } from '@proton/drive';
 import { logging } from '@proton/drive/modules/logging';
+import type { SeekableReadableStream } from '@proton/drive/sdk';
 
 const logger = logging.getLogger('preview-mse');
 

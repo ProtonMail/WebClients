@@ -1,5 +1,5 @@
-import type { NodeEntity } from '@proton/drive';
-import { NodeType } from '@proton/drive';
+import type { NodeEntity } from '@proton/drive/sdk';
+import { NodeType } from '@proton/drive/sdk';
 
 import type { DriveSdkBridgeInterface } from '../../../../mainThread/MainThreadBridge';
 import { Logger } from '../../../../shared/Logger';

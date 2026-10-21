@@ -1,4 +1,4 @@
-import type { Device } from '@proton/drive';
+import type { Device } from '@proton/drive/sdk';
 
 import { useDevicesStore } from './useDevices.store';
 

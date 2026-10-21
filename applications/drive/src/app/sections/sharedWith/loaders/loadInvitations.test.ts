@@ -3,7 +3,7 @@ import { getNotificationsManager } from '@proton/drive/modules/notifications';
 import { useSharedWithMeStore } from '../useSharedWithMe.store';
 import { loadInvitations } from './loadInvitations';
 
-jest.mock('@proton/drive/index', () => ({
+jest.mock('@proton/drive/sdk', () => ({
     getDrive: jest.fn(),
     getDriveForPhotos: jest.fn(),
     splitInvitationUid: jest.fn((uid: string) => ({ shareId: `share-${uid}` })),
@@ -17,7 +17,7 @@ jest.mock('@proton/drive/legacy/errorHandling', () => ({
     handleSdkError: jest.fn(),
 }));
 
-const { getDrive, getDriveForPhotos } = jest.mocked(require('@proton/drive/index'));
+const { getDrive, getDriveForPhotos } = jest.mocked(require('@proton/drive/sdk'));
 
 function fakeInvitation(uid: string) {
     return {

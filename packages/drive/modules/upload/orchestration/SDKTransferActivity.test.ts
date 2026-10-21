@@ -1,9 +1,9 @@
-import { SDKEvent, getDrive } from '../../../index';
+import { SDKEvent, getDrive } from '../../../sdk';
 import { useUploadQueueStore } from '../store/uploadQueue.store';
 import { UploadStatus } from '../types';
 import { SDKTransferActivity } from './SDKTransferActivity';
 
-jest.mock('../../../index');
+jest.mock('../../../sdk');
 jest.mock('../store/uploadQueue.store');
 
 describe('SDKTransferActivity', () => {

@@ -18,8 +18,8 @@ import {
     TextAreaTwo,
     useFormErrors,
 } from '@proton/components';
-import { AbuseCategory, type NodeType } from '@proton/drive';
 import ModalContentLoader from '@proton/drive/modals/modalUtils/ModalContentLoader';
+import { AbuseCategory, type NodeType } from '@proton/drive/sdk';
 import useLoading from '@proton/hooks/useLoading';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 

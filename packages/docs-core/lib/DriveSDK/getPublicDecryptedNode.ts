@@ -1,4 +1,4 @@
-import { generateNodeUid } from '@proton/drive'
+import { generateNodeUid } from '@proton/drive/sdk'
 import type { PublicNodeMeta } from '@proton/docs-shared'
 import type { DecryptedNode } from '@proton/docs-shared/lib/DecryptedNode'
 import { getPublicDrive, getPublicLinkInfo } from './getPublicDrive'

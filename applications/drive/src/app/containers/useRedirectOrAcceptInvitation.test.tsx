@@ -1,9 +1,9 @@
 import { act, renderHook } from '@testing-library/react';
 
-import { NodeType, ValidationError, generateInvitationUid, generateNodeUid } from '@proton/drive';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
 import { getNotificationsManager } from '@proton/drive/modules/notifications';
+import { NodeType, ValidationError, generateInvitationUid, generateNodeUid } from '@proton/drive/sdk';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { PROTON_DOCS_DOCUMENT_MIMETYPE } from '@proton/shared/lib/helpers/mimetype';
 
@@ -15,8 +15,8 @@ import { useRedirectOrAcceptInvitation } from './useRedirectOrAcceptInvitation';
 // navigation / docs) are mocked - those need a configured app. The pure UID helpers, NodeType, the
 // real ValidationError and isNativeProtonDocsAppFile are kept so the test exercises the actual
 // matching, not-found and docs-routing logic.
-jest.mock('@proton/drive', () => ({
-    ...jest.requireActual('@proton/drive'),
+jest.mock('@proton/drive/sdk', () => ({
+    ...jest.requireActual('@proton/drive/sdk'),
     getDrive: jest.fn(),
     getDriveForPhotos: jest.fn(),
     getDrivePerNodeType: jest.fn(),
@@ -45,7 +45,7 @@ jest.mock('../utils/docs/openInDocs', () => ({
     openDocsOrSheetsDocument: jest.fn(),
 }));
 
-const { getDrive, getDriveForPhotos, getDrivePerNodeType } = jest.mocked(require('@proton/drive'));
+const { getDrive, getDriveForPhotos, getDrivePerNodeType } = jest.mocked(require('@proton/drive/sdk'));
 
 const VOLUME_ID = 'volume-1';
 const LINK_ID = 'link-1';

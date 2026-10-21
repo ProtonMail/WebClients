@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { generateNodeUid } from '@proton/drive';
 import { uploadManager } from '@proton/drive/modules/upload';
+import { generateNodeUid } from '@proton/drive/sdk';
 import { IcArrowUpLine } from '@proton/icons/icons/IcArrowUpLine';
 import { IcFileArrowInUp } from '@proton/icons/icons/IcFileArrowInUp';
 import { IcFolderArrowUp } from '@proton/icons/icons/IcFolderArrowUp';

@@ -1,8 +1,8 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { NodeType } from '@proton/drive';
 import { UploadConflictStrategy, UploadConflictType } from '@proton/drive/modules/upload';
+import { NodeType } from '@proton/drive/sdk';
 
 import { UploadConflictModalView } from './UploadConflictModalView';
 

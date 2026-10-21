@@ -1,6 +1,6 @@
 import { Vr } from '@proton/atoms/Vr/Vr';
 import { Toolbar } from '@proton/components';
-import { NodeType, getDrivePerNodeType } from '@proton/drive';
+import { NodeType, getDrivePerNodeType } from '@proton/drive/sdk';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import type { Drive } from '../../../modals/preview/interface';

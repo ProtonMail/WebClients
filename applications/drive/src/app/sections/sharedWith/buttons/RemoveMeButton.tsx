@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import type { useConfirmActionModal } from '@proton/components';
 import { ToolbarButton } from '@proton/components';
-import { type NodeType, getDrivePerNodeType } from '@proton/drive';
+import { type NodeType, getDrivePerNodeType } from '@proton/drive/sdk';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 
 import { useSharingActions } from '../../../legacy/hooks/drive/useSharingActions';

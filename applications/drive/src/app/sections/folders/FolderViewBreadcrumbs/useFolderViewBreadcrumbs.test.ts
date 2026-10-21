@@ -1,9 +1,9 @@
 import { act, renderHook, waitFor } from '@testing-library/react';
 
-import { type NodeEntity, NodeType } from '@proton/drive/index';
 import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { NodeLocation, getNodeLocation } from '@proton/drive/modules/nodes';
 import { createMockNodeEntity } from '@proton/drive/modules/testing';
+import { type NodeEntity, NodeType } from '@proton/drive/sdk';
 
 import type { CrumbDefinition } from '../../../statelessComponents/Breadcrumbs/types';
 import {

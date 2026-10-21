@@ -1,4 +1,4 @@
-import { NodeType } from '@proton/drive';
+import { NodeType } from '@proton/drive/sdk';
 
 import type { DriveNode } from '../hooks/useDriveSDK';
 

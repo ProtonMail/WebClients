@@ -1,4 +1,4 @@
-import { NodeType, getDrivePerNodeType } from '@proton/drive';
+import { NodeType, getDrivePerNodeType } from '@proton/drive/sdk';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { ItemContextMenu } from '../../../legacy/components/sections/ContextMenu/ItemContextMenu';

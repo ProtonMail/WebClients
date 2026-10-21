@@ -1,4 +1,4 @@
-import type { ProtonDriveClient } from '@proton/drive';
+import type { ProtonDriveClient } from '@proton/drive/sdk';
 
 /**
  * Drive client required by the rename modal component.

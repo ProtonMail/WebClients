@@ -1,4 +1,4 @@
-import { MemberRole, NodeType } from '@proton/drive';
+import { MemberRole, NodeType } from '@proton/drive/sdk';
 import type { ReferenceRegistry } from '@proton/llm/lib/lumoAgent/contracts/types';
 
 import type { FolderViewItem } from '../../../sections/folders/useFolder.store';

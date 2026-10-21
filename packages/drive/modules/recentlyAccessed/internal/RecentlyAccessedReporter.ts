@@ -1,6 +1,6 @@
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
-import { getDrive, getDriveForPhotos } from '../../../index';
+import { getDrive, getDriveForPhotos } from '../../../sdk';
 import { logging } from '../../logging';
 
 const logger = logging.getLogger('recently-accessed');

@@ -5,8 +5,8 @@ import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { Loader, useAppTitle } from '@proton/components';
-import { getDriveForPhotos } from '@proton/drive';
 import { loadThumbnail } from '@proton/drive/modules/thumbnails';
+import { getDriveForPhotos } from '@proton/drive/sdk';
 import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 
 import { useShiftKey } from '../../legacy/hooks/util/useShiftKey';

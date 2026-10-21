@@ -1,11 +1,11 @@
 import { useCallback, useEffect, useState } from 'react';
 
 import type { ModalStateProps } from '@proton/components';
-import { getDrive } from '@proton/drive';
 import type { DirectoryTreeItem } from '@proton/drive/components/DirectoryTree/DirectoryTree';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import type { useSharingModal } from '@proton/drive/modals/sharingModal';
 import { directoryTreeFactory, getNodeUidFromTreeItemId } from '@proton/drive/modules/directoryTree';
+import { getDrive } from '@proton/drive/sdk';
 
 type SelectLinkToShareModalInnerProps = {
     showSharingModal: ReturnType<typeof useSharingModal>['showSharingModal'];

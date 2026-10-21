@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import { Dropdown, DropdownButton, DropdownMenu, DropdownMenuButton, useConfirmActionModal } from '@proton/components';
-import { getDriveForPhotos } from '@proton/drive';
+import { getDriveForPhotos } from '@proton/drive/sdk';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';

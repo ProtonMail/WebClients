@@ -1,4 +1,4 @@
-import type { NodeEntity } from '@proton/drive/index';
+import type { NodeEntity } from '@proton/drive/sdk';
 
 export const getNodeModifiedTime = (node: NodeEntity) => {
     const date = node.activeRevision?.claimedModificationTime ?? node.creationTime;

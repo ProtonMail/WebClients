@@ -1,15 +1,15 @@
 import { act, renderHook } from '@testing-library/react';
 
-import { NodeType, getDrive, getDriveForPhotos, useDrive } from '@proton/drive/index';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
+import { NodeType, getDrive, getDriveForPhotos, useDrive } from '@proton/drive/sdk';
 
 import { useTrashStore } from './useTrash.store';
 import { useTrashActions } from './useTrashActions';
 import { useTrashNotifications } from './useTrashNotifications';
 
-jest.mock('@proton/drive/index', () => ({
-    ...jest.requireActual('@proton/drive/index'),
+jest.mock('@proton/drive/sdk', () => ({
+    ...jest.requireActual('@proton/drive/sdk'),
     useDrive: jest.fn(),
     getDrive: jest.fn(),
     getDriveForPhotos: jest.fn(),

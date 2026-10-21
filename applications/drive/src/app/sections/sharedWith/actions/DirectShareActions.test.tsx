@@ -1,7 +1,7 @@
 import { render, screen, waitFor } from '@testing-library/react';
 
 import { useUser } from '@proton/account/user/hooks';
-import { NodeType, getDrivePerNodeType } from '@proton/drive';
+import { NodeType, getDrivePerNodeType } from '@proton/drive/sdk';
 
 import useShare from '../../../legacy/store/_shares/useShare';
 import { ItemType } from '../types';
@@ -11,8 +11,8 @@ const mockGetNode = jest.fn();
 
 jest.mock('@proton/account/user/hooks');
 
-jest.mock('@proton/drive', () => ({
-    ...jest.requireActual('@proton/drive'),
+jest.mock('@proton/drive/sdk', () => ({
+    ...jest.requireActual('@proton/drive/sdk'),
     getDrivePerNodeType: jest.fn(),
 }));
 

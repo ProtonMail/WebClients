@@ -1,4 +1,4 @@
-import { MemberRole, type NodeEntity } from '@proton/drive'
+import { MemberRole, type NodeEntity } from '@proton/drive/sdk'
 import { createDocumentItem } from './create-document-items'
 
 describe('createDocumentItem', () => {

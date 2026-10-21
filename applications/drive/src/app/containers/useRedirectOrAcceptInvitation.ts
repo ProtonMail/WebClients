@@ -2,11 +2,17 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import { generateNodeUid, getDrive, getDriveForPhotos, getDrivePerNodeType, splitInvitationUid } from '@proton/drive';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
 import { logging } from '@proton/drive/modules/logging';
 import { getNotificationsManager } from '@proton/drive/modules/notifications';
+import {
+    generateNodeUid,
+    getDrive,
+    getDriveForPhotos,
+    getDrivePerNodeType,
+    splitInvitationUid,
+} from '@proton/drive/sdk';
 import { isNativeProtonDocsAppFile } from '@proton/shared/lib/helpers/mimetype';
 
 import useDriveNavigation from '../legacy/hooks/drive/useNavigate';

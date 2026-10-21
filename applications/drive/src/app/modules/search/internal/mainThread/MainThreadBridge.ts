@@ -1,6 +1,6 @@
 import type { DriveEvent, MaybeMissingNode, NodeEntity, NodeType } from '@protontech/drive-sdk';
 
-import { ValidationError } from '@proton/drive';
+import { ValidationError } from '@proton/drive/sdk';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 

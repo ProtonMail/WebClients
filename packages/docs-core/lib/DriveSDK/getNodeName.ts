@@ -1,4 +1,4 @@
-import type { NodeEntity } from '@proton/drive'
+import type { NodeEntity } from '@proton/drive/sdk'
 import { c } from 'ttag'
 
 export function getNodeNameOrFallback(node: Pick<NodeEntity, 'name'>) {

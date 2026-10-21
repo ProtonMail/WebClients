@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { type NodeEntity, NodeType } from '@proton/drive';
+import { type NodeEntity, NodeType } from '@proton/drive/sdk';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 export function getAuthorshipStatus(node: NodeEntity): {
