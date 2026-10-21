@@ -6,6 +6,8 @@ export type {
 export type { DocsLogger } from './contract/DocsLogger'
 export { DocsDependenciesProvider } from './DocsDependenciesProvider'
 export type { DocsDependencies } from './DocsDependenciesProvider'
+export type { DocsMessages } from './messages/DocsMessages'
+export { defaultDocsMessages } from './messages/defaultDocsMessages'
 export { StandaloneDocsEditor } from './StandaloneDocsEditor'
 export { DocsLayoutContainer } from './Layout/DocsLayout'
 export { getDocsLayoutScrollContainer } from './Layout/docsLayoutUtils'

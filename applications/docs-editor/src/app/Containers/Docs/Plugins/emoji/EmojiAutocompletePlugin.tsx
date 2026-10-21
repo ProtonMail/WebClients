@@ -10,7 +10,7 @@ import { $getSelection, $isRangeSelection, $isTextNode, PASTE_TAG, type RangeSel
 import { useContext, useEffect, useId, useRef, useState } from 'react'
 import { clsx } from 'clsx'
 import { createPortal } from 'react-dom'
-import { defaultEmojiMessages, type EmojiMessages } from './emojiMessages'
+import { useDocsMessages } from '../../DocsDependenciesProvider'
 import { loadEmojis, searchEmojis, type Emoji } from './emojiData'
 import { insertEmoji } from './insertEmoji'
 
@@ -67,9 +67,8 @@ function $getMatch(): Match | null {
   }
 }
 
-export type EmojiAutocompletePluginProps = { messages?: EmojiMessages }
-
-export default function EmojiAutocompletePlugin({ messages = defaultEmojiMessages }: EmojiAutocompletePluginProps) {
+export default function EmojiAutocompletePlugin() {
+  const messages = useDocsMessages().emoji
   const [editor] = useLexicalComposerContext()
   const portalRoot = useContext(Ariakit.PortalContext)
   const id = useId()
