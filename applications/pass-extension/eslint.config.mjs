@@ -9,7 +9,7 @@ export default defineConfig([
         extends: [
             defaultConfig,
             createRestrictedImportsConfig({
-                rollout: ['components-barrel', 'icon-component'],
+                rollout: ['components-barrel'],
             }),
             {
                 rules: {

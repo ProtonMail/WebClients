@@ -1,13 +1,11 @@
 import { defineConfig } from 'eslint/config';
 
 import config from '@proton/eslint-config-proton/all';
-import { createRestrictedImportsConfig } from '@proton/eslint-config-proton/restrictedImports';
 
 import noDirectIframeAccess from './eslint-rules/no-direct-iframe-access.mjs';
 
 export default defineConfig([
     config,
-    createRestrictedImportsConfig({ rollout: ['icon-component'] }),
     {
         plugins: {
             'mail-renderer': {
