@@ -38,6 +38,7 @@ function DriftDetectionErrorModal({
         isOpen={isOpen === undefined ? true : isOpen}
         onClose={handleClose}
         {...modalProps}
+        data-testid="drift-detection-error-modal"
         title={c('Title').t`Editing paused`}
         footer={
           <div className="flex items-center gap-2.5">
