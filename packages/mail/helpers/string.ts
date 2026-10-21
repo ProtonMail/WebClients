@@ -72,7 +72,13 @@ const lineBreaksPattern = '\\r\\n|\\r|\\n';
 const lineBreaksRegex = new RegExp(`(?:${lineBreaksPattern})`, 'g');
 
 // %0A, %0D, %0C are encoded line breaks (LF, CR, FF)
-const encodedAndUnencodedLineBreaksRegex = new RegExp(`(?:${lineBreaksPattern}|%0A|%0D|%0C)`, 'gi');
+const encodedLineBreaksPattern = '%0A|%0D|%0C';
+// Encoded line breaks are only noise at the start or end of the string, e.g. "https://example.com/image.png%0A".
+// Inside the string they can be data, e.g. a newline separated payload in a query param of a barcode URL.
+const edgeEncodedLineBreaksRegex = new RegExp(
+    `^(?:${encodedLineBreaksPattern})+|(?:${encodedLineBreaksPattern})+$`,
+    'gi'
+);
 export const replaceLineBreaks = (content: string) => {
     return content.replace(lineBreaksRegex, '<br />');
 };
@@ -81,8 +87,13 @@ export const removeLineBreaks = (content: string) => {
     return content.replace(lineBreaksRegex, '');
 };
 
+/**
+ * Remove regular line breaks everywhere, and encoded line breaks (%0A, %0D, %0C) only at the start or end of the string.
+ * Encoded line breaks in the middle are kept because they can be meaningful (e.g. `?data=A%0AB` in a barcode URL).
+ */
 export const removeEncodedAndUnencodedLineBreaks = (content: string) => {
-    return content.replace(encodedAndUnencodedLineBreaksRegex, '');
+    // Remove regular line breaks first, so that encoded ones followed by a regular one are considered at the edge
+    return content.replace(lineBreaksRegex, '').replace(edgeEncodedLineBreaksRegex, '');
 };
 
 /**
