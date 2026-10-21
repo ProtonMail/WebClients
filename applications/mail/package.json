@@ -57,7 +57,7 @@
         "@proton/telemetry-tracker": "workspace:^",
         "@proton/unleash": "workspace:^",
         "@proton/utils": "workspace:^",
-        "@protontech/crypto": "*",
+        "@protontech/crypto": "catalog:",
         "@protontech/logger": "catalog:",
         "@protontech/mimemessage": "~v1.1.4",
         "@reduxjs/toolkit": "^2.13.0",

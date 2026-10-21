@@ -56,7 +56,7 @@
         "@proton/sanitize": "workspace:^",
         "@proton/shared": "workspace:^",
         "@proton/utils": "workspace:^",
-        "@protontech/crypto": "*",
+        "@protontech/crypto": "catalog:",
         "@reduxjs/toolkit": "^2.13.0",
         "lodash": "^4.18.1",
         "react": "^18.3.1"

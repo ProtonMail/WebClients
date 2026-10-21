@@ -20,7 +20,7 @@
     "@proton/shared": "workspace:^",
     "@proton/unleash": "workspace:^",
     "@proton/utils": "workspace:^",
-    "@protontech/crypto": "*",
+    "@protontech/crypto": "catalog:",
     "@rowsncolumns/spreadsheet-state": "workspace:^",
     "fflate": "^0.8.3",
     "jszip": "^3.10.2",

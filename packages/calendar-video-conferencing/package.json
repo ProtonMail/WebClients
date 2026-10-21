@@ -45,7 +45,7 @@
         "@proton/styles": "workspace:^",
         "@proton/unleash": "workspace:^",
         "@proton/utils": "workspace:^",
-        "@protontech/crypto": "*",
+        "@protontech/crypto": "catalog:",
         "lodash": "^4.18.1",
         "react": "^18.3.1",
         "react-router-dom": "^5.3.4",

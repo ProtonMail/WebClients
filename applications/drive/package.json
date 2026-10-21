@@ -55,7 +55,7 @@
         "@proton/telemetry-tracker": "workspace:^",
         "@proton/unleash": "workspace:^",
         "@proton/utils": "workspace:^",
-        "@protontech/crypto": "*",
+        "@protontech/crypto": "catalog:",
         "@protontech/drive-sdk": "catalog:",
         "@reduxjs/toolkit": "^2.13.0",
         "@sentry/types": "^7.120.4",
