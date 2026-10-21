@@ -56,6 +56,10 @@ vi.mock('@proton/meet/telemetry/meetTelemetry', async (importOriginal) => ({
     sendMeetDashboardEvent: vi.fn(),
 }));
 
+vi.mock('@proton/unleash/useFlag', () => ({
+    useFlag: () => true,
+}));
+
 vi.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: () => ({ createNotification: vi.fn() }),
 }));
@@ -73,7 +77,7 @@ vi.mock('../../utils/desktopAppDetector', async (importOriginal) => ({
     tryOpenInDesktopApp: vi.fn(),
 }));
 
-const OPEN_IN_DESKTOP_APP = 'Open this meeting in the desktop app';
+const OPEN_IN_DESKTOP_APP = 'Join from Proton Meet app';
 const WAITING_ROOM_HINT = 'This meeting has a waiting room';
 
 const renderPreJoinDetails = ({ instantMeeting = false, onJoinMeeting = vi.fn() } = {}) =>
@@ -179,40 +183,41 @@ describe('PreJoinDetails', () => {
             expect(screen.queryByRole('button', { name: OPEN_IN_DESKTOP_APP })).not.toBeInTheDocument();
         });
 
-        it('places the link above the waiting room hint and the card below it', () => {
+        it('places the button between the join button and the waiting room hint', () => {
             mocks.waitingRoomEnabled = true;
             renderPreJoinDetails();
 
+            const joinButton = screen.getByRole('button', { name: 'Join in browser' });
+            const appButton = screen.getByRole('button', { name: OPEN_IN_DESKTOP_APP });
             const hint = screen.getByText(WAITING_ROOM_HINT);
-            const link = screen.getByRole('button', { name: OPEN_IN_DESKTOP_APP });
-            expect(link.compareDocumentPosition(hint) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
-
-            fireEvent.click(link);
-
-            const card = screen.getByText("App didn't open?");
-            expect(hint.compareDocumentPosition(card) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+            expect(joinButton.compareDocumentPosition(appButton) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+            expect(appButton.compareDocumentPosition(hint) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
         });
 
-        it('opens the meeting and replaces the link with the help card', () => {
+        it('opens the meeting and keeps joining in the browser available', () => {
             renderPreJoinDetails();
 
             fireEvent.click(screen.getByRole('button', { name: OPEN_IN_DESKTOP_APP }));
 
             expect(tryOpenInDesktopApp).toHaveBeenCalledWith(MEETING_LINK);
-            expect(screen.queryByRole('button', { name: OPEN_IN_DESKTOP_APP })).not.toBeInTheDocument();
             expect(screen.getByText("App didn't open?")).toBeInTheDocument();
-            expect(screen.getByRole('button', { name: 'Try again' })).toHaveFocus();
             expect(screen.getByRole('button', { name: 'Join in browser' })).toBeEnabled();
         });
 
-        it('retries the same meeting from the help card', () => {
+        it('opens the app on load when the choice was remembered', () => {
+            saveDesktopAppPreference();
             renderPreJoinDetails();
 
-            fireEvent.click(screen.getByRole('button', { name: OPEN_IN_DESKTOP_APP }));
-            fireEvent.click(screen.getByRole('button', { name: 'Try again' }));
+            expect(tryOpenInDesktopApp).toHaveBeenCalledWith(MEETING_LINK);
+            expect(screen.getByText("App didn't open?")).toBeInTheDocument();
+            expect(screen.getByRole('button', { name: 'Join in browser' })).toBeEnabled();
+        });
 
-            expect(tryOpenInDesktopApp).toHaveBeenCalledTimes(2);
-            expect(tryOpenInDesktopApp).toHaveBeenNthCalledWith(2, MEETING_LINK);
+        it('does not open the app on load for an instant meeting', () => {
+            saveDesktopAppPreference();
+            renderPreJoinDetails({ instantMeeting: true });
+
+            expect(tryOpenInDesktopApp).not.toHaveBeenCalled();
         });
 
         it('forgets the desktop app choice when joining in the browser', () => {
