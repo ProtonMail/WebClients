@@ -7,9 +7,11 @@ import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import { useTrialInfo } from '@proton/payments-ui/ui/hooks/useTrialInfo';
 import { getSubscriptionPlanTitles } from '@proton/payments/core/subscription/helpers';
+import { getUpgradePath } from '@proton/payments/core/subscription/upsell';
 import { type APP_NAMES, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/ref';
 import { getInitials } from '@proton/shared/lib/helpers/string';
-import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
+import { addRefToUrl } from '@proton/utils/addRefToUrl';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useTrialOnlyPaymentMethods } from '../../hooks/useTrialOnlyPaymentMethods';
@@ -35,7 +37,7 @@ export const useUserDropdownInfo = ({ app }: { app: APP_NAMES }) => {
         fromApp: app,
     });
 
-    const upgradeUrl = addUpsellPath(upgradePathname, upsellRef);
+    const upgradeUrl = addRefToUrl(upgradePathname, upsellRef);
     const displayUpgradeButton: boolean =
         (user.isFree || (!!hasAtLeastOneTrial && !hasTrialPaymentMethods)) &&
         !hasAtLeastOneB2BTrial &&

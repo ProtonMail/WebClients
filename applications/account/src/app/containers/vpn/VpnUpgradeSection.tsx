@@ -7,6 +7,7 @@ import { Card } from '@proton/atoms/Card/Card';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { PLANS } from '@proton/payments/core/constants';
+import { getSubscriptionSearchParamsString } from '@proton/payments/core/subscription/search-params';
 import { VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { canPay, isPaid } from '@proton/shared/lib/user/helpers';
 
@@ -23,6 +24,7 @@ const VpnUpgradeSection = () => {
     }
 
     const planName = vpnPlan.Title;
+    const upgradeSearch = getSubscriptionSearchParamsString({ plan: targetPlan });
 
     return (
         <SettingsSectionWide>
@@ -35,7 +37,7 @@ const VpnUpgradeSection = () => {
                     )}
                 </p>
 
-                <ButtonLike color="norm" as={SettingsLink} path={`/dashboard?plan=${targetPlan}`}>
+                <ButtonLike color="norm" as={SettingsLink} path={`/dashboard?${upgradeSearch}`}>
                     {c('Action').t`Upgrade`}
                 </ButtonLike>
             </Card>

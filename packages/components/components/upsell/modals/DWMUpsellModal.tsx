@@ -6,7 +6,7 @@ import {
     MAIL_UPSELL_PATHS,
     type UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
-import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRef } from '@proton/shared/lib/helpers/ref';
 import illustration from '@proton/styles/assets/img/illustrations/dwm-upsell-shield.svg';
 
 import type { ModalStateProps } from '../../modalTwo/useModalState';

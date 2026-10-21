@@ -26,10 +26,11 @@ import {
     willTrialExpireInLessThan1Week,
 } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { getUpgradePath } from '@proton/payments/core/subscription/upsell';
 import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/ref';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { getPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 
@@ -138,8 +139,8 @@ const ManageSubscriptionButton = ({ app, target, closeModal, children, ...rest }
     }
 
     // For all other apps we render the button that will redirect to the account app
-    const upgradePath = addUpsellPath(
-        getUpgradePath({ user, subscription, target, app: APP_NAME, disablePlanSelection, cycle: CYCLE.YEARLY }),
+    const upgradePath = getUpgradePath(
+        { user, subscription, target, app: APP_NAME, disablePlanSelection, cycle: CYCLE.YEARLY },
         upsellRef
     );
     return (

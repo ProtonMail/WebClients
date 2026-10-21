@@ -7,7 +7,8 @@ import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { addUpsellPath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/ref';
+import { addRefToUrl } from '@proton/utils/addRefToUrl';
 
 import SettingsLink from '../../../../components/link/SettingsLink';
 import type { ModalProps } from '../../../../components/modalTwo/Modal';
@@ -31,7 +32,7 @@ const OrganizationCapacityErrorModal = ({ error, onCancel, onContinue, app, ...r
         component: UPSELL_COMPONENT.MODAL,
     });
 
-    const link = addUpsellPath('/dashboard', upsellRef);
+    const link = addRefToUrl('/dashboard', upsellRef);
     const upgradeLink = (
         <SettingsLink path={link} key="upgrade-plan-key">{c('Link').t`Upgrade your plan`}</SettingsLink>
     );

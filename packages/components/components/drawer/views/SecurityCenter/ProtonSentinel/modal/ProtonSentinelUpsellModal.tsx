@@ -6,7 +6,7 @@ import {
     PROTON_SENTINEL_NAME,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
-import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRef } from '@proton/shared/lib/helpers/ref';
 import shieldImg from '@proton/styles/assets/img/illustrations/new-upsells-img/shield.svg';
 
 import type { ModalStateProps } from '../../../../../modalTwo/useModalState';

@@ -1,33 +1,7 @@
 import { APPS, APP_UPSELL_REF_PATH, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '../../lib/constants';
-import { addUpsellPath, getUpgradePath, getUpsellRef, getUpsellRefFromApp } from '../../lib/helpers/upsell';
-import type { UserModel } from '../../lib/interfaces/User';
-import { PLANS, PLAN_TYPES } from '../../lib/payments/constants';
-import type { Subscription } from '../../lib/payments/subscription/interface';
+import { getUpsellRef, getUpsellRefFromApp } from '../../lib/helpers/ref';
 
 const feature = SHARED_UPSELL_PATHS.STORAGE;
-
-describe('addUpsellPath', () => {
-    it('should add the upsell path to the link', () => {
-        const link = '/myLink';
-        const upsellPath = 'myUpsellPath';
-
-        const expected = `${link}?ref=${upsellPath}`;
-        expect(addUpsellPath(link, upsellPath)).toEqual(expected);
-    });
-
-    it('should add the upsell path in a new param to the link', function () {
-        const link = '/myLink?something=1';
-        const upsellPath = 'myUpsellPath';
-
-        const expected = `${link}&ref=${upsellPath}`;
-        expect(addUpsellPath(link, upsellPath)).toEqual(expected);
-    });
-
-    it('should not add anything to the link', () => {
-        const link = '/myLink';
-        expect(addUpsellPath(link, undefined)).toEqual(link);
-    });
-});
 
 describe('getUpsellRef', () => {
     it('should generate expected upsell ref with app and feature', () => {
@@ -89,37 +63,6 @@ describe('getUpsellRefFromApp', () => {
         // Open from vpn settings
         expect(getUpsellRefFromApp({ app: APPS.PROTONACCOUNT, feature, fromApp: APPS.PROTONVPN_SETTINGS })).toEqual(
             `${APP_UPSELL_REF_PATH.VPN_UPSELL_REF_PATH}${feature}_settings`
-        );
-    });
-});
-
-describe('getUpgradePath', () => {
-    const paidUser = { isFree: false } as UserModel;
-
-    const subscriptionWith = (planName: string) =>
-        ({ Plans: [{ Name: planName, Type: PLAN_TYPES.PLAN }] }) as unknown as Subscription;
-
-    it('should fall back to the current plan when no plan is given', () => {
-        expect(getUpgradePath({ user: paidUser, subscription: subscriptionWith(PLANS.MAIL) })).toEqual(
-            `/dashboard?plan=${PLANS.MAIL}&target=compare`
-        );
-    });
-
-    it('should replace the deprecated VPN plan of the current subscription', () => {
-        expect(getUpgradePath({ user: paidUser, subscription: subscriptionWith(PLANS.VPN) })).toEqual(
-            `/dashboard?plan=${PLANS.VPN2024}&target=compare`
-        );
-    });
-
-    it('should keep an explicitly requested plan', () => {
-        expect(
-            getUpgradePath({ user: paidUser, subscription: subscriptionWith(PLANS.VPN), plan: PLANS.BUNDLE })
-        ).toEqual(`/dashboard?plan=${PLANS.BUNDLE}&target=compare`);
-    });
-
-    it('should fall back to the bundle plan when the subscription has no plan', () => {
-        expect(getUpgradePath({ user: paidUser, subscription: undefined })).toEqual(
-            `/dashboard?plan=${PLANS.BUNDLE}&target=compare`
         );
     });
 });

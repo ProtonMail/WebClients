@@ -6,6 +6,7 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
+import { getUpgradePath } from '@proton/payments/core/subscription/upsell';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     APPS,
@@ -15,7 +16,7 @@ import {
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/ref';
 import {
     SpaceState,
     getAppStorage,
@@ -217,8 +218,8 @@ const YourStorageSection = ({ app }: Props) => {
                             cta={
                                 <ButtonLike
                                     as={SettingsLink}
-                                    path={addUpsellPath(
-                                        getUpgradePath({ user, subscription, plan }),
+                                    path={getUpgradePath(
+                                        { user, subscription, plan },
                                         getUpsellRefFromApp({
                                             app,
                                             feature: SHARED_UPSELL_PATHS.STORAGE_PERCENTAGE,

@@ -12,6 +12,12 @@ import { UserLockedFlags } from '@proton/shared/lib/interfaces/User';
 import { renderWithProviders } from '../../testing/renderWithProviders';
 import { LockedStateTopBanner } from './LockedStateTopBanner';
 
+const expectHrefParams = (link: HTMLElement, expected: Record<string, string>) => {
+    const href = link.getAttribute('href') ?? '';
+    const params = new URLSearchParams(href.split('?')[1]);
+    Object.entries(expected).forEach(([key, value]) => expect(params.get(key)).toBe(value));
+};
+
 jest.mock('@proton/account/previousSubscription/hooks', () => ({
     useGetPreviousSubscription: jest.fn(),
 }));
@@ -60,10 +66,11 @@ describe('LockedStateTopBanner', () => {
         );
 
         expect(getPreviousSubscription).not.toHaveBeenCalled();
-        expect(screen.getByRole('link', { name: 'upgrade for more storage' })).toHaveAttribute(
-            'href',
-            expect.stringContaining(`/dashboard?plan=${PLANS.BUNDLE}&target=compare&ref=locked-storage`)
-        );
+        expectHrefParams(screen.getByRole('link', { name: 'upgrade for more storage' }), {
+            plan: PLANS.BUNDLE,
+            target: 'compare',
+            ref: 'locked-storage',
+        });
     });
 
     it('falls back to the Drive plan for regular locked storage upgrade paths in Drive', () => {
@@ -78,10 +85,10 @@ describe('LockedStateTopBanner', () => {
         );
 
         expect(getPreviousSubscription).not.toHaveBeenCalled();
-        expect(screen.getByRole('link', { name: 'upgrade for more storage' })).toHaveAttribute(
-            'href',
-            expect.stringContaining(`/dashboard?plan=${PLANS.DRIVE}&target=compare`)
-        );
+        expectHrefParams(screen.getByRole('link', { name: 'upgrade for more storage' }), {
+            plan: PLANS.DRIVE,
+            target: 'compare',
+        });
     });
 
     it('falls back to the Mail plan for regular locked storage upgrade paths outside Drive', () => {
@@ -96,10 +103,10 @@ describe('LockedStateTopBanner', () => {
         );
 
         expect(getPreviousSubscription).not.toHaveBeenCalled();
-        expect(screen.getByRole('link', { name: 'upgrade for more storage' })).toHaveAttribute(
-            'href',
-            expect.stringContaining(`/dashboard?plan=${PLANS.MAIL}&target=compare`)
-        );
+        expectHrefParams(screen.getByRole('link', { name: 'upgrade for more storage' }), {
+            plan: PLANS.MAIL,
+            target: 'compare',
+        });
     });
 
     it('uses the previous subscription plan and checkout target for primary admins restoring access', () => {
@@ -122,10 +129,10 @@ describe('LockedStateTopBanner', () => {
         );
 
         expect(getPreviousSubscription).toHaveBeenCalledTimes(1);
-        expect(screen.getByRole('link', { name: 'Upgrade to restore full access' })).toHaveAttribute(
-            'href',
-            expect.stringContaining(`/dashboard?plan=${PLANS.BUNDLE_PRO_2024}&target=checkout`)
-        );
+        expectHrefParams(screen.getByRole('link', { name: 'Upgrade to restore full access' }), {
+            plan: PLANS.BUNDLE_PRO_2024,
+            target: 'checkout',
+        });
     });
 
     it('uses compare target when primary admins have no current or previous subscription plan', () => {
@@ -148,9 +155,8 @@ describe('LockedStateTopBanner', () => {
         );
 
         expect(getPreviousSubscription).toHaveBeenCalledTimes(1);
-        expect(screen.getByRole('link', { name: 'Upgrade to restore full access' })).toHaveAttribute(
-            'href',
-            expect.stringContaining('target=compare')
-        );
+        expectHrefParams(screen.getByRole('link', { name: 'Upgrade to restore full access' }), {
+            target: 'compare',
+        });
     });
 });

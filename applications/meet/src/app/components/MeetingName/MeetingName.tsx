@@ -12,7 +12,6 @@ import {
 } from '@proton/meet/store/slices/participants/participantsSlice';
 import { selectShowDuration } from '@proton/meet/store/slices/uiStateSlice';
 import { selectSubscriptionStatus } from '@proton/meet/store/slices/userSlice';
-import { PLANS } from '@proton/payments/core/constants';
 import { MINUTE, SECOND } from '@proton/shared/lib/constants';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -21,6 +20,7 @@ import clsx from '@proton/utils/clsx';
 import { CloseButton } from '../../atoms/CloseButton/CloseButton';
 import { useMeetingDuration } from '../../hooks/useMeetingDuration';
 import { formatDuration } from '../../utils/formatDuration';
+import { getMeetUpgradeLink } from '../../utils/getMeetUpgradeLink';
 import { MeetingDuration } from '../MeetingDuration/MeetingDuration';
 import { UpgradeIcon } from '../UpgradeIcon/UpgradeIcon';
 
@@ -48,7 +48,7 @@ const CTAContainer = ({ children }: { children: React.ReactNode }) => {
     const isFreeAdminOrHost = (isLocalParticipantAdminOrHost || isGuestAdmin) && !isPaidUser && !isSubUser;
 
     const isPopupOpen = (isHovered || showRemainingTime) && meetCountdownUpsellEnabled;
-
+    const upgradeLink = getMeetUpgradeLink(hasSubscriptionWithoutMeet);
     const timeLeft = (
         <time dateTime={formatDuration(timeLeftMs)} className="text-tabular-nums" key="time-left">
             {formatDuration(timeLeftMs)}
@@ -160,15 +160,7 @@ const CTAContainer = ({ children }: { children: React.ReactNode }) => {
                                         .t`Upgrade to remove the 1-hour limit and skip the countdown. Enjoy meetings up to 24 hours.`}
                                 </div>
                             </div>
-                            <SettingsLink
-                                className="w-full"
-                                path={
-                                    hasSubscriptionWithoutMeet
-                                        ? `/dashboard?addon=meet`
-                                        : `/dashboard?plan=${PLANS.MEET_BUSINESS}`
-                                }
-                                target={'_blank'}
-                            >
+                            <SettingsLink className="w-full" path={upgradeLink} target={'_blank'}>
                                 <Button
                                     className="create-account-button rounded-full color-invert reload-button py-3 w-full"
                                     color="norm"

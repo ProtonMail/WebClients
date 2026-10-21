@@ -20,7 +20,7 @@ import {
     MAIL_UPSELL_PATHS,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
-import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRef } from '@proton/shared/lib/helpers/ref';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 
 import Editor from '../../components/editor/Editor';
