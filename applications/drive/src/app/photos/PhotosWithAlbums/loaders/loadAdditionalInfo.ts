@@ -1,6 +1,6 @@
-import { getDriveForPhotos } from '@proton/drive';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { isMissingNode } from '@proton/drive/modules/nodes';
+import { getDriveForPhotos } from '@proton/drive/sdk';
 
 import { createDebouncedBuffer } from '../../../utils/createDebouncedBuffer';
 import { type PhotoItem, usePhotosStore } from '../../usePhotos.store';

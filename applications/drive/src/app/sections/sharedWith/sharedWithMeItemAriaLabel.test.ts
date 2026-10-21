@@ -1,4 +1,4 @@
-import { MemberRole, NodeType } from '@proton/drive';
+import { MemberRole, NodeType } from '@proton/drive/sdk';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 
 import { getSharedWithMeItemAriaLabel } from './sharedWithMeItemAriaLabel';

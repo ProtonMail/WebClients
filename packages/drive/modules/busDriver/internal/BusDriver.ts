@@ -5,7 +5,7 @@ import type { EventManager } from '@proton/shared/lib/eventManager/eventManager'
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { getItem } from '@proton/shared/lib/helpers/storage';
 
-import { DriveEventType, getDrive, getDriveForPhotos } from '../../..';
+import { DriveEventType, getDrive, getDriveForPhotos } from '../../../sdk';
 import { logging } from '../../logging';
 import {
     type BusDriverClient,

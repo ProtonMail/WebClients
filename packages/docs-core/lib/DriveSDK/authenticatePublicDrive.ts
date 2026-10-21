@@ -1,4 +1,4 @@
-import { getDrive, MemberRole, type NodeEntity, NodeType, splitNodeUid } from '@proton/drive'
+import { getDrive, MemberRole, type NodeEntity, NodeType, splitNodeUid } from '@proton/drive/sdk'
 import metrics from '@proton/metrics/metricsInstance'
 import { SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions'
 import { getPublicDrive, type PublicLinkInfo, setPublicDrive, setPublicLinkInfo } from './getPublicDrive'

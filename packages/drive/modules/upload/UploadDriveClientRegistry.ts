@@ -2,7 +2,7 @@ import type { ProtonDriveClient } from '@protontech/drive-sdk';
 import type { ProtonDrivePhotosClient } from '@protontech/drive-sdk/dist/protonDrivePhotosClient';
 import type { ProtonDrivePublicLinkClient } from '@protontech/drive-sdk/dist/protonDrivePublicLinkClient';
 
-import { getDrive, getDriveForPhotos } from '../../index';
+import { getDrive, getDriveForPhotos } from '../../sdk';
 
 /**
  * Centralized registry for drive client instances used in uploads.

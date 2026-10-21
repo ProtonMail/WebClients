@@ -5,7 +5,7 @@ import { ReportAbuseModalView, type ReportAbuseModalViewProps } from './ReportAb
 import type { AbuseReportPrefill } from './types';
 import { type UseReportAbuseModalProps, useReportAbuseModalState } from './useReportAbuseModalState';
 
-export { AbuseCategory } from '@proton/drive';
+export { AbuseCategory } from '@proton/drive/sdk';
 export type { AbuseReportPrefill };
 
 const ReportAbuseModal = withHoc<UseReportAbuseModalProps, ReportAbuseModalViewProps>(

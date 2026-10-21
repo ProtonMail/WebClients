@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { useShallow } from 'zustand/react/shallow';
 
-import { getDrive } from '@proton/drive';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
+import { getDrive } from '@proton/drive/sdk';
 import useLoading from '@proton/hooks/useLoading';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';

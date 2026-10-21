@@ -1,6 +1,6 @@
 import { useGetAddresses } from '@proton/account/addresses/hooks'
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks'
-import type { Author } from '@proton/drive'
+import type { Author } from '@proton/drive/sdk'
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email'
 import { useCallback } from 'react'
 import { getMyFilesRootFolder } from '../DriveSDK/getMyFilesNodeMeta'

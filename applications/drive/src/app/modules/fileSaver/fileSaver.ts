@@ -1,5 +1,5 @@
-import { AbortError } from '@proton/drive';
 import { EnrichedError, isValidationError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
+import { AbortError } from '@proton/drive/sdk';
 import metrics from '@proton/metrics/metricsInstance';
 import { MEMORY_DOWNLOAD_LIMIT } from '@proton/shared/lib/drive/constants';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';

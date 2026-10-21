@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { getDrive } from '@proton/drive';
+import { getDrive } from '@proton/drive/sdk';
 import { IcClockRotateLeft } from '@proton/icons/icons/IcClockRotateLeft';
 
 import type { useRevisionsModal } from '../../../modals/RevisionsModal';

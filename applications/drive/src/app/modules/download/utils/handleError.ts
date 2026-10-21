@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
-import type { NodeEntity } from '@proton/drive/index';
 import { EnrichedError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { getNodeName } from '@proton/drive/modules/nodes';
+import type { NodeEntity } from '@proton/drive/sdk';
 import { getFileExtension } from '@proton/shared/lib/helpers/mimetype';
 
 import { getNodeStorageSize } from '../../../utils/sdk/getNodeStorageSize';

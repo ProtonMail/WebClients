@@ -1,10 +1,10 @@
 import { renderHook } from '@testing-library/react';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { MemberRole, type NodeEntity, NodeType, getDrivePerNodeType } from '@proton/drive/index';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
+import { MemberRole, type NodeEntity, NodeType, getDrivePerNodeType } from '@proton/drive/sdk';
 
 import { useInvitationsActions } from './useInvitationsActions';
 
@@ -12,8 +12,8 @@ jest.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: jest.fn(),
 }));
 
-jest.mock('@proton/drive', () => ({
-    ...jest.requireActual('@proton/drive'),
+jest.mock('@proton/drive/sdk', () => ({
+    ...jest.requireActual('@proton/drive/sdk'),
     getDrivePerNodeType: jest.fn(),
     NodeType: {
         Folder: 'folder',
@@ -80,7 +80,7 @@ describe('useInvitationsActions', () => {
             node: mockNode,
         } as any);
 
-        const { splitNodeUid } = require('@proton/drive/index');
+        const { splitNodeUid } = require('@proton/drive/sdk');
         jest.mocked(splitNodeUid).mockReturnValue({
             volumeId: 'volume-id-1',
             nodeId: 'node-id-1',

@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 
-import { generateNodeUid } from '@proton/drive';
 import { uploadManager } from '@proton/drive/modules/upload';
+import { generateNodeUid } from '@proton/drive/sdk';
 
 declare global {
     interface DataTransferItem {

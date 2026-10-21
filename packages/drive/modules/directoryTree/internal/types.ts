@@ -1,4 +1,4 @@
-import type { MemberRole, NodeType } from '../../../index';
+import type { MemberRole, NodeType } from '../../../sdk';
 import type { directoryTreeStoreFactory } from './directoryTreeStoreFactory';
 
 export enum DirectoryTreeRootType {

@@ -1,5 +1,5 @@
-import type { ProtonDriveClient } from '@proton/drive';
-import { NodeType, getDrive } from '@proton/drive';
+import type { ProtonDriveClient } from '@proton/drive/sdk';
+import { NodeType, getDrive } from '@proton/drive/sdk';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 
 import { BACKGROUNDS_FOLDER_PATH } from '../constants';

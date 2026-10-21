@@ -6,8 +6,8 @@ import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
-import { useDrive } from '@proton/drive';
 import { getNotificationsManager } from '@proton/drive/modules/notifications';
+import { useDrive } from '@proton/drive/sdk';
 import { queryLatestVolumeEvent } from '@proton/shared/lib/api/drive/volume';
 
 import { SearchModule } from '../mainThread/SearchModule';

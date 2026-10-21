@@ -1,4 +1,4 @@
-import { MemberRole, NodeType } from '../../../index';
+import { MemberRole, NodeType } from '../../../sdk';
 import { makeTreeItemId } from './helpers';
 import { toTree } from './toTree';
 import type { TreeStoreItem } from './types';

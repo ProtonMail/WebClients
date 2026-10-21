@@ -9,7 +9,7 @@ import {
 } from '@proton/components';
 import DefaultQuickSettings from '@proton/components/components/drawer/views/quickSettings/DefaultQuickSettings';
 import DrawerAllSettingsView from '@proton/components/components/drawer/views/quickSettings/DrawerAllSettingsView';
-import { useDrive } from '@proton/drive';
+import { useDrive } from '@proton/drive/sdk';
 
 import { useDebug } from '../../../legacy/hooks/drive/useDebug';
 import { useDiagnosticsModal } from '../../../modals/DiagnosticsModal';

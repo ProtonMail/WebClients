@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import type { ModalStateProps } from '@proton/components';
-import { getDrive } from '@proton/drive/index';
+import { getDrive } from '@proton/drive/sdk';
 import useLoading from '@proton/hooks/useLoading';
 
 import { getNodeStorageSize } from '../../utils/sdk/getNodeStorageSize';

@@ -9,11 +9,11 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { type ModalStateProps, useFormErrors } from '@proton/components';
 
-import { getDrive } from '../../../index';
 import { handleSdkError } from '../../../legacy/errorHandling';
 import { BusDriverEventName, getBusDriver } from '../../../modules/busDriver';
 import { getEllipsedName } from '../../../modules/intl';
 import { validateNodeName } from '../../../modules/validation';
+import { getDrive } from '../../../sdk';
 
 type Drive = Pick<ProtonDriveClient, 'createFolder' | 'getNode'>;
 

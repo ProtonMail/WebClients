@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { NodeType } from '@proton/drive';
+import { NodeType } from '@proton/drive/sdk';
 import { IcLockExclamationFilled } from '@proton/icons/icons/IcLockExclamationFilled';
 
 interface SimpleSignatureIconProps {

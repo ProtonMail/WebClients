@@ -4,7 +4,7 @@ import {
     AbortError as SdkAbortError,
     RateLimitedError as SdkRateLimitedError,
     ServerError as SdkServerError,
-} from '@proton/drive';
+} from '@proton/drive/sdk';
 
 import { registerComlinkErrorTransferHandler } from './comlinkErrorTransferHandler';
 import { InvalidIndexerState, classifyError } from './errors';

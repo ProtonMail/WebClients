@@ -1,6 +1,6 @@
 import { useGetAddresses } from '@proton/account/addresses/hooks'
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks'
-import { generateNodeUid, getDrive } from '@proton/drive'
+import { generateNodeUid, getDrive } from '@proton/drive/sdk'
 import type { Api } from '@proton/shared/lib/interfaces/Api'
 import { renderHook } from '@testing-library/react'
 import { traceErrorSDK } from '../DriveSDK/traceErrorSDK'
@@ -8,8 +8,8 @@ import { useGetMemberAddressKeys } from './useGetMemberAddressKeys'
 
 jest.mock('@proton/account/addresses/hooks')
 jest.mock('@proton/account/addressKeys/hooks')
-jest.mock('@proton/drive', () => ({
-  ...jest.requireActual('@proton/drive'),
+jest.mock('@proton/drive/sdk', () => ({
+  ...jest.requireActual('@proton/drive/sdk'),
   getDrive: jest.fn(),
 }))
 jest.mock('../DriveSDK/traceErrorSDK')

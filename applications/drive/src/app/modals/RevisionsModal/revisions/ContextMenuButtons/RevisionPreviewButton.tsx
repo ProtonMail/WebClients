@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { Revision } from '@proton/drive';
+import type { Revision } from '@proton/drive/sdk';
 import { IcEye } from '@proton/icons/icons/IcEye';
 
 import { ContextMenuButton } from '../../../../statelessComponents/ContextMenu';

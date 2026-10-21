@@ -1,5 +1,5 @@
-import type { NodeEntity } from '@proton/drive';
 import { createMockNodeEntity } from '@proton/drive/modules/testing';
+import type { NodeEntity } from '@proton/drive/sdk';
 
 import { formatAlbumArchiveFilename, formatDownloadArchiveFilename } from './formatDownloadArchiveFilename';
 

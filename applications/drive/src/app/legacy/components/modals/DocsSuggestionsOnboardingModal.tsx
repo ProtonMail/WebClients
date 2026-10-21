@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import type { ModalProps } from '@proton/components';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter } from '@proton/components';
-import { generateNodeUid } from '@proton/drive';
+import { generateNodeUid } from '@proton/drive/sdk';
 import { DOCS_APP_NAME } from '@proton/shared/lib/constants';
 import sharingOnboardingWelcome from '@proton/styles/assets/img/onboarding/drive-docs-suggestion-mode.png';
 

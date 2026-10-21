@@ -1,6 +1,6 @@
-import type { NodeEntity, PhotoNode } from '@proton/drive';
-import { NodeType, ValidationError } from '@proton/drive';
 import { getNodeName, isMissingNode } from '@proton/drive/modules/nodes';
+import type { NodeEntity, PhotoNode } from '@proton/drive/sdk';
+import { NodeType, ValidationError } from '@proton/drive/sdk';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import type { AsyncQueue } from '../../../utils/asyncQueue';

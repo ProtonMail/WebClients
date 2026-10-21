@@ -1,4 +1,4 @@
-import { generateNodeUid } from '@proton/drive'
+import { generateNodeUid } from '@proton/drive/sdk'
 import type { PublicNodeMeta } from '@proton/docs-shared'
 import { getPublicDrive, getPublicLinkInfo } from './getPublicDrive'
 import { traceErrorSDK } from './traceErrorSDK'

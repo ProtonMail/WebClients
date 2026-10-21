@@ -1,4 +1,4 @@
-import type { ShareResult } from '@proton/drive';
+import type { ShareResult } from '@proton/drive/sdk';
 
 /**
  * Note: This is not ideal, but for now it's the only way to get that info,

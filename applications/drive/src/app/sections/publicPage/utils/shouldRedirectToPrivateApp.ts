@@ -1,4 +1,4 @@
-import { MemberRole } from '@proton/drive';
+import { MemberRole } from '@proton/drive/sdk';
 
 const ROLE_RANK: Partial<Record<MemberRole, number>> = {
     [MemberRole.Viewer]: 1,

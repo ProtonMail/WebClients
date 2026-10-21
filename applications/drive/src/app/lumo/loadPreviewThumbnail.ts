@@ -1,5 +1,5 @@
-import type { ProtonDriveClient } from '@proton/drive';
 import { getThumbnailBytes } from '@proton/drive/modules/thumbnails';
+import type { ProtonDriveClient } from '@proton/drive/sdk';
 
 /**
  * The thumbnail bytes of the file in preview, for `OpenFile.loadViewableImage`.

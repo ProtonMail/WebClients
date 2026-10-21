@@ -1,6 +1,6 @@
-import { NodeType, getDrive } from '../../../../index';
 import { getNodeEntity } from '../../../../legacy/sdkUtils/getNodeEntity';
 import { BusDriverEventName, getBusDriver } from '../../../../modules/busDriver';
+import { NodeType, getDrive } from '../../../../sdk';
 import { getDeviceName, getNodeName } from '../../../nodes';
 import { directoryTreeStoreFactory } from '../directoryTreeStoreFactory';
 import { DEVICES_ROOT_ID, SHARED_WITH_ME_ROOT_ID, makeTreeItemId } from '../helpers';
@@ -8,8 +8,8 @@ import type { TreeStoreItem } from '../types';
 import { DirectoryTreeRootType } from '../types';
 import { TreeEventManager } from './treeEventManager';
 
-jest.mock('../../../../index', () => ({
-    ...jest.requireActual('../../../../index'),
+jest.mock('../../../../sdk', () => ({
+    ...jest.requireActual('../../../../sdk'),
     getDrive: jest.fn(),
 }));
 

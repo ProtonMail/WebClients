@@ -1,5 +1,5 @@
-import { type NodeEntity, NodeType } from '@proton/drive';
 import { getNodeName } from '@proton/drive/modules/nodes';
+import { type NodeEntity, NodeType } from '@proton/drive/sdk';
 
 import { getNodeStorageSize } from '../../../utils/sdk/getNodeStorageSize';
 import { DownloadStatus, IssueStatus, useDownloadManagerStore } from '../downloadManager.store';

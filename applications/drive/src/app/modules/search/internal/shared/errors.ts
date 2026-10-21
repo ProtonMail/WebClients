@@ -1,14 +1,14 @@
 import type { ScopeContext } from '@sentry/types';
 import { c } from 'ttag';
 
+import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
+import { getNotificationsManager } from '@proton/drive/modules/notifications';
 import {
     AbortError as SdkAbortError,
     ConnectionError as SdkConnectionError,
     RateLimitedError as SdkRateLimitedError,
     ServerError as SdkServerError,
-} from '@proton/drive';
-import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
-import { getNotificationsManager } from '@proton/drive/modules/notifications';
+} from '@proton/drive/sdk';
 import {
     getIsNetworkError,
     getIsOfflineError,

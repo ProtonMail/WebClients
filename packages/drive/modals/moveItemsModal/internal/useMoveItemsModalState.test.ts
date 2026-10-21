@@ -1,9 +1,9 @@
 import { act, renderHook, waitFor } from '@testing-library/react';
 
-import { generateNodeUid } from '../../../index';
 import { sendErrorReport } from '../../../legacy/errorHandling';
 import { directoryTreeFactory, makeTreeItemId } from '../../../modules/directoryTree';
 import { createMockNodeEntity } from '../../../modules/testing';
+import { generateNodeUid } from '../../../sdk';
 import { useMoveItemsModalState } from './useMoveItemsModalState';
 
 const mockInitializeTree = jest.fn();
@@ -51,10 +51,10 @@ jest.mock('../../createFolderModal', () => ({
     })),
 }));
 
-jest.mock('../../../index', () => {
+jest.mock('../../../sdk', () => {
     let driveInstance: { iterateNodes: jest.Mock; getNodeHierarchy: jest.Mock };
     return {
-        ...jest.requireActual('../../../index'),
+        ...jest.requireActual('../../../sdk'),
         getDrive: jest.fn(() => {
             if (!driveInstance) {
                 driveInstance = { iterateNodes: mockIterateNodes, getNodeHierarchy: mockGetNodeHierarchy };

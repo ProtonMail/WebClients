@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { useShallow } from 'zustand/react/shallow';
 
-import { NodeType } from '@proton/drive/index';
+import { NodeType } from '@proton/drive/sdk';
 
 import type { useSignatureIssueModal } from '../../../modals/SignatureIssueModal';
 import { DownloadManager } from '../../../modules/download/DownloadManager';

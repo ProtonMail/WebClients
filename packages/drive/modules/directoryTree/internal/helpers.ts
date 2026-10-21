@@ -1,5 +1,5 @@
-import type { NodeEntity, ProtonDriveClient } from '../../../index';
-import { MemberRole } from '../../../index';
+import type { NodeEntity, ProtonDriveClient } from '../../../sdk';
+import { MemberRole } from '../../../sdk';
 
 export const DEVICES_ROOT_ID = 'devices-root';
 export const SHARED_WITH_ME_ROOT_ID = 'shared-with-me-root';

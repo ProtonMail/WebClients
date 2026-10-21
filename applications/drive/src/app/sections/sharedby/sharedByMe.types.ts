@@ -1,4 +1,4 @@
-import type { NodeType } from '@proton/drive';
+import type { NodeType } from '@proton/drive/sdk';
 
 export type SharedByMeItem = {
     nodeUid: string;

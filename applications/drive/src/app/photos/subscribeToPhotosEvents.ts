@@ -1,10 +1,10 @@
-import type { NodeEntity, PhotoNode } from '@proton/drive';
-import { NodeType, getDriveForPhotos } from '@proton/drive';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import type { BusDriverClient } from '@proton/drive/modules/busDriver';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
 import { logging } from '@proton/drive/modules/logging';
+import type { NodeEntity, PhotoNode } from '@proton/drive/sdk';
+import { NodeType, getDriveForPhotos } from '@proton/drive/sdk';
 
 import { getSignatureIssues } from '../utils/sdk/getSignatureIssues';
 import { mapNodeToPhotoItem } from './PhotosWithAlbums/loaders/mapNodeToAdditionalInfo';

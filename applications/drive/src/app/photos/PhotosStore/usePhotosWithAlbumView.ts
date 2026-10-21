@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom-v5-compat';
 
 import { useShallow } from 'zustand/react/shallow';
 
-import { NodeType, ValidationError, getDriveForPhotos } from '@proton/drive/index';
+import { NodeType, ValidationError, getDriveForPhotos } from '@proton/drive/sdk';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 

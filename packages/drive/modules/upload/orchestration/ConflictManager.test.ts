@@ -22,8 +22,8 @@ jest.mock('../store/uploadQueue.store', () => {
     };
 });
 jest.mock('../utils/dependencyHelpers');
-jest.mock('../../../index', () => {
-    const actual = jest.requireActual('../../../index');
+jest.mock('../../../sdk', () => {
+    const actual = jest.requireActual('../../../sdk');
     return {
         ...actual,
         getDrive: jest.fn(),
@@ -58,7 +58,7 @@ describe('ConflictManager', () => {
         jest.mocked(getDirectChildren).mockReturnValue([]);
         jest.mocked(getBlockedDescendants).mockReturnValue([]);
 
-        const { getDrive } = require('../../../index');
+        const { getDrive } = require('../../../sdk');
         jest.mocked(getDrive).mockReturnValue({
             getAvailableName: mockGetAvailableName,
         } as any);

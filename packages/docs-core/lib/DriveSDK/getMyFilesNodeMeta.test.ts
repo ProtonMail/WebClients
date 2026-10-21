@@ -1,12 +1,12 @@
-import { ValidationError } from '@proton/drive'
+import { ValidationError } from '@proton/drive/sdk'
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors'
 import { getMyFilesNodeMeta } from './getMyFilesNodeMeta'
 import { traceErrorSDK } from './traceErrorSDK'
 
 const mockGetMyFilesRootFolder = jest.fn()
 
-jest.mock('@proton/drive', () => ({
-  ...jest.requireActual('@proton/drive'),
+jest.mock('@proton/drive/sdk', () => ({
+  ...jest.requireActual('@proton/drive/sdk'),
   getDrive: () => ({ getMyFilesRootFolder: mockGetMyFilesRootFolder }),
 }))
 

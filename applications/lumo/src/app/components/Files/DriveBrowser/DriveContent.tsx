@@ -3,7 +3,7 @@ import React from 'react';
 import { c } from 'ttag';
 
 import Loader from '@proton/components/components/loader/Loader';
-import { NodeType } from '@proton/drive';
+import { NodeType } from '@proton/drive/sdk';
 
 import type { DriveNode } from '../../../hooks/useDriveSDK';
 import { isDriveFileSupported, isFileTypeSupported, isProtonNativeMediaType } from '../../../util/filetypes';

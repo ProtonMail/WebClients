@@ -1,6 +1,6 @@
 import type { NodeEntity, NodeType, ProtonDriveClient } from '@protontech/drive-sdk';
 
-import { SDKEvent } from '@proton/drive';
+import { SDKEvent } from '@proton/drive/sdk';
 
 import { createRollingWindowRateLimiter } from '../../../../utils/createRollingWindowRateLimiter';
 import { Logger } from '../shared/Logger';

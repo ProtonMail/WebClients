@@ -1,4 +1,4 @@
-import { NodeType } from '../../../index';
+import { NodeType } from '../../../sdk';
 import { UploadDriveClientRegistry } from '../UploadDriveClientRegistry';
 import { FileUploadExecutor } from '../execution/FileUploadExecutor';
 import { FolderCreationExecutor } from '../execution/FolderCreationExecutor';

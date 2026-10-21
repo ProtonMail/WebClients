@@ -3,9 +3,9 @@ import { useCallback, useEffect, useState } from 'react';
 import isEqual from 'lodash/isEqual';
 
 import { useApi } from '@proton/app-context/useApi';
-import { type NodeEntity, generateNodeUid, getDriveForPhotos, splitNodeUid } from '@proton/drive';
 import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
+import { type NodeEntity, generateNodeUid, getDriveForPhotos, splitNodeUid } from '@proton/drive/sdk';
 import { queryDeletePhotosShare } from '@proton/shared/lib/api/drive/photos';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 

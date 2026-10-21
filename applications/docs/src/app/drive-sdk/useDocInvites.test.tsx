@@ -1,15 +1,15 @@
 import type { NotificationsManager } from '@proton/app-context/notifications/manager'
 import { NotificationsContext } from '@proton/app-context/notifications/notificationsContext'
 import AuthenticationContext from '@proton/components/containers/authentication/authenticationContext'
-import { MemberRole, generateNodeUid, getDrive } from '@proton/drive'
+import { MemberRole, generateNodeUid, getDrive } from '@proton/drive/sdk'
 import { PROTON_DOCS_DOCUMENT_MIMETYPE } from '@proton/shared/lib/helpers/mimetype'
 import { act, cleanup, renderHook, waitFor } from '@testing-library/react'
 import type { ReactNode } from 'react'
 import { useDocInvitationsStore } from './use-doc-invitations-store'
 import { useDocInvites } from './useDocInvites'
 
-jest.mock('@proton/drive', () => ({
-  ...jest.requireActual('@proton/drive'),
+jest.mock('@proton/drive/sdk', () => ({
+  ...jest.requireActual('@proton/drive/sdk'),
   getDrive: jest.fn(),
 }))
 

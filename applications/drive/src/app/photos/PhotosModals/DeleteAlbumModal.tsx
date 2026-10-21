@@ -11,8 +11,8 @@ import {
     ModalTwoHeader,
     useModalTwoStatic,
 } from '@proton/components';
-import { ValidationError } from '@proton/drive';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
+import { ValidationError } from '@proton/drive/sdk';
 import useLoading from '@proton/hooks/useLoading';
 
 export type DeleteAlbumModalProps = {

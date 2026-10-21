@@ -1,4 +1,4 @@
-import type { AbuseCategory } from '@proton/drive';
+import type { AbuseCategory } from '@proton/drive/sdk';
 
 export type AbuseReportPrefill = {
     category?: AbuseCategory;

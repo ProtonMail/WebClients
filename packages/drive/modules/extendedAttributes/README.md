@@ -5,10 +5,8 @@ Extended attributes generation for Proton Drive. Handles EXIF parsing, metadata 
 ## Quick Start
 
 ```typescript
-import {
-    generateExtendedAttributes,
-    generatePhotosExtendedAttributes
-} from '@proton/drive/modules/extendedAttributes';
+import { generateExtendedAttributes } from './extendedAttributesGenerator';
+import { generatePhotosExtendedAttributes } from './photosExtendedAttributesGenerator';
 
 // For regular Drive uploads
 const { metadata } = generateExtendedAttributes(file, mimeType, mediaInfo);
@@ -92,7 +90,6 @@ The module follows a functional architecture pattern similar to the thumbnails m
 
 ```
 extendedAttributes/
-├── index.ts                              # Public API exports
 ├── types.ts                              # TypeScript interfaces
 ├── extendedAttributesGenerator.ts        # Regular Drive uploads
 ├── photosExtendedAttributesGenerator.ts  # Photos uploads

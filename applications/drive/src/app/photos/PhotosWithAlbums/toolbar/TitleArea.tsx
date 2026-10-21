@@ -2,8 +2,8 @@ import { c, msgid } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { getDriveForPhotos } from '@proton/drive/index';
 import { getEllipsedName } from '@proton/drive/modules/intl';
+import { getDriveForPhotos } from '@proton/drive/sdk';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 
 import useNavigate from '../../../legacy/hooks/drive/useNavigate';

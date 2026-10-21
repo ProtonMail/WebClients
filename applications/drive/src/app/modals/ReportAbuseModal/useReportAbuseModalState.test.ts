@@ -2,7 +2,7 @@ import { waitFor } from '@testing-library/react';
 import { act, renderHook } from '@testing-library/react-hooks';
 
 import { getStoreWrapper } from '@proton/components/testing/renderWithProviders';
-import { AbuseCategory, NodeType } from '@proton/drive';
+import { AbuseCategory, NodeType } from '@proton/drive/sdk';
 
 import { type UseReportAbuseModalProps, useReportAbuseModalState } from './useReportAbuseModalState';
 

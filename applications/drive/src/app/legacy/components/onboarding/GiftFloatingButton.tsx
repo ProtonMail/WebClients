@@ -12,9 +12,9 @@ import {
     useAuthentication,
     useLocalState,
 } from '@proton/components';
-import { generateNodeUid } from '@proton/drive';
 import { useSharingModal } from '@proton/drive/modals/sharingModal';
 import { uploadManager } from '@proton/drive/modules/upload';
+import { generateNodeUid } from '@proton/drive/sdk';
 import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
 import { IcArrowUpLine } from '@proton/icons/icons/IcArrowUpLine';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';

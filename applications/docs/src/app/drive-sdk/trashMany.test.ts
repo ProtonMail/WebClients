@@ -3,8 +3,8 @@ import { restoreDocuments, trashDocuments } from './trashMany'
 const mockTrashNodes = jest.fn()
 const mockRestoreNodes = jest.fn()
 
-jest.mock('@proton/drive', () => ({
-  ...jest.requireActual('@proton/drive'),
+jest.mock('@proton/drive/sdk', () => ({
+  ...jest.requireActual('@proton/drive/sdk'),
   getDrive: () => ({ trashNodes: mockTrashNodes, restoreNodes: mockRestoreNodes }),
 }))
 

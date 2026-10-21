@@ -1,7 +1,7 @@
 import type { MaybeMissingNode, NodeEntity } from '@protontech/drive-sdk';
 
-import { SDKEvent } from '@proton/drive';
 import { createMockNodeEntity } from '@proton/drive/modules/testing';
+import { SDKEvent } from '@proton/drive/sdk';
 
 import { FakeSdkDriveClient } from '../testing/FakeSdkDriveClient';
 import { createThrottledSearchSdkDriveClient } from './ThrottledSearchSdkDriveClient';

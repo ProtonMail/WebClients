@@ -1,5 +1,5 @@
-import type { NodeEntity } from '@proton/drive';
-import { parseAdditionalMetadata } from '@proton/drive/modules/extendedAttributes';
+import { parseAdditionalMetadata } from '@proton/drive/modules/extendedAttributes/metadataParser/parseAdditionalMetadata';
+import type { NodeEntity } from '@proton/drive/sdk';
 
 export { getNodeName } from '@proton/drive/modules/nodes';
 

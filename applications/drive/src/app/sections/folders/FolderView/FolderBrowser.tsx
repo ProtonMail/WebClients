@@ -3,10 +3,10 @@ import { type ReactNode, useCallback, useEffect, useRef } from 'react';
 import { useShallow } from 'zustand/react/shallow';
 
 import { useActiveBreakpoint } from '@proton/components';
-import { MemberRole, getDrive, splitNodeUid } from '@proton/drive';
 import { useMoveNodes } from '@proton/drive/modules/moveNodes';
 import type { MoveNodesItemMap } from '@proton/drive/modules/moveNodes';
 import { loadThumbnail } from '@proton/drive/modules/thumbnails';
+import { MemberRole, getDrive, splitNodeUid } from '@proton/drive/sdk';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import type { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 

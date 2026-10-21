@@ -1,4 +1,4 @@
-import { NodeType } from '@proton/drive';
+import { NodeType } from '@proton/drive/sdk';
 
 import { getTrashItemAriaLabel } from './trashItemAriaLabel';
 import type { TrashItem } from './useTrash.store';

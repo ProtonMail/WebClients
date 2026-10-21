@@ -1,4 +1,4 @@
-import { AbortError } from '@proton/drive/index';
+import { AbortError } from '@proton/drive/sdk';
 
 import { type DownloadItem, DownloadStatus, IssueStatus, useDownloadManagerStore } from '../downloadManager.store';
 import { downloadLogDebug } from './downloadLogger';

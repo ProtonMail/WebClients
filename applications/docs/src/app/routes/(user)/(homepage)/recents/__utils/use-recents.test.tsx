@@ -9,7 +9,7 @@ import {
   MemberRole,
   NodeType,
   getDrive,
-} from '@proton/drive'
+} from '@proton/drive/sdk'
 import { act, cleanup, renderHook } from '@testing-library/react'
 import type { ReactNode } from 'react'
 import { ApplicationProvider } from '~/utils/application-context'
@@ -21,8 +21,8 @@ jest.mock('@proton/account/addresses/hooks', () => ({
   useAddresses: () => [undefined, false],
 }))
 
-jest.mock('@proton/drive', () => ({
-  ...jest.requireActual('@proton/drive'),
+jest.mock('@proton/drive/sdk', () => ({
+  ...jest.requireActual('@proton/drive/sdk'),
   getDrive: jest.fn(),
 }))
 

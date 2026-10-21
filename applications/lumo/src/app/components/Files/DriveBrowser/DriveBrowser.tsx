@@ -8,7 +8,7 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { InputFieldTwo, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import Loader from '@proton/components/components/loader/Loader';
-import { NodeType } from '@proton/drive';
+import { NodeType } from '@proton/drive/sdk';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 import { MAX_ASSET_SIZE } from '../../../constants';

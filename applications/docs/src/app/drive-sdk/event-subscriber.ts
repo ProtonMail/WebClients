@@ -1,4 +1,4 @@
-import { getDrive, ValidationError } from '@proton/drive'
+import { getDrive, ValidationError } from '@proton/drive/sdk'
 import { traceErrorSDK } from '@proton/docs-core/lib/DriveSDK/traceErrorSDK'
 import type { DriveEvent, EventScheduler, ProtonDriveClient } from '@protontech/drive-sdk'
 

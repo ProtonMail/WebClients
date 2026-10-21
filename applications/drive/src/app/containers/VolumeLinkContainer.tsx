@@ -5,10 +5,10 @@ import { useLocation, useParams } from 'react-router-dom-v5-compat';
 import { c } from 'ttag';
 
 import { Loader } from '@proton/components';
-import { generateNodeUid, getDrive, getDriveForPhotos, splitInvitationUid, splitNodeUid } from '@proton/drive';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { getNotificationsManager } from '@proton/drive/modules/notifications';
+import { generateNodeUid, getDrive, getDriveForPhotos, splitInvitationUid, splitNodeUid } from '@proton/drive/sdk';
 
 import useDriveNavigation from '../legacy/hooks/drive/useNavigate';
 import { useRedirectOrAcceptInvitation } from './useRedirectOrAcceptInvitation';

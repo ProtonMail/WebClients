@@ -1,8 +1,8 @@
 import { act, renderHook } from '@testing-library/react';
 import { performance } from 'perf_hooks';
 
-import { NodeType } from '@proton/drive';
 import { type UploadItem, UploadStatus, useUploadQueueStore } from '@proton/drive/modules/upload';
+import { NodeType } from '@proton/drive/sdk';
 
 import {
     type DownloadItem,

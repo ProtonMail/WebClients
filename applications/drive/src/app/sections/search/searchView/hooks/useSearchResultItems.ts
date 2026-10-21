@@ -2,9 +2,9 @@ import { useCallback, useMemo } from 'react';
 
 import { useShallow } from 'zustand/react/shallow';
 
-import { NodeType, getDrive, getDrivePerNodeType, splitNodeUid } from '@proton/drive';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { loadThumbnail } from '@proton/drive/modules/thumbnails';
+import { NodeType, getDrive, getDrivePerNodeType, splitNodeUid } from '@proton/drive/sdk';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 

@@ -5,8 +5,8 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Loader } from '@proton/components';
-import { NodeType, ValidationError, getDrive } from '@proton/drive/index';
 import { EnrichedError, handleSdkError } from '@proton/drive/legacy/errorHandling';
+import { NodeType, ValidationError, getDrive } from '@proton/drive/sdk';
 import useLoading from '@proton/hooks/useLoading';
 import type { LinkURLType } from '@proton/shared/lib/drive/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';

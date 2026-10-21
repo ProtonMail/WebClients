@@ -1,7 +1,7 @@
 import { useUser } from '@proton/account/user/hooks';
 import { Vr } from '@proton/atoms/Vr/Vr';
 import { ContextSeparator, type useConfirmActionModal } from '@proton/components';
-import { getDrivePerNodeType } from '@proton/drive';
+import { getDrivePerNodeType } from '@proton/drive/sdk';
 
 import type { useReportAbuseModal } from '../../../modals/ReportAbuseModal';
 import { ReportAbuseButton } from '../../commonButtons/ReportAbuseButton';

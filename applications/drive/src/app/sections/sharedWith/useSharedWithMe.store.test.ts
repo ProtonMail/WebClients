@@ -1,4 +1,4 @@
-import type { MemberRole, NodeType } from '@proton/drive';
+import type { MemberRole, NodeType } from '@proton/drive/sdk';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import { SortField } from '../../modules/sorting';

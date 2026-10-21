@@ -4,11 +4,11 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import type { ModalStateProps } from '@proton/components';
-import type { Author, NodeEntity, ProtonDriveClient, Revision } from '@proton/drive';
-import { MemberRole, NodeType, getDrive } from '@proton/drive';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getFormattedNodeLocation, getNodeName } from '@proton/drive/modules/nodes';
 import { recentlyAccessed } from '@proton/drive/modules/recentlyAccessed';
+import type { Author, NodeEntity, ProtonDriveClient, Revision } from '@proton/drive/sdk';
+import { MemberRole, NodeType, getDrive } from '@proton/drive/sdk';
 import useLoading from '@proton/hooks/useLoading';
 
 import { getMimeTypeDescription } from '../../legacy/components/sections/helpers';

@@ -1,6 +1,6 @@
-import { NodeType, getDrive } from '../../../../index';
 import { getNodeEntity } from '../../../../legacy/sdkUtils/getNodeEntity';
 import { BusDriverEventName, getBusDriver } from '../../../../modules/busDriver';
+import { NodeType, getDrive } from '../../../../sdk';
 import { getDeviceName, getNodeName } from '../../../nodes';
 import { DEVICES_ROOT_ID, SHARED_WITH_ME_ROOT_ID, getNodeUidFromTreeItemId, makeTreeItemId } from '../helpers';
 import { DirectoryTreeRootType } from '../types';

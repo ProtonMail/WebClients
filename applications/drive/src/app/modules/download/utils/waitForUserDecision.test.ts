@@ -1,4 +1,4 @@
-import { NodeType } from '@proton/drive/index';
+import { NodeType } from '@proton/drive/sdk';
 
 import {
     type DownloadItem,

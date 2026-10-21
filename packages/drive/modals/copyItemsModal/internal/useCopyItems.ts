@@ -1,9 +1,9 @@
 import { type NodeType, NodeWithSameNameExistsValidationError } from '@protontech/drive-sdk';
 import { c } from 'ttag';
 
-import { ProtonDriveError, getDrive, useDrive } from '../../../index';
 import { handleSdkError } from '../../../legacy/errorHandling';
 import { BusDriverEventName, getBusDriver } from '../../../modules/busDriver';
+import { ProtonDriveError, getDrive, useDrive } from '../../../sdk';
 import { useCopiedItemsNotification } from './useCopiedItemsNotification';
 
 interface Item {

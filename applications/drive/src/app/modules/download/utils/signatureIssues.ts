@@ -1,8 +1,8 @@
 import type { UnverifiedAuthorError } from '@protontech/drive-sdk';
 import { c } from 'ttag';
 
-import type { NodeEntity } from '@proton/drive/index';
 import { getNodeName } from '@proton/drive/modules/nodes';
+import type { NodeEntity } from '@proton/drive/sdk';
 
 import { IssueStatus, useDownloadManagerStore } from '../downloadManager.store';
 import type { UserDecision } from './waitForUserDecision';
