@@ -2,6 +2,7 @@ import { useCallback, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { formatIntlDate } from '@proton/shared/lib/date/formatIntlDate';
 
@@ -29,6 +30,7 @@ export const GalleryImageCard = ({ attachmentId, createdAt, onExport, imageSrcOv
     const [overlayDefaultMode, setOverlayDefaultMode] = useState<'preview' | 'edit'>('preview');
     const [hovered, setHovered] = useState(false);
     const navigate = useLumoNavigate();
+    const { createNotification } = useNotifications();
     const { handleFilesSelected } = useFileHandling({ messageChain: [] });
 
     const imageDataUrl = useMemo(() => {
@@ -50,13 +52,17 @@ export const GalleryImageCard = ({ attachmentId, createdAt, onExport, imageSrcOv
         async (e?: React.MouseEvent) => {
             e?.stopPropagation();
             if (!imageDataUrl) return;
-            await triggerFileDownload(
-                imageDataUrl,
-                attachment?.filename || `generated-image-${attachmentId}.png`,
-                'image'
-            );
+            try {
+                await triggerFileDownload(
+                    imageDataUrl,
+                    attachment?.filename || `generated-image-${attachmentId}.png`,
+                    'image'
+                );
+            } catch {
+                createNotification({ type: 'error', text: c('Error').t`Failed to download image. Please try again.` });
+            }
         },
-        [imageDataUrl, attachment, attachmentId]
+        [imageDataUrl, attachment, attachmentId, createNotification]
     );
 
     const handleChangeStyle = useCallback(
