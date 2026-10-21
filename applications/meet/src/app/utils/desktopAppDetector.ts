@@ -11,6 +11,12 @@ export const clearDesktopAppPreference = (): void => {
     } catch {}
 };
 
+export const saveDesktopAppPreference = (): void => {
+    try {
+        localStorage.setItem(OPEN_DESKTOP_APP_STORAGE_KEY, 'true');
+    } catch {}
+};
+
 export const getDesktopAppPreference = (): boolean => {
     try {
         const preference = localStorage.getItem(OPEN_DESKTOP_APP_STORAGE_KEY);

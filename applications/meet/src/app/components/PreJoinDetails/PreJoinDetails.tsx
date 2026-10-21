@@ -25,7 +25,7 @@ import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import clsx from '@proton/utils/clsx';
 
 import { SettingToggle } from '../../atoms/SettingToggle/SettingToggle';
-import { canOpenInDesktopApp } from '../../utils/desktopAppDetector';
+import { canOpenInDesktopApp, clearDesktopAppPreference } from '../../utils/desktopAppDetector';
 import { OpenInDesktopAppCard, OpenInDesktopAppLink } from '../OpenInDesktopApp/OpenInDesktopApp';
 import { PreJoinDetailsHeader } from './PreJoinDetailsHeader';
 import { WaitingRoomAdmission } from './WaitingRoomAdmission/WaitingRoomAdmission';
@@ -80,6 +80,13 @@ export const PreJoinDetails = ({
 
     const showOpenInDesktopApp = !instantMeeting && canOpenInDesktopApp();
 
+    const handleJoinMeeting = () => {
+        if (showOpenInDesktopApp) {
+            clearDesktopAppPreference();
+        }
+        onJoinMeeting(displayName, keepDisplayNameOnDevice);
+    };
+
     const NameInput = (
         <InputFieldStacked isGroupElement classname={clsx(!showHostScreen && viewportWidth['<=small'] && 'rounded-xl')}>
             <InputFieldTwo
@@ -120,7 +127,7 @@ export const PreJoinDetails = ({
                     className="primary py-4 px-5 md:py-5 rounded-full"
                     size="large"
                     fullWidth
-                    onClick={() => onJoinMeeting(displayName, keepDisplayNameOnDevice)}
+                    onClick={handleJoinMeeting}
                     disabled={displayName.trim() === ''}
                 >
                     {getActionLabel()}
