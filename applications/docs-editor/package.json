@@ -58,7 +58,7 @@
     "@proton/shared": "workspace:^",
     "@proton/styles": "workspace:^",
     "@proton/utils": "workspace:^",
-    "@protontech/crypto": "*",
+    "@protontech/crypto": "catalog:",
     "@rowsncolumns/charts": "workspace:^",
     "@rowsncolumns/common-types": "workspace:^",
     "@rowsncolumns/fast-formula-parser": "workspace:^",

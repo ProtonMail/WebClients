@@ -676,7 +676,7 @@
         "@proton/styles": "workspace:^",
         "@proton/utils": "workspace:^",
         "@protontech/bip39": "^1.1.0",
-        "@protontech/crypto": "*",
+        "@protontech/crypto": "catalog:",
         "@protontech/mimemessage": "~v1.1.4",
         "@protontech/mutex-browser": "^1.0.5",
         "@protontech/telemetry": "^2.2.0",

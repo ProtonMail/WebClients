@@ -164,6 +164,9 @@ settings:
 
 catalogs:
   default:
+    '@protontech/crypto':
+      specifier: ^2.2.0
+      version: 2.2.0
     '@protontech/drive-sdk':
       specifier: ^0.23.0
       version: 0.23.0
@@ -203,7 +206,6 @@ overrides:
   '@electron-internal/extract-zip@^1.0.1': 1.0.5
   '@humanfs/node@^0.16.6': 0.16.8
   '@pdf-lib/standard-fonts@^1.0.0': 1.0.0
-  '@protontech/crypto': ^2.1.3
   '@xhmikosr/downloader@^13.0.0': 16.3.1
   '@xmldom/xmldom@^0.8.3': 0.9.12
   '@xmldom/xmldom@^0.8.8': 0.9.12
@@ -537,11 +539,11 @@ importers:
         specifier: workspace:^
         version: link:../../packages/wallet
       '@protontech/crypto':
-        specifier: ^2.1.3
-        version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+        specifier: 'catalog:'
+        version: 2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       '@protontech/logger':
         specifier: 'catalog:'
-        version: 1.0.0(@protontech/crypto@2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2))
+        version: 1.0.0(@protontech/crypto@2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2))
       '@reduxjs/toolkit':
         specifier: ^2.13.0
         version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
@@ -721,8 +723,8 @@ importers:
         specifier: workspace:^
         version: link:../../packages/utils
       '@protontech/crypto':
-        specifier: ^2.1.3
-        version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+        specifier: 'catalog:'
+        version: 2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       '@tanstack/react-virtual':
         specifier: ^3.14.13
         version: 3.14.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -896,8 +898,8 @@ importers:
         specifier: ^0.28.8
         version: 0.28.8
       '@protontech/crypto':
-        specifier: ^2.1.3
-        version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+        specifier: 'catalog:'
+        version: 2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       '@reduxjs/toolkit':
         specifier: ^2.13.0
         version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
@@ -1128,8 +1130,8 @@ importers:
         specifier: workspace:^
         version: link:../../packages/utils
       '@protontech/crypto':
-        specifier: ^2.1.3
-        version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+        specifier: 'catalog:'
+        version: 2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       '@protontech/interval-tree':
         specifier: ^1.0.0
         version: 1.0.0
@@ -1436,11 +1438,11 @@ importers:
         specifier: workspace:^
         version: link:../../packages/utils
       '@protontech/crypto':
-        specifier: ^2.1.3
-        version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+        specifier: 'catalog:'
+        version: 2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       '@protontech/drive-sdk':
         specifier: 'catalog:'
-        version: 0.23.0(@protontech/crypto@2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2))
+        version: 0.23.0(@protontech/crypto@2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2))
       '@reduxjs/toolkit':
         specifier: ^2.13.0
         version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
@@ -1692,8 +1694,8 @@ importers:
         specifier: workspace:^
         version: link:../../packages/utils
       '@protontech/crypto':
-        specifier: ^2.1.3
-        version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+        specifier: 'catalog:'
+        version: 2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       '@rowsncolumns/charts':
         specifier: workspace:^
         version: link:../../vendor/rowsncolumns/charts
@@ -1984,11 +1986,11 @@ importers:
         specifier: workspace:^
         version: link:../../packages/utils
       '@protontech/crypto':
-        specifier: ^2.1.3
-        version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+        specifier: 'catalog:'
+        version: 2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       '@protontech/drive-sdk':
         specifier: 'catalog:'
-        version: 0.23.0(@protontech/crypto@2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2))
+        version: 0.23.0(@protontech/crypto@2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2))
       '@reduxjs/toolkit':
         specifier: ^2.13.0
         version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
@@ -2406,11 +2408,11 @@ importers:
         specifier: workspace:^
         version: link:../../packages/utils
       '@protontech/crypto':
-        specifier: ^2.1.3
-        version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+        specifier: 'catalog:'
+        version: 2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       '@protontech/drive-sdk':
         specifier: 'catalog:'
-        version: 0.23.0(@protontech/crypto@2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2))
+        version: 0.23.0(@protontech/crypto@2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2))
       '@protontech/timezone-support':
         specifier: ^2.1.0
         version: 2.1.0
@@ -2788,11 +2790,11 @@ importers:
         specifier: workspace:^
         version: link:../../packages/utils
       '@protontech/crypto':
-        specifier: ^2.1.3
-        version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+        specifier: 'catalog:'
+        version: 2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       '@protontech/logger':
         specifier: 'catalog:'
-        version: 1.0.0(@protontech/crypto@2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2))
+        version: 1.0.0(@protontech/crypto@2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2))
       '@protontech/mimemessage':
         specifier: ~v1.1.4
         version: 1.1.4(supports-color@11.0.0)
@@ -3077,11 +3079,11 @@ importers:
         specifier: workspace:^
         version: link:../../packages/utils
       '@protontech/crypto':
-        specifier: ^2.1.3
-        version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+        specifier: 'catalog:'
+        version: 2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       '@protontech/logger':
         specifier: 'catalog:'
-        version: 1.0.0(@protontech/crypto@2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2))
+        version: 1.0.0(@protontech/crypto@2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2))
       '@reduxjs/toolkit':
         specifier: ^2.13.0
         version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
@@ -3464,8 +3466,8 @@ importers:
         specifier: workspace:^
         version: link:../../packages/unleash
       '@protontech/crypto':
-        specifier: ^2.1.3
-        version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+        specifier: 'catalog:'
+        version: 2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       '@testing-library/jest-dom':
         specifier: ^6.9.1
         version: 6.9.1
@@ -3542,8 +3544,8 @@ importers:
         specifier: workspace:^
         version: link:../../packages/utils
       '@protontech/crypto':
-        specifier: ^2.1.3
-        version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+        specifier: 'catalog:'
+        version: 2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       browserslist:
         specifier: ^4.29.3
         version: 4.29.3
@@ -4452,8 +4454,8 @@ importers:
         specifier: workspace:^
         version: link:../../packages/wallet
       '@protontech/crypto':
-        specifier: ^2.1.3
-        version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+        specifier: 'catalog:'
+        version: 2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       '@ramp-network/ramp-instant-sdk':
         specifier: ^4.0.8
         version: 4.0.8
@@ -4609,8 +4611,8 @@ importers:
         specifier: workspace:^
         version: link:../utils
       '@protontech/crypto':
-        specifier: ^2.1.3
-        version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+        specifier: 'catalog:'
+        version: 2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       '@reduxjs/toolkit':
         specifier: ^2.13.0
         version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
@@ -4770,7 +4772,7 @@ importers:
         version: link:../utils
       '@protontech/drive-sdk':
         specifier: 'catalog:'
-        version: 0.23.0(@protontech/crypto@2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2))
+        version: 0.23.0(@protontech/crypto@2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2))
       '@reduxjs/toolkit':
         specifier: ^2.13.0
         version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
@@ -5145,8 +5147,8 @@ importers:
         specifier: workspace:^
         version: link:../utils
       '@protontech/crypto':
-        specifier: ^2.1.3
-        version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+        specifier: 'catalog:'
+        version: 2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       '@reduxjs/toolkit':
         specifier: ^2.13.0
         version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
@@ -5257,8 +5259,8 @@ importers:
         specifier: workspace:^
         version: link:../utils
       '@protontech/crypto':
-        specifier: ^2.1.3
-        version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+        specifier: 'catalog:'
+        version: 2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       lodash:
         specifier: ^4.18.1
         version: 4.18.1
@@ -5697,11 +5699,11 @@ importers:
         specifier: workspace:^
         version: link:../utils
       '@protontech/crypto':
-        specifier: ^2.1.3
-        version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+        specifier: 'catalog:'
+        version: 2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       '@protontech/logger':
         specifier: 'catalog:'
-        version: 1.0.0(@protontech/crypto@2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2))
+        version: 1.0.0(@protontech/crypto@2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2))
       '@protontech/pass-rust-core':
         specifier: 1.6.0
         version: 1.6.0
@@ -6002,8 +6004,8 @@ importers:
         specifier: workspace:^
         version: link:../utils
       '@protontech/crypto':
-        specifier: ^2.1.3
-        version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+        specifier: 'catalog:'
+        version: 2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       '@rowsncolumns/spreadsheet-state':
         specifier: workspace:^
         version: link:../../vendor/rowsncolumns/spreadsheet-state
@@ -6148,8 +6150,8 @@ importers:
         specifier: workspace:^
         version: link:../utils
       '@protontech/crypto':
-        specifier: ^2.1.3
-        version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+        specifier: 'catalog:'
+        version: 2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       date-fns:
         specifier: ^2.30.0
         version: 2.30.0
@@ -6284,11 +6286,11 @@ importers:
         specifier: workspace:^
         version: link:../utils
       '@protontech/crypto':
-        specifier: ^2.1.3
-        version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+        specifier: 'catalog:'
+        version: 2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       '@protontech/drive-sdk':
         specifier: 'catalog:'
-        version: 0.23.0(@protontech/crypto@2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2))
+        version: 0.23.0(@protontech/crypto@2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2))
       '@sentry/types':
         specifier: ^7.120.4
         version: 7.120.4
@@ -6435,8 +6437,8 @@ importers:
         specifier: workspace:^
         version: link:../utils
       '@protontech/crypto':
-        specifier: ^2.1.3
-        version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+        specifier: 'catalog:'
+        version: 2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       '@sentry/types':
         specifier: ^7.120.4
         version: 7.120.4
@@ -6553,8 +6555,8 @@ importers:
         specifier: workspace:^
         version: link:../utils
       '@protontech/crypto':
-        specifier: ^2.1.3
-        version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+        specifier: 'catalog:'
+        version: 2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       idb:
         specifier: ^8.0.3
         version: 8.0.3
@@ -6913,8 +6915,8 @@ importers:
         specifier: workspace:^
         version: link:../utils
       '@protontech/crypto':
-        specifier: ^2.1.3
-        version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+        specifier: 'catalog:'
+        version: 2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       asn1js:
         specifier: ^3.0.10
         version: 3.0.10
@@ -7074,8 +7076,8 @@ importers:
         specifier: workspace:^
         version: link:../shared
       '@protontech/crypto':
-        specifier: ^2.1.3
-        version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+        specifier: 'catalog:'
+        version: 2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       uuid:
         specifier: ^14.0.2
         version: 14.0.2
@@ -7238,8 +7240,8 @@ importers:
         specifier: workspace:^
         version: link:../utils
       '@protontech/crypto':
-        specifier: ^2.1.3
-        version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+        specifier: 'catalog:'
+        version: 2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       '@reduxjs/toolkit':
         specifier: ^2.13.0
         version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
@@ -7441,11 +7443,11 @@ importers:
         specifier: workspace:^
         version: link:../utils
       '@protontech/crypto':
-        specifier: ^2.1.3
-        version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+        specifier: 'catalog:'
+        version: 2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       '@protontech/logger':
         specifier: 'catalog:'
-        version: 1.0.0(@protontech/crypto@2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2))
+        version: 1.0.0(@protontech/crypto@2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2))
       '@reduxjs/toolkit':
         specifier: ^2.13.0
         version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
@@ -7948,8 +7950,8 @@ importers:
         specifier: 0.0.38040317
         version: 0.0.38040317
       '@protontech/crypto':
-        specifier: ^2.1.3
-        version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+        specifier: 'catalog:'
+        version: 2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       '@protontech/pass-rust-core':
         specifier: 1.6.0
         version: 1.6.0
@@ -8756,8 +8758,8 @@ importers:
         specifier: ^1.1.0
         version: 1.1.0
       '@protontech/crypto':
-        specifier: ^2.1.3
-        version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+        specifier: 'catalog:'
+        version: 2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       '@protontech/mimemessage':
         specifier: ~v1.1.4
         version: 1.1.4(supports-color@11.0.0)
@@ -9322,8 +9324,8 @@ importers:
         specifier: workspace:^
         version: link:../utils
       '@protontech/crypto':
-        specifier: ^2.1.3
-        version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+        specifier: 'catalog:'
+        version: 2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       '@reduxjs/toolkit':
         specifier: ^2.13.0
         version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
@@ -9433,8 +9435,8 @@ importers:
         specifier: workspace:^
         version: link:../packages/utils
       '@protontech/crypto':
-        specifier: ^2.1.3
-        version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+        specifier: 'catalog:'
+        version: 2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       '@tpe/loki-client':
         specifier: 0.2.1
         version: 0.2.1(encoding@0.1.13)(supports-color@11.0.0)
@@ -9976,8 +9978,8 @@ importers:
   utilities/playwright-mocks:
     dependencies:
       '@protontech/crypto':
-        specifier: ^2.1.3
-        version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+        specifier: 'catalog:'
+        version: 2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       commander:
         specifier: ^14.0.3
         version: 14.0.3
@@ -14591,12 +14593,14 @@ packages:
   '@opentelemetry/sdk-trace-base@2.10.0':
     resolution: {integrity: sha512-GuYQQT7QD2EeO8lcZLRQzcbOyhqAzL+6WWTKTU9mSUBYBazkEDl+VrQcXQhbB08OWM9anD1aHleVadzulpOaUQ==}
     engines: {node: ^18.19.0 || >=20.6.0}
+    deprecated: Use @opentelemetry/sdk-trace package
     peerDependencies:
       '@opentelemetry/api': '>=1.3.0 <1.10.0'
 
   '@opentelemetry/sdk-trace-node@2.10.0':
     resolution: {integrity: sha512-GZK/G6oZyBLGlH1pUgeDch7D91KoHd2uotUGIkWCPi9GI5T9X0p4L7nNAMDR1BQjkRYoDqo+ddfVx9t5Uhys+Q==}
     engines: {node: ^18.19.0 || >=20.6.0}
+    deprecated: Use @opentelemetry/sdk-trace package
     peerDependencies:
       '@opentelemetry/api': '>=1.0.0 <1.10.0'
 
@@ -15569,13 +15573,13 @@ packages:
   '@protontech/bip39@1.1.0':
     resolution: {integrity: sha512-hm2m+L2AESN+/F0erIBqt3/qce8eHE0VbLj4uUjKx8PUFqZ1lB6boHwd5ZK4g+3EKq1lr/n596YTJXX6f6ITEg==}
 
-  '@protontech/crypto@2.1.3':
-    resolution: {integrity: sha512-Sbf/7yqwIE40L7AzZvRPfCWvDaHJ3GzELF3BhvhoVpGPImUxkbjRsJscGq/+Amglh3zAWaN1z2mCPoC1uUl2ZA==}
+  '@protontech/crypto@2.2.0':
+    resolution: {integrity: sha512-WjoNBMn07LxnYE6QLgniEnNfP0Apmvqgi8P48udFtvAxhSnVwiHqmXxMaVHJxBRaJev/DlOKJ67OGYj+3yGYPA==}
 
   '@protontech/drive-sdk@0.23.0':
     resolution: {integrity: sha512-64oDsEBwjRiuQCxVi/ogoiked8Whm+I3DorUkD4n4esaqREBQ1qHTobzwkKFR+4h8kkc7K5KcjPMPDfZiD8lHw==}
     peerDependencies:
-      '@protontech/crypto': ^2.1.3
+      '@protontech/crypto': ^2.0.0
 
   '@protontech/eslint-plugin-enforce-uint8array-arraybuffer@3.0.2':
     resolution: {integrity: sha512-bizPwtDpNkzE1IqDQRf08oQdE5KI2nJyM3zMtw3MAo6W76Nafb+V1Mo5Gl4+NFe6mjpVRen257DZ0hHjr9y9Cg==}
@@ -15593,7 +15597,7 @@ packages:
   '@protontech/logger@1.0.0':
     resolution: {integrity: sha512-Plgc+hND4ngpj1+LP+rLhvbD7CYiDZ3agwVZ8/rx0G6oT3mRSLfDMNKnyi+6W0qEYDLKNrP5cy8O8hJynUGWxQ==}
     peerDependencies:
-      '@protontech/crypto': ^2.1.3
+      '@protontech/crypto': ^2.2.0
 
   '@protontech/mimemessage@1.1.4':
     resolution: {integrity: sha512-GboE1mfTF4TIyJ+qAP/MbiLWpf/UmEbLYON4PopTJH4G0Vkn7Wl86gRhDg5ZxXEJAgN2sTSvUnSeLbsStOa/sA==}
@@ -34894,7 +34898,7 @@ snapshots:
 
   '@protontech/bip39@1.1.0': {}
 
-  '@protontech/crypto@2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)':
+  '@protontech/crypto@2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2)':
     dependencies:
       '@noble/hashes': 2.4.0
       '@openpgp/web-stream-tools': 0.3.1(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
@@ -34906,11 +34910,11 @@ snapshots:
       - '@types/node'
       - typescript
 
-  '@protontech/drive-sdk@0.23.0(@protontech/crypto@2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2))':
+  '@protontech/drive-sdk@0.23.0(@protontech/crypto@2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2))':
     dependencies:
       '@boltffi/runtime': 0.31.0
       '@noble/hashes': 1.8.0
-      '@protontech/crypto': 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+      '@protontech/crypto': 2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       comlink: 4.4.2
       ttag: 1.8.12
     optionalDependencies:
@@ -34939,9 +34943,9 @@ snapshots:
 
   '@protontech/interval-tree@1.0.0': {}
 
-  '@protontech/logger@1.0.0(@protontech/crypto@2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2))':
+  '@protontech/logger@1.0.0(@protontech/crypto@2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2))':
     dependencies:
-      '@protontech/crypto': 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+      '@protontech/crypto': 2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       comlink: 4.4.2
       core-js: 3.50.0
       idb: 8.0.3

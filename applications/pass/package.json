@@ -49,7 +49,7 @@
         "@proton/pack": "workspace:^",
         "@proton/types": "workspace:^",
         "@proton/unleash": "workspace:^",
-        "@protontech/crypto": "*",
+        "@protontech/crypto": "catalog:",
         "@testing-library/jest-dom": "^6.9.1",
         "@types/chrome": "catalog:",
         "@types/history": "catalog:",

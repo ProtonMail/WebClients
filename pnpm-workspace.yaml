@@ -12,7 +12,10 @@ packages:
 
 # Each workspace declares the type packages it uses. Most list node, webpack-env and jest in
 # compilerOptions.types through tsconfig.base.json, so these ranges are shared here.
+# @protontech/crypto must resolve to a single version across workspaces; check:constraints requires
+# every workspace to declare it as "catalog:".
 catalog:
+    '@protontech/crypto': ^2.2.0
     # Shared so that every workspace importing the Drive SDK resolves the same version.
     '@protontech/drive-sdk': ^0.23.0
     '@protontech/logger': ^1.0.0
@@ -250,7 +253,6 @@ overrides:
     '@electron-internal/extract-zip@^1.0.1': '1.0.5'
     '@humanfs/node@^0.16.6': '0.16.8'
     '@pdf-lib/standard-fonts@^1.0.0': '1.0.0'
-    '@protontech/crypto': '^2.1.3'
     '@xhmikosr/downloader@^13.0.0': '16.3.1'
     '@xmldom/xmldom@^0.8.3': '0.9.12'
     '@xmldom/xmldom@^0.8.8': '0.9.12'

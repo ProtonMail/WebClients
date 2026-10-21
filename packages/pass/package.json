@@ -38,7 +38,7 @@
         "@proton/types": "workspace:^",
         "@proton/utils": "workspace:^",
         "@protontech/autofill": "0.0.38040317",
-        "@protontech/crypto": "*",
+        "@protontech/crypto": "catalog:",
         "@protontech/pass-rust-core": "1.6.0",
         "@reduxjs/toolkit": "^2.13.0",
         "@zip.js/zip.js": "^2.18.2",

@@ -30,7 +30,7 @@
         "@proton/styles": "workspace:^",
         "@proton/unleash": "workspace:^",
         "@proton/utils": "workspace:^",
-        "@protontech/crypto": "*",
+        "@protontech/crypto": "catalog:",
         "@sentry/types": "^7.120.4",
         "client-zip": "^2.5.1",
         "comlink": "^4.4.2",
