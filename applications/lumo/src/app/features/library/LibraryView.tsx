@@ -162,7 +162,7 @@ export const LibraryView = ({ isProcessingAttachment, prefillQuery }: Props) => 
                     <div className="flex flex-row gap-6 border-bottom border-weak mb-6" role="tablist">
                         {artifactsView && (
                             <LibraryTabButton
-                                label={c('collider_2025:Tab').t`creations`}
+                                label={c('collider_2025:Tab').t`Creations`}
                                 count={creationsCount}
                                 isActive={activeTab === 'creations'}
                                 onClick={() => {
