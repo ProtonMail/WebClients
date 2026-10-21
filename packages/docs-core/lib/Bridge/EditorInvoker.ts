@@ -138,6 +138,10 @@ export class EditorInvoker implements ClientRequiresEditorMethods {
     return this.invokeEditorMethod('getYDocAsJSON', [])
   }
 
+  async getEditorBuildInfo(): Promise<{ appVersion: string; commit: string }> {
+    return this.invokeEditorMethod('getEditorBuildInfo', [])
+  }
+
   async importDataIntoSheet(data: SheetImportData): Promise<void> {
     return this.invokeEditorMethod('importDataIntoSheet', [data])
   }
