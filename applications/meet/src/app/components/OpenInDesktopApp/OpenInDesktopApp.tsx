@@ -53,23 +53,25 @@ export const OpenInDesktopApp = () => {
             >
                 {c('Action').t`Join from ${MEET_APP_NAME} app`}
             </Button>
-            {isAppDidNotOpenHintVisible && (
-                <div aria-live="polite" className="open-in-desktop-app-hint absolute w-full mt-3 p-4 text-center">
-                    <CloseButton
-                        className="absolute top-0 right-0 mt-2 mr-2"
-                        style={{ '--w-custom': '1.75rem', '--h-custom': '1.75rem' }}
-                        onClose={() => setIsAppDidNotOpenHintVisible(false)}
-                    />
-                    <p className="m-0 text-semibold">{c('Info').t`App didn't open?`}</p>
-                    <p className="m-0 mt-2 text-sm color-weak">
-                        {
-                            // translator: full sentence is "Please download and install the app, then click Join in the Proton Meet app again." where "download" is a link to the download page
-                            c('Info')
-                                .jt`Please ${downloadLink} and install the app, then click Join in the ${MEET_APP_NAME} app again.`
-                        }
-                    </p>
-                </div>
-            )}
+            <div aria-live="polite">
+                {isAppDidNotOpenHintVisible && (
+                    <div className="open-in-desktop-app-hint absolute w-full mt-3 p-4 text-center">
+                        <CloseButton
+                            className="absolute top-0 right-0 mt-2 mr-2"
+                            style={{ '--w-custom': '1.75rem', '--h-custom': '1.75rem' }}
+                            onClose={() => setIsAppDidNotOpenHintVisible(false)}
+                        />
+                        <p className="m-0 text-semibold">{c('Info').t`App didn't open?`}</p>
+                        <p className="m-0 mt-2 text-sm color-weak">
+                            {
+                                // translator: full sentence is "Please download and install the app, then click Join in the Proton Meet app again." where "download" is a link to the download page
+                                c('Info')
+                                    .jt`Please ${downloadLink} and install the app, then click Join in the ${MEET_APP_NAME} app again.`
+                            }
+                        </p>
+                    </div>
+                )}
+            </div>
         </div>
     );
 };
