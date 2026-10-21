@@ -6,7 +6,7 @@ import { InputField as InputFieldTwo } from '@proton/components/components/v2/fi
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 
 import { usePasswordForm } from '../../hooks/auth/usePasswordForm';
-import type { Maybe, MaybePromise } from '../../types';
+import type { Maybe, MaybePromise } from '../../types/utils';
 import type { XorObfuscation } from '../../utils/obfuscate/xor';
 
 type Props = {

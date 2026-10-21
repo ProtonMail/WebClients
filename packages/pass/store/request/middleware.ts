@@ -6,7 +6,7 @@ import noop from '@proton/utils/noop';
 import type { Awaiter } from '../../utils/fp/promises';
 import { awaiter } from '../../utils/fp/promises';
 import { getEpoch } from '../../utils/time/epoch';
-import { selectRequest } from '../selectors';
+import { selectRequest } from './selectors';
 import type { RequestAsyncResult, RequestState, RequestType, WithRequest } from './types';
 import { isActionWithRequest } from './utils';
 

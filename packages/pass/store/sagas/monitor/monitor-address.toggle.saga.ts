@@ -5,12 +5,14 @@ import { updateItemFlags } from '../../../lib/items/item.requests';
 import { toggleCustomEmail, toggleProtonEmail } from '../../../lib/monitor/monitor.request';
 import { intoAliasMonitorAddress, intoCustomMonitorAddress } from '../../../lib/monitor/monitor.utils';
 import { AddressType, type MonitorAddress } from '../../../lib/monitor/types';
-import type { BreachCustomEmailGetResponse, ItemRevision, ItemRevisionContentsResponse } from '../../../types';
+import type { BreachCustomEmailGetResponse, ItemRevisionContentsResponse } from '../../../types/api/pass';
+import type { ItemRevision } from '../../../types/data/items';
 import { partialMerge } from '../../../utils/object/merge';
-import { getBreaches, itemsUpdated, toggleAddressMonitor } from '../../actions';
+import { itemsUpdated } from '../../actions/creators/item';
+import { getBreaches, toggleAddressMonitor } from '../../actions/creators/monitor';
 import { withRevalidate } from '../../request/enhancers';
 import { createRequestSaga } from '../../request/sagas';
-import { selectProtonBreaches } from '../../selectors';
+import { selectProtonBreaches } from '../../selectors/monitor';
 
 export default createRequestSaga({
     actions: toggleAddressMonitor,

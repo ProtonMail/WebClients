@@ -1,6 +1,6 @@
 import { default as Dexie } from 'dexie';
 
-import type { Result } from '@proton/pass/types';
+import type { Result } from '@proton/pass/types/utils';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 const AuthenticatorDBErrorFactory = (name: string) =>

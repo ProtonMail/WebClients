@@ -1,6 +1,6 @@
 import { getInvalidPasswordString } from '../../../lib/auth/utils';
 import { deobfuscate } from '../../../utils/obfuscate/xor';
-import { passwordConfirm } from '../../actions';
+import { passwordConfirm } from '../../actions/creators/auth';
 import { createRequestSaga } from '../../request/sagas';
 
 export default createRequestSaga({

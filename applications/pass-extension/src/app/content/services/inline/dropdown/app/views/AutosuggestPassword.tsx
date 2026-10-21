@@ -18,7 +18,7 @@ import {
     usePasswordGenerator,
 } from '@proton/pass/hooks/usePasswordGenerator';
 import type { GeneratePasswordConfig } from '@proton/pass/lib/password/types';
-import { passwordOptionsEdit } from '@proton/pass/store/actions';
+import { passwordOptionsEdit } from '@proton/pass/store/actions/creators/password';
 import { serialize } from '@proton/pass/utils/object/serialize';
 
 import { useIFrameAppController, useIFrameAppState } from '../../../../../../../lib/components/Inline/IFrameApp';

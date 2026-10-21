@@ -1,6 +1,6 @@
 import type * as PassCoreWorker from '@protontech/pass-rust-core/worker';
 
-import type { Callback, ExtractKeysOfType, Result } from '../../types';
+import type { Callback, ExtractKeysOfType, Result } from '../../types/utils';
 import type { WasmWorkerService } from './wasm.worker.service';
 
 type PassCoreModule = typeof PassCoreWorker;

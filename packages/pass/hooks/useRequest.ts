@@ -5,8 +5,8 @@ import type { ActionCreatorWithPreparedPayload, PayloadAction } from '@reduxjs/t
 
 import { withAsyncRequest, withRevalidate } from '../store/request/enhancers';
 import type { RequestFlow } from '../store/request/flow';
+import { selectRequest } from '../store/request/selectors';
 import type { RequestAsyncResult, RequestMeta, RequestSuccessDTO, WithRequest } from '../store/request/types';
-import { selectRequest } from '../store/selectors';
 import type { MaybeNull, MaybePromise } from '../types/utils';
 import { pipe } from '../utils/fp/pipe';
 import { useEnsureMounted } from './useEnsureMounted';

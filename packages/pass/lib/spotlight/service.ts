@@ -1,7 +1,8 @@
 import identity from '@proton/utils/identity';
 
-import type { AnyStorage, MaybePromise } from '../../types';
-import { type Maybe, type SpotlightAcknowledgment, SpotlightMessage, type SpotlightState } from '../../types';
+import type { Maybe, MaybePromise } from '../../types/utils';
+import { type SpotlightAcknowledgment, SpotlightMessage, type SpotlightState } from '../../types/worker/spotlight';
+import type { AnyStorage } from '../../types/worker/storage';
 import { logger } from '../../utils/logger';
 import { getEpoch } from '../../utils/time/epoch';
 

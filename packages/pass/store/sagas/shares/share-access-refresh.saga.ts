@@ -1,10 +1,11 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
 
 import { shareFetcher } from '../../../lib/sync/v2/user-events.shares';
-import type { MaybeNull, Share } from '../../../types';
+import type { Share } from '../../../types/data/shares';
+import type { MaybeNull } from '../../../types/utils';
 import { logId, logger } from '../../../utils/logger';
-import { shareUpdated } from '../../actions';
 import { refreshShareAccess } from '../../actions/creators/polling';
+import { shareUpdated } from '../../actions/creators/share';
 
 function* refreshShareAccessWorker({ payload: shareId }: ReturnType<typeof refreshShareAccess>) {
     try {

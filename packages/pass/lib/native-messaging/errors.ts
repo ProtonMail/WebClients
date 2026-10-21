@@ -3,8 +3,8 @@ import type { Runtime } from 'webextension-polyfill';
 
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
-import type { Maybe } from '../../types';
-import { NativeMessageErrorType } from '../../types';
+import { NativeMessageErrorType } from '../../types/desktop/extension-unlock-with-desktop';
+import type { Maybe } from '../../types/utils';
 import { logger } from '../../utils/logger';
 
 const log = (...content: any[]) => logger.debug('[NativeMessaging]', ...content);

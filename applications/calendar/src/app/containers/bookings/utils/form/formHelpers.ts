@@ -1,8 +1,9 @@
 import { addHours, getUnixTime, isSameDay } from 'date-fns';
 
-import { BookingLocation, MinimumNoticeMode } from '@proton/calendar/bookings/types';
+import { BookingLocation } from '@proton/calendar/bookings/types';
 import type { SerializedFormData } from '@proton/calendar/bookings/types';
 import { convertZonedDateTimeToUTC, fromLocalDate, toUTCDate } from '@proton/shared/lib/date/timezone';
+import { MinimumNoticeMode } from '@proton/shared/lib/interfaces/calendar/Bookings';
 
 import type { BookingFormData, BookingFormValidation, BookingRange } from '../../interface';
 import { BookingFormValidationReasons, MAX_BOOKING_SLOTS } from '../../interface';

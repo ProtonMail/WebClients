@@ -6,7 +6,7 @@ import { useLockAutoSubmit } from '@proton/pass/hooks/auth/useLockAutoSubmit';
 import { useMountedState } from '@proton/pass/hooks/useEnsureMounted';
 import { useRerender } from '@proton/pass/hooks/useRerender';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
-import type { MaybeNull } from '@proton/pass/types/utils/index';
+import type { MaybeNull } from '@proton/pass/types/utils';
 
 export type Props = {
     header?: ReactNode;

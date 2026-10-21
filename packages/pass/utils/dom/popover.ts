@@ -1,6 +1,6 @@
 import lastItem from '@proton/utils/lastItem';
 
-import type { MaybeNull } from '../../types';
+import type { MaybeNull } from '../../types/utils';
 import { eq } from '../fp/predicates';
 import { safeCall } from '../fp/safe-call';
 import { createListenerStore } from '../listener/factory';

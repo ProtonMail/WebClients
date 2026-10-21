@@ -9,7 +9,7 @@ import { OnboardingButton } from '@proton/pass/components/Onboarding/UI/Onboardi
 import { OpenExtension } from '@proton/pass/components/Onboarding/UI/OpenExtension';
 import { Sample } from '@proton/pass/components/Onboarding/UI/Sample';
 import { PROVIDER_INFO_MAP } from '@proton/pass/lib/import/types';
-import { selectImportReport } from '@proton/pass/store/selectors';
+import { selectImportReport } from '@proton/pass/store/selectors/import';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { Header } from './Header';

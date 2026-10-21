@@ -1,7 +1,7 @@
 import { type FC, type PropsWithChildren, createContext, useCallback, useContext } from 'react';
 
 import type { UnlockDTO } from '../../lib/auth/lock/types';
-import type { MaybeNull } from '../../types';
+import type { MaybeNull } from '../../types/utils';
 
 type UnlockContextValue = (dto: UnlockDTO) => Promise<void>;
 

@@ -14,7 +14,7 @@ import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCirc
 import clsx from '@proton/utils/clsx';
 
 import { useStatefulRef } from '../../../hooks/useStatefulRef';
-import type { Unpack } from '../../../types';
+import type { Unpack } from '../../../types/utils';
 import { truthy } from '../../../utils/fp/predicates';
 import { isEmptyString } from '../../../utils/string/is-empty-string';
 import { FieldBox } from './Layout/FieldBox';

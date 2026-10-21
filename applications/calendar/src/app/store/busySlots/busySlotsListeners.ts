@@ -1,4 +1,4 @@
-import type { SharedStartListening } from '@proton/redux-shared-store-types';
+import type { SharedStartListening } from '@proton/redux-shared-store-types/interface';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 
 import type { CalendarState } from '../store';

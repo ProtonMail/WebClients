@@ -9,10 +9,11 @@ import Checkbox from '@proton/components/components/input/Checkbox';
 import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { UpsellRef } from '../../../constants';
-import { selectPassPlan } from '../../../store/selectors';
 import { selectVisibleNonTrashedSshKeyItems } from '../../../store/selectors/items';
-import { type Maybe, SpotlightMessage } from '../../../types';
+import { selectPassPlan } from '../../../store/selectors/user';
 import { UserPassPlan } from '../../../types/api/plan';
+import type { Maybe } from '../../../types/utils';
+import { SpotlightMessage } from '../../../types/worker/spotlight';
 import { getErrorMessage } from '../../../utils/errors/get-error-message';
 import { logger } from '../../../utils/logger';
 import { usePassCore } from '../../Core/PassCoreProvider';

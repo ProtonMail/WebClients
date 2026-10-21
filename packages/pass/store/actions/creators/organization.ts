@@ -1,7 +1,8 @@
 import { createAction } from '@reduxjs/toolkit';
 
 import type { DomainCriterias } from '../../../lib/settings/pause-list';
-import type { MaybeNull, OrganizationGetResponse } from '../../../types';
+import type { OrganizationGetResponse } from '../../../types/api/pass';
+import type { MaybeNull } from '../../../types/utils';
 import { pipe } from '../../../utils/fp/pipe';
 import { UNIX_MINUTE } from '../../../utils/time/constants';
 import type { OrganizationState } from '../../reducers/organization';

@@ -1,7 +1,7 @@
 import { isEditorFrame, isVisible } from '@protontech/autofill';
 
 import browser from '@proton/pass/lib/globals/browser';
-import type { Maybe } from '@proton/pass/types/utils/index';
+import type { Maybe } from '@proton/pass/types/utils';
 import type { FrameId } from '@proton/pass/types/worker/runtime';
 import { createStyleParser, getComputedHeight, getComputedWidth } from '@proton/pass/utils/dom/computed-styles';
 import { isMainFrame } from '@proton/pass/utils/dom/is-main-frame';

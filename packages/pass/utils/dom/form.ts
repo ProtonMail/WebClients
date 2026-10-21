@@ -1,4 +1,4 @@
-import type { Maybe } from '../../types';
+import type { Maybe } from '../../types/utils';
 import { isFormElement } from './predicates';
 
 export const parseFormAction = (form: HTMLElement): Maybe<string> => {

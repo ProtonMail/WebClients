@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import type { MaybeNull } from '../../../types';
 import { UpdateErrorType } from '../../../types/desktop';
+import type { MaybeNull } from '../../../types/utils';
 
 export const getErrorLabel = (type: MaybeNull<UpdateErrorType>): string => {
     if (type === null) return c('Error').t`Update failed`;

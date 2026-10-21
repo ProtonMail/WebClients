@@ -11,7 +11,8 @@ import clsx from '@proton/utils/clsx';
 
 import { testUrl } from '../../../../lib/urls/utils/autofill';
 import { autofillHelp } from '../../../../lib/urls/utils/autofill.help';
-import { AutofillMode, type UrlItem } from '../../../../types';
+import type { UrlItem } from '../../../../types/forms/fields';
+import { AutofillUrl_Mode as AutofillMode } from '../../../../types/protobuf/item-v1.static';
 
 type Props = { url: UrlItem; initialUrl?: string; regexEnabled: boolean };
 

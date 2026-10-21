@@ -14,7 +14,7 @@ import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
 import { PassIconStatus } from '@proton/pass/types/data/pass-icon';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
-import type { MaybeNull } from '@proton/pass/types/utils/index';
+import type { MaybeNull } from '@proton/pass/types/utils';
 import type { AutofillCCResult } from '@proton/pass/types/worker/autofill';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';

@@ -5,7 +5,11 @@ import {
     getInviteRecommendationsOrganization,
     getInviteRecommendationsSuggested,
 } from '../../../lib/invites/invite.requests';
-import type { InviteRecommendationOrgOutput, InviteRecommendationSuggestedListOutput, InviteRecommendationsResponse } from '../../../types';
+import type {
+    InviteRecommendationOrgOutput,
+    InviteRecommendationSuggestedListOutput,
+    InviteRecommendationsResponse,
+} from '../../../types/api/pass';
 import {
     inviteRecommendationsFailure,
     inviteRecommendationsIntent,
@@ -16,7 +20,7 @@ import {
     inviteRecommendationsSuggestedFailure,
     inviteRecommendationsSuggestedIntent,
     inviteRecommendationsSuggestedSuccess,
-} from '../../actions';
+} from '../../actions/creators/invite';
 import { requestInvalidate } from '../../request/actions';
 
 function* loadRecommendationsWorker({ payload, meta: { request } }: ReturnType<typeof inviteRecommendationsIntent>): Generator {

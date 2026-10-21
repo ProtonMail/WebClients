@@ -2,7 +2,8 @@ import type { ReactNode } from 'react';
 import { createContext, useContext, useEffect, useState } from 'react';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
-import { FeatureCode, useFeature } from '@proton/features';
+import { FeatureCode } from '@proton/features/interface';
+import useFeature from '@proton/features/useFeature';
 import { getHasPassB2BPlan } from '@proton/payments/core/subscription/helpers';
 
 type AccountSpotlightsContextFunctions = {

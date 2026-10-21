@@ -4,8 +4,9 @@ import { omit } from '@proton/shared/lib/helpers/object';
 
 import { MAX_ITEM_NAME_LENGTH } from '../../constants';
 import type { Draft } from '../../store/reducers/drafts';
-import type { CCItemData, IndexedByShareIdAndItemId, ItemRevision, LoginItem, SelectedItem } from '../../types';
+import type { IndexedByShareIdAndItemId, ItemRevision, LoginItem, SelectedItem } from '../../types/data/items';
 import { AutofillMode, CardType } from '../../types/protobuf';
+import type { CCItemData } from '../../types/worker/data';
 import { createTestItem } from '../../utils/tests/fixtures/items';
 import { UNIX_DAY, UNIX_MONTH, UNIX_WEEK } from '../../utils/time/constants';
 import { getEpoch } from '../../utils/time/epoch';

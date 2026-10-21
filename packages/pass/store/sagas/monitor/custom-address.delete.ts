@@ -1,5 +1,5 @@
 import { deleteCustomEmail } from '../../../lib/monitor/monitor.request';
-import { deleteCustomAddress } from '../../actions';
+import { deleteCustomAddress } from '../../actions/creators/monitor';
 import { createRequestSaga } from '../../request/sagas';
 
 export default createRequestSaga({

@@ -6,7 +6,8 @@ import noop from '@proton/utils/noop';
 
 import { useMemoSelector } from '../../hooks/useMemoSelector';
 import { intoBulkSelection } from '../../lib/items/item.utils';
-import { selectChildFolders, selectItemsInFolder } from '../../store/selectors';
+import { selectChildFolders } from '../../store/selectors/folders';
+import { selectItemsInFolder } from '../../store/selectors/items';
 import { ConfirmationPrompt } from '../Confirmation/ConfirmationPrompt';
 import { useItemsActions } from '../Item/ItemActionsProvider';
 

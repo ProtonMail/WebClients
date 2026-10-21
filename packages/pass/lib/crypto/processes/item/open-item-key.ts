@@ -1,5 +1,6 @@
-import type { EncodedItemKeyRotation, ItemKey, RotationKey } from '../../../../types';
-import { PassEncryptionTag } from '../../../../types';
+import type { EncodedItemKeyRotation } from '../../../../types/api/pass';
+import type { ItemKey, RotationKey } from '../../../../types/crypto/pass-types';
+import { PassEncryptionTag } from '../../../../types/crypto/pass-types';
 import { decryptData, importSymmetricKey } from '../../utils/crypto-helpers';
 
 type OpenItemKeyProcessParams = {

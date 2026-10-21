@@ -1,7 +1,7 @@
 import type { Selector } from '@reduxjs/toolkit';
 import type { Action, Reducer } from 'redux';
 
-import type { DefinedPropertiesOnly, MaybeArray } from '../../types';
+import type { DefinedPropertiesOnly, MaybeArray } from '../../types/utils';
 
 export type OptimisticMatcherResult = boolean | string;
 export type OptimisticMatcher = string | ((action: Action) => OptimisticMatcherResult);

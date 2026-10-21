@@ -1,4 +1,4 @@
-import { composeClientToolExecutors } from '@proton/lumo-api-client';
+import { composeClientToolExecutors } from '@proton/lumo-api-client/core/client-tools';
 import { createDesktopClientToolExecutor, isDesktopEnvironment } from '@proton/lumo-api-client/core/desktop-tools';
 import type { AssistantCallOptions, ClientToolExecutor, LumoApiClientConfig } from '@proton/lumo-api-client/core/types';
 import type { Api } from '@proton/shared/lib/interfaces/Api';

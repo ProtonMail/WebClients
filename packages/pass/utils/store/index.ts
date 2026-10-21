@@ -1,6 +1,7 @@
 import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
 
-import type { Maybe, Store } from '../../types';
+import type { Maybe } from '../../types/utils';
+import type { Store } from '../../types/worker/storage';
 import { coalesce } from '../fp/control';
 import { createPubSub } from '../pubsub/factory';
 

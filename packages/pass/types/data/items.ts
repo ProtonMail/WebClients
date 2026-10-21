@@ -1,6 +1,6 @@
 import type { SanitizedBuffers } from '../../utils/buffer/sanitization';
 import type { ItemIDRevision } from '../api/pass';
-import type { OpenedItem } from '../crypto';
+import type { OpenedItem } from '../crypto/pass-types';
 import type {
     ExtraFieldType,
     ItemType,

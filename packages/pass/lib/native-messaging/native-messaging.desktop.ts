@@ -3,8 +3,8 @@ import type {
     NativeMessageRequestForType,
     NativeMessageSetupLockSecretRequest,
     SendNativeMessageResponse,
-} from '../../types';
-import { NativeMessageErrorType, NativeMessageType } from '../../types';
+} from '../../types/desktop/extension-unlock-with-desktop';
+import { NativeMessageErrorType, NativeMessageType } from '../../types/desktop/extension-unlock-with-desktop';
 import { logger } from '../../utils/logger';
 import type { AuthStore } from '../auth/store';
 import { clientLocked, clientReady } from '../client';

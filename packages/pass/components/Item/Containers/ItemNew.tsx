@@ -4,14 +4,12 @@ import { useHistory, useParams } from 'react-router-dom';
 
 import { useMemoSelector } from '../../../hooks/useMemoSelector';
 import { isWritableVault } from '../../../lib/vaults/vault.predicates';
-import { itemCreate } from '../../../store/actions';
-import {
-    selectDefaultVault,
-    selectMostRecentVaultShareID,
-    selectShare,
-    selectVaultLimits,
-} from '../../../store/selectors';
-import type { ItemCreateIntent, ItemType } from '../../../types';
+import { itemCreate } from '../../../store/actions/creators/item';
+import { selectVaultLimits } from '../../../store/selectors/limits';
+import { selectShare } from '../../../store/selectors/shares';
+import { selectDefaultVault, selectMostRecentVaultShareID } from '../../../store/selectors/vaults';
+import type { ItemCreateIntent } from '../../../types/data/items.dto';
+import type { ItemType } from '../../../types/protobuf';
 import { usePassCore } from '../../Core/PassCoreProvider';
 import { useFoldersAccess } from '../../Folders/useFoldersAccess';
 import { useNavigationActions } from '../../Navigation/NavigationActions';

@@ -1,4 +1,4 @@
-import { NativeMessageErrorType } from '../../types';
+import { NativeMessageErrorType } from '../../types/desktop/extension-unlock-with-desktop';
 import {
     NativeMessageError,
     getForNativeMessageErrorFromConnectionError,

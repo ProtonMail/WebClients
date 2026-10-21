@@ -1,5 +1,5 @@
 import type { ShareItem } from '../../store/reducers';
-import { type Share, ShareRole, ShareType } from '../../types';
+import { type Share, ShareRole, ShareType } from '../../types/data/shares';
 import { and, not } from '../../utils/fp/predicates';
 import { PassCrypto } from '../crypto';
 

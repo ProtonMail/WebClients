@@ -10,7 +10,7 @@ import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 
 import { getOccurrenceString } from '../../../lib/i18n/helpers';
-import type { SelectedRevision } from '../../../types';
+import type { SelectedRevision } from '../../../types/data/items';
 
 type Props = SelectedRevision & { vaultId: string };
 

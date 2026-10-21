@@ -9,8 +9,8 @@ import { IcMagicWand } from '@proton/icons/icons/IcMagicWand';
 import { IcPencil } from '@proton/icons/icons/IcPencil';
 
 import { isPaidPlan } from '../../../lib/user/user.predicates';
-import { selectPassPlan } from '../../../store/selectors';
-import type { MaybeNull } from '../../../types';
+import { selectPassPlan } from '../../../store/selectors/user';
+import type { MaybeNull } from '../../../types/utils';
 import { epochToRelativeDaysAgo } from '../../../utils/time/format';
 import { CardContent } from '../../Layout/Card/CardContent';
 

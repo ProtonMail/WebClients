@@ -4,8 +4,8 @@ import { useMemo } from 'react';
 import clsx from '@proton/utils/clsx';
 
 import { useMemoSelector } from '../../../hooks/useMemoSelector';
-import { selectItem } from '../../../store/selectors';
-import type { SelectedItem } from '../../../types';
+import { selectItem } from '../../../store/selectors/items';
+import type { SelectedItem } from '../../../types/data/items';
 import { presentListItem } from '../../Item/List/utils';
 import { SafeItemIcon } from '../../Layout/Icon/ItemIcon';
 import { itemTypeToSubThemeClassName } from '../../Layout/Theme/types';

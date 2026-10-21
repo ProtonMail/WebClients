@@ -1,4 +1,4 @@
-import { quickChat } from '@proton/lumo-api-client';
+import { quickChat } from '@proton/lumo-api-client/assistant';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import { ENABLE_U2L_ENCRYPTION } from '../llm/config';

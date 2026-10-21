@@ -11,7 +11,7 @@ import {
 import { useNotifications } from '@proton/app-context/useNotifications';
 import type { ButtonProps } from '@proton/atoms/Button/Button';
 import { useModalState } from '@proton/components';
-import { useLoading } from '@proton/hooks/index';
+import useLoading from '@proton/hooks/useLoading';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { SECOND } from '@proton/shared/lib/constants';
 import walletDownloadDark from '@proton/styles/assets/img/wallet/wallet-download-dark.png';

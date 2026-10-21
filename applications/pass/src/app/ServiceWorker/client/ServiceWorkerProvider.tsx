@@ -11,7 +11,7 @@ import {
 
 import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import { FileStorageGarbageCollector } from '@proton/pass/lib/file-storage/fs.gc';
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types/utils';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 
 import { type ServiceWorkerClient, createServiceWorkerClient } from './client';

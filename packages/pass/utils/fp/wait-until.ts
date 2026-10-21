@@ -1,4 +1,4 @@
-import type { MaybePromise } from '../../types';
+import type { MaybePromise } from '../../types/utils';
 
 type WaitUntilCallback = (() => MaybePromise<boolean>) | { check: () => MaybePromise<boolean>; cancel: () => boolean };
 

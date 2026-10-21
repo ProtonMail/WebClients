@@ -4,7 +4,7 @@ import { PLANS } from '@proton/payments/core/constants';
 
 import { useFeatureFlag } from '../../hooks/useFeatureFlag';
 import { useMatchUser } from '../../hooks/useMatchUser';
-import { selectUserFolderAllowed } from '../../store/selectors';
+import { selectUserFolderAllowed } from '../../store/selectors/user';
 import { PassFeature } from '../../types/api/features';
 
 export type FoldersAccess = {

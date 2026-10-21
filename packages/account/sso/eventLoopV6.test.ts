@@ -1,4 +1,4 @@
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { getTestStore } from '@proton/redux-shared-store/test';
 import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
 import { ActionEventV6, type CoreEventV6Response } from '@proton/shared/lib/api/events';

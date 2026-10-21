@@ -13,7 +13,8 @@ import { Layout } from '@proton/pass/components/Onboarding/Layout/Layout';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { PasswordVerification } from '@proton/pass/lib/auth/password';
 import { clientErrored, clientLocked, clientMissingScope, clientUnauthorized } from '@proton/pass/lib/client';
-import { selectCanCreateItems, selectVisibleItems } from '@proton/pass/store/selectors';
+import { selectVisibleItems } from '@proton/pass/store/selectors/items';
+import { selectCanCreateItems } from '@proton/pass/store/selectors/shares';
 import { PassFeature } from '@proton/pass/types/api/features';
 import noop from '@proton/utils/noop';
 

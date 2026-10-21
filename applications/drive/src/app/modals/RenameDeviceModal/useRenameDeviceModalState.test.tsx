@@ -6,7 +6,7 @@ import { useFormErrors } from '@proton/components';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
 import { getDeviceName } from '@proton/drive/modules/nodes';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 
 import { getDeviceByUid } from '../../utils/sdk/getDeviceByUid';
 import { type UseRenameDeviceModalProps, useRenameDeviceModalState } from './useRenameDeviceModalState';
@@ -19,9 +19,9 @@ jest.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: jest.fn(),
 }));
 
-jest.mock('@proton/hooks', () => ({
-    ...jest.requireActual('@proton/hooks'),
-    useLoading: jest.fn(),
+jest.mock('@proton/hooks/useLoading', () => ({
+    __esModule: true,
+    default: jest.fn(),
 }));
 
 jest.mock('@proton/drive/legacy/errorHandling', () => ({

@@ -3,8 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 import usePrevious from '@proton/hooks/usePrevious';
 
 import { ACTIVE_POLLING_TIMEOUT } from '../lib/events/constants';
-import { getShareAccessOptions } from '../store/actions';
-import type { Maybe } from '../types';
+import { getShareAccessOptions } from '../store/actions/creators/access';
+import type { Maybe } from '../types/utils';
 import { useRequest } from './useRequest';
 
 export const useShareAccessOptionsPolling = (shareId: string, itemId?: string) => {

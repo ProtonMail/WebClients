@@ -1,9 +1,10 @@
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
-import { itemCreate, itemEdit } from '@proton/pass/store/actions';
-import type { FormEntry } from '@proton/pass/types';
-import { AutosaveMode, FormEntryStatus } from '@proton/pass/types';
+import { itemCreate, itemEdit } from '@proton/pass/store/actions/creators/item';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { AutofillMode } from '@proton/pass/types/protobuf';
+import { AutosaveMode } from '@proton/pass/types/worker/autosave';
+import type { FormEntry } from '@proton/pass/types/worker/form';
+import { FormEntryStatus } from '@proton/pass/types/worker/form';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 

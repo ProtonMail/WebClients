@@ -12,7 +12,7 @@ import type { RequestForkOptions } from '../../lib/auth/fork';
 import type { ReauthActionPayload } from '../../lib/auth/reauth';
 import type { PasswordTypeSwitch } from '../../lib/auth/utils';
 import { passwordTypeSwitch } from '../../lib/auth/utils';
-import { selectHasTwoPasswordMode, selectIsSSO, selectPasswordTypeConfig } from '../../store/selectors';
+import { selectHasTwoPasswordMode, selectIsSSO, selectPasswordTypeConfig } from '../../store/selectors/user';
 import type { State } from '../../store/types';
 import type { XorObfuscation } from '../../utils/obfuscate/xor';
 import { useAuthStore } from '../Core/AuthStoreProvider';

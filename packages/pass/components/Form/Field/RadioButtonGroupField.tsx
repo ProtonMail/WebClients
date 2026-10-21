@@ -5,12 +5,12 @@ import type { FieldProps } from 'formik';
 import InputButton from '@proton/components/components/input/InputButton';
 import type { InputFieldProps } from '@proton/components/components/v2/field/InputField';
 import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
-import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import type { IconComponent } from '@proton/icons/component';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import clsx from '@proton/utils/clsx';
 
 import { useFieldControl } from '../../../hooks/useFieldControl';
-import type { MaybeArray } from '../../../types';
+import type { MaybeArray } from '../../../types/utils';
 import type { RadioValue } from './RadioGroupField';
 
 import './RadioButtonGroupField.scss';

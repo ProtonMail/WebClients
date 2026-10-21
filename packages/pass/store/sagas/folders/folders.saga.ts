@@ -5,10 +5,11 @@ import { encodeFolder } from '../../../lib/folders/folder-proto.transformer';
 import { getFolderAndDescendantIds } from '../../../lib/folders/folder.utils';
 import { parseFolderResponse } from '../../../lib/folders/folders.parser';
 import { createFolderApi, deleteFoldersApi, updateFolderApi } from '../../../lib/folders/folders.requests';
-import type { FolderCreateDTO, FolderData, FolderId } from '../../../types';
-import { folderCreate, folderDelete, folderEdit } from '../../actions';
+import type { FolderId } from '../../../types/crypto/pass-types';
+import type { FolderCreateDTO, FolderData } from '../../../types/data/folders';
+import { folderCreate, folderDelete, folderEdit } from '../../actions/creators/folders';
 import { createRequestSaga } from '../../request/sagas';
-import { selectShareFolders } from '../../selectors';
+import { selectShareFolders } from '../../selectors/folders';
 
 export const createFolderWorker = async ({ shareId, parentFolderId, name }: FolderCreateDTO): Promise<FolderData> => {
     const encodedFolder = encodeFolder({ name });

@@ -2,7 +2,7 @@ import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
 import type { AddressesState, OrganizationState } from '@proton/account';
 import { addressesThunk, organizationActions } from '@proton/account';
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { updateMember } from '@proton/shared/lib/api/calendars';
 import { updateOrganizationSettings } from '@proton/shared/lib/api/organization';
 import { CALENDAR_DISPLAY } from '@proton/shared/lib/calendar/constants';

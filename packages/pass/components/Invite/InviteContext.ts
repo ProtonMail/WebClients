@@ -2,8 +2,9 @@ import { createContext, useContext } from 'react';
 
 import { createUseContext } from '../../hooks/useContextFactory';
 import type { AccessKeys } from '../../lib/access/types';
-import type { MaybeNull, Result, SelectedItem, SelectedShare } from '../../types';
 import type { Invite } from '../../types/data/invites';
+import type { SelectedItem, SelectedShare } from '../../types/data/items';
+import type { MaybeNull, Result } from '../../types/utils';
 
 export type InviteContextState =
     | ({ view: 'invite-vault' } & SelectedShare)

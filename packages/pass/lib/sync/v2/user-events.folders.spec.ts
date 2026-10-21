@@ -3,16 +3,12 @@ import { runSaga } from 'redux-saga';
 import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 import noop from '@proton/utils/noop';
 
-import { foldersDeletedEvent, foldersUpdated } from '../../../store/actions';
-import type {
-    FolderData,
-    FolderId,
-    MaybeNull,
-    PassCryptoWorker,
-    ShareId,
-    SyncEventShareFolderOutput,
-} from '../../../types';
-import type { FolderDataResponse } from '../../../types/api';
+import { foldersDeletedEvent, foldersUpdated } from '../../../store/actions/creators/folders';
+import type { FolderDataResponse, SyncEventShareFolderOutput } from '../../../types/api/pass';
+import type { PassCryptoWorker } from '../../../types/crypto/pass-crypto';
+import type { FolderId, ShareId } from '../../../types/crypto/pass-types';
+import type { FolderData } from '../../../types/data/folders';
+import type { MaybeNull } from '../../../types/utils';
 import { logger } from '../../../utils/logger';
 import { sagaSetup } from '../../../utils/tests/saga';
 import { exposePassCrypto } from '../../crypto';

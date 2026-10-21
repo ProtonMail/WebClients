@@ -1,5 +1,5 @@
 import type { SanitizedPasskey } from '../../lib/passkeys/types';
-import type { SelectedItem, SelectedShare } from '../data';
+import type { SelectedItem, SelectedShare } from '../data/items';
 import type { AutofillPageTelemetryDimensions } from '../data/telemetry';
 import type { MaybeNull } from '../utils';
 import type { LoginItemPreview } from './data';

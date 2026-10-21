@@ -1,7 +1,7 @@
 import identity from '@proton/utils/identity';
 import noop from '@proton/utils/noop';
 
-import type { AnyStorage } from '../../types';
+import type { AnyStorage } from '../../types/worker/storage';
 import { asyncLock, asyncQueue } from '../fp/promises';
 import { logger } from '../logger';
 import type { AbstractAlarm } from '../time/alarm';

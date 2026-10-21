@@ -2,7 +2,7 @@ import { type FC, useEffect } from 'react';
 
 import { useCountdown } from '../../../../hooks/useCountdown';
 import { useRequest } from '../../../../hooks/useRequest';
-import { resendVerifyMailbox, validateMailbox } from '../../../../store/actions';
+import { resendVerifyMailbox, validateMailbox } from '../../../../store/actions/creators/alias';
 import { EmailVerifyModal, SECONDS_BEFORE_RESEND, getInitialCountdown } from '../../../Layout/Modal/EmailVerifyModal';
 import { useAliasMailboxes, useMailbox } from './AliasMailboxesContext';
 

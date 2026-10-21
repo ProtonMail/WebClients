@@ -3,12 +3,13 @@ import { select } from 'redux-saga/effects';
 import { PRIVATE_DOMAINS_URL } from '../../../constants';
 import { fetchIfModified } from '../../../lib/api/utils';
 import { extractPrivateDomains } from '../../../lib/extension/tlds/parser';
-import type { Maybe } from '../../../types';
 import { PassFeature } from '../../../types/api/features';
+import type { Maybe } from '../../../types/utils';
 import { resolvePrivateDomains } from '../../actions/creators/private-domains';
 import { createRequestSaga } from '../../request/sagas';
+import { selectRequest } from '../../request/selectors';
 import type { RequestEntry, RequestStatus } from '../../request/types';
-import { selectFeatureFlag, selectRequest } from '../../selectors';
+import { selectFeatureFlag } from '../../selectors/user';
 
 declare module '../../events' {
     interface SagaEvents {

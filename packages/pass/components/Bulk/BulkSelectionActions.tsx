@@ -2,7 +2,8 @@ import type { Dispatch, SetStateAction } from 'react';
 import { type FC, type PropsWithChildren, createContext, useMemo } from 'react';
 
 import { createUseContext } from '../../hooks/useContextFactory';
-import type { MaybeNull, SelectedItem } from '../../types';
+import type { SelectedItem } from '../../types/data/items';
+import type { MaybeNull } from '../../types/utils';
 import { pipe } from '../../utils/fp/pipe';
 import type { BulkSelection } from './types';
 

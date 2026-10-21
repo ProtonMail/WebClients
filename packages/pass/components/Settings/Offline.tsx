@@ -10,7 +10,7 @@ import { BRAND_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import { useOfflineSetup } from '../../hooks/auth/useOfflineSetup';
-import { selectOfflineEnabled } from '../../store/selectors';
+import { selectOfflineEnabled } from '../../store/selectors/settings';
 import { SettingsPanel } from './SettingsPanel';
 
 export const Offline: FC = () => {

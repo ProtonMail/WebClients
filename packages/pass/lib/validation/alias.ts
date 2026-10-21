@@ -6,10 +6,9 @@ import type {
     AliasFormValues,
     EditAliasFormValues,
     LoginItemFormValues,
-    Maybe,
-    MaybeNull,
     NewAliasFormValues,
-} from '../../types';
+} from '../../types/forms/item';
+import type { Maybe, MaybeNull } from '../../types/utils';
 import PassUI from '../core/ui.proxy';
 import { validateItemErrors } from './item';
 

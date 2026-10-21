@@ -1,4 +1,4 @@
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types/utils';
 import { logger } from '@proton/pass/utils/logger';
 
 import { sendSafariMessage } from './safari';

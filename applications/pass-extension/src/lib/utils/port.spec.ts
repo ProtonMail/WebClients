@@ -1,4 +1,4 @@
-import type { ClientEndpoint, FrameId, TabId } from '@proton/pass/types';
+import type { ClientEndpoint, FrameId, TabId } from '@proton/pass/types/worker/runtime';
 
 import { generatePortName, tabIDFromPortName } from './port';
 

@@ -1,16 +1,11 @@
 import { c } from 'ttag';
 
-import type {
-    CustomSectionValue,
-    DeobfuscatedItemExtraField,
-    Item,
-    ItemContent,
-    ItemImportIntent,
-    Maybe,
-    MaybeNull,
-} from '../../../types';
+import type { DeobfuscatedItemExtraField, Item, ItemContent } from '../../../types/data/items';
+import type { ItemImportIntent } from '../../../types/data/items.dto';
+import type { CustomSectionValue } from '../../../types/forms/fields';
 import { AutofillMode, CardType, WifiSecurity } from '../../../types/protobuf';
 import type { AutofillUrl } from '../../../types/protobuf/item-v1';
+import type { Maybe, MaybeNull } from '../../../types/utils';
 import { truthy } from '../../../utils/fp/predicates';
 import { obfuscate } from '../../../utils/obfuscate/xor';
 import { uniqueId } from '../../../utils/string/unique-id';

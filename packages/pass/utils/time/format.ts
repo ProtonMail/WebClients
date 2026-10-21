@@ -5,7 +5,7 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 import capitalize from '@proton/utils/capitalize';
 import identity from '@proton/utils/identity';
 
-import type { Maybe } from '../../types';
+import type { Maybe } from '../../types/utils';
 import { epochToMs } from './epoch';
 
 const formatRelative = (date: Date | number) =>

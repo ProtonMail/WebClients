@@ -8,7 +8,8 @@ import type { ButtonProps } from '@proton/atoms/Button/Button';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import clsx from '@proton/utils/clsx';
 
-import type { DeobfuscatedItemExtraField, ExtraFieldType } from '../../../../types';
+import type { DeobfuscatedItemExtraField } from '../../../../types/data/items';
+import type { ExtraFieldType } from '../../../../types/protobuf';
 import { partialMerge } from '../../../../utils/object/merge';
 import { DateField } from '../DateField';
 import type { FieldBoxProps } from '../Layout/FieldBox';

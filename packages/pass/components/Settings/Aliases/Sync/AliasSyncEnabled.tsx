@@ -7,8 +7,8 @@ import { c } from 'ttag';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import { useRequest } from '../../../../hooks/useRequest';
-import { aliasSyncEnable } from '../../../../store/actions';
-import { selectUserDefaultShareID } from '../../../../store/selectors';
+import { aliasSyncEnable } from '../../../../store/actions/creators/alias';
+import { selectUserDefaultShareID } from '../../../../store/selectors/user';
 import { Field } from '../../../Form/Field/Field';
 import { VaultPickerField } from '../../../Form/Field/VaultPickerField';
 import { SettingsPanel } from '../../SettingsPanel';

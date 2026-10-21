@@ -12,7 +12,8 @@ import onboardingImport from '../../../assets/b2b-onboarding/icons/import-icon.s
 import onboardingShare from '../../../assets/b2b-onboarding/icons/share-icon.svg';
 import onboardingVault from '../../../assets/b2b-onboarding/icons/vault-icon.svg';
 import { clients } from '../../../clients';
-import { selectB2BOnboardingState, selectWritableVaults } from '../../../store/selectors';
+import { selectB2BOnboardingState } from '../../../store/selectors/onboarding';
+import { selectWritableVaults } from '../../../store/selectors/shares';
 import { usePassCore } from '../../Core/PassCoreProvider';
 import { usePassExtensionLink } from '../../Core/PassExtensionLink';
 import { useInviteActions } from '../../Invite/InviteProvider';

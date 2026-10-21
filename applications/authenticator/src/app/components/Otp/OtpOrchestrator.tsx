@@ -3,7 +3,7 @@ import { createContext, useEffect, useRef } from 'react';
 
 import type { IOtpRenderer } from '@proton/pass/components/Otp/types';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
-import type { Maybe, MaybeNull } from '@proton/pass/types';
+import type { Maybe, MaybeNull } from '@proton/pass/types/utils';
 import type { PubSub } from '@proton/pass/utils/pubsub/factory';
 import { createPubSub } from '@proton/pass/utils/pubsub/factory';
 

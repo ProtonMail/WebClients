@@ -5,7 +5,8 @@ import { c } from 'ttag';
 
 import { selectIsKeylessSsoOrganizationPlan } from '@proton/account/scimSetup';
 import { Button } from '@proton/atoms/Button/Button';
-import { FeatureCode, useFeature } from '@proton/features';
+import { FeatureCode } from '@proton/features/interface';
+import useFeature from '@proton/features/useFeature';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import scimGroupsHeroImg from '@proton/styles/assets/img/onboarding/scim-groups-onboarding-hero.svg';
 import scimGroupsApprovalImg from '@proton/styles/assets/img/onboarding/scim-groups-onboarding-tile-approval.svg';

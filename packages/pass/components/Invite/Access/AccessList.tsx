@@ -8,8 +8,8 @@ import clsx from '@proton/utils/clsx';
 
 import { type AccessDTO, AccessTarget } from '../../../lib/access/types';
 import { isGroupInvite } from '../../../lib/invites/invite.utils';
-import type { NewUserPendingInvite, PendingInvite, ShareMember as ShareMemberType } from '../../../types';
-import { OrganizationItemShareMode } from '../../../types';
+import { OrganizationItemShareMode } from '../../../types/api/pass';
+import type { NewUserPendingInvite, PendingInvite, ShareMember as ShareMemberType } from '../../../types/data/invites';
 import { FieldsetCluster } from '../../Form/Field/Layout/FieldsetCluster';
 import { OrganizationPolicyTooltip } from '../../Organization/OrganizationPolicyTooltip';
 import { useOrganization } from '../../Organization/OrganizationProvider';

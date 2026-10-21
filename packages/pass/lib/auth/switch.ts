@@ -1,7 +1,7 @@
 import { revoke } from '@proton/shared/lib/api/auth';
 import noop from '@proton/utils/noop';
 
-import type { Api, ApiAuth } from '../../types';
+import type { Api, ApiAuth } from '../../types/api/api';
 import { partition } from '../../utils/array/partition';
 import { getActiveSessions } from './session';
 

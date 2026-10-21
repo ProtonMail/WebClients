@@ -4,7 +4,7 @@ import * as React from 'react';
 
 import useFocusTrap from '@proton/components/components/focus/useFocusTrap';
 import { useHotkeys } from '@proton/components/hooks/useHotkeys';
-import { useCombinedRefs } from '@proton/hooks';
+import useCombinedRefs from '@proton/hooks/useCombinedRefs';
 import clsx from '@proton/utils/clsx';
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {

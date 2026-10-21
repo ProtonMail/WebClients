@@ -4,7 +4,7 @@ import { useEffect, useMemo } from 'react';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import noop from '@proton/utils/noop';
 
-import type { SpotlightMessage } from '../../types';
+import type { SpotlightMessage } from '../../types/worker/spotlight';
 import { pipe } from '../../utils/fp/pipe';
 import { usePassCore } from '../Core/PassCoreProvider';
 

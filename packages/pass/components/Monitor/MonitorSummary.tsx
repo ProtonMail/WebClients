@@ -15,7 +15,7 @@ import { useFeatureFlag } from '../../hooks/useFeatureFlag';
 import { useUpsellPlanFeatures } from '../../hooks/usePlanFeatures';
 import { useTelemetryEvent } from '../../hooks/useTelemetryEvent';
 import { isPaidPlan } from '../../lib/user/user.predicates';
-import { selectMonitorPreview } from '../../store/selectors';
+import { selectMonitorPreview } from '../../store/selectors/monitor';
 import { PassFeature } from '../../types/api/features';
 import { TelemetryEventName } from '../../types/data/telemetry';
 import { PillBadge } from '../Layout/Badge/PillBadge';

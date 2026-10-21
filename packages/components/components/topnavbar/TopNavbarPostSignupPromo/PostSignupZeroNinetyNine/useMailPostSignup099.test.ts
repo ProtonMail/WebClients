@@ -4,7 +4,8 @@ import { getUnixTime, subDays } from 'date-fns';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
-import { FeatureCode, useFeature } from '@proton/features';
+import { FeatureCode } from '@proton/features/interface';
+import useFeature from '@proton/features/useFeature';
 import { APPS } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -23,7 +24,7 @@ const mockUseSubscription = useSubscription as jest.Mock;
 jest.mock('@proton/app-context/useConfig');
 const mockUseConfig = useConfig as jest.Mock;
 
-jest.mock('@proton/features');
+jest.mock('@proton/features/useFeature');
 const mockUseFeature = useFeature as jest.Mock;
 
 jest.mock('@proton/unleash/useFlag');

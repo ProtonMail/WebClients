@@ -2,7 +2,7 @@ import type { ReactNode, ReactPortal } from 'react';
 import { type ReactElement, useMemo, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
-import type { MaybeNull } from '../types';
+import type { MaybeNull } from '../types/utils';
 
 type UsePortalType = {
     ParentPortal: ReactElement;

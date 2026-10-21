@@ -2,8 +2,8 @@ import { c } from 'ttag';
 
 import { UpsellRef } from '../../constants';
 import { useMemoSelector } from '../../hooks/useMemoSelector';
-import { type FolderLimitReason, selectFolderLimitReason } from '../../store/selectors';
-import type { MaybeNull } from '../../types';
+import { type FolderLimitReason, selectFolderLimitReason } from '../../store/selectors/folders';
+import type { MaybeNull } from '../../types/utils';
 import { useUpselling } from '../Upsell/UpsellingProvider';
 import { useFolderActions } from './FolderActionsProvider';
 import { useFoldersAccess } from './useFoldersAccess';

@@ -1,4 +1,4 @@
-import type { DeobfuscatedItemContent, UniqueItem } from '../data';
+import type { DeobfuscatedItemContent, UniqueItem } from '../data/items';
 import type { CardType } from '../protobuf';
 
 type ItemPreview = UniqueItem & { name: string };

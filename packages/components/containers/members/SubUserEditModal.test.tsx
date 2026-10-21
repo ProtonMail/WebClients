@@ -75,9 +75,9 @@ const passwordlessOrganizationKey = {
     privateKey: {},
     publicKey: {},
 } as CachedOrganizationKey;
-jest.mock('@proton/features', () => ({
-    ...jest.requireActual('@proton/features'),
-    useFeature: () => ({ feature: undefined, loading: false }),
+jest.mock('@proton/features/useFeature', () => ({
+    __esModule: true,
+    default: () => ({ feature: undefined, loading: false }),
 }));
 jest.mock('@proton/activation/src/hooks/useBYOEFeatureStatus', () => ({
     __esModule: true,

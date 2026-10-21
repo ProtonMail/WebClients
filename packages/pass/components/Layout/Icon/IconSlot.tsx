@@ -2,7 +2,7 @@ import type { FC, ReactElement } from 'react';
 
 import type { IconComponent, IconComponentProps } from '@proton/icons/component';
 
-import type { Maybe } from '../../../types';
+import type { Maybe } from '../../../types/utils';
 
 export type IconSlotValue = IconComponent | ReactElement;
 

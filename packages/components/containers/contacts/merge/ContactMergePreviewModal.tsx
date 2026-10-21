@@ -2,7 +2,7 @@ import type { Dispatch, SetStateAction } from 'react';
 import { useEffect, useMemo, useState } from 'react';
 
 import { useUserKeys } from '@proton/account/userKeys/hooks';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { useGetContact } from '@proton/mail/store/contacts/contactHooks';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import { prepareVCardContact } from '@proton/shared/lib/contacts/decrypt';

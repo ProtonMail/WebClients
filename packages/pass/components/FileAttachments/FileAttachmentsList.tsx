@@ -9,9 +9,10 @@ import { useAsyncRequestDispatch } from '../../hooks/useDispatchAsyncRequest';
 import { useMatchUser } from '../../hooks/useMatchUser';
 import { validateFileName } from '../../lib/file-attachments/helpers';
 import { isShareWritable } from '../../lib/shares/share.predicates';
-import { fileUpdateMetadata } from '../../store/actions';
-import { selectShare } from '../../store/selectors';
-import type { BaseFileDescriptor, FileDescriptor, FileID, SelectedItem } from '../../types';
+import { fileUpdateMetadata } from '../../store/actions/creators/files';
+import { selectShare } from '../../store/selectors/shares';
+import type { BaseFileDescriptor, FileDescriptor, FileID } from '../../types/data/files';
+import type { SelectedItem } from '../../types/data/items';
 import { ConfirmationPrompt } from '../Confirmation/ConfirmationPrompt';
 import { FileAttachment } from './FileAttachment';
 

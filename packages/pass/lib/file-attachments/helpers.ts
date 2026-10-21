@@ -2,7 +2,10 @@ import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/cryp
 
 import { getHashCode } from '@proton/shared/lib/helpers/string';
 
-import type { FileAttachmentValues, FileDescriptor, ItemFileOutput, ItemKey, Maybe } from '../../types';
+import type { ItemFileOutput } from '../../types/api/pass';
+import type { ItemKey } from '../../types/crypto/pass-types';
+import type { FileAttachmentValues, FileDescriptor } from '../../types/data/files';
+import type { Maybe } from '../../types/utils';
 import { truthy } from '../../utils/fp/predicates';
 import { logger } from '../../utils/logger';
 import { PassCrypto } from '../crypto';

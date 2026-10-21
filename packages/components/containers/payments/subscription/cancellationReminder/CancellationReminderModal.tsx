@@ -3,7 +3,8 @@ import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { FeatureCode, useFeature } from '@proton/features';
+import { FeatureCode } from '@proton/features/interface';
+import useFeature from '@proton/features/useFeature';
 import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import subscriptionEnding from '@proton/styles/assets/img/illustrations/subscription_ending.svg';

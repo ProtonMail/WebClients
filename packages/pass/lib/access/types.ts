@@ -1,4 +1,5 @@
-import type { NewUserPendingInvite, PendingInvite, SelectedShare, ShareMember } from '../../types';
+import type { NewUserPendingInvite, PendingInvite, ShareMember } from '../../types/data/invites';
+import type { SelectedShare } from '../../types/data/items';
 
 /** Passing an `itemId` means operating on an item's access state,
  * regardless of whether access is via vault or item share */

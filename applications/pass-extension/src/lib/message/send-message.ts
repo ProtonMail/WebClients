@@ -1,7 +1,7 @@
 import type { Tabs } from 'webextension-polyfill';
 
 import browser from '@proton/pass/lib/globals/browser';
-import type { Maybe } from '@proton/pass/types/utils/index';
+import type { Maybe } from '@proton/pass/types/utils';
 import type { ClientEndpoint, TabId } from '@proton/pass/types/worker/runtime';
 
 import type {

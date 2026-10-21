@@ -5,10 +5,10 @@ import noop from '@proton/utils/noop';
 
 import { useSelectedItem } from '../../components/Navigation/NavigationItem';
 import { hasAttachments } from '../../lib/items/item.predicates';
-import { filesResolve } from '../../store/actions';
-import { selectItem, selectOptimisticItemState } from '../../store/selectors';
+import { filesResolve } from '../../store/actions/creators/files';
+import { selectItem, selectOptimisticItemState } from '../../store/selectors/items';
 import type { State } from '../../store/types';
-import type { UniqueItem } from '../../types';
+import type { UniqueItem } from '../../types/data/items';
 import { useAsyncRequestDispatch } from '../useDispatchAsyncRequest';
 
 const useFileResolver = () => {

@@ -2,7 +2,8 @@ import { TOTP, URI } from 'otpauth';
 
 import { getSearchParams } from '@proton/shared/lib/helpers/url';
 
-import type { MaybeNull, OtpCode } from '../../types';
+import type { MaybeNull } from '../../types/utils';
+import type { OtpCode } from '../../types/worker/otp';
 import { merge } from '../../utils/object/merge';
 import { isEmptyString } from '../../utils/string/is-empty-string';
 import { getEpoch } from '../../utils/time/epoch';

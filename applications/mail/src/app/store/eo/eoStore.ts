@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 
 import { apiStatusReducer } from '@proton/account/apiStatus';
-import { featuresReducer } from '@proton/features';
+import { featuresReducer } from '@proton/features/reducer';
 
 import { elementsReducer } from '../elements/elementsSlice';
 import eo from './eoSlice';

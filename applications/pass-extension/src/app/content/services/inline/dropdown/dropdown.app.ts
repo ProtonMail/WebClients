@@ -1,6 +1,6 @@
 import type { PasswordAutosuggestOptions } from '@proton/pass/lib/password/types';
 import type { AutofillPageTelemetryDimensions } from '@proton/pass/types/data/telemetry';
-import type { MaybeNull } from '@proton/pass/types/utils/index';
+import type { MaybeNull } from '@proton/pass/types/utils';
 import { asyncQueue } from '@proton/pass/utils/fp/promises';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';

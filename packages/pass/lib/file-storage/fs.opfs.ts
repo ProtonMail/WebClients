@@ -1,6 +1,7 @@
 import noop from '@proton/utils/noop';
 
-import type { AnyStorage, Maybe, StorageData } from '../../types';
+import type { Maybe } from '../../types/utils';
+import type { AnyStorage, StorageData } from '../../types/worker/storage';
 import { logId, logger } from '../../utils/logger';
 import { FileStorageGarbageCollector } from './fs.gc';
 import type { FileBuffer, FileStorage } from './types';

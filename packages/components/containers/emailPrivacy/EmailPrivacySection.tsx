@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { FeatureCode, useFeatures } from '@proton/features';
+import { FeatureCode } from '@proton/features/interface';
+import useFeatures from '@proton/features/useFeatures';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/mail/mailSettings';

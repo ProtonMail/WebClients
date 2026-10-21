@@ -6,7 +6,7 @@ import {
 } from '@protontech/crypto/subtle/aesGcm.ts';
 import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 
-import type { PassEncryptionTag } from '../../../types';
+import type { PassEncryptionTag } from '../../../types/crypto/pass-types';
 
 export { generateKey, importKey as importSymmetricKey };
 

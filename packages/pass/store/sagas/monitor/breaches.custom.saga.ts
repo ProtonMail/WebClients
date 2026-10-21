@@ -1,6 +1,6 @@
 import { getCustomEmailBreaches } from '../../../lib/monitor/monitor.request';
 import { intoFetchedBreach } from '../../../lib/monitor/monitor.utils';
-import { getCustomBreach } from '../../actions';
+import { getCustomBreach } from '../../actions/creators/monitor';
 import { createRequestSaga } from '../../request/sagas';
 
 export default createRequestSaga({

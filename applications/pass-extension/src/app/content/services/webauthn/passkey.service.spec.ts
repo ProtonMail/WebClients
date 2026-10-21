@@ -1,5 +1,5 @@
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import { AppStatus } from '@proton/pass/types';
+import { AppStatus } from '@proton/pass/types/worker/state';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
 import browser, { clearBrowserMocks } from '../../../../__mocks__/webextension-polyfill';

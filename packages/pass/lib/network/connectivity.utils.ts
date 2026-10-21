@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { FIBONACCI_LIST } from '@proton/shared/lib/constants';
 
-import type { Maybe } from '../../types';
+import type { Maybe } from '../../types/utils';
 
 export enum ConnectivityStatus {
     /** Network and API healthy */

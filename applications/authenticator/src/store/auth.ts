@@ -2,7 +2,7 @@ import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import { type RequestForkOptions, requestFork as getRequest } from '@proton/pass/lib/auth/fork';
-import type { Maybe } from '@proton/pass/types';
+import type { Maybe } from '@proton/pass/types/utils';
 import { revoke } from '@proton/shared/lib/api/auth';
 import { getApiError, getIs401Error, getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';

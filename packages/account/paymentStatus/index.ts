@@ -9,7 +9,7 @@ import {
 
 import { getPaymentMethodStatus } from '@proton/payments/core/api/api';
 import type { PaymentStatus } from '@proton/payments/core/interface';
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { previousSelector } from '@proton/redux-utilities/creator';
 import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt';
 import { getInitialModelState } from '@proton/redux-utilities/initialModelState';

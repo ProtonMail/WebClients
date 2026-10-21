@@ -1,6 +1,7 @@
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { FeatureCode, useFeature } from '@proton/features';
+import { FeatureCode } from '@proton/features/interface';
+import useFeature from '@proton/features/useFeature';
 
 import NetPromoterScoreModal from '../../containers/netPromoterScore/NetPromoterScoreModal';
 import { npsConfig } from '../../containers/netPromoterScore/config';

@@ -3,7 +3,7 @@ import { useLayoutEffect, useRef, useState } from 'react';
 
 import clsx from '@proton/utils/clsx';
 
-import type { Maybe } from '../../../types';
+import type { Maybe } from '../../../types/utils';
 
 import './Stepper.scss';
 

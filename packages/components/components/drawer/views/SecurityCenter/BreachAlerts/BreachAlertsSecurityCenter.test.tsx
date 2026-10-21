@@ -28,9 +28,9 @@ jest.mock('../../../../../hooks/useEventManager', () => ({
     default: jest.fn().mockReturnValue({ call: jest.fn() }),
 }));
 
-jest.mock('@proton/hooks', () => ({
+jest.mock('@proton/hooks/useLoading', () => ({
     __esModule: true,
-    useLoading: jest.fn().mockReturnValue([false, jest.fn().mockResolvedValue(() => {})]),
+    default: jest.fn().mockReturnValue([false, jest.fn().mockResolvedValue(() => {})]),
 }));
 
 jest.mock('@proton/account/user/hooks');

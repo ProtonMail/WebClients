@@ -1,7 +1,8 @@
 import type { Reducer } from 'redux';
 
 import type { DecodedPatMonitorRecord, PersonalAccessToken } from '../../lib/access-token/access-token.types';
-import type { MaybeNull, PersonalAccessTokenShareResponse } from '../../types';
+import type { PersonalAccessTokenShareResponse } from '../../types/api/pass';
+import type { MaybeNull } from '../../types/utils';
 import { or } from '../../utils/fp/predicates';
 import { objectDelete } from '../../utils/object/delete';
 import {
@@ -11,7 +12,7 @@ import {
     getAccessTokenGrants,
     getAccessTokens,
     updateAccessTokenAccess,
-} from '../actions';
+} from '../actions/creators/access-token';
 
 type AccessTokenActionsState = {
     records: DecodedPatMonitorRecord[];

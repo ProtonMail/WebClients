@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import type { OfflineConfig } from '@proton/pass/lib/cache/crypto';
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types/utils';
 import noop from '@proton/utils/noop';
 
 import { clearStorageAndReload } from '../../app/utils';

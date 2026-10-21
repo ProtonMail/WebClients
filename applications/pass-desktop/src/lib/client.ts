@@ -1,6 +1,6 @@
 import { clientBooted } from '@proton/pass/lib/client';
-import type { AppState } from '@proton/pass/types';
-import { AppStatus } from '@proton/pass/types';
+import type { AppState } from '@proton/pass/types/worker/state';
+import { AppStatus } from '@proton/pass/types/worker/state';
 
 import { setupIpcHandler } from './ipc';
 

@@ -1,6 +1,6 @@
 import { CryptoProxy, type PrivateKeyReference } from '@protontech/crypto';
 
-import { PassSignatureContext, type VaultShareKey } from '../../../../types';
+import { PassSignatureContext, type VaultShareKey } from '../../../../types/crypto/pass-types';
 import type { PassCoreProxy } from '../../../core/core.types';
 
 type CreateNewUserSignatureProcessParams = {

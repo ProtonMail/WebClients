@@ -15,7 +15,8 @@ import { useMemoSelector } from '../../hooks/useMemoSelector';
 import { useRequest } from '../../hooks/useRequest';
 import { intoAliasMonitorAddress } from '../../lib/monitor/monitor.utils';
 import type { AddressType, MonitorAddress } from '../../lib/monitor/types';
-import { deleteCustomAddress, getBreaches } from '../../store/actions';
+import { deleteCustomAddress, getBreaches } from '../../store/actions/creators/monitor';
+import { selectVisibleAliasItems } from '../../store/selectors/items';
 import {
     selectCustomBreaches,
     selectDuplicatePasswords,
@@ -23,9 +24,8 @@ import {
     selectMonitorState,
     selectProtonBreaches,
     selectTotalBreaches,
-    selectVisibleAliasItems,
-} from '../../store/selectors';
-import type { MaybeNull } from '../../types';
+} from '../../store/selectors/monitor';
+import type { MaybeNull } from '../../types/utils';
 import { CustomAddressAddModal } from './Address/CustomAddressAddModal';
 import { CustomAddressVerifyModal } from './Address/CustomAddressVerifyModal';
 import { MonitorContext, type MonitorContextValue } from './MonitorContext';

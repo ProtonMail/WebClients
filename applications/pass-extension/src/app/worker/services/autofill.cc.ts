@@ -1,6 +1,6 @@
 import type { CCFieldType, FieldType } from '@protontech/autofill/types';
 
-import type { MaybeNull } from '@proton/pass/types/utils/index';
+import type { MaybeNull } from '@proton/pass/types/utils';
 import type { FrameId, TabId } from '@proton/pass/types/worker/runtime';
 import noop from '@proton/utils/noop';
 

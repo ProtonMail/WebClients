@@ -4,8 +4,10 @@ import { call, put } from 'redux-saga/effects';
 import chunk from '@proton/utils/chunk';
 
 import { MIN_MAX_BATCH_PER_REQUEST } from '../../../constants';
-import { itemsDeleteEvent, itemsUpdated } from '../../../store/actions';
-import type { ItemRevision, Maybe, SyncEventShareItemOutput } from '../../../types';
+import { itemsDeleteEvent, itemsUpdated } from '../../../store/actions/creators/item';
+import type { SyncEventShareItemOutput } from '../../../types/api/pass';
+import type { ItemRevision } from '../../../types/data/items';
+import type { Maybe } from '../../../types/utils';
 import { prop } from '../../../utils/fp/lens';
 import { truthy } from '../../../utils/fp/predicates';
 import { requestItem } from '../../items/item.requests';

@@ -5,10 +5,11 @@ import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import { PassCrypto } from '../../../lib/crypto';
 import { getGroups as fetchGroups } from '../../../lib/groups/groups.requests';
 import type { GroupsResponse } from '../../../lib/groups/groups.types';
-import type { MaybeNull } from '../../../types';
 import { PassFeature } from '../../../types/api/features';
+import type { MaybeNull } from '../../../types/utils';
 import { getGroups } from '../../actions/creators/groups';
-import { selectFeatureFlag, selectOrganization } from '../../selectors';
+import { selectOrganization } from '../../selectors/organization';
+import { selectFeatureFlag } from '../../selectors/user';
 
 function* getGroupsWorker({ meta }: ReturnType<typeof getGroups.intent>) {
     try {

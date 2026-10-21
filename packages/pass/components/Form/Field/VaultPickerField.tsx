@@ -8,9 +8,10 @@ import { IcUsers } from '@proton/icons/icons/IcUsers';
 import clsx from '@proton/utils/clsx';
 
 import type { ShareItem } from '../../../store/reducers';
-import { selectWritableVaults } from '../../../store/selectors';
-import type { Maybe, ShareType } from '../../../types';
+import { selectWritableVaults } from '../../../store/selectors/shares';
+import type { ShareType } from '../../../types/data/shares';
 import { VaultColor } from '../../../types/protobuf/vault-v1.static';
+import type { Maybe } from '../../../types/utils';
 import type { VaultIconValue } from '../../Vault/VaultIcon';
 import { VaultIcon } from '../../Vault/VaultIcon';
 import { VAULT_COLOR_MAP } from '../../Vault/constants';

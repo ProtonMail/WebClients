@@ -1,4 +1,4 @@
-import type { ItemRevision } from '../../../types';
+import type { ItemRevision } from '../../../types/data/items';
 import { AutofillMode } from '../../../types/protobuf';
 import type { AutofillUrl } from '../../../types/protobuf/item-v1';
 import { getModeLabel } from '../utils/autofill';

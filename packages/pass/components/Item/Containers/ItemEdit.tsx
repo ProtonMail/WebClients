@@ -3,9 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, useParams } from 'react-router-dom';
 
 import { useItem } from '../../../hooks/useItem';
-import { itemEdit } from '../../../store/actions';
-import { selectShare } from '../../../store/selectors';
-import type { ItemEditIntent, ItemType, SelectedItem } from '../../../types';
+import { itemEdit } from '../../../store/actions/creators/item';
+import { selectShare } from '../../../store/selectors/shares';
+import type { SelectedItem } from '../../../types/data/items';
+import type { ItemEditIntent } from '../../../types/data/items.dto';
+import type { ItemType } from '../../../types/protobuf';
 import { usePassCore } from '../../Core/PassCoreProvider';
 import { useNavigationActions } from '../../Navigation/NavigationActions';
 import { useItemScope } from '../../Navigation/NavigationMatches';

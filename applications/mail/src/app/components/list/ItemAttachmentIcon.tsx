@@ -4,8 +4,8 @@ import { createElement } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { useFeature } from '@proton/features/index';
 import { FeatureCode } from '@proton/features/interface';
+import useFeature from '@proton/features/useFeature';
 import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import { IcPaperClip } from '@proton/icons/icons/IcPaperClip';
 import humanSize from '@proton/shared/lib/helpers/humanSize';

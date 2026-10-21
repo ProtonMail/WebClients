@@ -3,7 +3,8 @@ import { useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
 import { isShareVisible } from '../../lib/shares/share.predicates';
-import { selectFolder, selectShare } from '../../store/selectors';
+import { selectFolder } from '../../store/selectors/folders';
+import { selectShare } from '../../store/selectors/shares';
 import { useItems } from '../Item/Context/ItemsProvider';
 import { useNavigationActions } from './NavigationActions';
 import { useNavigationFilters } from './NavigationFilters';

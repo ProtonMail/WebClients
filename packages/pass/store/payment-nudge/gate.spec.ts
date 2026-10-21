@@ -3,8 +3,8 @@ import type { SavedPaymentMethod } from '@proton/payments/core/interface';
 import { USER_ROLES } from '@proton/shared/lib/constants';
 import type { User } from '@proton/shared/lib/interfaces/User';
 
-import type { PassPlanResponse } from '../../types';
-import { PlanType } from '../../types';
+import type { PassPlanResponse } from '../../types/api/pass';
+import { PlanType } from '../../types/api/pass';
 import * as epoch from '../../utils/time/epoch';
 import { canQueryPaymentNudge, hasNoPaymentMethod } from './gate';
 

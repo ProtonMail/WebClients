@@ -1,5 +1,5 @@
-import type { FolderKey, VaultShareKey } from '../../../../types';
-import { ContentFormatVersion, PassEncryptionTag } from '../../../../types';
+import type { FolderKey, VaultShareKey } from '../../../../types/crypto/pass-types';
+import { ContentFormatVersion, PassEncryptionTag } from '../../../../types/crypto/pass-types';
 import { TEST_USER_KEY_ID, randomContents } from '../../../../utils/tests/fixtures/crypto';
 import { decryptData, generateKey, importSymmetricKey } from '../../utils/crypto-helpers';
 import { createFolder } from './create-folder';

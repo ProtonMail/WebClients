@@ -3,7 +3,7 @@ import { addDays, getUnixTime } from 'date-fns';
 
 import { FeatureCode } from '@proton/features/interface';
 import { type FeaturesReducerState, updateFeature } from '@proton/features/reducer';
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 
 import { type FeaturesTourState, featureTourActions } from './index';
 

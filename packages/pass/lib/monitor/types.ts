@@ -1,4 +1,5 @@
-import type { MaybeNull, SelectedItem } from '../../types';
+import type { SelectedItem } from '../../types/data/items';
+import type { MaybeNull } from '../../types/utils';
 
 export type ProtonAddressID = string;
 export type CustomAddressID = string;

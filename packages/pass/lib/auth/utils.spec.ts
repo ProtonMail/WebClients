@@ -1,4 +1,4 @@
-import { AppStatus } from '../../types';
+import { AppStatus } from '../../types/worker/state';
 import { LockMode } from './lock/types';
 import type { AuthStore } from './store';
 import { getInitialLockedAppStatus } from './utils';

@@ -4,33 +4,35 @@ import chunk from '@proton/utils/chunk';
 
 import { MAX_MAX_BATCH_PER_REQUEST } from '../../constants';
 import type {
-    AliasContactBlockDTO,
     AliasContactGetResponse,
+    AliasContactWithStatsGetResponse,
+    AliasMailboxResponse,
+    CreatePendingAliasRequest,
+    CustomDomainOutput,
+    EnableSLSyncRequest,
+    ItemRevisionContentsResponse,
+    SlSyncStatusOutput,
+} from '../../types/api/pass';
+import type {
+    AliasContactBlockDTO,
     AliasContactInfoDTO,
     AliasContactNewDTO,
-    AliasContactWithStatsGetResponse,
     AliasCreateFromPendingDTO,
     AliasDetails,
     AliasMailbox,
-    AliasMailboxResponse,
     AliasOptions,
     AliasPending,
     AliasToggleStatusDTO,
     CatchAllDTO,
-    CreatePendingAliasRequest,
     CustomDomainMailboxesDTO,
     CustomDomainNameDTO,
-    CustomDomainOutput,
-    EnableSLSyncRequest,
-    ItemRevisionContentsResponse,
     MailboxDTO,
     MailboxDeleteDTO,
     MailboxEditDTO,
-    MaybeNull,
     RandomPrefixDTO,
-    SlSyncStatusOutput,
-    UniqueItem,
-} from '../../types';
+} from '../../types/data/alias';
+import type { UniqueItem } from '../../types/data/items';
+import type { MaybeNull } from '../../types/utils';
 import { api } from '../api/api';
 import { createPageIterator } from '../api/utils';
 import { PassCrypto } from '../crypto';

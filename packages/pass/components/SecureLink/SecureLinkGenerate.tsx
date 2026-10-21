@@ -7,8 +7,9 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 
 import { useRequest } from '../../hooks/useRequest';
-import { secureLinkCreate } from '../../store/actions';
-import type { SecureLink, SecureLinkOptions, UniqueItem } from '../../types';
+import { secureLinkCreate } from '../../store/actions/creators/item';
+import type { UniqueItem } from '../../types/data/items';
+import type { SecureLink, SecureLinkOptions } from '../../types/data/items.dto';
 import { ExpirationTimeSelect, ExpireTime } from '../Form/Field/Custom/ExpirationTimeSelect';
 import { MaxReadsToggleInput } from '../Form/Field/Custom/MaxReadsToggleInput';
 

@@ -12,8 +12,13 @@ import noop from '@proton/utils/noop';
 import { UpsellRef } from '../../constants';
 import { useActionRequest } from '../../hooks/useRequest';
 import { validateVaultValues } from '../../lib/validation/vault';
-import { type vaultCreationFailure, vaultCreationIntent, type vaultCreationSuccess } from '../../store/actions';
-import { selectPassPlan, selectVaultLimits } from '../../store/selectors';
+import {
+    type vaultCreationFailure,
+    vaultCreationIntent,
+    type vaultCreationSuccess,
+} from '../../store/actions/creators/vault';
+import { selectVaultLimits } from '../../store/selectors/limits';
+import { selectPassPlan } from '../../store/selectors/user';
 import { UserPassPlan } from '../../types/api/plan';
 import { VaultColor, VaultIcon } from '../../types/protobuf/vault-v1.static';
 import { Card } from '../Layout/Card/Card';

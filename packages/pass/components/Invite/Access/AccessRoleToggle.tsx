@@ -8,7 +8,7 @@ import DropdownButton from '@proton/components/components/dropdown/DropdownButto
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 
-import { ShareRole } from '../../../types';
+import { ShareRole } from '../../../types/data/shares';
 import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';
 import { type InviteLabels, useInviteLabels } from '../useInviteLabels';
 

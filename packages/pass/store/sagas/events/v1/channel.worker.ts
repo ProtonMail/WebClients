@@ -7,14 +7,15 @@ import noop from '@proton/utils/noop';
 
 import { ACTIVE_POLLING_TIMEOUT } from '../../../../lib/events/constants';
 import type { EventManagerEvent } from '../../../../lib/events/manager';
-import type { Maybe } from '../../../../types';
+import type { Maybe } from '../../../../types/utils';
 import { logger } from '../../../../utils/logger';
 import { epochToMs, msToEpoch } from '../../../../utils/time/epoch';
-import { channelAcknowledge, clientInit } from '../../../actions';
+import { channelAcknowledge } from '../../../actions/creators/api';
+import { clientInit } from '../../../actions/creators/client';
 import { forcePollV1 } from '../../../actions/creators/polling';
 import { channelRequest } from '../../../actions/requests';
+import { selectRequest } from '../../../request/selectors';
 import type { RequestEntry } from '../../../request/types';
-import { selectRequest } from '../../../selectors';
 import type { RootSagaOptions } from '../../../types';
 import type { EventChannel } from './types';
 

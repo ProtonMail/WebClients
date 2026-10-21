@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { getPlanFeatures } from '../components/Monitor/utils';
 import type { UpsellType } from '../components/Upsell/UpsellingModal';
 import type { FeatureType } from '../components/Upsell/types';
-import { selectPassPlan } from '../store/selectors';
+import { selectPassPlan } from '../store/selectors/user';
 import { UserPassPlan } from '../types/api/plan';
 
 type UpsellPlanFeatures = {

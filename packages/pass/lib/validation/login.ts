@@ -1,7 +1,7 @@
 import type { FormikErrors } from 'formik';
 import { c } from 'ttag';
 
-import type { LoginItemFormValues } from '../../types';
+import type { LoginItemFormValues } from '../../types/forms/item';
 import { parseOTPValue } from '../otp/otp';
 import { validateAliasForm } from './alias';
 import { validateItemErrors } from './item';

@@ -3,7 +3,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import type { LocalParticipant, RemoteParticipant } from 'livekit-client';
 import { describe, expect, it } from 'vitest';
 
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 
 import type { MeetState } from '../../rootReducer';
 import { chatAndReactionsReducer, raiseHand } from '../chatAndReactionsSlice';

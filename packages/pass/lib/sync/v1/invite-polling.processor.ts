@@ -2,18 +2,13 @@ import { put, select } from 'redux-saga/effects';
 
 import { toMap } from '@proton/shared/lib/helpers/object';
 
-import { syncInvites } from '../../../store/actions';
+import { syncInvites } from '../../../store/actions/creators/invite';
 import type { InviteState } from '../../../store/reducers';
 import { selectInvites } from '../../../store/selectors/invites';
-import type {
-    GroupInvite,
-    GroupInvitesListResponse,
-    InvitesGetResponse,
-    Maybe,
-    MaybeNull,
-    UserInvite,
-} from '../../../types';
-import { InviteType } from '../../../types';
+import type { GroupInvitesListResponse, InvitesGetResponse } from '../../../types/api/pass';
+import type { GroupInvite, UserInvite } from '../../../types/data/invites';
+import { InviteType } from '../../../types/data/invites';
+import type { Maybe, MaybeNull } from '../../../types/utils';
 import { truthy } from '../../../utils/fp/predicates';
 import { logger } from '../../../utils/logger';
 import { parseGroupInvite, parseUserInvite } from '../../invites/invite.parser';

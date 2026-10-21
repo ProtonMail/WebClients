@@ -8,7 +8,7 @@ import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import type { TwoFactorCredentials } from '@proton/shared/lib/api/auth';
 import { PasswordError, TOTPError } from '@proton/shared/lib/authentication/error';
 import type { Fido2Data, Fido2Response } from '@proton/shared/lib/authentication/interface';

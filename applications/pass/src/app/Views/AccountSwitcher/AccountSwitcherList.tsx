@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { UserPanel } from '@proton/pass/components/Account/UserPanel';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import type { SwitchableSession } from '@proton/pass/lib/auth/switch';
-import { AuthMode } from '@proton/pass/types';
+import { AuthMode } from '@proton/pass/types/api/api';
 
 export type AccountSwitcherProps = {
     sessions: SwitchableSession[];

@@ -1,7 +1,7 @@
 /** Mirror of the `@protontech/pass-rust-core` share dedupe test suite.
  * Keep these tests inline with the rust source: `proton-pass-common/src/share.rs::visible_share_ids` */
-import type { Share } from '../../types';
-import { ShareFlags, ShareRole, ShareType } from '../../types';
+import type { Share } from '../../types/data/shares';
+import { ShareFlags, ShareRole, ShareType } from '../../types/data/shares';
 import { createTestShare } from '../../utils/tests/fixtures/shares';
 import { createPassCoreProxy } from '../core/core.proxy';
 import { dedupeShares } from './share.dedupe';

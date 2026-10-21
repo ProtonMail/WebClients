@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import type { ModalStateProps } from '@proton/components';
 import { InputFieldTwo, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import noop from '@proton/utils/noop';
 
 export type CreateFileModalViewProps = ModalStateProps & {

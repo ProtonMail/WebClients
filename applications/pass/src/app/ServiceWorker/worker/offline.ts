@@ -1,7 +1,7 @@
 import { getCacheStorage } from '@proton/pass/lib/api/cache';
 import { createNetworkError } from '@proton/pass/lib/api/fetch-controller';
 import { globToRegExp } from '@proton/pass/lib/urls/utils/utils';
-import type { Maybe } from '@proton/pass/types';
+import type { Maybe } from '@proton/pass/types/utils';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';

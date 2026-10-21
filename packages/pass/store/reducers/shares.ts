@@ -1,25 +1,24 @@
 import type { Action, Reducer } from 'redux';
 
-import type { Share, ShareId, ShareType } from '../../types';
+import type { ShareId } from '../../types/crypto/pass-types';
+import type { Share, ShareType } from '../../types/data/shares';
 import { or } from '../../utils/fp/predicates';
 import { objectDelete } from '../../utils/object/delete';
 import { fullMerge, partialMerge } from '../../utils/object/merge';
+import { shareLeaveSuccess } from '../actions/creators/access';
+import { shareEvent } from '../actions/creators/api';
+import { matchSyncAction } from '../actions/creators/client';
+import { inviteAccept } from '../actions/creators/invite';
 import {
-    inviteAccept,
-    matchSyncAction,
     shareCreated,
     shareDeleted,
-    shareEvent,
     shareEventUpdate,
-    shareLeaveSuccess,
     shareUpdated,
     sharesEventNew,
     sharesEventSync,
     sharesVisibilityEdit,
-    vaultCreationSuccess,
-    vaultDeleteSuccess,
-    vaultEditSuccess,
-} from '../actions';
+} from '../actions/creators/share';
+import { vaultCreationSuccess, vaultDeleteSuccess, vaultEditSuccess } from '../actions/creators/vault';
 
 export type ShareItem<T extends ShareType = ShareType> = Share<T>;
 

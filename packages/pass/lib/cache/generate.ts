@@ -2,7 +2,7 @@ import { binaryStringToUint8Array, uint8ArrayToBinaryString } from '@proton/shar
 
 import { selectCachableState } from '../../store/selectors/cache';
 import type { State } from '../../store/types';
-import { PassEncryptionTag } from '../../types';
+import { PassEncryptionTag } from '../../types/crypto/pass-types';
 import type { EncryptedPassCache } from '../../types/worker/cache';
 import { serialize } from '../../utils/object/serialize';
 import { PassCrypto } from '../crypto';

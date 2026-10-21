@@ -3,7 +3,7 @@ import { createContext, useCallback, useContext, useEffect, useRef, useState } f
 import { useHistory } from 'react-router-dom';
 
 import type { ESCalendarSearchParams, ESItem } from '@proton/encrypted-search/models';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import noop from '@proton/utils/noop';

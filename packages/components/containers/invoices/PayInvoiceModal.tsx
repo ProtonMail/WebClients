@@ -5,7 +5,7 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { usePaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
 import { ApplePayButton } from '@proton/payments-ui/ui/components/ApplePayButton';
 import { ChargebeeIdealButton } from '@proton/payments-ui/ui/components/ChargebeeIdealButton';

@@ -14,7 +14,7 @@ import Mark from '@proton/components/components/text/Mark';
 import LabelsUpsellModal from '@proton/components/components/upsell/modals/LabelsUpsellModal';
 import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { IcCircleFilled } from '@proton/icons/icons/IcCircleFilled';
 import { IcTag } from '@proton/icons/icons/IcTag';
 import { isCustomLabel } from '@proton/mail/helpers/location';
@@ -28,11 +28,10 @@ import type { Label } from '@proton/shared/lib/interfaces/Label';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
+import { getLabelIDs } from '../../helpers/elements';
 import { APPLY_LOCATION_TYPES } from '../../hooks/actions/applyLocation/interface';
 import { useApplyLocation } from '../../hooks/actions/applyLocation/useApplyLocation';
 import { useApplyLabelsToAll } from '../../hooks/actions/label/useApplyLabelsToAll';
-
-import { getLabelIDs } from '../../helpers/elements';
 import { useCreateFilters } from '../../hooks/actions/useCreateFilters';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
 import { useScrollToItem } from '../../hooks/useScrollToItem';

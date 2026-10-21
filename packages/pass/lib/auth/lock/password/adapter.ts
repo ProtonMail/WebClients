@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { binaryStringToUint8Array, uint8ArrayToBinaryString } from '@proton/shared/lib/helpers/encoding';
 import noop from '@proton/utils/noop';
 
-import { PassEncryptionTag } from '../../../../types';
+import { PassEncryptionTag } from '../../../../types/crypto/pass-types';
 import { logger } from '../../../../utils/logger';
 import { deobfuscate } from '../../../../utils/obfuscate/xor';
 import { zeroize } from '../../../../utils/object/zero';

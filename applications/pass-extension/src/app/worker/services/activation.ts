@@ -12,7 +12,7 @@ import { intoDomainWithPort } from '@proton/pass/lib/urls/utils/utils';
 import { clientInit, offlineResume } from '@proton/pass/store/actions/creators/client';
 import { selectFilters, selectTabState } from '@proton/pass/store/selectors/filters';
 import { selectItem } from '@proton/pass/store/selectors/items';
-import type { MaybeNull } from '@proton/pass/types/utils/index';
+import type { MaybeNull } from '@proton/pass/types/utils';
 import { first } from '@proton/pass/utils/array/first';
 import { or } from '@proton/pass/utils/fp/predicates';
 import { asyncLock } from '@proton/pass/utils/fp/promises';

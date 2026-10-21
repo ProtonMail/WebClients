@@ -16,7 +16,7 @@ import type { AliasForLoginProps } from '../../../hooks/useAliasForLogin';
 import { deriveAliasPrefix } from '../../../lib/alias/alias.utils';
 import PassUI from '../../../lib/core/ui.proxy';
 import { intoCleanHostname } from '../../../lib/urls/utils/utils';
-import type { LoginItemFormValues } from '../../../types';
+import type { LoginItemFormValues } from '../../../types/forms/item';
 import { merge, withMerge } from '../../../utils/object/merge';
 import { isEmptyString } from '../../../utils/string/is-empty-string';
 import { Field } from '../../Form/Field/Field';

@@ -13,7 +13,7 @@ import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { selectProxiedSettings } from '@proton/pass/store/selectors/settings';
 import { selectFeatureFlags, selectPassPlan } from '@proton/pass/store/selectors/user';
 import type { UserPassPlan } from '@proton/pass/types/api/plan';
-import type { MaybeNull, RecursivePartial } from '@proton/pass/types/utils/index';
+import type { MaybeNull, RecursivePartial } from '@proton/pass/types/utils';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 

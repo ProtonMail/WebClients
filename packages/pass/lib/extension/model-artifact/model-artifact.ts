@@ -6,7 +6,7 @@ import type { DetectionClass, ModelProvider } from '@protontech/autofill/types';
 import { escapeRegex } from '@proton/shared/lib/helpers/regex';
 
 import { MODEL_ARTIFACTS_BASE_URL } from '../../../constants';
-import type { Result } from '../../../types';
+import type { Result } from '../../../types/utils';
 import { readZIP } from '../../import/helpers/zip.reader';
 
 const MODEL_ARCH_VALUES = ['rf'] as const;

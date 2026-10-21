@@ -10,6 +10,7 @@ import { useStatefulRef } from '../../hooks/useStatefulRef';
 import { isAliasItem, isDisabledAlias } from '../../lib/items/item.predicates';
 import { cloneItemName, getBulkSelectionCount } from '../../lib/items/item.utils';
 import { isVaultShare } from '../../lib/shares/share.predicates';
+import { shareLeaveIntent } from '../../store/actions/creators/access';
 import {
     itemBulkDeleteIntent,
     itemBulkMoveIntent,
@@ -19,18 +20,17 @@ import {
     itemMove,
     itemRestore,
     itemTrash,
-    shareLeaveIntent,
-} from '../../store/actions';
-import {
-    selectAliasTrashAcknowledged,
-    selectItemsByEmail,
-    selectMostRecentVaultShareID,
-    selectShareOrThrow,
-} from '../../store/selectors';
+} from '../../store/actions/creators/item';
+import { selectItemsByEmail } from '../../store/selectors/items';
+import { selectAliasTrashAcknowledged } from '../../store/selectors/settings';
+import { selectShareOrThrow } from '../../store/selectors/shares';
+import { selectMostRecentVaultShareID } from '../../store/selectors/vaults';
 import type { State } from '../../store/types';
-import type { ItemMoveIntent } from '../../types';
-import { type BulkSelectionDTO, type ItemRevision, type MaybeNull, ShareType } from '../../types';
+import type { ItemRevision } from '../../types/data/items';
+import type { BulkSelectionDTO, ItemMoveIntent } from '../../types/data/items.dto';
+import { ShareType } from '../../types/data/shares';
 import type { AutotypeConfirmProps } from '../../types/desktop/autotype';
+import type { MaybeNull } from '../../types/utils';
 import { partialMerge } from '../../utils/object/merge';
 import { useBulkActions } from '../Bulk/BulkSelectionActions';
 import { useNavigate } from '../Navigation/NavigationActions';

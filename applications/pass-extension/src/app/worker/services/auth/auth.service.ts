@@ -27,7 +27,6 @@ import { getToolbarPinState } from '@proton/pass/lib/extension/utils/pinned';
 import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import browser from '@proton/pass/lib/globals/browser';
 import { ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
-import { settingsEditIntent } from '@proton/pass/store/actions';
 import { lockSync, unlock } from '@proton/pass/store/actions/creators/auth';
 import {
     bootIntent,
@@ -37,9 +36,10 @@ import {
     stopEventPolling,
 } from '@proton/pass/store/actions/creators/client';
 import { notification } from '@proton/pass/store/actions/creators/notification';
+import { settingsEditIntent } from '@proton/pass/store/actions/creators/settings';
 import type { Api } from '@proton/pass/types/api/api';
 import type { NativeMessageErrorType } from '@proton/pass/types/desktop';
-import type { MaybeNull } from '@proton/pass/types/utils/index';
+import type { MaybeNull } from '@proton/pass/types/utils';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import type { ClientEndpoint } from '@proton/pass/types/worker/runtime';
 import { AppStatus } from '@proton/pass/types/worker/state';

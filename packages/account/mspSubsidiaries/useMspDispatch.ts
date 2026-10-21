@@ -1,7 +1,7 @@
 import type { Action, ThunkDispatch } from '@reduxjs/toolkit';
 
 import { baseUseDispatch } from '@proton/react-redux-store/ProtonStoreContext';
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 
 import type { KtState } from '../kt';
 import type { MemberState } from '../member';

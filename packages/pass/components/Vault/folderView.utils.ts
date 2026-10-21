@@ -2,7 +2,8 @@ import type { FolderChildren } from '../../lib/folders/folder.utils';
 import { getFolderChildren, resolveFolderPath } from '../../lib/folders/folder.utils';
 import { getFolderKey } from '../../lib/items/item.utils';
 import type { FoldersByShareId } from '../../store/reducers';
-import type { FolderData, MaybeNull } from '../../types';
+import type { FolderData } from '../../types/data/folders';
+import type { MaybeNull } from '../../types/utils';
 
 type FolderRow = {
     type: 'folder';

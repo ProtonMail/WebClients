@@ -8,7 +8,7 @@ import clsx from '@proton/utils/clsx';
 
 import { useAddressBreaches } from '../../../../hooks/monitor/useAddressBreaches';
 import type { MonitorAddress } from '../../../../lib/monitor/types';
-import type { Maybe } from '../../../../types';
+import type { Maybe } from '../../../../types/utils';
 import { BreachActions } from './BreachActions';
 import { BreachList } from './BreachList';
 import { BreachModal } from './BreachModal';

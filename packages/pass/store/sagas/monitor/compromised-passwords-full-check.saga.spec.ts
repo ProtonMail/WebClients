@@ -24,10 +24,14 @@ let online = true;
 
 exposeApi({ getState: () => ({ online, unreachable: false }) } as any);
 
-jest.mock('../../selectors', () => ({
-    ...jest.requireActual('../../selectors'),
+jest.mock('../../selectors/user', () => ({
+    ...jest.requireActual('../../selectors/user'),
     selectFeatureFlag: () => () => featureEnabled,
     selectPassPlan: () => plan,
+}));
+
+jest.mock('../../selectors/monitor', () => ({
+    ...jest.requireActual('../../selectors/monitor'),
     selectMonitoredLogins: () => () => logins,
     selectCompromisedPasswordsCache: () => cache,
     selectLastSyncedChange: () => lastSyncedChange,

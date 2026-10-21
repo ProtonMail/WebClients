@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 
 import { paymentsInitReducer, paymentsInitThunk, selectPaymentsInit } from './index';
 

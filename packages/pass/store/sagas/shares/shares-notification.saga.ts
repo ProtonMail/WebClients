@@ -2,13 +2,15 @@ import { select, takeEvery } from 'redux-saga/effects';
 import { c } from 'ttag';
 
 import { isGroupShare, isVaultShare } from '../../../lib/shares/share.predicates';
-import type { ItemRevision, Maybe } from '../../../types';
-import { type Share, ShareType } from '../../../types';
-import { shareDeleted, sharesEventNew } from '../../actions';
+import type { ItemRevision } from '../../../types/data/items';
+import { type Share, ShareType } from '../../../types/data/shares';
+import type { Maybe } from '../../../types/utils';
+import { shareDeleted, sharesEventNew } from '../../actions/creators/share';
 import type { Notification } from '../../actions/enhancers/notification';
 import type { GroupsState } from '../../reducers/groups';
-import { selectItem, selectShare } from '../../selectors';
 import { selectGroups } from '../../selectors/groups';
+import { selectItem } from '../../selectors/items';
+import { selectShare } from '../../selectors/shares';
 import type { RootSagaOptions } from '../../types';
 
 function* notificationForNewShare(share: Share, onNotification: (notification: Notification) => void) {

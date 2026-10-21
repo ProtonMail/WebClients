@@ -2,12 +2,13 @@ import type { Action, ThunkDispatch } from '@reduxjs/toolkit';
 
 import type { AddressKeysState } from '@proton/account/addressKeys';
 import type { KtState } from '@proton/account/kt';
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
+import type { MinimumNoticeMode } from '@proton/shared/lib/interfaces/calendar/Bookings';
 
 import type { CalendarsBootstrapState } from '../../calendarBootstrap';
 import type { CalendarsState } from '../../calendars';
-import type { APIBooking, BookingPageEditData, MinimumNoticeMode, SerializedFormData } from '../types';
+import type { APIBooking, BookingPageEditData, SerializedFormData } from '../types';
 
 export interface VerificationError {
     secretVerificationError: boolean;

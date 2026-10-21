@@ -9,8 +9,8 @@ import Alert from '@proton/components/components/alert/Alert';
 import { useConfirm } from '../../../../hooks/useConfirm';
 import { useRequest } from '../../../../hooks/useRequest';
 import { AddressType } from '../../../../lib/monitor/types';
-import { monitorToggle } from '../../../../store/actions';
-import { selectMonitorSettings } from '../../../../store/selectors';
+import { monitorToggle } from '../../../../store/actions/creators/monitor';
+import { selectMonitorSettings } from '../../../../store/selectors/monitor';
 import { ConfirmationModal } from '../../../Confirmation/ConfirmationModal';
 
 type Props = { type: AddressType.ALIAS | AddressType.PROTON };

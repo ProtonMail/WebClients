@@ -30,7 +30,7 @@ The Lumo Redux integration (`sendMessageWithRedux`) is app-specific and lives in
 ### **Basic Usage (Core)**
 
 ```typescript
-import { LumoApiClient } from '@proton/lumo-api-client';
+import { LumoApiClient } from '@proton/lumo-api-client/core/client';
 
 const client = new LumoApiClient({
     enableChatEndpoint: true,
@@ -51,7 +51,7 @@ await client.callAssistant(api, [{ role: 'user', content: 'Hello, how are you?' 
 ### **Fluent Request Builder API**
 
 ```typescript
-import { LumoApiClient } from '@proton/lumo-api-client';
+import { LumoApiClient } from '@proton/lumo-api-client/core/client';
 
 const client = new LumoApiClient();
 
@@ -346,7 +346,7 @@ try {
 #### **Old way:**
 
 ```typescript
-import { callLumoAssistant } from '@proton/lumo-api-client';
+import { callLumoAssistant } from '@proton/lumo-api-client/assistant';
 
 await callLumoAssistant(api, turns, {
     enableExternalTools: true,
@@ -358,7 +358,7 @@ await callLumoAssistant(api, turns, {
 #### **New way (recommended):**
 
 ```typescript
-import { LumoApiClient } from '@proton/lumo-api-client';
+import { LumoApiClient } from '@proton/lumo-api-client/core/client';
 
 const client = new LumoApiClient({ enableChatEndpoint: true });
 
@@ -372,7 +372,7 @@ await client.createRequest()
 #### **New way (backward compatible):**
 
 ```typescript
-import { callLumoAssistant } from '@proton/lumo-api-client';
+import { callLumoAssistant } from '@proton/lumo-api-client/assistant';
 
 await callLumoAssistant(api, turns, {
     enableExternalTools: true,
@@ -390,13 +390,13 @@ Interceptors allow you to hook into the request/response lifecycle for debugging
 ### **Built-in Interceptors**
 
 ```typescript
+import { LumoApiClient } from '@proton/lumo-api-client/core/client';
 import {
-    LumoApiClient,
     createContentFilterInterceptor,
     createLoggingInterceptor,
     createPerformanceInterceptor,
     createRateLimitInterceptor,
-} from './lumo-api-client';
+} from '@proton/lumo-api-client/core/interceptors';
 
 const client = new LumoApiClient();
 

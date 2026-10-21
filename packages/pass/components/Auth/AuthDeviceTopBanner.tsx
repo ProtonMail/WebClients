@@ -9,8 +9,8 @@ import type { AuthDeviceOutput } from '@proton/shared/lib/keys/device';
 
 import { useRequest } from '../../hooks/useRequest';
 import { confirmPendingAuthDevice, rejectPendingAuthDevice } from '../../store/actions/creators/sso';
-import { selectPendingAuthDevices } from '../../store/selectors';
-import type { MaybeNull } from '../../types';
+import { selectPendingAuthDevices } from '../../store/selectors/user';
+import type { MaybeNull } from '../../types/utils';
 import { first } from '../../utils/array/first';
 import { TopBar } from '../Layout/Bar/TopBar';
 

@@ -1,6 +1,6 @@
 import { combineReducers, configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
 
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { sharedReducers } from '@proton/redux-shared-store/sharedReducers';
 import { ignoredActions, ignoredPaths } from '@proton/redux-shared-store/sharedSerializable';
 import { apiMock } from '@proton/test-api/api';

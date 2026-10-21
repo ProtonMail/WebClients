@@ -11,7 +11,7 @@ import TableHeaderCell from '@proton/components/components/table/TableHeaderCell
 import TableRow from '@proton/components/components/table/TableRow';
 import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
 
-import type { CustomDomainOutput } from '../../../../types';
+import type { CustomDomainOutput } from '../../../../types/api/pass';
 import { DropdownMenuButton } from '../../../Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '../../../Layout/Dropdown/QuickActionsDropdown';
 import { useAliasDomains } from './DomainsProvider';

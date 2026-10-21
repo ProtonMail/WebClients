@@ -1,7 +1,7 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSelector, createSlice } from '@reduxjs/toolkit';
 
-import type { FeaturesReducerState } from '@proton/features';
+import type { FeaturesReducerState } from '@proton/features/reducer';
 import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/constants';
 
 import type { UserState } from '../user';

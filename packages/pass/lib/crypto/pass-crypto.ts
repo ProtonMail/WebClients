@@ -12,19 +12,19 @@ import { FILE_PENDING_SHARE, FILE_PUBLIC_SHARE } from '../../constants';
 import { getGroup } from '../../store/actions/creators/groups';
 import { asyncRequestDispatcherFactory } from '../../store/request/utils';
 import type { State } from '../../store/types';
+import type { ShareGetResponse, ShareKeyResponse } from '../../types/api/pass';
 import type {
-    FileIdentifier,
-    MaybeNull,
     PassCryptoManagerContext,
     PassCryptoWorker,
     SerializedCryptoContext,
     ShareContext,
-    ShareGetResponse,
-    ShareKeyResponse,
     ShareManager,
-    TypedOpenedShare,
-} from '../../types';
-import { PassEncryptionTag, ShareType } from '../../types';
+} from '../../types/crypto/pass-crypto';
+import type { TypedOpenedShare } from '../../types/crypto/pass-types';
+import { PassEncryptionTag } from '../../types/crypto/pass-types';
+import type { FileIdentifier } from '../../types/data/files';
+import { ShareType } from '../../types/data/shares';
+import type { MaybeNull } from '../../types/utils';
 import { first } from '../../utils/array/first';
 import { unwrap } from '../../utils/fp/promises';
 import { logId, logger } from '../../utils/logger';

@@ -7,7 +7,7 @@ import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButto
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import TopBanner from '@proton/components/containers/topBanners/TopBanner';
 import { baseUseDispatch, baseUseSelector } from '@proton/react-redux-store/ProtonStoreContext';
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import noop from '@proton/utils/noop';
 
 import { membersThunk } from '../members';

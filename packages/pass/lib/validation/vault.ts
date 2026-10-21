@@ -1,7 +1,7 @@
 import type { FormikErrors } from 'formik';
 import { c } from 'ttag';
 
-import type { VaultFormValues } from '../../types';
+import type { VaultFormValues } from '../../types/forms/vault';
 import { isEmptyString } from '../../utils/string/is-empty-string';
 
 export const validateVaultValues = ({ name }: VaultFormValues) => {

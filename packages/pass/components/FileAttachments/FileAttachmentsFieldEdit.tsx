@@ -4,7 +4,8 @@ import type { FieldProps } from 'formik';
 
 import { useMemoSelector } from '../../hooks/useMemoSelector';
 import { selectItemFilesForRevision } from '../../store/selectors/files';
-import type { FileAttachmentValues, FileID, SelectedRevision } from '../../types';
+import type { FileAttachmentValues, FileID } from '../../types/data/files';
+import type { SelectedRevision } from '../../types/data/items';
 import { prop } from '../../utils/fp/lens';
 import { pipe } from '../../utils/fp/pipe';
 import { notIn } from '../../utils/fp/predicates';

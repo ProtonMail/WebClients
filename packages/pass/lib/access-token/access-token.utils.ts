@@ -1,4 +1,4 @@
-import type { PatMonitorListEntryOutput } from '../../types';
+import type { PatMonitorListEntryOutput } from '../../types/api/pass';
 import { getErrorMessage } from '../../utils/errors/get-error-message';
 import { logger } from '../../utils/logger';
 import { UNIX_HOUR } from '../../utils/time/constants';

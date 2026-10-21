@@ -9,10 +9,10 @@ import { isShareManageable } from '../../../lib/shares/share.predicates';
 import { loadItemMembers, loadVaultMembers } from '../../../lib/shares/share.requests';
 import type { ShareMember } from '../../../types/data/invites';
 import { or } from '../../../utils/fp/predicates';
-import { getShareAccessOptions } from '../../actions';
+import { getShareAccessOptions } from '../../actions/creators/access';
 import type { ShareItem } from '../../reducers';
 import { createRequestSaga } from '../../request/sagas';
-import { selectShareOrThrow } from '../../selectors';
+import { selectShareOrThrow } from '../../selectors/shares';
 
 /** Access options resolution may duplicate member/invite data across
  * different `accessKeys` in the state tree. This is an accepted trade-off:

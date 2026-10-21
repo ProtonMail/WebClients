@@ -3,7 +3,7 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 
 import { mockUseApi } from '@proton/app-context/testing/mockUseApi';
 import { mockUseNotifications } from '@proton/app-context/testing/mockUseNotifications';
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import { getTestStore } from '@proton/redux-shared-store/test';
 import { updateSignInRestriction } from '@proton/shared/lib/api/settings';

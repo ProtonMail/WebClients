@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { PaymentVerificatorV5 } from '@proton/payments/core/createPaymentToken';
 import type {

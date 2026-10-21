@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { Maybe } from '@proton/pass/types';
+import type { Maybe } from '@proton/pass/types/utils';
 
 import { StorageKeyError } from './types';
 

@@ -1,8 +1,8 @@
 import { type Session, autoUpdater } from 'electron';
 
-import type { MaybeNull } from '@proton/pass/types';
 import { type FeatureFlagsResponse, PassFeature } from '@proton/pass/types/api/features';
 import { UpdateErrorType, UpdateStatus } from '@proton/pass/types/desktop';
+import type { MaybeNull } from '@proton/pass/types/utils';
 import { semver } from '@proton/pass/utils/string/semver';
 import noop from '@proton/utils/noop';
 

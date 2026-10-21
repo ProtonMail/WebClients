@@ -3,21 +3,18 @@ import { call, put, select } from 'redux-saga/effects';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import noop from '@proton/utils/noop';
 
-import {
-    itemsDeleteEvent,
-    itemsUpdated,
-    itemsUsedEvent,
-    shareDeleted,
-    shareEvent,
-    shareEventUpdate,
-    sharesEventNew,
-    sharesEventSync,
-} from '../../../store/actions';
+import { shareEvent } from '../../../store/actions/creators/api';
+import { itemsDeleteEvent, itemsUpdated, itemsUsedEvent } from '../../../store/actions/creators/item';
+import { shareDeleted, shareEventUpdate, sharesEventNew, sharesEventSync } from '../../../store/actions/creators/share';
 import type { ShareItem, SharesState } from '../../../store/reducers';
 import { refreshUserData } from '../../../store/sagas/events/core/channel.core';
-import { selectShare } from '../../../store/selectors';
+import { selectShare } from '../../../store/selectors/shares';
 import type { RootSagaOptions } from '../../../store/types';
-import type { ItemRevision, Maybe, PassEventListResponse, Share, ShareGetResponse, ShareId } from '../../../types';
+import type { PassEventListResponse, ShareGetResponse } from '../../../types/api/pass';
+import type { ShareId } from '../../../types/crypto/pass-types';
+import type { ItemRevision } from '../../../types/data/items';
+import type { Share } from '../../../types/data/shares';
+import type { Maybe } from '../../../types/utils';
 import { truthy } from '../../../utils/fp/predicates';
 import { logId, logger } from '../../../utils/logger';
 import { PassCrypto } from '../../crypto';

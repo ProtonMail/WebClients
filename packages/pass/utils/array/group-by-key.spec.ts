@@ -1,4 +1,4 @@
-import type { MaybeNull } from '../../types';
+import type { MaybeNull } from '../../types/utils';
 import { groupByKey } from './group-by-key';
 
 type TestItem = { id: number; name: string; age?: MaybeNull<number> };

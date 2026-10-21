@@ -3,8 +3,9 @@ import type { Reducer } from 'redux';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
 import { PassErrorCode } from '../../lib/api/errors';
-import type { AliasDetails, Maybe, MaybeNull, UserMailboxOutput } from '../../types';
-import type { AliasOptions } from '../../types/data/alias';
+import type { UserMailboxOutput } from '../../types/api/pass';
+import type { AliasDetails, AliasOptions } from '../../types/data/alias';
+import type { Maybe, MaybeNull } from '../../types/utils';
 import { or } from '../../utils/fp/predicates';
 import { objectDelete } from '../../utils/object/delete';
 import { objectMap } from '../../utils/object/map';
@@ -17,12 +18,11 @@ import {
     editMailbox,
     getAliasDetailsSuccess,
     getMailboxes,
-    itemCreate,
-    itemEdit,
     requestAliasOptions,
     setDefaultMailbox,
     validateMailbox,
-} from '../actions';
+} from '../actions/creators/alias';
+import { itemCreate, itemEdit } from '../actions/creators/item';
 
 export type AliasDetailsState = Maybe<Omit<AliasDetails, 'aliasEmail'>>;
 

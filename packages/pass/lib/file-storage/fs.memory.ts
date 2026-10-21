@@ -1,4 +1,4 @@
-import type { Maybe } from '../../types';
+import type { Maybe } from '../../types/utils';
 import { logId, logger } from '../../utils/logger';
 import { FileStorageGarbageCollector } from './fs.gc';
 import type { FileBuffer, FileStorage } from './types';

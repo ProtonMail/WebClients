@@ -1,9 +1,10 @@
 import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
-import { selectOrganizationVaultCreationPolicy, selectOwnedVaults } from '../../store/selectors';
-import type { MaybeNull } from '../../types';
-import { OrganizationVaultCreateMode } from '../../types';
+import { selectOrganizationVaultCreationPolicy } from '../../store/selectors/organization';
+import { selectOwnedVaults } from '../../store/selectors/shares';
+import { OrganizationVaultCreateMode } from '../../types/api/pass';
+import type { MaybeNull } from '../../types/utils';
 
 export const useVaultCreationPolicy = (): {
     /** True if the organization policy is preventing vault creation, else false */

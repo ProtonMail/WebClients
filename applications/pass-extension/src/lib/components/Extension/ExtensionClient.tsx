@@ -13,7 +13,7 @@ import { telemetryBool } from '@proton/pass/lib/telemetry/utils';
 import { lock, signoutIntent } from '@proton/pass/store/actions/creators/auth';
 import { syncIntent } from '@proton/pass/store/actions/creators/client';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
-import type { MaybeNull } from '@proton/pass/types/utils/index';
+import type { MaybeNull } from '@proton/pass/types/utils';
 import { AppStatus } from '@proton/pass/types/worker/state';
 import sentry, { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';

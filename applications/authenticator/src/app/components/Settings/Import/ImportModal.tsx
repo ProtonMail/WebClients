@@ -2,7 +2,7 @@ import { type FC, useState } from 'react';
 
 import { c } from 'ttag';
 
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types/utils';
 
 import type { ImportProvider, ImportResultDTO } from '../../../../lib/importers/types';
 import { importBackup } from '../../../../store/backup';

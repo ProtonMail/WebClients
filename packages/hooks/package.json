@@ -1,6 +1,28 @@
 {
     "name": "@proton/hooks",
     "description": "Generic business use-case agnostic helper hooks",
+    "exports": {
+        "./rightToLeftContext": "./rightToLeftContext.ts",
+        "./useAsyncError": "./useAsyncError.ts",
+        "./useCombinedRefs": "./useCombinedRefs.ts",
+        "./useControlled": "./useControlled.ts",
+        "./useDateCountdown": "./useDateCountdown.ts",
+        "./useEffectOnce": "./useEffectOnce.ts",
+        "./useInstance": "./useInstance.ts",
+        "./useInterval": "./useInterval.ts",
+        "./useIsMounted": "./useIsMounted.ts",
+        "./useLoading": "./useLoading.ts",
+        "./usePersistedState": "./usePersistedState.ts",
+        "./usePrevious": "./usePrevious.ts",
+        "./usePreviousDistinct": "./usePreviousDistinct.ts",
+        "./useRightToLeft": "./useRightToLeft.ts",
+        "./useScrollIntoView": "./useScrollIntoView.ts",
+        "./useSearchParams": "./useSearchParams.ts",
+        "./useStableLoading": "./useStableLoading.ts",
+        "./useStateRef": "./useStateRef.ts",
+        "./useSynchronizingState": "./useSynchronizingState.ts",
+        "./useToggle": "./useToggle.ts"
+    },
     "scripts": {
         "check:types": "tsc --checkers 1",
         "lint": "eslint --quiet",

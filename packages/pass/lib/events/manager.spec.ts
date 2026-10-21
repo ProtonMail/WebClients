@@ -1,6 +1,6 @@
 import { FIBONACCI_LIST } from '@proton/shared/lib/constants';
 
-import type { Api } from '../../types';
+import type { Api } from '../../types/api/api';
 import { eventManager } from './manager';
 
 const TEST_INTERVAL = 5_000;

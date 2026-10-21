@@ -11,7 +11,8 @@ import { IcLocks } from '@proton/icons/icons/IcLocks';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
-import { type MaybeNull, SpotlightMessage } from '../../types';
+import type { MaybeNull } from '../../types/utils';
+import { SpotlightMessage } from '../../types/worker/spotlight';
 import { usePassCore } from '../Core/PassCoreProvider';
 import CollapsibleHeaderToggleButton from '../Layout/Button/CollapsibleHeaderToggleButton';
 import { LearnMoreCard, type LearnMoreProps } from '../Layout/Card/LearnMoreCard';

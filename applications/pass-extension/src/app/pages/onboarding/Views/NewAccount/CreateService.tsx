@@ -13,7 +13,7 @@ import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { ItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { Layout } from '@proton/pass/components/Onboarding/Layout/Layout';
 import { OnboardingButton } from '@proton/pass/components/Onboarding/UI/OnboardingButton';
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types/utils';
 
 import type { RemoteService } from './CreateProvider';
 import { useCreateContext } from './CreateProvider';

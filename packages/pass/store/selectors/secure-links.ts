@@ -1,6 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import type { SecureLink } from '../../types';
+import type { SecureLink } from '../../types/data/items.dto';
 import { prop } from '../../utils/fp/lens';
 import { not } from '../../utils/fp/predicates';
 import { sortOn } from '../../utils/fp/sort';

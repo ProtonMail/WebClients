@@ -7,7 +7,7 @@ import { createAddressKeysThunk, getCreateAddressKeysPayload } from '@proton/acc
 import { usePasswordPolicies } from '@proton/account/passwordPolicies/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { Member } from '@proton/shared/lib/interfaces/Member';

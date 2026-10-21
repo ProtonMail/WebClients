@@ -5,33 +5,35 @@ import noop from '@proton/utils/noop';
 import { MAX_MAX_BATCH_PER_REQUEST, MIN_MAX_BATCH_PER_REQUEST } from '../../constants';
 import type {
     AliasAndItemCreateRequest,
-    BatchItemRevisionIDs,
-    BatchItemRevisions,
     CustomAliasCreateRequest,
     EncodedItemKeyRotation,
     FolderItemsMoveInputDto,
     ImportItemBatchRequest,
     ImportItemRequest,
+    ItemMoveIndividualToShareRequest,
+    ItemMoveMultipleToShareRequest,
+    ItemRevisionContentsResponse,
+    ItemUpdateFlagsRequest,
+} from '../../types/api/pass';
+import type { ItemId, ShareId } from '../../types/crypto/pass-types';
+import type {
+    BatchItemRevisionIDs,
+    BatchItemRevisions,
+    ItemRevision,
+    ItemRevisionID,
+    SelectedItem,
+    SelectedRevision,
+    UniqueItem,
+} from '../../types/data/items';
+import type {
     ItemCreateIntent,
     ItemDestination,
     ItemEditIntent,
-    ItemId,
     ItemImportIntent,
-    ItemMoveIndividualToShareRequest,
-    ItemMoveMultipleToShareRequest,
-    ItemRevision,
-    ItemRevisionContentsResponse,
-    ItemRevisionID,
     ItemRevisionsIntent,
-    ItemType,
-    ItemUpdateFlagsRequest,
-    Maybe,
-    MaybeNull,
-    SelectedItem,
-    SelectedRevision,
-    ShareId,
-    UniqueItem,
-} from '../../types';
+} from '../../types/data/items.dto';
+import type { ItemType } from '../../types/protobuf';
+import type { Maybe, MaybeNull } from '../../types/utils';
 import { groupByKey } from '../../utils/array/group-by-key';
 import { truthy } from '../../utils/fp/predicates';
 import { seq } from '../../utils/fp/promises';

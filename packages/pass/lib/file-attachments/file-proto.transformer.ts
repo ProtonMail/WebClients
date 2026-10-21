@@ -1,4 +1,4 @@
-import type { FileMetadata as Metadata } from '../../types';
+import type { FileMetadata as Metadata } from '../../types/protobuf';
 import { FileMetadata } from '../../types/protobuf/file-v1';
 
 export const encodeFileMetadata = (metadata: Metadata): Uint8Array<ArrayBuffer> => {

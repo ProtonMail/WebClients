@@ -4,18 +4,20 @@ import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 
 import { isPassB2BPlan } from '../../lib/b2b/b2b.utils';
 import {
-    type MaybeNull,
     OrganizationAliasCreateMode,
     OrganizationExportMode,
     OrganizationItemShareMode,
     OrganizationPublicLinkMode,
     OrganizationShareMode,
     OrganizationVaultCreateMode,
-} from '../../types';
+} from '../../types/api/pass';
 import type { OrganizationSettings } from '../../types/data/organization';
+import type { MaybeNull } from '../../types/utils';
 import { or } from '../../utils/fp/predicates';
-import { coreEvent, getUserAccessSuccess, matchSyncAction } from '../actions';
+import { coreEvent } from '../actions/creators/api';
+import { matchSyncAction } from '../actions/creators/client';
 import { getOrganizationSettings, setOrganization, setOrganizationSettings } from '../actions/creators/organization';
+import { getUserAccessSuccess } from '../actions/creators/user';
 
 export const INITIAL_ORGANIZATION_SETTINGS: OrganizationSettings = {
     ExportMode: OrganizationExportMode.UNRESTRICTED,

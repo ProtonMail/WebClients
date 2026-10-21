@@ -15,8 +15,8 @@ import { InputField as InputFieldTwo } from '@proton/components/components/v2/fi
 
 import { useRequest } from '../../../hooks/useRequest';
 import type { PersonalAccessToken } from '../../../lib/access-token/access-token.types';
-import { createAccessToken } from '../../../store/actions';
-import { selectWritableVaults } from '../../../store/selectors';
+import { createAccessToken } from '../../../store/actions/creators/access-token';
+import { selectWritableVaults } from '../../../store/selectors/shares';
 import { sortOn } from '../../../utils/fp/sort';
 import {
     DAY_IN_MINUTES,

@@ -6,7 +6,8 @@ import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Option, SelectTwo, TextAreaTwo } from '@proton/components/index';
-import { LumoApiClient, createSystemTurn, createUserTurn } from '@proton/lumo-api-client';
+import { LumoApiClient } from '@proton/lumo-api-client/core/client';
+import { createSystemTurn, createUserTurn } from '@proton/lumo-api-client/utils';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { SignInButton } from '../../../components/Guest/SignInLink';

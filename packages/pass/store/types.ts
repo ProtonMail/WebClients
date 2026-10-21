@@ -7,19 +7,13 @@ import type { AuthStore } from '../lib/auth/store';
 import type { PassCoreProxy } from '../lib/core/core.types';
 import type { FilePortWriter } from '../lib/file-storage/types';
 import type { ForceSyncStore } from '../lib/sync/force-sync';
-import type {
-    AnyStorage,
-    AppState,
-    AppStatus,
-    ClientEndpoint,
-    ContextBridgeApi,
-    LocalStoreData,
-    Maybe,
-    MaybeNull,
-    MaybePromise,
-} from '../types';
 import type { TelemetryEvent } from '../types/data/telemetry';
+import type { ContextBridgeApi } from '../types/desktop';
+import type { Maybe, MaybeNull, MaybePromise } from '../types/utils';
 import type { EncryptedPassCache } from '../types/worker/cache';
+import type { ClientEndpoint } from '../types/worker/runtime';
+import type { AppState, AppStatus, LocalStoreData } from '../types/worker/state';
+import type { AnyStorage } from '../types/worker/storage';
 import type { Notification } from './actions/enhancers/notification';
 import type { SagaEvent } from './events';
 import type { FeatureFlagAndVariantState, rootReducer } from './reducers';

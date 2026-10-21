@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { type Action, type ThunkDispatch, createSelector } from '@reduxjs/toolkit';
 
 import { baseUseDispatch, baseUseSelector } from '@proton/react-redux-store/ProtonStoreContext';
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { EnhancedMember, PartialMemberAddress } from '@proton/shared/lib/interfaces/Member';
 import noop from '@proton/utils/noop';

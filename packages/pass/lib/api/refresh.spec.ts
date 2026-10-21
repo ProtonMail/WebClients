@@ -3,7 +3,7 @@ import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { createOfflineError } from '@proton/shared/lib/fetch/ApiError';
 import * as time from '@proton/shared/lib/helpers/promise';
 
-import { AuthMode } from '../../types';
+import { AuthMode } from '../../types/api/api';
 import { TEST_SERVER_TIME, mockAPIResponse } from '../../utils/tests/fixtures/api';
 import { refreshHandlerFactory } from './refresh';
 

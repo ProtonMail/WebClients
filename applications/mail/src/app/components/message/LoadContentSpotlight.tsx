@@ -7,7 +7,7 @@ import SettingsLink from '@proton/components/components/link/SettingsLink';
 import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
 import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
-import { FeatureCode } from '@proton/features';
+import { FeatureCode } from '@proton/features/interface';
 import { APPS, MONTH } from '@proton/shared/lib/constants';
 import loadContentImg from '@proton/styles/assets/img/illustrations/spotlight-load-content.svg';
 

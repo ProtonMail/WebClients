@@ -1,7 +1,7 @@
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 
-import type { MaybeNull } from '../../types';
+import type { MaybeNull } from '../../types/utils';
 import type { Rect } from '../../types/utils/dom';
 import { safeAsyncCall } from '../fp/safe-call';
 

@@ -12,7 +12,7 @@ import {
 
 import clsx from '@proton/utils/clsx';
 
-import type { MaybeArray } from '../../../../types';
+import type { MaybeArray } from '../../../../types/utils';
 import { IconSlot, type IconSlotValue, isIconComponent } from '../../../Layout/Icon/IconSlot';
 
 import './FieldBox.scss';

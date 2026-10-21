@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 
 import { isPaidPlan } from '../lib/user/user.predicates';
-import { selectPassPlan, selectUserPlan } from '../store/selectors';
+import { selectPassPlan, selectUserPlan } from '../store/selectors/user';
 import { notIn } from '../utils/fp/predicates';
 
 type MatchUserOptions = {

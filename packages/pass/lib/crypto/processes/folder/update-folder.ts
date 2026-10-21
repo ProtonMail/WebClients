@@ -1,6 +1,6 @@
-import type { FolderKey } from '../../../../types';
-import { ContentFormatVersion, PassEncryptionTag } from '../../../../types';
-import type { FolderUpdateContentInputDto } from '../../../../types/api';
+import type { FolderUpdateContentInputDto } from '../../../../types/api/pass';
+import type { FolderKey } from '../../../../types/crypto/pass-types';
+import { ContentFormatVersion, PassEncryptionTag } from '../../../../types/crypto/pass-types';
 import { encryptData } from '../../utils/crypto-helpers';
 import { PassCryptoFolderError } from '../../utils/errors';
 

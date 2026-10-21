@@ -1,5 +1,5 @@
-import type { VaultShareKey } from '../../types';
-import { ShareType } from '../../types';
+import type { VaultShareKey } from '../../types/crypto/pass-types';
+import { ShareType } from '../../types/data/shares';
 import { TEST_USER_KEY_ID, createRandomShare } from '../../utils/tests/fixtures/crypto';
 import { createShareManager } from './share-manager';
 import { generateKey, importSymmetricKey } from './utils/crypto-helpers';

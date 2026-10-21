@@ -1,4 +1,4 @@
-import type { StorageData, StorageInterface } from '../../../types';
+import type { StorageData, StorageInterface } from '../../../types/worker/storage';
 import { default as localStorage } from './local';
 import { default as sessionStorage } from './session';
 

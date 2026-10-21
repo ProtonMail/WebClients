@@ -1,6 +1,8 @@
 import { itemBuilder } from '../../../lib/items/item.builder';
-import type { ItemRevision, ItemType } from '../../../types';
-import { ContentFormatVersion, ItemState } from '../../../types';
+import { ContentFormatVersion } from '../../../types/crypto/pass-types';
+import type { ItemRevision } from '../../../types/data/items';
+import { ItemState } from '../../../types/data/items';
+import type { ItemType } from '../../../types/protobuf';
 import { AutofillMode } from '../../../types/protobuf';
 import { uniqueId } from '../../string/unique-id';
 import { getEpoch } from '../../time/epoch';

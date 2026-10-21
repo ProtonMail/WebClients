@@ -1,8 +1,8 @@
 import type { Action, Reducer } from 'redux';
 
 import type { ImportReport } from '../../lib/import/helpers/report';
-import type { MaybeNull } from '../../types';
-import { importReport } from '../actions';
+import type { MaybeNull } from '../../types/utils';
+import { importReport } from '../actions/creators/import';
 
 export type ImportState = MaybeNull<ImportReport>;
 

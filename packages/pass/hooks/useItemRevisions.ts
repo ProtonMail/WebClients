@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import type { itemHistoryFailure, itemHistorySuccess } from '../store/actions';
-import { itemHistoryIntent } from '../store/actions';
-import type { ItemRevisionsIntent, ItemRevisionsSuccess } from '../types';
+import type { itemHistoryFailure, itemHistorySuccess } from '../store/actions/creators/item';
+import { itemHistoryIntent } from '../store/actions/creators/item';
+import type { ItemRevisionsIntent, ItemRevisionsSuccess } from '../types/data/items.dto';
 import { useActionRequest } from './useRequest';
 
 const initialState = { next: null, revisions: [], since: null, total: 0 };

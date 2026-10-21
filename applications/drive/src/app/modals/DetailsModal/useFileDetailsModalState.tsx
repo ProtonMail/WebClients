@@ -9,7 +9,7 @@ import { MemberRole, NodeType, getDrive } from '@proton/drive';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getFormattedNodeLocation, getNodeName } from '@proton/drive/modules/nodes';
 import { recentlyAccessed } from '@proton/drive/modules/recentlyAccessed';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 
 import { getMimeTypeDescription } from '../../legacy/components/sections/helpers';
 import { getAuthorshipStatus } from './authorship';

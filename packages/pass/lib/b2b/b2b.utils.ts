@@ -1,7 +1,7 @@
 import { PLANS } from '@proton/payments/core/constants';
 
-import type { PassPlanResponse } from '../../types';
-import { PlanType } from '../../types';
+import type { PassPlanResponse } from '../../types/api/pass';
+import { PlanType } from '../../types/api/pass';
 import type { B2BEvent, B2BEventName } from '../../types/data/b2b';
 
 export const isB2BEvent =

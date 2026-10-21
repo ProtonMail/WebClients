@@ -7,7 +7,7 @@ import type { Runtime } from 'webextension-polyfill';
 import '@proton/components/testing/mockMatchMedia';
 import { ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
 import { getInitialSettings } from '@proton/pass/store/reducers/settings';
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types/utils';
 import type { ClientInitResult } from '@proton/pass/types/worker/runtime';
 import { AppStatus } from '@proton/pass/types/worker/state';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';

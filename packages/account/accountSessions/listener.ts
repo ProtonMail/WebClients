@@ -1,4 +1,4 @@
-import type { SharedStartListening } from '@proton/redux-shared-store-types';
+import type { SharedStartListening } from '@proton/redux-shared-store-types/interface';
 import { isExpired } from '@proton/redux-utilities/fetchedAt';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { getIsStaleRefetch } from '@proton/redux-utilities/promiseStore';

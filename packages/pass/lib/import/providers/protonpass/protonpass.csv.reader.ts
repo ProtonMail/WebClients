@@ -1,5 +1,6 @@
-import type { ItemImportIntent, Maybe } from '../../../../types';
+import type { ItemImportIntent } from '../../../../types/data/items.dto';
 import type { AutofillUrl, ItemCreditCard } from '../../../../types/protobuf/item-v1';
+import type { Maybe } from '../../../../types/utils';
 import { groupByKey } from '../../../../utils/array/group-by-key';
 import { truthy } from '../../../../utils/fp/predicates';
 import { logger } from '../../../../utils/logger';

@@ -12,10 +12,10 @@ import { IcMagicWand } from '@proton/icons/icons/IcMagicWand';
 
 import { UpsellRef } from '../../../constants';
 import { useAutotypeExecute } from '../../../hooks/autotype/useAutotypeExecute';
-import { selectPassPlan } from '../../../store/selectors';
-import { SpotlightMessage } from '../../../types';
+import { selectPassPlan } from '../../../store/selectors/user';
 import { UserPassPlan } from '../../../types/api/plan';
 import type { AutotypeAction } from '../../../types/desktop/autotype';
+import { SpotlightMessage } from '../../../types/worker/spotlight';
 import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';
 import { DropdownMenuLabel } from '../../Layout/Dropdown/DropdownMenuLabel';
 import { useSpotlightFor } from '../../Spotlight/WithSpotlight';

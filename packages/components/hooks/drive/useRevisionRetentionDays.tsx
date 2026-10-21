@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { queryUpdateUserSettings, queryUserSettings } from '@proton/shared/lib/api/drive/user';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import type {

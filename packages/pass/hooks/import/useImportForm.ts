@@ -23,10 +23,12 @@ import { computeProgress, getImportCounts } from '../../lib/import/helpers/repor
 import { importReader } from '../../lib/import/reader';
 import type { ImportEntryPoint, ImportFileReader, ImportPayload } from '../../lib/import/types';
 import { ImportProvider, getSupportedFileTypes } from '../../lib/import/types';
-import { importItems, importReport } from '../../store/actions';
+import { importItems, importReport } from '../../store/actions/creators/import';
 import { requestCancel } from '../../store/request/actions';
-import { selectAllAliasItems, selectRequestProgress, selectUser } from '../../store/selectors';
-import type { MaybeNull, Result } from '../../types';
+import { selectRequestProgress } from '../../store/request/selectors';
+import { selectAllAliasItems } from '../../store/selectors/items';
+import { selectUser } from '../../store/selectors/user';
+import type { MaybeNull, Result } from '../../types/utils';
 import { first } from '../../utils/array/first';
 import { orThrow, pipe } from '../../utils/fp/pipe';
 import { useDebouncedValue } from '../useDebouncedValue';

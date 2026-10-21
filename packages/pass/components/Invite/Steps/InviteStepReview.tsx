@@ -4,7 +4,7 @@ import type { List } from 'react-virtualized';
 import { c } from 'ttag';
 
 import type { AccessTarget } from '../../../lib/access/types';
-import type { InviteFormMemberItem } from '../../../types';
+import type { InviteFormMemberItem } from '../../../types/forms/invite';
 import { VirtualList } from '../../Layout/List/VirtualList';
 import { InviteMember } from './InviteMember';
 

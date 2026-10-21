@@ -17,7 +17,7 @@ import {
     resendVerifyMailbox,
     setDefaultMailbox,
     validateMailbox,
-} from '../../actions';
+} from '../../actions/creators/alias';
 import { createRequestSaga } from '../../request/sagas';
 
 const getMailboxesSaga = createRequestSaga({

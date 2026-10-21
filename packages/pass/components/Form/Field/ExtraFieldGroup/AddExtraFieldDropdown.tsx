@@ -9,7 +9,7 @@ import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 
-import type { ExtraFieldType } from '../../../../types';
+import type { ExtraFieldType } from '../../../../types/protobuf';
 import { DropdownMenuButton } from '../../../Layout/Dropdown/DropdownMenuButton';
 import { getExtraFieldOptions } from './ExtraField.utils';
 

@@ -1,4 +1,8 @@
-import type { DeobfuscatedItemRevision, FileForDownload, ItemType, MaybeNull, VaultShareContent } from '../../types';
+import type { FileForDownload } from '../../types/data/files';
+import type { DeobfuscatedItemRevision } from '../../types/data/items';
+import type { VaultShareContent } from '../../types/data/shares';
+import type { ItemType } from '../../types/protobuf';
+import type { MaybeNull } from '../../types/utils';
 
 export type ExportedItem<T extends ItemType = ItemType> = Omit<
     DeobfuscatedItemRevision<T>,

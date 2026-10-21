@@ -1,5 +1,5 @@
 import '@proton/pass/globals.d';
-import type { Maybe } from '@proton/pass/types';
+import type { Maybe } from '@proton/pass/types/utils';
 
 import type { PassElementsRegister } from './src/app/content/elements';
 

@@ -1,10 +1,11 @@
 import { call, select } from 'redux-saga/effects';
 
 import { restoreItems } from '../../../lib/items/item.requests';
-import type { ItemRevision, Maybe } from '../../../types';
-import { itemRestore } from '../../actions';
+import type { ItemRevision } from '../../../types/data/items';
+import type { Maybe } from '../../../types/utils';
+import { itemRestore } from '../../actions/creators/item';
 import { createRequestSaga } from '../../request/sagas';
-import { selectItem } from '../../selectors';
+import { selectItem } from '../../selectors/items';
 
 export default createRequestSaga({
     actions: itemRestore,

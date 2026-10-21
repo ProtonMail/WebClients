@@ -24,7 +24,7 @@ import type { UserInvitationsState } from '@proton/account/userInvitations';
 import type { UserSettingsState } from '@proton/account/userSettings';
 import { type CalendarsState, calendarsThunk } from '@proton/calendar/calendars';
 import { createKTVerifier } from '@proton/key-transparency/helpers';
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { revoke } from '@proton/shared/lib/api/auth';
 import { createCalendar, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';

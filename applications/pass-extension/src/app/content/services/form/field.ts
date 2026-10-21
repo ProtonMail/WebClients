@@ -1,7 +1,7 @@
 import { isVisible } from '@protontech/autofill';
 import type { FieldType, FormType } from '@protontech/autofill/types';
 
-import type { MaybeNull } from '@proton/pass/types/utils/index';
+import type { MaybeNull } from '@proton/pass/types/utils';
 import { isActiveElement } from '@proton/pass/utils/dom/active-element';
 import { isInputElement } from '@proton/pass/utils/dom/predicates';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';

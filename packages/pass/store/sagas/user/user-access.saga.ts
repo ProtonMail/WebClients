@@ -6,23 +6,16 @@ import { hasAttachments } from '../../../lib/items/item.predicates';
 import { SYNC_STRATEGY } from '../../../lib/sync/global';
 import { SyncStrategy } from '../../../lib/sync/types';
 import { getUserAccess } from '../../../lib/user/user.requests';
-import type { MaybeNull } from '../../../types';
+import type { MaybeNull } from '../../../types/utils';
 import { or } from '../../../utils/fp/predicates';
-import {
-    aliasPendingCreate,
-    getUserAccessFailure,
-    getUserAccessIntent,
-    getUserAccessSuccess,
-    importReport,
-    itemCreate,
-    itemDelete,
-    itemDeleteRevisions,
-    itemEdit,
-    vaultDeleteSuccess,
-} from '../../actions';
+import { aliasPendingCreate } from '../../actions/creators/alias';
+import { importReport } from '../../actions/creators/import';
+import { itemCreate, itemDelete, itemDeleteRevisions, itemEdit } from '../../actions/creators/item';
+import { getUserAccessFailure, getUserAccessIntent, getUserAccessSuccess } from '../../actions/creators/user';
+import { vaultDeleteSuccess } from '../../actions/creators/vault';
 import type { HydratedAccessState } from '../../reducers';
 import { withRevalidate } from '../../request/enhancers';
-import { selectUser } from '../../selectors';
+import { selectUser } from '../../selectors/user';
 import type { RootSagaOptions } from '../../types';
 
 function* userAccessWorker({ getAuthStore }: RootSagaOptions, { meta }: ReturnType<typeof getUserAccessIntent>) {

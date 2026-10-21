@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { useSelector } from 'react-redux';
 
-import { selectPassPlan, selectPlanDisplayName, selectUser } from '../../../store/selectors';
+import { selectPassPlan, selectPlanDisplayName, selectUser } from '../../../store/selectors/user';
 import { UserPanel } from '../../Account/UserPanel';
 
 export const MenuUserPanel = memo(() => {

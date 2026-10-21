@@ -1,7 +1,7 @@
 import { put, takeEvery } from 'redux-saga/effects';
 
 import { removeNewUserInvite } from '../../../lib/invites/invite.requests';
-import { newUserInviteRemoveFailure, newUserInviteRemoveIntent, newUserInviteRemoveSuccess } from '../../actions';
+import { newUserInviteRemoveFailure, newUserInviteRemoveIntent, newUserInviteRemoveSuccess } from '../../actions/creators/invite';
 import { syncAccess } from '../../actions/creators/polling';
 
 function* removeInviteWorker({ payload, meta: { request } }: ReturnType<typeof newUserInviteRemoveIntent>) {

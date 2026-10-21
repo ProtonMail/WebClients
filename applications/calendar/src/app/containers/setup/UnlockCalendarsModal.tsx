@@ -19,7 +19,7 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import Prompt from '@proton/components/components/prompt/Prompt';
 import GenericError from '@proton/components/containers/error/GenericError';
 import useDrawer from '@proton/components/hooks/drawer/useDrawer';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { getPersonalCalendars } from '@proton/shared/lib/calendar/calendar';
 import { process } from '@proton/shared/lib/calendar/crypto/keys/resetHelper';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';

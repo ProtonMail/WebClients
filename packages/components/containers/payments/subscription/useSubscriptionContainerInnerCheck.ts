@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import type { PaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
 import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
 import { ProrationMode } from '@proton/payments/core/api/api';

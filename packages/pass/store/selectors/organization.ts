@@ -2,8 +2,9 @@ import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 
 import { isB2BAdmin } from '../../lib/organization/helpers';
 import { getPassPlan } from '../../lib/user/user.plan';
-import type { MaybeNull, OrganizationUpdatePasswordPolicyInput, OrganizationVaultCreateMode } from '../../types';
+import type { OrganizationUpdatePasswordPolicyInput, OrganizationVaultCreateMode } from '../../types/api/pass';
 import type { OrganizationSettings } from '../../types/data/organization';
+import type { MaybeNull } from '../../types/utils';
 import type { OrganizationState } from '../reducers/organization';
 import type { State } from '../types';
 

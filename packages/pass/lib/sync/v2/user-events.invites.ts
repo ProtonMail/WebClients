@@ -2,10 +2,15 @@ import { put, select } from 'redux-saga/effects';
 
 import { toMap } from '@proton/shared/lib/helpers/object';
 
-import { getShareAccessOptions, syncInvites } from '../../../store/actions';
-import { selectItemsByShareId, selectShare } from '../../../store/selectors';
-import type { GroupInvite, ItemRevision, Maybe, Share, SyncEventShareOutput, UserInvite } from '../../../types';
-import { InviteType, type MaybeNull, ShareType, type SyncEventChangedWithTokenOutput } from '../../../types';
+import { getShareAccessOptions } from '../../../store/actions/creators/access';
+import { syncInvites } from '../../../store/actions/creators/invite';
+import { selectItemsByShareId } from '../../../store/selectors/items';
+import { selectShare } from '../../../store/selectors/shares';
+import type { SyncEventChangedWithTokenOutput, SyncEventShareOutput } from '../../../types/api/pass';
+import { type GroupInvite, InviteType, type UserInvite } from '../../../types/data/invites';
+import type { ItemRevision } from '../../../types/data/items';
+import { type Share, ShareType } from '../../../types/data/shares';
+import type { Maybe, MaybeNull } from '../../../types/utils';
 import { resolveGroupInvites, resolveUserInvites } from '../../invites/invite.requests';
 import { partitionGroupInvites } from '../../invites/invite.utils';
 import type { EventProcessor } from '../types';

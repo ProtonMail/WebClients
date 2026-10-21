@@ -2,7 +2,7 @@ import type { BrowserWindow } from 'electron';
 import { copyFile, mkdir } from 'node:fs/promises';
 import { dirname } from 'node:path';
 
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types/utils';
 
 import { napi_native_messaging } from 'proton-pass-desktop-native';
 

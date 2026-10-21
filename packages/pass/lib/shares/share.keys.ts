@@ -1,4 +1,4 @@
-import type { ShareKeyResponse } from '../../types';
+import type { ShareKeyResponse } from '../../types/api/pass';
 import { logId, logger } from '../../utils/logger';
 import { api } from '../api/api';
 import { isShareRemovedError } from '../api/errors';

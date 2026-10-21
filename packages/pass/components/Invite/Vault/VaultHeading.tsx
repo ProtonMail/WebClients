@@ -2,8 +2,10 @@ import type { FC } from 'react';
 import { useSelector } from 'react-redux';
 
 import { formatItemsCount } from '../../../lib/items/item.utils';
-import { selectShareOrThrow, selectVaultItemsCount } from '../../../store/selectors';
-import type { SelectedShare, ShareType } from '../../../types';
+import { selectShareOrThrow } from '../../../store/selectors/shares';
+import { selectVaultItemsCount } from '../../../store/selectors/vaults';
+import type { SelectedShare } from '../../../types/data/items';
+import type { ShareType } from '../../../types/data/shares';
 import { VaultIcon } from '../../Vault/VaultIcon';
 
 export const VaultHeading: FC<SelectedShare> = ({ shareId }) => {

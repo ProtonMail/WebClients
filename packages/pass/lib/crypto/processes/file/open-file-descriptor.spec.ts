@@ -1,4 +1,4 @@
-import { PassEncryptionTag } from '../../../../types';
+import { PassEncryptionTag } from '../../../../types/crypto/pass-types';
 import { createRandomItemKey } from '../../../../utils/tests/fixtures/crypto';
 import { encryptData } from '../../utils/crypto-helpers';
 import { PassCryptoFileError } from '../../utils/errors';

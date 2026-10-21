@@ -2,8 +2,8 @@ import { type FC, type PropsWithChildren, createContext, useContext, useMemo } f
 
 import { createUseContext } from '../../hooks/useContextFactory';
 import { useMemoSelector } from '../../hooks/useMemoSelector';
-import { selectBulkSelectionAliasCount } from '../../store/selectors';
-import type { MaybeNull } from '../../types';
+import { selectBulkSelectionAliasCount } from '../../store/selectors/bulk';
+import type { MaybeNull } from '../../types/utils';
 import type { BulkSelection } from './types';
 import { bulkSelectionDTO } from './utils';
 

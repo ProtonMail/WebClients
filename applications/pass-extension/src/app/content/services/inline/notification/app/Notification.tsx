@@ -5,7 +5,7 @@ import NotificationsChildren from '@proton/components/containers/notifications/C
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { Localized } from '@proton/pass/components/Core/Localized';
 import { clientBusy } from '@proton/pass/lib/client';
-import type { MaybeNull } from '@proton/pass/types/utils/index';
+import type { MaybeNull } from '@proton/pass/types/utils';
 
 import { useIFrameAppState, useRegisterMessageHandler } from '../../../../../../lib/components/Inline/IFrameApp';
 import { IFrameAppAutoSizer } from '../../../../../../lib/components/Inline/IFrameAppAutoSizer';

@@ -1,7 +1,7 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
 import { type UserSettingsState, userSettingsActions } from '@proton/account/userSettings';
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { updateFlags } from '@proton/shared/lib/api/settings';
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import { FIDO2_CREDENTIALS_PIN_VALUE } from '@proton/shared/lib/interfaces/UserSettings';

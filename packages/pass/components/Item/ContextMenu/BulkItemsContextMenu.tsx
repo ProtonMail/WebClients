@@ -9,7 +9,8 @@ import { IcTrashCross } from '@proton/icons/icons/IcTrashCross';
 
 import { isTrashed } from '../../../lib/items/item.predicates';
 import { getItemKey } from '../../../lib/items/item.utils';
-import type { BulkSelectionDTO, ItemRevision } from '../../../types';
+import type { ItemRevision } from '../../../types/data/items';
+import type { BulkSelectionDTO } from '../../../types/data/items.dto';
 import type { BulkSelection } from '../../Bulk/types';
 import { bulkSelectionDTO } from '../../Bulk/utils';
 import { ContextMenu } from '../../ContextMenu/ContextMenu';

@@ -1,8 +1,9 @@
 import type { CCFieldType } from '@protontech/autofill/types';
 
-import type { FormCredentials, Result } from '@proton/pass/types';
 import type { ItemContent, SelectedItem } from '@proton/pass/types/data/items';
+import type { Result } from '@proton/pass/types/utils';
 import type { CCItemData } from '@proton/pass/types/worker/data';
+import type { FormCredentials } from '@proton/pass/types/worker/form';
 
 import type { FrameField } from './frames';
 

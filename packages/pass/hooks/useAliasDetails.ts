@@ -4,10 +4,11 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 
-import type { getAliasDetailsFailure, getAliasDetailsSuccess } from '../store/actions';
-import { getAliasDetailsIntent } from '../store/actions';
+import type { getAliasDetailsFailure, getAliasDetailsSuccess } from '../store/actions/creators/alias';
+import { getAliasDetailsIntent } from '../store/actions/creators/alias';
 import { aliasDetailsRequest } from '../store/actions/requests';
-import type { AliasMailbox, Maybe, Result } from '../types';
+import type { AliasMailbox } from '../types/data/alias';
+import type { Maybe, Result } from '../types/utils';
 import { useActionRequest } from './useRequest';
 
 type UseAliasDetailsConfig = {

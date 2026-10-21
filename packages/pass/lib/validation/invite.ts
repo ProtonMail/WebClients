@@ -3,9 +3,11 @@ import type { MutableRefObject, RefObject } from 'react';
 import type { FormikErrors } from 'formik';
 import type { Store } from 'redux';
 
-import { selectAccessMembers, selectShare } from '../../store/selectors';
+import { selectAccessMembers } from '../../store/selectors/access';
+import { selectShare } from '../../store/selectors/shares';
 import type { State } from '../../store/types';
-import type { InviteFormValues, Maybe } from '../../types';
+import type { InviteFormValues } from '../../types/forms/invite';
+import type { Maybe } from '../../types/utils';
 import { AccessTarget } from '../access/types';
 import PassUI from '../core/ui.proxy';
 

@@ -1,9 +1,9 @@
 import type { BrowserWindow, Session } from 'electron';
 import { app, autoUpdater } from 'electron';
 
-import type { MaybeNull } from '@proton/pass/types';
 import type { UpdateStore } from '@proton/pass/types/desktop';
 import { UpdateStatus } from '@proton/pass/types/desktop';
+import type { MaybeNull } from '@proton/pass/types/utils';
 
 import logger from '../../utils/logger';
 import { isMac, isWindows } from '../../utils/platform';

@@ -1,4 +1,4 @@
-import type { MaybeNull } from '@proton/pass/types/utils/index';
+import type { MaybeNull } from '@proton/pass/types/utils';
 
 export interface InteractivityController {
     /** Locks field interactivity for the provided duration.

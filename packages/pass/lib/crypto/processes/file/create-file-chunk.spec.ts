@@ -1,6 +1,6 @@
 import { blobToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
-import { PassEncryptionTag } from '../../../../types';
+import { PassEncryptionTag } from '../../../../types/crypto/pass-types';
 import { decryptData, generateKey, importSymmetricKey } from '../../utils/crypto-helpers';
 import { PassCryptoError } from '../../utils/errors';
 import { createFileChunk, getFileChunkEncryptionTag } from './create-file-chunk';

@@ -1,13 +1,13 @@
 import { useCallback, useEffect, useState, useSyncExternalStore } from 'react';
 
-import type { DesktopConnector, DesktopToolApprovalRequest } from '@proton/lumo-api-client';
+import type { DesktopConnector, DesktopToolApprovalRequest } from '@proton/lumo-api-client/core/desktop-tools';
 import {
     getDesktopConnectors,
     getPendingToolApprovals,
     isDesktopEnvironment,
     resolveToolApproval,
     subscribeToolApprovals,
-} from '@proton/lumo-api-client';
+} from '@proton/lumo-api-client/core/desktop-tools';
 
 export type ResolvedToolApproval = DesktopToolApprovalRequest & {
     connectorName: string;

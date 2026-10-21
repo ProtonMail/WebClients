@@ -1,6 +1,6 @@
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { useFeature } from '@proton/features';
+import useFeature from '@proton/features/useFeature';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter';
 import { useFlag } from '@proton/unleash/useFlag';

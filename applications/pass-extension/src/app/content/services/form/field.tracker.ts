@@ -1,7 +1,7 @@
 import { CCFieldType, FieldType } from '@protontech/autofill/types';
 import throttle from 'lodash/throttle';
 
-import type { MaybeNull } from '@proton/pass/types/utils/index';
+import type { MaybeNull } from '@proton/pass/types/utils';
 import { isActiveElement } from '@proton/pass/utils/dom/active-element';
 import { createRAFController } from '@proton/pass/utils/dom/raf';
 import { pipe } from '@proton/pass/utils/fp/pipe';

@@ -3,7 +3,7 @@ import { type ThunkAction, type UnknownAction, createSelector } from '@reduxjs/t
 import { getSubscriptionsArray } from '@proton/payments/core/subscription/helpers';
 import type { MaybeFreeSubscription, Subscription } from '@proton/payments/core/subscription/interface';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import type { CacheType } from '@proton/redux-utilities/interface';
 
 import { type SubscriptionState, selectSubscription, subscriptionThunk } from '../subscription';

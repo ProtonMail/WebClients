@@ -8,8 +8,8 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 
 import { useRequest } from '../../../../hooks/useRequest';
 import { validateAliasDomain } from '../../../../lib/validation/domain';
-import { createCustomDomain } from '../../../../store/actions';
-import type { DomainFormValues } from '../../../../types';
+import { createCustomDomain } from '../../../../store/actions/creators/alias';
+import type { DomainFormValues } from '../../../../types/forms/item';
 import { Field } from '../../../Form/Field/Field';
 import { FieldsetCluster } from '../../../Form/Field/Layout/FieldsetCluster';
 import { TextField } from '../../../Form/Field/TextField';

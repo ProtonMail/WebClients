@@ -8,8 +8,8 @@ import { IcUserArrowLeft } from '@proton/icons/icons/IcUserArrowLeft';
 import { IcUserArrowRight } from '@proton/icons/icons/IcUserArrowRight';
 
 import type { VaultShareItem } from '../../../store/reducers';
-import type { MaybeNull } from '../../../types';
 import { VaultColor as VaultColorEnum, VaultIcon } from '../../../types/protobuf/vault-v1.static';
+import type { MaybeNull } from '../../../types/utils';
 import { VAULT_ICON_MAP } from '../../Vault/constants';
 
 export type VaultMenuOption = {

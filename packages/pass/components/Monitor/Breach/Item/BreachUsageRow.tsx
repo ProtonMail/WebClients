@@ -6,7 +6,7 @@ import TableRow from '@proton/components/components/table/TableRow';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 
 import { isTrashed } from '../../../../lib/items/item.predicates';
-import type { LoginItem } from '../../../../types';
+import type { LoginItem } from '../../../../types/data/items';
 import { epochToDate } from '../../../../utils/time/format';
 import { SafeItemIcon } from '../../../Layout/Icon/ItemIcon';
 import { useSelectItem } from '../../../Navigation/NavigationActions';

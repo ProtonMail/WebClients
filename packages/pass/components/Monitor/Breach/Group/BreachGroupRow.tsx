@@ -12,7 +12,7 @@ import noop from '@proton/utils/noop';
 import type { MonitorTableRow } from '../../../../hooks/monitor/useBreachesTable';
 import { getAddressId } from '../../../../lib/monitor/monitor.utils';
 import { AddressType } from '../../../../lib/monitor/types';
-import { selectMonitorSettingByType } from '../../../../store/selectors';
+import { selectMonitorSettingByType } from '../../../../store/selectors/monitor';
 import { epochToDate } from '../../../../utils/time/format';
 import { getLocalPath } from '../../../Navigation/routing';
 import { BreachGroupRowActions } from './BreachGroupRowActions';

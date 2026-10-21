@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { useStatefulRef } from '../../../hooks/useStatefulRef';
 import { intoDisplayedSortFilter } from '../../../lib/items/item.utils';
 import { saveFilters } from '../../../store/actions/creators/filters';
-import type { ItemSortFilter, ItemTypeFilter } from '../../../types';
+import type { ItemSortFilter, ItemTypeFilter } from '../../../types/data/items';
 import { BulkActions } from '../../Bulk/BulkActions';
 import { useBulkActions } from '../../Bulk/BulkSelectionActions';
 import { useBulkEnabled } from '../../Bulk/BulkSelectionState';

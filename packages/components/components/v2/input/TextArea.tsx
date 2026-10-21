@@ -1,7 +1,7 @@
 import type { ComponentPropsWithRef, ReactNode, Ref } from 'react';
 import { forwardRef, useEffect, useRef } from 'react';
 
-import { useCombinedRefs } from '@proton/hooks';
+import useCombinedRefs from '@proton/hooks/useCombinedRefs';
 import clsx from '@proton/utils/clsx';
 
 import useAutoGrow from '../../../hooks/useAutoGrow';

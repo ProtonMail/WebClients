@@ -1,6 +1,6 @@
 import getRandomString from '@proton/utils/getRandomString';
 
-import type { ShareContent, ShareType } from '../../types';
+import type { ShareContent, ShareType } from '../../types/data/shares';
 import { decodeVaultContent, encodeVaultContent } from './vault-proto.transformer';
 
 describe('VaultContentTransformer', () => {

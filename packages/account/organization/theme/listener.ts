@@ -1,5 +1,5 @@
 import { PLANS } from '@proton/payments/core/constants';
-import type { SharedStartListening } from '@proton/redux-shared-store-types';
+import type { SharedStartListening } from '@proton/redux-shared-store-types/interface';
 import { getOrganizationLogo } from '@proton/shared/lib/api/organization';
 import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 

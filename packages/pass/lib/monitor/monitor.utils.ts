@@ -5,10 +5,8 @@ import type {
     BreachAddressGetResponse,
     BreachCustomEmailGetResponse,
     BreachDomainPeekResponse,
-    Item,
-    ItemRevision,
-    UniqueItem,
-} from '../../types';
+} from '../../types/api/pass';
+import type { Item, ItemRevision, UniqueItem } from '../../types/data/items';
 import { deobfuscate } from '../../utils/obfuscate/xor';
 import { isBreached, isMonitored } from '../items/item.predicates';
 import type { AddressBreachDTO, MonitorAddress, MonitorDomain } from './types';

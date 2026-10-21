@@ -3,7 +3,8 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 
-import { type ApiAuth, AuthMode, type Maybe } from '../../types';
+import { type ApiAuth, AuthMode } from '../../types/api/api';
+import type { Maybe } from '../../types/utils';
 import { TEST_SERVER_TIME, mockAPIResponse } from '../../utils/tests/fixtures/api';
 import { LockedSessionError, PassErrorCode } from './errors';
 import { createApi } from './factory';

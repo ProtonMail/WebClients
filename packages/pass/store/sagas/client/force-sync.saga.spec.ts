@@ -3,10 +3,10 @@ import { runSaga } from 'redux-saga';
 import { hasFoldersApi } from '../../../lib/folders/folders.requests';
 import { INITIAL_FORCE_SYNC_ENTRY } from '../../../lib/sync/force-sync';
 import type { ForceSyncEntry, ForceSyncStore } from '../../../lib/sync/force-sync';
-import { ShareType } from '../../../types';
 import { PassFeature } from '../../../types/api/features';
+import { ShareType } from '../../../types/data/shares';
 import { sagaSetup } from '../../../utils/tests/saga';
-import { syncFailure, syncIntent, syncSuccess } from '../../actions';
+import { syncFailure, syncIntent, syncSuccess } from '../../actions/creators/client';
 import { syncRequest } from '../../actions/requests';
 import { checkForForceSync } from './force-sync.saga';
 

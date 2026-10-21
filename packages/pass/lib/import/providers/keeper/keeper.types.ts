@@ -1,4 +1,4 @@
-import type { MaybeArray } from '../../../../types';
+import type { MaybeArray } from '../../../../types/utils';
 
 export type KeeperCustomFieldValue = MaybeArray<string | Record<string, string>>;
 

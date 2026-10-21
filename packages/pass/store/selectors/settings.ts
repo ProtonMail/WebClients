@@ -5,7 +5,7 @@ import { omit } from '@proton/shared/lib/helpers/object';
 import type { PassThemeOption } from '../../components/Layout/Theme/types';
 import { LockMode } from '../../lib/auth/lock/types';
 import { type DomainCriterias, mergePauseCriterias } from '../../lib/settings/pause-list';
-import type { Maybe } from '../../types';
+import type { Maybe } from '../../types/utils';
 import { pipe } from '../../utils/fp/pipe';
 import { EXCLUDED_SETTINGS_KEYS } from '../reducers/settings';
 import type { State } from '../types';

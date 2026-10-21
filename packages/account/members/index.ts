@@ -1,7 +1,7 @@
 import type { PayloadAction, ThunkAction, ThunkDispatch, UnknownAction } from '@reduxjs/toolkit';
 import { createSlice, miniSerializeError, original } from '@reduxjs/toolkit';
 
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { previousSelector } from '@proton/redux-utilities/creator';
 import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt';
 import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';

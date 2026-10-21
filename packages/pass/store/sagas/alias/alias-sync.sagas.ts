@@ -3,7 +3,7 @@ import { put } from 'redux-saga/effects';
 import { enableAliasSync, getAliasSyncStatus, toggleAliasStatus } from '../../../lib/alias/alias.requests';
 import { parseItemRevision } from '../../../lib/items/item.parser';
 import { syncPendingAliases } from '../../../lib/sync/common/alias';
-import { aliasPendingCreate, aliasSyncEnable, aliasSyncStatus, aliasSyncStatusToggle } from '../../actions';
+import { aliasPendingCreate, aliasSyncEnable, aliasSyncStatus, aliasSyncStatusToggle } from '../../actions/creators/alias';
 import { userAccessRequest } from '../../actions/requests';
 import { requestInvalidate } from '../../request/actions';
 import { createRequestSaga } from '../../request/sagas';

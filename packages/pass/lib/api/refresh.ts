@@ -9,8 +9,9 @@ import { getDateHeader } from '@proton/shared/lib/fetch/helpers';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
-import type { ApiAuth, ApiCallFn, ApiOptions, Maybe, MaybePromise } from '../../types';
-import { AuthMode } from '../../types';
+import type { ApiAuth, ApiCallFn, ApiOptions } from '../../types/api/api';
+import { AuthMode } from '../../types/api/api';
+import type { Maybe, MaybePromise } from '../../types/utils';
 import { asyncLock } from '../../utils/fp/promises';
 import { logger } from '../../utils/logger';
 import type { AuthSession } from '../auth/session';

@@ -1,6 +1,6 @@
 import createStore from '@proton/shared/lib/helpers/store';
 
-import { NativeMessageErrorType } from '../../../../types';
+import { NativeMessageErrorType } from '../../../../types/desktop/extension-unlock-with-desktop';
 import * as epoch from '../../../../utils/time/epoch';
 import { NativeMessageError, getMessageForNativeMessageError } from '../../../native-messaging/errors';
 import { createAuthStore } from '../../store';

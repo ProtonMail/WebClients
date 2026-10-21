@@ -1,9 +1,10 @@
 import { runSaga } from 'redux-saga';
 
 import { exposeApi } from '../../../lib/api/api';
-import { AppStatus } from '../../../types';
+import { AppStatus } from '../../../types/worker/state';
 import { sagaSetup } from '../../../utils/tests/saga';
-import { bootFailure, bootIntent, cacheConflict, itemsUpdated, stateDestroy } from '../../actions';
+import { bootFailure, bootIntent, cacheConflict, stateDestroy } from '../../actions/creators/client';
+import { itemsUpdated } from '../../actions/creators/item';
 import type { RootSagaOptions } from '../../types';
 import watcher from './boot.saga';
 import * as hydrateSaga from './hydrate.saga';

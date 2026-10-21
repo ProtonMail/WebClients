@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 
-import type { DeobfuscatedItemExtraField, IdentityValues } from '../../types';
+import type { DeobfuscatedItemExtraField } from '../../types/data/items';
+import type { IdentityValues } from '../../types/forms/item';
 import type { IdentityFormField } from './useIdentityForm';
 import { getIdentityFields, getInitialSections } from './utils';
 

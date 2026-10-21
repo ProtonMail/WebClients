@@ -1,4 +1,4 @@
-import type { Result } from '@proton/pass/types';
+import type { Result } from '@proton/pass/types/utils';
 
 export enum StorageKeyError {
     CORRUPTED = 'CORRUPTED',

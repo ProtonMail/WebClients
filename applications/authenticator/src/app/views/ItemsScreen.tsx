@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { ConfirmationPrompt } from '@proton/pass/components/Confirmation/ConfirmationPrompt';
 import { useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types/utils';
 
 import { db } from '../../lib/db/db';
 import type { Item as DatabaseItem } from '../../lib/db/entities/items';

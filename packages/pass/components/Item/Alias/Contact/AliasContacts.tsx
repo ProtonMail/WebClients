@@ -6,7 +6,7 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { IcFilingCabinet } from '@proton/icons/icons/IcFilingCabinet';
 
-import type { SelectedItem } from '../../../../types';
+import type { SelectedItem } from '../../../../types/data/items';
 import { useOnline } from '../../../Core/ConnectivityProvider';
 import { ValueControl } from '../../../Form/Field/Control/ValueControl';
 import { AliasContactsProvider } from './AliasContactsProvider';

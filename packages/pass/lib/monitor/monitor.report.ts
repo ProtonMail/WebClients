@@ -4,9 +4,9 @@ import {
     selectCompromisedPasswordsReportCount,
     selectDuplicatePasswords,
     selectExcludedItems,
-    selectOwnedVaults,
-    selectPassPlan,
-} from '../../store/selectors';
+} from '../../store/selectors/monitor';
+import { selectOwnedVaults } from '../../store/selectors/shares';
+import { selectPassPlan } from '../../store/selectors/user';
 import type { State } from '../../store/types';
 import type { B2BEvent } from '../../types/data/b2b';
 import { B2BEventName } from '../../types/data/b2b';

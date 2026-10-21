@@ -1,7 +1,7 @@
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
-import type { FormCredentials } from '@proton/pass/types';
-import { AutosaveMode } from '@proton/pass/types';
 import { AutofillMode } from '@proton/pass/types/protobuf';
+import { AutosaveMode } from '@proton/pass/types/worker/autosave';
+import type { FormCredentials } from '@proton/pass/types/worker/form';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
 import { getMockItemRevision, getMockState, mockShareId, sender, setMockMessageSender } from '../../../__mocks__/mocks';

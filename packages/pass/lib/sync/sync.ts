@@ -1,6 +1,6 @@
-import { selectSyncStrategy } from '../../store/selectors';
+import { selectSyncStrategy } from '../../store/selectors/settings';
 import type { RootSagaOptions, State } from '../../store/types';
-import type { MaybeNull } from '../../types';
+import type { MaybeNull } from '../../types/utils';
 import { SyncStrategy } from './types';
 import { syncV1 } from './v1/sync';
 import { syncV2 } from './v2/user-events.sync';

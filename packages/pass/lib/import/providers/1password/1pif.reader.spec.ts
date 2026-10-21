@@ -1,6 +1,7 @@
 import fs from 'fs';
 
-import type { ItemImportIntent, ItemType } from '../../../../types';
+import type { ItemImportIntent } from '../../../../types/data/items.dto';
+import type { ItemType } from '../../../../types/protobuf';
 import { AutofillMode, CardType } from '../../../../types/protobuf';
 import { deobfuscateItem } from '../../../items/item.obfuscation';
 import type { ImportPayload } from '../../types';

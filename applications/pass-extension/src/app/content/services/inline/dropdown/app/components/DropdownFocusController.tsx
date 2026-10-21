@@ -2,7 +2,7 @@ import type { FC, PropsWithChildren, RefObject } from 'react';
 import { createContext, useEffect, useMemo, useRef } from 'react';
 
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
-import type { Maybe, MaybeNull } from '@proton/pass/types/utils/index';
+import type { Maybe, MaybeNull } from '@proton/pass/types/utils';
 import { onNextTick } from '@proton/pass/utils/time/next-tick';
 
 import { useIFrameAppController, useIFrameAppState } from '../../../../../../../lib/components/Inline/IFrameApp';

@@ -4,9 +4,9 @@ import { isModalOpen } from '@proton/shared/lib/busy/busy';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 
-import type { Maybe } from '../../types';
-import { InAppNotificationDisplayType } from '../../types';
+import { InAppNotificationDisplayType } from '../../types/api/pass';
 import type { InAppNotification } from '../../types/data/notification';
+import type { Maybe } from '../../types/utils';
 import { cancelable } from '../../utils/fp/promises';
 import { useStatefulRef } from '../useStatefulRef';
 

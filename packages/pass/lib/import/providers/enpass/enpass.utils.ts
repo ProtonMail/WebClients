@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import noop from '@proton/utils/noop';
 
-import type { DeobfuscatedItemExtraField, IdentityFieldName, ItemContent } from '../../../../types';
+import type { DeobfuscatedItemExtraField, ItemContent } from '../../../../types/data/items';
+import type { IdentityFieldName } from '../../../../types/forms/item';
 import { uniqueId } from '../../../../utils/string/unique-id';
 import { itemBuilder } from '../../../items/item.builder';
 import type { ImportFileReader } from '../../types';

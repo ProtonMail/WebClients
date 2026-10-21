@@ -1,4 +1,4 @@
-import type { ItemCustomType, ItemType } from '../../../types';
+import type { ItemCustomType, ItemType } from '../../../types/protobuf';
 import { FileAttachmentsContentView } from '../../FileAttachments/FileAttachmentsView';
 import { MoreInfoDropdown } from '../../Layout/Dropdown/MoreInfoDropdown';
 import { ItemViewPanel } from '../../Layout/Panel/ItemViewPanel';

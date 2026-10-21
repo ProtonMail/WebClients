@@ -20,7 +20,7 @@ import { useImportForm } from '@proton/pass/hooks/import/useImportForm';
 import { useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
 import type { ImportPayload } from '@proton/pass/lib/import/types';
 import { type ImportProvider, type ImportProviderInfo, PROVIDER_INFO_MAP } from '@proton/pass/lib/import/types';
-import type { Maybe, MaybeNull } from '@proton/pass/types';
+import type { Maybe, MaybeNull } from '@proton/pass/types/utils';
 import { pipe, tap } from '@proton/pass/utils/fp/pipe';
 import { type XorObfuscation, deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 

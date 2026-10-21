@@ -1,5 +1,5 @@
-import type { ItemKey, VaultShareKey } from '../../../../types';
-import { PassEncryptionTag } from '../../../../types';
+import type { ItemKey, VaultShareKey } from '../../../../types/crypto/pass-types';
+import { PassEncryptionTag } from '../../../../types/crypto/pass-types';
 import { TEST_USER_KEY_ID } from '../../../../utils/tests/fixtures/crypto';
 import { decryptData, generateKey, importSymmetricKey } from '../../utils/crypto-helpers';
 import { moveItem } from './move-item';

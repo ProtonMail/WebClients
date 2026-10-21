@@ -3,7 +3,7 @@ import type { FC } from 'react';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import clsx from '@proton/utils/clsx';
 
-import type { ItemRevision } from '../../../types';
+import type { ItemRevision } from '../../../types/data/items';
 import { SafeItemIcon } from '../../Layout/Icon/ItemIcon';
 import { itemTypeToSubThemeClassName } from '../../Layout/Theme/types';
 

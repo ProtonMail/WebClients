@@ -1,13 +1,7 @@
-import type {
-    ItemRevision,
-    MaybeNull,
-    PublicLinkCreateRequest,
-    PublicLinkGetResponse,
-    SecureLink,
-    SecureLinkItem,
-    SecureLinkOptions,
-    SecureLinkQuery,
-} from '../../types';
+import type { PublicLinkCreateRequest, PublicLinkGetResponse } from '../../types/api/pass';
+import type { ItemRevision } from '../../types/data/items';
+import type { SecureLink, SecureLinkItem, SecureLinkOptions, SecureLinkQuery } from '../../types/data/items.dto';
+import type { MaybeNull } from '../../types/utils';
 import { logger } from '../../utils/logger';
 import { api } from '../api/api';
 import { PassCrypto } from '../crypto';

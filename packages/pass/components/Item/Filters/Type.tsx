@@ -10,7 +10,7 @@ import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import clsx from '@proton/utils/clsx';
 
 import { useItemFilters } from '../../../hooks/items/useItemFilters';
-import type { ItemRevision, ItemTypeFilter } from '../../../types';
+import type { ItemRevision, ItemTypeFilter } from '../../../types/data/items';
 import { CountLabel } from '../../Layout/Dropdown/CountLabel';
 import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';
 import { FilterClearButton } from './FilterClearButton';
