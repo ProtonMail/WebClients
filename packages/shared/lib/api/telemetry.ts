@@ -77,6 +77,7 @@ export enum TelemetryMeasurementGroups {
     clientSearch = 'any.web.client_search',
     b2bOnboarding = 'any.web.b2b_onboarding',
     bringYourOwnEmail = 'any.web.bring_your_own_email',
+    mailBringYourOwnEmail = 'mail.any.bring_your_own_email',
     byoeCreationFunnel = 'any.web.byoe_creation_funnel',
     appSwitcher = 'any.web.app_switcher',
     accountExploreApps = 'account.web.explore_apps',
@@ -614,6 +615,14 @@ export enum TelemetryBringYourOwnEmailEvents {
     claim_proton_address = 'claim_proton_address',
 }
 
+export enum TelemetryMailBringYourOwnEmailEvents {
+    settingsView = 'settings_view',
+    settingsListOnlyShown = 'settings_list_only_shown',
+    connectStarted = 'connect_started',
+    connectSucceeded = 'connect_succeeded',
+    connectFailed = 'connect_failed',
+}
+
 export enum TelemetryBYOECreationFunnelEvents {
     creationStarted = 'creation_started',
     googleSignInClicked = 'google_sign_in_clicked',
@@ -777,6 +786,7 @@ export type TelemetryEvents =
     | TelemetryContentSearchIndexEvents
     | TelemetryB2BOnboardingEvents
     | TelemetryBringYourOwnEmailEvents
+    | TelemetryMailBringYourOwnEmailEvents
     | TelemetryBYOECreationFunnelEvents
     | TelemetryPostSubscriptionTourEvents
     | TelemetryMailDrivePostSignupOneDollarEvents

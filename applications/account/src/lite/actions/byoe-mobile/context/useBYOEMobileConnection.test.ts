@@ -13,6 +13,15 @@ jest.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: () => ({ createNotification: mockCreateNotification }),
 }));
 
+const mockTrackConnectSucceeded = jest.fn();
+const mockTrackConnectFailed = jest.fn();
+jest.mock('../telemetry/useBYOEMobileTelemetry', () => ({
+    useBYOEMobileTelemetry: () => ({
+        trackConnectSucceeded: mockTrackConnectSucceeded,
+        trackConnectFailed: mockTrackConnectFailed,
+    }),
+}));
+
 const mockConnectBYOEAddressWithCode = jest.fn();
 jest.mock('@proton/activation/src/byoe/useConnectBYOEAddress', () => ({
     useConnectBYOEAddress: () => ({
@@ -180,6 +189,37 @@ describe('useBYOEMobileConnection reconnection', () => {
 
             expect(mockReconnectWithCode).not.toHaveBeenCalled();
             expect(mockConnectBYOEAddressWithCode).toHaveBeenCalledTimes(1);
+            expect(mockTrackConnectSucceeded).toHaveBeenCalledTimes(1);
+        });
+
+        it('does not track a success when the connection fails', async () => {
+            mockConnectBYOEAddressWithCode.mockResolvedValue({ status: 'failure', reason: { type: 'unknown' } });
+            const { result } = setup();
+
+            await act(() => result.current.handleOAuthCallback(getReconnectCallback('code', 'unknown-id')));
+
+            expect(mockTrackConnectSucceeded).not.toHaveBeenCalled();
+            expect(mockTrackConnectFailed).toHaveBeenCalledWith('unknown');
+        });
+
+        it('does not track a failure for the claimable address confirmation', async () => {
+            mockConnectBYOEAddressWithCode.mockResolvedValue({
+                status: 'failure',
+                reason: { type: 'claimable-address', email: 'jane@gmail.com', importEmails: false },
+            });
+            const { result } = setup();
+
+            await act(() => result.current.handleOAuthCallback(getReconnectCallback('code', 'unknown-id')));
+
+            expect(mockTrackConnectFailed).not.toHaveBeenCalled();
+        });
+
+        it('tracks token-failed when Google returns an error', async () => {
+            const { result } = setup();
+
+            await act(() => result.current.handleOAuthCallback(getReconnectCallback('error', 'unknown-id')));
+
+            expect(mockTrackConnectFailed).toHaveBeenCalledWith('token-failed');
         });
 
         it('only notifies when the user declined the permission of a reconnection', async () => {
