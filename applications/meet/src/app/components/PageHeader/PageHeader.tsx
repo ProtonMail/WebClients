@@ -28,8 +28,6 @@ import { SettingsDropdown } from './SettingsDropdown';
 
 import './PageHeader.scss';
 
-const QUESTION_CIRCLE_CENTERED_VIEW_BOX = '0.5 0.5 16 16';
-
 interface PageHeaderProps {
     showAppSwitcher?: boolean;
     isInstantJoin?: boolean;
@@ -149,11 +147,7 @@ export const PageHeader = ({ showAppSwitcher = true, isInstantJoin = false }: Pa
                                                 aria-label={c('Action').t`Help and feedback`}
                                                 onClick={helpAndFeedback.openHelpAndFeedback}
                                             >
-                                                <IcQuestionCircle
-                                                    size={5}
-                                                    viewBox={QUESTION_CIRCLE_CENTERED_VIEW_BOX}
-                                                    color="var(--icon-color)"
-                                                />
+                                                <IcQuestionCircle size={5} color="var(--icon-color)" />
                                             </Button>
                                         </Tooltip>
                                     </>
