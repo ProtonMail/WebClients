@@ -20,7 +20,7 @@ interface ProjectActionsDropdownProps {
 
 export const ProjectActionsDropdown = ({ project }: ProjectActionsDropdownProps) => {
     const space = useLumoSelector(selectSpaceById(project.spaceId || ''));
-    const projectSpace = space?.type === SpaceType.Project ? (space satisfies ProjectSpace) : undefined;
+    const projectSpace = space?.spaceType === SpaceType.Project ? (space satisfies ProjectSpace) : undefined;
     const { deleteProject } = useProjectActions();
 
     const editModal = useModalStateObject();

@@ -140,7 +140,7 @@ const isGeneralConversation = (conversation: Conversation, spaces: Record<string
     if (!conversation.spaceId) {
         return true;
     }
-    return spaces[conversation.spaceId]?.type === SpaceType.Simple;
+    return spaces[conversation.spaceId]?.spaceType === SpaceType.Simple;
 };
 
 const getEligibleConversationIdsForMemorySampling = (

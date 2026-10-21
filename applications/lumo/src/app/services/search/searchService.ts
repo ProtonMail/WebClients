@@ -30,7 +30,7 @@ const buildSearchableText = (doc: DriveDocument, includeChunkTitle = false): str
 
 const getProjectInfo = (spaceId: string, spaces: SpaceMap): { projectName?: string; projectIcon?: string } => {
     const space = spaces[spaceId];
-    if (space?.type === SpaceType.Project) {
+    if (space?.spaceType === SpaceType.Project) {
         return { projectName: space.projectName, projectIcon: space.projectIcon };
     }
     return {};
@@ -490,7 +490,7 @@ export class SearchService {
 
         // Search projects by name and description
         Object.values(spaces).forEach((space) => {
-            if (space.type !== SpaceType.Project) {
+            if (space.spaceType !== SpaceType.Project) {
                 return;
             }
 

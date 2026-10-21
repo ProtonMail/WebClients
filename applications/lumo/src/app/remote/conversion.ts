@@ -72,9 +72,19 @@ const validateEncryptedField = (encrypted: unknown): EncryptedData => {
 
 export function convertSpaceFromApi(input: unknown): GetSpaceRemote {
     if (typeof input !== 'object' || input === null) throw new Error('Invalid input: expected object');
-    const { ID, Type, CreateTime, UpdateTime, DeleteTime, Encrypted, SpaceKey, SpaceTag, Conversations, Assets } =
-        input as SpaceFromApi;
-    if (Type != null && !isSpaceType(Type)) throw new Error('Invalid space Type');
+    const {
+        ID,
+        SpaceType: spaceType,
+        CreateTime,
+        UpdateTime,
+        DeleteTime,
+        Encrypted,
+        SpaceKey,
+        SpaceTag,
+        Conversations,
+        Assets,
+    } = input as SpaceFromApi;
+    if (spaceType != null && !isSpaceType(spaceType)) throw new Error('Invalid space SpaceType');
     if (!isRemoteId(ID)) throw new Error('Invalid ID: expected non-empty string');
     if (!isValidDateString(CreateTime)) throw new Error('Invalid CreateTime: expected Date');
     // UpdateTime is optional for backward compatibility - fallback to CreateTime if not present
@@ -92,7 +102,7 @@ export function convertSpaceFromApi(input: unknown): GetSpaceRemote {
     const space = {
         remoteId: ID as SpaceId,
         id: SpaceTag as LocalId,
-        type: Type as SpaceType,
+        spaceType: spaceType as SpaceType,
         createdAt: new Date(CreateTime as string).toISOString(),
         updatedAt: new Date((UpdateTime || CreateTime) as string).toISOString(), // Fallback to CreateTime for backward compatibility
         wrappedSpaceKey: SpaceKey as Base64,
@@ -403,7 +413,7 @@ export function convertNewConversationToApi(
 }
 
 export function convertNewSpaceToApi(space: SerializedSpace): NewSpaceToApi {
-    const { id, type, wrappedSpaceKey, encrypted } = space;
+    const { id, spaceType, wrappedSpaceKey, encrypted } = space;
     if (!wrappedSpaceKey) {
         throw new Error("this space has no space key, which means it was deleted, so we don't push it");
     }
@@ -411,7 +421,7 @@ export function convertNewSpaceToApi(space: SerializedSpace): NewSpaceToApi {
     return {
         SpaceKey: wrappedSpaceKey,
         SpaceTag: id,
-        Type: type,
+        SpaceType: spaceType,
         Encrypted: encryptedConcat,
     };
 }

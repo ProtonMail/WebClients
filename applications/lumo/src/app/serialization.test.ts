@@ -13,7 +13,7 @@ import type { Conversation, Message, Space } from './types';
 import { Role, SpaceType, getSpaceDek } from './types';
 
 const mockSpace: Space = {
-    type: SpaceType.Simple,
+    spaceType: SpaceType.Simple,
     id: 'SpaceId',
     createdAt: 'spaceCreationDate',
     updatedAt: 'spaceCreationDate',
@@ -59,17 +59,17 @@ describe('serialization', () => {
         };
 
         it.each([
-            [{}, { type: SpaceType.Simple }],
-            [{ isProject: false }, { type: SpaceType.Simple }],
-            [{ isProject: null }, { type: SpaceType.Simple }],
-            [{ isProject: 'true' }, { type: SpaceType.Simple }],
+            [{}, { spaceType: SpaceType.Simple }],
+            [{ isProject: false }, { spaceType: SpaceType.Simple }],
+            [{ isProject: null }, { spaceType: SpaceType.Simple }],
+            [{ isProject: 'true' }, { spaceType: SpaceType.Simple }],
             [
                 { isProject: true, ...projectMetadata },
-                { type: SpaceType.Project, ...projectMetadata },
+                { spaceType: SpaceType.Project, ...projectMetadata },
             ],
         ])('reads legacy encrypted payloads without rewriting them: %p', async (legacy, expected) => {
             const masterKey = await base64ToMasterKey('BBBBBAQQQQQEEEEEBBBBBAQQQQQEEEEEBBBBBAQQQQQ=');
-            const { type: _type, ...serialized } = await serializeSpace(mockSpace, masterKey);
+            const { spaceType: _spaceType, ...serialized } = await serializeSpace(mockSpace, masterKey);
             serialized.encrypted = await encryptString(JSON.stringify(legacy), await getSpaceDek(mockSpace), ad);
             const before = JSON.stringify(serialized);
             const restored = await deserializeSpace(serialized, masterKey);
@@ -78,13 +78,14 @@ describe('serialization', () => {
             expect(JSON.stringify(serialized)).toBe(before);
             const saved = await serializeSpace(restored!, masterKey);
             const savedPayload = JSON.parse(await decryptString(saved.encrypted!, await getSpaceDek(mockSpace), ad));
-            const { type, ...expectedPrivate } = expected;
-            expect(saved.type).toBe(type);
+            const { spaceType: type, ...expectedPrivate } = expected;
+            expect(saved.spaceType).toBe(type);
             expect(savedPayload).toEqual({
                 ...expectedPrivate,
                 ...(type === SpaceType.Project && { isProject: true }),
             });
             expect(savedPayload).not.toHaveProperty('type');
+            expect(savedPayload).not.toHaveProperty('spaceType');
             if (type !== SpaceType.Project) expect(savedPayload).not.toHaveProperty('isProject');
         });
 
@@ -93,24 +94,29 @@ describe('serialization', () => {
             async (type) => {
                 const masterKey = await base64ToMasterKey('BBBBBAQQQQQEEEEEBBBBBAQQQQQEEEEEBBBBBAQQQQQ=');
                 const space: Space =
-                    type === SpaceType.Project ? { ...mockSpace, type, ...projectMetadata } : { ...mockSpace, type };
+                    type === SpaceType.Project
+                        ? { ...mockSpace, spaceType: type, ...projectMetadata }
+                        : { ...mockSpace, spaceType: type };
                 const serialized = await serializeSpace(space, masterKey);
                 const payload = JSON.parse(await decryptString(serialized.encrypted!, await getSpaceDek(space), ad));
-                expect(serialized.type).toBe(type);
+                expect(serialized.spaceType).toBe(type);
                 expect(payload).toEqual(type === SpaceType.Project ? { ...projectMetadata, isProject: true } : {});
                 expect(payload).not.toHaveProperty('type');
+                expect(payload).not.toHaveProperty('spaceType');
                 if (type !== SpaceType.Project) expect(payload).not.toHaveProperty('isProject');
                 expect(await deserializeSpace(serialized, masterKey)).toEqual(space);
             }
         );
 
         it.each([SpaceType.Simple, SpaceType.Project])(
-            'preserves %s when the API response omits public Type',
+            'preserves %s when the API response omits public SpaceType',
             async (type) => {
                 const masterKey = await base64ToMasterKey('BBBBBAQQQQQEEEEEBBBBBAQQQQQEEEEEBBBBBAQQQQQ=');
                 const space: Space =
-                    type === SpaceType.Project ? { ...mockSpace, type, ...projectMetadata } : { ...mockSpace, type };
-                const { type: _type, ...backendResponse } = await serializeSpace(space, masterKey);
+                    type === SpaceType.Project
+                        ? { ...mockSpace, spaceType: type, ...projectMetadata }
+                        : { ...mockSpace, spaceType: type };
+                const { spaceType: _spaceType, ...backendResponse } = await serializeSpace(space, masterKey);
                 const restored = await deserializeSpace(backendResponse, masterKey);
                 expect(restored).toEqual(space);
                 expect(restored).not.toHaveProperty('isProject');
@@ -120,7 +126,7 @@ describe('serialization', () => {
         it('prefers a public type over the legacy encrypted isProject flag', async () => {
             const masterKey = await base64ToMasterKey('BBBBBAQQQQQEEEEEBBBBBAQQQQQEEEEEBBBBBAQQQQQ=');
             const serialized = await serializeSpace(
-                { ...mockSpace, type: SpaceType.Project, ...projectMetadata },
+                { ...mockSpace, spaceType: SpaceType.Project, ...projectMetadata },
                 masterKey
             );
             serialized.encrypted = await encryptString(
@@ -130,7 +136,7 @@ describe('serialization', () => {
             );
             expect(await deserializeSpace(serialized, masterKey)).toEqual({
                 ...mockSpace,
-                type: SpaceType.Project,
+                spaceType: SpaceType.Project,
                 ...projectMetadata,
             });
         });
@@ -138,7 +144,7 @@ describe('serialization', () => {
         it('rejects unknown future types without changing the stored ciphertext', async () => {
             const masterKey = await base64ToMasterKey('BBBBBAQQQQQEEEEEBBBBBAQQQQQEEEEEBBBBBAQQQQQ=');
             const serialized = await serializeSpace(mockSpace, masterKey);
-            Object.assign(serialized, { type: 'future-type' });
+            Object.assign(serialized, { spaceType: 'future-type' });
             const before = serialized.encrypted;
             expect(await deserializeSpace(serialized, masterKey)).toBeNull();
             expect(serialized.encrypted).toBe(before);
@@ -153,7 +159,11 @@ describe('serialization', () => {
 
         it('defaults legacy spaces without encrypted private metadata to Simple', async () => {
             const masterKey = await base64ToMasterKey('BBBBBAQQQQQEEEEEBBBBBAQQQQQEEEEEBBBBBAQQQQQ=');
-            const { encrypted: _encrypted, type: _type, ...serialized } = await serializeSpace(mockSpace, masterKey);
+            const {
+                encrypted: _encrypted,
+                spaceType: _spaceType,
+                ...serialized
+            } = await serializeSpace(mockSpace, masterKey);
             expect(await deserializeSpace(serialized, masterKey)).toEqual(mockSpace);
         });
     });

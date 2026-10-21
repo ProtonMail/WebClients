@@ -81,7 +81,7 @@ describe('buildProjectKnowledgeSnapshot', () => {
             createdAt: '2026-01-01T00:00:00.000Z',
             updatedAt: '2026-01-01T00:00:00.000Z',
             spaceKey: 'space-key',
-            type: SpaceType.Project,
+            spaceType: SpaceType.Project,
             projectName: 'EU RFI',
         } satisfies Project;
 

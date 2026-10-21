@@ -9,17 +9,17 @@ const baseSpaceFields = {
 
 function expectSpaceTypeIsPreserved(space: Space) {
     expect(cleanSpace(space)).toEqual(space);
-    expect(splitSpace(space).spacePub.type).toBe(space.type);
+    expect(splitSpace(space).spacePub.spaceType).toBe(space.spaceType);
     expect(splitSpace(space).spacePriv).not.toHaveProperty('type');
-    expect(cleanSerializedSpace({ ...space, wrappedSpaceKey: 'wrapped' }).type).toBe(space.type);
-    expect(cleanSerializedSpace({ ...space, deleted: true }).type).toBe(space.type);
+    expect(cleanSerializedSpace({ ...space, wrappedSpaceKey: 'wrapped' }).spaceType).toBe(space.spaceType);
+    expect(cleanSerializedSpace({ ...space, deleted: true }).spaceType).toBe(space.spaceType);
 }
 
 describe('space field helpers', () => {
     it('keeps the simple space type when cleaning spaces', () => {
         expectSpaceTypeIsPreserved({
             id: 'simple-space',
-            type: SpaceType.Simple,
+            spaceType: SpaceType.Simple,
             ...baseSpaceFields,
         });
     });
@@ -27,7 +27,7 @@ describe('space field helpers', () => {
     it('keeps the project space type when cleaning spaces', () => {
         expectSpaceTypeIsPreserved({
             id: 'project-space',
-            type: SpaceType.Project,
+            spaceType: SpaceType.Project,
             ...baseSpaceFields,
             projectName: 'Research',
             projectInstructions: 'Summarize sources',

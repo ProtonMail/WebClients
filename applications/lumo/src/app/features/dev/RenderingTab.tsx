@@ -28,7 +28,7 @@ export const RenderingTab = () => {
             createdAt: new Date(now.getTime() - 8 * 24 * 60 * 60 * 1000).toISOString(),
             updatedAt: new Date(now.getTime() - 8 * 24 * 60 * 60 * 1000).toISOString(),
             spaceKey,
-            type: SpaceType.Project,
+            spaceType: SpaceType.Project,
             projectName: 'Test Space (Conversation Limit)',
             projectIcon: 'test',
         };

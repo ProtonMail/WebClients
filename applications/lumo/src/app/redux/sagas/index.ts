@@ -273,7 +273,7 @@ function* loadReduxFromIdb(): SagaIterator {
             yield put(addSpace(space));
             yield call(migrateSpaceMasterKeyIfNeeded, space, needsMasterKeyMigration);
             spaceStats.loaded++;
-            if (space.type === SpaceType.Project) {
+            if (space.spaceType === SpaceType.Project) {
                 spaceStats.projects++;
             }
             if (!spaceDekMap[id]) {

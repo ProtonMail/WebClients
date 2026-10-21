@@ -98,7 +98,7 @@ export const useFileMentionAutocomplete = (
 
     const provisionalAttachments = useLumoSelector(selectProvisionalAttachments);
     const space = useLumoSelector(selectSpaceByIdOptional(spaceId));
-    const spaceProject = space?.type === SpaceType.Project ? (space satisfies ProjectSpace) : undefined;
+    const spaceProject = space?.spaceType === SpaceType.Project ? (space satisfies ProjectSpace) : undefined;
     const linkedDriveFolder = spaceProject?.linkedDriveFolder;
     const { driveIndexRevision } = useDriveIndexing();
 

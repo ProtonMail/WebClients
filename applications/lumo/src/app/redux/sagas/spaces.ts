@@ -579,7 +579,7 @@ export function* refreshSpaceFromRemote({
         return;
     }
     const remoteSpace = cleanSpace(deserializedRemoteSpace);
-    const encryptedSpaceToSave: SerializedSpace = { ...encryptedRemoteSpace, type: remoteSpace.type };
+    const encryptedSpaceToSave: SerializedSpace = { ...encryptedRemoteSpace, spaceType: remoteSpace.spaceType };
 
     const localSpace: Space | undefined = yield select(selectSpaceById(localId));
     const encryptedIdbSpace: SerializedSpace | undefined = yield call([dbApi, dbApi.getSpaceById], localId);
@@ -644,7 +644,7 @@ export function* reconcileProjectSearchIndex(): SagaIterator {
             (yield select((state: LumoState) => state.lumoUserSettings.indexedDriveFolders)) || [];
 
         for (const space of Object.values(spaces)) {
-            if (space.type !== SpaceType.Project || space.linkedDriveFolder) {
+            if (space.spaceType !== SpaceType.Project || space.linkedDriveFolder) {
                 continue;
             }
 
@@ -669,7 +669,7 @@ export function* reconcileProjectSearchIndex(): SagaIterator {
 }
 
 export function* cleanupProjectSearchIndexOnSpaceUpdate({ payload: space }: ReturnType<typeof addSpace>): SagaIterator {
-    if (space.type !== SpaceType.Project || space.linkedDriveFolder) {
+    if (space.spaceType !== SpaceType.Project || space.linkedDriveFolder) {
         return;
     }
 

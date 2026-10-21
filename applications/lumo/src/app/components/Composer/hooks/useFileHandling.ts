@@ -61,7 +61,7 @@ export const useFileHandling = ({
 
     // Drive-related Redux data lives here — co-located with Drive logic
     const space = useLumoSelector(selectSpaceByIdOptional(spaceId));
-    const linkedDriveFolder = space?.type === SpaceType.Project ? space.linkedDriveFolder : undefined;
+    const linkedDriveFolder = space?.spaceType === SpaceType.Project ? space.linkedDriveFolder : undefined;
 
     // Derived from available data — no isGuest context read needed.
     // Absence of uploadToDrive signals a guest session; linkedDriveFolder signals Drive-upload mode.
