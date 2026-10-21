@@ -38,19 +38,29 @@ const TOOL_RESULT = 'tool_result' as Role;
 
 const ELIDED_GUIDE = '[guide loaded - its rules are in the system prompt]';
 
-const parseToolCallName = (content: string | undefined): string => {
+const parseToolCall = (content: string | undefined): { name: string; arguments?: Record<string, unknown> } => {
     try {
-        return String(JSON.parse(content || '{}')?.name ?? '');
+        const call = JSON.parse(content || '{}');
+        return { name: String(call?.name ?? ''), arguments: call?.arguments };
     } catch {
-        return '';
+        return { name: '' };
     }
 };
 
+/** Standalone-prompt mode: a guide is loaded for as long as the turns sent to the model still carry its load. */
+const guidesCarriedBy = (turns: Turn[]): ToolName[] =>
+    turns
+        .filter((turn) => turn.role === TOOL_CALL)
+        .map((turn) => parseToolCall(turn.content))
+        .filter((call) => call.name === LOAD_GUIDE_TOOL_NAME && typeof call.arguments?.guide === 'string')
+        .map((call) => call.arguments!.guide as ToolName);
+
 /**
  * The chain as history should remember it: every turn verbatim, so the model never re-runs a read it
- * already holds. A guide load's result is the one exception, since the system prompt re-injects that body.
+ * already holds. In composed-prompt mode a guide load's result is the one exception, since the system
+ * prompt re-injects that body; a standalone prompt carries no guide, so history keeps it.
  */
-const projectChainForHistory = (chainWork: Turn[]): Turn[] => {
+const projectChainForHistory = (chainWork: Turn[], keepGuideBodies: boolean): Turn[] => {
     const projected: Turn[] = [];
     let calledName = '';
 
@@ -62,13 +72,13 @@ const projectChainForHistory = (chainWork: Turn[]): Turn[] => {
             continue;
         }
         if (turn.role === TOOL_CALL) {
-            calledName = parseToolCallName(turn.content);
+            calledName = parseToolCall(turn.content).name;
             projected.push(turn);
             continue;
         }
         if (turn.role === TOOL_RESULT) {
-            const isGuideLoad = calledName === LOAD_GUIDE_TOOL_NAME;
-            projected.push(isGuideLoad ? { role: TOOL_RESULT, content: ELIDED_GUIDE } : turn);
+            const elideBody = !keepGuideBodies && calledName === LOAD_GUIDE_TOOL_NAME;
+            projected.push(elideBody ? { role: TOOL_RESULT, content: ELIDED_GUIDE } : turn);
             continue;
         }
         projected.push(turn);
@@ -118,6 +128,7 @@ const extractWebSources = (content: string): ServerToolSource[] => {
  */
 const useLumoAgent = (config: LumoAgentConfig) => {
     const api = useApi();
+    const standalonePrompt = !!config.serverPrompt;
 
     const [items, setItems] = useState<LumoAgentItem[]>([]);
     const [isBusy, setIsBusy] = useState(false);
@@ -132,7 +143,7 @@ const useLumoAgent = (config: LumoAgentConfig) => {
     // tool it proposes and the answer it awaits have exactly the same lifetime.
     const confirmResolveRef = useRef<{ tool: ToolName; resolve: (decision: ConfirmDecision) => void } | null>(null);
     const historyRef = useRef<Turn[]>([]);
-    // What the debug transcript copies: every turn verbatim, including guide bodies history elides.
+    // What the debug transcript copies: every turn verbatim, including guide bodies a composed prompt's history elides.
     const transcriptRef = useRef<Turn[]>([]);
     // The exchange's projected turns, waiting to be banked.
     const projectedChainRef = useRef<Turn[]>([]);
@@ -289,6 +300,7 @@ const useLumoAgent = (config: LumoAgentConfig) => {
             definitions: config.definitions,
             handlers: config.handlers,
             references,
+            standalonePrompt,
             confirm: {
                 requestConfirmation: (action, labels) =>
                     new Promise<ConfirmDecision>((resolve) => {
@@ -314,19 +326,22 @@ const useLumoAgent = (config: LumoAgentConfig) => {
                 });
             },
         });
-    }, [config, sessionKey, nextId, pushItem, finalizeReply, advanceLastConfirm]);
+    }, [config, standalonePrompt, sessionKey, nextId, pushItem, finalizeReply, advanceLastConfirm]);
 
     /**
      * Bank what the chain produced, as the transport reports it rather than as the bubbles on screen
      * split it: verbatim for the transcript, projected for history (see {@link projectChainForHistory}).
      */
-    const recordChainWork = useCallback((producedTurns: Turn[]) => {
-        transcriptRef.current.push(...producedTurns);
-        projectedChainRef.current.push(...projectChainForHistory(producedTurns));
-    }, []);
+    const recordChainWork = useCallback(
+        (producedTurns: Turn[]) => {
+            transcriptRef.current.push(...producedTurns);
+            projectedChainRef.current.push(...projectChainForHistory(producedTurns, standalonePrompt));
+        },
+        [standalonePrompt]
+    );
 
     const runChain = useCallback(
-        async (turns: Turn[], userText: string) => {
+        async (turns: Turn[], userContent: string) => {
             setIsBusy(true);
             setLastChainEnd(null);
 
@@ -408,7 +423,14 @@ const useLumoAgent = (config: LumoAgentConfig) => {
 
             try {
                 const client = await getLumoClient();
-                const clientTools: ChatCompletionsFunctionTool[] = (await executor.getClientTools?.()) ?? [];
+                if (standalonePrompt) {
+                    executor.setLoadedGuides(guidesCarriedBy(turns));
+                }
+                // The transport also advertises the executor's tools, so composed mode sends them twice;
+                // standalone mode leaves the executor the only advertiser.
+                const clientTools: ChatCompletionsFunctionTool[] | undefined = standalonePrompt
+                    ? undefined
+                    : ((await executor.getClientTools?.()) ?? []);
                 // The executor is shared across chains, so bind this one's signal to its batches: an
                 // abandoned chain must not confirm and run the tail of its batch on the turn that replaced it.
                 const { producedTurns } = await client.callAssistant(api, turns, {
@@ -419,8 +441,9 @@ const useLumoAgent = (config: LumoAgentConfig) => {
                             return executor.execute(calls, { signal: controller.signal, showImage });
                         },
                     },
-                    clientTools,
+                    ...(clientTools && { clientTools }),
                     serverTools: config.serverTools,
+                    ...(config.clientType && { clientType: config.clientType }),
                     signal: controller.signal,
                     chunkCallback,
                 });
@@ -432,7 +455,7 @@ const useLumoAgent = (config: LumoAgentConfig) => {
                     return;
                 }
                 recordChainWork(producedTurns);
-                commitHistory(userText);
+                commitHistory(userContent);
                 reportChainEnd(streamFailed ? LumoChainEnd.FAILED : LumoChainEnd.SUCCEEDED);
             } catch (error: any) {
                 const isAbort = error?.name === 'AbortError';
@@ -453,6 +476,7 @@ const useLumoAgent = (config: LumoAgentConfig) => {
         [
             api,
             config,
+            standalonePrompt,
             executor,
             appendReplyDelta,
             commitHistory,
@@ -464,16 +488,22 @@ const useLumoAgent = (config: LumoAgentConfig) => {
         ]
     );
 
-    const buildSystemTurn = useCallback(
-        (): Turn => ({
-            role: SYSTEM,
-            content: buildSystemPrompt({
-                definitions: config.definitions,
-                loadedGuides: executor.getLoadedGuides(),
-                productRules: config.productRules?.(),
-            }),
-        }),
-        [config, executor]
+    // With a server prompt the backend supplies the whole system turn, so none is sent.
+    const buildSystemTurns = useCallback(
+        (): Turn[] =>
+            standalonePrompt
+                ? []
+                : [
+                      {
+                          role: SYSTEM,
+                          content: buildSystemPrompt({
+                              definitions: config.definitions,
+                              loadedGuides: executor.getLoadedGuides(),
+                              productRules: config.productRules?.(),
+                          }),
+                      },
+                  ],
+        [config, standalonePrompt, executor]
     );
 
     const send = useCallback(
@@ -495,24 +525,27 @@ const useLumoAgent = (config: LumoAgentConfig) => {
             projectedChainRef.current = [];
             finalizeReply();
             pushItem({ id: nextId(), kind: 'user', text });
-            transcriptRef.current.push({ role: USER, content: text });
+            // The model reads the moment the message was sent; the bubble on screen shows only what was typed.
+            const turnContext = standalonePrompt ? config.turnContext?.() : undefined;
+            const content = turnContext ? `${turnContext}\n\n${text}` : text;
+            transcriptRef.current.push({ role: USER, content });
 
-            await runChain([buildSystemTurn(), ...historyRef.current, { role: USER, content: text }], text);
+            await runChain([...buildSystemTurns(), ...historyRef.current, { role: USER, content }], content);
         },
-        [buildSystemTurn, isBusy, finalizeReply, nextId, pushItem, runChain, abandonChain]
+        [config, standalonePrompt, buildSystemTurns, isBusy, finalizeReply, nextId, pushItem, runChain, abandonChain]
     );
 
     /**
-     * The model-facing exchange as one copyable string, for a bug report: the system prompt, then each
+     * The model-facing exchange as one copyable string, for a bug report: the system prompt (unless the server supplies it), then each
      * question, the tool calls and results it drove, and the answer. The diagnostic events the POC
      * interleaved need an event log this hook does not keep, and stay out of scope.
      */
     const getDebugTranscript = useCallback(
         () =>
-            [buildSystemTurn(), ...transcriptRef.current]
+            [...buildSystemTurns(), ...transcriptRef.current]
                 .map((turn) => `===== ${turn.role.toUpperCase()} =====\n${turn.content ?? ''}`)
                 .join('\n\n'),
-        [buildSystemTurn]
+        [buildSystemTurns]
     );
 
     const clear = useCallback(() => {

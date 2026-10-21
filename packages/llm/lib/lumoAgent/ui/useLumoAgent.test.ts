@@ -6,6 +6,7 @@ import type {
     ToolName as ServerToolName,
     Turn,
 } from '@proton/lumo-api-client/core/types';
+import { LumoClientType } from '@proton/lumo-api-client/types-api';
 
 import type { ToolDefinition } from '../contracts/types';
 import { createLoadGuideDefinition } from '../engine/loadGuide';
@@ -22,6 +23,7 @@ type Script = (ctx: {
 }) => Promise<void | { producedTurns?: unknown[] }>;
 let script: Script = async () => {};
 const sentTurns: Turn[][] = [];
+const sentOptions: Record<string, unknown>[] = [];
 
 jest.mock('@proton/app-context/useApi', () => ({
     __esModule: true,
@@ -33,6 +35,7 @@ jest.mock('@proton/lumo-api-client/core/client', () => ({
     LumoApiClient: class {
         async callAssistant(_api: unknown, turns: Turn[], options: any) {
             sentTurns.push(turns);
+            sentOptions.push(options);
             let streamed = '';
             const chunk = (message: GenerationResponseMessage) => {
                 if (message.type === 'token_data' && message.target === 'message') {
@@ -116,6 +119,7 @@ beforeEach(() => {
     handlerCalls.length = 0;
     readCalls.length = 0;
     sentTurns.length = 0;
+    sentOptions.length = 0;
     script = async () => {};
     jest.clearAllMocks();
 });
@@ -918,6 +922,159 @@ describe('useLumoAgent', () => {
                 );
             });
         });
+    });
+
+    describe('with a server prompt', () => {
+        const standalone: LumoAgentConfig = { ...config, serverPrompt: true };
+        const loadCall = '{"id":"1","name":"load_guide","arguments":{"guide":"search_items"}}';
+
+        const sendOnce = async (agentConfig: LumoAgentConfig, text = 'hi') => {
+            const { result } = renderHook(() => useLumoAgent(agentConfig));
+            await act(async () => {
+                await result.current.send(text);
+            });
+            return result;
+        };
+
+        it('sends no system turn, so neither the protocol base nor the rules reach the model', async () => {
+            const result = await sendOnce({ ...standalone, productRules: () => 'UNUSED RULES' });
+
+            expect(sentTurns[0]).toEqual([{ role: 'user', content: 'hi' }]);
+            expect(result.current.getDebugTranscript()).not.toContain('===== SYSTEM =====');
+        });
+
+        it('sends the message as typed when the product gives no turn context', async () => {
+            await sendOnce(standalone);
+
+            expect(sentTurns[0].at(-1)).toEqual({ role: 'user', content: 'hi' });
+        });
+
+        it('prepends the turn context to the message the model reads and banks, not to the one shown', async () => {
+            let moment = 'FIRST MOMENT';
+            script = async ({ chunk }) => chunk(message('Sure.'));
+            const result = await sendOnce({ ...standalone, turnContext: () => moment }, 'first');
+            moment = 'SECOND MOMENT';
+            await act(async () => {
+                await result.current.send('second');
+            });
+
+            expect(sentTurns[1].filter((turn) => turn.role === 'user')).toEqual([
+                { role: 'user', content: 'FIRST MOMENT\n\nfirst' },
+                { role: 'user', content: 'SECOND MOMENT\n\nsecond' },
+            ]);
+            expect(result.current.getDebugTranscript()).toContain('===== USER =====\nSECOND MOMENT\n\nsecond');
+            expect(result.current.items.filter((item) => item.kind === 'user')).toEqual([
+                expect.objectContaining({ text: 'first' }),
+                expect.objectContaining({ text: 'second' }),
+            ]);
+        });
+
+        it('tells the transport which client is calling, so the backend can pick its prompt', async () => {
+            await sendOnce({ ...standalone, clientType: LumoClientType.LumoMail });
+
+            expect(sentOptions[0]).toHaveProperty('clientType', LumoClientType.LumoMail);
+        });
+
+        it('advertises client tools through the executor alone, so the request carries each once', async () => {
+            await sendOnce(standalone);
+
+            expect(sentOptions[0]).not.toHaveProperty('clientTools');
+        });
+
+        it('advertises a guided tool from the first round', async () => {
+            let advertised: string[] = [];
+            script = async ({ executor }) => {
+                advertised = ((await executor.getClientTools?.()) ?? []).map((tool) => tool.function.name);
+            };
+            await sendOnce(standalone);
+
+            expect(advertised).toContain('search_items');
+        });
+
+        it("keeps a loaded guide's body, which applies for the rest of the conversation", async () => {
+            const loaded =
+                'The search_items guide was loaded. It follows below and applies to every search_items call.\n\nTHE SEARCH GUIDE';
+            script = async ({ chunk }) => {
+                chunk(message('Found it.'));
+                return {
+                    producedTurns: [
+                        { role: 'tool_call', content: loadCall },
+                        { role: 'tool_result', content: loaded },
+                        { role: 'assistant', content: 'Found it.' },
+                    ],
+                };
+            };
+            const result = await sendOnce(standalone, 'find it');
+            script = async ({ chunk }) => chunk(message('Sure.'));
+            await act(async () => {
+                await result.current.send('and the next one?');
+            });
+
+            expect(sentTurns[1]).toContainEqual({ role: 'tool_result', content: loaded });
+        });
+
+        describe('whether a guide still counts as loaded', () => {
+            const loadSearchGuide: Script = async ({ executor }) => {
+                const [loaded] = await executor.execute([
+                    { id: '1', name: 'load_guide', arguments: '{"guide":"search_items"}' },
+                ]);
+                return {
+                    producedTurns: [
+                        { role: 'tool_call', content: loadCall },
+                        { role: 'tool_result', content: loaded.content },
+                    ],
+                };
+            };
+            const loadAgain = async (result: AgentResult) => {
+                let reload = '';
+                script = async ({ executor, chunk }) => {
+                    const [reloaded] = await executor.execute([
+                        { id: '2', name: 'load_guide', arguments: '{"guide":"search_items"}' },
+                    ]);
+                    reload = reloaded.content;
+                    chunk(message('Sure.'));
+                };
+                await act(async () => {
+                    await result.current.send('search again');
+                });
+                return reload;
+            };
+
+            it('is already loaded when history carries the load', async () => {
+                script = loadSearchGuide;
+                const result = await sendOnce(standalone, 'find it');
+
+                expect(await loadAgain(result)).not.toContain('THE SEARCH GUIDE');
+            });
+
+            it('loads afresh when the chain that loaded it failed and was never banked', async () => {
+                script = async (ctx) => {
+                    await loadSearchGuide(ctx);
+                    throw new Error('stream dropped');
+                };
+                const result = await sendOnce(standalone, 'find it');
+
+                expect(await loadAgain(result)).toContain('THE SEARCH GUIDE');
+            });
+        });
+    });
+
+    it('without a server prompt, advertises described client tools itself and names no client', async () => {
+        const { result } = renderHook(() => useLumoAgent({ ...config, turnContext: () => 'UNUSED MOMENT' }));
+        await act(async () => {
+            await result.current.send('hi');
+        });
+
+        expect(sentOptions[0]).not.toHaveProperty('clientType');
+        expect(sentOptions[0].clientTools).toEqual(
+            expect.arrayContaining([
+                {
+                    type: 'function',
+                    function: expect.objectContaining({ name: 'view_items', description: 'view items' }),
+                },
+            ])
+        );
+        expect(sentTurns[0]).toContainEqual({ role: 'user', content: 'hi' });
     });
 
     it('clears the conversation', async () => {
