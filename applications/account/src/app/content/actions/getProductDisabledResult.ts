@@ -1,9 +1,7 @@
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
-import noop from '@proton/utils/noop';
 
-import type { AppSwitcherState } from '../../public/AppSwitcherContainer';
-import { getOrganization } from '../../public/organization';
+import { getAppSwitcherState } from '../../public/appSwitcherState';
 import type { AuthSession } from '../authSession';
 import type { Paths } from '../helper';
 import type { LoginResult } from './interface';
@@ -20,17 +18,9 @@ export const getProductDisabledLoginResult = async ({
     paths: Paths;
     message?: string;
 }): Promise<LoginResult> => {
-    const organization = await getOrganization({ session, api }).catch(noop);
-    const appSwitcherState: AppSwitcherState = {
-        session: { ...session, data: { ...session.data, Organization: organization } },
-        error: {
-            type: 'unsupported-app',
-            app,
-        },
-    };
     return {
         type: 'app-switcher',
         location: paths.appSwitcher,
-        payload: appSwitcherState,
+        payload: await getAppSwitcherState({ session, api, error: { type: 'unsupported-app', app } }),
     };
 };

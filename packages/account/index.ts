@@ -76,6 +76,8 @@ export * from './referrals';
 export * from './entitlements';
 export * from './entitlements/listenerV5';
 export * from './entitlementCatalog';
+export * from './availableApps';
+export * from './availableApps/listener';
 
 export { safetyReviewTelemetryReducer } from './safetyReview/telemetry/safetyReviewTelemetrySlice';
 

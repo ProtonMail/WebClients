@@ -1,8 +1,10 @@
 import {
+    type AvailableAppsState,
     accountSessionsSlice,
     addressKeysReducer,
     addressesReducer,
     apiStatusReducer,
+    availableAppsReducer,
     delegatedAccessReducer,
     domainsReducer,
     entitlementCatalogReducer,
@@ -89,6 +91,7 @@ export const sharedReducers = {
     ...referralInfoReducer,
     ...referralsReducer,
     ...userPermissionsReducer,
+    ...availableAppsReducer,
     kt: ktSlice.reducer,
     features: featuresReducer.reducer,
     sessions: accountSessionsSlice.reducer,
@@ -114,5 +117,6 @@ export const sharedPersistReducer: Partial<{ [key in keyof typeof sharedReducers
     domains: selectPersistModel,
     previousSubscription: selectPersistModel,
     referralInfo: selectPersistModel,
+    availableApps: (state: AvailableAppsState['availableApps']) => state,
     features: (state: any) => state,
 };
