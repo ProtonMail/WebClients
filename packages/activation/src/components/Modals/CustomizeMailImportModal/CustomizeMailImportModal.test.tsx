@@ -1,6 +1,6 @@
 import { fireEvent, screen, waitFor } from '@testing-library/dom';
 
-import type { ModalStateProps } from '@proton/components';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 
 import type { ApiMailImporterFolder } from '../../../api/api.interface';
 import MailImportFoldersParser from '../../../helpers/MailImportFoldersParser/MailImportFoldersParser';

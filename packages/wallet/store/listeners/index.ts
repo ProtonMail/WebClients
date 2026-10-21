@@ -1,4 +1,4 @@
-import { startAccountSessionsListener } from '@proton/account';
+import { startAccountSessionsListener } from '@proton/account/accountSessions';
 import { startSharedListening } from '@proton/redux-shared-store/sharedListeners';
 
 import type { AppStartListening } from '../store';

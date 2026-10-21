@@ -3,9 +3,9 @@ import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
 import type { ProtonDriveClient } from '@protontech/drive-sdk';
 
-import type { SettingsAreaConfig } from '@proton/components';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import PrivateMainSettingsArea from '@proton/components/containers/layout/PrivateMainSettingsArea';
+import type { SettingsAreaConfig } from '@proton/components/containers/layout/interface';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';

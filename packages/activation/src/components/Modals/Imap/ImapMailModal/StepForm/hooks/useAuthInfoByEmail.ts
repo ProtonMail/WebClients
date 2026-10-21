@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 import { useApi } from '@proton/app-context/useApi';
-import { useDebounceInput } from '@proton/components';
+import useDebounceInput from '@proton/components/components/input/useDebounceInput';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import noop from '@proton/utils/noop';
 

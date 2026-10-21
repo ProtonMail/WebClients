@@ -3,11 +3,13 @@ import { c } from 'ttag';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { toggleOrganizationSetting } from '@proton/calendar/calendars/actions';
-import { Info, SettingsLayoutLeft, SettingsLayoutRight } from '@proton/components';
-import useToggle from '@proton/hooks/useToggle'
+import Info from '@proton/components/components/link/Info';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
+import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
+import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
 import useLoading from '@proton/hooks/useLoading';
+import useToggle from '@proton/hooks/useToggle';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { useFlag } from '@proton/unleash/useFlag';
 

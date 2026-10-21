@@ -3,8 +3,12 @@ import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { ModalTwo, ModalTwoContent, SettingsLink, useModalState, useSettingsLink } from '@proton/components';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
+import useSettingsLink from '@proton/components/components/link/useSettingsLink';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import importStartedSvg from '@proton/styles/assets/img/onboarding/import-assistant.svg';
 
 import { IA_PATHNAME_REGEX } from '../../../../constants';

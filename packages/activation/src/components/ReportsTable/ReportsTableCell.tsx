@@ -1,4 +1,4 @@
-import { TableCell } from '@proton/components';
+import TableCell from '@proton/components/components/table/TableCell';
 
 import type { ApiImportProvider } from '../../api/api.interface';
 import type { ImportType } from '../../interface';

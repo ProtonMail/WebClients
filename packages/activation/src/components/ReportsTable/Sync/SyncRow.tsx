@@ -1,6 +1,7 @@
 import { memo } from 'react';
 
-import { TableCell, TableRow } from '@proton/components';
+import TableCell from '@proton/components/components/table/TableCell';
+import TableRow from '@proton/components/components/table/TableRow';
 
 import { ApiImportProvider } from '../../../api/api.interface';
 import type { Sync } from '../../../logic/sync/sync.interface';

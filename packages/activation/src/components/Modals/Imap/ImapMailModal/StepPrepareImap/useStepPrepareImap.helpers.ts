@@ -1,6 +1,6 @@
 import { format } from 'date-fns';
 
-import type { LabelModel } from '@proton/components';
+import type { LabelModel } from '@proton/components/containers/labels/modals/EditLabelModal';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
 import { dateLocale } from '@proton/shared/lib/i18n';

@@ -2,8 +2,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import type { ModalStateReturnObj } from '@proton/components';
-import { IconRow } from '@proton/components';
+import IconRow from '@proton/components/components/iconRow/IconRow';
+import type { ModalStateReturnObj } from '@proton/components/components/modalTwo/useModalState';
 import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 import { IcVideoCamera } from '@proton/icons/icons/IcVideoCamera';
 import type { EventModel } from '@proton/shared/lib/interfaces/calendar/Event';

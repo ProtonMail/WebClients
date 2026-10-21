@@ -2,7 +2,7 @@ import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { NotificationsProvider } from '@proton/components';
+import NotificationsProvider from '@proton/components/containers/notifications/Provider';
 
 import type { ProtonMeetMeetingDetailsProps } from './ProtonMeetMeetingDetails';
 import { ProtonMeetMeetingDetails } from './ProtonMeetMeetingDetails';
