@@ -9,6 +9,7 @@ import { c, msgid } from 'ttag';
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
 import { useNotifications } from '@proton/app-context/useNotifications';
@@ -460,8 +461,16 @@ const InteractiveCalendarView = ({
         setEventTargetAction,
     });
 
-    const { isBookingActive, addBookingRange, formData, isIntersectingBookingRange, updateBookingRange } =
-        useBookings();
+    const {
+        isBookingActive,
+        addBookingRange,
+        formData,
+        isIntersectingBookingRange,
+        updateBookingRange,
+        canCreateBooking,
+        openBookingSidebarCreation,
+    } = useBookings();
+    const isWelcomeFlowDone = useWelcomeFlags().welcomeFlags.isDone;
 
     // Handle events coming from outside if calendar app is open in the drawer
     useOpenEventsFromMail({
@@ -2388,6 +2397,9 @@ const InteractiveCalendarView = ({
                 });
             }
         },
+        openBookingCreationSidebar: () => {
+            openBookingSidebarCreation(new Date());
+        },
         dependencies: {
             activeAddresses,
             cachedCalendars: calendarsEventsCacheRef.current.calendars,
@@ -2395,6 +2407,8 @@ const InteractiveCalendarView = ({
             createEventCalendar,
             createEventCalendarBootstrap,
             hasInteractiveData: !!interactiveData,
+            canCreateBooking,
+            isWelcomeFlowDone,
         },
     });
 
