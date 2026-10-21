@@ -117,7 +117,7 @@
     "main": "index.ts",
     "scripts": {
         "check:types": "tsc --checkers 1",
-        "lint": "eslint --quiet",
+        "lint": "oxlint --quiet",
         "test": "jest",
         "test:ci": "jest --runInBand --logHeapUsage",
         "test:watch": "jest --watch"
@@ -153,9 +153,9 @@
     },
     "devDependencies": {
         "@jest/globals": "^30.5.2",
-        "@proton/eslint-config-proton": "workspace:^",
         "@proton/jest-env": "workspace:^",
         "@proton/jest-swc-preset": "workspace:^",
+        "@proton/oxlint-config": "workspace:^",
         "@testing-library/jest-dom": "^6.9.1",
         "@testing-library/react": "^15.0.7",
         "@testing-library/user-event": "^14.6.8",
@@ -169,9 +169,9 @@
         "@types/react-router-dom": "catalog:",
         "@types/webpack-env": "catalog:",
         "@typescript/native": "npm:typescript@^7.0.2",
-        "eslint": "^10.12.0",
         "jest": "^30.5.2",
-        "prettier": "^3.9.10",
+        "oxlint": "1.87.0",
+        "oxlint-tsgolint": "7.0.2004",
         "typescript": "npm:@typescript/typescript6@^6.0.2"
     },
     "peerDependencies": {
