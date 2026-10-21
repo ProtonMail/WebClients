@@ -63,7 +63,7 @@ export const ProjectFilesPanel = ({
     const fileProcessingService = useFileProcessing();
 
     const space = useLumoSelector(selectSpaceById(projectId));
-    const spaceProject = space?.type === SpaceType.Project ? (space satisfies ProjectSpace) : undefined;
+    const spaceProject = space?.spaceType === SpaceType.Project ? (space satisfies ProjectSpace) : undefined;
     const linkedDriveFolder = spaceProject?.linkedDriveFolder;
     const isRootFolder = breadcrumbs.length === 1;
 

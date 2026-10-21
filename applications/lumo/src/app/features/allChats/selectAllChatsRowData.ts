@@ -25,7 +25,7 @@ export const selectAllChatsRowDataMap = createSelector(
             }
 
             const space = spaces[conversation.spaceId];
-            const isProject = space?.type === SpaceType.Project;
+            const isProject = space?.spaceType === SpaceType.Project;
             const projectIcon = isProject ? space?.projectIcon : undefined;
 
             rowDataMap[conversation.id] = {

@@ -9,7 +9,7 @@ import type { Base64, SpaceType } from '../../types';
 // Mock database types and state
 export type MockDbSpace = {
     ID: string;
-    Type?: SpaceType;
+    SpaceType?: SpaceType;
     CreateTime: string;
     UpdateTime?: string; // Optional for backward compatibility with tests
     DeleteTime?: string;
@@ -72,7 +72,7 @@ export type MockDbUserSettings = {
 
 // Request body types
 type NewSpaceRequest = {
-    Type?: SpaceType;
+    SpaceType?: SpaceType;
     SpaceKey: string;
     SpaceTag: string;
     Encrypted: string;
@@ -535,7 +535,7 @@ export function createHandlers(mockDb: MockDatabase, errorHandler?: MockErrorHan
                     UpdateTime: now,
                     SpaceKey: body.SpaceKey,
                     SpaceTag: body.SpaceTag,
-                    Type: body.Type,
+                    SpaceType: body.SpaceType,
                     Encrypted: body.Encrypted,
                 };
                 console.log(`mock server: about to add space:`, space);
@@ -697,7 +697,7 @@ export function createHandlers(mockDb: MockDatabase, errorHandler?: MockErrorHan
             checkForUndefinedParams(request, params);
 
             const body = (await request.json()) as {
-                Type?: SpaceType;
+                SpaceType?: SpaceType;
                 SpaceKey?: string;
                 Encrypted?: string;
             };
@@ -711,8 +711,8 @@ export function createHandlers(mockDb: MockDatabase, errorHandler?: MockErrorHan
             }
 
             // Update the space
-            if (body.Type !== undefined) {
-                space.Type = body.Type;
+            if (body.SpaceType !== undefined) {
+                space.SpaceType = body.SpaceType;
             }
             if (body.SpaceKey !== undefined) {
                 space.SpaceKey = body.SpaceKey;

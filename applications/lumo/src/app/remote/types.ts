@@ -31,7 +31,7 @@ export type MessageFromApi = {
 
 // prettier-ignore
 export type SpaceFromApi = {
-    Type?: unknown;          // Expecting SpaceType; absent on legacy records
+    SpaceType?: unknown;     // Expecting SpaceType; absent on legacy records
     ID?: any;                // Expecting type SpaceId
     CreateTime?: any;        // Expecting a serialized Date
     UpdateTime?: any;        // Expecting a serialized Date
@@ -90,9 +90,9 @@ export type ConversationTag = LocalId;
 type MessageTag = LocalId;
 type AssetTag = LocalId;
 
-type RemoteSpaceBase = Omit<SerializedSpace, 'type'> & {
+type RemoteSpaceBase = Omit<SerializedSpace, 'spaceType'> & {
     /** Legacy records may not have a public space type */
-    type?: SpaceType;
+    spaceType?: SpaceType;
     remoteId: RemoteId;
 };
 export type RemoteSpace = RemoteSpaceBase & NonDeleted & { wrappedSpaceKey: Base64 };
@@ -153,7 +153,7 @@ export type MessageToApi = {
 
 export type SpaceToApi = {
     ID: RemoteId;
-    Type: SpaceType;
+    SpaceType: SpaceType;
     Encrypted?: Base64;
     SpaceKey: Base64;
     SpaceTag: SpaceTag;

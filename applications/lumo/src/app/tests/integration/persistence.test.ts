@@ -155,7 +155,7 @@ describe('Lumo Persistence Integration Tests', () => {
                 const spaceId = newSpaceId();
                 const now = new Date().toISOString();
                 const testSpace: Space = {
-                    type: SpaceType.Project,
+                    spaceType: SpaceType.Project,
                     projectName: 'Persistence project',
                     id: spaceId,
                     createdAt: now,
@@ -187,12 +187,12 @@ describe('Lumo Persistence Integration Tests', () => {
                 console.log('Verify the space was persisted to IndexedDB correctly');
                 expect(persistedSpace).toBeDefined();
                 expect(persistedSpace.id).toBe(testSpace.id);
-                expect(persistedSpace.type).toBe(SpaceType.Project);
+                expect(persistedSpace.spaceType).toBe(SpaceType.Project);
                 expect(persistedSpace).not.toHaveProperty('projectName');
                 expect(persistedSpace.createdAt).toBe(testSpace.createdAt);
                 expect(persistedSpace.wrappedSpaceKey).toBeDefined();
                 await waitForSpaceSyncWithServer(dbApi, testSpace.id);
-                expect(mockDb.listSpaces().find((space) => space.SpaceTag === testSpace.id)?.Type).toBe(
+                expect(mockDb.listSpaces().find((space) => space.SpaceTag === testSpace.id)?.SpaceType).toBe(
                     SpaceType.Project
                 );
             } finally {
@@ -208,7 +208,7 @@ describe('Lumo Persistence Integration Tests', () => {
                 const spaceId = newSpaceId();
                 const now = new Date().toISOString();
                 const space: Space = {
-                    type: SpaceType.Simple,
+                    spaceType: SpaceType.Simple,
                     id: spaceId,
                     createdAt: now,
                     updatedAt: now,
@@ -1109,7 +1109,7 @@ describe('Lumo Persistence Integration Tests', () => {
             const fullState = JSON.parse(atob(jsonB64)) as {
                 messages: SerializedMessage[];
                 conversations: SerializedConversation[];
-                spaces: Omit<SerializedSpace, 'type'>[];
+                spaces: Omit<SerializedSpace, 'spaceType'>[];
             };
 
             const masterKeyBytes = fixedMasterKeyBytes();

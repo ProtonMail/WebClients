@@ -230,7 +230,7 @@ const ProjectDetailViewInner = () => {
 
     const handleSaveTitle = useCallback(
         (newTitle: string) => {
-            if (!space || space.type !== SpaceType.Project) return;
+            if (!space || space.spaceType !== SpaceType.Project) return;
             dispatch(addSpace({ ...space, projectName: newTitle }));
             dispatch(pushSpaceRequest({ id: projectId }));
         },
@@ -248,7 +248,7 @@ const ProjectDetailViewInner = () => {
         [dispatch]
     );
 
-    if (!space || space.type !== SpaceType.Project) {
+    if (!space || space.spaceType !== SpaceType.Project) {
         if (isDataHydrating) {
             return (
                 <div className="project-detail-not-found flex flex-column items-center justify-center">

@@ -17,7 +17,7 @@ export function buildProjectKnowledgeSnapshots(
     const snapshots: ProjectKnowledgeSnapshot[] = [];
 
     for (const space of Object.values(spaces)) {
-        if (space.type !== SpaceType.Project) {
+        if (space.spaceType !== SpaceType.Project) {
             continue;
         }
 

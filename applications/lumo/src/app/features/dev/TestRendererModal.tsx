@@ -466,7 +466,7 @@ export const TestRendererModal = ({ open, onClose }: TestRendererModalProps) => 
                 createdAt: now.toISOString(),
                 updatedAt: now.toISOString(),
                 spaceKey,
-                type: SpaceType.Simple,
+                spaceType: SpaceType.Simple,
             };
 
             dispatch(addSpace(testSpace));

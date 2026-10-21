@@ -88,7 +88,7 @@ export const useResourceLimitNotifications = () => {
             shown.current.add(error.id);
             const errorSpaceId = error.spaceId ?? activeSpaceId;
             const errorSpace = errorSpaceId ? spaces[errorSpaceId] : undefined;
-            const isProjectSpace = errorSpace ? errorSpace.type === SpaceType.Project : !errorSpaceId;
+            const isProjectSpace = errorSpace ? errorSpace.spaceType === SpaceType.Project : !errorSpaceId;
             createNotification({
                 type: 'error',
                 text: getLimitErrorText(error, isProjectSpace),

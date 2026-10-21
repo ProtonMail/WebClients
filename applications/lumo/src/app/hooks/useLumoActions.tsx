@@ -387,7 +387,7 @@ export const useLumoActions = ({
 
         // Get project instructions from space if this is a project conversation
         let projectInstructions: string | undefined;
-        if (space?.type === SpaceType.Project && space?.projectInstructions) {
+        if (space?.spaceType === SpaceType.Project && space?.projectInstructions) {
             projectInstructions = space.projectInstructions;
         }
 
@@ -405,7 +405,7 @@ export const useLumoActions = ({
                     contextFilters,
                 },
                 projectContext: {
-                    isProject: space?.type === SpaceType.Project,
+                    isProject: space?.spaceType === SpaceType.Project,
                     projectInstructions,
                     allAttachments,
                 },

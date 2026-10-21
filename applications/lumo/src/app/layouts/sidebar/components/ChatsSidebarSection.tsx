@@ -73,7 +73,7 @@ const ChatsSidebarSectionInner = ({ onItemClick }: ChatsSidebarSectionInnerProps
             ? conversationRows
             : conversationRows.filter((row) => {
                   const space = row.spaceId ? spaceMap[row.spaceId] : undefined;
-                  return space?.type !== SpaceType.Project;
+                  return space?.spaceType !== SpaceType.Project;
               });
 
         const retainedRows = applyRetentionPolicy(projectFilteredRows, hasLumoPlus);

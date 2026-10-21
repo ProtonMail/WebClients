@@ -59,8 +59,9 @@ const spacesReducer = createReducer<SpaceMap>(EMPTY_SPACE_MAP, (builder) => {
         .addCase(addSpace, (state, action) => {
             const space = action.payload;
             const existing = state[space.id];
-            const existingLinkedFolder = existing?.type === SpaceType.Project ? existing.linkedDriveFolder : undefined;
-            const newLinkedFolder = space.type === SpaceType.Project ? space.linkedDriveFolder : undefined;
+            const existingLinkedFolder =
+                existing?.spaceType === SpaceType.Project ? existing.linkedDriveFolder : undefined;
+            const newLinkedFolder = space.spaceType === SpaceType.Project ? space.linkedDriveFolder : undefined;
 
             // Warn if we're losing linkedDriveFolder data
             if (existingLinkedFolder && !newLinkedFolder) {
@@ -72,7 +73,7 @@ const spacesReducer = createReducer<SpaceMap>(EMPTY_SPACE_MAP, (builder) => {
             } else {
                 console.log('Action triggered: addSpace', {
                     id: space.id,
-                    type: space.type,
+                    spaceType: space.spaceType,
                     hasLinkedFolder: !!newLinkedFolder,
                 });
             }

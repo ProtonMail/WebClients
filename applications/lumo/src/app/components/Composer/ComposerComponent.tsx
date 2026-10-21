@@ -180,7 +180,7 @@ const ComposerComponentInner = ({
     // so layering an agent persona on top would be redundant and confusing.
     const composerSpace = useLumoSelector(selectSpaceById(spaceId ?? ''));
     const canUseAgents =
-        !isGuest && composerSpace?.type !== SpaceType.Project && composerSpace?.type !== SpaceType.Schedule;
+        !isGuest && composerSpace?.spaceType !== SpaceType.Project && composerSpace?.spaceType !== SpaceType.Schedule;
 
     // Conversation starters for the active agent, surfaced on a fresh, empty conversation.
     const { activeAgent } = useConversationAgent(messageChain?.[0]?.conversationId);

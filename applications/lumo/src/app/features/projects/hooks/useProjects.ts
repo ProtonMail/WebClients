@@ -11,7 +11,7 @@ import type { Project } from '../types';
 
 /**
  * Hook to get all projects from the spaces in Redux state
- * Projects are spaces with type SpaceType.Project
+ * Projects are spaces with spaceType SpaceType.Project
  */
 export const useProjects = () => {
     const spaces = useLumoSelector(selectSpaceMap);
@@ -22,7 +22,7 @@ export const useProjects = () => {
         const projectList: Project[] = [];
 
         Object.values(spaces).forEach((space) => {
-            if (space.type === SpaceType.Project) {
+            if (space.spaceType === SpaceType.Project) {
                 projectList.push({
                     id: space.id,
                     // translator: Fallback title for a project without a name.

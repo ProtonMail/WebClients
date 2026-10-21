@@ -34,7 +34,7 @@ export const useProjectActions = () => {
                     createdAt: now,
                     updatedAt: now,
                     spaceKey: generateSpaceKeyBase64(),
-                    type: SpaceType.Project,
+                    spaceType: SpaceType.Project,
                     projectName,
                     projectInstructions: projectInstructions || undefined,
                     projectIcon: projectIcon || undefined,

@@ -40,7 +40,7 @@ export const useConversationDelete = ({ conversation, navigateAfterDelete = true
         sendConversationDeleteEvent();
 
         // Project spaces and any space with more than one chat only delete the conversation (legacy 1:1 was space delete)
-        const deleteConversationOnly = space?.type === SpaceType.Project;
+        const deleteConversationOnly = space?.spaceType === SpaceType.Project;
 
         try {
             if (deleteConversationOnly) {
@@ -62,7 +62,7 @@ export const useConversationDelete = ({ conversation, navigateAfterDelete = true
     }, [
         conversationId,
         spaceId,
-        space?.type === SpaceType.Project,
+        space?.spaceType === SpaceType.Project,
         dispatch,
         createNotification,
         openConfirmDeleteModal,

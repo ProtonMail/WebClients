@@ -162,8 +162,8 @@ export async function serializeSpace(space: Space, masterKey: AesKwCryptoKey): P
 
     const spacePrivJson = JSON.stringify({
         ...spacePriv,
-        ...(space.type === SpaceType.Project && {
-            /** @deprecated Remove once the API persists and returns the public Type field. */
+        ...(space.spaceType === SpaceType.Project && {
+            /** @deprecated Remove once the API persists and returns the public SpaceType field. */
             isProject: true,
         }),
     });
@@ -179,7 +179,7 @@ export async function serializeSpace(space: Space, masterKey: AesKwCryptoKey): P
 }
 
 export async function deserializeSpace(
-    serializedSpace: Omit<SerializedSpace, 'type'> & { type?: SpaceType },
+    serializedSpace: Omit<SerializedSpace, 'spaceType'> & { spaceType?: SpaceType },
     masterKey: AesKwCryptoKey
 ): Promise<Space | null | undefined> {
     const { space } = await deserializeSpaceWithMasterKeys(serializedSpace, { primary: masterKey, legacy: [] });
@@ -187,7 +187,7 @@ export async function deserializeSpace(
 }
 
 export async function deserializeSpaceWithMasterKeys(
-    serializedSpace: Omit<SerializedSpace, 'type'> & { type?: SpaceType },
+    serializedSpace: Omit<SerializedSpace, 'spaceType'> & { spaceType?: SpaceType },
     masterKeys: MasterKeyContext
 ): Promise<DeserializeSpaceResult> {
     try {
@@ -220,15 +220,14 @@ export async function deserializeSpaceWithMasterKeys(
         if (typeof parsedSpacePriv !== 'object' || parsedSpacePriv === null || Array.isArray(parsedSpacePriv)) {
             throw new Error('Invalid space data');
         }
-        // Legacy records from IndexedDB or the API have no public type and instead store
-        // isProject in their encrypted metadata. Prefer the public type on newer records;
-        // otherwise map isProject === true to Project, and false or missing to Simple.
+        // Legacy records have no public spaceType and use isProject in their encrypted metadata:
+        // true means Project, while false or missing means Simple. Prefer public spaceType when present.
         // Strip the flag from the in-memory space. Project serialization temporarily writes it
-        // back for APIs that do not persist public Type. Reading does not rewrite storage.
+        // back for APIs that do not persist public SpaceType. Reading does not rewrite storage.
         const { isProject, ...spacePriv } = parsedSpacePriv as ProjectSpacePriv & { isProject?: boolean };
-        const type = serializedSpace.type ?? (isProject === true ? SpaceType.Project : SpaceType.Simple);
-        if (!isSpaceType(type)) throw new Error('Unsupported space type');
-        const spacePub = getSpacePub({ ...serializedSpace, type });
+        const spaceType = serializedSpace.spaceType ?? (isProject === true ? SpaceType.Project : SpaceType.Simple);
+        if (!isSpaceType(spaceType)) throw new Error('Unsupported space type');
+        const spacePub = getSpacePub({ ...serializedSpace, spaceType });
         return {
             space: cleanSpace({
                 ...spacePub,

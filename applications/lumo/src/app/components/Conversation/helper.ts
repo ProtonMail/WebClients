@@ -546,7 +546,7 @@ export function sendMessage({
         let isProject = false;
         if (spaceId) {
             const space = state.spaces[spaceId];
-            if (space?.type === SpaceType.Project) {
+            if (space?.spaceType === SpaceType.Project) {
                 isProject = true;
                 if (space?.projectInstructions) {
                     projectInstructions = space.projectInstructions;
@@ -805,7 +805,7 @@ export function regenerateMessage({
             let projectInstructions: string | undefined;
             let isProject = false;
             const space = state.spaces[c.spaceId];
-            if (space?.type === SpaceType.Project) {
+            if (space?.spaceType === SpaceType.Project) {
                 isProject = true;
                 if (space?.projectInstructions) {
                     projectInstructions = space.projectInstructions;
@@ -1218,7 +1218,7 @@ export function initializeNewSpaceAndConversation(createdAt: string, isGhostMode
         const spaceId = newSpaceId();
         dispatch(
             addSpace({
-                type: SpaceType.Simple,
+                spaceType: SpaceType.Simple,
                 id: spaceId,
                 createdAt,
                 updatedAt: createdAt,
