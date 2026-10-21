@@ -2,7 +2,12 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import { Form, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useModalState } from '@proton/components';
+import Form from '@proton/components/components/form/Form';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { APPS } from '@proton/shared/lib/constants';
 import { getAppSpace, getSpace } from '@proton/shared/lib/user/storage';
 

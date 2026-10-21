@@ -1,4 +1,4 @@
-import { selectUserKeys } from '@proton/account';
+import { selectUserKeys } from '@proton/account/userKeys';
 
 import type { IWasmApiWalletData } from '../../types';
 import { eventLoopEvent, stateFromWalletAccountEvent, stateFromWalletEvent } from '../../utils';

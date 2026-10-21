@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Prompt, useModalState } from '@proton/components';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import useLoading from '@proton/hooks/useLoading';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 

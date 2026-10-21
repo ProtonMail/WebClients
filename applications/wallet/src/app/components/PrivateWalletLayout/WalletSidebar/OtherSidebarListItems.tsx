@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { signoutAction } from '@proton/account';
+import { signoutAction } from '@proton/account/authenticationService';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';

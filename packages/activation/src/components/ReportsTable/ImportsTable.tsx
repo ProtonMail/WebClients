@@ -2,7 +2,8 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { Table, TableBody } from '@proton/components';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 
