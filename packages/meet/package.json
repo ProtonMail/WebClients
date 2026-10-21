@@ -26,7 +26,7 @@
         "@proton/styles": "workspace:^",
         "@proton/unleash": "workspace:^",
         "@proton/utils": "workspace:^",
-        "@protontech/crypto": "*",
+        "@protontech/crypto": "catalog:",
         "@protontech/logger": "catalog:",
         "@reduxjs/toolkit": "^2.13.0",
         "@sentry/browser": "^7.120.4",

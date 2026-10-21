@@ -49,7 +49,7 @@
     },
     "dependencies": {
         "@proton/shared": "workspace:^",
-        "@protontech/crypto": "*",
+        "@protontech/crypto": "catalog:",
         "uuid": "^14.0.2"
     },
     "devDependencies": {
