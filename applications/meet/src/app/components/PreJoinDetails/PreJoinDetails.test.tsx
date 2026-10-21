@@ -10,7 +10,7 @@ import {
 import { selectWaitingRoomSetting } from '@proton/meet/store/slices/settings';
 import { selectIsWaitingRoomAdmissionActive } from '@proton/meet/store/slices/waitingRoomSlice';
 
-import { getDesktopAppPreference, tryOpenInDesktopApp } from '../../utils/desktopAppDetector';
+import { getDesktopAppPreference, saveDesktopAppPreference, tryOpenInDesktopApp } from '../../utils/desktopAppDetector';
 import { PreJoinDetails } from './PreJoinDetails';
 
 const MEETING_LINK = 'https://meet.proton.me/join/id-meeting-abc#pwd-password-abc';
@@ -225,6 +225,17 @@ describe('PreJoinDetails', () => {
             fireEvent.click(screen.getByRole('button', { name: 'Join in browser' }));
 
             expect(getDesktopAppPreference()).toBe(false);
+            expect(onJoinMeeting).toHaveBeenCalledWith('Alice', false);
+        });
+
+        it('keeps the desktop app choice when starting an instant meeting', () => {
+            saveDesktopAppPreference();
+            const onJoinMeeting = vi.fn();
+            renderPreJoinDetails({ instantMeeting: true, onJoinMeeting });
+
+            fireEvent.click(screen.getByRole('button', { name: 'Start meeting' }));
+
+            expect(getDesktopAppPreference()).toBe(true);
             expect(onJoinMeeting).toHaveBeenCalledWith('Alice', false);
         });
     });
