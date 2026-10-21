@@ -1,0 +1,91 @@
+import data from '@emoji-mart/data';
+import { SearchIndex, init } from 'emoji-mart';
+import { afterEach, describe, expect, it, vi } from 'vitest';
+
+import { getLumoEmojiPickerOptions } from './lumoEmojiPicker';
+
+const openPicker = () => init({ data, ...getLumoEmojiPickerOptions(vi.fn(), true) });
+
+const searchIds = async (query: string) => {
+    const results: { id: string }[] = await SearchIndex.search(query);
+
+    return results.map(({ id }) => id);
+};
+
+describe('getLumoEmojiPickerOptions', () => {
+    it('hands the native character of a native emoji to the callback', () => {
+        const onSelectText = vi.fn();
+
+        getLumoEmojiPickerOptions(onSelectText, true).onEmojiSelect({ id: 'rocket', native: '🚀' });
+
+        expect(onSelectText).toHaveBeenCalledWith('🚀');
+    });
+
+    it('hands the token of a Lumo emoji to the callback', () => {
+        const onSelectText = vi.fn();
+
+        getLumoEmojiPickerOptions(onSelectText, true).onEmojiSelect({ id: 'lumo-rocket' });
+
+        expect(onSelectText).toHaveBeenCalledWith('[lumo_emoji:rocket]');
+    });
+
+    it('leaves the picker without the Lumo section when it is turned off', () => {
+        expect(Object.keys(getLumoEmojiPickerOptions(vi.fn(), false))).toEqual(['onEmojiSelect']);
+    });
+
+    it('finds Lumo emojis by their English name', async () => {
+        await openPicker();
+
+        expect(await searchIds('this is fine')).toEqual(['lumo-this-is-fine']);
+        expect(await searchIds('chefs kiss')).toEqual(['lumo-chefs-kiss']);
+    });
+
+    it('keeps the native rocket next to the Lumo rocket', async () => {
+        await openPicker();
+
+        expect(await searchIds('rocket')).toEqual(expect.arrayContaining(['rocket', 'lumo-rocket']));
+    });
+
+    it('still finds Lumo emojis when the first search happens after the picker opened twice', async () => {
+        SearchIndex.reset();
+
+        await openPicker();
+        await openPicker();
+
+        expect(await searchIds('chefs kiss')).toEqual(['lumo-chefs-kiss']);
+    });
+});
+
+describe('Lumo section images', () => {
+    const defaultMatchMedia = window.matchMedia;
+
+    afterEach(() => {
+        window.matchMedia = defaultMatchMedia;
+    });
+
+    const getRocketSkinsInFreshPicker = async () => {
+        vi.resetModules();
+
+        const { getLumoEmojiPickerOptions: getFreshLumoEmojiPickerOptions } = await import('./lumoEmojiPicker');
+        const [lumoCategory] = getFreshLumoEmojiPickerOptions(vi.fn(), true).custom ?? [];
+
+        return lumoCategory?.emojis.find(({ id }) => id === 'lumo-rocket')?.skins;
+    };
+
+    it('shows the animated image by default', async () => {
+        expect(await getRocketSkinsInFreshPicker()).toEqual([
+            { src: expect.stringContaining('/lumo-emojis/rocket.gif') },
+        ]);
+    });
+
+    it('shows the still image when the system asks for reduced motion', async () => {
+        window.matchMedia = (query) => ({
+            ...defaultMatchMedia(query),
+            matches: query === '(prefers-reduced-motion: reduce)',
+        });
+
+        expect(await getRocketSkinsInFreshPicker()).toEqual([
+            { src: expect.stringContaining('/lumo-emojis/rocket.png') },
+        ]);
+    });
+});

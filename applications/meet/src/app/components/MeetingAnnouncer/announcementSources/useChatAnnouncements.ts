@@ -10,7 +10,7 @@ import { isRelevantThreadMessage } from '@proton/meet/utils/isRelevantThreadMess
 import { isParticipantMentioned } from '@proton/meet/utils/mentions/mentionToken';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { useMentionPlainText } from '../../../hooks/useMentionPlainText';
+import { useMessagePlainText } from '../../../hooks/useMessagePlainText';
 import { announcementMessages } from '../messages';
 import { useAnnounce } from '../useAnnounce';
 
@@ -20,7 +20,7 @@ export const useChatAnnouncements = () => {
     const chatMessages = useMeetSelector(selectChatMessages);
     const nameMap = useMeetSelector(selectParticipantDecryptedNameMap);
     const localIdentity = useMeetSelector(selectLocalParticipantIdentity);
-    const toMentionPlainText = useMentionPlainText();
+    const toMessagePlainText = useMessagePlainText();
     const isMentionsEnabled = useFlag('MeetChatMentions');
 
     // Skip pre-mount messages.
@@ -49,7 +49,7 @@ export const useChatAnnouncements = () => {
                 continue;
             }
 
-            const plainTextMessage = toMentionPlainText(message.message);
+            const plainTextMessage = toMessagePlainText(message.message);
             const senderName = nameMap[message.identity];
 
             announce(
@@ -61,5 +61,5 @@ export const useChatAnnouncements = () => {
                 }
             );
         }
-    }, [chatMessages, nameMap, localIdentity, announce, toMentionPlainText, isMentionsEnabled]);
+    }, [chatMessages, nameMap, localIdentity, announce, toMessagePlainText, isMentionsEnabled]);
 };

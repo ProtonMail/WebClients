@@ -27,7 +27,7 @@ interface MeetEventSim {
     reaction(emoji?: string, name?: string): void;
     recordingStarted(): void;
     recordingStopped(): void;
-    chatMessage(name?: string): void;
+    chatMessage(name?: string, message?: string): void;
     sendChatMessage(message?: string): Promise<boolean>;
     setLocalParticipantHost(isHost?: boolean): boolean;
 }
@@ -93,7 +93,7 @@ export const initMeetEventSim = (
             dispatch(removeParticipantRecording(SIM_RECORDING_IDENTITY));
         },
 
-        chatMessage(name = 'Simulated User') {
+        chatMessage(name = 'Simulated User', message = 'Simulated message') {
             const identity = nextIdentity();
             dispatch(mergeParticipantDecryptedNameMap({ [identity]: name }));
             dispatch(
@@ -101,7 +101,7 @@ export const initMeetEventSim = (
                     {
                         id: `sim-msg-${Date.now()}`,
                         identity,
-                        message: 'Simulated message',
+                        message,
                         timestamp: Date.now(),
                         type: 'message',
                     },
