@@ -1,7 +1,6 @@
 export { useFlagsDriveDirectSharing } from './internal/sharingModal/useFlagsDriveDirectSharing';
 export { useFlagsDriveDocsPublicSharing } from './internal/sharingModal/useFlagsDriveDocsPublicSharing';
 export { useFlagsDrivePublicSharing } from './internal/sharingModal/useFlagsDrivePublicSharing';
-export { useFlagsDriveSharingAdminPermissions } from './internal/sharingModal/useFlagsDriveSharingAdminPermissions';
 export { unleashVanillaStore as featureFlagStore } from './internal/unleash.store';
 export { useFlagsDriveEasySwitch } from './internal/useFlagsDriveEasySwitch';
 export { useFlagsDriveLumo } from './internal/useFlagsDriveLumo';
