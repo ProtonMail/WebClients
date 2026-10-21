@@ -65,7 +65,7 @@ describe('expireConversations saga', () => {
         );
         const state = createState({
             conversations: { [eligible.id]: eligible },
-            spaces: { 'space-1': { id: 'space-1', spaceType: SpaceType.Simple } as Space },
+            spaces: { 'space-1': { id: 'space-1', spaceType: SpaceType.Default } as Space },
         });
 
         await expect(runExpireConversations(state, true)).resolves.toEqual([]);
@@ -79,7 +79,7 @@ describe('expireConversations saga', () => {
         );
         const state = createState({
             conversations: { [eligible.id]: eligible },
-            spaces: { 'space-1': { id: 'space-1', spaceType: SpaceType.Simple } as Space },
+            spaces: { 'space-1': { id: 'space-1', spaceType: SpaceType.Default } as Space },
             isGhostChatMode: true,
         });
 
@@ -90,7 +90,7 @@ describe('expireConversations saga', () => {
         const recent = createConversation(3, 'recent', 'space-1');
         const state = createState({
             conversations: { [recent.id]: recent },
-            spaces: { 'space-1': { id: 'space-1', spaceType: SpaceType.Simple } as Space },
+            spaces: { 'space-1': { id: 'space-1', spaceType: SpaceType.Default } as Space },
         });
 
         await expect(runExpireConversations(state, false)).resolves.toEqual([]);
@@ -120,7 +120,7 @@ describe('expireConversations saga', () => {
         );
         const state = createState({
             conversations: { [eligible.id]: eligible },
-            spaces: { 'space-1': { id: 'space-1', spaceType: SpaceType.Simple } as Space },
+            spaces: { 'space-1': { id: 'space-1', spaceType: SpaceType.Default } as Space },
         });
 
         const dispatched = await runExpireConversations(state, false);
@@ -139,7 +139,7 @@ describe('expireConversations saga', () => {
         };
         const state = createState({
             conversations: { [eligibleGhost.id]: eligibleGhost },
-            spaces: { 'space-1': { id: 'space-1', spaceType: SpaceType.Simple } as Space },
+            spaces: { 'space-1': { id: 'space-1', spaceType: SpaceType.Default } as Space },
         });
 
         await expect(runExpireConversations(state, false)).resolves.toEqual([]);
@@ -158,8 +158,8 @@ describe('expireConversations saga', () => {
                 [eligible.id]: eligible,
             },
             spaces: {
-                'space-1': { id: 'space-1', spaceType: SpaceType.Simple } as Space,
-                'space-2': { id: 'space-2', spaceType: SpaceType.Simple } as Space,
+                'space-1': { id: 'space-1', spaceType: SpaceType.Default } as Space,
+                'space-2': { id: 'space-2', spaceType: SpaceType.Default } as Space,
             },
         });
 

@@ -208,7 +208,7 @@ describe('Lumo Persistence Integration Tests', () => {
                 const spaceId = newSpaceId();
                 const now = new Date().toISOString();
                 const space: Space = {
-                    spaceType: SpaceType.Simple,
+                    spaceType: SpaceType.Default,
                     id: spaceId,
                     createdAt: now,
                     updatedAt: now,

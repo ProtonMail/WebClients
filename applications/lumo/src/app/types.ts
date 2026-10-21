@@ -59,10 +59,14 @@ export type LinkedDriveFolder = {
     folderPath: string;
 };
 
+/**
+ * Space kind on the wire (e.g. default, project, code session, schedule). Numeric values must stay aligned with
+ * the backend enum. Do not renumber locally.
+ */
 export const enum SpaceType {
-    Simple = 'simple',
-    Project = 'project',
-    Schedule = 'schedule',
+    Default = 0,
+    Project = 1,
+    Schedule = 3,
 }
 
 export type ProjectSpacePriv = {
@@ -81,7 +85,7 @@ type ScheduleSpacePriv = {};
 export type SpacePriv = ProjectSpacePriv | SimpleSpacePriv | ScheduleSpacePriv;
 
 export type ProjectSpace = Omit<SpacePub, 'spaceType'> & { spaceType: SpaceType.Project } & ProjectSpacePriv;
-type SimpleSpace = Omit<SpacePub, 'spaceType'> & { spaceType: SpaceType.Simple } & SimpleSpacePriv;
+type SimpleSpace = Omit<SpacePub, 'spaceType'> & { spaceType: SpaceType.Default } & SimpleSpacePriv;
 type ScheduleSpace = Omit<SpacePub, 'spaceType'> & { spaceType: SpaceType.Schedule } & ScheduleSpacePriv;
 
 export type SpaceKeyClear = {
@@ -104,7 +108,7 @@ export type SerializedSpace = SpacePub & Partial<Encrypted> & MaybeSpaceKey & Lo
 export type SerializedSpaceMap = Record<SpaceId, SerializedSpace>;
 
 export function isSpaceType(value: unknown): value is SpaceType {
-    return value === SpaceType.Simple || value === SpaceType.Project || value === SpaceType.Schedule;
+    return value === SpaceType.Default || value === SpaceType.Project || value === SpaceType.Schedule;
 }
 
 function getSpacePriv(s: Space): SpacePriv {
@@ -113,7 +117,7 @@ function getSpacePriv(s: Space): SpacePriv {
             const { projectName, projectInstructions, projectIcon, linkedDriveFolder } = s;
             return { projectName, projectInstructions, projectIcon, linkedDriveFolder };
         }
-        case SpaceType.Simple:
+        case SpaceType.Default:
         case SpaceType.Schedule:
             return {};
         default:

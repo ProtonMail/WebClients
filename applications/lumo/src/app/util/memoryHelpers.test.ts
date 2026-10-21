@@ -35,7 +35,7 @@ describe('memoryHelpers', () => {
         const recentDate = subDays(new Date(), 1).toISOString();
         const spaces: Record<string, Space> = {
             project: { id: 'project', spaceType: SpaceType.Project } as Space,
-            general: { id: 'general', spaceType: SpaceType.Simple } as Space,
+            general: { id: 'general', spaceType: SpaceType.Default } as Space,
         };
         const conversations: Record<string, Conversation> = {
             c1: {
@@ -94,8 +94,8 @@ describe('memoryHelpers', () => {
         const recentDate = subDays(new Date(), 1).toISOString();
         const expiredDate = subDays(new Date(), FREE_USER_CHAT_RETENTION_DAYS + 1).toISOString();
         const spaces: Record<string, Space> = {
-            general: { id: 'general', spaceType: SpaceType.Simple } as Space,
-            deletedSpace: { id: 'deletedSpace', spaceType: SpaceType.Simple, deleted: true } as unknown as Space,
+            general: { id: 'general', spaceType: SpaceType.Default } as Space,
+            deletedSpace: { id: 'deletedSpace', spaceType: SpaceType.Default, deleted: true } as unknown as Space,
         };
         const conversations: Record<string, Conversation> = {
             active: {
@@ -173,7 +173,7 @@ describe('memoryHelpers', () => {
     it('includes expired conversations for Lumo Plus users', () => {
         const expiredDate = subDays(new Date(), FREE_USER_CHAT_RETENTION_DAYS + 1).toISOString();
         const spaces: Record<string, Space> = {
-            general: { id: 'general', spaceType: SpaceType.Simple } as Space,
+            general: { id: 'general', spaceType: SpaceType.Default } as Space,
         };
         const conversations: Record<string, Conversation> = {
             expired: {
@@ -200,7 +200,7 @@ describe('memoryHelpers', () => {
     });
 
     it('samples only prompts created after the last completed memory scan', () => {
-        const spaces = { general: { id: 'general', spaceType: SpaceType.Simple } as Space };
+        const spaces = { general: { id: 'general', spaceType: SpaceType.Default } as Space };
         const conversations = {
             general: {
                 id: 'general',
@@ -268,7 +268,7 @@ describe('memoryHelpers', () => {
                 source: 'generated',
             },
         ];
-        const spaces = { general: { id: 'general', spaceType: SpaceType.Simple } as Space };
+        const spaces = { general: { id: 'general', spaceType: SpaceType.Default } as Space };
         const conversations = {
             general: {
                 id: 'general',
@@ -409,7 +409,7 @@ describe('memoryHelpers', () => {
                 source: 'generated',
             },
         ];
-        const spaces = { general: { id: 'general', spaceType: SpaceType.Simple } as Space };
+        const spaces = { general: { id: 'general', spaceType: SpaceType.Default } as Space };
         const conversations = {
             general: {
                 id: 'general',

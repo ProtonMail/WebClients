@@ -75,7 +75,7 @@ describe('remote - conversion', () => {
             expect(result.deletedAssets).toEqual([]);
         });
 
-        it.each([SpaceType.Simple, SpaceType.Project, SpaceType.Schedule])(
+        it.each([SpaceType.Default, SpaceType.Project, SpaceType.Schedule])(
             'preserves the public %s type through API conversion',
             (type) => {
                 const result = convertSpaceFromApi({ ...validSpaceFromApi, SpaceType: type });

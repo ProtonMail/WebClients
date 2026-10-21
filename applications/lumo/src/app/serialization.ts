@@ -225,7 +225,7 @@ export async function deserializeSpaceWithMasterKeys(
         // Strip the flag from the in-memory space. Project serialization temporarily writes it
         // back for APIs that do not persist public SpaceType. Reading does not rewrite storage.
         const { isProject, ...spacePriv } = parsedSpacePriv as ProjectSpacePriv & { isProject?: boolean };
-        const spaceType = serializedSpace.spaceType ?? (isProject === true ? SpaceType.Project : SpaceType.Simple);
+        const spaceType = serializedSpace.spaceType ?? (isProject === true ? SpaceType.Project : SpaceType.Default);
         if (!isSpaceType(spaceType)) throw new Error('Unsupported space type');
         const spacePub = getSpacePub({ ...serializedSpace, spaceType });
         return {
