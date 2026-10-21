@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { configureStore } from '@reduxjs/toolkit';
 
-import { apiStatusReducer } from '@proton/account';
+import { apiStatusReducer } from '@proton/account/apiStatus';
 import { createAuthentication, createUnauthenticatedApi, createUnleash } from '@proton/account/bootstrap';
 import { initStandaloneSession } from '@proton/account/bootstrap/standaloneSession';
 import useInstance from '@proton/hooks/useInstance';

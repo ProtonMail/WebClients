@@ -4,7 +4,7 @@ import { useState } from 'react';
 import type { Action, ThunkDispatch } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import type { SamlState } from '@proton/account';
+import type { SamlState } from '@proton/account/samlSSO';
 import { disableSCIMAction, setupSCIMAction } from '@proton/account/samlSSO/actions';
 import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import { useApi } from '@proton/app-context/useApi';

@@ -2,10 +2,10 @@ import { useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { useMemberAddresses } from '@proton/account';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useCustomDomains } from '@proton/account/domains/hooks';
 import { useMembers } from '@proton/account/members/hooks';
+import { useMemberAddresses } from '@proton/account/members/useMemberAddresses';
 import { getDomainAddressError } from '@proton/account/members/validateAddUser';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useProtonDomains } from '@proton/account/protonDomains/hooks';
