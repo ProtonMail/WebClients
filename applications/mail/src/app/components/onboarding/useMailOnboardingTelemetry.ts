@@ -1,14 +1,14 @@
 import { organizationThunk } from '@proton/account/organization';
 import { useApi } from '@proton/app-context/useApi';
 import { PLANS } from '@proton/payments/core/constants';
-import { type TelemetryMailOnboardingEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
+import { type OldTelemetryMailOnboardingEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import type { ThemeTypes } from '@proton/shared/lib/themes/constants';
 
 import { useMailDispatch } from '../../store/hooks';
 import type { OnlineServicesKey } from './checklist/constants';
 
-type SendTelemetryCallback = <TEvent extends TelemetryMailOnboardingEvents>(
+type SendTelemetryCallback = <TEvent extends OldTelemetryMailOnboardingEvents>(
     event: TEvent,
     dimensionsParam: Omit<Extract<Options, { event: TEvent }>['dimensions'], 'plan' | 'variant'>
 ) => Promise<void>;
@@ -26,7 +26,7 @@ export const useMailOnboardingTelemetry = (): SendTelemetryCallback => {
 
         return sendTelemetryReport({
             api,
-            measurementGroup: TelemetryMeasurementGroups.mailOnboarding,
+            measurementGroup: TelemetryMeasurementGroups.oldMailOnboarding,
             event,
             silence: true,
             dimensions: {
@@ -43,39 +43,39 @@ export const useMailOnboardingTelemetry = (): SendTelemetryCallback => {
 
 type Options =
     | {
-          event: TelemetryMailOnboardingEvents.start_onboarding_modals;
+          event: OldTelemetryMailOnboardingEvents.start_onboarding_modals;
           dimensions: Pick<Dimensions, 'plan'>;
       }
     | {
-          event: TelemetryMailOnboardingEvents.finish_onboarding_modals;
+          event: OldTelemetryMailOnboardingEvents.finish_onboarding_modals;
           dimensions: Pick<Dimensions, 'plan'>;
       }
     | {
-          event: TelemetryMailOnboardingEvents.select_theme;
+          event: OldTelemetryMailOnboardingEvents.select_theme;
           dimensions: Pick<Dimensions, 'plan' | 'theme' | 'is_default_theme'>;
       }
     | {
-          event: TelemetryMailOnboardingEvents.enable_gmail_forwarding;
+          event: OldTelemetryMailOnboardingEvents.enable_gmail_forwarding;
           dimensions: Pick<Dimensions, 'plan'>;
       }
     | {
-          event: TelemetryMailOnboardingEvents.change_login;
+          event: OldTelemetryMailOnboardingEvents.change_login;
           dimensions: Pick<Dimensions, 'plan' | 'service'>;
       }
     | {
-          event: TelemetryMailOnboardingEvents.change_login_checklist;
+          event: OldTelemetryMailOnboardingEvents.change_login_checklist;
           dimensions: Pick<Dimensions, 'plan' | 'service_checklist' | 'service_checklist_button'>;
       }
     | {
-          event: TelemetryMailOnboardingEvents.finish_change_login;
+          event: OldTelemetryMailOnboardingEvents.finish_change_login;
           dimensions: Pick<Dimensions, 'plan'>;
       }
     | {
-          event: TelemetryMailOnboardingEvents.download_desktop_app;
+          event: OldTelemetryMailOnboardingEvents.download_desktop_app;
           dimensions: Pick<Dimensions, 'plan'>;
       }
     | {
-          event: TelemetryMailOnboardingEvents.close_checklist;
+          event: OldTelemetryMailOnboardingEvents.close_checklist;
           dimensions: Pick<
               Dimensions,
               | 'plan'
@@ -86,7 +86,7 @@ type Options =
           >;
       }
     | {
-          event: TelemetryMailOnboardingEvents.premium_features;
+          event: OldTelemetryMailOnboardingEvents.premium_features;
           dimensions: Pick<
               Dimensions,
               'plan' | 'feature_short_domain' | 'feature_auto_delete' | 'feature_dark_web_monitoring'

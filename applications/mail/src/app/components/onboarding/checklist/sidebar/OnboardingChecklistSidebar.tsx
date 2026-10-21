@@ -3,11 +3,10 @@ import { c, msgid } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import useLocalState from '@proton/components/hooks/useLocalState';
-import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
+import { OldTelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 
 import { useGetStartedChecklist } from '../../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
-
 import { useMailOnboardingTelemetry } from '../../useMailOnboardingTelemetry';
 import OnboardingChecklistModalsProvider from '../OnboardingChecklistModalsProvider';
 import useOnboardingChecklist from '../useOnboardingChecklist';
@@ -67,7 +66,7 @@ const OnboardingChecklistSidebar = () => {
                 isOpened={isOpened}
                 onCloseChecklist={() => {
                     changeChecklistDisplay(CHECKLIST_DISPLAY_TYPE.HIDDEN);
-                    void sendMailOnboardingTelemetry(TelemetryMailOnboardingEvents.close_checklist, {
+                    void sendMailOnboardingTelemetry(OldTelemetryMailOnboardingEvents.close_checklist, {
                         checklist_step_import_completed: items.has('Import') ? 'yes' : 'no',
                         checklist_step_mobile_app_completed: items.has('MobileApp') ? 'yes' : 'no',
                         checklist_step_privacy_completed: items.has('ProtectInbox') ? 'yes' : 'no',
