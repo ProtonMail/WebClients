@@ -1,7 +1,7 @@
 import type { CSSProperties } from 'react';
 import { useId } from 'react';
 
-import { useTheme } from '@proton/components';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 
 const FRAME_W = 360;
 const FRAME_H = 188;

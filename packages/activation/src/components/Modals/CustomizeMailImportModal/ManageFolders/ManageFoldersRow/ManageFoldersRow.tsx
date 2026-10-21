@@ -5,7 +5,8 @@ import debounce from 'lodash/debounce';
 import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import { Checkbox, LabelStack } from '@proton/components';
+import Checkbox from '@proton/components/components/input/Checkbox';
+import LabelStack from '@proton/components/components/labelStack/LabelStack';
 import { IcFolder } from '@proton/icons/icons/IcFolder';
 import clsx from '@proton/utils/clsx';
 

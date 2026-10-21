@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { useModalState } from '@proton/components';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 
 import { ImportProvider } from '../../../../interface';
 import { selectOauthDraftProvider } from '../../../../logic/draft/oauthDraft/oauthDraft.selector';

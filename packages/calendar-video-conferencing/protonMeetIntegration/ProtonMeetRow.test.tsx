@@ -6,7 +6,7 @@ import userEvent from '@testing-library/user-event';
 import { createBrowserHistory } from 'history';
 
 import { calendarUrlQueryParams } from '@proton/calendar/constants';
-import { NotificationsProvider } from '@proton/components';
+import NotificationsProvider from '@proton/components/containers/notifications/Provider';
 import { useCreateMeeting } from '@proton/meet/hooks/useCreateMeeting';
 import { useGetMeetingByLinkName } from '@proton/meet/hooks/useGetMeetingByLinkName';
 import type { Address } from '@proton/shared/lib/interfaces/Address';

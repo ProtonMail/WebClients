@@ -3,7 +3,7 @@ import { act, renderHook, waitFor } from '@testing-library/react';
 import { useUser } from '@proton/account/user/hooks';
 import { OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import { useApi } from '@proton/app-context/useApi';
-import { useModalStateObject } from '@proton/components';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import { createZoomMeeting } from '@proton/shared/lib/api/calendars';
 import { VIDEO_CONFERENCE_PROVIDER } from '@proton/shared/lib/interfaces/calendar/Api';
 import type { EventModel } from '@proton/shared/lib/interfaces/calendar/Event';
@@ -29,7 +29,7 @@ jest.mock('@proton/activation/src/logic/oauthToken/hooks', () => ({
     useOAuthToken: jest.fn(() => [[{ Provider: OAUTH_PROVIDER.ZOOM }], false]),
 }));
 
-jest.mock('@proton/components', () => ({
+jest.mock('@proton/components/components/modalTwo/useModalState', () => ({
     useModalStateObject: jest.fn(() => ({})),
 }));
 

@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
-import { LabelStack, Option, SelectTwo } from '@proton/components';
+import LabelStack from '@proton/components/components/labelStack/LabelStack';
+import Option from '@proton/components/components/option/Option';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import clsx from '@proton/utils/clsx';
 
