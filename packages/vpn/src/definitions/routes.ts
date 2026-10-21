@@ -28,7 +28,6 @@ import {
     getHasExternalMemberCapableB2BPlan,
     getHasMemberCapablePlan,
     getHasVpnB2BPlan,
-    getHasVpnGatewaysUpsellPlan,
     hasCancellablePlan,
     isCancellableOnlyViaSupport,
 } from '@proton/payments/core/subscription/helpers';
@@ -251,8 +250,7 @@ const routesDefinition = {
                             to: '/gateways',
                             isVisible: ({ context }) =>
                                 context.permissions['account.gateway.read'] &&
-                                (context.entitlements.hasMaxDedicatedIps ||
-                                    getHasVpnGatewaysUpsellPlan(context.subscription)),
+                                context.entitlements.hasDedicatedIpsOrIsVpnB2B,
                             sections: [{ id: 'organization.vpn.gateways.servers', to: 'servers' }],
                         },
                         {
