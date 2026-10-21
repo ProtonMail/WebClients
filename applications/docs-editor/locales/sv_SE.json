@@ -480,6 +480,9 @@
       ],
       "You cannot undo this action.": [
         "Du kan inte ångra denna åtgärd."
+      ],
+      "Loading emoji…": [
+        "Laddar emoji …"
       ]
     },
     "Label": {
@@ -590,6 +593,21 @@
       ],
       "with \"${ replaceWith }\"": [
         "med ”${ replaceWith }”"
+      ],
+      "Comments": [
+        "Kommentarer"
+      ],
+      "Emoji": [
+        "Emoji"
+      ],
+      "Search emoji": [
+        "Sök emoji"
+      ],
+      "Search results": [
+        "Sökresultat"
+      ],
+      "Table": [
+        "Tabell"
       ]
     },
     "Placeholder": {
@@ -808,6 +826,9 @@
       ],
       "Stacked column": [
         "Staplad kolumn"
+      ],
+      "Treemap": [
+        "Trädkarta"
       ]
     },
     "sheets_2025:Spreadsheet conditions": {
@@ -951,6 +972,33 @@
       ],
       "Yesterday": [
         "Igår"
+      ],
+      "Date is after": [
+        "Datum är efter"
+      ],
+      "Date is between": [
+        "Datum är mellan"
+      ],
+      "Date is not between": [
+        "Datum är inte mellan"
+      ],
+      "Not equal to": [
+        "Inte lika med"
+      ],
+      "Text does not contain": [
+        "Text innehåller inte"
+      ],
+      "Text ends with": [
+        "Text slutar med"
+      ],
+      "Text is email": [
+        "Text är e-post"
+      ],
+      "Text is not equal": [
+        "Text är inte lika"
+      ],
+      "Text starts with": [
+        "Text börjar med"
       ]
     },
     "sheets_2025:Spreadsheet context menu": {
@@ -1782,6 +1830,9 @@
       ],
       "Go to previous": [
         "Gå till föregående"
+      ],
+      "${ current } of ${ total }": [
+        "${ current } av ${ total }"
       ]
     },
     "sheets_2025:Spreadsheet editor spreadsheet settings dialog": {
@@ -2030,6 +2081,9 @@
       ],
       "OK": [
         "OK"
+      ],
+      "Default ${ size }": [
+        "Standard ${ size }"
       ]
     },
     "sheets_2025:Spreadsheet sheet status bar": {
@@ -2509,6 +2563,32 @@
     "Warning": {
       "Making suggestions inside code blocks is not supported": [
         "Ge förslag inuti kodblock stöds inte"
+      ]
+    },
+    "Emoji category": {
+      "Activities": [
+        "Aktiviteter"
+      ],
+      "Animals and nature": [
+        "Djur och natur"
+      ],
+      "Flags": [
+        "Flaggor"
+      ],
+      "Food and drink": [
+        "Mat och dryck"
+      ],
+      "Objects": [
+        "Objekt"
+      ],
+      "Smileys and people": [
+        "Smileys och människor"
+      ],
+      "Symbols": [
+        "Symboler"
+      ],
+      "Travel and places": [
+        "Resor och platser"
       ]
     }
   }
