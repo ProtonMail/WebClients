@@ -5,7 +5,6 @@ import { useSelector, useStore } from 'react-redux';
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useNavigationActions } from '@proton/pass/components/Navigation/NavigationActions';
-import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { clientBooted } from '@proton/pass/lib/client';
@@ -41,7 +40,6 @@ export const PopupProvider: FC<PropsWithChildren<Props>> = ({ children, ready })
     const { status, booted } = useAppState();
     const { tabId } = useExtensionContext();
     const { navigate, selectItem } = useNavigationActions();
-    const { setFilters } = useNavigationFilters();
 
     const [initialized, setInitialized] = useState<boolean>(false);
     const sync = useSelector(selectRequestInFlight(syncRequest()));
@@ -66,7 +64,15 @@ export const PopupProvider: FC<PropsWithChildren<Props>> = ({ children, ready })
         }
 
         if (selectedItem) selectItem(selectedItem.shareId, selectedItem.itemId, { filters });
-        else setFilters(filters);
+        else {
+            /** The popup boots on `/`, never on the local root path (`/u/4/`), so
+             * the item scope resolves to `undefined` and the vault selector shows
+             * "All items" even with a vault in the restored filters. Restore its
+             * route too (`/u/4/share/<shareId>`), as picking it from the menu would. */
+            const { selectedShareId } = filters;
+            const pathname = getLocalPath(selectedShareId ? `share/${selectedShareId}` : '');
+            navigate(pathname, { mode: 'replace', filters });
+        }
 
         onTelemetry(
             TelemetryEventName.ExtensionUsed,
