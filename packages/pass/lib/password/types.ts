@@ -1,4 +1,5 @@
-import type { Maybe, MaybeNull, OrganizationUpdatePasswordPolicyInput } from '../../types';
+import type { OrganizationUpdatePasswordPolicyInput } from '../../types/api/pass';
+import type { Maybe, MaybeNull } from '../../types/utils';
 
 export enum SeperatorOptions {
     HYPHEN = '-',

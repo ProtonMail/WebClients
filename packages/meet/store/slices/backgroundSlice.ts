@@ -1,7 +1,7 @@
 import type { PayloadAction, ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 
 import { clearPersistedCustomBackgroundId, persistCustomBackgroundId } from '../../utils/customBackgroundStorage';

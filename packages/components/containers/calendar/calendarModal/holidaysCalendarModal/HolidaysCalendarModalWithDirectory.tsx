@@ -9,7 +9,7 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useGetCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { removeHolidaysCalendar, updateCalendarSettings } from '@proton/shared/lib/api/calendars';
 import { dedupeNotifications, sortNotificationsByAscendingTrigger } from '@proton/shared/lib/calendar/alarms';
 import { modelToNotifications } from '@proton/shared/lib/calendar/alarms/modelToNotifications';

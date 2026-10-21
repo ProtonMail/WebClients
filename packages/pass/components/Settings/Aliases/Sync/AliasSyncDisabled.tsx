@@ -8,8 +8,8 @@ import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useRequest } from '../../../../hooks/useRequest';
-import { aliasSyncStatus } from '../../../../store/actions';
-import { selectUserData } from '../../../../store/selectors';
+import { aliasSyncStatus } from '../../../../store/actions/creators/alias';
+import { selectUserData } from '../../../../store/selectors/user';
 import { Card } from '../../../Layout/Card/Card';
 import { SettingsPanel } from '../../SettingsPanel';
 import { AliasSyncModal } from './AliasSyncModal';

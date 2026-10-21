@@ -14,9 +14,9 @@ import { IcPlus } from '@proton/icons/icons/IcPlus';
 
 import type { UpsellRef } from '../../../constants';
 import { validateCustomSectionName } from '../../../lib/validation/custom-item';
-import { selectPassPlan } from '../../../store/selectors';
-import type { ItemSectionFormValues } from '../../../types';
+import { selectPassPlan } from '../../../store/selectors/user';
 import { UserPassPlan } from '../../../types/api/plan';
+import type { ItemSectionFormValues } from '../../../types/forms/item';
 import { Field } from '../../Form/Field/Field';
 import { FieldsetCluster } from '../../Form/Field/Layout/FieldsetCluster';
 import { TextField } from '../../Form/Field/TextField';

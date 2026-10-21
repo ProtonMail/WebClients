@@ -3,7 +3,8 @@ import { Fragment, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { isBusinessPlan } from '../../lib/organization/helpers';
-import { selectCanCreateItems, selectPassPlan } from '../../store/selectors';
+import { selectCanCreateItems } from '../../store/selectors/shares';
+import { selectPassPlan } from '../../store/selectors/user';
 import { B2BProvider } from './Provider/B2BProvider';
 import { WelcomeProvider } from './Provider/WelcomeProvider';
 

@@ -1,4 +1,6 @@
-import { ContentFormatVersion, type ItemRevision, ItemState, type SecureLinkItem } from '../../types';
+import { ContentFormatVersion } from '../../types/crypto/pass-types';
+import { type ItemRevision, ItemState } from '../../types/data/items';
+import type { SecureLinkItem } from '../../types/data/items.dto';
 import { uniqueId } from '../../utils/string/unique-id';
 import { getEpoch } from '../../utils/time/epoch';
 

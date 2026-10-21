@@ -4,7 +4,7 @@ import { addressesThunk, subscriptionThunk, userSettingsThunk, userThunk } from 
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
 import { categoriesThunk } from '@proton/mail/store/labels';
 import { mailSettingsThunk } from '@proton/mail/store/mailSettings';
-import type { ProtonDispatch, ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonDispatch, ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { TelemetryHeartbeatEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
 import { sendTelemetryReportWithBaseDimensions } from '@proton/shared/lib/helpers/metrics';

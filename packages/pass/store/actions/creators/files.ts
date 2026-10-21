@@ -11,10 +11,9 @@ import type {
     FileUploadInitiateDTO,
     FilesMetadataEditSuccess,
     FilesRequestSuccess,
-    ItemLinkFilesIntent,
-    ItemLinkFilesSuccess,
-    WithTabId,
-} from '../../../types';
+} from '../../../types/data/files';
+import type { ItemLinkFilesIntent, ItemLinkFilesSuccess } from '../../../types/data/items.dto';
+import type { WithTabId } from '../../../types/worker/runtime';
 import { prop } from '../../../utils/fp/lens';
 import { UNIX_MINUTE } from '../../../utils/time/constants';
 import { dataRequest } from '../../request/configs';

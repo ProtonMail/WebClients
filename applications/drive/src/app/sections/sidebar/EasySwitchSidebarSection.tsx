@@ -11,7 +11,8 @@ import { EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '@proton/activat
 import { Button } from '@proton/atoms/Button/Button';
 import { SidebarListItem, SidebarListItemContent, navigationIconClassName } from '@proton/components';
 import NewFeatureTag from '@proton/components/components/newFeatureTag/NewFeatureTag';
-import { FeatureCode, useFeature } from '@proton/features';
+import { FeatureCode } from '@proton/features/interface';
+import useFeature from '@proton/features/useFeature';
 import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';

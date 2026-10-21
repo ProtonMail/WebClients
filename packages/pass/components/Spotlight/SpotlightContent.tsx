@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { IcCrossCircleFilled } from '@proton/icons/icons/IcCrossCircleFilled';
 import clsx from '@proton/utils/clsx';
 
-import { SpotlightMessage } from '../../types';
+import { SpotlightMessage } from '../../types/worker/spotlight';
 import { pipe } from '../../utils/fp/pipe';
 import { useSpotlight } from './SpotlightProvider';
 

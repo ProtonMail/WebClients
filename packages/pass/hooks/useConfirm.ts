@@ -2,7 +2,7 @@ import { type Dispatch, type SetStateAction, useCallback, useState } from 'react
 
 import noop from '@proton/utils/noop';
 
-import type { Maybe, MaybeNull } from '../types';
+import type { Maybe, MaybeNull } from '../types/utils';
 import { pipe, tap } from '../utils/fp/pipe';
 
 type UseConfirmResult<P, R> = {

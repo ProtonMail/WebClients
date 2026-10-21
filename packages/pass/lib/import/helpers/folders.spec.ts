@@ -1,4 +1,6 @@
-import type { FolderData, ItemImportIntent, Maybe, MaybeNull } from '../../../types';
+import type { FolderData } from '../../../types/data/folders';
+import type { ItemImportIntent } from '../../../types/data/items.dto';
+import type { Maybe, MaybeNull } from '../../../types/utils';
 import type { FolderLimits, FoldersById } from '../../folders/folder.utils';
 import type { ImportFolder, ImportVault } from '../types';
 import { createImportFolderTree, planImportFolders, splitFoldersIntoVaults } from './folders';

@@ -7,7 +7,7 @@ import { useFido2Action } from '@proton/account/fido/useFido2Action';
 import { userSettingsThunk } from '@proton/account/userSettings';
 import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { getSecurityKeyChallenge, registerSecurityKey } from '@proton/shared/lib/api/settings';

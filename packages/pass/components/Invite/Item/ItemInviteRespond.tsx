@@ -8,8 +8,8 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 
 import { selectInviteByToken } from '../../../store/selectors/invites';
-import type { Invite } from '../../../types';
-import { ShareType } from '../../../types';
+import type { Invite } from '../../../types/data/invites';
+import { ShareType } from '../../../types/data/shares';
 import { useMaybeGroup } from '../../Groups/GroupsProvider';
 import { PassModal } from '../../Layout/Modal/PassModal';
 import { useInviteActions } from '../InviteContext';

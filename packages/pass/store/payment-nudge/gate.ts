@@ -4,7 +4,8 @@ import type { User } from '@proton/shared/lib/interfaces/User';
 import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/payments/plan/helpers';
 import { isAdmin, isPaid } from '@proton/shared/lib/user/helpers';
 
-import type { Maybe, MaybeNull, PassPlanResponse } from '../../types';
+import type { PassPlanResponse } from '../../types/api/pass';
+import type { Maybe, MaybeNull } from '../../types/utils';
 import { getEpoch } from '../../utils/time/epoch';
 
 /** Local pre-gate: decides whether the payment method lookup is worth an API call.

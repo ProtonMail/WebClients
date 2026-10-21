@@ -9,7 +9,7 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { getHasVpnB2BPlan } from '@proton/payments/core/subscription/helpers';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';

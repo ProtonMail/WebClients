@@ -1,7 +1,7 @@
 import { type BrowserWindow, powerMonitor } from 'electron';
 import debounce from 'lodash/debounce';
 
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types/utils';
 
 declare module './ipc' {
     interface IPCChannels {

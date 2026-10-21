@@ -1,4 +1,4 @@
-import type { MaybeArray } from '@proton/pass/types';
+import type { MaybeArray } from '@proton/pass/types/utils';
 
 export enum ImportProvider {
     TWOFAS = '2FAS',

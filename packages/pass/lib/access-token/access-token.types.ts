@@ -1,4 +1,5 @@
-import type { MaybeNull, PatMonitorListEntryOutput, PersonalAccessTokenShareResponse } from '../../types';
+import type { PatMonitorListEntryOutput, PersonalAccessTokenShareResponse } from '../../types/api/pass';
+import type { MaybeNull } from '../../types/utils';
 
 /**
  * ======================================

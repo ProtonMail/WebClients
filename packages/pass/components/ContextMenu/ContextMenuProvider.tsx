@@ -4,8 +4,8 @@ import { createContext, useCallback, useMemo, useState } from 'react';
 import { createUseContext } from '../../hooks/useContextFactory';
 import { useFeatureFlag } from '../../hooks/useFeatureFlag';
 import { useStatefulRef } from '../../hooks/useStatefulRef';
-import type { MaybeNull } from '../../types';
 import { PassFeature } from '../../types/api/features';
+import type { MaybeNull } from '../../types/utils';
 
 type ContextMenuState = { id: string; position: { top: number; left: number } };
 

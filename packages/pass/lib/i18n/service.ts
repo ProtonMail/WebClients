@@ -7,7 +7,7 @@ import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import type { DateFormatOptions, TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import noop from '@proton/utils/noop';
 
-import type { Maybe, MaybePromise } from '../../types';
+import type { Maybe, MaybePromise } from '../../types/utils';
 import { logger } from '../../utils/logger';
 import type { Subscriber } from '../../utils/pubsub/factory';
 import { createPubSub } from '../../utils/pubsub/factory';

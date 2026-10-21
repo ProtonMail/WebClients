@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { updateLabel } from '@proton/mail/store/labels/actions';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';

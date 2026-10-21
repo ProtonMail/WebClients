@@ -3,7 +3,7 @@ import { type ReactNode, useCallback, useState } from 'react';
 import { c } from 'ttag';
 
 import { useEnsureMounted } from '../../../hooks/useEnsureMounted';
-import type { Callback } from '../../../types';
+import type { Callback } from '../../../types/utils';
 import { ConfirmationModal } from '../../Confirmation/ConfirmationModal';
 import { SidebarModal } from '../Modal/SidebarModal';
 

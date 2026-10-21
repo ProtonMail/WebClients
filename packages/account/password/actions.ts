@@ -1,6 +1,6 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { updatePrivateKeyRoute } from '@proton/shared/lib/api/keys';
 import { disable2FA as disable2FAConfig, updatePassword } from '@proton/shared/lib/api/settings';

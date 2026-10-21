@@ -1,7 +1,7 @@
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
 import type { Address } from '@proton/shared/lib/interfaces/Address';

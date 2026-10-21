@@ -20,7 +20,7 @@ import {
 } from '@proton/components';
 import { AbuseCategory, type NodeType } from '@proton/drive';
 import ModalContentLoader from '@proton/drive/modals/modalUtils/ModalContentLoader';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import { FileCard } from './FileCard';
@@ -28,8 +28,7 @@ import type { AbuseReportPrefill } from './types';
 import { ABUSE_CATEGORIES, CATEGORIES_WITH_EMAIL_VERIFICATION } from './useReportAbuseModalState';
 
 export type ReportAbuseModalViewProps =
-    | (LoadedReportAbuseModalViewProps & ModalStateProps & { loaded: true })
-    | { loaded: false };
+    (LoadedReportAbuseModalViewProps & ModalStateProps & { loaded: true }) | { loaded: false };
 
 type LoadedReportAbuseModalViewProps = {
     handleSubmit: (formData: { category: AbuseCategory; email?: string; comment?: string }) => Promise<void>;

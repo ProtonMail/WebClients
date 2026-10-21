@@ -1,6 +1,6 @@
 import type * as PassUIWorker from '@protontech/pass-rust-core/ui';
 
-import type { Callback, ExtractKeysOfType, Result } from '../../types';
+import type { Callback, ExtractKeysOfType, Result } from '../../types/utils';
 
 type PassUIModule = typeof PassUIWorker;
 

@@ -1,6 +1,6 @@
 import type { FormikErrors } from 'formik';
 
-import type { IdentityItemFormValues } from '../../types';
+import type { IdentityItemFormValues } from '../../types/forms/item';
 import type { ExtraSectionsError } from './custom-item';
 import { validateCustomSectionName } from './custom-item';
 import { validateExtraFieldName } from './extra-field';

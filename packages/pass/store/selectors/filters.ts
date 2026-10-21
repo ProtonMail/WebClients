@@ -1,4 +1,5 @@
-import type { Maybe, TabId } from '../../types';
+import type { Maybe } from '../../types/utils';
+import type { TabId } from '../../types/worker/runtime';
 import type { TabState } from '../reducers/filters';
 import type { State } from '../types';
 

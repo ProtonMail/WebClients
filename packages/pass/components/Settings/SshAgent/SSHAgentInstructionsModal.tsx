@@ -13,7 +13,7 @@ import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import windowsScreenshot from '../../../assets/settings/windows_openssh.png';
-import type { Maybe } from '../../../types';
+import type { Maybe } from '../../../types/utils';
 import { useSwitchableSessionCount } from '../../Core/SessionsProvider';
 import { ClickToCopy } from '../../Form/Field/Control/ClickToCopy';
 import { PassModal } from '../../Layout/Modal/PassModal';

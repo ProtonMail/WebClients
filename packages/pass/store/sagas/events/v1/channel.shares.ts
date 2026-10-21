@@ -5,11 +5,13 @@ import { all, call, cancelled, fork, select, take, takeEvery } from 'redux-saga/
 import { NOOP_EVENT } from '../../../../lib/events/manager';
 import { getSharesQuery } from '../../../../lib/shares/share.requests';
 import { processSharesIncomingEvent, processSharesPollingEvent } from '../../../../lib/sync/v1/share-polling.processor';
-import type { Api, Share, ShareGetResponse, SharesGetResponse } from '../../../../types';
+import type { Api } from '../../../../types/api/api';
+import type { ShareGetResponse, SharesGetResponse } from '../../../../types/api/pass';
+import type { Share } from '../../../../types/data/shares';
 import { logger } from '../../../../utils/logger';
-import { vaultCreationSuccess } from '../../../actions';
+import { vaultCreationSuccess } from '../../../actions/creators/vault';
 import type { SharesState } from '../../../reducers';
-import { selectShareState } from '../../../selectors';
+import { selectShareState } from '../../../selectors/shares';
 import type { RootSagaOptions } from '../../../types';
 import { eventChannelFactory } from './channel.factory';
 import { getShareChannelForks } from './channel.share';

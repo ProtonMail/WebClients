@@ -1,4 +1,4 @@
-import type { Maybe } from '../../types';
+import type { Maybe } from '../../types/utils';
 
 export const safeCall =
     <T extends (...args: any[]) => any>(fn?: T) =>

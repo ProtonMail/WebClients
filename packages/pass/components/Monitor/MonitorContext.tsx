@@ -1,7 +1,8 @@
 import { createContext, useContext } from 'react';
 
 import type { AddressType, CustomAddressID, MonitorAddress } from '../../lib/monitor/types';
-import type { MaybeNull, UniqueItem } from '../../types';
+import type { UniqueItem } from '../../types/data/items';
+import type { MaybeNull } from '../../types/utils';
 
 export type AsyncMonitorState = {
     data: UniqueItem[];

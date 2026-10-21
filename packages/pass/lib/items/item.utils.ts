@@ -4,23 +4,19 @@ import { c, msgid } from 'ttag';
 import { MAX_ITEM_NAME_LENGTH } from '../../constants';
 import type { Draft } from '../../store/reducers/drafts';
 import type {
-    BulkSelectionDTO,
-    CCItemData,
-    CCItemPreview,
     DeobfuscatedItem,
     DeobfuscatedItemExtraField,
-    IdentityItemPreview,
     ItemRevision,
     ItemSortFilter,
-    ItemType,
     LoginItem,
-    LoginItemPreview,
-    Maybe,
-    MaybeNull,
     SelectedItem,
     SelectedRevision,
     UniqueItem,
-} from '../../types';
+} from '../../types/data/items';
+import type { BulkSelectionDTO } from '../../types/data/items.dto';
+import type { ItemType } from '../../types/protobuf';
+import type { Maybe, MaybeNull } from '../../types/utils';
+import type { CCItemData, CCItemPreview, IdentityItemPreview, LoginItemPreview } from '../../types/worker/data';
 import { arrayInterpolate } from '../../utils/array/interpolate';
 import { deobfuscate, deobfuscateCCField } from '../../utils/obfuscate/xor';
 import { UNIX_DAY, UNIX_MONTH, UNIX_WEEK } from '../../utils/time/constants';

@@ -3,7 +3,8 @@ import type { FC, PropsWithChildren } from 'react';
 import capitalize from '@proton/utils/capitalize';
 import clsx from '@proton/utils/clsx';
 
-import type { Item, ItemType } from '../../../types';
+import type { Item } from '../../../types/data/items';
+import type { ItemType } from '../../../types/protobuf';
 import { Card } from '../../Layout/Card/Card';
 import { itemTypeToSubThemeClassName } from '../../Layout/Theme/types';
 import type { ItemContentProps } from '../../Views/types';

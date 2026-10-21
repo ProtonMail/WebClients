@@ -2,7 +2,7 @@ import { put, takeEvery } from 'redux-saga/effects';
 
 import { QA_SERVICE } from '../../../lib/qa/service';
 import { getFeatureFlags } from '../../../lib/user/user.requests';
-import { getUserFeaturesFailure, getUserFeaturesIntent, getUserFeaturesSuccess } from '../../actions';
+import { getUserFeaturesFailure, getUserFeaturesIntent, getUserFeaturesSuccess } from '../../actions/creators/user';
 import type { FeatureFlagAndVariantState } from '../../reducers';
 import type { RootSagaOptions } from '../../types';
 

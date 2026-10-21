@@ -6,7 +6,9 @@ import { APPS } from '@proton/shared/lib/constants';
 import { getAppUrlFromApiUrl } from '@proton/shared/lib/helpers/url';
 
 import { authStore } from '../../lib/auth/store';
-import type { ItemFilters, ItemType, MaybeNull, Unpack } from '../../types';
+import type { ItemFilters } from '../../types/data/items';
+import type { ItemType } from '../../types/protobuf';
+import type { MaybeNull, Unpack } from '../../types/utils';
 import { objectFilter } from '../../utils/object/filter';
 import { partialMerge } from '../../utils/object/merge';
 

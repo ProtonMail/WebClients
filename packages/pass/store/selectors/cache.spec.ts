@@ -1,6 +1,6 @@
 import { SyncStrategy } from '../../lib/sync/types';
-import type { Invite } from '../../types';
-import { InviteType } from '../../types';
+import type { Invite } from '../../types/data/invites';
+import { InviteType } from '../../types/data/invites';
 import { uniqueId } from '../../utils/string/unique-id';
 import { default as rootReducer } from '../reducers';
 import type { State } from '../types';

@@ -1,5 +1,5 @@
 import { toggleSentinel } from '../../../lib/monitor/monitor.request';
-import { sentinelToggle } from '../../actions';
+import { sentinelToggle } from '../../actions/creators/monitor';
 import { createRequestSaga } from '../../request/sagas';
 
 export default createRequestSaga({

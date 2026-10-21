@@ -2,8 +2,8 @@ import type { AuthStore } from '@proton/pass/lib/auth/store';
 import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
 import type { ConnectivityService } from '@proton/pass/lib/network/connectivity.service';
 import { ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
-import { offlineResume } from '@proton/pass/store/actions';
-import type { ClientEndpoint } from '@proton/pass/types';
+import { offlineResume } from '@proton/pass/store/actions/creators/client';
+import type { ClientEndpoint } from '@proton/pass/types/worker/runtime';
 import { AppStatus } from '@proton/pass/types/worker/state';
 import { createMemoryStore } from '@proton/pass/utils/store';
 

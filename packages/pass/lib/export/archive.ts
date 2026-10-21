@@ -2,8 +2,9 @@ import type { InputWithSizeMeta, InputWithoutMeta } from 'client-zip';
 
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
-import type { ExportThunk } from '../../store/selectors';
-import type { FileDescriptor, IndexedByShareIdAndItemId, ItemRevision } from '../../types';
+import type { ExportThunk } from '../../store/selectors/export';
+import type { FileDescriptor } from '../../types/data/files';
+import type { IndexedByShareIdAndItemId, ItemRevision } from '../../types/data/items';
 import { prop } from '../../utils/fp/lens';
 import { getEpoch } from '../../utils/time/epoch';
 import { encryptPassExport } from '../crypto/utils/export';

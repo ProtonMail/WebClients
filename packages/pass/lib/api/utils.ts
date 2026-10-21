@@ -1,8 +1,8 @@
 import { getIs401Error, getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 
-import type { Maybe, MaybeNull } from '../../types';
-import type { ApiOptions, ApiState } from '../../types/api';
+import type { ApiOptions, ApiState } from '../../types/api/api';
+import type { Maybe, MaybeNull } from '../../types/utils';
 import { objectHandler } from '../../utils/object/handler';
 import { msToEpoch } from '../../utils/time/epoch';
 import { PassErrorCode } from './errors';

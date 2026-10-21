@@ -9,7 +9,7 @@ import { IcKeyHistory } from '@proton/icons/icons/IcKeyHistory';
 import noop from '@proton/utils/noop';
 
 import { usePasswordHistoryActions } from '../components/Password/PasswordHistoryActions';
-import { syncIntent } from '../store/actions';
+import { syncIntent } from '../store/actions/creators/client';
 import { withTap } from '../utils/fp/pipe';
 
 export type MenuItem = {

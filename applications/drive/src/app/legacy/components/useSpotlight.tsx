@@ -3,7 +3,7 @@ import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 
 import { useSpotlightOnFeature, useSpotlightShow } from '@proton/components';
 import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
-import { FeatureCode } from '@proton/features';
+import { FeatureCode } from '@proton/features/interface';
 
 import type { DriveFolder } from '../../legacy/hooks/drive/useActiveShare';
 import { useLinksListing } from '../../legacy/store/_links';

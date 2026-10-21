@@ -6,8 +6,8 @@ import { c } from 'ttag';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 
-import { settingsEditIntent } from '../../store/actions';
-import { selectCanLoadDomainImages, selectShowUsernameField } from '../../store/selectors';
+import { settingsEditIntent } from '../../store/actions/creators/settings';
+import { selectCanLoadDomainImages, selectShowUsernameField } from '../../store/selectors/settings';
 import { SettingsPanel } from './SettingsPanel';
 
 export const Display: FC = () => {

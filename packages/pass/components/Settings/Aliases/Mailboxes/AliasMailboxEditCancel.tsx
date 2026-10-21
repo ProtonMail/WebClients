@@ -3,7 +3,7 @@ import type { FC } from 'react';
 import { c } from 'ttag';
 
 import { useRequest } from '../../../../hooks/useRequest';
-import { cancelMailboxEdit } from '../../../../store/actions';
+import { cancelMailboxEdit } from '../../../../store/actions/creators/alias';
 import { ConfirmationPrompt } from '../../../Confirmation/ConfirmationPrompt';
 import { useAliasMailboxes } from './AliasMailboxesContext';
 

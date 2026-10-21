@@ -11,7 +11,7 @@ import { Items } from '@proton/pass/components/Item/Items';
 import { Monitor } from '@proton/pass/components/Monitor/Monitor';
 import { PremiumRoutes, getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { Settings } from '@proton/pass/components/Settings/Views/Settings';
-import { selectPassPlan } from '@proton/pass/store/selectors';
+import { selectPassPlan } from '@proton/pass/store/selectors/user';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { getLocalIDPath } from '@proton/shared/lib/authentication/pathnameHelper';

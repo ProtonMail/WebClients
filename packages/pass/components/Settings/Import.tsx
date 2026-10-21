@@ -16,8 +16,8 @@ import {
 } from '../../hooks/import/useImportForm';
 import { useAsyncModalHandles } from '../../hooks/useAsyncModalHandles';
 import type { ImportPayload } from '../../lib/import/types';
-import { selectCanCreateItems } from '../../store/selectors';
-import type { MaybeNull } from '../../types';
+import { selectCanCreateItems } from '../../store/selectors/shares';
+import type { MaybeNull } from '../../types/utils';
 import { pipe, tap } from '../../utils/fp/pipe';
 import { deobfuscate } from '../../utils/obfuscate/xor';
 import { useOffline } from '../Core/ConnectivityProvider';

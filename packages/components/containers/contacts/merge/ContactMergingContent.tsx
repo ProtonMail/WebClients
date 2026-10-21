@@ -5,7 +5,7 @@ import { c, msgid } from 'ttag';
 import { useUserKeys } from '@proton/account/userKeys/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { addContacts, deleteContacts, getContact } from '@proton/shared/lib/api/contacts';
 import { getApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';

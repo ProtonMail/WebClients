@@ -2,7 +2,7 @@ import type {
     ChatCompletionsFunctionTool,
     PendingClientToolCall,
     ToolName as TransportToolName,
-} from '@proton/lumo-api-client';
+} from '@proton/lumo-api-client/core/types';
 
 import { ToolInputError } from '../contracts/errors';
 import type {

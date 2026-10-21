@@ -7,7 +7,7 @@ import { isActive, isTrashed } from '../../lib/items/item.predicates';
 import { filterItemsByFolderIds, filterItemsByShareId, filterItemsByType, sortItems } from '../../lib/items/item.utils';
 import { searchItems } from '../../lib/search/match-items';
 import type { SelectItemsOptions } from '../../lib/search/types';
-import type { ItemRevision } from '../../types';
+import type { ItemRevision } from '../../types/data/items';
 import { pipe } from '../../utils/fp/pipe';
 import { isEmptyString } from '../../utils/string/is-empty-string';
 import type { State } from '../types';

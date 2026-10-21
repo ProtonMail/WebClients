@@ -1,7 +1,7 @@
 import type { ComponentType, ReactNode } from 'react';
 
-import type { ToolName as ServerToolName } from '@proton/lumo-api-client';
-import type { ServerToolSource } from '@proton/lumo-ui';
+import type { ToolName as ServerToolName } from '@proton/lumo-api-client/core/types';
+import type { ServerToolSource } from '@proton/lumo-ui/ServerToolChip';
 import type { WelcomeSuggestionCard } from '@proton/lumo-ui/WelcomeSuggestions';
 import type { IconComponent } from '@proton/lumo-ui/types';
 

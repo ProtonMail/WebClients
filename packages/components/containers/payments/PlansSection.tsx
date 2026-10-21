@@ -11,7 +11,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
 import { useAutomaticCurrency } from '@proton/payments-ui/client-extensions/useAutomaticCurrency';
 import { usePaymentsApi } from '@proton/payments-ui/react-extensions/usePaymentsApi';

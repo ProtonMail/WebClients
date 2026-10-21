@@ -1,14 +1,10 @@
 import type { ItemDiff } from '../../lib/items/item.diff';
 import type { ParsedUrl } from '../../lib/urls/types';
 import type { ShareItem } from '../../store/reducers';
-import type {
-    ItemCreateIntent,
-    ItemEditIntent,
-    ItemRevision,
-    ItemRevisionWithOptimistic,
-    ItemType,
-    MaybeNull,
-} from '../../types';
+import type { ItemRevision, ItemRevisionWithOptimistic } from '../../types/data/items';
+import type { ItemCreateIntent, ItemEditIntent } from '../../types/data/items.dto';
+import type { ItemType } from '../../types/protobuf';
+import type { MaybeNull } from '../../types/utils';
 
 export type ItemViewProps<T extends ItemType = ItemType> = {
     revision: ItemRevisionWithOptimistic<T>;

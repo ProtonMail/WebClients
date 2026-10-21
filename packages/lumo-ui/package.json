@@ -8,7 +8,6 @@
     ],
     "type": "module",
     "exports": {
-        ".": "./index.ts",
         "./types": "./types.ts",
         "./LumoLogo": "./LumoLogo.tsx",
         "./LumoWordmark": "./LumoWordmark.tsx",
@@ -29,7 +28,6 @@
         "./primitives/sentenceValue": "./primitives/sentenceValue.tsx",
         "./lumo-ui.scss": "./lumo-ui.scss"
     },
-    "main": "./index.ts",
     "scripts": {
         "check:types": "tsc --checkers 1",
         "lint": "eslint --quiet",

@@ -13,7 +13,7 @@ import type {
     PauseListEntryDeleteDTO,
     PauseListEntryUpdateDTO,
 } from '../../../../lib/organization/types';
-import type { OrganizationUrlPauseEntryDto, OrganizationUrlPauseEntryValues } from '../../../../types';
+import type { OrganizationUrlPauseEntryDto, OrganizationUrlPauseEntryValues } from '../../../../types/api/pass';
 import { TableRowLoading } from '../../../Layout/Table/TableRowLoading';
 import { PauseListTableRowExisting, PauseListTableRowNew } from './PauseListTableRow';
 

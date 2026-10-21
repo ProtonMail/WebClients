@@ -1,6 +1,6 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 
-import type { IsNever } from '../../types';
+import type { IsNever } from '../../types/utils';
 import type { WithMeta } from '../actions/enhancers/meta';
 import type { RequestFlow } from './flow';
 

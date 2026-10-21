@@ -3,7 +3,7 @@
  * module is not executed in workers or content-scripts */
 import type * as PassRustUI from '@protontech/pass-rust-core/ui';
 
-import type { Maybe } from '../../types';
+import type { Maybe } from '../../types/utils';
 import { logger } from '../../utils/logger';
 import type { PassUIMethod, PassUIParams, PassUIProxy } from './ui.types';
 import { PassUIWorkerService } from './ui.worker.service';

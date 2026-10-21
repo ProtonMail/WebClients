@@ -2,11 +2,12 @@ import { useCallback, useMemo, useState } from 'react';
 import { useStore } from 'react-redux';
 
 import { filesFormInitializer } from '../../lib/file-attachments/helpers';
-import { fileRestore } from '../../store/actions';
-import { selectItem } from '../../store/selectors';
+import { fileRestore } from '../../store/actions/creators/files';
 import { selectItemFilesForRevision } from '../../store/selectors/files';
+import { selectItem } from '../../store/selectors/items';
 import type { State } from '../../store/types';
-import type { FileID, FileRestoreDTO, SelectedRevision } from '../../types';
+import type { FileID, FileRestoreDTO } from '../../types/data/files';
+import type { SelectedRevision } from '../../types/data/items';
 import { prop } from '../../utils/fp/lens';
 import { useMemoSelector } from '../useMemoSelector';
 import { useRequestDispatch } from '../useRequest';

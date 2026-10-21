@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 import { useAppState } from '../../components/Core/AppStateProvider';
 import type { AuthRouteState } from '../../components/Navigation/routing';
-import type { Maybe, MaybeNull } from '../../types';
+import type { Maybe, MaybeNull } from '../../types/utils';
 import { isMainFrame } from '../../utils/dom/is-main-frame';
 import { useStatefulRef } from '../useStatefulRef';
 import { useVisibleEffect } from '../useVisibleEffect';

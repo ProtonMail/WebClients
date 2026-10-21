@@ -10,40 +10,38 @@ import { PassCryptoError, isPassCryptoError } from '../../../lib/crypto/utils/er
 import { migrate } from '../../../lib/sync/migrate';
 import { sync } from '../../../lib/sync/sync';
 import { type SyncResult, SyncStrategy } from '../../../lib/sync/types';
-import type { Maybe } from '../../../types';
-import { AppStatus } from '../../../types';
 import { PassFeature } from '../../../types/api/features';
+import type { Maybe } from '../../../types/utils';
+import { AppStatus } from '../../../types/worker/state';
 import { logger } from '../../../utils/logger';
 import { merge } from '../../../utils/object/merge';
+import { aliasSyncStatus } from '../../actions/creators/alias';
 import {
-    aliasSyncStatus,
     bootFailure,
     bootIntent,
     bootSuccess,
     cacheConflict,
     cacheRequest,
-    draftsGarbageCollect,
-    getBreaches,
-    getInAppNotifications,
-    getUserAccessIntent,
-    getUserFeaturesIntent,
-    getUserSettings,
-    passwordHistoryGarbageCollect,
-    secureLinksGet,
     startEventPolling,
     stateDestroy,
     stopEventPolling,
-} from '../../actions';
+} from '../../actions/creators/client';
+import { draftsGarbageCollect, secureLinksGet } from '../../actions/creators/item';
 import { resolveModelRegistry } from '../../actions/creators/model-registry';
+import { getBreaches } from '../../actions/creators/monitor';
+import { getInAppNotifications } from '../../actions/creators/notification';
 import { getOrganizationPauseList, getOrganizationSettings } from '../../actions/creators/organization';
+import { passwordHistoryGarbageCollect } from '../../actions/creators/password';
 import { resolvePrivateDomains } from '../../actions/creators/private-domains';
 import { resolveWebsiteRules } from '../../actions/creators/rules';
 import { getAuthDevices } from '../../actions/creators/sso';
+import { getUserAccessIntent, getUserFeaturesIntent, getUserSettings } from '../../actions/creators/user';
 import { getPaymentNudgePaymentMethods } from '../../payment-nudge/actions';
 import { selectCanQueryPaymentNudge } from '../../payment-nudge/selectors';
 import type { ProxiedSettings } from '../../reducers/settings';
 import { withRevalidate } from '../../request/enhancers';
-import { selectFeatureFlag, selectProxiedSettings, selectSyncStrategy } from '../../selectors';
+import { selectProxiedSettings, selectSyncStrategy } from '../../selectors/settings';
+import { selectFeatureFlag } from '../../selectors/user';
 import type { RootSagaOptions } from '../../types';
 import { type HydrationResult, hydrate } from './hydrate.saga';
 

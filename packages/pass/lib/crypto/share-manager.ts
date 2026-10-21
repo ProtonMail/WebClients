@@ -1,12 +1,7 @@
-import type {
-    Maybe,
-    SerializedCryptoContext,
-    ShareContext,
-    ShareKey,
-    ShareManager,
-    TypedOpenedShare,
-} from '../../types';
-import { ShareType } from '../../types';
+import type { SerializedCryptoContext, ShareContext, ShareManager } from '../../types/crypto/pass-crypto';
+import type { ShareKey, TypedOpenedShare } from '../../types/crypto/pass-types';
+import { ShareType } from '../../types/data/shares';
+import type { Maybe } from '../../types/utils';
 import { PassCrypto } from './index';
 import { PassCryptoItemError, PassCryptoShareError, PassCryptoVaultError } from './utils/errors';
 import { hydrateShare, hydrateShareKeys, serializeShare, serializeShareKeys } from './utils/seralize';

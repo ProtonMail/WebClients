@@ -12,10 +12,11 @@ import { useRequest } from '../../hooks/useRequest';
 import type { Group, GroupId, GroupMembersResponse } from '../../lib/groups/groups.types';
 import { isBusinessPlan } from '../../lib/organization/helpers';
 import { getGroupMembers, getGroups } from '../../store/actions/creators/groups';
-import { selectOrganization, selectPassPlan, selectUser } from '../../store/selectors';
 import { selectGroupByEmail, selectGroups } from '../../store/selectors/groups';
-import type { Maybe, MaybeNull } from '../../types';
+import { selectOrganization } from '../../store/selectors/organization';
+import { selectPassPlan, selectUser } from '../../store/selectors/user';
 import { PassFeature } from '../../types/api/features';
+import type { Maybe, MaybeNull } from '../../types/utils';
 import { GroupMembersModal } from './GroupMembersModal';
 import type { MaybeGroupProps } from './MaybeGroupName';
 

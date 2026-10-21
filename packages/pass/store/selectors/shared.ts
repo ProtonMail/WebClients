@@ -3,7 +3,8 @@ import { createSelector } from '@reduxjs/toolkit';
 import { isActive } from '../../lib/items/item.predicates';
 import { sortItems } from '../../lib/items/item.utils';
 import { isShareManageable } from '../../lib/shares/share.predicates';
-import type { ItemRevision, SelectedItem, Share } from '../../types';
+import type { ItemRevision, SelectedItem } from '../../types/data/items';
+import type { Share } from '../../types/data/shares';
 import { itemsFromSelection, selectItem, selectItems, selectTrashedItems, selectVisibleItems } from './items';
 import { selectItemShares, selectShare, selectShareState } from './shares';
 

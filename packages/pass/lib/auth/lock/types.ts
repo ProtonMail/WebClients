@@ -1,4 +1,5 @@
-import { AppStatus, type Maybe } from '../../../types';
+import type { Maybe } from '../../../types/utils';
+import { AppStatus } from '../../../types/worker/state';
 import type { XorObfuscation } from '../../../utils/obfuscate/xor';
 
 export enum LockMode {

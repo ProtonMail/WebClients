@@ -1,7 +1,7 @@
 import { createSelector } from '@reduxjs/toolkit';
 
 import { isAliasItem } from '../../lib/items/item.predicates';
-import type { BulkSelectionDTO } from '../../types';
+import type { BulkSelectionDTO } from '../../types/data/items.dto';
 import { selectItems, selectItemsState } from './items';
 import { selectSecureLinksState } from './secure-links';
 import { isItemShared } from './shared';

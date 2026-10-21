@@ -3,16 +3,16 @@ import { type FC, createContext, useContext, useEffect, useMemo } from 'react';
 import { useDispatch, useSelector, useStore } from 'react-redux';
 
 import { itemAny } from '../../../lib/items/item.predicates';
-import { secureLinksGet } from '../../../store/actions';
+import { secureLinksGet } from '../../../store/actions/creators/item';
+import { selectOptimisticIds } from '../../../store/selectors/items';
 import {
     createMatchItemsSelector,
     createMatchSecureLinksSelector,
     createMatchSharedByMeSelector,
     createMatchSharedWithMeSelector,
-    selectOptimisticIds,
-} from '../../../store/selectors';
+} from '../../../store/selectors/match';
 import type { State } from '../../../store/types';
-import type { ItemRevision, UniqueItem } from '../../../types';
+import type { ItemRevision, UniqueItem } from '../../../types/data/items';
 import { useNavigate } from '../../Navigation/NavigationActions';
 import { useNavigationFilters } from '../../Navigation/NavigationFilters';
 import { useSelectedItem } from '../../Navigation/NavigationItem';

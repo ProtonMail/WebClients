@@ -1,4 +1,4 @@
-import type { MaybePromise } from '../../types';
+import type { MaybePromise } from '../../types/utils';
 import { safeCall } from '../fp/safe-call';
 
 export type Subscriber<E> = (event: E) => MaybePromise<any>;

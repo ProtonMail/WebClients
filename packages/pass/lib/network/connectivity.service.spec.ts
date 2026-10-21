@@ -1,6 +1,6 @@
 import { FIBONACCI_LIST } from '@proton/shared/lib/constants';
 
-import type { Api, ApiState, ApiSubscriptionEvent } from '../../types';
+import type { Api, ApiState, ApiSubscriptionEvent } from '../../types/api/api';
 import { createPubSub } from '../../utils/pubsub/factory';
 import { CONNECTIVITY_PROBE_DELAY, createConnectivityService } from './connectivity.service';
 import { CONNECTIVITY_RETRY_TIMEOUT, ConnectivityStatus } from './connectivity.utils';

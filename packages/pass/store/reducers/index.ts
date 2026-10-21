@@ -1,9 +1,9 @@
 import { type Reducer, combineReducers } from 'redux';
 
 import { PassCrypto } from '../../lib/crypto';
-import type { Maybe } from '../../types';
+import type { Maybe } from '../../types/utils';
 import { zeroize } from '../../utils/object/zero';
-import { stateDestroy, stateHydrate } from '../actions';
+import { stateDestroy, stateHydrate } from '../actions/creators/client';
 import request from '../request/reducer';
 import type { State } from '../types';
 import { access } from './access';

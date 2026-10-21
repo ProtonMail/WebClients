@@ -5,8 +5,10 @@ import noop from '@proton/utils/noop';
 
 import { isShareManageable } from '../../../lib/shares/share.predicates';
 import { isWritableVault } from '../../../lib/vaults/vault.predicates';
-import { selectActiveSharedWithMeCount, selectShare, selectVisibleVaultsWithCount } from '../../../store/selectors';
-import type { ShareType } from '../../../types';
+import { selectActiveSharedWithMeCount } from '../../../store/selectors/shared';
+import { selectShare } from '../../../store/selectors/shares';
+import { selectVisibleVaultsWithCount } from '../../../store/selectors/vaults';
+import type { ShareType } from '../../../types/data/shares';
 import { useNavigationFilters } from '../../Navigation/NavigationFilters';
 import { useItemScope } from '../../Navigation/NavigationMatches';
 import { useVaultActions } from '../../Vault/VaultActionsProvider';

@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Dropdown, DropdownSizeUnit } from '@proton/components';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
 import type { IndexingProgress } from '../../../modules/search';

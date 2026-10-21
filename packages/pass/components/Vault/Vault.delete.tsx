@@ -5,7 +5,7 @@ import type { FormikErrors } from 'formik';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
-import { vaultDeleteIntent } from '../../store/actions';
+import { vaultDeleteIntent } from '../../store/actions/creators/vault';
 import type { VaultShareItem } from '../../store/reducers';
 import type { ConfirmationModalProps } from '../Confirmation/ConfirmationModal';
 import { ConfirmationModal } from '../Confirmation/ConfirmationModal';

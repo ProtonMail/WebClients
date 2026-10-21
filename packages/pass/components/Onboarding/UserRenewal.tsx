@@ -9,7 +9,7 @@ import noop from '@proton/utils/noop';
 
 import { useFeatureFlag } from '../../hooks/useFeatureFlag';
 import { usePassConfig } from '../../hooks/usePassConfig';
-import { selectPlanDisplayName, selectUserPlan } from '../../store/selectors';
+import { selectPlanDisplayName, selectUserPlan } from '../../store/selectors/user';
 import { PassFeature } from '../../types/api/features';
 import { pipe } from '../../utils/fp/pipe';
 import { epochToDate } from '../../utils/time/format';

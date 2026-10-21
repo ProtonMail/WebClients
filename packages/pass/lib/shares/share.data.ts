@@ -1,7 +1,9 @@
 import { toMap } from '@proton/shared/lib/helpers/object';
 
 import type { FoldersByShareId, ItemsByShareId } from '../../store/reducers';
-import type { FolderData, ItemRevision, Share } from '../../types';
+import type { FolderData } from '../../types/data/folders';
+import type { ItemRevision } from '../../types/data/items';
+import type { Share } from '../../types/data/shares';
 import { diadic } from '../../utils/fp/variadics';
 import { logId, logger } from '../../utils/logger';
 import { merge } from '../../utils/object/merge';

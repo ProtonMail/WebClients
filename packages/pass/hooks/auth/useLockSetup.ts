@@ -20,11 +20,11 @@ import { ensureDesktopLockPermissions } from '../../lib/auth/lock/desktop/logic.
 import type { UnlockDTO } from '../../lib/auth/lock/types';
 import { LockMode } from '../../lib/auth/lock/types';
 import { ReauthAction } from '../../lib/auth/reauth';
-import { lockCreateIntent } from '../../store/actions';
+import { lockCreateIntent } from '../../store/actions/creators/auth';
 import { lockCreateRequest } from '../../store/actions/requests';
-import { selectLockMode, selectLockTTL } from '../../store/selectors';
-import type { Maybe, MaybeNull, Result } from '../../types';
+import { selectLockMode, selectLockTTL } from '../../store/selectors/settings';
 import { PassFeature } from '../../types/api/features';
+import type { Maybe, MaybeNull, Result } from '../../types/utils';
 import { cloneObfuscation } from '../../utils/obfuscate/xor';
 import { useFeatureFlag } from '../useFeatureFlag';
 import { useActionRequest } from '../useRequest';

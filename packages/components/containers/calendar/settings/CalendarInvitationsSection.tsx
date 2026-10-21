@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { useHasMeetProductAccess } from '@proton/meet/hooks/useHasMeetProductAccess';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { AutoAddVideoConferenceLinkProvider } from '@proton/shared/lib/calendar/constants';

@@ -1,8 +1,10 @@
 import { c } from 'ttag';
 
-import type { DeobfuscatedItemExtraField, IdentityFieldName, ItemContent, MaybeNull } from '../../../../types';
+import type { DeobfuscatedItemExtraField, ItemContent } from '../../../../types/data/items';
+import type { IdentityFieldName } from '../../../../types/forms/item';
 import { AutofillMode } from '../../../../types/protobuf';
 import type { AutofillUrl } from '../../../../types/protobuf/item-v1';
+import type { MaybeNull } from '../../../../types/utils';
 import { truthy } from '../../../../utils/fp/predicates';
 import { itemBuilder } from '../../../items/item.builder';
 import type { BitwardenCCItem, BitwardenCustomField, BitwardenLoginItem, BitwardenSshKeyItem } from './bitwarden.types';

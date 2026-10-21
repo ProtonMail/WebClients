@@ -3,8 +3,8 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { selectMostRecentInvite } from '../../store/selectors/invites';
-import type { MaybeNull } from '../../types';
 import type { Invite } from '../../types/data/invites';
+import type { MaybeNull } from '../../types/utils';
 import { useSelectItem } from '../Navigation/NavigationActions';
 import { useVaultActions } from '../Vault/VaultActionsProvider';
 import {

@@ -1,11 +1,11 @@
 import { DEFAULT_CLIPBOARD_TTL } from '../../lib/clipboard/types';
 import { getVisibleShareIds, intoShareCore } from '../../lib/shares/share.dedupe';
-import { bootSuccess } from '../../store/actions';
+import { bootSuccess } from '../../store/actions/creators/client';
 import reducer from '../../store/reducers';
 import type { ItemsByShareId, ShareItem } from '../../store/reducers';
 import type { SettingsState } from '../../store/reducers/settings';
 import type { State } from '../../store/types';
-import type { ItemRevision } from '../../types';
+import type { ItemRevision } from '../../types/data/items';
 
 export type TestStateInit = {
     shares?: ShareItem[];

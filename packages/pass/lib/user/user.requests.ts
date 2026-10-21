@@ -8,9 +8,9 @@ import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 
 import { DEFAULT_PASS_FEATURES } from '../../constants';
 import type { FeatureFlagAndVariantState, HydratedAccessState, HydratedUserState } from '../../store/reducers';
-import type { Maybe } from '../../types';
 import type { FeatureFlagsResponse } from '../../types/api/features';
 import { PassFeature, PassFeaturesValues, isAutofillModelExperimentGroup } from '../../types/api/features';
+import type { Maybe } from '../../types/utils';
 import { prop } from '../../utils/fp/lens';
 import { logger } from '../../utils/logger';
 import { api } from '../api/api';

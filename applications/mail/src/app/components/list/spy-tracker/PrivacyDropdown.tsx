@@ -9,7 +9,7 @@ import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import PreventTrackingToggle from '@proton/components/containers/emailPrivacy/PreventTrackingToggle';
 import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
-import { FeatureCode } from '@proton/features';
+import { FeatureCode } from '@proton/features/interface';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';

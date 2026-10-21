@@ -1,7 +1,7 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
 import { createKTVerifier } from '@proton/key-transparency/helpers';
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { addDomain } from '@proton/shared/lib/api/domains';
 import {
     createGroup as createGroupCall,

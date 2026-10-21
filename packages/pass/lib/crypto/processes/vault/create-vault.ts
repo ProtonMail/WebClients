@@ -2,8 +2,8 @@ import { CryptoProxy } from '@protontech/crypto';
 
 import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 
-import type { VaultCreateRequest } from '../../../../types';
-import { ContentFormatVersion, PassEncryptionTag } from '../../../../types';
+import type { VaultCreateRequest } from '../../../../types/api/pass';
+import { ContentFormatVersion, PassEncryptionTag } from '../../../../types/crypto/pass-types';
 import { encryptData, generateKey, importSymmetricKey } from '../../utils/crypto-helpers';
 import { PassCryptoVaultError } from '../../utils/errors';
 

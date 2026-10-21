@@ -3,17 +3,17 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
+import type { LumoApiClient } from '@proton/lumo-api-client/core/client';
 import type {
     ChatCompletionsFunctionTool,
     GenerationResponseMessage,
-    LumoApiClient,
     Role,
     ToolName as ServerToolName,
     Turn,
-} from '@proton/lumo-api-client';
+} from '@proton/lumo-api-client/core/types';
 import type { WireImage } from '@proton/lumo-api-client/types-api';
 import { lumoImageMarker } from '@proton/lumo-api-client/utils';
-import type { ServerToolSource } from '@proton/lumo-ui';
+import type { ServerToolSource } from '@proton/lumo-ui/ServerToolChip';
 
 import type { ToolImage, ToolName } from '../contracts/types';
 import type { ConfirmDecision, ToolChip } from '../engine/engine';
@@ -84,7 +84,7 @@ const projectChainForHistory = (chainWork: Turn[]): Turn[] => {
 let clientPromise: Promise<LumoApiClient> | null = null;
 const getLumoClient = (): Promise<LumoApiClient> => {
     if (!clientPromise) {
-        clientPromise = import('@proton/lumo-api-client').then(
+        clientPromise = import('@proton/lumo-api-client/core/client').then(
             ({ LumoApiClient }) => new LumoApiClient({ enableSmoothing: true, enableU2LEncryption: true })
         );
     }

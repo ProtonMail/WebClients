@@ -10,8 +10,8 @@ import Toggle from '@proton/components/components/toggle/Toggle';
 
 import { useRequest } from '../../../../hooks/useRequest';
 import { mailboxVerificationRequired } from '../../../../lib/alias/alias.utils';
-import { deleteMailbox } from '../../../../store/actions';
-import type { MaybeNull } from '../../../../types';
+import { deleteMailbox } from '../../../../store/actions/creators/alias';
+import type { MaybeNull } from '../../../../types/utils';
 import { prop } from '../../../../utils/fp/lens';
 import { pipe } from '../../../../utils/fp/pipe';
 import { ConfirmationModal } from '../../../Confirmation/ConfirmationModal';

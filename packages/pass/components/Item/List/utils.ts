@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { intoUserIdentifier } from '../../../lib/items/item.utils';
-import type { ItemRevision, ItemType } from '../../../types';
+import type { ItemRevision } from '../../../types/data/items';
+import type { ItemType } from '../../../types/protobuf';
 import { deobfuscate, deobfuscateCCField } from '../../../utils/obfuscate/xor';
 import { cardNumberHiddenValue } from '../../Form/Field/masks/credit-card';
 

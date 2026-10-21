@@ -7,18 +7,14 @@ import { ACTIVE_POLLING_TIMEOUT } from '../../../../lib/events/constants';
 import * as folderRequests from '../../../../lib/folders/folders.requests';
 import * as itemRequests from '../../../../lib/items/item.requests';
 import * as shareParser from '../../../../lib/shares/share.parser';
-import type {
-    Api,
-    FolderData,
-    IndexedByShareIdAndItemId,
-    ItemRevision,
-    Share,
-    ShareGetResponse,
-    SharesGetResponse,
-} from '../../../../types';
-import { ShareType } from '../../../../types';
+import type { Api } from '../../../../types/api/api';
+import type { ShareGetResponse, SharesGetResponse } from '../../../../types/api/pass';
+import type { FolderData } from '../../../../types/data/folders';
+import type { IndexedByShareIdAndItemId, ItemRevision } from '../../../../types/data/items';
+import type { Share } from '../../../../types/data/shares';
+import { ShareType } from '../../../../types/data/shares';
 import { sagaSetup } from '../../../../utils/tests/saga';
-import { sharesEventNew } from '../../../actions';
+import { sharesEventNew } from '../../../actions/creators/share';
 import type { RootSagaOptions } from '../../../types';
 import * as channelShare from './channel.share';
 import * as SharesChannel from './channel.shares';

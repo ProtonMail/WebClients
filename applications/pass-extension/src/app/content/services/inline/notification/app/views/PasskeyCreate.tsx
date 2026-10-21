@@ -23,7 +23,7 @@ import { intoPasskeyCreateBridgeResponse, sanitizePasskey } from '@proton/pass/l
 import { validateItemName } from '@proton/pass/lib/validation/item';
 import type { SelectedItem, UniqueItem } from '@proton/pass/types/data/items';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
-import type { MaybeNull } from '@proton/pass/types/utils/index';
+import type { MaybeNull } from '@proton/pass/types/utils';
 import { AutosaveMode } from '@proton/pass/types/worker/autosave';
 import type { LoginItemPreview } from '@proton/pass/types/worker/data';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';

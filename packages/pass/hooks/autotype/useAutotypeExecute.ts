@@ -4,7 +4,7 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
-import type { AutotypeProperties } from '../../types';
+import type { AutotypeProperties } from '../../types/desktop/autotype';
 import { logger } from '../../utils/logger';
 
 export const useAutotypeExecute = DESKTOP_BUILD

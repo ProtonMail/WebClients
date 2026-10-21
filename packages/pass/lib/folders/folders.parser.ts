@@ -1,4 +1,5 @@
-import type { FolderData, FolderDataResponse } from '../../types';
+import type { FolderDataResponse } from '../../types/api/pass';
+import type { FolderData } from '../../types/data/folders';
 import { PassCrypto } from '../crypto';
 import { decodeFolder } from './folder-proto.transformer';
 

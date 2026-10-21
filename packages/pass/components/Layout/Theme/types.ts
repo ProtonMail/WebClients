@@ -1,4 +1,5 @@
-import type { DesktopTheme, ItemMap } from '../../../types';
+import type { ItemMap } from '../../../types/data/items';
+import type { DesktopTheme } from '../../../types/desktop';
 
 export enum SubTheme {
     LIME = 'ui-lime',

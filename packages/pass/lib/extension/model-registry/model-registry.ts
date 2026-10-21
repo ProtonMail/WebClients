@@ -1,5 +1,5 @@
-import type { MaybeNull, Result } from '../../../types';
 import type { AutofillModelExperimentGroup } from '../../../types/api/features';
+import type { MaybeNull, Result } from '../../../types/utils';
 import { isObject } from '../../../utils/object/is-object';
 
 // maps experiment group to model ID

@@ -9,7 +9,7 @@ import { isFreeSubscription } from '../core/type-guards';
  *
  * Deliberately excludes anything that could identify the user themselves.
  */
-export const getSubscriptionKey = (subscription: Subscription | FreeSubscription | null | undefined): string | null => {
+const getSubscriptionKey = (subscription: Subscription | FreeSubscription | null | undefined): string | null => {
     if (!subscription || isFreeSubscription(subscription)) {
         return null;
     }

@@ -1,10 +1,13 @@
 import type { Reducer } from 'redux';
 
-import type { FileDescriptor, ItemId, Maybe, ShareId } from '../../types';
+import type { ItemId, ShareId } from '../../types/crypto/pass-types';
+import type { FileDescriptor } from '../../types/data/files';
+import type { Maybe } from '../../types/utils';
 import { objectDelete } from '../../utils/object/delete';
 import { objectMap } from '../../utils/object/map';
 import { merge } from '../../utils/object/merge';
-import { fileRestore, fileUpdateMetadata, filesResolve, itemDeleteRevisions } from '../actions';
+import { fileRestore, fileUpdateMetadata, filesResolve } from '../actions/creators/files';
+import { itemDeleteRevisions } from '../actions/creators/item';
 
 type FilesState = Record<ShareId, Maybe<Record<ItemId, FileDescriptor[]>>>;
 

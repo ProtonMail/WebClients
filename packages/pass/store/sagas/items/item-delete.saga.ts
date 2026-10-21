@@ -3,13 +3,15 @@ import { call, put, select } from 'redux-saga/effects';
 import { hasAttachments, hasHadAttachments } from '../../../lib/items/item.predicates';
 import { deleteItemRevisions, deleteItems } from '../../../lib/items/item.requests';
 import { createTelemetryEvent } from '../../../lib/telemetry/utils';
-import type { ItemRevision, Maybe } from '../../../types';
+import type { ItemRevision } from '../../../types/data/items';
 import { TelemetryEventName, TelemetryItemType } from '../../../types/data/telemetry';
+import type { Maybe } from '../../../types/utils';
 import { or } from '../../../utils/fp/predicates';
-import { filesResolve, itemDelete, itemDeleteRevisions } from '../../actions';
+import { filesResolve } from '../../actions/creators/files';
+import { itemDelete, itemDeleteRevisions } from '../../actions/creators/item';
 import { withRevalidate } from '../../request/enhancers';
 import { createRequestSaga } from '../../request/sagas';
-import { selectItem } from '../../selectors';
+import { selectItem } from '../../selectors/items';
 
 const removeItems = createRequestSaga({
     actions: itemDelete,

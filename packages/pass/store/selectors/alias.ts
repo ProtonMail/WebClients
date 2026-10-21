@@ -3,8 +3,9 @@ import { createSelector } from '@reduxjs/toolkit';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { isActive, isTrashed } from '../../lib/items/item.predicates';
-import type { ItemRevision, Maybe } from '../../types';
 import type { AliasMailbox } from '../../types/data/alias';
+import type { ItemRevision } from '../../types/data/items';
+import type { Maybe } from '../../types/utils';
 import { prop } from '../../utils/fp/lens';
 import { deobfuscate } from '../../utils/obfuscate/xor';
 import type { AliasDetailsState } from '../reducers';

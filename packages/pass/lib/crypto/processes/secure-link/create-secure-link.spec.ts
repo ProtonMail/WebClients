@@ -1,5 +1,5 @@
-import type { ItemKey } from '../../../../types';
-import { PassEncryptionTag } from '../../../../types';
+import type { ItemKey } from '../../../../types/crypto/pass-types';
+import { PassEncryptionTag } from '../../../../types/crypto/pass-types';
 import { decryptData, generateKey, importSymmetricKey } from '../../utils/crypto-helpers';
 import { createSecureLink } from './create-secure-link';
 

@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
-import type { DeobfuscatedItemExtraField, ItemImportIntent, Maybe } from '../../../../types';
+import type { DeobfuscatedItemExtraField } from '../../../../types/data/items';
+import type { ItemImportIntent } from '../../../../types/data/items.dto';
+import type { Maybe } from '../../../../types/utils';
 import { extractFirst } from '../../../../utils/array/extract-first';
 import { prop } from '../../../../utils/fp/lens';
 import { logger } from '../../../../utils/logger';

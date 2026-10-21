@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 
-import { selectTheme } from '../../../store/selectors';
+import { selectTheme } from '../../../store/selectors/settings';
 import { usePassCore } from '../../Core/PassCoreProvider';
 
 export const ThemeConnect = () => {

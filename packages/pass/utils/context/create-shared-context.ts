@@ -1,4 +1,4 @@
-import type { Callback, Maybe, MaybeNull } from '../../types';
+import type { Callback, Maybe, MaybeNull } from '../../types/utils';
 
 export interface ContextHandler<T = any> {
     set: (ctx: T) => T;

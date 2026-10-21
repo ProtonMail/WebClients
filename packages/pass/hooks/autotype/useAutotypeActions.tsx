@@ -11,7 +11,7 @@ import { IcUser } from '@proton/icons/icons/IcUser';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { AutotypeKeyboardShortcut } from '../../components/Item/Autotype/AutotypeKeyboardShortcut';
-import type { Item } from '../../types';
+import type { Item } from '../../types/data/items';
 import type { AutotypeAction } from '../../types/desktop/autotype';
 import { AutotypeKey } from '../../types/desktop/autotype';
 import { deobfuscate } from '../../utils/obfuscate/xor';

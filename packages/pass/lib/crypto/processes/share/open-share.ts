@@ -1,5 +1,8 @@
-import type { OpenedShare, ShareGetResponse, ShareRole, VaultShareKey } from '../../../../types';
-import { PassEncryptionTag, ShareType } from '../../../../types';
+import type { ShareGetResponse } from '../../../../types/api/pass';
+import type { OpenedShare, VaultShareKey } from '../../../../types/crypto/pass-types';
+import { PassEncryptionTag } from '../../../../types/crypto/pass-types';
+import type { ShareRole } from '../../../../types/data/shares';
+import { ShareType } from '../../../../types/data/shares';
 import { decryptData } from '../../utils/crypto-helpers';
 
 type OpenShareProcessParams = { encryptedShare: ShareGetResponse } & (

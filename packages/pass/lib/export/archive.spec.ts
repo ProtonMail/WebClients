@@ -2,7 +2,8 @@ import { uint8ArrayToUtf8String } from '@protontech/crypto/utils';
 
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
-import { ContentFormatVersion, ItemState } from '../../types';
+import { ContentFormatVersion } from '../../types/crypto/pass-types';
+import { ItemState } from '../../types/data/items';
 import { uniqueId } from '../../utils/string/unique-id';
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../utils/tests/fixtures/crypto';
 import { getEpoch } from '../../utils/time/epoch';

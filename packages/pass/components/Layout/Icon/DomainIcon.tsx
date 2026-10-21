@@ -6,7 +6,7 @@ import noop from '@proton/utils/noop';
 import { useEnsureMounted } from '../../../hooks/useEnsureMounted';
 import { useStatefulRef } from '../../../hooks/useStatefulRef';
 import { intoDomainImageHostname } from '../../../lib/urls/utils/utils';
-import type { Maybe } from '../../../types';
+import type { Maybe } from '../../../types/utils';
 import { usePassCore } from '../../Core/PassCoreProvider';
 
 export enum ImageStatus {

@@ -8,10 +8,13 @@ import { FILE_CHUNK_SIZE, FILE_ENCRYPTION_VERSION, FILE_MIME_TYPE_DETECTION_CHUN
 import PassUI from '../../lib/core/ui.proxy';
 import { sanitizeFileName } from '../../lib/file-attachments/helpers';
 import { blobToBase64, getSafeStorage } from '../../lib/file-storage/utils';
-import { fileUploadChunk, fileUploadInitiate } from '../../store/actions';
+import { fileUploadChunk, fileUploadInitiate } from '../../store/actions/creators/files';
 import { requestCancel } from '../../store/request/actions';
-import type { FileChunkUploadDTO, FileID, Maybe, ShareId, TabId, WithTabId } from '../../types';
+import type { ShareId } from '../../types/crypto/pass-types';
+import type { FileChunkUploadDTO, FileID } from '../../types/data/files';
 import { TelemetryEventName } from '../../types/data/telemetry';
+import type { Maybe } from '../../types/utils';
+import type { TabId, WithTabId } from '../../types/worker/runtime';
 import { abortable, asyncQueue } from '../../utils/fp/promises';
 import { logId, logger } from '../../utils/logger';
 import { uniqueId } from '../../utils/string/unique-id';

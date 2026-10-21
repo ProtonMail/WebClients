@@ -9,7 +9,7 @@ import { usePaymentMethods } from '@proton/account/paymentMethods/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import { useDateCountdown } from '@proton/hooks';
+import useDateCountdown from '@proton/hooks/useDateCountdown';
 import { Renew } from '@proton/payments/core/subscription/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { getTrialInfoForSingleSubscription } from '@proton/payments/core/trials';

@@ -1,6 +1,6 @@
 import { blobToUint8Array, uint8ArrayToBlob } from '@proton/shared/lib/helpers/encoding';
 
-import { PassEncryptionTag } from '../../../../types';
+import { PassEncryptionTag } from '../../../../types/crypto/pass-types';
 import { encryptData, importSymmetricKey } from '../../utils/crypto-helpers';
 import { PassCryptoError } from '../../utils/errors';
 

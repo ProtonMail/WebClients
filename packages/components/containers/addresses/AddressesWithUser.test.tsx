@@ -8,7 +8,7 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { mockUseFeatureBarrel } from '@proton/features/testing/mockUseFeatureBarrel';
+import { mockUseFeature } from '@proton/features/testing/mockUseFeature';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { ADDRESS_FLAGS, ADDRESS_STATUS, ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
@@ -135,7 +135,7 @@ describe('addresses with user', () => {
         } as any,
         handleSetAddressFlags: async () => {},
     });
-    mockUseFeatureBarrel({ feature: { Value: true } as any });
+    mockUseFeature({ feature: { Value: true } as any });
 
     const getFirstAddress = (container: HTMLElement) => {
         return container.querySelector('[data-testid^="users-and-addresses-table"]');

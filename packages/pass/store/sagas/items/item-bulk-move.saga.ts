@@ -4,10 +4,11 @@ import { put, select, take, takeLeading } from 'redux-saga/effects';
 import noop from '@proton/utils/noop';
 
 import { moveItems } from '../../../lib/items/item.requests';
-import type { BatchItemRevisions, ItemDestination, ItemRevision } from '../../../types';
-import { itemBulkMoveFailure, itemBulkMoveIntent, itemBulkMoveProgress, itemBulkMoveSuccess } from '../../actions';
+import type { BatchItemRevisions, ItemRevision } from '../../../types/data/items';
+import type { ItemDestination } from '../../../types/data/items.dto';
+import { itemBulkMoveFailure, itemBulkMoveIntent, itemBulkMoveProgress, itemBulkMoveSuccess } from '../../actions/creators/item';
 import type { RequestProgress } from '../../request/types';
-import { selectBulkSelection } from '../../selectors';
+import { selectBulkSelection } from '../../selectors/bulk';
 
 export type BulkMoveItemsChannel = RequestProgress<
     ItemRevision[],

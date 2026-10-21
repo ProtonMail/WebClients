@@ -1,4 +1,4 @@
-import type { AnyStorage } from '../../types';
+import type { AnyStorage } from '../../types/worker/storage';
 import { INITIAL_FORCE_SYNC_ENTRY, createForceSyncStore } from './force-sync';
 
 type Key = `forceSync::${number}`;

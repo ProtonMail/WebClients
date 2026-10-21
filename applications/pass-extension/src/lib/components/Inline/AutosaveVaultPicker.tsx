@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import type { SelectFieldProps } from '@proton/pass/components/Form/Field/SelectField';
 import { VaultFolderPickerFieldCore } from '@proton/pass/components/Form/Field/VaultFolderPickerFieldCore';
 import type { FoldersByShareId, ShareItem } from '@proton/pass/store/reducers';
-import type { ShareType } from '@proton/pass/types';
+import type { ShareType } from '@proton/pass/types/data/shares';
 import noop from '@proton/utils/noop';
 
 import { WorkerMessageType } from '../../../types/messages';

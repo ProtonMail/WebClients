@@ -5,7 +5,7 @@ import { c, msgid } from 'ttag';
 
 import type { ActionRequest, ReferenceLabel, ReferenceLabels } from '@proton/llm/lib/lumoAgent/contracts/types';
 import type { CardBodyProps } from '@proton/llm/lib/lumoAgent/ui/types';
-import { MoveItemsCard } from '@proton/lumo-ui';
+import MoveItemsCard from '@proton/lumo-ui/confirmCards/MoveItemsCard';
 import type { CheckListItem } from '@proton/lumo-ui/primitives/ItemCheckList';
 import sentenceValue from '@proton/lumo-ui/primitives/sentenceValue';
 

@@ -1,4 +1,5 @@
-import type { DeobfuscatedItemExtraField, IdentityFieldName, ItemContent, ItemExtraField } from '../../../../types';
+import type { DeobfuscatedItemExtraField, ItemContent, ItemExtraField } from '../../../../types/data/items';
+import type { IdentityFieldName } from '../../../../types/forms/item';
 import { safeCall } from '../../../../utils/fp/safe-call';
 import { formatISODate } from '../../../../utils/time/format';
 import { itemBuilder } from '../../../items/item.builder';

@@ -7,7 +7,7 @@ import { getKTUserContext } from '@proton/account/kt/actions';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { getPublicKeysEmailHelper } from '@proton/key-transparency/keys';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';

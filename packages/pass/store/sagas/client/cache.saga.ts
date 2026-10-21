@@ -8,7 +8,7 @@ import { PassCrypto } from '../../../lib/crypto';
 import type { EncryptedPassCache } from '../../../types/worker/cache';
 import { or } from '../../../utils/fp/predicates';
 import { logger } from '../../../utils/logger';
-import { cacheCancel, stateDestroy } from '../../actions';
+import { cacheCancel, stateDestroy } from '../../actions/creators/client';
 import { type WithCache, isCachingAction } from '../../actions/enhancers/cache';
 import type { RootSagaOptions, State } from '../../types';
 

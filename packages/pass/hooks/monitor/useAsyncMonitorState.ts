@@ -3,14 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { useCurrentTabID, usePassCore } from '../../components/Core/PassCoreProvider';
 import type { AsyncMonitorState, CompromisedPasswordsState } from '../../components/Monitor/MonitorContext';
-import { checkCompromisedPasswords } from '../../store/actions';
+import { checkCompromisedPasswords } from '../../store/actions/creators/monitor';
 import { requestCancel } from '../../store/request/actions';
-import {
-    selectCompromisedPasswords,
-    selectCompromisedPasswordsProgress,
-    selectVisibleLoginItems,
-} from '../../store/selectors';
-import type { UniqueItem } from '../../types';
+import { selectVisibleLoginItems } from '../../store/selectors/items';
+import { selectCompromisedPasswords, selectCompromisedPasswordsProgress } from '../../store/selectors/monitor';
+import type { UniqueItem } from '../../types/data/items';
 import { useAsyncRequestDispatch } from '../useDispatchAsyncRequest';
 import { useMemoSelector } from '../useMemoSelector';
 

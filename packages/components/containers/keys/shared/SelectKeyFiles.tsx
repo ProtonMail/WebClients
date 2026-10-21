@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import type { ButtonLikeShape } from '@proton/atoms/Button/ButtonLike';
 import type { ThemeColorUnion } from '@proton/colors/types';
-import { useCombinedRefs } from '@proton/hooks';
+import useCombinedRefs from '@proton/hooks/useCombinedRefs';
 import type { ArmoredKeyWithInfo } from '@proton/shared/lib/keys/keyImport';
 import { parseKeyFiles } from '@proton/shared/lib/keys/keyImport';
 

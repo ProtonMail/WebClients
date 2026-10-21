@@ -1,4 +1,4 @@
-import type { GenerationResponseMessage } from '@proton/lumo-api-client';
+import type { GenerationResponseMessage } from '@proton/lumo-api-client/core/types';
 
 /**
  * Accumulates assistant message text from streamed chunks and enforces terminal error types.

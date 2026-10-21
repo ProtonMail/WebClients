@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
-import type { ItemImportIntent, MaybeNull } from '../../types';
+import type { ItemImportIntent } from '../../types/data/items.dto';
+import type { MaybeNull } from '../../types/utils';
 import { partition } from '../../utils/array/partition';
 
 export enum ImportProvider {

@@ -2,7 +2,7 @@ import { createContext } from 'react';
 
 import { createUseContext } from '../../hooks/useContextFactory';
 import type { PasswordItem } from '../../store/reducers/pw-history';
-import type { MaybeNull } from '../../types';
+import type { MaybeNull } from '../../types/utils';
 
 export type PasswordHistoryActionsContextValue = {
     /** Pushes a password to the history */

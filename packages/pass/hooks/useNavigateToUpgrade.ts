@@ -4,8 +4,10 @@ import { useAuthStore } from '../components/Core/AuthStoreProvider';
 import { usePassCore } from '../components/Core/PassCoreProvider';
 import { SAFARI_URL_SCHEME, type UpsellRef, UpsellRefPrefix } from '../constants';
 import type { AuthStore } from '../lib/auth/store';
-import { selectUserPlan } from '../store/selectors';
-import type { ClientEndpoint, MaybeNull, PassPlanResponse } from '../types';
+import { selectUserPlan } from '../store/selectors/user';
+import type { PassPlanResponse } from '../types/api/pass';
+import type { MaybeNull } from '../types/utils';
+import type { ClientEndpoint } from '../types/worker/runtime';
 import type { PassConfig } from './usePassConfig';
 
 /** Prefer navigating to signup from extension/desktop

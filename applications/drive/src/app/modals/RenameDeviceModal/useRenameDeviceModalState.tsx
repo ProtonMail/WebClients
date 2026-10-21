@@ -9,7 +9,7 @@ import { getDrive } from '@proton/drive';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
 import { getDeviceName } from '@proton/drive/modules/nodes';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import { getDeviceByUid } from '../../utils/sdk/getDeviceByUid';

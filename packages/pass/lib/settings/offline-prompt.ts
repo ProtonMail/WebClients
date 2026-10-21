@@ -1,4 +1,4 @@
-import type { Maybe } from '../../types';
+import type { Maybe } from '../../types/utils';
 import { UNIX_WEEK } from '../../utils/time/constants';
 
 export type OfflinePromptSettings = { count: number; dismissedAt: number };

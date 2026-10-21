@@ -2,7 +2,7 @@ import type { Action } from 'redux';
 
 import type { CreateNotificationOptions, NotificationType } from '@proton/app-context/notifications/interfaces';
 
-import type { ClientEndpoint } from '../../../types';
+import type { ClientEndpoint } from '../../../types/worker/runtime';
 import { getErrorMessage } from '../../../utils/errors/get-error-message';
 import { type WithMeta, withMetaFactory } from './meta';
 

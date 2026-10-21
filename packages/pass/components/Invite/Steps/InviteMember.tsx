@@ -9,8 +9,8 @@ import { IcCircleSlash } from '@proton/icons/icons/IcCircleSlash';
 import generateUID from '@proton/utils/generateUID';
 
 import type { AccessTarget } from '../../../lib/access/types';
-import type { InviteFormMemberItem } from '../../../types';
-import { ShareRole } from '../../../types';
+import { ShareRole } from '../../../types/data/shares';
+import type { InviteFormMemberItem } from '../../../types/forms/invite';
 import { useMaybeGroup } from '../../Groups/GroupsProvider';
 import { MaybeGroupName } from '../../Groups/MaybeGroupName';
 import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';

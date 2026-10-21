@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { IcArchiveBox } from '@proton/icons/icons/IcArchiveBox';
 import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
 import { IcEnvelopeDot } from '@proton/icons/icons/IcEnvelopeDot';

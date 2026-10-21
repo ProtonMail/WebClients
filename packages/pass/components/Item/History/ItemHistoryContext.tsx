@@ -1,6 +1,7 @@
 import { createContext, useContext } from 'react';
 
-import type { ItemRevision, MaybeNull } from '../../../types';
+import type { ItemRevision } from '../../../types/data/items';
+import type { MaybeNull } from '../../../types/utils';
 
 export type ItemHistoryContextValue = {
     item: ItemRevision;

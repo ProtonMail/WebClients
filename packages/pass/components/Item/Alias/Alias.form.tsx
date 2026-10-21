@@ -9,7 +9,10 @@ import noop from '@proton/utils/noop';
 
 import type { SanitizedAliasOptions } from '../../../hooks/useAliasOptions';
 import { getDomainLabel } from '../../../lib/alias/alias.utils';
-import { type AliasFormValues, type AliasMailbox, type MaybeNull, SpotlightMessage } from '../../../types';
+import type { AliasMailbox } from '../../../types/data/alias';
+import type { AliasFormValues } from '../../../types/forms/item';
+import type { MaybeNull } from '../../../types/utils';
+import { SpotlightMessage } from '../../../types/worker/spotlight';
 import { usePassCore } from '../../Core/PassCoreProvider';
 import { Field } from '../../Form/Field/Field';
 import { FieldsetCluster } from '../../Form/Field/Layout/FieldsetCluster';

@@ -8,9 +8,11 @@ import { intoFileParam, mimetypeForDownload } from '../../lib/file-attachments/h
 import { fileStorage } from '../../lib/file-storage/fs';
 import { getSafeStorage } from '../../lib/file-storage/utils';
 import browser from '../../lib/globals/browser';
-import { fileDownload, fileDownloadPublic } from '../../store/actions';
+import { fileDownload, fileDownloadPublic } from '../../store/actions/creators/files';
 import { requestCancel } from '../../store/request/actions';
-import type { FileDescriptor, FileDownloadDTO, FileForDownload, FileID, SelectedItem, WithTabId } from '../../types';
+import type { FileDescriptor, FileDownloadDTO, FileForDownload, FileID } from '../../types/data/files';
+import type { SelectedItem } from '../../types/data/items';
+import type { WithTabId } from '../../types/worker/runtime';
 import { download } from '../../utils/dom/download';
 import { prop } from '../../utils/fp/lens';
 import { abortable } from '../../utils/fp/promises';

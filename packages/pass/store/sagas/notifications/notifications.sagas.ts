@@ -1,5 +1,5 @@
 import { getNotifications, updateNotificationState } from '../../../lib/notifications/notifications.requests';
-import { getInAppNotifications, updateInAppNotificationState } from '../../actions';
+import { getInAppNotifications, updateInAppNotificationState } from '../../actions/creators/notification';
 import { createRequestSaga } from '../../request/sagas';
 
 const get = createRequestSaga({

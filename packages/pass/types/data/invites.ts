@@ -1,4 +1,4 @@
-import type { GroupInviteListItemResponse, InviteDataForUser, KeyRotationKeyPair } from '../api';
+import type { GroupInviteListItemResponse, InviteDataForUser, KeyRotationKeyPair } from '../api/pass';
 import type { MaybeNull } from '../utils';
 import type { ShareRole, ShareType, VaultShareContent } from './shares';
 

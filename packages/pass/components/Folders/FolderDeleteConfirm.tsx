@@ -5,7 +5,7 @@ import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
 import { useRequest } from '../../hooks/useRequest';
-import { folderDelete } from '../../store/actions';
+import { folderDelete } from '../../store/actions/creators/folders';
 import type { ConfirmationModalProps } from '../Confirmation/ConfirmationModal';
 import { ConfirmationModal } from '../Confirmation/ConfirmationModal';
 import { Field } from '../Form/Field/Field';

@@ -6,8 +6,8 @@ import { Button } from '@proton/atoms/Button/Button';
 
 import { useActionRequest } from '../../../hooks/useRequest';
 import type { AccessDTO } from '../../../lib/access/types';
-import { newUserInvitePromoteIntent, newUserInviteRemoveIntent } from '../../../store/actions';
-import type { NewUserPendingInvite } from '../../../types';
+import { newUserInvitePromoteIntent, newUserInviteRemoveIntent } from '../../../store/actions/creators/invite';
+import type { NewUserPendingInvite } from '../../../types/data/invites';
 
 type Props = NewUserPendingInvite & AccessDTO;
 

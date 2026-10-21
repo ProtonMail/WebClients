@@ -25,7 +25,7 @@ import {
     updateCustomDomainMailboxes,
     updateRandomPrefix,
     verifyCustomDomain,
-} from '../../actions';
+} from '../../actions/creators/alias';
 import { createRequestSaga } from '../../request/sagas';
 
 const getAliasDomainsSaga = createRequestSaga({

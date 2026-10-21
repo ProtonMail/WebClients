@@ -1,6 +1,7 @@
 import { AGENT_INSTRUCTIONS_URL } from '../../constants.runtime';
-import type { GrantAccessRequest, PersonalAccessTokenShareResponse, ShareId } from '../../types';
-import { ShareRole, ShareType } from '../../types';
+import type { GrantAccessRequest, PersonalAccessTokenShareResponse } from '../../types/api/pass';
+import type { ShareId } from '../../types/crypto/pass-types';
+import { ShareRole, ShareType } from '../../types/data/shares';
 import { UNIX_MINUTE } from '../../utils/time/constants';
 import { getEpoch } from '../../utils/time/epoch';
 import { api } from '../api/api';

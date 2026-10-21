@@ -1,6 +1,7 @@
 import type { Draft, EditDraft, NewDraft } from '../../store/reducers/drafts';
-import type { Item, ItemExtraField, ItemRevision, ItemType, LoginItem, UniqueItem } from '../../types';
-import { ItemFlag, ItemState } from '../../types';
+import type { Item, ItemExtraField, ItemRevision, LoginItem, UniqueItem } from '../../types/data/items';
+import { ItemFlag, ItemState } from '../../types/data/items';
+import type { ItemType } from '../../types/protobuf';
 import { and, not, oneOf, or } from '../../utils/fp/predicates';
 import { deobfuscate } from '../../utils/obfuscate/xor';
 import { isAutofillTargetMode } from '../urls/utils/autofill';

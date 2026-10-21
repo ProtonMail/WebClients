@@ -2,8 +2,8 @@ import { FIBONACCI_LIST } from '@proton/shared/lib/constants';
 import createListeners from '@proton/shared/lib/helpers/listeners';
 import { onceWithQueue } from '@proton/shared/lib/helpers/onceWithQueue';
 
-import type { Maybe } from '../../types';
-import type { Api } from '../../types/api';
+import type { Api } from '../../types/api/api';
+import type { Maybe } from '../../types/utils';
 import { logger } from '../../utils/logger';
 import { ACTIVE_POLLING_TIMEOUT } from './constants';
 

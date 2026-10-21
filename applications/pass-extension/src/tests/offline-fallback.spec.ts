@@ -2,7 +2,7 @@
  * @jest-environment-options {"abortSignal": true}
  */
 import { PassErrorCode } from '@proton/pass/lib/api/errors';
-import { bootIntent } from '@proton/pass/store/actions';
+import { bootIntent } from '@proton/pass/store/actions/creators/client';
 import { AppStatus } from '@proton/pass/types/worker/state';
 import {
     BACKEND_FAILURES,

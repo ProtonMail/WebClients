@@ -1,11 +1,12 @@
 import { call, select } from 'redux-saga/effects';
 
 import { moveItems } from '../../../lib/items/item.requests';
-import type { ItemRevision, Maybe } from '../../../types';
+import type { ItemRevision } from '../../../types/data/items';
+import type { Maybe } from '../../../types/utils';
 import { first } from '../../../utils/array/first';
-import { itemMove } from '../../actions';
+import { itemMove } from '../../actions/creators/item';
 import { createRequestSaga } from '../../request/sagas';
-import { selectItem } from '../../selectors';
+import { selectItem } from '../../selectors/items';
 
 export default createRequestSaga({
     actions: itemMove,

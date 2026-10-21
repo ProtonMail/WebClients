@@ -6,7 +6,7 @@ import { useDeobfuscatedItem } from '../../../hooks/useDeobfuscatedItem';
 import { useItemDraft } from '../../../hooks/useItemDraft';
 import { filesFormInitializer } from '../../../lib/file-attachments/helpers';
 import { validateIdentityForm } from '../../../lib/validation/identity';
-import type { IdentityItemFormValues } from '../../../types';
+import type { IdentityItemFormValues } from '../../../types/forms/item';
 import { obfuscate } from '../../../utils/obfuscate/xor';
 import type { ItemEditViewProps } from '../../Views/types';
 import { IdentityForm } from './Identity.form';

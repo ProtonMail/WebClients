@@ -13,7 +13,7 @@ import { FieldType, IdentityFieldType } from '@protontech/autofill/types';
 import debounce from 'lodash/debounce';
 
 import browser from '@proton/pass/lib/globals/browser';
-import type { Maybe } from '@proton/pass/types/utils/index';
+import type { Maybe } from '@proton/pass/types/utils';
 import { isActiveElement } from '@proton/pass/utils/dom/active-element';
 import { isElementBusy, isParentBusy } from '@proton/pass/utils/dom/form';
 import { scrollableParent } from '@proton/pass/utils/dom/scroll';

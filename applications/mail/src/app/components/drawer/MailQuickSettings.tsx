@@ -32,7 +32,7 @@ import { useKeyTransparencyContext } from '@proton/components/containers/keyTran
 import MailShortcutsModal from '@proton/components/containers/mail/MailShortcutsModal';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import useKeyTransparencyNotification from '@proton/components/hooks/useKeyTransparencyNotification';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import type { IconComponent } from '@proton/icons/component';
 import { IcColumnOne } from '@proton/icons/icons/IcColumnOne';
 import { IcColumnTwo } from '@proton/icons/icons/IcColumnTwo';

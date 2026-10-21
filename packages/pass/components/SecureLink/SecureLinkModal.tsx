@@ -6,7 +6,8 @@ import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 
 import { useItem } from '../../hooks/useItem';
-import type { MaybeNull, SecureLink } from '../../types';
+import type { SecureLink } from '../../types/data/items.dto';
+import type { MaybeNull } from '../../types/utils';
 import { presentListItem } from '../Item/List/utils';
 import { SafeItemIcon } from '../Layout/Icon/ItemIcon';
 import { PassModal } from '../Layout/Modal/PassModal';

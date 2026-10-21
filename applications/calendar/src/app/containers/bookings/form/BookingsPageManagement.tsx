@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { BookingLocation, MinimumNoticeMode } from '@proton/calendar/bookings/types';
+import { BookingLocation } from '@proton/calendar/bookings/types';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import RadioGroup from '@proton/components/components/input/RadioGroup';
 import Option from '@proton/components/components/option/Option';
@@ -20,6 +20,7 @@ import { useHasMeetProductAccess } from '@proton/meet/hooks/useHasMeetProductAcc
 import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { getBookingEventDurationOptions } from '@proton/shared/lib/calendar/eventDefaults';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
+import { MinimumNoticeMode } from '@proton/shared/lib/interfaces/calendar/Bookings';
 import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 

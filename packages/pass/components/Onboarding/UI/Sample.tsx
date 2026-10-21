@@ -3,7 +3,7 @@ import type { FC } from 'react';
 import { IcGlobe } from '@proton/icons/icons/IcGlobe';
 import clsx from '@proton/utils/clsx';
 
-import type { MaybeNull } from '../../../types';
+import type { MaybeNull } from '../../../types/utils';
 import { ItemIcon } from '../../Layout/Icon/ItemIcon';
 import star from './star.png';
 

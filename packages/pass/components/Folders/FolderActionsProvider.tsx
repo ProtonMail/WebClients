@@ -2,7 +2,7 @@ import type { PropsWithChildren } from 'react';
 import { type FC, createContext, useMemo, useState } from 'react';
 
 import { createUseContext } from '../../hooks/useContextFactory';
-import type { MaybeNull } from '../../types';
+import type { MaybeNull } from '../../types/utils';
 import { FolderCreateModal } from './FolderCreateModal';
 import { FolderDeleteConfirm } from './FolderDeleteConfirm';
 import { FolderEditModal } from './FolderEditModal';

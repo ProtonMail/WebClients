@@ -13,10 +13,11 @@ import clsx from '@proton/utils/clsx';
 
 import { useFeatureFlag } from '../../../../hooks/useFeatureFlag';
 import { isWritableVault } from '../../../../lib/vaults/vault.predicates';
-import { selectAllVaults, selectCanCreateItems, selectShare } from '../../../../store/selectors';
-import type { ItemType, MaybeNull } from '../../../../types';
-import { OrganizationAliasCreateMode } from '../../../../types';
+import { selectAllVaults, selectCanCreateItems, selectShare } from '../../../../store/selectors/shares';
 import { PassFeature } from '../../../../types/api/features';
+import { OrganizationAliasCreateMode } from '../../../../types/api/pass';
+import type { ItemType } from '../../../../types/protobuf';
+import type { MaybeNull } from '../../../../types/utils';
 import { usePassCore } from '../../../Core/PassCoreProvider';
 import { useFolderCreate } from '../../../Folders/useFolderCreate';
 import { useFolderCreateTarget } from '../../../Folders/useFolderCreateTarget';

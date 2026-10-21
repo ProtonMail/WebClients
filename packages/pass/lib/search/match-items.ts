@@ -1,13 +1,7 @@
 import { normalize } from '@proton/shared/lib/helpers/string';
 
-import type {
-    DeobfuscatedItemExtraField,
-    ExtraFieldType,
-    ItemContent,
-    ItemExtraField,
-    ItemRevision,
-    ItemType,
-} from '../../types';
+import type { DeobfuscatedItemExtraField, ItemContent, ItemExtraField, ItemRevision } from '../../types/data/items';
+import type { ExtraFieldType, ItemType } from '../../types/protobuf';
 import { dynMemo } from '../../utils/fp/memo';
 import { deobfuscate } from '../../utils/obfuscate/xor';
 import { isEmptyString } from '../../utils/string/is-empty-string';
