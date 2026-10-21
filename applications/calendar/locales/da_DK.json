@@ -347,9 +347,6 @@
       "Done": [
         "Udført"
       ],
-      "Downgrade": [
-        "Nedgradér"
-      ],
       "Download": [
         "Download"
       ],
@@ -737,9 +734,6 @@
       "Remove": [
         "Fjern"
       ],
-      "Remove bonuses": [
-        "Fjern bonusser"
-      ],
       "Remove button": [
         "Fjern knap"
       ],
@@ -910,6 +904,9 @@
       ],
       "Submit": [
         "Indsend"
+      ],
+      "Subscribe": [
+        "Abonnér"
       ],
       "Subscribe now": [
         "Abonnér nu"
@@ -1332,8 +1329,8 @@
       ]
     },
     "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "30 dages tilbagebetalingsgaranti"
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30-dages fortrydelsesret: annuller indenfor 30 dage af dit køb, og kontakt vores ${ customerSupportLink } for at få en refusion."
       ]
     },
     "BF2024: Deal details": {
@@ -4705,14 +4702,6 @@
         "Skift abonnement"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "Familiegruppe ikke genkendt. Prøv igen."
-      ],
-      "Organization not recognized. Try again.": [
-        "Organisation ikke genkendt. Prøv igen."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } grupper"
@@ -4782,22 +4771,6 @@
         "Din konto bruger ${ usedSpace } lagerplads, hvilket overstiger de ${ inviteSpace } du har fået tildelt. Slet nogle data eller bed abonnementsadministratoren om at øge din lagerplads."
       ]
     },
-    "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "Indtast navn på familiegruppe for at bekræfte"
-      ],
-      "Enter organization name to confirm": [
-        "Indtast organisationsnavn for at bekræfte"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Dette vil permanent slette alle underbrugere, konti og data, der er forbundet med din organisation."
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Dette fjerner alle ${ BRAND_NAME } premium-funktioner for alle familiemedlemmer."
-      ]
-    },
     "familyOffer_2023:Onboarding Proton": {
       "Configure your family account and invite users": [
         "Opsæt din familie-konto og invitér brugere"
@@ -4807,14 +4780,6 @@
       ],
       "Set up your family account": [
         "Opsæt din familie-konto"
-      ]
-    },
-    "familyOffer_2023:Title": {
-      "Delete family group?": [
-        "Slet familiegruppe?"
-      ],
-      "Delete organization?": [
-        "Slet organisation?"
       ]
     },
     "Feature": {
@@ -5540,21 +5505,14 @@
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Du får ${ referrerRewardAmount }** i kredit for hver ven, der tegner et abonnement."
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } bonuslagerplads"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN }-forbindelse til ${ VPN_APP_NAME } (tillader dig at forbinde flere enheder til VPN)",
-        "+${ organization.BonusVPN }-forbindelser til ${ VPN_APP_NAME } (tillader dig at forbinde flere enheder til VPN)"
-      ],
       "1 device per user": [
         "1 enhed per bruger"
       ],
       "1 vault per user": [
         "1 boks pr. bruger"
       ],
-      "30-day money-back guarantee.": [
-        "30 dages tilbagebetalingsgaranti."
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30-dages fortrydelsesret: annuller indenfor 30 dage af dit køb, og kontakt vores ${ customerSupportLink } for at få en refusion."
       ],
       "A cancellation email will be sent to removed participants.": [
         "En aflysningsmail vil blive sendt til fjernede deltagere."
@@ -5712,9 +5670,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Styrk din organisations varemærkeidentitet, og skab en mere ensartet onlineoplevelse for dine brugere."
       ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Ved at nedgradere til et gratis abonnement mister du disse fordele permanent, selvom du senere opgraderer igen."
-      ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Ved at dele alle detaljer om begivenheden i denne kalender, accepterer du at give ${ BRAND_NAME } adgang til denne kalenders krypterede oplysninger."
       ],
@@ -5868,9 +5823,6 @@
       "Downgrade": [
         "Nedgrader"
       ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Nedgradering vil afslutte alle forbindelser til betalte ${ VPN_APP_NAME }-servere."
-      ],
       "Download current logs": [
         "Download aktuelle logs"
       ],
@@ -6021,15 +5973,6 @@
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "Hvis du har mistet adgangen til din godkender-app kan du bruge 1 af de 16 gendannelseskoder, som du fik da du satte to-faktor-godkendelses op. ${ learnMoreLink }"
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Hvis du fortsætter med nedgraderingen, vil du miste adgang til betalte funktioner i ${ MAIL_APP_NAME } og ${ VPN_APP_NAME }."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Hvis du fortsætter med nedgraderingen, vil du miste adgang til betalte funktioner i ${ MAIL_APP_NAME }, herunder ekstra lagerplads og filtre."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Hvis du fortsætter med nedgraderingen, vil du miste adgang til betalte funktioner i ${ VPN_APP_NAME }."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importer ${ calendarCount } af ${ totalCalendarsCount } kalender",
@@ -6433,9 +6376,6 @@
       "Share this page to let others book time in your calendar. You can find and edit it in the sidebar under Booking pages.": [
         "Del denne side for at lade andre reservere tid i din kalender. Du kan finde og redigere den i sidebjælken under reservationssider."
       ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Eftersom du er en loyal bruger, har din konto ekstra features aktiveret."
-      ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Nogle regeringer blokerer eller begrænser adgangen til visse websteder. En VPN hjælper med at omgå censur, samtidig med at din aktivitet og identitet holdes privat."
       ],
@@ -6650,6 +6590,9 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prøv nye ${ BRAND_NAME } funktioner, opdateringer og produkter, før de bliver frigivet til offentligheden. Dette vil genindlæse applikationen"
       ],
+      "UnionPay logo": [
+        "UnionPay logo"
+      ],
       "Upgrade anytime to bring over the rest": [
         "Opgrader når som helst for at overføre resten"
       ],
@@ -6709,6 +6652,9 @@
       ],
       "We'll email you once import is complete.": [
         "Vi sender dig en e-mail, når importen er færdig."
+      ],
+      "We'll get back to you shortly.": [
+        "Tak! Vi vender tilbage til dig inden længe."
       ],
       "We'll notify you when the import is done.": [
         "Vi giver dig besked, når importen er færdig."
@@ -6856,9 +6802,6 @@
       "You may be redirected to your bank’s website.": [
         "Du vil muligvis blive omdirigeret til din banks hjemmeside."
       ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Du skal deaktivere eller fjerne eventuelle yderligere ${ MAIL_APP_NAME }-brugere, adresser og brugerdomæner, før du kan nedgradere."
-      ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Du har tidligere afvist denne invitation. Bed ejeren om en ny invitation"
       ],
@@ -6940,6 +6883,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Din filer vil blive krypteret og derefter gemt"
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "Din gratis prøveperiode er afsluttet. Abonnér nu så dit team beholder adgang, og deres konti forbliver sikre."
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
         "Din gratis prøveperiode blev konverteret til et ${ cycle }-måneders abonnement. Din fornyelsesdato er ${ nextBillingDate }."
@@ -7249,6 +7195,12 @@
       "All-day event notifications": [
         "Notifikationer for heldagsbegivenheder"
       ],
+      "Amount": [
+        "Beløb"
+      ],
+      "Amount due": [
+        "Forfaldent beløb"
+      ],
       "Anderson": [
         "Andersen"
       ],
@@ -7359,6 +7311,9 @@
       ],
       "Credits": [
         "Kreditter"
+      ],
+      "Credits used": [
+        "Kredit forbrugt"
       ],
       "Date and time": [
         "Dato og tid"
@@ -7595,6 +7550,9 @@
       "Phone number": [
         "Telefonnummer"
       ],
+      "Please share any feedback to help us improve.": [
+        "Del gerne feedback, så vi kan forbedre os."
+      ],
       "Port": [
         "Port"
       ],
@@ -7733,6 +7691,9 @@
       "What happened?": [
         "Hvad skete der?"
       ],
+      "Why would you like to cancel?": [
+        "Hvorfor ønsker du at opsige?"
+      ],
       "Your calendar URL": [
         "Din kalender-URL"
       ],
@@ -7848,6 +7809,9 @@
       ],
       "clearing your browser cache": [
         "rydder din browser-cache"
+      ],
+      "Customer Support": [
+        "Kundesupport"
       ],
       "Enforcing 2FA for organizations": [
         "Gennemtvingelse af 2FA for organisationer"
@@ -8391,31 +8355,11 @@
       ]
     },
     "new_plans: action": {
-      "Delete account": [
-        "Slet konto"
-      ],
-      "Downgrade account": [
-        "Nedgradér konto"
-      ],
       "Get ${ BRAND_NAME } for free": [
         "Få ${ BRAND_NAME } gratis"
       ],
       "Get ${ planName }": [
         "Få ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Behold ${ plan }"
-      ],
-      "Keep account": [
-        "Behold konto"
-      ],
-      "Switch plan": [
-        "Skift abonnement"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
       ]
     },
     "new_plans: feature": {
@@ -8952,18 +8896,6 @@
       "For next-level password management and identity protection.": [
         "For avanceret adgangskodehåndtering og identitetsbeskyttelse."
       ],
-      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
-        "Hvis du sletter din konto, mister du alle fordelene ved ${ visionary }-abonnementet, og det vil ikke være tilgængeligt, hvis du opretter en ny konto."
-      ],
-      "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
-        "Hvis du nedgraderer din konto, mister du alle fordele ved ${ visionary }-abonnementet, og det vil ikke være tilgængeligt, hvis du forsøger at abonnere igen."
-      ],
-      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
-        "Hvis du skifter til et andet abonnement mister du alle fordelene ved ${ visionary }-abonnementet og kan ikke skifte tilbage til ${ visionary }."
-      ],
-      "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
-        "Vores ${ visionary }-abonnement er ikke længere tilgængeligt for nye abonnenter, da det er et særligt abonnement for oprindelige ${ BRAND_NAME }-brugere med særlige funktioner og fordele."
-      ],
       "Pay once, secure your passwords and identity forever.": [
         "Betal én gang, beskyt dine adgangskoder og identitet for evigt."
       ],
@@ -8993,12 +8925,6 @@
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
         "Ubegrænset privatliv og mere lagerplads til op til 2 personer."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
-        "Du drager fordel af en kampagnepris på dit nuværende abonnement. Hvis du sletter din konto, mister du din kampagnepris, og den vil ikke være tilgængelig, hvis du opretter en ny konto."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
-        "Du drager fordel af en kampagnepris for dit nuværende abonnement. Hvis du nedgraderer din konto, mister du din kampagnepris, og den vil ikke være tilgængelig, hvis du forsøger at abonnere igen."
       ]
     },
     "new_plans: label": {
@@ -9018,20 +8944,11 @@
       ]
     },
     "new_plans: title": {
-      "Delete account?": [
-        "Slet konto?"
-      ],
-      "Downgrade account?": [
-        "Nedgradér konto?"
-      ],
       "Review subscription": [
         "Gennemgå abonnement"
       ],
       "Review subscription and pay": [
         "Gennemgå abonnement og betal"
-      ],
-      "Switch plans?": [
-        "Skift abonnement?"
       ]
     },
     "new_plans: tooltip": {
@@ -10191,8 +10108,8 @@
       ]
     },
     "Payments.iDEAL": {
-      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
-        "Ved at bekræfte autoriserer du ${ BRAND_NAME } og Stripe, vores betalingstjenesteudbyder, til at hæve fremtidige betalinger for dit abonnement fra denne bankkonto med SEPA Direct Debit, og at banken kan debitere de betalinger. Din første betaling forfalder fra ${ IDEAL_WERO_BRAND_NAME } nu. Dit abonnement fornyes automatisk indtil du opsiger; vi giver dig besked før hver betaling. For Direct Debit-opkrævninger kan du anmode om en refundering fra din bank indenfor 8 uger af debiteringsdatoen efter din og din banks aftalevilkår. Dette gælder ikke for den betaling med ${ IDEAL_WERO_BRAND_NAME }, som du er i gang med nu."
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Ved at bekræfte autoriserer du ${ BRAND_NAME } og Stripe, vores betalingstjenesteudbyder, til at hæve fremtidige betalinger for dit abonnement fra denne bankkonto med SEPA Direct Debit, og at banken kan debitere de betalinger. Din første betaling forfalder fra ${ IDEAL_WERO_BRAND_NAME } nu. Dit abonnement fornyes automatisk indtil du opsiger, og vi giver dig besked før hver betaling. For Direct Debit-opkrævninger kan du anmode om en refundering fra din bank indenfor 8 uger af debiteringsdatoen efter din og din banks aftalevilkår. Dette gælder ikke for den betaling med ${ IDEAL_WERO_BRAND_NAME }, som du er i gang med nu."
       ]
     },
     "Payments.info": {
@@ -10430,6 +10347,9 @@
       ],
       "Please select a country": [
         "Vælg venligst et land"
+      ],
+      "Please select the main reason": [
+        "Vælg venligst hovedårsagen"
       ],
       "Postal code": [
         "Postnummer"
@@ -11298,9 +11218,6 @@
       "upgrade for more storage": [
         "opgrader for at få mere lagerplads"
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Vi tilføjer kreditten for den resterende tid til din ${ BRAND_NAME } Konto."
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "Du har stadig **${ daysRemaining }** dag tilbage på dit **${ currentPlanName }**-abonnement.",
         "Du har stadig **${ daysRemaining }** dage tilbage på dit **${ currentPlanName }**-abonnement"
@@ -11887,6 +11804,9 @@
       "Invitation sent and participants added to all events": [
         "Invitation sendt og deltagere tilføjet til alle begivenheder"
       ],
+      "Invoice paid": [
+        "Faktura betalt"
+      ],
       "Keyboard shortcuts preferences updated": [
         "Indstillinger for tastaturgenveje opdateret"
       ],
@@ -11931,9 +11851,6 @@
       ],
       "You have successfully canceled your subscription.": [
         "Du har nu opsagt dit abonnement."
-      ],
-      "You have successfully unsubscribed": [
-        "Du har afmeldt dig"
       ]
     },
     "Suffix": {
@@ -12261,12 +12178,6 @@
       "Configure migration": [
         "Konfigurer migration"
       ],
-      "Confirm downgrade": [
-        "Bekræft nedgradering"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Bekræft tab af ${ BRAND_NAME }-bonusser"
-      ],
       "Connect apps and devices": [
         "Forbind apps og enheder"
       ],
@@ -12281,6 +12192,9 @@
       ],
       "Contact group": [
         "Kontaktgruppe"
+      ],
+      "Contact us": [
+        "Kontakt os"
       ],
       "Contacts": [
         "Kontakter"
@@ -12367,9 +12281,6 @@
       ],
       "Downgrade account": [
         "Nedgradér konto"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "Nedgrader til ${ downgradedPlanName }?"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Download ${ DRIVE_APP_NAME }-apps"
@@ -12588,6 +12499,9 @@
       "Participants cannot be notified": [
         "Deltagere kan ikke underrettes"
       ],
+      "Pay invoice": [
+        "Betal faktura"
+      ],
       "Payment failed": [
         "Betaling mislykkedes"
       ],
@@ -12644,6 +12558,9 @@
       ],
       "Request new code": [
         "Anmod om ny kode"
+      ],
+      "Request sent": [
+        "Anmodning sendt"
       ],
       "Reshare your calendars": [
         "Gendel dine kalendere"
@@ -12758,6 +12675,9 @@
       ],
       "Start import process": [
         "Start importeringsprocessen"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "Abonnér på ${ planTitle }"
       ],
       "Subscription canceled": [
         "Abonnement annulleret"
@@ -13139,6 +13059,20 @@
       ],
       "Open in a new tab": [
         "Åbn i en ny fane"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Jeg fandt en anden tjeneste, som jeg synes bedre om"
+      ],
+      "It’s missing a key feature": [
+        "Den mangler en nøglefunktion"
+      ],
+      "It’s too expensive": [
+        "Det er for dyrt"
+      ],
+      "Other": [
+        "Andet"
       ]
     },
     "VPN Plan Feature": {

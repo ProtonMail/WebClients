@@ -438,6 +438,12 @@
       "Join": [
         "Pripojiť sa"
       ],
+      "Join and leave sounds": [
+        "Zvuky pri vstupe a odchode"
+      ],
+      "Join in browser": [
+        "Pripojiť sa cez prehliadač"
+      ],
       "Join meeting": [
         "Pripojiť sa k schôdzi"
       ],
@@ -470,6 +476,9 @@
       ],
       "Lower hand": [
         "Zložiť ruku"
+      ],
+      "Meeting debug": [
+        "Ladenie schôdze"
       ],
       "Meeting info": [
         "Informácie o schôdzi"
@@ -512,6 +521,9 @@
       ],
       "Open mention from ${ senderName } in chat": [
         "Otvoriť zmienku od ${ senderName } v chate"
+      ],
+      "Open this meeting in the desktop app": [
+        "Otvoriť túto schôdzku v aplikácii pre počítač"
       ],
       "Participants": [
         "Účastníci"
@@ -708,6 +720,9 @@
       "Start meeting": [
         "Začať stretnutie"
       ],
+      "Start meeting in browser": [
+        "Spustiť schôdzku v prehliadači"
+      ],
       "Start new meeting": [
         "Začať novú schôdzu"
       ],
@@ -859,6 +874,9 @@
       ],
       "Incoming video": [
         "Prichádzajúce video"
+      ],
+      "Join and leave sounds": [
+        "Zvuky pri vstupe a odchode"
       ],
       "Leave Meeting": [
         "Opustiť stretnutie"
@@ -1975,6 +1993,12 @@
       "Cannot verify who uploaded this file": [
         "Nie je možné overiť, kto tento súbor nahral"
       ],
+      "Check your audio settings and try again": [
+        "Skontrolujte nastavenia zvuku a skúste to znova"
+      ],
+      "Connection lost — captions will resume when reconnected": [
+        "Pripojenie sa prerušilo — titulky sa opäť začnú zobrazovať po obnovení pripojenia"
+      ],
       "Copy operation aborted": [
         "Operácia kopírovania bola prerušená"
       ],
@@ -2212,6 +2236,9 @@
       "Microphone access is blocked. Allow it in your browser settings.": [
         "Prístup k mikrofónu je blokovaný. Povoľte ho v nastaveniach prehliadača."
       ],
+      "Microphone not detected": [
+        "Mikrofón nebol rozpoznaný"
+      ],
       "Missing inviter email": [
         "Chýba emailová adresa pozývajúceho"
       ],
@@ -2245,6 +2272,9 @@
       "Not a valid number": [
         "Neplatné číslo"
       ],
+      "Not enough storage space to record. Free up space and try again.": [
+        "Nie je dostatok voľného miesta na nahrávanie. Uvoľnite miesto a skúste to znova."
+      ],
       "Only admins can convert external invitations": [
         "Externé pozvánky môžu konvertovať len správcovia"
       ],
@@ -2274,6 +2304,9 @@
       ],
       "Please allow screen sharing in your system permissions, then try again": [
         "Povoľte, prosím, zdieľanie obrazovky v systémových povoleniach a potom to skúste znova"
+      ],
+      "Recording stopped because it could not be saved. We kept it up to this point.": [
+        "Nahrávanie sa zastavilo, pretože sa nedalo uložiť. Do tohto bodu sme v ňom pokračovali."
       ],
       "Renaming root item is not allowed": [
         "Pomenovanie koreňovej položky nie je povolené"
@@ -2398,8 +2431,14 @@
       "Too many server requests, please try again later": [
         "Príliš veľa požiadaviek na server, skúste to neskôr, prosím"
       ],
+      "Try turning live captions off and on again.": [
+        "Skúste vypnúť a opäť zapnúť živé titulky."
+      ],
       "Try using only letters, numerals, and _.-": [
         "Skúste používať iba písmená, číslice a _.-"
+      ],
+      "Unable to generate captions": [
+        "Nie je možné vygenerovať titulky"
       ],
       "Unknown error": [
         "Neznáma chyba"
@@ -2659,8 +2698,14 @@
       "${ MEET_APP_NAME } needs microphone access so others can hear you during the call. You can turn it off at any time.": [
         "${ MEET_APP_NAME } potrebuje prístup k mikrofónu, aby vás ostatní počas hovoru počuli. Túto funkciu môžete kedykoľvek vypnúť."
       ],
+      "${ MEET_APP_NAME } needs screen recording access so you can share your screen during the call. After you allow it, macOS will ask you to reopen the app.": [
+        "${ MEET_APP_NAME } potrebuje prístup k nahrávaniu obrazovky, aby ste mohli počas hovoru zdieľať svoju obrazovku. Po udelení povolenia vás systém macOS vyzve, aby ste aplikáciu znovu otvorili."
+      ],
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } potrebuje na spustenie WebRTC. Aktualizujte, prosím, svoj prehliadač alebo zariadenie na verziu, ktorá podporuje WebRTC, vyskúšajte iný prehliadač alebo deaktivujte všetky rozšírenia, ktoré by mohli blokovať jeho fungovanie."
+      ],
+      "${ meetingName } has ended": [
+        "Schôdza ${ meetingName } skončila"
       ],
       "${ mlsMemberCount } member": [
         "${ mlsMemberCount } člen",
@@ -2746,11 +2791,17 @@
       "Allow camera access to preview your background": [
         "Povoľte kamere prístup k náhľadu vášho pozadia"
       ],
+      "Already in the app? You can close this tab.": [
+        "Už ste v aplikácii? Túto kartu môžete zavrieť."
+      ],
       "Anonymous ${ particle } ${ participantNumber }": [
         "Anonymný účastník ${ particle } ${ participantNumber }"
       ],
       "Anyone with the link can join immediately": [
         "Každý, kto má tento odkaz, sa môže ihneď pripojiť"
+      ],
+      "App didn't open?": [
+        "Aplikácia sa neotvorila?"
       ],
       "Approve participants before they can join": [
         "Schváliť účastníkov, aby sa mohli pripojiť"
@@ -2793,6 +2844,9 @@
       ],
       "Camera permission denied": [
         "Povolenie kamery zamietnuté"
+      ],
+      "Captions on": [
+        "Titulky zapnuté"
       ],
       "Changes are staged. Apply to rebuild the preview with the new constants.": [
         "Zmeny sú rozdelené do fáz. Použite príkaz na prekreslenie náhľadu s novými konštantami."
@@ -2883,6 +2937,9 @@
       ],
       "End the meeting for everyone?": [
         "Ukončiť schôdzu pre všetkých?"
+      ],
+      "End to end encrypted chat": [
+        "End-to-end šifrovaný chat."
       ],
       "End-to-end encryption is active for audio and video.": [
         "End-to-end šifrovanie je aktívne pre audio a video."
@@ -3010,6 +3067,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Načítanie kalendára, počkajte, prosím. V novej karte budete presmerovaní na našu plánovaciu platformu Calendly."
       ],
+      "Loading captions…": [
+        "Načítavanie titulkov…"
+      ],
       "Loading meeting details...": [
         "Načítavanie podrobnosti o schôdzi..."
       ],
@@ -3060,6 +3120,9 @@
       ],
       "Meeting recordings aren’t supported in Firefox.": [
         "Nahrávanie schôdzí nie je v prehliadači Firefox podporované."
+      ],
+      "Meeting recordings aren’t supported in Safari private mode.": [
+        "V súkromnom režime prehliadača Safari nie je možné schôdze zaznamenávať."
       ],
       "Meeting time is up": [
         "Čas schôdzky vypršal"
@@ -3162,6 +3225,9 @@
       ],
       "Now using ${ first }.": [
         "Teraz používate ${ first }."
+      ],
+      "Only a partial meeting recording was available.": [
+        "K dispozícii bol len čiastočný záznam zo schôdze."
       ],
       "Only meetings you created appear here": [
         "Tu sa zobrazia len vami vytvorené schôdzky"
@@ -3367,6 +3433,9 @@
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "Toto je end-to-end šifrovaný chat s dočasnými správami, ktoré zmiznú po ukončení hovoru."
       ],
+      "This meeting has a time limit. This call will disconnect soon.": [
+        "Táto schôdzka má časové obmedzenie. Hovor sa čoskoro ukončí."
+      ],
       "This meeting has a waiting room": [
         "Táto schôdza má čakáreň"
       ],
@@ -3396,6 +3465,9 @@
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Týmto sa odhlásite zo všetkých aktuálne prihlásených účtov."
+      ],
+      "Time is up for ${ meetingName }": [
+        "Čas schôdze ${ meetingName } vypršal"
       ],
       "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
         "Na vytvorenie miestnosti budete potrebovať **bezplatný účet ${ BRAND_NAME }**, aby sme ju mohli uložiť. Zaberie to len pár sekúnd."
@@ -3447,6 +3519,9 @@
       ],
       "Virtual background initializing": [
         "Inicializácia virtuálneho pozadia"
+      ],
+      "Waiting for speech…": [
+        "Čakám na rozprávanie…"
       ],
       "Waiting for the host to admit you. The host has been notified that you're waiting.": [
         "Čakáte, kým vás hostiteľ prijme. Hostiteľ bol informovaný, že čakáte."
@@ -3502,11 +3577,17 @@
       "You have too many meetings in progress": [
         "Máte príliš veľa prebiehajúcich schôdzí"
       ],
+      "You left ${ meetingName }": [
+        "Opustili ste ${ meetingName }"
+      ],
       "You left the meeting": [
         "Odišli ste zo schôdzky"
       ],
       "You need a paid ${ MEET_SHORT_APP_NAME } or Workspace plan for this feature. Contact your organization admin to upgrade.": [
         "Na túto funkciu potrebujete platený plán ${ MEET_SHORT_APP_NAME } alebo Workspace. Ak chcete inovovať, kontaktujte správcu svojej organizácie."
+      ],
+      "You were removed from ${ meetingName }": [
+        "Boli ste vylúčení zo schôdze ${ meetingName }."
       ],
       "You were removed from the meeting": [
         "Boli ste vylúčení zo schôdze."
@@ -3728,6 +3809,9 @@
       ],
       "Live caption agent": [
         "Agent živých titulkov"
+      ],
+      "Live captions": [
+        "Živé titulky"
       ],
       "Manage recordings": [
         "Spravovať nahrávky"
@@ -4231,6 +4315,9 @@
       ],
       "Allow microphone": [
         "Povoliť mikrofón"
+      ],
+      "Allow screen recording": [
+        "Povoliť nahrávanie obrazovky"
       ],
       "Are you sure?": [
         "Ste si istí?"

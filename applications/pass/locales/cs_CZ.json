@@ -25,12 +25,6 @@
       ]
     },
     "Action": {
-      "${ PASS_SHORT_APP_NAME } for Android": [
-        "${ PASS_SHORT_APP_NAME } pro Android"
-      ],
-      "${ PASS_SHORT_APP_NAME } for iOS": [
-        "${ PASS_SHORT_APP_NAME } pro iOS"
-      ],
       "Accept": [
         "Přijmout"
       ],
@@ -315,6 +309,12 @@
       ],
       "Don't show this again": [
         "Příště nezobrazovat"
+      ],
+      "Download for macOS": [
+        "Stáhnout pro macOS"
+      ],
+      "Download for Windows": [
+        "Stáhnout pro Windows"
       ],
       "Download this CSV template": [
         "Stáhnout tuto CSV šablonu"

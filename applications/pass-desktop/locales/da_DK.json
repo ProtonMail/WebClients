@@ -25,12 +25,6 @@
       ]
     },
     "Action": {
-      "${ PASS_SHORT_APP_NAME } for Android": [
-        "${ PASS_SHORT_APP_NAME } til Android"
-      ],
-      "${ PASS_SHORT_APP_NAME } for iOS": [
-        "${ PASS_SHORT_APP_NAME } til iOS"
-      ],
       "Accept": [
         "Accepter"
       ],
@@ -346,6 +340,15 @@
       "Done": [
         "Udført"
       ],
+      "Download for Linux": [
+        "Download til Linux"
+      ],
+      "Download for macOS": [
+        "Download til macOS"
+      ],
+      "Download for Windows": [
+        "Download til Windows"
+      ],
       "Download this CSV template": [
         "Download denne CSV-skabelon"
       ],
@@ -555,6 +558,9 @@
       ],
       "Open navigation": [
         "Åbn navigation"
+      ],
+      "Open platform selection dropdown": [
+        "Åbn platform-vælgeren"
       ],
       "Organize vaults": [
         "Organisér bokse"
@@ -1059,6 +1065,9 @@
       ],
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Godkendelse mislykkedes. Bekræft din anden adgangskode for at fortsætte med eksporten"
+      ],
+      "Biometric authentication cancelled.": [
+        "Biometrisk godkendelse annulleret."
       ],
       "Biometric authentication failed.": [
         "Biometrisk godkendelse mislykkedes."
@@ -2208,6 +2217,9 @@
       "invites you to access items in": [
         "inviterer dig til at tilgå elementer i"
       ],
+      "iOS and Android Apps": [
+        "iOS- og Android-apps"
+      ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Det ser ud til, at du allerede er logget ind på ${ PASS_APP_NAME }. Hvis du prøver at logge ind med en anden konto, bedes du logge ud af udvidelsen først."
       ],
@@ -2310,7 +2322,8 @@
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Hvis du flytter et element til en anden boks, slettes dets sikre links."
+        "Flyttes et element til en anden boks, slettes dets sikre links.",
+        "Flyttes elementer til en anden boks, slettes deres sikre links."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -2605,6 +2618,12 @@
       ],
       "Restoring trashed items...": [
         "Gendanner elementer i papirkurven..."
+      ],
+      "Scan to download": [
+        "Skan for at downloade"
+      ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "Scan for at downloade ${ PASS_APP_NAME } til iOS og Android"
       ],
       "Secure links": [
         "Sikre links"
@@ -3727,11 +3746,17 @@
       "LinkedIn account": [
         "LinkedIn-konto"
       ],
+      "Linux": [
+        "Linux"
+      ],
       "Login": [
         "Login"
       ],
       "Logins": [
         "Logins"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Mailboxes": [
         "Postkasser"
@@ -4320,6 +4345,9 @@
       ],
       "WiFi network": [
         "WiFi-netværk"
+      ],
+      "Windows": [
+        "Windows"
       ],
       "Work details": [
         "Arbejdsdetaljer"
@@ -5119,6 +5147,12 @@
       ],
       "Folder options": [
         "Mappeindstillinger"
+      ],
+      "Get mobile and desktop apps": [
+        "Få mobil- og desktop-apps"
+      ],
+      "Get mobile apps": [
+        "Hent mobilapps"
       ],
       "Get Started": [
         "Kom i gang"

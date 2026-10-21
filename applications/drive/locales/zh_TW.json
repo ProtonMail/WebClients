@@ -330,9 +330,6 @@
       "Done": [
         "完成"
       ],
-      "Downgrade": [
-        "降級"
-      ],
       "Download": [
         "下載"
       ],
@@ -714,9 +711,6 @@
       "Remove access": [
         "移除存取權限"
       ],
-      "Remove bonuses": [
-        "移除贈品"
-      ],
       "Remove button": [
         "移除按鈕"
       ],
@@ -926,6 +920,9 @@
       ],
       "Submit report": [
         "提交通報"
+      ],
+      "Subscribe": [
+        "訂閱"
       ],
       "Subscribe now": [
         "立即訂閱"
@@ -1249,11 +1246,6 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "進階版密碼管理器"
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "30 日體驗不滿意退款服務"
       ]
     },
     "BF2024: Deal details": {
@@ -3322,6 +3314,9 @@
       "Operation failed, try again later": [
         "作業失敗。稍後再試。"
       ],
+      "Organization does not have enough seats available": [
+        "組織沒有足夠的可用座席"
+      ],
       "Organization key is not decrypted": [
         "組織金鑰未解密"
       ],
@@ -3622,6 +3617,9 @@
       "VAT number must start with ${ prefixes }": [
         "增值稅號碼必須以 ${ prefixes } 開頭"
       ],
+      "Verification keys for ${ signatureType } are not available": [
+        "無可用於 ${ signatureType } 種類的金鑰驗證"
+      ],
       "We couldn’t send a verification code using this method.": [
         "我們無法使用此方法傳送驗證碼。"
       ],
@@ -3910,14 +3908,6 @@
         "切換方案"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "家庭群組未能識別。請再試一次。"
-      ],
-      "Organization not recognized. Try again.": [
-        "組織未能識別。請再試一次。"
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } 群組"
@@ -3981,30 +3971,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "您的帳號已使用 ${ usedSpace } 的儲存空間，這超過了為您分配的 ${ inviteSpace }。刪除一些資料或要求方案管理員增加您的儲存空間。"
-      ]
-    },
-    "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "請輸入家庭群組名稱以作確認"
-      ],
-      "Enter organization name to confirm": [
-        "請輸入組織名稱以作確認"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "這將會永久刪除與您的組織關聯的所有子使用者、帳號與資料。"
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "這將會為每一家庭成員移除所有 ${ BRAND_NAME } 尊享功能。"
-      ]
-    },
-    "familyOffer_2023:Title": {
-      "Delete family group?": [
-        "要刪除家庭群組嗎？"
-      ],
-      "Delete organization?": [
-        "要刪除組織嗎？"
       ]
     },
     "Feature": {
@@ -4488,6 +4454,9 @@
       ]
     },
     "Import status": {
+      "Has errors": [
+        "有錯誤"
+      ],
       "In progress": [
         "進行中"
       ],
@@ -4578,6 +4547,9 @@
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } 包含 ${ BRAND_NAME } Scribe 撰稿助理"
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } 包含撰稿助理"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } 撰寫幫手"
@@ -4672,14 +4644,8 @@
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "每有一位朋友訂閱，**您即可獲得 ${ referrerRewardAmount }** 可用額度。"
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } 附贈的儲存空間"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } 紅利加碼連線數至 ${ VPN_APP_NAME } (您即可享受多設備同時連上 VPN)"
-      ],
-      "30-day money-back guarantee.": [
-        "30天退款保證。"
+      "1 device per user": [
+        "1 台裝置每位使用者"
       ],
       "A number will be added to the filename": [
         "將在檔案名稱中加入數字"
@@ -4803,9 +4769,6 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "提升您組織機構的品牌形象，為您的使用者創造更一致的線上體驗。"
-      ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "一旦降級至免費方案，您將永久失去這些優惠，即便您日後再次升級也是如此。"
       ],
       "Calendar side panel": [
         "行事曆側面板"
@@ -4947,9 +4910,6 @@
       ],
       "Downgrade": [
         "降級"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "降級將中斷任何與付費 ${ VPN_APP_NAME } 伺服器的連線。"
       ],
       "Download current logs": [
         "下載最近的日誌"
@@ -5094,15 +5054,6 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若您在收件匣中找不到該電郵，請查看「垃圾郵件」資料夾。"
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "若您仍然選擇降級，你將會失去 ${ MAIL_APP_NAME } 與 ${ VPN_APP_NAME } 的付費功能。"
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "若您仍然選擇降級，你將會失去 ${ MAIL_APP_NAME } 的付費功能，包含額外的儲存空間與郵件篩選器。"
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "若您仍然選擇降級，你將會失去 ${ VPN_APP_NAME } 的付費功能。"
       ],
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
         "若你移除自己，你將失去對「${ fileName }」的存取權，且除非擁有者再次與你共享，否則你將無法重新開啟它。"
@@ -5503,9 +5454,6 @@
       "Signature check will be ignored": [
         "簽章檢查將會忽略"
       ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "為答謝您的長期支援，您的帳號已啟用額外的功能。"
-      ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "部分政府會封鎖或限制存取特定網站。VPN 有助於繞過審查，同時保持您的活動和身分私密。"
       ],
@@ -5797,6 +5745,9 @@
       "We'll email you once import is complete.": [
         "當您匯入完成將電子郵件通知您。"
       ],
+      "We'll get back to you shortly.": [
+        "我們會盡快回覆您。"
+      ],
       "We'll notify you when the import is done.": [
         "我們將會在匯入完成後通知你。"
       ],
@@ -5901,9 +5852,6 @@
       ],
       "You may be redirected to your bank’s website.": [
         "您或會重新導向至您的銀行網站。"
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "您必須先停用或移除任何額外的 ${ MAIL_APP_NAME } 使用者、電郵位址及自訂網域，方可降級。"
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "您將於此日失去存取${ planTitle }功能"
@@ -6144,6 +6092,12 @@
       "Allow editors to change permissions and share": [
         "允許編輯者變更權限和共享"
       ],
+      "Amount": [
+        "金額"
+      ],
+      "Amount due": [
+        "應付金額"
+      ],
       "Anderson": [
         "安德松"
       ],
@@ -6275,6 +6229,9 @@
       ],
       "Credits": [
         "額度"
+      ],
+      "Credits used": [
+        "已使用儲值"
       ],
       "Delete": [
         "刪除"
@@ -6525,6 +6482,9 @@
       "Please provide full details to help us take appropriate action": [
         "請提供完整詳情，以助我們採取適當行動"
       ],
+      "Please share any feedback to help us improve.": [
+        "請提供任何意見回饋以協助我們改進。"
+      ],
       "Port": [
         "連接埠"
       ],
@@ -6665,6 +6625,9 @@
       ],
       "What happened?": [
         "發生了甚麼問題？"
+      ],
+      "Why would you like to cancel?": [
+        "為什麼您想要取消呢？"
       ],
       "Your IP": [
         "您的 IP"
@@ -7263,38 +7226,20 @@
         "一般 VPN 速度"
       ]
     },
-    "new_plans: action": {
-      "Delete account": [
-        "刪除帳號"
-      ],
-      "Downgrade account": [
-        "降級帳號"
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        "取得免費的 ${ BRAND_NAME }"
-      ],
-      "Get ${ planName }": [
-        "取得 ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "保留 ${ plan }"
-      ],
-      "Keep account": [
-        "保留帳號"
-      ],
-      "Switch plan": [
-        "切換方案"
-      ]
-    },
     "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降級後的方案為 ${ downgradedPlanName }"
-      ],
       "Plans starting from ${ priceDrivePlus }": [
         "方案從${ priceDrivePlus }起"
       ],
       "Upgrade": [
         "升級"
+      ]
+    },
+    "new_plans: action": {
+      "Get ${ BRAND_NAME } for free": [
+        "取得免費的 ${ BRAND_NAME }"
+      ],
+      "Get ${ planName }": [
+        "取得 ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -7807,18 +7752,6 @@
       "For next-level password management and identity protection.": [
         "用於下一個層級的密碼管理與身份保護。"
       ],
-      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
-        "若你將帳號刪除，你將失去所有 ${ visionary } 帶來的福利，且即使你決定重新創建帳號，也不能再次選擇該方案。"
-      ],
-      "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
-        "若你將帳號降級，你將失去所有 ${ visionary } 帶來的福利，且在你決定重新訂購授權時，該方案不再可用。"
-      ],
-      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
-        "如果你切換到不同的方案，你將失去所有 ${ visionary } 方案的福利，且無法切換回 ${ visionary } 。"
-      ],
-      "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
-        "我們的 ${ visionary } 方案不再可用於新的訂閱者，這是一個給予原 ${ BRAND_NAME } 使用者的特殊方案，具有特別功能與福利。"
-      ],
       "Pay once, secure your passwords and identity forever.": [
         "一次性付款，永久保護您的密碼和身分。"
       ],
@@ -7848,12 +7781,6 @@
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
         "無限隱私與更多儲存空間，最多提供給至多 2 人使用。"
-      ],
-      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
-        "你正在當前的方案中享受促銷價格。若你刪除你的帳號，你將會永遠失去此促銷價，即使你決定創建一個新帳號也是。"
-      ],
-      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
-        "你正在當前的方案中享受促銷價格。若你將帳號降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
       ]
     },
     "new_plans: label": {
@@ -7873,20 +7800,11 @@
       ]
     },
     "new_plans: title": {
-      "Delete account?": [
-        "要刪除帳號？"
-      ],
-      "Downgrade account?": [
-        "確定要換成精簡功能的帳號？"
-      ],
       "Review subscription": [
         "檢閱訂購授權"
       ],
       "Review subscription and pay": [
         "檢視訂購授權與繳款"
-      ],
-      "Switch plans?": [
-        "切換方案？"
       ]
     },
     "new_plans: tooltip": {
@@ -8850,6 +8768,9 @@
       ]
     },
     "Payments.Saved payment method details": {
+      "Bank transfer - ${ iban }": [
+        "匯款 - ${ iban }"
+      ],
       "Google Pay - card ending in ${ Last4 }": [
         "Google Pay - 卡片於 ${ Last4 } 結束"
       ]
@@ -9011,6 +8932,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "請描述問題並附上相關的錯誤訊息 (如有)"
+      ],
+      "Please select the main reason": [
+        "請選擇主要原因"
       ],
       "Postal code": [
         "郵遞區號"
@@ -9785,9 +9709,6 @@
       "upgrade for more storage": [
         "升級以增加儲存"
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "我們將把剩餘時間的可用額度加入到您的 ${ BRAND_NAME } 帳號。"
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "您的**${ currentPlanName }** 方案尚餘 **${ daysRemaining }** 天。"
       ],
@@ -10263,6 +10184,9 @@
       "Invitation rejected": [
         "邀請已拒絕"
       ],
+      "Invoice paid": [
+        "帳單已付"
+      ],
       "Payment method added": [
         "付款方式已加入"
       ],
@@ -10292,9 +10216,6 @@
       ],
       "You have successfully canceled your subscription.": [
         "您已完成取消訂購授權。"
-      ],
-      "You have successfully unsubscribed": [
-        "您已成功取消訂購"
       ]
     },
     "Suffix": {
@@ -10513,6 +10434,9 @@
       "Birthday": [
         "生日"
       ],
+      "Black Friday": [
+        "黑色星期五"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "取消 ${ MAIL_SHORT_APP_NAME } 訂購授權"
       ],
@@ -10564,12 +10488,6 @@
       "Configure migration": [
         "設置遷移"
       ],
-      "Confirm downgrade": [
-        "確認降級"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "確認失去 ${ BRAND_NAME } 獎勵"
-      ],
       "Connect apps and devices": [
         "連線應用程式和裝置"
       ],
@@ -10584,6 +10502,9 @@
       ],
       "Contact group": [
         "聯絡人群組"
+      ],
+      "Contact us": [
+        "聯絡我們"
       ],
       "Contacts": [
         "通訊錄"
@@ -10707,9 +10628,6 @@
       ],
       "Downgrade account": [
         "降級帳號"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "降級後的方案為 ${ downgradedPlanName }?"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "下載 ${ DRIVE_APP_NAME } 應用程式"
@@ -10951,6 +10869,9 @@
       "Out of storage space": [
         "儲存空間不足"
       ],
+      "Pay invoice": [
+        "支付帳單"
+      ],
       "Payment failed": [
         "付款失敗"
       ],
@@ -11022,6 +10943,9 @@
       ],
       "Request new code": [
         "重新傳送驗證碼"
+      ],
+      "Request sent": [
+        "已送出需求"
       ],
       "Reverse charge not supported": [
         "不支援倒退修改"
@@ -11524,6 +11448,20 @@
       ],
       "Replay video": [
         "重播影片"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "我找到了另一個我更喜歡的服務"
+      ],
+      "It’s missing a key feature": [
+        "缺少關鍵功能"
+      ],
+      "It’s too expensive": [
+        "價格太貴了"
+      ],
+      "Other": [
+        "其他"
       ]
     },
     "VPN Plan Feature": {

@@ -347,9 +347,6 @@
       "Done": [
         "Ολοκληρώθηκε"
       ],
-      "Downgrade": [
-        "Υποβαθμίστε"
-      ],
       "Download": [
         "Λήψη"
       ],
@@ -737,9 +734,6 @@
       "Remove": [
         "Αφαίρεση"
       ],
-      "Remove bonuses": [
-        "Αφαιρέστε τα μπόνους"
-      ],
       "Remove button": [
         "Κουμπί αναίρεσης"
       ],
@@ -910,6 +904,9 @@
       ],
       "Submit": [
         "Υποβολή"
+      ],
+      "Subscribe": [
+        "Εγγραφή"
       ],
       "Subscribe now": [
         "Εγγραφείτε τώρα"
@@ -1329,11 +1326,6 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Premium Διαχειριστής Κωδικών Πρόσβασης"
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "Εγγύηση επιστροφής χρημάτων 30 ημερών"
       ]
     },
     "BF2024: Deal details": {
@@ -4705,14 +4697,6 @@
         "Αλλαγή πλάνου"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "Η ομάδα οικογένειας δεν αναγνωρίστηκε. Δοκιμάστε ξανά."
-      ],
-      "Organization not recognized. Try again.": [
-        "Ο οργανισμός δεν αναγνωρίστηκε. Δοκιμάστε ξανά."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } ομάδες"
@@ -4782,22 +4766,6 @@
         "Ο λογαριασμός σας χρησιμοποιεί αποθηκευτικό χώρο ${ usedSpace }, ο οποίος υπερβαίνει τα ${ inviteSpace } που σας έχουν εκχωρηθεί. Διαγράψτε ορισμένα δεδομένα ή ζητήστε από τον διαχειριστή του πλάνου να αυξήσει τον αποθηκευτικό σας χώρο."
       ]
     },
-    "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "Για επιβεβαίωση, εισαγάγετε το όνομα της ομάδας οικογένειας"
-      ],
-      "Enter organization name to confirm": [
-        "Για επιβεβαίωση, εισάγετε το όνομα του οργανισμού"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Αυτό θα διαγράψει οριστικά όλους τους υπο-χρήστες, τους λογαριασμούς και τα δεδομένα που σχετίζονται με τον οργανισμό σας."
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Αυτό θα καταργήσει όλες τις premium δυνατότητες του ${ BRAND_NAME } για κάθε μέλος της οικογένειας σας."
-      ]
-    },
     "familyOffer_2023:Onboarding Proton": {
       "Configure your family account and invite users": [
         "Διαμορφώστε τον οικογενειακό σας λογαριασμό και προσκαλέστε χρήστες"
@@ -4807,14 +4775,6 @@
       ],
       "Set up your family account": [
         "Ρυθμίστε τον οικογενειακό λογαριασμό σας"
-      ]
-    },
-    "familyOffer_2023:Title": {
-      "Delete family group?": [
-        "Διαγραφή ομάδας οικογένειας;"
-      ],
-      "Delete organization?": [
-        "Διαγραφή οργανισμού;"
       ]
     },
     "Feature": {
@@ -5540,21 +5500,11 @@
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Λαμβάνετε ${ referrerRewardAmount }** σε πιστώσεις για κάθε φίλο που εγγράφεται."
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } bonus αποθήκευση"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } σύνδεση για το ${ VPN_APP_NAME } (επιτρέπει τη σύνδεση περισσότερων συσκευών στο VPN)",
-        "+${ organization.BonusVPN } συνδέσεις για το ${ VPN_APP_NAME } (επιτρέπει τη σύνδεση περισσότερων συσκευών στο VPN)"
-      ],
       "1 device per user": [
         "1 συσκευή ανά χρήστη"
       ],
       "1 vault per user": [
         "1 κρύπτη ανά χρήστη"
-      ],
-      "30-day money-back guarantee.": [
-        "Εγγύηση επιστροφής χρημάτων εντός 30 ημερών."
       ],
       "A cancellation email will be sent to removed participants.": [
         "Ένα email ακύρωσης θα σταλεί στους συμμετέχοντες που αφαιρούνται."
@@ -5712,9 +5662,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Ενισχύστε την εταιρική ταυτότητα του οργανισμού σας και δημιουργήστε μια πιο συνεπή εμπειρία στο διαδίκτυο για τους χρήστες σας."
       ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Με την υποβάθμιση σε ένα Δωρεάν Λογαριασμό, θα χάσετε μόνιμα αυτά τα οφέλη, ακόμη και αν αναβαθμίσετε ξανά στο μέλλον."
-      ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Κοινοποιώντας όλες τις λεπτομέρειες των εκδηλώσεων αυτού του ημερολογίου, αποδέχεστε να παραχωρήσετε στην ${ BRAND_NAME } πρόσβαση στις κρυπτογραφημένες πληροφορίες του ημερολογίου."
       ],
@@ -5868,9 +5815,6 @@
       "Downgrade": [
         "Υποβαθμίστε"
       ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Η υποβάθμιση θα τερματίσει τυχόν συνδέσεις σε διακομιστές ${ VPN_APP_NAME } επί πληρωμή."
-      ],
       "Download current logs": [
         "Λήψη τρεχόντων αρχείων καταγραφής"
       ],
@@ -6021,15 +5965,6 @@
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "Εάν χάσατε την πρόσβαση στην εφαρμογή ελέγχου ταυτότητας, μπορείτε να χρησιμοποιήσετε 1 από τους 16 εφεδρικούς κωδικούς ανάκτησης που παρέχονται κατά τη ρύθμιση της ταυτοποίησης δύο παραγόντων. ${ learnMoreLink }"
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Αν προχωρήσετε με την υποβάθμιση, θα χάσετε πρόσβαση στα χαρακτηριστικά επί πληρωμή των ${ MAIL_APP_NAME } και ${ VPN_APP_NAME }."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Αν προχωρήσετε με την υποβάθμιση, θα χάσετε πρόσβαση στα χαρακτηριστικά επί πληρωμή του ${ MAIL_APP_NAME }, συμπεριλαμβανομένων των επιπρόσθετων φίλτρων και αποθηκευτικού χώρου."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Αν προχωρήσετε με την υποβάθμιση, θα χάσετε πρόσβαση στα χαρακτηριστικά επί πληρωμή του ${ VPN_APP_NAME }."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Εισαγωγή ${ calendarCount } από ${ totalCalendarsCount } ημερολόγιο",
@@ -6433,9 +6368,6 @@
       "Share this page to let others book time in your calendar. You can find and edit it in the sidebar under Booking pages.": [
         "Κοινοποιήστε αυτή τη σελίδα για να επιτρέψετε σε άλλους να κλείσουν ραντεβού στο ημερολόγιό σας. Μπορείτε να το βρείτε και να το επεξεργαστείτε στην πλαϊνή στήλη, στην ενότητα Σελίδες Κρατήσεων."
       ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Επειδή είστε πιστός χρήστης, ο λογαριασμός σας έχει ενεργοποιημένες πρόσθετες λειτουργίες."
-      ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Ορισμένες κυβερνήσεις αποκλείουν ή περιορίζουν την πρόσβαση σε ορισμένους ιστότοπους. Ένα VPN βοηθά στην παράκαμψη της λογοκρισίας, διατηρώντας παράλληλα τη δραστηριότητα και την ταυτότητά σας ιδιωτικές."
       ],
@@ -6710,6 +6642,9 @@
       "We'll email you once import is complete.": [
         "Θα σας στείλουμε μήνυμα ηλεκτρονικού ταχυδρομείου μόλις ολοκληρωθεί η εισαγωγή."
       ],
+      "We'll get back to you shortly.": [
+        "Θα επικοινωνήσουμε μαζί σας σύντομα."
+      ],
       "We'll notify you when the import is done.": [
         "Θα σας ειδοποιήσουμε όταν ολοκληρωθεί η εισαγωγή."
       ],
@@ -6856,9 +6791,6 @@
       "You may be redirected to your bank’s website.": [
         "Ενδέχεται να ανακατευθυνθείτε στον ιστότοπο της τράπεζάς σας."
       ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Για να κάνετε εφικτή την υποβάθμιση, πρέπει να απενεργοποιήσετε ή αφαιρέσετε τυχόν πλεονάζοντες χρήστες, διευθύνσεις και τομείς του ${ MAIL_APP_NAME }."
-      ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Προηγουμένως απορρίψατε αυτήν την πρόσκληση. Παρακαλούμε ζητήστε μια νέα πρόσκληση από τον κάτοχο"
       ],
@@ -6940,6 +6872,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Τα αρχεία σας θα κρυπτογραφηθούν και στη συνέχεια θα αποθηκευτούν"
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "Η δωρεάν δοκιμή σας έληξε. Κάντε εγγραφή τώρα για να διασφαλίσετε την αδιάλειπτη πρόσβαση της ομάδας σας και την ασφάλεια των λογαριασμών."
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
         "Η δωρεάν δοκιμή σας μετατράπηκε επιτυχώς σε συνδρομή διάρκειας ${ cycle } μηνών. Η ημερομηνία ανανέωσής σας είναι ${ nextBillingDate }."
@@ -7249,6 +7184,12 @@
       "All-day event notifications": [
         "Ειδοποιήσεις ολοήμερων εκδηλώσεων"
       ],
+      "Amount": [
+        "Ποσό"
+      ],
+      "Amount due": [
+        "Οφειλόμενο ποσό"
+      ],
       "Anderson": [
         "Anderson"
       ],
@@ -7359,6 +7300,9 @@
       ],
       "Credits": [
         "Πιστώσεις"
+      ],
+      "Credits used": [
+        "Χρησιμοποιημένες μονάδες"
       ],
       "Date and time": [
         "Ημερομηνία και ώρα"
@@ -7595,6 +7539,9 @@
       "Phone number": [
         "Αριθμός τηλεφώνου"
       ],
+      "Please share any feedback to help us improve.": [
+        "Μοιραστείτε τυχόν σχόλια για να μας βοηθήσετε να βελτιωθούμε."
+      ],
       "Port": [
         "Θύρα"
       ],
@@ -7732,6 +7679,9 @@
       ],
       "What happened?": [
         "Τι συνέβη;"
+      ],
+      "Why would you like to cancel?": [
+        "Γιατί θέλετε να ακυρώσετε;"
       ],
       "Your calendar URL": [
         "Η διεύθυνση URL του ημερολογίου σας"
@@ -8391,31 +8341,11 @@
       ]
     },
     "new_plans: action": {
-      "Delete account": [
-        "Διαγραφή λογαριασμού"
-      ],
-      "Downgrade account": [
-        "Υποβάθμιση λογαριασμού"
-      ],
       "Get ${ BRAND_NAME } for free": [
         "Απόκτηση ${ BRAND_NAME } δωρεάν"
       ],
       "Get ${ planName }": [
         "Απόκτηση ${ planName }"
-      ],
-      "Keep ${ plan }": [
-        "Διατήρηση ${ plan }"
-      ],
-      "Keep account": [
-        "Διατήρηση λογαριασμού"
-      ],
-      "Switch plan": [
-        "Αλλαγή προγράμματος"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Υποβάθμιση σε ${ downgradedPlanName }"
       ]
     },
     "new_plans: feature": {
@@ -8952,18 +8882,6 @@
       "For next-level password management and identity protection.": [
         "Για διαχείριση κωδικών πρόσβασης και προστασία ταυτότητας επόμενου επιπέδου."
       ],
-      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
-        "Εάν διαγράψετε τον λογαριασμό σας, θα χάσετε όλα τα οφέλη του πλάνου ${ visionary } και δε θα είναι διαθέσιμο εάν δημιουργήσετε έναν νέο λογαριασμό."
-      ],
-      "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
-        "Εάν υποβαθμίσετε τον λογαριασμό σας, θα χάσετε όλα τα οφέλη του πλάνου ${ visionary } και δε θα είναι διαθέσιμο εάν προσπαθήσετε να εγγραφείτε ξανά."
-      ],
-      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
-        "Εάν μεταβείτε σε διαφορετικό πλάνο, θα χάσετε όλα τα οφέλη του πλάνου ${ visionary } και δε θα μπορείτε να επιστρέψετε στο ${ visionary }."
-      ],
-      "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
-        "Το ${ visionary } πλάνο μας δεν είναι πλέον διαθέσιμο σε νέους συνδρομητές, καθώς είναι ένα ειδικό πρόγραμμα για αρχικούς χρήστες ${ BRAND_NAME } με ειδικές δυνατότητες και οφέλη."
-      ],
       "Pay once, secure your passwords and identity forever.": [
         "Πληρώστε μία φορά, ασφαλίστε τους κωδικούς πρόσβασης και την ταυτότητά σας για πάντα."
       ],
@@ -8993,12 +8911,6 @@
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
         "Απεριόριστο απόρρητο και περισσότερο χώρο αποθήκευσης για έως και 2 άτομα."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
-        "Απολαμβάνετε μια τιμή προσφοράς στο τρέχον πλάνο σας. Αν διαγράψετε τον λογαριασμό σας, θα χάσετε την τιμή προσφοράς και δε θα είναι διαθέσιμη αν δημιουργήσετε νέο λογαριασμό."
-      ],
-      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
-        "Απολαμβάνετε μια τιμή προσφοράς στο τρέχον πλάνο σας. Εάν υποβαθμίσετε τον λογαριασμό σας, θα χάσετε την τιμή προσφοράς και δε θα είναι διαθέσιμη εάν προσπαθήσετε να εγγραφείτε ξανά."
       ]
     },
     "new_plans: label": {
@@ -9018,20 +8930,11 @@
       ]
     },
     "new_plans: title": {
-      "Delete account?": [
-        "Διαγραφή λογαριασμού;"
-      ],
-      "Downgrade account?": [
-        "Υποβάθμιση λογαριασμού;"
-      ],
       "Review subscription": [
         "Επισκόπηση συνδρομής"
       ],
       "Review subscription and pay": [
         "Ανασκόπηση συνδρομής και πληρωμή"
-      ],
-      "Switch plans?": [
-        "Αλλαγή προγράμματος;"
       ]
     },
     "new_plans: tooltip": {
@@ -10191,8 +10094,8 @@
       ]
     },
     "Payments.iDEAL": {
-      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
-        "Με την επιβεβαίωση, εξουσιοδοτείτε την ${ BRAND_NAME } και την Stripe, τον πάροχο υπηρεσιών πληρωμών μας, να εισπράττουν μελλοντικές πληρωμές για τη συνδρομή σας από αυτόν τον τραπεζικό λογαριασμό μέσω Άμεσης Χρέωσης SEPA και την τράπεζά σας να χρεώνει αυτές τις πληρωμές. Η πρώτη σας πληρωμή πραγματοποιείται τώρα από την ${ IDEAL_WERO_BRAND_NAME }. Το πλάνο σας ανανεώνεται αυτόματα μέχρι να ακυρώσετε. Θα σας ειδοποιούμε πριν από κάθε είσπραξη. Για εισπράξεις με άμεση χρέωση, μπορείτε να ζητήσετε επιστροφή χρημάτων από την τράπεζά σας εντός 8 εβδομάδων από την ημερομηνία χρέωσης, σύμφωνα με τους όρους της συμφωνίας σας με την τράπεζά σας. Αυτό δεν ισχύει για την πληρωμή ${ IDEAL_WERO_BRAND_NAME } που πραγματοποιείτε τώρα."
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Με την επιβεβαίωση, εξουσιοδοτείτε την ${ BRAND_NAME } και τη Stripe, τον πάροχο υπηρεσιών πληρωμών μας, να εισπράττουν μελλοντικές πληρωμές για τη συνδρομή σας από αυτόν τον τραπεζικό λογαριασμό μέσω άμεσης χρέωσης SEPA (SEPA Direct Debit), καθώς και την τράπεζά σας να εκτελεί αυτές τις χρεώσεις. Η πρώτη σας πληρωμή πραγματοποιείται τώρα μέσω της ${ IDEAL_WERO_BRAND_NAME }. Το πρόγραμμά σας ανανεώνεται αυτόματα, εκτός εάν το ακυρώσετε· θα σας ειδοποιούμε πριν από κάθε είσπραξη. Για τις πληρωμές μέσω άμεσης χρέωσης, μπορείτε να ζητήσετε επιστροφή χρημάτων από την τράπεζά σας εντός 8 εβδομάδων από την ημερομηνία χρέωσης, σύμφωνα με τους όρους της συμφωνίας σας με την τράπεζα. Αυτό δεν ισχύει για την πληρωμή μέσω ${ IDEAL_WERO_BRAND_NAME } που πραγματοποιείτε αυτή τη στιγμή."
       ]
     },
     "Payments.info": {
@@ -10430,6 +10333,9 @@
       ],
       "Please select a country": [
         "Παρακαλούμε επιλέξτε μια χώρα"
+      ],
+      "Please select the main reason": [
+        "Παρακαλούμε επιλέξτε τον κύριο λόγο"
       ],
       "Postal code": [
         "Τ.Κ."
@@ -11298,9 +11204,6 @@
       "upgrade for more storage": [
         "αναβαθμίστε για περισσότερο χώρο αποθήκευσης"
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Θα προσθέσουμε τις πιστώσεις για τον υπόλοιπο χρόνο στον ${ BRAND_NAME } λογαριασμό σας."
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "Έχετε ακόμα **${ daysRemaining }** απομένουσα ημέρα στο **${ currentPlanName }** πλάνο σας.",
         "Έχετε ακόμα **${ daysRemaining }** απομένουσες ημέρες στο **${ currentPlanName }** πλάνο σας."
@@ -11887,6 +11790,9 @@
       "Invitation sent and participants added to all events": [
         "Η πρόσκληση στάλθηκε και οι συμμετέχοντες προστέθηκαν σε όλες τις εκδηλώσεις"
       ],
+      "Invoice paid": [
+        "Το τιμολόγιο πληρώθηκε"
+      ],
       "Keyboard shortcuts preferences updated": [
         "Οι προτιμήσεις συντομεύσεων πληκτρολογίου ενημερώθηκαν"
       ],
@@ -11931,9 +11837,6 @@
       ],
       "You have successfully canceled your subscription.": [
         "Ακυρώσατε επιτυχώς τη συνδρομή σας."
-      ],
-      "You have successfully unsubscribed": [
-        "Διαγραφήκατε με επιτυχία"
       ]
     },
     "Suffix": {
@@ -12261,12 +12164,6 @@
       "Configure migration": [
         "Διαμόρφωση μετεγκατάστασης"
       ],
-      "Confirm downgrade": [
-        "Επιβεβαιώστε την υποβάθμιση"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Επιβεβαιώστε την απώλεια μπόνους ${ BRAND_NAME }"
-      ],
       "Connect apps and devices": [
         "Σύνδεση εφαρμογών και συσκευών"
       ],
@@ -12281,6 +12178,9 @@
       ],
       "Contact group": [
         "Ομάδα Επαφών"
+      ],
+      "Contact us": [
+        "Επικοινωνήστε μαζί μας"
       ],
       "Contacts": [
         "Επαφές"
@@ -12367,9 +12267,6 @@
       ],
       "Downgrade account": [
         "Υποβάθμιση λογαριασμού"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "Υποβάθμιση σε ${ downgradedPlanName }?"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Λήψη εφαρμογών ${ DRIVE_APP_NAME }"
@@ -12588,6 +12485,9 @@
       "Participants cannot be notified": [
         "Οι συμμετέχοντες δεν μπορούν να ειδοποιηθούν"
       ],
+      "Pay invoice": [
+        "Πληρωμή τιμολογίου"
+      ],
       "Payment failed": [
         "Αποτυχία πληρωμής"
       ],
@@ -12644,6 +12544,9 @@
       ],
       "Request new code": [
         "Αίτηση νέου κωδικού"
+      ],
+      "Request sent": [
+        "Το αίτημα εστάλη"
       ],
       "Reshare your calendars": [
         "Αναδημοσίευση των ημερολογίων σας"
@@ -12758,6 +12661,9 @@
       ],
       "Start import process": [
         "Έναρξη διαδικασίας εισαγωγής"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "Εγγραφείτε στο ${ planTitle }"
       ],
       "Subscription canceled": [
         "Η συνδρομή ακυρώθηκε"
@@ -13139,6 +13045,20 @@
       ],
       "Open in a new tab": [
         "Άνοιγμα σε νέα καρτέλα"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Βρήκα μια άλλη υπηρεσία που μου αρέσει περισσότερο"
+      ],
+      "It’s missing a key feature": [
+        "Λείπει μια βασική δυνατότητα"
+      ],
+      "It’s too expensive": [
+        "Είναι πολύ ακριβό"
+      ],
+      "Other": [
+        "Άλλο"
       ]
     },
     "VPN Plan Feature": {

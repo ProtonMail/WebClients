@@ -105,9 +105,6 @@
       "Desktop and mobile apps": [
         "Εφαρμογές για υπολογιστές και κινητά"
       ],
-      "Downgrade plan": [
-        "Υποβάθμιση πλάνου"
-      ],
       "Downgrade to Free": [
         "Υποβάθμιση σε Free"
       ],
@@ -661,9 +658,6 @@
       "Done": [
         "Ολοκληρώθηκε"
       ],
-      "Downgrade": [
-        "Υποβαθμίστε"
-      ],
       "Download": [
         "Λήψη"
       ],
@@ -1140,9 +1134,6 @@
       ],
       "Remove all other devices": [
         "Κατάργηση όλων των άλλων συσκευών"
-      ],
-      "Remove bonuses": [
-        "Αφαιρέστε τα μπόνους"
       ],
       "Remove button": [
         "Κουμπί αναίρεσης"
@@ -2099,11 +2090,6 @@
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας. Αλλά μπορείτε να λάβετε ${ discountPercentage } έκπτωση στο ${ plan.Title } όταν εγγράφεστε για ${ cycle } μήνα.",
         "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας. Αλλά μπορείτε να λάβετε ${ discountPercentage } έκπτωση στο ${ plan.Title } όταν εγγράφεστε για ${ cycle } μήνες."
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "Εγγύηση επιστροφής χρημάτων 30 ημερών"
       ]
     },
     "bf2023: Title": {
@@ -6152,14 +6138,6 @@
         "Προβολή πρόσκλησης"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "Η ομάδα οικογένειας δεν αναγνωρίστηκε. Δοκιμάστε ξανά."
-      ],
-      "Organization not recognized. Try again.": [
-        "Ο οργανισμός δεν αναγνωρίστηκε. Δοκιμάστε ξανά."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } ομάδες"
@@ -6307,22 +6285,8 @@
       ]
     },
     "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "Για επιβεβαίωση, εισαγάγετε το όνομα της ομάδας οικογένειας"
-      ],
-      "Enter organization name to confirm": [
-        "Για επιβεβαίωση, εισάγετε το όνομα του οργανισμού"
-      ],
       "Family name": [
         "Όνομα οικογένειας"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Αυτό θα διαγράψει οριστικά όλους τους υπο-χρήστες, τους λογαριασμούς και τα δεδομένα που σχετίζονται με τον οργανισμό σας."
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Αυτό θα καταργήσει όλες τις premium δυνατότητες του ${ BRAND_NAME } για κάθε μέλος της οικογένειας σας."
       ]
     },
     "familyOffer_2023:Settings section title": {
@@ -6350,12 +6314,6 @@
       ],
       "Change family name": [
         "Αλλαγή ονόματος οικογένειας"
-      ],
-      "Delete family group?": [
-        "Διαγραφή ομάδας οικογένειας;"
-      ],
-      "Delete organization?": [
-        "Διαγραφή οργανισμού;"
       ],
       "Edit user storage": [
         "Επεξεργασία χώρου αποθήκευσης χρήστη"
@@ -7590,18 +7548,6 @@
         "${ total } χρήστης βρέθηκε",
         "${ total } χρήστες βρέθηκαν"
       ],
-      "${ vaultLink } created": [
-        "Η κρύπτη ${ vaultLink } δημιουργήθηκε"
-      ],
-      "${ vaultLink } deleted": [
-        "Η κρύπτη ${ vaultLink } διαγράφηκε"
-      ],
-      "${ vaultLink } shared with email": [
-        "Η ${ vaultLink } κοινοποιήθηκε μέσω ηλ. ταχυδρομείου"
-      ],
-      "${ vaultLink } updated": [
-        "Η κρύπτη ${ vaultLink } ενημερώθηκε"
-      ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
         "Το ${ VPN_SHORT_APP_NAME } αποκρύπτει την επισκεψιμότητά σας. Το ${ PASS_SHORT_APP_NAME } αποκρύπτει την ταυτότητά σας\n— απεριόριστα **hide-my-email ψευδώνυμα** και **ειδοποιήσεις dark-web** εάν τα δεδομένα σας διαρρεύσουν ποτέ."
       ],
@@ -7676,13 +7622,6 @@
         "+ ${ invisibleCount } Περισσότερο",
         "+ ${ invisibleCount } Περισσότερα"
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } bonus αποθήκευση"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } σύνδεση για το ${ VPN_APP_NAME } (επιτρέπει τη σύνδεση περισσότερων συσκευών στο VPN)",
-        "+${ organization.BonusVPN } συνδέσεις για το ${ VPN_APP_NAME } (επιτρέπει τη σύνδεση περισσότερων συσκευών στο VPN)"
-      ],
       "1 device per user": [
         "1 συσκευή ανά χρήστη"
       ],
@@ -7694,9 +7633,6 @@
       ],
       "30-day money-back guarantee": [
         "Εγγύηση επιστροφής χρημάτων εντός 30 ημερών"
-      ],
-      "30-day money-back guarantee.": [
-        "Εγγύηση επιστροφής χρημάτων εντός 30 ημερών."
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Ένα ${ protonSubdomain } φιλοξενείται από το ${ BRAND_NAME }, το οποίο σας επιτρέπει να ρυθμίσετε γρήγορα έναν υποτομέα. ${ learnMoreLink }"
@@ -7977,9 +7913,6 @@
       ],
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "Απενεργοποιώντας την παρακολούθηση λογαριασμού, θα διαγράψετε επίσης ολόκληρο το ιστορικό σας. Είστε σίγουροι ότι θέλετε να την απενεργοποιήσετε;"
-      ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Με την υποβάθμιση σε ένα Δωρεάν Λογαριασμό, θα χάσετε μόνιμα αυτά τα οφέλη, ακόμη και αν αναβαθμίσετε ξανά στο μέλλον."
       ],
       "By leaving now, changes may not be saved": [
         "Φεύγοντας τώρα, οι αλλαγές ενδέχεται να μην αποθηκευτούν"
@@ -8262,9 +8195,6 @@
       ],
       "Downgrade": [
         "Υποβαθμίστε"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Η υποβάθμιση θα τερματίσει τυχόν συνδέσεις σε διακομιστές ${ VPN_APP_NAME } επί πληρωμή."
       ],
       "Download ${ mobileConfigArtifact } and open it on each Mac to install the profile, then approve it in System Settings.": [
         "Κατεβάστε το ${ mobileConfigArtifact } και ανοίξτε το σε κάθε Mac για να εγκαταστήσετε το προφίλ και, στη συνέχεια, εγκρίνετέ το στις Ρυθμίσεις συστήματος."
@@ -8626,15 +8556,6 @@
       "If you previously had a personal ${ BRAND_NAME } account with this address, you can recover your data separately.": [
         "Εάν είχατε προηγουμένως προσωπικό λογαριασμό ${ BRAND_NAME } με αυτή τη διεύθυνση, μπορείτε να ανακτήσετε τα δεδομένα σας ξεχωριστά."
       ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Αν προχωρήσετε με την υποβάθμιση, θα χάσετε πρόσβαση στα χαρακτηριστικά επί πληρωμή των ${ MAIL_APP_NAME } και ${ VPN_APP_NAME }."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Αν προχωρήσετε με την υποβάθμιση, θα χάσετε πρόσβαση στα χαρακτηριστικά επί πληρωμή του ${ MAIL_APP_NAME }, συμπεριλαμβανομένων των επιπρόσθετων φίλτρων και αποθηκευτικού χώρου."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Αν προχωρήσετε με την υποβάθμιση, θα χάσετε πρόσβαση στα χαρακτηριστικά επί πληρωμή του ${ VPN_APP_NAME }."
-      ],
       "If you recently reset your password, you can ${ recoveryMethodLink } to unlock your data. If this is due to an old password reset, you can stop the message from showing again.": [
         "Εάν επαναφέρατε πρόσφατα τον κωδικό πρόσβασής σας, μπορείτε να χρησιμοποιήσετε το ${ recoveryMethodLink } για να ξεκλειδώσετε τα δεδομένα σας. Εάν αυτό οφείλεται σε επαναφορά παλιού κωδικού πρόσβασης, μπορείτε να διακόψετε την εμφάνιση του μηνύματος."
       ],
@@ -8714,21 +8635,6 @@
       "Invalid code. ${ RequestNewCodeLink } and try again.": [
         "Άκυρος κωδικός. ${ RequestNewCodeLink } και δοκιμάστε ξανά."
       ],
-      "Invite deleted": [
-        "Η πρόσκληση διαγράφηκε"
-      ],
-      "Invite for new user deleted": [
-        "Η πρόσκληση για τον νέο χρήστη διαγράφηκε"
-      ],
-      "Invite for organization accepted": [
-        "Η πρόσκληση για τον οργανισμό έγινε αποδεκτή"
-      ],
-      "Invite for organization created": [
-        "Η πρόσκληση για τον οργανισμό δημιουργήθηκε"
-      ],
-      "Invite rejected": [
-        "Η πρόσκληση απορρίφθηκε"
-      ],
       "Invite successfully sent": [
         "Επιτυχής αποστολή πρόσκλησης",
         "Επιτυχής αποστολή προσκλήσεων"
@@ -8744,54 +8650,6 @@
       ],
       "It's better to have:": [
         "Είναι καλύτερα να έχετε:"
-      ],
-      "Item autofilled in ${ vaultLink }": [
-        "Αυτόματη συμπλήρωση στοιχείου στο ${ vaultLink }"
-      ],
-      "Item autofilled in vault": [
-        "Το στοιχείο συμπληρώθηκε αυτόματα στην κρύπτη"
-      ],
-      "Item created in ${ vaultLink }": [
-        "Το στοιχείο δημιουργήθηκε στην ${ vaultLink }"
-      ],
-      "Item created in vault": [
-        "Το στοιχείο δημιουργήθηκε στην κρύπτη"
-      ],
-      "Item deleted from ${ vaultLink }": [
-        "Το στοιχείο διαγράφηκε από την ${ vaultLink }"
-      ],
-      "Item deleted from vault": [
-        "Το στοιχείο διαγράφηκε από την κρύπτη"
-      ],
-      "Item flags changed in ${ vaultLink }": [
-        "Οι σημάνσεις στοιχείου άλλαξαν στην ${ vaultLink }"
-      ],
-      "Item flags changed in vault": [
-        "Οι σημάνσεις στοιχείου άλλαξαν στην κρύπτη"
-      ],
-      "Item in ${ vaultLink } trashed": [
-        "Το Στοιχείο στην ${ vaultLink } απορρίφθηκε"
-      ],
-      "Item in ${ vaultLink } untrashed": [
-        "Το Στοιχείο στην ${ vaultLink } επαναφέρθηκε"
-      ],
-      "Item in vault trashed": [
-        "Το στοιχείο απορρίφθηκε από την κρύπτη"
-      ],
-      "Item in vault untrashed": [
-        "Το στοιχείο επαναφέρθηκε στην κρύπτη"
-      ],
-      "Item read in ${ vaultLink }": [
-        "Το στοιχείο διαβάστηκε στην ${ vaultLink }"
-      ],
-      "Item read in vault": [
-        "Το στοιχείο διαβάστηκε στην κρύπτη"
-      ],
-      "Item updated in ${ vaultLink }": [
-        "Το στοιχείο ενημερώθηκε στην ${ vaultLink }"
-      ],
-      "Item updated in vault": [
-        "Το στοιχείο ενημερώθηκε στην κρύπτη"
       ],
       "It’s often the easiest way to recover your account if you’re signed in.": [
         "Είναι συχνά ο ευκολότερος τρόπος για να ανακτήσετε τον λογαριασμό σας, εάν είστε συνδεδεμένοι."
@@ -8961,9 +8819,6 @@
       "New group created via your identity provider and pending review.": [
         "Νέα ομάδα δημιουργήθηκε μέσω του παρόχου ταυτότητάς σας και εκκρεμεί έλεγχος."
       ],
-      "New user invited to organization": [
-        "Νέος χρήστης προσκλήθηκε στον οργανισμό"
-      ],
       "New VPN connection data will stop being collected and shown.": [
         "Τα δεδομένα νέων συνδέσεων VPN θα πάψουν να συλλέγονται και να εμφανίζονται."
       ],
@@ -9094,15 +8949,6 @@
       ],
       "Paid for a plan": [
         "Πλήρωσε για ένα πλάνο"
-      ],
-      "Pass Monitor - custom email confirmed": [
-        "Pass Monitor - επιβεβαιώθηκε προσαρμοσμένο email"
-      ],
-      "Pass Monitor - custom email created": [
-        "Pass Monitor - δημιουργήθηκε προσαρμοσμένο email"
-      ],
-      "Pass Monitor - custom email deleted": [
-        "Pass Monitor - διαγράφηκε προσαρμοσμένο email"
       ],
       "Pass usage logs": [
         "Καταγραφές χρήσης Pass"
@@ -9403,21 +9249,9 @@
       "Setting up your organization": [
         "Γίνεται ρύθμιση του οργανισμού σας"
       ],
-      "Shared ${ vaultLink } deleted": [
-        "Η κοινόχρηστη ${ vaultLink } διαγράφηκε"
-      ],
-      "Shared ${ vaultLink } updated": [
-        "Η κοινόχρηστη ${ vaultLink } ενημερώθηκε"
-      ],
       "Shared server country (${ countriesCount })": [
         "Χώρα κοινόχρηστου διακομιστή (${ countriesCount })",
         "Χώρες κοινόχρηστου διακομιστή (${ countriesCount })"
-      ],
-      "Shared vault deleted": [
-        "Διαγράφηκε η κοινοποιημένη κρύπτη"
-      ],
-      "Shared vault updated": [
-        "Ενημερώθηκε η κοινοποιημένη κρύπτη"
       ],
       "Sign in only": [
         "Σύνδεση μόνο"
@@ -9430,9 +9264,6 @@
       ],
       "Signed up": [
         "Εγγράφηκε"
-      ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Επειδή είστε πιστός χρήστης, ο λογαριασμός σας έχει ενεργοποιημένες πρόσθετες λειτουργίες."
       ],
       "Smart Routed through a different country.": [
         "Έξυπνη δρομολόγηση μέσω διαφορετικής χώρας."
@@ -9871,9 +9702,6 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Μοναδικό αναγνωριστικό που δημιουργείται από τον πάροχο ταυτότητάς σας, συνήθως με τη μορφή διεύθυνσης URL που περιέχει το όνομα του παρόχου ταυτότητας (π.χ. https://idp.example.com/XXXXX)."
       ],
-      "Unknown event type": [
-        "Άγνωστος τύπος εκδήλωσης"
-      ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Εφόσον δεν εξέλθετε του λογαριασμού σας, ούτε αλλάξετε τον κωδικό πρόσβασής σας, η συνεδρία σας θα παραμείνει ενεργή. Οι συνεδρίες λήγουν μετά από 60 ημέρες αδράνειας."
       ],
@@ -9966,21 +9794,6 @@
       ],
       "Using a different MDM? Any MDM that supports deploying a configuration profile will work. Refer to your MDM's documentation on how to upload and assign it to your device fleet.": [
         "Χρησιμοποιείτε διαφορετικό MDM; Οποιοδήποτε MDM που υποστηρίζει την ανάπτυξη ενός προφίλ διαμόρφωσης θα λειτουργήσει. Ανατρέξτε στην τεκμηρίωση του MDM σας σχετικά με τον τρόπο μεταφόρτωσης και αντιστοίχισής του στο στόλο συσκευών σας."
-      ],
-      "Vault created": [
-        "Η κρύπτη δημιουργήθηκε"
-      ],
-      "Vault deleted": [
-        "Η κρύπτη διαγράφηκε"
-      ],
-      "Vault either deleted or requires access permissions": [
-        "Η κρύπτη είτε διαγράφηκε είτε απαιτεί δικαιώματα πρόσβασης"
-      ],
-      "Vault shared with email": [
-        "Η κρύπτη βρίσκεται σε κοινή χρήση"
-      ],
-      "Vault updated": [
-        "Η κρύπτη ενημερώθηκε"
       ],
       "Verification code sent.": [
         "Ο κωδικός επαλήθευσης στάλθηκε."
@@ -10114,8 +9927,11 @@
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Όταν ενεργοποιείτε το SAML για ${ appName } στην υπηρεσία παροχής ταυτότητας, ενδέχεται να σας ζητηθεί να χρησιμοποιήσετε τη διεύθυνση URL επιστροφής κλήσης (ACS) και το αναγνωριστικό εκδότη. Απλώς αντιγράψτε-επικολλήστε τα παρακάτω δεδομένα στα πεδία της υπηρεσίας παροχής ταυτότητάς σας."
       ],
-      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
-        "Όταν ακυρώσετε την τρέχουσα συνδρομή επί πληρωμή, το υπόλοιπο της συνδρομής σας θα επιστραφεί ως πιστώσεις λογαριασμού και θα υποβαθμιστείτε στο ${ BRAND_NAME } ${ PLANS.FREE } πλάνο."
+      "When sign-in is restricted, only ${ primaryEmailElement } and your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Όταν η είσοδος είναι περιορισμένη, μόνο το ${ primaryEmailElement } και το όνομα χρήστη σας ${ usernameElement } μπορούν να χρησιμοποιηθούν για την είσοδο. Οι άλλες διευθύνσεις σας δεν μπορούν να συνδεθούν με τον λογαριασμό σας, ακόμα κι αν κάποιος τις γνωρίζει."
+      ],
+      "When sign-in is restricted, only your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Όταν η είσοδος είναι περιορισμένη, μόνο το όνομα χρήστη σας ${ usernameElement } μπορεί να χρησιμοποιηθεί για την είσοδο. Οι άλλες διευθύνσεις σας δεν μπορούν να συνδεθούν με τον λογαριασμό σας, ακόμα κι αν κάποιος τις γνωρίζει."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Όταν ακυρώσετε, η συνδρομή σας δε θα ανανεωθεί, αλλά θα εξακολουθείτε να απολαμβάνετε προνόμια προγράμματος μέχρι το τέλος της περιόδου συνδρομής. Μετά από αυτό, θα υποβαθμιστείτε στο ${ BRAND_NAME } Free πλάνο."
@@ -10314,9 +10130,6 @@
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "Πρέπει να ενεργοποιήσετε το ιδιωτικό κλειδί του οργανισμού σας με τον κωδικό πρόσβασης του οργανισμού δημιουργίας αντιγράφων ασφαλείας που σας έχει δοθεί από τον διαχειριστή του οργανισμού σας."
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Για να κάνετε εφικτή την υποβάθμιση, πρέπει να απενεργοποιήσετε ή αφαιρέσετε τυχόν πλεονάζοντες χρήστες, διευθύνσεις και τομείς του ${ MAIL_APP_NAME }."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Πρέπει να έχετε μια πιστωτική κάρτα ή έναν τραπεζικό λογαριασμό συνδεδεμένο με το λογαριασμό σας στο PayPal, έτσι ώστε να την προσθέσετε ως μέθοδο πληρωμής."
@@ -11206,6 +11019,9 @@
       "Issuer ID": [
         "Issuer ID"
       ],
+      "Item": [
+        "Στοιχείο"
+      ],
       "Keep me signed in": [
         "Διατήρηση εισόδου μου"
       ],
@@ -11476,6 +11292,12 @@
       "Require password check-ins": [
         "Απαιτείται έλεγχος κωδικού πρόσβασης"
       ],
+      "Restrict sign-in to primary email address": [
+        "Περιορισμός της σύνδεσης στην κύρια διεύθυνση ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Restrict sign-in to username": [
+        "Περιορισμός της σύνδεσης σε όνομα χρήστη"
+      ],
       "Reveal password": [
         "Εμφάνιση κωδικού"
       ],
@@ -11632,6 +11454,9 @@
       ],
       "Value": [
         "Τιμή"
+      ],
+      "Vault": [
+        "Κρύπτη"
       ],
       "Verification code": [
         "Κωδικός επαλήθευσης"
@@ -11999,9 +11824,6 @@
       ],
       "use a data recovery method": [
         "χρησιμοποιήστε μια μέθοδο ανάκτησης"
-      ],
-      "Vault": [
-        "Κρύπτη"
       ],
       "View guide": [
         "Προβολή οδηγού"
@@ -12617,9 +12439,6 @@
       ]
     },
     "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Υποβάθμιση σε ${ downgradedPlanName }"
-      ],
       "Explore all ${ BRAND_NAME } plans": [
         "Εξερεύνηση όλων των προγραμμάτων ${ BRAND_NAME }"
       ],
@@ -14796,8 +14615,8 @@
       ]
     },
     "Payments.iDEAL": {
-      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
-        "Με την επιβεβαίωση, εξουσιοδοτείτε την ${ BRAND_NAME } και την Stripe, τον πάροχο υπηρεσιών πληρωμών μας, να εισπράττουν μελλοντικές πληρωμές για τη συνδρομή σας από αυτόν τον τραπεζικό λογαριασμό μέσω Άμεσης Χρέωσης SEPA και την τράπεζά σας να χρεώνει αυτές τις πληρωμές. Η πρώτη σας πληρωμή πραγματοποιείται τώρα από την ${ IDEAL_WERO_BRAND_NAME }. Το πλάνο σας ανανεώνεται αυτόματα μέχρι να ακυρώσετε. Θα σας ειδοποιούμε πριν από κάθε είσπραξη. Για εισπράξεις με άμεση χρέωση, μπορείτε να ζητήσετε επιστροφή χρημάτων από την τράπεζά σας εντός 8 εβδομάδων από την ημερομηνία χρέωσης, σύμφωνα με τους όρους της συμφωνίας σας με την τράπεζά σας. Αυτό δεν ισχύει για την πληρωμή ${ IDEAL_WERO_BRAND_NAME } που πραγματοποιείτε τώρα."
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Με την επιβεβαίωση, εξουσιοδοτείτε την ${ BRAND_NAME } και τη Stripe, τον πάροχο υπηρεσιών πληρωμών μας, να εισπράττουν μελλοντικές πληρωμές για τη συνδρομή σας από αυτόν τον τραπεζικό λογαριασμό μέσω άμεσης χρέωσης SEPA (SEPA Direct Debit), καθώς και την τράπεζά σας να εκτελεί αυτές τις χρεώσεις. Η πρώτη σας πληρωμή πραγματοποιείται τώρα μέσω της ${ IDEAL_WERO_BRAND_NAME }. Το πρόγραμμά σας ανανεώνεται αυτόματα, εκτός εάν το ακυρώσετε· θα σας ειδοποιούμε πριν από κάθε είσπραξη. Για τις πληρωμές μέσω άμεσης χρέωσης, μπορείτε να ζητήσετε επιστροφή χρημάτων από την τράπεζά σας εντός 8 εβδομάδων από την ημερομηνία χρέωσης, σύμφωνα με τους όρους της συμφωνίας σας με την τράπεζα. Αυτό δεν ισχύει για την πληρωμή μέσω ${ IDEAL_WERO_BRAND_NAME } που πραγματοποιείτε αυτή τη στιγμή."
       ]
     },
     "Payments.info": {
@@ -17361,9 +17180,6 @@
       "upgrade for more storage": [
         "αναβαθμίστε για περισσότερο χώρο αποθήκευσης"
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Θα προσθέσουμε τις πιστώσεις για τον υπόλοιπο χρόνο στον ${ BRAND_NAME } λογαριασμό σας."
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "Έχετε ακόμα **${ daysRemaining }** απομένουσα ημέρα στο **${ currentPlanName }** πλάνο σας.",
         "Έχετε ακόμα **${ daysRemaining }** απομένουσες ημέρες στο **${ currentPlanName }** πλάνο σας."
@@ -18120,9 +17936,6 @@
       "You have successfully canceled your subscription.": [
         "Ακυρώσατε επιτυχώς τη συνδρομή σας."
       ],
-      "You have successfully unsubscribed": [
-        "Διαγραφήκατε με επιτυχία"
-      ],
       "You will receive your username via email within a minute if you entered a valid recovery email address.": [
         "Θα λάβετε το όνομα χρήστη σας μέσω μηνύματος ηλεκτρονικού ταχυδρομείου εντός ενός λεπτού εάν εισαγάγατε μια έγκυρη διεύθυνση email ανάκτησης."
       ],
@@ -18700,12 +18513,6 @@
       "Confirm": [
         "Επιβεβαίωση"
       ],
-      "Confirm downgrade": [
-        "Επιβεβαιώστε την υποβάθμιση"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Επιβεβαιώστε την απώλεια μπόνους ${ BRAND_NAME }"
-      ],
       "Connect a Gmail address": [
         "Συνδέστε μια διεύθυνση Gmail"
       ],
@@ -18932,9 +18739,6 @@
       ],
       "Downgrade account": [
         "Υποβάθμιση λογαριασμού"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "Υποβάθμιση σε ${ downgradedPlanName }?"
       ],
       "Download ${ app }": [
         "Λήψη ${ app }"
@@ -19531,6 +19335,9 @@
       ],
       "Sign out": [
         "Αποσύνδεση"
+      ],
+      "Sign-in protection": [
+        "Προστασία σύνδεσης"
       ],
       "Signed in to another account": [
         "Σύνδεση σε άλλο λογαριασμό"

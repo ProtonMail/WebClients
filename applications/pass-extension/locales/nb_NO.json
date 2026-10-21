@@ -25,12 +25,6 @@
       ]
     },
     "Action": {
-      "${ PASS_SHORT_APP_NAME } for Android": [
-        "${ PASS_SHORT_APP_NAME } for Android"
-      ],
-      "${ PASS_SHORT_APP_NAME } for iOS": [
-        "${ PASS_SHORT_APP_NAME } for iOS"
-      ],
       "Accept": [
         "Aksepter"
       ],
@@ -339,6 +333,12 @@
       ],
       "Do not suggest on this website": [
         "Ikke foreslå på dette nettstedet"
+      ],
+      "Download for macOS": [
+        "Last ned for macOS"
+      ],
+      "Download for Windows": [
+        "Last ned for Windows"
       ],
       "Download this CSV template": [
         "Last ned denne CSV-malen"
@@ -847,6 +847,12 @@
       ],
       "Vault": [
         "Hvelv"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } resultat til som ikke vises",
+        "${ hiddenResultsCount } resultater til som ikke vises"
       ]
     },
     "Button": {
@@ -1624,6 +1630,15 @@
         "Brukernavn"
       ]
     },
+    "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Fant ${ itemsCount } forslag, bruk tastaturet til å navigere.",
+        "Fant ${ itemsCount } forslag, bruk tastaturet til å navigere."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Bruk opp- og ned-tastene for å få tilgang til og bla gjennom forslag etter inndata. Trykk Enter for å bekrefte valget, eller Esc for å lukke forslagsboksen."
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "\"${ payload.itemName }\"-element ble avvist"
@@ -2197,6 +2212,9 @@
       "invites you to access items in": [
         "inviterer deg til å få tilgang til elementer i"
       ],
+      "iOS and Android Apps": [
+        "iOS- og Android-apper"
+      ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Det ser ut til at du allerede er logget inn på ${ PASS_APP_NAME }. Hvis du prøver å logge på med en annen konto, må du først logge av fra utvidelsen."
       ],
@@ -2296,8 +2314,7 @@
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
-        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
+        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -2623,6 +2640,9 @@
       ],
       "Save passkey": [
         "Lagre tilgangsnøkkel"
+      ],
+      "Scan to download": [
+        "Skann for å laste ned"
       ],
       "Secure links": [
         "Sikre koblinger"
@@ -5005,6 +5025,9 @@
       "Excluded items": [
         "Ekskluderte elementer"
       ],
+      "Export": [
+        "Eksporter"
+      ],
       "Fill & copy password": [
         "Fyll ut & kopier passord"
       ],
@@ -5013,6 +5036,9 @@
       ],
       "Folder options": [
         "Alternativer for mapper"
+      ],
+      "Get mobile and desktop apps": [
+        "Skaff deg mobil- og skrivebordsapper"
       ],
       "Get Started": [
         "Kom i gang"
@@ -5040,6 +5066,9 @@
       ],
       "Import - ${ date }": [
         "Import - ${ date }"
+      ],
+      "Import failed": [
+        "Importen mislyktes"
       ],
       "Import to vault(s)": [
         "Importer til hvelv"

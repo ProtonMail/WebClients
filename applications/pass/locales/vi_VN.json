@@ -25,12 +25,6 @@
       ]
     },
     "Action": {
-      "${ PASS_SHORT_APP_NAME } for Android": [
-        "${ PASS_SHORT_APP_NAME } cho Android"
-      ],
-      "${ PASS_SHORT_APP_NAME } for iOS": [
-        "${ PASS_SHORT_APP_NAME } cho iOS"
-      ],
       "Accept": [
         "Chấp nhận"
       ],
@@ -315,6 +309,12 @@
       ],
       "Don't show this again": [
         "Không hiển thị lại"
+      ],
+      "Download for macOS": [
+        "Tải xuống cho macOS"
+      ],
+      "Download for Windows": [
+        "Tải xuống cho Windows"
       ],
       "Download this CSV template": [
         "Tải xuống mẫu CSV"

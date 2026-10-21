@@ -25,12 +25,6 @@
       ]
     },
     "Action": {
-      "${ PASS_SHORT_APP_NAME } for Android": [
-        "${ PASS_SHORT_APP_NAME } Android 版"
-      ],
-      "${ PASS_SHORT_APP_NAME } for iOS": [
-        "${ PASS_SHORT_APP_NAME } for iOS"
-      ],
       "Accept": [
         "接受"
       ],
@@ -339,6 +333,12 @@
       ],
       "Do not suggest on this website": [
         "请勿在本网站上显示建议"
+      ],
+      "Download for macOS": [
+        "下载 macOS 版"
+      ],
+      "Download for Windows": [
+        "下载 Windows 版"
       ],
       "Download this CSV template": [
         "下载CSV模板"
@@ -845,6 +845,11 @@
       ],
       "Vault": [
         "保险库"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } 个结果未显示"
       ]
     },
     "Browser": {
@@ -1627,6 +1632,14 @@
         "用户名"
       ]
     },
+    "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "已找到 ${ itemsCount } 个建议，您可使用键盘进行导航浏览。"
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "使用向上和向下键进入并浏览输入后的建议。按 Enter 键确认您的选择，或按 Escape 键关闭建议框。"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "“${ payload.itemName }” 项目被拒绝"
@@ -2204,6 +2217,9 @@
       "invites you to access items in": [
         "邀请您访问其中的项目"
       ],
+      "iOS and Android Apps": [
+        "iOS 和 Android 应用"
+      ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "您似乎已登录到 ${ PASS_APP_NAME } 。如果您正在尝试使用不同的账户登录，请先从扩展中登出。"
       ],
@@ -2301,7 +2317,7 @@
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "将项目移动到另一个保险库会删除其安全链接。"
+        "将项目移至其他保险库会清除其安全链接。"
       ],
       "Moving items": [
         "正在移动"
@@ -2632,6 +2648,9 @@
       ],
       "Save passkey": [
         "保存通行密钥"
+      ],
+      "Scan to download": [
+        "扫描以下载"
       ],
       "Secure links": [
         "安全链接"
@@ -5022,6 +5041,9 @@
       "Excluded items": [
         "不包括的项目"
       ],
+      "Export": [
+        "导出"
+      ],
       "Fill & copy password": [
         "填写并复制密码"
       ],
@@ -5030,6 +5052,9 @@
       ],
       "Folder options": [
         "文件夹选项"
+      ],
+      "Get mobile and desktop apps": [
+        "获取移动和桌面应用"
       ],
       "Get Started": [
         "立即体验"
@@ -5057,6 +5082,9 @@
       ],
       "Import - ${ date }": [
         "导入- ${ date }"
+      ],
+      "Import failed": [
+        "导入失败"
       ],
       "Import to vault(s)": [
         "导入到保险库"

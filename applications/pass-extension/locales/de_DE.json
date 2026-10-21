@@ -25,12 +25,6 @@
       ]
     },
     "Action": {
-      "${ PASS_SHORT_APP_NAME } for Android": [
-        "${ PASS_SHORT_APP_NAME } für Android"
-      ],
-      "${ PASS_SHORT_APP_NAME } for iOS": [
-        "${ PASS_SHORT_APP_NAME } für iOS"
-      ],
       "Accept": [
         "Annehmen"
       ],
@@ -238,6 +232,9 @@
       "Create a ${ BRAND_NAME } account": [
         "${ BRAND_NAME }-Konto erstellen"
       ],
+      "Create a login": [
+        "Anmeldung erstellen"
+      ],
       "Create a new vault": [
         "Neuen Tresor erstellen"
       ],
@@ -339,6 +336,15 @@
       ],
       "Do not suggest on this website": [
         "Auf dieser Website nichts vorschlagen"
+      ],
+      "Download for Linux": [
+        "Für Linux herunterladen"
+      ],
+      "Download for macOS": [
+        "Für macOS herunterladen"
+      ],
+      "Download for Windows": [
+        "Für Windows herunterladen"
       ],
       "Download this CSV template": [
         "Diese CSV-Vorlage herunterladen"
@@ -493,6 +499,9 @@
       "Maximum views": [
         "Maximale Ansichten"
       ],
+      "More details about how to export": [
+        "Weitere Informationen zur Exportfunktion"
+      ],
       "More info": [
         "Weitere Informationen"
       ],
@@ -540,6 +549,9 @@
       ],
       "Open navigation": [
         "Navigation öffnen"
+      ],
+      "Open platform selection dropdown": [
+        "Plattformauswahl öffnen"
       ],
       "Organize vaults": [
         "Tresore organisieren"
@@ -715,6 +727,9 @@
       "Sign out": [
         "Abmelden"
       ],
+      "Skip for now": [
+        "Vorerst überspringen"
+      ],
       "Start from scratch": [
         "Ganz von vorne anfangen"
       ],
@@ -847,6 +862,12 @@
       ],
       "Vault": [
         "Tresor"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } weiteres Ergebnis nicht angezeigt",
+        "${ hiddenResultsCount } weitere Ergebnisse nicht angezeigt"
       ]
     },
     "Browser": {
@@ -1030,6 +1051,9 @@
       ],
       "Authentication failure: ${ message }": [
         "Authentifizierung fehlgeschlagen: ${ message }"
+      ],
+      "Biometric authentication cancelled.": [
+        "Biometrische Authentifizierung abgebrochen."
       ],
       "Biometric authentication failed.": [
         "Biometrische Authentifizierung fehlgeschlagen."
@@ -1639,6 +1663,182 @@
         "Benutzername"
       ]
     },
+    "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "${ itemsCount } Vorschlag gefunden. Verwende die Tastatur zum Navigieren.",
+        "${ itemsCount } Vorschläge gefunden. Verwende die Tastatur zum Navigieren."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Verwende die Pfeiltasten hoch und runter, um die Vorschläge nach der Eingabe aufzurufen und durchzusehen. Bestätige deine Auswahl mit der Eingabetaste oder drücke die Escape-Taste, um das Vorschlagsfeld zu schließen."
+      ]
+    },
+    "Import Tutorial": {
+      "${ name } saves your passwords in the ${ passwords } app. Open it and go to ${ file } → ${ exportAll }.": [
+        "${ name } speichert deine Passwörter in der App ${ passwords }. Öffne die App und wechsle zu ${ file } → ${ exportAll }."
+      ],
+      "Account & Data": [
+        "Konten und Daten"
+      ],
+      "Advanced Options": [
+        "Erweiterte Optionen"
+      ],
+      "As a security measure, LastPass will email you to confirm the request. Open the email and click ${ continueExport }.": [
+        "Aus Sicherheitsgründen sendet dir LastPass eine E-Mail, um die Anfrage zu bestätigen. Öffne die E-Mail und klicke auf ${ continueExport }."
+      ],
+      "At the confirmation screen, log back into your ${ name } Vault and to ${ advancedOptions } → ${ manageYourVault } → ${ exportLabel } again.": [
+        "Melde dich auf dem Bestätigungsbildschirm erneut bei deinem Tresor ${ name } an und navigiere erneut zu ${ advancedOptions } → ${ manageYourVault } → ${ exportLabel }."
+      ],
+      "Autofill and passwords": [
+        "Automatisches Ausfüllen und Passwörter"
+      ],
+      "Choose ${ formatJson } as the file format, click ${ exportLabel } and confirm with your master password.": [
+        "Wähle ${ formatJson } als Dateiformat aus, klicke auf ${ exportLabel } und bestätige die Aktion mit deinem Hauptpasswort."
+      ],
+      "Choose JSON downloads": [
+        "JSON-Dateien zum Herunterladen auswählen"
+      ],
+      "Choose the file format → Select ${ exportLabel }.": [
+        "Wähle das Dateiformat → Wähle ${ exportLabel }."
+      ],
+      "Continue export": [
+        "Export fortsetzen"
+      ],
+      "Download file": [
+        "Datei herunterladen"
+      ],
+      "Enter your 1Password master password, ensure ${ format1pux } is selected, and click ${ exportData }.": [
+        "Gib dein 1Password-Hauptpasswort ein, stelle sicher, dass ${ format1pux } ausgewählt ist, und klicke auf ${ exportData }."
+      ],
+      "Export": [
+        "Exportieren"
+      ],
+      "Export All Passwords to File": [
+        "Alle Passwörter in eine Datei exportieren"
+      ],
+      "Export Data": [
+        "Daten exportieren"
+      ],
+      "Export data": [
+        "Daten exportieren"
+      ],
+      "Export file format: 1PUX": [
+        "Dateiformat für den Export: 1PUX"
+      ],
+      "Export items": [
+        "Einträge exportieren"
+      ],
+      "Export passwords": [
+        "Passwörter exportieren"
+      ],
+      "Export to CSV": [
+        "Als CSV-Datei exportieren"
+      ],
+      "Export to TXT": [
+        "Als TXT exportieren"
+      ],
+      "File": [
+        "Datei"
+      ],
+      "Go to ${ exportPasswords } and select ${ downloadFile }.": [
+        "Öffne ${ exportPasswords } und wähle ${ downloadFile }."
+      ],
+      "Go to ${ passwords }.": [
+        "Weiter zu ${ passwords }."
+      ],
+      "Go to the settings to locate the export action.": [
+        "Öffne die Einstellungen, um die Exportfunktion aufzurufen."
+      ],
+      "Go to ☰ → ⚙ ${ settings } → Click ${ downloadFile }.": [
+        "Öffne ☰ → ⚙ ${ settings } → Klicke auf ${ downloadFile }."
+      ],
+      "Google Password Manager": [
+        "Google Passwort-Manager"
+      ],
+      "Identify your password manager.": [
+        "Gib deine Passwortverwaltung an."
+      ],
+      "Manage your vault": [
+        "Eigenen Tresor verwalten"
+      ],
+      "Microsoft password manager": [
+        "Microsoft Passwortmanager"
+      ],
+      "More actions": [
+        "Weitere Aktionen"
+      ],
+      "Navigate to ${ settings } tab.": [
+        "Wechsle zum Tab ${ settings }."
+      ],
+      "Open ${ name } and go to ${ advancedOptions } → ${ manageYourVault } → ${ exportLabel }.": [
+        "Öffne ${ name } und navigiere zu ${ advancedOptions } → ${ manageYourVault } → ${ exportLabel }."
+      ],
+      "Open ${ name } and go to ${ file } → ${ exportLabel } → your 1Password username.": [
+        "Öffne ${ name } und wechsle zu ${ file } → ${ exportLabel } → dein 1Password-Benutzername."
+      ],
+      "Open ${ name } and go to ${ menu } → ${ option }.": [
+        "Öffne ${ name } und wechsle zu ${ menu } → ${ option }."
+      ],
+      "Open ${ name } and go to ⋮ → ${ passwordsAndAutofill } → ${ googlePasswordManager }.": [
+        "Öffne ${ name } und navigiere zu ⋮ → ${ passwordsAndAutofill } → ${ googlePasswordManager }."
+      ],
+      "Open ${ name } and go to ☰ → ${ settings } → ${ autoFill }.": [
+        "Öffne ${ name } und navigiere zu ☰ → ${ settings } → ${ autoFill }."
+      ],
+      "Open ${ name } and select ${ menu } → ${ option }.": [
+        "Öffne ${ name } und wähle ${ menu } → ${ option }."
+      ],
+      "Open ${ name } and select ${ settings }.": [
+        "Öffne ${ name } und wähle ${ settings }."
+      ],
+      "Open ${ name } and select ⋯.": [
+        "Öffne ${ name } und wähle ⋯."
+      ],
+      "Open ${ name } and select ☰ → ${ passwords }.": [
+        "Öffne ${ name } und wähle ☰ → ${ passwords }."
+      ],
+      "Passwords": [
+        "Passwörter"
+      ],
+      "Passwords and Autofill": [
+        "Passwörter und Automatisches Ausfüllen"
+      ],
+      "Passwords and autofill": [
+        "Passwörter und Automatisches Ausfüllen"
+      ],
+      "Select ${ exportLabel } → ${ chooseJson } → ${ exportAgain }.": [
+        "Wähle ${ exportLabel } → ${ chooseJson } → ${ exportAgain }."
+      ],
+      "Select ${ menu } → ${ option }.": [
+        "Wähle ${ menu } → ${ option }."
+      ],
+      "Select ${ option }.": [
+        "Wähle ${ option }."
+      ],
+      "Select the export format CSV.": [
+        "Wähle als Exportformat „CSV“ aus."
+      ],
+      "Select ⋯ → ${ exportPasswords }.": [
+        "Wähle ⋯ → ${ exportPasswords }."
+      ],
+      "Settings": [
+        "Einstellungen"
+      ],
+      "Submit": [
+        "Senden"
+      ],
+      "This time, you’ll be asked to re-confirm your ${ name } username and password. Click ${ submit }.": [
+        "Du wirst jetzt gebeten, deinen Benutzernamen ${ name } und dein Passwort erneut zu bestätigen. Klicke auf ${ submit }."
+      ],
+      "Vault": [
+        "Tresor"
+      ],
+      "Vault options": [
+        "Tresoroptionen"
+      ],
+      "your username": [
+        "Dein Benutzername"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "Eintrag \"${ payload.itemName }\" verworfen"
@@ -1665,6 +1865,9 @@
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } weitergeleitet",
         "${ forwardedEmailsCount } weitergeleitet"
+      ],
+      "${ imported } of ${ total } (${ percentage }%)": [
+        "${ imported } von ${ total } (${ percentage }%)"
       ],
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } möchte einen Eintrag mit einer Gruppe teilen, die du verwaltest."
@@ -2033,6 +2236,9 @@
       "Domain: ${ domainPath } or @": [
         "Domain: ${ domainPath } oder @"
       ],
+      "Don’t close this tab": [
+        "Diesen Tab nicht schließen"
+      ],
       "Download pass-cli from ${ passCliLink }.": [
         "Pass-cli über ${ passCliLink } herunterladen"
       ],
@@ -2230,6 +2436,9 @@
       "invites you to access items in": [
         "hat dich eingeladen auf Elemente in folgenden Tresor zuzugreifen:"
       ],
+      "iOS and Android Apps": [
+        "iOS und Android Apps"
+      ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Es scheint, dass du bereits bei ${ PASS_APP_NAME } angemeldet bist. Wenn du versuchst, dich mit einem anderen Konto anzumelden, melde dich bitte zuerst bei der Erweiterung ab."
       ],
@@ -2329,8 +2538,7 @@
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Beim Verschieben eines Eintrags in einen anderen Tresor, werden seine sicheren Verknüpfungen gelöscht.",
-        "Beim Verschieben von Einträgen in einen anderen Tresor, werden ihre sicheren Verknüpfungen gelöscht."
+        "Wenn du einen Eintrag in einen anderen Tresor verschiebst, werden seine sicheren Links gelöscht."
       ],
       "Moving items": [
         "Einträge verschieben"
@@ -2370,6 +2578,9 @@
       ],
       "No login found": [
         "Keine Zugangsdaten gefunden."
+      ],
+      "No matching service. Try a different name.": [
+        "Kein passender Eintrag gefunden. Versuche es mit einem anderen Namen."
       ],
       "No network connection": [
         "Keine Netzwerkverbindung"
@@ -2417,6 +2628,12 @@
       ],
       "Open the ${ PASS_APP_NAME } popup": [
         "Das ${ PASS_APP_NAME }-Popup-Fenster öffnen"
+      ],
+      "Open the extension here.": [
+        "Öffne die Erweiterung hier."
+      ],
+      "Open the extension to unlock it": [
+        "Öffne die Erweiterung, um sie zu entsperren"
       ],
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Öffne die Safari-Einstellungen, finde ${ PASS_APP_NAME }, gehe zu \"Berechtigungen\" und aktiviere die Website-Berechtigungen."
@@ -2664,6 +2881,12 @@
       ],
       "Save passkey": [
         "Passkey speichern"
+      ],
+      "Scan to download": [
+        "Zum Herunterladen scannen"
+      ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "QR-Code einlesen, um ${ PASS_APP_NAME } für iOS und Android herunterzuladen"
       ],
       "Secure links": [
         "Sichere Links"
@@ -3762,6 +3985,9 @@
       "LinkedIn account": [
         "LinkedIn-Konto"
       ],
+      "Linux": [
+        "Linux"
+      ],
       "Login": [
         "Zugangsdaten"
       ],
@@ -3770,6 +3996,9 @@
       ],
       "Logins": [
         "Zugangsdaten"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Mailboxes": [
         "Postfächer"
@@ -4086,6 +4315,9 @@
       "Server": [
         "Server"
       ],
+      "Service": [
+        "Dienst"
+      ],
       "Settings": [
         "Einstellungen"
       ],
@@ -4304,6 +4536,9 @@
       ],
       "WiFi network": [
         "WLAN-Netzwerk"
+      ],
+      "Windows": [
+        "Windows"
       ],
       "Work details": [
         "Geschäftliche Details"
@@ -4597,6 +4832,9 @@
       ],
       "E.g., ": [
         "Z. B. "
+      ],
+      "E.g.: Google": [
+        "z.B.: Google"
       ],
       "Email address": [
         "E-Mail-Adresse"
@@ -4901,6 +5139,9 @@
       "Add mailbox": [
         "Postfach hinzufügen"
       ],
+      "Add one account": [
+        "Benutzerkonte hinzufügen"
+      ],
       "Adjust autofill behaviors to change where logins are suggested.": [
         "Passe das Verhalten für automatisches Ausfüllen an, um zu ändern, wo Anmeldungen vorgeschlagen werden."
       ],
@@ -4936,6 +5177,9 @@
       ],
       "Browser permission required": [
         "Browser-Berechtigung erforderlich"
+      ],
+      "Browsers": [
+        "Browser"
       ],
       "Cancel changing your email?": [
         "Änderung deiner E-Mail abbrechen?"
@@ -4984,6 +5228,9 @@
       ],
       "Create subfolder in \"${ folderName }\"": [
         "Unterordner in \"${ folderName }\" erstellen"
+      ],
+      "Create your first login": [
+        "Erstelle deine erstes Anmeldung"
       ],
       "Created": [
         "Erstellt"
@@ -5082,14 +5329,35 @@
       "Excluded items": [
         "Ausgeschlossene Einträge"
       ],
+      "Export": [
+        "Exportieren"
+      ],
+      "Export from ${ provider.title }": [
+        "Aus ${ provider.title } exportieren"
+      ],
       "Fill & copy password": [
         "Ausfüllen & Passwort kopieren"
+      ],
+      "Fill in your details": [
+        "Eigene Daten eingeben"
       ],
       "Fill password": [
         "Passwort ausfüllen"
       ],
+      "First login created": [
+        "Erste Anmeldung erstellt"
+      ],
       "Folder options": [
         "Ordneroptionen"
+      ],
+      "For security purposes, delete your exported file.": [
+        "Lösche aus Sicherheitsgründen deine exportierte Datei."
+      ],
+      "Get mobile and desktop apps": [
+        "Mobile und Desktop-Apps herunterladen"
+      ],
+      "Get mobile apps": [
+        "Apps für Mobilgeräte herunterladen"
       ],
       "Get Started": [
         "Erste Schritte"
@@ -5118,8 +5386,29 @@
       "Import - ${ date }": [
         "Import - ${ date }"
       ],
+      "Import completed with warnings": [
+        "Import mit Warnungen abgeschlossen"
+      ],
+      "Import failed": [
+        "Import fehlgeschlagen"
+      ],
+      "Import successful": [
+        "Erfolgreich importiert"
+      ],
       "Import to vault(s)": [
         "In Tresor(e) importieren"
+      ],
+      "Import your passwords in less than a minute": [
+        "Importiere deine Passwörter in weniger als einer Minute"
+      ],
+      "Important: Once your data has been imported, delete the exported file.": [
+        "Wichtig: Lösche die exportierte Datei, sobald deine Daten importiert wurden."
+      ],
+      "Imported from:": [
+        "Importiert aus:"
+      ],
+      "Imported items:": [
+        "Importierte Einträge:"
       ],
       "Importing your data": [
         "Daten werden importiert"
@@ -5195,6 +5484,9 @@
       "Move all items?": [
         "Alle Einträge verschieben?"
       ],
+      "Move everything at once": [
+        "Alles gleichzeitig verschieben"
+      ],
       "Move item to \"${ target }\"": [
         "Eintrag nach \"${ target }\" verschieben"
       ],
@@ -5231,6 +5523,9 @@
       "No shared secure links": [
         "Keine geteilten sicheren Links"
       ],
+      "None of your items could be imported. See the details below.": [
+        "Keiner deiner Einträge konnte importiert werden. Siehe nachfolgende Details."
+      ],
       "Open pagination": [
         "Seitennummerierung öffnen"
       ],
@@ -5248,6 +5543,9 @@
       ],
       "Password Health": [
         "Passwortsicherheit"
+      ],
+      "Password managers": [
+        "Passwortmanager"
       ],
       "Pause monitoring?": [
         "Überwachung pausieren?"
@@ -5323,6 +5621,9 @@
       "Select the default domain for aliases": [
         "Standard-Domain für Aliasse auswählen"
       ],
+      "Select your password manager": [
+        "Wähle deinen Passwortmanager aus"
+      ],
       "Set access level": [
         "Zugriffsstufe festlegen"
       ],
@@ -5347,8 +5648,14 @@
       "Shared via": [
         "Geteilt über"
       ],
+      "Some of your items could not be imported. See the details below.": [
+        "Einige deiner Einträge konnten nicht importiert werden. Siehe nachfolgende Details."
+      ],
       "SPF (Optional)": [
         "SPF (optional)"
+      ],
+      "Starting the extension": [
+        "Erweiterung wird gestartet"
       ],
       "Status": [
         "Status"
@@ -5395,6 +5702,12 @@
       "Upgrade to check for compromised passwords": [
         "Führe ein Upgrade durch, um nach kompromittierten Passwörtern zu suchen"
       ],
+      "Upload": [
+        "Hochladen"
+      ],
+      "Upload your data": [
+        "Eigene Daten hochladen"
+      ],
       "URL matching": [
         "URL-Übereinstimmung"
       ],
@@ -5416,6 +5729,9 @@
       "Want to learn more?": [
         "Möchtest du mehr erfahren?"
       ],
+      "We'll guide you through the process. First choose where you currently store your passwords.": [
+        "Du wirst Schritt für Schritt durch den Vorgang geführt. Wähle zunächst aus, wo du deine Passwörter derzeit gespeichert hast."
+      ],
       "Weak password": [
         "Schwaches Passwort"
       ],
@@ -5433,6 +5749,12 @@
       ],
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Was ist der Unterschied zwischen einer ${ PASS_SHORT_APP_NAME }-Notiz und einer SimpleLogin-Notiz?"
+      ],
+      "Which service do you want to create the login for?": [
+        "Für welchen Dienst möchtest du die Anmeldung erstellen?"
+      ],
+      "You are ready to get the most out of ${ PASS_APP_NAME }.": [
+        "Du bist bereit, das Beste aus ${ PASS_APP_NAME } herauszuholen."
       ],
       "You don't have any vaults": [
         "Du hast keine Tresore"
@@ -5454,6 +5776,9 @@
       ],
       "Your welcome gift": [
         "Dein Willkommensgeschenk"
+      ],
+      "You’re a step away from autofill magic!": [
+        "Du bist nur noch einen Schritt von der Magie des automatischen Ausfüllens entfernt!"
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Du bist dabei, ${ aliasCount } Alias dauerhaft zu löschen.",

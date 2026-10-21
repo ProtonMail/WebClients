@@ -25,12 +25,6 @@
       ]
     },
     "Action": {
-      "${ PASS_SHORT_APP_NAME } for Android": [
-        "${ PASS_SHORT_APP_NAME } für Android"
-      ],
-      "${ PASS_SHORT_APP_NAME } for iOS": [
-        "${ PASS_SHORT_APP_NAME } für iOS"
-      ],
       "Accept": [
         "Annehmen"
       ],
@@ -328,6 +322,15 @@
       "Don't show this again": [
         "Nicht mehr anzeigen"
       ],
+      "Download for Linux": [
+        "Für Linux herunterladen"
+      ],
+      "Download for macOS": [
+        "Für macOS herunterladen"
+      ],
+      "Download for Windows": [
+        "Für Windows herunterladen"
+      ],
       "Download this CSV template": [
         "Diese CSV-Vorlage herunterladen"
       ],
@@ -531,6 +534,9 @@
       ],
       "Open navigation": [
         "Navigation öffnen"
+      ],
+      "Open platform selection dropdown": [
+        "Plattformauswahl öffnen"
       ],
       "Organize vaults": [
         "Tresore organisieren"
@@ -1006,6 +1012,9 @@
       ],
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Authentifizierung fehlgeschlagen. Bestätige dein zweites Passwort, um mit dem Export fortzufahren"
+      ],
+      "Biometric authentication cancelled.": [
+        "Biometrische Authentifizierung abgebrochen."
       ],
       "Biometric authentication failed.": [
         "Biometrische Authentifizierung fehlgeschlagen."
@@ -2121,6 +2130,9 @@
       "invites you to access items in": [
         "hat dich eingeladen auf Elemente in folgenden Tresor zuzugreifen:"
       ],
+      "iOS and Android Apps": [
+        "iOS und Android Apps"
+      ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Es scheint, dass du bereits bei ${ PASS_APP_NAME } angemeldet bist. Wenn du versuchst, dich mit einem anderen Konto anzumelden, melde dich bitte zuerst bei der Erweiterung ab."
       ],
@@ -2497,6 +2509,12 @@
       ],
       "Restoring trashed items...": [
         "Stelle Einträge aus dem Papierkorb wieder her..."
+      ],
+      "Scan to download": [
+        "Zum Herunterladen scannen"
+      ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "QR-Code einlesen, um ${ PASS_APP_NAME } für iOS und Android herunterzuladen"
       ],
       "Secure links": [
         "Sichere Links"
@@ -3580,11 +3598,17 @@
       "LinkedIn account": [
         "LinkedIn-Konto"
       ],
+      "Linux": [
+        "Linux"
+      ],
       "Login": [
         "Zugangsdaten"
       ],
       "Logins": [
         "Zugangsdaten"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Mailboxes": [
         "Postfächer"
@@ -4143,6 +4167,9 @@
       ],
       "WiFi network": [
         "WLAN-Netzwerk"
+      ],
+      "Windows": [
+        "Windows"
       ],
       "Work details": [
         "Geschäftliche Details"
@@ -4928,6 +4955,12 @@
       ],
       "Folder options": [
         "Ordneroptionen"
+      ],
+      "Get mobile and desktop apps": [
+        "Mobile und Desktop-Apps herunterladen"
+      ],
+      "Get mobile apps": [
+        "Apps für Mobilgeräte herunterladen"
       ],
       "Get Started": [
         "Erste Schritte"

@@ -348,9 +348,6 @@
       "Connect to video conferencing": [
         "Подключайтесь к видеоконференциям"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Подключите свой аккаунт ${ BRAND_NAME }"
-      ],
       "Connect your email": [
         "Подключить электронную почту"
       ],
@@ -429,14 +426,8 @@
       "Create": [
         "Создать"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Создайте свой аккаунт ${ BRAND_NAME }"
-      ],
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "Создать ссылку, чтобы поделиться с кем-либо за пределами ${ BRAND_NAME }"
-      ],
-      "Create an account": [
-        "Создать аккаунт"
       ],
       "Create calendar": [
         "Создать календарь"
@@ -611,9 +602,6 @@
       ],
       "Done": [
         "Готово"
-      ],
-      "Downgrade": [
-        "Перейти на более дешевую версию"
       ],
       "Download": [
         "Скачать"
@@ -1275,17 +1263,11 @@
       "Reload": [
         "Перезагрузить"
       ],
-      "Reload page": [
-        "Обновить страницу"
-      ],
       "Remove": [
         "Удалить"
       ],
       "Remove all other devices": [
         "Удалить все остальные устройства"
-      ],
-      "Remove bonuses": [
-        "Удалить бонусы"
       ],
       "Remove button": [
         "Удалить кнопку"
@@ -2446,11 +2428,6 @@
         "Извини, это предложение недоступно с вашим текущим планом. Но вы можете получить ${ discountPercentage } на ${ plan.Title } при подписке на ${ cycle } месяца.",
         "Извини, это предложение недоступно с вашим текущим планом. Но вы можете получить ${ discountPercentage } на ${ plan.Title } при подписке на ${ cycle } месяцев.",
         "Извини, это предложение недоступно с вашим текущим планом. Но вы можете получить ${ discountPercentage } на ${ plan.Title } при подписке на ${ cycle } месяца."
-      ]
-    },
-    "bf2023: Offers": {
-      "30-day money-back guarantee": [
-        "Гарантия возврата средств в течение 30 дней"
       ]
     },
     "bf2023: Title": {
@@ -7622,14 +7599,6 @@
         "Посмотреть приглашение"
       ]
     },
-    "familyOffer_2023:Error": {
-      "Family group not recognized. Try again.": [
-        "Семейная группа не найдена. Попробуйте еще раз."
-      ],
-      "Organization not recognized. Try again.": [
-        "Организация не найдена. Попробуйте еще раз."
-      ]
-    },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
         "Группы ${ BRAND_NAME }"
@@ -7817,22 +7786,8 @@
       ]
     },
     "familyOffer_2023:Label": {
-      "Enter family group name to confirm": [
-        "Для подтверждения введите название семейной группы"
-      ],
-      "Enter organization name to confirm": [
-        "Для подтверждения введите название организации"
-      ],
       "Family name": [
         "Название семьи"
-      ]
-    },
-    "familyOffer_2023:Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Все дополнительные пользователи, аккаунты и данные, связанные с вашей организацией будут удалены. Продолжить?"
-      ],
-      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Все члены семьи лишатся доступа к платным функциям ${ BRAND_NAME }. Продолжить?"
       ]
     },
     "familyOffer_2023:Settings section title": {
@@ -7860,12 +7815,6 @@
       ],
       "Change family name": [
         "Изменить название семьи"
-      ],
-      "Delete family group?": [
-        "Удалить семейную группу?"
-      ],
-      "Delete organization?": [
-        "Удалить организацию?"
       ],
       "Edit user storage": [
         "Управление хранилищем пользователя"
@@ -9129,12 +9078,6 @@
       ],
       "Paused": [
         "Приостановлено"
-      ],
-      "Undo finished": [
-        "Отмена завершена"
-      ],
-      "Undo in progress": [
-        "Выполняется отмена"
       ]
     },
     "Import type": {
@@ -9474,18 +9417,6 @@
       "${ url } deleted.": [
         "${ url } удалено."
       ],
-      "${ vaultLink } created": [
-        "Фильтр ${ vaultLink } создан"
-      ],
-      "${ vaultLink } deleted": [
-        "${ vaultLink } удалена"
-      ],
-      "${ vaultLink } shared with email": [
-        "${ vaultLink } была предоставлена почтой"
-      ],
-      "${ vaultLink } updated": [
-        "${ vaultLink } обновлён"
-      ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
         "${ VPN_SHORT_APP_NAME } скрывает ваш трафик. ${ PASS_SHORT_APP_NAME } скрывает ваши личные данные\n— неограниченное количество **псевдонимов hide-my-email** и **оповещений о даркнете** в случае утечки ваших данных."
       ],
@@ -9576,23 +9507,11 @@
         "+ Ещё ${ invisibleCount }",
         "+ Ещё ${ invisibleCount }"
       ],
-      "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } бонусного пространства"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } подключение для ${ VPN_APP_NAME } (позволяет подключить больше устройств к VPN)",
-        "+${ organization.BonusVPN } подключения для ${ VPN_APP_NAME } (позволяет подключить больше устройств к VPN)",
-        "+${ organization.BonusVPN } подключений для ${ VPN_APP_NAME } (позволяет подключить больше устройств к VPN)",
-        "+${ organization.BonusVPN } подключений для ${ VPN_APP_NAME } (позволяет подключить больше устройств к VPN)"
-      ],
       "2FA disabled": [
         "Двухфакторная аутентификация отключена"
       ],
       "30-day money-back guarantee": [
         "30-дневная гарантия возврата денег"
-      ],
-      "30-day money-back guarantee.": [
-        "30-дневная гарантия возврата денег."
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ protonSubdomain } управляется ${ BRAND_NAME }, что позволяет быстро настроить поддомен. ${ learnMoreLink }"
@@ -9999,9 +9918,6 @@
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "При отключении мониторинга аккаунта вся ваша история также будет очищена. Вы уверены, что хотите отключить его?"
       ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Перейдя на бесплатный тарифный план, вы навсегда потеряете эти преимущества, даже если в будущем вы снова улучшите его."
-      ],
       "By leaving now, changes may not be saved": [
         "Если выйти сейчас, изменения могут не сохраниться"
       ],
@@ -10328,9 +10244,6 @@
       ],
       "Downgrade": [
         "Перейти на более дешёвую версию"
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "При переходе на более дешевую версию все подключения к платными серверам ${ VPN_APP_NAME } будут прерваны."
       ],
       "Download ${ VPN_APP_NAME }": [
         "Скачать ${ VPN_APP_NAME }"
@@ -10785,15 +10698,6 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Если вы потеряете устройство, привязанное к двухфакторной аутентификации, то эти коды могут быть использованы вместо 6-значного кода двухфакторной аутентификации для входа в аккаунт. Каждый код можно использовать только один раз."
       ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Если вы продолжите переход на более дешевую версию, то вы потеряете доступ к ${ MAIL_APP_NAME } и платным функциям ${ VPN_APP_NAME }."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Если вы продолжите переход на более дешевую версию, то потеряете доступ к платным функциям ${ MAIL_APP_NAME }, включая дополнительное место в хранилище и фильтры."
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Если вы продолжите переход на более дешевую версию, то вы потеряете доступ к платным функциям ${ VPN_APP_NAME }."
-      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Если вы приобрели подарочный код или получили его от нашей службы поддержки, вы можете ввести его здесь."
       ],
@@ -10911,23 +10815,8 @@
       "Invitation link used": [
         "Ссылка для приглашения использована"
       ],
-      "Invite deleted": [
-        "Приглашение удалено"
-      ],
       "Invite family members and get everything up and running.": [
         "Пригласите членов семьи и настройте всё для работы."
-      ],
-      "Invite for new user deleted": [
-        "Приглашение пользователя удалено"
-      ],
-      "Invite for organization accepted": [
-        "Приглашение для организации принято"
-      ],
-      "Invite for organization created": [
-        "Создано приглашение для организации"
-      ],
-      "Invite rejected": [
-        "Приглашение отклонено"
       ],
       "Invite successfully sent": [
         "Приглашение успешно отправлено",
@@ -10949,54 +10838,6 @@
       ],
       "It's better to have:": [
         "Лучше иметь:"
-      ],
-      "Item autofilled in ${ vaultLink }": [
-        "Элемент автоматически заполнен в ${ vaultLink }"
-      ],
-      "Item autofilled in vault": [
-        "Элемент автоматически заполнен в хранилище"
-      ],
-      "Item created in ${ vaultLink }": [
-        "Элемент создан в ${ vaultLink }"
-      ],
-      "Item created in vault": [
-        "Элемент создан в хранилище"
-      ],
-      "Item deleted from ${ vaultLink }": [
-        "Элемент удален из ${ vaultLink }"
-      ],
-      "Item deleted from vault": [
-        "Элемент удален из хранилища"
-      ],
-      "Item flags changed in ${ vaultLink }": [
-        "Флаги предмета поменялись в ${ vaultLink }"
-      ],
-      "Item flags changed in vault": [
-        "Флажки предметов изменены в хранилище"
-      ],
-      "Item in ${ vaultLink } trashed": [
-        "Элемент из ${ vaultLink } перемещен в корзину"
-      ],
-      "Item in ${ vaultLink } untrashed": [
-        "Элемент из ${ vaultLink } перемещен из корзины"
-      ],
-      "Item in vault trashed": [
-        "Элемент из хранилища перемещен в корзину"
-      ],
-      "Item in vault untrashed": [
-        "Элемент из хранилища перемещен из корзины"
-      ],
-      "Item read in ${ vaultLink }": [
-        "Элемент прочитан в ${ vaultLink }"
-      ],
-      "Item read in vault": [
-        "Элемент прочитан в хранилище"
-      ],
-      "Item updated in ${ vaultLink }": [
-        "Элемент обновлен в ${ vaultLink }"
-      ],
-      "Item updated in vault": [
-        "Элемент обновлен в хранилище"
       ],
       "It’s often the easiest way to recover your account if you’re signed in.": [
         "Часто это самый простой способ восстановить аккаунт, если вы вошли в систему."
@@ -11193,9 +11034,6 @@
       "New group created via your identity provider and pending review.": [
         "Новая группа создана через вашего провайдера личных данных и ожидает проверки."
       ],
-      "New user invited to organization": [
-        "Новый пользователь приглашен в организацию"
-      ],
       "New VPN connection data will stop being collected and shown.": [
         "Новые данные VPN соединений перестанут собираться и отображаться."
       ],
@@ -11364,15 +11202,6 @@
       "Paid for a plan": [
         "Оплачен тариф"
       ],
-      "Pass Monitor - custom email confirmed": [
-        "Pass Monitor - пользовательский адрес эл. почты подтверждён"
-      ],
-      "Pass Monitor - custom email created": [
-        "Pass Monitor - создан пользовательский адрес эл. почты"
-      ],
-      "Pass Monitor - custom email deleted": [
-        "Pass Monitor - пользовательский адрес эл. почты удален"
-      ],
       "Pass usage logs": [
         "Журналы использования Pass"
       ],
@@ -11456,9 +11285,6 @@
       ],
       "Please open the document to view it.": [
         "Откройте документ для просмотра."
-      ],
-      "Please open your browser extension settings and allow ${ PASS_APP_NAME } extension to access website data. Then, reload this page.": [
-        "Пожалуйста, откройте настройки расширения вашего браузера и разрешите расширению ${ PASS_APP_NAME } доступ к данным веб-сайта. Затем обновите эту страницу."
       ],
       "Please reconnect to continue.": [
         "Пожалуйста, переподключитесь, чтобы продолжить."
@@ -11733,23 +11559,11 @@
       "Settings updated": [
         "Настройки обновлены"
       ],
-      "Shared ${ vaultLink } deleted": [
-        "Коллективная ${ vaultLink } удалена"
-      ],
-      "Shared ${ vaultLink } updated": [
-        "Коллективная ${ vaultLink } обновлена"
-      ],
       "Shared server country (${ countriesCount })": [
         "Страна с общим сервером (${ countriesCount })",
         "Страны с общими серверами (${ countriesCount })",
         "Стран с общими серверами (${ countriesCount })",
         "Стран с общими серверами (${ countriesCount })"
-      ],
-      "Shared vault deleted": [
-        "Общее хранилище удалено"
-      ],
-      "Shared vault updated": [
-        "Общее хранилище обновлено"
       ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Показать изображение каждого отправителя в списке сообщений. Инициалы отправителя будут показаны, если фотография недоступна."
@@ -11769,9 +11583,6 @@
       "Sign in only": [
         "Только для входа"
       ],
-      "Sign in or create an account to continue.": [
-        "Войдите или создайте аккаунт для продолжения."
-      ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Войдите в ${ MAIL_APP_NAME }, чтобы активировать свой адрес"
       ],
@@ -11780,9 +11591,6 @@
       ],
       "Signed up": [
         "Зарегистрировались"
-      ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Так как вы наш постоянный пользователь, для вашего аккаунта появился дополнительный функционал."
       ],
       "Smart Routed through a different country.": [
         "Смарт-маршрутизация через другую страну."
@@ -11831,12 +11639,6 @@
       ],
       "Step ${ step }/${ totalSteps }": [
         "Шаг ${ step }/${ totalSteps }"
-      ],
-      "Step 1 of 2": [
-        "Шаг 1 из 2"
-      ],
-      "Step 2 of 2": [
-        "Шаг 2 из 2"
       ],
       "Storage allocated to other users in this organisation": [
         "Хранилище, выделенное другим пользователям в этой организации"
@@ -12297,9 +12099,6 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Уникальный идентификатор, генерируемый поставщиком идентификационных данных, обычно в виде URL, содержащего название поставщика идентификационных данных (например, https://idp.example.com/XXXXX)."
       ],
-      "Unknown event type": [
-        "Неизвестный тип события"
-      ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Пока вы не выйдете из своей учётной записи либо не измените свой пароль, ваша сессия остаётся активной. Срок действия сессий истекает после 60 дней бездействия."
       ],
@@ -12393,21 +12192,6 @@
       "Users": [
         "Пользователи"
       ],
-      "Vault created": [
-        "Хранилище создано"
-      ],
-      "Vault deleted": [
-        "Хранилище удалено"
-      ],
-      "Vault either deleted or requires access permissions": [
-        "Хранилище удалено или требует разрешения на доступ"
-      ],
-      "Vault shared with email": [
-        "Общий доступ к хранилищу с помощью электронной почты"
-      ],
-      "Vault updated": [
-        "Хранилище обновлено"
-      ],
       "Verification code sent.": [
         "Код подтверждения отправлен"
       ],
@@ -12425,9 +12209,6 @@
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Проверьте свою личность с помощью временного одноразового пароля из приложения-аутентификаторв"
-      ],
-      "Verifying ${ PASS_APP_NAME } browser extension...": [
-        "Проверка расширения браузера ${ PASS_APP_NAME }..."
       ],
       "Verifying your payment": [
         "Подтверждение вашего платежа"
@@ -12563,9 +12344,6 @@
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Когда уведомления включены, мы будем отправлять оповещение на ваш резервный адрес электронной почты, если в вашем аккаунте ${ MAIL_APP_NAME } появятся новые сообщения."
-      ],
-      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
-        "При отказе от текущей платной подписки остаток средств на подписке будет возвращен в виде кредитов аккаунта, а вы будете переведены на тариф ${ BRAND_NAME } ${ PLANS.FREE }."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "При отмене подписки она не будет возобновлена, но вы сможете пользоваться преимуществами тарифа до конца срока действия подписки. После этого вы будете переведены на тариф ${ BRAND_NAME } Free."
@@ -12827,9 +12605,6 @@
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "Вы должны активировать закрытый ключ своей организации запасным паролем ключа организации, предоставленным администратором вашей организации."
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Вы должны отключить или удалить всех дополнительных пользователей ${ MAIL_APP_NAME }, адреса и свои доменты перед переходом на более дешевую версию."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Чтобы добавить PayPal в качестве способа оплаты вы должны привязать банковскую карту или банковский счет к вашей учетной записи PayPal."
@@ -15717,9 +15492,6 @@
       "use a data recovery method": [
         "использовать метод восстановления данных"
       ],
-      "Vault": [
-        "Хранилище"
-      ],
       "View guide": [
         "Посмотреть руководство"
       ],
@@ -16699,9 +16471,6 @@
       ]
     },
     "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }"
-      ],
       "Explore all ${ BRAND_NAME } plans": [
         "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
       ],
@@ -22798,9 +22567,6 @@
       "Upgrade your plan to increase your storage.": [
         "Улучшите тарифный план, чтобы увеличить объем хранилища."
       ],
-      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Мы зачислим остаток на счете за оставшееся время на ваш аккаунт ${ BRAND_NAME }"
-      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "У вас еще остался **${ daysRemaining }** день по тарифу **${ currentPlanName }**.",
         "У вас еще остались **${ daysRemaining }** дня по тарифу **${ currentPlanName }**.",
@@ -23721,9 +23487,6 @@
       "You have successfully canceled your subscription.": [
         "Вы успешно отменили свою подписку"
       ],
-      "You have successfully unsubscribed": [
-        "Подписка отменена"
-      ],
       "You will receive your username via email within a minute if you entered a valid recovery email address.": [
         "Вы получите ваше имя пользователя по электронной почте в течение минуты, если вы ввели верный адрес электронной почты."
       ],
@@ -24091,9 +23854,6 @@
       "${ MAIL_APP_NAME } Export Tool": [
         "Инструмент экспорта ${ MAIL_APP_NAME }"
       ],
-      "${ PASS_APP_NAME } is missing permissions": [
-        "У ${ PASS_APP_NAME } отсутствуют разрешения"
-      ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "Мониторинговый отчет ${ PASS_SHORT_APP_NAME }"
       ],
@@ -24454,12 +24214,6 @@
       "Confirm": [
         "Подтвердить"
       ],
-      "Confirm downgrade": [
-        "Подтвердите переход на более дешевую версию тарифа"
-      ],
-      "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Подтвердите потерю бонусов ${ BRAND_NAME }"
-      ],
       "Connect ${ name }": [
         "Подключить ${ name }"
       ],
@@ -24477,9 +24231,6 @@
       ],
       "Connect to video conferencing": [
         "Подключайтесь к видеоконференциям"
-      ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Подключите свой аккаунт ${ BRAND_NAME }"
       ],
       "Connect your custom domain": [
         "Подключить пользовательский домен"
@@ -24741,9 +24492,6 @@
       ],
       "Downgrade account": [
         "Перейти на более дешевую версию аккаунта"
-      ],
-      "Downgrade to ${ downgradedPlanName }?": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }?"
       ],
       "Download ${ app }": [
         "Скачать ${ app }"
@@ -25911,9 +25659,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Добро пожаловать в ${ BRAND_NAME } для бизнеса"
-      ],
-      "Welcome to your new password manager!": [
-        "Добро пожаловать в ваш новый менеджер паролей!"
       ],
       "What changes if you switch to the Free plan": [
         "Что изменится при переходе на Free plan"
@@ -27256,12 +27001,6 @@
       ],
       "By removing this phone number, you will no longer be able to recover your account.": [
         "Удалив этот номер телефона, вы больше не сможете восстановить свой аккаунт."
-      ],
-      "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
-        "Не удалось войти в систему. Откройте расширение браузера ${ PASS_APP_NAME } и войдите оттуда."
-      ],
-      "Could not sign up. Please open ${ PASS_APP_NAME } browser extension and sign up from there.": [
-        "Не удалось зарегистрироваться. Откройте расширение браузера ${ PASS_APP_NAME } и зарегистрируйтесь оттуда."
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Если вы отмените этот импорт, вы не сможете его возобновить. ${ BRAND_NAME } сохранил весь прогресс в вашем аккаунте. Все равно отменить?"
