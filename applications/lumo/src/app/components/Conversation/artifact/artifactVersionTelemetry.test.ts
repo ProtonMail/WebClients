@@ -4,6 +4,10 @@ import type { ArtifactRegistry } from './artifactRegistry';
 import {
     type LiveArtifactMessage,
     collectArtifactVersionTelemetry,
+    consumeArtifactTelemetryLiveMessages,
+    getArtifactTelemetryLiveMessages,
+    markArtifactTelemetryLiveMessage,
+    markArtifactTelemetryLiveMessageStopped,
     resolveArtifactRevisionSource,
 } from './artifactVersionTelemetry';
 
@@ -230,5 +234,119 @@ describe('collectArtifactVersionTelemetry', () => {
         const result = collectArtifactVersionTelemetry({}, [firstAssistant], live({ 'other-branch': {} }));
 
         expect(result.consumedMessageIds).toEqual([]);
+    });
+
+    describe('invalid create_artifact calls', () => {
+        const toolCallBlock = (content: string) => {
+            let toolCall: unknown;
+            try {
+                toolCall = JSON.parse(content);
+            } catch {
+                toolCall = undefined;
+            }
+            return { type: 'tool_call' as const, content, toolCall };
+        };
+
+        const validCall = toolCallBlock(
+            JSON.stringify({ name: 'create_artifact', arguments: { id: 'doc-1', title: 'Doc', content: 'a' } })
+        );
+        const truncatedCall = toolCallBlock('{"name": "create_artifact", "arguments": {"title": "Do');
+        const callWithoutContent = toolCallBlock(
+            JSON.stringify({ name: 'create_artifact', arguments: { title: 'Doc' } })
+        );
+        const otherToolCall = toolCallBlock(JSON.stringify({ name: 'web_search', arguments: { query: 'x' } }));
+
+        const invalidEvents = (result: ReturnType<typeof collectArtifactVersionTelemetry>) => {
+            return result.events.filter((event) => {
+                return event.kind === 'invalid';
+            });
+        };
+
+        it('reports calls whose JSON did not parse, or that lack a title or content', () => {
+            const message: Message = { ...firstAssistant, blocks: [truncatedCall, callWithoutContent, otherToolCall] };
+            const result = collectArtifactVersionTelemetry(
+                {},
+                [message],
+                live({ 'assistant-0': { artifactToolMode: 'auto' } })
+            );
+
+            expect(invalidEvents(result)).toEqual([
+                {
+                    kind: 'invalid',
+                    payload: { reason: 'invalid-json', artifactToolMode: 'auto', recoveredInSameMessage: false },
+                },
+                {
+                    kind: 'invalid',
+                    payload: { reason: 'missing-fields', artifactToolMode: 'auto', recoveredInSameMessage: false },
+                },
+            ]);
+        });
+
+        it('marks an invalid call as recovered when the same response made a valid one', () => {
+            const message: Message = { ...firstAssistant, blocks: [callWithoutContent, validCall] };
+            const result = collectArtifactVersionTelemetry(
+                registryWith([version('assistant-0', 'a')]),
+                [message],
+                live({ 'assistant-0': { artifactToolMode: 'auto' } })
+            );
+
+            expect(invalidEvents(result)).toEqual([
+                {
+                    kind: 'invalid',
+                    payload: { reason: 'missing-fields', artifactToolMode: 'auto', recoveredInSameMessage: true },
+                },
+            ]);
+        });
+
+        it('ignores stopped, failed and unfinished responses', () => {
+            const stopped = collectArtifactVersionTelemetry(
+                {},
+                [{ ...firstAssistant, blocks: [truncatedCall] }],
+                live({ 'assistant-0': { artifactToolMode: 'auto', stopped: true } })
+            );
+            const failed = collectArtifactVersionTelemetry(
+                {},
+                [{ ...firstAssistant, status: 'failed', blocks: [truncatedCall] }],
+                live({ 'assistant-0': { artifactToolMode: 'auto' } })
+            );
+            const unfinished = collectArtifactVersionTelemetry(
+                {},
+                [{ ...firstAssistant, status: undefined, blocks: [truncatedCall] }],
+                live({ 'assistant-0': { artifactToolMode: 'auto' } })
+            );
+
+            expect(invalidEvents(stopped)).toEqual([]);
+            expect(stopped.consumedMessageIds).toEqual(['assistant-0']);
+            expect(invalidEvents(failed)).toEqual([]);
+            expect(invalidEvents(unfinished)).toEqual([]);
+        });
+
+        it('ignores responses loaded from history', () => {
+            const result = collectArtifactVersionTelemetry(
+                {},
+                [{ ...firstAssistant, blocks: [truncatedCall] }],
+                new Map()
+            );
+
+            expect(result.events).toEqual([]);
+        });
+    });
+
+    describe('markArtifactTelemetryLiveMessageStopped', () => {
+        afterEach(() => {
+            consumeArtifactTelemetryLiveMessages(['stop-live', 'stop-unknown']);
+        });
+
+        it('flags a live message as stopped and ignores unknown ones', () => {
+            markArtifactTelemetryLiveMessage('stop-live', { artifactToolMode: 'auto' });
+            markArtifactTelemetryLiveMessageStopped('stop-live');
+            markArtifactTelemetryLiveMessageStopped('stop-unknown');
+
+            expect(getArtifactTelemetryLiveMessages().get('stop-live')).toEqual({
+                artifactToolMode: 'auto',
+                stopped: true,
+            });
+            expect(getArtifactTelemetryLiveMessages().has('stop-unknown')).toBe(false);
+        });
     });
 });

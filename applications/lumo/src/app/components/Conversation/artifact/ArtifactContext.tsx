@@ -24,9 +24,11 @@ import {
     bucketArtifactPanelOpenDuration,
     capArtifactPosition,
     sendArtifactCreatedEvent,
+    sendArtifactFullscreenToggledEvent,
     sendArtifactPanelClosedEvent,
     sendArtifactPanelOpenedEvent,
     sendArtifactRevisedEvent,
+    sendArtifactToolCallInvalidEvent,
 } from '../../../util/telemetry';
 import { artifactTypeSupportsAssetSync } from './artifactAssetSyncSupport';
 import {
@@ -106,6 +108,8 @@ export const ArtifactProvider = ({
     selectedIdRef.current = selectedId;
     const registryRef = useRef(registry);
     registryRef.current = registry;
+    const isFullscreenRef = useRef(isFullscreen);
+    isFullscreenRef.current = isFullscreen;
     const isLoadingPanelOpenRef = useRef(false);
     const panelOpenedAtRef = useRef<number | null>(null);
     // Tracks the in-flight assistant message so auto-open applies only to the current generation.
@@ -254,11 +258,18 @@ export const ArtifactProvider = ({
         setIsFullscreen(false);
     }, []);
 
+    // Only these two are user toggles; closing the panel also leaves fullscreen but isn't counted.
     const enterFullscreen = useCallback(() => {
+        if (!isFullscreenRef.current) {
+            sendArtifactFullscreenToggledEvent({ entered: true });
+        }
         setIsFullscreen(true);
     }, []);
 
     const exitFullscreen = useCallback(() => {
+        if (isFullscreenRef.current) {
+            sendArtifactFullscreenToggledEvent({ entered: false });
+        }
         setIsFullscreen(false);
     }, []);
 
@@ -329,8 +340,10 @@ export const ArtifactProvider = ({
         for (const event of events) {
             if (event.kind === 'created') {
                 sendArtifactCreatedEvent(event.payload);
-            } else {
+            } else if (event.kind === 'revised') {
                 sendArtifactRevisedEvent(event.payload);
+            } else {
+                sendArtifactToolCallInvalidEvent(event.payload);
             }
         }
     }, [registry, linearChain]);
@@ -375,7 +388,8 @@ export const ArtifactProvider = ({
             return;
         }
         handledArtifactQueryParamRef.current = handledKey;
-        openArtifact(openArtifactQueryParam, undefined, 'auto');
+        // Only Library cards link here with `?artifact=`.
+        openArtifact(openArtifactQueryParam, undefined, 'library');
     }, [conversationId, openArtifactQueryParam, openArtifact, registry]);
 
     useLayoutEffect(() => {

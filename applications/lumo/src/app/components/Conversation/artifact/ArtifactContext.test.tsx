@@ -1,7 +1,7 @@
 import { act, render } from '@testing-library/react';
 
 import { useQueryParam } from '../../../hooks/useQueryParam';
-import { sendArtifactPanelOpenedEvent } from '../../../util/telemetry';
+import { sendArtifactFullscreenToggledEvent, sendArtifactPanelOpenedEvent } from '../../../util/telemetry';
 import { ArtifactProvider, useArtifactContext } from './ArtifactContext';
 import type { ArtifactRegistry } from './artifactRegistry';
 import { useArtifactRegistry } from './useArtifactRegistry';
@@ -51,9 +51,11 @@ jest.mock('../../../util/telemetry', () => {
             return position;
         },
         sendArtifactCreatedEvent: jest.fn(),
+        sendArtifactFullscreenToggledEvent: jest.fn(),
         sendArtifactPanelClosedEvent: jest.fn(),
         sendArtifactPanelOpenedEvent: jest.fn(),
         sendArtifactRevisedEvent: jest.fn(),
+        sendArtifactToolCallInvalidEvent: jest.fn(),
     };
 });
 
@@ -218,5 +220,48 @@ describe('ArtifactProvider ?artifact= deep link', () => {
         useQueryParamMock.mockReturnValue('deep');
         rerender({ conversationId: 'conv-1' });
         expect(result.current.selectedId).toBe('deep');
+    });
+});
+
+describe('ArtifactProvider fullscreen telemetry', () => {
+    const sendFullscreenToggledMock = sendArtifactFullscreenToggledEvent as jest.Mock;
+
+    beforeEach(() => {
+        sendFullscreenToggledMock.mockClear();
+        useQueryParamMock.mockReturnValue('deep');
+        useArtifactRegistryMock.mockReturnValue(createRegistry(['deep']));
+    });
+
+    it('counts each real enter and exit once', () => {
+        const { result } = renderProvider();
+
+        act(() => {
+            result.current.enterFullscreen();
+        });
+        act(() => {
+            result.current.enterFullscreen();
+        });
+        act(() => {
+            result.current.exitFullscreen();
+        });
+        act(() => {
+            result.current.exitFullscreen();
+        });
+
+        expect(sendFullscreenToggledMock.mock.calls).toEqual([[{ entered: true }], [{ entered: false }]]);
+    });
+
+    it('does not count leaving fullscreen by closing the panel', () => {
+        const { result } = renderProvider();
+
+        act(() => {
+            result.current.enterFullscreen();
+        });
+        act(() => {
+            result.current.closePanel();
+        });
+
+        expect(result.current.isFullscreen).toBe(false);
+        expect(sendFullscreenToggledMock.mock.calls).toEqual([[{ entered: true }]]);
     });
 });

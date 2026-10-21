@@ -3,7 +3,11 @@ import { addConversation } from '../../redux/slices/core/conversations';
 import type { LumoState } from '../../redux/store';
 import { cleanConversation, getConversationPriv } from '../../types';
 import type { Conversation } from '../../types';
-import { initializeNewSpaceAndConversation, resolveArtifactCreationEnabled } from './helper';
+import {
+    initializeNewSpaceAndConversation,
+    resolveArtifactCreationEnabled,
+    resolveArtifactCreationSetting,
+} from './helper';
 
 interface StateOptions {
     globalDefault?: boolean;
@@ -52,6 +56,27 @@ describe('resolveArtifactCreationEnabled', () => {
 
     it('uses the pending choice when the conversation id is not in the store yet', () => {
         expect(resolveArtifactCreationEnabled(makeState({ pending: false }), 'conv-unknown')).toBe(false);
+    });
+});
+
+describe('resolveArtifactCreationSetting', () => {
+    it('reports the Settings default when the conversation has no choice of its own', () => {
+        expect(resolveArtifactCreationSetting(makeState({}), 'conv-1')).toBe('default-on');
+        expect(resolveArtifactCreationSetting(makeState({ globalDefault: false }), 'conv-1')).toBe('default-off');
+    });
+
+    it("reports the conversation's own choice, even when it matches the default", () => {
+        expect(resolveArtifactCreationSetting(makeState({ globalDefault: true, override: false }), 'conv-1')).toBe(
+            'chat-off'
+        );
+        expect(resolveArtifactCreationSetting(makeState({ globalDefault: true, override: true }), 'conv-1')).toBe(
+            'chat-on'
+        );
+    });
+
+    it("reports a pending new-chat choice as the chat's own", () => {
+        expect(resolveArtifactCreationSetting(makeState({ pending: false }), undefined)).toBe('chat-off');
+        expect(resolveArtifactCreationSetting(makeState({ globalDefault: false }), undefined)).toBe('default-off');
     });
 });
 

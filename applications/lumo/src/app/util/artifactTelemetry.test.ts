@@ -10,15 +10,20 @@ import {
     sendArtifactCreationDefaultChangedEvent,
     sendArtifactCreationToggledEvent,
     sendArtifactDownloadedEvent,
+    sendArtifactFullscreenToggledEvent,
     sendArtifactInlineActionSentEvent,
     sendArtifactPanelClosedEvent,
     sendArtifactPanelOpenedEvent,
+    sendArtifactRenderFailedEvent,
     sendArtifactRevisedEvent,
     sendArtifactSaveToDriveCompletedEvent,
+    sendArtifactTitleMenuOpenedEvent,
+    sendArtifactToolCallInvalidEvent,
     sendArtifactTurnContextEvent,
-    sendArtifactVersionHistoryOpenedEvent,
     sendArtifactVersionSelectedEvent,
     sendArtifactWebpageViewToggledEvent,
+    sendLibraryOpenedEvent,
+    sendMessageGenerationAbortedEvent,
     setLumoTelemetryEnabled,
 } from './telemetry';
 
@@ -97,9 +102,32 @@ describe('artifact event payloads', () => {
     });
 
     it('matches the agreed payloads', () => {
-        sendArtifactCreationToggledEvent(true, 'conversation');
+        sendArtifactCreationToggledEvent({
+            isCurrentlyEnabled: true,
+            scope: 'conversation',
+            globalDefault: true,
+            conversationHasArtifact: true,
+        });
+        sendArtifactCreationToggledEvent({
+            isCurrentlyEnabled: false,
+            scope: 'pending-new-chat',
+            globalDefault: false,
+            conversationHasArtifact: false,
+        });
+        // Before any artifact is created or shown in this tab.
         sendArtifactCreationDefaultChangedEvent(false);
-        sendArtifactTurnContextEvent({ generationType: 'new', artifactToolMode: 'auto', hasExistingArtifact: false });
+        sendArtifactTurnContextEvent({
+            generationType: 'new',
+            artifactToolMode: 'auto',
+            hasExistingArtifact: false,
+            creationSetting: 'default-on',
+        });
+        sendArtifactTurnContextEvent({
+            generationType: 'regenerate',
+            artifactToolMode: 'revise',
+            hasExistingArtifact: true,
+            creationSetting: 'chat-off',
+        });
         sendArtifactCreatedEvent({
             artifactType: 'code',
             artifactToolMode: 'auto',
@@ -130,7 +158,11 @@ describe('artifact event payloads', () => {
             versionNumber: 3,
             viewedOlderVersion: true,
         });
+        // After artifacts have been created in this tab.
+        sendArtifactCreationDefaultChangedEvent(true);
         sendArtifactPanelOpenedEvent({ source: 'chip', artifactType: 'presentation', artifactPosition: 1 });
+        sendArtifactPanelOpenedEvent({ source: 'library', artifactType: 'document', artifactPosition: 2 });
+        sendArtifactPanelOpenedEvent({ source: 'drawer', artifactType: 'code', artifactPosition: 3 });
         sendArtifactPanelClosedEvent({
             closedDuringLoading: false,
             artifactType: 'presentation',
@@ -157,7 +189,7 @@ describe('artifact event payloads', () => {
         sendArtifactSaveToDriveCompletedEvent({ format: 'md', artifactType: 'document', result: 'success' });
         sendArtifactInlineActionSentEvent({ kind: 'explain', artifactType: 'code', layout: 'mobile' });
         sendArtifactWebpageViewToggledEvent({ mode: 'code', layout: 'docked' });
-        sendArtifactVersionHistoryOpenedEvent({ artifactType: 'document', layout: 'docked', versionCount: 4 });
+        sendArtifactTitleMenuOpenedEvent({ artifactType: 'document', layout: 'docked', versionCount: 4 });
         sendArtifactVersionSelectedEvent({
             artifactType: 'document',
             layout: 'docked',
@@ -170,6 +202,22 @@ describe('artifact event payloads', () => {
             source: 'banner',
             versionsBehindLatest: 0,
         });
+
+        sendMessageGenerationAbortedEvent({ artifactInFlight: true });
+        sendMessageGenerationAbortedEvent({ artifactInFlight: false });
+
+        sendArtifactToolCallInvalidEvent({
+            reason: 'invalid-json',
+            artifactToolMode: 'auto',
+            recoveredInSameMessage: false,
+        });
+        sendArtifactToolCallInvalidEvent({ reason: 'missing-fields', recoveredInSameMessage: true });
+        sendArtifactRenderFailedEvent({ artifactType: 'presentation' });
+        sendArtifactFullscreenToggledEvent({ entered: true });
+        sendArtifactFullscreenToggledEvent({ entered: false });
+        sendLibraryOpenedEvent({ tab: 'creations', hasCreations: false });
+        // The list failed to load.
+        sendLibraryOpenedEvent({ tab: 'images' });
 
         expect(sendCustomEvent.mock.calls).toMatchSnapshot();
     });
