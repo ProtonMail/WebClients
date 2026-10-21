@@ -13,6 +13,7 @@ import { WordCountProvider } from '~/components/document/WordCount'
 import { useDocsUrlBar } from '~/utils/docs-url-bar'
 import { DocumentLayout } from '~/components/document/DocumentLayout/DocumentLayout'
 import { usePublicSessionUser } from '@proton/drive-store/store'
+import useAuthentication from '@proton/components/hooks/useAuthentication'
 import { DocsProvider } from '~/components/document/context'
 import { useUnleashClient } from '@proton/unleash/proxy'
 import { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
@@ -34,7 +35,8 @@ export function PublicApplicationContent({
   const api = useApi()
   const unleashClient = useUnleashClient()
 
-  const { user: legacyUser, localID } = usePublicSessionUser()
+  const { user: legacyUser } = usePublicSessionUser()
+  const localID = useAuthentication().getLocalID()
   const user = sdkUser ?? legacyUser
 
   const { openAction } = useDocsUrlBar()

@@ -25,7 +25,8 @@ import {
 } from '@proton/docs-core'
 import { getNodeName } from '@proton/docs-core/lib/DriveSDK/getNodeName'
 import { CacheService } from '@proton/docs-core/lib/Services/CacheService'
-import { useGetPrimaryAddressKeys } from '@proton/docs-core/lib/Crypto/useGetPrimaryAddressKeys'
+import { useApi } from '@proton/app-context/useApi'
+import { useGetMemberAddressKeys } from '@proton/docs-core/lib/Crypto/useGetMemberAddressKeys'
 import { useGetDefaultShareAddressKeys } from '@proton/docs-core/lib/Crypto/useGetDefaultShareAddressKeys'
 import type {
   CommentMarkNodeChangeData,
@@ -146,7 +147,7 @@ export function DocumentViewer({
   const sdkEventsEnabled = useDocsDocumentViewerEventsSDK()
   const isDriveCompatSDKFlagOn = useDriveCompatSDK()
   const documentWindowAction = useDocumentWindowAction()
-  const getPrimaryAddressKeys = useGetPrimaryAddressKeys()
+  const getMemberAddressKeys = useGetMemberAddressKeys(useApi())
   const getDefaultShareAddressKeys = useGetDefaultShareAddressKeys()
   const isOpenTracerEnabled = useIsOpenTracerEnabled()
   const isDarkThemeEnabled = useIsDarkThemeEnabled()
@@ -669,14 +670,14 @@ export function DocumentViewer({
       if (replaceDriveCompat) {
         // Unlike legacy, which loads them in parallel with the document, address keys are loaded before it
         if (isPrivateNode) {
-          getPrimaryAddressKeys()
+          getMemberAddressKeys(nodeMeta)
             .then((keys) => {
               void application.getDocLoader().initialize(nodeMeta, tmpConvertNewDocTypeToOld(documentType), {
                 primaryAddressKeys: keys,
               })
             })
             .catch((error) => {
-              const errorMessage = 'Failed to fetch primary address keys'
+              const errorMessage = 'Failed to fetch member address keys'
               application.logger.error(errorMessage, error)
               handleInitError(errorMessage)
             })
@@ -717,7 +718,7 @@ export function DocumentViewer({
     accessReady,
     replaceDriveCompat,
     removeLocalIDFromUrl,
-    getPrimaryAddressKeys,
+    getMemberAddressKeys,
     isPrivateNode,
     providerType,
     getDefaultShareAddressKeys,
