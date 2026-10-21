@@ -73,10 +73,10 @@ const legacyBarrelImporters = [
 
 export default defineConfig([
     defaultConfig,
-    createRestrictedImportsConfig({ rollout: ['components-barrel', 'icon-component'] }),
+    createRestrictedImportsConfig({ rollout: ['components-barrel'] }),
     // A second call for some `files` replaces the first call's options for those files, so repeat the rollout ids.
     createRestrictedImportsConfig({
-        rollout: ['components-barrel-index', 'icon-component'],
+        rollout: ['components-barrel-index'],
         files: legacyBarrelImporters,
     }),
 ]);
