@@ -3,10 +3,11 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
+import { getUpgradePath } from '@proton/payments/core/subscription/upsell';
 import { getCalendarsLimitReachedText } from '@proton/shared/lib/calendar/calendarLimits';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRef } from '@proton/shared/lib/helpers/ref';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import SettingsLink from '../../components/link/SettingsLink';
@@ -27,7 +28,7 @@ const CalendarLimitReachedModal = ({ open, onClose, isFreeUser, user, subscripti
         component: UPSELL_COMPONENT.MODAL,
         feature: CALENDAR_UPSELL_PATHS.MAX_CAL,
     });
-    const upgradeLink = addUpsellPath(getUpgradePath({ user, subscription }), upsellRef);
+    const upgradeLink = getUpgradePath({ user, subscription }, upsellRef);
     const submitButtonPath = isFreeUser ? upgradeLink : getCalendarsSettingsPath();
     const submitButtonText = isFreeUser ? c('Modal action').t`Upgrade` : c('Modal action').t`Manage calendars`;
 

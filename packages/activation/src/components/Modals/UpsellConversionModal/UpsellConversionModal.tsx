@@ -10,7 +10,7 @@ import UpsellModal from '@proton/components/components/upsell/UpsellModal/Upsell
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { MAIL_APP_NAME, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/ref';
 import forwardImg from '@proton/styles/assets/img/illustrations/new-upsells-img/easy-switch-forward.svg';
 
 import { MAX_SYNC_FREE_USER, MAX_SYNC_PAID_USER } from '../../../constants';

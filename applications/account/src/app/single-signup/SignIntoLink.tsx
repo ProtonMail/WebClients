@@ -3,10 +3,14 @@ import { Link } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { useConfig } from '@proton/app-context/useConfig';
+import type { PLANS } from '@proton/payments/core/constants';
 import type { Plan } from '@proton/payments/core/plan/interface';
+import {
+    type SubscriptionSearchParams,
+    getSubscriptionSearchParamsString,
+} from '@proton/payments/core/subscription/search-params';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { APPS } from '@proton/shared/lib/constants';
-import { stringifySearchParams } from '@proton/shared/lib/helpers/url';
 
 import type { OptimisticOptions } from '../single-signup-v2/interface';
 import type { Measure } from './interface';
@@ -24,18 +28,19 @@ const SignInToLink = ({
 }) => {
     const { APP_NAME } = useConfig();
 
-    const planOptions = {
-        plan: options.plan.Name,
-        cycle: `${options.cycle}`,
+    const planOptions: SubscriptionSearchParams = {
+        plan: options.plan.Name as PLANS,
+        cycle: options.cycle,
         currency: options.currency,
         coupon: options.checkResult.Coupon?.Code,
-        type: 'offer',
-        ref: 'signup',
+        fixedCycle: true,
+        fixedPlan: true,
     };
 
     if (APP_NAME === APPS.PROTONACCOUNT) {
+        const search = getSubscriptionSearchParamsString({ ...planOptions, ref: 'signup', email: details?.email });
         // On account we simply refresh the page with a direct local link
-        const pathname = `/vpn/dashboard${stringifySearchParams({ ...planOptions, email: details?.email }, '?')}`;
+        const pathname = `/vpn/dashboard?${search}`;
         return (
             // The link is deliberately not navigable while disabled, so it has no href to be keyboard accessible with.
             // eslint-disable-next-line jsx-a11y/anchor-is-valid
@@ -50,8 +55,9 @@ const SignInToLink = ({
         );
     }
 
+    const search = getSubscriptionSearchParamsString({ ...planOptions, ref: 'signup' });
     const signInTo = {
-        pathname: `/dashboard${stringifySearchParams(planOptions, '?')}`,
+        pathname: `/dashboard?${search}`,
         ...(details
             ? {
                   state: {

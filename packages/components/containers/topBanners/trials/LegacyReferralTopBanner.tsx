@@ -14,6 +14,7 @@ import {
     willTrialExpireInLessThan1Week,
 } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { getUpgradePath } from '@proton/payments/core/subscription/upsell';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     APPS,
@@ -22,7 +23,7 @@ import {
     SHARED_UPSELL_PATHS,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
-import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/ref';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 import SettingsLink from '../../../components/link/SettingsLink';
@@ -80,7 +81,7 @@ const TrialEndsActionButton = ({
     }
 
     // For all other apps we render the button that will redirect to the account app
-    const upgradePath = addUpsellPath(getUpgradePath({ user, subscription, app: APP_NAME }), upsellRef);
+    const upgradePath = getUpgradePath({ user, subscription, app: APP_NAME }, upsellRef);
     return (
         <SettingsLink path={upgradePath} className="color-inherit">
             {textAction}

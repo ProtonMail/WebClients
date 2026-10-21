@@ -8,7 +8,7 @@ import {
     MAIL_UPSELL_PATHS,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
-import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRef } from '@proton/shared/lib/helpers/ref';
 import scribeIllustration from '@proton/styles/assets/img/illustrations/upsell-composer-assistant.svg';
 import lumoIllustration from '@proton/styles/assets/img/lumo/lumo-upsell-modal-header.svg';
 import { useFlag } from '@proton/unleash/useFlag';

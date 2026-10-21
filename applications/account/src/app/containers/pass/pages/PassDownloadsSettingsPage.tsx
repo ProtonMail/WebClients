@@ -20,6 +20,7 @@ import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { clients } from '@proton/pass/clients';
 import { Clients } from '@proton/pass/constants';
 import { PLANS } from '@proton/payments/core/constants';
+import { getSubscriptionSearchParamsString } from '@proton/payments/core/subscription/search-params';
 import { TelemetryAccountDashboardEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { APPS, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
@@ -29,6 +30,8 @@ import clsx from '@proton/utils/clsx';
 type Section = { header: string; platforms: Clients[] };
 
 const UpgradeBanner = ({ passPlusPlanName, className }: { passPlusPlanName: string; className?: string }) => {
+    const upgradeSearch = getSubscriptionSearchParamsString({ plan: PLANS.PASS });
+
     return (
         <Card className={clsx('flex items-center gap-2', className)} rounded>
             <span className="flex-1">
@@ -38,7 +41,7 @@ const UpgradeBanner = ({ passPlusPlanName, className }: { passPlusPlanName: stri
                 }
             </span>
 
-            <ButtonLike color="norm" as={SettingsLink} path={`/dashboard?plan=${PLANS.PASS}`}>
+            <ButtonLike color="norm" as={SettingsLink} path={`/dashboard?${upgradeSearch}`}>
                 {c('Action').t`Upgrade`}
             </ButtonLike>
         </Card>

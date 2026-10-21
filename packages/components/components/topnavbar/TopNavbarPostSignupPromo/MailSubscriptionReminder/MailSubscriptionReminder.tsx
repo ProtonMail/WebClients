@@ -10,7 +10,7 @@ import {
     SECOND,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
-import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRef } from '@proton/shared/lib/helpers/ref';
 
 import { SUBSCRIPTION_STEPS } from '../../../../containers/payments/subscription/constants';
 import useSettingsLink from '../../../link/useSettingsLink';
