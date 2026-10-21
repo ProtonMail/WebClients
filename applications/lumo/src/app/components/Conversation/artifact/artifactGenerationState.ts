@@ -1,3 +1,4 @@
+import { getMessageBlocks } from '../../../messageHelpers';
 import type { ContentBlock, Message } from '../../../types';
 import type { ArtifactRegistry } from './artifactRegistry';
 import { CREATE_ARTIFACT_TOOL_NAME } from './createArtifactTool';
@@ -32,6 +33,11 @@ function hasCreateArtifactToolCallBlock(blocks: ContentBlock[]): boolean {
     return blocks.some((block) => {
         return getToolCallNameFromBlock(block) === CREATE_ARTIFACT_TOOL_NAME;
     });
+}
+
+/** True once the model has announced a create_artifact call in this message, finished or not. */
+export function messageHasCreateArtifactToolCall(message: Message): boolean {
+    return hasCreateArtifactToolCallBlock(getMessageBlocks(message));
 }
 
 // Explain only asks for a chat answer about the selection — it never revises the artifact, so it

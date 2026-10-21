@@ -1,7 +1,9 @@
 import { type ReactNode, createContext, useCallback, useContext, useEffect } from 'react';
 
+import { messageHasCreateArtifactToolCall } from '../components/Conversation/artifact/artifactGenerationState';
 import { resolveArtifactCreationEnabled } from '../components/Conversation/helper';
-import { useLumoDispatch, useLumoSelector } from '../redux/hooks';
+import { useLumoDispatch, useLumoSelector, useLumoStore } from '../redux/hooks';
+import { selectMessagesByConversationId } from '../redux/selectors';
 import { clearPendingArtifactCreation, setPendingArtifactCreation } from '../redux/slices/composerActions';
 import { pushConversationRequest, setConversationArtifactCreation } from '../redux/slices/core/conversations';
 import { sendArtifactCreationToggledEvent } from '../util/telemetry';
@@ -25,6 +27,7 @@ interface ArtifactCreationProviderProps {
  */
 export const ArtifactCreationProvider = ({ children }: ArtifactCreationProviderProps) => {
     const dispatch = useLumoDispatch();
+    const store = useLumoStore();
     const { conversationId } = useConversation();
     const conversationExists = useLumoSelector((state) => {
         return conversationId !== undefined && state.conversations[conversationId] !== undefined;
@@ -46,7 +49,19 @@ export const ArtifactCreationProvider = ({ children }: ArtifactCreationProviderP
 
     const handleArtifactCreationToggle = useCallback(() => {
         const scope = conversationId && conversationExists ? 'conversation' : 'pending-new-chat';
-        sendArtifactCreationToggledEvent(isArtifactCreationEnabled, scope);
+        // Read at click time rather than subscribed to: only the telemetry needs it.
+        const state = store.getState();
+        const conversationHasArtifact =
+            scope === 'conversation' &&
+            Object.values(selectMessagesByConversationId(conversationId)(state)).some((message) => {
+                return messageHasCreateArtifactToolCall(message) || message.artifactManualEdit !== undefined;
+            });
+        sendArtifactCreationToggledEvent({
+            isCurrentlyEnabled: isArtifactCreationEnabled,
+            scope,
+            globalDefault: state.lumoUserSettings?.automaticArtifactCreation ?? true,
+            conversationHasArtifact,
+        });
         const newValue = !isArtifactCreationEnabled;
         if (conversationId && conversationExists) {
             dispatch(setConversationArtifactCreation({ id: conversationId, artifactCreation: newValue }));
@@ -54,7 +69,7 @@ export const ArtifactCreationProvider = ({ children }: ArtifactCreationProviderP
         } else {
             dispatch(setPendingArtifactCreation(newValue));
         }
-    }, [isArtifactCreationEnabled, conversationId, conversationExists, dispatch]);
+    }, [isArtifactCreationEnabled, conversationId, conversationExists, dispatch, store]);
 
     const value = {
         isArtifactCreationEnabled,

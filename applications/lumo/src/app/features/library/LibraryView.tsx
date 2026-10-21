@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
 import { clsx } from 'clsx';
@@ -10,6 +10,7 @@ import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
+import { sendLibraryOpenedEvent } from '../../util/telemetry';
 import { useGeneratedGalleryCreations } from '../creations/hooks/useGeneratedGalleryCreations';
 import { GalleryView } from '../gallery/GalleryView';
 import { LibraryCreationsTab } from './LibraryCreationsTab';
@@ -132,6 +133,22 @@ export const LibraryView = ({ isProcessingAttachment, prefillQuery }: Props) => 
     };
 
     const creationsCount = creations.status === 'loaded' ? `${creations.items.length}` : undefined;
+
+    // Once per visit, after the list settles, so empty Libraries can be told apart.
+    const hasReportedOpenRef = useRef(false);
+    useEffect(() => {
+        if (!artifactsView || hasReportedOpenRef.current) {
+            return;
+        }
+        if (creations.status !== 'loaded' && creations.status !== 'error') {
+            return;
+        }
+        hasReportedOpenRef.current = true;
+        sendLibraryOpenedEvent({
+            tab: activeTab,
+            hasCreations: creations.status === 'loaded' ? creations.items.length > 0 : undefined,
+        });
+    }, [artifactsView, creations.status, creations.items.length, activeTab]);
 
     return (
         <LumoLayoutWithDrawer drawer={{ disabled: true }}>

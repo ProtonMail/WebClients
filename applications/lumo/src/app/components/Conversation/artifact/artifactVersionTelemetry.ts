@@ -1,4 +1,4 @@
-import { hasArtifactAction } from '../../../messageHelpers';
+import { getMessageBlocks, hasArtifactAction } from '../../../messageHelpers';
 import type { Message, MessageId } from '../../../types';
 import { isManualArtifactEditMessage } from '../../../types';
 import { Role } from '../../../types-api';
@@ -6,12 +6,15 @@ import {
     type ArtifactCreatedEventPayload,
     type ArtifactRevisedEventPayload,
     type ArtifactRevisionSource,
+    type ArtifactToolCallInvalidEventPayload,
+    type ArtifactToolCallInvalidReason,
     bucketArtifactContentLength,
     bucketArtifactLanguage,
     capArtifactPosition,
 } from '../../../util/telemetry';
 import type { ArtifactToolMode } from '../helper';
 import type { ArtifactRegistry } from './artifactRegistry';
+import { CREATE_ARTIFACT_TOOL_NAME, parseCompleteArtifactToolCall } from './createArtifactTool';
 
 /**
  * Messages that can produce an artifact version *in this tab*: assistant messages this client
@@ -26,6 +29,9 @@ import type { ArtifactRegistry } from './artifactRegistry';
 export interface LiveArtifactMessage {
     // Undefined for manual edits, which don't go through the model.
     artifactToolMode?: ArtifactToolMode;
+    // The user stopped the response. A stopped message still finishes as `succeeded`, so this is
+    // what keeps a create_artifact call cut off mid-stream from being reported as invalid.
+    stopped?: boolean;
 }
 
 const MAX_LIVE_MESSAGES = 50;
@@ -41,6 +47,13 @@ export function markArtifactTelemetryLiveMessage(messageId: MessageId, info: Liv
         if (oldest !== undefined) {
             liveArtifactMessages.delete(oldest);
         }
+    }
+}
+
+export function markArtifactTelemetryLiveMessageStopped(messageId: MessageId) {
+    const live = liveArtifactMessages.get(messageId);
+    if (live) {
+        liveArtifactMessages.set(messageId, { ...live, stopped: true });
     }
 }
 
@@ -97,7 +110,46 @@ function isFinalizedMessage(message: Message): boolean {
 
 export type ArtifactVersionTelemetryEvent =
     | { kind: 'created'; payload: ArtifactCreatedEventPayload }
-    | { kind: 'revised'; payload: ArtifactRevisedEventPayload };
+    | { kind: 'revised'; payload: ArtifactRevisedEventPayload }
+    | { kind: 'invalid'; payload: ArtifactToolCallInvalidEventPayload };
+
+// When the call's JSON didn't parse, its name can only be found in the raw string.
+const CREATE_ARTIFACT_NAME_PATTERN = new RegExp(`"name"\\s*:\\s*"${CREATE_ARTIFACT_TOOL_NAME}"`);
+
+/** Why each create_artifact call in the message produced no creation, and whether any call did. */
+function inspectArtifactToolCalls(message: Message): {
+    invalidReasons: ArtifactToolCallInvalidReason[];
+    hasValidCall: boolean;
+} {
+    const invalidReasons: ArtifactToolCallInvalidReason[] = [];
+    let hasValidCall = false;
+
+    for (const block of getMessageBlocks(message)) {
+        if (block.type !== 'tool_call') {
+            continue;
+        }
+
+        const parsed = block.toolCall as { name?: string; arguments?: unknown } | undefined;
+        if (!parsed || typeof parsed !== 'object') {
+            if (CREATE_ARTIFACT_NAME_PATTERN.test(block.content)) {
+                invalidReasons.push('invalid-json');
+            }
+            continue;
+        }
+        if (parsed.name !== CREATE_ARTIFACT_TOOL_NAME) {
+            continue;
+        }
+
+        const args = parsed.arguments;
+        if (typeof args === 'object' && args && parseCompleteArtifactToolCall(args as Record<string, unknown>)) {
+            hasValidCall = true;
+        } else {
+            invalidReasons.push('missing-fields');
+        }
+    }
+
+    return { invalidReasons, hasValidCall };
+}
 
 /**
  * Pure core of artifact creation/revision telemetry: which finalized versions on the active chain
@@ -171,12 +223,29 @@ export function collectArtifactVersionTelemetry(
     });
 
     const consumedMessageIds: MessageId[] = [];
-    for (const messageId of liveMessages.keys()) {
+    for (const [messageId, live] of liveMessages) {
         const message = linearChain.find((entry) => {
             return entry.id === messageId;
         });
-        if (message && isFinalizedMessage(message)) {
-            consumedMessageIds.push(messageId);
+        if (!message || !isFinalizedMessage(message)) {
+            continue;
+        }
+        consumedMessageIds.push(messageId);
+
+        // Stopped or failed responses can end mid-call; only a finished response's calls count.
+        if (message.role !== Role.Assistant || message.status !== 'succeeded' || live.stopped) {
+            continue;
+        }
+        const { invalidReasons, hasValidCall } = inspectArtifactToolCalls(message);
+        for (const reason of invalidReasons) {
+            events.push({
+                kind: 'invalid',
+                payload: {
+                    reason,
+                    artifactToolMode: live.artifactToolMode,
+                    recoveredInSameMessage: hasValidCall,
+                },
+            });
         }
     }
 
