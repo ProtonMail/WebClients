@@ -39,6 +39,7 @@ export interface EditorControllerInterface {
   getEditorJSON(): Promise<SerializedEditorState | undefined>
   getLocalSpreadsheetStateJSON(): Promise<unknown>
   getYDocAsJSON(): Promise<unknown>
+  getEditorBuildInfo(): Promise<{ appVersion: string; commit: string }>
   printAsPDF(): Promise<void>
   receiveEditor(editorInvoker: ClientRequiresEditorMethods): void
   restoreRevisionByReplacingLexicalState(lexicalState: SerializedEditorState): Promise<void>
@@ -363,6 +364,14 @@ export class EditorController implements EditorControllerInterface {
 
     const json = await this.editorInvoker.getYDocAsJSON()
     return json
+  }
+
+  async getEditorBuildInfo(): Promise<{ appVersion: string; commit: string }> {
+    if (!this.editorInvoker) {
+      throw new Error('Editor invoker not initialized')
+    }
+
+    return this.editorInvoker.getEditorBuildInfo()
   }
 
   showCommentsPanel(): void {
