@@ -19,6 +19,8 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { useGetStartedChecklist } from '../../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 
+import { TrackOnboardingStepLoad } from '../../../../telemetry/TrackOnboardingStepLoad';
+import { ONBOARDING_STEPS, useOnboardingTracking } from '../../../../telemetry/onboardingEvents';
 import type { OnboardingStepEligibleCallback } from '../interface';
 import OnboardingContent from '../layout/OnboardingContent';
 
@@ -103,17 +105,20 @@ const PrivacyFeature = ({ description, imgSrc }: { imgSrc: string; description: 
 };
 
 const OnboardingWelcomeStep = ({ onNext }: OnboardingStepRenderCallback) => {
+    const { trackStepCompleted } = useOnboardingTracking();
     const { markItemsAsDone } = useGetStartedChecklist();
     const [user] = useUser();
     const privacyFeature = getPrivacyFeatures(user);
 
     const handleNext = () => {
         void markItemsAsDone('ProtectInbox');
+        trackStepCompleted(ONBOARDING_STEPS.welcome);
         onNext();
     };
 
     return (
         <OnboardingStep>
+            <TrackOnboardingStepLoad step={ONBOARDING_STEPS.welcome} />
             <OnboardingContent
                 title={c('Onboarding modal').t`Welcome to ${MAIL_APP_NAME}`}
                 description={c('Onboarding modal').t`Where privacy is default.`}

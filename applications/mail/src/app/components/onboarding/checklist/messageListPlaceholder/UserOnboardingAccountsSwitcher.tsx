@@ -7,7 +7,7 @@ import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import { IcSquares } from '@proton/icons/icons/IcSquares';
-import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
+import { OldTelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
@@ -33,7 +33,7 @@ const UserOnboardingAccountsSwitcher = () => {
 
     const handleChangeChecklistDisplay = () => {
         changeChecklistDisplay(CHECKLIST_DISPLAY_TYPE.REDUCED);
-        void sendMailOnboardingTelemetry(TelemetryMailOnboardingEvents.finish_change_login, {});
+        void sendMailOnboardingTelemetry(OldTelemetryMailOnboardingEvents.finish_change_login, {});
     };
 
     const defaultEmailAddress: string | undefined = sortedAddresses?.[0]?.Email;
@@ -85,7 +85,7 @@ const UserOnboardingAccountsSwitcher = () => {
                                 rel="noopener noreferrer"
                                 target="_blank"
                                 onClick={() => {
-                                    void sendMailOnboardingTelemetry(TelemetryMailOnboardingEvents.change_login, {
+                                    void sendMailOnboardingTelemetry(OldTelemetryMailOnboardingEvents.change_login, {
                                         service: service.key,
                                     });
                                 }}
