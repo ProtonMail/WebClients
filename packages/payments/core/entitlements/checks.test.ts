@@ -160,3 +160,27 @@ describe('hasExternalManagedMembers', () => {
         ).toBe(false);
     });
 });
+
+describe('hasDedicatedIpsOrIsVpnB2B', () => {
+    const vpnBusinessCatalog = buildEntitlementCatalog({
+        [PLANS.VPN_PRO]: [EntitlementName.Business, EntitlementName.FlagsVpn],
+        [PLANS.VPN_BUSINESS]: [EntitlementName.Business, EntitlementName.FlagsVpn, EntitlementName.MaxDedicatedIps],
+        [PLANS.BUNDLE_PRO_2024]: [EntitlementName.Business, EntitlementName.FlagsVpn, EntitlementName.FlagsInbox],
+        [PLANS.PASS_BUSINESS]: [EntitlementName.Business, EntitlementName.FlagsPass],
+        [PLANS.VPN2024]: [EntitlementName.FlagsVpn],
+    });
+
+    const hasDedicatedIpsOrIsVpnB2B = (plan: PLANS) =>
+        createEntitlementResolverForSelection(vpnBusinessCatalog, buildSubscription(plan)).hasDedicatedIpsOrIsVpnB2B;
+
+    it.each([PLANS.VPN_PRO, PLANS.VPN_BUSINESS, PLANS.BUNDLE_PRO_2024])(
+        'returns true for VPN business plan %s',
+        (plan) => {
+            expect(hasDedicatedIpsOrIsVpnB2B(plan)).toBe(true);
+        }
+    );
+
+    it.each([PLANS.PASS_BUSINESS, PLANS.VPN2024])('returns false for %s', (plan) => {
+        expect(hasDedicatedIpsOrIsVpnB2B(plan)).toBe(false);
+    });
+});

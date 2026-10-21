@@ -1,8 +1,11 @@
 import { c, msgid } from 'ttag';
 
+import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useFetchData } from '@proton/components/hooks/useFetchData';
-import { PLANS } from '@proton/payments/core/constants';
+import { ADDON_PREFIXES } from '@proton/payments/core/constants';
+import { supportsAddonType } from '@proton/payments/core/plan/addons';
+import { getPlanIDs, getPlanName } from '@proton/payments/core/subscription/helpers';
 import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 
 import { queryVPNGateways } from '../apis/gateway';
@@ -65,13 +68,12 @@ const getDefaultConfig = (nbDay: number) => {
 export const useGateways = (organization: Organization | undefined, maxAge: number) => {
     const api = useApi();
 
-    const hasGatewaysAccess =
-        organization &&
-        (organization.PlanName === PLANS.VPN_BUSINESS ||
-            organization.PlanName === PLANS.BUNDLE_PRO ||
-            organization.PlanName === PLANS.BUNDLE_PRO_2024 ||
-            organization.PlanName === PLANS.BUNDLE_BIZ_2025 ||
-            organization.PlanName === PLANS.VPN_PASS_BUNDLE_BUSINESS);
+    const [allSubscriptions = []] = useAllSubscriptions();
+    const subscriptionWithIpAddon = allSubscriptions.find((subscription) =>
+        supportsAddonType(getPlanIDs(subscription), ADDON_PREFIXES.IP)
+    );
+    const planWithIpAddon = getPlanName(subscriptionWithIpAddon);
+    const hasGatewaysAccess = !!organization && planWithIpAddon !== undefined;
 
     // If there’s no result yet, define fallback config
     const nbDay = 7;
@@ -100,6 +102,7 @@ export const useGateways = (organization: Organization | undefined, maxAge: numb
 
     return {
         hasGatewaysAccess,
+        planWithIpAddon,
         loading,
         config: result?.Config || getDefaultConfig(nbDay),
         locations: result?.Locations,
