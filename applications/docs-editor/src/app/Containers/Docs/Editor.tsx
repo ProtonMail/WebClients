@@ -54,7 +54,7 @@ import { getAccentColorForUsername } from './Utils/getAccentColorForUsername'
 import { PageBreakPlugin } from './Plugins/PageBreak/PageBreakPlugin'
 import { SCROLL_TO_USER_CURSOR_COMMAND } from './Plugins/Collaboration/ScrollToUserCursorPlugin'
 import { TableOfContents } from '../../Components/TableOfContents/TableOfContents'
-import DocsLayout from '../DocsLayout'
+import { DocsLayoutCenterPanel, DocsLayoutGrid, DocsLayoutLeftPanel, DocsLayoutRightPanel } from './Layout/DocsLayout'
 import { useDocsDependencies } from './DocsDependenciesProvider'
 
 const EmojiAutocompletePlugin = lazy(() => import('./Plugins/emoji/EmojiAutocompletePlugin'))
@@ -216,8 +216,8 @@ export function Editor({
             userMode={userMode}
           />
         )}
-        <DocsLayout.Grid leftPanelEnabled={tableOfContentsVisible}>
-          <DocsLayout.LeftPanel>
+        <DocsLayoutGrid leftPanelEnabled={tableOfContentsVisible}>
+          <DocsLayoutLeftPanel>
             {tableOfContentsVisible && (
               <TableOfContents
                 editorHidden={hidden}
@@ -226,8 +226,8 @@ export function Editor({
                 reportTelemetry={reportTelemetry}
               />
             )}
-          </DocsLayout.LeftPanel>
-          <DocsLayout.CenterPanel>
+          </DocsLayoutLeftPanel>
+          <DocsLayoutCenterPanel>
             <RichTextPlugin
               contentEditable={
                 <>
@@ -250,9 +250,9 @@ export function Editor({
               placeholder={null}
               ErrorBoundary={LexicalErrorBoundary}
             />
-          </DocsLayout.CenterPanel>
-          <DocsLayout.RightPanel />
-        </DocsLayout.Grid>
+          </DocsLayoutCenterPanel>
+          <DocsLayoutRightPanel />
+        </DocsLayoutGrid>
 
         {emojiPickerEnabled && (
           <Suspense fallback={null}>

@@ -15,7 +15,7 @@ import { CommentInputBox } from './CommentInputBox'
 import type { RangeSelection } from 'lexical'
 import { $getNodeByKey, type LexicalNode } from 'lexical'
 import { getRangeSelectionRect } from '../../Utils/getSelectionRect'
-import { useRightPanelContext, useViewportWidth } from '../../../DocsLayout'
+import { useRightPanelContext, useViewportWidth } from '../../Layout/DocsLayout'
 import { getContextualCommentsWidth, getDocsLayoutScrollContainer } from '../../Layout/docsLayoutUtils'
 
 const COMMENT_INPUT_ID = 'comment-input'
