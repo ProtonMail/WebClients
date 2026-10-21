@@ -54,13 +54,13 @@ export function initializeUpdateChecks(isMeetingActive?: () => boolean) {
         // Replaces update-electron-app dialog message with a custom one
         // https://github.com/electron/update-electron-app/blob/f5e1f6d9944809c75129b74d82fcd76cc9e325b2/src/index.ts#L165-L176
 
-        const { t } = c("Update prompt");
         const { response } = await dialog.showMessageBox({
             type: "info",
-            buttons: [t`Restart`, t`Later`],
-            title: t`${MEET_APP_NAME} update`,
+            buttons: [c("Update prompt").t`Restart`, c("Update prompt").t`Later`],
+            title: c("Update prompt").t`${MEET_APP_NAME} update`,
             message: "",
-            detail: t`A new version of ${MEET_APP_NAME} has been downloaded. Restart the application to apply the updates.`,
+            detail: c("Update prompt")
+                .t`A new version of ${MEET_APP_NAME} has been downloaded. Restart the application to apply the updates.`,
         });
 
         if (response === 0) {
