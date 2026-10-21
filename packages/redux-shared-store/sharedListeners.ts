@@ -2,6 +2,7 @@ import type { TypedStartListening } from '@reduxjs/toolkit';
 
 import {
     type AddressKeysState,
+    type AvailableAppsState,
     type EntitlementsState,
     type GroupMembershipsState,
     type KtState,
@@ -13,6 +14,7 @@ import {
     type UserState,
     addressKeysListener,
     authenticationListener,
+    availableAppsListener,
     entitlementsListener,
     groupMembershipsListener,
     keyBackgroundManagerListener,
@@ -42,7 +44,8 @@ interface RequiredState
         EntitlementsState,
         GroupMembershipsState,
         SessionRecoverySliceReducerState,
-        KtState {}
+        KtState,
+        AvailableAppsState {}
 
 type AppStartListening = TypedStartListening<RequiredState, ProtonDispatch<any>, ProtonThunkArguments>;
 
@@ -60,4 +63,5 @@ export const startSharedListening = (startListening: AppStartListening) => {
     keyBackgroundManagerListener(startListening);
     sessionRecoveryListener(startListening);
     passwordReminderListener(startListening);
+    availableAppsListener(startListening);
 };
