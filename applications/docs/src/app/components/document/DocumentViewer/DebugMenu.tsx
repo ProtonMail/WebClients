@@ -29,9 +29,10 @@ const UpdateReplayTool = lazy(() => import('./UpdateReplayTool'))
 type FileInputButtonProps = {
   children: ReactNode
   onFileSelect: (file: File) => Promise<void>
+  inputTestId?: string
 }
 
-function FileInputButton({ children, onFileSelect }: FileInputButtonProps) {
+function FileInputButton({ children, onFileSelect, inputTestId }: FileInputButtonProps) {
   const inputRef = useRef<HTMLInputElement>(null)
   const { createNotification } = useNotifications()
 
@@ -42,6 +43,7 @@ function FileInputButton({ children, onFileSelect }: FileInputButtonProps) {
         type="file"
         className="sr-only"
         aria-label="Choose a file to apply"
+        data-testid={inputTestId}
         onChange={(event) => {
           const input = event.currentTarget
           const file = input.files?.[0]
@@ -405,6 +407,7 @@ export function DebugMenu({ docController, editorController, documentState, docu
               {isSpreadsheet && (
                 <>
                   <FileInputButton
+                    inputTestId="apply-spreadsheet-state-input"
                     onFileSelect={async (file) => {
                       const spreadsheetState = JSON.parse(await file.text())
                       await editorController.replaceLocalSpreadsheetState(spreadsheetState, false)
@@ -416,6 +419,7 @@ export function DebugMenu({ docController, editorController, documentState, docu
                     Remove Stored Patches
                   </Button>
                   <FileInputButton
+                    inputTestId="apply-spreadsheet-patches-input"
                     onFileSelect={async (file) => {
                       const patches = JSON.parse(await file.text())
                       await editorController.applyPatches(patches)
