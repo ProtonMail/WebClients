@@ -89,5 +89,23 @@ describe('string helpers', () => {
 
             expect(removeEncodedAndUnencodedLineBreaks(string)).toEqual(expected);
         });
+
+        it('should remove encoded line breaks at the start of the string', () => {
+            expect(removeEncodedAndUnencodedLineBreaks('%0D%0Ahttps://mail.proton.dev/image.png')).toEqual(
+                'https://mail.proton.dev/image.png'
+            );
+        });
+
+        it('should remove unencoded line breaks anywhere in the string', () => {
+            expect(removeEncodedAndUnencodedLineBreaks('https://mail.proton.dev/ima\nge.png\r\n')).toEqual(
+                'https://mail.proton.dev/image.png'
+            );
+        });
+
+        it('should keep encoded line breaks inside the string (barcode payload separated by new lines)', () => {
+            const string = 'https://barcode.example.com/api/pdf417?data=HRVHUB30%0AEUR%0A0000977%0APETAR&sig=abc';
+
+            expect(removeEncodedAndUnencodedLineBreaks(string)).toEqual(string);
+        });
     });
 });
