@@ -14,3 +14,6 @@ export const getDisplayNameStorageKey = (guestMode: boolean, userId?: string): s
 // The macOS permission is per device, but "Not now" is a personal choice, so it is remembered per account.
 export const getScreenRecordingPromptDismissedKey = (guestMode: boolean, userId?: string): string =>
     `screenRecordingPromptDismissed.${guestMode || !userId ? 'guest' : `user.${userId}`}`;
+
+export const getOpenInDesktopAppStorageKey = (guestMode: boolean, userId?: string): string =>
+    `openInDesktopApp.${guestMode || !userId ? 'guest' : `user.${userId}`}`;

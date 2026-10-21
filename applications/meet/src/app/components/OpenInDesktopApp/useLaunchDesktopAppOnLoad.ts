@@ -5,12 +5,16 @@ import { selectMeetingLink } from '@proton/meet/store/slices/currentMeeting';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { getDesktopAppPreference, tryOpenInDesktopApp } from '../../utils/desktopAppDetector';
+import { useDesktopAppPreferenceStorageKey } from './useDesktopAppPreferenceStorageKey';
 
 export const useLaunchDesktopAppOnLoad = () => {
     const meetOpenLinksInDesktopApp = useFlag('MeetOpenLinksInDesktopApp');
     const meetingLink = useMeetSelector(selectMeetingLink);
+    const desktopAppPreferenceStorageKey = useDesktopAppPreferenceStorageKey();
 
-    const [launchedOnLoad] = useState(() => meetOpenLinksInDesktopApp && getDesktopAppPreference());
+    const [launchedOnLoad] = useState(
+        () => meetOpenLinksInDesktopApp && getDesktopAppPreference(desktopAppPreferenceStorageKey)
+    );
 
     useEffect(() => {
         if (launchedOnLoad) {
