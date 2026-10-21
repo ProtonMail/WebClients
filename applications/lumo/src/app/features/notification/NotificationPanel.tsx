@@ -76,7 +76,14 @@ export default function NotificationPanel({
                     isCoveredByNativeComposer && 'notification-panel--native-composer'
                 )}
             >
-                <button className="notif-close" onClick={finishDismiss} aria-label="Dismiss">
+                <button
+                    className="notif-close"
+                    onClick={finishDismiss}
+                    aria-label={
+                        // translator: Accessible button label for closing a notification.
+                        c('collider_2025:Label').t`Dismiss`
+                    }
+                >
                     ✕
                 </button>
 

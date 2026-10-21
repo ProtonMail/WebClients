@@ -16,7 +16,7 @@ import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useLumoPlan } from '../../providers/LumoPlanProvider';
 import { ProjectCard } from './ProjectCard';
-import { EXAMPLE_PROJECTS } from './exampleProjects';
+import { getExampleProjects } from './exampleProjects';
 import { useProjects } from './hooks/useProjects';
 import { NewProjectModal } from './modals/NewProjectModal';
 import { ProjectLimitModal } from './modals/ProjectLimitModal';
@@ -24,8 +24,14 @@ import { ProjectLimitModal } from './modals/ProjectLimitModal';
 import './ProjectsView.scss';
 
 const getRandomProjects = (count: number) => {
-    const shuffled = [...EXAMPLE_PROJECTS].sort(() => Math.random() - 0.5);
-    return shuffled.slice(0, count);
+    const projects = getExampleProjects();
+    const take = Math.min(count, projects.length);
+    const indices = new Set<number>();
+    while (indices.size < take) {
+        const [random] = crypto.getRandomValues(new Uint32Array(1));
+        indices.add(random % projects.length);
+    }
+    return [...indices].map((index) => projects[index]);
 };
 
 export const ProjectsView = () => {
@@ -71,7 +77,10 @@ export const ProjectsView = () => {
             return (
                 <GuestSignInState
                     image={lumoProjects}
-                    imageAlt="Projects"
+                    imageAlt={
+                        // translator: Accessible description of the project illustration. Projects organize chats, instructions, and files.
+                        c('collider_2025:Label').t`Projects`
+                    }
                     title={c('collider_2025:Title').t`Sign in to create projects`}
                     description={c('collider_2025:Info')
                         .t`Projects help you organize conversations with custom instructions and files. Sign in or create a free account to get started.`}
@@ -114,7 +123,14 @@ export const ProjectsView = () => {
                 <div className="projects-empty-state-wrapper">
                     <div className="projects-empty-state">
                         <div className="projects-empty-icon">
-                            <img src={lumoEmptyProjects} alt="Projects" width={300} />
+                            <img
+                                src={lumoEmptyProjects}
+                                alt={
+                                    // translator: Accessible description of the project illustration. Projects organize chats, instructions, and files.
+                                    c('collider_2025:Label').t`Projects`
+                                }
+                                width={300}
+                            />
                         </div>
                         <h2 className="projects-empty-title">
                             {c('collider_2025:Title').t`Get started by creating a new project`}

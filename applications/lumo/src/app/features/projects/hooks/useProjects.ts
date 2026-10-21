@@ -1,6 +1,8 @@
 import { useMemo } from 'react';
 import { shallowEqual } from 'react-redux';
 
+import { c } from 'ttag';
+
 import { useLumoSelector } from '../../../redux/hooks';
 import { selectAttachmentCountsBySpaceId, selectConversationCountsBySpaceId } from '../../../redux/selectors';
 import { selectSpaceMap } from '../../../redux/slices/core/spaces';
@@ -22,7 +24,8 @@ export const useProjects = () => {
             if (space.isProject) {
                 projectList.push({
                     id: space.id,
-                    name: space.projectName || 'Untitled Project',
+                    // translator: Fallback title for a project without a name.
+                    name: space.projectName || c('collider_2025:Title').t`Untitled Project`,
                     description: space.projectInstructions,
                     icon: space.projectIcon,
                     spaceId: space.id,

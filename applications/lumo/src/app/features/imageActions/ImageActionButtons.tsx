@@ -7,7 +7,7 @@ import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
 
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
-import { IMAGE_STYLE_OPTIONS } from './styleOptions';
+import { getImageStyleOptions } from './styleOptions';
 
 const BUTTON_STYLE = 'image-action-btn flex flex-row gap-2 flex-nowrap items-center w-fit-content';
 
@@ -43,7 +43,7 @@ const MENU_ITEM_HEIGHT = 36;
 const MENU_PADDING = 8;
 const MENU_VIEWPORT_MARGIN = 16;
 
-const getEstimatedMenuHeight = () => IMAGE_STYLE_OPTIONS.length * MENU_ITEM_HEIGHT + MENU_PADDING;
+const getEstimatedMenuHeight = () => getImageStyleOptions().length * MENU_ITEM_HEIGHT + MENU_PADDING;
 
 export const ImageStyleDropdown = ({ onSelect, side = false, stopPropagation = false }: ImageStyleDropdownProps) => {
     const [showMenu, setShowMenu] = useState(false);
@@ -112,7 +112,7 @@ export const ImageStyleDropdown = ({ onSelect, side = false, stopPropagation = f
                     style={maxMenuHeight ? { maxBlockSize: maxMenuHeight } : undefined}
                     onClick={stopPropagation ? (e) => e.stopPropagation() : undefined}
                 >
-                    {IMAGE_STYLE_OPTIONS.map((style) => (
+                    {getImageStyleOptions().map((style) => (
                         <button
                             key={style.id}
                             className="image-style-menu__item flex items-center w-full py-2 px-3 rounded-lg text-sm text-semibold text-left border-none bg-transparent color-norm"
