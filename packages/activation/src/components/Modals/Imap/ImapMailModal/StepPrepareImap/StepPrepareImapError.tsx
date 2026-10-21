@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Alert } from '@proton/components';
+import Alert from '@proton/components/components/alert/Alert';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import { EasyTrans } from '../../../../../helpers/easyTrans';

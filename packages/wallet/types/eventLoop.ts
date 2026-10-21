@@ -1,4 +1,4 @@
-import type { EventLoop } from '@proton/account';
+import type { EventLoop } from '@proton/account/eventLoop';
 import type { WasmApiWallet, WasmApiWalletAccount, WasmApiWalletKey, WasmApiWalletSettings } from '@proton/andromeda';
 import type { EventItemUpdate } from '@proton/shared/lib/helpers/updateCollection';
 

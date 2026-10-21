@@ -1,6 +1,7 @@
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Label, Row } from '@proton/components';
+import Row from '@proton/components/components/container/Row';
+import Label from '@proton/components/components/label/Label';
 import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
 import { IcChevronUpFilled } from '@proton/icons/icons/IcChevronUpFilled';
 import { IcFolders } from '@proton/icons/icons/IcFolders';

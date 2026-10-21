@@ -2,7 +2,8 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { Table, TableBody } from '@proton/components';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 import { EASY_SWITCH_TABLE_CLASS_NAME } from '../../constants';

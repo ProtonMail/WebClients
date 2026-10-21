@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { LabelStack } from '@proton/components';
+import LabelStack from '@proton/components/components/labelStack/LabelStack';
 import { IcClock } from '@proton/icons/icons/IcClock';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { IcFolders } from '@proton/icons/icons/IcFolders';

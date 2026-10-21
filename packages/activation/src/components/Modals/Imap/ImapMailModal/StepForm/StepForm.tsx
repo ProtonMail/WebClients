@@ -2,17 +2,15 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
-import {
-    Field,
-    Form,
-    Label,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    PasswordInputTwo,
-    Row,
-} from '@proton/components';
+import Field from '@proton/components/components/container/Field';
+import Row from '@proton/components/components/container/Row';
+import Form from '@proton/components/components/form/Form';
+import Label from '@proton/components/components/label/Label';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 
 import { EASY_SWITCH_EMAIL_PLACEHOLDER } from '../../../../../constants';
 import { IMPORT_ERROR, ImportProvider } from '../../../../../interface';
