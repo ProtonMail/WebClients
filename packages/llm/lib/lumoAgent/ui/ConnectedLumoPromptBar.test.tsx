@@ -67,4 +67,34 @@ describe('ConnectedLumoPromptBar', () => {
 
         expect(calls).toEqual(['setDraft:archive the invoices', 'host:archive the invoices']);
     });
+
+    it('keeps a message the host intercepts away from Lumo', () => {
+        const drawer = makeDrawer();
+        const interceptSend = jest.fn(() => true);
+
+        render(
+            <LumoAgentDrawerContext.Provider value={drawer}>
+                <ConnectedLumoPromptBar onClose={jest.fn()} interceptSend={interceptSend} />
+            </LumoAgentDrawerContext.Provider>
+        );
+        jest.mocked(LumoAgentPromptBar).mock.lastCall![0].onSend('nine lives');
+
+        expect(interceptSend).toHaveBeenCalledWith('nine lives');
+        expect(drawer.send).not.toHaveBeenCalled();
+    });
+
+    it('sends a message the host does not intercept', () => {
+        const drawer = makeDrawer();
+        const interceptSend = jest.fn(() => false);
+
+        render(
+            <LumoAgentDrawerContext.Provider value={drawer}>
+                <ConnectedLumoPromptBar onClose={jest.fn()} interceptSend={interceptSend} />
+            </LumoAgentDrawerContext.Provider>
+        );
+        jest.mocked(LumoAgentPromptBar).mock.lastCall![0].onSend('archive the invoices');
+
+        expect(interceptSend).toHaveBeenCalledWith('archive the invoices');
+        expect(drawer.send).toHaveBeenCalledWith('archive the invoices');
+    });
 });

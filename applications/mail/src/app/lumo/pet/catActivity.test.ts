@@ -11,7 +11,7 @@ import { listLabelsDefinition } from '../skills/reads/listLabels';
 import { openFolderDefinition } from '../skills/reads/openFolder';
 import { searchDefinition } from '../skills/reads/search';
 import { viewEmailsDefinition } from '../skills/reads/viewEmails';
-import { selectCatActivity } from './catActivity';
+import { findLastAppliedTrashId, selectCatActivity } from './catActivity';
 import { CatActivity } from './catPose';
 
 const chip = (id: number, tool: string): LumoAgentItem => ({ id, kind: 'chip', tool, label: 'Looked', payload: '' });
@@ -72,5 +72,26 @@ describe('selectCatActivity', () => {
 
     it('does not write for a pending card that is not a draft', () => {
         expect(selectCatActivity([moveCard(5, 'trash', ConfirmStatus.PENDING)], true)).toBeNull();
+    });
+});
+
+describe('findLastAppliedTrashId', () => {
+    it('finds the latest applied trash', () => {
+        const items = [
+            moveCard(1, 'trash', ConfirmStatus.APPLIED),
+            reply,
+            moveCard(12, 'trash', ConfirmStatus.APPLIED),
+        ];
+
+        expect(findLastAppliedTrashId(items)).toBe(12);
+    });
+
+    it.each([
+        ['a trash not yet applied', moveCard(1, 'trash', ConfirmStatus.APPLYING)],
+        ['a trash that failed', moveCard(1, 'trash', ConfirmStatus.FAILED)],
+        ['a move to archive', moveCard(1, 'archive', ConfirmStatus.APPLIED)],
+        ['a move to a folder', moveCard(1, null, ConfirmStatus.APPLIED)],
+    ])('ignores %s', (_, item) => {
+        expect(findLastAppliedTrashId([item])).toBeUndefined();
     });
 });

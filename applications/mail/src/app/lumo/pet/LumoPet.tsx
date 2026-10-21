@@ -13,10 +13,11 @@ import clsx from '@proton/utils/clsx';
 import { PanelSide } from '../floating/panelSide';
 import CatSprite from './CatSprite';
 import LumoPetMenu from './LumoPetMenu';
-import { selectCatPose } from './catPose';
+import { CatTrick, selectCatPose } from './catPose';
 import { useCatActivity } from './useCatActivity';
 import type { CatMotion } from './useCatMotion';
 import { useCelebration } from './useCelebration';
+import { useTrashSweep } from './useTrashSweep';
 
 import './LumoPet.scss';
 
@@ -39,11 +40,12 @@ interface Props {
 }
 
 const LumoPet = ({ side, isPanelOpen, isTyping, motion, actions, onJumpEnd }: Props) => {
-    const { run, jump, isHidden } = motion;
+    const { run, jump, trick, isHidden } = motion;
     const { onToggle, onMove, onDock, onNewChat, onHide, onReveal } = actions;
     const { items, isBusy, lastChainEnd, hasConversation, openDebugReport } = useLumoAgentDrawer();
     const isCelebrating = useCelebration(isBusy, lastChainEnd);
     const activity = useCatActivity(items, isBusy);
+    const isSweeping = useTrashSweep(items);
     const [isHovered, setIsHovered] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -91,11 +93,13 @@ const LumoPet = ({ side, isPanelOpen, isTyping, motion, actions, onJumpEnd }: Pr
     // Named to share the composer's "Show ${title}" msgid: the i18n validator rejects one string with two variable names
     const title = LUMO_SHORT_APP_NAME;
     const canShowMenu = !isHidden && !run && !jump;
-    const hasSidedPose = Boolean(run);
+    const hasSidedPose = Boolean(run) || isSweeping || trick === CatTrick.NINE_LIVES;
     const pose = selectCatPose({
         jump,
         isHidden,
         run,
+        trick,
+        isSweeping,
         isHovered,
         isChatOpen: isPanelOpen,
         activity,
