@@ -190,7 +190,6 @@ ruleTester.run('restricted-imports: base restrictions', rule, {
 ruleTester.run('restricted-imports: rollout restrictions', rule, {
     valid: [
         { code: `import { Button } from '@proton/components';`, filename: appFile },
-        { code: `import { Icon } from '@proton/components';`, filename: appFile },
         {
             code: `import { Button } from '@proton/components';`,
             filename: appFile,
@@ -213,13 +212,13 @@ ruleTester.run('restricted-imports: rollout restrictions', rule, {
         {
             code: `import Icon from '@proton/components/components/icon/Icon';`,
             filename: appFile,
-            options: [{ rollout: ['icon-component'] }],
+            options: [{}],
             errors: [{ messageId: 'path' }],
         },
         {
             code: `import { Icon, Button } from '@proton/components';`,
             filename: appFile,
-            options: [{ rollout: ['icon-component'] }],
+            options: [{}],
             errors: [{ messageId: 'importName' }],
         },
     ],

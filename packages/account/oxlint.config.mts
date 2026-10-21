@@ -5,7 +5,7 @@ import {
 } from '@proton/oxlint-config/extraneousDependencies';
 
 export default createOxlintConfig({
-    restrictedImports: { rollout: ['components-barrel', 'icon-component'] },
+    restrictedImports: { rollout: ['components-barrel'] },
     ignorePatterns: ['testing/vitest/**'],
     overrides: [
         {

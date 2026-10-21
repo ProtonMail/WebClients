@@ -6,6 +6,6 @@ import { createRestrictedImportsConfig } from '@proton/eslint-config-proton/rest
 export default defineConfig([
     config,
     createRestrictedImportsConfig({
-        rollout: ['account-barrel', 'components-barrel', 'hooks-barrel', 'icon-component'],
+        rollout: ['account-barrel', 'components-barrel'],
     }),
 ]);
