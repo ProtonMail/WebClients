@@ -5,8 +5,8 @@ import { useSettingsLink } from '@proton/components/index';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectSubscriptionStatus } from '@proton/meet/store/slices/userSlice';
 import { UpsellModalTypes } from '@proton/meet/types/types';
-import { PLANS } from '@proton/payments/core/constants';
 
+import { getMeetUpgradeLink } from '../../../utils/getMeetUpgradeLink';
 import type { CTAModalBaseProps } from '../shared/types';
 import { EndCallModalShell } from './EndCallModalShell';
 import { PostCallTitle } from './PostCallTitle';
@@ -15,7 +15,7 @@ export const HostFreeAccountModal = ({ open, onClose, rejoin, action, upsellModa
     const goToSettings = useSettingsLink();
     const isExpired = upsellModalType === UpsellModalTypes.MeetingExpiredHostFree;
     const { hasSubscriptionWithoutMeet } = useMeetSelector(selectSubscriptionStatus);
-    const link = hasSubscriptionWithoutMeet ? `/dashboard?addon=meet` : `/dashboard?plan=${PLANS.MEET_BUSINESS}`;
+    const link = getMeetUpgradeLink(hasSubscriptionWithoutMeet);
 
     return (
         <EndCallModalShell

@@ -13,6 +13,7 @@ import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
 import { PLANS } from '@proton/payments/core/constants';
 import { type CountryOptions, getCountryOptions, getLocalizedCountryByAbbr } from '@proton/payments/core/countries';
+import { getSubscriptionSearchParamsString } from '@proton/payments/core/subscription/search-params';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { SORT_DIRECTION, VPN_APP_NAME, VPN_CONNECTIONS, VPN_HOSTNAME } from '@proton/shared/lib/constants';
 import { getPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
@@ -548,7 +549,11 @@ const OpenVPNConfigurationSection = ({
                                 </li>
                             </ul>
                             <div>
-                                <ButtonLike as={SettingsLink} color="norm" path={`/dashboard?plan=${PLANS.VPN2024}`}>
+                                <ButtonLike
+                                    as={SettingsLink}
+                                    color="norm"
+                                    path={`/dashboard?${getSubscriptionSearchParamsString({ plan: PLANS.VPN2024 })}`}
+                                >
                                     {getPlanOrAppNameText(vpnPlus)}
                                 </ButtonLike>
                             </div>

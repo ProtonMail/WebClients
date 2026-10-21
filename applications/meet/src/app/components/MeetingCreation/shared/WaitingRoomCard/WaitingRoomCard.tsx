@@ -4,11 +4,11 @@ import { SettingsLink } from '@proton/components/index';
 import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectSubscriptionStatus } from '@proton/meet/store/slices/userSlice';
-import { PLANS } from '@proton/payments/core/constants';
 import { WaitingRoomState } from '@proton/shared/lib/interfaces/Meet';
 import clsx from '@proton/utils/clsx';
 
 import { SettingToggle } from '../../../../atoms/SettingToggle/SettingToggle';
+import { getMeetUpgradeLink } from '../../../../utils/getMeetUpgradeLink';
 
 import './WaitingRoomCard.scss';
 
@@ -24,21 +24,14 @@ export const WaitingRoomCard = ({
     const { isPaidUser, hasSubscriptionWithoutMeet } = useMeetSelector(selectSubscriptionStatus);
 
     const isWaitingRoomEnabled = waitingRoom === WaitingRoomState.ENABLED;
+    const upgradeLink = getMeetUpgradeLink(hasSubscriptionWithoutMeet);
 
     const getDescription = () => {
         if (!isPaidUser) {
             return (
                 <>
                     {c('Action').t`Use waiting room with a paid plan`}
-                    <SettingsLink
-                        className="w-full upgrade-now mx-2"
-                        path={
-                            hasSubscriptionWithoutMeet
-                                ? `/dashboard?addon=meet`
-                                : `/dashboard?plan=${PLANS.MEET_BUSINESS}`
-                        }
-                        target={'_blank'}
-                    >
+                    <SettingsLink className="w-full upgrade-now mx-2" path={upgradeLink} target={'_blank'}>
                         {c('Action').t`Upgrade now`}
                         <span className="sr-only">{c('Accessibility').t`(opens in new tab)`}</span>
                     </SettingsLink>

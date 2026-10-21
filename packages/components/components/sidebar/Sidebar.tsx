@@ -8,6 +8,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
+import { getUpgradePath } from '@proton/payments/core/subscription/upsell';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
@@ -19,7 +20,7 @@ import {
     isElectronOnWindows,
 } from '@proton/shared/lib/helpers/desktop';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/ref';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { getAppSpace, getCanAddStorage, getSpace } from '@proton/shared/lib/user/storage';
 import clsx from '@proton/utils/clsx';
@@ -92,7 +93,7 @@ const Storage = ({
                     {canAddStorage ? (
                         <Tooltip title={c('Storage').t`Upgrade storage`}>
                             <SettingsLink
-                                path={addUpsellPath(getUpgradePath({ user, subscription }), upsellRef)}
+                                path={getUpgradePath({ user, subscription }, upsellRef)}
                                 className="app-infos-storage text-no-decoration text-xs m-0"
                             >
                                 {storageText}

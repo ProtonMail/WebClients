@@ -9,15 +9,16 @@ import { PLANS } from '@proton/payments/core/constants';
 import type { PlanIDs } from '@proton/payments/core/interface';
 import { getPlanNameFromIDs } from '@proton/payments/core/plan/helpers';
 import { type MaybeFreeSubscription, getPlanName } from '@proton/payments/core/subscription/helpers';
+import { getUpgradePath } from '@proton/payments/core/subscription/upsell';
 import { useStore } from '@proton/redux-shared-store/sharedProvider';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, DRIVE_SHORT_APP_NAME, MAIL_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { UserLockedFlags } from '@proton/shared/lib/interfaces/User';
 import { getAppStorage } from '@proton/shared/lib/user/storage';
+import { addRefToUrl } from '@proton/utils/addRefToUrl';
 import noop from '@proton/utils/noop';
 
 import SettingsLink from '../../components/link/SettingsLink';
@@ -145,7 +146,7 @@ const UpgradeSettingsLink = ({
     const upgradePath = useUpgradePath({ subscription, user, lockedFlag, app });
 
     return (
-        <SettingsLink key="upgrade-link" className="color-inherit" path={addUpsellPath(upgradePath, upsellRef)}>
+        <SettingsLink key="upgrade-link" className="color-inherit" path={addRefToUrl(upgradePath, upsellRef)}>
             {ctaText}
         </SettingsLink>
     );

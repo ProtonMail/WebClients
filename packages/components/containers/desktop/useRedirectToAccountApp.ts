@@ -5,12 +5,12 @@ import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import type { COUPON_CODES } from '@proton/payments/core/constants';
 import { getPlanNameFromIDs } from '@proton/payments/core/plan/helpers';
+import { getUpgradePath } from '@proton/payments/core/subscription/upsell';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
-import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
 
 import type { SubscriptionContainerProps } from '../payments/subscription/SubscriptionContainer';
 import { SUBSCRIPTION_STEPS } from '../payments/subscription/constants';
@@ -35,8 +35,8 @@ export function useRedirectToAccountApp() {
                 const appName = Object.values(APPS).includes(params.app as APP_NAMES)
                     ? (params.app as APP_NAMES)
                     : undefined;
-                const upsellPath = addUpsellPath(
-                    getUpgradePath({
+                const upsellPath = getUpgradePath(
+                    {
                         user,
                         subscription,
                         plan: selectedPlan,
@@ -48,7 +48,7 @@ export function useRedirectToAccountApp() {
                         maximumCycle: params.maximumCycle,
                         minimumCycle: params.minimumCycle,
                         disablePlanSelection: params.disablePlanSelection,
-                    }),
+                    },
                     params.upsellRef
                 );
 

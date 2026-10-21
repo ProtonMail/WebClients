@@ -9,7 +9,7 @@ import {
     MAIL_UPSELL_PATHS,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
-import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRef } from '@proton/shared/lib/helpers/ref';
 
 import useUpsellConfig from '../../../upsell/config/useUpsellConfig';
 import { MonthylPaidUsersNudge } from './MonthylPaidUsersNudge';

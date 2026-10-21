@@ -21,7 +21,7 @@ import {
     ORGANIZATION_STATE,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
-import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRef } from '@proton/shared/lib/helpers/ref';
 import { getDomainsSupportURL } from '@proton/shared/lib/helpers/url';
 import type { DomainAddress } from '@proton/shared/lib/interfaces/Address';
 import type { Domain } from '@proton/shared/lib/interfaces/Domain';
