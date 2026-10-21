@@ -1,6 +1,8 @@
 import { memo, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 
+import { c } from 'ttag';
+
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { GuestChatDisclaimerModal } from '../../components/Guest/GuestChatDisclaimerModal';
@@ -30,7 +32,10 @@ const LumoLogoHeader = memo(() => {
         return (
             <Link
                 to="/"
-                aria-label={`Go to ${LUMO_SHORT_APP_NAME} homepage`}
+                aria-label={
+                    // translator: Accessible link to the Lumo homepage; LUMO_SHORT_APP_NAME is the product name.
+                    c('collider_2025:Label').t`Go to ${LUMO_SHORT_APP_NAME} homepage`
+                }
                 className="lumo-logo-link lumo-logo-container"
             >
                 <img src={logoSrc} alt={LUMO_SHORT_APP_NAME} height={LOGO_HEIGHT} />
@@ -46,7 +51,10 @@ const LumoLogoHeader = memo(() => {
                 <Link
                     to="/"
                     onClick={onGuestClick}
-                    aria-label={`Go to ${LUMO_SHORT_APP_NAME} homepage`}
+                    aria-label={
+                        // translator: Accessible link to the Lumo homepage; LUMO_SHORT_APP_NAME is the product name.
+                        c('collider_2025:Label').t`Go to ${LUMO_SHORT_APP_NAME} homepage`
+                    }
                     className="lumo-logo-link"
                 >
                     {logoContent}
@@ -59,7 +67,14 @@ const LumoLogoHeader = memo(() => {
     }
 
     return (
-        <Link to="/" aria-label={`Go to ${LUMO_SHORT_APP_NAME} homepage`} className="lumo-logo-link">
+        <Link
+            to="/"
+            aria-label={
+                // translator: Accessible link to the Lumo homepage; LUMO_SHORT_APP_NAME is the product name.
+                c('collider_2025:Label').t`Go to ${LUMO_SHORT_APP_NAME} homepage`
+            }
+            className="lumo-logo-link"
+        >
             {logoContent}
         </Link>
     );

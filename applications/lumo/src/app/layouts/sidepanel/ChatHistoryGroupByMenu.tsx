@@ -15,7 +15,7 @@ const getSortedByLabel = (dateField: ChatHistoryDateField): string => {
     return c('collider_2025: Info').t`Sorted by creation time`;
 };
 
-const sortOptions = [
+const getSortOptions = () => [
     { value: 'updatedAt' as const, label: c('collider_2025:Option').t`Last updated` },
     { value: 'createdAt' as const, label: c('collider_2025:Option').t`Date created` },
 ];
@@ -38,7 +38,7 @@ export const ChatHistoryGroupByMenu = ({ showSortedByLabel = false }: ChatHistor
         <ChatHistorySortMenu
             sortField={dateField}
             onSortFieldChange={setDateField}
-            options={sortOptions}
+            options={getSortOptions()}
             buttonLabel={getSortedByLabel(dateField)}
             buttonVariant={showSortedByLabel ? 'labeled' : 'icon'}
             buttonClassName={clsx(
