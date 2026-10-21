@@ -32,15 +32,13 @@ jest.mock('./Docs/PreviewModeEditor', () => ({ PreviewModeEditor: () => null }))
 jest.mock('./Docs/public', () => ({
   StandaloneDocsEditor: jest.fn(() => null),
   EditorSystemMode: jest.requireActual('./Docs/contract/EditorSystemMode').EditorSystemMode,
+  DocsLayoutContainer: ({ children }: { children: ReactNode }) => children,
+  getDocsLayoutScrollContainer: () => null,
 }))
 jest.mock('./Spreadsheet/public', () => ({ StandaloneSheetsEditor: () => null }))
 jest.mock('./adapters/docs/DocsAdapter', () => ({ DocsAdapter: ({ children }: { children: ReactNode }) => children }))
 jest.mock('./adapters/sheets/SheetsAdapter', () => ({
   SheetsAdapter: ({ children }: { children: ReactNode }) => children,
-}))
-jest.mock('./DocsLayout', () => ({
-  __esModule: true,
-  default: { Container: ({ children }: { children: ReactNode }) => children },
 }))
 jest.mock('./SheetsLayout', () => ({ __esModule: true, default: ({ children }: { children: ReactNode }) => children }))
 

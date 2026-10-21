@@ -10,13 +10,13 @@ import type { TableOfContentsEntry } from '@lexical/react/LexicalTableOfContents
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import type { NodeKey } from 'lexical'
 import { c } from 'ttag'
-import { DOCS_EDITOR_MAX_WIDTH, useLeftPanelContext } from '../../Containers/DocsLayout'
+import { DOCS_EDITOR_MAX_WIDTH, useLeftPanelContext } from '../../Containers/Docs/Layout/DocsLayout'
 import clsx from '@proton/utils/clsx'
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical'
 import { IcLink } from '@proton/icons/icons/IcLink'
 import { TelemetryDocsEditorEvents } from '@proton/shared/lib/api/telemetry'
 import { TocHeader } from './TocHeader'
-import { getDocsLayoutScrollContainer } from '../../Containers/docsLayoutUtils'
+import { getDocsLayoutScrollContainer } from '../../Containers/Docs/Layout/docsLayoutUtils'
 import './TableOfContents.scss'
 
 // distance from top of scroll root to make heading active

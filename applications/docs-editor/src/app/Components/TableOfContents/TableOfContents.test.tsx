@@ -16,7 +16,7 @@ jest.mock('@lexical/react/LexicalTableOfContentsPlugin', () => ({
   TableOfContentsPlugin: ({ children }: { children: (headings: [string, string, string][]) => React.ReactNode }) =>
     children([['heading-key', 'Fixture heading', 'h1']]),
 }))
-jest.mock('../../Containers/DocsLayout', () => ({
+jest.mock('../../Containers/Docs/Layout/DocsLayout', () => ({
   DOCS_EDITOR_MAX_WIDTH: 816,
   useLeftPanelContext: () => ({ visibility: 'expanded', setVisibility: jest.fn() }),
 }))
