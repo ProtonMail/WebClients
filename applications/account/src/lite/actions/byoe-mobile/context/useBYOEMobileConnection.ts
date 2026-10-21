@@ -19,6 +19,7 @@ import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 
 import { getNativeSuccessUrl } from '../redirectToNative';
+import { useBYOEMobileTelemetry } from '../telemetry/useBYOEMobileTelemetry';
 import type { BYOEMobileStatus } from './interface';
 
 export type ClaimableFailure = Extract<ConnectBYOEAddressFailure, { type: 'claimable-address' }>;
@@ -36,6 +37,7 @@ interface Props {
  */
 export const useBYOEMobileConnection = ({ redirectUri, defaultImportEmails, setStatus }: Props) => {
     const { createNotification } = useNotifications();
+    const { trackConnectSucceeded, trackConnectFailed } = useBYOEMobileTelemetry();
     const { connectBYOEAddressWithCode, claimBYOEAddress } = useConnectBYOEAddress({
         source: EASY_SWITCH_SOURCES.ACCOUNT_LITE_BYOE,
     });
@@ -55,8 +57,13 @@ export const useBYOEMobileConnection = ({ redirectUri, defaultImportEmails, setS
     const handleResult = (result: ConnectBYOEAddressResult): boolean => {
         if (result.status === 'failure') {
             setError(result.reason);
+            if (result.reason.type !== 'claimable-address') {
+                trackConnectFailed(result.reason.type);
+            }
             return false;
         }
+
+        trackConnectSucceeded();
 
         // The stored redirect comes back from session storage, so it is validated again
         const nativeUrl = getNativeSuccessUrl(oauthStateRef.current?.redirect, result.address.Email);
@@ -87,6 +94,7 @@ export const useBYOEMobileConnection = ({ redirectUri, defaultImportEmails, setS
         } catch {
             // Anything thrown outside the hook's own failure results must not leave the user without feedback
             setError({ type: 'unknown' });
+            trackConnectFailed('unknown');
         } finally {
             if (!isRedirectingToNative) {
                 setStatus('idle');
@@ -173,6 +181,7 @@ export const useBYOEMobileConnection = ({ redirectUri, defaultImportEmails, setS
         if (callback.type === 'error') {
             trackBYOECreationError('authentication');
             setError({ type: 'token-failed' });
+            trackConnectFailed('token-failed');
             return;
         }
 

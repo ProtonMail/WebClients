@@ -18,6 +18,7 @@ import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 
 import { getNativeUpsellUrl } from '../redirectToNative';
+import { useBYOEMobileTelemetry } from '../telemetry/useBYOEMobileTelemetry';
 import { type BYOEMobileStatus, REDIRECT_PATH } from './interface';
 import { type ClaimableFailure, useBYOEMobileConnection } from './useBYOEMobileConnection';
 
@@ -76,7 +77,10 @@ export const BYOEMobileProvider = ({ redirect, initialSearchParams, children }: 
         redirectPath: REDIRECT_PATH,
     });
 
+    const telemetry = useBYOEMobileTelemetry();
+
     const hasAutoStartedRef = useRef(false);
+    const hasTrackedViewRef = useRef(false);
     const hasHandledCallbackRef = useRef(false);
 
     // Read once: `initialSearchParams` is a snapshot of the first load and never changes
@@ -122,6 +126,7 @@ export const BYOEMobileProvider = ({ redirect, initialSearchParams, children }: 
     const startOAuthFlowNow = (importEmails: boolean) => {
         // The page navigates away right after, so the telemetry event must be sent before starting the flow.
         trackBYOEGoogleSignInClicked({ hasImportEmails: importEmails, importPeriod: undefined });
+        telemetry.trackConnectStarted(importEmails);
         // The page navigates away, so the auto-starting status is intentionally never reset.
         setStatus(status === 'auto-starting' ? 'auto-starting' : 'starting-oauth');
         startOAuthFlow({
@@ -179,6 +184,27 @@ export const BYOEMobileProvider = ({ redirect, initialSearchParams, children }: 
             );
         }
     }, []);
+
+    // Telemetry: the settings page was opened. Every opening counts, so it runs once per mount, when the user and
+    // the gating data are known. When the native app auto-starts the flow, the page is never shown, and when Google
+    // redirected back the page only shows the loader, so neither counts as an opening.
+    useEffect(() => {
+        if (hasTrackedViewRef.current || isLoadingGating || telemetry.isLoading) {
+            return;
+        }
+        hasTrackedViewRef.current = true;
+        if (callback.type !== 'none' || autoParams.autoConnect) {
+            return;
+        }
+
+        // Exactly one of the two events is sent, like the native clients.
+        // Connecting turned off: the page only lists the connections.
+        if (gatingOutcome === 'feature-disabled') {
+            telemetry.trackSettingsListOnlyShown();
+        } else {
+            telemetry.trackSettingsView();
+        }
+    }, [isLoadingGating, telemetry.isLoading]);
 
     // Finishes the OAuth round trip: Google redirects back to this page with either a code or an error.
     // Not run on mount, because creating the address needs the user's addresses and feature status, so it waits
