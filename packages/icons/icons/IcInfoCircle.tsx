@@ -30,11 +30,9 @@ export const IcInfoCircle = ({ alt, title, size = 4, className = '', viewBox = '
             >
                 {title ? <title>{title}</title> : null}
 
-                <path d="M7.25 7.5a.5.5 0 0 1 .5-.5H9v4h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H8V8h-.25a.5.5 0 0 1-.5-.5ZM8.4 6.3a.9.9 0 1 0 0-1.8.9.9 0 0 0 0 1.8Z"></path>
                 <path
                     fillRule="evenodd"
-                    d="M1 8.5a7.5 7.5 0 1 1 15 0 7.5 7.5 0 0 1-15 0ZM8.5 2a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13Z"
-                    clipRule="evenodd"
+                    d="M8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12m0 1A7 7 0 1 0 8 1a7 7 0 0 0 0 14m1.75-4a.55.55 0 0 1-.55.55h-2a.55.55 0 1 1 0-1.1h.45v-2.9H7.5a.55.55 0 1 1 0-1.1h.7a.55.55 0 0 1 .55.55v3.45h.45a.55.55 0 0 1 .55.55M8 5.4A.7.7 0 1 0 8 4a.7.7 0 0 0 0 1.4"
                 ></path>
             </svg>
             {alt ? <span className="sr-only">{alt}</span> : null}
