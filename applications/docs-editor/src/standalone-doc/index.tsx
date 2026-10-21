@@ -4,13 +4,13 @@ import type { LexicalEditor } from 'lexical'
 import { createRoot } from 'react-dom/client'
 import {
   DocsDependenciesProvider,
+  DocsLayoutContainer,
   EditorSystemMode,
   EditorUserMode,
   StandaloneDocsEditor,
   type DocsDependencies,
   type EditorProps,
 } from '../app/Containers/Docs/public'
-import DocsLayout from '../app/Containers/DocsLayout'
 import { ThemeStyles } from '../app/Theme'
 import { EditorThemeProvider, useEditorTheme } from '../app/Theme/EditorThemeProvider'
 import { createStandaloneDocClient } from './client'
@@ -112,7 +112,7 @@ function StandaloneDoc() {
       </header>
       <main className="standalone-doc-editor">
         <DocsDependenciesProvider dependencies={dependencies}>
-          <DocsLayout.Container isSuggestionMode={userMode === EditorUserMode.Suggest}>
+          <DocsLayoutContainer isSuggestionMode={userMode === EditorUserMode.Suggest}>
             <StandaloneDocsEditor
               docMap={session.docMap}
               docState={session.docState}
@@ -132,7 +132,7 @@ function StandaloneDoc() {
               showTreeView={false}
               tableOfContentsVisible={false}
             />
-          </DocsLayout.Container>
+          </DocsLayoutContainer>
         </DocsDependenciesProvider>
       </main>
     </>
