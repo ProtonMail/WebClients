@@ -5,7 +5,7 @@ import { logger } from '@protontech/logger';
 import { ConnectionState } from 'livekit-client';
 import type { Room, TextStreamReader } from 'livekit-client';
 
-import { useMeetErrorReporting } from '@proton/meet';
+import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectCaptionsAgentPresent } from '@proton/meet/store/slices/participants/agentParticipantsSlice';
 import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';

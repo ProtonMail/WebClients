@@ -17,7 +17,7 @@ import {
     getContactsImportData,
     getDriveImportData,
     getMailImportData,
-} from '../../../api';
+} from '../../../api/api';
 import type { ApiMailImporterFolder } from '../../../api/api.interface';
 import type { MailImportFields } from '../../../components/Modals/CustomizeMailImportModal/CustomizeMailImportModal.interface';
 import getDefaultLabel from '../../../components/Modals/Imap/ImapMailModal/StepPrepareImap/useStepPrepareImap.helpers';

@@ -92,6 +92,7 @@ const BASE_RESTRICTIONS: BaseRestriction[] = [
         // These packages have an explicit `exports` map, so their bare specifier no longer resolves.
         name: 'packages with an exports map have no barrel',
         paths: [
+            '@proton/activation',
             '@proton/app-context',
             '@proton/calendar',
             '@proton/chargebee',
@@ -103,12 +104,15 @@ const BASE_RESTRICTIONS: BaseRestriction[] = [
             '@proton/lumo-api-client',
             '@proton/lumo-ui',
             '@proton/mail',
+            '@proton/meet',
             '@proton/metrics',
             '@proton/pass',
             '@proton/payments',
+            '@proton/payments-ui',
             '@proton/raw-images',
             '@proton/react-redux-store',
             '@proton/recovery-kit',
+            '@proton/redux-shared-store',
             '@proton/redux-shared-store-types',
             '@proton/sanitize',
             '@proton/shared',

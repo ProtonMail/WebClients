@@ -6,7 +6,7 @@ import { findUserAddress, getIsBYOEAddress } from '@proton/shared/lib/helpers/ad
 import { mockTracker } from '@proton/telemetry-tracker/testing';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { startEasySwitchSignupImportTask } from '../api';
+import { startEasySwitchSignupImportTask } from '../api/api';
 import type { ImportToken } from '../interface';
 import { BYOE_ADDRESS_ERROR, EASY_SWITCH_SOURCES, OAUTH_PROVIDER, TIME_PERIOD } from '../interface';
 import useBYOEFeatureStatus from './useBYOEFeatureStatus';
@@ -70,7 +70,7 @@ jest.mock('../thunks/byoeAddresses', () => ({
     convertBYOEAddress: jest.fn(),
 }));
 
-jest.mock('../api', () => ({
+jest.mock('../api/api', () => ({
     startEasySwitchSignupImportTask: jest.fn(),
     checkExternalAddressClaimable: jest.fn((Email: string) => ({ url: 'claimable', method: 'POST', Email })),
 }));

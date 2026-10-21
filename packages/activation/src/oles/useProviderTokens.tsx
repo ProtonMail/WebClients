@@ -3,7 +3,7 @@ import { type ReactNode, createContext, useCallback, useContext, useEffect, useS
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import noop from '@proton/utils/noop';
 
-import { getTokensByFeature } from '../api';
+import { getTokensByFeature } from '../api/api';
 import type { EASY_SWITCH_FEATURES, ImportToken, OAUTH_PROVIDER } from '../interface';
 import { useOAuthToken } from '../logic/oauthToken/hooks';
 
