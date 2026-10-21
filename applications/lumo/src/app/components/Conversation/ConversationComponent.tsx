@@ -158,7 +158,7 @@ const ConversationLayout = ({
     const handleOpenArtifactFromDrawer = useCallback(
         (artifactId: string) => {
             closeRightDrawer();
-            openArtifact(artifactId, undefined, 'chip');
+            openArtifact(artifactId, undefined, 'drawer');
         },
         [closeRightDrawer, openArtifact]
     );
