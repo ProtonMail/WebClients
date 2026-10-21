@@ -83,8 +83,6 @@ export const entitlementChecksForSelection = {
             excludes: [EntitlementName.Business],
         }),
 
-    hasScribe: (r) => r.hasEntitlement(EntitlementName.MaxScribe),
-
     hasExternalManagedMembers: (r) => r.hasEntitlement(EntitlementName.ExternalManagedMembers),
 
     isPassB2BWithoutActivityMonitor: (r) =>
