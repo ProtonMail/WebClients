@@ -1030,6 +1030,24 @@
       ],
       "Subscribe": [
         "登録"
+      ],
+      "Add a payment method": [
+        "お支払い方法を追加"
+      ],
+      "Don't show this offer again": [
+        "このオファーを今後表示しない"
+      ],
+      "Google Drive": [
+        "Google Drive"
+      ],
+      "Migrate": [
+        "移行"
+      ],
+      "Special Offer": [
+        "特別オファー"
+      ],
+      "Switch to ${ planName }": [
+        "${ planName } に切り替え"
       ]
     },
     "action": {
@@ -1204,6 +1222,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "メールの生産性を新しいレベルに。${ BRAND_NAME }Scribeがメールの作成、返信、校正をお手伝いします。"
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "メールの生産性を新たな次元へ。${ LUMO_SHORT_APP_NAME } がメールの作成、返信、校正をサポートします。"
       ]
     },
     "Attached ics file error": {
@@ -1260,6 +1281,9 @@
       ],
       "You have reached the trial limit.": [
         "トライアルの制限に達しました。"
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "トライアル期間中は、文章作成アシスタント ${ LUMO_SHORT_APP_NAME } を最大 ${ TRIAL_MAX_SCRIBE_SEATS } シートまでご利用いただけます。"
       ]
     },
     "b2b_trials_Action": {
@@ -1288,6 +1312,9 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30 日間返金保証"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30日間の返金保証：ご購入から30日以内にキャンセルし、${ customerSupportLink } までご連絡いただければ、返金いたします。"
       ]
     },
     "BF2024: Deal details": {
@@ -1776,6 +1803,9 @@
       ],
       "Total for ${ cycle } month": [
         "合計 ${ cycle } か月"
+      ],
+      "Amount due now": [
+        "今すぐのお支払い額"
       ]
     },
     "Collapsible tooltip": {
@@ -4067,6 +4097,129 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Zoomの接続が期限切れになりました。続けるには再接続してください。"
+      ],
+      "A contact with this email address already exists": [
+        "このメールアドレスを持つ連絡先は既に存在します"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "このメールアドレスは、組織外のユーザーによって既に使用されています。この問題を解決するには、カスタマーサポートまでお問い合わせください"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "有効な名前がないアルバムに写真を追加することはできません"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "有効な名前がないアイテムは移動できません。まずアイテムの名前を変更してください"
+      ],
+      "Cannot share root folder": [
+        "ルートフォルダーを共有することはできません"
+      ],
+      "Copy operation aborted": [
+        "コピー操作が中断されました"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "このファイルの一部を読み取ることができませんでした: ${ message }"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "フォルダー以外の場所にファイルを作成することはできません"
+      ],
+      "Expiration date cannot be in the past": [
+        "有効期限に過去の日付を指定することはできません"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "ブックマークキーの復号に失敗しました: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "ブックマークのパスワードの復号に失敗しました: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "コンテンツキーの復号に失敗しました: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "アイテム名の復号に失敗しました: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "ノードキーの復号に失敗しました: ${ message }"
+      ],
+      "Failed to verify invitation": [
+        "招待の検証に失敗しました"
+      ],
+      "Image preview not found": [
+        "画像のプレビューが見つかりません"
+      ],
+      "Invitation not found": [
+        "招待が見つかりません"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "メンバーのアドレスが見つかりません。この問題を解決するには、カスタマーサポートまでお問い合わせください"
+      ],
+      "Missing inviter email": [
+        "招待者のメールアドレスがありません"
+      ],
+      "Missing organization private key": [
+        "組織の秘密鍵がありません"
+      ],
+      "Move operation aborted": [
+        "移動操作が中断されました"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "フォルダー以外の場所にアイテムを移動することはできません"
+      ],
+      "Name must not be empty": [
+        "名前を入力してください"
+      ],
+      "Operation failed, try again later": [
+        "操作に失敗しました。しばらくしてからもう一度お試しください"
+      ],
+      "Organization does not have enough seats available": [
+        "組織で利用可能なシート数が不足しています"
+      ],
+      "Photo is already in the target album": [
+        "写真はすでに移動先のアルバムに存在します"
+      ],
+      "Photo not found": [
+        "写真が見つかりません"
+      ],
+      "Renaming root item is not allowed": [
+        "ルート項目の名前を変更することはできません"
+      ],
+      "Request aborted": [
+        "リクエストが中断されました"
+      ],
+      "Signature is missing": [
+        "署名がありません"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "署名の検証に失敗しました: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "${ signatureType } の署名検証に失敗しました"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "${ signatureType } の署名検証に失敗しました: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "一部のファイルデータのアップロードに失敗しました。もう一度お試しください。"
+      ],
+      "The uploaded file does not match the original. Please try again.": [
+        "アップロードされたファイルが元のファイルと一致しません。もう一度お試しください。"
+      ],
+      "This file has no version available to download": [
+        "このファイルにはダウンロード可能なバージョンがありません"
+      ],
+      "This file version could not be uploaded": [
+        "このファイルバージョンをアップロードできませんでした"
+      ],
+      "Too many server requests, please try again later": [
+        "サーバーへのリクエストが多すぎます。しばらくしてからもう一度お試しください"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "${ signatureType } の検証鍵を利用できません"
+      ],
+      "You can only upload a new version to a file": [
+        "新しいバージョンをアップロードできるのはファイルのみです"
+      ],
+      "You can update a public link for your own files only": [
+        "公開リンクを更新できるのは、自分が所有するファイルのみです"
       ]
     },
     "error": {
@@ -4557,6 +4710,15 @@
     "Filter": {
       "Pending": [
         "保留中"
+      ],
+      "Activated": [
+        "有効"
+      ],
+      "In progress": [
+        "進行中"
+      ],
+      "Migrated": [
+        "移行済み"
       ]
     },
     "Filter notification": {
@@ -4971,6 +5133,9 @@
       ],
       "Migrated": [
         "移行済み"
+      ],
+      "Has errors": [
+        "エラーあり"
       ]
     },
     "Import warning": {
@@ -6517,6 +6682,63 @@
       ],
       "We'll get back to you shortly.": [
         "すぐにお返事します。"
+      ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "${ IDEAL_WERO_BRAND_NAME } のロゴ"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "トライアル期間は残り ${ timeRemaining } です。サブスクリプションを継続するには ${ addPaymentMethodLink } を行ってください。${ learnMoreLink }"
+      ],
+      "1 device per user": [
+        "1ユーザーにつき1台のデバイス"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30日間の返金保証：ご購入から30日以内にキャンセルし、${ customerSupportLink } までご連絡いただければ、返金いたします。"
+      ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "アップデート後、Mac からパスワードを求められる場合があります。Mac のロック解除に使用しているパスワードを入力し、「常に許可」をクリックするとサインイン状態が維持されます。${ learnMore }"
+      ],
+      "Do you remember your password?": [
+        "パスワードを覚えていますか？"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "認証アプリにアクセスできなくなった場合は、2要素認証の設定時に提供された16個のバックアップ用リカバリーコードのいずれかを使用できます。${ learnMoreLink }"
+      ],
+      "No payment is required.": [
+        "お支払いは不要です。"
+      ],
+      "Please update ${ MAIL_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "アプリを引き続きご利用いただくには、${ MAIL_APP_NAME } をアップデートしてください。${ downloadUpdate }"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "プラットフォームの互換性の問題により、このユーザーを移行することはできません。"
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "このユーザーを移行するには、お使いの ${ provider.adminConsoleName } で該当のアカウントを有効にしてください。"
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "このユーザーを移行するには、${ usersAddressesLink } で該当のアカウントを有効にしてください。"
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "このユーザーを移行するには、${ usersAddressesLink } で該当のアドレスを有効にしてください。"
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "このユーザーを移行するには、ユーザーが ${ BRAND_NAME } への参加招待を承諾する必要があります。"
+      ],
+      "UnionPay logo": [
+        "UnionPayのロゴ"
+      ],
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "この取引を完了するために、新しいブラウザタブで ${ IDEAL_WERO_BRAND_NAME } にリダイレクトします。ポップアップブロック機能をご利用の場合は、続行するために無効にしてください。"
+      ],
+      "You": [
+        "あなた"
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "未払いのご請求があります ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "期日が ${ dueDate } の未払いのご請求があります ${ payInvoiceLink }"
       ]
     },
     "info": {
@@ -7263,6 +7485,9 @@
       ],
       "Credits used": [
         "使用クレジット"
+      ],
+      "Account holder name": [
+        "口座名義人名"
       ]
     },
     "label": {
@@ -7445,6 +7670,9 @@
       ],
       "What’s this?": [
         "これは何ですか?"
+      ],
+      "Customer Support": [
+        "カスタマーサポート"
       ]
     },
     "Link label (optional)": {
@@ -8344,6 +8572,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ダークウェブをスキャンして、お客様の ${ BRAND_NAME } アドレスやエイリアスが漏洩していないかを確認し、何か見つかった場合はすぐに警告します。"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } 文章作成アシスタント（一部機能制限あり）"
       ]
     },
     "new_plans: feature highlight": {
@@ -8454,6 +8685,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "現在ご契約中のプランでは、キャンペーン価格をご利用いただけます。アカウントをダウングレードすると、キャンペーン価格が適用されなくなります。"
+      ],
+      "${ Brand } ending in ${ Last4 }": [
+        "末尾が ${ Last4 } の ${ Brand }"
       ]
     },
     "new_plans: label": {
@@ -8989,6 +9223,9 @@
       ],
       "Your subscription renews soon": [
         "サブスクリプションはまもなく更新されます"
+      ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "${ plan } の初月をこの価格で利用できる最後のチャンスです。"
       ]
     },
     "Offer fearue": {
@@ -9035,6 +9272,9 @@
       ],
       "Unlimited aliases to protect your identity": [
         "無制限のエイリアスでお客様のユーザー情報を保護"
+      ],
+      "Short @pm.me address": [
+        "短い @pm.me アドレス"
       ]
     },
     "Onboarding": {
@@ -9109,6 +9349,27 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "あなたのフル ${ planTitle } サブスクリプションは ${ boldEndDate } に開始します。"
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "無料トライアル終了後もすべての機能を引き続き利用するには、**お支払い方法を追加**してください。"
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**それまではいつでもキャンセルできます。** トライアルが終了するまで、無料で ${ planTitle } をご利用いただけます。"
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**トライアル終了後も継続してご利用いただく場合、** 30日以内にキャンセルすれば日割り計算による返金を受けることができます。"
+      ],
+      "Add a payment method": [
+        "お支払い方法を追加"
+      ],
+      "If you continue after your trial,": [
+        "トライアル終了後も継続してご利用いただく場合、"
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "無料トライアル終了後もすべての機能を引き続き利用するには"
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "30日以内にキャンセルすれば、日割り計算による返金を受けることができます。"
       ]
     },
     "Option": {
@@ -9450,6 +9711,63 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "あなたのサブスクリプションは現在、割引が適用されています。この新しいプロモーションに移行すると、既存の割引は適用されなくなります。"
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } はビジネスプランでのみご利用いただけます。"
+      ],
+      "An organization is required for this plan.": [
+        "このプランをご利用いただくには組織の作成が必要です。"
+      ],
+      "Born Private requires a donation.": [
+        "Born Private には寄付が必要です。"
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } の購入は1つまでに制限されています。"
+      ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "${ IDEAL_WERO_BRAND_NAME } で支払う"
+      ],
+      "Please close extra wallet accounts before changing your plan.": [
+        "プランを変更する前に、余分なウォレットアカウントを閉じてください。"
+      ],
+      "Please close extra wallets before changing your plan.": [
+        "プランを変更する前に、余分なウォレットを閉じてください。"
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Proton Meet のシート数はメンバー数と一致している必要があります。"
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "選択したプランでは、お使いのアカウントに必要なメールアドレス数が不足しています。"
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "選択したプランでは、お使いのアカウントに必要なドメイン数が不足しています。"
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "選択したプランでは、お使いのアカウントに必要なメンバー数が不足しています。"
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "選択したプランでは、お使いのアカウントに必要なストレージ容量が不足しています。"
+      ],
+      "This plan doesn’t support the managed features on your account.": [
+        "このプランでは、お使いのアカウントで利用中の管理機能がサポートされていません。"
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "現在、このサブスクリプションを完了できません。もう一度お試しください。"
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "トライアルプランでは ${ LUMO_SHORT_APP_NAME } のシートを追加できません。"
+      ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "お客様はすでに ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } を所有しています。"
+      ],
+      "You already own Born Private.": [
+        "お客様はすでに Born Private を所有しています。"
+      ],
+      "Your account is too old for Born Private.": [
+        "お使いのアカウントは「Born Private」の対象期間より前に作成されています。"
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "${ IDEAL_WERO_BRAND_NAME } はユーロでの支払いにのみ対応しているため、通貨がユーロ (€) に変更されました。"
       ]
     },
     "Payments.Error": {
@@ -9470,6 +9788,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "あなたのカードは拒否されました。 別のカードを試すか、銀行に問い合わせて請求を承認してください。"
+      ],
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "${ IDEAL_WERO_BRAND_NAME } の初期化に失敗しました。しばらくしてからもう一度お試しください。"
       ]
     },
     "Payments.error": {
@@ -9524,6 +9845,9 @@
     "Payments.Saved payment method details": {
       "Google Pay - card ending in ${ Last4 }": [
         "Google Pay - 末尾が${ Last4 }のカード"
+      ],
+      "Bank transfer - ${ iban }": [
+        "銀行振込 - ${ iban }"
       ]
     },
     "Payments.Sepa": {
@@ -9817,6 +10141,18 @@
     "Property": {
       "attributes": [
         "属性"
+      ],
+      "hash key": [
+        "ハッシュキー"
+      ],
+      "key": [
+        "鍵"
+      ],
+      "membership": [
+        "メンバーシップ"
+      ],
+      "name": [
+        "名前"
       ]
     },
     "Property type": {
@@ -11223,6 +11559,18 @@
       ],
       "Type": [
         "種類"
+      ],
+      "Activated": [
+        "有効"
+      ],
+      "Estimated size": [
+        "推定サイズ"
+      ],
+      "Migration status": [
+        "移行ステータス"
+      ],
+      "User": [
+        "ユーザー"
       ]
     },
     "TableHeader": {
@@ -12091,6 +12439,21 @@
       ],
       "Pay invoice": [
         "請求の支払い"
+      ],
+      "Black Friday": [
+        "ブラックフライデー"
+      ],
+      "Configure migration": [
+        "移行の設定"
+      ],
+      "Select users to migrate": [
+        "移行するユーザーを選択"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "${ planTitle } を登録"
+      ],
+      "What are you migrating?": [
+        "何を移行しますか？"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12290,6 +12653,15 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "ユーザーが招待を承認すると、役割を割り当てることができるようになります。"
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "このユーザーは、次回のサインイン時に管理者権限を取得します。"
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "管理者ロールを使用するには、対応するプランにアップグレードしてください。"
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "自分自身のロールを変更することはできません。変更するには、別の管理者にお問い合わせください。"
       ]
     },
     "Validation": {
@@ -12743,6 +13115,27 @@
       ],
       "Last chance to save big": [
         "大幅割引のラストチャンス"
+      ],
+      "Protect your entire tribe": [
+        "家族全員を保護"
+      ],
+      "Protection for two in a single plan": [
+        "1つのプランで2人を保護"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "今すぐ試す"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "新しい ${ CALENDAR_APP_NAME } をご利用いただけるようになりました。${ link }"
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "確認することにより、お客様は ${ BRAND_NAME } および当社の決済サービスプロバイダーである Stripe に対し、SEPA口座振替によってこの銀行口座から今後のサブスクリプション料金を引き落とすことを承認し、取引銀行がそれらの支払い額を引き落とすことを承認したものとみなされます。初回の支払いは、今すぐ ${ IDEAL_WERO_BRAND_NAME } で決済されます。プランはキャンセルするまで自動更新され、引き落としの前に毎回通知いたします。口座振替による引き落としについては、取引銀行との契約条件に基づき、引き落とし日から8週間以内であれば銀行に返金を請求できます。これは、現在行っている ${ IDEAL_WERO_BRAND_NAME } による支払いには適用されません。"
       ]
     }
   }
