@@ -1,3 +1,5 @@
+import { c } from 'ttag';
+
 /**
  * Centralized file types configuration
  * This file contains all file type definitions, MIME type mappings, and descriptions
@@ -28,31 +30,46 @@ const FILE_TYPE_CONFIGS: Record<string, FileTypeConfig> = {
     jpeg: {
         extensions: ['jpg', 'jpeg'],
         mimeTypes: ['image/jpeg'],
-        description: 'JPEG Image',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`JPEG Image`;
+        },
         category: 'image',
     },
     png: {
         extensions: ['png'],
         mimeTypes: ['image/png'],
-        description: 'PNG Image',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`PNG Image`;
+        },
         category: 'image',
     },
     gif: {
         extensions: ['gif'],
         mimeTypes: ['image/gif'],
-        description: 'GIF Image',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`GIF Image`;
+        },
         category: 'image',
     },
     webp: {
         extensions: ['webp'],
         mimeTypes: ['image/webp'],
-        description: 'WebP Image',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`WebP Image`;
+        },
         category: 'image',
     },
     heic: {
         extensions: ['heic', 'heif'],
         mimeTypes: ['image/heic', 'image/heif'],
-        description: 'HEIC Image',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`HEIC Image`;
+        },
         category: 'image',
     },
 
@@ -60,28 +77,40 @@ const FILE_TYPE_CONFIGS: Record<string, FileTypeConfig> = {
     pdf: {
         extensions: ['pdf'],
         mimeTypes: ['application/pdf'],
-        description: 'PDF Document',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`PDF Document`;
+        },
         category: 'document',
         // No pandocFormat - uses pdfParse library for text extraction, handled separately in worker
     },
     word: {
         extensions: ['doc', 'docx'],
         mimeTypes: ['application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'],
-        description: 'Word Document',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`Word Document`;
+        },
         category: 'document',
         pandocFormat: 'docx',
     },
     odt: {
         extensions: ['odt'],
         mimeTypes: ['application/vnd.oasis.opendocument.text'],
-        description: 'ODT Document',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`ODT Document`;
+        },
         category: 'document',
         pandocFormat: 'odt',
     },
     rtf: {
         extensions: ['rtf'],
         mimeTypes: ['application/rtf'],
-        description: 'RTF Document',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`RTF Document`;
+        },
         category: 'document',
         pandocFormat: 'rtf',
     },
@@ -90,14 +119,20 @@ const FILE_TYPE_CONFIGS: Record<string, FileTypeConfig> = {
     excel: {
         extensions: ['xls', 'xlsx'],
         mimeTypes: ['application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'],
-        description: 'Excel Document',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`Excel Document`;
+        },
         category: 'spreadsheet',
         // No pandocFormat - uses SheetJS for conversion, handled separately in worker
     },
     csv: {
         extensions: ['csv'],
         mimeTypes: ['text/csv', 'application/csv'],
-        description: 'CSV',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`CSV`;
+        },
         category: 'spreadsheet',
         // No pandocFormat - already plain text, decoded directly as UTF-8
     },
@@ -109,42 +144,60 @@ const FILE_TYPE_CONFIGS: Record<string, FileTypeConfig> = {
     plaintext: {
         extensions: ['txt'],
         mimeTypes: ['text/plain'],
-        description: 'Text File',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`Text File`;
+        },
         category: 'text',
         // No pandocFormat - processed as plain text
     },
     markdown: {
         extensions: ['md', 'markdown'],
         mimeTypes: ['text/markdown', 'text/x-markdown'],
-        description: 'Markdown Document',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`Markdown Document`;
+        },
         category: 'text',
         // No pandocFormat - already plain text, no conversion needed
     },
     html: {
         extensions: ['html', 'htm'],
         mimeTypes: ['text/html'],
-        description: 'HTML Document',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`HTML Document`;
+        },
         category: 'web',
         // No pandocFormat - HTML is already readable by LLMs, processed as plain text
     },
     latex: {
         extensions: ['latex', 'tex'],
         mimeTypes: ['text/latex'],
-        description: 'LaTeX Document',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`LaTeX Document`;
+        },
         category: 'text',
         // No pandocFormat - already plain text, LLMs can read LaTeX markup directly
     },
     rst: {
         extensions: ['rst'],
         mimeTypes: ['text/rst'],
-        description: 'reStructuredText',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`reStructuredText`;
+        },
         category: 'text',
         // No pandocFormat - already plain text, LLMs can read RST markup directly
     },
     asciidoc: {
         extensions: ['adoc', 'asciidoc', 'asc'],
         mimeTypes: ['text/asciidoc', 'text/x-asciidoc'],
-        description: 'AsciiDoc Document',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`AsciiDoc Document`;
+        },
         category: 'text',
         // No pandocFormat - will be processed as plain text
     },
@@ -153,21 +206,30 @@ const FILE_TYPE_CONFIGS: Record<string, FileTypeConfig> = {
     css: {
         extensions: ['css'],
         mimeTypes: ['text/css'],
-        description: 'CSS File',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`CSS File`;
+        },
         category: 'web',
         // No pandocFormat - processed as plain text
     },
     javascript: {
         extensions: ['js', 'mjs', 'jsx'],
         mimeTypes: ['application/javascript', 'text/javascript'],
-        description: 'JavaScript File',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`JavaScript File`;
+        },
         category: 'code',
         // No pandocFormat - processed as plain text
     },
     typescript: {
         extensions: ['ts', 'tsx'],
         mimeTypes: ['application/typescript', 'text/x-typescript'],
-        description: 'TypeScript File',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`TypeScript File`;
+        },
         category: 'code',
         // No pandocFormat - processed as plain text
     },
@@ -176,14 +238,20 @@ const FILE_TYPE_CONFIGS: Record<string, FileTypeConfig> = {
     json: {
         extensions: ['json'],
         mimeTypes: ['application/json'],
-        description: 'JSON File',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`JSON File`;
+        },
         category: 'config',
         // No pandocFormat - processed as plain text
     },
     xml: {
         extensions: ['xml'],
         mimeTypes: ['application/xml', 'text/xml'],
-        description: 'XML File',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`XML File`;
+        },
         category: 'config',
         // No pandocFormat - processed as plain text
     },
@@ -199,21 +267,30 @@ const FILE_TYPE_CONFIGS: Record<string, FileTypeConfig> = {
     yaml: {
         extensions: ['yaml', 'yml'],
         mimeTypes: ['application/yaml', 'text/yaml', 'application/x-yaml', 'text/x-yaml'],
-        description: 'YAML File',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`YAML File`;
+        },
         category: 'config',
         // No pandocFormat - processed as plain text
     },
     toml: {
         extensions: ['toml'],
         mimeTypes: ['application/toml', 'text/toml'],
-        description: 'TOML File',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`TOML File`;
+        },
         category: 'config',
         // No pandocFormat - processed as plain text
     },
     ini: {
         extensions: ['ini', 'cfg', 'conf', 'properties', 'env'],
         mimeTypes: ['text/plain'],
-        description: 'Configuration File',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`Configuration File`;
+        },
         category: 'config',
         // No pandocFormat - processed as plain text
     },
@@ -222,7 +299,10 @@ const FILE_TYPE_CONFIGS: Record<string, FileTypeConfig> = {
     log: {
         extensions: ['log'],
         mimeTypes: ['text/x-log', 'application/x-log'],
-        description: 'Log File',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`Log File`;
+        },
         category: 'log',
         // No pandocFormat - processed as plain text
     },
@@ -231,119 +311,170 @@ const FILE_TYPE_CONFIGS: Record<string, FileTypeConfig> = {
     python: {
         extensions: ['py', 'pyw', 'pyi'],
         mimeTypes: ['text/plain', 'text/x-python', 'application/x-python'],
-        description: 'Python File',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`Python File`;
+        },
         category: 'code',
         // No pandocFormat - processed as plain text
     },
     java: {
         extensions: ['java'],
         mimeTypes: ['text/plain', 'text/x-java-source', 'text/x-java'],
-        description: 'Java File',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`Java File`;
+        },
         category: 'code',
         // No pandocFormat - processed as plain text
     },
     cpp: {
         extensions: ['cpp', 'cxx', 'c', 'h', 'hpp', 'hxx', 'cc'],
         mimeTypes: ['text/plain', 'text/x-c', 'text/x-c++', 'text/x-c++src'],
-        description: 'C/C++ File',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`C/C++ File`;
+        },
         category: 'code',
         // No pandocFormat - processed as plain text
     },
     csharp: {
         extensions: ['cs'],
         mimeTypes: ['text/plain', 'text/x-csharp'],
-        description: 'C# File',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`C# File`;
+        },
         category: 'code',
         // No pandocFormat - processed as plain text
     },
     php: {
         extensions: ['php', 'php3', 'php4', 'php5', 'phtml'],
         mimeTypes: ['text/plain', 'text/x-php', 'application/x-php'],
-        description: 'PHP File',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`PHP File`;
+        },
         category: 'code',
         // No pandocFormat - processed as plain text
     },
     ruby: {
         extensions: ['rb', 'rbw'],
         mimeTypes: ['text/plain', 'text/x-ruby', 'application/x-ruby'],
-        description: 'Ruby File',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`Ruby File`;
+        },
         category: 'code',
         // No pandocFormat - processed as plain text
     },
     go: {
         extensions: ['go'],
         mimeTypes: ['text/plain', 'text/x-go'],
-        description: 'Go File',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`Go File`;
+        },
         category: 'code',
         // No pandocFormat - processed as plain text
     },
     rust: {
         extensions: ['rs', 'rlib'],
         mimeTypes: ['text/plain', 'text/x-rust'],
-        description: 'Rust File',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`Rust File`;
+        },
         category: 'code',
         // No pandocFormat - processed as plain text
     },
     swift: {
         extensions: ['swift'],
         mimeTypes: ['text/plain'],
-        description: 'Swift File',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`Swift File`;
+        },
         category: 'code',
         // No pandocFormat - processed as plain text
     },
     kotlin: {
         extensions: ['kt'],
         mimeTypes: ['text/plain'],
-        description: 'Kotlin File',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`Kotlin File`;
+        },
         category: 'code',
         // No pandocFormat - processed as plain text
     },
     scala: {
         extensions: ['scala'],
         mimeTypes: ['text/plain'],
-        description: 'Scala File',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`Scala File`;
+        },
         category: 'code',
         // No pandocFormat - processed as plain text
     },
     clojure: {
         extensions: ['clj'],
         mimeTypes: ['text/plain'],
-        description: 'Clojure File',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`Clojure File`;
+        },
         category: 'code',
         // No pandocFormat - processed as plain text
     },
     haskell: {
         extensions: ['hs'],
         mimeTypes: ['text/plain'],
-        description: 'Haskell File',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`Haskell File`;
+        },
         category: 'code',
         // No pandocFormat - processed as plain text
     },
     ocaml: {
         extensions: ['ml'],
         mimeTypes: ['text/plain'],
-        description: 'OCaml File',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`OCaml File`;
+        },
         category: 'code',
         // No pandocFormat - processed as plain text
     },
     matlab: {
         extensions: ['m'],
         mimeTypes: ['text/plain', 'text/x-matlab', 'text/x-mathematica'],
-        description: 'MATLAB/Mathematica File',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`MATLAB/Mathematica File`;
+        },
         category: 'code',
         // No pandocFormat - processed as plain text
     },
     r: {
         extensions: ['r'],
         mimeTypes: ['text/plain'],
-        description: 'R File',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`R File`;
+        },
         category: 'code',
         // No pandocFormat - processed as plain text
     },
     sql: {
         extensions: ['sql'],
         mimeTypes: ['text/plain', 'text/x-sql', 'application/x-sql'],
-        description: 'SQL File',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`SQL File`;
+        },
         category: 'code',
         // No pandocFormat - processed as plain text
     },
@@ -352,49 +483,70 @@ const FILE_TYPE_CONFIGS: Record<string, FileTypeConfig> = {
     dart: {
         extensions: ['dart'],
         mimeTypes: ['text/plain', 'text/x-dart'],
-        description: 'Dart File',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`Dart File`;
+        },
         category: 'code',
         // No pandocFormat - processed as plain text
     },
     elixir: {
         extensions: ['ex', 'exs'],
         mimeTypes: ['text/plain', 'text/x-elixir'],
-        description: 'Elixir File',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`Elixir File`;
+        },
         category: 'code',
         // No pandocFormat - processed as plain text
     },
     erlang: {
         extensions: ['erl', 'hrl'],
         mimeTypes: ['text/plain', 'text/x-erlang'],
-        description: 'Erlang File',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`Erlang File`;
+        },
         category: 'code',
         // No pandocFormat - processed as plain text
     },
     lua: {
         extensions: ['lua'],
         mimeTypes: ['text/plain', 'text/x-lua'],
-        description: 'Lua File',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`Lua File`;
+        },
         category: 'code',
         // No pandocFormat - processed as plain text
     },
     perl: {
         extensions: ['pl', 'pm', 'perl'],
         mimeTypes: ['text/plain', 'text/x-perl', 'application/x-perl'],
-        description: 'Perl File',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`Perl File`;
+        },
         category: 'code',
         // No pandocFormat - processed as plain text
     },
     groovy: {
         extensions: ['groovy', 'gvy'],
         mimeTypes: ['text/plain', 'text/x-groovy'],
-        description: 'Groovy File',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`Groovy File`;
+        },
         category: 'code',
         // No pandocFormat - processed as plain text
     },
     vim: {
         extensions: ['vim', 'vimrc'],
         mimeTypes: ['text/plain', 'text/x-vim'],
-        description: 'Vim Script',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`Vim Script`;
+        },
         category: 'code',
         // No pandocFormat - processed as plain text
     },
@@ -403,21 +555,30 @@ const FILE_TYPE_CONFIGS: Record<string, FileTypeConfig> = {
     shell: {
         extensions: ['sh', 'bash', 'zsh', 'fish', 'ksh', 'csh', 'tcsh'],
         mimeTypes: ['text/plain', 'text/x-sh', 'application/x-sh', 'text/x-shellscript'],
-        description: 'Shell Script',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`Shell Script`;
+        },
         category: 'code',
         // No pandocFormat - processed as plain text
     },
     powershell: {
         extensions: ['ps1', 'psm1', 'ps1xml'],
         mimeTypes: ['text/plain', 'text/x-powershell'],
-        description: 'PowerShell Script',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`PowerShell Script`;
+        },
         category: 'code',
         // No pandocFormat - processed as plain text
     },
     batch: {
         extensions: ['bat', 'cmd'],
         mimeTypes: ['text/plain', 'application/x-bat'],
-        description: 'Batch File',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`Batch File`;
+        },
         category: 'code',
         // No pandocFormat - processed as plain text
     },
@@ -426,63 +587,90 @@ const FILE_TYPE_CONFIGS: Record<string, FileTypeConfig> = {
     dockerfile: {
         extensions: ['dockerfile'],
         mimeTypes: ['text/plain'],
-        description: 'Dockerfile',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`Dockerfile`;
+        },
         category: 'build',
         // No pandocFormat - processed as plain text
     },
     makefile: {
         extensions: ['makefile'],
         mimeTypes: ['text/plain'],
-        description: 'Makefile',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`Makefile`;
+        },
         category: 'build',
         // No pandocFormat - processed as plain text
     },
     cmake: {
         extensions: ['cmake'],
         mimeTypes: ['text/plain'],
-        description: 'CMake File',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`CMake File`;
+        },
         category: 'build',
         // No pandocFormat - processed as plain text
     },
     gradle: {
         extensions: ['gradle'],
         mimeTypes: ['text/plain'],
-        description: 'Gradle File',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`Gradle File`;
+        },
         category: 'build',
         // No pandocFormat - processed as plain text
     },
     maven: {
         extensions: ['maven'],
         mimeTypes: ['text/plain'],
-        description: 'Maven File',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`Maven File`;
+        },
         category: 'build',
         // No pandocFormat - processed as plain text
     },
     sbt: {
         extensions: ['sbt'],
         mimeTypes: ['text/plain'],
-        description: 'SBT File',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`SBT File`;
+        },
         category: 'build',
         // No pandocFormat - processed as plain text
     },
     cargo: {
         extensions: ['cargo'],
         mimeTypes: ['text/plain'],
-        description: 'Cargo File',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`Cargo File`;
+        },
         category: 'build',
         // No pandocFormat - processed as plain text
     },
     lockfile: {
         extensions: ['lock'],
         mimeTypes: ['text/plain'],
-        description: 'Lock File',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`Lock File`;
+        },
         category: 'build',
         // No pandocFormat - processed as plain text
     },
     gitignore: {
         extensions: ['gitignore'],
         mimeTypes: ['text/plain'],
-        description: 'Gitignore File',
+        get description() {
+            // translator: Human-readable file type description shown for attachments.
+            return c('collider_2025:Label').t`Gitignore File`;
+        },
         category: 'text',
     },
 };
@@ -567,7 +755,8 @@ export function getFileTypeDescription(fileName: string, mimeType?: string): str
         if (description) return description;
     }
 
-    return 'File';
+    // translator: Fallback attachment type when the format is unknown.
+    return c('collider_2025:Label').t`File`;
 }
 
 /** Extensions that must never be indexed, extracted, or attached to context. */

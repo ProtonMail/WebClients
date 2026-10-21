@@ -1,3 +1,4 @@
+import { c } from 'ttag';
 import * as XLSX from 'xlsx';
 
 import type { FileData } from '../fileProcessingService';
@@ -14,7 +15,8 @@ export type ExcelConversionResult = {
 };
 
 const getExcelSheetFileName = (fileName: string, sheetName: string) => {
-    const sanitizedSheetName = sheetName.replace(/[\\/:*?"<>|]/g, '-').trim() || 'Sheet';
+    // translator: Worksheet tab name used in the filename of an uploaded Excel worksheet.
+    const sanitizedSheetName = sheetName.replace(/[\\/:*?"<>|]/g, '-').trim() || c('collider_2025:Label').t`Sheet`;
     const extensionIndex = fileName.lastIndexOf('.');
 
     if (extensionIndex <= 0) {
@@ -37,16 +39,20 @@ function isLegacyExcelFile(name: string, type?: string): boolean {
 
 function createExcelReadError(name: string, type: string | undefined, error: unknown): Error {
     if (isLegacyExcelFile(name, type)) {
+        // translator: Error shown when uploading an Excel workbook.
         return new Error(
-            'Legacy Excel .xls files are not supported. Please save the workbook as .xlsx or CSV and try again.'
+            c('collider_2025:Error')
+                .t`Legacy Excel .xls files are not supported. Please save the workbook as .xlsx or CSV and try again.`
         );
     }
 
     const message = error instanceof Error ? error.message : String(error);
     console.warn(`Failed to read Excel workbook "${name}": ${message}`);
 
+    // translator: Error shown when uploading an Excel workbook.
     return new Error(
-        'We could not read this Excel workbook. It may be encrypted, corrupted, or not a valid .xlsx file. Please save it as .xlsx or CSV and try again.'
+        c('collider_2025:Error')
+            .t`We could not read this Excel workbook. It may be encrypted, corrupted, or not a valid .xlsx file. Please save it as .xlsx or CSV and try again.`
     );
 }
 
@@ -119,11 +125,13 @@ export async function convertXlsxToMarkdown(
     const sheetNames = workbook.SheetNames.filter((name) => !selectedSheetNameSet || selectedSheetNameSet.has(name));
 
     if (!workbook.SheetNames.length) {
-        throw new Error('Excel file contains no worksheets');
+        // translator: Error shown when uploading an Excel workbook.
+        throw new Error(c('collider_2025:Error').t`Excel file contains no worksheets`);
     }
 
     if (!sheetNames.length) {
-        throw new Error('No Excel worksheets selected');
+        // translator: Error shown when uploading an Excel workbook.
+        throw new Error(c('collider_2025:Error').t`No Excel worksheets selected`);
     }
 
     const includeSheetHeaders = sheetNames.length > 1;
@@ -142,7 +150,8 @@ export async function convertXlsxToMarkdown(
 
     const content = sheetBlocks.join('\n\n').trim();
     if (!content) {
-        throw new Error('Excel file appears to be empty or contains no readable data');
+        // translator: Error shown when uploading an Excel workbook.
+        throw new Error(c('collider_2025:Error').t`Excel file appears to be empty or contains no readable data`);
     }
 
     return {

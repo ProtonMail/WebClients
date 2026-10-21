@@ -1,10 +1,12 @@
 import { useMemo } from 'react';
 
+import { c } from 'ttag';
+
 import { getSummarizedMessageIds } from '../llm/compaction';
 import { useLumoMemoSelector, useLumoSelector } from '../redux/hooks';
 import { selectAttachments, selectContextFilters, selectMessagesByConversationId } from '../redux/selectors';
-import { getAttachmentDocumentKey } from '../util/resolveProjectFiles';
 import type { Attachment, Message } from '../types';
+import { getAttachmentDocumentKey } from '../util/resolveProjectFiles';
 
 export type AutoRetrievedAttachment = Attachment & { messageId: string };
 
@@ -53,7 +55,8 @@ export const useAutoRetrievedAttachments = (messageChain: Message[]) => {
                     fullAtt ||
                     ({
                         ...shallowAtt,
-                        filename: shallowAtt.filename || 'Unknown file',
+                        // translator: Fallback name of an automatically retrieved attachment.
+                        filename: shallowAtt.filename || c('collider_2025:Label').t`Unknown file`,
                     } as Attachment);
 
                 const mergedAtt: AutoRetrievedAttachment = {
