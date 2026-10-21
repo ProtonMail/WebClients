@@ -10,7 +10,7 @@ import {
 import { selectWaitingRoomSetting } from '@proton/meet/store/slices/settings';
 import { selectIsWaitingRoomAdmissionActive } from '@proton/meet/store/slices/waitingRoomSlice';
 
-import { tryOpenInDesktopApp } from '../../utils/desktopAppDetector';
+import { getDesktopAppPreference, tryOpenInDesktopApp } from '../../utils/desktopAppDetector';
 import { PreJoinDetails } from './PreJoinDetails';
 
 const MEETING_LINK = 'https://meet.proton.me/join/id-meeting-abc#pwd-password-abc';
@@ -76,14 +76,14 @@ vi.mock('../../utils/desktopAppDetector', async (importOriginal) => ({
 const OPEN_IN_DESKTOP_APP = 'Open this meeting in the desktop app';
 const WAITING_ROOM_HINT = 'This meeting has a waiting room';
 
-const renderPreJoinDetails = ({ instantMeeting = false } = {}) =>
+const renderPreJoinDetails = ({ instantMeeting = false, onJoinMeeting = vi.fn() } = {}) =>
     render(
         <PreJoinDetails
             meetingLinkName="meeting-abc"
             displayName="Alice"
             keepDisplayName={false}
             onDisplayNameChange={vi.fn()}
-            onJoinMeeting={vi.fn()}
+            onJoinMeeting={onJoinMeeting}
             instantMeeting={instantMeeting}
         />
     );
@@ -91,6 +91,7 @@ const renderPreJoinDetails = ({ instantMeeting = false } = {}) =>
 describe('PreJoinDetails', () => {
     beforeEach(() => {
         vi.clearAllMocks();
+        localStorage.clear();
         mocks.isElectronApp = false;
         mocks.isDesktop.mockReturnValue(true);
         mocks.isIpad.mockReturnValue(false);
@@ -212,6 +213,19 @@ describe('PreJoinDetails', () => {
 
             expect(tryOpenInDesktopApp).toHaveBeenCalledTimes(2);
             expect(tryOpenInDesktopApp).toHaveBeenNthCalledWith(2, MEETING_LINK);
+        });
+
+        it('forgets the desktop app choice when joining in the browser', () => {
+            const onJoinMeeting = vi.fn();
+            renderPreJoinDetails({ onJoinMeeting });
+
+            fireEvent.click(screen.getByRole('button', { name: OPEN_IN_DESKTOP_APP }));
+            expect(getDesktopAppPreference()).toBe(true);
+
+            fireEvent.click(screen.getByRole('button', { name: 'Join in browser' }));
+
+            expect(getDesktopAppPreference()).toBe(false);
+            expect(onJoinMeeting).toHaveBeenCalledWith('Alice', false);
         });
     });
 });

@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 
 import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 
-import { tryOpenInDesktopApp } from '../../utils/desktopAppDetector';
+import { saveDesktopAppPreference, tryOpenInDesktopApp } from '../../utils/desktopAppDetector';
 import { OpenInDesktopAppCard, OpenInDesktopAppLink } from './OpenInDesktopApp';
 
 const MEETING_LINK = 'https://meet.proton.me/join/id-meeting-abc#pwd-password-abc';
@@ -18,6 +18,7 @@ vi.mock('@proton/meet/telemetry/meetTelemetry', async (importOriginal) => ({
 
 vi.mock('../../utils/desktopAppDetector', () => ({
     tryOpenInDesktopApp: vi.fn(),
+    saveDesktopAppPreference: vi.fn(),
 }));
 
 describe('OpenInDesktopAppLink', () => {
@@ -33,13 +34,14 @@ describe('OpenInDesktopAppLink', () => {
         expect(sendMeetActionsEvent).toHaveBeenCalledWith(TelemetryMeetActionsEvents.desktop_app_banner_shown);
     });
 
-    it('opens the meeting in the desktop app on click', () => {
+    it('opens the meeting in the desktop app on click and remembers the choice', () => {
         const onOpen = vi.fn();
         render(<OpenInDesktopAppLink onOpen={onOpen} />);
 
         fireEvent.click(screen.getByRole('button', { name: 'Open this meeting in the desktop app' }));
 
         expect(tryOpenInDesktopApp).toHaveBeenCalledWith(MEETING_LINK);
+        expect(saveDesktopAppPreference).toHaveBeenCalledTimes(1);
         expect(onOpen).toHaveBeenCalledTimes(1);
         expect(sendMeetActionsEvent).toHaveBeenCalledWith(TelemetryMeetActionsEvents.desktop_app_banner_clicked, {
             action: 'open_app',
