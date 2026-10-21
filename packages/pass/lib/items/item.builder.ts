@@ -3,12 +3,11 @@ import type {
     DeobfuscatedItemContent,
     DeobfuscatedItemExtraField,
     Item,
-    ItemType,
-    MaybeNull,
-    Metadata,
-} from '../../types';
+} from '../../types/data/items';
+import type { ItemType, Metadata } from '../../types/protobuf';
 import { CardType, WifiSecurity } from '../../types/protobuf';
 import type { PlatformSpecific } from '../../types/protobuf/item-v1';
+import type { MaybeNull } from '../../types/utils';
 import { type ObjectHandler, objectHandler } from '../../utils/object/handler';
 import { uniqueId } from '../../utils/string/unique-id';
 import { deobfuscateItem, obfuscateItem } from './item.obfuscation';

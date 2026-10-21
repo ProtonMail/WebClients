@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import type { ItemImportIntent, Maybe, MaybeArray } from '../../../../types';
+import type { ItemImportIntent } from '../../../../types/data/items.dto';
+import type { Maybe, MaybeArray } from '../../../../types/utils';
 import { logger } from '../../../../utils/logger';
 import { ImportProviderError } from '../../helpers/error';
 import type { ImportFolderTree } from '../../helpers/folders';

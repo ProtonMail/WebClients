@@ -1,6 +1,6 @@
 import { createAction } from '@reduxjs/toolkit';
 
-import type { TagMatch, Tagged } from '../../types';
+import type { TagMatch, Tagged } from '../../types/utils';
 import { withRequest, withRequestFailure, withRequestSuccess } from './enhancers';
 import type { RequestConfig } from './types';
 

@@ -2,7 +2,7 @@ import type { AesGcmCryptoKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { deriveKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
 
-import { PassEncryptionTag } from '../../types';
+import { PassEncryptionTag } from '../../types/crypto/pass-types';
 import { decryptData, encryptData } from '../crypto/utils/crypto-helpers';
 import type { ExportRequestOptions } from '../export/types';
 import type { AuthStore } from './store';

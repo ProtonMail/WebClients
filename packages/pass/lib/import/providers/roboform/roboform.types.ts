@@ -1,4 +1,4 @@
-import type { Maybe } from '../../../../types';
+import type { Maybe } from '../../../../types/utils';
 
 export type RoboformVariadicItem = [string, string, string, string, string, string, string, ...string[]];
 

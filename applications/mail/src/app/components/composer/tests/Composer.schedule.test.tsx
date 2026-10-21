@@ -12,7 +12,7 @@ import loudRejection from 'loud-rejection';
 
 import { getModelState } from '@proton/account/tests';
 import { mockPlansApi } from '@proton/components/hooks/helpers/tests';
-import { FeatureCode } from '@proton/features';
+import { FeatureCode } from '@proton/features/interface';
 import { getFeatureFlagsState } from '@proton/features/testing/features';
 import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';

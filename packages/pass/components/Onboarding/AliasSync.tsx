@@ -7,7 +7,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
-import { selectUserData } from '../../store/selectors';
+import { selectUserData } from '../../store/selectors/user';
 import { pipe } from '../../utils/fp/pipe';
 import { useOnline } from '../Core/ConnectivityProvider';
 import { usePassCore } from '../Core/PassCoreProvider';

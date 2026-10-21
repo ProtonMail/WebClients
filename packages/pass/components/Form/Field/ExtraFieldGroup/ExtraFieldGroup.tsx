@@ -3,8 +3,10 @@ import { useSelector } from 'react-redux';
 import type { FormikErrors, FormikProps } from 'formik';
 import { FieldArray } from 'formik';
 
-import { selectExtraFieldLimits } from '../../../../store/selectors';
-import type { DeobfuscatedItemExtraField, ExtraFieldGroupValues, ExtraFieldType } from '../../../../types';
+import { selectExtraFieldLimits } from '../../../../store/selectors/limits';
+import type { DeobfuscatedItemExtraField } from '../../../../types/data/items';
+import type { ExtraFieldGroupValues } from '../../../../types/forms/fields';
+import type { ExtraFieldType } from '../../../../types/protobuf';
 import { autofocusInput } from '../../../../utils/dom/input';
 import { Field } from '../Field';
 import { FieldsetCluster } from '../Layout/FieldsetCluster';

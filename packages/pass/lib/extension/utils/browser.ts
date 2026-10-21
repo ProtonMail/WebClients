@@ -1,8 +1,8 @@
 import { isBrave, isChrome, isEdgeChromium, isFirefox, isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { Clients, PASS_CHROME_URL, PASS_EDGE_URL, PASS_FIREFOX_URL } from '../../../constants';
-import type { MaybeNull } from '../../../types';
 import type { Browser } from '../../../types/browser';
+import type { MaybeNull } from '../../../types/utils';
 
 const global = globalThis as any;
 

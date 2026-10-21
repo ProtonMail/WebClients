@@ -1,4 +1,8 @@
-import { InjectionMode, contextHandlerFactory, contextInjectorFactory } from '@proton/pass/utils/context';
+import {
+    InjectionMode,
+    contextHandlerFactory,
+    contextInjectorFactory,
+} from '@proton/pass/utils/context/create-shared-context';
 
 import type { ContentScriptContext } from './types';
 

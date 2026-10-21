@@ -7,14 +7,17 @@ import { hasPasswordChanged } from '../../../lib/monitor/monitor.utils';
 import type { CompromisedPasswordEntry } from '../../../lib/monitor/types';
 import { isOnline } from '../../../lib/network/connectivity.utils';
 import { isPaidPlan } from '../../../lib/user/user.predicates';
-import type { ItemRevision } from '../../../types';
 import { PassFeature } from '../../../types/api/features';
 import type { UserPassPlan } from '../../../types/api/plan';
+import type { ItemRevision } from '../../../types/data/items';
 import { logger } from '../../../utils/logger';
 import { deobfuscate } from '../../../utils/obfuscate/xor';
-import { compromisedPasswordUpdate, importItemsProgress, itemCreate, itemEdit } from '../../actions';
+import { importItemsProgress } from '../../actions/creators/import';
+import { itemCreate, itemEdit } from '../../actions/creators/item';
+import { compromisedPasswordUpdate } from '../../actions/creators/monitor';
 import type { ItemEditIntentAction } from '../../middleware/item-edit.middleware';
-import { selectCompromisedPasswordsCache, selectFeatureFlag, selectPassPlan } from '../../selectors';
+import { selectCompromisedPasswordsCache } from '../../selectors/monitor';
+import { selectFeatureFlag, selectPassPlan } from '../../selectors/user';
 import type { RootSagaOptions } from '../../types';
 
 function* isEnabled(): Generator<any, boolean, any> {

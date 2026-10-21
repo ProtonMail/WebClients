@@ -1,6 +1,6 @@
 import { generateKey } from '@protontech/crypto/subtle/aesGcm.ts';
 
-import { PassEncryptionTag } from '../../../../types';
+import { PassEncryptionTag } from '../../../../types/crypto/pass-types';
 import { encryptData, importSymmetricKey } from '../../utils/crypto-helpers';
 import { PassCryptoError, PassCryptoFileError } from '../../utils/errors';
 

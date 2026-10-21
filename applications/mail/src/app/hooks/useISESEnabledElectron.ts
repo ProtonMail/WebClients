@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 
 import useIsInboxElectronApp from '@proton/components/hooks/useIsInboxElectronApp';
-import { FeatureCode, useFeature } from '@proton/features';
+import { FeatureCode } from '@proton/features/interface';
+import useFeature from '@proton/features/useFeature';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { useMailboxCounter } from './mailboxCounter/useMailboxCounter';

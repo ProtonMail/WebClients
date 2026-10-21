@@ -1,6 +1,6 @@
 import { createContext, useContext } from 'react';
 
-import type { ToolName as ServerToolName } from '@proton/lumo-api-client';
+import type { ToolName as ServerToolName } from '@proton/lumo-api-client/core/types';
 import type { WelcomeSuggestionCard } from '@proton/lumo-ui/WelcomeSuggestions';
 
 import type { CardRenderers, LumoAgentItem, LumoChainEnd, ServerToolMeta } from './types';

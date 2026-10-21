@@ -1,7 +1,9 @@
 import { type FC, type PropsWithChildren, createContext, useEffect, useState } from 'react';
 
 import { createUseContext } from '../../hooks/useContextFactory';
-import type { AppState, ContextBridgeApi, MaybeNull } from '../../types';
+import type { ContextBridgeApi } from '../../types/desktop';
+import type { MaybeNull } from '../../types/utils';
+import type { AppState } from '../../types/worker/state';
 import { AppStateManager } from './AppStateManager';
 
 export const AppStateContext = createContext<MaybeNull<AppState>>(null);

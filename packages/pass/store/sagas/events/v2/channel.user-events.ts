@@ -3,11 +3,13 @@ import { call, cancelled, delay, put, race, select, take } from 'redux-saga/effe
 import { processUserEvents } from '../../../../lib/sync/v2/user-events.processor';
 import { getUserEventsSince } from '../../../../lib/sync/v2/user-events.requests';
 import { processFullRefresh } from '../../../../lib/sync/v2/user-events.sync';
-import type { Api, Id, MaybeNull, SyncEventListOutput } from '../../../../types';
+import type { Api } from '../../../../types/api/api';
+import type { Id, SyncEventListOutput } from '../../../../types/api/pass';
+import type { MaybeNull } from '../../../../types/utils';
 import { logId, logger } from '../../../../utils/logger';
-import { setUserEventID } from '../../../actions';
 import { forcePollV2 } from '../../../actions/creators/polling';
-import { selectLatestUserEventId } from '../../../selectors';
+import { setUserEventID } from '../../../actions/creators/user';
+import { selectLatestUserEventId } from '../../../selectors/user';
 import type { RootSagaOptions } from '../../../types';
 
 const CHANNEL_ID = 'Polling::UserEventsV2';

@@ -18,7 +18,7 @@ import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
-import { useLoading } from '@proton/hooks/index';
+import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { TelemetryBringYourOwnEmailEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { queryCheckUsernameAvailability } from '@proton/shared/lib/api/user';

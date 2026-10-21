@@ -11,7 +11,8 @@ import noop from '@proton/utils/noop';
 
 import { DEFAULT_LOCK_TTL } from '../../constants';
 import type { Notification } from '../../store/actions/enhancers/notification';
-import type { Api, Maybe, MaybeNull, MaybePromise } from '../../types';
+import type { Api } from '../../types/api/api';
+import type { Maybe, MaybeNull, MaybePromise } from '../../types/utils';
 import { NotificationKey } from '../../types/worker/notification';
 import { getErrorMessage } from '../../utils/errors/get-error-message';
 import { asyncLock } from '../../utils/fp/promises';

@@ -1,4 +1,4 @@
-import type { MaybeNull } from '..';
+import type { MaybeNull } from '../utils/index';
 import type { UniqueItem } from './items';
 
 export type AliasMailbox = { email: string; id: number };

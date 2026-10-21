@@ -6,9 +6,10 @@ import { useSelectItem } from '../components/Navigation/NavigationActions';
 import { useNavigationFilters } from '../components/Navigation/NavigationFilters';
 import { useSelectedItem } from '../components/Navigation/NavigationItem';
 import { itemEq } from '../lib/items/item.predicates';
-import type { ItemRevision, Maybe, SelectedItem } from '../types';
 import { B2BEventName } from '../types/data/b2b';
+import type { ItemRevision, SelectedItem } from '../types/data/items';
 import { TelemetryEventName, TelemetryItemType } from '../types/data/telemetry';
+import type { Maybe } from '../types/utils';
 import { isEmptyString } from '../utils/string/is-empty-string';
 import { getEpoch } from '../utils/time/epoch';
 

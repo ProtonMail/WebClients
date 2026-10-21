@@ -2,9 +2,10 @@ import type { Store } from 'redux';
 
 import chunk from '@proton/utils/chunk';
 
-import { selectMonitoredLogins } from '../../store/selectors';
+import { selectMonitoredLogins } from '../../store/selectors/monitor';
 import type { State } from '../../store/types';
-import type { ShareId, UniqueItem } from '../../types';
+import type { ShareId } from '../../types/crypto/pass-types';
+import type { UniqueItem } from '../../types/data/items';
 import { and, not, or } from '../../utils/fp/predicates';
 import { seq } from '../../utils/fp/promises';
 import { deobfuscate } from '../../utils/obfuscate/xor';

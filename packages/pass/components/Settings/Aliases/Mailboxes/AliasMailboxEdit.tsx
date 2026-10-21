@@ -11,7 +11,7 @@ import { IcCross } from '@proton/icons/icons/IcCross';
 import { useRequest } from '../../../../hooks/useRequest';
 import type { EmailFormValues } from '../../../../lib/validation/email';
 import { validateEmailForm } from '../../../../lib/validation/email';
-import { editMailbox } from '../../../../store/actions';
+import { editMailbox } from '../../../../store/actions/creators/alias';
 import { Field } from '../../../Form/Field/Field';
 import { FieldsetCluster } from '../../../Form/Field/Layout/FieldsetCluster';
 import { TextField } from '../../../Form/Field/TextField';

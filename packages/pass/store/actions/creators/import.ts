@@ -3,7 +3,8 @@ import { c } from 'ttag';
 
 import type { ImportReport } from '../../../lib/import/helpers/report';
 import type { ImportEntryPoint, ImportPayload, ImportProvider } from '../../../lib/import/types';
-import type { ClientEndpoint, IndexedByShareIdAndItemId, ItemRevision, WithTabId } from '../../../types';
+import type { IndexedByShareIdAndItemId, ItemRevision } from '../../../types/data/items';
+import type { ClientEndpoint, WithTabId } from '../../../types/worker/runtime';
 import { withRequestProgress } from '../../request/enhancers';
 import { requestActionsFactory } from '../../request/flow';
 import { withCache } from '../enhancers/cache';

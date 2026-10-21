@@ -1,7 +1,7 @@
 import browser from '@proton/pass/lib/globals/browser';
 import { parseUrl } from '@proton/pass/lib/urls/utils/parser';
 import { resolveDomain } from '@proton/pass/lib/urls/utils/utils';
-import type { MaybeNull } from '@proton/pass/types/utils/index';
+import type { MaybeNull } from '@proton/pass/types/utils';
 import type { FrameId, TabId } from '@proton/pass/types/worker/runtime';
 
 import type { FrameAttributes } from '../../types/frames';

@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
-import { useStableLoading } from '@proton/hooks';
+import useStableLoading from '@proton/hooks/useStableLoading';
 import { BilledUserInlineMessage } from '@proton/payments-ui/client-extensions/billed-user/BilledUserInlineMessage';
 import type { ThemeCode } from '@proton/payments-ui/client-extensions/helpers';
 import type { ViewPaymentMethod } from '@proton/payments-ui/client-extensions/useMethods';

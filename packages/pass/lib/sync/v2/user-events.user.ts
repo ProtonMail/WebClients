@@ -1,16 +1,16 @@
 import { call, put } from 'redux-saga/effects';
 
-import { setBreaches, setUserAccess } from '../../../store/actions';
+import { setBreaches } from '../../../store/actions/creators/monitor';
 import { setOrganizationSettings } from '../../../store/actions/creators/organization';
+import { setUserAccess } from '../../../store/actions/creators/user';
 import type { HydratedAccessState } from '../../../store/reducers';
 import type { RootSagaOptions } from '../../../store/types';
 import type {
     BreachesGetResponse,
-    Maybe,
-    MaybeNull,
     OrganizationGetResponse,
     SyncEventChangedWithTokenOutput,
-} from '../../../types';
+} from '../../../types/api/pass';
+import type { Maybe, MaybeNull } from '../../../types/utils';
 import { getAllBreaches } from '../../monitor/monitor.request';
 import { getOrganizationSettings } from '../../organization/organization.requests';
 import { getUserAccess } from '../../user/user.requests';

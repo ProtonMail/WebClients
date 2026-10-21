@@ -1,5 +1,6 @@
-import type { ItemKey, ItemUpdateRequest } from '../../../../types';
-import { ContentFormatVersion, PassEncryptionTag } from '../../../../types';
+import type { ItemUpdateRequest } from '../../../../types/api/pass';
+import type { ItemKey } from '../../../../types/crypto/pass-types';
+import { ContentFormatVersion, PassEncryptionTag } from '../../../../types/crypto/pass-types';
 import { pipe } from '../../../../utils/fp/pipe';
 import { encryptData } from '../../utils/crypto-helpers';
 import { PassCryptoItemError } from '../../utils/errors';

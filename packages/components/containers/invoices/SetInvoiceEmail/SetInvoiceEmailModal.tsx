@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { INVOICE_EMAIL_STATE } from '@proton/shared/lib/constants';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { InvoiceEmailSettings } from '@proton/shared/lib/interfaces/Organization';

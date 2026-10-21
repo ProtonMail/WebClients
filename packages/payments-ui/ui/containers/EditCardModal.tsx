@@ -15,7 +15,7 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import RenewToggle, { useRenewToggle } from '@proton/components/containers/payments/RenewToggle';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { setPaymentMethodV5, updatePaymentMethod } from '@proton/payments/core/api/api';
 import { Autopay, PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { PaymentMethodCardDetails } from '@proton/payments/core/interface';

@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectBackgroundBlur } from '@proton/meet/store/slices/backgroundSlice';

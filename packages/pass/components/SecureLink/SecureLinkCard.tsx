@@ -10,8 +10,8 @@ import clsx from '@proton/utils/clsx';
 
 import { useRequest } from '../../hooks/useRequest';
 import { getViewCountString } from '../../lib/i18n/helpers';
-import { secureLinkRemove } from '../../store/actions';
-import type { SecureLink } from '../../types';
+import { secureLinkRemove } from '../../store/actions/creators/item';
+import type { SecureLink } from '../../types/data/items.dto';
 import { epochToRemainingDuration } from '../../utils/time/format';
 import { ConfirmationModal } from '../Confirmation/ConfirmationModal';
 import { Copy } from '../Copy/Copy';

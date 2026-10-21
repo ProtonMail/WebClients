@@ -1,9 +1,9 @@
 import type {
-    MaybeNull,
     OrgMemberVaultItemReport,
     OrganizationUrlPauseEntryValues,
     UserMonitorReport,
-} from '../../types';
+} from '../../types/api/pass';
+import type { MaybeNull } from '../../types/utils';
 
 export type OrganizationReportDTO = { page?: number; pageSize?: number };
 

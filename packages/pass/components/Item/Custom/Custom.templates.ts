@@ -16,7 +16,8 @@ import { IcUserCircle } from '@proton/icons/icons/IcUserCircle';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { IcWrench } from '@proton/icons/icons/IcWrench';
 
-import type { CustomExtraFieldType, DeobfuscatedItemExtraField, ItemCustomType } from '../../../types';
+import type { DeobfuscatedItemExtraField } from '../../../types/data/items';
+import type { CustomExtraFieldType, ItemCustomType } from '../../../types/protobuf';
 import { SubTheme } from '../../Layout/Theme/types';
 
 export type CustomTemplate = {

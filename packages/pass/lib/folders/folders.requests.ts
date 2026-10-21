@@ -1,5 +1,6 @@
-import type { FolderData, FolderDeleteDTO, FolderId, ShareId } from '../../types';
 import type { FolderCreateInputDto, FolderDataResponse, FolderUpdateInputDto } from '../../types/api/pass';
+import type { FolderId, ShareId } from '../../types/crypto/pass-types';
+import type { FolderData, FolderDeleteDTO } from '../../types/data/folders';
 import { logId, logger } from '../../utils/logger';
 import { api } from '../api/api';
 import { createPageIterator } from '../api/utils';

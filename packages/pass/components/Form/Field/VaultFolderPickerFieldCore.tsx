@@ -10,7 +10,8 @@ import { InputField as InputFieldTwo } from '@proton/components/components/v2/fi
 import { resolveFolderPath } from '../../../lib/folders/folder.utils';
 import { fromFolderKey, getFolderKey } from '../../../lib/items/item.utils';
 import type { FoldersByShareId, ShareItem } from '../../../store/reducers';
-import type { MaybeNull, ShareType } from '../../../types';
+import type { ShareType } from '../../../types/data/shares';
+import type { MaybeNull } from '../../../types/utils';
 import { PassExpandButton } from '../../Folders/PassExpandButton';
 import { PassFolderIcon } from '../../Folders/PassFolderIcon';
 import { FolderBreadcrumbCore } from '../../Vault/FolderBreadcrumbCore';

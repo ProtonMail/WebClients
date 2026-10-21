@@ -1,24 +1,17 @@
 import type { Action, Reducer } from 'redux';
 
 import type { FoldersById } from '../../lib/folders/folder.utils';
-import type { FolderData, ShareId } from '../../types';
+import type { ShareId } from '../../types/crypto/pass-types';
+import type { FolderData } from '../../types/data/folders';
 import { or } from '../../utils/fp/predicates';
 import { objectDelete } from '../../utils/object/delete';
 import { fullMerge } from '../../utils/object/merge';
-import {
-    folderCreate,
-    folderDelete,
-    folderEdit,
-    foldersDeletedEvent,
-    foldersUpdated,
-    inviteAccept,
-    matchSyncAction,
-    shareCreated,
-    shareDeleted,
-    shareLeaveSuccess,
-    sharesEventNew,
-    vaultDeleteSuccess,
-} from '../actions';
+import { shareLeaveSuccess } from '../actions/creators/access';
+import { matchSyncAction } from '../actions/creators/client';
+import { folderCreate, folderDelete, folderEdit, foldersDeletedEvent, foldersUpdated } from '../actions/creators/folders';
+import { inviteAccept } from '../actions/creators/invite';
+import { shareCreated, shareDeleted, sharesEventNew } from '../actions/creators/share';
+import { vaultDeleteSuccess } from '../actions/creators/vault';
 
 export type FoldersByShareId = Record<ShareId, FoldersById>;
 

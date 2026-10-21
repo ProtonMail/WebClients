@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { settingsEditIntent } from '../../store/actions';
-import { selectLocale } from '../../store/selectors';
+import { settingsEditIntent } from '../../store/actions/creators/settings';
+import { selectLocale } from '../../store/selectors/settings';
 import { LocaleSelect } from '../Form/legacy/LocaleSelect';
 import { SettingsPanel } from './SettingsPanel';
 

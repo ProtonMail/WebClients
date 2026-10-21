@@ -1,4 +1,4 @@
-import type { MaybeNull } from '../../../types';
+import type { MaybeNull } from '../../../types/utils';
 import { isObject } from '../../../utils/object/is-object';
 import { I18N_TLDS, I18N_TLD_FLAG } from './tlds';
 import type { CompiledRules, DetectionRules, DetectionRulesMatch, RuleNode, RuleVersion } from './types';

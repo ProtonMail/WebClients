@@ -1,7 +1,7 @@
 import type { IpcRendererEvent } from 'electron';
 import { contextBridge, ipcRenderer } from 'electron';
 
-import type { ContextBridgeApi } from '@proton/pass/types';
+import type { ContextBridgeApi } from '@proton/pass/types/desktop';
 import { disableMouseNavigation } from '@proton/shared/lib/desktop/disableMouseNavigation';
 
 import type { IPCChannelResult, IPCChannels } from './lib/ipc';

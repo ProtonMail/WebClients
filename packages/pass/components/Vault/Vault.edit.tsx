@@ -10,7 +10,7 @@ import noop from '@proton/utils/noop';
 
 import { useActionRequest } from '../../hooks/useRequest';
 import { validateVaultValues } from '../../lib/validation/vault';
-import { vaultEditIntent } from '../../store/actions';
+import { vaultEditIntent } from '../../store/actions/creators/vault';
 import type { VaultShareItem } from '../../store/reducers';
 import { VaultColor, VaultIcon } from '../../types/protobuf/vault-v1.static';
 import { SidebarModal } from '../Layout/Modal/SidebarModal';

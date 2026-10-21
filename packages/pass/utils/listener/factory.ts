@@ -1,6 +1,6 @@
 import noop from '@proton/utils/noop';
 
-import type { Callback, Maybe } from '../../types';
+import type { Callback, Maybe } from '../../types/utils';
 import { skipFirst } from '../fp/control';
 import { pipe } from '../fp/pipe';
 import type { PubSub, Subscriber } from '../pubsub/factory';

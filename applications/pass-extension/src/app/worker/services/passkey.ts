@@ -3,7 +3,8 @@ import { c } from 'ttag';
 import browser from '@proton/pass/lib/globals/browser';
 import { selectPasskeys } from '@proton/pass/store/selectors/autofill';
 import { selectItem } from '@proton/pass/store/selectors/items';
-import type { Maybe, TabId } from '@proton/pass/types';
+import type { Maybe } from '@proton/pass/types/utils';
+import type { TabId } from '@proton/pass/types/worker/runtime';
 import { logger } from '@proton/pass/utils/logger';
 
 import { webauthnFetcher } from '../../../lib/utils/webauthn';

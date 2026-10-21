@@ -10,8 +10,8 @@ import { authStore, createAuthStore, exposeAuthStore } from '@proton/pass/lib/au
 import type { ConnectivityEvent, ConnectivityService } from '@proton/pass/lib/network/connectivity.service';
 import { ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
 import { bootIntent, offlineResume } from '@proton/pass/store/actions/creators/client';
-import type { MaybeNull } from '@proton/pass/types';
-import { type AppState, AppStatus } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types/utils';
+import { type AppState, AppStatus } from '@proton/pass/types/worker/state';
 import { createMemoryStore } from '@proton/pass/utils/store';
 import { InactiveSessionError } from '@proton/shared/lib/api/helpers/errors';
 import { ApiError, createOfflineError } from '@proton/shared/lib/fetch/ApiError';

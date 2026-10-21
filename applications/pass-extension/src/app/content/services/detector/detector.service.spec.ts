@@ -3,7 +3,7 @@ import type { ModelProvider } from '@protontech/autofill/types';
 
 import { createModelProvider } from '@proton/pass/lib/extension/model-artifact/model-artifact';
 import type { ModelArtifact } from '@proton/pass/lib/extension/model-artifact/model-artifact';
-import type { MaybeNull } from '@proton/pass/types/utils/index';
+import type { MaybeNull } from '@proton/pass/types/utils';
 
 import { sendMessage } from '../../../../lib/message/send-message';
 import { BUNDLED_MODEL_ID } from '../../../../lib/utils/version';

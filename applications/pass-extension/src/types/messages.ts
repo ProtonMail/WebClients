@@ -28,7 +28,7 @@ import type { UniqueItem } from '@proton/pass/types/data/items';
 import type { AliasCreateRequest } from '@proton/pass/types/data/items.dto';
 import type { TelemetryEventDTO } from '@proton/pass/types/data/telemetry';
 import type { NativeMessageErrorType } from '@proton/pass/types/desktop';
-import type { Maybe, MaybeNull, Result } from '@proton/pass/types/utils/index';
+import type { Maybe, MaybeNull, Result } from '@proton/pass/types/utils';
 import type {
     AutofillCCResult,
     AutofillIdentityResult,

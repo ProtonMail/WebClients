@@ -1,6 +1,6 @@
 import type { BrowserWindow } from 'electron';
 
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types/utils';
 
 export type BiometricsFactory = (getWindow: () => MaybeNull<BrowserWindow>) => BiometricsPlatformHandler;
 

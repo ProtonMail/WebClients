@@ -1,4 +1,4 @@
-import type { ClientToolExecutor } from '@proton/lumo-api-client';
+import type { ClientToolExecutor } from '@proton/lumo-api-client/core/types';
 
 import { ARTIFACT_CHART_RULES } from '../../../llm/visualizationPrompt';
 import type { ContentBlock } from '../../../types';

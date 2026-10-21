@@ -1,7 +1,7 @@
 import { Button } from '@proton/atoms/Button/Button';
 import type { IconComponent } from '@proton/icons/component';
 
-import type { Callback } from '../../../types';
+import type { Callback } from '../../../types/utils';
 
 export type InviteStepAttributes = {
     closeAction: Callback;

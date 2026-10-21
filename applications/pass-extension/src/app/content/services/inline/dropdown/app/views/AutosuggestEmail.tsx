@@ -15,7 +15,7 @@ import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 import type { AliasState } from '@proton/pass/store/reducers';
 import type { AliasOptions } from '@proton/pass/types/data/alias';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
-import type { MaybeNull } from '@proton/pass/types/utils/index';
+import type { MaybeNull } from '@proton/pass/types/utils';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';

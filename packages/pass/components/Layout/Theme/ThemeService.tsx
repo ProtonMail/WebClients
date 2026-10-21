@@ -1,7 +1,7 @@
 import noop from '@proton/utils/noop';
 
 import { PASS_DEFAULT_THEME } from '../../../constants';
-import type { Maybe } from '../../../types';
+import type { Maybe } from '../../../types/utils';
 import type { ObservableState } from '../../../utils/pubsub/state';
 import { createObservableState } from '../../../utils/pubsub/state';
 import type { PassThemeOption } from './types';

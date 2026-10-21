@@ -1,4 +1,5 @@
-import { FeatureCode, useFeature } from '@proton/features';
+import { FeatureCode } from '@proton/features/interface';
+import useFeature from '@proton/features/useFeature';
 import { hasBit, setBit } from '@proton/shared/lib/helpers/bitset';
 
 import type { OfferConfig, OfferGlobalFeatureCodeValue } from '../interface';

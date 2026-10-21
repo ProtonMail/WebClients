@@ -2,7 +2,8 @@ import type { Selector } from '@reduxjs/toolkit';
 import { createSelector } from '@reduxjs/toolkit';
 
 import { isActive } from '../../lib/items/item.predicates';
-import type { Maybe, MaybeNull, ShareType } from '../../types';
+import type { ShareType } from '../../types/data/shares';
+import type { Maybe, MaybeNull } from '../../types/utils';
 import { first } from '../../utils/array/first';
 import { prop } from '../../utils/fp/lens';
 import { sortOn } from '../../utils/fp/sort';

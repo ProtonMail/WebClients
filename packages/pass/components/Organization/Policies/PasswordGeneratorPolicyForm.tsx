@@ -6,7 +6,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 
-import type { Maybe, MaybeNull, OrganizationUpdatePasswordPolicyInput } from '../../../types';
+import type { OrganizationUpdatePasswordPolicyInput } from '../../../types/api/pass';
+import type { Maybe, MaybeNull } from '../../../types/utils';
 import { PasswordGeneratorPolicyOption } from './PasswordGeneratorOption';
 
 export type PasswordGeneratorOptionValue = Maybe<boolean | number | null>;

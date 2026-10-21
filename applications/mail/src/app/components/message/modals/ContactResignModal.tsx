@@ -15,7 +15,7 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useGetEncryptionPreferences from '@proton/components/hooks/useGetEncryptionPreferences';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { getContact, updateContact } from '@proton/shared/lib/api/contacts';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import { resignCards } from '@proton/shared/lib/contacts/resign';

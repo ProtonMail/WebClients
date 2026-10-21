@@ -8,8 +8,10 @@ import type { AddressKey, DecryptedKey } from '@proton/shared/lib/interfaces/Key
 
 import { createVault } from '../../../lib/crypto/processes/vault/create-vault';
 import { generateKey, importSymmetricKey } from '../../../lib/crypto/utils/crypto-helpers';
-import type { ItemKey, ShareGetResponse, ShareKeyResponse, TypedOpenedShare, VaultShareKey } from '../../../types';
-import { ContentFormatVersion, ShareType } from '../../../types';
+import type { ShareGetResponse, ShareKeyResponse } from '../../../types/api/pass';
+import type { ItemKey, TypedOpenedShare, VaultShareKey } from '../../../types/crypto/pass-types';
+import { ContentFormatVersion } from '../../../types/crypto/pass-types';
+import { ShareType } from '../../../types/data/shares';
 import { uniqueId } from '../../string/unique-id';
 
 /* Load Crypto API outside of web workers, for testing purposes.

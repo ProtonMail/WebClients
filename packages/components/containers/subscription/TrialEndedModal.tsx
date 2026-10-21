@@ -8,7 +8,7 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { InvoiceDocument, queryInvoices } from '@proton/payments/core/api/api';
 import { CYCLE, InvoiceOwner, InvoiceState } from '@proton/payments/core/constants';
 import type { InvoiceResponse } from '@proton/payments/core/interface';

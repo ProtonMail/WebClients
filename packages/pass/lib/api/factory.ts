@@ -27,8 +27,8 @@ import {
     type ApiResult,
     type ApiSubscriptionEvent,
     AuthMode,
-    type Maybe,
-} from '../../types';
+} from '../../types/api/api';
+import type { Maybe } from '../../types/utils';
 import { awaiter } from '../../utils/fp/promises';
 import { waitUntil } from '../../utils/fp/wait-until';
 import { logger } from '../../utils/logger';

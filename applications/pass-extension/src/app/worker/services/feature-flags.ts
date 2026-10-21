@@ -2,7 +2,7 @@ import { DEFAULT_PASS_FEATURES } from '@proton/pass/constants';
 import { resolveWebsiteRules } from '@proton/pass/store/actions/creators/rules';
 import type { FeatureFlagAndVariantState, FeatureFlagState, FeatureFlagVariants } from '@proton/pass/store/reducers';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
-import type { MaybeNull } from '@proton/pass/types/utils/index';
+import type { MaybeNull } from '@proton/pass/types/utils';
 import { logger } from '@proton/pass/utils/logger';
 
 import { backgroundMessage } from '../../../lib/message/send-message';

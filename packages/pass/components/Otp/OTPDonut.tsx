@@ -2,7 +2,7 @@ import { forwardRef, useCallback, useEffect, useImperativeHandle, useRef } from 
 
 import clsx from '@proton/utils/clsx';
 
-import type { MaybeNull } from '../../types';
+import type { MaybeNull } from '../../types/utils';
 import { matchDarkTheme } from '../Layout/Theme/utils';
 import type { IOtpRenderer } from './types';
 

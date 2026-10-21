@@ -8,7 +8,7 @@ import { canManageOwnerRole, hasUserSourcedOwnerRole } from '@proton/account/org
 import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { IcInfoCircleFilled } from '@proton/icons/icons/IcInfoCircleFilled';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { EnhancedMember } from '@proton/shared/lib/interfaces/Member';

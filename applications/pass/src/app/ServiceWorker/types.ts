@@ -3,7 +3,7 @@ import type { Action } from 'redux';
 import type { LockMode } from '@proton/pass/lib/auth/lock/types';
 import type { AuthSession } from '@proton/pass/lib/auth/session';
 import type { SwitchableSession } from '@proton/pass/lib/auth/switch';
-import type { MaybePromise } from '@proton/pass/types';
+import type { MaybePromise } from '@proton/pass/types/utils';
 
 type ServiceWorkerMessageBase = {
     /** set this flag when sending out messages from clients to

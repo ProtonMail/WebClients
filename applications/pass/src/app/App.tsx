@@ -56,7 +56,7 @@ import { createConnectivityService } from '@proton/pass/lib/network/connectivity
 import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
 import { QA_SERVICE } from '@proton/pass/lib/qa/service';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/utils';
-import type { Maybe } from '@proton/pass/types';
+import type { Maybe } from '@proton/pass/types/utils';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
 import sentry from '@proton/shared/lib/helpers/sentry';

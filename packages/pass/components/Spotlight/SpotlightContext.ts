@@ -1,7 +1,8 @@
 import { createContext } from 'react';
 
 import { createUseContext } from '../../hooks/useContextFactory';
-import type { MaybeNull, SpotlightMessage } from '../../types';
+import type { MaybeNull } from '../../types/utils';
+import type { SpotlightMessage } from '../../types/worker/spotlight';
 import type { SpotlightMessageDefinition } from './SpotlightContent';
 
 type SpotlightState = {

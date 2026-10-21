@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import type { FoldersByShareId } from '../../store/reducers';
-import type { MaybeNull } from '../../types';
+import type { MaybeNull } from '../../types/utils';
 import { getExpandedFolderKeys } from './folderView.utils';
 
 export type FolderTreeExpand = {

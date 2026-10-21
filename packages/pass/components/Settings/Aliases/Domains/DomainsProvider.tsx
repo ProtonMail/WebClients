@@ -6,9 +6,10 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 
 import { UpsellRef } from '../../../../constants';
 import { useRequest } from '../../../../hooks/useRequest';
-import { getAliasDomains, getCustomDomains } from '../../../../store/actions';
-import { selectCanManageAlias } from '../../../../store/selectors';
-import type { CustomDomainOutput, MaybeNull, UserAliasDomainOutput } from '../../../../types';
+import { getAliasDomains, getCustomDomains } from '../../../../store/actions/creators/alias';
+import { selectCanManageAlias } from '../../../../store/selectors/alias';
+import type { CustomDomainOutput, UserAliasDomainOutput } from '../../../../types/api/pass';
+import type { MaybeNull } from '../../../../types/utils';
 import { objectDelete } from '../../../../utils/object/delete';
 import { fullMerge, partialMerge } from '../../../../utils/object/merge';
 import { useUpselling } from '../../../Upsell/UpsellingProvider';

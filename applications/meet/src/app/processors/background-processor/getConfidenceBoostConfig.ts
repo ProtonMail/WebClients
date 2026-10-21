@@ -1,4 +1,4 @@
-import type { FeatureFlag } from '@proton/unleash/UnleashFeatureFlags';
+import type { FeatureFlag } from '@proton/unleash/Flags';
 import { getStandaloneUnleashClient } from '@proton/unleash/standaloneClient';
 
 import { MULTICLASS_PERSON_CONFIDENCE_BOOST, PERSON_CONFIDENCE_BOOST } from './constants';

@@ -1,4 +1,5 @@
-import type { FolderData, MaybeNull } from '../../types';
+import type { FolderData } from '../../types/data/folders';
+import type { MaybeNull } from '../../types/utils';
 import { getFolderAndDescendantIds, getFolderChildren, getFolderScope, resolveFolderPath } from './folder.utils';
 
 const mockFolder = (folderId: string, parentFolderId: MaybeNull<string>): FolderData => ({

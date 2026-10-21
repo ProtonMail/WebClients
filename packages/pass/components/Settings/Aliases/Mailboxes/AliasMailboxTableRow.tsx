@@ -12,8 +12,8 @@ import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import { useAsyncRequestDispatch } from '../../../../hooks/useDispatchAsyncRequest';
-import { deleteMailbox, setDefaultMailbox } from '../../../../store/actions';
-import type { UserMailboxOutput } from '../../../../types';
+import { deleteMailbox, setDefaultMailbox } from '../../../../store/actions/creators/alias';
+import type { UserMailboxOutput } from '../../../../types/api/pass';
 import { DropdownMenuButton } from '../../../Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '../../../Layout/Dropdown/QuickActionsDropdown';
 import { AliasMailboxLoading } from './AliasMailboxLoading';

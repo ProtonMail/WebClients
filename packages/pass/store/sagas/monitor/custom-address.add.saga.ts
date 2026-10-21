@@ -1,5 +1,5 @@
 import { monitorCustomEmail } from '../../../lib/monitor/monitor.request';
-import { addCustomAddress } from '../../actions';
+import { addCustomAddress } from '../../actions/creators/monitor';
 import { createRequestSaga } from '../../request/sagas';
 
 export default createRequestSaga({

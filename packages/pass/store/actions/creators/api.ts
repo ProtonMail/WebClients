@@ -2,7 +2,7 @@ import { createAction } from '@reduxjs/toolkit';
 
 import identity from '@proton/utils/identity';
 
-import type { CoreEvent } from '../../../types/api';
+import type { CoreEvent } from '../../../types/api/events';
 import { pipe } from '../../../utils/fp/pipe';
 import type { HydratedUserState } from '../../reducers';
 import { withRequestSuccess } from '../../request/enhancers';

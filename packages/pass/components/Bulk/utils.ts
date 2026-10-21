@@ -1,4 +1,4 @@
-import type { BulkSelectionDTO } from '../../types';
+import type { BulkSelectionDTO } from '../../types/data/items.dto';
 import type { BulkSelection } from './types';
 
 export const bulkSelectionDTO = (selection: BulkSelection): BulkSelectionDTO =>

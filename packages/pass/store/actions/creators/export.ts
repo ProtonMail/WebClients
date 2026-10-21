@@ -1,5 +1,5 @@
 import type { ExportRequestOptions, ExportResult } from '../../../lib/export/types';
-import type { WithTabId } from '../../../types';
+import type { WithTabId } from '../../../types/worker/runtime';
 import { requestActionsFactory } from '../../request/flow';
 import { withAbortPayload } from './utils';
 

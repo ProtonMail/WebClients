@@ -1,6 +1,6 @@
 import { DEFAULT_MEMORABLE_PW_OPTIONS, DEFAULT_RANDOM_PW_OPTIONS } from '../lib/password/constants';
 import type { GeneratePasswordConfig } from '../lib/password/types';
-import type { OrganizationUpdatePasswordPolicyInput } from '../types';
+import type { OrganizationUpdatePasswordPolicyInput } from '../types/api/pass';
 import { getPasswordConfig } from './usePasswordGenerator';
 
 const DEFAULT_POLICY: OrganizationUpdatePasswordPolicyInput = {

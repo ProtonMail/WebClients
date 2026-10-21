@@ -2,8 +2,12 @@
     "name": "@proton/features",
     "description": "Feature toggles",
     "exports": {
-        ".": "./index.ts",
-        "./*": "./*"
+        "./interface": "./interface.ts",
+        "./reducer": "./reducer.ts",
+        "./testing/features": "./testing/features.ts",
+        "./testing/mockUseFeature": "./testing/mockUseFeature.ts",
+        "./useFeature": "./useFeature.ts",
+        "./useFeatures": "./useFeatures.ts"
     },
     "scripts": {
         "check:types": "tsc --checkers 1",

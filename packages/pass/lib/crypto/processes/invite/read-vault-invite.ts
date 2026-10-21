@@ -1,6 +1,7 @@
 import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto';
 
-import { type KeyRotationKeyPair, PassEncryptionTag } from '../../../../types';
+import type { KeyRotationKeyPair } from '../../../../types/api/pass';
+import { PassEncryptionTag } from '../../../../types/crypto/pass-types';
 import { decryptData, importSymmetricKey } from '../../utils/crypto-helpers';
 import { openInviteKey } from './open-invite-key';
 

@@ -53,7 +53,7 @@ import {
 } from '@proton/shared/lib/keys/accountType';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 import { isSubscriptionRenewEnabled } from '@proton/shared/lib/payments/subscription/helpers/renew';
-import type { FeatureFlag } from '@proton/unleash/UnleashFeatureFlags';
+import type { FeatureFlag } from '@proton/unleash/Flags';
 
 type PropContext = {
     isDataRecoveryAvailable: boolean;

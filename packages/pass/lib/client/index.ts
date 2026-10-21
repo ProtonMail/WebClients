@@ -1,4 +1,4 @@
-import { AppStatus } from '../../types';
+import { AppStatus } from '../../types/worker/state';
 import { eq, oneOf, or } from '../../utils/fp/predicates';
 
 export const clientAuthorized = eq(AppStatus.AUTHORIZED);

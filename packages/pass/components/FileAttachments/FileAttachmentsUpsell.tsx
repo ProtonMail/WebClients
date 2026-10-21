@@ -9,7 +9,7 @@ import { isAdmin } from '@proton/shared/lib/user/helpers';
 
 import { UpsellRef } from '../../constants';
 import { useNavigateToUpgrade } from '../../hooks/useNavigateToUpgrade';
-import { selectUser, selectUserPlan } from '../../store/selectors';
+import { selectUser, selectUserPlan } from '../../store/selectors/user';
 import { Card } from '../Layout/Card/Card';
 
 type Props = {

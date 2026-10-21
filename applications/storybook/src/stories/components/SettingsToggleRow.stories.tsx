@@ -7,7 +7,7 @@ import { DashboardCard, DashboardCardContent, DashboardCardDivider } from '@prot
 import { Href } from '@proton/atoms/Href/Href';
 import { SettingsIconRow } from '@proton/components/containers/account/SettingsIconRow';
 import { SettingsToggleRow } from '@proton/components/containers/account/SettingsToggleRow';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { IcBell } from '@proton/icons/icons/IcBell';
 import { IcPinCode } from '@proton/icons/icons/IcPinCode';
 import { IcSecurityKey } from '@proton/icons/icons/IcSecurityKey';

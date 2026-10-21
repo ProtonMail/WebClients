@@ -4,7 +4,7 @@ import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import type { ButtonLikeProps } from '@proton/atoms/Button/ButtonLike';
 import clsx from '@proton/utils/clsx';
 
-import type { ItemRevision } from '../../../types';
+import type { ItemRevision } from '../../../types/data/items';
 import { ItemTag } from '../List/ItemTag';
 
 import './PinnedItem.scss';

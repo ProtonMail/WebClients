@@ -5,7 +5,8 @@ import type { InviteListItem } from '../../components/Invite/Access/AccessList';
 import { isMemberLimitReached } from '../../lib/access/access.predicates';
 import type { AccessItem } from '../../lib/access/types';
 import type { ShareItem } from '../../store/reducers';
-import { selectAccess, selectShareOrThrow } from '../../store/selectors';
+import { selectAccess } from '../../store/selectors/access';
+import { selectShareOrThrow } from '../../store/selectors/shares';
 import { sortOn } from '../../utils/fp/sort';
 
 const parseShareAccess = (access: AccessItem, share: ShareItem) => {

@@ -4,8 +4,8 @@ import userEvent from '@testing-library/user-event';
 import { mockUseUser } from '@proton/account/testing/mockUseUser';
 import { mockUseApi } from '@proton/app-context/testing/mockUseApi';
 import { mockUseNotifications } from '@proton/app-context/testing/mockUseNotifications';
-import { FeatureCode } from '@proton/features';
-import { mockUseFeatureBarrel } from '@proton/features/testing/mockUseFeatureBarrel';
+import { FeatureCode } from '@proton/features/interface';
+import { mockUseFeature } from '@proton/features/testing/mockUseFeature';
 import { mockUseMailSettings } from '@proton/mail/testing/mockUseMailSettings';
 import { ALMOST_ALL_MAIL, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
@@ -31,7 +31,7 @@ describe('MessagesSection', () => {
     describe('AlmostAllMail', () => {
         describe('when AlmostAllMail is not enabled', () => {
             it('should not render AlmostAllMail toggle', () => {
-                mockUseFeatureBarrel().mockImplementation((code) => {
+                mockUseFeature().mockImplementation((code) => {
                     if (code === FeatureCode.AlmostAllMail) {
                         return { feature: { Value: false } } as any;
                     }
@@ -47,7 +47,7 @@ describe('MessagesSection', () => {
 
         describe('when AlmostAllMail is  enabled', () => {
             beforeEach(() => {
-                mockUseFeatureBarrel({ feature: { Value: true } });
+                mockUseFeature({ feature: { Value: true } });
             });
 
             it('should render AlmostAllMail toggle', () => {
@@ -97,7 +97,7 @@ describe('MessagesSection', () => {
 
     describe('PageSize', () => {
         beforeEach(() => {
-            mockUseFeatureBarrel({ feature: { Value: true } });
+            mockUseFeature({ feature: { Value: true } });
             mockUseMailSettings([{ ViewMode: VIEW_MODE.SINGLE }]);
         });
 

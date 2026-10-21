@@ -1,4 +1,4 @@
-import type { MaybeNull } from '@proton/pass/types/utils/index';
+import type { MaybeNull } from '@proton/pass/types/utils';
 import {
     createStyleParser,
     getComputedHeight,

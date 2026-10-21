@@ -1,4 +1,4 @@
-import type { TabId } from '../../../types';
+import type { TabId } from '../../../types/worker/runtime';
 import { truthy } from '../../../utils/fp/predicates';
 import browser from '../../globals/browser';
 

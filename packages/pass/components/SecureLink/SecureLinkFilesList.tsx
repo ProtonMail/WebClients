@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
 import { useFileDownload } from '../../hooks/files/useFileDownload';
-import type { FileDescriptor } from '../../types';
+import type { FileDescriptor } from '../../types/data/files';
 import { FileAttachment } from '../FileAttachments/FileAttachment';
 import { FileAttachmentsView } from '../FileAttachments/FileAttachmentsView';
 

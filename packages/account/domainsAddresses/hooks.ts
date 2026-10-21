@@ -4,7 +4,7 @@ import type { Action, ThunkDispatch } from '@reduxjs/toolkit';
 import { createSelector } from '@reduxjs/toolkit';
 
 import { baseUseDispatch, baseUseSelector } from '@proton/react-redux-store/ProtonStoreContext';
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import type { DomainAddress } from '@proton/shared/lib/interfaces/Address';
 import type { Domain } from '@proton/shared/lib/interfaces/Domain';
 

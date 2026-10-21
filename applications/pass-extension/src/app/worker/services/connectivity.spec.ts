@@ -1,6 +1,6 @@
 import type { Runtime } from 'webextension-polyfill';
 
-import type { ClientEndpoint } from '@proton/pass/types';
+import type { ClientEndpoint } from '@proton/pass/types/worker/runtime';
 
 import { isNavigatorSource } from './connectivity';
 

@@ -23,7 +23,11 @@ import { intoFileDescriptors } from '../../../lib/file-attachments/helpers';
 import { fileStorage } from '../../../lib/file-storage/fs';
 import type { FileStorage } from '../../../lib/file-storage/types';
 import { base64ToBlob, getSafeStorage, getSafeWriter } from '../../../lib/file-storage/utils';
-import type { FileDescriptor, FileForDownload, ItemFileOutput, ItemKey, ItemRevision, Maybe } from '../../../types';
+import type { ItemFileOutput } from '../../../types/api/pass';
+import type { ItemKey } from '../../../types/crypto/pass-types';
+import type { FileDescriptor, FileForDownload } from '../../../types/data/files';
+import type { ItemRevision } from '../../../types/data/items';
+import type { Maybe } from '../../../types/utils';
 import { uniqueId } from '../../../utils/string/unique-id';
 import {
     fileDownload,
@@ -34,9 +38,9 @@ import {
     fileUploadChunk,
     fileUploadInitiate,
     filesResolve,
-} from '../../actions';
+} from '../../actions/creators/files';
 import { createRequestSaga } from '../../request/sagas';
-import { selectItem } from '../../selectors';
+import { selectItem } from '../../selectors/items';
 
 const initiateUpload = createRequestSaga({
     actions: fileUploadInitiate,

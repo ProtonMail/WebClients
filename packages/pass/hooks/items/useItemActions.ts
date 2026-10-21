@@ -13,10 +13,10 @@ import {
     itemEditDismiss,
     itemPinIntent,
     itemUnpinIntent,
-    setItemFlags,
-} from '../../store/actions';
-import { selectOptimisticFailedAction } from '../../store/selectors';
-import type { ItemRevision } from '../../types';
+} from '../../store/actions/creators/item';
+import { setItemFlags } from '../../store/actions/creators/monitor';
+import { selectOptimisticFailedAction } from '../../store/selectors/items';
+import type { ItemRevision } from '../../types/data/items';
 import { useMemoSelector } from '../useMemoSelector';
 import type { ItemNavigationActions } from './useItemNavigation';
 import { useItemNavigation } from './useItemNavigation';

@@ -2,7 +2,7 @@ import type { PayloadAction, ThunkAction, UnknownAction } from '@reduxjs/toolkit
 import { createSelector, createSlice } from '@reduxjs/toolkit';
 import type { Participant } from 'livekit-client';
 
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import shallowEqual from '@proton/utils/shallowEqual';
 
 import { PAGE_SIZE } from '../../../constants';

@@ -2,7 +2,7 @@ import type { PropsWithChildren } from 'react';
 import { type FC, useMemo, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { passwordDelete, passwordHistoryClear, passwordSave } from '../../store/actions';
+import { passwordDelete, passwordHistoryClear, passwordSave } from '../../store/actions/creators/password';
 import { uniqueId } from '../../utils/string/unique-id';
 import { getEpoch } from '../../utils/time/epoch';
 import {

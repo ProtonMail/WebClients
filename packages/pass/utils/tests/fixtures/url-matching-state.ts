@@ -1,6 +1,6 @@
 import { itemBuilder } from '../../../lib/items/item.builder';
 import type { State } from '../../../store/types';
-import { ItemState } from '../../../types';
+import { ItemState } from '../../../types/data/items';
 import { AutofillMode } from '../../../types/protobuf';
 import { getEpoch } from '../../time/epoch';
 

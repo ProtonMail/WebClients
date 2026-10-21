@@ -1,5 +1,7 @@
 import { selectItem, selectItemWithOptimistic, selectOptimisticItemState } from '../store/selectors/items';
-import type { ItemOptimisticState, ItemRevision, ItemRevisionWithOptimistic, ItemType, Maybe } from '../types';
+import type { ItemOptimisticState, ItemRevision, ItemRevisionWithOptimistic } from '../types/data/items';
+import type { ItemType } from '../types/protobuf';
+import type { Maybe } from '../types/utils';
 import { useMemoSelector } from './useMemoSelector';
 
 export const useItem = <T extends ItemType = ItemType>(shareId: string, itemId: string): Maybe<ItemRevision<T>> =>

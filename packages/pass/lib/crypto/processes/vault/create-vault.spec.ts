@@ -1,6 +1,6 @@
 import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 
-import { ContentFormatVersion, PassEncryptionTag } from '../../../../types';
+import { ContentFormatVersion, PassEncryptionTag } from '../../../../types/crypto/pass-types';
 import {
     createRandomKey,
     randomAddress,

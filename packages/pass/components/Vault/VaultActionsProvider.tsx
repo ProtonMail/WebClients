@@ -5,10 +5,13 @@ import { useDispatch } from 'react-redux';
 import { c } from 'ttag';
 
 import { createUseContext } from '../../hooks/useContextFactory';
-import { emptyTrashIntent, restoreTrashIntent, shareLeaveIntent, sharesVisibilityEdit } from '../../store/actions';
+import { shareLeaveIntent } from '../../store/actions/creators/access';
+import { sharesVisibilityEdit } from '../../store/actions/creators/share';
+import { emptyTrashIntent, restoreTrashIntent } from '../../store/actions/creators/trash';
 import type { VaultShareItem } from '../../store/reducers';
-import type { VaultsVisibilityDTO } from '../../types';
-import { type MaybeNull, ShareType } from '../../types';
+import { ShareType } from '../../types/data/shares';
+import type { VaultsVisibilityDTO } from '../../types/data/vault.dto';
+import type { MaybeNull } from '../../types/utils';
 import { pipe } from '../../utils/fp/pipe';
 import { ConfirmationModal } from '../Confirmation/ConfirmationModal';
 import { useNavigate } from '../Navigation/NavigationActions';

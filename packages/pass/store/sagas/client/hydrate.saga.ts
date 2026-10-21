@@ -16,16 +16,16 @@ import { DEFAULT_SYNC_STRATEGY, setSyncStrategy } from '../../../lib/sync/global
 import { SyncStrategy } from '../../../lib/sync/types';
 import { userStateHydrated } from '../../../lib/user/user.predicates';
 import { getUserData } from '../../../lib/user/user.requests';
-import type { Maybe, MaybeNull } from '../../../types';
+import type { Maybe, MaybeNull } from '../../../types/utils';
 import type { EncryptedPassCache, PassCache } from '../../../types/worker/cache';
 import { logger } from '../../../utils/logger';
 import { partialMerge } from '../../../utils/object/merge';
-import { stateHydrate } from '../../actions';
+import { stateHydrate } from '../../actions/creators/client';
 import { migrate } from '../../migrate';
 import type { HydratedUserState, UserState } from '../../reducers';
 import type { OrganizationState } from '../../reducers/organization';
 import type { SettingsState } from '../../reducers/settings';
-import { selectUserState } from '../../selectors';
+import { selectUserState } from '../../selectors/user';
 import type { RootSagaOptions, State } from '../../types';
 
 /** `allowFailure` defines how we should treat cache decryption errors.

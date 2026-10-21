@@ -10,7 +10,7 @@ import useItemsDroppable from '@proton/components/containers/items/useItemsDropp
 import useEventManager from '@proton/components/hooks/useEventManager';
 import type { HotkeyTuple } from '@proton/components/hooks/useHotkeys';
 import { useHotkeys } from '@proton/components/hooks/useHotkeys';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import type { IconComponent } from '@proton/icons/component';
 import type { IconSize } from '@proton/icons/types';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';

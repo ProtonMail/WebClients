@@ -5,7 +5,7 @@ import { addressesThunk } from '@proton/account/addresses';
 import type { KtState } from '@proton/account/kt';
 import { getPublicKeysForInboxThunk } from '@proton/account/publicKeys/publicKeysForInbox';
 import { type UserKeysState, userKeysThunk } from '@proton/account/userKeys';
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import getPublicKeysVcardHelper from '@proton/shared/lib/api/helpers/getPublicKeysVcardHelper';
 import { MINUTE, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
 import { getSelfSendAddresses } from '@proton/shared/lib/helpers/address';

@@ -1,4 +1,6 @@
-import type { ItemRevision, ItemSortFilter, ItemType, MaybeNull } from '../../types';
+import type { ItemRevision, ItemSortFilter } from '../../types/data/items';
+import type { ItemType } from '../../types/protobuf';
+import type { MaybeNull } from '../../types/utils';
 
 export type PrivateDomains = MaybeNull<Set<string>>;
 

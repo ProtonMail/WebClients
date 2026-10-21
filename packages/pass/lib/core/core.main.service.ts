@@ -1,4 +1,4 @@
-import type { MaybeNull } from '../../types';
+import type { MaybeNull } from '../../types/utils';
 import { logger } from '../../utils/logger';
 import browser from '../globals/browser';
 import type { PassCore, PassCoreService } from './core.types';

@@ -2,8 +2,9 @@ import { select } from 'redux-saga/effects';
 
 import type { VaultShareItem } from '../../../store/reducers';
 import { selectOrganizationVaultCreationPolicy } from '../../../store/selectors/organization';
-import type { Maybe, MaybeNull, Share, ShareType } from '../../../types';
-import { OrganizationVaultCreateMode } from '../../../types';
+import { OrganizationVaultCreateMode } from '../../../types/api/pass';
+import type { Share, ShareType } from '../../../types/data/shares';
+import type { Maybe, MaybeNull } from '../../../types/utils';
 import { and } from '../../../utils/fp/predicates';
 import { logger } from '../../../utils/logger';
 import { isActiveVault, isOwnVault, isWritableVault } from '../../vaults/vault.predicates';

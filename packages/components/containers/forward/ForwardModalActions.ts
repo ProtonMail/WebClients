@@ -13,7 +13,7 @@ import { userThunk } from '@proton/account/user';
 import { type UserKeysState, userKeysThunk } from '@proton/account/userKeys';
 import { createKTVerifier } from '@proton/key-transparency/helpers';
 import type { ForwardModalKeyState } from '@proton/mail/store/forwarding/outgoingForwardingActions';
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { RECIPIENT_TYPES } from '@proton/shared/lib/constants';

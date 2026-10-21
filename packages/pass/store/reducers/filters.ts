@@ -1,6 +1,8 @@
 import type { Action, Reducer } from 'redux';
 
-import type { ItemFilters, MaybeNull, SelectedItem, TabId } from '../../types';
+import type { ItemFilters, SelectedItem } from '../../types/data/items';
+import type { MaybeNull } from '../../types/utils';
+import type { TabId } from '../../types/worker/runtime';
 import { objectDelete } from '../../utils/object/delete';
 import { merge, partialMerge } from '../../utils/object/merge';
 import { garbageCollectTabState, saveFilters, saveTabState } from '../actions/creators/filters';

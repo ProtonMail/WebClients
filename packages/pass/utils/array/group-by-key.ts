@@ -1,4 +1,4 @@
-import type { Maybe } from '../../types';
+import type { Maybe } from '../../types/utils';
 
 export const groupByKey = <T extends { [key: string]: any }, K extends keyof T>(
     list: T[],

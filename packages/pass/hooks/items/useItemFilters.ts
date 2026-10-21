@@ -7,8 +7,9 @@ import { IcGrid2 } from '@proton/icons/icons/IcGrid2';
 
 import { itemTypeToIcon } from '../../components/Layout/Icon/ItemIcon';
 import { compoundItemFilters } from '../../lib/items/item.utils';
-import type { ItemType, ItemTypeFilter } from '../../types';
 import { PassFeature } from '../../types/api/features';
+import type { ItemTypeFilter } from '../../types/data/items';
+import type { ItemType } from '../../types/protobuf';
 import { useFeatureFlag } from '../useFeatureFlag';
 
 type ItemFilterData = { label: string; icon: IconComponent; itemFilters?: ItemType[] };

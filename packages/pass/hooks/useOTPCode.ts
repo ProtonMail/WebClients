@@ -8,7 +8,8 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 
 import { usePassCore } from '../components/Core/PassCoreProvider';
 import type { IOtpRenderer } from '../components/Otp/types';
-import type { Maybe, MaybeNull, MaybePromise, OtpCode, OtpRequest } from '../types';
+import type { Maybe, MaybeNull, MaybePromise } from '../types/utils';
+import type { OtpCode, OtpRequest } from '../types/worker/otp';
 import { useEnsureMounted } from './useEnsureMounted';
 
 export type UsePeriodOtpCodeOptions = {

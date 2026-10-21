@@ -1,5 +1,6 @@
-import type { ItemKey, ItemRevisionContentsResponse, OpenedItem } from '../../../../types';
-import { PassEncryptionTag } from '../../../../types';
+import type { ItemRevisionContentsResponse } from '../../../../types/api/pass';
+import type { ItemKey, OpenedItem } from '../../../../types/crypto/pass-types';
+import { PassEncryptionTag } from '../../../../types/crypto/pass-types';
 import { decryptData } from '../../utils/crypto-helpers';
 import { PassCryptoItemError } from '../../utils/errors';
 

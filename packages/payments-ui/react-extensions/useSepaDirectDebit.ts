@@ -8,7 +8,7 @@ import type {
     DirectDebitCustomer,
     DirectDebitCustomerNameType,
 } from '@proton/chargebee/lib/types';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { type CreatePaymentIntentDirectDebitData, fetchPaymentIntentV5 } from '@proton/payments/core/api/api';
 import {
     type ADDON_NAMES,

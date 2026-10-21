@@ -1,6 +1,7 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c, msgid } from 'ttag';
 
+import type { FolderId, ShareId } from '../../../types/crypto/pass-types';
 import type {
     FolderCreateDTO,
     FolderCreateSuccess,
@@ -9,9 +10,7 @@ import type {
     FolderDeleteSuccess,
     FolderEditDTO,
     FolderEditSuccess,
-    FolderId,
-    ShareId,
-} from '../../../types';
+} from '../../../types/data/folders';
 import { pipe } from '../../../utils/fp/pipe';
 import { requestActionsFactory } from '../../request/flow';
 import { withCache } from '../enhancers/cache';

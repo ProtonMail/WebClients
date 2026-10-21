@@ -28,7 +28,7 @@ import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import passAliasesLogo from '@proton/styles/assets/img/illustrations/pass-aliases-logo.svg';
 
 import { deriveAliasPrefix } from '../../../../../lib/alias/alias.utils';
-import type { AliasMailbox, AliasOptions } from '../../../../../types';
+import type { AliasMailbox, AliasOptions } from '../../../../../types/data/alias';
 import { usePassAliasesContext } from '../../PassAliasesProvider';
 import type { CreateModalFormState } from '../../interface';
 import useCreateModalForm from './useCreatePassAliasesForm';

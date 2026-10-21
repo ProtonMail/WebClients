@@ -5,7 +5,7 @@ import type { Action, ThunkAction, ThunkDispatch, UnknownAction } from '@reduxjs
 import { addressKeysThunk } from '@proton/account/addressKeys';
 import { addressesThunk } from '@proton/account/addresses';
 import { baseUseDispatch } from '@proton/react-redux-store/ProtonStoreContext';
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import {
     decryptPassphrase,
     decryptPassphraseSessionKey,

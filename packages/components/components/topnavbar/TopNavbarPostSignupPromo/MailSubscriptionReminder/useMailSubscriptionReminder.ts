@@ -1,6 +1,7 @@
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
-import { FeatureCode, useFeature } from '@proton/features';
+import { FeatureCode } from '@proton/features/interface';
+import useFeature from '@proton/features/useFeature';
 
 import type { PostSubscriptionOneDollarOfferState } from '../PostSignupOneDollar/interface';
 import type { OfferHookReturnValue } from '../common/helpers/interface';

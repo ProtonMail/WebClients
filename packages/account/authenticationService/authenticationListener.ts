@@ -1,6 +1,6 @@
 import { createAction } from '@reduxjs/toolkit';
 
-import type { SharedStartListening } from '@proton/redux-shared-store-types';
+import type { SharedStartListening } from '@proton/redux-shared-store-types/interface';
 import { revoke } from '@proton/shared/lib/api/auth';
 import { getSilentApi, getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { cleanupLastRefreshDate } from '@proton/shared/lib/api/helpers/refreshStorage';

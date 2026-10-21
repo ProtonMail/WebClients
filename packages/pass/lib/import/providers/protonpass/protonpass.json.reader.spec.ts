@@ -1,4 +1,4 @@
-import type { ItemImportIntent } from '../../../../types';
+import type { ItemImportIntent } from '../../../../types/data/items.dto';
 import { AutofillMode } from '../../../../types/protobuf';
 import { readProtonPassJSON } from './protonpass.json.reader';
 

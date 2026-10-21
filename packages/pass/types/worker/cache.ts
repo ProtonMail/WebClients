@@ -1,5 +1,5 @@
 import type { State } from '../../store/types';
-import type { PassCryptoSnapshot, SerializedCryptoContext } from '../crypto';
+import type { PassCryptoSnapshot, SerializedCryptoContext } from '../crypto/pass-crypto';
 
 export type PassCache = { state: State; snapshot: SerializedCryptoContext<PassCryptoSnapshot> };
 

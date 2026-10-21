@@ -1,4 +1,6 @@
-import type { ItemState, Maybe, MaybeNull, ShareRole, ShareType } from '..';
+import type { ItemState } from '../data/items';
+import type { ShareRole, ShareType } from '../data/shares';
+import type { Maybe, MaybeNull } from '../utils/index';
 
 export enum PassEncryptionTag {
     Cache = 'cache' /* Local cache */,

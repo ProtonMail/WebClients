@@ -2,7 +2,7 @@ import type { ChangeEvent, DetailedHTMLProps, InputHTMLAttributes, KeyboardEvent
 import { forwardRef, useRef } from 'react';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { useCombinedRefs } from '@proton/hooks';
+import useCombinedRefs from '@proton/hooks/useCombinedRefs';
 import clsx from '@proton/utils/clsx';
 
 import './FileButton.scss';

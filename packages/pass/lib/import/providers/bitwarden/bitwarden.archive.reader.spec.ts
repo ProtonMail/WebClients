@@ -1,6 +1,6 @@
 import JSZip from 'jszip';
 
-import type { ItemImportIntent } from '../../../../types';
+import type { ItemImportIntent } from '../../../../types/data/items.dto';
 import { deobfuscate } from '../../../../utils/obfuscate/xor';
 import { uniqueId } from '../../../../utils/string/unique-id';
 import { readBitwardenArchiveData } from './bitwarden.archive.reader';

@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import type { ExtractKeysOfType, IdentityValues } from '../../types';
+import type { IdentityValues } from '../../types/forms/item';
+import type { ExtractKeysOfType } from '../../types/utils';
 import type { IdentityFormField, IdentityFormSection } from './useIdentityForm';
 
 type FieldType = ExtractKeysOfType<IdentityValues, string>;

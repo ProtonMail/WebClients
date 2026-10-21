@@ -12,7 +12,7 @@ import Loader from '@proton/components/components/loader/Loader';
 import CalendarInviteButtons from '@proton/components/containers/calendar/CalendarInviteButtons';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { TelemetryCalendarEvents } from '@proton/shared/lib/api/telemetry';
 import {

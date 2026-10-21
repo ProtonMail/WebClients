@@ -13,7 +13,8 @@ import {
 } from '../lib/password/constants';
 import { generatePassword } from '../lib/password/generator';
 import type { GeneratePasswordConfig, GeneratePasswordMode } from '../lib/password/types';
-import type { MaybeNull, OrganizationUpdatePasswordPolicyInput } from '../types';
+import type { OrganizationUpdatePasswordPolicyInput } from '../types/api/pass';
+import type { MaybeNull } from '../types/utils';
 import { merge } from '../utils/object/merge';
 
 enum CharType {

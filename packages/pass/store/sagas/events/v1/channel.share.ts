@@ -8,11 +8,14 @@ import { PendingFileLinkTracker } from '../../../../lib/file-attachments/file-li
 import { getItemKey } from '../../../../lib/items/item.utils';
 import { getShareEventsQuery, getShareLatestEventId } from '../../../../lib/shares/share.requests';
 import { processSharePollingError, processSharePollingEvent } from '../../../../lib/sync/v1/share-polling.processor';
-import type { Api, Maybe, PassEventListResponse, Share } from '../../../../types';
+import type { Api } from '../../../../types/api/api';
+import type { PassEventListResponse } from '../../../../types/api/pass';
+import type { Share } from '../../../../types/data/shares';
+import type { Maybe } from '../../../../types/utils';
 import { logId, logger } from '../../../../utils/logger';
-import { vaultDeleteSuccess } from '../../../actions';
+import { vaultDeleteSuccess } from '../../../actions/creators/vault';
 import type { ShareItem } from '../../../reducers/shares';
-import { selectAllShares, selectShare } from '../../../selectors';
+import { selectAllShares, selectShare } from '../../../selectors/shares';
 import type { RootSagaOptions } from '../../../types';
 import { eventChannelFactory } from './channel.factory';
 import { channelEvents, channelInitalize } from './channel.worker';

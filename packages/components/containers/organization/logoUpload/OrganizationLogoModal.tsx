@@ -8,7 +8,7 @@ import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { IcArrowUpLine } from '@proton/icons/icons/IcArrowUpLine';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcCross } from '@proton/icons/icons/IcCross';

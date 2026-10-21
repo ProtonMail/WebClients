@@ -10,7 +10,7 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { useGetDecryptedPassphraseAndCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 import { IcLockCheckFilled } from '@proton/icons/icons/IcLockCheckFilled';
 import { IcLockFilled } from '@proton/icons/icons/IcLockFilled';

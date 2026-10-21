@@ -2,9 +2,9 @@ import { put } from 'redux-saga/effects';
 
 import noop from '@proton/utils/noop';
 
-import { lockSync } from '../../../store/actions';
+import { lockSync } from '../../../store/actions/creators/auth';
 import type { RootSagaOptions } from '../../../store/types';
-import type { OrganizationGetResponse } from '../../../types';
+import type { OrganizationGetResponse } from '../../../types/api/pass';
 import { LockMode } from '../../auth/lock/types';
 
 /** Applies org-level lock policy from `ForceLockSeconds`. When the org

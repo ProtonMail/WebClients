@@ -1,4 +1,4 @@
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import type { EventManager } from '@proton/shared/lib/eventManager/eventManager';
 import type { LumoEventResponse } from '@proton/shared/lib/interfaces/Lumo';
 

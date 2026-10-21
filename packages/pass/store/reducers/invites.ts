@@ -6,7 +6,8 @@ import type { Invite } from '../../types/data/invites';
 import { or } from '../../utils/fp/predicates';
 import { objectDelete } from '../../utils/object/delete';
 import { objectFilter } from '../../utils/object/filter';
-import { groupInviteAccept, groupInviteReject, inviteAccept, inviteReject, matchSyncAction, syncInvites } from '../actions';
+import { matchSyncAction } from '../actions/creators/client';
+import { groupInviteAccept, groupInviteReject, inviteAccept, inviteReject, syncInvites } from '../actions/creators/invite';
 
 export type InviteState = Record<string, Invite>;
 

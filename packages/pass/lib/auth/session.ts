@@ -11,7 +11,8 @@ import { getDecryptedBlob, getEncryptedBlob } from '@proton/shared/lib/authentic
 import type { User as UserType } from '@proton/shared/lib/interfaces/User';
 import getRandomString from '@proton/utils/getRandomString';
 
-import type { Api, Maybe, MaybeNull } from '../../types';
+import type { Api } from '../../types/api/api';
+import type { Maybe, MaybeNull } from '../../types/utils';
 import { getErrorMessage } from '../../utils/errors/get-error-message';
 import { prop } from '../../utils/fp/lens';
 import { type OfflineConfig, getOfflineVerifier } from '../cache/crypto';

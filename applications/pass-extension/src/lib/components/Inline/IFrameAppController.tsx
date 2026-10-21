@@ -1,7 +1,7 @@
 import type { Runtime } from 'webextension-polyfill';
 
 import browser from '@proton/pass/lib/globals/browser';
-import type { Callback, Maybe, MaybeNull } from '@proton/pass/types/utils/index';
+import type { Callback, Maybe, MaybeNull } from '@proton/pass/types/utils';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { objectHandler } from '@proton/pass/utils/object/handler';
 import { type Subscriber, createPubSub } from '@proton/pass/utils/pubsub/factory';

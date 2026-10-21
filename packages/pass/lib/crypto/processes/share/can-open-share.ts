@@ -1,5 +1,7 @@
 import { PassCrypto } from '../..';
-import type { Maybe, ShareGetResponse, ShareKeyResponse, ShareManager } from '../../../../types';
+import type { ShareGetResponse, ShareKeyResponse } from '../../../../types/api/pass';
+import type { ShareManager } from '../../../../types/crypto/pass-crypto';
+import type { Maybe } from '../../../../types/utils';
 import { PassCryptoShareError } from '../../utils/errors';
 
 /** Check if share can be opened with available keys - either from existing

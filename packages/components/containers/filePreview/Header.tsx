@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';

@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import { sendErrorReport } from '../../utils/errorHandling';

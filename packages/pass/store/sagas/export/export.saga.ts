@@ -10,16 +10,22 @@ import { ExportFormat } from '../../../lib/export/types';
 import type { FileStorage } from '../../../lib/file-storage/types';
 import { getSafeStorage, getSafeWriter } from '../../../lib/file-storage/utils';
 import { belongsToShares, hasAttachments, itemEq } from '../../../lib/items/item.predicates';
-import type { FileDescriptor, IndexedByShareIdAndItemId, ItemRevision, MaybeNull, SelectedItem, Share, TabId } from '../../../types';
+import type { FileDescriptor } from '../../../types/data/files';
+import type { IndexedByShareIdAndItemId, ItemRevision, SelectedItem } from '../../../types/data/items';
+import type { Share } from '../../../types/data/shares';
+import type { MaybeNull } from '../../../types/utils';
+import type { TabId } from '../../../types/worker/runtime';
 import { prop } from '../../../utils/fp/lens';
 import { and } from '../../../utils/fp/predicates';
 import { logger } from '../../../utils/logger';
-import { startEventPolling, stopEventPolling } from '../../actions';
+import { startEventPolling, stopEventPolling } from '../../actions/creators/client';
 import { exportData } from '../../actions/creators/export';
 import { requestProgress } from '../../request/actions';
 import { createRequestSaga } from '../../request/sagas';
-import type { ExportThunk } from '../../selectors';
-import { selectAllItems, selectExportData, selectOwnedVaults } from '../../selectors';
+import type { ExportThunk } from '../../selectors/export';
+import { selectExportData } from '../../selectors/export';
+import { selectAllItems } from '../../selectors/items';
+import { selectOwnedVaults } from '../../selectors/shares';
 
 type ExportFileProgress = { totalItems: number; itemFilesCount: number } & SelectedItem;
 

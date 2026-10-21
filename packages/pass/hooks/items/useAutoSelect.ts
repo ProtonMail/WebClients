@@ -4,7 +4,8 @@ import { matchPath, useHistory } from 'react-router-dom';
 import { useSelectedItem } from '../../components/Navigation/NavigationItem';
 import { useItemScope } from '../../components/Navigation/NavigationMatches';
 import { getNewItemRoute } from '../../components/Navigation/routing';
-import type { ItemRevision, Maybe } from '../../types';
+import type { ItemRevision } from '../../types/data/items';
+import type { Maybe } from '../../types/utils';
 import { useSelectItemAction } from '../useSelectItemAction';
 
 /** Auto-select first item when none selected. Monitor views use this

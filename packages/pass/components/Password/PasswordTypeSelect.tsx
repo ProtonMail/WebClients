@@ -8,7 +8,8 @@ import clsx from '@proton/utils/clsx';
 
 import type { PasswordGeneratorResult } from '../../hooks/usePasswordGenerator';
 import type { GeneratePasswordConfig } from '../../lib/password/types';
-import type { MaybeNull, OrganizationUpdatePasswordPolicyInput } from '../../types';
+import type { OrganizationUpdatePasswordPolicyInput } from '../../types/api/pass';
+import type { MaybeNull } from '../../types/utils';
 
 import './PasswordTypeSelect.scss';
 

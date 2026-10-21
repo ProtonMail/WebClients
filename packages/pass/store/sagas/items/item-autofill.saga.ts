@@ -2,9 +2,10 @@ import { call, put, takeEvery } from 'redux-saga/effects';
 
 import { parseItemRevision } from '../../../lib/items/item.parser';
 import { updateItemLastUseTime } from '../../../lib/items/item.requests';
-import type { ItemRevision, ItemRevisionContentsResponse } from '../../../types';
+import type { ItemRevisionContentsResponse } from '../../../types/api/pass';
+import type { ItemRevision } from '../../../types/data/items';
 import { logId, logger } from '../../../utils/logger';
-import { itemAutofilled, itemsUpdated } from '../../actions';
+import { itemAutofilled, itemsUpdated } from '../../actions/creators/item';
 import type { RootSagaOptions } from '../../types';
 
 function* itemAutofilledWorker({ onItemsUpdated }: RootSagaOptions, { payload: { shareId, itemId } }: ReturnType<typeof itemAutofilled>) {

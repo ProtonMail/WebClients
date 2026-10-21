@@ -4,9 +4,11 @@ import { useSelector } from 'react-redux';
 import type { FormikContextType } from 'formik';
 
 import { useOrganization } from '../components/Organization/OrganizationProvider';
-import { selectAliasByAliasEmail } from '../store/selectors';
-import type { ItemRevision, LoginItemFormValues, Maybe } from '../types';
-import { OrganizationAliasCreateMode } from '../types';
+import { selectAliasByAliasEmail } from '../store/selectors/alias';
+import { OrganizationAliasCreateMode } from '../types/api/pass';
+import type { ItemRevision } from '../types/data/items';
+import type { LoginItemFormValues } from '../types/forms/item';
+import type { Maybe } from '../types/utils';
 import { merge } from '../utils/object/merge';
 import { isEmptyString } from '../utils/string/is-empty-string';
 import type { UseAliasOptionsResult } from './useAliasOptions';

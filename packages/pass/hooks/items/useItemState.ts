@@ -7,11 +7,14 @@ import { isGroupShare, isShareManageable, isVaultShare } from '../../lib/shares/
 import { isPaidPlan } from '../../lib/user/user.predicates';
 import { itemPinRequest, itemUnpinRequest } from '../../store/actions/requests';
 import type { ShareItem } from '../../store/reducers';
-import { selectAllVaults, selectPassPlan, selectRequestInFlight } from '../../store/selectors';
-import type { ItemRevision } from '../../types';
-import { OrganizationItemShareMode, OrganizationPublicLinkMode, ShareRole } from '../../types';
+import { selectRequestInFlight } from '../../store/request/selectors';
+import { selectAllVaults } from '../../store/selectors/shares';
+import { selectPassPlan } from '../../store/selectors/user';
 import { PassFeature } from '../../types/api/features';
+import { OrganizationItemShareMode, OrganizationPublicLinkMode } from '../../types/api/pass';
 import { UserPassPlan } from '../../types/api/plan';
+import type { ItemRevision } from '../../types/data/items';
+import { ShareRole } from '../../types/data/shares';
 import { useFeatureFlag } from '../useFeatureFlag';
 
 export type ItemState = {

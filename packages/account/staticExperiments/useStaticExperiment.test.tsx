@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 
 import { act, renderHook } from '@testing-library/react';
 
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import { getTestStore } from '@proton/redux-shared-store/test';
 

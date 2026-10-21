@@ -4,8 +4,9 @@ import { useMemo, useState } from 'react';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
 import { useRequest } from '../../../../hooks/useRequest';
-import { aliasGetContactsList } from '../../../../store/actions';
-import type { AliasContactWithStatsGetResponse, SelectedItem } from '../../../../types';
+import { aliasGetContactsList } from '../../../../store/actions/creators/alias';
+import type { AliasContactWithStatsGetResponse } from '../../../../types/api/pass';
+import type { SelectedItem } from '../../../../types/data/items';
 import { partition } from '../../../../utils/array/partition';
 import { prop } from '../../../../utils/fp/lens';
 import { sortOn } from '../../../../utils/fp/sort';

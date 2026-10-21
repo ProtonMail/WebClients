@@ -1,7 +1,8 @@
 import type { FC } from 'react';
 
-import type { Invite, MaybeNull } from '../../types';
-import { ShareType } from '../../types';
+import type { Invite } from '../../types/data/invites';
+import { ShareType } from '../../types/data/shares';
+import type { MaybeNull } from '../../types/utils';
 import { GroupsProvider } from '../Groups/GroupsProvider';
 import type { InviteContextState } from './InviteContext';
 import { InviteError } from './InviteError';

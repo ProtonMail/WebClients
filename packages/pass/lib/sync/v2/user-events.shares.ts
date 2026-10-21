@@ -4,11 +4,14 @@ import { call, put, select } from 'redux-saga/effects';
 import chunk from '@proton/utils/chunk';
 
 import { MIN_MAX_BATCH_PER_REQUEST } from '../../../constants';
-import { shareCreated, shareDeleted, shareUpdated } from '../../../store/actions';
+import { shareCreated, shareDeleted, shareUpdated } from '../../../store/actions/creators/share';
 import { refreshUserData } from '../../../store/sagas/events/core/channel.core';
-import { selectShare } from '../../../store/selectors';
+import { selectShare } from '../../../store/selectors/shares';
 import type { RootSagaOptions } from '../../../store/types';
-import type { Maybe, MaybeNull, Share, ShareCreatedDTO, ShareId, SyncEventShareOutput } from '../../../types';
+import type { SyncEventShareOutput } from '../../../types/api/pass';
+import type { ShareId } from '../../../types/crypto/pass-types';
+import type { Share, ShareCreatedDTO } from '../../../types/data/shares';
+import type { Maybe, MaybeNull } from '../../../types/utils';
 import { prop } from '../../../utils/fp/lens';
 import { isShareRemovedError } from '../../api/errors';
 import { PassCrypto } from '../../crypto';

@@ -2,7 +2,7 @@ import { all, call, put, select } from 'redux-saga/effects';
 
 import { toMap } from '@proton/shared/lib/helpers/object';
 
-import { syncResult } from '../../../store/actions';
+import { syncResult } from '../../../store/actions/creators/client';
 import type {
     FoldersByShareId,
     HydratedAccessState,
@@ -14,7 +14,10 @@ import type { OrganizationState } from '../../../store/reducers/organization';
 import type { ShareDedupeState } from '../../../store/reducers/shares-dedupe';
 import { selectLoadGroupInvites } from '../../../store/selectors/invites';
 import type { RootSagaOptions, State } from '../../../store/types';
-import type { BreachesGetResponse, Invite, Maybe, MaybeNull, Share, ShareGetResponse } from '../../../types';
+import type { BreachesGetResponse, ShareGetResponse } from '../../../types/api/pass';
+import type { Invite } from '../../../types/data/invites';
+import type { Share } from '../../../types/data/shares';
+import type { Maybe, MaybeNull } from '../../../types/utils';
 import { partition } from '../../../utils/array/partition';
 import { allInvites } from '../../invites/invite.requests';
 import { getAllBreaches } from '../../monitor/monitor.request';

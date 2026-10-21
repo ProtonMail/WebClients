@@ -3,8 +3,9 @@ import { useHistory } from 'react-router-dom';
 
 import { useFoldersAccess } from '../../components/Folders/useFoldersAccess';
 import { deobfuscateItem } from '../../lib/items/item.obfuscation';
-import type { DeobfuscatedItem, ItemRevision, MaybeNull } from '../../types';
-import type { BaseItemValues } from '../../types/forms';
+import type { DeobfuscatedItem, ItemRevision } from '../../types/data/items';
+import type { BaseItemValues } from '../../types/forms/item';
+import type { MaybeNull } from '../../types/utils';
 
 export type ItemCloneLocationState = { clone: ItemRevision };
 export type ItemInitialValuesOptions = { clone: DeobfuscatedItem; shareId: string; folderId: MaybeNull<string> };

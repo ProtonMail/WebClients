@@ -3,8 +3,8 @@ import { type FC, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 
 import { UpsellRef } from '../../../../constants';
-import { selectExtraFieldLimits } from '../../../../store/selectors';
-import type { DeobfuscatedItemExtraField } from '../../../../types';
+import { selectExtraFieldLimits } from '../../../../store/selectors/limits';
+import type { DeobfuscatedItemExtraField } from '../../../../types/data/items';
 import { isEmptyString } from '../../../../utils/string/is-empty-string';
 import { formatISOYYYYMMDD, formatYYYYMMDD } from '../../../../utils/time/format';
 import { TextAreaReadonly } from '../../legacy/TextAreaReadonly';

@@ -1,7 +1,7 @@
 import { type AlgorithmInfo, CryptoProxy, type PrivateKeyReference, type PublicKeyReference } from '@protontech/crypto';
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { AddressKey, DecryptedAddressKey, DecryptedKey, Key } from '@proton/shared/lib/interfaces/Key';
 import type { SignedKeyListItem } from '@proton/shared/lib/interfaces/SignedKeyList';

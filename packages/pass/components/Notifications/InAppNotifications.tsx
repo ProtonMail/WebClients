@@ -6,8 +6,8 @@ import { useInAppNotificationVisibility } from '../../hooks/notifications/useInA
 import { useEpoch } from '../../hooks/useEpoch';
 import { useMemoSelector } from '../../hooks/useMemoSelector';
 import { selectActiveNotification } from '../../store/selectors/notification';
-import type { MaybeNull } from '../../types';
-import { InAppNotificationDisplayType } from '../../types';
+import { InAppNotificationDisplayType } from '../../types/api/pass';
+import type { MaybeNull } from '../../types/utils';
 import { InAppNotificationBanner } from './InAppNotificationBanner';
 import { InAppNotificationModal } from './InAppNotificationModal';
 import { OfflineSetupNotification } from './OfflineSetupNotification';

@@ -1,4 +1,4 @@
-import { PassEncryptionTag } from '../../../../types';
+import { PassEncryptionTag } from '../../../../types/crypto/pass-types';
 import { ActionPayload, type AgentAction } from '../../../../types/protobuf/action-payload-v1';
 import type { MaybeNull } from '../../../../types/utils';
 import { decryptData, importSymmetricKey } from '../../utils/crypto-helpers';

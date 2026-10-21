@@ -2,7 +2,8 @@ import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import type { SyncResult } from '../../../lib/sync/types';
-import type { Share, ShareCreatedDTO, ShareId, ShareType } from '../../../types';
+import type { ShareId } from '../../../types/crypto/pass-types';
+import type { Share, ShareCreatedDTO, ShareType } from '../../../types/data/shares';
 import { pipe } from '../../../utils/fp/pipe';
 import type { ShareDedupeState } from '../../reducers/shares-dedupe';
 import { requestActionsFactory } from '../../request/flow';

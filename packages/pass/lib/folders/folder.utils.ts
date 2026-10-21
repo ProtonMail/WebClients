@@ -1,4 +1,6 @@
-import type { FolderData, FolderId, Maybe, MaybeNull } from '../../types';
+import type { FolderId } from '../../types/crypto/pass-types';
+import type { FolderData } from '../../types/data/folders';
+import type { Maybe, MaybeNull } from '../../types/utils';
 
 export type FoldersById = Record<FolderId, FolderData>;
 export type FolderChildren = ReadonlyMap<MaybeNull<FolderId>, readonly FolderData[]>;

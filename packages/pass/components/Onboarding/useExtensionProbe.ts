@@ -16,8 +16,8 @@ import getRandomString from '@proton/utils/getRandomString';
 import { clients } from '../../clients';
 import { Clients } from '../../constants';
 import { getBrowserClient } from '../../lib/extension/utils/browser';
-import type { Maybe, MaybeNull } from '../../types';
 import type { ToolbarPinState } from '../../types/browser';
+import type { Maybe, MaybeNull } from '../../types/utils';
 import { UNIX_HOUR } from '../../utils/time/constants';
 import { getEpoch } from '../../utils/time/epoch';
 

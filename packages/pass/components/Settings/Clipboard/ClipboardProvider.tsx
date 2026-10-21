@@ -8,10 +8,10 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 
 import { createUseContext } from '../../../hooks/useContextFactory';
 import { ClipboardTTL } from '../../../lib/clipboard/types';
-import { settingsEditIntent } from '../../../store/actions';
-import { selectClipboardTTL } from '../../../store/selectors';
+import { settingsEditIntent } from '../../../store/actions/creators/settings';
+import { selectClipboardTTL } from '../../../store/selectors/settings';
 import type { State } from '../../../store/types';
-import type { MaybeNull } from '../../../types';
+import type { MaybeNull } from '../../../types/utils';
 import { logger } from '../../../utils/logger';
 import { usePassCore } from '../../Core/PassCoreProvider';
 import { getClipboardTTLOptions } from './ClipboardSettings.utils';

@@ -4,7 +4,7 @@ import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import { usePasswordTypeSwitch, usePasswordUnlock } from '../../components/Lock/PasswordUnlockProvider';
 import { ReauthAction } from '../../lib/auth/reauth';
-import { offlineSetup } from '../../store/actions';
+import { offlineSetup } from '../../store/actions/creators/settings';
 import { useRequest } from '../useRequest';
 
 export const useOfflineSetup = () => {

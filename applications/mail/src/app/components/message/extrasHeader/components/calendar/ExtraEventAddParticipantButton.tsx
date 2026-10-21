@@ -6,7 +6,7 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import useAddAttendees from '@proton/components/containers/calendar/hooks/useAddAttendees';
 import useDrawer from '@proton/components/hooks/drawer/useDrawer';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { reformatApiErrorMessage } from '@proton/shared/lib/calendar/api';
 import { getAttendeeEmail, withPartstat } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';

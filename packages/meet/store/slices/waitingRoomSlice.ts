@@ -1,7 +1,7 @@
 import type { PayloadAction, ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { createSelector, createSlice } from '@reduxjs/toolkit';
 
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { SECOND } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 

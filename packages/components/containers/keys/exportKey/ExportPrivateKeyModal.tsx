@@ -5,7 +5,7 @@ import { CryptoProxy } from '@protontech/crypto';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { queryUnlock } from '@proton/shared/lib/api/user';
 import { KEY_FILE_EXTENSION } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';

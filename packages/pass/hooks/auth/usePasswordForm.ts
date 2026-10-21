@@ -1,7 +1,7 @@
 import type { FormEvent } from 'react';
 import { useState } from 'react';
 
-import type { Maybe, MaybePromise } from '../../types';
+import type { Maybe, MaybePromise } from '../../types/utils';
 import type { TypedFormElement } from '../../types/utils/dom';
 import { type XorObfuscation, obfuscate } from '../../utils/obfuscate/xor';
 

@@ -5,7 +5,8 @@ import { LockMode } from '../../../lib/auth/lock/types';
 import { last } from '../../../utils/fp/lens';
 import { obfuscate } from '../../../utils/obfuscate/xor';
 import { sagaSetup } from '../../../utils/tests/saga';
-import { lockCreateFailure, lockCreateIntent, lockCreateSuccess, stateDestroy } from '../../actions';
+import { lockCreateFailure, lockCreateIntent, lockCreateSuccess } from '../../actions/creators/auth';
+import { stateDestroy } from '../../actions/creators/client';
 import watcher from './lock-create.saga';
 
 describe('lock-create saga', () => {

@@ -2,30 +2,32 @@ import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import { getItemEntityID, getItemKey } from '../../../lib/items/item.utils';
+import type { FolderId } from '../../../types/crypto/pass-types';
 import type {
     BatchItemRevisionIDs,
     BatchItemRevisions,
+    ItemRevision,
+    OptimisticItem,
+    SelectedItem,
+    SelectedRevision,
+    UniqueItem,
+} from '../../../types/data/items';
+import type {
     BulkSelectionDTO,
-    FolderId,
     ItemCreateIntent,
     ItemCreateSuccess,
     ItemEditIntent,
     ItemMoveDTO,
     ItemMoveIntent,
-    ItemRevision,
     ItemRevisionsIntent,
     ItemRevisionsSuccess,
-    MaybeNull,
-    OptimisticItem,
     SecureLink,
     SecureLinkCreationDTO,
     SecureLinkDeleteDTO,
     SecureLinkItem,
     SecureLinkQuery,
-    SelectedItem,
-    SelectedRevision,
-    UniqueItem,
-} from '../../../types';
+} from '../../../types/data/items.dto';
+import type { MaybeNull } from '../../../types/utils';
 import { getErrorMessage } from '../../../utils/errors/get-error-message';
 import { prop } from '../../../utils/fp/lens';
 import { pipe } from '../../../utils/fp/pipe';

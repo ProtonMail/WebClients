@@ -1,4 +1,4 @@
-import type { Maybe } from '../../types';
+import type { Maybe } from '../../types/utils';
 
 type Obj = Record<string, any>;
 

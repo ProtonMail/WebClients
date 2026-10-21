@@ -1,7 +1,7 @@
 import { put, takeEvery } from 'redux-saga/effects';
 
 import { editMemberAccess } from '../../../lib/shares/share.requests';
-import { shareEditMemberAccessFailure, shareEditMemberAccessIntent, shareEditMemberAccessSuccess } from '../../actions';
+import { shareEditMemberAccessFailure, shareEditMemberAccessIntent, shareEditMemberAccessSuccess } from '../../actions/creators/access';
 
 function* resendInviteWorker({ payload, meta: { request } }: ReturnType<typeof shareEditMemberAccessIntent>) {
     try {
