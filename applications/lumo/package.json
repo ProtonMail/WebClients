@@ -47,7 +47,7 @@
         "@proton/styles": "workspace:^",
         "@proton/unleash": "workspace:^",
         "@proton/utils": "workspace:^",
-        "@protontech/crypto": "*",
+        "@protontech/crypto": "catalog:",
         "@protontech/drive-sdk": "catalog:",
         "@protontech/timezone-support": "^2.1.0",
         "@reduxjs/toolkit": "^2.13.0",
