@@ -1,5 +1,5 @@
-import { useWelcomeFlags } from '@proton/account';
 import { useUser } from '@proton/account/user/hooks';
+import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import EasySwitchProvider from '@proton/activation/src/logic/StoreProvider';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import StartupModals from '@proton/components/components/startupModals/StartupModals';

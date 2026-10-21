@@ -3,7 +3,7 @@ import type { MutableRefObject, ReactElement, ReactNode } from 'react';
 import { act } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
-import { serverEvent } from '@proton/account';
+import { serverEvent } from '@proton/account/eventLoop';
 import { getModelState } from '@proton/account/tests';
 import { mockDefaultBreakpoints } from '@proton/components/testing/mockUseActiveBreakpoint';
 import { getHumanLabelID } from '@proton/mail/helpers/location';

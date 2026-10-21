@@ -3,7 +3,7 @@ import { useLocation } from 'react-router';
 
 import { c } from 'ttag';
 
-import { useUserSettings } from '@proton/account';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { DENSITY } from '@proton/shared/lib/constants';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces/Checklist';

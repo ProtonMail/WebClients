@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 import type { PublicKeyReference } from '@protontech/crypto';
 import { getMatchingSigningKey } from '@protontech/crypto';
 
-import { useGetUserSettings } from '@proton/account';
+import { useGetUserSettings } from '@proton/account/userSettings/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import useGetVerificationPreferences from '@proton/components/hooks/useGetVerificationPreferences';
 import type { MessageErrors, MessageStateWithDataFull } from '@proton/mail/store/messages/messagesTypes';

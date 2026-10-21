@@ -2,9 +2,13 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { memberThunk, organizationThunk, subscriptionThunk, useUserSettings, userThunk } from '@proton/account';
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { memberThunk } from '@proton/account/member';
+import { organizationThunk } from '@proton/account/organization';
+import { subscriptionThunk } from '@proton/account/subscription';
+import { userThunk } from '@proton/account/user';
 import { useUser } from '@proton/account/user/hooks';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
 import LabelStack from '@proton/components/components/labelStack/LabelStack';
