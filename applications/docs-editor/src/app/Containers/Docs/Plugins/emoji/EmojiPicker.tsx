@@ -4,13 +4,12 @@ import { Composite, CompositeItem, CompositeRow, useCompositeStore } from '@aria
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { $getSelection, $isRangeSelection, type RangeSelection } from 'lexical'
 import { useEffect, useRef, useState } from 'react'
-import { defaultEmojiMessages, type EmojiMessages } from './emojiMessages'
+import { useDocsMessages } from '../../DocsDependenciesProvider'
 import { loadEmojis, searchEmojis, type Emoji } from './emojiData'
 import { insertEmoji } from './insertEmoji'
 
-export type EmojiPickerProps = { messages?: EmojiMessages }
-
-export default function EmojiPicker({ messages = defaultEmojiMessages }: EmojiPickerProps) {
+export default function EmojiPicker() {
+  const messages = useDocsMessages().emoji
   const [editor] = useLexicalComposerContext()
   const [emojis, setEmojis] = useState<Emoji[]>([])
   const [query, setQuery] = useState('')

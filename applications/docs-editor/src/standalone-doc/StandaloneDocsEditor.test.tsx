@@ -4,6 +4,7 @@ import {
   CommentThreadStates,
   CommentThreadTypes,
   CommentTypes,
+  defaultDocsMessages,
   DocsDependenciesProvider,
   DocsLayoutContainer,
   EditorSystemMode,
@@ -48,6 +49,7 @@ function createThread(): DocsCommentThread {
 function createDependencies(comments: DocsComments, reportError: DocsDependencies['reportError']): DocsDependencies {
   return {
     userName: 'Local user',
+    defaultMessages: defaultDocsMessages,
     suggestionsEnabled: false,
     isAlpha: false,
     canEdit: true,
@@ -155,6 +157,7 @@ describe('standalone Docs runtime', () => {
         awarenessData: { userId: 'Local user' },
       })
       expect(screen.getByTestId('user-mode-dropdown')).toBeEnabled()
+      expect(screen.getByTestId('user-mode-dropdown')).toHaveTextContent('Editing')
       expect(screen.queryByTestId('emoji-picker')).not.toBeInTheDocument()
       dependencies = { ...dependencies, emojiPickerEnabled: true }
       await act(async () => view.rerender(<Tree />))

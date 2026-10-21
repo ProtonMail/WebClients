@@ -61,6 +61,7 @@ When a term has more than one meaning in code, the **Ambiguous** note says which
 - **`CommentThreadMarkNode` / mark node**: the node (`'comment-thread-mark'`) wrapping the text a comment thread refers to. `editor/Containers/Docs/Plugins/Comments/`.
 - **`MarkNodeMap`**: map from comment or suggestion id to the keys of its nodes; drives hover and active state. `editor/Containers/Docs/Plugins/MarkNodesContext.tsx`.
 - **`*AsSuggestion` operations**: suggestion-mode versions of edits (`formatTextAsSuggestion`, `setBlocksTypeAsSuggestion`...). `editor/Containers/Docs/Plugins/Suggestions/`.
+- **`DocsMessages`**: the typed catalogue of Docs UI strings (`typeof defaultDocsMessages`), translated in the adapter and read with `useDocsMessages()`. It holds the strings migrated so far; the rest still call ttag. `editor/Containers/Docs/messages/`.
 
 ### rowsncolumns (sheets)
 
