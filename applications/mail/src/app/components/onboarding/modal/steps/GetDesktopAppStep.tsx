@@ -7,7 +7,7 @@ import useInboxDesktopVersion from '@proton/components/containers/desktop/useInb
 import OnboardingStep from '@proton/components/containers/onboarding/OnboardingStep';
 import type { OnboardingStepRenderCallback } from '@proton/components/containers/onboarding/interface';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
+import { OldTelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
 import { isDebianBased, isFedoraOrRedHatBased, isMac, isMobile, isWindows } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import linuxAppImg1x from '@proton/styles/assets/img/onboarding/mail_onboarding_desktop_app_download_linux@1x.webp';
@@ -18,8 +18,9 @@ import windowsAppImg1x from '@proton/styles/assets/img/onboarding/mail_onboardin
 import windowsAppImg2x from '@proton/styles/assets/img/onboarding/mail_onboarding_desktop_app_download_windows@2x.webp';
 import clsx from '@proton/utils/clsx';
 
+import { TrackOnboardingStepLoad } from '../../../../telemetry/TrackOnboardingStepLoad';
+import { ONBOARDING_ACTIONS, ONBOARDING_STEPS, useOnboardingTracking } from '../../../../telemetry/onboardingEvents';
 import { useMailOnboardingTelemetry } from '../../useMailOnboardingTelemetry';
-
 import type { OnboardingStepEligibleCallback } from '../interface';
 import OnboardingContent from '../layout/OnboardingContent';
 
@@ -44,17 +45,20 @@ export const isGetDesktopAppStepEligible: OnboardingStepEligibleCallback = async
 };
 
 const GetDesktopAppStep = ({ onNext }: OnboardingStepRenderCallback) => {
+    const { trackStepInteracted, trackStepCompleted } = useOnboardingTracking();
     const { viewportWidth } = useActiveBreakpoint();
     const sendMailOnboardingTelemetry = useMailOnboardingTelemetry();
 
     const { desktopAppLink } = useInboxDesktopVersion();
 
     const handleNext = () => {
+        trackStepCompleted(ONBOARDING_STEPS.desktopApp);
         onNext();
     };
 
     const handleDesktopAppButtonClick = () => {
-        void sendMailOnboardingTelemetry(TelemetryMailOnboardingEvents.download_desktop_app, {});
+        void sendMailOnboardingTelemetry(OldTelemetryMailOnboardingEvents.download_desktop_app, {});
+        trackStepInteracted(ONBOARDING_STEPS.desktopApp, ONBOARDING_ACTIONS.downloadApp);
         handleNext();
     };
 
@@ -71,6 +75,7 @@ const GetDesktopAppStep = ({ onNext }: OnboardingStepRenderCallback) => {
 
     return (
         <OnboardingStep>
+            <TrackOnboardingStepLoad step={ONBOARDING_STEPS.desktopApp} />
             <OnboardingContent
                 title={c('Onboarding modal').t`Distraction-free emailing`}
                 description={c('Onboarding modal').t`Enjoy a faster, focused emailing experience with the desktop app.`}

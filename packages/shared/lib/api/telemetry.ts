@@ -32,7 +32,7 @@ export enum TelemetryMeasurementGroups {
     calendarInvite = 'any.web.calendar_invite',
     keyTransparency = 'any.web.key_transparency',
     subscriptionModal = 'any.web.subscription_modal',
-    mailOnboarding = 'mail.web.onboarding',
+    oldMailOnboarding = 'mail.web.onboarding',
     paidUsersNudge = 'any.web.paid_users_nudge',
     mailPrivacyDropdown = 'mail.web.privacy_dropdown',
     mailSelectAll = 'mail.web.select_all',
@@ -51,6 +51,7 @@ export enum TelemetryMeasurementGroups {
     mailPagingControls = 'mail.web.paging_controls',
     mailExpandBlockquotes = 'mail.web.expand_blockquotes',
     categoriesView = 'mail.any.categories_view',
+    mailOnboarding = 'mail.any.signup_onboarding',
     passNudge = 'mail.web.pass_nudge',
     /** Shared with mobile clients: compares Encrypted Search (searchVersion 'v1') against Content Search (searchVersion 'v2') */
     contentSearch = 'mail.any.search',
@@ -91,7 +92,7 @@ export enum TelemetryMeasurementGroups {
     mailForegroundActivity = 'mail.common.foreground_activity',
 }
 
-export enum TelemetryMailOnboardingEvents {
+export enum OldTelemetryMailOnboardingEvents {
     start_onboarding_modals = 'start_onboarding_modals',
     finish_onboarding_modals = 'finish_onboarding_modals',
     select_theme = 'select_theme',
@@ -125,6 +126,13 @@ export enum TelemetryEasySwitchEvents {
     byoeClaimableAddressModalAction = 'byoe_claimable_address_modal_action',
     byoeAddressLinkedModalShown = 'byoe_address_linked_modal_shown',
     byoeAddressLinkedModalAction = 'byoe_address_linked_modal_action',
+}
+
+export enum TelemetryMailOnboardingEvents {
+    stepLoad = 'step_load',
+    stepCompleted = 'step_completed',
+    stepInteracted = 'step_interacted',
+    flowFinished = 'flow_finished',
 }
 
 export enum TelemetryEasySwitchCreationFunnelEvents {
@@ -743,7 +751,7 @@ export type TelemetryEvents =
     | TelemetryMailSelectAllEvents
     | TelemetryMailComposerAssistantEvents
     | TelemetryMailLumoEvents
-    | TelemetryMailOnboardingEvents
+    | OldTelemetryMailOnboardingEvents
     | TelemetryMailPagingControlsEvents
     | TelemetryMailBlockquotes
     | TelemetryMailForegroundEvents
@@ -800,7 +808,8 @@ export type TelemetryEvents =
     | TelemetryMeetDashboardEvents
     | TelemetryMeetPerformanceEvents
     | TelemetryEasySwitchEvents
-    | TelemetryEasySwitchCreationFunnelEvents;
+    | TelemetryEasySwitchCreationFunnelEvents
+    | TelemetryMailOnboardingEvents;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;

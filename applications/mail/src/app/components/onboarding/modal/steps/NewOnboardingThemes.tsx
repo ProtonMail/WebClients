@@ -7,13 +7,14 @@ import type { OnboardingStepRenderCallback } from '@proton/components/containers
 import ThemeCard from '@proton/components/containers/themes/ThemeCard';
 import { getThemeCardSize } from '@proton/components/containers/themes/ThemeCards';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
-import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
+import { OldTelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import type { ThemeTypes } from '@proton/shared/lib/themes/constants';
 import clsx from '@proton/utils/clsx';
 
+import { TrackOnboardingStepLoad } from '../../../../telemetry/TrackOnboardingStepLoad';
+import { ONBOARDING_ACTIONS, ONBOARDING_STEPS, useOnboardingTracking } from '../../../../telemetry/onboardingEvents';
 import { useMailOnboardingTelemetry } from '../../useMailOnboardingTelemetry';
-
 import type { OnboardingStepEligibleCallback } from '../interface';
 import OnboardingContent from '../layout/OnboardingContent';
 
@@ -22,6 +23,7 @@ export const isNewOnboardingThemesStepEligible: OnboardingStepEligibleCallback =
 });
 
 const NewOnboardingThemes = ({ onNext }: OnboardingStepRenderCallback) => {
+    const { trackStepInteracted, trackThemeStepCompleted } = useOnboardingTracking();
     const sendMailOnboardingTelemetry = useMailOnboardingTelemetry();
     const mobile = isMobile();
     const theme = useTheme();
@@ -31,20 +33,24 @@ const NewOnboardingThemes = ({ onNext }: OnboardingStepRenderCallback) => {
 
     const handleThemeChange = (newThemeType: ThemeTypes) => {
         theme.setTheme(newThemeType);
+        trackStepInteracted(ONBOARDING_STEPS.themeSelection, ONBOARDING_ACTIONS.selectTheme);
     };
 
     const handleNext = () => {
         const selectedTheme = theme.information.theme;
-        void sendMailOnboardingTelemetry(TelemetryMailOnboardingEvents.select_theme, {
+        void sendMailOnboardingTelemetry(OldTelemetryMailOnboardingEvents.select_theme, {
             theme: `${selectedTheme}`,
             is_default_theme: selectedTheme === 0 ? 'yes' : 'no',
         });
+
+        trackThemeStepCompleted(theme.information.label);
 
         onNext();
     };
 
     return (
         <OnboardingStep>
+            <TrackOnboardingStepLoad step={ONBOARDING_STEPS.themeSelection} />
             <OnboardingContent
                 title={c('Onboarding Proton').t`Make it your own`}
                 description={c('Onboarding Proton').t`Choose your preferred look and feel.`}
