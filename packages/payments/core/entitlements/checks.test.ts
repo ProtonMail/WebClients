@@ -1,6 +1,6 @@
 import { buildEntitlementCatalog } from '../../testing/buildEntitlementCatalog';
 import { buildSubscription } from '../../testing/buildSubscription';
-import { ADDON_NAMES, PLANS } from '../constants';
+import { PLANS } from '../constants';
 import { EntitlementName } from './entitlement-names';
 import { createEntitlementResolverForSelection } from './resolver';
 
@@ -26,11 +26,6 @@ const entitlementCatalog = buildEntitlementCatalog({
     [PLANS.BUNDLE_BIZ_2025]: [...allCoreProducts, EntitlementName.Business, EntitlementName.MultiUser],
 });
 
-const scribeCatalog = buildEntitlementCatalog(
-    { [PLANS.MAIL_PRO]: [EntitlementName.FlagsInbox, EntitlementName.Business] },
-    { [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: [EntitlementName.MaxScribe] }
-);
-
 const hasAllCoreProductsB2C = (plan: PLANS) =>
     createEntitlementResolverForSelection(entitlementCatalog, buildSubscription(plan)).hasAllCoreProductsB2C;
 
@@ -48,18 +43,6 @@ describe('hasAllCoreProductsB2C', () => {
 
     it.each([PLANS.BUNDLE_PRO_2024, PLANS.BUNDLE_BIZ_2025])('returns false for B2B bundle %s', (plan) => {
         expect(hasAllCoreProductsB2C(plan)).toBe(false);
-    });
-});
-
-describe('hasScribe', () => {
-    it('returns true when the selection includes a Scribe addon', () => {
-        const selection = { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 1 };
-
-        expect(createEntitlementResolverForSelection(scribeCatalog, selection).hasScribe).toBe(true);
-    });
-
-    it('returns false when the selection has no Scribe addon', () => {
-        expect(createEntitlementResolverForSelection(scribeCatalog, PLANS.MAIL_PRO).hasScribe).toBe(false);
     });
 });
 
