@@ -3,6 +3,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type { LexicalEditor } from 'lexical'
 import { createRoot } from 'react-dom/client'
 import {
+  defaultDocsMessages,
   DocsDependenciesProvider,
   DocsLayoutContainer,
   EditorSystemMode,
@@ -57,6 +58,7 @@ function StandaloneDoc() {
   const dependencies = useMemo<DocsDependencies>(
     () => ({
       userName: 'Standalone developer',
+      defaultMessages: defaultDocsMessages,
       suggestionsEnabled: true,
       isAlpha: true,
       canEdit: role.canEdit(),

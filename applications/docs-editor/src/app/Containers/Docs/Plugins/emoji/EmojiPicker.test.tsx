@@ -4,6 +4,8 @@ import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext
 import { $createParagraphNode, $getRoot, type LexicalEditor } from 'lexical'
 import { act, type ReactNode } from 'react'
 import { SimpleDropdown } from '../../Components/Dropdown'
+import { DocsDependenciesProvider, type DocsDependencies } from '../../DocsDependenciesProvider'
+import { defaultDocsMessages } from '../../messages/defaultDocsMessages'
 import { loadEmojis } from './emojiData'
 import EmojiPicker from './EmojiPicker'
 
@@ -14,20 +16,22 @@ function CaptureEditor() {
 }
 function EmptyDocument({ children }: { children: ReactNode }) {
   return (
-    <LexicalComposer
-      initialConfig={{
-        namespace: 'emoji-picker-test',
-        editorState: () => {
-          $getRoot().append($createParagraphNode()).selectEnd()
-        },
-        onError: (error) => {
-          throw error
-        },
-      }}
-    >
-      <CaptureEditor />
-      {children}
-    </LexicalComposer>
+    <DocsDependenciesProvider dependencies={{ defaultMessages: defaultDocsMessages } as DocsDependencies}>
+      <LexicalComposer
+        initialConfig={{
+          namespace: 'emoji-picker-test',
+          editorState: () => {
+            $getRoot().append($createParagraphNode()).selectEnd()
+          },
+          onError: (error) => {
+            throw error
+          },
+        }}
+      >
+        <CaptureEditor />
+        {children}
+      </LexicalComposer>
+    </DocsDependenciesProvider>
   )
 }
 afterEach(() => {
