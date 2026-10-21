@@ -1,4 +1,4 @@
-import type { Callback, MaybeNull } from '../../types';
+import type { Callback, MaybeNull } from '../../types/utils';
 import { getEpoch } from '../time/epoch';
 
 type WithCallCount<F extends Callback> = F & {

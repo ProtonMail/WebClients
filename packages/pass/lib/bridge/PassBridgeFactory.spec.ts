@@ -1,15 +1,16 @@
 import { CryptoProxy } from '@protontech/crypto';
 
-import noop from '@proton/utils/noop';
-
 import type { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
 import { ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { DecryptedKey, Key } from '@proton/shared/lib/interfaces/Key';
 import type { User } from '@proton/shared/lib/interfaces/User';
+import noop from '@proton/utils/noop';
 
-import type { FolderDataResponse, ItemRevisionContentsResponse, RotationKey, ShareKey } from '../../types';
-import { ContentFormatVersion, ItemState } from '../../types';
+import type { FolderDataResponse, ItemRevisionContentsResponse } from '../../types/api/pass';
+import type { RotationKey, ShareKey } from '../../types/crypto/pass-types';
+import { ContentFormatVersion } from '../../types/crypto/pass-types';
+import { ItemState } from '../../types/data/items';
 import { logger } from '../../utils/logger';
 import { obfuscate } from '../../utils/obfuscate/xor';
 import {
@@ -168,7 +169,9 @@ describe('PassBridge', () => {
 
             api.mockImplementation(async ({ url }: { url: string }) => {
                 if (url === `pass/v1/share/${shareId}/item`) {
-                    return { Items: { RevisionsData: [encryptedAliasInRoot, encryptedAliasInFolder], LastToken: null } };
+                    return {
+                        Items: { RevisionsData: [encryptedAliasInRoot, encryptedAliasInFolder], LastToken: null },
+                    };
                 }
                 throw new Error(`Unexpected request ${url}`);
             });

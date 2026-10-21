@@ -18,9 +18,9 @@ import { AccountPath } from '@proton/pass/constants';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import { clientSessionLocked } from '@proton/pass/lib/client';
-import { OrganizationAliasCreateMode } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
-import type { Unpack } from '@proton/pass/types/utils/index';
+import { OrganizationAliasCreateMode } from '@proton/pass/types/api/pass';
+import type { Unpack } from '@proton/pass/types/utils';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { ExtensionHead } from '../../../lib/components/Extension/ExtensionHead';

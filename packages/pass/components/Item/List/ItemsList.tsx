@@ -2,9 +2,9 @@ import { memo, useCallback, useEffect } from 'react';
 import { useStore } from 'react-redux';
 
 import { useSelectItemAction } from '../../../hooks/useSelectItemAction';
-import { selectIsWritableVault } from '../../../store/selectors';
+import { selectIsWritableVault } from '../../../store/selectors/shares';
 import type { State } from '../../../store/types';
-import type { ItemRevision } from '../../../types';
+import type { ItemRevision } from '../../../types/data/items';
 import { useBulkActions } from '../../Bulk/BulkSelectionActions';
 import { useBulkEnabled } from '../../Bulk/BulkSelectionState';
 import { useNavigationFilters } from '../../Navigation/NavigationFilters';

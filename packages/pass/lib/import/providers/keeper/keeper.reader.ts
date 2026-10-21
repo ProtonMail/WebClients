@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
-import type { ItemImportIntent, Maybe } from '../../../../types';
+import type { ItemImportIntent } from '../../../../types/data/items.dto';
 import { WifiSecurity } from '../../../../types/protobuf';
+import type { Maybe } from '../../../../types/utils';
 import { truthy } from '../../../../utils/fp/predicates';
 import { logger } from '../../../../utils/logger';
 import { formatExpirationDateMMYYYY } from '../../../../utils/time/expiration-date';

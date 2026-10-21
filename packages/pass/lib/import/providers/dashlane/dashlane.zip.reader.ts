@@ -1,4 +1,4 @@
-import type { Maybe } from '../../../../types';
+import type { Maybe } from '../../../../types/utils';
 import { seq } from '../../../../utils/fp/promises';
 import { unary } from '../../../../utils/fp/variadics';
 import { logger } from '../../../../utils/logger';

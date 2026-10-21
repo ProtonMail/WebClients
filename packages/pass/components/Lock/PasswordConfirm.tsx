@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { useRequest } from '../../hooks/useRequest';
 import type { PasswordVerification } from '../../lib/auth/password';
 import { validateCurrentPassword } from '../../lib/validation/auth';
-import { passwordConfirm } from '../../store/actions';
+import { passwordConfirm } from '../../store/actions/creators/auth';
 import { useOnline } from '../Core/ConnectivityProvider';
 import { PasswordForm } from './PasswordForm';
 

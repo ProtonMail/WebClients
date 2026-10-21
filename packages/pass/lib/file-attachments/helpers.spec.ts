@@ -1,4 +1,6 @@
-import type { FileDescriptor, ItemFileOutput, ItemKey } from '../../types';
+import type { ItemFileOutput } from '../../types/api/pass';
+import type { ItemKey } from '../../types/crypto/pass-types';
+import type { FileDescriptor } from '../../types/data/files';
 import { exposePassCrypto } from '../crypto';
 import {
     filesFormInitializer,

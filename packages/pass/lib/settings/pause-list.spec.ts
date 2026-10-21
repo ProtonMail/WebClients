@@ -1,4 +1,4 @@
-import type { OrganizationUrlPauseEntryDto, OrganizationUrlPauseEntryValues } from '../../types';
+import type { OrganizationUrlPauseEntryDto, OrganizationUrlPauseEntryValues } from '../../types/api/pass';
 import { uniqueId } from '../../utils/string/unique-id';
 import { getEpoch } from '../../utils/time/epoch';
 import { parseUrl } from '../urls/utils/parser';

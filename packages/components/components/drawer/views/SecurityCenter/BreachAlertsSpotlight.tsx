@@ -6,7 +6,7 @@ import { useWelcomeFlags } from '@proton/account';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { FeatureCode } from '@proton/features';
+import { FeatureCode } from '@proton/features/interface';
 import { PLANS } from '@proton/payments/core/constants';
 import { DARK_WEB_MONITORING_NAME, SECOND } from '@proton/shared/lib/constants';
 import { isUserAccountOlderThanOrEqualToDays } from '@proton/shared/lib/user/helpers';

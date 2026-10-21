@@ -5,7 +5,8 @@ import { c } from 'ttag';
 import type { IconComponent } from '@proton/icons/component';
 
 import { useOTPCode } from '../../../../hooks/useOTPCode';
-import type { MaybeNull, OtpRequest } from '../../../../types';
+import type { MaybeNull } from '../../../../types/utils';
+import type { OtpRequest } from '../../../../types/worker/otp';
 import { OTPDonut } from '../../../Otp/OTPDonut';
 import { OTPValue } from '../../../Otp/OTPValue';
 import type { IOtpRenderer } from '../../../Otp/types';

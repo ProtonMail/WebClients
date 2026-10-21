@@ -7,8 +7,8 @@ import Toggle from '@proton/components/components/toggle/Toggle';
 import { BRAND_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useFeatureFlag } from '../../../hooks/useFeatureFlag';
-import { settingsEditIntent } from '../../../store/actions';
-import { selectBetaEnabled } from '../../../store/selectors';
+import { settingsEditIntent } from '../../../store/actions/creators/settings';
+import { selectBetaEnabled } from '../../../store/selectors/settings';
 import { PassFeature } from '../../../types/api/features';
 import { SettingsPanel } from '../SettingsPanel';
 

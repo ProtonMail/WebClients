@@ -2,9 +2,9 @@ import type { FC } from 'react';
 import { useSelector } from 'react-redux';
 
 import { useAutotypeActions } from '../../../hooks/autotype/useAutotypeActions';
-import { selectUserPlan } from '../../../store/selectors';
-import type { Item } from '../../../types';
+import { selectUserPlan } from '../../../store/selectors/user';
 import { PassFeature } from '../../../types/api/features';
+import type { Item } from '../../../types/data/items';
 import { WithFeatureFlag } from '../../Core/WithFeatureFlag';
 import { AutotypeDropdown } from './AutotypeDropdown';
 

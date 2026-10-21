@@ -5,13 +5,15 @@ import { HOUR, MINUTE } from '@proton/shared/lib/constants';
 
 import { hasFoldersApi } from '../../../lib/folders/folders.requests';
 import type { ForceSyncEntry, ForceSyncStore } from '../../../lib/sync/force-sync';
-import type { Share } from '../../../types';
 import { PassFeature } from '../../../types/api/features';
+import type { Share } from '../../../types/data/shares';
 import { logger } from '../../../utils/logger';
-import { bootSuccess, getUserFeaturesSuccess, stateDestroy, syncFailure, syncIntent, syncSuccess } from '../../actions';
+import { bootSuccess, stateDestroy, syncFailure, syncIntent, syncSuccess } from '../../actions/creators/client';
+import { getUserFeaturesSuccess } from '../../actions/creators/user';
 import { syncRequest } from '../../actions/requests';
 import { selectRequestInFlight } from '../../request/selectors';
-import { selectAllVaults, selectFeatureFlag } from '../../selectors';
+import { selectAllVaults } from '../../selectors/shares';
+import { selectFeatureFlag } from '../../selectors/user';
 import type { RootSagaOptions } from '../../types';
 
 /** Give up force sync after MAX_ATTEMPTS,

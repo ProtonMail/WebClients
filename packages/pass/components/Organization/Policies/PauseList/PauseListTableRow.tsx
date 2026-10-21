@@ -13,7 +13,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import type { PauseListEntryDeleteDTO } from '../../../../lib/organization/types';
 import { intoCleanHostname } from '../../../../lib/urls/utils/utils';
-import type { OrganizationUrlPauseEntryDto, OrganizationUrlPauseEntryValues } from '../../../../types';
+import type { OrganizationUrlPauseEntryDto, OrganizationUrlPauseEntryValues } from '../../../../types/api/pass';
 
 type NewEntry = Pick<OrganizationUrlPauseEntryDto, 'Url' | 'Values'>;
 

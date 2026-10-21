@@ -8,8 +8,8 @@ import { IcInfoCircleFilled } from '@proton/icons/icons/IcInfoCircleFilled';
 import clsx from '@proton/utils/clsx';
 
 import { useRequest } from '../../../../hooks/useRequest';
-import { verifyCustomDomain } from '../../../../store/actions';
-import type { MaybeNull } from '../../../../types';
+import { verifyCustomDomain } from '../../../../store/actions/creators/alias';
+import type { MaybeNull } from '../../../../types/utils';
 import { Card } from '../../../Layout/Card/Card';
 import { useAliasDomains, useCustomDomain } from './AliasDomainsContext';
 import { DNSSectionID, getDNSSections } from './DomainUtils';

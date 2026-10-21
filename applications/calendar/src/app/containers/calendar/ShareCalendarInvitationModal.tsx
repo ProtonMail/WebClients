@@ -12,7 +12,7 @@ import CalendarLimitReachedModal from '@proton/components/containers/calendar/Ca
 import ShareCalendarWithSignatureVerificationErrorModal from '@proton/components/containers/calendar/shareProton/ShareCalendarWithSignatureVerificationErrorModal';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import useCalendarShareInvitationActions from '@proton/components/hooks/useCalendarShareInvitationActions';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getHasUserReachedCalendarsLimit } from '@proton/shared/lib/calendar/calendarLimits';

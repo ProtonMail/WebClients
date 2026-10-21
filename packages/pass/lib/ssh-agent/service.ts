@@ -1,4 +1,5 @@
-import type { ContextBridgeApi, SSHKeyItem } from '../../types';
+import type { SSHKeyItem } from '../../types/data/items';
+import type { ContextBridgeApi } from '../../types/desktop';
 import { asyncLatest } from '../../utils/fp/promises';
 import { logger } from '../../utils/logger';
 import { getItemRevisionKey } from '../items/item.utils';

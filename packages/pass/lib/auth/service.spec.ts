@@ -1,6 +1,6 @@
 import { APPS } from '@proton/shared/lib/constants';
 
-import type { Api } from '../../types';
+import type { Api } from '../../types/api/api';
 import { createMemoryStore } from '../../utils/store';
 import { getForkChallenge } from './fork';
 import type { Lock } from './lock/types';

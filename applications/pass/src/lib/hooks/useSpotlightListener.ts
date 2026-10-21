@@ -7,7 +7,7 @@ import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvide
 import { useSpotlightMessages } from '@proton/pass/hooks/useSpotlightMessages';
 import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
 import { selectPaymentNudgeEligible } from '@proton/pass/store/payment-nudge/selectors';
-import { SpotlightMessage } from '@proton/pass/types';
+import { SpotlightMessage } from '@proton/pass/types/worker/spotlight';
 
 export const useSpotlightListener = () => {
     /** Read through refs rather than the closure: the spotlight context is

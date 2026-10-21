@@ -1,13 +1,13 @@
-import type {
-    AbstractInviteResponse,
-    GroupInvite,
-    GroupInviteListItemResponse,
-    InviteVaultData,
-    KeyRotationKeyPair,
-    MaybeNull,
-    UserInvite,
-} from '../../types';
-import { type InviteDataForUser, InviteType, ShareType } from '../../types';
+import type { GroupInviteListItemResponse, InviteDataForUser, KeyRotationKeyPair } from '../../types/api/pass';
+import {
+    type AbstractInviteResponse,
+    type GroupInvite,
+    InviteType,
+    type InviteVaultData,
+    type UserInvite,
+} from '../../types/data/invites';
+import { ShareType } from '../../types/data/shares';
+import type { MaybeNull } from '../../types/utils';
 import { logger } from '../../utils/logger';
 import { getPublicKeysForEmail } from '../auth/address';
 import { PassCrypto } from '../crypto';

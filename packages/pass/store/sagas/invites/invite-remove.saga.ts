@@ -2,11 +2,12 @@ import { put, select, takeEvery } from 'redux-saga/effects';
 
 import { removeInvite } from '../../../lib/invites/invite.requests';
 import { createTelemetryEvent } from '../../../lib/telemetry/utils';
-import type { ItemRevision, Maybe } from '../../../types';
+import type { ItemRevision } from '../../../types/data/items';
 import { TelemetryEventName, TelemetryItemType, TelemetryTargetType } from '../../../types/data/telemetry';
-import { inviteRemoveFailure, inviteRemoveIntent, inviteRemoveSuccess } from '../../actions';
+import type { Maybe } from '../../../types/utils';
+import { inviteRemoveFailure, inviteRemoveIntent, inviteRemoveSuccess } from '../../actions/creators/invite';
 import { syncAccess } from '../../actions/creators/polling';
-import { selectItem } from '../../selectors';
+import { selectItem } from '../../selectors/items';
 import type { RootSagaOptions } from '../../types';
 
 function* removeInviteWorker({ getTelemetry }: RootSagaOptions, { payload, meta: { request } }: ReturnType<typeof inviteRemoveIntent>) {

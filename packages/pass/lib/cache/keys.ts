@@ -1,6 +1,6 @@
 import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
-import { PassEncryptionTag } from '../../types';
+import { PassEncryptionTag } from '../../types/crypto/pass-types';
 import type { Maybe } from '../../types/utils';
 import type { EncryptedPassCache } from '../../types/worker/cache';
 import { logger } from '../../utils/logger';

@@ -3,7 +3,7 @@ import { createContext, useContext, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 
 import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';

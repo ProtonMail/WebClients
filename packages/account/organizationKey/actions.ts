@@ -3,7 +3,7 @@ import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import { getVerifiedPublicKeys } from '@proton/key-transparency/keys';
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { activatePasswordlessKey, updateRolePasswordless } from '@proton/shared/lib/api/members';

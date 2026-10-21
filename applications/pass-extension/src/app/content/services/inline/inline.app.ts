@@ -1,8 +1,8 @@
 import type { Runtime } from 'webextension-polyfill';
 
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
+import type { Maybe, MaybeNull } from '@proton/pass/types/utils';
 import type { Dimensions, Rect } from '@proton/pass/types/utils/dom';
-import type { Maybe, MaybeNull } from '@proton/pass/types/utils/index';
 import { animatePositionChange } from '@proton/pass/utils/dom/animation';
 import { pixelEncoder } from '@proton/pass/utils/dom/computed-styles';
 import { createElement } from '@proton/pass/utils/dom/create-element';

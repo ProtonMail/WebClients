@@ -8,7 +8,7 @@ import { getInitialStorage, getStorageRange, getTotalStorage } from '@proton/acc
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import {
     type MaybeFreeSubscription,
     hasDuo,

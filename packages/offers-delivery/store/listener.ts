@@ -1,6 +1,6 @@
 import type { UnknownAction } from '@reduxjs/toolkit';
 
-import type { SharedStartListening } from '@proton/redux-shared-store-types';
+import type { SharedStartListening } from '@proton/redux-shared-store-types/interface';
 import { isDocumentVisible } from '@proton/shared/lib/helpers/dom';
 import { CommonFeatureFlag } from '@proton/unleash/Flags';
 import noop from '@proton/utils/noop';

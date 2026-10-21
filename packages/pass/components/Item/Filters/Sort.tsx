@@ -16,8 +16,8 @@ import clsx from '@proton/utils/clsx';
 
 import { useFeatureFlag } from '../../../hooks/useFeatureFlag';
 import { intoDisplayedSortFilter } from '../../../lib/items/item.utils';
-import type { ItemSortFilter } from '../../../types';
 import { PassFeature } from '../../../types/api/features';
+import type { ItemSortFilter } from '../../../types/data/items';
 import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';
 import { FilterClearButton } from './FilterClearButton';
 

@@ -2,7 +2,7 @@ import type { ThunkDispatch, UnknownAction } from '@reduxjs/toolkit';
 import { configureStore } from '@reduxjs/toolkit';
 import { describe, expect, it } from 'vitest';
 
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 
 import type { MeetState } from '../rootReducer';
 import { currentMeetingReducer, setNavigationSeed } from './currentMeeting';

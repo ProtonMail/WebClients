@@ -8,7 +8,8 @@ import { AdminRolesUIState, useAdminRolesUI } from '@proton/account/userPermissi
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
 import { Href } from '@proton/atoms/Href/Href';
-import { FeatureCode, useFeature } from '@proton/features';
+import { FeatureCode } from '@proton/features/interface';
+import useFeature from '@proton/features/useFeature';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';

@@ -1,7 +1,7 @@
 import noop from '@proton/utils/noop';
 
 import { itemBuilder } from '../../../lib/items/item.builder';
-import { ShareRole } from '../../../types';
+import { ShareRole } from '../../../types/data/shares';
 import { createTestItem } from '../../../utils/tests/fixtures/items';
 import { createTestShare } from '../../../utils/tests/fixtures/shares';
 import { render } from '../../../utils/tests/render';

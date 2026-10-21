@@ -1,6 +1,6 @@
 import lastItem from '@proton/utils/lastItem';
 
-import type { ItemImportIntent } from '../../../types';
+import type { ItemImportIntent } from '../../../types/data/items.dto';
 import { getFileParts } from '../../file-attachments/helpers';
 import { ImportProvider } from '../types';
 

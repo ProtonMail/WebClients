@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import type { DeobfuscatedItemExtraField, ItemContent, Maybe } from '../../../../types';
+import type { DeobfuscatedItemExtraField, ItemContent } from '../../../../types/data/items';
+import type { Maybe } from '../../../../types/utils';
 import { truthy } from '../../../../utils/fp/predicates';
 import { isEmptyString } from '../../../../utils/string/is-empty-string';
 import { itemBuilder } from '../../../items/item.builder';

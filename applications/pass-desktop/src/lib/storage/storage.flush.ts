@@ -1,7 +1,7 @@
 import type { Session } from 'electron';
 import debounce from 'lodash/debounce';
 
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types/utils';
 import noop from '@proton/utils/noop';
 
 /** Chromium commits DOMStorage and cookies to disk lazily, so an abrupt

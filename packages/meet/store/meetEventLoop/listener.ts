@@ -1,4 +1,4 @@
-import type { SharedStartListening } from '@proton/redux-shared-store-types';
+import type { SharedStartListening } from '@proton/redux-shared-store-types/interface';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 
 import { meetingsLoop } from '../meetingsLoop';

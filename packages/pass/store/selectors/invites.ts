@@ -1,8 +1,9 @@
 import { createSelector } from '@reduxjs/toolkit';
 
 import { isBusinessPlan } from '../../lib/organization/helpers';
-import type { Invite, Maybe, MaybeNull } from '../../types';
 import { PassFeature } from '../../types/api/features';
+import type { Invite } from '../../types/data/invites';
+import type { Maybe, MaybeNull } from '../../types/utils';
 import { first } from '../../utils/array/first';
 import { sortOn } from '../../utils/fp/sort';
 import type { InviteState } from '../reducers';

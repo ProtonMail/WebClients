@@ -13,7 +13,7 @@ import {
     ModalTwoHeader,
     useFormErrors,
 } from '@proton/components';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import noop from '@proton/utils/noop';
 
 import { formatLinkName, validateLinkNameField } from '../../store';

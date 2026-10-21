@@ -4,19 +4,17 @@ import type { User } from '@proton/shared/lib/interfaces/User';
 
 import type { HydratedAccessState } from '../../store/reducers';
 import type {
-    AliasMailbox,
-    AliasOptions,
-    ItemRevision,
-    Maybe,
     MemberMonitorReportList,
     OrganizationGetResponse,
     OrganizationUpdatePasswordPolicyInput,
     OrganizationUrlPauseEntryDto,
     ResponseCodeSuccess,
-    Share,
-    ShareType,
-} from '../../types';
+} from '../../types/api/pass';
+import type { AliasMailbox, AliasOptions } from '../../types/data/alias';
+import type { ItemRevision } from '../../types/data/items';
 import type { OrganizationSettings } from '../../types/data/organization';
+import type { Share, ShareType } from '../../types/data/shares';
+import type { Maybe } from '../../types/utils';
 import type { MaxAgeMemoizedFn } from '../../utils/fp/memo';
 import type { OrganizationReportDTO, PauseListEntryAddDTO, PauseListEntryUpdateDTO } from '../organization/types';
 

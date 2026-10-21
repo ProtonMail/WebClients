@@ -1,14 +1,15 @@
 import { c, msgid } from 'ttag';
 
-import type {
-    AbstractInviteResponse,
-    GroupInvite,
-    GroupOwnerInvite,
-    InviteVaultDataForUser,
-    MaybeNull,
-    Share,
-} from '../../types';
-import { type InviteBase, InviteType, type Result, ShareType } from '../../types';
+import type { InviteVaultDataForUser } from '../../types/api/pass';
+import {
+    type AbstractInviteResponse,
+    type GroupInvite,
+    type GroupOwnerInvite,
+    type InviteBase,
+    InviteType,
+} from '../../types/data/invites';
+import { type Share, ShareType } from '../../types/data/shares';
+import type { MaybeNull, Result } from '../../types/utils';
 import { partition } from '../../utils/array/partition';
 import { and } from '../../utils/fp/predicates';
 import { isItemTarget } from '../access/access.predicates';

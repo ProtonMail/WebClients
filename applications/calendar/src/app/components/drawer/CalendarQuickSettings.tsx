@@ -25,7 +25,7 @@ import WeekStartSelector from '@proton/components/containers/calendar/settings/W
 import CalendarShortcutsModal from '@proton/components/containers/calendar/shortcutsModal/CalendarShortcutsModal';
 import ShortcutsToggle from '@proton/components/containers/general/ShortcutsToggle';
 import useEventManager from '@proton/components/hooks/useEventManager';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { DEFAULT_CALENDAR_USER_SETTINGS } from '@proton/shared/lib/calendar/calendar';
 import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar/Calendar';

@@ -1,4 +1,4 @@
-import type { ShareId } from '../crypto';
+import type { ShareId } from '../crypto/pass-types';
 import type { VaultColor, VaultIcon } from '../protobuf/vault-v1.static';
 import type { Maybe, MaybeNull } from '../utils';
 import type { FolderData } from './folders';

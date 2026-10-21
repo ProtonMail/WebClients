@@ -1,4 +1,4 @@
-import type { Maybe, MaybeNull } from '@proton/pass/types/utils/index';
+import type { Maybe, MaybeNull } from '@proton/pass/types/utils';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { wait } from '@proton/shared/lib/helpers/promise';
 

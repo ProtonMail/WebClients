@@ -1,6 +1,6 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { deleteGroupMember } from '@proton/shared/lib/api/groups';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { GroupMembership } from '@proton/shared/lib/interfaces/GroupMember';

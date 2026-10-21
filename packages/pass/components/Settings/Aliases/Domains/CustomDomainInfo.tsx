@@ -17,8 +17,9 @@ import {
     updateCustomDomainDisplayName,
     updateCustomDomainMailboxes,
     updateRandomPrefix,
-} from '../../../../store/actions';
-import type { CustomDomainSettingsOutput, MaybeNull } from '../../../../types';
+} from '../../../../store/actions/creators/alias';
+import type { CustomDomainSettingsOutput } from '../../../../types/api/pass';
+import type { MaybeNull } from '../../../../types/utils';
 import { Card } from '../../../Layout/Card/Card';
 import { DomainMailboxesSelector } from '../Mailboxes/AliasMailboxesSelect';
 import { useCustomDomain } from './AliasDomainsContext';

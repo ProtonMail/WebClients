@@ -9,31 +9,27 @@ import type { User } from '@proton/shared/lib/interfaces/User';
 import type { SETTINGS_PASSWORD_MODE, SETTINGS_STATUS } from '@proton/shared/lib/interfaces/UserSettings';
 import type { AuthDeviceOutput } from '@proton/shared/lib/keys/device';
 
-import type { BitField, Id, MaybeNull, PassPlanResponse, RequiredNonNull, UserMonitorStatusResponse } from '../../types';
-import { EventActions } from '../../types';
+import { EventActions } from '../../types/api/events';
 import type { FeatureFlagVariant, PassFeature } from '../../types/api/features';
+import type { Id, PassPlanResponse, UserMonitorStatusResponse } from '../../types/api/pass';
+import type { BitField } from '../../types/forms/fields';
+import type { MaybeNull, RequiredNonNull } from '../../types/utils';
 import { or } from '../../utils/fp/predicates';
 import { objectDelete } from '../../utils/object/delete';
 import { merge, partialMerge } from '../../utils/object/merge';
+import { aliasPendingCreate, aliasPendingCreated, aliasSyncEnable, aliasSyncStatus } from '../actions/creators/alias';
+import { coreEvent, userRefresh } from '../actions/creators/api';
+import { matchSyncAction, syncMigration } from '../actions/creators/client';
+import { monitorToggle, sentinelToggle } from '../actions/creators/monitor';
+import { confirmPendingAuthDevice, getAuthDevices, rejectPendingAuthDevice } from '../actions/creators/sso';
 import {
-    aliasPendingCreate,
-    aliasPendingCreated,
-    aliasSyncEnable,
-    aliasSyncStatus,
-    coreEvent,
     getUserAccessSuccess,
     getUserFeaturesSuccess,
     getUserSettings,
-    matchSyncAction,
-    monitorToggle,
-    sentinelToggle,
     setUserAccess,
     setUserEventID,
     setUserFeatureFlags,
-    syncMigration,
-    userRefresh,
-} from '../actions';
-import { confirmPendingAuthDevice, getAuthDevices, rejectPendingAuthDevice } from '../actions/creators/sso';
+} from '../actions/creators/user';
 
 type AddressState = { [addressId: string]: Address };
 export type FeatureFlagState = Partial<Record<PassFeature, boolean>>;

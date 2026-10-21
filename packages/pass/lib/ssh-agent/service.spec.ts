@@ -1,4 +1,6 @@
-import type { ContextBridgeApi, Maybe, SSHKeyItem } from '../../types';
+import type { SSHKeyItem } from '../../types/data/items';
+import type { ContextBridgeApi } from '../../types/desktop';
+import type { Maybe } from '../../types/utils';
 import { createSshAgentService } from './service';
 
 type SshAgentBridge = ContextBridgeApi['sshAgent'];

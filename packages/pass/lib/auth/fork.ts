@@ -17,21 +17,20 @@ import {
 import { getValidatedForkType, getValidatedRawKey } from '@proton/shared/lib/authentication/fork/validation';
 import type { PullForkResponse, RefreshSessionResponse } from '@proton/shared/lib/authentication/interface';
 import type { OfflineKey } from '@proton/shared/lib/authentication/offlineKey';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, MAIL_APP_NAME, PASS_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
+import { APPS, type APP_NAMES, MAIL_APP_NAME, PASS_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { withAuthHeaders, withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import type { User } from '@proton/shared/lib/interfaces/User';
 import getRandomString from '@proton/utils/getRandomString';
 
-import type { Maybe, TabId } from '../../types';
-import { type Api, AuthMode, type MaybeNull } from '../../types';
+import { type Api, AuthMode } from '../../types/api/api';
+import type { Maybe, MaybeNull } from '../../types/utils';
+import type { TabId } from '../../types/worker/runtime';
 import { getErrorMessage } from '../../utils/errors/get-error-message';
 import { logger } from '../../utils/logger';
 import { isObject } from '../../utils/object/is-object';
 import { getEpoch } from '../../utils/time/epoch';
-import type { OfflineComponents } from '../cache/crypto';
-import { getOfflineVerifier } from '../cache/crypto';
+import { type OfflineComponents, getOfflineVerifier } from '../cache/crypto';
 import { QA_SERVICE } from '../qa/service';
 import { AUTH_MODE } from './flags';
 import { LockMode } from './lock/types';

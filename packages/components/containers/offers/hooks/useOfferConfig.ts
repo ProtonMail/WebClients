@@ -1,5 +1,6 @@
 import { useSubscription } from '@proton/account/subscription/hooks';
-import { FeatureCode, useFeatures } from '@proton/features';
+import { FeatureCode } from '@proton/features/interface';
+import useFeatures from '@proton/features/useFeatures';
 import { isDangerouslyAllowedSubscriptionEstimation } from '@proton/payments/core/subscription/helpers';
 
 import type { OfferConfig, OfferId, Operation } from '../interface';

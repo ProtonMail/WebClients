@@ -9,7 +9,6 @@ import { AuthDeviceState } from '@proton/shared/lib/keys/device';
 import type { AuthStore } from '../../lib/auth/store';
 import { getPassPlan } from '../../lib/user/user.plan';
 import { isWritableVault } from '../../lib/vaults/vault.predicates';
-import type { Maybe, MaybeNull, Share } from '../../types';
 import {
     type AutofillModelExperimentGroup,
     DEFAULT_AUTOFILL_MODEL_EXPERIMENT_GROUP,
@@ -17,6 +16,8 @@ import {
     isAutofillModelExperimentGroup,
 } from '../../types/api/features';
 import { UserPassPlan } from '../../types/api/plan';
+import type { Share } from '../../types/data/shares';
+import type { Maybe, MaybeNull } from '../../types/utils';
 import { oneOf } from '../../utils/fp/predicates';
 import { sortOn } from '../../utils/fp/sort';
 import { UNIX_DAY } from '../../utils/time/constants';

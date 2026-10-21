@@ -17,7 +17,7 @@ import { usePopper } from '@proton/atoms/Popper/usePopper';
 import { usePopperState } from '@proton/atoms/Popper/usePopperState';
 import { shouldShowSideRadius } from '@proton/atoms/Popper/utils';
 import { Portal } from '@proton/atoms/Portal/Portal';
-import { useCombinedRefs } from '@proton/hooks';
+import useCombinedRefs from '@proton/hooks/useCombinedRefs';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import discoverIllustration from '@proton/styles/assets/img/illustrations/spotlight-binoculars.svg';
 import newIllustration from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';

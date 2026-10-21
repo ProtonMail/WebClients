@@ -14,8 +14,13 @@ import { useConfirm } from '../../../../hooks/useConfirm';
 import { useRequest } from '../../../../hooks/useRequest';
 import { getAddressId } from '../../../../lib/monitor/monitor.utils';
 import { AddressType, type MonitorAddress } from '../../../../lib/monitor/types';
-import { deleteCustomAddress, resolveAddressMonitor, toggleAddressMonitor } from '../../../../store/actions';
-import { selectMonitorSettingByType, selectRequestInFlight } from '../../../../store/selectors';
+import {
+    deleteCustomAddress,
+    resolveAddressMonitor,
+    toggleAddressMonitor,
+} from '../../../../store/actions/creators/monitor';
+import { selectRequestInFlight } from '../../../../store/request/selectors';
+import { selectMonitorSettingByType } from '../../../../store/selectors/monitor';
 import { ConfirmationModal } from '../../../Confirmation/ConfirmationModal';
 import { DropdownMenuButton } from '../../../Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '../../../Layout/Dropdown/QuickActionsDropdown';

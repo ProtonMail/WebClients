@@ -7,8 +7,8 @@ import { Button } from '@proton/atoms/Button/Button';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import clsx from '@proton/utils/clsx';
 
-import type { MaybeNull } from '../../types';
-import { InAppNotificationState } from '../../types';
+import { InAppNotificationState } from '../../types/api/pass';
+import type { MaybeNull } from '../../types/utils';
 import { useInAppNotificationContainer } from './InAppNotificationPortal';
 import { WithInAppNotification } from './WithInAppNotification';
 

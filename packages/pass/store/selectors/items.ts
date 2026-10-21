@@ -4,7 +4,9 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { hasEmail, isActive, isItemType, isPinned, isTrashed } from '../../lib/items/item.predicates';
 import { filterItemsByFolderIds, filterItemsByUserIdentifier, flattenItemsByShareId, sortItems } from '../../lib/items/item.utils';
-import type { ItemRevision, ItemRevisionWithOptimistic, ItemSortFilter, ItemType, Maybe, MaybeNull, SelectedItem } from '../../types';
+import type { ItemRevision, ItemRevisionWithOptimistic, ItemSortFilter, SelectedItem } from '../../types/data/items';
+import type { ItemType } from '../../types/protobuf';
+import type { Maybe, MaybeNull } from '../../types/utils';
 import { first } from '../../utils/array/first';
 import { and, not } from '../../utils/fp/predicates';
 import selectFailedAction from '../optimistic/selectors/select-failed-action';

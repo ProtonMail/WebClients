@@ -1,7 +1,7 @@
 import { getInvalidPasswordString } from '../../../lib/auth/utils';
 import { generateOfflineComponents } from '../../../lib/cache/crypto';
 import { deobfuscate } from '../../../utils/obfuscate/xor';
-import { offlineSetup } from '../../actions';
+import { offlineSetup } from '../../actions/creators/settings';
 import { createRequestSaga } from '../../request/sagas';
 
 export default createRequestSaga({

@@ -4,7 +4,7 @@ import { PermissionBlockedError, requestPermission } from '@proton/meet/store/sl
 import type { MeetState } from '@proton/meet/store/store';
 import type { PermissionOutcome } from '@proton/meet/telemetry/events';
 import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 
 const toPermissionOutcome = (state: PermissionState): PermissionOutcome => {
     if (state === 'granted') {

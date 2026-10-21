@@ -13,10 +13,10 @@ import clsx from '@proton/utils/clsx';
 
 import { useRequest } from '../../../hooks/useRequest';
 import type { PersonalAccessToken } from '../../../lib/access-token/access-token.types';
-import { getAccessTokenActions } from '../../../store/actions';
-import { selectAccessTokenActions } from '../../../store/selectors';
-import type { MaybeNull } from '../../../types';
+import { getAccessTokenActions } from '../../../store/actions/creators/access-token';
+import { selectAccessTokenActions } from '../../../store/selectors/access-token';
 import { EventType2 as PassEventType } from '../../../types/api/pass';
+import type { MaybeNull } from '../../../types/utils';
 import { epochToDateTime } from '../../../utils/time/format';
 import { PassModal } from '../../Layout/Modal/PassModal';
 

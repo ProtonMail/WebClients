@@ -46,7 +46,7 @@ import {
 import { selectAutofillModelExperimentGroup, selectPassPlan } from '@proton/pass/store/selectors/user';
 import type { ItemContent, ItemRevision, SelectedItem } from '@proton/pass/types/data/items';
 import type { AutofillPageTelemetryDimensions } from '@proton/pass/types/data/telemetry';
-import type { Maybe, MaybeNull } from '@proton/pass/types/utils/index';
+import type { Maybe, MaybeNull } from '@proton/pass/types/utils';
 import type { CCItemData } from '@proton/pass/types/worker/data';
 import type { FormCredentials } from '@proton/pass/types/worker/form';
 import type { FrameId, TabId } from '@proton/pass/types/worker/runtime';

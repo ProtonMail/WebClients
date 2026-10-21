@@ -4,7 +4,7 @@ import type {
     WasmRemoteEntry,
 } from '@protontech/authenticator-rust-core/worker';
 
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types/utils';
 
 import type { Item } from '../db/entities/items';
 import { service } from '../wasm/service';

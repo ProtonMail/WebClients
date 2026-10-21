@@ -1,7 +1,9 @@
 /** combined in main items reducer: `./items.ts` */
 import type { Reducer } from 'redux';
 
-import type { IndexedByShareIdAndItemId, ItemId, SecureLink, ShareId } from '../../types';
+import type { ItemId, ShareId } from '../../types/crypto/pass-types';
+import type { IndexedByShareIdAndItemId } from '../../types/data/items';
+import type { SecureLink } from '../../types/data/items.dto';
 import { prop } from '../../utils/fp/lens';
 import { eq, not, notIn, or } from '../../utils/fp/predicates';
 import { objectDelete } from '../../utils/object/delete';
@@ -18,10 +20,9 @@ import {
     secureLinkRemove,
     secureLinksGet,
     secureLinksRemoveInactive,
-    shareDeleted,
-    vaultDeleteSuccess,
-    vaultMoveAllItemsProgress,
-} from '../actions';
+} from '../actions/creators/item';
+import { shareDeleted } from '../actions/creators/share';
+import { vaultDeleteSuccess, vaultMoveAllItemsProgress } from '../actions/creators/vault';
 
 export type SecureLinkState = IndexedByShareIdAndItemId<SecureLink[]>;
 

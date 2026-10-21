@@ -1,6 +1,6 @@
 import type { WasmProtonWalletApiClient } from '@proton/andromeda';
 import type { NotificationsManager } from '@proton/app-context/notifications/manager';
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 
 export interface WalletThunkArguments extends ProtonThunkArguments {
     walletApi: WasmProtonWalletApiClient;

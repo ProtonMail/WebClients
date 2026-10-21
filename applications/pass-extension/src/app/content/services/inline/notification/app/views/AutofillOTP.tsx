@@ -11,7 +11,7 @@ import { useOTPCode } from '@proton/pass/hooks/useOTPCode';
 import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
 import { getItemKey } from '@proton/pass/lib/items/item.utils';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
-import type { MaybeNull } from '@proton/pass/types/utils/index';
+import type { MaybeNull } from '@proton/pass/types/utils';
 import type { OtpRequest } from '@proton/pass/types/worker/otp';
 
 import { useIFrameAppController, useIFrameAppState } from '../../../../../../../lib/components/Inline/IFrameApp';

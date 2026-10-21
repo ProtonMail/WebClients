@@ -1,11 +1,7 @@
-import type {
-    EncodedItemKeyRotation,
-    ItemKey,
-    ItemMoveIndividualToShareRequest,
-    MaybeNull,
-    RotationKey,
-} from '../../../../types';
-import { PassEncryptionTag } from '../../../../types';
+import type { EncodedItemKeyRotation, ItemMoveIndividualToShareRequest } from '../../../../types/api/pass';
+import type { ItemKey, RotationKey } from '../../../../types/crypto/pass-types';
+import { PassEncryptionTag } from '../../../../types/crypto/pass-types';
+import type { MaybeNull } from '../../../../types/utils';
 import { encryptData } from '../../utils/crypto-helpers';
 
 type MoveItemProcessParams = {

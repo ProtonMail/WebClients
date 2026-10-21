@@ -3,7 +3,7 @@ import type { FC } from 'react';
 import { c } from 'ttag';
 
 import { useRequest } from '../../hooks/useRequest';
-import { folderEdit } from '../../store/actions';
+import { folderEdit } from '../../store/actions/creators/folders';
 import { FolderFormModal } from './FolderFormModal';
 
 interface Props {

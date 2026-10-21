@@ -9,7 +9,7 @@ import {
 import { CCFieldType, FieldType } from '@protontech/autofill/types';
 
 import { getItemKey } from '@proton/pass/lib/items/item.utils';
-import type { Maybe } from '@proton/pass/types/utils/index';
+import type { Maybe } from '@proton/pass/types/utils';
 import type { CCItemData } from '@proton/pass/types/worker/data';
 import { isInputElement } from '@proton/pass/utils/dom/predicates';
 import { head, last, prop } from '@proton/pass/utils/fp/lens';

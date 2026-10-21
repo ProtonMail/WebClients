@@ -7,11 +7,11 @@ import { useFormik } from 'formik';
 import noop from '@proton/utils/noop';
 
 import { validateInvite } from '../../lib/validation/invite';
-import type { inviteBatchCreateFailure, inviteBatchCreateSuccess } from '../../store/actions';
-import { inviteBatchCreateIntent } from '../../store/actions';
+import type { inviteBatchCreateFailure, inviteBatchCreateSuccess } from '../../store/actions/creators/invite';
+import { inviteBatchCreateIntent } from '../../store/actions/creators/invite';
 import type { State } from '../../store/types';
-import type { InviteFormValues } from '../../types';
 import type { InviteBatchCreateSuccess } from '../../types/data/invites.dto';
+import type { InviteFormValues } from '../../types/forms/invite';
 import { useActionRequest } from '../useRequest';
 import { useStatefulRef } from '../useStatefulRef';
 import { useAddressValidator } from './useAddressValidator';

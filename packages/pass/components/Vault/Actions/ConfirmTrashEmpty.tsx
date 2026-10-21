@@ -5,7 +5,8 @@ import { c, msgid } from 'ttag';
 
 import Alert from '@proton/components/components/alert/Alert';
 
-import { selectHasTrashedSharedItems, selectTrashedAliasCount } from '../../../store/selectors';
+import { selectTrashedAliasCount } from '../../../store/selectors/alias';
+import { selectHasTrashedSharedItems } from '../../../store/selectors/shared';
 import { ConfirmationPrompt, type ConfirmationPromptHandles } from '../../Confirmation/ConfirmationPrompt';
 
 export const ConfirmTrashEmpty: FC<ConfirmationPromptHandles> = ({ onCancel, onConfirm }) => {

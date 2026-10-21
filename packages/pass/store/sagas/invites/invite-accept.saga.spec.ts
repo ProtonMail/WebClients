@@ -5,12 +5,14 @@ import * as folderRequests from '../../../lib/folders/folders.requests';
 import * as inviteRequests from '../../../lib/invites/invite.requests';
 import * as itemRequests from '../../../lib/items/item.requests';
 import * as shareParser from '../../../lib/shares/share.parser';
-import type { FolderData, Invite, ShareGetResponse } from '../../../types';
-import { ShareType } from '../../../types';
+import type { ShareGetResponse } from '../../../types/api/pass';
+import type { FolderData } from '../../../types/data/folders';
+import type { Invite } from '../../../types/data/invites';
+import { ShareType } from '../../../types/data/shares';
 import { createTestItem } from '../../../utils/tests/fixtures/items';
 import { createTestShare } from '../../../utils/tests/fixtures/shares';
 import { sagaSetup } from '../../../utils/tests/saga';
-import { inviteAccept } from '../../actions';
+import { inviteAccept } from '../../actions/creators/invite';
 import type { RootSagaOptions } from '../../types';
 import acceptInviteSaga from './invite-accept.saga';
 

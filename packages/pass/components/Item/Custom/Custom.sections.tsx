@@ -6,7 +6,10 @@ import { c } from 'ttag';
 
 import { UpsellRef } from '../../../constants';
 import type { ExtraSectionsError } from '../../../lib/validation/custom-item';
-import type { CustomItemFormValues, DeobfuscatedItemExtraField, ExtraFieldType, Maybe } from '../../../types';
+import type { DeobfuscatedItemExtraField } from '../../../types/data/items';
+import type { CustomItemFormValues } from '../../../types/forms/item';
+import type { ExtraFieldType } from '../../../types/protobuf';
+import type { Maybe } from '../../../types/utils';
 import { autofocusInput } from '../../../utils/dom/input';
 import { AddExtraFieldDropdown } from '../../Form/Field/ExtraFieldGroup/AddExtraFieldDropdown';
 import { DeleteButton, ExtraFieldComponent } from '../../Form/Field/ExtraFieldGroup/ExtraField';

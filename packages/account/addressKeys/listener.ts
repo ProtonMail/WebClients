@@ -1,7 +1,7 @@
 import { CryptoProxy } from '@protontech/crypto';
 import isDeepEqual from 'lodash/isEqual';
 
-import type { SharedStartListening } from '@proton/redux-shared-store-types';
+import type { SharedStartListening } from '@proton/redux-shared-store-types/interface';
 import { CacheType } from '@proton/redux-utilities/interface';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { DecryptedAddressKey, DecryptedKey, Key } from '@proton/shared/lib/interfaces/Key';

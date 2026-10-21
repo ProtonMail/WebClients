@@ -1,7 +1,7 @@
 import browser from '@proton/pass/lib/globals/browser';
 import type { URLComponents } from '@proton/pass/lib/urls/types';
 import { urlEq } from '@proton/pass/lib/urls/utils/utils';
-import type { Maybe } from '@proton/pass/types/utils/index';
+import type { Maybe } from '@proton/pass/types/utils';
 import type { FormEntry, FormEntryBase, FormStatusPayload } from '@proton/pass/types/worker/form';
 import { FormEntryStatus } from '@proton/pass/types/worker/form';
 import type { FrameId, TabId } from '@proton/pass/types/worker/runtime';

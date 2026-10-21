@@ -1,6 +1,6 @@
 import { type ComponentType, useMemo, useState } from 'react';
 
-import type { IdentityExtraFieldsKey, IdentityFieldName, IdentityValues } from '../../types';
+import type { IdentityExtraFieldsKey, IdentityFieldName, IdentityValues } from '../../types/forms/item';
 import { arrayRemove } from '../../utils/array/remove';
 import { prop } from '../../utils/fp/lens';
 import { getIdentityFields, getInitialSections } from './utils';

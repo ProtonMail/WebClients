@@ -1,5 +1,5 @@
 import browser from '@proton/pass/lib/globals/browser';
-import type { Maybe } from '@proton/pass/types/utils/index';
+import type { Maybe } from '@proton/pass/types/utils';
 
 const getFirefoxVersion = (() => {
     let version: Maybe<number>;

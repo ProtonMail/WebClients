@@ -1,13 +1,8 @@
+import type { MinimumNoticeMode } from '@proton/shared/lib/interfaces/calendar/Bookings';
+
 export enum BookingLocation {
     MEET = 'Meet',
     OTHER_LOCATION = 'other-location',
-}
-
-export enum MinimumNoticeMode {
-    OFF = 0,
-    TWO_HOURS = 1,
-    FORTY_EIGHT_HOURS = 2,
-    NOT_SAME_DAY = 3,
 }
 
 export interface APISlot {

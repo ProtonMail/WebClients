@@ -2,8 +2,9 @@ import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { isWritableVault } from '../../lib/vaults/vault.predicates';
-import { selectDefaultVault, selectShare } from '../../store/selectors';
-import type { MaybeNull } from '../../types';
+import { selectShare } from '../../store/selectors/shares';
+import { selectDefaultVault } from '../../store/selectors/vaults';
+import type { MaybeNull } from '../../types/utils';
 import { useNavigationFilters } from '../Navigation/NavigationFilters';
 
 export type FolderCreateTarget = { shareId: string; parentFolderId: MaybeNull<string> };

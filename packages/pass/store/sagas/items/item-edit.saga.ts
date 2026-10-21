@@ -4,17 +4,22 @@ import { syncAliasMailboxes, syncAliasName, syncAliasSLNote } from '../../../lib
 import { hasAttachments, hasHadAttachments } from '../../../lib/items/item.predicates';
 import { editItem } from '../../../lib/items/item.requests';
 import { createTelemetryEvent } from '../../../lib/telemetry/utils';
-import type { ItemEditIntent, ItemRevision, Maybe } from '../../../types';
+import type { ItemRevision } from '../../../types/data/items';
+import type { ItemEditIntent } from '../../../types/data/items.dto';
 import { TelemetryEventName, TelemetryItemType } from '../../../types/data/telemetry';
+import type { Maybe } from '../../../types/utils';
 import { prop } from '../../../utils/fp/lens';
 import { or, truthy } from '../../../utils/fp/predicates';
 import { deobfuscate } from '../../../utils/obfuscate/xor';
 import { isEqual } from '../../../utils/set/is-equal';
-import { aliasDetailsSync, filesResolve, itemEdit, itemEditDismiss } from '../../actions';
+import { aliasDetailsSync } from '../../actions/creators/alias';
+import { filesResolve } from '../../actions/creators/files';
+import { itemEdit, itemEditDismiss } from '../../actions/creators/item';
 import type { AliasDetailsState, AliasState } from '../../reducers';
 import { withRevalidate } from '../../request/enhancers';
-import { selectAliasDetails, selectAliasOptions, selectItem, selectItemOrThrow, selectMailboxesForAlias } from '../../selectors';
+import { selectAliasDetails, selectAliasOptions, selectMailboxesForAlias } from '../../selectors/alias';
 import { SelectorError } from '../../selectors/errors';
+import { selectItem, selectItemOrThrow } from '../../selectors/items';
 import type { RootSagaOptions } from '../../types';
 import { itemLinkPendingFiles } from './item-files.sagas';
 

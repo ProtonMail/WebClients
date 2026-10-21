@@ -5,7 +5,7 @@ import type {
     GenerationResponseMessage,
     ToolName as ServerToolName,
     Turn,
-} from '@proton/lumo-api-client';
+} from '@proton/lumo-api-client/core/types';
 
 import type { ToolDefinition } from '../contracts/types';
 import { createLoadGuideDefinition } from '../engine/loadGuide';
@@ -28,7 +28,7 @@ jest.mock('@proton/app-context/useApi', () => ({
     useApi: () => jest.fn(),
 }));
 
-jest.mock('@proton/lumo-api-client', () => ({
+jest.mock('@proton/lumo-api-client/core/client', () => ({
     __esModule: true,
     LumoApiClient: class {
         async callAssistant(_api: unknown, turns: Turn[], options: any) {

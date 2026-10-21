@@ -4,7 +4,8 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { createUseContext } from '../../hooks/useContextFactory';
 import { useStatefulRef } from '../../hooks/useStatefulRef';
-import type { ItemFilters, MaybeNull } from '../../types';
+import type { ItemFilters } from '../../types/data/items';
+import type { MaybeNull } from '../../types/utils';
 import { useNavigate } from './NavigationActions';
 import { decodeFiltersFromSearch } from './routing';
 

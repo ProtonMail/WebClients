@@ -5,19 +5,20 @@ import lastItem from '@proton/utils/lastItem';
 import { PassErrorCode } from '../../lib/api/errors';
 import { intoCustomMonitorAddress, intoMonitorDomain, intoProtonMonitorAddress } from '../../lib/monitor/monitor.utils';
 import { AddressType, type MonitorAddress, type MonitorDomain } from '../../lib/monitor/types';
-import type { BreachesGetResponse, MaybeNull } from '../../types';
+import type { BreachesGetResponse } from '../../types/api/pass';
+import type { MaybeNull } from '../../types/utils';
 import { or } from '../../utils/fp/predicates';
 import { partialMerge } from '../../utils/object/merge';
+import { matchSyncAction } from '../actions/creators/client';
 import {
     addCustomAddress,
     deleteCustomAddress,
     getBreaches,
-    matchSyncAction,
     resolveAddressMonitor,
     setBreaches,
     toggleAddressMonitor,
     verifyCustomAddress,
-} from '../actions';
+} from '../actions/creators/monitor';
 
 type MonitorState = MaybeNull<{
     custom: MonitorAddress<AddressType.CUSTOM>[];

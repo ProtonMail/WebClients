@@ -19,7 +19,8 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { usePassBridge } from '../../../lib/bridge/PassBridgeProvider';
 import type { MonitorReport, UsageReport } from '../../../lib/organization/types';
-import type { MaybeNull, MemberMonitorReport } from '../../../types';
+import type { MemberMonitorReport } from '../../../types/api/pass';
+import type { MaybeNull } from '../../../types/utils';
 import { PassReportsMonitorTable } from './PassReportsMonitorTable';
 import { PassReportsUsageTable } from './PassReportsUsageTable';
 

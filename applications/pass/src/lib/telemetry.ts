@@ -4,7 +4,7 @@ import { getTelemetryStorageKey } from 'proton-pass-web/lib/storage';
 import { authStore } from '@proton/pass/lib/auth/store';
 import type { TelemetryService } from '@proton/pass/lib/telemetry/service';
 import { createCoreTelemetryService } from '@proton/pass/lib/telemetry/service';
-import { selectTelemetryEnabled, selectUserTier } from '@proton/pass/store/selectors';
+import { selectTelemetryEnabled, selectUserTier } from '@proton/pass/store/selectors/user';
 import { createTimeoutAlarm } from '@proton/pass/utils/time/alarm';
 
 export const telemetry = (() => {

@@ -1,8 +1,8 @@
 import { put, select, take, takeLeading } from 'redux-saga/effects';
 
-import type { ItemRevision } from '../../../types';
-import { emptyTrashFailure, emptyTrashIntent, emptyTrashProgress, emptyTrashSuccess } from '../../actions';
-import { selectTrashedItems } from '../../selectors';
+import type { ItemRevision } from '../../../types/data/items';
+import { emptyTrashFailure, emptyTrashIntent, emptyTrashProgress, emptyTrashSuccess } from '../../actions/creators/trash';
+import { selectTrashedItems } from '../../selectors/items';
 import { type BulkDeleteChannel, bulkDeleteChannel } from '../items/item-bulk-delete.saga';
 
 function* emptyTrashWorker({ meta }: ReturnType<typeof emptyTrashIntent>) {

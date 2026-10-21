@@ -1,6 +1,6 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
 
 import { addressesThunk } from '../addresses';

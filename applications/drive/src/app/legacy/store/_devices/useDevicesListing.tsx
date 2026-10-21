@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { EnrichedError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 
 import { useLink } from '../_links';
 import { useVolumesState } from '../_volumes';

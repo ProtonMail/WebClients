@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import type { UserSettings } from '@proton/shared/lib/interfaces/Meet';
 
 import { updateLiveCaptionsLocaleThunk, userSettingsReducer, userSettingsThunk } from './userSettings';

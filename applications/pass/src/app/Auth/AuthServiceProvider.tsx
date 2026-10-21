@@ -21,7 +21,7 @@ import { AppStatusFromLockMode, LockMode, type UnlockDTO } from '@proton/pass/li
 import type { AuthService } from '@proton/pass/lib/auth/service';
 import { authStore } from '@proton/pass/lib/auth/store';
 import type { ConnectivityService } from '@proton/pass/lib/network/connectivity.service';
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types/utils';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { logger } from '@proton/pass/utils/logger';

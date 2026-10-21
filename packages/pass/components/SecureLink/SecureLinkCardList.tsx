@@ -1,8 +1,9 @@
 import { type FC, useMemo, useState } from 'react';
 
 import { useMemoSelector } from '../../hooks/useMemoSelector';
-import { selectItemSecureLinks } from '../../store/selectors';
-import type { MaybeNull, SelectedItem } from '../../types';
+import { selectItemSecureLinks } from '../../store/selectors/secure-links';
+import type { SelectedItem } from '../../types/data/items';
+import type { MaybeNull } from '../../types/utils';
 import { prop } from '../../utils/fp/lens';
 import { useItemScope } from '../Navigation/NavigationMatches';
 import { SecureLinkCard } from './SecureLinkCard';

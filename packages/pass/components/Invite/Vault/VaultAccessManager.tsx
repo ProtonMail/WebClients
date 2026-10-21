@@ -11,9 +11,10 @@ import { useShareAccessOptionsPolling } from '../../../hooks/useShareAccessOptio
 import { AccessTarget } from '../../../lib/access/types';
 import { getLimitReachedText } from '../../../lib/invites/invite.utils';
 import { isGroupManagedShare, isShareManageable } from '../../../lib/shares/share.predicates';
-import { selectOwnWritableVaults, selectPassPlan, selectShareOrThrow } from '../../../store/selectors';
-import type { ShareType } from '../../../types';
+import { selectOwnWritableVaults, selectShareOrThrow } from '../../../store/selectors/shares';
+import { selectPassPlan } from '../../../store/selectors/user';
 import { UserPassPlan } from '../../../types/api/plan';
+import type { ShareType } from '../../../types/data/shares';
 import { Card } from '../../Layout/Card/Card';
 import { SidebarModal } from '../../Layout/Modal/SidebarModal';
 import { Panel } from '../../Layout/Panel/Panel';

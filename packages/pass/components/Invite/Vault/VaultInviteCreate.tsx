@@ -9,8 +9,10 @@ import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 
 import { useInviteForm } from '../../../hooks/invite/useInviteForm';
 import { AccessTarget } from '../../../lib/access/types';
-import { selectShareOrThrow } from '../../../store/selectors';
-import type { SelectedShare, ShareType, VaultInviteFormValues } from '../../../types';
+import { selectShareOrThrow } from '../../../store/selectors/shares';
+import type { SelectedShare } from '../../../types/data/items';
+import type { ShareType } from '../../../types/data/shares';
+import type { VaultInviteFormValues } from '../../../types/forms/invite';
 import { SidebarModal } from '../../Layout/Modal/SidebarModal';
 import { Panel } from '../../Layout/Panel/Panel';
 import { PanelHeader } from '../../Layout/Panel/PanelHeader';

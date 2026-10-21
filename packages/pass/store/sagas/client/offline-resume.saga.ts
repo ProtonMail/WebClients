@@ -4,7 +4,7 @@ import identity from '@proton/utils/identity';
 
 import { api } from '../../../lib/api/api';
 import { isPassCryptoError } from '../../../lib/crypto/utils/errors';
-import { offlineResume, startEventPolling } from '../../actions';
+import { offlineResume, startEventPolling } from '../../actions/creators/client';
 import { createRequestSaga } from '../../request/sagas';
 import { hydrate } from './hydrate.saga';
 

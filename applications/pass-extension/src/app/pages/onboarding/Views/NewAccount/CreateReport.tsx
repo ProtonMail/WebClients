@@ -7,7 +7,7 @@ import { Layout } from '@proton/pass/components/Onboarding/Layout/Layout';
 import { OnboardingButton } from '@proton/pass/components/Onboarding/UI/OnboardingButton';
 import { OpenExtension } from '@proton/pass/components/Onboarding/UI/OpenExtension';
 import { Sample } from '@proton/pass/components/Onboarding/UI/Sample';
-import { selectUser } from '@proton/pass/store/selectors';
+import { selectUser } from '@proton/pass/store/selectors/user';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useCreateContext } from './CreateProvider';

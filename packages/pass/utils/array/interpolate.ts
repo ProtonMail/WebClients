@@ -1,4 +1,4 @@
-import type { MaybeNull } from '../../types';
+import type { MaybeNull } from '../../types/utils';
 
 type InterpolationItem<Value, Cluster> = { type: 'entry'; entry: Value } | { type: 'interpolation'; cluster: Cluster };
 

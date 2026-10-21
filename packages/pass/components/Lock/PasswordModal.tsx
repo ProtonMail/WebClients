@@ -15,7 +15,7 @@ import { usePasswordForm } from '../../hooks/auth/usePasswordForm';
 import type { AsyncModalState } from '../../hooks/useAsyncModalHandles';
 import type { RequestForkOptions } from '../../lib/auth/fork';
 import type { ReauthActionPayload } from '../../lib/auth/reauth';
-import type { Maybe, MaybePromise } from '../../types';
+import type { Maybe, MaybePromise } from '../../types/utils';
 import type { XorObfuscation } from '../../utils/obfuscate/xor';
 import { Card } from '../Layout/Card/Card';
 import type { OnReauthFn } from './PasswordUnlockProvider';

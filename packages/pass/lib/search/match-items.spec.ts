@@ -1,4 +1,4 @@
-import type { ItemRevision } from '../../types';
+import type { ItemRevision } from '../../types/data/items';
 import { AutofillMode, CardType } from '../../types/protobuf';
 import { obfuscate } from '../../utils/obfuscate/xor';
 import { searchItems } from './match-items';

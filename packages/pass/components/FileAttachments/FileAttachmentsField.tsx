@@ -20,14 +20,15 @@ import { resolveMimeTypeForFile, useFileUpload } from '../../hooks/files/useFile
 import { useAsyncRequestDispatch } from '../../hooks/useDispatchAsyncRequest';
 import { isAbortError } from '../../lib/api/errors';
 import { validateFileName } from '../../lib/file-attachments/helpers';
-import { fileUpdateMetadata } from '../../store/actions';
+import { fileUpdateMetadata } from '../../store/actions/creators/files';
 import {
     selectUserStorageAllowed,
     selectUserStorageMaxFileSize,
     selectUserStorageQuota,
     selectUserStorageUsed,
-} from '../../store/selectors';
-import type { BaseFileDescriptor, FileAttachmentValues, FileID, ShareId } from '../../types';
+} from '../../store/selectors/user';
+import type { ShareId } from '../../types/crypto/pass-types';
+import type { BaseFileDescriptor, FileAttachmentValues, FileID } from '../../types/data/files';
 import { eq, not } from '../../utils/fp/predicates';
 import { seq } from '../../utils/fp/promises';
 import { updateMap } from '../../utils/fp/state';

@@ -5,7 +5,7 @@ import { addressThunk, addressesThunk } from '@proton/account/addresses';
 import type { KtState } from '@proton/account/kt';
 import { getKTActivation } from '@proton/account/kt/actions';
 import { createKTVerifier } from '@proton/key-transparency/helpers';
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { disableAddress } from '@proton/shared/lib/api/addresses';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';

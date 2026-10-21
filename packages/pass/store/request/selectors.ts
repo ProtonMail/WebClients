@@ -1,6 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import type { Maybe, MaybeNull } from '../../types';
+import type { Maybe, MaybeNull } from '../../types/utils';
 import type { RequestEntry, RequestState, RequestStatus } from './types';
 
 export const selectRequest =

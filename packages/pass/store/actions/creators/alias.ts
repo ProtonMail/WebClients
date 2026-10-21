@@ -7,35 +7,35 @@ import identity from '@proton/utils/identity';
 import { PassErrorCode, UnverifiedUserError } from '../../../lib/api/errors';
 import { isDisabledAlias } from '../../../lib/items/item.predicates';
 import type {
-    AliasContactBlockDTO,
     AliasContactGetResponse,
+    AliasContactWithStatsGetResponse,
+    CustomDomainOutput,
+    CustomDomainSettingsOutput,
+    CustomDomainValidationOutput,
+    SlSyncStatusOutput,
+    UserAliasDomainOutput,
+    UserAliasSettingsGetOutput,
+    UserMailboxOutput,
+} from '../../../types/api/pass';
+import type { ShareId } from '../../../types/crypto/pass-types';
+import type {
+    AliasContactBlockDTO,
     AliasContactInfoDTO,
     AliasContactNewDTO,
-    AliasContactWithStatsGetResponse,
     AliasDetails,
     AliasOptions,
     AliasToggleStatusDTO,
     CatchAllDTO,
     CustomDomainMailboxesDTO,
     CustomDomainNameDTO,
-    CustomDomainOutput,
-    CustomDomainSettingsOutput,
-    CustomDomainValidationOutput,
-    ItemRevision,
     MailboxDTO,
     MailboxDeleteDTO,
     MailboxEditDTO,
     MailboxVerifyDTO,
-    MaybeNull,
     RandomPrefixDTO,
-    SelectedItem,
-    ShareId,
-    SlSyncStatusOutput,
-    UniqueItem,
-    UserAliasDomainOutput,
-    UserAliasSettingsGetOutput,
-    UserMailboxOutput,
-} from '../../../types';
+} from '../../../types/data/alias';
+import type { ItemRevision, SelectedItem, UniqueItem } from '../../../types/data/items';
+import type { MaybeNull } from '../../../types/utils';
 import { pipe } from '../../../utils/fp/pipe';
 import { UNIX_MINUTE } from '../../../utils/time/constants';
 import { sessionRequest } from '../../request/configs';

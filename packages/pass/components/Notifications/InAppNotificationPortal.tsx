@@ -4,7 +4,7 @@ import { createContext, memo, useEffect, useMemo, useRef, useState } from 'react
 import clsx from '@proton/utils/clsx';
 
 import { createUseContext } from '../../hooks/useContextFactory';
-import type { MaybeNull } from '../../types';
+import type { MaybeNull } from '../../types/utils';
 
 import './InAppNotificationPortal.scss';
 

@@ -10,7 +10,7 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 
 import { useRequest } from '../../hooks/useRequest';
-import { redeemCoupon } from '../../store/actions';
+import { redeemCoupon } from '../../store/actions/creators/settings';
 import { Field } from '../Form/Field/Field';
 import { FieldsetCluster } from '../Form/Field/Layout/FieldsetCluster';
 import { TextField } from '../Form/Field/TextField';

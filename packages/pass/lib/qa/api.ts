@@ -3,7 +3,7 @@ import { RETRY_DELAY_MAX } from '@proton/shared/lib/constants';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { createApiError } from '@proton/shared/lib/fetch/ApiError';
 
-import type { ApiCallFn } from '../../types';
+import type { ApiCallFn } from '../../types/api/api';
 import { QA_SERVICE } from './service';
 
 const REFRESH_URL = setRefreshCookies().url;

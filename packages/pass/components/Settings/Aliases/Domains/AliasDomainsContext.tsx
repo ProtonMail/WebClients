@@ -4,10 +4,10 @@ import { createUseContext } from '../../../../hooks/useContextFactory';
 import type {
     CustomDomainOutput,
     CustomDomainValidationOutput,
-    MaybeNull,
     UserAliasDomainOutput,
     UserAliasSettingsGetOutput,
-} from '../../../../types';
+} from '../../../../types/api/pass';
+import type { MaybeNull } from '../../../../types/utils';
 
 export type DomainAction =
     | { type: 'create' }

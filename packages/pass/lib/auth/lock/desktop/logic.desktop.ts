@@ -1,5 +1,8 @@
-import type { NativeMessageSetupLockSecretRequest } from '../../../../types';
-import { type NativeMessageSetupLockSecretResponse, NativeMessageType } from '../../../../types';
+import type { NativeMessageSetupLockSecretRequest } from '../../../../types/desktop/extension-unlock-with-desktop';
+import {
+    type NativeMessageSetupLockSecretResponse,
+    NativeMessageType,
+} from '../../../../types/desktop/extension-unlock-with-desktop';
 import { logger } from '../../../../utils/logger';
 import { sendNativeMessageResponse } from '../../../native-messaging/native-messaging.desktop';
 

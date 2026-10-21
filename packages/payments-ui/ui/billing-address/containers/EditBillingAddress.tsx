@@ -15,7 +15,7 @@ import type { ModalTwoPromiseHandlers } from '@proton/components/components/moda
 import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { InfoBanner } from '@proton/components/containers/payments/subscription/confirm-button/InfoBanner';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { type FullBillingAddress, zipCodeValidator } from '@proton/payments/core/billing-address/billing-address';
 import { getVatFormErrors } from '@proton/payments/core/billing-address/vat-helpers';
 import type { BillingAddressValidationResult } from '@proton/payments/core/errors';

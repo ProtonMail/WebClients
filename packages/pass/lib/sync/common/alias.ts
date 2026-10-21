@@ -1,7 +1,10 @@
 import { select } from 'redux-saga/effects';
 
-import { selectUserDefaultShareID } from '../../../store/selectors';
-import type { AliasPending, ItemRevision, ItemRevisionContentsResponse, Maybe } from '../../../types';
+import { selectUserDefaultShareID } from '../../../store/selectors/user';
+import type { ItemRevisionContentsResponse } from '../../../types/api/pass';
+import type { AliasPending } from '../../../types/data/alias';
+import type { ItemRevision } from '../../../types/data/items';
+import type { Maybe } from '../../../types/utils';
 import { NoDefaultVaultError } from '../../../utils/errors/errors';
 import { logger } from '../../../utils/logger';
 import { createAliasesFromPending, getPendingAliases } from '../../alias/alias.requests';

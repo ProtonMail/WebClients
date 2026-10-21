@@ -1,6 +1,7 @@
 import type { BrowserWindow } from 'electron';
 
-import type { AutotypeProperties, MaybeNull } from '@proton/pass/types';
+import type { AutotypeProperties } from '@proton/pass/types/desktop/autotype';
+import type { MaybeNull } from '@proton/pass/types/utils';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { Autotype } from 'proton-pass-desktop-native';

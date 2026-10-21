@@ -17,7 +17,8 @@ import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { api } from '@proton/pass/lib/api/api';
 import { decodeUserData, encodeUserData } from '@proton/pass/lib/auth/store.utils';
 import { type AuthSwitchService, type SwitchableSession, createAuthSwitchService } from '@proton/pass/lib/auth/switch';
-import { AppStatus, type MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types/utils';
+import { AppStatus } from '@proton/pass/types/worker/state';
 import noop from '@proton/utils/noop';
 
 const AuthSwitchContext = createContext<MaybeNull<AuthSwitchService>>(null);

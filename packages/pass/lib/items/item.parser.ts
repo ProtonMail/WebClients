@@ -1,4 +1,6 @@
-import type { ItemRevision, ItemRevisionContentsResponse, ItemType } from '../../types';
+import type { ItemRevisionContentsResponse } from '../../types/api/pass';
+import type { ItemRevision } from '../../types/data/items';
+import type { ItemType } from '../../types/protobuf';
 import { PassCrypto } from '../crypto';
 import { parseOpenedItem } from './item-proto.transformer';
 

@@ -6,7 +6,7 @@ import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 
 import { usePassExtensionInstalled } from '../../hooks/usePassExtensionInstalled';
 import { type SupportedExtensionClient, getExtensionSupportedBrowser } from '../../lib/extension/utils/browser';
-import type { MaybeNull } from '../../types';
+import type { MaybeNull } from '../../types/utils';
 
 type PassExtensionLinkValue = { installed: boolean; supportedBrowser: MaybeNull<SupportedExtensionClient> };
 

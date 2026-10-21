@@ -1,6 +1,6 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { getIsOfflineError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getSilentApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';

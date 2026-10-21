@@ -4,10 +4,10 @@ import type { AccessItem } from '../../../lib/access/types';
 import { getPrimaryPublicKeyForEmail } from '../../../lib/auth/address';
 import type { InviteData } from '../../../lib/invites/invite.requests';
 import { loadInvites, promoteInvite } from '../../../lib/invites/invite.requests';
-import type { Maybe } from '../../../types';
-import { newUserInvitePromoteFailure, newUserInvitePromoteIntent, newUserInvitePromoteSuccess } from '../../actions';
+import type { Maybe } from '../../../types/utils';
+import { newUserInvitePromoteFailure, newUserInvitePromoteIntent, newUserInvitePromoteSuccess } from '../../actions/creators/invite';
 import { syncAccess } from '../../actions/creators/polling';
-import { selectAccessOrThrow } from '../../selectors';
+import { selectAccessOrThrow } from '../../selectors/access';
 
 function* promoteInviteWorker({ payload, meta: { request } }: ReturnType<typeof newUserInvitePromoteIntent>) {
     try {

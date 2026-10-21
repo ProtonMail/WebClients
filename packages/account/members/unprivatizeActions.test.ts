@@ -1,5 +1,5 @@
 import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { getTestStore } from '@proton/redux-shared-store/test';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Api } from '@proton/shared/lib/interfaces/Api';

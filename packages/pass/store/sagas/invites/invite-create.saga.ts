@@ -7,14 +7,17 @@ import { createNewUserInvites, createUserInvites } from '../../../lib/invites/in
 import type { InviteBatchResult } from '../../../lib/invites/invite.utils';
 import { concatInviteResults } from '../../../lib/invites/invite.utils';
 import { createTelemetryEvent } from '../../../lib/telemetry/utils';
-import type { ItemRevision, Maybe } from '../../../types';
 import { UserPassPlan } from '../../../types/api/plan';
 import type { InviteMemberDTO, InviteUserDTO } from '../../../types/data/invites.dto';
+import type { ItemRevision } from '../../../types/data/items';
 import { TelemetryEventName, TelemetryItemType, TelemetryTargetType } from '../../../types/data/telemetry';
+import type { Maybe } from '../../../types/utils';
 import { partition } from '../../../utils/array/partition';
-import { inviteBatchCreateFailure, inviteBatchCreateIntent, inviteBatchCreateSuccess } from '../../actions';
+import { inviteBatchCreateFailure, inviteBatchCreateIntent, inviteBatchCreateSuccess } from '../../actions/creators/invite';
 import { syncAccess } from '../../actions/creators/polling';
-import { selectAccessMembers, selectItem, selectPassPlan } from '../../selectors';
+import { selectAccessMembers } from '../../selectors/access';
+import { selectItem } from '../../selectors/items';
+import { selectPassPlan } from '../../selectors/user';
 import type { RootSagaOptions } from '../../types';
 
 function* createInviteWorker(

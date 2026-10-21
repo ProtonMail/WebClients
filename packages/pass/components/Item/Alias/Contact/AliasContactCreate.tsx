@@ -9,8 +9,8 @@ import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
 
 import { useRequest } from '../../../../hooks/useRequest';
 import { validateEmailForm } from '../../../../lib/validation/email';
-import { aliasCreateContact } from '../../../../store/actions';
-import type { AliasCreateContactValues } from '../../../../types';
+import { aliasCreateContact } from '../../../../store/actions/creators/alias';
+import type { AliasCreateContactValues } from '../../../../types/forms/item';
 import { pipe } from '../../../../utils/fp/pipe';
 import { Field } from '../../../Form/Field/Field';
 import { FieldsetCluster } from '../../../Form/Field/Layout/FieldsetCluster';

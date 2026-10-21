@@ -1,4 +1,4 @@
-import type { ProtonDispatch } from '@proton/redux-shared-store-types';
+import type { ProtonDispatch } from '@proton/redux-shared-store-types/interface';
 import { CacheType } from '@proton/redux-utilities/interface';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 

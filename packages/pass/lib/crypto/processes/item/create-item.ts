@@ -1,5 +1,7 @@
-import type { ItemCreateRequest, MaybeNull, RotationKey } from '../../../../types';
-import { ContentFormatVersion, PassEncryptionTag } from '../../../../types';
+import type { ItemCreateRequest } from '../../../../types/api/pass';
+import type { RotationKey } from '../../../../types/crypto/pass-types';
+import { ContentFormatVersion, PassEncryptionTag } from '../../../../types/crypto/pass-types';
+import type { MaybeNull } from '../../../../types/utils';
 import { pipe } from '../../../../utils/fp/pipe';
 import { encryptData, generateKey, importSymmetricKey } from '../../utils/crypto-helpers';
 import { PassCryptoItemError } from '../../utils/errors';

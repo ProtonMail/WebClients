@@ -1,7 +1,7 @@
 import { AppStateManager } from '../../components/Core/AppStateManager';
 import { createAuthStore, exposeAuthStore } from '../../lib/auth/store';
-import type { AppState } from '../../types';
-import { AppStatus } from '../../types';
+import type { AppState } from '../../types/worker/state';
+import { AppStatus } from '../../types/worker/state';
 import { createMemoryStore } from '../store';
 
 export const TEST_LOCAL_ID = 0;

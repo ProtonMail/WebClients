@@ -18,8 +18,10 @@ import type {
     MonitorVerifyDTO,
     ProtonAddressID,
 } from '../../../lib/monitor/types';
-import type { ItemRevision, SelectedItem, ShareId, TabId, UniqueItem } from '../../../types';
 import type { BreachCustomEmailGetResponse, BreachesGetResponse, UpdateUserMonitorStateRequest } from '../../../types/api/pass';
+import type { ShareId } from '../../../types/crypto/pass-types';
+import type { ItemRevision, SelectedItem, UniqueItem } from '../../../types/data/items';
+import type { TabId } from '../../../types/worker/runtime';
 import { prop } from '../../../utils/fp/lens';
 import { pipe } from '../../../utils/fp/pipe';
 import { UNIX_MINUTE } from '../../../utils/time/constants';

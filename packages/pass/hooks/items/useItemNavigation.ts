@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 import { useNavigationActions } from '../../components/Navigation/NavigationActions';
 import { useItemScope } from '../../components/Navigation/NavigationMatches';
-import type { UniqueItem } from '../../types';
+import type { UniqueItem } from '../../types/data/items';
 
 export type ItemNavigationActions = {
     onEdit: () => void;

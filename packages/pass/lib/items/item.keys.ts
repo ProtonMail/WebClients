@@ -1,4 +1,5 @@
-import type { ItemLatestKeyResponse, SelectedItem } from '../../types';
+import type { ItemLatestKeyResponse } from '../../types/api/pass';
+import type { SelectedItem } from '../../types/data/items';
 import { api } from '../api/api';
 
 /** FIXME: we should start caching the item keys */

@@ -2,9 +2,11 @@ import { select } from 'redux-saga/effects';
 
 import { rejectInvite } from '../../../lib/invites/invite.requests';
 import { createTelemetryEvent } from '../../../lib/telemetry/utils';
-import { type Invite, type Maybe, ShareType } from '../../../types';
+import type { Invite } from '../../../types/data/invites';
+import { ShareType } from '../../../types/data/shares';
 import { TelemetryEventName, TelemetryTargetType } from '../../../types/data/telemetry';
-import { inviteReject } from '../../actions';
+import type { Maybe } from '../../../types/utils';
+import { inviteReject } from '../../actions/creators/invite';
 import { createRequestSaga } from '../../request/sagas';
 import { selectInviteByToken } from '../../selectors/invites';
 import type { RootSagaOptions } from '../../types';

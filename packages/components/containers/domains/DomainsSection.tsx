@@ -10,7 +10,7 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import {

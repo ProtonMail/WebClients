@@ -1,5 +1,6 @@
-import type { FolderCreateInputDto, FolderKey, VaultShareKey } from '../../../../types';
-import { ContentFormatVersion, PassEncryptionTag } from '../../../../types';
+import type { FolderCreateInputDto } from '../../../../types/api/pass';
+import type { FolderKey, VaultShareKey } from '../../../../types/crypto/pass-types';
+import { ContentFormatVersion, PassEncryptionTag } from '../../../../types/crypto/pass-types';
 import { encryptData, generateKey, importSymmetricKey } from '../../utils/crypto-helpers';
 import { PassCryptoFolderError } from '../../utils/errors';
 

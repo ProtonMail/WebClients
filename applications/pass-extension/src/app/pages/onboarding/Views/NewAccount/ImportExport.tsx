@@ -10,7 +10,7 @@ import { Tutorial } from '@proton/pass/components/Onboarding/UI/Tutorial';
 import { getTutorial } from '@proton/pass/lib/import/tutorials';
 import type { ImportProvider, ImportProviderInfo } from '@proton/pass/lib/import/types';
 import { PROVIDER_INFO_MAP } from '@proton/pass/lib/import/types';
-import type { Maybe } from '@proton/pass/types';
+import type { Maybe } from '@proton/pass/types/utils';
 
 import { Header } from './Header';
 

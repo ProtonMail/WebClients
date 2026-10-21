@@ -4,7 +4,8 @@ import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import chunk from '@proton/utils/chunk';
 
 import { MIN_MAX_BATCH_PER_REQUEST } from '../../constants';
-import { type InviteTargetKey, type KeyRotationKeyPair, ShareType } from '../../types';
+import type { KeyRotationKeyPair } from '../../types/api/pass';
+import type { InviteTargetKey } from '../../types/crypto/pass-types';
 import type { GroupInvite, Invite, NewUserPendingInvite, PendingInvite, UserInvite } from '../../types/data/invites';
 import type {
     GroupInviteAcceptIntent,
@@ -20,6 +21,7 @@ import type {
     NewUserInvitePromoteIntent,
     NewUserInviteRemoveIntent,
 } from '../../types/data/invites.dto';
+import { ShareType } from '../../types/data/shares';
 import type { Maybe, MaybeNull } from '../../types/utils';
 import { getErrorMessage } from '../../utils/errors/get-error-message';
 import { prop } from '../../utils/fp/lens';

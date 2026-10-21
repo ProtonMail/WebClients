@@ -1,5 +1,5 @@
 import { type WasmApiWalletAccount, WasmScriptType } from '@proton/andromeda';
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { getTestStore } from '@proton/redux-shared-store/test';
 
 import { apiWalletsData } from '../../tests/fixtures';

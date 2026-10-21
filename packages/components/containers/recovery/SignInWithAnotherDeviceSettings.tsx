@@ -4,7 +4,7 @@ import { toggleQrCodeSignIn } from '@proton/account/recovery/userSettingsActions
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Href } from '@proton/atoms/Href/Href';
-import { useLoading } from '@proton/hooks/index';
+import useLoading from '@proton/hooks/useLoading';
 import { IcQrCode } from '@proton/icons/icons/IcQrCode';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';

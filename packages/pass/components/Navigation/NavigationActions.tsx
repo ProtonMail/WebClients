@@ -5,7 +5,8 @@ import { useHistory } from 'react-router-dom';
 import type { Location } from 'history';
 
 import { createUseContext } from '../../hooks/useContextFactory';
-import type { ItemFilters, MaybeNull } from '../../types';
+import type { ItemFilters } from '../../types/data/items';
+import type { MaybeNull } from '../../types/utils';
 import type { ItemScope } from './routing';
 import { getItemRoute, getLocalPath, setSearchFilters } from './routing';
 

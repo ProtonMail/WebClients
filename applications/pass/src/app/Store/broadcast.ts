@@ -6,10 +6,11 @@ import { type Middleware, isAction } from 'redux';
 
 import { authStore } from '@proton/pass/lib/auth/store';
 import { clientBooted } from '@proton/pass/lib/client';
-import { cacheConflict } from '@proton/pass/store/actions';
+import { cacheConflict } from '@proton/pass/store/actions/creators/client';
 import { isCachingAction } from '@proton/pass/store/actions/enhancers/cache';
 import type { State } from '@proton/pass/store/types';
-import { AppStatus, type Maybe } from '@proton/pass/types';
+import type { Maybe } from '@proton/pass/types/utils';
+import { AppStatus } from '@proton/pass/types/worker/state';
 
 /** Resolves how a tab handles a cache-triggering action broadcast from another tab:
  * - booted → apply it (event-source the mutation)

@@ -2,7 +2,7 @@ import type { PayloadAction, ThunkAction, UnknownAction } from '@reduxjs/toolkit
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { lockMeetingCall, unlockMeetingCall } from '@proton/shared/lib/api/meet';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 

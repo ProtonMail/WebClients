@@ -1,5 +1,6 @@
-import type { DeobfuscatedItemExtraField, MaybeNull } from '..';
+import type { DeobfuscatedItemExtraField } from '../data/items';
 import type { AutofillMode } from '../protobuf';
+import type { MaybeNull } from '../utils/index';
 
 export type UrlItem = { url: string; id: string; mode: AutofillMode };
 export type UrlGroupValues = { url: string; urls: UrlItem[]; editingUrlIndex: MaybeNull<number> };

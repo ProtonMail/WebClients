@@ -2,10 +2,14 @@ import { useEffect, useRef } from 'react';
 
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import { IcGlobe } from '@proton/icons/icons/IcGlobe';
-import type { ToolName as ServerToolName } from '@proton/lumo-api-client';
-import { Chip, LumoLogo, LumoThinking, ServerToolChip, renderReplyMarkdown } from '@proton/lumo-ui';
+import type { ToolName as ServerToolName } from '@proton/lumo-api-client/core/types';
+import Chip from '@proton/lumo-ui/Chip';
+import LumoLogo from '@proton/lumo-ui/LumoLogo';
+import LumoThinking from '@proton/lumo-ui/LumoThinking';
+import ServerToolChip from '@proton/lumo-ui/ServerToolChip';
 import type { WelcomeSuggestionCard } from '@proton/lumo-ui/WelcomeSuggestions';
 import WelcomeSuggestions from '@proton/lumo-ui/WelcomeSuggestions';
+import { renderReplyMarkdown } from '@proton/lumo-ui/markdown';
 
 import LumoAgentPromptBar from './LumoAgentPromptBar';
 import ResultTile from './ResultTile';

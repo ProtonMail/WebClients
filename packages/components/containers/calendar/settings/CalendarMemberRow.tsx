@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
 import { getInitials } from '@proton/shared/lib/helpers/string';

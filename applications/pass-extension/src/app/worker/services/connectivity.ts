@@ -4,7 +4,7 @@ import { api } from '@proton/pass/lib/api/api';
 import type { ConnectivityService, GetRetryTimeout } from '@proton/pass/lib/network/connectivity.service';
 import { createConnectivityService as createCoreConnectivityService } from '@proton/pass/lib/network/connectivity.service';
 import { CONNECTIVITY_RETRY_TIMEOUT, type ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
-import type { ClientEndpoint } from '@proton/pass/types';
+import type { ClientEndpoint } from '@proton/pass/types/worker/runtime';
 import { FIBONACCI_LIST } from '@proton/shared/lib/constants';
 
 import { backgroundMessage } from '../../../lib/message/send-message';

@@ -1,9 +1,9 @@
 import type { FC } from 'react';
 
 import { useMemoSelector } from '../../hooks/useMemoSelector';
-import { selectFolderPath } from '../../store/selectors';
-import type { MaybeNull } from '../../types';
+import { selectFolderPath } from '../../store/selectors/folders';
 import type { VaultColor } from '../../types/protobuf/vault-v1.static';
+import type { MaybeNull } from '../../types/utils';
 import { FolderBreadcrumbCore } from './FolderBreadcrumbCore';
 import type { VaultIconValue } from './VaultIcon';
 

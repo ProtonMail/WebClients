@@ -5,7 +5,7 @@ import { NOOP_EVENT } from '../../../../lib/events/manager';
 import { getGroupInvitesQuery } from '../../../../lib/invites/invite.requests';
 import type { GroupInvitesGetResponse } from '../../../../lib/sync/v1/invite-polling.processor';
 import { processGroupInvitePollingEvent } from '../../../../lib/sync/v1/invite-polling.processor';
-import type { Api } from '../../../../types';
+import type { Api } from '../../../../types/api/api';
 import { logger } from '../../../../utils/logger';
 import type { RootSagaOptions } from '../../../types';
 import { eventChannelFactory } from './channel.factory';

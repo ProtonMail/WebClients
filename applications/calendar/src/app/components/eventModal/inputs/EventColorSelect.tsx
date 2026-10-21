@@ -11,7 +11,7 @@ import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
 import UpsellModal from '@proton/components/components/upsell/UpsellModal/UpsellModal';
 import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
-import { FeatureCode } from '@proton/features';
+import { FeatureCode } from '@proton/features/interface';
 import { APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getIsIframe } from '@proton/shared/lib/helpers/browser';
 import { getUpsellRef } from '@proton/shared/lib/helpers/ref';

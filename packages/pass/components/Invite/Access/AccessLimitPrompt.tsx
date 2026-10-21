@@ -7,7 +7,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import Alert from '@proton/components/components/alert/Alert';
 import Prompt from '@proton/components/components/prompt/Prompt';
 
-import { selectPassPlan } from '../../../store/selectors';
+import { selectPassPlan } from '../../../store/selectors/user';
 import { UserPassPlan } from '../../../types/api/plan';
 
 type Props = {

@@ -28,7 +28,7 @@ import {
     type SessionRecoverySliceReducerState,
     sessionRecoveryListener,
 } from '@proton/account/recovery/sessionRecovery';
-import type { ProtonDispatch, ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { ProtonDispatch, ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 
 interface RequiredState
     extends

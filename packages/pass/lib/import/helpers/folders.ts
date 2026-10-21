@@ -1,6 +1,7 @@
 import { c, msgid } from 'ttag';
 
-import type { ItemImportIntent, Maybe, MaybeNull } from '../../../types';
+import type { ItemImportIntent } from '../../../types/data/items.dto';
+import type { Maybe, MaybeNull } from '../../../types/utils';
 import { uniqueId } from '../../../utils/string/unique-id';
 import type { FolderLimitReason, FolderLimits, FoldersById } from '../../folders/folder.utils';
 import { getFolderChildren, getFolderLimitReason, resolveFolderPath } from '../../folders/folder.utils';

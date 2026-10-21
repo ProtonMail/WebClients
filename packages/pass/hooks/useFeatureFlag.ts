@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 
-import { selectFeatureFlag, selectFeatureFlagsReady } from '../store/selectors';
+import { selectFeatureFlag, selectFeatureFlagsReady } from '../store/selectors/user';
 import type { PassFeature } from '../types/api/features';
 
 export const useFeatureFlag = (feature: PassFeature): boolean => useSelector(selectFeatureFlag(feature));

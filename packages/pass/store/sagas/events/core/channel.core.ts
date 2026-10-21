@@ -10,25 +10,31 @@ import { PassCrypto } from '../../../../lib/crypto';
 import type { EventCursor, EventManagerEvent } from '../../../../lib/events/manager';
 import { SyncStrategy } from '../../../../lib/sync/types';
 import { getUserData } from '../../../../lib/user/user.requests';
-import type { Api, CoreEvent, Maybe, MaybeNull, PassPlanResponse } from '../../../../types';
-import { EventActions } from '../../../../types';
+import type { Api } from '../../../../types/api/api';
+import type { CoreEvent } from '../../../../types/api/events';
+import { EventActions } from '../../../../types/api/events';
+import type { PassPlanResponse } from '../../../../types/api/pass';
+import type { Maybe, MaybeNull } from '../../../../types/utils';
 import { prop } from '../../../../utils/fp/lens';
 import { notIn } from '../../../../utils/fp/predicates';
 import { logId, logger } from '../../../../utils/logger';
-import { coreEvent, getInAppNotifications, getUserAccessIntent, getUserFeaturesIntent, syncIntent, userRefresh } from '../../../actions';
+import { coreEvent, userRefresh } from '../../../actions/creators/api';
+import { syncIntent } from '../../../actions/creators/client';
 import { getGroup } from '../../../actions/creators/groups';
+import { getInAppNotifications } from '../../../actions/creators/notification';
 import { getOrganizationPauseList, getOrganizationSettings } from '../../../actions/creators/organization';
+import { getUserAccessIntent, getUserFeaturesIntent } from '../../../actions/creators/user';
 import type { HydratedUserState } from '../../../reducers';
 import { withRevalidate } from '../../../request/enhancers';
+import { selectSyncStrategy } from '../../../selectors/settings';
 import {
     selectAllAddresses,
     selectLatestEventId,
     selectLatestUserEventId,
-    selectSyncStrategy,
     selectUser,
     selectUserPlan,
     selectUserSettings,
-} from '../../../selectors';
+} from '../../../selectors/user';
 import type { RootSagaOptions } from '../../../types';
 import { eventChannelFactory } from '../v1/channel.factory';
 import { channelEvents, channelInitalize } from '../v1/channel.worker';

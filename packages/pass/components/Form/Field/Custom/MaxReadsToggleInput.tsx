@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import Toggle from '@proton/components/components/toggle/Toggle';
 
-import type { MaybeNull } from '../../../../types';
+import type { MaybeNull } from '../../../../types/utils';
 import { InlineFieldBox } from '../Layout/InlineFieldBox';
 import { IncrementableInput } from './IncrementableInput';
 

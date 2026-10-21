@@ -2,7 +2,8 @@ import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 import noop from '@proton/utils/noop';
 
-import type { Api, Maybe } from '../../types';
+import type { Api } from '../../types/api/api';
+import type { Maybe } from '../../types/utils';
 import { logger } from '../../utils/logger';
 import {
     CACHED_IMAGE_DEFAULT_MAX_AGE,

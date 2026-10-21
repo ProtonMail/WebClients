@@ -13,7 +13,7 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
 } from '@proton/components';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { IcFolderPlus } from '@proton/icons/icons/IcFolderPlus';
 
 import type { DirectoryTreeItem } from '../../../components/DirectoryTree/DirectoryTree';

@@ -1,4 +1,4 @@
-import type { SharedStartListening } from '@proton/redux-shared-store-types';
+import type { SharedStartListening } from '@proton/redux-shared-store-types/interface';
 import { getIsMemberPendingOrgKeyResetUnprivatization } from '@proton/shared/lib/keys/memberHelper';
 import noop from '@proton/utils/noop';
 

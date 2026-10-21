@@ -1,5 +1,5 @@
 import { trashItems } from '../../../lib/items/item.requests';
-import { itemTrash } from '../../actions';
+import { itemTrash } from '../../actions/creators/item';
 import { createRequestSaga } from '../../request/sagas';
 
 export default createRequestSaga({

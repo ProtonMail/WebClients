@@ -4,7 +4,8 @@ import { differenceInDays, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { FeatureCode, useFeature } from '@proton/features';
+import { FeatureCode } from '@proton/features/interface';
+import useFeature from '@proton/features/useFeature';
 import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, SECOND, UPSELL_COMPONENT } from '@proton/shared/lib/constants';

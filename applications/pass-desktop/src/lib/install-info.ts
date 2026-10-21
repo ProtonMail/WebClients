@@ -1,4 +1,4 @@
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types/utils';
 
 import { store } from '../store';
 import logger from '../utils/logger';

@@ -3,7 +3,7 @@ import { fork, takeLeading } from 'redux-saga/effects';
 import noop from '@proton/utils/noop';
 
 import { LockMode } from '../../../lib/auth/lock/types';
-import { lock } from '../../actions';
+import { lock } from '../../actions/creators/auth';
 import type { RootSagaOptions } from '../../types';
 
 /* If we the user has not registered a lock yet (ie: has
