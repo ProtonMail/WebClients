@@ -74,15 +74,15 @@ export type ProjectSpacePriv = {
     linkedDriveFolder?: LinkedDriveFolder;
 };
 
-export type SimpleSpacePriv = {};
+type SimpleSpacePriv = {};
 
-export type ScheduleSpacePriv = {};
+type ScheduleSpacePriv = {};
 
 export type SpacePriv = ProjectSpacePriv | SimpleSpacePriv | ScheduleSpacePriv;
 
 export type ProjectSpace = Omit<SpacePub, 'type'> & { type: SpaceType.Project } & ProjectSpacePriv;
-export type SimpleSpace = Omit<SpacePub, 'type'> & { type: SpaceType.Simple } & SimpleSpacePriv;
-export type ScheduleSpace = Omit<SpacePub, 'type'> & { type: SpaceType.Schedule } & ScheduleSpacePriv;
+type SimpleSpace = Omit<SpacePub, 'type'> & { type: SpaceType.Simple } & SimpleSpacePriv;
+type ScheduleSpace = Omit<SpacePub, 'type'> & { type: SpaceType.Schedule } & ScheduleSpacePriv;
 
 export type SpaceKeyClear = {
     spaceKey: Base64; // type: HkdfCryptoKey
