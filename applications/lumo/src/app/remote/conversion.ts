@@ -138,7 +138,14 @@ export function convertSpacesFromApi(input: unknown): ListSpacesRemote {
         deletedAssets: {},
     };
     return input.reduce((acc: ListSpacesRemote, item: unknown): ListSpacesRemote => {
-        const { space, conversations, deletedConversations, assets, deletedAssets } = convertSpaceFromApi(item);
+        let converted: GetSpaceRemote;
+        try {
+            converted = convertSpaceFromApi(item);
+        } catch (error) {
+            console.warn('Skipping invalid space from API list:', error);
+            return acc;
+        }
+        const { space, conversations, deletedConversations, assets, deletedAssets } = converted;
         const conversationMap = mapify(conversations);
         const deletedConversationMap = mapify(deletedConversations);
         const assetMap = mapify(assets);
