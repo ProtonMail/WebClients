@@ -19,8 +19,8 @@ export const LumoEmoji = ({ id }: Props) => {
                 src={getLumoEmojiSrc(id)}
                 alt={name}
                 title={name}
-                className="icon-size-6"
-                style={{ imageRendering: 'pixelated' }}
+                className="w-custom h-custom align-text-bottom"
+                style={{ '--w-custom': '1.25em', '--h-custom': '1.25em', imageRendering: 'pixelated' }}
             />
         </picture>
     );
