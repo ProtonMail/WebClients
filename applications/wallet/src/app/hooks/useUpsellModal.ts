@@ -1,6 +1,7 @@
 import { useCallback, useMemo } from 'react';
 
-import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '@proton/components/index';
+import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
+import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { PLANS } from '@proton/payments/core/constants';
 import type { FreeSubscription } from '@proton/payments/core/interface';
 import { hasSomeAddonOrPlan } from '@proton/payments/core/subscription/helpers';

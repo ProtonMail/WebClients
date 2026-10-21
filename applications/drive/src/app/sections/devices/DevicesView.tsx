@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { useAppTitle } from '@proton/components';
+import useAppTitle from '@proton/components/hooks/useAppTitle';
 
 import { getDevicesSectionName } from '../../legacy/components/sections/Devices/constants';
 import { ToolbarRow } from '../../statelessComponents/ToolbarRow/ToolbarRow';

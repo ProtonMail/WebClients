@@ -3,7 +3,8 @@ import { useEffect, useMemo } from 'react';
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
-import { Loader, SidebarList } from '@proton/components';
+import Loader from '@proton/components/components/loader/Loader';
+import SidebarList from '@proton/components/components/sidebar/SidebarList';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { DirectoryTreeRootType, type directoryTreeFactory } from '@proton/drive/modules/directoryTree';
 import { useFlagsDriveEasySwitch } from '@proton/drive/modules/flags';

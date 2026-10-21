@@ -1,7 +1,7 @@
 import { useShallow } from 'zustand/react/shallow';
 
 import { Vr } from '@proton/atoms/Vr/Vr';
-import { Toolbar } from '@proton/components';
+import Toolbar from '@proton/components/components/toolbar/Toolbar';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { LayoutButton, ShareButton } from '../../legacy/components/sections/ToolbarButtons';

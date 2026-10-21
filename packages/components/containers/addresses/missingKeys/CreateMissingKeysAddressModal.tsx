@@ -19,7 +19,7 @@ import ModalTwoContent from '../../../components/modalTwo/ModalContent';
 import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
 import PasswordWithPolicyInputs from '../../../components/passwordPolicy/PasswordWithPolicyInputs';
-import { usePasswordPolicyValidation } from '../../../components/passwordPolicy/index';
+import { usePasswordPolicyValidation } from '../../../components/passwordPolicy/usePasswordPolicyValidation';
 import Table from '../../../components/table/Table';
 import TableBody from '../../../components/table/TableBody';
 import TableHeader from '../../../components/table/TableHeader';

@@ -2,7 +2,7 @@ import { waitFor } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 
 import { useGetUser } from '@proton/account/user/hooks';
-import { useAuthentication } from '@proton/components';
+import useAuthentication from '@proton/components/hooks/useAuthentication';
 
 import { getIsPublicContext } from '../../../utils/getIsPublicContext';
 import { MetricUserPlan } from '../../../utils/type/MetricTypes';
@@ -10,7 +10,7 @@ import { getMetricsUserPlan } from './getMetricsUserPlan';
 import { useGetMetricsUserPlan } from './useGetMetricsUserPlan';
 
 jest.mock('@proton/account/user/hooks');
-jest.mock('@proton/components');
+jest.mock('@proton/components/hooks/useAuthentication');
 jest.mock('../../../utils/getIsPublicContext');
 jest.mock('./getMetricsUserPlan');
 

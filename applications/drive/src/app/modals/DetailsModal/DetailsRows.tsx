@@ -1,4 +1,5 @@
-import { Row, TimeIntl } from '@proton/components';
+import Row from '@proton/components/components/container/Row';
+import TimeIntl from '@proton/components/components/time/TimeIntl';
 import humanSize, { bytesSize } from '@proton/shared/lib/helpers/humanSize';
 
 import { FileName } from '../../legacy/components/FileName';

@@ -1,6 +1,6 @@
 import type { PaymentsVersion } from '@proton/payments/core/api/api';
 
-import type { usePaginationAsync } from '../../components/pagination/index';
+import type usePaginationAsync from '../../components/pagination/usePaginationAsync';
 
 export type DocumentHook = ReturnType<typeof usePaginationAsync> & {
     total: number;

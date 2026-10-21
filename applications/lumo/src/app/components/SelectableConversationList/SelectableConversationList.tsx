@@ -3,7 +3,8 @@ import { useCallback, useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Checkbox, useModalStateObject } from '@proton/components';
+import Checkbox from '@proton/components/components/input/Checkbox';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 
 import { ChatHistoryGroupByMenu } from '../../layouts/sidepanel/ChatHistoryGroupByMenu';
 import { ConversationExpirationIndicator } from '../../layouts/sidepanel/ConversationExpirationIndicator';

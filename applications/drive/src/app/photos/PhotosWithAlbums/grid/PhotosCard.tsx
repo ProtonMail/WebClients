@@ -7,7 +7,8 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Checkbox, FileIcon } from '@proton/components';
+import FileIcon from '@proton/components/components/fileIcon/FileIcon';
+import Checkbox from '@proton/components/components/input/Checkbox';
 import { useThumbnail } from '@proton/drive/modules/thumbnails';
 import { IcCloud } from '@proton/icons/icons/IcCloud';
 import { IcHeart } from '@proton/icons/icons/IcHeart';

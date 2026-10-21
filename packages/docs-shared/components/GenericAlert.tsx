@@ -1,8 +1,9 @@
 import { Button } from '@proton/atoms/Button/Button'
 import { c } from 'ttag'
 
-import type { ModalStateProps } from '@proton/components'
-import { BasicModal, useModalTwoStatic } from '@proton/components'
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState'
+import BasicModal from '@proton/components/components/modalTwo/BasicModal'
+import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo'
 import type { ReactNode } from 'react'
 import { useState } from 'react'
 

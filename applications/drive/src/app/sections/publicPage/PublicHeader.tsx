@@ -5,7 +5,7 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import { Vr } from '@proton/atoms/Vr/Vr';
-import { MainLogo } from '@proton/components';
+import MainLogo from '@proton/components/components/logo/MainLogo';
 import Toolbar from '@proton/components/components/toolbar/Toolbar';
 import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';

@@ -1,4 +1,4 @@
-import { ContextSeparator } from '@proton/components/index';
+import ContextSeparator from '@proton/components/components/contextMenu/ContextSeparator';
 import type { OpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 
 import { DetailsButton } from '../../commonButtons/DetailsButton';

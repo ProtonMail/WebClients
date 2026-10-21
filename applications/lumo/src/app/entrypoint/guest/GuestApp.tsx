@@ -2,14 +2,12 @@ import { Suspense, lazy, useState } from 'react';
 
 import * as bootstrap from '@proton/account/bootstrap';
 import { createAuthentication, createUnauthenticatedApi, createUnleash, init } from '@proton/account/bootstrap';
-import {
-    ApiProvider,
-    AuthenticationProvider,
-    ErrorBoundary,
-    ModalsChildren,
-    ProtonApp,
-    StandardErrorPage,
-} from '@proton/components';
+import ApiProvider from '@proton/components/containers/api/ApiProvider';
+import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
+import ProtonApp from '@proton/components/containers/app/ProtonApp';
+import StandardErrorPage from '@proton/components/containers/app/StandardErrorPage';
+import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
+import ModalsChildren from '@proton/components/containers/modals/Children';
 import { initMainHost } from '@proton/cross-storage/host';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';

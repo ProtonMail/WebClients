@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import Time from '@proton/components/components/time/Time';
-import { ProtonPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';
+import { ProtonPlanCustomizer } from '@proton/components/containers/payments/planCustomizer/ProtonPlanCustomizer';
 import { ADDON_PREFIXES, PLANS, TRIAL_DURATION_DAYS, TRIAL_MAX_USERS } from '@proton/payments/core/constants';
 import type { PlanIDs } from '@proton/payments/core/interface';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';

@@ -7,7 +7,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import type { PopperPosition } from '@proton/atoms/Popper/interface';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { useActiveBreakpoint } from '@proton/components/index';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import type { IconComponentProps } from '@proton/icons/component';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { IcChevronUp } from '@proton/icons/icons/IcChevronUp';

@@ -1,5 +1,5 @@
 import { useCallback } from 'react'
-import { useAuthentication } from '@proton/components'
+import useAuthentication from '@proton/components/hooks/useAuthentication'
 import { traceErrorSDK } from '../DriveSDK/traceErrorSDK'
 
 // Encryption keys for cache (local storage)

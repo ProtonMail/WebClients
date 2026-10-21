@@ -53,7 +53,7 @@ export const addDevEntry = (config: any) => {
         return;
     }
     // @ts-ignore
-    config.entry.dev = [require.resolve('@proton/components/containers/app/StandaloneApp.tsx')];
+    config.entry.dev = [require.resolve('@proton/components/containers/app/StandaloneApp')];
     config.plugins.push(
         new HtmlWebpackPlugin({
             filename: 'login.html',

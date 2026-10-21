@@ -2,14 +2,12 @@ import { useEffect, useState } from 'react';
 import * as React from 'react';
 import { useLocation } from 'react-router-dom-v5-compat';
 
-import {
-    AccessDeniedError,
-    ErrorBoundary,
-    GenericError,
-    InternalServerError,
-    NotFoundError,
-    PrivateMainArea,
-} from '@proton/components';
+import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
+import AccessDeniedError from '@proton/components/containers/error/AccessDeniedError';
+import GenericError from '@proton/components/containers/error/GenericError';
+import InternalServerError from '@proton/components/containers/error/InternalServerError';
+import NotFoundError from '@proton/components/containers/error/NotFoundError';
+import PrivateMainArea from '@proton/components/containers/layout/PrivateMainArea';
 import { driveMetrics } from '@proton/drive/modules/metrics';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';

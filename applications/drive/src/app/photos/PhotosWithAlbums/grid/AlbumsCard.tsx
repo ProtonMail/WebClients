@@ -6,7 +6,11 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
-import { Dropdown, DropdownButton, DropdownMenu, DropdownMenuButton, useTheme } from '@proton/components';
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { loadThumbnail, useThumbnail } from '@proton/drive/modules/thumbnails';
 import { getDriveForPhotos } from '@proton/drive/sdk';
 import { IcPencil } from '@proton/icons/icons/IcPencil';

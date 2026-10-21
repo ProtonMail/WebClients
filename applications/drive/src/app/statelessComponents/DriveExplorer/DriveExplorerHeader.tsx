@@ -2,7 +2,11 @@ import { type ReactNode, type RefObject, useCallback, useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Checkbox, Table, TableHeader, TableHeaderCell, TableRowSticky } from '@proton/components';
+import Checkbox from '@proton/components/components/input/Checkbox';
+import Table from '@proton/components/components/table/Table';
+import TableHeader from '@proton/components/components/table/TableHeader';
+import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
+import TableRowSticky from '@proton/components/components/table/TableRowSticky';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 import clsx from '@proton/utils/clsx';

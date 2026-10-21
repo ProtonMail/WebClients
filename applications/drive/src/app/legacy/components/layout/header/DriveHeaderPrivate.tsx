@@ -2,7 +2,9 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { PrivateHeader, UserDropdown, useActiveBreakpoint } from '@proton/components';
+import PrivateHeader from '@proton/components/containers/heading/PrivateHeader';
+import UserDropdown from '@proton/components/containers/heading/UserDropdown';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { SearchField } from '../../../../sections/search/searchField';

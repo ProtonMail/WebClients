@@ -14,8 +14,8 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import CurrencySelector from '@proton/components/containers/payments/CurrencySelector';
 import CycleSelector from '@proton/components/containers/payments/CycleSelector';
-import { forceAddonsMinMaxConstraints } from '@proton/components/containers/payments/planCustomizer';
-import { getShortBillingText } from '@proton/components/containers/payments/subscription/helpers';
+import { forceAddonsMinMaxConstraints } from '@proton/components/containers/payments/planCustomizer/helpers';
+import { getShortBillingText } from '@proton/components/containers/payments/subscription/helpers/getTotalBillingText';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { useHandler } from '@proton/hooks/useHandler';

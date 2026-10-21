@@ -1,4 +1,5 @@
-import { useDrawer, useDrawerWidth } from '@proton/components';
+import useDrawer from '@proton/components/hooks/drawer/useDrawer';
+import useDrawerWidth from '@proton/components/hooks/drawer/useDrawerWidth';
 
 import './FloatingElements.scss';
 

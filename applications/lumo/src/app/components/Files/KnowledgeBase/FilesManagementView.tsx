@@ -1,7 +1,8 @@
 import React from 'react';
 
-import type { ModalStateProps } from '@proton/components';
-import { ModalTwo, ModalTwoContent } from '@proton/components';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 
 import { useLumoSelector } from '../../../redux/hooks';
 import { selectProvisionalAttachments } from '../../../redux/selectors';

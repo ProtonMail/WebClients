@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import type { ModalStateProps } from '@proton/components';
-import { BasicModal, useModalTwoStatic } from '@proton/components';
+import BasicModal from '@proton/components/components/modalTwo/BasicModal';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
+import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
 import { DOCS_APP_NAME, SHEETS_APP_NAME } from '@proton/shared/lib/constants';
 
 type Props = {
@@ -10,13 +11,7 @@ type Props = {
     onSubmit?: () => void;
 };
 
-function DownloadContainsDocumentsModal({
-    onSubmit,
-    onCancel,
-    onClose,
-    open,
-    ...modalProps
-}: Props & ModalStateProps) {
+function DownloadContainsDocumentsModal({ onSubmit, onCancel, onClose, open, ...modalProps }: Props & ModalStateProps) {
     const handleCancel = () => {
         onCancel?.();
         onClose();

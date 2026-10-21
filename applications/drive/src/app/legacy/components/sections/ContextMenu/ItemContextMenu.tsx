@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 
-import { ContextMenu, DropdownSizeUnit } from '@proton/components';
+import ContextMenu from '@proton/components/components/contextMenu/ContextMenu';
+import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 
 import type { ContextMenuProps } from '../../FileBrowser/interface';
 

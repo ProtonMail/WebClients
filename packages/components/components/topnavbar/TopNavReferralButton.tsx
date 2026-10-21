@@ -7,7 +7,7 @@ import { IcMoneyBills } from '@proton/icons/icons/IcMoneyBills';
 import { TopBarReferralSpotlight } from '../../containers/referral/components/TopBarReferralSpotlight/TopBarReferralSpotlight';
 import { useReferralDiscover } from '../../containers/referral/hooks/useReferralDiscover';
 import { useReferralTelemetry } from '../../containers/referral/hooks/useReferralTelemetry';
-import { PromotionButton } from '../button/PromotionButton';
+import PromotionButton from '../button/PromotionButton/PromotionButton';
 
 const TopNavReferralButton = () => {
     const { canShowTopBarButton, onTopBarSpotlightDismiss } = useReferralDiscover();

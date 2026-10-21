@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Row } from '@proton/components';
+import Row from '@proton/components/components/container/Row';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 import { withHoc } from '../modalUtils/withHoc';

@@ -5,19 +5,16 @@ import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
-import {
-    Dropdown,
-    DropdownButton,
-    DropdownMenu,
-    DropdownMenuButton,
-    SidebarListItem,
-    SidebarListItemButton,
-    SidebarListItemContent,
-    SidebarListItemContentIcon,
-    SidebarListItemLink,
-    SubSidebarListItem,
-    useModalState,
-} from '@proton/components';
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import SidebarListItem, { SubSidebarListItem } from '@proton/components/components/sidebar/SidebarListItem';
+import SidebarListItemButton from '@proton/components/components/sidebar/SidebarListItemButton';
+import SidebarListItemContent from '@proton/components/components/sidebar/SidebarListItemContent';
+import SidebarListItemContentIcon from '@proton/components/components/sidebar/SidebarListItemContentIcon';
+import SidebarListItemLink from '@proton/components/components/sidebar/SidebarListItemLink';
 import useToggle from '@proton/hooks/useToggle';
 import { IcCogDrawer } from '@proton/icons/icons/IcCogDrawer';
 import { IcPlusCircle } from '@proton/icons/icons/IcPlusCircle';

@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useApi } from '@proton/app-context/useApi';
-import { useAuthentication } from '@proton/components';
+import useAuthentication from '@proton/components/hooks/useAuthentication';
 
 import { resumePublicSession } from './resumePublicSession';
 

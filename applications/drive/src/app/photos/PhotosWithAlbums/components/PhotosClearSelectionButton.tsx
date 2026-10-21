@@ -2,7 +2,7 @@ import type { FC, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { ToolbarButton } from '@proton/components';
+import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 
 interface Props {

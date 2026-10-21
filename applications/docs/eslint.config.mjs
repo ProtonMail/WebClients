@@ -1,12 +1,10 @@
 import { defineConfig } from 'eslint/config'
-import { createRestrictedImportsConfig } from '@proton/eslint-config-proton/restrictedImports'
 import defaultConfig from '@proton/eslint-config-proton/all'
 
 const isFixMode = process.argv.includes('--fix')
 
 export default defineConfig([
   defaultConfig,
-  createRestrictedImportsConfig({ rollout: ['components-barrel'] }),
   {
     rules: {
       'react/prop-types': 'off',

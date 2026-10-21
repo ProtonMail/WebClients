@@ -2,7 +2,7 @@ import type { MouseEvent, ReactNode, TouchEvent } from 'react';
 
 import { c } from 'ttag';
 
-import { FileIcon } from '@proton/components';
+import FileIcon from '@proton/components/components/fileIcon/FileIcon';
 import { NodeType } from '@proton/drive/sdk';
 import { isCompatibleCBZ } from '@proton/shared/lib/helpers/mimetype';
 import clsx from '@proton/utils/clsx';

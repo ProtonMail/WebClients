@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { SettingsLink } from '@proton/components/index';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 import { useMeetSelector } from '@proton/meet/store/hooks';

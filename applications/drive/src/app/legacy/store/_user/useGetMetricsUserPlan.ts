@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { useGetUser } from '@proton/account/user/hooks';
-import { useAuthentication } from '@proton/components';
+import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import type { User } from '@proton/shared/lib/interfaces/User';
 

@@ -9,8 +9,10 @@ import { DriveImportSuccessStep } from '@proton/activation/src/components/Modals
 import { useProductSelectionSubmit } from '@proton/activation/src/components/Modals/ProductSelectionModal/useProductSelectionSubmit';
 import { EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '@proton/activation/src/interface';
 import { Button } from '@proton/atoms/Button/Button';
-import { SidebarListItem, SidebarListItemContent, navigationIconClassName } from '@proton/components';
 import NewFeatureTag from '@proton/components/components/newFeatureTag/NewFeatureTag';
+import SidebarListItem from '@proton/components/components/sidebar/SidebarListItem';
+import SidebarListItemContent from '@proton/components/components/sidebar/SidebarListItemContent';
+import { navigationIconClassName } from '@proton/components/components/sidebar/SidebarListItemContentIcon';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';

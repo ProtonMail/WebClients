@@ -5,12 +5,10 @@ import { fireEvent, screen, waitFor } from '@testing-library/react';
 import { getModelState } from '@proton/account/tests';
 import SubscriptionModalProvider from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SubscriptionModalContext } from '@proton/components/containers/payments/subscription/subscriptionModalContext';
-import {
-    mockOrganizationApi,
-    mockPlansApi,
-    mockStatusApi,
-    mockSubscriptionApi,
-} from '@proton/components/hooks/helpers/tests';
+import { mockOrganizationApi } from '@proton/components/hooks/helpers/tests/useOrganization';
+import { mockStatusApi } from '@proton/components/hooks/helpers/tests/usePaymentStatus';
+import { mockPlansApi } from '@proton/components/hooks/helpers/tests/usePlans';
+import { mockSubscriptionApi } from '@proton/components/hooks/helpers/tests/useSubscription';
 import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
@@ -266,13 +264,14 @@ describe('getParameters', () => {
     });
 
     describe('totalX params', () => {
-        it.each(
-            Object.values(ADDON_TOTAL_PARAM_NAMES).filter((addon) => addon !== 'Lumo' && addon !== 'Meet')
-        )('total%s is ignored when missing plan', (addon) => {
-            const result = callGetParameters(`?total${addon}=1`);
+        it.each(Object.values(ADDON_TOTAL_PARAM_NAMES).filter((addon) => addon !== 'Lumo' && addon !== 'Meet'))(
+            'total%s is ignored when missing plan',
+            (addon) => {
+                const result = callGetParameters(`?total${addon}=1`);
 
-            expect(result.totals).not.toHaveProperty(`total${addon}`);
-        });
+                expect(result.totals).not.toHaveProperty(`total${addon}`);
+            }
+        );
 
         it.each([
             ['totalLumo', 'Lumo'],

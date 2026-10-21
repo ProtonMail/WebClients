@@ -3,7 +3,9 @@ import { c } from 'ttag';
 
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Dropdown, DropdownButton, DropdownMenu } from '@proton/components';
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import useLoading from '@proton/hooks/useLoading';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { IcLink } from '@proton/icons/icons/IcLink';

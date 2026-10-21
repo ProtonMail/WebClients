@@ -1,4 +1,4 @@
-import { forceAddonsMinMaxConstraints } from '@proton/components/containers/payments/planCustomizer';
+import { forceAddonsMinMaxConstraints } from '@proton/components/containers/payments/planCustomizer/helpers';
 import { getAddonLimit } from '@proton/payments/core/addon/addons';
 import { type ADDON_NAMES, ADDON_PREFIXES, CURRENCIES, PLANS } from '@proton/payments/core/constants';
 import type { Currency } from '@proton/payments/core/interface';
