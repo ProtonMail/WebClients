@@ -8,7 +8,7 @@
         "i18n:extract:web": "proton-i18n extract",
         "i18n:validate": "proton-i18n validate lint-functions",
         "i18n:validate:context:web": "proton-i18n validate",
-        "lint": "eslint --quiet",
+        "lint": "oxlint --quiet",
         "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --appMode=standalone --noLogicalScss",
         "test": "jest",
         "test:ci": "jest --runInBand --ci --logHeapUsage",
@@ -35,10 +35,10 @@
         "ttag": "^1.8.12"
     },
     "devDependencies": {
-        "@proton/eslint-config-proton": "workspace:^",
         "@proton/i18n": "workspace:^",
         "@proton/jest-env": "workspace:^",
         "@proton/jest-swc-preset": "workspace:^",
+        "@proton/oxlint-config": "workspace:^",
         "@proton/pack": "workspace:^",
         "@testing-library/jest-dom": "^6.9.1",
         "@types/jest": "catalog:",
@@ -47,9 +47,10 @@
         "@types/webpack-env": "catalog:",
         "@typescript/native": "npm:typescript@^7.0.2",
         "cross-env": "^10.1.0",
-        "eslint": "^10.12.0",
         "jest": "^30.5.2",
         "jest-junit": "^16.0.0",
+        "oxlint": "1.87.0",
+        "oxlint-tsgolint": "7.0.2004",
         "typescript": "npm:@typescript/typescript6@^6.0.2",
         "webpack": "^5.111.1"
     }

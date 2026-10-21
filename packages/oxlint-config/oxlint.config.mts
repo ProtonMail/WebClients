@@ -1,1 +1,3 @@
-export { default } from './src/index.ts';
+import { createOxlintConfig } from './src/index.ts';
+
+export default createOxlintConfig({ preset: 'base' });
