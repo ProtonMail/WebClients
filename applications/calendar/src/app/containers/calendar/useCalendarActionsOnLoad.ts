@@ -14,6 +14,7 @@ import type { CalendarEventsCache } from './eventStore/interface';
 export interface UseCalendarActionsOnLoadParameters {
     create: () => void;
     update: (eventId: string, calendarId: string) => Promise<void>;
+    openBookingCreationSidebar: () => void;
     dependencies: {
         cachedCalendars: {
             [key: string]: CalendarEventsCache | undefined;
@@ -23,18 +24,23 @@ export interface UseCalendarActionsOnLoadParameters {
         createEventCalendarBootstrap?: CalendarBootstrap;
         activeAddresses: Address[];
         hasInteractiveData: boolean;
+        canCreateBooking: boolean;
+        isWelcomeFlowDone: boolean;
     };
 }
 
 export const useCalendarActionsOnLoad = ({
     create,
     update,
+    openBookingCreationSidebar,
     dependencies: {
         cachedCalendars,
         isEventCreationDisabled,
         createEventCalendar,
         createEventCalendarBootstrap,
         activeAddresses,
+        canCreateBooking,
+        isWelcomeFlowDone,
     },
 }: UseCalendarActionsOnLoadParameters) => {
     const dispatch = useCalendarDispatch();
@@ -48,11 +54,13 @@ export const useCalendarActionsOnLoad = ({
     const eventFormOpened = useRef(false);
     const startedEventEdit = useRef(false);
     const calendarVisibilityChanged = useRef(false);
+    const bookingSidebarOpened = useRef(false);
 
     const handleActions = useCallback(async () => {
         const searchParams = new URLSearchParams(location.search);
 
-        const { isCreateMode, isEditMode, calendarIdFromQueryParams, eventId } = getQueryParamsStatus(location.search);
+        const { isCreateMode, isEditMode, isCreateBookingMode, calendarIdFromQueryParams, eventId } =
+            getQueryParamsStatus(location.search);
 
         const calendarID = calendarIdFromQueryParams ?? (createEventCalendar?.ID as string);
 
@@ -119,8 +127,30 @@ export const useCalendarActionsOnLoad = ({
                 search: searchParams.toString() ? `?${searchParams.toString()}` : '',
             });
         }
+
+        // Waits for the welcome flow so the booking sidebar doesn't open underneath Calendar's onboarding modal
+        if (isCreateBookingMode && canCreateBooking && isWelcomeFlowDone && !bookingSidebarOpened.current) {
+            bookingSidebarOpened.current = true;
+
+            openBookingCreationSidebar();
+
+            searchParams.delete(calendarUrlQueryParams.action);
+
+            history.replace({
+                ...location,
+                search: searchParams.toString() ? `?${searchParams.toString()}` : '',
+            });
+        }
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-D3D194
-    }, [createEventCalendar, createEventCalendarBootstrap, activeAddresses.length, history, location]);
+    }, [
+        createEventCalendar,
+        createEventCalendarBootstrap,
+        activeAddresses.length,
+        canCreateBooking,
+        isWelcomeFlowDone,
+        history,
+        location,
+    ]);
 
     useEffect(() => {
         void handleActions();
