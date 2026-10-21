@@ -30,7 +30,7 @@ const noEnumDestructuring = {
 export default defineConfig([
     defaultConfig,
     createRestrictedImportsConfig({
-        rollout: ['components-barrel', 'icon-component'],
+        rollout: ['components-barrel'],
         paths: [
             {
                 name: '@proton/mail/store/counts/conversationCountsSlice',

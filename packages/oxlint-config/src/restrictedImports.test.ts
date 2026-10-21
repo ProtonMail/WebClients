@@ -4,9 +4,9 @@ import { collectRestrictions, createRestrictedImportRule } from './restrictedImp
 
 describe('createRestrictedImportRule', () => {
     it('returns the rule value with every option filled in', () => {
-        expect(createRestrictedImportRule({ rollout: ['hooks-barrel'] })).toEqual([
+        expect(createRestrictedImportRule({ rollout: ['account-barrel'] })).toEqual([
             'error',
-            { rollout: ['hooks-barrel'], paths: [], patterns: [] },
+            { rollout: ['account-barrel'], paths: [], patterns: [] },
         ]);
     });
 
@@ -26,13 +26,13 @@ describe('collectRestrictions', () => {
 
     it('adds rollout and client paths after the base ones', () => {
         const names = pathNames('/repo/applications/account/src/a.ts', {
-            rollout: ['hooks-barrel'],
+            rollout: ['account-barrel'],
             paths: [{ name: 'some-package' }],
         });
         expect(names.slice(-4)).toEqual([
-            '@proton/hooks',
-            '@proton/hooks/index',
-            '@proton/hooks/index.ts',
+            '@proton/account',
+            '@proton/account/index',
+            '@proton/account/index.ts',
             'some-package',
         ]);
         expect(names).toContain('@proton/atoms');

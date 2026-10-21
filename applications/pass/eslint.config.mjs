@@ -11,7 +11,7 @@ const noParentRelativeImports = {
 export default defineConfig([
     defaultConfig,
     createRestrictedImportsConfig({
-        rollout: ['components-barrel', 'icon-component'],
+        rollout: ['components-barrel'],
         patterns: [noParentRelativeImports],
     }),
     {

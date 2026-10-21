@@ -5,7 +5,7 @@ import { createRestrictedImportsConfig } from '@proton/eslint-config-proton/rest
 
 export default defineConfig([
     defaultConfig,
-    createRestrictedImportsConfig({ rollout: ['components-barrel', 'icon-component'] }),
+    createRestrictedImportsConfig({ rollout: ['components-barrel'] }),
     {
         rules: {
             'no-console': ['error', { allow: ['warn', 'error'] }],
