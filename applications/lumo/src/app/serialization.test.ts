@@ -13,7 +13,7 @@ import type { Conversation, Message, Space } from './types';
 import { Role, SpaceType, getSpaceDek } from './types';
 
 const mockSpace: Space = {
-    spaceType: SpaceType.Simple,
+    spaceType: SpaceType.Default,
     id: 'SpaceId',
     createdAt: 'spaceCreationDate',
     updatedAt: 'spaceCreationDate',
@@ -59,10 +59,10 @@ describe('serialization', () => {
         };
 
         it.each([
-            [{}, { spaceType: SpaceType.Simple }],
-            [{ isProject: false }, { spaceType: SpaceType.Simple }],
-            [{ isProject: null }, { spaceType: SpaceType.Simple }],
-            [{ isProject: 'true' }, { spaceType: SpaceType.Simple }],
+            [{}, { spaceType: SpaceType.Default }],
+            [{ isProject: false }, { spaceType: SpaceType.Default }],
+            [{ isProject: null }, { spaceType: SpaceType.Default }],
+            [{ isProject: 'true' }, { spaceType: SpaceType.Default }],
             [
                 { isProject: true, ...projectMetadata },
                 { spaceType: SpaceType.Project, ...projectMetadata },
@@ -89,7 +89,7 @@ describe('serialization', () => {
             if (type !== SpaceType.Project) expect(savedPayload).not.toHaveProperty('isProject');
         });
 
-        it.each([SpaceType.Simple, SpaceType.Project, SpaceType.Schedule])(
+        it.each([SpaceType.Default, SpaceType.Project, SpaceType.Schedule])(
             'writes the %s discriminator publicly and keeps project metadata encrypted',
             async (type) => {
                 const masterKey = await base64ToMasterKey('BBBBBAQQQQQEEEEEBBBBBAQQQQQEEEEEBBBBBAQQQQQ=');
@@ -108,7 +108,7 @@ describe('serialization', () => {
             }
         );
 
-        it.each([SpaceType.Simple, SpaceType.Project])(
+        it.each([SpaceType.Default, SpaceType.Project])(
             'preserves %s when the API response omits public SpaceType',
             async (type) => {
                 const masterKey = await base64ToMasterKey('BBBBBAQQQQQEEEEEBBBBBAQQQQQEEEEEBBBBBAQQQQQ=');

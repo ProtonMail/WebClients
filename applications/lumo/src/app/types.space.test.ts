@@ -19,7 +19,7 @@ describe('space field helpers', () => {
     it('keeps the simple space type when cleaning spaces', () => {
         expectSpaceTypeIsPreserved({
             id: 'simple-space',
-            spaceType: SpaceType.Simple,
+            spaceType: SpaceType.Default,
             ...baseSpaceFields,
         });
     });

@@ -410,7 +410,7 @@ export async function generateTestSpacesOnMockServer(count: number, masterKey: A
         const spaceId = newSpaceId();
         const timestamp = new Date(now.getTime() - i * 1000).toISOString();
         const space: Space = {
-            spaceType: SpaceType.Simple,
+            spaceType: SpaceType.Default,
             id: spaceId,
             createdAt: timestamp, // Each space 1 second apart
             updatedAt: timestamp,
@@ -449,7 +449,7 @@ export function createTestSpace(overrides: Partial<Space> = {}): Space {
         updatedAt: now,
         spaceKey: generateSpaceKeyBase64(),
         ...overrides,
-        spaceType: overrides.spaceType ?? SpaceType.Simple,
+        spaceType: overrides.spaceType ?? SpaceType.Default,
     };
 }
 

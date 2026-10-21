@@ -1218,7 +1218,7 @@ export function initializeNewSpaceAndConversation(createdAt: string, isGhostMode
         const spaceId = newSpaceId();
         dispatch(
             addSpace({
-                spaceType: SpaceType.Simple,
+                spaceType: SpaceType.Default,
                 id: spaceId,
                 createdAt,
                 updatedAt: createdAt,
