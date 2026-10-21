@@ -3,9 +3,11 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { changeOrganizationSignature } from '@proton/account';
 import { useAddresses } from '@proton/account/addresses/hooks';
-import { getIsEligibleOrganizationIdentityAddress } from '@proton/account/organizationKey/actions';
+import {
+    changeOrganizationSignature,
+    getIsEligibleOrganizationIdentityAddress,
+} from '@proton/account/organizationKey/actions';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';

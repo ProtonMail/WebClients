@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useUserSettings } from '@proton/account';
 import { getKTUserContext } from '@proton/account/kt/actions';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';

@@ -1,7 +1,7 @@
 import { CryptoProxy } from '@protontech/crypto';
 import { fireEvent, screen, waitFor, within } from '@testing-library/react';
 
-import { useUserSettings } from '@proton/account';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { API_CODES, API_KEY_SOURCE, CONTACT_CARD_TYPE, KEY_FLAG } from '@proton/shared/lib/constants';
 import { parseToVCard } from '@proton/shared/lib/contacts/vcard';
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';

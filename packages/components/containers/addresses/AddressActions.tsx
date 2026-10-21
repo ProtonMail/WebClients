@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { disableAllowAddressDeletion } from '@proton/account';
 import { deleteAddress, disableAddress, enableAddress } from '@proton/account/addresses/actions';
+import { disableAllowAddressDeletion } from '@proton/account/allowAddressDeletion';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { ApiSyncState } from '@proton/activation/src/api/api.interface';
 import DisconnectBYOEModal from '@proton/activation/src/components/Modals/DisconnectBYOEModal/DisconnectBYOEModal';

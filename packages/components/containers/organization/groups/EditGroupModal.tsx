@@ -4,9 +4,9 @@ import { useEffect, useState } from 'react';
 import { Form, FormikProvider } from 'formik';
 import { c } from 'ttag';
 
-import { getUpgradeForAdminRolesText } from '@proton/account';
 import { getIsScimGroup } from '@proton/account/groups/groupFlags';
 import { useOrganization } from '@proton/account/organization/hooks';
+import { getUpgradeForAdminRolesText } from '@proton/account/organizationKey/actions';
 import { AdminRolesUIState, useAdminRolesUI } from '@proton/account/userPermissions/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
