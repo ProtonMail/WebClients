@@ -3,7 +3,11 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, VideoInstructions } from '@proton/components';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import VideoInstructions from '@proton/components/components/videoInstructions/VideoInstructions';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import oauthInstructionsMp4 from '@proton/styles/assets/videos/easySwitch/oauth-instructions.mp4';
 import oauthInstructionsWebm from '@proton/styles/assets/videos/easySwitch/oauth-instructions.webm';

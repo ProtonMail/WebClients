@@ -1,6 +1,6 @@
 import { fireEvent, screen } from '@testing-library/dom';
 
-import type { ModalStateProps } from '@proton/components';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import { CALENDAR_DISPLAY, CALENDAR_TYPE } from '@proton/shared/lib/calendar/constants';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import type { CalendarMember } from '@proton/shared/lib/interfaces/calendar/CalendarMember';

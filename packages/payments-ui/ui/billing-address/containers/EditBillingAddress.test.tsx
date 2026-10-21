@@ -1,6 +1,6 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react';
 
-import { changeBillingAddress } from '@proton/account';
+import { changeBillingAddress } from '@proton/account/paymentStatus';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import type { FullBillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import type { PaymentsApi } from '@proton/payments/core/interface';
@@ -17,8 +17,8 @@ jest.mock('../../../react-extensions/usePaymentsApi', () => ({
     usePaymentsApi: jest.fn(),
 }));
 
-jest.mock('@proton/account', () => ({
-    ...jest.requireActual('@proton/account'),
+jest.mock('@proton/account/paymentStatus', () => ({
+    ...jest.requireActual('@proton/account/paymentStatus'),
     changeBillingAddress: jest.fn((payload) => ({ type: 'changeBillingAddress', payload })),
 }));
 

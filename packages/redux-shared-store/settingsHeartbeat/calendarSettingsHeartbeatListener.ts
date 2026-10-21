@@ -1,7 +1,10 @@
 import type { TypedStartListening } from '@reduxjs/toolkit';
 
-import { organizationThunk, subscriptionThunk, userSettingsThunk, userThunk } from '@proton/account';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
+import { organizationThunk } from '@proton/account/organization';
+import { subscriptionThunk } from '@proton/account/subscription';
+import { userThunk } from '@proton/account/user';
+import { userSettingsThunk } from '@proton/account/userSettings';
 import { calendarSettingsThunk } from '@proton/calendar/calendarUserSettings';
 import { calendarsThunk } from '@proton/calendar/calendars';
 import type { ProtonDispatch, ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';

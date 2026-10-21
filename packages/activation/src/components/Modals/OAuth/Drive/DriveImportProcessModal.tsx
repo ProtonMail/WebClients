@@ -6,7 +6,8 @@ import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { Href } from '@proton/atoms/Href/Href';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
-import { useErrorHandler, useEventManager } from '@proton/components';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 

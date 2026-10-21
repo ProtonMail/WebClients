@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { useModalState } from '@proton/components';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import isTruthy from '@proton/utils/isTruthy';
 

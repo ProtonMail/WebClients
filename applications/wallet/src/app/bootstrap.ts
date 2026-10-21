@@ -1,13 +1,11 @@
-import {
-    addressesThunk,
-    initEvent,
-    serverEvent,
-    userSettingsThunk,
-    userThunk,
-    welcomeFlagsActions,
-} from '@proton/account';
+import { addressesThunk } from '@proton/account/addresses';
 import * as bootstrap from '@proton/account/bootstrap';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
+import { serverEvent } from '@proton/account/eventLoop';
+import { initEvent } from '@proton/account/init';
+import { userThunk } from '@proton/account/user';
+import { userSettingsThunk } from '@proton/account/userSettings';
+import { welcomeFlagsActions } from '@proton/account/welcomeFlags';
 import { WasmProtonWalletApiClient } from '@proton/andromeda';
 import type { NotificationsManager } from '@proton/app-context/notifications/manager';
 import { setupGuestCrossStorage } from '@proton/cross-storage/account/guest';

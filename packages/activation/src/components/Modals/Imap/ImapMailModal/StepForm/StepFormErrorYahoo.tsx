@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
-import { Alert } from '@proton/components';
+import Alert from '@proton/components/components/alert/Alert';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
