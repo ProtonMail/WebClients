@@ -8,7 +8,7 @@ import { selectMeetingLink } from '@proton/meet/store/slices/currentMeeting';
 import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 
 import { useSendOnce } from '../../telemetry/useSendOnce';
-import { tryOpenInDesktopApp } from '../../utils/desktopAppDetector';
+import { saveDesktopAppPreference, tryOpenInDesktopApp } from '../../utils/desktopAppDetector';
 
 import './OpenInDesktopApp.scss';
 
@@ -22,6 +22,7 @@ export const OpenInDesktopAppLink = ({ onOpen }: { onOpen: () => void }) => {
     const handleClick = () => {
         sendMeetActionsEvent(TelemetryMeetActionsEvents.desktop_app_banner_clicked, { action: 'open_app' });
         tryOpenInDesktopApp(meetingLink);
+        saveDesktopAppPreference();
         onOpen();
     };
 
