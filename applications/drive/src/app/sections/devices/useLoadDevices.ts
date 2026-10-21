@@ -2,8 +2,8 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import { getDrive } from '@proton/drive';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
+import { getDrive } from '@proton/drive/sdk';
 
 import { useDevicesStore } from './useDevices.store';
 

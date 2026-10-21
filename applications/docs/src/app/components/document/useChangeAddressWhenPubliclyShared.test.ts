@@ -1,4 +1,4 @@
-import type { ShareResult } from '@proton/drive'
+import type { ShareResult } from '@proton/drive/sdk'
 
 import { replaceAddress } from './useChangeAddressWhenPubliclyShared'
 

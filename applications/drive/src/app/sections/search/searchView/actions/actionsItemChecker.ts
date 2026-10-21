@@ -1,4 +1,4 @@
-import { MemberRole, NodeType } from '@proton/drive';
+import { MemberRole, NodeType } from '@proton/drive/sdk';
 import { type OpenInDocsType, isNativeProtonDocsAppFile } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 

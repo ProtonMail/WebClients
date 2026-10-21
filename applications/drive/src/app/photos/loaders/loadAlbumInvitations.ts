@@ -1,5 +1,5 @@
-import { NodeType, type ProtonInvitationWithNode, getDriveForPhotos } from '@proton/drive/index';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
+import { NodeType, type ProtonInvitationWithNode, getDriveForPhotos } from '@proton/drive/sdk';
 
 import { useAlbumInvitationsStore } from '../useAlbumInvitations.store';
 

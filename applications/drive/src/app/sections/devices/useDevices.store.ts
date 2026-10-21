@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 
-import type { Device } from '@proton/drive';
 import { getDeviceName } from '@proton/drive/modules/nodes';
+import type { Device } from '@proton/drive/sdk';
 
 import { sortDeviceItems } from './devices.sorting';
 

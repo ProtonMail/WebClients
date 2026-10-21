@@ -1,4 +1,4 @@
-import { NodeType } from '@proton/drive';
+import { NodeType } from '@proton/drive/sdk';
 import type { OpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 
 import { getOpenInDocsInfo } from '../../../utils/docs/openInDocs';

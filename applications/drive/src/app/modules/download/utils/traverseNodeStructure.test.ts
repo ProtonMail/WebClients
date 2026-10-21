@@ -1,5 +1,4 @@
-import { ValidationError } from '@proton/drive';
-import { NodeType } from '@proton/drive/index';
+import { NodeType, ValidationError } from '@proton/drive/sdk';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { PROTON_DOCS_DOCUMENT_MIMETYPE } from '@proton/shared/lib/helpers/mimetype';
 

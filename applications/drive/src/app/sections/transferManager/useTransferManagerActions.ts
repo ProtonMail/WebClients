@@ -4,9 +4,9 @@ import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { useConfirmActionModal } from '@proton/components';
-import { getDrivePerNodeType } from '@proton/drive';
 import { useSharingModal } from '@proton/drive/modals/sharingModal';
 import { uploadManager, useUploadQueueStore } from '@proton/drive/modules/upload';
+import { getDrivePerNodeType } from '@proton/drive/sdk';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useDownloadContainsDocumentsModal } from '../../legacy/components/modals/DownloadContainsDocumentsModal';

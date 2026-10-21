@@ -1,8 +1,8 @@
-import type { ProtonDriveClient } from '@proton/drive';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
 import { getFormattedNodeLocation } from '@proton/drive/modules/nodes';
+import type { ProtonDriveClient } from '@proton/drive/sdk';
 
 import { getSignatureIssues } from '../../utils/sdk/getSignatureIssues';
 import type { GetSharedByMeStoreState, SharedByMeItem } from './sharedByMe.types';

@@ -1,5 +1,5 @@
 import { ServerTime } from '@proton/docs-shared/lib/ServerTime'
-import { type MemberRole, type NodeEntity, splitNodeUid } from '@proton/drive'
+import { type MemberRole, type NodeEntity, splitNodeUid } from '@proton/drive/sdk'
 import { getAuthorName } from '~/drive-sdk/getAuthorName'
 import { mimeTypeToProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import type { RecentDocumentsItemValue } from '@proton/docs-core/lib/Services/recent-documents'

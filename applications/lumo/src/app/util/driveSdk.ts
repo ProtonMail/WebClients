@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { InvalidNameError, NodeEntity } from '@proton/drive';
+import type { InvalidNameError, NodeEntity } from '@proton/drive/sdk';
 
 type NormalizedNode = Omit<NodeEntity, 'name'> & {
     name: string;

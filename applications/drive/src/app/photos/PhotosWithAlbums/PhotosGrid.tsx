@@ -2,7 +2,7 @@ import type { FC, ReactNode } from 'react';
 import React, { useCallback, useMemo, useRef, useState } from 'react';
 
 import { Loader, useElementRect } from '@proton/components';
-import { splitNodeUid } from '@proton/drive/index';
+import { splitNodeUid } from '@proton/drive/sdk';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import clsx from '@proton/utils/clsx';
 

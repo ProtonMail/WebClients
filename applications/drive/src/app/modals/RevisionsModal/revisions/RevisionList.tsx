@@ -1,7 +1,7 @@
 import { isToday } from 'date-fns';
 import { c } from 'ttag';
 
-import type { Revision } from '@proton/drive';
+import type { Revision } from '@proton/drive/sdk';
 
 import type { RevisionsProviderState } from '../useRevisionsModalState';
 import { RevisionListItem } from './RevisionListItem';

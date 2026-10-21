@@ -1,6 +1,6 @@
 import { act, renderHook, waitFor } from '@testing-library/react'
 import { RecentDocumentsItem } from '@proton/docs-core'
-import { generateNodeUid } from '@proton/drive'
+import { generateNodeUid } from '@proton/drive/sdk'
 import { ServerTime } from '@proton/docs-shared'
 import type { RecentDocumentsItemValue } from '@proton/docs-core/lib/Services/recent-documents'
 import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'

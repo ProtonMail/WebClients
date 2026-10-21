@@ -1,5 +1,5 @@
-import type { NodeEntity } from '@proton/drive';
-import { MemberRole, NodeType, RevisionState } from '@proton/drive';
+import type { NodeEntity } from '@proton/drive/sdk';
+import { MemberRole, NodeType, RevisionState } from '@proton/drive/sdk';
 
 import { getContentSignatureIssueLabel } from './signatures';
 

@@ -3,8 +3,8 @@ import type { NodeEvent } from '@protontech/drive-sdk';
 import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
 
-import type { NodeEntity, NodeType } from '@proton/drive';
 import { createMockNodeEntity } from '@proton/drive/modules/testing';
+import type { NodeEntity, NodeType } from '@proton/drive/sdk';
 
 import { SearchDB } from '../../../../shared/SearchDB';
 import { RepairableNodeError } from '../../../../shared/errors';

@@ -12,7 +12,7 @@ This is typically done in the main entry point of your application, such as `Mai
 
 ```javascript
 import { useUser } from '@proton/account/user/hooks';
-import { useDrive } from '@proton/drive';
+import { useDrive } from '@proton/drive/sdk';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 
 import * as config from './config';
@@ -39,7 +39,7 @@ function App() {
 After configuring the Drive SDK, you can use it in your application.
 
 ```javascript
-import { useDrive } from '@proton/drive';
+import { useDrive } from '@proton/drive/sdk';
 
 function useYourApp() {
     const { drive } = useDrive();
@@ -76,7 +76,7 @@ This shared Drive package also provides modules that builds on top of the Drive 
 
 The package exposes exactly two entry points to the rest of the monorepo:
 
-- **`@proton/drive`** - the package index, with the core client and shared types. Importable by any app, including `applications/drive`.
+- **`@proton/drive/sdk`** - the SDK facade, with the core client and shared types. Importable by any app, including `applications/drive`.
 - **`@proton/drive/public/*`** - the public modals and helpers (`sharingModal`, `moveItemsModal`, `thumbnails`, etc). Importable by external apps only, **not** `applications/drive`.
 
 Everything else (`modules/`, `components/`, `internal/`) is private and off-limits to external apps.
@@ -87,7 +87,7 @@ The Drive team is responsbile to provide stable interfaces for the Drive SDK and
 
 Only the public interface of each module is guaranteed to be stable. The team deserves the right to change the internal implementation details without a warning. Usage of non-exported features is not guaranteed to work and will not be supported, or warned about the change. Any failure because of that will not be considered as a bug and will not be fixed, it will up for the consumer to deal with the consequences.
 
-To use only the public interface, import only directly from the `@proton/drive` package, or from the public module entry points (e.g., `@proton/drive/public/thumbnails`). See [External API](#external-api) above.
+To use only the public interface, import from `@proton/drive/sdk`, or from the public module entry points (e.g., `@proton/drive/public/thumbnails`). See [External API](#external-api) above.
 
 ## Core Events
 

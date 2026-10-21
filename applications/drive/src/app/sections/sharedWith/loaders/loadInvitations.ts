@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
-import { getDrive, getDriveForPhotos, splitInvitationUid } from '@proton/drive/index';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNotificationsManager } from '@proton/drive/modules/notifications';
+import { getDrive, getDriveForPhotos, splitInvitationUid } from '@proton/drive/sdk';
 
 import { ItemType, useSharedWithMeStore } from '../useSharedWithMe.store';
 

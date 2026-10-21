@@ -98,8 +98,7 @@ ruleTester.run('restricted-imports: matching client additions', rule, {
 ruleTester.run('restricted-imports: base restrictions', rule, {
     valid: [
         { code: `import { Button } from '@proton/atoms/Button/Button';`, filename: appFile },
-        { code: `import drive from '@proton/drive';`, filename: appFile },
-        { code: `import drive from '@proton/drive/index';`, filename: appFile },
+        { code: `import drive from '@proton/drive/sdk';`, filename: appFile },
         { code: `import { Thing } from '@proton/drive/public/thing';`, filename: appFile },
         { code: `import thing from '@proton/drive/internal/thing';`, filename: driveAppFile },
         { code: `import { createStructuredSelector } from 'reselect';`, filename: appFile },
@@ -120,6 +119,16 @@ ruleTester.run('restricted-imports: base restrictions', rule, {
         },
         {
             code: `import styles from '@proton/styles';`,
+            filename: appFile,
+            errors: [{ messageId: 'path' }],
+        },
+        {
+            code: `import drive from '@proton/drive';`,
+            filename: appFile,
+            errors: [{ messageId: 'path' }],
+        },
+        {
+            code: `import drive from '@proton/drive/index';`,
             filename: appFile,
             errors: [{ messageId: 'path' }],
         },
@@ -151,7 +160,7 @@ ruleTester.run('restricted-imports: base restrictions', rule, {
                     data: {
                         importSource: '@proton/drive/internal/thing',
                         customMessage:
-                            ' Only `@proton/drive` (index) and `@proton/drive/public/*` are public and importable.',
+                            ' Only `@proton/drive/sdk` and `@proton/drive/public/*` are public and importable.',
                     },
                 },
             ],

@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
-import { getDrive, getDriveForPhotos, splitNodeUid } from '@proton/drive/index';
 import { EnrichedError, handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { driveMetrics } from '@proton/drive/modules/metrics';
 import { getNotificationsManager } from '@proton/drive/modules/notifications';
+import { getDrive, getDriveForPhotos, splitNodeUid } from '@proton/drive/sdk';
 
 import { getSignatureIssues } from '../../../utils/sdk/getSignatureIssues';
 import { ItemType, useSharedWithMeStore } from '../useSharedWithMe.store';

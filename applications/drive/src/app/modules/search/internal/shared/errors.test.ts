@@ -1,10 +1,10 @@
+import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import {
     AbortError as SdkAbortError,
     ConnectionError as SdkConnectionError,
     RateLimitedError as SdkRateLimitedError,
     ServerError as SdkServerError,
-} from '@proton/drive';
-import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
+} from '@proton/drive/sdk';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
 import { setBridgedErrorDecision } from './bridgedErrorDecision';

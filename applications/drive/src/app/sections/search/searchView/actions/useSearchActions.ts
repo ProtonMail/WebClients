@@ -1,7 +1,7 @@
-import { getDrive, getDrivePerNodeType } from '@proton/drive';
 import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { useMoveItemsModal } from '@proton/drive/modals/moveItemsModal';
 import { useSharingModal } from '@proton/drive/modals/sharingModal';
+import { getDrive, getDrivePerNodeType } from '@proton/drive/sdk';
 import isTruthy from '@proton/utils/isTruthy';
 
 import useDriveNavigation from '../../../../legacy/hooks/drive/useNavigate';

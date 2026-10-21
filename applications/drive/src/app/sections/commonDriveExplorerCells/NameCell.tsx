@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { FileIcon, MiddleEllipsis } from '@proton/components';
-import { NodeType } from '@proton/drive';
+import { NodeType } from '@proton/drive/sdk';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { rtlSanitize } from '@proton/shared/lib/helpers/string';

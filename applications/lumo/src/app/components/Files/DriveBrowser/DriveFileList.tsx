@@ -2,7 +2,7 @@ import React from 'react';
 
 import { c } from 'ttag';
 
-import { NodeType } from '@proton/drive';
+import { NodeType } from '@proton/drive/sdk';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 import { MAX_ASSET_SIZE } from '../../../constants';

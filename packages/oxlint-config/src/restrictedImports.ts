@@ -99,6 +99,7 @@ const BASE_RESTRICTIONS: BaseRestriction[] = [
             '@proton/collect-metrics',
             '@proton/colors',
             '@proton/docs-proto',
+            '@proton/drive',
             '@proton/features',
             '@proton/hooks',
             '@proton/lumo-api-client',
@@ -157,8 +158,14 @@ const BASE_RESTRICTIONS: BaseRestriction[] = [
             !['/applications/drive/', '/packages/drive-store/'].some((folder) => filename.includes(folder)),
         patterns: [
             {
-                group: ['@proton/drive/*', '!@proton/drive/index', '!@proton/drive/public', '!@proton/drive/public/**'],
-                message: 'Only `@proton/drive` (index) and `@proton/drive/public/*` are public and importable.',
+                group: [
+                    '@proton/drive/*',
+                    '!@proton/drive/index',
+                    '!@proton/drive/sdk',
+                    '!@proton/drive/public',
+                    '!@proton/drive/public/**',
+                ],
+                message: 'Only `@proton/drive/sdk` and `@proton/drive/public/*` are public and importable.',
             },
         ],
     },

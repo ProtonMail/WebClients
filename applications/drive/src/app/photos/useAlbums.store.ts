@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 
-import type { Member, MemberRole } from '@proton/drive';
 import { getBusDriver } from '@proton/drive/modules/busDriver';
+import type { Member, MemberRole } from '@proton/drive/sdk';
 
 export interface AlbumItem {
     nodeUid: string;

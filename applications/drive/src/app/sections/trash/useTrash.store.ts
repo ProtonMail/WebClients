@@ -1,8 +1,8 @@
 import { create } from 'zustand';
 
-import type { NodeEntity, NodeType } from '@proton/drive';
 import type { NormalizedNode } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import type { BusDriverClient } from '@proton/drive/modules/busDriver';
+import type { NodeEntity, NodeType } from '@proton/drive/sdk';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import type { SortConfig } from '../../modules/sorting';

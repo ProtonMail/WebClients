@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
-import { type NodeEntity, PhotoTag, getDriveForPhotos } from '@proton/drive';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
 import { getEllipsedName } from '@proton/drive/modules/intl';
 import { getNotificationsManager } from '@proton/drive/modules/notifications';
+import { type NodeEntity, PhotoTag, getDriveForPhotos } from '@proton/drive/sdk';
 
 import { usePhotosStore } from '../usePhotos.store';
 

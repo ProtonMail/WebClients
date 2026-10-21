@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { NodeType, NodeWithSameNameExistsValidationError } from '../../../index';
+import { NodeType, NodeWithSameNameExistsValidationError } from '../../../sdk';
 import { UploadDriveClientRegistry } from '../UploadDriveClientRegistry';
 import { useUploadQueueStore } from '../store/uploadQueue.store';
 import type { FileUploadItem, FolderCreationItem } from '../types';

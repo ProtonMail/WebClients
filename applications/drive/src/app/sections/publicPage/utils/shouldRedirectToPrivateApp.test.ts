@@ -1,4 +1,4 @@
-import { MemberRole } from '@proton/drive';
+import { MemberRole } from '@proton/drive/sdk';
 
 import { shouldRedirectToPrivateApp } from './shouldRedirectToPrivateApp';
 

@@ -1,5 +1,5 @@
-import type { NodeEntity, ProtonDriveClient } from '../../../index';
-import { MemberRole } from '../../../index';
+import type { NodeEntity, ProtonDriveClient } from '../../../sdk';
+import { MemberRole } from '../../../sdk';
 import { findEffectiveRole } from './helpers';
 
 const createMockNode = (

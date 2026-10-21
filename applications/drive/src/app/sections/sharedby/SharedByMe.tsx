@@ -4,8 +4,8 @@ import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { useActiveBreakpoint } from '@proton/components';
-import { NodeType, getDrivePerNodeType } from '@proton/drive';
 import { loadThumbnail } from '@proton/drive/modules/thumbnails';
+import { NodeType, getDrivePerNodeType } from '@proton/drive/sdk';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { isNativeProtonDocsAppFile } from '@proton/shared/lib/helpers/mimetype';
 

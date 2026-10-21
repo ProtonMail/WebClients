@@ -3,8 +3,8 @@ import { useCallback, useEffect, useRef } from 'react';
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
-import { MemberRole, NodeType, useDrive } from '../../../index';
 import { handleSdkError, sendErrorReport } from '../../../legacy/errorHandling';
+import { MemberRole, NodeType, useDrive } from '../../../sdk';
 import { getDeviceName, getNodeName } from '../../nodes';
 import { directoryTreeStoreFactory } from './directoryTreeStoreFactory';
 import { iterateSharedWithMeNodes } from './events/iterateSharedWithMeNodes';

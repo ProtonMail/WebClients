@@ -1,4 +1,4 @@
-import type { MemberRole, NodeEntity, NodeType, RevisionState } from '../../../index';
+import type { MemberRole, NodeEntity, NodeType, RevisionState } from '../../../sdk';
 
 const DEFAULT_MEMBER_ROLE: MemberRole = 'admin' as MemberRole;
 const DEFAULT_NODE_TYPE: NodeType = 'file' as NodeType;

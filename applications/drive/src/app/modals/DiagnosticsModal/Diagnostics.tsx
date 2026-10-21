@@ -7,10 +7,10 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { FileInput, InputFieldTwo, Tabs, Toggle } from '@proton/components';
-import type { NodeEntity } from '@proton/drive';
 import type { ExpectedTreeNode } from '@proton/drive/diagnostic';
 import ModalContentLoader from '@proton/drive/modals/modalUtils/ModalContentLoader';
 import { getNodeName } from '@proton/drive/modules/nodes';
+import type { NodeEntity } from '@proton/drive/sdk';
 import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
 
 import { withHoc } from '../modalUtils/withHoc';

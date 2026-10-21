@@ -1,7 +1,7 @@
 import { act, renderHook, waitFor } from '@testing-library/react';
 
-import { getDrive } from '@proton/drive';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
+import { getDrive } from '@proton/drive/sdk';
 import useLoading from '@proton/hooks/useLoading';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
@@ -15,7 +15,7 @@ import { usePublicAuthStore } from './usePublicAuth.store';
 import { usePublicBookmark } from './usePublicBookmark';
 import { getPublicTokenAndPassword } from './utils/getPublicTokenAndPassword';
 
-jest.mock('@proton/drive', () => ({
+jest.mock('@proton/drive/sdk', () => ({
     getDrive: jest.fn(),
 }));
 

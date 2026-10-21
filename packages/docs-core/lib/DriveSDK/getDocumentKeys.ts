@@ -1,5 +1,5 @@
 import type { NodeMeta, PublicDocumentKeys, PublicNodeMeta } from '@proton/docs-shared'
-import { generateNodeUid, getDrive } from '@proton/drive'
+import { generateNodeUid, getDrive } from '@proton/drive/sdk'
 import type { SessionKey } from '@protontech/crypto'
 import { traceErrorSDK } from './traceErrorSDK'
 import { getPublicDrive, getPublicLinkInfo } from './getPublicDrive'

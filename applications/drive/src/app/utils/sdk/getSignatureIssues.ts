@@ -1,4 +1,4 @@
-import type { NodeEntity } from '@proton/drive';
+import type { NodeEntity } from '@proton/drive/sdk';
 
 export type SignatureIssuesResult =
     | { ok: true }

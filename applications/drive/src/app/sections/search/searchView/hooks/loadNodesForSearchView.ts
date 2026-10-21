@@ -1,5 +1,3 @@
-import type { NodeEntity, ProtonDriveClient } from '@proton/drive/index';
-import { getDrive } from '@proton/drive/index';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import {
     getFormattedNodeLocation,
@@ -7,6 +5,8 @@ import {
     getNodeName,
     isMissingNode,
 } from '@proton/drive/modules/nodes';
+import type { NodeEntity, ProtonDriveClient } from '@proton/drive/sdk';
+import { getDrive } from '@proton/drive/sdk';
 
 import { createDebouncedBuffer } from '../../../../utils/createDebouncedBuffer';
 import { getSignatureIssues } from '../../../../utils/sdk/getSignatureIssues';

@@ -2,10 +2,10 @@ import { useCallback, useState } from 'react';
 
 import { c } from 'ttag';
 
-import type { NodeEntity, ProtonDriveClient, Result } from '@proton/drive/index';
 import { handleSdkError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { NodeLocation, getNodeLocation } from '@proton/drive/modules/nodes';
+import type { NodeEntity, ProtonDriveClient, Result } from '@proton/drive/sdk';
 
 import useDriveNavigation from '../../../legacy/hooks/drive/useNavigate';
 import type { CrumbDefinition } from '../../../statelessComponents/Breadcrumbs/types';

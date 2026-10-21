@@ -1,8 +1,8 @@
 import { create } from 'zustand';
 
-import type { NodeType } from '@proton/drive/index';
-import { MemberRole } from '@proton/drive/index';
 import type { EnrichedError } from '@proton/drive/legacy/errorHandling';
+import type { NodeType } from '@proton/drive/sdk';
+import { MemberRole } from '@proton/drive/sdk';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import type { SortConfig } from '../../modules/sorting';

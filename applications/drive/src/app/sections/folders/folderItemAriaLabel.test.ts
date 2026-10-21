@@ -1,4 +1,4 @@
-import { MemberRole, NodeType } from '@proton/drive';
+import { MemberRole, NodeType } from '@proton/drive/sdk';
 
 import { getFolderItemAriaLabel } from './folderItemAriaLabel';
 import type { FolderViewItem } from './useFolder.store';

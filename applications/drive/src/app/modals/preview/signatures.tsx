@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { NodeEntity } from '@proton/drive';
+import type { NodeEntity } from '@proton/drive/sdk';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { SignatureIcon } from '../../legacy/components/SignatureIcon';

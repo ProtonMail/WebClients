@@ -1,10 +1,10 @@
 import { when } from 'jest-when';
 
-import type { ProtonDriveClient } from '@proton/drive/index';
-import { getDrive } from '@proton/drive/index';
 import { type EffectiveRole, getFormattedNodeLocation, getNodeEffectiveRole } from '@proton/drive/modules/nodes';
 import { getNotificationsManager } from '@proton/drive/modules/notifications';
 import { createMockNodeEntity } from '@proton/drive/modules/testing';
+import type { ProtonDriveClient } from '@proton/drive/sdk';
+import { getDrive } from '@proton/drive/sdk';
 
 import { createDebouncedBuffer } from '../../../../utils/createDebouncedBuffer';
 import { useSearchViewStore } from '../../searchView/store';
@@ -25,8 +25,8 @@ jest.mock('../../../../utils/createDebouncedBuffer', () => ({
     }),
 }));
 
-jest.mock('@proton/drive/index', () => ({
-    ...jest.requireActual('@proton/drive/index'),
+jest.mock('@proton/drive/sdk', () => ({
+    ...jest.requireActual('@proton/drive/sdk'),
     getDrive: jest.fn(),
 }));
 

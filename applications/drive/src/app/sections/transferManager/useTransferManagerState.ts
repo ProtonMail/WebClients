@@ -3,8 +3,8 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
-import { NodeType } from '@proton/drive';
 import { type UploadItem, UploadStatus, useUploadQueueStore } from '@proton/drive/modules/upload';
+import { NodeType } from '@proton/drive/sdk';
 
 import {
     BaseTransferStatus,

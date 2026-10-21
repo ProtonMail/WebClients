@@ -1,4 +1,4 @@
-import { getDriveForPhotos } from '@proton/drive';
+import { getDriveForPhotos } from '@proton/drive/sdk';
 
 import { createDebouncedBuffer } from '../../utils/createDebouncedBuffer';
 import { type PhotoItem, usePhotosStore } from '../usePhotos.store';

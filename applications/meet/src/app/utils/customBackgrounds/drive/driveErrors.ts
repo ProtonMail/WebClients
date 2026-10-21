@@ -1,4 +1,4 @@
-import { AbortError, ConnectionError, RateLimitedError, ServerError } from '@proton/drive';
+import { AbortError, ConnectionError, RateLimitedError, ServerError } from '@proton/drive/sdk';
 
 export const isTransientDriveError = (error: unknown): boolean => {
     if (error instanceof ConnectionError || error instanceof RateLimitedError || error instanceof AbortError) {

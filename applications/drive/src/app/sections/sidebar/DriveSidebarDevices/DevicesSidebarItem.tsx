@@ -1,5 +1,5 @@
-import { splitNodeUid } from '@proton/drive';
 import type { TreeItemWithChildren } from '@proton/drive/modules/directoryTree';
+import { splitNodeUid } from '@proton/drive/sdk';
 import { IcTv } from '@proton/icons/icons/IcTv';
 
 import DriveExpandButton from '../../../legacy/components/layout/sidebar/DriveSidebar/DriveSidebarFolders/DriveExpandButton';

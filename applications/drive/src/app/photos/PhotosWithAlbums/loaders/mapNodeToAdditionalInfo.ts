@@ -1,6 +1,6 @@
-import type { NodeEntity } from '@proton/drive';
-import { parseAdditionalMetadata } from '@proton/drive';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
+import type { NodeEntity } from '@proton/drive/sdk';
+import { parseAdditionalMetadata } from '@proton/drive/sdk';
 
 import { getSignatureIssues } from '../../../utils/sdk/getSignatureIssues';
 import type { PhotoItem } from '../../usePhotos.store';

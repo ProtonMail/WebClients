@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-import { getDrive, useDrive } from '../../../index';
 import { handleSdkError } from '../../../legacy/errorHandling';
 import { BusDriverEventName, type NodeEventMeta, getBusDriver } from '../../../modules/busDriver';
+import { getDrive, useDrive } from '../../../sdk';
 import { useMovedItemsNotification } from './useMovedItemsNotification';
 
 type MoveNodeItem = {

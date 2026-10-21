@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 
-import type { Author, NodeEntity } from '@proton/drive';
-import { MemberRole, NodeType, RevisionState } from '@proton/drive';
+import type { Author, NodeEntity } from '@proton/drive/sdk';
+import { MemberRole, NodeType, RevisionState } from '@proton/drive/sdk';
 
 import { getAuthorshipStatus } from './authorship';
 

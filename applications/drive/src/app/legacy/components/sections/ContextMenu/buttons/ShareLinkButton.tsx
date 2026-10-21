@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { generateNodeUid, getDrive } from '@proton/drive';
 import type { useSharingModal } from '@proton/drive/modals/sharingModal';
+import { generateNodeUid, getDrive } from '@proton/drive/sdk';
 import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 

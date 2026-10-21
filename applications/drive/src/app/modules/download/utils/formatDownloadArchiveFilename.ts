@@ -1,8 +1,8 @@
 import { format } from 'date-fns';
 import { c } from 'ttag';
 
-import type { NodeEntity } from '@proton/drive';
 import { getNodeName } from '@proton/drive/modules/nodes';
+import type { NodeEntity } from '@proton/drive/sdk';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 export function formatDownloadArchiveFilename(nodes: NodeEntity[]): string {

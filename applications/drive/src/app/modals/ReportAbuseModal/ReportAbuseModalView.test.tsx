@@ -4,7 +4,7 @@ import { fireEvent, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
-import { AbuseCategory, NodeType } from '@proton/drive';
+import { AbuseCategory, NodeType } from '@proton/drive/sdk';
 
 import { ReportAbuseModalView } from './ReportAbuseModalView';
 

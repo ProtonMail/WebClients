@@ -1,5 +1,5 @@
-import type { Bookmark, InvalidNameError, MaybeBookmark } from '@proton/drive/index';
 import { getBookmarkNodeName } from '@proton/drive/modules/nodes';
+import type { Bookmark, InvalidNameError, MaybeBookmark } from '@proton/drive/sdk';
 
 type GetBookmarkType = {
     bookmark: Bookmark;

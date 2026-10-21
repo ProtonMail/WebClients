@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 import { useShallow } from 'zustand/react/shallow';
 
 import { FileNameDisplay } from '@proton/components/index';
-import { MemberRole, type NodeEntity } from '@proton/drive';
 import { getNodeName } from '@proton/drive/modules/nodes';
+import { MemberRole, type NodeEntity } from '@proton/drive/sdk';
 
 import { ContentPreviewMethod, PartialPreview } from '../../modals/preview';
 import { downloadManager } from '../../modules/download/DownloadManager';

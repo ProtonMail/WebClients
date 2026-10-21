@@ -7,8 +7,9 @@ import {
     NodeWithSameNameExistsValidationError,
     type ProtonDriveClient,
     type ProtonDrivePublicLinkClient,
-} from '../../../index';
-import { type ExtendedAttributesMetadata, generateExtendedAttributes } from '../../extendedAttributes';
+} from '../../../sdk';
+import { generateExtendedAttributes } from '../../extendedAttributes/extendedAttributesGenerator';
+import type { ExtendedAttributesMetadata } from '../../extendedAttributes/types';
 import { generateThumbnail } from '../../thumbnails';
 import { UploadDriveClientRegistry } from '../UploadDriveClientRegistry';
 import { useUploadControllerStore } from '../store/uploadController.store';

@@ -1,4 +1,4 @@
-import { DeviceType, splitNodeUid, useDrive } from '@proton/drive';
+import { DeviceType, splitNodeUid, useDrive } from '@proton/drive/sdk';
 
 // Only used for debug purposed, see DriveSidebar.tsx
 export function useCreateDevice() {

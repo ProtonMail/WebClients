@@ -11,8 +11,8 @@ import {
     ModalTwoHeader,
     useModalStateObject,
 } from '@proton/components';
-import { getDriveForPhotos } from '@proton/drive/index';
 import { loadThumbnail, useThumbnail } from '@proton/drive/modules/thumbnails';
+import { getDriveForPhotos } from '@proton/drive/sdk';
 import { IcAlbumFolder } from '@proton/icons/icons/IcAlbumFolder';
 import { IcPlusCircle } from '@proton/icons/icons/IcPlusCircle';
 

@@ -5,7 +5,7 @@ import type { ModalStateReturnObj } from '@proton/components';
 import { type AlbumItem, useAlbumsStore } from '../useAlbums.store';
 import { AddAlbumPhotosModal } from './AddAlbumPhotosModal';
 
-jest.mock('@proton/drive/index', () => ({ getDriveForPhotos: jest.fn() }));
+jest.mock('@proton/drive/sdk', () => ({ getDriveForPhotos: jest.fn() }));
 jest.mock('@proton/drive/modules/thumbnails', () => ({ useThumbnail: () => undefined, loadThumbnail: jest.fn() }));
 jest.mock('../PhotosWithAlbums/loaders/loadAdditionalInfo', () => ({ enqueueAdditionalInfo: jest.fn() }));
 jest.mock('../loaders/loadAlbums', () => ({ loadAllAlbums: jest.fn() }));

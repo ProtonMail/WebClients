@@ -1,9 +1,9 @@
 import { renderHook, waitFor } from '@testing-library/react';
 
-import type { NodeEntity } from '@proton/drive/index';
-import { NodeType, RevisionState } from '@proton/drive/index';
 import { recentlyAccessed } from '@proton/drive/modules/recentlyAccessed';
 import { createMockNodeEntity } from '@proton/drive/modules/testing';
+import type { NodeEntity } from '@proton/drive/sdk';
+import { NodeType, RevisionState } from '@proton/drive/sdk';
 
 import { useFileDetailsModalState } from './useFileDetailsModalState';
 

@@ -1,4 +1,4 @@
-import type { ProtonDrivePublicLinkClient } from '@proton/drive';
+import type { ProtonDrivePublicLinkClient } from '@proton/drive/sdk';
 
 /**
  * Holds the currently active public link client for the public page.

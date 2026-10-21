@@ -1,7 +1,7 @@
-import type { NodeEntity, ProtonDrivePhotosClient } from '@proton/drive/index';
-import { AbortError, NodeType } from '@proton/drive/index';
 import { getNodeName } from '@proton/drive/modules/nodes';
 import { createMockNodeEntity } from '@proton/drive/modules/testing';
+import type { NodeEntity, ProtonDrivePhotosClient } from '@proton/drive/sdk';
+import { AbortError, NodeType } from '@proton/drive/sdk';
 
 import { createDeferred, createEmptyAsyncGenerator, flushAsync, trackInstances, waitForCondition } from './testUtils';
 
@@ -118,7 +118,7 @@ jest.mock('./utils/getDownloadSdk', () => ({
     getDownloadSdk: getDownloadSdkMock,
 }));
 
-jest.mock('@proton/drive/index', () => {
+jest.mock('@proton/drive/sdk', () => {
     const listeners: Record<string, ((...args: unknown[]) => void)[]> = {};
     const driveMock = {
         onMessage: jest.fn((event: string, callback: (...args: unknown[]) => void) => {
@@ -144,7 +144,7 @@ jest.mock('@proton/drive/index', () => {
             listeners[key] = [];
         });
     };
-    const actual = jest.requireActual('@proton/drive/index');
+    const actual = jest.requireActual('@proton/drive/sdk');
     return {
         ...actual,
         AbortError,
@@ -166,11 +166,11 @@ jest.mock('./DownloadDriveClientRegistry', () => {
     return {
         DownloadDriveClientRegistry: {
             getDriveClient: jest.fn(() => {
-                const sdkMock = require('@proton/drive');
+                const sdkMock = require('@proton/drive/sdk');
                 return customDriveClient || sdkMock.driveMock;
             }),
             getDrivePhotosClient: jest.fn(() => {
-                const sdkMock = require('@proton/drive');
+                const sdkMock = require('@proton/drive/sdk');
                 return customDrivePhotosClient || sdkMock.driveMock;
             }),
             setDriveClient: jest.fn((client) => {
@@ -190,7 +190,7 @@ jest.mock('./DownloadDriveClientRegistry', () => {
 const { DownloadManager } = jest.requireActual('./DownloadManager');
 const { DownloadStatus, MalwareDownloadResolution, IssueStatus } = jest.requireActual('./downloadManager.store');
 const { useDownloadManagerStore, mockStoreState: storeMockState } = require('./downloadManager.store');
-const sdkMock = require('@proton/drive') as {
+const sdkMock = require('@proton/drive/sdk') as {
     AbortError: typeof Error;
     SDKEvent: { TransfersPaused: string; TransfersResumed: string };
     getDrive: jest.Mock;

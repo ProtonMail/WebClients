@@ -3,9 +3,9 @@ import { useEffect, useState } from 'react';
 import { differenceInDays, fromUnixTime } from 'date-fns';
 
 import { useGetUser } from '@proton/account/user/hooks';
-import { getDrive } from '@proton/drive';
 import { handleSdkError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
+import { getDrive } from '@proton/drive/sdk';
 import { APPS } from '@proton/shared/lib/constants';
 import { getAppSpace, getSpace } from '@proton/shared/lib/user/storage';
 import { useFlag } from '@proton/unleash/useFlag';
