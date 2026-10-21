@@ -1,22 +1,23 @@
 import { fileURLToPath } from 'node:url';
-import { defineConfig } from 'oxlint';
+import { type OxlintOverride, defineConfig } from 'oxlint';
 
 import { brandNameSelectors } from './brandNames.ts';
 import { createExtraneousDependenciesRule } from './extraneousDependencies.ts';
 import { allGlobs, typescriptGlobs } from './globs.ts';
 import { namingConventionOptions } from './namingConvention.ts';
+import { type RestrictedImportsOptions, createRestrictedImportRule } from './restrictedImports.ts';
 
 const testGlobs = ['**/*.test.ts', '**/*.test.tsx', '**/__mocks__/**'];
 const javaScriptGlobs = ['**/*.js', '**/*.jsx', '**/*.mjs', '**/*.cjs'];
 
 /**
- * Shared oxlint config, equivalent to `@proton/eslint-config-proton/all`. Rules oxlint lacks run from
- * the `proton` plugin in `./plugin` (`proton/*`); compat and the in-house `custom-rules` run as ESLint plugins.
+ * Shared oxlint config without React, equivalent to `@proton/eslint-config-proton/base`. Rules oxlint lacks run
+ * from the `proton` plugin in `./plugin` (`proton/*`); compat and the in-house `custom-rules` run as ESLint plugins.
  * Only the listed rules are on: the default `correctness` category is off so the switch from
  * ESLint does not add new findings.
  */
-export default defineConfig({
-    plugins: ['typescript', 'react', 'jsx-a11y', 'import'],
+export const base = defineConfig({
+    plugins: ['typescript', 'import'],
     jsPlugins: [
         fileURLToPath(new URL('./plugin/index.ts', import.meta.url)),
         'eslint-plugin-custom-rules',
@@ -41,7 +42,109 @@ export default defineConfig({
     rules: {
         'custom-rules/no-package-self-import': 'error',
         'compat/compat': 'error',
+    },
+    overrides: [
+        {
+            files: allGlobs,
+            rules: {
+                curly: ['error', 'all'],
+                'no-array-constructor': 'error',
+                'no-console': 'warn',
+                'no-debugger': 'error',
+                'no-duplicate-imports': ['warn', { allowSeparateTypeImports: true }],
+                'no-empty-function': ['error', { allow: ['arrowFunctions', 'functions', 'methods'] }],
+                'no-fallthrough': 'error',
+                'no-loop-func': 'error',
+                'no-nested-ternary': 'warn',
+                'no-redeclare': 'error',
+                'no-restricted-properties': [
+                    'error',
+                    {
+                        object: 'crypto',
+                        property: 'subtle',
+                        message:
+                            'Use helpers from `@protontech/crypto/subtle` instead of accessing the WebCrypto API directly.',
+                    },
+                ],
+                'no-unused-expressions': [
+                    'error',
+                    { allowShortCircuit: false, allowTernary: false, allowTaggedTemplates: false },
+                ],
+                'no-unused-vars': [
+                    'error',
+                    {
+                        args: 'after-used',
+                        argsIgnorePattern: '^_',
+                        caughtErrors: 'none',
+                        destructuredArrayIgnorePattern: '^_',
+                        varsIgnorePattern: '^_',
+                        ignoreRestSiblings: true,
+                    },
+                ],
+                'no-use-before-define': ['error', { functions: true, classes: true, variables: true }],
+                'no-useless-constructor': 'error',
+                'no-void': ['error', { allowAsStatement: true }],
+                'prefer-const': ['error', { ignoreReadBeforeAssign: true, destructuring: 'all' }],
 
+                'typescript/array-type': ['error', { default: 'array' }],
+                'typescript/consistent-type-imports': 'error',
+                'typescript/dot-notation': ['error', { allowKeywords: true }],
+                'typescript/no-floating-promises': 'warn',
+                'typescript/no-for-in-array': 'error',
+                'typescript/no-implied-eval': 'error',
+                'typescript/no-import-type-side-effects': 'error',
+                'typescript/no-misused-promises': ['error', { checksVoidReturn: false }],
+                'typescript/prefer-enum-initializers': 'error',
+                'typescript/return-await': 'error',
+
+                'import/no-cycle': ['error', { ignoreExternal: true }],
+                'import/no-named-as-default': 'warn',
+
+                'proton/enforce-uint8array-arraybuffer': 'error',
+                'proton/naming-convention': ['error', ...namingConventionOptions],
+                'proton/no-extraneous-dependencies': createExtraneousDependenciesRule(),
+                // Base restrictions only, clients add their own with `createRestrictedImportRule` (restrictedImports.ts)
+                'proton/restricted-imports': 'error',
+                'proton/restricted-syntax': ['error', ...brandNameSelectors],
+            },
+        },
+        {
+            files: javaScriptGlobs,
+            rules: {
+                // TypeScript resolves these itself in TypeScript files.
+                'import/default': 'error',
+                'import/namespace': 'error',
+                'import/no-named-as-default-member': 'warn',
+            },
+        },
+        {
+            files: ['**/*.js'],
+            rules: {
+                'proton/naming-convention': 'off',
+            },
+        },
+        {
+            files: typescriptGlobs,
+            rules: {
+                'custom-rules/no-boolean-entitlement-composition': 'error',
+                'custom-rules/no-single-entitlement-condition': 'error',
+            },
+        },
+        {
+            files: testGlobs,
+            rules: {
+                'compat/compat': 'off',
+            },
+        },
+    ],
+});
+
+/** `base` plus the React, jsx-a11y and UI rules, equivalent to `@proton/eslint-config-proton/all`. */
+export const all = defineConfig({
+    ...base,
+    plugins: [...(base.plugins ?? []), 'react', 'jsx-a11y'],
+    rules: {
+        ...base.rules,
         'jsx-a11y/alt-text': 'error',
         'jsx-a11y/anchor-ambiguous-text': 'warn',
         'jsx-a11y/anchor-has-content': 'error',
@@ -155,98 +258,44 @@ export default defineConfig({
         'custom-rules/validate-ttag-key': 'error',
         'custom-rules/validate-ttag-key-autofix-warning': 'warn',
     },
-    overrides: [
-        {
-            files: allGlobs,
-            rules: {
-                curly: ['error', 'all'],
-                'no-array-constructor': 'error',
-                'no-console': 'warn',
-                'no-debugger': 'error',
-                'no-duplicate-imports': ['warn', { allowSeparateTypeImports: true }],
-                'no-empty-function': ['error', { allow: ['arrowFunctions', 'functions', 'methods'] }],
-                'no-fallthrough': 'error',
-                'no-loop-func': 'error',
-                'no-nested-ternary': 'warn',
-                'no-redeclare': 'error',
-                'no-restricted-properties': [
-                    'error',
-                    {
-                        object: 'crypto',
-                        property: 'subtle',
-                        message:
-                            'Use helpers from `@protontech/crypto/subtle` instead of accessing the WebCrypto API directly.',
-                    },
-                ],
-                'no-unused-expressions': [
-                    'error',
-                    { allowShortCircuit: false, allowTernary: false, allowTaggedTemplates: false },
-                ],
-                'no-unused-vars': [
-                    'error',
-                    {
-                        args: 'after-used',
-                        argsIgnorePattern: '^_',
-                        caughtErrors: 'none',
-                        destructuredArrayIgnorePattern: '^_',
-                        varsIgnorePattern: '^_',
-                        ignoreRestSiblings: true,
-                    },
-                ],
-                'no-use-before-define': ['error', { functions: true, classes: true, variables: true }],
-                'no-useless-constructor': 'error',
-                'no-void': ['error', { allowAsStatement: true }],
-                'prefer-const': ['error', { ignoreReadBeforeAssign: true, destructuring: 'all' }],
-
-                'typescript/array-type': ['error', { default: 'array' }],
-                'typescript/consistent-type-imports': 'error',
-                'typescript/dot-notation': ['error', { allowKeywords: true }],
-                'typescript/no-floating-promises': 'warn',
-                'typescript/no-for-in-array': 'error',
-                'typescript/no-implied-eval': 'error',
-                'typescript/no-import-type-side-effects': 'error',
-                'typescript/no-misused-promises': ['error', { checksVoidReturn: false }],
-                'typescript/prefer-enum-initializers': 'error',
-                'typescript/return-await': 'error',
-
-                'import/no-cycle': ['error', { ignoreExternal: true }],
-                'import/no-named-as-default': 'warn',
-
-                'proton/enforce-uint8array-arraybuffer': 'error',
-                'proton/naming-convention': ['error', ...namingConventionOptions],
-                'proton/no-extraneous-dependencies': createExtraneousDependenciesRule(),
-                // Base restrictions only, clients add their own with `createRestrictedImportRule` (restrictedImports.ts)
-                'proton/restricted-imports': 'error',
-                'proton/restricted-syntax': ['error', ...brandNameSelectors],
-            },
-        },
-        {
-            files: javaScriptGlobs,
-            rules: {
-                // TypeScript resolves these itself in TypeScript files.
-                'import/default': 'error',
-                'import/namespace': 'error',
-                'import/no-named-as-default-member': 'warn',
-            },
-        },
-        {
-            files: ['**/*.js'],
-            rules: {
-                'proton/naming-convention': 'off',
-            },
-        },
-        {
-            files: typescriptGlobs,
-            rules: {
-                'custom-rules/no-boolean-entitlement-composition': 'error',
-                'custom-rules/no-single-entitlement-condition': 'error',
-            },
-        },
-        {
-            files: testGlobs,
-            rules: {
-                'compat/compat': 'off',
-            },
-        },
-    ],
 });
+
+const presets = { base, all };
+
+export interface WorkspaceConfigOptions {
+    /** `all` adds React, jsx-a11y and the UI rules to `base`, like the ESLint presets of the same names. */
+    preset?: keyof typeof presets;
+    /** Rollout ids and client additions for `proton/restricted-imports`, as in `createRestrictedImportRule`. */
+    restrictedImports?: RestrictedImportsOptions;
+    ignorePatterns?: string[];
+    overrides?: OxlintOverride[];
+}
+
+/**
+ * Builds a workspace's `oxlint.config.mts` on top of a shared preset. Use it instead of `extends`:
+ * oxlint's `extends` drops the extended config's `ignorePatterns`, `env` and `settings` (oxlint 1.87), so this
+ * copies them over.
+ *
+ * @example
+ * export default createOxlintConfig({ restrictedImports: { rollout: ['components-barrel'] } });
+ */
+export function createOxlintConfig({
+    preset = 'all',
+    restrictedImports,
+    ignorePatterns = [],
+    overrides = [],
+}: WorkspaceConfigOptions = {}) {
+    const restrictedImportsOverrides: OxlintOverride[] = restrictedImports
+        ? [{ files: allGlobs, rules: { 'proton/restricted-imports': createRestrictedImportRule(restrictedImports) } }]
+        : [];
+
+    const shared = presets[preset];
+
+    return defineConfig({
+        extends: [shared],
+        ignorePatterns: [...(shared.ignorePatterns ?? []), ...ignorePatterns],
+        env: shared.env,
+        settings: shared.settings,
+        overrides: [...restrictedImportsOverrides, ...overrides],
+    });
+}
