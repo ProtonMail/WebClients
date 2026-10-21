@@ -534,6 +534,10 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
         return ydoc.toJSON()
       },
 
+      async getEditorBuildInfo() {
+        return { appVersion: config.APP_VERSION, commit: config.COMMIT }
+      },
+
       async importDataIntoSheet(data) {
         application.eventBus.publish<SheetImportData>({
           type: SheetImportEvent,
